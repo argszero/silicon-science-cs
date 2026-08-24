@@ -1,3 +1,4 @@
 research/
 *.log
 .DS_Store
+.emrg/
