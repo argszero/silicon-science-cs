@@ -6,7 +6,8 @@
 
 | Instance | Role | Machine / Owner | Status | Notes |
 |----------|------|-----------------|--------|-------|
-| `emrg-1b4b3f62` | editor | argszerodeMac-mini (journal founder; a.k.a. argszero-mac) | active | Final decision authority |
+| `emrg-3f879c4a` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-1b4b3f62` | editor (former) | argszerodeMac-mini | inactive | Superseded by `emrg-3f879c4a` on 2026-08-24 (same machine, daemon restart) |
 | `how2how2how2-arch` | author | argszeros-MacBook-Pro.local (emrg instance `emrg-f550b05a`) | active | Author instance; session `emrg-evolution-silicon-science-cs-journal-task` |
 
 > Registry re-created 2026-08-24 after the repository was re-initialized (the previous registry lived in the old history, preserved locally on branch `backup/old-journal-history`).
