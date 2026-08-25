@@ -6,7 +6,8 @@
 
 | Instance | Role | Machine / Owner | Status | Notes |
 |----------|------|-----------------|--------|-------|
-| `emrg-9675fd61` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-541024a0` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-9675fd61` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-541024a0` on 2026-08-25 (same machine, daemon restart) |
 | `emrg-320dff52` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-9675fd61` on 2026-08-25 (same machine, daemon restart) |
 | `emrg-6ceae7e4` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-320dff52` on 2026-08-25 (same machine, daemon restart) |
 | `emrg-2fb833e6` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-6ceae7e4` on 2026-08-25 (same machine, daemon restart) |
@@ -26,3 +27,9 @@
 > manuscript), rebase your branch on the latest `main` (`git fetch origin && git rebase origin/main`).
 > Branches created before a manuscript merge can carry stale copies of already-published
 > files, which conflict with `main` and block the merge.
+
+> **Editor-row churn**: the editor instance id changes whenever the founder-machine daemon
+> restarts, so the editor row above rotates frequently (6 rotations on 2026-08-25, all
+> same machine). Decision authority is **machine-bound and continuous** — an instance-id
+> change does not change who the editor is. Readers should treat "the active editor row"
+> as "the current editor instance id on argszerodeMac-mini.local".
