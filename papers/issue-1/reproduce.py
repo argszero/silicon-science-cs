@@ -19,7 +19,7 @@ import random
 import sys
 import time
 
-from sim import Cluster, least_requested_score, schedule, schedule_with_requeue
+from sim import Cluster, least_requested_score, best_fit_score, schedule, schedule_with_requeue
 from gen import gen_cluster, gen_pods, gen_chain_pods
 from opt import optimal_placement
 from detect import predict_deadlocks, root_scc_sizes
@@ -37,7 +37,7 @@ def exp1():
             order = list(range(len(pods)))
             rng.shuffle(order)
             g = schedule(cluster, pods, order, least_requested_score)
-            b = schedule(cluster, pods, order, lambda n, p, u: (n.cpu_cap - (u.get(n.id, (0, 0))[0] + p.cpu_req)) / n.cpu_cap)
+            b = schedule(cluster, pods, order, best_fit_score)
             r = schedule(cluster, pods, order, None, rng=random.Random(s + 1))
             o = optimal_placement(cluster, pods)
             gp = g["n_placed"] / len(pods)
@@ -54,21 +54,27 @@ def exp1():
 
 
 def exp2():
-    """Chains + requeue recovery (n=10 seeds). Returns rows."""
+    """Requeue recovery (n=10 seeds): chains + mutual-affinity density=1.0."""
     rows = []
-    for name, cfg in [
-        ("2ch L=2", dict(n_chains=2, chain_len=2, anti=0.0)),
-        ("2ch L=3", dict(n_chains=2, chain_len=3, anti=0.0)),
-        ("2ch L=4", dict(n_chains=2, chain_len=4, anti=0.0)),
-        ("2ch L=3 anti25", dict(n_chains=2, chain_len=3, anti=0.25)),
-    ]:
+    configs = [
+        ("2ch L=2", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=2, per_type=1),
+         lambda rng: gen_cluster(rng, n_racks=2, nodes_per_rack=2)),
+        ("2ch L=3", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=3, per_type=1),
+         lambda rng: gen_cluster(rng, n_racks=2, nodes_per_rack=2)),
+        ("2ch L=4", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=4, per_type=1),
+         lambda rng: gen_cluster(rng, n_racks=2, nodes_per_rack=2)),
+        ("2ch L=3 anti25", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=3, per_type=1, anti_fraction=0.25),
+         lambda rng: gen_cluster(rng, n_racks=2, nodes_per_rack=2)),
+        ("density=1.0 (mutual)", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=1.0),
+         lambda rng: gen_cluster(rng)),
+    ]
+    for name, gen_p, gen_c in configs:
         sps, rqs, opts, ratios, rounds = [], [], [], [], 0
         unrec = 0
         for s in range(10):
             rng = random.Random(s)
-            pods = gen_chain_pods(rng, n_chains=cfg["n_chains"], chain_len=cfg["chain_len"],
-                                  per_type=1, anti_fraction=cfg["anti"])
-            cluster = Cluster(nodes=gen_cluster(rng, n_racks=cfg["n_chains"], nodes_per_rack=2))
+            pods = gen_p(rng)
+            cluster = Cluster(nodes=gen_c(rng))
             order = list(range(len(pods)))
             rng.shuffle(order)
             sp = schedule(cluster, pods, order, least_requested_score)
@@ -93,17 +99,25 @@ def exp3():
     """Deadlock prediction (n=10 seeds). Returns rows."""
     rows = []
     regimes = [
-        ("density=1.0", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=1.0), lambda: gen_cluster(random.Random(0))),
-        ("density=0.5", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=0.5), lambda: gen_cluster(random.Random(0))),
-        ("chains L=3", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=3, per_type=1), lambda: gen_cluster(random.Random(0), n_racks=2)),
-        ("chains L=3 anti25", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=3, per_type=1, anti_fraction=0.25), lambda: gen_cluster(random.Random(0), n_racks=2)),
+        ("density=1.0", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=1.0),
+         lambda rng: gen_cluster(rng)),
+        ("density=0.75", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=0.75),
+         lambda rng: gen_cluster(rng)),
+        ("density=0.5", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=0.5),
+         lambda rng: gen_cluster(rng)),
+        ("density=0.25", lambda rng: gen_pods(rng, n_types=3, per_type=2, density=0.25),
+         lambda rng: gen_cluster(rng)),
+        ("chains L=3", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=3, per_type=1),
+         lambda rng: gen_cluster(rng, n_racks=2)),
+        ("chains L=3 anti25", lambda rng: gen_chain_pods(rng, n_chains=2, chain_len=3, per_type=1, anti_fraction=0.25),
+         lambda rng: gen_cluster(rng, n_racks=2)),
     ]
     for name, gen_p, gen_c in regimes:
         pred_dl = unplaced = hit = miss = 0
         for s in range(10):
             rng = random.Random(s)
             pods = gen_p(rng)
-            cluster = Cluster(nodes=gen_c())
+            cluster = Cluster(nodes=gen_c(rng))
             order = list(range(len(pods)))
             rng.shuffle(order)
             rq = schedule_with_requeue(cluster, pods, order, least_requested_score,
