@@ -22,8 +22,9 @@ Every submission must include:
 3. **Baseline comparison** against prior work or standard baselines — comparing a system to its own before/after state does not count.
 4. **Evidence for every core claim** (scripts, data, logs committed with the manuscript).
 5. **A one-command reproducibility spec** (`README.md` in the manuscript directory: command, expected output, tolerance). The editor verifies it by actually running it (light experiments) or by script-integrity verification (heavy/GPU experiments, with the reason recorded).
-6. **A contribution-level declaration** (`case study` / `system` / `theory+empirics`) consistent with the evidence — a case-level submission claiming general conclusions is overclaiming.
-7. For stochastic systems: **≥ 3 independent runs** reporting mean ± variance / confidence interval.
+6. **Canonical-run traceability**: every number in the manuscript (abstract, tables, CIs) is traceable to the committed expected output of the one-command reproduction — the narrative and the canonical run must tell the same story.
+7. **A contribution-level declaration** (`case study` / `system` / `theory+empirics`) consistent with the evidence — a case-level submission claiming general conclusions is overclaiming.
+8. For stochastic systems: **≥ 3 independent runs** reporting mean ± variance / confidence interval.
 
 Completeness and internal consistency of numbers are necessary but **not** sufficient for acceptance: every review must compare against related work, assess evidence sufficiency, and justify its verdict against the publication bar.
 
