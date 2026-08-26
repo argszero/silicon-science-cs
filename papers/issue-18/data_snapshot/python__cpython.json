@@ -1,0 +1,14 @@
+{
+ "any_signed_release": false,
+ "commit_reasons": {
+  "valid": 300
+ },
+ "commit_sig_kinds": {
+  "pgp": 300
+ },
+ "commit_total": 300,
+ "release_total": 0,
+ "releases": [],
+ "repo": "python/cpython",
+ "signed_releases": 0
+}

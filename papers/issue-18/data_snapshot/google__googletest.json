@@ -1,0 +1,89 @@
+{
+ "any_signed_release": false,
+ "commit_reasons": {
+  "unsigned": 296,
+  "valid": 4
+ },
+ "commit_sig_kinds": {
+  "none": 296,
+  "pgp": 4
+ },
+ "commit_total": 300,
+ "release_total": 12,
+ "releases": [
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "v1.18.0",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "v1.17.0",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "v1.16.0",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "v1.15.2",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "v1.15.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.14.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.13.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "release-1.12.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "release-1.12.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "release-1.11.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "release-1.10.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "release-1.8.1",
+   "tools": []
+  }
+ ],
+ "repo": "google/googletest",
+ "signed_releases": 0
+}

@@ -1,0 +1,815 @@
+{
+ "any_signed_release": true,
+ "commit_reasons": {
+  "unsigned": 300
+ },
+ "commit_sig_kinds": {
+  "none": 300
+ },
+ "commit_total": 300,
+ "release_total": 100,
+ "releases": [
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-4.0.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.22",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-4.0.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.21",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-4.0.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.20",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-4.0.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-4.0.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.19",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.18",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.6.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.17",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.5.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.16",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.4.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.15",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.14",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.3.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.13",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.12",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.0-alpha2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.11",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1w",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.2.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.10",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1v",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.9",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1u",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1t",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.1.0-alpha1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1s",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1q",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1p",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1o",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1n",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1m",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "OpenSSL_1_1_1l",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.0-beta2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.0-beta1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 4,
+   "signed": true,
+   "tag": "openssl-3.0.0-alpha17",
+   "tools": [
+    "gpg_asc"
+   ]
+  }
+ ],
+ "repo": "openssl/openssl",
+ "signed_releases": 100
+}

@@ -1,0 +1,618 @@
+{
+ "any_signed_release": false,
+ "commit_reasons": {
+  "unknown_key": 1,
+  "unsigned": 62,
+  "valid": 237
+ },
+ "commit_sig_kinds": {
+  "none": 62,
+  "pgp": 238
+ },
+ "commit_total": 300,
+ "release_total": 100,
+ "releases": [
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.229",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.228",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.227",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.226",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.225",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.224",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.223",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.222",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.221",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.220",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.219",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.218",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.217",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.216",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.215",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.214",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.213",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.212",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.211",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.210",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.209",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.208",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.207",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.206",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.205",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.204",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.203",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.202",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.201",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.200",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.199",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.198",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.197",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.196",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.195",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.194",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.193",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.192",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.191",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.190",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.189",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.188",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.187",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.186",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.185",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.184",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.183",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.182",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.181",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.180",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.179",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.178",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.177",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.176",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.175",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.174",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.173",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.172",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.171",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.170",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.169",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.168",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.167",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.166",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.165",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.164",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.163",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.162",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.161",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.160",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.159",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.158",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.157",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.156",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.155",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.154",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.153",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.152",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.151",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.150",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.149",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.148",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.147",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.146",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.145",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.144",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.143",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.142",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.141",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.140",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.139",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.138",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.137",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.136",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.135",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.134",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.133",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.132",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.131",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "v1.0.130",
+   "tools": []
+  }
+ ],
+ "repo": "serde-rs/serde",
+ "signed_releases": 0
+}

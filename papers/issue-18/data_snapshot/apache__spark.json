@@ -1,0 +1,16 @@
+{
+ "any_signed_release": false,
+ "commit_reasons": {
+  "unsigned": 285,
+  "valid": 15
+ },
+ "commit_sig_kinds": {
+  "none": 285,
+  "pgp": 15
+ },
+ "commit_total": 300,
+ "release_total": 0,
+ "releases": [],
+ "repo": "apache/spark",
+ "signed_releases": 0
+}
