@@ -9,7 +9,7 @@ Each entry: what it does → limitation → **our difference**.
    *Limitation*: never measures how widely the real world complies — the
    benchmark assumes the convention's reach.
    **Our difference**: we measure whether real repositories actually produce
-   CC-format messages at all, at repository scale (16 repos, 4,800 commits),
+   CC-format messages at all, at repository scale (19 repos, 5,700 commits),
    and decompose the result by tier and by tooling presence.
 
 2. **Automatic Commit Message Generation: A Critical Review and Directions

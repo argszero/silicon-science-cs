@@ -70,7 +70,7 @@ Pooled full compliance: **55.1%** (3,139/5,700); per-repository mean **55.1% ± 
 | fastapi/typer | N | 300 | 0.0 | 0 | 300 |
 | numpy/numpy | N | 300 | 0.0 | 242 | 58 |
 
-The pooled 47.3% is a **bimodal mixture**, not a universal rate: tooling-present repos cluster at 94–100% (one outlier at 53.3%), tooling-absent repos at 0–13%. → supports H1 (bimodal) and quantifies it.
+The pooled 55.1% is a **bimodal mixture**, not a universal rate: tooling-present repos cluster at 92–100% (one outlier at 53.3%), tooling-absent repos at 0–13%. → supports H1 (bimodal) and quantifies it.
 
 **Nuance — the "partial" middle ground**: numpy/numpy has 242/300 partial messages — its own long-standing disciplined convention (`ENH:`, `BUG:`, `MAINT:` prefixes) that is structured but not CC. The partial tier is what makes this visible: 80.7% of numpy's commits are *structured*, yet only 0% are CC-full. Discipline ≠ CC conformance.
 
@@ -102,14 +102,14 @@ Overall Spearman rank correlation between full-compliance % and CV of inter-rele
 
 ## 5. Threats to Validity
 
-- **Corpus selection**: 16 popular, mostly well-maintained repositories; the population of all OSS skews smaller and less tooled — the tooling-absent group here is *conservative* (they are still popular, disciplined projects; a random OSS sample would likely show even lower compliance). We report per-repository heterogeneity rather than a single universal number.
+- **Corpus selection**: 19 popular, mostly well-maintained repositories; the population of all OSS skews smaller and less tooled — the tooling-absent group here is *conservative* (they are still popular, disciplined projects; a random OSS sample would likely show even lower compliance). We report per-repository heterogeneity rather than a single universal number.
 - **Recent-window bias**: we sample the 300 most recent commits — compliance may be higher in the recent window (tooling adopted later in a project's life). This biases *toward* compliance; the low no-tooling rates are thus an upper bound on those projects' recent compliance.
 - **Parser strictness**: the CC spec has an open type set and informal grammar; our three-tier classifier fixes a conservative interpretation (canonical types only for "full"). An LLM- or human-judged "spirit of CC" score might rate some "partial" commits as acceptable CC (e.g. `Merge` or lowercase-type variants). We state the rule precisely so the measurement is reproducible and comparable.
 - **Tooling oracle**: our "absent" verdict is conservative (any signal marks present); a repo with tooling in a *subdirectory* (not root) could be mislabeled absent. Manual verification of the 8 absent repos found no root-level or package.json signals; workflow-based detection was considered but code-search requires token scope (dropped) — a known boundary.
 - **Snapshot date**: data is a point-in-time sample (2026-08-26); commit streams change daily. The committed snapshot freezes the exact data every number refers to; the one-command refresh (`python3 reproduce.py` online) regenerates a *new* snapshot and would change numbers — the committed expected output always matches the committed snapshot (offline mode).
 - **Release-CV crudeness**: monorepos with thousands of releases dominate the CV signal; the frequency (median releases) is a more robust secondary signal; we report both and do not over-interpret the CV.
 - **Merge commits**: 440/5,700 sampled commits (7.7%) are merge commits ("Merge pull request #N" etc.), classified "non"; excluding them raises pooled full compliance from 55.1% to 59.7% — a modest shift that does not change any conclusion (the tier decomposition is reported with merges included, the conservative direction).
-- **Why still worth publishing**: the coverage/tooling literature assumes CC reach; the generation literature assumes CC as target; neither measures the gap. Our 272× odds ratio, the bimodal distribution, and the falsified regularity hypothesis are new, cheap to reproduce, and directly actionable for (a) adopters deciding whether tooling alone suffices, (b) tooling authors deciding enforcement defaults, and (c) benchmark builders needing a difficulty control (like TypyBench for types — the no-tooling repos are the "hard" population).
+- **Why still worth publishing**: the coverage/tooling literature assumes CC reach; the generation literature assumes CC as target; neither measures the gap. Our 333× odds ratio, the bimodal distribution, and the falsified regularity hypothesis are new, cheap to reproduce, and directly actionable for (a) adopters deciding whether tooling alone suffices, (b) tooling authors deciding enforcement defaults, and (c) benchmark builders needing a difficulty control (like TypyBench for types — the no-tooling repos are the "hard" population).
 
 ## 6. Conclusion & Future Work
 
