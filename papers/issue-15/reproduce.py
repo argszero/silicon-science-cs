@@ -33,29 +33,37 @@ import time
 from collections import Counter
 
 # --------------------------------------------------------------------------
-# Corpus manifest: (repo, tooling, ecosystem)
+# Corpus manifest: (repo, tooling, ecosystem, vendor?)
 # Tooling group assigned by deterministic multi-signal detection (see
 # detect_tooling.py / README): root config | package.json deps | topic.
+# vendor=True means the repo IS a CC-tooling project (its reason for
+# existence is CC compliance); used for the self-selection subgroup analysis.
+# Revision round 1: +3 ordinary "consumer" repos with commitlint configured
+# (element-plus, pnpm, google/blockly) to bound the tooling estimate.
 # --------------------------------------------------------------------------
 CORPUS = [
-    # --- tooling-present (8) ---
-    ("commitizen/cz-cli",                       True,  "js"),
-    ("semantic-release/semantic-release",       True,  "js"),
-    ("conventional-changelog/conventional-changelog", True, "js"),
-    ("googleapis/release-please",               True,  "js"),
-    ("googleapis/google-cloud-python",          True,  "py"),
-    ("google/zx",                               True,  "js"),
-    ("conventional-changelog/commitlint",       True,  "js"),
-    ("nestjs/nest",                             True,  "js"),
+    # --- tooling-present (11) ---
+    ("commitizen/cz-cli",                       True,  "js", True),
+    ("semantic-release/semantic-release",       True,  "js", True),
+    ("conventional-changelog/conventional-changelog", True, "js", True),
+    ("googleapis/release-please",               True,  "js", True),
+    ("conventional-changelog/commitlint",       True,  "js", True),
+    ("googleapis/google-cloud-python",          True,  "py", False),
+    ("google/zx",                               True,  "js", False),
+    ("nestjs/nest",                             True,  "js", False),
+    # --- consumer repos with commitlint (revision round 1 additions) ---
+    ("element-plus/element-plus",               True,  "js", False),
+    ("pnpm/pnpm",                               True,  "js", False),
+    ("google/blockly",                          True,  "js", False),
     # --- tooling-absent (8) ---
-    ("pallets/click",                           False, "py"),
-    ("pallets/flask",                           False, "py"),
-    ("fastapi/typer",                           False, "py"),
-    ("tqdm/tqdm",                               False, "py"),
-    ("dateutil/dateutil",                       False, "py"),
-    ("jakubroztocil/httpie",                    False, "py"),
-    ("psf/requests",                            False, "py"),
-    ("numpy/numpy",                             False, "py"),
+    ("pallets/click",                           False, "py", False),
+    ("pallets/flask",                           False, "py", False),
+    ("fastapi/typer",                           False, "py", False),
+    ("tqdm/tqdm",                               False, "py", False),
+    ("dateutil/dateutil",                       False, "py", False),
+    ("jakubroztocil/httpie",                    False, "py", False),
+    ("psf/requests",                            False, "py", False),
+    ("numpy/numpy",                             False, "py", False),
 ]
 MAX_COMMITS = 300
 SNAPSHOT_DIR = "data_snapshot"
@@ -146,7 +154,11 @@ def pct(p, w):
 
 
 def t_ci(values):
-    """95% two-sided t-CI: mean ± t*sd/sqrt(n)."""
+    """95% two-sided t-CI: mean ± t*sd/sqrt(n); df = n-1.
+
+    t-table keyed by DEGREES OF FREEDOM (df = n-1). Revision round 1 fixed
+    an off-by-one where the table was keyed by n but held t(df=n) values.
+    """
     n = len(values)
     if n == 0:
         return float("nan"), float("nan"), 0
@@ -155,10 +167,11 @@ def t_ci(values):
     mean = sum(values) / n
     var = sum((v - mean) ** 2 for v in values) / (n - 1)
     sd = math.sqrt(var)
-    t_table = {2: 12.706, 3: 4.303, 4: 3.182, 5: 2.776, 6: 2.571,
-               7: 2.447, 8: 2.365, 9: 2.306, 10: 2.262, 11: 2.228,
-               12: 2.179, 13: 2.160, 14: 2.145, 15: 2.131, 16: 2.120}
-    t = t_table.get(n, 2.0)
+    t_table = {1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571,
+               6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228,
+               11: 2.201, 12: 2.179, 13: 2.160, 14: 2.145, 15: 2.131,
+               16: 2.120, 17: 2.110, 18: 2.101, 19: 2.093, 20: 2.086}
+    t = t_table.get(n - 1, 1.96)
     return mean, t * sd / math.sqrt(n), n
 
 
@@ -225,9 +238,14 @@ def release_cv(dates_iso):
 
 def main():
     offline = "--offline" in sys.argv
+    only = None
+    if "--only" in sys.argv:
+        only = sys.argv[sys.argv.index("--only") + 1].split(",")
 
     rows = []
-    for repo, tooling, eco in CORPUS:
+    for repo, tooling, eco, vendor in CORPUS:
+        if only is not None and repo not in only:
+            continue
         tag = "T" if tooling else "N"
         if offline:
             with open(os.path.join(SNAPSHOT_DIR, repo.replace("/", "__") + ".json")) as f:
@@ -244,22 +262,24 @@ def main():
         n = len(msgs)
         full = counts["full"]
         breaking_n = sum(1 for m in msgs if breaking(m))
+        merge_n = sum(1 for m in msgs if re.match(r"^(Merge|merge) (pull request|branch|remote-tracking)", m.strip()))
         cv = release_cv(dates)
-        row = {"repo": repo, "tooling": tooling, "eco": eco, "n": n,
+        row = {"repo": repo, "tooling": tooling, "eco": eco, "vendor": vendor, "n": n,
                "full": full, "full_pct": pct(full, n),
                "partial": counts["partial"], "non": counts["non"],
-               "breaking": breaking_n, "n_releases": len(dates), "cv": cv}
+               "breaking": breaking_n, "merges": merge_n,
+               "n_releases": len(dates), "cv": cv}
         rows.append(row)
 
     # ---------------- output ----------------
     print("=== per-repo ===")
     print(f"{'repo':<40} {'grp':<2} {'n':>4} {'full%':>6} {'full':>4} "
-          f"{'partial':>8} {'non':>5} {'brk':>4} {'rel':>4} {'CV':>6}")
+          f"{'partial':>8} {'non':>5} {'brk':>4} {'mrg':>4} {'rel':>4} {'CV':>6}")
     for r in rows:
         cv_s = f"{r['cv']:.3f}" if r['cv'] is not None else "-"
         print(f"{r['repo']:<40} {('T' if r['tooling'] else 'N'):<2} {r['n']:>4} "
               f"{r['full_pct']:>6.1f} {r['full']:>4} {r['partial']:>8} "
-              f"{r['non']:>5} {r['breaking']:>4} {r['n_releases']:>4} "
+              f"{r['non']:>5} {r['breaking']:>4} {r['merges']:>4} {r['n_releases']:>4} "
               f"{cv_s:>6}")
 
     # C1 pooled + CI
@@ -288,6 +308,18 @@ def main():
     print(f"no-tooling  : n_repos={nn} mean full% {mn:.1f} ± {hwn:.1f} | pooled {full_n}/{n_n} = {pct(full_n, n_n):.1f}%")
     print(f"Welch t={tval:.2f} df={df:.1f} p={p:.4f}")
     print(f"pooled odds ratio (tooling vs no-tooling) = {odds:.2f}")
+    # C2 subgroup: non-vendor tooling repos only (self-selection sensitivity)
+    grp_t_nv = [r["full_pct"] for r in rows if r["tooling"] and not r["vendor"]]
+    if grp_t_nv:
+        mnv, hwnv, nnv = t_ci(grp_t_nv)
+        print(f"tooling non-vendor subgroup: n_repos={nnv} mean full% {mnv:.1f} ± {hwnv:.1f}")
+        print("  repos: " + ", ".join(r["repo"] for r in rows if r["tooling"] and not r["vendor"]))
+    # median releases per group (traceability for the manuscript's frequency claim)
+    rel_t = sorted(r["n_releases"] for r in rows if r["tooling"])
+    rel_n = sorted(r["n_releases"] for r in rows if not r["tooling"])
+    med_t = rel_t[len(rel_t) // 2] if rel_t else None
+    med_n = rel_n[len(rel_n) // 2] if rel_n else None
+    print(f"median releases: tooling={med_t} no-tooling={med_n}")
 
     # C3 release cadence
     pairs = [(r["full_pct"], r["cv"]) for r in rows if r["cv"] is not None]
@@ -297,6 +329,15 @@ def main():
         rho = spearman(xs, ys)
         print("\n=== C3: compliance vs release-cadence regularity ===")
         print(f"Spearman rho(full%, CV) = {rho:.3f} (n={len(pairs)} repos with >=4 releases)")
+        # within-group Spearman (revision round 1: between-group confounding check)
+        for label, filt in (("tooling-present", lambda r: r["tooling"]),
+                            ("no-tooling", lambda r: not r["tooling"])):
+            sub = [(r["full_pct"], r["cv"]) for r in rows if filt(r) and r["cv"] is not None]
+            if len(sub) >= 4:
+                sr = spearman([p[0] for p in sub], [p[1] for p in sub])
+                print(f"  within-group {label}: rho={sr:.3f} (n={len(sub)})")
+            else:
+                print(f"  within-group {label}: insufficient (n={len(sub)})")
         for r in rows:
             if r["cv"] is not None:
                 print(f"  {r['repo']:<40} full%={r['full_pct']:>6.1f}  CV={r['cv']:.3f}")
@@ -310,6 +351,11 @@ def main():
     tn = sum(r["non"] for r in rows)
     tt = tf + tp + tn
     print(f"full {tf} ({pct(tf, tt):.1f}%) | partial {tp} ({pct(tp, tt):.1f}%) | non {tn} ({pct(tn, tt):.1f}%)")
+
+    # merge-commit sensitivity (reviewer Q3)
+    tm = sum(r["merges"] for r in rows)
+    print(f"\nmerge commits: {tm}/{tot_commits} ({pct(tm, tot_commits):.1f}%) "
+          f"— full% excluding merges: {pct(tot_full, tot_commits - tm):.1f}%")
 
 
 if __name__ == "__main__":

@@ -2,9 +2,10 @@
 
 Each entry: what it does → limitation → **our difference**.
 
-1. **Conventional Commit Message Generation: How Far Are We?** (2026-03-27,
-   arXiv/Zenodo) — evaluates LLM-based generation of CC-format commit
-   messages against a benchmark; treats CC as the target format.
+1. **Conventional Commit Message Generation: How Far Are We?** (Zenodo
+   DOI 10.5281/zenodo.19252792, 2026-03-27) — evaluates LLM-based
+   generation of CC-format commit messages against a benchmark; treats CC
+   as the target format.
    *Limitation*: never measures how widely the real world complies — the
    benchmark assumes the convention's reach.
    **Our difference**: we measure whether real repositories actually produce
