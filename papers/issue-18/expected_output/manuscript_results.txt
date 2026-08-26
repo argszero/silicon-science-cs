@@ -1,5 +1,5 @@
 INTEGRITY POSTURE OF POPULAR OSS REPOSITORIES — canonical results
-corpus: n=41 repos | snapshot date: see data_snapshot/*.json
+corpus: n=41 repos | snapshot date: 2026-08-27T04:19:00+08:00 (data_snapshot/manifest.json)
 
 C1 verified-commit share (n=41, 300-commit window):
   mean=0.578 median=0.657 min=0.000 max=1.000

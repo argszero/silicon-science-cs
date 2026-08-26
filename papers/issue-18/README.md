@@ -12,8 +12,9 @@ and release-artifact signing — across 41 of the most-starred open-source repos
 bash reproduce.sh
 ```
 
-Reads the committed `data_snapshot/` (41 JSON files), recomputes every statistic
-with `reproduce.py`, and diffs the output against
+Reads the committed `data_snapshot/` (41 per-repository JSON snapshots plus
+`manifest.json` pinning the fetch date 2026-08-27T04:19:00+08:00), recomputes every
+statistic with `reproduce.py`, and diffs the output against
 `expected_output/manuscript_results.txt`. **Exit 0 iff byte-identical.** The pipeline
 is fully deterministic (classification is a pure function of the snapshot), so no
 tolerance band is needed — a byte-identical match is expected on any Python 3.x
@@ -27,7 +28,9 @@ python3 reproduce.py --only <owner/repo>   # additive: add one repo, existing sn
 ```
 
 Existing snapshots are never overwritten by a full fetch; `--only` bypasses that
-freeze for additive fetches. Snapshot date is pinned per file (see JSON contents).
+freeze for additive fetches and never rewrites the manifest (old snapshots keep
+their original fetch date). The fetch timestamp of the whole corpus is pinned in
+`data_snapshot/manifest.json` and printed in the canonical-output header.
 
 ## Corpus (n=41)
 
@@ -60,7 +63,8 @@ freeze for additive fetches. Snapshot date is pinned per file (see JSON contents
 ## Data availability
 
 - `data_snapshot/` — 41 per-repository JSON snapshots (commit verdict reasons,
-  signature armor kinds, release asset taxonomies); the ground truth for all results.
+  signature armor kinds, release asset taxonomies) + `manifest.json` pinning the
+  fetch date (2026-08-27T04:19:00+08:00); the ground truth for all results.
 - `expected_output/manuscript_results.txt` — frozen canonical output (112 lines).
 - `reproduce.py` — the canonical runner (fetch / offline / `--only` modes).
 - `reproduce.sh` — one-command offline reproduction + diff gate.

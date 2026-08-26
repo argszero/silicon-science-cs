@@ -169,18 +169,36 @@ def fetch(only=None):
                   f"releases={snap['release_total']} signed_rel={snap['signed_releases']}")
         except Exception as e:
             print(f"ERROR {repo}: {e}", file=sys.stderr)
+    if not only:
+        # Pin the fetch timestamp for the whole corpus. --only fetches never
+        # rewrite the manifest: old snapshots keep their original fetch date.
+        import datetime
+        manifest = {
+            "fetched_at": datetime.datetime.now().astimezone().isoformat(timespec="seconds"),
+            "corpus_n": len(CORPUS),
+            "commits_per_repo": COMMITS_PER_REPO,
+            "releases_cap": RELEASES_CAP,
+        }
+        with open(os.path.join(SNAP_DIR, "manifest.json"), "w") as f:
+            json.dump(manifest, f, indent=1, sort_keys=True)
+        print(f"manifest written: fetched_at={manifest['fetched_at']}")
 
 
 # --------------------------------------------------------------- offline mode
 
 def load():
     snaps = []
+    manifest = {}
+    manifest_path = os.path.join(SNAP_DIR, "manifest.json")
+    if os.path.exists(manifest_path):
+        with open(manifest_path) as f:
+            manifest = json.load(f)
     for fn in sorted(os.listdir(SNAP_DIR)):
-        if not fn.endswith(".json"):
+        if not fn.endswith(".json") or fn == "manifest.json":
             continue
         with open(os.path.join(SNAP_DIR, fn)) as f:
             snaps.append(json.load(f))
-    return snaps
+    return snaps, manifest
 
 
 def fisher_exact(a, b, c, d):
@@ -247,7 +265,7 @@ def main():
     if a.mode == "fetch":
         fetch(a.only)
         return
-    snaps = load()
+    snaps, manifest = load()
     if not snaps:
         print("no snapshot data — run `reproduce.py fetch` first", file=sys.stderr)
         sys.exit(2)
@@ -255,7 +273,10 @@ def main():
     n = len(rows)
     out = []
     out.append("INTEGRITY POSTURE OF POPULAR OSS REPOSITORIES — canonical results")
-    out.append(f"corpus: n={n} repos | snapshot date: see data_snapshot/*.json")
+    snap_date = manifest.get("fetched_at",
+                             "not pinned (data_snapshot/manifest.json missing)")
+    out.append(f"corpus: n={n} repos | snapshot date: {snap_date} "
+               f"(data_snapshot/manifest.json)")
     out.append("")
 
     # ---- C1: verified commit share

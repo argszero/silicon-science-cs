@@ -98,7 +98,7 @@ Fisher exact p = 0.2811, OR = 5.54 — **not statistically significant**. H3 is 
 - **Window**: 300-commit window measures current posture, not history; a project that adopted signing recently appears partial. This is intended (Section 3.2) but limits temporal claims.
 - **API-visible assets only**: we detect signatures only on GitHub release assets; projects signing artifacts on their own CDNs or package registries are under-counted (e.g., python/cpython signs PyPI hashes off-platform). The `no-assets`/`no-releases` categories are accordingly named as GitHub-scoped.
 - **Armor ≠ identity**: PGP armor cannot distinguish GitHub's web-UI auto-signing from developer-held keys without key-ID analysis; we therefore report armor kinds, not "human vs bot" attribution.
-- **Verdict backfill**: GitHub's verification verdict for a commit can change if a key is added/revoked later; our snapshot pins a single date, and offline reproduction is immune to backfill drift.
+- **Verdict backfill**: GitHub's verification verdict for a commit can change if a key is added/revoked later; our snapshot pins a single fetch date (2026-08-27T04:19:00+08:00, recorded in `data_snapshot/manifest.json` and printed in the canonical-output header), and offline reproduction is immune to backfill drift because it reads the frozen snapshots.
 - **Failure modes are rare**: unknown_key/invalid/no_user total 30/12300 (0.2%) — signed-but-unverified events exist at the top tier but are too few for per-repo analysis; we report them as taxonomy evidence only.
 - **Why still worth publishing**: the popular-repo tier is exactly where supply-chain risk concentrates (high dependents, high blast radius), yet it is the tier prior global censuses dilute; the release layer has never been measured; and the *lack* of coherence (H3 rejected) is itself the actionable finding — integrity tooling is adopted layer-by-layer, not as a program, so consumers cannot infer artifact signing from commit verification.
 
@@ -116,4 +116,4 @@ One command, fully offline:
 bash reproduce.sh
 ```
 
-reads the committed `data_snapshot/` (41 JSON files), recomputes every statistic, and diffs against `expected_output/manuscript_results.txt` — exit 0 iff byte-identical. `python3 reproduce.py fetch` re-pulls fresh data via the GitHub REST API (`gh`), and `python3 reproduce.py --only <repo>` adds repositories without touching existing snapshots. All numbers in this manuscript are traceable to that expected output.
+reads the committed `data_snapshot/` (41 per-repository JSON snapshots plus `manifest.json` pinning the 2026-08-27 fetch date), recomputes every statistic, and diffs against `expected_output/manuscript_results.txt` — exit 0 iff byte-identical. `python3 reproduce.py fetch` re-pulls fresh data via the GitHub REST API (`gh`), and `python3 reproduce.py --only <repo>` adds repositories without touching existing snapshots. All numbers in this manuscript are traceable to that expected output.
