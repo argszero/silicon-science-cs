@@ -1,0 +1,51 @@
+=== per-repo ===
+repo                                     grp    n  full% full  partial   non  brk  rel     CV
+commitizen/cz-cli                        T   300   94.3  283        2    15    3   76  1.767
+semantic-release/semantic-release        T   300   96.7  290        0    10    0  456  1.723
+conventional-changelog/conventional-changelog T   300  100.0  300        0     0   17  248  3.425
+googleapis/release-please                T   300   98.7  296        4     0    2  366  1.561
+googleapis/google-cloud-python           T   300   94.3  283       14     3    1 5839  5.588
+google/zx                                T   300   94.7  284        0    16    0  100  1.883
+conventional-changelog/commitlint        T   300   96.0  288        0    12    2  190  2.392
+nestjs/nest                              T   300   53.3  160        0   140    1  160  1.319
+pallets/click                            N   300    3.3   10        2   288    0   29  1.431
+pallets/flask                            N   300    0.0    0        3   297    0   38  1.144
+fastapi/typer                            N   300    0.0    0        0   300    0   84  1.827
+tqdm/tqdm                                N   300   13.0   39       72   189    0  141  1.612
+dateutil/dateutil                        N   300    3.0    9        7   284    0   20  1.266
+jakubroztocil/httpie                     N   300    5.0   15        3   282    0   47  1.030
+psf/requests                             N   300    4.3   13        2   285    0   19  1.252
+numpy/numpy                              N   300    0.0    0      242    58    0  147  0.677
+
+=== C1: compliance ===
+pooled full: 2270/4800 = 47.3%
+per-repo full% mean: 47.3% ± 24.6% (95% t-CI, n=16)
+repos: 16
+
+=== C2: tooling vs no-tooling ===
+tooling     : n_repos=8 mean full% 91.0 ± 12.8 | pooled 2184/2400 = 91.0%
+no-tooling  : n_repos=8 mean full% 3.6 ± 3.6 | pooled 86/2400 = 3.6%
+Welch t=15.50 df=8.1 p=0.0000
+pooled odds ratio (tooling vs no-tooling) = 272.06
+
+=== C3: compliance vs release-cadence regularity ===
+Spearman rho(full%, CV) = 0.639 (n=16 repos with >=4 releases)
+  commitizen/cz-cli                        full%=  94.3  CV=1.767
+  semantic-release/semantic-release        full%=  96.7  CV=1.723
+  conventional-changelog/conventional-changelog full%= 100.0  CV=3.425
+  googleapis/release-please                full%=  98.7  CV=1.561
+  googleapis/google-cloud-python           full%=  94.3  CV=5.588
+  google/zx                                full%=  94.7  CV=1.883
+  conventional-changelog/commitlint        full%=  96.0  CV=2.392
+  nestjs/nest                              full%=  53.3  CV=1.319
+  pallets/click                            full%=   3.3  CV=1.431
+  pallets/flask                            full%=   0.0  CV=1.144
+  fastapi/typer                            full%=   0.0  CV=1.827
+  tqdm/tqdm                                full%=  13.0  CV=1.612
+  dateutil/dateutil                        full%=   3.0  CV=1.266
+  jakubroztocil/httpie                     full%=   5.0  CV=1.030
+  psf/requests                             full%=   4.3  CV=1.252
+  numpy/numpy                              full%=   0.0  CV=0.677
+
+=== tier decomposition (pooled) ===
+full 2270 (47.3%) | partial 351 (7.3%) | non 2179 (45.4%)
