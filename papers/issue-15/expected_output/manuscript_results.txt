@@ -1,0 +1,64 @@
+=== per-repo ===
+repo                                     grp    n  full% full  partial   non  brk  mrg  rel     CV
+commitizen/cz-cli                        T   300   94.3  283        2    15    3    2   76  1.767
+semantic-release/semantic-release        T   300   96.7  290        0    10    0    7  456  1.723
+conventional-changelog/conventional-changelog T   300  100.0  300        0     0   17    0  248  3.425
+googleapis/release-please                T   300   98.7  296        4     0    2    0  366  1.561
+conventional-changelog/commitlint        T   300   96.0  288        0    12    2    0  190  2.392
+googleapis/google-cloud-python           T   300   94.3  283       14     3    1    0 5839  5.588
+google/zx                                T   300   94.7  284        0    16    0    5  100  1.883
+nestjs/nest                              T   300   53.3  160        0   140    1  137  160  1.319
+element-plus/element-plus                T   300   98.0  294        6     0    0    0  248  0.720
+pnpm/pnpm                                T   300   99.3  298        0     2    2    0 1159  0.965
+google/blockly                           T   300   92.3  277       10    13    2    3  118  1.039
+pallets/click                            N   300    3.3   10        2   288    0   21   29  1.431
+pallets/flask                            N   300    0.0    0        3   297    0   40   38  1.144
+fastapi/typer                            N   300    0.0    0        0   300    0    0   84  1.827
+tqdm/tqdm                                N   300   13.0   39       72   189    0   23  141  1.612
+dateutil/dateutil                        N   300    3.0    9        7   284    0   90   20  1.266
+jakubroztocil/httpie                     N   300    5.0   15        3   282    0    0   47  1.030
+psf/requests                             N   300    4.3   13        2   285    0   70   19  1.252
+numpy/numpy                              N   300    0.0    0      242    58    0   42  147  0.677
+
+=== C1: compliance ===
+pooled full: 3139/5700 = 55.1%
+per-repo full% mean: 55.1% ± 22.3% (95% t-CI, n=19)
+repos: 19
+
+=== C2: tooling vs no-tooling ===
+tooling     : n_repos=11 mean full% 92.5 ± 8.9 | pooled 3053/3300 = 92.5%
+no-tooling  : n_repos=8 mean full% 3.6 ± 3.6 | pooled 86/2400 = 3.6%
+Welch t=20.85 df=12.8 p=0.0000
+pooled odds ratio (tooling vs no-tooling) = 332.58
+tooling non-vendor subgroup: n_repos=6 mean full% 88.7 ± 18.4
+  repos: googleapis/google-cloud-python, google/zx, nestjs/nest, element-plus/element-plus, pnpm/pnpm, google/blockly
+median releases: tooling=248 no-tooling=47
+
+=== C3: compliance vs release-cadence regularity ===
+Spearman rho(full%, CV) = 0.279 (n=19 repos with >=4 releases)
+  within-group tooling-present: rho=-0.036 (n=11)
+  within-group no-tooling: rho=0.146 (n=8)
+  commitizen/cz-cli                        full%=  94.3  CV=1.767
+  semantic-release/semantic-release        full%=  96.7  CV=1.723
+  conventional-changelog/conventional-changelog full%= 100.0  CV=3.425
+  googleapis/release-please                full%=  98.7  CV=1.561
+  conventional-changelog/commitlint        full%=  96.0  CV=2.392
+  googleapis/google-cloud-python           full%=  94.3  CV=5.588
+  google/zx                                full%=  94.7  CV=1.883
+  nestjs/nest                              full%=  53.3  CV=1.319
+  element-plus/element-plus                full%=  98.0  CV=0.720
+  pnpm/pnpm                                full%=  99.3  CV=0.965
+  google/blockly                           full%=  92.3  CV=1.039
+  pallets/click                            full%=   3.3  CV=1.431
+  pallets/flask                            full%=   0.0  CV=1.144
+  fastapi/typer                            full%=   0.0  CV=1.827
+  tqdm/tqdm                                full%=  13.0  CV=1.612
+  dateutil/dateutil                        full%=   3.0  CV=1.266
+  jakubroztocil/httpie                     full%=   5.0  CV=1.030
+  psf/requests                             full%=   4.3  CV=1.252
+  numpy/numpy                              full%=   0.0  CV=0.677
+
+=== tier decomposition (pooled) ===
+full 3139 (55.1%) | partial 367 (6.4%) | non 2194 (38.5%)
+
+merge commits: 440/5700 (7.7%) — full% excluding merges: 59.7%
