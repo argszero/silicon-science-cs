@@ -6,14 +6,14 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-OK=1
+FAILED=0
 python3 reproduce.py > .out_discovery.txt
 if diff -q expected_output/discovery_results.txt .out_discovery.txt >/dev/null; then
     echo "OK: discovery_results byte-identical"
 else
     echo "FAIL: discovery_results deviates" >&2
     diff expected_output/discovery_results.txt .out_discovery.txt | head -20 >&2
-    OK=0
+    FAILED=1
 fi
 python3 c3_classify.py > .out_c3.txt
 if diff -q expected_output/c3_results.txt .out_c3.txt >/dev/null; then
@@ -21,7 +21,7 @@ if diff -q expected_output/c3_results.txt .out_c3.txt >/dev/null; then
 else
     echo "FAIL: c3_results deviates" >&2
     diff expected_output/c3_results.txt .out_c3.txt | head -20 >&2
-    OK=0
+    FAILED=1
 fi
 rm -f .out_discovery.txt .out_c3.txt
-exit $OK
+exit $FAILED
