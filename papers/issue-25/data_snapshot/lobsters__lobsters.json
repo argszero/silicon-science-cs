@@ -1,0 +1,106 @@
+{
+ "default_branch": "main",
+ "migration_dirs": [
+  "db/migrate"
+ ],
+ "migration_files": [
+  "db/migrate/20250818182728_add_fts_tables.rb",
+  "db/migrate/20250818183847_add_nocase_collation_to_username.rb",
+  "db/migrate/20251214043426_messages_short_id_non_nullable_and_default_value.rb",
+  "db/migrate/20251214222742_add_unique_indexes_to_links.rb",
+  "db/migrate/20251216152019_add_usernames_user_id_fk_constraint_and_index.rb",
+  "db/migrate/20251216222804_add_null_constraint_to_keystores_id.rb",
+  "db/migrate/20251217035703_add_on_delete_nullify_cascade_to_stories_merged_story_id.rb",
+  "db/migrate/20251217042744_remove_mod_activities_on_item_index.rb",
+  "db/migrate/20260128183915_add_nocase_collation_to_category_and_tag.rb",
+  "db/migrate/20260216202600_clean_up_null_bytes.rb",
+  "db/migrate/20260219183300_create_system_user.rb",
+  "db/migrate/20260602222249_add_index_to_stories_merged_story_id_and_hotness.rb",
+  "db/migrate/20260613002038_add_quorum_to_tags.rb",
+  "db/migrate/20260613004304_add_created_at_to_suggested_tagging.rb",
+  "db/migrate/20260814181241_rename_idle_queue.rb"
+ ],
+ "n_migration_files": 15,
+ "repo": "lobsters/lobsters",
+ "root_markers": [
+  "rails"
+ ],
+ "sampled": [
+  {
+   "content": "# If you are reading this file because Rails complains that there isn't a\n# version on this migration, stop.\n#\n# Create your database with `rails db:schema:load`, not by running all these.\n# We have migrations to migrate live databases, not create them, and we do not\n# want a PR to 'fix' migrations.\nclass AddFtsTables < ActiveRecord::Migration[8.0]\n  def change\n    # create preferred contentless-delete tables as described in:\n    # https://www.sqlite.org/fts5.html#contentless_delete_tables\n    create_virtual_table :comments_fts, :fts5, [\"comment\", \"content=''\", \"contentless_delete=1\"]\n    create_virtual_table :story_texts_fts, :fts5, [\"title\", \"description\", \"body\", \"content=''\", \"contentless_delete=1\"]\n  end\nend\n",
+   "path": "db/migrate/20250818182728_add_fts_tables.rb",
+   "size": 723
+  },
+  {
+   "content": "class AddNocaseCollationToUsername < ActiveRecord::Migration[8.0]\n  def up\n    change_column :users, :username, :string, limit: 50, collation: \"NOCASE\"\n  end\n\n  def down\n    raise ActiveRecord::IrreversibleMigration\n  end\nend\n",
+   "path": "db/migrate/20250818183847_add_nocase_collation_to_username.rb",
+   "size": 226
+  },
+  {
+   "content": "class MessagesShortIdNonNullableAndDefaultValue < ActiveRecord::Migration[8.0]\n  def change\n    if Message.where(short_id: nil).exists?\n      raise \"One or more Messages with a nil short_id exist.\"\n    end\n\n    change_column_null :messages, :short_id, false\n    change_column_default :messages, :short_id, from: nil, to: \"\"\n  end\nend\n",
+   "path": "db/migrate/20251214043426_messages_short_id_non_nullable_and_default_value.rb",
+   "size": 334
+  },
+  {
+   "content": "class AddUniqueIndexesToLinks < ActiveRecord::Migration[8.0]\n  INDEXES_PARAMS = [\n    [:links, [:url, :from_story_id, :from_comment_id], {unique: true, name: \"index_links_on_url_and_from_story_id_and_from_comment_id\"}],\n    [:links, [:to_comment_id, :from_story_id, :from_comment_id], {unique: true, name: \"idx_links_on_to_comment_id_and_from_story_id_and_from_comment_id\"}],\n    [:links, [:to_story_id, :from_story_id, :from_comment_id], {unique: true, name: \"index_links_on_to_story_id_and_from_story_id_and_from_comment_id\"}]\n  ]\n\n  def up\n    INDEXES_PARAMS.each do |table, columns, options|\n      unless index_exists?(table, columns)\n        add_index(table, columns, **options)\n      end\n    end\n\n    remove_index :links, column: :to_comment_id if index_exists?(:links, :to_comment_id)\n    remove_index :links, column: :to_story_id if index_exists?(:links, :to_story_id)\n  end\n\n  def down\n    add_index :links, :to_comment_id unless index_exists?(:links, :to_comment_id)\n    add_index :links, :to_story_id unless index_exists?(:links, :to_story_id)\n\n    INDEXES_PARAMS.each do |table, columns, options|\n      if index_exists?(table, columns)\n        remove_index(table, columns)\n      end\n    end\n  end\nend\n",
+   "path": "db/migrate/20251214222742_add_unique_indexes_to_links.rb",
+   "size": 1213
+  },
+  {
+   "content": "class AddUsernamesUserIdFkConstraintAndIndex < ActiveRecord::Migration[8.0]\n  def up\n    unless foreign_key_exists?(:usernames, column: :user_id)\n      change_column :usernames, :user_id, :bigint, unsigned: true\n      add_foreign_key :usernames, :users, column: :user_id\n    end\n\n    unless index_exists?(:usernames, :user_id)\n      add_index :usernames, :user_id, name: \"index_usernames_user_id\"\n    end\n  end\n\n  def down\n    if index_exists?(:usernames, :user_id, name: \"index_usernames_user_id\")\n      remove_index :usernames, :user_id, name: \"index_usernames_user_id\"\n    end\n\n    if foreign_key_exists?(:usernames, column: :user_id)\n      remove_foreign_key :usernames, column: :user_id\n      change_column :usernames, :user_id, :bigint, unsigned: false\n    end\n  end\nend\n",
+   "path": "db/migrate/20251216152019_add_usernames_user_id_fk_constraint_and_index.rb",
+   "size": 777
+  },
+  {
+   "content": "class AddNullConstraintToKeystoresId < ActiveRecord::Migration[8.0]\n  def change\n    change_column_null :keystores, :id, false\n  end\nend\n",
+   "path": "db/migrate/20251216222804_add_null_constraint_to_keystores_id.rb",
+   "size": 137
+  },
+  {
+   "content": "class AddOnDeleteNullifyCascadeToStoriesMergedStoryId < ActiveRecord::Migration[8.0]\n  def change\n    remove_foreign_key :stories, :stories, column: :merged_story_id, name: \"stories_merged_story_id_fk\"\n\n    add_foreign_key :stories, :stories,\n      column: :merged_story_id,\n      name: \"stories_merged_story_id_fk\",\n      on_delete: :nullify\n  end\nend\n",
+   "path": "db/migrate/20251217035703_add_on_delete_nullify_cascade_to_stories_merged_story_id.rb",
+   "size": 353
+  },
+  {
+   "content": "# Removes an index that is redundant with another index on the same columns.\nclass RemoveModActivitiesOnItemIndex < ActiveRecord::Migration[8.0]\n  def up\n    if index_exists?(:mod_activities, [:item_type, :item_id], name: \"index_mod_activities_on_item\")\n      remove_index :mod_activities, name: \"index_mod_activities_on_item\"\n    end\n  end\n\n  def down\n    unless index_exists?(:mod_activities, [:item_type, :item_id], name: \"index_mod_activities_on_item\")\n      add_index :mod_activities, [:item_type, :item_id], name: \"index_mod_activities_on_item\"\n    end\n  end\nend\n",
+   "path": "db/migrate/20251217042744_remove_mod_activities_on_item_index.rb",
+   "size": 569
+  },
+  {
+   "content": "class AddNocaseCollationToCategoryAndTag < ActiveRecord::Migration[8.0]\n  def up\n    change_column :categories, :category, :string, limit: 25, null: false, collation: \"NOCASE\"\n    change_column :tags, :tag, :string, limit: 25, null: false, collation: \"NOCASE\"\n  end\n\n  def down\n    raise ActiveRecord::IrreversibleMigration\n  end\nend\n",
+   "path": "db/migrate/20260128183915_add_nocase_collation_to_category_and_tag.rb",
+   "size": 334
+  },
+  {
+   "content": "class CleanUpNullBytes < ActiveRecord::Migration[8.0]\n  def change\n    # sqlite doesn't accept NULL bytes in string/text columns; we have 2 comments and 1 story_text\n    # that quoted material with a null byte, so I'm going to prep for #1871 by removing those\n    # individual bytes\n\n    admin = User.where(is_admin: true).first\n\n    Comment.where(\"comment like '%\\0%'\").find_each do |comment|\n      comment.comment.delete(\"\\0\")\n      comment.save!\n\n      Moderation.create!({\n        comment: comment,\n        moderator: admin,\n        action: \"deleted null byte\",\n        reason: \"pasted material had a null byte; removing as prep for PR #1871\"\n      })\n    end\n\n    StoryText.where(\"body like '%\\0%'\").find_each do |st|\n      st.body.delete(\"\\0\")\n      st.save!\n\n      Moderation.create!({\n        story_id: st.id,\n        moderator: admin,\n        action: \"deleted null byte\",\n        reason: \"pasted material had a null byte; removing as prep for PR #1871\"\n      })\n    end\n  end\nend\n",
+   "path": "db/migrate/20260216202600_clean_up_null_bytes.rb",
+   "size": 989
+  },
+  {
+   "content": "class CreateSystemUser < ActiveRecord::Migration[8.0]\n  def up\n    User.create!(username: \"System\", email: \"system@#{Rails.application.domain}\", password: \"test\", about: \"This is an account for messages from the system.\")\n  end\n\n  def down\n    User.where(username: \"System\").destroy_all\n  end\nend\n",
+   "path": "db/migrate/20260219183300_create_system_user.rb",
+   "size": 297
+  },
+  {
+   "content": "class AddIndexToStoriesMergedStoryIdAndHotness < ActiveRecord::Migration[8.0]\n  def change\n    # takes the home#index story load query from half a second to less than a millisecond in development\n    add_index :stories, [:merged_story_id, :hotness]\n\n    # above index covers this index\n    remove_index :stories, :merged_story_id\n  end\nend\n",
+   "path": "db/migrate/20260602222249_add_index_to_stories_merged_story_id_and_hotness.rb",
+   "size": 340
+  },
+  {
+   "content": "class AddQuorumToTags < ActiveRecord::Migration[8.0]\n  def change\n    add_column :tags, :quorum, :integer, default: 2\n  end\nend\n",
+   "path": "db/migrate/20260613002038_add_quorum_to_tags.rb",
+   "size": 128
+  },
+  {
+   "content": "class AddCreatedAtToSuggestedTagging < ActiveRecord::Migration[8.0]\n  def change\n    add_timestamps :suggested_taggings, null: true\n  end\nend\n",
+   "path": "db/migrate/20260613004304_add_created_at_to_suggested_tagging.rb",
+   "size": 142
+  },
+  {
+   "content": "class RenameIdleQueue < ActiveRecord::Migration[8.0]\n  def up\n    SolidQueue::Queue.find_by_name(\"idle\").clear\n    SolidQueue::ScheduledExecution.where(queue_name: \"idle\").discard_all_in_batches\n  end\n\n  def down\n  end\nend\n",
+   "path": "db/migrate/20260814181241_rename_idle_queue.rb",
+   "size": 223
+  }
+ ],
+ "truncated": false
+}
