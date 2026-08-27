@@ -47,13 +47,37 @@ SNAP_DIR = os.path.join(BASE, "data_snapshot")
 COMMITS_PER_REPO = 300          # 3 pages x 100
 RELEASES_CAP = 100              # releases enumerated per repo (newest first)
 
-SIG_ASSET_RE = (
-    r"\.asc$", r"\.sig$", r"\.minisig$", r"\.sigstore$", r"\.bundle$",
-    r"shasum",          # shasums*.txt / SHASUMS256.txt patterns
-)
-# .asc = GPG detached; .sig = generic detached; .minisig = minisign;
-# .sigstore = sigstore bundle; .bundle = sigstore verification bundle;
-# SHASUMS* = checksum list (paired with .sig to count as signed)
+# Mirror/upstream-fed repositories: their GitHub commit history is pushed from a
+# canonical upstream elsewhere (mirror channel), so GitHub's verification verdict
+# reflects the mirror channel, not an on-GitHub signing policy. Per-repo basis,
+# confirmed at snapshot time 2026-08-27:
+#   git/git        — self-description: "Git Source Code Mirror - publish-only"
+#   golang/go      — canonical upstream go.googlesource.com (Gerrit)
+#   torvalds/linux — canonical upstream kernel.org
+#   openssl/openssl — canonical upstream openssl.org/git
+MIRROR_REPOS = {"git/git", "golang/go", "torvalds/linux", "openssl/openssl"}
+
+# Ecosystem stratum for the C2 per-ecosystem breakdown (mirrors CORPUS grouping)
+ECOSYSTEM = {
+    "react/react": "JS/TS", "microsoft/vscode": "JS/TS", "vuejs/vue": "JS/TS",
+    "angular/angular": "JS/TS", "sveltejs/svelte": "JS/TS",
+    "mui/material-ui": "JS/TS", "facebook/react-native": "JS/TS",
+    "python/cpython": "Python", "django/django": "Python",
+    "pallets/flask": "Python", "pandas-dev/pandas": "Python",
+    "huggingface/transformers": "Python", "numpy/numpy": "Python",
+    "kubernetes/kubernetes": "Go", "golang/go": "Go", "gin-gonic/gin": "Go",
+    "ollama/ollama": "Go", "hashicorp/terraform": "Go",
+    "rust-lang/rust": "Rust", "tokio-rs/tokio": "Rust",
+    "BurntSushi/ripgrep": "Rust", "serde-rs/serde": "Rust",
+    "torvalds/linux": "C/C++", "git/git": "C/C++", "openssl/openssl": "C/C++",
+    "curl/curl": "C/C++", "tensorflow/tensorflow": "C/C++",
+    "google/googletest": "C/C++", "redis/redis": "C/C++", "neovim/neovim": "C/C++",
+    "apache/spark": "Java/Scala", "spring-projects/spring-boot": "Java/Scala",
+    "elastic/elasticsearch": "Java/Scala",
+    "rails/rails": "Ruby", "Homebrew/brew": "Ruby", "jekyll/jekyll": "Ruby",
+    "laravel/laravel": "PHP", "composer/composer": "PHP", "symfony/symfony": "PHP",
+    "flutter/flutter": "Dart", "nodejs/node": "C++",
+}
 
 
 def armor_kind(signature: str) -> str:
@@ -234,6 +258,19 @@ def wilson_ci(k, n, z=1.96):
     return max(0.0, centre - half), min(1.0, centre + half)
 
 
+def woolf_or_ci(a, b, c, d, z=1.96):
+    """Woolf (logit) approximate 95% CI for the odds ratio of [[a,b],[c,d]].
+
+    Labels the approximation; small-cell margins make the normal approximation
+    coarse, which is itself part of the power limitation we report.
+    """
+    if b == 0 or c == 0 or a == 0 or d == 0:
+        return 0.0, float("inf")
+    lor = math.log((a * d) / (b * c))
+    se = math.sqrt(1 / a + 1 / b + 1 / c + 1 / d)
+    return math.exp(lor - z * se), math.exp(lor + z * se)
+
+
 def stats(snaps):
     n = len(snaps)
     rows = []
@@ -296,6 +333,15 @@ def main():
                f"({len(absent_repos)/n:.1%}, Wilson95 "
                f"{wilson_ci(len(absent_repos), n)[0]:.1%}-{wilson_ci(len(absent_repos), n)[1]:.1%}), "
                f"mean share {sum(r['share'] for r in absent_repos)/len(absent_repos):.3f}")
+    mirror_absent = [r["repo"] for r in absent_repos if r["repo"] in MIRROR_REPOS]
+    nonmirror_absent = [r["repo"] for r in absent_repos if r["repo"] not in MIRROR_REPOS]
+    out.append(f"  absent-cluster mirror-origin repos (GitHub history via mirror/"
+               f"upstream channel): {len(mirror_absent)} — {', '.join(mirror_absent)}")
+    if nonmirror_absent:
+        nm = [r for r in absent_repos if r["repo"] not in MIRROR_REPOS]
+        nm_mean = sum(r["share"] for r in nm) / len(nm)
+        out.append(f"  absent-cluster non-mirror repos: {len(nonmirror_absent)} "
+                   f"({', '.join(nonmirror_absent)}) | mean share {nm_mean:.3f}")
     out.append(f"  middle (10-90%): {len(mid_repos)} repos")
     reasons_total = collections.Counter()
     kinds_total = collections.Counter()
@@ -348,6 +394,21 @@ def main():
     out.append(f"  repos with zero GitHub releases: {len(no_releases)}")
     out.append(f"  signing-tool taxonomy (release-tool occurrences): "
                f"{dict(tools_counter.most_common())}")
+    # ---- W3: per-ecosystem release-signing breakdown
+    eco_signed = collections.defaultdict(lambda: [0, 0])  # eco -> [signed, total]
+    for r in rows:
+        eco = ECOSYSTEM.get(r["repo"], "Other")
+        eco_signed[eco][1] += 1
+        if r["any_signed"]:
+            eco_signed[eco][0] += 1
+    out.append("  per-ecosystem signed-repo breakdown (W3):")
+    for eco in sorted(eco_signed):
+        k, tot = eco_signed[eco]
+        out.append(f"    {eco:12s} {k:2d}/{tot:2d} signed"
+                   + (f" ({k/tot:.0%})" if tot else ""))
+    compact = ", ".join(f"{eco} {eco_signed[eco][0]}/{eco_signed[eco][1]}"
+                        for eco in sorted(eco_signed))
+    out.append(f"  signed-by-ecosystem: {compact}")
     out.append("  per-repo release posture:")
     for r in rows:
         st = "SIGNED" if r["any_signed"] else ("NO_ASSETS" if r["rel_total"] > 0 and r["no_assets_rel"] == r["rel_total"] else ("NO_RELEASES" if r["rel_total"] == 0 else "unsigned"))
@@ -369,6 +430,20 @@ def main():
     out.append(f"    commit-absent  + signed: {c_:2d}")
     out.append(f"    commit-absent  - signed: {d_:2d}")
     out.append(f"  Fisher exact p={p:.4f}  OR={or_:.2f} (exact {or_})")
+    or_lo, or_hi = woolf_or_ci(a_, b_, c_, d_)
+    if math.isfinite(or_hi):
+        out.append(f"  OR 95% CI (Woolf/logit approx): {or_lo:.2f}-{or_hi:.2f} "
+                   f"(includes 1; consistent with non-significance)")
+    else:
+        out.append("  OR 95% CI (Woolf/logit approx): undefined (zero margin cell)")
+    out.append("  power note: margins (3,13,1,24) — severely underpowered; "
+               "a significant association is undetectable at n=41")
+    # mirror-origin caveat for the openssl cell
+    if any(r["repo"] == "openssl/openssl" and r["any_signed"] for r in rows):
+        out.append("  caveat: the commit-absent+signed cell is openssl/openssl — "
+                   "a mirror-origin repo (GitHub history via openssl.org upstream); "
+                   "its release signing is real, its commit posture is not observable "
+                   "on the GitHub mirror channel")
     out.append("")
     out.append("canonical-run key: every number above derives from data_snapshot/ "
                "via deterministic classification.")
