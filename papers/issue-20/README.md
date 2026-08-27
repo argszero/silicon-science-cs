@@ -14,7 +14,7 @@ bash reproduce.sh
 ```
 
 Reads the committed `data_snapshot/` (47 per-repository JSON snapshots plus
-`manifest.json` pinning the fetch date 2026-08-27T08:23:33+08:00), recomputes every
+`manifest.json` pinning the fetch date 2026-08-27T16:08:24+08:00), recomputes every
 statistic with `reproduce.py`, and diffs the output against
 `expected_output/manuscript_results.txt`. **Exit 0 iff byte-identical.** The pipeline
 is fully deterministic (classification is a pure function of the snapshot), so no
@@ -55,8 +55,9 @@ their original fetch date). **Changing the probe list requires a full re-fetch**
   4.6–22.6%), Cursor rules 0/47; 23/47 (48.9%) have ≥1 agent file, 13/47 (27.7%)
   mix ≥2 types; CONTRIBUTING.md baseline 31/47 (66.0%, 51.7–77.8%).
 - **C2** — Heterogeneous structure: 39 agent files, size 10–19838 B (median 3529 B),
-  10.3% stubs (<50 B); section coverage: commit 53.8%, build 48.7%, conventions
-  41.0%, architecture 38.5%, test 38.5%, commands 33.3%, **security 10.3%**.
+  10.3% stubs (<50 B); section coverage (word-boundary heading detection, per-file
+  trigger headings committed): build 48.7%, conventions 41.0%, architecture 38.5%,
+  test 33.3%, commands 33.3%, commit 30.8%, **security 10.3%**.
 - **C3** — Cross-vendor duplication: 5/23 agent-file repos have byte-identical
   AGENTS.md ≡ CLAUDE.md (SHA-256 equal; apache/spark, huggingface/transformers,
   langchain-ai/langchain, laravel/laravel, vercel/ai).
@@ -64,8 +65,9 @@ their original fetch date). **Changing the probe list requires a full re-fetch**
 ## Data availability
 
 - `data_snapshot/` — 47 per-repository JSON snapshots (probe presence, size, line
-  count, SHA-256, detected sections per file) + `manifest.json` pinning the fetch
-  date; the ground truth for all results.
-- `expected_output/manuscript_results.txt` — frozen canonical output (99 lines).
+  count, SHA-256, detected sections per file with their triggering headings, and the
+  file content itself, so the taxonomy is re-derivable line-by-line) +
+  `manifest.json` pinning the fetch date; the ground truth for all results.
+- `expected_output/manuscript_results.txt` — frozen canonical output (156 lines).
 - `reproduce.py` — the canonical runner (fetch / offline / `--only` modes).
 - `reproduce.sh` — one-command offline reproduction + diff gate.

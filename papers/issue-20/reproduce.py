@@ -1,13 +1,25 @@
 #!/usr/bin/env python3
-"""reproduce.py — Issue #20 canonical runner.
+"""reproduce.py — Issue #20 canonical runner (revision round 1).
 
 Coding-Agent Instruction Files in Popular Open-Source Repositories:
   C1. adoption of agent-instruction files (AGENTS.md / CLAUDE.md /
       .github/copilot-instructions.md / .cursorrules / .cursor/rules/*)
-      + naming fragmentation
+      + naming fragmentation + per-ecosystem breakdown
   C2. content-structure heterogeneity (size, stub rate, markdown section
       presence: build/test/architecture/conventions/security/...)
   C3. cross-file duplication (SHA-256 identity of co-existing files)
+
+Revision-round-1 changes (responding to review emrg-fe7d5b07):
+  1. Section detection now uses WORD-BOUNDARY token matching instead of
+     substring matching — "pr" no longer matches "Prohibited"/"Preferences"/
+     "Pre-flight"/"Project"; "check" no longer matches "checklist".
+     Exact semantics: headings are normalized (lowercase, non-alphanumeric
+     runs -> single space) and each canonical section matches a fixed list
+     of regex patterns anchored with \\b.
+  2. Each snapshot file records `triggers`: for every detected section, the
+     heading text that fired it — the taxonomy itself is now reproducible.
+  3. C1 gains a per-ecosystem table and an AI-native-vs-popular contrast.
+  4. C3 states the exact comparison scope (agent files only, same-repo).
 
 Modes:
   reproduce.py fetch          — pull fresh data via gh api into data_snapshot/
@@ -48,6 +60,29 @@ CORPUS = [
     "langchain-ai/langchain", "microsoft/autogen", "vercel/ai",
 ]
 
+# Ecosystem map — mirrors the corpus grouping in README / manuscript §3.1.
+ECOSYSTEM = {
+    "JS/TS": ["react/react", "microsoft/vscode", "vuejs/vue", "angular/angular",
+              "sveltejs/svelte", "mui/material-ui", "facebook/react-native"],
+    "Python": ["python/cpython", "django/django", "pallets/flask",
+               "pandas-dev/pandas", "huggingface/transformers", "numpy/numpy"],
+    "Go": ["kubernetes/kubernetes", "golang/go", "gin-gonic/gin",
+           "ollama/ollama", "hashicorp/terraform"],
+    "Rust": ["rust-lang/rust", "tokio-rs/tokio", "BurntSushi/ripgrep",
+             "serde-rs/serde"],
+    "C/C++": ["torvalds/linux", "git/git", "openssl/openssl", "curl/curl",
+              "tensorflow/tensorflow", "google/googletest", "redis/redis",
+              "neovim/neovim"],
+    "Java/Scala": ["apache/spark", "spring-projects/spring-boot",
+                   "elastic/elasticsearch"],
+    "Ruby": ["rails/rails", "Homebrew/brew", "jekyll/jekyll"],
+    "PHP": ["laravel/laravel", "composer/composer", "symfony/symfony"],
+    "Dart/C++": ["flutter/flutter", "nodejs/node"],
+    "AI-native": ["opencode-ai/opencode", "Aider-AI/aider", "cline/cline",
+                  "langchain-ai/langchain", "microsoft/autogen", "vercel/ai"],
+}
+REPO_ECOSYSTEM = {r: e for e, rs in ECOSYSTEM.items() for r in rs}
+
 # Exact-path probes (root + common nested locations)
 PROBE_PATHS = [
     "AGENTS.md", "CLAUDE.md", ".github/copilot-instructions.md",
@@ -60,16 +95,51 @@ DIR_PROBES = [
     (".cursor/rules", "cursor_rules"),
 ]
 
-# Markdown heading section detection: keyword -> canonical section name
-SECTION_KEYWORDS = {
-    "build": ("build", "compile", "setup", "install", "getting started", "run"),
-    "test": ("test", "testing", "lint", "linting", "check"),
-    "architecture": ("architecture", "structure", "design", "overview", "codebase"),
-    "conventions": ("convention", "style", "guideline", "best practice", "naming"),
-    "security": ("security", "vulnerab", "threat"),
-    "commit": ("commit", "pull request", "pr", "conventional"),
-    "commands": ("command", "cli", "terminal", "usage"),
+# Canonical section -> word-boundary-anchored regex patterns.
+# Semantics (documented in manuscript §3.3):
+#   * headings are normalized: lowercase; every run of non-alphanumeric
+#     characters becomes a single space (so "Getting-Started" == "Getting Started")
+#   * a heading fires a canonical section iff it matches ANY of the section's
+#     patterns; patterns are anchored at word boundaries (\\b)
+#   * the first firing heading per canonical section per file is recorded as
+#     that section's `trigger`
+# This replaces the substring matching used in round 0, which produced false
+# positives ("pr" matched "Prohibited", "Preferences", "Pre-flight", "Project";
+# "check" matched "checklist").
+SECTION_RULES = {
+    "build": [
+        r"\bbuild(?:s|ing)?\b", r"\bcompil(?:e|es|ing|er|ers|ation)?\b",
+        r"\bsetup\b", r"\binstall(?:s|ing|ed|ation)?\b",
+        r"\bgetting started\b", r"\brun(?:s|ning)?\b",
+        r"\bbuild from source\b",
+    ],
+    "test": [
+        r"\btest(?:s|ing|ed|able|er|ers)?\b", r"\blint(?:s|ing|ed)?\b",
+        r"\bc[íi] tests?\b", r"\btest commands?\b",
+    ],
+    "architecture": [
+        r"\barchitectur(?:e|es|al)?\b", r"\bstructur(?:e|es|al|ing)?\b",
+        r"\bdesign(?:s|ing)?\b", r"\boverview\b", r"\bcodebase\b",
+    ],
+    "conventions": [
+        r"\bconventions?\b", r"\bstyles?\b", r"\bstyling\b",
+        r"\bguidelines?\b", r"\bbest practices?\b", r"\bnaming\b",
+    ],
+    "security": [
+        r"\bsecurity\b", r"\bvulnerab(?:le|ility|ilities)?\b",
+        r"\bthreats?\b",
+    ],
+    "commit": [
+        r"\bcommit(?:s|ted|ting)?\b", r"\bpull requests?\b", r"\bprs?\b",
+        r"\bconventional commits?\b",
+    ],
+    "commands": [
+        r"\bcommands?\b", r"\bcli\b", r"\bterminals?\b", r"\busage\b",
+    ],
 }
+# Precompile once.
+SECTION_PATTERNS = {c: [re.compile(p, re.IGNORECASE) for p in pats]
+                    for c, pats in SECTION_RULES.items()}
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 SNAP_DIR = os.path.join(BASE, "data_snapshot")
@@ -84,25 +154,39 @@ def gh_json(url):
     return json.loads(out.stdout)
 
 
-def detect_sections(content: str) -> list:
-    """Deterministic markdown-heading -> section keyword detection."""
+def _normalize_heading(title: str) -> str:
+    """Lowercase; collapse every non-alphanumeric run to a single space."""
+    return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+
+
+def detect_sections(content: str):
+    """Deterministic markdown-heading -> section detection.
+
+    Returns (sections, triggers): sections is a sorted list of canonical
+    section names; triggers maps each canonical section to the heading text
+    that first fired it (normalized).
+    """
     found = []
+    triggers = {}
     for line in content.splitlines():
         m = re.match(r"^\s{0,3}#{1,4}\s+(.+)$", line)
         if not m:
             continue
-        title = m.group(1).lower()
-        for canon, kws in SECTION_KEYWORDS.items():
+        heading = _normalize_heading(m.group(1))
+        if not heading:
+            continue
+        for canon in SECTION_RULES:  # dict order = stable tie-break
             if canon in found:
                 continue
-            if any(k in title for k in kws):
+            if any(p.search(heading) for p in SECTION_PATTERNS[canon]):
                 found.append(canon)
+                triggers[canon] = heading
                 break
-    return sorted(found)
+    return sorted(found), triggers
 
 
 def fetch_repo(repo: str) -> dict:
-    files = {}      # probe_label -> {size, lines, sha256, sections, preview}
+    files = {}      # probe_label -> {size, lines, sha256, sections, triggers}
     dirs = {}       # dir_label -> [matched filenames]
     errors = []
     for path in PROBE_PATHS:
@@ -117,11 +201,14 @@ def fetch_repo(repo: str) -> dict:
                 "utf-8", errors="replace")
             if len(content) > MAX_BYTES:
                 content = content[:MAX_BYTES]
+            sections, triggers = detect_sections(content)
             files[label] = {
                 "size": len(content.encode("utf-8")),
                 "lines": content.count("\n") + (0 if content.endswith("\n") else 1),
                 "sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
-                "sections": detect_sections(content),
+                "sections": sections,
+                "triggers": triggers,
+                "content": content,  # committed so the taxonomy is re-derivable
             }
         except RuntimeError as e:
             if "404" in str(e):
@@ -260,6 +347,38 @@ def main():
     if no_agent:
         out.append("    no-agent repos: " + ", ".join(no_agent))
 
+    # ---- C1 by ecosystem (AGENTS.md + any-agent-file + dup-pair counts)
+    out.append("  C1 by ecosystem (AGENTS.md / CLAUDE.md / >=1 agent file / "
+               "byte-identical pairs):")
+    for eco in sorted(ECOSYSTEM):
+        repos = ECOSYSTEM[eco]
+        hmap = {r: h for r, h, _ in per_repo if r in set(repos)}
+        if not hmap:
+            continue
+        ka = sum(1 for r, h in hmap.items() if h["agents"])
+        kc = sum(1 for r, h in hmap.items() if h["claude"])
+        kany = sum(1 for r, h in hmap.items()
+                   if any(h[t] for t in FILE_TYPES + ["cursor_rules"]))
+        out.append(f"    {eco:10s} n={len(repos):2d} AGENTS={ka:2d} "
+                   f"CLAUDE={kc:2d} any={kany:2d}")
+    ai_repos = ECOSYSTEM["AI-native"]
+    ai_any = sum(1 for r in ai_repos if any(h[t] for t in FILE_TYPES + ["cursor_rules"]
+                                            for _, h, _ in [next(p for p in per_repo if p[0] == r)]))
+    ai_ag = sum(1 for r in ai_repos if next(p for p in per_repo if p[0] == r)[1]["agents"])
+    pop_repos = [r for r, _, _ in per_repo if r not in ai_repos]
+    pop_any = len(any_agent) - ai_any
+    pop_ag = sum(1 for r in pop_repos if next(p for p in per_repo if p[0] == r)[1]["agents"])
+    out.append(f"  AI-native vs popular (AGENTS / >=1 agent file): "
+               f"AI-native {ai_ag}/{len(ai_repos)} ({ai_ag/len(ai_repos):.1%}) / "
+               f"{ai_any}/{len(ai_repos)} ({ai_any/len(ai_repos):.1%}) vs "
+               f"popular {pop_ag}/{len(pop_repos)} ({pop_ag/len(pop_repos):.1%}) / "
+               f"{pop_any}/{len(pop_repos)} ({pop_any/len(pop_repos):.1%})")
+    # CONTRIBUTING overlap among agent-file repos (reviewer Q5)
+    agent_with_c = sum(1 for r, h, _ in per_repo
+                       if any(h[t] for t in FILE_TYPES + ["cursor_rules"]) and h["contributing"])
+    out.append(f"  agent-file repos also having CONTRIBUTING.md: "
+               f"{agent_with_c}/{len(any_agent)} ({agent_with_c/len(any_agent):.1%})")
+
     # ---- C2: content structure (agent files only — exclude baseline)
     out.append("")
     out.append("C2 content structure of found agent files (excl. CONTRIBUTING.md):")
@@ -299,6 +418,17 @@ def main():
             for s_, k in sec_counter.most_common():
                 out.append(f"    {s_:14s} {k:3d}/{len(all_files)} ({k/len(all_files):.1%})")
 
+        # ---- section taxonomy with triggering headings (reviewer Q2)
+        out.append("  section taxonomy per agent file (triggering heading "
+                   "normalized, in brackets):")
+        for r, label, m in sorted(all_files, key=lambda x: (x[0], x[1])):
+            if not m["sections"]:
+                out.append(f"    {r:32s} {label:12s} no sections")
+                continue
+            trig = " ".join(f"{s}[{m['triggers'].get(s, '?')}]"
+                            for s in m["sections"])
+            out.append(f"    {r:32s} {label:12s} {trig}")
+
     # ---- C3: duplication (agent files only — exclude baseline)
     out.append("")
     out.append("C3 cross-file duplication (SHA-256 identity within a repo, "
@@ -313,17 +443,27 @@ def main():
             sha_map[meta["sha256"]].append(label)
         dup = {sha: labs for sha, labs in sha_map.items() if len(labs) >= 2}
         if dup:
-            dup_repos.append((r, dup))
+            dup_repos.append((r, dup, agent_fs))
     out.append(f"  repos with >=2 agent files sharing identical content: "
                f"{len(dup_repos)}/{len(any_agent) if any_agent else 1} of agent-file repos")
-    for r, dup in dup_repos:
+    for r, dup, agent_fs in dup_repos:
         for sha, labs in dup.items():
-            out.append(f"    {r}: {', '.join(labs)} (identical SHA {sha[:12]})")
+            size = next(m["size"] for m in agent_fs.values() if m["sha256"] == sha)
+            out.append(f"    {r}: {', '.join(labs)} (identical SHA {sha[:12]}, "
+                       f"{size} B each)")
+    # ecosystem composition of dup pairs (reviewer Q4)
+    if dup_repos:
+        out.append("  ecosystem of duplicated pairs:")
+        for r, dup, _ in dup_repos:
+            out.append(f"    {r} ({REPO_ECOSYSTEM.get(r, '?')})")
+        eco_counter = collections.Counter(REPO_ECOSYSTEM.get(r, "?") for r, _, _ in dup_repos)
+        out.append("  duplicated pairs by ecosystem: "
+                   + ", ".join(f"{e} {c}" for e, c in eco_counter.most_common()))
 
-    # ---- per-repo posture table
+    # ---- per-repo posture table (b = also has CONTRIBUTING.md baseline)
     out.append("")
     out.append("per-repo posture (A=AGENTS, C=CLAUDE, P=copilot-instructions, "
-               "R=cursor/rules, D=docs-agent):")
+               "R=cursor/rules, D=docs-agent, b=CONTRIBUTING.md):")
     for r, h, fs in per_repo:
         marks = ""
         if h["agents"]: marks += "A"
@@ -331,6 +471,7 @@ def main():
         if h["copilot"]: marks += "P"
         if h["cursor_rules"]: marks += "R"
         if h["docs_agents"] or h["docs_claude"]: marks += "D"
+        if h["contributing"]: marks += "b"
         out.append(f"    {marks if marks else '-'}  {r}")
     out.append("")
     out.append("canonical-run key: every number above derives from data_snapshot/ "

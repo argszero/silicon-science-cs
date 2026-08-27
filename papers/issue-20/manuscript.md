@@ -6,7 +6,7 @@
 
 ## Abstract
 
-AI coding agents (Claude Code, Copilot, Codex, Cursor) read repository-level instruction files — `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursorrules` — to learn how to build, test, and contribute to a project. We measure this newly-standardized documentation layer on 47 popular open-source repositories (41 most-starred across ten ecosystems plus 6 AI-native tools) using the GitHub contents API with no cloning. Three falsifiable findings emerge. **(C1)** Adoption is real but fragmented: AGENTS.md appears in 20/47 repositories (42.6%, Wilson95 29.5–56.7%), CLAUDE.md in 12/47 (25.5%, 15.3–39.5%), `.github/copilot-instructions.md` in 5/47 (10.6%, 4.6–22.6%), and Cursor rules in 0/47; 23/47 (48.9%) have at least one agent file, 13/47 (27.7%) mix two or more types, and the traditional CONTRIBUTING.md remains more common (31/47, 66.0%, 51.7–77.8%). **(C2)** Content structure is heterogeneous: across 39 agent files, size ranges 10 B to 19838 B (median 3529 B), 10.3% are stubs under 50 B, and section coverage is partial — commit guidance 53.8%, build 48.7%, conventions 41.0%, architecture 38.5%, test 38.5%, commands 33.3%, and **security only 10.3%**. **(C3)** Cross-vendor duplication is common: in 5/23 agent-file repositories the AGENTS.md and CLAUDE.md are byte-identical (SHA-256 equal; e.g., transformers 3599 B), indicating maintainers copy one file to satisfy multiple agents rather than authoring per-vendor guidance. The measurement is fully reproducible offline via a committed data snapshot and a one-command script.
+AI coding agents (Claude Code, Copilot, Codex, Cursor) read repository-level instruction files — `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursorrules` — to learn how to build, test, and contribute to a project. We measure this newly-standardized documentation layer on 47 popular open-source repositories (41 most-starred across ten ecosystems plus 6 AI-native tools) using the GitHub contents API with no cloning. Three falsifiable findings emerge. **(C1)** Adoption is real but fragmented: AGENTS.md appears in 20/47 repositories (42.6%, Wilson95 29.5–56.7%), CLAUDE.md in 12/47 (25.5%, 15.3–39.5%), `.github/copilot-instructions.md` in 5/47 (10.6%, 4.6–22.6%), and Cursor rules in 0/47; 23/47 (48.9%) have at least one agent file, 13/47 (27.7%) mix two or more types, and the traditional CONTRIBUTING.md remains more common (31/47, 66.0%, 51.7–77.8%). **(C2)** Content structure is heterogeneous: across 39 agent files, size ranges 10 B to 19838 B (median 3529 B), 10.3% are stubs under 50 B, and section coverage is partial — build guidance 48.7%, conventions 41.0%, architecture 38.5%, test 33.3%, commands 33.3%, commit guidance 30.8%, and **security only 10.3%**, measured with word-boundary heading classification whose per-file triggering headings are committed for auditability. **(C3)** Cross-vendor duplication is common: in 5/23 agent-file repositories the AGENTS.md and CLAUDE.md are byte-identical (SHA-256 equal; e.g., transformers 3599 B), indicating maintainers copy one file to satisfy multiple agents rather than authoring per-vendor guidance. The measurement is fully reproducible offline via a committed data snapshot and a one-command script.
 
 ## 1. Introduction
 
@@ -40,11 +40,11 @@ Prior empirical work (Section 2) has built datasets of agent-file *presence/hist
 
 ### 3.2 File probes
 
-For each repository we probe exact paths via the GitHub contents API (no cloning): `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursorrules`, `docs/AGENTS.md`, `docs/CLAUDE.md`, plus `CONTRIBUTING.md` (the traditional contribution-guidance convention, used as a baseline). We also list `.cursor/rules/` (Cursor's rule-directory convention). File bodies are base64-decoded and capped at 64 KB (the API's own limit); sizes and line counts are computed from the decoded content.
+For each repository we probe exact paths via the GitHub contents API (no cloning): `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursorrules`, `docs/AGENTS.md`, `docs/CLAUDE.md`, plus `CONTRIBUTING.md` (the traditional contribution-guidance convention, used as a baseline). We also list `.cursor/rules/` (Cursor's rule-directory convention). File bodies are base64-decoded and capped at 64 KB (the API's own limit); sizes and line counts are computed from the decoded content, and the decoded content is committed in the snapshot so section classification is independently re-derivable.
 
 ### 3.3 Content classification (deterministic)
 
-- **Sections**: markdown headings (`^#{1,4}\s+`) are matched against a fixed keyword map to seven canonical sections: build (build/compile/setup/install/run), test (test/lint/check), architecture (architecture/structure/design/overview/codebase), conventions (convention/style/guideline/best practice/naming), security (security/vulnerab/threat), commit (commit/pull request/pr/conventional), commands (command/cli/terminal/usage).
+- **Sections**: markdown headings (`^#{1,4}\s+`) are normalized (lowercased; every run of non-alphanumeric characters collapsed to a single space, so `Getting-Started` ≡ `Getting Started`) and matched against a fixed word-boundary-anchored regex map to seven canonical sections: build (build/compile/setup/install/run), test (test/lint/CI tests), architecture (architecture/structure/design/overview/codebase), conventions (convention/style/guideline/best practice/naming), security (security/vulnerab/threat), commit (commit/pull request/pr/conventional commits), commands (command/cli/terminal/usage). Matching is at word boundaries only — the round-0 substring matcher produced false positives (`pr` matched `Prohibited`, `Preferences`, `Pre-flight`, `Project`; `check` matched `checklist`) and is replaced. A heading fires at most one canonical section (the first in the fixed rule order), so a combined heading like `Build, Lint, Test` counts once, under `build`; the classification is intentionally conservative and measures *explicit* section headings, not semantic content. For every detected section the **triggering heading** is recorded, and full file content is committed in the snapshot, so the taxonomy is re-derivable line-by-line (verified: recomputing sections/triggers/SHA-256 from committed content reproduces the stored values for every probed file).
 - **Stub**: a file under 50 bytes.
 - **Duplication**: SHA-256 of decoded content; two files in the same repository with equal hashes are byte-identical.
 
@@ -71,6 +71,24 @@ Adoption rates report Wilson 95% score intervals on n=47. All classification is 
 
 The traditional CONTRIBUTING.md (66.0%) remains more common than any single agent convention (AGENTS.md 42.6%), and Cursor rules are entirely absent from the popular tier (0/47) — the `.cursorrules` single-file convention has not diffused into these repositories.
 
+Adoption varies by ecosystem (Table 1). The AI-native stratum — tooling that itself builds coding agents — adopts agent files *more* than the popular tier (≥1 agent file in 4/6, 66.7%, vs 19/41, 46.3%; AGENTS.md 3/6, 50.0%, vs 17/41, 41.5%), which reads as dogfooding of the convention rather than adoption lag. Within the stratum, cline, langchain-ai, microsoft/autogen, and vercel/ai ship agent instruction files; Aider-AI/aider ships none but maintains a CONTRIBUTING.md as its agent-facing guidance, and opencode-ai/opencode ships no guidance file at all. Agent files complement rather than replace the traditional baseline: 19/23 (82.6%) of agent-file repositories also have a CONTRIBUTING.md.
+
+**Table 1. Agent-file adoption by ecosystem (n=47).**
+
+| Ecosystem | n | AGENTS.md | CLAUDE.md | ≥1 agent file |
+|-----------|---|-----------|-----------|---------------|
+| JS/TS | 7 | 5 | 3 | 6 |
+| Python | 6 | 2 | 1 | 3 |
+| Go | 5 | 2 | 1 | 2 |
+| Rust | 4 | 1 | 1 | 1 |
+| C/C++ | 8 | 1 | 0 | 1 |
+| Java/Scala | 3 | 2 | 2 | 2 |
+| Ruby | 3 | 2 | 1 | 2 |
+| PHP | 3 | 1 | 1 | 1 |
+| Dart/C++ | 2 | 1 | 0 | 1 |
+| AI-native | 6 | 3 | 2 | 4 |
+| **Total** | **47** | **20** | **12** | **23** |
+
 ### 4.2 C2 — Content structure is heterogeneous and partial (H2 supported)
 
 Across 39 agent files (excluding the CONTRIBUTING.md baseline), size ranges 10 B to 19838 B (median 3529 B); **4/39 (10.3%) are stubs under 50 B** (e.g., react-native and rust-lang CLAUDE.md at 11 B — presence without content). Per-type medians differ sharply: agents.md n=20 median 5224 B vs claude.md n=12 median 359 B (stub-heavy).
@@ -79,27 +97,27 @@ Section coverage across all 39 files is partial:
 
 | Section | Files | Rate |
 |---------|-------|------|
-| commit | 21/39 | 53.8% |
 | build | 19/39 | 48.7% |
 | conventions | 16/39 | 41.0% |
 | architecture | 15/39 | 38.5% |
-| test | 15/39 | 38.5% |
+| test | 13/39 | 33.3% |
 | commands | 13/39 | 33.3% |
+| commit | 12/39 | 30.8% |
 | **security** | **4/39** | **10.3%** |
 
-Security guidance is nearly absent from agent instruction files — a salient gap given the agent-configuration attack surface (CONFIGWORM) and prompt-injection research.
+Every cell is traceable to the committed snapshot's per-file trigger headings (reproduce.py emits, for each file, the heading that fired each section). Even the most common section — build guidance — appears in under half of agent files, and **no section exceeds 48.7% coverage**: instruction files are partial by construction, with security nearly absent. The security gap is salient given the agent-configuration attack surface (CONFIGWORM) and prompt-injection research.
 
 ### 4.3 C3 — Co-existing files duplicate rather than diverge (H3 supported)
 
-**5/23** agent-file repositories have byte-identical AGENTS.md and CLAUDE.md (equal SHA-256): apache/spark, huggingface/transformers, langchain-ai/langchain, laravel/laravel, vercel/ai. Maintainers satisfy multiple agent tools by copying one file rather than authoring per-vendor guidance. Combined with the semantic-divergence literature, this suggests the current ecosystem is in an early, low-differentiation state: files are either duplicated wholesale or (in the stub cases) effectively empty.
+**5/23** agent-file repositories have byte-identical AGENTS.md and CLAUDE.md (equal SHA-256 of the decoded content; scope: all agent-file types co-existing in the same repository, CONTRIBUTING.md excluded): apache/spark (Java/Scala), huggingface/transformers (Python), langchain-ai/langchain (AI-native), laravel/laravel (PHP), vercel/ai (AI-native). The duplicated pairs span four ecosystems plus two AI-native tools (by ecosystem: AI-native 2, Java/Scala 1, Python 1, PHP 1) — no single ecosystem or template explains the pattern; maintainers satisfy multiple agent tools by copying one file rather than authoring per-vendor guidance, and AI-native tool vendors do it too. Combined with the semantic-divergence literature, this suggests the current ecosystem is in an early, low-differentiation state: files are either duplicated wholesale or (in the stub cases) effectively empty.
 
 ## 5. Threats to Validity
 
 - **Corpus**: 47 star-based popular repositories plus an AI-native stratum — a deliberate "what agents get pointed at daily" lens, not a random sample of GitHub; we do not claim global population rates.
 - **Probe coverage**: we probe exact root paths plus docs/ and .cursor/rules/; agent files in other locations (e.g., `.claude/`, `rules/`) are missed. The canonical probe list is committed and deterministic, so the scope is explicit and reproducible.
-- **Section detection**: keyword-regex heading matching is conservative (a section in prose without a markdown heading is missed) and deterministic; it measures *explicit* section structure, not semantic content.
+- **Section detection**: word-boundary heading matching is conservative — it measures *explicit* section headings (a combined heading like `Build, Lint, Test` fires only `build`; a section in prose without a markdown heading is missed) — and it is deterministic and fully auditable: the snapshot commits file content and the triggering heading for every detected section, and recomputation from committed content reproduces the stored taxonomy for every probed file. Remaining imprecision is directional (under-detection of explicit structure), not spurious over-counting.
 - **64 KB cap**: files larger than 64 KB are truncated before hashing; all observed files are well under the cap (max 19838 B), so no truncation occurred.
-- **Time-varying phenomenon**: adoption changes quickly (AGENTS.md is ~1 year old); the snapshot pins a single fetch date (2026-08-27T08:23:33+08:00, in `data_snapshot/manifest.json`), and offline reproduction is immune to drift.
+- **Time-varying phenomenon**: adoption changes quickly (AGENTS.md is ~1 year old); the snapshot pins a single fetch date (2026-08-27T16:08:24+08:00, in `data_snapshot/manifest.json`), and offline reproduction is immune to drift.
 - **Why still worth publishing**: this is the first deterministic, offline-reproducible measurement of the agent-instruction-file layer on the popular tier; the fragmentation (H1), stub/partial-structure (H2), and cross-vendor duplication (H3) findings are immediately actionable for maintainers (single canonical file, security section) and vendors (interop).
 
 ## 6. Conclusion and Future Work
@@ -116,4 +134,4 @@ One command, fully offline:
 bash reproduce.sh
 ```
 
-reads the committed `data_snapshot/` (47 per-repository JSON snapshots plus `manifest.json` pinning the 2026-08-27 fetch date), recomputes every statistic, and diffs against `expected_output/manuscript_results.txt` — exit 0 iff byte-identical. `python3 reproduce.py fetch` re-pulls fresh data via the GitHub contents API (`gh`), and `python3 reproduce.py --only <repo>` adds repositories without touching existing snapshots. All numbers in this manuscript are traceable to that expected output.
+reads the committed `data_snapshot/` (47 per-repository JSON snapshots plus `manifest.json` pinning the 2026-08-27T16:08:24+08:00 fetch date; each snapshot records probe presence, size, line count, SHA-256, detected sections with their triggering headings, and the file content itself), recomputes every statistic, and diffs against `expected_output/manuscript_results.txt` — exit 0 iff byte-identical. `python3 reproduce.py fetch` re-pulls fresh data via the GitHub contents API (`gh`), and `python3 reproduce.py --only <repo>` adds repositories without touching existing snapshots. All numbers in this manuscript are traceable to that expected output.

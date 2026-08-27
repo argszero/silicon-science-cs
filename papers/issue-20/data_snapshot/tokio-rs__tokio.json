@@ -3,10 +3,12 @@
  "errors": [],
  "files": {
   "contributing.md": {
+   "content": "# Contributing to Tokio\n\nThanks for your help improving Tokio! We are so happy to have you!\n\nThere are opportunities to contribute to Tokio at any level. It doesn't matter if\nyou are just getting started with Rust or are the most weathered expert, we can\nuse your help.\n\n**No contribution is too small and all contributions are valued.**\n\nSee the [contributing guidelines] to get started.\n\n[contributing guidelines]: docs/contributing/README.md\n\n## Code of Conduct\n\nThe Tokio project adheres to the [Rust Code of Conduct][coc]. This describes\nthe _minimum_ behavior expected from all contributors. Instances of violations of the\nCode of Conduct can be reported by contacting the project team at\n[moderation@tokio.rs](mailto:moderation@tokio.rs).\n\n[coc]: https://github.com/rust-lang/rust/blob/master/CODE_OF_CONDUCT.md\n\n## Need Help?\n\nReach out to us on the [Discord server] for any concern not covered in this guide.\n\n[Discord server]: https://discord.gg/tokio\n\n## LTS guarantees\n\nIn Tokio \u22651.0.0, each LTS release comes with the guarantee of at least one year of\nbackported fixes.\n\nThe goal of these guarantees is to provide stability to the ecosystem.\n\n## Minimum Supported Rust Version (MSRV)\n\n* All Tokio \u22651.0.0 releases will support at least a 6-month old Rust\n  compiler release.\n* The MSRV will only be increased on 1.x releases.\n\n## Versioning Policy\n\nWith Tokio \u22651.0.0:\n\n* Patch (1.\\_.x) releases _should only_ contain bug fixes or documentation\n  changes. Besides this, these releases should not substantially change\n  runtime behavior.\n* Minor (1.x) releases may contain new functionality, MSRV increases (see\n  above), minor dependency updates, deprecations, and larger internal\n  implementation changes.\n\nThis is as defined by [Semantic Versioning 2.0](https://semver.org/).\n",
    "lines": 54,
    "sections": [],
    "sha256": "47afe90213d8f8ee0a4824329016900eb8c3fb05c2f5eedeee43df29a8dd2ac6",
-   "size": 1795
+   "size": 1795,
+   "triggers": {}
   }
  },
  "repo": "tokio-rs/tokio"

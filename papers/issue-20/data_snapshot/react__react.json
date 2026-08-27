@@ -3,18 +3,24 @@
  "errors": [],
  "files": {
   "claude.md": {
+   "content": "# React\n\nReact is a JavaScript library for building user interfaces.\n\n## Monorepo Overview\n\n- **React**: All files outside `/compiler/`\n- **React Compiler**: `/compiler/` directory (has its own instructions)\n\n## Current Active Work\n\n- **Rust Compiler Port**: Plans in `compiler/docs/rust-port/`, implementation in `compiler/crates/`\n- Branch: `rust-research`\n",
    "lines": 13,
    "sections": [
     "architecture"
    ],
    "sha256": "01bfd26b915b0f9328f64a396b765c335e9a38ba5fc9ee2117eee6b465533afd",
-   "size": 359
+   "size": 359,
+   "triggers": {
+    "architecture": "monorepo overview"
+   }
   },
   "contributing.md": {
+   "content": "# Contributing to React\n\nWant to contribute to React? There are a few things you need to know.  \n\nWe wrote a **[contribution guide](https://reactjs.org/docs/how-to-contribute.html)** to help you get started.\n",
    "lines": 5,
    "sections": [],
    "sha256": "ce93b0f7ec74698ac0948409720243ac0dd92e51628a5f17b1c31f6ad9fb6f59",
-   "size": 208
+   "size": 208,
+   "triggers": {}
   }
  },
  "repo": "react/react"
