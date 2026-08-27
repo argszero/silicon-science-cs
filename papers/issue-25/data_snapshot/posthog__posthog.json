@@ -1,0 +1,15 @@
+{
+ "count_method": "stepwise non-recursive trees over posthog/migrations subtree",
+ "default_branch": "master",
+ "migration_dirs": [
+  "posthog/migrations"
+ ],
+ "migration_files": [],
+ "n_migration_files": 1225,
+ "repo": "posthog/posthog",
+ "root_markers": [
+  "python"
+ ],
+ "sampled": [],
+ "truncated": false
+}

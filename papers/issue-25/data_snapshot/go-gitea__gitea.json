@@ -1,0 +1,14 @@
+{
+ "default_branch": "main",
+ "migration_dirs": [],
+ "migration_files": [],
+ "n_migration_files": 0,
+ "repo": "go-gitea/gitea",
+ "root_markers": [
+  "go",
+  "node",
+  "python"
+ ],
+ "sampled": [],
+ "truncated": false
+}
