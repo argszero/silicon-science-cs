@@ -1,0 +1,810 @@
+{
+ "any_signed_release": true,
+ "commit_reasons": {
+  "valid": 300
+ },
+ "commit_sig_kinds": {
+  "pgp": 173,
+  "ssh": 127
+ },
+ "commit_total": 300,
+ "release_total": 100,
+ "releases": [
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.10.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.29",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.10.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.10.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.10.0-RC2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.28",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "1.10.28",
+   "tools": []
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.27",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.10.0-RC1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.26",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.9.0-RC1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.12",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.11",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.10",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.9",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.25",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.8.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.9",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.24",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.7.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.23",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.22",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "1.10.27",
+   "tools": []
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.6.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.21",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.20",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.19",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.5.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.4.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.4.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.4.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.4.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.18",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.4.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.4.0-RC1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.10",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.17",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.9",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.16",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.15",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.14",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.13",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.5",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.12",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "1.10.26",
+   "tools": []
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.4",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.3",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.11",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.0",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.10",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.0-RC2",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.3.0-RC1",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.9",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.8",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.7",
+   "tools": [
+    "gpg_asc"
+   ]
+  },
+  {
+   "n_assets": 2,
+   "signed": true,
+   "tag": "2.2.6",
+   "tools": [
+    "gpg_asc"
+   ]
+  }
+ ],
+ "repo": "composer/composer",
+ "signed_releases": 97
+}

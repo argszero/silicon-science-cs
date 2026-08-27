@@ -1,0 +1,617 @@
+{
+ "any_signed_release": false,
+ "commit_reasons": {
+  "unsigned": 16,
+  "valid": 284
+ },
+ "commit_sig_kinds": {
+  "none": 16,
+  "pgp": 284
+ },
+ "commit_total": 300,
+ "release_total": 100,
+ "releases": [
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "8.10.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.8.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.6",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.6",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.9",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.11",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.16",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.24",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "8.10.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.8.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.5",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.5",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.8",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.10",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.15",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.23",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "8.10-rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 1,
+   "signed": false,
+   "tag": "8.10-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.4",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.4",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.7",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.8.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.8-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.6",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.9",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.14",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.22",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.8-m03",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.8-m02",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.5",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.6",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.8",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.13",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.4",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.6-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.4-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.5",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.7",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.12",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.21",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.11",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.20",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.4",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.6",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.5",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.10",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.19",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.2-m01",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.4",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.9",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.8",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.18",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0-m04",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0-m03",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.7",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.17",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0-m02",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.6",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.16",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "8.0-m01",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4-rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.4-rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.5",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.4",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.0.15",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.0.14",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.14",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.1",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.0.13",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2.0",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.0.12",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2-rc3",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.2.13",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "6.0.20",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.2-rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 0,
+   "signed": false,
+   "tag": "7.0.11",
+   "tools": []
+  }
+ ],
+ "repo": "redis/redis",
+ "signed_releases": 0
+}

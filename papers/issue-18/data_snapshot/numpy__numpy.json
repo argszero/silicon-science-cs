@@ -1,0 +1,618 @@
+{
+ "any_signed_release": false,
+ "commit_reasons": {
+  "unsigned": 28,
+  "valid": 272
+ },
+ "commit_sig_kinds": {
+  "none": 28,
+  "pgp": 269,
+  "ssh": 3
+ },
+ "commit_total": 300,
+ "release_total": 100,
+ "releases": [
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.5.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.5.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.5.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.5.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.6",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.5",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.4",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.4.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.5",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.4",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.3.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.6",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.5",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.4",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.2.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.1.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.1.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.1.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.0.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.1.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.1.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.0.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.0.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.0.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.0.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v2.0.0b1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.4",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.26.0b1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.25.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.25.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.4",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.25.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.24.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.5",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.4",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.1",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.0",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.0rc3",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 3,
+   "signed": false,
+   "tag": "v1.23.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.4",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.6",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.3",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.0",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.5",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.0rc3",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.22.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.4",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.3",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.0",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.21.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.20.3",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.20.2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.20.1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.20.0",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.5",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.20.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.20.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.4",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.3",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.0",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.18.5",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.0rc2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.19.0rc1",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.18.4",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.18.3",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.18.2",
+   "tools": []
+  },
+  {
+   "n_assets": 4,
+   "signed": false,
+   "tag": "v1.18.1",
+   "tools": []
+  }
+ ],
+ "repo": "numpy/numpy",
+ "signed_releases": 0
+}
