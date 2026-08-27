@@ -1,0 +1,15 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "content": "Contributing\n------------\n\nSymfony is an open source, community-driven project.\n\nIf you'd like to contribute, please read the following documents:\n\n* [Reviewing issues/pull requests][0]\n* [Reporting a Bug][1]\n* [Submitting a Patch][2]\n* [Symfony Core Team][3]\n* [Security Issues][4]\n* [Running Symfony Tests][5]\n* [Our Backwards Compatibility Promise][6]\n* [Coding Standards][7]\n* [Conventions][8]\n\n[0]: https://symfony.com/doc/current/contributing/community/reviews.html\n[1]: https://symfony.com/doc/current/contributing/code/bugs.html\n[2]: https://symfony.com/doc/current/contributing/code/patches.html\n[3]: https://symfony.com/doc/current/contributing/code/core_team.html\n[4]: https://symfony.com/doc/current/contributing/code/security.html\n[5]: https://symfony.com/doc/current/contributing/code/tests.html\n[6]: https://symfony.com/doc/current/contributing/code/bc.html\n[7]: https://symfony.com/doc/current/contributing/code/standards.html\n[8]: https://symfony.com/doc/current/contributing/code/conventions.html\n",
+   "lines": 26,
+   "sections": [],
+   "sha256": "2ccb8644064cce7b41becea477e057aa86ffdb392654dd1bd58b40403b5ae944",
+   "size": 1015,
+   "triggers": {}
+  }
+ },
+ "repo": "symfony/symfony"
+}

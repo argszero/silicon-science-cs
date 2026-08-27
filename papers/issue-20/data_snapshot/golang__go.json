@@ -1,0 +1,15 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "content": "# Contributing to Go\n\nGo is an open source project.\n\nIt is the work of hundreds of contributors. We appreciate your help!\n\n## Before filing an issue\n\nIf you are unsure whether you have found a bug, please consider asking in the [golang-nuts mailing\nlist](https://groups.google.com/forum/#!forum/golang-nuts) or [other forums](https://golang.org/help/) first. If\nthe behavior you are seeing is confirmed as a bug or issue, it can easily be re-raised in the issue tracker.\n\n## Filing issues\n\nSensitive security-related issues should be reported to [security@golang.org](mailto:security@golang.org).\nSee the [security policy](https://golang.org/security) for details.\n\nThe recommended way to file an issue is by running `go bug`.\nOtherwise, when filing an issue, make sure to answer these five questions:\n\n1. What version of Go are you using (`go version`)?\n2. What operating system and processor architecture are you using?\n3. What did you do?\n4. What did you expect to see?\n5. What did you see instead?\n\nFor change proposals, see [Proposing Changes To Go](https://go.dev/s/proposal-process).\n\n## Contributing code\n\nPlease read the [Contribution Guidelines](https://golang.org/doc/contribute.html) before sending patches.\n\nUnless otherwise noted, the Go source files are distributed under\nthe BSD-style license found in the LICENSE file.\n\n",
+   "lines": 35,
+   "sections": [],
+   "sha256": "1244fcb5fbb7f0629bc134e99a90c18e63097a66d034acee0f18eabdd4fb32d9",
+   "size": 1337,
+   "triggers": {}
+  }
+ },
+ "repo": "golang/go"
+}

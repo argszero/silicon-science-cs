@@ -1,0 +1,39 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "content": "# AGENTS.md\n\n## Building\n\nFor a full build from the repository root:\n\n```sh\ncmake -B build .\ncmake --build build --parallel 8\n./ollama serve\n```\n\nFor quick Go-only iteration against an existing native payload:\n\n```sh\ngo build .\ngo run . serve\n```\n\nSee `docs/development.md` for prerequisites, platform notes, GPU backends, and\nthe full development workflow.\n",
+   "lines": 21,
+   "sections": [
+    "build"
+   ],
+   "sha256": "9cd30b469bc637faee8a9cdaf8879e13db60c52c9b82b2f9f5bd8314e7512144",
+   "size": 358,
+   "triggers": {
+    "build": "building"
+   }
+  },
+  "claude.md": {
+   "content": "# CLAUDE.md\n\nSee `AGENTS.md` for the shared agent instructions for this repository.\n",
+   "lines": 3,
+   "sections": [],
+   "sha256": "a24ffa1e08f9b3c3c12a00464bd00054c4892f00a9039f5ee7e395aba86883d6",
+   "size": 84,
+   "triggers": {}
+  },
+  "contributing.md": {
+   "content": "# Contributing to Ollama\n\nThank you for your interest in contributing to Ollama! Here are a few guidelines to help get you started.\n\n## Set up\n\nSee the [development documentation](./docs/development.md) for instructions on how to build and run Ollama locally.\n\n### Ideal issues\n\n* [Bugs](https://github.com/ollama/ollama/issues?q=is%3Aissue+is%3Aopen+label%3Abug): issues where Ollama stops working or where it results in an unexpected error.\n* [Performance](https://github.com/ollama/ollama/issues?q=is%3Aissue+is%3Aopen+label%3Aperformance): issues to make Ollama faster at model inference, downloading or uploading.\n* [Security](https://github.com/ollama/ollama/blob/main/SECURITY.md): issues that could lead to a security vulnerability. As mentioned in [SECURITY.md](https://github.com/ollama/ollama/blob/main/SECURITY.md), please do not disclose security vulnerabilities publicly.\n\n### Issues that are harder to review\n\n* New features: new features (e.g. API fields, environment variables) add surface area to Ollama and make it harder to maintain in the long run as they cannot be removed without potentially breaking users in the future.\n* Refactoring: large code improvements are important, but can be harder or take longer to review and merge.\n* Documentation: small updates to fill in or correct missing documentation are helpful, however large documentation additions can be hard to maintain over time.\n\n### Issues that may not be accepted\n\n* Changes that break backwards compatibility in Ollama's API (including the OpenAI-compatible API)\n* Changes that add significant friction to the user experience\n* Changes that create a large future maintenance burden for maintainers and contributors\n\n## Proposing a (non-trivial) change\n\n> By \"non-trivial\", we mean a change that is not a bug fix or small\n> documentation update. If you are unsure, please ask us on our [Discord\n> server](https://discord.gg/ollama).\n\nBefore opening a non-trivial Pull Request, please open an issue to discuss the change and\nget feedback from the maintainers. This helps us understand the context of the\nchange and how it fits into Ollama's roadmap and prevents us from duplicating\nwork or you from spending time on a change that we may not be able to accept.\n\nTips for proposals:\n\n* Explain the problem you are trying to solve, not what you are trying to do.\n* Explain why the change is important.\n* Explain how the change will be used.\n* Explain how the change will be tested.\n\nAdditionally, for bonus points: Provide draft documentation you would expect to\nsee if the changes were accepted.\n\n## Pull requests\n\n**Commit messages**\n\nThe title should look like:\n\n    <package>: <short description>\n\nThe package is the most affected Go package. If the change does not affect Go\ncode, then use the directory name instead. Changes to a single well-known\nfile in the root directory may use the file name.\n\nThe short description should start with a lowercase letter and be a\ncontinuation of the sentence:\n\n      \"This changes Ollama to...\"\n\nExamples:\n\n      llm/backend/mlx: support the llama architecture\n      CONTRIBUTING: provide clarity on good commit messages, and bad\n\nBad Examples:\n\n      feat: add more emoji\n      fix: was not using famous web framework\n      chore: generify code\n\n**Tests**\n\nPlease include tests. Strive to test behavior, not implementation.\n\n**New dependencies**\n\nDependencies should be added sparingly. If you are adding a new dependency,\nplease explain why it is necessary and what other ways you attempted that\ndid not work without it.\n\n## Need help?\n\nIf you need help with anything, feel free to reach out to us on our [Discord server](https://discord.gg/ollama).\n",
+   "lines": 88,
+   "sections": [
+    "commit"
+   ],
+   "sha256": "24980c278c6b27ba22625d43d9905082b4f7c52e19a644f8232bcb62a9ee4629",
+   "size": 3678,
+   "triggers": {
+    "commit": "pull requests"
+   }
+  }
+ },
+ "repo": "ollama/ollama"
+}
