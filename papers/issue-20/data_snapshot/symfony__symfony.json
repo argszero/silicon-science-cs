@@ -1,0 +1,13 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 26,
+   "sections": [],
+   "sha256": "2ccb8644064cce7b41becea477e057aa86ffdb392654dd1bd58b40403b5ae944",
+   "size": 1015
+  }
+ },
+ "repo": "symfony/symfony"
+}

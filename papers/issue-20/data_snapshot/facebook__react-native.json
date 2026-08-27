@@ -1,0 +1,30 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 68,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "conventions"
+   ],
+   "sha256": "3f54d17405c43058b9c2a39ec79fbc8fa09d1587e82a81fe24b62c12385a0428",
+   "size": 5224
+  },
+  "claude.md": {
+   "lines": 1,
+   "sections": [],
+   "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+   "size": 11
+  },
+  "contributing.md": {
+   "lines": 6,
+   "sections": [],
+   "sha256": "eb3b28e3b15c94d0049198cd971cfd239113450c65be6abc9a038c54eee9c8fb",
+   "size": 355
+  }
+ },
+ "repo": "facebook/react-native"
+}

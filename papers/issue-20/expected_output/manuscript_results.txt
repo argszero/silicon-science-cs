@@ -1,0 +1,99 @@
+CODING-AGENT INSTRUCTION FILES IN POPULAR OSS REPOSITORIES — canonical results
+corpus: n=47 repos | snapshot date: 2026-08-27T08:23:33+08:00 (data_snapshot/manifest.json)
+
+C1 adoption of agent-instruction file types (n=47):
+  AGENTS.md                               20/47 (42.6%, Wilson95 29.5%-56.7%)
+  CLAUDE.md                               12/47 (25.5%, Wilson95 15.3%-39.5%)
+  .github/copilot-instructions.md          5/47 (10.6%, Wilson95 4.6%-22.6%)
+  .cursorrules                             0/47 (0.0%, Wilson95 0.0%-7.6%)
+  docs/AGENTS.md                           2/47 (4.3%, Wilson95 1.2%-14.2%)
+  docs/CLAUDE.md                           0/47 (0.0%, Wilson95 0.0%-7.6%)
+  .cursor/rules/*.md                       0/47 (0.0%, Wilson95 0.0%-7.6%)
+  CONTRIBUTING.md (baseline)              31/47 (66.0%, Wilson95 51.7%-77.8%)
+  repos with >=1 agent file: 23/47 (48.9%)
+  repos with >=2 agent file types (fragmentation): 13/47 (27.7%)
+    multi-type repos: Homebrew/brew, apache/spark, cline/cline, elastic/elasticsearch, facebook/react-native, huggingface/transformers, langchain-ai/langchain, laravel/laravel, microsoft/vscode, mui/material-ui, ollama/ollama, rust-lang/rust, vercel/ai
+  repos with NO agent file: 24/47
+    no-agent repos: Aider-AI/aider, BurntSushi/ripgrep, composer/composer, curl/curl, flutter/flutter, gin-gonic/gin, git/git, golang/go, google/googletest, hashicorp/terraform, jekyll/jekyll, numpy/numpy, opencode-ai/opencode, openssl/openssl, pallets/flask, python/cpython, redis/redis, serde-rs/serde, spring-projects/spring-boot, symfony/symfony, tensorflow/tensorflow, tokio-rs/tokio, torvalds/linux, vuejs/vue
+
+C2 content structure of found agent files (excl. CONTRIBUTING.md):
+  files found: 39 | size min=10 median=3529 max=19838 B
+  stub files (<50 B): 4 (10.3%)
+  .github_copilot-instructions.md: n=5 size min=316 med=3804 max=11493
+      cline/cline: 3804B 57L sections=['architecture', 'build', 'commands', 'commit', 'conventions']
+      django/django: 316B 10L sections=[]
+      huggingface/transformers: 3529B 39L sections=['architecture', 'conventions', 'test']
+      microsoft/autogen: 8858B 226L sections=['architecture', 'build', 'commands', 'commit', 'conventions', 'test']
+      microsoft/vscode: 11493B 156L sections=['architecture', 'conventions']
+  agents.md: n=20 size min=242 med=5224 max=19838
+  claude.md: n=12 size min=10 med=359 max=19838
+  docs_agents.md: n=2 size min=313 med=2267 max=2267
+      Homebrew/brew: 2267B 55L sections=['conventions']
+      elastic/elasticsearch: 313B 11L sections=['build']
+  section presence (across all found agent files):
+    commit          21/39 (53.8%)
+    build           19/39 (48.7%)
+    conventions     16/39 (41.0%)
+    architecture    15/39 (38.5%)
+    test            15/39 (38.5%)
+    commands        13/39 (33.3%)
+    security         4/39 (10.3%)
+
+C3 cross-file duplication (SHA-256 identity within a repo, agent files only):
+  repos with >=2 agent files sharing identical content: 5/23 of agent-file repos
+    apache/spark: agents.md, claude.md (identical SHA fc7b95e17729)
+    huggingface/transformers: agents.md, claude.md (identical SHA 036cfe8c90c3)
+    langchain-ai/langchain: agents.md, claude.md (identical SHA f86c75b9e890)
+    laravel/laravel: agents.md, claude.md (identical SHA fc7f68b81800)
+    vercel/ai: agents.md, claude.md (identical SHA 8c2ff038ca15)
+
+per-repo posture (A=AGENTS, C=CLAUDE, P=copilot-instructions, R=cursor/rules, D=docs-agent):
+    -  Aider-AI/aider
+    -  BurntSushi/ripgrep
+    ACD  Homebrew/brew
+    A  angular/angular
+    AC  apache/spark
+    AP  cline/cline
+    -  composer/composer
+    -  curl/curl
+    P  django/django
+    ACD  elastic/elasticsearch
+    AC  facebook/react-native
+    -  flutter/flutter
+    -  gin-gonic/gin
+    -  git/git
+    -  golang/go
+    -  google/googletest
+    -  hashicorp/terraform
+    ACP  huggingface/transformers
+    -  jekyll/jekyll
+    A  kubernetes/kubernetes
+    AC  langchain-ai/langchain
+    AC  laravel/laravel
+    P  microsoft/autogen
+    AP  microsoft/vscode
+    AC  mui/material-ui
+    A  neovim/neovim
+    A  nodejs/node
+    -  numpy/numpy
+    AC  ollama/ollama
+    -  opencode-ai/opencode
+    -  openssl/openssl
+    -  pallets/flask
+    A  pandas-dev/pandas
+    -  python/cpython
+    A  rails/rails
+    C  react/react
+    -  redis/redis
+    AC  rust-lang/rust
+    -  serde-rs/serde
+    -  spring-projects/spring-boot
+    A  sveltejs/svelte
+    -  symfony/symfony
+    -  tensorflow/tensorflow
+    -  tokio-rs/tokio
+    -  torvalds/linux
+    AC  vercel/ai
+    -  vuejs/vue
+
+canonical-run key: every number above derives from data_snapshot/ via deterministic classification.

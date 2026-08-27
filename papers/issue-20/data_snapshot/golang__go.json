@@ -1,0 +1,13 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 35,
+   "sections": [],
+   "sha256": "1244fcb5fbb7f0629bc134e99a90c18e63097a66d034acee0f18eabdd4fb32d9",
+   "size": 1337
+  }
+ },
+ "repo": "golang/go"
+}

@@ -1,0 +1,25 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 47,
+   "sections": [
+    "build",
+    "commit"
+   ],
+   "sha256": "fc7f68b818002266982ebc3e423826ce67988c1edb4532bb1b086a17744cd890",
+   "size": 1446
+  },
+  "claude.md": {
+   "lines": 47,
+   "sections": [
+    "build",
+    "commit"
+   ],
+   "sha256": "fc7f68b818002266982ebc3e423826ce67988c1edb4532bb1b086a17744cd890",
+   "size": 1446
+  }
+ },
+ "repo": "laravel/laravel"
+}

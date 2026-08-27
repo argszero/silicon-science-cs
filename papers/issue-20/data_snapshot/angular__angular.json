@@ -1,0 +1,25 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 34,
+   "sections": [
+    "commit",
+    "test"
+   ],
+   "sha256": "976858145dd91780f0389deb7dabe739606af1af586e07042c4dbeb348031ba1",
+   "size": 1594
+  },
+  "contributing.md": {
+   "lines": 257,
+   "sections": [
+    "commit",
+    "conventions"
+   ],
+   "sha256": "500c4f47e1ae310f68e62a02667596c3130c3950a0af466d1e3aa3c2dafa37f2",
+   "size": 12030
+  }
+ },
+ "repo": "angular/angular"
+}

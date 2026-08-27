@@ -1,0 +1,17 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 62,
+   "sections": [
+    "architecture",
+    "commit",
+    "conventions"
+   ],
+   "sha256": "d4435d0cb3f0cdcfd6bc9147eaee4c280138fc60b1ee46db1d16ef9d6ee2133c",
+   "size": 3983
+  }
+ },
+ "repo": "pandas-dev/pandas"
+}

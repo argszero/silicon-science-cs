@@ -1,0 +1,23 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 38,
+   "sections": [
+    "commands",
+    "commit",
+    "conventions"
+   ],
+   "sha256": "ca28500a4f6f358090c58b2d3ed06c2eaf41ca4f441cddb23cec84e71362096a",
+   "size": 1584
+  },
+  "contributing.md": {
+   "lines": 9,
+   "sections": [],
+   "sha256": "639af1c94c39ded3a781d1f82c7075b6af898b7bb6d284ea0313278568c54231",
+   "size": 525
+  }
+ },
+ "repo": "kubernetes/kubernetes"
+}

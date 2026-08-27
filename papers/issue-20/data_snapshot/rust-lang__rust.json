@@ -1,0 +1,29 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 243,
+   "sections": [
+    "commands",
+    "commit",
+    "test"
+   ],
+   "sha256": "9001523dd6f1051f03a4c50f390cef5df9d62ba7347db3b222e2c9f72044231b",
+   "size": 12719
+  },
+  "claude.md": {
+   "lines": 1,
+   "sections": [],
+   "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+   "size": 11
+  },
+  "contributing.md": {
+   "lines": 59,
+   "sections": [],
+   "sha256": "814cdb2341ab5f49a0033bc850b8458fab2ba84636f1b33e89d3bcaa5435880f",
+   "size": 3114
+  }
+ },
+ "repo": "rust-lang/rust"
+}

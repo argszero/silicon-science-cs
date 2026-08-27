@@ -1,0 +1,15 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 118,
+   "sections": [
+    "commit"
+   ],
+   "sha256": "101809ca2da8d44262c9be184d3f66c4841af6f8983ee886443ddce38db87013",
+   "size": 7210
+  }
+ },
+ "repo": "redis/redis"
+}

@@ -1,0 +1,15 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 256,
+   "sections": [
+    "commit"
+   ],
+   "sha256": "3f4512ac9e9d30f746f8741a28d457820c4c136651919cb74f0e36f04ba386d1",
+   "size": 13629
+  }
+ },
+ "repo": "flutter/flutter"
+}

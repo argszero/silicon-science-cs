@@ -1,0 +1,43 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 320,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "8c2ff038ca158aad7034492912ff746ba298dd2815e333079fb08a076105b7aa",
+   "size": 13420
+  },
+  "claude.md": {
+   "lines": 320,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "8c2ff038ca158aad7034492912ff746ba298dd2815e333079fb08a076105b7aa",
+   "size": 13420
+  },
+  "contributing.md": {
+   "lines": 132,
+   "sections": [
+    "build",
+    "commit",
+    "test"
+   ],
+   "sha256": "8a25568dd916e564866a8dcf5045c0da125a757d7e0c0a6d4a37f6ffe14afbf4",
+   "size": 10058
+  }
+ },
+ "repo": "vercel/ai"
+}

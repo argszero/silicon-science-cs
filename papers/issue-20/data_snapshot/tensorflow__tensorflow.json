@@ -1,0 +1,18 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 375,
+   "sections": [
+    "build",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "5e65d599896aecb72cbfef121a0d2fe0e3e780c4e02b0f6002109f01c7020317",
+   "size": 16244
+  }
+ },
+ "repo": "tensorflow/tensorflow"
+}

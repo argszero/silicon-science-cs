@@ -1,0 +1,13 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 200,
+   "sections": [],
+   "sha256": "3de26bce58125bbeb497de183238fb6f33542063cafe2096e76567ebc17ad7b1",
+   "size": 8328
+  }
+ },
+ "repo": "openssl/openssl"
+}

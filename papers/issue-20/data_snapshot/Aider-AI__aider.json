@@ -1,0 +1,19 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 241,
+   "sections": [
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "aaaafd32db23af352ffdd277425021a2bc738480d321b2b20b1b252e7e811ee0",
+   "size": 7863
+  }
+ },
+ "repo": "Aider-AI/aider"
+}

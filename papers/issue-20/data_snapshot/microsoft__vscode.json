@@ -1,0 +1,31 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  ".github_copilot-instructions.md": {
+   "lines": 156,
+   "sections": [
+    "architecture",
+    "conventions"
+   ],
+   "sha256": "d711289b5effa36c41c4139c862cf05a41cb08cdae1eb28f76eb688cc4863e06",
+   "size": 11493
+  },
+  "agents.md": {
+   "lines": 5,
+   "sections": [],
+   "sha256": "aa9b8989ec534e850e743e89bd345eaf9d88c522e86e98239e2ddcda435db45f",
+   "size": 271
+  },
+  "contributing.md": {
+   "lines": 99,
+   "sections": [
+    "commit",
+    "test"
+   ],
+   "sha256": "1b705e86ff93b5aa6383405a900057076ef7ff02edbcbf4df5b8a4c21ab15f34",
+   "size": 5709
+  }
+ },
+ "repo": "microsoft/vscode"
+}

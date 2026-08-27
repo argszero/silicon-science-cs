@@ -1,0 +1,13 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  ".github_copilot-instructions.md": {
+   "lines": 10,
+   "sections": [],
+   "sha256": "94a817a455d0154ba2ccadcd4726a77661f1e697c37b4caeedad700045f7ffd8",
+   "size": 316
+  }
+ },
+ "repo": "django/django"
+}

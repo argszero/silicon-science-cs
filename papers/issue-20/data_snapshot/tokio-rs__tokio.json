@@ -1,0 +1,13 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 54,
+   "sections": [],
+   "sha256": "47afe90213d8f8ee0a4824329016900eb8c3fb05c2f5eedeee43df29a8dd2ac6",
+   "size": 1795
+  }
+ },
+ "repo": "tokio-rs/tokio"
+}

@@ -1,0 +1,21 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "claude.md": {
+   "lines": 13,
+   "sections": [
+    "architecture"
+   ],
+   "sha256": "01bfd26b915b0f9328f64a396b765c335e9a38ba5fc9ee2117eee6b465533afd",
+   "size": 359
+  },
+  "contributing.md": {
+   "lines": 5,
+   "sections": [],
+   "sha256": "ce93b0f7ec74698ac0948409720243ac0dd92e51628a5f17b1c31f6ad9fb6f59",
+   "size": 208
+  }
+ },
+ "repo": "react/react"
+}

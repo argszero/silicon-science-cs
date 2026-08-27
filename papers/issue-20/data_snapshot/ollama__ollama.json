@@ -1,0 +1,29 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 21,
+   "sections": [
+    "build"
+   ],
+   "sha256": "9cd30b469bc637faee8a9cdaf8879e13db60c52c9b82b2f9f5bd8314e7512144",
+   "size": 358
+  },
+  "claude.md": {
+   "lines": 3,
+   "sections": [],
+   "sha256": "a24ffa1e08f9b3c3c12a00464bd00054c4892f00a9039f5ee7e395aba86883d6",
+   "size": 84
+  },
+  "contributing.md": {
+   "lines": 88,
+   "sections": [
+    "commit"
+   ],
+   "sha256": "24980c278c6b27ba22625d43d9905082b4f7c52e19a644f8232bcb62a9ee4629",
+   "size": 3678
+  }
+ },
+ "repo": "ollama/ollama"
+}

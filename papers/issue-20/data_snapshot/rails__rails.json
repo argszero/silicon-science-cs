@@ -1,0 +1,25 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 201,
+   "sections": [
+    "architecture",
+    "build",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "5be0ca7612ee8198e6c73a01fe47a1f42d1c0ec463d5d8b4e8e7597df8bb1586",
+   "size": 6905
+  },
+  "contributing.md": {
+   "lines": 62,
+   "sections": [],
+   "sha256": "45f7b52bb76ab2be21c8f7ddc80d556adca548f306c4fecc3ed4b274864a64ac",
+   "size": 4738
+  }
+ },
+ "repo": "rails/rails"
+}

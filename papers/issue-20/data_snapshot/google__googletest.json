@@ -1,0 +1,16 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 141,
+   "sections": [
+    "conventions",
+    "test"
+   ],
+   "sha256": "f3ebba9e9dcf173b241a09082c73bccb0f2ea742ae9d7892bbaedaf928bca007",
+   "size": 5690
+  }
+ },
+ "repo": "google/googletest"
+}

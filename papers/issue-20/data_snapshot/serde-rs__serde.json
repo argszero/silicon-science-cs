@@ -1,0 +1,16 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 55,
+   "sections": [
+    "build",
+    "test"
+   ],
+   "sha256": "91f0716e8011f1c92ee5d24a3ddd5ccd61e300cf85735afb732ae1c389c39814",
+   "size": 2024
+  }
+ },
+ "repo": "serde-rs/serde"
+}

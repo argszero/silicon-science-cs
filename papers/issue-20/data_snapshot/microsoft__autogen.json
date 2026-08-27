@@ -1,0 +1,29 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  ".github_copilot-instructions.md": {
+   "lines": 226,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "b64a92953d70aa1edea7dde480d6607a6757b4b575dc513b4a503cd4ca024c01",
+   "size": 8858
+  },
+  "contributing.md": {
+   "lines": 136,
+   "sections": [
+    "build",
+    "commit"
+   ],
+   "sha256": "4072d9e7d99f1828d750649c1968ee5a6f022848f791bfd176bcdfb245decec3",
+   "size": 7561
+  }
+ },
+ "repo": "microsoft/autogen"
+}

@@ -1,0 +1,38 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  ".github_copilot-instructions.md": {
+   "lines": 57,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions"
+   ],
+   "sha256": "428e301a2157544f58739a97b9d6d118eabd946756889f9a34bee5d9b11f140d",
+   "size": 3804
+  },
+  "agents.md": {
+   "lines": 32,
+   "sections": [
+    "build",
+    "commands"
+   ],
+   "sha256": "62c0a0022cb0541ab520399edc8e01b49386009e9250039c7170dcba019a9a87",
+   "size": 5279
+  },
+  "contributing.md": {
+   "lines": 209,
+   "sections": [
+    "build",
+    "commands",
+    "commit"
+   ],
+   "sha256": "6b98c5ea564b4a717bfc013ff0b73278461e9bcf0b47def6dfed8709a0caa9de",
+   "size": 8764
+  }
+ },
+ "repo": "cline/cline"
+}

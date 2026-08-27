@@ -1,0 +1,40 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 71,
+   "sections": [
+    "architecture",
+    "commit",
+    "conventions"
+   ],
+   "sha256": "faf056b7899be1f8997ee29b256e2a0b5fadecfda5f49b3f81f3ba0eab33ae94",
+   "size": 6676
+  },
+  "claude.md": {
+   "lines": 1,
+   "sections": [],
+   "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+   "size": 11
+  },
+  "contributing.md": {
+   "lines": 36,
+   "sections": [
+    "commands",
+    "commit"
+   ],
+   "sha256": "bcc8b373852c28555e7c8b97582c9cf1b87e730621ffb0139f8b203a746ffa4b",
+   "size": 2666
+  },
+  "docs_agents.md": {
+   "lines": 55,
+   "sections": [
+    "conventions"
+   ],
+   "sha256": "3bbdfa7587fe37a95b17308777d7d2a578c28c7516896fea3787ca157cb14c5c",
+   "size": 2267
+  }
+ },
+ "repo": "Homebrew/brew"
+}

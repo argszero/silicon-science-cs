@@ -1,0 +1,35 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 372,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "security",
+    "test"
+   ],
+   "sha256": "f86c75b9e890c6a788ed7b2441220f80ec841d2a1f7934742946afc9bf52ce5f",
+   "size": 19078
+  },
+  "claude.md": {
+   "lines": 372,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "security",
+    "test"
+   ],
+   "sha256": "f86c75b9e890c6a788ed7b2441220f80ec841d2a1f7934742946afc9bf52ce5f",
+   "size": 19078
+  }
+ },
+ "repo": "langchain-ai/langchain"
+}

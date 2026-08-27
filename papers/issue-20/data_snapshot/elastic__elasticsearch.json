@@ -1,0 +1,44 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 179,
+   "sections": [
+    "architecture",
+    "build",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "838a0ae1611447c76a39855bced73e359183098a9952a1bb08f105d7ae67602f",
+   "size": 16144
+  },
+  "claude.md": {
+   "lines": 1,
+   "sections": [],
+   "sha256": "918b1c90559355ef78f33fdf3562f2b021ef8bdfd8a5c8415e5decd44934de55",
+   "size": 10
+  },
+  "contributing.md": {
+   "lines": 975,
+   "sections": [
+    "build",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "488f4b873a6e394a3cbdcb059576c81639500665b35c487418b40d04ea215e51",
+   "size": 50132
+  },
+  "docs_agents.md": {
+   "lines": 11,
+   "sections": [
+    "build"
+   ],
+   "sha256": "8c4c20a7429e081fa55f4fd443da7d90d55d8fdc7c9eca93c7a3a7ce02af6848",
+   "size": 313
+  }
+ },
+ "repo": "elastic/elasticsearch"
+}

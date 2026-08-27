@@ -1,0 +1,36 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 241,
+   "sections": [
+    "architecture",
+    "build",
+    "commands",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "b06845bf046c9e3bb3be144908cec091ed7094871c5db0c436cbefc6f204a9c3",
+   "size": 8986
+  },
+  "claude.md": {
+   "lines": 5,
+   "sections": [],
+   "sha256": "259d73f06a8e9db2798ab3fc24c4151afc27062d170e2c907f2b06cb18cce61a",
+   "size": 174
+  },
+  "contributing.md": {
+   "lines": 384,
+   "sections": [
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "c96909dfb4a0068ae8cf92bbe4a392e719f125aef1bbd4061fdfaad884632426",
+   "size": 18770
+  }
+ },
+ "repo": "mui/material-ui"
+}

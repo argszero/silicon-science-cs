@@ -1,0 +1,24 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 7,
+   "sections": [],
+   "sha256": "b7564c75ac9835a6c3b84c4b9462bb055238a33ddabed34d9a7679cc83ab8edc",
+   "size": 242
+  },
+  "contributing.md": {
+   "lines": 371,
+   "sections": [
+    "build",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "88ba70ce592894616e811d289b3841e97cd10e4f63e455824f6abceabd07bfa7",
+   "size": 15270
+  }
+ },
+ "repo": "neovim/neovim"
+}

@@ -1,0 +1,35 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 274,
+   "sections": [
+    "build",
+    "commit",
+    "security",
+    "test"
+   ],
+   "sha256": "fc7b95e17729e7cbd711c49948db92e13324088d2c4caba68223b0d0d2605f94",
+   "size": 19838
+  },
+  "claude.md": {
+   "lines": 274,
+   "sections": [
+    "build",
+    "commit",
+    "security",
+    "test"
+   ],
+   "sha256": "fc7b95e17729e7cbd711c49948db92e13324088d2c4caba68223b0d0d2605f94",
+   "size": 19838
+  },
+  "contributing.md": {
+   "lines": 16,
+   "sections": [],
+   "sha256": "5ff29c21cfec37e413406a23c07e1f24b2b6b64cb442a0b96c6936e68689116a",
+   "size": 997
+  }
+ },
+ "repo": "apache/spark"
+}

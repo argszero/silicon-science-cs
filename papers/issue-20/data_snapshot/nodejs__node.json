@@ -1,0 +1,24 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 64,
+   "sections": [
+    "commit"
+   ],
+   "sha256": "f8b64061263b506d4781effefe4b1658b29cdd8b2649c0d298be5a3e3184cc07",
+   "size": 3079
+  },
+  "contributing.md": {
+   "lines": 107,
+   "sections": [
+    "commit",
+    "conventions"
+   ],
+   "sha256": "cef2cec1646de81f622e3916a6edb518d72aea1481ae59cb7f3ce4842ff3fa8c",
+   "size": 4654
+  }
+ },
+ "repo": "nodejs/node"
+}

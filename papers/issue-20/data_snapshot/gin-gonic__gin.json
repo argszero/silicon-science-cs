@@ -1,0 +1,15 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "contributing.md": {
+   "lines": 41,
+   "sections": [
+    "commit"
+   ],
+   "sha256": "7abd5ffd4f53974eeb5e2b6463265ad948bd3cd1bb0e19b159c6fb24c09878bd",
+   "size": 2106
+  }
+ },
+ "repo": "gin-gonic/gin"
+}

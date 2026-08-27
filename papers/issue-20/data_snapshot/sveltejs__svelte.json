@@ -1,0 +1,24 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  "agents.md": {
+   "lines": 11,
+   "sections": [],
+   "sha256": "bdb55370f7e5fad27543cfe3d1929aebbb8cab034a6726b421cd7003bf82f27c",
+   "size": 590
+  },
+  "contributing.md": {
+   "lines": 171,
+   "sections": [
+    "build",
+    "commit",
+    "conventions",
+    "test"
+   ],
+   "sha256": "a3c17c03b1d197045a6f59948ec77143aa32a2fe5cd189b18ee07a4358635b61",
+   "size": 10278
+  }
+ },
+ "repo": "sveltejs/svelte"
+}

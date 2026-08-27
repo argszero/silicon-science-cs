@@ -1,0 +1,45 @@
+{
+ "dirs": {},
+ "errors": [],
+ "files": {
+  ".github_copilot-instructions.md": {
+   "lines": 39,
+   "sections": [
+    "architecture",
+    "conventions",
+    "test"
+   ],
+   "sha256": "51d12faef4352ea94cac2cb7be8d684aab8e5ff794c0c7584ddb1cf0ceb1bb76",
+   "size": 3529
+  },
+  "agents.md": {
+   "lines": 49,
+   "sections": [
+    "build",
+    "commands",
+    "commit",
+    "test"
+   ],
+   "sha256": "036cfe8c90c3aafb50566b40134924069d56dc7838f92e1773599d591ab3d9d8",
+   "size": 3599
+  },
+  "claude.md": {
+   "lines": 49,
+   "sections": [
+    "build",
+    "commands",
+    "commit",
+    "test"
+   ],
+   "sha256": "036cfe8c90c3aafb50566b40134924069d56dc7838f92e1773599d591ab3d9d8",
+   "size": 3599
+  },
+  "contributing.md": {
+   "lines": 228,
+   "sections": [],
+   "sha256": "e035f80977d9b20582f75c7d3770e6eeab16b45a25ae248476bf5b6d5ab5093a",
+   "size": 14764
+  }
+ },
+ "repo": "huggingface/transformers"
+}
