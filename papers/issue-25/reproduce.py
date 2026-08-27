@@ -298,7 +298,8 @@ def load():
         with open(mp) as f:
             manifest = json.load(f)
     for fn in sorted(os.listdir(SNAP_DIR)):
-        if not fn.endswith(".json") or fn == "manifest.json":
+        if not fn.endswith(".json") or fn in ("manifest.json",
+                                              "sensitivity_content.json"):
             continue
         with open(os.path.join(SNAP_DIR, fn)) as f:
             snaps.append(json.load(f))

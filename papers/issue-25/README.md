@@ -6,8 +6,9 @@ An empirical measurement of the schema-migration practice layer on 32 popular
 open-source web applications across nine ecosystems (Rails, Django, Laravel,
 Node/Prisma/TypeORM/Knex, JVM/Liquibase, Go, PHP, Rust/Diesel), using the GitHub
 trees API with no cloning. Three findings: C1 adoption (29/32, 90.6%), C2 naming
-conventions as ecosystem fingerprints, C3 rollback support (20.6%) vs destructive
-operations (12.0%) with the highest-risk concentration in TypeORM/Liquibase.
+conventions as ecosystem fingerprints, C3 rollback support (18.7%) vs destructive
+operations (20.0%, hardened detector covering Liquibase XML and ORM API forms)
+with the highest-risk concentration in TypeORM-style apps (medusa, directus).
 
 ## One-command reproduction (offline)
 
@@ -54,10 +55,13 @@ applications that actually run databases.
 - **C2** — Naming: timestamp 3704 files/4 repos (Rails 100%), sequence 3824/16
   (Django/Laravel/Node), up-down pairs 682/1 (Diesel), Prisma dir-timestamp
   597/2, plus 6 minor classes.
-- **C3** (684 sampled files) — Rollback 141/684 (20.6%); destructive
-  82/684 (12.0%). Highest risk: medusa (TypeORM) 21/25 destructive with 0
-  rollback; metabase (Liquibase) 14/25 destructive with 0 rollback. Counterexample:
-  lemmy (Diesel) 17/25 destructive with 100% rollback; mattermost 15/25 with 100%.
+- **C3** (684 sampled files, comments stripped; XML/API drop forms included) —
+  Rollback 128/684 (18.7%; empty/irreversible down-bodies excluded); destructive
+  137/684 (20.0%). Highest risk: medusa (TypeORM/MikroORM) 21/25 destructive
+  with 0 rollback; directus (TypeORM API-form) 18/25 with 0 rollback; keycloak
+  (Liquibase XML-form) 7/25 with 0 rollback. metabase's 14/25 are all
+  `DROP VIEW` redefinitions (low severity). Counterexample: lemmy (Diesel)
+  17/25 destructive with 100% rollback; mattermost 15/25 with 100%.
 
 ## Data availability
 
