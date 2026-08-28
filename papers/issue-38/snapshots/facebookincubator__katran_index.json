@@ -1,0 +1,1308 @@
+{
+ "repo": "facebookincubator/katran",
+ "branch": "main",
+ "head_sha": "d44ca976cf2810cead1b0c870ae7ba361e5a44f4",
+ "files": [
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/BalancerStructs.h",
+   "bytes": 4964,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/BaseBpfAdapter.h",
+   "bytes": 25687,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_prog": 4,
+    "bpf_prog_type": 9,
+    "bpf_create_map": 1,
+    "bpf_create_map_name": 1,
+    "bpf_map_info": 3,
+    "bpf_name": 9,
+    "bpf_attach_type": 10,
+    "bpf_prog_info": 4,
+    "bpf_perf_event": 2,
+    "bpf_ktime_get_ns": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/BpfAdapter.h",
+   "bytes": 2238,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_prog": 2,
+    "bpf_prog_type": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/BpfBatchUtil.h",
+   "bytes": 7125,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_info": 3,
+    "bpf_map_batch_opts": 3,
+    "bpf_map_delete_batch": 1,
+    "bpf_map_lookup_batch": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/BpfLoader.h",
+   "bytes": 6011,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program": 2,
+    "bpf_prog_type": 8,
+    "bpf_object": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/ByteRangeWriter.h",
+   "bytes": 1384,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/CHHelpers.h",
+   "bytes": 2094,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/DataWriter.h",
+   "bytes": 2378,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/EventPipeCallback.h",
+   "bytes": 4100,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/FileWriter.h",
+   "bytes": 1323,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/IOBufWriter.h",
+   "bytes": 1361,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/IpHelpers.h",
+   "bytes": 1691,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/KatranEventReader.h",
+   "bytes": 1446,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/KatranLb.h",
+   "bytes": 46009,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/KatranLbStructs.h",
+   "bytes": 12083,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tail_call": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 1,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/KatranMonitor.h",
+   "bytes": 3652,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/KatranSimulator.h",
+   "bytes": 2325,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/KatranSimulatorUtils.h",
+   "bytes": 2765,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MacHelpers.h",
+   "bytes": 961,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MaglevBase.h",
+   "bytes": 1709,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MaglevHash.h",
+   "bytes": 1579,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MaglevHashV2.h",
+   "bytes": 1614,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MonitoringServiceCore.h",
+   "bytes": 5824,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MonitoringStructs.h",
+   "bytes": 2174,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/MurmurHash3.h",
+   "bytes": 866,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/Netlink.h",
+   "bytes": 2631,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_name": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/PcapMsg.h",
+   "bytes": 2375,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/PcapMsgMeta.h",
+   "bytes": 2004,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/PcapStructs.h",
+   "bytes": 1490,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/PcapWriter.h",
+   "bytes": 6589,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/PerfBufferEventReader.h",
+   "bytes": 3235,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PERF_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/PipeWriter.h",
+   "bytes": 3176,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/Vip.h",
+   "bytes": 4967,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer.bpf.c",
+   "bytes": 37701,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 54,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 2,
+    "bpf_htons": 1,
+    "bpf_get_smp_processor_id": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 18,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer_consts.h",
+   "bytes": 14612,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_net_helpers": 2,
+    "bpf_xdp_get_buff_len": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer_helpers.h",
+   "bytes": 4149,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_printk": 1,
+    "bpf_trace_printk": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_tail_call": 1,
+    "bpf_xdp_adjust_head": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 1,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer_kern-tpl.h",
+   "bytes": 180,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer_kern_flavors-tpl.h",
+   "bytes": 189,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer_maps.h",
+   "bytes": 7871,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 3,
+    "BPF_MAP_TYPE_LPM_TRIE": 3,
+    "BPF_MAP_TYPE_LRU_HASH": 3,
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 2,
+    "BPF_MAP_TYPE_ARRAY": 4,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 8,
+    "BPF_MAP_TYPE_LRU_PERCPU_HASH": 1,
+    "BPF_MAP_TYPE_HASH_OF_MAPS": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/balancer_structs.h",
+   "bytes": 4212,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/control_data_maps.h",
+   "bytes": 2551,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/csum_helpers.h",
+   "bytes": 9816,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_csum_diff": 36,
+    "bpf_htonl": 12,
+    "bpf_ntohs": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 0,
+    "bpf2bpf": 13,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/encap_helpers.h",
+   "bytes": 3099,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 5
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/flow_debug.h",
+   "bytes": 1353,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/flow_debug_helpers.h",
+   "bytes": 3969,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ntohs": 4,
+    "bpf_get_smp_processor_id": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/flow_debug_maps.h",
+   "bytes": 1478,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 1,
+    "BPF_MAP_TYPE_LRU_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/handle_icmp.h",
+   "bytes": 10722,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP",
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 3,
+    "bpf_htonl": 1,
+    "bpf_xdp_adjust_tail": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_ntohl": 1,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 11,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/healthchecking.bpf.c",
+   "bytes": 5036,
+   "is_bpf_source": true,
+   "sec": {
+    "TC": 1
+   },
+   "ctx_families": [
+    "TC"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 11,
+    "bpf_redirect": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/healthchecking_consts.h",
+   "bytes": 1846,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/healthchecking_helpers.h",
+   "bytes": 9800,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 4,
+    "bpf_skb_adjust_room": 4,
+    "bpf_get_prandom_u32": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/healthchecking_ipip.c",
+   "bytes": 4305,
+   "is_bpf_source": true,
+   "sec": {
+    "TC": 1
+   },
+   "ctx_families": [
+    "TC"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tunnel_key": 1,
+    "bpf_map_lookup_elem": 4,
+    "bpf_skb_set_tunnel_key": 1,
+    "bpf_redirect": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/healthchecking_maps.h",
+   "bytes": 2977,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 3,
+    "BPF_MAP_TYPE_HASH": 4,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/healthchecking_structs.h",
+   "bytes": 2052,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/introspection.h",
+   "bytes": 1926,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/pckt_encap.h",
+   "bytes": 12371,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 1,
+    "bpf_map_lookup_elem": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 9,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/pckt_parsing.h",
+   "bytes": 15120,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_array": 1,
+    "bpf_ntohs": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 10,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/xdp_pktcntr.c",
+   "bytes": 1795,
+   "is_bpf_source": true,
+   "sec": {
+    "XDP": 1
+   },
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "path": "katran/lib/bpf/xdp_root.c",
+   "bytes": 1201,
+   "is_bpf_source": true,
+   "sec": {
+    "XDP": 1
+   },
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tail_call": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 1,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  }
+ ]
+}

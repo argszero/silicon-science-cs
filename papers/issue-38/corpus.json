@@ -1,0 +1,66 @@
+{
+ "fetched_at": "2026-08-28T19:30:00+08:00",
+ "repos": [
+  {
+   "repo": "torvalds/linux",
+   "default_branch": "master",
+   "head_sha": "1b78070aaef63512688aebfbc82365ef9d6660f1"
+  },
+  {
+   "repo": "cilium/cilium",
+   "default_branch": "main",
+   "head_sha": "aa6ed21de484b29dc04a2f6d226a1c5aea8b0acb"
+  },
+  {
+   "repo": "iovisor/bcc",
+   "default_branch": "master",
+   "head_sha": "f07cbb734d5d555dc35adf1326393f27eb9e7095"
+  },
+  {
+   "repo": "bpftrace/bpftrace",
+   "default_branch": "master",
+   "head_sha": "d052fff44649305ddcb9c5e6d19f74c2e41e542f"
+  },
+  {
+   "repo": "falcosecurity/falco",
+   "default_branch": "master",
+   "head_sha": "130747499bb831ff8212af4da13c3fa9ffd7328b"
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "default_branch": "main",
+   "head_sha": "d44ca976cf2810cead1b0c870ae7ba361e5a44f4"
+  },
+  {
+   "repo": "cilium/tetragon",
+   "default_branch": "main",
+   "head_sha": "f9de1442ffd13a8fa50cea12e20c2b65cec5457b"
+  },
+  {
+   "repo": "aquasecurity/tracee",
+   "default_branch": "main",
+   "head_sha": "7c9ec9788ec555d019e109bd62182c7397d70646"
+  },
+  {
+   "repo": "DataDog/datadog-agent",
+   "default_branch": "main",
+   "head_sha": "ad97d80a50286577223812edf9668412426fb340"
+  },
+  {
+   "repo": "inspektor-gadget/inspektor-gadget",
+   "default_branch": "main",
+   "head_sha": "69200806e821ce7f06302e97611c810c7d215b77"
+  },
+  {
+   "repo": "libbpf/libbpf",
+   "default_branch": "master",
+   "head_sha": "f7081a6baf3f54949aacb8c2fc11bb30783b83e9"
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "default_branch": "master",
+   "head_sha": "1a1d1e7ec9374cff24e9d03f55422590acb8fc92",
+   "note": "falco modern_bpf driver (falco repo itself has no BPF code on master)"
+  }
+ ]
+}

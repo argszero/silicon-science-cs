@@ -1,0 +1,175 @@
+{
+ "repo": "falcosecurity/libs",
+ "branch": "master",
+ "head_sha": "1a1d1e7ec9374cff24e9d03f55422590acb8fc92",
+ "files": [
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/page_fault_kernel.bpf.c",
+   "bytes": 1441,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_probe_read_kernel": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/page_fault_user.bpf.c",
+   "bytes": 1437,
+   "is_bpf_source": false,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_probe_read_kernel": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/sched_process_exec.bpf.c",
+   "bytes": 11738,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 3
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tail_call": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 2,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/sched_process_exit.bpf.c",
+   "bytes": 7319,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/sched_process_fork.bpf.c",
+   "bytes": 8722,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 3
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tail_call": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 2,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/sched_switch.bpf.c",
+   "bytes": 1989,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "path": "driver/modern_bpf/programs/attached/events/signal_deliver.bpf.c",
+   "bytes": 2019,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  }
+ ]
+}

@@ -1,0 +1,7337 @@
+{
+ "repo": "cilium/cilium",
+ "branch": "main",
+ "head_sha": "aa6ed21de484b29dc04a2f6d226a1c5aea8b0acb",
+ "files": [
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_alignchecker.c",
+   "bytes": 3262,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "other",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_host.c",
+   "bytes": 59692,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 18,
+    "bpf_redirect_neigh": 2,
+    "bpf_host": 4,
+    "bpf_clear_meta": 3,
+    "bpf_lxc": 4
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 23,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_lxc.c",
+   "bytes": 85557,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 3,
+    "bpf_host": 10,
+    "bpf_sock": 5,
+    "bpf_htons": 27,
+    "bpf_ntohs": 6,
+    "bpf_ntohl": 1,
+    "bpf_clear_meta": 2,
+    "bpf_overlay": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 3
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 24,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_overlay.c",
+   "bytes": 19148,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 2,
+    "bpf_ntohl": 1,
+    "bpf_tunnel_key": 3,
+    "bpf_htons": 7,
+    "bpf_clear_meta": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_probes.c",
+   "bytes": 1009,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "other",
+   "helpers": {
+    "bpf_fib_lookup": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_sock.c",
+   "bytes": 34104,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "sockops",
+    "socket",
+    "sockops",
+    "socket",
+    "sockops",
+    "socket",
+    "socket",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "socket",
+    "socket",
+    "socket",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops",
+    "sockops"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "other",
+   "helpers": {
+    "bpf_htonl": 3,
+    "bpf_sock_addr": 36,
+    "bpf_sock": 15,
+    "bpf_htons": 1,
+    "bpf_ntohs": 12
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 39,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_sock_term.c",
+   "bytes": 3239,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "other",
+   "helpers": {
+    "bpf_iter_meta": 3,
+    "bpf_iter__udp": 5,
+    "bpf_iter__tcp": 5,
+    "bpf_sock_destroy": 5,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_wireguard.c",
+   "bytes": 11821,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_redirect_neigh": 3,
+    "bpf_clear_meta": 2,
+    "bpf_overlay": 1,
+    "bpf_host": 2,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/bpf_xdp.c",
+   "bytes": 8454,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_lxc": 1,
+    "bpf_xdp_exit": 4,
+    "bpf_htons": 2,
+    "bpf_clear_meta": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_LPM_TRIE": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 10,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/ep_config.h",
+   "bytes": 386,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/filter_config.h",
+   "bytes": 393,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/access.h",
+   "bytes": 1021,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/api.h",
+   "bytes": 403,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/builtins.h",
+   "bytes": 20243,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_core_enum_value_exists": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 18,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/compiler.h",
+   "bytes": 2603,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_barrier": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/csum.h",
+   "bytes": 1309,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/errno.h",
+   "bytes": 808,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/features.h",
+   "bytes": 297,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/features_skb.h",
+   "bytes": 308,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/features_xdp.h",
+   "bytes": 308,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/helpers.h",
+   "bytes": 3697,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_fib_lookup_padded": 1,
+    "bpf_fib_lookup": 2,
+    "bpf_sock": 2,
+    "bpf_sock_tuple": 2,
+    "bpf_core_enum_value_exists": 1,
+    "bpf_func_id": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/helpers_skb.h",
+   "bytes": 2723,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "TC",
+    "socket"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_redir_neigh": 1,
+    "bpf_tunnel_key": 2,
+    "bpf_sock": 3,
+    "bpf_sock_tuple": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/helpers_sock.h",
+   "bytes": 404,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_sock_addr": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/helpers_xdp.h",
+   "bytes": 2055,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tunnel_key": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/lb_selection.h",
+   "bytes": 369,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/loader.h",
+   "bytes": 623,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/section.h",
+   "bytes": 917,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/stddef.h",
+   "bytes": 210,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/tailcall.h",
+   "bytes": 1860,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/bpf/types_mapper.h",
+   "bytes": 658,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/bpf.h",
+   "bytes": 272675,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 1
+   },
+   "ctx_families": [
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "sockops",
+    "sockops",
+    "TC",
+    "TC",
+    "socket",
+    "socket",
+    "TC",
+    "socket",
+    "kprobe",
+    "TC",
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_common": 1,
+    "bpf_insn": 1,
+    "bpf_lpm_trie_key": 1,
+    "bpf_cgroup_storage_key": 1,
+    "bpf_attach_type": 3,
+    "bpf_cgroup_iter_order": 2,
+    "bpf_iter_link_info": 2,
+    "bpf_attr": 3,
+    "bpf_fd": 7,
+    "bpf_prog_info": 2,
+    "bpf_map_info": 2,
+    "bpf_btf_info": 2,
+    "bpf_link_info": 2,
+    "bpf_task_fd_type": 2,
+    "bpf_cmd": 1,
+    "bpf_map_type": 2,
+    "bpf_prog_type": 2,
+    "bpf_link_type": 1,
+    "bpf_perf_event_type": 2,
+    "bpf_copy_from_user": 2,
+    "bpf_call": 4,
+    "bpf_link": 1,
+    "bpf_stats_type": 1,
+    "bpf_stack_build_id_status": 1,
+    "bpf_stack_build_id": 1,
+    "bpf_func_info": 3,
+    "bpf_line_info": 3,
+    "bpf_core_relo": 4,
+    "bpf_get_attach_cookie": 3,
+    "bpf_cookie": 2,
+    "bpf_doc": 1,
+    "bpf_map_lookup_elem": 5,
+    "bpf_map": 36,
+    "bpf_map_update_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_probe_read": 3,
+    "bpf_probe_read_user": 3,
+    "bpf_probe_read_kernel": 2,
+    "bpf_ktime_get_ns": 1,
+    "bpf_trace_printk": 7,
+    "bpf_get_prandom_u32": 1,
+    "bpf_get_smp_processor_id": 2,
+    "bpf_skb_store_bytes": 5,
+    "bpf_l3_csum_replace": 5,
+    "bpf_csum_diff": 5,
+    "bpf_l4_csum_replace": 3,
+    "bpf_tail_call": 1,
+    "bpf_clone_redirect": 5,
+    "bpf_redirect": 7,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_current_uid_gid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_get_cgroup_classid": 5,
+    "bpf_skb_vlan_push": 1,
+    "bpf_skb_vlan_pop": 1,
+    "bpf_skb_get_tunnel_key": 4,
+    "bpf_tunnel_key": 7,
+    "bpf_skb_set_tunnel_key": 3,
+    "bpf_perf_event_read": 5,
+    "bpf_perf_event_read_value": 6,
+    "bpf_redirect_map": 3,
+    "bpf_get_route_realm": 1,
+    "bpf_perf_event_output": 5,
+    "bpf_skb_load_bytes": 5,
+    "bpf_get_stackid": 2,
+    "bpf_skb_get_tunnel_opt": 3,
+    "bpf_skb_set_tunnel_opt": 1,
+    "bpf_skb_change_proto": 2,
+    "bpf_skb_change_type": 1,
+    "bpf_skb_under_cgroup": 1,
+    "bpf_get_hash_recalc": 3,
+    "bpf_set_hash_invalid": 2,
+    "bpf_get_current_task": 1,
+    "bpf_probe_write_user": 1,
+    "bpf_current_task_under_cgroup": 1,
+    "bpf_skb_change_tail": 1,
+    "bpf_skb_pull_data": 3,
+    "bpf_csum_update": 1,
+    "bpf_get_numa_node_id": 1,
+    "bpf_skb_change_head": 1,
+    "bpf_xdp_adjust_head": 1,
+    "bpf_probe_read_str": 1,
+    "bpf_probe_read_kernel_str": 3,
+    "bpf_probe_read_user_str": 4,
+    "bpf_get_socket_cookie": 8,
+    "bpf_sock_addr": 7,
+    "bpf_sock_ops": 14,
+    "bpf_get_socket_uid": 1,
+    "bpf_set_hash": 1,
+    "bpf_setsockopt": 4,
+    "bpf_socket": 6,
+    "bpf_skb_adjust_room": 2,
+    "bpf_sk_redirect_map": 1,
+    "bpf_sock_map_update": 1,
+    "bpf_xdp_adjust_meta": 1,
+    "bpf_perf_event_value": 3,
+    "bpf_perf_prog_read_value": 1,
+    "bpf_perf_event_data": 2,
+    "bpf_getsockopt": 4,
+    "bpf_override_return": 1,
+    "bpf_sock_ops_cb_flags_set": 2,
+    "bpf_sock": 34,
+    "bpf_sock_ops_cb_flags": 4,
+    "bpf_msg_redirect_map": 1,
+    "bpf_msg_apply_bytes": 1,
+    "bpf_msg_cork_bytes": 1,
+    "bpf_msg_pull_data": 1,
+    "bpf_bind": 1,
+    "bpf_xdp_adjust_tail": 1,
+    "bpf_skb_get_xfrm_state": 1,
+    "bpf_xfrm_state": 3,
+    "bpf_get_stack": 2,
+    "bpf_skb_load_bytes_relative": 1,
+    "bpf_fib_lookup": 8,
+    "bpf_redirect_neigh": 2,
+    "bpf_sock_hash_update": 1,
+    "bpf_msg_redirect_hash": 1,
+    "bpf_sk_redirect_hash": 1,
+    "bpf_lwt_push_encap": 1,
+    "bpf_lwt_seg6_store_bytes": 1,
+    "bpf_lwt_seg6_adjust_srh": 1,
+    "bpf_lwt_seg6_action": 1,
+    "bpf_rc_repeat": 2,
+    "bpf_rc_keydown": 2,
+    "bpf_skb_cgroup_id": 4,
+    "bpf_get_current_cgroup_id": 3,
+    "bpf_get_local_storage": 1,
+    "bpf_sk_select_reuseport": 1,
+    "bpf_skb_ancestor_cgroup_id": 1,
+    "bpf_sk_lookup_tcp": 2,
+    "bpf_sock_tuple": 4,
+    "bpf_sk_release": 5,
+    "bpf_sk_lookup_udp": 1,
+    "bpf_sk_lookup_xxx": 2,
+    "bpf_map_push_elem": 1,
+    "bpf_map_pop_elem": 1,
+    "bpf_map_peek_elem": 1,
+    "bpf_msg_push_data": 1,
+    "bpf_msg_pop_data": 1,
+    "bpf_rc_pointer_rel": 1,
+    "bpf_spin_lock": 19,
+    "bpf_spin_unlock": 4,
+    "bpf_sk_fullsock": 3,
+    "bpf_tcp_sock": 6,
+    "bpf_skb_ecn_set_ce": 1,
+    "bpf_get_listener_sock": 1,
+    "bpf_skc_lookup_tcp": 1,
+    "bpf_tcp_check_syncookie": 1,
+    "bpf_sysctl_get_name": 1,
+    "bpf_sysctl": 5,
+    "bpf_sysctl_get_current_value": 1,
+    "bpf_sysctl_get_new_value": 1,
+    "bpf_sysctl_set_new_value": 1,
+    "bpf_strtol": 1,
+    "bpf_strtoul": 1,
+    "bpf_sk_storage_get": 1,
+    "bpf_sk_storage_delete": 1,
+    "bpf_send_signal": 1,
+    "bpf_tcp_gen_syncookie": 1,
+    "bpf_skb_output": 1,
+    "bpf_sys_open": 1,
+    "bpf_tcp_send_ack": 1,
+    "bpf_send_signal_thread": 1,
+    "bpf_jiffies64": 1,
+    "bpf_read_branch_records": 1,
+    "bpf_get_ns_current_pid_tgid": 1,
+    "bpf_pidns_info": 2,
+    "bpf_xdp_output": 1,
+    "bpf_perf_eventoutput": 1,
+    "bpf_get_netns_cookie": 1,
+    "bpf_get_current_ancestor_cgroup_id": 1,
+    "bpf_sk_assign": 2,
+    "bpf_sk_lookup": 3,
+    "bpf_ktime_get_boot_ns": 1,
+    "bpf_seq_printf": 3,
+    "bpf_seq_write": 2,
+    "bpf_sk_cgroup_id": 3,
+    "bpf_sk_ancestor_cgroup_id": 1,
+    "bpf_ringbuf_output": 3,
+    "bpf_ringbuf_reserve": 1,
+    "bpf_ringbuf_submit": 2,
+    "bpf_ringbuf_discard": 2,
+    "bpf_ringbuf_query": 1,
+    "bpf_csum_level": 3,
+    "bpf_skc_to_tcp6_sock": 1,
+    "bpf_skc_to_tcp_sock": 1,
+    "bpf_skc_to_tcp_timewait_sock": 1,
+    "bpf_skc_to_tcp_request_sock": 1,
+    "bpf_skc_to_udp6_sock": 1,
+    "bpf_get_task_stack": 2,
+    "bpf_load_hdr_opt": 4,
+    "bpf_store_hdr_opt": 3,
+    "bpf_reserve_hdr_opt": 3,
+    "bpf_inode_storage_get": 1,
+    "bpf_local_storage": 26,
+    "bpf_inode_storage_delete": 1,
+    "bpf_d_path": 1,
+    "bpf_snprintf_btf": 6,
+    "bpf_seq_printf_btf": 1,
+    "bpf_skb_cgroup_classid": 1,
+    "bpf_redir_neigh": 2,
+    "bpf_per_cpu_ptr": 6,
+    "bpf_this_cpu_ptr": 2,
+    "bpf_redirect_peer": 1,
+    "bpf_task_storage_get": 1,
+    "bpf_task_storage_delete": 1,
+    "bpf_get_current_task_btf": 1,
+    "bpf_bprm_opts_set": 2,
+    "bpf_ktime_get_coarse_ns": 1,
+    "bpf_ima_inode_hash": 1,
+    "bpf_sock_from_file": 1,
+    "bpf_check_mtu": 2,
+    "bpf_for_each_map_elem": 1,
+    "bpf_prog": 3,
+    "bpf_snprintf": 1,
+    "bpf_sys_bpf": 1,
+    "bpf_btf_find_by_name_kind": 1,
+    "bpf_sys_close": 1,
+    "bpf_timer_init": 4,
+    "bpf_timer": 6,
+    "bpf_timer_set_callback": 3,
+    "bpf_timer_start": 3,
+    "bpf_map_update": 1,
+    "bpf_timer_cancel": 2,
+    "bpf_get_func_ip": 1,
+    "bpf_task_pt_regs": 1,
+    "bpf_get_branch_snapshot": 1,
+    "bpf_trace_vprintk": 1,
+    "bpf_skc_to_unix_sock": 1,
+    "bpf_kallsyms_lookup_name": 1,
+    "bpf_find_vma": 1,
+    "bpf_loop": 1,
+    "bpf_strncmp": 1,
+    "bpf_get_func_arg": 1,
+    "bpf_get_func_ret": 1,
+    "bpf_get_func_arg_cnt": 1,
+    "bpf_get_retval": 1,
+    "bpf_set_retval": 3,
+    "bpf_xdp_get_buff_len": 1,
+    "bpf_xdp_load_bytes": 1,
+    "bpf_xdp_store_bytes": 1,
+    "bpf_copy_from_user_task": 1,
+    "bpf_skb_set_tstamp": 1,
+    "bpf_redirect_": 3,
+    "bpf_ima_file_hash": 1,
+    "bpf_kptr_xchg": 1,
+    "bpf_map_lookup_percpu_elem": 1,
+    "bpf_skc_to_mptcp_sock": 1,
+    "bpf_dynptr_from_mem": 1,
+    "bpf_dynptr": 10,
+    "bpf_ringbuf_reserve_dynptr": 1,
+    "bpf_ringbuf_submit_dynptr": 2,
+    "bpf_ringbuf_discard_dynptr": 2,
+    "bpf_dynptr_read": 1,
+    "bpf_dynptr_write": 2,
+    "bpf_dynptr_data": 2,
+    "bpf_dynptr_slice": 1,
+    "bpf_dynptr_slice_rdwr": 1,
+    "bpf_tcp_raw_gen_syncookie_ipv4": 1,
+    "bpf_tcp_raw_gen_syncookie_ipv6": 1,
+    "bpf_tcp_raw_check_syncookie_ipv4": 1,
+    "bpf_tcp_raw_check_syncookie_ipv6": 1,
+    "bpf_ktime_get_tai_ns": 1,
+    "bpf_user_ringbuf_drain": 1,
+    "bpf_cgrp_storage_get": 1,
+    "bpf_cgrp_storage_delete": 1,
+    "bpf_func_id": 1,
+    "bpf_adj_room_mode": 1,
+    "bpf_hdr_start_off": 1,
+    "bpf_lwt_encap_mode": 1,
+    "bpf_flow_keys": 2,
+    "bpf_ret_code": 1,
+    "bpf_xdp_sock": 1,
+    "bpf_warn_invalid_xdp_action": 1,
+    "bpf_devmap_val": 1,
+    "bpf_cpumap_val": 1,
+    "bpf_ntohl": 1,
+    "bpf_cgroup_dev_ctx": 1,
+    "bpf_raw_tracepoint_args": 1,
+    "bpf_check_mtu_flags": 1,
+    "bpf_check_mtu_ret": 1,
+    "bpf_list_head": 1,
+    "bpf_list_node": 1,
+    "bpf_rb_root": 1,
+    "bpf_rb_node": 1,
+    "bpf_refcount": 1,
+    "bpf_sockopt": 1,
+    "bpf_core_relo_kind": 4,
+    "bpf_iter_num": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LPM_TRIE": 2,
+    "BPF_MAP_TYPE_SOCKHASH": 4,
+    "BPF_MAP_TYPE_QUEUE": 4,
+    "BPF_MAP_TYPE_STACK": 4,
+    "BPF_MAP_TYPE_HASH": 4,
+    "BPF_MAP_TYPE_PERCPU_HASH": 3,
+    "BPF_MAP_TYPE_LRU_HASH": 3,
+    "BPF_MAP_TYPE_LRU_PERCPU_HASH": 3,
+    "BPF_MAP_TYPE_STRUCT_OPS": 2,
+    "BPF_MAP_TYPE_UNSPEC": 1,
+    "BPF_MAP_TYPE_ARRAY": 4,
+    "BPF_MAP_TYPE_PROG_ARRAY": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 6,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 3,
+    "BPF_MAP_TYPE_STACK_TRACE": 2,
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 3,
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 1,
+    "BPF_MAP_TYPE_HASH_OF_MAPS": 1,
+    "BPF_MAP_TYPE_DEVMAP": 1,
+    "BPF_MAP_TYPE_SOCKMAP": 3,
+    "BPF_MAP_TYPE_CPUMAP": 1,
+    "BPF_MAP_TYPE_XSKMAP": 1,
+    "BPF_MAP_TYPE_CGROUP_STORAGE_DEPRECATED": 2,
+    "BPF_MAP_TYPE_CGROUP_STORAGE": 4,
+    "BPF_MAP_TYPE_CGRP_STORAGE": 4,
+    "BPF_MAP_TYPE_REUSEPORT_SOCKARRAY": 2,
+    "BPF_MAP_TYPE_PERCPU_CGROUP_STORAGE": 1,
+    "BPF_MAP_TYPE_SK_STORAGE": 2,
+    "BPF_MAP_TYPE_DEVMAP_HASH": 1,
+    "BPF_MAP_TYPE_RINGBUF": 1,
+    "BPF_MAP_TYPE_INODE_STORAGE": 2,
+    "BPF_MAP_TYPE_TASK_STORAGE": 2,
+    "BPF_MAP_TYPE_BLOOM_FILTER": 2,
+    "BPF_MAP_TYPE_USER_RINGBUF": 1,
+    "BPF_MAP_TYPE_LRU_": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 1,
+    "bpf2bpf": 0,
+    "ringbuf": 17,
+    "perfbuf": 5,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/bpf_common.h",
+   "bytes": 1252,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/byteorder.h",
+   "bytes": 298,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/icmp.h",
+   "bytes": 2940,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/icmpv6.h",
+   "bytes": 4333,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/if_arp.h",
+   "bytes": 5527,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/if_ether.h",
+   "bytes": 7390,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/if_packet.h",
+   "bytes": 631,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/igmp.h",
+   "bytes": 2923,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/in.h",
+   "bytes": 7212,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/in6.h",
+   "bytes": 3934,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/ip.h",
+   "bytes": 3606,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/ipv6.h",
+   "bytes": 4157,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/socket.h",
+   "bytes": 3471,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/swab.h",
+   "bytes": 6539,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/tcp.h",
+   "bytes": 2249,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/types.h",
+   "bytes": 144,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/include/linux/udp.h",
+   "bytes": 1358,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/act.h",
+   "bytes": 1403,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/arp.h",
+   "bytes": 2445,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/auth.h",
+   "bytes": 1442,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/auxvars.h",
+   "bytes": 632,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/classifiers.h",
+   "bytes": 8341,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 4,
+    "bpf_wireguard": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 8,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/clustermesh.h",
+   "bytes": 2546,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/common.h",
+   "bytes": 12173,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_lxc": 1,
+    "bpf_lpm_trie_key": 2,
+    "bpf_tunnel_key": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/config.h",
+   "bytes": 538,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/config_map.h",
+   "bytes": 1679,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/conntrack.h",
+   "bytes": 39270,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_mono_now": 2,
+    "bpf_sec_to_mono": 8,
+    "bpf_ntohs": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 55,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/conntrack_map.h",
+   "bytes": 5854,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 7,
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 4
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/csum.h",
+   "bytes": 2374,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/dbg.h",
+   "bytes": 7054,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_trace": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 8,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/drop.h",
+   "bytes": 7579,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/drop_reasons.h",
+   "bytes": 3191,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/edt.h",
+   "bytes": 2982,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/egress_gateway.h",
+   "bytes": 17544,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 2,
+    "bpf_htonl": 1,
+    "bpf_fib_lookup_padded": 3,
+    "bpf_htons": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LPM_TRIE": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 19,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/encap.h",
+   "bytes": 3743,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_tunnel_key": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 7,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/encrypt.h",
+   "bytes": 3312,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/endian.h",
+   "bytes": 2686,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 2,
+    "bpf_u8_to_be16": 1,
+    "bpf_ntohs": 1,
+    "bpf_htonl": 1,
+    "bpf_ntohl": 1,
+    "bpf_cpu_to_be64": 1,
+    "bpf_be64_to_cpu": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/eps.h",
+   "bytes": 4895,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_LPM_TRIE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/eth.h",
+   "bytes": 3107,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 1,
+    "bpf_fib_lookup": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 11,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/events.h",
+   "bytes": 332,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/export_type.h",
+   "bytes": 573,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/fib.h",
+   "bytes": 10074,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_fib_lookup_padded": 8,
+    "bpf_redir_neigh": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 13,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ghash.h",
+   "bytes": 2939,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/hash.h",
+   "bytes": 1244,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/hexdump.h",
+   "bytes": 3422,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/host_firewall.h",
+   "bytes": 22256,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_ntohs": 2,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 13,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/icmp.h",
+   "bytes": 3439,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/icmp6.h",
+   "bytes": 22340,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 5,
+    "bpf_ntohs": 3,
+    "bpf_htonl": 2,
+    "bpf_fib_lookup": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 14,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/icmp_wsum.h",
+   "bytes": 985,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/identity.h",
+   "bytes": 12584,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 17,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ip_options.h",
+   "bytes": 5269,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ntohs": 1,
+    "bpf_ntohl": 1,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ipfrag.h",
+   "bytes": 3419,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ipsec.h",
+   "bytes": 8463,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 4
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 7,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ipv4.h",
+   "bytes": 4223,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htonl": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 9,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ipv4_core.h",
+   "bytes": 158,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ipv6.h",
+   "bytes": 12956,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htonl": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 1
+   },
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 0,
+    "bpf2bpf": 27,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ipv6_core.h",
+   "bytes": 807,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/jhash.h",
+   "bytes": 2684,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/l2_responder.h",
+   "bytes": 2896,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/l3.h",
+   "bytes": 2249,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/l4.h",
+   "bytes": 3090,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 8,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/lb.h",
+   "bytes": 67992,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 3,
+    "bpf_xdp_store_bytes": 4,
+    "bpf_skb_store_bytes": 4,
+    "bpf_lxc": 1,
+    "bpf_l4_csum_replace": 1,
+    "bpf_ntohs": 2,
+    "bpf_mono_now": 4,
+    "bpf_sec_to_mono": 2,
+    "bpf_sock": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 7,
+    "BPF_MAP_TYPE_LRU_HASH": 4,
+    "BPF_MAP_TYPE_LPM_TRIE": 2,
+    "BPF_MAP_TYPE_HASH_OF_MAPS": 2,
+    "BPF_MAP_TYPE_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 112,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/local_delivery.h",
+   "bytes": 10428,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lxc": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 10,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/lrp.h",
+   "bytes": 3107,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/lxc.h",
+   "bytes": 1084,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/map_defs.h",
+   "bytes": 805,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/mcast.h",
+   "bytes": 11590,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_ntohs": 1,
+    "bpf_for_each_map_elem": 1,
+    "bpf_tunnel_key": 1,
+    "bpf_ntohl": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH_OF_MAPS": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 10,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/metrics.h",
+   "bytes": 2106,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/nat.h",
+   "bytes": 66407,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ntohs": 6,
+    "bpf_mono_now": 6,
+    "bpf_htons": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 4,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 2,
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 2,
+    "BPF_MAP_TYPE_LPM_TRIE": 2
+   },
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 0,
+    "bpf2bpf": 53,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/nat_46x64.h",
+   "bytes": 11127,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htonl": 2,
+    "bpf_ntohs": 5,
+    "bpf_ntohl": 1,
+    "bpf_htons": 8
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 15,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/neigh.h",
+   "bytes": 2574,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/network_device.h",
+   "bytes": 1324,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_xdp_store_bytes": 1,
+    "bpf_skb_store_bytes": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/node.h",
+   "bytes": 1918,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/nodeport.h",
+   "bytes": 81858,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 2,
+    "bpf_ntohs": 9,
+    "bpf_htons": 18,
+    "bpf_fib_lookup_padded": 7,
+    "bpf_tunnel_key": 2,
+    "bpf_htonl": 8,
+    "bpf_ntohl": 1,
+    "bpf_lxc": 3,
+    "bpf_overlay": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 50,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/nodeport_egress.h",
+   "bytes": 22201,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_overlay": 1,
+    "bpf_wireguard": 1,
+    "bpf_fib_lookup_padded": 2,
+    "bpf_htons": 6,
+    "bpf_snat": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 14,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/notify.h",
+   "bytes": 1590,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/overloadable.h",
+   "bytes": 267,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/overloadable_skb.h",
+   "bytes": 6243,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC",
+    "TC"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_clear_meta": 1,
+    "bpf_tunnel_key": 3,
+    "bpf_ntohl": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 24,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/overloadable_xdp.h",
+   "bytes": 7453,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP",
+    "XDP",
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_clear_meta": 1,
+    "bpf_redir_neigh": 1,
+    "bpf_htons": 5,
+    "bpf_htonl": 3,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 18,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/policy.h",
+   "bytes": 17163,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 2,
+    "bpf_htons": 2,
+    "bpf_u8_to_be16": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LRU_PERCPU_HASH": 1,
+    "BPF_MAP_TYPE_LPM_TRIE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 11,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/policy_log.h",
+   "bytes": 4153,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 3,
+    "bpf_lxc": 1,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/proxy.h",
+   "bytes": 13121,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_sock_tuple": 6,
+    "bpf_sock": 3,
+    "bpf_ntohs": 2,
+    "bpf_htonl": 2,
+    "bpf_lxc": 1,
+    "bpf_htons": 2,
+    "bpf_sk_assign": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 14,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/proxy_hairpin.h",
+   "bytes": 2015,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_barrier": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/ratelimit.h",
+   "bytes": 3780,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/signal.h",
+   "bytes": 1608,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/sock.h",
+   "bytes": 1455,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "sockops"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_sock_addr": 1,
+    "bpf_sock": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/sock_term.h",
+   "bytes": 279,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/socket.h",
+   "bytes": 197,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/source_info.h",
+   "bytes": 1850,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_lxc": 1,
+    "bpf_overlay": 1,
+    "bpf_xdp": 1,
+    "bpf_sock": 1,
+    "bpf_wireguard": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/srv6.h",
+   "bytes": 12213,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 4,
+    "bpf_htons": 8,
+    "bpf_ntohs": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 13,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/srv6_maps.h",
+   "bytes": 2193,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 4
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LPM_TRIE": 4,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/static_data.h",
+   "bytes": 3507,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lxc": 1,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/subnet.h",
+   "bytes": 2688,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_lpm_trie_key": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LPM_TRIE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/tailcall.h",
+   "bytes": 4394,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/time.h",
+   "bytes": 861,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_sec": 2,
+    "bpf_mono_now": 1,
+    "bpf_sec_to_mono": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/token_bucket.h",
+   "bytes": 1401,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/trace.h",
+   "bytes": 11339,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 9,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/trace_helpers.h",
+   "bytes": 1506,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_trace_id_set": 4,
+    "bpf_trace_id_get": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/trace_sock.h",
+   "bytes": 6451,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "socket",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/tunnel.h",
+   "bytes": 2823,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 1,
+    "bpf_ntohl": 1,
+    "bpf_htonl": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/utils.h",
+   "bytes": 844,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/utime.h",
+   "bytes": 826,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/vtep.h",
+   "bytes": 703,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/lib/wireguard.h",
+   "bytes": 4477,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/netdev_config.h",
+   "bytes": 295,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/node_config.h",
+   "bytes": 2505,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/_scapy_selftest.c",
+   "bytes": 5359,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_ct_tests.c",
+   "bytes": 4824,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 1,
+    "bpf_clear_meta": 2,
+    "bpf_ktime_get_sec": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_nat_icmp.h",
+   "bytes": 6738,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_nat_tuples": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_nat_icmp6.h",
+   "bytes": 7787,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_nat_tuples": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_nat_tests.c",
+   "bytes": 43921,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_nat_tuples": 1,
+    "bpf_htons": 47,
+    "bpf_htonl": 78
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_nat_tuples.h",
+   "bytes": 2115,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_skb_255_tests.c",
+   "bytes": 1972,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/bpf_skb_511_tests.c",
+   "bytes": 1324,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtin_memcmp.h",
+   "bytes": 4596,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtin_memcpy.h",
+   "bytes": 4596,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtin_memmove.h",
+   "bytes": 9682,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtin_memmove2.h",
+   "bytes": 4926,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtin_memzero.h",
+   "bytes": 4724,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtin_test.h",
+   "bytes": 6799,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/builtins.c",
+   "bytes": 1679,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/classifiers_common.h",
+   "bytes": 7684,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_wireguard": 1,
+    "bpf_host": 1,
+    "bpf_htons": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/classifiers_l2_dev.c",
+   "bytes": 149,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/classifiers_l3_dev.c",
+   "bytes": 154,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/common.h",
+   "bytes": 10642,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_trace_printk": 1,
+    "bpf_then": 1,
+    "bpf_map_lookup_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/conntrack_test.c",
+   "bytes": 9649,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "TC",
+    "TC"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_test": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/decrypt_host.h",
+   "bytes": 4150,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/decrypt_host_ipsec.c",
+   "bytes": 144,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/decrypt_host_wireguard.c",
+   "bytes": 148,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/decrypt_host_wireguard_strict.c",
+   "bytes": 5840,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 5
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/decrypt_overlay_wireguard.c",
+   "bytes": 4948,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 1,
+    "bpf_overlay": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/destroy_sock_socket_lb.c",
+   "bytes": 5110,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_sock_destroy": 1,
+    "bpf_sock_term": 1,
+    "bpf_htons": 2,
+    "bpf_iter__udp": 1,
+    "bpf_iter__tcp": 1,
+    "bpf_iter_meta": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 8,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/drop_notify_test.c",
+   "bytes": 2398,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host.h",
+   "bytes": 11099,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 2,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_ipsec.c",
+   "bytes": 145,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_ipsec_strict.c",
+   "bytes": 185,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_ipsec_tunnel.c",
+   "bytes": 219,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_ipsec_tunnel_strict.c",
+   "bytes": 259,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_wireguard.c",
+   "bytes": 148,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_wireguard_strict.c",
+   "bytes": 188,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encrypt_host_wireguard_tunnel_strict.c",
+   "bytes": 262,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encryption_helpers_ipsec.c",
+   "bytes": 3013,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encryption_helpers_ipsec.h",
+   "bytes": 2393,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encryption_helpers_ipsec_native.c",
+   "bytes": 5813,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encryption_helpers_ipsec_tunnel.c",
+   "bytes": 2878,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/encryption_helpers_wireguard.c",
+   "bytes": 3411,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/eni_nlb_symetric_routing_host.c",
+   "bytes": 7909,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_redir_neigh": 1,
+    "bpf_host": 1,
+    "bpf_htons": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/extended_nat_tests.c",
+   "bytes": 3601,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 8
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/fib_tests.c",
+   "bytes": 6521,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_redir_neigh": 9,
+    "bpf_fib_lookup": 1,
+    "bpf_fib_lookup_padded": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/hairpin_sctp_flow.c",
+   "bytes": 9747,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1,
+    "bpf_htons": 6
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_bpf_masq.h",
+   "bytes": 19525,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 10,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_bpf_masq_native.c",
+   "bytes": 121,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_bpf_masq_overlay.c",
+   "bytes": 169,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_hostfw_extended_protocols.c",
+   "bytes": 152,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_hostfw_igmp.c",
+   "bytes": 119,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_kpr_dsr_geneve_lb.c",
+   "bytes": 344,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_kpr_dsr_option_lb.c",
+   "bytes": 292,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_kpr_dsr_option_remote_node.c",
+   "bytes": 301,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_only_socket_lb_test.c",
+   "bytes": 3072,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "sockops",
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "other",
+   "helpers": {
+    "bpf_sock_addr": 2,
+    "bpf_sock": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/host_proxy.c",
+   "bytes": 5874,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 4,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/hostfw_bpf_masq.c",
+   "bytes": 4450,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 2,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/hostfw_host_iptables.c",
+   "bytes": 9345,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 3,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/hostfw_igmp.h",
+   "bytes": 8466,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/icmp_error_revnat.c",
+   "bytes": 4673,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_nat_tuples": 1,
+    "bpf_htonl": 3,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/inter_cluster_snat_clusterip_backend_lxc.c",
+   "bytes": 10909,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2,
+    "bpf_overlay": 2,
+    "bpf_htons": 12
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/inter_cluster_snat_clusterip_backend_overlay.c",
+   "bytes": 11730,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 1,
+    "bpf_overlay": 1,
+    "bpf_lxc": 1,
+    "bpf_htons": 12
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/inter_cluster_snat_clusterip_client_lxc.c",
+   "bytes": 11300,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2,
+    "bpf_htons": 12,
+    "bpf_overlay": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/inter_cluster_snat_clusterip_client_overlay.c",
+   "bytes": 11902,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 1,
+    "bpf_overlay": 1,
+    "bpf_lxc": 2,
+    "bpf_htons": 12
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/ip_options_trace_id.c",
+   "bytes": 23372,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/ipfrag.c",
+   "bytes": 7283,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 10
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/ipv6_ndp_from_netdev_test.c",
+   "bytes": 11072,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/ipv6_test.c",
+   "bytes": 6547,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_test": 1,
+    "bpf_ntohl": 20
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/jhash_test.c",
+   "bytes": 618,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_test": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/kpr_dsr_lb.h",
+   "bytes": 34193,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1,
+    "bpf_tunnel_key": 11,
+    "bpf_host": 1,
+    "bpf_ntohl": 8,
+    "bpf_htons": 4
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/kpr_dsr_remote_node.h",
+   "bytes": 24966,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/l4lb_ipip_health_check_host.c",
+   "bytes": 4247,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 1,
+    "bpf_ntohl": 1,
+    "bpf_host": 1,
+    "bpf_htons": 3,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/l7_lb_hairpin_netdev.c",
+   "bytes": 4712,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/l7_lb_local_backend.h",
+   "bytes": 5493,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 4,
+    "bpf_prog_test_run_skb": 1,
+    "bpf_host": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/l7_lb_local_backend_host.c",
+   "bytes": 154,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/l7_lb_local_backend_pod.c",
+   "bytes": 150,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/lb_tests.c",
+   "bytes": 6914,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/lxc_extended_protocols.c",
+   "bytes": 6921,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/mcast_tests.c",
+   "bytes": 3119,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/mock_skb_metadata.c",
+   "bytes": 1474,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/mock_skb_metadata.h",
+   "bytes": 1615,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/network_policy.c",
+   "bytes": 7855,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/network_policy_tuples.h",
+   "bytes": 316,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/nodeport_defaults.h",
+   "bytes": 221,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/nodeport_geneve_dsr_lb_xdp.c",
+   "bytes": 10832,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1,
+    "bpf_htons": 14
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/nodeport_hybrid_dsr_test.c",
+   "bytes": 2787,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/nodeport_overlay_nat_lb.c",
+   "bytes": 8073,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 6,
+    "bpf_overlay": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/overlay.c",
+   "bytes": 689,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "TC"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_overlay": 1,
+    "bpf_redirect_neigh": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/pktgen.h",
+   "bytes": 35818,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_htons": 4,
+    "bpf_htonl": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 3,
+    "tail_calls": 0,
+    "bpf2bpf": 54,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/ratelimit.c",
+   "bytes": 2437,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/remote_node_masquerade_skip_test.c",
+   "bytes": 2934,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_nat_tuples": 1,
+    "bpf_htonl": 3,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/remote_node_masquerade_test.c",
+   "bytes": 2848,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_nat_tuples": 1,
+    "bpf_htonl": 3,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/scapy.h",
+   "bytes": 7474,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": 3,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/session_affinity_maglev_test.c",
+   "bytes": 11047,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 2,
+    "BPF_MAP_TYPE_HASH_OF_MAPS": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/session_affinity_test.c",
+   "bytes": 5434,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1,
+    "bpf_htons": 4,
+    "bpf_mono_now": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_lb_xlate_lrp_per_packet_lb.c",
+   "bytes": 6837,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_lb_xlate_socket_lb.c",
+   "bytes": 6858,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "sockops",
+    "XDP",
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "other",
+   "helpers": {
+    "bpf_sock_addr": 3,
+    "bpf_sock": 4,
+    "bpf_htonl": 14
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_tunnel_from_host.c",
+   "bytes": 14068,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_tunnel_from_lxc.c",
+   "bytes": 13718,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1,
+    "bpf_htons": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_tunnel_nodeport_masq.c",
+   "bytes": 8483,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 2,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_tunnel_nodeport_nat.c",
+   "bytes": 11458,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_host": 1,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/skip_tunnel_nodeport_revnat.c",
+   "bytes": 12899,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_host": 1,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_egressgw_redirect_from_host.c",
+   "bytes": 22499,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_host": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_egressgw_redirect_from_overlay.c",
+   "bytes": 13338,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_tunnel_key": 1,
+    "bpf_overlay": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_egressgw_redirect_from_overlay_with_rt_info.c",
+   "bytes": 5020,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_tunnel_key": 1,
+    "bpf_overlay": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_egressgw_snat.c",
+   "bytes": 19503,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_redir_neigh": 2,
+    "bpf_fib_lookup": 2,
+    "bpf_host": 1,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_geneve_dsr_legacy.c",
+   "bytes": 6337,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 2,
+    "bpf_overlay": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_icmp_snat.c",
+   "bytes": 336,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_nat_icmp": 1,
+    "bpf_nat_icmp6": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_icmp_snat_hostfw.c",
+   "bytes": 346,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_nat_icmp": 1,
+    "bpf_nat_icmp6": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_icmp_snat_tunnel.c",
+   "bytes": 364,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_nat_icmp": 1,
+    "bpf_nat_icmp6": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_l2_announcement.c",
+   "bytes": 3761,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_l2_announcement6.c",
+   "bytes": 5820,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lb_clusterip.c",
+   "bytes": 9083,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lb_external_ips.h",
+   "bytes": 8225,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lb_external_ips_ew.c",
+   "bytes": 152,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lb_external_ips_ns.c",
+   "bytes": 154,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lb_no_backend_nonroutable.c",
+   "bytes": 3698,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lxc_lb_hostport.c",
+   "bytes": 15269,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lxc_lb_no_backend.c",
+   "bytes": 3398,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lxc_lb_nodeport.c",
+   "bytes": 59041,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_lxc_policy_drop.c",
+   "bytes": 2023,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_icmp4_snat.h",
+   "bytes": 4901,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_nat_tuples": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_l3_dev.c",
+   "bytes": 149,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_l3_dev.h",
+   "bytes": 19555,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2,
+    "bpf_host": 2,
+    "bpf_wireguard": 1,
+    "bpf_ntohs": 1,
+    "bpf_htons": 16
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_l3_dev_lb_dsr_geneve_lb.c",
+   "bytes": 7232,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_l3_dev_to_tunnel.c",
+   "bytes": 6840,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_ntohs": 2,
+    "bpf_htons": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_l3_wireguard.c",
+   "bytes": 154,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb4_dsr_backend.c",
+   "bytes": 16780,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_host": 1,
+    "bpf_ntohs": 2,
+    "bpf_ntohl": 2,
+    "bpf_htons": 16
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb4_dsr_ipip_local.c",
+   "bytes": 13906,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2,
+    "bpf_host": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb4_ipip_termination.c",
+   "bytes": 20350,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 6,
+    "bpf_lxc": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb4_nat_backend.c",
+   "bytes": 4273,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 4
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb4_nat_lb.c",
+   "bytes": 40794,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_host": 1,
+    "bpf_htons": 30
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1,
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb6_dsr_backend.c",
+   "bytes": 10506,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_host": 1,
+    "bpf_htons": 1,
+    "bpf_ntohs": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb6_dsr_ipip_local.c",
+   "bytes": 12052,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2,
+    "bpf_host": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb6_ipip_termination.c",
+   "bytes": 16891,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 2,
+    "bpf_host": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb6_nat_lb.c",
+   "bytes": 43856,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_host": 1,
+    "bpf_htons": 12
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1,
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_dsr_ipip.c",
+   "bytes": 10162,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_tunnel_key": 5,
+    "bpf_fib_lookup": 2,
+    "bpf_host": 1,
+    "bpf_htons": 7,
+    "bpf_ntohl": 1,
+    "bpf_ntohs": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_dsr_lb.c",
+   "bytes": 8778,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_host": 1,
+    "bpf_htons": 5,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_fragments.h",
+   "bytes": 15050,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_lxc": 1,
+    "bpf_htons": 1,
+    "bpf_htonl": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_fragments_ew.c",
+   "bytes": 158,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_fragments_ns.c",
+   "bytes": 160,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_nat_lb_dynamic.c",
+   "bytes": 6968,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_no_backend.c",
+   "bytes": 5141,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_terminating_backend.c",
+   "bytes": 8443,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_htons": 8
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_lb_wildcard_drop.c",
+   "bytes": 16405,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1,
+    "bpf_ntohl": 1,
+    "bpf_ntohs": 1,
+    "bpf_htonl": 1,
+    "bpf_htons": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 6,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_snat_conflict.c",
+   "bytes": 11675,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_htons": 2,
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_nodeport_test.c",
+   "bytes": 24431,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1,
+    "bpf_htons": 22
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_policy_reject_response_test.c",
+   "bytes": 4607,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_host.h",
+   "bytes": 12388,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 3,
+    "bpf_lxc": 1,
+    "bpf_redirect": 2,
+    "bpf_redirect_peer": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_host_netkit.c",
+   "bytes": 240,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_host_netkit_policy.c",
+   "bytes": 241,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_host_veth.c",
+   "bytes": 239,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_host_veth_policy.c",
+   "bytes": 240,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_lxc.h",
+   "bytes": 10445,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 3,
+    "bpf_redirect": 2,
+    "bpf_redirect_peer": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_lxc_netkit.c",
+   "bytes": 198,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_lxc_veth.c",
+   "bytes": 197,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_netdev.h",
+   "bytes": 15414,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": true,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 3,
+    "bpf_lxc": 2,
+    "bpf_redirect": 2,
+    "bpf_redirect_peer": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_netdev_netkit.c",
+   "bytes": 242,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_redirect_netdev_veth.c",
+   "bytes": 241,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_srv6_decap.c",
+   "bytes": 15906,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_host": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/tc_srv6_encap.c",
+   "bytes": 8844,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "TC",
+   "helpers": {
+    "bpf_lxc": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/wildcard_lookup.c",
+   "bytes": 12353,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "XDP",
+    "XDP"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": "other",
+   "helpers": {
+    "bpf_sock": 1,
+    "bpf_htonl": 17,
+    "bpf_htons": 32
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_egressgw_reply.c",
+   "bytes": 11702,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_xdp": 1,
+    "bpf_htons": 12
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 4,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_kpr_dsr_geneve_lb.c",
+   "bytes": 409,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_kpr_dsr_option_lb.c",
+   "bytes": 354,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_kpr_dsr_option_remote_node.c",
+   "bytes": 363,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_nodeport_lb4_nat_backend.c",
+   "bytes": 3741,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_xdp": 1,
+    "bpf_htons": 3,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_nodeport_lb4_nat_lb.c",
+   "bytes": 20690,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1,
+    "bpf_htons": 10,
+    "bpf_ntohs": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_nodeport_lb4_nat_lb_tun_dynamic.c",
+   "bytes": 3761,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_nodeport_lb4_test.c",
+   "bytes": 5517,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 1,
+    "bpf_xdp": 1,
+    "bpf_xdp_adjust_tail": 3,
+    "bpf_htons": 3,
+    "bpf_ntohs": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_nodeport_lb_dsr_ipip.c",
+   "bytes": 10570,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_xdp": 1,
+    "bpf_htons": 10,
+    "bpf_ntohs": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "path": "bpf/tests/xdp_nodeport_lb_dsr_lb.c",
+   "bytes": 9483,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": "XDP",
+   "helpers": {
+    "bpf_fib_lookup": 2,
+    "bpf_xdp": 1,
+    "bpf_htons": 4,
+    "bpf_ntohs": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  }
+ ]
+}
