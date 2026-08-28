@@ -1,0 +1,58 @@
+{
+ "repo": "v8/v8",
+ "branch": "main",
+ "head_sha": "a657cf985d3b985193f9ecced65b52b0870c71d0",
+ "fetched_at": "2026-08-28T06:34:51+08:00",
+ "mode": "api",
+ "n_files_scanned": 58,
+ "channel_hits": {
+  "C3_macro": {
+   "f": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "d": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "vector": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "v": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "zba": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "zbb": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "zbs": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "zicond": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ],
+   "zfa": [
+    "src/codegen/riscv/assembler-riscv.cc",
+    "src/codegen/riscv/assembler-riscv.cc"
+   ]
+  }
+ },
+ "n_files_with_hits": 1,
+ "exts": [
+  "v",
+  "zba",
+  "zbb",
+  "zbs",
+  "zfa",
+  "zicond"
+ ]
+}

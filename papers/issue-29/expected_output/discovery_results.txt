@@ -1,0 +1,92 @@
+RISC-V ISA EXTENSIONS IN POPULAR OPEN-SOURCE SOFTWARE — canonical results
+corpus: n=20 repos | snapshot date: 2026-08-28T07:55:16
+
+repo                                files groups                 key-extensions
+FFmpeg/FFmpeg                         185 MiscRatified,V,Zb      zba,zbb,zbs,zdinx,zfinx,zicfilp
+RT-Thread/rt-thread                   203 V                      
+Tencent/ncnn                          829 Custom,MiscRatified,V,Zb xtheadc,xtheadvdot,xtheadvector,zba,zbb,zbc
+bminor/glibc                          198 V,Zb                   zbb,zbkb
+flame/blis                            161 MiscRatified,V,Zb      zba,zbb,zbc,zbs,zfh,zvl512b
+ggml-org/ggml                          67 MiscRatified,V,Zb      zba,zfh,zfhmin,zicbop,zvfbfmin,zvfbfwma
+google/XNNPACK                       1175 V                      zvfh
+google/cpu_features                   126 K,MiscRatified,V,Zb    zba,zbb,zbc,zbs,zfh,zfhmin
+libjpeg-turbo/libjpeg-turbo            18 V                      
+oneapi-src/oneDNN                     220 V                      
+opencv/opencv                          78 Custom,MiscRatified,V,Zb xtheadc,zba,zbb,zbc,zbs,zfh
+openssl/openssl                        57 K,Zb                   zbb,zbkb,zknh,zksh
+qemu/qemu                              89                        
+riscv-software-src/opensbi            498 MiscRatified,V         zaamo,zalrsc
+riscv-software-src/riscv-gnu-toolchain    13                        
+riscv-software-src/riscv-isa-sim     1734 V                      
+torvalds/linux                        611 Custom,MiscRatified,V,Zb xtheadvector,zabha,zacas,zawrs,zba,zbb
+u-boot/u-boot                        2821 MiscRatified,Zb        zaamo,zalrsc,zbb,zicbom
+v8/v8                                  58 MiscRatified,V,Zb      zba,zbb,zbs,zfa,zicond
+zephyrproject-rtos/zephyr              94                        
+
+adoption V           : 15/20 (75.0%, Wilson95 53.1%-88.8%)
+adoption Zb          : 11/20 (55.0%, Wilson95 34.2%-74.2%)
+adoption K           : 2/20 (10.0%, Wilson95 2.8%-30.1%)
+adoption MiscRatified: 10/20 (50.0%, Wilson95 29.9%-70.1%)
+adoption Custom      : 3/20 (15.0%, Wilson95 5.2%-36.0%)
+baseline-only (no extension groups): 3/20 (qemu, riscv-gnu-toolchain, zephyr)
+
+per-domain extension groups:
+  bootloader        : [('MiscRatified', 'Zb')]
+  codec             : [('V',)]
+  computer-vision   : [('Custom', 'MiscRatified', 'V', 'Zb')]
+  cpu-detection     : [('K', 'MiscRatified', 'V', 'Zb')]
+  crypto            : [('K', 'Zb')]
+  emulator          : [()]
+  firmware          : [('MiscRatified', 'V')]
+  language-runtime  : [('MiscRatified', 'V', 'Zb')]
+  libc              : [('V', 'Zb')]
+  linear-algebra    : [('MiscRatified', 'V', 'Zb')]
+  media             : [('MiscRatified', 'V', 'Zb')]
+  ml-inference      : [('Custom', 'MiscRatified', 'V', 'Zb'), ('MiscRatified', 'V', 'Zb'), ('V',)]
+  ml-library        : [('V',)]
+  os-kernel         : [('Custom', 'MiscRatified', 'V', 'Zb')]
+  rtos              : [(), ('V',)]
+  simulator         : [('V',)]
+  toolchain         : [()]
+
+cross-ISA per-ISA file coverage (files with any marker):
+  FFmpeg/FFmpeg                  scanned=  185 x86=   0 arm=   0 rvv=  47
+  RT-Thread/rt-thread            scanned=  203 x86=   0 arm=   0 rvv=  14
+  Tencent/ncnn                   scanned=  829 x86= 136 arm= 149 rvv= 125
+  bminor/glibc                   scanned=  198 x86=   0 arm=   0 rvv=  40
+  flame/blis                     scanned=  161 x86=   0 arm=   0 rvv=  29
+  ggml-org/ggml                  scanned=   67 x86=  16 arm=  13 rvv=  18
+  google/XNNPACK                 scanned= 1175 x86= 136 arm= 107 rvv= 656
+  google/cpu_features            scanned=  126 x86=   2 arm=   1 rvv=   1
+  libjpeg-turbo/libjpeg-turbo    scanned=   18 x86=   0 arm=   0 rvv=  17
+  oneapi-src/oneDNN              scanned=  220 x86=   0 arm=   0 rvv=   1
+  opencv/opencv                  scanned=   78 x86=   0 arm=   0 rvv=  63
+  openssl/openssl                scanned=   57 x86=   0 arm=   0 rvv=   2
+  riscv-software-src/opensbi     scanned=  498 x86=   0 arm=   0 rvv=  53
+  riscv-software-src/riscv-isa-sim scanned= 1734 x86=   0 arm=   0 rvv=   2
+  torvalds/linux                 scanned=  611 x86=   0 arm=   0 rvv=  55
+  u-boot/u-boot                  scanned= 2821 x86=   0 arm=   0 rvv=   6
+  v8/v8                          scanned=   58 x86=   0 arm=   0 rvv=   1
+  zephyrproject-rtos/zephyr      scanned=   94 x86=   0 arm=   0 rvv=   7
+
+cross-ISA macro-occurrence counts (per-ISA marker uses):
+  FFmpeg/FFmpeg                  x86=      0 arm=      0 rvv=    161
+  RT-Thread/rt-thread            x86=      0 arm=      0 rvv=    130
+  Tencent/ncnn                   x86=   4845 arm=   2615 rvv=  15123
+  bminor/glibc                   x86=      0 arm=      0 rvv=    111
+  flame/blis                     x86=      0 arm=      0 rvv=    153
+  ggml-org/ggml                  x86=    240 arm=    167 rvv=   4693
+  google/XNNPACK                 x86=    145 arm=    108 rvv=  16245
+  google/cpu_features            x86=      7 arm=      3 rvv=     27
+  libjpeg-turbo/libjpeg-turbo    x86=      0 arm=      0 rvv=   1368
+  oneapi-src/oneDNN              x86=      0 arm=      0 rvv=      2
+  opencv/opencv                  x86=      0 arm=      0 rvv=   7329
+  openssl/openssl                x86=      0 arm=      0 rvv=      2
+  riscv-software-src/opensbi     x86=      0 arm=      0 rvv=    250
+  riscv-software-src/riscv-isa-sim x86=      0 arm=      0 rvv=      9
+  torvalds/linux                 x86=      0 arm=      0 rvv=    247
+  u-boot/u-boot                  x86=      0 arm=      0 rvv=     18
+  v8/v8                          x86=      0 arm=      0 rvv=     19
+  zephyrproject-rtos/zephyr      x86=      0 arm=      0 rvv=     14
+
+canonical-run key: every number derives from data_snapshot/ via deterministic classification.
