@@ -1,0 +1,59 @@
+{
+ "repo": "TheAlgorithms/Java",
+ "signals": {
+  "stars": 66191,
+  "forks": 21249,
+  "open_issues": 12,
+  "subscribers": 2167,
+  "license": "MIT",
+  "pushed_at": "2026-08-28T05:49:34Z",
+  "created_at": "2016-07-16T10:21:02Z",
+  "language": "Java",
+  "size_kb": 7613,
+  "contributors": 427,
+  "releases": 0,
+  "ci_presence": true
+ },
+ "manifest_present": [
+  ".clang-format",
+  ".devcontainer",
+  ".github",
+  ".gitignore",
+  ".gitpod.dockerfile",
+  ".gitpod.yml",
+  ".inferconfig",
+  "CONTRIBUTING.md",
+  "DIRECTORY.md",
+  "LICENSE",
+  "README.md",
+  "checkstyle.xml",
+  "pmd-custom_ruleset.xml",
+  "pmd-exclude.properties",
+  "pom.xml",
+  "spotbugs-exclude.xml",
+  "src"
+ ],
+ "fetched_at": "2026-08-28T06:01:00.375593+00:00",
+ "outcomes": {
+  "scorecard": 6.2,
+  "scorecard_subscores": {
+   "Code-Review": 10,
+   "Maintained": 10,
+   "Dangerous-Workflow": 10,
+   "Packaging": -1,
+   "Token-Permissions": 0,
+   "CII-Best-Practices": 0,
+   "Binary-Artifacts": 10,
+   "License": 10,
+   "Fuzzing": 0,
+   "Signed-Releases": -1,
+   "Pinned-Dependencies": 0,
+   "Security-Policy": 0,
+   "Branch-Protection": -1,
+   "SAST": 10
+  },
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}

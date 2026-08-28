@@ -1,0 +1,32 @@
+{
+ "repo": "practical-tutorials/project-based-learning",
+ "signals": {
+  "stars": 281126,
+  "forks": 36049,
+  "open_issues": 270,
+  "subscribers": 3469,
+  "license": "MIT",
+  "pushed_at": "2026-08-24T07:38:50Z",
+  "created_at": "2017-04-12T05:07:46Z",
+  "language": "Python",
+  "size_kb": 466,
+  "contributors": 111,
+  "releases": 0,
+  "ci_presence": true
+ },
+ "manifest_present": [
+  ".github",
+  "CONTRIBUTING.md",
+  "LICENSE.md",
+  "README.md",
+  "scripts"
+ ],
+ "fetched_at": "2026-08-28T05:54:43.210613+00:00",
+ "outcomes": {
+  "scorecard": null,
+  "scorecard_subscores": null,
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}

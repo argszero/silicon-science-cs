@@ -1,0 +1,58 @@
+{
+ "repo": "golang/go",
+ "signals": {
+  "stars": 136552,
+  "forks": 19311,
+  "open_issues": 10089,
+  "subscribers": 3356,
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-08-28T04:10:11Z",
+  "created_at": "2014-08-19T04:33:40Z",
+  "language": "Go",
+  "size_kb": 453936,
+  "contributors": 381,
+  "releases": 0,
+  "ci_presence": false
+ },
+ "manifest_present": [
+  ".gitattributes",
+  ".github",
+  ".gitignore",
+  "CONTRIBUTING.md",
+  "LICENSE",
+  "PATENTS",
+  "README.md",
+  "SECURITY.md",
+  "api",
+  "codereview.cfg",
+  "doc",
+  "go.env",
+  "lib",
+  "misc",
+  "src",
+  "test"
+ ],
+ "fetched_at": "2026-08-28T06:01:42.834476+00:00",
+ "outcomes": {
+  "scorecard": 6.2,
+  "scorecard_subscores": {
+   "Maintained": 10,
+   "Token-Permissions": -1,
+   "Code-Review": 10,
+   "Dangerous-Workflow": -1,
+   "Security-Policy": 10,
+   "Packaging": -1,
+   "CII-Best-Practices": 0,
+   "License": 10,
+   "Signed-Releases": -1,
+   "SAST": 0,
+   "Branch-Protection": -1,
+   "Fuzzing": 10,
+   "Binary-Artifacts": 0,
+   "Pinned-Dependencies": 4
+  },
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}

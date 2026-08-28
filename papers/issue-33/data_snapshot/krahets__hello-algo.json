@@ -1,0 +1,43 @@
+{
+ "repo": "krahets/hello-algo",
+ "signals": {
+  "stars": 129643,
+  "forks": 15522,
+  "open_issues": 42,
+  "subscribers": 669,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-08-17T20:58:58Z",
+  "created_at": "2022-11-04T11:08:34Z",
+  "language": "Java",
+  "size_kb": 478300,
+  "contributors": 206,
+  "releases": 10,
+  "ci_presence": true
+ },
+ "manifest_present": [
+  ".gitattributes",
+  ".github",
+  ".gitignore",
+  "Dockerfile",
+  "LICENSE",
+  "README.md",
+  "codes",
+  "docker-compose.yml",
+  "docs",
+  "en",
+  "giscus.json",
+  "ja",
+  "mkdocs.yml",
+  "overrides",
+  "ru",
+  "zh-hant"
+ ],
+ "fetched_at": "2026-08-28T05:58:48.064937+00:00",
+ "outcomes": {
+  "scorecard": null,
+  "scorecard_subscores": null,
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}
