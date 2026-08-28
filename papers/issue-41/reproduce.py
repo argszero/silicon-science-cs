@@ -81,6 +81,10 @@ def main():
         out.append(f"  {s:12s} {embed_vol[s]:5d}  ({embed_vol[s]/tot_vol:.1%})")
     top1_vol = embed_vol.most_common(1)[0][1]
     out.append(f"  top-1 stack share of embedding-file volume: {top1_vol/tot_vol:.1%}")
+    out.append("  note: volume is per-file matches; each (consumer, stack) pair corresponds to exactly")
+    out.append("  one embedding mechanism (a declared dependency or a single vendored tree);")
+    out.append("  no consumer embeds the same stack more than once. ngtcp2's volume is dominated")
+    out.append("  by nodejs's single vendored deps/ngtcp2/ tree (403 files).")
     out.append("")
 
     # ---- self-implemented category (H3) ----

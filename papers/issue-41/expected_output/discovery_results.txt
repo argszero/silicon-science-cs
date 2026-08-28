@@ -52,6 +52,10 @@ H1 embedding-file volume (consumer files matching each stack):
   quic-go          1  (0.2%)
   aioquic          1  (0.2%)
   top-1 stack share of embedding-file volume: 91.2%
+  note: volume is per-file matches; each (consumer, stack) pair corresponds to exactly
+  one embedding mechanism (a declared dependency or a single vendored tree);
+  no consumer embeds the same stack more than once. ngtcp2's volume is dominated
+  by nodejs's single vendored deps/ngtcp2/ tree (403 files).
 
 H3 self-implemented category (no external stack embedding):
   caddyserver/caddy              embedded

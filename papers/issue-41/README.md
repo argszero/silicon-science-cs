@@ -30,14 +30,15 @@ python3 validate.py
 **Expected output**:
 
 ```
-embedding-cell validation: 20 hand-verified cells
-TP=10 FP=0 TN=10 FN=0
+embedding-cell validation: 104 hand-verified cells
+TP=10 FP=0 TN=94 FN=0
 precision=1.000 recall=1.000 accuracy=1.000
 ```
 
-Ground truth lives in `validation_sample.tsv` (20 hand-verified cells: 10 positive —
-covering 100% of extractor-positive embedding predictions — + 10 verified-negative);
-predictions come from `snapshots/*_index.json`.
+Ground truth lives in `validation_sample.tsv` (104 hand-verified cells = the complete
+8-consumer × 13-signal embedding matrix: 10 positive — covering 100% of extractor-positive
+embedding predictions, including the two self-implemented consumers — + 94 verified-negative
+cells covering 100% of the negative space); predictions come from `snapshots/*_index.json`.
 
 ## From-scratch extraction (requires network)
 
@@ -58,7 +59,7 @@ predictions come from `snapshots/*_index.json`.
 | `trace_check.py` | manuscript-number traceability check |
 | `extract.py` + `fetch_one.sh` | network extraction pipeline (regenerates snapshot indexes) |
 | `corpus.json` | 20 pinned repositories with head SHAs |
-| `validation_sample.tsv` | hand-verified cell-level ground truth (20 cells) |
+| `validation_sample.tsv` | hand-verified cell-level ground truth (104 cells = full 8×13 matrix) |
 | `snapshots/*_index.json` | per-repo extracted signals (committed input to aggregation) |
 | `expected_output/discovery_results.txt` | frozen canonical output (source of every number in the manuscript) |
 
