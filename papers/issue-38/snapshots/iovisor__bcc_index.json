@@ -1,0 +1,5065 @@
+{
+ "repo": "iovisor/bcc",
+ "branch": "master",
+ "head_sha": "f07cbb734d5d555dc35adf1326393f27eb9e7095",
+ "files": [
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bashreadline.bpf.c",
+   "bytes": 969,
+   "is_bpf_source": true,
+   "sec": {
+    "other": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_comm": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_probe_read_user_str": 1,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bashreadline.c",
+   "bytes": 6352,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_program__attach_uprobe": 1,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bashreadline.h",
+   "bytes": 256,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bindsnoop.bpf.c",
+   "bytes": 4071,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_ntohs": 1,
+    "bpf_ktime_get_ns": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_kernel": 2,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_current_task_under_cgroup": 4
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bindsnoop.c",
+   "bytes": 7171,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 3,
+    "bpf_map_update_elem": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bindsnoop.h",
+   "bytes": 513,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biolatency.bpf.c",
+   "bytes": 4225,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_current_task_under_cgroup": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 2,
+    "bpf_map_lookup_elem": 3,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biolatency.c",
+   "bytes": 10048,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_program__set_autoload": 8,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biolatency.h",
+   "bytes": 391,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biopattern.bpf.c",
+   "bytes": 1494,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biopattern.c",
+   "bytes": 5751,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map": 1,
+    "bpf_map__fd": 1,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_object_open_opts": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biopattern.h",
+   "bytes": 245,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biosnoop.bpf.c",
+   "bytes": 5177,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 5,
+    "kprobe": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_map_update_elem": 2,
+    "bpf_current_task_under_cgroup": 6,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_lookup_elem": 3,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biosnoop.c",
+   "bytes": 9153,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_boot_ns": 1,
+    "bpf_program__set_attach_target": 2,
+    "bpf_program__set_autoload": 4,
+    "bpf_map__fd": 2,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biosnoop.h",
+   "bytes": 465,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biostacks.bpf.c",
+   "bytes": 3056,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 1,
+    "tracing": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_stack": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biostacks.c",
+   "bytes": 6387,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_program__set_autoload": 5,
+    "bpf_program__set_attach_target": 4,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biostacks.h",
+   "bytes": 505,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biotop.bpf.c",
+   "bytes": 3468,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 5,
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_get_current_comm": 1,
+    "bpf_map_update_elem": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_map_delete_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 3
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biotop.c",
+   "bytes": 10233,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 1,
+    "bpf_program__set_autoload": 10
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/biotop.h",
+   "bytes": 655,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bitesize.bpf.c",
+   "bytes": 2111,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_comm": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bitesize.c",
+   "bytes": 5421,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bitesize.h",
+   "bytes": 404,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/bits.bpf.h",
+   "bytes": 638,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/blk_types.h",
+   "bytes": 4161,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/btf_helpers.c",
+   "bytes": 4882,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/btf_helpers.h",
+   "bytes": 277,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cachestat.bpf.c",
+   "bytes": 1952,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6,
+    "kprobe": 5
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cachestat.c",
+   "bytes": 7830,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_attach_target": 1,
+    "bpf_program__set_autoload": 20
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/capable.bpf.c",
+   "bytes": 3736,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_current_task_under_cgroup": 1,
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_map_update_elem": 3,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_delete_elem": 1,
+    "bpf_get_current_uid_gid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_get_current_cgroup_id": 1,
+    "bpf_get_stackid": 2,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 3,
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1,
+    "BPF_MAP_TYPE_STACK_TRACE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/capable.c",
+   "bytes": 11500,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 3,
+    "bpf_map__set_value_size": 1,
+    "bpf_map__set_max_entries": 1,
+    "bpf_map__fd": 4,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/capable.h",
+   "bytes": 463,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/compat.bpf.h",
+   "bytes": 1034,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_core_type_exists": 2,
+    "bpf_ringbuf": 2,
+    "bpf_ringbuf_reserve": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_ringbuf_submit": 1,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1,
+    "BPF_MAP_TYPE_RINGBUF": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 2,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/compat.c",
+   "bytes": 2373,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_buffer": 7,
+    "bpf_map": 3,
+    "bpf_buffer_sample_fn": 3,
+    "bpf_buffer__new": 1,
+    "bpf_map__set_autocreate": 1,
+    "bpf_map__set_type": 1,
+    "bpf_map__set_key_size": 1,
+    "bpf_map__set_value_size": 1,
+    "bpf_buffer__open": 1,
+    "bpf_buffer_lost_fn": 1,
+    "bpf_map__fd": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_RINGBUF": 4,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 5
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/compat.h",
+   "bytes": 1173,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_buffer": 5,
+    "bpf_map": 3,
+    "bpf_buffer_sample_fn": 2,
+    "bpf_buffer_lost_fn": 2,
+    "bpf_buffer__new": 1,
+    "bpf_buffer__open": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/core_fixes.bpf.h",
+   "bytes": 10076,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_core_field_exists": 9,
+    "bpf_core_type_exists": 5,
+    "bpf_get_socket_cookie": 3,
+    "bpf_core_enum_value_exists": 1,
+    "bpf_func_id": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 15,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cpudist.bpf.c",
+   "bytes": 2863,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_update_elem": 2,
+    "bpf_map_lookup_elem": 3,
+    "bpf_ktime_get_ns": 1,
+    "bpf_current_task_under_cgroup": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cpudist.c",
+   "bytes": 7037,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_program__set_autoload": 2,
+    "bpf_map__set_max_entries": 3,
+    "bpf_map__fd": 2,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cpudist.h",
+   "bytes": 238,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cpufreq.bpf.c",
+   "bytes": 1967,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1,
+    "perf_event": 1
+   },
+   "ctx_families": [
+    "perf_event"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_current_task_under_cgroup": 2,
+    "bpf_perf_event_data": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_smp_processor_id": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cpufreq.c",
+   "bytes": 6894,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program": 1,
+    "bpf_link": 3,
+    "bpf_program__attach_perf_event": 1,
+    "bpf_map": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_update_elem": 1,
+    "bpf_link__destroy": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/cpufreq.h",
+   "bytes": 334,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/drsnoop.bpf.c",
+   "bytes": 2699,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_probe_read_kernel": 1,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/drsnoop.c",
+   "bytes": 6293,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 4,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/drsnoop.h",
+   "bytes": 268,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/errno_helpers.c",
+   "bytes": 5602,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/errno_helpers.h",
+   "bytes": 186,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/execsnoop.bpf.c",
+   "bytes": 3545,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_current_task_under_cgroup": 2,
+    "bpf_get_current_uid_gid": 2,
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_get_current_task": 1,
+    "bpf_probe_read_user_str": 2,
+    "bpf_probe_read_user": 2,
+    "bpf_get_current_comm": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/execsnoop.c",
+   "bytes": 8708,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/execsnoop.h",
+   "bytes": 646,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/exitsnoop.bpf.c",
+   "bytes": 1695,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_current_task_under_cgroup": 1,
+    "bpf_get_current_task": 1,
+    "bpf_ktime_get_ns": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/exitsnoop.c",
+   "bytes": 6280,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/exitsnoop.h",
+   "bytes": 304,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/filelife.bpf.c",
+   "bytes": 5060,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 5
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 3,
+    "bpf_get_current_task_btf": 1,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 2,
+    "bpf_map_lookup_elem": 3,
+    "bpf_map_delete_elem": 2,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_dentry_full_path": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/filelife.c",
+   "bytes": 5114,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_buffer": 1,
+    "bpf_buffer__new": 1,
+    "bpf_program__set_autoload": 1,
+    "bpf_buffer__open": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/filelife.h",
+   "bytes": 282,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/filetop.bpf.c",
+   "bytes": 2419,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_get_current_comm": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/filetop.c",
+   "bytes": 7495,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 1,
+    "bpf_map_get_next_key": 4,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_delete_elem": 2,
+    "bpf_object_open_opts": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/filetop.h",
+   "bytes": 465,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/fsdist.bpf.c",
+   "bytes": 3273,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 10,
+    "tracing": 10
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/fsdist.c",
+   "bytes": 13801,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_attach_target": 10,
+    "bpf_program__set_autoload": 22,
+    "bpf_program__attach_kprobe": 10,
+    "bpf_object_open_opts": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/fsdist.h",
+   "bytes": 269,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/fsslower.bpf.c",
+   "bytes": 4660,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 8,
+    "tracing": 8
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/fsslower.c",
+   "bytes": 13903,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_attach_target": 8,
+    "bpf_program__set_autoload": 16,
+    "bpf_program__attach_kprobe": 8,
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/fsslower.h",
+   "bytes": 417,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/funclatency.bpf.c",
+   "bytes": 1939,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2,
+    "kprobe": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_current_task_under_cgroup": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/funclatency.c",
+   "bytes": 10481,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_attach_target": 2,
+    "bpf_program__set_autoload": 4,
+    "bpf_program__attach_kprobe": 2,
+    "bpf_program__attach_uprobe": 2,
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 1,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/funclatency.h",
+   "bytes": 155,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/futexctn.bpf.c",
+   "bytes": 3071,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_get_stackid": 1,
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_STACK_TRACE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/futexctn.c",
+   "bytes": 9819,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 2,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_delete_elem": 1,
+    "bpf_map__set_value_size": 1,
+    "bpf_map__set_max_entries": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/futexctn.h",
+   "bytes": 380,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/gethostlatency.bpf.c",
+   "bytes": 1727,
+   "is_bpf_source": true,
+   "sec": {
+    "uprobe": 1,
+    "other": 1
+   },
+   "ctx_families": [
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_user_str": 1,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/gethostlatency.c",
+   "bytes": 7640,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_link": 2,
+    "bpf_program__attach_uprobe": 6,
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 1,
+    "bpf_link__destroy": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/gethostlatency.h",
+   "bytes": 284,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/hardirqs.bpf.c",
+   "bytes": 2818,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_smp_processor_id": 2,
+    "bpf_current_task_under_cgroup": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/hardirqs.c",
+   "bytes": 6991,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_program__set_autoload": 4,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/hardirqs.h",
+   "bytes": 291,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/ioctl_names.h",
+   "bytes": 2261,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/javagc.bpf.c",
+   "bytes": 1630,
+   "is_bpf_source": true,
+   "sec": {
+    "uprobe": 4
+   },
+   "ctx_families": [
+    "kprobe",
+    "kprobe",
+    "kprobe",
+    "kprobe",
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_smp_processor_id": 2,
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/javagc.c",
+   "bytes": 5978,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__attach_usdt": 4,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/javagc.h",
+   "bytes": 219,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/klockstat.bpf.c",
+   "bytes": 22730,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 28,
+    "kprobe": 45
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 43,
+    "bpf_get_stackid": 1,
+    "bpf_ktime_get_ns": 3,
+    "bpf_map_update_elem": 22,
+    "bpf_map_delete_elem": 21,
+    "bpf_map_lookup_elem": 23,
+    "bpf_get_current_comm": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_STACK_TRACE": 1,
+    "BPF_MAP_TYPE_HASH": 4
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/klockstat.c",
+   "bytes": 31677,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_delete_elem": 1,
+    "bpf_program__set_autoload": 113,
+    "bpf_program__set_attach_target": 14,
+    "bpf_map__fd": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/klockstat.h",
+   "bytes": 610,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/ksnoop.bpf.c",
+   "bytes": 12949,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_func_ip": 2,
+    "bpf_get_current_task": 2,
+    "bpf_map_lookup_elem": 6,
+    "bpf_map_update_elem": 1,
+    "bpf_core_enum_value_exists": 1,
+    "bpf_func_id": 1,
+    "bpf_probe_read_kernel": 4,
+    "bpf_perf_event_output": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_smp_processor_id": 1,
+    "bpf_ktime_get_ns": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERCPU_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/ksnoop.c",
+   "bytes": 24387,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object__read_kallsyms_file": 1,
+    "bpf_map": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map__fd": 2,
+    "bpf_program__attach_kprobe": 2,
+    "bpf_object__find_map_by_name": 1,
+    "bpf_link__destroy": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/ksnoop.h",
+   "bytes": 2988,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_snprintf_btf": 1,
+    "bpf_link": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/llcstat.bpf.c",
+   "bytes": 1307,
+   "is_bpf_source": true,
+   "sec": {
+    "perf_event": 2
+   },
+   "ctx_families": [
+    "perf_event",
+    "perf_event"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_smp_processor_id": 1,
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_perf_event_data": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/llcstat.c",
+   "bytes": 6513,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program": 1,
+    "bpf_link": 2,
+    "bpf_program__attach_perf_event": 1,
+    "bpf_map": 1,
+    "bpf_map__fd": 1,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_object_open_opts": 1,
+    "bpf_link__destroy": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/llcstat.h",
+   "bytes": 300,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/map_helpers.c",
+   "bytes": 2753,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_map_lookup_and_delete_batch": 1,
+    "bpf_map_lookup_batch": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/map_helpers.h",
+   "bytes": 359,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/maps.bpf.h",
+   "bytes": 1412,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_map_update_elem": 2,
+    "bpf_map_ops": 3,
+    "bpf_map_lookup_elem": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/mdflush.bpf.c",
+   "bytes": 1322,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1,
+    "kprobe": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_get_current_comm": 2,
+    "bpf_perf_event_output": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 2,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/mdflush.c",
+   "bytes": 3548,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 2,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/mdflush.h",
+   "bytes": 302,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/memleak.bpf.c",
+   "bytes": 10045,
+   "is_bpf_source": true,
+   "sec": {
+    "uprobe": 12,
+    "other": 10,
+    "tracing": 10
+   },
+   "ctx_families": [
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_map_lookup_elem": 4,
+    "bpf_printk": 4,
+    "bpf_ktime_get_ns": 2,
+    "bpf_get_current_pid_tgid": 4,
+    "bpf_map_update_elem": 3,
+    "bpf_map_delete_elem": 3,
+    "bpf_get_stackid": 1,
+    "bpf_probe_read_user": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 4,
+    "BPF_MAP_TYPE_STACK_TRACE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/memleak.c",
+   "bytes": 31566,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_uprobe_opts": 1,
+    "bpf_program__attach_uprobe_opts": 1,
+    "bpf_map__set_value_size": 1,
+    "bpf_map__set_max_entries": 2,
+    "bpf_map__fd": 3,
+    "bpf_map_lookup_elem": 3,
+    "bpf_map_get_next_key": 2,
+    "bpf_map": 1,
+    "bpf_program__set_autoload": 14
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/memleak.h",
+   "bytes": 409,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/mountsnoop.bpf.c",
+   "bytes": 6503,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 12
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_get_current_task": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_user_str": 10,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/mountsnoop.c",
+   "bytes": 14604,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_buffer": 1,
+    "bpf_buffer__new": 1,
+    "bpf_program__set_autoload": 8,
+    "bpf_buffer__open": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/mountsnoop.h",
+   "bytes": 1879,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/numamove.bpf.c",
+   "bytes": 1917,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 4,
+    "kprobe": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/numamove.c",
+   "bytes": 4341,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 8
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/offcputime.bpf.c",
+   "bytes": 3680,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 4,
+    "bpf_get_smp_processor_id": 1,
+    "bpf_ktime_get_ns": 2,
+    "bpf_get_stackid": 2,
+    "bpf_map_update_elem": 2,
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 4,
+    "BPF_MAP_TYPE_STACK_TRACE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/offcputime.c",
+   "bytes": 12298,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 4,
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 3,
+    "bpf_map__set_value_size": 1,
+    "bpf_map__set_max_entries": 1,
+    "bpf_program__set_autoload": 2,
+    "bpf_map_update_elem": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/offcputime.h",
+   "bytes": 350,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/oomkill.bpf.c",
+   "bytes": 846,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_kernel": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/oomkill.c",
+   "bytes": 4084,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_buffer": 1,
+    "bpf_buffer__new": 1,
+    "bpf_buffer__open": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/oomkill.h",
+   "bytes": 266,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/opensnoop.bpf.c",
+   "bytes": 4620,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_uid_gid": 2,
+    "bpf_get_current_pid_tgid": 5,
+    "bpf_map_update_elem": 3,
+    "bpf_probe_read_user": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_user_str": 1,
+    "bpf_get_stack": 1,
+    "bpf_getcwd": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 3,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/opensnoop.c",
+   "bytes": 10487,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_buffer": 1,
+    "bpf_buffer__new": 1,
+    "bpf_program__set_autoload": 4,
+    "bpf_buffer__open": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/opensnoop.h",
+   "bytes": 473,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/path_helpers.bpf.h",
+   "bytes": 1954,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_dentry_full_path": 2,
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_getcwd": 1,
+    "bpf_get_current_task_btf": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/path_helpers.c",
+   "bytes": 953,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_probe_read_kernel_str": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/path_helpers.h",
+   "bytes": 465,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/profile.bpf.c",
+   "bytes": 2300,
+   "is_bpf_source": true,
+   "sec": {
+    "perf_event": 1
+   },
+   "ctx_families": [
+    "perf_event"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_perf_event_data": 1,
+    "bpf_pidns_info": 1,
+    "bpf_get_ns_current_pid_tgid": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_get_current_comm": 1,
+    "bpf_get_stackid": 2,
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_STACK_TRACE": 1,
+    "BPF_MAP_TYPE_HASH": 3
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/profile.c",
+   "bytes": 17369,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program": 1,
+    "bpf_link": 2,
+    "bpf_program__attach_perf_event": 1,
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 3,
+    "bpf_map__set_value_size": 1,
+    "bpf_map__set_max_entries": 1,
+    "bpf_map__fd": 4,
+    "bpf_map_update_elem": 2,
+    "bpf_link__destroy": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/profile.h",
+   "bytes": 343,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/readahead.bpf.c",
+   "bytes": 2467,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 7
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 3,
+    "bpf_map_update_elem": 2,
+    "bpf_map_lookup_elem": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_delete_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/readahead.c",
+   "bytes": 5779,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program": 1,
+    "bpf_program__set_attach_target": 3,
+    "bpf_program__name": 1,
+    "bpf_program__set_autoload": 10
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/readahead.h",
+   "bytes": 221,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqlat.bpf.c",
+   "bytes": 4088,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_current_task_under_cgroup": 5,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_lookup_or_try_init": 1,
+    "bpf_probe_read_kernel_str": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqlat.c",
+   "bytes": 7064,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_program__set_autoload": 6,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqlat.h",
+   "bytes": 241,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqlen.bpf.c",
+   "bytes": 1324,
+   "is_bpf_source": true,
+   "sec": {
+    "perf_event": 1
+   },
+   "ctx_families": [
+    "perf_event"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_perf_event_data": 1,
+    "bpf_get_current_task": 1,
+    "bpf_get_smp_processor_id": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqlen.c",
+   "bytes": 7239,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program": 1,
+    "bpf_link": 2,
+    "bpf_program__attach_perf_event": 1,
+    "bpf_object_open_opts": 1,
+    "bpf_link__destroy": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqlen.h",
+   "bytes": 212,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqslower.bpf.c",
+   "bytes": 3558,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_probe_read_kernel_str": 2,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqslower.c",
+   "bytes": 6303,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 6,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/runqslower.h",
+   "bytes": 283,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/sigsnoop.bpf.c",
+   "bytes": 3883,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 7
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ksym_exists": 1,
+    "bpf_task_from_pid": 2,
+    "bpf_probe_read_kernel": 1,
+    "bpf_task_release": 1,
+    "bpf_get_current_pid_tgid": 3,
+    "bpf_get_current_comm": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_perf_event_output": 2,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 2,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/sigsnoop.c",
+   "bytes": 7945,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_task_from_pid": 4,
+    "bpf_program__set_autoload": 7,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/sigsnoop.h",
+   "bytes": 311,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/slabratetop.bpf.c",
+   "bytes": 1467,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_probe_read_kernel_str": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/slabratetop.c",
+   "bytes": 7125,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 1,
+    "bpf_map_get_next_key": 4,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_delete_elem": 2,
+    "bpf_program__set_autoload": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/slabratetop.h",
+   "bytes": 247,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/softirqs.bpf.c",
+   "bytes": 1969,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_smp_processor_id": 1,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/softirqs.c",
+   "bytes": 6566,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/softirqs.h",
+   "bytes": 192,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/softirqslower.bpf.c",
+   "bytes": 4514,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_comm": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_get_smp_processor_id": 3,
+    "bpf_map_lookup_elem": 4,
+    "bpf_ktime_get_ns": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 2,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/softirqslower.c",
+   "bytes": 6153,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 6,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/softirqslower.h",
+   "bytes": 547,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/solisten.bpf.c",
+   "bytes": 2585,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2,
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ntohs": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_get_current_pid_tgid": 3,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_perf_event_output": 2,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 2,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/solisten.c",
+   "bytes": 5183,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_program__set_autoload": 3,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/solisten.h",
+   "bytes": 278,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/stat.h",
+   "bytes": 767,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/statsnoop.bpf.c",
+   "bytes": 4180,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 12
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 2,
+    "bpf_ktime_get_ns": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_user_str": 1,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/statsnoop.c",
+   "bytes": 7652,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_program__set_autoload": 12,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/statsnoop.h",
+   "bytes": 521,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syncsnoop.bpf.c",
+   "bytes": 2031,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 8
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_comm": 1,
+    "bpf_ktime_get_ns": 1,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syncsnoop.c",
+   "bytes": 3986,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 3,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syncsnoop.h",
+   "bytes": 584,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syscall_helpers.c",
+   "bytes": 21445,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syscall_helpers.h",
+   "bytes": 311,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syscount.bpf.c",
+   "bytes": 2847,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_task": 1,
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_current_task_under_cgroup": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syscount.c",
+   "bytes": 12392,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_and_delete_batch": 3,
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_program__attach": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/syscount.h",
+   "bytes": 274,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpconnect.bpf.c",
+   "bytes": 5383,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_get_current_uid_gid": 3,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_or_try_init": 2,
+    "bpf_ktime_get_ns": 2,
+    "bpf_get_current_comm": 2,
+    "bpf_perf_event_output": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 3,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 7,
+    "ringbuf": 0,
+    "perfbuf": 2,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpconnect.c",
+   "bytes": 10893,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpconnect.h",
+   "bytes": 732,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpconnlat.bpf.c",
+   "bytes": 3283,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 3,
+    "tracing": 4
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpconnlat.c",
+   "bytes": 6714,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_attach_target": 3,
+    "bpf_program__set_autoload": 6,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpconnlat.h",
+   "bytes": 392,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcplife.bpf.c",
+   "bytes": 4002,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 2,
+    "bpf_get_current_pid_tgid": 2,
+    "bpf_get_current_comm": 2,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_delete_elem": 3,
+    "bpf_probe_read_kernel": 5,
+    "bpf_perf_event_output": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcplife.c",
+   "bytes": 6228,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcplife.h",
+   "bytes": 455,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcppktlat.bpf.c",
+   "bytes": 3735,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 6
+   },
+   "ctx_families": [
+    "TC",
+    "TC",
+    "TC"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_map_delete_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcppktlat.c",
+   "bytes": 6727,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_buffer": 1,
+    "bpf_buffer__new": 1,
+    "bpf_program__set_autoload": 6,
+    "bpf_get_socket_cookie": 1,
+    "bpf_buffer__open": 1,
+    "bpf_buffer__poll": 1,
+    "bpf_buffer__free": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcppktlat.h",
+   "bytes": 321,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcprtt.bpf.c",
+   "bytes": 4325,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1,
+    "kprobe": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_probe_read_kernel": 4,
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcprtt.c",
+   "bytes": 9012,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map": 1,
+    "bpf_map__fd": 1,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_program__set_autoload": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcprtt.h",
+   "bytes": 293,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpstates.bpf.c",
+   "bytes": 2781,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_elem": 3,
+    "bpf_ktime_get_ns": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_probe_read_kernel": 4,
+    "bpf_perf_event_output": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 3,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 1,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpstates.c",
+   "bytes": 7735,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 3,
+    "bpf_map_update_elem": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpstates.h",
+   "bytes": 419,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpsynbl.bpf.c",
+   "bytes": 1397,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2,
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpsynbl.c",
+   "bytes": 5830,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_program__set_autoload": 8,
+    "bpf_map_get_next_key": 2,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcpsynbl.h",
+   "bytes": 192,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcptop.bpf.c",
+   "bytes": 3323,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_current_task_under_cgroup": 1,
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_ntohs": 1,
+    "bpf_probe_read_kernel": 4,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_update_elem": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_CGROUP_ARRAY": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcptop.c",
+   "bytes": 9887,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 3,
+    "bpf_map_get_next_key": 4,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map_delete_elem": 2,
+    "bpf_map_update_elem": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcptop.h",
+   "bytes": 358,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcptracer.bpf.c",
+   "bytes": 7680,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 7
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime_get_ns": 1,
+    "bpf_get_current_pid_tgid": 4,
+    "bpf_get_current_uid_gid": 4,
+    "bpf_map_update_elem": 2,
+    "bpf_map_lookup_elem": 2,
+    "bpf_get_current_comm": 3,
+    "bpf_map_delete_elem": 2,
+    "bpf_perf_event_output": 3,
+    "bpf_ntohs": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 5,
+    "ringbuf": 0,
+    "perfbuf": 3,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcptracer.c",
+   "bytes": 7254,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_map__fd": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/tcptracer.h",
+   "bytes": 733,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/trace_helpers.c",
+   "bytes": 27684,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_insn": 5,
+    "bpf_prog_load_opts": 2,
+    "bpf_prog_load": 3,
+    "bpf_raw_tracepoint_open": 1,
+    "bpf_map_create": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_RINGBUF": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/trace_helpers.h",
+   "bytes": 4281,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/uprobe_helpers.c",
+   "bytes": 6691,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/uprobe_helpers.h",
+   "bytes": 649,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/vfsstat.bpf.c",
+   "bytes": 1838,
+   "is_bpf_source": true,
+   "sec": {
+    "kprobe": 8,
+    "tracing": 8
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 1,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/vfsstat.c",
+   "bytes": 5159,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_object_open_opts": 1,
+    "bpf_program__set_autoload": 16
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/vfsstat.h",
+   "bytes": 255,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/wakeuptime.bpf.c",
+   "bytes": 2278,
+   "is_bpf_source": true,
+   "sec": {
+    "tracing": 2
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_get_current_pid_tgid": 1,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 1,
+    "bpf_map_lookup_elem": 1,
+    "bpf_map_delete_elem": 1,
+    "bpf_get_stackid": 1,
+    "bpf_probe_read_kernel": 1,
+    "bpf_get_current_comm": 1,
+    "bpf_map_lookup_or_try_init": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_STACK_TRACE": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/wakeuptime.c",
+   "bytes": 7300,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map__fd": 2,
+    "bpf_map_get_next_key": 1,
+    "bpf_map_lookup_elem": 2,
+    "bpf_map__set_value_size": 1,
+    "bpf_map__set_max_entries": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "path": "libbpf-tools/wakeuptime.h",
+   "bytes": 281,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  }
+ ]
+}

@@ -1,0 +1,1901 @@
+{
+ "repo": "cilium/tetragon",
+ "branch": "main",
+ "head_sha": "f9de1442ffd13a8fa50cea12e20c2b65cec5457b",
+ "files": [
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/cgroup/bpf_cgroup_events.h",
+   "bytes": 1524,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_task": 1,
+    "bpf_raw_tracepoint_args": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/cgroup/bpf_cgroup_mkdir.c",
+   "bytes": 2294,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_cgroup": 1,
+    "bpf_task": 1,
+    "bpf_cgroup_events": 1,
+    "bpf_raw_tracepoint_args": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/cgroup/bpf_cgroup_release.c",
+   "bytes": 1407,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_cgroup": 1,
+    "bpf_task": 1,
+    "bpf_cgroup_events": 1,
+    "bpf_raw_tracepoint_args": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/cgroup/bpf_cgroup_rmdir.c",
+   "bytes": 1395,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_cgroup": 1,
+    "bpf_task": 1,
+    "bpf_cgroup_events": 1,
+    "bpf_raw_tracepoint_args": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/cgroup/bpf_cgtracker.c",
+   "bytes": 2141,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_cgroup": 1,
+    "bpf_core_field_exists": 1,
+    "bpf_raw_tracepoint_args": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/cgroup/cgtracker.h",
+   "bytes": 495,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/bpf_cgroup.h",
+   "bytes": 13674,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_core_field_exists": 1,
+    "bpf_get_current_cgroup_id": 1,
+    "bpf_core_enum_value_exists": 2,
+    "bpf_func_id": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/bpf_cred.h",
+   "bytes": 2175,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/bpf_d_path.h",
+   "bytes": 10139,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_for": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/bpf_event.h",
+   "bytes": 755,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PERF_EVENT_ARRAY": 1,
+    "BPF_MAP_TYPE_RINGBUF": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/bpf_helpers.h",
+   "bytes": 8071,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_core_field_exists": 1,
+    "bpf_enum_value_kind": 1,
+    "bpf_for_each": 9,
+    "bpf_printk": 1,
+    "bpf_for": 8,
+    "bpf_iter_": 7,
+    "bpf_iter_num": 2,
+    "bpf_iter_num_destroy": 6,
+    "bpf_iter_num_new": 4,
+    "bpf_iter_num_next": 2,
+    "bpf_repeat": 4
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/bpf_task.h",
+   "bytes": 4073,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_core_field_exists": 1,
+    "bpf_core_field_size": 2
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 3,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/common.h",
+   "bytes": 1876,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ntohs": 2,
+    "bpf_htons": 2,
+    "bpf_ntohl": 2,
+    "bpf_htonl": 2,
+    "bpf_map_def": 2,
+    "bpf_printk": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/config.h",
+   "bytes": 2441,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/data_msg.h",
+   "bytes": 763,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/environ_conf.h",
+   "bytes": 1342,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/err.h",
+   "bytes": 916,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/errmetrics.h",
+   "bytes": 3512,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_helper": 6
+   },
+   "maps": {
+    "BPF_MAP_TYPE_LRU_PERCPU_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/generic.h",
+   "bytes": 3258,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/msg_types.h",
+   "bytes": 1295,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/policy_conf.h",
+   "bytes": 570,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/policy_stats.h",
+   "bytes": 2232,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/lib/process.h",
+   "bytes": 21161,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_cred": 1,
+    "bpf_d_path": 1,
+    "bpf_execve_event": 1,
+    "bpf_map_def": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 7,
+    "BPF_MAP_TYPE_LRU_HASH": 2,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/addr_lpm_maps.h",
+   "bytes": 1174,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 2,
+    "BPF_MAP_TYPE_LPM_TRIE": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/argfilter_maps.h",
+   "bytes": 528,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 1,
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_cgroup.c",
+   "bytes": 491,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_cgroup": 1,
+    "bpf_rate": 1,
+    "bpf_raw_tracepoint_args": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_enforcer.c",
+   "bytes": 1084,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_enforcer": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_enforcer.h",
+   "bytes": 2766,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_execve_bprm_commit_creds.c",
+   "bytes": 6494,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_execve_event.c",
+   "bytes": 1760,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_process_event": 1,
+    "bpf_execve_event": 1,
+    "bpf_rate": 1,
+    "bpf_mbset": 1,
+    "bpf_ktime": 1,
+    "bpf_raw_tracepoint_args": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_execve_event.h",
+   "bytes": 10926,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_mbset": 1,
+    "bpf_rate": 1,
+    "bpf_map_def": 3,
+    "bpf_raw_tracepoint_args": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_execve_event_notc.c",
+   "bytes": 852,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_process_event": 1,
+    "bpf_execve_event": 1,
+    "bpf_rate": 1,
+    "bpf_mbset": 1,
+    "bpf_ktime": 1,
+    "bpf_raw_tracepoint_args": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_execve_map_update.c",
+   "bytes": 1590,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_for": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_exit.c",
+   "bytes": 1860,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_exit": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_exit.h",
+   "bytes": 2215,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_rate": 1,
+    "bpf_process_event": 1,
+    "bpf_ktime": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_fork.c",
+   "bytes": 2911,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_cgroup": 1,
+    "bpf_task": 1,
+    "bpf_process_event": 1,
+    "bpf_rate": 1,
+    "bpf_ktime": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_fentry.c",
+   "bytes": 3084,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 6
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_fexit.c",
+   "bytes": 1698,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 3
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_kprobe.c",
+   "bytes": 5828,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 10
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_lsm_core.c",
+   "bytes": 3740,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_lsm_ima": 1,
+    "bpf_map_def": 9
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_lsm_ima_bprm.c",
+   "bytes": 1026,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_lsm_ima": 1,
+    "bpf_core_enum_value_exists": 1,
+    "bpf_func_id": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_lsm_ima_file.c",
+   "bytes": 1000,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_lsm_ima": 1,
+    "bpf_core_enum_value_exists": 1,
+    "bpf_func_id": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_lsm_output.c",
+   "bytes": 1364,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_lsm_ima": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_rawtp.c",
+   "bytes": 4292,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 8
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_retkprobe.c",
+   "bytes": 2402,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe",
+    "kprobe",
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 5
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_retuprobe.c",
+   "bytes": 2402,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe",
+    "kprobe",
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 5
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_tracepoint.c",
+   "bytes": 7931,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 7
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_uprobe.c",
+   "bytes": 4668,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe",
+    "kprobe",
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 10
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_generic_usdt.c",
+   "bytes": 4306,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe",
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_map_def": 8
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PROG_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_loader.c",
+   "bytes": 3107,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_ktime": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 3
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_lsm_ima.h",
+   "bytes": 490,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_map_test_p1.c",
+   "bytes": 625,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_map_test_p2.c",
+   "bytes": 625,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_map_test_p3.c",
+   "bytes": 481,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_mbset.h",
+   "bytes": 2372,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_repeat": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_process_event.h",
+   "bytes": 13281,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_cgroup": 1,
+    "bpf_cred": 1,
+    "bpf_d_path": 1,
+    "bpf_ktime": 1,
+    "bpf_core_field_exists": 11
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_prog_iter.c",
+   "bytes": 409,
+   "is_bpf_source": true,
+   "sec": {
+    "iter": 1
+   },
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_prog": 2,
+    "bpf_iter__bpf_prog": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/bpf_rate.h",
+   "bytes": 3452,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_HASH": 1,
+    "BPF_MAP_TYPE_ARRAY": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/cel_expr.h",
+   "bytes": 1371,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/data_event.h",
+   "bytes": 5434,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime": 1,
+    "bpf_map_def": 3
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/event_config.h",
+   "bytes": 2740,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/generic_arg.h",
+   "bytes": 1854,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_for": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/generic_calls.h",
+   "bytes": 37584,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_ktime": 1,
+    "bpf_map_def": 8,
+    "bpf_core_field_exists": 1,
+    "bpf_core_enum_value_exists": 2,
+    "bpf_core_enum_value": 2,
+    "bpf_attr_type": 1,
+    "bpf_prog_type": 1,
+    "bpf_map_type": 1,
+    "bpf_raw_tracepoint_args": 6
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/generic_maps.h",
+   "bytes": 1681,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_map_def": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 2,
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_ARRAY": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/generic_path.h",
+   "bytes": 6243,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_d_path": 1,
+    "bpf_map_def": 5
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/heap.h",
+   "bytes": 744,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/pfilter.h",
+   "bytes": 16759,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_process_event": 1,
+    "bpf_generic_kprobe_v53": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/policy_filter.h",
+   "bytes": 3715,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH_OF_MAPS": 2,
+    "BPF_MAP_TYPE_HASH": 2,
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/ratelimit_maps.h",
+   "bytes": 1338,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_LRU_HASH": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/regs.h",
+   "bytes": 12301,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/retprobe_map.h",
+   "bytes": 3665,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/string_maps.h",
+   "bytes": 6461,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_hashing": 1
+   },
+   "maps": {
+    "BPF_MAP_TYPE_ARRAY_OF_MAPS": 3,
+    "BPF_MAP_TYPE_HASH": 1,
+    "BPF_MAP_TYPE_PERCPU_ARRAY": 3,
+    "BPF_MAP_TYPE_LPM_TRIE": 2,
+    "BPF_MAP_TYPE_ARRAY": 1
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/syscall64.h",
+   "bytes": 912,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/uprobe_offload.h",
+   "bytes": 2769,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 2
+   },
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/usdt_arg.h",
+   "bytes": 3131,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {},
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/process/user_preload.h",
+   "bytes": 5061,
+   "is_bpf_source": true,
+   "sec": {},
+   "ctx_families": [
+    "kprobe",
+    "kprobe"
+   ],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_copy_from_user_str": 3,
+    "bpf_ksym_exists": 2,
+    "bpf_for": 2
+   },
+   "maps": {
+    "BPF_MAP_TYPE_HASH": 1
+   },
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "path": "bpf/test/bpf_lseek.c",
+   "bytes": 2044,
+   "is_bpf_source": false,
+   "sec": {},
+   "ctx_families": [],
+   "cilium_entry": false,
+   "cilium_fam": null,
+   "helpers": {
+    "bpf_event": 1,
+    "bpf_task": 1,
+    "bpf_ktime": 1
+   },
+   "maps": {},
+   "features": {
+    "bounded_loops": false,
+    "tail_calls": 0,
+    "bpf2bpf": 0,
+    "ringbuf": 0,
+    "perfbuf": 0,
+    "arena": 0
+   }
+  }
+ ]
+}

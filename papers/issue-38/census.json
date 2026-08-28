@@ -1,0 +1,334 @@
+{
+ "repos": [
+  {
+   "repo": "DataDog/datadog-agent",
+   "files": 24,
+   "programs": 5,
+   "sec_by_family": {
+    "uprobe": 2,
+    "other": 2,
+    "kprobe": 2,
+    "iter": 1,
+    "tracing": 2
+   },
+   "helpers": {
+    "bpf_sock": 25,
+    "bpf_target_defined": 21,
+    "bpf_spin_lock": 20,
+    "bpf_local_storage": 18,
+    "bpf_map_lookup_elem": 13,
+    "bpf_map_update_elem": 13,
+    "bpf_sock_ops": 11,
+    "bpf_perf_event_output": 9,
+    "bpf_dynptr": 8,
+    "bpf_trace_printk": 8
+   },
+   "features": {
+    "bpf2bpf": 4,
+    "tail_calls": 1,
+    "ringbuf": 1,
+    "perfbuf": 2
+   }
+  },
+  {
+   "repo": "aquasecurity/tracee",
+   "files": 11,
+   "programs": 4,
+   "sec_by_family": {
+    "kprobe": 105,
+    "lsm": 2,
+    "tracing": 33,
+    "uprobe": 17,
+    "cgroup": 2
+   },
+   "helpers": {
+    "bpf_map_lookup_elem": 51,
+    "bpf_tail_call": 28,
+    "bpf_raw_tracepoint_args": 27,
+    "bpf_probe_read_kernel": 26,
+    "bpf_map_update_elem": 25,
+    "bpf_core_type_size": 20,
+    "bpf_map_delete_elem": 15,
+    "bpf_probe_read_kernel_str": 14,
+    "bpf_core_field_exists": 14,
+    "bpf_prog": 13
+   },
+   "features": {
+    "bounded_loops": 1,
+    "tail_calls": 1,
+    "bpf2bpf": 1,
+    "perfbuf": 1
+   }
+  },
+  {
+   "repo": "bpftrace/bpftrace",
+   "files": 14,
+   "programs": 7,
+   "sec_by_family": {},
+   "helpers": {
+    "bpf_map_lookup_elem": 9,
+    "bpf_map_sum_elem_count": 4,
+    "bpf_printk": 4,
+    "bpf_loop": 4,
+    "bpf_iter_task_vma_destroy": 4,
+    "bpf_probe_read_user": 3,
+    "bpf_get_current_task_btf": 3,
+    "bpf_strnlen": 3,
+    "bpf_strnstr": 3,
+    "bpf_task_from_pid": 3
+   },
+   "features": {
+    "bpf2bpf": 1
+   }
+  },
+  {
+   "repo": "cilium/cilium",
+   "files": 307,
+   "programs": 28,
+   "sec_by_family": {
+    "kprobe": 1
+   },
+   "helpers": {
+    "bpf_htons": 148,
+    "bpf_host": 46,
+    "bpf_sock": 39,
+    "bpf_map": 36,
+    "bpf_lxc": 30,
+    "bpf_local_storage": 26,
+    "bpf_spin_lock": 19,
+    "bpf_fib_lookup": 14,
+    "bpf_sock_ops": 14,
+    "bpf_redirect": 13
+   },
+   "features": {
+    "bpf2bpf": 26,
+    "tail_calls": 1,
+    "ringbuf": 1,
+    "perfbuf": 1
+   }
+  },
+  {
+   "repo": "cilium/tetragon",
+   "files": 77,
+   "programs": 8,
+   "sec_by_family": {
+    "iter": 1
+   },
+   "helpers": {
+    "bpf_map_def": 47,
+    "bpf_event": 6,
+    "bpf_task": 6,
+    "bpf_copy_from_user_str": 3,
+    "bpf_prog": 2,
+    "bpf_ksym_exists": 2,
+    "bpf_for": 2,
+    "bpf_lsm_ima": 1,
+    "bpf_iter__bpf_prog": 1
+   },
+   "features": {
+    "bounded_loops": 1
+   }
+  },
+  {
+   "repo": "facebookincubator/katran",
+   "files": 58,
+   "programs": 5,
+   "sec_by_family": {
+    "TC": 2,
+    "XDP": 2
+   },
+   "helpers": {
+    "bpf_map_lookup_elem": 71,
+    "bpf_ktime_get_ns": 2,
+    "bpf_map_update_elem": 2,
+    "bpf_redirect": 2,
+    "bpf_htons": 1,
+    "bpf_get_smp_processor_id": 1,
+    "bpf_tunnel_key": 1,
+    "bpf_skb_set_tunnel_key": 1,
+    "bpf_tail_call": 1
+   },
+   "features": {
+    "bpf2bpf": 1,
+    "bounded_loops": 1,
+    "tail_calls": 1
+   }
+  },
+  {
+   "repo": "falcosecurity/libs",
+   "files": 7,
+   "programs": 6,
+   "sec_by_family": {
+    "tracing": 10
+   },
+   "helpers": {
+    "bpf_tail_call": 4,
+    "bpf_probe_read_kernel": 1,
+    "bpf_get_current_pid_tgid": 1
+   },
+   "features": {
+    "tail_calls": 2,
+    "bpf2bpf": 1
+   }
+  },
+  {
+   "repo": "inspektor-gadget/inspektor-gadget",
+   "files": 62,
+   "programs": 57,
+   "sec_by_family": {
+    "other": 84,
+    "tracing": 73,
+    "kprobe": 65,
+    "iter": 17,
+    "TC": 5,
+    "perf_event": 1
+   },
+   "helpers": {
+    "bpf_map_lookup_elem": 103,
+    "bpf_get_current_pid_tgid": 84,
+    "bpf_map_delete_elem": 69,
+    "bpf_map_update_elem": 62,
+    "bpf_ktime_get_boot_ns": 35,
+    "bpf_probe_read_kernel_str": 27,
+    "bpf_probe_read_kernel": 21,
+    "bpf_skb_load_bytes": 19,
+    "bpf_ktime_get_ns": 18,
+    "bpf_probe_read_user": 16
+   },
+   "features": {
+    "bpf2bpf": 29,
+    "bounded_loops": 7,
+    "tail_calls": 4,
+    "perfbuf": 3
+   }
+  },
+  {
+   "repo": "iovisor/bcc",
+   "files": 196,
+   "programs": 58,
+   "sec_by_family": {
+    "other": 12,
+    "kprobe": 129,
+    "tracing": 208,
+    "perf_event": 5,
+    "uprobe": 17
+   },
+   "helpers": {
+    "bpf_get_current_pid_tgid": 120,
+    "bpf_map_lookup_elem": 103,
+    "bpf_map_update_elem": 80,
+    "bpf_ktime_get_ns": 68,
+    "bpf_map_delete_elem": 66,
+    "bpf_get_current_comm": 44,
+    "bpf_current_task_under_cgroup": 31,
+    "bpf_perf_event_output": 29,
+    "bpf_probe_read_kernel": 27,
+    "bpf_probe_read_user_str": 16
+   },
+   "features": {
+    "perfbuf": 23,
+    "bpf2bpf": 19,
+    "bounded_loops": 1
+   }
+  },
+  {
+   "repo": "torvalds/linux",
+   "files": 1122,
+   "programs": 1076,
+   "sec_by_family": {
+    "tracing": 1064,
+    "cgroup": 193,
+    "kprobe": 99,
+    "other": 316,
+    "perf_event": 36,
+    "socket": 941,
+    "TC": 859,
+    "sockops": 63,
+    "XDP": 250,
+    "syscall": 340,
+    "struct_ops": 195,
+    "lsm": 114,
+    "sk_msg": 27,
+    "flow_dissector": 14,
+    "iter": 66,
+    "uprobe": 85,
+    "netfilter": 12
+   },
+   "helpers": {
+    "bpf_map_lookup_elem": 1226,
+    "bpf_get_prandom_u32": 726,
+    "bpf_misc": 346,
+    "bpf_spin_lock": 296,
+    "bpf_dynptr": 261,
+    "bpf_ktime_get_ns": 257,
+    "bpf_spin_unlock": 218,
+    "bpf_htons": 207,
+    "bpf_get_current_pid_tgid": 205,
+    "bpf_map_update_elem": 186
+   },
+   "features": {
+    "bounded_loops": 2,
+    "tail_calls": 43,
+    "bpf2bpf": 164,
+    "perfbuf": 10,
+    "arena": 18,
+    "ringbuf": 22
+   }
+  }
+ ],
+ "totals": {
+  "repos": 10,
+  "files": 1878,
+  "programs": 1254,
+  "sec_instances": 5474,
+  "top_sec_families": {
+   "tracing": 1390,
+   "socket": 941,
+   "TC": 866,
+   "other": 414,
+   "kprobe": 401,
+   "syscall": 340,
+   "XDP": 252,
+   "cgroup": 195,
+   "struct_ops": 195,
+   "uprobe": 121,
+   "lsm": 116,
+   "iter": 85,
+   "sockops": 63,
+   "perf_event": 42,
+   "sk_msg": 27,
+   "flow_dissector": 14,
+   "netfilter": 12
+  },
+  "top_helpers": {
+   "bpf_map_lookup_elem": 1581,
+   "bpf_get_prandom_u32": 732,
+   "bpf_get_current_pid_tgid": 420,
+   "bpf_map_update_elem": 369,
+   "bpf_htons": 361,
+   "bpf_ktime_get_ns": 350,
+   "bpf_misc": 346,
+   "bpf_spin_lock": 335,
+   "bpf_dynptr": 279,
+   "bpf_probe_read_kernel": 236,
+   "bpf_spin_unlock": 227,
+   "bpf_map": 216,
+   "bpf_map_delete_elem": 206,
+   "bpf_sock": 190,
+   "bpf_sk_release": 190,
+   "bpf_obj_drop": 154,
+   "bpf_sock_tuple": 152,
+   "bpf_loop": 145,
+   "bpf_htonl": 143,
+   "bpf_get_current_task_btf": 140
+  },
+  "feature_adoption": {
+   "bpf2bpf": 246,
+   "tail_calls": 53,
+   "ringbuf": 24,
+   "perfbuf": 40,
+   "bounded_loops": 13,
+   "arena": 18
+  }
+ }
+}
