@@ -196,38 +196,90 @@ def main():
                        f"{1 if sig['ci_presence'] else 0:2d} {sc_s:>5s} {osv_s:>3s}")
         out.append("")
         # ---- signal→outcome association (H1/H2) ----
+        def rank_avg(vals):
+            """Standard average-rank (ties share the mean rank)."""
+            s = sorted(vals)
+            ranks = {}
+            i, n = 0, len(s)
+            while i < n:
+                j = i
+                while j + 1 < n and s[j + 1] == s[i]:
+                    j += 1
+                avg = (i + 1 + j + 1) / 2.0
+                for k in range(i, j + 1):
+                    ranks[s[k]] = avg
+                i = j + 1
+            return [ranks[v] for v in vals]
+
         def spearman(xs, ys):
+            """Spearman rho with standard average ranks (review #33-1)."""
             n = len(xs)
             if n < 3:
                 return None
-            rx = {v: i + 1 for i, v in enumerate(sorted(xs))}
-            ry = {v: i + 1 for i, v in enumerate(sorted(ys))}
-            sx = [rx[v] for v in xs]; sy = [ry[v] for v in ys]
+            sx = rank_avg(xs); sy = rank_avg(ys)
             mx = sum(sx) / n; my = sum(sy) / n
             cov = sum((a - mx) * (b - my) for a, b in zip(sx, sy))
             vx = sum((a - mx) ** 2 for a in sx); vy = sum((b - my) ** 2 for b in sy)
             if vx == 0 or vy == 0:
                 return None
             return cov / (vx * vy) ** 0.5
+
+        def fisher_z_ci(rho, n, z=1.96):
+            """Fisher-z 95% CI for Spearman rho (review #33-2)."""
+            import math
+            if rho is None or n < 4 or abs(rho) >= 1.0:
+                return None
+            zr = math.atanh(rho)
+            se = 1.0 / math.sqrt(n - 3)
+            return (math.tanh(zr - z * se), math.tanh(zr + z * se))
+
         pairs = [(s, s.get("outcomes", {})) for s in snaps]
+        # 10 signals: 6 original + 4 added per review #33-3 (ci binary,
+        # has_license binary, repo_age_days, days_since_push — derived from
+        # snapshot-pinned timestamps, deterministic).
+        fetch_ts = datetime.datetime.fromisoformat(
+            json.load(open(SNAP / "manifest.json")).get("fetched_at",
+            "2026-08-28T00:00:00+00:00"))
+        for s in snaps:
+            sig = s["signals"]
+            sig["ci"] = 1 if sig.get("ci_presence") else 0
+            sig["has_license"] = 1 if sig.get("license") else 0
+            def _days(ts):
+                if not ts:
+                    return None
+                try:
+                    d = datetime.datetime.fromisoformat(ts.replace("Z", "+00:00"))
+                    return max(0, (fetch_ts - d).days)
+                except Exception:
+                    return None
+            sig["repo_age_days"] = _days(sig.get("created_at"))
+            sig["days_since_push"] = _days(sig.get("pushed_at"))
         sig_keys = ["stars", "contributors", "forks", "open_issues", "releases",
-                    "subscribers"]
+                    "subscribers", "ci", "has_license", "repo_age_days",
+                    "days_since_push"]
         for out_key, label in [("scorecard", "Scorecard"), ("osv_count", "OSV vulns")]:
             ys = [oc.get(out_key) for _, oc in pairs]
             if all(y is None for y in ys):
                 continue
-            out.append(f"Spearman rho (signal vs {label}):")
+            out.append(f"Spearman rho (avg-rank, Fisher-z 95% CI) — signal vs {label}:")
             for k in sig_keys:
                 idx = [i for i, (s, oc) in enumerate(pairs)
                        if oc.get(out_key) is not None and s["signals"].get(k) is not None]
                 if len(idx) < 3:
-                    out.append(f"  {k:14s} n<3")
+                    out.append(f"  {k:16s} n<3")
                     continue
                 xs = [pairs[i][0]["signals"][k] for i in idx]
                 ys2 = [pairs[i][1][out_key] for i in idx]
                 rho = spearman(xs, ys2)
-                out.append(f"  {k:14s} rho={rho:+.3f}  n={len(idx)}"
-                           if rho is not None else f"  {k:14s} n/a")
+                if rho is None:
+                    out.append(f"  {k:16s} n/a")
+                    continue
+                ci = fisher_z_ci(rho, len(idx))
+                if ci:
+                    out.append(f"  {k:16s} rho={rho:+.3f} "
+                               f"[{ci[0]:+.3f}, {ci[1]:+.3f}]  n={len(idx)}")
+                else:
+                    out.append(f"  {k:16s} rho={rho:+.3f}  n={len(idx)}")
             out.append("")
         # ---- ecosystem stratification (H2 context) ----
         out.append("per-ecosystem median scorecard / osv:")
@@ -253,6 +305,12 @@ def main():
                        f"median={med:.0f} MAD={mad:.0f}")
             out.append(f"H3 outlier fraction: {n_out}/{len(ratios)} "
                        f"({n_out/len(ratios):.1%}) above median+5xMAD")
+            # threshold sensitivity (review #33-5): 5xMAD is the conservative
+            # primary cutoff; 2.5x/3x shown for robustness.
+            for mult in (2.5, 3.0, 5.0):
+                k = sum(1 for _, r in ratios if r > med + mult * mad)
+                out.append(f"  median+{mult:g}xMAD flags {k}/{len(ratios)} "
+                           f"({k/len(ratios):.1%})")
             for s, r in sorted(ratios, key=lambda x: -x[1]):
                 flag = " <<< outlier" if r > med + 5 * mad else ""
                 out.append(f"  {s['repo']:45s} ratio={r:7.0f}{flag}")

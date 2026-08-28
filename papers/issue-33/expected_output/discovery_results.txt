@@ -53,21 +53,29 @@ vinta/awesome-python                              Python   316573    415    0  1
 yt-dlp/yt-dlp                                     Python   187432    377  136  1   7.7  22
 zed-industries/zed                                  Rust    89340    482 1291  1   n/a   0
 
-Spearman rho (signal vs Scorecard):
-  stars          rho=-0.019  n=32
-  contributors   rho=+0.102  n=32
-  forks          rho=-0.021  n=32
-  open_issues    rho=+0.447  n=32
-  releases       rho=+0.483  n=32
-  subscribers    rho=-0.190  n=32
+Spearman rho (avg-rank, Fisher-z 95% CI) — signal vs Scorecard:
+  stars            rho=-0.019 [-0.365, +0.332]  n=32
+  contributors     rho=+0.084 [-0.273, +0.420]  n=32
+  forks            rho=-0.021 [-0.367, +0.330]  n=32
+  open_issues      rho=+0.454 [+0.125, +0.693]  n=32
+  releases         rho=+0.475 [+0.151, +0.707]  n=32
+  subscribers      rho=-0.195 [-0.509, +0.165]  n=32
+  ci               rho=+0.082 [-0.275, +0.419]  n=32
+  has_license      rho=+0.273 [-0.084, +0.567]  n=32
+  repo_age_days    rho=+0.413 [+0.075, +0.666]  n=32
+  days_since_push  rho=-0.571 [-0.767, -0.278]  n=32
 
-Spearman rho (signal vs OSV vulns):
-  stars          rho=+0.102  n=48
-  contributors   rho=+0.142  n=48
-  forks          rho=-0.133  n=48
-  open_issues    rho=+0.289  n=48
-  releases       rho=+0.251  n=48
-  subscribers    rho=-0.169  n=48
+Spearman rho (avg-rank, Fisher-z 95% CI) — signal vs OSV vulns:
+  stars            rho=+0.163 [-0.127, +0.427]  n=48
+  contributors     rho=+0.160 [-0.130, +0.425]  n=48
+  forks            rho=-0.064 [-0.342, +0.225]  n=48
+  open_issues      rho=+0.309 [+0.027, +0.545]  n=48
+  releases         rho=+0.273 [-0.012, +0.517]  n=48
+  subscribers      rho=-0.124 [-0.395, +0.166]  n=48
+  ci               rho=+0.103 [-0.187, +0.376]  n=48
+  has_license      rho=+0.050 [-0.238, +0.329]  n=48
+  repo_age_days    rho=-0.095 [-0.370, +0.194]  n=48
+  days_since_push  rho=-0.196 [-0.455, +0.093]  n=48
 
 per-ecosystem median scorecard / osv:
   Go         n= 7 median_scorecard=6 median_osv=0
@@ -78,6 +86,9 @@ per-ecosystem median scorecard / osv:
 
 H3 spike detection (stars/contributor ratio): median=398 MAD=196
 H3 outlier fraction: 10/50 (20.0%) above median+5xMAD
+  median+2.5xMAD flags 13/50 (26.0%)
+  median+3xMAD flags 11/50 (22.0%)
+  median+5xMAD flags 10/50 (20.0%)
   macrozheng/mall                               ratio=  84646 <<< outlier
   ultraworkers/claw-code                        ratio=   8484 <<< outlier
   MisterBooo/LeetCodeAnimation                  ratio=   5113 <<< outlier
@@ -130,6 +141,6 @@ H3 outlier fraction: 10/50 (20.0%) above median+5xMAD
   TheAlgorithms/Java                            ratio=    155
 
 outcome coverage: scorecard 32/50 (64%), osv 48/50 (96%)
-signal gap (releases - stars vs Scorecard): +0.502
+signal gap (releases - stars vs Scorecard): +0.494
 
 canonical-run key: every number derives from data_snapshot/ via deterministic fetch.
