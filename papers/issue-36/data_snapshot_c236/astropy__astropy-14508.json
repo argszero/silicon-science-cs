@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-14508",
+ "repo": "astropy/astropy",
+ "issue": 14508,
+ "base_commit": "a3f4ae6cd24d5ecdf49f213d77b3513dd509a06c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-09T11:08:51Z",
+ "c1b_jaccard": 0.1732,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "386b52e980",
+   "date": "2023-03-13",
+   "msg": "Merge pull request #14508 from kYwzor/fix-card-string-repres"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/io/fits/tests/test_header.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:32:04.272296+00:00"
+}

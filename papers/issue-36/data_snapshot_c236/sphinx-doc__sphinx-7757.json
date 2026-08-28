@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-7757",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 7757,
+ "base_commit": "212fd67b9f0b4fae6a7c3501fdf1a9a5b2801329",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-30T14:46:01Z",
+ "c1b_jaccard": 0.0854,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c063c9c0fe",
+   "date": "2020-05-31",
+   "msg": "Merge pull request #7757 from tk0miya/7756_posonlyargs\n\nFix "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_util_inspect.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:18:01.547634+00:00"
+}

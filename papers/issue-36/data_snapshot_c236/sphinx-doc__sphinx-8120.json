@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8120",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 8120,
+ "base_commit": "795747bdb6b8fb7d717d5bbfc2c3316869e66a73",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-08-14T07:23:34Z",
+ "c1b_jaccard": 0.1073,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d8cb7aa4f6",
+   "date": "2020-10-04",
+   "msg": "Merge pull request #8120 from tk0miya/6640_allow_to_override"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_intl.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:18:26.428444+00:00"
+}

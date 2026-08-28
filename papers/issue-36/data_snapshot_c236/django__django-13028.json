@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13028",
+ "repo": "django/django",
+ "issue": 13028,
+ "base_commit": "78ad4b4b0201003792bfdbf1a7781cbc9ee03539",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-05T19:49:04Z",
+ "c1b_jaccard": 0.0774,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ffe79b0979",
+   "date": "2010-04-27",
+   "msg": "Fixed #12286 -- Corrected order of table creation in syncdb "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/queries/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:54.126425+00:00"
+}

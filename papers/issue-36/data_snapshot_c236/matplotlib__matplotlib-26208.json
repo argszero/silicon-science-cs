@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-26208",
+ "repo": "matplotlib/matplotlib",
+ "issue": 26208,
+ "base_commit": "f0f133943d3e4f1e2e665291fe1c8f658a84cc09",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-06-28T21:31:50Z",
+ "c1b_jaccard": 0.1182,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9ced0c0347",
+   "date": "2023-06-30",
+   "msg": "Merge pull request #26208 from tacaswell/fix/twin_units\n\nFIX"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_axes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:08:24.186301+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13417",
+ "repo": "django/django",
+ "issue": 13417,
+ "base_commit": "71ae1ab0123582cc5bfe0f7d5f4cc19a9412f396",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-09-14T07:49:15Z",
+ "c1b_jaccard": 0.1512,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3341f39f41",
+   "date": "2010-05-09",
+   "msg": "Fixed #13417 -- Clarified the use of the djangojs domain for"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/queries/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:43:54.520662+00:00"
+}

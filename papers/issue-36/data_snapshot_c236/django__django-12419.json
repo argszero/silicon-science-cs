@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-12419",
+ "repo": "django/django",
+ "issue": 12419,
+ "base_commit": "7fa1a93c6c8109010a6ff3f604fda83b604e0e97",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-02-05T10:02:56Z",
+ "c1b_jaccard": 0.0595,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5926f94be4",
+   "date": "2010-01-28",
+   "msg": "Fixed #12419 -- Updated Romanian translation. Thanks to xlot"
+  },
+  {
+   "sha": "79857802b8",
+   "date": "2010-02-13",
+   "msg": "Fixed #12011 -- Modified the test client to preserve the req"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/project_template/test_settings.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:40:21.946634+00:00"
+}

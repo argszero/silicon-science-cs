@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-16560",
+ "repo": "django/django",
+ "issue": 16560,
+ "base_commit": "51c9bb7cd16081133af4f0ab6d06572660309730",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-02-16T10:45:56Z",
+ "c1b_jaccard": 0.2118,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f0280f2e94",
+   "date": "2011-07-29",
+   "msg": "Fixes #16482 -- Fixes typo in security docs. Thanks, charett"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/constraints/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:00:08.363645+00:00"
+}

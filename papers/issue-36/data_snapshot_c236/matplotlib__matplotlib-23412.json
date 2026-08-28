@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-23412",
+ "repo": "matplotlib/matplotlib",
+ "issue": 23412,
+ "base_commit": "f06c2c3abdaf4b90285ce5ca7fedbb8ace715911",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-07-11T01:41:11Z",
+ "c1b_jaccard": 0.0958,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d7ffff29ae",
+   "date": "2022-08-05",
+   "msg": "Fix dash offset bug in Patch (#23412)\n\n* Add passed offset i"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_patches.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:04:21.220096+00:00"
+}

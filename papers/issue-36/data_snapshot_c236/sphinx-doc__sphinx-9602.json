@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9602",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 9602,
+ "base_commit": "6c38f68dae221e8cfc70c137974b8b88bd3baaab",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-09-01T17:26:58Z",
+ "c1b_jaccard": 0.0667,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "4ad45cec52",
+   "date": "2021-09-05",
+   "msg": "Merge pull request #9602 from tk0miya/9576_Literal_xref\n\nFix"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_domain_py.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:20:32.365377+00:00"
+}

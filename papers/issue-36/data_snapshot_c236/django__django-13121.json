@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13121",
+ "repo": "django/django",
+ "issue": 13121,
+ "base_commit": "ec5aa2161d8015a3fe57dcbbfe14200cd18f0a16",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-29T09:04:15Z",
+ "c1b_jaccard": 0.0854,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "0b25cebcc6",
+   "date": "2010-05-07",
+   "msg": "Added preliminary Bosnian formats.\n\ngit-svn-id: http://code."
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/backends/base/test_operations.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:42:19.332740+00:00"
+}

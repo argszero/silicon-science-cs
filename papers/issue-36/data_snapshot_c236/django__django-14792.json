@@ -1,0 +1,15 @@
+{
+ "instance_id": "django__django-14792",
+ "repo": "django/django",
+ "issue": 14792,
+ "base_commit": "d89f976bddb49fb168334960acc8979c3de991fa",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-08-24T09:25:15Z",
+ "c1b_jaccard": 0.0213,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "tests/utils_tests/test_timezone.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:50:55.882464+00:00"
+}

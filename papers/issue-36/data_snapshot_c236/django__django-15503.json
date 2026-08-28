@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15503",
+ "repo": "django/django",
+ "issue": 15503,
+ "base_commit": "859a87d873ce7152af73ab851653b4e1c3ffea4c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-03-12T06:22:37Z",
+ "c1b_jaccard": 0.1146,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "bc5c2537ae",
+   "date": "2011-02-12",
+   "msg": "Fixed #14132 -- Fixed feedgenerator to support years < 1900."
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/model_fields/test_jsonfield.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:54:26.052593+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-13779",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 13779,
+ "base_commit": "b34751b7ed02b2cfcc36037fb729d4360480a299",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-05-03T13:24:57Z",
+ "c1b_jaccard": 0.1343,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "8d3b4ff3ee",
+   "date": "2019-05-06",
+   "msg": "FIX Allow to disable estimator and passing weight in Voting "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/ensemble/tests/test_voting.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:35:44.567793+00:00"
+}

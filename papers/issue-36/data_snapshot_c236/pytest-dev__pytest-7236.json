@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-7236",
+ "repo": "pytest-dev/pytest",
+ "issue": 7236,
+ "base_commit": "c98bc4cd3d687fe9b392d8eecd905627191d4f06",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-21T19:53:14Z",
+ "c1b_jaccard": 0.0362,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "56bf819c2f",
+   "date": "2020-05-30",
+   "msg": "Do not call TestCase.tearDown for skipped tests (#7236)\n\nFix"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/test_unittest.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:15:22.988099+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "mwaskom__seaborn-3069",
+ "repo": "mwaskom/seaborn",
+ "issue": 3069,
+ "base_commit": "54cab15bdacfaa05a88fbc5502a5b322d99f148e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-10-09T23:31:20Z",
+ "c1b_jaccard": 0.2578,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a767d666d4",
+   "date": "2022-10-11",
+   "msg": "Tweak nominal scale axes akin to categorical axes in classic"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/_core/test_plot.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:08:49.489704+00:00"
+}

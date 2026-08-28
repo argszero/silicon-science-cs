@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14170",
+ "repo": "django/django",
+ "issue": 14170,
+ "base_commit": "6efc35b4fe3009666e56a60af0675d7d532bf4ff",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-03-23T08:53:41Z",
+ "c1b_jaccard": 0.05,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d0669843d0",
+   "date": "2013-11-03",
+   "msg": "Fixed #14170 -- Reset i18n cache when settings change"
+  },
+  {
+   "sha": "cb2c3ce154",
+   "date": "2013-11-04",
+   "msg": "Merge pull request #1821 from Bouke/tickets/14170\n\n#14170 --"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/db_functions/datetime/test_extract_trunc.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:47:15.200124+00:00"
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13023",
+ "repo": "django/django",
+ "issue": 13023,
+ "base_commit": "f83b44075dafa429d59e8755aa47e15577cc49f9",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-04T20:40:44Z",
+ "c1b_jaccard": 0.25,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "aba95dcc0b",
+   "date": "2010-03-27",
+   "msg": "Fixed #13023 - Removed ambiguity with regard to the max_num "
+  },
+  {
+   "sha": "9872badf33",
+   "date": "2010-04-25",
+   "msg": "Fixed #13404 -- Reworked module_has_submodule() to allow it "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/model_fields/test_decimalfield.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:48.875934+00:00"
+}

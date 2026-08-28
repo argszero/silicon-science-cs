@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15380",
+ "repo": "django/django",
+ "issue": 15380,
+ "base_commit": "71e7c8e73712419626f1c2b6ec036e8559a2d667",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-01-31T19:44:44Z",
+ "c1b_jaccard": 0.08,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "0bf5fbfa76",
+   "date": "2011-01-31",
+   "msg": "Some tweaks to the staticfiles docs to clarify things for ne"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_autodetector.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:53:44.057292+00:00"
+}

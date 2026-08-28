@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-23314",
+ "repo": "matplotlib/matplotlib",
+ "issue": 23314,
+ "base_commit": "97fc1154992f64cfb2f86321155a7404efeb2d8a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-06-21T02:41:34Z",
+ "c1b_jaccard": 0.0851,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9d5953f356",
+   "date": "2022-06-22",
+   "msg": "Merge pull request #23314 from QuLogic/fix-invisible-3d\n\nDon"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_axes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:04:17.010080+00:00"
+}

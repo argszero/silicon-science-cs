@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-24562",
+ "repo": "sympy/sympy",
+ "issue": 24562,
+ "base_commit": "b1cb676cf92dd1a48365b731979833375b188bf2",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-01-21T12:06:36Z",
+ "c1b_jaccard": 0.0699,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c25ecf0ef7",
+   "date": "2023-01-21",
+   "msg": "Merge pull request #24562 from 1e9abhi1e10/rational\n\nfixes r"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_numbers.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:50.011430+00:00"
+}

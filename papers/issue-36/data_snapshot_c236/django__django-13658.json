@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13658",
+ "repo": "django/django",
+ "issue": 13658,
+ "base_commit": "0773837e15bb632afffb6848a58c59a791008fa1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-11-09T20:50:28Z",
+ "c1b_jaccard": 0.1702,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "458e3a3ff9",
+   "date": "2010-08-07",
+   "msg": "Fixed #13658 -- Added missing command in JavaScript example."
+  },
+  {
+   "sha": "f4dd38757c",
+   "date": "2010-08-28",
+   "msg": "Fixed #13681 -- Added a commented out admindocs entry to the"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_scripts/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:44:57.165769+00:00"
+}

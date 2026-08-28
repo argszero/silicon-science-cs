@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-25122",
+ "repo": "matplotlib/matplotlib",
+ "issue": 25122,
+ "base_commit": "5ec2bd279729ff534719b8bf238dbbca907b93c5",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-02-01T03:41:00Z",
+ "c1b_jaccard": 0.1224,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "baebe443cc",
+   "date": "2023-02-07",
+   "msg": "Merge pull request #25122 from gapplef/patch-1\n\nFIX: scaling"
+  },
+  {
+   "sha": "0b4e200435",
+   "date": "2023-02-07",
+   "msg": "Backport PR #25122: FIX: scaling factor for window with nega"
+  },
+  {
+   "sha": "a9d8907749",
+   "date": "2023-02-07",
+   "msg": "Merge pull request #25167 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_mlab.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:06:40.976789+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15973",
+ "repo": "django/django",
+ "issue": 15973,
+ "base_commit": "2480554dc4ada4ecf3f6a08e318735a2e50783f3",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-08-19T18:10:02Z",
+ "c1b_jaccard": 0.037,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "765458363b",
+   "date": "2011-04-02",
+   "msg": "Advanced deprecations in contrib.gis.\n\ngit-svn-id: http://co"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_autodetector.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:57:30.499158+00:00"
+}

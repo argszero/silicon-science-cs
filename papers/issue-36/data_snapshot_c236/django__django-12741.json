@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-12741",
+ "repo": "django/django",
+ "issue": 12741,
+ "base_commit": "537d422942b53bc0a2b6a51968f379c0de07793c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-17T22:35:55Z",
+ "c1b_jaccard": 0.093,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ff2d0ebdb8",
+   "date": "2010-03-10",
+   "msg": "Fixed three small doc markup errors.\n\ngit-svn-id: http://cod"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/backends/base/test_operations.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:40:54.101443+00:00"
+}

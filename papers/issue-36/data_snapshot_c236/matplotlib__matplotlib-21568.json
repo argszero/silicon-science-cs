@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-21568",
+ "repo": "matplotlib/matplotlib",
+ "issue": 21568,
+ "base_commit": "f0632c0fc7339f68e992ed63ae4cfac76cd41aad",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-11-08T18:41:08Z",
+ "c1b_jaccard": 0.0788,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "4e36ebde92",
+   "date": "2021-11-13",
+   "msg": "Merge pull request #21568 from Hoxbro/tex_dates\n\nEnhancing s"
+  },
+  {
+   "sha": "e98d508a18",
+   "date": "2021-11-13",
+   "msg": "Backport PR #21568: Enhancing support for tex and datetimes"
+  },
+  {
+   "sha": "29c5644c8c",
+   "date": "2021-11-13",
+   "msg": "Merge pull request #21625 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_dates.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:03:40.635650+00:00"
+}

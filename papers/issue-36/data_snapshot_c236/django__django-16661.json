@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-16661",
+ "repo": "django/django",
+ "issue": 16661,
+ "base_commit": "d687febce5868545f99974d2499a91f81a32fef5",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-18T09:26:58Z",
+ "c1b_jaccard": 0.1457,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1f233b479a",
+   "date": "2011-08-22",
+   "msg": "Made documentation of ManyToManyField placement clearer (kin"
+  },
+  {
+   "sha": "1e72b1c5c1",
+   "date": "2011-08-23",
+   "msg": "Fixed #16681 -- Refactored the invalid_models unit test so t"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/modeladmin/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:01:01.920923+00:00"
+}

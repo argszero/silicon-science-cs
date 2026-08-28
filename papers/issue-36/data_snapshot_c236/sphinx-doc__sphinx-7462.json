@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-7462",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 7462,
+ "base_commit": "b3e26a6c851133b82b50f4b68b53692076574d13",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-12T04:10:05Z",
+ "c1b_jaccard": 0.1066,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a4edbc1104",
+   "date": "2020-04-13",
+   "msg": "Merge pull request #7462 from tk0miya/7461_empty_tuple\n\nFix "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_domain_py.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:43.564966+00:00"
+}

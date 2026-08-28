@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-15349",
+ "repo": "sympy/sympy",
+ "issue": 15349,
+ "base_commit": "768da1c6f6ec907524b8ebbf6bf818c92b56101b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-10-06T19:45:27Z",
+ "c1b_jaccard": 0.1439,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e8b2ccc797",
+   "date": "2018-10-07",
+   "msg": "Merge pull request #15349 from 2torus/15193_quaternion_sign_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/algebras/tests/test_quaternion.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:26:06.479906+00:00"
+}

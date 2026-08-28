@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15022",
+ "repo": "django/django",
+ "issue": 15022,
+ "base_commit": "e1d673c373a7d032060872b690a92fc95496612e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-10-24T17:48:28Z",
+ "c1b_jaccard": 0.0517,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3550456535",
+   "date": "2010-12-22",
+   "msg": "Added some reST markup to avoid a warning during docs compil"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_changelist/admin.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:51:21.809358+00:00"
+}

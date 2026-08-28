@@ -1,0 +1,21 @@
+{
+ "instance_id": "pallets__flask-5014",
+ "repo": "pallets/flask",
+ "issue": 5014,
+ "base_commit": "7ee9ceb71e868944a46e1ff00b506772a53a4f1d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-04T18:36:21Z",
+ "c1b_jaccard": 0.4242,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "7ed89d3f9d",
+   "date": "2023-03-11",
+   "msg": "Merge pull request #5014 from evgenymozhaev/require-a-non-em"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_blueprints.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:09:02.466407+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14787",
+ "repo": "django/django",
+ "issue": 14787,
+ "base_commit": "004b4620f6f4ad87261e149898940f2dcd5757ef",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-08-23T12:59:59Z",
+ "c1b_jaccard": 0.0533,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "174f222b39",
+   "date": "2010-12-04",
+   "msg": "Fixed #14764 -- specified that a set is returned by User.get"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/decorators/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:50:50.675848+00:00"
+}

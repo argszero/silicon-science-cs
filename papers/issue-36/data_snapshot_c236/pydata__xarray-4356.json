@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-4356",
+ "repo": "pydata/xarray",
+ "issue": 4356,
+ "base_commit": "e05fddea852d08fc0845f954b79deb9e9f9ff883",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-08-19T23:48:49Z",
+ "c1b_jaccard": 0.0645,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "43a2a4bdf3",
+   "date": "2020-08-20",
+   "msg": "Allow multiple dims to be passed with min_count (#4356)\n\n* A"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_duck_array_ops.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:11:19.298229+00:00"
+}

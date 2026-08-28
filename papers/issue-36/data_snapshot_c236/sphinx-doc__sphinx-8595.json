@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8595",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 8595,
+ "base_commit": "b19bce971e82f2497d67fdacdeca8db08ae0ba56",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-12-27T03:07:50Z",
+ "c1b_jaccard": 0.1867,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "119ddf92ff",
+   "date": "2020-12-28",
+   "msg": "Merge pull request #8595 from tk0miya/8594_empty_all\n\nFix #8"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-ext-autodoc/target/empty_all.py",
+ "c2_present_at_base": false,
+ "fetched_at": "2026-08-28T09:19:04.870882+00:00"
+}

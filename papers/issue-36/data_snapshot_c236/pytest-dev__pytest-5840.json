@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-5840",
+ "repo": "pytest-dev/pytest",
+ "issue": 5840,
+ "base_commit": "73c5b7f4b11a81e971f7d1bb18072e06a87060f4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-09-12T01:09:28Z",
+ "c1b_jaccard": 0.0556,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9422e10322",
+   "date": "2019-09-13",
+   "msg": "Fix regression due to different cases on Windows (#5840)\n\nFi"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/test_conftest.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:15:04.168388+00:00"
+}

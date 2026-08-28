@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-10614",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 10614,
+ "base_commit": "ac2b7599d212af7d04649959ce6926c63c3133fa",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-06-29T14:29:04Z",
+ "c1b_jaccard": 0.1488,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3e30fa36a2",
+   "date": "2023-08-08",
+   "msg": "Fix missing and broken links in inheritance diagrams (#10614"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-ext-inheritance_diagram/conf.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:17.610580+00:00"
+}

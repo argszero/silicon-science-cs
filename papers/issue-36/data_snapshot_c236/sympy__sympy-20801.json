@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-20801",
+ "repo": "sympy/sympy",
+ "issue": 20801,
+ "base_commit": "e11d3fed782146eebbffdc9ced0364b223b84b6c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-01-15T02:01:23Z",
+ "c1b_jaccard": 0.1538,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1559352580",
+   "date": "2021-01-18",
+   "msg": "Merge pull request #20801 from AaronStiff/issues/20796-float"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_numbers.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:32:08.854133+00:00"
+}

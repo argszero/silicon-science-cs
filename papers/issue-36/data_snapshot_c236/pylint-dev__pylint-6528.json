@@ -1,0 +1,26 @@
+{
+ "instance_id": "pylint-dev__pylint-6528",
+ "repo": "pylint-dev/pylint",
+ "issue": 6528,
+ "base_commit": "273a8b25620467c1e5686aa8d2a1dbb8c02c78d0",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-06T21:03:37Z",
+ "c1b_jaccard": 0.1596,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6ad350fb0a",
+   "date": "2022-05-13",
+   "msg": "Respect ignore configuration options when --recursive=y. (#6"
+  },
+  {
+   "sha": "9c2fe99946",
+   "date": "2022-05-13",
+   "msg": "Respect ignore configuration options when --recursive=y. (#6"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/lint/unittest_lint.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:13:58.086098+00:00"
+}

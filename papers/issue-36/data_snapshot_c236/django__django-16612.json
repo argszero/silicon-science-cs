@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-16612",
+ "repo": "django/django",
+ "issue": 16612,
+ "base_commit": "55bcbd8d172b689811fae17cde2f09218dd74e9c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-02T19:06:12Z",
+ "c1b_jaccard": 0.1282,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f3bf62230a",
+   "date": "2011-08-13",
+   "msg": "Fixed #16606 - Typo in docs/ref/contrib/csrf.txt; thanks sel"
+  },
+  {
+   "sha": "ebb504db69",
+   "date": "2013-01-25",
+   "msg": "Moved has_changed logic from widget to form field\n\nRefs #166"
+  },
+  {
+   "sha": "892bc91cb0",
+   "date": "2013-03-01",
+   "msg": "Fixed #16612 -- Improved has_changed detection for localized"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_views/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:00:48.227030+00:00"
+}

@@ -1,0 +1,15 @@
+{
+ "instance_id": "django__django-11951",
+ "repo": "django/django",
+ "issue": 11951,
+ "base_commit": "312049091288dbba2299de8d07ea3e3311ed7238",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-10-21T09:35:46Z",
+ "c1b_jaccard": 0.0676,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "tests/bulk_create/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:38:25.497406+00:00"
+}

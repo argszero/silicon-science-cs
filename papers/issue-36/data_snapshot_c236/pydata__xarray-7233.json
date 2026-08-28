@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-7233",
+ "repo": "pydata/xarray",
+ "issue": 7233,
+ "base_commit": "51d37d1be95547059251076b3fadaa317750aab3",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-10-27T23:46:49Z",
+ "c1b_jaccard": 0.0571,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e1936a9805",
+   "date": "2022-10-28",
+   "msg": "Ensure Coarsen.construct keeps all coords (#7233)\n\n* test\r\n\r"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_coarsen.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:13:16.016436+00:00"
+}

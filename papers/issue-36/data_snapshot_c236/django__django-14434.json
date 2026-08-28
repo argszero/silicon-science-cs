@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14434",
+ "repo": "django/django",
+ "issue": 14434,
+ "base_commit": "5e04e84d67da8163f365e9f5fcd169e2630e2873",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-05-23T12:27:14Z",
+ "c1b_jaccard": 0.2368,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1fc7c4aee4",
+   "date": "2010-11-02",
+   "msg": "Fixed #14596 -- Light refactoring of the cache backends.\n\n *"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/schema/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:48:25.312623+00:00"
+}

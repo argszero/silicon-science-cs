@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14765",
+ "repo": "django/django",
+ "issue": 14765,
+ "base_commit": "4e8121e8e42a24acc3565851c9ef50ca8322b15c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-08-12T05:59:11Z",
+ "c1b_jaccard": 0.1233,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1f68dc4ad4",
+   "date": "2010-12-01",
+   "msg": "Fixed #11706: Added an Oracle connection option to disable t"
+  },
+  {
+   "sha": "12023887ea",
+   "date": "2013-08-28",
+   "msg": "Fixed #14765 -- Removed unncessary usage of NodeList in ForN"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_state.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:50:32.959272+00:00"
+}

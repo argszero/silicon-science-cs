@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-12262",
+ "repo": "django/django",
+ "issue": 12262,
+ "base_commit": "69331bb851c34f05bc77e9fc24020fe6908b9cd5",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-12-30T13:13:59Z",
+ "c1b_jaccard": 0.06,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b3e1162ca5",
+   "date": "2010-01-19",
+   "msg": "Fixed #12633 -- Modified some old m2m attribute use in depre"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/template_tests/templatetags/inclusion.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:39:19.643354+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-16597",
+ "repo": "sympy/sympy",
+ "issue": 16597,
+ "base_commit": "6fd65310fa3167b9626c38a5487e171ca407d988",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-04-08T12:49:10Z",
+ "c1b_jaccard": 0.0976,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "fd007c2b58",
+   "date": "2019-04-11",
+   "msg": "Merge pull request #16597 from oscarbenjamin/rat_finite\n\nAss"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_assumptions.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:26:41.307312+00:00"
+}

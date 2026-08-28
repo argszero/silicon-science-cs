@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14122",
+ "repo": "django/django",
+ "issue": 14122,
+ "base_commit": "bc04941bf811d1ea2c79fb7fc20457ed2c7e3410",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-03-13T19:57:16Z",
+ "c1b_jaccard": 0.2571,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "2c9f0b75fb",
+   "date": "2010-09-26",
+   "msg": "Fixed #14122 -- Added example for builtin yesno template fil"
+  },
+  {
+   "sha": "c236d5e44d",
+   "date": "2010-10-10",
+   "msg": "Fixed #14193: prepopulated_fields javascript now concatenate"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/ordering/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:46:53.375886+00:00"
+}

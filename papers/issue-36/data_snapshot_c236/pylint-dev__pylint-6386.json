@@ -1,0 +1,21 @@
+{
+ "instance_id": "pylint-dev__pylint-6386",
+ "repo": "pylint-dev/pylint",
+ "issue": 6386,
+ "base_commit": "754b487f4d892e3d4872b6fc7468a71db4e31c13",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-19T06:34:57Z",
+ "c1b_jaccard": 0.0891,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b8d3e47a20",
+   "date": "2022-04-19",
+   "msg": "Fix short ``-v`` flag and add ``metavar`` support to ``_Call"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/config/test_config.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:13:52.841644+00:00"
+}

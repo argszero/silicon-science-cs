@@ -1,0 +1,21 @@
+{
+ "instance_id": "psf__requests-1766",
+ "repo": "psf/requests",
+ "issue": 1766,
+ "base_commit": "847735553aeda6e6633f2b32e14ba14ba86887a4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2013-11-29T08:38:09Z",
+ "c1b_jaccard": 0.0682,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a030a58303",
+   "date": "2013-12-03",
+   "msg": "Merge pull request #1766 from Lukasa/qop\n\nQuote qop values i"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "test_requests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:09:30.033040+00:00"
+}

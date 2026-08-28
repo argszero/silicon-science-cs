@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-19495",
+ "repo": "sympy/sympy",
+ "issue": 19495,
+ "base_commit": "25fbcce5b1a4c7e3956e6062930f4a44ce95a632",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-05T11:53:09Z",
+ "c1b_jaccard": 0.2188,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "47cde1a973",
+   "date": "2020-06-06",
+   "msg": "Merge pull request #19495 from gschintgen/fix-17341-conditio"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/sets/tests/test_conditionset.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:31:17.162498+00:00"
+}

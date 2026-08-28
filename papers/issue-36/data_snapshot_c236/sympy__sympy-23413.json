@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-23413",
+ "repo": "sympy/sympy",
+ "issue": 23413,
+ "base_commit": "10de1a18a0efac0b19b611e40c928250dda688bf",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-23T23:40:41Z",
+ "c1b_jaccard": 0.0588,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c248101608",
+   "date": "2022-04-24",
+   "msg": "Merge pull request #23413 from skieffer/repair_hnf\n\nRepair H"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/matrices/tests/test_normalforms.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:10.292528+00:00"
+}

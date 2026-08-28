@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-26466",
+ "repo": "matplotlib/matplotlib",
+ "issue": 26466,
+ "base_commit": "3dd06a46750d174f821df5377996f493f1af4ebb",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-08-07T19:30:23Z",
+ "c1b_jaccard": 0.1078,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "2cbb3e0d76",
+   "date": "2023-08-07",
+   "msg": "Merge pull request #26466 from anntzer/coordcopy\n\nMake annot"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_text.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:08:40.326120+00:00"
+}

@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-22865",
+ "repo": "matplotlib/matplotlib",
+ "issue": 22865,
+ "base_commit": "c6c7ec1978c22ae2c704555a873d0ec6e1e2eaa8",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-20T15:15:11Z",
+ "c1b_jaccard": 0.0719,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "00cdf28e7a",
+   "date": "2022-06-15",
+   "msg": "Merge pull request #22865 from matplotlib/drawedgesextend\n\nF"
+  },
+  {
+   "sha": "de4c559cd9",
+   "date": "2022-06-21",
+   "msg": "Backport PR #22865: Fix issue with colorbar extend and drawe"
+  },
+  {
+   "sha": "c81cc5743f",
+   "date": "2022-06-21",
+   "msg": "Merge pull request #23282 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_colorbar.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:03:49.152157+00:00"
+}

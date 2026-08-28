@@ -1,0 +1,26 @@
+{
+ "instance_id": "pylint-dev__pylint-6903",
+ "repo": "pylint-dev/pylint",
+ "issue": 6903,
+ "base_commit": "ca80f03a43bc39e4cc2c67dc99817b3c9f13b8a6",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-06-09T19:43:36Z",
+ "c1b_jaccard": 0.1553,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "50933c5446",
+   "date": "2022-06-11",
+   "msg": "Prevent pylint.run._cpu_count() from returning 0 (#6903)\n\n\r\n"
+  },
+  {
+   "sha": "ffcdf429fb",
+   "date": "2022-06-15",
+   "msg": "Prevent pylint.run._cpu_count() from returning 0 (#6903)\n\n\r\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_pylint_runners.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:14:02.440519+00:00"
+}

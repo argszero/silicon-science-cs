@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13033",
+ "repo": "django/django",
+ "issue": 13033,
+ "base_commit": "a59de6e89e8dc1f3e71c9a5a5bbceb373ea5247e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-07T14:52:19Z",
+ "c1b_jaccard": 0.0156,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b031fa2376",
+   "date": "2010-04-27",
+   "msg": "Reverted r13021 -- Trunk no longer supports Python 2.3, so t"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/ordering/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:56.965341+00:00"
+}

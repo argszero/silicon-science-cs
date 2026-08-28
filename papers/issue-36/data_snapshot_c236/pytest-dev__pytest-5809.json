@@ -1,0 +1,15 @@
+{
+ "instance_id": "pytest-dev__pytest-5809",
+ "repo": "pytest-dev/pytest",
+ "issue": 5809,
+ "base_commit": "8aba863a634f40560e25055d179220f0eefabe9a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-09-01T04:40:09Z",
+ "c1b_jaccard": 0.0619,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "testing/test_pastebin.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:14:59.867867+00:00"
+}

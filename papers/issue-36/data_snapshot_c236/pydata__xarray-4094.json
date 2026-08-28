@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-4094",
+ "repo": "pydata/xarray",
+ "issue": 4094,
+ "base_commit": "a64cf2d5476e7bbda099b34c40b7be1880dbd39a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-26T00:36:02Z",
+ "c1b_jaccard": 0.0559,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "329cefb992",
+   "date": "2020-07-02",
+   "msg": "Fix to_unstacked_dataset for single dimension variables. (#4"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_dataset.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:11:14.156359+00:00"
+}

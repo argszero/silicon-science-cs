@@ -1,0 +1,21 @@
+{
+ "instance_id": "psf__requests-5414",
+ "repo": "psf/requests",
+ "issue": 5414,
+ "base_commit": "39d0fdd9096f7dceccbc8f82e1eda7dd64717a8e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-05T16:52:04Z",
+ "c1b_jaccard": 0.1308,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d09659997c",
+   "date": "2021-12-28",
+   "msg": "Merge pull request #5414 from mondeja/5367\n\nRaise InvalidUrl"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_requests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:09:52.610014+00:00"
+}

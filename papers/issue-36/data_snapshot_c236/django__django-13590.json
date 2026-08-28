@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13590",
+ "repo": "django/django",
+ "issue": 13590,
+ "base_commit": "755dbf39fcdc491fe9b588358303e259c7750be4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-10-23T09:34:55Z",
+ "c1b_jaccard": 0.0515,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6b2d6e1833",
+   "date": "2010-05-22",
+   "msg": "Fixed #13590 - Made CSRF failure page styling consistent wit"
+  },
+  {
+   "sha": "859fc020a7",
+   "date": "2010-08-14",
+   "msg": "Fixed #5350 -- Added fallback to default 404/500 handlers wh"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/expressions/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:44:48.211730+00:00"
+}

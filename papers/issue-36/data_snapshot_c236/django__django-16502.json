@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-16502",
+ "repo": "django/django",
+ "issue": 16502,
+ "base_commit": "246eb4836a6fb967880f838aa0d22ecfdca8b6f1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-01-26T09:21:31Z",
+ "c1b_jaccard": 0.0854,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "87eb3a25aa",
+   "date": "2011-07-04",
+   "msg": "Removed superflous commented-out lines.\n\ngit-svn-id: http://"
+  },
+  {
+   "sha": "b79df0b358",
+   "date": "2013-09-06",
+   "msg": "adds fix for SingleObjectTemplateResponseMixin raising a Tem"
+  },
+  {
+   "sha": "9b2dc12b83",
+   "date": "2013-09-06",
+   "msg": "Merge pull request #1580 from ianawilson/ticket_16502\n\nFixed"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/servers/test_basehttp.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:59:56.900840+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-7336",
+ "repo": "astropy/astropy",
+ "issue": 7336,
+ "base_commit": "732d89c2940156bdc0e200bb36dc38b5e424bcba",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-03-28T15:31:32Z",
+ "c1b_jaccard": 0.0903,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "7b54fab248",
+   "date": "2018-04-13",
+   "msg": "Merge pull request #7336 from Cadair/units/python3_tests\n\nFi"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/units/tests/test_quantity_annotations.py",
+ "c2_present_at_base": false,
+ "fetched_at": "2026-08-28T08:32:38.335429+00:00"
+}

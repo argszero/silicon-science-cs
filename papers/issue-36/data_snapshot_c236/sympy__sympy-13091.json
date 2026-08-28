@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13091",
+ "repo": "sympy/sympy",
+ "issue": 13091,
+ "base_commit": "d1320814eda6549996190618a21eaf212cfd4d1e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-08-05T08:04:32Z",
+ "c1b_jaccard": 0.2512,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f523547f7c",
+   "date": "2017-08-08",
+   "msg": "Merge pull request #13091 from danielwe/improve-cmp\n\nImprove"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_basic.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:24:36.228471+00:00"
+}

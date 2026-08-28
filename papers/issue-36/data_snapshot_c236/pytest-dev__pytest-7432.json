@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-7432",
+ "repo": "pytest-dev/pytest",
+ "issue": 7432,
+ "base_commit": "e6e300e729dd33956e5448d8be9a0b1540b4e53a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-29T21:51:15Z",
+ "c1b_jaccard": 0.0959,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c3e2b11a62",
+   "date": "2020-07-09",
+   "msg": "Fix reported location of skip when --runxfail is used (#7432"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/test_skipping.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:15:36.668222+00:00"
+}

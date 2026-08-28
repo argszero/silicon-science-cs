@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-24970",
+ "repo": "matplotlib/matplotlib",
+ "issue": 24970,
+ "base_commit": "a3011dfd1aaa2487cce8aa7369475533133ef777",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-01-13T14:23:39Z",
+ "c1b_jaccard": 0.0441,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "99d39bd767",
+   "date": "2023-01-13",
+   "msg": "Merge pull request #24970 from greglucas/cmap-cast\n\nFIX: Han"
+  },
+  {
+   "sha": "bbedbf9a93",
+   "date": "2023-01-14",
+   "msg": "Backport PR #24970: FIX: Handle uint8 indices properly for c"
+  },
+  {
+   "sha": "6c7cda8221",
+   "date": "2023-01-14",
+   "msg": "Merge pull request #24977 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_colors.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:06:32.470943+00:00"
+}

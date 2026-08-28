@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-15572",
+ "repo": "django/django",
+ "issue": 15572,
+ "base_commit": "0b31e024873681e187b574fe1c4afe5e48aeeecf",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-09T09:38:31Z",
+ "c1b_jaccard": 0.0806,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d3cc5dbb32",
+   "date": "2011-02-19",
+   "msg": "Fixed #15290 -- Fixed a CSS styling issue with borders when "
+  },
+  {
+   "sha": "e9d2763947",
+   "date": "2011-03-10",
+   "msg": "Fixed #15572 - include with \"only\" option discards context p"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/template_tests/test_autoreloader.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:55:18.391178+00:00"
+}

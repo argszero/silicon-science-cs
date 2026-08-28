@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-15127",
+ "repo": "django/django",
+ "issue": 15127,
+ "base_commit": "9a6e2df3a8f01ea761529bec48e5a8dc0ea9575b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-11-25T13:14:38Z",
+ "c1b_jaccard": 0.0435,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e45d1e2dac",
+   "date": "2011-01-02",
+   "msg": "Safely join paths in staticfiles finder.\n\ngit-svn-id: http:/"
+  },
+  {
+   "sha": "22529d41b2",
+   "date": "2011-06-16",
+   "msg": "Fixed #15127 -- Properly copy the choices of choice fields. "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/messages_tests/base.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:51:52.822847+00:00"
+}

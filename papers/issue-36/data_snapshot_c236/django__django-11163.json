@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-11163",
+ "repo": "django/django",
+ "issue": 11163,
+ "base_commit": "e6588aa4e793b7f56f4cadbfa155b581e0efc59a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-04-02T21:46:42Z",
+ "c1b_jaccard": 0.1569,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6ed0345092",
+   "date": "2009-07-03",
+   "msg": "Fixed #11413 -- Added notes on the cycle and firstof tag det"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/model_forms/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:35:10.852822+00:00"
+}

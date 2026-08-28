@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13568",
+ "repo": "django/django",
+ "issue": 13568,
+ "base_commit": "ede9fac75807fe5810df66280a60e7068cc97e4a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-10-19T15:20:08Z",
+ "c1b_jaccard": 0.0494,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a64e96c227",
+   "date": "2010-10-01",
+   "msg": "Fixed #13568 -- Fixed the blocktrans tag to not raise a KeyE"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/auth_tests/test_checks.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:44:31.013567+00:00"
+}

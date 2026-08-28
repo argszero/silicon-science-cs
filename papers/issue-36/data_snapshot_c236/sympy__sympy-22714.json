@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-22714",
+ "repo": "sympy/sympy",
+ "issue": 22714,
+ "base_commit": "3ff4717b6aef6086e78f01cdfa06f64ae23aed7e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-12-19T18:54:36Z",
+ "c1b_jaccard": 0.0811,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6a66dd6510",
+   "date": "2021-12-19",
+   "msg": "Merge pull request #22714 from oscargus/unevaluatedpoint\n\nFi"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/geometry/tests/test_point.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:32:56.138524+00:00"
+}

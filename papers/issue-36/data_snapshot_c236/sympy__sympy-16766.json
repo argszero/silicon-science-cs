@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-16766",
+ "repo": "sympy/sympy",
+ "issue": 16766,
+ "base_commit": "b8fe457a02cc24b3470ff678d0099c350b7fef43",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-05-01T22:02:17Z",
+ "c1b_jaccard": 0.1095,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "94479ec706",
+   "date": "2019-05-03",
+   "msg": "Merge pull request #16766 from kangzhiq/master\n\nAdded _print"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/printing/tests/test_pycode.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:26:45.958226+00:00"
+}

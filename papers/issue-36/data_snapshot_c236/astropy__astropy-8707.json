@@ -1,0 +1,26 @@
+{
+ "instance_id": "astropy__astropy-8707",
+ "repo": "astropy/astropy",
+ "issue": 8707,
+ "base_commit": "a85a0747c54bac75e9c3b2fe436b105ea029d6cf",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-05-15T13:21:19Z",
+ "c1b_jaccard": 0.1838,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "185362687e",
+   "date": "2019-05-16",
+   "msg": "Add changelog entry for #8707"
+  },
+  {
+   "sha": "3f54bc2d7c",
+   "date": "2019-05-16",
+   "msg": "Merge pull request #8707 from embray/issue-8706\n\nAllow Heade"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/io/fits/tests/test_header.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:33:00.001138+00:00"
+}

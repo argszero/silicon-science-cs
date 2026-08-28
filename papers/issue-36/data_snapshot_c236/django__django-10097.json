@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-10097",
+ "repo": "django/django",
+ "issue": 10097,
+ "base_commit": "b9cf764be62e77b4777b3a75ec256f6209a57671",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-06-26T23:30:51Z",
+ "c1b_jaccard": 0.1852,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "380f6be5b8",
+   "date": "2009-03-20",
+   "msg": "Whoops. I left some debugging printing in r10096. Nothing to"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/validators/invalid_urls.txt",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:33:16.212176+00:00"
+}

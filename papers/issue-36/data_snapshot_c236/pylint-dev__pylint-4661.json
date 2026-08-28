@@ -1,0 +1,21 @@
+{
+ "instance_id": "pylint-dev__pylint-4661",
+ "repo": "pylint-dev/pylint",
+ "issue": 4661,
+ "base_commit": "1d1619ef913b99b06647d2030bddff4800abdf63",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-07-03T00:57:06Z",
+ "c1b_jaccard": 0.2073,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ae6cbd1062",
+   "date": "2021-07-28",
+   "msg": "Use `XDG_CACHE_HOME` for `PYLINTHOME` (#4661)\n\nCloses #3878\r"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/lint/unittest_lint.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:13:40.603337+00:00"
+}

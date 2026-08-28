@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14539",
+ "repo": "django/django",
+ "issue": 14539,
+ "base_commit": "6a5ef557f80a8eb6a758ebe99c8bb477ca47459e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-06-19T11:31:16Z",
+ "c1b_jaccard": 0.1471,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b951ffbc6b",
+   "date": "2010-11-12",
+   "msg": "Fixed #14669 -- corrected an ungrammatical sentence in the i"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/utils_tests/test_html.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:49:05.021564+00:00"
+}

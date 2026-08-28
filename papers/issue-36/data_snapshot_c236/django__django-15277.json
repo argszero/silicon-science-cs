@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-15277",
+ "repo": "django/django",
+ "issue": 15277,
+ "base_commit": "30613d6a748fce18919ff8b0da166d9fda2ed9bc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-01-03T12:14:06Z",
+ "c1b_jaccard": 0.1758,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5fcce5e10f",
+   "date": "2011-01-21",
+   "msg": "Fixed a typo in the docs, thanks to sunoano for the report.\n"
+  },
+  {
+   "sha": "3ac877840a",
+   "date": "2011-09-17",
+   "msg": "Fixed #15277 -- Cleaned up `ogrinspect` command, added tests"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/expressions/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:52:20.426040+00:00"
+}

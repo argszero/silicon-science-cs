@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13647",
+ "repo": "sympy/sympy",
+ "issue": 13647,
+ "base_commit": "67e3c956083d0128a621f65ee86a7dacd4f9f19f",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-11-28T21:22:51Z",
+ "c1b_jaccard": 0.0172,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5687d91db1",
+   "date": "2017-11-28",
+   "msg": "Merge pull request #13647 from himanshukgp/matrix\n\nfixed col"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/matrices/tests/test_commonmatrix.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:25:01.477389+00:00"
+}

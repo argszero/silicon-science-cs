@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-23534",
+ "repo": "sympy/sympy",
+ "issue": 23534,
+ "base_commit": "832c24fec1046eaa544a4cab4c69e3af3e651759",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-22T00:12:33Z",
+ "c1b_jaccard": 0.0859,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "404fe9c645",
+   "date": "2022-05-23",
+   "msg": "Merge pull request #23534 from eagleoflqj/symbols_recursion\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_symbol.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:16.065489+00:00"
+}

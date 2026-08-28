@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-24627",
+ "repo": "matplotlib/matplotlib",
+ "issue": 24627,
+ "base_commit": "9d22ab09d52d279b125d8770967569de070913b2",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-12-05T00:05:54Z",
+ "c1b_jaccard": 0.1446,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b2e843405d",
+   "date": "2022-12-07",
+   "msg": "Merge pull request #24627 from tacaswell/mnt/cla_clear_chlil"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_axes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:06:13.133837+00:00"
+}

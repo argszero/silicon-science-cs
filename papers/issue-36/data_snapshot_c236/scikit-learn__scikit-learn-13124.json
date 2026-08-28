@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-13124",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 13124,
+ "base_commit": "9f0b959a8c9195d1b6e203f08b698e052b426ca9",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-02-09T02:15:23Z",
+ "c1b_jaccard": 0.1815,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "afc6cc58da",
+   "date": "2019-02-27",
+   "msg": "FIX Shuffle each class's samples with different random_state"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/model_selection/tests/test_split.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:35:09.149354+00:00"
+}

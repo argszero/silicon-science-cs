@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-2905",
+ "repo": "pydata/xarray",
+ "issue": 2905,
+ "base_commit": "7c4e2ac83f7b4306296ff9b7b51aaf016e5ad614",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-04-17T21:52:37Z",
+ "c1b_jaccard": 0.0928,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c9b9eec73a",
+   "date": "2021-02-18",
+   "msg": "Use explicit type check in `as_compatible_data` instead of b"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_variable.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:10:05.768724+00:00"
+}

@@ -1,0 +1,31 @@
+{
+ "instance_id": "sphinx-doc__sphinx-7985",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 7985,
+ "base_commit": "f30284ef926ebaf04b176f21b421e2dffc679792",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-07-19T10:09:07Z",
+ "c1b_jaccard": 0.0314,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d8064a8b8f",
+   "date": "2020-07-21",
+   "msg": "Merge pull request #7985 from tk0miya/5208_linkcheck_for_loc"
+  },
+  {
+   "sha": "875346307f",
+   "date": "2020-07-24",
+   "msg": "linkcheck: Fix a protocol relative URL is considered as a lo"
+  },
+  {
+   "sha": "9e42310b66",
+   "date": "2020-07-25",
+   "msg": "Merge pull request #8000 from tk0miya/7985_protocol_relative"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-linkcheck/links.txt",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:18:11.595792+00:00"
+}

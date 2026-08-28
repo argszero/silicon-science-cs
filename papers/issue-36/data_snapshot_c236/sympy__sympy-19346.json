@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-19346",
+ "repo": "sympy/sympy",
+ "issue": 19346,
+ "base_commit": "94fb720696f5f5d12bad8bc813699fd696afd2fb",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-17T12:23:33Z",
+ "c1b_jaccard": 0.1513,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3e33c30a71",
+   "date": "2020-05-19",
+   "msg": "Merge pull request #19346 from rational-kunal/dev\n\nFixed: sr"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/printing/tests/test_repr.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:31:11.347230+00:00"
+}

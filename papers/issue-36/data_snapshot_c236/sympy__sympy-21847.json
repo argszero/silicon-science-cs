@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-21847",
+ "repo": "sympy/sympy",
+ "issue": 21847,
+ "base_commit": "d9b18c518d64d0ebe8e35a98c2fb519938b9b151",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-08-10T17:41:59Z",
+ "c1b_jaccard": 0.1538,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f57d98d8e5",
+   "date": "2021-08-10",
+   "msg": "Merge pull request #21847 from sebastian-east/21845_itermono"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/polys/tests/test_monomials.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:32:35.157827+00:00"
+}

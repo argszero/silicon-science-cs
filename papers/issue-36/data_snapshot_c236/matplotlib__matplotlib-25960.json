@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-25960",
+ "repo": "matplotlib/matplotlib",
+ "issue": 25960,
+ "base_commit": "1d0d255b79e84dfc9f2123c5eb85a842d342f72b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-05-23T21:58:53Z",
+ "c1b_jaccard": 0.0871,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e05158371b",
+   "date": "2023-07-04",
+   "msg": "Merge pull request #25960 from rcomer/subfigure-spacing\n\nFIX"
+  },
+  {
+   "sha": "ed29435615",
+   "date": "2023-07-05",
+   "msg": "Backport PR #25960: FIX: wspace and hspace in subfigures wit"
+  },
+  {
+   "sha": "ab837f6f32",
+   "date": "2023-07-05",
+   "msg": "Merge pull request #26260 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_figure.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:07:37.135554+00:00"
+}

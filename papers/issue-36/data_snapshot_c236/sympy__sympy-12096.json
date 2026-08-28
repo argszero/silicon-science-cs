@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-12096",
+ "repo": "sympy/sympy",
+ "issue": 12096,
+ "base_commit": "d7c3045115693e887bcd03599b7ca4650ac5f2cb",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-01-25T13:40:24Z",
+ "c1b_jaccard": 0.2923,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "0cfdef0833",
+   "date": "2017-02-07",
+   "msg": "Merge pull request #12096 from parsoyaarihant/implemented\n\nI"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/utilities/tests/test_lambdify.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:21:04.588363+00:00"
+}

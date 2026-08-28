@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-11149",
+ "repo": "django/django",
+ "issue": 11149,
+ "base_commit": "e245046bb6e8b32360aa48b8a41fb7050f0fc730",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-03-30T18:14:35Z",
+ "c1b_jaccard": 0.2414,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "8c8625bde3",
+   "date": "2009-05-19",
+   "msg": "Fixed #11149 -- Don't call save_form_data on file-type field"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_inlines/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:34:40.703869+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-7748",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 7748,
+ "base_commit": "9988d5ce267bf0df4791770b469431b1fb00dcdd",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-30T06:41:07Z",
+ "c1b_jaccard": 0.0377,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "34f3579330",
+   "date": "2020-05-31",
+   "msg": "Merge pull request #7748 from tk0miya/2106_autodoc_docstring"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-ext-autodoc/target/docstring_signature.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:57.140740+00:00"
+}

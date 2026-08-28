@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9461",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 9461,
+ "base_commit": "939c7bb7ff7c53a4d27df067cea637540f0e1dad",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-07-17T06:31:58Z",
+ "c1b_jaccard": 0.0686,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "362f36d35d",
+   "date": "2021-07-20",
+   "msg": "Merge pull request #9461 from tk0miya/9445_class_property\n\nC"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-ext-autodoc/target/properties.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:20:13.525301+00:00"
+}

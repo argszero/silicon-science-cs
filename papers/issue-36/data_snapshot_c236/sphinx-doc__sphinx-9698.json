@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9698",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 9698,
+ "base_commit": "f050a7775dfc9000f55d023d36d925a8d02ccfa8",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-10-03T04:04:04Z",
+ "c1b_jaccard": 0.119,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "7da94ee7bb",
+   "date": "2021-10-09",
+   "msg": "Merge pull request #9698 from tk0miya/9697_property_with_par"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_domain_py.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:20:50.237835+00:00"
+}

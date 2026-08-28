@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-16642",
+ "repo": "django/django",
+ "issue": 16642,
+ "base_commit": "fbe850106b2e4b85f838219cb9e1df95fba6c164",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-11T07:38:47Z",
+ "c1b_jaccard": 0.1395,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a524114883",
+   "date": "2011-08-22",
+   "msg": "Removed unused admin Javascript functions from source.\n\nFixe"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/responses/test_fileresponse.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:00:55.739122+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "pylint-dev__pylint-7277",
+ "repo": "pylint-dev/pylint",
+ "issue": 7277,
+ "base_commit": "684a1d6aa0a6791e20078bc524f97c8906332390",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-08-08T23:07:49Z",
+ "c1b_jaccard": 0.1561,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6170086801",
+   "date": "2022-08-09",
+   "msg": "Check for `<cwd>` before removing first item from `sys.path`"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_self.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:14:18.278437+00:00"
+}

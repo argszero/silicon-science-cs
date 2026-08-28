@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-23824",
+ "repo": "sympy/sympy",
+ "issue": 23824,
+ "base_commit": "39de9a2698ad4bb90681c0fdb70b30a78233145f",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-07-23T22:13:36Z",
+ "c1b_jaccard": 0.1475,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "64e187e952",
+   "date": "2022-07-30",
+   "msg": "Merge pull request #23824 from glenn-horton-smith/fix-bug-23"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/physics/hep/tests/test_gamma_matrices.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:19.851359+00:00"
+}

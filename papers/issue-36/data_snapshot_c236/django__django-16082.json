@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-16082",
+ "repo": "django/django",
+ "issue": 16082,
+ "base_commit": "bf47c719719d0e190a99fa2e7f959d5bbb7caf8a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-09-21T18:49:40Z",
+ "c1b_jaccard": 0.2286,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "12265410ac",
+   "date": "2011-04-22",
+   "msg": "Fixed #15672 -- Refined changes made in r15918. Thanks, vung"
+  },
+  {
+   "sha": "723b620c7e",
+   "date": "2011-05-26",
+   "msg": "Fixed #16082 -- Fixed race condition in the FileSystemStorag"
+  },
+  {
+   "sha": "d34bb3c833",
+   "date": "2011-05-28",
+   "msg": "Fixed #16108 -- Fixed another race condition in the FileSyst"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/expressions/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:57:45.865850+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-11138",
+ "repo": "django/django",
+ "issue": 11138,
+ "base_commit": "c84b91b7603e488f7171fdff8f08368ef3d6b856",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-03-28T13:11:56Z",
+ "c1b_jaccard": 0.0773,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ae95edf91d",
+   "date": "2009-05-18",
+   "msg": "Fixed #11138 -- Corrected the description of behavior relate"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/timezones/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:34:26.908286+00:00"
+}

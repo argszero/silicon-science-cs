@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-14598",
+ "repo": "astropy/astropy",
+ "issue": 14598,
+ "base_commit": "80c3854a5f4f4a6ab86c03d9db7854767fcd83c1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-29T10:34:49Z",
+ "c1b_jaccard": 0.0278,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "aed2f00eb3",
+   "date": "2023-04-19",
+   "msg": "Merge pull request #14598 from saimn/fits-fix-14581\n\nFix iss"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/io/fits/tests/test_header.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:32:25.698919+00:00"
+}

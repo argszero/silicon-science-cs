@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13820",
+ "repo": "django/django",
+ "issue": 13820,
+ "base_commit": "98ad327864aed8df245fd19ea9d2743279e11643",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-12-28T22:07:57Z",
+ "c1b_jaccard": 0.226,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f611ffaab3",
+   "date": "2010-08-28",
+   "msg": "Fixed #13820 -- Started the deprecation process for mod_pyth"
+  },
+  {
+   "sha": "767cf13d76",
+   "date": "2010-09-13",
+   "msg": "The optimization docs were a little too enthusiastic in reco"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_loader.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:40.575977+00:00"
+}

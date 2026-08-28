@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13837",
+ "repo": "django/django",
+ "issue": 13837,
+ "base_commit": "415f50298f97fb17f841a9df38d995ccf347dfcc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-01-04T17:44:23Z",
+ "c1b_jaccard": 0.2381,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "75e841d534",
+   "date": "2010-12-28",
+   "msg": "Fixed #13837 - Add geodjango packages for Ubuntu 10.04; than"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/utils_tests/test_autoreload.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:55.017592+00:00"
+}

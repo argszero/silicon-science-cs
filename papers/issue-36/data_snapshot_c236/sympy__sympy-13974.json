@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13974",
+ "repo": "sympy/sympy",
+ "issue": 13974,
+ "base_commit": "84c125972ad535b2dfb245f8d311d347b45e5b8a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-01-20T18:25:59Z",
+ "c1b_jaccard": 0.1538,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1ab8d1543f",
+   "date": "2018-01-27",
+   "msg": "Merge pull request #13974 from johanbluecreek/tensorPow\n\n Ad"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/physics/quantum/tests/test_tensorproduct.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:25:33.028251+00:00"
+}

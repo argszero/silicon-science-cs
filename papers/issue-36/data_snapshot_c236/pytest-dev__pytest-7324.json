@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-7324",
+ "repo": "pytest-dev/pytest",
+ "issue": 7324,
+ "base_commit": "19ad5889353c7f5f2b65cc2acd346b7a9e95dfcd",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-05T13:00:07Z",
+ "c1b_jaccard": 0.1077,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "10bfcf5904",
+   "date": "2020-06-06",
+   "msg": "Merge pull request #7324 from bluetech/ast-name-consts\n\nmark"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/test_mark_expression.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:15:29.078366+00:00"
+}

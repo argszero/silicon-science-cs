@@ -1,0 +1,15 @@
+{
+ "instance_id": "django__django-16950",
+ "repo": "django/django",
+ "issue": 16950,
+ "base_commit": "f64fd47a7627ed6ffe2df2a32ded6ee528a784eb",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-06-06T19:58:48Z",
+ "c1b_jaccard": 0.063,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "tests/model_formsets/test_uuid.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:01:50.557822+00:00"
+}

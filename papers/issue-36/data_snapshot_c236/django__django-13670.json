@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13670",
+ "repo": "django/django",
+ "issue": 13670,
+ "base_commit": "c448e614c60cc97c6194c62052363f4f501e0953",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-11-12T11:45:51Z",
+ "c1b_jaccard": 0.0706,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a5c80a28dc",
+   "date": "2010-08-30",
+   "msg": "Added a missing (empty) models.py file required for the test"
+  },
+  {
+   "sha": "0516ac3d28",
+   "date": "2011-09-10",
+   "msg": "Fixed #13670 -- Comparisons with the spatial adapter won't b"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/utils_tests/test_dateformat.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:02.677649+00:00"
+}

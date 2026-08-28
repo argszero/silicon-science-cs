@@ -1,0 +1,15 @@
+{
+ "instance_id": "sympy__sympy-18763",
+ "repo": "sympy/sympy",
+ "issue": 18763,
+ "base_commit": "70381f282f2d9d039da860e391fe51649df2779d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-03-03T03:40:06Z",
+ "c1b_jaccard": 0.2301,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "sympy/printing/tests/test_latex.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:27:47.073513+00:00"
+}

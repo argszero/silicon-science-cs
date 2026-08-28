@@ -1,0 +1,21 @@
+{
+ "instance_id": "pylint-dev__pylint-4551",
+ "repo": "pylint-dev/pylint",
+ "issue": 4551,
+ "base_commit": "99589b08de8c5a2c6cc61e13a37420a868c80599",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-06-07T15:14:31Z",
+ "c1b_jaccard": 0.1667,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1e55ae6462",
+   "date": "2021-06-26",
+   "msg": "Add type annotations to pyreverse (#4551)\n\n* Add type annota"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/unittest_pyreverse_writer.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:13:25.843584+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-16256",
+ "repo": "django/django",
+ "issue": 16256,
+ "base_commit": "76e37513e22f4d9a01c7f15eee36fe44388e6670",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-11-04T14:26:44Z",
+ "c1b_jaccard": 0.0544,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "940d17409e",
+   "date": "2011-05-22",
+   "msg": "Fixed #16021 - Minor documentation fixes for Generic Class V"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/async/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:58:39.205273+00:00"
+}

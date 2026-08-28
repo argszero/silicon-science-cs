@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-15161",
+ "repo": "django/django",
+ "issue": 15161,
+ "base_commit": "96e7ff5e9ff6362d9a886545869ce4496ca4b0fb",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-12-06T09:06:13Z",
+ "c1b_jaccard": 0.1667,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1ad644c0f0",
+   "date": "2011-01-08",
+   "msg": "Fixed #14929 -- Move gzip_page docstring to the right place."
+  },
+  {
+   "sha": "84291b7b84",
+   "date": "2011-01-26",
+   "msg": "Fixed #15161 - Corrected handling of ManyToManyField with th"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/expressions/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:52:04.322908+00:00"
+}

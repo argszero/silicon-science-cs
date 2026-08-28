@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-22456",
+ "repo": "sympy/sympy",
+ "issue": 22456,
+ "base_commit": "a3475b3f9ac662cd425157dd3bdb93ad7111c090",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-11-10T12:24:42Z",
+ "c1b_jaccard": 0.1117,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "2529ced666",
+   "date": "2021-11-16",
+   "msg": "Merge pull request #22456 from ThePauliPrinciple/ast_arg_inv"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/codegen/tests/test_ast.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:32:51.864613+00:00"
+}

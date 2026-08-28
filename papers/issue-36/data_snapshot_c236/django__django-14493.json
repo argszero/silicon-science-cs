@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14493",
+ "repo": "django/django",
+ "issue": 14493,
+ "base_commit": "7272e1963ffdf39c1d4fe225d5425a45dd095d11",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-06-05T12:50:25Z",
+ "c1b_jaccard": 0.1583,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e9d6662f5e",
+   "date": "2010-10-20",
+   "msg": "Fixed #14493 -- Corrected use of the wrong attribute in the "
+  },
+  {
+   "sha": "d6e33795a9",
+   "date": "2010-11-07",
+   "msg": "Fixed #11877 -- Documented that HttpRequest.get_host() fails"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/staticfiles_tests/storage.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:48:28.977838+00:00"
+}

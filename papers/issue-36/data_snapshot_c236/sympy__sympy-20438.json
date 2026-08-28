@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-20438",
+ "repo": "sympy/sympy",
+ "issue": 20438,
+ "base_commit": "33b47e4bd60e2302e42616141e76285038b724d6",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-11-17T08:24:33Z",
+ "c1b_jaccard": 0.1024,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6613c1da72",
+   "date": "2020-12-23",
+   "msg": "Merge pull request #20438 from sidhu1012/set\n\nMake 'is_subse"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/sets/tests/test_sets.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:31:59.828789+00:00"
+}

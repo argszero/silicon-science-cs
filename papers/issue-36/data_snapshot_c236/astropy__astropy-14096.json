@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-14096",
+ "repo": "astropy/astropy",
+ "issue": 14096,
+ "base_commit": "1a4462d72eb03f30dc83a879b1dd57aac8b2c18b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-12-04T17:06:07Z",
+ "c1b_jaccard": 0.0678,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5bbd5b9b7c",
+   "date": "2022-12-05",
+   "msg": "Merge pull request #14096 from mhvk/skycoord_getattr_error_r"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/coordinates/tests/test_sky_coord.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:31:35.606644+00:00"
+}

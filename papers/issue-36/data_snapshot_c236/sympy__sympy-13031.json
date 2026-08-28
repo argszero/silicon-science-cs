@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13031",
+ "repo": "sympy/sympy",
+ "issue": 13031,
+ "base_commit": "2dfa7457f20ee187fbb09b5b6a1631da4458388c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-07-23T15:48:13Z",
+ "c1b_jaccard": 0.0278,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "08a71ebb6c",
+   "date": "2017-07-24",
+   "msg": "Merge pull request #13031 from siefkenj/fixes1.1.1\n\nFix matr"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/matrices/tests/test_sparse.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:24:31.048188+00:00"
+}

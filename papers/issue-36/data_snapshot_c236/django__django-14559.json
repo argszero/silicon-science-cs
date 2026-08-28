@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14559",
+ "repo": "django/django",
+ "issue": 14559,
+ "base_commit": "d79be3ed39b76d3e34431873eec16f6dd354ab17",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-06-26T05:38:46Z",
+ "c1b_jaccard": 0.0909,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "352deb0915",
+   "date": "2010-11-02",
+   "msg": "Fixed #14559 -- corrected some typos and misleading docstrin"
+  },
+  {
+   "sha": "2b344d2628",
+   "date": "2010-11-14",
+   "msg": "Fixed #14536 -- Corrected DB connection OPTIONS examples in "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/queries/test_bulk_update.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:49:08.136674+00:00"
+}

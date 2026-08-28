@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-12754",
+ "repo": "django/django",
+ "issue": 12754,
+ "base_commit": "18759b2209ff556aed7f20d83cbf23e3d234e41c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-19T10:59:30Z",
+ "c1b_jaccard": 0.0345,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "de35bb40af",
+   "date": "2010-02-03",
+   "msg": "Fixed #12754 -- Reintroduced style.ERROR_OUTPUT as an alias "
+  },
+  {
+   "sha": "2287426ba6",
+   "date": "2010-03-10",
+   "msg": "Fixed #12427 -- Started the deprecation path for cmemcache s"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_autodetector.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:10.741482+00:00"
+}

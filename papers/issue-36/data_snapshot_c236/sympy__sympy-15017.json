@@ -1,0 +1,26 @@
+{
+ "instance_id": "sympy__sympy-15017",
+ "repo": "sympy/sympy",
+ "issue": 15017,
+ "base_commit": "6810dee426943c1a2fe85b5002dd0d4cf2246a05",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-08-03T03:15:04Z",
+ "c1b_jaccard": 0.4648,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d316077e68",
+   "date": "2018-08-03",
+   "msg": "Added test for array len, #15017."
+  },
+  {
+   "sha": "517dd90edf",
+   "date": "2018-08-07",
+   "msg": "Merge pull request #15017 from dimasad/fix-15016\n\nChanged `_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/tensor/array/tests/test_immutable_ndim_array.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:25:57.569417+00:00"
+}

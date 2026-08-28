@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13128",
+ "repo": "django/django",
+ "issue": 13128,
+ "base_commit": "2d67222472f80f251607ae1b720527afceba06ad",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-30T18:06:56Z",
+ "c1b_jaccard": 0.0426,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "19826d9910",
+   "date": "2010-05-08",
+   "msg": "Fixed #13405 -- Corrected typo from r13105. Thanks to daniel"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/expressions/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:42:29.006399+00:00"
+}

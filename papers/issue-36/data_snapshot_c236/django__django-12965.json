@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-12965",
+ "repo": "django/django",
+ "issue": 12965,
+ "base_commit": "437196da9a386bd4cc62b0ce3f2de4aba468613d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-24T13:20:03Z",
+ "c1b_jaccard": 0.0655,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3f9054dd77",
+   "date": "2010-09-13",
+   "msg": "Fixed #12965 - unordered_list template filter fails when giv"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/delete/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:25.161858+00:00"
+}

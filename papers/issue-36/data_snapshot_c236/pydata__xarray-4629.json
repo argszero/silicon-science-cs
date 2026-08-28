@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-4629",
+ "repo": "pydata/xarray",
+ "issue": 4629,
+ "base_commit": "a41edc7bf5302f2ea327943c0c48c532b12009bc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-11-30T23:06:17Z",
+ "c1b_jaccard": 0.0512,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9396605d83",
+   "date": "2020-12-01",
+   "msg": "Make a copy of the attrs in the merged object (#4629)\n\n* fix"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_merge.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:11:23.497723+00:00"
+}

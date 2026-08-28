@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-7606",
+ "repo": "astropy/astropy",
+ "issue": 7606,
+ "base_commit": "3cedd79e6c121910220f8e6df77c54a0b344ea94",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-06-29T16:27:46Z",
+ "c1b_jaccard": 0.0349,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "99a7d9f6ff",
+   "date": "2018-09-18",
+   "msg": "Merge pull request #7606 from mhvk/unit-comparison-with-none"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/units/tests/test_units.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:32:41.517633+00:00"
+}

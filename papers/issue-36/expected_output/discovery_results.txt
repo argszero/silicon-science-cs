@@ -1,0 +1,41 @@
+SWE-BENCH VERIFIED CONTAMINATION CHANNELS — issue #36 (canonical, offline)
+instances: 500/500 (SWE-bench_Verified snapshot 2026-08-28, GitHub mirror OpenAgentsInc/swe-bench-verified)
+
+per-channel contamination rates (Wilson 95% CI):
+  C1a issue publicly available                     500/500 (100.0%, Wilson95 99.2%-100.0%)
+  C1b issue-text verbatim (jac>=0.8)               0/500 (0.0%, Wilson95 0.0%-0.8%)
+  C2 test file present at base_commit              489/500 (97.8%, Wilson95 96.1%-98.8%)
+  C3 fix discoverable via issue commit search      464/500 (92.8%, Wilson95 90.2%-94.8%)
+
+C1b Jaccard distribution: median=0.096 p90=0.203 max=0.647
+
+C2 semantics: test_patch primary file path exists in tree at base_commit (file-level exposure; new test assertions arrive with the fix).
+
+per-repo channel rates:
+  astropy/astropy              n= 22 c1b=  0 c2= 21 c3= 22
+  django/django                n=231 c1b=  0 c2=227 c3=198
+  matplotlib/matplotlib        n= 34 c1b=  0 c2= 34 c3= 34
+  mwaskom/seaborn              n=  2 c1b=  0 c2=  2 c3=  2
+  pallets/flask                n=  1 c1b=  0 c2=  1 c3=  1
+  psf/requests                 n=  8 c1b=  0 c2=  8 c3=  8
+  pydata/xarray                n= 22 c1b=  0 c2= 22 c3= 22
+  pylint-dev/pylint            n= 10 c1b=  0 c2= 10 c3= 10
+  pytest-dev/pytest            n= 19 c1b=  0 c2= 19 c3= 18
+  scikit-learn/scikit-learn    n= 32 c1b=  0 c2= 32 c3= 32
+  sphinx-doc/sphinx            n= 44 c1b=  0 c2= 38 c3= 44
+  sympy/sympy                  n= 75 c1b=  0 c2= 75 c3= 73
+
+issue-year distribution (C1a exposure timeline):
+  2013: 3
+  2014: 2
+  2015: 1
+  2016: 2
+  2017: 16
+  2018: 24
+  2019: 98
+  2020: 108
+  2021: 86
+  2022: 102
+  2023: 58
+
+canonical-run key: every number derives from data_snapshot_c236/ via deterministic fetch + offline aggregation.

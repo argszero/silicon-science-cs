@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-24213",
+ "repo": "sympy/sympy",
+ "issue": 24213,
+ "base_commit": "e8c22f6eac7314be8d92590bfff92ced79ee03e2",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-11-03T14:00:09Z",
+ "c1b_jaccard": 0.0872,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e4c27fa9ae",
+   "date": "2022-11-21",
+   "msg": "Merge pull request #24213 from blackyblack/master\n\nFix colle"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/physics/units/tests/test_quantities.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:33.545298+00:00"
+}

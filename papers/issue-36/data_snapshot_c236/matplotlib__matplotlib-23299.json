@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-23299",
+ "repo": "matplotlib/matplotlib",
+ "issue": 23299,
+ "base_commit": "3eadeacc06c9f2ddcdac6ae39819faa9fbee9e39",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-06-18T01:34:39Z",
+ "c1b_jaccard": 0.1045,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "11a4071026",
+   "date": "2022-06-27",
+   "msg": "Merge pull request #23299 from tacaswell/enh/excludelist-on_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_rcparams.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:04:00.829241+00:00"
+}
