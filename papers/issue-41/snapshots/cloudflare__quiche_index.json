@@ -1,0 +1,24 @@
+{
+ "repo": "cloudflare/quiche",
+ "tier": "implementation",
+ "head_sha": "0b1a89af341b7e42c4e75fedf7bdda246d8319af",
+ "source_files": 229,
+ "features": {
+  "0rtt": 34,
+  "migration": 35,
+  "datagram": 38,
+  "pmtu": 15,
+  "key_update": 11,
+  "ecn": 4
+ },
+ "embeddings": {
+  "quiche": 108
+ },
+ "embed_examples": {
+  "quiche": [
+   "apps/src/args.rs",
+   "apps/src/bin/quiche-client.rs",
+   "apps/src/bin/quiche-server.rs"
+  ]
+ }
+}

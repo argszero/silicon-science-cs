@@ -1,0 +1,24 @@
+{
+ "repo": "ngtcp2/ngtcp2",
+ "tier": "implementation",
+ "head_sha": "2ce971d5fef2972e2bf332c8172f6f00b480c008",
+ "source_files": 323,
+ "features": {
+  "0rtt": 61,
+  "migration": 40,
+  "key_update": 28,
+  "pmtu": 4,
+  "datagram": 22,
+  "ecn": 25
+ },
+ "embeddings": {
+  "ngtcp2": 309
+ },
+ "embed_examples": {
+  "ngtcp2": [
+   "crypto/boringssl/boringssl.c",
+   "crypto/cryptotest.c",
+   "crypto/gnutls/gnutls.c"
+  ]
+ }
+}

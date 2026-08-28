@@ -1,0 +1,55 @@
+{
+ "repo": "aiortc/aioquic",
+ "tier": "implementation",
+ "head_sha": "6d36838d008c2202c337142fa07e8bf80e96bac8",
+ "source_files": 63,
+ "features": {
+  "datagram": 13,
+  "0rtt": 11,
+  "key_update": 10,
+  "migration": 6
+ },
+ "embeddings": {
+  "aioquic": 39,
+  "msquic": 1,
+  "quiche": 1,
+  "quic-go": 1,
+  "quinn": 1,
+  "mvfst": 2,
+  "lsquic": 1,
+  "ngtcp2": 1,
+  "picoquic": 1
+ },
+ "embed_examples": {
+  "aioquic": [
+   "docs/_ext/sphinx_aioquic.py",
+   "docs/conf.py",
+   "examples/doq_client.py"
+  ],
+  "msquic": [
+   "examples/interop.py"
+  ],
+  "quiche": [
+   "examples/interop.py"
+  ],
+  "quic-go": [
+   "examples/interop.py"
+  ],
+  "quinn": [
+   "examples/interop.py"
+  ],
+  "mvfst": [
+   "examples/interop.py",
+   "tests/test_h3.py"
+  ],
+  "lsquic": [
+   "examples/interop.py"
+  ],
+  "ngtcp2": [
+   "examples/interop.py"
+  ],
+  "picoquic": [
+   "examples/interop.py"
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "repo": "private-octopus/picoquic",
+ "tier": "implementation",
+ "head_sha": "4685671759703c1ba20d7251c766e055b779341c",
+ "source_files": 238,
+ "features": {
+  "0rtt": 36,
+  "migration": 38,
+  "pmtu": 16,
+  "multipath": 38,
+  "datagram": 43,
+  "ecn": 27,
+  "key_update": 7
+ },
+ "embeddings": {
+  "picoquic": 217,
+  "msquic": 1
+ },
+ "embed_examples": {
+  "picoquic": [
+   "PerfAndStressTest/PerfAndStressTest.cpp",
+   "UnitTest1/unittest1.cpp",
+   "baton_app/baton_app.c"
+  ],
+  "msquic": [
+   "picoquic/port_blocking.c"
+  ]
+ }
+}

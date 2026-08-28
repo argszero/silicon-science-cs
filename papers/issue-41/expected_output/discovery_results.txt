@@ -1,0 +1,66 @@
+QUIC CENSUS — issue #41 (canonical, offline)
+corpus: 20 repos (12 implementations + 8 consumers), snapshot 2026-08-29 (GitHub tree API, pinned head SHAs)
+
+Tier A — feature coverage (implementation source files containing the marker):
+repo                             src       0rtt migration key_update      pmtu multipath  datagram       ecn
+BiagioFesta/wtransport            33          0         3         0         0         0        12         0
+aiortc/aioquic                    63         11         6        10         0         0        13         0
+aws/s2n-quic                    1009         22        56        24        12         1       126       111
+cloudflare/quiche                229         34        35        11        15         0        38         4
+facebook/mvfst                   577         16        58        15         8         1        45        43
+litespeedtech/lsquic             281         27        17         2        10         3         7        15
+microsoft/msquic                 625         40        31        35        10         0        65        45
+mozilla/neqo                     244         24        21         7         2         0        99        29
+ngtcp2/ngtcp2                    323         61        40        28         4         0        22        25
+private-octopus/picoquic         238         36        38         7        16        38        43        27
+quic-go/quic-go                  443         60        31        12         1         0        40        42
+quinn-rs/quinn                   103         16        12         6         7         0        23        20
+
+H2 feature adoption (stacks with ≥1 marker hit, of 12):
+  0rtt         11/12  (92%)
+  migration    12/12  (100%)
+  key_update   11/12  (92%)
+  pmtu         10/12  (83%)
+  multipath     4/12  (33%)
+  datagram     12/12  (100%)
+  ecn          10/12  (83%)
+
+Tier B — embedding matrix (consumer files matching stack, incl. manifests/vendor dirs):
+repo                             quiche  quic-go    quinn   msquic   ngtcp2  aioquic   lsquic    mvfst     neqo picoquic s2n-quic wtranspo
+caddyserver/caddy                     0        1        0        0        0        0        0        0        0        0        0        0
+curl/curl                             2        0        0        0        2        0        0        0        0        0        0        0
+envoyproxy/envoy                      0        0        0        0        0        1        0        0        0        0        0        0
+facebook/proxygen                     0        0        0        0        0        0        0       21        0        0        0        0
+haproxy/haproxy                       0        0        0        0        0        0        0        0        0        0        0        0
+moq-dev/moq                           7        0        7        0        0        0        0        0        0        0        0        0
+nginx/nginx                           0        0        0        0        0        0        0        0        0        0        0        0
+nodejs/node                           0        0        0        0      403        0        0        0        0        0        0        0
+
+H1/H3 embedding concentration (consumers embedding each stack, of 8):
+  quiche        2/8 consumers
+  ngtcp2        2/8 consumers
+  quic-go       1/8 consumers
+  aioquic       1/8 consumers
+  mvfst         1/8 consumers
+  quinn         1/8 consumers
+
+H1 embedding-file volume (consumer files matching each stack):
+  ngtcp2         405  (91.2%)
+  mvfst           21  (4.7%)
+  quiche           9  (2.0%)
+  quinn            7  (1.6%)
+  quic-go          1  (0.2%)
+  aioquic          1  (0.2%)
+  top-1 stack share of embedding-file volume: 91.2%
+
+H3 self-implemented category (no external stack embedding):
+  caddyserver/caddy              embedded
+  curl/curl                      embedded
+  envoyproxy/envoy               embedded
+  facebook/proxygen              embedded
+  haproxy/haproxy                self-implemented
+  moq-dev/moq                    embedded
+  nginx/nginx                    self-implemented
+  nodejs/node                    embedded
+
+canonical-run key: every number derives from snapshots/*_index.json via deterministic offline aggregation.

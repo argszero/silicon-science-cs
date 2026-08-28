@@ -1,0 +1,15 @@
+{
+ "repo": "caddyserver/caddy",
+ "tier": "consumer",
+ "head_sha": "7bf1b9057b29903efef451440e4664efd8775ec5",
+ "source_files": 1,
+ "features": {},
+ "embeddings": {
+  "quic-go": 1
+ },
+ "embed_examples": {
+  "quic-go": [
+   "go.mod"
+  ]
+ }
+}

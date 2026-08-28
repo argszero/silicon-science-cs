@@ -1,0 +1,21 @@
+{
+ "repo": "curl/curl",
+ "tier": "consumer",
+ "head_sha": "0ebe0e978535f10f6fe54536ca2e2e6b304a4d5a",
+ "source_files": 21,
+ "features": {},
+ "embeddings": {
+  "ngtcp2": 2,
+  "quiche": 2
+ },
+ "embed_examples": {
+  "ngtcp2": [
+   "CMakeLists.txt",
+   "configure.ac"
+  ],
+  "quiche": [
+   "CMakeLists.txt",
+   "configure.ac"
+  ]
+ }
+}

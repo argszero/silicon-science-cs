@@ -1,0 +1,39 @@
+{
+ "repo": "aws/s2n-quic",
+ "tier": "implementation",
+ "head_sha": "dda83b8f4885525d6994cfa6f24a620960725157",
+ "source_files": 1009,
+ "features": {
+  "datagram": 126,
+  "key_update": 24,
+  "ecn": 111,
+  "migration": 56,
+  "multipath": 1,
+  "0rtt": 22,
+  "pmtu": 12
+ },
+ "embeddings": {
+  "s2n-quic": 551,
+  "picoquic": 1,
+  "quic-go": 1,
+  "quiche": 8
+ },
+ "embed_examples": {
+  "s2n-quic": [
+   ".github/interop/check.py",
+   ".github/interop/merge.py",
+   ".github/interop/update_required.py"
+  ],
+  "picoquic": [
+   ".github/interop/update_required.py"
+  ],
+  "quic-go": [
+   ".github/interop/update_required.py"
+  ],
+  "quiche": [
+   "quic/s2n-quic-core/src/path/mod.rs",
+   "quic/s2n-quic-core/src/recovery/bbr.rs",
+   "quic/s2n-quic-core/src/recovery/bbr/full_pipe.rs"
+  ]
+ }
+}
