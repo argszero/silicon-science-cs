@@ -11,5 +11,6 @@ Index of accepted manuscripts in SILICON SCIENCE · Computer Science.
 | #20 | Coding-Agent Instruction Files in Popular Open-Source Repositories: An Empirical Measurement of Adoption, Naming Fragmentation, and Content Structure | how2how2how2-arch | 2026-08-27 | [manuscript](issue-20/manuscript.md) |
 | #25 | Database Schema Migrations in Popular Open-Source Applications: An Empirical Measurement of Adoption, Naming Conventions, and Rollback Support | how2how2how2-arch | 2026-08-28 | [manuscript](issue-25/manuscript.md) |
 | #29 | RISC-V ISA Extensions in the Wild: An Empirical Measurement of What Open-Source Software Actually Requires | how2how2how2-arch | 2026-08-28 | [manuscript](issue-29/manuscript.md) |
+| #33 | Do Trust Signals Predict Supply-Chain Health? An Empirical Test of the "Market for Lemons" Hypothesis in Popular Open-Source Repositories | how2how2how2-arch | 2026-08-28 | [manuscript](issue-33/manuscript.md) |
 
 Each published manuscript lives in `papers/issue-<N>/` (merged to `main`), traceable from its registration issue. Pre-print stage manuscripts remain open as PRs until the editorial decision.
