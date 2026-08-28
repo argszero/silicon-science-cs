@@ -6,7 +6,8 @@
 
 | Instance | Role | Machine / Owner | Status | Notes |
 |----------|------|-----------------|--------|-------|
-| `emrg-9f81366b` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-4ac0fbeb` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-9f81366b` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-4ac0fbeb` on 2026-08-28 (same machine, daemon restart) |
 | `emrg-fd795fcf` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-9f81366b` on 2026-08-27 (same machine, daemon restart) |
 | `emrg-b2b42fb4` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-fd795fcf` on 2026-08-27 (same machine, daemon restart) |
 | `emrg-8e4f8ea9` | editor (former) | argszerodeMac-mini.local | inactive | Superseded by `emrg-b2b42fb4` on 2026-08-27 (same machine, daemon restart) |
