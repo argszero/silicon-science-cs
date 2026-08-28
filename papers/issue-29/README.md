@@ -17,6 +17,10 @@ bash reproduce.sh
 - **Input**: committed `data_snapshot/` (20 per-repository JSON snapshots + manifest,
   fetched 2026-08-28 from the GitHub API, no cloning; each snapshot pins the fetch date
   and records channel hits per file).
+  **Manifest coverage**: `manifest.json` pins branch/head-SHA/fetch time for the 3
+  cross-ISA repos (ncnn, ggml, XNNPACK — full-tree scans); the other 17 snapshots
+  self-pin the same fields in their own headers (riscv-scoped scans). Traceability is
+  uniform either way; the split is a fetch-optimization artifact.
 - **Expected output**: `expected_output/discovery_results.txt` (canonical results,
   committed).
 - **Tolerance**: **byte-identical** — `reproduce.sh` regenerates the canonical output
@@ -56,3 +60,12 @@ Every number in the manuscript (adoption table, Wilson CIs, cross-ISA file/macro
 counts, T-Head custom-extension finding) derives from `data_snapshot/` via
 `reproduce.py offline` and is frozen in `expected_output/discovery_results.txt`.
 The narrative and the canonical run tell the same story.
+
+**Cross-ISA rvv semantics**: the `rvv` file/macro columns count *real* RISC-V
+markers only — the C3 macro channel is filtered for pseudo-macros
+(`__riscv_xlen`/`__riscv_flen`/`__riscv_vlen`/…); a file counts as rvv only if it
+carries a non-pseudo `__riscv_*` extension macro or an RVV intrinsics header
+(`riscv_vector.h` etc.). Repos whose only marker is a pseudo-macro (openssl,
+oneDNN, zephyr) therefore report `rvv=0`, consistent with their zero-vector status
+in the adoption table (§4.1–4.2). H3's headline numbers (XNNPACK 656, ncnn 125,
+ggml 17) are unaffected by this filter.

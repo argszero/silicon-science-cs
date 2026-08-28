@@ -30,6 +30,13 @@ adoption MiscRatified: 10/20 (50.0%, Wilson95 29.9%-70.1%)
 adoption Custom      : 3/20 (15.0%, Wilson95 5.2%-36.0%)
 baseline-only (no extension groups): 3/20 (qemu, riscv-gnu-toolchain, zephyr)
 
+selection-sensitivity V adoption (derived, wilson_ci):
+  base corpus                                                    V 15/20 (75.0%, Wilson95 53.1%-88.8%)
+  +1 hypothetical V-carrying repo (tensorflow as delegated)      V 16/21 (76.2%, Wilson95 54.9%-89.4%)
+  +1 hypothetical non-V repo (tensorflow strict in-tree)         V 15/21 (71.4%, Wilson95 50.0%-86.2%)
+  application-only (excl. baseline-only embedded/emulator/toolchain) V 15/17 (88.2%, Wilson95 65.7%-96.7%)
+XNNPACK rvv files under src/*/gen/: 573/656 (87.3%)
+
 per-domain extension groups:
   bootloader        : [('MiscRatified', 'Zb')]
   codec             : [('V',)]
@@ -49,44 +56,38 @@ per-domain extension groups:
   simulator         : [('V',)]
   toolchain         : [()]
 
-cross-ISA per-ISA file coverage (files with any marker):
-  FFmpeg/FFmpeg                  scanned=  185 x86=   0 arm=   0 rvv=  47
-  RT-Thread/rt-thread            scanned=  203 x86=   0 arm=   0 rvv=  14
+cross-ISA per-ISA file coverage (files with any real marker):
+  FFmpeg/FFmpeg                  scanned=  185 x86=   0 arm=   0 rvv=  10
+  RT-Thread/rt-thread            scanned=  203 x86=   0 arm=   0 rvv=   9
   Tencent/ncnn                   scanned=  829 x86= 136 arm= 149 rvv= 125
-  bminor/glibc                   scanned=  198 x86=   0 arm=   0 rvv=  40
+  bminor/glibc                   scanned=  198 x86=   0 arm=   0 rvv=  37
   flame/blis                     scanned=  161 x86=   0 arm=   0 rvv=  29
-  ggml-org/ggml                  scanned=   67 x86=  16 arm=  13 rvv=  18
+  ggml-org/ggml                  scanned=   67 x86=  16 arm=  13 rvv=  17
   google/XNNPACK                 scanned= 1175 x86= 136 arm= 107 rvv= 656
   google/cpu_features            scanned=  126 x86=   2 arm=   1 rvv=   1
   libjpeg-turbo/libjpeg-turbo    scanned=   18 x86=   0 arm=   0 rvv=  17
-  oneapi-src/oneDNN              scanned=  220 x86=   0 arm=   0 rvv=   1
   opencv/opencv                  scanned=   78 x86=   0 arm=   0 rvv=  63
-  openssl/openssl                scanned=   57 x86=   0 arm=   0 rvv=   2
-  riscv-software-src/opensbi     scanned=  498 x86=   0 arm=   0 rvv=  53
-  riscv-software-src/riscv-isa-sim scanned= 1734 x86=   0 arm=   0 rvv=   2
-  torvalds/linux                 scanned=  611 x86=   0 arm=   0 rvv=  55
-  u-boot/u-boot                  scanned= 2821 x86=   0 arm=   0 rvv=   6
+  riscv-software-src/opensbi     scanned=  498 x86=   0 arm=   0 rvv=   7
+  riscv-software-src/riscv-isa-sim scanned= 1734 x86=   0 arm=   0 rvv=   1
+  torvalds/linux                 scanned=  611 x86=   0 arm=   0 rvv=  37
+  u-boot/u-boot                  scanned= 2821 x86=   0 arm=   0 rvv=   1
   v8/v8                          scanned=   58 x86=   0 arm=   0 rvv=   1
-  zephyrproject-rtos/zephyr      scanned=   94 x86=   0 arm=   0 rvv=   7
 
 cross-ISA macro-occurrence counts (per-ISA marker uses):
-  FFmpeg/FFmpeg                  x86=      0 arm=      0 rvv=    161
-  RT-Thread/rt-thread            x86=      0 arm=      0 rvv=    130
+  FFmpeg/FFmpeg                  x86=      0 arm=      0 rvv=     56
+  RT-Thread/rt-thread            x86=      0 arm=      0 rvv=     44
   Tencent/ncnn                   x86=   4845 arm=   2615 rvv=  15123
-  bminor/glibc                   x86=      0 arm=      0 rvv=    111
-  flame/blis                     x86=      0 arm=      0 rvv=    153
-  ggml-org/ggml                  x86=    240 arm=    167 rvv=   4693
+  bminor/glibc                   x86=      0 arm=      0 rvv=     94
+  flame/blis                     x86=      0 arm=      0 rvv=    142
+  ggml-org/ggml                  x86=    240 arm=    167 rvv=   4691
   google/XNNPACK                 x86=    145 arm=    108 rvv=  16245
-  google/cpu_features            x86=      7 arm=      3 rvv=     27
+  google/cpu_features            x86=      7 arm=      3 rvv=     21
   libjpeg-turbo/libjpeg-turbo    x86=      0 arm=      0 rvv=   1368
-  oneapi-src/oneDNN              x86=      0 arm=      0 rvv=      2
   opencv/opencv                  x86=      0 arm=      0 rvv=   7329
-  openssl/openssl                x86=      0 arm=      0 rvv=      2
-  riscv-software-src/opensbi     x86=      0 arm=      0 rvv=    250
-  riscv-software-src/riscv-isa-sim x86=      0 arm=      0 rvv=      9
-  torvalds/linux                 x86=      0 arm=      0 rvv=    247
-  u-boot/u-boot                  x86=      0 arm=      0 rvv=     18
+  riscv-software-src/opensbi     x86=      0 arm=      0 rvv=     37
+  riscv-software-src/riscv-isa-sim x86=      0 arm=      0 rvv=      8
+  torvalds/linux                 x86=      0 arm=      0 rvv=    206
+  u-boot/u-boot                  x86=      0 arm=      0 rvv=      8
   v8/v8                          x86=      0 arm=      0 rvv=     19
-  zephyrproject-rtos/zephyr      x86=      0 arm=      0 rvv=     14
 
 canonical-run key: every number derives from data_snapshot/ via deterministic classification.

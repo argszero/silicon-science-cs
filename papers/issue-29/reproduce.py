@@ -504,6 +504,37 @@ def main():
                    f"{len(baseline_only)}/{n} "
                    f"({', '.join(r.split('/')[-1] for r in baseline_only)})")
         out.append("")
+        # selection-sensitivity (derived from the snapshot; review #29-3):
+        # H1's V-share under plausible corpus perturbations.
+        v_n = sum(1 for s in snaps if "V" in classify(set(s.get("exts") or [])))
+        sens = [
+            ("base corpus", v_n, n),
+            ("+1 hypothetical V-carrying repo (tensorflow as delegated)",
+             v_n + 1, n + 1),
+            ("+1 hypothetical non-V repo (tensorflow strict in-tree)",
+             v_n, n + 1),
+            ("application-only (excl. baseline-only embedded/emulator/toolchain)",
+             v_n, n - len(baseline_only)),
+        ]
+        out.append("selection-sensitivity V adoption (derived, wilson_ci):")
+        for label, k, m in sens:
+            lo, hi = wilson_ci(k, m)
+            out.append(f"  {label:62s} V {k}/{m} ({k/m:.1%}, "
+                       f"Wilson95 {lo:.1%}-{hi:.1%})")
+        # H3 codegen-layout (derived from the XNNPACK snapshot; review #29-4):
+        # share of rvv files under src/*/gen/ (auto-generated per-variant files).
+        for s in snaps:
+            if s["repo"].endswith("XNNPACK"):
+                rvv = set()
+                for tok, toks in s["channel_hits"].get("C3_macro", {}).items():
+                    if tok not in PSEUDO_MACROS:
+                        rvv.update(toks)
+                for toks in s["channel_hits"].get("C4_intrinsics", {}).values():
+                    rvv.update(toks)
+                gen = [p for p in rvv if "/gen/" in p]
+                out.append(f"XNNPACK rvv files under src/*/gen/: "
+                           f"{len(gen)}/{len(rvv)} ({len(gen)/len(rvv):.1%})")
+        out.append("")
         # domain analysis
         out.append("per-domain extension groups:")
         dom_groups = {}
@@ -517,8 +548,13 @@ def main():
             out.append(f"  {dom:18s}: {gs}")
         out.append("")
         # cross-ISA (H3): per-ISA FILE coverage (files containing any per-ISA
-        # marker) — comparable across ISAs (macro-occurrence density differs)
-        out.append("cross-ISA per-ISA file coverage (files with any marker):")
+        # marker) — comparable across ISAs (macro-occurrence density differs).
+        # RISC-V pseudo-macros (xlen/flen/vlen/... — stored in C3_macro without
+        # the __riscv_ prefix) are NOT extension markers: they are excluded so
+        # that a file counts as rvv only if it carries a real RISC-V extension
+        # macro or an RVV intrinsics header (review #29-1). x86/ARM markers have
+        # no pseudo-macro analogue.
+        out.append("cross-ISA per-ISA file coverage (files with any real marker):")
         for s in snaps:
             x86_files = set()
             arm_files = set()
@@ -529,9 +565,11 @@ def main():
             for ch in ("X2_arm_macro", "X2_arm_header"):
                 for toks in s["channel_hits"].get(ch, {}).values():
                     arm_files.update(toks)
-            for ch in ("C3_macro", "C4_intrinsics"):
-                for toks in s["channel_hits"].get(ch, {}).values():
+            for tok, toks in s["channel_hits"].get("C3_macro", {}).items():
+                if tok not in PSEUDO_MACROS:
                     rvv_files.update(toks)
+            for toks in s["channel_hits"].get("C4_intrinsics", {}).values():
+                rvv_files.update(toks)
             if x86_files or arm_files or rvv_files:
                 out.append(f"  {s['repo']:30s} scanned={s['n_files_scanned']:5d} "
                            f"x86={len(x86_files):4d} arm={len(arm_files):4d} "
@@ -543,7 +581,8 @@ def main():
                 + sum(len(v) for v in s["channel_hits"].get("X1_x86_header", {}).values())
             arm = sum(len(v) for v in s["channel_hits"].get("X2_arm_macro", {}).values()) \
                 + sum(len(v) for v in s["channel_hits"].get("X2_arm_header", {}).values())
-            rvv = sum(len(v) for v in s["channel_hits"].get("C3_macro", {}).values()) \
+            rvv = sum(len(v) for tok, v in s["channel_hits"].get("C3_macro", {}).items()
+                      if tok not in PSEUDO_MACROS) \
                 + sum(len(v) for v in s["channel_hits"].get("C4_intrinsics", {}).values())
             if x86 or arm or rvv:
                 out.append(f"  {s['repo']:30s} x86={x86:7d} arm={arm:7d} rvv={rvv:7d}")
