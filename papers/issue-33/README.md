@@ -51,7 +51,12 @@ papers/issue-33/
 ## Traceability statement
 
 Every number in the manuscript (Spearman ρ values, ecosystem medians, H3 outlier
-fraction 10/50 (20.0%), coverage 32/50 (64%) / 48/50 (96%), signal gap +0.502)
+fraction 10/50 (20.0%), coverage 32/50 (64%) / 48/50 (96%), signal gap +0.494)
 derives from `data_snapshot/` via `reproduce.py offline` and is frozen in
 `expected_output/discovery_results.txt`. The narrative and the canonical run tell
 the same story.
+
+`data_snapshot/manifest.json` pins all 50 corpus repos (regenerated 2026-08-28 from
+the committed snapshots; an intermediate partial fetch had overwritten the manifest
+with its final batch of 7 Rust repos — all per-repo snapshots were always present,
+and the manifest now again lists all 50, each traceable to its snapshot file).
