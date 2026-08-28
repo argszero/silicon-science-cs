@@ -1,0 +1,54 @@
+{
+ "repo": "macrozheng/mall",
+ "signals": {
+  "stars": 84646,
+  "forks": 29824,
+  "open_issues": 17,
+  "subscribers": 2206,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-05-14T08:32:05Z",
+  "created_at": "2018-04-04T01:11:44Z",
+  "language": "Java",
+  "size_kb": 58736,
+  "contributors": 1,
+  "releases": 3,
+  "ci_presence": false
+ },
+ "manifest_present": [
+  ".gitignore",
+  "LICENSE",
+  "README.md",
+  "document",
+  "mall-admin",
+  "mall-common",
+  "mall-demo",
+  "mall-mbg",
+  "mall-portal",
+  "mall-search",
+  "mall-security",
+  "pom.xml"
+ ],
+ "fetched_at": "2026-08-28T05:59:48.234203+00:00",
+ "outcomes": {
+  "scorecard": 1.8,
+  "scorecard_subscores": {
+   "Token-Permissions": -1,
+   "Dangerous-Workflow": -1,
+   "Code-Review": 0,
+   "Maintained": 0,
+   "Packaging": -1,
+   "CII-Best-Practices": 0,
+   "SAST": 0,
+   "Binary-Artifacts": 10,
+   "Security-Policy": 0,
+   "License": 10,
+   "Fuzzing": 0,
+   "Signed-Releases": -1,
+   "Pinned-Dependencies": 0,
+   "Branch-Protection": 0
+  },
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}

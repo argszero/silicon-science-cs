@@ -1,0 +1,54 @@
+{
+ "repo": "airbnb/javascript",
+ "signals": {
+  "stars": 148141,
+  "forks": 26597,
+  "open_issues": 163,
+  "subscribers": 3664,
+  "license": "MIT",
+  "pushed_at": "2026-04-16T19:24:09Z",
+  "created_at": "2012-11-01T23:13:50Z",
+  "language": "JavaScript",
+  "size_kb": 3738,
+  "contributors": 401,
+  "releases": 0,
+  "ci_presence": true
+ },
+ "manifest_present": [
+  ".editorconfig",
+  ".github",
+  ".gitignore",
+  ".npmrc",
+  "CODE_OF_CONDUCT.md",
+  "LICENSE.md",
+  "README.md",
+  "css-in-javascript",
+  "linters",
+  "package.json",
+  "packages",
+  "react"
+ ],
+ "fetched_at": "2026-08-28T05:57:19.456123+00:00",
+ "outcomes": {
+  "scorecard": 6.3,
+  "scorecard_subscores": {
+   "Maintained": 2,
+   "Code-Review": 10,
+   "Binary-Artifacts": 10,
+   "Dangerous-Workflow": 10,
+   "Packaging": -1,
+   "Pinned-Dependencies": 0,
+   "Token-Permissions": 10,
+   "CII-Best-Practices": 0,
+   "License": 10,
+   "Fuzzing": 0,
+   "Signed-Releases": -1,
+   "Branch-Protection": -1,
+   "Security-Policy": 9,
+   "SAST": 0
+  },
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}

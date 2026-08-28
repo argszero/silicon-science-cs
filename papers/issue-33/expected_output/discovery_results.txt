@@ -1,0 +1,146 @@
+TRUST SIGNAL SNAPSHOT — issue #33 (canonical, offline)
+corpus: 50/50 repos fetched | meta: GitHub search/repositories, q=language:<LANG>+stars:>20000, sort=stars...
+
+repo                                                 eco    stars contrib rels ci score osv
+Chalarangelo/30-seconds-of-code               JavaScript   128844    379   12  1   5.8   0
+DietrichGebert/ponytail                       JavaScript   114356     63   15  1   n/a   0
+EbookFoundation/free-programming-books            Python   395386    431    0  1   4.7   0
+JuliusBrussee/caveman                                 Go   101473     33   27  1   n/a   0
+MisterBooo/LeetCodeAnimation                        Java    76699     15    0  1   3.4   0
+NationalSecurityAgency/ghidra                       Java    73063    396   55  1   3.4   0
+NousResearch/hermes-agent                         Python   237419    397   30  1   n/a  20
+Significant-Gravitas/AutoGPT                      Python   186948    427  118  1   n/a   0
+Snailclimb/JavaGuide                          JavaScript   158081    413    0  1   4.3   0
+Stirling-Tools/Stirling-PDF                         Java    90779    288  186  1   6.8   0
+TheAlgorithms/Java                                  Java    66191    427    0  1   6.2   0
+TheAlgorithms/Python                              Python   224068    452    0  1   5.4   0
+affaan-m/ECC                                  JavaScript   243799    301   15  1   n/a   0
+airbnb/javascript                             JavaScript   148141    401    0  1   6.3   0
+avelino/awesome-go                                    Go   182473    434    0  1   4.7   0
+denoland/deno                                       Rust   108330    432  389  1   5.2  38
+donnemartin/system-design-primer                  Python   366446    121    0  0   4.1   0
+doocs/advanced-java                                 Java    79086     42    1  1   3.7   0
+elastic/elasticsearch                               Java    77871    352  261  1   6.9   0
+farion1231/cc-switch                                Rust   129802    212   52  1   n/a n/a
+fatedier/frp                                          Go   109071    130  116  1   5.1   0
+gin-gonic/gin                                         Go    89125    440   29  1   6.0   0
+gohugoio/hugo                                         Go    89560    415  381  1   5.6   0
+golang/go                                             Go   136552    381    0  0   6.2   0
+iluwatar/java-design-patterns                       Java    94632    411    0  1   5.4   0
+infiniflow/ragflow                                    Go    89433    461   54  1   n/a   0
+krahets/hello-algo                                  Java   129643    206   10  1   n/a   0
+kubernetes/kubernetes                                 Go   125308    350  815  0   7.5   0
+macrozheng/mall                                     Java    84646      1    3  0   1.8   0
+microsoft/TypeScript                                  Go   110743    341  218  1   8.2   0
+microsoft/markitdown                              Python   176700     82   20  1   n/a   0
+mrdoob/three.js                               JavaScript   114865    363  177  1   7.0   0
+nodejs/node                                   JavaScript   119650    423  515  1   6.3   0
+ollama/ollama                                         Go   179598    451  249  1   n/a   0
+openai/codex                                        Rust   119303    471 1029  1   5.9   0
+oven-sh/bun                                         Rust    95747    451  215  1   n/a   0
+practical-tutorials/project-based-learning        Python   281126    111    0  1   n/a   0
+public-apis/public-apis                           Python   471843    421    0  1   5.0   0
+react/react                                   JavaScript   247989    410  132  1   n/a   2
+rust-lang/rust                                      Rust   116302    443  154  1   n/a n/a
+rustdesk/rustdesk                                   Rust   122000    400   39  1   n/a   0
+ruvnet/RuView                                       Rust    91871     31  294  1   n/a   0
+spring-projects/spring-boot                         Java    81371    358  355  1   6.8   0
+tauri-apps/tauri                                    Rust   110612    445 1636  1   5.4   8
+trekhleb/javascript-algorithms                JavaScript   196572    211    0  1   4.6   0
+ultraworkers/claw-code                              Rust   195136     23    0  1   n/a   0
+vercel/next.js                                JavaScript   141964    423 3825  1   6.2   0
+vinta/awesome-python                              Python   316573    415    0  1   5.8   0
+yt-dlp/yt-dlp                                     Python   187432    377  136  1   7.7  22
+zed-industries/zed                                  Rust    89340    482 1291  1   n/a   0
+
+Spearman rho (avg-rank, Fisher-z 95% CI) — signal vs Scorecard:
+  stars            rho=-0.019 [-0.365, +0.332]  n=32
+  contributors     rho=+0.084 [-0.273, +0.420]  n=32
+  forks            rho=-0.021 [-0.367, +0.330]  n=32
+  open_issues      rho=+0.454 [+0.125, +0.693]  n=32
+  releases         rho=+0.475 [+0.151, +0.707]  n=32
+  subscribers      rho=-0.195 [-0.509, +0.165]  n=32
+  ci               rho=+0.082 [-0.275, +0.419]  n=32
+  has_license      rho=+0.273 [-0.084, +0.567]  n=32
+  repo_age_days    rho=+0.413 [+0.075, +0.666]  n=32
+  days_since_push  rho=-0.571 [-0.767, -0.278]  n=32
+
+Spearman rho (avg-rank, Fisher-z 95% CI) — signal vs OSV vulns:
+  stars            rho=+0.163 [-0.127, +0.427]  n=48
+  contributors     rho=+0.160 [-0.130, +0.425]  n=48
+  forks            rho=-0.064 [-0.342, +0.225]  n=48
+  open_issues      rho=+0.309 [+0.027, +0.545]  n=48
+  releases         rho=+0.273 [-0.012, +0.517]  n=48
+  subscribers      rho=-0.124 [-0.395, +0.166]  n=48
+  ci               rho=+0.103 [-0.187, +0.376]  n=48
+  has_license      rho=+0.050 [-0.238, +0.329]  n=48
+  repo_age_days    rho=-0.095 [-0.370, +0.194]  n=48
+  days_since_push  rho=-0.196 [-0.455, +0.093]  n=48
+
+per-ecosystem median scorecard / osv:
+  Go         n= 7 median_scorecard=6 median_osv=0
+  Java       n= 9 median_scorecard=5.4 median_osv=0
+  JavaScript n= 7 median_scorecard=6.2 median_osv=0
+  Python     n= 6 median_scorecard=5.4 median_osv=0
+  Rust       n= 3 median_scorecard=5.4 median_osv=0
+
+H3 spike detection (stars/contributor ratio): median=398 MAD=196
+H3 outlier fraction: 10/50 (20.0%) above median+5xMAD
+  median+2.5xMAD flags 13/50 (26.0%)
+  median+3xMAD flags 11/50 (22.0%)
+  median+5xMAD flags 10/50 (20.0%)
+  macrozheng/mall                               ratio=  84646 <<< outlier
+  ultraworkers/claw-code                        ratio=   8484 <<< outlier
+  MisterBooo/LeetCodeAnimation                  ratio=   5113 <<< outlier
+  JuliusBrussee/caveman                         ratio=   3075 <<< outlier
+  donnemartin/system-design-primer              ratio=   3028 <<< outlier
+  ruvnet/RuView                                 ratio=   2964 <<< outlier
+  practical-tutorials/project-based-learning    ratio=   2533 <<< outlier
+  microsoft/markitdown                          ratio=   2155 <<< outlier
+  doocs/advanced-java                           ratio=   1883 <<< outlier
+  DietrichGebert/ponytail                       ratio=   1815 <<< outlier
+  public-apis/public-apis                       ratio=   1121
+  trekhleb/javascript-algorithms                ratio=    932
+  EbookFoundation/free-programming-books        ratio=    917
+  fatedier/frp                                  ratio=    839
+  affaan-m/ECC                                  ratio=    810
+  vinta/awesome-python                          ratio=    763
+  krahets/hello-algo                            ratio=    629
+  farion1231/cc-switch                          ratio=    612
+  react/react                                   ratio=    605
+  NousResearch/hermes-agent                     ratio=    598
+  yt-dlp/yt-dlp                                 ratio=    497
+  TheAlgorithms/Python                          ratio=    496
+  Significant-Gravitas/AutoGPT                  ratio=    438
+  avelino/awesome-go                            ratio=    420
+  ollama/ollama                                 ratio=    398
+  Snailclimb/JavaGuide                          ratio=    383
+  airbnb/javascript                             ratio=    369
+  golang/go                                     ratio=    358
+  kubernetes/kubernetes                         ratio=    358
+  Chalarangelo/30-seconds-of-code               ratio=    340
+  vercel/next.js                                ratio=    336
+  microsoft/TypeScript                          ratio=    325
+  mrdoob/three.js                               ratio=    316
+  Stirling-Tools/Stirling-PDF                   ratio=    315
+  rustdesk/rustdesk                             ratio=    305
+  nodejs/node                                   ratio=    283
+  rust-lang/rust                                ratio=    263
+  openai/codex                                  ratio=    253
+  denoland/deno                                 ratio=    251
+  tauri-apps/tauri                              ratio=    249
+  iluwatar/java-design-patterns                 ratio=    230
+  spring-projects/spring-boot                   ratio=    227
+  elastic/elasticsearch                         ratio=    221
+  gohugoio/hugo                                 ratio=    216
+  oven-sh/bun                                   ratio=    212
+  gin-gonic/gin                                 ratio=    203
+  infiniflow/ragflow                            ratio=    194
+  zed-industries/zed                            ratio=    185
+  NationalSecurityAgency/ghidra                 ratio=    185
+  TheAlgorithms/Java                            ratio=    155
+
+outcome coverage: scorecard 32/50 (64%), osv 48/50 (96%)
+signal gap (releases - stars vs Scorecard): +0.494
+
+canonical-run key: every number derives from data_snapshot/ via deterministic fetch.

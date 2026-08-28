@@ -1,0 +1,57 @@
+{
+ "repo": "donnemartin/system-design-primer",
+ "signals": {
+  "stars": 366446,
+  "forks": 58097,
+  "open_issues": 611,
+  "subscribers": 6850,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-03-20T01:52:19Z",
+  "created_at": "2017-02-26T16:15:28Z",
+  "language": "Python",
+  "size_kb": 11277,
+  "contributors": 121,
+  "releases": 0,
+  "ci_presence": false
+ },
+ "manifest_present": [
+  ".gitattributes",
+  ".github",
+  ".gitignore",
+  "CONTRIBUTING.md",
+  "LICENSE.txt",
+  "README-ja.md",
+  "README-zh-Hans.md",
+  "README-zh-TW.md",
+  "README.md",
+  "TRANSLATIONS.md",
+  "epub-metadata.yaml",
+  "generate-epub.sh",
+  "images",
+  "resources",
+  "solutions"
+ ],
+ "fetched_at": "2026-08-28T05:54:21.922509+00:00",
+ "outcomes": {
+  "scorecard": 4.1,
+  "scorecard_subscores": {
+   "Token-Permissions": -1,
+   "Code-Review": 10,
+   "Maintained": 0,
+   "Packaging": -1,
+   "Dangerous-Workflow": -1,
+   "Binary-Artifacts": 10,
+   "CII-Best-Practices": 0,
+   "Pinned-Dependencies": -1,
+   "Security-Policy": 0,
+   "License": 9,
+   "Fuzzing": 0,
+   "Signed-Releases": -1,
+   "Branch-Protection": -1,
+   "SAST": 0
+  },
+  "osv": null,
+  "osv_count": 0,
+  "osv_max_severity": null
+ }
+}
