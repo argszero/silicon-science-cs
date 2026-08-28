@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-17139",
+ "repo": "sympy/sympy",
+ "issue": 17139,
+ "base_commit": "1d3327b8e90a186df6972991963a5ae87053259d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-07-01T19:17:18Z",
+ "c1b_jaccard": 0.055,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "12d8f5354d",
+   "date": "2019-07-01",
+   "msg": "Merge pull request #17139 from ethankward/_TR56_is_real\n\nChe"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/simplify/tests/test_fu.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:26:58.531239+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15098",
+ "repo": "django/django",
+ "issue": 15098,
+ "base_commit": "2c7846d992ca512d36a73f518205015c88ed088c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-11-17T21:30:07Z",
+ "c1b_jaccard": 0.0373,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ca292f125b",
+   "date": "2010-12-29",
+   "msg": "Fixed #14277 - Clarify path names in modwsgi docs; thanks ne"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/i18n/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:51:35.487055+00:00"
+}

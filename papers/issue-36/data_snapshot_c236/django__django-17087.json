@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-17087",
+ "repo": "django/django",
+ "issue": 17087,
+ "base_commit": "4a72da71001f154ea60906a2f74898d32b7322a7",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-07-17T20:28:41Z",
+ "c1b_jaccard": 0.0654,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "67e6e0fcf3",
+   "date": "2011-10-22",
+   "msg": "Fixed #17087 -- Re-organized the i18n docs to reduce confusi"
+  },
+  {
+   "sha": "eb81f979a8",
+   "date": "2011-11-12",
+   "msg": "Fixed typo in 1.4 release notes.\n\ngit-svn-id: http://code.dj"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_writer.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:02:09.049777+00:00"
+}

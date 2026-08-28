@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15987",
+ "repo": "django/django",
+ "issue": 15987,
+ "base_commit": "7e6b537f5b92be152779fc492bb908d27fe7c52a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-08-23T10:07:03Z",
+ "c1b_jaccard": 0.2,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "86ba75b090",
+   "date": "2011-04-02",
+   "msg": "Advanced deprecations in django.utils.translation.\n\ngit-svn-"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/fixtures_regress/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:57:35.012518+00:00"
+}

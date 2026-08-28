@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-21612",
+ "repo": "sympy/sympy",
+ "issue": 21612,
+ "base_commit": "b4777fdcef467b7132c055f8ac2c9a5059e6a145",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-06-14T04:31:24Z",
+ "c1b_jaccard": 0.0267,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1fb2490fa2",
+   "date": "2021-06-14",
+   "msg": "Merge pull request #21612 from ArunSanganal/prr\n\nFixed print"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/printing/tests/test_str.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:32:31.929114+00:00"
+}

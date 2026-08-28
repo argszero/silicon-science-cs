@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13551",
+ "repo": "django/django",
+ "issue": 13551,
+ "base_commit": "7f9e4524d6b23424cf44fbe1bf1f4e70f6bb066e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-10-17T17:22:01Z",
+ "c1b_jaccard": 0.1798,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "10b5f38593",
+   "date": "2010-05-17",
+   "msg": "Fixed #13551 -- Corrected import in ModelForms example. Than"
+  },
+  {
+   "sha": "7aa7943434",
+   "date": "2010-08-07",
+   "msg": "Fixed #13627 -- Added instructions on how to reset your Trac"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/auth_tests/models/__init__.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:44:23.442439+00:00"
+}

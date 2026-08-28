@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-14007",
+ "repo": "django/django",
+ "issue": 14007,
+ "base_commit": "619f26d2895d121854b1bed1b535d42b722e2eba",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-02-13T09:00:02Z",
+ "c1b_jaccard": 0.0288,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ed32170a04",
+   "date": "2010-10-08",
+   "msg": "Fixed #13218 -- Ensure that syndicated content served over H"
+  },
+  {
+   "sha": "2333c9662b",
+   "date": "2013-07-16",
+   "msg": "Fixed #14007 -- Added model discovery in models module witho"
+  },
+  {
+   "sha": "09d1e0486a",
+   "date": "2014-01-25",
+   "msg": "Added ticket #14007 contributors to AUTHORS"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/custom_pk/fields.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:46:12.777442+00:00"
+}

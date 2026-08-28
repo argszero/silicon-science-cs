@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-19637",
+ "repo": "sympy/sympy",
+ "issue": 19637,
+ "base_commit": "63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-24T13:08:57Z",
+ "c1b_jaccard": 0.0381,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ff1bc63fe9",
+   "date": "2020-06-24",
+   "msg": "Merge pull request #19637 from smichr/19608\n\nfixes 19608"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_sympify.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:31:21.332931+00:00"
+}

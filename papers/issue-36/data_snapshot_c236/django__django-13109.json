@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13109",
+ "repo": "django/django",
+ "issue": 13109,
+ "base_commit": "fbe82f82555bc25dccb476c749ca062f0b522be3",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-06-25T08:36:45Z",
+ "c1b_jaccard": 0.069,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "92983a3119",
+   "date": "2010-05-06",
+   "msg": "Fixed #12609 -- Updated FAQ on which version users should in"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/model_forms/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:42:08.941024+00:00"
+}

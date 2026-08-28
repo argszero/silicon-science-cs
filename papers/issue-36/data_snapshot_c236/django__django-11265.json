@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-11265",
+ "repo": "django/django",
+ "issue": 11265,
+ "base_commit": "21aa2a5e785eef1f47beb1c3760fdd7d8915ae09",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-04-21T12:57:28Z",
+ "c1b_jaccard": 0.0938,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "260cf21936",
+   "date": "2009-07-17",
+   "msg": "Added myself to AUTHORS and updated my bio.\n\n\ngit-svn-id: ht"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/filtered_relation/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:35:33.872110+00:00"
+}

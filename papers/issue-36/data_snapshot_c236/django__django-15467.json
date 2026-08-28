@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15467",
+ "repo": "django/django",
+ "issue": 15467,
+ "base_commit": "e0442a628eb480eac6a7888aed5a86f83499e299",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-02-27T03:00:31Z",
+ "c1b_jaccard": 0.0746,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6ca7c9c495",
+   "date": "2011-02-09",
+   "msg": "Fixed a security issue in the file session backend.  Disclos"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_widgets/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:54:04.692887+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-13236",
+ "repo": "astropy/astropy",
+ "issue": 13236,
+ "base_commit": "6ed769d58d89380ebaa1ef52b300691eefda8928",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-09T14:16:30Z",
+ "c1b_jaccard": 0.2297,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "034625e982",
+   "date": "2022-05-11",
+   "msg": "Merge pull request #13236 from taldcroft/table-structured-ar"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/table/tests/test_mixin.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:30:50.744002+00:00"
+}

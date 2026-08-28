@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-7205",
+ "repo": "pytest-dev/pytest",
+ "issue": 7205,
+ "base_commit": "5e7f1ab4bf58e473e5d7f878eb2b499d7deabd29",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-09T11:25:58Z",
+ "c1b_jaccard": 0.1019,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "2ac28f6c65",
+   "date": "2020-05-14",
+   "msg": "Merge pull request #7205 from lancelote/7126\n\nIssue 7126 - \""
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/test_setuponly.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:15:17.091749+00:00"
+}

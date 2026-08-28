@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14608",
+ "repo": "django/django",
+ "issue": 14608,
+ "base_commit": "7f33c1e22dbc34a7afae7967783725b10f1f13b1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-07-07T19:51:30Z",
+ "c1b_jaccard": 0.3906,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c29e45491e",
+   "date": "2011-07-03",
+   "msg": "Fixed #14608 -- Added phone number field to Indian local fla"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_views/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:49:48.674919+00:00"
+}

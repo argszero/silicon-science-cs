@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25102",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 25102,
+ "base_commit": "f9a1cf072da9d7375d6c2163f68a6038b13b310f",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-12-02T20:03:37Z",
+ "c1b_jaccard": 0.1484,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "677a4cfef6",
+   "date": "2023-02-19",
+   "msg": "ENH Preserve DataFrame dtypes in transform for feature selec"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/feature_selection/tests/test_base.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:36:32.280074+00:00"
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "astropy__astropy-13453",
+ "repo": "astropy/astropy",
+ "issue": 13453,
+ "base_commit": "19cc80471739bcb67b7e8099246b391c355023ee",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-07-14T10:04:40Z",
+ "c1b_jaccard": 0.3486,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d5002202ec",
+   "date": "2022-07-14",
+   "msg": "Add changelog for #13453"
+  },
+  {
+   "sha": "fe3486171d",
+   "date": "2022-07-14",
+   "msg": "Merge pull request #13453 from mattpitkin/fix_html_table_wri"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/io/ascii/tests/test_html.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:31:02.588906+00:00"
+}

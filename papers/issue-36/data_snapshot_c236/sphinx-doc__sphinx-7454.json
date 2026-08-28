@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-7454",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 7454,
+ "base_commit": "aca3f825f2e4a8817190f3c885a242a285aa0dba",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-09T17:08:30Z",
+ "c1b_jaccard": 0.0485,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ebf2571380",
+   "date": "2020-04-10",
+   "msg": "Merge pull request #7454 from tk0miya/7445_rtype_annotation_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_domain_py.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:38.788539+00:00"
+}

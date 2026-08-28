@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-24637",
+ "repo": "matplotlib/matplotlib",
+ "issue": 24637,
+ "base_commit": "a9ba9d5d3fe9d5ac15fbdb06127f97d381148dd0",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-12-06T03:42:05Z",
+ "c1b_jaccard": 0.1571,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "937e745a18",
+   "date": "2022-12-22",
+   "msg": "Pass AnnotationBbox gid to renderer (#24637)\n\n* Fixes #20044"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_backend_svg.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:06:17.735129+00:00"
+}

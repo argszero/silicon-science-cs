@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-10449",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 10449,
+ "base_commit": "36367765fe780f962bba861bf368a765380bbc68",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-14T14:02:26Z",
+ "c1b_jaccard": 0.0269,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d7eb5c1d8b",
+   "date": "2022-05-15",
+   "msg": "Merge pull request #10449 from tk0miya/9575_suppress_return_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_ext_autodoc_configs.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:06.381420+00:00"
+}

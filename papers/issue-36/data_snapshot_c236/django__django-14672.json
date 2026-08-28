@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14672",
+ "repo": "django/django",
+ "issue": 14672,
+ "base_commit": "00ea883ef56fb5e092cbe4a6f7ff2e7470886ac4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-07-20T10:47:34Z",
+ "c1b_jaccard": 0.0686,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "0cf1c96d06",
+   "date": "2010-11-21",
+   "msg": "Removed some deprecated code that survived [14138].\n\ngit-svn"
+  },
+  {
+   "sha": "93a4d46184",
+   "date": "2011-01-20",
+   "msg": "Fixed #14672 - Added admin handling for on_delete=PROTECT. T"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/invalid_models_tests/test_models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:50:05.725585+00:00"
+}

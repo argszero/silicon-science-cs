@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-14710",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 14710,
+ "base_commit": "4b6273b87442a4437d8b3873ea3022ae163f4fdf",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-08-21T16:29:47Z",
+ "c1b_jaccard": 0.0205,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "947dffcc9c",
+   "date": "2019-08-22",
+   "msg": "FIX encode target for scoring when using early stopping in H"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/ensemble/_hist_gradient_boosting/tests/test_gradient_boosting.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:36:15.655939+00:00"
+}

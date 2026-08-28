@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14155",
+ "repo": "django/django",
+ "issue": 14155,
+ "base_commit": "2f13c476abe4ba787b6cb71131818341911f43cc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-03-19T15:44:25Z",
+ "c1b_jaccard": 0.5513,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "10de06b6d4",
+   "date": "2010-08-23",
+   "msg": "Fixed #14155 -- Refactored another doctest suite and call to"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/urlpatterns_reverse/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:47:07.774987+00:00"
+}

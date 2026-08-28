@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-15561",
+ "repo": "django/django",
+ "issue": 15561,
+ "base_commit": "6991880109e35c879b71b7d9d9c154baeec12b89",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-01T18:29:04Z",
+ "c1b_jaccard": 0.1299,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f81d5d6854",
+   "date": "2011-02-17",
+   "msg": "Fixed #15233 -- Corrected a duplicate module directive that "
+  },
+  {
+   "sha": "a3a53e0b73",
+   "date": "2011-05-18",
+   "msg": "Fixed #15561 -- Extended test setting override code added in"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/schema/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:55:05.421942+00:00"
+}

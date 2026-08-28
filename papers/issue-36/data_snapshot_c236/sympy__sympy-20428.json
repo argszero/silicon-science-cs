@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-20428",
+ "repo": "sympy/sympy",
+ "issue": 20428,
+ "base_commit": "c0e85160406f9bf2bcaa2992138587668a1cd0bc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-11-14T05:56:31Z",
+ "c1b_jaccard": 0.1542,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "cb21c7719c",
+   "date": "2020-11-17",
+   "msg": "Merge pull request #20428 from ehren/constant-poly-invalid-r"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/polys/tests/test_polytools.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:31:54.567167+00:00"
+}

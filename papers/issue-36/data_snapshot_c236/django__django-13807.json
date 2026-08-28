@@ -1,0 +1,15 @@
+{
+ "instance_id": "django__django-13807",
+ "repo": "django/django",
+ "issue": 13807,
+ "base_commit": "89fc144dedc737a79929231438f035b1d4a993c9",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-12-23T21:09:32Z",
+ "c1b_jaccard": 0.2273,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "tests/backends/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:25.985217+00:00"
+}

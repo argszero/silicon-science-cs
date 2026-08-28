@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-10435",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 10435,
+ "base_commit": "f1061c012e214f16fd8790dec3c283d787e3daa8",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-08T09:37:06Z",
+ "c1b_jaccard": 0.1262,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "4b28bdd83b",
+   "date": "2022-05-08",
+   "msg": "Merge pull request #10435 from jfbu/10434_latex_inlinecode\n\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_build_latex.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:02.818747+00:00"
+}

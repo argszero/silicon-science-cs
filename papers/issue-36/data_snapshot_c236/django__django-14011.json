@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14011",
+ "repo": "django/django",
+ "issue": 14011,
+ "base_commit": "e4430f22c8e3d29ce5d9d0263fba57121938d06d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-02-15T06:15:21Z",
+ "c1b_jaccard": 0.0595,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "4d4d68a2cd",
+   "date": "2010-10-08",
+   "msg": "Fixed #14225 -- Added a documentation marker (and a 1.2.2 re"
+  },
+  {
+   "sha": "3234c7a123",
+   "date": "2010-10-09",
+   "msg": "Fixed #14011 -- Doing a subquery with __in and an EmptyQuery"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "django/test/testcases.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:46:24.007583+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15957",
+ "repo": "django/django",
+ "issue": 15957,
+ "base_commit": "f387d024fc75569d2a4a338bfda76cc2f328f627",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-08-13T06:18:25Z",
+ "c1b_jaccard": 0.045,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "4a6cb38722",
+   "date": "2011-03-30",
+   "msg": "Cleaned up some test code.\n\ngit-svn-id: http://code.djangopr"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/prefetch_related/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:57:17.656400+00:00"
+}

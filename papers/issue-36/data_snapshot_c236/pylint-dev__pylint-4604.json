@@ -1,0 +1,21 @@
+{
+ "instance_id": "pylint-dev__pylint-4604",
+ "repo": "pylint-dev/pylint",
+ "issue": 4604,
+ "base_commit": "1e55ae64624d28c5fe8b63ad7979880ee2e6ef3f",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-06-22T10:44:14Z",
+ "c1b_jaccard": 0.127,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3d6389b97e",
+   "date": "2021-06-27",
+   "msg": "VariableChecker now accounts for attribute lookups in type c"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/checkers/unittest_variables.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:13:34.416862+00:00"
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "pylint-dev__pylint-8898",
+ "repo": "pylint-dev/pylint",
+ "issue": 8898,
+ "base_commit": "1f8c4d9eb185c16a2c1d881c054f015e1c2eb334",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-07-29T21:53:59Z",
+ "c1b_jaccard": 0.0133,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d28def9f9e",
+   "date": "2023-07-30",
+   "msg": "Ignore quantifiers when splitting comma-separated regexes (#"
+  },
+  {
+   "sha": "c72a149ea4",
+   "date": "2023-07-30",
+   "msg": "Ignore quantifiers when splitting comma-separated regexes (#"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/config/test_config.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:14:21.536683+00:00"
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14315",
+ "repo": "django/django",
+ "issue": 14315,
+ "base_commit": "187118203197801c6cb72dc8b06b714b23b6dd3d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-04-26T12:39:01Z",
+ "c1b_jaccard": 0.4844,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "051bf1cf12",
+   "date": "2010-10-21",
+   "msg": "Fixed 14513 -- check fields with underscores for validity wh"
+  },
+  {
+   "sha": "79dd751b0b",
+   "date": "2012-11-06",
+   "msg": "Fixed #14315 -- Made memcached backend handle negative incr/"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/backends/base/test_client.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:47:31.116909+00:00"
+}

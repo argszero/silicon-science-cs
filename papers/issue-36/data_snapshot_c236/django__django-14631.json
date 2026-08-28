@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14631",
+ "repo": "django/django",
+ "issue": 14631,
+ "base_commit": "84400d2e9db7c51fee4e9bb04c028f665b8e7624",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-07-13T09:16:48Z",
+ "c1b_jaccard": 0.0726,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f609306349",
+   "date": "2010-11-19",
+   "msg": "Removed compatibility with Sphinx < 1.0 workarounds in our e"
+  },
+  {
+   "sha": "ec7c49f253",
+   "date": "2010-11-20",
+   "msg": "Fixed hyperlinking of template tags for Sphinx >= 1.0\n\nFollo"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/forms_tests/tests/test_forms.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:49:54.124654+00:00"
+}

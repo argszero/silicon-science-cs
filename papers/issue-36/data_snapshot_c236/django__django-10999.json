@@ -1,0 +1,15 @@
+{
+ "instance_id": "django__django-10999",
+ "repo": "django/django",
+ "issue": 10999,
+ "base_commit": "36300ef336e3f130a0dadc1143163ff3d23dc843",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-02-16T07:44:50Z",
+ "c1b_jaccard": 0.1333,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "tests/utils_tests/test_dateparse.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:33:40.782827+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-20916",
+ "repo": "sympy/sympy",
+ "issue": 20916,
+ "base_commit": "82298df6a51491bfaad0c6d1980e7e3ca808ae93",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-02-06T05:44:34Z",
+ "c1b_jaccard": 0.0545,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "748ce73479",
+   "date": "2021-03-07",
+   "msg": "Merge pull request #20916 from costika1234/fix_conventions_r"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/printing/tests/test_conventions.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:32:12.604947+00:00"
+}

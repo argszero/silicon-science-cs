@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13212",
+ "repo": "django/django",
+ "issue": 13212,
+ "base_commit": "f4e93919e4608cfc50849a1f764fd856e0917401",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-07-21T02:53:58Z",
+ "c1b_jaccard": 0.1481,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b832e61308",
+   "date": "2010-05-10",
+   "msg": "Fixed #12621 -- Corrected grammar error in custom template t"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/forms_tests/tests/test_validators.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:42:46.046366+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-12682",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 12682,
+ "base_commit": "d360ffa7c5896a91ae498b3fb9cf464464ce8f34",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-11-27T08:30:51Z",
+ "c1b_jaccard": 0.1143,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "7b8cbc875b",
+   "date": "2019-07-08",
+   "msg": "ENH add a `transform_max_iter` to `SparseCoder`, `Dictionary"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/decomposition/tests/test_dict_learning.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:34:54.772020+00:00"
+}

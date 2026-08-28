@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13757",
+ "repo": "sympy/sympy",
+ "issue": 13757,
+ "base_commit": "a5e6a101869e027e7930e694f8b1cfb082603453",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-12-17T11:08:44Z",
+ "c1b_jaccard": 0.1325,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "756aa4fce8",
+   "date": "2018-04-16",
+   "msg": "Merge pull request #13757 from NikhilPappu/13079_poly_mul\n\nA"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/core/tests/test_match.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:25:06.528486+00:00"
+}

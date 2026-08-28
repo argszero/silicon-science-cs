@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-13398",
+ "repo": "astropy/astropy",
+ "issue": 13398,
+ "base_commit": "6500928dc0e57be8f06d1162eacc3ba5e2eff692",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-06-24T15:22:11Z",
+ "c1b_jaccard": 0.2119,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1efaab7bb3",
+   "date": "2022-07-27",
+   "msg": "Merge pull request #13398 from mkbrewer/issue-13355-topo-itr"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/coordinates/tests/test_intermediate_transformations.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:30:58.698465+00:00"
+}

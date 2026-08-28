@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-3993",
+ "repo": "pydata/xarray",
+ "issue": 3993,
+ "base_commit": "8cc34cb412ba89ebca12fc84f76a9e452628f1bc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-21T20:30:35Z",
+ "c1b_jaccard": 0.0804,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f4b95cd28f",
+   "date": "2021-01-29",
+   "msg": "dim -> coord in DataArray.integrate (#3993)\n\n* changed arg a"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_dataset.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:10:46.156022+00:00"
+}

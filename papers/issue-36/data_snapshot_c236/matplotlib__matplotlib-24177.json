@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-24177",
+ "repo": "matplotlib/matplotlib",
+ "issue": 24177,
+ "base_commit": "493d608e39d32a67173c23a7bbc47d6bfedcef61",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-10-15T10:52:31Z",
+ "c1b_jaccard": 0.1151,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "8be23b6c0b",
+   "date": "2022-10-15",
+   "msg": "Merge pull request #24177 from QuLogic/small-autoscale\n\nDon'"
+  },
+  {
+   "sha": "9696aebb9d",
+   "date": "2022-10-15",
+   "msg": "Backport PR #24177: Don't simplify paths used for autoscalin"
+  },
+  {
+   "sha": "488102091d",
+   "date": "2022-10-17",
+   "msg": "Merge pull request #24181 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_axes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:05:35.183816+00:00"
+}

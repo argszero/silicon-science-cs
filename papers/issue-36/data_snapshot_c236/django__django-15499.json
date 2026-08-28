@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15499",
+ "repo": "django/django",
+ "issue": 15499,
+ "base_commit": "d90e34c61b27fba2527834806639eebbcfab9631",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-03-10T22:32:35Z",
+ "c1b_jaccard": 0.0833,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6cd9023635",
+   "date": "2011-08-23",
+   "msg": "Fixed #15499 -- Ensure that cache control headers don't try "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_optimizer.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:54:15.422966+00:00"
+}

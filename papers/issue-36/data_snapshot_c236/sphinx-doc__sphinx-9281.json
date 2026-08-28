@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9281",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 9281,
+ "base_commit": "8ec06e9a1bd862cd713b9db748e039ccc7b3e15b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-05-29T17:16:30Z",
+ "c1b_jaccard": 0.0676,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "7dbe8ebf1b",
+   "date": "2021-05-30",
+   "msg": "Merge pull request #9281 from tk0miya/9272_enum_for_defargs\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_util_inspect.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:19:52.205790+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13512",
+ "repo": "django/django",
+ "issue": 13512,
+ "base_commit": "b79088306513d5ed76d31ac40ab3c15f858946ea",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-10-08T13:52:57Z",
+ "c1b_jaccard": 0.1194,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9767993a24",
+   "date": "2010-08-06",
+   "msg": "Fixed #13615 -- Clarified test assertion text to avoid confu"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_utils/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:44:05.927557+00:00"
+}

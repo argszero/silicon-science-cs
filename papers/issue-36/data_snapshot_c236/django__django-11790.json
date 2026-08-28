@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-11790",
+ "repo": "django/django",
+ "issue": 11790,
+ "base_commit": "b1d6b35e146aea83b171c1b921178bbaae2795ed",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-09-17T14:33:44Z",
+ "c1b_jaccard": 0.1667,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "78ad0a61a9",
+   "date": "2009-12-03",
+   "msg": "Expanded on the SMTPConnection deprecation notes, and made t"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/auth_tests/test_forms.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:37:42.491696+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "matplotlib__matplotlib-20676",
+ "repo": "matplotlib/matplotlib",
+ "issue": 20676,
+ "base_commit": "6786f437df54ca7780a047203cbcfaa1db8dc542",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-07-19T10:10:07Z",
+ "c1b_jaccard": 0.1238,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "2bc1243ffd",
+   "date": "2021-07-19",
+   "msg": "Merge pull request #20676 from ericpre/fix_bound_span_select"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_widgets.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:03:07.012144+00:00"
+}

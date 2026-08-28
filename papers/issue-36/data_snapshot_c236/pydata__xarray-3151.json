@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-3151",
+ "repo": "pydata/xarray",
+ "issue": 3151,
+ "base_commit": "118f4d996e7711c9aced916e6049af9f28d5ec66",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-07-20T12:31:14Z",
+ "c1b_jaccard": 0.041,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e5205347a5",
+   "date": "2019-07-31",
+   "msg": "Hotfix for case of combining identical non-monotonic coords "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_combine.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:10:17.246350+00:00"
+}

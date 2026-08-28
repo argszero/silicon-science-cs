@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13821",
+ "repo": "django/django",
+ "issue": 13821,
+ "base_commit": "e64c1d8055a3e476122633da141f16b50f0c4a2d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-12-29T15:16:10Z",
+ "c1b_jaccard": 0.0704,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "398415fc23",
+   "date": "2010-07-30",
+   "msg": "Fixed #13821 -- Added a double-quoting to the PostgreSQL seq"
+  },
+  {
+   "sha": "3d99526fc2",
+   "date": "2010-09-13",
+   "msg": "Fix a couple of typos in test names and descriptions.\n\ngit-s"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/backends/sqlite/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:46.016328+00:00"
+}

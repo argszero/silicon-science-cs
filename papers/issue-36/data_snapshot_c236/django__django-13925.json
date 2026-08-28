@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13925",
+ "repo": "django/django",
+ "issue": 13925,
+ "base_commit": "0c42cdf0d2422f4c080e93594d5d15381d6e955e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-01-21T08:08:55Z",
+ "c1b_jaccard": 0.1083,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "30228b6459",
+   "date": "2010-09-28",
+   "msg": "Migrated select_related_regress doctests. Thanks to Stephan "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/check_framework/test_model_checks.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:46:00.270523+00:00"
+}

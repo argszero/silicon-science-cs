@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13809",
+ "repo": "django/django",
+ "issue": 13809,
+ "base_commit": "bef6f7584280f1cc80e5e2d80b7ad073a93d26ec",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-12-24T15:31:35Z",
+ "c1b_jaccard": 0.127,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "2d4da641a6",
+   "date": "2010-09-12",
+   "msg": "Allow setting HttpResponse cookie expiry times with datetime"
+  },
+  {
+   "sha": "ac1975b18b",
+   "date": "2016-08-09",
+   "msg": "Fixed #13809 -- Made FieldFile.open() respect its mode argum"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_scripts/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:33.744868+00:00"
+}

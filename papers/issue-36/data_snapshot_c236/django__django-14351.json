@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14351",
+ "repo": "django/django",
+ "issue": 14351,
+ "base_commit": "06fd4df41afb5aa1d681b853c3c08d8c688ca3a5",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-05-05T03:50:44Z",
+ "c1b_jaccard": 0.059,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1637fefcb0",
+   "date": "2010-09-28",
+   "msg": "Fixed #14351 -- Modified the requests test case to avoid an "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/aggregation_regress/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:47:41.748843+00:00"
+}

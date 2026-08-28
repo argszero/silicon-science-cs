@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-15375",
+ "repo": "django/django",
+ "issue": 15375,
+ "base_commit": "beb7ddbcee03270e833b2f74927ccfc8027aa693",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-01-28T14:48:03Z",
+ "c1b_jaccard": 0.0638,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "6361a242af",
+   "date": "2011-01-30",
+   "msg": "Fixed typo in staticfiles documentation introduced in [15369"
+  },
+  {
+   "sha": "6ce03dd888",
+   "date": "2011-02-23",
+   "msg": "Fixed #15375 -- clarified apparent contradiction in Form Wiz"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/aggregation/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:53:24.940290+00:00"
+}

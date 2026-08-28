@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-13977",
+ "repo": "astropy/astropy",
+ "issue": 13977,
+ "base_commit": "5250b2442501e6c671c6b380536f1edb352602d1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-11-01T22:24:58Z",
+ "c1b_jaccard": 0.148,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "d083189bbc",
+   "date": "2022-12-14",
+   "msg": "Merge pull request #13977 from byrdie/bug/quantity-ufunc-not"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/units/tests/test_quantity.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:31:26.722547+00:00"
+}

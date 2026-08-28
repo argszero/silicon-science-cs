@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13551",
+ "repo": "sympy/sympy",
+ "issue": 13551,
+ "base_commit": "9476425b9e34363c2d9ac38e9f04aa75ae54a775",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-10-29T20:51:01Z",
+ "c1b_jaccard": 0.0704,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "0dee6b800f",
+   "date": "2017-10-31",
+   "msg": "Merge pull request #13551 from ethankward/summation_is_add_f"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/concrete/tests/test_products.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:24:52.410357+00:00"
+}

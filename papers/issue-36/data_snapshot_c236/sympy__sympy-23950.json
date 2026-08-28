@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-23950",
+ "repo": "sympy/sympy",
+ "issue": 23950,
+ "base_commit": "88664e6e0b781d0a8b5347896af74b555e92891e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-08-20T18:21:10Z",
+ "c1b_jaccard": 0.0792,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ac2328a092",
+   "date": "2022-10-24",
+   "msg": "Merge pull request #23950 from NotWearingPants/patch-2\n\nfeat"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/sets/tests/test_contains.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:23.734012+00:00"
+}

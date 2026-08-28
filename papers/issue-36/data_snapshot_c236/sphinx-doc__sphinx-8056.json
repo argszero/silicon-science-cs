@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8056",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 8056,
+ "base_commit": "e188d56ed1248dead58f3f8018c0e9a3f99193f7",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-08-05T17:18:58Z",
+ "c1b_jaccard": 0.0743,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5aa774b97a",
+   "date": "2020-08-07",
+   "msg": "Merge pull request #8056 from tk0miya/7780_multi_params_in_n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_ext_napoleon_docstring.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:18:21.112260+00:00"
+}

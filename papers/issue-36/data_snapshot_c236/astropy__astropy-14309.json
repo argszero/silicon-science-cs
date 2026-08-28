@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astropy-14309",
+ "repo": "astropy/astropy",
+ "issue": 14309,
+ "base_commit": "cdb66059a2feb44ee49021874605ba90801f9986",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-01-23T22:34:01Z",
+ "c1b_jaccard": 0.2283,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "1aed4548ec",
+   "date": "2023-01-24",
+   "msg": "Merge pull request #14309 from pllim/fits-connect-broken\n\nBU"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "astropy/io/fits/tests/test_connect.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:31:43.167169+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-11445",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 11445,
+ "base_commit": "71db08c05197545944949d5aa76cd340e7143627",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-05-28T19:15:07Z",
+ "c1b_jaccard": 0.1084,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "12e7cff0b6",
+   "date": "2023-07-23",
+   "msg": "Allow using ``rst_prolog`` with a role in a document title ("
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_util_rst.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:17:23.976511+00:00"
+}

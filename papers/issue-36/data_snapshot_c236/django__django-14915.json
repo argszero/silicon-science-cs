@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14915",
+ "repo": "django/django",
+ "issue": 14915,
+ "base_commit": "903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-09-29T22:00:15Z",
+ "c1b_jaccard": 0.0375,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f7f7587958",
+   "date": "2010-12-14",
+   "msg": "Polish translation update\n\n\ngit-svn-id: http://code.djangopr"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/model_forms/test_modelchoicefield.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:51:03.086572+00:00"
+}

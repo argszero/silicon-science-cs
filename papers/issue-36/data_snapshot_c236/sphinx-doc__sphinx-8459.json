@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8459",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 8459,
+ "base_commit": "68aa4fb29e7dfe521749e1e14f750d7afabb3481",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-11-20T16:44:10Z",
+ "c1b_jaccard": 0.0667,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ad804647b5",
+   "date": "2020-11-22",
+   "msg": "Merge pull request #8459 from tk0miya/8452_autodoc_type_alia"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_ext_autodoc_configs.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:18:37.767790+00:00"
+}

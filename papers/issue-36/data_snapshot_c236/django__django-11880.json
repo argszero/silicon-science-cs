@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-11880",
+ "repo": "django/django",
+ "issue": 11880,
+ "base_commit": "06909fe084f87a65459a83bd69d7cdbe4fce9a7c",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-10-07T19:10:59Z",
+ "c1b_jaccard": 0.0882,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c90b15e1d6",
+   "date": "2009-12-16",
+   "msg": "Polish translation updated (still missing some GIS-related t"
+  },
+  {
+   "sha": "692f84c4f1",
+   "date": "2010-01-10",
+   "msg": "Fixed #11880 -- Changed admin URLconfs in docs to use raw st"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/forms_tests/tests/test_forms.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:38:15.864267+00:00"
+}

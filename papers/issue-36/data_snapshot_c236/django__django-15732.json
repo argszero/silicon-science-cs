@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15732",
+ "repo": "django/django",
+ "issue": 15732,
+ "base_commit": "ce69e34bd646558bb44ea92cecfd98b345a0b3e0",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-24T12:58:31Z",
+ "c1b_jaccard": 0.18,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "803a454aef",
+   "date": "2011-05-20",
+   "msg": "Fixes #15732 -- better introduction of template filter decor"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_operations.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:56:15.013264+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "psf__requests-6028",
+ "repo": "psf/requests",
+ "issue": 6028,
+ "base_commit": "0192aac24123735b3eaf9b08df46429bb770c283",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-01-04T15:32:52Z",
+ "c1b_jaccard": 0.063,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "8fa9724398",
+   "date": "2022-01-04",
+   "msg": "Merge pull request #6028 from nateprewitt/prox_auth_fix\n\nFix"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_utils.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:09:57.636750+00:00"
+}

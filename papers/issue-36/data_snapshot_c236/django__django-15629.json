@@ -1,0 +1,15 @@
+{
+ "instance_id": "django__django-15629",
+ "repo": "django/django",
+ "issue": 15629,
+ "base_commit": "694cf458f16b8d340a3195244196980b2dec34fd",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-23T21:58:24Z",
+ "c1b_jaccard": 0.0084,
+ "c1b_hit": false,
+ "c3_fix_commits": [],
+ "c3_hit": false,
+ "c2_test_file": "tests/migrations/test_base.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:55:25.754285+00:00"
+}

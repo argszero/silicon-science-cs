@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-5631",
+ "repo": "pytest-dev/pytest",
+ "issue": 5631,
+ "base_commit": "cb828ebe70b4fa35cd5f9a7ee024272237eab351",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-07-19T20:13:12Z",
+ "c1b_jaccard": 0.0312,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ec4ca59bf0",
+   "date": "2019-07-23",
+   "msg": "Merge pull request #5631 from RonnyPfannschmidt/fix-5606\n\n u"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/python/integration.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:14:49.320746+00:00"
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-11555",
+ "repo": "django/django",
+ "issue": 11555,
+ "base_commit": "8dd5877f58f84f2b11126afbd0813e24545919ed",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-07-10T18:07:07Z",
+ "c1b_jaccard": 0.0991,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "bda21e2b9d",
+   "date": "2011-11-27",
+   "msg": "Fixed #11555 -- Made SessionBase.session_key read-only. Clea"
+  },
+  {
+   "sha": "5116c51b40",
+   "date": "2012-04-15",
+   "msg": "Clarified that Django randomizes session keys. Refs #11555, "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/ordering/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:37:01.222406+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-14053",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 14053,
+ "base_commit": "6ab8c86c383dd847a1be7103ad115f174fe23ffd",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-06-09T15:36:55Z",
+ "c1b_jaccard": 0.1246,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "e2b6bff0ac",
+   "date": "2019-06-18",
+   "msg": "BUG Fixes export_text with single feature (#14053)"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/tree/tests/test_export.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:35:48.713697+00:00"
+}

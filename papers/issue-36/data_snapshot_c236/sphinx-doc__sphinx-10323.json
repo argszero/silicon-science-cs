@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-10323",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 10323,
+ "base_commit": "31eba1a76dd485dc633cae48227b46879eda5df4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-04-02T14:42:24Z",
+ "c1b_jaccard": 0.0575,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "7bdc11e87c",
+   "date": "2022-04-03",
+   "msg": "Merge pull request #10323 from tk0miya/10318_literalinclude_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/test_directive_code.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:16:58.367043+00:00"
+}

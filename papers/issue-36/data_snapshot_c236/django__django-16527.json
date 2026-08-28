@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-16527",
+ "repo": "django/django",
+ "issue": 16527,
+ "base_commit": "bd366ca2aeffa869b7dbc0b0aa01caea75e6dc31",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-02-05T22:05:00Z",
+ "c1b_jaccard": 0.1449,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "823a231500",
+   "date": "2011-07-08",
+   "msg": "Fixed typos in admin_views tests XML fixtures.\n\ngit-svn-id: "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_views/test_templatetags.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:00:01.034861+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-5787",
+ "repo": "pytest-dev/pytest",
+ "issue": 5787,
+ "base_commit": "955e54221008aba577ecbaefa15679f6777d3bf8",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-08-26T16:43:31Z",
+ "c1b_jaccard": 0.0705,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "01082fea12",
+   "date": "2019-08-30",
+   "msg": "Serialize/deserialize chained exceptions (#5787)\n\nSerialize/"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "testing/code/test_code.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:14:55.049518+00:00"
+}

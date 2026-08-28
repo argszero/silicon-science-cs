@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-10973",
+ "repo": "django/django",
+ "issue": 10973,
+ "base_commit": "ddb293685235fd09e932805771ae97f72e817181",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-02-11T01:19:56Z",
+ "c1b_jaccard": 0.0769,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "8765615b9b",
+   "date": "2009-06-10",
+   "msg": "Fixed #10801 -- Reverted a portion of [10371]. Practicality "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/dbshell/test_postgresql.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:33:35.362722+00:00"
+}

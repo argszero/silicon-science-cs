@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-6744",
+ "repo": "pydata/xarray",
+ "issue": 6744,
+ "base_commit": "7cc6cc991e586a6158bb656b8001234ccda25407",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-07-02T16:36:00Z",
+ "c1b_jaccard": 0.1214,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f28d7f821e",
+   "date": "2022-07-14",
+   "msg": "Fix `DataArrayRolling.__iter__` with `center=True` (#6744)\n\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_rolling.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:12:33.502410+00:00"
+}

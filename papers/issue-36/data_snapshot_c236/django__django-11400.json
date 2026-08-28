@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-11400",
+ "repo": "django/django",
+ "issue": 11400,
+ "base_commit": "1f8382d34d54061eddc41df6994e20ee38c60907",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-05-22T11:30:39Z",
+ "c1b_jaccard": 0.2319,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "71c491972e",
+   "date": "2013-08-14",
+   "msg": "Fixed #11400 -- Passed kwargs from AbstractUser.email_user()"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_filters/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:36:09.900001+00:00"
+}

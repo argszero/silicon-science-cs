@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-12308",
+ "repo": "django/django",
+ "issue": 12308,
+ "base_commit": "2e0f04507b17362239ba49830d26fec504d46978",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-01-12T04:21:15Z",
+ "c1b_jaccard": 0.069,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "65b6080da2",
+   "date": "2010-01-27",
+   "msg": "Fixed #12703 -- Corrected a test suite failure in the admin_"
+  },
+  {
+   "sha": "246580573d",
+   "date": "2011-10-14",
+   "msg": "Fixed #12308 -- Added tablespace support to the PostgreSQL b"
+  },
+  {
+   "sha": "a8e1d134a5",
+   "date": "2011-10-15",
+   "msg": "Fixed a test failure introduced at r16987. Refs #12308.\n\n\n\ng"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_utils/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:40:05.093866+00:00"
+}

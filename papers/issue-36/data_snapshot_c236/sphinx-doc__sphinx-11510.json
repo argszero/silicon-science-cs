@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-11510",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 11510,
+ "base_commit": "6cb783c0024a873722952a67ebb9f41771c8eb6d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-07-24T22:46:12Z",
+ "c1b_jaccard": 0.0792,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "0bad447070",
+   "date": "2023-08-14",
+   "msg": "Emit \"source-read\" events for files read via the ``include``"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-directive-include/baz/baz.rst",
+ "c2_present_at_base": false,
+ "fetched_at": "2026-08-28T09:17:27.354165+00:00"
+}

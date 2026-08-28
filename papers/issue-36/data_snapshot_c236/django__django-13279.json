@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-13279",
+ "repo": "django/django",
+ "issue": 13279,
+ "base_commit": "6e9c5ee88fc948e05b4a7d9f82a8861ed2b0343d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-08-07T05:15:16Z",
+ "c1b_jaccard": 0.1481,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f8af1afbea",
+   "date": "2010-05-17",
+   "msg": "Flip PyPI classifier from beta to stable.\n\ngit-svn-id: http:"
+  },
+  {
+   "sha": "8e78a309c6",
+   "date": "2010-10-09",
+   "msg": "Fixed #13279 -- Made the paths in the Unix install docs more"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/sessions_tests/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:42:51.847525+00:00"
+}

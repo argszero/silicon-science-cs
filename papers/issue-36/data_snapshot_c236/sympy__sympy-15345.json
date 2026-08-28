@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-15345",
+ "repo": "sympy/sympy",
+ "issue": 15345,
+ "base_commit": "9ef28fba5b4d6d0168237c9c005a550e6dc27d81",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2018-10-05T06:00:31Z",
+ "c1b_jaccard": 0.0734,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "779aff1db4",
+   "date": "2018-10-19",
+   "msg": "Merge pull request #15345 from ajdunlap/minmax_mathematica\n\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/printing/tests/test_mathematica.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:26:00.554489+00:00"
+}

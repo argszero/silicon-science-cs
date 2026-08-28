@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13786",
+ "repo": "django/django",
+ "issue": 13786,
+ "base_commit": "bb64b99b78a579cb2f6178011a4cf9366e634438",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-12-17T21:10:10Z",
+ "c1b_jaccard": 0.0488,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5874b11e4d",
+   "date": "2010-09-12",
+   "msg": "Migrate m2m_and_m2o doctests. Thanks to Alex Gaynor.\n\ngit-sv"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_optimizer.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:45:17.624863+00:00"
+}

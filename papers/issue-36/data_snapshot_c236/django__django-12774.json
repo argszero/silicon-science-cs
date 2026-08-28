@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-12774",
+ "repo": "django/django",
+ "issue": 12774,
+ "base_commit": "67f9d076cfc1858b94f9ed6d1a5ce2327dcc8d0d",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-04-22T11:02:30Z",
+ "c1b_jaccard": 0.0818,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "c10b227b69",
+   "date": "2010-03-13",
+   "msg": "Fixed #13107: Adjusted decimal_places validation to accept 0"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/lookup/models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:15.012432+00:00"
+}

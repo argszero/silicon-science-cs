@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-14087",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 14087,
+ "base_commit": "a5743ed36fbd3fbc8e351bdab16561fbfca7dfa1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-06-13T20:09:22Z",
+ "c1b_jaccard": 0.0656,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "36b688eb04",
+   "date": "2019-06-14",
+   "msg": "[MRG] fix refit=False error in LogisticRegressionCV (#14087)"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/linear_model/tests/test_logistic.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:35:57.015395+00:00"
+}

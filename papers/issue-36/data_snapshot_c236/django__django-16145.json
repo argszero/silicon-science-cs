@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-16145",
+ "repo": "django/django",
+ "issue": 16145,
+ "base_commit": "93d4c9ea1de24eb391cb2b3561b6703fd46374df",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-10-03T05:09:14Z",
+ "c1b_jaccard": 0.1094,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "48cffd9e45",
+   "date": "2011-05-03",
+   "msg": "Fixed #5931 -- Added __repr__ to db fields. Thanks, Thomas G"
+  },
+  {
+   "sha": "773e1717c0",
+   "date": "2011-06-04",
+   "msg": "Fixed #16145 - typo in manager docs; thanks leereilly.\n\ngit-"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_scripts/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:58:31.791468+00:00"
+}

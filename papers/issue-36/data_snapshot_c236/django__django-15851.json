@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-15851",
+ "repo": "django/django",
+ "issue": 15851,
+ "base_commit": "b4817d20b9e55df30be0b1b2ca8c8bb6d61aab07",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-07-18T01:36:33Z",
+ "c1b_jaccard": 0.2022,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ad55bb0f87",
+   "date": "2011-03-16",
+   "msg": "Changed django/db/utils.py load_backend() to call sorted() i"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/dbshell/test_postgresql.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:56:41.025113+00:00"
+}

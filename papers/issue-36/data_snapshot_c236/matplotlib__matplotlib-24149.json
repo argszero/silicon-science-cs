@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-24149",
+ "repo": "matplotlib/matplotlib",
+ "issue": 24149,
+ "base_commit": "af39f1edffcd828f05cfdd04f2e59506bb4a27bc",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-10-12T22:00:55Z",
+ "c1b_jaccard": 0.0669,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "f0cd8dee23",
+   "date": "2022-10-13",
+   "msg": "Merge pull request #24149 from tacaswell/fix_all_nonfinite_b"
+  },
+  {
+   "sha": "e6dd37b15d",
+   "date": "2022-10-13",
+   "msg": "Backport PR #24149: FIX: handle input to ax.bar that is all "
+  },
+  {
+   "sha": "c519536045",
+   "date": "2022-10-13",
+   "msg": "Merge pull request #24151 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_axes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:05:01.805572+00:00"
+}

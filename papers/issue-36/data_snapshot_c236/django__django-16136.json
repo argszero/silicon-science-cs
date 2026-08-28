@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-16136",
+ "repo": "django/django",
+ "issue": 16136,
+ "base_commit": "19e6efa50b603af325e7f62058364f278596758f",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-09-29T11:47:50Z",
+ "c1b_jaccard": 0.0417,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "980455969e",
+   "date": "2011-05-01",
+   "msg": "Removed leftover use of deprecated AdminSite.root in admindo"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/async/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:58:08.685654+00:00"
+}

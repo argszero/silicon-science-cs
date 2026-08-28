@@ -1,0 +1,21 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9229",
+ "repo": "sphinx-doc/sphinx",
+ "issue": 9229,
+ "base_commit": "876fa81e0a038cda466925b85ccf6c5452e0f685",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-05-15T07:21:49Z",
+ "c1b_jaccard": 0.0143,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "576d0b98a4",
+   "date": "2021-05-16",
+   "msg": "Merge pull request #9229 from tk0miya/9218_doccomment_for_al"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/roots/test-ext-autodoc/target/classes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:19:27.306906+00:00"
+}

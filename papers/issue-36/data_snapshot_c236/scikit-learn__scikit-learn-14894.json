@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-14894",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 14894,
+ "base_commit": "fdbaa58acbead5a254f2e6d597dc1ab3b947f4c6",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-09-05T17:41:11Z",
+ "c1b_jaccard": 0.1047,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a89462b59d",
+   "date": "2019-10-07",
+   "msg": "FIX ZeroDivisionError in BaseLibSVM._sparse_fit when n_SV =="
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/svm/tests/test_svm.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:36:20.723083+00:00"
+}

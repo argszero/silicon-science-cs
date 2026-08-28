@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-12489",
+ "repo": "sympy/sympy",
+ "issue": 12489,
+ "base_commit": "aa9780761ad8c3c0f68beeef3a0ce5caac9e100b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-04-04T08:12:37Z",
+ "c1b_jaccard": 0.2201,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "a0f997ad56",
+   "date": "2017-04-06",
+   "msg": "Merge pull request #12489 from FabianBall/12465_permutation_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/combinatorics/tests/test_permutations.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:24:25.296931+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-16792",
+ "repo": "sympy/sympy",
+ "issue": 16792,
+ "base_commit": "09786a173e7a0a488f46dd6000177c23e5d24eed",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-05-09T03:40:54Z",
+ "c1b_jaccard": 0.1461,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "3cb3e34f16",
+   "date": "2019-05-09",
+   "msg": "Merge pull request #16792 from spcornelius/fix_codegen_unuse"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/utilities/tests/test_codegen.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:26:50.578569+00:00"
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-3305",
+ "repo": "pydata/xarray",
+ "issue": 3305,
+ "base_commit": "69c7e01e5167a3137c285cb50d1978252bb8bcbf",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-09-12T19:27:14Z",
+ "c1b_jaccard": 0.0821,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b65ce86660",
+   "date": "2019-09-15",
+   "msg": "Honor `keep_attrs` in DataArray.quantile (#3305)\n\n* Added `k"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_dataarray.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:10:30.358856+00:00"
+}

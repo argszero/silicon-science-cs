@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-16662",
+ "repo": "django/django",
+ "issue": 16662,
+ "base_commit": "0eb3e9bd754e4c9fac8b616b705178727fc8031e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-18T18:07:18Z",
+ "c1b_jaccard": 0.51,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "43024142a1",
+   "date": "2011-08-23",
+   "msg": "Fixed #16202 -- Added a Slovenian localflavor. Thanks to Jur"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/migrations/test_writer.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:01:06.316367+00:00"
+}

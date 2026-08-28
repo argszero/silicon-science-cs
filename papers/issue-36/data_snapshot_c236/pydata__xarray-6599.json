@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-6599",
+ "repo": "pydata/xarray",
+ "issue": 6599,
+ "base_commit": "6bb2b855498b5c68d7cca8cceb710365d58e6048",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-05-12T15:12:41Z",
+ "c1b_jaccard": 0.0155,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "fc282d5979",
+   "date": "2022-05-12",
+   "msg": "re-add timedelta support for polyval (#6599)"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_computation.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:12:13.683790+00:00"
+}

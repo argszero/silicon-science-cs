@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-24443",
+ "repo": "sympy/sympy",
+ "issue": 24443,
+ "base_commit": "809c53c077485ca48a206cee78340389cb83b7f1",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2022-12-30T14:43:19Z",
+ "c1b_jaccard": 0.1296,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "56e47083ed",
+   "date": "2023-01-05",
+   "msg": "Merge pull request #24443 from skieffer/check-hom\n\nRepair `_"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/combinatorics/tests/test_homomorphisms.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:33:37.030812+00:00"
+}

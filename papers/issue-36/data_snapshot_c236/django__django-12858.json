@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-12858",
+ "repo": "django/django",
+ "issue": 12858,
+ "base_commit": "f2051eb8a7febdaaa43bd33bf5a6108c5f428e59",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-05-05T04:49:02Z",
+ "c1b_jaccard": 0.0779,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5beb5f7372",
+   "date": "2010-03-07",
+   "msg": "Fixed #12858. DateTime related widgets now handle custom for"
+  },
+  {
+   "sha": "8f3d6b9404",
+   "date": "2010-03-26",
+   "msg": "Removed out-of-date statement in markdown templatetags docst"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/invalid_models_tests/test_models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:41:18.993752+00:00"
+}

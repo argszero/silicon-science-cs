@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13158",
+ "repo": "django/django",
+ "issue": 13158,
+ "base_commit": "7af8f4127397279d19ef7c7899e93018274e2f9b",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-07-06T19:18:11Z",
+ "c1b_jaccard": 0.0396,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "b82a5b9dd0",
+   "date": "2010-05-10",
+   "msg": "Fixed #13158 -- Clarified that OneToOneField is a better opt"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/queries/test_qs_combinators.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:42:34.148147+00:00"
+}

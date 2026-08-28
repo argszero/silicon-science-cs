@@ -1,0 +1,21 @@
+{
+ "instance_id": "sympy__sympy-13798",
+ "repo": "sympy/sympy",
+ "issue": 13798,
+ "base_commit": "7121bdf1facdd90d05b6994b4c2e5b2865a4638a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2017-12-26T18:12:43Z",
+ "c1b_jaccard": 0.1176,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "265d30890c",
+   "date": "2018-01-03",
+   "msg": "Merge pull request #13798 from Subhash-Saurabh/13055_issue\n\n"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sympy/printing/tests/test_latex.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:25:12.221337+00:00"
+}

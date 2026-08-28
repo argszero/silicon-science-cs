@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-12325",
+ "repo": "django/django",
+ "issue": 12325,
+ "base_commit": "29c126bb349526b5f1cd78facbe9f25906f18563",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2020-01-15T14:02:25Z",
+ "c1b_jaccard": 0.1111,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9b7be918ed",
+   "date": "2010-11-13",
+   "msg": "Fixed #12325 -- Allows zero values for moderate_after and cl"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/invalid_models_tests/test_models.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:40:09.807084+00:00"
+}

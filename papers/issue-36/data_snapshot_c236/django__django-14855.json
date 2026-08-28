@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14855",
+ "repo": "django/django",
+ "issue": 14855,
+ "base_commit": "475cffd1d64c690cdad16ede4d5e81985738ceb4",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-09-14T01:27:01Z",
+ "c1b_jaccard": 0.0783,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "68a04f2d62",
+   "date": "2010-12-08",
+   "msg": "Fixed #14855 -- General cleanup of the new TemplateResponse "
+  },
+  {
+   "sha": "b8c368feb2",
+   "date": "2010-12-08",
+   "msg": "Replaced an ImportError with ImproperlyConfigured in the Ora"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/admin_views/admin.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:50:59.656979+00:00"
+}

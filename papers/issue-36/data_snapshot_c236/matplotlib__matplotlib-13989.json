@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-13989",
+ "repo": "matplotlib/matplotlib",
+ "issue": 13989,
+ "base_commit": "a3e2897bfaf9eaac1d6649da535c4e721c89fa69",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-04-19T01:47:57Z",
+ "c1b_jaccard": 0.1547,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "9f891c6211",
+   "date": "2019-04-18",
+   "msg": "Merge pull request #13989 from tacaswell/fix_hist_range_and_"
+  },
+  {
+   "sha": "d216265745",
+   "date": "2019-04-19",
+   "msg": "Backport PR #13989: FIX: update not replace hist_kwargs when"
+  },
+  {
+   "sha": "3d302d6b6f",
+   "date": "2019-04-19",
+   "msg": "Merge pull request #13990 from meeseeksmachine/auto-backport"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "lib/matplotlib/tests/test_axes.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:02:48.925357+00:00"
+}

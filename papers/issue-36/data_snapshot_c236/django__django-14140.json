@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14140",
+ "repo": "django/django",
+ "issue": 14140,
+ "base_commit": "45814af6197cfd8f4dc72ee43b90ecde305a1d5a",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-03-17T11:37:55Z",
+ "c1b_jaccard": 0.068,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5e319f5194",
+   "date": "2010-10-11",
+   "msg": "Refs #12991 -- Added extra docs for the unittest2 changes ma"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/expressions/tests.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:46:58.339201+00:00"
+}

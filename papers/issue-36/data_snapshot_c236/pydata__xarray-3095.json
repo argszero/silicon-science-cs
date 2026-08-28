@@ -1,0 +1,21 @@
+{
+ "instance_id": "pydata__xarray-3095",
+ "repo": "pydata/xarray",
+ "issue": 3095,
+ "base_commit": "1757dffac2fa493d7b9a074b84cf8c830a706688",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2019-07-11T13:16:16Z",
+ "c1b_jaccard": 0.169,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "dba85bdfc1",
+   "date": "2019-08-02",
+   "msg": "Fix regression: IndexVariable.copy(deep=True) casts dtype=U "
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "xarray/tests/test_variable.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:10:13.449861+00:00"
+}

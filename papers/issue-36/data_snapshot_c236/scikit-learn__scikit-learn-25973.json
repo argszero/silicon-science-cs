@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25973",
+ "repo": "scikit-learn/scikit-learn",
+ "issue": 25973,
+ "base_commit": "10dbc142bd17ccf7bd38eec2ac04b52ce0d1009e",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2023-03-25T13:27:07Z",
+ "c1b_jaccard": 0.125,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "ec8a2a63b3",
+   "date": "2023-03-28",
+   "msg": "FIX SequentialFeatureSelector throws IndexError when cv is a"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "sklearn/feature_selection/tests/test_sequential.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T09:36:49.828666+00:00"
+}

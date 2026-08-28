@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-14034",
+ "repo": "django/django",
+ "issue": 14034,
+ "base_commit": "db1fc5cd3c5d36cdb5d0fe4404efd6623dd3e8fb",
+ "c1a_issue_available": true,
+ "c1a_issue_created_at": "2021-02-22T19:32:50Z",
+ "c1b_jaccard": 0.1538,
+ "c1b_hit": false,
+ "c3_fix_commits": [
+  {
+   "sha": "5c01585450",
+   "date": "2010-10-08",
+   "msg": "Added myself to the committers docs.\n\ngit-svn-id: http://cod"
+  }
+ ],
+ "c3_hit": true,
+ "c2_test_file": "tests/forms_tests/field_tests/test_multivaluefield.py",
+ "c2_present_at_base": true,
+ "fetched_at": "2026-08-28T08:46:38.178709+00:00"
+}
