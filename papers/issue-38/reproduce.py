@@ -101,6 +101,46 @@ def main():
     for k, v in canon.most_common(15):
         out.append(f"  {k:32s} {v:5d}  ({v/ctot:.1%})")
     out.append("")
+    # ---- production-only census (H1/H2 robustness vs kernel dominance) ----
+    kern_r = [r for repo, _, progs in indexes if repo == "torvalds/linux" for r in progs]
+    prod_r = [r for repo, _, progs in indexes if repo != "torvalds/linux" for r in progs]
+    psec = Counter()
+    for r in prod_r:
+        psec.update(r.get("sec", {}))
+    psec_t = sum(psec.values())
+    pt2 = sum(v for _, v in psec.most_common(2))
+    pt3 = sum(v for _, v in psec.most_common(3))
+    out.append(f"production-only SEC families ({len(prod_r)} program sources, {psec_t} instances):")
+    for k, v in psec.most_common(6):
+        out.append(f"  {k:14s} {v:5d}  ({v/psec_t:.1%})")
+    out.append(f"H1 production-only: top-2 named families (tracing+kprobe) {pt2}/{psec_t} = {pt2/psec_t:.1%}; "
+               f"top-3 (incl. other) {pt3}/{psec_t} = {pt3/psec_t:.1%}")
+    pcanon = Counter()
+    for r in prod_r:
+        for k, v in r.get("helpers", {}).items():
+            name = k[len("bpf_"):] if k.startswith("bpf_") else k
+            if name in enum:
+                pcanon[k] += v
+    pct = sum(pcanon.values())
+    p10 = sum(v for _, v in pcanon.most_common(10))
+    p20 = sum(v for _, v in pcanon.most_common(20))
+    out.append(f"H2 production-only canonical helpers: {pct} calls, {len(pcanon)} distinct; "
+               f"top-10 {p10/pct:.1%} | top-20 {p20/pct:.1%}")
+    for k, v in pcanon.most_common(5):
+        out.append(f"  {k:30s} {v:5d}  ({v/pct:.1%})")
+    out.append("")
+    # ---- helper non-canonical accounting (reviewer Q4) ----
+    non_canon = {k: v for k, v in helpers.items()
+                 if (k[len("bpf_"):] if k.startswith("bpf_") else k) not in enum}
+    nc_sorted = sorted(non_canon.items(), key=lambda kv: -kv[1])
+    out.append(f"helper non-canonical accounting: {len(non_canon)} distinct non-canonical names "
+               f"({sum(non_canon.values())} calls of {sum(helpers.values())} broad calls)")
+    out.append("  top non-canonical names (mostly BTF kfuncs outside the classic helper enum):")
+    for k, v in nc_sorted[:10]:
+        out.append(f"    {k:34s} {v:5d}")
+    out.append(f"  singleton non-canonical names (1 call each): "
+               f"{sum(1 for k, v in non_canon.items() if v == 1)}")
+    out.append("")
     # ---- feature adoption ----
     feat = Counter()
     for _, _, progs in indexes:

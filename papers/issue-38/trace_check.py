@@ -36,6 +36,11 @@ NEEDLES = [
     ("tail_calls 4.0/5.6", "tail_calls             4.0%       5.6%"),
     ("ringbuf 2.0/1.1", "ringbuf                2.0%       1.1%"),
     ("arena 1.7/0.0", "arena                  1.7%       0.0%"),
+    ("H1 production-only 628/800 78.5%", "top-2 named families (tracing+kprobe) 628/800 = 78.5%"),
+    ("H1 production-only top-3 726/800 90.8%", "top-3 (incl. other) 726/800 = 90.8%"),
+    ("H2 production-only 2550/214", "2550 calls, 214 distinct; top-10 50.9% | top-20 63.4%"),
+    ("helper non-canonical 878 names", "878 distinct non-canonical names"),
+    ("singleton non-canonical 241", "singleton non-canonical names (1 call each): 241"),
 ]
 
 def main():
@@ -45,7 +50,10 @@ def main():
     r = subprocess.run([sys.executable, "validate.py"], capture_output=True, text=True)
     vout = r.stdout
     for claim, needle in [("TP=19", "TP=19"), ("precision 0.950", "precision=0.950"),
-                          ("recall 1.000", "recall=1.000"), ("accuracy 0.975", "accuracy=0.975")]:
+                          ("recall 1.000", "recall=1.000"), ("accuracy 0.975", "accuracy=0.975"),
+                          ("wilson precision CI", "wilson95 precision=[0.764,0.991]"),
+                          ("wilson recall CI", "recall=[0.832,1.000]"),
+                          ("wilson accuracy CI", "accuracy=[0.871,0.996]")]:
         if needle not in vout:
             fails.append(claim)
     if fails:

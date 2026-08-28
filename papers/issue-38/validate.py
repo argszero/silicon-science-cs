@@ -51,6 +51,23 @@ def main():
     print(f"validation sample: {n} files")
     print(f"TP={tp} FP={fp} TN={tn} FN={fn}")
     print(f"precision={prec:.3f} recall={rec:.3f} accuracy={acc:.3f}")
+    # Wilson 95% CIs (reviewer-requested; exact binomial for the observed counts)
+    def wilson(x, nn):
+        if nn == 0:
+            return (0.0, 0.0)
+        z = 1.959963985
+        phat = x / nn
+        denom = 1 + z * z / nn
+        center = (phat + z * z / (2 * nn)) / denom
+        hw = z * ((phat * (1 - phat) / nn + z * z / (4 * nn * nn)) ** 0.5) / denom
+        lo = max(0.0, center - hw)
+        hi = min(1.0, center + hw)
+        return (lo, hi)
+    p_lo, p_hi = wilson(tp, tp + fp)
+    r_lo, r_hi = wilson(tp, tp + fn)
+    a_lo, a_hi = wilson(tp + tn, tp + fp + tn + fn)
+    print(f"wilson95 precision=[{p_lo:.3f},{p_hi:.3f}] recall=[{r_lo:.3f},{r_hi:.3f}] "
+          f"accuracy=[{a_lo:.3f},{a_hi:.3f}]")
 
 if __name__ == "__main__":
     main()

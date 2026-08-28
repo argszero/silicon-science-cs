@@ -33,10 +33,11 @@ python3 validate.py
 validation sample: 40 files
 TP=19 FP=1 TN=20 FN=0
 precision=0.950 recall=1.000 accuracy=0.975
+wilson95 precision=[0.764,0.991] recall=[0.832,1.000] accuracy=[0.871,0.996]
 ```
 
 Ground truth lives in `validation_sample.tsv` (hand-verified, seed-42 stratified sample);
-predictions come from `snapshots/*_index.json`.
+predictions come from `snapshots/*_index.json`. Wilson 95% CIs are computed by the script from the observed counts.
 
 ## From-scratch extraction (requires network)
 
