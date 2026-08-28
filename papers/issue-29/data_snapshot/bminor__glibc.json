@@ -1,0 +1,174 @@
+{
+ "repo": "bminor/glibc",
+ "branch": "master",
+ "head_sha": "04e750e75b73957cf1c791535a3f4319534a52fc",
+ "fetched_at": "2026-08-28T07:12:53+08:00",
+ "mode": "api",
+ "n_files_scanned": 198,
+ "channel_hits": {
+  "C3_macro": {
+   "float_abi_soft": [
+    "sysdeps/riscv/__longjmp.S",
+    "sysdeps/riscv/bits/setjmp.h",
+    "sysdeps/riscv/dl-link.sym",
+    "sysdeps/riscv/dl-link.sym",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/dl-trampoline.S",
+    "sysdeps/riscv/setjmp.S",
+    "sysdeps/riscv/sys/asm.h",
+    "sysdeps/unix/sysv/linux/riscv/Makefile",
+    "sysdeps/unix/sysv/linux/riscv/Makefile",
+    "sysdeps/unix/sysv/linux/riscv/configure",
+    "sysdeps/unix/sysv/linux/riscv/configure.ac",
+    "sysdeps/unix/sysv/linux/riscv/getcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/getcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/setcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/setcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/swapcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/swapcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/swapcontext.S",
+    "sysdeps/unix/sysv/linux/riscv/swapcontext.S"
+   ],
+   "float_abi_double": [
+    "sysdeps/riscv/bits/setjmp.h",
+    "sysdeps/riscv/dl-machine.h",
+    "sysdeps/riscv/sys/asm.h",
+    "sysdeps/unix/sysv/linux/riscv/Makefile",
+    "sysdeps/unix/sysv/linux/riscv/Makefile",
+    "sysdeps/unix/sysv/linux/riscv/configure",
+    "sysdeps/unix/sysv/linux/riscv/dl-cache.h",
+    "sysdeps/unix/sysv/linux/riscv/configure.ac"
+   ],
+   "atomic": [
+    "sysdeps/riscv/atomic-machine.h",
+    "sysdeps/riscv/atomic-machine.h",
+    "sysdeps/riscv/atomic-machine.h",
+    "sysdeps/riscv/preconfigure.ac",
+    "sysdeps/riscv/preconfigure.ac",
+    "sysdeps/riscv/preconfigure",
+    "sysdeps/riscv/preconfigure"
+   ],
+   "xlen": [
+    "sysdeps/riscv/bits/wordsize.h",
+    "sysdeps/riscv/bits/wordsize.h",
+    "sysdeps/riscv/preconfigure.ac",
+    "sysdeps/riscv/preconfigure",
+    "sysdeps/riscv/sfp-machine.h",
+    "sysdeps/riscv/string-misc.h",
+    "sysdeps/riscv/string-misc.h",
+    "sysdeps/riscv/sys/asm.h",
+    "sysdeps/riscv/sys/asm.h",
+    "sysdeps/riscv/sys/asm.h"
+   ],
+   "hwprobe": [
+    "sysdeps/riscv/dl-irel.h",
+    "sysdeps/unix/sysv/linux/riscv/Versions",
+    "sysdeps/unix/sysv/linux/riscv/hwprobe.c",
+    "sysdeps/unix/sysv/linux/riscv/hwprobe.c",
+    "sysdeps/unix/sysv/linux/riscv/include/sys/hwprobe.h",
+    "sysdeps/unix/sysv/linux/riscv/multiarch/ifunc-impl-list.c",
+    "sysdeps/unix/sysv/linux/riscv/rv32/libc.abilist",
+    "sysdeps/unix/sysv/linux/riscv/rv64/libc.abilist",
+    "sysdeps/unix/sysv/linux/riscv/sys/hwprobe.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/hwprobe.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/hwprobe.h"
+   ],
+   "flen": [
+    "sysdeps/riscv/fpu_control.h",
+    "sysdeps/riscv/fpu_control.h",
+    "sysdeps/riscv/fpu_control.h",
+    "sysdeps/riscv/fpu_control.h",
+    "sysdeps/riscv/preconfigure.ac",
+    "sysdeps/riscv/preconfigure",
+    "sysdeps/riscv/sfp-machine.h"
+   ],
+   "zbb": [
+    "sysdeps/riscv/math-use-builtins-ffs.h",
+    "sysdeps/riscv/string-fzi.h",
+    "sysdeps/riscv/string-fza.h"
+   ],
+   "xtheadbb": [
+    "sysdeps/riscv/math-use-builtins-ffs.h",
+    "sysdeps/riscv/string-fzi.h",
+    "sysdeps/riscv/string-fza.h",
+    "sysdeps/riscv/string-fza.h"
+   ],
+   "hwprobe_t": [
+    "sysdeps/riscv/riscv-ifunc.h",
+    "sysdeps/unix/sysv/linux/riscv/multiarch/memcpy.c",
+    "sysdeps/unix/sysv/linux/riscv/multiarch/memset.c",
+    "sysdeps/unix/sysv/linux/riscv/sys/hwprobe.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/hwprobe.h"
+   ],
+   "float_abi_": [
+    "sysdeps/riscv/preconfigure.ac",
+    "sysdeps/riscv/preconfigure"
+   ],
+   "v": [
+    "sysdeps/riscv/preconfigure.ac",
+    "sysdeps/riscv/preconfigure",
+    "sysdeps/unix/sysv/linux/riscv/sysdep.h"
+   ],
+   "zbkb": [
+    "sysdeps/riscv/string-misc.h"
+   ],
+   "flush_icache": [
+    "sysdeps/unix/sysv/linux/riscv/Versions",
+    "sysdeps/unix/sysv/linux/riscv/flush-icache.c",
+    "sysdeps/unix/sysv/linux/riscv/flush-icache.c",
+    "sysdeps/unix/sysv/linux/riscv/rv32/libc.abilist",
+    "sysdeps/unix/sysv/linux/riscv/rv64/libc.abilist",
+    "sysdeps/unix/sysv/linux/riscv/sys/cachectl.h"
+   ],
+   "mc_fp_state": [
+    "sysdeps/unix/sysv/linux/riscv/bits/procfs.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h"
+   ],
+   "flush_icache_syscall": [
+    "sysdeps/unix/sysv/linux/riscv/flush-icache.c",
+    "sysdeps/unix/sysv/linux/riscv/flush-icache.c"
+   ],
+   "hwprobe_one": [
+    "sysdeps/unix/sysv/linux/riscv/multiarch/memcpy.c",
+    "sysdeps/unix/sysv/linux/riscv/multiarch/memset.c",
+    "sysdeps/unix/sysv/linux/riscv/sys/hwprobe.h"
+   ],
+   "mc_gp_state": [
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h"
+   ],
+   "mc_f_ext_state": [
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h"
+   ],
+   "mc_d_ext_state": [
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h"
+   ],
+   "mc_q_ext_state": [
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h",
+    "sysdeps/unix/sysv/linux/riscv/sys/ucontext.h"
+   ]
+  },
+  "C2_option_arch": {
+   "v": [
+    "sysdeps/riscv/rvv/memset.S"
+   ]
+  }
+ },
+ "n_files_with_hits": 41,
+ "exts": [
+  "v",
+  "zbb",
+  "zbkb"
+ ]
+}

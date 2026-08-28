@@ -1,0 +1,1729 @@
+{
+ "repo": "libjpeg-turbo/libjpeg-turbo",
+ "branch": "main",
+ "head_sha": "1157d37cfab977f8f7f8344aededdfd951222c89",
+ "fetched_at": "2026-08-28T07:13:34+08:00",
+ "mode": "api",
+ "n_files_scanned": 18,
+ "channel_hits": {
+  "C3_macro": {
+   "vmv_v_x_u8m2": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vsetvl_e16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vle8_v_u8m2": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vreinterpret_v_u16m4_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vzext_vf2_u16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vsub_vx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vsll_vx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vmulh_vx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vadd_vx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vsra_vx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vadd_vv_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vmax_vx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vnclipu_wx_u8m2": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vreinterpret_v_i16m4_u16m4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vwmul_vx_i32m8": [
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vwmacc_vx_i32m8": [
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vnclip_wx_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vsub_vv_i16m4": [
+    "simd/riscv64/jdcolext-rvv.c"
+   ],
+   "vset_v_u8m2_u8m2x3": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vsseg3e8_v_u8m2x3": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vset_v_u8m2_u8m2x4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vsseg4e8_v_u8m2x4": [
+    "simd/riscv64/jdcolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vlseg3e8_v_u8m2x3": [
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vget_v_u8m2x3_u8m2": [
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vlseg4e8_v_u8m2x4": [
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vget_v_u8m2x4_u8m2": [
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vwmulu_vx_u32m8": [
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vwmaccu_vx_u32m8": [
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vnclipu_wx_u16m4": [
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vncvt_x_x_w_u8m2": [
+    "simd/riscv64/jcgryext-rvv.c"
+   ],
+   "vse8_v_u8m2": [
+    "simd/riscv64/jcgryext-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vsetvl_e16m2": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vlseg3e8_v_u8m1x3": [
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vget_v_u8m1x3_u8m1": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vlseg4e8_v_u8m1x4": [
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vget_v_u8m1x4_u8m1": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vzext_vf2_u16m2": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vwmulu_vx_u32m4": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vwmaccu_vx_u32m4": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vnclipu_wx_u16m2": [
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vncvt_x_x_w_u8m1": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vse8_v_u8m1": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vadd_vx_u32m4": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vsub_vv_u32m4": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vnsrl_wx_u16m2": [
+    "simd/riscv64/jccolext-rvv.c",
+    "simd/riscv64/jccolext-rvv.c"
+   ],
+   "vid_v_u16m4": [
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vand_vx_u16m4": [
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vlseg2e8_v_u8m2x2": [
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vget_v_u8m2x2_u8m2": [
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vwaddu_wv_u16m4": [
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vnsrl_wx_u8m2": [
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vadd_vx_u16m4": [
+    "simd/riscv64/jcsample-rvv.c"
+   ],
+   "vlseg2e8_v_u8m1x2": [
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vget_v_u8m1x2_u8m1": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vreinterpret_v_u16m2_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vle8_v_u8m1": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vsub_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vsll_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vmulh_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vadd_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vsra_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vadd_vv_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vmax_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vmin_vx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vsll_vx_u16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vreinterpret_v_i16m2_u16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vor_vv_u16m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vreinterpret_v_u16m2_u8m2": [
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c",
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vwmul_vx_i32m4": [
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vwmacc_vx_i32m4": [
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vnclip_wx_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vsub_vv_i16m2": [
+    "simd/riscv64/jdmrgext-rvv.c"
+   ],
+   "vadd_vv_i16mf2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vsub_vv_i16mf2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vwmul_vx_i32m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vnsra_wx_i16mf2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vsetvl_e16mf2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vlsseg4e16_v_i16mf2x4": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vget_v_i16mf2x4_i16mf2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vse16_v_i16mf2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vadd_vv_i16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vsub_vv_i16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vwmul_vx_i32m2": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vnsra_wx_i16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vsetvlmax_e16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vsetvl_e16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vlsseg4e16_v_i16m1x4": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vget_v_i16m1x4_i16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vse16_v_i16m1": [
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsetvl_e8m4": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vle8_v_u8m4": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vslide1down_vx_u8m4": [
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vwaddu_vx_u16m8": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vwmaccu_vx_u16m8": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vnclipu_wx_u8m4": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vcreate_v_u8m4x2": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vsseg2e8_v_u8m4x2": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vsetvl_e8m2": [
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vslide1down_vx_u8m2": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vwaddu_vx_u16m4": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vwmaccu_vx_u16m4": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vcreate_v_u8m2x2": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vsseg2e8_v_u8m2x2": [
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jdsample-rvv.c"
+   ],
+   "vwadd_vv_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vmul_vx_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vwmacc_vx_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsll_vx_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vadd_vx_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vwsub_vv_i32m1": [
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vadd_vv_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsub_vv_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vmacc_vx_i32m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vle16_v_i16mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vmul_vv_i16mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vadd_vx_i16mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vmax_vx_i16mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vmin_vx_i16mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vreinterpret_v_i8mf4_u8mf4": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vnsra_wx_i8mf4": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vse8_v_u8mf4": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vwadd_vv_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vmul_vx_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vwmacc_vx_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsll_vx_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vadd_vx_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vwsub_vv_i32m2": [
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vadd_vv_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsub_vv_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vmacc_vx_i32m2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c"
+   ],
+   "vle16_v_i16m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vmul_vv_i16m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vadd_vx_i16m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vmax_vx_i16m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vmin_vx_i16m1": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vreinterpret_v_i8mf2_u8mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vnsra_wx_i8mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vse8_v_u8mf2": [
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vsll_vx_i16mf2": [
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsra_vx_i16mf2": [
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vsll_vx_i16m1": [
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c"
+   ],
+   "vsra_vx_i16m1": [
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c"
+   ],
+   "vse16_v_i16m2": [
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vle16_v_i16m4": [
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vle16_v_u16m4": [
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vmslt_vx_i16m4_b4": [
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vneg_v_i16m4_mu": [
+    "simd/riscv64/jquanti-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vadd_vv_u16m4": [
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vwmulu_vv_u32m8": [
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vnsrl_wv_u16m4": [
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vse16_v_i16m4": [
+    "simd/riscv64/jquanti-rvv.c"
+   ],
+   "vmv_v_x_i8m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vsetvlmax_e8m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vnot": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vsetvlmax_e64m1": [
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vslide1up_mu": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_b64": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_i64m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vslide1down_mu": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vsetvlmax_e32m1": [
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_b32": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_i32m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_b16": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_i16m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vlmul_ext_v_i16mf2_i16m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vlmul_trunc_v_i32m1_i32mf2": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_v_i64m1_i32m1": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "vreinterpret_i16mf2": [
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h",
+    "simd/riscv64/jsimd_rvv.h"
+   ],
+   "v": [
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c",
+    "simd/riscv64/jsimdcpu.c"
+   ]
+  },
+  "C4_intrinsics": {
+   "riscv_vector.h": [
+    "simd/riscv64/jdcolor-rvv.c",
+    "simd/riscv64/jcgray-rvv.c",
+    "simd/riscv64/jcsample-rvv.c",
+    "simd/riscv64/jdmerge-rvv.c",
+    "simd/riscv64/jfdctfst-rvv.c",
+    "simd/riscv64/jdsample-rvv.c",
+    "simd/riscv64/jidctint-rvv.c",
+    "simd/riscv64/jfdctint-rvv.c",
+    "simd/riscv64/jccolor-rvv.c",
+    "simd/riscv64/jidctfst-rvv.c",
+    "simd/riscv64/jquanti-rvv.c"
+   ]
+  },
+  "C2_option_arch": {
+   "v": [
+    "simd/riscv64/jsimdcpu.S"
+   ]
+  }
+ },
+ "n_files_with_hits": 18,
+ "exts": [
+  "v"
+ ]
+}

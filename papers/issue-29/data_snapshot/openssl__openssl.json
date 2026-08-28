@@ -1,0 +1,28 @@
+{
+ "repo": "openssl/openssl",
+ "branch": "master",
+ "head_sha": "5f61ae81549a6872869469bcb2784cdc08be9271",
+ "fetched_at": "2026-08-28T05:11:04+08:00",
+ "mode": "api",
+ "n_files_scanned": 57,
+ "channel_hits": {
+  "C1_march": {
+   "rv64gc_zbb_zbkb_zknh_zksh": [
+    ".github/workflows/riscv-more-cross-compiles.yml"
+   ]
+  },
+  "C3_macro": {
+   "xlen": [
+    "providers/implementations/ciphers/cipher_aes_hw_rv32i.c",
+    "providers/implementations/ciphers/cipher_aes_hw_rv64i.c"
+   ]
+  }
+ },
+ "n_files_with_hits": 3,
+ "exts": [
+  "zbb",
+  "zbkb",
+  "zknh",
+  "zksh"
+ ]
+}

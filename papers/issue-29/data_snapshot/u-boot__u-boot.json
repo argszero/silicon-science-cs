@@ -1,0 +1,101 @@
+{
+ "repo": "u-boot/u-boot",
+ "branch": "main",
+ "head_sha": "964ad5b5c91b7be56e443e899d7f873e6aa8c9fc",
+ "fetched_at": "2026-08-28T05:18:55+08:00",
+ "mode": "api",
+ "n_files_scanned": 2821,
+ "channel_hits": {
+  "C5_kconfig_use": {
+   "A": [
+    "arch/riscv/Makefile"
+   ],
+   "ZAAMO": [
+    "arch/riscv/Makefile"
+   ],
+   "ZALRSC": [
+    "arch/riscv/Makefile"
+   ],
+   "F": [
+    "arch/riscv/Makefile"
+   ],
+   "D": [
+    "arch/riscv/Makefile"
+   ],
+   "C": [
+    "arch/riscv/Makefile"
+   ],
+   "ZBB": [
+    "arch/riscv/Makefile"
+   ]
+  },
+  "C5_kconfig_def": {
+   "C": [
+    "arch/riscv/Kconfig"
+   ],
+   "F": [
+    "arch/riscv/Kconfig"
+   ],
+   "D": [
+    "arch/riscv/Kconfig"
+   ],
+   "ZBB": [
+    "arch/riscv/Kconfig"
+   ],
+   "A": [
+    "arch/riscv/Kconfig"
+   ],
+   "ZAAMO": [
+    "arch/riscv/Kconfig"
+   ],
+   "ZALRSC": [
+    "arch/riscv/Kconfig"
+   ],
+   "ZICBOM": [
+    "arch/riscv/Kconfig"
+   ]
+  },
+  "C3_macro": {
+   "isa_extension_available": [
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c",
+    "arch/riscv/cpu/cpu.c"
+   ],
+   "xlen": [
+    "arch/riscv/include/asm/asm.h",
+    "arch/riscv/include/asm/asm.h",
+    "arch/riscv/include/asm/asm.h",
+    "arch/riscv/include/asm/csr.h",
+    "arch/riscv/lib/crt0_riscv_efi.S",
+    "arch/riscv/lib/crt0_riscv_efi.S",
+    "arch/riscv/lib/crt0_riscv_efi.S",
+    "arch/riscv/lib/crt0_riscv_efi.S",
+    "arch/riscv/lib/reloc_riscv_efi.c",
+    "arch/riscv/lib/sbi.c"
+   ]
+  },
+  "C2_option_arch": {
+   "zbb": [
+    "arch/riscv/lib/strlen_zbb.S",
+    "arch/riscv/lib/strcmp_zbb.S",
+    "arch/riscv/lib/strncmp_zbb.S"
+   ]
+  }
+ },
+ "n_files_with_hits": 11,
+ "exts": [
+  "a",
+  "c",
+  "d",
+  "f",
+  "zaamo",
+  "zalrsc",
+  "zbb",
+  "zicbom"
+ ]
+}

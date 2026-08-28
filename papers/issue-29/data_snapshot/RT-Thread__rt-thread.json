@@ -1,0 +1,179 @@
+{
+ "repo": "RT-Thread/rt-thread",
+ "branch": "master",
+ "head_sha": "5abbbec42022a9a28f060a7fc29d68d1f71e2d3f",
+ "fetched_at": "2026-08-28T07:13:27+08:00",
+ "mode": "api",
+ "n_files_scanned": 203,
+ "channel_hits": {
+  "C3_macro": {
+   "xlen": [
+    "bsp/cvitek/c906_little/board/riscv-reg.h",
+    "bsp/cvitek/c906_little/board/riscv-reg.h",
+    "bsp/cvitek/c906_little/board/riscv-reg.h",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/drivers/riscv_bits.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h",
+    "components/libc/posix/libdl/arch/riscv.c",
+    "libcpu/risc-v/common64/riscv_io.h",
+    "libcpu/risc-v/common64/riscv_io.h",
+    "libcpu/risc-v/common64/riscv_io.h",
+    "libcpu/risc-v/common64/riscv_io.h",
+    "libcpu/risc-v/rv64/trap.c"
+   ],
+   "flen": [
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/start.S",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h"
+   ],
+   "32e": [
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S"
+   ],
+   "matrix": [
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h"
+   ],
+   "xtheadmatrix": [
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_csr.h"
+   ],
+   "vector": [
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h"
+   ],
+   "dsp": [
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h"
+   ],
+   "v": [
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h",
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h"
+   ]
+  },
+  "C4_intrinsics": {
+   "riscv_const.h": [
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/drivers/n200_eclic.h"
+   ],
+   "riscv_encoding.h": [
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/drivers/n200_func.c",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/handlers.c",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/init.c",
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/start.S"
+   ],
+   "riscv_bits.h": [
+    "bsp/gd32/risc-v/libraries/GD32VF103_Firmware_Library/RISCV/env_Eclipse/entry.S"
+   ],
+   "riscv_csr.h": [
+    "bsp/xuantie/libraries/xuantie_libraries/chip_riscv_dummy/include/asm/riscv_asm_macro.h"
+   ],
+   "riscv_mmu.h": [
+    "libcpu/risc-v/common64/riscv_mmu.c"
+   ]
+  },
+  "C1_march": {
+   "rv32imc": [
+    "bsp/rv32m1_vega/ri5cy/rtconfig.py"
+   ]
+  }
+ },
+ "n_files_with_hits": 15,
+ "exts": [
+  "v"
+ ]
+}
