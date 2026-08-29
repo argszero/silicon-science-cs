@@ -1,0 +1,29 @@
+{
+ "repo": "litespeedtech/lsquic",
+ "tier": "implementation",
+ "head_sha": "19547405c24f60c4537478d38f4214e990be1f95",
+ "source_files": 281,
+ "features": {
+  "datagram": 7,
+  "0rtt": 27,
+  "migration": 17,
+  "pmtu": 10,
+  "ecn": 15,
+  "multipath": 3,
+  "key_update": 2
+ },
+ "embeddings": {
+  "lsquic": 264,
+  "quiche": 1
+ },
+ "embed_examples": {
+  "lsquic": [
+   "bin/duck_client.c",
+   "bin/duck_server.c",
+   "bin/echo_client.c"
+  ],
+  "quiche": [
+   "src/liblsquic/lsquic_bbr.h"
+  ]
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "repo": "mozilla/neqo",
+ "tier": "implementation",
+ "head_sha": "5989f80f96c34ae313eda2d5d9213b06348210f4",
+ "source_files": 244,
+ "features": {
+  "datagram": 99,
+  "key_update": 7,
+  "ecn": 29,
+  "migration": 21,
+  "0rtt": 24,
+  "pmtu": 2
+ },
+ "embeddings": {
+  "s2n-quic": 1,
+  "neqo": 32,
+  "quiche": 2,
+  "quinn": 4,
+  "msquic": 2,
+  "mvfst": 1
+ },
+ "embed_examples": {
+  "s2n-quic": [
+   ".github/scripts/perfcompare.py"
+  ],
+  "neqo": [
+   ".github/scripts/perfcompare.py",
+   "mtu/src/lib.rs",
+   "neqo-bin/src/lib.rs"
+  ],
+  "quiche": [
+   ".github/scripts/perfcompare.py",
+   "neqo-transport/src/connection/params.rs"
+  ],
+  "quinn": [
+   "neqo-bin/src/client/mod.rs",
+   "neqo-bin/src/server/mod.rs",
+   "neqo-udp/src/lib.rs"
+  ],
+  "msquic": [
+   "neqo-transport/src/cc/classic_cc.rs",
+   "neqo-transport/src/connection/params.rs"
+  ],
+  "mvfst": [
+   "neqo-transport/src/connection/params.rs"
+  ]
+ }
+}

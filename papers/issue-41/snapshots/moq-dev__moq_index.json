@@ -1,0 +1,23 @@
+{
+ "repo": "moq-dev/moq",
+ "tier": "consumer",
+ "head_sha": "92e91ba0484c56618422ce81555d2f9f1cfb1f7a",
+ "source_files": 57,
+ "features": {},
+ "embeddings": {
+  "quinn": 7,
+  "quiche": 7
+ },
+ "embed_examples": {
+  "quinn": [
+   "Cargo.toml",
+   "rs/moq-bench/Cargo.toml",
+   "rs/moq-boy/Cargo.toml"
+  ],
+  "quiche": [
+   "Cargo.toml",
+   "js/clock/package.json",
+   "package.json"
+  ]
+ }
+}

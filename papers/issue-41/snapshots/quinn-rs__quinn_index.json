@@ -1,0 +1,43 @@
+{
+ "repo": "quinn-rs/quinn",
+ "tier": "implementation",
+ "head_sha": "d5d5b978c2b82e95beba3ed652c80e903e716a90",
+ "source_files": 103,
+ "features": {
+  "datagram": 23,
+  "0rtt": 16,
+  "migration": 12,
+  "pmtu": 7,
+  "ecn": 20,
+  "key_update": 6
+ },
+ "embeddings": {
+  "quinn": 29,
+  "quiche": 2,
+  "ngtcp2": 1,
+  "msquic": 2,
+  "quic-go": 2
+ },
+ "embed_examples": {
+  "quinn": [
+   "bench/src/bin/bulk.rs",
+   "bench/src/lib.rs",
+   "docs/book/src/bin/certificate.rs"
+  ],
+  "quiche": [
+   "quinn-proto/src/congestion/bbr/mod.rs",
+   "quinn-proto/src/transport_parameters.rs"
+  ],
+  "ngtcp2": [
+   "quinn-proto/src/connection/assembler.rs"
+  ],
+  "msquic": [
+   "quinn-proto/src/connection/mod.rs",
+   "quinn-udp/src/windows.rs"
+  ],
+  "quic-go": [
+   "quinn-proto/src/connection/mod.rs",
+   "quinn-proto/src/transport_parameters.rs"
+  ]
+ }
+}

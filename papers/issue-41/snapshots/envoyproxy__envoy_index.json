@@ -1,0 +1,15 @@
+{
+ "repo": "envoyproxy/envoy",
+ "tier": "consumer",
+ "head_sha": "d1fa4320ad51db52e9ed582ef3837a0e1865c542",
+ "source_files": 18,
+ "features": {},
+ "embeddings": {
+  "aioquic": 1
+ },
+ "embed_examples": {
+  "aioquic": [
+   "tools/base/requirements.txt"
+  ]
+ }
+}
