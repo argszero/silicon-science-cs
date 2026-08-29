@@ -1,0 +1,19 @@
+{
+  "repo": "Aider-AI/aider",
+  "tree_size": 780,
+  "harness_deps": [],
+  "tracing_deps": [],
+  "benchmark_paths": [
+    [
+      "benchmark/swe-bench-lite.txt",
+      "swe-?bench"
+    ],
+    [
+      "benchmark/swe-bench.txt",
+      "swe-?bench"
+    ]
+  ],
+  "judge_paths": [],
+  "content_judge": [],
+  "validation_markers": []
+}

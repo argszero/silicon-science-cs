@@ -1,0 +1,10 @@
+{
+  "repo": "huggingface/smolagents",
+  "tree_size": 225,
+  "harness_deps": [],
+  "tracing_deps": [],
+  "benchmark_paths": [],
+  "judge_paths": [],
+  "content_judge": [],
+  "validation_markers": []
+}

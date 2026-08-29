@@ -1,0 +1,66 @@
+==============================================================================
+LLM-as-Judge and Evaluation Practice in the Wild
+Corpus-scale census of evaluation practice in 16 open-source LLM projects
+Snapshot: 2026-08-29 (head SHAs pinned in corpus.json)
+==============================================================================
+
+Table 1. Per-repo evaluation signals
+repo                               lang     harness_deps     tracing                bench judge valid
+----------------------------------------------------------------------------------------------------
+langchain-ai/langchain             Python   -                langsmith                  0     0     1
+langgenius/dify                    TypeScript -                langfuse,langsmith,opi     0     0     0
+microsoft/autogen                  Python   -                -                         60     2     0
+crewAIInc/crewAI                   Python   -                langsmith                  0     0     0
+BerriAI/litellm                    Python   -                langfuse                   0     4     0
+run-llama/llama_index              Python   promptlayer      langfuse,opik,wandb        3     0     0
+Aider-AI/aider                     Python   -                -                          2     0     0
+langchain-ai/langgraph             Python   -                -                          0     0     0
+stanfordnlp/dspy                   Python   -                -                          2     0     0
+continuedev/continue               TypeScript -                -                          0     0     0
+openai/openai-agents-python        Python   -                -                          0     0     0
+huggingface/smolagents             Python   -                -                          0     0     0
+microsoft/semantic-kernel          C#       -                -                          1     0     0
+deepset-ai/haystack                Python   -                -                          0     0     6
+pydantic/pydantic-ai               Python   -                langsmith                  0     0     0
+opencode-ai/opencode               Go       -                -                          0     0     0
+
+Table 2. Evaluation-mechanism classification (hand-verified, mechanisms.json)
+repo                               mechanism          judge? validation?
+------------------------------------------------------------------------------
+langchain-ai/langchain             built-in-module    yes    no
+langgenius/dify                    none               no     no
+microsoft/autogen                  hand-rolled        yes    no
+crewAIInc/crewAI                   built-in-module    yes    no
+BerriAI/litellm                    hand-rolled        yes    no
+run-llama/llama_index              built-in-module    yes    no
+Aider-AI/aider                     benchmark-run      no     no
+langchain-ai/langgraph             none               no     no
+stanfordnlp/dspy                   built-in-module    no     no
+continuedev/continue               none               no     no
+openai/openai-agents-python        none               no     no
+huggingface/smolagents             none               no     no
+microsoft/semantic-kernel          benchmark-run      no     no
+deepset-ai/haystack                built-in-module    yes    no
+pydantic/pydantic-ai               built-in-module    yes    no
+opencode-ai/opencode               none               no     no
+
+H1: evaluation-harness adoption is low and concentrated
+  external eval-harness dependency (manifest-declared): 1/16 = 6.25%
+    run-llama/llama_index -> ['promptlayer']
+  tracing/observability deps: 6/16 = 37.50% (control signal — observability vs evaluation)
+
+H2: LLM-as-judge is the dominant evaluation mechanism
+  judge-based evaluation present: 7/16 = 43.75%
+  mechanism distribution: {'benchmark-run': 2, 'built-in-module': 6, 'hand-rolled': 2, 'none': 6}
+  built-in/hand-rolled self-contained: 7/7 of judge users
+  note: dspy ships programmatic metrics only (EM/F1/passage-match); its Evaluate
+  harness accepts user metrics but no LLM-judge component is shipped — classified judge=no.
+
+H3: judge-based evaluation is rarely validated against human ground truth
+  repos with human-validation markers (hand-verified, mechanisms.json): 0/16
+  validation among judge users: 0/7 (0.00%)
+  note: automatic marker scan flags langchain's evaluation module for 'ground truth' —
+  that is framework capability (QAEvalChain/Labeled evaluators accept reference labels),
+  not demonstrated self-validation practice; hand-verified classification = no validation.
+
+SUMMARY: H1 CONFIRMED (harness 6.25%) | H2 PARTIAL (judge 43.75%, built-in 5 + hand-rolled 2 = 7/7 self-contained, dspy ships programmatic metrics only) | H3 CONFIRMED (validation 0/16, 0/7 judge users)

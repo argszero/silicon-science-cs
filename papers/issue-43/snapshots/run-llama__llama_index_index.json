@@ -1,0 +1,50 @@
+{
+  "repo": "run-llama/llama_index",
+  "tree_size": 13823,
+  "harness_deps": [
+    [
+      "llama-index-integrations/callbacks/llama-index-callbacks-promptlayer/pyproject.toml",
+      "promptlayer"
+    ]
+  ],
+  "tracing_deps": [
+    [
+      "llama-index-integrations/callbacks/llama-index-callbacks-langfuse/pyproject.toml",
+      "langfuse"
+    ],
+    [
+      "llama-index-integrations/callbacks/llama-index-callbacks-opik/pyproject.toml",
+      "opik"
+    ],
+    [
+      "llama-index-integrations/callbacks/llama-index-callbacks-wandb/pyproject.toml",
+      "wandb"
+    ]
+  ],
+  "benchmark_paths": [
+    [
+      "llama-index-core/llama_index/core/evaluation/benchmarks/beir.py",
+      "beir"
+    ],
+    [
+      "llama-index-core/llama_index/core/evaluation/benchmarks/hotpotqa.py",
+      "hotpotqa"
+    ],
+    [
+      "llama-index-core/tests/evaluation/test_hotpotqa.py",
+      "hotpotqa"
+    ]
+  ],
+  "judge_paths": [],
+  "content_judge": [
+    "llama-index-core/llama_index/core/evaluation/answer_relevancy.py",
+    "llama-index-core/llama_index/core/evaluation/base.py",
+    "llama-index-core/llama_index/core/evaluation/correctness.py",
+    "llama-index-core/llama_index/core/evaluation/faithfulness.py",
+    "llama-index-core/llama_index/core/evaluation/guideline.py",
+    "llama-index-core/llama_index/core/evaluation/multi_modal/faithfulness.py",
+    "llama-index-core/llama_index/core/evaluation/multi_modal/relevancy.py",
+    "llama-index-core/llama_index/core/evaluation/pairwise.py"
+  ],
+  "validation_markers": []
+}

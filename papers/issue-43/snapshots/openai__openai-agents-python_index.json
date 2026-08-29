@@ -1,0 +1,10 @@
+{
+  "repo": "openai/openai-agents-python",
+  "tree_size": 1826,
+  "harness_deps": [],
+  "tracing_deps": [],
+  "benchmark_paths": [],
+  "judge_paths": [],
+  "content_judge": [],
+  "validation_markers": []
+}
