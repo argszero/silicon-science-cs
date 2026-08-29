@@ -1,0 +1,64 @@
+{
+  "repo": "mui/material-ui",
+  "tree_size": 42602,
+  "a11y_test_deps": [
+    [
+      "package.json",
+      "axe-core"
+    ]
+  ],
+  "role_path_hits": {
+    "alert": 219,
+    "alertdialog": 5,
+    "banner": 8,
+    "button": 465,
+    "checkbox": 100,
+    "combobox": 4,
+    "dialog": 145,
+    "form": 591,
+    "grid": 329,
+    "img": 7,
+    "link": 254,
+    "listbox": 1,
+    "log": 1009,
+    "main": 74,
+    "menu": 198,
+    "menuitem": 8,
+    "navigation": 62,
+    "none": 60,
+    "option": 59,
+    "presentation": 30,
+    "progressbar": 8,
+    "radio": 127,
+    "row": 693,
+    "search": 193,
+    "slider": 125,
+    "status": 72,
+    "switch": 195,
+    "tab": 654,
+    "tablist": 6,
+    "tabpanel": 7,
+    "textbox": 1,
+    "timer": 111,
+    "toolbar": 17,
+    "tooltip": 78,
+    "tree": 66,
+    "treeitem": 3
+  },
+  "aria_content": {
+    "files": 150,
+    "aria_attrs": 25,
+    "aria_density_per_file": 0.167,
+    "roles": {
+      "alert": 1,
+      "button": 2,
+      "dialog": 2,
+      "group": 1,
+      "presentation": 2,
+      "progressbar": 2,
+      "region": 1,
+      "status": 1,
+      "tabpanel": 1
+    }
+  }
+}
