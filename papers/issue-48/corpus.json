@@ -1,0 +1,279 @@
+{
+  "title": "ROS 2 in the Wild: A Corpus-Scale Census of ROS 1 → ROS 2 Migration",
+  "issue": 48,
+  "snapshot": "2026-08-30",
+  "tiers": {
+    "projects": [
+      {
+        "repo": "ros/ros",
+        "tier": "Tier A core",
+        "role": "ROS 1 metapackage",
+        "lang": "Python",
+        "stars": 3250,
+        "default_branch": "noetic-devel",
+        "head_sha": "99fd9bb76338f3315cd0a89af700d789ef337ea6"
+      },
+      {
+        "repo": "ros/ros_comm",
+        "tier": "Tier A core",
+        "role": "ROS 1 communication stack",
+        "lang": "Python",
+        "stars": 802,
+        "default_branch": "noetic-devel",
+        "head_sha": "30483a9f218f1545eec16d3934bf3cb042e2cb5b"
+      },
+      {
+        "repo": "ros/geometry2",
+        "tier": "Tier A core",
+        "role": "tf2 (ROS 1 branch)",
+        "lang": "C++",
+        "stars": 200,
+        "default_branch": "noetic-devel",
+        "head_sha": "8fef92a6b56a26e2b5be58d4d5c84dc4de5ee696"
+      },
+      {
+        "repo": "ros2/ros2",
+        "tier": "Tier A core",
+        "role": "ROS 2 metapackage",
+        "lang": null,
+        "stars": 5966,
+        "default_branch": "rolling",
+        "head_sha": "1f89e94bd2b064c9507d8d42f3ca1ef6f057fe37"
+      },
+      {
+        "repo": "ros2/rclcpp",
+        "tier": "Tier A core",
+        "role": "ROS 2 C++ client library",
+        "lang": "C++",
+        "stars": 796,
+        "default_branch": "rolling",
+        "head_sha": "90a1e565ee6870c13b21f6c1a58fbc9f7dfcde9d"
+      },
+      {
+        "repo": "ros2/rclpy",
+        "tier": "Tier A core",
+        "role": "ROS 2 Python client library",
+        "lang": "Python",
+        "stars": 471,
+        "default_branch": "rolling",
+        "head_sha": "c9417b117e8a7e877f09745461117a275a6c6e29"
+      },
+      {
+        "repo": "ros2/rcl",
+        "tier": "Tier A core",
+        "role": "ROS 2 common libraries",
+        "lang": "C++",
+        "stars": 169,
+        "default_branch": "rolling",
+        "head_sha": "85ccfb5abf190aaaf89af0c68df671550267e353"
+      },
+      {
+        "repo": "ros2/geometry2",
+        "tier": "Tier A core",
+        "role": "tf2 (ROS 2)",
+        "lang": "C++",
+        "stars": 151,
+        "default_branch": "rolling",
+        "head_sha": "2eccfcd2cc118c7fb92ef553022331f8749c0237"
+      },
+      {
+        "repo": "ros2/launch",
+        "tier": "Tier A core",
+        "role": "ROS 2 launch system",
+        "lang": "Python",
+        "stars": 155,
+        "default_branch": "rolling",
+        "head_sha": "183b1c5d05685ab3604d3de1df964a0c1600852e"
+      },
+      {
+        "repo": "ros2/rosidl",
+        "tier": "Tier A core",
+        "role": "ROS 2 interface definitions",
+        "lang": "C++",
+        "stars": 111,
+        "default_branch": "rolling",
+        "head_sha": "61aebc6362f495e377ac27178343c8f074e7eaf5"
+      },
+      {
+        "repo": "ros2/rmw",
+        "tier": "Tier A core",
+        "role": "ROS 2 middleware abstraction",
+        "lang": "C",
+        "stars": 120,
+        "default_branch": "rolling",
+        "head_sha": "5f213420c641498db5b9d20d16fafdf37305ffbc"
+      },
+      {
+        "repo": "ros-planning/navigation",
+        "tier": "Tier B stacks",
+        "role": "ROS 1 navigation stack (renamed home)",
+        "lang": "C++",
+        "stars": 2660,
+        "default_branch": "noetic-devel",
+        "head_sha": "f44bb1fc2810399165115cc98b530fe4b9397c18"
+      },
+      {
+        "repo": "ros-navigation/navigation2",
+        "tier": "Tier B stacks",
+        "role": "ROS 2 Nav2",
+        "lang": "C++",
+        "stars": 4640,
+        "default_branch": "main",
+        "head_sha": "13ead3a21d5860a9d924ca46ce36888ed6ce362e"
+      },
+      {
+        "repo": "moveit/moveit",
+        "tier": "Tier B stacks",
+        "role": "MoveIt (ROS 1)",
+        "lang": "C++",
+        "stars": 2082,
+        "default_branch": "master",
+        "head_sha": "fdb79acafb24efd9e138b0d309fb2463186d4ab2"
+      },
+      {
+        "repo": "moveit/moveit2",
+        "tier": "Tier B stacks",
+        "role": "MoveIt 2 (ROS 2)",
+        "lang": "C++",
+        "stars": 1984,
+        "default_branch": "main",
+        "head_sha": "8fcb5d2327767af3c764b1348a69a9b74c5efd18"
+      },
+      {
+        "repo": "moveit/moveit_ros",
+        "tier": "Tier B stacks",
+        "role": "MoveIt ROS 1 plugins",
+        "lang": "C++",
+        "stars": 71,
+        "default_branch": "kinetic-devel",
+        "head_sha": "200ff00b2cad2c49811991b3af64cab5eb19f6fb"
+      },
+      {
+        "repo": "ros-controls/ros_controllers",
+        "tier": "Tier B stacks",
+        "role": "ROS 1 controllers",
+        "lang": "C++",
+        "stars": 617,
+        "default_branch": "noetic-devel",
+        "head_sha": "c2348e85abf35cf33cf654a84d61db206abe9a73"
+      },
+      {
+        "repo": "ros-controls/ros2_controllers",
+        "tier": "Tier B stacks",
+        "role": "ROS 2 controllers",
+        "lang": "C++",
+        "stars": 831,
+        "default_branch": "master",
+        "head_sha": "94e74de35f9d04f313aca8f29df66c3a76004aa7"
+      },
+      {
+        "repo": "gazebosim/gazebo",
+        "tier": "Tier B stacks",
+        "role": "Gazebo Classic (ROS 1 era)",
+        "lang": "C++",
+        "stars": 1350,
+        "default_branch": "gazebo11",
+        "head_sha": "b22c6e15e52299865b31093b8feebc9ca19e26e8"
+      },
+      {
+        "repo": "gazebosim/gz-sim",
+        "tier": "Tier B stacks",
+        "role": "Gazebo Sim (ROS 2 era)",
+        "lang": "C++",
+        "stars": 1472,
+        "default_branch": "main",
+        "head_sha": "00ddcffe3e10100485dc44a6a94bcb93f171ac9e"
+      },
+      {
+        "repo": "autowarefoundation/autoware",
+        "tier": "Tier C platforms",
+        "role": "Autoware.AI (ROS 1)",
+        "lang": "Dockerfile",
+        "stars": 12031,
+        "default_branch": "main",
+        "head_sha": "49ff49c89e9bdb71ef435fc713b99e4e9181bb67"
+      },
+      {
+        "repo": "autowarefoundation/autoware.universe",
+        "tier": "Tier C platforms",
+        "role": "Autoware Universe (ROS 2)",
+        "lang": "C++",
+        "stars": 1743,
+        "default_branch": "main",
+        "head_sha": "afe69fff53279468b0b8821f179d250d5b2cfcfb"
+      },
+      {
+        "repo": "micro-ROS/micro_ros_msgs",
+        "tier": "Tier C platforms",
+        "role": "ROS 2 on microcontrollers (msgs)",
+        "lang": "CMake",
+        "stars": 15,
+        "default_branch": "kilted",
+        "head_sha": "2ea89dcb89a524b09fbde7d11f8bd9cddb0598d8"
+      },
+      {
+        "repo": "ros-drivers/joystick_drivers",
+        "tier": "Tier D apps",
+        "role": "joystick drivers (dual)",
+        "lang": "C++",
+        "stars": 274,
+        "default_branch": "ros2",
+        "head_sha": "50bcf0f44d40368201aec8f451227af384429c50"
+      },
+      {
+        "repo": "realsenseai/realsense-ros",
+        "tier": "Tier D apps",
+        "role": "Intel RealSense driver (dual branches)",
+        "lang": "Python",
+        "stars": 3426,
+        "default_branch": "ros2-master",
+        "head_sha": "60c850958d651130fc2cc3d10efb37ff5be93da5"
+      },
+      {
+        "repo": "cartographer-project/cartographer_ros",
+        "tier": "Tier D apps",
+        "role": "Cartographer SLAM (ROS 1)",
+        "lang": "C++",
+        "stars": 1853,
+        "default_branch": "master",
+        "head_sha": "c138034db0c47fe0ea5a2abe516acae02190dbf5"
+      },
+      {
+        "repo": "UniversalRobots/Universal_Robots_ROS_Driver",
+        "tier": "Tier D apps",
+        "role": "UR ROS 1 driver",
+        "lang": "C++",
+        "stars": 886,
+        "default_branch": "master",
+        "head_sha": "64f3f1a8aa4f84d550fbccdc2415644f64bd1119"
+      },
+      {
+        "repo": "UniversalRobots/Universal_Robots_ROS2_Driver",
+        "tier": "Tier D apps",
+        "role": "UR ROS 2 driver",
+        "lang": "C++",
+        "stars": 821,
+        "default_branch": "main",
+        "head_sha": "f6cae596ae0ba7a5045a89b1e847c47155d7e203"
+      },
+      {
+        "repo": "slamtec/rplidar_ros",
+        "tier": "Tier D apps",
+        "role": "RPLidar ROS 1 driver",
+        "lang": "C++",
+        "stars": 687,
+        "default_branch": "master",
+        "head_sha": "3cd94febf0ad7710a3115d57f6063a0c8f6f5bb2"
+      },
+      {
+        "repo": "ros-perception/vision_opencv",
+        "tier": "Tier D apps",
+        "role": "cv_bridge / vision (dual)",
+        "lang": "C++",
+        "stars": 669,
+        "default_branch": "rolling",
+        "head_sha": "50f6f1feccc65dd2ef87f863cb812a8aa0789062"
+      }
+    ]
+  }
+}

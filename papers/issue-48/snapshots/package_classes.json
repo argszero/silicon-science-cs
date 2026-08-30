@@ -1,0 +1,6654 @@
+{
+  "ros/ros": [
+    {
+      "path": "core/mk/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rospack"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "core/rosbuild/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "core/roslang/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "core/roslib/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rospack"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "ros/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roslib",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosbash/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rospack"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosboost_cfg/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosclean/package.xml",
+      "class": "none",
+      "ros1_deps": [],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/roscreate/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roslib"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosmake/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosunit/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roslib"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros/ros_comm": [
+    {
+      "path": "clients/roscpp/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp_serialization",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "clients/rospy/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roscpp",
+        "rosgraph",
+        "roslib"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "ros_comm/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosbag",
+        "rosconsole",
+        "roscpp",
+        "rosgraph",
+        "roslaunch",
+        "rosmaster",
+        "rospy",
+        "rostest",
+        "roswtf",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rosbag/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosbag",
+        "rosconsole",
+        "roscpp",
+        "roscpp_serialization",
+        "roslib",
+        "rospy",
+        "rostest",
+        "rosunit",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rosbag_storage/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosbag_storage"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_roscpp/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp",
+        "roscpp_serialization",
+        "roscpp_traits",
+        "rostest",
+        "rosunit",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rosgraph/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_roslaunch/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "roslaunch",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_roslib_comm/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roslib"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rosmaster/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rosparam/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rospy/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "rospy",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rosservice/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rospy",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rostest/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test/test_rostopic/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosbag/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosbag_storage",
+        "rosconsole",
+        "roscpp",
+        "roscpp_serialization",
+        "roslib",
+        "rospy",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosbag_storage/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp_serialization",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosgraph/package.xml",
+      "class": "none",
+      "ros1_deps": [],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/roslaunch/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roslib"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosmaster/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosmsg/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosbag",
+        "roslib",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosnode/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosout/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosparam/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosgraph"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rosservice/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "roslib",
+        "rospy"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rostest/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosgraph",
+        "roslaunch",
+        "rosmaster",
+        "rospy",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/rostopic/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosbag",
+        "rospy",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tools/topic_tools/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp",
+        "rostest",
+        "rosunit",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "utilities/message_filters/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "utilities/roslz4/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "utilities/roswtf/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosbag",
+        "rosgraph",
+        "roslaunch",
+        "roslib",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "utilities/xmlrpcpp/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros/geometry2": [
+    {
+      "path": "geometry2/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "test_tf2/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2/package.xml",
+      "class": "none",
+      "ros1_deps": [],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_bullet/package.xml",
+      "class": "none",
+      "ros1_deps": [],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_eigen/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_geometry_msgs/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_kdl/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_msgs/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_py/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rospy"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_ros/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "roscpp",
+        "rosgraph",
+        "rospy",
+        "rostest",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_sensor_msgs/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rospy",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "tf2_tools/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros2/ros2": [],
+  "ros2/rclcpp": [
+    {
+      "path": "rclcpp/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gen_version_h",
+        "ament_cmake_google_benchmark",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rcl",
+        "rcl_interfaces",
+        "rcl_logging_interface",
+        "rcl_yaml_param_parser",
+        "rcutils",
+        "rmw",
+        "rmw_implementation_cmake",
+        "rosidl_default_generators",
+        "rosidl_dynamic_typesupport",
+        "rosidl_runtime_c",
+        "rosidl_runtime_cpp",
+        "rosidl_typesupport_c",
+        "rosidl_typesupport_cpp"
+      ]
+    },
+    {
+      "path": "rclcpp_action/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl",
+        "rcl_action",
+        "rclcpp",
+        "rosidl_runtime_c"
+      ]
+    },
+    {
+      "path": "rclcpp_components/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_google_benchmark",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rmw"
+      ]
+    },
+    {
+      "path": "rclcpp_lifecycle/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl",
+        "rcl_interfaces",
+        "rcl_lifecycle",
+        "rclcpp",
+        "rcutils",
+        "rmw",
+        "rosidl_typesupport_cpp"
+      ]
+    }
+  ],
+  "ros2/rclpy": [
+    {
+      "path": "rclpy/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rcl",
+        "rcl_action",
+        "rcl_interfaces",
+        "rcl_lifecycle",
+        "rcl_logging_interface",
+        "rcl_yaml_param_parser",
+        "rclpy.clock",
+        "rclpy.duration",
+        "rclpy.qos",
+        "rcutils",
+        "rmw",
+        "rmw_implementation",
+        "rmw_implementation_cmake",
+        "rosidl_generator_py",
+        "rosidl_pycommon",
+        "rosidl_runtime_c"
+      ]
+    }
+  ],
+  "ros2/rcl": [
+    {
+      "path": "rcl/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gen_version_h",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch",
+        "launch_testing",
+        "launch_testing_ament_cmake",
+        "rcl_interfaces",
+        "rcl_logging_implementation",
+        "rcl_logging_interface",
+        "rcl_logging_packages",
+        "rcl_yaml_param_parser",
+        "rcutils",
+        "rmw",
+        "rmw_implementation",
+        "rmw_implementation_cmake",
+        "rosidl_runtime_c",
+        "rosidl_runtime_cpp"
+      ]
+    },
+    {
+      "path": "rcl_action/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gen_version_h",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl",
+        "rcutils",
+        "rmw",
+        "rmw_implementation_cmake",
+        "rosidl_runtime_c"
+      ]
+    },
+    {
+      "path": "rcl_lifecycle/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gen_version_h",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl",
+        "rcutils",
+        "rmw",
+        "rosidl_runtime_c"
+      ]
+    },
+    {
+      "path": "rcl_yaml_param_parser/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gen_version_h",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcutils",
+        "rmw"
+      ]
+    }
+  ],
+  "ros2/geometry2": [
+    {
+      "path": "examples_tf2_py/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "ament_xmllint",
+        "launch_ros",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "geometry2/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "test_tf2/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "builtin_interfaces",
+        "launch_ros",
+        "launch_testing_ament_cmake",
+        "launch_testing_ros",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "tf2/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_copyright",
+        "ament_cmake_cppcheck",
+        "ament_cmake_cpplint",
+        "ament_cmake_google_benchmark",
+        "ament_cmake_gtest",
+        "ament_cmake_lint_cmake",
+        "ament_cmake_ros",
+        "ament_cmake_ros_core",
+        "ament_cmake_uncrustify",
+        "ament_cmake_xmllint",
+        "builtin_interfaces",
+        "rcutils",
+        "rosidl_runtime_cpp"
+      ]
+    },
+    {
+      "path": "tf2_bullet/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "tf2_eigen/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "tf2_eigen_kdl/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "tf2_geometry_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "tf2_kdl/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_python",
+        "ament_cmake_ros_core",
+        "builtin_interfaces",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "tf2_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "tf2_py/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_pytest",
+        "ament_cmake_python",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "tf2_ros/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gen_version_h",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "tf2_ros_py/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "ament_xmllint",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "tf2_sensor_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "tf2_tools/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "ament_xmllint",
+        "rclpy"
+      ]
+    }
+  ],
+  "ros2/launch": [
+    {
+      "path": "launch/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_index_python",
+        "ament_mypy",
+        "ament_pep257",
+        "ament_xmllint"
+      ]
+    },
+    {
+      "path": "launch_pytest/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_index_python",
+        "ament_pep257",
+        "ament_xmllint",
+        "launch",
+        "launch_testing"
+      ]
+    },
+    {
+      "path": "launch_testing/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_index_python",
+        "ament_pep257",
+        "ament_xmllint",
+        "launch",
+        "launch_frontend_packages"
+      ]
+    },
+    {
+      "path": "launch_testing_ament_cmake/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_copyright",
+        "ament_cmake_test",
+        "launch_testing"
+      ]
+    },
+    {
+      "path": "launch_xml/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "ament_xmllint",
+        "launch"
+      ]
+    },
+    {
+      "path": "launch_yaml/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "ament_xmllint",
+        "launch"
+      ]
+    },
+    {
+      "path": "test_launch_testing/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_python",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch",
+        "launch_testing"
+      ]
+    }
+  ],
+  "ros2/rosidl": [
+    {
+      "path": "rosidl_adapter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_core",
+        "ament_cmake_mypy",
+        "ament_cmake_pytest",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_cli"
+      ]
+    },
+    {
+      "path": "rosidl_buffer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "rosidl_buffer_backend/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rmw"
+      ]
+    },
+    {
+      "path": "rosidl_buffer_backend_registry/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rmw",
+        "rosidl_buffer",
+        "rosidl_buffer_backend",
+        "rosidl_runtime_cpp"
+      ]
+    },
+    {
+      "path": "rosidl_buffer_py/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_python",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_buffer"
+      ]
+    },
+    {
+      "path": "rosidl_cli/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_mypy",
+        "ament_pep257",
+        "ament_xmllint"
+      ]
+    },
+    {
+      "path": "rosidl_cmake/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_pycommon"
+      ]
+    },
+    {
+      "path": "rosidl_generator_c/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_core",
+        "ament_cmake_python",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcutils",
+        "rosidl_cli",
+        "rosidl_cmake",
+        "rosidl_generator_type_description",
+        "rosidl_parser",
+        "rosidl_pycommon",
+        "rosidl_typesupport_interface"
+      ]
+    },
+    {
+      "path": "rosidl_generator_cpp/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_cli",
+        "rosidl_cmake",
+        "rosidl_generator_c",
+        "rosidl_generator_type_description",
+        "rosidl_parser",
+        "rosidl_pycommon",
+        "rosidl_runtime_cpp"
+      ]
+    },
+    {
+      "path": "rosidl_generator_tests/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_cmake",
+        "rosidl_generator_c",
+        "rosidl_generator_cpp",
+        "rosidl_generator_type_description",
+        "rosidl_runtime_c",
+        "rosidl_runtime_cpp"
+      ]
+    },
+    {
+      "path": "rosidl_generator_type_description/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_core",
+        "ament_cmake_pytest",
+        "ament_cmake_python",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_cli",
+        "rosidl_parser"
+      ]
+    },
+    {
+      "path": "rosidl_parser/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_mypy",
+        "ament_cmake_pytest",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_adapter"
+      ]
+    },
+    {
+      "path": "rosidl_pycommon/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_mypy",
+        "ament_pep257",
+        "ament_xmllint",
+        "rosidl_parser"
+      ]
+    },
+    {
+      "path": "rosidl_runtime_c/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcutils",
+        "rosidl_buffer",
+        "rosidl_typesupport_interface"
+      ]
+    },
+    {
+      "path": "rosidl_runtime_cpp/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_buffer",
+        "rosidl_runtime_c"
+      ]
+    },
+    {
+      "path": "rosidl_typesupport_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "rosidl_typesupport_introspection_c/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_buffer",
+        "rosidl_cli",
+        "rosidl_cmake",
+        "rosidl_generator_c",
+        "rosidl_parser",
+        "rosidl_pycommon",
+        "rosidl_runtime_c",
+        "rosidl_typesupport_interface"
+      ]
+    },
+    {
+      "path": "rosidl_typesupport_introspection_cpp/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros_core",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_buffer",
+        "rosidl_cli",
+        "rosidl_cmake",
+        "rosidl_generator_c",
+        "rosidl_generator_cpp",
+        "rosidl_parser",
+        "rosidl_pycommon",
+        "rosidl_runtime_c",
+        "rosidl_runtime_cpp",
+        "rosidl_typesupport_interface",
+        "rosidl_typesupport_introspection_c"
+      ]
+    },
+    {
+      "path": "rosidl_typesupport_introspection_tests/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcutils",
+        "rosidl_buffer",
+        "rosidl_cmake",
+        "rosidl_generator_c",
+        "rosidl_generator_cpp",
+        "rosidl_typesupport_interface",
+        "rosidl_typesupport_introspection_c",
+        "rosidl_typesupport_introspection_cpp"
+      ]
+    }
+  ],
+  "ros2/rmw": [
+    {
+      "path": "rmw/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_ros_core",
+        "ament_cmake_version",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcutils",
+        "rosidl_dynamic_typesupport",
+        "rosidl_runtime_c"
+      ]
+    },
+    {
+      "path": "rmw_implementation_cmake/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "rmw_security_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_ros_core",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcutils",
+        "rmw"
+      ]
+    }
+  ],
+  "ros-planning/navigation": [
+    {
+      "path": "amcl/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosbag",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "base_local_planner/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp",
+        "rospy",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "carrot_planner/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "clear_costmap_recovery/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "costmap_2d/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosbag",
+        "rosconsole",
+        "roscpp",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "dwa_local_planner/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "fake_localization/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rospy"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "global_planner/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "map_server/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roscpp",
+        "roslib",
+        "rospy",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "move_base/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "roscpp",
+        "rospy"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "move_slow_and_clear/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "nav_core/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "navfn/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "rosconsole",
+        "roscpp",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "navigation/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "rotate_recovery/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "voxel_grid/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "roscpp",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros-navigation/navigation2": [
+    {
+      "path": "nav2_amcl/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_behavior_tree/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_behaviors/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_bringup/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "ament_mypy",
+        "launch",
+        "launch_ros",
+        "launch_testing"
+      ]
+    },
+    {
+      "path": "nav2_bt_navigator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_collision_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch_testing_ament_cmake",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_core",
+        "ament_cmake_pytest",
+        "ament_cmake_python",
+        "ament_cmake_ros",
+        "ament_cmake_test",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "ament_mypy",
+        "launch",
+        "launch_ros",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "nav2_constrained_smoother/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_core/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_costmap_2d/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_google_benchmark",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch",
+        "launch_testing",
+        "rclcpp",
+        "rclcpp_lifecycle",
+        "rmw"
+      ]
+    },
+    {
+      "path": "nav2_docking/opennav_docking/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_docking/opennav_docking_bt/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "nav2_docking/opennav_docking_core/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/costmap_queue/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/dwb_core/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/dwb_critics/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/dwb_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "builtin_interfaces",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/dwb_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/nav2_dwb_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/nav_2d_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "nav2_dwb_controller/nav_2d_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "nav2_following/opennav_following/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_graceful_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_lifecycle_manager/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_loopback_sim/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_map_server/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch",
+        "launch_ros",
+        "launch_testing",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_mppi_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "builtin_interfaces",
+        "rclcpp",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "nav2_navfn_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_regulated_pure_pursuit_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_ros_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_rotation_shim_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_route/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch",
+        "launch_testing",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_rviz_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "nav2_simple_commander/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_mypy",
+        "ament_pep257",
+        "ament_xmllint",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "nav2_smac_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_smoother/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_system_tests/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "launch",
+        "launch_ros",
+        "launch_testing",
+        "rclcpp",
+        "rclcpp_lifecycle",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "nav2_theta_star_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_util/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_velocity_smoother/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "nav2_voxel_grid/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "nav2_waypoint_follower/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "navigation2/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    }
+  ],
+  "moveit/moveit": [
+    {
+      "path": "moveit/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_commander/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rospy",
+        "rostest",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_core/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roslib",
+        "rostest",
+        "rosunit",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_kinematics/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest",
+        "xmlrpcpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/chomp/chomp_interface/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/chomp/chomp_motion_planner/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/chomp/chomp_optimizer_adapter/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/moveit_planners/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/ompl/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/pilz_industrial_motion_planner/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/pilz_industrial_motion_planner_testutils/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_planners/trajopt/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_plugins/moveit_fake_controller_manager/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_plugins/moveit_plugins/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_plugins/moveit_ros_control_interface/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_plugins/moveit_simple_controller_manager/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/benchmarks/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/manipulation/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "rosconsole",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/move_group/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/moveit_ros/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/moveit_servo/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/occupancy_map_monitor/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/perception/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/planning/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/planning_interface/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rospy",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/robot_interaction/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/visualization/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rospy",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/warehouse/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_runtime/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_setup_assistant/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "moveit/moveit2": [
+    {
+      "path": "moveit/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_configs_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_index_python",
+        "launch",
+        "launch_param_builder",
+        "launch_ros"
+      ]
+    },
+    {
+      "path": "moveit_core/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_google_benchmark",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "launch_testing_ament_cmake",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "moveit_kinematics/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "launch_param_builder"
+      ]
+    },
+    {
+      "path": "moveit_planners/chomp/chomp_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_planners/chomp/chomp_motion_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_planners/moveit_planners/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_planners/ompl/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_planners/pilz_industrial_motion_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_gtest",
+        "launch_param_builder",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_planners/pilz_industrial_motion_planner_testutils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_planners/stomp/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_planners/test_configs/prbt_ikfast_manipulator_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_planners/test_configs/prbt_moveit_config/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_planners/test_configs/prbt_pg70_support/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_planners/test_configs/prbt_support/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_plugins/moveit_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_plugins/moveit_ros_control_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "moveit_plugins/moveit_simple_controller_manager/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "moveit_py/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_pytest",
+        "ament_index_python",
+        "rclcpp",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "moveit_ros/benchmarks/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "launch_param_builder",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_ros/hybrid_planning/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "moveit_ros/move_group/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "rclcpp",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "moveit_ros/moveit_ros/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_ros/moveit_servo/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "launch_param_builder"
+      ]
+    },
+    {
+      "path": "moveit_ros/occupancy_map_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_ros/perception/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_ros/planning/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "launch_testing_ament_cmake",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "moveit_ros/planning_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "rclcpp",
+        "rclcpp_action",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "moveit_ros/robot_interaction/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_ros/tests/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_ros/trajectory_cache/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_pytest",
+        "ament_cmake_uncrustify",
+        "launch_pytest",
+        "launch_testing_ament_cmake",
+        "rclcpp",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "moveit_ros/visualization/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "moveit_ros/warehouse/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_runtime/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_app_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_assistant/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_controllers/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_core_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_framework/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_simulation/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "moveit_setup_assistant/moveit_setup_srdf_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros"
+      ]
+    }
+  ],
+  "moveit/moveit_ros": [
+    {
+      "path": "benchmarks/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "benchmarks_gui/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "manipulation/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "move_group/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "moveit_ros/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "perception/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "planning/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "planning_interface/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "rospy",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "robot_interaction/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "visualization/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rospy",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "warehouse/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "tf"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros-controls/ros_controllers": [
+    {
+      "path": "ackermann_steering_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "diff_drive_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rostest",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "effort_controllers/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "force_torque_sensor_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "forward_command_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "four_wheel_steering_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest",
+        "tf"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "gripper_action_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "imu_sensor_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "joint_state_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "joint_trajectory_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "roscpp",
+        "rostest"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "position_controllers/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "ros_controllers/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "rqt_joint_trajectory_controller/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rospy"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "velocity_controllers/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros-controls/ros2_controllers": [
+    {
+      "path": "ackermann_steering_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "admittance_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "battery_state_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "bicycle_steering_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "chained_filter_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "diff_drive_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "force_torque_sensor_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "forward_command_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "gpio_controllers/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "gps_sensor_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "imu_sensor_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "joint_state_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "joint_trajectory_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "magnetometer_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "mecanum_drive_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "motion_primitives_controllers/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "omni_wheel_drive_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "parallel_gripper_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_action"
+      ]
+    },
+    {
+      "path": "pid_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "pose_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "range_sensor_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "ros2_controllers/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "ros2_controllers_test_nodes/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "launch_ros",
+        "launch_testing_ros",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "rqt_joint_trajectory_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "launch_testing",
+        "launch_testing_ros",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "state_interfaces_broadcaster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "steering_controllers_library/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "tricycle_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "tricycle_steering_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "rclcpp",
+        "rclcpp_lifecycle"
+      ]
+    }
+  ],
+  "gazebosim/gazebo": [],
+  "gazebosim/gz-sim": [
+    {
+      "path": "package.xml",
+      "class": "none",
+      "ros1_deps": [],
+      "ros2_deps": []
+    }
+  ],
+  "autowarefoundation/autoware": [],
+  "autowarefoundation/autoware.universe": [
+    {
+      "path": "common/autoware_boundary_departure_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "common/autoware_component_interface_specs_universe/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rcl",
+        "rclcpp",
+        "rosidl_runtime_cpp"
+      ]
+    },
+    {
+      "path": "common/autoware_cuda_dependency_meta/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "common/autoware_deprecated_boundary_departure_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "common/autoware_fake_test_node/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "common/autoware_glog_component/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "common/autoware_goal_distance_calculator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "common/autoware_grid_map_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "common/autoware_obstacle_proximity_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "common/autoware_path_distance_calculator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "common/autoware_polar_grid/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "common/autoware_time_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "builtin_interfaces"
+      ]
+    },
+    {
+      "path": "common/autoware_traffic_light_compliance_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "common/autoware_traffic_light_recognition_marker_publisher/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "common/autoware_traffic_light_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "common/autoware_universe_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "builtin_interfaces",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "common/tier4_api_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "control/autoware_autonomous_emergency_braking/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_collision_detector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_control_command_gate/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_control_performance_analysis/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "control/autoware_control_validator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "control/autoware_external_cmd_selector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_joy_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_lane_departure_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_mpc_lateral_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_obstacle_collision_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_operation_mode_transition_manager/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "control/autoware_pid_longitudinal_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_predicted_path_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_pure_pursuit/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_shift_decider/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_cppcheck",
+        "ament_cmake_cpplint",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_smart_mpc_trajectory_follower/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_python",
+        "ament_cmake_ros",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_spheric_collision_detector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_stop_mode_operator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_trajectory_follower_base/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_trajectory_follower_node/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "control/autoware_vehicle_cmd_gate/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "e2e/autoware_tensorrt_vad/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosbag2_cpp"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_control_evaluator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_evaluation_adapter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_kinematic_evaluator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_localization_evaluator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_perception_online_evaluator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_planning_evaluator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "evaluator/autoware_scenario_simulator_v2_adapter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "examples/autoware_diagnostic_graph_test_examples/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "localization/autoware_geo_pose_projector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_landmark_based_localizer/autoware_ar_tag_based_localizer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_index_cpp",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_landmark_based_localizer/autoware_landmark_manager/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "localization/autoware_landmark_based_localizer/autoware_lidar_marker_localizer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_localization_error_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_pose2twist/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_pose_covariance_modifier/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_pose_estimator_arbiter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/autoware_pose_instability_detector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_cppcheck",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/yabloc/yabloc_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "localization/yabloc/yabloc_image_processing/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/yabloc/yabloc_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "localization/yabloc/yabloc_particle_filter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "localization/yabloc/yabloc_pose_initializer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "map/autoware_map_tf_generator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gmock",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_bevfusion/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "launch_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_bytetrack/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_camera_streampetr/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_clang_format",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_cluster_merger/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_compare_map_segmentation/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_crosswalk_traffic_light_estimator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_detected_object_feature_remover/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_detected_object_validation/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_detection_by_tracker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_elevation_map_loader/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosbag2_storage_default_plugins"
+      ]
+    },
+    {
+      "path": "perception/autoware_euclidean_cluster/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_ground_segmentation/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_ground_segmentation_cuda/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_clang_format",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_image_object_locator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_image_projection_based_fusion/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_lidar_apollo_instance_segmentation/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_lidar_centerpoint/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_lidar_frnet/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_lidar_transfusion/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "launch_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_map_based_prediction/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_multi_object_tracker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosbag2_cpp"
+      ]
+    },
+    {
+      "path": "perception/autoware_object_merger/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_object_sorter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_occupancy_grid_map_outlier_filter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_predicted_path_postprocessor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_probabilistic_occupancy_grid_map/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "launch",
+        "launch_ros",
+        "launch_testing",
+        "launch_testing_ament_cmake",
+        "launch_testing_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_ptv3/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "launch_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_radar_fusion_to_detected_object/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_radar_object_tracker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_radar_tracks_msgs_converter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_raindrop_cluster_filter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_shape_estimation/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_simpl_prediction/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_simple_object_merger/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_tensorrt_bevdet/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_tensorrt_bevformer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_tensorrt_classifier/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "perception/autoware_tensorrt_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "perception/autoware_tensorrt_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "perception/autoware_tensorrt_yolox/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_tracking_object_merger/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_arbiter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_category_merger/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_classifier/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_fine_detector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_map_based_detector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_multi_camera_fusion/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_occlusion_predictor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_selector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/autoware_traffic_light_visualization/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "perception/perception_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/autoware_costmap_generator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_diffusion_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_external_velocity_limit_selector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_freespace_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_freespace_planning_algorithms/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rosbag2_cpp",
+        "rosbag2_storage",
+        "rosbag2_storage_mcap"
+      ]
+    },
+    {
+      "path": "planning/autoware_hazard_lights_selector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_manual_lane_change_handler/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_minimum_rule_based_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_mission_planner_universe/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_path_optimizer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_export_link_flags",
+        "ament_cmake_ros",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_path_smoother/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_remaining_distance_time_calculator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_rtc_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/autoware_scenario_selector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_surround_obstacle_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_adapter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_concatenator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_gate/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_processor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_ranker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_selector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/autoware_trajectory_validator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "builtin_interfaces",
+        "rclcpp",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_avoidance_by_lane_change_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_bidirectional_traffic_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_direction_change_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_dynamic_obstacle_avoidance_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_external_request_lane_change_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_goal_planner_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_lane_change_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_planner_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_sampling_planner_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_side_shift_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_start_planner_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_path_planner/autoware_behavior_path_static_obstacle_avoidance_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_blind_spot_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_crosswalk_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_detection_area_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_intersection_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_no_drivable_lane_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_no_stopping_area_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_occlusion_spot_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_roundabout_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_rtc_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_speed_bump_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_template_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_traffic_light_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_virtual_traffic_light_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/behavior_velocity_planner/autoware_behavior_velocity_walkway_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_boundary_departure_prevention_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_dynamic_obstacle_stop_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_obstacle_cruise_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_obstacle_slow_down_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_obstacle_velocity_limiter_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_out_of_lane_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_road_user_stop_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/motion_velocity_planner/autoware_motion_velocity_run_out_module/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "planning/planning_validator/autoware_planning_validator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "planning/planning_validator/autoware_planning_validator_intersection_collision_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/planning_validator/autoware_planning_validator_latency_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/planning_validator/autoware_planning_validator_rear_collision_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/planning_validator/autoware_planning_validator_test_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "planning/planning_validator/autoware_planning_validator_trajectory_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/sampling_based_planner/autoware_bezier_sampler/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "planning/sampling_based_planner/autoware_frenet_planner/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "planning/sampling_based_planner/autoware_path_sampler/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "planning/sampling_based_planner/autoware_sampler_common/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "sensing/autoware_calibration_status_classifier/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_cuda_pointcloud_preprocessor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_clang_format",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_cuda_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "sensing/autoware_image_diagnostics/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_image_transport_decompressor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_imu_corrector/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gmock",
+        "ament_cmake_gtest",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_pcl_extensions/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "sensing/autoware_pointcloud_preprocessor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_radar_objects_adapter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_radar_scan_to_pointcloud2/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_clang_format",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_radar_static_pointcloud_filter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_clang_format",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_radar_threshold_filter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_clang_format",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "sensing/autoware_radar_tracks_noise_filter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "simulator/autoware_carla_interface/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "simulator/autoware_dummy_infrastructure/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "simulator/autoware_dummy_traffic_light_publisher/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "simulator/autoware_fault_injection/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "launch",
+        "launch_ros",
+        "launch_testing",
+        "launch_testing_ament_cmake",
+        "launch_testing_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "simulator/autoware_vehicle_door_simulator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "simulator/tier4_dummy_object_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "system/autoware_bluetooth_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_command_mode_decider/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_command_mode_decider_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "system/autoware_command_mode_switcher/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_command_mode_switcher_plugins/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "system/autoware_command_mode_types/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "system/autoware_component_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_component_state_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_default_adapi_helpers/autoware_adapi_visualizers/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_pep257",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "system/autoware_default_adapi_helpers/autoware_automatic_pose_initializer/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_default_adapi_universe/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclcpp_components",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "system/autoware_diagnostic_graph_aggregator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_diagnostic_graph_utils/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_dummy_diag_publisher/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_duplicated_node_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_hazard_status_converter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_mrm_comfortable_stop_operator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_mrm_emergency_stop_operator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_mrm_handler/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_pipeline_latency_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_processing_time_checker/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_system_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_topic_relay_controller/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_topic_state_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rcl_interfaces",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "system/autoware_velodyne_monitor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "vehicle/autoware_accel_brake_map_calibrator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_python",
+        "ament_lint_auto",
+        "builtin_interfaces",
+        "rclcpp",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "vehicle/autoware_external_cmd_converter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "vehicle/autoware_raw_vehicle_cmd_converter/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_ros",
+        "ament_index_cpp",
+        "ament_index_python",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "vehicle/autoware_steer_offset_estimator/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "visualization/autoware_bag_time_manager_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp",
+        "rosbag2_interfaces"
+      ]
+    },
+    {
+      "path": "visualization/autoware_traffic_light_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_active_generator_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_adapi_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_camera_view_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_control_mode_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_datetime_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_manual_lane_change_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_perception_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto"
+      ]
+    },
+    {
+      "path": "visualization/tier4_planning_factor_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "rcl_interfaces"
+      ]
+    },
+    {
+      "path": "visualization/tier4_state_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_traffic_light_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "visualization/tier4_vehicle_rviz_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_auto",
+        "ament_index_cpp",
+        "ament_lint_auto"
+      ]
+    }
+  ],
+  "micro-ROS/micro_ros_msgs": [
+    {
+      "path": "package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    }
+  ],
+  "ros-drivers/joystick_drivers": [
+    {
+      "path": "joy/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_ros",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "joy_linux/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "joystick_drivers/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "ps3joy/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosgraph",
+        "rospy"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "sdl2_vendor/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "spacenav/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "wiimote/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_auto",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "wiimote_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_auto",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    }
+  ],
+  "realsenseai/realsense-ros": [
+    {
+      "path": "realsense2_camera/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "builtin_interfaces",
+        "launch_ros",
+        "rclcpp",
+        "rclcpp_action",
+        "rclcpp_components",
+        "rclcpp_lifecycle"
+      ]
+    },
+    {
+      "path": "realsense2_camera_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_common",
+        "builtin_interfaces",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "realsense2_description/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "launch_ros",
+        "rclcpp",
+        "rclcpp_components"
+      ]
+    },
+    {
+      "path": "realsense2_rgbd_plugin/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "realsense2_ros_mqtt_bridge/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257"
+      ]
+    }
+  ],
+  "cartographer-project/cartographer_ros": [
+    {
+      "path": "cartographer_ros/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosbag",
+        "roscpp",
+        "roslaunch",
+        "roslib",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "cartographer_ros_msgs/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "cartographer_rviz/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "roslib"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "UniversalRobots/Universal_Robots_ROS_Driver": [
+    {
+      "path": "ur_calibration/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "roscpp",
+        "rosunit"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "ur_dashboard_msgs/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin"
+      ],
+      "ros2_deps": []
+    },
+    {
+      "path": "ur_robot_driver/package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "actionlib",
+        "catkin",
+        "roscpp",
+        "rostest",
+        "tf"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "UniversalRobots/Universal_Robots_ROS2_Driver": [
+    {
+      "path": "ur/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ]
+    },
+    {
+      "path": "ur_calibration/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_gmock",
+        "ament_cmake_gtest",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "ur_controllers/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rclcpp_lifecycle",
+        "rcutils"
+      ]
+    },
+    {
+      "path": "ur_dashboard_msgs/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "rosidl_default_generators",
+        "rosidl_default_runtime"
+      ]
+    },
+    {
+      "path": "ur_moveit_config/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    },
+    {
+      "path": "ur_robot_driver/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake",
+        "ament_cmake_python",
+        "launch",
+        "launch_ros",
+        "launch_testing_ament_cmake",
+        "rclcpp",
+        "rclcpp_lifecycle",
+        "rclpy"
+      ]
+    }
+  ],
+  "slamtec/rplidar_ros": [
+    {
+      "path": "package.xml",
+      "class": "ROS1",
+      "ros1_deps": [
+        "catkin",
+        "rosconsole",
+        "roscpp"
+      ],
+      "ros2_deps": []
+    }
+  ],
+  "ros-perception/vision_opencv": [
+    {
+      "path": "cv_bridge/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_ros",
+        "ament_index_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "rclcpp"
+      ]
+    },
+    {
+      "path": "image_geometry/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake_gtest",
+        "ament_cmake_pytest",
+        "ament_cmake_python",
+        "ament_cmake_ros"
+      ]
+    },
+    {
+      "path": "opencv_tests/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "launch",
+        "rclpy"
+      ]
+    },
+    {
+      "path": "vision_opencv/package.xml",
+      "class": "ROS2",
+      "ros1_deps": [],
+      "ros2_deps": [
+        "ament_cmake"
+      ]
+    }
+  ]
+}
