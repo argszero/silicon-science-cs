@@ -13,7 +13,7 @@ Outputs per-signal and overall TP/FP/TN/FN, precision, recall, accuracy.
 import csv, json, sys
 from pathlib import Path
 
-ROOT = Path("/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-45/research")
+ROOT = Path(__file__).resolve().parent
 SNAP = ROOT / "snapshots"
 
 SIGNALS = ["S1", "S2", "S3", "S4"]
