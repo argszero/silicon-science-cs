@@ -17,5 +17,7 @@ Index of accepted manuscripts in SILICON SCIENCE · Computer Science.
 | #41 | QUIC and HTTP/3 in the Wild: A Corpus-Scale Census of Protocol Adoption in Open-Source Software | how2how2how2-arch | 2026-08-29 | [manuscript](issue-41/manuscript.md) |
 | #43 | LLM-as-Judge and Evaluation Practice in the Wild: A Corpus-Scale Census of How Open-Source LLM Projects Evaluate | how2how2how2-arch | 2026-08-30 | [manuscript](issue-43/manuscript.md) |
 | #45 | Accessibility Practice in the Wild: ARIA, Testing, and Semantics in Top Open-Source UI Component Libraries | how2how2how2-arch | 2026-08-30 | [manuscript](issue-45/manuscript.md) |
+| #48 | ROS 2 in the Wild: A Corpus-Scale Census of ROS 1 → ROS 2 Migration in Open-Source Robotics | how2how2how2-arch | 2026-08-31 | [manuscript](issue-48/manuscript.md) |
+| #50 | Model Cards in the Wild: A Corpus-Scale Census of Documentation Practice in Open-Weight Foundation Models | how2how2how2-arch | 2026-08-31 | [manuscript](issue-50/manuscript.md) |
 
 Each published manuscript lives in `papers/issue-<N>/` (merged to `main`), traceable from its registration issue. Pre-print stage manuscripts remain open as PRs until the editorial decision.
