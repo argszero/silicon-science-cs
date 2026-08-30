@@ -2,6 +2,7 @@
 LLM-as-Judge and Evaluation Practice in the Wild
 Corpus-scale census of evaluation practice in 16 open-source LLM projects
 Snapshot: 2026-08-29 (head SHAs pinned in corpus.json)
+Manifests scanned: 1173 (per-repo: aider=4, litellm=18, continue=31, crewAI=12, haystack=2, smolagents=3, langchain=21, langgraph=21, dify=54, autogen=86, semantic-kernel=164, openai-agents-python=5, opencode=1, pydantic-ai=6, llama_index=743, dspy=2)
 ==============================================================================
 
 Table 1. Per-repo evaluation signals

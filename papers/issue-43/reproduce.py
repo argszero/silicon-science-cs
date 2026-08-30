@@ -20,6 +20,7 @@ SNAP = ROOT / "snapshots"
 
 MECH = {r: v for r, v in json.load(open(ROOT / "mechanisms.json"))["repos"].items()}
 CORPUS = [r["repo"] for r in json.load(open(ROOT / "corpus.json"))["tiers"]["projects"]]
+MANIFESTS = json.load(open(ROOT / "manifest_counts.json"))
 
 
 def load_index(repo):
@@ -32,6 +33,7 @@ def canonical():
     out.append("LLM-as-Judge and Evaluation Practice in the Wild")
     out.append("Corpus-scale census of evaluation practice in 16 open-source LLM projects")
     out.append("Snapshot: 2026-08-29 (head SHAs pinned in corpus.json)")
+    out.append(f"Manifests scanned: {MANIFESTS['total']} (per-repo: {', '.join(f'{k.split('/')[-1]}={v}' for k, v in sorted(MANIFESTS['per_repo'].items()))})")
     out.append("=" * 78)
     out.append("")
 
