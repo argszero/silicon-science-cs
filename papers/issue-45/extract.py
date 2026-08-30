@@ -237,25 +237,59 @@ def cmd_fetch_components(repos, cap=150):
 ARIA_ATTR_RE = re.compile(r"""["']?aria-[a-z0-9-]+["']?\s*(?::|=)""")
 ROLE_RE = re.compile(r"""["']?role["']?\s*(?::|=)\s*["']([a-z0-9-]+)["']""", re.I)
 
+def strip_comments(txt):
+    """Remove JS/TS block, JSX, and line comments (naive, not string-aware) for
+    the comment-inflation audit (revision R81): the raw counters below run on
+    un-stripped text, so comment literals COULD in principle match; we also
+    compute clean counts to bound the impact. Line stripping cuts at // outside
+    quotes (crude but deterministic; only used for the bias audit + LOC)."""
+    txt = re.sub(r"/\*.*?\*/", " ", txt, flags=re.S)
+    txt = re.sub(r"<!--.*?-->", " ", txt, flags=re.S)
+    out = []
+    for line in txt.split("\n"):
+        idx = len(line)
+        in_s = in_d = False
+        for i, ch in enumerate(line):
+            if ch == "'" and not in_d:
+                in_s = not in_s
+            elif ch == '"' and not in_s:
+                in_d = not in_d
+            elif ch == "/" and not in_s and not in_d and i + 1 < len(line) and line[i + 1] == "/":
+                idx = i
+                break
+        out.append(line[:idx])
+    return "\n".join(out)
+
 def aria_content_signals(repo):
-    """ARIA density + role counts from fetched component files."""
+    """ARIA density + role counts from fetched component files.
+
+    Densities are reported per source file (committed headline, as registered)
+    and per 1k lines of code (normalization-sensitivity companion, R81). LOC is
+    counted on comment-stripped text (non-empty lines). Comment-stripped
+    aria/role counts bound the comment-literal inflation audit (R81).
+    """
     d = RAW / f"{repo.replace('/', '__')}"
     if not d.exists():
         return {"files": 0, "aria_attrs": 0, "roles": {}}
-    n_files = 0; n_aria = 0; roles = {}
+    n_files = 0; n_aria = 0; n_aria_clean = 0; n_loc = 0; roles = {}
     for f in sorted(d.rglob("*")):
         if not f.is_file(): continue
         if not f.name.endswith(('.tsx', '.jsx', '.ts', '.js', '.vue')): continue
         try:
             txt = f.read_text(encoding="utf-8", errors="replace")
         except Exception: continue
+        clean = strip_comments(txt)
         n_files += 1
+        n_loc += sum(1 for ln in clean.split("\n") if ln.strip())
         n_aria += len(ARIA_ATTR_RE.findall(txt))
+        n_aria_clean += len(ARIA_ATTR_RE.findall(clean))
         for m in ROLE_RE.finditer(txt):
             role = m.group(1).lower()
             roles[role] = roles.get(role, 0) + 1
-    return {"files": n_files, "aria_attrs": n_aria,
+    return {"files": n_files, "loc": n_loc, "aria_attrs": n_aria,
+            "aria_attrs_clean": n_aria_clean,
             "aria_density_per_file": round(n_aria / n_files, 3) if n_files else 0,
+            "aria_density_per_1k_loc": round(n_aria / (n_loc / 1000), 3) if n_loc else 0,
             "roles": dict(sorted(roles.items()))}
 
 def cmd_aria():
@@ -266,7 +300,8 @@ def cmd_aria():
         idx = json.load(open(idx_path))
         idx["aria_content"] = s
         json.dump(idx, open(idx_path, "w"), indent=2)
-        print(f"{repo}: files={s['files']} aria={s['aria_attrs']} density={s['aria_density_per_file']} roles={len(s['roles'])}", flush=True)
+        print(f"{repo}: files={s['files']} loc={s['loc']} aria={s['aria_attrs']} density={s['aria_density_per_file']} "
+              f"a/1k={s['aria_density_per_1k_loc']} roles={len(s['roles'])}", flush=True)
 
 def cmd_signals():
     SNAP.mkdir(parents=True, exist_ok=True)

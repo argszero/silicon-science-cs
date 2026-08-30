@@ -39,8 +39,11 @@
   },
   "aria_content": {
     "files": 150,
+    "loc": 17867,
     "aria_attrs": 47,
+    "aria_attrs_clean": 47,
     "aria_density_per_file": 0.313,
+    "aria_density_per_1k_loc": 2.631,
     "roles": {
       "checkbox": 1,
       "group": 5,

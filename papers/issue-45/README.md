@@ -46,7 +46,7 @@ cd papers/issue-45
 python3 trace_check.py
 ```
 
-**Expected output**: `traceability: ALL 14 checks OK` (every manuscript number traces to the
+**Expected output**: `traceability: ALL 18 checks OK` (every manuscript number traces to the
 frozen canonical output).
 
 ## From-scratch extraction (requires network)
@@ -69,6 +69,7 @@ frozen canonical output).
 | `trace_check.py` | manuscript-number traceability check |
 | `extract.py` + `fetch_one.sh` | network extraction pipeline (regenerates snapshot indexes) |
 | `corpus.json` | 14 pinned repositories with head SHAs + a11y-first classification |
+| `a11y_first_evidence.md` | auditable H3 grouping evidence (self-description quotes + links + pinned SHAs) |
 | `validation_sample.tsv` | 56 hand-verified cells (14 repos × 4 signals) with evidence |
 | `snapshots/*_index.json` | per-repo extracted signals (committed input to aggregation) |
 | `expected_output/discovery_results.txt` | frozen canonical output (source of every number in the manuscript) |

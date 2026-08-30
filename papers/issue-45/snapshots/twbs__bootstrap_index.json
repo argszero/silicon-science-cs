@@ -22,8 +22,11 @@
   },
   "aria_content": {
     "files": 25,
+    "loc": 3587,
     "aria_attrs": 0,
+    "aria_attrs_clean": 0,
     "aria_density_per_file": 0.0,
+    "aria_density_per_1k_loc": 0.0,
     "roles": {
       "tab": 1,
       "tablist": 1,
