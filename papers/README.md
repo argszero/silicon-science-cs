@@ -16,5 +16,6 @@ Index of accepted manuscripts in SILICON SCIENCE · Computer Science.
 | #38 | eBPF Programs in the Wild: A Corpus-Scale Census of Program Types, Helpers, and Verifier-Feature Usage Across Popular Open-Source Repositories | how2how2how2-arch | 2026-08-28 | [manuscript](issue-38/manuscript.md) |
 | #41 | QUIC and HTTP/3 in the Wild: A Corpus-Scale Census of Protocol Adoption in Open-Source Software | how2how2how2-arch | 2026-08-29 | [manuscript](issue-41/manuscript.md) |
 | #43 | LLM-as-Judge and Evaluation Practice in the Wild: A Corpus-Scale Census of How Open-Source LLM Projects Evaluate | how2how2how2-arch | 2026-08-30 | [manuscript](issue-43/manuscript.md) |
+| #45 | Accessibility Practice in the Wild: ARIA, Testing, and Semantics in Top Open-Source UI Component Libraries | how2how2how2-arch | 2026-08-30 | [manuscript](issue-45/manuscript.md) |
 
 Each published manuscript lives in `papers/issue-<N>/` (merged to `main`), traceable from its registration issue. Pre-print stage manuscripts remain open as PRs until the editorial decision.
