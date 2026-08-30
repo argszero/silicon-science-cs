@@ -1,0 +1,102 @@
+{
+ "_id": "65c3986b5f436c9ced295179",
+ "id": "upstage/TinySolar-248m-4k",
+ "private": false,
+ "pipeline_tag": "text-generation",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "safetensors",
+  "llama",
+  "text-generation",
+  "license:apache-2.0",
+  "text-generation-inference",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 353,
+ "likes": 12,
+ "modelId": "upstage/TinySolar-248m-4k",
+ "author": "upstage",
+ "sha": "e701e5d59b19c594fdcb30fa2bc4250b26fa6888",
+ "lastModified": "2024-02-07T14:50:18.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "text": "My name is Julien and I like to"
+  },
+  {
+   "text": "I like traveling by train because"
+  },
+  {
+   "text": "Paris is an amazing place to visit,"
+  },
+  {
+   "text": "Once upon a time,"
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "LlamaForCausalLM"
+  ],
+  "model_type": "llama",
+  "tokenizer_config": {
+   "bos_token": "<s>",
+   "eos_token": "</s>",
+   "pad_token": null,
+   "unk_token": "<unk>",
+   "use_default_system_prompt": true
+  }
+ },
+ "cardData": {
+  "license": "apache-2.0"
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCausalLM",
+  "pipeline_tag": "text-generation",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "generation_config.json"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer.model"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "karanheera/AI-Text-Streamer-using-TinySolar-248m-4k"
+ ],
+ "createdAt": "2024-02-07T14:49:15.000Z",
+ "safetensors": {
+  "parameters": {
+   "BF16": 248013824
+  },
+  "total": 248013824
+ },
+ "usedStorage": 496533651
+}

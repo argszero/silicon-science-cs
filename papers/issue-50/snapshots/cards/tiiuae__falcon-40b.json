@@ -1,0 +1,288 @@
+{
+ "_id": "646dfe3e40e741b1913a1ba4",
+ "id": "tiiuae/falcon-40b",
+ "private": false,
+ "pipeline_tag": "text-generation",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "safetensors",
+  "falcon",
+  "text-generation",
+  "custom_code",
+  "en",
+  "de",
+  "es",
+  "fr",
+  "dataset:tiiuae/falcon-refinedweb",
+  "arxiv:2205.14135",
+  "arxiv:1911.02150",
+  "arxiv:2101.00027",
+  "arxiv:2005.14165",
+  "arxiv:2104.09864",
+  "arxiv:2306.01116",
+  "license:apache-2.0",
+  "text-generation-inference",
+  "deploy:sagemaker",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 13315,
+ "likes": 2439,
+ "modelId": "tiiuae/falcon-40b",
+ "author": "tiiuae",
+ "sha": "05ab2ee8d6b593bdbab17d728de5c028a7a94d83",
+ "lastModified": "2024-08-09T07:48:37.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "text": "My name is Julien and I like to"
+  },
+  {
+   "text": "I like traveling by train because"
+  },
+  {
+   "text": "Paris is an amazing place to visit,"
+  },
+  {
+   "text": "Once upon a time,"
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "FalconForCausalLM"
+  ],
+  "auto_map": {
+   "AutoConfig": "configuration_falcon.FalconConfig",
+   "AutoModel": "modeling_falcon.FalconModel",
+   "AutoModelForSequenceClassification": "modeling_falcon.FalconForSequenceClassification",
+   "AutoModelForTokenClassification": "modeling_falcon.FalconForTokenClassification",
+   "AutoModelForQuestionAnswering": "modeling_falcon.FalconForQuestionAnswering",
+   "AutoModelForCausalLM": "modeling_falcon.FalconForCausalLM"
+  },
+  "model_type": "falcon",
+  "tokenizer_config": {
+   "eos_token": "<|endoftext|>"
+  }
+ },
+ "cardData": {
+  "datasets": [
+   "tiiuae/falcon-refinedweb"
+  ],
+  "language": [
+   "en",
+   "de",
+   "es",
+   "fr"
+  ],
+  "inference": false,
+  "license": "apache-2.0"
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCausalLM",
+  "pipeline_tag": "text-generation",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "configuration_falcon.py"
+  },
+  {
+   "rfilename": "generation_config.json"
+  },
+  {
+   "rfilename": "model-00001-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00002-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00003-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00004-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00005-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00006-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00007-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00008-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model-00009-of-00009.safetensors"
+  },
+  {
+   "rfilename": "model.safetensors.index.json"
+  },
+  {
+   "rfilename": "modeling_falcon.py"
+  },
+  {
+   "rfilename": "pytorch_model-00001-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00002-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00003-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00004-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00005-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00006-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00007-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00008-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00009-of-00009.bin"
+  },
+  {
+   "rfilename": "pytorch_model.bin.index.json"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "pliny-the-prompter/obliteratus",
+  "HuggingFaceH4/falcon-chat",
+  "h2oai/h2ogpt-chatbot",
+  "eduagarcia/open_pt_llm_leaderboard",
+  "Intel/low_bit_open_llm_leaderboard",
+  "h2oai/h2ogpt-chatbot2",
+  "BAAI/open_cn_llm_leaderboard",
+  "Sharathhebbar24/One-stop-for-Open-source-models",
+  "gsaivinay/open_llm_leaderboard",
+  "EvanTHU/MotionLLM",
+  "TencentARC/ImageConductor",
+  "GTBench/GTBench",
+  "Vikhrmodels/small-shlepa-lb",
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "Justinrune/LLaMA-Factory",
+  "artificialguybr/CanIRunThisLLM",
+  "BAAI/open_flageval_vlm_leaderboard",
+  "BAAI/FlagEval-Robo",
+  "lapsapking/h2ogpt-chatbot",
+  "OPTML-Group/UnlearnCanvas-Benchmark",
+  "felixz/open_llm_leaderboard",
+  "Vikhrmodels/Russian_Arena_General",
+  "awacke1/Deepseek-HPC-GPU-KEDA",
+  "Orion-zhen/tokenize-it",
+  "HemaAM/GPT_train_on_LLaMa",
+  "anantgupta129/LitGPT-Pythia-160M",
+  "officialhimanshu595/llama-factory",
+  "Vikhrmodels/small-shlepa",
+  "janshah/demo-app-FALCON40b",
+  "li-qing/FIRE",
+  "hlydecker/falcon-chat",
+  "EllieSiegel/Falcon-40B",
+  "b1sheng/kg_llm_leaderboard_test",
+  "Zulelee/langchain-chatchat",
+  "lambdabrendan/Lambda-LLM-Calculator",
+  "Kodacoda/obliteratus",
+  "dumbordumber/obliteratus",
+  "wiwide/40bqa",
+  "radames/Falcon-40b-Dockerfile",
+  "bparks08/falcon-chat-40b-1",
+  "danfsmithmsft/falcon-chat",
+  "NebulaVortex/falcon-chat",
+  "PrarthanaTS/tsai-gpt-from-scratch",
+  "MadhurGarg/TSAIGPTRedPajama",
+  "tianleliphoebe/visual-arena",
+  "RaviNaik/ERA-SESSION22",
+  "neubla/neubla-llm-evaluation-board",
+  "rodrigomasini/data_only_open_llm_leaderboard",
+  "Docfile/open_llm_leaderboard",
+  "anilkumar-kanasani/chat-with-your-pdf",
+  "imjunaidafzal/can-it-run-llm",
+  "Ashmal/MobiLlama",
+  "his0/h2ogpt-chatbot",
+  "atimughal662/InfoFusion",
+  "Sijuade/GPTNEXTWORD",
+  "holistic-ai/flops-calculator",
+  "martinakaduc/melt",
+  "dromero14521/obliteratus",
+  "kicfk/obliteratus",
+  "aaahmet/obliteratus",
+  "rbinrs/obliteratus",
+  "Ngixdev/obliteratus",
+  "Deadmon/obliteratus",
+  "RavichandranJ/obliteratus",
+  "S-Dreamer/obliteratus",
+  "AlanaSky/asgaard",
+  "marchkamal51/obliteratus",
+  "geneparmigiana/demo-app",
+  "lgadea/chattest",
+  "rhineJoke/facon-40b",
+  "aseemasthana/falcon",
+  "ZENLLC/EagleAsk",
+  "akashkj/H2OGPT",
+  "HighVibesTimes/falcon-chat",
+  "qtvhao/falcon-chat",
+  "patti-j/Omdena-MHWB-Falcon",
+  "iamrobotbear/falcon-chat",
+  "linfso/falcon-chat",
+  "bpmf/falcon-chat",
+  "ariel0330/h2osiri",
+  "Ankoorkashyap/YOUSUM",
+  "alexshengzhili/calahealthgpt",
+  "elbanhawy/falcon-chat",
+  "Gage888/falcon-Gage-chat-01",
+  "ccoreilly/aigua-xat",
+  "Inoob/falcon-chat",
+  "Felix9390/Graphica-2",
+  "samconsidine/algenic",
+  "piyushgrover/MiniGPT_S22",
+  "dataroadmap/talk-to-your-docs",
+  "supra-e-acc/Pythia-160M-text-generate",
+  "venkyyuvy/GPT_redpajama",
+  "mkthoma/GPT_From_Scratch",
+  "VarunSivamani/GPT-From-Scratch",
+  "sanjanatule/GPTNext",
+  "hakimihsan/fintalk",
+  "Sambhavnoobcoder/h2ogpt-chatbot",
+  "RashiAgarwal/TSAIGPTRedPajama",
+  "adnansami1992sami/falcon-chat",
+  "neuralorbs/DialogGen"
+ ],
+ "createdAt": "2023-05-24T12:08:30.000Z",
+ "safetensors": {
+  "parameters": {
+   "BF16": 41835970560
+  },
+  "total": 41835970560
+ },
+ "usedStorage": 251014201474
+}

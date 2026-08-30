@@ -1,0 +1,21 @@
+ISSUE #50 — RULE-SET SENSITIVITY REPORT (appendix; canonical unchanged)
+
+== canonical ==
+  bias_limitations positives: 68/187 = 36.4%
+  completeness: mean 0.610 / median 0.625; <=0.25: 31/187 (16.6%); >=0.75: 81/187 (43.3%); zero: 5
+  H3 ranking: license 176 > technical 141 > intended_use 124 > eval_results 108 > base_model 101 > citations 99 > training_data 96 > bias_limitations 68
+
+== lenient-bias ==
+  bias_limitations positives: 71/187 = 38.0%
+  completeness: mean 0.612 / median 0.625; <=0.25: 31/187 (16.6%); >=0.75: 83/187 (44.4%); zero: 5
+  H3 ranking: license 176 > technical 141 > intended_use 124 > eval_results 108 > base_model 101 > citations 99 > training_data 96 > bias_limitations 71
+
+== strict-bias ==
+  bias_limitations positives: 67/187 = 35.8%
+  completeness: mean 0.610 / median 0.625; <=0.25: 31/187 (16.6%); >=0.75: 81/187 (43.3%); zero: 5
+  H3 ranking: license 176 > technical 141 > intended_use 124 > eval_results 108 > base_model 101 > citations 99 > training_data 96 > bias_limitations 67
+
+== DELTAS vs canonical ==
+  lenient: 68 -> 71 bias positives (+3; froggeric already True via the KV-Cache heading, so 4 candidates add 3 net)
+  strict:  68 -> 67 bias positives (-1; KV-Cache technical heading)
+  H1 (<=0.25 count) and H3 (ranking) re-derived under both; see rows above

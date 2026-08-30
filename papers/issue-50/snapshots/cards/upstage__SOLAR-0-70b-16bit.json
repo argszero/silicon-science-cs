@@ -1,0 +1,231 @@
+{
+ "_id": "64c5b89db496b4e17690cfb4",
+ "id": "upstage/SOLAR-0-70b-16bit",
+ "private": false,
+ "pipeline_tag": "text-generation",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "llama",
+  "text-generation",
+  "upstage",
+  "llama-2",
+  "instruct",
+  "instruction",
+  "en",
+  "text-generation-inference",
+  "endpoints_compatible",
+  "region:us"
+ ],
+ "downloads": 23083,
+ "likes": 260,
+ "modelId": "upstage/SOLAR-0-70b-16bit",
+ "author": "upstage",
+ "sha": "43ff16100b9aec3c4d0c56116796149c1c455efc",
+ "lastModified": "2023-09-13T09:14:02.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "text": "My name is Julien and I like to"
+  },
+  {
+   "text": "I like traveling by train because"
+  },
+  {
+   "text": "Paris is an amazing place to visit,"
+  },
+  {
+   "text": "Once upon a time,"
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "LlamaForCausalLM"
+  ],
+  "model_type": "llama",
+  "tokenizer_config": {
+   "bos_token": {
+    "__type": "AddedToken",
+    "content": "<s>",
+    "lstrip": false,
+    "normalized": false,
+    "rstrip": false,
+    "single_word": false
+   },
+   "eos_token": {
+    "__type": "AddedToken",
+    "content": "</s>",
+    "lstrip": false,
+    "normalized": false,
+    "rstrip": false,
+    "single_word": false
+   },
+   "pad_token": null,
+   "unk_token": {
+    "__type": "AddedToken",
+    "content": "<unk>",
+    "lstrip": false,
+    "normalized": false,
+    "rstrip": false,
+    "single_word": false
+   }
+  }
+ },
+ "cardData": {
+  "language": [
+   "en"
+  ],
+  "tags": [
+   "upstage",
+   "llama-2",
+   "instruct",
+   "instruction"
+  ],
+  "pipeline_tag": "text-generation"
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCausalLM",
+  "pipeline_tag": "text-generation",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "generation_config.json"
+  },
+  {
+   "rfilename": "pytorch_model-00001-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00002-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00003-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00004-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00005-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00006-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00007-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00008-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00009-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00010-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00011-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00012-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00013-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00014-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00015-of-00015.bin"
+  },
+  {
+   "rfilename": "pytorch_model.bin.index.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer.model"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "Intel/low_bit_open_llm_leaderboard",
+  "BAAI/open_cn_llm_leaderboard",
+  "gsaivinay/open_llm_leaderboard",
+  "GTBench/GTBench",
+  "Vikhrmodels/small-shlepa-lb",
+  "BAAI/open_flageval_vlm_leaderboard",
+  "BAAI/FlagEval-Robo",
+  "OPTML-Group/UnlearnCanvas-Benchmark",
+  "felixz/open_llm_leaderboard",
+  "Vikhrmodels/Russian_Arena_General",
+  "Vikhrmodels/small-shlepa",
+  "deggimatt/upstage-SOLAR-0-70b-16bit2",
+  "ka1kuk/litellm",
+  "neubla/neubla-llm-evaluation-board",
+  "rodrigomasini/data_only_open_llm_leaderboard",
+  "Docfile/open_llm_leaderboard",
+  "realzdlegend/Edu-Instructor",
+  "WillRegsiter/upstage-Llama-2-70b-instruct-v2",
+  "deggimatt/upstage-SOLAR-0-70b-16bittt",
+  "neorocke/upstage-SOLAR-0-70b-16bit",
+  "mmmnmmm/upstage-SOLAR-0-70b-16bit",
+  "Parallel-Pete/upstage-Llama-2-70b-instruct-v2",
+  "Chaskins/upstage-Llama-2-70b-instruct-v2",
+  "willdzierson/upstage-Llama-2-70b-instruct-v2",
+  "qumy/upstage-Llama-2-70b-instruct-v2",
+  "sirmuelemos/upstage-Llama-2-70b-instruct-v2",
+  "swaid/upstage-Llama-2-70b-instruct-v2",
+  "nonhuman/nnnn",
+  "Cupcakus/upstage-Llama-2-70b-sinstruct-v2",
+  "Cupcakus/upstage-Llama-2-70b-instruct-v2",
+  "smothiki/open_llm_leaderboard",
+  "grea/upstage-Llama-2-70b-instruct-v2",
+  "zivzhao/upstage-Llama-2-70b-instruct-v2",
+  "mitvaghani/upstage-Llama-2-70b-instruct-v2",
+  "saidloyens/upstage-Llama-2-70b-instruct-v2",
+  "EvanLong/upstage-Llama-2-70b-instruct-v2",
+  "syberneo/upstage-Llama-2-70b-instruct-v2",
+  "wowa3520/upstage-SOLAR-0-70b-16bit",
+  "jskinner215/llma_tabular_qa",
+  "iphann/upstage-SOLAR-0-70b-16bit",
+  "0x1668/open_llm_leaderboard",
+  "pngwn/open_llm_leaderboard-check",
+  "ahmetdmr10003/upstage-SOLAR-0-70b-16bit",
+  "tamemway/upstage-SOLAR-0-70b-16bit",
+  "joaopaulopresa/workshop_llm_ufg_chatbot",
+  "asir0z/open_llm_leaderboard",
+  "kbmlcoding/open_llm_leaderboard_free",
+  "kenken999/litellm",
+  "kenken999/litellmlope",
+  "aichampions/open_llm_leaderboard",
+  "Adeco/open_llm_leaderboard",
+  "anirudh937/open_llm_leaderboard",
+  "smothiki/open_llm_leaderboard2",
+  "Asiya057/Incarna-Mind",
+  "Asiya057/Incarna-Mind-POC",
+  "mjalg/IFEvalTR",
+  "Shyamnath/inferencing-llm",
+  "DesertWolf/test3",
+  "lvkaokao/low_bit_open_llm_leaderboard-bk0418",
+  "wenjiao/low_bit_open_llm_leaderboard_5_26",
+  "wenjiao/low_bit_open_llm_leaderboard_2",
+  "lvkaokao/low_bit_open_llm_leaderboard"
+ ],
+ "createdAt": "2023-07-30T01:10:53.000Z",
+ "usedStorage": 275907501483
+}

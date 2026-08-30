@@ -1,0 +1,204 @@
+{
+ "_id": "655befb36d02c2b1a9284bf0",
+ "id": "stabilityai/stable-video-diffusion-img2vid-xt",
+ "private": false,
+ "pipeline_tag": "image-to-video",
+ "library_name": "diffusers",
+ "tags": [
+  "diffusers",
+  "safetensors",
+  "image-to-video",
+  "license:other",
+  "diffusers:StableVideoDiffusionPipeline",
+  "region:us"
+ ],
+ "downloads": 163528,
+ "likes": 3388,
+ "modelId": "stabilityai/stable-video-diffusion-img2vid-xt",
+ "author": "stabilityai",
+ "sha": "9e43909513c6714f1bc78bcb44d96e733cd242aa",
+ "lastModified": "2024-07-10T11:43:18.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": null,
+ "config": {
+  "diffusers": {
+   "_class_name": "StableVideoDiffusionPipeline"
+  }
+ },
+ "cardData": {
+  "pipeline_tag": "image-to-video",
+  "license": "other",
+  "license_name": "stable-video-diffusion-community",
+  "license_link": "LICENSE.md"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "LICENSE.md"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "comparison.png"
+  },
+  {
+   "rfilename": "feature_extractor/preprocessor_config.json"
+  },
+  {
+   "rfilename": "image_encoder/config.json"
+  },
+  {
+   "rfilename": "image_encoder/model.fp16.safetensors"
+  },
+  {
+   "rfilename": "image_encoder/model.safetensors"
+  },
+  {
+   "rfilename": "model_index.json"
+  },
+  {
+   "rfilename": "output_tile.gif"
+  },
+  {
+   "rfilename": "scheduler/scheduler_config.json"
+  },
+  {
+   "rfilename": "svd_xt.safetensors"
+  },
+  {
+   "rfilename": "svd_xt_image_decoder.safetensors"
+  },
+  {
+   "rfilename": "unet/config.json"
+  },
+  {
+   "rfilename": "unet/diffusion_pytorch_model.fp16.safetensors"
+  },
+  {
+   "rfilename": "unet/diffusion_pytorch_model.safetensors"
+  },
+  {
+   "rfilename": "vae/config.json"
+  },
+  {
+   "rfilename": "vae/diffusion_pytorch_model.fp16.safetensors"
+  },
+  {
+   "rfilename": "vae/diffusion_pytorch_model.safetensors"
+  }
+ ],
+ "spaces": [
+  "Alarzauto/NSFW-gen-v2.1",
+  "mediasynthesismuseum/stable-video-diffusion",
+  "wwen1997/Framer",
+  "wangfuyun/AnimateLCM-SVD",
+  "tencent/DepthCrafter",
+  "VIDraft/Portrait-Animation",
+  "fffiloni/SVFR-demo",
+  "PAIR/StreamingT2V",
+  "TencentARC/GeometryCrafter",
+  "fffiloni/AniDoc",
+  "fffiloni/MimicMotion",
+  "fffiloni/svd_keyframe_interpolation",
+  "jhshao/ChronoDepth",
+  "Doubiiu/TrajectoryCrafter",
+  "heheyas/V3D",
+  "mrcuddle/SDXT-Image-To-Video",
+  "vilarin/Diffutoon-ExVideo",
+  "asahi417/stable-video-diffusion-upscale",
+  "haodongli/DVD",
+  "hehao13/CameraCtrl-svd",
+  "alexnasa/ReCamMaster-ZEROGPU",
+  "awacke1/stable-video-diffusion",
+  "fffiloni/Stand-In",
+  "waloneai/SDXT-Image-To-Video",
+  "jbilcke-hf/OmniAvatar",
+  "Kvikontent/AI-Movie-Factory",
+  "emmadrex/stable-video-diffusion",
+  "Yanrui95/NormalCrafter",
+  "pablovela5620/mini-nvs-solver",
+  "modelscope/DiffSynth-Painter",
+  "AiGuaratuba/Stable-Video-Diffusion-Img2Vid-10seconds",
+  "HikariDawn/This-and-That",
+  "guardiancc/dance-monkey",
+  "yslan/ObjCtrl-2.5D",
+  "rahul7star/PusaV1",
+  "jbilcke-hf/ReCamMaster",
+  "Boka73/deepsite-project-lohn3",
+  "raymerjacque/Image-To-Video",
+  "Kunbyte/Lumen",
+  "nroggendorff/svd",
+  "CrazyEric/AnimateLCM-SVD",
+  "kevinwang676/Diffutoon",
+  "xinxiaoxin/MimicMotion",
+  "123LETSPLAY/imagetovideo-try1",
+  "DDUF/dduf-my-diffusers-repo",
+  "kevalfst/visionary-ai",
+  "abonline/stable-video-diffusion-img2vid-xt",
+  "Speedofmastery/orynxml-backend",
+  "Aarong81/ai-adult-content-creator-prototype",
+  "Deabsexy/deabsexy-i2v-nsfw-v2zu",
+  "hugging-apps/lip-forcing",
+  "Taf2023/stable-video-diffusion",
+  "quantumcontrol/stable-video-diffusion",
+  "sejamenath2023/stable-video-diffusionv2",
+  "awacke1/StableDiffusionVideoTo3D",
+  "SamarthPersonal/LumiereIQ",
+  "Dragunflie-420/MimicMotion",
+  "salomonsky/video",
+  "thecosmicdoctor/unboxai_publicVideo",
+  "svjack/AniDoc",
+  "jack1969/SVFR-demo",
+  "waloneai/SDX-Image-To-Video",
+  "humvee1249/stable-video-diffusion",
+  "doodle-med/Audio2KineticVid",
+  "LawrenceFriday/Makelele-AI-Video-Studio",
+  "BoobyBoobs/gen-m3mxs2yu",
+  "Utsav0987/Apex-ai",
+  "nadish1210/image-video",
+  "DAVIGABRIELA/SDXT-Image-To-Video",
+  "ajay-k-2026/fast-ai-video-phots",
+  "Master-AI-Oner/Master-AI",
+  "apdelrahman/Epro_tec_._ai",
+  "iam23yhb/DemurePlatformsInc",
+  "fffiloni/Relit-LIVE-ZeroGPU-demo",
+  "Minihits2142/Wan-Dancer-14B",
+  "vloikas/stable-video-diffusion",
+  "TheVilfer/stable-video-diffusion",
+  "piaoyu2011/stable-video-diffusion",
+  "zparadox/stable-video-diffusion",
+  "AlekseyCalvin/SVDxt_to_Neurealize_History",
+  "tiagojardins/stable-video-diffusion",
+  "waledrashed/stable-video-diffusion",
+  "MgMetaverso/stable-video-diffusion",
+  "sejamenath2023/stable-video-diffusionv3",
+  "pallab7685/stable-video-diffusion",
+  "besarismaili/sd-video",
+  "dclxviclan/Stabblediffusiontest",
+  "Bernaj/stable-video-diffusion",
+  "fantos/vidiani",
+  "Moldwebs/sd-video",
+  "Tonic/stable-video-diffusion-xt-1",
+  "Moldwebs/stable-video-diffusion",
+  "panyanyany/stable-video-diffusion",
+  "dadstt/stable-video-diffusion",
+  "ajajjajajaja/StreamingT2V",
+  "conzikool/Video-Diffusion",
+  "Divergent007/stable-video-diffusion",
+  "dereckd/stable-video-diffusion4",
+  "womprat/stable-video-diffusion",
+  "sy555/stable-video-diffusion"
+ ],
+ "createdAt": "2023-11-20T23:45:55.000Z",
+ "safetensors": {
+  "parameters": {
+   "F32": 1524623082
+  },
+  "total": 1524623082
+ },
+ "usedStorage": 32634599639
+}

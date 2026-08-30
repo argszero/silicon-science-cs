@@ -1,0 +1,176 @@
+{
+ "_id": "63ea5ee51edeb3fe8f1f0aa2",
+ "id": "EleutherAI/pythia-70m-deduped",
+ "private": false,
+ "pipeline_tag": "text-generation",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "safetensors",
+  "gpt_neox",
+  "text-generation",
+  "causal-lm",
+  "pythia",
+  "en",
+  "dataset:EleutherAI/the_pile_deduplicated",
+  "arxiv:2304.01373",
+  "arxiv:2101.00027",
+  "arxiv:2201.07311",
+  "license:apache-2.0",
+  "text-generation-inference",
+  "endpoints_compatible",
+  "deploy:sagemaker",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 812963,
+ "likes": 30,
+ "modelId": "EleutherAI/pythia-70m-deduped",
+ "author": "EleutherAI",
+ "sha": "e93a9faa9c77e5d09219f6c868bfc7a1bd65593c",
+ "lastModified": "2023-07-09T16:07:33.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "text": "My name is Julien and I like to"
+  },
+  {
+   "text": "I like traveling by train because"
+  },
+  {
+   "text": "Paris is an amazing place to visit,"
+  },
+  {
+   "text": "Once upon a time,"
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "GPTNeoXForCausalLM"
+  ],
+  "model_type": "gpt_neox",
+  "tokenizer_config": {
+   "bos_token": "<|endoftext|>",
+   "eos_token": "<|endoftext|>",
+   "unk_token": "<|endoftext|>"
+  }
+ },
+ "cardData": {
+  "language": [
+   "en"
+  ],
+  "tags": [
+   "pytorch",
+   "causal-lm",
+   "pythia"
+  ],
+  "license": "apache-2.0",
+  "datasets": [
+   "EleutherAI/the_pile_deduplicated"
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCausalLM",
+  "pipeline_tag": "text-generation",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "eduagarcia/open_pt_llm_leaderboard",
+  "Intel/low_bit_open_llm_leaderboard",
+  "BAAI/open_cn_llm_leaderboard",
+  "Sharathhebbar24/One-stop-for-Open-source-models",
+  "mlabonne/chessllm",
+  "gsaivinay/open_llm_leaderboard",
+  "GTBench/GTBench",
+  "Vikhrmodels/small-shlepa-lb",
+  "BAAI/open_flageval_vlm_leaderboard",
+  "BAAI/FlagEval-Robo",
+  "OPTML-Group/UnlearnCanvas-Benchmark",
+  "felixz/open_llm_leaderboard",
+  "Vikhrmodels/Russian_Arena_General",
+  "Vikhrmodels/small-shlepa",
+  "b1sheng/kg_llm_leaderboard_test",
+  "neubla/neubla-llm-evaluation-board",
+  "rodrigomasini/data_only_open_llm_leaderboard",
+  "Docfile/open_llm_leaderboard",
+  "neuralorbs/DialogGen",
+  "smothiki/open_llm_leaderboard",
+  "pngwn/open_llm_leaderboard",
+  "pngwn/open_llm_leaderboard_two",
+  "wissamantoun/LLM_Detection_Attribution",
+  "0x1668/open_llm_leaderboard",
+  "pngwn/open_llm_leaderboard-check",
+  "asir0z/open_llm_leaderboard",
+  "kbmlcoding/open_llm_leaderboard_free",
+  "K00B404/One-stop-till-you-drop",
+  "aichampions/open_llm_leaderboard",
+  "Adeco/open_llm_leaderboard",
+  "anirudh937/open_llm_leaderboard",
+  "smothiki/open_llm_leaderboard2",
+  "Nymbo/chessllm",
+  "mjalg/IFEvalTR",
+  "manny-uncharted/training_space_200a3b20_89b4_4033_b379_ad0a8ff8bb6b",
+  "manny-uncharted/training_space_39724fe9_0b4e_4ba2_89ff_b199c58910e8",
+  "Testys/training_space_6fcc4bc7_3fc5_41ee_bf17_105e2289e4e8",
+  "Testys/training_space_6c8445aa_67eb_4afe_b74f_ccf20387f541",
+  "Testys/training_space_d34dfa69_ac9a_4319_b3df_c1b999f142fe",
+  "Testys/training_space_5e27215a_1f78_4acc_b0de_d4833b807719",
+  "Testys/training_space_4bccddc3_98f9_43c8_bcdc_5586e4fb9297",
+  "Testys/training_space_b3982535_1889_48b2_8d7b_e120890b1a11",
+  "Testys/training_space_fcb2c8ec_4bb1_4ffa_9acc_af21bd40e5c5",
+  "Testys/training_space_7be0da58_a251_406d_84dc_e9d733293380",
+  "Testys/training_space_47743a98_f5c2_4e52_a6a7_28ee9d93e1de",
+  "Testys/training_space_bcd1c572_4cb3_4cae_8696_a2c31e740981",
+  "Testys/training_space_95ba8615_9842_446b_a393_bd191055d1ee",
+  "Testys/training_space_304268a6_2e7f_4d73_9cb6_e538064f8e80",
+  "Testys/training_space_a2e8ab9a_01d8_4479_acf0_20d6c537d3fa",
+  "Testys/training_space_c77ce99d_aa10_4f02_8071_121720ad0f5f",
+  "Testys/training_space_17615c7e_e6a9_43ed_9722_5ecc120df691",
+  "Testys/training_space_58c3351c_9e2b_4a28_bb9b_17a22ad662b2",
+  "adityarajsahu/llm-serve-optimizer-env",
+  "lvkaokao/low_bit_open_llm_leaderboard-bk0418",
+  "wenjiao/low_bit_open_llm_leaderboard_5_26",
+  "wenjiao/low_bit_open_llm_leaderboard_2",
+  "ktangri/jacobian-lens-playground",
+  "lvkaokao/low_bit_open_llm_leaderboard",
+  "Yu-and-Ai/pythia-paths"
+ ],
+ "createdAt": "2023-02-13T16:01:41.000Z",
+ "safetensors": {
+  "parameters": {
+   "F16": 70426672,
+   "U8": 25165824
+  },
+  "total": 95592496
+ },
+ "usedStorage": 69287758050
+}

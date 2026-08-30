@@ -1,0 +1,221 @@
+{
+ "_id": "621ffdc136468d709f17b7d7",
+ "id": "google/vit-base-patch16-224",
+ "private": false,
+ "pipeline_tag": "image-classification",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "tf",
+  "jax",
+  "safetensors",
+  "vit",
+  "image-classification",
+  "vision",
+  "dataset:imagenet-1k",
+  "dataset:imagenet-21k",
+  "arxiv:2010.11929",
+  "arxiv:2006.03677",
+  "license:apache-2.0",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 4770208,
+ "likes": 994,
+ "modelId": "google/vit-base-patch16-224",
+ "author": "google",
+ "sha": "3f49326eb077187dfe1c2a2bb15fbd74e6ab91e3",
+ "lastModified": "2023-09-05T15:27:12.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/tiger.jpg",
+   "example_title": "Tiger"
+  },
+  {
+   "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/teapot.jpg",
+   "example_title": "Teapot"
+  },
+  {
+   "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/palace.jpg",
+   "example_title": "Palace"
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "ViTForImageClassification"
+  ],
+  "model_type": "vit"
+ },
+ "cardData": {
+  "license": "apache-2.0",
+  "tags": [
+   "vision",
+   "image-classification"
+  ],
+  "datasets": [
+   "imagenet-1k",
+   "imagenet-21k"
+  ],
+  "widget": [
+   {
+    "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/tiger.jpg",
+    "example_title": "Tiger"
+   },
+   {
+    "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/teapot.jpg",
+    "example_title": "Teapot"
+   },
+   {
+    "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/palace.jpg",
+    "example_title": "Palace"
+   }
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForImageClassification",
+  "pipeline_tag": "image-classification",
+  "processor": "AutoImageProcessor"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "flax_model.msgpack"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "preprocessor_config.json"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "tf_model.h5"
+  }
+ ],
+ "spaces": [
+  "mcherif/Plant-Disease-RAG-Assistant",
+  "gunship999/SexyImages",
+  "Yntec/ToyWorld",
+  "llamameta/flux-pro-uncensored",
+  "Uthar/SexyReality",
+  "Yntec/PrintingPress",
+  "Nymbo/Compare-6",
+  "M2UGen/M2UGen-Demo",
+  "llamameta/fluxproV2",
+  "Yntec/ToyWorldXL",
+  "burtenshaw/autotrain-mcp",
+  "Yntec/blitz_diffusion",
+  "John6666/Diffusion80XX4sg",
+  "John6666/PrintingPress4",
+  "Nuno-Tome/simple_image_classifier",
+  "llamameta/fast-sd3.5-large",
+  "tonyassi/product-recommendation",
+  "Yntec/Image-Models-Test-2024",
+  "Yntec/Image-Models-Test-April-2024",
+  "DemiPoto/TestDifs",
+  "Abinivesh/Multi-models-prompt-to-image-generation",
+  "team-indain-image-caption/Hindi-image-captioning",
+  "NativeAngels/Compare-6",
+  "abidlabs/vision-transformer",
+  "John6666/hfd_test_nostopbutton",
+  "Nymbo/Diffusion80XX4sg",
+  "DemiPoto/testSortModels",
+  "kaleidoskop-hug/PrintingPress",
+  "autonomous019/image_story_generator",
+  "Chakshu123/image-colorization-with-hint",
+  "Npps/Food_Indentification_and_Nutrition_Info",
+  "Yntec/MiniToyWorld",
+  "star092304/ai-real-image-detector",
+  "John6666/ToyWorld4",
+  "build-small-hackathon/HearthNet",
+  "Ramos-Ramos/visual-emb-gam-probing",
+  "jamesgray007/berkeley-ai-m3",
+  "John6666/Diffusion80XX4g",
+  "SAITAN666/StableDiffusion35Large-Image-Models-Test-November-2024",
+  "NativeAngels/HuggingfaceDiffusion",
+  "NativeAngels/ToyWorld",
+  "Yntec/Image-Models-Test-December-2024",
+  "abidlabs/image-classifier",
+  "hysts/space-that-creates-model-demo-space",
+  "st0bb3n/Cam2Speech",
+  "John6666/Diffusion80XX4",
+  "K00B404/HuggingfaceDiffusion_custom",
+  "John6666/blitz_diffusion4",
+  "John6666/blitz_diffusion_builtin",
+  "eksemyashkina/clothes-segmentation",
+  "K00B404/SimpleBrothel",
+  "j0hngou/vision-diffmask",
+  "ipvikas/ImageProcessing",
+  "HighCWu/anime-colorization-with-hint",
+  "ClassCat/ViT-ImageNet-Classification",
+  "Blane187/multi-diffusion",
+  "Uthar/LewdExperiments",
+  "Uthar/BodyPaint",
+  "Uthar/HRGiger",
+  "Uthar/HighFashion",
+  "mmeendez/cnn_transformer_explainability",
+  "nickmuchi/Plant-Health-Classifier",
+  "Saiteja/leaf-ViT-classifier",
+  "dreamdrop-art/000555111",
+  "awacke1/MusicChatGenWithMuGen",
+  "LucyintheSky/sketch-to-dress",
+  "Nuno-Tome/bulk_image_classifier",
+  "andreped/vit-explainer",
+  "Somnath3570/food_calories_calculation",
+  "Shiladitya123Mondal/Food-Nutrition-app",
+  "swdqwewfw/Calorie_Calculator",
+  "Uthar/Harvester",
+  "Yeeezus/SexyImages",
+  "SharafeevRavil/test",
+  "Kaushik066/face_recognition-app",
+  "John6666/MiniToyWorld",
+  "Uthar/TestgroundPub",
+  "maomao88/visualize_attention_in_ViT",
+  "fokan/train-modle",
+  "Spyboy3/geomindai-api",
+  "Nuno-Tome/compared_image_classifier",
+  "mou11/pneumonia-detector",
+  "fatimaaisha002/agriguard-ai",
+  "build-small-hackathon/GAHAKU-EXAM",
+  "build-small-hackathon/Crop-Guard-AI",
+  "build-small-hackathon/ai-model-xray",
+  "build-small-hackathon/KrishiSathi",
+  "bryantmedical/oral_cancer",
+  "yiw/text",
+  "ThankGod/image-classifier",
+  "autonomous019/Story_Generator_v2",
+  "IPN/demo_",
+  "webis-huggingface-workshop/omar_demo",
+  "vebie91/spaces-image-classification-demo",
+  "suresh-subramanian/bean-classification",
+  "akhaliq/space-that-creates-model-demo-space",
+  "paschalc/ImageRecognitionDemo",
+  "peteralexandercharles/space-that-creates-model-demo-space",
+  "awacke1/MultiplayerImageRecognition-Gradio",
+  "mushroomsolutions/Gallery"
+ ],
+ "createdAt": "2022-03-02T23:29:05.000Z",
+ "safetensors": {
+  "parameters": {
+   "F32": 86567656
+  },
+  "total": 86567656
+ },
+ "inference": "warm",
+ "usedStorage": 2425307332
+}

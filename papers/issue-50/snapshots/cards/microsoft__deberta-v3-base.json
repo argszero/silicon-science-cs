@@ -1,0 +1,190 @@
+{
+ "_id": "621ffdc136468d709f17dee4",
+ "id": "microsoft/deberta-v3-base",
+ "private": false,
+ "pipeline_tag": "fill-mask",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "tf",
+  "rust",
+  "deberta-v2",
+  "deberta",
+  "deberta-v3",
+  "fill-mask",
+  "en",
+  "arxiv:2006.03654",
+  "arxiv:2111.09543",
+  "license:mit",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 2850710,
+ "likes": 435,
+ "modelId": "microsoft/deberta-v3-base",
+ "author": "microsoft",
+ "sha": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+ "lastModified": "2022-09-22T12:34:19.000Z",
+ "gated": false,
+ "disabled": false,
+ "mask_token": "[MASK]",
+ "widgetData": [
+  {
+   "text": "Paris is the [MASK] of France."
+  },
+  {
+   "text": "The goal of life is [MASK]."
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "model_type": "deberta-v2",
+  "tokenizer_config": {}
+ },
+ "cardData": {
+  "language": "en",
+  "tags": [
+   "deberta",
+   "deberta-v3",
+   "fill-mask"
+  ],
+  "thumbnail": "https://huggingface.co/front/thumbnails/microsoft.png",
+  "license": "mit"
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModel"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "rust_model.ot"
+  },
+  {
+   "rfilename": "spm.model"
+  },
+  {
+   "rfilename": "tf_model.h5"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "EuroEval/euroeval_leaderboard",
+  "ruanchaves/portuguese-offensive-language-detection",
+  "manu/gliner_multi",
+  "anonymous8/Rapid-Textual-Adversarial-Defense",
+  "Tonic/gliner_base",
+  "wandb/guardrails-genie",
+  "lukasgarbas/transformer-ranker",
+  "jmaciejowski/live_stock_news_dashboard",
+  "Rishi2455/Smart-Turn",
+  "Asmitha-28/SupportMind",
+  "ruanchaves/portuguese-question-answering",
+  "riccorl/relik-entity-linking",
+  "non2013/SincereQuestions",
+  "NithitEiEi/insincere-question",
+  "KavishNayeem/PhishPatrol",
+  "Vaibhav7625/advanced-classroom-ai",
+  "Jay-Rajput/humanizer",
+  "ziem-io/whisky-wheel",
+  "Thadillo/participatory-planner",
+  "abhaynb92/22f1000829-t32025",
+  "hrshlgunjal/emotion-classifier-dl-genai-project",
+  "hannusia123123/propaganda-detector",
+  "aneela-pervez/DEEP-FAKE-DETECTOR",
+  "eventdata-utd/ConfliBERT-GUI-v3",
+  "NotHotTryHard/rag-wiki-fact-checker",
+  "VivDubs/eumora-api",
+  "Yanno72/conda-ksweep",
+  "njmery/microsoft-deberta-v3-base",
+  "ruanchaves/portuguese-semantic-similarity",
+  "ruanchaves/portuguese-textual-entailment",
+  "ruanchaves/portuguese-text-simplification",
+  "Yuichiroh/UOT",
+  "kdevoe/testspace",
+  "ieuniversity/live_stock_news_dashboard",
+  "peter2000/gliner_multi",
+  "kaitehtzeng/primary_app",
+  "CarlosMalaga/3ie-intervention-outcome-entity-linking",
+  "rbiswasfc/compare-tokenizers",
+  "projecte-aina/multiner_demo",
+  "PFEemp2024/DCWIR-Demo",
+  "shoukaku/fake-health-news-detection",
+  "PFEemp2024/DCWIR-Offcial-Demo",
+  "srivelan/microsoft-deberta-v3-base",
+  "Anamta98/microsoft-deberta-v3-base",
+  "WebashalarForML/ImageDataExtractor2",
+  "WebashalarForML/ImageDataExtractor3",
+  "ahmedovv/microsoft-deberta-v3-base",
+  "max-bevza/ViralTweets",
+  "Chamin09/sustainable_content_moderator",
+  "asad231/FakeNews_DeepFakeDetectionPlan",
+  "Muzammil-Mj/fakeNews-DeepFakesDetection",
+  "asad231/FakeNews_DeepFakeDetectionPlan1",
+  "kiranShahzadi/FakeNews_Deepfake_Detection",
+  "aravindbethapudi2017/mbti",
+  "Tachygraphy-Microtext-Normalization-IEMK25/Tachygraphy-Microtext-Analysis-and-Normalization-ArchismanCoder",
+  "novikov-ie/arxiv-classifier",
+  "dine24/luxury-decor-rag",
+  "nickusan/NlpDev",
+  "b3nchMark/ysda_ml_2_hf_tune",
+  "ssbars/ysdaml4",
+  "coldn00dl3s/llm-human-prediction-demo",
+  "darshilVShah/span-extraction",
+  "amjad21sw18/AIHealthcareStatusChecker",
+  "rshakked/safe-talk",
+  "jsasportas/microsoft-deberta-v3-base",
+  "attention-conll/visualizer",
+  "Framby/P7",
+  "piyush333/multitask-bias-detector-mach-1",
+  "ClaCe/FindHugForPMwithKey",
+  "Shenkezs/nbme-deberta-app",
+  "happyrwandan/mysticai-server-whisperer",
+  "21f3001617/dlgenai-nppe",
+  "Akshatbhatt515334/AEGIS-SECURE-API",
+  "mahmdshafee/emotion-detection-api",
+  "Aswin92/disaster-tweet-classifier-v2",
+  "LorenzoNava/deberta-cwe-training",
+  "harkishan99/2025-sep-dl-gen-ai-project",
+  "ShreyaAgr/dlgenai",
+  "Abhirudraa/emotion-classifier",
+  "AyusmanSamasi/Sentimental_Analysis",
+  "AjIItm/Emotion-detection",
+  "v1-a/dlgenai_deploy",
+  "22f3000123/dl-genai-project",
+  "divyabharathibalan/fakenewsdetector",
+  "rodunia/llm-research-app",
+  "NeuralNest05/emo-detector-space",
+  "SrutiMi/crime-backend",
+  "haroon103/Spamforensics",
+  "haroon103/spamemail",
+  "haroon103/eemailspamm",
+  "haroon103/sppamemail",
+  "Duc0104/Toxic_Comments",
+  "Jayeshw2006/VQA",
+  "mutekiKazu/linguatech-TONE",
+  "vivek1192/detectAI",
+  "Azis6464/welldify_ai",
+  "OmidSakaki/Mental_Health_Text_Classification",
+  "karthikkallapiran/Resume",
+  "lyzz1203/sentiflow"
+ ],
+ "createdAt": "2022-03-02T23:29:05.000Z",
+ "inference": "warm",
+ "usedStorage": 3702154240
+}

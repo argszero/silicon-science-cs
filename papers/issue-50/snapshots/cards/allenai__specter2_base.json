@@ -1,0 +1,145 @@
+{
+ "_id": "63ee9f616349d1a6706f2ee6",
+ "id": "allenai/specter2_base",
+ "private": false,
+ "pipeline_tag": "feature-extraction",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "bert",
+  "feature-extraction",
+  "en",
+  "dataset:allenai/scirepeval",
+  "license:apache-2.0",
+  "text-embeddings-inference",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 701414,
+ "likes": 48,
+ "modelId": "allenai/specter2_base",
+ "author": "allenai",
+ "sha": "3447645e1def9117997203454fa4495937bfbd83",
+ "lastModified": "2024-12-04T07:45:10.000Z",
+ "gated": false,
+ "disabled": false,
+ "mask_token": "[MASK]",
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "BertModel"
+  ],
+  "model_type": "bert",
+  "tokenizer_config": {
+   "cls_token": "[CLS]",
+   "mask_token": "[MASK]",
+   "pad_token": "[PAD]",
+   "sep_token": "[SEP]",
+   "unk_token": "[UNK]"
+  }
+ },
+ "cardData": {
+  "license": "apache-2.0",
+  "datasets": [
+   "allenai/scirepeval"
+  ],
+  "language": [
+   "en"
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModel",
+  "pipeline_tag": "feature-extraction",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  },
+  {
+   "rfilename": "vocab.txt"
+  }
+ ],
+ "spaces": [
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "gwf-uwaterloo/acl-spectrum",
+  "ArneBinder/ScientificArgumentRecommender",
+  "yangg40/specter2-embeddings",
+  "juanbascur/text-similarity-maker",
+  "RuchirKadam1729/bertopic-agentic-ai",
+  "Viske/Spjimr",
+  "Bekkali037/arxiv-intelligence-search-demo",
+  "BHAVIKBANKER/BERTopic_AG_final",
+  "spjimr-bertopic/bertopic-agent-final",
+  "gtech13/Topic-Modeling-BERTopic-Math-Visualization",
+  "gwf-uwaterloo/gwf-spectrum",
+  "Mofe/HESS_Visualization",
+  "chahah/ChangBot",
+  "Ippo987/Paperlens",
+  "chrible/citation-integrity",
+  "samyakshrestha/multiagent-xray-assistant",
+  "uddi12/Xtract",
+  "yangg40/specter2-api",
+  "siham47/academic-recommender-api",
+  "zrsong/academic-paper-analyzer",
+  "mahesh237/Research_paper_Search",
+  "PetraV77/TRUST_score",
+  "astrospacer23/astra_ai",
+  "Mobien/neuro-reproducibility",
+  "Roman79/citation-predictor2",
+  "vvinayakkkkk/topic-modelling",
+  "prasad-gade05/CHB-BERTopic-Analysis",
+  "atharvthite05/BERTopic_Thematic_Analysis_Agent",
+  "hackwidmaddy/bertopic-agentic-ai",
+  "aadisawant2912/topic_modelling",
+  "anushka3306/topic_modelling",
+  "Aastik99/Prof-Devreotes-Chatbot",
+  "aleptonic/topic_modelling",
+  "Enayut/topic_modelling_agent",
+  "advaitidalvi/bert_model_agentic_advaiti",
+  "rayanjain/spj",
+  "Shivani-Bhat/Topic-Modelling",
+  "aarush2109/bertopic-modelling",
+  "hetshah16/Bertmodel",
+  "anujjuna/BERTopic_AGENTIC_AI_GROUP_14",
+  "milindkamat0507/TOPICMODELLING",
+  "juanbascur/tsm-webgpu-test",
+  "CoolDataScientist/bertopic-agent-v2",
+  "reyansh2005/agent-specter",
+  "reyansh2005/agent-2-specter",
+  "BHAVIKBANKER/BERTopic_AGENTIC_AI_GROUP_1",
+  "shahidshaikh/SPJIMR_Scopus",
+  "pranavs67/astra_ai",
+  "BHAVIKBANKER/BERTopic_AGENTIC_AI__GROUP_1",
+  "sankezzzz/Phd-recommend",
+  "Dash10107/eis-topic-intelligence",
+  "ze19n/scientific-claim-linking-backend",
+  "NizamiRzayev/efn-backend",
+  "advaitidalvi/project",
+  "MOWISAM/research-platform-ai",
+  "adamrpah/research-atlas-specter2"
+ ],
+ "createdAt": "2023-02-16T21:25:53.000Z",
+ "inference": "warm",
+ "usedStorage": 1319141277
+}
