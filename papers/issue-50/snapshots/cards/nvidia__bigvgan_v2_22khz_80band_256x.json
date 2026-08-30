@@ -1,0 +1,213 @@
+{
+ "_id": "66952d1694d49f9e3aa6b2e5",
+ "id": "nvidia/bigvgan_v2_22khz_80band_256x",
+ "private": false,
+ "pipeline_tag": "audio-to-audio",
+ "library_name": "PyTorch",
+ "tags": [
+  "PyTorch",
+  "neural-vocoder",
+  "audio-generation",
+  "audio-to-audio",
+  "arxiv:2206.04658",
+  "license:mit",
+  "region:us"
+ ],
+ "downloads": 2093379,
+ "likes": 33,
+ "modelId": "nvidia/bigvgan_v2_22khz_80band_256x",
+ "author": "nvidia",
+ "sha": "633ff708ed5b74903e86ff1298cf4a98e921c513",
+ "lastModified": "2024-09-05T03:36:23.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": null,
+ "config": {},
+ "cardData": {
+  "license": "mit",
+  "license_link": "https://huggingface.co/nvidia/BigVGAN/blob/main/LICENSE",
+  "tags": [
+   "neural-vocoder",
+   "audio-generation"
+  ],
+  "library_name": "PyTorch",
+  "pipeline_tag": "audio-to-audio"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": ".gitignore"
+  },
+  {
+   "rfilename": "LICENSE"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "activations.py"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/__init__.py"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/activation1d.py"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/anti_alias_activation.cpp"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/anti_alias_activation_cuda.cu"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/compat.h"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/load.py"
+  },
+  {
+   "rfilename": "alias_free_activation/cuda/type_shim.h"
+  },
+  {
+   "rfilename": "alias_free_activation/torch/__init__.py"
+  },
+  {
+   "rfilename": "alias_free_activation/torch/act.py"
+  },
+  {
+   "rfilename": "alias_free_activation/torch/filter.py"
+  },
+  {
+   "rfilename": "alias_free_activation/torch/resample.py"
+  },
+  {
+   "rfilename": "bigvgan.py"
+  },
+  {
+   "rfilename": "bigvgan_discriminator_optimizer.pt"
+  },
+  {
+   "rfilename": "bigvgan_discriminator_optimizer_3msteps.pt"
+  },
+  {
+   "rfilename": "bigvgan_generator.pt"
+  },
+  {
+   "rfilename": "bigvgan_generator_3msteps.pt"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "env.py"
+  },
+  {
+   "rfilename": "meldataset.py"
+  },
+  {
+   "rfilename": "nv-modelcard++/.gitkeep"
+  },
+  {
+   "rfilename": "nv-modelcard++/bias.md"
+  },
+  {
+   "rfilename": "nv-modelcard++/explainability.md"
+  },
+  {
+   "rfilename": "nv-modelcard++/overview.md"
+  },
+  {
+   "rfilename": "nv-modelcard++/privacy.md"
+  },
+  {
+   "rfilename": "nv-modelcard++/safety.md"
+  },
+  {
+   "rfilename": "utils.py"
+  }
+ ],
+ "spaces": [
+  "Plachta/Seed-VC",
+  "multimodalart/scenema-audio",
+  "Uniaff/Seed-VC",
+  "Kalapak/sotaka_voice_ai",
+  "vincenthugging/Seed-VC",
+  "soiz1/seed-vc3",
+  "antoniomae1234/Seed-VC-characters",
+  "Quantumhash/Quantum_Voice_Clone",
+  "frascuchon/Seed-VC",
+  "DreamSyncCo/IndicVoiceChanger",
+  "mengtoa/Seed-VC",
+  "soiz1/Seed-VC",
+  "mmwmm/Seed-VC",
+  "sp2026/Seed-VC",
+  "MTNProductions/Seed-VC",
+  "phuoc2005/seed-vc",
+  "phuoc2005/sotaka_voice_ai",
+  "aiqtech/songclon",
+  "khavailed1/Seed-VC",
+  "soiz/Seed-VC",
+  "soiz/Seed-VC-api",
+  "ArtsyVRC/Seed-VC",
+  "soiz1/Seed-VC-characters",
+  "SpongeBobFan2002/Seed-VC",
+  "niaodtianatng/Seed-VC",
+  "antoniomae1234/SeedVCcharacters",
+  "antoniomae1234/SeedVC",
+  "amks7/Seed-VC",
+  "Bajiyo/Seed-VC_test_2",
+  "Akatuki25/seed-vc-streaming",
+  "Munna5310/Seed-VC",
+  "dandan0311/sykelong",
+  "deep-oasis8/Seed-VC",
+  "jameshuntercarter/Seed-VC-3",
+  "Xavi99/Seed-VC",
+  "Sofiane13240/Seed-VC-characters",
+  "RonbooRon/Seed-VC",
+  "Usagert12/Seed-VC_test_2",
+  "smartwang/seedvc",
+  "Marigold1122/Seed-VC",
+  "smartwang/seedvc-uvr",
+  "anvesh54321/IndicVoiceChanger",
+  "mphi/damberg-vc",
+  "kevinzekeayushishan/Seed-VC",
+  "Xtciaan/Seed-VC",
+  "Marwan132/Seed-VC",
+  "GuaditaJu4rez/Seed-VC",
+  "Zhdoendbdksndkdbdkskjsnsldbdk/Seed-VC",
+  "ffgxfgxfddf/Seed-VC",
+  "Niguel/Seed-VC",
+  "Pnevka/Seed-VC",
+  "AhmedMUN/Seed-VC1",
+  "AhmedMUN/Seed-VC2",
+  "Specialgfhdhdh/singing-voice-cloner",
+  "inkuei/basaytts",
+  "1eko/Seed-VC",
+  "zeeburgers/Seed-VCc",
+  "shubhxm20/Seed-VC",
+  "DilshanIRU/Seed-VC",
+  "hardcoremoore/scenema-audio",
+  "Landol4/Seed-VC",
+  "jofl/seed-vc",
+  "sreesaiarjun/IndicVoiceChanger",
+  "mwdi2702/my-voice-bot-1",
+  "ziyadmohammed/Seed-VC",
+  "Pixalesce/VoiceVeil",
+  "piska228/seed-vc",
+  "antoniomae1234/Seed-VC2",
+  "josecardido/seed-vc2",
+  "Timamar/Seed-VC",
+  "Oneteste/Seed-VC",
+  "entitygumby/Seed-VC_MTN",
+  "entitygumby/Seed-VC_Platcha",
+  "CureBeep29/Seed-VC",
+  "MissAdaChan/Seed-VC",
+  "cysjunkatschool/Seed-VC",
+  "lbmodels/Seed-VC",
+  "AiWorkflowPro/Seed-VC"
+ ],
+ "createdAt": "2024-07-15T14:07:18.000Z",
+ "usedStorage": 3789853862
+}

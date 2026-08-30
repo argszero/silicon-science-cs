@@ -1,0 +1,497 @@
+{
+ "_id": "624f496dbcbeb0d535f47bcf",
+ "id": "EleutherAI/gpt-neox-20b",
+ "private": false,
+ "pipeline_tag": "text-generation",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "safetensors",
+  "gpt_neox",
+  "text-generation",
+  "causal-lm",
+  "en",
+  "dataset:EleutherAI/pile",
+  "arxiv:2204.06745",
+  "arxiv:2101.00027",
+  "arxiv:2201.07311",
+  "arxiv:2104.09864",
+  "license:apache-2.0",
+  "text-generation-inference",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 789008,
+ "likes": 585,
+ "modelId": "EleutherAI/gpt-neox-20b",
+ "author": "EleutherAI",
+ "sha": "c292233c833e336628618a88a648727eb3dff0a7",
+ "lastModified": "2024-01-31T20:30:35.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "text": "My name is Julien and I like to"
+  },
+  {
+   "text": "I like traveling by train because"
+  },
+  {
+   "text": "Paris is an amazing place to visit,"
+  },
+  {
+   "text": "Once upon a time,"
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "GPTNeoXForCausalLM"
+  ],
+  "model_type": "gpt_neox",
+  "tokenizer_config": {
+   "unk_token": "<|endoftext|>",
+   "bos_token": "<|endoftext|>",
+   "eos_token": "<|endoftext|>"
+  }
+ },
+ "cardData": {
+  "language": [
+   "en"
+  ],
+  "tags": [
+   "pytorch",
+   "causal-lm"
+  ],
+  "license": "apache-2.0",
+  "datasets": [
+   "EleutherAI/pile"
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCausalLM",
+  "pipeline_tag": "text-generation",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "merges.txt"
+  },
+  {
+   "rfilename": "model-00001-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00002-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00003-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00004-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00005-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00006-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00007-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00008-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00009-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00010-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00011-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00012-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00013-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00014-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00015-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00016-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00017-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00018-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00019-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00020-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00021-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00022-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00023-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00024-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00025-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00026-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00027-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00028-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00029-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00030-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00031-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00032-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00033-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00034-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00035-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00036-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00037-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00038-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00039-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00040-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00041-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00042-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00043-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00044-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00045-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model-00046-of-00046.safetensors"
+  },
+  {
+   "rfilename": "model.safetensors.index.json"
+  },
+  {
+   "rfilename": "pytorch_model-00001-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00002-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00003-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00004-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00005-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00006-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00007-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00008-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00009-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00010-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00011-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00012-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00013-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00014-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00015-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00016-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00017-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00018-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00019-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00020-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00021-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00022-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00023-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00024-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00025-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00026-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00027-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00028-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00029-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00030-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00031-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00032-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00033-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00034-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00035-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00036-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00037-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00038-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00039-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00040-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00041-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00042-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00043-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00044-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00045-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model-00046-of-00046.bin"
+  },
+  {
+   "rfilename": "pytorch_model.bin.index.json"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  },
+  {
+   "rfilename": "vocab.json"
+  }
+ ],
+ "spaces": [
+  "olivierdehaene/chat-llm-streaming",
+  "h2oai/h2ogpt-chatbot",
+  "eduagarcia/open_pt_llm_leaderboard",
+  "Intel/low_bit_open_llm_leaderboard",
+  "h2oai/h2ogpt-chatbot2",
+  "BAAI/open_cn_llm_leaderboard",
+  "tomg-group-umd/lm-watermarking",
+  "Sharathhebbar24/One-stop-for-Open-source-models",
+  "qiantong-xu/toolbench-leaderboard",
+  "monra/freegpt-webui",
+  "gsaivinay/open_llm_leaderboard",
+  "KBaba7/Quant",
+  "aimevzulari/Prompt_Uzmani",
+  "yenniejun/tokenizers-languages",
+  "reach-vb/mamba",
+  "justest/gpt4free",
+  "ysharma/OSChatbots_ChatGPT_ToeToToe",
+  "playgrdstar/compare-llms",
+  "FallnAI/Quantize-HF-Models",
+  "Gradio-Blocks/zero-and-few-shot-reasoning",
+  "openfree/LLM_Quantization",
+  "GTBench/GTBench",
+  "Vikhrmodels/small-shlepa-lb",
+  "bhaskartripathi/LLM_Quantization",
+  "NeuralInternet/ChatLLMs",
+  "rc19477/Speech_Enhancement_Mamba",
+  "ruslanmv/convert_to_gguf",
+  "yhavinga/dutch-tokenizer-arena",
+  "BAAI/open_flageval_vlm_leaderboard",
+  "BAAI/FlagEval-Robo",
+  "kastan/ai-teaching-assistant",
+  "xzuyn/Token-Count-Comparison",
+  "lapsapking/h2ogpt-chatbot",
+  "5w4n/burmese-tokenizers",
+  "bharatgenai/BhashaBench-Leaderboard",
+  "concedo/WebTokenizer",
+  "OPTML-Group/UnlearnCanvas-Benchmark",
+  "felixz/open_llm_leaderboard",
+  "Vikhrmodels/Russian_Arena_General",
+  "CATIE-AQ/Guide_Evaluation_LLM",
+  "seawolf2357/LLM_Quantization",
+  "tekkonetes/Chatbots",
+  "Vikhrmodels/small-shlepa",
+  "totolook/Quant",
+  "cloudqi/MultisourceChat",
+  "g4f/freegpt-webui",
+  "conceptofmind/PaLM_models",
+  "K00B404/LLM_Quantization",
+  "OpenEvals/tokenizers-languages",
+  "CarperAI/pile-v2-eda",
+  "knkarthick/chat-llm-streaming",
+  "aegistudio/EleutherAI-gpt-neox-20b",
+  "kastan/ai-teaching-assistant-beta",
+  "b1sheng/kg_llm_leaderboard_test",
+  "Fernando22/freegpt-webui",
+  "g4f/g4f",
+  "Zulelee/langchain-chatchat",
+  "Msp/opensource_chat_assistants",
+  "Chris4K/llms_compare",
+  "inflaton/learn-ai",
+  "DrBenjamin/AI_Demo",
+  "Alfasign/chat-llm-streaming",
+  "Alfasign/AchyuthGPT",
+  "pikto/Elite-freegpt-webui",
+  "andryMLOPS/ASTA-GPT-3.8_web_ui",
+  "VickyKira/NASAGPT",
+  "101-5/gpt4free",
+  "neubla/neubla-llm-evaluation-board",
+  "rodrigomasini/data_only_open_llm_leaderboard",
+  "Docfile/open_llm_leaderboard",
+  "inflaton-ai/chat-with-pci-dss",
+  "jijivski/FreshBench",
+  "his0/h2ogpt-chatbot",
+  "atimughal662/InfoFusion",
+  "ArpitM/chat-llm-streaming",
+  "RAHMAN00700/rahmans_watsonx",
+  "QUBUHUB/Paperweb",
+  "Oss11/Quantize-HF-Models",
+  "Xlnk/Quantize-HF-Models",
+  "exploitz3r0bbd/Quantize-HF-Models",
+  "Floncer/NewAI",
+  "stanciu/EleutherAI-gpt-neox-20b",
+  "henryr/EleutherAI-gpt-neox-20b",
+  "trhacknon/h2ogpt-chatbot",
+  "selvalogesh/chat-llm-streaming",
+  "vs4vijay/h2ogpt-chatbot",
+  "anonauthors/SecretLanguage",
+  "infinisoft/opensource_chat_assistants",
+  "mrsteyk/rwkv-rs",
+  "akalife/EleutherAI-gpt-neox-20b",
+  "bempensato/EleutherAI-gpt-neox-20b",
+  "c0d3r69/EleutherAI-gpt-neox-20b",
+  "shraey/EleutherAI-gpt-neox-20b",
+  "MrMeeep6711/EleutherAI-gpt-neox-20b",
+  "spnq/EleutherAI-gpt-neox-20b",
+  "luosaidage/EleutherAI-gpt-neox-20b",
+  "AFischer1985/chat-llm-streaming",
+  "shideqin/EleutherAI-gpt-neox-20b",
+  "kastan/chatbot-llm-streaming",
+  "EveryPizza/EleutherAI-gpt-neox-20b"
+ ],
+ "createdAt": "2022-04-07T20:28:29.000Z",
+ "safetensors": {
+  "parameters": {
+   "F16": 20554568208,
+   "U8": 184549376
+  },
+  "total": 20739117584
+ },
+ "usedStorage": 123696860531
+}

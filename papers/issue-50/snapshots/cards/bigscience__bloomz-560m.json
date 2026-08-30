@@ -1,0 +1,2358 @@
+{
+ "_id": "6341a1f24c9a81858b2ed60e",
+ "id": "bigscience/bloomz-560m",
+ "private": false,
+ "pipeline_tag": "text-generation",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "tensorboard",
+  "safetensors",
+  "bloom",
+  "text-generation",
+  "ak",
+  "ar",
+  "as",
+  "bm",
+  "bn",
+  "ca",
+  "code",
+  "en",
+  "es",
+  "eu",
+  "fon",
+  "fr",
+  "gu",
+  "hi",
+  "id",
+  "ig",
+  "ki",
+  "kn",
+  "lg",
+  "ln",
+  "ml",
+  "mr",
+  "ne",
+  "nso",
+  "ny",
+  "or",
+  "pa",
+  "pt",
+  "rn",
+  "rw",
+  "sn",
+  "st",
+  "sw",
+  "ta",
+  "te",
+  "tn",
+  "ts",
+  "tum",
+  "tw",
+  "ur",
+  "vi",
+  "wo",
+  "xh",
+  "yo",
+  "zh",
+  "zu",
+  "dataset:bigscience/xP3",
+  "arxiv:2211.01786",
+  "license:bigscience-bloom-rail-1.0",
+  "model-index",
+  "text-generation-inference",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 1116113,
+ "likes": 138,
+ "modelId": "bigscience/bloomz-560m",
+ "author": "bigscience",
+ "sha": "a2845d7e13dd12efae154a9f1c63fcc2e0cc4b05",
+ "lastModified": "2023-05-27T17:27:11.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "text": "\u4e00\u4e2a\u4f20\u5947\u7684\u5f00\u7aef\uff0c\u4e00\u4e2a\u4e0d\u706d\u7684\u795e\u8bdd\uff0c\u8fd9\u4e0d\u4ec5\u4ec5\u662f\u4e00\u90e8\u7535\u5f71\uff0c\u800c\u662f\u4f5c\u4e3a\u4e00\u4e2a\u8d70\u8fdb\u65b0\u65f6\u4ee3\u7684\u6807\u7b7e\uff0c\u6c38\u8fdc\u5f6a\u70b3\u53f2\u518c\u3002Would you rate the previous review as positive, neutral or negative?",
+   "example_title": "zh-en sentiment"
+  },
+  {
+   "text": "\u4e00\u4e2a\u4f20\u5947\u7684\u5f00\u7aef\uff0c\u4e00\u4e2a\u4e0d\u706d\u7684\u795e\u8bdd\uff0c\u8fd9\u4e0d\u4ec5\u4ec5\u662f\u4e00\u90e8\u7535\u5f71\uff0c\u800c\u662f\u4f5c\u4e3a\u4e00\u4e2a\u8d70\u8fdb\u65b0\u65f6\u4ee3\u7684\u6807\u7b7e\uff0c\u6c38\u8fdc\u5f6a\u70b3\u53f2\u518c\u3002\u4f60\u8ba4\u4e3a\u8fd9\u53e5\u8bdd\u7684\u7acb\u573a\u662f\u8d5e\u626c\u3001\u4e2d\u7acb\u8fd8\u662f\u6279\u8bc4\uff1f",
+   "example_title": "zh-zh sentiment"
+  },
+  {
+   "text": "Suggest at least five related search terms to \"M\u1ea1ng neural nh\u00e2n t\u1ea1o\".",
+   "example_title": "vi-en query"
+  },
+  {
+   "text": "Proposez au moins cinq mots cl\u00e9s concernant \u00abR\u00e9seau de neurones artificiels\u00bb.",
+   "example_title": "fr-fr query"
+  },
+  {
+   "text": "Explain in a sentence in Telugu what is backpropagation in neural networks.",
+   "example_title": "te-en qa"
+  },
+  {
+   "text": "Why is the sky blue?",
+   "example_title": "en-en qa"
+  },
+  {
+   "text": "Write a fairy tale about a troll saving a princess from a dangerous dragon. The fairy tale is a masterpiece that has achieved praise worldwide and its moral is \"Heroes Come in All Shapes and Sizes\". Story (in Spanish):",
+   "example_title": "es-en fable"
+  },
+  {
+   "text": "Write a fable about wood elves living in a forest that is suddenly invaded by ogres. The fable is a masterpiece that has achieved praise worldwide and its moral is \"Violence is the last refuge of the incompetent\". Fable (in Hindi):",
+   "example_title": "hi-en fable"
+  }
+ ],
+ "model-index": [
+  {
+   "name": "bloomz-560m",
+   "results": [
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "winogrande",
+      "name": "Winogrande XL (xl)",
+      "config": "xl",
+      "split": "validation",
+      "revision": "a80f460359d1e9a67c006011c94de42a8759430c"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 52.41,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "Muennighoff/xwinograd",
+      "name": "XWinograd (en)",
+      "config": "en",
+      "split": "test",
+      "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 51.01,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "Muennighoff/xwinograd",
+      "name": "XWinograd (fr)",
+      "config": "fr",
+      "split": "test",
+      "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 51.81,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "Muennighoff/xwinograd",
+      "name": "XWinograd (jp)",
+      "config": "jp",
+      "split": "test",
+      "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 52.03,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "Muennighoff/xwinograd",
+      "name": "XWinograd (pt)",
+      "config": "pt",
+      "split": "test",
+      "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 53.99,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "Muennighoff/xwinograd",
+      "name": "XWinograd (ru)",
+      "config": "ru",
+      "split": "test",
+      "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 53.97,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Coreference resolution"
+     },
+     "dataset": {
+      "type": "Muennighoff/xwinograd",
+      "name": "XWinograd (zh)",
+      "config": "zh",
+      "split": "test",
+      "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 54.76,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "anli",
+      "name": "ANLI (r1)",
+      "config": "r1",
+      "split": "validation",
+      "revision": "9dbd830a06fea8b1c49d6e5ef2004a08d9f45094"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 33.4,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "anli",
+      "name": "ANLI (r2)",
+      "config": "r2",
+      "split": "validation",
+      "revision": "9dbd830a06fea8b1c49d6e5ef2004a08d9f45094"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 33.4,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "anli",
+      "name": "ANLI (r3)",
+      "config": "r3",
+      "split": "validation",
+      "revision": "9dbd830a06fea8b1c49d6e5ef2004a08d9f45094"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 33.5,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "super_glue",
+      "name": "SuperGLUE (cb)",
+      "config": "cb",
+      "split": "validation",
+      "revision": "9e12063561e7e6c79099feb6d5a493142584e9e2"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 53.57,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "super_glue",
+      "name": "SuperGLUE (rte)",
+      "config": "rte",
+      "split": "validation",
+      "revision": "9e12063561e7e6c79099feb6d5a493142584e9e2"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 67.15,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (ar)",
+      "config": "ar",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 44.46,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (bg)",
+      "config": "bg",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 39.76,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (de)",
+      "config": "de",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 39.36,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (el)",
+      "config": "el",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 40.96,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (en)",
+      "config": "en",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 46.43,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (es)",
+      "config": "es",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 44.98,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (fr)",
+      "config": "fr",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 45.54,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (hi)",
+      "config": "hi",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 41.81,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (ru)",
+      "config": "ru",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 39.64,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (sw)",
+      "config": "sw",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 38.35,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (th)",
+      "config": "th",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 35.5,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (tr)",
+      "config": "tr",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 37.31,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (ur)",
+      "config": "ur",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 38.96,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (vi)",
+      "config": "vi",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 44.74,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Natural language inference"
+     },
+     "dataset": {
+      "type": "xnli",
+      "name": "XNLI (zh)",
+      "config": "zh",
+      "split": "validation",
+      "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 44.66,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Program synthesis"
+     },
+     "dataset": {
+      "type": "openai_humaneval",
+      "name": "HumanEval",
+      "config": "None",
+      "split": "test",
+      "revision": "e8dc562f5de170c54b5481011dd9f4fa04845771"
+     },
+     "metrics": [
+      {
+       "type": "Pass@1",
+       "value": 2.18,
+       "verified": false
+      },
+      {
+       "type": "Pass@10",
+       "value": 4.11,
+       "verified": false
+      },
+      {
+       "type": "Pass@100",
+       "value": 9,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "story_cloze",
+      "name": "StoryCloze (2016)",
+      "config": "2016",
+      "split": "validation",
+      "revision": "e724c6f8cdf7c7a2fb229d862226e15b023ee4db"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 60.29,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "super_glue",
+      "name": "SuperGLUE (copa)",
+      "config": "copa",
+      "split": "validation",
+      "revision": "9e12063561e7e6c79099feb6d5a493142584e9e2"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 52,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (et)",
+      "config": "et",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 53,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (ht)",
+      "config": "ht",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 49,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (id)",
+      "config": "id",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 57,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (it)",
+      "config": "it",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 52,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (qu)",
+      "config": "qu",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 55,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (sw)",
+      "config": "sw",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 56,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (ta)",
+      "config": "ta",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 58,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (th)",
+      "config": "th",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 58,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (tr)",
+      "config": "tr",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 61,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (vi)",
+      "config": "vi",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 61,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "xcopa",
+      "name": "XCOPA (zh)",
+      "config": "zh",
+      "split": "validation",
+      "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 61,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (ar)",
+      "config": "ar",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 54.4,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (es)",
+      "config": "es",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 56.45,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (eu)",
+      "config": "eu",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 50.56,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (hi)",
+      "config": "hi",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 55.79,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (id)",
+      "config": "id",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 57.84,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (my)",
+      "config": "my",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 47.05,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (ru)",
+      "config": "ru",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 53.14,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (sw)",
+      "config": "sw",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 51.36,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (te)",
+      "config": "te",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 54.86,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Sentence completion"
+     },
+     "dataset": {
+      "type": "Muennighoff/xstory_cloze",
+      "name": "XStoryCloze (zh)",
+      "config": "zh",
+      "split": "validation",
+      "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+     },
+     "metrics": [
+      {
+       "type": "Accuracy",
+       "value": 56.52,
+       "verified": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "config": {
+  "architectures": [
+   "BloomForCausalLM"
+  ],
+  "model_type": "bloom",
+  "tokenizer_config": {
+   "unk_token": "<unk>",
+   "eos_token": "</s>",
+   "bos_token": "<s>",
+   "pad_token": "<pad>"
+  }
+ },
+ "cardData": {
+  "datasets": [
+   "bigscience/xP3"
+  ],
+  "license": "bigscience-bloom-rail-1.0",
+  "language": [
+   "ak",
+   "ar",
+   "as",
+   "bm",
+   "bn",
+   "ca",
+   "code",
+   "en",
+   "es",
+   "eu",
+   "fon",
+   "fr",
+   "gu",
+   "hi",
+   "id",
+   "ig",
+   "ki",
+   "kn",
+   "lg",
+   "ln",
+   "ml",
+   "mr",
+   "ne",
+   "nso",
+   "ny",
+   "or",
+   "pa",
+   "pt",
+   "rn",
+   "rw",
+   "sn",
+   "st",
+   "sw",
+   "ta",
+   "te",
+   "tn",
+   "ts",
+   "tum",
+   "tw",
+   "ur",
+   "vi",
+   "wo",
+   "xh",
+   "yo",
+   "zh",
+   "zu"
+  ],
+  "programming_language": [
+   "C",
+   "C++",
+   "C#",
+   "Go",
+   "Java",
+   "JavaScript",
+   "Lua",
+   "PHP",
+   "Python",
+   "Ruby",
+   "Rust",
+   "Scala",
+   "TypeScript"
+  ],
+  "pipeline_tag": "text-generation",
+  "widget": [
+   {
+    "text": "\u4e00\u4e2a\u4f20\u5947\u7684\u5f00\u7aef\uff0c\u4e00\u4e2a\u4e0d\u706d\u7684\u795e\u8bdd\uff0c\u8fd9\u4e0d\u4ec5\u4ec5\u662f\u4e00\u90e8\u7535\u5f71\uff0c\u800c\u662f\u4f5c\u4e3a\u4e00\u4e2a\u8d70\u8fdb\u65b0\u65f6\u4ee3\u7684\u6807\u7b7e\uff0c\u6c38\u8fdc\u5f6a\u70b3\u53f2\u518c\u3002Would you rate the previous review as positive, neutral or negative?",
+    "example_title": "zh-en sentiment"
+   },
+   {
+    "text": "\u4e00\u4e2a\u4f20\u5947\u7684\u5f00\u7aef\uff0c\u4e00\u4e2a\u4e0d\u706d\u7684\u795e\u8bdd\uff0c\u8fd9\u4e0d\u4ec5\u4ec5\u662f\u4e00\u90e8\u7535\u5f71\uff0c\u800c\u662f\u4f5c\u4e3a\u4e00\u4e2a\u8d70\u8fdb\u65b0\u65f6\u4ee3\u7684\u6807\u7b7e\uff0c\u6c38\u8fdc\u5f6a\u70b3\u53f2\u518c\u3002\u4f60\u8ba4\u4e3a\u8fd9\u53e5\u8bdd\u7684\u7acb\u573a\u662f\u8d5e\u626c\u3001\u4e2d\u7acb\u8fd8\u662f\u6279\u8bc4\uff1f",
+    "example_title": "zh-zh sentiment"
+   },
+   {
+    "text": "Suggest at least five related search terms to \"M\u1ea1ng neural nh\u00e2n t\u1ea1o\".",
+    "example_title": "vi-en query"
+   },
+   {
+    "text": "Proposez au moins cinq mots cl\u00e9s concernant \u00abR\u00e9seau de neurones artificiels\u00bb.",
+    "example_title": "fr-fr query"
+   },
+   {
+    "text": "Explain in a sentence in Telugu what is backpropagation in neural networks.",
+    "example_title": "te-en qa"
+   },
+   {
+    "text": "Why is the sky blue?",
+    "example_title": "en-en qa"
+   },
+   {
+    "text": "Write a fairy tale about a troll saving a princess from a dangerous dragon. The fairy tale is a masterpiece that has achieved praise worldwide and its moral is \"Heroes Come in All Shapes and Sizes\". Story (in Spanish):",
+    "example_title": "es-en fable"
+   },
+   {
+    "text": "Write a fable about wood elves living in a forest that is suddenly invaded by ogres. The fable is a masterpiece that has achieved praise worldwide and its moral is \"Violence is the last refuge of the incompetent\". Fable (in Hindi):",
+    "example_title": "hi-en fable"
+   }
+  ],
+  "model-index": [
+   {
+    "name": "bloomz-560m",
+    "results": [
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "winogrande",
+       "name": "Winogrande XL (xl)",
+       "config": "xl",
+       "split": "validation",
+       "revision": "a80f460359d1e9a67c006011c94de42a8759430c"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 52.41,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "Muennighoff/xwinograd",
+       "name": "XWinograd (en)",
+       "config": "en",
+       "split": "test",
+       "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 51.01,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "Muennighoff/xwinograd",
+       "name": "XWinograd (fr)",
+       "config": "fr",
+       "split": "test",
+       "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 51.81,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "Muennighoff/xwinograd",
+       "name": "XWinograd (jp)",
+       "config": "jp",
+       "split": "test",
+       "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 52.03,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "Muennighoff/xwinograd",
+       "name": "XWinograd (pt)",
+       "config": "pt",
+       "split": "test",
+       "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 53.99,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "Muennighoff/xwinograd",
+       "name": "XWinograd (ru)",
+       "config": "ru",
+       "split": "test",
+       "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 53.97,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Coreference resolution"
+      },
+      "dataset": {
+       "type": "Muennighoff/xwinograd",
+       "name": "XWinograd (zh)",
+       "config": "zh",
+       "split": "test",
+       "revision": "9dd5ea5505fad86b7bedad667955577815300cee"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 54.76,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "anli",
+       "name": "ANLI (r1)",
+       "config": "r1",
+       "split": "validation",
+       "revision": "9dbd830a06fea8b1c49d6e5ef2004a08d9f45094"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 33.4,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "anli",
+       "name": "ANLI (r2)",
+       "config": "r2",
+       "split": "validation",
+       "revision": "9dbd830a06fea8b1c49d6e5ef2004a08d9f45094"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 33.4,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "anli",
+       "name": "ANLI (r3)",
+       "config": "r3",
+       "split": "validation",
+       "revision": "9dbd830a06fea8b1c49d6e5ef2004a08d9f45094"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 33.5,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "super_glue",
+       "name": "SuperGLUE (cb)",
+       "config": "cb",
+       "split": "validation",
+       "revision": "9e12063561e7e6c79099feb6d5a493142584e9e2"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 53.57,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "super_glue",
+       "name": "SuperGLUE (rte)",
+       "config": "rte",
+       "split": "validation",
+       "revision": "9e12063561e7e6c79099feb6d5a493142584e9e2"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 67.15,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (ar)",
+       "config": "ar",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 44.46,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (bg)",
+       "config": "bg",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 39.76,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (de)",
+       "config": "de",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 39.36,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (el)",
+       "config": "el",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 40.96,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (en)",
+       "config": "en",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 46.43,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (es)",
+       "config": "es",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 44.98,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (fr)",
+       "config": "fr",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 45.54,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (hi)",
+       "config": "hi",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 41.81,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (ru)",
+       "config": "ru",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 39.64,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (sw)",
+       "config": "sw",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 38.35,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (th)",
+       "config": "th",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 35.5,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (tr)",
+       "config": "tr",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 37.31,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (ur)",
+       "config": "ur",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 38.96,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (vi)",
+       "config": "vi",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 44.74,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Natural language inference"
+      },
+      "dataset": {
+       "type": "xnli",
+       "name": "XNLI (zh)",
+       "config": "zh",
+       "split": "validation",
+       "revision": "a5a45e4ff92d5d3f34de70aaf4b72c3bdf9f7f16"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 44.66,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Program synthesis"
+      },
+      "dataset": {
+       "type": "openai_humaneval",
+       "name": "HumanEval",
+       "config": "None",
+       "split": "test",
+       "revision": "e8dc562f5de170c54b5481011dd9f4fa04845771"
+      },
+      "metrics": [
+       {
+        "type": "Pass@1",
+        "value": 2.18,
+        "verified": false
+       },
+       {
+        "type": "Pass@10",
+        "value": 4.11,
+        "verified": false
+       },
+       {
+        "type": "Pass@100",
+        "value": 9,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "story_cloze",
+       "name": "StoryCloze (2016)",
+       "config": "2016",
+       "split": "validation",
+       "revision": "e724c6f8cdf7c7a2fb229d862226e15b023ee4db"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 60.29,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "super_glue",
+       "name": "SuperGLUE (copa)",
+       "config": "copa",
+       "split": "validation",
+       "revision": "9e12063561e7e6c79099feb6d5a493142584e9e2"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 52,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (et)",
+       "config": "et",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 53,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (ht)",
+       "config": "ht",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 49,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (id)",
+       "config": "id",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 57,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (it)",
+       "config": "it",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 52,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (qu)",
+       "config": "qu",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 55,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (sw)",
+       "config": "sw",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 56,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (ta)",
+       "config": "ta",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 58,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (th)",
+       "config": "th",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 58,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (tr)",
+       "config": "tr",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 61,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (vi)",
+       "config": "vi",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 61,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "xcopa",
+       "name": "XCOPA (zh)",
+       "config": "zh",
+       "split": "validation",
+       "revision": "37f73c60fb123111fa5af5f9b705d0b3747fd187"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 61,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (ar)",
+       "config": "ar",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 54.4,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (es)",
+       "config": "es",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 56.45,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (eu)",
+       "config": "eu",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 50.56,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (hi)",
+       "config": "hi",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 55.79,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (id)",
+       "config": "id",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 57.84,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (my)",
+       "config": "my",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 47.05,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (ru)",
+       "config": "ru",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 53.14,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (sw)",
+       "config": "sw",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 51.36,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (te)",
+       "config": "te",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 54.86,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Sentence completion"
+      },
+      "dataset": {
+       "type": "Muennighoff/xstory_cloze",
+       "name": "XStoryCloze (zh)",
+       "config": "zh",
+       "split": "validation",
+       "revision": "8bb76e594b68147f1a430e86829d07189622b90d"
+      },
+      "metrics": [
+       {
+        "type": "Accuracy",
+        "value": 56.52,
+        "verified": false
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCausalLM",
+  "pipeline_tag": "text-generation",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "logs/logs/xp3capmixnewcodelonglossseq/main_log.txt"
+  },
+  {
+   "rfilename": "logs/tensorboard/xp3capmixnewcodelonglossseq/events.out.tfevents.1665051802.jean-zay-iam25.73114.0"
+  },
+  {
+   "rfilename": "logs/tensorboard/xp3capmixnewcodelonglossseq/events.out.tfevents.1665052484.jean-zay-iam17.3156474.0"
+  },
+  {
+   "rfilename": "logs/tensorboard/xp3capmixnewcodelonglossseq/events.out.tfevents.1665052656.jean-zay-iam17.3157134.0"
+  },
+  {
+   "rfilename": "logs/tensorboard/xp3capmixnewcodelonglossseq/events.out.tfevents.1665052772.jean-zay-iam17.3157698.0"
+  },
+  {
+   "rfilename": "logs/tensorboard/xp3capmixnewcodelonglossseq/events.out.tfevents.1665052983.jean-zay-iam17.3161807.0"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "fromziro/SLM_Regression_Line",
+  "Intel/low_bit_open_llm_leaderboard",
+  "BAAI/open_cn_llm_leaderboard",
+  "Sharathhebbar24/One-stop-for-Open-source-models",
+  "gsaivinay/open_llm_leaderboard",
+  "KBaba7/Quant",
+  "FallnAI/Quantize-HF-Models",
+  "openfree/LLM_Quantization",
+  "GTBench/GTBench",
+  "Vikhrmodels/small-shlepa-lb",
+  "bhaskartripathi/LLM_Quantization",
+  "TiberiuCristianLeon/StreamlitTranslate",
+  "Justinrune/LLaMA-Factory",
+  "ruslanmv/convert_to_gguf",
+  "BAAI/open_flageval_vlm_leaderboard",
+  "BAAI/FlagEval-Robo",
+  "Wootang01/text_generator_two",
+  "OPTML-Group/UnlearnCanvas-Benchmark",
+  "felixz/open_llm_leaderboard",
+  "Vikhrmodels/Russian_Arena_General",
+  "seawolf2357/LLM_Quantization",
+  "officialhimanshu595/llama-factory",
+  "Vikhrmodels/small-shlepa",
+  "totolook/Quant",
+  "TiberiuCristianLeon/TranslateGradio",
+  "K00B404/LLM_Quantization",
+  "522H0134-NguyenNhatHuy/inverse-cooking-v2",
+  "TiberiuCristianLeon/GradioTranslate",
+  "akash418/bloom-zero-shot",
+  "pierreguillou/bloomz-english",
+  "alicebobjob/bigscience-bloomz-560m",
+  "neubla/neubla-llm-evaluation-board",
+  "rodrigomasini/data_only_open_llm_leaderboard",
+  "Docfile/open_llm_leaderboard",
+  "empirenexus/OTDigitalTwin2.0",
+  "Oss11/Quantize-HF-Models",
+  "Xlnk/Quantize-HF-Models",
+  "exploitz3r0bbd/Quantize-HF-Models",
+  "smothiki/open_llm_leaderboard",
+  "blackwingedkite/gutalk",
+  "srodg7/tokenizer",
+  "blackwingedkite/alpaca2_clas",
+  "0x1668/open_llm_leaderboard",
+  "pngwn/open_llm_leaderboard-check",
+  "asir0z/open_llm_leaderboard",
+  "kbmlcoding/open_llm_leaderboard_free",
+  "dupenf/bigscience-bloomz-560m",
+  "K00B404/One-stop-till-you-drop",
+  "aichampions/open_llm_leaderboard",
+  "ThornRugal/DarkSoulsItemDescription",
+  "Adeco/open_llm_leaderboard",
+  "anirudh937/open_llm_leaderboard",
+  "smothiki/open_llm_leaderboard2",
+  "mjalg/IFEvalTR",
+  "rii92/chatbot-bootcamp",
+  "rapid12k4/bigscience-bloomz-560m",
+  "mmeiro/euronpyme-chatbot",
+  "J-15/bigscience-bloomz-560m",
+  "YUYANGJIANG/lab2",
+  "Charmolypi/bigscience-bloomz-560m",
+  "HOJOON23/review-reply-generator",
+  "Biophin/pregadmin",
+  "PanditAlabi/AI-a-a-Lady",
+  "msun415/Llamole",
+  "yabramuvdi/llms-demo",
+  "AI-Content-Hub/mySpace",
+  "AnzuelodeLetras/PoeIA",
+  "Mohssinibra/GPT_V_2",
+  "FrederickSundeep/AIHRTicketGenerator",
+  "sneha2k3/team3-chatbot",
+  "andikachandra/chatbot-dosen",
+  "Martinltr/flatApi",
+  "abdelrhmantareksaad/text-generator",
+  "SnippyDev/coding-challenge-gen",
+  "ivangabriele/trl-sandbox",
+  "tim315/text",
+  "mahnoorscript/DotnLine",
+  "K00B404/convert_to_gguf",
+  "SidVa/fairfees-refund-letter",
+  "Xoreon/Compatibilite-pc",
+  "vishaljoshi24/trl-4-dnd",
+  "oscarvillafuerte/TraductorPruebaCopia",
+  "Habibahmadgillani/text_generation",
+  "Beyin/zerovbg",
+  "irsol/ubi-bot-space",
+  "lamtp2/ChatBot",
+  "dev2product2/ask-a-market-legend",
+  "berkinkarasel/diyetchatbox",
+  "hadeelalshalan/HADEEL12",
+  "itx-abhinav/ExpertBot",
+  "AumCore/AumCore-Backend",
+  "NekitWlk/auto-edit-bot",
+  "sakuragolden/computerai",
+  "samaritan-ai/GradioTranslate",
+  "GTOMA83/Quantize-HF-Models",
+  "prfr/test",
+  "Sawanjha/Yaksh",
+  "Pofkop/Bankr-token-judge",
+  "TiberiuCristianLeon/TranslateGradioCPP",
+  "agbiswas/my-final-agent"
+ ],
+ "createdAt": "2022-10-08T16:14:42.000Z",
+ "safetensors": {
+  "parameters": {
+   "F16": 559214592
+  },
+  "total": 559214592
+ },
+ "usedStorage": 2797455940
+}

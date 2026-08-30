@@ -1,0 +1,131 @@
+{
+ "_id": "6a8e620b41bd6f7afe100b3f",
+ "id": "alibaba-pai/MiniMax-H3-Acc-LoRAs",
+ "private": false,
+ "pipeline_tag": "text-to-video",
+ "library_name": "videox_fun",
+ "tags": [
+  "videox_fun",
+  "text-to-video",
+  "arxiv:2607.26004",
+  "base_model:MiniMaxAI/MiniMax-H3",
+  "base_model:finetune:MiniMaxAI/MiniMax-H3",
+  "license:other",
+  "region:us"
+ ],
+ "downloads": 13767,
+ "likes": 141,
+ "modelId": "alibaba-pai/MiniMax-H3-Acc-LoRAs",
+ "author": "alibaba-pai",
+ "sha": "335001fb9e5455d68a0caa18ec2e319072150328",
+ "lastModified": "2026-08-27T06:13:51.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": null,
+ "config": {},
+ "cardData": {
+  "license": "other",
+  "license_name": "minimax-h3-community-license-agreement",
+  "license_link": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE",
+  "base_model": [
+   "alibaba-pai/MiniMax-H3-Acc-LoRAs",
+   "MiniMaxAI/MiniMax-H3"
+  ],
+  "library_name": "videox_fun",
+  "pipeline_tag": "text-to-video"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "MiniMax-H3-FL2VA-Acc-8Step.safetensors"
+  },
+  {
+   "rfilename": "MiniMax-H3-Ref2VA-Acc-8Step.safetensors"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "asset/ref2va_test_5_1.jpg"
+  },
+  {
+   "rfilename": "asset/ref2va_test_5_2.jpg"
+  },
+  {
+   "rfilename": "asset/ref2va_test_5_3.jpg"
+  },
+  {
+   "rfilename": "asset/ref2va_test_5_4.jpg"
+  },
+  {
+   "rfilename": "minimax_h3_pdd.py"
+  },
+  {
+   "rfilename": "predict_ref2v.py"
+  },
+  {
+   "rfilename": "predict_t2v.py"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_acc_8step_v1_1.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_acc_8step_v1_2.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_acc_8step_v1_3.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_baseline_1.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_baseline_2.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_baseline_3.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_turbo_4step_v1.1_768p_1.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_turbo_4step_v1.1_768p_2.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_fl2va_turbo_4step_v1.1_768p_3.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_acc_8step_v1_1.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_acc_8step_v1_2.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_acc_8step_v1_3.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_baseline_1.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_baseline_2.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_baseline_3.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_turbo_4step_v0.1_768p_1.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_turbo_4step_v0.1_768p_2.mp4"
+  },
+  {
+   "rfilename": "results/minimax_h3_ref2va_turbo_4step_v0.1_768p_3.mp4"
+  }
+ ],
+ "spaces": [
+  "mezroui/MiniMax-H3-Acc-LoRAs-demo"
+ ],
+ "createdAt": "2026-08-26T03:48:27.000Z",
+ "usedStorage": 2815563167
+}

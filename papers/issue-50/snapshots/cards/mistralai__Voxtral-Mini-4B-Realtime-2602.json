@@ -1,0 +1,145 @@
+{
+ "_id": "69710b3a38616e3bf1912b76",
+ "id": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+ "private": false,
+ "pipeline_tag": "automatic-speech-recognition",
+ "library_name": "vllm",
+ "tags": [
+  "vllm",
+  "safetensors",
+  "voxtral_realtime",
+  "mistral-common",
+  "automatic-speech-recognition",
+  "en",
+  "fr",
+  "es",
+  "de",
+  "ru",
+  "zh",
+  "ja",
+  "it",
+  "pt",
+  "nl",
+  "ar",
+  "hi",
+  "ko",
+  "arxiv:2602.11298",
+  "base_model:mistralai/Ministral-3-3B-Base-2512",
+  "base_model:finetune:mistralai/Ministral-3-3B-Base-2512",
+  "license:apache-2.0",
+  "eval-results",
+  "deploy:sagemaker",
+  "region:us"
+ ],
+ "downloads": 2212832,
+ "likes": 953,
+ "modelId": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+ "author": "mistralai",
+ "sha": "2769294da9567371363522aac9bbcfdd19447add",
+ "lastModified": "2026-03-11T15:04:02.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "VoxtralRealtimeForConditionalGeneration"
+  ],
+  "model_type": "voxtral_realtime"
+ },
+ "cardData": {
+  "library_name": "vllm",
+  "language": [
+   "en",
+   "fr",
+   "es",
+   "de",
+   "ru",
+   "zh",
+   "ja",
+   "it",
+   "pt",
+   "nl",
+   "ar",
+   "hi",
+   "ko"
+  ],
+  "license": "apache-2.0",
+  "inference": false,
+  "base_model": [
+   "mistralai/Ministral-3-3B-Base-2512"
+  ],
+  "extra_gated_description": "If you want to learn more about how we process your personal data, please read our <a href=\"https://mistral.ai/terms/\">Privacy Policy</a>.",
+  "pipeline_tag": "automatic-speech-recognition",
+  "tags": [
+   "mistral-common"
+  ]
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "consolidated.safetensors"
+  },
+  {
+   "rfilename": "generation_config.json"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "params.json"
+  },
+  {
+   "rfilename": "processor_config.json"
+  },
+  {
+   "rfilename": "tekken.json"
+  }
+ ],
+ "spaces": [
+  "Steveeeeeeen/SpeechLLM-Playbook",
+  "mistralai/Voxtral-Mini-Realtime",
+  "mistralai/Voxtral-Realtime-WebGPU",
+  "GenAISecurityProject/OWASP-AIBOM-Generator",
+  "msalhab96/open_universal_arabic_asr_leaderboard_all",
+  "mineapple/Voxtral-Mini-Realtime",
+  "pandora-s/Voxtral-Realtime-Offline",
+  "shreyask/Voxtral-Mini-Realtime-WebGPU",
+  "driodnexus/droidnexus-labs-hub",
+  "MihaiPopa-1/Voxtral-Mini-Realtime",
+  "shreyask/voxtral-pipeline-explorer",
+  "homegrownherbalist/Voxtral-Mini-Realtime",
+  "kamcio1989/Voxtral-Realtime-WebGPU",
+  "lovegold/Voxtral-Realtime-WebGPU",
+  "vcasas/Voxtral-Mini-Realtime",
+  "z4iXsECHS6ND-heighTSAI-INSEGCSyX6T-SYS-ROD/Voxtral-Realtime-WebGPU",
+  "okvic77/Voxtral-Mini-Realtime",
+  "hardeep-cheerio/Voxtral-Mini-Realtime",
+  "rishavjain/Voxtral-Mini-Realtime",
+  "mobydoyle/Voxtral-Mini-Realtime",
+  "blond187/Voxtral-Mini-Realtime",
+  "eburondeveloper/Voxtral-Realtime-WebGPU",
+  "usernameeReal/Voxtral-Realtime-wasm",
+  "juliaturc/Voxtral-Realtime-RawTokens",
+  "pranaysuyash/shopstack",
+  "pvatanasov/Voxtral-Mini-Realtime",
+  "codexxx/Realtime-WebGPU",
+  "edotrajan/Voxtral-Realtime-WebGPUf",
+  "AnthonyDi/Voxtral-Mini-Realtime"
+ ],
+ "createdAt": "2026-01-21T17:22:02.000Z",
+ "safetensors": {
+  "parameters": {
+   "BF16": 4429679360
+  },
+  "total": 4429679360
+ },
+ "usedStorage": 17774901613
+}

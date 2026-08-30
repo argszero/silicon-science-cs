@@ -1,0 +1,113 @@
+{
+ "_id": "621ffdc136468d709f17b61d",
+ "id": "google/electra-base-discriminator",
+ "private": false,
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "tf",
+  "jax",
+  "rust",
+  "electra",
+  "pretraining",
+  "en",
+  "arxiv:1406.2661",
+  "license:apache-2.0",
+  "endpoints_compatible",
+  "region:us"
+ ],
+ "downloads": 54807287,
+ "likes": 157,
+ "modelId": "google/electra-base-discriminator",
+ "author": "google",
+ "sha": "1ae76a97c7e84a4e640876a07453fccd636f0667",
+ "lastModified": "2024-02-29T10:20:20.000Z",
+ "gated": false,
+ "disabled": false,
+ "mask_token": "[MASK]",
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "ElectraForPreTraining"
+  ],
+  "model_type": "electra",
+  "tokenizer_config": {}
+ },
+ "cardData": {
+  "language": "en",
+  "thumbnail": "https://huggingface.co/front/thumbnails/google.png",
+  "license": "apache-2.0"
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForPreTraining",
+  "pipeline_tag": "pretraining",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "flax_model.msgpack"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "rust_model.ot"
+  },
+  {
+   "rfilename": "tf_model.h5"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  },
+  {
+   "rfilename": "vocab.txt"
+  }
+ ],
+ "spaces": [
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "EuroEval/euroeval_leaderboard",
+  "diagaiwei/ir_chinese_medqa",
+  "mohdelgaar/Clinical_Decisions",
+  "lukasgarbas/transformer-ranker",
+  "akolpakov/SatorArepo",
+  "adrija93/smart-mcq-solver-dl-genai-26t2",
+  "faori/HTK",
+  "abreel/thesis-deployment",
+  "jennasparks/submission-jjje",
+  "julianaconsuegra/submission-template-v2",
+  "TruthLens/fake-real",
+  "DarrenDeo/News-Fact-Check",
+  "MrUnknown420/my-ai-model-builder",
+  "ClaCe/FindHugForPMwithKey",
+  "Speedofmastery/orynxml-agents",
+  "SANIDHYAG/Fake_review_detection",
+  "SANIDHYAG/Fake_review_detection_group10",
+  "SANIDHYAG/fake-review-detector",
+  "mohdelgaar/MedDecXtract-2.0",
+  "ssheroz/spam-email-electra-demo",
+  "aryaa-05/llm-hallucination",
+  "Mike0021/hf-model-history",
+  "Theara2/cambodian_news_classifier",
+  "Avijit070/spam-email-detection",
+  "ElephantOH/MAB-DQA",
+  "talhaahmad211/signai-registry",
+  "Vjay15/MCQ_Solver",
+  "SpreadSheets600/smart-mcq-solver",
+  "Shiv3456/Smart_MCQ_Solver"
+ ],
+ "createdAt": "2022-03-02T23:29:05.000Z",
+ "usedStorage": 2197844933
+}

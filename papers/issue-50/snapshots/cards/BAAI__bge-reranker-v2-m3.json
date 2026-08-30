@@ -1,0 +1,216 @@
+{
+ "_id": "65f44de295b7d70871c368eb",
+ "id": "BAAI/bge-reranker-v2-m3",
+ "private": false,
+ "pipeline_tag": "text-classification",
+ "library_name": "sentence-transformers",
+ "tags": [
+  "sentence-transformers",
+  "safetensors",
+  "xlm-roberta",
+  "text-classification",
+  "transformers",
+  "text-embeddings-inference",
+  "multilingual",
+  "arxiv:2312.15503",
+  "arxiv:2402.03216",
+  "license:apache-2.0",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 17771444,
+ "likes": 1148,
+ "modelId": "BAAI/bge-reranker-v2-m3",
+ "author": "BAAI",
+ "sha": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+ "lastModified": "2024-06-24T14:08:45.000Z",
+ "gated": false,
+ "disabled": false,
+ "mask_token": "<mask>",
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "XLMRobertaForSequenceClassification"
+  ],
+  "model_type": "xlm-roberta",
+  "tokenizer_config": {
+   "bos_token": "<s>",
+   "cls_token": "<s>",
+   "eos_token": "</s>",
+   "mask_token": "<mask>",
+   "pad_token": "<pad>",
+   "sep_token": "</s>",
+   "unk_token": "<unk>"
+  }
+ },
+ "cardData": {
+  "license": "apache-2.0",
+  "pipeline_tag": "text-classification",
+  "tags": [
+   "transformers",
+   "sentence-transformers",
+   "text-embeddings-inference"
+  ],
+  "language": [
+   "multilingual"
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForSequenceClassification",
+  "pipeline_tag": "text-classification",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "assets/BEIR-bge-en-v1.5.png"
+  },
+  {
+   "rfilename": "assets/BEIR-e5-mistral.png"
+  },
+  {
+   "rfilename": "assets/CMTEB-retrieval-bge-zh-v1.5.png"
+  },
+  {
+   "rfilename": "assets/llama-index.png"
+  },
+  {
+   "rfilename": "assets/miracl-bge-m3.png"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "sentencepiece.bpe.model"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  }
+ ],
+ "spaces": [
+  "mteb/leaderboard",
+  "hakari-bench/leaderboard",
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "lightmate/llm-chatbot",
+  "build-small-hackathon/HearthNet",
+  "kaengreg/rusBEIR",
+  "TheJimmy/ai-builder-bookIdentifier-HF",
+  "aihuashanying/aileeao",
+  "Param20h/PDF-Assit_RAG",
+  "Shriharshan/Autism-RAG",
+  "sadaisystems/sdmrec-docker",
+  "ncn2569/hcmut-rag-chatbot",
+  "dtunkelang/bag-of-documents-demo",
+  "Abdelrahman023/edu-egypt",
+  "huggingface/ml-intern-api-docs",
+  "akryldigital/audit_assistant",
+  "atkiya110/hybrid_actions",
+  "ValerioBotto/GraphRag",
+  "AshJem/Nolej",
+  "crgmail/bge",
+  "doniyor117/yurika-backend",
+  "amrit55555/neural-rag-explorer",
+  "Witherthrottled/JarvisAi",
+  "MuhammadHamza33/RAG-e-Qanoon",
+  "maxpar1/leaderboard",
+  "sanim05/RAG-disease",
+  "Peterase/rag-api-node-1",
+  "hritikm15/kcc-agri",
+  "arjun10g/na-tech-jobs",
+  "Neshaki/ARQ-RAG-Turboquant",
+  "guto-farias/chatbot-ifc-videira",
+  "winkyq/aura",
+  "AIyoyo442/menguu-bot",
+  "latimal/benchmarks",
+  "doducdat642004/LuatGiaoThongDuongBoAI",
+  "Luan220703/vietnam-law-chatbot-api",
+  "VanshPatel2002/research-pilot",
+  "Alender777/RAG_ReAct_Now",
+  "Kurapika993/papermind",
+  "build-small-hackathon/HearthNet-Nemotron",
+  "MDFaisalSheikh/BanglaRAG",
+  "esra2001/winncare",
+  "hauit/financialanalysis",
+  "isshak-abd/ulit-backend",
+  "farkhanisme/asistendesatieng",
+  "opnsrcntrbtrian/sebi-circular-rag-demo",
+  "ziyingsk/BW_RAG",
+  "DanHX/KHome",
+  "Runnies23/AI_Builder",
+  "LukaBondi/osuosutesttest",
+  "vadjs/rag-homework",
+  "SebastianSchramm/qa-api",
+  "lintasmediadanawa/hf-llm-api",
+  "zxsipola123456/ragflow",
+  "ldd12/BAAI-bge-reranker-v2-m3",
+  "jeongsk/WDS-QA-Bot",
+  "JiakaiDu/RAG_Test",
+  "EbeshaAI/dummy-license-plate",
+  "EbeshaAI/dummy-license-plate-2",
+  "EbeshaAI/dummy-license-plate-api",
+  "EbeshaAI/dummy-license-plate-api-2",
+  "retopara/ragflow",
+  "fikriazain/Hemodialysis-Bot",
+  "Adhin/HemoVDB",
+  "aihuashanying/aileeao_test",
+  "samlax12/agent",
+  "Starowo/ragflow",
+  "Korawan/domae02",
+  "gabor1/bge-reranker-api",
+  "daniel-dona/sparql-era-demo-zerogpu",
+  "Ambika0905/testt",
+  "zakir0605/zak",
+  "Vanajamuthaiyan/DS",
+  "Vanajamuthaiyan/VM",
+  "aipatseer/bge-reranker-v2-m3-Endpoint",
+  "kukdonglover/simple_rag",
+  "rm-lht/lightrag",
+  "PercivalFletcher/Chai-Tea-Latte",
+  "IZOARA/Chatbot-RAGv2",
+  "azzmannorelimane/airjobit-cv-matcher",
+  "azzmannorelimane/airjobit-cv-matcher1",
+  "Harsh0304/gitasphere-ai",
+  "Harsh0304/GitaSphere-AI-V2",
+  "militarybearz/bge",
+  "juanludataanalyst/bge-spanish-salon-crossencoder",
+  "malexandersalazar/citadel_of_adun",
+  "Hamdyai/egyptian-legal-agent-v3",
+  "Hamdyai/egyptian-legal-agent-v4",
+  "Hamdyai/hamdy-almadrasah-legal-agent-v5-2",
+  "lucioY250/VisionDoc-RAG-Backend",
+  "pedrozwy/ofix",
+  "Keyjun/chatbot-dtu-demo",
+  "celalkartoglu/turkce-rag-qa-space",
+  "Kienvt/BAAI-bge-reranker-v2-m3",
+  "awellis/bfh-studadmin-assist",
+  "26tanishabanik/fir-case-management",
+  "PhysicsUncomplicated/PhysicsUncomplicated-bodhagpt",
+  "m97j/pragmatic-agent",
+  "m97j/knowledge-engine",
+  "junjiaz1/Disneyland"
+ ],
+ "createdAt": "2024-03-15T13:32:18.000Z",
+ "safetensors": {
+  "parameters": {
+   "F32": 567755777
+  },
+  "total": 567755777
+ },
+ "inference": "warm",
+ "usedStorage": 7975830160
+}

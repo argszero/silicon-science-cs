@@ -1,0 +1,167 @@
+[
+ {
+  "_id": "64bfcd5ff462a99a04fd1ec8",
+  "id": "stabilityai/stable-diffusion-xl-base-1.0",
+  "likes": 8082,
+  "private": false,
+  "downloads": 1623274,
+  "tags": [
+   "diffusers",
+   "onnx",
+   "safetensors",
+   "text-to-image",
+   "stable-diffusion",
+   "arxiv:2307.01952",
+   "arxiv:2211.01324",
+   "arxiv:2108.01073",
+   "arxiv:2112.10752",
+   "license:openrail++",
+   "endpoints_compatible",
+   "diffusers:StableDiffusionXLPipeline",
+   "region:us",
+   "deploy:sagemaker",
+   "deploy:azure"
+  ],
+  "pipeline_tag": "text-to-image",
+  "library_name": "diffusers",
+  "createdAt": "2023-07-25T13:25:51.000Z",
+  "modelId": "stabilityai/stable-diffusion-xl-base-1.0"
+ },
+ {
+  "_id": "6564b36f4eb2f55240230f48",
+  "id": "stabilityai/sdxl-turbo",
+  "likes": 2624,
+  "private": false,
+  "downloads": 875641,
+  "tags": [
+   "diffusers",
+   "onnx",
+   "safetensors",
+   "text-to-image",
+   "license:other",
+   "diffusers:StableDiffusionXLPipeline",
+   "region:us"
+  ],
+  "pipeline_tag": "text-to-image",
+  "library_name": "diffusers",
+  "createdAt": "2023-11-27T15:19:11.000Z",
+  "modelId": "stabilityai/sdxl-turbo"
+ },
+ {
+  "_id": "6564c6b00c754d598ceb53da",
+  "id": "stabilityai/sd-turbo",
+  "likes": 459,
+  "private": false,
+  "downloads": 372901,
+  "tags": [
+   "diffusers",
+   "safetensors",
+   "text-to-image",
+   "diffusers:StableDiffusionPipeline",
+   "region:us"
+  ],
+  "pipeline_tag": "text-to-image",
+  "library_name": "diffusers",
+  "createdAt": "2023-11-27T16:41:20.000Z",
+  "modelId": "stabilityai/sd-turbo"
+ },
+ {
+  "_id": "649337bc40e33f309661cd8d",
+  "id": "stabilityai/sdxl-vae",
+  "likes": 772,
+  "private": false,
+  "downloads": 242826,
+  "tags": [
+   "diffusers",
+   "safetensors",
+   "stable-diffusion",
+   "stable-diffusion-diffusers",
+   "arxiv:2112.10752",
+   "license:mit",
+   "region:us"
+  ],
+  "library_name": "diffusers",
+  "createdAt": "2023-06-21T17:47:40.000Z",
+  "modelId": "stabilityai/sdxl-vae"
+ },
+ {
+  "_id": "65e0801cbfa5aa61ab04294a",
+  "id": "stabilityai/TripoSR",
+  "likes": 651,
+  "private": false,
+  "downloads": 185913,
+  "tags": [
+   "3d",
+   "image-to-3d",
+   "dataset:allenai/objaverse",
+   "arxiv:2311.04400",
+   "arxiv:2403.02151",
+   "license:mit",
+   "region:us"
+  ],
+  "pipeline_tag": "image-to-3d",
+  "createdAt": "2024-02-29T13:01:16.000Z",
+  "modelId": "stabilityai/TripoSR"
+ },
+ {
+  "_id": "655befb36d02c2b1a9284bf0",
+  "id": "stabilityai/stable-video-diffusion-img2vid-xt",
+  "likes": 3388,
+  "private": false,
+  "downloads": 163528,
+  "tags": [
+   "diffusers",
+   "safetensors",
+   "image-to-video",
+   "license:other",
+   "diffusers:StableVideoDiffusionPipeline",
+   "region:us"
+  ],
+  "pipeline_tag": "image-to-video",
+  "library_name": "diffusers",
+  "createdAt": "2023-11-20T23:45:55.000Z",
+  "modelId": "stabilityai/stable-video-diffusion-img2vid-xt"
+ },
+ {
+  "_id": "64c0cd59200a5155968dea57",
+  "id": "stabilityai/stable-diffusion-xl-refiner-1.0",
+  "likes": 2064,
+  "private": false,
+  "downloads": 144792,
+  "tags": [
+   "diffusers",
+   "safetensors",
+   "stable-diffusion",
+   "image-to-image",
+   "arxiv:2307.01952",
+   "arxiv:2211.01324",
+   "arxiv:2108.01073",
+   "arxiv:2112.10752",
+   "license:openrail++",
+   "diffusers:StableDiffusionXLImg2ImgPipeline",
+   "region:us"
+  ],
+  "pipeline_tag": "image-to-image",
+  "library_name": "diffusers",
+  "createdAt": "2023-07-26T07:38:01.000Z",
+  "modelId": "stabilityai/stable-diffusion-xl-refiner-1.0"
+ },
+ {
+  "_id": "634809aff8823e10755f8e60",
+  "id": "stabilityai/sd-vae-ft-mse",
+  "likes": 413,
+  "private": false,
+  "downloads": 136643,
+  "tags": [
+   "diffusers",
+   "safetensors",
+   "stable-diffusion",
+   "stable-diffusion-diffusers",
+   "license:mit",
+   "region:us"
+  ],
+  "library_name": "diffusers",
+  "createdAt": "2022-10-13T12:50:55.000Z",
+  "modelId": "stabilityai/sd-vae-ft-mse"
+ }
+]

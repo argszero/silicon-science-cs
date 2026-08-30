@@ -1,0 +1,145 @@
+{
+ "_id": "63ee95d76349d1a6706e750f",
+ "id": "laion/clap-htsat-fused",
+ "private": false,
+ "pipeline_tag": "audio-classification",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "safetensors",
+  "clap",
+  "feature-extraction",
+  "zero-shot audio classification",
+  "zero-shot audio retrieval",
+  "audio-classification",
+  "en",
+  "arxiv:2211.06687",
+  "license:apache-2.0",
+  "endpoints_compatible",
+  "region:us"
+ ],
+ "downloads": 8659151,
+ "likes": 126,
+ "modelId": "laion/clap-htsat-fused",
+ "author": "laion",
+ "sha": "365dea6ef167def6676140ed93bbc43f84dabb28",
+ "lastModified": "2026-01-12T00:41:49.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "ClapModel"
+  ],
+  "model_type": "clap",
+  "tokenizer_config": {
+   "bos_token": "<s>",
+   "cls_token": "<s>",
+   "eos_token": "</s>",
+   "mask_token": "<mask>",
+   "pad_token": "<pad>",
+   "sep_token": "</s>",
+   "unk_token": "<unk>"
+  }
+ },
+ "cardData": {
+  "license": "apache-2.0",
+  "language": [
+   "en"
+  ],
+  "pipeline_tag": "audio-classification",
+  "tags": [
+   "zero-shot audio classification",
+   "zero-shot audio retrieval"
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModel",
+  "pipeline_tag": "feature-extraction",
+  "processor": "AutoProcessor"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "merges.txt"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "preprocessor_config.json"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  },
+  {
+   "rfilename": "vocab.json"
+  }
+ ],
+ "spaces": [
+  "mteb/leaderboard",
+  "flosstradamus/FluxMusicGUI",
+  "amaai-lab/SonicVerse",
+  "derektan95/search-tta-demo",
+  "Rayzggz/hanser-Bert-VITS2",
+  "arhanv/drum-kit-generator",
+  "SpicyqSama007/bv2-clap-v2.3",
+  "maxpar1/leaderboard",
+  "neuroama/BangDream-Bert-VITS2",
+  "LuCheng/hanser-Bert-VITS2",
+  "JoPmt/FluxMusicGUI_tstng",
+  "Rayzggz/hanser-Bert-VITS2-2",
+  "RushCN/Sun-Bert-VITS2",
+  "JotunnBurton/wuwa-bert-vits2",
+  "vamshikrishnagrandhe/laion-clap-htsat-fused",
+  "cyberluke/CyberLukes_Next_Gen_GenAI_SOTA_Music_Platform_for_Producers_with_Ethics_AI",
+  "Suyamprakasam/audio2image-generator",
+  "hiragaaya/hanser-Bert-VITS2",
+  "aiivar/Transformers",
+  "Xiaran2001/hanser-Bert-VITS2",
+  "Annie1118/I2A",
+  "kiedistv/leaderboard",
+  "ankandrew/CLAP",
+  "malyvena/leaderboard",
+  "HuggingLLM/leaderboard",
+  "wangsh0111/leaderboard",
+  "kaotd/leaderboard",
+  "KR2323/samsung-ai",
+  "qiaosong88/leaderboard",
+  "TylerHMC/SonicVerse",
+  "ArtemBolgov/leaderboard",
+  "karthik9744/audio_language_model",
+  "igitjitgji/BEATs",
+  "RishikChakraborty/echofind-api",
+  "Bubblegum1907/Shikisai",
+  "dishaa03/gsn-audio-separation",
+  "Haopeng/OTTC_MDD"
+ ],
+ "createdAt": "2023-02-16T20:45:11.000Z",
+ "safetensors": {
+  "parameters": {
+   "I64": 50180,
+   "F32": 153508136
+  },
+  "total": 153558316
+ },
+ "usedStorage": 1229092697
+}

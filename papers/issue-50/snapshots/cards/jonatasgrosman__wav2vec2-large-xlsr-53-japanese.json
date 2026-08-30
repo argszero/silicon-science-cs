@@ -1,0 +1,172 @@
+{
+ "_id": "621ffdc136468d709f17cdba",
+ "id": "jonatasgrosman/wav2vec2-large-xlsr-53-japanese",
+ "private": false,
+ "pipeline_tag": "automatic-speech-recognition",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "jax",
+  "wav2vec2",
+  "automatic-speech-recognition",
+  "audio",
+  "speech",
+  "xlsr-fine-tuning-week",
+  "ja",
+  "dataset:common_voice",
+  "doi:10.57967/hf/3568",
+  "license:apache-2.0",
+  "model-index",
+  "endpoints_compatible",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 11056986,
+ "likes": 62,
+ "modelId": "jonatasgrosman/wav2vec2-large-xlsr-53-japanese",
+ "author": "jonatasgrosman",
+ "sha": "cf031e020336460d15a417eba710bbc5bb43be9a",
+ "lastModified": "2022-12-14T01:58:09.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": [
+  {
+   "name": "XLSR Wav2Vec2 Japanese by Jonatas Grosman",
+   "results": [
+    {
+     "task": {
+      "name": "Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "Common Voice ja",
+      "type": "common_voice",
+      "args": "ja"
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 81.8,
+       "verified": false
+      },
+      {
+       "name": "Test CER",
+       "type": "cer",
+       "value": 20.16,
+       "verified": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "config": {
+  "architectures": [
+   "Wav2Vec2ForCTC"
+  ],
+  "model_type": "wav2vec2"
+ },
+ "cardData": {
+  "language": "ja",
+  "datasets": [
+   "common_voice"
+  ],
+  "metrics": [
+   "wer",
+   "cer"
+  ],
+  "tags": [
+   "audio",
+   "automatic-speech-recognition",
+   "speech",
+   "xlsr-fine-tuning-week"
+  ],
+  "license": "apache-2.0",
+  "model-index": [
+   {
+    "name": "XLSR Wav2Vec2 Japanese by Jonatas Grosman",
+    "results": [
+     {
+      "task": {
+       "name": "Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "Common Voice ja",
+       "type": "common_voice",
+       "args": "ja"
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 81.8,
+        "verified": false
+       },
+       {
+        "name": "Test CER",
+        "type": "cer",
+        "value": 20.16,
+        "verified": false
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCTC",
+  "pipeline_tag": "automatic-speech-recognition",
+  "processor": "AutoProcessor"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "flax_model.msgpack"
+  },
+  {
+   "rfilename": "preprocessor_config.json"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "vocab.json"
+  }
+ ],
+ "spaces": [
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "qanastek/Alexa-NLU-Clone",
+  "Gradio-Blocks/Alexa-NLU-Clone",
+  "awacke1/ASR-High-Accuracy-Test",
+  "RealTimeLiveAIForHealth/ASR-High-Accuracy-Test",
+  "mortimerme/pyvideotrans",
+  "JPLTedCas/TedCasSpeechRecognition",
+  "jbraun19/ASR-High-Accuracy-Test",
+  "Mapleie/jonatasgrosman-wav2vec2-large-xlsr-53-japanese",
+  "aicodingfun/Alexa-NLU-Clone",
+  "Sven33/SATEv1.5",
+  "RayPac006/get-lyrics",
+  "asasasasa703/japanese-pronunciation",
+  "vclmax2/irodori-tts",
+  "vclmax/irodori-tts",
+  "vclmax/irodori-tts-2",
+  "vicentemovil/irodori-tts"
+ ],
+ "createdAt": "2022-03-02T23:29:05.000Z",
+ "usedStorage": 7623309995
+}

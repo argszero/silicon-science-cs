@@ -1,0 +1,217 @@
+{
+ "_id": "621ffdc036468d709f174347",
+ "id": "distilbert/distilbert-base-uncased",
+ "private": false,
+ "pipeline_tag": "fill-mask",
+ "library_name": "transformers",
+ "tags": [
+  "transformers",
+  "pytorch",
+  "tf",
+  "jax",
+  "rust",
+  "safetensors",
+  "distilbert",
+  "fill-mask",
+  "exbert",
+  "en",
+  "dataset:bookcorpus",
+  "dataset:wikipedia",
+  "arxiv:1910.01108",
+  "license:apache-2.0",
+  "endpoints_compatible",
+  "deploy:sagemaker",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 6665068,
+ "likes": 947,
+ "modelId": "distilbert/distilbert-base-uncased",
+ "author": "distilbert",
+ "sha": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+ "lastModified": "2024-05-06T13:44:53.000Z",
+ "gated": false,
+ "disabled": false,
+ "mask_token": "[MASK]",
+ "widgetData": [
+  {
+   "text": "Paris is the [MASK] of France."
+  },
+  {
+   "text": "The goal of life is [MASK]."
+  }
+ ],
+ "model-index": null,
+ "config": {
+  "architectures": [
+   "DistilBertForMaskedLM"
+  ],
+  "model_type": "distilbert",
+  "tokenizer_config": {}
+ },
+ "cardData": {
+  "language": "en",
+  "tags": [
+   "exbert"
+  ],
+  "license": "apache-2.0",
+  "datasets": [
+   "bookcorpus",
+   "wikipedia"
+  ]
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForMaskedLM",
+  "pipeline_tag": "fill-mask",
+  "processor": "AutoTokenizer"
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "LICENSE"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "flax_model.msgpack"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "pytorch_model.bin"
+  },
+  {
+   "rfilename": "rust_model.ot"
+  },
+  {
+   "rfilename": "tf_model.h5"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  },
+  {
+   "rfilename": "vocab.txt"
+  }
+ ],
+ "spaces": [
+  "dang1812/finetuning-language-models",
+  "gunship999/SexyImages",
+  "Yntec/ToyWorld",
+  "marcosv/InstructIR",
+  "exbert-project/exbert",
+  "llamameta/flux-pro-uncensored",
+  "Uthar/SexyReality",
+  "Yntec/PrintingPress",
+  "Nymbo/Compare-6",
+  "Mathux/TMR",
+  "llamameta/fluxproV2",
+  "nateraw/lavila",
+  "Yntec/ToyWorldXL",
+  "burtenshaw/autotrain-mcp",
+  "Yntec/blitz_diffusion",
+  "mteb/leaderboard_legacy",
+  "q-future/Co-Instruct",
+  "John6666/Diffusion80XX4sg",
+  "society-ethics/model-card-regulatory-check",
+  "Gladiator/Text-Summarizer",
+  "John6666/PrintingPress4",
+  "llamameta/fast-sd3.5-large",
+  "sasha/BiasDetection",
+  "Gen-Sim/Gen-Sim",
+  "eduagarcia/multilingual-tokenizer-leaderboard",
+  "Yntec/Image-Models-Test-2024",
+  "Yntec/Image-Models-Test-April-2024",
+  "DemiPoto/TestDifs",
+  "Abinivesh/Multi-models-prompt-to-image-generation",
+  "NativeAngels/Compare-6",
+  "John6666/hfd_test_nostopbutton",
+  "sasha/WinoBiasCheck",
+  "ccolas/TastyPiano",
+  "Chemically-motivated/OSINT_Tool",
+  "Nymbo/Diffusion80XX4sg",
+  "sashtech/huamnifierWithSimpleGrammer",
+  "DemiPoto/testSortModels",
+  "kaleidoskop-hug/PrintingPress",
+  "docs-demos/distilbert-base-uncased",
+  "Yntec/MiniToyWorld",
+  "kboaten/MIDI-Audio-Extension",
+  "nsethi610/ns-gradio-apps",
+  "John6666/ToyWorld4",
+  "mrdbourke/learn_hf_food_not_food_text_classifier_demo",
+  "John6666/Diffusion80XX4g",
+  "SAITAN666/StableDiffusion35Large-Image-Models-Test-November-2024",
+  "NativeAngels/HuggingfaceDiffusion",
+  "NativeAngels/ToyWorld",
+  "Yntec/Image-Models-Test-December-2024",
+  "X-iZhang/RadEval",
+  "ghrua/repo-app",
+  "Elegbede/Text_to_emotion_classifier",
+  "John6666/Diffusion80XX4",
+  "K00B404/HuggingfaceDiffusion_custom",
+  "John6666/blitz_diffusion4",
+  "John6666/blitz_diffusion_builtin",
+  "K00B404/SimpleBrothel",
+  "reddgr/chatbot-arena-dataset-wrapper",
+  "SmileXing/leaderboard",
+  "scheitelpunk/GASM",
+  "Gradio-Blocks/spurious_correlation_evaluation",
+  "RobPruzan/automaticlitassesment",
+  "anonymous8/Rapid-Textual-Adversarial-Defense",
+  "mrdbourke/learn_hf_food_not_food_text_classifier_demo_video",
+  "Blane187/multi-diffusion",
+  "AI-BIO/ProteinGPT-Llama3",
+  "Abs6187/Fake-News-Detector-updated",
+  "Uthar/LewdExperiments",
+  "Uthar/BodyPaint",
+  "Uthar/HRGiger",
+  "wandb/guardrails-genie",
+  "Uthar/HighFashion",
+  "orionweller/parameter-count",
+  "Aranwer/Transformer_Visualization",
+  "rahideer/Transformer",
+  "RavichandraNayakar/customer_support_env",
+  "jason9693/KoreanHateSpeechClassifier",
+  "piecurus/Summarizer",
+  "kotstantinovskii/YSDA_arxiv_classification",
+  "NechkaP/arxiv-streamlit-lab",
+  "andyqin18/sentiment-analysis-app",
+  "altafalam3/Text-Summarizer",
+  "PBJ/Toxic-Comment-Classification",
+  "ferdmartin/GradApplicationDocsApp",
+  "ben-epstein/ner-spans-to-tokens-tags",
+  "Bonosa2/movies",
+  "scademy/distilbert-sentiment-analysis",
+  "smhavens/AnalogyArcade",
+  "cocktailpeanut/InstructIR",
+  "hvaldez/SViTT-Ego_Action_Recognition",
+  "samanthakarungi/text-classification-with-streamlit",
+  "heliosbrahma/llm-prompt-testing",
+  "xmadai/1bit_llama3_instruct_xmad_chatbot",
+  "xmadai/1bit_llama3_instruct_xmad_qa_batch",
+  "louisbrulenaudet/ragoon",
+  "XS5217/text-classification",
+  "Mishal23/CreditCard-fraud-detection",
+  "PeepDaSlan9/B2BMGMT_TMR",
+  "Uthar/Harvester",
+  "Yeeezus/SexyImages"
+ ],
+ "createdAt": "2022-03-02T23:29:04.000Z",
+ "safetensors": {
+  "parameters": {
+   "F32": 66985530
+  },
+  "total": 66985530
+ },
+ "inference": "warm",
+ "usedStorage": 2287292255
+}

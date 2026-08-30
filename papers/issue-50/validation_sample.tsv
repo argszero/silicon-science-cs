@@ -1,0 +1,129 @@
+model	signal	pred	gated	evidence	human	notes	notes
+EleutherAI/gpt-j-6b	license	1	0	[no match]	1		cardData license
+EleutherAI/gpt-j-6b	training_data	1	0	guage: - en tags: - pytorch - causal-lm license: apache-2.0 datasets: - EleutherAI/pile ---  # GPT-J 6B  ## Model Description  GP	1		frontmatter datasets + trained-on-english dataset
+EleutherAI/gpt-j-6b	eval_results	0	0	[no match]	0		no eval section
+EleutherAI/gpt-j-6b	bias_limitations	1	0	[no match]	1		## Intended Use and Limitations, harmful/offensive + risks
+EleutherAI/gpt-j-6b	intended_use	1	0	ry of 50257, using the same set of BPEs as GPT-2/GPT-3.  ## Intended Use and Limitations  GPT-J learns an inner representation of th	1		## Intended Use
+EleutherAI/gpt-j-6b	base_model	0	0	[no match]	0		base model, no derivation
+EleutherAI/gpt-j-6b	technical	1	0	ass of model, while "6B" represents the number of trainable parameters.  <figure>  | Hyperparameter       | Value      | |--------	1		hyperparameter table
+EleutherAI/gpt-j-6b	citations	1	0	onal Encoding  | [Rotary Position Embedding (RoPE)](https://arxiv.org/abs/2104.09864) | | RoPE Dimensions      | [64](https:/	1		bibtex present
+Qwen/Qwen2.5-7B-Instruct	license	1	0	[no match]	1		cardData license
+Qwen/Qwen2.5-7B-Instruct	training_data	0	0	[no match]	0		no training-data disclosure (only Pretraining stage label)
+Qwen/Qwen2.5-7B-Instruct	eval_results	1	0	t, see results [here](https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html).  ## Citation  If you find our work h	1		## Evaluation & Performance section (links detailed results)
+Qwen/Qwen2.5-7B-Instruct	bias_limitations	0	0	[no match]	0		QKV bias is technical term, no bias section
+Qwen/Qwen2.5-7B-Instruct	intended_use	1	0	s://qwen.readthedocs.io/en/latest/deployment/vllm.html) for usage if you are not familar with vLLM. Presently, vLLM only supp	1		usage docs (vLLM recipe etc.)
+Qwen/Qwen2.5-7B-Instruct	base_model	1	0	[no match]	1		cardData base_model
+Qwen/Qwen2.5-7B-Instruct	technical	1	0	uction-tuned language models ranging from 0.5 to 72 billion parameters. Qwen2.5 brings the following improvements upon Qwen2:  - S	1		architecture/params
+Qwen/Qwen2.5-7B-Instruct	citations	1	0	e inputs exceeding 32,768 tokens, we utilize [YaRN](https://arxiv.org/abs/2309.00071), a technique for enhancing model length	1		## Citation bibtex
+allenai/unifiedqa-t5-small	license	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	training_data	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	eval_results	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	bias_limitations	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	intended_use	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	base_model	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	technical	0	0	[no match]	0		minimal card, nothing documented
+allenai/unifiedqa-t5-small	citations	0	0	[no match]	0		minimal card, nothing documented
+bigscience/bigscience-small-testing	license	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	training_data	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	eval_results	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	bias_limitations	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	intended_use	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	base_model	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	technical	0	0	[no match]	0		internal test artifact
+bigscience/bigscience-small-testing	citations	0	0	[no match]	0		internal test artifact
+google/gemma-3-1b-it	license	1	1	[no readme / gated]	1		cardData license
+google/gemma-3-1b-it	training_data	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+google/gemma-3-1b-it	eval_results	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+google/gemma-3-1b-it	bias_limitations	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+google/gemma-3-1b-it	intended_use	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+google/gemma-3-1b-it	base_model	1	1	[no readme / gated]	1		cardData base_model
+google/gemma-3-1b-it	technical	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+google/gemma-3-1b-it	citations	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+meta-llama/Llama-3.1-8B-Instruct	license	1	1	[no readme / gated]	1		cardData license
+meta-llama/Llama-3.1-8B-Instruct	training_data	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+meta-llama/Llama-3.1-8B-Instruct	eval_results	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+meta-llama/Llama-3.1-8B-Instruct	bias_limitations	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+meta-llama/Llama-3.1-8B-Instruct	intended_use	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+meta-llama/Llama-3.1-8B-Instruct	base_model	1	1	[no readme / gated]	1		cardData base_model
+meta-llama/Llama-3.1-8B-Instruct	technical	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+meta-llama/Llama-3.1-8B-Instruct	citations	0	1	[no readme / gated]	0		readme not publicly readable (gated)
+mistralai/Mistral-7B-v0.1	license	1	0	[no match]	1		cardData license
+mistralai/Mistral-7B-v0.1	training_data	0	0	[no match]	0		no data disclosure
+mistralai/Mistral-7B-v0.1	eval_results	1	0	parameters.  Mistral-7B-v0.1 outperforms Llama 2 13B on all benchmarks we tested.  For full details of this model please read our 	1		outperforms Llama 2 13B on all benchmarks we tested
+mistralai/Mistral-7B-v0.1	bias_limitations	0	0	[no match]	0		no section
+mistralai/Mistral-7B-v0.1	intended_use	0	0	[no match]	0		no section
+mistralai/Mistral-7B-v0.1	base_model	0	0	[no match]	0		base model
+mistralai/Mistral-7B-v0.1	technical	1	0	 (LLM) is a pretrained generative text model with 7 billion parameters.  Mistral-7B-v0.1 outperforms Llama 2 13B on all benchmarks	1		7B params + Model Architecture section
+mistralai/Mistral-7B-v0.1	citations	0	0	 full details of this model please read our [paper](https://arxiv.org/abs/2310.06825) and [release blog post](https://mistral	0		paper link only, no citation section/bibtex
+nvidia/Qwen3.6-35B-A3B-NVFP4	license	1	0	[no match]	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	training_data	1	0	th nvidia-modelopt v0.44.0 <br>  ## Training and Evaluation Datasets:  ## Calibration Dataset: **Link:** [cnn_dailymail](https://	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	eval_results	1	0	erties:** Undisclosed  ## Evaluation Dataset: **Datasets:** MMLU Pro, GPQA Diamond, τ²-Bench Telecom,  MMMU Pro, SciCode, AI	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	bias_limitations	1	0	[no match]	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	intended_use	1	0	eveloped and built to a third-party’s requirements for this application and use case; see link to Non-NVIDIA [(Qwen3.6-35B-A3B) Mod	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	base_model	1	0	[no match]	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	technical	1	0	egressive language model that uses an optimized transformer architecture. For more information, please check [here](https://huggingf	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+nvidia/Qwen3.6-35B-A3B-NVFP4	citations	1	0	[no match]	1		full card: Training/Evaluation Datasets, MMLU/GPQA, risk/safety statement, ## References
+openai/whisper-large-v3-turbo	license	1	0	[no match]	1		cardData license
+openai/whisper-large-v3-turbo	training_data	1	0	.co/papers/2212.04356) by Alec Radford  et al. from OpenAI. Trained on >5M hours of labeled data, Whisper demonstrates a strong ab	1		## Training Data: >5M hours labeled data
+openai/whisper-large-v3-turbo	eval_results	1	0	used in either of the following scenarios: 1. Transcription accuracy is the most important factor, and speed is less of a consid	1		## Performance and Limitations (accuracy discussion)
+openai/whisper-large-v3-turbo	bias_limitations	1	0	[no match]	1		## Performance and Limitations / ## Broader Implications (biases, high-risk)
+openai/whisper-large-v3-turbo	intended_use	1	0	partly copied and  pasted from the original model card.  ## Usage  Whisper large-v3-turbo is supported in Hugging Face 🤗 Tran	1		## Usage
+openai/whisper-large-v3-turbo	base_model	1	0	_s=30,     batch_size=16,  # batch size for inference - set based on your device     torch_dtype=torch_dtype,     device=device,	1		cardData base_model + text
+openai/whisper-large-v3-turbo	technical	1	0	's the exact same model, except that the number of decoding layers have reduced from 32 to 4. As a result, the model is way fa	1		decoding layers 32->4
+openai/whisper-large-v3-turbo	citations	1	0	 limiting factor of scaling up surveillance projects.   ### BibTeX entry and citation info ```bibtex @misc{radford2022whisper,	1		BibTeX entry and citation info
+stabilityai/sdxl-turbo	license	1	0	[no match]	1		cardData license
+stabilityai/sdxl-turbo	training_data	0	0	[no match]	0		no data disclosure
+stabilityai/sdxl-turbo	eval_results	0	0	[no match]	0		no benchmark results
+stabilityai/sdxl-turbo	bias_limitations	1	0	[no match]	1		## Limitations and Bias section
+stabilityai/sdxl-turbo	intended_use	1	0	he model is intended for both non-commercial and commercial usage. You can use this model for non-commercial or research purp	1		intended for non-commercial and commercial usage
+stabilityai/sdxl-turbo	base_model	1	0	-base-1.0), trained for real-time synthesis.  SDXL-Turbo is based on a novel training method called Adversarial Diffusion Distil	1		distilled version of SDXL 1.0
+stabilityai/sdxl-turbo	technical	0	0	[no match]	0		no params/architecture table
+stabilityai/sdxl-turbo	citations	0	0	[no match]	0		no citation section
+cross-encoder/ms-marco-MiniLM-L6-v2	license	1	0	[no match]	1		frontmatter + cardData
+cross-encoder/ms-marco-MiniLM-L6-v2	training_data	1	0	--- license: apache-2.0 datasets: - sentence-transformers/msmarco language: - en base_model: 	1		trained on MS Marco Passage Ranking dataset
+cross-encoder/ms-marco-MiniLM-L6-v2	eval_results	1	0	-Ranking) task.  The model can be used for Information Retrieval: Given a query, encode the query with all possible passages	1		performance on TREC Deep Learning 2019 benchmark
+cross-encoder/ms-marco-MiniLM-L6-v2	bias_limitations	0	0	[no match]	0		no section
+cross-encoder/ms-marco-MiniLM-L6-v2	intended_use	1	0	BERT.net Retrieve & Re-rank](https://www.sbert.net/examples/applications/retrieve_rerank/README.html) for more details. The training	1		Usage with SentenceTransformers
+cross-encoder/ms-marco-MiniLM-L6-v2	base_model	1	0	[no match]	1		cardData base_model (L12 family)
+cross-encoder/ms-marco-MiniLM-L6-v2	technical	0	0	[no match]	0		no architecture table
+cross-encoder/ms-marco-MiniLM-L6-v2	citations	0	0	[no match]	0		no citation section
+allenai/OLMo-2-0425-1B	license	1	0	[no match]	1		cardData license
+allenai/OLMo-2-0425-1B	training_data	1	0	o 2 1B, the smallest model in the OLMo 2 family. OLMo 2 was pre-trained on [OLMo-mix-1124](https://huggingface.co/datasets/allenai/olm	1		pre-trained on OLMo-mix-1124 + stage datasets
+allenai/OLMo-2-0425-1B	eval_results	1	0	OLMo     - Evaluation code: https://github.com/allenai/OLMo-Eval     - Further fine-tuning code: https://github.com/allenai/	1		## Evaluation with eval table (MMLU etc.)
+allenai/OLMo-2-0425-1B	bias_limitations	1	0	[no match]	1		## Bias, Risks, and Limitations
+allenai/OLMo-2-0425-1B	intended_use	1	0	>> 'Language modeling is  a key component of any text-based application, but its effectiveness...' ```  For faster performance, you	1		## Inference + ## Fine-tuning usage docs
+allenai/OLMo-2-0425-1B	base_model	0	0	[no match]	0		base model trained from scratch
+allenai/OLMo-2-0425-1B	technical	1	0	tps://github.com/allenai/OLMo).  | Size | Training Tokens | Layers | Hidden Size | Attention Heads | Context Length | |------|	1		Size/Layers/Hidden Size table
+allenai/OLMo-2-0425-1B	citations	1	0	tps://github.com/allenai/open-instruct - **Paper:** https://arxiv.org/abs/2501.00656  ## Evaluation Core model results for OL	1		## Citation bibtex
+ai21labs/AI21-Jamba-Reasoning-3B	license	1	0	[no match]	1		cardData license
+ai21labs/AI21-Jamba-Reasoning-3B	training_data	1	0	ining on a diverse corpus of natural documents. We then mid-trained on ~0.5T tokens of math and code, while extending the context 	1		corpus of natural documents + ~0.5T math/code tokens
+ai21labs/AI21-Jamba-Reasoning-3B	eval_results	1	0	g reasoning model that packs leading scores on intelligence benchmarks and highly-efficient processing into a compact 3B build.  <	1		benchmark scores claim
+ai21labs/AI21-Jamba-Reasoning-3B	bias_limitations	0	0	[no match]	0		no section
+ai21labs/AI21-Jamba-Reasoning-3B	intended_use	0	0	[no match]	0		no section
+ai21labs/AI21-Jamba-Reasoning-3B	base_model	0	0	[no match]	0		base model
+ai21labs/AI21-Jamba-Reasoning-3B	technical	1	0	ansformer attention with Mamba (a state-space model). Mamba layers are more efficient for sequence processing, while attention	1		Mamba/attention architecture
+ai21labs/AI21-Jamba-Reasoning-3B	citations	1	0	also applied a [Mamba-specific long-context method](https://arxiv.org/abs/2507.02782), which we found to significantly improv	1		## Citation + blog
+Qwen/Qwen3.5-4B	license	1	0	[no match]	1		cardData license
+Qwen/Qwen3.5-4B	training_data	0	0	[no match]	0		only MTP trained-with-multi-steps (procedure, not data)
+Qwen/Qwen3.5-4B	eval_results	1	0	 across reasoning, coding, agents, and visual understanding benchmarks.  - **Efficient Hybrid Architecture**: Gated Delta Networks	1		benchmarks section + Benchmark Results image
+Qwen/Qwen3.5-4B	bias_limitations	0	0	[no match]	0		no section
+Qwen/Qwen3.5-4B	intended_use	1	0	lation/index.html) for more details.   For detailed Qwen3.5 usage guide, see the [vLLM Qwen3.5 recipe](https://docs.vllm.ai/p	1		usage guide + agentic usage
+Qwen/Qwen3.5-4B	base_model	1	0	[no match]	1		cardData base_model (Qwen3.5-4B-Base)
+Qwen/Qwen3.5-4B	technical	1	0	 and visual understanding benchmarks.  - **Efficient Hybrid Architecture**: Gated Delta Networks combined with sparse Mixture-of-Exp	1		architecture table (params, hidden dim, context)
+Qwen/Qwen3.5-4B	citations	1	0	:20px;border-bottom:1px solid rgba(128, 128, 128, 0.15);">CharXiv(RQ)</td> <td style="padding:7px 7px;text-align:center;borde	1		## Citation bibtex
+meta-llama/Meta-Llama-3-8B-Instruct	license	1	1	[no readme / gated]	1		cardData license
+meta-llama/Meta-Llama-3-8B-Instruct	training_data	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+meta-llama/Meta-Llama-3-8B-Instruct	eval_results	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+meta-llama/Meta-Llama-3-8B-Instruct	bias_limitations	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+meta-llama/Meta-Llama-3-8B-Instruct	intended_use	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+meta-llama/Meta-Llama-3-8B-Instruct	base_model	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+meta-llama/Meta-Llama-3-8B-Instruct	technical	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+meta-llama/Meta-Llama-3-8B-Instruct	citations	0	1	[no readme / gated]	0		readme gated; no base_model in cardData
+intfloat/multilingual-e5-small	license	1	0	[no match]	1		cardData license
+intfloat/multilingual-e5-small	training_data	1	0	ndex: - name: intfloat/multilingual-e5-small   results:   - dataset:       config: en       name: MTEB AmazonCounterfactualClas	1		continually trained on mixture of multilingual datasets
+intfloat/multilingual-e5-small	eval_results	1	0	  type: mteb/amazon_counterfactual     metrics:     - type: accuracy       value: 73.79104477611939     - type: ap       value: 	1		MTEB model-index with metrics
+intfloat/multilingual-e5-small	bias_limitations	1	0	[no match]	1		## Limitations section (truncation-to-512 content)
+intfloat/multilingual-e5-small	intended_use	1	0	This model has 12 layers and the embedding size is 384.  ## Usage  Below is an example to encode queries and passages from th	1		## Usage
+intfloat/multilingual-e5-small	base_model	1	0	[no match]	1		initialized from microsoft/Multilingual-MiniLM-L12-H384
+intfloat/multilingual-e5-small	technical	1	0	g, Rangan Majumder, Furu Wei, arXiv 2024  This model has 12 layers and the embedding size is 384.  ## Usage  Below is an examp	1		12 layers, embedding size 384
+intfloat/multilingual-e5-small	citations	1	0	trieval   - dataset:       config: default       name: MTEB ArxivClusteringP2P       revision: a122ad7f3f0291bf49cc6f4d32aa80	1		bibtex + arXiv

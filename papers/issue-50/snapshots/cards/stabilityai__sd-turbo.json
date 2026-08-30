@@ -1,0 +1,210 @@
+{
+ "_id": "6564c6b00c754d598ceb53da",
+ "id": "stabilityai/sd-turbo",
+ "private": false,
+ "pipeline_tag": "text-to-image",
+ "library_name": "diffusers",
+ "tags": [
+  "diffusers",
+  "safetensors",
+  "text-to-image",
+  "diffusers:StableDiffusionPipeline",
+  "region:us"
+ ],
+ "downloads": 372901,
+ "likes": 459,
+ "modelId": "stabilityai/sd-turbo",
+ "author": "stabilityai",
+ "sha": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+ "lastModified": "2024-07-10T11:38:51.000Z",
+ "gated": false,
+ "disabled": false,
+ "model-index": null,
+ "config": {
+  "diffusers": {
+   "_class_name": "StableDiffusionPipeline"
+  }
+ },
+ "cardData": {
+  "pipeline_tag": "text-to-image",
+  "inference": false
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "LICENSE.md"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "image_quality_one_step.png"
+  },
+  {
+   "rfilename": "model_index.json"
+  },
+  {
+   "rfilename": "output_tile.jpg"
+  },
+  {
+   "rfilename": "prompt_alignment_one_step.png"
+  },
+  {
+   "rfilename": "scheduler/scheduler_config.json"
+  },
+  {
+   "rfilename": "sd_turbo.safetensors"
+  },
+  {
+   "rfilename": "text_encoder/config.json"
+  },
+  {
+   "rfilename": "text_encoder/model.fp16.safetensors"
+  },
+  {
+   "rfilename": "text_encoder/model.safetensors"
+  },
+  {
+   "rfilename": "tokenizer/merges.txt"
+  },
+  {
+   "rfilename": "tokenizer/special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer/tokenizer_config.json"
+  },
+  {
+   "rfilename": "tokenizer/vocab.json"
+  },
+  {
+   "rfilename": "unet/config.json"
+  },
+  {
+   "rfilename": "unet/diffusion_pytorch_model.fp16.safetensors"
+  },
+  {
+   "rfilename": "unet/diffusion_pytorch_model.safetensors"
+  },
+  {
+   "rfilename": "vae/config.json"
+  },
+  {
+   "rfilename": "vae/diffusion_pytorch_model.fp16.safetensors"
+  },
+  {
+   "rfilename": "vae/diffusion_pytorch_model.safetensors"
+  }
+ ],
+ "spaces": [
+  "Asem75/divid_teacher",
+  "mendeld/bh56-ai",
+  "radames/Real-Time-Latent-Consistency-Model",
+  "gparmar/img2img-turbo-sketch",
+  "radames/Real-Time-Latent-Consistency-Model-Text-To-Image",
+  "garibida/ReNoise-Inversion",
+  "radames/Real-Time-SD-Turbo",
+  "radames/real-time-pix2pix-turbo",
+  "tight-inversion/tight-inversion",
+  "Nymbo/image_gen_supaqueue",
+  "latent-consistency/Real-Time-LCM-ControlNet-Lora-SD1.5",
+  "ksort/K-Sort-Arena",
+  "Shizuku-AI/StreamDiffusion-realtime-txt2img",
+  "fffiloni/ReNO",
+  "rupeshs/fastsdcpu",
+  "KwabsHug/GameConfigIdea",
+  "latent-consistency/Real-Time-LCM-Text-to-Image-Lora-SD1.5",
+  "myn0908/S2I-Artwork-Sketch-to-Image-Diffusion",
+  "daily-co/RealtimeSDWebRTC",
+  "build-small-hackathon/toddler-typist",
+  "michaelj/testlcm",
+  "farazify/GENAI_Project",
+  "maldons77/ai-storyboard-creator",
+  "hongyu12321/RedFish",
+  "ahmedmbutt/sd-gal-gen",
+  "multimodalart/Real-Time-Latent-SDXL-Lightning",
+  "douglasgoodwin/Real-Time-SD-Turbo",
+  "Muthuraja18/image",
+  "clone3/FastGUI",
+  "Ntdeseb/ntia",
+  "Speedofmastery/orynxml-backend",
+  "AlekseyCalvin/Deforum_Soonr",
+  "educatedlucifer12/whisper-ai",
+  "HolySmokes1234/BETASAINT",
+  "Araeynn/lyre",
+  "Araeynn/Luminary-Yarn-of-Robotic-Excellence",
+  "jblalock30/quantizing-diffusion-models",
+  "Festrcze/Real-Time-SD-Turbooooooo",
+  "K00B404/image_gen_supaqueue_game_assets",
+  "bh4vay/comic",
+  "Phoenix05003/Image-Generation",
+  "tejani/Another",
+  "tejani/testlcm2",
+  "Yeonu1108/yeonu",
+  "victor1997s/t2i",
+  "cheeseman182/image_generator_using_sd_turbo",
+  "Bilal-ali09/DAY-37",
+  "JayeshM30/Phrase-to-Story-and-Story-to-Image-Generator",
+  "Mmmma4iio/Still_life_generator",
+  "raghavsingh0027/Ad_Creator",
+  "medbert-health-predict/HealthAi",
+  "videopix/Gibhili",
+  "lollydayss/prompts-fp-generator",
+  "SanskarModi/sd-image-gen-toolkit",
+  "Umairbdxn/fastsdcpu",
+  "PromacEthan/Xign",
+  "benmad2007/simple-ai-video-maker",
+  "HopeAismartcompany/hope-ai",
+  "fabricationworkshop/streamdiffusion",
+  "hexanovapixel/ImaginaAI",
+  "Json026/Image_generator",
+  "jabiru55/Image_Quality_inhancer_API",
+  "gsstec/sci-image",
+  "Akshitaaaa/my-image-generator",
+  "build-small-hackathon/lulluna",
+  "build-small-hackathon/aMuseMe",
+  "ZedrixTNDK/ZGenerator",
+  "ChengYou305/DI2FIX_Public_Demo",
+  "mimot/Image-Edit-Full-Wan",
+  "Yankkee/quen_logo_massinteration",
+  "HusseinHE/Magic",
+  "JoPmt/Txt2Img_SD_Trb",
+  "jensinjames/Real-Time-SD-Turbo",
+  "garrettscott/Real-Time-Latent-Consistency-Model",
+  "hillman2000hk/Real-Time-Latent-Consistency-Model",
+  "vloikas/NEW-Mycelium",
+  "hady20100/Real-Time-Latent-Consistency-Model",
+  "MehmetK/Real-Time-Latent-Consistency-Model",
+  "krnl/img2img-turbo-sketch",
+  "douglasgoodwin/one-more-gloomy-sunday",
+  "Festrcze/Real-Time-SD-Turbonjjj",
+  "cocktailpeanut/img2img-turbo-sketch",
+  "cocktailpeanut/ReNoise-Inversion",
+  "EasonYan/img2img-turbo-sketch",
+  "malchish61/Real-Time-Latent-Consistency-Model",
+  "ahmed24444/Real-Time-Latent-Consistency-Model",
+  "torusvektor/Real-Time-Latent-Consistency-Model",
+  "Satanpapa/Real-Time-Latent-Consistency-Model",
+  "Festrcze/Real-Time-SD-Turbo",
+  "ranga-godhandaraman/demo-app-ranga",
+  "bilegentile/fastsdtest",
+  "krnl/img2img-turbo-sketch-old",
+  "sackfab/Real-Time-SD-TurboFD",
+  "gaur3009/imagier",
+  "deeme/png",
+  "Inmental/img2img-turbo",
+  "Inmental/img2img-turbo-sketch",
+  "Rodneyontherock1067/fastsdcpu",
+  "tianlong12/flux-api",
+  "Danzalionline/stabilityai-sd-turbo"
+ ],
+ "createdAt": "2023-11-27T16:41:20.000Z",
+ "safetensors": {
+  "parameters": {
+   "F32": 865910724
+  },
+  "total": 865910724
+ },
+ "usedStorage": 12954587874
+}

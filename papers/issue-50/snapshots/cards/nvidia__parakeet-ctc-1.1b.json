@@ -1,0 +1,603 @@
+{
+ "_id": "658d93fd90b9c2cfa328a25b",
+ "id": "nvidia/parakeet-ctc-1.1b",
+ "private": false,
+ "pipeline_tag": "automatic-speech-recognition",
+ "library_name": "nemo",
+ "tags": [
+  "nemo",
+  "safetensors",
+  "gguf",
+  "parakeet_ctc",
+  "automatic-speech-recognition",
+  "transformers",
+  "speech",
+  "audio",
+  "FastConformer",
+  "Conformer",
+  "pytorch",
+  "NeMo",
+  "hf-asr-leaderboard",
+  "ctc",
+  "en",
+  "dataset:librispeech_asr",
+  "dataset:fisher_corpus",
+  "dataset:Switchboard-1",
+  "dataset:WSJ-0",
+  "dataset:WSJ-1",
+  "dataset:National-Singapore-Corpus-Part-1",
+  "dataset:National-Singapore-Corpus-Part-6",
+  "dataset:vctk",
+  "dataset:voxpopuli",
+  "dataset:europarl",
+  "dataset:multilingual_librispeech",
+  "dataset:mozilla-foundation/common_voice_8_0",
+  "dataset:MLCommons/peoples_speech",
+  "arxiv:2305.05084",
+  "license:cc-by-4.0",
+  "model-index",
+  "eval-results",
+  "deploy:azure",
+  "region:us"
+ ],
+ "downloads": 1686941,
+ "likes": 58,
+ "modelId": "nvidia/parakeet-ctc-1.1b",
+ "author": "nvidia",
+ "sha": "20e63a0fed6aedba145b74b826dbd41df0941730",
+ "lastModified": "2026-08-05T21:47:03.000Z",
+ "gated": false,
+ "disabled": false,
+ "widgetData": [
+  {
+   "example_title": "Librispeech sample 1",
+   "src": "https://cdn-media.huggingface.co/speech_samples/sample1.flac"
+  },
+  {
+   "example_title": "Librispeech sample 2",
+   "src": "https://cdn-media.huggingface.co/speech_samples/sample2.flac"
+  }
+ ],
+ "model-index": [
+  {
+   "name": "parakeet-ctc-1.1b",
+   "results": [
+    {
+     "task": {
+      "name": "Automatic Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "AMI (Meetings test)",
+      "type": "edinburghcstr/ami",
+      "config": "ihm",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 15.62,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "name": "Automatic Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "Earnings-22",
+      "type": "revdotcom/earnings22",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 13.69,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "name": "Automatic Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "GigaSpeech",
+      "type": "speechcolab/gigaspeech",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 10.27,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "name": "Automatic Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "LibriSpeech (clean)",
+      "type": "librispeech_asr",
+      "config": "other",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 1.83,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "name": "Automatic Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "LibriSpeech (other)",
+      "type": "librispeech_asr",
+      "config": "other",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 3.54,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Automatic Speech Recognition",
+      "name": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "SPGI Speech",
+      "type": "kensho/spgispeech",
+      "config": "test",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 4.2,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Automatic Speech Recognition",
+      "name": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "tedlium-v3",
+      "type": "LIUM/tedlium",
+      "config": "release1",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 3.54,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "name": "Automatic Speech Recognition",
+      "type": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "Vox Populi",
+      "type": "facebook/voxpopuli",
+      "config": "en",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 6.53,
+       "verified": false
+      }
+     ]
+    },
+    {
+     "task": {
+      "type": "Automatic Speech Recognition",
+      "name": "automatic-speech-recognition"
+     },
+     "dataset": {
+      "name": "Mozilla Common Voice 9.0",
+      "type": "mozilla-foundation/common_voice_9_0",
+      "config": "en",
+      "split": "test",
+      "args": {
+       "language": "en"
+      }
+     },
+     "metrics": [
+      {
+       "name": "Test WER",
+       "type": "wer",
+       "value": 9.02,
+       "verified": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "config": {
+  "architectures": [
+   "ParakeetForCTC"
+  ],
+  "model_type": "parakeet_ctc",
+  "tokenizer_config": {
+   "pad_token": "<pad>",
+   "unk_token": "<unk>"
+  }
+ },
+ "cardData": {
+  "language": [
+   "en"
+  ],
+  "library_name": "nemo",
+  "datasets": [
+   "librispeech_asr",
+   "fisher_corpus",
+   "Switchboard-1",
+   "WSJ-0",
+   "WSJ-1",
+   "National-Singapore-Corpus-Part-1",
+   "National-Singapore-Corpus-Part-6",
+   "vctk",
+   "voxpopuli",
+   "europarl",
+   "multilingual_librispeech",
+   "mozilla-foundation/common_voice_8_0",
+   "MLCommons/peoples_speech"
+  ],
+  "thumbnail": null,
+  "tags": [
+   "transformers",
+   "automatic-speech-recognition",
+   "speech",
+   "audio",
+   "FastConformer",
+   "Conformer",
+   "pytorch",
+   "NeMo",
+   "hf-asr-leaderboard",
+   "ctc"
+  ],
+  "license": "cc-by-4.0",
+  "widget": [
+   {
+    "example_title": "Librispeech sample 1",
+    "src": "https://cdn-media.huggingface.co/speech_samples/sample1.flac"
+   },
+   {
+    "example_title": "Librispeech sample 2",
+    "src": "https://cdn-media.huggingface.co/speech_samples/sample2.flac"
+   }
+  ],
+  "model-index": [
+   {
+    "name": "parakeet-ctc-1.1b",
+    "results": [
+     {
+      "task": {
+       "name": "Automatic Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "AMI (Meetings test)",
+       "type": "edinburghcstr/ami",
+       "config": "ihm",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 15.62,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "name": "Automatic Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "Earnings-22",
+       "type": "revdotcom/earnings22",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 13.69,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "name": "Automatic Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "GigaSpeech",
+       "type": "speechcolab/gigaspeech",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 10.27,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "name": "Automatic Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "LibriSpeech (clean)",
+       "type": "librispeech_asr",
+       "config": "other",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 1.83,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "name": "Automatic Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "LibriSpeech (other)",
+       "type": "librispeech_asr",
+       "config": "other",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 3.54,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Automatic Speech Recognition",
+       "name": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "SPGI Speech",
+       "type": "kensho/spgispeech",
+       "config": "test",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 4.2,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Automatic Speech Recognition",
+       "name": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "tedlium-v3",
+       "type": "LIUM/tedlium",
+       "config": "release1",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 3.54,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "name": "Automatic Speech Recognition",
+       "type": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "Vox Populi",
+       "type": "facebook/voxpopuli",
+       "config": "en",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 6.53,
+        "verified": false
+       }
+      ]
+     },
+     {
+      "task": {
+       "type": "Automatic Speech Recognition",
+       "name": "automatic-speech-recognition"
+      },
+      "dataset": {
+       "name": "Mozilla Common Voice 9.0",
+       "type": "mozilla-foundation/common_voice_9_0",
+       "config": "en",
+       "split": "test",
+       "args": {
+        "language": "en"
+       }
+      },
+      "metrics": [
+       {
+        "name": "Test WER",
+        "type": "wer",
+        "value": 9.02,
+        "verified": false
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "metrics": [
+   "wer"
+  ],
+  "pipeline_tag": "automatic-speech-recognition"
+ },
+ "transformersInfo": {
+  "auto_model": "AutoModelForCTC",
+  "pipeline_tag": "automatic-speech-recognition"
+ },
+ "gguf": {
+  "total": 1072885841,
+  "architecture": "asr",
+  "totalFileSize": 1178100960
+ },
+ "siblings": [
+  {
+   "rfilename": ".gitattributes"
+  },
+  {
+   "rfilename": "README.md"
+  },
+  {
+   "rfilename": "config.json"
+  },
+  {
+   "rfilename": "model.safetensors"
+  },
+  {
+   "rfilename": "parakeet-ctc-1.1b.nemo"
+  },
+  {
+   "rfilename": "parakeet-ctc-1.1b.q8_0.gguf"
+  },
+  {
+   "rfilename": "preprocessor_config.json"
+  },
+  {
+   "rfilename": "special_tokens_map.json"
+  },
+  {
+   "rfilename": "tokenizer.json"
+  },
+  {
+   "rfilename": "tokenizer_config.json"
+  },
+  {
+   "rfilename": "vocab.json"
+  }
+ ],
+ "spaces": [
+  "fffiloni/tada-dual-alignment-tts-demo",
+  "build-small-hackathon/lightloom",
+  "mortimerme/pyvideotrans",
+  "build-small-hackathon/figment",
+  "Jiaofeng/parakeet-ctc-0.6b"
+ ],
+ "createdAt": "2023-12-28T15:27:57.000Z",
+ "safetensors": {
+  "parameters": {
+   "F32": 1062626305
+  },
+  "total": 1062626305
+ },
+ "usedStorage": 22432427152
+}
