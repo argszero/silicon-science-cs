@@ -13,7 +13,7 @@ langgenius/dify                    TypeScript -                langfuse,langsmit
 microsoft/autogen                  Python   -                -                         60     2     0
 crewAIInc/crewAI                   Python   -                langsmith                  0     0     0
 BerriAI/litellm                    Python   -                langfuse                   0     4     0
-run-llama/llama_index              Python   promptlayer      langfuse,opik,wandb        3     0     0
+run-llama/llama_index              Python   tonic-validate   langfuse,opik,promptla     3     0     0
 Aider-AI/aider                     Python   -                -                          2     0     0
 langchain-ai/langgraph             Python   -                -                          0     0     0
 stanfordnlp/dspy                   Python   -                -                          2     0     0
@@ -47,7 +47,7 @@ opencode-ai/opencode               none               no     no
 
 H1: evaluation-harness adoption is low and concentrated
   external eval-harness dependency (manifest-declared): 1/16 = 6.25%
-    run-llama/llama_index -> ['promptlayer']
+    run-llama/llama_index -> ['tonic-validate']
   tracing/observability deps: 6/16 = 37.50% (control signal — observability vs evaluation)
 
 H2: LLM-as-judge is the dominant evaluation mechanism

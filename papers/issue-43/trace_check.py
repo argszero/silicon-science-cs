@@ -11,6 +11,7 @@ FROZEN = (ROOT / "expected_output" / "discovery_results.txt").read_text()
 
 NEEDLES = {
     "H1 harness 1/16 = 6.25%": "external eval-harness dependency (manifest-declared): 1/16 = 6.25%",
+    "H1 llama_index tonic-validate": "run-llama/llama_index -> ['tonic-validate']",
     "H2 judge 7/16 = 43.75%": "judge-based evaluation present: 7/16 = 43.75%",
     "H3 validation 0/16": "repos with human-validation markers (hand-verified, mechanisms.json): 0/16",
     "H3 0/7 judge users": "validation among judge users: 0/7 (0.00%)",

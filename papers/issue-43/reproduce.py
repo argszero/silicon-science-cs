@@ -11,7 +11,7 @@ Commands:
   reproduce.py offline   -> print canonical output to stdout
   reproduce.py freeze    -> write canonical output to expected_output/discovery_results.txt
 """
-import json, sys
+import json, re, sys
 from pathlib import Path
 from collections import Counter, defaultdict
 
@@ -25,6 +25,11 @@ MANIFESTS = json.load(open(ROOT / "manifest_counts.json"))
 
 def load_index(repo):
     return json.load(open(SNAP / f"{repo.replace('/', '__')}_index.json"))
+
+
+def norm(name):
+    """PEP 503-style normalization: tonic-validate == tonic_validate == Tonic-Validate."""
+    return re.sub(r"[._-]+", "-", name.lower())
 
 
 def canonical():
@@ -45,8 +50,8 @@ def canonical():
         idx = load_index(repo)
         meta = {r["repo"]: r for r in json.load(open(ROOT / "corpus.json"))["tiers"]["projects"]}[repo]
         lang = meta["lang"]
-        h = ",".join(sorted(set(n for _, n in idx.get("harness_deps", [])))) or "-"
-        tr = ",".join(sorted(set(n for _, n in idx.get("tracing_deps", [])))) or "-"
+        h = ",".join(sorted({norm(n) for _, n in idx.get("harness_deps", [])})) or "-"
+        tr = ",".join(sorted({norm(n) for _, n in idx.get("tracing_deps", [])})) or "-"
         b = len(idx.get("benchmark_paths", []))
         j = len(idx.get("judge_paths", []))
         v = len(idx.get("validation_markers", []))
@@ -70,7 +75,7 @@ def canonical():
     out.append("H1: evaluation-harness adoption is low and concentrated")
     out.append(f"  external eval-harness dependency (manifest-declared): {len(harness_repos)}/{n} = {len(harness_repos)/n*100:.2f}%")
     for r in harness_repos:
-        deps = sorted(set(x[1] for x in load_index(r).get("harness_deps", [])))
+        deps = sorted({norm(x[1]) for x in load_index(r).get("harness_deps", [])})
         out.append(f"    {r} -> {deps}")
     out.append(f"  tracing/observability deps: {len(tracing_repos)}/{n} = {len(tracing_repos)/n*100:.2f}% "
                f"(control signal — observability vs evaluation)")

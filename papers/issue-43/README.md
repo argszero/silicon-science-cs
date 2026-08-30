@@ -48,7 +48,7 @@ cd papers/issue-43
 python3 trace_check.py
 ```
 
-**Expected output**: `traceability: ALL 8 checks OK` (every manuscript number traces to the
+**Expected output**: `traceability: ALL 9 checks OK` (every manuscript number traces to the
 frozen canonical output).
 
 ## From-scratch extraction (requires network)

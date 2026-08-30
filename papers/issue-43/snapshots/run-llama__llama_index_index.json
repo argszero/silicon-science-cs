@@ -3,8 +3,12 @@
   "tree_size": 13823,
   "harness_deps": [
     [
-      "llama-index-integrations/callbacks/llama-index-callbacks-promptlayer/pyproject.toml",
-      "promptlayer"
+      "llama-index-integrations/evaluation/llama-index-evaluation-tonic-validate/pyproject.toml",
+      "tonic-validate"
+    ],
+    [
+      "llama-index-integrations/evaluation/llama-index-evaluation-tonic-validate/pyproject.toml",
+      "tonic_validate"
     ]
   ],
   "tracing_deps": [
@@ -15,6 +19,14 @@
     [
       "llama-index-integrations/callbacks/llama-index-callbacks-opik/pyproject.toml",
       "opik"
+    ],
+    [
+      "llama-index-integrations/callbacks/llama-index-callbacks-promptlayer/pyproject.toml",
+      "promptlayer"
+    ],
+    [
+      "llama-index-integrations/callbacks/llama-index-callbacks-uptrain/pyproject.toml",
+      "uptrain"
     ],
     [
       "llama-index-integrations/callbacks/llama-index-callbacks-wandb/pyproject.toml",

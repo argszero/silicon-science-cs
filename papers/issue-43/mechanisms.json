@@ -1,5 +1,5 @@
 {
-  "note": "Hand-classified eval-mechanism per corpus repo (R71, corrected R72+R72b). mechanism \u2208 {built-in-module, hand-rolled, external-harness, benchmark-run, none}. judge: 'yes' iff an LLM-based judging/grading component exists IN THE REPO (shipped/hand-rolled), not merely a user-extensible harness. validation: human-ground-truth validation accompanies eval practice. Corrections: pydantic-ai ships pydantic_evals (llm_as_a_judge); llama_index built-in core evaluation + external promptlayer; dspy ships programmatic metrics only (EM/F1), no LLM-judge component.",
+  "note": "Hand-classified eval-mechanism per corpus repo (R71, corrected R72+R72b; boundary rule applied R80). mechanism \u2208 {built-in-module, hand-rolled, external-harness, benchmark-run, none}. judge: 'yes' iff an LLM-based judging/grading component exists IN THE REPO (shipped/hand-rolled), not merely a user-extensible harness. validation: human-ground-truth validation accompanies eval practice. Boundary rule (R80): a manifest-declared dep is an external harness iff its integration point in the repo is an evaluation module; callback/telemetry integrations (langfuse/opik/langsmith/wandb/promptlayer/uptrain) are tracing. Corrections: pydantic-ai ships pydantic_evals (llm_as_a_judge); llama_index built-in core evaluation + external tonic-validate (evaluation integration; promptlayer/uptrain are callbacks); dspy ships programmatic metrics only (EM/F1), no LLM-judge component.",
   "judge": {
     "definition": "Presence of LLM-based judging/grading (LLM evaluates outputs): 'yes' if a judge/grading mechanism exists in the repo (hand-rolled code, built-in module, or via harness); 'no' otherwise.",
     "validation": {
@@ -57,7 +57,7 @@
       "validation": "no",
       "evidence": [
         "llama-index-core/llama_index/core/evaluation (answer_relevancy, context_relevancy, batch_runner, benchmarks/beir, hotpotqa)",
-        "external dep: promptlayer (only external harness in corpus)"
+        "external dep: tonic-validate (evaluation-integration package, llama_index.evaluation.tonic_validate); promptlayer/uptrain integrations are callbacks (llama_index.callbacks.*) -> tracing, per integration-category boundary rule (R80)"
       ]
     },
     "Aider-AI/aider": {

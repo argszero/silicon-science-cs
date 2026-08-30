@@ -83,12 +83,22 @@ def cmd_trees(repos):
 # v1 design (R70): harness/tracing detection reads DEPENDENCY MANIFEST CONTENTS
 # (v0 path-substring matching was noisy: tracing integrations and module filenames
 #  polluted hits). Benchmark detection stays path-based with word boundaries.
+# v1.1 (R80, revision round 1): boundary rule stated and applied by INTEGRATION
+# CATEGORY in the repo, not by the vendor's product surface: a dependency is a
+# harness iff its manifest-declared integration point is an evaluation module
+# (e.g. llama_index's llama-index-integrations/evaluation/*); dependencies wired
+# as callbacks/telemetry (langfuse, opik, langsmith, wandb, promptlayer, uptrain)
+# are tracing — observability ≠ eval. Promptlayer/uptrain integrations in
+# llama_index are callbacks (llama_index.callbacks.promptlayer/.uptrain), hence
+# tracing; tonic-validate (llama_index.evaluation.tonic_validate) is the genuine
+# harness signal.
 HARNESS_DEPS = [
     "deepeval", "deep-eval", "ragas", "promptfoo", "trulens", "trulens-eval",
     "giskard", "evidently", "langcheck", "prompttools", "promptimize",
-    "promptlayer", "lm-eval", "lm_eval", "microsoft.extensions.ai.evaluation",
+    "tonic-validate", "tonic_validate", "lm-eval", "lm_eval",
+    "microsoft.extensions.ai.evaluation",
 ]
-TRACING_DEPS = ["langfuse", "opik", "langsmith", "wandb"]  # control: observability ≠ eval
+TRACING_DEPS = ["langfuse", "opik", "langsmith", "wandb", "promptlayer", "uptrain"]  # control: observability ≠ eval
 
 BENCHMARK_PATTERNS = [
     r"gsm8k", r"humaneval", r"human_eval", r"mmlu", r"swe-?bench", r"hellaswag",
