@@ -42,7 +42,8 @@ lineage, technical details, citations), hand-validated on **128 cells**
 | Command | Purpose | Expected |
 |---|---|---|
 | `bash reproduce.sh` | offline regenerate + byte-compare canonical outputs | exit 0, two `OK:` lines |
-| `python3 validate.py` | validation metrics on the 128 hand-annotated cells | accuracy 100.0% (128/128), precision 1.000, recall 1.000 |
+| `python3 validate.py` | validation on 192 hand-annotated cells (boundary 128 + complement 64) | boundary 100.0% / complement 98.4% / combined 99.5% |
+| `python3 sensitivity.py` | rule-variant sensitivity appendix (canonical untouched) | writes `sensitivity_report.txt`; H1/H3 invariant |
 | `python3 trace_check.py` | corpus ↔ snapshots ↔ signals cross-checks | ALL 21 checks OK |
 | `python3 extract.py` | re-extract signals from the raw snapshots (network-free) | writes `snapshots/signals.json` |
 | `python3 reproduce.py freeze` | re-freeze canonical outputs after any rule change | writes `expected_output/` |
@@ -56,8 +57,9 @@ lineage, technical details, citations), hand-validated on **128 cells**
 - `snapshots/readmes/` — 172 README markdown (**15 gated models have no public README** — the finding behind H2)
 - `snapshots/list/` — raw API-list responses backing the exact selection rule
 - `snapshots/signals.json` — per-model 8-signal records (regenerable)
-- `extract.py`, `hypotheses.py`, `reproduce.py`, `reproduce.sh`, `trace_check.py`, `validate.py`, `build_corpus.py`, `fetch_cards.py`
-- `validation_sample.tsv` — 128 hand-annotated validation cells (model, signal, pred, gated, evidence, human, notes)
+- `extract.py`, `hypotheses.py`, `reproduce.py`, `reproduce.sh`, `trace_check.py`, `validate.py`, `sensitivity.py` (+ `sensitivity_report.txt`), `build_complement.py`, `build_corpus.py`, `fetch_cards.py`
+- `validation_sample.tsv` — 128 hand-annotated cells (16 boundary models)
+- `validation_complement.tsv` — 64 hand-annotated cells (8 download-quantile-spanning models; the review-required complement)
 - `expected_output/signals.json` + `expected_output/hypotheses.txt` — frozen canonical outputs
 
 ## Determinism

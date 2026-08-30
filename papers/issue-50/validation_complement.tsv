@@ -1,0 +1,65 @@
+model	signal	pred	gated	evidence	human	notes	notes
+sentence-transformers/all-MiniLM-L6-v2	license	1	0	[no match]	1	
+sentence-transformers/all-MiniLM-L6-v2	training_data	1	0	s - feature-extraction - sentence-similarity - transformers datasets: - s2orc - flax-sentence-embeddings/stackexchange_xml - ms_m	1	
+sentence-transformers/all-MiniLM-L6-v2	eval_results	0	0	[no match]	0	
+sentence-transformers/all-MiniLM-L6-v2	bias_limitations	0	0	[no match]	0	
+sentence-transformers/all-MiniLM-L6-v2	intended_use	1	0	n be used for tasks like clustering or semantic search.  ## Usage (Sentence-Transformers) Using this model becomes easy when 	1	
+sentence-transformers/all-MiniLM-L6-v2	base_model	1	0	[no match]	1	
+sentence-transformers/all-MiniLM-L6-v2	technical	1	0	ross entropy loss by comparing with true pairs.  #### Hyper parameters  We trained our model on a TPU v3-8. We train the model dur	1	
+sentence-transformers/all-MiniLM-L6-v2	citations	0	0	nversational-datasets/tree/master/reddit) | [paper](https://arxiv.org/abs/1904.06472) | 726,484,430 | | [S2ORC](https://githu	0	
+google-bert/bert-base-uncased	license	1	0	[no match]	1	
+google-bert/bert-base-uncased	training_data	1	0	--- language: en tags: - exbert license: apache-2.0 datasets: - bookcorpus - wikipedia ---  # BERT base model (uncased)  	1	
+google-bert/bert-base-uncased	eval_results	0	0	[no match]	0	
+google-bert/bert-base-uncased	bias_limitations	1	0	[no match]	1	
+google-bert/bert-base-uncased	intended_use	1	0	bert-large-cased-whole-word-masking) | 340M | English |  ## Intended uses & limitations  You can use the raw model for either masked	1	
+google-bert/bert-base-uncased	base_model	0	0	[no match]	0	
+google-bert/bert-base-uncased	technical	1	0	research/bert/blob/master/README.md) on github.  | Model | #params | Language | |------------------------|--------------------	1	
+google-bert/bert-base-uncased	citations	1	0	 (MLM) objective. It was introduced in [this paper](https://arxiv.org/abs/1810.04805) and first released in [this repository]	1	
+google/gemma-4-26B-A4B-it	license	1	0	[no match]	1	
+google/gemma-4-26B-A4B-it	training_data	1	0	*Multilingual** – Out-of-the-box support for 35+ languages, pre-trained on 140+ languages. * **Audio** (E2B, E4B, and 12B only) – Auto	1	
+google/gemma-4-26B-A4B-it	eval_results	1	0	ic Capabilities** – Achieves notable improvements in coding benchmarks alongside native function-calling support, powering highly 	1	
+google/gemma-4-26B-A4B-it	bias_limitations	1	0	[no match]	1	
+google/gemma-4-26B-A4B-it	intended_use	1	0	he following standardized sampling configuration across all use cases:  * `temperature=1.0`   * `top_p=0.95`   * `top_k=64`  ### 	1	
+google/gemma-4-26B-A4B-it	base_model	1	0	a from training sets.   * **Additional methods**: Filtering based on content quality and safety in line with [our policies](http	1	
+google/gemma-4-26B-A4B-it	technical	1	0	guages.   Featuring both Dense and Mixture-of-Experts (MoE) architectures, Gemma 4 is well-suited for tasks like text generation, co	1	
+google/gemma-4-26B-A4B-it	citations	1	0	e" target="_blank">Documentation</a> |     <a href="https://arxiv.org/abs/2607.02770" target="_blank">Technical Report</a>   	1	
+FacebookAI/roberta-large	license	1	0	[no match]	1	
+FacebookAI/roberta-large	training_data	1	0	--- language: en tags: - exbert license: mit datasets: - bookcorpus - wikipedia ---  # RoBERTa large model  Pretra	1	
+FacebookAI/roberta-large	eval_results	0	0	[no match]	0	
+FacebookAI/roberta-large	bias_limitations	1	0	[no match]	1	
+FacebookAI/roberta-large	intended_use	1	0	sing the features produced by the BERT model as inputs.  ## Intended uses & limitations  You can use the raw model for masked langua	1	
+FacebookAI/roberta-large	base_model	0	0	[no match]	0	
+FacebookAI/roberta-large	technical	1	0	[no match]	1		describes MLM mechanism (masks future tokens, bidirectional representation)
+FacebookAI/roberta-large	citations	1	0	 (MLM) objective. It was introduced in [this paper](https://arxiv.org/abs/1907.11692) and first released in [this repository]	1	
+ornith-ai/Ornith-1.5-35B-A3B	license	1	0	[no match]	1	
+ornith-ai/Ornith-1.5-35B-A3B	training_data	0	0	[no match]	0	
+ornith-ai/Ornith-1.5-35B-A3B	eval_results	1	0	00px;" src="assets/ornith_35b_eval.png" alt="Ornith 1.5 35B Benchmark Results" title="Ornith 1.5 35B Benchmark Results">  ## Orni	1	
+ornith-ai/Ornith-1.5-35B-A3B	bias_limitations	0	0	[no match]	0	
+ornith-ai/Ornith-1.5-35B-A3B	intended_use	1	0	, talk to it with any OpenAI-compatible client.  #### Basic Usage  ```python from openai import OpenAI  client = OpenAI(     	1	
+ornith-ai/Ornith-1.5-35B-A3B	base_model	0	0	[no match]	0	
+ornith-ai/Ornith-1.5-35B-A3B	technical	1	0	erts member of the Ornith-1.5 family. It activates only ~3B parameters per token, yet significantly outperforms its similar-sized 	1	
+ornith-ai/Ornith-1.5-35B-A3B	citations	1	0	rnith-1.5-35B-A3B" } } #     } #   } # }  opencode ```  ### Citation  If you find our work helpful, feel free to give us a cite.	1	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	license	1	0	[no match]	1	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	training_data	0	0	[no match]	0	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	eval_results	0	0	[no match]	0	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	bias_limitations	1	0	[no match]	1	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	intended_use	1	0	f the above;   outputs can be degraded or nonsensical.  ### Intended use vs out of scope  - **Intended:** AI-safety and interpretabi	1	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	base_model	1	0	[no match]	1	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	technical	1	0	n3.8-27B`](https://huggingface.co/Qwen/Qwen3.8-27B) — a 27B-parameter dense, > hybrid-attention (Gated DeltaNet linear + full att	1	
+orcarouter/Qwen3.8-27B-Uncensored-MLX	citations	0	0	[no match]	0	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	license	1	0	[no match]	1	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	training_data	0	0	[no match]	0	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	eval_results	0	0	[no match]	0	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	bias_limitations	0	0	[no match]	0	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	intended_use	0	0	[no match]	0	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	base_model	1	0	he > matching LoRA above if you prefer to download only the distilled adapter.  ## Run with FastVideo  Install [uv](https://docs.	1	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	technical	0	0	[no match]	0	
+FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree	citations	0	0	ps://github.com/NVlabs/FastGen) team for the [DMD2](https://arxiv.org/abs/2405.14867) framework and H3 reference experiment t	0	
+froggeric/Qwen-Fixed-Chat-Templates	license	1	0	[no match]	1	
+froggeric/Qwen-Fixed-Chat-Templates	training_data	1	0	ormat (XML vs JSON)</b></summary>  Qwen models are natively trained on XML tool calls (`<function=name>`). By default, this templa	1	
+froggeric/Qwen-Fixed-Chat-Templates	eval_results	0	0	[no match]	0	
+froggeric/Qwen-Fixed-Chat-Templates	bias_limitations	1	0	[no match]	0	
+froggeric/Qwen-Fixed-Chat-Templates	intended_use	0	0	[no match]	0	
+froggeric/Qwen-Fixed-Chat-Templates	base_model	0	0	[no match]	0	
+froggeric/Qwen-Fixed-Chat-Templates	technical	1	0	 the root of this repository for all Qwen 3.5, 3.6, and 3.8 model sizes.  ---  ## What is New with Qwen 3.8 (v22 / v22.1 / v22.2 /	1	
+froggeric/Qwen-Fixed-Chat-Templates	citations	0	0	[no match]	0	
