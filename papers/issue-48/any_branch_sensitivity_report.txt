@@ -1,0 +1,24 @@
+ISSUE #48 — ANY-BRANCH SENSITIVITY REPORT (review RC2/Q2; canonical unchanged)
+
+canonical (default-branch): ROS2 432/568 = 76.06%; ROS1 131/568 = 23.06%
+
+ROS 1 package lines on default (10 repos): Universal_Robots_ROS_Driver, cartographer_ros, geometry2, moveit, moveit_ros, navigation, ros, ros_comm, ros_controllers, rplidar_ros
+
+== ROS1-default repos with ROS2-named non-default branches ==
+  cartographer-project/cartographer_ros            default=master         candidates=['ros2-dashing', 'ros2-dashing-1.0.0']
+  slamtec/rplidar_ros                              default=master         candidates=['dashing', 'ros2-devel', 'ros2']
+
+== per-candidate verification (package.xml at branch tip, 2026-08-31) ==
+  cartographer-project/cartographer_ros @ ros2-dashing: ROS1  [evidence: catkin, roscpp, rosbag, roslaunch, roslib; 0 rclcpp/rclpy/ament/rosidl]
+  cartographer-project/cartographer_ros @ ros2-dashing-1.0.0: NOT VERIFIED (branch tip not classified)
+  slamtec/rplidar_ros @ dashing: NOT VERIFIED (branch tip not classified)
+  slamtec/rplidar_ros @ ros2-devel: NOT VERIFIED (branch tip not classified)
+  slamtec/rplidar_ros @ ros2: ROS2  [evidence: ament_cmake_auto, ament_cmake_ros, rclcpp, rclcpp_components (build/exec)]
+      -> default-branch packages of this repo (1 pkgs: 1 ROS1 / 0 ROS2) count as migrated under any-branch
+
+== result ==
+  default-branch adoption:  432/568 = 76.06%
+  any-branch adoption:      433/568 = 76.23% (delta +1 pkg, +0.18pp)
+  cartographer_ros' ros2-dashing branch is ROS1 by dependency rule (catkin/roscpp, 0 rclcpp) -> no change; branch names can mislead.
+  All other ROS1-default repos (ros/*, navigation, moveit, moveit_ros, ros_controllers, UR_ROS_Driver) have no non-default ROS2 port.
+  Conclusion: the default-branch reading is the maintained-line reading; the adoption headline moves by <=0.2pp under any-branch.

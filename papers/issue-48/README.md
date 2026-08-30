@@ -61,6 +61,17 @@ python3 h3_coupling.py
 `non-ROS1 packages coupled to in-repo ROS1-only packages: 0 total` — the H3
 falsification (hermetic migration).
 
+## Review-sensitivity analyses (RC2/RC3, canonical untouched)
+
+```bash
+cd papers/issue-48
+python3 tier_robustness.py        # → tier_robustness_report.txt (autoware-excluded + per-repo weighted + repo-majority)
+python3 any_branch_sensitivity.py # → any_branch_sensitivity_report.txt (default 76.06% vs any-branch 76.23%)
+```
+
+Both read only committed files (`snapshots/package_classes.json`, `snapshots/dep_graph.json`,
+`snapshots/branches.json`, `corpus.json`); the canonical `expected_output/discovery_results.txt` is untouched.
+
 ## From-scratch extraction (requires network)
 
 1. `python3 ros_extract.py list-pkgs` — lists all package.xml paths from the pinned trees.
@@ -75,13 +86,19 @@ falsification (hermetic migration).
 |---|---|
 | `manuscript.md` | full manuscript |
 | `ros_extract.py` | network extraction pipeline (list-pkgs / fetch / classify / signals) |
+| `build_corpus.py` | corpus-selection rule (verbatim repo list + tier/role annotations; re-queries GitHub) |
 | `h3_coupling.py` | H3 dependency-coupling analysis (hermetic-migration check) |
+| `tier_robustness.py` | tier-gradient robustness (autoware-excluded, per-repo weighted, repo-majority) |
+| `any_branch_sensitivity.py` | any-branch sensitivity (non-default ROS 2 ports) |
 | `reproduce.py` | deterministic offline aggregation (default: print; `freeze`: write canonical output) |
 | `reproduce.sh` | byte-identical reproduction check |
 | `validate.py` | recompute 23-cell validation metrics (predictions vs hand-verified ground truth) |
 | `trace_check.py` | manuscript-number traceability check |
-| `corpus.json` | 30 pinned repositories (head SHAs, tiers, roles) |
+| `corpus.json` | 30 pinned repositories (head SHAs, tiers, roles, stars, default branches) |
 | `validation_sample.tsv` | 23 hand-verified cells (repo, package path, ROS1/ROS2/dual/none ground truth) |
+| `snapshots/branches.json` | all branches of the 30 repos (enumerated 2026-08-31, for the any-branch sensitivity) |
+| `tier_robustness_report.txt` | generated report (RC3) |
+| `any_branch_sensitivity_report.txt` | generated report (RC2) |
 | `snapshots/package_classes.json` | per-package classification (committed input to aggregation) |
 | `snapshots/dep_graph.json` | package dependency graph (committed input to H3) |
 | `expected_output/discovery_results.txt` | frozen canonical output (source of every number in the manuscript) |
