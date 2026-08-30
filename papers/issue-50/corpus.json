@@ -35,7 +35,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-09-11T15:04:22.000Z"
+   "createdAt": "2023-09-11T15:04:22.000Z",
+   "sha": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+   "gated_flag": false,
+   "lastModified": "2024-02-21T03:00:19.000Z"
   },
   {
    "id": "BAAI/bge-large-en-v1.5",
@@ -69,7 +72,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-09-12T05:20:08.000Z"
+   "createdAt": "2023-09-12T05:20:08.000Z",
+   "sha": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+   "gated_flag": false,
+   "lastModified": "2024-02-21T02:51:44.000Z"
   },
   {
    "id": "BAAI/bge-m3",
@@ -98,7 +104,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2024-01-27T17:07:29.000Z"
+   "createdAt": "2024-01-27T17:07:29.000Z",
+   "sha": "5617a9f61b028005a4858fdac845db406aefb181",
+   "gated_flag": false,
+   "lastModified": "2024-07-03T14:50:10.000Z"
   },
   {
    "id": "BAAI/bge-reranker-v2-m3",
@@ -122,7 +131,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2024-03-15T13:32:18.000Z"
+   "createdAt": "2024-03-15T13:32:18.000Z",
+   "sha": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+   "gated_flag": false,
+   "lastModified": "2024-06-24T14:08:45.000Z"
   },
   {
    "id": "BAAI/bge-small-en-v1.5",
@@ -155,7 +167,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2023-09-12T05:20:55.000Z"
+   "createdAt": "2023-09-12T05:20:55.000Z",
+   "sha": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+   "gated_flag": false,
+   "lastModified": "2024-02-22T03:36:23.000Z"
   },
   {
    "id": "Bingsu/adetailer",
@@ -173,7 +188,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2023-04-26T00:58:45.000Z"
+   "createdAt": "2023-04-26T00:58:45.000Z",
+   "sha": "53cc19de382014514d9d4038601d261a7faa9b7b",
+   "gated_flag": false,
+   "lastModified": "2024-11-21T12:40:27.000Z"
   },
   {
    "id": "BreezeBlue/Breeze-TTS-2",
@@ -200,7 +218,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-25T16:39:34.000Z"
+   "createdAt": "2026-08-25T16:39:34.000Z",
+   "sha": "c1c8ca18b70b30822735633991d9ebf4898e47d4",
+   "gated_flag": false,
+   "lastModified": "2026-08-25T17:09:45.000Z"
   },
   {
    "id": "Comfy-Org/MiniMax-H3",
@@ -217,7 +238,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2026-07-30T22:36:12.000Z"
+   "createdAt": "2026-07-30T22:36:12.000Z",
+   "sha": "4cc1d817b6184899b41293954329f576cb5ae86b",
+   "gated_flag": false,
+   "lastModified": "2026-08-25T04:20:30.000Z"
   },
   {
    "id": "Comfy-Org/stable-diffusion-v1-5-archive",
@@ -235,7 +259,10 @@
     "license:creativeml-openrail-m",
     "region:us"
    ],
-   "createdAt": "2024-08-29T20:40:43.000Z"
+   "createdAt": "2024-08-29T20:40:43.000Z",
+   "sha": "9cfd069101959ca3828bf9c04a4419870832b74f",
+   "gated_flag": false,
+   "lastModified": "2026-08-17T06:14:30.000Z"
   },
   {
    "id": "Comfy-Org/z_image_turbo",
@@ -252,7 +279,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2025-11-26T01:00:52.000Z"
+   "createdAt": "2025-11-26T01:00:52.000Z",
+   "sha": "08d04455279082882deaabc8d0d09fc914c071e1",
+   "gated_flag": false,
+   "lastModified": "2026-08-17T06:15:14.000Z"
   },
   {
    "id": "EleutherAI/gpt-j-6b",
@@ -278,7 +308,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "47e169305d2e8376be1d31e765533382721b2cc1",
+   "gated_flag": false,
+   "lastModified": "2023-06-21T14:33:36.000Z"
   },
   {
    "id": "EleutherAI/gpt-neo-125m",
@@ -306,7 +339,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "21def0189f5705e2521767faed922f1f15e7d7db",
+   "gated_flag": false,
+   "lastModified": "2024-01-31T20:29:39.000Z"
   },
   {
    "id": "EleutherAI/gpt-neox-20b",
@@ -334,7 +370,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-04-07T20:28:29.000Z"
+   "createdAt": "2022-04-07T20:28:29.000Z",
+   "sha": "c292233c833e336628618a88a648727eb3dff0a7",
+   "gated_flag": false,
+   "lastModified": "2024-01-31T20:30:35.000Z"
   },
   {
    "id": "EleutherAI/pythia-14m",
@@ -362,7 +401,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2026-02-24T21:28:14.000Z"
+   "createdAt": "2026-02-24T21:28:14.000Z",
+   "sha": "cf967c0a9a04383db6f7b1108d86b2962634b4ac",
+   "gated_flag": false,
+   "lastModified": "2026-02-27T17:40:29.000Z"
   },
   {
    "id": "EleutherAI/pythia-160m",
@@ -390,7 +432,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-02-08T19:25:46.000Z"
+   "createdAt": "2023-02-08T19:25:46.000Z",
+   "sha": "50f5173d932e8e61f858120bcb800b97af589f46",
+   "gated_flag": false,
+   "lastModified": "2023-07-09T15:52:09.000Z"
   },
   {
    "id": "EleutherAI/pythia-160m-deduped",
@@ -419,7 +464,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-02-08T21:50:19.000Z"
+   "createdAt": "2023-02-08T21:50:19.000Z",
+   "sha": "582159a2dfe3e712a8d47ae83dec95ae3bde8e7e",
+   "gated_flag": false,
+   "lastModified": "2023-07-09T16:04:57.000Z"
   },
   {
    "id": "EleutherAI/pythia-70m",
@@ -444,7 +492,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-02-13T14:54:51.000Z"
+   "createdAt": "2023-02-13T14:54:51.000Z",
+   "sha": "a39f36b100fe8a5377810d56c3f4789b9c53ac42",
+   "gated_flag": false,
+   "lastModified": "2023-11-21T19:04:09.000Z"
   },
   {
    "id": "EleutherAI/pythia-70m-deduped",
@@ -473,7 +524,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-02-13T16:01:41.000Z"
+   "createdAt": "2023-02-13T16:01:41.000Z",
+   "sha": "e93a9faa9c77e5d09219f6c868bfc7a1bd65593c",
+   "gated_flag": false,
+   "lastModified": "2023-07-09T16:07:33.000Z"
   },
   {
    "id": "FacebookAI/roberta-base",
@@ -503,7 +557,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+   "gated_flag": false,
+   "lastModified": "2024-02-19T12:39:28.000Z"
   },
   {
    "id": "FacebookAI/roberta-large",
@@ -533,7 +590,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "722cf37b1afa9454edce342e7895e588b6ff1d59",
+   "gated_flag": false,
+   "lastModified": "2024-02-19T12:47:04.000Z"
   },
   {
    "id": "FacebookAI/xlm-roberta-base",
@@ -652,7 +712,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+   "gated_flag": false,
+   "lastModified": "2024-02-19T12:48:21.000Z"
   },
   {
    "id": "FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree",
@@ -681,7 +744,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2026-08-27T00:28:06.000Z"
+   "createdAt": "2026-08-27T00:28:06.000Z",
+   "sha": "b65818d41939b5085451074fe8ca8b799f8d4921",
+   "gated_flag": false,
+   "lastModified": "2026-08-28T19:27:18.000Z"
   },
   {
    "id": "HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
@@ -710,7 +776,10 @@
     "region:us",
     "conversational"
    ],
-   "createdAt": "2026-08-17T15:15:19.000Z"
+   "createdAt": "2026-08-17T15:15:19.000Z",
+   "sha": "993a5971fda8f30dd1b7eb2654792ba4415c7460",
+   "gated_flag": false,
+   "lastModified": "2026-08-17T22:02:10.000Z"
   },
   {
    "id": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
@@ -738,7 +807,10 @@
     "region:us",
     "conversational"
    ],
-   "createdAt": "2026-08-14T03:43:36.000Z"
+   "createdAt": "2026-08-14T03:43:36.000Z",
+   "sha": "45d0fc0ad6cfcf9eeee6008ddaea925536409b18",
+   "gated_flag": false,
+   "lastModified": "2026-08-29T04:18:18.000Z"
   },
   {
    "id": "Lightricks/LTX-2.5",
@@ -777,7 +849,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2026-07-23T07:55:24.000Z"
+   "createdAt": "2026-07-23T07:55:24.000Z",
+   "sha": "bf86adedf518142442575d1ce2e767b7d01c8c76",
+   "gated_flag": true,
+   "lastModified": "2026-08-27T11:30:29.000Z"
   },
   {
    "id": "MiniMaxAI/MiniMax-H3",
@@ -806,7 +881,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2026-07-28T10:45:18.000Z"
+   "createdAt": "2026-07-28T10:45:18.000Z",
+   "sha": "42ed227ee7df40d41602854ae760620d6eb651fe",
+   "gated_flag": false,
+   "lastModified": "2026-08-13T01:46:29.000Z"
   },
   {
    "id": "OBLITERATUS/Qwen3.8-27B-OBLITERATED",
@@ -835,7 +913,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-19T14:53:08.000Z"
+   "createdAt": "2026-08-19T14:53:08.000Z",
+   "sha": "a58c3b53b3ce71551eafde2ed5ec8df48e0f4ff8",
+   "gated_flag": false,
+   "lastModified": "2026-08-24T17:47:52.000Z"
   },
   {
    "id": "Qwen/Qwen2.5-1.5B-Instruct",
@@ -861,7 +942,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2024-09-17T14:10:29.000Z"
+   "createdAt": "2024-09-17T14:10:29.000Z",
+   "sha": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+   "gated_flag": false,
+   "lastModified": "2024-09-25T12:32:50.000Z"
   },
   {
    "id": "Qwen/Qwen2.5-3B-Instruct",
@@ -887,7 +971,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2024-09-17T14:08:52.000Z"
+   "createdAt": "2024-09-17T14:08:52.000Z",
+   "sha": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+   "gated_flag": false,
+   "lastModified": "2024-09-25T12:33:00.000Z"
   },
   {
    "id": "Qwen/Qwen2.5-7B-Instruct",
@@ -916,7 +1003,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2024-09-16T11:55:40.000Z"
+   "createdAt": "2024-09-16T11:55:40.000Z",
+   "sha": "a09a35458c702b33eeacc393d103063234e8bc28",
+   "gated_flag": false,
+   "lastModified": "2025-01-12T02:10:10.000Z"
   },
   {
    "id": "Qwen/Qwen2.5-VL-7B-Instruct",
@@ -943,7 +1033,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2025-01-26T09:26:37.000Z"
+   "createdAt": "2025-01-26T09:26:37.000Z",
+   "sha": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+   "gated_flag": false,
+   "lastModified": "2025-04-06T16:23:01.000Z"
   },
   {
    "id": "Qwen/Qwen3-0.6B",
@@ -968,7 +1061,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2025-04-27T03:40:08.000Z"
+   "createdAt": "2025-04-27T03:40:08.000Z",
+   "sha": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "gated_flag": false,
+   "lastModified": "2025-07-26T03:46:27.000Z"
   },
   {
    "id": "Qwen/Qwen3-8B",
@@ -995,7 +1091,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2025-04-27T03:42:21.000Z"
+   "createdAt": "2025-04-27T03:42:21.000Z",
+   "sha": "b968826d9c46dd6066d109eabc6255188de91218",
+   "gated_flag": false,
+   "lastModified": "2025-07-26T03:49:13.000Z"
   },
   {
    "id": "Qwen/Qwen3-Embedding-0.6B",
@@ -1022,7 +1121,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2025-06-03T14:25:32.000Z"
+   "createdAt": "2025-06-03T14:25:32.000Z",
+   "sha": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+   "gated_flag": false,
+   "lastModified": "2026-04-20T02:45:58.000Z"
   },
   {
    "id": "Qwen/Qwen3-VL-8B-Instruct",
@@ -1048,7 +1150,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2025-10-11T07:23:39.000Z"
+   "createdAt": "2025-10-11T07:23:39.000Z",
+   "sha": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+   "gated_flag": false,
+   "lastModified": "2025-10-15T16:16:59.000Z"
   },
   {
    "id": "Qwen/Qwen3.5-4B",
@@ -1072,7 +1177,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-02-27T14:45:03.000Z"
+   "createdAt": "2026-02-27T14:45:03.000Z",
+   "sha": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+   "gated_flag": false,
+   "lastModified": "2026-03-02T00:52:52.000Z"
   },
   {
    "id": "Qwen/Qwen3.5-9B",
@@ -1096,7 +1204,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-02-27T12:58:26.000Z"
+   "createdAt": "2026-02-27T12:58:26.000Z",
+   "sha": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+   "gated_flag": false,
+   "lastModified": "2026-03-02T00:51:43.000Z"
   },
   {
    "id": "Qwen/Qwen3.6-27B-FP8",
@@ -1120,7 +1231,10 @@
     "deploy:azure",
     "deploy:sagemaker"
    ],
-   "createdAt": "2026-04-21T07:51:33.000Z"
+   "createdAt": "2026-04-21T07:51:33.000Z",
+   "sha": "e89b16ebf1988b3d6befa7de50abc2d76f26eb09",
+   "gated_flag": false,
+   "lastModified": "2026-04-24T02:39:18.000Z"
   },
   {
    "id": "Qwen/Qwen3.6-35B-A3B-FP8",
@@ -1143,7 +1257,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2026-04-15T06:05:13.000Z"
+   "createdAt": "2026-04-15T06:05:13.000Z",
+   "sha": "95a723d08a9490559dae23d0cff1d9466213d989",
+   "gated_flag": false,
+   "lastModified": "2026-04-24T02:39:23.000Z"
   },
   {
    "id": "Qwen/Qwen3.8-27B",
@@ -1165,7 +1282,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2026-08-05T08:22:59.000Z"
+   "createdAt": "2026-08-05T08:22:59.000Z",
+   "sha": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+   "gated_flag": false,
+   "lastModified": "2026-08-14T15:00:01.000Z"
   },
   {
    "id": "Qwen/Qwen3.8-Flash-Next",
@@ -1185,7 +1305,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-24T08:24:59.000Z"
+   "createdAt": "2026-08-24T08:24:59.000Z",
+   "sha": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T05:03:36.000Z"
   },
   {
    "id": "Qwen/Qwen3.8-Flash-Next-FP8",
@@ -1207,7 +1330,10 @@
     "fp8",
     "region:us"
    ],
-   "createdAt": "2026-08-24T08:25:23.000Z"
+   "createdAt": "2026-08-24T08:25:23.000Z",
+   "sha": "970c569adaca6b35532111fd6b27351b2baefe50",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T05:04:18.000Z"
   },
   {
    "id": "ai21labs/AI21-Jamba-Mini-1.5",
@@ -1238,7 +1364,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-08-19T07:04:45.000Z"
+   "createdAt": "2024-08-19T07:04:45.000Z",
+   "sha": "5a844bbacf32cf46d9561d11622833340aa426b9",
+   "gated_flag": true,
+   "lastModified": "2026-02-02T11:32:20.000Z"
   },
   {
    "id": "ai21labs/AI21-Jamba-Reasoning-3B",
@@ -1258,7 +1387,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2025-10-05T09:43:05.000Z"
+   "createdAt": "2025-10-05T09:43:05.000Z",
+   "sha": "7524370414253301341370beba35e3d549cbf5f3",
+   "gated_flag": false,
+   "lastModified": "2025-10-08T13:06:09.000Z"
   },
   {
    "id": "ai21labs/AI21-Jamba2-3B",
@@ -1278,7 +1410,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2026-01-06T08:19:07.000Z"
+   "createdAt": "2026-01-06T08:19:07.000Z",
+   "sha": "525c6c8e1d9f5bddedfbdc1dbb0ade2df84230c9",
+   "gated_flag": false,
+   "lastModified": "2026-02-02T11:38:31.000Z"
   },
   {
    "id": "ai21labs/AI21-Jamba2-Mini",
@@ -1298,7 +1433,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2026-01-06T08:18:34.000Z"
+   "createdAt": "2026-01-06T08:18:34.000Z",
+   "sha": "24cbbd23e3df170f254aa601d907cdf416ffd344",
+   "gated_flag": false,
+   "lastModified": "2026-02-16T14:16:19.000Z"
   },
   {
    "id": "ai21labs/Jamba-tiny-dev",
@@ -1313,7 +1451,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2024-09-03T09:12:56.000Z"
+   "createdAt": "2024-09-03T09:12:56.000Z",
+   "sha": "ed303361004ac875426a61675edecf8e9d976882",
+   "gated_flag": false,
+   "lastModified": "2024-10-01T08:48:15.000Z"
   },
   {
    "id": "ai21labs/Jamba-tiny-random",
@@ -1331,7 +1472,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-04-17T00:04:25.000Z"
+   "createdAt": "2024-04-17T00:04:25.000Z",
+   "sha": "449ffa6a14916adb7d19312bf63024b8a8e4c1b4",
+   "gated_flag": false,
+   "lastModified": "2024-04-24T06:50:37.000Z"
   },
   {
    "id": "ai21labs/Jamba-tiny-reward-dev",
@@ -1346,7 +1490,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2024-12-05T14:57:37.000Z"
+   "createdAt": "2024-12-05T14:57:37.000Z",
+   "sha": "f699f66f083649931b81ef7276d2d71bf35a9357",
+   "gated_flag": false,
+   "lastModified": "2024-12-05T15:01:33.000Z"
   },
   {
    "id": "ai21labs/Jamba-v0.1",
@@ -1368,7 +1515,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-03-28T12:32:22.000Z"
+   "createdAt": "2024-03-28T12:32:22.000Z",
+   "sha": "9efd11575ba791d9e3d25d4c8b670e78506b2df7",
+   "gated_flag": false,
+   "lastModified": "2024-09-11T17:29:22.000Z"
   },
   {
    "id": "alibaba-pai/MiniMax-H3-Acc-LoRAs",
@@ -1386,7 +1536,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2026-08-26T03:48:27.000Z"
+   "createdAt": "2026-08-26T03:48:27.000Z",
+   "sha": "335001fb9e5455d68a0caa18ec2e319072150328",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T06:13:51.000Z"
   },
   {
    "id": "alibaba-pai/MiniMax-H3-Fun-Controlnet-Union",
@@ -1404,7 +1557,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2026-08-24T03:18:07.000Z"
+   "createdAt": "2026-08-24T03:18:07.000Z",
+   "sha": "6419c27ece80f330826ae4439fa9c5910c475ccf",
+   "gated_flag": false,
+   "lastModified": "2026-08-24T09:10:10.000Z"
   },
   {
    "id": "allenai/OLMo-2-0425-1B",
@@ -1424,7 +1580,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2025-04-17T22:45:45.000Z"
+   "createdAt": "2025-04-17T22:45:45.000Z",
+   "sha": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+   "gated_flag": false,
+   "lastModified": "2025-05-28T20:35:45.000Z"
   },
   {
    "id": "allenai/OLMoE-1B-7B-0125-Instruct",
@@ -1449,7 +1608,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2025-01-27T18:54:09.000Z"
+   "createdAt": "2025-01-27T18:54:09.000Z",
+   "sha": "b89a7c4bc24fb9e55ce2543c9458ce0ca5c4650e",
+   "gated_flag": false,
+   "lastModified": "2025-02-04T16:47:15.000Z"
   },
   {
    "id": "allenai/Olmo-3-7B-Instruct",
@@ -1475,7 +1637,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2025-11-19T20:49:53.000Z"
+   "createdAt": "2025-11-19T20:49:53.000Z",
+   "sha": "6e5971d9eba42665f5bd5a0fcf047f299ce1dccc",
+   "gated_flag": false,
+   "lastModified": "2026-06-25T21:41:37.000Z"
   },
   {
    "id": "allenai/longformer-base-4096",
@@ -1496,7 +1661,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "301e6a42cb0d9976a6d6a26a079fef81c18aa895",
+   "gated_flag": false,
+   "lastModified": "2023-04-05T18:24:00.000Z"
   },
   {
    "id": "allenai/olmOCR-2-7B-1025",
@@ -1520,7 +1688,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2025-10-06T21:16:59.000Z"
+   "createdAt": "2025-10-06T21:16:59.000Z",
+   "sha": "e52d6f090b7a9007afffbbd6ce510876222fea93",
+   "gated_flag": false,
+   "lastModified": "2025-10-22T15:31:06.000Z"
   },
   {
    "id": "allenai/olmOCR-2-7B-1025-FP8",
@@ -1546,7 +1717,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2025-10-06T22:03:48.000Z"
+   "createdAt": "2025-10-06T22:03:48.000Z",
+   "sha": "40bd7202494b8264ee17ada08b401b5aab7a9ce1",
+   "gated_flag": false,
+   "lastModified": "2026-02-19T17:30:13.000Z"
   },
   {
    "id": "allenai/specter2_base",
@@ -1568,7 +1742,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-02-16T21:25:53.000Z"
+   "createdAt": "2023-02-16T21:25:53.000Z",
+   "sha": "3447645e1def9117997203454fa4495937bfbd83",
+   "gated_flag": false,
+   "lastModified": "2024-12-04T07:45:10.000Z"
   },
   {
    "id": "allenai/unifiedqa-t5-small",
@@ -1589,7 +1766,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "10c4e0cdd2d24039b09ca2057a80e7e893b9d618",
+   "gated_flag": false,
+   "lastModified": "2023-01-24T16:28:05.000Z"
   },
   {
    "id": "amazon/chronos-2",
@@ -1615,7 +1795,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2025-10-30T14:54:39.000Z"
+   "createdAt": "2025-10-30T14:54:39.000Z",
+   "sha": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+   "gated_flag": false,
+   "lastModified": "2026-06-05T11:55:42.000Z"
   },
   {
    "id": "argmaxinc/whisperkit-coreml",
@@ -1634,7 +1817,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2024-02-28T08:05:21.000Z"
+   "createdAt": "2024-02-28T08:05:21.000Z",
+   "sha": "0f63a7800b00dd0226abd051b906c246e1907482",
+   "gated_flag": false,
+   "lastModified": "2026-08-19T16:57:48.000Z"
   },
   {
    "id": "autogluon/chronos-bolt-small",
@@ -1658,7 +1844,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2024-11-13T13:28:57.000Z"
+   "createdAt": "2024-11-13T13:28:57.000Z",
+   "sha": "2e1597a7bae01316fcea6a9da90451890b529096",
+   "gated_flag": false,
+   "lastModified": "2025-10-30T09:20:15.000Z"
   },
   {
    "id": "bigscience/T0pp",
@@ -1681,7 +1870,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "7df7b1c1aa361dd74049d0b794a01801fb4563de",
+   "gated_flag": false,
+   "lastModified": "2024-03-19T16:02:07.000Z"
   },
   {
    "id": "bigscience/bigscience-small-testing",
@@ -1704,7 +1896,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-04-22T11:04:10.000Z"
+   "createdAt": "2022-04-22T11:04:10.000Z",
+   "sha": "07cec32ba73113d4138131eff2c9516c773eba62",
+   "gated_flag": false,
+   "lastModified": "2023-03-24T08:39:39.000Z"
   },
   {
    "id": "bigscience/bloom",
@@ -1779,7 +1974,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-05-19T11:53:33.000Z"
+   "createdAt": "2022-05-19T11:53:33.000Z",
+   "sha": "7f10a99ce7c08f03c7719a586cb2cbda1433ac05",
+   "gated_flag": false,
+   "lastModified": "2026-07-29T07:38:06.000Z"
   },
   {
    "id": "bigscience/bloom-1b7",
@@ -1852,7 +2050,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-05-19T11:52:06.000Z"
+   "createdAt": "2022-05-19T11:52:06.000Z",
+   "sha": "cc72a88036c2fb937d65efeacc57a0c2ef5d6fe5",
+   "gated_flag": false,
+   "lastModified": "2023-05-11T21:17:30.000Z"
   },
   {
    "id": "bigscience/bloom-3b",
@@ -1925,7 +2126,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-05-19T11:52:27.000Z"
+   "createdAt": "2022-05-19T11:52:27.000Z",
+   "sha": "52bc5b43010b4844513826b8be3f78c7344c37d7",
+   "gated_flag": false,
+   "lastModified": "2023-04-14T08:43:29.000Z"
   },
   {
    "id": "bigscience/bloom-560m",
@@ -1999,7 +2203,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-05-19T11:51:24.000Z"
+   "createdAt": "2022-05-19T11:51:24.000Z",
+   "sha": "ac2ae5fab2ce3f9f40dc79b5ca9f637430d24971",
+   "gated_flag": false,
+   "lastModified": "2023-09-26T09:16:49.000Z"
   },
   {
    "id": "bigscience/bloom-7b1",
@@ -2074,7 +2281,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-05-19T11:53:18.000Z"
+   "createdAt": "2022-05-19T11:53:18.000Z",
+   "sha": "6232703e399354503377bf59dfbb8397fd569e4a",
+   "gated_flag": false,
+   "lastModified": "2024-01-02T18:32:24.000Z"
   },
   {
    "id": "bigscience/bloomz-560m",
@@ -2145,7 +2355,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-10-08T16:14:42.000Z"
+   "createdAt": "2022-10-08T16:14:42.000Z",
+   "sha": "a2845d7e13dd12efae154a9f1c63fcc2e0cc4b05",
+   "gated_flag": false,
+   "lastModified": "2023-05-27T17:27:11.000Z"
   },
   {
    "id": "coqui/XTTS-v2",
@@ -2160,7 +2373,10 @@
     "license:other",
     "region:us"
    ],
-   "createdAt": "2023-10-31T10:11:33.000Z"
+   "createdAt": "2023-10-31T10:11:33.000Z",
+   "sha": "6c2b0d75eae4b7047358e3b6bd9325f857d43f77",
+   "gated_flag": false,
+   "lastModified": "2023-12-11T17:50:00.000Z"
   },
   {
    "id": "cross-encoder/ms-marco-MiniLM-L6-v2",
@@ -2189,7 +2405,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+   "gated_flag": false,
+   "lastModified": "2026-08-09T15:22:24.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-OCR",
@@ -2215,7 +2434,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2025-10-17T06:22:05.000Z"
+   "createdAt": "2025-10-17T06:22:05.000Z",
+   "sha": "9f30c71f441d010e5429c532364a86705536c53a",
+   "gated_flag": false,
+   "lastModified": "2025-11-04T02:36:12.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-OCR-2",
@@ -2241,7 +2463,10 @@
     "eval-results",
     "region:us"
    ],
-   "createdAt": "2026-01-27T02:56:54.000Z"
+   "createdAt": "2026-01-27T02:56:54.000Z",
+   "sha": "aaa02f3811945a91062062994c5c4a3f4c0af2b0",
+   "gated_flag": false,
+   "lastModified": "2026-02-03T00:33:19.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-R1",
@@ -2266,7 +2491,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2025-01-20T03:46:07.000Z"
+   "createdAt": "2025-01-20T03:46:07.000Z",
+   "sha": "56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad",
+   "gated_flag": false,
+   "lastModified": "2025-03-27T04:01:59.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-V3",
@@ -2289,7 +2517,10 @@
     "fp8",
     "region:us"
    ],
-   "createdAt": "2024-12-25T12:52:23.000Z"
+   "createdAt": "2024-12-25T12:52:23.000Z",
+   "sha": "e815299b0bcbac849fa540c768ef21845365c9eb",
+   "gated_flag": false,
+   "lastModified": "2025-03-27T04:01:45.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-V3-0324",
@@ -2313,7 +2544,10 @@
     "fp8",
     "region:us"
    ],
-   "createdAt": "2025-03-24T09:28:22.000Z"
+   "createdAt": "2025-03-24T09:28:22.000Z",
+   "sha": "e9b33add76883f293d6bf61f6bd89b497e80e335",
+   "gated_flag": false,
+   "lastModified": "2025-03-27T04:01:53.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-V3.2",
@@ -2337,7 +2571,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2025-12-01T02:34:49.000Z"
+   "createdAt": "2025-12-01T02:34:49.000Z",
+   "sha": "a7e62ac04ecb2c0a54d736dc46601c5606cf10a6",
+   "gated_flag": false,
+   "lastModified": "2025-12-01T11:04:59.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-V4-Flash",
@@ -2361,7 +2598,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-04-22T06:04:20.000Z"
+   "createdAt": "2026-04-22T06:04:20.000Z",
+   "sha": "60d8d70770c6776ff598c94bb586a859a38244f1",
+   "gated_flag": false,
+   "lastModified": "2026-06-22T12:12:13.000Z"
   },
   {
    "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
@@ -2385,7 +2625,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-07-31T07:30:24.000Z"
+   "createdAt": "2026-07-31T07:30:24.000Z",
+   "sha": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+   "gated_flag": false,
+   "lastModified": "2026-08-01T03:07:41.000Z"
   },
   {
    "id": "distilbert/distilbert-base-uncased",
@@ -2414,7 +2657,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+   "gated_flag": false,
+   "lastModified": "2024-05-06T13:44:53.000Z"
   },
   {
    "id": "facebook/contriever",
@@ -2431,7 +2677,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "2bd46a25019aeea091fd42d1f0fd4801675cf699",
+   "gated_flag": false,
+   "lastModified": "2022-01-19T17:23:28.000Z"
   },
   {
    "id": "facebook/opt-125m",
@@ -2455,7 +2704,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-05-11T08:25:17.000Z"
+   "createdAt": "2022-05-11T08:25:17.000Z",
+   "sha": "27dcfa74d334bc871f3234de431e71c6eeba5dd6",
+   "gated_flag": false,
+   "lastModified": "2023-09-15T13:10:03.000Z"
   },
   {
    "id": "farbodtavakkoli/OTel-2.0-LLM-31B-IT",
@@ -2492,7 +2744,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-07-23T11:27:39.000Z"
+   "createdAt": "2026-07-23T11:27:39.000Z",
+   "sha": "c5533461bc117759cd998bb3919d21e803425352",
+   "gated_flag": false,
+   "lastModified": "2026-08-24T18:38:47.000Z"
   },
   {
    "id": "froggeric/Qwen-Fixed-Chat-Templates",
@@ -2517,7 +2772,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2026-04-23T15:28:14.000Z"
+   "createdAt": "2026-04-23T15:28:14.000Z",
+   "sha": "756cfb69d742355fd310b4ba9d50815a27d9d241",
+   "gated_flag": false,
+   "lastModified": "2026-08-24T21:35:17.000Z"
   },
   {
    "id": "google-bert/bert-base-uncased",
@@ -2548,7 +2806,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "86b5e0934494bd15c9632b12f734a8a67f723594",
+   "gated_flag": false,
+   "lastModified": "2024-02-19T11:06:12.000Z"
   },
   {
    "id": "google-t5/t5-small",
@@ -2589,7 +2850,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "df1b051c49625cf57a3d0d8d3863ed4d13564fe4",
+   "gated_flag": false,
+   "lastModified": "2023-06-30T02:31:26.000Z"
   },
   {
    "id": "google/electra-base-discriminator",
@@ -2612,7 +2876,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "1ae76a97c7e84a4e640876a07453fccd636f0667",
+   "gated_flag": false,
+   "lastModified": "2024-02-29T10:20:20.000Z"
   },
   {
    "id": "google/gemma-3-1b-it",
@@ -2664,7 +2931,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2025-03-10T12:09:00.000Z"
+   "createdAt": "2025-03-10T12:09:00.000Z",
+   "sha": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+   "gated_flag": true,
+   "lastModified": "2025-04-04T13:12:40.000Z"
   },
   {
    "id": "google/gemma-4-12B-it",
@@ -2688,7 +2958,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2026-05-23T01:17:15.000Z"
+   "createdAt": "2026-05-23T01:17:15.000Z",
+   "sha": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+   "gated_flag": false,
+   "lastModified": "2026-07-20T16:42:08.000Z"
   },
   {
    "id": "google/gemma-4-26B-A4B-it",
@@ -2713,7 +2986,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-03-11T21:25:57.000Z"
+   "createdAt": "2026-03-11T21:25:57.000Z",
+   "sha": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+   "gated_flag": false,
+   "lastModified": "2026-07-20T16:42:12.000Z"
   },
   {
    "id": "google/gemma-4-31B-it",
@@ -2738,7 +3014,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-03-11T18:22:36.000Z"
+   "createdAt": "2026-03-11T18:22:36.000Z",
+   "sha": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+   "gated_flag": false,
+   "lastModified": "2026-07-20T16:42:18.000Z"
   },
   {
    "id": "google/gemma-4-E2B-it",
@@ -2763,7 +3042,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-03-02T19:58:09.000Z"
+   "createdAt": "2026-03-02T19:58:09.000Z",
+   "sha": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+   "gated_flag": false,
+   "lastModified": "2026-07-20T16:41:56.000Z"
   },
   {
    "id": "google/gemma-4-E4B-it",
@@ -2788,7 +3070,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-03-02T19:57:40.000Z"
+   "createdAt": "2026-03-02T19:57:40.000Z",
+   "sha": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+   "gated_flag": false,
+   "lastModified": "2026-07-20T16:42:03.000Z"
   },
   {
    "id": "google/vit-base-patch16-224",
@@ -2815,7 +3100,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "3f49326eb077187dfe1c2a2bb15fbd74e6ab91e3",
+   "gated_flag": false,
+   "lastModified": "2023-09-05T15:27:12.000Z"
   },
   {
    "id": "hexgrad/Kokoro-82M",
@@ -2835,7 +3123,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2024-12-26T00:20:08.000Z"
+   "createdAt": "2024-12-26T00:20:08.000Z",
+   "sha": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+   "gated_flag": false,
+   "lastModified": "2025-04-10T18:12:48.000Z"
   },
   {
    "id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -2860,7 +3151,10 @@
     "region:us",
     "conversational"
    ],
-   "createdAt": "2026-08-16T13:18:55.000Z"
+   "createdAt": "2026-08-16T13:18:55.000Z",
+   "sha": "6a97e23be66dffc92c2d4e04b17c6daca29a63d5",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T06:05:52.000Z"
   },
   {
    "id": "intfloat/multilingual-e5-large",
@@ -2987,7 +3281,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-06-30T07:38:19.000Z"
+   "createdAt": "2023-06-30T07:38:19.000Z",
+   "sha": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+   "gated_flag": false,
+   "lastModified": "2026-04-02T02:16:59.000Z"
   },
   {
    "id": "intfloat/multilingual-e5-small",
@@ -3111,7 +3408,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2023-06-30T07:31:03.000Z"
+   "createdAt": "2023-06-30T07:31:03.000Z",
+   "sha": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+   "gated_flag": false,
+   "lastModified": "2026-04-02T02:16:05.000Z"
   },
   {
    "id": "jonatasgrosman/wav2vec2-large-xlsr-53-japanese",
@@ -3138,7 +3438,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "cf031e020336460d15a417eba710bbc5bb43be9a",
+   "gated_flag": false,
+   "lastModified": "2022-12-14T01:58:09.000Z"
   },
   {
    "id": "laion/clap-htsat-fused",
@@ -3162,7 +3465,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2023-02-16T20:45:11.000Z"
+   "createdAt": "2023-02-16T20:45:11.000Z",
+   "sha": "365dea6ef167def6676140ed93bbc43f84dabb28",
+   "gated_flag": false,
+   "lastModified": "2026-01-12T00:41:49.000Z"
   },
   {
    "id": "lpiccinelli/unidepth-v2-vitl14",
@@ -3180,7 +3486,10 @@
     "pytorch_model_hub_mixin",
     "region:us"
    ],
-   "createdAt": "2024-06-12T12:39:28.000Z"
+   "createdAt": "2024-06-12T12:39:28.000Z",
+   "sha": "52b349b514bd8b47642f67ac78cb7b5dc5c51dd9",
+   "gated_flag": false,
+   "lastModified": "2025-02-28T13:55:37.000Z"
   },
   {
    "id": "meta-llama/Llama-2-7b-hf",
@@ -3206,7 +3515,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2023-07-13T16:16:13.000Z"
+   "createdAt": "2023-07-13T16:16:13.000Z",
+   "sha": "01c7f73d771dfac7d292323805ebc428287df4f9",
+   "gated_flag": true,
+   "lastModified": "2024-04-17T08:40:16.000Z"
   },
   {
    "id": "meta-llama/Llama-3.1-8B-Instruct",
@@ -3243,7 +3555,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-07-18T08:56:00.000Z"
+   "createdAt": "2024-07-18T08:56:00.000Z",
+   "sha": "0e9e39f249a16976918f6564b8830bc894c89659",
+   "gated_flag": true,
+   "lastModified": "2024-09-25T17:00:57.000Z"
   },
   {
    "id": "meta-llama/Llama-3.2-1B",
@@ -3278,7 +3593,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-09-18T15:03:14.000Z"
+   "createdAt": "2024-09-18T15:03:14.000Z",
+   "sha": "4e20de362430cd3b72f300e6b0f18e50e7166e08",
+   "gated_flag": true,
+   "lastModified": "2024-10-24T15:08:03.000Z"
   },
   {
    "id": "meta-llama/Llama-3.2-1B-Instruct",
@@ -3314,7 +3632,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-09-18T15:12:47.000Z"
+   "createdAt": "2024-09-18T15:12:47.000Z",
+   "sha": "9213176726f574b556790deb65791e0c5aa438b6",
+   "gated_flag": true,
+   "lastModified": "2024-10-24T15:07:51.000Z"
   },
   {
    "id": "meta-llama/Llama-3.2-3B-Instruct",
@@ -3349,7 +3670,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2024-09-18T15:19:20.000Z"
+   "createdAt": "2024-09-18T15:19:20.000Z",
+   "sha": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+   "gated_flag": true,
+   "lastModified": "2024-10-24T15:07:29.000Z"
   },
   {
    "id": "meta-llama/Meta-Llama-3-8B",
@@ -3375,7 +3699,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-04-17T09:35:16.000Z"
+   "createdAt": "2024-04-17T09:35:16.000Z",
+   "sha": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+   "gated_flag": true,
+   "lastModified": "2024-09-27T15:52:33.000Z"
   },
   {
    "id": "meta-llama/Meta-Llama-3-8B-Instruct",
@@ -3403,7 +3730,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2024-04-17T09:35:12.000Z"
+   "createdAt": "2024-04-17T09:35:12.000Z",
+   "sha": "8afb486c1db24fe5011ec46dfbe5b5dccdb575c2",
+   "gated_flag": true,
+   "lastModified": "2025-06-18T23:49:51.000Z"
   },
   {
    "id": "meta-llama/Prompt-Guard-86M",
@@ -3429,7 +3759,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-07-21T19:18:13.000Z"
+   "createdAt": "2024-07-21T19:18:13.000Z",
+   "sha": "1209add6ca7d9c1d815171b8e5571587fe3e7b03",
+   "gated_flag": true,
+   "lastModified": "2025-11-12T21:27:00.000Z"
   },
   {
    "id": "microsoft/Florence-2-base",
@@ -3451,7 +3784,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-06-15T00:57:24.000Z"
+   "createdAt": "2024-06-15T00:57:24.000Z",
+   "sha": "5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac",
+   "gated_flag": false,
+   "lastModified": "2025-08-04T17:36:57.000Z"
   },
   {
    "id": "microsoft/TRELLIS-image-large",
@@ -3468,7 +3804,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2024-12-02T13:02:21.000Z"
+   "createdAt": "2024-12-02T13:02:21.000Z",
+   "sha": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+   "gated_flag": false,
+   "lastModified": "2024-12-06T16:39:24.000Z"
   },
   {
    "id": "microsoft/TRELLIS.2-4B",
@@ -3485,7 +3824,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2025-12-01T02:25:40.000Z"
+   "createdAt": "2025-12-01T02:25:40.000Z",
+   "sha": "af44b45f2e35a493886929c6d786e563ec68364d",
+   "gated_flag": false,
+   "lastModified": "2025-12-27T13:21:56.000Z"
   },
   {
    "id": "microsoft/deberta-v3-base",
@@ -3511,7 +3853,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+   "gated_flag": false,
+   "lastModified": "2022-09-22T12:34:19.000Z"
   },
   {
    "id": "microsoft/deberta-v3-large",
@@ -3536,7 +3881,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "64a8c8eab3e352a784c658aef62be1662607476f",
+   "gated_flag": false,
+   "lastModified": "2023-03-19T06:24:32.000Z"
   },
   {
    "id": "microsoft/mdeberta-v3-base",
@@ -3577,7 +3925,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "a0484667b22365f84929a935b5e50a51f71f159d",
+   "gated_flag": false,
+   "lastModified": "2023-04-06T05:32:33.000Z"
   },
   {
    "id": "microsoft/phi-2",
@@ -3601,7 +3952,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-12-13T21:19:59.000Z"
+   "createdAt": "2023-12-13T21:19:59.000Z",
+   "sha": "810d367871c1d460086d9f82db8696f2e0a0fcd0",
+   "gated_flag": false,
+   "lastModified": "2025-12-08T11:35:44.000Z"
   },
   {
    "id": "microsoft/resnet-50",
@@ -3626,7 +3980,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-16T15:42:43.000Z"
+   "createdAt": "2022-03-16T15:42:43.000Z",
+   "sha": "34c2154c194f829b11125337b98c8f5f9965ff19",
+   "gated_flag": false,
+   "lastModified": "2024-02-13T21:24:05.000Z"
   },
   {
    "id": "mistralai/Ministral-3-3B-Instruct-2512",
@@ -3660,7 +4017,10 @@
     "deploy:azure",
     "deploy:sagemaker"
    ],
-   "createdAt": "2025-10-31T08:43:46.000Z"
+   "createdAt": "2025-10-31T08:43:46.000Z",
+   "sha": "b35d4dfe56c142746f54dbd64f579faab2744308",
+   "gated_flag": false,
+   "lastModified": "2026-07-15T12:21:35.000Z"
   },
   {
    "id": "mistralai/Mistral-7B-Instruct-v0.2",
@@ -3685,7 +4045,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-12-11T13:18:44.000Z"
+   "createdAt": "2023-12-11T13:18:44.000Z",
+   "sha": "63a8b081895390a26e140280378bc85ec8bce07a",
+   "gated_flag": false,
+   "lastModified": "2025-07-24T16:57:21.000Z"
   },
   {
    "id": "mistralai/Mistral-7B-Instruct-v0.3",
@@ -3705,7 +4068,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-05-22T09:57:04.000Z"
+   "createdAt": "2024-05-22T09:57:04.000Z",
+   "sha": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+   "gated_flag": false,
+   "lastModified": "2025-12-03T12:13:48.000Z"
   },
   {
    "id": "mistralai/Mistral-7B-v0.1",
@@ -3729,7 +4095,10 @@
     "text-generation-inference",
     "region:us"
    ],
-   "createdAt": "2023-09-20T13:03:50.000Z"
+   "createdAt": "2023-09-20T13:03:50.000Z",
+   "sha": "27d67f1b5f57dc0953326b2601d68371d40ea8da",
+   "gated_flag": false,
+   "lastModified": "2025-07-24T16:44:02.000Z"
   },
   {
    "id": "mistralai/Mistral-7B-v0.3",
@@ -3746,7 +4115,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2024-05-22T09:56:38.000Z"
+   "createdAt": "2024-05-22T09:56:38.000Z",
+   "sha": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+   "gated_flag": false,
+   "lastModified": "2025-07-24T16:42:40.000Z"
   },
   {
    "id": "mistralai/Mistral-Nemo-Instruct-2407",
@@ -3777,7 +4149,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2024-07-17T17:26:49.000Z"
+   "createdAt": "2024-07-17T17:26:49.000Z",
+   "sha": "04d8a90549d23fc6bd7f642064003592df51e9b3",
+   "gated_flag": false,
+   "lastModified": "2025-07-28T17:16:02.000Z"
   },
   {
    "id": "mistralai/Voxtral-Mini-3B-2507",
@@ -3804,7 +4179,10 @@
     "eval-results",
     "region:us"
    ],
-   "createdAt": "2025-07-01T14:11:46.000Z"
+   "createdAt": "2025-07-01T14:11:46.000Z",
+   "sha": "3060fe34b35ba5d44202ce9ff3c097642914f8f3",
+   "gated_flag": false,
+   "lastModified": "2025-07-28T17:16:11.000Z"
   },
   {
    "id": "mistralai/Voxtral-Mini-4B-Realtime-2602",
@@ -3840,7 +4218,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2026-01-21T17:22:02.000Z"
+   "createdAt": "2026-01-21T17:22:02.000Z",
+   "sha": "2769294da9567371363522aac9bbcfdd19447add",
+   "gated_flag": false,
+   "lastModified": "2026-03-11T15:04:02.000Z"
   },
   {
    "id": "moonshotai/Kimi-K3",
@@ -3863,7 +4244,10 @@
     "8-bit",
     "region:us"
    ],
-   "createdAt": "2026-06-13T06:42:57.000Z"
+   "createdAt": "2026-06-13T06:42:57.000Z",
+   "sha": "a590ce090cb049c93a33dfe8c208ec652aa20503",
+   "gated_flag": false,
+   "lastModified": "2026-08-20T04:57:37.000Z"
   },
   {
    "id": "nomic-ai/nomic-embed-text-v1.5",
@@ -3893,7 +4277,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-02-10T06:32:35.000Z"
+   "createdAt": "2024-02-10T06:32:35.000Z",
+   "sha": "e9b6763023c676ca8431644204f50c2b100d9aab",
+   "gated_flag": false,
+   "lastModified": "2026-04-07T14:17:02.000Z"
   },
   {
    "id": "nvidia/Cosmos3-Edge",
@@ -3915,7 +4302,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2026-07-01T21:54:04.000Z"
+   "createdAt": "2026-07-01T21:54:04.000Z",
+   "sha": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba",
+   "gated_flag": false,
+   "lastModified": "2026-08-26T21:26:27.000Z"
   },
   {
    "id": "nvidia/GLM-5.2-NVFP4",
@@ -3944,7 +4334,10 @@
     "modelopt",
     "region:us"
    ],
-   "createdAt": "2026-06-22T19:55:57.000Z"
+   "createdAt": "2026-06-22T19:55:57.000Z",
+   "sha": "aec724e8c7b8ee9db3b48c01c320f63f9cdaf8aa",
+   "gated_flag": false,
+   "lastModified": "2026-06-26T23:49:20.000Z"
   },
   {
    "id": "nvidia/Gemma-4-26B-A4B-NVFP4",
@@ -3972,7 +4365,10 @@
     "modelopt",
     "region:us"
    ],
-   "createdAt": "2026-05-01T01:26:06.000Z"
+   "createdAt": "2026-05-01T01:26:06.000Z",
+   "sha": "a19cfe00be84568a6867111c9a68c9c44fdcffe6",
+   "gated_flag": false,
+   "lastModified": "2026-05-11T15:58:52.000Z"
   },
   {
    "id": "nvidia/Gemma-4-31B-IT-NVFP4",
@@ -4001,7 +4397,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2026-04-02T16:47:30.000Z"
+   "createdAt": "2026-04-02T16:47:30.000Z",
+   "sha": "4135a98a9b728a548947683219633b25682223ac",
+   "gated_flag": false,
+   "lastModified": "2026-07-13T22:33:54.000Z"
   },
   {
    "id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4",
@@ -4030,7 +4429,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2026-04-24T16:09:58.000Z"
+   "createdAt": "2026-04-24T16:09:58.000Z",
+   "sha": "16993199e436da4ba75ddc410855f87e0d996ee6",
+   "gated_flag": false,
+   "lastModified": "2026-08-24T23:49:42.000Z"
   },
   {
    "id": "nvidia/Qwen3.6-35B-A3B-NVFP4",
@@ -4060,7 +4462,10 @@
     "deploy:sagemaker",
     "region:us"
    ],
-   "createdAt": "2026-05-27T18:09:46.000Z"
+   "createdAt": "2026-05-27T18:09:46.000Z",
+   "sha": "1355db6a052410cfd62085d94b58866fd0f2c3c5",
+   "gated_flag": false,
+   "lastModified": "2026-08-29T02:26:14.000Z"
   },
   {
    "id": "nvidia/bigvgan_v2_22khz_80band_256x",
@@ -4078,7 +4483,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2024-07-15T14:07:18.000Z"
+   "createdAt": "2024-07-15T14:07:18.000Z",
+   "sha": "633ff708ed5b74903e86ff1298cf4a98e921c513",
+   "gated_flag": false,
+   "lastModified": "2024-09-05T03:36:23.000Z"
   },
   {
    "id": "nvidia/parakeet-ctc-1.1b",
@@ -4123,7 +4531,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2023-12-28T15:27:57.000Z"
+   "createdAt": "2023-12-28T15:27:57.000Z",
+   "sha": "20e63a0fed6aedba145b74b826dbd41df0941730",
+   "gated_flag": false,
+   "lastModified": "2026-08-05T21:47:03.000Z"
   },
   {
    "id": "openai-community/gpt2",
@@ -4152,7 +4563,10 @@
     "deploy:azure",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:04.000Z"
+   "createdAt": "2022-03-02T23:29:04.000Z",
+   "sha": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+   "gated_flag": false,
+   "lastModified": "2024-02-19T10:57:45.000Z"
   },
   {
    "id": "openai/clip-vit-base-patch32",
@@ -4174,7 +4588,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+   "gated_flag": false,
+   "lastModified": "2024-02-29T09:45:55.000Z"
   },
   {
    "id": "openai/whisper-large-v3-turbo",
@@ -4298,7 +4715,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2024-10-01T07:39:28.000Z"
+   "createdAt": "2024-10-01T07:39:28.000Z",
+   "sha": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+   "gated_flag": false,
+   "lastModified": "2024-10-04T14:51:11.000Z"
   },
   {
    "id": "orcarouter/Qwen3.8-27B-Uncensored",
@@ -4335,7 +4755,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-18T02:05:08.000Z"
+   "createdAt": "2026-08-18T02:05:08.000Z",
+   "sha": "404ea47aaa5d8a8b00049c9e9750089aca011ab2",
+   "gated_flag": true,
+   "lastModified": "2026-08-27T13:54:13.000Z"
   },
   {
    "id": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
@@ -4369,7 +4792,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-15T05:45:04.000Z"
+   "createdAt": "2026-08-15T05:45:04.000Z",
+   "sha": "0f3cdb83820a8190ffedaef5b29cf4a635e49b4d",
+   "gated_flag": true,
+   "lastModified": "2026-08-27T13:54:19.000Z"
   },
   {
    "id": "orcarouter/Qwen3.8-27B-Uncensored-GGUF",
@@ -4404,7 +4830,10 @@
     "imatrix",
     "conversational"
    ],
-   "createdAt": "2026-08-16T07:34:08.000Z"
+   "createdAt": "2026-08-16T07:34:08.000Z",
+   "sha": "a855f377abf5cbda99a278414466743f427e97c8",
+   "gated_flag": true,
+   "lastModified": "2026-08-27T13:54:35.000Z"
   },
   {
    "id": "orcarouter/Qwen3.8-27B-Uncensored-MLX",
@@ -4439,7 +4868,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2026-08-17T14:10:50.000Z"
+   "createdAt": "2026-08-17T14:10:50.000Z",
+   "sha": "14963e70f886455cf93090ac95bdbf4c8730cbe1",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T13:54:41.000Z"
   },
   {
    "id": "ornith-ai/Ornith-1.5-35B-A3B",
@@ -4460,7 +4892,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-18T06:24:38.000Z"
+   "createdAt": "2026-08-18T06:24:38.000Z",
+   "sha": "10fbf86fed7ecee4a061f8b499a618f46001cac1",
+   "gated_flag": false,
+   "lastModified": "2026-08-23T03:17:39.000Z"
   },
   {
    "id": "peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF",
@@ -4489,7 +4924,10 @@
     "region:us",
     "conversational"
    ],
-   "createdAt": "2026-08-19T23:11:19.000Z"
+   "createdAt": "2026-08-19T23:11:19.000Z",
+   "sha": "c23745e804e43184232574a76981629920b9ba1e",
+   "gated_flag": false,
+   "lastModified": "2026-08-24T22:31:44.000Z"
   },
   {
    "id": "pipecat-ai/phonellm-alpha-1",
@@ -4519,7 +4957,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-24T18:47:20.000Z"
+   "createdAt": "2026-08-24T18:47:20.000Z",
+   "sha": "8e76aaa6e8ce4765ac943ba3fb339494d4d48dca",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T17:19:05.000Z"
   },
   {
    "id": "pyannote/speaker-diarization-3.1",
@@ -4547,7 +4988,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2023-11-16T08:19:01.000Z"
+   "createdAt": "2023-11-16T08:19:01.000Z",
+   "sha": "84fd25912480287da0247647c3d2b4853cb3ee5d",
+   "gated_flag": true,
+   "lastModified": "2024-05-10T19:43:23.000Z"
   },
   {
    "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -4605,7 +5049,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+   "gated_flag": false,
+   "lastModified": "2026-06-01T06:29:13.000Z"
   },
   {
    "id": "sentence-transformers/all-mpnet-base-v2",
@@ -4659,7 +5106,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "e8c3b32edf5434bc2275fc9bab85f82640a19130",
+   "gated_flag": false,
+   "lastModified": "2025-08-19T10:14:25.000Z"
   },
   {
    "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -4737,7 +5187,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+   "gated_flag": false,
+   "lastModified": "2026-01-28T10:02:26.000Z"
   },
   {
    "id": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
@@ -4814,7 +5267,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2022-03-02T23:29:05.000Z"
+   "createdAt": "2022-03-02T23:29:05.000Z",
+   "sha": "4328cf26390c98c5e3c738b4460a05b95f4911f5",
+   "gated_flag": false,
+   "lastModified": "2025-08-19T10:29:38.000Z"
   },
   {
    "id": "stabilityai/TripoSR",
@@ -4832,7 +5288,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2024-02-29T13:01:16.000Z"
+   "createdAt": "2024-02-29T13:01:16.000Z",
+   "sha": "5b521936b01fbe1890f6f9baed0254ab6351c04a",
+   "gated_flag": false,
+   "lastModified": "2024-08-09T08:52:03.000Z"
   },
   {
    "id": "stabilityai/sd-turbo",
@@ -4848,7 +5307,10 @@
     "diffusers:StableDiffusionPipeline",
     "region:us"
    ],
-   "createdAt": "2023-11-27T16:41:20.000Z"
+   "createdAt": "2023-11-27T16:41:20.000Z",
+   "sha": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+   "gated_flag": false,
+   "lastModified": "2024-07-10T11:38:51.000Z"
   },
   {
    "id": "stabilityai/sd-vae-ft-mse",
@@ -4865,7 +5327,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2022-10-13T12:50:55.000Z"
+   "createdAt": "2022-10-13T12:50:55.000Z",
+   "sha": "31f26fdeee1355a5c34592e401dd41e45d25a493",
+   "gated_flag": false,
+   "lastModified": "2023-06-06T11:39:15.000Z"
   },
   {
    "id": "stabilityai/sdxl-turbo",
@@ -4883,7 +5348,10 @@
     "diffusers:StableDiffusionXLPipeline",
     "region:us"
    ],
-   "createdAt": "2023-11-27T15:19:11.000Z"
+   "createdAt": "2023-11-27T15:19:11.000Z",
+   "sha": "71153311d3dbb46851df1931d3ca6e939de83304",
+   "gated_flag": false,
+   "lastModified": "2024-07-10T11:33:43.000Z"
   },
   {
    "id": "stabilityai/sdxl-vae",
@@ -4901,7 +5369,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2023-06-21T17:47:40.000Z"
+   "createdAt": "2023-06-21T17:47:40.000Z",
+   "sha": "6f5909a7e596173e25d4e97b07fd19cdf9611c76",
+   "gated_flag": false,
+   "lastModified": "2023-08-04T10:12:16.000Z"
   },
   {
    "id": "stabilityai/stable-diffusion-xl-base-1.0",
@@ -4927,7 +5398,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-07-25T13:25:51.000Z"
+   "createdAt": "2023-07-25T13:25:51.000Z",
+   "sha": "462165984030d82259a11f4367a4eed129e94a7b",
+   "gated_flag": false,
+   "lastModified": "2023-10-30T16:03:47.000Z"
   },
   {
    "id": "stabilityai/stable-diffusion-xl-refiner-1.0",
@@ -4949,7 +5423,10 @@
     "diffusers:StableDiffusionXLImg2ImgPipeline",
     "region:us"
    ],
-   "createdAt": "2023-07-26T07:38:01.000Z"
+   "createdAt": "2023-07-26T07:38:01.000Z",
+   "sha": "5d4cfe854c9a9a87939ff3653551c2b3c99a4356",
+   "gated_flag": false,
+   "lastModified": "2023-09-25T13:42:56.000Z"
   },
   {
    "id": "stabilityai/stable-video-diffusion-img2vid-xt",
@@ -4966,7 +5443,10 @@
     "diffusers:StableVideoDiffusionPipeline",
     "region:us"
    ],
-   "createdAt": "2023-11-20T23:45:55.000Z"
+   "createdAt": "2023-11-20T23:45:55.000Z",
+   "sha": "9e43909513c6714f1bc78bcb44d96e733cd242aa",
+   "gated_flag": false,
+   "lastModified": "2024-07-10T11:43:18.000Z"
   },
   {
    "id": "tencent/Hy4-preview",
@@ -4991,7 +5471,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-27T08:52:40.000Z"
+   "createdAt": "2026-08-27T08:52:40.000Z",
+   "sha": "705d81ee51566a186d645b74c974d642ef2828fe",
+   "gated_flag": false,
+   "lastModified": "2026-08-28T14:58:32.000Z"
   },
   {
    "id": "thomsonreuters/Thomson-1.0-Small",
@@ -5013,7 +5496,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-08-18T15:33:05.000Z"
+   "createdAt": "2026-08-18T15:33:05.000Z",
+   "sha": "6f58dd819061240192285228e8c0ffcffd0fc665",
+   "gated_flag": false,
+   "lastModified": "2026-08-28T12:27:31.000Z"
   },
   {
    "id": "tiiuae/Falcon-H1-0.5B-Base",
@@ -5034,7 +5520,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2025-05-01T05:08:29.000Z"
+   "createdAt": "2025-05-01T05:08:29.000Z",
+   "sha": "59fb76e8c5d3fc7441b062be638e1ba0afd5c687",
+   "gated_flag": false,
+   "lastModified": "2025-07-31T03:51:29.000Z"
   },
   {
    "id": "tiiuae/Falcon-H1-7B-Instruct",
@@ -5076,7 +5565,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2025-05-01T15:44:30.000Z"
+   "createdAt": "2025-05-01T15:44:30.000Z",
+   "sha": "41e72f27effbab80cd45b6e884688452253a3686",
+   "gated_flag": false,
+   "lastModified": "2025-07-31T04:02:32.000Z"
   },
   {
    "id": "tiiuae/Falcon3-7B-Instruct",
@@ -5104,7 +5596,10 @@
     "region:us",
     "deploy:sagemaker"
    ],
-   "createdAt": "2024-11-29T10:12:15.000Z"
+   "createdAt": "2024-11-29T10:12:15.000Z",
+   "sha": "1e57a0ecd176c7c139f289c60a74e57f887c3dfb",
+   "gated_flag": false,
+   "lastModified": "2025-05-31T08:24:41.000Z"
   },
   {
    "id": "tiiuae/falcon-40b",
@@ -5137,7 +5632,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-05-24T12:08:30.000Z"
+   "createdAt": "2023-05-24T12:08:30.000Z",
+   "sha": "05ab2ee8d6b593bdbab17d728de5c028a7a94d83",
+   "gated_flag": false,
+   "lastModified": "2024-08-09T07:48:37.000Z"
   },
   {
    "id": "tiiuae/falcon-7b",
@@ -5167,7 +5665,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-04-24T16:36:24.000Z"
+   "createdAt": "2023-04-24T16:36:24.000Z",
+   "sha": "ec89142b67d748a1865ea4451372db8313ada0d8",
+   "gated_flag": false,
+   "lastModified": "2024-10-12T13:20:18.000Z"
   },
   {
    "id": "tiiuae/falcon-7b-instruct",
@@ -5200,7 +5701,10 @@
     "deploy:sagemaker",
     "deploy:azure"
    ],
-   "createdAt": "2023-04-25T06:21:01.000Z"
+   "createdAt": "2023-04-25T06:21:01.000Z",
+   "sha": "8782b5c5d8c9290412416618f36a133653e85285",
+   "gated_flag": false,
+   "lastModified": "2024-10-12T13:20:03.000Z"
   },
   {
    "id": "tiiuae/falcon-mamba-7b",
@@ -5224,7 +5728,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-07-17T07:06:26.000Z"
+   "createdAt": "2024-07-17T07:06:26.000Z",
+   "sha": "080ad94b3619e2c2d0afa59bafdc6113465b7006",
+   "gated_flag": false,
+   "lastModified": "2024-12-17T11:10:58.000Z"
   },
   {
    "id": "tiiuae/falcon-mamba-tiny-dev",
@@ -5242,7 +5749,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-10-13T12:48:18.000Z"
+   "createdAt": "2024-10-13T12:48:18.000Z",
+   "sha": "f22d33f72a4cc27c1827f3020a6df28c5097fd06",
+   "gated_flag": false,
+   "lastModified": "2024-10-13T12:49:36.000Z"
   },
   {
    "id": "timm/efficientnet_b3.ra2_in1k",
@@ -5263,7 +5773,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2022-12-12T23:56:39.000Z"
+   "createdAt": "2022-12-12T23:56:39.000Z",
+   "sha": "0366a75518620e0f2077789202073759f2d61393",
+   "gated_flag": false,
+   "lastModified": "2025-01-21T18:17:02.000Z"
   },
   {
    "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -5284,7 +5797,10 @@
     "license:apache-2.0",
     "region:us"
    ],
-   "createdAt": "2022-12-16T05:38:36.000Z"
+   "createdAt": "2022-12-16T05:38:36.000Z",
+   "sha": "1824797e7887cbec1990e4adbd6675960a36c589",
+   "gated_flag": false,
+   "lastModified": "2025-10-19T16:12:11.000Z"
   },
   {
    "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
@@ -5304,7 +5820,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2024-11-25T15:06:15.000Z"
+   "createdAt": "2024-11-25T15:06:15.000Z",
+   "sha": "4b10ebee6e13a2669155516652960f50984399fd",
+   "gated_flag": false,
+   "lastModified": "2025-12-19T19:10:57.000Z"
   },
   {
    "id": "unsloth/GLM-5.3-Flash-GGUF",
@@ -5328,7 +5847,10 @@
     "region:us",
     "conversational"
    ],
-   "createdAt": "2026-08-26T14:21:15.000Z"
+   "createdAt": "2026-08-26T14:21:15.000Z",
+   "sha": "2975ab414d30340466d8c51533c6e91f0cca64c1",
+   "gated_flag": false,
+   "lastModified": "2026-08-29T10:43:43.000Z"
   },
   {
    "id": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
@@ -5353,7 +5875,10 @@
     "imatrix",
     "conversational"
    ],
-   "createdAt": "2025-07-31T10:27:38.000Z"
+   "createdAt": "2025-07-31T10:27:38.000Z",
+   "sha": "b17cb02dd882d5b6ab62fc777ad2995f19668350",
+   "gated_flag": false,
+   "lastModified": "2026-01-30T06:29:38.000Z"
   },
   {
    "id": "unsloth/Qwen3.8-27B-GGUF",
@@ -5374,7 +5899,10 @@
     "imatrix",
     "conversational"
    ],
-   "createdAt": "2026-08-13T08:28:40.000Z"
+   "createdAt": "2026-08-13T08:28:40.000Z",
+   "sha": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+   "gated_flag": false,
+   "lastModified": "2026-08-20T12:04:25.000Z"
   },
   {
    "id": "unsloth/Qwen3.8-Flash-Next-GGUF",
@@ -5394,7 +5922,10 @@
     "region:us",
     "conversational"
    ],
-   "createdAt": "2026-08-26T12:29:32.000Z"
+   "createdAt": "2026-08-26T12:29:32.000Z",
+   "sha": "c8b5954a88c2775c546b92593eda40ea041d3176",
+   "gated_flag": false,
+   "lastModified": "2026-08-28T02:51:45.000Z"
   },
   {
    "id": "upstage/SOLAR-0-70b-16bit",
@@ -5417,7 +5948,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2023-07-30T01:10:53.000Z"
+   "createdAt": "2023-07-30T01:10:53.000Z",
+   "sha": "43ff16100b9aec3c4d0c56116796149c1c455efc",
+   "gated_flag": false,
+   "lastModified": "2023-09-13T09:14:02.000Z"
   },
   {
    "id": "upstage/SOLAR-10.7B-Instruct-v1.0",
@@ -5448,7 +5982,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-12-12T12:39:22.000Z"
+   "createdAt": "2023-12-12T12:39:22.000Z",
+   "sha": "090d405e6fe7b4c7b0b999a67f5c6dee0514a7ad",
+   "gated_flag": false,
+   "lastModified": "2024-09-10T21:44:55.000Z"
   },
   {
    "id": "upstage/SOLAR-10.7B-v1.0",
@@ -5469,7 +6006,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-12-12T14:57:41.000Z"
+   "createdAt": "2023-12-12T14:57:41.000Z",
+   "sha": "5a06298f374dae1fb918d73fba72c7722ce71d36",
+   "gated_flag": false,
+   "lastModified": "2024-09-10T21:45:21.000Z"
   },
   {
    "id": "upstage/Solar-Open-100B",
@@ -5496,7 +6036,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2025-12-10T01:10:35.000Z"
+   "createdAt": "2025-12-10T01:10:35.000Z",
+   "sha": "1f591439b14055004d1a5d1a975608953a022fea",
+   "gated_flag": false,
+   "lastModified": "2026-01-30T04:46:43.000Z"
   },
   {
    "id": "upstage/Solar-Open2-250B",
@@ -5525,7 +6068,10 @@
     "endpoints_compatible",
     "region:us"
    ],
-   "createdAt": "2026-07-22T02:40:42.000Z"
+   "createdAt": "2026-07-22T02:40:42.000Z",
+   "sha": "9190fbe63a2ad8e17fc766ccceb36de7c66f004b",
+   "gated_flag": false,
+   "lastModified": "2026-07-31T21:23:35.000Z"
   },
   {
    "id": "upstage/TinySolar-248m-4k",
@@ -5545,7 +6091,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2024-02-07T14:49:15.000Z"
+   "createdAt": "2024-02-07T14:49:15.000Z",
+   "sha": "e701e5d59b19c594fdcb30fa2bc4250b26fa6888",
+   "gated_flag": false,
+   "lastModified": "2024-02-07T14:50:18.000Z"
   },
   {
    "id": "upstage/llama-30b-instruct-2048",
@@ -5573,7 +6122,10 @@
     "region:us",
     "deploy:azure"
    ],
-   "createdAt": "2023-07-13T12:06:18.000Z"
+   "createdAt": "2023-07-13T12:06:18.000Z",
+   "sha": "9f246be5c6c08bf397ff7b42aa5fe91d011d9ace",
+   "gated_flag": false,
+   "lastModified": "2023-08-03T22:02:40.000Z"
   },
   {
    "id": "upstage/solar-pro-preview-instruct",
@@ -5594,7 +6146,10 @@
     "license:mit",
     "region:us"
    ],
-   "createdAt": "2024-09-09T01:08:58.000Z"
+   "createdAt": "2024-09-09T01:08:58.000Z",
+   "sha": "dd4bcf7006df9b1ce3f87711e702e4063832aae3",
+   "gated_flag": false,
+   "lastModified": "2024-09-20T01:37:09.000Z"
   },
   {
    "id": "zai-org/GLM-5.3",
@@ -5618,7 +6173,10 @@
     "fp8",
     "region:us"
    ],
-   "createdAt": "2026-08-25T06:42:50.000Z"
+   "createdAt": "2026-08-25T06:42:50.000Z",
+   "sha": "e0b07fd2751b42d5efa199cc02c2b271deadc516",
+   "gated_flag": false,
+   "lastModified": "2026-08-29T09:51:13.000Z"
   },
   {
    "id": "zai-org/GLM-5.3-Flash",
@@ -5643,7 +6201,10 @@
     "fp8",
     "region:us"
    ],
-   "createdAt": "2026-08-25T06:43:14.000Z"
+   "createdAt": "2026-08-25T06:43:14.000Z",
+   "sha": "04c4e9e95c5da8862dced7e5056455116f83a7e0",
+   "gated_flag": false,
+   "lastModified": "2026-08-27T10:33:43.000Z"
   }
  ]
 }

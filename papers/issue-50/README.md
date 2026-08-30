@@ -51,8 +51,8 @@ lineage, technical details, citations), hand-validated on **128 cells**
 
 ## Committed artifacts
 
-- `corpus.json` — 187 pinned models (id, org, downloads, likes, pipeline_tag, library_name, tags, createdAt)
-- `snapshots/cards/` — 187 cardData JSON (verbatim API responses)
+- `corpus.json` — 187 pinned models (id, org, downloads, likes, pipeline_tag, library_name, tags, createdAt, **sha** — pinned HF commit SHA for every model, backfilled from cardData / maintained by `fetch_cards.py`)
+- `snapshots/cards/` — 187 cardData JSON (verbatim API responses, each carrying the pinned SHA)
 - `snapshots/readmes/` — 172 README markdown (**15 gated models have no public README** — the finding behind H2)
 - `snapshots/list/` — raw API-list responses backing the exact selection rule
 - `snapshots/signals.json` — per-model 8-signal records (regenerable)

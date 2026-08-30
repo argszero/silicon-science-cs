@@ -7,6 +7,10 @@ For each model in corpus.json:
 Resume-safe: skips already-fetched files. Sequential (sandbox blocks threaded
 sockets). Usage: fetch_cards.py [max_new] — process at most max_new models per
 call (default: all remaining); run repeatedly to continue.
+
+Also enriches corpus.json with the pinned commit SHA (+ gated flag, lastModified)
+from each fetched card, so the corpus record pins the exact snapshot revision
+(editorial ack watch item: corpus.json must pin HF commit SHAs).
 """
 import json, sys, time, urllib.request, urllib.parse
 from pathlib import Path
@@ -77,6 +81,32 @@ def main():
         time.sleep(0.3)
     nc = len(list(CARDS.glob("*.json")))
     nr = len(list(READMES.glob("*.md")))
+    # enrich corpus.json with pinned SHAs from the fetched cards
+    changed = False
+    for m in MODELS:
+        key = safe_name(m["id"])
+        cp = CARDS / f"{key}.json"
+        if not cp.exists() or m.get("sha"):
+            continue
+        try:
+            d = json.load(open(cp))
+        except Exception:
+            continue
+        if d.get("sha"):
+            m["sha"] = d["sha"]
+            changed = True
+        if "gated" in d:
+            m["gated_flag"] = bool(d.get("gated"))
+            changed = True
+        if d.get("lastModified"):
+            m["lastModified"] = d["lastModified"]
+            changed = True
+    if changed:
+        json.dump({"title": "Model Cards in the Wild", "issue": 50,
+                   "snapshot": "2026-08-30", "n_models": len(MODELS),
+                   "models": MODELS},
+                  open(ROOT / "corpus.json", "w"), indent=1)
+        print("corpus.json enriched with pinned SHAs", flush=True)
     print(f"done this call: {n_done} | cards {nc}/{len(MODELS)}, readmes {nr}/{len(MODELS)}", flush=True)
 
 if __name__ == "__main__":

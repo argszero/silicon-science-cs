@@ -24,13 +24,14 @@ All three are falsifiable with direction and magnitude, and all are tested again
 
 ## 2. Related Work
 
-We position against five concrete bodies of work, each with a stated difference:
+We position against six concrete bodies of work, each with a stated difference:
 
 1. **Mitchell et al., "Model Cards for Model Reporting" (2019)** — the normative proposal: specifies the sections a model card *should* contain. *Difference*: normative specification, no measurement of what cards actually contain; we measure 187 real cards against a fixed 8-signal schema derived from that proposal.
 2. **"Current Model Cards Are Insufficient for Downstream Governance of Open-Weight Foundation Models" (arXiv 2026-06-05)** — position paper arguing cards fail governance; calls for measurement but provides **no quantitative census**. *Difference*: it is an argument without data; we supply the descriptive measurement it calls for.
 3. **"Generate with CodeXHug: A Dataset to Enhance Model Cards with Code Usage Patterns" (arXiv 2026-06-22)** — builds tooling to *augment* cards with code-usage data. *Difference*: it enhances cards; it measures nothing about current practice; we census the baseline practice itself.
 4. **"From Collaboration to Regulation: Characterizing Governance Practice in Three DL Open Source Communities" (arXiv 2026-07-21)** — qualitative study of 3 communities. *Difference*: qualitative, 3 communities, interview/document-based; ours is quantitative and metadata-level across 187 model repos with cell-validated extraction.
 5. **EU AI Act Art. 53 technical-documentation obligations (applied 2025–2026) + the 2026-08 governance wave** (e.g., "Explainable AI for the EU Right to Explanation" 2026-08-03; "A Security-Oriented Lifecycle Model for LLM Systems" 2026-08-04) — the regulatory frame that makes documentation practice a live policy question. *Difference*: legal/positional analysis of what documentation *should* be; we measure what it *is*.
+6. **"A Large-Scale Measurement of AI Bill of Materials Completeness in Hugging Face Models" (arXiv:2607.17242, 2026-07-19)** — the closest existing quantitative measurement on the same surface (HF model repos): it measures how complete the *machine-readable* model documentation is (AI BOM: declared components, licenses, provenance metadata). *Differences, stated explicitly*: (a) **object of measurement** — AI BOM = machine-readable metadata completeness (SBOM-style component/provenance fields), vs this census = *model-card documentation practice* (free-text card fields: training data, evaluation results, bias/limitations, intended use, base-model lineage, technical details, citations); (b) **extraction method** — structured metadata parsing vs card-content signal extraction with 128 hand-verified cells; (c) **claims** — BOM completeness as supply-chain practice vs card coverage as governance/transparency practice (EU AI Act Art. 53 documentation, Mitchell et al. sections). Our H1 ("completeness is low and bimodal") measures card-content coverage, not BOM metadata completeness; the two are complementary views of the same surface, and our numbers (e.g., license 94.1%, training-data 51.3%, bias/limitations 36.4% card coverage) are stated per-signal with the extraction rules committed, so no overlapping aggregate is silently conflated.
 
 No prior work provides a quantitative, reproducible census of model-card documentation practice at corpus scale — the gap this paper fills.
 
@@ -47,7 +48,7 @@ The corpus is a stratified sample of open-weight model repositories on the Huggi
 
 Each corpus entry pins `id`, `org`, `downloads`, `likes`, `pipeline_tag`, `library_name`, `tags`, `createdAt`. Tasks span text-generation (78), image-text-to-text (26), fill-mask (8), sentence-similarity (7), feature-extraction (6), ASR (6), any-to-any (4), image-classification (4), text-to-speech (3), text-to-video (3), image-to-3d (3), and others; downloads range 0–247M.
 
-**Snapshot pinning**: for every model, the cardData is fetched via `GET /api/models/{id}` and the raw README via `GET /{id}/raw/main/README.md`, both committed verbatim under `snapshots/cards/` (187 JSON) and `snapshots/readmes/` (172 Markdown). **15 models have no publicly readable README: they are gated** (meta-llama ×8, google/gemma-3-1b-it, Lightricks, ai21labs, pyannote, orcarouter ×3) — the Hub returns 401/404 for the raw README without access approval, while the structured cardData remains public. Gated-readme status is a first-class signal in the census (§4.2): the most policy-relevant models' cards are not publicly readable at all.
+**Snapshot pinning**: for every model, the cardData is fetched via `GET /api/models/{id}` and the raw README via `GET /{id}/raw/main/README.md`, both committed verbatim under `snapshots/cards/` (187 JSON) and `snapshots/readmes/` (172 Markdown). Each cardData carries the **pinned Hugging Face commit SHA** for the model repo; all **187/187 SHAs are recorded in `corpus.json`** (the `sha` field, backfilled from the committed cards and maintained by `fetch_cards.py`), so the corpus pins the exact snapshot revision, not merely repo names. **15 models have no publicly readable README: they are gated** (meta-llama ×8, google/gemma-3-1b-it, Lightricks, ai21labs, pyannote, orcarouter ×3) — the Hub returns 401/404 for the raw README without access approval, while the structured cardData (and its SHA) remains public. Gated-readme status is a first-class signal in the census (§4.2): the most policy-relevant models' cards are not publicly readable at all.
 
 ### 3.2 Signals and extraction (8 documentation dimensions)
 
@@ -66,9 +67,24 @@ For each model we extract **8 binary documentation signals** from cardData + REA
 
 **Completeness** = fraction of the 8 signals present (0.000–1.000). The rules are deliberately conservative: free-text keyword matching is confined to section context or data-attached phrases so that technical prose (architecture terms, code snippets, procedure details) does not produce false positives. The extraction rule decisions were driven by the validation pass (§3.3) and are fully documented in `extract.py`.
 
+**Baseline mapping (which fields are "required" per which baseline)**: each measured signal is mapped onto the three normative baselines, so "required" is operationalized rather than merely cited:
+
+| Signal | HF card schema | EU AI Act Art. 53 (GPAI documentation) | Mitchell et al. (2019) sections |
+|---|---|---|---|
+| license | `license` metadata | licensing | license / permission info |
+| training_data | `datasets` metadata / card | training-data description | training data / training procedure |
+| eval_results | model-index metrics | evaluation results | evaluation results |
+| bias_limitations | card guidance | foreseeable risks / limitations | caveats and recommendations |
+| intended_use | card guidance | intended purpose | intended use |
+| base_model | `base_model` metadata | lineage / dependencies | — (model type) |
+| technical | model-index / card | technical architecture | model details |
+| citations | card guidance | — | citations |
+
+The mapping shows that *no single baseline requires all eight*: Art. 53 and Mitchell et al. both make training-data and bias/limitations required, which is exactly where measured coverage is lowest (51.3% / 36.4% — §4.3) — the structural gap is measured against the baselines' own priorities, not an arbitrary checklist.
+
 ### 3.3 Validation (hand-annotated ground truth)
 
-Extraction is validated cell-level: **16 diverse models × 8 signals = 128 cells**, hand-annotated from the fetched card content (`validation_sample.tsv`). The sample deliberately covers the extreme morphologies of the corpus: near-zero cards (`allenai/unifiedqa-t5-small`, `bigscience/bigscience-small-testing`), gated models (`google/gemma-3-1b-it`, `meta-llama/Llama-3.1-8B-Instruct`, `meta-llama/Meta-Llama-3-8B-Instruct`), full cards (nvidia Qwen3.6-35B-A3B-NVFP4, whisper-large-v3-turbo, OLMo-2-0425-1B), mid cards (gpt-j-6b, Mistral-7B-v0.1, sdxl-turbo, ms-marco-MiniLM-L6-v2, AI21-Jamba-Reasoning-3B, Qwen3.5-4B, multilingual-e5-small), and boundary cells that previously produced false positives (Qwen2.5-7B-Instruct "Attention QKV bias"; Qwen3.5-4B "trained with multi-steps"). Result (regenerated by `python3 validate.py` / `hypotheses.py`):
+Extraction is validated cell-level: **16 diverse models × 8 signals = 128 cells**, hand-annotated from the fetched card content (`validation_sample.tsv`). The sample deliberately covers the extreme morphologies of the corpus: near-zero cards (`allenai/unifiedqa-t5-small`, `bigscience/bigscience-small-testing`), **card-absent / gated models — the "no card at all" finding class sampled explicitly, per the editorial ack** (`google/gemma-3-1b-it`, `meta-llama/Llama-3.1-8B-Instruct`, `meta-llama/Meta-Llama-3-8B-Instruct`: all README-derived signals 0 by definition, verified as genuine absence, not naming variance), full cards (nvidia Qwen3.6-35B-A3B-NVFP4, whisper-large-v3-turbo, OLMo-2-0425-1B), mid cards (gpt-j-6b, Mistral-7B-v0.1, sdxl-turbo, ms-marco-MiniLM-L6-v2, AI21-Jamba-Reasoning-3B, Qwen3.5-4B, multilingual-e5-small), and boundary cells that previously produced false positives (Qwen2.5-7B-Instruct "Attention QKV bias"; Qwen3.5-4B "trained with multi-steps"). Result (regenerated by `python3 validate.py` / `hypotheses.py`):
 
 **accuracy 100.0% (128/128); precision 1.000 (71/71); recall 1.000 (71/71)** — every signal row: license TP14/FP0/FN0, training_data TP7/FP0/FN0, eval_results TP9, bias_limitations TP6, intended_use TP9, base_model TP9, technical TP9, citations TP8 (no FP/FN anywhere).
 
@@ -150,15 +166,16 @@ OK: hypotheses.txt byte-identical
 - `python3 trace_check.py` → ALL 21 checks OK (corpus↔snapshots↔signals cross-checks + canonical needles).
 - **From-scratch re-extraction** (network): `python3 extract.py` regenerates `snapshots/signals.json` from the committed raw snapshots; `python3 reproduce.py freeze` re-freezes the canonical outputs.
 - **From-scratch corpus** (network): `python3 build_corpus.py` re-runs the exact selection rule against hf-mirror.com (resume-safe via `snapshots/list/`); `python3 fetch_cards.py` refetches cardData + READMEs (resume-safe).
-- **Committed artifacts**: `corpus.json` (187 pinned models), `snapshots/cards/` (187 cardData JSON), `snapshots/readmes/` (172 README md; 15 gated absent), `snapshots/list/` (raw API-list responses), `extract.py`, `hypotheses.py`, `reproduce.py`, `reproduce.sh`, `trace_check.py`, `validate.py`, `validation_sample.tsv` (128 hand-annotated cells), `expected_output/signals.json` + `expected_output/hypotheses.txt` (frozen canonical outputs).
+- **Committed artifacts**: `corpus.json` (187 pinned models **with HF commit SHAs** + org/downloads/likes/tags/createdAt), `snapshots/cards/` (187 cardData JSON), `snapshots/readmes/` (172 README md; 15 gated absent), `snapshots/list/` (raw API-list responses), `extract.py`, `hypotheses.py`, `reproduce.py`, `reproduce.sh`, `trace_check.py`, `validate.py`, `validation_sample.tsv` (128 hand-annotated cells), `expected_output/signals.json` + `expected_output/hypotheses.txt` (frozen canonical outputs).
 - **Determinism statement**: the pipeline is fully deterministic (no stochastic components); multi-run statistics are not applicable and are not reported.
 
 ## References
 
-1. Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., Gebru, T. "Model Cards for Model Reporting." FAT* 2019.
-2. "Current Model Cards Are Insufficient for Downstream Governance of Open-Weight Foundation Models." Position paper, arXiv 2026-06-05.
-3. "Generate with CodeXHug: A Dataset to Enhance Model Cards with Code Usage Patterns." arXiv 2026-06-22.
-4. "From Collaboration to Regulation: Characterizing Governance Practice in Three Deep Learning Open Source Communities." arXiv 2026-07-21.
-5. European Union. AI Act, Art. 53 (foundation-model technical documentation; applied 2025–2026).
-6. Hugging Face Hub model-card guidelines & cardData schema. https://huggingface.co/docs/hub/models-card
-7. "Explainable AI for the EU Right to Explanation." arXiv 2026-08-03. "A Security-Oriented Lifecycle Model for LLM Systems." arXiv 2026-08-04.
+1. Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., Gebru, T. "Model Cards for Model Reporting." FAT* 2019. arXiv:1810.03993.
+2. "Current Model Cards Are Insufficient for Downstream Governance of Open-Weight Foundation Models." Position paper, arXiv:2608.18086 (2026-06-05).
+3. "Generate with CodeXHug: A Dataset to Enhance Model Cards with Code Usage Patterns." arXiv:2606.23329 (2026-06-22).
+4. "From Collaboration to Regulation: Characterizing Governance Practice in Three Deep Learning Open Source Communities." arXiv:2607.19022 (2026-07-21).
+5. "A Large-Scale Measurement of AI Bill of Materials Completeness in Hugging Face Models." arXiv:2607.17242 (2026-07-19).
+6. European Union. AI Act, Art. 53 (foundation-model technical documentation; applied 2025–2026).
+7. Hugging Face Hub model-card guidelines & cardData schema. https://huggingface.co/docs/hub/models-card
+8. "Explainable AI for the EU Right to Explanation: A Systematic Review of the Law-XAI Translation Gap." arXiv:2608.02699 (2026-08-03). "A Security-Oriented Lifecycle Model for Large Language Model Systems." arXiv:2608.03626 (2026-08-04).
