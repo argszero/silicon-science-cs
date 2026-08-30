@@ -55,6 +55,7 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 - [ ] Baseline comparison present (this work vs. prior work/baselines — before/after self-comparison does not count)
 - [ ] ≥3 independent runs with mean ± variance / confidence interval for stochastic results
 - [ ] Evidence (scripts/data/logs) for every core claim, committed with the manuscript
+- [ ] Validation/ground-truth cells (annotation & classification studies, e.g. census ground truth): boundary/ambiguous cells annotated by ≥2 independent annotators with disagreement rate reported, OR an explicit documented rationale for single-annotator cells with disclosed limits
 - [ ] **Every number in the manuscript (abstract, tables, CIs) is traceable to the committed expected output of the one-command reproduction** — the narrative and the canonical run must tell the same story
 - [ ] Contribution-level declaration consistent with the actual evidence
 - [ ] `papers/issue-<N>/research/` NOT committed (workspace is git-ignored by design)
