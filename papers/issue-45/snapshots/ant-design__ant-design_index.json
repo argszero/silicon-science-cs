@@ -1,0 +1,55 @@
+{
+  "repo": "ant-design/ant-design",
+  "tree_size": 5638,
+  "a11y_test_deps": [
+    [
+      "package.json",
+      "eslint-plugin-jsx-a11y"
+    ],
+    [
+      "package.json",
+      "jest-axe"
+    ]
+  ],
+  "role_path_hits": {
+    "alert": 63,
+    "banner": 9,
+    "button": 178,
+    "checkbox": 53,
+    "dialog": 1,
+    "form": 175,
+    "grid": 63,
+    "heading": 1,
+    "img": 2,
+    "link": 13,
+    "log": 105,
+    "main": 2,
+    "menu": 83,
+    "menuitem": 1,
+    "navigation": 5,
+    "option": 15,
+    "radio": 67,
+    "row": 53,
+    "search": 90,
+    "slider": 58,
+    "status": 36,
+    "switch": 49,
+    "tab": 294,
+    "timer": 4,
+    "toolbar": 2,
+    "tooltip": 83,
+    "tree": 139
+  },
+  "aria_content": {
+    "files": 150,
+    "loc": 7207,
+    "aria_attrs": 4,
+    "aria_attrs_clean": 4,
+    "aria_density_per_file": 0.027,
+    "aria_density_per_1k_loc": 0.555,
+    "roles": {
+      "alert": 1,
+      "button": 1
+    }
+  }
+}

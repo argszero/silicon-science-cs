@@ -1,0 +1,60 @@
+{
+  "repo": "mantinedev/mantine",
+  "tree_size": 7665,
+  "a11y_test_deps": [
+    [
+      "package.json",
+      "jest-axe"
+    ]
+  ],
+  "role_path_hits": {
+    "alert": 13,
+    "banner": 5,
+    "button": 129,
+    "checkbox": 64,
+    "combobox": 337,
+    "dialog": 20,
+    "form": 340,
+    "grid": 95,
+    "heading": 2,
+    "link": 41,
+    "log": 100,
+    "main": 6,
+    "marquee": 17,
+    "menu": 109,
+    "menuitem": 3,
+    "navigation": 5,
+    "option": 63,
+    "radio": 46,
+    "row": 32,
+    "search": 58,
+    "slider": 112,
+    "status": 13,
+    "switch": 28,
+    "tab": 161,
+    "timer": 4,
+    "toolbar": 2,
+    "tooltip": 77,
+    "tree": 139
+  },
+  "aria_content": {
+    "files": 150,
+    "loc": 17867,
+    "aria_attrs": 47,
+    "aria_attrs_clean": 47,
+    "aria_density_per_file": 0.313,
+    "aria_density_per_1k_loc": 2.631,
+    "roles": {
+      "checkbox": 1,
+      "group": 5,
+      "listbox": 2,
+      "option": 2,
+      "presentation": 2,
+      "region": 2,
+      "slider": 3,
+      "status": 1,
+      "tab": 1,
+      "tablist": 1
+    }
+  }
+}

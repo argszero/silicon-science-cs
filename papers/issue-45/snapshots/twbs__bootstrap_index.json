@@ -1,0 +1,36 @@
+{
+  "repo": "twbs/bootstrap",
+  "tree_size": 913,
+  "a11y_test_deps": [],
+  "role_path_hits": {
+    "alert": 8,
+    "banner": 2,
+    "button": 16,
+    "form": 23,
+    "grid": 18,
+    "img": 115,
+    "link": 9,
+    "log": 16,
+    "main": 1,
+    "navigation": 1,
+    "option": 1,
+    "radio": 1,
+    "row": 4,
+    "search": 3,
+    "tab": 14,
+    "tooltip": 7
+  },
+  "aria_content": {
+    "files": 25,
+    "loc": 3587,
+    "aria_attrs": 0,
+    "aria_attrs_clean": 0,
+    "aria_density_per_file": 0.0,
+    "aria_density_per_1k_loc": 0.0,
+    "roles": {
+      "tab": 1,
+      "tablist": 1,
+      "tooltip": 2
+    }
+  }
+}

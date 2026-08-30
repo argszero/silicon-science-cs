@@ -1,0 +1,40 @@
+{
+  "repo": "shadcn-ui/ui",
+  "tree_size": 6464,
+  "a11y_test_deps": [],
+  "role_path_hits": {
+    "alert": 75,
+    "button": 216,
+    "checkbox": 71,
+    "combobox": 58,
+    "dialog": 96,
+    "form": 211,
+    "grid": 35,
+    "link": 30,
+    "log": 278,
+    "main": 40,
+    "menu": 206,
+    "navigation": 19,
+    "none": 20,
+    "option": 2,
+    "radio": 62,
+    "row": 7,
+    "search": 30,
+    "slider": 41,
+    "status": 4,
+    "switch": 70,
+    "tab": 107,
+    "toolbar": 6,
+    "tooltip": 83,
+    "tree": 6
+  },
+  "aria_content": {
+    "files": 150,
+    "loc": 19447,
+    "aria_attrs": 55,
+    "aria_attrs_clean": 55,
+    "aria_density_per_file": 0.367,
+    "aria_density_per_1k_loc": 2.828,
+    "roles": {}
+  }
+}

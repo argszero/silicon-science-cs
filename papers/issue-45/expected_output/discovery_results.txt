@@ -1,0 +1,70 @@
+==============================================================================
+Accessibility Practice in the Wild
+Code-level census of accessibility practice in 14 open-source UI component libraries
+Snapshot: 2026-08-29 (head SHAs pinned in corpus.json)
+==============================================================================
+
+Table 1. Per-repo accessibility signals (content-level, library source)
+repo                             lang      a11y_test_deps                           files    loc a/file   a/1k roles a11y_first
+------------------------------------------------------------------------------------------------------------------------------
+twbs/bootstrap                   MDX/SCSS  -                                           25   3587  0.000  0.000     3          -
+shadcn-ui/ui                     TypeScript -                                          150  19447  0.367  2.828     0          -
+ant-design/ant-design            TypeScript eslint-plugin-jsx-a11y,jest-axe            150   7207  0.027  0.555     2          -
+mui/material-ui                  JavaScript axe-core                                   150  11629  0.167  2.150     9          -
+vuejs/core                       TypeScript -                                          150  33204  0.000  0.000     0          -
+chakra-ui/chakra-ui              TypeScript eslint-plugin-jsx-a11y                     150   9663  0.107  1.656     4          -
+mantinedev/mantine               TypeScript jest-axe                                   150  17867  0.313  2.631    10          -
+TanStack/table                   TypeScript -                                          150  12815  0.000  0.000     0          -
+element-plus/element-plus        TypeScript -                                          150  13707  0.567  6.201    17          -
+microsoft/fluentui               TypeScript axe-core,eslint-plugin-jsx-a11y,jest-axe   150   8708  0.180  3.101    10        yes
+radix-ui/primitives              TypeScript axe-core                                   101  17981  0.901  5.061    27        yes
+ariakit/ariakit                  TypeScript -                                          150  15164  0.367  3.627     9        yes
+primefaces/primereact            CSS/TS    -                                          150  34376  1.413  6.167    28          -
+reach/reach-ui                   TypeScript axe-core,eslint-plugin-jsx-a11y             55   9013  1.145  6.990    17        yes
+
+Table 2. H1 — accessibility-testing adoption (library manifests, a11y-specific deps)
+  axe-family runtime testing (axe-core/jest-axe/react-axe): 6/14 = 42.86%
+    ant-design/ant-design, mui/material-ui, mantinedev/mantine, microsoft/fluentui, radix-ui/primitives, reach/reach-ui
+  lint-only (eslint-plugin-jsx-a11y, no runtime test): 1/14
+    chakra-ui/chakra-ui
+  no a11y testing or linting: 7/14 = 50.00%
+    twbs/bootstrap, shadcn-ui/ui, vuejs/core, TanStack/table, element-plus/element-plus, ariakit/ariakit, primefaces/primereact
+  axe concentration: all runtime a11y testers use axe-family: YES (6/6)
+
+Table 3. H2 — ARIA attribute density (sorted) and role coverage
+repo                             density   a/1k roles
+--------------------------------------------------------
+primefaces/primereact              1.413  6.167    28
+reach/reach-ui                     1.145  6.990    17
+radix-ui/primitives                0.901  5.061    27
+element-plus/element-plus          0.567  6.201    17
+shadcn-ui/ui                       0.367  2.828     0
+ariakit/ariakit                    0.367  3.627     9
+mantinedev/mantine                 0.313  2.631    10
+microsoft/fluentui                 0.180  3.101    10
+mui/material-ui                    0.167  2.150     9
+chakra-ui/chakra-ui                0.107  1.656     4
+ant-design/ant-design              0.027  0.555     2
+twbs/bootstrap                     0.000  0.000     3
+vuejs/core                         0.000  0.000     0
+TanStack/table                     0.000  0.000     0
+  density range (nonzero, per-file): 0.027 .. 1.413 = 52.3x spread; zero-density repos: 3/14
+  density range (nonzero, per-1k-LOC): 0.555 .. 6.990 = 12.6x spread
+  role coverage range: 0 .. 28 distinct roles
+
+Table 4. H3 — accessibility-first positioning vs measurable practice
+  a11y-first libraries (4): microsoft/fluentui, radix-ui/primitives, ariakit/ariakit, reach/reach-ui
+    microsoft/fluentui               density=0.180 a/1k=3.101 axe_family=yes
+    radix-ui/primitives              density=0.901 a/1k=5.061 axe_family=yes
+    ariakit/ariakit                  density=0.367 a/1k=3.627 axe_family=no
+    reach/reach-ui                   density=1.145 a/1k=6.990 axe_family=yes
+  per-file density: a11y-first mean 0.648 vs other 0.296 = 2.19x (bootstrap 95% CI [0.75, 8.12], P(ratio>1)=0.93)
+  per-1k-LOC density: a11y-first mean 4.695 vs other 2.219 = 2.12x (bootstrap 95% CI [1.14, 5.24], P(ratio>1)=0.99)
+
+Table 5. Extraction validation (hand-verified ground truth, validation_sample.tsv)
+  56 cells = 14 repos x 4 signals (a11y-test-dep, aria-presence, role-presence, a11y-first)
+  precision 1.000 | recall 1.000 | accuracy 1.000 (TP=33 FP=0 TN=23 FN=0)
+
+SUMMARY: H1 CONFIRMED (axe-family 6/14 = 42.86% < 50%, 100% axe-concentrated)
+SUMMARY: H2 CONFIRMED (density spread 52.3x per-file / 12.6x per-1k-LOC across nonzero, role coverage 0..28)
+SUMMARY: H3 DIRECTIONAL (a11y-first axe-equipped 3/4 strict + ariakit app-level; mean density 0.648 vs 0.296 = 2.19x per-file (95% CI [0.75, 8.12], P=0.93) / 2.12x per-1k-LOC (95% CI [1.14, 5.24], P=0.99); fluentui density below overall median, ariakit axe app-level only)

@@ -1,0 +1,50 @@
+{
+  "repo": "ariakit/ariakit",
+  "tree_size": 3729,
+  "a11y_test_deps": [],
+  "role_path_hits": {
+    "button": 47,
+    "checkbox": 217,
+    "combobox": 672,
+    "dialog": 389,
+    "form": 135,
+    "grid": 30,
+    "heading": 30,
+    "link": 31,
+    "log": 430,
+    "main": 39,
+    "menu": 310,
+    "navigation": 62,
+    "option": 2,
+    "presentation": 12,
+    "radio": 55,
+    "region": 5,
+    "row": 163,
+    "search": 8,
+    "status": 3,
+    "switch": 1,
+    "tab": 178,
+    "toolbar": 45,
+    "tooltip": 66,
+    "tree": 6
+  },
+  "aria_content": {
+    "files": 150,
+    "loc": 15164,
+    "aria_attrs": 55,
+    "aria_attrs_clean": 55,
+    "aria_density_per_file": 0.367,
+    "aria_density_per_1k_loc": 3.627,
+    "roles": {
+      "alert": 1,
+      "button": 1,
+      "combobox": 2,
+      "dialog": 1,
+      "group": 1,
+      "listbox": 1,
+      "presentation": 2,
+      "radiogroup": 1,
+      "rowgroup": 1
+    }
+  }
+}
