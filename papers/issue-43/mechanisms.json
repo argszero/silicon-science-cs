@@ -1,0 +1,148 @@
+{
+  "note": "Hand-classified eval-mechanism per corpus repo (R71, corrected R72+R72b; boundary rule applied R80). mechanism \u2208 {built-in-module, hand-rolled, external-harness, benchmark-run, none}. judge: 'yes' iff an LLM-based judging/grading component exists IN THE REPO (shipped/hand-rolled), not merely a user-extensible harness. validation: human-ground-truth validation accompanies eval practice. Boundary rule (R80): a manifest-declared dep is an external harness iff its integration point in the repo is an evaluation module; callback/telemetry integrations (langfuse/opik/langsmith/wandb/promptlayer/uptrain) are tracing. Corrections: pydantic-ai ships pydantic_evals (llm_as_a_judge); llama_index built-in core evaluation + external tonic-validate (evaluation integration; promptlayer/uptrain are callbacks); dspy ships programmatic metrics only (EM/F1), no LLM-judge component.",
+  "judge": {
+    "definition": "Presence of LLM-based judging/grading (LLM evaluates outputs): 'yes' if a judge/grading mechanism exists in the repo (hand-rolled code, built-in module, or via harness); 'no' otherwise.",
+    "validation": {
+      "definition": "Human-ground-truth validation accompanies judge-based evaluation: 'yes' if human-annotated references, agreement metrics (kappa/inter-rater), calibration, or golden sets are present in eval code; 'no' otherwise."
+    }
+  },
+  "repos": {
+    "langchain-ai/langchain": {
+      "mechanism": "built-in-module",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "libs/langchain/langchain_classic/evaluation (load_evaluator chains, EvaluatorType)",
+        "qa/criteria/cot_qa evaluators"
+      ]
+    },
+    "langgenius/dify": {
+      "mechanism": "none",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "no eval-harness dep; trace integrations only (langfuse/langsmith/opik)"
+      ]
+    },
+    "microsoft/autogen": {
+      "mechanism": "hand-rolled",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "python/packages/autogen-studio/autogenstudio/eval/judges.py (LLMEvalJudge, criteria-driven)",
+        "python/packages/agbench/ (self-built benchmark suite: GAIA/HumanEval)"
+      ]
+    },
+    "crewAIInc/crewAI": {
+      "mechanism": "built-in-module",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "lib/crewai/src/crewai/experimental/evaluation (BaseEvaluator, MetricCategory, agent_evaluator.py)",
+        "langsmith tracing dep"
+      ]
+    },
+    "BerriAI/litellm": {
+      "mechanism": "hand-rolled",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "litellm/litellm_core_utils/llm_judge.py (llm_as_a_judge guardrail, JSON-verdict parsing, router dispatch)",
+        "tests/test_llm_judge.py"
+      ]
+    },
+    "run-llama/llama_index": {
+      "mechanism": "built-in-module",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "llama-index-core/llama_index/core/evaluation (answer_relevancy, context_relevancy, batch_runner, benchmarks/beir, hotpotqa)",
+        "external dep: tonic-validate (evaluation-integration package, llama_index.evaluation.tonic_validate); promptlayer/uptrain integrations are callbacks (llama_index.callbacks.*) -> tracing, per integration-category boundary rule (R80)"
+      ]
+    },
+    "Aider-AI/aider": {
+      "mechanism": "benchmark-run",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "swe-bench benchmark runs in tests (blog posts + test harness)"
+      ]
+    },
+    "langchain-ai/langgraph": {
+      "mechanism": "none",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "no eval artifacts in tree"
+      ]
+    },
+    "stanfordnlp/dspy": {
+      "mechanism": "built-in-module",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "dspy/evaluate/evaluate.py (Evaluate harness, user metric callable)",
+        "dspy/evaluate/metrics.py = programmatic EM/F1/passage-match only \u2014 no shipped LLM-judge component",
+        "dspy/datasets/gsm8k.py (ships gsm8k dataset loader for benchmark evaluation)"
+      ]
+    },
+    "continuedev/continue": {
+      "mechanism": "none",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "eval/ dir present but no judge content found in fetched sample"
+      ]
+    },
+    "openai/openai-agents-python": {
+      "mechanism": "none",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "no eval artifacts; llm_judge path match was tutorial"
+      ]
+    },
+    "huggingface/smolagents": {
+      "mechanism": "none",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "no eval artifacts (tiny tree, 225 entries)"
+      ]
+    },
+    "microsoft/semantic-kernel": {
+      "mechanism": "benchmark-run",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "python/samples/concepts/model_as_a_service/mmlu_model_eval.py (MMLU via datasets, exact-match)"
+      ]
+    },
+    "deepset-ai/haystack": {
+      "mechanism": "built-in-module",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "docs-website evaluation section (model-based/statistical evaluation); eval dir in tree"
+      ]
+    },
+    "pydantic/pydantic-ai": {
+      "mechanism": "built-in-module",
+      "judge": "yes",
+      "validation": "no",
+      "evidence": [
+        "pydantic_evals/pydantic_evals/evaluators/llm_as_a_judge.py",
+        "evaluators/spec.py, agentic.py, context.py",
+        "dataset.py + reporting"
+      ]
+    },
+    "opencode-ai/opencode": {
+      "mechanism": "none",
+      "judge": "no",
+      "validation": "no",
+      "evidence": [
+        "tiny tree (208 entries), no eval artifacts"
+      ]
+    }
+  }
+}

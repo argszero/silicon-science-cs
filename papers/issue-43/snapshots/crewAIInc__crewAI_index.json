@@ -1,0 +1,17 @@
+{
+  "repo": "crewAIInc/crewAI",
+  "tree_size": 32106,
+  "harness_deps": [],
+  "tracing_deps": [
+    [
+      "pyproject.toml",
+      "langsmith"
+    ]
+  ],
+  "benchmark_paths": [],
+  "judge_paths": [],
+  "content_judge": [
+    "lib/crewai/src/crewai/experimental/evaluation/evaluation_display.py"
+  ],
+  "validation_markers": []
+}

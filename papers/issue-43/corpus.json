@@ -1,0 +1,137 @@
+{
+  "title": "LLM-as-Judge and Evaluation Practice in the Wild",
+  "issue": 43,
+  "snapshot": "2026-08-29",
+  "tiers": {
+    "projects": [
+      {
+        "repo": "langchain-ai/langchain",
+        "lang": "Python",
+        "stars": 145207,
+        "role": "app-framework",
+        "default_branch": "master",
+        "head_sha": "5893459c4f2bfac6c8d3262cae1e3f2246d9287f"
+      },
+      {
+        "repo": "langgenius/dify",
+        "lang": "TypeScript",
+        "stars": 153774,
+        "role": "app-platform",
+        "default_branch": "main",
+        "head_sha": "f8dd276e2c96d3cc722b9609bf887a81e6eb9cac"
+      },
+      {
+        "repo": "microsoft/autogen",
+        "lang": "Python",
+        "stars": 60676,
+        "role": "agent-framework",
+        "default_branch": "main",
+        "head_sha": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14"
+      },
+      {
+        "repo": "crewAIInc/crewAI",
+        "lang": "Python",
+        "stars": 57760,
+        "role": "agent-framework",
+        "default_branch": "main",
+        "head_sha": "da4daadba0e5049abc00fee8bc31b8b8019c60dd"
+      },
+      {
+        "repo": "BerriAI/litellm",
+        "lang": "Python",
+        "stars": 57499,
+        "role": "gateway",
+        "default_branch": "litellm_internal_staging",
+        "head_sha": "cbdaa3b153e4f7e7795ebb51626074b25373b2b7"
+      },
+      {
+        "repo": "run-llama/llama_index",
+        "lang": "Python",
+        "stars": 51909,
+        "role": "rag-framework",
+        "default_branch": "main",
+        "head_sha": "39f481fc41d1da26cf511ef697762b3b0a93636d"
+      },
+      {
+        "repo": "Aider-AI/aider",
+        "lang": "Python",
+        "stars": 48558,
+        "role": "coding-agent",
+        "default_branch": "main",
+        "head_sha": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c"
+      },
+      {
+        "repo": "langchain-ai/langgraph",
+        "lang": "Python",
+        "stars": 40638,
+        "role": "agent-framework",
+        "default_branch": "main",
+        "head_sha": "11ee185999b86bfea2d8c0e69cef9a5e37acf686"
+      },
+      {
+        "repo": "stanfordnlp/dspy",
+        "lang": "Python",
+        "stars": 37635,
+        "role": "programming-framework",
+        "default_branch": "main",
+        "head_sha": "3f06959ebbb80fb0bda001e1f802d70c2d5be7f7"
+      },
+      {
+        "repo": "continuedev/continue",
+        "lang": "TypeScript",
+        "stars": 35666,
+        "role": "coding-agent",
+        "default_branch": "main",
+        "head_sha": "5522c6f44ca0ac3528b37244818fbfa39b5af470"
+      },
+      {
+        "repo": "openai/openai-agents-python",
+        "lang": "Python",
+        "stars": 29044,
+        "role": "agents-sdk",
+        "default_branch": "main",
+        "head_sha": "89c02c828ee8510fe9a84ee6675608193aa13b02"
+      },
+      {
+        "repo": "huggingface/smolagents",
+        "lang": "Python",
+        "stars": 29036,
+        "role": "agent-framework",
+        "default_branch": "main",
+        "head_sha": "30bb1161095dbae2271e6bc3cc4c219cc3897a57"
+      },
+      {
+        "repo": "microsoft/semantic-kernel",
+        "lang": "C#",
+        "stars": 28510,
+        "role": "framework",
+        "default_branch": "main",
+        "head_sha": "a64827ec8c5621eeaf7c4c5dabdb5355bb253177"
+      },
+      {
+        "repo": "deepset-ai/haystack",
+        "lang": "Python",
+        "stars": 26351,
+        "role": "framework",
+        "default_branch": "main",
+        "head_sha": "30d7506d0b692dd1ac67eae62a77f50fdc9bd4db"
+      },
+      {
+        "repo": "pydantic/pydantic-ai",
+        "lang": "Python",
+        "stars": 19565,
+        "role": "agents-sdk",
+        "default_branch": "main",
+        "head_sha": "26b1168dda7e155ed18da6eab2939c8b31e5826b"
+      },
+      {
+        "repo": "opencode-ai/opencode",
+        "lang": "Go",
+        "stars": 13700,
+        "role": "coding-agent",
+        "default_branch": "main",
+        "head_sha": "73ee493265acf15fcd8caab2bc8cd3bd375b63cb"
+      }
+    ]
+  }
+}

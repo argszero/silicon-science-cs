@@ -1,0 +1,35 @@
+{
+  "repo": "langgenius/dify",
+  "tree_size": 16967,
+  "harness_deps": [],
+  "tracing_deps": [
+    [
+      "api/providers/trace/trace-langfuse/pyproject.toml",
+      "langfuse"
+    ],
+    [
+      "api/providers/trace/trace-langsmith/pyproject.toml",
+      "langsmith"
+    ],
+    [
+      "api/providers/trace/trace-opik/pyproject.toml",
+      "opik"
+    ],
+    [
+      "api/pyproject.toml",
+      "langfuse"
+    ],
+    [
+      "api/pyproject.toml",
+      "langsmith"
+    ],
+    [
+      "api/pyproject.toml",
+      "opik"
+    ]
+  ],
+  "benchmark_paths": [],
+  "judge_paths": [],
+  "content_judge": [],
+  "validation_markers": []
+}

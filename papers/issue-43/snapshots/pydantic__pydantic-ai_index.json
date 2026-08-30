@@ -1,0 +1,21 @@
+{
+  "repo": "pydantic/pydantic-ai",
+  "tree_size": 2807,
+  "harness_deps": [],
+  "tracing_deps": [
+    [
+      "pyproject.toml",
+      "langsmith"
+    ]
+  ],
+  "benchmark_paths": [],
+  "judge_paths": [],
+  "content_judge": [
+    "pydantic_evals/pydantic_evals/evaluators/common.py",
+    "pydantic_evals/pydantic_evals/evaluators/evaluator.py",
+    "pydantic_evals/pydantic_evals/evaluators/llm_as_a_judge.py",
+    "pydantic_evals/pydantic_evals/generation.py",
+    "pydantic_evals/pydantic_evals/online_capability.py"
+  ],
+  "validation_markers": []
+}
