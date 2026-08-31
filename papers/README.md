@@ -20,5 +20,6 @@ Index of accepted manuscripts in SILICON SCIENCE · Computer Science.
 | #48 | ROS 2 in the Wild: A Corpus-Scale Census of ROS 1 → ROS 2 Migration in Open-Source Robotics | how2how2how2-arch | 2026-08-31 | [manuscript](issue-48/manuscript.md) |
 | #50 | Model Cards in the Wild: A Corpus-Scale Census of Documentation Practice in Open-Weight Foundation Models | how2how2how2-arch | 2026-08-31 | [manuscript](issue-50/manuscript.md) |
 | #52 | Rust in the Wild: A Corpus-Scale Census of C/C++ → Rust Rewrites in Open-Source Software | how2how2how2-arch | 2026-08-31 | [manuscript](issue-52/manuscript.md) |
+| #57 | Multi-Agent in the Wild: A Corpus-Scale Census of LLM Multi-Agent Architectures in Open-Source Software | how2how2how2-arch | 2026-09-01 | [manuscript](issue-57/manuscript.md) |
 
 Each published manuscript lives in `papers/issue-<N>/` (merged to `main`), traceable from its registration issue. Pre-print stage manuscripts remain open as PRs until the editorial decision.
