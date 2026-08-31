@@ -1,0 +1,38 @@
+ISSUE #52 — VALIDATION REPORT (2-pass annotation protocol, per editorial watch-item 2026-08-30)
+
+Protocol: 36 hand-annotated cells (repo, component) spanning all 4 tiers and
+both sides of each era-pair. Labels are derived from recursive pinned-tree file
+inventories (extension counts + build manifests) plus content spot-checks.
+
+Pass A (2026-08-31, initial): labels from inventories; MIXED flagged for any
+component with both Rust and C/C++ present (git root, quiche/quiche,
+boringssl/rust).
+
+Pass B (2026-08-31, independent re-annotation of the 7 boundary cells):
+content-level verification of every C file in the mixed components.
+Disagreements found: 2/7 boundary cells (28.6%); overall 2/36 (5.6%).
+  - cloudflare/quiche quiche/ : pass-A MIXED -> pass-B RUST.
+    Evidence: all 5 C files are examples/*.c (client/server FFI demos) +
+    include/quiche.h (C API header); the quiche core is pure Rust (70 .rs).
+  - google/boringssl rust/   : pass-A MIXED -> pass-B RUST.
+    Evidence: the single C file is rust/bssl-sys/wrapper.h (2247 B, FFI
+    wrapper header for the bssl-sys bindings); 94 .rs implement the component.
+Resolution rule (applied to classifier + ground truth): C/C++ that is FFI-only
+(wrapper headers, example clients, include/ and examples/ subpaths) is
+AUXILIARY, not implementation. A component is MIXED only when genuine C/C++
+implementation coexists with Rust.
+
+Resolved boundary verdicts:
+  git/git (root)                 MIXED  (244+ root .c core + Rust Cargo/build + src/)
+  git/git src/                   RUST   (hash.rs/loose.rs/varint.rs/csum_file.rs, GPL-2.0 verified)
+  sudo-rs src/                   RUST   (91 .rs; 1 file = pam/wrapper.h, 31 B FFI header)
+  miniz_oxide miniz/             C      (compat/reference C in a Rust repo)
+  quiche quiche/                 RUST   (FFI examples/header only)
+  boringssl rust/                RUST   (bssl-sys wrapper.h only)
+  ring crypto/                   C      (actual C/asm crypto primitives)
+
+Final: accuracy 36/36 = 1.000 (RUST 18/18, C 16/16, CPP 1/1, MIXED 1/1);
+boundary 7/7, clear 29/29. Inter-annotator agreement: 34/36 raw (94.4%);
+post-resolution 36/36. A second independent human annotator was not available
+(this is a single-instance author census); the 2-pass test-retest protocol and
+the committed per-cell evidence strings make the protocol re-checkable.

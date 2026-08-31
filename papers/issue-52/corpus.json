@@ -1,0 +1,441 @@
+{
+  "title": "Rust in the Wild: A Corpus-Scale Census of C/C++ -> Rust Rewrites in Open-Source Software",
+  "issue": 52,
+  "snapshot": "2026-08-31",
+  "tiers": {
+    "pairs": [
+      {
+        "tier": "Tier A system utilities",
+        "c_side": {
+          "repo": "coreutils/coreutils",
+          "tier": "Tier A system utilities",
+          "role": "GNU coreutils (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 5275,
+          "size_kb": 45731,
+          "default_branch": "master",
+          "head_sha": "3f3a822de773851032d5997b962a4cf1d8db994c",
+          "description": "Public mirror. Pull requests and Issues accepted"
+        },
+        "rust_side": {
+          "repo": "uutils/coreutils",
+          "tier": "Tier A system utilities",
+          "role": "uutils \u2014 Rust reimplementation of coreutils",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 24007,
+          "size_kb": 44572,
+          "default_branch": "main",
+          "head_sha": "325183372aaf86d8ae6feaf4f9548f74fe815102",
+          "description": "Cross-platform Rust rewrite of the GNU coreutils"
+        }
+      },
+      {
+        "tier": "Tier A system utilities",
+        "c_side": {
+          "repo": "sudo-project/sudo",
+          "tier": "Tier A system utilities",
+          "role": "sudo (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 1699,
+          "size_kb": 205437,
+          "default_branch": "main",
+          "head_sha": "194042b55c54055c7337fbbd93a518e8da69866f",
+          "description": "Utility to execute a command as another user"
+        },
+        "rust_side": {
+          "repo": "trifectatechfoundation/sudo-rs",
+          "tier": "Tier A system utilities",
+          "role": "sudo-rs \u2014 memory-safe reimplementation of sudo/su",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 4449,
+          "size_kb": 5682,
+          "default_branch": "main",
+          "head_sha": "50d8dd231fdfbf144b09f3b7fcbd93a8b965a217",
+          "description": "A memory safe implementation of sudo and su."
+        }
+      },
+      {
+        "tier": "Tier A system utilities",
+        "c_side": {
+          "repo": "ggreer/the_silver_searcher",
+          "tier": "Tier A system utilities",
+          "role": "the_silver_searcher ag (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 27111,
+          "size_kb": 2426,
+          "default_branch": "master",
+          "head_sha": "a61f1780b64266587e7bc30f0f5f71c6cca97c0f",
+          "description": "A code-searching tool similar to ack, but faster."
+        },
+        "rust_side": {
+          "repo": "BurntSushi/ripgrep",
+          "tier": "Tier A system utilities",
+          "role": "ripgrep \u2014 Rust successor search tool",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 67724,
+          "size_kb": 5700,
+          "default_branch": "master",
+          "head_sha": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+          "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore"
+        }
+      },
+      {
+        "tier": "Tier A system utilities",
+        "c_side": {
+          "repo": "git/git",
+          "tier": "Tier A system utilities",
+          "role": "git (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 62905,
+          "size_kb": 317025,
+          "default_branch": "master",
+          "head_sha": "c73e85354c275c9d409b26445089bc16940fc527",
+          "description": "Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing l"
+        },
+        "rust_side": {
+          "repo": "GitoxideLabs/gitoxide",
+          "tier": "Tier A system utilities",
+          "role": "gitoxide \u2014 pure-Rust implementation of git",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 11900,
+          "size_kb": 105139,
+          "default_branch": "main",
+          "head_sha": "ec9815225218068f603d63c973d1f8e145b3ba37",
+          "description": "An idiomatic, lean, fast & safe pure Rust implementation of Git"
+        }
+      },
+      {
+        "tier": "Tier B network/async",
+        "c_side": {
+          "repo": "openssl/openssl",
+          "tier": "Tier B network/async",
+          "role": "OpenSSL (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 30726,
+          "size_kb": 354865,
+          "default_branch": "master",
+          "head_sha": "47aae188a6bdc65675ea9c2a9e770bef48a5d781",
+          "description": "General purpose TLS and crypto library"
+        },
+        "rust_side": {
+          "repo": "rustls/rustls",
+          "tier": "Tier B network/async",
+          "role": "rustls \u2014 Rust TLS implementation",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 7590,
+          "size_kb": 19941,
+          "default_branch": "main",
+          "head_sha": "05b63b0a51514cc32c8d839bf56191b246431ec2",
+          "description": "A modern TLS library in Rust"
+        }
+      },
+      {
+        "tier": "Tier B network/async",
+        "c_side": {
+          "repo": "madler/zlib",
+          "tier": "Tier B network/async",
+          "role": "zlib (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 7057,
+          "size_kb": 5000,
+          "default_branch": "develop",
+          "head_sha": "e3dc0a85b7032e98380dec011bc8f2c2ee0d8fca",
+          "description": "A massively spiffy yet delicately unobtrusive compression library."
+        },
+        "rust_side": {
+          "repo": "Frommi/miniz_oxide",
+          "tier": "Tier B network/async",
+          "role": "miniz_oxide \u2014 Rust replacement for miniz/zlib",
+          "side": "rust_side",
+          "lang": "C",
+          "stars": 252,
+          "size_kb": 1486,
+          "default_branch": "master",
+          "head_sha": "e2214d401a59e91537838cc16eba82454044044f",
+          "description": "Rust replacement for miniz"
+        }
+      },
+      {
+        "tier": "Tier B network/async",
+        "c_side": {
+          "repo": "libuv/libuv",
+          "tier": "Tier B network/async",
+          "role": "libuv (C event loop)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 27146,
+          "size_kb": 17868,
+          "default_branch": "v1.x",
+          "head_sha": "f87c8e4f70f234b952d9c47b15fb567f78e5f399",
+          "description": "Cross-platform asynchronous I/O"
+        },
+        "rust_side": {
+          "repo": "tokio-rs/tokio",
+          "tier": "Tier B network/async",
+          "role": "tokio \u2014 Rust async runtime",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 33039,
+          "size_kb": 17187,
+          "default_branch": "master",
+          "head_sha": "ea91b33ca57ff0581b38e735cc108f831bccbdaa",
+          "description": "A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ..."
+        }
+      },
+      {
+        "tier": "Tier B network/async",
+        "c_side": {
+          "repo": "ngtcp2/ngtcp2",
+          "tier": "Tier B network/async",
+          "role": "ngtcp2 (C QUIC)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 1509,
+          "size_kb": 18677,
+          "default_branch": "main",
+          "head_sha": "2ce971d5fef2972e2bf332c8172f6f00b480c008",
+          "description": "ngtcp2 project is an effort to implement IETF QUIC protocol"
+        },
+        "rust_side": {
+          "repo": "cloudflare/quiche",
+          "tier": "Tier B network/async",
+          "role": "quiche \u2014 Rust QUIC implementation",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 11795,
+          "size_kb": 26685,
+          "default_branch": "master",
+          "head_sha": "0b1a89af341b7e42c4e75fedf7bdda246d8319af",
+          "description": "\ud83e\udd67 Savoury implementation of the QUIC transport protocol and HTTP/3"
+        }
+      },
+      {
+        "tier": "Tier C CLI/data tools",
+        "c_side": {
+          "repo": "vim/vim",
+          "tier": "Tier C CLI/data tools",
+          "role": "vim (C)",
+          "side": "c_side",
+          "lang": "Vim Script",
+          "stars": 40822,
+          "size_kb": 236855,
+          "default_branch": "master",
+          "head_sha": "5c9c5a43c183e8d1e4156b468343d0aa0f3b081c",
+          "description": "The official Vim repository"
+        },
+        "rust_side": {
+          "repo": "helix-editor/helix",
+          "tier": "Tier C CLI/data tools",
+          "role": "helix \u2014 Rust modal editor",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 46026,
+          "size_kb": 89879,
+          "default_branch": "master",
+          "head_sha": "079a789e8cb08ead67f19e1971a1b7438b37354b",
+          "description": "A post-modern modal text editor."
+        }
+      },
+      {
+        "tier": "Tier C CLI/data tools",
+        "c_side": {
+          "repo": "tmux/tmux",
+          "tier": "Tier C CLI/data tools",
+          "role": "tmux (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 48921,
+          "size_kb": 22681,
+          "default_branch": "master",
+          "head_sha": "40381bdcd91dac4deb177e1ed1a5794969d97d39",
+          "description": "tmux source code"
+        },
+        "rust_side": {
+          "repo": "zellij-org/zellij",
+          "tier": "Tier C CLI/data tools",
+          "role": "zellij \u2014 Rust terminal multiplexer",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 35197,
+          "size_kb": 200071,
+          "default_branch": "main",
+          "head_sha": "e839bfffa586992364309a685b2c71f3b23c247e",
+          "description": "A terminal workspace with batteries included"
+        }
+      },
+      {
+        "tier": "Tier C CLI/data tools",
+        "c_side": {
+          "repo": "htop-dev/htop",
+          "tier": "Tier C CLI/data tools",
+          "role": "htop (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 8293,
+          "size_kb": 7255,
+          "default_branch": "main",
+          "head_sha": "e0dd9db34cee5a7822b3b0cdada4538beaa0861d",
+          "description": "htop - an interactive process viewer"
+        },
+        "rust_side": {
+          "repo": "ClementTsang/bottom",
+          "tier": "Tier C CLI/data tools",
+          "role": "bottom \u2014 Rust system monitor",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 13953,
+          "size_kb": 90623,
+          "default_branch": "main",
+          "head_sha": "3066c959d087b8474b37b965525004e7792f0589",
+          "description": "Yet another cross-platform graphical process/system monitor."
+        }
+      },
+      {
+        "tier": "Tier C CLI/data tools",
+        "c_side": {
+          "repo": "jqlang/jq",
+          "tier": "Tier C CLI/data tools",
+          "role": "jq (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 35519,
+          "size_kb": 8059,
+          "default_branch": "master",
+          "head_sha": "41b8edfe5437fcd25a072081c05f9f770f9e9b85",
+          "description": "Command-line JSON processor"
+        },
+        "rust_side": {
+          "repo": "01mf02/jaq",
+          "tier": "Tier C CLI/data tools",
+          "role": "jaq \u2014 Rust clone of jq",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 3739,
+          "size_kb": 2608,
+          "default_branch": "main",
+          "head_sha": "f167ad43872b14ef4355922331830571ddbe7dae",
+          "description": "A jq clone focussed on correctness, speed, and simplicity"
+        }
+      },
+      {
+        "tier": "Tier D security/crypto",
+        "c_side": {
+          "repo": "gpg/gnupg",
+          "tier": "Tier D security/crypto",
+          "role": "GnuPG (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 973,
+          "size_kb": 119462,
+          "default_branch": "master",
+          "head_sha": "a09f16f2b17a47b3f215e2d257ef256f3b2b724e",
+          "description": "The GNU Privacy Guard. NOTE: Maintainers are not tracking this mirror. Do not make pull requests here, nor comment any c"
+        },
+        "rust_side": {
+          "repo": "rpgp/rpgp",
+          "tier": "Tier D security/crypto",
+          "role": "rpgp \u2014 pure-Rust OpenPGP implementation",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 1063,
+          "size_kb": 5580,
+          "default_branch": "main",
+          "head_sha": "82aae1f2eb84b19f5f76edc024ef2ca62cb12283",
+          "description": "OpenPGP implemented in pure Rust, permissively licensed"
+        }
+      },
+      {
+        "tier": "Tier D security/crypto",
+        "c_side": {
+          "repo": "google/boringssl",
+          "tier": "Tier D security/crypto",
+          "role": "BoringSSL (C++)",
+          "side": "c_side",
+          "lang": "C++",
+          "stars": 2263,
+          "size_kb": 391414,
+          "default_branch": "main",
+          "head_sha": "a074f282d026a0ebbed7c9efef5a0cf63f72338d",
+          "description": "Mirror of BoringSSL"
+        },
+        "rust_side": {
+          "repo": "briansmith/ring",
+          "tier": "Tier D security/crypto",
+          "role": "ring \u2014 Rust crypto primitives library",
+          "side": "rust_side",
+          "lang": "Assembly",
+          "stars": 4105,
+          "size_kb": 120516,
+          "default_branch": "main",
+          "head_sha": "840167e18e4fa837eb48de46500454a616a15a6e",
+          "description": "An experiment."
+        }
+      },
+      {
+        "tier": "Tier D security/crypto",
+        "c_side": {
+          "repo": "openssh/openssh-portable",
+          "tier": "Tier D security/crypto",
+          "role": "OpenSSH (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 3977,
+          "size_kb": 34547,
+          "default_branch": "master",
+          "head_sha": "0ef0f5a839831c213f24e3f2ae434765c607fb50",
+          "description": "Portable OpenSSH"
+        },
+        "rust_side": {
+          "repo": "warp-tech/russh",
+          "tier": "Tier D security/crypto",
+          "role": "russh \u2014 Rust SSH implementation",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 1849,
+          "size_kb": 2808,
+          "default_branch": "main",
+          "head_sha": "d3ae702a43a163946f258297e398dc216339d5ce",
+          "description": "Rust SSH client & server library"
+        }
+      },
+      {
+        "tier": "Tier D security/crypto",
+        "c_side": {
+          "repo": "jedisct1/libsodium",
+          "tier": "Tier D security/crypto",
+          "role": "libsodium (C)",
+          "side": "c_side",
+          "lang": "C",
+          "stars": 13922,
+          "size_kb": 11718,
+          "default_branch": "master",
+          "head_sha": "9608bca840dbcf939d9d5ed159062eb425dea86c",
+          "description": "A modern, portable, easy to use crypto library."
+        },
+        "rust_side": {
+          "repo": "sodiumoxide/sodiumoxide",
+          "tier": "Tier D security/crypto",
+          "role": "sodiumoxide \u2014 Rust FFI binding (NOT a rewrite \u2014 signal contrast)",
+          "side": "rust_side",
+          "lang": "Rust",
+          "stars": 644,
+          "size_kb": 16023,
+          "default_branch": "master",
+          "head_sha": "3057acb1a030ad86ed8892a223d64036ab5e8523",
+          "description": "[DEPRECATED] Sodium Oxide: Fast cryptographic library for Rust (bindings to libsodium)"
+        }
+      }
+    ]
+  }
+}
