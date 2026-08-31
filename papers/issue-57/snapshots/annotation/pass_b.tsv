@@ -1,0 +1,21 @@
+# Pass-B re-verification — issue #57 boundary cells (R104)
+# Protocol: 7 boundary cells re-annotated independently from the same evidence
+# bundles (test-retest, single annotator — mirroring #52's 2-pass protocol).
+# Disagreements are resolved by documented rules below.
+
+repo	axis	passA	passB	agree	rule
+crewAIInc/crewAI	ii	ORCH-WORKER	TEAM	no	primary-abstraction rule: framework headline = Crew of role agents (manager optional in hierarchical mode) → TEAM
+openai/openai-agents-python	ii	TEAM	TEAM	yes	handoffs = peer control transfer, no central orchestrator → TEAM
+huggingface/smolagents	i	SINGLE	SINGLE	yes	core abstraction = single CodeAgent; multi-agent secondary → SINGLE
+Significant-Gravitas/AutoGPT	ii	ORCH-WORKER	ORCH-WORKER	yes	platform server orchestrates agent runs → ORCH-WORKER
+THU-MAIC/OpenMAIC	iii	UNKNOWN	UNKNOWN	yes	classroom grading not confirmed in evidence → UNKNOWN (honest)
+Lumiwealth/lumibot	iii	UNKNOWN	NO	no	eval-harness≠judge rule: agent_eval dirs are benchmark tooling, not an in-architecture judge → NO
+OpenHands/OpenHands	ii	TEAM	TEAM	yes	canvas = concurrent agents on shared workspace → TEAM
+
+# Disagreement: 2/7 boundary (28.6%), 2/60 overall (3.3%)
+# Both resolved by explicit rules (primary-abstraction; eval-harness≠judge).
+# Final ground truth = pass B.
+
+# R105 data-integrity fix: ground_truth.tsv now stores FINAL (pass-B) labels.
+# crewAI/ii final=TEAM (pass-B, primary-abstraction rule — file had stale pass-A label).
+# LibreChat/i final=SINGLE (R104 refinement: provider multiplicity != concurrent instances — file had stale label).

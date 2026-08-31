@@ -1,0 +1,6606 @@
+{
+ "0x4m4/hexstrike-ai": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "AGI-Edgerunners/LLM-Agents-Papers": {
+  "frameworks": [],
+  "n_manifest_fetched": 0,
+  "n_manifest_paths": 0,
+  "per_path": []
+ },
+ "ANative-Lab/EvoAgentX": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "BigBodyCobain/Shadowbroker": {
+  "frameworks": [],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "backend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "backend/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "privacy-core/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "desktop-shell/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "desktop-shell/tauri-skeleton/src-tauri/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "BuilderIO/micro-agent": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "test/nextjs-app/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Dicklesworthstone/mcp_agent_mail": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Eigenwise/atomic-agents": {
+  "frameworks": [],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 52,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/quickstart/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/rag-chatbot/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/deep-research/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/hooks-example/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/fastapi-memory/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/basic-multimodal/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/dspy-integration/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/web-search-agent/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/nested-multimodal/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/persistent-memory/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/youtube-to-recipe/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/basic-pdf-analysis/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/youtube-summarizer/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/orchestration-agent/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-examples/progressive-disclosure/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/weather/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/weather/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/calculator/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/pdf_reader/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/fia_signals/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/arxiv_search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/bocha_search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/calculator/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/pdf_reader/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/datetime_tool/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/fia_signals/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/tavily_search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/arxiv_search/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/bocha_search/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/searxng_search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/datetime_tool/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/tavily_search/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/webpage_scraper/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/searxng_search/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/wikipedia_search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "atomic-forge/tools/hackernews_search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "EverMind-AI/EverOS": {
+  "frameworks": [],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "deploy/netlify_relay/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "use-cases/claude-code-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "use-cases/game-of-throne-demo/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "use-cases/game-of-throne-demo/backend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "use-cases/game-of-throne-demo/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "EverMind-AI/Raven": {
+  "frameworks": [],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "bridge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "ui-tui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "raven/tui_rpc/methods/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "ui-tui/packages/hermes-ink/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "FoundationAgents/MetaGPT": {
+  "frameworks": [
+   "metagpt"
+  ],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [
+     "metagpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "metagpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/stanford_town/requirements.txt",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "examples/android_assistant/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "metagpt/ext/sela/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "metagpt/environment/minecraft/mineflayer/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "GetBindu/Bindu": {
+  "frameworks": [
+   "autogen/ag2",
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 12,
+  "n_manifest_paths": 12,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "autogen/ag2",
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "autogen/ag2",
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "inbox/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "gateway/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "scripts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdks/typescript/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/runtime-boxd-agent/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/runtime-boxd-agent/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/typescript-openai-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/typescript-langchain-agent/package.json",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/typescript-langchain-quiz-agent/package.json",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "HKUDS/DeepCode": {
+  "frameworks": [],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "desktop/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "website/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "desktop/src-tauri/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "core/skills/builtin/mcp-builder/scripts/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "KnockOutEZ/wigolo": {
+  "frameworks": [
+   "crewai",
+   "langchain"
+  ],
+  "n_manifest_fetched": 18,
+  "n_manifest_paths": 18,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "site/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdks/python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdks/typescript/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/wigolo-crewai/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "packages/wigolo-langchain/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/vercel-ai-sdk-tools/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/wigolo-llamaindex/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/plugin-search-engine/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/wigolo-vercel-ai-sdk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/sdk-typescript-research/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/no-main/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/bad-json/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/valid-both/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/invalid-shape/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/throws-on-load/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/valid-extractor/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/plugins/valid-search-engine/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "LazyAGI/LazyLLM": {
+  "frameworks": [],
+  "n_manifest_fetched": 6,
+  "n_manifest_paths": 6,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "docs/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/data_tests/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "lazyllm/components/finetune/alpaca-lora/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Lumiwealth/lumibot": {
+  "frameworks": [
+   "google-adk"
+  ],
+  "n_manifest_fetched": 5,
+  "n_manifest_paths": 5,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "setup.py",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "setup.cfg",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "MemMachine/MemMachine": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 14,
+  "n_manifest_paths": 14,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "packages/meta/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "packages/client/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/common/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/server/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ts-client/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/openclaw/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/simple_chatbot/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/ts_rest_client_demo/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tools/chatgpt2memmachine/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "evaluation/retrieval_agent/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/strands-memmachine/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/dify/plugin/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "MemTensor/MemOS": {
+  "frameworks": [
+   "langchain",
+   "langgraph",
+   "openai-agents"
+  ],
+  "n_manifest_fetched": 13,
+  "n_manifest_paths": 13,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "poetry.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain",
+     "openai-agents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "docker/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/memos-local-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/memos-local-openclaw/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/openwork-memos-integration/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/MemOS-Cloud-OpenClaw-Plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/openwork-memos-integration/apps/desktop/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/openwork-memos-integration/packages/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/openwork-memos-integration/apps/desktop/skills/dev-browser/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/openwork-memos-integration/apps/desktop/skills/file-permission/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/openwork-memos-integration/apps/desktop/skills/ask-user-question/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Mirix-AI/MIRIX": {
+  "frameworks": [
+   "langchain",
+   "langgraph",
+   "openai-agents"
+  ],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "poetry.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "samples/poetry.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain",
+     "openai-agents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "dashboard/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "samples/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "MrLesk/Backlog.md": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "NVIDIA/SkillSpector": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "OpenBMB/AgentVerse": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 4,
+  "n_manifest_paths": 4,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "ui/src/phaser3-rex-plugins/plugins/gameobjects/live2d/framework/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "OpenBMB/ChatDev": {
+  "frameworks": [],
+  "n_manifest_fetched": 5,
+  "n_manifest_paths": 5,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Paper2Poster/Paper2Poster": {
+  "frameworks": [
+   "autogen/ag2",
+   "camel",
+   "langchain"
+  ],
+  "n_manifest_fetched": 5,
+  "n_manifest_paths": 5,
+  "per_path": [
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "autogen/ag2",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "demo/requirements.txt",
+    "frameworks": [
+     "langchain",
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "demo/Paper2Poster/requirements.txt",
+    "frameworks": [
+     "autogen/ag2",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "utils/src/experiment/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "demo/Paper2Poster/utils/src/experiment/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "PawanOsman/OpenCursor": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "QwenLM/qwen-code": {
+  "frameworks": [],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 63,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "docs-site/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/core/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/webui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/live-host/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/node-repl/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/web-shell/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/acp-bridge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/mobile-mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/sdk-python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/audio-capture/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/desktop-shell/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/web-templates/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/sdk-typescript/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/chrome-extension/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/external-context/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/vscode-ide-companion/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integration-tests/terminal-capture/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/external-context-mem0/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integration-tests/concurrent-runner/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/dws/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cua-driver/python/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/base/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cua-driver/rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/qqbot/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/wecom/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/feishu/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/github/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/gitlab/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/weixin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/dingtalk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/telegram/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cua-driver/python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cua-driver/typescript/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/desktop-shell/src-tauri/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/plugin-example/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integration-tests/fixtures/idle-mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/web-templates/src/insight/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/web-templates/src/export-html/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "SalesforceAIResearch/AgentLite": {
+  "frameworks": [
+   "agentlite",
+   "langchain"
+  ],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [
+     "agentlite"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "SenteLabsAI/OpenExecutive": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "packages/core/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/core/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Significant-Gravitas/AutoGPT": {
+  "frameworks": [
+   "autogpt",
+   "google-adk",
+   "langchain",
+   "langgraph",
+   "openai-agents"
+  ],
+  "n_manifest_fetched": 9,
+  "n_manifest_paths": 9,
+  "per_path": [
+   {
+    "path": "classic/poetry.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "classic/pyproject.toml",
+    "frameworks": [
+     "autogpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "classic/original_autogpt/setup.py",
+    "frameworks": [
+     "autogpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "autogpt_platform/backend/poetry.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain",
+     "openai-agents",
+     "google-adk",
+     "autogpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "autogpt_platform/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "autogpt_platform/backend/pyproject.toml",
+    "frameworks": [
+     "autogpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "autogpt_platform/autogpt_libs/poetry.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "autogpt_platform/autogpt_libs/pyproject.toml",
+    "frameworks": [
+     "autogpt"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "classic/original_autogpt/autogpt/app/setup.py",
+    "frameworks": [
+     "autogpt"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "THU-MAIC/OpenMAIC": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 11,
+  "n_manifest_paths": 11,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "render-service/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/docs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/pptxgenjs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/mathml2omml/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/@openmaic/dsl/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/@openmaic/editor/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/@openmaic/storage/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/@openmaic/importer/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/@openmaic/renderer/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/@openmaic/generation/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "TencentCloud/TencentDB-Agent-Memory": {
+  "frameworks": [],
+  "n_manifest_fetched": 9,
+  "n_manifest_paths": 9,
+  "per_path": [
+   {
+    "path": "MemoryCore/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "MemoryPanel/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "MemoryProxy/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "MemoryKnowledge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "MemoryPanel/web/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "MemoryCore/pi-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "MemoryCore/openclaw-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdk/memory-core/python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdk/memory-core/typescript/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "The-Swarm-Corporation/AutoHedge": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "ValueCell-ai/ClawX": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "harness/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "resources/openclaw-plugins/clawx-openai-image/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "Yeachan-Heo/oh-my-claudecode": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "benchmark/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/fixtures/typescript-pnpm/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "aden-hive/hive": {
+  "frameworks": [],
+  "n_manifest_fetched": 11,
+  "n_manifest_paths": 11,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "core/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tools/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "core/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tools/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tools/src/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "core/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "core/framework/credentials/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tools/src/aden_tools/senders/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "ag2ai/ag2": {
+  "frameworks": [
+   "autogen/ag2"
+  ],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "agentstack-ai/AgentStack": {
+  "frameworks": [
+   "crewai",
+   "langchain",
+   "langgraph",
+   "openai-swarm"
+  ],
+  "n_manifest_fetched": 21,
+  "n_manifest_paths": 21,
+  "per_path": [
+   {
+    "path": "poetry.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "crewai",
+     "langgraph",
+     "langchain",
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/job_posting/poetry.lock",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/trip_planner/poetry.lock",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/howards_agent/poetry.lock",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/job_posting/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/web_researcher/poetry.lock",
+    "frameworks": [
+     "crewai",
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/trip_planner/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/howards_agent/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/stock_analysis/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/web_researcher/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/claude_computer_user/poetry.lock",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/market_monitoring/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/research_assistant/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/sentiment_analyser/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/stock_market_research/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "agentstack/frameworks/templates/crewai/{{cookiecutter.project_metadata.project_slug}}/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "agentstack/frameworks/templates/autogen/{{cookiecutter.project_metadata.project_slug}}/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "agentstack/frameworks/templates/langgraph/{{cookiecutter.project_metadata.project_slug}}/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "agentstack/frameworks/templates/llamaindex/{{cookiecutter.project_metadata.project_slug}}/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "agentstack/frameworks/templates/openai_swarm/{{cookiecutter.project_metadata.project_slug}}/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   }
+  ]
+ },
+ "alchaincyf/hermes-agent-orange-book": {
+  "frameworks": [],
+  "n_manifest_fetched": 0,
+  "n_manifest_paths": 0,
+  "per_path": []
+ },
+ "alejandrobalderas/claude-code-from-source": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "web/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "apache/maka": {
+  "frameworks": [],
+  "n_manifest_fetched": 16,
+  "n_manifest_paths": 16,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/desktop/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/core/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/eval/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/runtime/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/storage/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "native/gitoxide-helper/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/computer-use/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/runtime-host/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "native/runtime-host-peer/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "experiments/windows-sandbox/launcher/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/eval/harbor/deepseek-harness-profile/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/eval/harbor/deepseek-harness-toolchain/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "assafelovic/gpt-researcher": {
+  "frameworks": [
+   "autogen/ag2",
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 14,
+  "n_manifest_paths": 14,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "autogen/ag2",
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "docs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "backend/requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "multi_agents/package.json",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "deep_agents/requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "multi_agents/requirements.txt",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "docs/npm/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "frontend/nextjs/package.json",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "docs/discord-bot/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multi_agents/ag2/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "evals/simple_evals/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "evals/hallucination_eval/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "breferrari/obsidian-mind": {
+  "frameworks": [],
+  "n_manifest_fetched": 4,
+  "n_manifest_paths": 4,
+  "per_path": [
+   {
+    "path": ".scripts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".claude/scripts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".github/scripts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".shardmind/hooks/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "browser-act/skills": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "builderz-labs/mission-control": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "business-science/ai-data-science-team": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 5,
+  "n_manifest_paths": 5,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "apps/sql-database-agent-app/requirements.txt",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "apps/exploratory-copilot-app/requirements.txt",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "apps/pandas-data-analyst-app/requirements.txt",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "bytedance/UI-TARS-desktop": {
+  "frameworks": [],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 80,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "infra/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "infra/pdk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/ui-tars/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/gui-agent-2.0/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/operator-browserbase/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/llm/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui-tars/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui-tars/sdk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/agio/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui-tars/utio/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/common/configs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui-tars/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/gui-agent/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/websites/docs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/websites/main/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/agent-tars/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/omni-tars/core/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/agent-ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/websites/tarko/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/agent-tars/core/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/agent-cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/interface/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/mcp-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/gui-agent/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/llm-client/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/agent-infra/logger/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/agent-infra/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui-tars/visualizer/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/agent-infra/browser/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/agent-server/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/agent-ui-cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/tarko/shared-utils/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui-tars/electron-ipc/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/gui-agent/agent-sdk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/omni-tars/gui-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "multimodal/omni-tars/mcp-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "bytedance/trae-agent": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "calesthio/OpenMontage": {
+  "frameworks": [],
+  "n_manifest_fetched": 6,
+  "n_manifest_paths": 6,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "remotion-composer/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".agents/skills/remotion-to-hyperframes/assets/test-corpus/tier-1-title-card/remotion-src/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".agents/skills/remotion-to-hyperframes/assets/test-corpus/tier-2-multi-scene/remotion-src/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".agents/skills/remotion-to-hyperframes/assets/test-corpus/tier-3-data-driven/remotion-src/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "camel-ai/camel": {
+  "frameworks": [
+   "camel"
+  ],
+  "n_manifest_fetched": 14,
+  "n_manifest_paths": 14,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "apps/dilemma/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/airbnb_mcp/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "camel/benchmarks/mock_website/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/mistral_OCR/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/youtube_ocr/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/chat_with_github/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/chat_with_youtube/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/cloudfare_mcp_camel/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/pptx_toolkit_usecase/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/codeforces_question_solver/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/multi_agent_research_assistant/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "camel/toolkits/hybrid_browser_toolkit/ts/package.json",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "camel-ai/owl": {
+  "frameworks": [
+   "camel"
+  ],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "community_usecase/Puppeteer MCP/requirements.txt",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "community_usecase/stock-analysis/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "community_usecase/a_share_investment_agent_camel/requirements.txt",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "community_usecase/OWL Interview Preparation Assistant/requirements.txt",
+    "frameworks": [],
+    "status": "fetch-fail"
+   }
+  ]
+ },
+ "campfirein/byterover-cli": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "cft0808/edict": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "edict/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "edict/backend/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "chrisworsey55/atlas-gic": {
+  "frameworks": [],
+  "n_manifest_fetched": 0,
+  "n_manifest_paths": 0,
+  "per_path": []
+ },
+ "cloudflare/agents": {
+  "frameworks": [],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 103,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "agent-think/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "site/agents/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/a2a/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/x402/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/shell/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/think/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/voice/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/webmcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/agents/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/ai-chat/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openai-sdk/basic/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ai-chat/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/channels/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/codemode/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/vue-chat/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/x402-mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openai-sdk/pizzaz/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/channels/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/codemode/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/assistant/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/tictactoe/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/workflows/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/auth-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp-client/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp-server/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp-worker/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/playground/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openai-sdk/handoffs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/email-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/voice-agent/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/voice-input/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openai-sdk/chess-app/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/hono-agents/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/agent-skills/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/codemode-mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/cross-domain/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/deploy-churn/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/webmcp-react/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "coreyhaines31/marketingskills": {
+  "frameworks": [],
+  "n_manifest_fetched": 0,
+  "n_manifest_paths": 0,
+  "per_path": []
+ },
+ "crewAIInc/crewAI": {
+  "frameworks": [
+   "crewai",
+   "langchain"
+  ],
+  "n_manifest_fetched": 13,
+  "n_manifest_paths": 13,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/cli/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/crewai/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/devtools/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/crewai-core/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/crewai-files/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/crewai-tools/pyproject.toml",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/templates/crew/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/templates/flow/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/templates/tool/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/templates/json_crew/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/templates/declarative_flow/pyproject.toml",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "danny-avila/LibreChat": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "api/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "client/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/api/package.json",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "packages/client/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/data-schemas/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/data-provider/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/data-provider/react-query/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "dataelement/Clawith": {
+  "frameworks": [
+   "langgraph"
+  ],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "backend/pyproject.toml",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": ".vite/deps/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "dimensionalOS/dimos": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 25,
+  "n_manifest_paths": 25,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "web/sdk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "misc/DimSim/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "web/cockpit/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "native/rust/dimos-module/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/native-modules/cpp/flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/web/dimos_interface/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/native-modules/rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "native/rust/dimos-module-macros/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/mapping/ray_tracing/rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/mapping/ray_tracing/rust/py/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/mapping/ray_tracing/rust/py/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/navigation/nav_3d/mls_planner/rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/hardware/sensors/lidar/virtual_mid360/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/hardware/sensors/lidar/livox/cpp/flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/hardware/sensors/lidar/fastlio2/cpp/flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/hardware/sensors/lidar/pointlio/cpp/flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/hardware/sensors/camera/realsense/rust/flake.nix",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/navigation/nav_3d/mls_planner/rust/py/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/hardware/sensors/camera/realsense/rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "dimos/navigation/nav_3d/mls_planner/rust/py/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "dmno-dev/varlock": {
+  "frameworks": [],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 56,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "smoke-tests/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "framework-tests/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/utils/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/varlock/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/tsconfig/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ci-env-info/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/vscode-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/env-spec-parser/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/varlock-website/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/varlock-docs-mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/encryption-binary-rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "smoke-tests/smoke-test-nextjs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "smoke-tests/smoke-test-lang-rust/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/encryption-binary-rust/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "smoke-tests/smoke-test-monorepo/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/encryption-binary-swift/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "smoke-tests/smoke-test-pkg-json-config/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/pass/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/keeper/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/doppler/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/keepass/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/akeyless/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/dashlane/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/passbolt/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/integrations/expo/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/integrations/nuxt/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/integrations/vite/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/1password/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/bitwarden/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/infisical/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/integrations/astro/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/kubernetes/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/integrations/nextjs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/aws-secrets/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/proton-pass/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/native-helpers/darwin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/integrations/cloudflare/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/azure-key-vault/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/plugins/hashicorp-vault/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "eastlondoner/vibe-tools": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "infra/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "emcie-co/parlant": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 5,
+  "n_manifest_paths": 5,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "poetry.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/parlant/api/chat/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/parlant/api/chat/.vite/deps_temp_0491001f/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "epiral/bb-browser": {
+  "frameworks": [],
+  "n_manifest_fetched": 4,
+  "n_manifest_paths": 4,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/daemon/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "fuxicodex/Fuxi": {
+  "frameworks": [],
+  "n_manifest_fetched": 0,
+  "n_manifest_paths": 0,
+  "per_path": []
+ },
+ "google/adk-python": {
+  "frameworks": [
+   "crewai",
+   "google-adk",
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "crewai",
+     "langgraph",
+     "langchain",
+     "google-adk"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/google/adk/telemetry/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "contributing/samples/multimodal/computer_use/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "contributing/samples/adk_team/adk_knowledge_agent/requirements.txt",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "contributing/samples/integrations/authn-adk-all-in-one/requirements.txt",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "contributing/samples/integrations/langchain_youtube_search_agent/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "contributing/samples/integrations/gcp_auth/client/requirements.txt",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "contributing/samples/integrations/authn-adk-all-in-one/adk_agents/requirements.txt",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "gptme/gptme": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 10,
+  "n_manifest_paths": 10,
+  "per_path": [
+   {
+    "path": "poetry.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "tauri/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "webui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "gptme/cli/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tauri/e2e/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tauri/src-tauri/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "webui/extension/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/gptme-acp/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "gptme/lessons/skills/python-repl/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "huggingface/smolagents": {
+  "frameworks": [
+   "smolagents"
+  ],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "smolagents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/async_agent/requirements.txt",
+    "frameworks": [
+     "smolagents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/open_deep_research/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "ifixai-ai/iFixAi": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "plugin/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "jd-opensource/OxyGent": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "applications/oxybank/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "mcp_servers/kubernetes_mcp_server/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "karpathy/autoresearch": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "langchain-ai/langchain": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 42,
+  "per_path": [
+   {
+    "path": "libs/core/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langchain/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/core/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langchain_v1/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/model-profiles/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/standard-tests/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/text-splitters/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langchain/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langchain_v1/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/model-profiles/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/standard-tests/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/text-splitters/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/exa/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/xai/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/groq/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/nomic/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/chroma/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/ollama/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/openai/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/qdrant/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/deepseek/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/anthropic/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/fireworks/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/mistralai/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/exa/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/openrouter/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/perplexity/uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/xai/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/groq/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/huggingface/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/nomic/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/chroma/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/ollama/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/openai/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/qdrant/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/deepseek/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/anthropic/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/fireworks/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/mistralai/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/partners/openrouter/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "langchain-ai/langgraph": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 39,
+  "n_manifest_paths": 39,
+  "per_path": [
+   {
+    "path": "libs/cli/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/sdk-py/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/prebuilt/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langgraph/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/sdk-py/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/prebuilt/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langgraph/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint-sqlite/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint-postgres/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint-conformance/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint-sqlite/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint-postgres/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/checkpoint-conformance/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/poetry.lock",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/pyproject.toml",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/js-examples/package.json",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/js-monorepo-example/package.json",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/python-monorepo-example/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/uv-examples/simple/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/uv-examples/monorepo/uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/uv-examples/simple/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/uv-examples/monorepo/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/graphs_reqs_a/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/graphs_reqs_b/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/langgraph/tests/example_app/requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/graph_prerelease_reqs/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/graph_prerelease_reqs_fail/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/tests/unit_tests/cli/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "libs/cli/js-monorepo-example/apps/agent/package.json",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/js-monorepo-example/libs/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/python-monorepo-example/apps/agent/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/python-monorepo-example/libs/shared/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/uv-examples/monorepo/apps/agent/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/uv-examples/monorepo/libs/shared/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/graph_prerelease_reqs/deps/zuper_deps/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "libs/cli/examples/graph_prerelease_reqs/deps/additional_deps/pyproject.toml",
+    "frameworks": [
+     "langgraph"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "langfengQ/verl-agent": {
+  "frameworks": [],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "agent_system/environments/env_package/gym_cards/gym-cards/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "agent_system/environments/env_package/webshop/webshop/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "agent_system/environments/env_package/search/third_party/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "agent_system/environments/env_package/webshop/webshop/baseline_models/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "langflow-ai/langflow": {
+  "frameworks": [
+   "autogen/ag2",
+   "crewai",
+   "langchain",
+   "langgraph",
+   "smolagents"
+  ],
+  "n_manifest_fetched": 36,
+  "n_manifest_paths": 36,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "autogen/ag2",
+     "langchain",
+     "smolagents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "docs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/lfx/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/sdk/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "scripts/gp/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/langflow-stepflow/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/exa/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/ibm/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/backend/base/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2",
+     "crewai",
+     "langgraph",
+     "langchain",
+     "smolagents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/vllm/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/arxiv/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/azure/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/amazon/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/cohere/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/google/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/ollama/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/openai/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/oracle/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/paddle/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/valkey/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/docling/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/datastax/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/anthropic/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/confluent/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/firecrawl/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/nextplaid/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/toolguard/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/duckduckgo/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/empiriolabs/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/lfx-bundles/pyproject.toml",
+    "frameworks": [
+     "langchain",
+     "smolagents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/bundles/openai-compatible/pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/backend/base/langflow/logging/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "src/backend/base/langflow/initial_setup/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "langroid/langroid": {
+  "frameworks": [
+   "camel"
+  ],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "camel"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "setup.cfg",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/langdb/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/portkey/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/docqa/streamlit-app/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/main/mcp/weather-server-python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "lastmile-ai/mcp-agent": {
+  "frameworks": [
+   "crewai",
+   "langchain"
+  ],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 69,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "crewai",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/crewai/requirements.txt",
+    "frameworks": [
+     "crewai"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/temporal/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/langchain/requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/lm_studio/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/multithread/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/cloud/mcp/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/tracing/llm/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/tracing/mcp/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp/mcp_roots/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/tracing/agent/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/cloud/temporal/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/functions/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/tracing/langfuse/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/tracing/temporal/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/cloud/hello_world/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp/mcp_websockets/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/agent_factory/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/token_counter/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/cloud/agent_factory/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/cloud/observability/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp/mcp_elicitation/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/streaming_demo/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/human_input/temporal/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/mcp_basic_agent/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/mcp_hello_world/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/mcp_tool_filter/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/oauth_basic_agent/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp/mcp_streamable_http/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/mcp_researcher/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/basic/mcp_model_selector/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp/mcp_sse_with_headers/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp_agent_server/asyncio/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/mcp_browser_agent/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/mcp_realtor_agent/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/workflows/workflow_swarm/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mcp_agent_server/temporal/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/workflows/workflow_router/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/usecases/fastapi_websocket/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "mem0ai/mem0": {
+  "frameworks": [
+   "langchain",
+   "openai-agents"
+  ],
+  "n_manifest_fetched": 24,
+  "n_manifest_paths": 24,
+  "per_path": [
+   {
+    "path": "poetry.lock",
+    "frameworks": [
+     "langchain",
+     "openai-agents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "mem0-ts/package.json",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "server/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "mem0/memory/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "cli/node/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "cli/python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "server/dashboard/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/mem0-demo/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/openclaw/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/multimodal-demo/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/zapier-mem0/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/vercel-ai-sdk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/n8n-nodes-mem0/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/yt-assistant-chrome/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/deepseek-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/mem0-plugin/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/pi-agent-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/openai-inbuilt-tools/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/vercel-ai-sdk-chat-app/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "mem0-ts/src/oss/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "mem0-ts/src/community/package.json",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/mem0-strands/python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/mem0-plugin/.opencode-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "microsoft/RD-Agent": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 9,
+  "n_manifest_paths": 9,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "web/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "docs/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "rdagent/scenarios/rl/autorl_bench/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "rdagent/scenarios/rl/autorl_bench/benchmarks/webshop/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "rdagent/scenarios/rl/autorl_bench/benchmarks/alfworld/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "rdagent/scenarios/rl/autorl_bench/benchmarks/humaneval/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "rdagent/scenarios/rl/autorl_bench/benchmarks/alpacaeval/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "microsoft/SkillOpt": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "plugins/dsh/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "microsoft/agent-framework": {
+  "frameworks": [],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 66,
+  "per_path": [
+   {
+    "path": "python/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/a2a/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/lab/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/core/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/mem0/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/ag-ui/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/devui/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/monty/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/redis/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/tools/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/claude/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/gemini/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/ollama/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/openai/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/bedrock/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/chatkit/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/foundry/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/hosting/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/mistral/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/purview/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/anthropic/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/hyperlight/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/declarative/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/hosting-a2a/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/hosting-mcp/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/azure-cosmos/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/copilotstudio/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/foundry_local/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/github_copilot/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/orchestrations/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/azure-ai-search/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/foundry_hosting/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/hosting-telegram/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/hosting-responses/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/azure-cosmos-memory/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/azure-contentunderstanding/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/devui/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/samples/04-hosting/mcp/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/samples/04-hosting/a2a/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "microsoft/agent-lightning": {
+  "frameworks": [],
+  "n_manifest_fetched": 4,
+  "n_manifest_paths": 4,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/swe_smith/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/llm-in-sandbox/vendor/llm-in-sandbox/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "microsoft/autogen": {
+  "frameworks": [
+   "autogen/ag2",
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 25,
+  "n_manifest_paths": 25,
+  "per_path": [
+   {
+    "path": "python/uv.lock",
+    "frameworks": [
+     "autogen/ag2",
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/samples/gitty/uv.lock",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/agbench/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/samples/gitty/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/agbench/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-studio/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/pyautogen/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-ext/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-core/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2",
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-studio/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-studio/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/magentic-one-cli/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-agentchat/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-test-utils/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/samples/agentchat_graphrag/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/component-schema-gen/pyproject.toml",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/samples/core_streaming_handoffs_fastapi/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/autogen-studio/frontend/package.json",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/templates/new-package/{{cookiecutter.package_name}}/pyproject.toml",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "python/packages/agbench/src/agbench/template/requirements.txt",
+    "frameworks": [],
+    "status": "fetch-fail"
+   },
+   {
+    "path": "python/packages/agbench/benchmarks/GAIA/Templates/MagenticOne/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/agbench/benchmarks/GAIA/Templates/ParallelAgents/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/agbench/benchmarks/HumanEval/Templates/AgentChat/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "python/packages/agbench/benchmarks/GAIA/Templates/SelectorGroupChat/requirements.txt",
+    "frameworks": [
+     "autogen/ag2"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "minitap-ai/mobile-use": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "mksglu/context-mode": {
+  "frameworks": [],
+  "n_manifest_fetched": 4,
+  "n_manifest_paths": 4,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".openclaw-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "web/og/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": ".pi/extensions/context-mode/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "modelscope/agentscope": {
+  "frameworks": [
+   "agentscope"
+  ],
+  "n_manifest_fetched": 4,
+  "n_manifest_paths": 4,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "agentscope"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/web_ui/package.json",
+    "frameworks": [
+     "agentscope"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/web_ui/backend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/web_ui/frontend/package.json",
+    "frameworks": [
+     "agentscope"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "musistudio/claude-code-router": {
+  "frameworks": [],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "cdn/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "docs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/core/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/electron/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "mvanhorn/last30days-skill": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "skills/last30days/scripts/lib/vendor/bird-search/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "nanobrowser/nanobrowser": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 16,
+  "n_manifest_paths": 16,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "chrome-extension/package.json",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/hmr/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/i18n/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pages/content/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pages/options/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/zipper/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/storage/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pages/side-panel/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/tsconfig/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/dev-utils/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/vite-config/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/schema-utils/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/tailwind-config/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "netease-youdao/LobsterAI": {
+  "frameworks": [],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "SKILLs/pptx/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "SKILLs/web-search/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "SKILLs/imap-smtp-email/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openclaw-extensions/mcp-bridge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openclaw-extensions/ask-user-question/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openclaw-extensions/lobsterai-model-compat/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "openclaw-extensions/lobster-media-generation/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "numman-ali/openskills": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "op7418/CodePilot": {
+  "frameworks": [],
+  "n_manifest_fetched": 6,
+  "n_manifest_paths": 6,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "apps/site/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "\u8d44\u6599/package/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "\u8d44\u6599/weixin-openclaw-cli/package/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "\u8d44\u6599/feishu-openclaw-plugin/package/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "\u8d44\u6599/weixin-openclaw-package/package/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "openJiuwen-ai/jiuwenswarm": {
+  "frameworks": [
+   "google-adk"
+  ],
+  "n_manifest_fetched": 13,
+  "n_manifest_paths": 13,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "google-adk"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenbox/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenbox/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenswarm/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenbox/docker/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/jiuwenswarm-tui/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenswarm/symphony/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/jiuwenswarm-tui/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenswarm/channels/tui/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenswarm/channels/web/frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenswarm/agents/harness/code/rails/sdd/design_rail/skills/aet-req-design/scripts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "jiuwenswarm/agents/harness/code/rails/sdd/design_rail/skills/aet-req-analysis/scripts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "openai/openai-agents-python": {
+  "frameworks": [
+   "openai-agents"
+  ],
+  "n_manifest_fetched": 6,
+  "n_manifest_paths": 6,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "openai-agents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "src/agents/tracing/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/realtime/twilio/requirements.txt",
+    "frameworks": [
+     "openai-agents"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/realtime/twilio_sip/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/sandbox/tutorials/data/dataroom/setup.py",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "openai/swarm": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "setup.cfg",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/support_bot/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "openchamber/openchamber": {
+  "frameworks": [],
+  "n_manifest_fetched": 6,
+  "n_manifest_paths": 6,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/web/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/mobile/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/vscode/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/electron/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "pydantic/pydantic-ai": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 7,
+  "n_manifest_paths": 7,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "clai/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pydantic_evals/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pydantic_graph/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pydantic_ai_slim/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "rohitg00/agentmemory": {
+  "frameworks": [],
+  "n_manifest_fetched": 6,
+  "n_manifest_paths": 6,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "website/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "packages/mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/pi/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/openclaw/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/filesystem-watcher/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "ruvnet/ruflo": {
+  "frameworks": [
+   "openai-swarm"
+  ],
+  "n_manifest_fetched": 40,
+  "n_manifest_paths": 62,
+  "per_path": [
+   {
+    "path": "Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "v3/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "ruflo/package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "v3/goal_ui/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "plugins/ruflo-arena/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "plugins/ruflo-graph-intelligence/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "ruflo/src/ruvocal/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/cli/package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/mcp/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "ruflo/src/mcp-bridge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/crates/ruflo-agntcy/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/codex/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/hooks/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/swarm/package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/agentic-qe/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/claims/package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/memory/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/neural/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/shared/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/browser/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/plugins/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/testing/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/crates/ruflo-watermark/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/gastown-bridge/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/cli-core/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/guidance/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/security/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/prime-radiant/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/aidefence/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/providers/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/watermark/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/financial-risk/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/gastown-bridge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/perf-optimizer/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/deployment/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/embeddings/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/legal-contracts/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "v3/plugins/teammate-plugin/package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "v3/@claude-flow/integration/package.json",
+    "frameworks": [
+     "openai-swarm"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "satellitecomponent/Neurite": {
+  "frameworks": [],
+  "n_manifest_fetched": 8,
+  "n_manifest_paths": 8,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/ai-proxy/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/webscrape/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/automation/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/wiki-search/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/direct-access/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "localhost_servers/wolfram-alpha/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "siyuan-note/siyuan": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "app/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "volcengine/OpenViking": {
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_manifest_fetched": 27,
+  "n_manifest_paths": 27,
+  "per_path": [
+   {
+    "path": "uv.lock",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "setup.py",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "pyproject.toml",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "bot/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "docs/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "web-studio/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "npm/cli/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "bot/bridge/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "crates/ragfs/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "crates/ov_cli/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdk/python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "sdk/typescript/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/multi_tenant/uv.lock",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "crates/ragfs-python/Cargo.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/api_test/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/oc2ov_test/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "tests/oc2ov_test/requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "crates/ragfs-python/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/multi_tenant/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/openclaw-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/opencode-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "integrations/langchain/pyproject.toml",
+    "frameworks": [
+     "langgraph",
+     "langchain"
+    ],
+    "status": "ok"
+   },
+   {
+    "path": "examples/dsh-memory-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/openwebui-plugin/pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/claude-code-memory-plugin/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "examples/openclaw-plugin/setup-helper/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "wang2122/sprix-sage-router": {
+  "frameworks": [],
+  "n_manifest_fetched": 1,
+  "n_manifest_paths": 1,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "xlang-ai/OpenAgents": {
+  "frameworks": [
+   "langchain"
+  ],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "frontend/package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "backend/requirements.txt",
+    "frameworks": [
+     "langchain"
+    ],
+    "status": "ok"
+   }
+  ]
+ },
+ "yizhiyanhua-ai/fireworks-tech-graph": {
+  "frameworks": [],
+  "n_manifest_fetched": 2,
+  "n_manifest_paths": 2,
+  "per_path": [
+   {
+    "path": "package.json",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "skills/fireworks-tech-graph/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ },
+ "zhayujie/CowAgent": {
+  "frameworks": [],
+  "n_manifest_fetched": 3,
+  "n_manifest_paths": 3,
+  "per_path": [
+   {
+    "path": "pyproject.toml",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "requirements.txt",
+    "frameworks": [],
+    "status": "ok"
+   },
+   {
+    "path": "desktop/package.json",
+    "frameworks": [],
+    "status": "ok"
+   }
+  ]
+ }
+}

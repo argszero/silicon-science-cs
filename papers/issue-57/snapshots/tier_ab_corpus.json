@@ -1,0 +1,1477 @@
+{
+ "microsoft/autogen": {
+  "default_branch": "main",
+  "head_sha": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+  "stars": 60717,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "ag2ai/ag2": {
+  "default_branch": "main",
+  "head_sha": "5ad0ab79794a27f169810941c0c062db9dc86a66",
+  "stars": 4896,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "autogen/ag2",
+    "match": "ag2",
+    "line": "# Distribution is named \"ag2\" but the importable module lives in ./ag2"
+   }
+  ],
+  "source": "seed"
+ },
+ "crewAIInc/crewAI": {
+  "default_branch": "main",
+  "head_sha": "da4daadba0e5049abc00fee8bc31b8b8019c60dd",
+  "stars": 57865,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "crewai",
+    "match": "crewai",
+    "line": "name = \"crewai-workspace\""
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain-core",
+    "line": "# langchain-core <1.2.31 has GHSA-926x-3r5x-gfhw and is required by langchain-text-splitters 1.1.2+."
+   }
+  ],
+  "source": "seed"
+ },
+ "langchain-ai/langgraph": {
+  "default_branch": "main",
+  "head_sha": "11ee185999b86bfea2d8c0e69cef9a5e37acf686",
+  "stars": 40772,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "langchain-ai/langchain": {
+  "default_branch": "master",
+  "head_sha": "e92c8a08bf382121cc1e95f7e75ddc8cb9c01ab0",
+  "stars": 145328,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "Significant-Gravitas/AutoGPT": {
+  "default_branch": "master",
+  "head_sha": "32a43d005c0c42079ceba68d9a49c28e0eeaa6c7",
+  "stars": 187027,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "FoundationAgents/MetaGPT": {
+  "default_branch": "main",
+  "head_sha": "11cdf466d042aece04fc6cfd13b28e1a70341b1f",
+  "stars": 70117,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "metagpt",
+    "match": "metagpt",
+    "line": "# azure-cognitiveservices-speech~=1.31.0 # Used by metagpt/tools/azure_tts.py"
+   }
+  ],
+  "source": "seed"
+ },
+ "OpenBMB/ChatDev": {
+  "default_branch": "main",
+  "head_sha": "4fb2db0ea90375ce1059f44fe03ffbd191a7a169",
+  "stars": 34162,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json",
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "xlang-ai/OpenAgents": {
+  "default_branch": "main",
+  "head_sha": "ff2e46440699af1324eb25655b622c4a131265bb",
+  "stars": 4859,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "OpenBMB/AgentVerse": {
+  "default_branch": "main",
+  "head_sha": "f90c4bd9680fdd3bcff8c52c9170911a59b23478",
+  "stars": 5117,
+  "language": "JavaScript",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "langchain==0.0.157"
+   }
+  ],
+  "source": "seed"
+ },
+ "camel-ai/camel": {
+  "default_branch": "master",
+  "head_sha": "5cd0d0f4bda29893bdbf90c707c4ee59e36c829c",
+  "stars": 17656,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "camel",
+    "match": "camel-ai",
+    "line": "name = \"camel-ai\""
+   }
+  ],
+  "source": "seed"
+ },
+ "modelscope/agentscope": {
+  "default_branch": "main",
+  "head_sha": "215289d0b25ef8323144c07a769a97631a06dab4",
+  "stars": 30203,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "agentscope",
+    "match": "agentscope",
+    "line": "name = \"agentscope\""
+   }
+  ],
+  "source": "seed"
+ },
+ "huggingface/smolagents": {
+  "default_branch": "main",
+  "head_sha": "30bb1161095dbae2271e6bc3cc4c219cc3897a57",
+  "stars": 29070,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "smolagents",
+    "match": "smolagents",
+    "line": "name = \"smolagents\""
+   }
+  ],
+  "source": "seed"
+ },
+ "openai/openai-agents-python": {
+  "default_branch": "main",
+  "head_sha": "89c02c828ee8510fe9a84ee6675608193aa13b02",
+  "stars": 29094,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "openai-agents",
+    "match": "openai-agents",
+    "line": "name = \"openai-agents\""
+   }
+  ],
+  "source": "seed"
+ },
+ "openai/swarm": {
+  "default_branch": "main",
+  "head_sha": "6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22",
+  "stars": 21932,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "microsoft/agent-framework": {
+  "default_branch": "main",
+  "head_sha": "6a0773ba2180e8036d138dbb9794ae64ec2d978b",
+  "stars": 13239,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "seed"
+ },
+ "google/adk-python": {
+  "default_branch": "main",
+  "head_sha": "bed446c5e0f1301f0b9a59b5f1f87a6c6ee2b31b",
+  "stars": 21338,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "crewai",
+    "match": "crewai",
+    "line": "\"crewai[tools]; python_version>='3.11' and python_version<'3.12'\", # chromadb/pypika fail on 3.12+"
+   },
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "\"langgraph>=1.0.10,<2\","
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain-community",
+    "line": "\"langchain-community>=0.3.17\","
+   },
+   {
+    "framework": "google-adk",
+    "match": "google-adk",
+    "line": "name = \"google-adk\""
+   }
+  ],
+  "source": "seed"
+ },
+ "SalesforceAIResearch/AgentLite": {
+  "default_branch": "main",
+  "head_sha": "b173239a652eea560e57c6fe46b0c0af7c4f3578",
+  "stars": 651,
+  "language": "Jupyter Notebook",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "langchain==0.1.3"
+   },
+   {
+    "framework": "agentlite",
+    "match": "agentlite",
+    "line": "name=\"agentlite-llm\","
+   }
+  ],
+  "source": "seed"
+ },
+ "langflow-ai/langflow": {
+  "default_branch": "main",
+  "head_sha": "da3d5050e83e55f885e0627245676933a867d06b",
+  "stars": 153961,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json",
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "keywords = [\"nlp\", \"langchain\", \"openai\", \"gpt\", \"gui\"]"
+   }
+  ],
+  "source": "tierb"
+ },
+ "karpathy/autoresearch": {
+  "default_branch": "master",
+  "head_sha": "228791fb499afffb54b46200aca536f79142f117",
+  "stars": 94985,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "ruvnet/ruflo": {
+  "default_branch": "main",
+  "head_sha": "29f048fc3b556f857cf2b126d2a84c19d2daa0d0",
+  "stars": 69920,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [
+   {
+    "framework": "openai-swarm",
+    "match": "\"swarm\"",
+    "line": "\"swarm\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "mem0ai/mem0": {
+  "default_branch": "main",
+  "head_sha": "19cb89aff472325c707f64b2f34ae6afdbf7faf7",
+  "stars": 64416,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain-aws>=0.2.23,<0.3.0\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "mvanhorn/last30days-skill": {
+  "default_branch": "main",
+  "head_sha": "a218edadbc3361672f5e5e2cd72a8212b0b3fbb8",
+  "stars": 60743,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "calesthio/OpenMontage": {
+  "default_branch": "main",
+  "head_sha": "cd9f3c1f03368be87b140af494914b8ee4e3c7a4",
+  "stars": 54840,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "zhayujie/CowAgent": {
+  "default_branch": "master",
+  "head_sha": "ed5bb344cfe42cee443c8266ba47ee666d8d7471",
+  "stars": 46735,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "coreyhaines31/marketingskills": {
+  "default_branch": "main",
+  "head_sha": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+  "stars": 46235,
+  "language": "JavaScript",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "siyuan-note/siyuan": {
+  "default_branch": "master",
+  "head_sha": "44a6c212a994c7ba8129fc38b001a9ab58957c6f",
+  "stars": 46070,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "danny-avila/LibreChat": {
+  "default_branch": "main",
+  "head_sha": "14d4f2789d8f1d308713f7acd98fab925f8aa74d",
+  "stars": 42641,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "Yeachan-Heo/oh-my-claudecode": {
+  "default_branch": "main",
+  "head_sha": "e9e8fa3847ce0b3529b84d895e841988c7308f3d",
+  "stars": 38913,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "bytedance/UI-TARS-desktop": {
+  "default_branch": "main",
+  "head_sha": "c2ad42e3eb9b27830db41a3e6f51ca7179d9b168",
+  "stars": 38769,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "musistudio/claude-code-router": {
+  "default_branch": "main",
+  "head_sha": "c3231f84d7e25bce8e3b49dbb471f64c9af0710a",
+  "stars": 36985,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "volcengine/OpenViking": {
+  "default_branch": "main",
+  "head_sha": "0b3b407c9df618b3e6e6a9bae6bb698029372bb5",
+  "stars": 34601,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain>=1.0.0\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "assafelovic/gpt-researcher": {
+  "default_branch": "main",
+  "head_sha": "6f998577d547b1e54ec662dac63583aa11e3b84b",
+  "stars": 29214,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "autogen/ag2",
+    "match": "ag2",
+    "line": "\"ag2[openai]>=0.11.2\","
+   },
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "\"langgraph>=0.2.76\","
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain>=1.0.0\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "rohitg00/agentmemory": {
+  "default_branch": "main",
+  "head_sha": "e04ba88819c365c9acf9d6661ea802143e728bd6",
+  "stars": 27834,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "QwenLM/qwen-code": {
+  "default_branch": "main",
+  "head_sha": "954f3a92ce7fcf2485ac670f101891fbcd979db5",
+  "stars": 27518,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "TencentCloud/TencentDB-Agent-Memory": {
+  "default_branch": "feat/server_team",
+  "head_sha": "3efcd317b84146d6a08518ac0f7ee7c8a8d200ec",
+  "stars": 25364,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "THU-MAIC/OpenMAIC": {
+  "default_branch": "main",
+  "head_sha": "aa7d5fd5856bdb75f9cbd1850b69147d4079f56d",
+  "stars": 25605,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "\"@langchain/langgraph\": \"^1.1.1\","
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"@langchain/core\": \"^1.1.16\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "mksglu/context-mode": {
+  "default_branch": "main",
+  "head_sha": "b43308699aa6a9ffbb5fcb2c4809a4414426e178",
+  "stars": 20270,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "camel-ai/owl": {
+  "default_branch": "main",
+  "head_sha": "fba1dd5b3a9e8cc15f16221bb002cca7e3de2d9d",
+  "stars": 20116,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [
+   {
+    "framework": "camel",
+    "match": "CAMEL-AI",
+    "line": "authors = [{ name = \"CAMEL-AI.org\" }]"
+   }
+  ],
+  "source": "tierb"
+ },
+ "pydantic/pydantic-ai": {
+  "default_branch": "main",
+  "head_sha": "f4f6ddee242ade6f8146c5255fabe5d257060684",
+  "stars": 19608,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain-core",
+    "line": "\"langchain-core>=1.3.3\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "emcie-co/parlant": {
+  "default_branch": "develop",
+  "head_sha": "ea737442b8ae65854a842542e544fbe7e6144bad",
+  "stars": 18269,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "microsoft/agent-lightning": {
+  "default_branch": "main",
+  "head_sha": "88528bf4b7360d852f5bc5d023943697953ec332",
+  "stars": 17934,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "cft0808/edict": {
+  "default_branch": "main",
+  "head_sha": "14a207557719c046af0f993a7bff1cc5a5015b33",
+  "stars": 16758,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "microsoft/SkillOpt": {
+  "default_branch": "main",
+  "head_sha": "db46cd9ae7ce12f1dbd73c945185816aa738751d",
+  "stars": 16527,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "HKUDS/DeepCode": {
+  "default_branch": "main",
+  "head_sha": "9b832713df585107fe9702153ac220d7ce52354d",
+  "stars": 16456,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "NVIDIA/SkillSpector": {
+  "default_branch": "main",
+  "head_sha": "539c1150b7c6e9a8935679f5ed5108bafdc68515",
+  "stars": 15374,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json",
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "\"langgraph>=1.0.10\","
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain-anthropic>=1.4.5\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "microsoft/RD-Agent": {
+  "default_branch": "main",
+  "head_sha": "6762f84f9bc0f5c6486c50a00e128a57ac6c3683",
+  "stars": 14382,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "langchain"
+   }
+  ],
+  "source": "tierb"
+ },
+ "nanobrowser/nanobrowser": {
+  "default_branch": "master",
+  "head_sha": "24a14b76e14a9c30fd84878ca7985049d1e7d064",
+  "stars": 13703,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "EverMind-AI/EverOS": {
+  "default_branch": "main",
+  "head_sha": "d48963cc1ebb5e14bf7b561d55d3ac699396c8c1",
+  "stars": 12584,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "bytedance/trae-agent": {
+  "default_branch": "main",
+  "head_sha": "e839e559ac61bdd0e057c375dd1dee391fee797d",
+  "stars": 12062,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "ifixai-ai/iFixAi": {
+  "default_branch": "main",
+  "head_sha": "849a2ea1cb29422c1abb7415f51592eeae8a69f5",
+  "stars": 11872,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "0x4m4/hexstrike-ai": {
+  "default_branch": "master",
+  "head_sha": "d689933ff579d839c676c82b231f8e98326c5f04",
+  "stars": 11462,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "MemTensor/MemOS": {
+  "default_branch": "main",
+  "head_sha": "185ebdb925911b55c13b7efe666b74e2e292e484",
+  "stars": 11107,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "langgraph = \"^0.5.1\""
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain-text-splitters (>=1.0.0,<2.0.0)\", # markdown chunk for langchain"
+   }
+  ],
+  "source": "tierb"
+ },
+ "BigBodyCobain/Shadowbroker": {
+  "default_branch": "main",
+  "head_sha": "cd6395f5ee7d5232fc7b553bf74f5e514deaafdb",
+  "stars": 11004,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "yizhiyanhua-ai/fireworks-tech-graph": {
+  "default_branch": "main",
+  "head_sha": "e9c7a9351dee5861707a7ec5560248bf5e7b84b5",
+  "stars": 11007,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "aden-hive/hive": {
+  "default_branch": "main",
+  "head_sha": "54fd8db4ed5f0ba08197b4ff47150b47ffe2f758",
+  "stars": 10989,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json",
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "numman-ali/openskills": {
+  "default_branch": "main",
+  "head_sha": "57d933a4f0d5c8659bd8b285f50fb9554360f0b3",
+  "stars": 10725,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "GetBindu/Bindu": {
+  "default_branch": "main",
+  "head_sha": "7d5b6d256364abdbcff97bd96c82581a03607096",
+  "stars": 9468,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json",
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "autogen/ag2",
+    "match": "ag2",
+    "line": "\"ag2[openai]>=0.11.0\","
+   },
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "\"langgraph>=1.0.8\","
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain>=1.2.9\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "openchamber/openchamber": {
+  "default_branch": "main",
+  "head_sha": "0e3aff88444b7c06a63d50c0ea1eb33a889887f2",
+  "stars": 9410,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "lastmile-ai/mcp-agent": {
+  "default_branch": "main",
+  "head_sha": "f62d849350816588b1c6294e7914bbe4d8b84072",
+  "stars": 8524,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "crewai",
+    "match": "crewai",
+    "line": "crewai = ["
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "langchain = ["
+   }
+  ],
+  "source": "tierb"
+ },
+ "ValueCell-ai/ClawX": {
+  "default_branch": "main",
+  "head_sha": "45b096d3a90c1a8af24f4b42337b5d0e7c6625c8",
+  "stars": 7600,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "MrLesk/Backlog.md": {
+  "default_branch": "main",
+  "head_sha": "e515400138a5e8689b942261465715fbaf8a6224",
+  "stars": 6587,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "op7418/CodePilot": {
+  "default_branch": "main",
+  "head_sha": "aeb1e446fd2bc304a03f6b10baab6c669edc83d6",
+  "stars": 6437,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "Eigenwise/atomic-agents": {
+  "default_branch": "main",
+  "head_sha": "33d2ec94f42d4a65393a336e35edf21ee5700303",
+  "stars": 6215,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "epiral/bb-browser": {
+  "default_branch": "main",
+  "head_sha": "7975dc74b3f637d54906228e52f2ba9454874105",
+  "stars": 6158,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "builderz-labs/mission-control": {
+  "default_branch": "main",
+  "head_sha": "5483a0e1eef15b467c167e95796791112cedbb7c",
+  "stars": 6146,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "PawanOsman/OpenCursor": {
+  "default_branch": "main",
+  "head_sha": "7a1aa7f8019a3cc2c09681943c03c4148ff42c69",
+  "stars": 6006,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "netease-youdao/LobsterAI": {
+  "default_branch": "main",
+  "head_sha": "f4d338c4d1d4ce4025ad95ef1b901279c162e56c",
+  "stars": 5965,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "openJiuwen-ai/jiuwenswarm": {
+  "default_branch": "develop",
+  "head_sha": "fe6024570f3deac0216c666a659425ff7a666da3",
+  "stars": 6308,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "browser-act/skills": {
+  "default_branch": "main",
+  "head_sha": "11c057b03f92101642cadc9f840564574120d184",
+  "stars": 5529,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "cloudflare/agents": {
+  "default_branch": "main",
+  "head_sha": "73d2ed457ba02035d2b1d3efc785c012254ac216",
+  "stars": 5502,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "business-science/ai-data-science-team": {
+  "default_branch": "master",
+  "head_sha": "4ffeb7f38178aa250917f29b01355f8b89ba809e",
+  "stars": 5394,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "langgraph >= 1.0.0"
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "langchain >= 1.0.0"
+   }
+  ],
+  "source": "tierb"
+ },
+ "campfirein/byterover-cli": {
+  "default_branch": "main",
+  "head_sha": "1052ac1a5dd0fde4da8693d4712064f7876c269c",
+  "stars": 4954,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "alchaincyf/hermes-agent-orange-book": {
+  "default_branch": "main",
+  "head_sha": "9ac06e1d05373c3b8b6d49751e8a59c1475f9867",
+  "stars": 4892,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "eastlondoner/vibe-tools": {
+  "default_branch": "main",
+  "head_sha": "4a1d17cf501db3a719a9c2bf0ee0d288282a63a7",
+  "stars": 4828,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "KnockOutEZ/wigolo": {
+  "default_branch": "main",
+  "head_sha": "c6ad4479da7706945b479786df0121e3cce1ece6",
+  "stars": 4794,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "breferrari/obsidian-mind": {
+  "default_branch": "main",
+  "head_sha": "1d367af3c78f36b2e9d16244dcaa103385bd0321",
+  "stars": 4580,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "dimensionalOS/dimos": {
+  "default_branch": "main",
+  "head_sha": "ebc7bc4deb902162ba94cb0d9dc3bfb6b93d938a",
+  "stars": 4444,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "setup.py"
+  ],
+  "frameworks": [
+   {
+    "framework": "langgraph",
+    "match": "langgraph",
+    "line": "# langgraph-prebuilt>=1.0.9 imports ExecutionInfo from langgraph.runtime,"
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "\"langchain>=1.2.3,<2\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "gptme/gptme": {
+  "default_branch": "master",
+  "head_sha": "63cb9f24d9185b582f0c09cad4b25f6099d4b7df",
+  "stars": 4403,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "module = \"langchain.*\""
+   }
+  ],
+  "source": "tierb"
+ },
+ "BuilderIO/micro-agent": {
+  "default_branch": "main",
+  "head_sha": "f33523ce9f9c52a698d13a2883eb2ba7fb4fb462",
+  "stars": 4329,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "The-Swarm-Corporation/AutoHedge": {
+  "default_branch": "main",
+  "head_sha": "c549c7950da112286e76725d49f6a25de8fa99bd",
+  "stars": 4325,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "apache/maka": {
+  "default_branch": "main",
+  "head_sha": "29d02dc218078297215f6792de3afb55b76386da",
+  "stars": 4272,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "dmno-dev/varlock": {
+  "default_branch": "main",
+  "head_sha": "04dc94bdaddf9e05809d8b9777db83818df3f121",
+  "stars": 4239,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [
+   "package.json"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "dataelement/Clawith": {
+  "default_branch": "main",
+  "head_sha": "45fc701c366c69f89dff26d91d6a4a9cbc38e6f8",
+  "stars": 4137,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "langroid/langroid": {
+  "default_branch": "main",
+  "head_sha": "500c78309ed386fd24fd6570e3a308036ea408d0",
+  "stars": 4101,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "Paper2Poster/Paper2Poster": {
+  "default_branch": "main",
+  "head_sha": "623d042f283acee782b2644d6abd63f75eccfa1f",
+  "stars": 3928,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "requirements.txt"
+  ],
+  "frameworks": [
+   {
+    "framework": "autogen/ag2",
+    "match": "ag2",
+    "line": "ag2==0.7.3"
+   },
+   {
+    "framework": "langchain",
+    "match": "langchain",
+    "line": "langchain==0.3.17"
+   }
+  ],
+  "source": "tierb"
+ },
+ "LazyAGI/LazyLLM": {
+  "default_branch": "main",
+  "head_sha": "084d49054d5b44d3ebde6911514660354aaf440d",
+  "stars": 3879,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "EverMind-AI/Raven": {
+  "default_branch": "main",
+  "head_sha": "a620b44fcc44a1896d4347e2010f4618e8ad2907",
+  "stars": 3702,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "package.json",
+   "pyproject.toml"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "Mirix-AI/MIRIX": {
+  "default_branch": "main",
+  "head_sha": "8cb06a62bbb7c478beb33dd4f2815696a72df482",
+  "stars": 3437,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt",
+   "setup.py"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "ANative-Lab/EvoAgentX": {
+  "default_branch": "main",
+  "head_sha": "d77fd6b9a3e76c8dd83bebe3374c53a3f5d16f54",
+  "stars": 3280,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml",
+   "requirements.txt"
+  ],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "MemMachine/MemMachine": {
+  "default_branch": "main",
+  "head_sha": "231ce171098c5c4243b2547ed8ff2a9bed75c4ad",
+  "stars": 3203,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [
+   "pyproject.toml"
+  ],
+  "frameworks": [
+   {
+    "framework": "langchain",
+    "match": "langchain-core",
+    "line": "\"langchain-core>=1.2.28\","
+   }
+  ],
+  "source": "tierb"
+ },
+ "SenteLabsAI/OpenExecutive": {
+  "default_branch": "main",
+  "head_sha": "ac212647e8c56421ac4750c712b31669ef23d369",
+  "stars": 3089,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "fuxicodex/Fuxi": {
+  "default_branch": "main",
+  "head_sha": "66af3ca6cad8becd64dd10f7c48d1bd98ce37bba",
+  "stars": 3073,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "minitap-ai/mobile-use": {
+  "default_branch": "main",
+  "head_sha": "701182d7b5a37bb0159ccbc5149745ab9deca7ea",
+  "stars": 2792,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "wang2122/sprix-sage-router": {
+  "default_branch": "main",
+  "head_sha": "bdc9c24f0f7e170d807ffaeb630a478a5810b8d0",
+  "stars": 2791,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "alejandrobalderas/claude-code-from-source": {
+  "default_branch": "main",
+  "head_sha": "a6d5e452a8e0dd925c22c407c84611b1994562eb",
+  "stars": 2778,
+  "language": "TypeScript",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "AGI-Edgerunners/LLM-Agents-Papers": {
+  "default_branch": "main",
+  "head_sha": "aa40b1276fd08ae95fa936d8a1dfb97db59188c1",
+  "stars": 2341,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "langfengQ/verl-agent": {
+  "default_branch": "master",
+  "head_sha": "20bd331bdbc9026a5668e11362178e10ab7400c8",
+  "stars": 2265,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "agentstack-ai/AgentStack": {
+  "default_branch": "main",
+  "head_sha": "8f79b9decb3bc5e19cdf4e8934befa996e7ac689",
+  "stars": 2189,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "satellitecomponent/Neurite": {
+  "default_branch": "main",
+  "head_sha": "e62b270402b688a39a864007b9c0a02711b9573e",
+  "stars": 2124,
+  "language": "JavaScript",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "Dicklesworthstone/mcp_agent_mail": {
+  "default_branch": "main",
+  "head_sha": "7bce6f031bc29331d7e5aa09a9f67c75c2ab5430",
+  "stars": 2117,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "chrisworsey55/atlas-gic": {
+  "default_branch": "main",
+  "head_sha": "fcfc40dcf628f6af091c28cb2c33827f42cef8fd",
+  "stars": 2090,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "jd-opensource/OxyGent": {
+  "default_branch": "main",
+  "head_sha": "cd96268de5814dfb4e0444cfd687f97508cf996a",
+  "stars": 2066,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ },
+ "Lumiwealth/lumibot": {
+  "default_branch": "dev",
+  "head_sha": "d766aeca67312090c9fddbfef5a7118fd4bad249",
+  "stars": 2016,
+  "language": "Python",
+  "archived": false,
+  "manifests_found": [],
+  "frameworks": [],
+  "source": "tierb"
+ }
+}

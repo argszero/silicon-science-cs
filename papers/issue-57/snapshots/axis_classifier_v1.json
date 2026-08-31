@@ -1,0 +1,10156 @@
+{
+ "0x4m4/hexstrike-ai": {
+  "axis": {
+   "ii": "UNKNOWN",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=[] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "AGI-Edgerunners/LLM-Agents-Papers": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=['pipeline'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "ANative-Lab/EvoAgentX": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=18 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "evoagentx/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2407
+   },
+   {
+    "path": "evoagentx/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 23
+   },
+   {
+    "path": "evoagentx/rag/rag.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 36529
+   },
+   {
+    "path": "evoagentx/hitl/hitl.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1491
+   },
+   {
+    "path": "evoagentx/tools/mcp.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 16118
+   },
+   {
+    "path": "evoagentx/rag/schema.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 33723
+   },
+   {
+    "path": "evoagentx/tools/tool.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4199
+   },
+   {
+    "path": "evoagentx/core/module.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 17183
+   }
+  ]
+ },
+ "BigBodyCobain/Shadowbroker": {
+  "axis": {
+   "ii": "orch-worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=11 providers=['judge'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge']} fw=[]",
+   "iii": "path_judge=13 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 734
+   },
+   {
+    "path": "backend/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 405383
+   },
+   {
+    "path": "frontend/next.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2463
+   },
+   {
+    "path": "frontend/vitest.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1914
+   },
+   {
+    "path": "frontend/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 143
+   },
+   {
+    "path": "frontend/next.config.peer-b.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 189
+   },
+   {
+    "path": "scripts/e2e_openclaw_infonet_agent_live.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6045
+   },
+   {
+    "path": "scripts/apply_plane_alert_to_tracked_names.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 7503
+   }
+  ]
+ },
+ "BuilderIO/micro-agent": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "NO",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=['llm_call'] fw=[]",
+   "ii": "path=['pipeline'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 5,
+  "probed": [
+   {
+    "path": "src/helpers/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5035
+   },
+   {
+    "path": "src/commands/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1533
+   },
+   {
+    "path": "src/helpers/config.test.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 9355
+   },
+   {
+    "path": "src/helpers/apply-unified-diff.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 464
+   },
+   {
+    "path": "src/helpers/apply-unified-diff.test.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1554
+   }
+  ]
+ },
+ "Dicklesworthstone/mcp_agent_mail": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".beads/config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 17
+   },
+   {
+    "path": ".codex/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 421
+   },
+   {
+    "path": "src/mcp_agent_mail/db.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 40128
+   },
+   {
+    "path": "src/mcp_agent_mail/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 253942
+   },
+   {
+    "path": "src/mcp_agent_mail/cli.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 253784
+   },
+   {
+    "path": "src/mcp_agent_mail/llm.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 10460
+   },
+   {
+    "path": "src/mcp_agent_mail/http.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 204059
+   },
+   {
+    "path": "src/mcp_agent_mail/guard.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 41091
+   }
+  ]
+ },
+ "Eigenwise/atomic-agents": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=2 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 458
+   },
+   {
+    "path": "atomic-agents/atomic_agents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 614
+   },
+   {
+    "path": "atomic-assembler/atomic_assembler/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2994
+   },
+   {
+    "path": "atomic-assembler/atomic_assembler/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1219
+   },
+   {
+    "path": "atomic-examples/web-search-agent/pyproject.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 605
+   },
+   {
+    "path": "atomic-examples/orchestration-agent/pyproject.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 634
+   },
+   {
+    "path": "atomic-agents/atomic_agents/base/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 452
+   },
+   {
+    "path": "atomic-agents/atomic_agents/base/base_tool.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5064
+   }
+  ]
+ },
+ "EverMind-AI/EverOS": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=10 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "config.example.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1720
+   },
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 881
+   },
+   {
+    "path": "src/everos/config/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1352
+   },
+   {
+    "path": "src/everos/config/settings.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 20483
+   },
+   {
+    "path": "src/everos/config/default.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7603
+   },
+   {
+    "path": "src/everos/config/default_ome.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3094
+   },
+   {
+    "path": "use-cases/game-of-throne-demo/frontend/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 166
+   },
+   {
+    "path": "src/everos/infra/ome/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7487
+   }
+  ]
+ },
+ "EverMind-AI/Raven": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=11 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1939
+   },
+   {
+    "path": "raven/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 141
+   },
+   {
+    "path": "bridge/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 488
+   },
+   {
+    "path": "ui-tui/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1273
+   },
+   {
+    "path": "ui-tui/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 137
+   },
+   {
+    "path": "ui-tui/src/app.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3502
+   },
+   {
+    "path": "raven/config/paths.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 3782
+   },
+   {
+    "path": "raven/config/raven.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 63502
+   }
+  ]
+ },
+ "FoundationAgents/MetaGPT": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=27 providers=['judge', 'llm_call'] fw=['metagpt']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=['metagpt']",
+   "iii": "path_judge=24 content_judge=True"
+  },
+  "frameworks": [
+   "metagpt"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 638
+   },
+   {
+    "path": "metagpt/config2.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 6050
+   },
+   {
+    "path": "config/config2.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 457
+   },
+   {
+    "path": "config/vault.example.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1635
+   },
+   {
+    "path": "config/config2.example.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4740
+   },
+   {
+    "path": "metagpt/configs/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 126
+   },
+   {
+    "path": "metagpt/strategy/planner.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 7408
+   },
+   {
+    "path": "metagpt/configs/s3_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 305
+   }
+  ]
+ },
+ "GetBindu/Bindu": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=24 providers=[] fw=['autogen/ag2', 'langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=['autogen/ag2', 'langchain', 'langgraph']",
+   "iii": "path_judge=5 content_judge=False"
+  },
+  "frameworks": [
+   "autogen/ag2",
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2873
+   },
+   {
+    "path": "inbox/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 714
+   },
+   {
+    "path": "gateway/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 908
+   },
+   {
+    "path": "inbox/src/App.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3461
+   },
+   {
+    "path": "inbox/src/main.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 299
+   },
+   {
+    "path": "bindu/cli/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 122
+   },
+   {
+    "path": "bindu/runtime/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3070
+   },
+   {
+    "path": "bindu/tunneling/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1838
+   }
+  ]
+ },
+ "HKUDS/DeepCode": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=7 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=4 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 898
+   },
+   {
+    "path": "core/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 36203
+   },
+   {
+    "path": "cli/init_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5724
+   },
+   {
+    "path": "core/agent_setup.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 20319
+   },
+   {
+    "path": "app_server/errors.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2454
+   },
+   {
+    "path": "app_server/server.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 12900
+   },
+   {
+    "path": "cli/config_errors.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1218
+   },
+   {
+    "path": "app_server/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 105
+   }
+  ]
+ },
+ "KnockOutEZ/wigolo": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=['llm_call'] fw=['crewai', 'langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['crewai', 'langchain']",
+   "iii": "path_judge=4 content_judge=False"
+  },
+  "frameworks": [
+   "crewai",
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 272
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 571
+   },
+   {
+    "path": "vitest.perf.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 443
+   },
+   {
+    "path": "src/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 41688
+   },
+   {
+    "path": "site/next.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 519
+   },
+   {
+    "path": "src/persisted-config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 16291
+   },
+   {
+    "path": "src/agent/rank.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1266
+   },
+   {
+    "path": "src/cli/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 17788
+   }
+  ]
+ },
+ "LazyAGI/LazyLLM": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=23 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "lazyllm/configs.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 16228
+   },
+   {
+    "path": "lazyllm/cli/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1813
+   },
+   {
+    "path": "lazyllm/tools/tool_config_inject.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6269
+   },
+   {
+    "path": "lazyllm/tools/agent/base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10125
+   },
+   {
+    "path": "lazyllm/tools/agent/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1225
+   },
+   {
+    "path": "lazyllm/tools/agent/file_tool.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 11572
+   },
+   {
+    "path": "lazyllm/tools/agent/skill_hub.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7775
+   },
+   {
+    "path": "lazyllm/tools/agent/todo_tool.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1990
+   }
+  ]
+ },
+ "Lumiwealth/lumibot": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['judge', 'llm_call'] fw=['google-adk']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge', 'llm_call']} fw=['google-adk']",
+   "iii": "path_judge=2 content_judge=True"
+  },
+  "frameworks": [
+   "google-adk"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "scripts/run_agent_evals.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 51246
+   },
+   {
+    "path": "scripts/analyze_yappi_csv.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6412
+   },
+   {
+    "path": "scripts/stress_agent_minute_duckdb.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7935
+   },
+   {
+    "path": "scripts/prove_agent_detail_csv_real.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4651
+   },
+   {
+    "path": "scripts/run_agent_prompt_cache_probe.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5743
+   },
+   {
+    "path": "scripts/run_agent_observability_proof_4way.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 9051
+   },
+   {
+    "path": "lumibot/components/configs_helper.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3066
+   },
+   {
+    "path": "lumibot/example_strategies/agent_macro_risk.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 6744
+   }
+  ]
+ },
+ "MemMachine/MemMachine": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['llm_call'] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['crew', 'task'], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['langchain']",
+   "iii": "path_judge=62 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "integrations/crewai/tool.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 18748
+   },
+   {
+    "path": "evaluation/utils/atf_helper.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2279
+   },
+   {
+    "path": "integrations/crewai/example.py",
+    "hits": {
+     "crewai": [
+      "crew",
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4090
+   },
+   {
+    "path": "evaluation/utils/agent_utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 18967
+   },
+   {
+    "path": "integrations/crewai/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 177
+   },
+   {
+    "path": "packages/ts-client/jest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 568
+   },
+   {
+    "path": "packages/ts-client/tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 266
+   }
+  ]
+ },
+ "MemTensor/MemOS": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=17 providers=['judge'] fw=['langchain', 'langgraph', 'openai-agents']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge']} fw=['langchain', 'langgraph', 'openai-agents']",
+   "iii": "path_judge=86 content_judge=True"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph",
+   "openai-agents"
+  ],
+  "n_probed": 6,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1588
+   },
+   {
+    "path": ".codex/agents/explorer.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1632
+   },
+   {
+    "path": ".codex/agents/backend-dev.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 2351
+   },
+   {
+    "path": ".codex/agents/code-reviewer.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1774
+   },
+   {
+    "path": ".codex/agents/design-reviewer.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1673
+   },
+   {
+    "path": "apps/memos-local-openclaw/index.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 113158
+   }
+  ]
+ },
+ "Mirix-AI/MIRIX": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=18 providers=['judge', 'llm_call'] fw=['langchain', 'langgraph', 'openai-agents']",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge', 'llm_call']} fw=['langchain', 'langgraph', 'openai-agents']",
+   "iii": "path_judge=5 content_judge=True"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph",
+   "openai-agents"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "mirix/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 12254
+   },
+   {
+    "path": "mirix/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 790
+   },
+   {
+    "path": "evals/llm_judge.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 5043
+   },
+   {
+    "path": "evals/main_eval.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 12358
+   },
+   {
+    "path": "evals/task_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 18673
+   },
+   {
+    "path": "samples/claude_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7842
+   },
+   {
+    "path": "dashboard/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 453
+   },
+   {
+    "path": "dashboard/postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 81
+   }
+  ]
+ },
+ "MrLesk/Backlog.md": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=3 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "backlog/config.yml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 551
+   },
+   {
+    "path": "src/agent-instructions.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 9360
+   },
+   {
+    "path": "src/web/App.tsx",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 41464
+   },
+   {
+    "path": "src/web/main.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 371
+   },
+   {
+    "path": "src/utils/app-info.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 245
+   },
+   {
+    "path": "src/utils/prefix-config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 15589
+   },
+   {
+    "path": "src/utils/config-watcher.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6926
+   },
+   {
+    "path": "src/utils/project-config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2989
+   }
+  ]
+ },
+ "NVIDIA/SkillSpector": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['llm_call'] fw=['langchain', 'langgraph']",
+   "ii": "path=['pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 6,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 243
+   },
+   {
+    "path": "src/skillspector/logging_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2544
+   },
+   {
+    "path": "src/skillspector/providers/_agent_cli.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 34128
+   },
+   {
+    "path": "src/skillspector/providers/_agent_cli_base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4144
+   },
+   {
+    "path": "src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 8609
+   },
+   {
+    "path": "src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7733
+   }
+  ]
+ },
+ "OpenBMB/AgentVerse": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=35 providers=['judge', 'llm_call'] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['judge', 'llm_call']} fw=['langchain']",
+   "iii": "path_judge=10 content_judge=True"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "agentverse/gui.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 23729
+   },
+   {
+    "path": "agentverse/demo.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 20491
+   },
+   {
+    "path": "agentverse/utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1531
+   },
+   {
+    "path": "agentverse/logging.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 9428
+   },
+   {
+    "path": "agentverse/message.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 783
+   },
+   {
+    "path": "agentverse/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 983
+   },
+   {
+    "path": "agentverse/registry.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 712
+   },
+   {
+    "path": "agentverse/agentverse.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2196
+   }
+  ]
+ },
+ "OpenBMB/ChatDev": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "server_main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5046
+   },
+   {
+    "path": "server/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 210
+   },
+   {
+    "path": "entity/graph_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2840
+   },
+   {
+    "path": "entity/config_loader.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1305
+   },
+   {
+    "path": "frontend/vite.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 558
+   },
+   {
+    "path": "frontend/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 356
+   },
+   {
+    "path": "server/config_schema_router.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2157
+   },
+   {
+    "path": "frontend/src/main.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 224
+   }
+  ]
+ },
+ "Paper2Poster/Paper2Poster": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=9 providers=['llm_call'] fw=['autogen/ag2', 'camel', 'langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['autogen/ag2', 'camel', 'langchain']",
+   "iii": "path_judge=44 content_judge=False"
+  },
+  "frameworks": [
+   "autogen/ag2",
+   "camel",
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "demo/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 167575
+   },
+   {
+    "path": "config/poster.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1564
+   },
+   {
+    "path": "utils/config_utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7738
+   },
+   {
+    "path": "utils/critic_utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5448
+   },
+   {
+    "path": "PosterAgent/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 320
+   },
+   {
+    "path": "PosterAgent/parse_raw.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 9052
+   },
+   {
+    "path": "PosterAgent/deoverflow.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 8718
+   },
+   {
+    "path": "PosterAgent/apply_theme.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10778
+   }
+  ]
+ },
+ "PawanOsman/OpenCursor": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=0 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "src/agent/loop.ts",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 51438
+   },
+   {
+    "path": "src/agent/oauth.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 52723
+   },
+   {
+    "path": "src/agent/teams.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 79528
+   },
+   {
+    "path": "src/agent/types.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3881
+   },
+   {
+    "path": "src/agent/ollama.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7254
+   },
+   {
+    "path": "src/agent/prompt.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 11679
+   },
+   {
+    "path": "src/agent/llamacpp.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 20097
+   },
+   {
+    "path": "src/agent/messages.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 11384
+   }
+  ]
+ },
+ "QwenLM/qwen-code": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=10 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 18037
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 510
+   },
+   {
+    "path": "esbuild.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10619
+   },
+   {
+    "path": "scripts/audit-runtime-critical.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2941
+   },
+   {
+    "path": "integration-tests/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2655
+   },
+   {
+    "path": "eslint-rules/no-config-object-create.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1592
+   },
+   {
+    "path": "integration-tests/vitest.loadtest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 695
+   }
+  ]
+ },
+ "SalesforceAIResearch/AgentLite": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=['agentlite', 'langchain']",
+   "ii": "path=['orch-worker', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=['agentlite', 'langchain']",
+   "iii": "path_judge=4 content_judge=False"
+  },
+  "frameworks": [
+   "agentlite",
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "app/Homepage.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1746
+   },
+   {
+    "path": "agentlite/utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 227
+   },
+   {
+    "path": "agentlite/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 23
+   },
+   {
+    "path": "example/SearchAgent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4850
+   },
+   {
+    "path": "example/weather_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1294
+   },
+   {
+    "path": "app/pages/Weatherman.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2563
+   },
+   {
+    "path": "agentlite/llm/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 33
+   },
+   {
+    "path": "agentlite/logging/base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1128
+   }
+  ]
+ },
+ "SenteLabsAI/OpenExecutive": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=13 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "docker/honcho/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4990
+   },
+   {
+    "path": "packages/ui/next.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 886
+   },
+   {
+    "path": "evals/judges/triage_judge.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 4067
+   },
+   {
+    "path": "packages/ui/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3195
+   },
+   {
+    "path": "evals/judges/executive_quality_judge.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 2623
+   },
+   {
+    "path": "packages/core/openexecutive/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 34105
+   },
+   {
+    "path": "packages/ui/src/app/page.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": []
+    },
+    "bytes": 16109
+   }
+  ]
+ },
+ "Significant-Gravitas/AutoGPT": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=66 providers=[] fw=['autogpt', 'google-adk', 'langchain', 'langgraph', 'openai-agents']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=['autogpt', 'google-adk', 'langchain', 'langgraph', 'openai-agents']",
+   "iii": "path_judge=7 content_judge=False"
+  },
+  "frameworks": [
+   "autogpt",
+   "google-adk",
+   "langchain",
+   "langgraph",
+   "openai-agents"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pr_agent.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 79
+   },
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10541
+   },
+   {
+    "path": "autogpt_platform/cloudflare_worker.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5799
+   },
+   {
+    "path": "autogpt_platform/frontend/orval.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3035
+   },
+   {
+    "path": "autogpt_platform/frontend/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 9752
+   },
+   {
+    "path": "autogpt_platform/frontend/playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5008
+   },
+   {
+    "path": "autogpt_platform/frontend/sentry.edge.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1471
+   },
+   {
+    "path": "autogpt_platform/frontend/sentry.server.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1420
+   }
+  ]
+ },
+ "THU-MAIC/OpenMAIC": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=[] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': []} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=21 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "next.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2273
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 279
+   },
+   {
+    "path": "playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1376
+   },
+   {
+    "path": "vitest.eval.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 284
+   },
+   {
+    "path": "app/page.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": []
+    },
+    "bytes": 80998
+   },
+   {
+    "path": "app/layout.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2524
+   },
+   {
+    "path": "configs/font.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1637
+   },
+   {
+    "path": "configs/mime.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 568
+   }
+  ]
+ },
+ "TencentCloud/TencentDB-Agent-Memory": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=2 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "agents/asset-import.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 95168
+   },
+   {
+    "path": "MemoryCore/kubb.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 893
+   },
+   {
+    "path": "MemoryCore/tsdown.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1015
+   },
+   {
+    "path": "MemoryCore/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 642
+   },
+   {
+    "path": "MemoryPanel/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 158
+   },
+   {
+    "path": "MemoryProxy/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 452
+   },
+   {
+    "path": "MemoryProxy/config.example.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 29561
+   },
+   {
+    "path": "MemoryKnowledge/tsdown.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 805
+   }
+  ]
+ },
+ "The-Swarm-Corporation/AutoHedge": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=[]",
+   "ii": "path=['pipeline', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 5,
+  "probed": [
+   {
+    "path": "autohedge/main.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2095
+   },
+   {
+    "path": "autohedge/workers.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": []
+    },
+    "bytes": 2808
+   },
+   {
+    "path": "autohedge/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 121
+   },
+   {
+    "path": "experimental/btc_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7782
+   },
+   {
+    "path": "experimental/crypto_agent_wrapper.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1558
+   }
+  ]
+ },
+ "ValueCell-ai/ClawX": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2969
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 680
+   },
+   {
+    "path": "postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 83
+   },
+   {
+    "path": "tailwind.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 13179
+   },
+   {
+    "path": "playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1448
+   },
+   {
+    "path": "src/App.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7092
+   },
+   {
+    "path": "src/main.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 455
+   },
+   {
+    "path": "src/types/agent.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 42
+   }
+  ]
+ },
+ "Yeachan-Heo/oh-my-claudecode": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=147 providers=['judge'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge']} fw=[]",
+   "iii": "path_judge=112 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2469
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 736
+   },
+   {
+    "path": "benchmark/evaluate.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 16961
+   },
+   {
+    "path": "src/agents/index.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1985
+   },
+   {
+    "path": "src/agents/types.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 4314
+   },
+   {
+    "path": "src/agents/utils.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 11357
+   },
+   {
+    "path": "src/config/index.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 554
+   },
+   {
+    "path": "src/agents/critic.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1203
+   }
+  ]
+ },
+ "aden-hive/hive": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge', 'llm_call']} fw=[]",
+   "iii": "path_judge=26 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 436
+   },
+   {
+    "path": "core/framework/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 41083
+   },
+   {
+    "path": "core/framework/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 166
+   },
+   {
+    "path": "core/frontend/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 663
+   },
+   {
+    "path": "core/frontend/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 811
+   },
+   {
+    "path": "core/frontend/src/App.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2963
+   },
+   {
+    "path": "core/frontend/src/main.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1809
+   },
+   {
+    "path": "core/framework/server/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 48812
+   }
+  ]
+ },
+ "ag2ai/ag2": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=15 providers=['llm_call'] fw=['autogen/ag2']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['autogen/ag2']",
+   "iii": "path_judge=33 content_judge=False"
+  },
+  "frameworks": [
+   "autogen/ag2"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2214
+   },
+   {
+    "path": "ag2/agent.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 80193
+   },
+   {
+    "path": "ag2/acp/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 24473
+   },
+   {
+    "path": "ag2/a2a/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7061
+   },
+   {
+    "path": "ag2/acp/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 14559
+   },
+   {
+    "path": "ag2/acp/mappers.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 11228
+   },
+   {
+    "path": "ag2/mcp/mappers.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4526
+   },
+   {
+    "path": "ag2/config/client.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 788
+   }
+  ]
+ },
+ "agentstack-ai/AgentStack": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=50 providers=[] fw=['crewai', 'langchain', 'langgraph', 'openai-swarm']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=['crewai', 'langchain', 'langgraph', 'openai-swarm']",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [
+   "crewai",
+   "langchain",
+   "langgraph",
+   "openai-swarm"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 248
+   },
+   {
+    "path": "agentstack/log.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6490
+   },
+   {
+    "path": "agentstack/auth.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4494
+   },
+   {
+    "path": "agentstack/conf.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3771
+   },
+   {
+    "path": "agentstack/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10960
+   },
+   {
+    "path": "agentstack/repo.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7442
+   },
+   {
+    "path": "agentstack/graph.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 306
+   },
+   {
+    "path": "agentstack/tasks.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4048
+   }
+  ]
+ },
+ "alchaincyf/hermes-agent-orange-book": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=['worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "alejandrobalderas/claude-code-from-source": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 4,
+  "probed": [
+   {
+    "path": "web/src/book.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4900
+   },
+   {
+    "path": "web/src/content.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 227
+   },
+   {
+    "path": "web/src/components/SubAgentTree.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 27380
+   },
+   {
+    "path": "web/src/components/AgentLoopSimulator.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 24974
+   }
+  ]
+ },
+ "apache/maka": {
+  "axis": {
+   "ii": "orch-worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=2 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pr_agent.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2019
+   },
+   {
+    "path": "scripts/generate-app-icons.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 24074
+   },
+   {
+    "path": "apps/desktop/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3487
+   },
+   {
+    "path": "apps/desktop/vite-bundled-packages.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 3269
+   },
+   {
+    "path": "apps/desktop/vite-dependency-patches.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1394
+   },
+   {
+    "path": "apps/desktop/e2e/fixtures.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 25555
+   },
+   {
+    "path": "apps/desktop/src/global.d.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 954
+   },
+   {
+    "path": "packages/core/src/agent-run.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 28282
+   }
+  ]
+ },
+ "assafelovic/gpt-researcher": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=['autogen/ag2', 'langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['autogen/ag2', 'langchain', 'langgraph']",
+   "iii": "path_judge=5 content_judge=False"
+  },
+  "frameworks": [
+   "autogen/ag2",
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 973
+   },
+   {
+    "path": "deep_agents/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3226
+   },
+   {
+    "path": "deep_agents/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 3936
+   },
+   {
+    "path": "deep_agents/tools.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3345
+   },
+   {
+    "path": "multi_agents/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3414
+   },
+   {
+    "path": "multi_agents/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 621
+   },
+   {
+    "path": "deep_agents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 296
+   },
+   {
+    "path": "gpt_researcher/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 31309
+   }
+  ]
+ },
+ "breferrari/obsidian-mind": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=['pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 1,
+  "probed": [
+   {
+    "path": ".claude/scripts/lib/main-guard.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 741
+   }
+  ]
+ },
+ "browser-act/skills": {
+  "axis": {
+   "ii": "team",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 2,
+  "probed": [
+   {
+    "path": "solutions/ecommerce/goofish-search-list/scripts/apply-search-filters.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4734
+   },
+   {
+    "path": "solutions/social-listening/facebook-groups-scrape-posts/scripts/scrape-posts.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 13417
+   }
+  ]
+ },
+ "builderz-labs/mission-control": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "next.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2438
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3122
+   },
+   {
+    "path": "postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 71
+   },
+   {
+    "path": "playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1376
+   },
+   {
+    "path": "playwright.openclaw.local.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 625
+   },
+   {
+    "path": "playwright.openclaw.gateway.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 627
+   },
+   {
+    "path": "src/lib/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6461
+   },
+   {
+    "path": "src/app/layout.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4660
+   }
+  ]
+ },
+ "business-science/ai-data-science-team": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=['llm_call'] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".streamlit/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 143
+   },
+   {
+    "path": "ai_data_science_team/orchestration.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 303
+   },
+   {
+    "path": "apps/ai-pipeline-studio-app/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 467106
+   },
+   {
+    "path": "apps/sql-database-agent-app/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5768
+   },
+   {
+    "path": "apps/exploratory-copilot-app/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 20728
+   },
+   {
+    "path": "apps/pandas-data-analyst-app/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 8993
+   },
+   {
+    "path": "ai_data_science_team/agents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 752
+   },
+   {
+    "path": "ai_data_science_team/ds_agents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 95
+   }
+  ]
+ },
+ "bytedance/UI-TARS-desktop": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=25 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "infra/pdk.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 198
+   },
+   {
+    "path": "multimodal/pdk.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 511
+   },
+   {
+    "path": "infra/pdk/rslib.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 529
+   },
+   {
+    "path": "infra/pdk/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 226
+   },
+   {
+    "path": "apps/ui-tars/forge.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7030
+   },
+   {
+    "path": "apps/ui-tars/electron-builder.yml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1484
+   },
+   {
+    "path": "apps/ui-tars/playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 342
+   },
+   {
+    "path": "apps/ui-tars/electron.vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2485
+   }
+  ]
+ },
+ "bytedance/trae-agent": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=26 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 747
+   },
+   {
+    "path": "trae_agent/cli.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 24591
+   },
+   {
+    "path": "evaluation/utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10655
+   },
+   {
+    "path": "evaluation/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 89
+   },
+   {
+    "path": "trae_agent/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 487
+   },
+   {
+    "path": "evaluation/run_evaluation.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 18009
+   },
+   {
+    "path": "trae_agent/tools/run.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2012
+   },
+   {
+    "path": "trae_agent/tools/base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7668
+   }
+  ]
+ },
+ "calesthio/OpenMontage": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=2 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 896
+   },
+   {
+    "path": "backlot/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3167
+   },
+   {
+    "path": "lib/config_model.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2659
+   },
+   {
+    "path": ".agents/skills/lyria/agents/openai.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 221
+   },
+   {
+    "path": ".agents/skills/beautiful-mermaid/scripts/render.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5751
+   },
+   {
+    "path": ".agents/skills/3d-asset-generation/agents/openai.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 247
+   },
+   {
+    "path": ".agents/skills/beautiful-mermaid/scripts/create-html.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4339
+   },
+   {
+    "path": ".agents/skills/hyperframes-media/scripts/lyria-recipe.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4545
+   }
+  ]
+ },
+ "camel-ai/camel": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=24 providers=['llm_call'] fw=['camel']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['camel']",
+   "iii": "path_judge=24 content_judge=False"
+  },
+  "frameworks": [
+   "camel"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1643
+   },
+   {
+    "path": "profiling/chatagent_overhead.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 9489
+   },
+   {
+    "path": "camel/agents/base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1124
+   },
+   {
+    "path": "apps/agents/agents.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 20208
+   },
+   {
+    "path": "camel/agents/_types.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1603
+   },
+   {
+    "path": "camel/agents/_utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7514
+   },
+   {
+    "path": "apps/common/auto_zip.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1822
+   },
+   {
+    "path": "apps/dilemma/dilemma.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6875
+   }
+  ]
+ },
+ "camel-ai/owl": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['llm_call'] fw=['camel']",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['camel']",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [
+   "camel"
+  ],
+  "n_probed": 6,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1311
+   },
+   {
+    "path": "owl/webapp.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 49127
+   },
+   {
+    "path": "owl/webapp_jp.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 43756
+   },
+   {
+    "path": "owl/webapp_zh.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 39714
+   },
+   {
+    "path": "owl/webapp_backup.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 23040
+   },
+   {
+    "path": "community_usecase/Whatsapp-MCP/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5211
+   }
+  ]
+ },
+ "campfirein/byterover-cli": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=8 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=34 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "src/webui/App.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 371
+   },
+   {
+    "path": "src/webui/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6307
+   },
+   {
+    "path": "src/tui/app/index.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 311
+   },
+   {
+    "path": "src/tui/app/router.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 793
+   },
+   {
+    "path": "src/shared/types/agent.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 534
+   },
+   {
+    "path": "src/oclif/commands/main.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2324
+   },
+   {
+    "path": "src/server/config/auth.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2700
+   },
+   {
+    "path": "src/server/config/environment.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3567
+   }
+  ]
+ },
+ "cft0808/edict": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "scripts/agentrec_advisor.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 72
+   },
+   {
+    "path": "scripts/sync_agent_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 14460
+   },
+   {
+    "path": "scripts/apply_model_changes.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4352
+   },
+   {
+    "path": "edict/frontend/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 225
+   },
+   {
+    "path": "edict/frontend/postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 80
+   },
+   {
+    "path": "edict/frontend/tailwind.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 797
+   },
+   {
+    "path": "edict/backend/app/db.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1015
+   },
+   {
+    "path": "edict/backend/app/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2215
+   }
+  ]
+ },
+ "chrisworsey55/atlas-gic": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=['worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "cloudflare/agents": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=27 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=15 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "agent-think/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 569
+   },
+   {
+    "path": "agent-think/worker-configuration.d.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 402934
+   },
+   {
+    "path": "site/agents/env.d.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 396
+   },
+   {
+    "path": "agent-think/src/pool.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1124
+   },
+   {
+    "path": "agent-think/src/agent.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 31826
+   },
+   {
+    "path": "agent-think/src/index.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 13067
+   },
+   {
+    "path": "agent-think/src/model.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2412
+   },
+   {
+    "path": "agent-think/src/client.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 17235
+   }
+  ]
+ },
+ "coreyhaines31/marketingskills": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "crewAIInc/crewAI": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=41 providers=['llm_call'] fw=['crewai', 'langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['crew'], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['crewai', 'langchain']",
+   "iii": "path_judge=329 content_judge=False"
+  },
+  "frameworks": [
+   "crewai",
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2664
+   },
+   {
+    "path": "lib/crewai/pyproject.toml",
+    "hits": {
+     "crewai": [
+      "crew"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 3600
+   },
+   {
+    "path": "lib/crewai-core/pyproject.toml",
+    "hits": {
+     "crewai": [
+      "crew"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 972
+   },
+   {
+    "path": "lib/crewai-files/pyproject.toml",
+    "hits": {
+     "crewai": [
+      "crew"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 739
+   },
+   {
+    "path": "lib/crewai-tools/pyproject.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 3432
+   },
+   {
+    "path": "lib/crewai/src/crewai/llm.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 107904
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/cli.py",
+    "hits": {
+     "crewai": [
+      "crew"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 41222
+   },
+   {
+    "path": "lib/cli/src/crewai_cli/git.py",
+    "hits": {
+     "crewai": [
+      "crew"
+     ],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6937
+   }
+  ]
+ },
+ "danny-avila/LibreChat": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=26 providers=[] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=2 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "config/update.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4624
+   },
+   {
+    "path": "config/connect.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1036
+   },
+   {
+    "path": "config/helpers.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4060
+   },
+   {
+    "path": "api/jest.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 987
+   },
+   {
+    "path": "config/ban-user.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2371
+   },
+   {
+    "path": "config/packages.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1148
+   },
+   {
+    "path": "config/list-users.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1342
+   },
+   {
+    "path": "config/user-stats.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1440
+   }
+  ]
+ },
+ "dataelement/Clawith": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=13 providers=[] fw=['langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=['langgraph']",
+   "iii": "path_judge=6 content_judge=False"
+  },
+  "frameworks": [
+   "langgraph"
+  ],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "frontend/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1788
+   },
+   {
+    "path": "frontend/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 623
+   },
+   {
+    "path": "backend/test_sandbox_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 619
+   },
+   {
+    "path": "backend/app/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 23180
+   },
+   {
+    "path": "frontend/src/App.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 14392
+   },
+   {
+    "path": "backend/app/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10782
+   },
+   {
+    "path": "frontend/src/main.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1243
+   }
+  ]
+ },
+ "dimensionalOS/dimos": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=8 providers=[] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=21 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5678
+   },
+   {
+    "path": ".cargo/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 45
+   },
+   {
+    "path": "web/relay/main.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2363
+   },
+   {
+    "path": "dimos/agents/utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3295
+   },
+   {
+    "path": "dimos/spec/mapping.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 909
+   },
+   {
+    "path": "web/sdk/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1566
+   },
+   {
+    "path": "dimos/mapping/models.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 791
+   },
+   {
+    "path": "dimos/agents/conftest.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3555
+   }
+  ]
+ },
+ "dmno-dev/varlock": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=85 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "smoke-tests/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 448
+   },
+   {
+    "path": "framework-tests/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 553
+   },
+   {
+    "path": "packages/utils/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 125
+   },
+   {
+    "path": "packages/varlock/tsdown.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4749
+   },
+   {
+    "path": "packages/varlock/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 222
+   },
+   {
+    "path": "packages/ci-env-info/tsdown.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 310
+   },
+   {
+    "path": "packages/ci-env-info/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 130
+   },
+   {
+    "path": "smoke-tests/smoke-test-lang-go/main.go",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 632
+   }
+  ]
+ },
+ "eastlondoner/vibe-tools": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=[]",
+   "ii": "path=['pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 973
+   },
+   {
+    "path": "src/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 10022
+   },
+   {
+    "path": "infra/nuxt.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 927
+   },
+   {
+    "path": "infra/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 257
+   },
+   {
+    "path": "infra/app/index.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 630
+   },
+   {
+    "path": "src/repomix/repomixConfig.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6017
+   },
+   {
+    "path": "src/commands/browser/stagehand/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 6310
+   }
+  ]
+ },
+ "emcie-co/parlant": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=['langchain']",
+   "iii": "path_judge=9 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "src/parlant/api/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 11389
+   },
+   {
+    "path": "src/parlant/api/agents.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 15600
+   },
+   {
+    "path": "src/parlant/core/agents.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 16967
+   },
+   {
+    "path": "src/parlant/api/evaluations.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 18736
+   },
+   {
+    "path": "src/parlant/core/application.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2584
+   },
+   {
+    "path": "src/parlant/core/evaluations.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 35097
+   },
+   {
+    "path": "src/parlant/core/application_context.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 685
+   },
+   {
+    "path": "src/parlant/api/chat/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 494
+   }
+  ]
+ },
+ "epiral/bb-browser": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 4,
+  "probed": [
+   {
+    "path": "tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 715
+   },
+   {
+    "path": "packages/cli/tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 305
+   },
+   {
+    "path": "packages/daemon/tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 233
+   },
+   {
+    "path": "packages/shared/tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 165
+   }
+  ]
+ },
+ "fuxicodex/Fuxi": {
+  "axis": {
+   "ii": "UNKNOWN",
+   "iii": "JUDGE",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=[] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=2 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "google/adk-python": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=40 providers=[] fw=['crewai', 'google-adk', 'langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': []} fw=['crewai', 'google-adk', 'langchain', 'langgraph']",
+   "iii": "path_judge=166 content_judge=False"
+  },
+  "frameworks": [
+   "crewai",
+   "google-adk",
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3351
+   },
+   {
+    "path": "scripts/generate_agent_config_schema.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2382
+   },
+   {
+    "path": "src/google/adk/apps/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3507
+   },
+   {
+    "path": "src/google/adk/cli/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 682
+   },
+   {
+    "path": "src/google/adk/apps/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1126
+   },
+   {
+    "path": "src/google/adk/apps/_configs.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3749
+   },
+   {
+    "path": "src/google/adk/agents/context.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": []
+    },
+    "bytes": 37115
+   },
+   {
+    "path": "src/google/adk/agents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2744
+   }
+  ]
+ },
+ "gptme/gptme": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['llm_call'] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['langchain']",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1606
+   },
+   {
+    "path": "gptme/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 343
+   },
+   {
+    "path": "webui/jest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 671
+   },
+   {
+    "path": "webui/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1771
+   },
+   {
+    "path": "webui/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2152
+   },
+   {
+    "path": "webui/postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 81
+   },
+   {
+    "path": "webui/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2116
+   },
+   {
+    "path": "webui/playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1258
+   }
+  ]
+ },
+ "huggingface/smolagents": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=['smolagents']",
+   "ii": "path=['pipeline', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['smolagents']",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [
+   "smolagents"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 302
+   },
+   {
+    "path": "src/smolagents/cli.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 9646
+   },
+   {
+    "path": "src/smolagents/tools.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 59873
+   },
+   {
+    "path": "src/smolagents/utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 21238
+   },
+   {
+    "path": "src/smolagents/agents.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 80780
+   },
+   {
+    "path": "src/smolagents/memory.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 12341
+   },
+   {
+    "path": "src/smolagents/models.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 86052
+   },
+   {
+    "path": "src/smolagents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1107
+   }
+  ]
+ },
+ "ifixai-ai/iFixAi": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=['judge'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['judge']} fw=[]",
+   "iii": "path_judge=27 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 809
+   },
+   {
+    "path": "ifixai/cli/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2704
+   },
+   {
+    "path": "ifixai/judge/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 1260
+   },
+   {
+    "path": "ifixai/cli/config_file.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2340
+   },
+   {
+    "path": "ifixai/judge/evaluator.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 5520
+   },
+   {
+    "path": "ifixai/judge/fallbacks.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 4638
+   },
+   {
+    "path": "ifixai/mappings/loader.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2338
+   }
+  ]
+ },
+ "jd-opensource/OxyGent": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=5 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=8 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "oxygent/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 28566
+   },
+   {
+    "path": "oxygent/evaluation_manager.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 31048
+   },
+   {
+    "path": "applications/oxybank/run.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 358
+   },
+   {
+    "path": "oxygent/schemas/evaluation.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3721
+   },
+   {
+    "path": "oxygent/live_prompt/wrapper.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 12474
+   },
+   {
+    "path": "mcp_servers/kubernetes_mcp_server/config_tools.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5069
+   },
+   {
+    "path": "applications/easybank/bank_manager_by_api_router.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2681
+   },
+   {
+    "path": "applications/easybank/bank_manager_by_manual_api.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2201
+   }
+  ]
+ },
+ "karpathy/autoresearch": {
+  "axis": {
+   "ii": "UNKNOWN",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=[] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 0,
+  "probed": []
+ },
+ "langchain-ai/langchain": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=4 providers=['judge', 'llm_call'] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send', 'stategraph'], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=96 content_judge=True"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 8770
+   },
+   {
+    "path": "libs/core/langchain_core/agents.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 8480
+   },
+   {
+    "path": "libs/core/langchain_core/load/mapping.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 30482
+   },
+   {
+    "path": "libs/core/langchain_core/runnables/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 22606
+   },
+   {
+    "path": "libs/langchain_v1/langchain/agents/factory.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "stategraph",
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 84823
+   },
+   {
+    "path": "libs/core/langchain_core/tracers/evaluation.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 8231
+   },
+   {
+    "path": "libs/langchain_v1/langchain/agents/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 285
+   },
+   {
+    "path": "libs/langchain/langchain_classic/agents/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 62133
+   }
+  ]
+ },
+ "langchain-ai/langgraph": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=6 providers=[] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['stategraph', 'send'], 'swarm': [], 'generic': []} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=5 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "libs/cli/langgraph_cli/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 66728
+   },
+   {
+    "path": "libs/langgraph/bench/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "stategraph"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 15058
+   },
+   {
+    "path": "libs/cli/langgraph_cli/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 59
+   },
+   {
+    "path": "libs/langgraph/langgraph/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "stategraph"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5603
+   },
+   {
+    "path": "libs/cli/js-examples/jest.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 342
+   },
+   {
+    "path": "libs/langgraph/bench/react_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2513
+   },
+   {
+    "path": "libs/langgraph/langgraph/pregel/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "stategraph",
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 175442
+   },
+   {
+    "path": "libs/langgraph/langgraph/utils/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 228
+   }
+  ]
+ },
+ "langfengQ/verl-agent": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=17 providers=['judge'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge']} fw=[]",
+   "iii": "path_judge=11 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 228
+   },
+   {
+    "path": "verl/utils/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 839
+   },
+   {
+    "path": "recipe/dapo/main_dapo.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 6636
+   },
+   {
+    "path": "recipe/hgpo/main_hgpo.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 10129
+   },
+   {
+    "path": "recipe/spin/main_spin.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 6324
+   },
+   {
+    "path": "recipe/sppo/main_sppo.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 5890
+   },
+   {
+    "path": "verl/trainer/main_ppo.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 10187
+   }
+  ]
+ },
+ "langflow-ai/langflow": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=56 providers=['llm_call'] fw=['autogen/ag2', 'crewai', 'langchain', 'langgraph', 'smolagents']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['autogen/ag2', 'crewai', 'langchain', 'langgraph', 'smolagents']",
+   "iii": "path_judge=11 content_judge=False"
+  },
+  "frameworks": [
+   "autogen/ag2",
+   "crewai",
+   "langchain",
+   "langgraph",
+   "smolagents"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6345
+   },
+   {
+    "path": "src/frontend/jest.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3995
+   },
+   {
+    "path": "src/frontend/postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 83
+   },
+   {
+    "path": "src/frontend/playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5356
+   },
+   {
+    "path": "src/frontend/playwright.live.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2592
+   },
+   {
+    "path": "scripts/migrate/check_migration_append_only.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10415
+   },
+   {
+    "path": "src/frontend/src/App.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 667
+   },
+   {
+    "path": "src/frontend/.storybook/main.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1135
+   }
+  ]
+ },
+ "langroid/langroid": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=['llm_call'] fw=['camel']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call']} fw=['camel']",
+   "iii": "path_judge=17 content_judge=False"
+  },
+  "frameworks": [
+   "camel"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 117
+   },
+   {
+    "path": ".chainlit/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3281
+   },
+   {
+    "path": "langroid/agent/base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 102337
+   },
+   {
+    "path": "langroid/agent/task.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 111067
+   },
+   {
+    "path": "langroid/agent/batch.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 22573
+   },
+   {
+    "path": "langroid/agent/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 786
+   },
+   {
+    "path": "langroid/agent/chat_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 121442
+   },
+   {
+    "path": "langroid/pydantic_v1/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 362
+   }
+  ]
+ },
+ "lastmile-ai/mcp-agent": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=106 providers=['llm_call'] fw=['crewai', 'langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['crewai', 'langchain']",
+   "iii": "path_judge=25 content_judge=False"
+  },
+  "frameworks": [
+   "crewai",
+   "langchain"
+  ],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 223
+   },
+   {
+    "path": "src/mcp_agent/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 53889
+   },
+   {
+    "path": "src/mcp_agent/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 53542
+   },
+   {
+    "path": "src/mcp_agent/console.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 813
+   },
+   {
+    "path": "src/mcp_agent/cli/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6444
+   },
+   {
+    "path": "src/mcp_agent/oauth/flow.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 18901
+   },
+   {
+    "path": "src/mcp_agent/oauth/pkce.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 847
+   }
+  ]
+ },
+ "mem0ai/mem0": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=6 providers=['llm_call'] fw=['langchain', 'openai-agents']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['langchain', 'openai-agents']",
+   "iii": "path_judge=5 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "openai-agents"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 314
+   },
+   {
+    "path": "server/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 22215
+   },
+   {
+    "path": "mem0-ts/jest.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 723
+   },
+   {
+    "path": "mem0-ts/tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1413
+   },
+   {
+    "path": "mem0-ts/jest.integration.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 401
+   },
+   {
+    "path": "mem0/proxy/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 7055
+   },
+   {
+    "path": "mem0/client/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 72689
+   },
+   {
+    "path": "mem0/memory/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 167972
+   }
+  ]
+ },
+ "microsoft/RD-Agent": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=14 providers=['llm_call'] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['langchain']",
+   "iii": "path_judge=6 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "web/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1214
+   },
+   {
+    "path": ".streamlit/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 38
+   },
+   {
+    "path": "web/src/main.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 466
+   },
+   {
+    "path": "rdagent/app/cli.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5990
+   },
+   {
+    "path": "rdagent/log/base.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2680
+   },
+   {
+    "path": "rdagent/log/conf.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1040
+   },
+   {
+    "path": "rdagent/core/conf.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 3894
+   },
+   {
+    "path": "rdagent/log/timer.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3229
+   }
+  ]
+ },
+ "microsoft/SkillOpt": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=11 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=13 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "skillopt/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 17496
+   },
+   {
+    "path": "skillopt_webui/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 28028
+   },
+   {
+    "path": "skillopt_sleep/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 10077
+   },
+   {
+    "path": "skillopt_sleep/judges.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 11488
+   },
+   {
+    "path": "skillopt_sleep/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 38705
+   },
+   {
+    "path": "skillopt_webui/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 85
+   },
+   {
+    "path": "plugins/devin/judge.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 5356
+   },
+   {
+    "path": "configs/_base_/default.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5673
+   }
+  ]
+ },
+ "microsoft/agent-framework": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=73 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': ['handoff'], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=128 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "python/.pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2269
+   },
+   {
+    "path": "python/agent_framework_meta/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 981
+   },
+   {
+    "path": "declarative-agents/workflow-samples/MathChat.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 1451
+   },
+   {
+    "path": "declarative-agents/workflow-samples/Marketing.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 701
+   },
+   {
+    "path": "declarative-agents/workflow-samples/DeepResearch.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 13578
+   },
+   {
+    "path": "declarative-agents/workflow-samples/CustomerSupport.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5305
+   },
+   {
+    "path": "python/samples/02-agents/auto_retry.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 9116
+   }
+  ]
+ },
+ "microsoft/agent-lightning": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=16 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=2 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 585
+   },
+   {
+    "path": "agentlightning/hooks.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2146
+   },
+   {
+    "path": "agentlightning/client.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2638
+   },
+   {
+    "path": "agentlightning/schemas.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 5223
+   },
+   {
+    "path": "agentlightning/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 95
+   },
+   {
+    "path": "agentlightning/server/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3193
+   },
+   {
+    "path": "agentlightning/server/proxy.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 8806
+   },
+   {
+    "path": "agentlightning/server/store.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 595
+   }
+  ]
+ },
+ "microsoft/autogen": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=23 providers=['judge', 'llm_call'] fw=['autogen/ag2', 'langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': ['conversable', 'groupchat'], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call', 'judge']} fw=['autogen/ag2', 'langchain', 'langgraph']",
+   "iii": "path_judge=4 content_judge=True"
+  },
+  "frameworks": [
+   "autogen/ag2",
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "python/samples/core_chess_game/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10094
+   },
+   {
+    "path": "python/samples/agentchat_graphrag/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [
+      "conversable"
+     ],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 3662
+   },
+   {
+    "path": "python/samples/core_chainlit/app_team.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [
+      "groupchat",
+      "conversable"
+     ],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 8305
+   },
+   {
+    "path": "python/samples/core_chainlit/app_agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [
+      "conversable"
+     ],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4265
+   },
+   {
+    "path": "python/samples/agentchat_streamlit/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1192
+   },
+   {
+    "path": "python/samples/agentchat_chess_game/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [
+      "conversable"
+     ],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5439
+   },
+   {
+    "path": "python/samples/agentchat_streamlit/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [
+      "conversable"
+     ],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 952
+   },
+   {
+    "path": "python/samples/agentchat_fastapi/app_team.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [
+      "groupchat",
+      "conversable"
+     ],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6821
+   }
+  ]
+ },
+ "minitap-ai/mobile-use": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=2 providers=['llm_call'] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 676
+   },
+   {
+    "path": "minitap/mobile_use/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 11331
+   },
+   {
+    "path": "minitap/mobile_use/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 14772
+   },
+   {
+    "path": "minitap/mobile_use/sdk/agent.py",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 54798
+   },
+   {
+    "path": "minitap/mobile_use/tools/tool_wrapper.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 454
+   },
+   {
+    "path": "minitap/mobile_use/utils/app_launch_utils.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5941
+   },
+   {
+    "path": "minitap/mobile_use/clients/ios_client_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4569
+   },
+   {
+    "path": "minitap/mobile_use/sdk/types/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4131
+   }
+  ]
+ },
+ "mksglu/context-mode": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1700
+   },
+   {
+    "path": "web/worker.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1285
+   },
+   {
+    "path": "src/util/hook-config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3121
+   },
+   {
+    "path": "configs/codex/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 165
+   },
+   {
+    "path": "src/util/claude-config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4086
+   },
+   {
+    "path": "src/adapters/kimi/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 333
+   },
+   {
+    "path": "src/adapters/codex/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 336
+   },
+   {
+    "path": "src/adapters/cursor/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 117
+   }
+  ]
+ },
+ "modelscope/agentscope": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=29 providers=['llm_call'] fw=['agentscope']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['agentscope']",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [
+   "agentscope"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3172
+   },
+   {
+    "path": "src/agentscope/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 452
+   },
+   {
+    "path": "src/agentscope/_logging.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1223
+   },
+   {
+    "path": "src/agentscope/_version.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 86
+   },
+   {
+    "path": "scripts/model_examples/xai_multiagent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2806
+   },
+   {
+    "path": "scripts/model_examples/gemini_multiagent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2932
+   },
+   {
+    "path": "scripts/model_examples/ollama_multiagent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2695
+   },
+   {
+    "path": "scripts/model_examples/deepseek_multiagent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2897
+   }
+  ]
+ },
+ "musistudio/claude-code-router": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 508
+   },
+   {
+    "path": "packages/electron/src/main/ipc.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": []
+    },
+    "bytes": 60279
+   },
+   {
+    "path": "packages/core/src/config/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 153953
+   },
+   {
+    "path": "packages/core/src/contracts/app.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 67602
+   },
+   {
+    "path": "packages/electron/src/main/main.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3341
+   },
+   {
+    "path": "packages/core/src/config/constants.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2299
+   },
+   {
+    "path": "packages/electron/src/main/preload.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": []
+    },
+    "bytes": 14814
+   },
+   {
+    "path": "packages/electron/src/main/windows.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 24295
+   }
+  ]
+ },
+ "mvanhorn/last30days-skill": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['judge', 'llm_call']} fw=[]",
+   "iii": "path_judge=6 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 5,
+  "probed": [
+   {
+    "path": "mcp/cmd/last30days-pp-mcp/main.go",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 984
+   },
+   {
+    "path": "skills/last30days/agents/openai.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 448
+   },
+   {
+    "path": "skills/last30days/scripts/evaluate_search_quality.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 21741
+   },
+   {
+    "path": "skills/last30days/scripts/lib/planner.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 44620
+   },
+   {
+    "path": "skills/last30days/scripts/lib/x_judge.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 10069
+   }
+  ]
+ },
+ "nanobrowser/nanobrowser": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=['langchain']",
+   "ii": "path=['orch-worker', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=['langchain']",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "pages/options/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 201
+   },
+   {
+    "path": "pages/side-panel/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 504
+   },
+   {
+    "path": "packages/tailwind-config/tailwind.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 151
+   },
+   {
+    "path": "packages/storage/lib/settings/agentModels.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4307
+   },
+   {
+    "path": "chrome-extension/src/background/agent/types.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4642
+   },
+   {
+    "path": "chrome-extension/src/background/agent/helper.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 14128
+   },
+   {
+    "path": "chrome-extension/src/background/agent/history.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 693
+   },
+   {
+    "path": "chrome-extension/src/background/agent/executor.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 15202
+   }
+  ]
+ },
+ "netease-youdao/LobsterAI": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=8 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': ['task'], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=5 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5524
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 527
+   },
+   {
+    "path": "postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 82
+   },
+   {
+    "path": "tailwind.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 5559
+   },
+   {
+    "path": "scripts/generate-app-icon.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3755
+   },
+   {
+    "path": "src/main/i18n.ts",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 39035
+   },
+   {
+    "path": "src/main/main.ts",
+    "hits": {
+     "crewai": [
+      "task"
+     ],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 520844
+   },
+   {
+    "path": "src/main/logger.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4671
+   }
+  ]
+ },
+ "numman-ali/openskills": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=[] fw=[]",
+   "ii": "path=['pipeline', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 3,
+  "probed": [
+   {
+    "path": "tsup.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 337
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 363
+   },
+   {
+    "path": "src/utils/agents-md.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3569
+   }
+  ]
+ },
+ "op7418/CodePilot": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=14 providers=['judge', 'llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call', 'judge']} fw=[]",
+   "iii": "path_judge=4 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "next.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 5982
+   },
+   {
+    "path": "playwright.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2265
+   },
+   {
+    "path": "electron/main.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 152579
+   },
+   {
+    "path": "electron/cli-maintenance.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 33811
+   },
+   {
+    "path": "electron/cli-maintenance-probes.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1330
+   },
+   {
+    "path": "electron/cli-maintenance-runner.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3300
+   },
+   {
+    "path": "src/app/page.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 101
+   },
+   {
+    "path": "src/app/layout.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4856
+   }
+  ]
+ },
+ "openJiuwen-ai/jiuwenswarm": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=22 providers=['judge', 'llm_call'] fw=['google-adk']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge', 'llm_call']} fw=['google-adk']",
+   "iii": "path_judge=11 content_judge=True"
+  },
+  "frameworks": [
+   "google-adk"
+  ],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "jiuwenswarm/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6621
+   },
+   {
+    "path": "scripts/build_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 10913
+   },
+   {
+    "path": ".doc_project_maintainer/manifest.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 19295
+   },
+   {
+    "path": "jiuwenswarm/cli/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1603
+   },
+   {
+    "path": "jiuwenswarm/common/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge",
+      "llm_call"
+     ]
+    },
+    "bytes": 113769
+   },
+   {
+    "path": "jiuwenswarm/symphony/config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 8195
+   },
+   {
+    "path": "jiuwenswarm/common/mcp_config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 25609
+   }
+  ]
+ },
+ "openai/openai-agents-python": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=['openai-agents']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call']} fw=['openai-agents']",
+   "iii": "path_judge=3 content_judge=False"
+  },
+  "frameworks": [
+   "openai-agents"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "src/agents/run.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 133469
+   },
+   {
+    "path": "src/agents/repl.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2851
+   },
+   {
+    "path": "src/agents/tool.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 107587
+   },
+   {
+    "path": "src/agents/agent.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 48802
+   },
+   {
+    "path": "src/agents/items.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 40715
+   },
+   {
+    "path": "src/agents/retry.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 16533
+   },
+   {
+    "path": "src/agents/usage.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 20178
+   },
+   {
+    "path": "src/agents/_debug.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 987
+   }
+  ]
+ },
+ "openai/swarm": {
+  "axis": {
+   "ii": "team",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=[] fw=[]",
+   "ii": "path=['team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 1,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 206
+   }
+  ]
+ },
+ "openchamber/openchamber": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=7 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3992
+   },
+   {
+    "path": "eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 626
+   },
+   {
+    "path": "oxlint.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1446
+   },
+   {
+    "path": "postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 68
+   },
+   {
+    "path": "packages/web/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 7624
+   },
+   {
+    "path": "packages/web/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1476
+   },
+   {
+    "path": "packages/vscode/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2138
+   },
+   {
+    "path": "packages/mobile/capacitor.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1525
+   }
+  ]
+ },
+ "pydantic/pydantic-ai": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=396 providers=['llm_call'] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': ['handoff'], 'generic': ['llm_call']} fw=['langchain']",
+   "iii": "path_judge=34 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3384
+   },
+   {
+    "path": ".gemini/config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 29
+   },
+   {
+    "path": "clai/clai/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 138
+   },
+   {
+    "path": "pydantic_ai_slim/pydantic_ai/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 132
+   },
+   {
+    "path": "pydantic_ai_slim/pydantic_ai/_agent_graph.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 154774
+   },
+   {
+    "path": "pydantic_ai_slim/pydantic_ai/agent/spec.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 16034
+   },
+   {
+    "path": "pydantic_ai_slim/pydantic_ai/agent/wrapper.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 21573
+   },
+   {
+    "path": "pydantic_ai_slim/pydantic_ai/agent/__init__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 216589
+   }
+  ]
+ },
+ "rohitg00/agentmemory": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=3 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=1 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "iii-config.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1748
+   },
+   {
+    "path": "tsdown.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 2380
+   },
+   {
+    "path": "vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 774
+   },
+   {
+    "path": "iii-config.docker.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1362
+   },
+   {
+    "path": "src/config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 18944
+   },
+   {
+    "path": "src/cli/engine-config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3556
+   },
+   {
+    "path": "src/hooks/subagent-stop.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1917
+   },
+   {
+    "path": "src/providers/agent-sdk.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 4980
+   }
+  ]
+ },
+ "ruvnet/ruflo": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=8 providers=['judge'] fw=['openai-swarm']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['judge']} fw=['openai-swarm']",
+   "iii": "path_judge=66 content_judge=True"
+  },
+  "frameworks": [
+   "openai-swarm"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "v3/swarm.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 11974
+   },
+   {
+    "path": ".agents/config.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 8202
+   },
+   {
+    "path": "v3/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4118
+   },
+   {
+    "path": "v3/agents/coder.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 214
+   },
+   {
+    "path": "v3/agents/tester.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 203
+   },
+   {
+    "path": "v3/agents/reviewer.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 211
+   },
+   {
+    "path": "v3/agents/architect.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 226
+   },
+   {
+    "path": "v3/goal_ui/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1955
+   }
+  ]
+ },
+ "satellitecomponent/Neurite": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=[]",
+   "ii": "path=['pipeline', 'team'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 2,
+  "probed": [
+   {
+    "path": "vite.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 283
+   },
+   {
+    "path": "js/main.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 12549
+   }
+  ]
+ },
+ "siyuan-note/siyuan": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "UNKNOWN",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=4 providers=[] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "kernel/main.go",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 934
+   },
+   {
+    "path": "app/pnpm-lock.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 187207
+   },
+   {
+    "path": "app/webpack.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6094
+   },
+   {
+    "path": "app/webpack.export.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 3586
+   },
+   {
+    "path": "app/webpack.mobile.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4824
+   },
+   {
+    "path": "app/webpack.desktop.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 4727
+   },
+   {
+    "path": "app/pnpm-workspace.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 638
+   },
+   {
+    "path": "app/electron-builder.yml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 2346
+   }
+  ]
+ },
+ "volcengine/OpenViking": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=11 providers=['llm_call'] fw=['langchain', 'langgraph']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=['langchain', 'langgraph']",
+   "iii": "path_judge=14 content_judge=False"
+  },
+  "frameworks": [
+   "langchain",
+   "langgraph"
+  ],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": ".pr_agent.toml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 16932
+   },
+   {
+    "path": "web-studio/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 630
+   },
+   {
+    "path": "web-studio/eslint.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1240
+   },
+   {
+    "path": "web-studio/prettier.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 160
+   },
+   {
+    "path": "web-studio/src/main.tsx",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1599
+   },
+   {
+    "path": "openviking/server/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 33400
+   },
+   {
+    "path": "bot/vikingbot/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 205
+   },
+   {
+    "path": "sdk/go/agent_evolution.go",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1431
+   }
+  ]
+ },
+ "wang2122/sprix-sage-router": {
+  "axis": {
+   "ii": "pipeline",
+   "iii": "JUDGE",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['judge'] fw=[]",
+   "ii": "path=['pipeline'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': ['handoff'], 'generic': ['judge']} fw=[]",
+   "iii": "path_judge=2 content_judge=True"
+  },
+  "frameworks": [],
+  "n_probed": 2,
+  "probed": [
+   {
+    "path": "benchmark_evaluator.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 7380
+   },
+   {
+    "path": "benchmark_dynamic_evaluator.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [
+      "handoff"
+     ],
+     "generic": [
+      "judge"
+     ]
+    },
+    "bytes": 11521
+   }
+  ]
+ },
+ "xlang-ai/OpenAgents": {
+  "axis": {
+   "ii": "worker",
+   "iii": "JUDGE",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=['langchain']",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=['langchain']",
+   "iii": "path_judge=11 content_judge=False"
+  },
+  "frameworks": [
+   "langchain"
+  ],
+  "n_probed": 7,
+  "probed": [
+   {
+    "path": "backend/app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 386
+   },
+   {
+    "path": "backend/main.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1883
+   },
+   {
+    "path": "frontend/next.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 438
+   },
+   {
+    "path": "frontend/vitest.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 177
+   },
+   {
+    "path": "frontend/postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 83
+   },
+   {
+    "path": "frontend/prettier.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 702
+   },
+   {
+    "path": "frontend/tailwind.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1029
+   }
+  ]
+ },
+ "yizhiyanhua-ai/fireworks-tech-graph": {
+  "axis": {
+   "ii": "worker",
+   "iii": "UNKNOWN",
+   "i": "SINGLE"
+  },
+  "evidence": {
+   "i": "multi_config_paths=0 providers=[] fw=[]",
+   "ii": "path=['pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': [], 'swarm': [], 'generic': []} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 2,
+  "probed": [
+   {
+    "path": "agents/openai.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 389
+   },
+   {
+    "path": "skills/fireworks-tech-graph/agents/openai.yaml",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 389
+   }
+  ]
+ },
+ "zhayujie/CowAgent": {
+  "axis": {
+   "ii": "worker",
+   "iii": "NO",
+   "i": "MULTI"
+  },
+  "evidence": {
+   "i": "multi_config_paths=1 providers=['llm_call'] fw=[]",
+   "ii": "path=['orch-worker', 'pipeline', 'team', 'worker'] content={'crewai': [], 'autogen': [], 'langgraph': ['send'], 'swarm': [], 'generic': ['llm_call']} fw=[]",
+   "iii": "path_judge=0 content_judge=False"
+  },
+  "frameworks": [],
+  "n_probed": 8,
+  "probed": [
+   {
+    "path": "app.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 25368
+   },
+   {
+    "path": "config.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 47298
+   },
+   {
+    "path": "cli/__main__.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 71
+   },
+   {
+    "path": "agent/routing.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 6590
+   },
+   {
+    "path": "agent/registry.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 13181
+   },
+   {
+    "path": "bridge/agent_bridge.py",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [
+      "send"
+     ],
+     "swarm": [],
+     "generic": [
+      "llm_call"
+     ]
+    },
+    "bytes": 68946
+   },
+   {
+    "path": "desktop/vite.config.ts",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 1483
+   },
+   {
+    "path": "desktop/postcss.config.js",
+    "hits": {
+     "crewai": [],
+     "autogen": [],
+     "langgraph": [],
+     "swarm": [],
+     "generic": []
+    },
+    "bytes": 82
+   }
+  ]
+ }
+}
