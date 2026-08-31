@@ -1,0 +1,520 @@
+[
+  {
+    "repo": "coreutils/coreutils",
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "n_components": 9,
+    "n_source": 2,
+    "n_rust": 0,
+    "n_c_cpp": 2,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 2
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "uutils/coreutils",
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "n_components": 6,
+    "n_source": 3,
+    "n_rust": 3,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 3
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "gated -sys (feature/platform): fts-sys"
+  },
+  {
+    "repo": "sudo-project/sudo",
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "n_components": 12,
+    "n_source": 4,
+    "n_rust": 0,
+    "n_c_cpp": 4,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 4
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "trifectatechfoundation/sudo-rs",
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "n_components": 6,
+    "n_source": 2,
+    "n_rust": 2,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 2
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "ggreer/the_silver_searcher",
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "n_components": 3,
+    "n_source": 1,
+    "n_rust": 0,
+    "n_c_cpp": 1,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 1
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "BurntSushi/ripgrep",
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "n_components": 7,
+    "n_source": 2,
+    "n_rust": 2,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 2
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "build.rs (no cc)"
+  },
+  {
+    "repo": "git/git",
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "n_components": 30,
+    "n_source": 18,
+    "n_rust": 1,
+    "n_c_cpp": 16,
+    "n_mixed": 1,
+    "rust_share": 0.1111,
+    "classes": {
+      "MIXED": 1,
+      "C": 16,
+      "RUST": 1
+    },
+    "has_rust": true
+  },
+  {
+    "repo": "GitoxideLabs/gitoxide",
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "n_components": 76,
+    "n_source": 70,
+    "n_rust": 70,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 70
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "openssl/openssl",
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "n_components": 16,
+    "n_source": 7,
+    "n_rust": 0,
+    "n_c_cpp": 7,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 7
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "rustls/rustls",
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "n_components": 19,
+    "n_source": 14,
+    "n_rust": 14,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 14
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "madler/zlib",
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "n_components": 7,
+    "n_source": 1,
+    "n_rust": 0,
+    "n_c_cpp": 1,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 1
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "Frommi/miniz_oxide",
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "n_components": 7,
+    "n_source": 7,
+    "n_rust": 5,
+    "n_c_cpp": 2,
+    "n_mixed": 0,
+    "rust_share": 0.7143,
+    "classes": {
+      "RUST": 5,
+      "C": 2
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "build.rs + cc/bindgen (compiles own C/asm)"
+  },
+  {
+    "repo": "libuv/libuv",
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "n_components": 7,
+    "n_source": 1,
+    "n_rust": 0,
+    "n_c_cpp": 1,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 1
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "tokio-rs/tokio",
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "n_components": 11,
+    "n_source": 9,
+    "n_rust": 9,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 9
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "ngtcp2/ngtcp2",
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "n_components": 8,
+    "n_source": 2,
+    "n_rust": 0,
+    "n_c_cpp": 2,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 2
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "cloudflare/quiche",
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "n_components": 14,
+    "n_source": 12,
+    "n_rust": 12,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 12
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "vim/vim",
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "n_components": 9,
+    "n_source": 3,
+    "n_rust": 0,
+    "n_c_cpp": 3,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 3
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "helix-editor/helix",
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "n_components": 18,
+    "n_source": 14,
+    "n_rust": 14,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 14
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "tmux/tmux",
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "n_components": 6,
+    "n_source": 2,
+    "n_rust": 0,
+    "n_c_cpp": 2,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 2
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "zellij-org/zellij",
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "n_components": 15,
+    "n_source": 9,
+    "n_rust": 9,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 9
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "build.rs (no cc)"
+  },
+  {
+    "repo": "htop-dev/htop",
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "n_components": 15,
+    "n_source": 12,
+    "n_rust": 0,
+    "n_c_cpp": 12,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 12
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "ClementTsang/bottom",
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "n_components": 10,
+    "n_source": 3,
+    "n_rust": 3,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 3
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "build.rs (no cc)"
+  },
+  {
+    "repo": "jqlang/jq",
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "n_components": 6,
+    "n_source": 1,
+    "n_rust": 0,
+    "n_c_cpp": 1,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 1
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "01mf02/jaq",
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "n_components": 8,
+    "n_source": 7,
+    "n_rust": 7,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 7
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "gpg/gnupg",
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "n_components": 17,
+    "n_source": 12,
+    "n_rust": 0,
+    "n_c_cpp": 12,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 12
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "rpgp/rpgp",
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "n_components": 4,
+    "n_source": 2,
+    "n_rust": 2,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 2
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "google/boringssl",
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "n_components": 15,
+    "n_source": 9,
+    "n_rust": 1,
+    "n_c_cpp": 8,
+    "n_mixed": 0,
+    "rust_share": 0.1111,
+    "classes": {
+      "CPP": 8,
+      "RUST": 1
+    },
+    "has_rust": true
+  },
+  {
+    "repo": "briansmith/ring",
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "n_components": 7,
+    "n_source": 4,
+    "n_rust": 3,
+    "n_c_cpp": 1,
+    "n_mixed": 0,
+    "rust_share": 0.75,
+    "classes": {
+      "RUST": 3,
+      "C": 1
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "build.rs + cc/bindgen (compiles own C/asm)"
+  },
+  {
+    "repo": "openssh/openssh-portable",
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "n_components": 4,
+    "n_source": 3,
+    "n_rust": 0,
+    "n_c_cpp": 3,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 2,
+      "CPP": 1
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "warp-tech/russh",
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "n_components": 8,
+    "n_source": 5,
+    "n_rust": 5,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 5
+    },
+    "has_rust": true,
+    "binding_verdict": "REWRITE",
+    "binding_evidence": "no C link path"
+  },
+  {
+    "repo": "jedisct1/libsodium",
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "n_components": 7,
+    "n_source": 2,
+    "n_rust": 0,
+    "n_c_cpp": 2,
+    "n_mixed": 0,
+    "rust_share": 0.0,
+    "classes": {
+      "C": 2
+    },
+    "has_rust": false
+  },
+  {
+    "repo": "sodiumoxide/sodiumoxide",
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "n_components": 5,
+    "n_source": 3,
+    "n_rust": 3,
+    "n_c_cpp": 0,
+    "n_mixed": 0,
+    "rust_share": 1.0,
+    "classes": {
+      "RUST": 3
+    },
+    "has_rust": true,
+    "binding_verdict": "BINDING",
+    "binding_evidence": "root [dependencies] -sys: libsodium-sys"
+  }
+]

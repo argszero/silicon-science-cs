@@ -1,0 +1,3887 @@
+{
+  "coreutils/coreutils": {
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "components": 9,
+    "classes": {
+      "OTHER": 7,
+      "C": 2
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 31
+      },
+      "build-aux/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 4
+      },
+      "gl/": {
+        "class": "C",
+        "rs": 0,
+        "c": 40,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 65
+      },
+      "gnulib-tests/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 1
+      },
+      "lib/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "po/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "scripts/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 19
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 186,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 194
+      }
+    }
+  },
+  "uutils/coreutils": {
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "components": 6,
+    "classes": {
+      "RUST": 3,
+      "OTHER": 3
+    },
+    "component_detail": {
+      "": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 29
+      },
+      ".cargo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      ".config/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      ".devcontainer/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 516,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 981
+      },
+      "util/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 51
+      }
+    }
+  },
+  "sudo-project/sudo": {
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "components": 12,
+    "classes": {
+      "OTHER": 8,
+      "C": 4
+    },
+    "component_detail": {
+      ".circleci/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 18
+      },
+      "docker/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 8
+      },
+      "etc/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 12
+      },
+      "include/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 31
+      },
+      "lib/": {
+        "class": "C",
+        "rs": 0,
+        "c": 193,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 310
+      },
+      "logsrvd/": {
+        "class": "C",
+        "rs": 0,
+        "c": 16,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 34
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 22
+      },
+      "plugins/": {
+        "class": "C",
+        "rs": 0,
+        "c": 174,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 739
+      },
+      "po/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 82
+      },
+      "scripts/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 13
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 47,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 51
+      }
+    }
+  },
+  "trifectatechfoundation/sudo-rs": {
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "components": 6,
+    "classes": {
+      "OTHER": 4,
+      "RUST": 2
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 16
+      },
+      "po/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 10
+      },
+      "proofs/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 91,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 92
+      },
+      "test-framework/": {
+        "class": "RUST",
+        "rs": 117,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 279
+      },
+      "util/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 8
+      }
+    }
+  },
+  "ggreer/the_silver_searcher": {
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "components": 3,
+    "classes": {
+      "OTHER": 2,
+      "C": 1
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 18
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 23,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 23
+      }
+    }
+  },
+  "BurntSushi/ripgrep": {
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "components": 7,
+    "classes": {
+      "OTHER": 5,
+      "RUST": 2
+    },
+    "component_detail": {
+      ".cargo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 18
+      },
+      "benchsuite/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 30
+      },
+      "ci/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 4
+      },
+      "crates/": {
+        "class": "RUST",
+        "rs": 95,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 147
+      },
+      "pkg/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 3
+      },
+      "scripts/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      }
+    }
+  },
+  "git/git": {
+    "tier": "Tier A system utilities",
+    "side": "c_side",
+    "components": 30,
+    "classes": {
+      "MIXED": 1,
+      "OTHER": 12,
+      "C": 16,
+      "RUST": 1
+    },
+    "component_detail": {
+      "": {
+        "class": "MIXED",
+        "rs": 1,
+        "c": 244,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 529
+      },
+      "Documentation/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 981
+      },
+      "bin-wrappers/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 3
+      },
+      "block-sha1/": {
+        "class": "C",
+        "rs": 0,
+        "c": 2,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "builtin/": {
+        "class": "C",
+        "rs": 0,
+        "c": 130,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 130
+      },
+      "ci/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 20
+      },
+      "compat/": {
+        "class": "C",
+        "rs": 0,
+        "c": 93,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 107
+      },
+      "compiler-tricks/": {
+        "class": "C",
+        "rs": 0,
+        "c": 1,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "ewah/": {
+        "class": "C",
+        "rs": 0,
+        "c": 6,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "git-gui/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 88
+      },
+      "gitk-git/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 25
+      },
+      "gitweb/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 18
+      },
+      "mergetools/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 24
+      },
+      "negotiator/": {
+        "class": "C",
+        "rs": 0,
+        "c": 6,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "odb/": {
+        "class": "C",
+        "rs": 0,
+        "c": 14,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 14
+      },
+      "oss-fuzz/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 12
+      },
+      "perl/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 31
+      },
+      "po/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 26
+      },
+      "refs/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "reftable/": {
+        "class": "C",
+        "rs": 0,
+        "c": 40,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 41
+      },
+      "sha1/": {
+        "class": "C",
+        "rs": 0,
+        "c": 1,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "sha1dc/": {
+        "class": "C",
+        "rs": 0,
+        "c": 4,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "sha256/": {
+        "class": "C",
+        "rs": 0,
+        "c": 5,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 5,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 7
+      },
+      "subprojects/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 8
+      },
+      "t/": {
+        "class": "C",
+        "rs": 0,
+        "c": 92,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 2551
+      },
+      "templates/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 21
+      },
+      "tools/": {
+        "class": "C",
+        "rs": 0,
+        "c": 1,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 43
+      },
+      "trace2/": {
+        "class": "C",
+        "rs": 0,
+        "c": 22,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 22
+      },
+      "xdiff/": {
+        "class": "C",
+        "rs": 0,
+        "c": 15,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 15
+      }
+    }
+  },
+  "GitoxideLabs/gitoxide": {
+    "tier": "Tier A system utilities",
+    "side": "rust_side",
+    "components": 76,
+    "classes": {
+      "OTHER": 6,
+      "RUST": 70
+    },
+    "component_detail": {
+      ".agents/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      ".claude/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      ".config/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      ".devcontainer/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 29
+      },
+      ".gov/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "etc/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 101
+      },
+      "gitoxide-core/": {
+        "class": "RUST",
+        "rs": 77,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 81
+      },
+      "gix-actor/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 18
+      },
+      "gix-archive/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "gix-attributes/": {
+        "class": "RUST",
+        "rs": 17,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 26
+      },
+      "gix-bitmap/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 13
+      },
+      "gix-blame/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 20
+      },
+      "gix-chunk/": {
+        "class": "RUST",
+        "rs": 5,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "gix-command/": {
+        "class": "RUST",
+        "rs": 11,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 25
+      },
+      "gix-commitgraph/": {
+        "class": "RUST",
+        "rs": 12,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 38
+      },
+      "gix-config-value/": {
+        "class": "RUST",
+        "rs": 12,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 19
+      },
+      "gix-config/": {
+        "class": "RUST",
+        "rs": 87,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 113
+      },
+      "gix-credentials/": {
+        "class": "RUST",
+        "rs": 23,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 44
+      },
+      "gix-date/": {
+        "class": "RUST",
+        "rs": 18,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 28
+      },
+      "gix-diff/": {
+        "class": "RUST",
+        "rs": 32,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 54
+      },
+      "gix-dir/": {
+        "class": "RUST",
+        "rs": 10,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 21
+      },
+      "gix-discover/": {
+        "class": "RUST",
+        "rs": 15,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 31
+      },
+      "gix-error/": {
+        "class": "RUST",
+        "rs": 17,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 21
+      },
+      "gix-features/": {
+        "class": "RUST",
+        "rs": 24,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 28
+      },
+      "gix-fetchhead/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "gix-filter/": {
+        "class": "RUST",
+        "rs": 33,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 42
+      },
+      "gix-fs/": {
+        "class": "RUST",
+        "rs": 18,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 22
+      },
+      "gix-fsck/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "gix-glob/": {
+        "class": "RUST",
+        "rs": 14,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 21
+      },
+      "gix-hash/": {
+        "class": "RUST",
+        "rs": 17,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 23
+      },
+      "gix-hashtable/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 6
+      },
+      "gix-ignore/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 27
+      },
+      "gix-imara-diff/": {
+        "class": "RUST",
+        "rs": 22,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 34
+      },
+      "gix-index/": {
+        "class": "RUST",
+        "rs": 52,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 186
+      },
+      "gix-lfs/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "gix-lock/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 13
+      },
+      "gix-macros/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 14
+      },
+      "gix-mailmap/": {
+        "class": "RUST",
+        "rs": 11,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 24
+      },
+      "gix-merge/": {
+        "class": "RUST",
+        "rs": 32,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 53
+      },
+      "gix-negotiate/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 13
+      },
+      "gix-note/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 8
+      },
+      "gix-object/": {
+        "class": "RUST",
+        "rs": 51,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 97
+      },
+      "gix-odb/": {
+        "class": "RUST",
+        "rs": 42,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 78
+      },
+      "gix-pack/": {
+        "class": "RUST",
+        "rs": 91,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 170
+      },
+      "gix-packetline/": {
+        "class": "RUST",
+        "rs": 20,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 38
+      },
+      "gix-path/": {
+        "class": "RUST",
+        "rs": 17,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 22
+      },
+      "gix-pathspec/": {
+        "class": "RUST",
+        "rs": 15,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 133
+      },
+      "gix-prompt/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 13
+      },
+      "gix-protocol/": {
+        "class": "RUST",
+        "rs": 35,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 61
+      },
+      "gix-quote/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 8
+      },
+      "gix-rebase/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "gix-ref/": {
+        "class": "RUST",
+        "rs": 70,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 115
+      },
+      "gix-refspec/": {
+        "class": "RUST",
+        "rs": 21,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 34
+      },
+      "gix-revision/": {
+        "class": "RUST",
+        "rs": 27,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 43
+      },
+      "gix-revwalk/": {
+        "class": "RUST",
+        "rs": 5,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "gix-sec/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 10
+      },
+      "gix-sequencer/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "gix-shallow/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "gix-status/": {
+        "class": "RUST",
+        "rs": 15,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 50
+      },
+      "gix-submodule/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 13
+      },
+      "gix-tempfile/": {
+        "class": "RUST",
+        "rs": 12,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 17
+      },
+      "gix-tix/": {
+        "class": "RUST",
+        "rs": 30,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 54
+      },
+      "gix-trace/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 8
+      },
+      "gix-transport/": {
+        "class": "RUST",
+        "rs": 44,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 82
+      },
+      "gix-traverse/": {
+        "class": "RUST",
+        "rs": 21,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 46
+      },
+      "gix-tui/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "gix-url/": {
+        "class": "RUST",
+        "rs": 18,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 36
+      },
+      "gix-utils/": {
+        "class": "RUST",
+        "rs": 13,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 17
+      },
+      "gix-validate/": {
+        "class": "RUST",
+        "rs": 10,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 14
+      },
+      "gix-worktree-state/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 32
+      },
+      "gix-worktree-stream/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 12
+      },
+      "gix-worktree/": {
+        "class": "RUST",
+        "rs": 12,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 23
+      },
+      "gix-zlib/": {
+        "class": "RUST",
+        "rs": 12,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 16
+      },
+      "gix/": {
+        "class": "RUST",
+        "rs": 251,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 421
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 13,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 13
+      }
+    }
+  },
+  "openssl/openssl": {
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "components": 16,
+    "classes": {
+      "OTHER": 9,
+      "C": 7
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 41
+      },
+      ".ctags.d/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "Configurations/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 37
+      },
+      "VMS/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 10
+      },
+      "apps/": {
+        "class": "C",
+        "rs": 0,
+        "c": 80,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 133
+      },
+      "crypto/": {
+        "class": "C",
+        "rs": 0,
+        "c": 940,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1287
+      },
+      "demos/": {
+        "class": "C",
+        "rs": 0,
+        "c": 78,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 179
+      },
+      "dev/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 13
+      },
+      "exporters/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "external/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 35
+      },
+      "include/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 363
+      },
+      "ms/": {
+        "class": "C",
+        "rs": 0,
+        "c": 3,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 7
+      },
+      "os-dep/": {
+        "class": "C",
+        "rs": 0,
+        "c": 1,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "providers/": {
+        "class": "C",
+        "rs": 0,
+        "c": 267,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 469
+      },
+      "ssl/": {
+        "class": "C",
+        "rs": 0,
+        "c": 120,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 127
+      },
+      "util/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 92
+      }
+    }
+  },
+  "rustls/rustls": {
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "components": 19,
+    "classes": {
+      "OTHER": 5,
+      "RUST": 14
+    },
+    "component_detail": {
+      ".cargo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 20
+      },
+      "admin/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 12
+      },
+      "audit/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "bogo/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 19
+      },
+      "ci-bench/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 6
+      },
+      "connect-tests/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 3
+      },
+      "openssl-tests/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 8
+      },
+      "rustls-aws-lc-rs/": {
+        "class": "RUST",
+        "rs": 11,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      },
+      "rustls-bench/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 2
+      },
+      "rustls-fuzzing-provider/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 3
+      },
+      "rustls-post-quantum/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "rustls-provider-test/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 4
+      },
+      "rustls-ring/": {
+        "class": "RUST",
+        "rs": 11,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 18
+      },
+      "rustls-test/": {
+        "class": "RUST",
+        "rs": 21,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 61
+      },
+      "rustls-util/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 4
+      },
+      "rustls/": {
+        "class": "RUST",
+        "rs": 84,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 111
+      },
+      "test-ca/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 169
+      },
+      "website/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 51
+      }
+    }
+  },
+  "madler/zlib": {
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "components": 7,
+    "classes": {
+      "C": 1,
+      "OTHER": 6
+    },
+    "component_detail": {
+      "": {
+        "class": "C",
+        "rs": 0,
+        "c": 26,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 49
+      },
+      "amiga/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "msdos/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "os400/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "qnx/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "watcom/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "win32/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      }
+    }
+  },
+  "Frommi/miniz_oxide": {
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "components": 7,
+    "classes": {
+      "RUST": 5,
+      "C": 2
+    },
+    "component_detail": {
+      "": {
+        "class": "RUST",
+        "rs": 0,
+        "c": 3,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 20
+      },
+      "benches/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "miniz/": {
+        "class": "C",
+        "rs": 0,
+        "c": 2,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "miniz_oxide/": {
+        "class": "RUST",
+        "rs": 17,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 31
+      },
+      "miniz_oxide_test/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 3
+      },
+      "miniz_stub/": {
+        "class": "C",
+        "rs": 0,
+        "c": 4,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 4
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 7
+      }
+    }
+  },
+  "libuv/libuv": {
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "components": 7,
+    "classes": {
+      "OTHER": 6,
+      "C": 1
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 24
+      },
+      "cmake-toolchains/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "img/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "include/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 14
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 104,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 104
+      },
+      "tools/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      }
+    }
+  },
+  "tokio-rs/tokio": {
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "components": 11,
+    "classes": {
+      "OTHER": 2,
+      "RUST": 9
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 12
+      },
+      "benches/": {
+        "class": "RUST",
+        "rs": 17,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 18
+      },
+      "stress-test/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 2
+      },
+      "target-specs/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "tests-build/": {
+        "class": "RUST",
+        "rs": 14,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 22
+      },
+      "tests-integration/": {
+        "class": "RUST",
+        "rs": 9,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 11
+      },
+      "tokio-macros/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 7
+      },
+      "tokio-stream/": {
+        "class": "RUST",
+        "rs": 72,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 78
+      },
+      "tokio-test/": {
+        "class": "RUST",
+        "rs": 10,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 14
+      },
+      "tokio-util/": {
+        "class": "RUST",
+        "rs": 89,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 93
+      },
+      "tokio/": {
+        "class": "RUST",
+        "rs": 558,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 565
+      }
+    }
+  },
+  "ngtcp2/ngtcp2": {
+    "tier": "Tier B network/async",
+    "side": "c_side",
+    "components": 8,
+    "classes": {
+      "OTHER": 6,
+      "C": 2
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 17
+      },
+      ".clusterfuzzlite/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 4
+      },
+      "ci/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "crypto/": {
+        "class": "C",
+        "rs": 0,
+        "c": 18,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 47
+      },
+      "docker/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "interop/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "lib/": {
+        "class": "C",
+        "rs": 0,
+        "c": 98,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 106
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      }
+    }
+  },
+  "cloudflare/quiche": {
+    "tier": "Tier B network/async",
+    "side": "rust_side",
+    "components": 14,
+    "classes": {
+      "OTHER": 2,
+      "RUST": 12
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 16
+      },
+      ".opencode/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "apps/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 11
+      },
+      "buffer-pool/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "datagram-socket/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "h3i/": {
+        "class": "RUST",
+        "rs": 23,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 28
+      },
+      "netlog/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "octets/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 4
+      },
+      "qlog-dancer/": {
+        "class": "RUST",
+        "rs": 27,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 33
+      },
+      "qlog/": {
+        "class": "RUST",
+        "rs": 11,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      },
+      "quiche/": {
+        "class": "RUST",
+        "rs": 70,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 89
+      },
+      "task-killswitch/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 3
+      },
+      "tokio-quiche/": {
+        "class": "RUST",
+        "rs": 59,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 73
+      },
+      "tools/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 7
+      }
+    }
+  },
+  "vim/vim": {
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "components": 9,
+    "classes": {
+      "OTHER": 6,
+      "C": 3
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 20
+      },
+      "READMEdir/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 28
+      },
+      "ci/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 18
+      },
+      "lang/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 12
+      },
+      "nsis/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "pixmaps/": {
+        "class": "C",
+        "rs": 0,
+        "c": 1,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 53
+      },
+      "runtime/": {
+        "class": "C",
+        "rs": 0,
+        "c": 21,
+        "cpp": 3,
+        "rust_build": false,
+        "c_build": true,
+        "files": 5344
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 271,
+        "cpp": 4,
+        "rust_build": false,
+        "c_build": true,
+        "files": 3050
+      },
+      "tools/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      }
+    }
+  },
+  "helix-editor/helix": {
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "components": 18,
+    "classes": {
+      "OTHER": 4,
+      "RUST": 14
+    },
+    "component_detail": {
+      ".cargo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 22
+      },
+      "book/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 46
+      },
+      "helix-core/": {
+        "class": "RUST",
+        "rs": 44,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 47
+      },
+      "helix-dap-types/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 2
+      },
+      "helix-dap/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "helix-event/": {
+        "class": "RUST",
+        "rs": 9,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 10
+      },
+      "helix-loader/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 7
+      },
+      "helix-lsp-types/": {
+        "class": "RUST",
+        "rs": 35,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 38
+      },
+      "helix-lsp/": {
+        "class": "RUST",
+        "rs": 6,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 7
+      },
+      "helix-parsec/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 2
+      },
+      "helix-stdx/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "helix-term/": {
+        "class": "RUST",
+        "rs": 70,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 72
+      },
+      "helix-tui/": {
+        "class": "RUST",
+        "rs": 22,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 25
+      },
+      "helix-vcs/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      "helix-view/": {
+        "class": "RUST",
+        "rs": 26,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 64
+      },
+      "runtime/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1437
+      },
+      "xtask/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      }
+    }
+  },
+  "tmux/tmux": {
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "components": 6,
+    "classes": {
+      "C": 2,
+      "OTHER": 4
+    },
+    "component_detail": {
+      "": {
+        "class": "C",
+        "rs": 0,
+        "c": 157,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 172
+      },
+      "compat/": {
+        "class": "C",
+        "rs": 0,
+        "c": 46,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 46
+      },
+      "logo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 19
+      },
+      "presentations/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 3
+      },
+      "regress/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 273
+      },
+      "tools/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 7
+      }
+    }
+  },
+  "zellij-org/zellij": {
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "components": 15,
+    "classes": {
+      "OTHER": 6,
+      "RUST": 9
+    },
+    "component_detail": {
+      ".cargo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      ".config/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      },
+      "assets/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "default-plugins/": {
+        "class": "RUST",
+        "rs": 76,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 121
+      },
+      "example/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 12
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 154
+      },
+      "wix/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "xtask/": {
+        "class": "RUST",
+        "rs": 10,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 11
+      },
+      "zellij-client/": {
+        "class": "RUST",
+        "rs": 37,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 69
+      },
+      "zellij-integration-tests/": {
+        "class": "RUST",
+        "rs": 52,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 246
+      },
+      "zellij-server/": {
+        "class": "RUST",
+        "rs": 95,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 873
+      },
+      "zellij-tile-utils/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 3
+      },
+      "zellij-tile/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 10
+      },
+      "zellij-utils/": {
+        "class": "RUST",
+        "rs": 93,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 308
+      }
+    }
+  },
+  "htop-dev/htop": {
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "components": 15,
+    "classes": {
+      "C": 12,
+      "OTHER": 3
+    },
+    "component_detail": {
+      "": {
+        "class": "C",
+        "rs": 0,
+        "c": 139,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 165
+      },
+      "darwin/": {
+        "class": "C",
+        "rs": 0,
+        "c": 11,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 11
+      },
+      "dragonflybsd/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "freebsd/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "generic/": {
+        "class": "C",
+        "rs": 0,
+        "c": 15,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 15
+      },
+      "iwyu/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "linux/": {
+        "class": "C",
+        "rs": 0,
+        "c": 38,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 38
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "netbsd/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 10
+      },
+      "openbsd/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "pcp/": {
+        "class": "C",
+        "rs": 0,
+        "c": 21,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 51
+      },
+      "scripts/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "solaris/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "unsupported/": {
+        "class": "C",
+        "rs": 0,
+        "c": 9,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 9
+      },
+      "zfs/": {
+        "class": "C",
+        "rs": 0,
+        "c": 5,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      }
+    }
+  },
+  "ClementTsang/bottom": {
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "components": 10,
+    "classes": {
+      "RUST": 3,
+      "OTHER": 7
+    },
+    "component_detail": {
+      "": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      },
+      ".cargo/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "assets/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "demos/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "desktop/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "sample_configs/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      },
+      "schema/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 10
+      },
+      "scripts/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 17
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 166,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 166
+      },
+      "wix/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 2
+      }
+    }
+  },
+  "jqlang/jq": {
+    "tier": "Tier C CLI/data tools",
+    "side": "c_side",
+    "components": 6,
+    "classes": {
+      "OTHER": 5,
+      "C": 1
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 17
+      },
+      "config/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 7
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 3
+      },
+      "scripts/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 3
+      },
+      "sig/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 228
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 42,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 45
+      }
+    }
+  },
+  "01mf02/jaq": {
+    "tier": "Tier C CLI/data tools",
+    "side": "rust_side",
+    "components": 8,
+    "classes": {
+      "OTHER": 1,
+      "RUST": 7
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 7
+      },
+      "jaq-all/": {
+        "class": "RUST",
+        "rs": 4,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 5
+      },
+      "jaq-core/": {
+        "class": "RUST",
+        "rs": 31,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 37
+      },
+      "jaq-fmts/": {
+        "class": "RUST",
+        "rs": 20,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 25
+      },
+      "jaq-json/": {
+        "class": "RUST",
+        "rs": 9,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 11
+      },
+      "jaq-play/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 10
+      },
+      "jaq-std/": {
+        "class": "RUST",
+        "rs": 8,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 10
+      },
+      "jaq/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      }
+    }
+  },
+  "gpg/gnupg": {
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "components": 17,
+    "classes": {
+      "OTHER": 5,
+      "C": 12
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 24
+      },
+      "agent/": {
+        "class": "C",
+        "rs": 0,
+        "c": 27,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 32
+      },
+      "am/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "artwork/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 78
+      },
+      "build-aux/": {
+        "class": "C",
+        "rs": 0,
+        "c": 3,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 40
+      },
+      "common/": {
+        "class": "C",
+        "rs": 0,
+        "c": 134,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 147
+      },
+      "dirmngr/": {
+        "class": "C",
+        "rs": 0,
+        "c": 60,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 73
+      },
+      "g10/": {
+        "class": "C",
+        "rs": 0,
+        "c": 98,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 110
+      },
+      "g13/": {
+        "class": "C",
+        "rs": 0,
+        "c": 36,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 41
+      },
+      "kbx/": {
+        "class": "C",
+        "rs": 0,
+        "c": 26,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 32
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 26
+      },
+      "po/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 42
+      },
+      "regexp/": {
+        "class": "C",
+        "rs": 0,
+        "c": 4,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 8
+      },
+      "scd/": {
+        "class": "C",
+        "rs": 0,
+        "c": 21,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 25
+      },
+      "sm/": {
+        "class": "C",
+        "rs": 0,
+        "c": 29,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 33
+      },
+      "tools/": {
+        "class": "C",
+        "rs": 0,
+        "c": 44,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 69
+      },
+      "tpm2d/": {
+        "class": "C",
+        "rs": 0,
+        "c": 7,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 8
+      }
+    }
+  },
+  "rpgp/rpgp": {
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "components": 4,
+    "classes": {
+      "OTHER": 2,
+      "RUST": 2
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      },
+      "benches/": {
+        "class": "RUST",
+        "rs": 5,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "proptest-regressions/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 21
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 143,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 143
+      }
+    }
+  },
+  "google/boringssl": {
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "components": 15,
+    "classes": {
+      "OTHER": 6,
+      "CPP": 8,
+      "RUST": 1
+    },
+    "component_detail": {
+      ".agents/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 32
+      },
+      ".bcr/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 5
+      },
+      "agents/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "bench/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 1,
+        "cpp": 22,
+        "rust_build": false,
+        "c_build": false,
+        "files": 23
+      },
+      "crypto/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 69,
+        "cpp": 329,
+        "rust_build": false,
+        "c_build": false,
+        "files": 856
+      },
+      "decrepit/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 2,
+        "cpp": 24,
+        "rust_build": false,
+        "c_build": false,
+        "files": 26
+      },
+      "gen/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 0,
+        "cpp": 1,
+        "rust_build": false,
+        "c_build": false,
+        "files": 167
+      },
+      "include/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 105
+      },
+      "infra/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 11
+      },
+      "pki/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 39,
+        "cpp": 70,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1902
+      },
+      "rust/": {
+        "class": "RUST",
+        "rs": 94,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": true,
+        "files": 137
+      },
+      "ssl/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 11,
+        "cpp": 50,
+        "rust_build": false,
+        "c_build": true,
+        "files": 136
+      },
+      "tool/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 2,
+        "cpp": 16,
+        "rust_build": false,
+        "c_build": false,
+        "files": 18
+      },
+      "util/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 2,
+        "cpp": 10,
+        "rust_build": false,
+        "c_build": true,
+        "files": 253
+      }
+    }
+  },
+  "briansmith/ring": {
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "components": 7,
+    "classes": {
+      "OTHER": 3,
+      "RUST": 3,
+      "C": 1
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 19
+      },
+      "bench/": {
+        "class": "RUST",
+        "rs": 5,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 17
+      },
+      "cavp/": {
+        "class": "RUST",
+        "rs": 1,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 15
+      },
+      "crypto/": {
+        "class": "C",
+        "rs": 0,
+        "c": 23,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 74
+      },
+      "include/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 7
+      },
+      "mk/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 10
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 190,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 235
+      }
+    }
+  },
+  "openssh/openssh-portable": {
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "components": 4,
+    "classes": {
+      "C": 2,
+      "OTHER": 1,
+      "CPP": 1
+    },
+    "component_detail": {
+      "": {
+        "class": "C",
+        "rs": 0,
+        "c": 237,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 297
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "openbsd-compat/": {
+        "class": "C",
+        "rs": 0,
+        "c": 122,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 124
+      },
+      "regress/": {
+        "class": "CPP",
+        "rs": 0,
+        "c": 12,
+        "cpp": 12,
+        "rust_build": false,
+        "c_build": true,
+        "files": 402
+      }
+    }
+  },
+  "warp-tech/russh": {
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "components": 8,
+    "classes": {
+      "OTHER": 3,
+      "RUST": 5
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 9
+      },
+      ".well-known/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "cryptovec/": {
+        "class": "RUST",
+        "rs": 7,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 8
+      },
+      "files/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 1
+      },
+      "pageant/": {
+        "class": "RUST",
+        "rs": 5,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 6
+      },
+      "russh-config/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 3
+      },
+      "russh-util/": {
+        "class": "RUST",
+        "rs": 3,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 4
+      },
+      "russh/": {
+        "class": "RUST",
+        "rs": 80,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 81
+      }
+    }
+  },
+  "jedisct1/libsodium": {
+    "tier": "Tier D security/crypto",
+    "side": "c_side",
+    "components": 7,
+    "classes": {
+      "OTHER": 5,
+      "C": 2
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 18
+      },
+      "builds/": {
+        "class": "C",
+        "rs": 0,
+        "c": 3,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 99
+      },
+      "ci/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      },
+      "dist-build/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 14
+      },
+      "m4/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 11
+      },
+      "regen-msvc/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 7
+      },
+      "src/": {
+        "class": "C",
+        "rs": 0,
+        "c": 242,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": true,
+        "files": 339
+      }
+    }
+  },
+  "sodiumoxide/sodiumoxide": {
+    "tier": "Tier D security/crypto",
+    "side": "rust_side",
+    "components": 5,
+    "classes": {
+      "OTHER": 2,
+      "RUST": 3
+    },
+    "component_detail": {
+      "": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 11
+      },
+      "libsodium-sys/": {
+        "class": "RUST",
+        "rs": 42,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 55
+      },
+      "src/": {
+        "class": "RUST",
+        "rs": 61,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 61
+      },
+      "testcrate/": {
+        "class": "RUST",
+        "rs": 2,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": true,
+        "c_build": false,
+        "files": 4
+      },
+      "testvectors/": {
+        "class": "OTHER",
+        "rs": 0,
+        "c": 0,
+        "cpp": 0,
+        "rust_build": false,
+        "c_build": false,
+        "files": 6
+      }
+    }
+  }
+}
