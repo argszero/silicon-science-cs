@@ -27,7 +27,7 @@ Migration reports are anecdotal (Firefox's style engine, ripgrep, sudo-rs) or to
 
 We compare against five concrete prior works, stating the specific difference of this paper from each:
 
-1. **C2RustXW (arXiv:2603.xxxxx, 2026-03)** — program-structure-aware C-to-Rust translation via LLM. *Difference*: translation *tooling* studies how to convert individual functions; we measure corpus-wide *what has actually been adopted* across 32 flagship projects at a pinned snapshot — the tooling papers assume adoption, we measure it.
+1. **C2RustXW (arXiv:2603.28686, 2026-03)** — program-structure-aware C-to-Rust translation via LLM. *Difference*: translation *tooling* studies how to convert individual functions; we measure corpus-wide *what has actually been adopted* across 32 flagship projects at a pinned snapshot — the tooling papers assume adoption, we measure it.
 2. **SmartC2Rust / LLM-based C-to-Rust translators (2025)** — iterative C-to-Rust translation with equivalence checking. *Difference*: single-translation-pair evaluations on curated programs; our census is a multi-project, cell-validated population measurement with ground-truth classification.
 3. **"Do Unit Proofs Work?" / memory-safety verification of Rust (2025)** — verifies the memory-safety properties of translated/unsafe Rust. *Difference*: verification of *resulting* code; we measure the *adoption surface* — which components exist in Rust at all, and whether they are bindings or reimplementations.
 4. **Project-level adoption reports (Firefox, ripgrep, sudo-rs, Linux kernel Rust modules)** — individual rewrite write-ups. *Difference*: single-system anecdotes, non-comparable; our census is ecosystem-wide (32 repos / 252 components / cell-validated), of which individual reports are sample points.
@@ -44,7 +44,7 @@ We compare against five concrete prior works, stating the specific difference of
 - **Tier C CLI/data tools (4 pairs)**: vim↔helix, tmux↔zellij, htop↔bottom, jq↔jaq.
 - **Tier D security/crypto (4 pairs)**: GnuPG↔rpgp, BoringSSL↔ring, OpenSSH↔russh, libsodium↔sodiumoxide.
 
-Selection notes: Sequoia PGP lives on GitLab (excluded → rpgp); age is Go (excluded); GNU grep/findutils are not on GitHub (→ the_silver_searcher as the grep-era counterpart). All repos pinned to default-branch head SHAs; `fetch_trees.py` fetches recursive trees (32/32, none truncated).
+Selection notes: Sequoia PGP lives on GitLab (excluded → rpgp); age is Go (excluded); GNU grep/findutils are not on GitHub (→ the_silver_searcher as the grep-era counterpart). All repos pinned to default-branch head SHAs; `fetch_trees.py` fetches recursive trees (32/32, none truncated). **Domain note**: databases and web servers have no canonical C↔Rust era-pair — the flagship C projects in those domains (PostgreSQL, MySQL, Nginx, Apache) have no maintained Rust counterpart of comparable standing, and the Rust-native leaders (SQLx/Diesel; Axum/Actix) are libraries/frameworks rather than successor ports — so the era-pair rule covers the four domains where canonical C↔Rust pairs exist (system utilities, network/async, CLI/data tools, security/crypto), which is exactly where migration is observable.
 
 ### 3.2 Component-level classification
 
@@ -108,7 +108,7 @@ H3 is falsified in magnitude: whole reimplementation dominates; bindings are a m
 | briansmith/ring | Assembly | RUST (75% share; crypto/ is C/asm) |
 | Frommi/miniz_oxide | C | RUST (71.4%; miniz/ compat C excluded) |
 
-The GitHub `language` field misleads on 3/32 repos (9.4%) for this census's question; component-level classification from pinned trees is the defensible basis.
+The GitHub `language` field mislabels 5/32 repos (15.6%) relative to measured content; the three most striking examples are above (vim→"Vim Script", ring→"Assembly", miniz_oxide→"C"), and the two C-side adopters are also hidden (git→"C", BoringSSL→"C++", see the Rust-gap below). Component-level classification from pinned trees is the defensible basis. **Corpus-wide contrast**: GitHub's lang field tags 14/32 repos (43.8%) as Rust; measured, 18/32 (56.3%) contain Rust components (all 16 Rust-side repos + git and BoringSSL's C-side Rust integrations). The 4-repo Rust gap is exactly the census's headline population — a lang-field-only census would miss the entire "C projects adopting Rust" phenomenon (§5).
 
 ## 5. Discussion
 
@@ -145,9 +145,9 @@ We presented the first deterministic, snapshot-pinned, cell-validated code-level
 ## References
 
 1. CISA/ONCD. *Back to the Building Blocks: A Path Toward Secure and Measurable Software* (2024-02). https://www.cisa.gov/
-2. C2RustXW: Program-Structure-Aware C-to-Rust Translation via Program Analysis and LLM. arXiv:2603.xxxxx (2026-03).
-3. SmartC2Rust: Iterative, Feedback-Driven C-to-Rust Translation via LLMs for Safety and Equivalence. arXiv:2409.xxxxx (2024-09).
-4. Fearless Unsafe: A More User-Friendly Document for Unsafe Rust Programming. arXiv:2412.xxxxx (2024-12).
+2. C2RustXW: Program-Structure-Aware C-to-Rust Translation via Program Analysis and LLM. arXiv:2603.28686 (2026-03).
+3. SmartC2Rust: Iterative, Feedback-Driven C-to-Rust Translation via LLMs for Safety and Equivalence. arXiv:2409.10506 (2024-09).
+4. Fearless Unsafe: A More User-Friendly Document for Unsafe Rust Programming. arXiv:2412.06251 (2024-12).
 5. Rust project reports: Firefox style engine (Servo), ripgrep (BurntSushi), sudo-rs (trifectatechfoundation), Linux kernel Rust modules (rust-for-linux).
 6. NIST Secure Software Development Framework (SSDF), SP 800-218.
 7. Google Rust-in-the-kernel / Android memory-safety program announcements (2022–2026).
