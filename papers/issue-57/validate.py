@@ -56,7 +56,7 @@ def main():
 
     n_iii = sum(1 for r in tb if r in gt_iii)
     judge = sum(1 for r in tb if gt_iii.get(r) == "JUDGE")
-    p3 = judge / n
+    p3 = judge / n_iii  # annotated-subset estimate (coverage-aware; no /86 claim)
 
     report = (SNAP / "hypotheses_report.txt").read_text()
 
@@ -66,7 +66,8 @@ def main():
         ("H2 ORCH-WORKER count", str(ow), re.search(r"ORCH-WORKER (\d+) / TEAM", report).group(1)),
         ("H2 point %", f"{100*p2:.1f}", re.search(r"ORCH-WORKER (\d+\.\d)%", report).group(1)),
         ("H3 JUDGE count", str(judge), re.search(r"JUDGE=(\d+)", report).group(1)),
-        ("H3 point %", f"{100*p3:.1f}", re.search(r"JUDGE (\d+\.\d)%", report).group(1)),
+        ("H3 point % (annotated subset)", f"{100*p3:.1f}", re.search(r"JUDGE (\d+\.\d)% of annotated", report).group(1)),
+        ("H3 annotated coverage", str(n_iii), re.search(r"axis-iii annotated (\d+)/", report).group(1)),
     ]
     ok = True
     print("validate.py — hypotheses cross-check")

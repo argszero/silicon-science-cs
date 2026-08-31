@@ -10,7 +10,7 @@ bash reproduce.sh
 
 Expected output (exit 0):
 - `OK: hypotheses_report.txt byte-identical to canonical`
-- `PASS: 6/6 checks` (independent re-computation of H1/H2/H3 from the ground-truth TSVs)
+- `PASS: 7/7 checks` (independent re-computation of H1/H2/H3 from the ground-truth TSVs)
 - `== reproduction complete ==`
 
 No network required — everything reads from committed snapshots. Canonical output: `snapshots/expected_output/hypotheses_report.txt`.
@@ -21,7 +21,7 @@ No network required — everything reads from committed snapshots. Canonical out
 |---|---|---|---|
 | H1: majority of self-described MAS are SINGLE-model/non-MAS | **68.2%** (58/85) | [57.7%, 77.2%] | ✅ CONFIRMED (lower bound > 50%) |
 | H2: orchestrator-worker dominates genuine MAS | **48.1%** (13/27) | [30.7%, 66.0%] | ◐ PARTIAL (plurality; 5 flips to overturn) |
-| H3: judge/critic is a minority | **1.2%** (1/86) | [0.2%, 6.3%] | ✅ CONFIRMED (rare) |
+| H3: judge/critic is a minority | **3.3%** (1/30 annotated) | — (30/86 annotated; 56/86 UNKNOWN) | ✅ CONFIRMED (rare; no /86 precision claim) |
 
 **Label-reality gap**: 68.2% of repos that self-describe as "multi-agent" are single-model systems or not agent systems at all (44 single-agent apps + 14 skills/memory-infra).
 

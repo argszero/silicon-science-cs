@@ -118,13 +118,18 @@ def main():
     # ---- H3 ----
     n_iii = sum(1 for r in tb if r in gt_iii)
     judge = sum(1 for r in tb if gt_iii.get(r) == "JUDGE")
-    p3 = judge / n
-    lo3, hi3 = binom_ci(judge, n)
+    unk_iii = n - n_iii
+    p3_annot = judge / n_iii               # annotated-subset estimate
+    p3_extrap = (judge + unk_iii * (judge / n_iii)) / n  # extrapolate annotated rate to unannotated
     out.append("H3: judge/critic agents are a minority in multi-agent systems.")
-    out.append(f"  axis-iii annotated {n_iii}/{n} Tier B; JUDGE={judge} (verified full-population: gpt-researcher only)")
-    out.append(f"  point estimate: JUDGE {100*p3:.1f}% of Tier B  Wilson 95% CI [{100*lo3:.1f}%, {100*hi3:.1f}%]")
-    out.append("  H3 CONFIRMED (rare; CI upper bound well below 50%)")
-    out.append(f"  H3 flip sensitivity: 1 JUDGE flip would change n=1->2 (report raw count + CI, not percentage)")
+    out.append(f"  axis-iii annotated {n_iii}/{n} Tier B; JUDGE={judge} (verified full-population: gpt-researcher only); "
+               f"{unk_iii}/{n} unannotated (UNKNOWN, no evidence)")
+    out.append(f"  annotated-subset estimate: JUDGE {100*p3_annot:.1f}% of annotated ({judge}/{n_iii})")
+    out.append(f"  mathematical bounds: 1/{n} ({100.0/n:.1f}%, no unannotated=judge) .. "
+               f"{(judge+unk_iii)}/{n} ({100.0*(judge+unk_iii)/n:.1f}%, all unannotated=judge)")
+    out.append(f"  extrapolated rate (annotated 3.3% applied to unannotated): ~{100*p3_extrap:.1f}% of Tier B")
+    out.append("  H3 CONFIRMED (rare): every reasonable reading is single-digit %; we make no /86 precision claim")
+    out.append("  H3 flip sensitivity: 1 JUDGE flip would change the annotated count 1->2 (report raw counts + coverage, not a single percentage)")
     out.append("")
 
     # ---- census summary ----

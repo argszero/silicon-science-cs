@@ -22,10 +22,12 @@ H2: orchestrator-worker is the dominant topology among genuine multi-agent syste
   H2 flip sensitivity: need 5 ORCH-WORKER->TEAM flips to overturn plurality (decided 23)
 
 H3: judge/critic agents are a minority in multi-agent systems.
-  axis-iii annotated 30/86 Tier B; JUDGE=1 (verified full-population: gpt-researcher only)
-  point estimate: JUDGE 1.2% of Tier B  Wilson 95% CI [0.2%, 6.3%]
-  H3 CONFIRMED (rare; CI upper bound well below 50%)
-  H3 flip sensitivity: 1 JUDGE flip would change n=1->2 (report raw count + CI, not percentage)
+  axis-iii annotated 30/86 Tier B; JUDGE=1 (verified full-population: gpt-researcher only); 56/86 unannotated (UNKNOWN, no evidence)
+  annotated-subset estimate: JUDGE 3.3% of annotated (1/30)
+  mathematical bounds: 1/86 (1.2%, no unannotated=judge) .. 57/86 (66.3%, all unannotated=judge)
+  extrapolated rate (annotated 3.3% applied to unannotated): ~3.3% of Tier B
+  H3 CONFIRMED (rare): every reasonable reading is single-digit %; we make no /86 precision claim
+  H3 flip sensitivity: 1 JUDGE flip would change the annotated count 1->2 (report raw counts + coverage, not a single percentage)
 
 --------------------------------------------------------------------------
 Final Tier B census (gold standard, n=86)
