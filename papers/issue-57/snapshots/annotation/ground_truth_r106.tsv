@@ -1,0 +1,65 @@
+# Ground-truth annotation — issue #57 Multi-Agent in the Wild (R106, axis i only)
+# FULL-POPULATION H1 gold standard: axis i for all remaining 56 Tier B repos.
+# Combined with R104 (10) + R105 (20) = all 86 Tier B repos annotated on axis i.
+# Annotator: how2how2how2-arch. Evidence: README self-description + framework
+# deps + agent-ish dirs (+ deep README probes for uncertain cases, marked P).
+# Axis i = SINGLE|MULTI|UNKNOWN (model-instance structure).
+# boundary=1 cells are re-verified in pass_b_r106.tsv (2-pass protocol).
+# v2 mismatch column records classifier disagreement (for the held-out measure).
+repo	axis	label	boundary	v2	evidence
+mvanhorn/last30days-skill	i	SINGLE	0	SINGLE	agent skill (SKILL.md) for a search engine; not an agent system (skill/plugin)
+calesthio/OpenMontage	i	SINGLE	0	SINGLE	agent-first video production: "Your AI coding assistant IS the orchestrator" — tool+skill package driven by a single external coding agent
+zhayujie/CowAgent	i	SINGLE	0	SINGLE	single super assistant agent (harness); plans tasks, controls computer — one agent
+coreyhaines31/marketingskills	i	SINGLE	0	SINGLE	collection of agent skills (markdown files) for coding agents; not a system
+Yeachan-Heo/oh-my-claudecode	i	MULTI	1	SINGLE	"Multi-agent orchestration for Claude Code" — CLI orchestration of multiple Claude Code instances
+TencentCloud/TencentDB-Agent-Memory	i	SINGLE	0	SINGLE	memory server for agents (MCP); infra (like mem0)
+mksglu/context-mode	i	SINGLE	0	SINGLE	context-management tool for agents; infra
+microsoft/agent-lightning	i	SINGLE	0	SINGLE	agentic RL TRAINING framework (~3.5k lines); training infra, not an agent system
+cft0808/edict	i	MULTI	1	SINGLE	12 AI agents (11 business roles + 1 compat) in a 三省六部 (three-departments-six-ministries) collaboration architecture; explicit multi-agent
+microsoft/SkillOpt	i	SINGLE	0	SINGLE	skill training/optimization tool; infra (trains skills, not an MAS)
+HKUDS/DeepCode	i	MULTI	1	SINGLE	"Advancing Code Generation with Multi-Agent Systems"; central orchestrating agent + specialists (probe P)
+EverMind-AI/EverOS	i	UNKNOWN	1	SINGLE	README = multi-product marketing page (Hive Orchestrator, MCO); no single system verifiable — honest UNKNOWN
+bytedance/trae-agent	i	SINGLE	0	SINGLE	single general-purpose SE agent (CLI); transparent modular single agent
+ifixai-ai/iFixAi	i	SINGLE	0	SINGLE	independent auditing tool FOR AI agents; not an agent system (scanner/auditor)
+0x4m4/hexstrike-ai	i	MULTI	1	SINGLE	"150+ security tools and 12+ autonomous AI agents" — multi-agent penetration-testing framework
+yizhiyanhua-ai/fireworks-tech-graph	i	SINGLE	0	SINGLE	one agent skill (SVG/diagram generation); skill not system
+BigBodyCobain/Shadowbroker	i	SINGLE	0	SINGLE	OSINT intelligence map platform; agent command channel is an add-on, core is not MAS
+aden-hive/hive	i	MULTI	1	SINGLE	"colonies of agents": Queen (client-facing lead) + worker clones; "one loop controlling many loops" (probe P)
+numman-ali/openskills	i	SINGLE	0	SINGLE	universal skills loader CLI for agents; infra
+openchamber/openchamber	i	SINGLE	0	SINGLE	workspace for running/supervising agent work; infra/UI
+ValueCell-ai/ClawX	i	SINGLE	0	SINGLE	desktop interface for OpenClaw agents; UI
+MrLesk/Backlog.md	i	SINGLE	0	SINGLE	markdown task manager/kanban; not an agent system
+op7418/CodePilot	i	SINGLE	0	SINGLE	single-model AI agent desktop client (multi-provider != multi-agent)
+Eigenwise/atomic-agents	i	SINGLE	0	SINGLE	atomic agent-building framework (LEGO-like components); framework not running system
+epiral/bb-browser	i	SINGLE	0	SINGLE	browser-API tool for agents; infra
+builderz-labs/mission-control	i	SINGLE	0	SINGLE	self-hosted control plane for operating AI agents; infra
+PawanOsman/OpenCursor	i	SINGLE	0	SINGLE	single AI coding agent for VS Code
+netease-youdao/LobsterAI	i	SINGLE	0	SINGLE	single office-assistant agent (desktop)
+browser-act/skills	i	SINGLE	0	SINGLE	browser-automation tooling for agents; infra
+cloudflare/agents	i	SINGLE	0	SINGLE	agent runtime (Durable Objects): "run millions of them" — independent single agents per user/session, not a coordinated MAS
+campfirein/byterover-cli	i	SINGLE	0	SINGLE	context-memory CLI for coding agents; infra
+alchaincyf/hermes-agent-orange-book	i	SINGLE	0	SINGLE	guide/book (PDF) about Hermes Agent; documentation not system
+eastlondoner/vibe-tools	i	SINGLE	0	SINGLE	tool+skill collection ("give agents an AI team" = skills for a single agent); tooling
+breferrari/obsidian-mind	i	SINGLE	0	SINGLE	obsidian vault giving agents persistent memory; infra
+dimensionalOS/dimos	i	MULTI	0	MULTI	agent-native OS: "build multi-agent systems that work seamlessly with your hardware"; langgraph dep
+gptme/gptme	i	MULTI	0	MULTI	subagent mode + "multi-agent coordination — file leases, message bus, work claiming for concurrent agents" (probe P)
+BuilderIO/micro-agent	i	SINGLE	0	SINGLE	single code-writing agent (generate test, iterate)
+The-Swarm-Corporation/AutoHedge	i	MULTI	1	SINGLE	"Multi-Agent Architecture": Director/Quant/Risk-Management/Execution specialized agents
+apache/maka	i	SINGLE	0	SINGLE	local-first agent workspace (desktop/TUI/CLI -> Runtime Host -> SessionManager -> AgentRun); single-agent runtime
+dmno-dev/varlock	i	SINGLE	0	SINGLE	AI-safe .env tool; infra
+dataelement/Clawith	i	MULTI	0	MULTI	"multi-agent collaboration platform" (OpenClaw for Teams); langgraph dep
+Paper2Poster/Paper2Poster	i	MULTI	0	MULTI	"multi-agent system from scientific papers" + autogen/camel/langchain deps; PosterAgent dir
+LazyAGI/LazyLLM	i	SINGLE	0	SINGLE	low-code TOOL for building multi-agent apps; framework not running system
+EverMind-AI/Raven	i	SINGLE	0	SINGLE	single self-improving agent harness
+ANative-Lab/EvoAgentX	i	MULTI	1	SINGLE	"Building a Self-Evolving Ecosystem of AI Agents" — known multi-agent evolution framework
+MemMachine/MemMachine	i	SINGLE	1	MULTI	"open-source memory layer for AI agents" — infra (like mem0/MemOS); langchain dep is incidental
+SenteLabsAI/OpenExecutive	i	MULTI	1	SINGLE	"single coherent executive voice backed by eight specialist AI agents" (CSO/CFO/CHRO/GC/COO/CMO...)
+fuxicodex/Fuxi	i	SINGLE	0	SINGLE	single terminal coding agent (provider-agnostic)
+wang2122/sprix-sage-router	i	SINGLE	0	SINGLE	mid-execution rerouting for A2A networks; routing infra (decides who works with whom, runs no agents itself)
+alejandrobalderas/claude-code-from-source	i	SINGLE	0	SINGLE	educational book about Claude Code internals; documentation
+AGI-Edgerunners/LLM-Agents-Papers	i	SINGLE	0	SINGLE	papers list; not a system
+langfengQ/verl-agent	i	SINGLE	0	SINGLE	RL training framework for LLM agents (Group-in-Group Policy Optimization); training infra
+satellitecomponent/Neurite	i	MULTI	1	SINGLE	"Multi-Agent UI": connect/manage multiple AI nodes, graph-based multi-agent conversation (probe P)
+Dicklesworthstone/mcp_agent_mail	i	SINGLE	0	SINGLE	mail-like coordination layer FOR coding agents (FastMCP server); infra/communication layer
+chrisworsey55/atlas-gic	i	MULTI	1	SINGLE	ATLAS Agents platform: 25 agents, agent leaderboard, copy-trading; multi-agent service
+jd-opensource/OxyGent	i	MULTI	1	SINGLE	"modular multi-agent framework... build, deploy, and evolve AI teams"; agents decompose tasks/negotiate (probe P)

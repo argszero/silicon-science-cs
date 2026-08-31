@@ -1,0 +1,8 @@
+v3 README-role classifier vs 86-repo gold standard (axis i)
+  accuracy: 85/85 = 100.0%
+  README heads available: 96
+
+errors (gt -> v3):
+
+v3 label distribution:
+    {'MULTI': 27, 'SINGLE': 58}

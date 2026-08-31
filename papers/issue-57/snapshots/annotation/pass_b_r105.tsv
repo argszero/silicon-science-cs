@@ -1,0 +1,16 @@
+# 2-pass re-verification (R105) — boundary cells re-examined with deeper evidence
+# Protocol mirrors R104: boundary cells get a second pass with additional evidence
+# (fuller README via gh api, architecture diagrams, domain knowledge).
+# 11 boundary cells re-verified; 1 flipped (ruflo/ii).
+repo	axis	pass1	pass2	final	note
+ruvnet/ruflo	ii	ORCH-WORKER	TEAM	TEAM	architecture User->Router->Swarm->Agents; Router = entry dispatcher, agents "self-organize into swarms" — no task-decomposing leader; peer swarm semantics
+QwenLM/qwen-code	i	SINGLE	SINGLE	SINGLE	terminal coding agent primary; SubAgents/Agent Teams = secondary features (primary-abstraction rule, smolagents parallel)
+emcie-co/parlant	i	SINGLE	SINGLE	SINGLE	"interaction control harness for customer-facing AI agents" = context-engineering layer per conversation, not multi-agent coordination
+microsoft/RD-Agent	i	MULTI	MULTI	MULTI	probed fuller README: "First Data-Centric Quant Multi-Agent Framework" (self-described multi-agent)
+microsoft/RD-Agent	ii	PIPELINE	PIPELINE	PIPELINE	coordinated factor-model co-optimization loop: idea->experiment->summary->repeat, sequential role stages
+MemTensor/MemOS	i	SINGLE	SINGLE	SINGLE	memory OS for agents (store/retrieve/manage, MemScheduler); ecosystem = agents (OpenClaw/Hermes/DSH) consuming it — infra, like mem0
+lastmile-ai/mcp-agent	i	MULTI	MULTI	MULTI	framework implements orchestrator-workers + evaluator-optimizer patterns as core value (multi-agent capable)
+lastmile-ai/mcp-agent	ii	UNKNOWN	UNKNOWN	UNKNOWN	composable pattern library, no canonical topology (langchain parallel)
+openJiuwen-ai/jiuwenswarm	ii	ORCH-WORKER	ORCH-WORKER	ORCH-WORKER	"Leader decomposes a complex task and assembles teams... the Leader hands off between stage agents" — explicit orchestrator
+business-science/ai-data-science-team	ii	ORCH-WORKER	ORCH-WORKER	ORCH-WORKER	langgraph team of specialized agents; supervisor pattern implied (not contradicted by README head)
+langflow-ai/langflow	ii	PIPELINE	PIPELINE	PIPELINE	canonical abstraction = visual flow/DAG of component stages (R104 reviewer verdict); not a fixed supervisor

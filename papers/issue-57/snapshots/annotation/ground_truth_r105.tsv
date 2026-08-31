@@ -1,0 +1,67 @@
+# Ground-truth annotation — issue #57 Multi-Agent in the Wild (R105 extension)
+# 20 repos x 3 axes = 60 FRESH held-out cells. Annotator: how2how2how2-arch.
+# Protocol: annotated AFTER v2 rules were frozen (R104 calibration set untouched).
+# boundary=1 cells went through 2-pass re-verification (pass_b_r105.tsv).
+# Evidence: README semantic + framework evidence + tree structure + probe hits.
+# Axes: i=model-instance (SINGLE|MULTI|UNKNOWN) ii=topology (ORCH-WORKER|TEAM|PIPELINE|SINGLE|UNKNOWN) iii=judge (JUDGE|NO|UNKNOWN)
+repo	axis	label	boundary	evidence
+langflow-ai/langflow	i	MULTI	0	platform for building AI agents/workflows; README feature "Multi-agent orchestration with conversation management and retrieval"
+langflow-ai/langflow	ii	PIPELINE	1	visual flow builder = DAG of component stages (R104 reviewer verdict; boundary vs ORCH-WORKER supervisor)
+langflow-ai/langflow	iii	NO	0	no judge component; flows = LLM/tool/vector/retrieval nodes
+karpathy/autoresearch	i	SINGLE	0	one agent loop (Claude/Codex) editing train.py per program.md; satirical "autonomous swarms" copy != architecture
+karpathy/autoresearch	ii	SINGLE	0	no multi-agent topology; single-agent autonomous loop
+karpathy/autoresearch	iii	NO	0	no judge agent; agent self-checks val_bpb metric
+ruvnet/ruflo	i	MULTI	0	"100+ specialized agents, coordinated swarms"; agent meta-harness
+ruvnet/ruflo	ii	TEAM	1	self-organizing swarms; Router = entry dispatcher not task-decomposing leader (pass-2: ORCH-WORKER -> TEAM)
+ruvnet/ruflo	iii	NO	0	no judge component in architecture (User->Router->Swarm->Agents->Memory)
+siyuan-note/siyuan	i	SINGLE	0	PKM note app; "with agents" tagline = marketing; no multi-agent orchestration in core
+siyuan-note/siyuan	ii	SINGLE	0	no agent topology; note-taking/workspace app
+siyuan-note/siyuan	iii	NO	0	no judge component
+bytedance/UI-TARS-desktop	i	SINGLE	0	single multimodal GUI agent (UI-TARS model); Agent TARS = CLI agent stack
+bytedance/UI-TARS-desktop	ii	SINGLE	0	no multi-agent coordination; per-session single agent
+bytedance/UI-TARS-desktop	iii	NO	0	no judge component
+musistudio/claude-code-router	i	SINGLE	0	router/proxy between agent CLIs and providers; request routing, not orchestration
+musistudio/claude-code-router	ii	SINGLE	0	no multi-agent topology (routing infra)
+musistudio/claude-code-router	iii	NO	0	no judge component
+volcengine/OpenViking	i	SINGLE	0	context database for agents (viking:// virtual filesystem); infra (gate verify — matches NON_MAS_ROLE entry)
+volcengine/OpenViking	ii	SINGLE	0	no agent topology; provides context/memory to external agents
+volcengine/OpenViking	iii	NO	0	no judge component
+rohitg00/agentmemory	i	SINGLE	0	persistent memory for coding agents (MCP client); infra
+rohitg00/agentmemory	ii	SINGLE	0	no agent topology; memory service
+rohitg00/agentmemory	iii	NO	0	no judge component
+QwenLM/qwen-code	i	SINGLE	1	terminal coding agent primary; "SubAgents/Agent Teams" = secondary features (primary-abstraction rule)
+QwenLM/qwen-code	ii	SINGLE	0	core loop = single agent; no fixed multi-agent topology
+QwenLM/qwen-code	iii	NO	0	no judge component
+emcie-co/parlant	i	SINGLE	1	interaction-control harness for customer-facing agents; context engineering per conversation, no multi-agent coordination
+emcie-co/parlant	ii	SINGLE	0	no multi-agent topology; controls one agent's context at a time
+emcie-co/parlant	iii	NO	0	no judge component
+NVIDIA/SkillSpector	i	SINGLE	0	security scanner for AI agent skills (static + LLM analysis); not an agent system
+NVIDIA/SkillSpector	ii	SINGLE	0	no agent topology; two-stage analysis pipeline (scanner)
+NVIDIA/SkillSpector	iii	NO	0	LLM semantic evaluation = analyzer stage, not judge agent
+microsoft/RD-Agent	i	MULTI	1	self-described multi-agent ("First Data-Centric Quant Multi-Agent Framework"); factor loop with role stages
+microsoft/RD-Agent	ii	PIPELINE	1	coordinated factor-model loop: idea -> experiment -> summary -> repeat (sequential role stages)
+microsoft/RD-Agent	iii	NO	0	no judge agent; loop metrics/reflection internal
+nanobrowser/nanobrowser	i	MULTI	0	README: "multi-agent system"; Planner + Navigator specialized agents
+nanobrowser/nanobrowser	ii	ORCH-WORKER	0	README: "Planner intelligently self-correcting... dynamically instructing the Navigator" (planner -> navigator)
+nanobrowser/nanobrowser	iii	NO	0	no judge component
+MemTensor/MemOS	i	SINGLE	1	memory OS for agents (store/retrieve/manage; MemScheduler); infra like mem0
+MemTensor/MemOS	ii	SINGLE	0	no agent topology; memory service consumed by agents (OpenClaw, Hermes, DSH)
+MemTensor/MemOS	iii	NO	0	evaluation dir = benchmark harness (OmniMemEval); memory feedback/correction != judge agent
+GetBindu/Bindu	i	SINGLE	0	identity/communication/payments layer (A2A protocol) for agents; infra not MAS
+GetBindu/Bindu	ii	SINGLE	0	no agent topology; messaging/identity plumbing
+GetBindu/Bindu	iii	NO	0	no judge component
+lastmile-ai/mcp-agent	i	MULTI	1	framework implementing all Anthropic agent patterns (orchestrator-workers, evaluator-optimizer) as core
+lastmile-ai/mcp-agent	ii	UNKNOWN	1	composable pattern library; no canonical topology (like langchain)
+lastmile-ai/mcp-agent	iii	NO	0	no judge component
+openJiuwen-ai/jiuwenswarm	i	MULTI	0	multi-agent collaboration system; "Leader decomposes a complex task and assembles teams"
+openJiuwen-ai/jiuwenswarm	ii	ORCH-WORKER	1	explicit Leader decomposes tasks, assembles teams, hands off between stage agents (boundary vs swarm TEAM)
+openJiuwen-ai/jiuwenswarm	iii	NO	0	no judge agent; skill self-evolution = error-signal detection not judge
+business-science/ai-data-science-team	i	MULTI	0	library of specialized agents (data loading/cleaning/viz/modeling); "AI team"
+business-science/ai-data-science-team	ii	ORCH-WORKER	1	langgraph team of specialized agents; orchestration implied by supervisor pattern (not explicit in README head)
+business-science/ai-data-science-team	iii	NO	0	no judge component
+Mirix-AI/MIRIX	i	MULTI	0	"Multi-Agent Personal Assistant"; six memory components managed by dedicated agents
+Mirix-AI/MIRIX	ii	ORCH-WORKER	0	meta agent initializes/manages dedicated agents (meta_agent_config); orchestrator over memory agents
+Mirix-AI/MIRIX	iii	NO	0	memory-component agents != judge agents; no evaluator/critic role in architecture
+agentstack-ai/AgentStack	i	SINGLE	0	agent-project scaffolding CLI (codegen); not an MAS (gate verify — matches NON_MAS_ROLE entry)
+agentstack-ai/AgentStack	ii	SINGLE	0	no agent topology; CLI tool
+agentstack-ai/AgentStack	iii	NO	0	no judge component
