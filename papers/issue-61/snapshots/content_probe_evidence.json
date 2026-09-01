@@ -1,0 +1,1874 @@
+{
+ "666ghj/BettaFish": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "9001/copyparty": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "AUTOMATIC1111/stable-diffusion-webui": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "BurntSushi/ripgrep": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "CapSoftware/Cap": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "CherryHQ/cherry-studio": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Comfy-Org/ComfyUI": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "DefinitelyTyped/DefinitelyTyped": {
+  "readme_hits": [],
+  "path_content_hits": [
+   "ML-DSA",
+   "NIST-schemes",
+   "generic-pq"
+  ],
+  "api_hits": [],
+  "notes": [
+   "types/pqclean/.npmignore",
+   "types/pqclean/index.d.ts",
+   "types/pqclean/package.json",
+   "types/pqclean/tsconfig.json",
+   "types/pqclean/pqclean-tests.ts",
+   "types/k6/crypto/index.d.ts",
+   "types/nginstack__engine/lib/crypto/MD5.d.ts",
+   "types/nginstack__engine/lib/crypto/HMAC.d.ts",
+   "types/nginstack__engine/lib/crypto/SHA1.d.ts",
+   "types/nginstack__engine/lib/crypto/Crypto.d.ts",
+   "types/nginstack__engine/lib/crypto/SHA256.d.ts",
+   "types/nginstack__engine/lib/crypto/SHA512.d.ts"
+  ]
+ },
+ "FFmpeg/FFmpeg": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Genymobile/scrcpy": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "GopeedLab/gopeed": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "pkg/download/engine/polyfill/src/crypto/index.js"
+  ]
+ },
+ "Grasscutters/Grasscutter": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "HKUDS/nanobot": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "HandBrake/HandBrake": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Imbad0202/academic-research-skills": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "JuliusBrussee/caveman": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Konloch/bytecode-viewer": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "LadybirdBrowser/ladybird": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/six/six.py",
+   "Tests/LibWeb/Text/input/wpt-import/compression/third_party/pako/pako_inflate.min.js",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/util.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/common.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/stream.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/msgutil.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/__init__.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/dispatch.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/extensions.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/standalone.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/server_util.py",
+   "Tests/LibWeb/Text/input/wpt-import/_wpttools/third_party/pywebsocket3/pywebsocket3/memorizingfile.py"
+  ]
+ },
+ "MaaAssistantArknights/MaaAssistantArknights": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Mbed-TLS/mbedtls": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "configs/ext/README.md",
+   "configs/ext/config_tfm.h",
+   "configs/ext/mbedtls_entropy_nv_seed_config.h",
+   "configs/ext/tfm_mbedcrypto_config_profile_medium.h"
+  ]
+ },
+ "NationalSecurityAgency/ghidra": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "NousResearch/hermes-agent": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ReactiveX/RxJava": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "RustPython/RustPython": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Semantic-Org/Semantic-UI": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Significant-Gravitas/AutoGPT": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "SimplifyJobs/Summer2027-Internships": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Stirling-Tools/Stirling-PDF": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "frontend/editor/public/vendor/jscanify/opencv.js",
+   "frontend/editor/public/vendor/jscanify/jscanify.js",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/ResourceUpload.java",
+   "app/proprietary/src/test/java/stirling/software/proprietary/storage/crypto/InMemoryKeyRepo.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/EncryptedFileFormat.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/StorageEncryptionState.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/FileEncryptionMasterKey.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/StorageEncryptionErrors.java",
+   "app/proprietary/src/test/java/stirling/software/proprietary/storage/crypto/EncryptedFileFormatTest.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/integration/crypto/CredentialEncryption.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/FileEncryptionKeyService.java",
+   "app/proprietary/src/main/java/stirling/software/proprietary/storage/crypto/EncryptingStorageProvider.java"
+  ]
+ },
+ "TauricResearch/TradingAgents": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Tencent/ncnn": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "Wox-launcher/Wox": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "affaan-m/ECC": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "agalwood/Motrix": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "airbnb/javascript": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "android-hacker/VirtualXposed": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "anomalyco/opencode": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "anthropics/claude-code": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "anthropics/skills": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "apache/airflow": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "apache/dubbo": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "apache/hadoop": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "hadoop-hdfs-project/hadoop-hdfs-native-client/src/main/native/libhdfspp/third_party/tr2/optional.hpp",
+   "hadoop-hdfs-project/hadoop-hdfs-native-client/src/main/native/libhdfspp/third_party/uriparser2/CMakeLists.txt",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/Decryptor.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/Encryptor.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/CipherSuite.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/CryptoCodec.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/CryptoUtils.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/CipherOption.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/package-info.java",
+   "hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/OpensslCipher.java",
+   "hadoop-common-project/hadoop-common/src/test/java/org/apache/hadoop/crypto/TestCryptoCodec.java",
+   "hadoop-common-project/hadoop-common/src/test/java/org/apache/hadoop/crypto/TestCryptoUtils.java"
+  ]
+ },
+ "apache/pulsar": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "pulsar-client-messagecrypto-bc/src/main/java/org/apache/pulsar/client/impl/crypto/package-info.java",
+   "pulsar-client-messagecrypto-bc/src/main/java/org/apache/pulsar/client/impl/crypto/MessageCryptoBc.java"
+  ]
+ },
+ "arendst/Tasmota": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "asdf-vm/asdf": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "astral-sh/uv": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "crates/uv-extract/src/vendor/mod.rs",
+   "crates/uv-extract/src/vendor/LICENSE",
+   "crates/uv-extract/src/vendor/cloneable_seekable_reader.rs"
+  ]
+ },
+ "aws/aws-lc": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "crypto/mem.c",
+   "crypto/crypto.c",
+   "crypto/thread.c",
+   "crypto/ex_data.c",
+   "crypto/internal.h",
+   "crypto/mem_test.cc",
+   "crypto/self_test.cc",
+   "crypto/thread_win.c",
+   "crypto/libcrypto.map",
+   "crypto/libcrypto.txt",
+   "crypto/thread_none.c",
+   "crypto/CMakeLists.txt"
+  ]
+ },
+ "aws/s2n-tls": {
+  "readme_hits": [],
+  "path_content_hits": [
+   "ML-KEM"
+  ],
+  "api_hits": [
+   "OpenSSL-EVP_KEM"
+  ],
+  "notes": [
+   "crypto/Makefile",
+   "crypto/s2n_pq.c",
+   "crypto/s2n_pq.h",
+   "crypto/s2n_dhe.c",
+   "crypto/s2n_dhe.h",
+   "crypto/s2n_evp.h",
+   "crypto/s2n_kdf.h",
+   "crypto/s2n_fips.c",
+   "crypto/s2n_fips.h",
+   "crypto/s2n_hash.c",
+   "crypto/s2n_hash.h",
+   "crypto/s2n_hkdf.c"
+  ]
+ },
+ "bcgit/bc-java": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "jce/src/main/java/javax/crypto/Mac.java",
+   "jce/src/main/java/javax/crypto/Cipher.java",
+   "jce/src/main/java/javax/crypto/MacSpi.java",
+   "jce/src/main/java/javax/crypto/JCEUtil.java",
+   "jce/src/main/java/javax/crypto/CipherSpi.java",
+   "jce/src/main/java/javax/crypto/SecretKey.java",
+   "jce/src/main/java/javax/crypto/NullCipher.java",
+   "jce/src/main/java/javax/crypto/KeyAgreement.java",
+   "jce/src/main/java/javax/crypto/KeyGenerator.java",
+   "jce/src/main/java/javax/crypto/SealedObject.java",
+   "jce/src/main/java/javax/crypto/KeyAgreementSpi.java",
+   "jce/src/main/java/javax/crypto/KeyGeneratorSpi.java"
+  ]
+ },
+ "bee-san/Ciphey": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "bitcoin/bitcoin": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "bmad-code-org/BMAD-METHOD": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "bojieli/ai-agent-book": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "browser-use/browser-use": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "caddyserver/caddy": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ccxt/ccxt": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "charmbracelet/glow": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "chinese-poetry/chinese-poetry": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "clash-verge-rev/clash-verge-rev": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "cloudflare/circl": {
+  "readme_hits": [
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "path_content_hits": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "api_hits": [
+   "Go-mlkem"
+  ],
+  "notes": [
+   "kem/kyber/doc.go",
+   "kem/kyber/gen.go",
+   "kem/mlkem/doc.go",
+   "pke/kyber/gen.go",
+   "pke/kyber/kyber.go",
+   "kem/kyber/kat_test.go",
+   "sign/dilithium/gen.go",
+   "kem/mlkem/acvp_test.go",
+   "sign/dilithium/kat_test.go",
+   "sign/dilithium/dilithium.go",
+   "sign/dilithium/dilithium_test.go",
+   "kem/kyber/kyber512/kyber.go"
+  ]
+ },
+ "cryptomator/cryptomator": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "curl/curl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "dani-garcia/vaultwarden": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "dapr/dapr": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "dbeaver/dbeaver": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "deepseek-ai/DeepSeek-V3": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "deepseek-ai/deepseek-harness": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "denoland/deno": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "ext/io/fs.rs",
+   "ext/ffi/ir.rs",
+   "ext/fs/lib.rs",
+   "ext/fs/ops.rs",
+   "ext/io/lib.rs",
+   "ext/kv/lib.rs",
+   "ext/net/io.rs",
+   "ext/os/lib.rs",
+   "ext/ffi/lib.rs",
+   "ext/io/pipe.rs",
+   "ext/napi/pe.rs",
+   "ext/napi/uv.rs"
+  ]
+ },
+ "elastic/elasticsearch": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "x-pack/plugin/core/src/main/java/org/elasticsearch/xpack/core/watcher/crypto/CryptoService.java",
+   "x-pack/plugin/core/src/test/java/org/elasticsearch/xpack/core/watcher/crypto/CryptoServiceTests.java"
+  ]
+ },
+ "elastic/logstash": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "electron/electron": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "excalidraw/excalidraw": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "exo-explore/exo": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "expo/expo": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "eza-community/eza": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "facebook/flow": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "farion1231/cc-switch": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "fastfetch-cli/fastfetch": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "fatedier/frp": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "firecrawl/firecrawl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "fmtlib/fmt": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "garrytan/gstack": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "gastownhall/beads": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "getsentry/sentry": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ggml-org/llama.cpp": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "vendor/CMakeLists.txt",
+   "vendor/hash/hash.h",
+   "vendor/hash/hash.cpp",
+   "vendor/stb/stb_image.h",
+   "vendor/nlohmann/json.hpp",
+   "vendor/stb/CMakeLists.txt",
+   "vendor/cpp-httplib/LICENSE",
+   "vendor/hash/CMakeLists.txt",
+   "vendor/cpp-httplib/httplib.h",
+   "vendor/miniaudio/miniaudio.h",
+   "vendor/nlohmann/json_fwd.hpp",
+   "vendor/sheredom/subprocess.h"
+  ]
+ },
+ "gin-gonic/gin": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "gitbutlerapp/gitbutler": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "crates/gitbutler-filemonitor/vendor/debouncer/Cargo.toml",
+   "crates/gitbutler-filemonitor/vendor/debouncer/src/lib.rs",
+   "crates/gitbutler-filemonitor/vendor/debouncer/src/cache.rs",
+   "crates/gitbutler-filemonitor/vendor/debouncer/src/event.rs",
+   "crates/gitbutler-filemonitor/vendor/debouncer/src/tests/mod.rs",
+   "crates/gitbutler-filemonitor/vendor/debouncer/src/tests/schema.rs",
+   "crates/gitbutler-filemonitor/vendor/debouncer/tests/fixtures/add_errors.hjson",
+   "crates/gitbutler-filemonitor/vendor/debouncer/tests/fixtures/add_create_event.hjson",
+   "crates/gitbutler-filemonitor/vendor/debouncer/tests/fixtures/add_remove_event.hjson",
+   "crates/gitbutler-filemonitor/vendor/debouncer/tests/fixtures/add_rename_to_event.hjson",
+   "crates/gitbutler-filemonitor/vendor/debouncer/tests/fixtures/add_rename_both_event.hjson",
+   "crates/gitbutler-filemonitor/vendor/debouncer/tests/fixtures/add_rename_from_event.hjson"
+  ]
+ },
+ "github/spec-kit": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "gitui-org/gitui": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "gleam-lang/gleam": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "gnutls/gnutls": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "lib/ext/etm.c",
+   "lib/ext/etm.h",
+   "lib/ext/srp.c",
+   "lib/ext/srp.h",
+   "lib/ext/alpn.c",
+   "lib/ext/alpn.h",
+   "lib/ext/srtp.c",
+   "lib/ext/srtp.h",
+   "lib/ext/cookie.c",
+   "lib/ext/cookie.h",
+   "lib/ext/dumbfw.c",
+   "lib/ext/dumbfw.h"
+  ]
+ },
+ "go-kit/kit": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "go-kratos/kratos": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "godotengine/godot": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "core/crypto/SCsub",
+   "core/crypto/crypto.h",
+   "core/crypto/crypto.cpp",
+   "core/crypto/aes_context.h",
+   "core/crypto/crypto_core.h",
+   "core/crypto/aes_context.cpp",
+   "core/crypto/crypto_core.cpp",
+   "core/crypto/hashing_context.h",
+   "core/crypto/hashing_context.cpp",
+   "core/crypto/crypto_resource_format.h",
+   "core/crypto/crypto_resource_format.cpp",
+   "tests/data/crypto/in.key"
+  ]
+ },
+ "gohugoio/hugo": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "golang/go": {
+  "readme_hits": [],
+  "path_content_hits": [
+   "Hybrid",
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "api_hits": [
+   "TLS-group"
+  ],
+  "notes": [
+   "src/crypto/crypto.go",
+   "src/vendor/modules.txt",
+   "src/crypto/crypto_test.go",
+   "src/crypto/purego_test.go",
+   "src/crypto/issue21104_test.go",
+   "src/crypto/aes/aes.go",
+   "src/crypto/dsa/dsa.go",
+   "src/crypto/hpke/pq.go",
+   "src/crypto/md5/gen.go",
+   "src/crypto/md5/md5.go",
+   "src/crypto/rc4/rc4.go",
+   "src/crypto/rsa/rsa.go"
+  ]
+ },
+ "google/boringssl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "crypto/mem.cc",
+   "crypto/crypto.cc",
+   "crypto/thread.cc",
+   "crypto/ex_data.cc",
+   "crypto/internal.h",
+   "crypto/mem_test.cc",
+   "crypto/refcount.cc",
+   "crypto/cpu_intel.cc",
+   "crypto/self_test.cc",
+   "crypto/bcm_support.h",
+   "crypto/thread_win.cc",
+   "crypto/crypto_test.cc"
+  ]
+ },
+ "google/guava": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "google/tink": {
+  "readme_hits": [],
+  "path_content_hits": [
+   "FN-DSA/Falcon",
+   "ML-DSA",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "api_hits": [],
+  "notes": [
+   "cc/third_party/BUILD.bazel",
+   "cc/third_party/rapidjson.BUILD.bazel",
+   "cc/experimental/pqcrypto/README.md",
+   "cc/third_party/boringssl_fips/README.md",
+   "cc/third_party/boringssl_fips/WORKSPACE",
+   "proto/experimental/pqcrypto/BUILD.bazel",
+   "proto/experimental/pqcrypto/falcon.proto",
+   "cc/third_party/boringssl_fips/BUILD.bazel",
+   "proto/experimental/pqcrypto/slh_dsa.proto",
+   "proto/experimental/pqcrypto/sphincs.proto",
+   "proto/experimental/pqcrypto/dilithium.proto",
+   "cc/third_party/boringssl_fips/boringssl_fips.sh"
+  ]
+ },
+ "h4ckf0r0day/obscura": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "vendor/taffy/LICENSE",
+   "vendor/taffy/README.md",
+   "vendor/taffy/Cargo.toml",
+   "vendor/cosmic-text/README.md",
+   "vendor/cosmic-text/Cargo.toml",
+   "vendor/cosmic-text/LICENSE-MIT",
+   "vendor/cosmic-text/LICENSE-APACHE",
+   "vendor/taffy/src/lib.rs",
+   "vendor/taffy/src/test.rs",
+   "vendor/taffy/src/prelude.rs",
+   "vendor/taffy/src/geometry.rs"
+  ]
+ },
+ "halo-dev/halo": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "harry0703/MoneyPrinterTurbo": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "hiroi-sora/Umi-OCR": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "infiniflow/ragflow": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ionic-team/ionic-framework": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "jamiepine/voicebox": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "java-decompiler/jd-gui": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "jeecgboot/JeecgBoot": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "jesseduffield/lazygit": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "junegunn/fzf": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "justjavac/wechat-miniapp-radar": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "kataras/iris": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "kubernetes/kubernetes": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "vendor/OWNERS",
+   "third_party/OWNERS",
+   "vendor/modules.txt",
+   "third_party/gimme/gimme",
+   "third_party/gimme/LICENSE",
+   "third_party/gimme/README.md",
+   "vendor/cel.dev/expr/LICENSE",
+   "vendor/k8s.io/utils/LICENSE",
+   "vendor/cel.dev/expr/README.md",
+   "vendor/cel.dev/expr/WORKSPACE",
+   "vendor/go.etcd.io/bbolt/db.go",
+   "vendor/go.etcd.io/bbolt/tx.go"
+  ]
+ },
+ "langchain-ai/langchain": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "langflow-ai/langflow": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "langgenius/dify": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "lvgl/lvgl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "lysine-dev/retrofit": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "lyswhut/lx-music-desktop": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "macrozheng/mall": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "microsoft/TypeScript": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "microsoft/markitdown": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "microsoft/qlib": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "scripts/data_collector/crypto/README.md",
+   "scripts/data_collector/crypto/collector.py",
+   "scripts/data_collector/crypto/requirement.txt"
+  ]
+ },
+ "microsoft/terminal": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "microsoft/typescript-go": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "microsoft/vscode": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "mingrammer/diagrams": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "mitmproxy/mitmproxy": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "moby/moby": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "vendor/modules.txt",
+   "man/vendor/modules.txt",
+   "vendor/dario.cat/mergo/doc.go",
+   "vendor/dario.cat/mergo/map.go",
+   "vendor/go.etcd.io/bbolt/db.go",
+   "vendor/go.etcd.io/bbolt/tx.go",
+   "vendor/go.uber.org/zap/FAQ.md",
+   "vendor/go.uber.org/zap/doc.go",
+   "vendor/gopkg.in/inf.v0/dec.go",
+   "vendor/dario.cat/mergo/LICENSE",
+   "vendor/go.etcd.io/bbolt/OWNERS",
+   "vendor/go.etcd.io/bbolt/doc.go"
+  ]
+ },
+ "mockito/mockito": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "mozilla/pdf.js": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "n8n-io/n8n": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "nektos/act": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "neondatabase/neon": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "netdata/netdata": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "packaging/vendor/ibm_mq.url",
+   "packaging/vendor/ibm_mq.sha256",
+   "src/collectors/python.d.plugin/python_modules/third_party/filelock.py",
+   "src/collectors/python.d.plugin/python_modules/third_party/monotonic.py",
+   "src/collectors/python.d.plugin/python_modules/third_party/ordereddict.py"
+  ]
+ },
+ "nextlevelbuilder/ui-ux-pro-max-skill": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "nomic-ai/gpt4all": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "nsqio/nsq": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "obsproject/obs-studio": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ocornut/imgui": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ollama/ollama": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "oobabooga/textgen": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "open-quantum-safe/liboqs": {
+  "readme_hits": [
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "path_content_hits": [
+   "ML-KEM"
+  ],
+  "api_hits": [
+   "TLS-group",
+   "liboqs-API"
+  ],
+  "notes": [
+   "src/kem/kyber/kem_kyber.h",
+   "src/kem/ml_kem/kem_ml_kem.h",
+   "src/kem/kyber/CMakeLists.txt",
+   "src/kem/kyber/kem_kyber_512.c",
+   "src/kem/kyber/kem_kyber_768.c",
+   "src/kem/ml_kem/CMakeLists.txt",
+   "src/kem/kyber/kem_kyber_1024.c",
+   "src/kem/ml_kem/kem_ml_kem_512.c",
+   "src/kem/ml_kem/kem_ml_kem_768.c",
+   "src/kem/ml_kem/kem_ml_kem_1024.c",
+   "src/kem/kyber/libjade_kyber512_ref/api.c",
+   "src/kem/kyber/libjade_kyber512_ref/api.h"
+  ]
+ },
+ "open-quantum-safe/liboqs-python": {
+  "readme_hits": [
+   "generic-pq"
+  ],
+  "path_content_hits": [
+   "generic-pq"
+  ],
+  "api_hits": [],
+  "notes": [
+   "oqs/oqs.py",
+   "oqs/rand.py",
+   "oqs/__init__.py",
+   "oqs/serialize.py"
+  ]
+ },
+ "open-quantum-safe/oqs-provider": {
+  "readme_hits": [
+   "Hybrid",
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "open-webui/open-webui": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "openai/codex": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "third_party/v8/README.md",
+   "third_party/v8/BUILD.bazel",
+   "codex-rs/vendor/BUILD.bazel",
+   "third_party/voice/README.md",
+   "third_party/wezterm/LICENSE",
+   "third_party/wine/BUILD.bazel",
+   "third_party/voice/BUILD.bazel",
+   "third_party/voice/sources.json",
+   "third_party/voice/extensions.bzl",
+   "third_party/v8/libcxx.BUILD.bazel",
+   "third_party/voice/build_native.py",
+   "third_party/powershell/BUILD.bazel"
+  ]
+ },
+ "openai/whisper": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "openclaw/openclaw": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "opencv/opencv": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "openfaas/faas": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "openinterpreter/openinterpreter": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "third_party/v8/README.md",
+   "third_party/v8/BUILD.bazel",
+   "codex-rs/vendor/BUILD.bazel",
+   "third_party/wezterm/LICENSE",
+   "third_party/wine/BUILD.bazel",
+   "third_party/v8/libcxx.BUILD.bazel",
+   "third_party/powershell/BUILD.bazel",
+   "third_party/v8/v8_crate.BUILD.bazel",
+   "third_party/v8/libcxxabi.BUILD.bazel",
+   "third_party/v8/llvm_libc.BUILD.bazel",
+   "third_party/v8/rusty_v8_150_4_0.sha256",
+   "codex-rs/ext/mcp/Cargo.toml"
+  ]
+ },
+ "openssh/openssh-portable": {
+  "readme_hits": [],
+  "path_content_hits": [
+   "Hybrid",
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "api_hits": [
+   "TLS-group"
+  ],
+  "notes": [
+   "regress/unittests/crypto/tests.c",
+   "regress/unittests/crypto/Makefile",
+   "regress/unittests/crypto/test_mldsa.c",
+   "regress/unittests/crypto/test_mlkem.c",
+   "regress/unittests/crypto/test_ed25519.c",
+   "regress/unittests/crypto/test_mldsa_eddsa.c",
+   "regress/unittests/crypto/testdata/nistkats-44.json",
+   "regress/unittests/crypto/testdata/draft-ietf-lamps-pq-composite-sigs.json"
+  ]
+ },
+ "openssl/openssl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "crypto/mem.c",
+   "crypto/uid.c",
+   "crypto/info.c",
+   "crypto/init.c",
+   "crypto/time.c",
+   "crypto/cpuid.c",
+   "crypto/ctype.c",
+   "crypto/o_dir.c",
+   "crypto/o_str.c",
+   "crypto/sleep.c",
+   "crypto/trace.c",
+   "crypto/armcap.c"
+  ]
+ },
+ "osquery/osquery": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "oven-sh/bun": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "bench/crypto/hkdf.mjs",
+   "bench/crypto/primes.mjs",
+   "bench/crypto/random.mjs",
+   "bench/crypto/asymmetricSign.js",
+   "bench/crypto/diffie-hellman.mjs",
+   "bench/crypto/asymmetricCipher.js",
+   "bench/crypto/ecdh-convert-key.mjs",
+   "bench/crypto/aes-gcm-throughput.mjs",
+   "src/runtime/crypto/EVP.rs",
+   "src/runtime/crypto/mod.rs",
+   "src/runtime/crypto/HMAC.rs",
+   "src/runtime/crypto/PBKDF2.rs"
+  ]
+ },
+ "paperless-ngx/paperless-ngx": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "pgvector/pgvector": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "poteto/hiring-without-whiteboards": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "pqrs-org/Karabiner-Elements": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "prestodb/presto": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "presto-docs/src/main/sphinx/ext/pr.py",
+   "presto-docs/src/main/sphinx/ext/issue.py",
+   "presto-docs/src/main/sphinx/ext/download.py",
+   "presto-ui/src/static/vendor/respond/respond.js",
+   "presto-ui/src/static/vendor/css-loaders/loader.css",
+   "presto-ui/src/static/vendor/html5shiv/html5shiv.js",
+   "presto-ui/src/static/vendor/jquery/jquery-3.7.1.js",
+   "presto-ui/src/static/vendor/respond/respond.min.js",
+   "presto-ui/src/static/vendor/vis-timeline/LICENSE.md",
+   "presto-ui/src/static/vendor/html5shiv/html5shiv.min.js",
+   "presto-ui/src/static/vendor/jquery/jquery-3.7.1.min.js",
+   "presto-ui/src/static/vendor/tableau/tableauwdc-1.1.0.js"
+  ]
+ },
+ "prettier/prettier": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "prometheus/prometheus": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "protocolbuffers/protobuf": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "pulumi/pulumi": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "sdk/nodejs/vendor/README.md",
+   "sdk/nodejs/vendor/ts-node@7.0.1/LICENSE",
+   "sdk/nodejs/vendor/ts-node@7.0.1/index.js",
+   "sdk/nodejs/vendor/typescript@3.8.3/lib.d.ts",
+   "sdk/nodejs/vendor/typescript@3.8.3/LICENSE.txt",
+   "sdk/nodejs/vendor/typescript@3.8.3/lib.dom.d.ts",
+   "sdk/nodejs/vendor/typescript@3.8.3/lib.es5.d.ts",
+   "sdk/nodejs/vendor/typescript@3.8.3/lib.es6.d.ts",
+   "sdk/nodejs/vendor/typescript@3.8.3/protocol.d.ts",
+   "sdk/nodejs/vendor/typescript@3.8.3/typescript.js",
+   "sdk/nodejs/vendor/typescript@3.8.3/lib.es2015.d.ts",
+   "sdk/nodejs/vendor/typescript@3.8.3/lib.es2016.d.ts"
+  ]
+ },
+ "pyca/cryptography": {
+  "readme_hits": [],
+  "path_content_hits": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "api_hits": [],
+  "notes": [
+   "src/cryptography/utils.py",
+   "src/cryptography/fernet.py",
+   "src/cryptography/__init__.py",
+   "src/cryptography/__about__.py",
+   "src/cryptography/exceptions.py",
+   "src/cryptography/cobblestone.py",
+   "src/cryptography/x509/oid.py",
+   "src/cryptography/x509/base.py",
+   "src/cryptography/x509/name.py",
+   "src/cryptography/x509/ocsp.py",
+   "src/cryptography/hazmat/_oid.py"
+  ]
+ },
+ "pytorch/pytorch": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "quarkusio/quarkus": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "extensions/aesh/websocket/runtime/src/main/resources/META-INF/resources/aesh/vendor/xterm.js",
+   "extensions/aesh/websocket/runtime/src/main/resources/META-INF/resources/aesh/vendor/xterm.css",
+   "extensions/aesh/websocket/runtime/src/main/resources/META-INF/resources/aesh/vendor/addon-fit.js",
+   "devtools/gradle/gradle-application-plugin/src/test/resources/io/quarkus/gradle/tasks/crypto/main/build.gradle.kts",
+   "devtools/gradle/gradle-application-plugin/src/test/resources/io/quarkus/gradle/tasks/crypto/main/settings.gradle.kts",
+   "integration-tests/gradle/src/main/resources/test-resources-in-build-steps/deployment/src/main/java/org/acme/ext/deployment/AcmeExtProcessor.java",
+   "devtools/gradle/gradle-application-plugin/src/test/resources/io/quarkus/gradle/tasks/crypto/main/src/main/resources/application.properties",
+   "integration-tests/maven/src/test/resources-filtered/expected/new-extension-current-directory-project/deployment/src/test/java/org/acme/my/ext/test/MyExtTest.java",
+   "integration-tests/maven/src/test/resources-filtered/expected/new-extension-current-directory-project/deployment/src/test/java/org/acme/my/ext/test/MyExtDevModeTest.java",
+   "integration-tests/maven/src/test/resources-filtered/expected/new-extension-current-directory-project/deployment/src/main/java/org/acme/my/ext/deployment/MyExtProcessor.java",
+   "devtools/gradle/gradle-application-plugin/src/test/resources/io/quarkus/gradle/tasks/crypto/main/src/main/java/org/acme/Foo.java",
+   "integration-tests/maven/src/test/resources-filtered/expected/new-extension-project/my-ext/deployment/src/test/java/org/acme/my/ext/test/MyExtTest.java"
+  ]
+ },
+ "radareorg/radare2": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "rancher/rancher": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "pkg/ext/rdp.go",
+   "pkg/ext/certs.go",
+   "pkg/ext/openapi.go",
+   "pkg/ext/certs_test.go",
+   "pkg/ext/extension_apiserver.go",
+   "pkg/ext/common/common.go",
+   "pkg/ext/mocks/generate.go",
+   "pkg/ext/stores/install.go",
+   "pkg/ext/mocks/passwordupdater.go",
+   "pkg/ext/stores/tokens/purge.go",
+   "pkg/ext/stores/tokens/tokens.go",
+   "pkg/ext/stores/selfuser/store.go"
+  ]
+ },
+ "randombit/botan": {
+  "readme_hits": [
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "path_content_hits": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "api_hits": [],
+  "notes": [
+   "src/lib/pubkey/kyber/ml_kem/info.txt",
+   "src/lib/pubkey/kyber/ml_kem/ml_kem.h",
+   "src/lib/pubkey/dilithium/ml_dsa/info.txt",
+   "src/lib/pubkey/dilithium/ml_dsa/ml_dsa.h",
+   "src/lib/pubkey/kyber/kyber_common/kyber.h",
+   "src/lib/pubkey/kyber/ml_kem/ml_kem_impl.h",
+   "src/lib/pubkey/kyber/kyber_common/info.txt",
+   "src/lib/pubkey/kyber/kyber_round3/info.txt",
+   "src/lib/pubkey/kyber/kyber_common/kyber.cpp",
+   "src/lib/pubkey/kyber/ml_kem/ml_kem_impl.cpp",
+   "src/lib/pubkey/dilithium/ml_dsa/ml_dsa_impl.h",
+   "src/lib/pubkey/kyber/kyber_common/kyber_keys.h"
+  ]
+ },
+ "ratatui/ratatui": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ray-project/ray": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "react/react": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "react/react-native": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "redis/RedisDesktopManager": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "redis/redis": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "rtk-ai/rtk": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "rust-lang/mdBook": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "rust-lang/rust": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "rustdesk/rustdesk": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "rustls/rustls": {
+  "readme_hits": [
+   "generic-pq"
+  ],
+  "path_content_hits": [
+   "generic-pq"
+  ],
+  "api_hits": [],
+  "notes": [
+   "rustls/src/crypto/mod.rs",
+   "rustls/src/crypto/hash.rs",
+   "rustls/src/crypto/hmac.rs",
+   "rustls/src/crypto/hpke.rs",
+   "rustls/src/crypto/enums.rs",
+   "rustls/src/crypto/tls12.rs",
+   "rustls/src/crypto/tls13.rs",
+   "rustls/src/crypto/signer.rs",
+   "rustls/src/crypto/test_provider.rs",
+   "rustls/src/crypto/kx/mod.rs",
+   "rustls/src/crypto/kx/ffdhe.rs",
+   "rustls/src/crypto/cipher/mod.rs"
+  ]
+ },
+ "ruvnet/RuView": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "vendor/README.md"
+  ]
+ },
+ "shuzheng/zheng": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "sickn33/agentic-awesome-skills": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "signalapp/libsignal": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "rust/crypto/Cargo.toml",
+   "rust/crypto/src/lib.rs",
+   "rust/crypto/src/hash.rs",
+   "rust/crypto/src/hpke.rs",
+   "rust/crypto/src/error.rs",
+   "rust/crypto/src/aes_cbc.rs",
+   "rust/crypto/src/aes_ctr.rs",
+   "rust/crypto/src/aes_gcm.rs",
+   "rust/crypto/benches/hpke.rs",
+   "rust/crypto/tests/aes_ctr.rs",
+   "rust/crypto/tests/aes_gcm.rs",
+   "rust/crypto/benches/aes_gcm.rs"
+  ]
+ },
+ "simdjson/simdjson": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "sirupsen/logrus": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "skylot/jadx": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "slint-ui/slint": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "ui-libraries/material/docs/vendor/integration/index.ts",
+   "ui-libraries/material/docs/vendor/integration/types.d.ts",
+   "ui-libraries/material/docs/vendor/integration/utils/loadConfig.ts",
+   "ui-libraries/material/docs/vendor/integration/utils/configBuilder.ts"
+  ]
+ },
+ "spring-projects/spring-boot": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "spring-projects/spring-framework": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "sqlitebrowser/sqlitebrowser": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "streamlit/streamlit": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "stretchr/testify": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "supertokens/supertokens-core": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "syncthing/syncthing": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "taosdata/TDengine": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "tauri-apps/tauri": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "termux/termux-app": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "tesseract-ocr/tesseract": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "theonedev/onedev": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "timescale/timescaledb": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "torvalds/linux": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "crypto/dh.c",
+   "crypto/842.c",
+   "crypto/aes.c",
+   "crypto/api.c",
+   "crypto/cbc.c",
+   "crypto/ccm.c",
+   "crypto/ctr.c",
+   "crypto/cts.c",
+   "crypto/ecb.c",
+   "crypto/ecc.c",
+   "crypto/gcm.c",
+   "crypto/kpp.c"
+  ]
+ },
+ "traefik/traefik": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ultraworkers/claw-code": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "uutils/coreutils": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "v8/v8": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "vectordotdev/vector": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ventoy/Ventoy": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "vercel/next.js": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": [
+   "test/e2e/app-dir/css-order/app/vendor/page.tsx",
+   "test/e2e/app-dir/css-order/app/vendor/page.module.css",
+   "test/e2e/app-dir/css-order/app/vendor/node_modules/my-dep/index.js",
+   "test/e2e/app-dir/css-order/app/vendor/node_modules/my-dep2/index.js",
+   "test/e2e/app-dir/css-order/app/vendor/node_modules/my-dep/package.json",
+   "test/e2e/app-dir/css-order/app/vendor/node_modules/my-dep2/package.json",
+   "test/e2e/app-dir/css-order/app/vendor/node_modules/my-dep/index.module.css",
+   "test/e2e/app-dir/css-order/app/vendor/node_modules/my-dep2/index.module.css"
+  ]
+ },
+ "vnpy/vnpy": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "vuejs/core": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "vuejs/vue": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "wolfSSL/wolfssl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "yeasy/docker_practice": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "yt-dlp/yt-dlp": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "ytdl-org/youtube-dl": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "zaproxy/zaproxy": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ },
+ "zed-industries/zed": {
+  "readme_hits": [],
+  "path_content_hits": [],
+  "api_hits": [],
+  "notes": []
+ }
+}

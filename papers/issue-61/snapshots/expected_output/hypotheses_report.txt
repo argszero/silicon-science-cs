@@ -1,0 +1,35 @@
+Issue #61 — Post-Quantum in the Wild: hypotheses report (R115)
+census snapshot 2026-09-01; Tier B n=199 (non-anchor), Tier A anchors n=20
+
+Tier B level distribution (classifier v1, gold-calibrated):
+  L0_NONE=154 (77.4%)  L1_CAPABLE=41 (20.6%)  L2_DIRECT=4 (2.0%)  L3_ACTIVE=0 (0.0%)
+
+H1: PQC direct implementation/usage is rare (<10%) in top OSS projects.
+  L2+L3 Tier B: 4/199 = 2.0%  Wilson 95% CI [0.8%, 5.1%]
+  L2 repos: torvalds/linux (crypto/mldsa.c), LadybirdBrowser/ladybird (LibCrypto/PK), denoland/deno (ext/crypto), oven-sh/bun (webcrypto)
+  H1 CONFIRMED (rare): point estimate 2.0% < 10%; CI upper bound 5.1%
+  H1 flip sensitivity: need 16 L0->L2 flips to reach 10% threshold
+
+H2: when PQC is present, it arrives via dependency upgrades (L1) not direct code (L2/L3).
+  PQC-positive Tier B: L1=41, L2+L3=4 -> L1 share 91.1%  Wilson 95% CI [79.3%, 96.5%]
+  H2 CONFIRMED (dependency-driven): L1 dominates by 41/4 = 10.2x
+  H2 flip sensitivity: need 37 L1->L0 downgrades to lose majority
+
+H3: PQC adoption is ecosystem-stratified (crypto anchors vs general population).
+  Tier A anchors L2+L3: 18/20 = 90.0%  vs  Tier B: 2.0%
+  Fisher exact (one-sided) p = 0.00e+00
+  H3 CONFIRMED: migration frontier stratifies 90% vs 2.0%
+
+Dependency channel detail (L1 breakdown):
+  aws-lc: 15 repos
+  aws-lc-rs: 14 repos
+  BouncyCastle: 12 repos
+  cloudflare/circl: 8 repos
+  boringssl: 6 repos
+  openssl>=3.5: 5 repos
+  ml-kem crate: 3 repos
+  tink-pqc: 2 repos
+
+Baseline comparison (network-level vs source-level):
+  UK TLS study 2026-08: 44.0% of HTTPS endpoints support a PQC group (infra-provider driven)
+  This census: 2.0% of top OSS projects directly implement/use PQC (20.6% dependency-capable)

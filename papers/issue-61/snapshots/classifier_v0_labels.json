@@ -1,0 +1,2532 @@
+{
+ "666ghj/BettaFish": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "9001/copyparty": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "AUTOMATIC1111/stable-diffusion-webui": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "BurntSushi/ripgrep": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "CapSoftware/Cap": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "CherryHQ/cherry-studio": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Comfy-Org/ComfyUI": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "DefinitelyTyped/DefinitelyTyped": {
+  "api": [],
+  "content_sigs": [
+   "ML-DSA",
+   "NIST-schemes",
+   "generic-pq"
+  ],
+  "deps": [],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "generic-pq"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "FFmpeg/FFmpeg": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Genymobile/scrcpy": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "GopeedLab/gopeed": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Grasscutters/Grasscutter": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "HKUDS/nanobot": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "HandBrake/HandBrake": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Imbad0202/academic-research-skills": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "JuliusBrussee/caveman": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Konloch/bytecode-viewer": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "LadybirdBrowser/ladybird": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "MaaAssistantArknights/MaaAssistantArknights": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Mbed-TLS/mbedtls": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "mbedtls"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "NationalSecurityAgency/ghidra": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "NousResearch/hermes-agent": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ReactiveX/RxJava": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "RustPython/RustPython": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Semantic-Org/Semantic-UI": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Significant-Gravitas/AutoGPT": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "SimplifyJobs/Summer2027-Internships": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Stirling-Tools/Stirling-PDF": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle",
+   "tink-pqc"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "TauricResearch/TradingAgents": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Tencent/ncnn": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "Wox-launcher/Wox": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "affaan-m/ECC": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "agalwood/Motrix": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "airbnb/javascript": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "android-hacker/VirtualXposed": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "anomalyco/opencode": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "anthropics/claude-code": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "anthropics/skills": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "apache/airflow": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "apache/dubbo": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "apache/hadoop": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "apache/pulsar": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle",
+   "boringssl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "arendst/Tasmota": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "asdf-vm/asdf": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "astral-sh/uv": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "aws/aws-lc": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "boringssl",
+   "cloudflare/circl",
+   "ml-kem crate",
+   "openssl>=3.5"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": [
+   "VENDORED-ML-DSA",
+   "VENDORED-ML-KEM"
+  ]
+ },
+ "aws/s2n-tls": {
+  "api": [
+   "OpenSSL-EVP_KEM"
+  ],
+  "content_sigs": [
+   "ML-KEM"
+  ],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "boringssl",
+   "gnutls",
+   "openssl>=3.5",
+   "s2n-tls"
+  ],
+  "level": "L3_ACTIVE",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "generic-pq"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "bcgit/bc-java": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "bee-san/Ciphey": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "bitcoin/bitcoin": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "bmad-code-org/BMAD-METHOD": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "bojieli/ai-agent-book": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "browser-use/browser-use": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "caddyserver/caddy": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ccxt/ccxt": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "charmbracelet/glow": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "chinese-poetry/chinese-poetry": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "clash-verge-rev/clash-verge-rev": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "cloudflare/circl": {
+  "api": [
+   "Go-mlkem"
+  ],
+  "content_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L3_ACTIVE",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA"
+  ],
+  "readme": [
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "vendored": []
+ },
+ "cryptomator/cryptomator": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "curl/curl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "boringssl",
+   "gnutls",
+   "mbedtls",
+   "wolfssl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "dani-garcia/vaultwarden": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "dapr/dapr": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "dbeaver/dbeaver": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "deepseek-ai/DeepSeek-V3": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "deepseek-ai/deepseek-harness": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "denoland/deno": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "ml-kem crate"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA"
+  ],
+  "readme": [],
+  "vendored": [
+   "VENDORED-ML-DSA",
+   "VENDORED-ML-KEM",
+   "VENDORED-SLH-DSA"
+  ]
+ },
+ "elastic/elasticsearch": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "elastic/logstash": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "electron/electron": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "excalidraw/excalidraw": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "exo-explore/exo": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "expo/expo": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "eza-community/eza": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "facebook/flow": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "farion1231/cc-switch": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "fastfetch-cli/fastfetch": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "fatedier/frp": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "firecrawl/firecrawl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "fmtlib/fmt": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "garrytan/gstack": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gastownhall/beads": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "getsentry/sentry": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ggml-org/llama.cpp": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "boringssl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gin-gonic/gin": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gitbutlerapp/gitbutler": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "github/spec-kit": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gitui-org/gitui": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gleam-lang/gleam": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "ml-kem crate"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gnutls/gnutls": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "gnutls"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "go-kit/kit": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "go-kratos/kratos": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "godotengine/godot": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "gohugoio/hugo": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "golang/go": {
+  "api": [
+   "TLS-group"
+  ],
+  "content_sigs": [
+   "Hybrid",
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "deps": [],
+  "level": "L3_ACTIVE",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "google/boringssl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "boringssl"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA"
+  ],
+  "readme": [],
+  "vendored": [
+   "VENDORED-ML-DSA",
+   "VENDORED-ML-KEM"
+  ]
+ },
+ "google/guava": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "google/tink": {
+  "api": [],
+  "content_sigs": [
+   "FN-DSA/Falcon",
+   "ML-DSA",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "deps": [
+   "boringssl",
+   "tink-pqc"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "SLH-DSA"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "h4ckf0r0day/obscura": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "boringssl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "halo-dev/halo": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "harry0703/MoneyPrinterTurbo": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "hiroi-sora/Umi-OCR": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "infiniflow/ragflow": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ionic-team/ionic-framework": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "jamiepine/voicebox": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "java-decompiler/jd-gui": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "jeecgboot/JeecgBoot": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "jesseduffield/lazygit": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "junegunn/fzf": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "justjavac/wechat-miniapp-radar": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "kataras/iris": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "kubernetes/kubernetes": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": [
+   "VENDORED-ML-KEM"
+  ]
+ },
+ "langchain-ai/langchain": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "langflow-ai/langflow": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "langgenius/dify": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "openssl>=3.5"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "lvgl/lvgl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "lysine-dev/retrofit": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "lyswhut/lx-music-desktop": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "macrozheng/mall": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "microsoft/TypeScript": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "microsoft/markitdown": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "microsoft/qlib": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "openssl>=3.5"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "microsoft/terminal": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "microsoft/typescript-go": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "microsoft/vscode": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "mingrammer/diagrams": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "mitmproxy/mitmproxy": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "openssl>=3.5"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "moby/moby": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl",
+   "tink-pqc"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": [
+   "VENDORED-ML-KEM"
+  ]
+ },
+ "mockito/mockito": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "mozilla/pdf.js": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "n8n-io/n8n": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "nektos/act": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "neondatabase/neon": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "netdata/netdata": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "nextlevelbuilder/ui-ux-pro-max-skill": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "nomic-ai/gpt4all": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "nsqio/nsq": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "obsproject/obs-studio": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ocornut/imgui": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ollama/ollama": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "oobabooga/textgen": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "open-quantum-safe/liboqs": {
+  "api": [
+   "TLS-group",
+   "liboqs-API"
+  ],
+  "content_sigs": [
+   "ML-KEM"
+  ],
+  "deps": [
+   "PQClean",
+   "liboqs",
+   "ml-kem crate",
+   "open-quantum-safe",
+   "openssl>=3.5"
+  ],
+  "level": "L3_ACTIVE",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "readme": [
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "vendored": []
+ },
+ "open-quantum-safe/liboqs-python": {
+  "api": [],
+  "content_sigs": [
+   "generic-pq"
+  ],
+  "deps": [
+   "liboqs",
+   "open-quantum-safe"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "generic-pq"
+  ],
+  "readme": [
+   "generic-pq"
+  ],
+  "vendored": []
+ },
+ "open-quantum-safe/oqs-provider": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "liboqs",
+   "open-quantum-safe",
+   "openssl>=3.5",
+   "oqs-provider"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "generic-pq"
+  ],
+  "readme": [
+   "Hybrid",
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "vendored": []
+ },
+ "open-webui/open-webui": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "openai/codex": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "boringssl",
+   "ml-kem crate"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "openai/whisper": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "openclaw/openclaw": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "opencv/opencv": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "openfaas/faas": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "openinterpreter/openinterpreter": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "boringssl",
+   "ml-kem crate"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "openssh/openssh-portable": {
+  "api": [
+   "TLS-group"
+  ],
+  "content_sigs": [
+   "Hybrid",
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "deps": [],
+  "level": "L3_ACTIVE",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "openssl/openssl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "open-quantum-safe",
+   "oqs-provider"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "osquery/osquery": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "oven-sh/bun": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "boringssl"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "paperless-ngx/paperless-ngx": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "pgvector/pgvector": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "poteto/hiring-without-whiteboards": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "pqrs-org/Karabiner-Elements": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "prestodb/presto": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle",
+   "boringssl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "prettier/prettier": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "prometheus/prometheus": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "protocolbuffers/protobuf": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "pulumi/pulumi": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "pyca/cryptography": {
+  "api": [],
+  "content_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "deps": [
+   "boringssl"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "pytorch/pytorch": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "quarkusio/quarkus": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "radareorg/radare2": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "rancher/rancher": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "cloudflare/circl"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "randombit/botan": {
+  "api": [],
+  "content_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "deps": [
+   "botan"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA"
+  ],
+  "readme": [
+   "ML-DSA",
+   "ML-KEM",
+   "NIST-schemes",
+   "SLH-DSA",
+   "generic-pq"
+  ],
+  "vendored": []
+ },
+ "ratatui/ratatui": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ray-project/ray": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "react/react": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "react/react-native": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "redis/RedisDesktopManager": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "redis/redis": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "rtk-ai/rtk": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "rust-lang/mdBook": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "rust-lang/rust": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "rustdesk/rustdesk": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "rustls/rustls": {
+  "api": [],
+  "content_sigs": [
+   "generic-pq"
+  ],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "rustls-post-quantum"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "generic-pq"
+  ],
+  "readme": [
+   "generic-pq"
+  ],
+  "vendored": []
+ },
+ "ruvnet/RuView": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "generic-pq"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "shuzheng/zheng": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "sickn33/agentic-awesome-skills": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "signalapp/libsignal": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "ml-kem crate"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "simdjson/simdjson": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "sirupsen/logrus": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "skylot/jadx": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "slint-ui/slint": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "spring-projects/spring-boot": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "spring-projects/spring-framework": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "sqlitebrowser/sqlitebrowser": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "streamlit/streamlit": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "stretchr/testify": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "supertokens/supertokens-core": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "syncthing/syncthing": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "taosdata/TDengine": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "tauri-apps/tauri": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "termux/termux-app": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "tesseract-ocr/tesseract": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "theonedev/onedev": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "BouncyCastle"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "timescale/timescaledb": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "openssl>=3.5"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "torvalds/linux": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "traefik/traefik": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ultraworkers/claw-code": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "uutils/coreutils": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "v8/v8": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "vectordotdev/vector": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs",
+   "openssl>=3.5"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ventoy/Ventoy": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "vercel/next.js": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "vnpy/vnpy": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "vuejs/core": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "vuejs/vue": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "wolfSSL/wolfssl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "liboqs",
+   "ml-kem crate",
+   "wolfssl"
+  ],
+  "level": "L2_DIRECT",
+  "notes": [],
+  "own_path_sigs": [
+   "ML-DSA",
+   "ML-KEM",
+   "SLH-DSA"
+  ],
+  "readme": [],
+  "vendored": []
+ },
+ "yeasy/docker_practice": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "yt-dlp/yt-dlp": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "ytdl-org/youtube-dl": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "zaproxy/zaproxy": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [],
+  "level": "L0_NONE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ },
+ "zed-industries/zed": {
+  "api": [],
+  "content_sigs": [],
+  "deps": [
+   "aws-lc",
+   "aws-lc-rs"
+  ],
+  "level": "L1_CAPABLE",
+  "notes": [],
+  "own_path_sigs": [],
+  "readme": [],
+  "vendored": []
+ }
+}
