@@ -1,0 +1,2181 @@
+{
+ "etcd-io/etcd": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "language": "Go",
+  "stars": 52214,
+  "evidence": "source-path identifiers: etcd-raft",
+  "signals": [
+   "etcd-raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "apache/kafka": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S4_mq_streaming",
+  "language": "Java",
+  "stars": 33657,
+  "evidence": "source-path identifiers: kraft",
+  "signals": [
+   "kraft"
+  ],
+  "family": "Raft",
+  "channel": "self"
+ },
+ "hashicorp/consul": {
+  "level": "L1",
+  "membership": "TierA",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 30053,
+  "evidence": "manifest-only: hashicorp/raft",
+  "signals": [
+   "hashicorp/raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "tikv/tikv": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S6_kv_cache_search",
+  "language": "Rust",
+  "stars": 16824,
+  "evidence": "source-path identifiers: raft-rs",
+  "signals": [
+   "raft-rs",
+   "raft-rs crate"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "hyperledger/fabric": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 16709,
+  "evidence": "anchor consensus implementation (orderer uses etcd-raft (vendored))",
+  "signals": [
+   "raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "apple/foundationdb": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 16656,
+  "evidence": "anchor consensus implementation (paxos-based commit protocol (architecture docs; no paxos paths))",
+  "signals": [
+   "paxos"
+  ],
+  "family": "Paxos",
+  "channel": "self"
+ },
+ "scylladb/scylladb": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 15735,
+  "evidence": "source-path identifiers: paxos",
+  "signals": [
+   "paxos"
+  ],
+  "family": "Paxos",
+  "channel": "self"
+ },
+ "apache/zookeeper": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "language": "Java",
+  "stars": 12793,
+  "evidence": "anchor consensus implementation (ZAB quorum protocol (server/quorum/, Zab.tla))",
+  "signals": [
+   "paxos"
+  ],
+  "family": "Paxos",
+  "channel": "self"
+ },
+ "redpanda-data/redpanda": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S4_mq_streaming",
+  "language": "C++",
+  "stars": 12505,
+  "evidence": "anchor consensus implementation (self-implemented raft (consensus/))",
+  "signals": [
+   "raft"
+  ],
+  "family": "Raft",
+  "channel": "self"
+ },
+ "hashicorp/raft": {
+  "level": "L1",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "language": "Go",
+  "stars": 9113,
+  "evidence": "manifest-only: hashicorp/raft",
+  "signals": [
+   "hashicorp/raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "aptos-labs/aptos-core": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 6428,
+  "evidence": "anchor consensus implementation (jolteon BFT (consensus crate))",
+  "signals": [
+   "bft"
+  ],
+  "family": "BFT",
+  "channel": "self"
+ },
+ "lni/dragonboat": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 5324,
+  "evidence": "source-path identifiers: dragonboat",
+  "signals": [
+   "dragonboat"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "baidu/braft": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S2_storage",
+  "language": "C++",
+  "stars": 4229,
+  "evidence": "source-path identifiers: braft, raft-rs",
+  "signals": [
+   "braft",
+   "raft-rs"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "tikv/raft-rs": {
+  "level": "L1",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "language": "Rust",
+  "stars": 3384,
+  "evidence": "manifest-only: raft-rs crate",
+  "signals": [
+   "raft-rs crate"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "cometbft/cometbft": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 916,
+  "evidence": "source-path identifiers: cometbft",
+  "signals": [
+   "cometbft"
+  ],
+  "family": "BFT",
+  "channel": "self"
+ },
+ "bitcoin/bitcoin": {
+  "level": "L0",
+  "membership": "NEG",
+  "stratum": "NEG_control",
+  "language": "C++",
+  "stars": 90077,
+  "evidence": "negative-control (PoW/PoS)",
+  "signals": [],
+  "family": "BFT",
+  "channel": "self"
+ },
+ "ethereum/go-ethereum": {
+  "level": "L0",
+  "membership": "NEG",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 51328,
+  "evidence": "negative-control (PoW/PoS)",
+  "signals": [],
+  "family": "BFT",
+  "channel": "self"
+ },
+ "supabase/supabase": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 108672,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "netdata/netdata": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Go",
+  "stars": 80386,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "redis/redis": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C",
+  "stars": 76170,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "meilisearch/meilisearch": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 59158,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "dbeaver/dbeaver": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Java",
+  "stars": 51613,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ClickHouse/ClickHouse": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 49589,
+  "evidence": "source-path identifiers: nuraft",
+  "signals": [
+   "nuraft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "metabase/metabase": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Clojure",
+  "stars": 49035,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "prisma/orm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 47584,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/spark": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Scala",
+  "stars": 43932,
+  "evidence": "coordination-client only (NOT consensus): zookeeper-client",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "duckdb/duckdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 40890,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "pingcap/tidb": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Go",
+  "stars": 40478,
+  "evidence": "manifest-only: etcd-raft",
+  "signals": [
+   "etcd-raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "The-Vibe-Company/Quivr": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Python",
+  "stars": 39439,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "drawdb-io/drawdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "JavaScript",
+  "stars": 39327,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "sqlmapproject/sqlmap": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Python",
+  "stars": 38334,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "directus/directus": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 37665,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "typeorm/typeorm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 36642,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "SheetJS/sheetjs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": null,
+  "stars": 36337,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "drizzle-team/drizzle-orm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 35648,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "surrealdb/surrealdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 32966,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "facebook/rocksdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 32034,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "influxdata/influxdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 31731,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "dragonflydb/dragonfly": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 31113,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "sequelize/sequelize": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 30375,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "chroma-core/chroma": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 29196,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "mongodb/mongo": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 28521,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "OtterMind/Chat2DB": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Java",
+  "stars": 28057,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "PostgREST/postgrest": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Haskell",
+  "stars": 27638,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "valkey-io/valkey": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C",
+  "stars": 27078,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/flink": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Java",
+  "stars": 26313,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "clockworklabs/SpacetimeDB": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 25086,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "dolthub/dolt": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Go",
+  "stars": 24320,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "tursodatabase/turso": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 24112,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "sinaptik-ai/pandas-ai": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Python",
+  "stars": 23787,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "beekeeper-studio/beekeeper-studio": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 23537,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "osquery/osquery": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C++",
+  "stars": 23531,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "timescale/timescaledb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C",
+  "stars": 23454,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "pubkey/rxdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 23371,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "neondatabase/neon": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 23017,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "typicode/lowdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "JavaScript",
+  "stars": 22579,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "dgraph-io/dgraph": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Go",
+  "stars": 21787,
+  "evidence": "manifest-only: etcd-raft",
+  "signals": [
+   "etcd-raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "teableio/teable": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "TypeScript",
+  "stars": 21742,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "valeriansaliou/sonic": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 21331,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/shardingsphere": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Java",
+  "stars": 20786,
+  "evidence": "coordination-client only (NOT consensus): zookeeper-client",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "cube-js/cube": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Rust",
+  "stars": 20749,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "mybatis/mybatis-3": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Java",
+  "stars": 20440,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "bitwarden/server": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "C#",
+  "stars": 19971,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "eosphoros-ai/DB-GPT": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Python",
+  "stars": 19839,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "amark/gun": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "JavaScript",
+  "stars": 19127,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "golang-migrate/migrate": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "language": "Go",
+  "stars": 18880,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "HeyPuter/puter": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "TypeScript",
+  "stars": 43325,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "spacedriveapp/spacedrive": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Rust",
+  "stars": 38882,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "0voice/interview_internal_reference": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Python",
+  "stars": 37247,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "rustfs/rustfs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Rust",
+  "stars": 31596,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "localForage/localForage": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "JavaScript",
+  "stars": 25809,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "parse-community/parse-server": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "JavaScript",
+  "stars": 21412,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ceph/ceph": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "C++",
+  "stars": 16985,
+  "evidence": "source-path identifiers: paxos",
+  "signals": [
+   "paxos"
+  ],
+  "family": "Paxos",
+  "channel": "self"
+ },
+ "juicedata/juicefs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 14381,
+  "evidence": "coordination-client only (NOT consensus): etcd-client",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "thanos-io/thanos": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 14194,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "marcuswestin/store.js": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "JavaScript",
+  "stars": 13985,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "rook/rook": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 13623,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "rt2zz/redux-persist": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "TypeScript",
+  "stars": 12959,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "openebs/openebs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": null,
+  "stars": 9808,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "aws-amplify/amplify-js": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "TypeScript",
+  "stars": 9558,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "whatwg/html": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "HTML",
+  "stars": 9374,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "longhorn/longhorn": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Shell",
+  "stars": 7946,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "datahaven-xyz/datahaven": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Rust",
+  "stars": 7896,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "upspin/upspin": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 6406,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "awslabs/mountpoint-s3": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Rust",
+  "stars": 5761,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "cubefs/cubefs": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 5645,
+  "evidence": "source-path identifiers: raft-rs",
+  "signals": [
+   "etcd-raft",
+   "raft-rs"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "treeverse/lakeFS": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Go",
+  "stars": 5505,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/opendal": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "Rust",
+  "stars": 5362,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "gluster/glusterfs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "C",
+  "stars": 5223,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "NekR/offline-plugin": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "language": "JavaScript",
+  "stars": 4509,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "alibaba/spring-cloud-alibaba": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Java",
+  "stars": 29166,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "coredns/coredns": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 14284,
+  "evidence": "coordination-client only (NOT consensus): etcd-client",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "nmap/nmap": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "C",
+  "stars": 13493,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "go-resty/resty": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 11769,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "smallnest/rpcx": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 8312,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "Bogdanp/dramatiq": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Python",
+  "stars": 5311,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "linkerd/linkerd": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Scala",
+  "stars": 5309,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "segmentio/ksuid": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 5266,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "gliderlabs/registrator": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 4674,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "BehaviorTree/BehaviorTree.CPP": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "C++",
+  "stars": 4177,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ExpressGateway/express-gateway": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "JavaScript",
+  "stars": 3031,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "trimstray/sandmap": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Shell",
+  "stars": 1861,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "bsm/redislock": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 1767,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "Adminisme/ServerScan": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 1655,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "lastbackend/lastbackend": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Go",
+  "stars": 1655,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "nacos-group/r-nacos": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Rust",
+  "stars": 1580,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "fengjiachun/Jupiter": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Java",
+  "stars": 1503,
+  "evidence": "coordination-client only (NOT consensus): zookeeper-client",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "COVESA/vsomeip": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "C++",
+  "stars": 1442,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "razvandimescu/numa": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Rust",
+  "stars": 1415,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "brainix/pottery": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "language": "Python",
+  "stars": 1245,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "FFmpeg/FFmpeg": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "C",
+  "stars": 63849,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "pathwaycom/pathway": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Python",
+  "stars": 62359,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "binwiederhier/ntfy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 33922,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "webtorrent/webtorrent": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "JavaScript",
+  "stars": 31379,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ossrs/srs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "C++",
+  "stars": 29192,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "dapr/dapr": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 26055,
+  "evidence": "manifest-only: etcd-raft, hashicorp/raft",
+  "signals": [
+   "etcd-raft",
+   "hashicorp/raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "nsqio/nsq": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 25779,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/rocketmq": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Java",
+  "stars": 22573,
+  "evidence": "source-path identifiers: sofa-jraft",
+  "signals": [
+   "sofa-jraft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "nats-io/nats-server": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 20644,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "uNetworking/uWebSockets": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "C++",
+  "stars": 18977,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "asciinema/asciinema": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Rust",
+  "stars": 17750,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "video-dev/hls.js": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "TypeScript",
+  "stars": 16912,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "pion/webrtc": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 16748,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "emqx/emqx": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Erlang",
+  "stars": 16679,
+  "evidence": "source-path identifiers: raft-rs",
+  "signals": [
+   "raft-rs"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "OptimalBits/bull": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "JavaScript",
+  "stars": 16251,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/pulsar": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Java",
+  "stars": 15324,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "elastic/logstash": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Java",
+  "stars": 14929,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "AlexxIT/go2rtc": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 14078,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "rabbitmq/rabbitmq-server": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "JavaScript",
+  "stars": 13831,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "akka/akka-core": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Scala",
+  "stars": 13277,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "developit/mitt": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "TypeScript",
+  "stars": 11903,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "QuentinFuxa/WhisperLiveKit": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Python",
+  "stars": 10983,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "zeromq/libzmq": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "C++",
+  "stars": 10975,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ClassicOldSong/Apollo": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "C++",
+  "stars": 10749,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "centrifugal/centrifugo": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Go",
+  "stars": 10687,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "popcorntime/popcorntime": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "TypeScript",
+  "stars": 10673,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "leeoniya/uPlot": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "JavaScript",
+  "stars": 10461,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "webtorrent/webtorrent-desktop": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "JavaScript",
+  "stars": 10115,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "apache/seatunnel": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Java",
+  "stars": 9606,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "lipku/LiveTalking": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "language": "Python",
+  "stars": 9334,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "FuelLabs/fuel-core": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 56868,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "anoma/anoma": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Elixir",
+  "stars": 33625,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "linera-io/linera-protocol": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 32138,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "shardeum/shardeum": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "TypeScript",
+  "stars": 31260,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "slymnoyann/hey-1": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "TypeScript",
+  "stars": 29378,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "argotorg/solidity": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "C++",
+  "stars": 25722,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "zama-ai/fhevm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 24818,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "diem/diem": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 16668,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "AmazingAng/WTF-Solidity": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Solidity",
+  "stars": 14037,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "monero-project/monero": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "C++",
+  "stars": 10816,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "Chia-Network/chia-blockchain": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Python",
+  "stars": 10799,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "foundry-rs/foundry": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 10577,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ethers-io/ethers.js": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "TypeScript",
+  "stars": 8717,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "NomicFoundation/hardhat": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "TypeScript",
+  "stars": 8504,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "smartcontractkit/chainlink": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 8238,
+  "evidence": "manifest-only: cometbft",
+  "signals": [
+   "cometbft"
+  ],
+  "family": "BFT",
+  "channel": "lib"
+ },
+ "lightningnetwork/lnd": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 8187,
+  "evidence": "manifest-only: etcd-raft",
+  "signals": [
+   "etcd-raft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "dvf/blockchain": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "C#",
+  "stars": 8041,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "IBAX-io/go-ibax": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 7851,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "MystenLabs/sui": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 7741,
+  "evidence": "anchor consensus implementation (narwhal/bullshark BFT (consensus crate))",
+  "signals": [
+   "bft"
+  ],
+  "family": "BFT",
+  "channel": "self"
+ },
+ "LiuBoyu/blockchain": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": null,
+  "stars": 7388,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "lbryio/lbry-sdk": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Python",
+  "stars": 7176,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "yeasy/blockchain_guide": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Python",
+  "stars": 7078,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "cosmos/cosmos-sdk": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 7054,
+  "evidence": "source-path identifiers: cometbft",
+  "signals": [
+   "cometbft"
+  ],
+  "family": "BFT",
+  "channel": "lib"
+ },
+ "crestalnetwork/intentkit": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Python",
+  "stars": 6508,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "tendermint/tendermint": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 5867,
+  "evidence": "source-path identifiers: cometbft",
+  "signals": [
+   "cometbft",
+   "tendermint"
+  ],
+  "family": "BFT",
+  "channel": "self"
+ },
+ "paradigmxyz/reth": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 5761,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "Uniswap/interface": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "TypeScript",
+  "stars": 5533,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "unicity-sphere/sphere-sdk": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "TypeScript",
+  "stars": 5398,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "bitcoinj/bitcoinj": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Java",
+  "stars": 5228,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "XRPLF/rippled": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "C++",
+  "stars": 5192,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "otter-sec/anchor": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 5125,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "blockscout/blockscout": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Elixir",
+  "stars": 4658,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "itheima1/BlockChain": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "JavaScript",
+  "stars": 4647,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ProvableHQ/snarkOS": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Rust",
+  "stars": 4525,
+  "evidence": "source-path identifiers: narwhal",
+  "signals": [
+   "narwhal"
+  ],
+  "family": "BFT",
+  "channel": "lib"
+ },
+ "Jeiwan/blockchain_go": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Go",
+  "stars": 4375,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ConsenSysDiligence/mythril": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "Python",
+  "stars": 4265,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ton-blockchain/ton": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "language": "C++",
+  "stars": 4137,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "BurntSushi/ripgrep": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Rust",
+  "stars": 67797,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "TheAlgorithms/Java": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Java",
+  "stars": 66205,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "sharkdp/fd": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Rust",
+  "stars": 44272,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "jaywcjlove/linux-command": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Markdown",
+  "stars": 36738,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "searxng/searxng": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Python",
+  "stars": 36367,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "qdrant/qdrant": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Rust",
+  "stars": 34309,
+  "evidence": "manifest-only: raft-rs crate",
+  "signals": [
+   "raft-rs crate"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "assafelovic/gpt-researcher": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Python",
+  "stars": 29234,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "typesense/typesense": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "C++",
+  "stars": 26496,
+  "evidence": "source-path identifiers: braft",
+  "signals": [
+   "braft"
+  ],
+  "family": "Raft",
+  "channel": "lib"
+ },
+ "arc53/DocsGPT": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Python",
+  "stars": 18232,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "ast-grep/ast-grep": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Rust",
+  "stars": 15716,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "Flow-Launcher/Flow.Launcher": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "C#",
+  "stars": 15481,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "nextapps-de/flexsearch": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "JavaScript",
+  "stars": 13788,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "opensearch-project/OpenSearch": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Java",
+  "stars": 13631,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "searx/searx": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Python",
+  "stars": 13543,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ },
+ "neuml/txtai": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "language": "Python",
+  "stars": 12918,
+  "evidence": "no consensus signal",
+  "signals": [],
+  "family": null,
+  "channel": null
+ }
+}
