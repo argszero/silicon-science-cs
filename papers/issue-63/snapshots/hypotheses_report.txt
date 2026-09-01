@@ -1,0 +1,37 @@
+Consensus in the Wild — hypotheses report (classifier v1, snapshot 2026-09-01)
+==============================================================================
+corpus: 192 (Tier A 16 / Tier B 174 / NEG 2)
+Tier B distribution: L0 162 / L1 3 / L2 9
+consensus-positive (Tier B, L1+L2): 12/174 = 6.9%
+
+H1 — Raft family dominance (of consensus-positive Tier B repos):
+  family distribution: Raft=8 BFT=3 Paxos=1
+  Raft share = 8/12 = 66.7%  (Wilson 95% CI [39.1%, 86.2%])
+  flips to lose majority (50%): 2
+
+H2 — dependency-library-driven adoption (of consensus-positive Tier B repos):
+  channel distribution: lib=9 self=3
+  lib share = 9/12 = 75.0%  (Wilson 95% CI [46.8%, 91.1%])
+  flips to drop below 50%: 3
+
+H3 — ecosystem stratification:
+  Tier A anchors consensus-positive: 16/16 = 100.0%
+  Tier B consensus-positive: 12/174 = 6.9%
+  Fisher exact (one-sided) p = 4.225e-16
+  Go share among Tier B adopters: 5/12 = 41.7%  (Wilson 95% CI [19.3%, 68.0%])
+
+Tier B consensus-positive repos (12):
+    49589 C++        L2 Raft  lib  ClickHouse/ClickHouse
+    34309 Rust       L1 Raft  lib  qdrant/qdrant
+    26496 C++        L2 Raft  lib  typesense/typesense
+    26055 Go         L1 Raft  lib  dapr/dapr
+    22573 Java       L2 Raft  lib  apache/rocketmq
+    21787 Go         L1 Raft  lib  dgraph-io/dgraph
+    16985 C++        L2 Paxos self ceph/ceph
+    16679 Erlang     L2 Raft  self emqx/emqx
+     7054 Go         L2 BFT   lib  cosmos/cosmos-sdk
+     5867 Go         L2 BFT   self tendermint/tendermint
+     5645 Go         L2 Raft  lib  cubefs/cubefs
+     4525 Rust       L2 BFT   lib  ProvableHQ/snarkOS
+
+NEG controls: bitcoin/go-ethereum -> L0 (PoW/PoS, non-classic family) ✓

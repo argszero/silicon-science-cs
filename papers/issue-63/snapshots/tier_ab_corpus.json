@@ -1,0 +1,1922 @@
+{
+ "etcd-io/etcd": {
+  "stars": 52214,
+  "language": "Go",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "description": "Distributed reliable key-value store for the most critical data of a distributed system",
+  "default_branch": "main",
+  "head_sha": "b655785b1e43d906e5972167e8f311c66d36e4f6",
+  "pinned_at": "2026-09-01T10:00:46.439302+00:00"
+ },
+ "apache/kafka": {
+  "stars": 33657,
+  "language": "Java",
+  "membership": "TierA",
+  "stratum": "S4_mq_streaming",
+  "description": "Apache Kafka - A distributed event streaming platform",
+  "default_branch": "trunk",
+  "head_sha": "096894c02a3ebbd7549ba62e72a9f5b00bd81a6b",
+  "pinned_at": "2026-09-01T10:00:46.481325+00:00"
+ },
+ "hashicorp/consul": {
+  "stars": 30053,
+  "language": "Go",
+  "membership": "TierA",
+  "stratum": "S3_coordination",
+  "description": "Consul is a distributed, highly available, and data center aware solution to connect and configure applications across dynamic, distributed infrastructure.",
+  "default_branch": "main",
+  "head_sha": "681197af2e42d7d378ba17fb9aca592d8425dce0",
+  "pinned_at": "2026-09-01T10:00:46.550758+00:00"
+ },
+ "tikv/tikv": {
+  "stars": 16824,
+  "language": "Rust",
+  "membership": "TierA",
+  "stratum": "S6_kv_cache_search",
+  "description": "Distributed transactional key-value database, originally created to complement TiDB",
+  "default_branch": "master",
+  "head_sha": "78aedc1c81ef3f7d8bacc6e9d09f56460f134937",
+  "pinned_at": "2026-09-01T10:00:46.412105+00:00"
+ },
+ "hyperledger/fabric": {
+  "stars": 16709,
+  "language": "Go",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "description": "Hyperledger Fabric is an enterprise-grade permissioned distributed ledger framework for developing solutions and applications. Its modular and versatile design satisfies a broad range of industry use cases. It offers a unique approach to consensus that enables performance at scale while preserving p",
+  "default_branch": "main",
+  "head_sha": "2736b63f8fd5932511d56fe68b7039d15977f7f6",
+  "pinned_at": "2026-09-01T10:00:46.445197+00:00"
+ },
+ "apple/foundationdb": {
+  "stars": 16656,
+  "language": "C++",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "description": "FoundationDB - the open source, distributed, transactional key-value store",
+  "default_branch": "main",
+  "head_sha": "992082ca230c933b689edca025af489096ad65e1",
+  "pinned_at": "2026-09-01T10:00:46.389185+00:00"
+ },
+ "scylladb/scylladb": {
+  "stars": 15735,
+  "language": "C++",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "description": "NoSQL data store using the Seastar framework, compatible with Apache Cassandra and Amazon DynamoDB",
+  "default_branch": "master",
+  "head_sha": "250efaad0c4428b5ec38770510e307eb722844d2",
+  "pinned_at": "2026-09-01T10:00:48.610914+00:00"
+ },
+ "apache/zookeeper": {
+  "stars": 12793,
+  "language": "Java",
+  "membership": "TierA",
+  "stratum": "S1_database",
+  "description": "Apache ZooKeeper",
+  "default_branch": "master",
+  "head_sha": "ccef53edb9d3e5a951def8d985a46ad1881c6c10",
+  "pinned_at": "2026-09-01T10:00:46.847448+00:00"
+ },
+ "redpanda-data/redpanda": {
+  "stars": 12505,
+  "language": "C++",
+  "membership": "TierA",
+  "stratum": "S4_mq_streaming",
+  "description": "Redpanda is a streaming data platform for developers. Kafka API compatible. 10x faster. No ZooKeeper. No JVM!",
+  "default_branch": "dev",
+  "head_sha": "3cfce474a872090e7c74d14181885f5838c54cf2",
+  "pinned_at": "2026-09-01T10:00:48.491697+00:00"
+ },
+ "hashicorp/raft": {
+  "stars": 9113,
+  "language": "Go",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "description": "Golang implementation of the Raft consensus protocol",
+  "default_branch": "main",
+  "head_sha": "b853494d940405e9ea5a2e0a71ba6b389c386620",
+  "pinned_at": "2026-09-01T10:00:48.278424+00:00"
+ },
+ "aptos-labs/aptos-core": {
+  "stars": 6428,
+  "language": "Rust",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "description": "Aptos is a layer 1 blockchain built to support the widespread use of blockchain through better technology and user experience.",
+  "default_branch": "main",
+  "head_sha": "885a4486593ff9e9434caf1b53d3d5e6ab8e30c7",
+  "pinned_at": "2026-09-01T10:00:48.132967+00:00"
+ },
+ "lni/dragonboat": {
+  "stars": 5324,
+  "language": "Go",
+  "membership": "TierA",
+  "stratum": "S2_storage",
+  "description": "A feature complete and high performance multi-group Raft library in Go.  ",
+  "default_branch": "master",
+  "head_sha": "076c7f6497dcc18880aed6323246d5079661942c",
+  "pinned_at": "2026-09-01T10:00:48.419265+00:00"
+ },
+ "baidu/braft": {
+  "stars": 4229,
+  "language": "C++",
+  "membership": "TierA",
+  "stratum": "S2_storage",
+  "description": "An industrial-grade C++ implementation of RAFT consensus algorithm based on brpc,  widely used inside Baidu to build highly-available distributed systems.",
+  "default_branch": "master",
+  "head_sha": "ab0017f0b98d429138d83a04d3ed351197d671a9",
+  "pinned_at": "2026-09-01T10:00:48.129917+00:00"
+ },
+ "tikv/raft-rs": {
+  "stars": 3384,
+  "language": "Rust",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "description": "Raft distributed consensus algorithm implemented in Rust.",
+  "default_branch": "master",
+  "head_sha": "ad13f3d90780f53aea2488c6a4b76c0d334bf136",
+  "pinned_at": "2026-09-01T10:00:48.439266+00:00"
+ },
+ "cometbft/cometbft": {
+  "stars": 916,
+  "language": "Go",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "description": "CometBFT: A distributed, Byzantine fault-tolerant, deterministic state machine replication engine. A fork and successor to Tendermint Core.",
+  "default_branch": "main",
+  "head_sha": "ed139b094f0d25a3e1dba9f97b207b5ecd0ec32e",
+  "pinned_at": "2026-09-01T10:00:48.860324+00:00"
+ },
+ "bitcoin/bitcoin": {
+  "stars": 90077,
+  "language": "C++",
+  "membership": "NEG",
+  "stratum": "NEG_control",
+  "description": "Bitcoin Core integration/staging tree",
+  "default_branch": "master",
+  "head_sha": "37c57bc5c2979fd3222b14f42ac3341821f5f198",
+  "pinned_at": "2026-09-01T10:00:50.216641+00:00"
+ },
+ "ethereum/go-ethereum": {
+  "stars": 51328,
+  "language": "Go",
+  "membership": "NEG",
+  "stratum": "S5_blockchain",
+  "description": "Go implementation of the Ethereum protocol",
+  "default_branch": "master",
+  "head_sha": "64006a1e1c6281ad570d80129493d602fe081407",
+  "pinned_at": "2026-09-01T10:00:50.252252+00:00"
+ },
+ "supabase/supabase": {
+  "stars": 108672,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+  "default_branch": "master",
+  "head_sha": "911a6c248287da048f211f5b584bab434ac1a6af",
+  "pinned_at": "2026-09-01T10:00:51.376209+00:00"
+ },
+ "netdata/netdata": {
+  "stars": 80386,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
+  "default_branch": "master",
+  "head_sha": "b2bd5af6f0e5c055fe708d3bf44c4f2d7fb88915",
+  "pinned_at": "2026-09-01T10:00:51.202978+00:00"
+ },
+ "redis/redis": {
+  "stars": 76170,
+  "language": "C",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine.",
+  "default_branch": "unstable",
+  "head_sha": "4602d6e93e030efdc48f94dc2e3d3f9f32e7c72d",
+  "pinned_at": "2026-09-01T10:00:50.428289+00:00"
+ },
+ "meilisearch/meilisearch": {
+  "stars": 59158,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications.",
+  "default_branch": "main",
+  "head_sha": "577f7af28942b71782eab1e59f44ad8296ce0a92",
+  "pinned_at": "2026-09-01T10:00:50.303923+00:00"
+ },
+ "dbeaver/dbeaver": {
+  "stars": 51613,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Free universal database tool and SQL client",
+  "default_branch": "devel",
+  "head_sha": "bc76885a8b55ebdf8c7d6b0cdede76356101bfe7",
+  "pinned_at": "2026-09-01T10:00:50.569473+00:00"
+ },
+ "ClickHouse/ClickHouse": {
+  "stars": 49589,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "ClickHouse\u00ae is a real-time analytics database management system",
+  "default_branch": "master",
+  "head_sha": "fd8e52de9e81a4c9ee46556f76dddadc81275f97",
+  "pinned_at": "2026-09-01T10:00:51.127351+00:00"
+ },
+ "metabase/metabase": {
+  "stars": 49035,
+  "language": "Clojure",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+  "default_branch": "master",
+  "head_sha": "39ad1d516756e5ebe0c125d0fd9585688615219f",
+  "pinned_at": "2026-09-01T10:00:53.223255+00:00"
+ },
+ "prisma/orm": {
+  "stars": 47584,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
+  "default_branch": "main",
+  "head_sha": "5e0f13538732ba5fec5b308aded491b335a0d4c3",
+  "pinned_at": "2026-09-01T10:00:53.651773+00:00"
+ },
+ "apache/spark": {
+  "stars": 43932,
+  "language": "Scala",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Apache Spark - A unified analytics engine for large-scale data processing",
+  "default_branch": "master",
+  "head_sha": "9e147d1a5dca05f01ad7c738f5096640e5905ac6",
+  "pinned_at": "2026-09-01T10:00:52.421348+00:00"
+ },
+ "duckdb/duckdb": {
+  "stars": 40890,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "DuckDB is an analytical in-process SQL database management system",
+  "default_branch": "main",
+  "head_sha": "1b3c92a18881286356dd526dcbe5408d675d5e63",
+  "pinned_at": "2026-09-01T10:00:53.869741+00:00"
+ },
+ "pingcap/tidb": {
+  "stars": 40478,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+  "default_branch": "master",
+  "head_sha": "5e8a1a229a7591ddac49a0cd3b795587c2595ab9",
+  "pinned_at": "2026-09-01T10:00:52.497626+00:00"
+ },
+ "The-Vibe-Company/Quivr": {
+  "stars": 39439,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Opiniated RAG for integrating GenAI in your apps \ud83e\udde0   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
+  "default_branch": "main",
+  "head_sha": "947a785415c6c35ab2ae8157222b4720b0710b4d",
+  "pinned_at": "2026-09-01T10:00:53.866725+00:00"
+ },
+ "drawdb-io/drawdb": {
+  "stars": 39327,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Free, simple, and intuitive online database diagram editor and SQL generator.",
+  "default_branch": "main",
+  "head_sha": "5efc5fd10a27241f0844dfd31efff4a9e53a61fb",
+  "pinned_at": "2026-09-01T10:00:52.871778+00:00"
+ },
+ "sqlmapproject/sqlmap": {
+  "stars": 38334,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Automatic SQL injection and database takeover tool",
+  "default_branch": "master",
+  "head_sha": "3b8a8d3d0902f3a735efbf5def437a59d536d0d0",
+  "pinned_at": "2026-09-01T10:00:53.657605+00:00"
+ },
+ "directus/directus": {
+  "stars": 37665,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "The flexible backend for all your projects \ud83d\udc30 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
+  "default_branch": "main",
+  "head_sha": "c76747d8d28970fbbe4d4ff7de85b2e0fcb6f716",
+  "pinned_at": "2026-09-01T10:00:55.302553+00:00"
+ },
+ "typeorm/typeorm": {
+  "stars": 36642,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "TypeScript & JavaScript ORM for Node.js \u2014 supports PostgreSQL, MySQL, MariaDB, SQLite, SQL Server, Oracle, and more.",
+  "default_branch": "master",
+  "head_sha": "953b76f478a50cbcc99d46381f399f362830218e",
+  "pinned_at": "2026-09-01T10:00:54.558268+00:00"
+ },
+ "SheetJS/sheetjs": {
+  "stars": 36337,
+  "language": null,
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "\ud83d\udcd7 SheetJS Spreadsheet Data Toolkit -- New home https://git.sheetjs.com/SheetJS/sheetjs",
+  "default_branch": "github",
+  "head_sha": "3f44ddd99c704d7ca35ea76fef7b8af2d2d435cb",
+  "pinned_at": "2026-09-01T10:00:54.620803+00:00"
+ },
+ "drizzle-team/drizzle-orm": {
+  "stars": 35648,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "ORM",
+  "default_branch": "main",
+  "head_sha": "b7862528fd8fc39bc2653a6c18dad7c1f4e68d10",
+  "pinned_at": "2026-09-01T10:00:54.925876+00:00"
+ },
+ "surrealdb/surrealdb": {
+  "stars": 32966,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A scalable, distributed, collaborative, document-graph database, for the realtime web",
+  "default_branch": "main",
+  "head_sha": "c7eac9022af90d2d9658a94e2dc51d45d9c6ff5b",
+  "pinned_at": "2026-09-01T10:00:55.482615+00:00"
+ },
+ "facebook/rocksdb": {
+  "stars": 32034,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A library that provides an embeddable, persistent key-value store for fast storage.",
+  "default_branch": "main",
+  "head_sha": "fe6406f7b283f6104319b7487e27226aca160f74",
+  "pinned_at": "2026-09-01T10:00:56.792209+00:00"
+ },
+ "influxdata/influxdb": {
+  "stars": 31731,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Scalable datastore for metrics, events, and real-time analytics",
+  "default_branch": "main",
+  "head_sha": "693b1fd1b96cdcb980cf76a1004c0b3f1b46db48",
+  "pinned_at": "2026-09-01T10:00:55.645977+00:00"
+ },
+ "dragonflydb/dragonfly": {
+  "stars": 31113,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A modern replacement for Redis and Memcached",
+  "default_branch": "main",
+  "head_sha": "0c8f126d4b16af43a911d275a8363ca85b93e943",
+  "pinned_at": "2026-09-01T10:00:55.964562+00:00"
+ },
+ "sequelize/sequelize": {
+  "stars": 30375,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Feature-rich ORM for modern Node.js and TypeScript, it supports PostgreSQL (with JSON and JSONB support), MySQL, MariaDB, SQLite, MS SQL Server, Snowflake, Oracle DB, DB2 and DB2 for IBM i.",
+  "default_branch": "main",
+  "head_sha": "1e04e7b6c536334486daa10725e5be3d88f21a31",
+  "pinned_at": "2026-09-01T10:00:58.662765+00:00"
+ },
+ "chroma-core/chroma": {
+  "stars": 29196,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Search infrastructure for AI",
+  "default_branch": "main",
+  "head_sha": "3090b912eed5f396e30d30e5159ce59d60523b64",
+  "pinned_at": "2026-09-01T10:00:56.473032+00:00"
+ },
+ "mongodb/mongo": {
+  "stars": 28521,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "The MongoDB Database",
+  "default_branch": "master",
+  "head_sha": "7e534d63fd3134218b13a23e257e5a26b8f375e4",
+  "pinned_at": "2026-09-01T10:00:56.803323+00:00"
+ },
+ "OtterMind/Chat2DB": {
+  "stars": 28057,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Chat2DB is a free, cross-platform, local-first database client and SQL workspace for developers, DBAs, analysts, and data teams. Connect to 40+ databases, manage data, edit and run SQL, and use your own AI model to generate, explain, and optimize queries. Available on desktop, web, Docker, and CLI, ",
+  "default_branch": "main",
+  "head_sha": "9ee5b3af6a868f8a45f03e09909c784319dddaa7",
+  "pinned_at": "2026-09-01T10:00:57.674248+00:00"
+ },
+ "PostgREST/postgrest": {
+  "stars": 27638,
+  "language": "Haskell",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "REST API for any Postgres database",
+  "default_branch": "main",
+  "head_sha": "c3e9f35c0bfff45ba03ff5e8e5900cb708ee7e21",
+  "pinned_at": "2026-09-01T10:00:57.209655+00:00"
+ },
+ "valkey-io/valkey": {
+  "stars": 27078,
+  "language": "C",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A flexible distributed key-value database that is optimized for caching and other realtime workloads.",
+  "default_branch": "unstable",
+  "head_sha": "47b497e4e39a1b05f1244a30a134818d9f7b4a5c",
+  "pinned_at": "2026-09-01T10:00:58.865219+00:00"
+ },
+ "apache/flink": {
+  "stars": 26313,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Apache Flink",
+  "default_branch": "master",
+  "head_sha": "878844f937f78963b8765d848731d13b4592ce32",
+  "pinned_at": "2026-09-01T10:00:58.457291+00:00"
+ },
+ "clockworklabs/SpacetimeDB": {
+  "stars": 25086,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Development at the speed of light",
+  "default_branch": "master",
+  "head_sha": "b0661c3ccc3cdbef2fc6523582eb978c16b0ce49",
+  "pinned_at": "2026-09-01T10:00:58.537121+00:00"
+ },
+ "dolthub/dolt": {
+  "stars": 24320,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Dolt \u2013 Git for Data",
+  "default_branch": "main",
+  "head_sha": "94cd2ad5b35eb2a8f1389dd262cb52982c8757bd",
+  "pinned_at": "2026-09-01T10:00:58.707080+00:00"
+ },
+ "tursodatabase/turso": {
+  "stars": 24112,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A SQL database in Rust: SQLite-compatible, now also speaking Postgres (experimental). The LLVM of databases.",
+  "default_branch": "main",
+  "head_sha": "a06bea30259be4b1650c513231b2d40223c68f83",
+  "pinned_at": "2026-09-01T10:00:59.227144+00:00"
+ },
+ "sinaptik-ai/pandas-ai": {
+  "stars": 23787,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Chat with your database or your datalake (SQL, CSV, parquet). PandasAI makes data analysis conversational using LLMs and RAG.",
+  "default_branch": "main",
+  "head_sha": "bbbb771d31062d81f6fa19bafb40620d5cbe48f4",
+  "pinned_at": "2026-09-01T10:00:59.412992+00:00"
+ },
+ "beekeeper-studio/beekeeper-studio": {
+  "stars": 23537,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more. Linux, MacOS, and Windows.",
+  "default_branch": "master",
+  "head_sha": "8b4a8dfd3f07d1d1fd8eb25ac2d809471273d237",
+  "pinned_at": "2026-09-01T10:00:59.964439+00:00"
+ },
+ "osquery/osquery": {
+  "stars": 23531,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "SQL powered operating system instrumentation, monitoring, and analytics.",
+  "default_branch": "master",
+  "head_sha": "a1bbec2541a93ddfa373b5f1da8c16f4e4505c7b",
+  "pinned_at": "2026-09-01T10:01:01.545893+00:00"
+ },
+ "timescale/timescaledb": {
+  "stars": 23454,
+  "language": "C",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "A time-series database for high-performance real-time analytics packaged as a Postgres extension",
+  "default_branch": "main",
+  "head_sha": "065cf7ae7243fdbe204ba40d8493b796d8ca08ee",
+  "pinned_at": "2026-09-01T10:01:00.185521+00:00"
+ },
+ "pubkey/rxdb": {
+  "stars": 23371,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "The local-first database that runs on every JS runtime and replicates with your existing backend - no vendor, no lock-in - https://rxdb.info/",
+  "default_branch": "master",
+  "head_sha": "fa4f4c3924a726f9ef04a955231c58c4d1c94738",
+  "pinned_at": "2026-09-01T10:01:01.127917+00:00"
+ },
+ "neondatabase/neon": {
+  "stars": 23017,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Neon: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.",
+  "default_branch": "main",
+  "head_sha": "fa504217c61bbcaf5c512d75830564541f917f8f",
+  "pinned_at": "2026-09-01T10:01:00.569407+00:00"
+ },
+ "typicode/lowdb": {
+  "stars": 22579,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Simple and fast JSON database",
+  "default_branch": "main",
+  "head_sha": "8a6fce9b72f769b22533f0979fbc2e73180f8112",
+  "pinned_at": "2026-09-01T10:01:01.078030+00:00"
+ },
+ "dgraph-io/dgraph": {
+  "stars": 21787,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "high-performance graph database for real-time use cases",
+  "default_branch": "main",
+  "head_sha": "759e242be62c91f8d084da06ad0c8d21256d9c07",
+  "pinned_at": "2026-09-01T10:01:01.127643+00:00"
+ },
+ "teableio/teable": {
+  "stars": 21742,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "\u2728 AI Spreadsheet for Business",
+  "default_branch": "develop",
+  "head_sha": "5ef2238883cad7c3980084de9a9031135fb9734f",
+  "pinned_at": "2026-09-01T10:01:01.482890+00:00"
+ },
+ "valeriansaliou/sonic": {
+  "stars": 21331,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "\ud83e\udd94 Fast, lightweight & schema-less search backend. An alternative to Elasticsearch that runs on a few MBs of RAM.",
+  "default_branch": "master",
+  "head_sha": "e6a72da6a532bc3f31d7d93ef1e0964a1a5d01b2",
+  "pinned_at": "2026-09-01T10:01:01.795685+00:00"
+ },
+ "apache/shardingsphere": {
+  "stars": 20786,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Empowering Data Intelligence with Distributed SQL for Sharding, Scalability, and Security Across All Databases.",
+  "default_branch": "master",
+  "head_sha": "f474b5d57fb1ef787ca3c67cff2f7aa5b9705706",
+  "pinned_at": "2026-09-01T10:01:02.137109+00:00"
+ },
+ "cube-js/cube": {
+  "stars": 20749,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "\ud83d\udcca Cube Core is open-source semantic layer for AI, BI and embedded analytics",
+  "default_branch": "master",
+  "head_sha": "49cfdbfc4f14426045681d6d020b42439048c99f",
+  "pinned_at": "2026-09-01T10:01:03.032871+00:00"
+ },
+ "mybatis/mybatis-3": {
+  "stars": 20440,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "MyBatis SQL mapper framework for Java",
+  "default_branch": "master",
+  "head_sha": "673798b256e244e95183604eb42afd7916b8cfd7",
+  "pinned_at": "2026-09-01T10:01:05.369683+00:00"
+ },
+ "bitwarden/server": {
+  "stars": 19971,
+  "language": "C#",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Bitwarden infrastructure/backend (API, database, Docker, etc).",
+  "default_branch": "main",
+  "head_sha": "6798eb6832477829b931a9f97299c5a6d48d61e4",
+  "pinned_at": "2026-09-01T10:01:03.197198+00:00"
+ },
+ "eosphoros-ai/DB-GPT": {
+  "stars": 19839,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "open-source agentic AI data assistant for the next generation of AI + Data products.",
+  "default_branch": "main",
+  "head_sha": "283128542b95f9e3c2773d3ef44eb4e12a66de81",
+  "pinned_at": "2026-09-01T10:01:03.995206+00:00"
+ },
+ "amark/gun": {
+  "stars": 19127,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "An open source cybersecurity protocol for syncing decentralized graph data.",
+  "default_branch": "master",
+  "head_sha": "552227599d47ba0493824b7fcf8a00c8cd6404ba",
+  "pinned_at": "2026-09-01T10:01:03.191587+00:00"
+ },
+ "golang-migrate/migrate": {
+  "stars": 18880,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S1_database",
+  "description": "Database migrations. CLI and Golang library.",
+  "default_branch": "master",
+  "head_sha": "01a9643f1475e75bb6d6224ddeaf9d8e2434ca8a",
+  "pinned_at": "2026-09-01T10:01:03.237337+00:00"
+ },
+ "HeyPuter/puter": {
+  "stars": 43325,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "\ud83c\udf10 The Internet Computer! Free, Open-Source, and Self-Hostable.",
+  "default_branch": "main",
+  "head_sha": "b400e06473aab6b97ed05fe5a99a8cf148bd4ffd",
+  "pinned_at": "2026-09-01T10:01:03.460365+00:00"
+ },
+ "spacedriveapp/spacedrive": {
+  "stars": 38882,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.",
+  "default_branch": "main",
+  "head_sha": "6dfeccf2113039e35f2ce735f945e70dc3e4ea45",
+  "pinned_at": "2026-09-01T10:01:03.900351+00:00"
+ },
+ "0voice/interview_internal_reference": {
+  "stars": 37247,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "2025\u5e74\u6700\u65b0\u603b\u7ed3\uff0c\u963f\u91cc\uff0c\u817e\u8baf\uff0c\u767e\u5ea6\uff0c\u7f8e\u56e2\uff0c\u5934\u6761\u7b49\u6280\u672f\u9762\u8bd5\u9898\u76ee\uff0c\u4ee5\u53ca\u7b54\u6848\uff0c\u4e13\u5bb6\u51fa\u9898\u4eba\u5206\u6790\u6c47\u603b\u3002",
+  "default_branch": "master",
+  "head_sha": "a549376da3ff8430a03e00ad7e1878ca00a063ad",
+  "pinned_at": "2026-09-01T10:01:06.085626+00:00"
+ },
+ "rustfs/rustfs": {
+  "stars": 31596,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "\ud83d\ude802.3x faster than MinIO for 4KB object payloads. RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph.",
+  "default_branch": "main",
+  "head_sha": "80c629bfe09491ee28ff4aeb61291b4a9c6cf515",
+  "pinned_at": "2026-09-01T10:01:06.573280+00:00"
+ },
+ "localForage/localForage": {
+  "stars": 25809,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "\ud83d\udcbe Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.",
+  "default_branch": "master",
+  "head_sha": "fb78c77ee583fb727a558c439b5174aca38c5924",
+  "pinned_at": "2026-09-01T10:01:05.938812+00:00"
+ },
+ "parse-community/parse-server": {
+  "stars": 21412,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Parse Server for Node.js / Express",
+  "default_branch": "alpha",
+  "head_sha": "f7ab647d6fe83a9987ecd92a7714cbcb952c1980",
+  "pinned_at": "2026-09-01T10:01:05.289890+00:00"
+ },
+ "ceph/ceph": {
+  "stars": 16985,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Ceph is a distributed object, block, and file storage platform ",
+  "default_branch": "main",
+  "head_sha": "7a3ac1e76211f1bdb3b213d6578fba71b3838cd2",
+  "pinned_at": "2026-09-01T10:01:05.726665+00:00"
+ },
+ "juicedata/juicefs": {
+  "stars": 14381,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "JuiceFS is a distributed POSIX file system built on top of Redis and S3.",
+  "default_branch": "main",
+  "head_sha": "a23344e5c5aa4edcbbeadc38a5dadad3f73887fc",
+  "pinned_at": "2026-09-01T10:01:06.187317+00:00"
+ },
+ "thanos-io/thanos": {
+  "stars": 14194,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Highly available Prometheus setup with long term storage capabilities. A CNCF Incubating project.",
+  "default_branch": "main",
+  "head_sha": "51afa7e58085c82d11ad4e6eafee0f12ef9aa96f",
+  "pinned_at": "2026-09-01T10:01:06.142530+00:00"
+ },
+ "marcuswestin/store.js": {
+  "stars": 13985,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Cross-browser storage for all use cases, used across the web.",
+  "default_branch": "master",
+  "head_sha": "fe77ae9e7ca1c8fb9af27b9f53a14722cd14d9d4",
+  "pinned_at": "2026-09-01T10:01:07.200638+00:00"
+ },
+ "rook/rook": {
+  "stars": 13623,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Storage Orchestration for Kubernetes",
+  "default_branch": "master",
+  "head_sha": "5471e1d9b6a12e4d8fa8b9fb2b1f2d711e913718",
+  "pinned_at": "2026-09-01T10:01:07.144433+00:00"
+ },
+ "rt2zz/redux-persist": {
+  "stars": 12959,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "persist and rehydrate a redux store",
+  "default_branch": "master",
+  "head_sha": "d8b01a085e3679db43503a3858e8d4759d6f22fa",
+  "pinned_at": "2026-09-01T10:01:08.021377+00:00"
+ },
+ "openebs/openebs": {
+  "stars": 9808,
+  "language": null,
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "A popular & widely deployed Open Source Container Native Storage platform for Stateful Persistent Applications on Kubernetes.",
+  "default_branch": "develop",
+  "head_sha": "525e71e4a2f6d1457a8a2738ad2e306e9c185f09",
+  "pinned_at": "2026-09-01T10:01:08.048771+00:00"
+ },
+ "aws-amplify/amplify-js": {
+  "stars": 9558,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "A declarative JavaScript library for application development using cloud services.",
+  "default_branch": "main",
+  "head_sha": "36e3ce19983925ee6a68b75ebd9a01a95100989b",
+  "pinned_at": "2026-09-01T10:01:07.930413+00:00"
+ },
+ "whatwg/html": {
+  "stars": 9374,
+  "language": "HTML",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "HTML Standard",
+  "default_branch": "main",
+  "head_sha": "c46c0c7a362e46b49f087957b6eb071ad253f8ed",
+  "pinned_at": "2026-09-01T10:01:07.876766+00:00"
+ },
+ "longhorn/longhorn": {
+  "stars": 7946,
+  "language": "Shell",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Cloud-Native distributed storage built on and for Kubernetes",
+  "default_branch": "master",
+  "head_sha": "53b612b6edbaeeccb0f12d59013c28c7d7529fe8",
+  "pinned_at": "2026-09-01T10:01:08.020210+00:00"
+ },
+ "datahaven-xyz/datahaven": {
+  "stars": 7896,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "An EVM compatible Substrate chain, powered by StorageHub and secured by EigenLayer",
+  "default_branch": "main",
+  "head_sha": "edcb13dbbcd3c29489eaa2480a6f60ee4cb1f3ec",
+  "pinned_at": "2026-09-01T10:01:08.899968+00:00"
+ },
+ "upspin/upspin": {
+  "stars": 6406,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Upspin: A framework for naming everyone's everything.",
+  "default_branch": "master",
+  "head_sha": "334f107fe3d98225d7adfbb35b74e066fbca9875",
+  "pinned_at": "2026-09-01T10:01:08.922825+00:00"
+ },
+ "awslabs/mountpoint-s3": {
+  "stars": 5761,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "A simple, high-throughput file client for mounting an Amazon S3 bucket as a local file system.",
+  "default_branch": "main",
+  "head_sha": "70bd7b627969ed6decdeab91a6a445a2347d827c",
+  "pinned_at": "2026-09-01T10:01:09.291875+00:00"
+ },
+ "cubefs/cubefs": {
+  "stars": 5645,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "cloud-native distributed storage",
+  "default_branch": "master",
+  "head_sha": "ca5609b0af9108ef2eda825827e2f43fba65f596",
+  "pinned_at": "2026-09-01T10:01:09.698782+00:00"
+ },
+ "treeverse/lakeFS": {
+  "stars": 5505,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "lakeFS - Data version control for your data lake | Git for data",
+  "default_branch": "master",
+  "head_sha": "4bb11638e95637e853d9680abf072b14f09e32fb",
+  "pinned_at": "2026-09-01T10:01:09.788638+00:00"
+ },
+ "apache/opendal": {
+  "stars": 5362,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Apache OpenDAL: One Layer, All Storage.",
+  "default_branch": "main",
+  "head_sha": "670d8f9637ff79fd0a3a2f00cdf751fb3b11f994",
+  "pinned_at": "2026-09-01T10:01:09.969771+00:00"
+ },
+ "gluster/glusterfs": {
+  "stars": 5223,
+  "language": "C",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Gluster Filesystem : Build your distributed storage in minutes",
+  "default_branch": "devel",
+  "head_sha": "43044799f30e5ef8b78c10d98e5d7ce59b7ab5b5",
+  "pinned_at": "2026-09-01T10:01:10.011092+00:00"
+ },
+ "NekR/offline-plugin": {
+  "stars": 4509,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S2_storage",
+  "description": "Offline plugin  (ServiceWorker, AppCache) for webpack (https://webpack.js.org/)",
+  "default_branch": "master",
+  "head_sha": "2b51a89aba53fcf1603786f86a75e6f25fd03721",
+  "pinned_at": "2026-09-01T10:01:11.674010+00:00"
+ },
+ "alibaba/spring-cloud-alibaba": {
+  "stars": 29166,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Spring Cloud Alibaba provides a one-stop solution for application development for the distributed solutions of Alibaba middleware.",
+  "default_branch": "2025.1.x",
+  "head_sha": "c1b9d60054fb0fe49c752c1b728da76033d7208d",
+  "pinned_at": "2026-09-01T10:01:10.601420+00:00"
+ },
+ "coredns/coredns": {
+  "stars": 14284,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "CoreDNS is a DNS server that chains plugins",
+  "default_branch": "master",
+  "head_sha": "2ad79f66fa9aa03a75fdcea71d166cf2ddb32bb6",
+  "pinned_at": "2026-09-01T10:01:11.392713+00:00"
+ },
+ "nmap/nmap": {
+  "stars": 13493,
+  "language": "C",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Nmap - the Network Mapper. Github mirror of official SVN repository.",
+  "default_branch": "master",
+  "head_sha": "b97fabd935362f85ad0575632e6d887f4d778b59",
+  "pinned_at": "2026-09-01T10:01:11.801854+00:00"
+ },
+ "go-resty/resty": {
+  "stars": 11769,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Simple HTTP, REST, and SSE client library for Go",
+  "default_branch": "v3",
+  "head_sha": "503cee173b035791478d5c1f647f4202535591d0",
+  "pinned_at": "2026-09-01T10:01:11.427181+00:00"
+ },
+ "smallnest/rpcx": {
+  "stars": 8312,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Best microservices framework in Go, like alibaba Dubbo, but with more features, Scale easily. Try it. Test it. If you feel it's better, use it! \ud835\udc09\ud835\udc1a\ud835\udc2f\ud835\udc1a\u6709\ud835\udc1d\ud835\udc2e\ud835\udc1b\ud835\udc1b\ud835\udc28, \ud835\udc06\ud835\udc28\ud835\udc25\ud835\udc1a\ud835\udc27\ud835\udc20\u6709\ud835\udc2b\ud835\udc29\ud835\udc1c\ud835\udc31! build for cloud!",
+  "default_branch": "master",
+  "head_sha": "397d85be7f21d77bed7e5da010c2ebd14bb77c03",
+  "pinned_at": "2026-09-01T10:01:11.590520+00:00"
+ },
+ "Bogdanp/dramatiq": {
+  "stars": 5311,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "A fast and reliable background task processing library for Python 3.",
+  "default_branch": "master",
+  "head_sha": "848b35f2f960457ff54a72f9edb3af0de754f72f",
+  "pinned_at": "2026-09-01T10:01:11.792370+00:00"
+ },
+ "linkerd/linkerd": {
+  "stars": 5309,
+  "language": "Scala",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Old repo for Linkerd 1.x. See the linkerd2 repo for Linkerd   2.x.",
+  "default_branch": "main",
+  "head_sha": "ea82499d386e44e8958be58e0386f593e639645b",
+  "pinned_at": "2026-09-01T10:01:12.064404+00:00"
+ },
+ "segmentio/ksuid": {
+  "stars": 5266,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "K-Sortable Globally Unique IDs",
+  "default_branch": "master",
+  "head_sha": "d33724947fcfba7949906c2b1821e96a1c8d06e7",
+  "pinned_at": "2026-09-01T10:01:12.360219+00:00"
+ },
+ "gliderlabs/registrator": {
+  "stars": 4674,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Service registry bridge for Docker with pluggable adapters",
+  "default_branch": "master",
+  "head_sha": "6bfadbc6decd4c5655044e77cd807985ea5360de",
+  "pinned_at": "2026-09-01T10:01:13.164710+00:00"
+ },
+ "BehaviorTree/BehaviorTree.CPP": {
+  "stars": 4177,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Behavior Trees Library in C++. Batteries included.",
+  "default_branch": "master",
+  "head_sha": "9b63b505983f76e46d90d71c87d21fad0001f8a3",
+  "pinned_at": "2026-09-01T10:01:13.208720+00:00"
+ },
+ "ExpressGateway/express-gateway": {
+  "stars": 3031,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "A microservices API Gateway built on top of Express.js",
+  "default_branch": "master",
+  "head_sha": "a294cac39c98d66f5750c424a24e0bb8ce351c1c",
+  "pinned_at": "2026-09-01T10:01:13.756973+00:00"
+ },
+ "trimstray/sandmap": {
+  "stars": 1861,
+  "language": "Shell",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Nmap on steroids. Simple CLI with the ability to run pure Nmap engine, 31 modules with 459 scan profiles.",
+  "default_branch": "master",
+  "head_sha": "5be99d4f225d7c703d0bfbd283b381a4758e0950",
+  "pinned_at": "2026-09-01T10:01:13.477948+00:00"
+ },
+ "bsm/redislock": {
+  "stars": 1767,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Simplified distributed locking implementation using Redis",
+  "default_branch": "main",
+  "head_sha": "707d1239162da861fd6a1cee0ea80f97cf55f595",
+  "pinned_at": "2026-09-01T10:01:13.607094+00:00"
+ },
+ "Adminisme/ServerScan": {
+  "stars": 1655,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "ServerScan\u4e00\u6b3e\u4f7f\u7528Golang\u5f00\u53d1\u7684\u9ad8\u5e76\u53d1\u7f51\u7edc\u626b\u63cf\u3001\u670d\u52a1\u63a2\u6d4b\u5de5\u5177\u3002",
+  "default_branch": "master",
+  "head_sha": "86c60480af0ee9f72a3372bcadbc703b1c0c7225",
+  "pinned_at": "2026-09-01T10:01:13.477435+00:00"
+ },
+ "lastbackend/lastbackend": {
+  "stars": 1655,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "System for containerized apps management. From build to scaling.",
+  "default_branch": "master",
+  "head_sha": "356704814b6ef841b48fa550cd91e344be78303f",
+  "pinned_at": "2026-09-01T10:01:13.825906+00:00"
+ },
+ "nacos-group/r-nacos": {
+  "stars": 1580,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Nacos server re-implemented in Rust.",
+  "default_branch": "master",
+  "head_sha": "4f9fe292aca1a9c51eb362366e8baa43717669b7",
+  "pinned_at": "2026-09-01T10:01:14.123204+00:00"
+ },
+ "fengjiachun/Jupiter": {
+  "stars": 1503,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Jupiter\u662f\u4e00\u6b3e\u6027\u80fd\u975e\u5e38\u4e0d\u9519\u7684, \u8f7b\u91cf\u7ea7\u7684\u5206\u5e03\u5f0f\u670d\u52a1\u6846\u67b6",
+  "default_branch": "master",
+  "head_sha": "6bffde84535bc32cb676a99e3b8d7c3e14894747",
+  "pinned_at": "2026-09-01T10:01:14.800454+00:00"
+ },
+ "COVESA/vsomeip": {
+  "stars": 1442,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "An implementation of Scalable service-Oriented MiddlewarE over IP",
+  "default_branch": "master",
+  "head_sha": "7875a1cb8a89f6a6ffed889f7b7ddbf16fb53b6c",
+  "pinned_at": "2026-09-01T10:01:15.970389+00:00"
+ },
+ "razvandimescu/numa": {
+  "stars": 1415,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Portable DNS resolver in Rust \u2014 .numa local domains, ad blocking, developer overrides",
+  "default_branch": "main",
+  "head_sha": "47d2c0cdb09eb2fc07fe605c4b454c22efbc5714",
+  "pinned_at": "2026-09-01T10:01:15.107765+00:00"
+ },
+ "brainix/pottery": {
+  "stars": 1245,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S3_coordination",
+  "description": "Redis for humans. \ud83c\udf0e\ud83c\udf0d\ud83c\udf0f",
+  "default_branch": "master",
+  "head_sha": "bd98957e0183d2888bb05b21137f6d0215dfae09",
+  "pinned_at": "2026-09-01T10:01:15.217492+00:00"
+ },
+ "FFmpeg/FFmpeg": {
+  "stars": 63849,
+  "language": "C",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Mirror of https://git.ffmpeg.org/ffmpeg.git",
+  "default_branch": "master",
+  "head_sha": "b1f564bda248dbe8ac37cb743966fdd7ee4b490c",
+  "pinned_at": "2026-09-01T10:01:15.358021+00:00"
+ },
+ "pathwaycom/pathway": {
+  "stars": 62359,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
+  "default_branch": "main",
+  "head_sha": "c5ce4ca6af877038fee10a7e13161da5f093ccd8",
+  "pinned_at": "2026-09-01T10:01:15.660420+00:00"
+ },
+ "binwiederhier/ntfy": {
+  "stars": 33922,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Send push notifications to your phone or desktop using PUT/POST",
+  "default_branch": "main",
+  "head_sha": "10cb6506f836dbb00bb77e3b52669f6ace37f555",
+  "pinned_at": "2026-09-01T10:01:16.183850+00:00"
+ },
+ "webtorrent/webtorrent": {
+  "stars": 31379,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "\u26a1\ufe0f Streaming torrent client for the web",
+  "default_branch": "master",
+  "head_sha": "c1686751612022c7792fcf592259df8bce79efbe",
+  "pinned_at": "2026-09-01T10:01:16.034972+00:00"
+ },
+ "ossrs/srs": {
+  "stars": 29192,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "SRS is a simple, high-performance, AI-driven real-time media server supporting RTMP, WebRTC, HLS, HTTP-FLV, HTTP-TS, SRT, MPEG-DASH, and GB28181, with codec support for H.264, H.265, AV1, VP9, AAC, Opus, and G.711.",
+  "default_branch": "develop",
+  "head_sha": "b0d775a316046d4dd1ed87c0f0a9871c614f56f8",
+  "pinned_at": "2026-09-01T10:01:16.796478+00:00"
+ },
+ "dapr/dapr": {
+  "stars": 26055,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Dapr is a portable runtime for building distributed applications across cloud and edge, combining event-driven architecture with workflow orchestration.",
+  "default_branch": "master",
+  "head_sha": "6cf57abafdb73804256f005e534ba383c8aafed5",
+  "pinned_at": "2026-09-01T10:01:16.951597+00:00"
+ },
+ "nsqio/nsq": {
+  "stars": 25779,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "A realtime distributed messaging platform",
+  "default_branch": "master",
+  "head_sha": "85cf10c09c6c3c86160d6f0eb156f62d0efc1648",
+  "pinned_at": "2026-09-01T10:01:17.216243+00:00"
+ },
+ "apache/rocketmq": {
+  "stars": 22573,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Apache RocketMQ is a cloud native messaging and streaming platform, making it simple to build event-driven applications.",
+  "default_branch": "develop",
+  "head_sha": "e348efa66b08eb645ee123706ea6492fa9a3ad35",
+  "pinned_at": "2026-09-01T10:01:18.295142+00:00"
+ },
+ "nats-io/nats-server": {
+  "stars": 20644,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "High-Performance server for NATS.io, the cloud and edge native messaging system.",
+  "default_branch": "main",
+  "head_sha": "71a4de8be359487d34edc7bdf53045612a7e606d",
+  "pinned_at": "2026-09-01T10:01:17.480503+00:00"
+ },
+ "uNetworking/uWebSockets": {
+  "stars": 18977,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Simple, secure & standards compliant web server for the most demanding of applications",
+  "default_branch": "master",
+  "head_sha": "1f971721f0a0facafb1397eecf6682196f526d84",
+  "pinned_at": "2026-09-01T10:01:18.805680+00:00"
+ },
+ "asciinema/asciinema": {
+  "stars": 17750,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Terminal session recorder, streamer and player \ud83d\udcf9",
+  "default_branch": "develop",
+  "head_sha": "77498061982889f68ba1f6e8b666dd8d13246250",
+  "pinned_at": "2026-09-01T10:01:17.761804+00:00"
+ },
+ "video-dev/hls.js": {
+  "stars": 16912,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "HLS.js is a JavaScript library that plays HLS in browsers with support for MSE.",
+  "default_branch": "master",
+  "head_sha": "971ffee992f95c6dc9428008a22ae92331ae6f3b",
+  "pinned_at": "2026-09-01T10:01:17.983995+00:00"
+ },
+ "pion/webrtc": {
+  "stars": 16748,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Pure Go implementation of the WebRTC API",
+  "default_branch": "main",
+  "head_sha": "9cb015643ea40f1509f246c80902f6d4ccb0ff97",
+  "pinned_at": "2026-09-01T10:01:19.215081+00:00"
+ },
+ "emqx/emqx": {
+  "stars": 16679,
+  "language": "Erlang",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "The most scalable and reliable MQTT broker for AI, IoT, IIoT and connected vehicles",
+  "default_branch": "master",
+  "head_sha": "efcf36fcb62f58d1f059f805109871989b964841",
+  "pinned_at": "2026-09-01T10:01:18.785844+00:00"
+ },
+ "OptimalBits/bull": {
+  "stars": 16251,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Premium Queue package for handling distributed jobs and messages in NodeJS.",
+  "default_branch": "develop",
+  "head_sha": "73d065506931fc876c67c721bc424b2bd76b520b",
+  "pinned_at": "2026-09-01T10:01:19.115620+00:00"
+ },
+ "apache/pulsar": {
+  "stars": 15324,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Apache Pulsar - distributed pub-sub messaging system",
+  "default_branch": "master",
+  "head_sha": "41255fbe53355ef98df38800beac8e60194056ad",
+  "pinned_at": "2026-09-01T10:01:19.332834+00:00"
+ },
+ "elastic/logstash": {
+  "stars": 14929,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Logstash - transport and process your logs, events, or other data",
+  "default_branch": "main",
+  "head_sha": "ceb071c0aefb862e7f4279062f0e583a2a02bb5a",
+  "pinned_at": "2026-09-01T10:01:20.097752+00:00"
+ },
+ "AlexxIT/go2rtc": {
+  "stars": 14078,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Ultimate camera streaming application",
+  "default_branch": "master",
+  "head_sha": "c245815e75e2a5fd60b4290f12bfc04e55a984d3",
+  "pinned_at": "2026-09-01T10:01:20.705404+00:00"
+ },
+ "rabbitmq/rabbitmq-server": {
+  "stars": 13831,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Open source RabbitMQ: core server and tier 1 (built-in) plugins",
+  "default_branch": "main",
+  "head_sha": "851fb71306ea4722fff364a86930afe309872e15",
+  "pinned_at": "2026-09-01T10:01:20.076358+00:00"
+ },
+ "akka/akka-core": {
+  "stars": 13277,
+  "language": "Scala",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "A platform to build and run apps that are elastic, agile, and resilient. SDK, libraries, and hosted environments.",
+  "default_branch": "main",
+  "head_sha": "45cb3c87177bbeaa3d53f7b7139eb7aaa38afdfa",
+  "pinned_at": "2026-09-01T10:01:20.604416+00:00"
+ },
+ "developit/mitt": {
+  "stars": 11903,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "\ud83e\udd4a Tiny 200 byte functional event emitter / pubsub.",
+  "default_branch": "main",
+  "head_sha": "6b41670516ed8e8b738612f60491995470aa63b3",
+  "pinned_at": "2026-09-01T10:01:20.506410+00:00"
+ },
+ "QuentinFuxa/WhisperLiveKit": {
+  "stars": 10983,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Real-time, local speech-to-text with streaming ASR, speaker diarization, translation, and OpenAI/Deepgram-compatible APIs.",
+  "default_branch": "main",
+  "head_sha": "b781ce9334c8085131b2b7a146a61d4e22ba5af1",
+  "pinned_at": "2026-09-01T10:01:21.478488+00:00"
+ },
+ "zeromq/libzmq": {
+  "stars": 10975,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "ZeroMQ core engine in C++, implements ZMTP/3.1",
+  "default_branch": "master",
+  "head_sha": "46493370217ac135246617fa2f6ac819d8b61bfc",
+  "pinned_at": "2026-09-01T10:01:20.906639+00:00"
+ },
+ "ClassicOldSong/Apollo": {
+  "stars": 10749,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Sunshine fork - The easiest way to stream with the native resolution of your client device",
+  "default_branch": "master",
+  "head_sha": "adc5c5a0bd80831ce495434bb16aee2cd4175fb8",
+  "pinned_at": "2026-09-01T10:01:21.243415+00:00"
+ },
+ "centrifugal/centrifugo": {
+  "stars": 10687,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Scalable real-time messaging server in a language-agnostic way. Self-hosted alternative to Pubnub, Pusher, Ably, socket.io, Phoenix.PubSub, SignalR. Set up once and forever.",
+  "default_branch": "master",
+  "head_sha": "ec700c1d3151bf5f0375dcd9961744cbf74585ed",
+  "pinned_at": "2026-09-01T10:01:22.232385+00:00"
+ },
+ "popcorntime/popcorntime": {
+  "stars": 10673,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Popcorn Time\u2122 puts everything in one place. Your favorite platforms, your shows, your movies-ready when you are.",
+  "default_branch": "dev",
+  "head_sha": "f977253cba74832e6db478f56771a29dc2b20e78",
+  "pinned_at": "2026-09-01T10:01:23.408398+00:00"
+ },
+ "leeoniya/uPlot": {
+  "stars": 10461,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "\ud83d\udcc8 A small, fast chart for time series, lines, areas, ohlc & bars",
+  "default_branch": "master",
+  "head_sha": "0e5812c504430f5c804e0f993376d8999b26cc34",
+  "pinned_at": "2026-09-01T10:01:23.952651+00:00"
+ },
+ "webtorrent/webtorrent-desktop": {
+  "stars": 10115,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "\u2764\ufe0f Streaming torrent app for Mac, Windows, and Linux",
+  "default_branch": "master",
+  "head_sha": "6c91af345d4bd62603d7063ea02a50394d64af0d",
+  "pinned_at": "2026-09-01T10:01:22.825521+00:00"
+ },
+ "apache/seatunnel": {
+  "stars": 9606,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "SeaTunnel is a multimodal, high-performance, distributed, massive data integration tool.",
+  "default_branch": "dev",
+  "head_sha": "eae7c236fada9458caf4c5d7cfa25af9a038142c",
+  "pinned_at": "2026-09-01T10:01:26.450225+00:00"
+ },
+ "lipku/LiveTalking": {
+  "stars": 9334,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S4_mq_streaming",
+  "description": "Real time interactive streaming digital human",
+  "default_branch": "main",
+  "head_sha": "c4f8c16a86bdc4d217782cac52fb431dc5bca7b0",
+  "pinned_at": "2026-09-01T10:01:23.446712+00:00"
+ },
+ "FuelLabs/fuel-core": {
+  "stars": 56868,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Rust full node implementation of the Fuel v2 protocol.",
+  "default_branch": "master",
+  "head_sha": "5a8c7f85cf5795df52384ef3a28331df14118716",
+  "pinned_at": "2026-09-01T10:01:24.081870+00:00"
+ },
+ "anoma/anoma": {
+  "stars": 33625,
+  "language": "Elixir",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Reference implementation of Anoma",
+  "default_branch": "base",
+  "head_sha": "5bcbf8487a331a20748299ed4fd4d62027f0ffa8",
+  "pinned_at": "2026-09-01T10:01:23.401589+00:00"
+ },
+ "linera-io/linera-protocol": {
+  "stars": 32138,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Main repository for the Linera protocol",
+  "default_branch": "main",
+  "head_sha": "89e88e6d5d2e7366ec7cea56b597f6c36ca860e7",
+  "pinned_at": "2026-09-01T10:01:25.426941+00:00"
+ },
+ "shardeum/shardeum": {
+  "stars": 31260,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Shardeum is an EVM based autoscaling blockchain",
+  "default_branch": "dev",
+  "head_sha": "0c454caf067f7b896569eabdd5f47cb8b61738b3",
+  "pinned_at": "2026-09-01T10:01:24.887129+00:00"
+ },
+ "slymnoyann/hey-1": {
+  "stars": 29378,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Hey is a decentralized and permissionless social media app built with Lens Protocol \ud83c\udf3f",
+  "default_branch": "main",
+  "head_sha": "88c8f9d55340d57a37846ff72f55c2c604e3a566",
+  "pinned_at": "2026-09-01T10:01:26.079143+00:00"
+ },
+ "argotorg/solidity": {
+  "stars": 25722,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Solidity, the Smart Contract Programming Language",
+  "default_branch": "develop",
+  "head_sha": "87f61619456819ecfcb0cf8898531861e8fd59e3",
+  "pinned_at": "2026-09-01T10:01:25.417120+00:00"
+ },
+ "zama-ai/fhevm": {
+  "stars": 24818,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications",
+  "default_branch": "main",
+  "head_sha": "0958e063a0fc919e04b14b3a520e59d2191256b9",
+  "pinned_at": "2026-09-01T10:01:25.936367+00:00"
+ },
+ "diem/diem": {
+  "stars": 16668,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Diem\u2019s mission is to build a trusted and innovative financial network that empowers people and businesses around the world.",
+  "default_branch": "latest",
+  "head_sha": "fc4714a8ea273b6efe8b13dbce72ea60aad9a16c",
+  "pinned_at": "2026-09-01T10:01:26.979097+00:00"
+ },
+ "AmazingAng/WTF-Solidity": {
+  "stars": 14037,
+  "language": "Solidity",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "WTF Solidity \u6781\u7b80\u5165\u95e8\u6559\u7a0b\uff0c\u4f9b\u5c0f\u767d\u4eec\u4f7f\u7528\u3002Now supports English! \u5b98\u7f51: https://wtf.academy",
+  "default_branch": "main",
+  "head_sha": "cfbb6e83d9197a87a07cf68aaba315aca9e47cb8",
+  "pinned_at": "2026-09-01T10:01:27.825584+00:00"
+ },
+ "monero-project/monero": {
+  "stars": 10816,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Monero: the secure, private, untraceable cryptocurrency",
+  "default_branch": "master",
+  "head_sha": "8e99188c5eecb2f2d15a9c9e82e23c04f94fd611",
+  "pinned_at": "2026-09-01T10:01:28.502230+00:00"
+ },
+ "Chia-Network/chia-blockchain": {
+  "stars": 10799,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Chia blockchain python implementation (full node, farmer, harvester, timelord, and wallet)",
+  "default_branch": "main",
+  "head_sha": "d05681342cb47175a025c0d2dae904094ef7881c",
+  "pinned_at": "2026-09-01T10:01:27.673489+00:00"
+ },
+ "foundry-rs/foundry": {
+  "stars": 10577,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.",
+  "default_branch": "master",
+  "head_sha": "cc3dc1a45f5050ef3d12024fc89b4ce944260689",
+  "pinned_at": "2026-09-01T10:01:27.965242+00:00"
+ },
+ "ethers-io/ethers.js": {
+  "stars": 8717,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Complete Ethereum library and wallet implementation in JavaScript.",
+  "default_branch": "main",
+  "head_sha": "3ea4c226dd0b3a074abf90748de9d11192027f4f",
+  "pinned_at": "2026-09-01T10:01:27.963628+00:00"
+ },
+ "NomicFoundation/hardhat": {
+  "stars": 8504,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software. ",
+  "default_branch": "main",
+  "head_sha": "af27c4292fdf32974387526cd46607a7dc0a1716",
+  "pinned_at": "2026-09-01T10:01:28.782944+00:00"
+ },
+ "smartcontractkit/chainlink": {
+  "stars": 8238,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "node of the decentralized oracle network, bridging on and off-chain computation",
+  "default_branch": "develop",
+  "head_sha": "5769a407379ee295673fc034325dc4a710e7b95e",
+  "pinned_at": "2026-09-01T10:01:28.938701+00:00"
+ },
+ "lightningnetwork/lnd": {
+  "stars": 8187,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Lightning Network Daemon \u26a1\ufe0f",
+  "default_branch": "master",
+  "head_sha": "1f324ebda8265232fa5bbd37e77b5f62977e5394",
+  "pinned_at": "2026-09-01T10:01:29.597604+00:00"
+ },
+ "dvf/blockchain": {
+  "stars": 8041,
+  "language": "C#",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "A simple Blockchain in Python",
+  "default_branch": "master",
+  "head_sha": "68066d648244ce2b7e2d1cbd16f9255363f94712",
+  "pinned_at": "2026-09-01T10:01:29.413704+00:00"
+ },
+ "IBAX-io/go-ibax": {
+  "stars": 7851,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "An innovative Blockchain Protocol Platform, which everyone can deploy their own applications quickly and easily, such as Dapp, DeFi, DAO, Cross-Blockchain transactions, etc. ",
+  "default_branch": "main",
+  "head_sha": "66f135846a10d1a1edddbceff517b9c937639576",
+  "pinned_at": "2026-09-01T10:01:30.686915+00:00"
+ },
+ "MystenLabs/sui": {
+  "stars": 7741,
+  "language": "Rust",
+  "membership": "TierA",
+  "stratum": "S5_blockchain",
+  "description": " Sui, a next-generation smart contract platform with high throughput, low latency, and an asset-oriented programming model powered by the Move programming language",
+  "default_branch": "main",
+  "head_sha": "e97bcb15191fdd976182131435087b7493f481cb",
+  "pinned_at": "2026-09-01T10:01:29.998821+00:00"
+ },
+ "LiuBoyu/blockchain": {
+  "stars": 7388,
+  "language": null,
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "\u533a\u5757\u94fe - \u4e2d\u6587\u8d44\u6e90",
+  "default_branch": "master",
+  "head_sha": "966a6496c58ffb1338ee757ce788b6b703f84cca",
+  "pinned_at": "2026-09-01T10:01:30.197653+00:00"
+ },
+ "lbryio/lbry-sdk": {
+  "stars": 7176,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "The LBRY SDK for building decentralized, censorship resistant, monetized digital content apps.",
+  "default_branch": "master",
+  "head_sha": "e7666f489418e96b6d2104974e93915b539235c5",
+  "pinned_at": "2026-09-01T10:01:30.881247+00:00"
+ },
+ "yeasy/blockchain_guide": {
+  "stars": 7078,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Introduce technologies on blockchain and distributed ledger, from theory to practice with bitcoin, ethereum and hyperledger.",
+  "default_branch": "master",
+  "head_sha": "6f02b76266a917d2f31fa9f16e66457523199895",
+  "pinned_at": "2026-09-01T10:01:30.949887+00:00"
+ },
+ "cosmos/cosmos-sdk": {
+  "stars": 7054,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Framework for building performant, customizable blockchains with native interoperability",
+  "default_branch": "main",
+  "head_sha": "bf771467701bc112392545fccdea15d1494083ff",
+  "pinned_at": "2026-09-01T10:01:31.835558+00:00"
+ },
+ "crestalnetwork/intentkit": {
+  "stars": 6508,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "IntentKit is an open-source, self-hosted cloud agent cluster that manages a collaborative team of AI agents for you.",
+  "default_branch": "main",
+  "head_sha": "1f1ba5907884bee0e5d454d197e9e92c01628a66",
+  "pinned_at": "2026-09-01T10:01:31.546119+00:00"
+ },
+ "tendermint/tendermint": {
+  "stars": 5867,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "\u27c1 Tendermint Core (BFT Consensus) in Go",
+  "default_branch": "main",
+  "head_sha": "9d1be86031365f6f56668d2f5f0e7312eb8fef62",
+  "pinned_at": "2026-09-01T10:01:32.369171+00:00"
+ },
+ "paradigmxyz/reth": {
+  "stars": 5761,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Modular, contributor-friendly and blazing-fast implementation of the Ethereum protocol, in Rust",
+  "default_branch": "main",
+  "head_sha": "498847cb2e2847c8740d2e9f4a35ea4c67f09a5c",
+  "pinned_at": "2026-09-01T10:01:32.023322+00:00"
+ },
+ "Uniswap/interface": {
+  "stars": 5533,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "\ud83e\udd84 Open source interfaces for the Uniswap protocol",
+  "default_branch": "main",
+  "head_sha": "da6d36f71c4d2fd665b0aae1a052a4ffda917b31",
+  "pinned_at": "2026-09-01T10:01:32.490848+00:00"
+ },
+ "unicity-sphere/sphere-sdk": {
+  "stars": 5398,
+  "language": "TypeScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "The SDK for autonomous economic agents. Give an agent an identity, a wallet, and the ability to find, negotiate with, and settle with other agents - peer-to-peer, with perfect privacy and ultra-fast finality",
+  "default_branch": "main",
+  "head_sha": "8e2cceb7c2cdd979237098cd7e3f63071d19dd2a",
+  "pinned_at": "2026-09-01T10:01:32.728976+00:00"
+ },
+ "bitcoinj/bitcoinj": {
+  "stars": 5228,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "A library for working with Bitcoin",
+  "default_branch": "master",
+  "head_sha": "19d4d17f98c77c7c8650f21ae03efc4a13fd55d5",
+  "pinned_at": "2026-09-01T10:01:33.074411+00:00"
+ },
+ "XRPLF/rippled": {
+  "stars": 5192,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger protocol in C++",
+  "default_branch": "develop",
+  "head_sha": "fac20a06f3341a5850ac15f14c734c238df16dfd",
+  "pinned_at": "2026-09-01T10:01:32.658002+00:00"
+ },
+ "otter-sec/anchor": {
+  "stars": 5125,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "\u2693 Solana Program Framework",
+  "default_branch": "master",
+  "head_sha": "7d44e891edad9f46b165761cac483a272f1778a5",
+  "pinned_at": "2026-09-01T10:01:33.374919+00:00"
+ },
+ "blockscout/blockscout": {
+  "stars": 4658,
+  "language": "Elixir",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Blockchain explorer for Ethereum based network and a tool for inspecting and analyzing EVM based blockchains. ",
+  "default_branch": "master",
+  "head_sha": "99b2ade85d4baeaf96bf3e66a15321b3b3334cac",
+  "pinned_at": "2026-09-01T10:01:34.220137+00:00"
+ },
+ "itheima1/BlockChain": {
+  "stars": 4647,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "\u9ed1\u9a6c\u7a0b\u5e8f\u5458 120\u5929\u5168\u6808\u533a\u5757\u94fe\u5f00\u53d1 \u5f00\u6e90\u6559\u7a0b",
+  "default_branch": "master",
+  "head_sha": "3b95997e1467d091ddb17fca5d5ac352882b2934",
+  "pinned_at": "2026-09-01T10:01:33.782323+00:00"
+ },
+ "ProvableHQ/snarkOS": {
+  "stars": 4525,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "A Decentralized Operating System for ZK Applications",
+  "default_branch": "staging",
+  "head_sha": "2a3b2c24ce366698b0fc4c73cd544bb6bd6f223a",
+  "pinned_at": "2026-09-01T10:01:34.198618+00:00"
+ },
+ "Jeiwan/blockchain_go": {
+  "stars": 4375,
+  "language": "Go",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "A simplified blockchain implementation in Golang",
+  "default_branch": "master",
+  "head_sha": "ff408351a2b8b12e7ad22d14d2e79ef08e0a79f2",
+  "pinned_at": "2026-09-01T10:01:35.247642+00:00"
+ },
+ "ConsenSysDiligence/mythril": {
+  "stars": 4265,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Mythril is a symbolic-execution-based securty analysis tool for EVM bytecode. It detects security vulnerabilities in smart contracts built for Ethereum and other EVM-compatible blockchains.",
+  "default_branch": "develop",
+  "head_sha": "125914a6eae81a79a089696e1f47ac8cc4b3a180",
+  "pinned_at": "2026-09-01T10:01:34.372957+00:00"
+ },
+ "ton-blockchain/ton": {
+  "stars": 4137,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S5_blockchain",
+  "description": "Main TON monorepo",
+  "default_branch": "master",
+  "head_sha": "3d478cbde854be03a18ab2a59f8fc3c565cf7d14",
+  "pinned_at": "2026-09-01T10:01:34.779344+00:00"
+ },
+ "BurntSushi/ripgrep": {
+  "stars": 67797,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",
+  "default_branch": "master",
+  "head_sha": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+  "pinned_at": "2026-09-01T10:01:35.247313+00:00"
+ },
+ "TheAlgorithms/Java": {
+  "stars": 66205,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "All Algorithms implemented in Java",
+  "default_branch": "master",
+  "head_sha": "ffb3bed004a5bc6ee1dc317394b2978278eacd2c",
+  "pinned_at": "2026-09-01T10:01:35.383449+00:00"
+ },
+ "sharkdp/fd": {
+  "stars": 44272,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "A simple, fast and user-friendly alternative to 'find'",
+  "default_branch": "master",
+  "head_sha": "cdea7f56331ebc7bb799aa9f718a6eee9a4a1cfc",
+  "pinned_at": "2026-09-01T10:01:36.526333+00:00"
+ },
+ "jaywcjlove/linux-command": {
+  "stars": 36738,
+  "language": "Markdown",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "Linux\u547d\u4ee4\u5927\u5168\u641c\u7d22\u5de5\u5177\uff0c\u5185\u5bb9\u5305\u542bLinux\u547d\u4ee4\u624b\u518c\u3001\u8be6\u89e3\u3001\u5b66\u4e60\u3001\u641c\u96c6\u3002https://git.io/linux",
+  "default_branch": "master",
+  "head_sha": "eb9e2184393934cbdaa2472a7462b032dc9281ef",
+  "pinned_at": "2026-09-01T10:01:36.548578+00:00"
+ },
+ "searxng/searxng": {
+  "stars": 36367,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
+  "default_branch": "master",
+  "head_sha": "d226b78bc4c9ab93a84849b8ad128a68c41be17c",
+  "pinned_at": "2026-09-01T10:01:36.003150+00:00"
+ },
+ "qdrant/qdrant": {
+  "stars": 34309,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+  "default_branch": "master",
+  "head_sha": "74f3e85b9473c62560006c043e13737ce6b48412",
+  "pinned_at": "2026-09-01T10:01:36.508833+00:00"
+ },
+ "assafelovic/gpt-researcher": {
+  "stars": 29234,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
+  "default_branch": "main",
+  "head_sha": "6f998577d547b1e54ec662dac63583aa11e3b84b",
+  "pinned_at": "2026-09-01T10:01:36.582934+00:00"
+ },
+ "typesense/typesense": {
+  "stars": 26496,
+  "language": "C++",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch \u26a1 \ud83d\udd0d \u2728 Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences",
+  "default_branch": "v31",
+  "head_sha": "245ebc7e06731c12381cc37b5b0205845fc1d58a",
+  "pinned_at": "2026-09-01T10:01:37.182514+00:00"
+ },
+ "arc53/DocsGPT": {
+  "stars": 18232,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "Private AI platform for agents, assistants and enterprise search. Built-in Agent Builder, Deep research, Document analysis, Multi-model support, and API connectivity for agents.",
+  "default_branch": "main",
+  "head_sha": "3e12a6bf62a8d0f2a6bf026e881e1b669448dc6b",
+  "pinned_at": "2026-09-01T10:01:37.409494+00:00"
+ },
+ "ast-grep/ast-grep": {
+  "stars": 15716,
+  "language": "Rust",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "\u26a1A CLI tool for code structural search, lint and rewriting. Written in Rust",
+  "default_branch": "main",
+  "head_sha": "29285d16757371a70a93190929940886e68618d3",
+  "pinned_at": "2026-09-01T10:01:37.396424+00:00"
+ },
+ "Flow-Launcher/Flow.Launcher": {
+  "stars": 15481,
+  "language": "C#",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": ":mag: Quick file search & app launcher for Windows with community-made plugins",
+  "default_branch": "dev",
+  "head_sha": "9c1f74e839080b7695b63179d2c0be4c795c36ff",
+  "pinned_at": "2026-09-01T10:01:38.194286+00:00"
+ },
+ "nextapps-de/flexsearch": {
+  "stars": 13788,
+  "language": "JavaScript",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "Next-generation full-text search library for Browser and Node.js",
+  "default_branch": "master",
+  "head_sha": "f7ed963096a0792da7b2fd63bb7114b3fbac55ed",
+  "pinned_at": "2026-09-01T10:01:38.602062+00:00"
+ },
+ "opensearch-project/OpenSearch": {
+  "stars": 13631,
+  "language": "Java",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "\ud83d\udd0e Open source distributed and RESTful search engine.",
+  "default_branch": "main",
+  "head_sha": "2facbf329dc3db4393f18efaef68427ae355c792",
+  "pinned_at": "2026-09-01T10:01:39.648740+00:00"
+ },
+ "searx/searx": {
+  "stars": 13543,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "Privacy-respecting metasearch engine",
+  "default_branch": "master",
+  "head_sha": "00abe3df3857f70875543e766223bc7bc0ccce93",
+  "pinned_at": "2026-09-01T10:01:38.885684+00:00"
+ },
+ "neuml/txtai": {
+  "stars": 12918,
+  "language": "Python",
+  "membership": "TierB",
+  "stratum": "S6_kv_cache_search",
+  "description": "\ud83d\udca1 All-in-one AI framework for semantic search, LLM orchestration and language model workflows",
+  "default_branch": "master",
+  "head_sha": "546e7777f1fc362a20a9440e89706ecc4c104c87",
+  "pinned_at": "2026-09-01T10:01:38.970426+00:00"
+ }
+}

@@ -1,0 +1,25 @@
+corpus: 192 (TierA 16 / TierB 174 / NEG 2)
+TierB: {'L0': 162, 'L2': 9, 'L1': 3}
+TierA: {'L2': 13, 'L1': 3}
+NEG: {'L0': 2}
+TierB consensus-positive: 12/174 = 6.9%
+family: {'Raft': 8, 'Paxos': 1, 'BFT': 3}  channel: {'lib': 9, 'self': 3}
+
+Tier B consensus-positive (gold-annotated):
+    49589 C++       L2 Raft  lib  ClickHouse/ClickHouse — source-path identifiers: nuraft
+    34309 Rust      L1 Raft  lib  qdrant/qdrant — manifest-only: raft-rs crate
+    26496 C++       L2 Raft  lib  typesense/typesense — source-path identifiers: braft
+    26055 Go        L1 Raft  lib  dapr/dapr — manifest-only: etcd-raft, hashicorp/raft
+    22573 Java      L2 Raft  lib  apache/rocketmq — source-path identifiers: sofa-jraft
+    21787 Go        L1 Raft  lib  dgraph-io/dgraph — manifest-only: etcd-raft
+    16985 C++       L2 Paxos self ceph/ceph — source-path identifiers: paxos
+    16679 Erlang    L2 Raft  self emqx/emqx — builtin Erlang raft (emqx_ds_builtin_raft; self-implemented,
+     7054 Go        L2 BFT   lib  cosmos/cosmos-sdk — source-path identifiers: cometbft
+     5867 Go        L2 BFT   self tendermint/tendermint — source-path identifiers: cometbft
+     5645 Go        L2 Raft  lib  cubefs/cubefs — source-path identifiers: raft-rs
+     4525 Rust      L2 BFT   lib  ProvableHQ/snarkOS — source-path identifiers: narwhal
+
+Downgraded to L0 (R124 indirect adjudication):
+  pingcap/tidb
+  lightningnetwork/lnd
+  smartcontractkit/chainlink
