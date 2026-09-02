@@ -1,0 +1,1747 @@
+{
+ "cilium/cilium": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 25037,
+  "evidence": "anchor by construction: eBPF CNI/security/observability (SEC() programs + cilium-ebpf)",
+  "signals": [
+   "cilium-ebpf"
+  ]
+ },
+ "iovisor/bcc": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "language": "C",
+  "stars": 22650,
+  "evidence": "anchor by construction: BPF compiler collection (BCC itself)",
+  "signals": [
+   "bpftool",
+   "libbpf"
+  ]
+ },
+ "bpftrace/bpftrace": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S2_observability",
+  "language": "C++",
+  "stars": 10302,
+  "evidence": "anchor by construction: high-level BPF tracing language",
+  "signals": [
+   "bcc",
+   "bpftrace",
+   "libbpf"
+  ]
+ },
+ "falcosecurity/falco": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_cloudnative",
+  "language": "C++",
+  "stars": 9321,
+  "evidence": "anchor by construction: runtime security with eBPF driver",
+  "signals": []
+ },
+ "cilium/ebpf": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "language": "Go",
+  "stars": 7938,
+  "evidence": "anchor by construction: ebpf-go library itself",
+  "signals": [
+   "bpftool",
+   "cilium-ebpf"
+  ]
+ },
+ "projectcalico/calico": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 7344,
+  "evidence": "anchor by construction: CNI networking with eBPF dataplane",
+  "signals": [
+   "libbpf"
+  ]
+ },
+ "facebookincubator/katran": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "language": "C",
+  "stars": 5307,
+  "evidence": "anchor by construction: XDP L4 load balancer (8 bpf paths)",
+  "signals": [
+   "bpftool",
+   "libbpf"
+  ]
+ },
+ "cilium/tetragon": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S1_cloudnative",
+  "language": "C",
+  "stars": 4976,
+  "evidence": "anchor by construction: eBPF security observability",
+  "signals": [
+   "cilium-ebpf"
+  ]
+ },
+ "aya-rs/aya": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S2_observability",
+  "language": "Rust",
+  "stars": 4789,
+  "evidence": "anchor by construction: Rust eBPF library itself (22 bpf paths)",
+  "signals": [
+   "aya",
+   "libbpf"
+  ]
+ },
+ "libbpf/libbpf": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S2_observability",
+  "language": "C",
+  "stars": 2753,
+  "evidence": "anchor by construction: stand-alone libbpf mirror",
+  "signals": [
+   "libbpf"
+  ]
+ },
+ "cloudflare/ebpf_exporter": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 2640,
+  "evidence": "anchor by construction: eBPF metrics exporter (60 bpf paths)",
+  "signals": [
+   "gobpf",
+   "libbpf",
+   "libbpfgo"
+  ]
+ },
+ "aquasecurity/libbpfgo": {
+  "level": "L2",
+  "membership": "TierA",
+  "stratum": "TierA_anchor",
+  "language": "Go",
+  "stars": 849,
+  "evidence": "anchor by construction: libbpf Go bindings (53 bpf paths)",
+  "signals": [
+   "libbpf",
+   "libbpfgo"
+  ]
+ },
+ "kubernetes/kubernetes": {
+  "level": "L0",
+  "membership": "NEG",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 125913,
+  "evidence": "negative-control (userland, no BPF shipping)",
+  "signals": []
+ },
+ "redis/redis": {
+  "level": "L0",
+  "membership": "NEG",
+  "stratum": "S4_storage_db",
+  "language": "C",
+  "stars": 76170,
+  "evidence": "negative-control (userland, no BPF shipping)",
+  "signals": []
+ },
+ "prometheus/prometheus": {
+  "level": "L0",
+  "membership": "NEG",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 65932,
+  "evidence": "negative-control (userland, no BPF shipping)",
+  "signals": []
+ },
+ "netdata/netdata": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 80394,
+  "evidence": "in-repo eBPF collector: src/collectors/ebpf.plugin/ebpf.c + libbpf build (CMake)",
+  "signals": [
+   "libbpf"
+  ]
+ },
+ "traefik/traefik": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 64697,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "etcd-io/etcd": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 52215,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "GitHubDaily/GitHubDaily": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": null,
+  "stars": 47795,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "Kong/kong": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Lua",
+  "stars": 44070,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "apache/dubbo": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Java",
+  "stars": 41564,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "ToolJet/ToolJet": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "JavaScript",
+  "stars": 40807,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "portainer/portainer": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "TypeScript",
+  "stars": 38406,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "istio/istio": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 38367,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "aquasecurity/trivy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 37731,
+  "evidence": "libbpf/libbpfgo/cilium-ebpf only in integration/testdata/fixtures/repo/gomod/go.sum (test fixture) \u2192 not production code",
+  "signals": []
+ },
+ "derailed/k9s": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 34483,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "k3s-io/k3s": {
+  "level": "L1",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 33864,
+  "evidence": "cilium/ebpf v0.17.3 // indirect + replace pin v0.12.3 (dep management; no in-repo BPF source)",
+  "signals": [
+   "cilium-ebpf"
+  ]
+ },
+ "alibaba/nacos": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Java",
+  "stars": 33337,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "podman-container-tools/podman": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 32752,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "dokku/dokku": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Shell",
+  "stars": 32123,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "kubernetes/minikube": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 32083,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "abiosoft/colima": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 30589,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "helm/helm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 30206,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "hashicorp/consul": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 30052,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "goharbor/harbor": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 29281,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "authelia/authelia": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 28763,
+  "evidence": "cilium/ebpf only in internal/suites/example/compose/.../go.mod (compose test fixture, // indirect) \u2192 not production code",
+  "signals": []
+ },
+ "openfaas/faas": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 26234,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "dapr/dapr": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 26055,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "rancher/rancher": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 25883,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "pulumi/pulumi": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 25637,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "goauthentik/authentik": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Python",
+  "stars": 25302,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "eip-work/kuboard-press": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "HTML",
+  "stars": 25196,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "apache/skywalking": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Java",
+  "stars": 24937,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "argoproj/argo-cd": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S1_cloudnative",
+  "language": "Go",
+  "stars": 24053,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "louislam/uptime-kuma": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "JavaScript",
+  "stars": 90838,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "koala73/worldmonitor": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "TypeScript",
+  "stars": 85300,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "grafana/grafana": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "TypeScript",
+  "stars": 76543,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "huginn/huginn": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Ruby",
+  "stars": 49874,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "roboflow/supervision": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Python",
+  "stars": 49822,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "getsentry/sentry": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Python",
+  "stars": 44706,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "Unitech/pm2": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "JavaScript",
+  "stars": 43286,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "glanceapp/glance": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 36768,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "langfuse/langfuse": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "TypeScript",
+  "stars": 34044,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "nicolargo/glances": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Python",
+  "stars": 33497,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "SigNoz/signoz": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "TypeScript",
+  "stars": 31987,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "influxdata/influxdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Rust",
+  "stars": 31729,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "mlflow/mlflow": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Python",
+  "stars": 27766,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "hagezi/dns-blocklists": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Text",
+  "stars": 25866,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "henrygd/beszel": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 24954,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "PrefectHQ/prefect": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Python",
+  "stars": 23752,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "osquery/osquery": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "C++",
+  "stars": 23531,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "jaegertracing/jaeger": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 23170,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "vectordotdev/vector": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Rust",
+  "stars": 22504,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "elastic/kibana": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "TypeScript",
+  "stars": 21277,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "gofr-dev/gofr": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 20961,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "allinurl/goaccess": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "C",
+  "stars": 20888,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "didi/DoKit": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Java",
+  "stars": 20405,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "bettercap/bettercap": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 19917,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "dianping/cat": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Java",
+  "stars": 18945,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "fail2ban/fail2ban": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Python",
+  "stars": 18521,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "statsd/statsd": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "JavaScript",
+  "stars": 18077,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "bcicen/ctop": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 17833,
+  "evidence": "cilium/ebpf v0.7.0 // indirect in go.mod \u2192 transitive",
+  "signals": []
+ },
+ "influxdata/telegraf": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S2_observability",
+  "language": "Go",
+  "stars": 17786,
+  "evidence": "cilium/ebpf only in go.sum (no go.mod declaration, no ebpf/bpf source paths) \u2192 transitive",
+  "signals": []
+ },
+ "fatedier/frp": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 109140,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "GyulyVGC/sniffnet": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Rust",
+  "stars": 40966,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "ehang-io/nps": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 34197,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "chaitin/SafeLine": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 22474,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "txthinking/brook": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 15162,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "owasp-amass/amass": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 15082,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "rathole-org/rathole": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Rust",
+  "stars": 14097,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "evilsocket/opensnitch": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Python",
+  "stars": 14021,
+  "evidence": "direct cilium/ebpf in daemon/go.mod (v0.22.0, no // indirect) \u2014 eBPF firewall",
+  "signals": [
+   "cilium-ebpf"
+  ]
+ },
+ "safing/portmaster": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 13644,
+  "evidence": "direct cilium/ebpf in go.mod (v0.20.0) \u2014 network security",
+  "signals": [
+   "cilium-ebpf"
+  ]
+ },
+ "secdev/scapy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Python",
+  "stars": 12512,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "vanhauser-thc/thc-hydra": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "C",
+  "stars": 12217,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "wireshark/wireshark": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "C",
+  "stars": 9806,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "telekom-security/tpotce": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Shell",
+  "stars": 9452,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "firezone/firezone": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Elixir",
+  "stars": 9047,
+  "evidence": "direct aya in rust/Cargo.toml (aya = { git = ... }) \u2014 Rust eBPF (WireGuard-augmented)",
+  "signals": [
+   "aya"
+  ]
+ },
+ "henrypp/simplewall": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "C",
+  "stars": 8901,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "0xInfection/Awesome-WAF": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Python",
+  "stars": 7603,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "arkime/arkime": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "C",
+  "stars": 7459,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "netalertx/NetAlertX": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Python",
+  "stars": 6978,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "urbanadventurer/WhatWeb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Ruby",
+  "stars": 6803,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "chaifeng/ufw-docker": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Shell",
+  "stars": 6762,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "infinition/Bjorn": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Python",
+  "stars": 6258,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "ffay/lanproxy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Java",
+  "stars": 5852,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "pfsense/pfsense": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "PHP",
+  "stars": 5724,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "OWASP/Nettacker": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Python",
+  "stars": 5545,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "3proxy/3proxy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "C",
+  "stars": 5434,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "martin-ger/esp_wifi_repeater": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "C",
+  "stars": 5246,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "crazy-max/WindowsSpyBlocker": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Go",
+  "stars": 5169,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "domcyrus/rustnet": {
+  "level": "L2",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "Rust",
+  "stars": 4980,
+  "evidence": "in-repo BPF source: crates/rustnet-host/src/linux/ebpf/programs/*.bpf.c",
+  "signals": [
+   "aya",
+   "libbpf"
+  ]
+ },
+ "opnsense/core": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S3_netsec",
+  "language": "PHP",
+  "stars": 4661,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "supabase/supabase": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "TypeScript",
+  "stars": 108681,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "meilisearch/meilisearch": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Rust",
+  "stars": 59164,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "dbeaver/dbeaver": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Java",
+  "stars": 51614,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "ClickHouse/ClickHouse": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "C++",
+  "stars": 49595,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "metabase/metabase": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Clojure",
+  "stars": 49040,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "prisma/orm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "TypeScript",
+  "stars": 47586,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "HeyPuter/puter": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "TypeScript",
+  "stars": 43324,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "duckdb/duckdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "C++",
+  "stars": 40901,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "pingcap/tidb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Go",
+  "stars": 40479,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "The-Vibe-Company/Quivr": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Python",
+  "stars": 39443,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "spacedriveapp/spacedrive": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Rust",
+  "stars": 38884,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "sqlmapproject/sqlmap": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Python",
+  "stars": 38337,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "0voice/interview_internal_reference": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Python",
+  "stars": 37247,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "typeorm/typeorm": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "TypeScript",
+  "stars": 36643,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "SheetJS/sheetjs": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": null,
+  "stars": 36336,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "surrealdb/surrealdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Rust",
+  "stars": 32968,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "facebook/rocksdb": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "C++",
+  "stars": 32034,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "dragonflydb/dragonfly": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "C++",
+  "stars": 31129,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "chroma-core/chroma": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Rust",
+  "stars": 29199,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "mongodb/mongo": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "C++",
+  "stars": 28520,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "OtterMind/Chat2DB": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Java",
+  "stars": 28056,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "PostgREST/postgrest": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Haskell",
+  "stars": 27639,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "forthespada/CS-Books": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": null,
+  "stars": 27216,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "valkey-io/valkey": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "C",
+  "stars": 27089,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "localForage/localForage": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "JavaScript",
+  "stars": 25809,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "clockworklabs/SpacetimeDB": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Rust",
+  "stars": 25085,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "dolthub/dolt": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Go",
+  "stars": 24325,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "tursodatabase/turso": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Rust",
+  "stars": 24115,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "sinaptik-ai/pandas-ai": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S4_storage_db",
+  "language": "Python",
+  "stars": 23788,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "n8n-io/n8n": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "TypeScript",
+  "stars": 203021,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "DietrichGebert/ponytail": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "JavaScript",
+  "stars": 119537,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "google-gemini/gemini-cli": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "TypeScript",
+  "stars": 106759,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "puppeteer/puppeteer": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "TypeScript",
+  "stars": 95534,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "OpenHands/OpenHands": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "TypeScript",
+  "stars": 85849,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "junegunn/fzf": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Go",
+  "stars": 82766,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "jesseduffield/lazygit": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Go",
+  "stars": 81854,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "hoppscotch/hoppscotch": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "TypeScript",
+  "stars": 80133,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "rtk-ai/rtk": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Rust",
+  "stars": 78175,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "Panniantong/Agent-Reach": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Python",
+  "stars": 77295,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "daytonaio/daytona": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": null,
+  "stars": 71850,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "BurntSushi/ripgrep": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Rust",
+  "stars": 67815,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "tldr-pages/tldr": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Markdown",
+  "stars": 63555,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "sharkdp/bat": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Rust",
+  "stars": 60330,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "Raphire/Win11Debloat": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "PowerShell",
+  "stars": 56572,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "Aider-AI/aider": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Python",
+  "stars": 48648,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "jeecgboot/JeecgBoot": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Java",
+  "stars": 47588,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "usebruno/bruno": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "JavaScript",
+  "stars": 46690,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "cli/cli": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Go",
+  "stars": 46100,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "sickn33/agentic-awesome-skills": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Python",
+  "stars": 45811,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "google/zx": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "JavaScript",
+  "stars": 45717,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "streamlit/streamlit": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Python",
+  "stars": 45656,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "files-community/Files": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "C#",
+  "stars": 44847,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "charmbracelet/bubbletea": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Go",
+  "stars": 44740,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "spf13/cobra": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Go",
+  "stars": 44551,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "sharkdp/fd": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Rust",
+  "stars": 44273,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "parcel-bundler/parcel": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "JavaScript",
+  "stars": 44023,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "agno-agi/agno": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Python",
+  "stars": 41999,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "sxyazi/yazi": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S5_devtools",
+  "language": "Rust",
+  "stars": 41854,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "langchain-ai/langchain": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 145434,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "nodejs/node": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "JavaScript",
+  "stars": 120244,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "2dust/v2rayN": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "C#",
+  "stars": 115153,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "laravel/laravel": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Blade",
+  "stars": 84913,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "spring-projects/spring-boot": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Java",
+  "stars": 81389,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "nestjs/nest": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "TypeScript",
+  "stars": 76550,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "ocornut/imgui": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "C++",
+  "stars": 76002,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "scrapy/scrapy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 64154,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "microsoft/autogen": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 60738,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "run-llama/llama_index": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 51965,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "bannedbook/fanqiang": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Kotlin",
+  "stars": 51163,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "chen08209/FlClash": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Dart",
+  "stars": 50613,
+  "evidence": "cilium/ebpf only in core/go.sum (core/go.mod has no declaration) \u2192 transitive",
+  "signals": []
+ },
+ "v2ray/v2ray-core": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Go",
+  "stars": 46938,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "mitmproxy/mitmproxy": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 44875,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "meteor/meteor": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "JavaScript",
+  "stars": 44810,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "XTLS/Xray-core": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Go",
+  "stars": 41340,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "langchain-ai/langgraph": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 40862,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "google-ai-edge/mediapipe": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "C++",
+  "stars": 36805,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "songquanpeng/one-api": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "JavaScript",
+  "stars": 36673,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "medusajs/medusa": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "TypeScript",
+  "stars": 36097,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "laravel/framework": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "PHP",
+  "stars": 34891,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "v2fly/v2ray-core": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Go",
+  "stars": 34533,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "XX-net/XX-Net": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 33443,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "zeromicro/go-zero": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Go",
+  "stars": 33299,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "hiddify/hiddify-app": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Dart",
+  "stars": 32478,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "ianstormtaylor/slate": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "TypeScript",
+  "stars": 31755,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "symfony/symfony": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "PHP",
+  "stars": 31141,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "feder-cr/Jobs_Applier_AI_Agent_AIHawk": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": "Python",
+  "stars": 30294,
+  "evidence": "no eBPF signal",
+  "signals": []
+ },
+ "Johnshall/Shadowrocket-ADBlock-Rules-Forever": {
+  "level": "L0",
+  "membership": "TierB",
+  "stratum": "S6_framework",
+  "language": null,
+  "stars": 29716,
+  "evidence": "no eBPF signal",
+  "signals": []
+ }
+}
