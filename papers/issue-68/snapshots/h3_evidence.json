@@ -1,0 +1,29 @@
+{
+  "census_date": "2026-09-02",
+  "method": "GitHub code search (chunked 12 repos/query, URL-encoded) + pinned-HEAD content probes; hits include tests and SDK-internal files; app-level pins verified by content probe.",
+  "sdk_constants": {
+    "repo": "modelcontextprotocol/typescript-sdk",
+    "path": "packages/core/src/constants.ts",
+    "LATEST_PROTOCOL_VERSION": "2025-11-25",
+    "DEFAULT_NEGOTIATED_PROTOCOL_VERSION": "2025-03-26",
+    "SUPPORTED_PROTOCOL_VERSIONS": ["2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05", "2024-10-07"]
+  },
+  "spec_type_files": ["packages/core-internal/src/types/spec.types.2025-11-25.ts", "packages/core-internal/src/types/spec.types.2026-07-28.ts"],
+  "codesearch_file_hits": {
+    "2024-11-05": {"files": 66, "repos": 17, "top": {"code-yeongyu/oh-my-openagent": 15, "czlonkowski/n8n-mcp": 13, "modelcontextprotocol/typescript-sdk": 7, "JuliusBrussee/caveman": 5, "mksglu/context-mode": 3, "google-gemini/gemini-cli": 3}},
+    "2025-03-26": {"files": 65, "repos": 15, "top": {"koala73/worldmonitor": 20, "modelcontextprotocol/typescript-sdk": 19, "openclaw/openclaw": 5, "modelcontextprotocol/python-sdk": 5, "danny-avila/LibreChat": 3}},
+    "2025-06-18": {"files": 68, "repos": 17, "top": {"modelcontextprotocol/python-sdk": 14, "modelcontextprotocol/typescript-sdk": 9, "koala73/worldmonitor": 8, "openclaw/openclaw": 6, "JuliusBrussee/caveman": 4}}
+  },
+  "app_level_pins_content_verified": [
+    {"repo": "czlonkowski/n8n-mcp", "path": "src/utils/protocol-version.ts", "pin": "STANDARD_PROTOCOL_VERSION='2025-03-26'; N8N_PROTOCOL_VERSION='2024-11-05'", "strategy": "dual-version legacy compat"},
+    {"repo": "koala73/worldmonitor", "path": "api/mcp/constants.ts", "pin": "2025-03-26", "strategy": "current pin"},
+    {"repo": "nexu-io/open-design", "path": "apps/daemon/src/mcp-apps/brief-resource.ts", "pin": "2026-01-26", "strategy": "bleeding-edge (newer than SDK LATEST)"},
+    {"repo": "simstudioai/sim", "path": "apps/sim/app/api/mcp/serve/[serverId]/route.ts", "pin": "SDK LATEST_PROTOCOL_VERSION", "strategy": "ride SDK negotiation"}
+  ],
+  "sdk_versions": {
+    "typescript_sdk_range": "^1.15.1 to ^1.30.0",
+    "rmcp": ["1.4.0 (surrealdb)", "2.2.0 (dbx)"],
+    "mcp-go": ["0.41.1 (gin-vue-admin)"],
+    "fastmcp": ["4 (mlflow)"]
+  }
+}

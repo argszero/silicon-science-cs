@@ -1,0 +1,58 @@
+============================================================================
+Issue #68 — MCP in the Wild: hypotheses report (gold 2-pass FINAL)
+census date 2026-09-02 | corpus 187 = TierA 10 + TierB 174 + NEG 3
+============================================================================
+
+[H1] MCP adoption is ecosystem-concentrated — CONFIRMED
+Tier B L2: 41/174 = 23.6%  Wilson95 [17.9%, 30.4%]
+per-stratum L2: {'S1_ai_tooling': 9, 'S2_ai_devtools': 4, 'S3_ai_apps': 8, 'S4_ai_frameworks': 16, 'S5_general_apps': 1, 'S6_automation_obs': 3}  (n=29 each)
+AI strata (S1-S4): 37/116 = 31.9%  vs  general (S5-S6): 4/58 = 6.9%
+Fisher two-sided p = 0.000135
+chi2 vs uniform (df=5) = 21.5
+reference: eBPF census Tier B 6/174 = 3.4% (journal issue #65); MCP rate ≈ 7x higher
+
+[H2] supply-side asymmetry (servers shipped ≫ clients consumed) — naive FALSIFIED
+Tier B L2 roles: server 20 / client 14 / both 7
+pure server 20 vs pure client 14: 58.8%  Wilson95 [42.2%, 73.6%]
+ships >=1 server: 27 | embeds >=1 client: 21
+context: MCPZoo 2607.11086 measured 64,611 registered servers (supply side); production adoption
+  in top OSS is NOT client-starved — role-balanced overall.
+
+H2-refined (role x stratum):
+AI strata:     server 16 / client 14 / both 7
+general:       server 4 / client 0 / both 0
+Fisher pure-role p = 0.126 (small-n: 4 general pure adopters; descriptive)
+Morphology: general OSS ships MCP servers to EXPORT data/tools to AI agents; client embedding
+  (IMPORT) is confined to AI-native strata (S3 apps: 6 client vs 1 server).
+
+[H3] spec-version drift — REFRAMED: version-space expansion + pin-strategy taxonomy
+registered at registration (2026-05): 3 spec versions (2024-11-05 / 2025-03-26 / 2025-06-18)
+observed at census: typescript-sdk LATEST_PROTOCOL_VERSION = 2025-11-25;
+  SUPPORTED = ['2025-11-25', '2025-06-18', '2025-03-26', '2024-11-05', '2024-10-07']
+  spec type files: packages/core-internal/src/types/spec.types.2025-11-25.ts, packages/core-internal/src/types/spec.types.2026-07-28.ts
+code-search protocolVersion 2024-11-05: 66 file hits / 17 repos
+code-search protocolVersion 2025-03-26: 65 file hits / 15 repos
+code-search protocolVersion 2025-06-18: 68 file hits / 17 repos
+app-level explicit pins (content-verified, 3/41 entry-file literals):
+  - czlonkowski/n8n-mcp: STANDARD_PROTOCOL_VERSION='2025-03-26'; N8N_PROTOCOL_VERSION='2024-11-05'  [dual-version legacy compat]
+  - koala73/worldmonitor: 2025-03-26  [current pin]
+  - nexu-io/open-design: 2026-01-26  [bleeding-edge (newer than SDK LATEST)]
+  - simstudioai/sim: SDK LATEST_PROTOCOL_VERSION  [ride SDK negotiation]
+FINDING: 'adopters stuck on stale pins' NOT supported. Majority ride SDK negotiation;
+  drift = version-space expansion + deliberate pin strategies (legacy-compat/current/bleeding-edge).
+SDK version evidence: TS SDK ^1.15.1 to ^1.30.0; rmcp ['1.4.0 (surrealdb)', '2.2.0 (dbx)'];
+  mcp-go ['0.41.1 (gin-vue-admin)']; fastmcp ['4 (mlflow)']
+
+[H4] 2025-era adoption cohort — CROSS-SECTIONAL (longitudinal limited)
+L2 adopters by repo creation year: {'2011': 1, '2013': 1, '2018': 2, '2019': 4, '2021': 1, '2023': 6, '2024': 3, '2025': 14, '2026': 9}
+created 2025+: 23/41 — adoption in this population is RECENT
+archived or no-push-since-2026-06: 0 []
+LIMITATION (by-construction): corpus = top-star + HEAD-pinnable -> survival ~100% not informative;
+  honest claim: all 41 adopters active at census; 2025 cohort (14 repos) none abandoned.
+
+[NEG] control: 3/3 L0 (redis/redis, FFmpeg/FFmpeg, sqlite/sqlite) — no MCP deps or source paths
+[Tier A] 8/8 adopting anchors L2 by-construction; punkpeye/awesome-mcp-servers (curation, L0) and
+  modelcontextprotocol/modelcontextprotocol (spec/docs, L1-infra) excluded as infra, not adopters
+
+============================================================================
+HEADLINE: Tier B L2 = 41/174 = 23.6%  Wilson95 [17.9%, 30.4%]
