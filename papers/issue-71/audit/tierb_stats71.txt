@@ -1,0 +1,209 @@
+Issue #71 corpus v1 (v3 filter) selection stats
+inventory: 2401 | Tier A: 5 | NEG: 3 | Tier B selected: 174 | excluded: 1437
+
+S1_web3d_graphics: pool 103 -> selected 29 (quota 29)
+S2_dataviz_creative: pool 87 -> selected 29 (quota 29)
+S3_ai_web: pool 169 -> selected 29 (quota 29)
+S4_webapps_editors: pool 180 -> selected 29 (quota 29)
+S5_games_web: pool 90 -> selected 29 (quota 29)
+S6_web_infra: pool 327 -> selected 29 (quota 29)
+
+Full selected lists:
+
+=== S1_web3d_graphics ===
+     48105  TypeScript   pixijs/pixijs  The HTML5 Creation Engine: Create beautiful digital content with the f
+     31869  TypeScript   pmndrs/react-three-fiber  🇨🇭 A React renderer for Three.js
+     21832  TypeScript   pascalorg/editor  Create and share 3D architectural projects.
+     17624  JavaScript   aframevr/aframe  :a: Web framework for building virtual reality experiences.
+     16606  JavaScript   playcanvas/engine  Powerful web graphics runtime built on WebGL, WebGPU, WebXR and glTF
+     15537  JavaScript   bilawalsidhu/gods-eye-view  A spy satellite simulator in your browser, except the data is real. Li
+     10650  JavaScript   metafizzy/zdog  Flat, round, designer-friendly pseudo-3D engine for canvas & SVG
+      9936  TypeScript   playcanvas/supersplat  3D Gaussian Splat Editor
+      8653  JavaScript   jonobr1/two.js  A renderer agnostic two-dimensional drawing api for the web
+      8221  TypeScript   google/model-viewer  Easily display interactive 3D models on the web and in AR! 
+      6963  JavaScript   tengbao/vanta  Animated 3D backgrounds for your website
+      6363  HTML         vasturiano/3d-force-graph  3D force-directed graph component using ThreeJS/WebGL
+      5882  TypeScript   galacean/engine  A typescript interactive engine, support 2D, 3D, animation, physics, b
+      5873  JavaScript   JannisX11/blockbench  Blockbench - A low poly 3D model editor
+      5779  TypeScript   srizzon/git-city  Your GitHub profile as a 3D pixel art building in an interactive city
+      5689  TypeScript   shuding/cobe  5KB WebGL globe lib.
+      5577  JavaScript   regl-project/regl  👑 Functional WebGL
+      5390  JavaScript   spritejs/spritejs  A cross platform high-performance graphics system.
+      5211  TypeScript   Orillusion/orillusion  Orillusion is a pure Web3D rendering engine which is fully developed b
+      5105  JavaScript   nicholas-ochoa/OpenSC2K  OpenSC2K - An Open Source remake of Sim City 2000 by Maxis
+      4887  JavaScript   mpetroff/pannellum  Pannellum is a lightweight, free, and open source panorama viewer for 
+      4790  TypeScript   xiangechen/chili3d  A 3D CAD running entirely in the browser
+      3859  JavaScript   anvaka/VivaGraphJS  Graph drawing library for JavaScript
+      3828  JavaScript   Rezmason/matrix  matrix (web-based green code rain, made with love)
+      3690  JavaScript   jasonlong/isometric-contributions  Browser extension for rendering an isometric pixel art version of your
+      3685  Vue          Tresjs/tres  Declarative ThreeJS using Vue Components
+      3678  JavaScript   kovacsv/Online3DViewer  A solution to visualize and explore 3D models in your browser.
+      3519  JavaScript   PixelsCommander/HTML-GL  Get as many FPS as you need and amazing effects by rendering HTML/CSS 
+      3409  TypeScript   paper-design/shaders  Zero-dependency canvas shaders that can be installed from npm or desig
+
+=== S2_dataviz_creative ===
+    113596  Shell        d3/d3  Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_u
+     76563  TypeScript   grafana/grafana  The open and composable observability and data visualization platform.
+     67675  JavaScript   chartjs/Chart.js  Simple HTML5 Charts using the <canvas> tag
+     67218  TypeScript   apache/echarts  Apache ECharts is a powerful, interactive charting and data visualizat
+     27532  TypeScript   recharts/recharts  Redefined chart library built with React and D3
+     23929  JavaScript   processing/p5.js  p5.js is a client-side JS platform that empowers artists, designers, s
+     21034  TypeScript   airbnb/visx  🐯 visx | visualization components
+     18316  JavaScript   plotly/plotly.js  Open-source JavaScript charting library behind Plotly and Dash
+     15641  JavaScript   CesiumGS/cesium  An open-source JavaScript library for world-class 3D globes and maps :
+     15145  JavaScript   apexcharts/apexcharts.js  📊 Interactive JavaScript Charts built on SVG
+     15080  JavaScript   frappe/charts  Simple, responsive, modern SVG Charts with zero dependencies
+     14548  TypeScript   visgl/deck.gl  WebGL2 powered visualization framework
+     12601  TypeScript   antvis/G2  📊 The concise and progressive visualization grammar.
+     12394  TypeScript   mapbox/mapbox-gl-js  Interactive, thoroughly customizable maps in the browser, powered by v
+     12283  TypeScript   antvis/G6  ♾ A Graph Visualization Framework in JavaScript.
+     12158  TypeScript   jacomyal/sigma.js  A JavaScript library aimed at visualizing graphs of thousands of nodes
+     11995  TypeScript   keplergl/kepler.gl  Kepler.gl is a powerful open source geospatial analysis tool for large
+     10462  JavaScript   leeoniya/uPlot  📈 A small, fast chart for time series, lines, areas, ohlc & bars
+      9350  JavaScript   c3js/c3  :bar_chart: A D3-based reusable chart library
+      9025  JavaScript   rawgraphs/rawgraphs-app  A web interface to create custom vector-based visualizations on top of
+      8787  JavaScript   uber/react-vis  Data Visualization Components
+      8498  TypeScript   visgl/react-map-gl  React friendly API wrapper around MapboxGL JS
+      8470  JavaScript   NorthwoodsSoftware/GoJS  JavaScript diagramming library for interactive flowcharts, org charts,
+      7992  JavaScript   antvis/F2  📱📈An elegant, interactive and flexible charting library for mobile.
+      7859  JavaScript   timqian/chart.xkcd  xkcd styled chart lib
+      7855  TypeScript   alibaba/x-render  🚴‍♀️ Very easy to use process form table chart solution.
+      7510  JavaScript   ecomfe/echarts-for-weixin  基于 Apache ECharts 的微信小程序图表库
+      7291  TypeScript   ChatLab/ChatLab  Local-first chat history analyzer with AI. | 本地优先的 AI 聊天记录分析工具
+      7153  JavaScript   jwilber/roughViz  Reusable JavaScript library for creating sketchy/hand-drawn styled cha
+
+=== S3_ai_web ===
+     44299  TypeScript   janhq/jan  Jan is an open source alternative to ChatGPT that runs 100% offline on
+     38687  JavaScript   naptha/tesseract.js  Pure Javascript OCR for more than 100 Languages 📖🎉🖥
+     37163  TypeScript   CopilotKit/CopilotKit  The Frontend Stack for Agents & Generative UI. React, Angular, Mobile,
+     32945  JavaScript   SillyTavern/SillyTavern  LLM Frontend for Power Users.
+     27640  TypeScript   mastra-ai/mastra  Mastra is the modern TypeScript framework for AI-powered applications 
+     26540  TypeScript   vercel/ai  The AI Toolkit for TypeScript. From the creators of Next.js, the AI SD
+     19135  TypeScript   tensorflow/tfjs  A WebGL accelerated JavaScript library for training and deploying ML m
+     17450  TypeScript   rowboatlabs/rowboat  Open-source AI coworker, with memory
+     16497  HTML         emilwallner/Screenshot-to-code  A neural network that transforms a design mock-up into a static websit
+     15541  TypeScript   Anionex/banana-slides  一站式原生AI PPT生成应用，几分钟内生成一套幻灯片; 支持上传任意模板图片，上传任意素材&智能解析，一句话/大纲/页面描述自动生成PPT
+     15428  JavaScript   gpujs/gpu.js  GPU Accelerated JavaScript
+     14887  TypeScript   botpress/botpress  The open-source hub to build & deploy GPT/LLM Agents ⚡️
+     14874  JavaScript   ConardLi/easy-dataset  A powerful tool for creating datasets for LLM fine-tuning 、RAG and Eva
+     14863  TypeScript   BrainJS/brain.js  🤖 GPU accelerated Neural networks in JavaScript for Browsers and Node.
+     14263  TypeScript   NanmiCoder/cc-haha  Local-first cross-platform desktop workspace for Claude Code / agents:
+     14102  TypeScript   fathah/hermes-desktop  Desktop Companion for Hermes Agent
+     13485  TypeScript   browseros-ai/BrowserOS  🌐 The open-source Agentic browser; alternative to ChatGPT Atlas, Perpl
+     12979  TypeScript   lidge-jun/opencodex  Universal provider proxy for OpenAI Codex & Claude Code — use any LLM 
+     11944  TypeScript   jina-ai/reader  Convert any URL to an LLM-friendly input with a simple prefix https://
+     11363  TypeScript   humanlayer/humanlayer  The best way to get AI coding agents to solve hard problems in complex
+     11155  TypeScript   MemTensor/MemOS  Self-evolving memory OS for LLM & AI Agents: ultra-persistent memory, 
+     11117  TypeScript   holaboss-ai/holaOS  Open-source agentic workspace enterprises can make their own. Connect 
+     11052  TypeScript   voxel51/fiftyone  Refine high-quality datasets and visual AI models
+     10939  TypeScript   getumbrel/llama-gpt  A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100%
+     10924  TypeScript   huggingface/chat-ui  The open source codebase powering HuggingChat
+     10790  TypeScript   EKKOLearnAI/hermes-studio  Web dashboard for Hermes Agent — multi-platform AI chat, session manag
+     10521  TypeScript   VoltAgent/voltagent  AI Agent Engineering Platform built on an Open Source TypeScript AI Ag
+     10180  TypeScript   chaitin/PandaWiki  PandaWiki 是一款 AI 大模型驱动的开源知识库搭建系统，帮助你快速构建智能化的 产品文档、技术文档、FAQ、博客系统，借助大模型的
+      8682  TypeScript   microsoft/TypeChat  TypeChat is a library that makes it easy to build natural language int
+
+=== S4_webapps_editors ===
+    190404  TypeScript   microsoft/vscode  Visual Studio Code
+    130994  TypeScript   excalidraw/excalidraw  Virtual whiteboard for sketching hand-drawn like diagrams
+     88462  TypeScript   OpenCut-app/OpenCut  The open-source CapCut alternative
+     72115  TypeScript   toeverything/AFFiNE  There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is
+     60925  TypeScript   marktext/marktext  📝A simple and elegant markdown editor, available for Linux, macOS and 
+     50085  TypeScript   tldraw/tldraw  Build infinite canvas apps in React with the tldraw SDK. World's best,
+     47322  TypeScript   slab/quill  Quill is a modern WYSIWYG editor built for compatibility and extensibi
+     46642  JavaScript   microsoft/monaco-editor  A browser based code editor
+     43400  TypeScript   mifi/lossless-cut  The swiss army knife of lossless video/audio editing
+     42564  Svelte       imputnet/cobalt  best way to save what you love
+     39332  JavaScript   drawdb-io/drawdb  Free, simple, and intuitive online database diagram editor and SQL gen
+     35535  TypeScript   DayuanJiang/next-ai-draw-io  A next.js web application that integrates AI capabilities with draw.io
+     31923  TypeScript   codex-team/editor.js  A block-style editor with clean JSON output
+     31756  TypeScript   ianstormtaylor/slate  A completely customizable framework for building rich text editors. (C
+     26624  TypeScript   onlook-dev/onlook  The Cursor for Designers • An Open-Source AI-First Design tool • Visua
+     26361  Vue          lissy93/dashy  🚀 A self-hostable personal dashboard built for you. Includes status-ch
+     23079  JavaScript   benweet/stackedit  In-browser Markdown editor
+     22848  TypeScript   chartdb/chartdb  Database diagrams editor that allows you to visualize and design your 
+     22736  JavaScript   yjs/yjs  Shared data types for building collaborative software
+     21747  TypeScript   super-productivity/super-productivity  Super Productivity is an advanced todo list app with integrated Timebo
+     21667  TypeScript   eclipse-theia/theia  Eclipse Theia is a cloud & desktop IDE framework implemented in TypeSc
+     20008  JavaScript   basecamp/trix  A rich text editor for everyday writing
+     19344  TypeScript   wulkano/Kap  An open-source screen recorder built with web technology
+     18650  JavaScript   alyssaxuu/screenity  The free and privacy-friendly screen recorder with no limits 🎥
+     18517  TypeScript   ether/etherpad  Etherpad: A modern really-real-time collaborative document editor.
+     18470  TypeScript   teambit/bit  AI-powered development workspaces with reusable components, architectu
+     16286  TypeScript   tinymce/tinymce  The world's #1 JavaScript library for rich text editing. Available for
+     16228  JavaScript   omnivore-app/omnivore  Omnivore is a complete, open source read-it-later solution for people 
+     16102  JavaScript   yabwe/medium-editor  Medium.com WYSIWYG editor clone. Uses contenteditable API to implement
+
+=== S5_games_web ===
+     40246  JavaScript   phaserjs/phaser  Phaser is a fun, free and fast 2D game framework for making HTML5 game
+     26139  JavaScript   4ian/GDevelop  🎮 Open-source, cross-platform 2D/3D/multiplayer game engine designed f
+     12420  TypeScript   boardgameio/boardgame.io  State Management and Multiplayer Networking for Turn-Based Games
+      6952  JavaScript   tobspr-games/shapez.io  shapez is an open source base building game on Steam inspired by facto
+      6380  JavaScript   melonjs/melonJS  a modern & lightweight HTML5 game engine
+      5940  JavaScript   hiloteam/Hilo  A Cross-end HTML5 Game development solution
+      5277  TypeScript   piqnt/planck.js  2D JavaScript Physics Engine
+      4171  JavaScript   KilledByAPixel/LittleJS  Tiny fast HTML5 game engine with many features and no dependencies.
+      2813  TypeScript   itchio/itch  🎮 The best way to play your itch.io games
+      2689  JavaScript   schteppe/p2.js  JavaScript 2D physics library
+      2674  TypeScript   ill-inc/biomes-game  Biomes is an open source sandbox MMORPG built for the web using web te
+      2602  TypeScript   openfrontio/OpenFrontIO  Online browser-based RTS game
+      2339  TypeScript   excaliburjs/Excalibur  🎮 Your friendly TypeScript 2D game engine for the web 🗡️
+      2047  PureScript   sharkdp/cube-composer  A puzzle game inspired by functional programming
+      1875  TypeScript   FreezingMoon/AncientBeast  The Turn Based Strategy Game/eSport. Master your beasts! 🐺
+      1785  TypeScript   kaplayjs/kaplay  🦖 A JavaScript/TypeScript Game Library that feels like a game.
+      1495  TypeScript   NateTheGreatt/bitECS   Flexible, minimal, data-oriented ECS library for Typescript
+      1365  JavaScript   Mugen87/yuka  JavaScript library for developing Game AI.
+      1206  JavaScript   networked-aframe/networked-aframe  A web framework for building multi-user virtual reality experiences.
+      1173  JavaScript   pmgl/microstudio  Free, open source game engine online
+      1151  JavaScript   hexianWeb/CubeCity  A city waiting to be built by you 🏙️🔨✨. Threejs Version (一个等着被你建造的城市)
+      1050  JavaScript   boona13/mykonos-island-voxels  A browser-based isometric island builder with the soft, sun-bleached l
+      1048  TypeScript   hmans/miniplex  A 👩‍💻 developer-friendly entity management system for 🕹 games and simi
+       962  JavaScript   morgan3d/quadplay  The quadplay✜ fantasy console
+       956  JavaScript   RonenNess/RPGUI  Lightweight framework for old-school RPG GUI in web!
+       943  JavaScript   gkjohnson/three-bvh-csg  A flexible, memory compact, fast and dynamic CSG implementation on top
+       939  TypeScript   lume/glas  WebGL in WebAssembly with AssemblyScript
+       912  TypeScript   esengine/esengine  ESEngine - High-performance TypeScript ECS Framework for Game Developm
+       882  TypeScript   Monogatari/Monogatari  Monogatari is a simple web visual novel engine, created to bring Visua
+
+=== S6_web_infra ===
+    211267  TypeScript   vuejs/vue  This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/
+    142073  JavaScript   vercel/next.js  The React Framework
+    122778  TypeScript   shadcn-ui/ui  A set of beautifully-designed, accessible components and a code distri
+    103276  JavaScript   react/create-react-app  Set up a modern web app by running one command.
+     99353  TypeScript   ant-design/ant-design  An enterprise-class UI design language and React UI library
+     98990  JavaScript   mui/material-ui  Material UI: Comprehensive React component library that implements Goo
+     82653  TypeScript   vitejs/vite  Next generation frontend tooling. It's fast!
+     80158  TypeScript   hoppscotch/hoppscotch  Open-Source API Development Ecosystem • https://hoppscotch.io • Offlin
+     60807  TypeScript   nuxt/nuxt  the full-stack Vue framework
+     58636  TypeScript   pmndrs/zustand  🐻 Bear necessities for state management in React
+     58089  TypeScript   remotion-dev/remotion  🎥      Make videos programmatically with React
+     56031  TypeScript   twentyhq/twenty  The open alternative to Salesforce, designed for AI.
+     55941  JavaScript   gatsbyjs/gatsby  React-based framework with performance, scalability, and security buil
+     54057  Vue          ElemeFE/element  A Vue.js 2.0 UI Toolkit for Web
+     53266  TypeScript   lyswhut/lx-music-desktop  一个基于 Electron 的音乐软件
+     50248  TypeScript   TanStack/query  🤖 Powerful asynchronous state management, server-state utilities and d
+     48386  TypeScript   slidevjs/slidev  Presentation Slides for Developers
+     44808  JavaScript   meteor/meteor  Meteor, the JavaScript App Platform
+     44489  JavaScript   NaiboWang/EasySpider  A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化测试/数据采集/网页
+     44360  TypeScript   AykutSarac/jsoncrack.com  ✨ Innovative and open-source visualization application that transforms
+     42094  TypeScript   amruthpillai/reactive-resume  A one-of-a-kind resume builder that keeps your privacy in mind. Comple
+     41604  JavaScript   dcloudio/uni-app  A cross-platform framework using Vue.js
+     41122  TypeScript   styled-components/styled-components  Fast, expressive styling for React. Server components, client componen
+     41042  TypeScript   vuetifyjs/vuetify  🐉 Vue Component Framework
+     41015  Vue          bailicangdu/vue2-elm  Large single page application with 45 pages built on vue2 + vuex. 基于 v
+     40800  TypeScript   appsmithorg/appsmith  Platform to build admin panels, internal tools, and dashboards. Integr
+     40614  TypeScript   chakra-ui/chakra-ui  Chakra UI is a component system for building SaaS products with speed 
+     40570  TypeScript   trpc/trpc  🧙‍♀️  Move Fast and Break Nothing. End-to-end typesafe APIs made easy.
+     40421  TypeScript   outline/outline  The fastest knowledge base for growing teams. Beautiful, realtime coll
+
+Anchors:
+    115025  mrdoob/three.js
+     26004  BabylonJS/Babylon.js
+     18711  mlc-ai/web-llm
+     16282  huggingface/transformers.js
+      5462  gpuweb/gpuweb
+
+NEG:
+    248656  facebook/react
+    109199  axios/axios
+     52231  prettier/prettier
