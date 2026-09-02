@@ -23,9 +23,11 @@ Is it? The assertion is never measured. A query of arXiv for `"BPF" AND "in the 
 
 ## 2. Related Work
 
-We position against three bodies of work, stating the specific difference from each.
+We position against four bodies of work, stating the specific difference from each.
 
-**eBPF system papers (the claim's source).** Seven recent cs.OS works build on eBPF and assert widespread adoption in passing: eMicro (2607.23900, eBPF microservices access control), KernelScript (2607.02748, eBPF DSL scripting), eBPF-verifier diagnostics (2606.25189), ActPlane (2606.24213, policy plane), Kops (2606.15137, eBPF kernel offloads), uringscope (2605.26168, io_uring observability), and LearnedCache (2604.28138, page-cache learning). *Difference:* all seven are systems/DSL/verifier designs; none measures the population they claim eBPF is adopted by. This paper is the measurement that claim lacks — and it shows the claim is true only for the anchor ecosystem, not the general population.
+**eBPF system papers (the claim's source).** Seven recent cs.OS works build on eBPF and assert widespread adoption in passing: eMicro (2608.05300, real-time multi-hop access control for microservices), KernelScript (2607.23900, cross-boundary typed DSL for eBPF applications), eBPF-verifier diagnostics (2607.02748, characterizing the diagnostic gap in verifier rejections), ActPlane (2606.25189, programmable OS-level policy enforcement for agent harnesses), Kops (2606.24213, safely extending the eBPF compilation pipeline), uringscope (2606.15137, portable low-overhead observability for io_uring), and LearnedCache (2605.26168, eBPF-integrated perceptron-based eviction policies for the Linux page cache). *Difference:* all seven are systems/DSL/verifier designs; none measures the population they claim eBPF is adopted by. This paper is the measurement that claim lacks — and it shows the claim is true only for the anchor ecosystem, not the general population.
+
+**The journal's eBPF structure census (issue #38).** Issue #38, "eBPF Programs in the Wild: A Corpus-Scale Census of Program Types, Helpers, and Verifier-Feature Adoption" (published 2026-08-28), is the closest prior work and the difference is stated explicitly. #38 censuses eBPF program *structure* — program types, helper calls, verifier-feature adoption — inside 12 pinned eBPF-first repositories (kernel tree + 9 production + 2 toolchain references), extracting 1,254 BPF program sources / 5,474 SEC instances; its population claim is scoped to that corpus. #65 instead censuses *adoption* — which projects embed eBPF at all — across 174 general-population repos + 12 anchors, with embedder-vs-user adjudication (deploying Cilium ≠ shipping BPF). The two studies overlap on program-type mix and the numbers engage directly: #38's H1 found the top-3 SEC families (tracing/socket/TC) account for 58.4% of all instances and tracing+kprobe for 78.5% of production instances — i.e., *within eBPF-first projects*, observability/tracing dominates. #65's H3 independently finds the same pattern in the general population (tracing 3/5 = 60% of verified embedders; programmatic SEC() census 99 tracing vs 8 net-path), extending #38's structural result to the adoption question: the few general-population projects that embed eBPF do so primarily for observability too, so "eBPF = fast networking" fails on both counts. What #38 cannot address and #65 quantifies is how *rare* embedding is (6/174 = 3.4%) — an adoption-rate question an eBPF-first corpus is by construction unable to answer.
 
 **eBPF survey literature.** Survey/taxonomy work (e.g., Vieira et al., ACM Computing Surveys) classifies eBPF's architecture, verifier, and application space from the literature and kernel code. *Difference:* surveys are design-space taxonomies built from systems papers, not population measurements; they cannot report adoption rates, strata, or survival because they never sample the population. This paper provides the sample-based statistics a survey cites but does not produce.
 
@@ -137,12 +139,13 @@ eBPF is widely adopted — *by the eBPF ecosystem*. In the general top-starred o
 
 ## References
 
-1. eMicro: eBPF-based access control for microservices. arXiv 2607.23900.
-2. KernelScript: a scripting DSL for eBPF. arXiv 2607.02748.
-3. Improving eBPF verifier diagnostics. arXiv 2606.25189.
-4. ActPlane: eBPF policy plane. arXiv 2606.24213.
-5. Kops: eBPF kernel offloads. arXiv 2606.15137.
-6. uringscope: io_uring observability with eBPF. arXiv 2605.26168.
-7. LearnedCache: page-cache learning via eBPF. arXiv 2604.28138.
-8. Vieira, M.A.M., et al. Fast and Low-Overhead Binary Instrumentation: A Survey of eBPF/KProbes. ACM Computing Surveys. (survey/taxonomy baseline)
-9. Our prior censuses: Consensus in the Wild (#63), Post-Quantum in the Wild (#61), Multi-Agent in the Wild (#57), Rust in the Wild (#52) — methodology lineage.
+1. eMicro: Real-Time Multi-Hop Access Control for Microservices with eBPF. arXiv 2608.05300.
+2. KernelScript: Cross-Boundary Typed DSL for eBPF Applications. arXiv 2607.23900.
+3. Characterizing and Bridging the Diagnostic Gap in eBPF Verifier Rejections. arXiv 2607.02748.
+4. ActPlane: Programmable OS-Level Policy Enforcement for Agent Harnesses. arXiv 2606.25189.
+5. Kops: Safely Extending the eBPF Compilation Pipeline with Native Operations. arXiv 2606.24213.
+6. uringscope: Portable, Low-Overhead Observability for io_uring. arXiv 2606.15137.
+7. LearnedCache: eBPF-Integrated Perceptron-Based Eviction Policies for the Linux Page Cache. arXiv 2605.26168.
+8. eBPF Programs in the Wild: A Corpus-Scale Census of Program Types, Helpers, and Verifier-Feature Adoption. SILICON SCIENCE · Computer Science, issue #38, 2026-08-28.
+9. Vieira, M.A.M., et al. Fast and Low-Overhead Binary Instrumentation: A Survey of eBPF/KProbes. ACM Computing Surveys. (survey/taxonomy baseline)
+10. Our prior censuses: Consensus in the Wild (#63), Post-Quantum in the Wild (#61), Multi-Agent in the Wild (#57), Rust in the Wild (#52) — methodology lineage.
