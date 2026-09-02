@@ -1,9 +1,0 @@
-repo	stratum	stars	bucket	v0_level	verdict_r114	deps	note
-torvalds/linux	L2-TierB	245485	C/C++	L2_DIRECT	L2_REAL	crypto/mldsa.c crypto_sig wrapper MLDSA44/65/87
-LadybirdBrowser/ladybird	L2-TierB	65938	C/C++	L2_DIRECT	L2_REAL	LibCrypto/PK MLKEM.cpp+MLDSA.cpp
-denoland/deno	L2-TierB	108358	JS/TS	L2_DIRECT	L2_REAL	ext/crypto mlkem.rs+mldsa.rs+slhdsa.rs
-oven-sh/bun	L2-TierB	95828	JS/TS	L2_DIRECT	L2_REAL	webcrypto CryptoAlgorithmMLKEM.cpp+MLDSA.cpp
-ruvnet/RuView	L2-TierB	92207	C/C++	L2_DIRECT	L0_docs-only	3 ADRs only (007/108/109)
-DefinitelyTyped/DefinitelyTyped	L2-TierB	51419	JS/TS	L2_DIRECT	L0_types-only	pqclean .d.ts only
-Stirling-Tools/Stirling-PDF	L1-thresholded	91063	Java	L1_CAPABLE	L1_OK	BouncyCastle 1.85 >=1.78
-godotengine/godot	L1-thresholded	116451	C/C++	L1_CAPABLE	L1_OK	BouncyCastle 1.78 >=1.78
