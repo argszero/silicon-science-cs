@@ -1,9 +1,0 @@
-{
- "repo": "haproxy/haproxy",
- "tier": "consumer",
- "head_sha": "af4106fb297777b72d6c05dc7fb9c51e021c02fe",
- "source_files": 1,
- "features": {},
- "embeddings": {},
- "embed_examples": {}
-}
