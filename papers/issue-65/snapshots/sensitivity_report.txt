@@ -1,0 +1,31 @@
+eBPF in the Wild — sensitivity analysis (snapshot 2026-09-01)
+==============================================================================
+[1] H1 significance erasure (Tier A 12/12 vs Tier B k/174):
+    baseline Fisher p = 7.451e-15 (k=6)
+    flips needed to reach p >= 0.05: 6 (i.e. k=0/174 = 0.0% — every single positive would have to be a false positive)
+    even k=1 gives p = 5.218e-18 — H1 is not flip-sensitive
+
+[2] H2 majority erasure (n=5 embedders):
+    library-driven 5/5; 3 flips needed to drop to 2/5 (40% < 50%)
+    → even 3 of 5 embedders misclassified, majority claim survives only at the boundary
+
+[3] Missing-tree worst case (8 stream-cancel + 1 truncated = 9 repos):
+    assume ALL missing trees positive → k = 15/174 = 8.6%
+    Fisher p = 6.978e-12 — H1 robust even in the adversarial extreme
+    (in practice all 8 stream-cancel repos had root-manifest coverage: 0/8 manifest-positive)
+
+[4] Threshold sensitivity (L1+L2 vs L2-only):
+    L1+L2 (incl. k3s dep-mgmt): 6/174 = 3.4%
+    L2-only (verified embedders): 5/174 = 2.9%
+    gap = 0.6 pp — single L1 adjudication; k3s is `// indirect` + replace-directive (dep mgmt, not embedding)
+
+[5] Program-type sensitivity (n=5 embedders):
+    tracing 3/5 vs net-path 2/5
+    if ONE embedder flipped tracing<->net-path → 2/5 vs 3/5 (majority flips)
+    → H3 claim must be framed as 'tracing is NOT the minority / parity boundary',
+      NOT as an overwhelming tracing dominance (Wilson CIs overlap: 23-88% vs 12-77%)
+
+[6] Popularity-weighted view:
+    positives include the 4th-largest Tier B repo (netdata 80.4k★) and k3s 33.9k★
+    positive stars sum = 155,950 (median 14,021)
+    → adoption is concentrated among large-scale infra projects (consistent with H1)
