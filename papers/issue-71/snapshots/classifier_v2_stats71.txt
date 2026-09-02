@@ -1,0 +1,18 @@
+Tier B n=174
+  WebGPU L2: 14 (8.0%)
+  Wilson95[4.9,13.1]
+  WebGL L2: 48 | GPU users: 51
+  WebGPU share of GPU users: 14/51 = 27.5%
+  roles: {'render': 10, 'both': 2, 'compute': 2}
+  per-stratum:
+    S1_web3d_graphics: 7/29 = 24%
+    S2_dataviz_creative: 1/29 = 3%
+    S3_ai_web: 3/29 = 10%
+    S4_webapps_editors: 1/29 = 3%
+    S5_games_web: 1/29 = 3%
+    S6_web_infra: 1/29 = 3%
+  TierA L2: 4/5
+  Fisher anchors-vs-TierB: 0.000346
+  Fisher S1-vs-rest: 0.00208
+  Fisher S3-vs-rest: 0.464
+  Fisher S4-vs-rest: 0.7

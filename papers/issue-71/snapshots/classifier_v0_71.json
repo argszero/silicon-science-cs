@@ -1,0 +1,1640 @@
+{
+ "mrdoob/three.js": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "src/renderers/webgpu/WebGPUBackend.js: navigator.gpu full chain",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 115025
+ },
+ "BabylonJS/Babylon.js": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "webgpuEngine.pure.ts: navigator.gpu full chain",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 26004
+ },
+ "mlc-ai/web-llm": {
+  "level": "L2",
+  "role": "compute",
+  "evidence": "mediated",
+  "note": "tvmjs.detectGPUDevice() (WASM runtime); NO navigator.gpu in TS src \u2014 H2 datapoint",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 18711
+ },
+ "huggingface/transformers.js": {
+  "level": "L2",
+  "role": "compute",
+  "evidence": "mediated",
+  "note": "onnx.js 'webgpu' executionProvider x3 + dtypes.js navigator.gpu/requestAdapter detect",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 16282
+ },
+ "gpuweb/gpuweb": {
+  "level": "L1",
+  "role": null,
+  "evidence": null,
+  "note": "spec/WPT: DEFINES the API (noise rule 2) \u2014 L0-as-adopter but listed L1 for reference; calibrator",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 5462
+ },
+ "facebook/react": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "NEG_control",
+  "membership": "NEG",
+  "stars": 248656
+ },
+ "axios/axios": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "NEG_control",
+  "membership": "NEG",
+  "stars": 109199
+ },
+ "prettier/prettier": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "NEG_control",
+  "membership": "NEG",
+  "stars": 52231
+ },
+ "pixijs/pixijs": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "GpuDeviceSystem.ts + GpuEncoderSystem.ts raw chain (v8 gpu renderer)",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 48105
+ },
+ "pmndrs/react-three-fiber": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 31869
+ },
+ "pascalorg/editor": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "mediated",
+  "note": "three WebGPURenderer in editor/nodes packages (bake-thumbnail.tsx etc)",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 21832
+ },
+ "aframevr/aframe": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "mediated",
+  "note": "src/core/scene/a-scene.js: three WebGPURenderer selection w/ WebGL fallback",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 17624
+ },
+ "playcanvas/engine": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "webgpu-graphics-device.js: navigator.gpu,requestAdapter,requestDevice,beginRenderPass",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 16606
+ },
+ "bilawalsidhu/gods-eye-view": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 15537
+ },
+ "metafizzy/zdog": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 10650
+ },
+ "playcanvas/supersplat": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "src/index.ts navigator.gpu (splat editor)",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 9936
+ },
+ "jonobr1/two.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 8653
+ },
+ "google/model-viewer": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 8221
+ },
+ "tengbao/vanta": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 6963
+ },
+ "vasturiano/3d-force-graph": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 6363
+ },
+ "galacean/engine": {
+  "level": "L1",
+  "role": null,
+  "evidence": null,
+  "note": "@webgpu/types only in e2e/examples/tests dev dirs",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5882
+ },
+ "JannisX11/blockbench": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5873
+ },
+ "srizzon/git-city": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5779
+ },
+ "shuding/cobe": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5689
+ },
+ "regl-project/regl": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5577
+ },
+ "spritejs/spritejs": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5390
+ },
+ "Orillusion/orillusion": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "webGpu/Context3D.ts: navigator.gpu,requestAdapter,requestDevice,beginRenderPass",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5211
+ },
+ "nicholas-ochoa/OpenSC2K": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5105
+ },
+ "mpetroff/pannellum": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 4887
+ },
+ "xiangechen/chili3d": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 4790
+ },
+ "anvaka/VivaGraphJS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3859
+ },
+ "Rezmason/matrix": {
+  "level": "L2",
+  "role": "both",
+  "evidence": "raw",
+  "note": "js/webgpu/main.js navigator.gpu + compute+render passes",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3828
+ },
+ "jasonlong/isometric-contributions": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3690
+ },
+ "Tresjs/tres": {
+  "level": "L1",
+  "role": null,
+  "evidence": null,
+  "note": "webgpu lab/playground demo components only (HologramCube.vue no raw usage)",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3685
+ },
+ "kovacsv/Online3DViewer": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3678
+ },
+ "PixelsCommander/HTML-GL": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3519
+ },
+ "paper-design/shaders": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3409
+ },
+ "d3/d3": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 113596
+ },
+ "grafana/grafana": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 76563
+ },
+ "chartjs/Chart.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 67675
+ },
+ "apache/echarts": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 67218
+ },
+ "recharts/recharts": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 27532
+ },
+ "processing/p5.js": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "src/webgpu/p5.RendererWebGPU.js: full raw chain incl. compute shaders",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 23929
+ },
+ "airbnb/visx": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 21034
+ },
+ "plotly/plotly.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 18316
+ },
+ "CesiumGS/cesium": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 15641
+ },
+ "apexcharts/apexcharts.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 15145
+ },
+ "frappe/charts": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 15080
+ },
+ "visgl/deck.gl": {
+  "level": "L1",
+  "role": null,
+  "evidence": null,
+  "note": "webgpu build scripts + docs + a5-layer-webgpu spec; gpu-aggregator = webgl (no shipped raw usage)",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 14548
+ },
+ "antvis/G2": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12601
+ },
+ "mapbox/mapbox-gl-js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12394
+ },
+ "antvis/G6": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12283
+ },
+ "jacomyal/sigma.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12158
+ },
+ "keplergl/kepler.gl": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 11995
+ },
+ "leeoniya/uPlot": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 10462
+ },
+ "c3js/c3": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 9350
+ },
+ "rawgraphs/rawgraphs-app": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 9025
+ },
+ "uber/react-vis": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 8787
+ },
+ "visgl/react-map-gl": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 8498
+ },
+ "NorthwoodsSoftware/GoJS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 8470
+ },
+ "antvis/F2": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7992
+ },
+ "timqian/chart.xkcd": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7859
+ },
+ "alibaba/x-render": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7855
+ },
+ "ecomfe/echarts-for-weixin": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7510
+ },
+ "ChatLab/ChatLab": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7291
+ },
+ "jwilber/roughViz": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7153
+ },
+ "janhq/jan": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 44299
+ },
+ "naptha/tesseract.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 38687
+ },
+ "CopilotKit/CopilotKit": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 37163
+ },
+ "SillyTavern/SillyTavern": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 32945
+ },
+ "mastra-ai/mastra": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 27640
+ },
+ "vercel/ai": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 26540
+ },
+ "tensorflow/tfjs": {
+  "level": "L2",
+  "role": "compute",
+  "evidence": "raw",
+  "note": "tfjs-backend-webgpu/src/backend_webgpu.ts: dispatchWorkgroups,GPUDevice (full backend pkg)",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 19135
+ },
+ "rowboatlabs/rowboat": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 17450
+ },
+ "emilwallner/Screenshot-to-code": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 16497
+ },
+ "Anionex/banana-slides": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 15541
+ },
+ "gpujs/gpu.js": {
+  "level": "L2",
+  "role": "compute",
+  "evidence": "raw",
+  "note": "src/backend/web-gpu/kernel.js + context.js: navigator.gpu,createShaderModule,dispatchWorkgroups",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 15428
+ },
+ "botpress/botpress": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14887
+ },
+ "ConardLi/easy-dataset": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14874
+ },
+ "BrainJS/brain.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14863
+ },
+ "NanmiCoder/cc-haha": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14263
+ },
+ "fathah/hermes-desktop": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14102
+ },
+ "browseros-ai/BrowserOS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 13485
+ },
+ "lidge-jun/opencodex": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 12979
+ },
+ "jina-ai/reader": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11944
+ },
+ "humanlayer/humanlayer": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11363
+ },
+ "MemTensor/MemOS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11155
+ },
+ "holaboss-ai/holaOS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11117
+ },
+ "voxel51/fiftyone": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "waveform-gpu.ts raw chain + three WebGPURenderer in 3D pickers",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11052
+ },
+ "getumbrel/llama-gpt": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10939
+ },
+ "huggingface/chat-ui": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10924
+ },
+ "EKKOLearnAI/hermes-studio": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10790
+ },
+ "VoltAgent/voltagent": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10521
+ },
+ "chaitin/PandaWiki": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10180
+ },
+ "microsoft/TypeChat": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 8682
+ },
+ "microsoft/vscode": {
+  "level": "L1",
+  "role": null,
+  "evidence": null,
+  "note": "@webgpu/types devDep + editor gpu modules; gpu.ts no raw usage found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 190404
+ },
+ "excalidraw/excalidraw": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 130994
+ },
+ "OpenCut-app/OpenCut": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 88462
+ },
+ "toeverything/AFFiNE": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 72115
+ },
+ "marktext/marktext": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 60925
+ },
+ "tldraw/tldraw": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 50085
+ },
+ "slab/quill": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 47322
+ },
+ "microsoft/monaco-editor": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 46642
+ },
+ "mifi/lossless-cut": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 43400
+ },
+ "imputnet/cobalt": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 42564
+ },
+ "drawdb-io/drawdb": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 39332
+ },
+ "DayuanJiang/next-ai-draw-io": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 35535
+ },
+ "codex-team/editor.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 31923
+ },
+ "ianstormtaylor/slate": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 31756
+ },
+ "onlook-dev/onlook": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 26624
+ },
+ "lissy93/dashy": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 26361
+ },
+ "benweet/stackedit": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 23079
+ },
+ "chartdb/chartdb": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 22848
+ },
+ "yjs/yjs": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 22736
+ },
+ "super-productivity/super-productivity": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 21747
+ },
+ "eclipse-theia/theia": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 21667
+ },
+ "basecamp/trix": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 20008
+ },
+ "wulkano/Kap": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 19344
+ },
+ "alyssaxuu/screenity": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 18650
+ },
+ "ether/etherpad": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 18517
+ },
+ "teambit/bit": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 18470
+ },
+ "tinymce/tinymce": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 16286
+ },
+ "omnivore-app/omnivore": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 16228
+ },
+ "yabwe/medium-editor": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 16102
+ },
+ "phaserjs/phaser": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 40246
+ },
+ "4ian/GDevelop": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 26139
+ },
+ "boardgameio/boardgame.io": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 12420
+ },
+ "tobspr-games/shapez.io": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 6952
+ },
+ "melonjs/melonJS": {
+  "level": "L2",
+  "role": "render",
+  "evidence": "raw",
+  "note": "src/video/webgpu/webgpu_renderer.js: navigator.gpu full chain",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 6380
+ },
+ "hiloteam/Hilo": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 5940
+ },
+ "piqnt/planck.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 5277
+ },
+ "KilledByAPixel/LittleJS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 4171
+ },
+ "itchio/itch": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2813
+ },
+ "schteppe/p2.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2689
+ },
+ "ill-inc/biomes-game": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2674
+ },
+ "openfrontio/OpenFrontIO": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2602
+ },
+ "excaliburjs/Excalibur": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2339
+ },
+ "sharkdp/cube-composer": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2047
+ },
+ "FreezingMoon/AncientBeast": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1875
+ },
+ "kaplayjs/kaplay": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1785
+ },
+ "NateTheGreatt/bitECS": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1495
+ },
+ "Mugen87/yuka": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1365
+ },
+ "networked-aframe/networked-aframe": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1206
+ },
+ "pmgl/microstudio": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1173
+ },
+ "hexianWeb/CubeCity": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1151
+ },
+ "boona13/mykonos-island-voxels": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1050
+ },
+ "hmans/miniplex": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1048
+ },
+ "morgan3d/quadplay": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 962
+ },
+ "RonenNess/RPGUI": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 956
+ },
+ "gkjohnson/three-bvh-csg": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 943
+ },
+ "lume/glas": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 939
+ },
+ "esengine/esengine": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 912
+ },
+ "Monogatari/Monogatari": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 882
+ },
+ "vuejs/vue": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 211267
+ },
+ "vercel/next.js": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 142073
+ },
+ "shadcn-ui/ui": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 122778
+ },
+ "react/create-react-app": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 103276
+ },
+ "ant-design/ant-design": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 99353
+ },
+ "mui/material-ui": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 98990
+ },
+ "vitejs/vite": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 82653
+ },
+ "hoppscotch/hoppscotch": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 80158
+ },
+ "nuxt/nuxt": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 60807
+ },
+ "pmndrs/zustand": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 58636
+ },
+ "remotion-dev/remotion": {
+  "level": "L2",
+  "role": "both",
+  "evidence": "mediated+ep",
+  "note": "packages/three/webgpu.tsx WebGPURenderer + whisper-webgpu pkg (ORT/transformers webgpu EP)",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 58089
+ },
+ "twentyhq/twenty": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 56031
+ },
+ "gatsbyjs/gatsby": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 55941
+ },
+ "ElemeFE/element": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 54057
+ },
+ "lyswhut/lx-music-desktop": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 53266
+ },
+ "TanStack/query": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 50248
+ },
+ "slidevjs/slidev": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 48386
+ },
+ "meteor/meteor": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 44808
+ },
+ "NaiboWang/EasySpider": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 44489
+ },
+ "AykutSarac/jsoncrack.com": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 44360
+ },
+ "amruthpillai/reactive-resume": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 42094
+ },
+ "dcloudio/uni-app": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41604
+ },
+ "styled-components/styled-components": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41122
+ },
+ "vuetifyjs/vuetify": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41042
+ },
+ "bailicangdu/vue2-elm": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41015
+ },
+ "appsmithorg/appsmith": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40800
+ },
+ "chakra-ui/chakra-ui": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40614
+ },
+ "trpc/trpc": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40570
+ },
+ "outline/outline": {
+  "level": "L0",
+  "role": null,
+  "evidence": null,
+  "note": "no webgpu signal found",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40421
+ }
+}

@@ -1,0 +1,234 @@
+{
+ "mlc-ai/web-llm": {
+  "package.json": [
+   "@webgpu/types"
+  ]
+ },
+ "huggingface/transformers.js": {
+  "packages/transformers/package.json": [
+   "@webgpu/types"
+  ]
+ },
+ "pixijs/pixijs": {
+  "package.json": [
+   "@webgpu/types"
+  ],
+  "examples/package.json": [
+   "three"
+  ],
+  ".stackblitz/base/package.json": [
+   "pixi.js"
+  ],
+  ".stackblitz/bunny-mark/package.json": [
+   "pixi.js"
+  ]
+ },
+ "pmndrs/react-three-fiber": {
+  "package.json": [
+   "three"
+  ],
+  "example/package.json": [
+   "three"
+  ],
+  "packages/fiber/package.json": [
+   "three"
+  ],
+  "packages/test-renderer/package.json": [
+   "three"
+  ]
+ },
+ "pascalorg/editor": {
+  "package.json": [
+   "three"
+  ],
+  "apps/editor/package.json": [
+   "three"
+  ],
+  "apps/ifc-converter/package.json": [
+   "three"
+  ],
+  "packages/capture-viewer/package.json": [
+   "three"
+  ],
+  "packages/core/package.json": [
+   "three"
+  ],
+  "packages/editor/package.json": [
+   "three"
+  ]
+ },
+ "aframevr/aframe": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "playcanvas/engine": {
+  "package.json": [
+   "@webgpu/types"
+  ],
+  "examples/package.json": [
+   "playcanvas"
+  ]
+ },
+ "playcanvas/supersplat": {
+  "package.json": [
+   "@webgpu/types",
+   "playcanvas"
+  ]
+ },
+ "google/model-viewer": {
+  "packages/model-viewer-effects/package.json": [
+   "three"
+  ],
+  "packages/model-viewer/package.json": [
+   "three"
+  ]
+ },
+ "vasturiano/3d-force-graph": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "galacean/engine": {
+  "e2e/package.json": [
+   "@galacean/engine"
+  ],
+  "examples/package.json": [
+   "@galacean/engine"
+  ],
+  "tests/package.json": [
+   "@galacean/engine"
+  ]
+ },
+ "JannisX11/blockbench": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "srizzon/git-city": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "regl-project/regl": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "Orillusion/orillusion": {
+  "package.json": [
+   "@webgpu/types"
+  ],
+  "packages/geometry/package.json": [
+   "@orillusion/core"
+  ],
+  "packages/graphic/package.json": [
+   "@orillusion/core"
+  ],
+  "packages/media-extention/package.json": [
+   "@orillusion/core"
+  ],
+  "packages/particle/package.json": [
+   "@orillusion/core"
+  ],
+  "packages/physics-rapier/package.json": [
+   "@orillusion/core"
+  ],
+  "packages/physics/package.json": [
+   "@orillusion/core"
+  ]
+ },
+ "xiangechen/chili3d": {
+  "packages/three/package.json": [
+   "three"
+  ]
+ },
+ "Tresjs/tres": {
+  "apps/lab/package.json": [
+   "three"
+  ]
+ },
+ "kovacsv/Online3DViewer": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "ChatLab/ChatLab": {
+  "package.json": [
+   "three",
+   "pixi.js"
+  ]
+ },
+ "tensorflow/tfjs": {
+  "package.json": [
+   "@webgpu/types"
+  ]
+ },
+ "fathah/hermes-desktop": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "voxel51/fiftyone": {
+  "app/package.json": [
+   "pixi.js"
+  ]
+ },
+ "microsoft/vscode": {
+  "package.json": [
+   "@webgpu/types"
+  ]
+ },
+ "4ian/GDevelop": {
+  "GDJS/package.json": [
+   "pixi.js"
+  ],
+  "SharedLibs/ThreeAddons/package.json": [
+   "three"
+  ],
+  "SharedLibs/TileMapHelper/package.json": [
+   "pixi.js"
+  ],
+  "newIDE/app/package.json": [
+   "three"
+  ]
+ },
+ "boardgameio/boardgame.io": {
+  "examples/react-web/package.json": [
+   "three"
+  ]
+ },
+ "ill-inc/biomes-game": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "hexianWeb/CubeCity": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "hmans/miniplex": {
+  "apps/demo/package.json": [
+   "three"
+  ],
+  "apps/vanilla-demo/package.json": [
+   "three"
+  ]
+ },
+ "gkjohnson/three-bvh-csg": {
+  "package.json": [
+   "three"
+  ]
+ },
+ "pmndrs/zustand": {
+  "examples/demo/package.json": [
+   "three"
+  ]
+ },
+ "remotion-dev/remotion": {
+  "package.json": [
+   "three"
+  ]
+ }
+}

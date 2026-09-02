@@ -1,0 +1,3242 @@
+{
+ "mrdoob/three.js": {
+  "full_name": "mrdoob/three.js",
+  "stars": 115025,
+  "language": "JavaScript",
+  "description": "JavaScript 3D Library.",
+  "html_url": "https://github.com/mrdoob/three.js",
+  "archived": false,
+  "stratum": "TierA_anchor",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierA",
+  "default_branch": "dev",
+  "head_sha": "7ed4da085e70166b87ae6d5f010a67acbdd5438a",
+  "pinned_at": "2026-09-02T13:04:48.924724+00:00"
+ },
+ "BabylonJS/Babylon.js": {
+  "full_name": "BabylonJS/Babylon.js",
+  "stars": 26004,
+  "language": "TypeScript",
+  "description": "Babylon.js is a powerful, beautiful, simple, and open game and rendering engine packed into a friendly JavaScript framework.",
+  "html_url": "https://github.com/BabylonJS/Babylon.js",
+  "archived": false,
+  "stratum": "TierA_anchor",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierA",
+  "default_branch": "master",
+  "head_sha": "0a0c8ca211f3f2f4e9d1cc4463cda8b22e0cde96",
+  "pinned_at": "2026-09-02T13:04:45.646510+00:00"
+ },
+ "mlc-ai/web-llm": {
+  "full_name": "mlc-ai/web-llm",
+  "stars": 18711,
+  "language": "TypeScript",
+  "description": "High-performance In-browser LLM Inference Engine ",
+  "html_url": "https://github.com/mlc-ai/web-llm",
+  "archived": false,
+  "stratum": "TierA_anchor",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:deep-learning stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierA",
+  "default_branch": "main",
+  "head_sha": "fa123eba72978920c6c9f1b1e96c0c7c6be41f0f",
+  "pinned_at": "2026-09-02T13:04:44.552690+00:00"
+ },
+ "huggingface/transformers.js": {
+  "full_name": "huggingface/transformers.js",
+  "stars": 16282,
+  "language": "JavaScript",
+  "description": "State-of-the-art Machine Learning for the web. Run \ud83e\udd17 Transformers directly in your browser, with no need for a server!",
+  "html_url": "https://github.com/huggingface/transformers.js",
+  "archived": false,
+  "stratum": "TierA_anchor",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:transformers stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierA",
+  "default_branch": "main",
+  "head_sha": "bf27627c7e3d706133fd773c32b212470785e367",
+  "pinned_at": "2026-09-02T13:04:45.312733+00:00"
+ },
+ "gpuweb/gpuweb": {
+  "full_name": "gpuweb/gpuweb",
+  "stars": 5462,
+  "language": null,
+  "description": "Where the GPU for the Web work happens!",
+  "html_url": "https://github.com/gpuweb/gpuweb",
+  "archived": false,
+  "stratum": "TierA_anchor",
+  "source": "tier_a_seed",
+  "query_hits": [],
+  "membership": "TierA",
+  "default_branch": "main",
+  "head_sha": "e0aff163a37eb3633ffd612e2a943ceb6196d6af",
+  "pinned_at": "2026-09-02T13:04:44.062212+00:00"
+ },
+ "facebook/react": {
+  "full_name": "facebook/react",
+  "stars": 248656,
+  "language": "JavaScript",
+  "description": "The library for web and native user interfaces.",
+  "html_url": "https://github.com/react/react",
+  "archived": false,
+  "stratum": "NEG_control",
+  "source": "tier_a_seed",
+  "query_hits": [],
+  "membership": "NEG",
+  "default_branch": "main",
+  "head_sha": "33b4555488b580c286dccde4ed52395241f1a1f5",
+  "pinned_at": "2026-09-02T13:04:46.677971+00:00"
+ },
+ "axios/axios": {
+  "full_name": "axios/axios",
+  "stars": 109199,
+  "language": "JavaScript",
+  "description": "Promise based HTTP client for the browser and node.js",
+  "html_url": "https://github.com/axios/axios",
+  "archived": false,
+  "stratum": "NEG_control",
+  "source": "tier_a_seed",
+  "query_hits": [],
+  "membership": "NEG",
+  "default_branch": "v1.x",
+  "head_sha": "81df7a519431f5d703074df700dc40782a61fa9e",
+  "pinned_at": "2026-09-02T13:04:44.505633+00:00"
+ },
+ "prettier/prettier": {
+  "full_name": "prettier/prettier",
+  "stars": 52231,
+  "language": "JavaScript",
+  "description": "Prettier is an opinionated code formatter.",
+  "html_url": "https://github.com/prettier/prettier",
+  "archived": false,
+  "stratum": "NEG_control",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "NEG",
+  "default_branch": "main",
+  "head_sha": "f78e8a64faf9e1575271585581976b8bcb1016c8",
+  "pinned_at": "2026-09-02T13:04:44.585599+00:00"
+ },
+ "pixijs/pixijs": {
+  "full_name": "pixijs/pixijs",
+  "stars": 48105,
+  "language": "TypeScript",
+  "description": "The HTML5 Creation Engine: Create beautiful digital content with the fastest, most flexible 2D WebGL renderer.",
+  "html_url": "https://github.com/pixijs/pixijs",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "dev",
+  "head_sha": "e0373fc3522e0a95c80d2bf1c96ee481abdd970b",
+  "pinned_at": "2026-09-02T13:04:47.699953+00:00"
+ },
+ "pmndrs/react-three-fiber": {
+  "full_name": "pmndrs/react-three-fiber",
+  "stars": 31869,
+  "language": "TypeScript",
+  "description": "\ud83c\udde8\ud83c\udded A React renderer for Three.js",
+  "html_url": "https://github.com/pmndrs/react-three-fiber",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "ff3899dbf43d2a88895fecf53c147192abfd7431",
+  "pinned_at": "2026-09-02T13:04:47.392965+00:00"
+ },
+ "pascalorg/editor": {
+  "full_name": "pascalorg/editor",
+  "stars": 21832,
+  "language": "TypeScript",
+  "description": "Create and share 3D architectural projects.",
+  "html_url": "https://github.com/pascalorg/editor",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript",
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "83400c9de7c0c01980ae1e35878d215d4d93308a",
+  "pinned_at": "2026-09-02T13:04:47.052581+00:00"
+ },
+ "aframevr/aframe": {
+  "full_name": "aframevr/aframe",
+  "stars": 17624,
+  "language": "JavaScript",
+  "description": ":a: Web framework for building virtual reality experiences.",
+  "html_url": "https://github.com/aframevr/aframe",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript",
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "022bcc5f6eef09ff60d3f2110604c78cae0cd5b1",
+  "pinned_at": "2026-09-02T13:04:47.797987+00:00"
+ },
+ "playcanvas/engine": {
+  "full_name": "playcanvas/engine",
+  "stars": 16606,
+  "language": "JavaScript",
+  "description": "Powerful web graphics runtime built on WebGL, WebGPU, WebXR and glTF",
+  "html_url": "https://github.com/playcanvas/engine",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "642808db204ca4b523f044f5c4f51975564c26ab",
+  "pinned_at": "2026-09-02T13:04:48.437279+00:00"
+ },
+ "bilawalsidhu/gods-eye-view": {
+  "full_name": "bilawalsidhu/gods-eye-view",
+  "stars": 15537,
+  "language": "JavaScript",
+  "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+  "html_url": "https://github.com/bilawalsidhu/gods-eye-view",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "65bc522f49dc1166eca533996be8e789ad36cfe5",
+  "pinned_at": "2026-09-02T13:04:50.935549+00:00"
+ },
+ "metafizzy/zdog": {
+  "full_name": "metafizzy/zdog",
+  "stars": 10650,
+  "language": "JavaScript",
+  "description": "Flat, round, designer-friendly pseudo-3D engine for canvas & SVG",
+  "html_url": "https://github.com/metafizzy/zdog",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "dde8684be686bc6d3cbedb6be49875c0a03a14c0",
+  "pinned_at": "2026-09-02T13:04:52.685742+00:00"
+ },
+ "playcanvas/supersplat": {
+  "full_name": "playcanvas/supersplat",
+  "stars": 9936,
+  "language": "TypeScript",
+  "description": "3D Gaussian Splat Editor",
+  "html_url": "https://github.com/playcanvas/supersplat",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "3565a6a216a316ec37ec76778b4ade3c7ee16781",
+  "pinned_at": "2026-09-02T13:04:49.483832+00:00"
+ },
+ "jonobr1/two.js": {
+  "full_name": "jonobr1/two.js",
+  "stars": 8653,
+  "language": "JavaScript",
+  "description": "A renderer agnostic two-dimensional drawing api for the web",
+  "html_url": "https://github.com/jonobr1/two.js",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "dev",
+  "head_sha": "4bf164e2c1e6c661b8757efc3ea487a176801f57",
+  "pinned_at": "2026-09-02T13:04:50.098181+00:00"
+ },
+ "google/model-viewer": {
+  "full_name": "google/model-viewer",
+  "stars": 8221,
+  "language": "TypeScript",
+  "description": "Easily display interactive 3D models on the web and in AR! ",
+  "html_url": "https://github.com/google/model-viewer",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "297ed2bdbea0c8f921d985ff0c71afd3a819e12e",
+  "pinned_at": "2026-09-02T13:04:50.209388+00:00"
+ },
+ "tengbao/vanta": {
+  "full_name": "tengbao/vanta",
+  "stars": 6963,
+  "language": "JavaScript",
+  "description": "Animated 3D backgrounds for your website",
+  "html_url": "https://github.com/tengbao/vanta",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "f8b351906688b56f0fc744e53bde81fc3c56f150",
+  "pinned_at": "2026-09-02T13:04:52.157955+00:00"
+ },
+ "vasturiano/3d-force-graph": {
+  "full_name": "vasturiano/3d-force-graph",
+  "stars": 6363,
+  "language": "HTML",
+  "description": "3D force-directed graph component using ThreeJS/WebGL",
+  "html_url": "https://github.com/vasturiano/3d-force-graph",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "957c1831157416e88ea9faf8e6a4edfe7b545858",
+  "pinned_at": "2026-09-02T13:04:51.735340+00:00"
+ },
+ "galacean/engine": {
+  "full_name": "galacean/engine",
+  "stars": 5882,
+  "language": "TypeScript",
+  "description": "A typescript interactive engine, support 2D, 3D, animation, physics, built on WebGL and glTF.",
+  "html_url": "https://github.com/galacean/engine",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript",
+   "topic:webgl stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "06892b236c4c2e67ad3796fc746dbbeee39f23d4",
+  "pinned_at": "2026-09-02T13:04:53.090545+00:00"
+ },
+ "JannisX11/blockbench": {
+  "full_name": "JannisX11/blockbench",
+  "stars": 5873,
+  "language": "JavaScript",
+  "description": "Blockbench - A low poly 3D model editor",
+  "html_url": "https://github.com/JannisX11/blockbench",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "47e633e4a1338f957ee7baa0acbcf54da11e77df",
+  "pinned_at": "2026-09-02T13:04:52.076067+00:00"
+ },
+ "srizzon/git-city": {
+  "full_name": "srizzon/git-city",
+  "stars": 5779,
+  "language": "TypeScript",
+  "description": "Your GitHub profile as a 3D pixel art building in an interactive city",
+  "html_url": "https://github.com/srizzon/git-city",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "bb4d9102af6126970bbce1fb3e20d818df4a535f",
+  "pinned_at": "2026-09-02T13:04:54.548771+00:00"
+ },
+ "shuding/cobe": {
+  "full_name": "shuding/cobe",
+  "stars": 5689,
+  "language": "TypeScript",
+  "description": "5KB WebGL globe lib.",
+  "html_url": "https://github.com/shuding/cobe",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "04b800b72abfcdc2253309e388477d17015afd71",
+  "pinned_at": "2026-09-02T13:04:52.876244+00:00"
+ },
+ "regl-project/regl": {
+  "full_name": "regl-project/regl",
+  "stars": 5577,
+  "language": "JavaScript",
+  "description": "\ud83d\udc51 Functional WebGL",
+  "html_url": "https://github.com/regl-project/regl",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "581f8071182a8127d37a0cd1d3b035d7e5fef074",
+  "pinned_at": "2026-09-02T13:04:53.501760+00:00"
+ },
+ "spritejs/spritejs": {
+  "full_name": "spritejs/spritejs",
+  "stars": 5390,
+  "language": "JavaScript",
+  "description": "A cross platform high-performance graphics system.",
+  "html_url": "https://github.com/spritejs/spritejs",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "c2393573adfd427ca6de0689efae3fc0ccc9356e",
+  "pinned_at": "2026-09-02T13:04:56.324483+00:00"
+ },
+ "Orillusion/orillusion": {
+  "full_name": "Orillusion/orillusion",
+  "stars": 5211,
+  "language": "TypeScript",
+  "description": "Orillusion is a pure Web3D rendering engine which is fully developed based on the WebGPU standard.",
+  "html_url": "https://github.com/Orillusion/orillusion",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "908fd3d65c8d4b6b4fc11117e3323bee047faa76",
+  "pinned_at": "2026-09-02T13:04:54.278203+00:00"
+ },
+ "nicholas-ochoa/OpenSC2K": {
+  "full_name": "nicholas-ochoa/OpenSC2K",
+  "stars": 5105,
+  "language": "JavaScript",
+  "description": "OpenSC2K - An Open Source remake of Sim City 2000 by Maxis",
+  "html_url": "https://github.com/nicholas-ochoa/OpenSC2K",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "efb769bf01fb7ac56a97dd0f259a662fec36f260",
+  "pinned_at": "2026-09-02T13:04:57.822499+00:00"
+ },
+ "mpetroff/pannellum": {
+  "full_name": "mpetroff/pannellum",
+  "stars": 4887,
+  "language": "JavaScript",
+  "description": "Pannellum is a lightweight, free, and open source panorama viewer for the web.",
+  "html_url": "https://github.com/mpetroff/pannellum",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "99f4afd686e807d374a764231a58255f7dd853b6",
+  "pinned_at": "2026-09-02T13:04:56.348126+00:00"
+ },
+ "xiangechen/chili3d": {
+  "full_name": "xiangechen/chili3d",
+  "stars": 4790,
+  "language": "TypeScript",
+  "description": "A 3D CAD running entirely in the browser",
+  "html_url": "https://github.com/xiangechen/chili3d",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript",
+   "topic:webassembly stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "c5b8047ca44e72b6abc3d9e16d05aff109a48092",
+  "pinned_at": "2026-09-02T13:04:56.653472+00:00"
+ },
+ "anvaka/VivaGraphJS": {
+  "full_name": "anvaka/VivaGraphJS",
+  "stars": 3859,
+  "language": "JavaScript",
+  "description": "Graph drawing library for JavaScript",
+  "html_url": "https://github.com/anvaka/VivaGraphJS",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "e7d55f2405e2abeeee1cef236a195d1c063c9355",
+  "pinned_at": "2026-09-02T13:04:54.932413+00:00"
+ },
+ "Rezmason/matrix": {
+  "full_name": "Rezmason/matrix",
+  "stars": 3828,
+  "language": "JavaScript",
+  "description": "matrix (web-based green code rain, made with love)",
+  "html_url": "https://github.com/Rezmason/matrix",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "5ba90490453ceceb6812d6b1bc658a99a92411d0",
+  "pinned_at": "2026-09-02T13:04:56.957462+00:00"
+ },
+ "jasonlong/isometric-contributions": {
+  "full_name": "jasonlong/isometric-contributions",
+  "stars": 3690,
+  "language": "JavaScript",
+  "description": "Browser extension for rendering an isometric pixel art version of your GitHub contribution graph.",
+  "html_url": "https://github.com/jasonlong/isometric-contributions",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "db256d5f06685336d9d8fc332f217d3d24cbcf34",
+  "pinned_at": "2026-09-02T13:05:05.031652+00:00"
+ },
+ "Tresjs/tres": {
+  "full_name": "Tresjs/tres",
+  "stars": 3685,
+  "language": "Vue",
+  "description": "Declarative ThreeJS using Vue Components",
+  "html_url": "https://github.com/Tresjs/tres",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "962b9ea5e3e318384842653ac94056edc1df5442",
+  "pinned_at": "2026-09-02T13:04:58.010755+00:00"
+ },
+ "kovacsv/Online3DViewer": {
+  "full_name": "kovacsv/Online3DViewer",
+  "stars": 3678,
+  "language": "JavaScript",
+  "description": "A solution to visualize and explore 3D models in your browser.",
+  "html_url": "https://github.com/kovacsv/Online3DViewer",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "d025663dcdd101527e87971d9ae2cf16f02949b4",
+  "pinned_at": "2026-09-02T13:04:56.644678+00:00"
+ },
+ "PixelsCommander/HTML-GL": {
+  "full_name": "PixelsCommander/HTML-GL",
+  "stars": 3519,
+  "language": "JavaScript",
+  "description": "Get as many FPS as you need and amazing effects by rendering HTML/CSS in WebGL",
+  "html_url": "https://github.com/PixelsCommander/HTML-GL",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "6e58d6adc4d31c17ce9802955e84d90f39512be3",
+  "pinned_at": "2026-09-02T13:04:59.417281+00:00"
+ },
+ "paper-design/shaders": {
+  "full_name": "paper-design/shaders",
+  "stars": 3409,
+  "language": "TypeScript",
+  "description": "Zero-dependency canvas shaders that can be installed from npm or designed in Paper",
+  "html_url": "https://github.com/paper-design/shaders",
+  "archived": false,
+  "stratum": "S1_web3d_graphics",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "7002061d8389781a45e479584deeca0cf538474e",
+  "pinned_at": "2026-09-02T13:04:59.098382+00:00"
+ },
+ "d3/d3": {
+  "full_name": "d3/d3",
+  "stars": 113596,
+  "language": "Shell",
+  "description": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+  "html_url": "https://github.com/d3/d3",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000",
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "ca958d45217b4c15332d971b935451a6d4c978f4",
+  "pinned_at": "2026-09-02T13:05:02.069470+00:00"
+ },
+ "grafana/grafana": {
+  "full_name": "grafana/grafana",
+  "stars": 76563,
+  "language": "TypeScript",
+  "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+  "html_url": "https://github.com/grafana/grafana",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "a152335c7991588e66a1083f27d43746e39e9c8a",
+  "pinned_at": "2026-09-02T13:05:00.839369+00:00"
+ },
+ "chartjs/Chart.js": {
+  "full_name": "chartjs/Chart.js",
+  "stars": 67675,
+  "language": "JavaScript",
+  "description": "Simple HTML5 Charts using the <canvas> tag",
+  "html_url": "https://github.com/chartjs/Chart.js",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+  "pinned_at": "2026-09-02T13:05:00.054218+00:00"
+ },
+ "apache/echarts": {
+  "full_name": "apache/echarts",
+  "stars": 67218,
+  "language": "TypeScript",
+  "description": "Apache ECharts is a powerful, interactive charting and data visualization library for browser",
+  "html_url": "https://github.com/apache/echarts",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "30076aedcd7b7f65d8dd8e8d9ece46ce778133a3",
+  "pinned_at": "2026-09-02T13:05:00.839810+00:00"
+ },
+ "recharts/recharts": {
+  "full_name": "recharts/recharts",
+  "stars": 27532,
+  "language": "TypeScript",
+  "description": "Redefined chart library built with React and D3",
+  "html_url": "https://github.com/recharts/recharts",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:chart stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "3c671e389179b3698dfa5d483a71e0746311db4e",
+  "pinned_at": "2026-09-02T13:05:00.326704+00:00"
+ },
+ "processing/p5.js": {
+  "full_name": "processing/p5.js",
+  "stars": 23929,
+  "language": "JavaScript",
+  "description": "p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. Looking for p5.js 2.0? http://beta.p5js.org",
+  "html_url": "https://github.com/processing/p5.js",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:creative-coding stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4b096e2fa5955bab6bf6c9c2c7b87bf04ec5393d",
+  "pinned_at": "2026-09-02T13:05:00.964020+00:00"
+ },
+ "airbnb/visx": {
+  "full_name": "airbnb/visx",
+  "stars": 21034,
+  "language": "TypeScript",
+  "description": "\ud83d\udc2f visx | visualization components",
+  "html_url": "https://github.com/airbnb/visx",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000",
+   "topic:chart stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "485c0359664ee8e612992defb16e1f035ed40b23",
+  "pinned_at": "2026-09-02T13:05:02.125630+00:00"
+ },
+ "plotly/plotly.js": {
+  "full_name": "plotly/plotly.js",
+  "stars": 18316,
+  "language": "JavaScript",
+  "description": "Open-source JavaScript charting library behind Plotly and Dash",
+  "html_url": "https://github.com/plotly/plotly.js",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "389d256dc76e0d5d9f2d5ce7f7fcd587af299ce0",
+  "pinned_at": "2026-09-02T13:05:02.586254+00:00"
+ },
+ "CesiumGS/cesium": {
+  "full_name": "CesiumGS/cesium",
+  "stars": 15641,
+  "language": "JavaScript",
+  "description": "An open-source JavaScript library for world-class 3D globes and maps :earth_americas:",
+  "html_url": "https://github.com/CesiumGS/cesium",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "845a06b71d37a38604a8045a479dd3567453009a",
+  "pinned_at": "2026-09-02T13:05:03.061709+00:00"
+ },
+ "apexcharts/apexcharts.js": {
+  "full_name": "apexcharts/apexcharts.js",
+  "stars": 15145,
+  "language": "JavaScript",
+  "description": "\ud83d\udcca Interactive JavaScript Charts built on SVG",
+  "html_url": "https://github.com/apexcharts/apexcharts.js",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4b4b22688deba244a3b033e0ed5b62e237abe142",
+  "pinned_at": "2026-09-02T13:05:03.765671+00:00"
+ },
+ "frappe/charts": {
+  "full_name": "frappe/charts",
+  "stars": 15080,
+  "language": "JavaScript",
+  "description": "Simple, responsive, modern SVG Charts with zero dependencies",
+  "html_url": "https://github.com/frappe/charts",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "7b15424c3af80b1c8e178d8e612c290d2d630904",
+  "pinned_at": "2026-09-02T13:05:05.367686+00:00"
+ },
+ "visgl/deck.gl": {
+  "full_name": "visgl/deck.gl",
+  "stars": 14548,
+  "language": "TypeScript",
+  "description": "WebGL2 powered visualization framework",
+  "html_url": "https://github.com/visgl/deck.gl",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "826dc1a45eccd923b7d7052b12237bc7fcc601a7",
+  "pinned_at": "2026-09-02T13:05:03.232431+00:00"
+ },
+ "antvis/G2": {
+  "full_name": "antvis/G2",
+  "stars": 12601,
+  "language": "TypeScript",
+  "description": "\ud83d\udcca The concise and progressive visualization grammar.",
+  "html_url": "https://github.com/antvis/G2",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "v5",
+  "head_sha": "9bc2ccfbdbe4a2c4831aed58bb8d1e3df48b730d",
+  "pinned_at": "2026-09-02T13:05:06.098130+00:00"
+ },
+ "mapbox/mapbox-gl-js": {
+  "full_name": "mapbox/mapbox-gl-js",
+  "stars": 12394,
+  "language": "TypeScript",
+  "description": "Interactive, thoroughly customizable maps in the browser, powered by vector tiles and WebGL",
+  "html_url": "https://github.com/mapbox/mapbox-gl-js",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:webgl stars:>=2000",
+   "topic:3d stars:>=1000 language:TypeScript",
+   "topic:webgl stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "aaa47615970d28f0f5a8a12b7ed6baabb75cf6ad",
+  "pinned_at": "2026-09-02T13:05:05.292763+00:00"
+ },
+ "antvis/G6": {
+  "full_name": "antvis/G6",
+  "stars": 12283,
+  "language": "TypeScript",
+  "description": "\u267e A Graph Visualization Framework in JavaScript.",
+  "html_url": "https://github.com/antvis/G6",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "v5",
+  "head_sha": "7b7ff8e2b52609486840963dc1608d9f565e7f66",
+  "pinned_at": "2026-09-02T13:05:05.568579+00:00"
+ },
+ "jacomyal/sigma.js": {
+  "full_name": "jacomyal/sigma.js",
+  "stars": 12158,
+  "language": "TypeScript",
+  "description": "A JavaScript library aimed at visualizing graphs of thousands of nodes and edges",
+  "html_url": "https://github.com/jacomyal/sigma.js",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "d32c4e5bfd4c5f49724ebc21bd786b01be555dac",
+  "pinned_at": "2026-09-02T13:05:06.082299+00:00"
+ },
+ "keplergl/kepler.gl": {
+  "full_name": "keplergl/kepler.gl",
+  "stars": 11995,
+  "language": "TypeScript",
+  "description": "Kepler.gl is a powerful open source geospatial analysis tool for large-scale data sets.",
+  "html_url": "https://github.com/keplergl/kepler.gl",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "13d230b983472834fd950dd986ec8600676f62c2",
+  "pinned_at": "2026-09-02T13:05:07.636078+00:00"
+ },
+ "leeoniya/uPlot": {
+  "full_name": "leeoniya/uPlot",
+  "stars": 10462,
+  "language": "JavaScript",
+  "description": "\ud83d\udcc8 A small, fast chart for time series, lines, areas, ohlc & bars",
+  "html_url": "https://github.com/leeoniya/uPlot",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000",
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "0e5812c504430f5c804e0f993376d8999b26cc34",
+  "pinned_at": "2026-09-02T13:05:08.211601+00:00"
+ },
+ "c3js/c3": {
+  "full_name": "c3js/c3",
+  "stars": 9350,
+  "language": "JavaScript",
+  "description": ":bar_chart: A D3-based reusable chart library",
+  "html_url": "https://github.com/c3js/c3",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000",
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "aef612c481b020b269f4c128bd5f8cf54473f180",
+  "pinned_at": "2026-09-02T13:05:11.115503+00:00"
+ },
+ "rawgraphs/rawgraphs-app": {
+  "full_name": "rawgraphs/rawgraphs-app",
+  "stars": 9025,
+  "language": "JavaScript",
+  "description": "A web interface to create custom vector-based visualizations on top of RAWGraphs core",
+  "html_url": "https://github.com/rawgraphs/rawgraphs-app",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "b7b2909111cc029ccf418dc3e7d079e0f4c50d6f",
+  "pinned_at": "2026-09-02T13:05:07.939258+00:00"
+ },
+ "uber/react-vis": {
+  "full_name": "uber/react-vis",
+  "stars": 8787,
+  "language": "JavaScript",
+  "description": "Data Visualization Components",
+  "html_url": "https://github.com/uber/react-vis",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000",
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "92e2af2eac8269cb6aefaee9864cd1bd14666d80",
+  "pinned_at": "2026-09-02T13:05:09.013190+00:00"
+ },
+ "visgl/react-map-gl": {
+  "full_name": "visgl/react-map-gl",
+  "stars": 8498,
+  "language": "TypeScript",
+  "description": "React friendly API wrapper around MapboxGL JS",
+  "html_url": "https://github.com/visgl/react-map-gl",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "4b649aaf926adacb3ffba4b7c5d8edebaca90f8a",
+  "pinned_at": "2026-09-02T13:05:09.429582+00:00"
+ },
+ "NorthwoodsSoftware/GoJS": {
+  "full_name": "NorthwoodsSoftware/GoJS",
+  "stars": 8470,
+  "language": "JavaScript",
+  "description": "JavaScript diagramming library for interactive flowcharts, org charts, design tools, planning tools, visual languages.",
+  "html_url": "https://github.com/NorthwoodsSoftware/GoJS",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000",
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "541a783a7fca0458ce192e26e2e63441f1be43bd",
+  "pinned_at": "2026-09-02T13:05:08.441308+00:00"
+ },
+ "antvis/F2": {
+  "full_name": "antvis/F2",
+  "stars": 7992,
+  "language": "JavaScript",
+  "description": "\ud83d\udcf1\ud83d\udcc8An elegant, interactive and flexible charting library for mobile.",
+  "html_url": "https://github.com/antvis/F2",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "fff56a0f6e0d6109a003bfb29b3376ab9865c731",
+  "pinned_at": "2026-09-02T13:05:10.272893+00:00"
+ },
+ "timqian/chart.xkcd": {
+  "full_name": "timqian/chart.xkcd",
+  "stars": 7859,
+  "language": "JavaScript",
+  "description": "xkcd styled chart lib",
+  "html_url": "https://github.com/timqian/chart.xkcd",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "9a6913fbd64d0327882d11d0cd4d00eeca0d3c36",
+  "pinned_at": "2026-09-02T13:05:10.693258+00:00"
+ },
+ "alibaba/x-render": {
+  "full_name": "alibaba/x-render",
+  "stars": 7855,
+  "language": "TypeScript",
+  "description": "\ud83d\udeb4\u200d\u2640\ufe0f Very easy to use process form table chart solution.",
+  "html_url": "https://github.com/alibaba/x-render",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "33027864d98ab917f06a4e2656fd7c5bba3bfa2c",
+  "pinned_at": "2026-09-02T13:05:12.064815+00:00"
+ },
+ "ecomfe/echarts-for-weixin": {
+  "full_name": "ecomfe/echarts-for-weixin",
+  "stars": 7510,
+  "language": "JavaScript",
+  "description": "\u57fa\u4e8e Apache ECharts \u7684\u5fae\u4fe1\u5c0f\u7a0b\u5e8f\u56fe\u8868\u5e93",
+  "html_url": "https://github.com/ecomfe/echarts-for-weixin",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:chart stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "82e6cdfe5347265c04cced222bd6398dcb6eb279",
+  "pinned_at": "2026-09-02T13:05:12.371850+00:00"
+ },
+ "ChatLab/ChatLab": {
+  "full_name": "ChatLab/ChatLab",
+  "stars": 7291,
+  "language": "TypeScript",
+  "description": "Local-first chat history analyzer with AI. | \u672c\u5730\u4f18\u5148\u7684 AI \u804a\u5929\u8bb0\u5f55\u5206\u6790\u5de5\u5177",
+  "html_url": "https://github.com/ChatLab/ChatLab",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "f8e482e2a9bd536848eb39a7f99d91692ccf8584",
+  "pinned_at": "2026-09-02T13:05:10.510648+00:00"
+ },
+ "jwilber/roughViz": {
+  "full_name": "jwilber/roughViz",
+  "stars": 7153,
+  "language": "JavaScript",
+  "description": "Reusable JavaScript library for creating sketchy/hand-drawn styled charts in the browser.",
+  "html_url": "https://github.com/jwilber/roughViz",
+  "archived": false,
+  "stratum": "S2_dataviz_creative",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:data-visualization stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "17c7ea86bfa2e9f1d76fbc8ebcff3f414d374d76",
+  "pinned_at": "2026-09-02T13:05:12.992296+00:00"
+ },
+ "janhq/jan": {
+  "full_name": "janhq/jan",
+  "stars": 44299,
+  "language": "TypeScript",
+  "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
+  "html_url": "https://github.com/janhq/jan",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "9e12b2a80edb98a2776637f4ab2c5bee953c5cb3",
+  "pinned_at": "2026-09-02T13:05:11.849297+00:00"
+ },
+ "naptha/tesseract.js": {
+  "full_name": "naptha/tesseract.js",
+  "stars": 38687,
+  "language": "JavaScript",
+  "description": "Pure Javascript OCR for more than 100 Languages \ud83d\udcd6\ud83c\udf89\ud83d\udda5",
+  "html_url": "https://github.com/naptha/tesseract.js",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:deep-learning stars:>=2000",
+   "topic:deep-learning stars:>=1000 language:JavaScript",
+   "topic:webassembly stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "a1ca80d9e31c34512d0ded75ff8821ddcf3f2f91",
+  "pinned_at": "2026-09-02T13:05:14.066607+00:00"
+ },
+ "CopilotKit/CopilotKit": {
+  "full_name": "CopilotKit/CopilotKit",
+  "stars": 37163,
+  "language": "TypeScript",
+  "description": "The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more.  Makers of the AG-UI Protocol",
+  "html_url": "https://github.com/CopilotKit/CopilotKit",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4082a1a93a53ce681862c9c6bbe4d0c8e26be8da",
+  "pinned_at": "2026-09-02T13:05:14.663995+00:00"
+ },
+ "SillyTavern/SillyTavern": {
+  "full_name": "SillyTavern/SillyTavern",
+  "stars": 32945,
+  "language": "JavaScript",
+  "description": "LLM Frontend for Power Users.",
+  "html_url": "https://github.com/SillyTavern/SillyTavern",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "release",
+  "head_sha": "8172dcd0ee672d3cd9a5e5f7af134f91a45cd2b8",
+  "pinned_at": "2026-09-02T13:05:13.418785+00:00"
+ },
+ "mastra-ai/mastra": {
+  "full_name": "mastra-ai/mastra",
+  "stars": 27640,
+  "language": "TypeScript",
+  "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
+  "html_url": "https://github.com/mastra-ai/mastra",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "e983f749873189f767f509eb33d1a3596c0f1c74",
+  "pinned_at": "2026-09-02T13:05:14.018535+00:00"
+ },
+ "vercel/ai": {
+  "full_name": "vercel/ai",
+  "stars": 26540,
+  "language": "TypeScript",
+  "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
+  "html_url": "https://github.com/vercel/ai",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript",
+   "topic:react stars:>=2000",
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "72435300083e28d5027747eddd04e542edb5b0be",
+  "pinned_at": "2026-09-02T13:05:13.946434+00:00"
+ },
+ "tensorflow/tfjs": {
+  "full_name": "tensorflow/tfjs",
+  "stars": 19135,
+  "language": "TypeScript",
+  "description": "A WebGL accelerated JavaScript library for training and deploying ML models.",
+  "html_url": "https://github.com/tensorflow/tfjs",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:webgl stars:>=1000 language:TypeScript",
+   "topic:machine-learning stars:>=2000",
+   "topic:deep-learning stars:>=2000",
+   "topic:neural-network stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "7f5309fef0a47545e34049903dbdae0f97285f7e",
+  "pinned_at": "2026-09-02T13:05:16.704666+00:00"
+ },
+ "rowboatlabs/rowboat": {
+  "full_name": "rowboatlabs/rowboat",
+  "stars": 17450,
+  "language": "TypeScript",
+  "description": "Open-source AI coworker, with memory",
+  "html_url": "https://github.com/rowboatlabs/rowboat",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript",
+   "topic:productivity stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "f7f480d8d3fdf7c19ee065136fadcedfaa3861bf",
+  "pinned_at": "2026-09-02T13:05:14.676715+00:00"
+ },
+ "emilwallner/Screenshot-to-code": {
+  "full_name": "emilwallner/Screenshot-to-code",
+  "stars": 16497,
+  "language": "HTML",
+  "description": "A neural network that transforms a design mock-up into a static website.",
+  "html_url": "https://github.com/emilwallner/Screenshot-to-code",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:machine-learning stars:>=2000",
+   "topic:deep-learning stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "f7f8ceee38094e990fec5a76e10f50d8b91a5033",
+  "pinned_at": "2026-09-02T13:05:15.069596+00:00"
+ },
+ "Anionex/banana-slides": {
+  "full_name": "Anionex/banana-slides",
+  "stars": 15541,
+  "language": "TypeScript",
+  "description": "\u4e00\u7ad9\u5f0f\u539f\u751fAI PPT\u751f\u6210\u5e94\u7528\uff0c\u51e0\u5206\u949f\u5185\u751f\u6210\u4e00\u5957\u5e7b\u706f\u7247; \u652f\u6301\u4e0a\u4f20\u4efb\u610f\u6a21\u677f\u56fe\u7247\uff0c\u4e0a\u4f20\u4efb\u610f\u7d20\u6750&\u667a\u80fd\u89e3\u6790\uff0c\u4e00\u53e5\u8bdd/\u5927\u7eb2/\u9875\u9762\u63cf\u8ff0\u81ea\u52a8\u751f\u6210PPT\uff0c\u53e3\u5934\u4fee\u6539\u6307\u5b9a\u533a\u57df\u3001\u4e00\u952e\u5bfc\u51fa\u53ef\u7f16\u8f91ppt\u3001\u89c6\u9891\u7b49 - An AI-native slides generator based on nano banana pro\ud83c\udf4c",
+  "html_url": "https://github.com/Anionex/banana-slides",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "965331273bc949e251f9ccd70abd50e4d9910360",
+  "pinned_at": "2026-09-02T13:05:15.119613+00:00"
+ },
+ "gpujs/gpu.js": {
+  "full_name": "gpujs/gpu.js",
+  "stars": 15428,
+  "language": "JavaScript",
+  "description": "GPU Accelerated JavaScript",
+  "html_url": "https://github.com/gpujs/gpu.js",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "develop",
+  "head_sha": "7d364e99d835126fe769cd2527c46e17a0b00559",
+  "pinned_at": "2026-09-02T13:05:16.568201+00:00"
+ },
+ "botpress/botpress": {
+  "full_name": "botpress/botpress",
+  "stars": 14887,
+  "language": "TypeScript",
+  "description": "The open-source hub to build & deploy GPT/LLM Agents \u26a1\ufe0f",
+  "html_url": "https://github.com/botpress/botpress",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "9b6a5141489f19794522a793724c3d1083d8b112",
+  "pinned_at": "2026-09-02T13:05:16.604390+00:00"
+ },
+ "ConardLi/easy-dataset": {
+  "full_name": "ConardLi/easy-dataset",
+  "stars": 14874,
+  "language": "JavaScript",
+  "description": "A powerful tool for creating datasets for LLM fine-tuning \u3001RAG and Eval",
+  "html_url": "https://github.com/ConardLi/easy-dataset",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4002b09d9c5726cafb9f61a8d12765cb96a2d94b",
+  "pinned_at": "2026-09-02T13:05:16.371362+00:00"
+ },
+ "BrainJS/brain.js": {
+  "full_name": "BrainJS/brain.js",
+  "stars": 14863,
+  "language": "TypeScript",
+  "description": "\ud83e\udd16 GPU accelerated Neural networks in JavaScript for Browsers and Node.js",
+  "html_url": "https://github.com/BrainJS/brain.js",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:neural-network stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "7c9db32d9c3894ae494e6497eb7b7a9ff28a6999",
+  "pinned_at": "2026-09-02T13:05:16.600074+00:00"
+ },
+ "NanmiCoder/cc-haha": {
+  "full_name": "NanmiCoder/cc-haha",
+  "stars": 14263,
+  "language": "TypeScript",
+  "description": "Local-first cross-platform desktop workspace for Claude Code / agents: multi-agent, Git worktrees, code diffs, skill marketplace, multi-model, Computer Use, task-aware desktop pets, with WeChat, Feishu, DingTalk, Telegram, WhatsApp and H5 access.",
+  "html_url": "https://github.com/NanmiCoder/cc-haha",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "e28d0a653481ef41b7a329411eeb2f0fd5656731",
+  "pinned_at": "2026-09-02T13:05:16.581061+00:00"
+ },
+ "fathah/hermes-desktop": {
+  "full_name": "fathah/hermes-desktop",
+  "stars": 14102,
+  "language": "TypeScript",
+  "description": "Desktop Companion for Hermes Agent",
+  "html_url": "https://github.com/fathah/hermes-desktop",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "9756351e2398af6efbd3294541e23041b497324b",
+  "pinned_at": "2026-09-02T13:05:18.105021+00:00"
+ },
+ "browseros-ai/BrowserOS": {
+  "full_name": "browseros-ai/BrowserOS",
+  "stars": 13485,
+  "language": "TypeScript",
+  "description": "\ud83c\udf10 The open-source Agentic browser; alternative to ChatGPT Atlas, Perplexity Comet, Dia.",
+  "html_url": "https://github.com/browseros-ai/BrowserOS",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "379f38435c5b065b55f14449b4ad7aeb59311e83",
+  "pinned_at": "2026-09-02T13:05:17.373200+00:00"
+ },
+ "lidge-jun/opencodex": {
+  "full_name": "lidge-jun/opencodex",
+  "stars": 12979,
+  "language": "TypeScript",
+  "description": "Universal provider proxy for OpenAI Codex & Claude Code \u2014 use any LLM (Claude, Gemini, Grok, DeepSeek, Ollama\u2026) with Codex CLI, App, SDK, and Claude Code",
+  "html_url": "https://github.com/lidge-jun/opencodex",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=2000",
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "35ff3a462e786bd5efc394dfb1a8a5cc946e454f",
+  "pinned_at": "2026-09-02T13:05:18.201718+00:00"
+ },
+ "jina-ai/reader": {
+  "full_name": "jina-ai/reader",
+  "stars": 11944,
+  "language": "TypeScript",
+  "description": "Convert any URL to an LLM-friendly input with a simple prefix https://r.jina.ai/",
+  "html_url": "https://github.com/jina-ai/reader",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "1574bfd380d249c86c82db4dace0d9c8fe17e2b1",
+  "pinned_at": "2026-09-02T13:05:19.410998+00:00"
+ },
+ "humanlayer/humanlayer": {
+  "full_name": "humanlayer/humanlayer",
+  "stars": 11363,
+  "language": "TypeScript",
+  "description": "The best way to get AI coding agents to solve hard problems in complex codebases.",
+  "html_url": "https://github.com/humanlayer/humanlayer",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "99abe673498cf8bdcd5f989aebe9406a27185b3b",
+  "pinned_at": "2026-09-02T13:05:22.653121+00:00"
+ },
+ "MemTensor/MemOS": {
+  "full_name": "MemTensor/MemOS",
+  "stars": 11155,
+  "language": "TypeScript",
+  "description": "Self-evolving memory OS for LLM & AI Agents: ultra-persistent memory, hybrid-retrieval, and cross-task skill reuse, with 35.24% token savings and DeepSeek Harness support.",
+  "html_url": "https://github.com/MemTensor/MemOS",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "28dfb4e7d3adad1c93fd5574675f913921367d36",
+  "pinned_at": "2026-09-02T13:05:21.140729+00:00"
+ },
+ "holaboss-ai/holaOS": {
+  "full_name": "holaboss-ai/holaOS",
+  "stars": 11117,
+  "language": "TypeScript",
+  "description": "Open-source agentic workspace enterprises can make their own. Connect the systems you already run \u2014 100+ integrations, MCP, chat tools, apps, browser, local files \u2014 with shared memory. Any agent (Claude Code, Codex), any model, or BYOK. Set up in clicks, not months. Local-first: your data never leav",
+  "html_url": "https://github.com/holaboss-ai/holaOS",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4684714ee133794cdbb86630e42b7d93447fb2e2",
+  "pinned_at": "2026-09-02T13:05:22.139764+00:00"
+ },
+ "voxel51/fiftyone": {
+  "full_name": "voxel51/fiftyone",
+  "stars": 11052,
+  "language": "TypeScript",
+  "description": "Refine high-quality datasets and visual AI models",
+  "html_url": "https://github.com/voxel51/fiftyone",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:machine-learning stars:>=2000",
+   "topic:deep-learning stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "57fb484da6daa8209ed5dc4976747565c3c484e3",
+  "pinned_at": "2026-09-02T13:05:20.422876+00:00"
+ },
+ "getumbrel/llama-gpt": {
+  "full_name": "getumbrel/llama-gpt",
+  "stars": 10939,
+  "language": "TypeScript",
+  "description": "A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your device. New: Code Llama support!",
+  "html_url": "https://github.com/getumbrel/llama-gpt",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "43994a365ffb067d58fc36cd363b2114a9037a48",
+  "pinned_at": "2026-09-02T13:05:19.922152+00:00"
+ },
+ "huggingface/chat-ui": {
+  "full_name": "huggingface/chat-ui",
+  "stars": 10924,
+  "language": "TypeScript",
+  "description": "The open source codebase powering HuggingChat",
+  "html_url": "https://github.com/huggingface/chat-ui",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "5c0b0ba702d5a527fe537303558068bbb4d635f2",
+  "pinned_at": "2026-09-02T13:05:21.696927+00:00"
+ },
+ "EKKOLearnAI/hermes-studio": {
+  "full_name": "EKKOLearnAI/hermes-studio",
+  "stars": 10790,
+  "language": "TypeScript",
+  "description": "Web dashboard for Hermes Agent \u2014 multi-platform AI chat, session management, scheduled jobs, usage analytics ",
+  "html_url": "https://github.com/EKKOLearnAI/hermes-studio",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "28ac292cf8fdce916240ee47be5e13e24d5f2319",
+  "pinned_at": "2026-09-02T13:05:23.996260+00:00"
+ },
+ "VoltAgent/voltagent": {
+  "full_name": "VoltAgent/voltagent",
+  "stars": 10521,
+  "language": "TypeScript",
+  "description": "AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework",
+  "html_url": "https://github.com/VoltAgent/voltagent",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de",
+  "pinned_at": "2026-09-02T13:05:23.733123+00:00"
+ },
+ "chaitin/PandaWiki": {
+  "full_name": "chaitin/PandaWiki",
+  "stars": 10180,
+  "language": "TypeScript",
+  "description": "PandaWiki \u662f\u4e00\u6b3e AI \u5927\u6a21\u578b\u9a71\u52a8\u7684\u5f00\u6e90\u77e5\u8bc6\u5e93\u642d\u5efa\u7cfb\u7edf\uff0c\u5e2e\u52a9\u4f60\u5feb\u901f\u6784\u5efa\u667a\u80fd\u5316\u7684 \u4ea7\u54c1\u6587\u6863\u3001\u6280\u672f\u6587\u6863\u3001FAQ\u3001\u535a\u5ba2\u7cfb\u7edf\uff0c\u501f\u52a9\u5927\u6a21\u578b\u7684\u529b\u91cf\u4e3a\u4f60\u63d0\u4f9b AI \u521b\u4f5c\u3001AI \u95ee\u7b54\u3001AI \u641c\u7d22\u7b49\u80fd\u529b\u3002",
+  "html_url": "https://github.com/chaitin/PandaWiki",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "6469a8229fd8d5e27618b44d679553c336385b51",
+  "pinned_at": "2026-09-02T13:05:23.399361+00:00"
+ },
+ "microsoft/TypeChat": {
+  "full_name": "microsoft/TypeChat",
+  "stars": 8682,
+  "language": "TypeScript",
+  "description": "TypeChat is a library that makes it easy to build natural language interfaces using types.",
+  "html_url": "https://github.com/microsoft/TypeChat",
+  "archived": false,
+  "stratum": "S3_ai_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:llm stars:>=1000 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "83caa1242d9a9a707a4a66bfbc5fe6174cbcb8dc",
+  "pinned_at": "2026-09-02T13:05:24.705672+00:00"
+ },
+ "microsoft/vscode": {
+  "full_name": "microsoft/vscode",
+  "stars": 190404,
+  "language": "TypeScript",
+  "description": "Visual Studio Code",
+  "html_url": "https://github.com/microsoft/vscode",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "9dfde22995466b642f6dbd06b245bcc6591bd487",
+  "pinned_at": "2026-09-02T13:05:24.046074+00:00"
+ },
+ "excalidraw/excalidraw": {
+  "full_name": "excalidraw/excalidraw",
+  "stars": 130994,
+  "language": "TypeScript",
+  "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+  "html_url": "https://github.com/excalidraw/excalidraw",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:whiteboard stars:>=2000",
+   "topic:productivity stars:>=2000",
+   "topic:collaboration stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "e1bb9ff8f8931e783c11d104abb8967ac6605c9a",
+  "pinned_at": "2026-09-02T13:05:24.602285+00:00"
+ },
+ "OpenCut-app/OpenCut": {
+  "full_name": "OpenCut-app/OpenCut",
+  "stars": 88462,
+  "language": "TypeScript",
+  "description": "The open-source CapCut alternative",
+  "html_url": "https://github.com/OpenCut-app/OpenCut",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "400f097becba5db0fbc305d5a65348cb81c20356",
+  "pinned_at": "2026-09-02T13:05:24.450406+00:00"
+ },
+ "toeverything/AFFiNE": {
+  "full_name": "toeverything/AFFiNE",
+  "stars": 72115,
+  "language": "TypeScript",
+  "description": "There can be more than Notion and Miro. AFFiNE(pronounced [\u0259\u2018fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. ",
+  "html_url": "https://github.com/toeverything/AFFiNE",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:whiteboard stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "canary",
+  "head_sha": "f78e46f90e112f33df063b97cd38f636dfc5b212",
+  "pinned_at": "2026-09-02T13:05:25.149001+00:00"
+ },
+ "marktext/marktext": {
+  "full_name": "marktext/marktext",
+  "stars": 60925,
+  "language": "TypeScript",
+  "description": "\ud83d\udcddA simple and elegant markdown editor, available for Linux, macOS and Windows.",
+  "html_url": "https://github.com/marktext/marktext",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "develop",
+  "head_sha": "203401e9e5d2eaa39aff8428599f510034eabdf8",
+  "pinned_at": "2026-09-02T13:05:26.144445+00:00"
+ },
+ "tldraw/tldraw": {
+  "full_name": "tldraw/tldraw",
+  "stars": 50085,
+  "language": "TypeScript",
+  "description": "Build infinite canvas apps in React with the tldraw SDK. World's best, top-most agent recommended #1 five star SDK.",
+  "html_url": "https://github.com/tldraw/tldraw",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:whiteboard stars:>=2000",
+   "topic:collaboration stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "d3d20e68c42b9c4100c6478cb3e74c693c38bc62",
+  "pinned_at": "2026-09-02T13:05:25.759035+00:00"
+ },
+ "slab/quill": {
+  "full_name": "slab/quill",
+  "stars": 47322,
+  "language": "TypeScript",
+  "description": "Quill is a modern WYSIWYG editor built for compatibility and extensibility",
+  "html_url": "https://github.com/slab/quill",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "539cbffd0a13b18e9c65eb84dd35e6596e403158",
+  "pinned_at": "2026-09-02T13:05:28.912898+00:00"
+ },
+ "microsoft/monaco-editor": {
+  "full_name": "microsoft/monaco-editor",
+  "stars": 46642,
+  "language": "JavaScript",
+  "description": "A browser based code editor",
+  "html_url": "https://github.com/microsoft/monaco-editor",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "d620ca0c03d24a51c05ae4dca8a9d5923a4aeb9c",
+  "pinned_at": "2026-09-02T13:05:27.330664+00:00"
+ },
+ "mifi/lossless-cut": {
+  "full_name": "mifi/lossless-cut",
+  "stars": 43400,
+  "language": "TypeScript",
+  "description": "The swiss army knife of lossless video/audio editing",
+  "html_url": "https://github.com/mifi/lossless-cut",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "5af02818fbf0738782e5ac13a4407218b80cc504",
+  "pinned_at": "2026-09-02T13:05:28.111326+00:00"
+ },
+ "imputnet/cobalt": {
+  "full_name": "imputnet/cobalt",
+  "stars": 42564,
+  "language": "Svelte",
+  "description": "best way to save what you love",
+  "html_url": "https://github.com/imputnet/cobalt",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:collaboration stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "a636575b09de1fc55d9b8cd98cac88f5f2f16b42",
+  "pinned_at": "2026-09-02T13:05:28.154691+00:00"
+ },
+ "drawdb-io/drawdb": {
+  "full_name": "drawdb-io/drawdb",
+  "stars": 39332,
+  "language": "JavaScript",
+  "description": "Free, simple, and intuitive online database diagram editor and SQL generator.",
+  "html_url": "https://github.com/drawdb-io/drawdb",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "5efc5fd10a27241f0844dfd31efff4a9e53a61fb",
+  "pinned_at": "2026-09-02T13:05:28.230579+00:00"
+ },
+ "DayuanJiang/next-ai-draw-io": {
+  "full_name": "DayuanJiang/next-ai-draw-io",
+  "stars": 35535,
+  "language": "TypeScript",
+  "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.",
+  "html_url": "https://github.com/DayuanJiang/next-ai-draw-io",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:productivity stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "027cd88c9088ad5b2d6deff4641dc47ded06afd2",
+  "pinned_at": "2026-09-02T13:05:28.817273+00:00"
+ },
+ "codex-team/editor.js": {
+  "full_name": "codex-team/editor.js",
+  "stars": 31923,
+  "language": "TypeScript",
+  "description": "A block-style editor with clean JSON output",
+  "html_url": "https://github.com/codex-team/editor.js",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "next",
+  "head_sha": "30e1f792abac9a29b7d614273ff0f3b36ade2b64",
+  "pinned_at": "2026-09-02T13:05:28.102160+00:00"
+ },
+ "ianstormtaylor/slate": {
+  "full_name": "ianstormtaylor/slate",
+  "stars": 31756,
+  "language": "TypeScript",
+  "description": "A completely customizable framework for building rich text editors. (Currently in beta.)",
+  "html_url": "https://github.com/ianstormtaylor/slate",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "45a16ee53fa7c54a551c755cb96af5cb39eb868d",
+  "pinned_at": "2026-09-02T13:05:30.347896+00:00"
+ },
+ "onlook-dev/onlook": {
+  "full_name": "onlook-dev/onlook",
+  "stars": 26624,
+  "language": "TypeScript",
+  "description": "The Cursor for Designers \u2022 An Open-Source AI-First Design tool \u2022 Visually build, style, and edit your React App with AI",
+  "html_url": "https://github.com/onlook-dev/onlook",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:frontend stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "423e2e924366419e418ee049093872d535eea41a",
+  "pinned_at": "2026-09-02T13:05:29.636194+00:00"
+ },
+ "lissy93/dashy": {
+  "full_name": "lissy93/dashy",
+  "stars": 26361,
+  "language": "Vue",
+  "description": "\ud83d\ude80 A self-hostable personal dashboard built for you. Includes status-checking, widgets, themes, icon packs, a UI editor and tons more!",
+  "html_url": "https://github.com/lissy93/dashy",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:productivity stars:>=2000",
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "2c6c1c7d59d97520928559802f4396834e457909",
+  "pinned_at": "2026-09-02T13:05:32.462989+00:00"
+ },
+ "benweet/stackedit": {
+  "full_name": "benweet/stackedit",
+  "stars": 23079,
+  "language": "JavaScript",
+  "description": "In-browser Markdown editor",
+  "html_url": "https://github.com/benweet/stackedit",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "6dce2a5e36b755a0c244522b48a06c91a2df0f59",
+  "pinned_at": "2026-09-02T13:05:31.246420+00:00"
+ },
+ "chartdb/chartdb": {
+  "full_name": "chartdb/chartdb",
+  "stars": 22848,
+  "language": "TypeScript",
+  "description": "Database diagrams editor that allows you to visualize and design your DB with a single query.",
+  "html_url": "https://github.com/chartdb/chartdb",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "c24936a402bb3e24b4858f05282d69a04fcfe25b",
+  "pinned_at": "2026-09-02T13:05:32.494586+00:00"
+ },
+ "yjs/yjs": {
+  "full_name": "yjs/yjs",
+  "stars": 22736,
+  "language": "JavaScript",
+  "description": "Shared data types for building collaborative software",
+  "html_url": "https://github.com/yjs/yjs",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:collaboration stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "567af9b41fe5e1290e0cfe7fcc025a9f98c514a0",
+  "pinned_at": "2026-09-02T13:05:32.348437+00:00"
+ },
+ "super-productivity/super-productivity": {
+  "full_name": "super-productivity/super-productivity",
+  "stars": 21747,
+  "language": "TypeScript",
+  "description": "Super Productivity is an advanced todo list app with integrated Timeboxing and time tracking capabilities. It also comes with integrations for Jira, GitLab, GitHub and Open Project.",
+  "html_url": "https://github.com/super-productivity/super-productivity",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:productivity stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "06be7d5fdf9eb0d7f22c319e73b0ac0d514db30c",
+  "pinned_at": "2026-09-02T13:05:33.342242+00:00"
+ },
+ "eclipse-theia/theia": {
+  "full_name": "eclipse-theia/theia",
+  "stars": 21667,
+  "language": "TypeScript",
+  "description": "Eclipse Theia is a cloud & desktop IDE framework implemented in TypeScript.",
+  "html_url": "https://github.com/eclipse-theia/theia",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "21b9b534224c55152fca0b67af7f8a8283dad2bd",
+  "pinned_at": "2026-09-02T13:05:35.125376+00:00"
+ },
+ "basecamp/trix": {
+  "full_name": "basecamp/trix",
+  "stars": 20008,
+  "language": "JavaScript",
+  "description": "A rich text editor for everyday writing",
+  "html_url": "https://github.com/basecamp/trix",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "470040131122bd44e269b4de0f2e9557f90ec994",
+  "pinned_at": "2026-09-02T13:05:34.171620+00:00"
+ },
+ "wulkano/Kap": {
+  "full_name": "wulkano/Kap",
+  "stars": 19344,
+  "language": "TypeScript",
+  "description": "An open-source screen recorder built with web technology",
+  "html_url": "https://github.com/wulkano/Kap",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:productivity stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "c42692fa63ac71ed192e01684beb78a1b864aa88",
+  "pinned_at": "2026-09-02T13:05:33.637896+00:00"
+ },
+ "alyssaxuu/screenity": {
+  "full_name": "alyssaxuu/screenity",
+  "stars": 18650,
+  "language": "JavaScript",
+  "description": "The free and privacy-friendly screen recorder with no limits \ud83c\udfa5",
+  "html_url": "https://github.com/alyssaxuu/screenity",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000",
+   "topic:productivity stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "512606387b8d07dda5e63bb428bd063f0a2a3ed0",
+  "pinned_at": "2026-09-02T13:05:34.238463+00:00"
+ },
+ "ether/etherpad": {
+  "full_name": "ether/etherpad",
+  "stars": 18517,
+  "language": "TypeScript",
+  "description": "Etherpad: A modern really-real-time collaborative document editor.",
+  "html_url": "https://github.com/ether/etherpad",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:collaboration stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "develop",
+  "head_sha": "a529aa80a224b7012c4face16e39809da77d56d6",
+  "pinned_at": "2026-09-02T13:05:35.203045+00:00"
+ },
+ "teambit/bit": {
+  "full_name": "teambit/bit",
+  "stars": 18470,
+  "language": "TypeScript",
+  "description": "AI-powered development workspaces with reusable components, architectural clarity and zero overhead.",
+  "html_url": "https://github.com/teambit/bit",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:collaboration stars:>=2000",
+   "topic:react stars:>=2000",
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "95b66bbad852ebf3f9bc6f4766c003feb14ce214",
+  "pinned_at": "2026-09-02T13:05:34.972156+00:00"
+ },
+ "tinymce/tinymce": {
+  "full_name": "tinymce/tinymce",
+  "stars": 16286,
+  "language": "TypeScript",
+  "description": "The world's #1 JavaScript library for rich text editing. Available for React, Vue and Angular",
+  "html_url": "https://github.com/tinymce/tinymce",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "9c1ee77ca0398837538115afa39e960e1a25c122",
+  "pinned_at": "2026-09-02T13:05:35.194111+00:00"
+ },
+ "omnivore-app/omnivore": {
+  "full_name": "omnivore-app/omnivore",
+  "stars": 16228,
+  "language": "JavaScript",
+  "description": "Omnivore is a complete, open source read-it-later solution for people who like reading.",
+  "html_url": "https://github.com/omnivore-app/omnivore",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:productivity stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "f19900055fb7f05c4e832cb6773a731908c25e5b",
+  "pinned_at": "2026-09-02T13:05:36.812788+00:00"
+ },
+ "yabwe/medium-editor": {
+  "full_name": "yabwe/medium-editor",
+  "stars": 16102,
+  "language": "JavaScript",
+  "description": "Medium.com WYSIWYG editor clone. Uses contenteditable API to implement a rich text solution.",
+  "html_url": "https://github.com/yabwe/medium-editor",
+  "archived": false,
+  "stratum": "S4_webapps_editors",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:editor stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "d113a74437fda6f1cbd5f146b0f2c46288b118ea",
+  "pinned_at": "2026-09-02T13:05:37.699860+00:00"
+ },
+ "phaserjs/phaser": {
+  "full_name": "phaserjs/phaser",
+  "stars": 40246,
+  "language": "JavaScript",
+  "description": "Phaser is a fun, free and fast 2D game framework for making HTML5 games for desktop and mobile web browsers, supporting Canvas and WebGL rendering.",
+  "html_url": "https://github.com/phaserjs/phaser",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:game-development stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "02d8931b626d9764c133cbb3fbf99966c03c757c",
+  "pinned_at": "2026-09-02T13:05:37.198773+00:00"
+ },
+ "4ian/GDevelop": {
+  "full_name": "4ian/GDevelop",
+  "stars": 26139,
+  "language": "JavaScript",
+  "description": "\ud83c\udfae Open-source, cross-platform 2D/3D/multiplayer game engine designed for everyone.",
+  "html_url": "https://github.com/4ian/GDevelop",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:3d stars:>=2000",
+   "topic:3d stars:>=1000 language:JavaScript",
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "248282f86f6305ad5ce30df1163c98f0ccd43f8e",
+  "pinned_at": "2026-09-02T13:05:36.658723+00:00"
+ },
+ "boardgameio/boardgame.io": {
+  "full_name": "boardgameio/boardgame.io",
+  "stars": 12420,
+  "language": "TypeScript",
+  "description": "State Management and Multiplayer Networking for Turn-Based Games",
+  "html_url": "https://github.com/boardgameio/boardgame.io",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-engine stars:>=2000",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "5e9a2c94bde803fae8b081958c406c4d0a7be8ae",
+  "pinned_at": "2026-09-02T13:05:38.772271+00:00"
+ },
+ "tobspr-games/shapez.io": {
+  "full_name": "tobspr-games/shapez.io",
+  "stars": 6952,
+  "language": "JavaScript",
+  "description": "shapez is an open source base building game on Steam inspired by factorio!",
+  "html_url": "https://github.com/tobspr-games/shapez.io",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "ae88eb48b2834e32fd8c5cf5d91179c6328d78db",
+  "pinned_at": "2026-09-02T13:05:37.814670+00:00"
+ },
+ "melonjs/melonJS": {
+  "full_name": "melonjs/melonJS",
+  "stars": 6380,
+  "language": "JavaScript",
+  "description": "a modern & lightweight HTML5 game engine",
+  "html_url": "https://github.com/melonjs/melonJS",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "1107d5d38813bcbf65ac6ab76f90f99b9b124f15",
+  "pinned_at": "2026-09-02T13:05:38.372771+00:00"
+ },
+ "hiloteam/Hilo": {
+  "full_name": "hiloteam/Hilo",
+  "stars": 5940,
+  "language": "JavaScript",
+  "description": "A Cross-end HTML5 Game development solution",
+  "html_url": "https://github.com/hiloteam/Hilo",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "dev",
+  "head_sha": "807eecdececb790347a9d3ea2daded2b419f0b1c",
+  "pinned_at": "2026-09-02T13:05:38.897445+00:00"
+ },
+ "piqnt/planck.js": {
+  "full_name": "piqnt/planck.js",
+  "stars": 5277,
+  "language": "TypeScript",
+  "description": "2D JavaScript Physics Engine",
+  "html_url": "https://github.com/piqnt/planck.js",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "93dd64df0fd2e5388551b159bebc6306e7af580a",
+  "pinned_at": "2026-09-02T13:05:41.096994+00:00"
+ },
+ "KilledByAPixel/LittleJS": {
+  "full_name": "KilledByAPixel/LittleJS",
+  "stars": 4171,
+  "language": "JavaScript",
+  "description": "Tiny fast HTML5 game engine with many features and no dependencies.",
+  "html_url": "https://github.com/KilledByAPixel/LittleJS",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:webgl stars:>=2000",
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "69fe3d51b2880a1b1e8dae064fee8d465bed79ac",
+  "pinned_at": "2026-09-02T13:05:40.134990+00:00"
+ },
+ "itchio/itch": {
+  "full_name": "itchio/itch",
+  "stars": 2813,
+  "language": "TypeScript",
+  "description": "\ud83c\udfae The best way to play your itch.io games",
+  "html_url": "https://github.com/itchio/itch",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=2000",
+   "topic:game-development stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "c3deacd1713e2128ebcf06364170300998397f4f",
+  "pinned_at": "2026-09-02T13:05:39.910336+00:00"
+ },
+ "schteppe/p2.js": {
+  "full_name": "schteppe/p2.js",
+  "stars": 2689,
+  "language": "JavaScript",
+  "description": "JavaScript 2D physics library",
+  "html_url": "https://github.com/schteppe/p2.js",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:gamedev stars:>=2000",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "2beb2750f42d29014e289cb803b7269d5b0edaad",
+  "pinned_at": "2026-09-02T13:05:42.548249+00:00"
+ },
+ "ill-inc/biomes-game": {
+  "full_name": "ill-inc/biomes-game",
+  "stars": 2674,
+  "language": "TypeScript",
+  "description": "Biomes is an open source sandbox MMORPG built for the web using web technologies such as Next.js, Typescript, React and WebAssembly.",
+  "html_url": "https://github.com/ill-inc/biomes-game",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:browser-game stars:>=100"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "669da235acbc5ec19720b047889c4aaa1c013ce2",
+  "pinned_at": "2026-09-02T13:05:39.828026+00:00"
+ },
+ "openfrontio/OpenFrontIO": {
+  "full_name": "openfrontio/OpenFrontIO",
+  "stars": 2602,
+  "language": "TypeScript",
+  "description": "Online browser-based RTS game",
+  "html_url": "https://github.com/openfrontio/OpenFrontIO",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:browser-game stars:>=100"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "edb14a5fd9adbeabcb523948054ece35de3e65e9",
+  "pinned_at": "2026-09-02T13:05:40.488304+00:00"
+ },
+ "excaliburjs/Excalibur": {
+  "full_name": "excaliburjs/Excalibur",
+  "stars": 2339,
+  "language": "TypeScript",
+  "description": "\ud83c\udfae Your friendly TypeScript 2D game engine for the web \ud83d\udde1\ufe0f",
+  "html_url": "https://github.com/excaliburjs/Excalibur",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=2000",
+   "topic:game-engine stars:>=2000",
+   "topic:gamedev stars:>=2000",
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "33cee7754471fad8393e1f919e169c82905cd1a6",
+  "pinned_at": "2026-09-02T13:05:40.486002+00:00"
+ },
+ "sharkdp/cube-composer": {
+  "full_name": "sharkdp/cube-composer",
+  "stars": 2047,
+  "language": "PureScript",
+  "description": "A puzzle game inspired by functional programming",
+  "html_url": "https://github.com/sharkdp/cube-composer",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:browser-game stars:>=100"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "a891ffe5de79b072819da04718820d0452b9a201",
+  "pinned_at": "2026-09-02T13:05:41.355786+00:00"
+ },
+ "FreezingMoon/AncientBeast": {
+  "full_name": "FreezingMoon/AncientBeast",
+  "stars": 1875,
+  "language": "TypeScript",
+  "description": "The Turn Based Strategy Game/eSport. Master your beasts! \ud83d\udc3a",
+  "html_url": "https://github.com/FreezingMoon/AncientBeast",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:html5-game stars:>=100"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "6fe46c29c0715ef68f773ceec472d298584a46e3",
+  "pinned_at": "2026-09-02T13:05:43.829973+00:00"
+ },
+ "kaplayjs/kaplay": {
+  "full_name": "kaplayjs/kaplay",
+  "stars": 1785,
+  "language": "TypeScript",
+  "description": "\ud83e\udd96 A JavaScript/TypeScript Game Library that feels like a game.",
+  "html_url": "https://github.com/kaplayjs/kaplay",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "4e0f41c1938c9c4483167d5c0f457c8d23ba4b8f",
+  "pinned_at": "2026-09-02T13:05:42.087014+00:00"
+ },
+ "NateTheGreatt/bitECS": {
+  "full_name": "NateTheGreatt/bitECS",
+  "stars": 1495,
+  "language": "TypeScript",
+  "description": " Flexible, minimal, data-oriented ECS library for Typescript",
+  "html_url": "https://github.com/NateTheGreatt/bitECS",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "1585cdb4ae9a6586aef5e4d9d30d7039e22cd543",
+  "pinned_at": "2026-09-02T13:05:42.846783+00:00"
+ },
+ "Mugen87/yuka": {
+  "full_name": "Mugen87/yuka",
+  "stars": 1365,
+  "language": "JavaScript",
+  "description": "JavaScript library for developing Game AI.",
+  "html_url": "https://github.com/Mugen87/yuka",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "10591304811222d6856020d5de129b39ef43b58d",
+  "pinned_at": "2026-09-02T13:05:43.830313+00:00"
+ },
+ "networked-aframe/networked-aframe": {
+  "full_name": "networked-aframe/networked-aframe",
+  "stars": 1206,
+  "language": "JavaScript",
+  "description": "A web framework for building multi-user virtual reality experiences.",
+  "html_url": "https://github.com/networked-aframe/networked-aframe",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "13c9795194e8cbbb41c7e01f45f9302d1769cf9d",
+  "pinned_at": "2026-09-02T13:05:42.249117+00:00"
+ },
+ "pmgl/microstudio": {
+  "full_name": "pmgl/microstudio",
+  "stars": 1173,
+  "language": "JavaScript",
+  "description": "Free, open source game engine online",
+  "html_url": "https://github.com/pmgl/microstudio",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "b59d904b56a8cdbdde1b08a1b107c90bab59b31f",
+  "pinned_at": "2026-09-02T13:05:43.110725+00:00"
+ },
+ "hexianWeb/CubeCity": {
+  "full_name": "hexianWeb/CubeCity",
+  "stars": 1151,
+  "language": "JavaScript",
+  "description": "A city waiting to be built by you \ud83c\udfd9\ufe0f\ud83d\udd28\u2728. Threejs Version (\u4e00\u4e2a\u7b49\u7740\u88ab\u4f60\u5efa\u9020\u7684\u57ce\u5e02)",
+  "html_url": "https://github.com/hexianWeb/CubeCity",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "big-simcity",
+  "head_sha": "0191f5170872382954c15b7316f2e34d020d6d49",
+  "pinned_at": "2026-09-02T13:05:43.128931+00:00"
+ },
+ "boona13/mykonos-island-voxels": {
+  "full_name": "boona13/mykonos-island-voxels",
+  "stars": 1050,
+  "language": "JavaScript",
+  "description": "A browser-based isometric island builder with the soft, sun-bleached look of Mykonos. Vanilla ES modules, no bundler, mobile-friendly.",
+  "html_url": "https://github.com/boona13/mykonos-island-voxels",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:html5-game stars:>=100"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "ca5faeea84fc7dc8e18a6b8e899f432884dfe831",
+  "pinned_at": "2026-09-02T13:05:46.054923+00:00"
+ },
+ "hmans/miniplex": {
+  "full_name": "hmans/miniplex",
+  "stars": 1048,
+  "language": "TypeScript",
+  "description": "A \ud83d\udc69\u200d\ud83d\udcbb developer-friendly entity management system for \ud83d\udd79 games and similarly demanding applications, based on \ud83d\udee0 ECS architecture.",
+  "html_url": "https://github.com/hmans/miniplex",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "7d1ff8fd499a465225e45fbd896a746dcd18ffb0",
+  "pinned_at": "2026-09-02T13:05:44.701102+00:00"
+ },
+ "morgan3d/quadplay": {
+  "full_name": "morgan3d/quadplay",
+  "stars": 962,
+  "language": "JavaScript",
+  "description": "The quadplay\u271c fantasy console",
+  "html_url": "https://github.com/morgan3d/quadplay",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "24f90205f5b7f308c7c771313d51f307d30c3788",
+  "pinned_at": "2026-09-02T13:05:44.912489+00:00"
+ },
+ "RonenNess/RPGUI": {
+  "full_name": "RonenNess/RPGUI",
+  "stars": 956,
+  "language": "JavaScript",
+  "description": "Lightweight framework for old-school RPG GUI in web!",
+  "html_url": "https://github.com/RonenNess/RPGUI",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:JavaScript",
+   "topic:gamedev stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "048859e6e1a73bd8f5615555609db098beba4e9c",
+  "pinned_at": "2026-09-02T13:05:44.983129+00:00"
+ },
+ "gkjohnson/three-bvh-csg": {
+  "full_name": "gkjohnson/three-bvh-csg",
+  "stars": 943,
+  "language": "JavaScript",
+  "description": "A flexible, memory compact, fast and dynamic CSG implementation on top of three-mesh-bvh",
+  "html_url": "https://github.com/gkjohnson/three-bvh-csg",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:JavaScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "d6709dd27a86944397c1179cbef79ad2b338aa5c",
+  "pinned_at": "2026-09-02T13:05:45.291319+00:00"
+ },
+ "lume/glas": {
+  "full_name": "lume/glas",
+  "stars": 939,
+  "language": "TypeScript",
+  "description": "WebGL in WebAssembly with AssemblyScript",
+  "html_url": "https://github.com/lume/glas",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "716d9311d575bba5d2561c4a1e4b629b20aea73f",
+  "pinned_at": "2026-09-02T13:05:49.198415+00:00"
+ },
+ "esengine/esengine": {
+  "full_name": "esengine/esengine",
+  "stars": 912,
+  "language": "TypeScript",
+  "description": "ESEngine - High-performance TypeScript ECS Framework for Game Development",
+  "html_url": "https://github.com/esengine/esengine",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-development stars:>=500 language:TypeScript",
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "2886284e8015c57ad8a0ef89596a058890cfa679",
+  "pinned_at": "2026-09-02T13:05:47.282523+00:00"
+ },
+ "Monogatari/Monogatari": {
+  "full_name": "Monogatari/Monogatari",
+  "stars": 882,
+  "language": "TypeScript",
+  "description": "Monogatari is a simple web visual novel engine, created to bring Visual Novels to the web.",
+  "html_url": "https://github.com/Monogatari/Monogatari",
+  "archived": false,
+  "stratum": "S5_games_web",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:game-engine stars:>=500 language:TypeScript"
+  ],
+  "membership": "TierB",
+  "default_branch": "develop",
+  "head_sha": "86659baf065178071f0956092f754e1d76be0072",
+  "pinned_at": "2026-09-02T13:05:48.257160+00:00"
+ },
+ "vuejs/vue": {
+  "full_name": "vuejs/vue",
+  "stars": 211267,
+  "language": "TypeScript",
+  "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+  "html_url": "https://github.com/vuejs/vue",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:frontend stars:>=2000",
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "9e88707940088cb1f4cd7dd210c9168a50dc347c",
+  "pinned_at": "2026-09-02T13:05:48.063275+00:00"
+ },
+ "vercel/next.js": {
+  "full_name": "vercel/next.js",
+  "stars": 142073,
+  "language": "JavaScript",
+  "description": "The React Framework",
+  "html_url": "https://github.com/vercel/next.js",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "canary",
+  "head_sha": "ec847d821698a6973c9459c8060281ad4d6f09cd",
+  "pinned_at": "2026-09-02T13:05:47.043426+00:00"
+ },
+ "shadcn-ui/ui": {
+  "full_name": "shadcn-ui/ui",
+  "stars": 122778,
+  "language": "TypeScript",
+  "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+  "html_url": "https://github.com/shadcn-ui/ui",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4c43e943d7998be45bbb5a2606e095bbf1ffaa8a",
+  "pinned_at": "2026-09-02T13:05:46.982199+00:00"
+ },
+ "react/create-react-app": {
+  "full_name": "react/create-react-app",
+  "stars": 103276,
+  "language": "JavaScript",
+  "description": "Set up a modern web app by running one command.",
+  "html_url": "https://github.com/react/create-react-app",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "6254386531d263688ccfa542d0e628fbc0de0b28",
+  "pinned_at": "2026-09-02T13:05:47.748778+00:00"
+ },
+ "ant-design/ant-design": {
+  "full_name": "ant-design/ant-design",
+  "stars": 99353,
+  "language": "TypeScript",
+  "description": "An enterprise-class UI design language and React UI library",
+  "html_url": "https://github.com/ant-design/ant-design",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "77d831751b3452a8291256fa187553a258e2cf1e",
+  "pinned_at": "2026-09-02T13:05:48.024645+00:00"
+ },
+ "mui/material-ui": {
+  "full_name": "mui/material-ui",
+  "stars": 98990,
+  "language": "JavaScript",
+  "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
+  "html_url": "https://github.com/mui/material-ui",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "bddf22f5c6d4c4383aae88dbd77b6c7a53c5fd17",
+  "pinned_at": "2026-09-02T13:05:49.244518+00:00"
+ },
+ "vitejs/vite": {
+  "full_name": "vitejs/vite",
+  "stars": 82653,
+  "language": "TypeScript",
+  "description": "Next generation frontend tooling. It's fast!",
+  "html_url": "https://github.com/vitejs/vite",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:frontend stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "1c46db555d2927fc62686341911b03f6d365a36a",
+  "pinned_at": "2026-09-02T13:05:49.921251+00:00"
+ },
+ "hoppscotch/hoppscotch": {
+  "full_name": "hoppscotch/hoppscotch",
+  "stars": 80158,
+  "language": "TypeScript",
+  "description": "Open-Source API Development Ecosystem \u2022 https://hoppscotch.io \u2022 Offline, On-Prem & Cloud \u2022 Web, Desktop & CLI \u2022 Open-Source Alternative to Postman, Insomnia",
+  "html_url": "https://github.com/hoppscotch/hoppscotch",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "ac145e7f758151b41fd46d3e5f513886ce9068ba",
+  "pinned_at": "2026-09-02T13:05:49.320548+00:00"
+ },
+ "nuxt/nuxt": {
+  "full_name": "nuxt/nuxt",
+  "stars": 60807,
+  "language": "TypeScript",
+  "description": "the full-stack Vue framework",
+  "html_url": "https://github.com/nuxt/nuxt",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "e52272e559e198896c1bbcb14651b4d0327cb294",
+  "pinned_at": "2026-09-02T13:05:50.208514+00:00"
+ },
+ "pmndrs/zustand": {
+  "full_name": "pmndrs/zustand",
+  "stars": 58636,
+  "language": "TypeScript",
+  "description": "\ud83d\udc3b Bear necessities for state management in React",
+  "html_url": "https://github.com/pmndrs/zustand",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "b57db4f86ef179285da216eeb291266da82c361c",
+  "pinned_at": "2026-09-02T13:05:49.868038+00:00"
+ },
+ "remotion-dev/remotion": {
+  "full_name": "remotion-dev/remotion",
+  "stars": 58089,
+  "language": "TypeScript",
+  "description": "\ud83c\udfa5      Make videos programmatically with React",
+  "html_url": "https://github.com/remotion-dev/remotion",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "1d904f1ff6bfab045f395efe547a00b80ef86db2",
+  "pinned_at": "2026-09-02T13:05:51.954237+00:00"
+ },
+ "twentyhq/twenty": {
+  "full_name": "twentyhq/twenty",
+  "stars": 56031,
+  "language": "TypeScript",
+  "description": "The open alternative to Salesforce, designed for AI.",
+  "html_url": "https://github.com/twentyhq/twenty",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "c19c1fec87001b82df9e9a7888febbbae31db699",
+  "pinned_at": "2026-09-02T13:05:50.745257+00:00"
+ },
+ "gatsbyjs/gatsby": {
+  "full_name": "gatsbyjs/gatsby",
+  "stars": 55941,
+  "language": "JavaScript",
+  "description": "React-based framework with performance, scalability, and security built in.",
+  "html_url": "https://github.com/gatsbyjs/gatsby",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "e85d62f1779e353eaac1753211629a26d123e26c",
+  "pinned_at": "2026-09-02T13:05:52.218717+00:00"
+ },
+ "ElemeFE/element": {
+  "full_name": "ElemeFE/element",
+  "stars": 54057,
+  "language": "Vue",
+  "description": "A Vue.js 2.0 UI Toolkit for Web",
+  "html_url": "https://github.com/ElemeFE/element",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "dev",
+  "head_sha": "c345bb453bf11badb4831a6a3f600c9372b3a336",
+  "pinned_at": "2026-09-02T13:05:54.042076+00:00"
+ },
+ "lyswhut/lx-music-desktop": {
+  "full_name": "lyswhut/lx-music-desktop",
+  "stars": 53266,
+  "language": "TypeScript",
+  "description": "\u4e00\u4e2a\u57fa\u4e8e Electron \u7684\u97f3\u4e50\u8f6f\u4ef6",
+  "html_url": "https://github.com/lyswhut/lx-music-desktop",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "9c364b482e5621a1d38b50e8610d2fb974457e6e",
+  "pinned_at": "2026-09-02T13:05:52.525110+00:00"
+ },
+ "TanStack/query": {
+  "full_name": "TanStack/query",
+  "stars": 50248,
+  "language": "TypeScript",
+  "description": "\ud83e\udd16 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.",
+  "html_url": "https://github.com/TanStack/query",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000",
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "33fe7c476276cbefa86786bbcc2d445fdf382614",
+  "pinned_at": "2026-09-02T13:05:52.530804+00:00"
+ },
+ "slidevjs/slidev": {
+  "full_name": "slidevjs/slidev",
+  "stars": 48386,
+  "language": "TypeScript",
+  "description": "Presentation Slides for Developers",
+  "html_url": "https://github.com/slidevjs/slidev",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "a8d8ff717c5a72c1b3a9d98f1c849481f2ddcd00",
+  "pinned_at": "2026-09-02T13:05:52.506340+00:00"
+ },
+ "meteor/meteor": {
+  "full_name": "meteor/meteor",
+  "stars": 44808,
+  "language": "JavaScript",
+  "description": "Meteor, the JavaScript App Platform",
+  "html_url": "https://github.com/meteor/meteor",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "devel",
+  "head_sha": "5670a0f489745ccc1ac4bcd87f8cfba52f6595a7",
+  "pinned_at": "2026-09-02T13:05:53.109493+00:00"
+ },
+ "NaiboWang/EasySpider": {
+  "full_name": "NaiboWang/EasySpider",
+  "stars": 44489,
+  "language": "JavaScript",
+  "description": "A visual no-code/code-free web crawler/spider\u6613\u91c7\u96c6\uff1a\u4e00\u4e2a\u53ef\u89c6\u5316\u6d4f\u89c8\u5668\u81ea\u52a8\u5316\u6d4b\u8bd5/\u6570\u636e\u91c7\u96c6/\u7f51\u9875\u722c\u866b\u8f6f\u4ef6\uff0c\u53ef\u4ee5\u65e0\u4ee3\u7801\u56fe\u5f62\u5316\u7684\u8bbe\u8ba1\u548c\u6267\u884c\u722c\u866b\u4efb\u52a1\u3002\u522b\u540d\uff1aServiceWrapper\u9762\u5411Web\u5e94\u7528\u7684\u667a\u80fd\u5316\u670d\u52a1\u5c01\u88c5\u7cfb\u7edf\u3002",
+  "html_url": "https://github.com/NaiboWang/EasySpider",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:frontend stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "6ddb478fff2f6bad42c53a3ee27b77149ad19f2b",
+  "pinned_at": "2026-09-02T13:05:52.911215+00:00"
+ },
+ "AykutSarac/jsoncrack.com": {
+  "full_name": "AykutSarac/jsoncrack.com",
+  "stars": 44360,
+  "language": "TypeScript",
+  "description": "\u2728 Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML and CSV into interactive graphs.",
+  "html_url": "https://github.com/AykutSarac/jsoncrack.com",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "f46579b01be9e5649c4782cbbb45fcd49bb0a9f6",
+  "pinned_at": "2026-09-02T13:05:54.211933+00:00"
+ },
+ "amruthpillai/reactive-resume": {
+  "full_name": "amruthpillai/reactive-resume",
+  "stars": 42094,
+  "language": "TypeScript",
+  "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
+  "html_url": "https://github.com/amruthpillai/reactive-resume",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "0a092ee2a49938403554a9912d2b3c449da85783",
+  "pinned_at": "2026-09-02T13:05:53.921402+00:00"
+ },
+ "dcloudio/uni-app": {
+  "full_name": "dcloudio/uni-app",
+  "stars": 41604,
+  "language": "JavaScript",
+  "description": "A cross-platform framework using Vue.js",
+  "html_url": "https://github.com/dcloudio/uni-app",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "uni-app-x",
+  "head_sha": "3d2e54c6b63f07904015874888657fc5494c0f31",
+  "pinned_at": "2026-09-02T13:05:55.220192+00:00"
+ },
+ "styled-components/styled-components": {
+  "full_name": "styled-components/styled-components",
+  "stars": 41122,
+  "language": "TypeScript",
+  "description": "Fast, expressive styling for React. Server components, client components, streaming SSR, React Native\u2014one API.",
+  "html_url": "https://github.com/styled-components/styled-components",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "5f2a27ad31d4b17315a099c7f4ac8300c15f2cc2",
+  "pinned_at": "2026-09-02T13:05:54.313060+00:00"
+ },
+ "vuetifyjs/vuetify": {
+  "full_name": "vuetifyjs/vuetify",
+  "stars": 41042,
+  "language": "TypeScript",
+  "description": "\ud83d\udc09 Vue Component Framework",
+  "html_url": "https://github.com/vuetifyjs/vuetify",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "1074506b87695cb85ffadf56f86da3eb4d7fad5b",
+  "pinned_at": "2026-09-02T13:05:55.500120+00:00"
+ },
+ "bailicangdu/vue2-elm": {
+  "full_name": "bailicangdu/vue2-elm",
+  "stars": 41015,
+  "language": "Vue",
+  "description": "Large single page application with 45 pages built on vue2 + vuex. \u57fa\u4e8e vue2 + vuex \u6784\u5efa\u4e00\u4e2a\u5177\u6709 45 \u4e2a\u9875\u9762\u7684\u5927\u578b\u5355\u9875\u9762\u5e94\u7528",
+  "html_url": "https://github.com/bailicangdu/vue2-elm",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:vue stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "master",
+  "head_sha": "b85ff0220366be863868269177a4abf74c7a85ca",
+  "pinned_at": "2026-09-02T13:05:55.157154+00:00"
+ },
+ "appsmithorg/appsmith": {
+  "full_name": "appsmithorg/appsmith",
+  "stars": 40800,
+  "language": "TypeScript",
+  "description": "Platform to build admin panels, internal tools, and dashboards. Integrates with 25+ databases and any API.",
+  "html_url": "https://github.com/appsmithorg/appsmith",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "release",
+  "head_sha": "f6a11ae72b1434481bc66312e5373d92da566c4a",
+  "pinned_at": "2026-09-02T13:05:55.074430+00:00"
+ },
+ "chakra-ui/chakra-ui": {
+  "full_name": "chakra-ui/chakra-ui",
+  "stars": 40614,
+  "language": "TypeScript",
+  "description": "Chakra UI is a component system for building SaaS products with speed \u26a1\ufe0f",
+  "html_url": "https://github.com/chakra-ui/chakra-ui",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "d394b411131c7a54fa9dcafea62be9a715634cb9",
+  "pinned_at": "2026-09-02T13:05:56.685503+00:00"
+ },
+ "trpc/trpc": {
+  "full_name": "trpc/trpc",
+  "stars": 40570,
+  "language": "TypeScript",
+  "description": "\ud83e\uddd9\u200d\u2640\ufe0f  Move Fast and Break Nothing. End-to-end typesafe APIs made easy. ",
+  "html_url": "https://github.com/trpc/trpc",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "4f5315219f947589c9ef0f67b7aa551243312d61",
+  "pinned_at": "2026-09-02T13:05:56.415162+00:00"
+ },
+ "outline/outline": {
+  "full_name": "outline/outline",
+  "stars": 40421,
+  "language": "TypeScript",
+  "description": "The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.",
+  "html_url": "https://github.com/outline/outline",
+  "archived": false,
+  "stratum": "S6_web_infra",
+  "source": "tierb_search",
+  "query_hits": [
+   "topic:react stars:>=2000"
+  ],
+  "membership": "TierB",
+  "default_branch": "main",
+  "head_sha": "00b83901fd305921b00db374f36c33b2164f397d",
+  "pinned_at": "2026-09-02T13:05:57.808991+00:00"
+ }
+}

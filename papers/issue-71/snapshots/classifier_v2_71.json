@@ -1,0 +1,1640 @@
+{
+ "mrdoob/three.js": {
+  "full_name": "mrdoob/three.js",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 115025,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L0"
+ },
+ "BabylonJS/Babylon.js": {
+  "full_name": "BabylonJS/Babylon.js",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 26004,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L0"
+ },
+ "mlc-ai/web-llm": {
+  "full_name": "mlc-ai/web-llm",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 18711,
+  "webgpu_level": "L2",
+  "webgpu_role": "compute",
+  "webgl_level": "L0"
+ },
+ "huggingface/transformers.js": {
+  "full_name": "huggingface/transformers.js",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 16282,
+  "webgpu_level": "L2",
+  "webgpu_role": "compute",
+  "webgl_level": "L0"
+ },
+ "gpuweb/gpuweb": {
+  "full_name": "gpuweb/gpuweb",
+  "stratum": "TierA_anchor",
+  "membership": "TierA",
+  "stars": 5462,
+  "webgpu_level": "L1",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "facebook/react": {
+  "full_name": "facebook/react",
+  "stratum": "NEG_control",
+  "membership": "NEG",
+  "stars": 248656,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "axios/axios": {
+  "full_name": "axios/axios",
+  "stratum": "NEG_control",
+  "membership": "NEG",
+  "stars": 109199,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "prettier/prettier": {
+  "full_name": "prettier/prettier",
+  "stratum": "NEG_control",
+  "membership": "NEG",
+  "stars": 52231,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "pixijs/pixijs": {
+  "full_name": "pixijs/pixijs",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 48105,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "pmndrs/react-three-fiber": {
+  "full_name": "pmndrs/react-three-fiber",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 31869,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "pascalorg/editor": {
+  "full_name": "pascalorg/editor",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 21832,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "aframevr/aframe": {
+  "full_name": "aframevr/aframe",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 17624,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "playcanvas/engine": {
+  "full_name": "playcanvas/engine",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 16606,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "bilawalsidhu/gods-eye-view": {
+  "full_name": "bilawalsidhu/gods-eye-view",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 15537,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "metafizzy/zdog": {
+  "full_name": "metafizzy/zdog",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 10650,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "playcanvas/supersplat": {
+  "full_name": "playcanvas/supersplat",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 9936,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "jonobr1/two.js": {
+  "full_name": "jonobr1/two.js",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 8653,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "google/model-viewer": {
+  "full_name": "google/model-viewer",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 8221,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "tengbao/vanta": {
+  "full_name": "tengbao/vanta",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 6963,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "vasturiano/3d-force-graph": {
+  "full_name": "vasturiano/3d-force-graph",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 6363,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "galacean/engine": {
+  "full_name": "galacean/engine",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5882,
+  "webgpu_level": "L1",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "JannisX11/blockbench": {
+  "full_name": "JannisX11/blockbench",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5873,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "srizzon/git-city": {
+  "full_name": "srizzon/git-city",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5779,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "shuding/cobe": {
+  "full_name": "shuding/cobe",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5689,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "regl-project/regl": {
+  "full_name": "regl-project/regl",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5577,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "spritejs/spritejs": {
+  "full_name": "spritejs/spritejs",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5390,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "Orillusion/orillusion": {
+  "full_name": "Orillusion/orillusion",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5211,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "nicholas-ochoa/OpenSC2K": {
+  "full_name": "nicholas-ochoa/OpenSC2K",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 5105,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "mpetroff/pannellum": {
+  "full_name": "mpetroff/pannellum",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 4887,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "xiangechen/chili3d": {
+  "full_name": "xiangechen/chili3d",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 4790,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "anvaka/VivaGraphJS": {
+  "full_name": "anvaka/VivaGraphJS",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3859,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "Rezmason/matrix": {
+  "full_name": "Rezmason/matrix",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3828,
+  "webgpu_level": "L2",
+  "webgpu_role": "both",
+  "webgl_level": "L0"
+ },
+ "jasonlong/isometric-contributions": {
+  "full_name": "jasonlong/isometric-contributions",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3690,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "Tresjs/tres": {
+  "full_name": "Tresjs/tres",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3685,
+  "webgpu_level": "L1",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "kovacsv/Online3DViewer": {
+  "full_name": "kovacsv/Online3DViewer",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3678,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "PixelsCommander/HTML-GL": {
+  "full_name": "PixelsCommander/HTML-GL",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3519,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "paper-design/shaders": {
+  "full_name": "paper-design/shaders",
+  "stratum": "S1_web3d_graphics",
+  "membership": "TierB",
+  "stars": 3409,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "d3/d3": {
+  "full_name": "d3/d3",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 113596,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "grafana/grafana": {
+  "full_name": "grafana/grafana",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 76563,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "chartjs/Chart.js": {
+  "full_name": "chartjs/Chart.js",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 67675,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "apache/echarts": {
+  "full_name": "apache/echarts",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 67218,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "recharts/recharts": {
+  "full_name": "recharts/recharts",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 27532,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "processing/p5.js": {
+  "full_name": "processing/p5.js",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 23929,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "airbnb/visx": {
+  "full_name": "airbnb/visx",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 21034,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "plotly/plotly.js": {
+  "full_name": "plotly/plotly.js",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 18316,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "CesiumGS/cesium": {
+  "full_name": "CesiumGS/cesium",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 15641,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "apexcharts/apexcharts.js": {
+  "full_name": "apexcharts/apexcharts.js",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 15145,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "frappe/charts": {
+  "full_name": "frappe/charts",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 15080,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "visgl/deck.gl": {
+  "full_name": "visgl/deck.gl",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 14548,
+  "webgpu_level": "L1",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "antvis/G2": {
+  "full_name": "antvis/G2",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12601,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "mapbox/mapbox-gl-js": {
+  "full_name": "mapbox/mapbox-gl-js",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12394,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "antvis/G6": {
+  "full_name": "antvis/G6",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12283,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "jacomyal/sigma.js": {
+  "full_name": "jacomyal/sigma.js",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 12158,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "keplergl/kepler.gl": {
+  "full_name": "keplergl/kepler.gl",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 11995,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "leeoniya/uPlot": {
+  "full_name": "leeoniya/uPlot",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 10462,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "c3js/c3": {
+  "full_name": "c3js/c3",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 9350,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "rawgraphs/rawgraphs-app": {
+  "full_name": "rawgraphs/rawgraphs-app",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 9025,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "uber/react-vis": {
+  "full_name": "uber/react-vis",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 8787,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "visgl/react-map-gl": {
+  "full_name": "visgl/react-map-gl",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 8498,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "NorthwoodsSoftware/GoJS": {
+  "full_name": "NorthwoodsSoftware/GoJS",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 8470,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "antvis/F2": {
+  "full_name": "antvis/F2",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7992,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "timqian/chart.xkcd": {
+  "full_name": "timqian/chart.xkcd",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7859,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "alibaba/x-render": {
+  "full_name": "alibaba/x-render",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7855,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ecomfe/echarts-for-weixin": {
+  "full_name": "ecomfe/echarts-for-weixin",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7510,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ChatLab/ChatLab": {
+  "full_name": "ChatLab/ChatLab",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7291,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "jwilber/roughViz": {
+  "full_name": "jwilber/roughViz",
+  "stratum": "S2_dataviz_creative",
+  "membership": "TierB",
+  "stars": 7153,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "janhq/jan": {
+  "full_name": "janhq/jan",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 44299,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "naptha/tesseract.js": {
+  "full_name": "naptha/tesseract.js",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 38687,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "CopilotKit/CopilotKit": {
+  "full_name": "CopilotKit/CopilotKit",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 37163,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "SillyTavern/SillyTavern": {
+  "full_name": "SillyTavern/SillyTavern",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 32945,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "mastra-ai/mastra": {
+  "full_name": "mastra-ai/mastra",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 27640,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "vercel/ai": {
+  "full_name": "vercel/ai",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 26540,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "tensorflow/tfjs": {
+  "full_name": "tensorflow/tfjs",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 19135,
+  "webgpu_level": "L2",
+  "webgpu_role": "compute",
+  "webgl_level": "L2"
+ },
+ "rowboatlabs/rowboat": {
+  "full_name": "rowboatlabs/rowboat",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 17450,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "emilwallner/Screenshot-to-code": {
+  "full_name": "emilwallner/Screenshot-to-code",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 16497,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "Anionex/banana-slides": {
+  "full_name": "Anionex/banana-slides",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 15541,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "gpujs/gpu.js": {
+  "full_name": "gpujs/gpu.js",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 15428,
+  "webgpu_level": "L2",
+  "webgpu_role": "compute",
+  "webgl_level": "L0"
+ },
+ "botpress/botpress": {
+  "full_name": "botpress/botpress",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14887,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ConardLi/easy-dataset": {
+  "full_name": "ConardLi/easy-dataset",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14874,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "BrainJS/brain.js": {
+  "full_name": "BrainJS/brain.js",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14863,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "NanmiCoder/cc-haha": {
+  "full_name": "NanmiCoder/cc-haha",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14263,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "fathah/hermes-desktop": {
+  "full_name": "fathah/hermes-desktop",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 14102,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "browseros-ai/BrowserOS": {
+  "full_name": "browseros-ai/BrowserOS",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 13485,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "lidge-jun/opencodex": {
+  "full_name": "lidge-jun/opencodex",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 12979,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "jina-ai/reader": {
+  "full_name": "jina-ai/reader",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11944,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "humanlayer/humanlayer": {
+  "full_name": "humanlayer/humanlayer",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11363,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "MemTensor/MemOS": {
+  "full_name": "MemTensor/MemOS",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11155,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "holaboss-ai/holaOS": {
+  "full_name": "holaboss-ai/holaOS",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11117,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "voxel51/fiftyone": {
+  "full_name": "voxel51/fiftyone",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 11052,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "getumbrel/llama-gpt": {
+  "full_name": "getumbrel/llama-gpt",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10939,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "huggingface/chat-ui": {
+  "full_name": "huggingface/chat-ui",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10924,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "EKKOLearnAI/hermes-studio": {
+  "full_name": "EKKOLearnAI/hermes-studio",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10790,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "VoltAgent/voltagent": {
+  "full_name": "VoltAgent/voltagent",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10521,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "chaitin/PandaWiki": {
+  "full_name": "chaitin/PandaWiki",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 10180,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "microsoft/TypeChat": {
+  "full_name": "microsoft/TypeChat",
+  "stratum": "S3_ai_web",
+  "membership": "TierB",
+  "stars": 8682,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "microsoft/vscode": {
+  "full_name": "microsoft/vscode",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 190404,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L0"
+ },
+ "excalidraw/excalidraw": {
+  "full_name": "excalidraw/excalidraw",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 130994,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "OpenCut-app/OpenCut": {
+  "full_name": "OpenCut-app/OpenCut",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 88462,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "toeverything/AFFiNE": {
+  "full_name": "toeverything/AFFiNE",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 72115,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "marktext/marktext": {
+  "full_name": "marktext/marktext",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 60925,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "tldraw/tldraw": {
+  "full_name": "tldraw/tldraw",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 50085,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "slab/quill": {
+  "full_name": "slab/quill",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 47322,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "microsoft/monaco-editor": {
+  "full_name": "microsoft/monaco-editor",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 46642,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "mifi/lossless-cut": {
+  "full_name": "mifi/lossless-cut",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 43400,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "imputnet/cobalt": {
+  "full_name": "imputnet/cobalt",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 42564,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "drawdb-io/drawdb": {
+  "full_name": "drawdb-io/drawdb",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 39332,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "DayuanJiang/next-ai-draw-io": {
+  "full_name": "DayuanJiang/next-ai-draw-io",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 35535,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "codex-team/editor.js": {
+  "full_name": "codex-team/editor.js",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 31923,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ianstormtaylor/slate": {
+  "full_name": "ianstormtaylor/slate",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 31756,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "onlook-dev/onlook": {
+  "full_name": "onlook-dev/onlook",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 26624,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "lissy93/dashy": {
+  "full_name": "lissy93/dashy",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 26361,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "benweet/stackedit": {
+  "full_name": "benweet/stackedit",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 23079,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "chartdb/chartdb": {
+  "full_name": "chartdb/chartdb",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 22848,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "yjs/yjs": {
+  "full_name": "yjs/yjs",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 22736,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "super-productivity/super-productivity": {
+  "full_name": "super-productivity/super-productivity",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 21747,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "eclipse-theia/theia": {
+  "full_name": "eclipse-theia/theia",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 21667,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "basecamp/trix": {
+  "full_name": "basecamp/trix",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 20008,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "wulkano/Kap": {
+  "full_name": "wulkano/Kap",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 19344,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "alyssaxuu/screenity": {
+  "full_name": "alyssaxuu/screenity",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 18650,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ether/etherpad": {
+  "full_name": "ether/etherpad",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 18517,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "teambit/bit": {
+  "full_name": "teambit/bit",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 18470,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "tinymce/tinymce": {
+  "full_name": "tinymce/tinymce",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 16286,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "omnivore-app/omnivore": {
+  "full_name": "omnivore-app/omnivore",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 16228,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "yabwe/medium-editor": {
+  "full_name": "yabwe/medium-editor",
+  "stratum": "S4_webapps_editors",
+  "membership": "TierB",
+  "stars": 16102,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "phaserjs/phaser": {
+  "full_name": "phaserjs/phaser",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 40246,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "4ian/GDevelop": {
+  "full_name": "4ian/GDevelop",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 26139,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "boardgameio/boardgame.io": {
+  "full_name": "boardgameio/boardgame.io",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 12420,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "tobspr-games/shapez.io": {
+  "full_name": "tobspr-games/shapez.io",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 6952,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "melonjs/melonJS": {
+  "full_name": "melonjs/melonJS",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 6380,
+  "webgpu_level": "L2",
+  "webgpu_role": "render",
+  "webgl_level": "L2"
+ },
+ "hiloteam/Hilo": {
+  "full_name": "hiloteam/Hilo",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 5940,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "piqnt/planck.js": {
+  "full_name": "piqnt/planck.js",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 5277,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "KilledByAPixel/LittleJS": {
+  "full_name": "KilledByAPixel/LittleJS",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 4171,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "itchio/itch": {
+  "full_name": "itchio/itch",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2813,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "schteppe/p2.js": {
+  "full_name": "schteppe/p2.js",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2689,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "ill-inc/biomes-game": {
+  "full_name": "ill-inc/biomes-game",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2674,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "openfrontio/OpenFrontIO": {
+  "full_name": "openfrontio/OpenFrontIO",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2602,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "excaliburjs/Excalibur": {
+  "full_name": "excaliburjs/Excalibur",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2339,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "sharkdp/cube-composer": {
+  "full_name": "sharkdp/cube-composer",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 2047,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "FreezingMoon/AncientBeast": {
+  "full_name": "FreezingMoon/AncientBeast",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1875,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "kaplayjs/kaplay": {
+  "full_name": "kaplayjs/kaplay",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1785,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "NateTheGreatt/bitECS": {
+  "full_name": "NateTheGreatt/bitECS",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1495,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "Mugen87/yuka": {
+  "full_name": "Mugen87/yuka",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1365,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "networked-aframe/networked-aframe": {
+  "full_name": "networked-aframe/networked-aframe",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1206,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "pmgl/microstudio": {
+  "full_name": "pmgl/microstudio",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1173,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "hexianWeb/CubeCity": {
+  "full_name": "hexianWeb/CubeCity",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1151,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "boona13/mykonos-island-voxels": {
+  "full_name": "boona13/mykonos-island-voxels",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1050,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "hmans/miniplex": {
+  "full_name": "hmans/miniplex",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 1048,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "morgan3d/quadplay": {
+  "full_name": "morgan3d/quadplay",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 962,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "RonenNess/RPGUI": {
+  "full_name": "RonenNess/RPGUI",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 956,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "gkjohnson/three-bvh-csg": {
+  "full_name": "gkjohnson/three-bvh-csg",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 943,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "lume/glas": {
+  "full_name": "lume/glas",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 939,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "esengine/esengine": {
+  "full_name": "esengine/esengine",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 912,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "Monogatari/Monogatari": {
+  "full_name": "Monogatari/Monogatari",
+  "stratum": "S5_games_web",
+  "membership": "TierB",
+  "stars": 882,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "vuejs/vue": {
+  "full_name": "vuejs/vue",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 211267,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "vercel/next.js": {
+  "full_name": "vercel/next.js",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 142073,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "shadcn-ui/ui": {
+  "full_name": "shadcn-ui/ui",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 122778,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "react/create-react-app": {
+  "full_name": "react/create-react-app",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 103276,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ant-design/ant-design": {
+  "full_name": "ant-design/ant-design",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 99353,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "mui/material-ui": {
+  "full_name": "mui/material-ui",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 98990,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "vitejs/vite": {
+  "full_name": "vitejs/vite",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 82653,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "hoppscotch/hoppscotch": {
+  "full_name": "hoppscotch/hoppscotch",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 80158,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "nuxt/nuxt": {
+  "full_name": "nuxt/nuxt",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 60807,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "pmndrs/zustand": {
+  "full_name": "pmndrs/zustand",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 58636,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L1"
+ },
+ "remotion-dev/remotion": {
+  "full_name": "remotion-dev/remotion",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 58089,
+  "webgpu_level": "L2",
+  "webgpu_role": "both",
+  "webgl_level": "L2"
+ },
+ "twentyhq/twenty": {
+  "full_name": "twentyhq/twenty",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 56031,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L2"
+ },
+ "gatsbyjs/gatsby": {
+  "full_name": "gatsbyjs/gatsby",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 55941,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "ElemeFE/element": {
+  "full_name": "ElemeFE/element",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 54057,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "lyswhut/lx-music-desktop": {
+  "full_name": "lyswhut/lx-music-desktop",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 53266,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "TanStack/query": {
+  "full_name": "TanStack/query",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 50248,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "slidevjs/slidev": {
+  "full_name": "slidevjs/slidev",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 48386,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "meteor/meteor": {
+  "full_name": "meteor/meteor",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 44808,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "NaiboWang/EasySpider": {
+  "full_name": "NaiboWang/EasySpider",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 44489,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "AykutSarac/jsoncrack.com": {
+  "full_name": "AykutSarac/jsoncrack.com",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 44360,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "amruthpillai/reactive-resume": {
+  "full_name": "amruthpillai/reactive-resume",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 42094,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "dcloudio/uni-app": {
+  "full_name": "dcloudio/uni-app",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41604,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "styled-components/styled-components": {
+  "full_name": "styled-components/styled-components",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41122,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "vuetifyjs/vuetify": {
+  "full_name": "vuetifyjs/vuetify",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41042,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "bailicangdu/vue2-elm": {
+  "full_name": "bailicangdu/vue2-elm",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 41015,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "appsmithorg/appsmith": {
+  "full_name": "appsmithorg/appsmith",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40800,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "chakra-ui/chakra-ui": {
+  "full_name": "chakra-ui/chakra-ui",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40614,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "trpc/trpc": {
+  "full_name": "trpc/trpc",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40570,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ },
+ "outline/outline": {
+  "full_name": "outline/outline",
+  "stratum": "S6_web_infra",
+  "membership": "TierB",
+  "stars": 40421,
+  "webgpu_level": "L0",
+  "webgpu_role": null,
+  "webgl_level": "L0"
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "mrdoob/three.js": {
+  "src/renderers/webgpu/WebGPUBackend.js": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "createShaderModule",
+    "createComputePipeline",
+    "createRenderPipeline",
+    "dispatchWorkgroups",
+    "beginRenderPass",
+    "GPUDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "BabylonJS/Babylon.js": {
+  "packages/dev/core/src/Engines/webgpuEngine.pure.ts": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "createShaderModule",
+    "createRenderPipeline",
+    "beginRenderPass",
+    "WebGPUEngine",
+    "GPUDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "mlc-ai/web-llm": {
+  "src/engine.ts": {
+   "signals": [
+    "GPUDevice",
+    "detectGPUDevice"
+   ]
+  }
+ },
+ "huggingface/transformers.js": {
+  "packages/transformers/src/backends/onnx.js": {
+   "signals": [
+    "'webgpu'"
+   ]
+  },
+  "packages/transformers/src/utils/dtypes.js": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter"
+   ]
+  }
+ },
+ "Orillusion/orillusion": {
+  "src/gfx/graphics/webGpu/Context3D.ts": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "beginRenderPass",
+    "GPUDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "pixijs/pixijs": {
+  "src/rendering/renderers/gpu/GpuDeviceSystem.ts": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "WebGPURenderer",
+    "GPUDevice"
+   ]
+  },
+  "src/rendering/renderers/gpu/GpuEncoderSystem.ts": {
+   "signals": [
+    "beginRenderPass",
+    "WebGPURenderer"
+   ]
+  }
+ },
+ "playcanvas/engine": {
+  "src/platform/graphics/webgpu/webgpu-graphics-device.js": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "beginRenderPass",
+    "GPUDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "playcanvas/supersplat": {
+  "src/index.ts": {
+   "signals": [
+    "navigator.gpu"
+   ]
+  }
+ },
+ "Rezmason/matrix": {
+  "js/webgpu/main.js": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "aframevr/aframe": {
+  "src/core/scene/a-scene.js": {
+   "signals": [
+    "WebGPURenderer",
+    "WebGLRenderer"
+   ]
+  }
+ },
+ "pascalorg/editor": {
+  "packages/editor/src/components/editor/bake-thumbnail.tsx": {
+   "signals": [
+    "WebGPURenderer"
+   ]
+  }
+ },
+ "processing/p5.js": {
+  "src/webgpu/p5.RendererWebGPU.js": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "createShaderModule",
+    "createComputePipeline",
+    "createRenderPipeline",
+    "dispatchWorkgroups",
+    "beginRenderPass",
+    "'webgpu'"
+   ]
+  }
+ },
+ "tensorflow/tfjs": {
+  "tfjs-backend-webgpu/src/backend_webgpu.ts": {
+   "signals": [
+    "dispatchWorkgroups",
+    "GPUDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "gpujs/gpu.js": {
+  "src/backend/web-gpu/kernel.js": {
+   "signals": [
+    "navigator.gpu",
+    "createShaderModule",
+    "createComputePipeline",
+    "createRenderPipeline",
+    "dispatchWorkgroups",
+    "beginRenderPass",
+    "'webgpu'"
+   ]
+  }
+ },
+ "voxel51/fiftyone": {
+  "app/packages/multimodal/src/views/episode/audio/waveform-gpu.ts": {
+   "signals": [
+    "navigator.gpu",
+    "requestAdapter",
+    "requestDevice",
+    "createShaderModule",
+    "createRenderPipeline",
+    "beginRenderPass",
+    "GPUDevice",
+    "'webgpu'"
+   ]
+  }
+ },
+ "melonjs/melonJS": {
+  "packages/melonjs/src/video/webgpu/webgpu_renderer.js": {
+   "error": "fetch-fail"
+  }
+ },
+ "remotion-dev/remotion": {
+  "packages/three/src/webgpu.tsx": {
+   "signals": [
+    "WebGPURenderer"
+   ]
+  },
+  "packages/whisper-webgpu/src/index.ts": {
+   "signals": []
+  }
+ },
+ "gpuweb/gpuweb": {
+  "l1_codesearch": [
+   "explainer/index.bs"
+  ]
+ },
+ "galacean/engine": {
+  "l1_codesearch": []
+ },
+ "Tresjs/tres": {
+  "l1_codesearch": []
+ },
+ "visgl/deck.gl": {
+  "l1_codesearch": []
+ },
+ "microsoft/vscode": {
+  "l1_codesearch": [
+   "src/vs/editor/browser/gpu/gpuDisposable.ts",
+   "src/vs/editor/browser/gpu/rectangleRenderer.ts",
+   "src/vs/editor/browser/viewParts/viewLinesGpu/viewLinesGpu.ts"
+  ]
+ },
+ "vuejs/vue": {
+  "l0_codesearch": []
+ },
+ "ant-design/ant-design": {
+  "l0_codesearch": []
+ },
+ "d3/d3": {
+  "l0_codesearch": []
+ },
+ "chartjs/Chart.js": {
+  "l0_codesearch": []
+ },
+ "excalidraw/excalidraw": {
+  "l0_codesearch": []
+ },
+ "marktext/marktext": {
+  "l0_codesearch": null
+ },
+ "meteor/meteor": {
+  "l0_codesearch": null
+ }
+}

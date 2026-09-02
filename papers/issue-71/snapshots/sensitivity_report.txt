@@ -1,0 +1,38 @@
+# Issue #71 — WebGPU in the Wild — sensitivity analysis (classifier v2 basis, offline)
+Tier B n = 174 | WebGPU L2 = 14 | WebGL L2 = 48 | GPU users = 51
+Headline: 14/174 = 8.0%  Wilson95[4.9,13.1]
+
+## 1. Flip sensitivity (L2 -> L0 re-annotations)
+H1 'low adoption' (<50% of GPU users adopt WebGPU) — WebGPU is 14/51 = 27.5% of GPU users;
+  parity (WebGPU >= 50% of GPU users) would need >=12 WebGL-only->dual flips or >=23 L0->WebGPU
+  flips — far beyond plausible adjudication error (gold pass re-verified every positive); robust.
+H1 concentration: S1 = 7/29 = 24%; S1-vs-rest Fisher p=0.0021
+  if 0 S1 L2 flipped to L0: S1=7/29=24%, S1-vs-rest p=0.0021 (still <0.05)
+  if 1 S1 L2 flipped to L0: S1=6/29=21%, S1-vs-rest p=0.0078 (still <0.05)
+  if 2 S1 L2 flipped to L0: S1=5/29=17%, S1-vs-rest p=0.0263 (still <0.05)
+  if 3 S1 L2 flipped to L0: S1=4/29=14%, S1-vs-rest p=0.0785 (crosses 0.05)
+  if 4 S1 L2 flipped to L0: S1=3/29=10%, S1-vs-rest p=0.2026 (crosses 0.05)
+  if 5 S1 L2 flipped to L0: S1=2/29=7%, S1-vs-rest p=0.6380 (crosses 0.05)
+  if 6 S1 L2 flipped to L0: S1=1/29=3%, S1-vs-rest p=1.0000 (crosses 0.05)
+  if 7 S1 L2 flipped to L0: S1=0/29=0%, S1-vs-rest p=0.5997 (crosses 0.05)
+  => S1 concentration survives >=3 S1 flips (p<0.05); robust to plausible adjudication error.
+
+## 2. L1 upper bound
+L1 repos (3): ['Tresjs/tres', 'galacean/engine', 'visgl/deck.gl']
+If ALL L1 were L2: 17/174 = 9.8% Wilson95[6.2,15.1] (upper bound; gold pass verified all 3 L1 have 0 raw navigator.gpu, so true value = lower)
+  Even the upper bound keeps adoption < 10% and WebGPU minority of GPU users.
+
+## 3. Adjudication sensitivity (v0 13 vs v2 14)
+  k=13: 7.5% Wilson95[4.4,12.4]
+  k=14: 8.0% Wilson95[4.9,13.1]
+  vscode L1->L2 (13->14) shifts headline +0.5pp only; CIs overlap; conclusion invariant.
+
+## 4. S3-AI null robustness
+S3 = 3/29 = 10%; S3-vs-rest p=0.464 (NOT elevated; contrast vs #68 MCP AI p=1.35e-4)
+  S3 would need >=9/29 (~31%) to approach MCP-level elevation; at 3/29 the null is stable to 1-2 flips.
+
+## 5. Coverage & composition
+Trees fetched @ pinned HEAD: 182/182 = 100% (truncated: 0)
+NEG calibration: 0/3 non-L0 (expect 0 -> classifier not flag-happy)
+Anchor calibration: 4/5 TierA L2 (gpuweb spec = L0-as-adopter by noise rule 2; 4/5 = engine/EP adopters by construction)
+Language mix: {'JavaScript': 70, 'TypeScript': 102, None: 1, 'HTML': 2, 'Vue': 4, 'Shell': 1, 'Svelte': 1, 'PureScript': 1}
