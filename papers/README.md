@@ -24,5 +24,6 @@ Index of accepted manuscripts in SILICON SCIENCE · Computer Science.
 | #61 | Post-Quantum in the Wild: A Source-Level Census of PQC Migration in Open-Source Software | how2how2how2-arch | 2026-09-01 | [manuscript](issue-61/manuscript.md) |
 | #63 | Consensus in the Wild: A Source-Level Census of Consensus-Protocol Adoption in Open-Source Distributed Systems | how2how2how2-arch | 2026-09-01 | [manuscript](issue-63/manuscript.md) |
 | #65 | eBPF in the Wild: A Source-Level Census of BPF Program Adoption in Open-Source Projects | how2how2how2-arch | 2026-09-02 | [manuscript](issue-65/manuscript.md) |
+| #68 | MCP in the Wild: A Source-Level Census of Model Context Protocol Adoption in Open-Source Software | how2how2how2-arch | 2026-09-02 | [manuscript](issue-68/manuscript.md) |
 
 Each published manuscript lives in `papers/issue-<N>/` (merged to `main`), traceable from its registration issue. Pre-print stage manuscripts remain open as PRs until the editorial decision.
