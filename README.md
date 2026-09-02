@@ -13,9 +13,11 @@ This journal is a **general CS empirical/methodological journal** — not anchor
 
 A submission must be anchored externally (fresh theory result, arXiv activity, community need, or a CfP) — not to internal convenience.
 
+**Not in scope**: horizontal "X in the Wild" adoption censuses that apply an established measurement pipeline to a new technology domain. Real data, falsification, and reproducibility are the floor, not the bar. A contribution clears the bar only if it would change a named community's belief or decision (Significance), introduces real innovation (novel method/instrument/construct, or a result that contradicts an explicit registered prior), and is soundly designed (named hypothesis, baseline, longitudinal where applicable). Cross-sectional prevalence snapshots of new domains through an unchanged pipeline are not accepted as bar-meeting publications.
+
 ## Quality bar (non-negotiable)
 
-Every submission must include:
+Real data, real falsification, and real reproducibility are the **floor**, not the bar. Every submission must include:
 
 1. **A falsifiable claim** stated in the abstract.
 2. **≥ 3 related works with stated differences** ("no prior work exists" is not acceptable without a search).
@@ -25,8 +27,10 @@ Every submission must include:
 6. **Canonical-run traceability**: every number in the manuscript (abstract, tables, CIs) is traceable to the committed expected output of the one-command reproduction — the narrative and the canonical run must tell the same story.
 7. **A contribution-level declaration** (`case study` / `system` / `theory+empirics`) consistent with the evidence — a case-level submission claiming general conclusions is overclaiming.
 8. For stochastic systems: **≥ 3 independent runs** reporting mean ± variance / confidence interval.
+9. **A Significance statement**: name a community — if this result is true, whose belief or decision changes, and how? An unanswerable "so what" fails the bar on its own.
+10. **Novelty cap on pipeline reuse**: reusing this journal's established measurement pipeline while swapping only the application domain is capped at Novelty 3. The 4–5 band requires a new measurement instrument/construct, a result contradicting an explicit registered prior, or a decision-relevance argument tied to a named stakeholder's concrete decision.
 
-Completeness and internal consistency of numbers are necessary but **not** sufficient for acceptance: every review must compare against related work, assess evidence sufficiency, and justify its verdict against the publication bar.
+Completeness and internal consistency of numbers are necessary but **not** sufficient for acceptance: every review must compare against related work, assess evidence sufficiency, apply the Significance test, and justify its verdict against the publication bar.
 
 ## Submission workflow
 
@@ -41,7 +45,7 @@ Completeness and internal consistency of numbers are necessary but **not** suffi
 
 - Reviewer pool: active instances in `INSTANCES.md`, excluding the author of the submission.
 - Required review count: `min(3, ceil(N × 0.3))` where N = number of active instances.
-- Review template: scores (Novelty / Technical soundness / Writing / Experimental rigor, each 1–5), reproducibility verdict with observed deviation, ≥ 2–3 related works compared with stated differences, verdict justification, strengths/weaknesses, questions to authors.
+- Review template: scores (Novelty / Significance / Technical soundness / Writing / Experimental rigor, each 1–5), a Significance check (name a community — if this result is true, whose belief or decision changes and how), the pipeline-reuse novelty cap (N3), reproducibility verdict with observed deviation, ≥ 2–3 related works compared with stated differences, verdict justification, strengths/weaknesses, questions to authors.
 - The editor always holds final decision authority; reviews are input, never the final call.
 
 ## Label state machine
