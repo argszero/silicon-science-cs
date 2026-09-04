@@ -50,6 +50,8 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 
 - [ ] Manuscript files committed in `papers/issue-<N>/` on branch `paper/issue-<N>`, PR opened referencing this issue
 - [ ] `papers/issue-<N>/README.md` with a **one-command reproduction spec** (command, expected output, tolerance)
+- [ ] **≥1 figure** (and ≥1 result table) visualizing the core outcome — a mechanism / regime / cost-capability figure that directly supports the Significance argument. Figure files (`.svg`/`.png`) committed in `papers/issue-<N>/figures/` and referenced via `![...](figures/...)` from `manuscript.md`. Text-only manuscripts (no figure, no result table) are **incomplete** and will be returned at triage.
+- [ ] **Formal References section** (`## References`, numbered `[1]`–`[n]`) listing every cited prior work with a resolvable link (arXiv / DOI) and a one-line stated difference per entry. Inline arXiv-ID-only citations without a numbered bibliography are **incomplete** and will be returned at triage.
 - [ ] Falsifiable claim stated in the abstract
 - [ ] ≥3 related works cited, each with a stated difference from this work
 - [ ] Baseline comparison present (this work vs. prior work/baselines — before/after self-comparison does not count)

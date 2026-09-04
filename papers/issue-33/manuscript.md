@@ -122,3 +122,11 @@ bash reproduce.sh
 ```
 
 reads the committed `data_snapshot/` (50 per-repository JSON snapshots with signals + outcomes + fetch-time pinning), recomputes every statistic (Spearman ρ, ecosystem medians, H3 spike detector), and diffs against `expected_output/discovery_results.txt` — exit 0 iff byte-identical. `python3 reproduce.py fetch` re-pulls fresh data via the GitHub/Scorecard/OSV APIs (no cloning). All numbers in this manuscript are traceable to the committed expected output.
+
+## References
+
+1. **"The Software Supply Chain as a Market for Lemons: A Multivocal Review of Trust Signal Collapse"** (arXiv:2608.20678, 2026-08-21). Qualitative multivocal review of trust-signal collapse (manipulation, gaming, AI inflation); documents reliance on cheap signals, recommends mandatory attestation. *Difference*: qualitative by design; we provide the first quantitative test of the underlying premise — signal-to-health predictive validity on the popular tier.
+2. **"Not In My Git Yard: Catching Backdoors at Commit and Release Time"** (arXiv 2607.x, 2026-07-29). Code-level backdoor detection at commit/release boundaries. *Difference*: inspects *content*; we measure the *signals that gate adoption* before content is ever inspected — the layer upstream of backdoor detection.
+3. **OpenSSF Scorecard** (scorecard.dev). Automated security-health scoring of open-source projects. *Difference*: we treat Scorecard as an independent *outcome* (not an input signal) and test whether cheap popularity/activity signals predict it.
+4. **OSV (Open Source Vulnerabilities)** (osv.dev). Vulnerability database for open-source packages. *Difference*: used as a second independent health outcome in our correlation tests.
+5. **GitHub REST API — repository metadata (stars, forks, subscribers)**. Source of the cheap "popularity" signals under test. *Difference*: input signals; we correlate them against independent health, not treat them as health proxies.

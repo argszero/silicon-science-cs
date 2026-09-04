@@ -353,6 +353,25 @@ anchored).
 | GREEDY-BLIND | greedy pinned at 0.000 (3/3 runs); RL cannot create minority greedy; search channel base-perfect but RL-preservation bimodal (post-RL pass@64 ≈ 1.0 2/3 runs, ≈ 0 1/3) | parity c ≤ 0.10 | imbalanced SFT argmax collapse; absent XOR feature |
 | NO-GAP | RL sustains, adds nothing | covered classes | p0 ≈ 0.98 |
 
+**Figure 1** (below) visualizes this taxonomy on the two axes that carry the
+decision-relevant signal — greedy accuracy (what greedy evaluation reports) vs
+pass@64 search capability (what a matched-budget deployment actually gets). Panel
+(a) shows the greedy claim is not the whole story (CREATE looks like a win, DESTROY
+looks like a mild loss, GREEDY-BLIND looks like nothing happened), while panel (b)
+shows the search-capability consequence that greedy evaluation cannot see
+(DESTROY's pass@64 collapse, GREEDY-BLIND's non-preserved search channel). The
+red band marks the run-to-run spread across the author / editor / clean
+re-verification runs (README_repro.md).
+
+![Figure 1](figures/fig1_regimes.png)
+
+**Figure 1**: The six-outcome regime taxonomy of outcome-only RLVR (greedy accuracy,
+left; matched-budget pass@64 search capability, right). Base (pre-RL) bars are the
+light shade, post-RL the dark shade; the red error bar is the run-to-run band across
+three independent re-runs. Decreasing/increasing base competence left→right; the
+reasoning-vs-search result flips between CREATE (RL creates) and DESTROY /
+GREEDY-BLIND (RL reallocates or destroys).
+
 ## 6 Theory: a two-condition model of when RLVR creates
 
 Across all three families and six outcomes, two base-model conditions jointly
@@ -455,6 +474,16 @@ README_repro.md (R177 author run; editor's independent run; the R179 clean
 re-verification) — they are reported with their observed spread, not asserted
 to ±0.03. All research-phase checkpoints, runners, and pinned seeds are listed
 in README_repro.md.
+
+## References
+
+1. **BOPTR: budget-optimal policy transfer under verifiable-reward RL.** arXiv:2609.01274 (2026-09-01). Shows on a 7B math model that most RLVR gain is recoverable by search at matched budget (substitution) and proposes treating RLVR as a budget-transfer mechanism. *Difference*: behavioral, single-model; we manipulate base competence p0 causally and show substitution *fails* in wall / destroy / imbalance-collapse regimes such a reanalysis cannot see.
+2. **Reasoning-length/correctness decoupling under verifiable-reward RL.** arXiv:2608.15445 (2026-08). Observes RLVR inflating reasoning length without correctness gains on hard instances. *Difference*: we measure the underlying sampling-support dynamics directly (per-prompt completion entropy) and show the decoupling symptom appears where the base's partial rule cannot populate a wide correct support (DESTROY) — giving the symptom a mechanism and a prediction.
+3. **The RLVR pessimism paradox (regimes where RLVR degrades relative to base).** arXiv:2606.30627 (2026-06). Documents degradation as a paradox. *Difference*: we delimit it with a two-condition model and show the degradation can be *silent* under greedy evaluation while destroying search capability (greedy up, pass@k down).
+4. **SAGE — shaping anchors in sequence (policy-entropy dynamics).** arXiv:2605.18864 (2026-05). Describes policy-entropy collapse as a training-phase correlate of RL/RLHF. *Difference*: we measure per-prompt *answer-distribution* entropy pre/post RL at fixed prompts (not corpus-level), show the collapse is task-structure-dependent (count expands, add contracts), and ablate the KL anchor to show it neither causes nor prevents the divergence.
+5. **rStar-Math: small LLMs can master math reasoning with self-evolved deep thinking.** arXiv:2501.04519 (2025-01). Process-reward style RLVR which lifts small models on competition math. *Difference*: never sweeps p0 as an independent variable nor compares against matched-budget search; our CREATE regime is the regime they operate in, shown to be one of six rather than the generic case.
+6. **TinyZero / simpleRL-Zoo — scalable RL for small policy models (GRPO at small scale).** Reproducible small-model GRPO recipes (2025). Show RLVR can lift small models on synthetic/competition tasks. *Difference*: same axis as [5] — no p0 sweep, no matched-budget search baseline; we delimit the load-bearing regime (CREATE) against three failure regimes.
+7. **The SWE-Bench-Verified contamination audits (methodological precedent for a direct-evidence, decision-relevant empirical genre).** arXiv:2512.10218, arXiv:2506.12286 (2025-12/2025-06). Direct-evidence leakage audits of a benchmark; model-probing results. *Difference*: this work is not a benchmark audit; cited only as an instance of the journal's direct-evidence / decision-relevance genre the present taxonomy extends by controlled causal manipulation rather than measurement.
 
 ## Acknowledgements of process
 

@@ -84,3 +84,10 @@ SWE-Bench-Verified's problem statements are curated rewrites (0.0% verbatim leak
 **Future work**: (1) apply the same pipeline to SWE-Bench Pro (2509.16941) and SWE-Bench Mobile (2602.09540) — both currently unaudited; (2) extend C1b with semantic (paraphrase) similarity beyond token Jaccard; (3) test content-level C2 assertions via `test_patch` hunks against pre-fix file contents; (4) a contamination-mode taxonomy across all three cohorts.
 
 All numbers in this manuscript are traceable to the committed canonical output (`papers/issue-36/expected_output/discovery_results.txt`), regenerable by `bash reproduce.sh` (byte-identical contract).
+
+## References
+
+1. **"Does SWE-Bench-Verified Test Agent Ability or Model Memory?"** (arXiv:2512.10218, 2025-12). Model-probing inference: frontier models score 3× higher on SWE-Bench-Verified than on matched non-public alternatives, attributing the gap to contamination. *Difference*: we do not probe models — we inspect public git history directly, per-channel, and can attribute contamination to issue text vs test files vs fix commits, which probing cannot.
+2. **"The SWE-Bench Illusion"** (arXiv:2506.12286, 2025-06). Perturbation study: state-of-the-art models collapse on perturbed SWE-bench instances, implying memorization. *Difference*: perturbation measures sensitivity, not exposure; we measure the actual public evidence for each instance's three channels with 95% CIs.
+3. **SWE-Bench Pro** (arXiv:2509.16941, 2025-09) / **SWE-Bench Mobile** (arXiv:2602.09540, 2026-02). The 2026 benchmark cohort, designed to be harder and cleaner. *Difference*: neither has any contamination audit to date; our pipeline is the first that can be applied to them (explicitly scoped as future work — this covers the flagship Verified cohort).
+4. **"Auditing Data Leakage in WSI Multimodal Benchmarks"** (arXiv:2607.12278, 2026-07). A direct-evidence leakage audit in medical imaging (whole-slide pathology). *Difference*: same audit genre, different domain and method (dataset-level overlap vs per-instance git-history forensics); we transfer the direct-evidence discipline to agentic software-engineering benchmarks.
