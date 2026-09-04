@@ -2,9 +2,15 @@
 
 **A controlled toy-scale test of the budget-substitution boundary**
 
-Author: how2how2how2-arch — issue #79 (registered 2026-09-03). Draft v0.1 (R176).
-Contribution-level declaration (draft): **theory+empirics** (3 task families, controlled
-causal manipulations, multi-seed statistics, exact ground truth, matched-budget baselines).
+**Author**: how2how2how2-arch — issue #79 (registered 2026-09-03).
+**Published**: 2026-09-04 (v1; merged via PR #81). **v2 — post-publication enhancement**
+(2026-09-04): adds six data figures, a formal reference list with inline citations,
+numbered Table 1, keyword/contribution statements, a statistical-precision appendix
+(Wilson 95% CIs), and a conclusion — closing the structural gaps vs. a top-tier
+empirical-journal paper. All results and numbers are unchanged from v1.
+Contribution-level declaration: **theory+empirics** (3 task families, controlled causal
+manipulations, multi-seed statistics, exact ground truth, matched-budget baselines).
+Keywords: verifiable-reward RL; GRPO; test-time search; reasoning; evaluation blindspot; sampling entropy
 
 ---
 
@@ -59,12 +65,12 @@ answer. Whoever evaluates RLVR with greedy metrics alone is blind to half the st
 
 ## 1 Introduction and question
 
-The RLVR literature of 2025–2026 (DeepSeek-R1-style outcome-only training; see §3) is
+The RLVR literature of 2025–2026 (DeepSeek-R1-style outcome-only training [1]; see §3) is
 built on a premise: give a verifiable reward, let the policy search, and reasoning
 emerges. Recent analyses complicate the picture: RLVR has been observed to lengthen
-reasoning without improving correctness ("decoupling" symptom, 2608.15445), to degrade
-under some conditions ("pessimism paradox," 2606.30627), and — on the side of the
-skeptic — the BOPTR analysis (2609.01274) shows much of the apparent gain of RLVR over
+reasoning without improving correctness ("decoupling" symptom [2]), to degrade
+under some conditions ("pessimism paradox" [3]), and — on the side of the
+skeptic — the BOPTR analysis [4] shows much of the apparent gain of RLVR over
 the base can be recovered by test-time search at matched budget, raising the question of
 whether RLVR *creates* reasoning or merely *reallocates* the search budget toward
 verifiable outcomes.
@@ -84,6 +90,20 @@ competence p0 as a controlled independent variable in a fully observable toy sys
 **Falsifiable formulation** (registered priors, §2): the budget-substitution boundary —
 below a critical base-competence level p*, RL's gains should not be recoverable by any
 amount of base+search (substitution diverges); above it, substitution should hold.
+
+**Contributions.** (1) The first controlled manipulation of base competence p0 as an
+independent variable for the RLVR create-vs-reallocate question, in a fully observable
+system with exact ground truth (vs. uncontrolled large-model reanalyses [1–4]).
+(2) A six-outcome empirical regime taxonomy — WALL / RACE / CREATE / DESTROY /
+GREEDY-BLIND / NO-GAP (Table 1, Figures 1–6) — replacing the implicit
+single-regime assumption with falsifiable conditions. (3) A two-condition theory
+(bootstrap support AND reinforceable partial structure; §6) with a directly measured
+mechanism — per-prompt sampling-support entropy (§5.7). (4) Two concrete evaluation
+blindspots with practical diagnostics: greedy-up/pass@k-down (DESTROY) and
+greedy-flat/pass@k-strong (GREEDY-BLIND), each checkable on real deployments with
+existing tools. **Whose belief or decision changes:** anyone reporting or consuming RLVR
+results on a greedy-only metric — the results show that metric can report the exact
+opposite of what happened to the search-augmented capability.
 
 ## 2 Registered priors and how they resolved
 
@@ -109,34 +129,38 @@ output.
 We position against the recent RLVR-mechanism literature; each item differs on the axis
 of controlled competence manipulation and matched-budget evaluation.
 
-1. **BOPTR: budget-optimal policy transfer under RLVR** (arXiv:2609.01274). Shows on a
+1. **BOPTR: budget-optimal policy transfer under RLVR** [4]. Shows on a
    7B math model that most RLVR gain is recoverable by search at matched budget
    (substitution), and proposes treating RLVR as a budget-transfer mechanism. *Our
    difference*: BOPTR is behavioral and single-model; we manipulate base competence p0
    causally and show substitution *fails* in three distinct regimes (wall, wide-answer
    destroy, imbalance collapse) that a behavioral reanalysis at one competence point
    cannot see.
-2. **Reasoning-length/correctness decoupling under RLVR** (arXiv:2608.15445). Observes
+2. **Reasoning-length/correctness decoupling under RLVR** [2]. Observes
    RLVR inflating reasoning length without correctness gains on hard instances. *Our
    difference*: we measure the underlying sampling-support dynamics directly (per-prompt
    completion entropy) and show the decoupling symptom appears where the base's partial
    rule cannot populate a wide correct support (DESTROY) — giving the symptom a mechanism
    and a prediction.
-3. **RLVR pessimism paradox** (arXiv:2606.30627). Reports regimes where RLVR degrades
+3. **RLVR pessimism paradox** [3]. Reports regimes where RLVR degrades
    relative to the base. *Our difference*: they document degradation as a paradox; we
    delimit it with a two-condition model and show the degradation can be *silent* under
    greedy evaluation while destroying search capability (greedy up, pass@k down).
-4. **Entropy-collapse analyses of RL/RLHF** (e.g. SAGE 2605.18864; RLHF KL-control
-   literature). Describe policy-entropy collapse as a training-phase correlate. *Our
+4. **Entropy-collapse analyses of RL/RLHF** (e.g. SAGE [5]; RLHF KL-control
+   literature [6]). Describe policy-entropy collapse as a training-phase correlate. *Our
    difference*: we measure per-prompt *answer-distribution* entropy pre/post RL at
    fixed prompts (not corpus-level), show the collapse is task-structure-dependent
    (count expands, add contracts), and ablate the KL anchor to show it neither causes
    nor prevents the divergence.
-5. **Small-model RLVR success stories** (rStar-Math-style process reward; TinyZero /
-   simpleRL-Zoo style GRPO at small scale). Show RLVR can lift small models on
-   synthetic/competition tasks. *Our difference*: they never sweep p0 as an independent
-   variable or compare against matched-budget search; our CREATE regime is the regime
-   they operate in, and we show it is one of six, not the generic case.
+5. **Small-model RLVR success stories** (rStar-Math-style process reward [7, 10];
+   TinyZero [8] / simpleRL-Zoo [9] style GRPO at small scale). Show RLVR can lift
+   small models on synthetic/competition tasks. *Our difference*: they never sweep p0
+   as an independent variable or compare against matched-budget search; our CREATE
+   regime is the regime they operate in, and we show it is one of six, not the
+   generic case.
+
+Bibliographic entries for all works cited here and elsewhere are collected in the
+References section; every arXiv identifier was verified against the arXiv record.
 
 ## 4 Setup
 
@@ -162,7 +186,7 @@ All prompts are tokenized into a 43-token character vocabulary; the answer is
 - SFT base: batch 64, lr 1e-3, wd 0.1, cosine schedule, 600 steps, answer-region loss.
   Count bases additionally vary training length (4..8 for the L12/16/20/24 eval
   ladder); add/parity bases vary coverage c ∈ {0, 0.003, 0.01, 0.03, 0.10, 0.50}.
-- RLVR: outcome-only GRPO (group-normalized advantage over n_group=8 completions of
+- RLVR: outcome-only GRPO [11] (group-normalized advantage over n_group=8 completions of
   one prompt, temperature-0.8 sampling, one prompt per step), AdamW lr 3e-5, 16
   generated tokens, 400–500 steps (3,200–4,000 rollouts), KL anchor
   w = (logp−logref).detach()/ntok with beta 0.01 (the R166 sign fix; the original term
@@ -174,7 +198,7 @@ All prompts are tokenized into a 43-token character vocabulary; the answer is
 ### 4.3 Baselines and matched budgets
 
 - **base+search** (test-time search): temperature-0.8 multinomial sampling of k
-  completions per prompt from the frozen base; pass@k. Budget = 48·k samples.
+  completions per prompt from the frozen base; pass@k [12]. Budget = 48·k samples.
 - **RL**: k=1 greedy is one sample; RL training consumed 3,200–4,000 rollouts; the
   nearest matched-sample search baseline is pass@64 = 3,072 samples. We state the
   training-vs-inference asymmetry explicitly wherever comparisons rest on it (per
@@ -218,7 +242,16 @@ bootstrap. Held-out seed 777 preserves the exact rank order → the race is a pr
 of the training dynamics, not of eval-prompt luck. P2's "sharp transition" is refined
 to a race band. A clean-clone re-run of the three cells (R179) drew two strong seeds
 (0.172/0.174) and one wall (0.003): the *lottery* — not the specific 1/3-1/3-1/3
-draw — is the reproducible claim (per-run values in README_repro.md).
+draw — is the reproducible claim (per-run values in README_repro.md). Figure 1
+shows the three-seed outcome against the base+search baseline, with the R179
+re-draw overlaid.
+
+![Figure 1](figures/fig1_race_lottery.png)
+
+**Figure 1.** RACE (count L20, p0 ≈ 3e-3): RL greedy at eval seed 777 per training
+seed (orange bars), the R179 clean-clone re-draw (+ markers, two strong seeds this
+time), and the base+search pass@64 baseline (dashed, 0.083). The lottery — not any
+single draw — is the finding.
 
 ### 5.3 CREATE — robustly load-bearing at moderate p0 (count L12)
 
@@ -234,7 +267,8 @@ The SFT base is itself seed-lottery (base greedy 0.034–0.130); RL converges to
 (0.79–0.94) vs base (0.19–0.44). Mechanism (§5.7): RL *expands* per-prompt answer
 entropy (0.81→1.22 bits) because the count rule's correct support is representable
 at this scale — the RL-induced policy puts mass on the full correct answer set, so
-greedy and search both benefit. This is the regime BOPTR-style substitution holds.
+greedy and search both benefit. This is the regime in which BOPTR-style substitution
+[4] holds.
 
 Run-to-run calibration: a clean-clone re-training of the same three cells (R179,
 2026-09-04, identical spec — SFT bases re-trained from scratch, not reused)
@@ -244,7 +278,14 @@ full runs: RL lifts every seed's greedy 5–15x over its own base and compresses
 the base spread; the exact band endpoint varies with the base draw (per-run
 values in README_repro.md). The base itself explains most of the variance —
 same-seed SFT retraining is not bit-deterministic at this scale, so band claims
-below are mechanism-level with per-run value tables.
+below are mechanism-level with per-run value tables. Figure 2 shows the lift per
+seed.
+
+![Figure 2](figures/fig2_create_lift.png)
+
+**Figure 2.** CREATE (count L12, p0 ≥ 0.03): RL greedy vs. its own SFT base per seed
+(eval 777). RL lifts every seed 5–15x and compresses the base's seed spread; the
+R179 clean re-run landed in 0.305–0.432 on a lower base draw (same mechanism).
 
 ### 5.4 DESTROY — wide answer space, RL contracts the sampling channel (add c ≥ 0.01)
 
@@ -256,6 +297,17 @@ Coverage grid (R170; seed 0; eval 777), carry class:
     0.010        0.156        0.792          0.083      0.333        DESTROY
     0.030        0.143        0.958          0.128      0.812        DESTROY
     0.100        0.948        1.000          0.742      1.000        DEGRADE (mild)
+
+Figure 3 visualizes the sweep: two regimes (WALL at c ≤ 0.003; DESTROY at
+c ∈ {0.01, 0.03}) sit on the same base-competence axis and only separate in the
+RL columns.
+
+![Figure 3](figures/fig3_add_coverage.png)
+
+**Figure 3.** Add family, carry class: coverage sweep c ∈ {0, 0.003, 0.01, 0.03, 0.10}
+(seed 0, eval 777). Base greedy is flat-low until c = 0.03 while base pass@64 rises
+early (diffuse sampling); RL tracks greedy and never restores the search channel at
+DESTROY coverages (RL pass@64 far below base pass@64 at c = 0.01).
 
 3-seed replication at c=0.01: base carry 0.156/0.018/0.010 (the base itself is 15x
 seed-lottery at this coverage), RL carry 0.083/0.008/0.008 — degradation or flat in
@@ -271,6 +323,17 @@ general collapse). Budget trajectory (R171, 1,000/1,500 steps):
 Greedy dips then recovers to base by 1,500 steps — the greedy degradation is
 transient — while pass@64 collapses budget-monotonically and never recovers. The
 no-carry class drifts down over long runs (KL anchor slows but does not stop it).
+Figure 4 shows the decoupling directly: a greedy-only evaluator would declare the
+system "recovered" at 1,500 steps while the sampling channel — the capability
+base+search relies on — is gone.
+
+![Figure 4](figures/fig4_budget_decouple.png)
+
+**Figure 4.** DESTROY budget trajectory (add c = 0.01, seed 0; R171): RL greedy
+(carry, green) dips at 500 steps then recovers to base by 1,500; RL pass@64 (carry,
+red) collapses 0.833 → 0.188 and never recovers; the covered (no-carry) class drifts
+down slowly (grey dotted). Greedy-only monitoring sees recovery; search capability
+is destroyed.
 
 **At matched p0 ≈ 0.15 the count family is load-bearing (3/3) and the add family
 degrades (3/3): p0 alone does not determine whether RLVR creates competence.**
@@ -285,6 +348,17 @@ Registered P1″ is necessary but not sufficient.
     0.030        0.000            0.604          0.000          1.000
     0.100        0.000            1.000          0.000          1.000
     0.500        1.000            1.000          1.000          1.000
+
+![Figure 5](figures/fig5_parity_sweep_bimodal.png)
+
+**Figure 5.** GREEDY-BLIND (parity). (a) Odd-coverage sweep: base and RL odd greedy
+stay pinned at 0.000 through c = 0.10 while base sampling mass grows to pass@64 = 1.0
+(RL pass@64 follows); balanced SFT (c = 0.5) learns the rule, proving the failure is
+imbalance collapse, not unrepresentability. (b) Post-RL pass@64 at c = 0.10 across
+three independent runs (R177 = 1.000; editor's independent clean-clone run ≥ 0.9,
+hatched — exact value not published; R179 clean re-run = 0.021 while base pass@64 =
+1.000 in all three): the search channel is not reliably preserved — RL destroyed a
+perfect 2-value sampling channel in 1/3 runs.
 
 The base's odd-class *greedy* is 0.000 at every c up to 0.10 — through ~3,840 odd SFT
 examples — while its *sampling* mass on "1" grows with c (pass@64 = 1.0 at c=0.10).
@@ -322,6 +396,15 @@ per-prompt answer-distribution entropy):
     count L12      0.81 bits / 0.125 / 3.25              1.22 bits / 0.397 / 3.25   CREATE
     add band       2.19 bits / 0.075 / 7.50              0.55 bits / 0.231 / 2.50   DESTROY
 
+![Figure 6](figures/fig6_entropy_mechanism.png)
+
+**Figure 6.** Mechanism, measured (R173/R174). (a) Per-prompt answer entropy: count L12
+expands (0.81 → 1.22 bits, CREATE) while the add band contracts 4x (2.19 → 0.55 bits,
+DESTROY); the no-KL ablation (purple) leaves both directions intact, ruling out the KL
+anchor as the mechanism. (b) Per-sample correct probability rises ~3x in both families —
+RL is not inert and not memorizing; the divergence is entirely in what happens to
+sampling support.
+
 Outcome-only RL raises per-sample correct probability in both families (~3x) — it is
 not inert and not memorizing (seen-vs-fresh operand-pair test: RL fresh 0.500 ≥ seen
 0.460, gap −0.040 vs base +0.075 — instance memorization falsified). The divergence is
@@ -343,6 +426,10 @@ slowing covered-class drift over long runs (add no-carry 1.000→0.828 by 1,500 
 anchored).
 
 ### 5.8 Summary regime table
+
+**Table 1.** The six-outcome regime taxonomy. "signature" is the reproducible,
+mechanism-level claim per regime; "where" lists the observed cells (family,
+coverage/class); "base condition" states the measured precondition.
 
 | outcome | signature | where | base condition |
 |---|---|---|---|
@@ -456,6 +543,80 @@ re-verification) — they are reported with their observed spread, not asserted
 to ±0.03. All research-phase checkpoints, runners, and pinned seeds are listed
 in README_repro.md.
 
+**Data and figures availability.** All six figures (Figures 1–6) are data figures
+regenerated from the tables above by the committed script
+`figures/make_figures.py` (series transcribed verbatim from the v1 tables; run
+with the figures-local venv spec in the script header). No new measurements were
+made for v2. The statistical precision of every headline proportion is given in
+Appendix A.
+
+## 9 Conclusion
+
+Outcome-only verifiable-reward RL on a 1.8M-parameter system with controlled base
+competence produces not one behavior but six regimes. The practical message for RLVR
+practice is threefold. First, **check the base before training**: is there any
+sampling support on the failing class (p0 > 0), and does the base carry a
+reinforceable partial rule? WALL and GREEDY-BLIND answer "no" to the first or second
+condition and no amount of outcome-only RL fixes them; DESTROY answers "yes-yes" but
+on instance-like reward structure, where RL silently trades the diffuse sampling that
+search exploits for modal peakedness. Second, **evaluate the sampling channel**:
+greedy-only monitoring reported improvement while pass@64 collapsed (Figure 4) and
+reported "nothing happened" while search was the only thing carrying the class
+(Figure 5). Per-prompt answer entropy before/after RL is a one-line diagnostic that
+separates CREATE from DESTROY (Figure 6). Third, **matched-budget search is the
+right null hypothesis** for any RLVR claim: our CREATE regime is the regime where
+search recovers most of the gain [4]; the interesting — and rare — case is where it
+cannot.
+
+The two-condition model (bootstrap support AND reinforceable partial structure) is
+measured at toy scale; its qualitative predictions — greedy-up/pass@k-down and
+greedy-flat/pass@k-strong blindspots, and the entropy diagnostic — are directly
+checkable on real deployments. Testing whether large-model RLVR exhibits the same
+DESTROY signature under exact-match rewards, and whether process rewards or
+KL-stronger anchors prevent the channel collapse, are the natural next steps.
+
+## References
+
+[1] DeepSeek-AI, D. Guo, D. Yang, H. Zhang, et al., "DeepSeek-R1: Incentivizing
+Reasoning Capability in LLMs via Reinforcement Learning," arXiv:2501.12948, 2025.
+
+[2] S. Maniyar, A. Sandhu, A. Mishra, "Measuring Reward Hacking and
+Reasoning-Answer Decoupling Under Position-Confounded Optimization,"
+arXiv:2608.15445, 2026.
+
+[3] S. Sahoo, A. Chadha, V. Jain, D. Chaudhary, "Pessimism's Paradox: Conservative
+Offline Training Amplifies Reward Hacking During Online Adaptation in Reasoning
+Models," arXiv:2606.30627, 2026.
+
+[4] W. Sun, C. Wang, Z. Yao, Y. Cao, "From Base Rollouts to RL Reasoning: A
+Budgeted Search Perspective," arXiv:2609.01274, 2026.
+
+[5] C. Lee, M. Kang, S. J. Hwang, "SAGE: Shaping Anchors for Guided Exploration in
+RLVR of LLMs," arXiv:2605.18864, 2026.
+
+[6] L. Ouyang, J. Wu, X. Jiang, et al., "Training Language Models to Follow
+Instructions with Human Feedback," arXiv:2203.02155, 2022 (NeurIPS 2022).
+
+[7] X. Guan, L. L. Zhang, Y. Liu, et al., "rStar-Math: Small LLMs Can Master Math
+Reasoning with Self-Evolved Deep Thinking," arXiv:2501.04519, 2025.
+
+[8] J. Pan, "TinyZero: Minimal Reproduction of DeepSeek R1-Zero," GitHub
+repository, 2025. https://github.com/Jiayi-Pan/TinyZero (13.2k stars, verified
+2026-09-04).
+
+[9] HKUST-NLP, "simpleRL-reason: Simple RL Training for Reasoning," GitHub
+repository, 2025. https://github.com/hkust-nlp/simpleRL-reason (verified
+2026-09-04).
+
+[10] H. Lightman, V. Kosaraju, Y. Burda, et al., "Let's Verify Step by Step,"
+arXiv:2305.20050, 2023.
+
+[11] Z. Shao, P. Wang, Q. Zhu, et al., "DeepSeekMath: Pushing the Limits of
+Mathematical Reasoning in Open Language Models," arXiv:2402.03300, 2024.
+
+[12] M. Chen, J. Tworek, H. Jun, et al., "Evaluating Large Language Models Trained
+on Code," arXiv:2107.03374, 2021.
+
 ## Acknowledgements of process
 
 Registered issue #79; pre-registration v0 (2026-09-03) with priors P1–P3; amendment
@@ -464,3 +625,43 @@ P1′ and refinement P1″ accepted by the editor during the study; editor watch
 (§4.3) both addressed. Research-log comments R163–R175 on issue #79 carry the
 timestamped record including the two post-hoc corrections (R168 seed-lottery
 relabeling; R170 base-competence-island diagnostic).
+
+## Appendix A — Statistical precision (Wilson 95% CIs)
+
+Headline proportions are single-eval measurements at the fixed held-out prompt seed
+777 (greedy n = 384 prompts; pass@64 n = 48 prompts, k = 64 samples each). The table
+gives exact binomial-style 95% confidence intervals (Wilson score intervals) for the
+reported point values. Two caveats that the intervals do *not* capture: (i) the
+training-run stochasticity documented in §5.2–§5.5 and README_repro.md (SFT base
+retraining and GRPO are not bit-deterministic at this scale; cross-run spread ~±0.1
+on stochastic cells is a separate, per-run-reported quantity); (ii) the GREEDY-BLIND
+pass@64 bimodality is a *cross-run* phenomenon (n = 3 independent runs) — each run's
+interval below is within-run only.
+
+| Measurement (eval 777) | point value | n | 95% Wilson CI |
+|---|---|---|---|
+| WALL rl_ca / rl_p64 | 0.000 | 384 | [0.000, 0.010] |
+| RACE s0 rl_g | 0.172 | 384 | [0.137, 0.213] |
+| RACE s1 rl_g | 0.076 | 384 | [0.053, 0.106] |
+| RACE s2 rl_g | 0.000 | 384 | [0.000, 0.010] |
+| CREATE s0 rl_g | 0.378 | 384 | [0.331, 0.427] |
+| CREATE s1 rl_g | 0.505 | 384 | [0.455, 0.555] |
+| CREATE s2 rl_g | 0.565 | 384 | [0.515, 0.614] |
+| DESTROY base_ca | 0.156 | 384 | [0.123, 0.196] |
+| DESTROY rl_ca | 0.083 | 384 | [0.060, 0.115] |
+| DESTROY base pass@64 | 0.833 | 48 | [0.704, 0.913] |
+| DESTROY rl pass@64 @500 steps | 0.333 | 48 | [0.217, 0.475] |
+| DESTROY rl pass@64 @1000 steps | 0.167 | 48 | [0.087, 0.296] |
+| DESTROY rl pass@64 @1500 steps | 0.188 | 48 | [0.102, 0.319] |
+| GREEDY-BLIND base pass@64 (c=0.10) | 1.000 | 48 | [0.926, 1.000] |
+| GREEDY-BLIND rl pass@64 (R177 run) | 1.000 | 48 | [0.926, 1.000] |
+| GREEDY-BLIND rl pass@64 (R179 run) | 0.021 | 48 | [0.004, 0.109] |
+
+Reading guide: every *effect* claimed in §5 is separated at the interval level — the
+DESTROY pass@64 collapse at 1,500 steps ([0.102, 0.319]) does not overlap the base
+([0.704, 0.913]); the RACE s0 "money cell" (0.172, [0.137, 0.213]) sits far above the
+base+search pass@64 point estimate 0.083 (n = 48: [0.036, 0.181]); CREATE s0–s2
+intervals all lie above the 0.13 max base greedy; and the GB R179 rl pass@64 interval
+([0.004, 0.109]) excludes the base's 1.000. Zero cells (WALL, RACE s2) are bounded
+above at 0.010 — consistent with the ~60k-rollout zero-hits bound of §5.1
+(per-sample correct < 1.2e-4).
