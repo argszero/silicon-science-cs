@@ -4,8 +4,9 @@ Re-trains RL from the persisted SFT bases (or re-runs SFT if a base is missing)
 and evaluates at the fixed held-out eval seed 777, mirroring the manuscript's
 regime-table numbers. CPU-only, ~10-core; ~40-60 min total.
 
-Output: prints KEY=value rows; `validate.py` asserts the manuscript numbers
-against these with tolerance.
+Output: prints KEY=value CELL rows; `validate.py` asserts the manuscript
+numbers against these with the two-tier scheme of manuscript §8 (Tier A
+exact-value cells + Tier B mechanism-level cells).
 
 Cells (each = SFT base ckpt -> KL-anchored GRPO -> held-out-777 eval):
   WALL        add c=0.00 (nc2 base)        -> carry greedy 0.000, pass@64 0.000
@@ -25,6 +26,7 @@ from tasks import CharTok, parse_answer, truth_answer, make_example
 from spike_sft import CFG as SCFG, TinyGPT
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ckpts")
+os.makedirs(RES, exist_ok=True)  # fresh clones have no ckpts/ dir — create it before any save
 cfg = dict(SCFG)
 tok = CharTok()
 EV = 777

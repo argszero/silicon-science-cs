@@ -29,7 +29,9 @@ rollouts, zero correct samples) because all-fail groups carry zero advantage.
 race — 1/3 of seeds reproduce a 8.3x-over-search "money cell," 1/3 are weak, 1/3 stay at
 the wall; the pattern is a property of the training dynamics (held-out eval seed 777
 reproduces the rank order). (iii) **CREATE**: at moderate p0 (0.03–0.13, count L12) RL
-is robustly load-bearing in 3/3 seeds (greedy 0.034→0.51, pass@64 0.08→0.96), because
+is robustly load-bearing in 3/3 seeds — RL lifts every seed's greedy 5–15x over its
+SFT base and compresses the base's own seed-lottery toward a load-bearing band
+(e.g. 0.034→0.51; independent re-runs 0.31–0.57; pass@64 → 0.83–0.96), because
 the count rule's correct support is representable and RL *expands* per-prompt sampling
 entropy (0.81→1.22 bits). (iv) **DESTROY**: on a class with a wide answer space
 (add-carry, 99 values) RL *contracts* per-prompt completion entropy 4x (2.19→0.55 bits)
@@ -38,9 +40,12 @@ budget-monotonically (0.83→0.19), silently destroying the capability that base
 relied on; a KL anchor (beta 0.01) neither causes nor prevents this (ablation R174), and
 instance memorization is falsified (fresh ≥ seen accuracy). (v) **GREEDY-BLIND**:
 imbalanced binary SFT (parity, 90/10) collapses the argmax onto the majority token —
-odd-class greedy stays 0.000 through 3,840 odd examples, while sampling mass grows to
-pass@64 = 1.0; RLVR (anchored or not) cannot flip the argmax, but balanced SFT learns
-the rule perfectly, so the failure is imbalance collapse, not unlearnability.
+odd-class greedy stays 0.000 through 3,840 odd examples in every RL run (anchored and
+no-KL), while base sampling mass grows to pass@64 = 1.0; whether RL *preserves* that
+sampling channel is itself unstable across independent runs (post-RL pass@64 ≈ 1.0 in
+2/3, collapsing to ≈ 0.02 in 1/3 — the DESTROY mechanism is not an artifact of wide
+answer spaces); balanced SFT learns the rule perfectly, so the failure is imbalance
+collapse, not unlearnability.
 (vi) **NO-GAP**: at p0 ≈ 0.98 RL sustains but adds nothing.
 
 The unifying claim: **outcome-only RLVR reinforces existing partial structure; it does
@@ -211,7 +216,9 @@ so whether the first positive advantage signal arrives in the early groups is a
 rare-event lottery: 1/3 of seeds reproduce the money cell, 1/3 are weak, 1/3 never
 bootstrap. Held-out seed 777 preserves the exact rank order → the race is a property
 of the training dynamics, not of eval-prompt luck. P2's "sharp transition" is refined
-to a race band.
+to a race band. A clean-clone re-run of the three cells (R179) drew two strong seeds
+(0.172/0.174) and one wall (0.003): the *lottery* — not the specific 1/3-1/3-1/3
+draw — is the reproducible claim (per-run values in README_repro.md).
 
 ### 5.3 CREATE — robustly load-bearing at moderate p0 (count L12)
 
@@ -228,6 +235,16 @@ The SFT base is itself seed-lottery (base greedy 0.034–0.130); RL converges to
 entropy (0.81→1.22 bits) because the count rule's correct support is representable
 at this scale — the RL-induced policy puts mass on the full correct answer set, so
 greedy and search both benefit. This is the regime BOPTR-style substitution holds.
+
+Run-to-run calibration: a clean-clone re-training of the same three cells (R179,
+2026-09-04, identical spec — SFT bases re-trained from scratch, not reused)
+drew a lower SFT-base seed-lottery (base greedy 0.023–0.065) and landed RL
+greedy at 0.305/0.380/0.432 (pass@64 0.83–0.94). The mechanism reproduced 2/2
+full runs: RL lifts every seed's greedy 5–15x over its own base and compresses
+the base spread; the exact band endpoint varies with the base draw (per-run
+values in README_repro.md). The base itself explains most of the variance —
+same-seed SFT retraining is not bit-deterministic at this scale, so band claims
+below are mechanism-level with per-run value tables.
 
 ### 5.4 DESTROY — wide answer space, RL contracts the sampling channel (add c ≥ 0.01)
 
@@ -278,8 +295,17 @@ is representable, so the failure is **imbalance argmax collapse**, not
 XOR-unlearnability. Account: the 90/10 SFT never carves the units-parity XOR feature
 (majority shortcut); per-prompt outcome gradients cannot carve an absent non-linear
 feature (odd "1" pushes and even "0" pushes cancel at the shared-feature level).
-Search exploits the residual sampling mass that the greedy argmax cannot see: RL
-pass@64 = 1.0 at c ≥ 0.03 while greedy stays 0.000.
+
+**The search channel is not reliably preserved.** The c=0.10 row above is the
+R175/R177 run (RL pass@64 = 1.000). Across three independent runs of the same cell
+(eval seed 777), post-RL pass@64 is bimodal: ≈ 1.0 in the R177 run and the editor's
+clean-clone run, but **0.021 in the R179 clean re-training — while base pass@64 was
+1.000 in all three**. RL never creates the minority greedy, and when it contracts the
+policy it can also *destroy* the base's perfect sampling channel in a 2-value answer
+space (the same entropy-contraction signature as §5.4, without a wide answer space).
+GREEDY-BLIND is therefore the sharpest instance of the paper's thesis: outcome-only RL
+reinforces or destroys existing structure — it does not invent missing structure, and
+greedy-only evaluation cannot see which happened (odd greedy is 0.000 in both cases).
 
 ### 5.6 NO-GAP — covered classes (all families)
 
@@ -324,7 +350,7 @@ anchored).
 | RACE | seed-lottery: 1 strong / 1 weak / 1 wall | count L20 | p0 ≈ 3e-3: rare bootstrap |
 | CREATE | greedy 3–15x, pass@64 up; entropy expands | count L12 | p0 ≥ 0.03 + representable rule + dense per-answer rewards |
 | DESTROY | greedy transiently down then recovers; pass@64 collapses monotonic | add c ≥ 0.01 | p0 > 0 but wide answer space / instance-like reward transfer; diffuse base |
-| GREEDY-BLIND | greedy pinned at 0.000; sampling/search strong | parity c ≤ 0.10 | imbalanced SFT argmax collapse; absent XOR feature |
+| GREEDY-BLIND | greedy pinned at 0.000 (3/3 runs); RL cannot create minority greedy; search channel base-perfect but RL-preservation bimodal (post-RL pass@64 ≈ 1.0 2/3 runs, ≈ 0 1/3) | parity c ≤ 0.10 | imbalanced SFT argmax collapse; absent XOR feature |
 | NO-GAP | RL sustains, adds nothing | covered classes | p0 ≈ 0.98 |
 
 ## 6 Theory: a two-condition model of when RLVR creates
@@ -389,19 +415,46 @@ but do not yet test.
 ## 8 Reproducibility
 
 One command (in `papers/issue-79/` — the committed area of this submission;
-uv-managed, CPU-only, ~10-core; verified 2026-09-04 R177):
+CPU-only, ~10-core; no GPU required):
 
     bash reproduce.sh
 
-runs `reproduce.py` (re-trains the six central cells — WALL seed 0; RACE L20
-seeds 0–2; CREATE L12 seeds 0–2; DESTROY add c=0.01 seed 0; GREEDY-BLIND parity
-c=0.10 seed 0 — from the persisted SFT bases at pinned seeds; RL 400–500 steps
-n_group=8) and `validate.py`, which asserts the 10 reported numbers of §5.8
-(greedy per cell at eval seed 777; pass@64 for the GREEDY-BLIND cell; the
-DESTROY degradation ordering) with tolerance ±0.03. Verified output: 10/10
-checks passed (full reproduction log in the R177 issue comment and
-notes_r177.md). All 51 checkpoints, runners, and pinned seeds are listed in
-README_repro.md.
+From a fresh clone this is genuinely one command: `reproduce.sh` first
+bootstraps a local `.venv` (`python3 -m venv` + `pip install torch==2.9.1`,
+one-time network use), then runs `reproduce.py`, which creates `ckpts/`,
+trains any missing SFT base checkpoints from scratch, re-trains the six central
+cell groups (WALL seed 0; RACE L20 seeds 0–2; CREATE L12 seeds 0–2; DESTROY
+add c=0.01 seed 0; GREEDY-BLIND parity c=0.10 seed 0) with KL-anchored GRPO
+(400–500 steps, n_group=8) at pinned seeds, and evaluates greedy (n=384) and
+pass@64 (n=48) at the fixed held-out prompt seed 777.
+
+**Two-tier validation** (deliberate: a uniform ±0.03 exact claim is not
+honestly reproducible at this scale). Stochastic cells vary run-to-run by
+~±0.1 — the editor's independent clean-clone re-run of the first submission
+reproduced every mechanism of §5 but matched only 5/10 cells within ±0.03,
+consistent with run-to-run stochasticity rather than a substantive
+discrepancy. `validate.py` therefore asserts:
+
+- **Tier A — exact-value cells** (3 checks): the structural outcomes that
+  reproduce identically across independent runs — WALL rl_ca = rl_p64 = 0.000
+  and GREEDY-BLIND rl_odd = 0.000. No sampling support exists in the base for
+  these outcomes, so the zeros are structural, not lucky draws.
+- **Tier B — mechanism-level cells** (8 checks): the taxonomy and effect
+  directions of §5 — RACE bootstrap seed-lottery (a strong seed appears, the
+  three seeds spread, mean rl_g > 0), CREATE lifts greedy over the SFT base in
+  ≥2/3 seeds with a positive mean, DESTROY degrades RL carry greedy below the
+  base (asserted only when base competence exists), GREEDY-BLIND keeps a
+  *base* pass@64 ≥ 0.6 sampling channel (search solves the class before RL)
+  while RL odd greedy stays 0. The post-RL pass@64 of the GREEDY-BLIND cell is
+  reported, not asserted: it is bimodal across independent runs (§5.5) — the
+  log prints it per run for the variance record.
+
+Expected output: `11/11 checks passed`; exit 0. The exact per-run values of the
+stochastic cells are printed by the log and tabulated per run in
+README_repro.md (R177 author run; editor's independent run; the R179 clean
+re-verification) — they are reported with their observed spread, not asserted
+to ±0.03. All research-phase checkpoints, runners, and pinned seeds are listed
+in README_repro.md.
 
 ## Acknowledgements of process
 

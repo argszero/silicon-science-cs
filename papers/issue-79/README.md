@@ -32,23 +32,46 @@ greedy-only evaluation cannot see being lost.
 
     bash reproduce.sh
 
-- Runs `reproduce.py`: for each of the six central cells (WALL add c=0; RACE count
-  L20 seeds 0-2; CREATE count L12 seeds 0-2; DESTROY add c=0.01; GREEDY-BLIND
-  parity c=0.10), trains the SFT base from scratch if its checkpoint is absent,
-  runs KL-anchored GRPO (500 steps for add/parity and count L20, 400 for count
-  L12; n_group=8; seed per cell), and evaluates greedy (n=384) + pass@64 (n=48) at
+- Truly one command **from a fresh clone**: on first run it bootstraps a local
+  `.venv` (`python3 -m venv` + `pip install torch==2.9.1`; needs network once),
+  then runs `reproduce.py`: for each central cell (WALL add c=0; RACE count L20
+  seeds 0-2; CREATE count L12 seeds 0-2; DESTROY add c=0.01; GREEDY-BLIND parity
+  c=0.10), trains the SFT base from scratch if its checkpoint is absent, runs
+  KL-anchored GRPO (500 steps for add/parity and count L20, 400 for count L12;
+  n_group=8; seed per cell), and evaluates greedy (n=384) + pass@64 (n=48) at
   the fixed held-out prompt seed 777.
-- Runs `validate.py`: asserts the 10 reported numbers with tolerance ±0.03
-  (expected output: `10/10 checks passed`; exit 0).
-- **Expected output / tolerance**: the per-cell greedy values in Table 1 of the
-  manuscript reproduce within ±0.03; the DESTROY degradation ordering (RL carry
-  greedy below base) and the GREEDY-BLIND signature (RL odd greedy 0.000 while
-  pass@64 = 1.0) hold. Verified 2026-09-04 (R177): 10/10.
-- Runtime: ~60-90 min on 10 CPU cores from a fresh clone (SFT bases ~9 min
-  if absent, RL cells ~5-8 min each). CPU-only, no GPU required; MPS is not used
-  for canonical runs (seed-pinned CPU identity).
-- Python: uv-managed venv (3.12 + numpy + torch 2.9.1 CPU). Dependencies: none
-  beyond the venv; the scripts import only the local modules committed here.
+- Runs `validate.py` with the **two-tier scheme** of manuscript §8 (expected
+  output: `11/11 checks passed`; exit 0):
+  - **Tier A — exact-value cells** (3): structural outcomes that reproduce
+    identically across independent runs — WALL rl_ca = rl_p64 = 0.000 and
+    GREEDY-BLIND rl_odd = 0.000 (no sampling support exists, so the zeros are
+    structural, not lucky draws).
+  - **Tier B — mechanism-level cells** (8): directional/ordering checks tolerant
+    of the run-to-run stochasticity observed at this scale (stochastic cells
+    vary by ~±0.1 across independent runs): RACE seed-lottery (strong seed
+    present, outcomes spread, positive mean), CREATE lifts greedy over base in
+    ≥2/3 seeds with a positive mean, DESTROY degrades RL carry greedy below the
+    SFT base (given base competence exists), GREEDY-BLIND keeps a *base*
+    pass@64 ≥ 0.6 search channel while RL odd greedy stays 0 (post-RL pass@64 is
+    bimodal across runs — manuscript §5.5 — and printed report-only).
+- **Expected output / tolerance**: exact-value reproduction for the three
+  structural cells; mechanism-level reproduction for the taxonomy and effect
+  directions of Table 1. Exact per-run values of the stochastic cells are
+  reported by the log and collected in README_repro.md — they are *not* claimed
+  reproducible to ±0.03 (see §8 of the manuscript for the honest band).
+- **Verification record**: (1) author run R177 (2026-09-04) reproduced the
+  reported numbers; (2) editor's independent clean-clone run (2026-09-04,
+  Editorial Decision on issue #79) reproduced every mechanism — all six regimes
+  qualitatively — and all three structural zeros exactly, while five stochastic
+  cells varied by ~±0.1, motivating this two-tier scheme; (3) clean-clone
+  re-verification R179 (2026-09-04, after the `.venv`-bootstrap +
+  `ckpts/`-creation fixes): **11/11 checks passed** — the run additionally
+  surfaced the GREEDY-BLIND rl_p64 bimodality (0.021 vs 1.000), which is now
+  reported as a finding in manuscript §5.5/§8; per-run values in
+  README_repro.md.
+- Runtime: ~40-60 min on 10 CPU cores from a fresh clone (SFT bases ~2-3 min
+  each if absent; RL cells ~2-8 min each). CPU-only, no GPU required; MPS is not
+  used for canonical runs (seed-pinned CPU identity).
 
 ## Committed files
 
