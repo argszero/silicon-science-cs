@@ -25,14 +25,18 @@ recovery interventions from the same collapsed checkpoint. We find a sharp dicho
 KL re-anchoring to the SFT base (β up to 100× the canonical value), and entropy bonuses
 all leave pass@64 at 0.10–0.33 (base 0.79–0.88) or destroy the answer format outright.
 **Data reintroduction does**: SFT-replay on the base's original coverage data restores
-pass@64 to ≥ the seed's own base in 3/3 seeds within one base-training budget
-(600 steps; s0 0.146→0.938, s1 0.208→0.854, s2 0.062→0.438), re-expanding per-prompt
-answer entropy from 0.50 to 2.66 bits (base 2.51). The registered prior P1′ — that the
-collapse is an absorbing state — is **refuted**; the registered prior P1 is confirmed
-in refined form: recovery requires reintroducing the base's *data distribution* (the
-diffuse answer manifold), not policy-space reference pressure. GREEDY-BLIND separates
-the two failure mechanisms cleanly: replay restores the RL-destroyed 2-value channel
-(odd pass@64 0.02→0.94) while the SFT-imbalance-pinned argmax stays 0.000. Finally, the
+the channel in 3/3 seeds within one base-training budget (600 steps; s0 0.146→0.938,
+s1 0.208→0.854, s2 0.062→0.438) — 4–7× fold-over-collapsed in every seed, reaching or
+exceeding each seed's own base (a high bar for the rich-base seed 0, 0.79–0.88 → 0.938;
+a floor for the near-wall seeds 1–2, where the fold-over-collapsed gain is the
+meaningful quantity) — and re-expanding per-prompt answer entropy from 0.50 to 2.66
+bits (base 2.51). The registered prior P1′ — that the collapse is an absorbing state —
+is **refuted**; the registered prior P1 is confirmed in refined form: recovery requires
+reintroducing the base's *data distribution* (the diffuse answer manifold), not
+policy-space reference pressure. In the GREEDY-BLIND parity regime (single collapsed
+draw, n=1), replay restores the RL-destroyed 2-value channel (odd pass@64 0.02→0.94)
+while the SFT-imbalance-pinned argmax stays 0.000 — consistent with a two-mechanism
+account that the measurements suggest but, at n=1, do not demonstrate. Finally, the
 "destroyed" policy is the best available recovery warm start: replay-from-collapsed at
 300 steps (pass@64 0.729) where fresh training from scratch at the same budget cannot
 even bootstrap the class (0.000). **Whose decision changes:** RLVR practitioners who
@@ -69,11 +73,13 @@ cost (hysteresis) and warm-start value — on the mechanism [1] established.
 sampling channel: policy-space pressure (continued RL, KL re-anchor to base at β up to
 100× canonical, entropy bonus) versus data reintroduction (SFT-replay on the base's
 coverage data). (2) The finding that recovery is **data-shaped, not policy-shaped**:
-replay restores pass@64 to ≥ base in 3/3 seeds within one base-training budget while
-no policy-space intervention does (Fig 1–2); the mechanism is sampling-support
-re-expansion (entropy 0.50→2.66 bits, Fig 3). (3) A mechanism separation in the
-GREEDY-BLIND regime: SFT-imbalance pins the argmax, RL destroyed the channel, replay
-fixes only the latter (Fig 4). (4) A warm-start result: the collapsed policy is a
+replay restores the channel in 3/3 seeds within one base-training budget (4–7×
+fold-over-collapsed in every seed, reaching ≥ base including the rich-base seed 0,
+0.79–0.88 → 0.938) while no policy-space intervention does (Fig 1–2); the mechanism is
+sampling-support re-expansion (entropy 0.50→2.66 bits, Fig 3). (3) In the GREEDY-BLIND
+regime (single collapsed draw, n=1), an observation consistent with two mechanisms:
+SFT-imbalance pins the argmax while RL destroyed the channel and replay fixes only the
+latter (Fig 4) — suggested by the measurements, not demonstrated at n=1. (4) A warm-start result: the collapsed policy is a
 better recovery init than random at every matched budget (Fig 5) — do not discard it.
 (5) Registered-prior resolution: P1′ (absorbing state) refuted; P1 confirmed in
 refined form (§2).
@@ -92,7 +98,8 @@ reported against the results:
 P1′ was registered as the strong-novelty refutable variant; its refutation is
 interpretable as evidence against the RLHF-anchor intuition that policy-space
 regularization can reverse contraction — the data, not the reference, carries the
-recoverable structure.
+recoverable structure (framed as a hypothesis in §6, with a named scale-transfer
+prediction).
 
 ## 3 Related work
 
@@ -204,10 +211,18 @@ seed's collapsed checkpoint:
 
 ![Recovery across three seeds: SFT-replay restores the destroyed search channel](figures/fig1_recovery_3seeds.png)
 
-Recovery holds in 3/3 seeds: replay restores pass@64 to ≥ the seed's own base within
-one base-training budget (600 ≤ 2× the 500-step prevention-relevant budget), exceeding
-it by 1.1–2.9× (Fig 1). Seed 1 is notable: its base is a near-wall bootstrap
-(pass@64 0.292, greedy 0.018), yet replay lands 0.854 — the collapsed state's
+Recovery holds in 3/3 seeds within one base-training budget (600 ≤ 2× the 500-step
+prevention-relevant budget). We report two complementary quantities.
+**Fold-over-collapsed is the primary recovery measure**: replay exceeds the collapsed
+state by 4–7× in every seed (s0 6.4×, s1 4.1×, s2 7.1×; Fig 1) — this is the strong,
+seed-uniform claim. **Recovered pass@64 also reaches or exceeds the seed's own base**,
+but what that bar means differs by seed: seed 0's base is rich (0.79–0.88) and
+recovery to 0.938 clears a high bar; seeds 1–2 are near-wall bootstraps (bases
+0.292/0.417, greedy 0.018/0.010) for which “≥ base” is a floor and the
+fold-over-collapsed gain is the meaningful quantity. We therefore do not claim that
+“≥ base in 3/3 seeds” is a uniformly strong outcome — it is a floor property in all
+seeds and a high-bar recovery only where the base itself is rich. Seed 1's 0.854
+against a 0.292 base is notable for a different reason: the collapsed state's
 greedy-already-at-base property makes it a *stronger* init than the original random
 init. **Registered prior P1′ is refuted**: the collapse is not an absorbing state.
 
@@ -229,18 +244,27 @@ Per-prompt answer entropy on fresh carry prompts (16 prompts × 64 samples, temp
 ![Entropy mechanism: sampling-support re-expansion under replay](figures/fig3_entropy_mechanism.png)
 
 Recovery is sampling-support re-expansion: replay returns entropy to (slightly above)
-base level, while the failed strong-KL arm stays contracted (Fig 3). Note: the
-per-sample correct probability in this 16-prompt draw was ~0 for all checkpoints —
-correct carry answers concentrate on the sum island 110–119 [1], which the small draw
-rarely hit — so entropy is the discriminating within-draw measure and pass@64 (n=48)
-the correctness metric; the manuscript reports both honestly.
+base level, while the failed strong-KL arm stays contracted (Fig 3). Why entropy is the
+within-draw discriminator (and why this does not undermine pass@64 as the recall
+metric): the entropy draw (16 prompts × 64 samples, temp 0.8) almost never sampled the
+correct-sum island 110–119 [1], so per-sample correct probability was ≈0 for *every*
+checkpoint — correctness cannot rank checkpoints within this draw. Entropy can: it
+measures support width directly, and it orders the checkpoints identically to pass@64
+across the full comparison (base 2.51 bits / 0.79–0.88 and replay 2.66 / 0.938 high;
+collapsed 0.50 / 0.146 and strong-KL 0.77 / 0.33 low). Pass@64 (n=48 prompts × k=64)
+remains the recall metric: with 48 prompts the per-prompt chance of hitting the
+correct island at least once rises sharply when the support is diffuse, so pass@64
+separates checkpoints where the small entropy draw cannot, and the two metrics agree
+in ordering wherever both are informative.
 
-### 5.5 GREEDY-BLIND: two mechanisms, two owners
+### 5.5 GREEDY-BLIND: channel destruction vs argmax pinning (n=1 observation)
 
-The parity regime superimposes two failures with different owners. The subject is the
-post-RL parity checkpoint from [1]'s clean-clone run (R179), whose odd pass@64
-collapsed to ~0.02 while base was 0.958 (bimodal across runs; [1] §5.5). SFT-replay on
-the c=0.10 data (600 steps):
+The parity regime superimposes two failures that — in this single collapsed draw
+(n=1) — behave as if owned by different mechanisms. The subject is the post-RL parity
+checkpoint from [1]'s clean-clone run (R179), whose odd pass@64 collapsed to ~0.02
+while base was 0.958 (bimodal across runs; [1] §5.5). Because the collapse is bimodal
+and only the destroyed draw was available, this is an n=1 observation whose mechanism
+reading is suggested, not demonstrated. SFT-replay on the c=0.10 data (600 steps):
 
 | checkpoint | odd greedy | odd pass@64 |
 |---|---|---|
@@ -248,17 +272,20 @@ the c=0.10 data (600 steps):
 | collapsed rl_par (R179) | 0.000 | ~0.02 |
 | **SFT-replay 600** | **0.000** | **0.938** |
 
-![GREEDY-BLIND mechanism separation: channel restored, argmax pinned](figures/fig4_parity_separation.png)
+![GREEDY-BLIND (n=1): channel restored, argmax pinned](figures/fig4_parity_separation.png)
 
 The channel is restored (0.938 ≈ base) while the odd greedy stays pinned at 0.000
-(Fig 4). The argmax pin is an **SFT-imbalance** property — the imbalanced base itself
-has greedy 0.000, and replay on c=0.10 data re-teaches the 90/10 imbalance. The channel
-destruction was the **RL** artifact, and replay fixes it. GREEDY-BLIND is therefore
-two mechanisms with two owners: data imbalance pins greedy (not RL's fault; replay on
-imbalanced data cannot fix it), RL collapses the channel (RL's fault; replay fixes).
-n=1 collapsed parity checkpoint (the collapse is bimodal across runs, [1] R179) — an
-honest limitation; the mechanism argument is carried by the entropy and greedy
-measurements, not the single draw.
+(Fig 4). **This is a single collapsed draw (n=1) — the parity collapse is bimodal
+across runs ([1] R179: 1.0/≥0.9/0.021) and only the destroyed draw was available — so
+we frame the result as an observation, not a demonstrated separation.** Within this
+draw the measurements suggest a two-mechanism account: the argmax pin is an
+**SFT-imbalance** property (the imbalanced base itself has greedy 0.000, and replay on
+c=0.10 data re-teaches the 90/10 imbalance), while the channel destruction is the
+**RL** artifact that replay fixes. The reading is *suggested* by the within-subject
+contrast (greedy pinned before/after while the channel is restored), the entropy and
+greedy measurements, and the add-family 3-seed result; the n=1 parity draw alone
+cannot separate the two owners. A second collapsed parity draw would be needed to
+demonstrate the separation.
 
 ### 5.6 Warm start: the "destroyed" policy is the best recovery init
 
@@ -279,11 +306,14 @@ Replay-from-collapsed dominates fresh-from-scratch at every matched budget. The
 practical message: **do not discard a DESTROYed policy**; it is the best available warm
 start for data-replay recovery.
 
-## 6 Theory: why recovery is data-shaped, not policy-shaped
+## 6 Theory: a data-shaped-recovery hypothesis (consistent with the data, not demonstrated at scale)
 
-Across all arms and both regimes, one distinction predicts recovery: whether the
-intervention reintroduces the base's **data distribution** or only reshapes the policy
-in probability space.
+**The account in this section is a hypothesis.** It is consistent with every arm and
+both regimes we measured, but it is not experimentally isolated at this scale; we label
+it explicitly rather than claiming verification (a named scale-transfer prediction
+closes the section). The hypothesis: across all arms and both regimes, one distinction
+predicts recovery — whether the intervention reintroduces the base's **data
+distribution** or only reshapes the policy in probability space.
 
 1. **The collapsed policy has destroyed its generative support, not its weights.** The
    DESTROY mechanism [1] is sampling-support contraction: the policy still scores the
@@ -307,29 +337,40 @@ in probability space.
    *better* init than random for this replay (Fig 5), because replay only needs to
    rebuild the diffuse tail, not the whole task.
 
-Scope: measured at 1.8M parameters on synthetic arithmetic with exact ground truth.
-The mechanism claim — that recovery requires reintroducing the base's data distribution
-and that prevention methods (KL anchors, entropy control) are not cures — is a
-prediction about larger exact-match-reward deployments that the related-work
-prevention results [2, 3] are consistent with but do not test.
+Scope and the scale-transfer prediction: measured at 1.8M parameters on synthetic
+arithmetic with exact ground truth; the mechanism account above is a *hypothesis*, not
+a demonstrated result at scale. It makes one concrete, testable prediction about a
+larger exact-match-reward deployment (e.g., a reasoning model whose pass@k has
+measurably contracted under RLVR while greedy accuracy is stable): (1) SFT-replay on
+the base training distribution will restore the contracted pass@k channel to ≥ its
+pre-collapse level within roughly one base-training budget; (2) KL re-anchoring to the
+base policy and entropy-control bonuses will not restore it; and (3) greedy-only
+evaluation will continue to look healthy through both the collapse and the recovery.
+The related-work prevention results [2, 3] are consistent with the hypothesis but do
+not test these predictions, which require a post-hoc recovery protocol like the one
+developed here.
 
 ## 7 Threats and why the contribution stands
 
 - **Toy scale.** The same deliberate trade as [1]: full observability, exact ground
   truth, and reproducible collapse are what make a *controlled recovery experiment*
   possible; LLM-scale collapsed deployments cannot yet be characterized this precisely.
-  The mechanism (data-manifold support vs policy-space pressure) is scale-free in the
-  model of §6, and the practical checks (pass@64 before/after replay; entropy before/
-  after) are directly runnable on real deployments with existing tools.
+  The mechanism *hypothesis* (data-manifold support vs policy-space pressure) is
+  scale-free in the model of §6 — explicitly a hypothesis, with the named
+  scale-transfer prediction for a larger deployment stated there — and the practical
+  checks (pass@64 before/after replay; entropy before/after) are directly runnable on
+  real deployments with existing tools.
 - **n=1 parity collapse checkpoint.** The GREEDY-BLIND channel collapse is bimodal
   across runs ([1] R179: 1.0/≥0.9/0.021); only the destroyed draw existed for recovery
-  testing. The mechanism separation (§5.5) rests on the within-subject contrast
-  (greedy pinned before/after; channel restored) and the add-family 3-seed result, not
-  on the single parity draw.
+  testing. §5.5 is therefore framed as an n=1 observation: the two-mechanism reading is
+  suggested by the within-subject contrast (greedy pinned before/after; channel
+  restored), the entropy/greedy measurements, and the add-family 3-seed result — a
+  second collapsed parity draw would be required to demonstrate the separation.
 - **Recovery target = the seed's own base.** Seeds 1–2 have weak bases (pass@64
   0.29–0.42, near-wall); "recovery to base" is a low bar for them. Seed 0's rich base
   (0.79–0.88) and the parity case carry the strong version; the fold-over-collapsed
-  gains (4–7×) hold across all seeds.
+  gains (4–7×) hold across all seeds and are the primary recovery measure for the
+  near-wall seeds (§5.3).
 - **Single-annotator study.** The full pipeline (SFT → collapse → intervention → eval)
   is scripted with pinned seeds; the committed reproduce toolchain regenerates the
   central results from scratch; priors were registered before data collection and are
@@ -337,9 +378,10 @@ prevention results [2, 3] are consistent with but do not test.
 - **Why still worth publishing**: the recovery question is the natural next question
   after [1, 7], and the answer is decision-relevant and non-obvious — data replay
   cures in one base-training budget, policy-space prevention methods do not cure at all,
-  and the collapsed policy is a valuable warm start rather than a loss. The two-mechanism
-  separation in GREEDY-BLIND also reconciles the "RLVR cannot fix imbalance" result [1]
-  with the "RLVR damage is fixable" result here.
+  and the collapsed policy is a valuable warm start rather than a loss. The n=1
+  GREEDY-BLIND observation — the channel is restored while the argmax stays pinned — is
+  consistent with, and illustrates, the two-mechanism account, and reconciles the
+  "RLVR cannot fix imbalance" result [1] with the "RLVR damage is fixable" result here.
 
 ## 8 Reproducibility
 
