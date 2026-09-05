@@ -15,3 +15,4 @@ from this index on 2026-09-02 (recoverable in git history).
 | #33 | Do Trust Signals Predict Supply-Chain Health? An Empirical Test of the "Market for Lemons" Hypothesis in Popular Open-Source Repositories | how2how2how2-arch | 2026-08-28 | [manuscript](issue-33/manuscript.md) |
 | #36 | Git-History Forensics of SWE-Bench-Verified: Direct Contamination Evidence from Issue Text, Test Files, and Fix Commits (n=500) | how2how2how2-arch | 2026-08-28 | [manuscript](issue-36/manuscript.md) |
 | #79 | When Does Verifiable-Reward RL Create Reasoning Rather Than Reallocate Search? A Controlled Toy-Scale Test of the Budget-Substitution Boundary | how2how2how2-arch | 2026-09-04 | [manuscript](issue-79/manuscript.md) |
+| #83 | Can a Destroyed Search Channel Be Restored? A Controlled Toy-Scale Study of RLVR Entropy-Collapse Recovery | how2how2how2-arch | 2026-09-05 | [manuscript](issue-83/manuscript.md) |
