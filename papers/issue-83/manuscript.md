@@ -187,6 +187,10 @@ constraints cannot re-teach (Fig 2). Entropy bonuses at any useful strength spre
 mass over format tokens before broadening correct-answer support, destroying the
 `answer:<n>_` format entirely (Fig 2, λ≥0.02 → 0.000).
 
+Run-to-run note: the KL β=1.0 arm’s pass@64 varies across independent runs (0.333–0.521 observed, including the editor’s independent reproduction run at 0.521); the relative claim — no policy-space arm reaches base — holds in every run (README_repro.md tabulates per-run values).
+
+![Intervention taxonomy: policy-space pressure fails, data replay recovers](figures/fig2_intervention_taxonomy.png)
+
 ### 5.3 SFT-replay recovers the channel, 3/3 seeds
 
 SFT-replay on the base's original data recipe (600 steps, lr 1e-3, c=0.01) from each
@@ -197,6 +201,8 @@ seed's collapsed checkpoint:
 | 0 | 0.79–0.88 | 0.146 | 0.729 | **0.938** | ≥ (~1.1×) |
 | 1 | 0.292 | 0.208 | — | **0.854** | **2.9×** |
 | 2 | 0.417 | 0.062 | — | **0.438** | ≥ (1.05×) |
+
+![Recovery across three seeds: SFT-replay restores the destroyed search channel](figures/fig1_recovery_3seeds.png)
 
 Recovery holds in 3/3 seeds: replay restores pass@64 to ≥ the seed's own base within
 one base-training budget (600 ≤ 2× the 500-step prevention-relevant budget), exceeding
@@ -220,6 +226,8 @@ Per-prompt answer entropy on fresh carry prompts (16 prompts × 64 samples, temp
 | **SFT-replay 600 (recovered)** | **2.66** | **9.19** |
 | strong-KL β=1 (no recovery) | 0.77 | 3.69 |
 
+![Entropy mechanism: sampling-support re-expansion under replay](figures/fig3_entropy_mechanism.png)
+
 Recovery is sampling-support re-expansion: replay returns entropy to (slightly above)
 base level, while the failed strong-KL arm stays contracted (Fig 3). Note: the
 per-sample correct probability in this 16-prompt draw was ~0 for all checkpoints —
@@ -239,6 +247,8 @@ the c=0.10 data (600 steps):
 | SFT base (c=0.10) | 0.000 | 0.958 |
 | collapsed rl_par (R179) | 0.000 | ~0.02 |
 | **SFT-replay 600** | **0.000** | **0.938** |
+
+![GREEDY-BLIND mechanism separation: channel restored, argmax pinned](figures/fig4_parity_separation.png)
 
 The channel is restored (0.938 ≈ base) while the odd greedy stays pinned at 0.000
 (Fig 4). The argmax pin is an **SFT-imbalance** property — the imbalanced base itself
@@ -260,6 +270,8 @@ Matched-budget comparison (add c=0.01, seed 0):
 | replay from collapsed | 300 | **0.729** |
 | fresh SFT from scratch (= base) | 600 | 0.83–0.88 |
 | replay from collapsed | 600 | **0.938** |
+
+![Warm start: replay-from-collapsed beats fresh-from-scratch at matched budgets](figures/fig5_warmstart.png)
 
 At equal budget the collapsed policy — whose greedy the RL phase already lifted to base
 level — recovers the channel where fresh training cannot even bootstrap it (Fig 5).
