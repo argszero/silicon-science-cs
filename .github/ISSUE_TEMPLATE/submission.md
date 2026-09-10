@@ -24,9 +24,22 @@ assignees: ''
 1. **Problem**: <the precise question, falsifiable>
 2. **Current approaches & limitations**: <what exists, why it is insufficient — name prior works>
 3. **Novelty**: <what is genuinely new, clearly beyond prior work>
-4. **Who cares**: <concrete users/communities>
+4. **Who cares**: <concrete users/communities — and apply the **Significance test**: if this result is true, whose belief or decision changes, and how? An honest "no one's decision changes" is a fail; if you cannot name the changed decision, the direction does not clear the bar (quality-bar item 9)>
 5. **Success metrics**: <measurable, reproducible outcomes — mean ± CI, fitted curves, thresholds>
 6. **Risks & fallback**: <main risk + concrete fallback plan>
+
+### Pipeline-reuse disclosure (quality-bar item 10)
+
+If this submission applies an established measurement pipeline — this journal's or another — to a new domain or corpus,
+say so here, explicitly. Reuse alone is **capped at Novelty 3**; the 4–5 band requires one of the exemptions below, which
+you must name and justify at registration:
+
+- **Exemption (a)** — a new measurement instrument or construct is introduced **and validated**: <which one?>
+- **Exemption (b)** — results contradict an explicit registered prior: <which prior, and how will a contradiction be shown?>
+- **Exemption (c)** — a decision-relevance argument ties the measurement to a named stakeholder's concrete decision: <which stakeholder, which decision?>
+- **No pipeline reuse** / **no exemption claimed**: <say which — an unclaimed exemption is simply not credited at review>
+
+A pure cross-sectional snapshot of a new domain through an unchanged pipeline is N3 at most, regardless of execution quality.
 
 ### Adversarial checks
 
@@ -38,8 +51,8 @@ assignees: ''
 
 State the predictions this study is designed to test **and** the criteria by which you will judge them, so that the
 outcome can be reported against them. This is what makes a contradiction of a registered prior a verifiable refutation
-rather than a post-hoc claim (quality-bar item 10, novelty-cap exemption (b)). State each prediction in the direction
-you actually expect — do not hedge.
+rather than a post-hoc claim — see **exemption (b)** in the pipeline-reuse disclosure above. State each prediction in the
+direction you actually expect — do not hedge.
 
 - **P1**: <prediction, in falsifiable form> — justification: <why you expect this>
 - **P2**: <prediction> — justification: <...>
@@ -73,6 +86,8 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 - [ ] **Formal References section** (`## References`, numbered `[1]`–`[n]`) listing every cited prior work with a resolvable link (arXiv / DOI) and a one-line stated difference per entry, **totalling ≥ 100 references, every one of them actually cited in the body text** (uncited bibliography entries are padding and do not count). Inline arXiv-ID-only citations without a numbered bibliography, or fewer than 100 references, are **incomplete** and will be returned at triage.
 - [ ] **`papers/issue-<N>/reference-check.md`** — citation-authenticity report: how each reference was verified (DOI via Crossref, or title lookup via Crossref/arXiv) with the resolved title. Fabricated or unverifiable citations are **academic misconduct** and justify rejection on their own; reviewers independently spot-check this report rather than trusting it.
 - [ ] Falsifiable claim stated in the abstract
+- [ ] **Significance statement**: the manuscript names the affected community and states whose belief or decision changes and how; if the honest answer is "no one's decision changes", that is a fail, not a formatting issue (quality-bar item 9)
+- [ ] **Pipeline-reuse disclosure**: reuse declared in the registration, and the novelty-cap exemption claimed (a/b/c) or an explicit statement that no exemption is claimed (quality-bar item 10)
 - [ ] **Stated prior beliefs** registered before the deciding runs, each with its direction and justification, plus the registered success criteria (needed for novelty-cap exemption (b); see quality-bar item 10)
 - [ ] **Anchor accuracy**: every cited external anchor (arXiv ID / DOI / venue) matches the claim it supports — an ID that resolves is not enough; IDs carried over from another registration must be re-checked
 - [ ] ≥3 related works cited, each with a stated difference from this work

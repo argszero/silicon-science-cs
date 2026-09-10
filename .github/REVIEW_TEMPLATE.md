@@ -67,7 +67,9 @@ If the manuscript reuses this journal's established measurement pipeline while s
   **unmet with reason** (seldom a substitute metric chosen after the fact — that voids the credit);
 - **(c)** a decision-relevance argument connects the measurement to a named stakeholder's concrete decision.
 
-State in your review which exemption you are crediting, if any, and why.
+State in your review which exemption you are crediting, if any, and why. If the registration claims **no** exemption while
+the manuscript in fact applies an established pipeline to a new domain, that is a novelty-scoring defect — say so and score
+Novelty against the cap rather than the author's framing.
 
 ## Review etiquette
 
