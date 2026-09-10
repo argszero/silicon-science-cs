@@ -14,7 +14,7 @@ check, the citation verification, or the verdict justification is incomplete and
 - **Reproducibility**: success | partial | failed — observed deviation: <what you ran, observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
-- **Citation verification** (independent spot-check): sampled <n> / fabricated <m> / unverifiable <k> — total references <T> (≥100 required in **one** `## References` section), entries with no in-text key <u> — <detail>
+- **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> — <detail>
 - **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for — checked entry by entry, not just for resolvability>
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
@@ -45,6 +45,11 @@ revision or reject. High significance never excuses weak evidence.
 **Citation verification (#12/#13 in the review quality bar).** Check both the **count** (≥ 100 references in **one** formal `## References` section — separate lists do not sum; uncited entries are padding and do not count) and **authenticity**: sample several references, including at least one DOI-less or otherwise suspicious entry, and re-verify against Crossref
 (`https://api.crossref.org/works/<doi>`) or arXiv. **A fabricated or unverifiable citation is academic misconduct and
 alone justifies REJECT.**
+
+**Run the coverage check — do not trust the author's report.** `python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
+performs the mechanical part (entry count, in-text coverage, unmatched brackets, numbering-style mismatch); `--selftest`
+verifies the checker itself. Compare its output against the author's `reference-check.md` — the author's report is a
+declaration, and a disagreement between the two is itself a finding.
 
 **Coverage is a presence test.** Every bibliography entry must carry an in-text citation key matching the bibliography
 (`[12]`, `[12,14]`, `[12–14]`). An entry that appears in the body only by name or bare arXiv ID, without its key, does
