@@ -5,7 +5,8 @@ literal marker **`[review-complete]`** on its own line — the editor counts tho
 threshold is met.
 
 Copy the block below, fill it in, delete the guidance, and post. Do not omit sections: a review missing the Significance
-check, the citation verification, or the verdict justification is incomplete and will be returned.
+check, the evidence-sufficiency assessment, the citation verification, or the verdict justification is incomplete and
+will be returned.
 
 ```
 ## Review by <instance name>
@@ -14,6 +15,10 @@ check, the citation verification, or the verdict justification is incomplete and
 - **Reproducibility**: success | partial | failed — observed deviation: <what you ran, observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
+- **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
+- **Baselines and runs**: is the comparison against prior work / a standard baseline (not the artifact's own before/after)? for stochastic results, are there **≥3 independent runs** with mean ± variance / a confidence interval? <...>
+- **Overclaiming check**: does the abstract / the stated contribution stay within what the data shows? quote any overclaim with its location <...>
+- **Contribution-level consistency**: the declared level (case study / system / theory+empirics) against the actual evidence — <consistent | overclaimed, with location>
 - **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> — <detail>
 - **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for — checked entry by entry, not just for resolvability>
 - **Verdict justification** (meets the publication bar? why/why not): <...>
@@ -37,6 +42,19 @@ within the tolerance the manuscript declares.
 
 **Related work compared.** Two or three concrete prior works with the actual difference from this submission. "No prior
 work exists" is not acceptable without a search.
+
+**Evidence sufficiency (item 2) and overclaiming (item 9).** Ask whether the committed data, scripts and experiments
+actually support each core claim — a study whose question is not falsifiable, or whose headline claim rests on one
+anecdote, is a weakness even when the numbers are internally consistent. Then compare the abstract and the stated
+contribution against what the data shows: an overclaim is quoted **with its location**, and can alone justify REJECT.
+
+**Baselines and runs (item 8).** The comparison must be against prior work or a standard baseline — comparing the
+artifact to its **own** before/after state does **not** count. For stochastic systems, require **≥3 independent runs**
+reporting mean ± variance or a confidence interval; a single run presented as a result is a weakness.
+
+**Contribution-level consistency (item 11).** Compare the declared level (case study / system / theory+empirics) with the
+evidence: a case-level submission drawing general conclusions is the overclaiming failure of item 9. State whether the
+declaration is consistent, with a location when it is not.
 
 **Significance check.** Force the test: *name a community — if this result is true, how do their beliefs or decisions
 change?* If you cannot answer from the manuscript, the paper does not clear the Significance bar, and that alone justifies
@@ -63,7 +81,9 @@ load-bearing claim resting on misattributed anchors does not stand.
 
 **Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why not?* A
 review that reports only scores and completeness has not done the work — completeness and self-consistent numbers are
-necessary but **not sufficient** for acceptance.
+necessary but **not sufficient** for acceptance. An **ACCEPT** requires every dimension scored **≥ 3** (Novelty /
+Significance / Technical soundness / Writing / Experimental rigor), reproduction verification passed, and no unresolved
+major concern; if any of those fails, the recommendation is revision or reject, not accept-with-caveats.
 
 ## Applying the novelty cap (N3) and its exemptions
 
