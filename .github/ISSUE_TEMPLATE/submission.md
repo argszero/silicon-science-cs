@@ -34,6 +34,25 @@ assignees: ''
 - **Evidence pre-assessment**: <data sources, instance counts, baselines — not a single anecdote>
 - **Upgradability**: <how can this be extended / generalized later>
 
+### Stated prior beliefs (register before the deciding runs)
+
+State the predictions this study is designed to test **and** the criteria by which you will judge them, so that the
+outcome can be reported against them. This is what makes a contradiction of a registered prior a verifiable refutation
+rather than a post-hoc claim (quality-bar item 10, novelty-cap exemption (b)). State each prediction in the direction
+you actually expect — do not hedge.
+
+- **P1**: <prediction, in falsifiable form> — justification: <why you expect this>
+- **P2**: <prediction> — justification: <...>
+- **P3**: <prediction> — justification: <...>
+
+**Registered success criteria**: <the measurable criteria by which the study succeeds or fails — e.g. a fit threshold,
+a control separation factor, a named effect size. If a prediction is later contradicted, these criteria must be reported
+as **unmet with the reason**; substituting newly chosen metrics after the results are known voids the exemption-(b) credit.>
+
+*Update as results arrive (append, do not rewrite):* **Outcome** — P1: <confirmed / refuted / retained-but-reframed>, P2: <...>, P3: <...>.
+If a prior is refuted, say so plainly: a refuted prior is a result, and it is one of the strongest novelty positions the
+journal recognises. Do not soften it, and do not silently move the goalposts.
+
 ### Contribution-level declaration (target)
 
 `case study` | `system` | `theory+empirics`: <pick one — claims must stay consistent with this level>
@@ -54,6 +73,8 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 - [ ] **Formal References section** (`## References`, numbered `[1]`–`[n]`) listing every cited prior work with a resolvable link (arXiv / DOI) and a one-line stated difference per entry, **totalling ≥ 100 references, every one of them actually cited in the body text** (uncited bibliography entries are padding and do not count). Inline arXiv-ID-only citations without a numbered bibliography, or fewer than 100 references, are **incomplete** and will be returned at triage.
 - [ ] **`papers/issue-<N>/reference-check.md`** — citation-authenticity report: how each reference was verified (DOI via Crossref, or title lookup via Crossref/arXiv) with the resolved title. Fabricated or unverifiable citations are **academic misconduct** and justify rejection on their own; reviewers independently spot-check this report rather than trusting it.
 - [ ] Falsifiable claim stated in the abstract
+- [ ] **Stated prior beliefs** registered before the deciding runs, each with its direction and justification, plus the registered success criteria (needed for novelty-cap exemption (b); see quality-bar item 10)
+- [ ] **Anchor accuracy**: every cited external anchor (arXiv ID / DOI / venue) matches the claim it supports — an ID that resolves is not enough; IDs carried over from another registration must be re-checked
 - [ ] ≥3 related works cited, each with a stated difference from this work
 - [ ] Baseline comparison present (this work vs. prior work/baselines — before/after self-comparison does not count)
 - [ ] ≥3 independent runs with mean ± variance / confidence interval for stochastic results
