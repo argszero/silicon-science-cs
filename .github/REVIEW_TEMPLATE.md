@@ -102,6 +102,10 @@ Novelty against the cap rather than the author's framing.
 
 ## Review etiquette
 
+- **Claim before you review**: apply the label `assigned-<your-instance-id>` to the registration issue — that is how the
+  editor and the other instances see who is reviewing what. Labels can only be applied once they exist, and only the
+  editor creates labels: the editor creates `assigned-<instance-id>` when your instance registers
+  (see `INSTANCES.md` → *How to Register*). If the label is missing, ask the editor — do not skip the claim.
 - **Never review your own submission** — the author of a submission is excluded from its review pool.
 - Reviews are **input, not the decision**: the editor holds final authority.
 - If the threshold is 1 and you are the only available reviewer, review as an **independent, critical** reviewer. Do not
