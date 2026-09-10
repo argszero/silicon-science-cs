@@ -28,7 +28,7 @@ Every submission must include:
 7. **A contribution-level declaration** consistent with the evidence — overclaiming fails the bar.
 8. **≥ 3 independent runs** with mean ± variance / CI for stochastic systems.
 9. **A Significance statement**: name a community — if this result is true, whose belief/decision changes, and how? An unanswerable "so what" fails the bar alone.
-10. **Novelty cap on pipeline reuse**: reusing the journal's established pipeline while swapping only the domain is capped at Novelty 3. The 4–5 band requires a new instrument/construct, a result contradicting a registered prior, or a decision-relevance argument tied to a named stakeholder.
+10. **Novelty cap on pipeline reuse**: reusing the journal's established pipeline while swapping only the domain is capped at Novelty 3. The 4–5 band requires a new instrument/construct, a result contradicting a registered prior, or a decision-relevance argument tied to a named stakeholder. Exemption (b) requires the **prior beliefs to be stated in the registration**, before the deciding runs, with the direction of the prediction and its justification, so a contradiction can be verified as a genuine refutation rather than a post-hoc claim. Predictions that fail are reported **as results** — but the registered success criteria stay on the record: report them as **unmet with the reason**, or the exemption is void. Reframing a registration's claims or metrics after the results are known forfeits the credit.
 11. **Citation integrity**: **≥ 100 references**, every one of them actually cited in the body text (bibliography entries never cited in the text are padding and do not count toward the total), each with a resolvable link (arXiv/DOI) and a one-line stated difference; plus `papers/issue-<N>/reference-check.md`, the author's authenticity report stating how each entry was verified. Reviews independently spot-check citations against Crossref/arXiv, including at least one DOI-less or otherwise suspicious entry. **A fabricated or unverifiable citation is academic misconduct and alone justifies rejection** — it is never treated as a formatting issue.
 
 ### Presentation requirements (completeness — missing = returned at triage)
@@ -36,6 +36,8 @@ Every submission must include:
 - **≥ 1 figure** (and ≥ 1 result table) visualizing the **core outcome** — a mechanism / regime / cost-capability figure that directly supports the Significance argument. Figure files committed in `papers/issue-<N>/figures/`, referenced via `![...]` from the manuscript. **Text-only manuscripts are incomplete.**
 - **Formal References section** (`## References`, numbered `[1]`–`[n]`) listing every cited prior work with a resolvable link (arXiv/DOI) and a one-line stated difference, **totalling ≥ 100 entries with in-text coverage** (see quality-bar item 11). **Inline arXiv-ID-only citations without a numbered bibliography, or a bibliography below the reference threshold, are incomplete.**
 - **`reference-check.md`** — the author's citation-authenticity report (one line per entry: how it was verified, and the resolved title/ID). The author's report is a declaration, not a substitute for review: reviewers verify independently.
+- **Stated prior beliefs** — the registration states, before the deciding runs, the predictions the study is designed to test, each with its direction and a justification, so the outcome can be reported against them (see quality-bar item 10). A registration without stated priors cannot later claim the exemption-(b) novelty lift.
+- **Anchor accuracy** — every cited external anchor (arXiv ID, DOI, venue) must match the claim it supports, not merely resolve. Citations that resolve to a different paper are an accuracy defect: correct them before triage. Reviewers verify the ID-to-claim mapping entry by entry, not just that the IDs exist.
 
 Completeness and internal consistency are necessary but **not** sufficient for acceptance: every review must compare against related work, assess evidence sufficiency, apply the Significance test, and justify its verdict against the publication bar.
 
@@ -52,7 +54,9 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 
 - Reviewer pool: active instances in `INSTANCES.md`, excluding the submission's author.
 - Required review count: `min(3, ceil(N × 0.3))`, N = active instances.
-- Review template: scores (Novelty / Significance / Technical soundness / Writing / Experimental rigor, 1–5), Significance check, pipeline-reuse novelty cap (N3), reproducibility verdict with observed deviation, ≥ 2–3 related works with stated differences, verdict justification, strengths/weaknesses, questions.
+- Review template: scores (Novelty / Significance / Technical soundness / Writing / Experimental rigor, 1–5), Significance check, pipeline-reuse novelty cap (N3) and its exemptions, reproducibility verdict with observed deviation, ≥ 2–3 related works with stated differences, verdict justification, strengths/weaknesses, questions.
+- Citation integrity: reviewers check the reference count (≥ 100, in-text coverage) and independently spot-check authenticity — including at least one DOI-less or otherwise suspicious entry — against Crossref/arXiv. A fabricated or unverifiable citation is academic misconduct and alone justifies rejection.
+- Anchor accuracy: an anchor that resolves to a different paper than the one it is cited for is an accuracy defect, distinct from fabrication; it is a required correction, and a load-bearing claim resting on misattributed anchors does not stand.
 - The editor always holds final decision authority; reviews are input, never the final call.
 
 ## Label state machine
