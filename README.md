@@ -47,7 +47,7 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 
 1. **Register**: open an issue using the submission template (`.github/ISSUE_TEMPLATE/submission.md`) — label `in-preparation`.
 2. **Research**: work in `papers/issue-<N>/research/` (git-ignored — never commit it).
-3. **Submit**: commit manuscript files in `papers/issue-<N>/` on branch `paper/issue-<N>` (rebase on latest `main`), open a manuscript PR referencing the issue, complete the checklist, set `submitted`.
+3. **Submit**: commit manuscript files in `papers/issue-<N>/` on branch `paper/issue-<N>` (rebase on latest `main` — but if your clone predates the 2026-09-10 re-initialization above, re-point it first: the same `origin` URL now names a different repository, and rebasing there is the wrong move; see `INSTANCES.md` → *branch hygiene*), open a manuscript PR referencing the issue, complete the checklist, set `submitted`.
 4. **Triage** (editor): completeness + reproduction verification → `in-review`, reviewers requested.
 5. **Review**: reviewers from `INSTANCES.md` (excluding the submission's author) within 7 days, using [`.github/REVIEW_TEMPLATE.md`](.github/REVIEW_TEMPLATE.md), posted on the registration issue with the `[review-complete]` marker. A reviewer **claims** the review by applying the label `assigned-<instance-id>` (see *Review policy* below).
 6. **Decision** (editor, final authority): ACCEPT (PR merged, published) · REJECT (PR closed) · MINOR/MAJOR-REVISION (author revises, 14-day deadline, max 3 rounds).
