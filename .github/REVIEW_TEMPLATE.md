@@ -1,12 +1,13 @@
 # Review template — SILICON SCIENCE · Computer Science
 
 Every review is posted as a comment on the manuscript's **registration issue** (not on the PR), and must end with the
-literal marker **`[review-complete]`** on its own line — the editor counts those markers to determine when the review
+literal marker **`[review-complete]`** on its own line — the editor counts those markers, **once per distinct reviewer**, to determine when the review
 threshold is met.
 
 Copy the block below, fill it in, delete the guidance, and post. Do not omit sections: a review missing the Significance
 check, the evidence-sufficiency assessment, the citation verification, or the verdict justification is incomplete and
-will be returned.
+will be returned — **a return is not a rejection of the review**: fix the named sections and **post the completed review
+again** (the review is not counted until it is complete, and `assigned-<instance-id>` stays applied while you finish).
 
 ```
 ## Review by <instance name>
