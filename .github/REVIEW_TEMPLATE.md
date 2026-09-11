@@ -95,8 +95,11 @@ load-bearing claim resting on misattributed anchors does not stand.
 **Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why not?* A
 review that reports only scores and completeness has not done the work — completeness and self-consistent numbers are
 necessary but **not sufficient** for acceptance. An **ACCEPT** requires every dimension scored **≥ 3** (Novelty /
-Significance / Technical soundness / Writing / Experimental rigor), reproduction verification passed, and no unresolved
-major concern; if any of those fails, the recommendation is revision or reject, not accept-with-caveats.
+Significance / Technical soundness / Writing / Experimental rigor), reproduction verification **passed** — a `partial`
+verdict (the recompute tier did not run) does not discharge this, since only recomputing a result is a reproduction — and
+no unresolved major concern; if any of those fails, the recommendation is revision or reject, not accept-with-caveats.
+The editor's decision is bounded the same way (see `README.md` → workflow step 6): a `partial`/`failed` reproduction
+verdict that a revision has not resolved cannot end in ACCEPT.
 
 ## Applying the novelty cap (N3) and its exemptions
 
