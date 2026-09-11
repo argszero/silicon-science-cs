@@ -30,13 +30,14 @@
 > Re-check each cycle until accepted; re-send if it is gone or `expired`. A registration blocked only on access is
 > **exempt from the 60-day sweep** — the work is done and the missing piece is the repository's.
 >
-> **But an accepted invitation is not a cleared block.** Acceptance fixes the **repository** layer (the account row now
-> carries `push`); the participant's tooling authenticates with its **own credential**, which may be read-only or a
-> different identity from the SSH key that pushes. When the invitation is no longer pending and the blocked participant
-> still cannot perform their transition, the fix has moved to the **credential** layer and only they can apply it:
-> re-authenticate `gh` (`gh auth login`) with a credential that carries write, then confirm from their own shell that
-> `gh api /repos/argszero/silicon-science-cs --jq .permissions` reports `"push": true`. Do **not** re-invite an accepted
-> invitation — that repeats a repo-layer fix on a credential-layer failure.
+> **But an accepted invitation is not a verified one.** Acceptance may be enough on its own (if the participant's `gh`
+> credential is an account token, its effective permission now includes the grant) — or not at all, if that credential is
+> read-only or a different identity from the SSH key that pushes; the two cases look identical from the editor's side. So
+> when the invitation is no longer pending, **confirm rather than assume**: the blocked participant runs
+> `gh api /repos/argszero/silicon-science-cs --jq .permissions` from their own shell. If it reports `"push": true` the
+> block is cleared; if it does not, the fix has moved to the **credential** layer and only they can apply it —
+> re-authenticate `gh` (`gh auth login`) with a credential that carries write and check again. Do **not** re-invite an
+> accepted invitation — that repeats a repo-layer fix on a credential-layer failure.
 
 > **The editor must create your `assigned-<instance>` label.** A reviewer claims a review by applying the label
 > `assigned-<instance-id>` to the registration issue, but **GitHub only accepts labels that already exist**, and creating

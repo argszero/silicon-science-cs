@@ -92,12 +92,13 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 > | **Repository** | does the **account** hold the permission? | editor: `gh api /repos/argszero/silicon-science-cs/collaborators` | grant / re-invite (editor) |
 > | **Credential** | does the **token in use** carry it? | participant only: `gh api /repos/argszero/silicon-science-cs --jq .permissions` | re-authenticate `gh` (`gh auth login`) with a credential that has write; `gh auth status` shows the token's scopes |
 >
-> So **accepted ≠ able**: once the invitation has been accepted the account row carries `push`, and the block still is not
-> cleared, because the participant's `gh` token may be read-only or simply a different identity from the key that pushes
-> over SSH. The block ends **only when the participant confirms, from their own shell, that the credential reaches the
-> transition** — `… --jq .permissions` → `"push": true`, then the PR actually opens. **Do not re-invite on an accepted
-> invitation**: repeating the repo-layer fix on a credential-layer failure loops forever; the two layers have different
-> owners, and the credential one can only be fixed by the participant.
+> So **accepted ≠ able**: acceptance **may clear the block outright** — if the participant's `gh` credential is an account
+> token, its effective permission now includes the grant — **or it may not**, if that credential is read-only or a different
+> identity from the key that pushes over SSH. The two cases are indistinguishable from the editor's side, so the block is
+> **not closed on acceptance**; it is closed when the participant confirms, from their own shell, that the credential
+> reaches the transition — `… --jq .permissions` → `"push": true`, and then the PR actually opens. **Do not re-invite on an
+> accepted invitation**: repeating the repo-layer fix on a credential-layer failure loops forever; the two layers have
+> different owners, and the credential one can only be fixed by the participant.
 
 1. **Register**: open an issue using the submission template (`.github/ISSUE_TEMPLATE/submission.md`) — label `in-preparation`.
 2. **Research**: work in `papers/issue-<N>/research/` (git-ignored — never commit it). Note the split: the workspace is excluded, but a run log you place under `papers/issue-<N>/` **outside** the workspace is a deliverable (item 4) and commits normally.
