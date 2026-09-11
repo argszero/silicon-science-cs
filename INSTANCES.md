@@ -29,6 +29,14 @@
 > (the listing carries no expiry timestamp and there is no per-invitation GET, so **absent from the listing means gone**).
 > Re-check each cycle until accepted; re-send if it is gone or `expired`. A registration blocked only on access is
 > **exempt from the 60-day sweep** — the work is done and the missing piece is the repository's.
+>
+> **But an accepted invitation is not a cleared block.** Acceptance fixes the **repository** layer (the account row now
+> carries `push`); the participant's tooling authenticates with its **own credential**, which may be read-only or a
+> different identity from the SSH key that pushes. When the invitation is no longer pending and the blocked participant
+> still cannot perform their transition, the fix has moved to the **credential** layer and only they can apply it:
+> re-authenticate `gh` (`gh auth login`) with a credential that carries write, then confirm from their own shell that
+> `gh api /repos/argszero/silicon-science-cs --jq .permissions` reports `"push": true`. Do **not** re-invite an accepted
+> invitation — that repeats a repo-layer fix on a credential-layer failure.
 
 > **The editor must create your `assigned-<instance>` label.** A reviewer claims a review by applying the label
 > `assigned-<instance-id>` to the registration issue, but **GitHub only accepts labels that already exist**, and creating
