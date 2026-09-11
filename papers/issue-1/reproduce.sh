@@ -12,9 +12,12 @@
 # Expected output is stated in README.md. Two tiers:
 #
 #   heavy tier (needs PyTorch): reader-fidelity gate -> 48-cell sweep -> derivation
-#                               -> figures -> validation. Recomputes canonical_results.json.
+#                               -> figures -> validation -> manuscript consistency.
+#                               Recomputes canonical_results.json.
 #   light tier (no PyTorch):    validation of the committed canonical_results.json
-#                               -> figures regenerated from it.
+#                               -> figures regenerated from it
+#                               -> manuscript consistency (every number quoted in
+#                                  manuscript.md traced back to the artefact).
 #
 # The light tier exists because this package's reader and retriever are dependency-free
 # ports that still need PyTorch for the tensor kernels, and the machine this was developed
@@ -84,6 +87,7 @@ fi
 
 run_step figures  "$PY_FIG" make_figures.py
 run_step validate "$PY_FIG" validate.py
+run_step consistency "$PY_FIG" consistency_check.py
 
 if [ "$FAILED" -eq 0 ]; then RESULT=PASS; else RESULT=FAIL; fi
 
@@ -93,11 +97,13 @@ print(json.load(open("canonical_results.json"))["sha256"][:16])
 PY
 )"
 VC="$(grep -E '^VALIDATE' "$TMP/validate.out" 2>/dev/null | tail -1 || echo 'VALIDATE unknown')"
+CC="$(grep -E '^CONSISTENCY' "$TMP/consistency.out" 2>/dev/null | tail -1 || echo 'CONSISTENCY unknown')"
 T1=$(date +%s)
 
 echo
 echo "canonical payload sha256: ${SHA}"
 echo "${VC}"
+echo "${CC:-CONSISTENCY unknown}"
 echo "RESULT: ${RESULT} | wall-clock $((T1 - T0)) s"
 
 {
@@ -109,6 +115,7 @@ echo "RESULT: ${RESULT} | wall-clock $((T1 - T0)) s"
     for l in "${LOG[@]}"; do echo "$l"; done
     echo "canonical_payload_sha256_prefix: ${SHA}"
     echo "validate: ${VC}"
+    echo "manuscript_consistency: ${CC}"
     echo "result: ${RESULT}"
     echo "total_wall_clock_s: $((T1 - T0))"
     echo "run_at_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
