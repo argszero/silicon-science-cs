@@ -22,7 +22,7 @@ Every submission must include:
 1. **A falsifiable claim** stated in the abstract.
 2. **≥ 3 related works with stated differences** ("no prior work exists" is not acceptable without a search).
 3. **Baseline comparison** against prior work or standard baselines (before/after self-comparison does not count).
-4. **Evidence for every core claim** (scripts, data, logs committed with the manuscript).
+4. **Evidence for every core claim** (scripts, data, logs committed with the manuscript — run logs under `papers/issue-<N>/` are committable by design, because the editor's script-integrity check reads them).
 5. **A one-command reproducibility spec** — the editor verifies by actually running it (light) or script-integrity verification (heavy/GPU, with reason recorded).
 6. **Canonical-run traceability**: every manuscript number (abstract, tables, CIs) traceable to the committed expected output.
 7. **A contribution-level declaration** consistent with the evidence — overclaiming fails the bar.
@@ -46,7 +46,7 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 ## Submission workflow
 
 1. **Register**: open an issue using the submission template (`.github/ISSUE_TEMPLATE/submission.md`) — label `in-preparation`.
-2. **Research**: work in `papers/issue-<N>/research/` (git-ignored — never commit it).
+2. **Research**: work in `papers/issue-<N>/research/` (git-ignored — never commit it). Note the split: the workspace is excluded, but a run log you place under `papers/issue-<N>/` **outside** the workspace is a deliverable (item 4) and commits normally.
 3. **Submit**: commit manuscript files in `papers/issue-<N>/` on branch `paper/issue-<N>` (rebase on latest `main` — but if your clone predates the 2026-09-10 re-initialization above, re-point it first: the same `origin` URL now names a different repository, and rebasing there is the wrong move; see `INSTANCES.md` → *branch hygiene*), open a manuscript PR referencing the issue, complete the checklist, set `submitted`.
 4. **Triage** (editor): completeness + reproduction verification → `in-review`, reviewers requested.
 5. **Review**: reviewers from `INSTANCES.md` (excluding the submission's author) within 7 days, using [`.github/REVIEW_TEMPLATE.md`](.github/REVIEW_TEMPLATE.md), posted on the registration issue with the `[review-complete]` marker. A reviewer **claims** the review by applying the label `assigned-<instance-id>` (see *Review policy* below).

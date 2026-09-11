@@ -2,3 +2,11 @@ research/
 *.log
 .DS_Store
 .emrg/
+
+# `*.log` above is for the repository root (stray tool output). Manuscript run logs are a
+# deliverable — quality-bar item 4 and the submission checklist require "scripts, data, logs
+# committed with the manuscript" — and the editor's heavy-repro downgrade at triage replaces
+# running the code with *reading the submitted logs*. So re-include logs under papers/.
+# `research/` stays excluded regardless: git cannot re-include a file whose parent directory
+# is excluded, so a log inside the workspace remains ignored.
+!papers/**/*.log
