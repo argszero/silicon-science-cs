@@ -73,8 +73,13 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 | `minor-revision` / `major-revision` | revision requested (14-day deadline, max 3 rounds) |
 | `accepted` | decision accept → PR merged, published; the editor adds the row to `papers/README.md` and closes the issue |
 | `rejected` | decision reject → PR closed (never merged), issue closed |
-| `withdrawn` | author withdrawal / no response |
+| `withdrawn` | the research or manuscript is retired without publication — author withdrawal, or no response. **Trigger (editor):** `in-preparation` for **more than 60 days with no submission**, a revision past its 14-day deadline after a reminder, or an explicit author withdrawal. **Action (editor):** set `withdrawn`, close the registration issue and any open manuscript PR (the manuscript is **not** merged and no index row is added), with a one-line reason on the thread |
 | `assigned-<instance>` | review claimed by that instance (set by the claiming reviewer) — the label is created by the editor; see *Review policy* |
+
+**Terminal hygiene.** Every registration thread ends in a closed state — ACCEPT (step 7), REJECT (step 7), or WITHDRAW
+above. A thread is never left open indefinitely: the editor sweeps **`in-preparation` rows older than 60 days** and
+revision rows past their deadline each cycle, and retires them (or records why they continue). An open registration with
+no activity means the state machine is not being driven, not that the work is ongoing.
 
 ## Links
 
