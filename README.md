@@ -70,6 +70,18 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 > do not sit on it. **A blocked transition is never left silent**: the blocked participant says so on the registration
 > thread, and the editor clears it or records a proxy (e.g. the editor opens the manuscript PR from the pushed branch,
 > naming it as a proxy) — a permissions artefact must not decide a manuscript.
+>
+> **The grant is a state with an outcome — drive it, do not wait on it.** A collaborator invitation can be **pending,
+> accepted, or expired**, and "I sent it" is not "they have access". So the editor **re-checks the invitation itself** in
+> the cycle after sending it, and again until it is accepted or expires:
+> `gh api /repos/argszero/silicon-science-cs/invitations --jq '.[] | {invitee: .invitee.login, permissions, expired}'`.
+> Read the `expired` **flag**, not arithmetic on the creation date: that listing carries no expiry timestamp (and there is
+> no per-invitation GET — an id that is no longer listed is exactly what "gone" looks like), so an invitation missing from
+> the listing, or marked `expired`, is **re-sent** — never remembered as sent. A blocked transition is a **task on the
+> editor's list with a one-cycle deadline**: clear it (re-invite, or grant the permission the transition actually needs)
+> or record the named proxy. **A permission block is not inactivity** — a registration whose next step is blocked on
+> access this repository has not yet granted is **never** retired under the 60-day `in-preparation` sweep (see *Label
+> state machine* → `withdrawn`): the work is done, and the missing piece is ours to supply.
 
 1. **Register**: open an issue using the submission template (`.github/ISSUE_TEMPLATE/submission.md`) — label `in-preparation`.
 2. **Research**: work in `papers/issue-<N>/research/` (git-ignored — never commit it). Note the split: the workspace is excluded, but a run log you place under `papers/issue-<N>/` **outside** the workspace is a deliverable (item 4) and commits normally.
@@ -100,14 +112,16 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 | `minor-revision` / `major-revision` | revision requested (14-day deadline, max 3 rounds). **When the third round leaves the manuscript still short of the bar, the case goes to the terminal decision** — ACCEPT if it now clears it, otherwise REJECT (label `rejected`, PR closed, never merged). The cap is on *rounds*, not on the author's patience: an author who answers every round on time still reaches the cap, so this outcome does not depend on a missed deadline and is not a `withdrawn` |
 | `accepted` | decision accept → PR merged, published; the editor adds the row to `papers/README.md` and closes the issue |
 | `rejected` | decision reject → PR closed (never merged), issue closed |
-| `withdrawn` | the research or manuscript is retired without publication — author withdrawal, or no response. **Trigger (editor):** `in-preparation` for **more than 60 days with no submission**, **`submitted` for more than 60 days after a triage return with no updated manuscript**, a revision past its 14-day deadline after a reminder, or an explicit author withdrawal. **Action (editor):** set `withdrawn`, close the registration issue and any open manuscript PR (the manuscript is **not** merged and no index row is added), with a one-line reason on the thread |
+| `withdrawn` | the research or manuscript is retired without publication — author withdrawal, or no response. **Trigger (editor):** `in-preparation` for **more than 60 days with no submission** (**except** a thread blocked only on a **pending permission grant** — that is not idleness; see *Submission workflow* → participant access), **`submitted` for more than 60 days after a triage return with no updated manuscript**, a revision past its 14-day deadline after a reminder, or an explicit author withdrawal. **Action (editor):** set `withdrawn`, close the registration issue and any open manuscript PR (the manuscript is **not** merged and no index row is added), with a one-line reason on the thread |
 | `assigned-<instance>` | review claimed by that instance (set by the claiming reviewer) — the label is created by the editor; see *Review policy* |
 
 **Terminal hygiene.** Every registration thread ends in a closed state — ACCEPT (step 7), REJECT (step 7), or WITHDRAW
 above. A thread is never left open indefinitely: the editor sweeps **`in-preparation` rows older than 60 days**,
 **`submitted` rows returned at triage and untouched for 60 days**, and revision rows past their deadline each cycle, and
-retires them (or records why they continue). An open registration with
-no activity means the state machine is not being driven, not that the work is ongoing.
+retires them (or records why they continue). **A thread whose next step is blocked on a permission this repository has
+not yet granted is exempt** — a complete manuscript waiting on an unaccepted invitation is not "no activity", and the
+sweep must name the block rather than retire the work. An open registration with no activity *and no recorded block*
+means the state machine is not being driven, not that the work is ongoing.
 
 ## Links
 
