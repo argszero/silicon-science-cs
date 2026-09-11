@@ -69,7 +69,8 @@ revision or reject. High significance never excuses weak evidence.
 (`https://api.crossref.org/works/<doi>`) or arXiv. **A fabricated or unverifiable citation is academic misconduct and
 alone justifies REJECT.**
 
-**Run the coverage check — do not trust the author's report.** `python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
+**Run the coverage check — do not trust the author's report.** From the **repository root**:
+`python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
 performs the mechanical part (entry count, in-text coverage, unmatched brackets, numbering-style mismatch); `--selftest`
 verifies the checker itself. Compare its output against the author's `reference-check.md` — the author's report is a
 declaration, and a disagreement between the two is itself a finding.
