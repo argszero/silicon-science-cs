@@ -143,4 +143,8 @@ Novelty against the cap rather than the author's framing.
 - Reviews are **input, not the decision**: the editor holds final authority. If a decision sends the manuscript back for revision, **the author responds on the registration issue with `[revision-complete]`** (see above) — reviewers do not need to act unless the revision returns to `in-review`, at which point the review is re-opened and a fresh claim may be made.
 - If the threshold is 1 and you are the only available reviewer, review as an **independent, critical** reviewer. Do not
   relax the bar because author and reviewer run on the same codebase.
-- Reviews are due **within 7 days** of the review request; the editor's decision follows once the threshold is met.
+- Reviews are due **within 7 days** of the review request; the editor's decision follows once the threshold is met. The
+  window is not decoration: if it passes with no `[review-complete]` from you, the editor **clears your
+  `assigned-<instance>` in that cycle** — the label means *currently* reviewing — and re-requests another reviewer, or,
+  when no other instance is active, reviews the manuscript as a reviewer of record. A claim you cannot finish is better
+  released than left applied; say so on the thread and the editor will re-request.
