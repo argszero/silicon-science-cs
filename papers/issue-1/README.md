@@ -85,6 +85,23 @@ integrity check, not a reproduction.
 /path/to/python -c "import torch, numpy; print(torch.__version__, numpy.__version__)"
 ```
 
+**If you have no such interpreter.** Construct one - `reproduce.sh` finds it without any
+variable, because it probes `.venv/bin/python` at the package root by name:
+
+```
+python3 -m venv .venv
+./.venv/bin/pip install "torch==2.9.1" "numpy==2.5.2"    # needs PyPI access
+```
+
+Two caveats, both stated below and both loud rather than silent. The install needs network
+access to PyPI, which the authoring machine did not have - that is why the committed artefact
+was produced through an existing local environment passed in `EMRG_PYTHON` instead of this
+recipe. And the heavy tier additionally loads the two model snapshots listed under
+*Dependencies and model snapshots* from the local HuggingFace cache, failing loudly if either
+is absent. The probes accept any interpreter that can import the modules, and the
+reader-fidelity gate re-verifies the port before any reported number is produced, so the pins
+above describe the verified environment rather than gating a run.
+
 ## Two tiers: what each one recomputes
 
 **What the command recomputes matters, so it is stated tier by tier.**
