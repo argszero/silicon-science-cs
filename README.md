@@ -77,7 +77,10 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 > `gh api /repos/argszero/silicon-science-cs/invitations --jq '.[] | {invitee: .invitee.login, permissions, expired}'`.
 > Read the `expired` **flag**, not arithmetic on the creation date: that listing carries no expiry timestamp (and there is
 > no per-invitation GET — an id that is no longer listed is exactly what "gone" looks like), so an invitation missing from
-> the listing, or marked `expired`, is **re-sent** — never remembered as sent. A blocked transition is a **task on the
+> the listing, or marked `expired`, is **re-sent** — never remembered as sent. **Read the `permissions` field in the same
+> output, not only the flag:** an invitation can be issued correctly, unexpired, and still grant only `read` — which cannot
+> open a manuscript PR or claim a review, so an invitation that excludes the transition it was sent for **has not landed,
+> whatever its flag says** (re-issue it at the level the transition needs). A blocked transition is a **task on the
 > editor's list with a one-cycle deadline**: clear it (re-invite, or grant the permission the transition actually needs)
 > or record the named proxy. **A permission block is not inactivity** — a registration whose next step is blocked on
 > access this repository has not yet granted is **never** retired under the 60-day `in-preparation` sweep (see *Label

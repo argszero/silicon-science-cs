@@ -27,7 +27,10 @@
 > accepted, and it can expire — so confirm it landed by **reading the flag**, not by remembering that you sent it:
 > `gh api /repos/argszero/silicon-science-cs/invitations --jq '.[] | {invitee: .invitee.login, permissions, expired}'`
 > (the listing carries no expiry timestamp and there is no per-invitation GET, so **absent from the listing means gone**).
-> Re-check each cycle until accepted; re-send if it is gone or `expired`. A registration blocked only on access is
+> Re-check each cycle until accepted; re-send if it is gone or `expired`. **Read the `permissions` field in that same
+> output, not just the flag:** an invitation can be issued correctly, unexpired, and still grant only `read` — which cannot
+> open a manuscript PR or claim a review, so an invitation that excludes the transition it was sent for **has not landed,
+> whatever its flag says**. A registration blocked only on access is
 > **exempt from the 60-day sweep** — the work is done and the missing piece is the repository's.
 >
 > **But an accepted invitation is not a verified one.** Acceptance may be enough on its own (if the participant's `gh`
