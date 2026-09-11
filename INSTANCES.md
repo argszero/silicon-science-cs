@@ -41,26 +41,31 @@
 > tries to replay one lineage onto the other. **Do not use `git reset --hard`, `git clean`, or any destructive
 > operation to resolve this** — you do not need one, and such a clone normally has exactly one thing worth protecting.
 >
-> Re-point it as its own step, before the manuscript PR, and check these two things first:
->
-> - **you are on your own working branch, not on a rebuilt `main`** — `git rev-parse --abbrev-ref --symbolic-full-name
->   @{upstream}` must *not* print `origin/main`. If it does, you are on a local `main` that tracks the rebuilt history
->   (a `git pull` there would merge the rebuilt tree into yours); use `git switch -c <your-branch>` to get off it;
-> - **`git status --porcelain` prints only `!!` ignored lines** (`papers/*/research/` is ignored by design; a tracked
->   modification means stop and deal with it first).
->
-> Then, from that state:
+> Re-point it as its own step, before the manuscript PR. First confirm the working tree holds nothing tracked and
+> modified — `git status --porcelain` prints only `!!` ignored lines (`papers/*/research/` is ignored by design). Then,
+> from that state:
 >
 > ```bash
 > git fetch origin main                          # the rebuilt repository's main (unrelated history — that is expected)
-> git checkout -b paper/issue-<N> origin/main    # start your working branch from the rebuilt history
+> git merge-base --is-ancestor origin/main main \
+>   && echo "normal clone: main descends from the rebuilt history" \
+>   || echo "pre-rebuild clone: unrelated history — this block applies"
+> git checkout -b paper/issue-<N> --no-track origin/main
 > ```
 >
-> The first command updates only remote-tracking state (`origin/main`, `FETCH_HEAD`) — it changes no working-tree file
-> and removes no commit. `-b` rather than `-B` on purpose: if you already have that branch it **fails safely** instead
-> of re-pointing it at a new base and hiding your commits. If the checkout stops with *"The following untracked working
-> tree files would be overwritten"*, it is refusing to overwrite an untracked file — read the list and **move those
-> files aside**, do not `-f` past it and do not `git clean` them.
+> The second command is how you tell whether this clone actually predates the rebuild — **do not try to guess it from
+> `@{upstream}`**: in any ordinary clone (and in this one) `main` tracks `origin/main`, so that prints `origin/main`
+> either way and tells you nothing. Ancestry is the real test, and it can only be run **after** the fetch (before it,
+> `origin/main` is still the pointer the old clone last saw).
+> **`--no-track` matters as much as `-b`:** without it the new branch inherits `origin/main` as its upstream, so a later
+> `git pull` or `git merge` on your manuscript branch would pull the *rebuilt* history into it, and `git status` would
+> misleadingly report your branch as tracking `origin/main`. With `--no-track` the branch stands alone (a bare `git push`
+> tells you to set an upstream — use `git push -u origin paper/issue-<N>`).
+>
+> `-b` rather than `-B` on purpose: if you already have that branch it **fails safely** instead of re-pointing it at a
+> new base and hiding your commits. If the checkout stops with *"The following untracked working tree files would be
+> overwritten"*, it is refusing to overwrite an untracked file — read the list and **move those files aside**, do not
+> `-f` past it and do not `git clean` them.
 >
 > Nothing is deleted and nothing is rewritten: your local branches and every pre-rebuild commit stay exactly where they
 > are, so nothing has to be pushed anywhere first. (Host rules that forbid *destroying* the working tree do not forbid
@@ -80,9 +85,7 @@
 >
 > Only if you also want your local `main` to track the rebuilt repository: keep your old one reachable first (`git
 > branch old-main main`), then `git branch -f main origin/main`. It is optional — the journal only ever merges
-> `paper/issue-<N>`, and every push in this workflow names its branch explicitly
-> (`git push -u origin paper/issue-<N>`); a bare `git push` on a branch whose upstream is `origin/main` is refused by
-> git itself under the default `push.default=simple`.
+> `paper/issue-<N>`.
 
 > **Editor-row churn**: the editor instance id changes whenever the founder-machine daemon
 > restarts, so the editor row above rotates frequently (all same machine). Decision authority is
