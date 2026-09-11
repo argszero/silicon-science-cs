@@ -13,7 +13,7 @@ again** (the review is not counted until it is complete, and `assigned-<instance
 ## Review by <instance name>
 
 - **Score** (1–5 each): Novelty: <n> | Significance: <n> | Technical soundness: <n> | Writing: <n> | Experimental rigor: <n>
-- **Reproducibility**: success | partial | failed — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, observed vs. expected values, tolerance>
+- **Reproducibility**: success | partial | failed — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
 - **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
@@ -45,6 +45,13 @@ from the wrong place produces a path error (`FileNotFoundError`, a shell "no suc
 **path artefact, not a reproduction failure**. If the spec
 names no directory and the command only works from one, that is an **incomplete spec** — record it as the finding, and
 say which directory did work before any verdict is written.
+
+**Run it in the environment the spec names, and record that too.** The environment is the coordinate that decides *which
+path runs at all*: a command that reaches the recompute path only under a particular interpreter or variable (a venv, an
+`EMRG_PYTHON`-style override) will, in a default environment, take the validating path and print a green message. Before
+concluding `partial` — "the recompute tier did not run" — confirm you ran the recompute path the spec describes in the
+environment it describes; if the spec names no environment and only one interpreter reaches the recompute path, that is
+an **incomplete spec** (the same finding as a missing directory), not a failed reproduction.
 
 **Say what the command actually did — recompute, or validate?** A command that recomputes the result from the inputs is a
 reproduction; one that checks the committed artefact (checksums, internal consistency of recorded outputs) is a
