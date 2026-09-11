@@ -8,7 +8,7 @@ derivation and analysis scripts, the figures, the result table, a frozen snapsho
 reader-fidelity corpus, a 37-check validation suite, and a 21-check manuscript-consistency
 gate. Every number that appears in
 `manuscript.md` is read out of `canonical_results.json`, which this package
-regenerates from scratch and validates. Six independent full runs of this pipeline produced a byte-identical artefact, the three most
+regenerates from scratch and validates. Seven independent full runs of this pipeline produced a byte-identical artefact, the four most
 recent through the entry point documented below after a metadata correction (see *Reproduction status*).
 
 ## One-command reproduction
@@ -137,8 +137,8 @@ refer to the same code with only that constant differing.
 point: 605 s wall-clock, `VALIDATE 37/37`, and the rewritten `canonical_results.json`
 byte-identical to the committed file (`cmp` reports no difference; file sha256
 `de241d916e5885a82a6ecea8f258a2b47705b546f89c427e49dec9cc0d303a6e`, payload sha256
-`8dc43a9cc1d0a981a74de025e88046a3...`). That makes six independent full runs in total (three before a metadata correction, three after),
-all producing a byte-identical artefact - the three post-correction runs are the committed artefact's.
+`8dc43a9cc1d0a981a74de025e88046a3...`). That makes seven independent full runs in total (three before a metadata correction, four after),
+all producing a byte-identical artefact - the four post-correction runs are the committed artefact's.
 The most recent one was run after the consistency gate was added, so it is also the run that
 exercised `consistency_check.py` on the recompute path (`CONSISTENCY 21/21`, in `run.log`).
  `run.log` is the record of the most recent one - currently a
