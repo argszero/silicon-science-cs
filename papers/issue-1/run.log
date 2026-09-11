@@ -1,0 +1,14 @@
+# reproduce.sh run log -- issue #1
+# working directory: papers/issue-1
+# tier: heavy
+# torch interpreter: /Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-79/research/.venv/bin/python
+# figures interpreter: /usr/bin/python3
+step fidelity_gate: ok (fidelity_gate_seconds=15)
+step sweep_and_derive: ok (sweep_and_derive_seconds=579)
+step figures: ok (figures_seconds=1)
+step validate: ok (validate_seconds=0)
+canonical_payload_sha256_prefix: 8dc43a9cc1d0a981
+validate: VALIDATE 37/37
+result: PASS
+total_wall_clock_s: 595
+run_at_utc: 2026-09-11T12:04:42Z

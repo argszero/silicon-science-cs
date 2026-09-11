@@ -1,0 +1,924 @@
+{
+ "entries": [
+  {
+   "key": 1,
+   "source": "arxiv",
+   "id": "2307.03172",
+   "title": "Lost in the Middle: How Language Models Use Long Contexts",
+   "url": "https://arxiv.org/abs/2307.03172",
+   "difference": "establishes the position effect on retrieval-augmented inputs; no comparison against a retriever at matched content"
+  },
+  {
+   "key": 2,
+   "source": "arxiv",
+   "id": "2407.01100",
+   "title": "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+   "url": "https://arxiv.org/abs/2407.01100",
+   "difference": "removes position bias with a mechanistic intervention, treating it as a defect to fix rather than a boundary to map"
+  },
+  {
+   "key": 3,
+   "source": "arxiv",
+   "id": "2406.02536",
+   "title": "Mitigate Position Bias in Large Language Models via Scaling a Single Dimension",
+   "url": "https://arxiv.org/abs/2406.02536",
+   "difference": "mitigates position bias by scaling one dimension; reports a fix, not the interference level at which the sign flips"
+  },
+  {
+   "key": 4,
+   "source": "arxiv",
+   "id": "2603.10123",
+   "title": "Lost in the Middle at Birth: An Exact Theory of Transformer Position Bias",
+   "url": "https://arxiv.org/abs/2603.10123",
+   "difference": "derives position bias exactly for a simplified transformer; gives no retrieval-versus-reading comparison"
+  },
+  {
+   "key": 5,
+   "source": "arxiv",
+   "id": "2605.09213",
+   "title": "Kinetic theory for Transformers and the lost-in-the-middle phenomenon",
+   "url": "https://arxiv.org/abs/2605.09213",
+   "difference": "a kinetic-theory account of lost-in-the-middle; a physics analogy rather than a measured crossover"
+  },
+  {
+   "key": 6,
+   "source": "arxiv",
+   "id": "2607.17696",
+   "title": "An Adjoint-Sensitivity Framework for Lost-in-the-Middle Phenomena in Causal Residual Transformers",
+   "url": "https://arxiv.org/abs/2607.17696",
+   "difference": "adjoint-sensitivity analysis of the position effect, on the mechanism of one arm only"
+  },
+  {
+   "key": 7,
+   "source": "arxiv",
+   "id": "2510.10276",
+   "title": "Lost in the Middle: An Emergent Property from Information Retrieval Demands in LLMs",
+   "url": "https://arxiv.org/abs/2510.10276",
+   "difference": "argues the position effect emerges from retrieval demands; does not test a real retriever against the reader"
+  },
+  {
+   "key": 8,
+   "source": "arxiv",
+   "id": "2503.06868",
+   "title": "Lost-in-the-Middle in Long-Text Generation: Synthetic Dataset, Evaluation Framework, and Mitigation",
+   "url": "https://arxiv.org/abs/2503.06868",
+   "difference": "measures the effect for long-text generation and mitigates it; our task is evidence access, not generation"
+  },
+  {
+   "key": 9,
+   "source": "arxiv",
+   "id": "2412.10079",
+   "title": "Lost in the Middle, and In-Between: Enhancing Language Models' Ability to Reason Over Long Contexts in Multi-Hop QA",
+   "url": "https://arxiv.org/abs/2412.10079",
+   "difference": "improves reasoning over long contexts by reordering; a mitigation study without a retrieval baseline"
+  },
+  {
+   "key": 10,
+   "source": "arxiv",
+   "id": "2508.02020",
+   "title": "Evaluating Position Bias in Large Language Model Recommendations",
+   "url": "https://arxiv.org/abs/2508.02020",
+   "difference": "evaluates position bias inside a recommender; a different task from planted-evidence reading"
+  },
+  {
+   "key": 11,
+   "source": "arxiv",
+   "id": "2606.27793",
+   "title": "Position Bias Correction is Insufficient for One-Pass Attention Sorting",
+   "url": "https://arxiv.org/abs/2606.27793",
+   "difference": "shows correction is insufficient for attention sorting, a single mechanism result"
+  },
+  {
+   "key": 12,
+   "source": "arxiv",
+   "id": "2608.20348",
+   "title": "Inhibitory Attention for Clinical Long-Context Reasoning: Characterizing and Mitigating Lost-in-the-Middle Effects in EHR Processing",
+   "url": "https://arxiv.org/abs/2608.20348",
+   "difference": "mitigates lost-in-the-middle in a clinical reasoning setting; domain-specific rather than a controlled phase map"
+  },
+  {
+   "key": 13,
+   "source": "arxiv",
+   "id": "2603.22608",
+   "title": "Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length",
+   "url": "https://arxiv.org/abs/2603.22608",
+   "difference": "decomposes degradation into instance count and length; we hold length fixed and vary semantic interference"
+  },
+  {
+   "key": 14,
+   "source": "arxiv",
+   "id": "2402.14848",
+   "title": "Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models",
+   "url": "https://arxiv.org/abs/2402.14848",
+   "difference": "the closest length study: shows reasoning degrades with input length, but length alone, with no retrieval arm"
+  },
+  {
+   "key": 15,
+   "source": "arxiv",
+   "id": "2608.03297",
+   "title": "Distractor-Aware Truncation: Disentangling Context-Length Effects from Signal Loss in Long-Context LLM Benchmarks",
+   "url": "https://arxiv.org/abs/2608.03297",
+   "difference": "truncation strategy that separates length effects from signal loss; no retriever comparison"
+  },
+  {
+   "key": 16,
+   "source": "arxiv",
+   "id": "2506.02921",
+   "title": "A Controllable Examination for Long-Context Language Models",
+   "url": "https://arxiv.org/abs/2506.02921",
+   "difference": "controllable examination of long-context models; varies context content but not retrieval-versus-reading"
+  },
+  {
+   "key": 17,
+   "source": "arxiv",
+   "id": "2410.04422",
+   "title": "Long-context Language Models Fail in Basic Retrieval Tasks Without Sufficient Reasoning Steps",
+   "url": "https://arxiv.org/abs/2410.04422",
+   "difference": "reports that long-context models fail basic retrieval without reasoning steps; a capability finding, not a boundary"
+  },
+  {
+   "key": 18,
+   "source": "arxiv",
+   "id": "2308.14508",
+   "title": "LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding",
+   "url": "https://arxiv.org/abs/2308.14508",
+   "difference": "a multi-task long-context benchmark; scores models rather than mapping a regime boundary"
+  },
+  {
+   "key": 19,
+   "source": "arxiv",
+   "id": "2309.13345",
+   "title": "BAMBOO: A Comprehensive Benchmark for Evaluating Long Text Modeling Capacities of Large Language Models",
+   "url": "https://arxiv.org/abs/2309.13345",
+   "difference": "benchmark suite for long-text modelling; measures capability, not the crossover"
+  },
+  {
+   "key": 20,
+   "source": "arxiv",
+   "id": "2410.04199",
+   "title": "LongGenBench: Long-context Generation Benchmark",
+   "url": "https://arxiv.org/abs/2410.04199",
+   "difference": "long-context generation benchmark; generation rather than evidence retrieval"
+  },
+  {
+   "key": 21,
+   "source": "arxiv",
+   "id": "2406.06025",
+   "title": "RepoQA: Evaluating Long Context Code Understanding",
+   "url": "https://arxiv.org/abs/2406.06025",
+   "difference": "evaluates long-context code understanding; a single domain"
+  },
+  {
+   "key": 22,
+   "source": "arxiv",
+   "id": "2510.17725",
+   "title": "AcademicEval: Live Long-Context LLM Benchmark",
+   "url": "https://arxiv.org/abs/2510.17725",
+   "difference": "live long-context benchmark; capability leaderboard without mechanism"
+  },
+  {
+   "key": 23,
+   "source": "arxiv",
+   "id": "2602.14200",
+   "title": "TS-Haystack: A Multi-Task Retrieval Benchmark for Long-Context Time-Series Reasoning",
+   "url": "https://arxiv.org/abs/2602.14200",
+   "difference": "time-series long-context retrieval benchmark; a different modality"
+  },
+  {
+   "key": 24,
+   "source": "arxiv",
+   "id": "2503.00353",
+   "title": "U-NIAH: Unified RAG and LLM Evaluation for Long Context Needle-In-A-Haystack",
+   "url": "https://arxiv.org/abs/2503.00353",
+   "difference": "unifies RAG and needle evaluation; reports scores per configuration without a fitted boundary"
+  },
+  {
+   "key": 25,
+   "source": "arxiv",
+   "id": "2502.05167",
+   "title": "NoLiMa: Long-Context Evaluation Beyond Literal Matching",
+   "url": "https://arxiv.org/abs/2502.05167",
+   "difference": "removes literal matching from the needle task; still needle-style, no retriever arm"
+  },
+  {
+   "key": 26,
+   "source": "arxiv",
+   "id": "2406.11230",
+   "title": "Multimodal Needle in a Haystack: Benchmarking Long-Context Capability of Multimodal Large Language Models",
+   "url": "https://arxiv.org/abs/2406.11230",
+   "difference": "multimodal needle benchmark; different modality"
+  },
+  {
+   "key": 27,
+   "source": "arxiv",
+   "id": "2504.04150",
+   "title": "Reasoning on Multiple Needles In A Haystack",
+   "url": "https://arxiv.org/abs/2504.04150",
+   "difference": "multi-needle reasoning; more needles rather than distractors"
+  },
+  {
+   "key": 28,
+   "source": "arxiv",
+   "id": "2407.01437",
+   "title": "Needle in the Haystack for Memory Based Large Language Models",
+   "url": "https://arxiv.org/abs/2407.01437",
+   "difference": "needle task for memory-based models; an architecture comparison"
+  },
+  {
+   "key": 29,
+   "source": "arxiv",
+   "id": "2408.10151",
+   "title": "Multilingual Needle in a Haystack: Investigating Long-Context Behavior of Multilingual Large Language Models",
+   "url": "https://arxiv.org/abs/2408.10151",
+   "difference": "multilingual needle behaviour; language rather than interference"
+  },
+  {
+   "key": 30,
+   "source": "arxiv",
+   "id": "2505.10570",
+   "title": "LongFuncEval: Measuring the effectiveness of long context models for function calling",
+   "url": "https://arxiv.org/abs/2505.10570",
+   "difference": "function-calling with long context; task-specific evaluation"
+  },
+  {
+   "key": 31,
+   "source": "arxiv",
+   "id": "2505.21439",
+   "title": "Towards Better Instruction Following Retrieval Models",
+   "url": "https://arxiv.org/abs/2505.21439",
+   "difference": "instruction-following retrieval models; not a reader-versus-retriever comparison"
+  },
+  {
+   "key": 32,
+   "source": "arxiv",
+   "id": "2302.00093",
+   "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+   "url": "https://arxiv.org/abs/2302.00093",
+   "difference": "shows irrelevant context degrades reasoning; the effect is stated, not mapped to a boundary or a retrieval alternative"
+  },
+  {
+   "key": 33,
+   "source": "arxiv",
+   "id": "2505.18761",
+   "title": "How Is LLM Reasoning Distracted by Irrelevant Context? An Analysis Using a Controlled Benchmark",
+   "url": "https://arxiv.org/abs/2505.18761",
+   "difference": "controlled analysis of how reasoning is distracted; no retrieval arm at matched budgets"
+  },
+  {
+   "key": 34,
+   "source": "arxiv",
+   "id": "2310.01558",
+   "title": "Making Retrieval-Augmented Language Models Robust to Irrelevant Context",
+   "url": "https://arxiv.org/abs/2310.01558",
+   "difference": "makes RAG robust to irrelevant context; a mitigation, and robustness is measured as an average"
+  },
+  {
+   "key": 35,
+   "source": "arxiv",
+   "id": "2505.22630",
+   "title": "Stochastic Chameleons: Irrelevant Context Hallucinations Reveal Class-Based (Mis)Generalization in LLMs",
+   "url": "https://arxiv.org/abs/2505.22630",
+   "difference": "class-based mis-generalisation from irrelevant context; explains the phenomenon without locating a threshold"
+  },
+  {
+   "key": 36,
+   "source": "arxiv",
+   "id": "2604.01161",
+   "title": "Reasoning Shift: How Context Silently Shortens LLM Reasoning",
+   "url": "https://arxiv.org/abs/2604.01161",
+   "difference": "context shifts reasoning length; an effect on the reasoning trace, not on answer access"
+  },
+  {
+   "key": 37,
+   "source": "arxiv",
+   "id": "2512.14313",
+   "title": "Dynamic Context Selection for Retrieval-Augmented Generation: Mitigating Distractors and Positional Bias",
+   "url": "https://arxiv.org/abs/2512.14313",
+   "difference": "selects context to mitigate distractors and position bias; a system, evaluated against baselines rather than mapped"
+  },
+  {
+   "key": 38,
+   "source": "arxiv",
+   "id": "2602.02983",
+   "title": "Do LLMs Share Human-Like Biases? Causal Reasoning Under Prior Knowledge, Irrelevant Context, and Varying Compute Budgets",
+   "url": "https://arxiv.org/abs/2602.02983",
+   "difference": "human-like bias analysis under prior knowledge and irrelevant context; cognitive comparison without a retriever"
+  },
+  {
+   "key": 39,
+   "source": "arxiv",
+   "id": "2509.21865",
+   "title": "Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding",
+   "url": "https://arxiv.org/abs/2509.21865",
+   "difference": "learns distraction-aware retrieval; assumes distraction matters and learns around it"
+  },
+  {
+   "key": 40,
+   "source": "arxiv",
+   "id": "2605.18760",
+   "title": "DOTRAG: Retrieval-Time Reasoning Along Paths",
+   "url": "https://arxiv.org/abs/2605.18760",
+   "difference": "retrieval-time reasoning along paths; an agentic system on multi-hop tasks"
+  },
+  {
+   "key": 41,
+   "source": "arxiv",
+   "id": "2504.02111",
+   "title": "Exploring LLM Reasoning Through Controlled Prompt Variations",
+   "url": "https://arxiv.org/abs/2504.02111",
+   "difference": "controlled prompt variations to probe reasoning; variation design, not an interference axis"
+  },
+  {
+   "key": 42,
+   "source": "arxiv",
+   "id": "2407.16695",
+   "title": "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack",
+   "url": "https://arxiv.org/abs/2407.16695",
+   "difference": "lifelong in-context learning stress test; task haystack rather than semantic confusability"
+  },
+  {
+   "key": 43,
+   "source": "arxiv",
+   "id": "2407.16833",
+   "title": "Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach",
+   "url": "https://arxiv.org/abs/2407.16833",
+   "difference": "the closest competitor: compares RAG with long context and proposes a hybrid, but reports task scores rather than a crossover law"
+  },
+  {
+   "key": 44,
+   "source": "arxiv",
+   "id": "2410.04343",
+   "title": "Inference Scaling for Long-Context Retrieval Augmented Generation",
+   "url": "https://arxiv.org/abs/2410.04343",
+   "difference": "scales inference for long-context RAG; improves the arm rather than characterising when it loses"
+  },
+  {
+   "key": 45,
+   "source": "arxiv",
+   "id": "2506.03989",
+   "title": "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models",
+   "url": "https://arxiv.org/abs/2506.03989",
+   "difference": "strengthens RAG baselines with long-context models; shows baselines were weak, not where the sign flips"
+  },
+  {
+   "key": 46,
+   "source": "arxiv",
+   "id": "2406.13121",
+   "title": "Can Long-Context Language Models Subsume Retrieval, RAG, SQL, and More?",
+   "url": "https://arxiv.org/abs/2406.13121",
+   "difference": "asks whether long context subsumes retrieval; a capability question with controlled task families, no phase map"
+  },
+  {
+   "key": 47,
+   "source": "arxiv",
+   "id": "2607.26497",
+   "title": "BM25 Wins at Scale: A Scaling Study of Retrieval-Augmented Generation Paradigms",
+   "url": "https://arxiv.org/abs/2607.26497",
+   "difference": "scaling study where BM25 wins at scale; a single-corpus scaling result"
+  },
+  {
+   "key": 48,
+   "source": "arxiv",
+   "id": "2512.17220",
+   "title": "Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding",
+   "url": "https://arxiv.org/abs/2512.17220",
+   "difference": "RAG system for long-context understanding; architectural contribution"
+  },
+  {
+   "key": 49,
+   "source": "arxiv",
+   "id": "2607.24767",
+   "title": "The Effect of Text Chunk Size on Retrieval-Augmented Generation Performance",
+   "url": "https://arxiv.org/abs/2607.24767",
+   "difference": "isolates chunk size as the variable; a prompt-design study without a reader-versus-retriever boundary"
+  },
+  {
+   "key": 50,
+   "source": "arxiv",
+   "id": "2607.01852",
+   "title": "Evaluating Chunking Strategies for Retrieval-Augmented Generation on Academic Texts",
+   "url": "https://arxiv.org/abs/2607.01852",
+   "difference": "compares chunking strategies on academic texts; engineering comparison"
+  },
+  {
+   "key": 51,
+   "source": "arxiv",
+   "id": "2504.19754",
+   "title": "Reconstructing Context: Evaluating Advanced Chunking Strategies for Retrieval-Augmented Generation",
+   "url": "https://arxiv.org/abs/2504.19754",
+   "difference": "reconstructs context with advanced chunking; chunking quality rather than access mode"
+  },
+  {
+   "key": 52,
+   "source": "arxiv",
+   "id": "2602.16974",
+   "title": "Beyond Chunk-Then-Embed: A Comprehensive Taxonomy and Evaluation of Document Chunking Strategies for Information Retrieval",
+   "url": "https://arxiv.org/abs/2602.16974",
+   "difference": "taxonomy of chunking strategies; organisation of a design space"
+  },
+  {
+   "key": 53,
+   "source": "arxiv",
+   "id": "1706.03762",
+   "title": "Attention Is All You Need",
+   "url": "https://arxiv.org/abs/1706.03762",
+   "difference": "the architecture we port; a building block, not a study of evidence access"
+  },
+  {
+   "key": 54,
+   "source": "arxiv",
+   "id": "1810.04805",
+   "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+   "url": "https://arxiv.org/abs/1810.04805",
+   "difference": "bidirectional encoder we port; pretraining, not retrieval or reading behaviour"
+  },
+  {
+   "key": 55,
+   "source": "arxiv",
+   "id": "2005.11401",
+   "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+   "url": "https://arxiv.org/abs/2005.11401",
+   "difference": "introduces RAG; a method paper whose successors we measure"
+  },
+  {
+   "key": 56,
+   "source": "arxiv",
+   "id": "2004.04906",
+   "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+   "url": "https://arxiv.org/abs/2004.04906",
+   "difference": "dense retrieval trained for open-domain QA; the retriever family we port, with no reader-interference map"
+  },
+  {
+   "key": 57,
+   "source": "arxiv",
+   "id": "1908.10084",
+   "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+   "url": "https://arxiv.org/abs/1908.10084",
+   "difference": "the sentence-embedding design we port for the dense retriever"
+  },
+  {
+   "key": 58,
+   "source": "arxiv",
+   "id": "2104.08663",
+   "title": "BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models",
+   "url": "https://arxiv.org/abs/2104.08663",
+   "difference": "zero-shot IR benchmark; evaluates retrievers in isolation, without a reader"
+  },
+  {
+   "key": 59,
+   "source": "arxiv",
+   "id": "2210.07316",
+   "title": "MTEB: Massive Text Embedding Benchmark",
+   "url": "https://arxiv.org/abs/2210.07316",
+   "difference": "embedding benchmark; embedding quality rather than downstream reading"
+  },
+  {
+   "key": 60,
+   "source": "arxiv",
+   "id": "2112.01488",
+   "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+   "url": "https://arxiv.org/abs/2112.01488",
+   "difference": "late-interaction retrieval; an alternative retriever we do not use and whose effect on reading we do not claim"
+  },
+  {
+   "key": 61,
+   "source": "arxiv",
+   "id": "2402.03216",
+   "title": "M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation",
+   "url": "https://arxiv.org/abs/2402.03216",
+   "difference": "multi-granularity embeddings; retriever-side improvement"
+  },
+  {
+   "key": 62,
+   "source": "arxiv",
+   "id": "2403.18684",
+   "title": "Scaling Laws For Dense Retrieval",
+   "url": "https://arxiv.org/abs/2403.18684",
+   "difference": "scaling laws for dense retrieval; capacity against accuracy, not against a reader"
+  },
+  {
+   "key": 63,
+   "source": "arxiv",
+   "id": "2306.11397",
+   "title": "Generative Retrieval as Dense Retrieval",
+   "url": "https://arxiv.org/abs/2306.11397",
+   "difference": "generative retrieval framed as dense retrieval; an index-side reformulation"
+  },
+  {
+   "key": 64,
+   "source": "arxiv",
+   "id": "2203.05765",
+   "title": "Tevatron: An Efficient and Flexible Toolkit for Dense Retrieval",
+   "url": "https://arxiv.org/abs/2203.05765",
+   "difference": "the toolkit whose design we mirror for the retriever port"
+  },
+  {
+   "key": 65,
+   "source": "arxiv",
+   "id": "2407.03618",
+   "title": "BM25S: Orders of magnitude faster lexical search via eager sparse scoring",
+   "url": "https://arxiv.org/abs/2407.03618",
+   "difference": "faster lexical search; an efficiency contribution to the BM25 arm"
+  },
+  {
+   "key": 66,
+   "source": "arxiv",
+   "id": "0911.5046",
+   "title": "Integrating the Probabilistic Models BM25/BM25F into Lucene",
+   "url": "https://arxiv.org/abs/0911.5046",
+   "difference": "integrates BM25F into Lucene; an implementation note for the lexical family"
+  },
+  {
+   "key": 67,
+   "source": "arxiv",
+   "id": "2505.21700",
+   "title": "Rethinking Chunk Size For Long-Document Retrieval: A Multi-Dataset Analysis",
+   "url": "https://arxiv.org/abs/2505.21700",
+   "difference": "chunk size for long-document retrieval; the lexical arm in isolation"
+  },
+  {
+   "key": 68,
+   "source": "arxiv",
+   "id": "2410.12388",
+   "title": "Prompt Compression for Large Language Models: A Survey",
+   "url": "https://arxiv.org/abs/2410.12388",
+   "difference": "survey of prompt compression; organises the budget-reduction space"
+  },
+  {
+   "key": 69,
+   "source": "arxiv",
+   "id": "2403.12968",
+   "title": "LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression",
+   "url": "https://arxiv.org/abs/2403.12968",
+   "difference": "task-agnostic prompt compression; reduces tokens rather than choosing an access mode"
+  },
+  {
+   "key": 70,
+   "source": "arxiv",
+   "id": "2403.17411",
+   "title": "PCToolkit: A Unified Plug-and-Play Prompt Compression Toolkit of Large Language Models",
+   "url": "https://arxiv.org/abs/2403.17411",
+   "difference": "compression toolkit; tooling for the same space"
+  },
+  {
+   "key": 71,
+   "source": "arxiv",
+   "id": "2501.06730",
+   "title": "Better Prompt Compression Without Multi-Layer Perceptrons",
+   "url": "https://arxiv.org/abs/2501.06730",
+   "difference": "compression without MLPs; a method improvement"
+  },
+  {
+   "key": 72,
+   "source": "arxiv",
+   "id": "2505.00019",
+   "title": "An Empirical Study on Prompt Compression for Large Language Models",
+   "url": "https://arxiv.org/abs/2505.00019",
+   "difference": "empirical study of prompt compression; quality against ratio, not reader versus retriever"
+  },
+  {
+   "key": 73,
+   "source": "arxiv",
+   "id": "2508.15813",
+   "title": "SCOPE: A Generative Approach for LLM Prompt Compression",
+   "url": "https://arxiv.org/abs/2508.15813",
+   "difference": "generative prompt compression; another compressor"
+  },
+  {
+   "key": 74,
+   "source": "arxiv",
+   "id": "2309.17453",
+   "title": "Efficient Streaming Language Models with Attention Sinks",
+   "url": "https://arxiv.org/abs/2309.17453",
+   "difference": "streaming with attention sinks; token budget management inside the reader"
+  },
+  {
+   "key": 75,
+   "source": "arxiv",
+   "id": "2410.10781",
+   "title": "When Attention Sink Emerges in Language Models: An Empirical View",
+   "url": "https://arxiv.org/abs/2410.10781",
+   "difference": "when and why attention sinks emerge; reader-internal mechanism"
+  },
+  {
+   "key": 76,
+   "source": "arxiv",
+   "id": "2510.00231",
+   "title": "The Pitfalls of KV Cache Compression",
+   "url": "https://arxiv.org/abs/2510.00231",
+   "difference": "pitfalls of KV-cache compression; measures the cost of a budget reduction"
+  },
+  {
+   "key": 77,
+   "source": "arxiv",
+   "id": "2607.01520",
+   "title": "The risk of KV cache compression",
+   "url": "https://arxiv.org/abs/2607.01520",
+   "difference": "risk analysis of KV compression; failure modes of one efficiency technique"
+  },
+  {
+   "key": 78,
+   "source": "arxiv",
+   "id": "2410.15252",
+   "title": "Lossless KV Cache Compression to 2%",
+   "url": "https://arxiv.org/abs/2410.15252",
+   "difference": "lossless KV compression; an efficiency claim"
+  },
+  {
+   "key": 79,
+   "source": "arxiv",
+   "id": "2505.24133",
+   "title": "R-KV: Redundancy-aware KV Cache Compression for Reasoning Models",
+   "url": "https://arxiv.org/abs/2505.24133",
+   "difference": "redundancy-aware KV compression; efficiency for reasoning models"
+  },
+  {
+   "key": 80,
+   "source": "arxiv",
+   "id": "2306.15595",
+   "title": "Extending Context Window of Large Language Models via Positional Interpolation",
+   "url": "https://arxiv.org/abs/2306.15595",
+   "difference": "positional interpolation to extend context; makes long inputs possible rather than useful"
+  },
+  {
+   "key": 81,
+   "source": "arxiv",
+   "id": "2309.10400",
+   "title": "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+   "url": "https://arxiv.org/abs/2309.10400",
+   "difference": "position-skip training for extension; a training recipe"
+  },
+  {
+   "key": 82,
+   "source": "arxiv",
+   "id": "2502.20082",
+   "title": "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+   "url": "https://arxiv.org/abs/2502.20082",
+   "difference": "near-lossless window scaling; extends the window without measuring access behaviour"
+  },
+  {
+   "key": 83,
+   "source": "arxiv",
+   "id": "2410.01490",
+   "title": "Extending Context Window of Large Language Models from a Distributional Perspective",
+   "url": "https://arxiv.org/abs/2410.01490",
+   "difference": "distributional view of window extension; a training-side analysis"
+  },
+  {
+   "key": 84,
+   "source": "arxiv",
+   "id": "2401.07004",
+   "title": "Extending LLMs' Context Window with 100 Samples",
+   "url": "https://arxiv.org/abs/2401.07004",
+   "difference": "extends the window with 100 samples; an efficiency recipe"
+  },
+  {
+   "key": 85,
+   "source": "arxiv",
+   "id": "2502.06975",
+   "title": "Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents",
+   "url": "https://arxiv.org/abs/2502.06975",
+   "difference": "position paper naming episodic memory the missing piece for agents; argues for retrieval without measuring when it beats reading"
+  },
+  {
+   "key": 86,
+   "source": "arxiv",
+   "id": "2604.08224",
+   "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+   "url": "https://arxiv.org/abs/2604.08224",
+   "difference": "review of agent externalisation; taxonomy of memory and skills"
+  },
+  {
+   "key": 87,
+   "source": "arxiv",
+   "id": "2503.21760",
+   "title": "MemInsight: Autonomous Memory Augmentation for LLM Agents",
+   "url": "https://arxiv.org/abs/2503.21760",
+   "difference": "memory augmentation for agents; a system that grows the memory"
+  },
+  {
+   "key": 88,
+   "source": "arxiv",
+   "id": "2606.29178",
+   "title": "Selective Memory Retention for Long-Horizon LLM Agents",
+   "url": "https://arxiv.org/abs/2606.29178",
+   "difference": "selective memory retention for long-horizon agents; retention policy rather than access mode"
+  },
+  {
+   "key": 89,
+   "source": "arxiv",
+   "id": "2603.13110",
+   "title": "AgentRM: An OS-Inspired Resource Manager for LLM Agent Systems",
+   "url": "https://arxiv.org/abs/2603.13110",
+   "difference": "resource management for agent systems; scheduling, not evidence access"
+  },
+  {
+   "key": 90,
+   "source": "arxiv",
+   "id": "2603.07379",
+   "title": "SoK: Agentic Retrieval-Augmented Generation (RAG): Taxonomy, Architectures, Evaluation, and Research Directions",
+   "url": "https://arxiv.org/abs/2603.07379",
+   "difference": "systematisation of agentic RAG; taxonomy of architectures"
+  },
+  {
+   "key": 91,
+   "source": "arxiv",
+   "id": "2510.14278",
+   "title": "PRISM: Agentic Retrieval with LLMs for Multi-Hop Question Answering",
+   "url": "https://arxiv.org/abs/2510.14278",
+   "difference": "agentic retrieval for multi-hop QA; a system contribution"
+  },
+  {
+   "key": 92,
+   "source": "arxiv",
+   "id": "2606.06708",
+   "title": "Signal-Driven Observation for Long-Horizon Web Agents",
+   "url": "https://arxiv.org/abs/2606.06708",
+   "difference": "long-horizon web agents with signal-driven observation; an agent loop"
+  },
+  {
+   "key": 93,
+   "source": "arxiv",
+   "id": "2408.04259",
+   "title": "EfficientRAG: Efficient Retriever for Multi-Hop Question Answering",
+   "url": "https://arxiv.org/abs/2408.04259",
+   "difference": "efficient retriever for multi-hop QA; iterates retrieval instead of reframing the access choice"
+  },
+  {
+   "key": 94,
+   "source": "arxiv",
+   "id": "2404.14464",
+   "title": "Tree of Reviews: A Tree-based Dynamic Iterative Retrieval Framework for Multi-hop Question Answering",
+   "url": "https://arxiv.org/abs/2404.14464",
+   "difference": "tree-based iterative retrieval; an orchestration contribution"
+  },
+  {
+   "key": 95,
+   "source": "arxiv",
+   "id": "2406.14891",
+   "title": "Generate-then-Ground in Retrieval-Augmented Generation for Multi-hop Question Answering",
+   "url": "https://arxiv.org/abs/2406.14891",
+   "difference": "generate-then-ground for multi-hop; grounds generated chains"
+  },
+  {
+   "key": 96,
+   "source": "arxiv",
+   "id": "1909.07598",
+   "title": "Multi-step Entity-centric Information Retrieval for Multi-Hop Question Answering",
+   "url": "https://arxiv.org/abs/1909.07598",
+   "difference": "entity-centric multi-step retrieval; an early pipeline for multi-hop"
+  },
+  {
+   "key": 97,
+   "source": "arxiv",
+   "id": "2410.12311",
+   "title": "Open Domain Question Answering with Conflicting Contexts",
+   "url": "https://arxiv.org/abs/2410.12311",
+   "difference": "conflicting contexts in open-domain QA; conflict rather than density"
+  },
+  {
+   "key": 98,
+   "source": "arxiv",
+   "id": "2402.07483",
+   "title": "T-RAG: Lessons from the LLM Trenches",
+   "url": "https://arxiv.org/abs/2402.07483",
+   "difference": "field report on RAG in production; lessons, not a controlled comparison"
+  },
+  {
+   "key": 99,
+   "source": "arxiv",
+   "id": "2604.01432",
+   "title": "Are Finer Citations Always Better? Rethinking Granularity for Attributed Generation",
+   "url": "https://arxiv.org/abs/2604.01432",
+   "difference": "citation granularity for attributed generation; output-side attribution"
+  },
+  {
+   "key": 100,
+   "source": "arxiv",
+   "id": "2510.17853",
+   "title": "CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation",
+   "url": "https://arxiv.org/abs/2510.17853",
+   "difference": "generation-time versus post-hoc citation; where the citation is produced, not whether the evidence was reachable"
+  },
+  {
+   "key": 101,
+   "source": "arxiv",
+   "id": "2602.00004",
+   "title": "C$^2$-Cite: Contextual-Aware Citation Generation for Attributed Large Language Models",
+   "url": "https://arxiv.org/abs/2602.00004",
+   "difference": "context-aware citation generation; improving attribution quality"
+  },
+  {
+   "key": 102,
+   "source": "arxiv",
+   "id": "2606.03728",
+   "title": "Re-Ranking Through an Attribution Lens for Citation Quality in Legal QA",
+   "url": "https://arxiv.org/abs/2606.03728",
+   "difference": "re-ranking for citation quality in legal QA; a domain pipeline"
+  },
+  {
+   "key": 103,
+   "source": "arxiv",
+   "id": "2504.19457",
+   "title": "Towards Long Context Hallucination Detection",
+   "url": "https://arxiv.org/abs/2504.19457",
+   "difference": "long-context hallucination detection; detection rather than the access decision"
+  },
+  {
+   "key": 104,
+   "source": "arxiv",
+   "id": "2608.18082",
+   "title": "LongNovel: A Multi-Scale Benchmark for Hallucination Detection in Long-Context Novel Summarization",
+   "url": "https://arxiv.org/abs/2608.18082",
+   "difference": "long-context hallucination benchmark for novel summarisation; a benchmark"
+  },
+  {
+   "key": 105,
+   "source": "arxiv",
+   "id": "2502.02737",
+   "title": "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model",
+   "url": "https://arxiv.org/abs/2502.02737",
+   "difference": "the reader model we port; a training report, not a study of evidence access"
+  },
+  {
+   "key": 106,
+   "source": "arxiv",
+   "id": "2005.14165",
+   "title": "Language Models are Few-Shot Learners",
+   "url": "https://arxiv.org/abs/2005.14165",
+   "difference": "few-shot scaling result motivating long-context use"
+  },
+  {
+   "key": 107,
+   "source": "arxiv",
+   "id": "2303.08774",
+   "title": "GPT-4 Technical Report",
+   "url": "https://arxiv.org/abs/2303.08774",
+   "difference": "a frontier model report used as an external reference point for scale"
+  },
+  {
+   "key": 108,
+   "source": "arxiv",
+   "id": "2205.14135",
+   "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+   "url": "https://arxiv.org/abs/2205.14135",
+   "difference": "IO-aware attention we do not use; the efficiency path our port avoids"
+  },
+  {
+   "key": 109,
+   "source": "arxiv",
+   "id": "2412.13663",
+   "title": "Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference",
+   "url": "https://arxiv.org/abs/2412.13663",
+   "difference": "modern bidirectional encoder; an alternative reader we do not evaluate"
+  },
+  {
+   "key": 110,
+   "source": "crossref",
+   "id": "10.1561/1500000019",
+   "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+   "url": "https://doi.org/10.1561/1500000019",
+   "difference": "the canonical BM25 formulation; a scoring function, not an access-strategy comparison"
+  },
+  {
+   "key": 111,
+   "source": "crossref",
+   "id": "10.6028/nist.sp.500-240.interactive-city",
+   "title": "Interactive Okapi at TREC-6",
+   "url": "https://doi.org/10.6028/nist.sp.500-240.interactive-city",
+   "difference": "the TREC-6 Okapi system report where BM25 entered practice"
+  },
+  {
+   "key": 112,
+   "source": "crossref",
+   "id": "10.18653/v1/d16-1264",
+   "title": "SQuAD: 100,000+ Questions for Machine Comprehension of Text",
+   "url": "https://doi.org/10.18653/v1/d16-1264",
+   "difference": "the reading-comprehension benchmark tradition our planted-evidence task descends from"
+  },
+  {
+   "key": 113,
+   "source": "crossref",
+   "id": "10.1145/3539618.3591796",
+   "title": "Dense Passage Retrieval: Architectures and Augmentation Methods",
+   "url": "https://doi.org/10.1145/3539618.3591796",
+   "difference": "SIGIR tutorial surveying dense-retrieval variants; no reader in the loop"
+  },
+  {
+   "key": 114,
+   "source": "crossref",
+   "id": "10.1017/cbo9780511844744.008",
+   "title": "Instructional Control of Cognitive Load in the Design of Complex Learning Environments",
+   "url": "https://doi.org/10.1017/cbo9780511844744.008",
+   "difference": "cognitive-load theory: the human account of interference in working memory that motivates our interference axis"
+  },
+  {
+   "key": 115,
+   "source": "crossref",
+   "id": "10.4018/978-1-60960-503-2.ch707",
+   "title": "Instructional Game Design Using Cognitive Load Theory",
+   "url": "https://doi.org/10.4018/978-1-60960-503-2.ch707",
+   "difference": "instructional design under cognitive load; the applied side of the same human account"
+  }
+ ]
+}
