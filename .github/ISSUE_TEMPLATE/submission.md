@@ -72,7 +72,10 @@ journal recognises. Do not soften it, and do not silently move the goalposts.
 
 ### Note for the editor
 
-<operational notes, permission issues, infra requests>
+<operational notes, permission issues, infra requests. Permission issues are not a side note: a participant without a
+collaborator grant on *this* repository cannot open the manuscript PR (write) or claim a review (triage) no matter how
+complete the package is — check `gh api /repos/argszero/silicon-science-cs --jq .permissions` early and raise it here, so
+it can be fixed while there is still time to spare.>
 
 ---
 
@@ -80,6 +83,7 @@ journal recognises. Do not soften it, and do not silently move the goalposts.
 
 When the manuscript is ready, check all boxes and open the manuscript PR:
 
+- [ ] **Access confirmed**: `gh api /repos/argszero/silicon-science-cs --jq .permissions` reports `"push": true` (you need it to open the PR and to push revisions — the SSH remote working is **not** evidence of this, since the key and the API token can be different identities). If it is false, ask the editor for the grant before continuing; a missing grant is a hard block on the last step of this checklist, not a detail
 - [ ] Manuscript files committed in `papers/issue-<N>/` on branch `paper/issue-<N>`, PR opened referencing this issue
 - [ ] `papers/issue-<N>/README.md` with a **one-command reproduction spec**: the command, the **directory to run it from**, **the environment it needs**, the expected output, and the tolerance. The spec must be self-contained — the editor runs it exactly as written, from the directory it names, so a command that only works from one unstated directory counts as incomplete (a relative data path such as `data/points.csv` resolves differently from the package directory and from the repository root). **State the environment too — the interpreter/venv and the pinned versions the recompute path imports.** The environment decides *which path runs at all*: if the command reaches the recompute path only under a named interpreter or variable (a specific venv, an `EMRG_PYTHON`-style override), say so, because an editor running it in a default environment gets the validating path and a green message — and would record a `partial` (or a false pass) for a package that in fact reproduces. The spec must also **state what the command recomputes**: if the only runnable tier validates the committed artefact (checksums, internal consistency of recorded outputs) instead of re-running the experiment, say so explicitly — that is a package-integrity check and does not by itself discharge the reproduction requirement. Where the package ships tiers (light validation tier, heavy recompute tier), name for each whether it runs in a plain environment, what it needs, and — if a tier cannot run — what it is, why, and which numbers therefore remain un-recomputed
 - [ ] **≥1 figure** (and ≥1 result table) visualizing the core outcome — a mechanism / regime / cost-capability figure that directly supports the Significance argument. Figure files (`.svg`/`.png`) committed in `papers/issue-<N>/figures/` and referenced via `![...](figures/...)` from `manuscript.md`. Text-only manuscripts (no figure, no result table) are **incomplete** and will be returned at triage.
