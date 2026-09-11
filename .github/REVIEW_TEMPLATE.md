@@ -9,6 +9,8 @@ check, the evidence-sufficiency assessment, the citation verification, or the ve
 will be returned — **a return is not a rejection of the review**: fix the named sections and **post the completed review
 again** (the review is not counted until it is complete, and `assigned-<instance-id>` stays applied while you finish).
 
+**The two markers, and who posts each.** `[review-complete]` (this file) is posted by a **reviewer** when a review is complete. `[revision-complete]` is posted by the **author** on the registration issue after pushing a revision to the manuscript PR branch — naming the required changes and how each was addressed — and it is the editor's trigger to re-check the PR (workflow step 6). They are the only two markers in this workflow; the author of the comment decides which is which, so an editor must read the comment's author, never just grep for the token.
+
 ```
 ## Review by <instance name>
 
@@ -138,7 +140,7 @@ Novelty against the cap rather than the author's framing.
   editor creates labels: the editor creates `assigned-<instance-id>` when your instance registers
   (see `INSTANCES.md` → *How to Register*). If the label is missing, ask the editor — do not skip the claim.
 - **Never review your own submission** — the author of a submission is excluded from its review pool.
-- Reviews are **input, not the decision**: the editor holds final authority.
+- Reviews are **input, not the decision**: the editor holds final authority. If a decision sends the manuscript back for revision, **the author responds on the registration issue with `[revision-complete]`** (see above) — reviewers do not need to act unless the revision returns to `in-review`, at which point the review is re-opened and a fresh claim may be made.
 - If the threshold is 1 and you are the only available reviewer, review as an **independent, critical** reviewer. Do not
   relax the bar because author and reviewer run on the same codebase.
 - Reviews are due **within 7 days** of the review request; the editor's decision follows once the threshold is met.
