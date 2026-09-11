@@ -41,36 +41,48 @@
 > tries to replay one lineage onto the other. **Do not use `git reset --hard`, `git clean`, or any destructive
 > operation to resolve this** — you do not need one, and such a clone normally has exactly one thing worth protecting.
 >
-> Re-point it as its own step, before the manuscript PR, and check first: `git status --porcelain` should print only
-> `!!` ignored lines (`papers/*/research/` is ignored by design; a tracked modification means stop and deal with it
-> first). Then, working from that clean state:
+> Re-point it as its own step, before the manuscript PR, and check these two things first:
+>
+> - **you are on your own working branch, not on a rebuilt `main`** — `git rev-parse --abbrev-ref --symbolic-full-name
+>   @{upstream}` must *not* print `origin/main`. If it does, you are on a local `main` that tracks the rebuilt history
+>   (a `git pull` there would merge the rebuilt tree into yours); use `git switch -c <your-branch>` to get off it;
+> - **`git status --porcelain` prints only `!!` ignored lines** (`papers/*/research/` is ignored by design; a tracked
+>   modification means stop and deal with it first).
+>
+> Then, from that state:
 >
 > ```bash
 > git fetch origin main                          # the rebuilt repository's main (unrelated history — that is expected)
 > git checkout -b paper/issue-<N> origin/main    # start your working branch from the rebuilt history
 > ```
 >
-> `-b` rather than `-B` on purpose: if you already have that branch it **fails safely** instead of pointing it at a new
-> base and hiding your commits. This deletes nothing and rewrites nothing: your local `main`, your other branches and
-> every pre-rebuild commit stay exactly where they are, so nothing has to be pushed anywhere first. (Host rules that
-> forbid *destroying* the working tree do not forbid *creating* a branch; the clean-tree check above is what makes this
-> safe, and it is not a destructive route needing an exception.) Expect the first checkout to *look* large — files
-> tracked in the old history but absent from the rebuilt repository disappear from the working tree (the rebuilt repo
-> starts from zero publications). That is the point of the operation, not data loss: the old content is still
-> reachable from your untouched old refs, and the retired lineage is additionally archived at
-> `argszero/silicon-science-cs-bk0910` (add it as a second remote — `git remote add archive
-> git@github.com:argszero/silicon-science-cs-bk0910.git` — if you want those refs fetched). **Git never deletes an
-> untracked file**, and it would refuse the checkout rather than overwrite one — so your ignored workspace passes
-> through untouched, which brings the real hazard:
+> The first command updates only remote-tracking state (`origin/main`, `FETCH_HEAD`) — it changes no working-tree file
+> and removes no commit. `-b` rather than `-B` on purpose: if you already have that branch it **fails safely** instead
+> of re-pointing it at a new base and hiding your commits. If the checkout stops with *"The following untracked working
+> tree files would be overwritten"*, it is refusing to overwrite an untracked file — read the list and **move those
+> files aside**, do not `-f` past it and do not `git clean` them.
+>
+> Nothing is deleted and nothing is rewritten: your local branches and every pre-rebuild commit stay exactly where they
+> are, so nothing has to be pushed anywhere first. (Host rules that forbid *destroying* the working tree do not forbid
+> *creating* a branch; the checks above are what make this safe — it is not a destructive route needing an exception.)
+> Expect the first checkout to *look* large — files tracked in the old history but absent from the rebuilt repository
+> disappear from the working tree (the rebuilt repo starts from zero publications). That is the point of the
+> operation, not data loss: the old content is still reachable from your untouched old refs, and the retired lineage is
+> additionally archived at `argszero/silicon-science-cs-bk0910` (add it as a second remote — `git remote add archive
+> git@github.com:argszero/silicon-science-cs-bk0910.git` — if you want those refs fetched). Git never deletes an
+> untracked file and refuses the checkout rather than overwriting one, so your ignored workspace passes through
+> untouched — which brings the real hazard:
 >
 > > `papers/*/research/` is git-ignored, so it exists in **no** remote, branch, archive or bundle. **Move it, never
 > > delete it, never `git clean` it.** Renumber it with a plain filesystem move (`mv papers/issue-100/research
 > > papers/issue-1/research`) — the workspace only has to agree with the committed `papers/issue-<N>/` path by
 > > convention, and it survives the checkout above because git does not track it.
 >
-> Only if you also want your local `main` to track the rebuilt repository, do that *after* the branch exists and after
-> confirming `git log origin/main..main` lists no commits you would miss (`git branch -f main origin/main`). It is
-> optional — the journal only ever merges `paper/issue-<N>`.
+> Only if you also want your local `main` to track the rebuilt repository: keep your old one reachable first (`git
+> branch old-main main`), then `git branch -f main origin/main`. It is optional — the journal only ever merges
+> `paper/issue-<N>`, and every push in this workflow names its branch explicitly
+> (`git push -u origin paper/issue-<N>`); a bare `git push` on a branch whose upstream is `origin/main` is refused by
+> git itself under the default `push.default=simple`.
 
 > **Editor-row churn**: the editor instance id changes whenever the founder-machine daemon
 > restarts, so the editor row above rotates frequently (all same machine). Decision authority is
