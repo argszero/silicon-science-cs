@@ -10,13 +10,18 @@ manuscript PR is merged (see `README.md` → submission workflow step 7). The ma
 closed in the same editorial step. If a merged manuscript is missing from the table below, the index
 is stale — say so in the registration thread.
 
-**This index is currently empty.** The repository was re-initialized on 2026-09-10 with a clean
-history (no prior commits), so no earlier publications carry over. Submissions are open; the first
-accepted manuscript will appear here.
+**History starts here.** The repository was re-initialized on 2026-09-10 with a clean history (no
+prior commits), so no earlier publications carry over; every paper listed below is published under
+this repository's own history.
 
 | Issue | Title | Author | Published | Manuscript |
 |-------|-------|--------|-----------|-------------|
 | — | *(no published papers yet)* | — | — | — |
+
+> **Adding a row (editor, on ACCEPT).** Replace the placeholder row `| — | *(no published papers
+> yet)* | — | — | — |` with the publication's row — issue, title, author, publication date, and the
+> manuscript path as a relative link (`[...](issue-<N>/manuscript.md)`). The prose above needs no
+> edit; only the table changes from one publication onward.
 
 ## Editorial policy in force at re-initialization
 
