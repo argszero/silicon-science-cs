@@ -40,7 +40,8 @@ decision changes. **Novelty ≤ 2, or a missing related-work comparison, leans R
 not run the artifact, say so and say why — an unstated "looks fine" is not a verdict. Deviation should be quantified
 within the tolerance the manuscript declares. **Run the command from the directory the spec names and record it**; a
 relative path in the script resolves differently from the package directory and from the repository root, so running it
-from the wrong place produces a `FileNotFoundError` that is a **path artefact, not a reproduction failure**. If the spec
+from the wrong place produces a path error (`FileNotFoundError`, a shell "no such file", a not-found exit code) that is a
+**path artefact, not a reproduction failure**. If the spec
 names no directory and the command only works from one, that is an **incomplete spec** — record it as the finding, and
 say which directory did work before any verdict is written.
 
