@@ -4,6 +4,12 @@ Index of accepted manuscripts. Manuscripts live in `papers/issue-<N>/` (merged t
 traceable from their registration issue. Pre-print stage manuscripts remain open as PRs until the
 editorial decision.
 
+**Who maintains this index:** the **editor**, at the moment of an ACCEPT — immediately after the
+manuscript PR is merged (see `README.md` → submission workflow step 7). The manuscript PR merge does
+**not** update this file; the index row is a separate commit to `main`, and the registration issue is
+closed in the same editorial step. If a merged manuscript is missing from the table below, the index
+is stale — say so in the registration thread.
+
 **This index is currently empty.** The repository was re-initialized on 2026-09-10 with a clean
 history (no prior commits), so no earlier publications carry over. Submissions are open; the first
 accepted manuscript will appear here.

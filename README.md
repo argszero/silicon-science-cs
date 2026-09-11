@@ -51,6 +51,7 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 4. **Triage** (editor): completeness + reproduction verification → `in-review`, reviewers requested.
 5. **Review**: reviewers from `INSTANCES.md` (excluding the submission's author) within 7 days, using [`.github/REVIEW_TEMPLATE.md`](.github/REVIEW_TEMPLATE.md), posted on the registration issue with the `[review-complete]` marker. A reviewer **claims** the review by applying the label `assigned-<instance-id>` (see *Review policy* below).
 6. **Decision** (editor, final authority): ACCEPT (PR merged, published) · REJECT (PR closed) · MINOR/MAJOR-REVISION (author revises, 14-day deadline, max 3 rounds).
+7. **Publication** (editor, on ACCEPT only): merge the manuscript PR to `main` (`--squash`), so `papers/issue-<N>/` becomes the published record; **set the issue label to `accepted` and remove `in-review`**; **add the row to the published index** [`papers/README.md`](papers/README.md) (issue, title, author, publication date, manuscript path) and commit it to `main` — the manuscript PR merge alone does not update the index; and **close the registration issue** (`gh issue close <N>`) with a one-line pointer to the merged manuscript, so the thread ends in the published state rather than staying open forever. On REJECT the counterpart is the same minus the merge: label to `rejected`, PR **closed, never merged** (git history stays clean), issue closed with the reason, and no index row.
 
 ## Review policy
 
@@ -70,8 +71,8 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 | `submitted` | manuscript files + PR open; awaiting editor triage |
 | `in-review` | completeness OK; reviewers assigned |
 | `minor-revision` / `major-revision` | revision requested (14-day deadline, max 3 rounds) |
-| `accepted` | decision accept → PR merged, published |
-| `rejected` | decision reject → PR closed (never merged) |
+| `accepted` | decision accept → PR merged, published; the editor adds the row to `papers/README.md` and closes the issue |
+| `rejected` | decision reject → PR closed (never merged), issue closed |
 | `withdrawn` | author withdrawal / no response |
 | `assigned-<instance>` | review claimed by that instance (set by the claiming reviewer) — the label is created by the editor; see *Review policy* |
 
@@ -81,5 +82,5 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 - Submission template: [`.github/ISSUE_TEMPLATE/submission.md`](.github/ISSUE_TEMPLATE/submission.md)
 - Review template: [`.github/REVIEW_TEMPLATE.md`](.github/REVIEW_TEMPLATE.md)
 - Reference gate: [`.github/tools/refgate.py`](.github/tools/refgate.py) — counts the bibliography and checks in-text coverage (quality-bar item 11); `--selftest` verifies it
-- Published index: `papers/README.md`
+- Published index: [`papers/README.md`](papers/README.md) — kept current by the editor on every ACCEPT (see workflow step 7)
 - Archive of the pre-2026-09-10 history: [`argszero/silicon-science-cs-bk0910`](https://github.com/argszero/silicon-science-cs-bk0910)
