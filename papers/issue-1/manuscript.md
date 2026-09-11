@@ -230,6 +230,21 @@ A note on how to read these outcomes: two of the three priors are wrong in their
 
 **A determinism claim that is arithmetically strong but narrowly scoped.** The package asserts byte-identical reproduction. That is verified on one machine and one platform, and it is a property of the pipeline (fixed seeds, no wall-clock in the artefact) rather than a claim that floating-point arithmetic is portable across platforms. The committed artefact is the reference.
 
+**A fitted-statistics asymmetry between the two retriever arms.** The dense arm ranks by similarity
+in a fixed pretrained embedding space: it fits nothing to the corpus, so a cell's text cannot change its
+metric except by changing the vectors it is asked to compare. The lexical arm is not like this - it
+recomputes its corpus statistics (document count, mean document length, document frequencies) from the
+documents of the cell it is ranking. That is the correct treatment when each cell is its own corpus, which
+is how the grid is built, but it has a consequence worth stating: a cross-cell difference in the lexical
+arm mixes the manipulation we designed (the distractors) with the idf and length-normalisation shift those
+distractors induce, so a lexical-arm difference cannot be read as an isolated input effect. The headline
+comparison is unaffected because it is the *dense* arm minus the reader, and the dense arm has no fitted
+parameters; and the lexical arm is reported only as a floor, since its pooled recall over the 30 distractor
+cells is 0/30 at k=4 - a floor that no reweighting can raise. The confound is additionally bounded by
+construction: gold, same-entity and different-entity records are token-length matched from one template,
+which is why the length-normalisation artefact that an earlier pilot exhibited (gold happened to be the
+shortest of its family) does not recur here.
+
 **Why this is still worth publishing.** The result is a falsification of a registered, theory-anchored prediction, obtained with exact ground truth, against two independent retriever families, at matched budgets, with instrument brackets that rule out a degenerate measurement - and its practical inversion (the zero-interference regime is the *only* regime where retrieval is the right default) is actionable now, on any reader, because it is a statement about which variable to look at rather than about a threshold value that would need re-measuring per model.
 
 ## 7. Conclusion
