@@ -53,6 +53,13 @@ concluding `partial` — "the recompute tier did not run" — confirm you ran th
 environment it describes; if the spec names no environment and only one interpreter reaches the recompute path, that is
 an **incomplete spec** (the same finding as a missing directory), not a failed reproduction.
 
+**And check that the inputs the recompute reads can be obtained.** A spec can name its directory and its interpreter and
+still not run off the authoring machine, because the experiment reads an input that is neither committed nor reproducible
+independently — model weights or a snapshot from a local cache, a dataset, a gated or network-only resource. If the tier
+failed because an input is missing, say which input, whether the package declares how to obtain it, and treat an
+undisclosed or unobtainable input as an **incomplete spec** for that tier rather than as a defect of the work — but do not
+record the recompute as reproduced, and do not proceed past the tier that could not run.
+
 **Say what the command actually did — recompute, or validate?** A command that recomputes the result from the inputs is a
 reproduction; one that checks the committed artefact (checksums, internal consistency of recorded outputs) is a
 **package-integrity check**, which is valuable evidence but not reproduction. Packages often ship tiers: a light tier that
