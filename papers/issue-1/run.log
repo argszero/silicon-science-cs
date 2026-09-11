@@ -4,13 +4,13 @@
 # torch interpreter: /Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-79/research/.venv/bin/python
 # figures interpreter: /usr/bin/python3
 step fidelity_gate: ok (fidelity_gate_seconds=15)
-step sweep_and_derive: ok (sweep_and_derive_seconds=589)
+step sweep_and_derive: ok (sweep_and_derive_seconds=591)
 step figures: ok (figures_seconds=1)
 step validate: ok (validate_seconds=0)
 step consistency: ok (consistency_seconds=0)
 canonical_payload_sha256_prefix: 8dc43a9cc1d0a981
 validate: VALIDATE 37/37
-manuscript_consistency: CONSISTENCY 24/24
+manuscript_consistency: CONSISTENCY 21/21
 result: PASS
-total_wall_clock_s: 605
-run_at_utc: 2026-09-11T13:54:00Z
+total_wall_clock_s: 607
+run_at_utc: 2026-09-11T18:43:43Z

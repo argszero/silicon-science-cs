@@ -5,7 +5,7 @@ Evidence Access under Semantic Interference**
 
 This directory is the committed artefact set for issue #1: the sweep runner, the
 derivation and analysis scripts, the figures, the result table, a frozen snapshot of the
-reader-fidelity corpus, a 37-check validation suite, and a 24-check manuscript-consistency
+reader-fidelity corpus, a 37-check validation suite, and a 21-check manuscript-consistency
 gate. Every number that appears in
 `manuscript.md` is read out of `canonical_results.json`, which this package
 regenerates from scratch and validates. Six independent full runs of this pipeline produced a byte-identical artefact, the three most
@@ -21,7 +21,7 @@ Expected output (light tier, default environment):
 
     canonical payload sha256: 8dc43a9cc1d0a981
     VALIDATE 37/37
-    CONSISTENCY 24/24
+    CONSISTENCY 21/21
     RESULT: PASS
 
 Full artefact payload sha256:
@@ -31,7 +31,7 @@ Full artefact payload sha256:
 **Tolerance: exact, not statistical.** `validate.py` must print `VALIDATE 37/37`;
 it asserts 37 individual conditions (14 structural, 23 mechanism), each attached to a
 specific headline claim in the manuscript. `consistency_check.py` must print
-`CONSISTENCY 24/24`, which it does by re-deriving from the artefact every number the
+`CONSISTENCY 21/21`, which it does by re-deriving from the artefact every number the
 manuscript quotes (see *Traceability* below). The three figures and the result table must
 match the sha256 values recorded in `figures/manifest.json` byte for byte. A single
 mismatched byte, or a single failed assertion, fails the run.
@@ -109,11 +109,11 @@ above describe the verified environment rather than gating a run.
 | tier | runs in a plain environment? | what it **recomputes** | what it only **validates** |
 |---|---|---|---|
 | **heavy** | no - needs PyTorch + numpy and the two model snapshots | everything: the reader-fidelity gate, all 48 sweep cells from the corpus definitions, the whole derivation, then rewrites `canonical_results.json` | nothing |
-| **light** | yes - needs only Python 3 + matplotlib | the three figures and the result table, from the committed artefact | everything else: checksums, structural consistency, all 37 mechanism assertions, and the 24-check manuscript-to-artefact consistency gate |
+| **light** | yes - needs only Python 3 + matplotlib | the three figures and the result table, from the committed artefact | everything else: checksums, structural consistency, all 37 mechanism assertions, and the 21-check manuscript-to-artefact consistency gate |
 
 **The light tier is a package-integrity check, not a reproduction.** It confirms that the
 committed artefact is internally consistent, that its embedded payload hash recomputes, and
-that every headline number the manuscript quotes traces back to that artefact (`CONSISTENCY 24/24`) - but the
+that every headline number the manuscript quotes traces back to that artefact (`CONSISTENCY 21/21`) - but the
 sweep cells it checks were produced by the heavy tier, so it cannot stand as the reproduction
 by itself. The heavy tier is the reproduction. **Run the heavy tier to reproduce this work**;
 run the light tier to check that the package you have is intact.
@@ -140,7 +140,7 @@ byte-identical to the committed file (`cmp` reports no difference; file sha256
 `8dc43a9cc1d0a981a74de025e88046a3...`). That makes six independent full runs in total (three before a metadata correction, three after),
 all producing a byte-identical artefact - the three post-correction runs are the committed artefact's.
 The most recent one was run after the consistency gate was added, so it is also the run that
-exercised `consistency_check.py` on the recompute path (`CONSISTENCY 24/24`, in `run.log`).
+exercised `consistency_check.py` on the recompute path (`CONSISTENCY 21/21`, in `run.log`).
  `run.log` is the record of the most recent one - currently a
 heavy-tier run, with its per-step timings.
 
@@ -152,18 +152,48 @@ The chain a number travels from the experiment to the manuscript is
 
 and it is checked rather than asserted. `consistency_check.py` walks that chain in both
 directions - it reads the committed artefact, the generated table, the figure manifest, the
-bibliography record store and the manuscript - and prints `CONSISTENCY 24/24`. It uses only
+bibliography record store and the manuscript - and prints `CONSISTENCY 21/21`. It uses only
 the standard library, so it runs in either tier; `reproduce.sh` runs it as its last step in
-both. What the 24 checks cover:
+both. What the 21 checks cover:
 
 - the manuscript's header carries the artefact's payload sha256, and that hash recomputes from the artefact body (C01-C02);
 - the 18 data rows of the manuscript's main table equal `results_table.md` byte for byte, and that file matches `figures/manifest.json` (C03-C04);
-- every headline number the manuscript quotes - the six interference gaps, the three context-length budgets, the filler control, the five position fractions, the distractor-type contrasts, the pooled recall of both retrievers, the cell count, the sign test, every Wilson interval in the table, and the fidelity block - appears in the manuscript with the artefact's own value and formatting (C05-C14);
+- every headline number the manuscript quotes - the six interference gaps, the three context-length budgets, the filler control, the five position fractions, the distractor-type contrasts, the dense pooled-recall ladder, the BM25 recall, the cell count, the sign test, every Wilson interval in the table, and the fidelity block - is present **anchored to the sentence that makes the claim**, not merely as digits somewhere in the file (C05-C14). Anchoring matters here: the manuscript carries 115 arXiv identifiers, so a bare substring test is satisfied by unrelated digits, which is exactly the failure the audit below finds and eliminates;
 - the bibliography has exactly one section, its entry count equals the verified record store, and every entry is cited in the body - citation clusters such as `[18,19,20,21,22,23]` are counted as citing each of their members, the same resolution the repository's `refgate.py` applies (C15-C17);
 - the committed figures match the hashes in the manifest (C18).
 
 The gate exits non-zero as soon as one number cannot be traced, so a manuscript edit that
 outruns the artefact fails the same one-command reproduction that produces the artefact.
+
+### Does every check earn its place? (`check_audit.py`)
+
+A suite that reports `21/21` is evidence about the suite only if each check can be shown to
+reject something; a check that never fires inflates the denominator without constraining the
+artefact. `check_audit.py` tests that directly. For each check it applies one targeted
+corruption to a throwaway copy of the package, runs the gate there, and records which checks
+fail. The corruptions are surgical and each mutator asserts that it changed something, so a
+silently ineffective corruption cannot be mistaken for a check that failed to fire.
+
+```
+python3 check_audit.py
+AUDIT CLEAN - every one of the 21 checks rejects something
+```
+
+Current result: **21/21 checks load-bearing, 22/22 corruptions caught, no decoration, and 17
+checks have a corruption that only they catch.** Four corruptions trip two checks each, and
+that overlap is expected rather than hidden: C02 recomputes the artefact's embedded payload
+hash, so any edit to the artefact body necessarily trips it beside whichever check reads the
+mutated field, and C16/C17 are two views of the same bibliography.
+
+The audit is not decoration itself - it changed the gate. Its first run found that the four
+per-rung recall tests (k=1,2,4,8) could not be made to fire independently: the exact
+pooled-recall ladder phrase already pins all four values in one rendering, so the per-rung
+tests were redundant. Three of them were removed and the stricter phrase test kept, which is
+why this gate has 21 checks rather than 24. The same run showed that a value-presence test can
+be satisfied by a colliding number elsewhere in the file, which is what motivated the anchored
+form above. This is the standard the fidelity gate already met for the model port (three
+corruptions that must degrade the metric, one that must improve it); `check_audit.py` applies
+it to the manuscript-to-artefact chain.
 
 ## Dependencies and model snapshots
 
@@ -194,13 +224,14 @@ outruns the artefact fails the same one-command reproduction that produces the a
 | `mini_port.py` | `1d8eee73ba250b60` | dependency-free transformer port (SmolLM2-135M) |
 | `smollm_port.py` | `7309967e201e8acc` | reader wrapper: KV cache, greedy and sampled decoding |
 | `validate.py` | `c9246f133fb0369f` | 37 assertions over the artefact; prints `VALIDATE 37/37` |
-| `consistency_check.py` | `aad9ec7864843a04` | 24 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 24/24` |
+| `consistency_check.py` | `b6fd5605c27b4bfe` | 21 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 21/21` |
+| `check_audit.py` | `20f2b0a1c9e9b54d` | reversion audit of the gate: one targeted corruption per check, reporting which checks are load-bearing |
 | `make_figures.py` | `cad4ec44b524f327` | regenerates the three figures and the result table from the artefact |
 | `canonical_results.json` | `de241d916e5885a8` | the artefact: sweep, derivations, fidelity block, embedded payload sha256 |
 | `fidelity_corpus.json` | `01e1d83b232acc68` | frozen text snapshot the fidelity gate reads (see below) |
 | `results_table.md` | `cdf83e5e7730c522` | the result table embedded in the manuscript |
 | `figures/manifest.json` | `2760403cfe629432` | figure/table sha256 values and every number plotted in them |
-| `run.log` | `b67120628e1b9a1c` | the log of the most recent run of this script (a heavy-tier run) |
+| `run.log` | `3e600142fe1713fd` | the log of the most recent run of this script (a heavy-tier run) |
 | `manuscript.md` | - | the manuscript; every number in it is read from `canonical_results.json` |
 | `reference-check.md` | - | citation authenticity and coverage report (115 entries) |
 | `refs_tool.py` | `bd4eadc8ab5af4d0` | bibliography builder: `harvest` (arXiv + Crossref search) and `verify` (re-fetch by identifier) |
