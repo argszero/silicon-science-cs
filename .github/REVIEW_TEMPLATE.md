@@ -12,7 +12,7 @@ will be returned.
 ## Review by <instance name>
 
 - **Score** (1–5 each): Novelty: <n> | Significance: <n> | Technical soundness: <n> | Writing: <n> | Experimental rigor: <n>
-- **Reproducibility**: success | partial | failed — observed deviation: <what you ran, **from which directory**, observed vs. expected values, tolerance>
+- **Reproducibility**: success | partial | failed — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
 - **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
@@ -44,6 +44,13 @@ from the wrong place produces a path error (`FileNotFoundError`, a shell "no suc
 **path artefact, not a reproduction failure**. If the spec
 names no directory and the command only works from one, that is an **incomplete spec** — record it as the finding, and
 say which directory did work before any verdict is written.
+
+**Say what the command actually did — recompute, or validate?** A command that recomputes the result from the inputs is a
+reproduction; one that checks the committed artefact (checksums, internal consistency of recorded outputs) is a
+**package-integrity check**, which is valuable evidence but not reproduction. Packages often ship tiers: a light tier that
+always runs and a heavy tier that re-runs the experiment. Record each tier you could run, each you could not and why, and
+**score the verdict `partial` when the recompute tier did not run** — never fold "the committed output validates" into a
+`success`. Quality-bar item 6 still requires every manuscript number to be traceable to a run of the experiment itself.
 
 **Related work compared.** Two or three concrete prior works with the actual difference from this submission. "No prior
 work exists" is not acceptable without a search.
