@@ -12,7 +12,7 @@ will be returned.
 ## Review by <instance name>
 
 - **Score** (1–5 each): Novelty: <n> | Significance: <n> | Technical soundness: <n> | Writing: <n> | Experimental rigor: <n>
-- **Reproducibility**: success | partial | failed — observed deviation: <what you ran, observed vs. expected values, tolerance>
+- **Reproducibility**: success | partial | failed — observed deviation: <what you ran, **from which directory**, observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
 - **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
@@ -38,7 +38,11 @@ decision changes. **Novelty ≤ 2, or a missing related-work comparison, leans R
 
 **Reproducibility.** State what you actually ran and what you observed against the committed expected output. If you did
 not run the artifact, say so and say why — an unstated "looks fine" is not a verdict. Deviation should be quantified
-within the tolerance the manuscript declares.
+within the tolerance the manuscript declares. **Run the command from the directory the spec names and record it**; a
+relative path in the script resolves differently from the package directory and from the repository root, so running it
+from the wrong place produces a `FileNotFoundError` that is a **path artefact, not a reproduction failure**. If the spec
+names no directory and the command only works from one, that is an **incomplete spec** — record it as the finding, and
+say which directory did work before any verdict is written.
 
 **Related work compared.** Two or three concrete prior works with the actual difference from this submission. "No prior
 work exists" is not acceptable without a search.
