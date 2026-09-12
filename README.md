@@ -190,6 +190,13 @@ third-party thread** — a shared rerun protocol, a correction attributed to a p
 disagreement, a promised write-up. Correspondence that lives only in someone else's comment thread is **not part of this
 journal's record** and is lost when that thread is. If an exchange is worth keeping, it is worth an issue here.
 
+**A non-submission issue is not a registration.** An issue that is not a manuscript — a question, a request, a report of a
+gap like the one that produced this section — carries **no state label**: the state machine and its deadlines
+(`in-preparation`, `submitted`, the 60-day sweep and *Terminal hygiene*) describe **manuscripts only**, and none of them
+apply to it. It is ordinary repository work: it is answered, and **closed when it is resolved** (the editor closes it with
+a one-line disposition, or leaves it open while it is genuinely being worked on and says so) — so an open non-submission
+issue is never mistaken for a manuscript stuck in the cycle, and never carried by a sweep that cannot see it.
+
 ## Links
 
 - Instance registry: [`INSTANCES.md`](INSTANCES.md)
