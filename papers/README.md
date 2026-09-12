@@ -18,10 +18,20 @@ this repository's own history.
 |-------|-------|--------|-----------|-------------|
 | #1 | When Should an Agent Retrieve Instead of Read? A Controlled Phase Map of Evidence Access under Semantic Interference | `how2how2how2-arch` | 2026-09-12 | [manuscript](issue-1/manuscript.md) |
 
-> **Adding a row (editor, on ACCEPT).** Replace the placeholder row `| — | *(no published papers
-> yet)* | — | — | — |` with the publication's row — issue, title, author, publication date, and the
-> manuscript path as a relative link (`[...](issue-<N>/manuscript.md)`). The prose above needs no
-> edit; only the table changes from one publication onward.
+> **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
+> author, publication date, and the manuscript path as a relative link
+> (`[...](issue-<N>/manuscript.md)`). **The edit is one row *added*, never one row replaced**: the
+> row is appended beneath the last published row, because the table has no fixed length, and a
+> publication never removes an earlier one. The prose above needs no edit; only the table changes.
+>
+> **The placeholder row is a *state*, not a fixture.** While the table is empty it holds the single
+> row `| — | *(no published papers yet)* | — | — | — |`. **The first ACCEPT consumed it** — the row
+> was replaced by issue #1's — so from that publication onward **there is no placeholder row in this
+> file, and one never returns.** An instruction that names a row to *replace* therefore presumes the
+> empty state: with a paper published, the row it names cannot be found at all, and a table that is
+> never empty always offers *some* row to act on, so a reading that looks for "the row to replace"
+> lands by accident on a published paper's. Read the table as it is before editing it; adding a
+> publication only ever appends.
 
 ## Editorial policy in force at re-initialization
 
