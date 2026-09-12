@@ -75,13 +75,19 @@ def main():
     c.ok("A02", "no wall-clock field anywhere in the artefact", not tk, "found %s" % tk[:3])
 
     sw = d["sweep"]
-    c.ok("A03", "plan size is 48 cells", sw["plan_size"] == 48, sw["plan_size"])
+    c.ok("A03", "plan size is 84 cells", sw["plan_size"] == 84, sw["plan_size"])
     arms = {}
     for cell in sw["cells"]:
         arms[cell["arm"]] = arms.get(cell["arm"], 0) + 1
-    c.ok("A04", "arm composition is 36 MAIN / 8 POSITION / 2 TYPE_entity / 2 FILLER_neutral",
-         arms == {"MAIN": 36, "POSITION": 8, "TYPE_entity": 2, "FILLER_neutral": 2}, arms)
-    c.ok("A05", "48 cells stored", len(sw["cells"]) == 48, len(sw["cells"]))
+    c.ok("A04", "arm composition is 36 MAIN / 8 POSITION / 2 TYPE_entity / 2 FILLER_neutral / 36 recall-matched control",
+         arms == {"MAIN": 36, "POSITION": 8, "TYPE_entity": 2, "FILLER_neutral": 2,
+                  "TYPERM_status": 18, "TYPERM_entity": 18}, arms)
+    rm = [c for c in sw["cells"] if c["arm"].startswith("TYPERM_")]
+    c.ok("A04b", "the recall-matched control pairs both families at the same density and instance",
+         len(rm) == 36 and
+         sorted({(c["n_chunks"], c["interference"]) for c in rm}) == [(64, 0.15), (64, 0.3), (128, 0.15)] and
+         {c["kind"] for c in rm} == {"status", "entity"}, len(rm))
+    c.ok("A05", "84 cells stored", len(sw["cells"]) == 84, len(sw["cells"]))
     req = ("full", "dense_k1", "dense_k4", "dense_k8", "bm25_k4", "no_evidence", "oracle",
            "dense_rank_gold", "bm25_rank_gold", "tell_audit", "n_family")
     missing = [k for k in req if k not in sw["cells"][0]]
@@ -104,7 +110,7 @@ def main():
          d["fidelity"]["kv_cache"]["full_vs_cached_max_abs_diff"])
 
     der = d["derived"]
-    c.ok("A13", "derived artefact covers all 48 cells", der["n_cells"] == 48, der["n_cells"])
+    c.ok("A13", "derived artefact covers all 84 cells", der["n_cells"] == 84, der["n_cells"])
     c.ok("A14", "main grid has 18 (length, interference) rows", len(der["main_grid"]) == 18,
          len(der["main_grid"]))
     c.ok("A15", "tell audit is clean in every cell that has distractors",

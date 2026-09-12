@@ -28,6 +28,36 @@ def mean(xs):
     return sum(xs) / len(xs)
 
 
+# two-sided 95% t critical values, keyed by degrees of freedom
+_T95 = {1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365, 8: 2.306,
+        9: 2.262, 10: 2.228, 11: 2.201, 12: 2.179, 13: 2.160, 14: 2.145, 15: 2.131,
+        20: 2.086, 25: 2.060, 29: 2.045, 30: 2.042, 40: 2.021, 60: 2.000, 120: 1.980}
+
+
+def tcrit(df):
+    if df in _T95:
+        return _T95[df]
+    ks = sorted(_T95)
+    lo = max([k for k in ks if k <= df] or [ks[0]])
+    hi = min([k for k in ks if k >= df] or [ks[-1]])
+    if lo == hi:
+        return _T95[lo]
+    # linear interpolation in 1/df, which is where the t distribution is smooth
+    f = (1.0 / df - 1.0 / lo) / (1.0 / hi - 1.0 / lo)
+    return _T95[lo] + f * (_T95[hi] - _T95[lo])
+
+
+def t_interval(xs):
+    """mean and two-sided 95% t interval over the sample (n-1 df)."""
+    n = len(xs)
+    m = mean(xs)
+    if n < 2:
+        return m, m, m
+    var = sum((x - m) ** 2 for x in xs) / (n - 1)
+    half = tcrit(n - 1) * math.sqrt(var / n)
+    return m, m - half, m + half
+
+
 def r(x, n=3):
     return round(x, n)
 
@@ -165,6 +195,97 @@ bh = sum(c["bm25_recall"]["4"] for c in gt_i)
 print("  bm25  k=4  gold recovered in %d / %d cells" % (bh, len(gt_i)))
 print("  worst-case dense gold rank in those cells: %d" % max(c["dense_rank_gold"] for c in gt_i))
 
+print("\n== gap by interference with a 95% t interval over the six cells at that level ==")
+gap_ci = {}
+for I in [0.0, 0.15, 0.3, 0.45, 0.6, 0.8]:
+    cs = [c for c in main if c["interference"] == I]
+    g = [c["dense_k4"]["mean_logprob"] - c["full"]["mean_logprob"] for c in cs]
+    m, lo, hi = t_interval(g)
+    gap_ci[I] = {"mean": r(m), "lo": r(lo), "hi": r(hi), "n": len(g),
+                 "n_positive": sum(1 for x in g if x > 0), "n_negative": sum(1 for x in g if x < 0),
+                 "excludes_zero": bool(lo > 0 or hi < 0)}
+    print("  I=%.2f  n=%d  gap %+.3f  95%% CI [%+.3f, %+.3f]  %s  (%d+/%d-)" % (
+        I, len(g), m, lo, hi, "separated from 0" if (lo > 0 or hi < 0) else "INCLUDES 0",
+        gap_ci[I]["n_positive"], gap_ci[I]["n_negative"]))
+
+print("\n== retrieval-budget ladder over the %d distractor cells ==" % len(gt_i))
+ladder = {}
+for k in [1, 2, 4, 8]:
+    g = [c["dense_k%d" % k]["mean_logprob"] - c["full"]["mean_logprob"] for c in gt_i]
+    m, lo, hi = t_interval(g)
+    hits = sum(c["dense_recall"][str(k)] for c in gt_i)
+    ladder["k%d" % k] = {"mean": r(m), "lo": r(lo), "hi": r(hi), "pooled_recall": "%d/%d" % (hits, len(gt_i))}
+    print("  k=%-2d  mean gap %+.3f  95%% CI [%+.3f, %+.3f]  pooled recall %d/%d" % (k, m, lo, hi, hits, len(gt_i)))
+
+print("\n== worst and best single MAIN cells (dense k=4 minus full-context) ==")
+worst_main = min(main, key=lambda c: c["dense_k4"]["mean_logprob"] - c["full"]["mean_logprob"])
+best_main = max(main, key=lambda c: c["dense_k4"]["mean_logprob"] - c["full"]["mean_logprob"])
+worst_gap = r(worst_main["dense_k4"]["mean_logprob"] - worst_main["full"]["mean_logprob"])
+print("  worst %+.3f at L=%d I=%.2f" % (worst_gap, worst_main["n_chunks"], worst_main["interference"]))
+print("  best  %+.3f at L=%d I=%.2f" % (best_main["dense_k4"]["mean_logprob"] - best_main["full"]["mean_logprob"],
+                                        best_main["n_chunks"], best_main["interference"]))
+
+print("\n== recall-matched type control (gold inside the k=4 set for both families) ==")
+typerm = {}
+for kind in ("status", "entity"):
+    cs = [c for c in cells if c["arm"] == "TYPERM_" + kind]
+    if not cs:
+        continue
+    typerm[kind] = {
+        "n": len(cs),
+        "recall_k4": "%d/%d" % (sum(c["dense_recall"]["4"] for c in cs), len(cs)),
+        "mean_dense_rank": r(mean([c["dense_rank_gold"] for c in cs]), 2),
+        "reading": r(mean([c["full"]["mean_logprob"] for c in cs])),
+        "retrieval_k4": r(mean([c["dense_k4"]["mean_logprob"] for c in cs])),
+        "gap": r(mean([c["dense_k4"]["mean_logprob"] - c["full"]["mean_logprob"] for c in cs])),
+    }
+    print("  %-7s n=%d  recall@4 %s  mean rank %.2f  reading %+.3f  retrieval %+.3f  gap %+.3f" % (
+        kind, typerm[kind]["n"], typerm[kind]["recall_k4"], typerm[kind]["mean_dense_rank"],
+        typerm[kind]["reading"], typerm[kind]["retrieval_k4"], typerm[kind]["gap"]))
+if len(typerm) == 2:
+    typerm["gap_difference_entity_minus_status"] = r(typerm["entity"]["gap"] - typerm["status"]["gap"])
+    print("  gap difference (entity - status): %+.3f" % typerm["gap_difference_entity_minus_status"])
+
+# The control only isolates TYPE where BOTH families left the gold record inside the k=4 set
+# in the same instance at the same density. Those pairs are the recall-matched subset; the
+# others still carry the recall confound and are counted as such rather than averaged in.
+print("\n== recall-matched subset (paired: gold in the k=4 set for BOTH families) ==")
+by_key = {(c["n_chunks"], c["interference"], c["gold_frac"] if "gold_frac" in c else c["inst_id"],
+           c["kind"]): c for c in cells if c["arm"].startswith("TYPERM_")}
+pairs = []
+for c in cells:
+    if c["arm"] != "TYPERM_status":
+        continue
+    e = [x for x in cells if x["arm"] == "TYPERM_entity" and x["inst_id"] == c["inst_id"]
+         and x["n_chunks"] == c["n_chunks"] and x["interference"] == c["interference"]]
+    if not e:
+        continue
+    e = e[0]
+    if c["dense_recall"]["4"] == 1 and e["dense_recall"]["4"] == 1:
+        pairs.append((c, e))
+gof = lambda c: c["dense_k4"]["mean_logprob"] - c["full"]["mean_logprob"]
+matched = {"n_pairs": len(pairs),
+           "n_cells_examined": len([c for c in cells if c["arm"].startswith("TYPERM_")]),
+           "status_reading": r(mean([c["full"]["mean_logprob"] for c, _ in pairs])),
+           "entity_reading": r(mean([e["full"]["mean_logprob"] for _, e in pairs])),
+           "status_retrieval_k4": r(mean([c["dense_k4"]["mean_logprob"] for c, _ in pairs])),
+           "entity_retrieval_k4": r(mean([e["dense_k4"]["mean_logprob"] for _, e in pairs])),
+           "status_gap": r(mean([gof(c) for c, _ in pairs])),
+           "entity_gap": r(mean([gof(e) for _, e in pairs]))}
+matched["gap_difference_entity_minus_status"] = r(matched["entity_gap"] - matched["status_gap"])
+diffs = [gof(e) - gof(c) for c, e in pairs]
+if len(diffs) >= 2:
+    dm, dlo, dhi = t_interval(diffs)
+    matched["difference_ci"] = {"mean": r(dm), "lo": r(dlo), "hi": r(dhi), "n": len(diffs),
+                                "excludes_zero": bool(dlo > 0 or dhi < 0)}
+print("  pairs %d of %d control cells | status gap %+.3f  entity gap %+.3f  difference %+.3f" % (
+    matched["n_pairs"], matched["n_cells_examined"], matched["status_gap"], matched["entity_gap"],
+    matched["gap_difference_entity_minus_status"]))
+if "difference_ci" in matched:
+    c = matched["difference_ci"]
+    print("  paired 95%% CI on the difference [%+.3f, %+.3f] (n=%d) %s" % (
+        c["lo"], c["hi"], c["n"], "excludes 0" if c["excludes_zero"] else "INCLUDES 0"))
+
 out = {"main_grid": grid, "sign_test_negative": neg, "sign_test_n": ncell, "retrieval_ahead_no_distractor": pos_zero, "n_no_distractor": len(zero_i), "retrieval_ahead_with_distractor": pos_gt, "n_with_distractor": len(gt_i),
        "length_only": {str(L): r(mean([c["full"]["mean_logprob"] for c in by[(L, 0.0)]])) for L in [64, 128, 256]},
        "filler_control": {"neutral": r(mean([c["full"]["mean_logprob"] for c in fl])),
@@ -174,6 +295,13 @@ out = {"main_grid": grid, "sign_test_negative": neg, "sign_test_n": ncell, "retr
        "type_contrast_dense4": {"same_entity_status": r(mean([c["dense_k4"]["mean_logprob"] for c in st])),
                                 "different_entity": r(mean([c["dense_k4"]["mean_logprob"] for c in en]))},
        "position": {str(gf): r(mean([c["full"]["mean_logprob"] for c in pos[gf]])) for gf in sorted(pos)},
-       "sampled_wilson": wil, "n_cells": len(cells), "gap_by_interference": {str(k): v for k, v in gap_by_I.items()}, "pooled_recall_distractor_cells": pool, "pooled_recall_bm25_k4": "%d/%d" % (bh, len(gt_i))}
+       "sampled_wilson": wil, "n_cells": len(cells),
+       "gap_by_interference": {str(k): v for k, v in gap_by_I.items()},
+       "gap_ci_by_interference": {str(k): v for k, v in gap_ci.items()},
+       "budget_ladder": ladder,
+       "worst_main_cell": {"gap": worst_gap, "L": worst_main["n_chunks"], "I": worst_main["interference"]},
+       "type_contrast_recall_matched": typerm,
+       "type_contrast_matched_subset": matched,
+       "pooled_recall_distractor_cells": pool, "pooled_recall_bm25_k4": "%d/%d" % (bh, len(gt_i))}
 open(os.path.join(HERE, "grid6_analysis.json"), "w").write(json.dumps(out, indent=1, sort_keys=True))
 print("\nANALYSIS DONE | cells %d" % len(cells))

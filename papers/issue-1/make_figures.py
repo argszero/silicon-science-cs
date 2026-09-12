@@ -90,28 +90,40 @@ def fig1_crossover(art, plt):
 
 
 def fig2_type(art, plt):
-    """The sign of the comparison is set by distractor type, not by density."""
+    """Distractor type at matched density, WITH the recall-matched control that qualifies it."""
     d = art["derived"]
-    read = [d["type_contrast"]["same_entity_status"], d["type_contrast"]["different_entity"]]
-    retr = [d["type_contrast_dense4"]["same_entity_status"], d["type_contrast_dense4"]["different_entity"]]
+    unmatched = [(d["type_contrast_dense4"]["same_entity_status"] - d["type_contrast"]["same_entity_status"],
+                  d["type_contrast_dense4"]["different_entity"] - d["type_contrast"]["different_entity"])]
+    ms = d["type_contrast_matched_subset"]
+    matched = [(ms["status_retrieval_k4"] - ms["status_reading"],
+                ms["entity_retrieval_k4"] - ms["entity_reading"])]
     x = [0, 1]
     w = 0.36
-    fig, ax = plt.subplots(figsize=(5.4, 3.8))
-    ax.bar([i - w / 2 for i in x], read, w, color=C_READ, label="full-context reading")
-    ax.bar([i + w / 2 for i in x], retr, w, color=C_RETR, label="dense retrieval (k=4)")
-    for i, (r, q) in enumerate(zip(read, retr)):
-        ax.text(i - w / 2, r - 0.10, "%.2f" % r, ha="center", va="top", fontsize=8.5, color=C_READ)
-        ax.text(i + w / 2, q - 0.10, "%.2f" % q, ha="center", va="top", fontsize=8.5, color=C_RETR)
+    fig, ax = plt.subplots(figsize=(5.6, 3.9))
+    ax.bar([i - w / 2 for i in x], unmatched[0], w, color=C_RETR,
+           label="unmatched (gold outside k=4 for status)")
+    ax.bar([i + w / 2 for i in x], matched[0], w, color=C_READ,
+           label="recall-matched (%d pairs, gold in k=4 both)" % ms["n_pairs"])
+    for i, (u, m) in enumerate(zip(unmatched[0], matched[0])):
+        ax.text(i - w / 2, u + (0.06 if u >= 0 else -0.06), "%.2f" % u, ha="center",
+                va="bottom" if u >= 0 else "top", fontsize=8.5, color=C_RETR)
+        ax.text(i + w / 2, m + (0.06 if m >= 0 else -0.06), "%.2f" % m, ha="center",
+                va="bottom" if m >= 0 else "top", fontsize=8.5, color=C_READ)
+    ax.axhline(0, color="k", lw=0.8)
     ax.set_xticks(x)
     ax.set_xticklabels(["same entity,\ndiffering status\n(confusable)", "different entity\n(separable)"])
-    ax.set_ylabel("gold-answer log-probability (nats)")
-    ax.set_title("Matched length, matched density (0.60):\nthe distractor type flips the verdict", fontsize=10)
+    ax.set_ylabel("retrieval minus reading (nats)")
+    ax.set_title("Matched length and density: the two-nat type contrast\nis a rank contrast, not a discrimination margin",
+                 fontsize=10)
     ax.grid(alpha=0.25, axis="y")
-    ax.legend(fontsize=8.5, frameon=False, loc="lower left")
-    return save(fig, plt, "fig2_distractor_type.png"), {"same_entity_reading": read[0],
-                                                        "same_entity_retrieval": retr[0],
-                                                        "different_entity_reading": read[1],
-                                                        "different_entity_retrieval": retr[1]}
+    ax.legend(fontsize=8, frameon=False, loc="lower center")
+    return save(fig, plt, "fig2_distractor_type.png"), {
+        "unmatched_same_entity_gap": unmatched[0][0], "unmatched_different_entity_gap": unmatched[0][1],
+        "matched_same_entity_gap": matched[0][0], "matched_different_entity_gap": matched[0][1],
+        "matched_n_pairs": ms["n_pairs"],
+        "matched_difference": ms["gap_difference_entity_minus_status"],
+        "matched_difference_lo": ms["difference_ci"]["lo"],
+        "matched_difference_hi": ms["difference_ci"]["hi"]}
 
 
 def fig3_position(art, plt):

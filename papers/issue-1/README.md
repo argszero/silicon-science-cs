@@ -5,7 +5,7 @@ Evidence Access under Semantic Interference**
 
 This directory is the committed artefact set for issue #1: the sweep runner, the
 derivation and analysis scripts, the figures, the result table, a frozen snapshot of the
-reader-fidelity corpus, a 37-check validation suite, and a 21-check manuscript-consistency
+reader-fidelity corpus, a 38-check validation suite, and a 29-check manuscript-consistency
 gate. Every number that appears in
 `manuscript.md` is read out of `canonical_results.json`, which this package
 regenerates from scratch and validates. Seven independent full runs of this pipeline produced a byte-identical artefact, the four most
@@ -20,18 +20,18 @@ recent through the entry point documented below after a metadata correction (see
 Expected output (light tier, default environment):
 
     canonical payload sha256: 8dc43a9cc1d0a981
-    VALIDATE 37/37
-    CONSISTENCY 21/21
+    VALIDATE 38/38
+    CONSISTENCY 29/29
     RESULT: PASS
 
 Full artefact payload sha256:
 
     8dc43a9cc1d0a981a74de025e88046a3c31348928c4e7b83383ebf34582e71d7
 
-**Tolerance: exact, not statistical.** `validate.py` must print `VALIDATE 37/37`;
+**Tolerance: exact, not statistical.** `validate.py` must print `VALIDATE 38/38`;
 it asserts 37 individual conditions (14 structural, 23 mechanism), each attached to a
 specific headline claim in the manuscript. `consistency_check.py` must print
-`CONSISTENCY 21/21`, which it does by re-deriving from the artefact every number the
+`CONSISTENCY 29/29`, which it does by re-deriving from the artefact every number the
 manuscript quotes (see *Traceability* below). The three figures and the result table must
 match the sha256 values recorded in `figures/manifest.json` byte for byte. A single
 mismatched byte, or a single failed assertion, fails the run.
@@ -40,7 +40,7 @@ mismatched byte, or a single failed assertion, fails the run.
 
 | tier | total | breakdown |
 |---|---|---|
-| **heavy** (recomputes the experiment) | **605 s** | fidelity gate 15 s, 48-cell sweep and derivation 590 s, figures 0 s, validation 0 s |
+| **heavy** (recomputes the experiment) | **830 s** | fidelity gate 15 s, 84-cell sweep and derivation 814 s, figures 1 s, validation 0 s |
 | **light** (validates the committed artefact) | **0.8 s** | figures 0 s, validation 0 s |
 
 The script prints its own wall-clock and writes `run.log` next to itself, naming the tier,
@@ -109,11 +109,11 @@ above describe the verified environment rather than gating a run.
 | tier | runs in a plain environment? | what it **recomputes** | what it only **validates** |
 |---|---|---|---|
 | **heavy** | no - needs PyTorch + numpy and the two model snapshots | everything: the reader-fidelity gate, all 48 sweep cells from the corpus definitions, the whole derivation, then rewrites `canonical_results.json` | nothing |
-| **light** | yes - needs only Python 3 + matplotlib | the three figures and the result table, from the committed artefact | everything else: checksums, structural consistency, all 37 mechanism assertions, and the 21-check manuscript-to-artefact consistency gate |
+| **light** | yes - needs only Python 3 + matplotlib | the three figures and the result table, from the committed artefact | everything else: checksums, structural consistency, all 38 mechanism assertions, and the 29-check manuscript-to-artefact consistency gate |
 
 **The light tier is a package-integrity check, not a reproduction.** It confirms that the
 committed artefact is internally consistent, that its embedded payload hash recomputes, and
-that every headline number the manuscript quotes traces back to that artefact (`CONSISTENCY 21/21`) - but the
+that every headline number the manuscript quotes traces back to that artefact (`CONSISTENCY 29/29`) - but the
 sweep cells it checks were produced by the heavy tier, so it cannot stand as the reproduction
 by itself. The heavy tier is the reproduction. **Run the heavy tier to reproduce this work**;
 run the light tier to check that the package you have is intact.
@@ -134,15 +134,46 @@ three times more; all three runs are byte-identical to each other and to the com
 refer to the same code with only that constant differing.
 
 **Reproduction status.** The heavy tier **has** been run end to end through this exact entry
-point: 605 s wall-clock, `VALIDATE 37/37`, and the rewritten `canonical_results.json`
+point: 830 s wall-clock, `VALIDATE 38/38`, `CONSISTENCY 29/29`, and the rewritten `canonical_results.json`
 byte-identical to the committed file (`cmp` reports no difference; file sha256
 `de241d916e5885a82a6ecea8f258a2b47705b546f89c427e49dec9cc0d303a6e`, payload sha256
-`8dc43a9cc1d0a981a74de025e88046a3...`). That makes seven independent full runs in total (three before a metadata correction, four after),
-all producing a byte-identical artefact - the four post-correction runs are the committed artefact's.
+`e801274596d9b6621ccfd074ddd768ea...`). **This artefact has been produced twice - once by
+`canonical_runner.py` and once through `reproduce.sh` - and the two are byte-identical**; the run in
+`run.log` is the second. The earlier 48-cell artefact that the first submission carried went through
+seven full runs, likewise byte-identical, before the revision replaced it.
 The most recent one was run after the consistency gate was added, so it is also the run that
-exercised `consistency_check.py` on the recompute path (`CONSISTENCY 21/21`, in `run.log`).
+exercised `consistency_check.py` on the recompute path (`CONSISTENCY 29/29`, in `run.log`).
  `run.log` is the record of the most recent one - currently a
 heavy-tier run, with its per-step timings.
+
+## Revision round 1: what changed in the package
+
+This package was revised in response to the first review round (issue #1, `major-revision`). Four
+changes, all of which moved the *evidence*, not just the prose:
+
+1. **Per-rung 95% intervals** (`gap_ci_by_interference`): the interference ladder now carries an
+   interval for every rung, computed over that rung's six cells. The zero-interference rung's interval
+   contains zero, and the manuscript now states the two arms are indistinguishable there rather than
+   that retrieval leads.
+2. **The full budget ladder** (`budget_ladder`): k = 1, 2, 4 and 8 are all reported over the 30
+   distractor cells. This corrected a claim - the deficit is *not* budget-invariant; it roughly halves
+   from k = 1 to k = 8, and the manuscript now says so.
+3. **A recall-matched control for the distractor-type contrast** (arms `TYPERM_status` / `TYPERM_entity`,
+   derived as `type_contrast_recall_matched` and `type_contrast_matched_subset`): the original contrast
+   compared a cell where the retriever returned the gold record against one where it did not. The
+   control holds density, interference, instance and length fixed and changes only the distractor
+   family, and the reported comparison is restricted to pairs where **both** families keep the gold
+   record inside the k = 4 set (12 of 36 control cells). At that match the contrast collapses from
+   about +2 nats to **-0.155 nats** (paired 95% interval [-0.217, -0.092]), and the manuscript
+   withdraws the discrimination-margin reading in favour of a rank/recall statement. Figure 2 now shows
+   both the unmatched and the matched contrast side by side.
+4. **Two numeric corrections**: the worst single cell is -1.926, not -1.226 (which is the I = 0.30
+   rung mean), and the one 0.003-nat inversion of the oracle >= reading bracket is stated as rounding
+   tolerance.
+
+The sweep therefore grew from 48 to **84 cells**, which is why the cell-count assertions in `validate.py`
+and the corresponding checks in `consistency_check.py` were updated, and why the gate now reports 29
+checks where it reported 21: eight new checks cover the four claims above.
 
 ## Traceability: every manuscript number back to the artefact
 
@@ -152,9 +183,9 @@ The chain a number travels from the experiment to the manuscript is
 
 and it is checked rather than asserted. `consistency_check.py` walks that chain in both
 directions - it reads the committed artefact, the generated table, the figure manifest, the
-bibliography record store and the manuscript - and prints `CONSISTENCY 21/21`. It uses only
+bibliography record store and the manuscript - and prints `CONSISTENCY 29/29`. It uses only
 the standard library, so it runs in either tier; `reproduce.sh` runs it as its last step in
-both. What the 21 checks cover:
+both. What the 29 checks cover:
 
 - the manuscript's header carries the artefact's payload sha256, and that hash recomputes from the artefact body (C01-C02);
 - the 18 data rows of the manuscript's main table equal `results_table.md` byte for byte, and that file matches `figures/manifest.json` (C03-C04);
@@ -167,7 +198,7 @@ outruns the artefact fails the same one-command reproduction that produces the a
 
 ### Does every check earn its place? (`check_audit.py`)
 
-A suite that reports `21/21` is evidence about the suite only if each check can be shown to
+A suite that reports `29/29` is evidence about the suite only if each check can be shown to
 reject something; a check that never fires inflates the denominator without constraining the
 artefact. `check_audit.py` tests that directly. For each check it applies one targeted
 corruption to a throwaway copy of the package, runs the gate there, and records which checks
@@ -176,10 +207,10 @@ silently ineffective corruption cannot be mistaken for a check that failed to fi
 
 ```
 python3 check_audit.py
-AUDIT CLEAN - every one of the 21 checks rejects something
+AUDIT CLEAN - every one of the 29 checks rejects something
 ```
 
-Current result: **21/21 checks load-bearing, 22/22 corruptions caught, no decoration, and 17
+Current result: **29/29 checks load-bearing, 30/30 corruptions caught, no decoration, and 25
 checks have a corruption that only they catch.** Four corruptions trip two checks each, and
 that overlap is expected rather than hidden: C02 recomputes the artefact's embedded payload
 hash, so any edit to the artefact body necessarily trips it beside whichever check reads the
@@ -189,7 +220,7 @@ The audit is not decoration itself - it changed the gate. Its first run found th
 per-rung recall tests (k=1,2,4,8) could not be made to fire independently: the exact
 pooled-recall ladder phrase already pins all four values in one rendering, so the per-rung
 tests were redundant. Three of them were removed and the stricter phrase test kept, which is
-why this gate has 21 checks rather than 24. The same run showed that a value-presence test can
+why this gate had 21 checks rather than 24 at the first submission. The same run showed that a value-presence test can
 be satisfied by a colliding number elsewhere in the file, which is what motivated the anchored
 form above. This is the standard the fidelity gate already met for the model port (three
 corruptions that must degrade the metric, one that must improve it); `check_audit.py` applies
@@ -216,22 +247,22 @@ it to the manuscript-to-artefact chain.
 | file | sha256 (16 hex) | role |
 |---|---|---|
 | `reproduce.sh` | `fc29253a003fef7d` | one-command entry point; picks interpreters, runs the tiers, writes `run.log` |
-| `canonical_runner.py` | `6ae0667d242879ad` | single entry: fidelity gate, 48-cell sweep, derivation, artefact write |
+| `canonical_runner.py` | `6ae0667d242879ad` | single entry: fidelity gate, 84-cell sweep, derivation, artefact write |
 | `eval_fidelity.py` | `8766fac036626e1e` | reader-fidelity gate over the frozen corpus; 12/12 checks plus a power check |
-| `grid6.py` | `e2c5390959ce3f06` | the 48-cell grid definition and sweep driver |
-| `analyze6.py` | `10a160fe8e27a565` | derivation: gaps, recall, Wilson intervals, position and type contrasts |
+| `grid6.py` | `8e9106d588da2bc5` | the 84-cell grid definition and sweep driver, including the recall-matched control |
+| `analyze6.py` | `970b7fb404e58698` | derivation: gaps, recall, Wilson intervals, position and type contrasts |
 | `corpus5.py` | `bb6b3ec05fc59306` | builds the 12-document fidelity corpus and its train/eval split |
 | `mini_port.py` | `1d8eee73ba250b60` | dependency-free transformer port (SmolLM2-135M) |
 | `smollm_port.py` | `7309967e201e8acc` | reader wrapper: KV cache, greedy and sampled decoding |
-| `validate.py` | `c9246f133fb0369f` | 37 assertions over the artefact; prints `VALIDATE 37/37` |
-| `consistency_check.py` | `b6fd5605c27b4bfe` | 21 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 21/21` |
-| `check_audit.py` | `20f2b0a1c9e9b54d` | reversion audit of the gate: one targeted corruption per check, reporting which checks are load-bearing |
-| `make_figures.py` | `cad4ec44b524f327` | regenerates the three figures and the result table from the artefact |
-| `canonical_results.json` | `de241d916e5885a8` | the artefact: sweep, derivations, fidelity block, embedded payload sha256 |
+| `validate.py` | `e0796a29163cba72` | 38 assertions over the artefact; prints `VALIDATE 38/38` |
+| `consistency_check.py` | `17ab7002158936f7` | 29 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 29/29` |
+| `check_audit.py` | `1471ec9a9a9d1002` | reversion audit of the gate: one targeted corruption per check, reporting which checks are load-bearing |
+| `make_figures.py` | `13c069d40b62c8f6` | regenerates the three figures and the result table from the artefact |
+| `canonical_results.json` | `69960d951cfaa223` | the artefact: sweep, derivations, fidelity block, embedded payload sha256 |
 | `fidelity_corpus.json` | `01e1d83b232acc68` | frozen text snapshot the fidelity gate reads (see below) |
 | `results_table.md` | `cdf83e5e7730c522` | the result table embedded in the manuscript |
-| `figures/manifest.json` | `2760403cfe629432` | figure/table sha256 values and every number plotted in them |
-| `run.log` | `3e600142fe1713fd` | the log of the most recent run of this script (a heavy-tier run) |
+| `figures/manifest.json` | `3dd284133ce36004` | figure/table sha256 values and every number plotted in them |
+| `run.log` | `88b148493b417e3f` | the log of the most recent run of this script (a heavy-tier run) |
 | `manuscript.md` | - | the manuscript; every number in it is read from `canonical_results.json` |
 | `reference-check.md` | - | citation authenticity and coverage report (115 entries) |
 | `refs_tool.py` | `bd4eadc8ab5af4d0` | bibliography builder: `harvest` (arXiv + Crossref search) and `verify` (re-fetch by identifier) |
@@ -240,7 +271,7 @@ it to the manuscript-to-artefact chain.
 
 **Files the heavy tier writes but this package does not commit.** Running the heavy tier
 leaves three further JSON files in this directory - `fidelity_results.json` (the gate's
-output), `grid6_results.json` (the raw 48-cell sweep) and `grid6_analysis.json` (the
+output), `grid6_results.json` (the raw 84-cell sweep) and `grid6_analysis.json` (the
 derivation's input); `canonical_runner.py` names them in that order. They are the pipeline's
 intermediates, not part of the committed set: every number they carry is embedded in
 `canonical_results.json`, which is what the manuscript, `validate.py` and `make_figures.py`
@@ -254,7 +285,7 @@ they cannot drift from the numbers the validator checks.
 | artifact | sha256 (16 hex) | what it shows |
 |---|---|---|
 | `figures/fig1_crossover.png` | `ca55c1097815ebbc` | the core outcome: dense-retrieval-minus-reader gap against interference, with the one point where retrieval leads (+0.062 at I=0.00) and the saturating deficit that follows |
-| `figures/fig2_distractor_type.png` | `b03d53ccce7181f5` | the sign flip: same-entity confusables keep reading ahead, different-entity distractors reverse it at matched density |
+| `figures/fig2_distractor_type.png` | `ba31bee57e483c81` | the distractor-type contrast before and after matching retrieval success: a two-nat apparent effect at fixed density, and a -0.155-nat residual once the gold record is inside the k=4 set for both families |
 | `figures/fig3_position.png` | `274cc7deb93251fd` | the U-shape of evidence position, with the middle of the context the worst point and the sampled exact-match rate beside it |
 | `results_table.md` | `cdf83e5e7730c522` | the 18-row main grid: length x interference, both arms, gap, and the recall of both retrievers |
 

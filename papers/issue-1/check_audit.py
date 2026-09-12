@@ -34,6 +34,9 @@ import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHECKER = "consistency_check.py"
+# read the artefact hash rather than hard-coding it, so a rebuild cannot silently make the
+# C01 corruption a no-op (which would then look like a check that failed to fire).
+PAYLOAD16 = json.load(open(os.path.join(HERE, "canonical_results.json")))["sha256"][:16]
 BASE = ["canonical_results.json", "manuscript.md", "results_table.md", "references.json",
         "figures/manifest.json"]
 FIGURES = ["figures/fig1_crossover.png", "figures/fig2_distractor_type.png",
@@ -108,7 +111,7 @@ def set_wilson(delta=0.5):
 CORRUPTIONS = [
     # --- artefact-integrity checks
     ("C01", "manuscript no longer carries the artefact payload sha256", "manuscript.md",
-     repall("8dc43a9cc1d0a981", "0dc43a9cc1d0a981"), False),
+     lambda t: t.replace(PAYLOAD16, "0" + PAYLOAD16[1:]), False),
     ("C02", "artefact body edited without refreshing its embedded sha256",
      "canonical_results.json",
      lambda t: json.dumps(dict(json.loads(t), audit_probe=1), indent=1, sort_keys=True), False),
@@ -124,6 +127,22 @@ CORRUPTIONS = [
     # --- headline numbers, each anchored to its claim
     ("C05", "the zero-interference gap changed away from its artefact value", "manuscript.md",
      repall("+0.062", "+0.063"), False),
+    ("C19", "one rung interval in the manuscript row changed", "manuscript.md",
+     rep1("[-1.683, -0.454] |", "[-1.684, -0.454] |"), False),
+    ("C20", "the zero-interference rung is no longer called indistinguishable", "manuscript.md",
+     repall("indistinguishable", "comparable"), False),
+    ("C21", "the separation threshold claim is reworded", "manuscript.md",
+     rep1("onward", "forward"), False),
+    ("C22", "the k = 8 ladder mean in the manuscript changed", "manuscript.md",
+     rep1("| k = 8 | **-0.554** |", "| k = 8 | **-0.555** |"), False),
+    ("C23", "the matched-control difference changed everywhere it is quoted", "manuscript.md",
+     repall("-0.155", "-0.156"), False),
+    ("C24", "the matched pair count changed everywhere it is quoted", "manuscript.md",
+     repall("12 matched pairs", "11 matched pairs"), False),
+    ("C25", "the worst single cell is misquoted", "manuscript.md",
+     repall("-1.926", "-1.927"), False),
+    ("C26", "the bracket tolerance claim is changed", "manuscript.md",
+     rep1("0.003-nat inversion", "0.004-nat inversion"), False),
     ("C06.length", "one value in the context-length table row changed", "manuscript.md",
      rep1("| -0.180 | -0.228 | -0.206 |", "| -0.180 | -0.229 | -0.206 |"), False),
     ("C06.fill", "the neutral-filler control value changed", "manuscript.md",
@@ -139,7 +158,7 @@ CORRUPTIONS = [
     ("C08.bm25", "the BM25 pooled recall changed", "manuscript.md",
      rep1("BM25 recovers **0/30**", "BM25 recovers **1/30**"), False),
     ("C09", "the cell count changed everywhere it is claimed", "manuscript.md",
-     repall("48 cells", "47 cells"), False),
+     repall("84 cells", "83 cells"), False),
     ("C10", "the no-distractor denominator moves in the artefact", "canonical_results.json",
      set_derived("n_no_distractor", 7), False),
     ("C11", "the sign-test ratio changed", "manuscript.md",
@@ -148,7 +167,6 @@ CORRUPTIONS = [
      rep1("5.242516", "5.242517"), False),
     ("C14", "the KV-cache exactness claim is no longer exact", "manuscript.md",
      rep1("logit difference 0.0", "logit difference 0.1"), False),
-    # --- bibliography structure
     ("C15", "a second References heading is added", "manuscript.md",
      rep1("\n## References\n", "\n## References\n\n## References\n"), False),
     ("C16", "one bibliography entry is deleted", "manuscript.md", lambda t: re.sub(

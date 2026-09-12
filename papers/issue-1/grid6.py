@@ -133,6 +133,13 @@ def build_plan():
     # separator control: different-entity distractors at matched density and length
     for inst in [0, 1]:
         plan.append(("TYPE_entity", inst, 256, 0.6, "entity", "related", 0.5))
+    # recall-matched type control: both distractor families at densities where the dense
+    # retriever still returns the gold record, so the type contrast is measured at fixed
+    # retrieval success rather than at "retrieved" versus "missed" (revision round 1, RC3).
+    for (nc, it) in [(64, 0.15), (64, 0.30), (128, 0.15)]:
+        for kind in ("status", "entity"):
+            for inst in [0, 1, 2, 3, 4, 5]:
+                plan.append(("TYPERM_" + kind, inst, nc, it, kind, "related", 0.5))
     # pure-length control: same length, no competition for the answer
     for inst in [0, 1]:
         plan.append(("FILLER_neutral", inst, 256, 0.0, "status", "neutral", 0.5))

@@ -99,11 +99,54 @@ def main():
     # arXiv identifiers), so every check below anchors its value to a phrase from the claim itself.
     gaps = d["gap_by_interference"]
     check("C05",
-          near(flat, "zero-interference limit", "%+.3f" % gaps["0.0"]) and
-          near(flat, "by up to", "%+.3f" % max(gaps.values(), key=abs)) and
+          near(flat, "no rung at which retrieval leads", "%+.3f" % gaps["0.0"]) and
           all("%.3f" % abs(gaps[k]) in body for k in gaps),
           "every interference-level gap appears, anchored to its claim",
-          "lead %+.3f, worst %+.3f" % (gaps["0.0"], max(gaps.values(), key=abs)))
+          "I=0.00 %+.3f, I=0.30 %+.3f" % (gaps["0.0"], gaps["0.3"]))
+
+    # ---- RC1: the per-rung intervals are reported, and the zero-interference rung is a null
+    ci = d["gap_ci_by_interference"]
+    row = "| 95% interval over the 6 cells | " + " | ".join(
+        "[%+.3f, %+.3f]" % (ci[k]["lo"], ci[k]["hi"]) for k in ("0.0", "0.15", "0.3", "0.45", "0.6", "0.8")) + " |"
+    check("C19", row in flat, "the per-rung 95% interval row is the artefact's", row)
+    zero_is_null = not ci["0.0"]["excludes_zero"] and ci["0.0"]["n_positive"] == 3
+    check("C20", zero_is_null and near(flat, "indistinguishable", "[%+.3f, %+.3f]" % (ci["0.0"]["lo"], ci["0.0"]["hi"])),
+          "the zero-interference rung is stated as a null with its interval",
+          "I=0.00 [%+.3f, %+.3f] contains zero" % (ci["0.0"]["lo"], ci["0.0"]["hi"]) if zero_is_null else "not a null")
+    sep = [k for k in ci if ci[k]["excludes_zero"] and ci[k]["hi"] < 0]
+    check("C21", len(sep) == 4 and near(flat, "onward", "I = 0.30"),
+          "the deficit is stated as separated from zero only from I = 0.30 onward",
+          "rungs entirely below zero: %s" % sorted(sep, key=float))
+
+    # ---- RC2: the budget ladder is reported
+    lad = d["budget_ladder"]
+    lrow = "| k = 8 | %+.3f | [%+.3f, %+.3f] | %s |" % (
+        lad["k8"]["mean"], lad["k8"]["lo"], lad["k8"]["hi"], lad["k8"]["pooled_recall"])
+    lrow1 = "| k = 1 | %+.3f | [%+.3f, %+.3f] | %s |" % (
+        lad["k1"]["mean"], lad["k1"]["lo"], lad["k1"]["hi"], lad["k1"]["pooled_recall"])
+    halves = abs(lad["k8"]["mean"]) < 0.6 * abs(lad["k1"]["mean"])
+    check("C22", lrow in flat and lrow1 in flat and halves,
+          "the k = 1 and k = 8 ladder rows are the artefact's and the deficit halves",
+          "%+.3f vs %+.3f" % (lad["k1"]["mean"], lad["k8"]["mean"]))
+
+    # ---- RC3: the recall-matched control is reported with its paired interval
+    ms = d["type_contrast_matched_subset"]
+    dci = ms["difference_ci"]
+    check("C23", near(flat, "collapses and reverses", "%+.3f" % ms["gap_difference_entity_minus_status"]) and
+                 near(flat, "matched retrieval success", "[%+.3f, %+.3f]" % (dci["lo"], dci["hi"])) and
+                 dci["excludes_zero"],
+          "the matched type control and its paired interval are reported",
+          "%+.3f [%+.3f, %+.3f] over %d pairs" % (ms["gap_difference_entity_minus_status"], dci["lo"], dci["hi"], dci["n"]))
+    check("C24", near(flat, "matched pairs", "%d matched pairs" % dci["n"]),
+          "the matched pair count is reported beside the words it belongs to",
+          "%d matched pairs" % dci["n"])
+
+    # ---- RC4: the worst cell and the bracket tolerance are stated
+    wm = d["worst_main_cell"]
+    check("C25", near(flat, "worst single cell", "%+.3f" % wm["gap"]) and near(flat, "more conservative", "%+.3f" % wm["gap"]),
+          "the worst single cell is stated where the deficit depth is quoted", wm["gap"])
+    check("C26", near(flat, "rounding", "0.003"),
+          "the instrument bracket is stated as holding to rounding tolerance", "0.003 nats")
 
     lo = d["length_only"]
     row = "| reading (nats) | " + " | ".join("%+.3f" % lo[k] for k in ("64", "128", "256")) + " |"
@@ -139,9 +182,9 @@ def main():
     check("C08.bm25", near(flat, "BM25 recovers", d["pooled_recall_bm25_k4"]),
           "BM25 pooled recall is anchored to its claim", d["pooled_recall_bm25_k4"])
 
-    check("C09", str(d["n_cells"]) in body and d["n_cells"] == 48 and
+    check("C09", str(d["n_cells"]) in body and d["n_cells"] == 84 and
                  near(flat, "over", "%d cells" % d["n_cells"]),
-          "cell count appears in the body and is 48", d["n_cells"])
+          "cell count appears in the body and is 84", d["n_cells"])
     check("C10", ("%d of the %d" % (d["retrieval_ahead_no_distractor"], d["n_no_distractor"])) in body and
                  ("%d of the %d" % (d["retrieval_ahead_with_distractor"], d["n_with_distractor"])) in body,
           "retrieval-ahead counts appear as phrases", "%d/%d and %d/%d" % (
