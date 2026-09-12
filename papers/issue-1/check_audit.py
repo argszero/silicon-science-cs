@@ -44,10 +44,21 @@ FIGURES = ["figures/fig1_crossover.png", "figures/fig2_distractor_type.png",
 
 
 def snapshot(dst):
-    for f in BASE + FIGURES + [CHECKER]:
-        d = os.path.join(dst, f)
-        os.makedirs(os.path.dirname(d), exist_ok=True)
-        shutil.copy2(os.path.join(HERE, f), d)
+    """Copy the whole package except the git-ignored research workspace.
+
+    The gate now reads the package's own documentation (C27 hashes every file the README's
+    table names; C28 walks the tree), so a partial copy would make those checks fail for
+    missing files rather than for the corruption under test.
+    """
+    for root, dirs, files in os.walk(HERE):
+        dirs[:] = [d for d in dirs if d not in ("research", "__pycache__", ".git")]
+        for f in files:
+            if f.startswith("."):
+                continue
+            src = os.path.join(root, f)
+            d = os.path.join(dst, os.path.relpath(src, HERE))
+            os.makedirs(os.path.dirname(d), exist_ok=True)
+            shutil.copy2(src, d)
 
 
 def edit(path, fn, binary=False):
@@ -72,6 +83,16 @@ def repall(old, new):
     def f(t):
         assert t.count(old) >= 1, "pattern absent: %r" % old[:60]
         return t.replace(old, new)
+    return f
+
+
+def flip_row(rel):
+    """Flip the first hex digit of one README file-hash row, without hard-coding its value."""
+    def f(t):
+        m = re.search(r"^\| `%s` \| `([0-9a-f]{16})` \|" % re.escape(rel), t, re.M)
+        assert m, "README hash row for %s not found" % rel
+        h = m.group(1)
+        return t[:m.start(1)] + ("0" if h[0] != "0" else "1") + h[1:] + t[m.end(1):]
     return f
 
 
@@ -173,6 +194,28 @@ CORRUPTIONS = [
         r"\n\[[0-9]+\][^\n]*", "", t, count=1), False),
     ("C17", "every in-text citation of one entry is removed", "manuscript.md",
      repall("[105]", ""), False),
+    # --- the package's specification vs the package (C27-C33)
+    ("C27", "one row of the README file-hash table no longer matches its file", "README.md",
+     flip_row("run.log"), False),
+    ("C28", "a stale hash appears in README prose (not in the hash table)", "README.md",
+     rep1("**Tolerance: exact, not statistical.**",
+          "**Tolerance: exact, not statistical.** (superseded run 8dc43a9cc1d0a982)"), False),
+    ("C29", "the expected-output payload is not a 16-digit prefix of the artefact", "README.md",
+     rep1("canonical payload sha256: e801274596d9b662\n",
+          "canonical payload sha256: e801274596d9b6621ccf\n"), False),
+    ("C30", "the status paragraph quotes a superseded artefact file hash", "README.md",
+     rep1("byte-identical to the committed file (`cmp` reports no difference; file sha256\n"
+          "`69960d951cfaa2231152932515feadbc984f0a9f3acf596d5387ddf305df712c`",
+          "byte-identical to the committed file (`cmp` reports no difference; file sha256\n"
+          "`de241d916e5885a82a6ecea8f258a2b47705b546f89c427e49dec9cc0d303a6e`"), False),
+    ("C31", "the tier table reverts to the pre-revision sweep-cell count", "README.md",
+     rep1("all 84 sweep cells from the corpus definitions",
+          "all 48 sweep cells from the corpus definitions"), False),
+    ("C32", "the stated validation tally reverts to the pre-revision split", "README.md",
+     rep1("it asserts 38 individual conditions (16 structural, 22 mechanism)",
+          "it asserts 37 individual conditions (14 structural, 23 mechanism)"), False),
+    ("C33", "one stated consistency count is stale", "README.md",
+     rep1("    CONSISTENCY 36/36\n", "    CONSISTENCY 35/35\n"), False),
 ]
 
 

@@ -6,7 +6,9 @@ claim. The chain this verifies is
 
     canonical_results.json  ->  make_figures.py  ->  results_table.md  ->  manuscript.md
 
-so a number in the manuscript that does not come from the committed artefact fails here.
+so a number in the manuscript that does not come from the committed artefact fails here,
+and so does a value in the package's own specification that has drifted from the artefact,
+the scripts, or the gate it describes (C27-C33).
 
 Usage (from papers/issue-1/, or anywhere - it resolves its own directory):
 
@@ -19,6 +21,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -250,6 +253,101 @@ def main():
         if not os.path.exists(p) or hashlib.sha256(open(p, "rb").read()).hexdigest() != f["sha256"]:
             badf.append(f["file"])
     check("C18", not badf, "committed figures match their manifest hashes", badf or "")
+
+    # ---- C27-C33 the package's specification must describe the package it ships.
+    # Raised by the editor after revision round 1: the stale sites were all in documentation a
+    # reader EXECUTES (the expected-output block, the tier table, the status paragraph) and none
+    # of them was a file-hash table row, so the table check could not see any of them. Every
+    # value below is re-derived from the artefact or from the script it describes, never from
+    # another document.
+    readme = load(os.path.join(HERE, "README.md"))
+    repro_sh = load(os.path.join(HERE, "reproduce.sh"))
+    spec_docs = readme + "\n" + repro_sh
+    art_file_sha = hashlib.sha256(open(ART, "rb").read()).hexdigest()
+
+    # C27 every hash row in the README's file table matches the committed file on disk
+    rows_spec = re.findall(r"^\| `([A-Za-z0-9_./-]+)` \| `([0-9a-f]{16})` \|", readme, re.M)
+    stale_rows = []
+    for rel, val in rows_spec:
+        p = os.path.join(HERE, rel)
+        if not os.path.exists(p):
+            stale_rows.append(rel + ":missing")
+        elif hashlib.sha256(open(p, "rb").read()).hexdigest()[:16] != val:
+            stale_rows.append(rel)
+    check("C27", len(rows_spec) >= 20 and not stale_rows,
+          "every README file-hash row matches its committed file",
+          "%d rows" % len(rows_spec) + (", stale: %s" % stale_rows if stale_rows else ""))
+
+    # C28 no hash-like token in the specification is unaccounted for. This is the check that
+    # catches a stale hash in PROSE - the class C27 is blind to by construction.
+    known = {art["sha256"], art["sha256"][:16], art_file_sha, art_file_sha[:16]}
+    for root, dirs, files in os.walk(HERE):
+        dirs[:] = [x for x in dirs if x not in ("research", "__pycache__", ".git")]
+        for fn in files:
+            h = hashlib.sha256(open(os.path.join(root, fn), "rb").read()).hexdigest()
+            known.add(h)
+            known.add(h[:16])
+    # superseded values are permitted only where the package labels them as provenance
+    historical = {  # pre-revision 48-cell artefact, superseded 2026-09-12, kept as provenance
+        "de241d916e5885a82a6ecea8f258a2b47705b546f89c427e49dec9cc0d303a6e",
+        "8dc43a9cc1d0a981",
+    }
+    # a truncated hash is acceptable when it really is a truncation of a current value
+    unknown_hashes = sorted({t for t in re.findall(r"\b[0-9a-f]{12,}\b", spec_docs)
+                             if t not in known and t not in historical
+                             and not any(k.startswith(t) for k in known)})
+    check("C28", not unknown_hashes,
+          "no unaccounted hash-like token in the specification documents",
+          unknown_hashes or "%d values accounted for" % len(known))
+
+    # C29 the one-command specification's expected output is the committed artefact's payload
+    m_out = re.search(r"canonical payload sha256: ([0-9a-f]{16})\b", readme)
+    m_full = re.search(r"^    ([0-9a-f]{64})$", readme, re.M)
+    check("C29", bool(m_out) and bool(m_full) and m_out.group(1) == art["sha256"][:16]
+                 and m_full.group(1) == art["sha256"],
+          "the expected-output block states the committed artefact payload",
+          "%s / %s" % (m_out.group(1) if m_out else "-", m_full.group(1)[:16] if m_full else "-"))
+
+    # C30 the reproduction-status paragraph quotes the committed file's own hash
+    check("C30", near(readme, "file sha256", art_file_sha),
+          "the status paragraph states the committed artefact file hash", art_file_sha[:16])
+
+    # C31 every sweep-cell count in the specification is the artefact's, unless the surrounding
+    # text marks it as historical ("earlier", "superseded", "first submission", ...)
+    stale_counts = []
+    for m in re.finditer(r"(\d+)[- ]cell|all (\d+) sweep cells?", spec_docs):
+        v = int(m.group(1) or m.group(2))
+        if v == d["n_cells"]:
+            continue
+        ctx = spec_docs[max(0, m.start() - 260):m.end() + 260]
+        if not any(c in ctx for c in ("earlier", "previous", "superseded", "first submission")):
+            stale_counts.append(v)
+    check("C31", not stale_counts,
+          "every sweep-cell count in the spec is the artefact's, or labelled historical",
+          "%d cells" % d["n_cells"] + (", stale: %s" % stale_counts if stale_counts else ""))
+
+    # C32 the tally the specification states for validate.py is the tally validate.py asserts.
+    # Measured, not parsed: the denominator is a property of the gate's code, so this stays true
+    # when the artefact is corrupted (a corrupted run prints a smaller numerator, same denominator).
+    vout = subprocess.run([sys.executable, os.path.join(HERE, "validate.py")],
+                          cwd=HERE, capture_output=True, text=True).stdout
+    v_ids = re.findall(r"^([AB]\d\d\S*)\s+(?:PASS|FAIL)", vout, re.M)
+    n_a = sum(1 for i in v_ids if i.startswith("A"))
+    n_b = len(v_ids) - n_a
+    v_claim = "%d individual conditions (%d structural, %d mechanism)" % (len(v_ids), n_a, n_b)
+    check("C32", bool(v_ids) and v_claim in readme
+                 and ("VALIDATE %d/%d" % (len(v_ids), len(v_ids))) in readme,
+          "the spec states the tally validate.py actually asserts", v_claim)
+
+    # C33 every count the specification states for THIS gate is the gate's own check count,
+    # including the check appended on the next line.
+    stated = sorted({int(m.group(1)) for m in re.finditer(r"CONSISTENCY (\d+)/\d+", spec_docs)}
+                    | {int(m.group(1)) for m in re.finditer(r"every one of the (\d+) checks", spec_docs)})
+    this_gate = len(checks) + 1
+    check("C33", stated == [this_gate],
+          "every count stated for this gate is this gate's own check count",
+          "stated %s vs %d" % (stated, this_gate))
+
 
     n = len(checks)
     ok = sum(1 for c in checks if c)

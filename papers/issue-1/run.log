@@ -3,14 +3,14 @@
 # tier: heavy
 # torch interpreter: /Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-79/research/.venv/bin/python
 # figures interpreter: /usr/bin/python3
-step fidelity_gate: ok (fidelity_gate_seconds=15)
-step sweep_and_derive: ok (sweep_and_derive_seconds=814)
+step fidelity_gate: ok (fidelity_gate_seconds=14)
+step sweep_and_derive: ok (sweep_and_derive_seconds=810)
 step figures: ok (figures_seconds=1)
 step validate: ok (validate_seconds=0)
 step consistency: ok (consistency_seconds=0)
 canonical_payload_sha256_prefix: e801274596d9b662
 validate: VALIDATE 38/38
-manuscript_consistency: CONSISTENCY 29/29
+manuscript_consistency: CONSISTENCY 36/36
 result: PASS
-total_wall_clock_s: 830
-run_at_utc: 2026-09-12T03:42:42Z
+total_wall_clock_s: 825
+run_at_utc: 2026-09-12T08:39:38Z

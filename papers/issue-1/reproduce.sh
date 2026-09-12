@@ -11,7 +11,7 @@
 #
 # Expected output is stated in README.md. Two tiers:
 #
-#   heavy tier (needs PyTorch): reader-fidelity gate -> 48-cell sweep -> derivation
+#   heavy tier (needs PyTorch): reader-fidelity gate -> 84-cell sweep -> derivation
 #                               -> figures -> validation -> manuscript consistency.
 #                               Recomputes canonical_results.json.
 #   light tier (no PyTorch):    validation of the committed canonical_results.json
