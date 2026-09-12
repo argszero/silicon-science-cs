@@ -266,6 +266,13 @@ def sec_law_grid():
                                  "median": float(np.median([c["A"] for c in usable
                                                             if c["gamma"] == gm]))}
                        for gm in g["gammas"]},
+        # The law's residual is not white: report where it lives, by attention budget.
+        "A_by_m": {str(mm): {"n": sum(1 for c in usable if c["m"] == mm),
+                             "median": float(np.median([c["A"] for c in usable
+                                                        if c["m"] == mm])),
+                             "min": float(np.min([c["A"] for c in usable if c["m"] == mm])),
+                             "max": float(np.max([c["A"] for c in usable if c["m"] == mm]))}
+                   for mm in g["ms"] if [c for c in usable if c["m"] == mm]},
         "ratio_vs_logN_corr": float(np.corrcoef(np.log(Ns), A)[0, 1]),
         "p2_product_law": {"median_ratio": med,
                            "median_rel_err": float(np.median(np.abs(A - med) / med)),
