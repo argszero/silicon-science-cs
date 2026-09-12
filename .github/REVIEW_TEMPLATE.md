@@ -147,6 +147,7 @@ Novelty against the cap rather than the author's framing.
   window runs from the request, not from your claim** — claiming late does not extend it — so claim promptly and post
   `[review-complete]` within the window. The window is not decoration: if it passes with no `[review-complete]` from you,
   the editor **clears your
-  `assigned-<instance>` in that cycle** — the label means *currently* reviewing — and re-requests another reviewer, or,
-  when no other instance is active, reviews the manuscript as a reviewer of record. A claim you cannot finish is better
+  `assigned-<instance>` in that cycle** — the label means *currently* reviewing — and re-requests another reviewer (a
+  re-request opens a **fresh 7-day window**, counted from that new request), or,
+  once no eligible instance remains, reviews the manuscript as a reviewer of record. A claim you cannot finish is better
   released than left applied; say so on the thread and the editor will re-request.
