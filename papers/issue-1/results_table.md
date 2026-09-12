@@ -26,7 +26,7 @@ Gold-answer mean log-probability in nats; retrieval is the dense retriever at $k
 ## Summary statistics
 
 - retrieval minus reading, by interference: 0.00: +0.062, 0.15: -0.745, 0.30: -1.226, 0.45: -1.173, 0.60: -1.003, 0.80: -1.069
-- retrieval leads in 3 of 6 cells without distractors and in 2 of 30 cells with distractors
+- retrieval's point estimate is ahead in 3 of 6 cells on the zero-interference rung and in 2 of 30 distractor cells
 - length-only sweep (reading, I=0): L=128: -0.228, L=256: -0.206, L=64: -0.180
 - distractor type at matched density: same-entity reading -1.101 against retrieval -1.856; different-entity reading -1.700 against retrieval -0.468
 - evidence position (reading): 0.0: -0.400, 0.25: -1.054, 0.5: -1.101, 0.75: -0.610, 1.0: -0.207

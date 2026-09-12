@@ -119,13 +119,13 @@ def main():
 
     # ---- Tier B: mechanism ----
     g = der["gap_by_interference"]
-    c.ok("B01", "retrieval leads in the zero-interference limit", gt(g["0.0"], 0.0), g["0.0"])
+    c.ok("B01", "the zero-interference rung's point estimate is positive (a null, not a lead)", gt(g["0.0"], 0.0), g["0.0"])
     nz = [k for k in g if float(k) != 0.0]
     c.ok("B02", "retrieval loses at every interference level that has distractors",
          all(lt(g[k], 0.0) for k in nz), {k: g[k] for k in nz})
     c.ok("B03", "the deficit saturates instead of growing without bound",
          lt(max(abs(g[k]) for k in nz), 1.5), max(abs(g[k]) for k in nz))
-    c.ok("B04", "the crossover is at the interference boundary, not in the interior",
+    c.ok("B04", "the advantage is confined to the zero-interference rung",
          lt(der["retrieval_ahead_with_distractor"], 3) and gt(der["retrieval_ahead_no_distractor"], 2),
          "ahead %d/%d no-distractor, %d/%d distractor" % (
              der["retrieval_ahead_no_distractor"], der["n_no_distractor"],

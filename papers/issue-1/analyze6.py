@@ -110,7 +110,7 @@ pos_gt = sum(1 for c in gt_i if ahead(c))
 print("\nretrieval-loses cells (dense_k4 gap negative): %d / %d" % (neg, ncell))
 print("  no-distractor cells (I=0.00, n=%d): retrieval ahead in %d / %d" % (len(zero_i), pos_zero, len(zero_i)))
 print("  distractor cells (I nonzero, n=%d): retrieval ahead in %d / %d" % (len(gt_i), pos_gt, len(gt_i)))
-print("  finding: the crossover sits at I=0+ -- retrieval leads only when the distractor set is empty")
+print("  finding: the registered crossover does not appear -- the I=0.00 rung is a null (cells split 3-3), and retrieval is behind on every rung that separates from zero")
 
 print("\n== length-only sweep (I=0.00, no distractors): full-context mean logprob ==")
 for L in [64, 128, 256]:

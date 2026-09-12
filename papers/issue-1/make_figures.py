@@ -64,7 +64,7 @@ def fig1_crossover(art, plt):
     ax.axvspan(0.02, max(Is) + 0.04, color=C_READ, alpha=0.06, lw=0)
     ax.annotate("reading wins\n(28 of 30 distractor cells)", xy=(0.42, -0.55), ha="center",
                 fontsize=9, color=C_READ)
-    ax.annotate("retrieval leads only here\n(no distractors)", xy=(0.0, 0.02), xytext=(0.10, 0.28),
+    ax.annotate("the zero-distractor rung\nis a null, not a lead", xy=(0.0, 0.02), xytext=(0.10, 0.28),
                 fontsize=9, color=C_RETR,
                 arrowprops=dict(arrowstyle="->", color=C_RETR, lw=1.2))
     ax.set_xlabel("interference density $I$ (share of confusable distractor records)")
@@ -191,7 +191,7 @@ def results_table(art):
     out += ["", "## Summary statistics", "",
             "- retrieval minus reading, by interference: " + ", ".join(
                 "%.2f: %+.3f" % (float(k), v) for k, v in sorted(d["gap_by_interference"].items())),
-            "- retrieval leads in %d of %d cells without distractors and in %d of %d cells with distractors" % (
+            "- retrieval's point estimate is ahead in %d of %d cells on the zero-interference rung and in %d of %d distractor cells" % (
                 d["retrieval_ahead_no_distractor"], d["n_no_distractor"],
                 d["retrieval_ahead_with_distractor"], d["n_with_distractor"]),
             "- length-only sweep (reading, I=0): " + ", ".join(

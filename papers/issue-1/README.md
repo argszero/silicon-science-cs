@@ -146,16 +146,18 @@ byte-identical to the committed file (`cmp` reports no difference; file sha256
 `69960d951cfaa2231152932515feadbc984f0a9f3acf596d5387ddf305df712c`, payload sha256
 `e801274596d9b6621ccfd074ddd768ea...`). The figures and `results_table.md` were rewritten by the same
 run and are byte-identical too. **This artefact has been produced four times - once by
-`canonical_runner.py` and three times through `reproduce.sh` - and all four are byte-identical**; the run in
-`run.log` is the fourth, and the second was the pre-revision package's. The earlier 48-cell artefact
+`canonical_runner.py` and three times through `reproduce.sh` - and all four are byte-identical**; the second was
+the pre-revision package's, and the fourth is the heavy-tier run described above (the revision-round-2 runs are
+light-tier: they validate the artefact rather than recomputing it). The earlier 48-cell artefact
 that the first submission carried went through
 seven full runs, likewise byte-identical, before the revision replaced it; its two hashes were
 file `de241d916e5885a82a6ecea8f258a2b47705b546f89c427e49dec9cc0d303a6e`
 (payload `8dc43a9cc1d0a981`), superseded on 2026-09-12 and recorded here as provenance only.
-The most recent one was run after the consistency gate was added, so it is also the run that
-exercised `consistency_check.py` on the recompute path (`CONSISTENCY 37/37`, in `run.log`).
- `run.log` is the record of the most recent one - currently a
-heavy-tier run, with its per-step timings.
+The most recent heavy-tier run was made after the consistency gate was added, so it is also the run that
+exercised `consistency_check.py` on the recompute path (`CONSISTENCY 37/37`).
+`run.log` is the record of the most recent run and names its own tier: after the revision-round-2 edits it is a
+**light-tier** run (the authoring machine has no PyTorch, so the sweep was not recomputed), with its per-step
+timings, and it prints `VALIDATE 38/38` and `CONSISTENCY 37/37`.
 
 ## Revision round 1: what changed in the package
 
@@ -197,6 +199,49 @@ C27 is now the run-invariant files only, the five rewritten files state `*regene
 that set honest, and `check_audit.py` runs the documented command twice in its sandbox and fails
 loudly if the two runs disagree. The property this restores is stated where a verifier will read it:
 what the package promises is what a compliant run prints.
+
+## Revision round 2: what changed in the package
+
+The second review round asked for a consistency fix only - no new runs, no re-derived number -
+because the package still carried two readings the paper had itself withdrawn: that retrieval leads
+on the empty-distractor rung, and that the comparison is governed by a *discrimination margin*.
+
+1. **The withdrawn sign is gone from every site.** The registered prediction - that retrieval
+   overtakes reading above some interference threshold - does not appear, and the package now says
+   so in one form everywhere: Section 1's headline summary, the Section 4.1 heading and opening,
+   Figure 1's caption, the Section 4.2 table discussion, the P2 outcome in Section 5, and the
+   Conclusion no longer attribute a lead to the zero-distractor rung. The rung is stated as what its
+   interval supports: a **null** (+0.062 nats, 95% interval [-0.039, +0.163], cells split 3-3).
+2. **One set of ahead-counts, each with its denominator.** The three counts are now stated once and
+   identically - **3 of the 6** cells on the I = 0.00 rung, **2 of the 30** distractor cells (the
+   five rungs from I = 0.15 upward), and **31 of 36** main-grid cells negative - and the table row
+   names the denominator it divides by.
+3. **The withdrawn reading is gone from the executed code and from the validator.** `make_figures.py`
+   no longer annotates Figure 1 with "retrieval leads only here" and no longer reports the cell
+   counts under that phrasing; `analyze6.py`'s printed conclusion no longer places a crossover at
+   I = 0; and the two `validate.py` labels that named a lead and a crossover (B01, B04) now describe
+   what they assert. Figure 1 and `figures/manifest.json` were regenerated together, since the
+   manifest is the committed artefact that pins the pair.
+
+   **One finding, reported rather than assumed away.** The review described that annotation as
+   "baked into the committed PNG". It is not. The annotation's anchor point (I = 0.00 at +0.02 nats)
+   lies outside the axes, whose y-range is [-2.058, -0.051], and `ax.annotate` with the default
+   `annotation_clip=None` does not draw an annotation whose anchor is outside the axes. The control
+   is exact: deleting the call entirely leaves Figure 1 **byte-identical** to the committed image,
+   the same bytes it carried before this revision. So the visible figure never carried the withdrawn
+   claim - the claim lived only in the source, where it is now corrected - and the regenerated
+   Figure 1 and `figures/manifest.json` still agree (C18). Whether the corrected statement should now
+   be made *visible* in the figure is a content change the review did not ask for, so it is left to
+   the editor; the source states the corrected wording either way. The figure's other annotation
+   ("reading wins (28 of 30 distractor cells)") does render and is correct.
+4. **The sweep, counted.** Every statement resting on either withdrawn reading was enumerated and
+   repaired: **twelve** edits in `manuscript.md`, **three** in the scripts the pipeline runs
+   (`make_figures.py` twice, `analyze6.py` once), **two** check labels in `validate.py`, and **one**
+   row in this README's figure table. The Section 6 threat paragraph that had already corrected the
+   framing, and the sites that already stated the null, were left unchanged. **No number changed and
+   no experiment was re-run.** Figure 1's two panel titles remain accurate under the corrected
+   wording ("The comparison inverts at the interference boundary", "The deficit appears at once,
+   then saturates"), so they were not retitled.
 
 ## Traceability: every manuscript number back to the artefact
 
@@ -312,17 +357,17 @@ it to the manuscript-to-artefact chain.
 | `canonical_runner.py` | `6ae0667d242879ad` | single entry: fidelity gate, 84-cell sweep, derivation, artefact write |
 | `eval_fidelity.py` | `8766fac036626e1e` | reader-fidelity gate over the frozen corpus; 12/12 checks plus a power check |
 | `grid6.py` | `8e9106d588da2bc5` | the 84-cell grid definition and sweep driver, including the recall-matched control |
-| `analyze6.py` | `970b7fb404e58698` | derivation: gaps, recall, Wilson intervals, position and type contrasts |
+| `analyze6.py` | `c52b749c1b0bce12` | derivation: gaps, recall, Wilson intervals, position and type contrasts |
 | `corpus5.py` | `bb6b3ec05fc59306` | builds the 12-document fidelity corpus and its train/eval split |
 | `mini_port.py` | `1d8eee73ba250b60` | dependency-free transformer port (SmolLM2-135M) |
 | `smollm_port.py` | `7309967e201e8acc` | reader wrapper: KV cache, greedy and sampled decoding |
-| `validate.py` | `e0796a29163cba72` | 38 assertions over the artefact; prints `VALIDATE 38/38` |
+| `validate.py` | `c5c21cec715316e0` | 38 assertions over the artefact; prints `VALIDATE 38/38` |
 | `consistency_check.py` | `aa9e0b56ada63ca6` | 37 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 37/37` |
 | `check_audit.py` | `34cf4c1a41df5caf` | reversion audit of the gate: one targeted corruption per check, reporting which checks are load-bearing |
-| `make_figures.py` | `13c069d40b62c8f6` | regenerates the three figures and the result table from the artefact |
+| `make_figures.py` | `5febdba1ea149c80` | regenerates the three figures and the result table from the artefact |
 | `canonical_results.json` | `69960d951cfaa223` | the artefact: sweep, derivations, fidelity block, embedded payload sha256 |
 | `fidelity_corpus.json` | `01e1d83b232acc68` | frozen text snapshot the fidelity gate reads (see below) |
-| `results_table.md` | `cdf83e5e7730c522` | the result table embedded in the manuscript |
+| `results_table.md` | `3c3b21f35f40c6c5` | the result table embedded in the manuscript |
 | `figures/manifest.json` | *regenerated* | figure/table sha256 values and every number plotted in them |
 | `run.log` | *regenerated* | the log of the most recent run of this script, written by that run |
 | `manuscript.md` | - | the manuscript; every number in it is read from `canonical_results.json` |
@@ -360,10 +405,10 @@ they cannot drift from the numbers the validator checks.
 
 | artifact | sha256 (16 hex) | what it shows |
 |---|---|---|
-| `figures/fig1_crossover.png` | *regenerated* | the core outcome: dense-retrieval-minus-reader gap against interference, with the one point where retrieval leads (+0.062 at I=0.00) and the saturating deficit that follows |
+| `figures/fig1_crossover.png` | *regenerated* | the core outcome: dense-retrieval-minus-reader gap against interference, with the one rung whose point estimate favours retrieval (a null at I = 0.00, +0.062) and the saturating deficit that follows |
 | `figures/fig2_distractor_type.png` | *regenerated* | the distractor-type contrast before and after matching retrieval success: a two-nat apparent effect at fixed density, and a -0.155-nat residual once the gold record is inside the k=4 set for both families |
 | `figures/fig3_position.png` | *regenerated* | the U-shape of evidence position, with the middle of the context the worst point and the sampled exact-match rate beside it |
-| `results_table.md` | `cdf83e5e7730c522` | the 18-row main grid: length x interference, both arms, gap, and the recall of both retrievers |
+| `results_table.md` | `3c3b21f35f40c6c5` | the 18-row main grid: length x interference, both arms, gap, and the recall of both retrievers |
 
 ## Why the fidelity corpus is frozen
 
