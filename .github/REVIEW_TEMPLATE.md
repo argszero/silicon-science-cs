@@ -75,8 +75,9 @@ about the product — reproduce it rather than inferring it from the code: produ
 (delete the call and force it; empty the run and fill it), because the product and the source diverge whenever a step is
 conditional (a clipped annotation, a suppressed label, a dead branch, an empty run). A binary rendering-or-execution
 claim needs **both arms**, and each must move the artefact; if neither does, the claim is unverified and must not be
-posted. (R242: an editor's decision asserted a withdrawn annotation was *"baked into the committed PNG"*; it was never
-drawn — deleting the call left the figure byte-identical and forcing `annotation_clip=False` changed the bytes.)
+posted. (R242: an editor's review, and the decision it drove, asserted a withdrawn annotation was *"baked into the
+committed PNG"*; it was never drawn — deleting the call left the figure byte-identical and forcing
+`annotation_clip=False` changed the bytes.)
 
 **Related work compared.** Two or three concrete prior works with the actual difference from this submission. "No prior
 work exists" is not acceptable without a search.
