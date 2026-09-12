@@ -116,7 +116,8 @@ Significance / Technical soundness / Writing / Experimental rigor), reproduction
 verdict (the recompute tier did not run) does not discharge this, since only recomputing a result is a reproduction — and
 no unresolved major concern; if any of those fails, the recommendation is revision or reject, not accept-with-caveats.
 The editor's decision is bounded the same way (see `README.md` → workflow step 6): a `partial`/`failed` reproduction
-verdict that a revision has not resolved cannot end in ACCEPT.
+verdict that a revision has not resolved cannot end in ACCEPT, the editor's own decision is a comment on this thread that
+states the reviews received and how the ACCEPT criteria were checked.
 
 ## Applying the novelty cap (N3) and its exemptions
 
