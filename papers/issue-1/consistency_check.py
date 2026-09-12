@@ -265,8 +265,14 @@ def main():
     spec_docs = readme + "\n" + repro_sh
     art_file_sha = hashlib.sha256(open(ART, "rb").read()).hexdigest()
 
-    # C27 every hash row in the README's file table matches the committed file on disk
-    rows_spec = re.findall(r"^\| `([A-Za-z0-9_./-]+)` \| `([0-9a-f]{16})` \|", readme, re.M)
+    # C27 every hash row in the README's file table matches the file on disk. The corpus of this
+    # check is exactly the run-invariant files: the run rewrites the figures, figures/manifest.json
+    # and run.log, so a static hash row for them could only hold before the first invocation (and
+    # PNG bytes differ between matplotlib builds). Those rows carry `*regenerated*` instead, and
+    # C34 makes sure that escape hatch is not used on a file a run does not write.
+    rows_all = re.findall(r"^\| `([A-Za-z0-9_./-]+)` \| (`[0-9a-f]{16}`|\*regenerated\*) \|", readme, re.M)
+    rows_spec = [(p, c.strip("`")) for p, c in rows_all if c != "*regenerated*"]
+    regen_rows = [p for p, c in rows_all if c == "*regenerated*"]
     stale_rows = []
     for rel, val in rows_spec:
         p = os.path.join(HERE, rel)
@@ -274,9 +280,29 @@ def main():
             stale_rows.append(rel + ":missing")
         elif hashlib.sha256(open(p, "rb").read()).hexdigest()[:16] != val:
             stale_rows.append(rel)
-    check("C27", len(rows_spec) >= 20 and not stale_rows,
-          "every README file-hash row matches its committed file",
-          "%d rows" % len(rows_spec) + (", stale: %s" % stale_rows if stale_rows else ""))
+    check("C27", len(rows_spec) >= 15 and not stale_rows,
+          "every README file-hash row matches its file on disk",
+          "%d hashed rows" % len(rows_spec) + (", stale: %s" % stale_rows if stale_rows else ""))
+
+    # C34 the rows that carry no hash are exactly the files a run rewrites, and each of them is
+    # really written by a script in this package. Without this, "make it *regenerated*" would be a
+    # way to retire any row that had drifted.
+    declared_regen = {"figures/fig1_crossover.png", "figures/fig2_distractor_type.png",
+                      "figures/fig3_position.png", "figures/manifest.json", "run.log"}
+    writers = ""
+    for fn in sorted(os.listdir(HERE)):
+        if fn.endswith((".py", ".sh")):
+            try:
+                writers += load(os.path.join(HERE, fn))
+            except Exception:
+                pass
+    bad_regen = sorted(set(regen_rows) ^ declared_regen)
+    unwritten = sorted(p for p in declared_regen if os.path.basename(p) not in writers)
+    check("C34", not bad_regen and not unwritten,
+          "hash-less rows are exactly the run-rewritten files, each written by a package script",
+          "declared %d" % len(declared_regen)
+          + (", mismatch: %s" % bad_regen if bad_regen else "")
+          + (", not written by any script: %s" % unwritten if unwritten else ""))
 
     # C28 no hash-like token in the specification is unaccounted for. This is the check that
     # catches a stale hash in PROSE - the class C27 is blind to by construction.

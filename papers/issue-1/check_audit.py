@@ -24,6 +24,7 @@ it alongside the check that reads the mutated field).
 
 Standard library only; it never writes to the committed package.
 """
+import hashlib
 import json
 import os
 import re
@@ -37,6 +38,10 @@ CHECKER = "consistency_check.py"
 # read the artefact hash rather than hard-coding it, so a rebuild cannot silently make the
 # C01 corruption a no-op (which would then look like a check that failed to fire).
 PAYLOAD16 = json.load(open(os.path.join(HERE, "canonical_results.json")))["sha256"][:16]
+
+# the gate's own size, read from its source, so a corruption aimed at a stated count cannot go
+# stale when a check is added or removed (that staleness is exactly what this audit exists to catch)
+NCHECKS = len([l for l in open(os.path.join(HERE, CHECKER)) if l.lstrip().startswith("check(\"")])
 BASE = ["canonical_results.json", "manuscript.md", "results_table.md", "references.json",
         "figures/manifest.json"]
 FIGURES = ["figures/fig1_crossover.png", "figures/fig2_distractor_type.png",
@@ -196,7 +201,10 @@ CORRUPTIONS = [
      repall("[105]", ""), False),
     # --- the package's specification vs the package (C27-C33)
     ("C27", "one row of the README file-hash table no longer matches its file", "README.md",
-     flip_row("run.log"), False),
+     flip_row("references.json"), False),
+    ("C34", "a run-invariant file is relabelled *regenerated* to retire its hash row", "README.md",
+     lambda t: t.replace("| `refs_selected.json` | `1629a255f263f98b` |",
+                         "| `refs_selected.json` | *regenerated* |"), False),
     ("C28", "a stale hash appears in README prose (not in the hash table)", "README.md",
      rep1("**Tolerance: exact, not statistical.**",
           "**Tolerance: exact, not statistical.** (superseded run 8dc43a9cc1d0a982)"), False),
@@ -215,7 +223,8 @@ CORRUPTIONS = [
      rep1("it asserts 38 individual conditions (16 structural, 22 mechanism)",
           "it asserts 37 individual conditions (14 structural, 23 mechanism)"), False),
     ("C33", "one stated consistency count is stale", "README.md",
-     rep1("    CONSISTENCY 36/36\n", "    CONSISTENCY 35/35\n"), False),
+     lambda t: rep1("CONSISTENCY %d/%d" % (NCHECKS, NCHECKS),
+                    "CONSISTENCY %d/%d" % (NCHECKS - 1, NCHECKS - 1))(t), False),
 ]
 
 
@@ -232,12 +241,77 @@ def run_case(label, desc, fname, mut, binary):
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def property_case(label, desc, fn):
+    """A property of the whole package that a single corruption cannot express."""
+    tmp = tempfile.mkdtemp(prefix="audit-prop-")
+    try:
+        snapshot(tmp)
+        return {"label": label, "desc": desc, "detail": fn(tmp)}
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def prop_reentrancy(tmp):
+    """The documented command must print the same verdict on a first run and on a second over the
+    same copy. It rewrites the figures, figures/manifest.json and run.log - exactly where a
+    documentation check that reads the working tree goes wrong."""
+    out = []
+    for _ in range(2):
+        pr = subprocess.run(["bash", "reproduce.sh"], cwd=tmp, capture_output=True, text=True)
+        line = [l for l in pr.stdout.splitlines() if l.startswith("RESULT:")]
+        out.append(line[0].strip() if line else "RESULT: (none printed)")
+    return out
+
+
+def prop_interpreter_variation(tmp):
+    """A consistent redraw must not fail the documentation checks. Figure bytes are
+    interpreter-dependent by construction, so the emulation changes the PNG (by inserting a real
+    tEXt chunk, so the file is still a valid image) and updates that figure's manifest entry
+    exactly as make_figures.py would: figure and manifest agree, as they do after a run on any
+    build. C18 must still pass, and the documentation checks must not care."""
+    import struct
+    import zlib
+    fig = os.path.join(tmp, "figures/fig1_crossover.png")
+    blob = open(fig, "rb").read()
+    payload = b"Software\x00emulated non-pinned matplotlib build\x00"
+    chunk = struct.pack(">I", len(payload)) + b"tEXt" + payload
+    chunk += struct.pack(">I", zlib.crc32(b"tEXt" + payload) & 0xFFFFFFFF)
+    i = blob.rindex(b"IEND") - 4
+    open(fig, "wb").write(blob[:i] + chunk + blob[i:])
+    new = hashlib.sha256(open(fig, "rb").read()).hexdigest()
+
+    man = os.path.join(tmp, "figures/manifest.json")
+    d = json.load(open(man))
+    for f in d["figures"]:
+        if f["file"].endswith("fig1_crossover.png"):
+            f["sha256"] = new
+    open(man, "w").write(json.dumps(d, indent=1, sort_keys=True) + "\n")
+
+    pr = subprocess.run([sys.executable, os.path.join(tmp, CHECKER)],
+                        capture_output=True, text=True, cwd=tmp)
+    line = [l for l in pr.stdout.splitlines() if l.startswith("CONSISTENCY")]
+    return [line[0].strip() if line else "CONSISTENCY (no verdict printed)"]
+
+
 def main():
     clean = subprocess.run([sys.executable, os.path.join(HERE, CHECKER)],
                            capture_output=True, text=True, cwd=HERE)
     ids = re.findall(r"^(C\d+(?:\.\w+)?)\s+PASS", clean.stdout, re.M)
     assert ids, "could not enumerate the checks from a clean run"
-    print("clean run: %s" % re.search(r"CONSISTENCY \d+/\d+", clean.stdout).group(0))
+    verdict = re.search(r"CONSISTENCY (\d+)/(\d+)", clean.stdout)
+    if not verdict or verdict.group(1) != verdict.group(2):
+        # A gate that fails on its own working tree makes every corruption look caught and every
+        # check look load-bearing - the opposite of what this audit is for. Refuse loudly instead
+        # of reporting a matrix computed against a broken baseline.
+        print("REFUSING TO AUDIT: the gate does not pass on its own working tree.")
+        print("  %s" % (verdict.group(0) if verdict else "(no CONSISTENCY line)"))
+        print("  A corrupted baseline makes every corruption look caught and hides which checks")
+        print("  are decoration. Fix the gate's working-tree state first. Failing checks:")
+        for ln in clean.stdout.splitlines():
+            if " FAIL " in ln:
+                print("    %s" % ln.strip())
+        return 1
+    print("clean run: %s" % verdict.group(0))
     print("checks under audit: %d\n" % len(ids))
 
     print("%-11s %-5s %s" % ("corruption", "exit", "checks that fired"))
@@ -276,7 +350,22 @@ def main():
           "                           it beside the check that reads the mutated field)" % len(multi))
     for k, v in sorted(multi.items()):
         print("    %-11s -> %s" % (k, " ".join(v)))
-    ok = not never and not survived
+    print("\n--- properties (outside the corruption matrix by construction) ---")
+    props = [
+        property_case("R1", "the documented command is re-entrant: same verdict on run 1 and run 2",
+                      prop_reentrancy),
+        property_case("R2", "a consistent figure redraw (non-pinned matplotlib) still passes",
+                      prop_interpreter_variation),
+    ]
+    prop_ok = True
+    for p in props:
+        good = all(d.startswith("RESULT: PASS") or d.startswith("CONSISTENCY 37/37")
+                   for d in p["detail"])
+        prop_ok = prop_ok and good
+        print("%-4s %-4s %s" % (p["label"], "ok" if good else "BAD", p["desc"]))
+        print("%-4s      %s" % ("", " | ".join(p["detail"])))
+
+    ok = not never and not survived and prop_ok
     print("\nAUDIT %s" % ("CLEAN - every one of the %d checks rejects something" % len(ids)
                            if ok else "FINDINGS - never=%s survived=%s" % (never, survived)))
     return 0 if ok else 1

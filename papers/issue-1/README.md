@@ -5,7 +5,7 @@ Evidence Access under Semantic Interference**
 
 This directory is the committed artefact set for issue #1: the sweep runner, the
 derivation and analysis scripts, the figures, the result table, a frozen snapshot of the
-reader-fidelity corpus, a 38-check validation suite, and a 36-check manuscript-consistency
+reader-fidelity corpus, a 38-check validation suite, and a 37-check manuscript-consistency
 gate. Every number that appears in
 `manuscript.md` is read out of `canonical_results.json`, which this package
 regenerates from scratch and validates. Seven independent full runs of this pipeline produced a byte-identical artefact, the four most
@@ -21,7 +21,7 @@ Expected output (light tier, default environment):
 
     canonical payload sha256: e801274596d9b662
     VALIDATE 38/38
-    CONSISTENCY 36/36
+    CONSISTENCY 37/37
     RESULT: PASS | wall-clock <seconds> s
 
 Full artefact payload sha256:
@@ -31,10 +31,14 @@ Full artefact payload sha256:
 The first three lines are the values a verifier compares; `wall-clock` is machine-dependent
 and is stated separately under *Measured wall-clock* below.
 
+**The command is re-entrant: it prints `RESULT: PASS` on the first run and on every run after it, over the
+same copy.** It rewrites the figures, `figures/manifest.json` and `run.log`, and no check compares those files to
+a static record, so a second invocation sees the same verdict as the first.
+
 **Tolerance: exact, not statistical.** `validate.py` must print `VALIDATE 38/38`;
 it asserts 38 individual conditions (16 structural, 22 mechanism), each attached to a
 specific headline claim in the manuscript. `consistency_check.py` must print
-`CONSISTENCY 36/36`, which it does by re-deriving from the artefact every number the
+`CONSISTENCY 37/37`, which it does by re-deriving from the artefact every number the
 manuscript quotes (see *Traceability* below). The three figures and the result table must
 match the sha256 values recorded in `figures/manifest.json` byte for byte. A single
 mismatched byte, or a single failed assertion, fails the run.
@@ -112,11 +116,11 @@ above describe the verified environment rather than gating a run.
 | tier | runs in a plain environment? | what it **recomputes** | what it only **validates** |
 |---|---|---|---|
 | **heavy** | no - needs PyTorch + numpy and the two model snapshots | everything: the reader-fidelity gate, all 84 sweep cells from the corpus definitions, the whole derivation, then rewrites `canonical_results.json` | nothing |
-| **light** | yes - needs only Python 3 + matplotlib | the three figures and the result table, from the committed artefact | everything else: checksums, structural consistency, all 38 assertions (16 structural, 22 mechanism), and the 36-check manuscript-to-artefact consistency gate |
+| **light** | yes - needs only Python 3 + matplotlib | the three figures and the result table, from the committed artefact | everything else: checksums, structural consistency, all 38 assertions (16 structural, 22 mechanism), and the 37-check manuscript-to-artefact consistency gate |
 
 **The light tier is a package-integrity check, not a reproduction.** It confirms that the
 committed artefact is internally consistent, that its embedded payload hash recomputes, and
-that every headline number the manuscript quotes traces back to that artefact (`CONSISTENCY 36/36`) - but the
+that every headline number the manuscript quotes traces back to that artefact (`CONSISTENCY 37/37`) - but the
 sweep cells it checks were produced by the heavy tier, so it cannot stand as the reproduction
 by itself. The heavy tier is the reproduction. **Run the heavy tier to reproduce this work**;
 run the light tier to check that the package you have is intact.
@@ -137,18 +141,19 @@ three times more; all three runs are byte-identical to each other and to the com
 refer to the same code with only that constant differing.
 
 **Reproduction status.** The heavy tier **has** been run end to end through this exact entry
-point: 825 s wall-clock, `VALIDATE 38/38`, `CONSISTENCY 36/36`, and the rewritten `canonical_results.json`
+point: 820 s wall-clock, `VALIDATE 38/38`, `CONSISTENCY 37/37`, and the rewritten `canonical_results.json`
 byte-identical to the committed file (`cmp` reports no difference; file sha256
 `69960d951cfaa2231152932515feadbc984f0a9f3acf596d5387ddf305df712c`, payload sha256
-`e801274596d9b6621ccfd074ddd768ea...`). **This artefact has been produced three times - once by
-`canonical_runner.py` and twice through `reproduce.sh` - and all three are byte-identical**; the run in
-`run.log` is the third, and the second was the pre-revision package's. The earlier 48-cell artefact
+`e801274596d9b6621ccfd074ddd768ea...`). The figures and `results_table.md` were rewritten by the same
+run and are byte-identical too. **This artefact has been produced four times - once by
+`canonical_runner.py` and three times through `reproduce.sh` - and all four are byte-identical**; the run in
+`run.log` is the fourth, and the second was the pre-revision package's. The earlier 48-cell artefact
 that the first submission carried went through
 seven full runs, likewise byte-identical, before the revision replaced it; its two hashes were
 file `de241d916e5885a82a6ecea8f258a2b47705b546f89c427e49dec9cc0d303a6e`
 (payload `8dc43a9cc1d0a981`), superseded on 2026-09-12 and recorded here as provenance only.
 The most recent one was run after the consistency gate was added, so it is also the run that
-exercised `consistency_check.py` on the recompute path (`CONSISTENCY 36/36`, in `run.log`).
+exercised `consistency_check.py` on the recompute path (`CONSISTENCY 37/37`, in `run.log`).
  `run.log` is the record of the most recent one - currently a
 heavy-tier run, with its per-step timings.
 
@@ -178,10 +183,20 @@ changes, all of which moved the *evidence*, not just the prose:
    tolerance.
 
 The sweep therefore grew from 48 to **84 cells**, which is why the cell-count assertions in `validate.py`
-and the corresponding checks in `consistency_check.py` were updated, and why the gate now reports 36
-checks where the first submission reported 21: eight checks cover the four claims above, and seven
-more (C27-C33) hold the package's own specification to the artefact and the scripts it describes - 
+and the corresponding checks in `consistency_check.py` were updated, and why the gate now reports 37
+checks where the first submission reported 21: eight checks cover the four claims above, and eight
+more (C27-C34) hold the package's own specification to the artefact and the scripts it describes -
 the class of drift a file-hash table cannot see, because the values live in prose a reader executes.
+
+**Second correction to the same apparatus (R286).** C27's first version compared the README's hash
+rows against the working tree, which the run itself rewrites one step earlier: `make_figures.py`
+redraws the three PNGs and `figures/manifest.json`, and `run.log` is written *after* the consistency
+step. So the command passed on a first run and failed on a second over the same copy, and it failed
+outright on a machine whose matplotlib is not the one this package was verified with. The corpus of
+C27 is now the run-invariant files only, the five rewritten files state `*regenerated*`, C34 keeps
+that set honest, and `check_audit.py` runs the documented command twice in its sandbox and fails
+loudly if the two runs disagree. The property this restores is stated where a verifier will read it:
+what the package promises is what a compliant run prints.
 
 ## Traceability: every manuscript number back to the artefact
 
@@ -191,17 +206,20 @@ The chain a number travels from the experiment to the manuscript is
 
 and it is checked rather than asserted. `consistency_check.py` walks that chain in both
 directions - it reads the committed artefact, the generated table, the figure manifest, the
-bibliography record store and the manuscript - and prints `CONSISTENCY 36/36`. It uses only
+bibliography record store and the manuscript - and prints `CONSISTENCY 37/37`. It uses only
 the standard library, so it runs in either tier; `reproduce.sh` runs it as its last step in
-both. What the 36 checks cover:
+both. What the 37 checks cover:
 
 - the manuscript's header carries the artefact's payload sha256, and that hash recomputes from the artefact body (C01-C02);
 - the 18 data rows of the manuscript's main table equal `results_table.md` byte for byte, and that file matches `figures/manifest.json` (C03-C04);
 - every headline number the manuscript quotes - the six interference gaps, the three context-length budgets, the filler control, the five position fractions, the distractor-type contrasts, the dense pooled-recall ladder, the BM25 recall, the cell count, the sign test, every Wilson interval in the table, and the fidelity block - is present **anchored to the sentence that makes the claim**, not merely as digits somewhere in the file (C05-C14). Anchoring matters here: the manuscript carries 115 arXiv identifiers, so a bare substring test is satisfied by unrelated digits, which is exactly the failure the audit below finds and eliminates;
 - the bibliography has exactly one section, its entry count equals the verified record store, and every entry is cited in the body - citation clusters such as `[18,19,20,21,22,23]` are counted as citing each of their members, the same resolution the repository's `refgate.py` applies (C15-C17);
 - the committed figures match the hashes in the manifest (C18);
-- **the package's own specification describes the package it ships (C27-C33)** - every file-hash
-  row in the tables above matches the file on disk (C27); no hash-like token appears in the
+- **the package's own specification describes the package it ships (C27-C34)** - every file-hash
+  row in the tables above matches the file on disk (C27, whose corpus is exactly the run-invariant
+  files: the five files the run rewrites carry `*regenerated*` instead, and C34 requires that
+  exclusion to name only files a package script really writes, so it cannot be used to retire a row
+  that has drifted); no hash-like token appears in the
   specification that is not a current hash of a committed file or an explicitly labelled
   superseded one (C28, which is the check that sees prose, not tables); the expected-output block
   states the artefact's payload (C29); the reproduction-status paragraph quotes the committed
@@ -217,7 +235,7 @@ outruns the artefact fails the same one-command reproduction that produces the a
 
 ### Does every check earn its place? (`check_audit.py`)
 
-A suite that reports `36/36` is evidence about the suite only if each check can be shown to
+A suite that reports `37/37` is evidence about the suite only if each check can be shown to
 reject something; a check that never fires inflates the denominator without constraining the
 artefact. `check_audit.py` tests that directly. For each check it applies one targeted
 corruption to a throwaway copy of the package, runs the gate there, and records which checks
@@ -226,17 +244,39 @@ silently ineffective corruption cannot be mistaken for a check that failed to fi
 
 ```
 python3 check_audit.py
-AUDIT CLEAN - every one of the 36 checks rejects something
+AUDIT CLEAN - every one of the 37 checks rejects something
 ```
 
-Current result: **36/36 checks load-bearing, 37/37 corruptions caught, no decoration, and 29
-checks have a corruption that only they catch.** Eight corruptions trip more than one check, and
+Current result: **37/37 checks load-bearing, 38/38 corruptions caught, no decoration, and 30
+checks have a corruption that only they catch.** Seven corruptions trip more than one check, and
 that overlap is expected rather than hidden, in three groups: C02 recomputes the artefact's
 embedded payload hash, so any edit to the artefact body necessarily trips it beside whichever
-check reads the mutated field; C27, C28 and C30 re-hash or re-read files the documentation names,
-so they fire on any corruption that changes such a file (that is what they are for - it is also
-why the audit had to be given a faithful copy of the package rather than a partial one); and
-C03/C07 and C16/C17 are two views of one row and of one bibliography respectively.
+check reads the mutated field (C02/C10/C12 share this); C27, C28 and C30 re-hash or re-read files
+the documentation names, so they fire on any corruption that changes such a file (that is what
+they are for - it is also why the audit had to be given a faithful copy of the package rather than
+a partial one); and C03/C07 and C16/C17 are two views of one row and of one bibliography
+respectively.
+
+**Two properties the corruption matrix cannot express, run as separate cases.** A corruption is a
+statement about one value in one file; the two failures this apparatus actually suffered were
+statements about the *run*. Both are now cases in the same script, reported beside the matrix:
+
+```
+R1  ok  the documented command is re-entrant: same verdict on run 1 and run 2
+        RESULT: PASS | wall-clock 0 s | RESULT: PASS | wall-clock 1 s
+R2  ok  a consistent figure redraw (non-pinned matplotlib) still passes
+        CONSISTENCY 37/37
+```
+
+**R1** executes `reproduce.sh` twice in the sandbox copy and requires the same verdict both times
+- the command rewrites the figures, `figures/manifest.json` and `run.log`, and a documentation
+check that reads the working tree would pass on a first run and fail on the second over the same
+copy, which is exactly what the first revision of C27 did. **R2** emulates a machine whose
+matplotlib is not the pinned build by changing a figure's bytes (inserting a real `tEXt` chunk, so
+the file remains a valid image) and updating that figure's manifest entry exactly as
+`make_figures.py` would: a consistent redraw must pass, because figure bytes are
+interpreter-dependent by construction, while an *inconsistent* redraw must still fail C18 - which
+is what the C18 corruption checks.
 
 The audit is not decoration itself - it changed the gate. Its first run found that the four
 per-rung recall tests (k=1,2,4,8) could not be made to fire independently: the exact
@@ -277,19 +317,30 @@ it to the manuscript-to-artefact chain.
 | `mini_port.py` | `1d8eee73ba250b60` | dependency-free transformer port (SmolLM2-135M) |
 | `smollm_port.py` | `7309967e201e8acc` | reader wrapper: KV cache, greedy and sampled decoding |
 | `validate.py` | `e0796a29163cba72` | 38 assertions over the artefact; prints `VALIDATE 38/38` |
-| `consistency_check.py` | `e310bbf7470ad4ac` | 36 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 36/36` |
-| `check_audit.py` | `e605ecf5c5260fab` | reversion audit of the gate: one targeted corruption per check, reporting which checks are load-bearing |
+| `consistency_check.py` | `aa9e0b56ada63ca6` | 37 checks tracing every number in `manuscript.md` back to the artefact; prints `CONSISTENCY 37/37` |
+| `check_audit.py` | `34cf4c1a41df5caf` | reversion audit of the gate: one targeted corruption per check, reporting which checks are load-bearing |
 | `make_figures.py` | `13c069d40b62c8f6` | regenerates the three figures and the result table from the artefact |
 | `canonical_results.json` | `69960d951cfaa223` | the artefact: sweep, derivations, fidelity block, embedded payload sha256 |
 | `fidelity_corpus.json` | `01e1d83b232acc68` | frozen text snapshot the fidelity gate reads (see below) |
 | `results_table.md` | `cdf83e5e7730c522` | the result table embedded in the manuscript |
-| `figures/manifest.json` | `3dd284133ce36004` | figure/table sha256 values and every number plotted in them |
-| `run.log` | `d40576bd7d554e9c` | the log of the most recent run of this script (a heavy-tier run) |
+| `figures/manifest.json` | *regenerated* | figure/table sha256 values and every number plotted in them |
+| `run.log` | *regenerated* | the log of the most recent run of this script, written by that run |
 | `manuscript.md` | - | the manuscript; every number in it is read from `canonical_results.json` |
 | `reference-check.md` | - | citation authenticity and coverage report (115 entries) |
 | `refs_tool.py` | `bd4eadc8ab5af4d0` | bibliography builder: `harvest` (arXiv + Crossref search) and `verify` (re-fetch by identifier) |
 | `refs_selected.json` | `1629a255f263f98b` | the curated selection (115 entries) with a stated difference for each |
 | `references.json` | `636f838ee3980af0` | the verified record store; `reference-check.md` is generated from it |
+
+**`*regenerated*` means the run rewrites the file, so a static hash row cannot hold.** Five files are in
+that class: the three figures, `figures/manifest.json` and `run.log`. The figures are drawn by whichever
+matplotlib the verifying machine has, and their PNG bytes differ between builds, so the package does not assert
+what a run will print for them; `run.log` is by definition the log of the run that just happened, so a hash of it
+is stale the moment the command it documents is executed. What replaces the hash row is a local, self-verifying
+pair: the committed `figures/*.png` are pinned by the committed `figures/manifest.json`, and check C18 re-verifies
+that pairing (figures against the manifest **as it stands in the tree you have**) on every run. The remaining rows
+carry hashes and are asserted against the files on disk by **C27**, whose corpus is therefore exactly the set of
+files a run does not rewrite; **C34** closes the loophole that would otherwise open here, by requiring every
+hash-less row to name a file that a script in this package actually writes.
 
 **Files the heavy tier writes but this package does not commit.** Running the heavy tier
 leaves three further JSON files in this directory - `fidelity_results.json` (the gate's
@@ -309,9 +360,9 @@ they cannot drift from the numbers the validator checks.
 
 | artifact | sha256 (16 hex) | what it shows |
 |---|---|---|
-| `figures/fig1_crossover.png` | `ca55c1097815ebbc` | the core outcome: dense-retrieval-minus-reader gap against interference, with the one point where retrieval leads (+0.062 at I=0.00) and the saturating deficit that follows |
-| `figures/fig2_distractor_type.png` | `ba31bee57e483c81` | the distractor-type contrast before and after matching retrieval success: a two-nat apparent effect at fixed density, and a -0.155-nat residual once the gold record is inside the k=4 set for both families |
-| `figures/fig3_position.png` | `274cc7deb93251fd` | the U-shape of evidence position, with the middle of the context the worst point and the sampled exact-match rate beside it |
+| `figures/fig1_crossover.png` | *regenerated* | the core outcome: dense-retrieval-minus-reader gap against interference, with the one point where retrieval leads (+0.062 at I=0.00) and the saturating deficit that follows |
+| `figures/fig2_distractor_type.png` | *regenerated* | the distractor-type contrast before and after matching retrieval success: a two-nat apparent effect at fixed density, and a -0.155-nat residual once the gold record is inside the k=4 set for both families |
+| `figures/fig3_position.png` | *regenerated* | the U-shape of evidence position, with the middle of the context the worst point and the sampled exact-match rate beside it |
 | `results_table.md` | `cdf83e5e7730c522` | the 18-row main grid: length x interference, both arms, gap, and the recall of both retrievers |
 
 ## Why the fidelity corpus is frozen
