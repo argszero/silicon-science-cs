@@ -1,0 +1,6 @@
+# Heavy-tier intermediates: written by the pipeline, documented in README.md as *not*
+# part of the committed set (every number they carry is embedded in canonical_results.json).
+fidelity_results.json
+grid6_results.json
+grid6_analysis.json
+__pycache__/

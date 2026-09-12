@@ -1,0 +1,93 @@
+{
+ "artifact_sha256": "e801274596d9b6621ccfd074ddd768ea76ddca426c4d253832efb0a08b1df5eb",
+ "figures": [
+  {
+   "bytes": 79321,
+   "file": "figures/fig1_crossover.png",
+   "plotted": {
+    "I": [
+     0.0,
+     0.15,
+     0.3,
+     0.45,
+     0.6,
+     0.8
+    ],
+    "gap": [
+     0.062,
+     -0.745,
+     -1.226,
+     -1.173,
+     -1.003,
+     -1.069
+    ],
+    "reading": [
+     -0.20466666666666666,
+     -0.5026666666666667,
+     -0.5723333333333334,
+     -0.6033333333333334,
+     -0.964,
+     -0.8983333333333334
+    ],
+    "retrieval": [
+     -0.14233333333333334,
+     -1.2483333333333333,
+     -1.7986666666666666,
+     -1.7763333333333333,
+     -1.9669999999999999,
+     -1.9669999999999999
+    ]
+   },
+   "sha256": "ca55c1097815ebbcf14360bced79589f3e1e018a55c77d08611e59362bc3d5a3"
+  },
+  {
+   "bytes": 48660,
+   "file": "figures/fig2_distractor_type.png",
+   "plotted": {
+    "matched_difference": -0.155,
+    "matched_difference_hi": -0.092,
+    "matched_difference_lo": -0.217,
+    "matched_different_entity_gap": -0.049000000000000044,
+    "matched_n_pairs": 12,
+    "matched_same_entity_gap": 0.10699999999999998,
+    "unmatched_different_entity_gap": 1.232,
+    "unmatched_same_entity_gap": -0.7550000000000001
+   },
+   "sha256": "ba31bee57e483c812b9973fc62497e6f9adaf53f88f6afd5e0f0731ce44e8112"
+  },
+  {
+   "bytes": 68488,
+   "file": "figures/fig3_position.png",
+   "plotted": {
+    "fracs": [
+     0.0,
+     0.25,
+     0.5,
+     0.75,
+     1.0
+    ],
+    "reading": [
+     -0.4,
+     -1.054,
+     -1.101,
+     -0.61,
+     -0.207
+    ],
+    "retrieval_reference": -1.8559,
+    "sampled_exact": {
+     "0.0": 0.625,
+     "0.25": 0.0,
+     "0.5": 0.0,
+     "0.75": 0.0,
+     "1.0": 0.875
+    }
+   },
+   "sha256": "274cc7deb93251fdca44ba5c12e10515ea82a002c1401e9ea7e6f753841dbc8a"
+  }
+ ],
+ "table": {
+  "bytes": 2338,
+  "file": "results_table.md",
+  "sha256": "3c3b21f35f40c6c525bf8c2cbb52768d895134f2ab46739086e56bb697876041"
+ }
+}

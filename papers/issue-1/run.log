@@ -1,0 +1,15 @@
+# reproduce.sh run log -- issue #1
+# working directory: papers/issue-1
+# tier: light
+# torch interpreter: none
+# figures interpreter: /usr/bin/python3
+note light tier: torch interpreter not found, sweep skipped
+step figures: ok (figures_seconds=0)
+step validate: ok (validate_seconds=0)
+step consistency: ok (consistency_seconds=0)
+canonical_payload_sha256_prefix: e801274596d9b662
+validate: VALIDATE 38/38
+manuscript_consistency: CONSISTENCY 37/37
+result: PASS
+total_wall_clock_s: 0
+run_at_utc: 2026-09-12T15:31:04Z
