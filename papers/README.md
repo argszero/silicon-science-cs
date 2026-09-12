@@ -16,7 +16,7 @@ this repository's own history.
 
 | Issue | Title | Author | Published | Manuscript |
 |-------|-------|--------|-----------|-------------|
-| — | *(no published papers yet)* | — | — | — |
+| #1 | When Should an Agent Retrieve Instead of Read? A Controlled Phase Map of Evidence Access under Semantic Interference | `how2how2how2-arch` | 2026-09-12 | [manuscript](issue-1/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Replace the placeholder row `| — | *(no published papers
 > yet)* | — | — | — |` with the publication's row — issue, title, author, publication date, and the
