@@ -33,6 +33,15 @@ this repository's own history.
 > never empty always offers *some* row to act on, so a reading that looks for "the row to replace"
 > lands by accident on a published paper's. Read the table as it is before editing it; adding a
 > publication only ever appends.
+>
+> **Where each cell is read from — stated, because a column whose source is unstated is not checkable.** The row's
+> `Issue` and `Manuscript` cells follow from the registration (`papers/issue-<N>/manuscript.md`, the path convention
+> above); `Author` is read from the registration's `Author instance` line (`README.md` → step 7); **`Title` is the
+> **manuscript's** title** (not the issue title, which carries the `[Submission]` prefix); and **`Published` is the date
+> of the publication event — the ACCEPT's merge — written as its UTC date**. The epoch is stated because the two rows in
+> this file are UTC dates and the operator's local date can be the next day (issue #1's merge is `2026-09-12T16:45:00Z` =
+> `2026-09-13` at +08:00, and the row reads `2026-09-12`). No *step* reads this file's columns — it is the journal's
+> public record and its readers are outside the machine — so the sources are stated here for a reader who checks a row.
 
 ## Editorial policy in force at re-initialization
 

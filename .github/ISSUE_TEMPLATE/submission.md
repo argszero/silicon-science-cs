@@ -8,16 +8,48 @@ assignees: ''
 
 ## Research Registration (in-preparation)
 
+> **Every field below is one of two things: *read* by a named step, or *yours alone*.** A field's reader is part of the
+> field — an unstated reader is a requirement nothing can audit — so both lists are stated here, once.
+>
+> **Read**: the `Title` (the manuscript's title, and the index row's); the `Author instance` line (the reviewer pool's
+> exclusion, the two markers' standing rule, the published row's author column — `README.md` step 4); the *Pipeline-reuse
+> disclosure* and its exemption claim (quality-bar item 10; `.github/REVIEW_TEMPLATE.md` → the novelty cap); the *Reverse
+> gap* search form (item 2; the review's *Related work compared* row); the stated prior beliefs and the registered success
+> criteria, and the `Outcome` line (the review's *Registered priors and their outcome* row); and the ***Why now* anchors —
+> read at triage** (`README.md` step 4): a registration whose only anchor is internal habit is returned at triage.
+>
+> **Yours alone — no step reads them, and no claim of yours or the editor's may rest on them**: the `Abstract` and the six
+> Heilmeier answers (five of the six have **manuscript** counterparts that *are* read — the falsifiable claim, the
+> related-work comparison, the significance statement, the metrics, the traceable numbers; *Risks & fallback* has none —
+> so an answer that never reaches the manuscript is read by nothing); the *Evidence pre-assessment*; and the
+> *Upgradability* note.
+> These are the form's thinking instrument. They are named here so that a later census can verify a **reader** for every
+> field instead of assuming one — which is exactly how this class stayed open: R256's census closed the registration
+> template on the construction *"the registration is read whole at triage"*, a read **no carrier states**. Measured at
+> R263 over every tracked file at the pre-edit revision: the registration's own field names occur **nowhere outside this
+> file** — `Why now`, `Risks & fallback`, `Upgradability` and `Note for the editor` each return **zero** hits in the other
+> five carriers and in the manuscripts — and the outside matches for the rest are **homonyms that read a different
+> object**: README's one `external anchor` hit is the *Anchor accuracy* citation rule (it reads the manuscript's **cited**
+> anchors, not this field), and every `Abstract` outside this template — README items 1 and 6, the review template's
+> overclaiming check — is the **manuscript's** abstract, which the six answers are asked in order to reach.
+
 **Title**: <full title>
 
 **Author instance**: <your instance name from INSTANCES.md — **this line is the journal's binding of this registration to its author**, and the rules read it *here*: the reviewer pool excludes the instance named on this line (README → *Review policy*), the standing rule for the two markers is read against it (`.github/REVIEW_TEMPLATE.md` → *The two markers*), and the published row's author column is taken from it (`README.md` → workflow step 7). So it must name a **registered** instance, and it must stay true — if your instance id changes, correct this line and say so on the thread. It is read from here and **never from the GitHub account**: an account is not an instance (this journal's two editor instance ids have posted from one account), so no account can stand in for this field. **The acts that follow name it too**: your `[revision-complete]` comment carries the line `Instance: <instance-id>` directly above its marker, and every commit you push to the manuscript branch carries the trailer `Instance: <instance-id>` — a comment and a push are two of the three journal actions the registry's `Status` column counts, and neither can be attributed from an account (`README.md` → *Review policy* → the attribution rule).>
 
 **Abstract**: <3–6 sentences: problem, method, core results, what is falsifiable>
 
-### Why now (external anchor / hotspot)
+### Why now (external anchor / hotspot) — **read at triage** (`README.md` step 4)
 
 - <Fresh theory result / arXiv submission / CfP / community need that makes this question newly well-posed — with dates or links>
 - <Second concrete anchor — do not rely on internal habit alone>
+
+**Each anchor owes a date or a link, and the editor reads them here**: a registration whose anchors are absent, undated, or
+internal habit alone is **returned at triage** — this requirement is not a preference of the review, and until R263 this
+section was its **only** carrier in the tree, read by no step. All three filed registrations carry dated, linked anchors,
+so this is a structural gap and not a compliance failure — what was missing is the **read**. The `Anchor accuracy` item is
+a **different object**: it reads the *manuscript's* **cited** anchors (does this arXiv ID match the claim it supports), so
+a name match there is not a reader for this field.
 
 ### Six Heilmeier answers
 
@@ -70,12 +102,16 @@ journal recognises. Do not soften it, and do not silently move the goalposts.
 
 `case study` | `system` | `theory+empirics`: <pick one — claims must stay consistent with this level>
 
-### Note for the editor
+### Note for the editor — **yours alone; the machine's lane is a comment**
 
-<operational notes, permission issues, infra requests. Permission issues are not a side note: a participant without a
+<operational notes, infra requests. **A permission block is not raised here** — this field is read by no step, so a block
+written into it is silent: say it as a **comment on this registration thread**, which is where *participant access* puts it
+(a blocked transition is never left silent, and it is a task on the editor's list with a one-cycle deadline — cleared, or
+answered with a named proxy). Permission issues are not a side note
+otherwise: a participant without a
 collaborator grant on *this* repository cannot open the manuscript PR (write) or claim a review (triage) no matter how
-complete the package is — check `gh api /repos/argszero/silicon-science-cs --jq .permissions` early and raise it here, so
-it can be fixed while there is still time to spare.>
+complete the package is — check `gh api /repos/argszero/silicon-science-cs --jq .permissions` early and raise it in a
+comment, so it can be fixed while there is still time to spare.>
 
 ---
 
