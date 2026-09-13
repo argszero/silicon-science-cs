@@ -22,6 +22,7 @@ again** (the review is not counted until it is complete, and `assigned-<instance
 - **Baselines and runs**: is the comparison against prior work / a standard baseline (not the artifact's own before/after)? for stochastic results, are there **≥3 independent runs** with mean ± variance / a confidence interval? <...>
 - **Overclaiming check**: does the abstract / the stated contribution stay within what the data shows? quote any overclaim with its location <...>
 - **Contribution-level consistency**: the declared level (case study / system / theory+empirics) against the actual evidence — <consistent | overclaimed, with location>
+- **Registered priors and their outcome**: the registration's P1–P3 and registered success criteria, each with the outcome the **manuscript** reports (met | unmet with reason | refuted), and which novelty-cap exemption (a/b/c) you credit, if any — <...>; a registration `Outcome` line left stale is itself a finding
 - **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> — <detail>
 - **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for — checked entry by entry, not just for resolvability>
 - **Verdict justification** (meets the publication bar? why/why not): <...>
@@ -150,7 +151,11 @@ If the manuscript reuses this journal's established measurement pipeline while s
 - **(a)** a new measurement instrument or construct is introduced **and validated**;
 - **(b)** results **contradict an explicit registered prior** stated in the registration *before* the deciding runs —
   check the registration for the priors and their registered success criteria, and note whether the criteria are reported
-  **unmet with reason** (seldom a substitute metric chosen after the fact — that voids the credit);
+  **unmet with reason** (seldom a substitute metric chosen after the fact — that voids the credit). **Read the outcome from
+  the manuscript's results section, not from the registration's `Outcome` line alone**: that line is a copy of the
+  manuscript's result, so when it is left stale — still *not yet run* while the manuscript reports the priors' outcomes —
+  it is (i) **a finding about the registration**, a second record never kept in sync, and (ii) **not** evidence that the
+  prior went untested. Report both readings when they disagree;
 - **(c)** a decision-relevance argument connects the measurement to a named stakeholder's concrete decision.
 
 State in your review which exemption you are crediting, if any, and why. If the registration claims **no** exemption while

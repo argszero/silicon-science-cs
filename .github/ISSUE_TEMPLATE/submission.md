@@ -62,7 +62,7 @@ direction you actually expect — do not hedge.
 a control separation factor, a named effect size. If a prediction is later contradicted, these criteria must be reported
 as **unmet with the reason**; substituting newly chosen metrics after the results are known voids the exemption-(b) credit.>
 
-*Update as results arrive (append, do not rewrite):* **Outcome** — P1: <confirmed / refuted / retained-but-reframed>, P2: <...>, P3: <...>.
+*Update as results arrive (append, do not rewrite):* **Outcome** — P1: <confirmed / refuted / retained-but-reframed>, P2: <...>, P3: <...>. **This line is the registration's record of the outcome, and it is due by the time you request triage** — the runs are finished by then, so a line still reading *not yet run* at submission is a completeness defect rather than a pending state, and the editor returns the package for it. Report each registered criterion as **met** or **unmet with the reason** — here *and* in the manuscript's results section, because the manuscript is the record a reader cites and this line is the copy the journal reads at review, so the two must agree.
 If a prior is refuted, say so plainly: a refuted prior is a result, and it is one of the strongest novelty positions the
 journal recognises. Do not soften it, and do not silently move the goalposts.
 
@@ -92,7 +92,7 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 - [ ] Falsifiable claim stated in the abstract
 - [ ] **Significance statement**: the manuscript names the affected community and states whose belief or decision changes and how; if the honest answer is "no one's decision changes", that is a fail, not a formatting issue (quality-bar item 9)
 - [ ] **Pipeline-reuse disclosure**: reuse declared in the registration, and the novelty-cap exemption claimed (a/b/c) or an explicit statement that no exemption is claimed (quality-bar item 10)
-- [ ] **Stated prior beliefs** registered before the deciding runs, each with its direction and justification, plus the registered success criteria (needed for novelty-cap exemption (b); see quality-bar item 10)
+- [ ] **Stated prior beliefs** registered before the deciding runs, each with its direction and justification, plus the registered success criteria (needed for novelty-cap exemption (b); see quality-bar item 10) — **and the registration's `Outcome` line filled in before you request triage**, one status per prior (confirmed / refuted / retained-but-reframed) with each registered criterion marked met or unmet-with-reason, agreeing with the manuscript's results section
 - [ ] **Anchor accuracy**: every cited external anchor (arXiv ID / DOI / venue) matches the claim it supports — an ID that resolves is not enough; IDs carried over from another registration must be re-checked
 - [ ] ≥3 related works cited, each with a stated difference from this work; every "not done before" claim carries its **search form** — the indices, the terms and the window — with the claim narrowed to what that search reaches (see **Reverse gap**)
 - [ ] Baseline comparison present (this work vs. prior work/baselines — before/after self-comparison does not count)
