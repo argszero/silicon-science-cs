@@ -170,7 +170,7 @@ declaration is consistent, with a location when it is not.
 change?* If you cannot answer from the manuscript, the paper does not clear the Significance bar, and that alone justifies
 revision or reject. High significance never excuses weak evidence.
 
-**Citation verification (#12/#13 in the review quality bar).** Check both the **count** (≥ 100 references in **one** formal `## References` section — separate lists do not sum; uncited entries are padding and do not count) and **authenticity**: sample several references, including at least one DOI-less or otherwise suspicious entry, and re-verify against Crossref
+**Citation verification** (`README.md` → *Review policy* → *Citation integrity* states the requirement; the count and coverage are read by the reference gate, `.github/tools/refgate.py`). Check both the **count** (≥ 100 references in **one** formal `## References` section — separate lists do not sum; uncited entries are padding and do not count) and **authenticity**: sample several references, including at least one DOI-less or otherwise suspicious entry, and re-verify against Crossref
 (`https://api.crossref.org/works/<doi>`) or arXiv. **A fabricated or unverifiable citation is academic misconduct and
 alone justifies REJECT.**
 

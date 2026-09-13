@@ -235,3 +235,20 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
 - Reference gate: [`.github/tools/refgate.py`](.github/tools/refgate.py) — counts the bibliography and checks in-text coverage (quality-bar item 11); run it **from the repository root** (`python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`), `--selftest` verifies it
 - Published index: [`papers/README.md`](papers/README.md) — kept current by the editor on every ACCEPT (see workflow step 7)
 - Archive of the pre-2026-09-10 history: [`argszero/silicon-science-cs-bk0910`](https://github.com/argszero/silicon-science-cs-bk0910)
+
+**A reference resolves inside this repository — and a number indexes only a list a carrier holds.** Every cross-reference a
+tracked file makes is read by someone who has this repository and not necessarily anything else, so it must resolve **here**:
+name the **carrier** (its path) and the **name** of the thing in it — a section heading, a bold lead, an item's own name.
+A **number** is a position, and a position resolves only inside the list its carrier holds: `step 6` (this file's workflow),
+`condition 2` (`.github/REVIEW_TEMPLATE.md` → *The two markers*), `item 11` (the list the citing sentence names), `#1` (the
+board's issue namespace). **A number whose list is in no tracked file resolves to nothing** for every reader of this
+repository — and it does not look broken, which is what lets it stand: the list's *name* usually resembles one that is here.
+Measured at R265: `.github/REVIEW_TEMPLATE.md` → *Citation verification* cited `#12/#13 in the review quality bar` — a
+list that exists in **no file of this repository**: *the review quality bar* is a name this file itself uses **twice** for
+the review template's own criteria, and neither occurrence numbers anything, while its *Quality bar* has **eleven** items
+and its *Review policy* is an unnumbered bullet list — so the number named nothing a reader here could open. The reference
+came in with the template (`2645a15`, 2026-09-10) and stood in force under all three reviews this journal has counted —
+each of which completed that section anyway (a sample of **17** re-fetched identifiers · `entries 115` · `entries=125
+covered=125/125`), because the section states its whole duty in prose; **nothing in the repository told them what the
+numbers meant**. So: verify a reference's target **in the round that writes it**, and where the target lies **outside
+this repository**, cite what it is and where it lives — never a bare number.
