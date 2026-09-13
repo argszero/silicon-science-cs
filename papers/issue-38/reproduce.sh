@@ -15,25 +15,28 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-# The pipeline needs numpy and matplotlib. The interpreter first on PATH is not
-# necessarily the one that has them, so probe for an interpreter that can actually run
-# the pipeline rather than assuming: an environment mismatch must be reported, not
-# silently substituted. $PY overrides the probe.
+# The pipeline needs numpy, scipy and matplotlib -- scipy computes the exact oracle every
+# reduction is measured against (alloc_model.py), so it is a hard dependency, not an extra.
+# The interpreter first on PATH is not necessarily the one that has them, so probe for an
+# interpreter that can actually run the pipeline rather than assuming: an environment
+# mismatch must be reported, not silently substituted. $PY overrides the probe. The probe
+# imports EVERY dependency, so a machine missing one gets the explicit RESULT: FAIL below
+# rather than an uncaught ModuleNotFoundError from inside the runner.
 pick_python() {
   for cand in ${PY:-} python3 /usr/bin/python3 /usr/local/bin/python3 python; do
     [ -n "$cand" ] || continue
-    if command -v "$cand" >/dev/null 2>&1 && "$cand" -c 'import numpy, matplotlib' >/dev/null 2>&1; then
+    if command -v "$cand" >/dev/null 2>&1 && "$cand" -c 'import numpy, scipy, matplotlib' >/dev/null 2>&1; then
       echo "$cand"; return 0
     fi
   done
   return 1
 }
 if ! PY="$(pick_python)"; then
-  echo "RESULT: FAIL - no interpreter on this machine has both numpy and matplotlib."
-  echo "  install them (e.g. pip install numpy matplotlib) or set PY=<interpreter>."
+  echo "RESULT: FAIL - no interpreter on this machine has all of numpy, scipy and matplotlib."
+  echo "  install them (e.g. pip install numpy scipy matplotlib) or set PY=<interpreter>."
   exit 1
 fi
-echo "== issue #38 reproduction (interpreter: $($PY -c 'import sys; print(sys.executable)'), $($PY -c 'import matplotlib; print("matplotlib " + matplotlib.__version__)'))"
+echo "== issue #38 reproduction (interpreter: $($PY -c 'import sys; print(sys.executable)'), $($PY -c 'import numpy, scipy, matplotlib; print("numpy " + numpy.__version__ + ", scipy " + scipy.__version__ + ", matplotlib " + matplotlib.__version__)'))"
 echo "== rewrites: canonical_results.json, run.log, figures/*.png, figures/manifest.json"
 
 start=$(date +%s)

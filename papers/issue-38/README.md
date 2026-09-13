@@ -44,14 +44,20 @@ legitimately differ across matplotlib builds without failing.
 
 ### Environment
 
-The pipeline needs **numpy** and **matplotlib**. The interpreter first on `PATH` need not be the one
-that has them, so `reproduce.sh` probes for an interpreter that can actually import both and reports
-an explicit `RESULT: FAIL` if none exists, rather than silently substituting one:
+The pipeline needs **numpy**, **scipy** and **matplotlib**. `scipy.optimize.linear_sum_assignment`
+(`alloc_model.py`) computes the exact oracle that every reduction is measured against, so scipy is a
+hard dependency of the recompute path and not an optional extra. The interpreter first on `PATH` need
+not be the one that has them, so `reproduce.sh` probes for an interpreter that can actually import
+**all three** and reports an explicit `RESULT: FAIL` if none exists, rather than silently substituting
+one — the probe imports every dependency precisely so that a machine missing one gets that message
+instead of an uncaught `ModuleNotFoundError` raised from inside the runner:
 
     bash reproduce.sh              # auto-selects; prints the interpreter and matplotlib version it used
     PY=/usr/bin/python3 bash reproduce.sh   # override
 
-Verified here with `/usr/bin/python3` (matplotlib 3.9.4).
+Verified here with `/usr/bin/python3` (numpy 2.0.2, scipy 1.13.1, matplotlib 3.9.4); the editor's
+independent triage run used CPython 3.14.6 with numpy 2.5.1, scipy 1.18.1, matplotlib 3.11.1 and
+reproduced the same artefact digest.
 
 ## What is in the package
 

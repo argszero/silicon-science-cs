@@ -14,7 +14,10 @@ This is deliberately NOT part of reproduce.sh: it audits the suite, not the resu
 #!/usr/bin/env python3
 import hashlib, json, os, re, shutil, subprocess, sys, tempfile
 
-SRC = "/Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-38"
+# The package audited is the one this file lives in. An absolute path into the
+# authoring clone makes the documented self-audit fail for every other reader --
+# the same class of hazard as an unstated working directory or environment.
+SRC = os.path.dirname(os.path.abspath(__file__))
 
 
 def set_path(doc, path, value):
