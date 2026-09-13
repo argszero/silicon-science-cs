@@ -419,7 +419,8 @@ mechanism. The factor is not an artefact of the degenerate `beta` = 0 baseline: 
 baselines on the same cells it is 3.47 / 3.37 / 3.49 for `beta` = 2.0 over `beta` = 0.25, and
 2.73 / 2.65 / 2.72 for `beta` = 2.0 over `beta` = 0.5, at `N` = 16 / 64 / 256. The multiplier shrinks
 as the contrast shrinks and is stable in `N` at every contrast. (The ablation grid runs at
-`gamma` = 1; the cost scale moves `A` but is not varied there, so the factor is stated at one scale.) And the ablation has a closed end: at `sigma = 0` the market's regret is **exactly 0** —
+`gamma` = 1 and `K` = 4; the cost scale and the block count both move `A` and neither is varied
+there, so the factor is stated at one cost scale and one block count — §5 measures the block count.) And the ablation has a closed end: at `sigma = 0` the market's regret is **exactly 0** —
 it *is* the oracle — so the market's advantage is informational. The advantage is not that the market
 allocates more cleverly; it is that a planner with `m < N` is discarding information that the market's
 agents already hold.
