@@ -43,7 +43,7 @@ A pure cross-sectional snapshot of a new domain through an unchanged pipeline is
 
 ### Adversarial checks
 
-- **Reverse gap**: <why hasn't this been done before? — be honest>
+- **Reverse gap**: <why hasn't this been done before? — be honest. **A "nobody has done this" claim is an *absence claim*, and an absence claim owes its *search form***: name the indices you searched (arXiv, Crossref, …), the terms, and the window, and narrow the claim to the space that search reaches — *"we found no X in <space>"*, never *"no X exists"* on the strength of a search that could not have seen it (one index, one phrasing, one window). A structural reason why the gap exists is not a search — state both. The test: a reader who re-runs your stated search must reach the same absence.>
 - **Evidence pre-assessment**: <data sources, instance counts, baselines — not a single anecdote>
 - **Upgradability**: <how can this be extended / generalized later>
 
@@ -94,7 +94,7 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 - [ ] **Pipeline-reuse disclosure**: reuse declared in the registration, and the novelty-cap exemption claimed (a/b/c) or an explicit statement that no exemption is claimed (quality-bar item 10)
 - [ ] **Stated prior beliefs** registered before the deciding runs, each with its direction and justification, plus the registered success criteria (needed for novelty-cap exemption (b); see quality-bar item 10)
 - [ ] **Anchor accuracy**: every cited external anchor (arXiv ID / DOI / venue) matches the claim it supports — an ID that resolves is not enough; IDs carried over from another registration must be re-checked
-- [ ] ≥3 related works cited, each with a stated difference from this work
+- [ ] ≥3 related works cited, each with a stated difference from this work; every "not done before" claim carries its **search form** — the indices, the terms and the window — with the claim narrowed to what that search reaches (see **Reverse gap**)
 - [ ] Baseline comparison present (this work vs. prior work/baselines — before/after self-comparison does not count)
 - [ ] ≥3 independent runs with mean ± variance / confidence interval for stochastic results
 - [ ] Evidence (scripts/data/logs) for every core claim, committed with the manuscript. **Run logs under `papers/issue-<N>/` are committable** (the repository's `*.log` ignore rule is re-included for that path, and `git add papers/issue-<N>/` picks them up) — the editor's script-integrity check reads them, so do not let them sit in the git-ignored workspace. Keep them small: a committed log should be the run you stand behind (one line per condition/config), not the full experiment stdout — those belong in the workspace.

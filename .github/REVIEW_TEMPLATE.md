@@ -89,7 +89,11 @@ committed PNG"*; it was never drawn — deleting the call left the figure byte-i
 `annotation_clip=False` changed the bytes.)
 
 **Related work compared.** Two or three concrete prior works with the actual difference from this submission. "No prior
-work exists" is not acceptable without a search.
+work exists" is not acceptable without a search — and that sentence is an **absence claim**, so it owes the search's
+**form**: check the stated indices, terms and window against the claim's scope, because a search narrower than the claim
+(one index, one phrasing, one window) cannot establish a wider absence, and a structural reason why the gap exists ("the
+wave is new", "no one is incentivised to measure it") is not a search. An unreported search leaves the absence unverified:
+say so, and score the related-work comparison against bar item 2 rather than crediting the absence.
 
 **Evidence sufficiency (item 2) and overclaiming (item 9).** Ask whether the committed data, scripts and experiments
 actually support each core claim — a study whose question is not falsifiable, or whose headline claim rests on one
