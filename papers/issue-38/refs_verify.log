@@ -1,0 +1,16 @@
+    fetch failed: The read operation timed out
+  arxiv api batch 1: 0/15 resolved
+    fetch failed: HTTP Error 429: Unknown Error
+  arxiv api batch 2: 0/15 resolved
+    fetch failed: HTTP Error 429: Unknown Error
+  arxiv api batch 3: 0/15 resolved
+    fetch failed: HTTP Error 429: Too Many Requests
+  arxiv api batch 4: 0/15 resolved
+    fetch failed: HTTP Error 429: Unknown Error
+  arxiv api batch 5: 0/15 resolved
+    fetch failed: The read operation timed out
+  arxiv api batch 6: 0/15 resolved
+    fetch failed: HTTP Error 429: Unknown Error
+  arxiv api batch 7: 0/14 resolved
+transport: arxiv-api=0 arxiv-abs-page=104 crossref-api=21
+verified 125/125, entries=125, problems=0

@@ -1,0 +1,28 @@
+issue #38 - canonical runner (bounded-attention planner vs bidding market)
+config: {"K_blocks": 4, "block_count": {"Ks": [2, 4, 8], "Ns": [32, 128], "betas": [0.0, 2.0], "dists": ["uniform", "lognormal", "beta"], "gamma": 1.0, "m": 4}, "closure": {"Ns": [16, 32, 64, 128], "attention_Ns": [32, 128], "attention_alphas": [0.0625, 0.25], "attention_betas": [0.0, 0.5, 2.0], "attention_gamma": 1.0, "betas": [0.0, 0.5, 2.0], "gap_seeds": 5, "ms": [2, 8], "robust_Ks": [2, 8], "robust_Ns": [32, 128], "robust_betas": [0.0, 2.0], "robust_dists": ["lognormal", "beta"], "robust_gamma": 1.0, "seeds": 15, "test_gammas": [1.0, 2.0], "train_gammas": [0.25, 0.5]}, "law_grid": {"Ns": [16, 32, 64, 128, 256], "betas": [0.0, 0.25, 0.5, 1.0, 2.0], "gammas": [0.25, 1.0], "ms": [1, 2, 4, 8, 16], "seeds": 30}, "mechanism": {"Ns": [16, 32, 64, 128, 256], "betas": [0.0, 0.5, 2.0], "gammas": [0.25, 1.0], "seeds": 30, "sigmas": [0.05, 0.2, 0.5]}, "oos": {"Ns": [24, 48, 96, 192, 384], "betas": [0.1, 0.75, 1.5, 3.0], "ms": [3, 6, 12], "seeds": 20, "test_gammas": [0.5, 2.0]}, "p3": {"Ns": [16, 64, 256], "betas": [0.0, 0.25, 0.5, 1.0, 2.0], "gamma": 1.0, "m": 4, "seeds": 25, "sigmas": [0.0, 0.05, 0.2]}, "seed_scheme": {"law_grid_instance": "1000*s + N", "noise": "7*s + 3", "oos_instance": "5000*s + 7*N", "oos_noise": "13*s + 11"}}
+
+reductions: 270 cells | A (unbounded attention == optimum) = True | B (sigma=0 market == optimum) = True | failures = 0
+anchors: regrets non-negative = True | greedy<=random = 1.00 | planner monotone in m = True | planner exact at m=N = True | market monotone in sigma = True | market exact at sigma=0 = True
+law grid: 250 cells (240 usable) | A = sigma*/p median 2.734 range [1.612, 13.570] spread x8.42 | P1 REFUTED (33/50 series strictly increasing, 173/190 steps non-negative, 0 decreasing) | P2 UNMET (median rel err 20.8%)
+collapse fit (sigma* ~ p^b): b = 1.0358, R2 = 0.9176, n = 240
+oos: 240 train / 120 test cells
+   gamma_aware_proportional   median  18.4%  max   72.9%
+   trivial_proportional       median  27.0%  max   84.2%
+   fitted_power_law           median  28.5%  max   88.6%
+   constant_baseline          median  57.6%  max  805.9%
+   test refit exponent b = 0.9773 (drift -0.0585)
+closure: 48 train / 48 test / 16 robust cells | one constant c = 2.9818 -> median 23.0% on unseen
+block count: 36 cells, K in [2, 4, 8] | at beta=0 A is identical across K (max spread 0.0) | at beta=2 A = 3.877 / 2.447 / 1.748
+   H_gamma      median   14.2%  max    46.6%
+   H_const      median   23.0%  max    79.5%
+   H_beta       median   30.9%  max    94.0%
+   H_gap2       median   65.4%  max   411.7%
+   H_gap        median   98.4%  max  2546.3%
+   H_scale      median  153.9%  max   482.3%
+   attention-model test at gamma=1.0: budget cells n=24 (constant 2.507, median 15.3%) vs fraction cells n=12 never fitted (median 12.4%, median A 2.232)
+   (cross-cost-scale constant 2.982 gives 33.7% on the same fraction cells - the cost-scale effect, not an attention effect)
+mechanism: oracle mismatch rate by N = ['0.0594', '0.0000', '0.0000', '0.0000', '0.0000']
+   Hamming (gamma=1, beta=0.5, sigma=0.05) by N = ['0.138', '0.237', '0.339', '0.483', '0.662']
+p3 ablation: specialisation off (beta=0) boundary exists = True {'16': 0.41, '64': 0.57, '256': 0.739} | amplification (beta=2.0 / beta=0) = {'16': 3.93, '64': 4.12, '256': 3.94} | market exact at sigma=0 = True
+
+wrote canonical_results.json
