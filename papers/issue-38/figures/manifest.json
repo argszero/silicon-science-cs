@@ -1,6 +1,6 @@
 {
  "artefact": "canonical_results.json",
- "artefact_sha256": "48c55a78b8fe2abe9f133768ab864c51e4d5b5a4b714fcf780aa74fb2ed7c732",
+ "artefact_sha256": "ca311f90f5506d6f9c7e6af4f6ce76e6a79202802c20335f6824786c72488c50",
  "claims": {
   "fig1_collapse.png": "law_grid.cells + closure.one_constant.c",
   "fig2_scrambling.png": "mechanism.hamming + mechanism.wrong_block_rate",

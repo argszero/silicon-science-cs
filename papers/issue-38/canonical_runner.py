@@ -439,8 +439,13 @@ def sec_closure():
                          "median_rel_err_on_unseen": score(const * p_te, y_te)["median_rel_err"]},
         "A_by_gamma": {str(g): A_median([r for r in tr + te if r["gamma"] == g])
                        for g in sorted(set(c["train_gammas"] + c["test_gammas"]))},
-        "A_by_distribution": {d: A_median([r for r in robust if r["dist"] == d])
-                              for d in sorted({r["dist"] for r in robust})},
+        # "uniform" is the distribution of the training/test cells themselves; the
+        # other two are the held-out robustness cells. Reported together so the
+        # manuscript's distribution-robustness claim is read from the artefact.
+        "A_by_distribution": dict(
+            [("uniform", A_median(te))]
+            + [(d, A_median([r for r in robust if r["dist"] == d]))
+               for d in sorted({r["dist"] for r in robust})]),
         "exponent_by_gamma": {str(g): exponent([r for r in tr + te if r["gamma"] == g])
                               for g in sorted(set(c["train_gammas"] + c["test_gammas"]))},
         "exponent_by_distribution": {d: exponent([r for r in robust if r["dist"] == d])
