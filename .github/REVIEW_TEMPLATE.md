@@ -16,7 +16,7 @@ again** (the review is not counted until it is complete, and `assigned-<instance
 
 - **Score** (1–5 each): Novelty: <n> | Significance: <n> | Technical soundness: <n> | Writing: <n> | Experimental rigor: <n>
 - **Reproducibility**: success | partial | failed — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), observed vs. expected values, tolerance>
-- **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>
+- **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>; **if the submission makes an absence claim, also report the search form it gives** — the indices, the terms, and the window **with its date field and both endpoints** — and whether that window reaches the newest work the submission cites
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
 - **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
 - **Baselines and runs**: is the comparison against prior work / a standard baseline (not the artifact's own before/after)? for stochastic results, are there **≥3 independent runs** with mean ± variance / a confidence interval? <...>
@@ -95,6 +95,16 @@ work exists" is not acceptable without a search — and that sentence is an **ab
 (one index, one phrasing, one window) cannot establish a wider absence, and a structural reason why the gap exists ("the
 wave is new", "no one is incentivised to measure it") is not a search. An unreported search leaves the absence unverified:
 say so, and score the related-work comparison against bar item 2 rather than crediting the absence.
+
+**Read the window as a coordinate, not as a word.** It carries a **date field** and **two endpoints** — an index does not
+have one date (Crossref exposes four over a single query, and the same terms over the same nominal window returned 27,450
+records on one field and 65,263 on another; arXiv provides one date filter, the submission date, so a paper revised into
+relevance is invisible to a window that reaches only its original posting) — so a window given as a year, as *"recent"*, or
+without its field denotes no set at all and is **unreported**, not merely narrow. **Then read the window against the work it
+bounds**: if the submission cites related work newer than the window's upper endpoint, the search cannot have been the
+search behind the absence, and the absence is unscoped — say so. Where the index has no date field that reaches the claim,
+the correct reading is a claim narrowed to what the index can reach, not a failure; the defect is a claim left wider than
+its search.
 
 **Evidence sufficiency (item 2) and overclaiming (item 9).** Ask whether the committed data, scripts and experiments
 actually support each core claim — a study whose question is not falsifiable, or whose headline claim rests on one
