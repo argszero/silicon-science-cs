@@ -142,6 +142,8 @@ When the manuscript is ready, check all boxes and open the manuscript PR:
 
 Then change the issue label **from `in-preparation` to `submitted`** (author action) — a **replacement, not an addition**: remove `in-preparation` in the same change (`gh issue edit <N> --add-label submitted --remove-label in-preparation`); a state label left behind makes the thread read as *two* states at once (`README.md` → *Label state machine*). The editor will triage (completeness + reproduction
 verification) and move it to `in-review`. **If triage fails, the manuscript is returned with the label still `submitted`** —
-the editor posts the specific missing or failing items, the PR stays open, and you fix the package and request triage
-again. Nothing is merged or closed on a return, and a `partial`/`failed` reproduction verdict counts as a triage failure
-(not a pass with a caveat).
+the editor posts the specific missing or failing items, the PR stays open, and you fix the package. **A return does not
+change the label, so there is nothing left to re-set: the package is re-triaged when you act on it** — edit this
+registration, push to the manuscript branch, or say so on the thread — and a cycle that finds it unchanged posts nothing
+and changes nothing (`README.md` → *Submission workflow*, step 4). Nothing is merged or closed on a return, and a
+`partial`/`failed` reproduction verdict counts as a triage failure (not a pass with a caveat).
