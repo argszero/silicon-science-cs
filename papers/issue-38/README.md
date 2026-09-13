@@ -7,7 +7,7 @@ Contribution level: **theory + empirics**.
 
 This directory is the committed artefact set for issue #38: the allocation model, the canonical
 runner (the single source of every number in `manuscript.md`), the artefact it produces, the
-figure generator and the figures, a 92-check validation suite, a self-audit of that suite, and the
+figure generator and the figures, a 97-check validation suite, a self-audit of that suite, and the
 citation-authenticity report.
 
 ## One-command reproduction
@@ -17,15 +17,15 @@ citation-authenticity report.
 
 Expected output (tail):
 
-    VALIDATE 92/92
-    artefact sha256: ca311f90f5506d6f9c7e6af4f6ce76e6a79202802c20335f6824786c72488c50
+    VALIDATE 97/97
+    artefact sha256: 4935c409ecec4fda70f4b5f573a879eded4fd6055623e16ba4439c799fbb4807
     RESULT: PASS
 
 Full artefact digest:
 
-    ca311f90f5506d6f9c7e6af4f6ce76e6a79202802c20335f6824786c72488c50
+    4935c409ecec4fda70f4b5f573a879eded4fd6055623e16ba4439c799fbb4807
 
-**Tolerance: exact, not statistical.** `validate.py` must print `VALIDATE 92/92`; each of its 92
+**Tolerance: exact, not statistical.** `validate.py` must print `VALIDATE 97/97`; each of its 97
 conditions is attached to a specific headline number of the manuscript (the reductions, the
 behavioural anchors, the §4.1 series counts, the §4.2 out-of-sample table, the §4.3 closure table,
 the §4.4 attention-model test, the §4.5 mechanism rates, the §4.6 ablation). Every quantity is a
@@ -73,8 +73,8 @@ reproduced the same artefact digest.
 | `canonical_results.json` | the artefact (reductions, anchors, law grid, out-of-sample race, closure, mechanism, ablation) |
 | `run.log` | the runner's own summary of the configuration and the headline results |
 | `make_figures.py`, `figures/` | the three figures and their manifest |
-| `validate.py` | the 92-check validation suite (`VALIDATE 92/92`) |
-| `check_audit.py` | self-audit of `validate.py`: 26 mutations, all of which must be caught |
+| `validate.py` | the 97-check validation suite (`VALIDATE 97/97`) |
+| `check_audit.py` | self-audit of `validate.py`: 32 mutations, all of which must be caught |
 | `reproduce.sh` | the one command above |
 
 ## Headline results (all read out of `canonical_results.json`)
@@ -104,12 +104,27 @@ cells it has never seen. That comparison is the reason the manuscript claims a p
 
     python3 check_audit.py
 
-applies 26 mutations to throwaway copies of the package (artefact fields, the manifest, a deleted
-figure, the A-breakdowns, the exponent table, the ablation numbers, the mechanism series) and
-requires every one to be caught by at least one `[FAIL]` with a non-zero exit. Each mutator asserts
-that it actually changed the file, and the sandbox manifest digest is refreshed first so that the
-digest check cannot be the reason a semantic mutation is caught. Current result: **26/26 caught**,
-with a clean run at **92/92**.
+applies 32 mutations to throwaway copies of the package (artefact fields, the manifest, a deleted
+figure, the A-breakdowns, the exponent table, the ablation numbers, the mechanism series, the
+block-count block, and - batch 3 - the manuscript's own prose) and requires every one to be caught by
+at least one `[FAIL]` with a non-zero exit. Each mutator asserts that it actually changed the file,
+and the sandbox manifest digest is refreshed first so that the digest check cannot be the reason a
+semantic mutation is caught. Current result: **32/32 caught**, with a clean run at **97/97**.
+
+Batch 3 exists because of the defect this revision fixes. `validate.py` originally asserted
+properties of the *artefact* only: it compared the three distribution constants to each other, never
+to the numbers the manuscript prints. A value could therefore be correct in the artefact and wrong in
+the manuscript, which is what happened - the abstract carried `2.616` where the artefact's uniform
+median is `2.446` (2.616 is `exp(oos.gamma_exponent.intercept)`, the gamma-aware prefactor, a
+different quantity). The suite now reads `manuscript.md` and binds every number the abstract quotes,
+and the block-count and amplification numbers in the body, to the artefact field they come from;
+reverting the abstract to `2.616` fails `m1` and `m2`.
+
+## Revision note (round 1)
+
+The revision adds one artefact block (`closure.block_count`) and **changes nothing that was already
+there**: of the artefact's 178 pre-existing leaf fields, 0 changed and 0 were removed, against 33
+added. All pre-existing checks still pass; the digest changed only because the file gained a block.
 
 ## Citation report
 

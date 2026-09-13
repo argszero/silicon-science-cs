@@ -21,9 +21,12 @@ proportionality**:
 > is the planner's own per-task allocation error and `A` is a constant.
 
 `A` has median **2.734** over the law grid (n = 250 cells, 240 usable) and is **distribution-robust**
-(uniform 2.616 / lognormal 2.496 / Beta 2.423) and **block-count robust** (`K` in {2, 4, 8}).
-Fitted on one grid and scored on another, the proportional law reaches a **median relative error of
-23.0 %** on unseen cells (18.4 % with a weak cost-scale correction `gamma^(-0.09)`), and it beats
+(uniform 2.446 / lognormal 2.496 / Beta 2.423; 3.2 % on a grid that fixes the block count) but **not
+block-count invariant**: with the specialisation channel active it falls by a factor of 2.2 as `K`
+goes from 2 to 8, so the law is quoted at `K` = 4 and the dependence is measured in §5.
+Fitted on one grid and scored on another, the proportional law's single constant leaves a **median
+relative error of 23.0 %** on unseen cells (27.0 % on the disjoint out-of-sample grid, 18.4 % there
+with a weak cost-scale correction `gamma^(-0.15)` fitted on that same grid), and on that grid it beats
 both the trivial constant baseline (57.6 %) and a fitted power law (28.5 %). We rule out the two
 scales that intuition suggests — the cost matrix's own spread and the exact second-best assignment
 gap (median error 154 % and 98 % respectively) — and show the constant is **not** an artefact of how
@@ -39,7 +42,8 @@ mechanism is **scrambling**: a fixed noise scale reshuffles a growing share of t
 (Hamming fraction 0.138 to 0.662 over `N` = 16 to 256 at `sigma` = 0.05) while the cost of the
 reshuffle stays small, because the edges it moves are near-equal-cost. Practically, an orchestrator
 that can estimate its own per-task allocation error `p` can decide centre-versus-market by testing
-`sigma < 2.6 p`, instead of adopting either institution on principle.
+`sigma < 2.6 p`, that constant being the fitted law evaluated at the law grid's own cost scale, instead
+of adopting either institution on principle.
 
 ## 1. Introduction
 
@@ -76,8 +80,9 @@ Our contributions are:
 **C1 — A boundary law, out of sample.** The frontier between planner and market is a one-scalar
 proportionality, `sigma* ~= A * p`, where `p` is the planner's own per-task allocation error — the
 quantity an operator can actually estimate — rather than any property of the cost matrix. `A` has
-median 2.734 (law grid) and 2.982 by cross-scale fit (closure grid); the law holds at 23.0 % median
-relative error on cells it was never fitted on (§4.2, §4.3).
+median 2.734 (law grid) and 2.982 by cross-scale fit (closure grid); on cells it was never fitted on
+the law holds at 23.0 % median relative error on the closure grid and 27.0 % on the disjoint
+out-of-sample grid (§4.2, §4.3).
 
 **C2 — The two "physical" scales are the wrong scales.** The cost matrix's spread (`s`) and the exact
 second-best assignment gap (`Delta`, computed by forbidding each optimal edge in turn) both look like
@@ -272,9 +277,11 @@ scales (gamma = 0.5 interpolation, gamma = 2.0 extrapolation), unseen premiums
 The power law loses to the trivial proportional law out of sample, and its exponent refit on the
 held-out grid is **0.9773** — a drift of **-0.0585** from the pooled value. **The exponent is 1.**
 Everything the power law appeared to add was overfitting. What survives is a proportionality whose
-constant depends weakly on the cost scale, `A(gamma) ~= 2.6 * gamma^(-0.09)`; the same data fitted
-parameter-free reaches 27.0 % median error, i.e. the cost-scale correction is worth about 9
-percentage points and no more.
+constant depends weakly on the cost scale. Two held-out fits give it, and they are quoted separately
+because they are fitted on different grids: the gamma-aware fit that the 18.4 % row comes from is
+`A(gamma) ~= 2.62 * gamma^(-0.145)`, while fitting the closure medians over the same four scales gives
+`2.54 * gamma^(-0.092)`. The same data fitted parameter-free reaches 27.0 % median error, i.e. the
+cost-scale correction is worth about 9 percentage points and no more.
 
 ### 4.3 What the constant is — and what it is not
 
@@ -312,7 +319,11 @@ An 8x range of cost scale moves `A` by 18 %; the dependence is monotone but weak
 restricting to `p >= 0.05`, so it is not a small-`p` artefact. Across cost distributions standardised
 to the same mean and spread, `A` moves by less than 3 % (uniform 2.446, lognormal 2.496, Beta 2.423)
 and the fitted exponent stays near 1 (uniform 1.006 / 0.998 / 0.971 at gamma = 0.5 / 1 / 2;
-lognormal 0.933; Beta 0.868).
+lognormal 0.933; Beta 0.868). Those three numbers are not de-confounded: the uniform value is
+measured at `K` = 4 while the lognormal and Beta values are pooled over `K` in {2, 8}. Repeating the
+comparison on a grid where `K` is swept at a fixed distribution and a fixed cost scale gives
+2.457 / 2.501 / 2.423 at `K` = 4 — a 3.2 % spread — so the distribution conclusion does not rest on
+the block count. The block count does move `A`, and §5 reports by how much.
 
 **The residual is not white, and we report where it lives.** By attention budget on the law grid
 (median [min, max]):
@@ -404,7 +415,11 @@ whether the boundary is still there. Setting `beta = 0` removes the specialisati
 Specialisation is therefore an **amplifier, not a source**. Comparing beta = 2.0 against beta = 0 at
 the same `N` gives an amplification factor of 3.93 / 4.12 / 3.94 at `N` = 16 / 64 / 256 — a roughly
 constant x4 across a 16x range of pool size, which is the signature of a multiplier rather than a
-mechanism. And the ablation has a closed end: at `sigma = 0` the market's regret is **exactly 0** —
+mechanism. The factor is not an artefact of the degenerate `beta` = 0 baseline: against non-degenerate
+baselines on the same cells it is 3.47 / 3.37 / 3.49 for `beta` = 2.0 over `beta` = 0.25, and
+2.73 / 2.65 / 2.72 for `beta` = 2.0 over `beta` = 0.5, at `N` = 16 / 64 / 256. The multiplier shrinks
+as the contrast shrinks and is stable in `N` at every contrast. (The ablation grid runs at
+`gamma` = 1; the cost scale moves `A` but is not varied there, so the factor is stated at one scale.) And the ablation has a closed end: at `sigma = 0` the market's regret is **exactly 0** —
 it *is* the oracle — so the market's advantage is informational. The advantage is not that the market
 allocates more cleverly; it is that a planner with `m < N` is discarding information that the market's
 agents already hold.
@@ -430,9 +445,16 @@ than the market by construction.
 ## 5. Sensitivity and robustness
 
 - **Cost distribution.** Standardised to the same mean and spread: `A` moves < 3 % across uniform,
-  lognormal and Beta(2,5) (§4.3).
-- **Block count.** `K` in {2, 8} is included in the closure robustness cells; the law's constant is
-  stable enough that the closure table above (fitted with `K` = 4) still scores them.
+  lognormal and Beta(2,5) (§4.3). Re-measured on a grid that fixes the block count the spread is 3.2 %
+  (2.457 / 2.501 / 2.423 at `K` = 4), so the comparison is not an artefact of the closure robustness
+  cells mixing `K` with the distribution.
+- **Block count.** Measured, not assumed, and it **does not** support invariance. At `beta` = 0 the
+  specialisation channel is off and `K` is inert: `K` in {2, 4, 8} give identical `A`, the maximum
+  spread across 3 distributions and 2 pool sizes being exactly 0.0. At `beta` = 2, `gamma` = 1,
+  `m` = 4 the median `A` is 3.877 / 2.447 / 1.748 at `K` = 2 / 4 / 8 — monotone in `K`, a factor of
+  2.2 across that range. The law is therefore quoted at a fixed `K` = 4 and the block count is a third
+  dial rather than a robustness axis; the constant fitted at `K` = 4 is scored on the same 12-cell
+  grid per `K`, giving 23.0 % median relative error at `K` = 4 and at `K` = 2, and 38.2 % at `K` = 8.
 - **Attention model.** Both the budget and the fraction readings are scored, and the fraction cells
   are never fitted (§4.4).
 - **Seed streams.** Every reported cell aggregates 30 independent instance/noise seed pairs (20 on the
@@ -441,7 +463,7 @@ than the market by construction.
   The held-out grid deliberately uses different seed streams from the training grid, so §4.2's
   comparison cannot be won by reusing noise.
 - **Run-level reproducibility.** The canonical artefact was regenerated from scratch and is
-  **byte-identical** (sha256 `ca311f90...`, §8); the reductions were re-checked in the final round
+  **byte-identical** (sha256 `4935c409...`, §8); the reductions were re-checked in the final round
   (270/270 exact).
 
 ## 6. Threats to validity
@@ -455,8 +477,8 @@ estimated — which is how §4.3 could rule them out rather than merely rank the
 
 **The law is stated at ~20 % precision, not as a closed form.** `A` is a fitted constant with a weak
 cost-scale dependence; the residual concentrates at very small planner error (§4.3). A practitioner
-should read `sigma* ~= 2.6 p` as a first-order decision rule with a ~x3.4 band, not as a
-three-significant-figure constant.
+should read `sigma* ~= 2.6 p` — the fitted constant at `gamma` = 1, against a law-grid median of
+2.734 — as a first-order decision rule with a ~x3.4 band, not as a three-significant-figure constant.
 
 **The market rule is one of many.** We model a first-price-ish clear-on-bids market with recomputed
 bids; we do not model strategic bidding equilibrium, repeated interaction, or rich message spaces
@@ -600,8 +622,10 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
 - **One command:** `bash reproduce.sh` — runs the canonical runner, regenerates the figures, and
   validates the artefact.
 - **Artefact:** `canonical_results.json`, sha256
-  `ca311f90f5506d6f9c7e6af4f6ce76e6a79202802c20335f6824786c72488c50` (byte-identical across
-  repeated runs; verified in this round).
+  `4935c409ecec4fda70f4b5f573a879eded4fd6055623e16ba4439c799fbb4807` (byte-identical across
+  repeated runs; verified in this round). This revision adds one artefact block — the block-count
+  grid of §5 — and **changes no field that was already there**: the 178 pre-existing leaf fields are
+  unchanged and 33 are added.
 - **Figures** (regenerated by `make_figures.py`; digests in `figures/manifest.json`):
   `fig1_collapse.png` (the law: measured `sigma*` against predicted `A*p` over every cell),
   `fig2_scrambling.png` (Hamming fraction and wrong-block rate against `N`),
@@ -609,6 +633,9 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
 - **Validation:** `validate.py` asserts the reductions (270 cells), the anchors, the §4.1 series
   counts, the §4.2 out-of-sample table, the §4.3 closure table, the §4.4 attention-model test, the
   §4.5 mechanism rates and the §4.6 ablation — each assertion tied to a headline number above. It
+  also binds the numbers quoted in the abstract, and the §5 block-count and §4.6 amplification
+  numbers, to the artefact fields they come from, reading the value out of the manuscript itself, so
+  a number that drifts out of the artefact fails here rather than in a review. It
   prints `VALIDATE n/n`; the run is deterministic (`VALIDATE` has no tolerance because every
   quantity is a deterministic function of the seed scheme).
 - **Run log:** `run.log` records the configuration, the reductions, the anchors, the law-grid

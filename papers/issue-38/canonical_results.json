@@ -256,6 +256,89 @@
    },
    "n": 12
   },
+  "block_count": {
+   "A_by_K_at_beta0": {
+    "2": {
+     "median": 2.423403177298891,
+     "n": 6
+    },
+    "4": {
+     "median": 2.423403177298891,
+     "n": 6
+    },
+    "8": {
+     "median": 2.423403177298891,
+     "n": 6
+    }
+   },
+   "A_by_K_at_beta2": {
+    "2": {
+     "median": 3.877184800293079,
+     "n": 6
+    },
+    "4": {
+     "median": 2.4470949136117657,
+     "n": 6
+    },
+    "8": {
+     "median": 1.7483649577302556,
+     "n": 6
+    }
+   },
+   "A_by_distribution_at_K4": {
+    "beta": {
+     "median": 2.423403177298891,
+     "n": 4
+    },
+    "lognormal": {
+     "median": 2.501162881726928,
+     "n": 4
+    },
+    "uniform": {
+     "median": 2.4574947553937134,
+     "n": 4
+    }
+   },
+   "A_max_spread_across_K_at_beta0": 0.0,
+   "cells": 36,
+   "constant": 2.981786646402867,
+   "constant_applied_median_rel_err_by_K": {
+    "2": {
+     "median_rel_err": 0.23047033355270155,
+     "n": 12
+    },
+    "4": {
+     "median_rel_err": 0.23047033355270155,
+     "n": 12
+    },
+    "8": {
+     "median_rel_err": 0.3824422527811281,
+     "n": 12
+    }
+   },
+   "grid": {
+    "Ks": [
+     2,
+     4,
+     8
+    ],
+    "Ns": [
+     32,
+     128
+    ],
+    "betas": [
+     0.0,
+     2.0
+    ],
+    "dists": [
+     "uniform",
+     "lognormal",
+     "beta"
+    ],
+    "gamma": 1.0,
+    "m": 4
+   }
+  },
   "exponent_by_distribution": {
    "beta": 0.8677810927454725,
    "lognormal": 0.9327760245785428

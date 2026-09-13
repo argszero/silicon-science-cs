@@ -11,7 +11,9 @@ Usage:  python3 validate.py          (prints VALIDATE n/n, exits non-zero on fai
 """
 import hashlib
 import json
+import math
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -206,6 +208,106 @@ def main():
            if any(t in k.lower() for t in ("second", "elapsed", "wall", "time", "duration",
                                            "hostname", "timestamp", "date", "cwd", "python"))]
     check("t1_no_wallclock_or_env_fields", not bad, bad)
+
+    # --- The manuscript's own prose. The review's R1 defect was an abstract number whose real
+    # provenance was exp(oos.gamma_exponent.intercept) -- the gamma-aware prefactor -- quoted as a
+    # distribution median. The suite below asserted properties of the artefact and never read the
+    # manuscript, so a number could drift out of the artefact unnoticed. These checks read the
+    # manuscript and require each quoted number to equal the artefact field it names.
+    ms = open(os.path.join(HERE, "manuscript.md"), encoding="utf-8").read()
+
+    def _para(phrase):
+        i = ms.index(phrase)
+        return ms[ms.rfind("\n\n", 0, i) + 2:ms.find("\n\n", i)]
+
+    abstract = ms[ms.index("## Abstract"):ms.index("\n## ", ms.index("## Abstract") + 1)]
+    bc = clo["block_count"]
+    adm = bc["A_by_distribution_at_K4"]
+    k2 = bc["A_by_K_at_beta2"]
+    spread_fixed_k = 100.0 * (max(v["median"] for v in adm.values())
+                              / min(v["median"] for v in adm.values()) - 1.0)
+    ham = [x for x in mech["hamming"]
+           if x["gamma"] == 1.0 and x["beta"] == 0.5 and x["sigma"] == 0.05][0]
+    hs = ham["series"]
+    gm = [0.25, 0.5, 1.0, 2.0]
+    gA = [clo["A_by_gamma"][str(g)]["median"] for g in gm]
+    lg_g, lg_A = [math.log(g) for g in gm], [math.log(a) for a in gA]
+    mg, mA = sum(lg_g) / 4.0, sum(lg_A) / 4.0
+    gslope = sum((x - mg) * (y - mA) for x, y in zip(lg_g, lg_A)) / sum((x - mg) ** 2 for x in lg_g)
+    gpref = math.exp(mA - gslope * mg)
+    ge = oos["gamma_exponent"]
+    sc = oos["scores"]
+    ABS = [
+        ("A_median", "2.734", "%.3f" % lg["A_stats"]["median"]),
+        ("A_by_distribution.uniform", "2.446", "%.3f" % clo["A_by_distribution"]["uniform"]["median"]),
+        ("A_by_distribution.lognormal", "2.496", "%.3f" % clo["A_by_distribution"]["lognormal"]["median"]),
+        ("A_by_distribution.beta", "2.423", "%.3f" % clo["A_by_distribution"]["beta"]["median"]),
+        ("law_grid.cells", "250", "%d" % len(lg["cells"])),
+        ("law_grid.usable_cells", "240", "%d" % lg["usable_cells"]),
+        ("spread over distributions at fixed K", "3.2", "%.1f" % spread_fixed_k),
+        ("fall in A from K=2 to K=8", "2.2", "%.1f" % (k2["2"]["median"] / k2["8"]["median"])),
+        ("the practitioner constant, exp(oos.gamma_exponent.intercept)", "2.6",
+         "%.1f" % math.exp(ge["intercept"])),
+        ("closure one-constant error (pct)", "23.0",
+         "%.1f" % (100.0 * clo["one_constant"]["median_rel_err_on_unseen"])),
+        ("oos.trivial_proportional (pct)", "27.0", "%.1f" % (100.0 * sc["trivial_proportional"]["median_rel_err"])),
+        ("oos.gamma_aware_proportional (pct)", "18.4",
+         "%.1f" % (100.0 * sc["gamma_aware_proportional"]["median_rel_err"])),
+        ("oos.constant_baseline (pct)", "57.6", "%.1f" % (100.0 * sc["constant_baseline"]["median_rel_err"])),
+        ("oos.fitted_power_law (pct)", "28.5", "%.1f" % (100.0 * sc["fitted_power_law"]["median_rel_err"])),
+        ("H_scale (pct)", "154", "%.0f" % (100.0 * clo["forms_scored_on_unseen_cells"]["H_scale"]["median_rel_err"])),
+        ("H_gap (pct)", "98", "%.0f" % (100.0 * clo["forms_scored_on_unseen_cells"]["H_gap"]["median_rel_err"])),
+        ("attention-model agnostic (pct)", "12.4",
+         "%.1f" % (100.0 * clo["attention_agnostic"]["fraction_cells_never_fitted"]["median_rel_err"])),
+        ("hamming at N=16", "0.138", "%.3f" % hs[0]["rate"]),
+        ("hamming at N=256", "0.662", "%.3f" % hs[-1]["rate"]),
+        ("handled N range", "16", "%d" % hs[0]["N"]),
+        ("handled N range end", "256", "%d" % hs[-1]["N"]),
+        ("the sigma the hamming series is quoted at", "0.05", "%.2f" % ham["sigma"]),
+        ("p1 series count", "50", "%d" % lg["p1_verdict"]["n_series"]),
+        ("the cost-scale correction exponent", "0.15", "%.2f" % abs(ge["slope"])),
+    ]
+    drift = [lab for lab, txt, got in ABS if txt != got]
+    absent = [lab for lab, txt, got in ABS if txt not in abstract]
+    check("m1_abstract_numbers_match_artefact", not drift and not absent,
+          {"artefact_disagrees": drift, "not_in_abstract": absent})
+
+    structural = {"105": "in-text reference marker", "1": "prior P1", "2": "prior P2 or a K value",
+                  "3": "prior P3", "4": "the law grid's block count", "5": "section number",
+                  "8": "a swept block count"}
+    allowed = {txt for _, txt, _ in ABS} | set(structural)
+    orphan = sorted({t for t in re.findall(r"[0-9]+(?:\.[0-9]+)?", abstract) if t not in allowed})
+    check("m2_abstract_numbers_all_attributed", not orphan,
+          {"unattributed": orphan, "structural_declared": sorted(structural)})
+
+    b0 = bc["A_by_K_at_beta0"]
+    kmed = [k2[k]["median"] for k in ("2", "4", "8")]
+    pb = _para("Block count.")
+    need_bc = ["3.877", "2.447", "1.748", "2.2", "23.0", "38.2", "exactly 0.0"]
+    check("m3_block_count_is_measured_not_assumed",
+          bc["cells"] == 36 and bc["A_max_spread_across_K_at_beta0"] == 0.0
+          and len({round(v["median"], 9) for v in b0.values()}) == 1
+          and kmed[0] != kmed[1] and kmed[1] != kmed[2] and kmed[0] != kmed[2]
+          and close(kmed[0], 3.877, 1e-3) and close(kmed[1], 2.447, 1e-3)
+          and close(kmed[2], 1.748, 1e-3)
+          and all(t in pb for t in need_bc),
+          {"cells": bc["cells"], "spread_at_beta0": bc["A_max_spread_across_K_at_beta0"],
+           "medians_at_beta2": kmed, "missing_from_paragraph": [t for t in need_bc if t not in pb]})
+
+    rows = {(r["N"], r["beta"]): r["sigma_star"] for r in p3["rows"]}
+    ratios = {str(b): [rows[(N, 2.0)] / rows[(N, b)] for N in (16, 64, 256)] for b in (0.25, 0.5)}
+    pa = _para("amplification factor")
+    got_amp = ["%.2f" % x for v in ratios.values() for x in v]
+    check("m4_amplification_survives_non_degenerate_baseline",
+          all(max(v) / min(v) < 1.06 for v in ratios.values())
+          and all(t in pa for t in got_amp),
+          {"ratios_vs_beta": ratios, "missing_from_paragraph": [t for t in got_amp if t not in pa]})
+
+    p42 = _para("depends weakly on the cost scale")
+    got_fit = ["%.2f" % math.exp(ge["intercept"]), "%.3f" % abs(ge["slope"]),
+               "%.2f" % gpref, "%.3f" % abs(gslope)]
+    check("m5_cost_scale_fits_are_quoted_separately", all(t in p42 for t in got_fit),
+          {"fits": got_fit, "missing_from_paragraph": [t for t in got_fit if t not in p42]})
 
     # --- SS8 the committed figures exist and the manifest agrees with the artefact
     man_path = os.path.join(HERE, "figures", "manifest.json")

@@ -63,13 +63,16 @@ MUTATIONS = [
     ("artefact", "p3_ablation.specialisation_off_boundary_still_exists", False),
     ("artefact", "p3_ablation.verdict", "CONFIRMED"),
     ("artefact", "ADD_elapsed_seconds", 12.5),
+    ("artefact", "closure.block_count.A_max_spread_across_K_at_beta0", 0.5),
+    ("artefact", "closure.block_count.A_by_K_at_beta2.8.median", 2.6),
+    ("artefact", "p3_ablation.rows[1].sigma_star", 0.99),
 ]
 
 ok, bad = 0, []
 for kind, path, value in MUTATIONS:
     sand = tempfile.mkdtemp(prefix="corrupt38-")
     try:
-        for f in ("validate.py", "canonical_results.json", "make_figures.py"):
+        for f in ("validate.py", "canonical_results.json", "make_figures.py", "manuscript.md"):
             shutil.copy(os.path.join(SRC, f), sand)
         shutil.copytree(os.path.join(SRC, "figures"), os.path.join(sand, "figures"))
         before = open(os.path.join(sand, "canonical_results.json"), "rb").read()
@@ -109,7 +112,7 @@ for kind, path, value in MUTATIONS:
 for name, mutate in (("manifest_artefact_digest", "digest"), ("figure_deleted", "delete")):
     sand = tempfile.mkdtemp(prefix="corrupt38-")
     try:
-        for f in ("validate.py", "canonical_results.json"):
+        for f in ("validate.py", "canonical_results.json", "manuscript.md"):
             shutil.copy(os.path.join(SRC, f), sand)
         shutil.copytree(os.path.join(SRC, "figures"), os.path.join(sand, "figures"))
         mp = os.path.join(sand, "figures", "manifest.json")
@@ -171,7 +174,7 @@ ok, bad = 0, []
 for name, fn in MUT:
     sand = tempfile.mkdtemp(prefix="corrupt38b-")
     try:
-        for f in ("validate.py", "canonical_results.json"):
+        for f in ("validate.py", "canonical_results.json", "manuscript.md"):
             shutil.copy(os.path.join(SRC, f), sand)
         shutil.copytree(os.path.join(SRC, "figures"), os.path.join(sand, "figures"))
         fp = os.path.join(sand, "canonical_results.json")
@@ -199,7 +202,48 @@ for name, fn in MUT:
 
 
 
-print("corruption audit: %d/%d mutations caught" % (ok1 + ok, len(MUTATIONS) + 2 + len(MUT)))
+ok2 = ok
+print("batch 2 (breakdowns, exponents, ablation, mechanisms): %d/%d caught" % (ok2, len(MUT)))
+
+# ---------------- batch 3: the manuscript's own prose --------------------------------
+# A number can be right in the artefact and wrong in the manuscript -- exactly the review's R1
+# defect, and exactly what nothing in this suite checked before this revision.
+TEXT_MUT = [
+    ("abstract: the uniform value reverted to 2.616", "uniform 2.446 /", "uniform 2.616 /"),
+    ("SS5: a block-count median altered", "3.877 / 2.447 / 1.748", "3.877 / 2.447 / 1.700"),
+    ("SS4.6: a non-degenerate ratio altered", "3.47 / 3.37 / 3.49", "3.47 / 3.37 / 3.99"),
+]
+
+ok, bad3 = 0, []
+for name, old, new in TEXT_MUT:
+    sand = tempfile.mkdtemp(prefix="corrupt38c-")
+    try:
+        for f in ("validate.py", "canonical_results.json", "manuscript.md"):
+            shutil.copy(os.path.join(SRC, f), sand)
+        shutil.copytree(os.path.join(SRC, "figures"), os.path.join(sand, "figures"))
+        fp = os.path.join(sand, "manuscript.md")
+        txt = open(fp, encoding="utf-8").read()
+        assert txt.count(old) == 1, "anchor not unique: %s" % old
+        txt2 = txt.replace(old, new)
+        assert txt2 != txt, "mutator did not change the file"
+        open(fp, "w", encoding="utf-8").write(txt2)
+        r = subprocess.run([sys.executable, "validate.py"], cwd=sand, capture_output=True, text=True)
+        lines = [l.strip() for l in r.stdout.splitlines() if "[FAIL]" in l]
+        caught = len(lines) >= 1 and r.returncode != 0
+        print("  [%s] %-58s FAILs=%d exit=%d" % ("ok" if caught else "MISS", name, len(lines),
+                                                 r.returncode))
+        if caught:
+            ok += 1
+            print("        fired: %s" % "; ".join(l.split("]")[1].split()[0] for l in lines))
+        else:
+            bad3.append(name)
+    finally:
+        shutil.rmtree(sand, ignore_errors=True)
+
+print("batch 3 (manuscript prose): %d/%d caught" % (ok, len(TEXT_MUT)))
+bad = bad + bad3
+print("corruption audit: %d/%d mutations caught"
+      % (ok1 + ok2 + ok, len(MUTATIONS) + 2 + len(MUT) + len(TEXT_MUT)))
 if bad:
     print("NOT CAUGHT: %s" % bad)
 sys.exit(1 if bad else 0)

@@ -48,6 +48,8 @@ CFG = {
                 "robust_betas": [0.0, 2.0], "robust_Ns": [32, 128], "robust_gamma": 1.0,
                 "attention_alphas": [0.0625, 0.25], "attention_betas": [0.0, 0.5, 2.0],
                 "attention_Ns": [32, 128], "attention_gamma": 1.0},
+    "block_count": {"Ks": [2, 4, 8], "dists": ["uniform", "lognormal", "beta"],
+                    "betas": [0.0, 2.0], "Ns": [32, 128], "gamma": 1.0, "m": 4},
     "mechanism": {"gammas": [0.25, 1.0], "betas": [0.0, 0.5, 2.0],
                   "sigmas": [0.05, 0.2, 0.5], "Ns": [16, 32, 64, 128, 256], "seeds": 30},
     "p3": {"gamma": 1.0, "m": 4, "betas": [0.0, 0.25, 0.5, 1.0, 2.0],
@@ -431,9 +433,54 @@ def sec_closure():
         vals = [r["sigma_star"] / r["planner_per_task"] for r in rows if r["planner_per_task"] > 0]
         return {"n": len(vals), "median": float(np.median(vals))} if vals else {"n": 0, "median": None}
 
+    # The block-count axis. The manuscript claimed robustness in K, so K has to be swept
+    # with the distribution held fixed and at a fixed cost scale; pooling dist and K, as the
+    # robustness cells above do, cannot separate the two. This grid is disjoint from
+    # train/test/robust, so nothing computed above changes.
+    bc = CFG["block_count"]
+    kc = [measure(N, K_, beta, bc["gamma"], bc["m"], dist=d)
+          for d in bc["dists"] for K_ in bc["Ks"] for beta in bc["betas"] for N in bc["Ns"]]
+    kc = [r for r in kc if r["sigma_star"] and r["planner_per_task"] != 0]
+    for r in kc:
+        r["A"] = r["sigma_star"] / r["planner_per_task"]
+
+    def agg(rows):
+        xs = [r["A"] for r in rows]
+        if not xs:
+            return {"n": 0, "median": None}
+        return {"n": len(xs), "median": float(np.median(xs))}
+
+    def err_at(rows):
+        xs = [abs(r["sigma_star"] - const * r["planner_per_task"]) / r["sigma_star"]
+              for r in rows]
+        if not xs:
+            return {"n": 0, "median_rel_err": None}
+        return {"n": len(xs), "median_rel_err": float(np.median(xs))}
+
+    def spread_across_K(dist, N):
+        xs = [r["A"] for r in kc if r["beta"] == 0.0 and r["dist"] == dist and r["N"] == N]
+        return float(max(xs) - min(xs))
+
+    b0_spread = [spread_across_K(d, N) for d in bc["dists"] for N in bc["Ns"]]
+
     return {
         "train_cells": len(tr), "test_cells": len(te),
         "robust_cells": len([r for r in robust if r["sigma_star"]]),
+        "block_count": {
+            "cells": len(kc),
+            "grid": {"Ks": bc["Ks"], "dists": bc["dists"], "betas": bc["betas"],
+                     "Ns": bc["Ns"], "gamma": bc["gamma"], "m": bc["m"]},
+            "A_by_K_at_beta0": {str(k): agg([r for r in kc if r["K"] == k and r["beta"] == 0.0])
+                                for k in bc["Ks"]},
+            "A_by_K_at_beta2": {str(k): agg([r for r in kc if r["K"] == k and r["beta"] == 2.0])
+                                for k in bc["Ks"]},
+            "A_by_distribution_at_K4": {d: agg([r for r in kc if r["K"] == 4 and r["dist"] == d])
+                                        for d in bc["dists"]},
+            "A_max_spread_across_K_at_beta0": float(max(b0_spread)),
+            "constant": const,
+            "constant_applied_median_rel_err_by_K": {
+                str(k): err_at([r for r in kc if r["K"] == k]) for k in bc["Ks"]},
+        },
         "forms_scored_on_unseen_cells": {k: score(v, y_te) for k, v in forms.items()},
         "one_constant": {"c": const,
                          "median_rel_err_on_unseen": score(const * p_te, y_te)["median_rel_err"]},
@@ -623,6 +670,12 @@ def main():
          "%.1f%% on unseen" % (cl["train_cells"], cl["test_cells"], cl["robust_cells"],
                                cl["one_constant"]["c"],
                                100 * cl["one_constant"]["median_rel_err_on_unseen"]))
+    bck = cl["block_count"]
+    note("block count: %d cells, K in %s | at beta=0 A is identical across K (max spread %.1f) | "
+         "at beta=2 A = %s" % (
+             bck["cells"], bck["grid"]["Ks"], bck["A_max_spread_across_K_at_beta0"],
+             " / ".join("%.3f" % bck["A_by_K_at_beta2"][str(k)]["median"]
+                        for k in bck["grid"]["Ks"])))
     for k in sorted(cl["forms_scored_on_unseen_cells"],
                     key=lambda k: cl["forms_scored_on_unseen_cells"][k]["median_rel_err"]):
         note("   %-12s median %6.1f%%  max %7.1f%%" % (
