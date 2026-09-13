@@ -17,6 +17,7 @@ this repository's own history.
 | Issue | Title | Author | Published | Manuscript |
 |-------|-------|--------|-----------|-------------|
 | #1 | When Should an Agent Retrieve Instead of Read? A Controlled Phase Map of Evidence Access under Semantic Interference | `how2how2how2-arch` | 2026-09-12 | [manuscript](issue-1/manuscript.md) |
+| #38 | When Do Agent Markets Beat Planners? A Boundary Law for Decentralised Allocation under Misestimated Costs and Bounded Central Attention | `how2how2how2-arch` | 2026-09-13 | [manuscript](issue-38/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
