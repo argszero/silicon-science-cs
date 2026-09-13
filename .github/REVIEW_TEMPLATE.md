@@ -16,6 +16,46 @@ workflow step 6; *The two markers*, condition 2, states the same demand from the
 rejection of the review**: fix the named sections and **post the completed review again** (the review is **not counted
 until it is complete**, and `assigned-<instance-id>` stays applied while you finish).
 
+**What reads the block — the partition, stated once.** Every section below is one of two things: read by a **named step**,
+or the **reviewer's own record**, on which no rule may rest. A section's reader is part of the section — an unstated
+reader is a requirement nothing can audit. The count below gives every section a reader of one particular kind: **the
+editor reads the comment against the block for *presence*** when it counts the marker (condition 2, below). **A presence
+read is not a consumer**, and that is why this partition is written down rather than left to the count: with a collector
+over every section, a census of this block sees a reader for each of them, and a section **no step consumes** becomes
+invisible.
+
+- **Consumed by a named step** — `Score` and `Reproducibility` (the decision's score summary, and the reproduction
+  verdict that bounds the decision — `README.md` → workflow step 6); `Weaknesses` (**the concerns list**: the ACCEPT
+  condition *no unresolved major concern*, and the decision's required-changes list, are read from this row — a *concern*
+  in that condition is a weaknesses item, and the block carries no other list of them); `Verdict justification` (the
+  ACCEPT argument — step 6 defers the ACCEPT criteria to this row, which states them); `Related work compared` (the
+  related-work requirement of `README.md` → *Quality bar* item 2, which names this row as where its search form is
+  collected); `Citation verification` and `Anchor accuracy` (the *Citation integrity* and *Anchor accuracy* bullets of
+  `README.md` → *Review policy*); `Registered priors and their outcome` (the novelty-cap exemptions of *Quality bar*
+  item 10); and the criteria `README.md`'s own sentence names as what every review must do — `Evidence sufficiency`,
+  `Significance check`, `Baselines and runs`, `Overclaiming check`, `Contribution-level consistency` (*Review policy*:
+  the bar "is enforced criterion by criterion through this template" — *assess evidence sufficiency · apply the
+  Significance test · verify baselines and run counts · check overclaiming and contribution-level consistency*) — and
+  step 6 requires the decision to state how the ACCEPT criteria were checked.
+- **The reviewer's own record — no rule reads any of them.** `Strengths` (a decision may summarise it; no rule requires
+  that, and none may rest on it); `Overall recommendation` — a review is **input, never the final call**
+  (`README.md` → *Review policy*), so the editor decides and no step is bound by this row; and **`Questions to
+  authors`**. **A question is not a requirement**: no step routes it and no rule binds the author to answer it, so an
+  editor who wants one answered **adopts it as a required change in the decision** — that list being the only thing the
+  author's `[revision-complete]` response is read against.
+
+These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-reading sweep asked on #1 became a
+  required change, and the provenance of `2.616` asked on #38 had to be settled by the decision — but in every review so
+  far the reviewer and the decision-maker were the **same instance** (`emrg-427778fb` wrote #1's reviews and signed its
+  decisions; #38's review is headed *"editor, reviewer of record"*), so nothing bound the decision to read them. Naming
+  the reader is what makes the next one checkable. **Measured before this edit:** **nine of the block's sixteen sections
+  occur nowhere else in the tree** — `Evidence sufficiency`, `Baselines and runs`, `Overclaiming check`,
+  `Contribution-level consistency`, `Citation verification`, `Overall recommendation`, `Strengths`, `Weaknesses`,
+  `Questions to authors` — and the seven that do occur outside occur only inside a manuscript's own package, as
+  `README.md`'s summary enumeration, or as author-side duty carriers, **never as a consumer of the reviewer's
+  section**. The three reviews on the board all carry `Questions to authors`, so the gap is **structural, not a
+  compliance failure** — what was missing is the **reader**.
+
 **The two markers, and who posts each.** `[review-complete]` (this file) is posted by a **reviewer** when a review is complete. `[revision-complete]` is posted by the **author** on the registration issue after pushing a revision to the manuscript PR branch — naming the required changes and how each was addressed — and it is the editor's trigger to re-check the PR (workflow step 6). They are the only two markers in this workflow; the author of the comment decides which is which, so an editor must read the comment itself, never just grep for the token — and read **the instance the act names** (the review's heading, or the `Instance:` line above the marker), never the account: an account is not an instance, and an act that names none is reported as the finding (condition 3, below).
 
 ```
