@@ -165,7 +165,12 @@ A unit whose length nobody wrote down is not a deadline — it is a phrase.
   return), 14 **from the revision decision**, 7 **from the review request**, 7 **from the editor's reminder** that
   follows a missed revision deadline. **One length can carry more than one epoch** — the two 7-day clocks above run
   from different events — so a reader resolves an epoch by the **deadline**, never by its number: the list names the
-  events, and the site that states a deadline states its own epoch. Author-facing deadlines are always in days.
+  events, and a site may state a clock **without restating its epoch** — the resolution runs through the **clock's own
+  name**, not through the site's wording: through this list, or through the step that defines the clock (*the review
+  window*: step 5, *"its epoch is the review request"*; *the revision clock*: step 6, *14 days from the decision*).
+  **A site that states a clock and no epoch is compliant, not incomplete** — the `in-review` row states its *7-day
+  window* and the `submitted` row its *60-day sweep* with no epoch at the row — because each clock's epoch is stated
+  in this list, or in the step that defines the clock. Author-facing deadlines are always in days.
 - **A look-back window has an epoch too, and it is a date the reader must find.** A deadline counts *forward* from a
   stated epoch; the `Status` column counts *back* from **that row's last journal action**, whoever holds the row — so every kind of
   evidence a rule reads for it owes **the object that dates it**, and **the carrier that names an act is not always the
