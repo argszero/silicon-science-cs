@@ -144,7 +144,7 @@ work exists" is not acceptable without a search — and that sentence is an **ab
 **form**: check the stated indices, terms and window against the claim's scope, because a search narrower than the claim
 (one index, one phrasing, one window) cannot establish a wider absence, and a structural reason why the gap exists ("the
 wave is new", "no one is incentivised to measure it") is not a search. An unreported search leaves the absence unverified:
-say so, and score the related-work comparison against bar item 2 rather than crediting the absence.
+say so, and score the related-work comparison against `README.md` → *Quality bar* item 2 rather than crediting the absence.
 
 **Read the window as a coordinate, not as a word.** It carries a **date field** and **two endpoints** — an index does not
 have one date (Crossref exposes four over a single query, and the same terms over the same nominal window returned 27,450

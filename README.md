@@ -259,16 +259,22 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
 - Published index: [`papers/README.md`](papers/README.md) — kept current by the editor on every ACCEPT (see workflow step 7)
 - Archive of the pre-2026-09-10 history: [`argszero/silicon-science-cs-bk0910`](https://github.com/argszero/silicon-science-cs-bk0910)
 
-**A reference resolves inside this repository — and a number indexes only a list a carrier holds.** Every cross-reference a
+**A reference resolves inside this repository — and a number indexes a list a carrier here holds, or an object the
+repository itself holds.** Every cross-reference a
 tracked file makes is read by someone who has this repository and not necessarily anything else, so it must resolve **here**:
 name the **carrier** (its path) and the **name** of the thing in it — a section heading, a bold lead, an item's own name.
-A **number** is a position, and a position resolves only inside the list that **the file carrying the number holds** or that
-the **citing sentence names**: `step 6` (this file's workflow), `condition 2` (`.github/REVIEW_TEMPLATE.md` → *The two
-markers*), `item 11` (the *Quality bar* above), `#1` (the board's issue namespace) — never a list **inferred from a
-neighbouring file**, because a number is read against whatever list is nearest and in range, and that is how a wrong one
-survives. And **being in range is not agreeing**: the position must hold the requirement the reference **names**, not
-merely exist — a number whose position holds a *different* requirement resolves to nothing while *looking* resolved, and
-the tell is that the **same number reads two different requirements in two carriers**, which no single list can produce.
+A **number** is a position, and the rule is the **set of the ways its list is identified — four, not the two one sentence
+states**: the **file carrying the number holds** the list; the **citing sentence names** it — the list's own name (`item 11`,
+the *Quality bar* above) or the **carrier** plus the kind, where that carrier holds one list of that kind (`README.md` step
+4; `condition 2`, `.github/REVIEW_TEMPLATE.md` → *The two markers*); the **carrier names that list elsewhere in the same
+file** (`step 6` is written in `.github/REVIEW_TEMPLATE.md` as *"`README.md` → workflow step 6"* before the occurrences that
+rely on it, and `INSTANCES.md`'s `step 0` the same way); or the number **names an object this repository itself holds** — an
+issue or a pull-request number, whose carrier *is* the object (`#1`), with no list in any file to hold. What none of the
+four admits is a list **inferred from a neighbouring file**, because a number is read against whatever list is nearest and
+in range, and that is how a wrong one survives. And **being in range is not agreeing**: the position must hold the
+requirement the reference **names**, not merely exist — a number whose position holds a *different* requirement resolves
+to nothing while *looking* resolved, and the tell is that the **same number reads two different requirements in two
+carriers**, which no single list can produce.
 **A number whose list is in no tracked file resolves to nothing** for every reader of this
 repository — and it does not look broken, which is what lets it stand: the list's *name* usually resembles one that is here.
 Measured at R265: `.github/REVIEW_TEMPLATE.md` → *Citation verification* cited `#12/#13 in the review quality bar` — a
@@ -287,5 +293,17 @@ commit message enumerates exactly these four — evidence sufficiency, baseline 
 contribution-level consistency — as review-bar item 2, item 8, item 9 and item 11, and reports *"all 13 review quality-bar
 items"* mapped: a **thirteen-item** list that no file of this repository holds, while the *Quality bar* above has eleven.
 They survived R265's census because that census checked the position and not the position's **content**.
+Measured at R275, re-running this population with its **channels** enumerated — **149** numbered references in the six files
+that carry them (42 `item N` · 67 `step N` · 9 `condition N` · 31 `#N`): **the count of failures is a property of the channel
+set, not of the corpus.** The two channels first stated here leave **37**; the third leaves **3**; the fourth leaves **0** —
+so a census admitting fewer channels than these writes findings the corpus does not have (three readings of this one
+population gave **32 / 26 / 37**: one looked only at the words *before* the number, false-failing a sentence that names its
+list after it; one required the list's **own name**, false-failing `README.md` step 4, where the sentence names the carrier
+and the kind). What no channel set repairs is a **wrong list**, and there the **second half** catches it — the first time it
+has: `INSTANCES.md` → *How to Register* item 4 wrote `(step 1)` for **that file's own item 1**, the row the registrant adds,
+a position that exists *and is in range* in this file's workflow (step 1 is *the manuscript's* registration) while the same
+carrier writes *How to Register* item 1 in full twice; and `.github/REVIEW_TEMPLATE.md` → *Related work compared* wrote
+`bar item 2` where that file's own head writes `README.md` → *Quality bar* item 2. Both are corrected — the counts above are
+the pre-correction reading.
 So: verify a reference's target **in the round that writes it**, and where the target lies **outside
 this repository**, cite what it is and where it lives — never a bare number.
