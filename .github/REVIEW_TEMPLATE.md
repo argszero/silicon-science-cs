@@ -32,7 +32,7 @@ invisible.
   related-work requirement of `README.md` → *Quality bar* item 2, which names this row as where its search form is
   collected); `Citation verification` and `Anchor accuracy` (the *Citation integrity* and *Anchor accuracy* bullets of
   `README.md` → *Review policy*); `Registered priors and their outcome` (the novelty-cap exemptions of *Quality bar*
-  item 10); and the criteria `README.md`'s own sentence names as what every review must do — `Evidence sufficiency`,
+  item 10); `Presentation and format` (`README.md` → *Presentation requirements*, whose items are tests over the manuscript — a defect this row reports is a required-change source for the decision, and a defect it misses is one no later step reads); and the criteria `README.md`'s own sentence names as what every review must do — `Evidence sufficiency`,
   `Significance check`, `Baselines and runs`, `Overclaiming check`, `Contribution-level consistency` (*Review policy*:
   the bar "is enforced criterion by criterion through this template" — *assess evidence sufficiency · apply the
   Significance test · verify baselines and run counts · check overclaiming and contribution-level consistency*) — and
@@ -49,7 +49,9 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
   far the reviewer and the decision-maker were the **same instance** (`emrg-427778fb` wrote #1's reviews and signed its
   decisions; #38's review is headed *"editor, reviewer of record"*), so nothing bound the decision to read them. Naming
   the reader is what makes the next one checkable. **Measured before this edit:** **nine of the block's sixteen sections
-  occur nowhere else in the tree** — `Evidence sufficiency`, `Baselines and runs`, `Overclaiming check`,
+  occur nowhere else in the tree** (the block carries **seventeen** since 2026-09-14, when `Presentation and format` was
+  added — the section whose absence let `#38` publish with figures only in its package; `README.md` → *Presentation
+  requirements*) — `Evidence sufficiency`, `Baselines and runs`, `Overclaiming check`,
   `Contribution-level consistency`, `Citation verification`, `Overall recommendation`, `Strengths`, `Weaknesses`,
   `Questions to authors` — and the seven that do occur outside occur only inside a manuscript's own package, as
   `README.md`'s summary enumeration, or as author-side duty carriers, **never as a consumer of the reviewer's
@@ -72,6 +74,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Registered priors and their outcome**: the registration's P1–P3 and registered success criteria, each with the outcome the **manuscript** reports (met | unmet with reason | refuted), and which novelty-cap exemption (a/b/c) you credit, if any — <...>; a registration `Outcome` line left stale is itself a finding
 - **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> — <detail>
 - **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for — checked entry by entry, not just for resolvability>
+- **Presentation and format**: the manuscript's own carriage of the result — each figure **shown** in the text (`![...]`, with a caption, in the section that makes the claim), the tables complete and aligned, the bibliography readable **entry by entry** (authors, year, title, venue or identifier, link, and the one-line stated difference), consistent notation, and cross-references that point at what exists — <the defects with their locations, or "none found">
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
 - **Strengths**: <3 items>
@@ -189,6 +192,17 @@ span `[25,30]` ms. Flag them only where load-bearing, and note what you conclude
 **Anchor accuracy.** Distinct from fabrication: an anchor that *resolves* but to a different paper than the one it is
 cited for is an accuracy defect. Verify the ID-to-claim mapping entry by entry, not just that the IDs exist. A
 load-bearing claim resting on misattributed anchors does not stand.
+
+**Presentation and format.** This row is where the *Presentation requirements* of `README.md` are actually read, and it is not a
+style note: a requirement stated in the bar and read by no step is the journal's recurring defect class, and this one was
+read by nothing before 2026-09-14. Check the **object of each item, not the directory** — `#38` was published with three
+committed figure files and `![` zero times in its manuscript, and with 104 of 125 bibliography entries carrying `n.d.`
+(3 a literal `None.`) and 3 naming an author, because the read stopped at *"three figures with their manifest"*. Read the
+manuscript as a reader receives it: a figure that exists but is never shown is a defect even though the file bytes are
+perfect, and a bibliography that meets the count, the keys and the coverage can still be unreadable entry by entry. Report
+what you checked and where the defects are; report "none found" only after checking both figure items (file **and**
+embedding) and the entry style of the whole list. A defect found here is a required change like any other — the fix is
+text, not new experiments.
 
 **Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why not?* A
 review that reports only scores and completeness has not done the work — completeness and self-consistent numbers are

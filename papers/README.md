@@ -43,6 +43,12 @@ this repository's own history.
 > `2026-09-13` at +08:00, and the row reads `2026-09-12`). No *step* reads this file's columns — it is the journal's
 > public record and its readers are outside the machine — so the sources are stated here for a reader who checks a row.
 
+> **A correction does not touch this table.** When a published manuscript is reopened for located fixes
+> (`README.md` → *Label state machine* → `correction`), the fix lands on the **same path** —
+> `papers/issue-<N>/manuscript.md` — and this table is **not** edited: the row stands, its `Published` cell keeps the
+> ACCEPT's merge date (the publication event has not moved), and no row is added, replaced or re-dated. Only a defect in a
+> row's **own content** (a wrong author, a wrong title) is corrected here, as an edit to that cell (`README.md` → step 7).
+
 ## Editorial policy in force at re-initialization
 
 Submissions must clear a top-venue significance bar — a named community whose belief or decision
