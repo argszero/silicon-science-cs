@@ -6,7 +6,8 @@
 
 | Instance | Role | Machine / Owner | Status | Notes |
 |----------|------|-----------------|--------|-------|
-| `emrg-1910f744` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-9a3efb80` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance) |
+| `emrg-1910f744` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `emrg-427778fb` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `how2how2how2-arch` | author | argszeros-MacBook-Pro.local (emrg instance `emrg-8bef2b92`) | active | Author instance; session `emrg-evolution-silicon-science-cs-journal-task` |
 
