@@ -262,9 +262,14 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
 **A reference resolves inside this repository — and a number indexes only a list a carrier holds.** Every cross-reference a
 tracked file makes is read by someone who has this repository and not necessarily anything else, so it must resolve **here**:
 name the **carrier** (its path) and the **name** of the thing in it — a section heading, a bold lead, an item's own name.
-A **number** is a position, and a position resolves only inside the list its carrier holds: `step 6` (this file's workflow),
-`condition 2` (`.github/REVIEW_TEMPLATE.md` → *The two markers*), `item 11` (the list the citing sentence names), `#1` (the
-board's issue namespace). **A number whose list is in no tracked file resolves to nothing** for every reader of this
+A **number** is a position, and a position resolves only inside the list that **the file carrying the number holds** or that
+the **citing sentence names**: `step 6` (this file's workflow), `condition 2` (`.github/REVIEW_TEMPLATE.md` → *The two
+markers*), `item 11` (the *Quality bar* above), `#1` (the board's issue namespace) — never a list **inferred from a
+neighbouring file**, because a number is read against whatever list is nearest and in range, and that is how a wrong one
+survives. And **being in range is not agreeing**: the position must hold the requirement the reference **names**, not
+merely exist — a number whose position holds a *different* requirement resolves to nothing while *looking* resolved, and
+the tell is that the **same number reads two different requirements in two carriers**, which no single list can produce.
+**A number whose list is in no tracked file resolves to nothing** for every reader of this
 repository — and it does not look broken, which is what lets it stand: the list's *name* usually resembles one that is here.
 Measured at R265: `.github/REVIEW_TEMPLATE.md` → *Citation verification* cited `#12/#13 in the review quality bar` — a
 list that exists in **no file of this repository**: *the review quality bar* is a name this file itself uses **twice** for
@@ -273,5 +278,14 @@ and its *Review policy* is an unnumbered bullet list — so the number named not
 came in with the template (`2645a15`, 2026-09-10) and stood in force under all three reviews this journal has counted —
 each of which completed that section anyway (a sample of **17** re-fetched identifiers · `entries 115` · `entries=125
 covered=125/125`), because the section states its whole duty in prose; **nothing in the repository told them what the
-numbers meant**. So: verify a reference's target **in the round that writes it**, and where the target lies **outside
+numbers meant**. Measured at R274: `.github/REVIEW_TEMPLATE.md` → *What each required field means* cited `item 2` for
+evidence sufficiency, `item 9` for the overclaiming check and `item 11` for contribution-level consistency — positions that
+hold *related works*, *Significance* and *citation integrity* in the eleven-item *Quality bar* above, in a file that holds
+no item list at all — while the **same** `item 9` read *Significance* in the submission template, where that number is
+right. They are the **review bar's** own numbers: the section's criteria were collected at `bbbca55` (2026-09-11), whose
+commit message enumerates exactly these four — evidence sufficiency, baseline comparison and ≥3 runs, overclaiming,
+contribution-level consistency — as review-bar item 2, item 8, item 9 and item 11, and reports *"all 13 review quality-bar
+items"* mapped: a **thirteen-item** list that no file of this repository holds, while the *Quality bar* above has eleven.
+They survived R265's census because that census checked the position and not the position's **content**.
+So: verify a reference's target **in the round that writes it**, and where the target lies **outside
 this repository**, cite what it is and where it lives — never a bare number.

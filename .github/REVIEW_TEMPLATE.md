@@ -156,17 +156,19 @@ search behind the absence, and the absence is unscoped — say so. Where the ind
 the correct reading is a claim narrowed to what the index can reach, not a failure; the defect is a claim left wider than
 its search.
 
-**Evidence sufficiency (item 2) and overclaiming (item 9).** Ask whether the committed data, scripts and experiments
+**Evidence sufficiency and the overclaiming check.** Ask whether the committed data, scripts and experiments
 actually support each core claim — a study whose question is not falsifiable, or whose headline claim rests on one
 anecdote, is a weakness even when the numbers are internally consistent. Then compare the abstract and the stated
 contribution against what the data shows: an overclaim is quoted **with its location**, and can alone justify REJECT.
 
-**Baselines and runs (item 8).** The comparison must be against prior work or a standard baseline — comparing the
-artifact to its **own** before/after state does **not** count. For stochastic systems, require **≥3 independent runs**
+**Baselines and runs (`README.md` → *Quality bar* items 3 and 8).** The comparison must be against prior work or a standard
+baseline — comparing the artifact to its **own** before/after state does **not** count. For stochastic systems, require
+**≥3 independent runs**
 reporting mean ± variance or a confidence interval; a single run presented as a result is a weakness.
 
-**Contribution-level consistency (item 11).** Compare the declared level (case study / system / theory+empirics) with the
-evidence: a case-level submission drawing general conclusions is the overclaiming failure of item 9. State whether the
+**Contribution-level consistency (`README.md` → *Quality bar* item 7).** Compare the declared level (case study / system /
+theory+empirics) with the evidence: a case-level submission drawing general conclusions is the overclaiming failure of the
+contribution-level item (`README.md` → *Quality bar* item 7). State whether the
 declaration is consistent, with a location when it is not.
 
 **Significance check.** Force the test: *name a community — if this result is true, how do their beliefs or decisions
