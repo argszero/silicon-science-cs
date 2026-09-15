@@ -27,6 +27,12 @@ the failure modes we have actually met on this package.
              and cited in the running text; every embedded figure file exists.
   AUDIT      numbers that are not placeholders are listed for review, so that a
              hand-typed measurement has to be looked at rather than trusted.
+  COUNTS     spelled-out counts are checked against sizes derived from the artefact and
+             from the document's own enumerations.  The audit class above lists only inline
+             code spans carrying a decimal, so three defects shipped through a green run:
+             "the four registered priors" (there are three), and a sentence counting
+             "three of the four consequences" over a list of four.  A count in words is a
+             measurement too, and it is the class this file could not see.
 
 The verdict is the exit status.
 """
@@ -49,6 +55,110 @@ CITE = re.compile(r"\[@([A-Za-z0-9_.:-]+)\]")
 CAPTION = re.compile(r"\*\*(Table|Figure) (\d+)\.\*\*")
 EMBED = re.compile(r"!\[Figure (\d+)\]\(([^)]+)\)")
 TABLE_ROW_DECIMAL = re.compile(r"(?<![\w.])\d+\.\d+(?![\w])")
+
+
+# ------------------------------------------------------------------ spelled-out counts ---------
+# The words a count can be written in, and the noun phrases that name a collection whose size is
+# known independently of the sentence under test.  Longest-first, so "registered criteria" is not
+# matched as "criteria".
+SPELLED = {w: i for i, w in enumerate(
+    ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"])}
+SPELLED_WORD = "(?:" + "|".join(sorted(SPELLED, key=len, reverse=True)) + ")"
+COUNT_NOUNS = [("registered priors", "registered priors"), ("registered prior", "registered priors"),
+               ("registered criteria", "registered criteria"), ("consequences", "consequences"),
+               ("contributions", "contributions"), ("tables", "tables"), ("figures", "figures")]
+
+
+def enumerated_items(text, anchor):
+    """Count the numbered items that follow an anchor, in order.
+
+    Blank lines and indented continuation lines belong to the current item, not to the end of the
+    list: breaking on a continuation counted Section 1's four consequences as ONE, which is a derived
+    size that is wrong -- worse than no derived size at all.  The anchor must not span a line break
+    (the assembled paragraph wraps mid-phrase), so it is chosen inside one line.
+    """
+    i = text.find(anchor)
+    if i < 0:
+        return None
+    n = 0
+    for line in text[i:].split("\n")[1:]:
+        if re.match(r"^%d\. " % (n + 1), line):
+            n += 1
+        elif line.strip() == "" or line[:1] in (" ", "\t"):
+            continue
+        else:
+            break
+    return n
+
+
+def count_registry(committed, facts):
+    """Every size from a source other than the sentence being tested."""
+    reg = {"registered priors": len(facts.get("prior_evidence", {})),
+           "registered criteria": len(facts.get("criteria", {})),
+           "tables": len(re.findall(r"\*\*Table \d+\.\*\*", committed)),
+           "figures": len(re.findall(r"\*\*Figure \d+\.\*\*", committed)),
+           "consequences": enumerated_items(committed, "one-point comparison cannot see:")}
+    i = committed.find("**Contributions.**")
+    reg["contributions"] = (len(re.findall(r"^\((i|ii|iii|iv|v|vi)\) ", committed[i:], re.M))
+                            if i >= 0 else None)
+    return reg
+
+
+def scan_spelled_counts(committed, reg):
+    """-> (contradictions, subset_claims, listing).
+
+    A subset claim ("K of the M X") is checked for consistency with the derived M and k <= M and is
+    also LISTED, because whether the sentence identifies its own subset cannot be read by a regex --
+    the defect that motivated this class was an unnamed subset, not an impossible count.
+    """
+    contradictions, subsets, listing = [], [], []
+    named = re.compile(r"\b(%s)\s+((?:[a-z-]+\s+)?(?:%s))\b"
+                       % (SPELLED_WORD, "|".join(re.escape(n) for n, _ in COUNT_NOUNS)), re.I)
+    pair = re.compile(r"\b(%s)\s+of\s+the\s+(%s)\s+([a-z-]+)" % (SPELLED_WORD, SPELLED_WORD), re.I)
+    for lineno, line in enumerate(committed.split("\n"), 1):
+        if line.strip().startswith("|"):            # a table row is numbers, not prose
+            continue
+        # the subset form is the more specific construct: "three of the five consequences" carries
+        # the count ONCE, so the plain scan must not report "five consequences" as a second defect.
+        # The self-test caught this double count; one defective clause should yield one finding.
+        spans = [m.span() for m in pair.finditer(line)]
+        for m in named.finditer(line):
+            if any(a <= m.start() < b for a, b in spans):
+                continue
+            key = dict(COUNT_NOUNS).get(m.group(2).lower())
+            if key is None:
+                continue
+            got, want = SPELLED[m.group(1).lower()], reg.get(key)
+            listing.append((lineno, m.group(0), key, got, want))
+            if want is not None and got != want:
+                contradictions.append((lineno, m.group(0), key, got, want))
+        for m in pair.finditer(line):
+            k, total, noun = (SPELLED[m.group(1).lower()], SPELLED[m.group(2).lower()],
+                              m.group(3).lower())
+            key, want = dict(COUNT_NOUNS).get(noun), reg.get(dict(COUNT_NOUNS).get(noun))
+            subsets.append((lineno, m.group(0), k, total, key, want))
+            if k > total or (want is not None and total != want):
+                contradictions.append((lineno, m.group(0), key or "?", total, want))
+    return contradictions, subsets, listing
+
+
+def counts_selftest():
+    """A scanner that stopped matching would pass every run that depends on it.  Two sides: a
+    contradiction must fire, and the correct text must not."""
+    reg = {"registered priors": 3, "registered criteria": 4, "consequences": 4,
+           "contributions": 4, "tables": 6, "figures": 6}
+    cases = [("the four registered priors all `CONFIRMED`", 1, "a count that contradicts the artefact fires"),
+             ("the three registered priors all `CONFIRMED`", 0, "the correct count does not fire"),
+             ("All four consequences are invisible to a one-point comparison", 0, "a matching count does not fire"),
+             ("Three of the five consequences are invisible", 1, "a subset claim over the wrong total fires"),
+             ("only three of the four consequences are named", 0, "a consistent subset claim is not a contradiction"),
+             ("six figures and six tables", 0, "two correct counts in one sentence do not fire")]
+    bad = []
+    for text, want, why in cases:
+        got = len(scan_spelled_counts(text, reg)[0])
+        if got != want:
+            bad.append("%r -> %d contradictions, expected %d (%s)" % (text, got, want, why))
+    return not bad, "%d cases, %d unexpected: %s" % (len(cases), len(bad), "; ".join(bad)[:150])
 
 rows = []
 
@@ -190,6 +300,28 @@ def main():
     missing_files = [p for _, p in EMBED.findall(committed)
                      if not os.path.exists(os.path.join(HERE, p))]
     check("layout/every_embedded_file_exists", not missing_files, str(missing_files))
+
+    # ------------------------------------------------------------------- COUNTS --
+    # A count written in words is a measurement (see the COUNTS note at the top of this file).
+    facts_blob = json.load(open(os.path.join(HERE, "canonical_results.json"), encoding="utf-8"))
+    reg = count_registry(committed, facts_blob)
+    bad_counts, subset_claims, spelled = scan_spelled_counts(committed, reg)
+    check("counts/every_collection_size_is_derivable",
+          all(v is not None for v in reg.values()),
+          "derived %s" % ", ".join("%s=%s" % (k, reg[k]) for k in sorted(reg)))
+    check("counts/spelled_out_counts_agree_with_the_artefact", not bad_counts,
+          "%d spelled counts checked, %d contradict the derived size%s"
+          % (len(spelled), len(bad_counts),
+             (": " + "; ".join("line %d %r != %s" % (l, t, w) for l, t, _, _, w in bad_counts))
+             if bad_counts else ""))
+    for lineno, text, key, got, want in spelled:
+        print("    line %4d  %-26s %d %s" % (lineno, text, got,
+                                             "= %s" % key if got == want else "CONTRADICTS %s=%s" % (key, want)))
+    for lineno, text, k, total, key, want in subset_claims:
+        print("    SUBSET CLAIM  line %4d  %-32s k=%d of M=%d%s"
+              % (lineno, text, k, total, " (matches %s)" % key if key and total == want else ""))
+    selftest_ok, selftest_detail = counts_selftest()
+    check("counts/scanner_selftest", selftest_ok, selftest_detail)
 
     # ------------------------------------------------------------------- AUDIT --
     # Numbers outside a placeholder: listed so a hand-typed measurement is seen, not trusted.

@@ -20,7 +20,7 @@ The obvious question — how many re-executions are enough — is usually answer
 comparison at one operating point. We derive and then measure the whole response curve. For a
 mean test at level `alpha`, detection power against a node whose divergence shifts the metric
 mean by `delta_D` with dispersion `sigma_D` is `Phi((sqrt(k) delta_D - c_alpha)/sigma_D)`:
-exactly two numbers, the node's own mean and standard deviation, fix its detectability. Three
+exactly two numbers, the node's own mean and standard deviation, fix its detectability. Four
 consequences are counter-intuitive, and they are what we test. First, **where** the budget helps is
 a transition band around the threshold, and it is the *comparison between rules* — not the power
 — that is non-monotone in the budget: power is monotone in `k` for a fixed node (Section 3.2),
@@ -32,12 +32,16 @@ construct has a **ceiling** that bounds the
 wins, but the maximum achievable gain falls to `{{F:S2.saturated_max_gain|5f}}` against
 `{{F:S2.unsaturated_max_gain|4f}}` below it. Third, against a **location-preserving** node
 whose moments match an honest node's, detection is pinned at the false-positive floor at every
-budget, so one more re-execution buys nothing at all. We report a pre-registered study: four
-registered criteria, all met, and three registered priors, all confirmed. A sensitivity block
+budget, so one more re-execution buys nothing at all. Fourth, **decidability is set by the effect
+size rather than by the budget**: inverting each cell's interval, only `{{F:S3.n_decidable|d}}` of
+`{{F:S3.n_cells|d}}` informative cells certify an advantage at the budget this study ran, and the
+streams those cells need are set by their effect size (Section 7.3). We report
+a pre-registered study: four registered criteria, all met, and three registered priors, all
+confirmed. A sensitivity block
 then measures the construct's own limits rather than hedging them: its usable boundary is a
 lattice ratio rather than a rate of convergence, the ceiling's cost is a fraction of a
-percentage point, and the headline comparison is decidable for only `{{F:S3.n_decidable|d}}` of
-`{{F:S3.n_cells|d}}` informative cells at the budget this study ran. The practical answer to
+percentage point, and the saturated cells' intervals contain zero, so their bound is reported as
+an upper bound rather than as a certified gain. The practical answer to
 the title question is that the marginal value of a re-execution is set by *where* the node sits
 relative to the threshold and how dispersed it is — never by the budget alone.
 

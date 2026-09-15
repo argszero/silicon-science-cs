@@ -20,8 +20,9 @@
 # one fact and requires the prose to change, and a deleted fact must be fatal rather than
 # silent), that every cited key has a reference entry and every entry is cited, that the
 # reference count clears the journal's bar, that every entry carries an authenticity record
-# in `reference-check.md`, and that tables and figures are numbered, embedded, captioned and
-# cited in the text.
+# in `reference-check.md`, that tables and figures are numbered, embedded, captioned and
+# cited in the text, and that counts written in WORDS agree with sizes derived from the
+# artefact or from the document's own enumerations.
 #
 # EXPECTED OUTPUT (the verdict lines, in this order):
 #

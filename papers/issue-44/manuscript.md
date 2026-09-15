@@ -20,7 +20,7 @@ The obvious question — how many re-executions are enough — is usually answer
 comparison at one operating point. We derive and then measure the whole response curve. For a
 mean test at level `alpha`, detection power against a node whose divergence shifts the metric
 mean by `delta_D` with dispersion `sigma_D` is `Phi((sqrt(k) delta_D - c_alpha)/sigma_D)`:
-exactly two numbers, the node's own mean and standard deviation, fix its detectability. Three
+exactly two numbers, the node's own mean and standard deviation, fix its detectability. Four
 consequences are counter-intuitive, and they are what we test. First, **where** the budget helps is
 a transition band around the threshold, and it is the *comparison between rules* — not the power
 — that is non-monotone in the budget: power is monotone in `k` for a fixed node (Section 3.2),
@@ -32,12 +32,16 @@ construct has a **ceiling** that bounds the
 wins, but the maximum achievable gain falls to `0.00098` against
 `0.9148` below it. Third, against a **location-preserving** node
 whose moments match an honest node's, detection is pinned at the false-positive floor at every
-budget, so one more re-execution buys nothing at all. We report a pre-registered study: four
-registered criteria, all met, and three registered priors, all confirmed. A sensitivity block
+budget, so one more re-execution buys nothing at all. Fourth, **decidability is set by the effect
+size rather than by the budget**: inverting each cell's interval, only `25` of
+`42` informative cells certify an advantage at the budget this study ran, and the
+streams those cells need are set by their effect size (Section 7.3). We report
+a pre-registered study: four registered criteria, all met, and three registered priors, all
+confirmed. A sensitivity block
 then measures the construct's own limits rather than hedging them: its usable boundary is a
 lattice ratio rather than a rate of convergence, the ceiling's cost is a fraction of a
-percentage point, and the headline comparison is decidable for only `25` of
-`42` informative cells at the budget this study ran. The practical answer to
+percentage point, and the saturated cells' intervals contain zero, so their bound is reported as
+an upper bound rather than as a certified gain. The practical answer to
 the title question is that the marginal value of a re-execution is set by *where* the node sits
 relative to the threshold and how dispersed it is — never by the budget alone.
 
@@ -537,6 +541,12 @@ Over `31` out-of-sample cells the median absolute prediction error is
 point. No parameter is fitted anywhere: the construct's only inputs are the node's mean and standard
 deviation, both specified by construction.
 
+The number should be read with the caveat of Section 5 in hand: because the family is specified,
+this measurement and the construct's prediction are **not two independent estimates of an unknown
+quantity**, so a small error is a check on the construct as implemented as much as evidence for its
+form. What criterion (a) genuinely tests is whether the *form* survives where its assumptions are
+thinnest, which is what Section 6.2 and Section 7 then measure.
+
 **Invariance.** In `10` groups the same value of `u` arises from
 different decompositions into budget, margin, spread and mechanism. The maximum spread within a group
 is `0.0472`, consistent with the per-cell sampling noise of
@@ -754,7 +764,9 @@ over-reading.
 
 **Table 5.** Absolute error by lattice-ratio bin. The first bin is numerically zero; at the other
 end the worst error is `0.3250` against a tolerance of `1%`.
-`0.25`, not where the budget passes some threshold.
+What separates the two ends is the lattice ratio, not the size of the budget: every cell at ratio
+`0.25` or below stays within the tolerance, and the largest ratio at which a measured
+cell still exceeds it is `5.05`.
 
 **The Gaussian control.** A Gaussian node has lattice ratio zero, and its worst error over the same
 grid is `0.0013` — `241` times tighter than the
@@ -890,10 +902,11 @@ choose which claim to rely on.
 
 **Why it is still worth publishing.** The decision the paper informs is a budget decision, and the
 decision rule it produces is cheap to apply: read the node's mean shift and dispersion, compute `u`,
-and compare it against the band. Three of the four consequences are invisible to a one-point
-comparison — a budget response confined to a band, a rule comparison that is non-monotone in the
-budget, a ceiling that bounds the prize, and a location-preserving
-node that no budget can separate. The last one is not a curiosity: it is the case the antecedent's
+and compare it against the band. **All four** consequences — the four Section 1 enumerates, in its
+order — are invisible to a one-point comparison: a budget response confined to a band and a rule
+comparison that is non-monotone in that budget, a ceiling that bounds the prize, a
+location-preserving node that no budget can separate, and a comparison decidable for only a minority
+of the cells. A location-preserving node is not a curiosity: it is the case the antecedent's
 conditional result described, it is the best response of a strategic node, and it is the reason "more
 re-executions" cannot be the answer to a disagreement with a fabricating counterparty. Even where our
 evidence is weakest — per-cell decidability at the budget we ran — the paper's contribution is the map
@@ -932,7 +945,6 @@ checkout, in one command, with no network access.
   three registered priors all `CONFIRMED`. The run prints the artefact's `sha256` and compares
   two consecutive runs against each other, so neither this manuscript nor the README has to
   quote a digest that a run could retire.
-  `a`,`b`,`c`,`d` all `MET`; the four registered priors all `CONFIRMED`.
 * **Figures.** `make_figures.py` draws all six figures from the stage artefacts (no number is typed
   into the plotting code), and `verify_figures.py` re-checks them by content (digests re-read off the
   drawn artists), render (every promised label is drawn) and canvas (every positioned element inside

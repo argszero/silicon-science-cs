@@ -14,8 +14,11 @@ Expected final line, and the lines that carry the verdict:
 ```
 criteria: a=MET, b=MET, c=MET, d=MET
 cross-checks: 85 run, 0 failed
-figure checks: 106 run, 0 failed
-manuscript check: 19 run, 0 failed
+figure checks: 106 run, 0 failed   (106 on the matplotlib build the manifest pins;
+                                    100 on another build, where the six PNG byte hashes
+                                    are REPORTED rather than required -- the six DATA
+                                    digests are required on every build)
+manuscript check: 22 run, 0 failed
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
@@ -67,7 +70,7 @@ prose can be guaranteed to be a view of the artefacts rather than a memory of th
 unresolvable placeholder is a hard error, so a fact that disappears cannot silently blank a
 sentence.
 
-`check_manuscript.py` runs 19 checks, in the classes that have actually failed on this package
+`check_manuscript.py` runs 22 checks, in the classes that have actually failed on this package
 before:
 
 * **recompute** — a fresh assembly, run from a *foreign* working directory, must be byte-identical
@@ -85,7 +88,15 @@ before:
 * **layout** — tables and figures are numbered in document order, embedded, captioned, cited in the
   running text, and every embedded file exists;
 * **audit** — numbers outside a placeholder are listed for review, so a hand-typed measurement has
-  to be looked at rather than trusted.
+  to be looked at rather than trusted;
+* **counts** — counts written in words are checked against sizes derived from the artefact
+  (`registered priors`, `registered criteria`) and from the document's own enumerations (the
+  numbered consequences of Section 1, the contributions, the captions). The audit class above
+  lists only code spans carrying a decimal, so a count in words was invisible to it: this class
+  was added after a review found `the four registered priors` in a study that registers three.
+  Every occurrence is listed, a subset claim ("three of the four X") is listed rather than
+  judged, and the scanner carries a six-case self-test so that a pattern which silently stopped
+  matching is caught by the same run that depends on it.
 
 ### The bibliography is verified, not asserted
 

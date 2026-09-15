@@ -124,6 +124,12 @@ Over `{{F:crit_a.n_cells|d}}` out-of-sample cells the median absolute prediction
 point. No parameter is fitted anywhere: the construct's only inputs are the node's mean and standard
 deviation, both specified by construction.
 
+The number should be read with the caveat of Section 5 in hand: because the family is specified,
+this measurement and the construct's prediction are **not two independent estimates of an unknown
+quantity**, so a small error is a check on the construct as implemented as much as evidence for its
+form. What criterion (a) genuinely tests is whether the *form* survives where its assumptions are
+thinnest, which is what Section 6.2 and Section 7 then measure.
+
 **Invariance.** In `{{F:crit_a_invariance.n_groups|d}}` groups the same value of `u` arises from
 different decompositions into budget, margin, spread and mechanism. The maximum spread within a group
 is `{{F:crit_a_invariance.max_spread|4f}}`, consistent with the per-cell sampling noise of

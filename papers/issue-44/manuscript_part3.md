@@ -42,7 +42,9 @@ over-reading.
 
 **Table 5.** Absolute error by lattice-ratio bin. The first bin is numerically zero; at the other
 end the worst error is `{{F:S1.worst_abs_error_overall|4f}}` against a tolerance of `{{F:S1.tol_pp|p0}}`.
-`{{F:S1.r_star|2f}}`, not where the budget passes some threshold.
+What separates the two ends is the lattice ratio, not the size of the budget: every cell at ratio
+`{{F:S1.r_star|2f}}` or below stays within the tolerance, and the largest ratio at which a measured
+cell still exceeds it is `{{F:S1.largest_ratio_exceeding|2f}}`.
 
 **The Gaussian control.** A Gaussian node has lattice ratio zero, and its worst error over the same
 grid is `{{F:S1.gaussian_max_abs_error|4f}}` — `{{F:S1.gaussian_tighter_by|d}}` times tighter than the
@@ -178,10 +180,11 @@ choose which claim to rely on.
 
 **Why it is still worth publishing.** The decision the paper informs is a budget decision, and the
 decision rule it produces is cheap to apply: read the node's mean shift and dispersion, compute `u`,
-and compare it against the band. Three of the four consequences are invisible to a one-point
-comparison — a budget response confined to a band, a rule comparison that is non-monotone in the
-budget, a ceiling that bounds the prize, and a location-preserving
-node that no budget can separate. The last one is not a curiosity: it is the case the antecedent's
+and compare it against the band. **All four** consequences — the four Section 1 enumerates, in its
+order — are invisible to a one-point comparison: a budget response confined to a band and a rule
+comparison that is non-monotone in that budget, a ceiling that bounds the prize, a
+location-preserving node that no budget can separate, and a comparison decidable for only a minority
+of the cells. A location-preserving node is not a curiosity: it is the case the antecedent's
 conditional result described, it is the best response of a strategic node, and it is the reason "more
 re-executions" cannot be the answer to a disagreement with a fabricating counterparty. Even where our
 evidence is weakest — per-cell decidability at the budget we ran — the paper's contribution is the map
@@ -220,7 +223,6 @@ checkout, in one command, with no network access.
   three registered priors all `CONFIRMED`. The run prints the artefact's `sha256` and compares
   two consecutive runs against each other, so neither this manuscript nor the README has to
   quote a digest that a run could retire.
-  `a`,`b`,`c`,`d` all `MET`; the four registered priors all `CONFIRMED`.
 * **Figures.** `make_figures.py` draws all six figures from the stage artefacts (no number is typed
   into the plotting code), and `verify_figures.py` re-checks them by content (digests re-read off the
   drawn artists), render (every promised label is drawn) and canvas (every positioned element inside
