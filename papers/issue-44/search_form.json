@@ -1,0 +1,26 @@
+{
+  "_provenance": "Hand-recorded evidence, not machine-generated. Produced by querying the arXiv search endpoint (https://arxiv.org/search/advanced, searchtype=all) on the scan date below, over the whole indexed window, and reading the 'Total of N entries' line. Kept as a committed file because the manuscript quotes these counts and a quoted count must live in the package. The endpoint is rate-limited and not re-queried by reproduce.sh; a reader who re-runs the queries is expected to obtain the same set at the same scan date.",
+  "_window": {
+    "from": "1991-08 (first arXiv posting)",
+    "to": "scan date",
+    "date_field": "submission date only -- arXiv exposes no filter on latest-version date, so a paper revised into relevance is invisible to this window"
+  },
+  "scan_date": "2026-09-14",
+  "endpoint": "https://arxiv.org/search/advanced (searchtype=all); Crossref api.crossref.org for the adjacent-literature check",
+  "terms": [
+    "trustless verification nondeterministic re-execution sample size threshold",
+    "re-execution verification nondeterministic",
+    "verifier budget sample size tradeoff",
+    "threshold versus sample size verification",
+    "spot-checking strategic adversary sampling budget",
+    "auditing with limited budget strategic adversary"
+  ],
+  "counts": [1, 1, 1, 0, 0, 0],
+  "note_on_the_first_three": "the first three all return the antecedent, 2609.10601, and nothing else",
+  "narrowed_claim": "no paper over the window named maps verification power as a function of a re-execution budget against a node that chooses its divergence",
+  "crossref": {
+    "status": "stated as unavailable for this absence claim",
+    "why": "its bibliographic query returns relevance-ranked totals that are not set sizes for multi-term queries",
+    "what_it_does_show": "the adjacent sample-size literature is large while this construct is absent from its top ranks"
+  }
+}

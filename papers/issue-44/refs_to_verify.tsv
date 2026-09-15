@@ -1,0 +1,107 @@
+threshold	arxiv	2609.10601
+nova	arxiv	2609.12582
+wald	doi	10.1214/aoms/1177731118
+power	doi	10.1037/0033-2909.112.1.155
+groupseq	doi	10.1093/biomet/64.2.191
+adapt	doi	10.1002/sim.3538
+impossibility	doi	10.1214/aoms/1177728077
+ingster	doi	10.1007/978-0-387-21580-8
+audit	doi	10.1109/TCSS.2020.2998732
+safetycase	doi	10.1016/j.ssci.2016.09.014
+costsampling	doi	10.14778/2367502.2367533
+design	doi	10.1109/TSSC.1966.300074
+samplingverify	title	Statistical Model Checking: An Overview
+metricsat	doi	10.1038/s41467-022-34591-0
+# Batch 1 of the bibliography, clusters A-E. Format: key <TAB> doi|arxiv|title <TAB> value
+# Every line is verified before it is cited; an unverified line is dropped, not softened.
+attestation	title	Innovative instructions and software model for isolated execution
+verifiablecompute	doi	10.1007/978-3-642-14623-7_25
+pinocchio	doi	10.1109/SP.2013.47
+ekiden	doi	10.1109/EuroSP.2019.00023
+flicker	doi	10.1145/1357010.1352625
+notary	doi	10.1145/3341301.3359661
+spectre	doi	10.1109/SP.2019.00002
+snarkc	doi	10.1007/978-3-642-32928-9_2
+zktraining	arxiv	2109.11335
+zkcnn	doi	10.1145/3460120.3485368
+peng2011	doi	10.1126/science.1213847
+neuripsrepro	arxiv	2003.12206
+atoml	title	State of the Art: Reproducibility in Artificial Intelligence
+showyourwork	doi	10.18653/v1/D19-1224
+provdb	doi	10.1561/1900000006
+bh1995	doi	10.1111/j.2517-6161.1995.tb02031.x
+hochberg1988	doi	10.1093/biomet/75.4.800
+byk2001	doi	10.1214/aos/1013699998
+landemets	doi	10.1093/biomet/70.3.659
+evalues	doi	10.1214/20-AOS2020
+peeking	doi	10.1145/2896377.2901462
+timeuniform	arxiv	1808.03204
+tsybakov	doi	10.1007/b13794
+conformalgentle	arxiv	2107.07511
+conformalreg	doi	10.1080/01621459.2017.1307116
+conformalvalid	doi	10.1007/s10994-013-5355-6
+valiant	doi	10.1145/1968.1972
+vc1971	doi	10.1016/0022-1236(71)90030-9
+dkw	doi	10.1214/aoms/1177706262
+massart	doi	10.1214/aop/1176990746
+massey	doi	10.1214/aoms/1177729550
+dyba2006	doi	10.1016/j.infsof.2005.09.002
+hitchhiker	doi	10.18653/v1/P18-1128
+reportscores	doi	10.18653/v1/D17-1222
+bouthillier	arxiv	2103.03098
+drlrepro	doi	10.1609/aaai.v32i1.11694
+# Batch 2 of the bibliography, clusters F-J plus the estimation-theory block.
+llmjudge	arxiv	2306.05685
+judgebias	arxiv	2305.17926
+selfconsistency	arxiv	2203.11171
+passk	arxiv	2107.03374
+agentbench	arxiv	2308.03688
+gaia	arxiv	2311.12983
+swebench	arxiv	2310.06770
+evalharness	arxiv	2211.09110
+chainofver	arxiv	2309.11495
+selfrefine	arxiv	2303.17651
+cot	arxiv	2201.11903
+zeroshotreason	arxiv	2205.11916
+mmlu	arxiv	2009.03300
+instructgpt	arxiv	2203.02155
+redteam	arxiv	2202.03286
+propertytesting	doi	10.1145/285055.285060
+robustopt	doi	10.1007/s10107-002-0347-5
+aqp	doi	10.1007/s41019-018-0074-4
+onlineagg	doi	10.1145/253260.253268
+bandits	doi	10.1137/S0097539701398375
+qbc	doi	10.1145/130385.130417
+optdesign	doi	10.1093/oso/9780199296590.001.0001
+underspec	arxiv	2011.03395
+leaderboard	arxiv	2504.20879
+contamination	arxiv	2311.09783
+bigbench	arxiv	2206.04615
+recsyeval	doi	10.1145/3269206.3272018
+concreteproblems	arxiv	1606.06565
+goalmisspec	arxiv	2105.14111
+rewardoveropt	arxiv	2210.10760
+bft	doi	10.1145/357172.357176
+pbft	doi	10.1145/571825.571847
+orderstats	title	Order Statistics David Nagaraja
+extremevalue	doi	10.1007/0-387-34471-3
+quantiles	title	Sample Quantiles in Statistical Packages
+bootstrap	doi	10.1007/978-1-4899-4541-9
+wilson	doi	10.1080/01621459.1927.10502953
+clopperpearson	doi	10.1093/biomet/26.4.404
+neymanpearson	doi	10.1098/rsta.1933.0009
+fisher1922	doi	10.1098/rsta.1922.0009
+student1908	title	The Probable Error of a Mean
+vanderVaart	doi	10.1017/CBO9780511802256
+permutationtests	title	Permutation Parametric and Bootstrap Tests of Hypotheses
+pvalues	doi	10.1007/s10654-016-0149-3
+mcmcse	doi	10.1214/088342306000000060
+effectsize	doi	10.4324/9780203771587
+tost	doi	10.1007/BF01068419
+roc	doi	10.1148/radiology.143.1.7063747
+detectiontheory	title	Signal Detection Theory and Psychophysics
+costsensitive	doi	10.1145/502512.502550
+runtimeverif	doi	10.1007/978-3-319-75632-5_1
+outlierexposure	arxiv	1812.04606
+selective	arxiv	1705.08500
+mltesting	arxiv	1906.10742
