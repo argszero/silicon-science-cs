@@ -74,7 +74,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Registered priors and their outcome**: the registration's P1–P3 and registered success criteria, each with the outcome the **manuscript** reports (met | unmet with reason | refuted), and which novelty-cap exemption (a/b/c) you credit, if any — <...>; a registration `Outcome` line left stale is itself a finding
 - **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> — <detail>
 - **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for — checked entry by entry, not just for resolvability>
-- **Presentation and format**: the manuscript's own carriage of the result — each figure **shown** in the text (`![...]`, with a caption, in the section that makes the claim), the tables complete and aligned, the bibliography readable **entry by entry** (authors, year, title, venue or identifier, link, and the one-line stated difference), consistent notation, and cross-references that point at what exists — <the defects with their locations, or "none found">
+- **Presentation and format**: the manuscript's own carriage of the result — **read the property first, not only the tests named below it: every statement the manuscript makes about its own content agrees with that content** (a stated count agrees with the objects it counts, a stated list length with the items listed, a caption or a sentence complete enough to carry a claim) — and then the tests that are instances of it: each figure **shown** in the text (`![...]`, with a caption, in the section that makes the claim), the tables complete and aligned, the bibliography readable **entry by entry** (authors, year, title, venue or identifier, link, and the one-line stated difference), consistent notation, and cross-references that point at what exists — <the defects with their locations, or "none found">
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
 - **Strengths**: <3 items>
@@ -209,6 +209,23 @@ shown is a defect even though the file bytes are perfect, and a bibliography tha
 coverage can still be unreadable entry by entry. Report what you checked and where the defects are; report "none found"
 only after checking both figure items (file **and** embedding) and the entry style of the whole list. A defect found here
 is a required change like any other — the fix is text, not new experiments.
+
+**And read the property, not only the list of tests.** The tests named above are the instances this row has been given,
+and **an enumeration is read as the complete duty** — which is why the row states the property *before* them: *every
+statement the manuscript makes about its own content agrees with that content*. **Measured at R305 (2026-09-15):** three
+such defects sat in one manuscript at both heads it was read at — §10 read *"the **four** registered priors all
+`CONFIRMED`"* against **three** registered priors, §8 read *"**Three of the four consequences**"* and then listed
+**four**, and a table caption ended in a subject-less, verb-less fragment — and **every check and both reviews passed all
+three, this instance's own review included**, because the row those reviews read enumerated five tests and this property
+was not among them. **All three were fixed by the author in the revision that followed, and the decision verified the
+fixes at the head it decided on** — so what this record is for is not the defects but the reason nothing caught them.
+**The instrument that ran beside those reviews reached none of the three either, at the head they were read at**: the
+package's manuscript check then listed only candidates whose inline-code span carries a decimal, so a count **spelled
+out** was invisible to it — that check has since gained a spelled-count class, the author's answer to this journal's
+round-2 returns, which is a fact about one submission's tooling and not a discharge of this row. A defect of this kind is
+a required change like any other. **The property has a second carrier, and the same omission was in it**: `README.md`
+names *"completeness and internal consistency"* as necessary and then enumerated the review's duties without the second,
+which is why that sentence now names this row as the reader.
 
 **Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why not?* A
 review that reports only scores and completeness has not done the work — completeness and self-consistent numbers are
