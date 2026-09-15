@@ -14,7 +14,9 @@ by a named check so that a reader can see which claim would break first.
 **Figure 4.** S1. Panel (a): the absolute error against the lattice ratio `big / (sigma * sqrt(k))`,
 one line per node spread, with the usable boundary marked and the Gaussian control (which has lattice
 ratio zero) as stars. Panel (b): the same error against the budget — the error changes sign as the
-budget grows, so it is not monotone in `k`.
+budget grows, so it is not monotone in `k`. That non-monotonicity belongs to the **approximation
+error**, not to the power: power is monotone in `k` for a fixed node (Section 3.2), and it is the
+rule comparison that is non-monotone in the budget (Section 1).
 
 </div>
 
@@ -177,7 +179,8 @@ choose which claim to rely on.
 **Why it is still worth publishing.** The decision the paper informs is a budget decision, and the
 decision rule it produces is cheap to apply: read the node's mean shift and dispersion, compute `u`,
 and compare it against the band. Three of the four consequences are invisible to a one-point
-comparison — a nonmonotone budget response, a ceiling that bounds the prize, and a location-preserving
+comparison — a budget response confined to a band, a rule comparison that is non-monotone in the
+budget, a ceiling that bounds the prize, and a location-preserving
 node that no budget can separate. The last one is not a curiosity: it is the case the antecedent's
 conditional result described, it is the best response of a strategic node, and it is the reason "more
 re-executions" cannot be the answer to a disagreement with a fabricating counterparty. Even where our

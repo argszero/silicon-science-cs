@@ -16,6 +16,7 @@ silent skip -- an unverifiable citation must never reach the manuscript.  The
 script exits non-zero if any key is UNVERIFIED.
 """
 
+import html
 import io
 import json
 import os
@@ -33,9 +34,15 @@ UA = "silicon-science-cs/1.0 (mailto:editor@example.invalid)"
 
 
 def curl(url):
+    """Fetch, and decode as UTF-8 explicitly.
+
+    `text=True` decodes with the locale's preferred encoding, which both mojibakes
+    author names (the `robustopt` entry printed `T<U+FFFD>t<U+FFFD>nc<U+FFFD>`) and
+    makes the generated file depend on where it was generated.
+    """
     r = subprocess.run(["curl", "-s", "-m", "30", "-A", UA, url],
-                       capture_output=True, text=True)
-    return r.stdout
+                       capture_output=True)
+    return r.stdout.decode("utf-8", errors="replace")
 
 
 def norm(s):
@@ -43,24 +50,137 @@ def norm(s):
     return re.sub(r"[^a-z0-9 ]", " ", s).split()
 
 
-def same_title(a, b):
-    na, nb = norm(a), norm(b)
-    if not na or not nb:
-        return False
-    inter = len(set(na) & set(nb))
-    return inter / max(len(set(na)), len(set(nb))) >= 0.85
+def oneline(s):
+    """Collapse every whitespace run to one space.
+
+    A record's own text can break the file that carries it: Crossref's title for
+    `reportscores` contains a newline, so the generated entry was split across two
+    lines and `[48]` printed truncated, mid-title and without its identifier. The
+    placeholder layer was guarded; the record's own text was not.
+
+    NFKC folds compatibility characters to one typographic form, so the list cannot
+    carry a ligature in one entry and two letters in another.
+    """
+    # `html.unescape` last: Crossref's container title for `vc1971` is the literal
+    # string "Theory of Probability &amp; Its Applications", and a bibliography that
+    # prints an HTML entity is a bibliography a reader cannot paste into a search box.
+    t = re.sub(r"\s+", " ", unicodedata.normalize("NFKC", s or "")).strip()
+    return html.unescape(t)
+
+
+def title_of(s):
+    """Normalise a record title: one line, and one case convention."""
+    t = oneline(s).rstrip(".").strip()
+    # Crossref holds the publisher's own punctuation artefact on at least one record:
+    # 10.1007/s101070100286 comes back as "Robust optimization ? methodology and
+    # applications", a question mark where the title's en dash belongs.  The record is
+    # what it is; the rendered entry repairs the *transparent* artefact (a lone "?" used
+    # as a dash between spaces) and reference-check.md still carries the record's own
+    # string, so the repair is visible rather than silent.
+    t = re.sub(r"\s\?\s", " \u2013 ", t)
+    letters = [c for c in t if c.isalpha()]
+    if letters and all(c.isupper() for c in letters):
+        # Crossref holds some titles entirely in caps (the Clopper-Pearson entry).
+        t = t.title()
+        t = re.sub(r"\b(Of|The|And|For|In|On|To|With|A|An)\b",
+                   lambda m: m.group(0).lower(), t)
+        t = t[0].upper() + t[1:]
+    return t
+
+
+def norm_seq(s):
+    """The ORDER-PRESERVING token sequence -- the strict title identity test."""
+    return tuple(norm(s))
+
+
+def fmt_name(full):
+    """One name order for the whole bibliography: `Family, I.`
+
+    Order-aware, because the two sources disagree: Crossref gives `given`/`family`
+    as separate fields, arXiv gives one string ALREADY in `Family, Given` form, and
+    a bare string with no comma is `Given Family`. Assuming "last token is the
+    family" reversed every arXiv author -- `Belz, Anya` became `Anya, B.`, and the
+    same bug turned `Pineau, Joelle` into `Joelle, P.`.
+    """
+    full = oneline(full)
+    if not full:
+        return ""
+    if "," in full:
+        fam, _, giv = full.partition(",")          # already `Family, Given`
+    else:
+        parts = full.split()
+        fam, giv = parts[-1], " ".join(parts[:-1])  # `Given Family`
+    initials = " ".join(p[0] + "." for p in re.split(r"[\s.-]+", giv) if p)
+    return ("%s, %s" % (fam.strip(), initials)).strip().rstrip(",")
+
+
+def is_secondary(rec):
+    """Is this resolution a reference WORK rather than the work itself?
+
+    The `student1908` case: a title search for "The Probable Error of a Mean"
+    returned a 2010 SAGE encyclopedia entry whose title tokenises to the same words,
+    and the entry was accepted because the old test compared token SETS at 0.85.
+    """
+    venue = (rec.get("venue") or "").lower()
+    typ = (rec.get("type") or "").lower()
+    if re.search(r"encyclopedia|dictionary|reference work|springerreference|wikip", venue):
+        return True
+    return typ in ("reference-entry", "component", "dataset", "peer-review", "grant")
+
+
+def support_failure(rec, intent):
+    """The support test: does the resolved RECORD carry the claim's WORK?
+
+    Existence is not support. Before this test the batch declared only a locator, so
+    a locator that resolved to a real but different work passed every check in the
+    pipeline -- which is how five anchors cited works their sentences could not use.
+    """
+    if not intent:
+        return "batch declares no intent title"
+    if is_secondary(rec):
+        return "resolution is a secondary source (%s)" % (rec.get("venue") or rec.get("type"))
+    if norm_seq(rec["title"]) != norm_seq(intent):
+        return "resolved title is not the declared work"
+    return None
 
 
 def authors_text(msg, n=3):
+    """Render authors in ONE order (`Family, I.`) for the whole bibliography.
+
+    The previous version printed `Given Family` from Crossref and `Given Family`
+    from arXiv while some families arrived in caps -- so one list contained
+    "Ardebili, Mohsen Seyedkazemi", "Jacob Cohen" and "S. J. POCOCK" side by side.
+    """
     out = []
     for a in (msg.get("author") or [])[:n]:
-        fam = a.get("family") or a.get("name") or ""
-        giv = a.get("given") or ""
-        out.append(("%s %s" % (giv, fam)).strip())
+        fam = oneline(a.get("family") or "")
+        giv = oneline(a.get("given") or "")
+        if fam:
+            if fam.isupper() and len(fam) > 2:
+                fam = fam.title()
+            initials = " ".join(p[0] + "." for p in re.split(r"[\s.-]+", giv) if p)
+            out.append(("%s, %s" % (fam, initials)).strip().rstrip(","))
+        else:
+            out.append(fmt_name(oneline(a.get("name") or "")))
+    out = [x for x in out if x]
     s = "; ".join(out)
     if len(msg.get("author") or []) > n:
         s += "; et al."
     return s
+
+
+def full_title(msg):
+    """Title INCLUDING the subtitle Crossref keeps in its own field.
+
+    Returning only `title` dropped every subtitle from the printed bibliography
+    (`MetaCost` printed without its subtitle), and it made the support test compare
+    against a truncated string.
+    """
+    t = (msg.get("title") or [""])[0]
+    sub = (msg.get("subtitle") or [""])
+    if sub and sub[0] and norm(sub[0]) not in (None, []) and sub[0].lower() not in t.lower():
+        t = "%s: %s" % (t.rstrip(":"), sub[0])
+    return t
 
 
 def crossref_doi(doi):
@@ -69,14 +189,21 @@ def crossref_doi(doi):
         msg = json.loads(raw)["message"]
     except Exception:
         return None
-    title = (msg.get("title") or [""])[0]
+    title = full_title(msg)
     year = (msg.get("issued", {}).get("date-parts") or [[None]])[0][0]
     venue = (msg.get("container-title") or [""])[0] or msg.get("publisher", "")
     return {"title": title, "year": year, "venue": venue, "doi": msg.get("DOI", doi),
-            "authors": authors_text(msg), "source": "Crossref DOI lookup"}
+            "type": msg.get("type", ""), "authors": authors_text(msg),
+            "source": "Crossref DOI lookup"}
 
 
 def crossref_title(title):
+    """A title search accepts only an EXACT normalised-title match, in order.
+
+    The 0.85 token-SET overlap this replaces accepted a 2010 encyclopedia entry for
+    Student's 1908 paper: same words, different work, and the printed entry became an
+    anonymous reference-article.
+    """
     import urllib.parse
     url = ("https://api.crossref.org/works?rows=5&select=title,author,issued,DOI,"
            "container-title,type&query.bibliographic=" + urllib.parse.quote(title))
@@ -86,13 +213,16 @@ def crossref_title(title):
     except Exception:
         return None
     for msg in items:
-        cand = (msg.get("title") or [""])[0]
-        if same_title(cand, title):
+        cand = full_title(msg)
+        if norm_seq(cand) == norm_seq(title) and not is_secondary(
+                {"venue": (msg.get("container-title") or [""])[0],
+                 "type": msg.get("type", "")}):
             year = (msg.get("issued", {}).get("date-parts") or [[None]])[0][0]
             return {"title": cand, "year": year,
                     "venue": (msg.get("container-title") or [""])[0],
-                    "doi": msg.get("DOI", ""), "authors": authors_text(msg),
-                    "source": "Crossref title search, normalised-title match"}
+                    "doi": msg.get("DOI", ""), "type": msg.get("type", ""),
+                    "authors": authors_text(msg),
+                    "source": "Crossref title search, exact normalised-title match"}
     return None
 
 
@@ -109,27 +239,35 @@ def arxiv_abs(aid):
     auths = re.findall(r'<meta name="citation_author" content="([^"]*)"', raw)
     date = meta("citation_date") or meta("citation_online_date")
     return {"title": title, "year": (date[:4] or None), "venue": "arXiv preprint",
-            "doi": "arXiv:%s" % aid.strip(),
-            "authors": "; ".join(auths[:3]) + ("; et al." if len(auths) > 3 else ""),
+            "doi": "arXiv:%s" % aid.strip(), "type": "posted-content",
+            "authors": "; ".join(fmt_name(a) for a in auths[:3])
+                       + ("; et al." if len(auths) > 3 else ""),
             "source": "arXiv abstract page (citation_* metadata)"}
 
 
-def render(key, rec):
-    title = rec["title"].strip().rstrip(".").strip()
-    line = "%s. *%s*." % (rec["authors"] or "Anonymous", title)
-    if rec["venue"]:
-        line += " %s," % rec["venue"].strip()
+def render(key, rec, expected_author=None):
+    title = title_of(rec["title"])
+    auth = oneline(rec["authors"])
+    if not auth and expected_author:
+        # the supplied author is normalised like every other: one order for one list
+        expected_author = fmt_name(expected_author)
+        # Crossref holds no author field for a few book records; the author is
+        # supplied from the work itself and the supply is disclosed in
+        # reference-check.md rather than silently rendered as "Anonymous".
+        auth = expected_author
+    line = "%s. *%s*." % (auth or "Anonymous", title)
+    venue = oneline(rec["venue"])
+    if venue:
+        line += " %s," % venue
     if rec["year"]:
         line += " %s." % rec["year"]
     if rec["doi"]:
         line += " `%s`" % rec["doi"]
+    assert "\n" not in line, "a rendered entry must be one line"
     return line
 
 
 # ------------------------------------------------- coverage and ambiguity ----
-
-CITE_BODY = re.compile(r"\[(\d+(?:\s*[,u2013-]\s*\d+)*)\]")
-
 
 def repo_root():
     """The directory the journal's own gate must be run from.
@@ -278,14 +416,32 @@ def coverage_section():
                       "**THEY DISAGREE: the gate's numbers are authoritative and the counter is the "
                       "defect**"))
     return "".join(out)
+def hand_written_intents(path):
+    """The number of intents written by hand (read from the batch's own header).
+
+    Quoted in the report instead of a literal, because a literal of this kind goes
+    stale the moment the batch changes -- the same reason the profile count in the
+    instrument is derived rather than typed.
+    """
+    for line in io.open(path, encoding="utf-8"):
+        m = re.match(r"#\s*hand-written intents:\s*(\d+)", line)
+        if m:
+            return int(m.group(1))
+    return 0
+
+
 def main():
     rows, refs, problems = [], [], []
+    n_hand = hand_written_intents(BATCH)
     with io.open(BATCH, encoding="utf-8") as fh:
         for raw in fh:
             raw = raw.rstrip("\n")
             if not raw.strip() or raw.startswith("#"):
                 continue
-            key, kind, value = [p.strip() for p in raw.split("\t")[:3]]
+            cols = [p.strip() for p in raw.split("\t")]
+            key, kind, value = cols[0], cols[1], cols[2]
+            intent = cols[3] if len(cols) > 3 else ""
+            exp_auth = cols[4] if len(cols) > 4 and cols[4] != "-" else None
             if kind == "doi":
                 rec = crossref_doi(value)
             elif kind == "arxiv":
@@ -295,14 +451,19 @@ def main():
             else:
                 rec = None
             if rec is None:
-                rows.append((key, kind, "UNVERIFIED", "no matching record"))
+                rows.append((key, kind, "UNVERIFIED", "n/a", "no matching record"))
                 problems.append(key)
-            else:
-                rows.append((key, kind, "verified", "%s -- %s" %
-                             (rec["title"], rec["doi"] or rec["venue"])))
-                if kind == "title" and not same_title(rec["title"], value):
-                    problems.append(key)
-                refs.append((key, render(key, rec), rec))
+                time.sleep(1.0)
+                continue
+            # The support test: the record must be the DECLARED work, not merely a
+            # real one. This is the half of the citation layer that was missing.
+            fail = support_failure(rec, intent)
+            support = "OK" if fail is None else "**FAIL: %s**" % fail
+            rows.append((key, kind, "verified", support, "%s -- %s" %
+                         (oneline(rec["title"]), rec["doi"] or rec["venue"])))
+            if fail is not None:
+                problems.append(key + " (support: %s)" % fail)
+            refs.append((key, render(key, rec, exp_auth), rec))
             time.sleep(1.0)
 
     with io.open(OUT_REFS, "w", encoding="utf-8") as fh:
@@ -316,13 +477,53 @@ def main():
         fh.write("Every citation key used in the manuscript is verified below against a real\n")
         fh.write("external record before submission; `verify_refs.sh` re-runs the checks and\n")
         fh.write("writes this file. A key with no verified record is a hard failure.\n\n")
-        fh.write("| Key | Method | Result | Record found |\n|---|---|---|---|\n")
-        for key, kind, result, detail in rows:
-            fh.write("| `%s` | %s | %s | %s |\n" % (key, kind, result, detail))
+        fh.write("| Key | Method | Exists | Support (is it the declared work?) | Record found |\n")
+        fh.write("|---|---|---|---|---|\n")
+        for key, kind, result, support, detail in rows:
+            fh.write("| `%s` | %s | %s | %s | %s |\n" % (key, kind, result, support, detail))
+        n_ok = sum(1 for r in rows if r[3] == "OK")
+        n_bad = sum(1 for r in rows if r[3].startswith("**FAIL"))
+        n_unv = sum(1 for r in rows if r[2] == "UNVERIFIED")
+        fh.write("\n## Support test -- does the record carry the claim's work?\n\n"
+                 "Two questions, and until this change only the first was asked. **Existence**: is\n"
+                 "there a real record at the locator? **Support**: is that record the work the\n"
+                 "sentence needs? The second column above is the new one, and it is the one that\n"
+                 "fails on the class of defect this table could not previously see -- an entry whose\n"
+                 "locator resolves to a real but *different* work (a `title` search answered by a\n"
+                 "same-titled encyclopedia entry, or a DOI that points at another paper entirely).\n\n"
+                 "| measure | value |\n|---|---|\n"
+                 "| keys checked | %d |\n"
+                 "| **support OK** (record is the declared work) | **%d** |\n"
+                 "| support FAIL | %d |\n"
+                 "| unverified (no record at all) | %d |\n\n"
+                 "How the test decides: the batch (`refs_to_verify.tsv`) now carries, for every key,\n"
+                 "the **intended work's title** as a fourth column, declared independently of the\n"
+                 "locator. A resolution passes only if its normalised title, as an **ordered token\n"
+                 "sequence**, equals the declared title, and only if the record is not a secondary\n"
+                 "source (a reference work -- encyclopedia, dictionary, reference-entry). The\n"
+                 "previous test compared unordered token **sets** at 0.85 overlap, which is why a\n"
+                 "2010 encyclopedia entry could stand in for a 1908 paper: the words matched.\n\n"
+                 "**What this test would and would not have caught.** It fails on every entry whose\n"
+                 "locator points at a different work, and it fails on a `title`-method search\n"
+                 "answered by a reference work. It would **not**, on its own, have caught the\n"
+                 "mis-anchored entries found at review: for %d of the %d keys the intent column was\n"
+                 "back-filled from the record that the locator returned, so those rows assert the\n"
+                 "locator agrees with itself. For the %d corrected keys -- and for the two\n"
+                 "paragraphs the decision names as the place to check first -- the intent was\n"
+                 "written from the sentence's claim, and there the test is a genuine check. Going\n"
+                 "forward it is a **drift guard**: changing a DOI, or a Crossref record being\n"
+                 "replaced, now fails the run instead of silently rewording a citation.\n\n"
+                 % (len(rows), n_ok, n_bad, n_unv, len(rows) - n_hand, len(rows), n_hand))
+        if n_bad or n_unv:
+            fh.write("**Run status: FAIL** -- %d support failures and %d unverified keys.\n\n"
+                     % (n_bad, n_unv))
+        else:
+            fh.write("**Run status: PASS** -- every key that resolved is the declared work.\n\n")
         fh.write(coverage_section())
 
-    print("verify_refs: %d keys, %d verified, %d unverified" %
-          (len(rows), len(refs), len(problems)))
+    n_bad = sum(1 for r in rows if r[3].startswith("**FAIL"))
+    print("verify_refs: %d keys, %d rendered, %d unverified, %d support-FAIL" %
+          (len(rows), len(refs), sum(1 for r in rows if r[2] == "UNVERIFIED"), n_bad))
     for k in problems:
         print("  UNVERIFIED:", k)
     return 1 if problems else 0

@@ -21,10 +21,13 @@ comparison at one operating point. We derive and then measure the whole response
 mean test at level `alpha`, detection power against a node whose divergence shifts the metric
 mean by `delta_D` with dispersion `sigma_D` is `Phi((sqrt(k) delta_D - c_alpha)/sigma_D)`:
 exactly two numbers, the node's own mean and standard deviation, fix its detectability. Three
-consequences are counter-intuitive, and they are what we test. First, the budget response is
-**not monotone** — power improves with `k` only inside a transition band around the threshold,
-whose measured width tracks the construct's prediction to `0.86%`
-and shrinks as `1/sqrt(k)` exactly. Second, the construct has a **ceiling** that bounds the
+consequences are counter-intuitive, and they are what we test. First, **where** the budget helps is
+a transition band around the threshold, and it is the *comparison between rules* — not the power
+— that is non-monotone in the budget: power is monotone in `k` for a fixed node (Section 3.2),
+while the quantity that is non-monotone in `k` is the construct's own approximation error
+(Section 7.1). The band's measured width tracks the construct's prediction to
+`0.86%` and shrinks as `1/sqrt(k)` exactly. Second, the
+construct has a **ceiling** that bounds the
 *prize* rather than the detection: above a saturated operating point the derived rule still
 wins, but the maximum achievable gain falls to `0.00098` against
 `0.9148` below it. Third, against a **location-preserving** node
@@ -59,12 +62,14 @@ with `k` re-executions against a node that chooses how its divergence moves the 
 that detectability collapses onto a single coordinate, and that the consequences of that
 collapse are things a one-point comparison cannot see:
 
-1. **The budget response is not monotone.** Power improves with `k` only for nodes inside a
-   transition band around the threshold. The band's measured width matches the construct's
-   prediction to `0.86%` (registered tolerance
-   `20%`), and it shrinks as `1/sqrt(k)` exactly —
-   `width * sqrt(k) / sigma` is constant to `0.0e+00` at every
-   spread across `k = 8` to `512`.
+1. **Where the budget helps is a band, and the rule comparison is non-monotone in the budget.**
+   Power is monotone in `k` for a fixed node (Section 3.2); what the budget moves is *which* margins
+   separate, and the comparison between the two rules is not monotone in it. Inside a transition
+   band around the threshold the measured width matches the construct's prediction to
+   `0.86%` (registered tolerance `20%`), and it
+   shrinks as `1/sqrt(k)` exactly — `width * sqrt(k) / sigma` is constant to
+   `0.0e+00` at every spread across `k = 8` to
+   `512`.
 2. **There is a ceiling, and it bounds the prize, not the detection.** Above a saturated
    operating point the difference between a well-calibrated rule and a naive one remains
    statistically resolvable but shrinks to `0.00098`, against
@@ -79,16 +84,28 @@ collapse are things a one-point comparison cannot see:
    effect size (median `30`, range `11` to
    `1854`), not by the budget.
 
-**Contributions.** (i) A closed-form construct for re-execution power under a node that
-chooses its divergence, reduced to two moments, with the transition band, the ceiling and the
-zero-marginal-value result as corollaries. (ii) A pre-registered empirical study of that
-construct on a synthetic ground-truth family, in which the four registered criteria are all
-met (Table 1) and the three registered priors are all confirmed (Table 4). (iii) A sensitivity
-block that measures the construct's own limits instead of hedging them: the usable boundary is
-a lattice ratio, the ceiling's cost is quantified, and the decidability of the headline
-comparison is mapped cell by cell. (iv) A reproducing artifact in which every number in this
-manuscript is a view of a committed artefact — the prose cannot drift from the data, because
-it contains no hand-typed measurement (Section 10).
+**Contributions.** Our organising quantity is not new, and we say so first: `u` in Section 3.2 is
+the standard normal-approximation power of a one-sample mean test, three lines of algebra from the
+sample-mean standard error, with its antecedents in the sample-size literature ([3] [4]
+[5] [6]). We do not claim it as a new construct. What we contribute is what it implies
+when the alternative is a *choice* rather than a fixed family:
+
+(i) **Boundary results for the budget.** The construct's usable limit is a **lattice ratio**
+`big/(sigma*sqrt(k))` rather than a rate of convergence (Section 7.1); the ceiling bounds the
+**prize**, `1 - p_c`, rather than the detection, and its cost is a fraction of a percentage point
+(Section 7.2); and the headline rule comparison is **decidable cell by cell for only a minority** of
+informative cells at the budget we ran, with the streams each cell needs set by its effect size
+(Section 7.3).
+(ii) A **pre-registered** empirical study of that construct on a synthetic ground-truth family with
+ground truth by construction and one external calibration cell, in which the four registered
+criteria are all met (Table 1) and the three registered priors are all confirmed (Table 4).
+(iii) A **persistent advantage** of the derived rule over the best matched constant threshold — a
+median factor of `1.0897` — that does **not** vanish as the calibration set
+grows, to `n_cal = 1000` (Section 6.3), with the mechanism, its
+refutation and its correction reported together (Section 6.3.1).
+(iv) A reproducing artifact in which every number in this manuscript is a view of a committed
+artefact — the prose cannot drift from the data, because it contains no hand-typed measurement
+(Section 10).
 
 **Significance — whose belief changes.** Designers and auditors of verification protocols for
 nondeterministic AI pipelines: verifiable-compute marketplaces, agent-observability vendors,
@@ -99,6 +116,17 @@ band has been passed) — and the median informative cell in this study needed
 `30` streams to certify what `25` of
 `42` cells got for free. A verifier who reads only "more samples are better"
 will buy the wrong thing in both regimes.
+
+**The scope of that argument.** Applying the rule *quantitatively* takes the node's location shift
+and dispersion as inputs, and a fabricating node does not report them — which the synthetic family
+supplies "by construction" and a real verifier does not. We therefore state the claim in two parts
+rather than one. The **structural** half — the band, the ceiling, and the fact that a
+location-preserving divergence is separated by no budget at all — holds for any verifier, because
+it is a property of the mean test rather than of an estimate. The **operational** half, including
+which of the two budget items to buy next, is scoped to a verifier that can estimate or bound the
+two inputs; Section 3.6 states the two routes by which it might do so. Nothing in Section 6 or
+Section 7 depends on that scoping, and Section 8 carries it as a threat rather than as a step we
+have shown.
 
 **Roadmap.** Section 2 positions the result. Section 3 derives the construct. Section 4 states
 the pre-registered priors and criteria. Section 5 describes the instrument and its controls.
@@ -284,6 +312,15 @@ false-positive level `alpha`, so `tau = c_alpha * sigma_h / sqrt(k)` with
 
 ### 3.2 Closed form
 
+**What is and is not new here.** The expression below is the textbook normal-approximation power of
+a one-sample mean test against a shifted mean: three lines of algebra from the sample-mean standard
+error, with the small-sample vocabulary of the Student and Fisher tradition ([87]
+[88]) and the general power function of the sample-size literature ([3] [4]
+[5] [6]) as its antecedents. It is not offered as a new construct. What is new is what
+the expression implies when the alternative is a *choice* rather than a fixed family: the boundary
+results of Section 7 and the persistent advantage of the derived rule over a matched constant
+threshold (Section 6.3).
+
 The verifier's statistic is the sample mean, whose standard error is `sigma_h / sqrt(k)` under
 the honest node and `sigma_D / sqrt(k)` under the divergent one. Detection power is therefore
 
@@ -304,6 +341,24 @@ the ceiling. Differentiating `u` in the margin, the band's half-width scales as
 constant. Equivalently, doubling the budget tightens the band by `sqrt(2)` but does not move a
 node that sits outside it from "no signal" to "certain detection". This is the quantitative
 form of prior P2 and the object of registered criterion (b).
+
+**Two widths, two names.** The paper uses the word "band" for two different objects, and each is
+named where it is measured so that a reader can check the law against the table:
+
+* The **tangent band** at a fixed budget `k` (`predicted_tangent` in the instrument) is the band
+  whose half-width is `sigma_D / sqrt(k)`. This is the object the width law is about: the invariant
+  `width * sqrt(k) / sigma_D` is constant for it, exactly, at each fixed `k` (Section 6.2).
+* The **secant band** over the design's budget range (`predicted_secant` in the instrument, taken
+  over `K_BAND = [8, 32, 128,
+  512]`) is the *average* of that half-width over the log budget range the
+  experiment spans. Its width is
+  `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)`, which is what a
+  single number has to be if it is to stand for a range rather than for a point. Because it averages
+  `sigma_D / sqrt(k)` over `k`, the secant width grows **sublinearly in `sigma_D`** while the tangent
+  width grows linearly — so a reader who checks the width law against the secant column of Table 2
+  will not see it hold, and that is not a contradiction: the law is the tangent statement and Table 2
+  is the secant table. Each registered tolerance is read on the object the stage recorded for that
+  row, and Section 6.2 prints both definitions beside the numbers they produce.
 
 ### 3.4 The ceiling
 
@@ -331,6 +386,28 @@ minimises its own detection probability — the optimum is the location-preservi
 averaging kills dispersion, not mean, so the node can hold `u` at or below the boundary at
 every budget. That is prior P3, and Section 6.4 reports it as a property of the admissible set
 rather than as an assumption about node behaviour.
+
+### 3.6 What the verifier must observe for the rule to apply
+
+The derived rule takes the node's location shift `delta_D` and dispersion `sigma_D` as inputs, and
+this is the sharpest limitation of the decision argument, so it is stated where the rule is derived
+rather than left to the threats section.
+
+* **Scoped claim.** Where the rule is applied quantitatively — the band, the ceiling and the
+  decidability map — the claim is scoped to a verifier that can estimate or bound the two inputs.
+  Section 1's decision argument and the operational summary of Section 9 apply to that verifier.
+* **One consequence needs no estimate at all.** P3 is a statement about the admissible set, not
+  about an estimate: a location-preserving divergence is detected at the false-positive rate
+  whatever the verifier believes `delta_D` and `sigma_D` to be. Against such a node, "spend no more
+  on `k`" is correct without any knowledge of the node's moments.
+* **Two routes to the inputs, stated and not evaluated.** (i) *Calibration with a perturbation arm*:
+  if the verifier can vary a known input, or hold an honest reference implementation, the induced
+  shift in the metric identifies `delta_D` and its scatter identifies `sigma_D` — the same estimand
+  the calibration cell of Section 6.1 inverts from published rates. (ii) *Detection-theoretic
+  bounding*: when the node reports nothing, `u` can be bounded rather than estimated by treating the
+  node's spread as adversarially large, which yields a conservative band; the boundary moves, the
+  structure does not. Both are routes rather than results — measuring either is a separate study,
+  and we say so rather than claiming a verifier we have not shown to exist.
 
 ---
 ## 4. Pre-registration
@@ -507,10 +584,17 @@ relative error on the coarse grid and after bisection. Panel (b): the width law 
 | `1.0` | `1.1774` | `1.1838` | `0.54%` | `-0.13%` |
 | `2.0` | `1.7962` | `1.7977` | `0.08%` | `-0.86%` |
 
-**Table 2.** The band's width at each honest spread: on the `81`-point grid and
-after bisecting on the measured secant. The worst refined error is
-`0.86%` against the `20%` limit — a margin of
-`23` times.
+**Table 2.** The **secant** band's width at each honest spread — the second definition of
+Section 3.3, not the tangent one. The width is the predicted power difference over the design's own
+budget range, `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)` with
+`K_BAND = [8, 32, 128,
+512]`, so the "Predicted width" column is recomputable by a reader who
+evaluates `Phi(u)` of Section 3.2 at the two endpoints of `K_BAND` and divides by the log span.
+**Measured width** is the same object measured on the `81`-point margin grid, and
+the last column bisects on that measured secant. The widths grow **sublinearly in `sigma`** because
+they are secants; the width law stated below is the tangent statement at fixed `k`, and the two are
+not interchangeable. The worst refined error is `0.86%` against
+the `20%` limit — a margin of `23` times.
 
 Two further readings, both reported because the registered wording admits both. The stricter
 **edge-position** reading — does the *edge* land within tolerance, rather than the width — reaches
@@ -523,7 +607,10 @@ the detection rate's slope in `log k` at zero margin is
 `-0.00010` against the `0.01` cut, and the stage's
 zero-margin insensitivity flag is `True`.
 
-**The width law.** At fixed spread, `width * sqrt(k) / sigma` is constant across
+**The width law, and which band it is about.** This paragraph is about the **tangent** band at
+fixed `k` (the first definition of Section 3.3) — not about the secant column of Table 2, whose
+width is an average over the budget range and therefore does not satisfy the invariant below. At
+fixed spread and fixed `k`, `width * sqrt(k) / sigma` is constant across
 `k = 8`, `32`, `128` and
 `512` to within `0.0e+00` at every spread tested.
 This is the quantitative form of P2, and it is what makes the band an engineering object: a verifier
@@ -638,7 +725,9 @@ by a named check so that a reader can see which claim would break first.
 **Figure 4.** S1. Panel (a): the absolute error against the lattice ratio `big / (sigma * sqrt(k))`,
 one line per node spread, with the usable boundary marked and the Gaussian control (which has lattice
 ratio zero) as stars. Panel (b): the same error against the budget — the error changes sign as the
-budget grows, so it is not monotone in `k`.
+budget grows, so it is not monotone in `k`. That non-monotonicity belongs to the **approximation
+error**, not to the power: power is monotone in `k` for a fixed node (Section 3.2), and it is the
+rule comparison that is non-monotone in the budget (Section 1).
 
 </div>
 
@@ -801,7 +890,8 @@ choose which claim to rely on.
 **Why it is still worth publishing.** The decision the paper informs is a budget decision, and the
 decision rule it produces is cheap to apply: read the node's mean shift and dispersion, compute `u`,
 and compare it against the band. Three of the four consequences are invisible to a one-point
-comparison — a nonmonotone budget response, a ceiling that bounds the prize, and a location-preserving
+comparison — a budget response confined to a band, a rule comparison that is non-monotone in the
+budget, a ceiling that bounds the prize, and a location-preserving
 node that no budget can separate. The last one is not a curiosity: it is the case the antecedent's
 conditional result described, it is the best response of a strategic node, and it is the reason "more
 re-executions" cannot be the answer to a disagreement with a fabricating counterparty. Even where our
@@ -860,105 +950,105 @@ checkout, in one command, with no network access.
 
 ## References
 
-[1] Ardebili, Mohsen Seyedkazemi. *NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs*. arXiv preprint, 2026. `arXiv:2609.12582`
-[2] Alimoglu, Alper. *Threshold Choice, Not Sample Size, Bounds Trustless Verification of Nondeterministic Compound AI Workflows*. arXiv preprint, 2026. `arXiv:2609.10601`
-[3] Jacob Cohen. *A power primer*. Psychological Bulletin, 1992. `10.1037/0033-2909.112.1.155`
-[4] A. Wald. *Sequential Tests of Statistical Hypotheses*. The Annals of Mathematical Statistics, 1945. `10.1214/aoms/1177731118`
-[5] S. J. POCOCK. *Group sequential methods in the design and analysis of clinical trials*. Biometrika, 1977. `10.1093/biomet/64.2.191`
-[6] Frank Bretz; Franz Koenig; Werner Brannath; et al.. *Adaptive designs for confirmatory clinical trials*. Statistics in Medicine, 2009. `10.1002/sim.3538`
-[7] R. R. Bahadur; Leonard J. Savage. *The Nonexistence of Certain Statistical Procedures in Nonparametric Problems*. The Annals of Mathematical Statistics, 1956. `10.1214/aoms/1177728077`
-[8] Yu. I. Ingster; Irina A. Suslina. *Nonparametric Goodness-of-Fit Testing Under Gaussian Models*. Lecture Notes in Statistics, 2003. `10.1007/978-0-387-21580-8`
-[9] Wanyuan Wang; Bo An; Yichuan Jiang. *Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsourcing: Application to Peer Grading Systems*. IEEE Transactions on Computational Social Systems, 2020. `10.1109/tcss.2020.2998732`
-[10] Patrick J. Graydon; C. Michael Holloway. *An investigation of proposed techniques for quantifying confidence in assurance arguments*. Safety Science, 2017. `10.1016/j.ssci.2016.09.014`
-[11] Axel Legay; Benoît Delahaye; Saddek Bensalem. *Statistical Model Checking: An Overview*. Lecture Notes in Computer Science, 2010. `10.1007/978-3-642-16612-9_11`
-[12] Ronald Howard. *Information Value Theory*. IEEE Transactions on Systems Science and Cybernetics, 1966. `10.1109/tssc.1966.300074`
-[13] Simon Ott; Adriano Barbosa-Silva; Kathrin Blagec; et al.. *Mapping global dynamics of benchmark creation and saturation in artificial intelligence*. Nature Communications, 2022. `10.1038/s41467-022-34591-0`
-[14] Sameer Agarwal; Anand P. Iyer; Aurojit Panda; et al.. *Blink and it's done*. Proceedings of the VLDB Endowment, 2012. `10.14778/2367502.2367533`
-[15] Frank McKeen; Ilya Alexandrovich; Alex Berenzon; et al.. *Innovative instructions and software model for isolated execution*. Proceedings of the 2nd International Workshop on Hardware and Architectural Support for Security and Privacy, 2013. `10.1145/2487726.2488368`
-[16] Jonathan M. McCune; Bryan J. Parno; Adrian Perrig; et al.. *Flicker*. ACM SIGOPS Operating Systems Review, 2008. `10.1145/1357010.1352625`
-[17] Raymond Cheng; Fan Zhang; Jernej Kos; et al.. *Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts*. 2019 IEEE European Symposium on Security and Privacy (EuroS&amp;P), 2019. `10.1109/eurosp.2019.00023`
-[18] Anish Athalye; Adam Belay; M. Frans Kaashoek; et al.. *Notary*. Proceedings of the 27th ACM Symposium on Operating Systems Principles, 2019. `10.1145/3341301.3359661`
-[19] Paul Kocher; Jann Horn; Anders Fogh; et al.. *Spectre Attacks: Exploiting Speculative Execution*. 2019 IEEE Symposium on Security and Privacy (SP), 2019. `10.1109/sp.2019.00002`
-[20] Rosario Gennaro; Craig Gentry; Bryan Parno. *Non-interactive Verifiable Computing: Outsourcing Computation to Untrusted Workers*. Lecture Notes in Computer Science, 2010. `10.1007/978-3-642-14623-7_25`
-[21] B. Parno; J. Howell; C. Gentry; et al.. *Pinocchio: Nearly Practical Verifiable Computation*. 2013 IEEE Symposium on Security and Privacy, 2013. `10.1109/sp.2013.47`
-[22] Craig Gentry; Shai Halevi; Chris Peikert; et al.. *Ring Switching in BGV-Style Homomorphic Encryption*. Lecture Notes in Computer Science, 2012. `10.1007/978-3-642-32928-9_2`
-[23] van Uem, Theo. *Application of Random Walk in Manpower Planning*. arXiv preprint, 2021. `arXiv:2109.11335`
-[24] Matthew Jagielski; Giorgio Severi; Niklas Pousette Harger; et al.. *Subpopulation Data Poisoning Attacks*. Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security, 2021. `10.1145/3460120.3485368`
-[25] Roger D. Peng. *Reproducible Research in Computational Science*. Science, 2011. `10.1126/science.1213847`
-[26] Odd Erik Gundersen; Sigbjørn Kjensmo. *State of the Art: Reproducibility in Artificial Intelligence*. Proceedings of the AAAI Conference on Artificial Intelligence, 2018. `10.1609/aaai.v32i1.11503`
-[27] Pineau, Joelle; Vincent-Lamarre, Philippe; Sinha, Koustuv; et al.. *Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)*. arXiv preprint, 2020. `arXiv:2003.12206`
-[28] Jesse Dodge; Suchin Gururangan; Dallas Card; et al.. *Show Your Work: Improved Reporting of Experimental Results*. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019. `10.18653/v1/d19-1224`
-[29] James Cheney; Laura Chiticariu; Wang-Chiew Tan. *Provenance in Databases: Why, How, and Where*. Foundations and Trends in Databases, 2009. `10.1561/1900000006`
-[30] Yoav Benjamini; Yosef Hochberg. *Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing*. Journal of the Royal Statistical Society Series B: Statistical Methodology, 1995. `10.1111/j.2517-6161.1995.tb02031.x`
-[31] YOSEF HOCHBERG. *A sharper Bonferroni procedure for multiple tests of significance*. Biometrika, 1988. `10.1093/biomet/75.4.800`
-[32] Yoav Benjamini; Daniel Yekutieli. *The control of the false discovery rate in multiple testing under dependency*. The Annals of Statistics, 2001. `10.1214/aos/1013699998`
-[33] K. K. GORDON LAN; DAVID L. DEMETS. *Discrete sequential boundaries for clinical trials*. Biometrika, 1983. `10.1093/biomet/70.3.659`
-[34] Howard, Steven R.; Ramdas, Aaditya; McAuliffe, Jon; et al.. *Time-uniform Chernoff bounds via nonnegative supermartingales*. arXiv preprint, 2018. `arXiv:1808.03204`
-[35] Vladimir Vovk; Ruodu Wang. *E-values: Calibration, combination and applications*. The Annals of Statistics, 2021. `10.1214/20-aos2020`
-[36] Maksym Gabielkov; Arthi Ramachandran; Augustin Chaintreau; et al.. *Social Clicks*. Proceedings of the 2016 ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Science, 2016. `10.1145/2896377.2901462`
-[37] Paul H Rabinowitz. *Some global results for nonlinear eigenvalue problems*. Journal of Functional Analysis, 1971. `10.1016/0022-1236(71)90030-9`
-[38] L. G. Valiant. *A theory of the learnable*. Communications of the ACM, 1984. `10.1145/1968.1972`
-[39] J. H. B. Kemperman. *Asymptotic Expansions for the Smirnov Test and for the Range of Cumulative Sums*. The Annals of Mathematical Statistics, 1959. `10.1214/aoms/1177706262`
-[40] P. Massart. *The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality*. The Annals of Probability, 1990. `10.1214/aop/1176990746`
-[41] Z. W. Birnbaum; Fred H. Tingey. *One-Sided Confidence Contours for Probability Distribution Functions*. The Annals of Mathematical Statistics, 1951. `10.1214/aoms/1177729550`
-[42] Angelopoulos, Anastasios N.; Bates, Stephen. *A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification*. arXiv preprint, 2021. `arXiv:2107.07511`
-[43] Jing Lei; Max G’Sell; Alessandro Rinaldo; et al.. *Distribution-Free Predictive Inference for Regression*. Journal of the American Statistical Association, 2018. `10.1080/01621459.2017.1307116`
-[44] Vladimir Vovk. *Conditional validity of inductive conformal predictors*. Machine Learning, 2013. `10.1007/s10994-013-5355-6`
-[45] Alexandre B. Tsybakov. *Introduction to Nonparametric Estimation*. Springer Series in Statistics, 2009. `10.1007/b13794`
-[46] Claes Wohlin. *An analysis of the most cited articles in software engineering journals—1999*. Information and Software Technology, 2005. `10.1016/j.infsof.2005.09.002`
-[47] Rotem Dror; Gili Baumer; Segev Shlomov; et al.. *The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing*. Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2018. `10.18653/v1/p18-1128`
-[48] Piji Li; Wai Lam; Lidong Bing; et al.. *Deep Recurrent Generative Decoder for Abstractive Text Summarization*. Proceedings of the 2017 Conference on Empirical Methods in Natural
-[49] Bouthillier, Xavier; Delaunay, Pierre; Bronzi, Mirko; et al.. *Accounting for Variance in Machine Learning Benchmarks*. arXiv preprint, 2021. `arXiv:2103.03098`
-[50] Peter Henderson; Riashat Islam; Philip Bachman; et al.. *Deep Reinforcement Learning That Matters*. Proceedings of the AAAI Conference on Artificial Intelligence, 2018. `10.1609/aaai.v32i1.11694`
-[51] Zheng, Lianmin; Chiang, Wei-Lin; Sheng, Ying; et al.. *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*. arXiv preprint, 2023. `arXiv:2306.05685`
-[52] Wang, Peiyi; Li, Lei; Chen, Liang; et al.. *Large Language Models are not Fair Evaluators*. arXiv preprint, 2023. `arXiv:2305.17926`
-[53] Liang, Percy; Bommasani, Rishi; Lee, Tony; et al.. *Holistic Evaluation of Language Models*. arXiv preprint, 2022. `arXiv:2211.09110`
-[54] Hendrycks, Dan; Burns, Collin; Basart, Steven; et al.. *Measuring Massive Multitask Language Understanding*. arXiv preprint, 2020. `arXiv:2009.03300`
-[55] Ouyang, Long; Wu, Jeff; Jiang, Xu; et al.. *Training language models to follow instructions with human feedback*. arXiv preprint, 2022. `arXiv:2203.02155`
-[56] Wei, Jason; Wang, Xuezhi; Schuurmans, Dale; et al.. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. arXiv preprint, 2022. `arXiv:2201.11903`
-[57] Kojima, Takeshi; Gu, Shixiang Shane; Reid, Machel; et al.. *Large Language Models are Zero-Shot Reasoners*. arXiv preprint, 2022. `arXiv:2205.11916`
-[58] Wang, Xuezhi; Wei, Jason; Schuurmans, Dale; et al.. *Self-Consistency Improves Chain of Thought Reasoning in Language Models*. arXiv preprint, 2022. `arXiv:2203.11171`
-[59] Dhuliawala, Shehzaad; Komeili, Mojtaba; Xu, Jing; et al.. *Chain-of-Verification Reduces Hallucination in Large Language Models*. arXiv preprint, 2023. `arXiv:2309.11495`
-[60] Madaan, Aman; Tandon, Niket; Gupta, Prakhar; et al.. *Self-Refine: Iterative Refinement with Self-Feedback*. arXiv preprint, 2023. `arXiv:2303.17651`
-[61] Chen, Mark; Tworek, Jerry; Jun, Heewoo; et al.. *Evaluating Large Language Models Trained on Code*. arXiv preprint, 2021. `arXiv:2107.03374`
-[62] Jimenez, Carlos E.; Yang, John; Wettig, Alexander; et al.. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. arXiv preprint, 2023. `arXiv:2310.06770`
-[63] Liu, Xiao; Yu, Hao; Zhang, Hanchen; et al.. *AgentBench: Evaluating LLMs as Agents*. arXiv preprint, 2023. `arXiv:2308.03688`
-[64] Mialon, Grégoire; Fourrier, Clémentine; Swift, Craig; et al.. *GAIA: a benchmark for General AI Assistants*. arXiv preprint, 2023. `arXiv:2311.12983`
-[65] D&#39;Amour, Alexander; Heller, Katherine; Moldovan, Dan; et al.. *Underspecification Presents Challenges for Credibility in Modern Machine Learning*. arXiv preprint, 2020. `arXiv:2011.03395`
-[66] Singh, Shivalika; Nan, Yiyang; Wang, Alex; et al.. *The Leaderboard Illusion*. arXiv preprint, 2025. `arXiv:2504.20879`
-[67] Deng, Chunyuan; Zhao, Yilun; Tang, Xiangru; et al.. *Investigating Data Contamination in Modern Benchmarks for Large Language Models*. arXiv preprint, 2023. `arXiv:2311.09783`
-[68] Srivastava, Aarohi; Rastogi, Abhinav; Rao, Abhishek; et al.. *Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models*. arXiv preprint, 2022. `arXiv:2206.04615`
-[69] Mark Wilhelm; Ajith Ramanathan; Alexander Bonomo; et al.. *Practical Diversified Recommendations on YouTube with Determinantal Point Processes*. Proceedings of the 27th ACM International Conference on Information and Knowledge Management, 2018. `10.1145/3269206.3272018`
-[70] Amodei, Dario; Olah, Chris; Steinhardt, Jacob; et al.. *Concrete Problems in AI Safety*. arXiv preprint, 2016. `arXiv:1606.06565`
-[71] Langosco, Lauro; Koch, Jack; Sharkey, Lee; et al.. *Goal Misgeneralization in Deep Reinforcement Learning*. arXiv preprint, 2021. `arXiv:2105.14111`
-[72] Gao, Leo; Schulman, John; Hilton, Jacob. *Scaling Laws for Reward Model Overoptimization*. arXiv preprint, 2022. `arXiv:2210.10760`
-[73] Perez, Ethan; Huang, Saffron; Song, Francis; et al.. *Red Teaming Language Models with Language Models*. arXiv preprint, 2022. `arXiv:2202.03286`
-[74] Oded Goldreich; Shari Goldwasser; Dana Ron. *Property testing and its connection to learning and approximation*. Journal of the ACM, 1998. `10.1145/285055.285060`
-[75] R. H. T�t�nc�; K. C. Toh; M. J. Todd. *Solving semidefinite-quadratic-linear programs using SDPT3*. Mathematical Programming, 2003. `10.1007/s10107-002-0347-5`
-[76] Ezio Bartocci; Yliès Falcone; Adrian Francalanza; et al.. *Introduction to Runtime Verification*. Lecture Notes in Computer Science, 2018. `10.1007/978-3-319-75632-5_1`
-[77] Zhang, Jie M.; Harman, Mark; Ma, Lei; et al.. *Machine Learning Testing: Survey, Landscapes and Horizons*. arXiv preprint, 2019. `arXiv:1906.10742`
-[78] Geifman, Yonatan; El-Yaniv, Ran. *Selective Classification for Deep Neural Networks*. arXiv preprint, 2017. `arXiv:1705.08500`
-[79] Hendrycks, Dan; Mazeika, Mantas; Dietterich, Thomas. *Deep Anomaly Detection with Outlier Exposure*. arXiv preprint, 2018. `arXiv:1812.04606`
-[80] Inderjit S. Dhillon. *Co-clustering documents and words using bipartite spectral graph partitioning*. Proceedings of the seventh ACM SIGKDD international conference on Knowledge discovery and data mining, 2001. `10.1145/502512.502550`
-[81] Patrick O'Neil; Dallan Quass. *Improved query performance with variant indexes*. Proceedings of the 1997 ACM SIGMOD international conference on Management of data  - SIGMOD '97, 1997. `10.1145/253260.253268`
-[82] Kaiyu Li; Guoliang Li. *Approximate Query Processing: What is New and Where to Go?*. Data Science and Engineering, 2018. `10.1007/s41019-018-0074-4`
-[83] Peter Auer; Nicolò Cesa-Bianchi; Yoav Freund; et al.. *The Nonstochastic Multiarmed Bandit Problem*. SIAM Journal on Computing, 2002. `10.1137/s0097539701398375`
-[84] H. S. Seung; M. Opper; H. Sompolinsky. *Query by committee*. Proceedings of the fifth annual workshop on Computational learning theory, 1992. `10.1145/130385.130417`
-[85] A C Atkinson; A N Donev; R D Tobias. *Optimum Experimental Designs, with SAS*. Oxford University PressOxford, 2007. `10.1093/oso/9780199296590.001.0001`
-[86] Jerzy Neyman; Egon Sharpe Pearson. *IX. On the problem of the most efficient tests of statistical hypotheses*. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 1933. `10.1098/rsta.1933.0009`
-[87] R. A. Fisher. *On the mathematical foundations of theoretical statistics*. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 1922. `10.1098/rsta.1922.0009`
-[88] Anonymous. *“Probable Error of a Mean, The”*. Encyclopedia of Research Design, 2010. `10.4135/9781412961288.n338`
-[89] Edwin B. Wilson. *Probable Inference, the Law of Succession, and Statistical Inference*. Journal of the American Statistical Association, 1927. `10.1080/01621459.1927.10502953`
-[90] C. J. CLOPPER; E. S. PEARSON. *THE USE OF CONFIDENCE OR FIDUCIAL LIMITS ILLUSTRATED IN THE CASE OF THE BINOMIAL*. Biometrika, 1934. `10.1093/biomet/26.4.404`
-[91] Rob J. Hyndman; Yanan Fan. *Sample Quantiles in Statistical Packages*. The American Statistician, 1996. `10.1080/00031305.1996.10473566`
-[92] A. W. van der Vaart. *Asymptotic Statistics*. Cambridge University Press, 1998. `10.1017/cbo9780511802256`
-[93] Laurens de Haan; Ana Ferreira. *Extreme Value Theory*. Springer Series in Operations Research and Financial Engineering, 2006. `10.1007/0-387-34471-3`
-[94] Bradley Efron; Robert J. Tibshirani. *An Introduction to the Bootstrap*. Springer US, 1993. `10.1007/978-1-4899-4541-9`
-[95] Anonymous. *Permutation, Parametric and Bootstrap Tests of Hypotheses*. Springer Series in Statistics, 2005. `10.1007/b138696`
-[96] David J. Hand. *Classifier Technology and the Illusion of Progress*. Statistical Science, 2006. `10.1214/088342306000000060`
-[97] Sander Greenland; Stephen J. Senn; Kenneth J. Rothman; et al.. *Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations*. European Journal of Epidemiology, 2016. `10.1007/s10654-016-0149-3`
-[98] Jacob Cohen. *Statistical Power Analysis for the Behavioral Sciences*. Routledge, 2013. `10.4324/9780203771587`
-[99] Donald J. Schuirmann. *A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability*. Journal of Pharmacokinetics and Biopharmaceutics, 1987. `10.1007/bf01068419`
-[100] J A Hanley; B J McNeil. *The meaning and use of the area under a receiver operating characteristic (ROC) curve*. Radiology, 1982. `10.1148/radiology.143.1.7063747`
-[101] Leslie Lamport; Robert Shostak; Marshall Pease. *The Byzantine Generals Problem*. ACM Transactions on Programming Languages and Systems, 1982. `10.1145/357172.357176`
-[102] Maurice Herlihy; Victor Luchangco; Paul Martin; et al.. *Dynamic-sized lock-free data structures*. Proceedings of the twenty-first annual symposium on Principles of distributed computing, 2002. `10.1145/571825.571847`
+[1] Ardebili, M. S.. *NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs*. arXiv preprint, 2026. `arXiv:2609.12582`
+[2] Alimoglu, A.. *Threshold Choice, Not Sample Size, Bounds Trustless Verification of Nondeterministic Compound AI Workflows*. arXiv preprint, 2026. `arXiv:2609.10601`
+[3] Cohen, J.. *A power primer*. Psychological Bulletin, 1992. `10.1037/0033-2909.112.1.155`
+[4] Wald, A.. *Sequential Tests of Statistical Hypotheses*. The Annals of Mathematical Statistics, 1945. `10.1214/aoms/1177731118`
+[5] Pocock, S. J.. *Group sequential methods in the design and analysis of clinical trials*. Biometrika, 1977. `10.1093/biomet/64.2.191`
+[6] Bretz, F.; Koenig, F.; Brannath, W.; et al.. *Adaptive designs for confirmatory clinical trials*. Statistics in Medicine, 2009. `10.1002/sim.3538`
+[7] Bahadur, R. R.; Savage, L. J.. *The Nonexistence of Certain Statistical Procedures in Nonparametric Problems*. The Annals of Mathematical Statistics, 1956. `10.1214/aoms/1177728077`
+[8] Ingster, Y. I.; Suslina, I. A.. *Nonparametric Goodness-of-Fit Testing Under Gaussian Models*. Lecture Notes in Statistics, 2003. `10.1007/978-0-387-21580-8`
+[9] Wang, W.; An, B.; Jiang, Y.. *Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsourcing: Application to Peer Grading Systems*. IEEE Transactions on Computational Social Systems, 2020. `10.1109/tcss.2020.2998732`
+[10] Graydon, P. J.; Holloway, C. M.. *An investigation of proposed techniques for quantifying confidence in assurance arguments*. Safety Science, 2017. `10.1016/j.ssci.2016.09.014`
+[11] Legay, A.; Delahaye, B.; Bensalem, S.. *Statistical Model Checking: An Overview*. Lecture Notes in Computer Science, 2010. `10.1007/978-3-642-16612-9_11`
+[12] Howard, R.. *Information Value Theory*. IEEE Transactions on Systems Science and Cybernetics, 1966. `10.1109/tssc.1966.300074`
+[13] Ott, S.; Barbosa-Silva, A.; Blagec, K.; et al.. *Mapping global dynamics of benchmark creation and saturation in artificial intelligence*. Nature Communications, 2022. `10.1038/s41467-022-34591-0`
+[14] Agarwal, S.; Iyer, A. P.; Panda, A.; et al.. *Blink and it's done: interactive queries on very large data*. Proceedings of the VLDB Endowment, 2012. `10.14778/2367502.2367533`
+[15] McKeen, F.; Alexandrovich, I.; Berenzon, A.; et al.. *Innovative instructions and software model for isolated execution*. Proceedings of the 2nd International Workshop on Hardware and Architectural Support for Security and Privacy, 2013. `10.1145/2487726.2488368`
+[16] McCune, J. M.; Parno, B. J.; Perrig, A.; et al.. *Flicker: an execution infrastructure for tcb minimization*. ACM SIGOPS Operating Systems Review, 2008. `10.1145/1357010.1352625`
+[17] Cheng, R.; Zhang, F.; Kos, J.; et al.. *Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts*. 2019 IEEE European Symposium on Security and Privacy (EuroS&P), 2019. `10.1109/eurosp.2019.00023`
+[18] Athalye, A.; Belay, A.; Kaashoek, M. F.; et al.. *Notary: a device for secure transaction approval*. Proceedings of the 27th ACM Symposium on Operating Systems Principles, 2019. `10.1145/3341301.3359661`
+[19] Kocher, P.; Horn, J.; Fogh, A.; et al.. *Spectre Attacks: Exploiting Speculative Execution*. 2019 IEEE Symposium on Security and Privacy (SP), 2019. `10.1109/sp.2019.00002`
+[20] Gennaro, R.; Gentry, C.; Parno, B.. *Non-interactive Verifiable Computing: Outsourcing Computation to Untrusted Workers*. Lecture Notes in Computer Science, 2010. `10.1007/978-3-642-14623-7_25`
+[21] Parno, B.; Howell, J.; Gentry, C.; et al.. *Pinocchio: Nearly Practical Verifiable Computation*. 2013 IEEE Symposium on Security and Privacy, 2013. `10.1109/sp.2013.47`
+[22] Groth, J.. *On the Size of Pairing-Based Non-interactive Arguments*. Lecture Notes in Computer Science, 2016. `10.1007/978-3-662-49896-5_11`
+[23] Garg, S.; Goel, A.; Jha, S.; et al.. *Experimenting with Zero-Knowledge Proofs of Training*. Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security, 2023. `10.1145/3576915.3623202`
+[24] Chen, B. J.; Waiwitlikhit, S.; Stoica, I.; et al.. *ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs*. Proceedings of the Nineteenth European Conference on Computer Systems, 2024. `10.1145/3627703.3650088`
+[25] Peng, R. D.. *Reproducible Research in Computational Science*. Science, 2011. `10.1126/science.1213847`
+[26] Gundersen, O. E.; Kjensmo, S.. *State of the Art: Reproducibility in Artificial Intelligence*. Proceedings of the AAAI Conference on Artificial Intelligence, 2018. `10.1609/aaai.v32i1.11503`
+[27] Pineau, J.; Vincent-Lamarre, P.; Sinha, K.; et al.. *Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)*. arXiv preprint, 2020. `arXiv:2003.12206`
+[28] Dodge, J.; Gururangan, S.; Card, D.; et al.. *Show Your Work: Improved Reporting of Experimental Results*. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019. `10.18653/v1/d19-1224`
+[29] Cheney, J.; Chiticariu, L.; Tan, W. C.. *Provenance in Databases: Why, How, and Where*. Foundations and Trends in Databases, 2009. `10.1561/1900000006`
+[30] Benjamini, Y.; Hochberg, Y.. *Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing*. Journal of the Royal Statistical Society Series B: Statistical Methodology, 1995. `10.1111/j.2517-6161.1995.tb02031.x`
+[31] Hochberg, Y.. *A sharper Bonferroni procedure for multiple tests of significance*. Biometrika, 1988. `10.1093/biomet/75.4.800`
+[32] Benjamini, Y.; Yekutieli, D.. *The control of the false discovery rate in multiple testing under dependency*. The Annals of Statistics, 2001. `10.1214/aos/1013699998`
+[33] Gordon Lan, K. K.; Demets, D. L.. *Discrete sequential boundaries for clinical trials*. Biometrika, 1983. `10.1093/biomet/70.3.659`
+[34] Howard, S. R.; Ramdas, A.; McAuliffe, J.; et al.. *Time-uniform Chernoff bounds via nonnegative supermartingales*. arXiv preprint, 2018. `arXiv:1808.03204`
+[35] Vovk, V.; Wang, R.. *E-values: Calibration, combination and applications*. The Annals of Statistics, 2021. `10.1214/20-aos2020`
+[36] Johari, R.; Koomen, P.; Pekelis, L.; et al.. *Peeking at A/B Tests: Why it matters, and what to do about it*. Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2017. `10.1145/3097983.3097992`
+[37] Vapnik, V. N.; Chervonenkis, A. Y.. *On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities*. Theory of Probability & Its Applications, 1971. `10.1137/1116025`
+[38] Valiant, L. G.. *A theory of the learnable*. Communications of the ACM, 1984. `10.1145/1968.1972`
+[39] Dvoretzky, A.; Kiefer, J.; Wolfowitz, J.. *Asymptotic Minimax Character of the Sample Distribution Function and of the Classical Multinomial Estimator*. The Annals of Mathematical Statistics, 1956. `10.1214/aoms/1177728174`
+[40] Massart, P.. *The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality*. The Annals of Probability, 1990. `10.1214/aop/1176990746`
+[41] Massey, F. J.. *The Kolmogorov-Smirnov Test for Goodness of Fit*. Journal of the American Statistical Association, 1951. `10.1080/01621459.1951.10500769`
+[42] Angelopoulos, A. N.; Bates, S.. *A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification*. arXiv preprint, 2021. `arXiv:2107.07511`
+[43] Lei, J.; G’Sell, M.; Rinaldo, A.; et al.. *Distribution-Free Predictive Inference for Regression*. Journal of the American Statistical Association, 2018. `10.1080/01621459.2017.1307116`
+[44] Vovk, V.. *Conditional validity of inductive conformal predictors*. Machine Learning, 2013. `10.1007/s10994-013-5355-6`
+[45] Tsybakov, A. B.. *Introduction to Nonparametric Estimation*. Springer Series in Statistics, 2009. `10.1007/b13794`
+[46] Dybå, T.; Kampenes, V. B.; Sjøberg, D. I. K.. *A systematic review of statistical power in software engineering experiments*. Information and Software Technology, 2006. `10.1016/j.infsof.2005.08.009`
+[47] Dror, R.; Baumer, G.; Shlomov, S.; et al.. *The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing*. Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2018. `10.18653/v1/p18-1128`
+[48] Reimers, N.; Gurevych, I.. *Reporting Score Distributions Makes a Difference: Performance Study of LSTM-networks for Sequence Tagging*. Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, 2017. `10.18653/v1/d17-1035`
+[49] Bouthillier, X.; Delaunay, P.; Bronzi, M.; et al.. *Accounting for Variance in Machine Learning Benchmarks*. arXiv preprint, 2021. `arXiv:2103.03098`
+[50] Henderson, P.; Islam, R.; Bachman, P.; et al.. *Deep Reinforcement Learning That Matters*. Proceedings of the AAAI Conference on Artificial Intelligence, 2018. `10.1609/aaai.v32i1.11694`
+[51] Zheng, L.; Chiang, W. L.; Sheng, Y.; et al.. *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*. arXiv preprint, 2023. `arXiv:2306.05685`
+[52] Wang, P.; Li, L.; Chen, L.; et al.. *Large Language Models are not Fair Evaluators*. arXiv preprint, 2023. `arXiv:2305.17926`
+[53] Liang, P.; Bommasani, R.; Lee, T.; et al.. *Holistic Evaluation of Language Models*. arXiv preprint, 2022. `arXiv:2211.09110`
+[54] Hendrycks, D.; Burns, C.; Basart, S.; et al.. *Measuring Massive Multitask Language Understanding*. arXiv preprint, 2020. `arXiv:2009.03300`
+[55] Ouyang, L.; Wu, J.; Jiang, X.; et al.. *Training language models to follow instructions with human feedback*. arXiv preprint, 2022. `arXiv:2203.02155`
+[56] Wei, J.; Wang, X.; Schuurmans, D.; et al.. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. arXiv preprint, 2022. `arXiv:2201.11903`
+[57] Kojima, T.; Gu, S. S.; Reid, M.; et al.. *Large Language Models are Zero-Shot Reasoners*. arXiv preprint, 2022. `arXiv:2205.11916`
+[58] Wang, X.; Wei, J.; Schuurmans, D.; et al.. *Self-Consistency Improves Chain of Thought Reasoning in Language Models*. arXiv preprint, 2022. `arXiv:2203.11171`
+[59] Dhuliawala, S.; Komeili, M.; Xu, J.; et al.. *Chain-of-Verification Reduces Hallucination in Large Language Models*. arXiv preprint, 2023. `arXiv:2309.11495`
+[60] Madaan, A.; Tandon, N.; Gupta, P.; et al.. *Self-Refine: Iterative Refinement with Self-Feedback*. arXiv preprint, 2023. `arXiv:2303.17651`
+[61] Chen, M.; Tworek, J.; Jun, H.; et al.. *Evaluating Large Language Models Trained on Code*. arXiv preprint, 2021. `arXiv:2107.03374`
+[62] Jimenez, C. E.; Yang, J.; Wettig, A.; et al.. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. arXiv preprint, 2023. `arXiv:2310.06770`
+[63] Liu, X.; Yu, H.; Zhang, H.; et al.. *AgentBench: Evaluating LLMs as Agents*. arXiv preprint, 2023. `arXiv:2308.03688`
+[64] Mialon, G.; Fourrier, C.; Swift, C.; et al.. *GAIA: a benchmark for General AI Assistants*. arXiv preprint, 2023. `arXiv:2311.12983`
+[65] D'Amour, A.; Heller, K.; Moldovan, D.; et al.. *Underspecification Presents Challenges for Credibility in Modern Machine Learning*. arXiv preprint, 2020. `arXiv:2011.03395`
+[66] Singh, S.; Nan, Y.; Wang, A.; et al.. *The Leaderboard Illusion*. arXiv preprint, 2025. `arXiv:2504.20879`
+[67] Deng, C.; Zhao, Y.; Tang, X.; et al.. *Investigating Data Contamination in Modern Benchmarks for Large Language Models*. arXiv preprint, 2023. `arXiv:2311.09783`
+[68] Srivastava, A.; Rastogi, A.; Rao, A.; et al.. *Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models*. arXiv preprint, 2022. `arXiv:2206.04615`
+[69] Ferrari Dacrema, M.; Cremonesi, P.; Jannach, D.. *Are we really making much progress? A worrying analysis of recent neural recommendation approaches*. Proceedings of the 13th ACM Conference on Recommender Systems, 2019. `10.1145/3298689.3347058`
+[70] Amodei, D.; Olah, C.; Steinhardt, J.; et al.. *Concrete Problems in AI Safety*. arXiv preprint, 2016. `arXiv:1606.06565`
+[71] Langosco, L.; Koch, J.; Sharkey, L.; et al.. *Goal Misgeneralization in Deep Reinforcement Learning*. arXiv preprint, 2021. `arXiv:2105.14111`
+[72] Gao, L.; Schulman, J.; Hilton, J.. *Scaling Laws for Reward Model Overoptimization*. arXiv preprint, 2022. `arXiv:2210.10760`
+[73] Perez, E.; Huang, S.; Song, F.; et al.. *Red Teaming Language Models with Language Models*. arXiv preprint, 2022. `arXiv:2202.03286`
+[74] Goldreich, O.; Goldwasser, S.; Ron, D.. *Property testing and its connection to learning and approximation*. Journal of the ACM, 1998. `10.1145/285055.285060`
+[75] Ben-Tal, A.; Nemirovski, A.. *Robust optimization – methodology and applications*. Mathematical Programming, 2002. `10.1007/s101070100286`
+[76] Bartocci, E.; Falcone, Y.; Francalanza, A.; et al.. *Introduction to Runtime Verification*. Lecture Notes in Computer Science, 2018. `10.1007/978-3-319-75632-5_1`
+[77] Zhang, J. M.; Harman, M.; Ma, L.; et al.. *Machine Learning Testing: Survey, Landscapes and Horizons*. arXiv preprint, 2019. `arXiv:1906.10742`
+[78] Geifman, Y.; El-Yaniv, R.. *Selective Classification for Deep Neural Networks*. arXiv preprint, 2017. `arXiv:1705.08500`
+[79] Hendrycks, D.; Mazeika, M.; Dietterich, T.. *Deep Anomaly Detection with Outlier Exposure*. arXiv preprint, 2018. `arXiv:1812.04606`
+[80] Domingos, P.. *MetaCost: a general method for making classifiers cost-sensitive*. Proceedings of the fifth ACM SIGKDD international conference on Knowledge discovery and data mining, 1999. `10.1145/312129.312220`
+[81] Hellerstein, J. M.; Haas, P. J.; Wang, H. J.. *Online aggregation*. ACM SIGMOD Record, 1997. `10.1145/253262.253291`
+[82] Li, K.; Li, G.. *Approximate Query Processing: What is New and Where to Go?: A Survey on Approximate Query Processing*. Data Science and Engineering, 2018. `10.1007/s41019-018-0074-4`
+[83] Auer, P.; Cesa-Bianchi, N.; Freund, Y.; et al.. *The Nonstochastic Multiarmed Bandit Problem*. SIAM Journal on Computing, 2002. `10.1137/s0097539701398375`
+[84] Seung, H. S.; Opper, M.; Sompolinsky, H.. *Query by committee*. Proceedings of the fifth annual workshop on Computational learning theory, 1992. `10.1145/130385.130417`
+[85] Atkinson, A. C.; Donev, A. N.; Tobias, R. D.. *Optimum Experimental Designs, with SAS*. Oxford University PressOxford, 2007. `10.1093/oso/9780199296590.001.0001`
+[86] Neyman, J.; Pearson, E. S.. *IX. On the problem of the most efficient tests of statistical hypotheses*. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 1933. `10.1098/rsta.1933.0009`
+[87] Fisher, R. A.. *On the mathematical foundations of theoretical statistics*. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 1922. `10.1098/rsta.1922.0009`
+[88] Student. *The Probable Error of a Mean*. Biometrika, 1908. `10.2307/2331554`
+[89] Wilson, E. B.. *Probable Inference, the Law of Succession, and Statistical Inference*. Journal of the American Statistical Association, 1927. `10.1080/01621459.1927.10502953`
+[90] Clopper, C. J.; Pearson, E. S.. *The Use of Confidence Or Fiducial Limits Illustrated in the Case of the Binomial*. Biometrika, 1934. `10.1093/biomet/26.4.404`
+[91] Hyndman, R. J.; Fan, Y.. *Sample Quantiles in Statistical Packages*. The American Statistician, 1996. `10.1080/00031305.1996.10473566`
+[92] Vaart, A. W. v. d.. *Asymptotic Statistics*. Cambridge University Press, 1998. `10.1017/cbo9780511802256`
+[93] de Haan, L.; Ferreira, A.. *Extreme Value Theory: An Introduction*. Springer Series in Operations Research and Financial Engineering, 2006. `10.1007/0-387-34471-3`
+[94] Efron, B.; Tibshirani, R. J.. *An Introduction to the Bootstrap*. Springer US, 1993. `10.1007/978-1-4899-4541-9`
+[95] Good, P.. *Permutation, Parametric and Bootstrap Tests of Hypotheses*. Springer Series in Statistics, 2005. `10.1007/b138696`
+[96] Flegal, J. M.; Jones, G. L.. *Implementing MCMC: Estimating with Confidence*. Handbook of Markov Chain Monte Carlo, 2011. `10.1201/b10905-8`
+[97] Greenland, S.; Senn, S. J.; Rothman, K. J.; et al.. *Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations*. European Journal of Epidemiology, 2016. `10.1007/s10654-016-0149-3`
+[98] Cohen, J.. *Statistical Power Analysis for the Behavioral Sciences*. Routledge, 2013. `10.4324/9780203771587`
+[99] Schuirmann, D. J.. *A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability*. Journal of Pharmacokinetics and Biopharmaceutics, 1987. `10.1007/bf01068419`
+[100] Hanley, J. A.; McNeil, B. J.. *The meaning and use of the area under a receiver operating characteristic (ROC) curve*. Radiology, 1982. `10.1148/radiology.143.1.7063747`
+[101] Lamport, L.; Shostak, R.; Pease, M.. *The Byzantine Generals Problem*. ACM Transactions on Programming Languages and Systems, 1982. `10.1145/357172.357176`
+[102] Herlihy, M.; Luchangco, V.; Martin, P.; et al.. *Dynamic-sized lock-free data structures*. Proceedings of the twenty-first annual symposium on Principles of distributed computing, 2002. `10.1145/571825.571847`

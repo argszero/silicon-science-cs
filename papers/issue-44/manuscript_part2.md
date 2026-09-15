@@ -172,10 +172,17 @@ relative error on the coarse grid and after bisection. Panel (b): the width law 
 | `1.0` | `{{F:crit_b.per_sigma.1.0.width_pred|4f}}` | `{{F:crit_b.per_sigma.1.0.width_meas|4f}}` | `{{F:crit_b.per_sigma.1.0.width_rel_err|p2}}` | `{{F:crit_b.per_sigma.1.0.width_rel_err_refined|p2}}` |
 | `2.0` | `{{F:crit_b.per_sigma.2.0.width_pred|4f}}` | `{{F:crit_b.per_sigma.2.0.width_meas|4f}}` | `{{F:crit_b.per_sigma.2.0.width_rel_err|p2}}` | `{{F:crit_b.per_sigma.2.0.width_rel_err_refined|p2}}` |
 
-**Table 2.** The band's width at each honest spread: on the `{{F:crit_b.n_grid|d}}`-point grid and
-after bisecting on the measured secant. The worst refined error is
-`{{F:crit_b.max_width_rel_err_refined|p2}}` against the `{{F:crit_b.tol|p0}}` limit — a margin of
-`{{F:crit_b.margin_factor|d}}` times.
+**Table 2.** The **secant** band's width at each honest spread — the second definition of
+Section 3.3, not the tangent one. The width is the predicted power difference over the design's own
+budget range, `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)` with
+`K_BAND = [{{F:crit_b.k_band_min|d}}, {{F:crit_b.k_band_mid1|d}}, {{F:crit_b.k_band_mid2|d}},
+{{F:crit_b.k_band_max|d}}]`, so the "Predicted width" column is recomputable by a reader who
+evaluates `Phi(u)` of Section 3.2 at the two endpoints of `K_BAND` and divides by the log span.
+**Measured width** is the same object measured on the `{{F:crit_b.n_grid|d}}`-point margin grid, and
+the last column bisects on that measured secant. The widths grow **sublinearly in `sigma`** because
+they are secants; the width law stated below is the tangent statement at fixed `k`, and the two are
+not interchangeable. The worst refined error is `{{F:crit_b.max_width_rel_err_refined|p2}}` against
+the `{{F:crit_b.tol|p0}}` limit — a margin of `{{F:crit_b.margin_factor|d}}` times.
 
 Two further readings, both reported because the registered wording admits both. The stricter
 **edge-position** reading — does the *edge* land within tolerance, rather than the width — reaches
@@ -188,7 +195,10 @@ the detection rate's slope in `log k` at zero margin is
 `{{F:crit_b.slope_at_delta_zero|5f}}` against the `{{F:crit_b.slope_cut|2f}}` cut, and the stage's
 zero-margin insensitivity flag is `{{F:crit_b.zero_delta_insensitive}}`.
 
-**The width law.** At fixed spread, `width * sqrt(k) / sigma` is constant across
+**The width law, and which band it is about.** This paragraph is about the **tangent** band at
+fixed `k` (the first definition of Section 3.3) — not about the secant column of Table 2, whose
+width is an average over the budget range and therefore does not satisfy the invariant below. At
+fixed spread and fixed `k`, `width * sqrt(k) / sigma` is constant across
 `k = {{F:crit_b.k_band_min|d}}`, `{{F:crit_b.k_band_mid1|d}}`, `{{F:crit_b.k_band_mid2|d}}` and
 `{{F:crit_b.k_band_max|d}}` to within `{{F:crit_b.width_law_spread_max|1e}}` at every spread tested.
 This is the quantitative form of P2, and it is what makes the band an engineering object: a verifier

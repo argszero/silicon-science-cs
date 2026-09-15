@@ -21,10 +21,13 @@ comparison at one operating point. We derive and then measure the whole response
 mean test at level `alpha`, detection power against a node whose divergence shifts the metric
 mean by `delta_D` with dispersion `sigma_D` is `Phi((sqrt(k) delta_D - c_alpha)/sigma_D)`:
 exactly two numbers, the node's own mean and standard deviation, fix its detectability. Three
-consequences are counter-intuitive, and they are what we test. First, the budget response is
-**not monotone** — power improves with `k` only inside a transition band around the threshold,
-whose measured width tracks the construct's prediction to `{{F:crit_b.max_width_rel_err_refined|p2}}`
-and shrinks as `1/sqrt(k)` exactly. Second, the construct has a **ceiling** that bounds the
+consequences are counter-intuitive, and they are what we test. First, **where** the budget helps is
+a transition band around the threshold, and it is the *comparison between rules* — not the power
+— that is non-monotone in the budget: power is monotone in `k` for a fixed node (Section 3.2),
+while the quantity that is non-monotone in `k` is the construct's own approximation error
+(Section 7.1). The band's measured width tracks the construct's prediction to
+`{{F:crit_b.max_width_rel_err_refined|p2}}` and shrinks as `1/sqrt(k)` exactly. Second, the
+construct has a **ceiling** that bounds the
 *prize* rather than the detection: above a saturated operating point the derived rule still
 wins, but the maximum achievable gain falls to `{{F:S2.saturated_max_gain|5f}}` against
 `{{F:S2.unsaturated_max_gain|4f}}` below it. Third, against a **location-preserving** node
@@ -59,12 +62,14 @@ with `k` re-executions against a node that chooses how its divergence moves the 
 that detectability collapses onto a single coordinate, and that the consequences of that
 collapse are things a one-point comparison cannot see:
 
-1. **The budget response is not monotone.** Power improves with `k` only for nodes inside a
-   transition band around the threshold. The band's measured width matches the construct's
-   prediction to `{{F:crit_b.max_width_rel_err_refined|p2}}` (registered tolerance
-   `{{F:crit_b.tol|p0}}`), and it shrinks as `1/sqrt(k)` exactly —
-   `width * sqrt(k) / sigma` is constant to `{{F:crit_b.width_law_spread_max|1e}}` at every
-   spread across `k = {{F:crit_b.k_band_min|d}}` to `{{F:crit_b.k_band_max|d}}`.
+1. **Where the budget helps is a band, and the rule comparison is non-monotone in the budget.**
+   Power is monotone in `k` for a fixed node (Section 3.2); what the budget moves is *which* margins
+   separate, and the comparison between the two rules is not monotone in it. Inside a transition
+   band around the threshold the measured width matches the construct's prediction to
+   `{{F:crit_b.max_width_rel_err_refined|p2}}` (registered tolerance `{{F:crit_b.tol|p0}}`), and it
+   shrinks as `1/sqrt(k)` exactly — `width * sqrt(k) / sigma` is constant to
+   `{{F:crit_b.width_law_spread_max|1e}}` at every spread across `k = {{F:crit_b.k_band_min|d}}` to
+   `{{F:crit_b.k_band_max|d}}`.
 2. **There is a ceiling, and it bounds the prize, not the detection.** Above a saturated
    operating point the difference between a well-calibrated rule and a naive one remains
    statistically resolvable but shrinks to `{{F:S2.saturated_max_gain|5f}}`, against
@@ -79,16 +84,28 @@ collapse are things a one-point comparison cannot see:
    effect size (median `{{F:S3.n_min_median|d}}`, range `{{F:S3.n_min_min|d}}` to
    `{{F:S3.n_min_max|d}}`), not by the budget.
 
-**Contributions.** (i) A closed-form construct for re-execution power under a node that
-chooses its divergence, reduced to two moments, with the transition band, the ceiling and the
-zero-marginal-value result as corollaries. (ii) A pre-registered empirical study of that
-construct on a synthetic ground-truth family, in which the four registered criteria are all
-met (Table 1) and the three registered priors are all confirmed (Table 4). (iii) A sensitivity
-block that measures the construct's own limits instead of hedging them: the usable boundary is
-a lattice ratio, the ceiling's cost is quantified, and the decidability of the headline
-comparison is mapped cell by cell. (iv) A reproducing artifact in which every number in this
-manuscript is a view of a committed artefact — the prose cannot drift from the data, because
-it contains no hand-typed measurement (Section 10).
+**Contributions.** Our organising quantity is not new, and we say so first: `u` in Section 3.2 is
+the standard normal-approximation power of a one-sample mean test, three lines of algebra from the
+sample-mean standard error, with its antecedents in the sample-size literature ([@power] [@wald]
+[@groupseq] [@adapt]). We do not claim it as a new construct. What we contribute is what it implies
+when the alternative is a *choice* rather than a fixed family:
+
+(i) **Boundary results for the budget.** The construct's usable limit is a **lattice ratio**
+`big/(sigma*sqrt(k))` rather than a rate of convergence (Section 7.1); the ceiling bounds the
+**prize**, `1 - p_c`, rather than the detection, and its cost is a fraction of a percentage point
+(Section 7.2); and the headline rule comparison is **decidable cell by cell for only a minority** of
+informative cells at the budget we ran, with the streams each cell needs set by its effect size
+(Section 7.3).
+(ii) A **pre-registered** empirical study of that construct on a synthetic ground-truth family with
+ground truth by construction and one external calibration cell, in which the four registered
+criteria are all met (Table 1) and the three registered priors are all confirmed (Table 4).
+(iii) A **persistent advantage** of the derived rule over the best matched constant threshold — a
+median factor of `{{F:crit_c.median_factor|4f}}` — that does **not** vanish as the calibration set
+grows, to `n_cal = {{F:crit_c.by_n_cal.1000.n_cal|d}}` (Section 6.3), with the mechanism, its
+refutation and its correction reported together (Section 6.3.1).
+(iv) A reproducing artifact in which every number in this manuscript is a view of a committed
+artefact — the prose cannot drift from the data, because it contains no hand-typed measurement
+(Section 10).
 
 **Significance — whose belief changes.** Designers and auditors of verification protocols for
 nondeterministic AI pipelines: verifiable-compute marketplaces, agent-observability vendors,
@@ -99,6 +116,17 @@ band has been passed) — and the median informative cell in this study needed
 `{{F:S3.n_min_median|d}}` streams to certify what `{{F:S3.n_decidable|d}}` of
 `{{F:S3.n_cells|d}}` cells got for free. A verifier who reads only "more samples are better"
 will buy the wrong thing in both regimes.
+
+**The scope of that argument.** Applying the rule *quantitatively* takes the node's location shift
+and dispersion as inputs, and a fabricating node does not report them — which the synthetic family
+supplies "by construction" and a real verifier does not. We therefore state the claim in two parts
+rather than one. The **structural** half — the band, the ceiling, and the fact that a
+location-preserving divergence is separated by no budget at all — holds for any verifier, because
+it is a property of the mean test rather than of an estimate. The **operational** half, including
+which of the two budget items to buy next, is scoped to a verifier that can estimate or bound the
+two inputs; Section 3.6 states the two routes by which it might do so. Nothing in Section 6 or
+Section 7 depends on that scoping, and Section 8 carries it as a threat rather than as a step we
+have shown.
 
 **Roadmap.** Section 2 positions the result. Section 3 derives the construct. Section 4 states
 the pre-registered priors and criteria. Section 5 describes the instrument and its controls.
@@ -284,6 +312,15 @@ false-positive level `alpha`, so `tau = c_alpha * sigma_h / sqrt(k)` with
 
 ### 3.2 Closed form
 
+**What is and is not new here.** The expression below is the textbook normal-approximation power of
+a one-sample mean test against a shifted mean: three lines of algebra from the sample-mean standard
+error, with the small-sample vocabulary of the Student and Fisher tradition ([@fisher1922]
+[@student1908]) and the general power function of the sample-size literature ([@power] [@wald]
+[@groupseq] [@adapt]) as its antecedents. It is not offered as a new construct. What is new is what
+the expression implies when the alternative is a *choice* rather than a fixed family: the boundary
+results of Section 7 and the persistent advantage of the derived rule over a matched constant
+threshold (Section 6.3).
+
 The verifier's statistic is the sample mean, whose standard error is `sigma_h / sqrt(k)` under
 the honest node and `sigma_D / sqrt(k)` under the divergent one. Detection power is therefore
 
@@ -304,6 +341,24 @@ the ceiling. Differentiating `u` in the margin, the band's half-width scales as
 constant. Equivalently, doubling the budget tightens the band by `sqrt(2)` but does not move a
 node that sits outside it from "no signal" to "certain detection". This is the quantitative
 form of prior P2 and the object of registered criterion (b).
+
+**Two widths, two names.** The paper uses the word "band" for two different objects, and each is
+named where it is measured so that a reader can check the law against the table:
+
+* The **tangent band** at a fixed budget `k` (`predicted_tangent` in the instrument) is the band
+  whose half-width is `sigma_D / sqrt(k)`. This is the object the width law is about: the invariant
+  `width * sqrt(k) / sigma_D` is constant for it, exactly, at each fixed `k` (Section 6.2).
+* The **secant band** over the design's budget range (`predicted_secant` in the instrument, taken
+  over `K_BAND = [{{F:crit_b.k_band_min|d}}, {{F:crit_b.k_band_mid1|d}}, {{F:crit_b.k_band_mid2|d}},
+  {{F:crit_b.k_band_max|d}}]`) is the *average* of that half-width over the log budget range the
+  experiment spans. Its width is
+  `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)`, which is what a
+  single number has to be if it is to stand for a range rather than for a point. Because it averages
+  `sigma_D / sqrt(k)` over `k`, the secant width grows **sublinearly in `sigma_D`** while the tangent
+  width grows linearly — so a reader who checks the width law against the secant column of Table 2
+  will not see it hold, and that is not a contradiction: the law is the tangent statement and Table 2
+  is the secant table. Each registered tolerance is read on the object the stage recorded for that
+  row, and Section 6.2 prints both definitions beside the numbers they produce.
 
 ### 3.4 The ceiling
 
@@ -331,5 +386,27 @@ minimises its own detection probability — the optimum is the location-preservi
 averaging kills dispersion, not mean, so the node can hold `u` at or below the boundary at
 every budget. That is prior P3, and Section 6.4 reports it as a property of the admissible set
 rather than as an assumption about node behaviour.
+
+### 3.6 What the verifier must observe for the rule to apply
+
+The derived rule takes the node's location shift `delta_D` and dispersion `sigma_D` as inputs, and
+this is the sharpest limitation of the decision argument, so it is stated where the rule is derived
+rather than left to the threats section.
+
+* **Scoped claim.** Where the rule is applied quantitatively — the band, the ceiling and the
+  decidability map — the claim is scoped to a verifier that can estimate or bound the two inputs.
+  Section 1's decision argument and the operational summary of Section 9 apply to that verifier.
+* **One consequence needs no estimate at all.** P3 is a statement about the admissible set, not
+  about an estimate: a location-preserving divergence is detected at the false-positive rate
+  whatever the verifier believes `delta_D` and `sigma_D` to be. Against such a node, "spend no more
+  on `k`" is correct without any knowledge of the node's moments.
+* **Two routes to the inputs, stated and not evaluated.** (i) *Calibration with a perturbation arm*:
+  if the verifier can vary a known input, or hold an honest reference implementation, the induced
+  shift in the metric identifies `delta_D` and its scatter identifies `sigma_D` — the same estimand
+  the calibration cell of Section 6.1 inverts from published rates. (ii) *Detection-theoretic
+  bounding*: when the node reports nothing, `u` can be bounded rather than estimated by treating the
+  node's spread as adversarially large, which yields a conservative band; the boundary moves, the
+  structure does not. Both are routes rather than results — measuring either is a separate study,
+  and we say so rather than claiming a verifier we have not shown to exist.
 
 ---

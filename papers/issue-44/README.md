@@ -92,6 +92,28 @@ through: of 104 candidates, 102 verified and 2 were dropped for this reason. Eve
 appears in the body text — a bib entry that is never cited does not count toward the bar, and the
 checker enforces that too.
 
+### The support test: existence is not support
+
+"Is there a real record at this locator?" and "is that record the work the sentence needs?" are
+different questions, and until this revision only the first one was asked -- which is how a
+102/102 coverage PASS and a full authenticity table coexisted with anchors pointing at the wrong
+paper. The candidate list now carries a **declared intent** per line, and `verify_refs.py` requires
+the resolved record to *be* that work:
+
+* a `title`-method resolution must match the declared title **exactly** under order-preserving
+  tokenisation (the earlier test compared token *sets* at 0.85 similarity, which is what let a
+  same-words substitution through);
+* a resolution whose venue or type marks it as a **secondary source** -- an encyclopedia or
+  dictionary entry, a reference work, a component or dataset record -- is rejected as support
+  however well its title matches; and
+* the outcome is printed per key as `support OK` / `support FAIL` and counted in
+  `reference-check.md`, so a key whose record is real but wrong is reported rather than accepted.
+
+The defect the test exists for: a title search for Student's *The Probable Error of a Mean*
+resolved to a 2010 SAGE encyclopedia entry bearing the same normalised words, and was accepted --
+so the bibliography cited an encyclopedia article for Student's paper. That class of defect is
+structural, and no reviewer should be the check that catches it.
+
 ## The construct, and what was registered
 
 For a mean test at level `alpha`, the detection power of `k` re-executions against a node
