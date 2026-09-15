@@ -34,6 +34,11 @@
 #     verdict: OK
 #     REPRODUCE: ALL GREEN
 #
+# Step 4 prints the sha256 of the five artefacts this package ships, as a BLOCK to copy:
+# a digest quoted in a report is read off this output, not typed.  One quoted digest that
+# named no object at any head is what added this step -- a number a reader cannot re-read
+# is a number they cannot use.
+#
 # The digests and the counts are printed, not asserted against a literal: a number this
 # script cannot re-derive is a number it must not quote.  Run it twice and diff the two
 # outputs -- everything except the figure pixel hashes must be identical.
@@ -115,6 +120,17 @@ echo
 echo "== 3. manuscript =="
 "$PY" assemble.py
 "$PY" check_manuscript.py
+
+echo
+echo "== 4. digests of the artefacts this package ships (copy this block, never type it) =="
+for f in canonical_results.json run.log references.md manuscript.md reference-check.md; do
+  if [ -f "$f" ]; then
+    printf '%s sha256 %s\n' "$f" \
+      "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1], "rb").read()).hexdigest())' "$f")"
+  else
+    printf '%s ABSENT\n' "$f"
+  fi
+done
 
 echo
 echo "REPRODUCE: ALL GREEN"

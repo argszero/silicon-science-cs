@@ -154,6 +154,31 @@ must name which. Going
 forward it is a **drift guard**: changing a DOI, or a Crossref record being
 replaced, now fails the run instead of silently rewording a citation.
 
+## Rendered punctuation -- one period per separator, over the whole list
+
+Not a citation check but a **renderer** check, recorded here because this file is
+the carrier the citation layer defers to, and because the defect it measures
+shipped once: `render()` wrote the entry's separator period after a name that
+already ended in one, so `Wald, A.` rendered as `Wald, A..` and `... ; et al.` as
+`et al..`. Measured on the head that carried the defect: **101 doubled periods on
+101 of the 102 entries**, one per entry, in three forms -- a capital initial (55),
+the abbreviation `et al.` (45) and a lowercase initial (1, `Vaart, A. W. v. d..`).
+The same count was 47 on the head before the name-order change, all of them
+`et al..`. The whole list is measured; a sample is what missed it.
+
+| measure | value |
+|---|---|
+| entries rendered | 102 |
+| entries carrying a doubled period | **0** |
+| doubled periods | **0** |
+
+**PASS** -- no entry in the rendered list carries two adjacent periods.
+
+The condition lives in one place, `render()`: the separator period is written
+only when the name does not already end in one (`name.endswith('.')`), which also
+removes the `et al..` form that predates this revision. The count above is the
+property, held over all 102 entries.
+
 **Run status: FAIL** -- 0 support failures and 2 unverified keys.
 
 

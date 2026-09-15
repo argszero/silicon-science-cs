@@ -93,6 +93,9 @@ def norm_seq(s):
     return tuple(norm(s))
 
 
+DOUBLED_PERIOD = re.compile(r"\.\.")
+
+
 def fmt_name(full):
     """One name order for the whole bibliography: `Family, I.`
 
@@ -255,7 +258,15 @@ def render(key, rec, expected_author=None):
         # supplied from the work itself and the supply is disclosed in
         # reference-check.md rather than silently rendered as "Anonymous".
         auth = expected_author
-    line = "%s. *%s*." % (auth or "Anonymous", title)
+    # The separator period belongs to the ENTRY, not to the name.  A name that already
+    # carries its own final period -- an initial (`Wald, A.`) or the abbreviation
+    # (`et al.`) -- must not receive a second one.  Measured on the head before this
+    # condition: 55 of 102 entries printed `A..` and 45 printed `et al..`, 101 doubled
+    # periods in all, while the name-ORDER change in this same function was being
+    # verified.  The order was checked and the punctuation it produced was not, which is
+    # why the property is now measured over the whole list (doubled_periods).
+    name = auth or "Anonymous"
+    line = "%s%s *%s*." % (name, "" if name.endswith(".") else ".", title)
     venue = oneline(rec["venue"])
     if venue:
         line += " %s," % venue
@@ -265,6 +276,53 @@ def render(key, rec, expected_author=None):
         line += " `%s`" % rec["doi"]
     assert "\n" not in line, "a rendered entry must be one line"
     return line
+
+
+def doubled_periods(entries):
+    """Every entry carrying two adjacent periods -- the WHOLE list, never a sample.
+
+    A property of the renderer, so it is measured on the renderer's output.  Sampling
+    the entries one happens to look at is exactly how a doubled period survived a round
+    in which this same function's name ORDER was verified: the predicate that was
+    checked was true, and the punctuation it produced was not read.  Returns
+    `[(key, context)]`, one per occurrence.
+    """
+    out = []
+    for key, line in entries:
+        for m in DOUBLED_PERIOD.finditer(line):
+            out.append((key, line[max(0, m.start() - 20):m.end() + 8]))
+    return out
+
+
+def punctuation_section(dbl, n_entries):
+    """The rendered-punctuation block of reference-check.md, generated in the same run."""
+    parts = [
+        "## Rendered punctuation -- one period per separator, over the whole list\n\n",
+        "Not a citation check but a **renderer** check, recorded here because this file is\n",
+        "the carrier the citation layer defers to, and because the defect it measures\n",
+        "shipped once: `render()` wrote the entry's separator period after a name that\n",
+        "already ended in one, so `Wald, A.` rendered as `Wald, A..` and `... ; et al.` as\n",
+        "`et al..`. Measured on the head that carried the defect: **101 doubled periods on\n",
+        "101 of the 102 entries**, one per entry, in three forms -- a capital initial (55),\n",
+        "the abbreviation `et al.` (45) and a lowercase initial (1, `Vaart, A. W. v. d..`).\n",
+        "The same count was 47 on the head before the name-order change, all of them\n",
+        "`et al..`. The whole list is measured; a sample is what missed it.\n\n",
+        "| measure | value |\n|---|---|\n",
+        "| entries rendered | %d |\n" % n_entries,
+        "| entries carrying a doubled period | **%d** |\n" % len(set(k for k, _ in dbl)),
+        "| doubled periods | **%d** |\n" % len(dbl),
+    ]
+    if dbl:
+        parts.append("\n**FAIL** -- a name that already carries a period is being given a second one:\n\n")
+        for key, ctx in dbl[:10]:
+            parts.append("* `%s` -- `%s`\n" % (key, ctx))
+    else:
+        parts.append("\n**PASS** -- no entry in the rendered list carries two adjacent periods.\n")
+    parts.append("\nThe condition lives in one place, `render()`: the separator period is written\n"
+                 "only when the name does not already end in one (`name.endswith('.')`), which also\n"
+                 "removes the `et al..` form that predates this revision. The count above is the\n"
+                 "property, held over all %d entries.\n\n" % n_entries)
+    return "".join(parts)
 
 
 # ------------------------------------------------- coverage and ambiguity ----
@@ -569,6 +627,14 @@ def main():
         for key, line, _ in refs:
             fh.write("[@%s] %s\n" % (key, line))
 
+    # The rendered list's punctuation, measured over every entry -- and a failure, not a
+    # note: a reader meets the bibliography, and 55 entries printed `A..` unnoticed.
+    dbl = doubled_periods([(k, line) for k, line, _ in refs])
+    if dbl:
+        problems.append("doubled period on %d entries (%s)" %
+                        (len(set(k for k, _ in dbl)),
+                         ", ".join(sorted(set(k for k, _ in dbl))[:5])))
+
     with io.open(OUT_CHECK, "w", encoding="utf-8") as fh:
         fh.write("# Reference check: authenticity, coverage and ambiguity\n\n")
         fh.write("Every citation key used in the manuscript is verified below against a real\n")
@@ -620,6 +686,7 @@ def main():
                  "replaced, now fails the run instead of silently rewording a citation.\n\n"
                  % (len(rows), n_ok, n_bad, n_unv, len(rows) - n_hand, len(rows), n_hand,
                     len(rows)))
+        fh.write(punctuation_section(dbl, len(refs)))
         if n_bad or n_unv:
             fh.write("**Run status: FAIL** -- %d support failures and %d unverified keys.\n\n"
                      % (n_bad, n_unv))

@@ -17,6 +17,12 @@ the failure modes we have actually met on this package.
   NUMBERS    the number of resolved placeholders is reported and gated.
   CITATIONS  every cited key has an entry, every entry is cited, the entry count is
              gated at the journal's bar, and every entry appears in reference-check.md.
+  PUNCTUATION the compiled reference list carries ONE period per separator, checked over
+             every entry rather than the entries a reader happens to look at.  A renderer
+             that appends the separator period to a name already ending in one renders
+             `Wald, A..` and `et al..` -- 55 of 102 entries at the head where every other
+             citation check passed, because the predicate under review was the name ORDER
+             and the punctuation it produced was never read.
   LAYOUT     tables and figures are numbered in document order, embedded, captioned,
              and cited in the running text; every embedded figure file exists.
   AUDIT      numbers that are not placeholders are listed for review, so that a
@@ -143,6 +149,28 @@ def main():
     checked_keys = set(re.findall(r"^\|\s*`?([A-Za-z0-9_.:-]+)`?\s*\|", rc, re.M))
     check("citations/every_entry_is_authenticity_checked", set(cited) <= checked_keys,
           "%d of %d in reference-check.md" % (len(set(cited) & checked_keys), len(cited)))
+
+    # ------------------------------------------------------------ PUNCTUATION ------
+    # Measured on the manuscript's OWN compiled list -- the artefact a reader meets --
+    # and over the whole list, since the defect is a property of the renderer and it
+    # touched 55 entries at once.  The condition lives in verify_refs.render(); this is
+    # the guard that fires on every reproduction, without network access.
+    # The entry list is the block under the References heading, so the denominator below
+    # is the bibliography's own length.  Counting every line that begins with a marker
+    # instead gave 107 "entries" for a 102-entry list: five body paragraphs open with a
+    # citation.  The length is asserted against the cited-key count, so a truncated or
+    # renumbered list fails here too.
+    ref_block = []
+    if "## References" in committed:
+        ref_block = [l for l in committed.split("## References", 1)[1].split("\n")[1:]
+                     if re.match(r"^\[\d+\] ", l)]
+    dbl = [l[:70] for l in ref_block if ".." in l]
+    check("punctuation/no_doubled_period_in_the_references",
+          not dbl and len(ref_block) == len(cited),
+          "%d entries in the reference list, %d carrying two adjacent periods%s%s" %
+          (len(ref_block), len(dbl),
+           "" if len(ref_block) == len(cited) else " (list length != %d cited keys)" % len(cited),
+           (": " + "; ".join(dbl[:3])) if dbl else ""))
 
     # ------------------------------------------------------------------ LAYOUT --
     caps = CAPTION.findall(committed)
