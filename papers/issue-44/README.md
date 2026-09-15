@@ -19,11 +19,13 @@ figure checks: 106 run, 0 failed   (106 on the matplotlib build the manifest pin
                                     are REPORTED rather than required -- the six DATA
                                     digests are required on every build)
 manuscript check: 22 run, 0 failed
+instrument audit: 18 run, 0 failed
+selftest: 0 case(s) failed
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
 
-Step 4 then prints the sha256 of the five artefacts this package ships, as a block to copy: a
+Step 5 then prints the sha256 of the five artefacts this package ships, as a block to copy: a
 digest quoted in a report is read off that output, never typed.
 
 Exit status carries the verdict: 0 only if every check passes, and any disagreement names the
@@ -88,7 +90,13 @@ before:
 * **layout** — tables and figures are numbered in document order, embedded, captioned, cited in the
   running text, and every embedded file exists;
 * **audit** — numbers outside a placeholder are listed for review, so a hand-typed measurement has
-  to be looked at rather than trusted;
+  to be looked at rather than trusted.  The class LISTS 337 code spans and VERIFIES none of them;
+  what it verifies is stated in the step that does it — `instrument_audit.py` check D4 resolves
+  all 336 placeholders through the renderer and requires every one of the 156 distinct hand-typed
+  values to be a value the artefact records, with a **declared residual of 5** (the antecedent's
+  quoted counts `104/105`, `27/29`, `44/45`).  That check is value-level: it shows the number
+  exists in the artefact, not that it is used where it belongs — placement is what this listing
+  is for;
 * **counts** — counts written in words are checked against sizes derived from the artefact
   (`registered priors`, `registered criteria`) and from the document's own enumerations (the
   numbered consequences of Section 1, the contributions, the captions). The audit class above
@@ -97,6 +105,31 @@ before:
   Every occurrence is listed, a subset claim ("three of the four X") is listed rather than
   judged, and the scanner carries a six-case self-test so that a pattern which silently stopped
   matching is caught by the same run that depends on it.
+
+### The instruments audit themselves (`instrument_audit.py`, step 4)
+
+Written after a review of this package's own measurement instruments, which are checks like any
+other and carry the same failure modes:
+
+* **crossover.** The mechanism ordering excludes near-tied pairs by a declared rule (`GAP_TOL`).
+  The audit recomputes the statistic from the artefact, sweeps the rule from 0 to 0.5, and shows
+  (i) the published numbers `554 compared / 510 rises / 44 falls / tau 0.8412` reproduce exactly,
+  (ii) the verdict — the mean gap orders the factor — holds under **every** rule that leaves any
+  pair (`tau` 0.64 to 0.87), and (iii) at a rule that leaves none the statistic is **undefined**,
+  which the instrument now reports as undefined rather than as `does not order`.  That regime was
+  driven on a scratch copy before the patch and re-driven after it.
+* **exclusions publish their values, not just their rate.** The 307 excluded pairs are the *least*
+  informative ones — mean factor gap 0.046 against 0.138 for the kept pairs — so the exclusion
+  raises the magnitude of the statistic without manufacturing its sign.
+* **coverage.** 336 numbers come from placeholders and are checked against the artefact by
+  construction (plus the recompute and mutation controls); 156 are hand-typed, of which 151 are
+  values the artefact records and 5 are declared quotations of another paper's counts.
+* **liveness.** `verify_refs.py --selftest-only` runs the citation layer's controls with no
+  network: the counter's 5 cases and the support test's 7, including the case it **cannot** catch
+  (an intent back-filled from the record it is meant to test) and the two records it must reject
+  (the same tokens in another order; a secondary source carrying the exact title).  The audit
+  mutates each guard in a throwaway copy and requires the self-test to **fail**, because until this
+  revision the self-test's verdict was printed into the report and never reached the run status.
 
 ### The bibliography is verified, not asserted
 

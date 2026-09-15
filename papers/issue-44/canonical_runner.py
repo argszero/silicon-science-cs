@@ -245,9 +245,15 @@ def criterion_c(v3, ck):
     ck.same("c/mechanism_factor_falls_with_gap", falls, m["factor_falls_with_gap"])
     ck.same("c/mechanism_tau_like", tau, m["tau_like"])
     ck.same("c/mechanism_is_order_free", m["order_free"], True)
+    # the recomputed verdict must mirror the instrument's THREE states, not two (see
+    # instrument_v3.py): an undefined statistic is neither ordered nor unordered.  Mirroring the
+    # two-state form here would also raise TypeError on None, i.e. fail for the wrong reason.
     ck.same("c/mechanism_verdict_follows_its_own_statistic",
-            m["verdict"] == ("the mean gap ORDERS the factor" if tau > 0.5
-                             else "the mean gap does not order the factor"), True)
+            m["verdict"] == ("the exclusion rule leaves no comparable pair: the statistic is "
+                             "UNDEFINED, neither ordered nor unordered"
+                             if tau is None else
+                             ("the mean gap ORDERS the factor" if tau > 0.5
+                              else "the mean gap does not order the factor")), True)
     q_spreads = {}
     for b in range(4):
         chunk = pairs[b * len(pairs) // 4:(b + 1) * len(pairs) // 4]

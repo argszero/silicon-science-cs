@@ -333,7 +333,10 @@ def main():
             if TABLE_ROW_DECIMAL.search(m.group(1)):
                 audit.append((i, m.group(1)))
     check("audit/number_candidates_reported", True,
-          "%d inline code spans carry a decimal (reviewed below)" % len(audit))
+          "%d inline code spans carry a decimal (listed below, NOT verified here: this class is a "
+          "reading aid. The verification is instrument_audit.py check D4, which resolves every "
+          "placeholder through the renderer and requires each hand-typed value to be a value the "
+          "artefact records, with a declared residual)" % len(audit))
     for i, tok in audit[:40]:
         print("    line %4d  %s" % (i, tok))
     if len(audit) > 40:

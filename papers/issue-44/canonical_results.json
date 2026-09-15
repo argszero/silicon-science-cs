@@ -687,7 +687,7 @@
       "exit_code": 0,
       "purpose": "criterion (c): the derived per-execution rule versus the best constant threshold matched to zero honest rejections",
       "script": "instrument_v3.py",
-      "script_sha256": "1111a7a47681c9fd525889278e6255961aecca14a15c2d6efbac6545b8676dae",
+      "script_sha256": "43ed2837e1c2ba594a2afa3522898f5553b0d4dfaa6c51df6e2cda90020688df",
       "tag": "v3"
     },
     {

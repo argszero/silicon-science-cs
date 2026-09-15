@@ -415,6 +415,66 @@ def bracket_groups_selftest():
     case("no brackets yields no citation and no non-citation group",
          "plain prose without brackets", [], [])
     return cases
+
+def support_selftest():
+    """Controls for the SUPPORT test, in the style of the counter's own.
+
+    The support test decides whether a resolved record is the DECLARED work rather than merely a
+    real one. It had no self-test: nothing showed it could fire, and a version that always returned
+    None would have printed `support OK 102` and looked perfect. Each case below is one it must
+    catch, one it must NOT catch, or one it CANNOT catch -- the last is deliberate, because a
+    control should name its own blind spot.
+    """
+    cases = []
+
+    def case(name, rec, intent, must_reject, why=""):
+        fail = support_failure(rec, intent)
+        rejected = fail is not None
+        cases.append((name, rejected == must_reject,
+                      "rejected: %s%s" % (fail or "no", (" (%s)" % why) if why else "")))
+
+    case("the declared work, exactly matched, is accepted",
+         {"title": "Attention Is All You Need", "venue": "NeurIPS", "type": "proceedings-article"},
+         "Attention Is All You Need", False)
+    case("a real work whose title is the SAME TOKENS in another order is rejected",
+         {"title": "Rank to Learning", "venue": "JMLR", "type": "journal-article"},
+         "Learning to Rank", True, "the test is the ORDERED token sequence")
+    case("a secondary source carrying the EXACT declared title is rejected",
+         {"title": "The Probable Error of a Mean", "type": "reference-entry",
+          "venue": "SAGE Encyclopedia of Research Design"},
+         "The Probable Error of a Mean", True, "a 2010 encyclopedia entry, not the 1908 paper")
+    case("a record one token away from the declared work is rejected",
+         {"title": "Attention Is All You Needs", "venue": "arXiv", "type": "preprint"},
+         "Attention Is All You Need", True)
+    case("a batch row with no declared intent is rejected rather than passed by default",
+         {"title": "Attention Is All You Need", "venue": "NeurIPS", "type": "proceedings-article"},
+         "", True, "an empty intent must not mean 'no expectation'")
+    case("a subtitle carried by both the record and the intent matches",
+         {"title": "MetaCost: A Case Study", "venue": "KDD", "type": "proceedings-article"},
+         "MetaCost: A Case Study", False)
+    case("BLIND SPOT: an intent copied from the record passes by construction",
+         {"title": "Attention Is All You Need", "venue": "NeurIPS", "type": "proceedings-article"},
+         "Attention Is All You Need", False,
+         "this test cannot catch it; the report declares the back-filled count instead")
+    return cases
+
+
+def _selftest_only():
+    """Network-free: both self-tests, printed, with a status that can fail.
+
+    `reproduce.sh` deliberately does not run the network resolver, so without this flag the two
+    liveness controls would run only when someone remembered the full resolver -- i.e. never on a
+    reproduction. This is the entry point a reproduction (and the instrument audit) can call.
+    """
+    bad = 0
+    for label, tests in (("counter", bracket_groups_selftest()), ("support", support_selftest())):
+        print("%s self-test: %d cases" % (label, len(tests)))
+        for name, ok, detail in tests:
+            print("  %-4s %s -- %s" % ("PASS" if ok else "FAIL", name, detail))
+            bad += 0 if ok else 1
+    print("selftest: %d case(s) failed" % bad)
+    return 1 if bad else 0
+
 def coverage_section():
     """Duty (ii) of the checklist item that names this file: coverage and ambiguity.
 
@@ -586,6 +646,8 @@ def hand_written_intents(path):
 
 
 def main():
+    if "--selftest-only" in sys.argv:
+        return _selftest_only()
     rows, refs, problems = [], [], []
     n_hand = hand_written_intents(BATCH)
     with io.open(BATCH, encoding="utf-8") as fh:
@@ -699,6 +761,12 @@ def main():
           (len(rows), len(refs), sum(1 for r in rows if r[2] == "UNVERIFIED"), n_bad))
     for k in problems:
         print("  UNVERIFIED:", k)
+    # A self-test whose failure does not reach the status is not a control: until this line the
+    # counter's cases were printed into the report and the run exited 0 whatever they said.
+    for label, tests in (("counter", bracket_groups_selftest()), ("support", support_selftest())):
+        for name, ok, _detail in tests:
+            if not ok:
+                problems.append("SELFTEST %s: %s" % (label, name))
     return 1 if problems else 0
 
 

@@ -32,10 +32,19 @@
 #     figure checks: <n> run, 0 failed                        (n = 106 at the time of writing)
 #     assemble: <n> placeholders resolved, <m> references cited
 #     manuscript check: <n> run, 0 failed
+#     instrument audit: <n> run, 0 failed
+#     selftest: 0 case(s) failed
 #     verdict: OK
 #     REPRODUCE: ALL GREEN
 #
-# Step 4 prints the sha256 of the five artefacts this package ships, as a BLOCK to copy:
+# Step 4 audits the instruments themselves against four disciplines: any criterion whose branch
+# depends on a variable must name that variable and declare the regime where it is undefined;
+# any exclusion must publish the excluded VALUES and not only its rate; every guard must state
+# the fraction of the surface it audits and must be able to fail the run; and it runs the two
+# network-free self-tests of the citation layer.  Written after a host review of this package's
+# own instruments.
+#
+# Step 5 prints the sha256 of the five artefacts this package ships, as a BLOCK to copy:
 # a digest quoted in a report is read off this output, not typed.  One quoted digest that
 # named no object at any head is what added this step -- a number a reader cannot re-read
 # is a number they cannot use.
@@ -123,7 +132,12 @@ echo "== 3. manuscript =="
 "$PY" check_manuscript.py
 
 echo
-echo "== 4. digests of the artefacts this package ships (copy this block, never type it) =="
+echo "== 4. instrument audit (the checks' own regimes, exclusions and coverage) =="
+"$PY" instrument_audit.py
+"$PY" verify_refs.py --selftest-only
+
+echo
+echo "== 5. digests of the artefacts this package ships (copy this block, never type it) =="
 for f in canonical_results.json run.log references.md manuscript.md reference-check.md; do
   if [ -f "$f" ]; then
     printf '%s sha256 %s\n' "$f" \

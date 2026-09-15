@@ -454,9 +454,15 @@ def run():
         "order_free": True,
         "pairs_compared": compared, "factor_rises_with_gap": rises,
         "factor_falls_with_gap": falls, "tau_like": tau_like,
-        "verdict": ("the mean gap ORDERS the factor"
-                    if (tau_like is not None and tau_like > 0.5)
-                    else "the mean gap does not order the factor"),
+        # THREE states, not two.  The rule can drop every pair (tau_like is None); that is a
+        # regime in which the statistic is UNDEFINED, and reporting it as "does not order" is a
+        # negative finding the data does not support.  Driven on a throwaway copy at GAP_TOL=0.5
+        # before this patch: pairs_compared 0, tau_like None, verdict "does not order".
+        "verdict": ("the exclusion rule leaves no comparable pair: the statistic is UNDEFINED, "
+                    "neither ordered nor unordered"
+                    if tau_like is None else
+                    ("the mean gap ORDERS the factor" if tau_like > 0.5
+                     else "the mean gap does not order the factor")),
         "ordering_is_not_determination": {
             "gap_quartiles": quartiles,
             "max_factor_spread_inside_a_quartile":
