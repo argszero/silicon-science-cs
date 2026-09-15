@@ -677,7 +677,10 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
 
 One entry, **[51]**, is printed without an author: no reachable record carries one for its DOI
 (Crossref has none, OpenAlex reports no authorships, and the publisher's landing page refuses
-automated access). The obstacle is stated on the issue thread rather than filled in by guesswork.
+automated access). The obstacle is stated on the issue thread rather than filled in by guesswork. The
+Kahneman attribution on that entry's `Difference:` line is our judgement about the work, not a field of
+any record; the entry's author field is absent because no record supplies one, and the two statements
+are about different objects.
 
 [1] Bertsekas, D. (2023). New Auction Algorithms for the Assignment Problem and Extensions. arXiv
     preprint arXiv:2310.03159. https://arxiv.org/abs/2310.03159

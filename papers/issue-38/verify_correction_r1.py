@@ -2,7 +2,9 @@
 """Verify issue #38's four required changes (R1-R4) mechanically, with a control per check.
 
 Each check is two-sided: it must PASS on the delivered manuscript and FAIL on a mutated copy.
-Writes results to research/correction_r1_verify.log.
+Writes results to correction_r1_verify.log, BESIDE this package (not into research/, which is
+git-ignored and absent from the package: a reader who ran this elsewhere hit FileNotFoundError and
+an exit status of 1 on a run whose own stdout said ALL PASS).
 
 Run:  python3 verify_correction_r1.py
 """
@@ -10,7 +12,7 @@ import io, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MS = os.path.join(HERE, "manuscript.md")
-LOG = os.path.join(HERE, "research", "correction_r1_verify.log")
+LOG = os.path.join(HERE, "correction_r1_verify.log")
 R1_SECTIONS = {"fig1_collapse.png": "4.2", "fig2_scrambling.png": "4.5", "fig3_amplification.png": "4.6"}
 
 out = []
@@ -146,7 +148,13 @@ def main():
         if not caught:
             allfail.append("%s: control not caught -- the check cannot fail" % name)
     say("R1-R4: %s" % ("ALL PASS" if not allfail else "FAIL"))
-    io.open(LOG, "w", encoding="utf-8").write("\n".join(out) + "\n")
+    try:
+        io.open(LOG, "w", encoding="utf-8").write("\n".join(out) + "\n")
+        say("log written to %s" % LOG)
+    except OSError as exc:
+        # The exit status must carry the VERDICT, never a logging accident: a run whose
+        # checks all passed must exit 0 even if the log cannot be written, and say so.
+        say("NOTE: could not write %s (%s). The verdict above stands." % (LOG, exc))
     return 1 if allfail else 0
 
 

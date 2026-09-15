@@ -71,6 +71,7 @@ reproduced the same artefact digest.
 | `refs_build_display.py` | builds `refs_display.json` from the harvest, with the five gap entries resolved individually and named |
 | `refs_render.py` | renders the manuscript's `## References` section from the two data files; `--check` verifies it |
 | `refs_verify.log` | the verification run log (including the recorded API outage) |
+| `verify_correction_r1.py` | the round-1 correction checker: one check per required change (R1-R4), each two-sided (it must fail on a mutated copy). `python3 verify_correction_r1.py` prints the verdict and writes `correction_r1_verify.log` beside the package; exit status follows the verdict |
 | `alloc_model.py` | the allocation model: instances, oracle, planner, market |
 | `canonical_runner.py` | the canonical runner - every number in the manuscript is read out of its artefact |
 | `canonical_results.json` | the artefact (reductions, anchors, law grid, out-of-sample race, closure, mechanism, ablation) |
