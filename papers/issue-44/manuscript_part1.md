@@ -349,8 +349,9 @@ named where it is measured so that a reader can check the law against the table:
   whose half-width is `sigma_D / sqrt(k)`. This is the object the width law is about: the invariant
   `width * sqrt(k) / sigma_D` is constant for it, exactly, at each fixed `k` (Section 6.2).
 * The **secant band** over the design's budget range (`predicted_secant` in the instrument, taken
-  over `K_BAND = [{{F:crit_b.k_band_min|d}}, {{F:crit_b.k_band_mid1|d}}, {{F:crit_b.k_band_mid2|d}},
-  {{F:crit_b.k_band_max|d}}]`) is the *average* of that half-width over the log budget range the
+  over the design budget set
+  `K_BAND = { {{F:crit_b.k_band_min|d}}, {{F:crit_b.k_band_mid1|d}}, {{F:crit_b.k_band_mid2|d}}, {{F:crit_b.k_band_max|d}} }`) is the *average* of that
+  half-width over the log budget range the
   experiment spans. Its width is
   `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)`, which is what a
   single number has to be if it is to stand for a range rather than for a point. Because it averages

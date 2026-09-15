@@ -1,4 +1,9 @@
-# hand-written intents: 20
+# Intents from the sentence's CLAIM: 20 (a DECLARATION by the author about how
+# this batch was written -- the split is provenance and is NOT derivable from
+# these rows; the report says so where it quotes the number).  The remaining
+# rows were back-filled from the record their locator returned, so for those the
+# intent asserts only that the locator agrees with itself.  Format: key, method,
+# value, declared intent, optional author.
 threshold	arxiv	2609.10601	Threshold Choice, Not Sample Size, Bounds Trustless Verification of Nondeterministic Compound AI Workflows	-
 nova	arxiv	2609.12582	NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs	-
 wald	doi	10.1214/aoms/1177731118	Sequential Tests of Statistical Hypotheses	-

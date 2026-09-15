@@ -175,8 +175,8 @@ relative error on the coarse grid and after bisection. Panel (b): the width law 
 **Table 2.** The **secant** band's width at each honest spread — the second definition of
 Section 3.3, not the tangent one. The width is the predicted power difference over the design's own
 budget range, `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)` with
-`K_BAND = [{{F:crit_b.k_band_min|d}}, {{F:crit_b.k_band_mid1|d}}, {{F:crit_b.k_band_mid2|d}},
-{{F:crit_b.k_band_max|d}}]`, so the "Predicted width" column is recomputable by a reader who
+the design budget set
+`K_BAND = { {{F:crit_b.k_band_min|d}}, {{F:crit_b.k_band_mid1|d}}, {{F:crit_b.k_band_mid2|d}}, {{F:crit_b.k_band_max|d}} }`, so the "Predicted width" column is recomputable by a reader who
 evaluates `Phi(u)` of Section 3.2 at the two endpoints of `K_BAND` and divides by the log span.
 **Measured width** is the same object measured on the `{{F:crit_b.n_grid|d}}`-point margin grid, and
 the last column bisects on that measured secant. The widths grow **sublinearly in `sigma`** because

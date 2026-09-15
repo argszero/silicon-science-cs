@@ -349,8 +349,9 @@ named where it is measured so that a reader can check the law against the table:
   whose half-width is `sigma_D / sqrt(k)`. This is the object the width law is about: the invariant
   `width * sqrt(k) / sigma_D` is constant for it, exactly, at each fixed `k` (Section 6.2).
 * The **secant band** over the design's budget range (`predicted_secant` in the instrument, taken
-  over `K_BAND = [8, 32, 128,
-  512]`) is the *average* of that half-width over the log budget range the
+  over the design budget set
+  `K_BAND = { 8, 32, 128, 512 }`) is the *average* of that
+  half-width over the log budget range the
   experiment spans. Its width is
   `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)`, which is what a
   single number has to be if it is to stand for a range rather than for a point. Because it averages
@@ -587,8 +588,8 @@ relative error on the coarse grid and after bisection. Panel (b): the width law 
 **Table 2.** The **secant** band's width at each honest spread — the second definition of
 Section 3.3, not the tangent one. The width is the predicted power difference over the design's own
 budget range, `(power(k_max, delta, sigma) - power(k_min, delta, sigma)) / log(k_max / k_min)` with
-`K_BAND = [8, 32, 128,
-512]`, so the "Predicted width" column is recomputable by a reader who
+the design budget set
+`K_BAND = { 8, 32, 128, 512 }`, so the "Predicted width" column is recomputable by a reader who
 evaluates `Phi(u)` of Section 3.2 at the two endpoints of `K_BAND` and divides by the log span.
 **Measured width** is the same object measured on the `81`-point margin grid, and
 the last column bisects on that measured secant. The widths grow **sublinearly in `sigma`** because

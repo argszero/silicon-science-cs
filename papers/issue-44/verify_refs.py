@@ -285,7 +285,7 @@ def repo_root():
 
 
 def bracket_groups(body):
-    """Every bracketed group in the body, split into citation markers and the rest.
+    r"""Every bracketed group in the body, split into citation markers and the rest.
 
     The separator is an explicit escape sequence, never the literal text `u2013` inside a
     character class.  The first version of this function wrote the class as `[,u2013-]`,
@@ -294,12 +294,25 @@ def bracket_groups(body):
     "14" produced a phantom 4.  It reported 42 of 102 entries covered while the journal's
     gate reported 102/102 in the same file.  A separator set containing digits is not a
     separator set, and a mis-reporting counter is worse than no counter.
+
+    The class ALSO excluded the newline (`[^\]\n]{0,60}`), which turned out to be the
+    same failure in a second guise.  The journal's gate matches
+    `\[(\d+(?:\s*[,\u2013-]\s*\d+)*)\]`, and `\s` matches a newline -- so the gate reads a
+    bracket group the manuscript's own reflow split across a line break, while this
+    counter could not see it.  Measured consequence on one blob: the gate reported
+    `AMBIGUOUS ... (2) [128, 512]` and `cited=104`, while this counter reported "the
+    unmatched set is empty" and 15 non-citation groups.  A window narrower than the
+    reference instrument's is not a conservative window -- it is a DIFFERENT
+    measurement, and the file that carries the deferral then asserts the contrary of
+    what the gate says.  The class now spans newlines exactly as the gate's `\s*` does.
     """
     cites, other = set(), set()
     EN, DASH, COMMA = "\u2013", "\u2014", ","
-    for m in re.finditer(r"\[([^\]\n]{0,60})\]", body):
-        inner = m.group(0)
-        body_in = inner[1:-1]
+    for m in re.finditer(r"\[([^\]]{0,60})\]", body):
+        # one canonical form for classification AND for the listing: a group the
+        # manuscript's reflow split is the same group, and its listed text is one line
+        body_in = " ".join(m.group(1).split())
+        inner = "[" + body_in + "]"
         if re.fullmatch(r"\d+(?:\s*[\u2013\u2014,-]\s*\d+)*", body_in):
             nums = [int(x) for x in re.findall(r"\d+", body_in)]
             if len(nums) == 2 and re.search(r"[\u2013\u2014-]", body_in):
@@ -307,8 +320,43 @@ def bracket_groups(body):
             else:
                 cites.update(nums)
         else:
+            # one line in the list: a group the reflow split would otherwise be printed
+            # across two lines and break the bullet it is written into
             other.add(inner)
     return cites, other
+
+
+def bracket_groups_selftest():
+    """Controls for the counter, run on every generation and printed into the report.
+
+    A check that never fires is decoration, so each case below is one the counter has
+    actually got wrong, or could.  Returns [(name, ok, observed)].
+    """
+    cases = []
+
+    def case(name, text, want_cites, want_other):
+        c, o = bracket_groups(text)
+        ok = (c == set(want_cites)) and (o == set(want_other))
+        cases.append((name, ok, {"cites": sorted(c), "other": sorted(o)}))
+
+    # 1. THE defect this revision repairs: a group split by the manuscript's own reflow
+    #    must be seen, and classified as the gate classifies it
+    case("a bracket group split by a line break is seen and classified as a citation group",
+         "text over `K_BAND = [8, 32, 128,\n  512]` here",
+         [8, 32, 128, 512], [])
+    # 2. the same group unwrapped must classify identically (the wrap must not matter)
+    case("the same group unwrapped classifies identically",
+         "text over `K_BAND = [8, 32, 128, 512]` here", [8, 32, 128, 512], [])
+    # 3. a numeric range still expands
+    case("a numeric range expands to its members", "see [12-14] there",
+         [12, 13, 14], [])
+    # 4. a non-numeric group is listed, on one line even when the source wraps it
+    case("a non-numeric group is listed, on one line",
+         "the interval [\n  -0.0050, 0.1014] is wide", [], ["[-0.0050, 0.1014]"])
+    # 5. the empty case must be empty
+    case("no brackets yields no citation and no non-citation group",
+         "plain prose without brackets", [], [])
+    return cases
 def coverage_section():
     """Duty (ii) of the checklist item that names this file: coverage and ambiguity.
 
@@ -400,12 +448,35 @@ def coverage_section():
         out.append("\nEvery other bracket number in the body resolves to a bibliography entry, so the\n")
         out.append("unmatched set is empty.\n")
 
+    # the self-test is printed, not asserted in silence: a control whose result nobody
+    # can read is a control nobody can check
+    tests = bracket_groups_selftest()
+    out.append("\n**Counter self-test (%d cases, run on this generation).** Each case is\n"
+               "one the counter has got wrong or could, and the first is the defect this\n"
+               "revision repairs -- a bracket group the manuscript's own reflow split\n"
+               "across a line break:\n\n| case | result | observed |\n|---|---|---|\n"
+               % len(tests))
+    for name, ok, detail in tests:
+        out.append("| %s | %s | `%s` |\n"
+                   % (name, "**pass**" if ok else "**FAIL**",
+                      "cites=%s other=%s" % (detail["cites"], detail["other"])))
+    out.append("\n")
+
     if tool_out:
         def grab(pat):
             m = re.search(pat, tool_out)
             return int(m.group(1)) if m else None
         t_entries, t_cov = grab(r"entries=(\d+)"), grab(r"covered=(\d+)/")
-        agree = (t_entries == len(entries) and t_cov == len(covered))
+        # The unmatched-set sentence above is answerable on the SAME blob: the gate prints
+        # the numbers it could not place, so the two sets are compared rather than each
+        # being asserted on its own.  This is the check that would have caught the
+        # divergence at the previous head, where this file said "the unmatched set is
+        # empty" while the gate printed two numbers into that very set.
+        m_amb = re.search(r"AMBIGUOUS:[^\n]*?\((\d+)\)\s*\[([^\]]*)\]", tool_out)
+        gate_unmatched = ([int(x) for x in re.findall(r"\d+", m_amb.group(2))]
+                          if m_amb else [])
+        sets_agree = (sorted(gate_unmatched) == sorted(unmatched))
+        agree = (t_entries == len(entries) and t_cov == len(covered) and sets_agree)
         out.append("\n**Agreement between the two counters.** This section's counter reports %d\n"
                    "entries and %d covered; the journal's gate above reports %s and %s -- %s.\n"
                    "The counter exists to name the non-citation groups, so the two must agree; a\n"
@@ -415,19 +486,45 @@ def coverage_section():
                       "**they agree**" if agree else
                       "**THEY DISAGREE: the gate's numbers are authoritative and the counter is the "
                       "defect**"))
+        out.append("\n**Unmatched-set agreement -- the quantity this section defers on.** The\n"
+                   "gate reports bracket numbers matching no entry: **%s**; this counter's\n"
+                   "unmatched set is **%s** -- %s. This is the comparison the sentence above\n"
+                   "depends on: at the previous head this file said the unmatched set was\n"
+                   "empty while the gate printed two numbers into it, because the counter's\n"
+                   "window excluded the line break the group was wrapped across. A deferral is\n"
+                   "honest only if the deferring file and the gate read the same text.\n"
+                   % (gate_unmatched if gate_unmatched else "none",
+                      unmatched if unmatched else "none",
+                      "**the sets agree**" if sets_agree else
+                      "**THE SETS DISAGREE: the gate is authoritative**"))
     return "".join(out)
 def hand_written_intents(path):
-    """The number of intents written by hand (read from the batch's own header).
+    """The number of intents written from the sentence's claim (batch header).
+
+    A DECLARATION by the author, not a property derivable from the rows: the
+    split between claim-written and back-filled intents is provenance, and the
+    report prints that qualification beside the number rather than presenting it
+    as a measurement.  Counts of "how many entries were touched" are three
+    different sets at once -- rows carrying a declared intent, rows whose
+    (method, value) changed, rendered entries whose locator token changed -- so
+    each sentence must name its set.  This file quotes only the first, which is
+    the one derivable at the head it ships with.
 
     Quoted in the report instead of a literal, because a literal of this kind goes
     stale the moment the batch changes -- the same reason the profile count in the
     instrument is derived rather than typed.
     """
     for line in io.open(path, encoding="utf-8"):
-        m = re.match(r"#\s*hand-written intents:\s*(\d+)", line)
+        m = re.match(r"#\s*Intents from the sentence's CLAIM:\s*(\d+)", line)
         if m:
             return int(m.group(1))
-    return 0
+    # NOT `return 0`.  A parse miss used to make the report print "for 104 of the 104
+    # keys the intent column was back-filled ... For the 0 corrected keys", i.e. a wrong
+    # number that reads like a finding.  An absent header is a defect in the batch, not
+    # a batch with no claim-written intents, so the run stops.
+    raise SystemExit("refs_to_verify.tsv carries no parseable "
+                     "\"# Intents from the sentence's CLAIM: <n>\" header -- the batch is "
+                     "malformed, and defaulting to 0 would print a wrong count in the report")
 
 
 def main():
@@ -510,10 +607,19 @@ def main():
                  "back-filled from the record that the locator returned, so those rows assert the\n"
                  "locator agrees with itself. For the %d corrected keys -- and for the two\n"
                  "paragraphs the decision names as the place to check first -- the intent was\n"
-                 "written from the sentence's claim, and there the test is a genuine check. Going\n"
+                 "written from the sentence's claim, and there the test is a genuine check.\n"
+                 "**That split is a declaration by the author, not a property derivable from\n"
+                 "the batch**: the rows record the intent, not which of the two ways it was\n"
+                 "written. Counts of \"how many entries were touched\" are different sets and\n"
+                 "are all correct at once -- the %d rows carrying a declared intent here, the\n"
+                 "rows whose (method, value) changed between two heads, and the rendered\n"
+                 "locator tokens that changed (a key can move from a title search to a DOI\n"
+                 "while its locator token stays identical). A sentence quoting one of these\n"
+                 "must name which. Going\n"
                  "forward it is a **drift guard**: changing a DOI, or a Crossref record being\n"
                  "replaced, now fails the run instead of silently rewording a citation.\n\n"
-                 % (len(rows), n_ok, n_bad, n_unv, len(rows) - n_hand, len(rows), n_hand))
+                 % (len(rows), n_ok, n_bad, n_unv, len(rows) - n_hand, len(rows), n_hand,
+                    len(rows)))
         if n_bad or n_unv:
             fh.write("**Run status: FAIL** -- %d support failures and %d unverified keys.\n\n"
                      % (n_bad, n_unv))

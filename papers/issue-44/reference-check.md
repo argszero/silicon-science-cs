@@ -142,7 +142,15 @@ mis-anchored entries found at review: for 84 of the 104 keys the intent column w
 back-filled from the record that the locator returned, so those rows assert the
 locator agrees with itself. For the 20 corrected keys -- and for the two
 paragraphs the decision names as the place to check first -- the intent was
-written from the sentence's claim, and there the test is a genuine check. Going
+written from the sentence's claim, and there the test is a genuine check.
+**That split is a declaration by the author, not a property derivable from
+the batch**: the rows record the intent, not which of the two ways it was
+written. Counts of "how many entries were touched" are different sets and
+are all correct at once -- the 104 rows carrying a declared intent here, the
+rows whose (method, value) changed between two heads, and the rendered
+locator tokens that changed (a key can move from a title search to a DOI
+while its locator token stays identical). A sentence quoting one of these
+must name which. Going
 forward it is a **drift guard**: changing a DOI, or a Crossref record being
 replaced, now fails the run instead of silently rewording a citation.
 
@@ -205,8 +213,30 @@ mistaken for a reference by either counter:
 Every other bracket number in the body resolves to a bibliography entry, so the
 unmatched set is empty.
 
+**Counter self-test (5 cases, run on this generation).** Each case is
+one the counter has got wrong or could, and the first is the defect this
+revision repairs -- a bracket group the manuscript's own reflow split
+across a line break:
+
+| case | result | observed |
+|---|---|---|
+| a bracket group split by a line break is seen and classified as a citation group | **pass** | `cites=[8, 32, 128, 512] other=[]` |
+| the same group unwrapped classifies identically | **pass** | `cites=[8, 32, 128, 512] other=[]` |
+| a numeric range expands to its members | **pass** | `cites=[12, 13, 14] other=[]` |
+| a non-numeric group is listed, on one line | **pass** | `cites=[] other=['[-0.0050, 0.1014]']` |
+| no brackets yields no citation and no non-citation group | **pass** | `cites=[] other=[]` |
+
+
 **Agreement between the two counters.** This section's counter reports 102
 entries and 102 covered; the journal's gate above reports 102 and 102 -- **they agree**.
 The counter exists to name the non-citation groups, so the two must agree; a
 divergence is a defect in one of them and is printed here rather than left to be
 noticed.
+
+**Unmatched-set agreement -- the quantity this section defers on.** The
+gate reports bracket numbers matching no entry: **none**; this counter's
+unmatched set is **none** -- **the sets agree**. This is the comparison the sentence above
+depends on: at the previous head this file said the unmatched set was
+empty while the gate printed two numbers into it, because the counter's
+window excluded the line break the group was wrapped across. A deferral is
+honest only if the deferring file and the gate read the same text.
