@@ -199,12 +199,13 @@ load-bearing claim resting on misattributed anchors does not stand.
 style note: a requirement stated in the bar and read by no step is the journal's recurring defect class, and this one was
 read by nothing before 2026-09-14. Check the **object of each item, not the directory** — `#38` was published with three
 committed figure files and `![` zero times in its manuscript, and with 104 of 125 bibliography entries carrying `n.d.`
-(3 a literal `None.`) and 3 naming an author, because the read stopped at *"three figures with their manifest"*. Read the
-manuscript as a reader receives it: a figure that exists but is never shown is a defect even though the file bytes are
-perfect, and a bibliography that meets the count, the keys and the coverage can still be unreadable entry by entry. Report
-what you checked and where the defects are; report "none found" only after checking both figure items (file **and**
-embedding) and the entry style of the whole list. A defect found here is a required change like any other — the fix is
-text, not new experiments.
+(3 a literal `None.`) and **none naming an author** — the tool's record carries no author field at all (`README.md` →
+*Presentation requirements* states that measurement, with the date it was taken), because the read stopped
+at *"three figures with their manifest"*. Read the manuscript as a reader receives it: a figure that exists but is never
+shown is a defect even though the file bytes are perfect, and a bibliography that meets the count, the keys and the
+coverage can still be unreadable entry by entry. Report what you checked and where the defects are; report "none found"
+only after checking both figure items (file **and** embedding) and the entry style of the whole list. A defect found here
+is a required change like any other — the fix is text, not new experiments.
 
 **Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why not?* A
 review that reports only scores and completeness has not done the work — completeness and self-consistent numbers are
