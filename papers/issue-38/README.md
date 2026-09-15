@@ -67,7 +67,11 @@ reproduced the same artefact digest.
 | `reference-check.md` | citation-authenticity report: 125/125 entries resolved, one line per entry |
 | `references.json` / `refs_selected.json` | the verified bibliography and the curated selection it was built from |
 | `refs_tool.py` | the bibliography tool (`harvest` / `verify`); re-runnable |
+| `refs_display.json` | per-entry display metadata (authors, year, venue) + the transport each came from; built by `refs_build_display.py` |
+| `refs_build_display.py` | builds `refs_display.json` from the harvest, with the five gap entries resolved individually and named |
+| `refs_render.py` | renders the manuscript's `## References` section from the two data files; `--check` verifies it |
 | `refs_verify.log` | the verification run log (including the recorded API outage) |
+| `verify_correction_r1.py` | the round-1 correction checker: one check per required change (R1-R4), each two-sided (it must fail on a mutated copy). `python3 verify_correction_r1.py` prints the verdict and writes `correction_r1_verify.log` beside the package; exit status follows the verdict |
 | `alloc_model.py` | the allocation model: instances, oracle, planner, market |
 | `canonical_runner.py` | the canonical runner - every number in the manuscript is read out of its artefact |
 | `canonical_results.json` | the artefact (reductions, anchors, law grid, out-of-sample race, closure, mechanism, ablation) |
@@ -76,6 +80,41 @@ reproduced the same artefact digest.
 | `validate.py` | the 97-check validation suite (`VALIDATE 97/97`) |
 | `check_audit.py` | self-audit of `validate.py`: 32 mutations, all of which must be caught |
 | `reproduce.sh` | the one command above |
+
+## Reference style — how the bibliography is rendered
+
+The manuscript's `## References` section is **generated**, not typed:
+
+    python3 refs_render.py            # rewrite the section in manuscript.md
+    python3 refs_render.py --check    # exit non-zero if the committed section differs
+
+from `references.json` (title, link, and the per-entry *stated difference*) and `refs_display.json`
+(authors, year, venue, and the transport each was read from; built by `refs_build_display.py`).
+**One style is applied to all 125 entries:**
+
+    [N] <Authors> (<Year>). <Title>. <Venue or identifier>. <Link>
+        Difference: <the one-line stated difference that closes the entry>
+
+- Authors are `Family, I. I.`, joined with `; `. **Up to six are listed; a longer list is truncated
+  after the sixth with `et al.`** (16 entries have more than six authors).
+- The year is the source's publication year; for an arXiv preprint with no stated publication date
+  it is the **arXiv submission year**, read from the abstract page. The literal placeholders `n.d.`
+  and `None.` are never emitted.
+- Venue is the container title from Crossref, or `arXiv preprint arXiv:<id>`.
+- The link is the entry's own identifier URL (arXiv abstract page or DOI).
+- The **stated difference** is printed on its own indented line. `references.json` has carried one
+  for all 125 entries since the submission; it was simply never rendered before.
+
+**Two deliberate exceptions to the 100-column wrap: image lines are not wrapped** (a markdown image
+must stay on one physical line to render at all) **and table rows are not wrapped.**
+
+**One entry, [51], carries no author, and the section says so under the heading** rather than
+guessing at one. No reachable record has it: Crossref returns none for the DOI, OpenAlex reports no
+authorships, and the publisher's landing page refuses automated access (HTTP 403); Semantic Scholar
+returns 404 for the DOI. The four other entries whose bulk source also carried no author (**7, 9, 14,
+38**) were resolved against a named alternative record — OpenAlex, or the DOI landing page's
+`citation_author` metadata — and each entry's `via` field records which. The obstacle for [51] is
+stated on the issue thread rather than filled in.
 
 ## Headline results (all read out of `canonical_results.json`)
 
@@ -125,6 +164,34 @@ reverting the abstract to `2.616` fails `m1` and `m2`.
 The revision adds one artefact block (`closure.block_count`) and **changes nothing that was already
 there**: of the artefact's 178 pre-existing leaf fields, 0 changed and 0 were removed, against 33
 added. All pre-existing checks still pass; the digest changed only because the file gained a block.
+
+## Correction note (round 1)
+
+A post-publication `correction` round, for defects in the manuscript **as a document**; **no number,
+claim, conclusion or table value changes**. `canonical_results.json` is untouched, so the artefact
+digest printed by `reproduce.sh` is the same as at publication.
+
+- **R1 — the figures are shown in the text.** All three figures are embedded where their claim is
+  made, with a number cited from the body: Figure 1 (§4.2), Figure 2 (§4.5), Figure 3 (§4.6).
+  Previously the files were committed and their digests recorded, but the manuscript embedded
+  nothing (`![` occurred zero times and no numbered figure was ever referred to); §8 now points at
+  the figures the body shows instead of introducing them in a bullet list.
+- **R2 — every table is captioned and cited.** All nine tables carry a `**Table N — …**` caption
+  above them, are numbered in document order, and are referred to from the body where their numbers
+  are used. One table already had a caption numbered `Table 2` while standing fourth in the
+  document; the captions are now in document order and the in-text reference follows.
+- **R3 — the bibliography is a readable list.** All 125 entries now carry authors, a year, the
+  title, the venue or identifier, the link, and the entry's stated difference; see *Reference style*
+  above for the style and `refs_render.py` for the renderer. The machine-export placeholders
+  (`n.d.`, `None.`, the doubled `n.d..`) are gone: measured on the pre-correction file, 107 of 125
+  entries stated no year in any form and none named an author.
+- **R4 — one multiplication mark.** The lowercase `x` used as a multiplication sign is now `×`
+  throughout (10 occurrences in prose, including `~×3.4` and the grid description). The ASCII
+  parameter names (`sigma`, `beta`, `gamma`) are unchanged, and unicode `x` inside identifiers
+  (DOIs, arXiv ids, ordinary words) is untouched.
+
+Line-wrapping was normalised to 100 columns for the prose; tables and image lines are deliberately
+not wrapped, for the reason given under *Reference style*.
 
 ## Citation report
 

@@ -1,0 +1,19 @@
+issue #38 correction round 1 -- R1-R4 verification at /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-38/manuscript.md
+
+R1 figures        PASS
+   3 figures embedded in §4.2, §4.5, §4.6, all numbered and cited from the body
+   control: mutation caught = True
+
+R2 tables         PASS
+   9 tables, 9 captions numbered in document order and each placed above its table; all cited from the body
+   control: mutation caught = True
+
+R3 bibliography   PASS
+   125 entries, each with authors (one stated exception: [51]), year, title, venue or identifier, link and its stated difference; no n.d./None. placeholder survives
+   control: mutation caught = True
+
+R4 marks          PASS
+   12 multiplication marks, all rendered as the multiplication sign (U+00D7); identifiers untouched
+   control: mutation caught = True
+
+R1-R4: ALL PASS
