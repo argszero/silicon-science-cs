@@ -161,6 +161,14 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 The deadlines in this document are expressed in three units, and each is defined here so a term can actually be checked.
 A unit whose length nobody wrote down is not a deadline — it is a phrase.
 
+- **Epoch.** The **epoch** of a clock is the reference it counts from: an **event**, for a forward deadline (*Days*,
+  below, names them), and the **dated object** a rule reads, for a look-back (*A look-back window*, below). **The word
+  is defined here because no entry below defines it, and the two entries that name an epoch are written in it** — a
+  deadline *"counted from the deadline's stated epoch"* resolves nothing while *epoch* itself is undefined. It carries a
+  **second sense, stated in `papers/README.md` → *Where each cell is read from***: the **epoch of a written date is the
+  time standard it is expressed in** (its `Published` cells are UTC dates, stated there because the operator's local
+  date can be the next day). Both senses are one idea: a reading taken against the wrong reference is wrong while
+  looking resolved.
 - **Days** are calendar days, counted from the deadline's **stated epoch**: 60 from registration (or from a triage
   return), 14 **from the revision decision**, 7 **from the review request**, 7 **from the editor's reminder** that
   follows a missed revision deadline. **One length can carry more than one epoch** — the two 7-day clocks above run
