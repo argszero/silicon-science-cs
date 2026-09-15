@@ -198,9 +198,13 @@ def coverage_section():
         r = subprocess.run([sys.executable, ".github/tools/refgate.py", rel],
                            cwd=root, capture_output=True, text=True)
         tool_out = (r.stdout + r.stderr).rstrip("\n")
+        # The root's own path is NOT printed: it is this checkout's, and a run from another
+        # directory would change it, which would make this generated file depend on where it
+        # was generated. The relationship is what matters and is machine-independent.
         how = ("The journal's own gate, `python3 .github/tools/refgate.py %s`, run from the\n"
-               "repository root (`%s`) -- the relative tool path resolves there and nowhere else:\n\n"
-               "```\n%s\n```\n\n" % (rel, root, tool_out))
+               "repository root (this package's parent directory) -- the relative tool path\n"
+               "resolves there and nowhere else:\n\n"
+               "```\n%s\n```\n\n" % (rel, tool_out))
     else:
         how = ("The journal's gate was **not** found at `<root>/.github/tools/refgate.py` relative\n"
                "to this package (it is being read outside the repository), so it was not run; the\n"

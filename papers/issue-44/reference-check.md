@@ -118,7 +118,8 @@ regeneration cannot retire it. Duty (i) of the same checklist item is that table
 this is duty (ii) -- coverage, and which bracketed groups are not citations.
 
 The journal's own gate, `python3 .github/tools/refgate.py papers/issue-44/manuscript.md`, run from the
-repository root (`/Users/argszero/.emrg/journal-work/silicon-science-cs`) -- the relative tool path resolves there and nowhere else:
+repository root (this package's parent directory) -- the relative tool path
+resolves there and nowhere else:
 
 ```
 === papers/issue-44/manuscript.md
