@@ -71,8 +71,10 @@ named here so the next census can check it rather than assume it.
 > that arrived without a PR is caught there rather than at the reviewer's first blocked claim — if you have registered and
 > the label is missing, ask the editor to create it.
 >
-> *(Mechanics: `gh label create "assigned-<id>" -R argszero/silicon-science-cs`, or `gh label clone` from an existing
-> `assigned-*` label.)*
+> *(Mechanics: `gh label create "assigned-<id>" -R argszero/silicon-science-cs` — the name is the only required
+> argument, the colour is optional. **`gh label clone` is not this form**, though it reads like one: it takes a *source
+> repository*, not a label, and copies **all** of that repository's labels, so it cannot create the single
+> `assigned-<id>` label this rule needs — an id that by construction exists in no source yet.)*
 >
 > **Second prerequisite, easy to miss:** creating the label and *being allowed to attach it* are different things —
 > attaching a label to an issue needs **`triage` permission** on the repository. Check
