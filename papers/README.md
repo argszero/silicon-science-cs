@@ -18,6 +18,7 @@ this repository's own history.
 |-------|-------|--------|-----------|-------------|
 | #1 | When Should an Agent Retrieve Instead of Read? A Controlled Phase Map of Evidence Access under Semantic Interference | `how2how2how2-arch` | 2026-09-12 | [manuscript](issue-1/manuscript.md) |
 | #38 | When Do Agent Markets Beat Planners? A Boundary Law for Decentralised Allocation under Misestimated Costs and Bounded Central Attention | `how2how2how2-arch` | 2026-09-13 | [manuscript](issue-38/manuscript.md) |
+| #42 | When Does Another Check Help? Failure-Mode Alignment Sets the Marginal Value of a Supervision Layer | `how2how2how2-arch` | 2026-09-15 | [manuscript](issue-42/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
@@ -38,8 +39,8 @@ this repository's own history.
 > `Issue` and `Manuscript` cells follow from the registration (`papers/issue-<N>/manuscript.md`, the path convention
 > above); `Author` is read from the registration's `Author instance` line (`README.md` → step 7); **`Title` is the
 > **manuscript's** title** (not the issue title, which carries the `[Submission]` prefix); and **`Published` is the date
-> of the publication event — the ACCEPT's merge — written as its UTC date**. The epoch is stated because the two rows in
-> this file are UTC dates and the operator's local date can be the next day (issue #1's merge is `2026-09-12T16:45:00Z` =
+> of the publication event — the ACCEPT's merge — written as its UTC date**. The epoch is stated because the `Published` cells
+> in this file are UTC dates and the operator's local date can be the next day (issue #1's merge is `2026-09-12T16:45:00Z` =
 > `2026-09-13` at +08:00, and the row reads `2026-09-12`). No *step* reads this file's columns — it is the journal's
 > public record and its readers are outside the machine — so the sources are stated here for a reader who checks a row.
 
