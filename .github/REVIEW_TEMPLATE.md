@@ -182,7 +182,7 @@ alone justifies REJECT.**
 **Run the coverage check — do not trust the author's report.** From the **repository root**:
 `python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
 performs the mechanical part (entry count, in-text coverage, unmatched brackets, numbering-style mismatch, duplicate
-entry numbers); `--selftest` verifies the checker itself. **Report the whole output, not the verdict line**: `GATE: PASS` means only *`entries ≥ 100`
+entry numbers); `--selftest` runs the checker over fixed fixtures and asserts its **whole printed output** — verdict line and advisory lines alike. **Report the whole output, not the verdict line**: `GATE: PASS` means only *`entries ≥ 100`
 and no uncited entries*, so a `WARN` line (**duplicate entry numbers**, style mismatch), a `NOTE`, or an `AMBIGUOUS`
 block is a **finding you report** — none of them moves the verdict (the rule and its measurement are stated once at
 `README.md` → the reference gate). Compare its output against the author's `reference-check.md` — the author's report is a

@@ -23,6 +23,10 @@ Usage:
     python3 .github/tools/refgate.py --selftest
 
 Exit status: 0 = gate PASS, 1 = FAIL (including unparseable input).
+`--selftest` runs the checker over fixed fixtures and asserts its whole printed
+output — the verdict line and every advisory line — one case per input form the
+matchers admit; it is a liveness control over those fixtures, not a proof about
+inputs they do not contain.
 Requires only the Python 3 standard library.
 """
 import re
@@ -161,7 +165,11 @@ def report(path):
 
 
 # --------------------------------------------------------------------------
-# self-test — the checker's own behaviour is verified, not asserted
+# self-test — the checker is EXECUTED over fixed fixtures and its WHOLE printed
+# output asserted: the verdict line and every advisory line, one case per input
+# form the matchers admit and per line the checker can print. The gate rule is
+# stated once in this file, in report(); the control reads report()'s output
+# instead of re-deriving the rule, so the two cannot drift apart.
 # --------------------------------------------------------------------------
 
 def _make(n_entries, cite_upto, style='[]', first_section_hi=0):
@@ -183,56 +191,113 @@ def _make(n_entries, cite_upto, style='[]', first_section_hi=0):
     return txt
 
 
+def _refs(lo, hi, style='[]'):
+    return "## References\n\n" + "".join(
+        (f"[{i}] A{i}. arXiv:2500.{i:05d}.\n" if style == '[]' else f"{i}. A{i}. arXiv:2500.{i:05d}.\n")
+        for i in range(lo, hi + 1))
+
+
 def selftest():
+    import contextlib
+    import io
     import os
     import tempfile
+
     cases = []
 
-    # (name, text, expect_entries, expect_uncited, expect_gate_pass)
-    cases.append(("pass_exactly_100", _make(100, 100), 100, 0, True))
-    cases.append(("wrapped_marker_ends_line",
-                  "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
-                  + "\n\n## References\n\n"
-                  + "".join(f"[{i}]\nAuthor {i}, Title {i}.\n" for i in range(1, 101)),
-                  100, 0, True))
-    cases.append(("numbered_heading",
-                  _make(100, 100).replace("## References", "## 7 References"),
-                  100, 0, True))
+    # (name, text, lines that MUST appear in report()'s output, lines that must NOT,
+    #  expected verdict). Asserting on the printed output — not on values this
+    # function recomputes — is what makes this a check of the checker.
+    def case(name, text, appear=(), forbid=(), expect_pass=True):
+        cases.append((name, text, list(appear), list(forbid), expect_pass))
 
-    mixed = ("## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 121))
-             + "\n\n## References\n\n"
-             + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 61))
-             + "".join(f"{i}. A{i}. arXiv:2500.{i:05d}.\n" for i in range(61, 121)))
-    cases.append(("mixed_numbering", mixed, 120, 0, True))
+    # a clean run prints none of these
+    CLEAN = ("WARN", "NOTE", "AMBIGUOUS", "uncited entries")
 
-    cases.append(("fail_uncited_padding", _make(120, 110), 120, 10, False))
-    cases.append(("fail_below_threshold", _make(60, 60), 60, 0, False))
-
+    # --- the verdict line, over the input forms the matchers admit ---------
+    case("pass_exactly_100", _make(100, 100), ["GATE: PASS", "entries=100"], CLEAN)
+    case("wrapped_marker_ends_line",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}]\nAuthor {i}, Title {i}.\n" for i in range(1, 101)),
+         ["GATE: PASS", "entries=100"], CLEAN)
+    case("numbered_heading", _make(100, 100).replace("## References", "## 7 References"),
+         ["GATE: PASS", "entries=100"], CLEAN)
+    case("mixed_numbering",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 121))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 61))
+         + "".join(f"{i}. A{i}. arXiv:2500.{i:05d}.\n" for i in range(61, 121)),
+         ["GATE: PASS", "numbering=.+[]"], CLEAN)
+    case("fail_uncited_padding", _make(120, 110),
+         ["GATE: FAIL", "uncited entries (10)"], ("WARN", "NOTE", "AMBIGUOUS"),
+         expect_pass=False)
+    case("fail_below_threshold", _make(60, 60),
+         ["GATE: FAIL", "entries 60 < 100"], CLEAN, expect_pass=False)
     # two sections: only the LAST counts, so 60+60 does not reach the threshold
-    cases.append(("two_sections_do_not_sum", _make(120, 120, first_section_hi=60),
-                  60, 0, False))
-
+    case("two_sections_do_not_sum", _make(120, 120, first_section_hi=60),
+         ["GATE: FAIL", "entries 60 < 100", "AMBIGUOUS: bracket numbers matching no entry"],
+         ("WARN", "NOTE", "uncited entries"), expect_pass=False)
     # a wrapped URL line starting with a year must not become a phantom entry
-    cases.append(("year_not_an_entry",
-                  _make(100, 100).rstrip() + "\n2025. https://example.org/x\n",
-                  100, 0, True))
+    case("year_not_an_entry", _make(100, 100).rstrip() + "\n2025. https://example.org/x\n",
+         ["GATE: PASS", "entries=100"], CLEAN)
+    # the two early failures: no verdict line is printed for either
+    case("no_references_heading", "## Introduction\n\nsee [1]\n",
+         ["FAIL: no `## References` heading found"], ("GATE",), expect_pass=False)
+    case("no_parseable_entries",
+         "## Introduction\n\nsee [1]\n\n## References\n\nNot a numbered entry.\n",
+         ["FAIL: References section has no parseable numbered entries"], ("GATE",),
+         expect_pass=False)
+
+    # --- every advisory line the checker can print ------------------------
+    case("note_low_coverage", _make(120, 100),
+         ["NOTE: high entry count with low coverage", "uncited entries (20)"],
+         ("WARN", "AMBIGUOUS"), expect_pass=False)
+    case("warn_style_mismatch", _make(100, 100, style='.'),
+         ["WARN: bib uses '1.' but body uses '[n]'", "GATE: PASS"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # a repeated entry number: the WARN fires and the verdict still passes — the
+    # advisory line is the finding, and no verdict clears it
+    case("warn_duplicate_entry_numbers",
+         _make(100, 100) + "[50] Duplicate Author, Duplicate Title, arXiv:2500.00050, 2026.\n",
+         ["WARN: duplicate entry numbers: [50]", "GATE: PASS"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # brackets matching no entry: reported, never a defect by itself
+    case("ambiguous_unmatched_brackets",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + " over a latency span [900,901]\n\n" + _refs(1, 100),
+         ["AMBIGUOUS: bracket numbers matching no entry (2)", "GATE: PASS"],
+         ("WARN", "NOTE", "uncited entries"))
+
+    # --- input forms: text that must NOT be read as an entry or a citation --
+    # a fenced code sample is quoted text, not a citation
+    case("fences_are_ignored",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n```\nsee [500] in a sample\n```\n\n" + _refs(1, 100),
+         ["GATE: PASS", "covered=100/100"], CLEAN)
+    # range and cluster markers both discharge coverage
+    case("range_and_cluster_markers",
+         "## Introduction\n\nsee [1-97] and [98, 99, 100]\n\n" + _refs(1, 100),
+         ["GATE: PASS", "covered=100/100"], CLEAN)
 
     failures = []
     tmpdir = tempfile.mkdtemp(prefix="refgate-selftest-")
     try:
-        for name, text, exp_total, exp_uncited, exp_pass in cases:
-            p = os.path.join(tmpdir, f"{name}.md")
-            with open(p, "w", encoding="utf-8") as fh:
+        for name, text, appear, forbid, expect_pass in cases:
+            path = os.path.join(tmpdir, f"{name}.md")
+            with open(path, "w", encoding="utf-8") as fh:
                 fh.write(text)
-            body, refsec = split_doc(text)
-            ents, _ = parse_entries(refsec) if refsec else ({}, set())
-            cited = cited_numbers(body) if refsec else set()
-            uncited = [n for n in ents if n not in cited]
-            passed = len(ents) >= THRESHOLD and not uncited
-            ok = (len(ents) == exp_total and len(uncited) == exp_uncited
-                  and passed == exp_pass)
-            print(f"  [{'ok' if ok else 'FAIL'}] {name}: entries={len(ents)} "
-                  f"uncited={len(uncited)} gate={'PASS' if passed else 'FAIL'}")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                verdict = report(path)
+            printed = buf.getvalue()
+            missing = [s for s in appear if s not in printed]
+            spurious = [s for s in forbid if s in printed]
+            ok = verdict == expect_pass and not missing and not spurious
+            print(f"  [{'ok' if ok else 'FAIL'}] {name}: "
+                  f"verdict={'PASS' if verdict else 'FAIL'}"
+                  + (f"  MISSING={missing}" if missing else "")
+                  + (f"  UNEXPECTED={spurious}" if spurious else ""))
             if not ok:
                 failures.append(name)
     finally:
