@@ -20,7 +20,8 @@ independent published systems it spans only 4.84 — 3.5 percent of the syntheti
 breadth claim is withdrawn as an artefact of our own grid; what survives is that 4.84 is still not
 1, so the best constant still misdecides 10.0 percent of held-out cells and the classical
 independence reading (always add the layer) misdecides 36.7 percent, while a law that reads the
-primary's own budget response decides 100 percent. Third, and most sharply, **identical summary
+primary's own budget response decides 100 percent of the 60 calibrated held-out cells (99.2 percent
+on the synthetic grid). Third, and most sharply, **identical summary
 statistics do not determine composition**: two stacked configurations with the same capacity and the
 same nominal alignment deliver cumulative four-layer catches 8.5 percent apart, because allocation —
 not the summary statistic — decides which strata saturate. We also report a registered prediction
@@ -92,7 +93,8 @@ claim must be made at a bounded, calibrated width rather than a dramatic one.
 between a second reviewer and a better first reviewer; an evaluation lead choosing between a second
 judge and a stronger first judge; a systems designer adding a third redundancy layer. The paper's
 actionable content is that accuracy-ranked selection of a second layer is the wrong rule (Section
-7.1 measures it at 0.527 of achievable reduction against 1.000 for a residual-catch rule), and that
+7.1 measures it at 0.527 of achievable reduction on that instrument's 300-cell grid, and Section 7.2
+at 0.689 on its 504-cell held-out grid, against 1.000 for a residual-catch rule on both), and that
 the correct rule is a comparison between the residual product and the primary's marginal response.
 
 ## 2. Related work
@@ -393,15 +395,18 @@ independence control (beta = f gives -0.0025 +/- 0.0069 against a true 0.0).
 
 v1 then verifies the law by simulation rather than assertion: marginal_catch = p0 (1 - beta) C2 is
 confirmed at five dial values over 20 streams (at beta = 0.5, observed 0.01504 against a predicted
-0.01500, standard deviation 0.00030), with zero deviation over a 4x4 grid in p0 and f, and with the
-boundary unmoved by p0 or coverage in 0 of 15 cells.
+0.01500, standard deviation 0.00030). Two further statements about the same run are **invariance
+checks on the simulator's structure, not sampling results**: the reduction deviates by exactly zero
+across the 4x4 grid in p0 and f by construction (all 16 cells checked), and the boundary is unmoved
+by p0 or coverage across all 15 cells tested (15 of 15) - a property of the algebra, not a sample.
 
 ![Achieved reduction as a share of the achievable maximum, by allocation rule, over 300 cells and
 four families. Selecting a second layer by standalone accuracy captures 0.527; a residual-catch
 rule reaches 1.000.](figures/fig6_baselines.png)
 
 The practical consequence is that **ranking candidate layers by standalone accuracy is wrong**. On
-the same 75 cells across four families, measured as mean achieved reduction over the achievable
+the same 300 cells (75 per family across four families), measured as mean achieved reduction over
+the achievable
 maximum: a residual-catch rule reaches 1.000, equal-split 0.792, coverage-first 0.758, primary-only
 0.609, random 0.589, and **accuracy-ordered selection 0.527**. Ranking by the number practitioners
 usually have captures about half of what the residual rule delivers.
@@ -422,10 +427,11 @@ error against the true threshold.
 All three registered criteria on this instrument are met: the operational law's held-out median
 error is 3.04 percent against the registered 25 percent limit; 20 disjoint seed streams give a mean
 of 3.22 percent, standard deviation 0.21 percent, 95 percent interval [3.13, 3.32] and worst stream
-3.72 percent; and q_res is recovered at every dial value. Baselines on the same grid: residual-catch
-1.000, cost-sensitive deferral 0.839, accuracy-ordered 0.689, primary-only 0.613, coverage widening
-0.568. The deferral baseline's **median regret is 0.000 while its mean shortfall is 16 percent** —
-which is why both statistics are reported; a median-only comparison would call it perfect.
+3.72 percent; and q_res is recovered at every dial value. Baselines on the same 504 held-out cells:
+residual-catch 1.000, cost-sensitive deferral 0.839, accuracy-ordered 0.689, primary-only 0.613,
+coverage widening 0.568. The deferral baseline's **median regret is 0.000 while its mean shortfall
+is 16 percent** — which is why both statistics are reported; a median-only comparison would call it
+perfect.
 
 Two honest qualifications were recorded at this stage. The operational law is **derived from** the
 budget model, so its 3.04 percent is an input-estimation-error result and is **not** evidence that
@@ -524,7 +530,10 @@ concentrating arm saturates more slowly, so that its fourth-to-first marginal ra
 matched arm's by more than a factor of two. The observed ratio is **0.79 — the opposite direction**.
 The reason is visible in the table: because the concentrating arm spends its entire first-layer
 capacity saturating one stratum, its *first* marginal is inflated (0.3000 against 0.2738), which
-depresses the ratio's denominator. The arms are already distinguishable at layer one, which is
+depresses the ratio's denominator. The artefact stores these arms under the keys `skewed/matched`
+and `skewed/spread`; *spread* is the name this section calls *concentrating* - one arm, two names,
+and the key is left as committed so that the recorded digests stay valid. The arms are already
+distinguishable at layer one, which is
 precisely why the guess was wrong. The prediction is scored exactly as registered — it is the single
 failing check in the instrument's tally — and is retained in the artefact under
 `falsified_predictions`; the surviving claim was added as a separate check rather than substituted
@@ -532,9 +541,18 @@ for the refuted one. Editing the assertion to match the data would have destroye
 instrument was for.
 
 This section's status must be stated precisely. Both arms are **model constructions with matched
-summary statistics by design**. No published source reports a marginal sequence, so this is a
-counterexample to a modelling assumption — that summary statistics suffice for composition — and not
-a measurement of any real stack. That is the whole of its claim.
+summary statistics by design**. **The absence claim, with its window.** The claim rests on an arXiv
+all-field query (title, abstract, authors, comments and journal reference - metadata; the PDF text is
+not indexed), restricted to submissions from **1991-01-01 to 2026-09-13** on the `submitted_date`
+field, run on 2026-09-13 and re-run on 2026-09-15, for the construct's own vocabulary: "independent
+verification assumption checker generator LLM", "second opinion LLM verifier correlated failure",
+and "guardrail layer marginal value AI code review". Each query returns 0 results. Two positive
+controls run in the same batch and the same window ("learning to defer human expert", 40 results;
+"redundant classifier correlated failure", 2) establish that the window is live, so the zeros are
+set sizes inside it rather than an unfiltered default. No source so found reports a marginal sequence.
+The claim is bounded by that index, that field and those endpoints. On that
+basis this is a counterexample to a modelling assumption — that summary statistics suffice for
+composition — and not a measurement of any real stack. That is the whole of its claim.
 
 ### 7.5 The adversarially-correlated layer
 
@@ -561,8 +579,10 @@ crossover is finite and reachable, which converts a qualitative warning into a d
 the layer is net-harmful. The crossover is model-derived — no source reports a degradation rate —
 and is labelled as such.](figures/fig5_adversarial.png)
 
-**Provenance, stated plainly.** No source we found reports a degradation *rate*; the anchor
-establishes the **sign** only. h_star is therefore **model-derived**, not measured. The artefact
+**Provenance, stated plainly.** No source we found reports a degradation *rate* - searched the same
+way as Section 7.4 (arXiv all-field metadata query, not the PDF text; submissions 1991-01-01 to
+2026-09-13; 0 results, positive controls live in the same window). The anchor establishes the
+**sign** only. h_star is therefore **model-derived**, not measured. The artefact
 marks this part `model_derived`, and an integrity check enforces that no model-derived quantity is
 attributed to a source. A derived number that resembles a measurement is the most dangerous kind,
 and this one is labelled.
@@ -583,8 +603,8 @@ report the discrepancy rather than selecting the more convenient reading.
 0.0630 median error (calibrated) are input-estimation-error results. They are **not** evidence that
 the budget model is correct, and the paper does not claim so. What the law's non-trivial content
 consists of is narrower: which quantity is decisive (residual catch beats accuracy ordering by 31
-percent of achievable value), and that fitted surrogates in deployable variables fail to transfer
-while the structural form does.
+percent of achievable value on the 504-cell synthetic grid of Section 7.2), and that fitted
+surrogates in deployable variables fail to transfer while the structural form does.
 
 **The composition result is a counterexample, not a measurement.** Both arms are constructions with
 matched statistics by design. Its contribution is to rule out summary-statistic sufficiency; it says
@@ -612,14 +632,14 @@ literature **[101, 12]** — into a decision rule with a
 measurable input.
 
 Three findings deserve to outlive the apparatus. First, the boundary is a function rather than a
-number, and its width on real systems is about a factor of five, not a factor of 138: the dramatic
-figure was ours. Second, a constant still errs on 10 percent of calibrated held-out cells and the
-conventional independence assumption on 37 percent, so measuring the residual catch is not
-optional — but the measurement is cheap, because q_res is a conditional rate computable from logs.
-Third, capacity and alignment are insufficient statistics: two configurations agreeing on both still
-differ by 8.5 percent in what four stacked layers achieve, because allocation decides which strata
-saturate. Any future theory of stacked supervision that reports only summary statistics will
-therefore mispredict composition.
+number, and the width of the parameter region implied by the systems we calibrated against (Section
+8) is about a factor of five, not a factor of 138: the dramatic figure was ours. Second, a constant
+still errs on 10 percent of calibrated held-out cells and the conventional independence assumption
+on 37 percent, so measuring the residual catch is not optional — but the measurement is cheap,
+because q_res is a conditional rate computable from logs. Third, capacity and alignment are
+insufficient statistics: two configurations agreeing on both still differ by 8.5 percent in what
+four stacked layers achieve, because allocation decides which strata saturate. Any future theory of
+stacked supervision that reports only summary statistics will therefore mispredict composition.
 
 ## Data and code availability
 

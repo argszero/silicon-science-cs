@@ -20,7 +20,8 @@ independent published systems it spans only 4.84 — 3.5 percent of the syntheti
 breadth claim is withdrawn as an artefact of our own grid; what survives is that 4.84 is still not
 1, so the best constant still misdecides 10.0 percent of held-out cells and the classical
 independence reading (always add the layer) misdecides 36.7 percent, while a law that reads the
-primary's own budget response decides 100 percent. Third, and most sharply, **identical summary
+primary's own budget response decides 100 percent of the 60 calibrated held-out cells (99.2 percent
+on the synthetic grid). Third, and most sharply, **identical summary
 statistics do not determine composition**: two stacked configurations with the same capacity and the
 same nominal alignment deliver cumulative four-layer catches 8.5 percent apart, because allocation —
 not the summary statistic — decides which strata saturate. We also report a registered prediction
@@ -94,7 +95,8 @@ claim must be made at a bounded, calibrated width rather than a dramatic one.
 between a second reviewer and a better first reviewer; an evaluation lead choosing between a second
 judge and a stronger first judge; a systems designer adding a third redundancy layer. The paper's
 actionable content is that accuracy-ranked selection of a second layer is the wrong rule (Section
-7.1 measures it at 0.527 of achievable reduction against 1.000 for a residual-catch rule), and that
+7.1 measures it at 0.527 of achievable reduction on that instrument's 300-cell grid, and Section 7.2
+at 0.689 on its 504-cell held-out grid, against 1.000 for a residual-catch rule on both), and that
 the correct rule is a comparison between the residual product and the primary's marginal response.
 
 ## 2. Related work
