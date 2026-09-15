@@ -19,11 +19,18 @@ figure checks: 106 run, 0 failed   (106 on the matplotlib build the manifest pin
                                     are REPORTED rather than required -- the six DATA
                                     digests are required on every build)
 manuscript check: 22 run, 0 failed
-instrument audit: 18 run, 0 failed
+instrument audit: 33 run, 0 failed
 selftest: 0 case(s) failed
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
+
+One line above is build-independent but *package-independent in what it names*: the `instrument
+audit` verdict is 33 checks wherever the package is read from, while D2's historical reading also
+prints which coordinate cross-check it could perform -- `git agrees: blob 4bd60d01 ...` in a
+checkout, `not available here: no .git above this package ...` in an exported copy. The reading
+itself comes from the package's own record (`coordinate_evidence.json`), so no check gains or loses
+a pass with the coordinate; the condition is stated because the line differs.
 
 Step 5 then prints the sha256 of the five artefacts this package ships, as a block to copy: a
 digest quoted in a report is read off that output, never typed.
@@ -54,6 +61,8 @@ matplotlib fatal.
 | `assemble.py` | builds `manuscript.md` from its part files, resolving every printed number out of `canonical_results.json` |
 | `manuscript_part1.md` … `manuscript_part3.md` | the manuscript sources — edits go here, never into `manuscript.md` |
 | `check_manuscript.py` | checks the assembled manuscript against the artefact and the reference list |
+| `coordinate_evidence_v1.py` | the package's only coordinate-dependent read: resolves a pinned commit's blob. `--write` records it (and refuses when the coordinate is unavailable); `--check` verifies the record, and needs no repository |
+| `coordinate_evidence.json` | the record it writes: commit, blob digest, the extracted lines and the reading -- generated, never hand-edited |
 | `verify_refs.py`, `verify_refs.sh`, `refs_to_verify.tsv` | re-verify every citation against Crossref / arXiv and rewrite `references.md` |
 | `references.md`, `reference-check.md` | the bibliography, and the reference check: authenticity (one
 row per key, with the method that resolved it) **and** coverage/ambiguity (the journal's own
@@ -130,6 +139,27 @@ other and carry the same failure modes:
   (the same tokens in another order; a secondary source carrying the exact title).  The audit
   mutates each guard in a throwaway copy and requires the self-test to **fail**, because until this
   revision the self-test's verdict was printed into the report and never reached the run status.
+
+* **coordinates.** Evidence must not depend on *where* the package is read from. A round-2
+  review found this audit **failing on an exported copy** -- the package with no `.git` above it --
+  because one check read the head under review with a git object read of `HEAD`: not self-contained,
+  and worse, not that head (in the current checkout it passed against a later blob, for an unrelated
+  reason). The reading is now **pinned**. `coordinate_evidence_v1.py` is the only file in the
+  package that reads a git object; `coordinate_evidence.json` records the commit, the blob digest
+  and the extracted lines; and the audit recomputes the reading **from the record**, so it gives the
+  same answer in a clone, in an export, and after later commits. When the coordinate happens to be
+  resolvable, the record is additionally tied to the live blob -- and the line the audit prints says
+  which of the two happened. An unavailable coordinate is a **declared state**, never a silent pass.
+  The census over the 16 source files reports, per class: **C1 git object read** 2 sites, all in
+  `coordinate_evidence_v1.py`; **C2 above-package read** 7 sites in `verify_refs.py`, with a branch
+  that declares itself when the journal's gate is not there; **C3 environment** 2 sites, neutralised
+  by dropping `PYTHONPATH`; **C4 argv** options only; **C5 cwd / absolute path** 29 sites, every one
+  anchored to the package's own directory; **C6 network** 5 sites, reachable only through the
+  network-free selftest lane; **C7 clock / entropy** 0 -- the simulation is seeded by construction;
+  **C8 interpreter** 1 site, printed into the log and read by no measurement.  Each class's detector
+  is proved to fire on a planted instance, and three mutation controls plant a leaked read -- in
+  another module, in this file *outside* the census's own declaration span, and as an unseeded clock
+  -- and require the census to catch it.
 
 ### The bibliography is verified, not asserted
 

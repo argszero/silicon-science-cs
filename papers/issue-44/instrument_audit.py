@@ -26,10 +26,17 @@ Disciplines, and what this file checks for each:
                  other rules.
   D4 COVERAGE    each guard must state the fraction of the surface it audits.  Here: the numeric
                  surface of the manuscript, and the declared residual of the hand-typed values.
+  D5 COORDINATES a package's evidence must not depend on WHERE it is read from.  Every
+                 coordinate-dependent read -- git object, repository root, environment, argv, cwd,
+                 network, clock, interpreter -- is enumerated and published, and the ones that can
+                 enter at all are confined to a declared module (coordinate_evidence_v1.py) with a
+                 committed record, so the audit gives the same answer in a clone, in an export, and
+                 after later commits.  An unavailable coordinate is a DECLARED state, never a pass.
 
 Network-free and deterministic: every check runs on committed files, and the two probes run copies
 in a scratch directory that is deleted afterwards.  Exit status is the verdict.
 """
+import ast
 import hashlib
 import io
 import json
@@ -177,14 +184,29 @@ def d2():
                                             if l.startswith("selftest:")][:1]))
     finally:
         shutil.rmtree(scratch, ignore_errors=True)
-    # the historical regime: in the reviewed head the self-test could not fail the run
-    old_blob = subprocess.run(["git", "show", "HEAD:papers/issue-44/verify_refs.py"], cwd=PKG,
-                              capture_output=True, text=True).stdout
-    uses = [l.strip() for l in old_blob.split("\n") if re.search(r"\btests\b", l)]
-    status_use = [l for l in uses if "problems" in l or "return" in l]
-    check("D2/in the reviewed head the self-test result never reached the run status (a reading)",
-          not status_use and len(uses) > 0,
-          "%d uses of `tests` in the old blob, none of them feeding `problems` or the return" % len(uses))
+    # The historical regime: in the reviewed head the self-test could not fail the run.  This
+    # used to be read out of this checkout's object store at HEAD -- a read of WHATever this
+    # checkout is.  It broke in an exported package, and even here it was not the head it named:
+    # it passed against a later blob, for an unrelated reason.  The reading is now taken from the
+    # committed record (coordinate_evidence.json), recomputed from the record's own lines, and
+    # tied to the live blob whenever the coordinate happens to be resolvable.
+    co = subprocess.run([sys.executable, "coordinate_evidence_v1.py", "--check"], cwd=PKG,
+                        capture_output=True, text=True)
+    line = next((l for l in co.stdout.split("\n") if "reviewed_head_self_test_status" in l), "")
+    got = dict(re.findall(r"(uses|feeding_status)=(\d+)", line))
+    check("D2/the reviewed head's reading is PINNED to a declared coordinate, and it recomputes",
+          co.returncode == 0 and "record=recomputes" in line and "pinned=declared" in line,
+          line.strip()[:160])
+    check("D2/in the reviewed head the self-test result never reached the run status (the reading)",
+          got.get("feeding_status") == "0" and int(got.get("uses", "0")) > 0,
+          "%s uses of `tests`, %s of them feeding the run status"
+          % (got.get("uses", "?"), got.get("feeding_status", "?")))
+    check("D2/the record states which cross-check was actually performed here",
+          "cross-check:" in line,
+          line.split("cross-check:")[-1].strip()[:120] if "cross-check:" in line else line[:120])
+    check("D2/the cross-check's state is exhaustive and named (a skip cannot read as a pass)",
+          ("git agrees" in line) != ("not available here" in line),
+          line.split("cross-check:")[-1].strip()[:100])
 
 
 # ------------------------------------------------------------------------- D3: exclusions with values
@@ -305,8 +327,147 @@ def d4():
     print("                 quotations of another paper's counts (value-level, not placement-level).")
 
 
+# --- census declaration: begin (the detector's own tables and probes; excluded from the census) -
+# A coordinate is any input that is not the package itself: the repository, the environment, the
+# command line, the working directory, the network, the clock, the interpreter.  Evidence that
+# changes with them is evidence about the checkout, not about the artefact.  The classes below are
+# the ones this package can express; each is scanned and published, and the classes that can carry
+# a read at all are asserted to be confined, declared, or neutralised.
+COORD_CLASSES = [
+    ("C1 git object read", r'\["git",|"git"\s*,\s*"|\bgit\s+(?:show|rev-parse|log|diff|status)\b'),
+    ("C2 above-package read", r'refgate\.py|repo_root|\.github/tools'),
+    ("C3 environment", r'os\.environ|getenv|PYTHONPATH'),
+    ("C4 argv", r'sys\.argv'),
+    ("C5 cwd / absolute path", r'cwd=|abspath'),
+    ("C6 network", r'\bcurl\b|urllib\.request|requests\.get|socket\.socket'),
+    ("C7 clock / entropy", r'time\.time\(|datetime\.|random\.(?!Random)|os\.urandom|uuid4'),
+    ("C8 interpreter", r'sys\.version\b'),
+]
+# Each class's detector must match a planted instance -- a detector that never fires is decoration.
+# The probe strings live HERE and nowhere else, so the audit body carries no read to trip on.
+COORD_CANARIES = {
+    "C1 git object read": 'r = subprocess.run(["git", "show", "HEAD:a.py"], cwd=".")',
+    "C2 above-package read": 'r = subprocess.run([sys.executable, ".github/tools/refgate.py", rel])',
+    "C3 environment": 'env = dict(os.environ); env.pop("PYTHONPATH", None)',
+    "C4 argv": 'args = sys.argv[1:]',
+    "C5 cwd / absolute path": 'HERE = os.path.dirname(os.path.abspath(__file__))',
+    "C6 network": 'r = subprocess.run(["curl", "-s", url])',
+    "C7 clock / entropy": 't = time.time()',
+    "C8 interpreter": 'print(sys.version)',
+}
+CENSUS_SELF = "instrument_audit.py"
+COORD_SOURCES = sorted(f for f in os.listdir(PKG) if f.endswith((".py", ".sh")))
+
+
+def split_census_declaration(text):
+    """(region, outside): the span holding this census's own data, and the code proper.
+
+    The census scans the package it lives in, so it necessarily contains the patterns and probe
+    strings it searches for.  Those are DATA, not reads: nothing in the span executes.  The span
+    is delimited by the two banner lines above and below, and the checks assert that it is a
+    single span, that it runs no subprocess, and -- the control that matters -- that a read placed
+    in this file OUTSIDE the span is still caught.
+    """
+    bs = [m.start() for m in re.finditer(r"^# --- census declaration: begin.*$", text, re.M)]
+    es = [m.end() for m in re.finditer(r"^# --- census declaration: end.*$", text, re.M)]
+    if len(bs) != 1 or len(es) != 1 or es[0] < bs[0]:
+        raise ValueError("census declaration banners: %d begin, %d end" % (len(bs), len(es)))
+    return text[bs[0]:es[0]], text[:bs[0]] + text[es[0]:]
+
+
+def coordinate_census(sources):
+    """{class: {filename: [(lineno, line)]}} -- every source line that reads a coordinate."""
+    cen = {}
+    for cls, pat in COORD_CLASSES:
+        hits = {}
+        for name in sorted(sources):
+            lines = [(i + 1, l.strip()) for i, l in enumerate(sources[name].split("\n"))
+                     if re.search(pat, l)]
+            if lines:
+                hits[name] = lines
+        cen[cls] = hits
+    return cen
+
+
+def c1_confined(cen):
+    """Only the module that declares the coordinate may contain a git object read."""
+    return set(cen["C1 git object read"]) == {"coordinate_evidence_v1.py"}
+
+
+def c7_neutralised(cen):
+    """No wall clock and no unseeded entropy: the simulation is seeded by construction."""
+    return not cen["C7 clock / entropy"]
+
+
+def d5():
+    region, outside = split_census_declaration(read(CENSUS_SELF))
+    calls = sorted(set("%s.%s" % (n.func.value.id, n.func.attr)
+                       for n in ast.walk(ast.parse(region))
+                       if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute)
+                       and isinstance(n.func.value, ast.Name)))
+    coord_calls = [c for c in calls
+                   if c.split(".")[0] in ("subprocess", "socket", "urllib", "requests")
+                   or c in ("os.popen", "os.system", "os.environ", "os.getenv", "os.urandom",
+                            "time.time", "time.monotonic")]
+    check("D5/the census excludes a declaration span that reads no coordinate (structural, not textual)",
+          not coord_calls,
+          "excluded %d line(s) of %s; the span's only calls are %s"
+          % (region.count("\n") + 1, CENSUS_SELF, ", ".join(calls) or "none"))
+    sources = {f: read(f) for f in COORD_SOURCES}
+    sources[CENSUS_SELF] = outside
+    cen = coordinate_census(sources)
+    print("       coordinate census over %d source file(s):" % len(sources))
+    for cls, _ in COORD_CLASSES:
+        h = cen[cls]
+        n = sum(len(v) for v in h.values())
+        print("         %-24s %3d site(s) in %-2d file(s)  %s"
+              % (cls, n, len(h), ", ".join(sorted(h)) if n else "-- none: the read cannot occur"))
+    blind = [cls for cls, line in COORD_CANARIES.items()
+             if not coordinate_census({"planted.py": line})[cls]]
+    check("D5/every class's detector matches a planted instance (a silent detector is decoration)",
+          not blind, "%d of %d detectors fire" % (len(COORD_CLASSES) - len(blind), len(COORD_CLASSES)))
+    check("D5/the package's only git object read is the module that declares the coordinate",
+          c1_confined(cen), "C1 sites: %s" % sorted(cen["C1 git object read"]))
+    leak = dict(sources)
+    leak["leaky.py"] = COORD_CANARIES["C1 git object read"]
+    check("D5/MUTATION: a leaked git read in another module is caught",
+          not c1_confined(coordinate_census(leak)), "planted a git read in leaky.py")
+    leak2 = dict(sources)
+    leak2[CENSUS_SELF] = outside + COORD_CANARIES["C1 git object read"] + "\n"
+    check("D5/MUTATION: a git read in the audit OUTSIDE the excluded span is still caught",
+          not c1_confined(coordinate_census(leak2)),
+          "the exclusion is a boundary, not an immunity")
+    check("D5/the simulation reads no clock and no unseeded entropy",
+          c7_neutralised(cen), "C7 sites: %s" % sorted(cen["C7 clock / entropy"]))
+    mut = dict(sources)
+    mut["clock.py"] = COORD_CANARIES["C7 clock / entropy"]
+    check("D5/MUTATION: an unseeded clock read is caught",
+          not c7_neutralised(coordinate_census(mut)), "planted a clock read in clock.py")
+    # C2/C3/C4/C6/C8: each remaining class is declared, neutralised, or confined -- with the line
+    # that does it named, so the census answers "where can a coordinate enter?" line by line.
+    vr = sources["verify_refs.py"]
+    check("D5/the read above the package has a declared fallback for the exported case",
+          "was **not** found" in vr and "return None" in vr,
+          "verify_refs.repo_root() returns None outside the repository, and the text says so")
+    check("D5/the inherited environment is neutralised on the variable that can change a result",
+          'env.pop("PYTHONPATH"' in sources["check_manuscript.py"],
+          "check_manuscript copies os.environ and drops PYTHONPATH")
+    rs = sources["reproduce.sh"]
+    check("D5/one command reproduces without the network: the resolver runs in its network-free lane",
+          "--selftest-only" in rs and not re.search(r"verify_refs\.py\s*$", rs, re.M),
+          "reproduce.sh invokes verify_refs.py only with --selftest-only")
+    check("D5/the interpreter is read by the log, not by the measurement",
+          "sys.version" in rs, "reproduce.sh prints the interpreter that produced the run")
+    check("D5/argv carries options only: no measurement is selected from the command line",
+          all(re.search(r"sys\.argv", sources[f]) for f in ("make_figures.py", "verify_refs.py"))
+          and "--selftest-only" in vr,
+          "argv gates the figure tier's options and the network-free selftest lane")
+
+
+# --- census declaration: end --------------------------------------------------------------------
+
 def main():
-    for fn in (d1a, d1bc, d2, d3, d4):
+    for fn in (d1a, d1bc, d2, d3, d4, d5):
         fn()
     failed = [n for n, ok, _ in rows if not ok]
     print("\ninstrument audit: %d run, %d failed" % (len(rows), len(failed)))

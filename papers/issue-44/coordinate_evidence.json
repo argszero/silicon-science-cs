@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "note": "Every coordinate-dependent read in this package is pinned here. Produced by coordinate_evidence_v1.py --write; verified by --check, which the instrument audit runs. Do not hand-edit: --write is the only writer.",
+  "reads": [
+    {
+      "id": "reviewed_head_self_test_status",
+      "coordinate": "C1 git object read",
+      "repository_path": "papers/issue-44/verify_refs.py",
+      "commit": "e54495bec9563d856204372060ca68442c69dc89",
+      "commit_short": "e54495b",
+      "commit_role": "the head the round-2 review of record (comment 5683220375) was written against",
+      "blob_sha256": "4bd60d01ce0d3303a27cc6f578f7409eb3ca8beb804b381b2dd40bcbe92f8918",
+      "extract": "\\btests\\b",
+      "extract_note": "stripped source lines mentioning `tests`",
+      "status_markers": [
+        "problems",
+        "return"
+      ],
+      "reading_note": "uses of `tests` vs uses that feed the run status; the self-test of the bracket counter and of the citation support test was PRINTED in this blob and could not fail the run",
+      "extracted": [
+        "tests = bracket_groups_selftest()",
+        "% len(tests))",
+        "for name, ok, detail in tests:"
+      ],
+      "reading": {
+        "uses": 3,
+        "feeding_status": 0
+      }
+    }
+  ]
+}

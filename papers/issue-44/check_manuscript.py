@@ -107,47 +107,104 @@ def count_registry(committed, facts):
 def scan_spelled_counts(committed, reg):
     """-> (contradictions, subset_claims, listing).
 
+    The window is a SENTENCE, not a line.  The manuscript is hard-wrapped, and the class's own
+    motivating defect -- the abstract's count of counter-intuitive consequences -- lies across a
+    line break in the shipped text: `... fix its detectability. Four` / `consequences are
+    counter-intuitive ...`.  Scanning line by line made the class silent on exactly that form
+    (measured: the wrapped defect gave "7 checked, 0 contradictions"; unwrapped, 8 and 1).
+
+    `WS` is a whitespace run of AT MOST ONE newline, so a wrapped phrase is joined while a blank
+    line or a paragraph break cannot.  A sentence-ending period also blocks the join, because the
+    pattern requires whitespace immediately after the count word.
+
     A subset claim ("K of the M X") is checked for consistency with the derived M and k <= M and is
     also LISTED, because whether the sentence identifies its own subset cannot be read by a regex --
     the defect that motivated this class was an unnamed subset, not an impossible count.
     """
     contradictions, subsets, listing = [], [], []
-    named = re.compile(r"\b(%s)\s+((?:[a-z-]+\s+)?(?:%s))\b"
-                       % (SPELLED_WORD, "|".join(re.escape(n) for n, _ in COUNT_NOUNS)), re.I)
-    pair = re.compile(r"\b(%s)\s+of\s+the\s+(%s)\s+([a-z-]+)" % (SPELLED_WORD, SPELLED_WORD), re.I)
-    for lineno, line in enumerate(committed.split("\n"), 1):
-        if line.strip().startswith("|"):            # a table row is numbers, not prose
+    ws = r"(?:[ \t]*\n[ \t]*|[ \t]+)"
+    nouns = "|".join(re.escape(n) for n, _ in COUNT_NOUNS)
+    named = re.compile(r"\b(%s)%s((?:[a-z-]+%s)?(?:%s))\b" % (SPELLED_WORD, ws, ws, nouns), re.I)
+    pair = re.compile(r"\b(%s)%sof%sthe%s(%s)%s([a-z-]+)"
+                      % (SPELLED_WORD, ws, ws, ws, SPELLED_WORD, ws), re.I)
+
+    # MARKUP IS NOT BETWEEN THE COUNT AND ITS NOUN.  "**All four** consequences" is a count of
+    # consequences, and the emphasis markers hid it from the previous pattern.  The view below
+    # replaces markup with spaces at IDENTICAL LENGTH, so every offset still maps to the shipped
+    # text and the line numbers and table mask remain those of the manuscript itself.
+    def emphasise_off(text):
+        return re.sub(r"[*_]", lambda m: " " * len(m.group(0)), text)
+
+    view = emphasise_off(committed)
+
+    # table rows are numbers, not prose -- excluded by OFFSET, since the scan no longer walks lines
+    excluded, off = [], 0
+    for line in committed.split("\n"):
+        if line.strip().startswith("|"):
+            excluded.append((off, off + len(line)))
+        off += len(line) + 1
+
+    def line_of(pos):
+        return committed.count("\n", 0, pos) + 1
+
+    def in_table(pos):
+        return any(a <= pos < b for a, b in excluded)
+
+    def shown(text):
+        return " ".join(text.split())
+
+    spans = [m.span() for m in pair.finditer(view)]
+    for m in named.finditer(view):
+        if in_table(m.start()):
             continue
         # the subset form is the more specific construct: "three of the five consequences" carries
         # the count ONCE, so the plain scan must not report "five consequences" as a second defect.
         # The self-test caught this double count; one defective clause should yield one finding.
-        spans = [m.span() for m in pair.finditer(line)]
-        for m in named.finditer(line):
-            if any(a <= m.start() < b for a, b in spans):
-                continue
-            key = dict(COUNT_NOUNS).get(m.group(2).lower())
-            if key is None:
-                continue
-            got, want = SPELLED[m.group(1).lower()], reg.get(key)
-            listing.append((lineno, m.group(0), key, got, want))
-            if want is not None and got != want:
-                contradictions.append((lineno, m.group(0), key, got, want))
-        for m in pair.finditer(line):
-            k, total, noun = (SPELLED[m.group(1).lower()], SPELLED[m.group(2).lower()],
-                              m.group(3).lower())
-            key, want = dict(COUNT_NOUNS).get(noun), reg.get(dict(COUNT_NOUNS).get(noun))
-            subsets.append((lineno, m.group(0), k, total, key, want))
-            if k > total or (want is not None and total != want):
-                contradictions.append((lineno, m.group(0), key or "?", total, want))
+        if any(a <= m.start() < b for a, b in spans):
+            continue
+        key = dict(COUNT_NOUNS).get(shown(m.group(2)).lower())
+        if key is None:
+            continue
+        got, want = SPELLED[m.group(1).lower()], reg.get(key)
+        entry = (line_of(m.start()), shown(committed[m.start():m.end()]), key, got, want)
+        listing.append(entry)
+        if want is not None and got != want:
+            contradictions.append(entry)
+    for m in pair.finditer(view):
+        if in_table(m.start()):
+            continue
+        k, total = SPELLED[m.group(1).lower()], SPELLED[m.group(2).lower()]
+        noun = m.group(3).lower()
+        key, want = dict(COUNT_NOUNS).get(noun), reg.get(dict(COUNT_NOUNS).get(noun))
+        txt = shown(committed[m.start():m.end()])
+        subsets.append((line_of(m.start()), txt, k, total, key, want))
+        if k > total or (want is not None and total != want):
+            contradictions.append((line_of(m.start()), txt, key or "?", total, want))
     return contradictions, subsets, listing
 
 
 def counts_selftest():
-    """A scanner that stopped matching would pass every run that depends on it.  Two sides: a
-    contradiction must fire, and the correct text must not."""
+    """A scanner that stopped matching would pass every run that depends on it.  Three sides: a
+    contradiction must fire, the correct text must not, and the WRAPPED form -- the form the
+    class's own window has to join, and the one the shipped defect takes -- must be exercised on
+    both."""
     reg = {"registered priors": 3, "registered criteria": 4, "consequences": 4,
            "contributions": 4, "tables": 6, "figures": 6}
-    cases = [("the four registered priors all `CONFIRMED`", 1, "a count that contradicts the artefact fires"),
+    cases = [
+             # THE WRAPPED FORM, both sides.  The class's window is a sentence, and its motivating
+             # defect is split by the manuscript's own reflow -- so the form its window must join is
+             # the form its self-test has to exercise.  (The previous six cases were all single-line)
+             ("detectability. Four\nconsequences are counter-intuitive", 0,
+              "a WRAPPED count that agrees with the artefact does not fire"),
+             ("detectability. Three\nconsequences are counter-intuitive", 1,
+              "a WRAPPED count that contradicts the artefact fires"),
+             ("Three\n\nconsequences are counter-intuitive", 0,
+              "a blank line is NOT joined: the window is one newline, not a paragraph"),
+             ("**All four** consequences are invisible", 0,
+              "markup between the count and its noun does not hide the count"),
+             ("**All three** consequences are invisible", 1,
+              "an emphasised count that contradicts the artefact still fires"),
+             ("the four registered priors all `CONFIRMED`", 1, "a count that contradicts the artefact fires"),
              ("the three registered priors all `CONFIRMED`", 0, "the correct count does not fire"),
              ("All four consequences are invisible to a one-point comparison", 0, "a matching count does not fire"),
              ("Three of the five consequences are invisible", 1, "a subset claim over the wrong total fires"),
