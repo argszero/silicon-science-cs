@@ -72,8 +72,8 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Overclaiming check**: does the abstract / the stated contribution stay within what the data shows? quote any overclaim with its location <...>
 - **Contribution-level consistency**: the declared level (case study / system / theory+empirics) against the actual evidence — <consistent | overclaimed, with location>
 - **Registered priors and their outcome**: the registration's P1–P3 and registered success criteria, each with the outcome the **manuscript** reports (met | unmet with reason | refuted), and which novelty-cap exemption (a/b/c) you credit, if any — <...>; a registration `Outcome` line left stale is itself a finding
-- **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> — <detail>
-- **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for — checked entry by entry, not just for resolvability>
+- **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> / **misattributed <j>** (a record that resolves to a *different* work than the entry names — read the returned year/venue/authors against the entry's own line) — <detail>
+- **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for, **or whose record is not the work the entry names** (read the returned year/venue/authors against the entry's own line — a record resolved by title or by key can be a different real work) — checked entry by entry **and on every sampled entry**, not just for resolvability>
 - **Presentation and format**: the manuscript's own carriage of the result — **read the property first, not only the tests named below it: every statement the manuscript makes about its own content agrees with that content** (a stated count agrees with the objects it counts, a stated list length with the items listed, a caption or a sentence complete enough to carry a claim) — and then the tests that are instances of it: each figure **shown** in the text (`![...]`, with a caption, in the section that makes the claim), the tables complete and aligned, the bibliography readable **entry by entry** (authors, year, title, venue or identifier, link, and the one-line stated difference), consistent notation, and cross-references that point at what exists — <the defects with their locations, or "none found">
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
@@ -176,8 +176,13 @@ change?* If you cannot answer from the manuscript, the paper does not clear the 
 revision or reject. High significance never excuses weak evidence.
 
 **Citation verification** (`README.md` → *Review policy* → *Citation integrity* states the requirement; the count and coverage are read by the reference gate, `.github/tools/refgate.py`). Check both the **count** (≥ 100 references in **one** formal `## References` section — separate lists do not sum; uncited entries are padding and do not count) and **authenticity**: sample several references, including at least one DOI-less or otherwise suspicious entry, and re-verify against Crossref
-(`https://api.crossref.org/works/<doi>`) or arXiv. **A fabricated or unverifiable citation is academic misconduct and
-alone justifies REJECT.**
+(`https://api.crossref.org/works/<doi>`) or arXiv. **Re-verifying is a read of identity, not of existence**: the
+record the registry returns must *be* the work the entry names, so read what it returned — year, venue, authors,
+title — against the entry's own line, and include in the sample an entry the author **resolved by title or by key**
+where the list carries one, the methods that can return a different real work bearing the same title (which is how a
+citation to a 1908 paper can print an anonymous encyclopedia entry). A record that resolves but is a different work is
+a **misattribution** — an accuracy defect under the row below, reported like any other and a verification of nothing.
+**A fabricated or unverifiable citation is academic misconduct and alone justifies REJECT.**
 
 **Run the coverage check — do not trust the author's report.** From the **repository root**:
 `python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
@@ -195,8 +200,11 @@ no in-text key. (Bracket numbers matching no entry are ambiguous: they may be nu
 span `[25,30]` ms. Flag them only where load-bearing, and note what you concluded.)
 
 **Anchor accuracy.** Distinct from fabrication: an anchor that *resolves* but to a different paper than the one it is
-cited for is an accuracy defect. Verify the ID-to-claim mapping entry by entry, not just that the IDs exist. A
-load-bearing claim resting on misattributed anchors does not stand.
+cited for is an accuracy defect — and the same read covers a record that resolves and is simply **not the work the
+entry names**, which is what a record resolved by title or by key can be. Verify the ID-to-claim mapping entry by
+entry, not just that the IDs exist, **and read the property at the sample too**: for each sampled entry, and for any
+entry whose record was resolved by title or by key, read the returned year, venue and authors against the entry's own
+line. A load-bearing claim resting on misattributed anchors does not stand.
 
 **Presentation and format.** This row is where the *Presentation requirements* of `README.md` are actually read, and it is not a
 style note: a requirement stated in the bar and read by no step is the journal's recurring defect class, and this one was
