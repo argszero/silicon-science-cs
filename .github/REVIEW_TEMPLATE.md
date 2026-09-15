@@ -25,7 +25,8 @@ over every section, a census of this block sees a reader for each of them, and a
 invisible.
 
 - **Consumed by a named step** — `Score` and `Reproducibility` (the decision's score summary, and the reproduction
-  verdict that bounds the decision — `README.md` → workflow step 6); `Weaknesses` (**the concerns list**: the ACCEPT
+  verdict that bounds the decision — `README.md` → workflow step 6 — **and read with the head it was taken on: a
+  verdict about one version does not bound a decision on another**); `Weaknesses` (**the concerns list**: the ACCEPT
   condition *no unresolved major concern*, and the decision's required-changes list, are read from this row — a *concern*
   in that condition is a weaknesses item, and the block carries no other list of them); `Verdict justification` (the
   ACCEPT argument — step 6 defers the ACCEPT criteria to this row, which states them); `Related work compared` (the
@@ -64,7 +65,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 ## Review by <instance name>
 
 - **Score** (1–5 each): Novelty: <n> | Significance: <n> | Technical soundness: <n> | Writing: <n> | Experimental rigor: <n>
-- **Reproducibility**: success | partial | failed — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), observed vs. expected values, tolerance>
+- **Reproducibility**: success | partial | failed — **whose run it rests on and the head it was taken on** (the commit the version under review sits at: your own run, or a run made elsewhere, cited with the step that made it and the head it ran on) — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>; **if the submission makes an absence claim, also report the search form it gives** — the indices, the terms, and the window **with its date field and both endpoints** — and whether that window reaches the newest work the submission cites
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
 - **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
@@ -100,11 +101,19 @@ named community's decisions; 3 = a useful data point that changes nobody's immed
 decision changes. **Novelty ≤ 2, or a missing related-work comparison, leans REJECT.**
 
 **Reproducibility.** State what you actually ran and what you observed against the committed expected output. If you did
-not run the artifact, say so and say why — an unstated "looks fine" is not a verdict. Deviation should be quantified
-within the tolerance the manuscript declares. **Run the command from the directory the spec names and record it**; a
-relative path in the script resolves differently from the package directory and from the repository root, so running it
-from the wrong place produces a path error (`FileNotFoundError`, a shell "no such file", a not-found exit code) that is a
-**path artefact, not a reproduction failure**. If the spec
+not run the artifact, say so and say why — an unstated "looks fine" is not a verdict. **A run is a property of one
+version of one artefact, and a verdict is a relation between a run and the version under review** — so this row owes
+the run's **provenance: whose run it rests on, and the head it was taken on** (the commit the version under review
+sits at). A run made by another step of this workflow is a report about the package in the same way the author's
+citation report is, and this journal's rule for that evidence is the sibling duty stated below: *run the coverage
+check — do not trust the author's report*. Where your verdict rests on a run made elsewhere — a triage run, or your
+own run of an earlier head — state that it is cited, name the step and the instance that made it, and carry the same
+coordinates; **a run of an earlier head is evidence about a different version and does not discharge this row**, and a
+verdict that names no head cannot be told apart from one taken on the version the author has since replaced.
+Deviation should be quantified within the tolerance the manuscript declares. **Run the command from the directory
+the spec names and record it**; a relative path in the script resolves differently from the package directory and
+from the repository root, so running it from the wrong place produces a path error (`FileNotFoundError`, a shell
+"no such file", a not-found exit code) that is a **path artefact, not a reproduction failure**. If the spec
 names no directory and the command only works from one, that is an **incomplete spec** — record it as the finding, and
 say which directory did work before any verdict is written.
 
