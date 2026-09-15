@@ -1,0 +1,139 @@
+{
+ "all_targets_fired": true,
+ "mutations_that_fired_more_than_their_target": [],
+ "n_checks_in_target_file": 13,
+ "n_mutations": 13,
+ "rows": [
+  {
+   "all_failed": [
+    "X1/published_pair_is_concordant"
+   ],
+   "mutation": "X1-published-pair-not-concordant",
+   "only_target": true,
+   "returncode": 1,
+   "target": "X1/published_pair_is_concordant",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "X1/harness_is_concordant_in_every_problem"
+   ],
+   "mutation": "X1-harness-concordance-inverted",
+   "only_target": true,
+   "returncode": 1,
+   "target": "X1/harness_is_concordant_in_every_problem",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "X1/concordance_survives_removing_the_zero_anchor"
+   ],
+   "mutation": "X1-without-zero-anchor-inverted",
+   "only_target": true,
+   "returncode": 1,
+   "target": "X1/concordance_survives_removing_the_zero_anchor",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "X2/the_reference_scale_is_the_published_pair"
+   ],
+   "mutation": "X2-reference-scale-wrong",
+   "only_target": true,
+   "returncode": 1,
+   "target": "X2/the_reference_scale_is_the_published_pair",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "X2/the_counts_are_consistent_with_the_blocks_they_summarise"
+   ],
+   "mutation": "X2-counts-name-other-blocks",
+   "only_target": true,
+   "returncode": 1,
+   "target": "X2/the_counts_are_consistent_with_the_blocks_they_summarise",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "X3/an_explicitly_harmful_policy_is_reported_as_harm_in_every_problem"
+   ],
+   "mutation": "X3-harmful-policy-looks-helpful",
+   "only_target": true,
+   "returncode": 1,
+   "target": "X3/an_explicitly_harmful_policy_is_reported_as_harm_in_every_problem",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C1/zero_error_is_the_consistency_anchor_and_never_degrades"
+   ],
+   "mutation": "C1-zero-error-degrades",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C1/zero_error_is_the_consistency_anchor_and_never_degrades",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C2/same_arm_identical"
+   ],
+   "mutation": "C2-determinism-threshold-moved",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C2/same_arm_identical",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C3/classic_implementations_match_hand_computed_values"
+   ],
+   "mutation": "C3-hand-value-shifted",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C3/classic_implementations_match_hand_computed_values",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C4/the_grid_is_not_degenerate"
+   ],
+   "mutation": "C4-degeneracy-threshold-moved",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C4/the_grid_is_not_degenerate",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C5a/shared_attachment_is_EXACTLY_invariant_to_non_negative_errors"
+   ],
+   "mutation": "C5a-invariance-claim-weakened",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C5a/shared_attachment_is_EXACTLY_invariant_to_non_negative_errors",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C5b/the_per_page_attachment_is_NOT_invariant_on_the_same_information"
+   ],
+   "mutation": "C5b-non-invariance-claim-inverted",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C5b/the_per_page_attachment_is_NOT_invariant_on_the_same_information",
+   "target_fired": true
+  },
+  {
+   "all_failed": [
+    "C5c/a_positive_BIAS_profile_is_not_a_non_negative_MULTIPLIER"
+   ],
+   "mutation": "C5c-bias-vs-multiplier-claim-inverted",
+   "only_target": true,
+   "returncode": 1,
+   "target": "C5c/a_positive_BIAS_profile_is_not_a_non_negative_MULTIPLIER",
+   "target_fired": true
+  }
+ ],
+ "targets_that_did_not_fire": []
+}

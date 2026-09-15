@@ -1,0 +1,554 @@
+== stage anchor       anchor_smoke.py -- the classic competitive ratios and the consistency end, recovered exactly
+   {
+    "ANCHORS_ALL_PASS": true,
+    "anchors": {
+     "paging": {
+      "adversarial_approaches_k": true,
+      "adversarial_bound_never_exceeded": true,
+      "adversarial_ratio_by_k": {
+       "2": {
+        "reps200": 1.9933554817275747,
+        "reps2000": 1.9993335554815062
+       },
+       "3": {
+        "reps200": 2.973977695167286,
+        "reps2000": 2.9973772948669914
+       },
+       "4": {
+        "reps200": 3.952569169960474,
+        "reps2000": 3.9952057530962843
+       },
+       "5": {
+        "reps200": 4.918032786885246,
+        "reps2000": 4.9916805324459235
+       }
+      },
+      "belady_equals_exhaustive_optimum": true,
+      "brute_cases": 24,
+      "random_traces": 240,
+      "ratio_gt_k_violations": 0,
+      "worst_random_ratio": 2.1785714285714284
+     },
+     "scheduling": {
+      "brute_cases": 200,
+      "fifo_never_beats_opt": true,
+      "fifo_over_opt_max": 2.366336633663366,
+      "fifo_over_opt_median": 1.3843167701863355,
+      "fifo_over_opt_min": 1.0,
+      "spt_equals_bruteforce_optimum": true
+     },
+     "ski_rental": {
+      "bruteforce_offline_matches_formula": true,
+      "classic_bound_2_minus_r_over_b_attained": true,
+      "long_instances": 16,
+      "n_instances": 42,
+      "worst_ratio_all": 1.999
+     }
+    },
+    "verdict": [
+     {
+      "check": "ski: offline exact",
+      "ok": true
+     },
+     {
+      "check": "ski: classic 2-r/b attained",
+      "ok": true
+     },
+     {
+      "check": "paging: Belady == exhaustive optimum",
+      "ok": true
+     },
+     {
+      "check": "paging: LRU/OPT <= k (0 violations)",
+      "ok": true
+     },
+     {
+      "check": "paging: adversarial never exceeds k",
+      "ok": true
+     },
+     {
+      "check": "paging: adversarial approaches k from below (limit)",
+      "ok": true
+     },
+     {
+      "check": "sched: SPT == brute-force optimum",
+      "ok": true
+     },
+     {
+      "check": "sched: FIFO >= opt",
+      "ok": true
+     }
+    ]
+   }
+   
+== stage v0           instrument_v0.py -- the crossed grid of error profiles, with the end anchors re-checked inside it
+   {
+    "checks": [
+     {
+      "check": "A1 lam=1 & zero error == exact offline optimum (ski)",
+      "value": 1.0,
+      "ok": true
+     },
+     {
+      "check": "A1 lam=1 & zero error == exact offline optimum (paging)",
+      "value": 1.0,
+      "ok": true
+     },
+     {
+      "check": "A1 lam=1 & zero error == exact offline optimum (sched)",
+      "value": 1.0,
+      "ok": true
+     },
+     {
+      "check": "A2 lam=0 is identical across all 13 profiles (ski)",
+      "value": 0.0,
+      "ok": true
+     },
+     {
+      "check": "A2 lam=0 is identical across all 13 profiles (paging)",
+      "value": 0.0,
+      "ok": true
+     },
+     {
+      "check": "A2 lam=0 is identical across all 13 profiles (sched)",
+      "value": 0.0,
+      "ok": true
+     },
+     {
+      "check": "A3 lam=0 ski == independent classic buy-day implementation",
+      "value": 0,
+      "ok": true
+     },
+     {
+      "check": "A4 lam=0 paging == independent LRU implementation (all traces)",
+      "value": 0,
+      "ok": true
+     },
+     {
+      "check": "A5 lam=0 scheduling == independent FIFO implementation",
+      "value": 0,
+      "ok": true
+     },
+     {
+      "check": "A6 lam=0 ski worst-case ratio == 2 - r/b",
+      "value": 1.99,
+      "ok": true
+     },
+     {
+      "check": "A7 lam=0 paging ratio inside (1, k]",
+      "value": 1.8525377737971658,
+      "ok": true
+     },
+     {
+      "check": "A8 no cell goes below the exact offline optimum",
+      "value": 0,
+      "ok": true
+     },
+     {
+      "check": "A9 [randomized blend only] intermediate lambda inside the bracket",
+      "value": 0,
+      "ok": true
+     },
+     {
+      "check": "A10 lam=1 & zero error: worst instance is the optimum too",
+      "value": 1.0,
+      "ok": true
+     }
+    ],
+    "END_ANCHORS_ALL_PASS": true
+   }
+   
+== stage scorer       scorer_v0.py -- the held-out fit of the scalar baseline against the signed decomposition
+   {
+    "checks": [
+     {
+      "check": "A: the sign effect is present and unanimous in the lambda=1 view for at least one problem/pair",
+      "value": [
+       [
+        "ski",
+        "over_mid",
+        0.010079787157441622
+       ],
+       [
+        "ski",
+        "over_extreme",
+        0.42884836854888064
+       ],
+       [
+        "paging",
+        "over_mid",
+        0.0
+       ],
+       [
+        "paging",
+        "over_extreme",
+        0.09437308490094243
+       ],
+       [
+        "sched",
+        "over_mid",
+        0.009469223041634889
+       ],
+       [
+        "sched",
+        "over_extreme",
+        0.1793984401597144
+       ]
+      ],
+      "ok": true
+     },
+     {
+      "check": "A: every lambda=1 contrast has |median magnitude diff| <= 0.02 (the sign effect is not a magnitude artefact)",
+      "value": 0.01129171335217477,
+      "ok": true
+     },
+     {
+      "check": "A: at least one tightly magnitude-matched subset is non-empty",
+      "value": 48,
+      "ok": true
+     },
+     {
+      "check": "B: M1 and M2 have the same feature count (matched capacity)",
+      "value": [
+       3,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "check": "B: the comparison is not mute (the two fits differ on at least one held-out cell)",
+      "value": 7488,
+      "ok": true
+     },
+     {
+      "check": "B: both models beat the null of predicting the held-out mean",
+      "value": [
+       0.02672264097400978,
+       0.034663887685249084,
+       0.13857766074449734,
+       0.011368871022314653,
+       0.043566954297269644,
+       0.015563434102099483,
+       0.11028342699844607,
+       0.027734851378735992
+      ],
+      "ok": true
+     },
+     {
+      "check": "A: every CI contains its own point estimate (mislabelled-CI control)",
+      "value": [],
+      "ok": true
+     }
+    ],
+    "ALL_PASS": true
+   }
+   
+== stage mechanism    mechanism_v0.py -- the mechanism: which decision each problem makes from the prediction
+   {
+    "mechanism": {
+     "ski": {
+      "branch_errors_under": 1103,
+      "branch_errors_over": 257,
+      "mean_excess_cost_under": 73.30327779871185,
+      "mean_excess_cost_over": 15.456418527006763
+     },
+     "paging": {
+      "evictions": 53092,
+      "wasted_evictions": 745,
+      "wasted_under": 308,
+      "wasted_over": 288,
+      "tied_evictions": 2623,
+      "ties_under": 2402,
+      "ties_over": 147
+     },
+     "sched": {
+      "mean_rank_displacement_largest_under": -38.0,
+      "mean_rank_displacement_largest_over": -21.0,
+      "mean_abs_rank_displacement_under": 43.641666666666666,
+      "mean_abs_rank_displacement_over": 23.4225
+     }
+    },
+    "checks": [
+     {
+      "check": "ski: mechanism re-derivation matches the instrument's lambda=1 cell mean",
+      "value": {
+       "mismatches": 0,
+       "worst_abs_diff": 0.0
+      },
+      "ok": true
+     },
+     {
+      "check": "sched: mechanism re-derivation matches the instrument's lambda=1 cell ratio",
+      "value": {
+       "mismatches": 0,
+       "worst_abs_diff": 0.0
+      },
+      "ok": true
+     },
+     {
+      "check": "paging: mechanism re-derivation reproduces the instrument's cost exactly",
+      "value": {
+       "mismatches": 0
+      },
+      "ok": true
+     },
+     {
+      "check": "ski: more branch errors under under-prediction than over",
+      "value": [
+       1103,
+       257
+      ],
+      "ok": true
+     },
+     {
+      "check": "paging: more wasted evictions under under-prediction than over",
+      "value": [
+       308,
+       288
+      ],
+      "ok": true
+     },
+     {
+      "check": "sched: the largest job is displaced EARLIER under under-prediction (negative), by a larger magnitude than under over-prediction",
+      "value": [
+       -38.0,
+       -21.0,
+       43.641666666666666,
+       23.4225
+      ],
+      "ok": true
+     },
+     {
+      "check": "paging: the tie statistic separates the signs more sharply than the wasted-eviction statistic (report both ratios)",
+      "value": {
+       "wasted_ratio": 1.069204152249135,
+       "tie_ratio": 16.236486486486488,
+       "wasted_counts": [
+        308,
+        288
+       ],
+       "tie_counts": [
+        2402,
+        147
+       ]
+      },
+      "ok": true,
+      "note": "informational: which count explains the 0.094 ratio gap"
+     },
+     {
+      "check": "paging: the sign gap SURVIVES lowering the score floor (if it does not, the effect is my clamp, not the problem)",
+      "value": {
+       "gap_floor_1": 0.09446725993312333,
+       "gap_floor_1e-09": 0.07884901466944094,
+       "detail": {
+        "floor=1/over_extreme": 1.0008436802492553,
+        "floor=1/under_extreme": 1.0953109401823786,
+        "floor=1e-09/over_extreme": 1.0007506742968741,
+        "floor=1e-09/under_extreme": 1.079599688966315
+       }
+      },
+      "ok": true,
+      "note": "reported either way; a vanishing gap is a FINDING about the blend, not a failure of the run"
+     },
+     {
+      "check": "paging: a POSITIVE shared per-request factor cannot change the eviction order -- the arm must be exactly Belady (proves the instrument's paging error model carries no information except through the clamp)",
+      "value": {
+       "traces": 32,
+       "exactly_belady": 32
+      },
+      "ok": true
+     },
+     {
+      "check": "mechanism counts are nonzero on every problem (a zero count would mean the statistic cannot see the phenomenon)",
+      "value": {
+       "ski": {
+        "branch_errors_under": 1103,
+        "branch_errors_over": 257,
+        "mean_excess_cost_under": 73.30327779871185,
+        "mean_excess_cost_over": 15.456418527006763
+       },
+       "paging": {
+        "evictions": 53092,
+        "wasted_evictions": 745,
+        "wasted_under": 308,
+        "wasted_over": 288,
+        "tied_evictions": 2623,
+        "ties_under": 2402,
+        "ties_over": 147
+       },
+       "sched": {
+        "mean_rank_displacement_largest_under": -38.0,
+        "mean_rank_displacement_largest_over": -21.0,
+        "mean_abs_rank_displacement_under": 43.641666666666666,
+        "mean_abs_rank_displacement_over": 23.4225
+       }
+      },
+      "ok": true
+     }
+    ],
+    "ALL_PASS": true
+   }
+   
+== stage paging       paging_v1.py -- the per-page attachment, against the step-common one it replaces
+   paging_v1: 9/9 checks pass
+   CHECKS_ALL_PASS = True
+   sha256 d335764571f8dda871a2dbb8214ce2e16d1c37a4537411752b0131651df71717
+   
+   profile               ratio(pp) ratio(shr)  wrongvic waste(c) waste(i)
+   zero                     1.0000     1.0000         0        0      149
+   unbiased_mid             1.0053     1.0000       924        0      152
+   over_mid                 1.0042     1.0000       720        0      149
+   under_mid                1.0083     1.0000      1055        0      152
+   unbiased_extreme         1.3456     1.0891      8480       69      142
+   over_extreme             1.0435     1.0008      2549        1      154
+   under_extreme            1.2948     1.0953      7817       56      147
+   
+   gaps: {
+    "per_page_extreme_gap": 0.2512363521108607,
+    "per_page_mid_gap": 0.004114950649833249,
+    "shared_r320_extreme_gap": 0.09446725993312333,
+    "per_page_clampfree_extreme_gap": 0.2749522281891268
+   }
+   waste: {
+    "corrected": {
+     "under": 56,
+     "over": 1,
+     "ratio": 56.0
+    },
+    "inverted_r320": {
+     "under": 147,
+     "over": 154,
+     "ratio": 0.9545454545454546
+    }
+   }
+   explains: {
+    "profiles": [
+     "unbiased_mid",
+     "over_mid",
+     "under_mid",
+     "unbiased_extreme",
+     "over_extreme",
+     "under_extreme"
+    ],
+    "wrong_victim_rate": [
+     0.08824372075255467,
+     0.06884023329190171,
+     0.10045705579889545,
+     0.6039025779803446,
+     0.2344339188816334,
+     0.5780094646554274
+    ],
+    "excess_ratio": [
+     0.005296653838613663,
+     0.0041795999677947115,
+     0.00829455061762796,
+     0.34563065524161996,
+     0.043545151010736305,
+     0.294781503121597
+    ],
+    "spearman": 1.0,
+    "n": 6
+   }
+   ski/sched: {
+    "ski_branch_errors_under": 1103,
+    "ski_branch_errors_over": 257,
+    "sched_mean_displacement_under": -38.0,
+    "sched_mean_displacement_over": -21.0,
+    "abs_diff_vs_published": {
+     "ski_branch_errors_under": 0,
+     "ski_branch_errors_over": 0,
+     "sched_mean_displacement_under": 0.0,
+     "sched_mean_displacement_over": 0.0
+    },
+    "reproduces_published_exactly": true
+   }
+   
+== stage sufficiency  sufficiency_v1.py -- the scalar-insufficiency witness and the object-level contrast design
+   PASS   A/inflation_measured                                 worst profile-unit MDE inflation 6.33x
+   PASS   A/every_block_more_conservative_at_the_profile_unit  factors [6.33, 3.71, 4.4, 4.1, 5.93, 3.95]
+   PASS   B/scalar_features_identical_by_construction          max scalar-feature gap 0.00e+00
+   PASS   B/zero_error_control_no_gap                          max |gap| 0.00e+00
+   PASS   B/same_arm_control_identical                         max |gap| 0.00e+00
+   PASS   B/error_free_arm_control_no_gap                      max |gap| 0.00e+00
+   PASS   B/under_prediction_is_the_worse_arm_in_most_blocks   31 of 39 blocks
+   PASS   B/witness_clears_its_own_cluster_MDE                 31 of 39 blocks
+   PASS   C/object_level_resolution_measured                   3 of 3 problem(s) resolve at the cluster unit
+   PASS   C/object_unit_MDE_below_cluster_unit_MDE             cluster/object MDE ratios [4.6, 4.6, 2.0]
+   PASS   A/recomputed_cell_MDE_agrees_with_the_scorer_block   6 of 6 blocks (population convention, exact)
+   PASS   A/the_only_difference_from_the_reported_MDE_is_the_variance_convention sample/population factors [1.000481, 1.002413, 1.000481, 1.002413, 1.000481, 1.002413] (sqrt(n/(n-1)))
+   PASS   C2/clean_contrast_resolves_where_it_matters          2 of 3 problems resolve at the cluster unit: [('ski', 1.48), ('sched', 2.61), ('paging', 0.97)]
+   PASS   C3/SPECIFICITY_the_odd_model_is_never_favoured_on_an_even_target adv/MDE [('ski', -12.953), ('sched', -13.12), ('paging', -1.531)]
+   PASS   C3/the_even_target_penalises_the_odd_parameter_at_every_problem median advantage [('ski', -0.026848), ('sched', -0.02506), ('paging', -0.001107)]
+   {
+    "ALL_PASS": true,
+    "failed": []
+   }
+   
+== stage external     external_cell_v1.py -- the committed external cell anchored to a published system result
+   PASS   X1/published_pair_is_concordant                            mean 26.0% vs 16.7%, worst 0.8% vs 8.8%
+   PASS   X1/harness_is_concordant_in_every_problem                  tau [('ski', 0.744), ('paging', 0.889), ('sched', 1.0)]
+   PASS   X1/concordance_survives_removing_the_zero_anchor           tau without zero [('ski', 0.697), ('paging', 0.873), ('sched', 1.0)]
+   REPORT X2/reach_per_problem                                       [('ski', 12, 11), ('paging', 0, 0), ('sched', 0, 0)]
+   PASS   X2/the_reference_scale_is_the_published_pair               ref 0.0080 / 0.0880, derived comparison mean 0.1667
+   PASS   X2/the_counts_are_consistent_with_the_blocks_they_summarise counts vs blocks for ['ski', 'paging', 'sched']
+   PASS   X3/an_explicitly_harmful_policy_is_reported_as_harm_in_every_problem [('ski', -0.1962, 1.005), ('paging', -0.7999, 0.9551), ('sched', -0.3258, 0.3742)]
+   PASS   C1/zero_error_is_the_consistency_anchor_and_never_degrades [('ski', 0.3803, 0.0), ('paging', 0.4506, -0.406), ('sched', 0.3283, -0.308)]
+   PASS   C2/same_arm_identical                                      
+   PASS   C3/classic_implementations_match_hand_computed_values      {'fifo_cyclic_k1': 6, 'lru_cyclic_k1': 6, 'fifo_repeat_1page_k2': 1, 'lru_repeat_1page_k2': 1, 'fifo_scan_k2': 6, 'lru_scan_k2': 6}
+   PASS   C4/the_grid_is_not_degenerate                              {'ski': 13, 'paging': 13, 'sched': 13}
+   PASS   C5a/shared_attachment_is_EXACTLY_invariant_to_non_negative_errors exact on 32/32 traces
+   PASS   C5b/the_per_page_attachment_is_NOT_invariant_on_the_same_information differs on 31/32
+   PASS   C5c/a_positive_BIAS_profile_is_not_a_non_negative_MULTIPLIER the shared attachment still differs on 6/32 traces
+   {
+    "ALL_PASS": true,
+    "failed": []
+   }
+   
+
+stage        script                              run failed flag agrees
+anchor       anchor_smoke.py                       8      0 yes
+v0           instrument_v0.py                     14      0 yes
+scorer       scorer_v0.py                          7      0 yes
+mechanism    mechanism_v0.py                      10      0 yes
+paging       paging_v1.py                          9      0 yes
+sufficiency  sufficiency_v1.py                    15      0 yes
+external     external_cell_v1.py                 n/p    n/p yes
+
+facts recomputed: 44 | disagreeing with the artefact's own value: 0
+
+criterion a_signed_beats_scalar_on_held_out_cells      MEASURED
+criterion b_classic_anchors_recovered                  MEASURED
+criterion c_lambda_calibration_loss                    UNMET
+criterion d_streams_and_sensitivity                    MEASURED
+criteria: a=MET, b=MET, c=UNMET, d=MET
+
+  claim1.worst_loss_gap                  -0.5679
+  claim1.scalar_gap_max_exact            +0.0000
+  claim1.blocks_exceeding_own_mde        31
+  claim2.clean_advantage_mde.ski         +1.4794
+  claim2.clean_advantage_mde.sched       +2.6132
+  claim2.clean_advantage_mde.paging      +0.9665
+  claim3.tau_all.ski                     +0.7436
+  claim3.tau_all.paging                  +0.8889
+  claim3.tau_all.sched                   +1.0000
+
+external reach (published robustness scale 0.008..0.088):
+  paging  0 of 13 profiles at or above 0.8%; min worst-unit -0.4060 | out: ar_mid,over_extreme,over_mid,tail_mid,unbiased_extreme,unbiased_high,unbiased_low,unbiased_mid,unbiased_veryhigh,under_extreme,under_mid,wild_tail,zero
+  sched   0 of 13 profiles at or above 0.8%; min worst-unit -0.3080 | out: ar_mid,over_extreme,over_mid,tail_mid,unbiased_extreme,unbiased_high,unbiased_low,unbiased_mid,unbiased_veryhigh,under_extreme,under_mid,wild_tail,zero
+  ski     12 of 13 profiles at or above 0.8%; min worst-unit +0.0000 | out: zero
+
+       coordinate census over 11 source file(s); the declaration span of canonical_runner.py is data, not code (2 calls in it: f.endswith, os.listdir)
+         C1 git object read         0 site(s) in 0  file(s)  -- none
+         C2 above-package read      0 site(s) in 0  file(s)  -- none
+         C3 environment             0 site(s) in 0  file(s)  -- none
+         C4 argv                    2 site(s) in 2  file(s)  canonical_runner.py, reproduce.sh
+         C5 cwd / absolute path    12 site(s) in 10 file(s)  anchor_smoke.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, freeze_check_v1.py, instrument_v0.py, mechanism_v0.py, paging_v1.py, scorer_v0.py, sufficiency_v1.py
+         C6 network                 0 site(s) in 0  file(s)  -- none
+         C7 clock / entropy         0 site(s) in 0  file(s)  -- none
+         C8 interpreter             1 site(s) in 1  file(s)  reproduce.sh
+         detectors firing on a planted instance: 8 of 8
+         controls: a git read planted in another file and one planted outside the declaration span are both caught: True
+
+canonical_results.json sha256 97b7a0506f6339412ca75d0b862072eae0b6e1afd91af8cf9b62551d8a01a93f
+coordinate census: 0 violation(s)
+verdict: OK

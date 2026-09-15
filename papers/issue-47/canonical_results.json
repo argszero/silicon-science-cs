@@ -1,0 +1,558 @@
+{
+ "ALL_PASS": true,
+ "claims": {
+  "F1_1_witness": {
+   "blocks": 39,
+   "blocks_over_mde": 31,
+   "scalar_gap_exact_zero": true,
+   "worst_block": [
+    "ski",
+    "unbiased_extreme"
+   ],
+   "worst_loss_gap": -0.5678834884447668
+  },
+  "F1_2_sign_channel": {
+   "clean": {
+    "paging": {
+     "advantage_vs_mde": 0.9665258736088224,
+     "resolvable": false
+    },
+    "sched": {
+     "advantage_vs_mde": 2.613165049487165,
+     "resolvable": true
+    },
+    "ski": {
+     "advantage_vs_mde": 1.479384386306815,
+     "resolvable": true
+    }
+   },
+   "confounded": {
+    "paging": {
+     "advantage_vs_mde": -3.704407102424711,
+     "resolvable": true
+    },
+    "sched": {
+     "advantage_vs_mde": 6.622695742719684,
+     "resolvable": true
+    },
+    "ski": {
+     "advantage_vs_mde": -9.159029867328064,
+     "resolvable": true
+    }
+   },
+   "evidence": {
+    "paging": false,
+    "sched": true,
+    "ski": false
+   }
+  },
+  "F1_3_ordering": {
+   "paging": {
+    "all": 0.8888888888888888,
+    "excluding_zero_anchor": 0.873015873015873
+   },
+   "sched": {
+    "all": 1.0,
+    "excluding_zero_anchor": 1.0
+   },
+   "ski": {
+    "all": 0.7435897435897436,
+    "excluding_zero_anchor": 0.696969696969697
+   }
+  },
+  "L1_attachment": {
+   "C5_attachment_control": {
+    "a_shared_attachment_exact_on_nonnegative_errors": "32/32",
+    "b_per_page_attachment_differs_on_the_same_information": "31/32",
+    "c_shared_attachment_differs_on_a_positive_BIAS_profile": "6/32",
+    "profile": "over_extreme"
+   }
+  },
+  "L2_null_shift": {
+   "paging": -1.5311761839029192,
+   "sched": -13.120172246838967,
+   "ski": -12.953134387288548
+  },
+  "L3_reach": {
+   "paging": {
+    "at_or_above_0.8pct": 0,
+    "at_or_above_8.8pct": 0,
+    "in_window": [],
+    "min_worst_unit_degradation": -0.40597539543058,
+    "out_of_window": [
+     "ar_mid",
+     "over_extreme",
+     "over_mid",
+     "tail_mid",
+     "unbiased_extreme",
+     "unbiased_high",
+     "unbiased_low",
+     "unbiased_mid",
+     "unbiased_veryhigh",
+     "under_extreme",
+     "under_mid",
+     "wild_tail",
+     "zero"
+    ],
+    "profiles": 13
+   },
+   "sched": {
+    "at_or_above_0.8pct": 0,
+    "at_or_above_8.8pct": 0,
+    "in_window": [],
+    "min_worst_unit_degradation": -0.30801725694368376,
+    "out_of_window": [
+     "ar_mid",
+     "over_extreme",
+     "over_mid",
+     "tail_mid",
+     "unbiased_extreme",
+     "unbiased_high",
+     "unbiased_low",
+     "unbiased_mid",
+     "unbiased_veryhigh",
+     "under_extreme",
+     "under_mid",
+     "wild_tail",
+     "zero"
+    ],
+    "profiles": 13
+   },
+   "ski": {
+    "at_or_above_0.8pct": 12,
+    "at_or_above_8.8pct": 11,
+    "in_window": [
+     "ar_mid",
+     "over_extreme",
+     "over_mid",
+     "tail_mid",
+     "unbiased_extreme",
+     "unbiased_high",
+     "unbiased_low",
+     "unbiased_mid",
+     "unbiased_veryhigh",
+     "under_extreme",
+     "under_mid",
+     "wild_tail"
+    ],
+    "min_worst_unit_degradation": 0.0,
+    "out_of_window": [
+     "zero"
+    ],
+    "profiles": 13
+   }
+  }
+ },
+ "coordinate_census": {
+  "forbidden_classes": [
+   "C1 git object read",
+   "C6 network",
+   "C7 clock / entropy"
+  ],
+  "violations": 0
+ },
+ "criteria": {
+  "a_signed_beats_scalar_on_held_out_cells": {
+   "detail": "scalar insufficiency is witnessed by construction (identical scalar features, different loss); the held-out model comparison is in stage 'scorer' and the object-level contrasts in 'sufficiency'",
+   "evidence": {
+    "paging": false,
+    "sched": true,
+    "ski": false
+   },
+   "state": "measured"
+  },
+  "b_classic_anchors_recovered": {
+   "detail": "stage 'anchor' plus the end anchors inside stage 'v0'",
+   "state": "measured"
+  },
+  "c_lambda_calibration_loss": {
+   "detail": "the registered measurement is ratio(lambda_worst_case) - ratio(1) with lambda_worst_case from a certificate formula; no stage computes that formula, so the metric is unmet. The fixed-grid proxy contradicts the registered direction and is therefore NOT reported as the metric.",
+   "state": "unmet"
+  },
+  "d_streams_and_sensitivity": {
+   "detail": "each cell carries disjoint streams; the flip-count bound is reported per headline number in the manuscript's sensitivity section",
+   "state": "measured"
+  }
+ },
+ "facts": {
+  "claim1.blocks_exceeding_own_mde": {
+   "recorded": null,
+   "rule": "count of blocks with |loss gap| > their own cluster MDE",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": 31
+  },
+  "claim1.blocks_total": {
+   "recorded": null,
+   "rule": "len(blocks)",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": 39
+  },
+  "claim1.pairs_per_block_min": {
+   "recorded": null,
+   "rule": "min over blocks of n_pairs",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": 16
+  },
+  "claim1.scalar_gap_max_exact": {
+   "recorded": null,
+   "rule": "max over blocks of max_scalar_feature_gap -- the load-bearing identity, exact 0",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": 0.0
+  },
+  "claim1.worst_block_mde": {
+   "recorded": null,
+   "rule": "mde_cluster_unit of the argmin block",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": 0.018652357999776627
+  },
+  "claim1.worst_loss_gap": {
+   "recorded": null,
+   "rule": "min over blocks of median_ratio_diff_plus_minus",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": -0.5678834884447668
+  },
+  "claim1.worst_problem": {
+   "recorded": null,
+   "rule": "problem of the argmin block",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": "ski"
+  },
+  "claim1.worst_profile": {
+   "recorded": null,
+   "rule": "profile of the argmin block",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
+   "value": "unbiased_extreme"
+  },
+  "claim2.clean_advantage_mde.paging": {
+   "recorded": 0.9665258736088224,
+   "rule": "median_advantage_odd / mde_cluster_unit (cluster unit) of the same block",
+   "source": "sufficiency_v1_results.json:part_C2.contrast_b_clean['even2 {|e|,|e|^2,ctx} vs odd2 {e,|e|,ctx}']",
+   "value": 0.9665258736088224
+  },
+  "claim2.clean_advantage_mde.sched": {
+   "recorded": 2.613165049487165,
+   "rule": "median_advantage_odd / mde_cluster_unit (cluster unit) of the same block",
+   "source": "sufficiency_v1_results.json:part_C2.contrast_b_clean['even2 {|e|,|e|^2,ctx} vs odd2 {e,|e|,ctx}']",
+   "value": 2.613165049487165
+  },
+  "claim2.clean_advantage_mde.ski": {
+   "recorded": 1.479384386306815,
+   "rule": "median_advantage_odd / mde_cluster_unit (cluster unit) of the same block",
+   "source": "sufficiency_v1_results.json:part_C2.contrast_b_clean['even2 {|e|,|e|^2,ctx} vs odd2 {e,|e|,ctx}']",
+   "value": 1.479384386306815
+  },
+  "claim2.clean_resolvable.paging": {
+   "recorded": false,
+   "rule": "the row's resolvable_cluster_unit (cluster unit is the generalising unit)",
+   "source": "same",
+   "value": false
+  },
+  "claim2.clean_resolvable.sched": {
+   "recorded": true,
+   "rule": "the row's resolvable_cluster_unit (cluster unit is the generalising unit)",
+   "source": "same",
+   "value": true
+  },
+  "claim2.clean_resolvable.ski": {
+   "recorded": true,
+   "rule": "the row's resolvable_cluster_unit (cluster unit is the generalising unit)",
+   "source": "same",
+   "value": true
+  },
+  "claim2.confounded_advantage_mde.paging": {
+   "recorded": -3.704407102424711,
+   "rule": "median_advantage_odd / mde_cluster_unit (cluster unit) of the same block",
+   "source": "sufficiency_v1_results.json:part_C2.contrast_b_clean['even1 {|e|,ctx} vs signed1 {e,ctx} (form-confounded)']",
+   "value": -3.704407102424711
+  },
+  "claim2.confounded_advantage_mde.sched": {
+   "recorded": 6.622695742719684,
+   "rule": "median_advantage_odd / mde_cluster_unit (cluster unit) of the same block",
+   "source": "sufficiency_v1_results.json:part_C2.contrast_b_clean['even1 {|e|,ctx} vs signed1 {e,ctx} (form-confounded)']",
+   "value": 6.622695742719684
+  },
+  "claim2.confounded_advantage_mde.ski": {
+   "recorded": -9.159029867328064,
+   "rule": "median_advantage_odd / mde_cluster_unit (cluster unit) of the same block",
+   "source": "sufficiency_v1_results.json:part_C2.contrast_b_clean['even1 {|e|,ctx} vs signed1 {e,ctx} (form-confounded)']",
+   "value": -9.159029867328064
+  },
+  "claim2.confounded_resolvable.paging": {
+   "recorded": true,
+   "rule": "the row's resolvable_cluster_unit (cluster unit is the generalising unit)",
+   "source": "same",
+   "value": true
+  },
+  "claim2.confounded_resolvable.sched": {
+   "recorded": true,
+   "rule": "the row's resolvable_cluster_unit (cluster unit is the generalising unit)",
+   "source": "same",
+   "value": true
+  },
+  "claim2.confounded_resolvable.ski": {
+   "recorded": true,
+   "rule": "the row's resolvable_cluster_unit (cluster unit is the generalising unit)",
+   "source": "same",
+   "value": true
+  },
+  "claim3.published_implied_mean_gain": {
+   "recorded": 0.16666666666666652,
+   "rule": "DERIVED: mean_gain_over_classic / comparison_gain_over_classic - 1, in the artefact",
+   "source": "anchor_published_numbers",
+   "value": 0.16666666666666652
+  },
+  "claim3.published_mean_gain": {
+   "recorded": 0.26,
+   "rule": "transcribed from the arXiv abs record",
+   "source": "anchor_published_numbers",
+   "value": 0.26
+  },
+  "claim3.tau_all.paging": {
+   "recorded": 0.8888888888888888,
+   "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it)",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 0.8888888888888888
+  },
+  "claim3.tau_all.sched": {
+   "recorded": 1.0,
+   "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it)",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 1.0
+  },
+  "claim3.tau_all.ski": {
+   "recorded": 0.7435897435897436,
+   "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it)",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 0.7435897435897436
+  },
+  "claim3.tau_excluding_zero_anchor.paging": {
+   "recorded": 0.873015873015873,
+   "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it) (zero-error anchor excluded, paired)",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 0.873015873015873
+  },
+  "claim3.tau_excluding_zero_anchor.sched": {
+   "recorded": 1.0,
+   "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it) (zero-error anchor excluded, paired)",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 1.0
+  },
+  "claim3.tau_excluding_zero_anchor.ski": {
+   "recorded": 0.696969696969697,
+   "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it) (zero-error anchor excluded, paired)",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 0.696969696969697
+  },
+  "limit.L1_attachment.C5_attachment_control": {
+   "recorded": null,
+   "rule": "the relation as the cell records it (see controls[C5_attachment_control]); carried, not recomputed -- recomputing it means re-running the cell's attachment",
+   "source": "external_cell_v1_results.json:controls[C5_attachment_control]",
+   "value": null
+  },
+  "limit.L2_null_shift.paging": {
+   "recorded": -1.5311761839029192,
+   "rule": "advantage over MDE under the EVEN synthetic target",
+   "source": "sufficiency_v1_results.json:null_shift_...",
+   "value": -1.5311761839029192
+  },
+  "limit.L2_null_shift.sched": {
+   "recorded": -13.120172246838967,
+   "rule": "advantage over MDE under the EVEN synthetic target",
+   "source": "sufficiency_v1_results.json:null_shift_...",
+   "value": -13.120172246838967
+  },
+  "limit.L2_null_shift.ski": {
+   "recorded": -12.953134387288548,
+   "rule": "advantage over MDE under the EVEN synthetic target",
+   "source": "sufficiency_v1_results.json:null_shift_...",
+   "value": -12.953134387288548
+  },
+  "limit.L3_reach_at_or_above_0.8pct.paging": {
+   "recorded": null,
+   "rule": "count of profiles in cells[paging] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 0
+  },
+  "limit.L3_reach_at_or_above_0.8pct.sched": {
+   "recorded": null,
+   "rule": "count of profiles in cells[sched] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 0
+  },
+  "limit.L3_reach_at_or_above_0.8pct.ski": {
+   "recorded": null,
+   "rule": "count of profiles in cells[ski] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 12
+  },
+  "limit.L3_reach_at_or_above_8.8pct.paging": {
+   "recorded": null,
+   "rule": "count of profiles in cells[paging] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 0
+  },
+  "limit.L3_reach_at_or_above_8.8pct.sched": {
+   "recorded": null,
+   "rule": "count of profiles in cells[sched] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 0
+  },
+  "limit.L3_reach_at_or_above_8.8pct.ski": {
+   "recorded": null,
+   "rule": "count of profiles in cells[ski] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 11
+  },
+  "limit.L3_reach_min_worst_unit_degradation.paging": {
+   "recorded": null,
+   "rule": "count of profiles in cells[paging] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": -0.40597539543058
+  },
+  "limit.L3_reach_min_worst_unit_degradation.sched": {
+   "recorded": null,
+   "rule": "count of profiles in cells[sched] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": -0.30801725694368376
+  },
+  "limit.L3_reach_min_worst_unit_degradation.ski": {
+   "recorded": null,
+   "rule": "count of profiles in cells[ski] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 0.0
+  },
+  "limit.L3_reach_profiles.paging": {
+   "recorded": null,
+   "rule": "count of profiles in cells[paging] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 13
+  },
+  "limit.L3_reach_profiles.sched": {
+   "recorded": null,
+   "rule": "count of profiles in cells[sched] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 13
+  },
+  "limit.L3_reach_profiles.ski": {
+   "recorded": null,
+   "rule": "count of profiles in cells[ski] whose worst_unit_degradation is at or above the published scale (0.008 / 0.088), or the minimum",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 13
+  }
+ },
+ "stages": [
+  {
+   "agree": true,
+   "artefact": "anchor_smoke_results.json",
+   "artefact_sha256": "2f2a440142e2bcb66db0e494ad1f2a66d852bf6156f58064800b7924286c2435",
+   "checks_failed": 0,
+   "checks_run": 8,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "ANCHORS_ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "anchor_smoke.py",
+   "script_sha256": "e7c04209d5f3f1797435ea57158e0991d8b462693dee0075588f96bd5228bae7",
+   "tag": "anchor",
+   "what": "the classic competitive ratios and the consistency end, recovered exactly"
+  },
+  {
+   "agree": true,
+   "artefact": "instrument_v0_results.json",
+   "artefact_sha256": "a284955152c7c687400b57e613465052cd0fd56dc3c6ae126b7449ca5027087e",
+   "checks_failed": 0,
+   "checks_run": 14,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "END_ANCHORS_ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "instrument_v0.py",
+   "script_sha256": "22654b972adc999d1d7e6b1e0f986cf62918acdafa349f9a3a787b0839d8c749",
+   "tag": "v0",
+   "what": "the crossed grid of error profiles, with the end anchors re-checked inside it"
+  },
+  {
+   "agree": true,
+   "artefact": "scorer_v0_results.json",
+   "artefact_sha256": "19593adb9291eb72c741c281879684dc138dfa1e9e1b4fe3f88a7b37a8e8754a",
+   "checks_failed": 0,
+   "checks_run": 7,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "SCORER_CHECKS_ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "scorer_v0.py",
+   "script_sha256": "b43e3f6a0ed1a34ce8b0bff7f8e8a9ec561a8550fd4e1fd87b7dfdfccf0b6f23",
+   "tag": "scorer",
+   "what": "the held-out fit of the scalar baseline against the signed decomposition"
+  },
+  {
+   "agree": true,
+   "artefact": "mechanism_v0_results.json",
+   "artefact_sha256": "02d6f0515102bf7d8984692a277a571da6168d2ce0326b8a62fe38de3e3327a5",
+   "checks_failed": 0,
+   "checks_run": 10,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "MECHANISM_CHECKS_ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "mechanism_v0.py",
+   "script_sha256": "7d956233459097452f28d30fe926de1b3f8736672629d4c7f0f17872658b0f84",
+   "tag": "mechanism",
+   "what": "the mechanism: which decision each problem makes from the prediction"
+  },
+  {
+   "agree": true,
+   "artefact": "paging_v1_results.json",
+   "artefact_sha256": "d335764571f8dda871a2dbb8214ce2e16d1c37a4537411752b0131651df71717",
+   "checks_failed": 0,
+   "checks_run": 9,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "CHECKS_ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "paging_v1.py",
+   "script_sha256": "349820afff8551e3b7a0bf2a2c5e5fca9eae0a0c5316d2ed7a049766fab8908a",
+   "tag": "paging",
+   "what": "the per-page attachment, against the step-common one it replaces"
+  },
+  {
+   "agree": true,
+   "artefact": "sufficiency_v1_results.json",
+   "artefact_sha256": "27d5dc487a7e90ba073feec9f875767e75afe44613ee8ad48f391d9e5280968d",
+   "checks_failed": 0,
+   "checks_run": 15,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "sufficiency_v1.py",
+   "script_sha256": "5bc7d2f49c78d28dad40d2ada380a72ca32c4626bab6b205b052af7818652b5a",
+   "tag": "sufficiency",
+   "what": "the scalar-insufficiency witness and the object-level contrast design"
+  },
+  {
+   "agree": true,
+   "artefact": "external_cell_v1_results.json",
+   "artefact_sha256": "e4416ae15f3f6aa33ad25957477b5a4c41f354231bb012d7d570c048666f8536",
+   "checks_failed": null,
+   "checks_run": null,
+   "evidence_persisted": false,
+   "failed_checks": [],
+   "flag": "ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": null,
+   "script": "external_cell_v1.py",
+   "script_sha256": "3d21412ecaaaf5ba247f23eef81a54cc846e71fb2a9ecb9199a55046eb9c2d56",
+   "tag": "external",
+   "what": "the committed external cell anchored to a published system result"
+  }
+ ],
+ "study": "issue-47 signed-error decomposition (cs.DS)"
+}

@@ -1,0 +1,238 @@
+{
+ "ALL_PASS": true,
+ "failed": [],
+ "n_checks": 46,
+ "n_failed": 0,
+ "rows": [
+  {
+   "check": "digests/table_has_eight_rows",
+   "detail": "found 8",
+   "pass": true
+  },
+  {
+   "check": "digests/instrument_v0.py",
+   "detail": "doc 22654b972adc999d vs file 22654b972adc999d",
+   "pass": true
+  },
+  {
+   "check": "digests/paging_v1.py",
+   "detail": "doc 349820afff8551e3 vs file 349820afff8551e3",
+   "pass": true
+  },
+  {
+   "check": "digests/sufficiency_v1.py",
+   "detail": "doc 5bc7d2f49c78d28d vs file 5bc7d2f49c78d28d",
+   "pass": true
+  },
+  {
+   "check": "digests/sufficiency_v1_results.json",
+   "detail": "doc 27d5dc487a7e90ba vs file 27d5dc487a7e90ba",
+   "pass": true
+  },
+  {
+   "check": "digests/external_cell_v1.py",
+   "detail": "doc 3d21412ecaaaf5ba vs file 3d21412ecaaaf5ba",
+   "pass": true
+  },
+  {
+   "check": "digests/external_cell_v1_results.json",
+   "detail": "doc e4416ae15f3f6aa3 vs file e4416ae15f3f6aa3",
+   "pass": true
+  },
+  {
+   "check": "digests/external_cell_mutation_v1.py",
+   "detail": "doc 461f20a18a7d36a5 vs file 461f20a18a7d36a5",
+   "pass": true
+  },
+  {
+   "check": "digests/external_cell_mutation_v1_results.json",
+   "detail": "doc 89342bcd4ef628cd vs file 89342bcd4ef628cd",
+   "pass": true
+  },
+  {
+   "check": "suff/witness_gap_is_the_max_over_blocks",
+   "detail": "",
+   "pass": true
+  },
+  {
+   "check": "quote/witness_gap",
+   "detail": "doc has '-0.5679' == '-0.5679' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/witness_mde",
+   "detail": "doc has '0.0187' == '0.0187' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/witness_replicates",
+   "detail": "doc has '16/16' == '16/16' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/blocks_clearing_own_mde",
+   "detail": "doc has '31/39' == '31/39' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/scalar_gap",
+   "detail": "doc has '0.00' == '0.00' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "suff/the_witness_gap_is_stated_in_scientific_notation_too",
+   "detail": "doc holds 0.00e+00 and the artefact holds exactly zero",
+   "pass": true
+  },
+  {
+   "check": "suff/the_contrast_list_decomposes_into_three_matched_and_three_confounded_rows",
+   "detail": "6 rows: 3 matched-form, 3 form-confounded",
+   "pass": true
+  },
+  {
+   "check": "quote/clean_contrast_ski",
+   "detail": "doc has '+1.48' == '+1.48' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/clean_contrast_sched",
+   "detail": "doc has '+2.61' == '+2.61' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/clean_contrast_paging",
+   "detail": "doc has '+0.97' == '+0.97' (count 2)",
+   "pass": true
+  },
+  {
+   "check": "quote/even_target_ski",
+   "detail": "doc has '-12.95' == '-12.95' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/even_target_sched",
+   "detail": "doc has '-13.12' == '-13.12' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/even_target_paging",
+   "detail": "doc has '-1.53' == '-1.53' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/confounded_contrast_ski",
+   "detail": "doc has '-9.16' == '-9.16' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/confounded_contrast_sched",
+   "detail": "doc has '+6.62' == '+6.62' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/confounded_contrast_paging",
+   "detail": "doc has '-3.70' == '-3.70' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "suff/the_null_shift_dictionary_agrees_with_the_control_rows",
+   "detail": "{'paging': -1.53, 'sched': -13.12, 'ski': -12.95}",
+   "pass": true
+  },
+  {
+   "check": "quote/tau_ski",
+   "detail": "doc has '0.744' == '0.744' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/tau_paging",
+   "detail": "doc has '0.889' == '0.889' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/tau_sched",
+   "detail": "doc has '1.000' == '1.000' (count 2)",
+   "pass": true
+  },
+  {
+   "check": "quote/tau_nozero_ski",
+   "detail": "doc has '0.697' == '0.697' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/tau_nozero_paging",
+   "detail": "doc has '0.873' == '0.873' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/tau_nozero_sched",
+   "detail": "doc has '1.000' == '1.000' (count 2)",
+   "pass": true
+  },
+  {
+   "check": "quote/c5_a",
+   "detail": "doc has '32/32' == '32/32' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/c5_b",
+   "detail": "doc has '31/32' == '31/32' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/c5_c",
+   "detail": "doc has '6/32' == '6/32' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/reach_ski",
+   "detail": "doc has '12 of 13 profiles at or above 0.8%, 11 at or above 8.8%' == '12 of 13 profiles at or above 0.8%, 11 at or above 8.8%' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/reach_paging_zero",
+   "detail": "doc has '0 of\\n13' == '0 of\\n13' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/paging_worst_unit_min",
+   "detail": "doc has '-0.4060' == '-0.4060' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/sched_worst_unit_min",
+   "detail": "doc has '-0.3080' == '-0.3080' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/anchor_mean_gain",
+   "detail": "doc has '26%' == '26%' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "quote/anchor_derived_mean",
+   "detail": "doc has '16.7%' == '16.7%' (count 2)",
+   "pass": true
+  },
+  {
+   "check": "anchor/the_derived_mean_is_written_as_the_derivation",
+   "detail": "",
+   "pass": true
+  },
+  {
+   "check": "quote/anchor_worst_pair",
+   "detail": "doc has '0.8% vs 8.8%' == '0.8% vs 8.8%' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "cell/all_checks_pass",
+   "detail": "external ALL_PASS=True sufficiency ALL_PASS=True",
+   "pass": true
+  },
+  {
+   "check": "cell/the_liveness_control_is_recorded_as_complete",
+   "detail": "",
+   "pass": true
+  }
+ ]
+}
