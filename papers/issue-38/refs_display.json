@@ -1,0 +1,1436 @@
+{
+ "1": {
+  "authors": [
+   "Bertsekas, D."
+  ],
+  "key": 1,
+  "venue": "arXiv preprint arXiv:2310.03159",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "10": {
+  "authors": [
+   "Vickrey, W."
+  ],
+  "key": 10,
+  "venue": "The Journal of Finance",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "1961"
+ },
+ "100": {
+  "authors": [
+   "Zhang, Y.",
+   "Niyato, D.",
+   "Wang, P."
+  ],
+  "key": 100,
+  "venue": "arXiv preprint arXiv:1304.6176",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2013"
+ },
+ "101": {
+  "authors": [
+   "Zhang, X.",
+   "Wu, C.",
+   "Li, Z.",
+   "Lau, F. C. M."
+  ],
+  "key": 101,
+  "venue": "arXiv preprint arXiv:1611.07619",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2016"
+ },
+ "102": {
+  "authors": [
+   "Perukari, A. K.",
+   "Khoroshevskaya, P."
+  ],
+  "key": 102,
+  "venue": "arXiv preprint arXiv:2511.12879",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "103": {
+  "authors": [
+   "Dinh-Tuan, H.",
+   "Nguyen, T. H.",
+   "Pandey, S. R."
+  ],
+  "key": 103,
+  "venue": "arXiv preprint arXiv:2509.07497",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "104": {
+  "authors": [
+   "Shah, A.",
+   "Zhu, K.",
+   "Jiang, Y.",
+   "Wang, J. G.",
+   "Dayi, A. K.",
+   "Horton, J. J.",
+   "Parkes, D. C."
+  ],
+  "key": 104,
+  "venue": "arXiv preprint arXiv:2507.09083",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "105": {
+  "authors": [
+   "Liu, X.",
+   "Li, H.",
+   "Li, S.",
+   "Fang, H.",
+   "Xu, F.",
+   "Shi, F.",
+   "Evans, J."
+  ],
+  "key": 105,
+  "venue": "arXiv preprint arXiv:2608.23867",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "106": {
+  "authors": [
+   "Zhang, X.",
+   "Lu, P.",
+   "Ye, L.",
+   "Liu, P."
+  ],
+  "key": 106,
+  "venue": "arXiv preprint arXiv:2609.04667",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "107": {
+  "authors": [
+   "Erlei, A.",
+   "Meub, L."
+  ],
+  "key": 107,
+  "venue": "arXiv preprint arXiv:2603.08853",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "108": {
+  "authors": [
+   "Lei, S.",
+   "Nguyen, Q.",
+   "Mehta, S. S.",
+   "Li, Z.",
+   "Fu, H.",
+   "Zheng, X.",
+   "Chen, S.",
+   "Liang, Y.",
+   "Torr, P.",
+   "Yin, Z."
+  ],
+  "key": 108,
+  "venue": "arXiv preprint arXiv:2605.10059",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "109": {
+  "authors": [
+   "Tian, Y."
+  ],
+  "key": 109,
+  "venue": "arXiv preprint arXiv:2604.17774",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "11": {
+  "authors": [
+   "Williams, A. W.",
+   "Bratton, W. K.",
+   "Vannoni, M. G."
+  ],
+  "key": 11,
+  "venue": "Papers in Experimental Economics",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "1991"
+ },
+ "110": {
+  "authors": [
+   "Tomasev, N.",
+   "Franklin, M.",
+   "Leibo, J. Z.",
+   "Jacobs, J.",
+   "Cunningham, W. A.",
+   "Gabriel, I.",
+   "Osindero, S."
+  ],
+  "key": 110,
+  "venue": "arXiv preprint arXiv:2509.10147",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "111": {
+  "authors": [
+   "Rothschild, D. M.",
+   "Mobius, M.",
+   "Hofman, J. M.",
+   "Dillon, E. W.",
+   "Goldstein, D. G.",
+   "Immorlica, N.",
+   "Jaffe, S.",
+   "Lucier, B.",
+   "Slivkins, A.",
+   "Vogel, M."
+  ],
+  "key": 111,
+  "venue": "arXiv preprint arXiv:2505.15799",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "112": {
+  "authors": [
+   "Saxena, M.",
+   "Pangallo, M.",
+   "Hommes, C.",
+   "Caccioli, F.",
+   "del Rio-Chanona, R. M."
+  ],
+  "key": 112,
+  "venue": "arXiv preprint arXiv:2604.18602",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "113": {
+  "authors": [
+   "Struski, P.",
+   "Swistak, J.",
+   "Okulska, I.",
+   "Biecek, P."
+  ],
+  "key": 113,
+  "venue": "arXiv preprint arXiv:2609.02580",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "114": {
+  "authors": [
+   "Inverso, O.",
+   "Tuosto, E.",
+   "Zunic, D."
+  ],
+  "key": 114,
+  "venue": "arXiv preprint arXiv:2607.09702",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "115": {
+  "authors": [
+   "Ye, Q.",
+   "Tan, J."
+  ],
+  "key": 115,
+  "venue": "arXiv preprint arXiv:2601.08815",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "116": {
+  "authors": [
+   "Derouiche, H.",
+   "Brahmi, Z.",
+   "Mazeni, H."
+  ],
+  "key": 116,
+  "venue": "arXiv preprint arXiv:2508.10146",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "117": {
+  "authors": [
+   "Orogat, A.",
+   "Rostam, A.",
+   "Mansour, E."
+  ],
+  "key": 117,
+  "venue": "arXiv preprint arXiv:2602.03128",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "118": {
+  "authors": [
+   "Li, S.",
+   "Abdelmoniem, A. M.",
+   "Wang, S."
+  ],
+  "key": 118,
+  "venue": "arXiv preprint arXiv:2608.25992",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "119": {
+  "authors": [
+   "Zhang, C."
+  ],
+  "key": 119,
+  "venue": "arXiv preprint arXiv:2605.02801",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "12": {
+  "authors": [
+   "Skreta, V."
+  ],
+  "key": 12,
+  "venue": "10.2139/ssrn.1120963 (posted-content)",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2008"
+ },
+ "120": {
+  "authors": [
+   "Gho, B.",
+   "Muppavarapu, S.",
+   "Shaik, A.",
+   "Tsay, T.",
+   "Mohan, A.",
+   "Begin, J.",
+   "Zhu, K.",
+   "Vaidheeswaran, A.",
+   "Sharma, V."
+  ],
+  "key": 120,
+  "venue": "arXiv preprint arXiv:2511.17621",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "121": {
+  "authors": [
+   "Yang, Y.",
+   "Chai, H.",
+   "Shao, S.",
+   "Song, Y.",
+   "Qi, S.",
+   "Rui, R.",
+   "Zhang, W."
+  ],
+  "key": 121,
+  "venue": "arXiv preprint arXiv:2504.00587",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "122": {
+  "authors": [
+   "Nechepurenko, M.",
+   "Shuvalov, P."
+  ],
+  "key": 122,
+  "venue": "arXiv preprint arXiv:2605.03310",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "123": {
+  "authors": [
+   "Duetting, P.",
+   "Mirrokni, V.",
+   "Leme, R. P.",
+   "Xu, H.",
+   "Zuo, S."
+  ],
+  "key": 123,
+  "venue": "arXiv preprint arXiv:2310.10826",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "124": {
+  "authors": [
+   "Hu, Q. J.",
+   "Bieker, J.",
+   "Li, X.",
+   "Jiang, N.",
+   "Keigwin, B.",
+   "Ranganath, G.",
+   "Keutzer, K.",
+   "Upadhyay, S. K."
+  ],
+  "key": 124,
+  "venue": "arXiv preprint arXiv:2403.12031",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "125": {
+  "authors": [
+   "Dohan, D.",
+   "Xu, W.",
+   "Lewkowycz, A.",
+   "Austin, J.",
+   "Bieber, D.",
+   "Lopes, R. G.",
+   "Wu, Y.",
+   "Michalewski, H.",
+   "Saurous, R. A.",
+   "Sohl-dickstein, J.",
+   "Murphy, K.",
+   "Sutton, C."
+  ],
+  "key": 125,
+  "venue": "arXiv preprint arXiv:2207.10342",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2022"
+ },
+ "13": {
+  "authors": [
+   "Ozbek, K."
+  ],
+  "key": 13,
+  "venue": "10.2139/ssrn.5861082 (posted-content)",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2025"
+ },
+ "14": {
+  "authors": [
+   "Shapley, L. S.",
+   "Shubik, M."
+  ],
+  "key": 14,
+  "venue": "RAND Corporation",
+  "via": "openalex (the Crossref record is an edited-book entry with no author); rand.org returns 403",
+  "year": "1971"
+ },
+ "15": {
+  "authors": [
+   "GALE, D.",
+   "SHAPLEY, L."
+  ],
+  "key": 15,
+  "venue": "10.21236/ad0251958 (report)",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "1961"
+ },
+ "16": {
+  "authors": [
+   "Stiglitz, J. E."
+  ],
+  "key": 16,
+  "venue": "Market Failure or Success",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2013"
+ },
+ "17": {
+  "authors": [
+   "Milgrom, P. R.",
+   "Weber, R. J."
+  ],
+  "key": 17,
+  "venue": "Econometrica",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "1982"
+ },
+ "18": {
+  "authors": [
+   "Lee, S.",
+   "Kim, J. Y."
+  ],
+  "key": 18,
+  "venue": "Economic Theory Bulletin",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2022"
+ },
+ "19": {
+  "authors": [
+   "Zhang, X."
+  ],
+  "key": 19,
+  "venue": "SSRN Electronic Journal",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2016"
+ },
+ "2": {
+  "authors": [
+   "Alfaro, C. A.",
+   "Perez, S. L.",
+   "Valencia, C. E.",
+   "Vargas, M. C."
+  ],
+  "key": 2,
+  "venue": "arXiv preprint arXiv:1810.03562",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2018"
+ },
+ "20": {
+  "authors": [
+   "SMITH, R. G."
+  ],
+  "key": 20,
+  "venue": "Readings in Distributed Artificial Intelligence",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "1988"
+ },
+ "21": {
+  "authors": [
+   "Guo, Y.",
+   "Hao, D.",
+   "Li, B.",
+   "Xiao, M.",
+   "Khoussainov, B."
+  ],
+  "key": 21,
+  "venue": "arXiv preprint arXiv:2507.14472",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "22": {
+  "authors": [
+   "Li, X.",
+   "Wang, Z.",
+   "Zhu, B.",
+   "He, F.",
+   "Wang, Y.",
+   "Wang, X."
+  ],
+  "key": 22,
+  "venue": "arXiv preprint arXiv:2401.01656",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "23": {
+  "authors": [
+   "Wang, R.",
+   "Kocyigit, C.",
+   "Rujeerapaiboon, N."
+  ],
+  "key": 23,
+  "venue": "arXiv preprint arXiv:2502.08369",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "24": {
+  "authors": [
+   "Li, Y.",
+   "Lu, P.",
+   "Ye, H."
+  ],
+  "key": 24,
+  "venue": "arXiv preprint arXiv:1903.00836",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2019"
+ },
+ "25": {
+  "authors": [
+   "Wang, G.",
+   "Han, H.",
+   "Liu, X.",
+   "Jiang, H.",
+   "Zhang, M."
+  ],
+  "key": 25,
+  "venue": "arXiv preprint arXiv:2508.02015",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "26": {
+  "authors": [
+   "Braquet, M.",
+   "Bakolas, E."
+  ],
+  "key": 26,
+  "venue": "arXiv preprint arXiv:2107.00144",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2021"
+ },
+ "27": {
+  "authors": [
+   "Dahlquist, N.",
+   "Lindqvist, B.",
+   "Saradagi, A.",
+   "Nikolakopoulos, G."
+  ],
+  "key": 27,
+  "venue": "arXiv preprint arXiv:2304.01976",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "28": {
+  "authors": [
+   "Engelaar, M. H. W.",
+   "Zhang, Z.",
+   "Vlahakis, E. E.",
+   "Dimarogonas, D. V.",
+   "Lazar, M.",
+   "Haesaert, S."
+  ],
+  "key": 28,
+  "venue": "arXiv preprint arXiv:2404.02111",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "29": {
+  "authors": [
+   "Dahlquist, N.",
+   "Saradagi, A.",
+   "Nikolakopoulos, G."
+  ],
+  "key": 29,
+  "venue": "arXiv preprint arXiv:2304.02333",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "3": {
+  "authors": [
+   "Khosla, M.",
+   "Anand, A."
+  ],
+  "key": 3,
+  "venue": "arXiv preprint arXiv:2101.07155",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2021"
+ },
+ "30": {
+  "authors": [
+   "Rodriguez, J.",
+   "Tarawneh, C.",
+   "Koenig, S.",
+   "Dong, W.",
+   "Lu, Q."
+  ],
+  "key": 30,
+  "venue": "arXiv preprint arXiv:2605.21932",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "31": {
+  "authors": [
+   "Dahlquist, N.",
+   "Velhal, S.",
+   "Nikolakopoulos, G."
+  ],
+  "key": 31,
+  "venue": "arXiv preprint arXiv:2606.24462",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "32": {
+  "authors": [
+   "Kaur, S.",
+   "Kaur, H.",
+   "Sehra, S. K."
+  ],
+  "key": 32,
+  "venue": "arXiv preprint arXiv:1312.4259",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2013"
+ },
+ "33": {
+  "authors": [
+   "Liu, B.",
+   "Deng, M.",
+   "Wu, G.",
+   "Pei, X.",
+   "Li, H.",
+   "Pedrycz, W."
+  ],
+  "key": 33,
+  "venue": "arXiv preprint arXiv:2007.06172",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "34": {
+  "authors": [
+   "Lajili, S.",
+   "Brahmi, Z."
+  ],
+  "key": 34,
+  "venue": "arXiv preprint arXiv:2608.12371",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "35": {
+  "authors": [
+   "Wang, D.",
+   "Zhang, W.",
+   "Song, B.",
+   "Du, X.",
+   "Guizani, M."
+  ],
+  "key": 35,
+  "venue": "arXiv preprint arXiv:1902.09687",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2019"
+ },
+ "36": {
+  "authors": [
+   "Nan, T.",
+   "Gao, Y.",
+   "Kroer, C."
+  ],
+  "key": 36,
+  "venue": "arXiv preprint arXiv:2303.00506",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "37": {
+  "authors": [
+   "Maheshwari, C.",
+   "Mazumdar, E.",
+   "Sastry, S."
+  ],
+  "key": 37,
+  "venue": "arXiv preprint arXiv:2206.02344",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2022"
+ },
+ "38": {
+  "authors": [
+   "Simon, H. A."
+  ],
+  "key": 38,
+  "venue": "RAND Corporation",
+  "via": "openalex (the Crossref record is an edited-book entry with no author); the Crossref title match 10.2307/1884852 agrees on the author for the same work",
+  "year": "1953"
+ },
+ "39": {
+  "authors": [
+   "Caplin, A.",
+   "Dean, M."
+  ],
+  "key": 39,
+  "venue": "10.3386/w19318 (report)",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2013"
+ },
+ "4": {
+  "authors": [
+   "Bertsekas, D."
+  ],
+  "key": 4,
+  "venue": "arXiv preprint arXiv:2002.07407",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "40": {
+  "authors": [
+   "Marwala, T."
+  ],
+  "key": 40,
+  "venue": "arXiv preprint arXiv:1305.6037",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2013"
+ },
+ "41": {
+  "authors": [
+   "Grau-Moya, J.",
+   "Braun, D. A."
+  ],
+  "key": 41,
+  "venue": "arXiv preprint arXiv:1511.01710",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2015"
+ },
+ "42": {
+  "authors": [
+   "Cushing, W.",
+   "Benton, J.",
+   "Kambhampati, S."
+  ],
+  "key": 42,
+  "venue": "arXiv preprint arXiv:1103.3687",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2011"
+ },
+ "43": {
+  "authors": [
+   "Wall, F."
+  ],
+  "key": 43,
+  "venue": "arXiv preprint arXiv:2104.14002",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2021"
+ },
+ "44": {
+  "authors": [
+   "Brera, R.",
+   "Fu, F."
+  ],
+  "key": 44,
+  "venue": "arXiv preprint arXiv:2302.03220",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "45": {
+  "authors": [
+   "Carpentiere, D.",
+   "Petralia, A."
+  ],
+  "key": 45,
+  "venue": "arXiv preprint arXiv:2502.14879",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "46": {
+  "authors": [
+   "Engh, C. W."
+  ],
+  "key": 46,
+  "venue": "arXiv preprint arXiv:2508.05939",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "47": {
+  "authors": [
+   "Denti, T.",
+   "Ravid, D."
+  ],
+  "key": 47,
+  "venue": "arXiv preprint arXiv:2306.09964",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "48": {
+  "authors": [
+   "Qiu, X.",
+   "Oliveira, D. F. M.",
+   "Shirazi, A. S.",
+   "Flammini, A.",
+   "Menczer, F."
+  ],
+  "key": 48,
+  "venue": "arXiv preprint arXiv:1701.02694",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2017"
+ },
+ "49": {
+  "authors": [
+   "Feng, L.",
+   "Hu, Y.",
+   "Li, B.",
+   "Stanley, H. E.",
+   "Havlin, S.",
+   "Braunstein, L. A."
+  ],
+  "key": 49,
+  "venue": "arXiv preprint arXiv:1410.1668",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2014"
+ },
+ "5": {
+  "authors": [
+   "Michael, E.",
+   "Wood, T. A.",
+   "Manzie, C.",
+   "Shames, I."
+  ],
+  "key": 5,
+  "venue": "arXiv preprint arXiv:2005.11792",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "50": {
+  "authors": [
+   "Bruya, B.",
+   "Tang, Y. Y."
+  ],
+  "key": 50,
+  "venue": "Frontiers in Psychology",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2018"
+ },
+ "51": {
+  "authors": [],
+  "key": 51,
+  "unestablished": true,
+  "venue": "The Psychology of Attention, The MIT Press",
+  "via": "NO AUTHOR ESTABLISHED: Crossref has none for this DOI, OpenAlex returns 0 authorships, doi.org and the publisher landing page return 403, Semantic Scholar returns 404. Declared on the issue thread rather than guessed.",
+  "year": "1997"
+ },
+ "52": {
+  "authors": [
+   "Roughgarden, T.",
+   "Tardos, E."
+  ],
+  "key": 52,
+  "venue": "Proceedings 41st Annual Symposium on Foundations of Computer Science",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2002"
+ },
+ "53": {
+  "authors": [
+   "Kannan, R.",
+   "Busch, C.",
+   "Vasilakos, A."
+  ],
+  "key": 53,
+  "venue": "arXiv preprint arXiv:1010.4812",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2010"
+ },
+ "54": {
+  "authors": [
+   "Bilò, V."
+  ],
+  "key": 54,
+  "venue": "arXiv preprint arXiv:1412.0845",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2014"
+ },
+ "55": {
+  "authors": [
+   "Bosse, J. V. D.",
+   "Uetz, M.",
+   "Walter, M."
+  ],
+  "key": 55,
+  "venue": "arXiv preprint arXiv:2203.01740",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2022"
+ },
+ "56": {
+  "authors": [
+   "Kannan, R.",
+   "Busch, C.",
+   "Spirakis, P."
+  ],
+  "key": 56,
+  "venue": "arXiv preprint arXiv:1308.4101",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2013"
+ },
+ "57": {
+  "authors": [
+   "Chen, P. A.",
+   "de Keijzer, B.",
+   "Kempe, D.",
+   "Schaefer, G."
+  ],
+  "key": 57,
+  "venue": "arXiv preprint arXiv:1112.3680",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2011"
+ },
+ "58": {
+  "authors": [
+   "Chandan, R.",
+   "Paccagnan, D.",
+   "Marden, J. R."
+  ],
+  "key": 58,
+  "venue": "arXiv preprint arXiv:2107.06331",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2021"
+ },
+ "59": {
+  "authors": [
+   "Scherrer, S.",
+   "Perrig, A.",
+   "Schmid, S."
+  ],
+  "key": 59,
+  "venue": "arXiv preprint arXiv:2005.05191",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "6": {
+  "authors": [
+   "Yavlovich, I.",
+   "Agbaria, J.",
+   "Mhamed, M.",
+   "Weinberger, N.",
+   "Yallouz, J."
+  ],
+  "key": 6,
+  "venue": "arXiv preprint arXiv:2605.09382",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "60": {
+  "authors": [
+   "Basu, S.",
+   "Yang, G.",
+   "Lianeas, T.",
+   "Nikolova, E.",
+   "Chen, Y."
+  ],
+  "key": 60,
+  "venue": "arXiv preprint arXiv:1707.00208",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2017"
+ },
+ "61": {
+  "authors": [
+   "Christodoulou, G.",
+   "Mehlhorn, K.",
+   "Pyrga, E."
+  ],
+  "key": 61,
+  "venue": "arXiv preprint arXiv:1202.2877",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2012"
+ },
+ "62": {
+  "authors": [
+   "Babichenko, Y.",
+   "Rubinstein, A."
+  ],
+  "key": 62,
+  "venue": "arXiv preprint arXiv:2012.04327",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "63": {
+  "authors": [
+   "Xu, P."
+  ],
+  "key": 63,
+  "venue": "arXiv preprint arXiv:2209.07580",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2022"
+ },
+ "64": {
+  "authors": [
+   "Wang, R.",
+   "Ling, Q.",
+   "Wai, H. T.",
+   "Tian, Z."
+  ],
+  "key": 64,
+  "venue": "arXiv preprint arXiv:2508.08658",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "65": {
+  "authors": [
+   "Ao, R.",
+   "Chen, H.",
+   "Simchi-Levi, D.",
+   "Zhu, F."
+  ],
+  "key": 65,
+  "venue": "arXiv preprint arXiv:2402.11425",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "66": {
+  "authors": [
+   "Zhang, X.",
+   "Qin, H.",
+   "Chou, M. C."
+  ],
+  "key": 66,
+  "venue": "arXiv preprint arXiv:2401.16945",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "67": {
+  "authors": [
+   "Lyu, L.",
+   "Cheung, W. C."
+  ],
+  "key": 67,
+  "venue": "arXiv preprint arXiv:2302.04182",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2023"
+ },
+ "68": {
+  "authors": [
+   "Harada, T.",
+   "Ito, S.",
+   "Sumita, H."
+  ],
+  "key": 68,
+  "venue": "arXiv preprint arXiv:2505.05169",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "69": {
+  "authors": [
+   "Lim, E.",
+   "Tan, V. Y. F.",
+   "Soh, H."
+  ],
+  "key": 69,
+  "venue": "arXiv preprint arXiv:2410.05856",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "7": {
+  "authors": [
+   "Dlask, T.",
+   "Savchynskyy, B."
+  ],
+  "key": 7,
+  "venue": "arXiv preprint arXiv:2301.11201",
+  "via": "openalex title search (api.openalex.org/works?filter=title.search:relative-interior solution); arxiv.org/abs/2301.11201 returns HTTP 406 to this client and export.arxiv.org times out",
+  "year": "2023"
+ },
+ "70": {
+  "authors": [
+   "Villar, S. S.",
+   "Bowden, J.",
+   "Wason, J."
+  ],
+  "key": 70,
+  "venue": "arXiv preprint arXiv:1507.08025",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2015"
+ },
+ "71": {
+  "authors": [
+   "Pokhriyal, S.",
+   "Jain, S.",
+   "Aggarwal, V."
+  ],
+  "key": 71,
+  "venue": "arXiv preprint arXiv:2602.16183",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "72": {
+  "authors": [
+   "Fan, W.",
+   "Hong, L. J.",
+   "Jiang, G.",
+   "Luo, J."
+  ],
+  "key": 72,
+  "venue": "arXiv preprint arXiv:2403.15669",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "73": {
+  "authors": [
+   "Zhang, H.",
+   "Chen, H.",
+   "Zhan, D.",
+   "Zhao, H.",
+   "Lam, H.",
+   "Tang, W.",
+   "Yao, D.",
+   "Zheng, Z."
+  ],
+  "key": 73,
+  "venue": "arXiv preprint arXiv:2511.00685",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "74": {
+  "authors": [
+   "Bubeck, S.",
+   "Perchet, V.",
+   "Rigollet, P."
+  ],
+  "key": 74,
+  "venue": "arXiv preprint arXiv:1302.1611",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2013"
+ },
+ "75": {
+  "authors": [
+   "Bubeck, S.",
+   "Cesa-Bianchi, N."
+  ],
+  "key": 75,
+  "venue": "arXiv preprint arXiv:1204.5721",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2012"
+ },
+ "76": {
+  "authors": [
+   "Berkhout, J."
+  ],
+  "key": 76,
+  "venue": "arXiv preprint arXiv:2408.05214",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "77": {
+  "authors": [
+   "Agrawal, S.",
+   "Saberi, A.",
+   "Ye, Y."
+  ],
+  "key": 77,
+  "venue": "arXiv preprint arXiv:0809.0460",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2008"
+ },
+ "78": {
+  "authors": [
+   "Le, P."
+  ],
+  "key": 78,
+  "venue": "arXiv preprint arXiv:2409.00075",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "79": {
+  "authors": [
+   "Bouvier, L.",
+   "Prunet, T.",
+   "Leclère, V.",
+   "Parmentier, A."
+  ],
+  "key": 79,
+  "venue": "arXiv preprint arXiv:2505.04757",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "8": {
+  "authors": [
+   "Makarychev, K.",
+   "Manokaran, R.",
+   "Sviridenko, M."
+  ],
+  "key": 8,
+  "venue": "arXiv preprint arXiv:1403.7721",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2014"
+ },
+ "80": {
+  "authors": [
+   "Ibrahimpur, S.",
+   "Swamy, C."
+  ],
+  "key": 80,
+  "venue": "arXiv preprint arXiv:2010.05127",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "81": {
+  "authors": [
+   "Zhu, K.",
+   "Bertsimas, D."
+  ],
+  "key": 81,
+  "venue": "arXiv preprint arXiv:2509.16451",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "82": {
+  "authors": [
+   "Hartisch, M."
+  ],
+  "key": 82,
+  "venue": "arXiv preprint arXiv:2106.12858",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2021"
+ },
+ "83": {
+  "authors": [
+   "Goerigk, M.",
+   "Henke, D.",
+   "Wulf, L."
+  ],
+  "key": 83,
+  "venue": "arXiv preprint arXiv:2602.16465",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2026"
+ },
+ "84": {
+  "authors": [
+   "Anagnostopoulos, S. J.",
+   "Toscano, J. D.",
+   "Stergiopulos, N.",
+   "Karniadakis, G. E."
+  ],
+  "key": 84,
+  "venue": "arXiv preprint arXiv:2403.18494",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "85": {
+  "authors": [
+   "Liu, J.",
+   "Yadav, V.",
+   "Sehgal, H.",
+   "Olson, J. M.",
+   "Liu, H.",
+   "Elia, N."
+  ],
+  "key": 85,
+  "venue": "arXiv preprint arXiv:0808.3230",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2008"
+ },
+ "86": {
+  "authors": [
+   "Wu, Y.",
+   "Verdú, S."
+  ],
+  "key": 86,
+  "venue": "arXiv preprint arXiv:1111.6822",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2011"
+ },
+ "87": {
+  "authors": [
+   "Allegra, N.",
+   "Bamieh, B.",
+   "Mitra, P. P.",
+   "Sire, C."
+  ],
+  "key": 87,
+  "venue": "arXiv preprint arXiv:1610.00653",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2016"
+ },
+ "88": {
+  "authors": [
+   "Mergny, P.",
+   "Ko, J.",
+   "Krzakala, F."
+  ],
+  "key": 88,
+  "venue": "arXiv preprint arXiv:2403.03695",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "89": {
+  "authors": [
+   "Kim, D. H.",
+   "Motter, A. E."
+  ],
+  "key": 89,
+  "venue": "arXiv preprint arXiv:0801.1877",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2008"
+ },
+ "9": {
+  "authors": [
+   "Alam, S. T.",
+   "Sagor, E.",
+   "Ahmed, T.",
+   "Haque, T.",
+   "Mahmud, M. S.",
+   "Ibrahim, S."
+  ],
+  "key": 9,
+  "venue": "Proceedings of the International Conference on Industrial Engineering and Operations Management",
+  "via": "doi.org landing page citation_author meta tags (the Crossref record for this DOI carries no author); year from openalex",
+  "year": "2023"
+ },
+ "90": {
+  "authors": [
+   "Belcak, P.",
+   "Calliess, J. P.",
+   "Zohren, S."
+  ],
+  "key": 90,
+  "venue": "arXiv preprint arXiv:2008.07871",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "91": {
+  "authors": [
+   "Yagi, I.",
+   "Hoshino, M.",
+   "Mizuta, T."
+  ],
+  "key": 91,
+  "venue": "arXiv preprint arXiv:2010.08992",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2020"
+ },
+ "92": {
+  "authors": [
+   "Zhou, C."
+  ],
+  "key": 92,
+  "venue": "arXiv preprint arXiv:2409.16589",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2024"
+ },
+ "93": {
+  "authors": [
+   "Liu, R.",
+   "Argyros, D.",
+   "Jiang, Y.",
+   "Ben-Akiva, M. E.",
+   "Seshadri, R.",
+   "Azevedo, C. L."
+  ],
+  "key": 93,
+  "venue": "arXiv preprint arXiv:2502.11822",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "94": {
+  "authors": [
+   "Kayongo, P.",
+   "Hullman, J.",
+   "Hartline, J."
+  ],
+  "key": 94,
+  "venue": "arXiv preprint arXiv:2507.20985",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2025"
+ },
+ "95": {
+  "authors": [
+   "Li, Z.",
+   "Zhang, H.",
+   "O&#39;Brien, L.",
+   "Jiang, S.",
+   "Zhou, Y.",
+   "Kihl, M.",
+   "Ranjan, R."
+  ],
+  "key": 95,
+  "venue": "arXiv preprint arXiv:1708.01401",
+  "via": "arxiv abs page citation_author/citation_date meta tags",
+  "year": "2017"
+ },
+ "96": {
+  "authors": [
+   "Ousterhout, K.",
+   "Wendell, P.",
+   "Zaharia, M.",
+   "Stoica, I."
+  ],
+  "key": 96,
+  "venue": "Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2013"
+ },
+ "97": {
+  "authors": [
+   "Verma, A.",
+   "Pedrosa, L.",
+   "Korupolu, M.",
+   "Oppenheimer, D.",
+   "Tune, E.",
+   "Wilkes, J."
+  ],
+  "key": 97,
+  "venue": "Proceedings of the Tenth European Conference on Computer Systems",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2015"
+ },
+ "98": {
+  "authors": [
+   "Vavilapalli, V. K.",
+   "Murthy, A. C.",
+   "Douglas, C.",
+   "Agarwal, S.",
+   "Konar, M.",
+   "Evans, R.",
+   "Graves, T.",
+   "Lowe, J.",
+   "Shah, H.",
+   "Seth, S.",
+   "Saha, B.",
+   "Curino, C.",
+   "O'Malley, O.",
+   "Radia, S.",
+   "Reed, B.",
+   "Baldeschwieler, E."
+  ],
+  "key": 98,
+  "venue": "Proceedings of the 4th annual Symposium on Cloud Computing",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2013"
+ },
+ "99": {
+  "authors": [
+   "Buyya, R.",
+   "Yeo, C. S.",
+   "Venugopal, S."
+  ],
+  "key": 99,
+  "venue": "2008 10th IEEE International Conference on High Performance Computing and Communications",
+  "via": "crossref api (api.crossref.org/works/<doi>)",
+  "year": "2008"
+ }
+}
