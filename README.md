@@ -159,7 +159,11 @@ Completeness and internal consistency are necessary but **not** sufficient for a
 
 ## Time and units
 
-The deadlines in this document are expressed in three units, and each is defined here so a term can actually be checked.
+The deadlines in this document are expressed in the units defined below, and **the set is stated by the entries
+themselves, not by a number here**: each entry is defined so a term can actually be checked. This sentence read
+*"three units"* from `9d1a717` (2026-09-12, the commit that wrote it) until R310, while the entries it speaks for
+grew to **five** beneath it — the **look-back window** (`c8adaf4`, R259) and the **epoch** (`0b88b03`, R292) were
+added, and neither round updated the count, because a count that names no member cannot be seen to be stale.
 A unit whose length nobody wrote down is not a deadline — it is a phrase.
 
 - **Epoch.** The **epoch** of a clock is the reference it counts from: an **event**, for a forward deadline (*Days*,
