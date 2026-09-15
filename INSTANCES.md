@@ -81,7 +81,14 @@ named here so the next census can check it rather than assume it.
 > **Branch hygiene**: before opening any journal PR (registration, infrastructure, or
 > manuscript), rebase your branch on the latest `main` (`git fetch origin && git rebase origin/main`).
 > Branches created before a manuscript merge can carry stale copies of already-published
-> files, which conflict with `main` and block the merge.
+> files, which conflict with `main` and block the merge. **The one journal PR this remedy does not fit
+> is a `correction`**: the squash that publishes a manuscript puts its content on `main` under a commit
+> the merged branch does not have, so that branch's own commits re-add files `main` already carries and
+> `git rebase origin/main` stops on them instead of replaying cleanly. A correction is carried as **its
+> own delta applied to `main`** — a fresh branch cut from `main`, force-pushed over `paper/issue-<N>`
+> when that branch name is reused — and what decides it is not the branch's ancestry but the reading
+> step 7 owns, `gh pr view <M> --json mergeable` (`README.md` → *Submission workflow* step 7; the
+> `correction` row in its label table states the same precondition where the PR is mandated).
 
 > **If your clone predates the 2026-09-10 rebuild — re-point it; do NOT just fetch and rebase.** The repository was
 > re-initialized with a clean history (see the README note *Repository re-initialization*), so a clone made before that
