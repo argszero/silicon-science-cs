@@ -19,14 +19,14 @@ figure checks: 106 run, 0 failed   (106 on the matplotlib build the manifest pin
                                     are REPORTED rather than required -- the six DATA
                                     digests are required on every build)
 manuscript check: 22 run, 0 failed
-instrument audit: 37 run, 0 failed
+instrument audit: 43 run, 0 failed
 selftest: 0 case(s) failed
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
 
 One line above is build-independent but *package-independent in what it names*: the `instrument
-audit` verdict is 37 checks wherever the package is read from, while D2's historical reading also
+audit` verdict is 43 checks wherever the package is read from, while D2's historical reading also
 prints which coordinate cross-check it could perform -- `git agrees: blob 4bd60d01 ...` in a
 checkout, `not available here: no .git above this package ...` in an exported copy. The reading
 itself comes from the package's own record (`coordinate_evidence.json`), so no check gains or loses
@@ -153,39 +153,57 @@ other and carry the same failure modes:
   The census over the 16 source files (step D5) runs **two detectors per class** and prints both,
   with the instrument each one tests and what the class requires -- `REQUIRED EMPTY`, `CONFINED:<module>`,
   `DECLARED:<control>`, or `INFORMATIONAL`:
-  **C1 git object read** structural 1 / spelling net 3, confined to `coordinate_evidence_v1.py`
-  (the third is this audit's own comment about the shell-string form, which the row labels a
-  comment rather than a read);
+  **C1 git object read** structural 1 / spelling net 2, confined to `coordinate_evidence_v1.py`
+  (the net's second match is that module's own docstring, which quotes the read; the row labels it
+  a string rather than a read);
   **C2 above-package read** net 8 -- a path, not a call, so for this class the net *is* the instrument
   and the row says so; the read has a branch that declares itself when the journal's gate is not
-  there; **C3 environment** structural 1 / net 6, neutralised by dropping `PYTHONPATH`;
+  there; **C3 environment** structural 1 / net 5, neutralised by dropping `PYTHONPATH`;
   **C4 argv** structural 4 / net 5, options only; **C5 cwd / absolute path** structural 27 / net 29,
   every one anchored to the package's own directory (a `cwd=` keyword is itself a site of this class,
   so `subprocess.run(cmd, cwd=...)` is counted rather than missed); **C6 network** structural 4 /
-  net 6, confined to `verify_refs.py` and reachable only through its network-free selftest lane;
+  net 11, confined to `verify_refs.py` and reachable only through its network-free selftest lane;
   **C7 clock / entropy** structural 0 / net 2, REQUIRED EMPTY -- the simulation is seeded by
   construction, and the net's two matches are this census's own prose, not callees;
   **C8 interpreter** structural 0 / net 2 (its only site is a shell line, which the structural
   detector cannot parse -- stated rather than counted as clean), printed into the log and read by no
   measurement; **C9 dynamic surface** structural 0 / net 1, the boundary no static detector reaches
   (`getattr`, `eval`, `importlib`, code built from strings), reported as a row so a reader sees the
-  limit instead of inferring it.
+  limit instead of inferring it; **C10 unresolved command binary** structural 1 / net 24, the
+  *second* declared boundary: a command's binary is resolved from a literal
+  (`subprocess.run(["git", ...])`), from a module constant bound exactly once (`B = "git"`), or from
+  a dotted name (`sys.executable`), and a binary computed at run time is **reported here rather than
+  guessed** -- the row names its own site and its entry-point set, so a class can no longer be
+  decided silently by a rule that reads literals only.
+  Every address a row prints is checked against the **committed** file, not against the text the
+  census scans: the declaration span is excluded by masking a line RANGE, so a hit below the span
+  carries the number a reader will find in `instrument_audit.py` (**127 addresses over 16 files,
+  0 wrong**; before this revision the span *deletion* shifted every hit below it by the span's own
+  length, which is invisible in the output because the content printed after each number is right).
   The controls plant reads in **spellings the detector may or may not carry**, which is what makes
-  the zeros above statements about a surface rather than about an impossibility: **9 canaries** prove
+  the zeros above statements about a surface rather than about an impossibility: **10 canaries** prove
   every net fires, and for every class with a callable form the canary is required to be caught by
-  *both* detectors; **8 alias probes** plant reads whose spelling the net does not carry -- `import
+  *both* detectors; **11 alias probes** plant reads whose spelling the net does not carry -- `import
   time as t` then `t.time()`, `from datetime import datetime as dt` then `dt.now()`, `wget` as the
   binary, a client built through `http.client.HTTPSConnection`, `subprocess as sp`, a git read in the shell-STRING form
   (`subprocess.check_call("git show HEAD", shell=True)`, which the list-form rule would not see),
-  `vars(...)` --
-  and **4 of the 8 are invisible to the net**, so the control demonstrably leaves the surface the net
+  a git read whose binary is a module *constant* (the spelling the literal-only rule missed), a
+  command run through a COMMAND RUNNER no class's callable set carried (`os.system` / `os.popen` /
+  `pty.spawn` / `os.exec*`), and `vars(...)` --
+  and **5 of the 11 are invisible to the net**, so the control demonstrably leaves the surface the net
   covers and shows the structural detector catching what it misses; **two leak mutations** plant a
   git read in another module and in this file *outside* the census's own declaration span (the
   exclusion is a boundary, not an immunity); a **clock mutation** plants `import time as t;
-  t.time()`, the spelling the net would miss; and a **runtime-built callee**
-  (`getattr(http.client, 'HTTPSConnection')(host)`) is required to be reported by C9 and by no other
-  structural class. Every spelling-only match is printed with what it is -- comment, string/prose,
-  shell line, or a callee the callable set missed, which fails the audit.
+  t.time()`, the spelling the net would miss; a **computed-binary mutation** plants `B = "git"` then
+  `subprocess.run([B, ...])`, and a **command-runner control** runs three arms --
+  `os.system("curl -s http://x/y")` (C6 by its literal), `os.system(B + " -s " + u)` with
+  `B = "curl"` (C6 by its constant) and `os.system(get_cmd())` (C10, with no class claiming it) --
+  while a module that **assigns the same name twice** (`B = "git"` then `B = "hg"`) is required to
+  leave the site in C10 rather than resolve it, because a binding that can change is not a constant;
+  and a **runtime-built callee** (`getattr(http.client, 'HTTPSConnection')(host)`) is required to be
+  reported by C9 and by no other structural class. Every spelling-only match is printed with what
+  it is -- comment, string/prose, shell line, or a callee the callable set missed, which fails the
+  audit.
 
 ### The bibliography is verified, not asserted
 
