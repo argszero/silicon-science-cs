@@ -126,6 +126,154 @@ def render(key, rec):
     return line
 
 
+# ------------------------------------------------- coverage and ambiguity ----
+
+CITE_BODY = re.compile(r"\[(\d+(?:\s*[,u2013-]\s*\d+)*)\]")
+
+
+def repo_root():
+    """The directory the journal's own gate must be run from.
+
+    refgate.py is addressed as `.github/tools/refgate.py` from the repository root,
+    so the root is the first ancestor that carries it.  Returns None when the
+    package is being read outside the repository.
+    """
+    d = HERE
+    for _ in range(6):
+        d = os.path.dirname(d)
+        if os.path.exists(os.path.join(d, ".github", "tools", "refgate.py")):
+            return d
+    return None
+
+
+def bracket_groups(body):
+    """Every bracketed group in the body, split into citation markers and the rest.
+
+    The separator is an explicit escape sequence, never the literal text `u2013` inside a
+    character class.  The first version of this function wrote the class as `[,u2013-]`,
+    which is a class containing the characters `,`, `u`, `2`, `0`, `1`, `3`, `-` -- so the
+    digits 0-3 acted as separators: "1" split to an empty string and was dropped, while
+    "14" produced a phantom 4.  It reported 42 of 102 entries covered while the journal's
+    gate reported 102/102 in the same file.  A separator set containing digits is not a
+    separator set, and a mis-reporting counter is worse than no counter.
+    """
+    cites, other = set(), set()
+    EN, DASH, COMMA = "\u2013", "\u2014", ","
+    for m in re.finditer(r"\[([^\]\n]{0,60})\]", body):
+        inner = m.group(0)
+        body_in = inner[1:-1]
+        if re.fullmatch(r"\d+(?:\s*[\u2013\u2014,-]\s*\d+)*", body_in):
+            nums = [int(x) for x in re.findall(r"\d+", body_in)]
+            if len(nums) == 2 and re.search(r"[\u2013\u2014-]", body_in):
+                cites.update(range(nums[0], nums[1] + 1))      # a [12-14] range expands
+            else:
+                cites.update(nums)
+        else:
+            other.add(inner)
+    return cites, other
+def coverage_section():
+    """Duty (ii) of the checklist item that names this file: coverage and ambiguity.
+
+    Written by the same run that writes the authenticity table, because a section a later
+    `bash verify_refs.sh` would drop is not a section a reviewer can rely on.  The
+    journal's gate is run from the root it addresses and its output embedded verbatim;
+    this file's own counter is here to explain the bracket groups that are NOT citations,
+    and the two are compared in the file rather than assumed to agree.
+    """
+    ms = os.path.join(HERE, "manuscript.md")
+    out = ["\n## Coverage and ambiguity (checklist duty ii)\n\n"]
+    out.append("Written by `verify_refs.py` in the same run as the authenticity table above, so a\n")
+    out.append("regeneration cannot retire it. Duty (i) of the same checklist item is that table;\n")
+    out.append("this is duty (ii) -- coverage, and which bracketed groups are not citations.\n\n")
+
+    if not os.path.exists(ms):
+        out.append("**Not measured: `manuscript.md` is absent.** Run `python3 assemble.py` first;\n")
+        out.append("coverage is a property of the assembled manuscript, not of this list.\n")
+        return "".join(out)
+
+    root = repo_root()
+    tool_out, how = None, ""
+    if root:
+        rel = os.path.relpath(ms, root)
+        r = subprocess.run([sys.executable, ".github/tools/refgate.py", rel],
+                           cwd=root, capture_output=True, text=True)
+        tool_out = (r.stdout + r.stderr).rstrip("\n")
+        how = ("The journal's own gate, `python3 .github/tools/refgate.py %s`, run from the\n"
+               "repository root (`%s`) -- the relative tool path resolves there and nowhere else:\n\n"
+               "```\n%s\n```\n\n" % (rel, root, tool_out))
+    else:
+        how = ("The journal's gate was **not** found at `<root>/.github/tools/refgate.py` relative\n"
+               "to this package (it is being read outside the repository), so it was not run; the\n"
+               "numbers below are computed here by the same definition -- a `## References`\n"
+               "section, entry markers `[n]` or `n.`, and in-text `[n]` markers.\n\n")
+
+    text = io.open(ms, encoding="utf-8").read()
+    body, _, refsec = text.partition("\n## References")
+    entries = set()
+    for line in refsec.splitlines():
+        m = re.match(r"^\s*(?:\[(\d{1,3})\]|(\d{1,3})[.)])(?:\s|$)", line)
+        if m:
+            entries.add(int(m.group(1) or m.group(2)))
+    cites, other = bracket_groups(body)
+    covered = sorted(n for n in entries if n in cites)
+    uncited = sorted(n for n in entries if n not in cites)
+    unmatched = sorted(n for n in cites if n not in entries)
+    pct = 100.0 * len(covered) / max(1, len(entries))
+
+    out.append(how)
+    out.append("| measure | value |\n|---|---|\n")
+    out.append("| bibliography entries | %d |\n" % len(entries))
+    out.append("| in-text citation markers resolved | %d |\n" % len(cites))
+    out.append("| entries carrying an in-text key | %d of %d |\n" % (len(covered), len(entries)))
+    out.append("| coverage | %.1f%% |\n" % pct)
+    out.append("| uncited entries (padding: they do not count toward the bar) | %d |\n" % len(uncited))
+    out.append("| bracket numbers matching no entry | %d |\n" % len(unmatched))
+    out.append("| bracketed groups that are **not** citations (listed below) | %d |\n" % len(other))
+
+    out.append("\n**(a) Every entry carries an in-text key.** Measured: **%d of %d** (%s), so\n"
+               % (len(covered), len(entries), ("%.1f%%" % pct)))
+    if uncited:
+        out.append("**%d entries carry no in-text key** -- %s -- and a bibliography entry that is\n"
+                   "never cited is padding: it does not count toward the 100-reference bar, and the\n"
+                   "journal's gate fails on it.\n\n" % (len(uncited), uncited))
+    else:
+        out.append("**none is uncited**: every entry is cited in the body, so no entry is padding\n"
+                   "and each of the %d counts toward the 100-reference bar.\n\n" % len(entries))
+
+    out.append("**(b) Bracketed groups that are not citations.** The manuscript writes its 95%\n")
+    out.append("intervals, its figure embeds and one mathematical expression in square brackets,\n")
+    out.append("so the body carries %d bracket groups that are not citation markers. They are\n"
+               % len(other))
+    out.append("listed here so a reviewer who meets one can resolve it, and none of them is\n")
+    out.append("mistaken for a reference by either counter:\n\n")
+    for g in sorted(other):
+        out.append("* `%s`\n" % g)
+
+    if unmatched:
+        out.append("\n**%d bracket number(s) resolve to no entry**: %s -- either a citation to a\n"
+                   "missing entry or a numeric range in prose. Each is resolved above: the first is\n"
+                   "a range or an interval, not a citation, and the second is an entity to be\n"
+                   "checked by hand.\n" % (len(unmatched), unmatched))
+    else:
+        out.append("\nEvery other bracket number in the body resolves to a bibliography entry, so the\n")
+        out.append("unmatched set is empty.\n")
+
+    if tool_out:
+        def grab(pat):
+            m = re.search(pat, tool_out)
+            return int(m.group(1)) if m else None
+        t_entries, t_cov = grab(r"entries=(\d+)"), grab(r"covered=(\d+)/")
+        agree = (t_entries == len(entries) and t_cov == len(covered))
+        out.append("\n**Agreement between the two counters.** This section's counter reports %d\n"
+                   "entries and %d covered; the journal's gate above reports %s and %s -- %s.\n"
+                   "The counter exists to name the non-citation groups, so the two must agree; a\n"
+                   "divergence is a defect in one of them and is printed here rather than left to be\n"
+                   "noticed.\n"
+                   % (len(entries), len(covered), t_entries, t_cov,
+                      "**they agree**" if agree else
+                      "**THEY DISAGREE: the gate's numbers are authoritative and the counter is the "
+                      "defect**"))
+    return "".join(out)
 def main():
     rows, refs, problems = [], [], []
     with io.open(BATCH, encoding="utf-8") as fh:
@@ -160,13 +308,14 @@ def main():
             fh.write("[@%s] %s\n" % (key, line))
 
     with io.open(OUT_CHECK, "w", encoding="utf-8") as fh:
-        fh.write("# Reference authenticity check\n\n")
+        fh.write("# Reference check: authenticity, coverage and ambiguity\n\n")
         fh.write("Every citation key used in the manuscript is verified below against a real\n")
         fh.write("external record before submission; `verify_refs.sh` re-runs the checks and\n")
         fh.write("writes this file. A key with no verified record is a hard failure.\n\n")
         fh.write("| Key | Method | Result | Record found |\n|---|---|---|---|\n")
         for key, kind, result, detail in rows:
             fh.write("| `%s` | %s | %s | %s |\n" % (key, kind, result, detail))
+        fh.write(coverage_section())
 
     print("verify_refs: %d keys, %d verified, %d unverified" %
           (len(rows), len(refs), len(problems)))

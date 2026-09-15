@@ -148,7 +148,9 @@ def assemble(facts_path, refs_path=None):
     text, order = render_citations(text, refs)
 
     if "<!-- REFERENCES -->" in text:
-        lines = ["%d. %s" % (i + 1, refs[k]) for i, k in enumerate(order)]
+        # The entry marker is the form the body cites with, so the bibliography and the
+        # running text carry ONE numbering style (the journal's checklist names [1]-[n]).
+        lines = ["[%d] %s" % (i + 1, refs[k]) for i, k in enumerate(order)]
         block = "\n".join(lines) if lines else "_(no references cited)_"
         text = text.replace("<!-- REFERENCES -->", block)
     body_text = text.split("## References")[0]

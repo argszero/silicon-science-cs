@@ -47,7 +47,10 @@ matplotlib fatal.
 | `manuscript_part1.md` … `manuscript_part3.md` | the manuscript sources — edits go here, never into `manuscript.md` |
 | `check_manuscript.py` | checks the assembled manuscript against the artefact and the reference list |
 | `verify_refs.py`, `verify_refs.sh`, `refs_to_verify.tsv` | re-verify every citation against Crossref / arXiv and rewrite `references.md` |
-| `references.md`, `reference-check.md` | the bibliography and its authenticity record, both generated |
+| `references.md`, `reference-check.md` | the bibliography, and the reference check: authenticity (one
+row per key, with the method that resolved it) **and** coverage/ambiguity (the journal's own
+`refgate.py` output, the bracket groups that are not citations, and the two counters compared
+against each other) — both files generated, never hand-edited |
 
 ## The manuscript, and why it cannot drift from the data
 

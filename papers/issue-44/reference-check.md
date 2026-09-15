@@ -1,4 +1,4 @@
-# Reference authenticity check
+# Reference check: authenticity, coverage and ambiguity
 
 Every citation key used in the manuscript is verified below against a real
 external record before submission; `verify_refs.sh` re-runs the checks and
@@ -110,3 +110,64 @@ writes this file. A key with no verified record is a hard failure.
 | `outlierexposure` | arxiv | verified | Deep Anomaly Detection with Outlier Exposure -- arXiv:1812.04606 |
 | `selective` | arxiv | verified | Selective Classification for Deep Neural Networks -- arXiv:1705.08500 |
 | `mltesting` | arxiv | verified | Machine Learning Testing: Survey, Landscapes and Horizons -- arXiv:1906.10742 |
+
+## Coverage and ambiguity (checklist duty ii)
+
+Written by `verify_refs.py` in the same run as the authenticity table above, so a
+regeneration cannot retire it. Duty (i) of the same checklist item is that table;
+this is duty (ii) -- coverage, and which bracketed groups are not citations.
+
+The journal's own gate, `python3 .github/tools/refgate.py papers/issue-44/manuscript.md`, run from the
+repository root (`/Users/argszero/.emrg/journal-work/silicon-science-cs`) -- the relative tool path resolves there and nowhere else:
+
+```
+=== papers/issue-44/manuscript.md
+  entries=102  numbering=[n]
+  in-text cited numbers=102  covered=102/102  coverage=100.0%
+  GATE: PASS
+```
+
+| measure | value |
+|---|---|
+| bibliography entries | 102 |
+| in-text citation markers resolved | 102 |
+| entries carrying an in-text key | 102 of 102 |
+| coverage | 100.0% |
+| uncited entries (padding: they do not count toward the bar) | 0 |
+| bracket numbers matching no entry | 0 |
+| bracketed groups that are **not** citations (listed below) | 15 |
+
+**(a) Every entry carries an in-text key.** Measured: **102 of 102** (100.0%), so
+**none is uncited**: every entry is cited in the body, so no entry is padding
+and each of the 102 counts toward the 100-reference bar.
+
+**(b) Bracketed groups that are not citations.** The manuscript writes its 95%
+intervals, its figure embeds and one mathematical expression in square brackets,
+so the body carries 15 bracket groups that are not citation markers. They are
+listed here so a reviewer who meets one can resolve it, and none of them is
+mistaken for a reference by either counter:
+
+* `[-0.0050, 0.1014]`
+* `[-0.0138, 0.0253]`
+* `[-0.0142, 0.0718]`
+* `[-0.0379, 0.0489]`
+* `[0.0000, 0.0004]`
+* `[0.0003, 0.0014]`
+* `[0.0066, 0.0217]`
+* `[0.0217, 0.0777]`
+* `[Figure 1]`
+* `[Figure 2]`
+* `[Figure 3]`
+* `[Figure 4]`
+* `[Figure 5]`
+* `[Figure 6]`
+* `[Phi((delta - tau_c)/se)]`
+
+Every other bracket number in the body resolves to a bibliography entry, so the
+unmatched set is empty.
+
+**Agreement between the two counters.** This section's counter reports 102
+entries and 102 covered; the journal's gate above reports 102 and 102 -- **they agree**.
+The counter exists to name the non-citation groups, so the two must agree; a
+divergence is a defect in one of them and is printed here rather than left to be
+noticed.
