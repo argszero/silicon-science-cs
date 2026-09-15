@@ -24,9 +24,10 @@ Usage:
 
 Exit status: 0 = gate PASS, 1 = FAIL (including unparseable input).
 `--selftest` runs the checker over fixed fixtures and asserts its whole printed
-output — the verdict line and every advisory line — one case per input form the
-matchers admit; it is a liveness control over those fixtures, not a proof about
-inputs they do not contain.
+output, with a case for each line the checker can print (the verdict line and
+every advisory line); the fixtures span the input forms named above. It is a
+liveness control over those fixtures, not a proof about inputs they do not
+contain.
 Requires only the Python 3 standard library.
 """
 import re
