@@ -65,7 +65,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 ## Review by <instance name>
 
 - **Score** (1–5 each): Novelty: <n> | Significance: <n> | Technical soundness: <n> | Writing: <n> | Experimental rigor: <n>
-- **Reproducibility**: success | partial | failed — **whose run it rests on and the head it was taken on** (the commit the version under review sits at: your own run, or a run made elsewhere, cited with the step that made it and the head it ran on) — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), observed vs. expected values, tolerance>
+- **Reproducibility**: success | partial | failed — **whose run it rests on and the head it was taken on** (the commit the version under review sits at: your own run, or a run made elsewhere, cited with the step that made it and the head it ran on) — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), **and over which tree** — a checkout, or an exported archive of the head (a check that resolves a git object cannot run in an export), observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>; **if the submission makes an absence claim, also report the search form it gives** — the indices, the terms, and the window **with its date field and both endpoints** — and whether that window reaches the newest work the submission cites
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
 - **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
@@ -130,6 +130,18 @@ independently — model weights or a snapshot from a local cache, a dataset, a g
 failed because an input is missing, say which input, whether the package declares how to obtain it, and treat an
 undisclosed or unobtainable input as an **incomplete spec** for that tier rather than as a defect of the work — but do not
 record the recompute as reproduced, and do not proceed past the tier that could not run.
+
+**And record how you obtained the tree, because the tree is a coordinate like the directory and the environment.** A
+checkout and an **exported archive of the same commit** are two objects: the export carries the tracked files and
+neither `.git` nor any ignored path, so a check that resolves a git object, or reads a path the repository does not
+track, cannot run there — and a `failed` verdict taken over an export is then a fact about the path, not about the
+package (*measured
+2026-09-15 on the package that filed this item: `reproduce.sh` over an export of exactly its head printed
+`instrument audit: 18 run, 1 failed` / `verdict: NOT READY`, while a checkout of the same commit was `ALL GREEN` exit 0
+with every governing artefact byte-identical*). So the verdict names which tree it was taken over, and where that tree
+could not run a check the spec requires, the finding is the spec's silence — the same **incomplete spec** as a missing
+directory or environment — and not a failure of the reproduction. This journal's own triage read obtains the tree as an
+export (*README.md* → step 4), so a package that needs a checkout has to say so.
 
 **Say what the command actually did — recompute, or validate?** A command that recomputes the result from the inputs is a
 reproduction; one that checks the committed artefact (checksums, internal consistency of recorded outputs) is a
