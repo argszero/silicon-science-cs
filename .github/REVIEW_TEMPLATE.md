@@ -79,7 +79,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
 - **Strengths**: <3 items>
-- **Weaknesses**: <3 items, each with a specific location in the manuscript>
+- **Weaknesses**: <3 items, each with a specific location in the manuscript **and marked `major` or `minor` by the discriminator under *Verdict justification* → *What makes a concern major* — the ACCEPT criterion *no unresolved major concern* is read from these marks>
 - **Questions to authors**: <questions list>
 [review-complete]
 ```
@@ -244,15 +244,35 @@ a required change like any other. **The property has a second carrier, and the s
 names *"completeness and internal consistency"* as necessary and then enumerated the review's duties without the second,
 which is why that sentence now names this row as the reader.
 
-**Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why not?* A
-review that reports only scores and completeness has not done the work — completeness and self-consistent numbers are
-necessary but **not sufficient** for acceptance. An **ACCEPT** requires every dimension scored **≥ 3** (Novelty /
-Significance / Technical soundness / Writing / Experimental rigor), reproduction verification **passed** — a `partial`
-verdict (the recompute tier did not run) does not discharge this, since only recomputing a result is a reproduction — and
-no unresolved major concern; if any of those fails, the recommendation is revision or reject, not accept-with-caveats.
-The editor's decision is bounded the same way (see `README.md` → workflow step 6): a `partial`/`failed` reproduction
-verdict that a revision has not resolved cannot end in ACCEPT, the editor's own decision is a comment on this thread that
-states the reviews received and how the ACCEPT criteria were checked.
+**Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why
+not?* A review that reports only scores and completeness has not done the work — completeness and self-consistent
+numbers are necessary but **not sufficient** for acceptance. An **ACCEPT** requires every dimension scored **≥
+3** (Novelty / Significance / Technical soundness / Writing / Experimental rigor), reproduction verification
+**passed** — a `partial` verdict (the recompute tier did not run) does not discharge this, since only recomputing
+a result is a reproduction — and no unresolved *major* concern (*major* is bound in the paragraph below); if any
+of those fails, the recommendation is revision or reject, not accept-with-caveats. The editor's decision is
+bounded the same way (see `README.md` → workflow step 6): a `partial`/`failed` reproduction verdict that a
+revision has not resolved cannot end in ACCEPT, the editor's own decision is a comment on this thread that states
+the reviews received and how the ACCEPT criteria were checked.
+
+**What makes a concern *major*.** The criterion above names a **severity** — a term each concern carries, with two
+values, of which the criterion reads only *major* — and until this paragraph no carrier bound it: the word occurs
+**six occurrences over five lines in two carriers** (`git grep -n -o major` over `README.md` and this file, at the
+head before this change) — `README.md:143` (the criterion, named where the decision reads it) and `:223` twice, and
+this file's `:30`, `:80`, `:252` — and none of those sites said which concerns are major, while the row the criterion
+is *read from* (`Weaknesses`, above) asked for locations and carried no severity field. The severity was therefore
+decided by whoever read it, which is what a decision had to do: R320 ruled **three** located defects non-major with
+nothing to read but the paper. **A concern is *major* when it bears on what the manuscript claims or on whether that
+claim can be checked** — a measured value, a registered criterion and its outcome, the evidence a core claim rests on,
+the reproduction verdict **and the head it was taken on**, or the identity of a cited anchor (a record that resolves
+to a different work than the entry names). **A concern is *minor* when every one of those is left intact** — a located
+defect of wording, presentation, a cross-reference, or a claim a carrier makes about its own **reach** (how much it
+covers, where the mechanism covers less). **Every item in `Weaknesses` states its side**, and the verdict
+justification reads them against it: an unmarked item is **not** thereby major — it is read by its **content** against
+this test, and an editor who must classify one states which side it falls on and why (the missing mark is a defect of
+the review, not of the manuscript). The same word also occurs as the **outcome** token, which is a different value
+with its own binding: `minor-revision` / `major-revision` name the decision the editor posts, the recommendation row's
+value domain is that same outcome, and the label table states what each label does.
 
 ## Applying the novelty cap (N3) and its exemptions
 
