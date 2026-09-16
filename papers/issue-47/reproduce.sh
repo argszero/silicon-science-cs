@@ -12,7 +12,11 @@
 #   3. the external cell's own check-liveness -- 13 mutations of the cell script, one per named check,
 #      each of which must make exactly that check fail;
 #   4. the design-freeze document against the artefacts -- 46 checks, including the digest table;
-#   5. the sha256 of every artefact this package ships, printed as a block to copy.
+#   5. the manuscript assembly -- every measurement in the prose is a placeholder resolved out of the
+#      artefacts (a placeholder that cannot be resolved, or a citation key with no reference entry,
+#      fails the step), including the design table, which is rendered from the instrument artefact
+#      rather than typed;
+#   6. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u
@@ -48,11 +52,17 @@ printf '\n== 4. the design freeze against the artefacts ==\n'
 rc4=$?
 verdict "design freeze" "$rc4"
 
-printf '\n== 5. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 5. the manuscript assembles: placeholders, tables and citation keys ==\n'
+"$PY" assemble.py
+rc5=$?
+verdict "manuscript assembly" "$rc5"
+
+printf '\n== 6. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
-external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_runner.py"
+external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_runner.py \
+assemble.py manuscript_part1.md manuscript_part2.md manuscript.md"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

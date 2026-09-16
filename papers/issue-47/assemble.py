@@ -23,7 +23,13 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 PARTS = ["manuscript_part1.md", "manuscript_part2.md", "manuscript_part3.md"]
 PLACEHOLDER = re.compile(r"\{\{([A-Za-z]+):([^}|]+?)(?:\|([^}]*))?\}\}")
+TABLE = re.compile(r"\{\{T:([A-Za-z0-9_]+)\}\}")
 CITE = re.compile(r"\[@([A-Za-z0-9_.:-]+)\]")
+
+# Tables rendered from an artefact rather than typed: the design grid is a run artefact like any
+# other number, and a typed copy can drift from the run that produced it.
+TABLES = ("profiles",)
+PROFILE_COLS = ("bias", "spread", "autocorrelation", "tail probability", "tail multiplier")
 
 
 def load(path):
@@ -45,6 +51,7 @@ def namespaces():
             "n_jobs": v0["n_jobs"],
             "trace_len": v0["trace_len"],
         },
+        "_v0": v0,
     }
 
 
@@ -124,6 +131,27 @@ def assemble(facts_ns=None, refs_path=None, parts=None):
         n[0] += 1
         return fmt(resolve(roots[ns], path), spec)
 
+    n_tables = [0]
+
+    def trepl(m):
+        name = m.group(1)
+        if name not in TABLES:
+            raise KeyError("unknown table %r" % name)
+        if name == "profiles":
+            profs = roots["_v0"]["profiles"]
+            if len(profs) != roots["D"]["n_profiles"]:
+                raise AssertionError("table 'profiles' has %d rows, design says %d"
+                                     % (len(profs), roots["D"]["n_profiles"]))
+            out = ["| profile | " + " | ".join(PROFILE_COLS) + " |",
+                   "|---" * (len(PROFILE_COLS) + 1) + "|"]
+            for k in sorted(profs):
+                b, s, a, tp, tm = profs[k]
+                out.append("| `%s` | %.2f | %.2f | %.2f | %.2f | %.1f |" % (k, b, s, a, tp, tm))
+            n_tables[0] += 1
+            return "\n".join(out)
+        raise KeyError("unhandled table %r" % name)
+
+    text = TABLE.sub(trepl, text)
     text = PLACEHOLDER.sub(repl, text)
 
     order = []
@@ -140,7 +168,7 @@ def assemble(facts_ns=None, refs_path=None, parts=None):
     if "<!-- REFERENCES -->" in text:
         lines = ["[%d] %s" % (i + 1, refs[k]) for i, k in enumerate(order)]
         text = text.replace("<!-- REFERENCES -->", "\n".join(lines) if lines else "_(none cited)_")
-    return text, order, n[0]
+    return text, order, n[0], n_tables[0]
 
 
 def main():
@@ -150,14 +178,15 @@ def main():
     ap.add_argument("--check-only", action="store_true",
                     help="resolve and cite-check without writing manuscript.md")
     args = ap.parse_args()
-    text, order, n = assemble()
+    text, order, n, nt = assemble()
     if args.stdout:
         sys.stdout.write(text)
         return 0
     if not args.check_only:
         io.open(args.out, "w", encoding="utf-8").write(text)
-    print("assemble: %d placeholder(s) resolved, %d reference(s) cited, %d line(s)"
-          % (n, len(order), text.count("\n") + 1))
+    print("assemble: %d placeholder(s) resolved, %d table(s) rendered, "
+          "%d reference(s) cited, %d line(s)"
+          % (n, nt, len(order), text.count("\n") + 1))
     return 0
 
 
