@@ -23,9 +23,11 @@ printed with the reading. The region is the **LAST accepted heading to the end o
 the file** — an appendix (or any numbered list) placed after the bibliography is
 read as entries, and its markers can raise the duplicate-number warning. The
 accepted forms are an **ATX heading** (`#`..`######`, optional section number,
-case-insensitive) for the section, and an **entry marker** `[12]`, `12.` or
-`12)` at the start of a line (1-3 digits — a 4-digit run at line start is a
-YEAR on a wrapped URL or title line) for the entries.
+case-insensitive, trailing whitespace tolerated) for the section, an **entry
+marker** `[12]`, `12.` or `12)` at the start of a line, optionally indented
+(1-3 digits — a 4-digit run at line start is a YEAR on a wrapped URL or title
+line) for the entries, and an **in-text key** `[12]`, `[12,14]` or `[12-14]`
+(hyphen or en dash) for the body citations.
 
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
@@ -33,9 +35,11 @@ Usage:
 
 Exit status: 0 = gate PASS, 1 = FAIL (including unparseable input).
 `--selftest` runs the checker over fixed fixtures and asserts its whole printed
-output, with a case for each line the checker can print (the verdict line and
-every advisory line); the fixtures span the input forms named above. It is a
-liveness control over those fixtures, not a proof about inputs they do not
+output, with a case for **each form this window admits and each it drops** — the
+printed-line set (the verdict line and every advisory line) is that set's floor,
+not its extent, because a case set drawn from the lines exercises exactly the
+fixtures it contains and leaves every other branch of the window untested. It is
+a liveness control over those fixtures, not a proof about inputs they do not
 contain.
 Requires only the Python 3 standard library.
 """
@@ -314,6 +318,44 @@ def selftest():
          + " over a latency span [900,901]\n\n" + _refs(1, 100),
          ["AMBIGUOUS: bracket numbers matching no entry (2)", "GATE: PASS"],
          ("WARN", "NOTE", "uncited entries"))
+
+    # --- one case per WINDOW FORM, not per printed line --------------------
+    # A control owes the window's boundary: a case set drawn from the lines the
+    # checker can print exercises exactly the fixtures it holds, so a branch of
+    # the window no case reaches can be deleted with this run still green. Each
+    # case below pins one form the window states, so removing that form from a
+    # matcher must fail the control — measured: seven such mutations (six window
+    # forms and one printed listing's cap) escaped the earlier 19-case set.
+    case("heading_case_insensitive",
+         _make(100, 100).replace("## References", "## references"),
+         ["GATE: PASS", "entries=100"], CLEAN)
+    case("heading_at_any_level",
+         _make(100, 100).replace("## References", "#### References"),
+         ["GATE: PASS", "entries=100"], CLEAN)
+    case("heading_trailing_space",
+         _make(100, 100).replace("## References", "## References  "),
+         ["GATE: PASS", "entries=100"], CLEAN)
+    case("paren_entry_marker",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"{i}) A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 101)),
+         ["GATE: PASS", "entries=100", "numbering=.",
+          "WARN: bib uses '1.' but body uses '[n]'"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    case("indented_entry_marker",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"  [{i}] A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 101)),
+         ["GATE: PASS", "entries=100"], CLEAN)
+    case("en_dash_range_marker",
+         "## Introduction\n\nsee [1\u201397] and [98, 99, 100]\n\n" + _refs(1, 100),
+         ["GATE: PASS", "covered=100/100"], CLEAN)
+    # the uncited listing is capped at twelve: a case for that printed form
+    case("uncited_list_capped",
+         _make(120, 100),
+         ["uncited entries (20): [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112] ...",
+          "NOTE: high entry count with low coverage"],
+         ("WARN", "AMBIGUOUS"), expect_pass=False)
 
     # --- input forms: text that must NOT be read as an entry or a citation --
     # a fenced code sample is quoted text, not a citation

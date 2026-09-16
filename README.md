@@ -31,7 +31,29 @@ Every submission must include:
 10. **Novelty cap on pipeline reuse**: reusing the journal's established pipeline while swapping only the domain is capped at Novelty 3. The 4–5 band requires a new instrument/construct, a result contradicting a registered prior, or a decision-relevance argument tied to a named stakeholder. Exemption (b) requires the **prior beliefs to be stated in the registration**, before the deciding runs, with the direction of the prediction and its justification, so a contradiction can be verified as a genuine refutation rather than a post-hoc claim. Predictions that fail are reported **as results** — but the registered success criteria stay on the record: report them as **unmet with the reason**, or the exemption is void. Reframing a registration's claims or metrics after the results are known forfeits the credit.
 11. **Citation integrity**: **≥ 100 references**, every one of them actually cited in the body text (bibliography entries never cited in the text are padding and do not count toward the total), each with a resolvable link (arXiv/DOI) **that resolves to the work the entry names — resolution is not identity, and a record that merely bears the title is a different work** (see *Presentation requirements* → *Anchor accuracy*) and a one-line stated difference; plus `papers/issue-<N>/reference-check.md`, the author's authenticity report stating how each entry was verified **and that the record the verification returned is that work**. **The bibliography must use one consistent, body-cited numbering key** (see *Citation mechanics* below) — a collection of unrelated entries is not a bibliography. Reviews independently spot-check citations against Crossref/arXiv, including at least one DOI-less or otherwise suspicious entry. **A fabricated or unverifiable citation is academic misconduct and alone justifies rejection** — it is never treated as a formatting issue.
 
-    **Citation mechanics.** *Counting.* Count the entries of a single formal `## References` section — two or three such sections do not sum to 100. *Coverage.* Every entry must be cited in the body; a single entry may support **more than one** claim, so coverage is a **presence** test (does this entry appear in the body?), not a per-claim occurrence count. *Citation key.* Every entry carries an explicit in-text key matching the bibliography (`[12]`, `[12,14]`, `[12–14]`). Citing a work by name, title or bare arXiv ID **without** its bibliography key does not discharge coverage — a reviewer cannot tell whether an entry was left in by accident. (This is why the journal names the key: the alternative is an unenforceable "all entries are cited somewhere" declaration.) **And the key names a work, not a position**: an entry whose record resolves to a different work than the one its key names has a key indexing the wrong thing — the read that catches it is *Anchor accuracy* below. *Ambiguity.* Bracket numbers that match no entry are ambiguous — they may be numeric ranges in prose (e.g. a latency span `[25,30]` ms), not citations. Say which reading applies in `reference-check.md`; reviewers treat an unexplained unmatched bracket as a defect only where it is load-bearing. *Running the count.* [`.github/tools/refgate.py`](.github/tools/refgate.py) performs this count and coverage check over a manuscript — the numbering styles, numbered headings, wrapped entries and the one-section rule are all handled, **and its window is stated with its output** — the section it counts is the *last* accepted heading to the **end of the file**, so a numbered appendix placed after the bibliography is read as entries; its heading must be an ATX one (`#`…`######`, optional section number, case-insensitive) and its entries a line-start marker `[12]`, `12.` or `12)`, and `--selftest` runs the checker over fixed fixtures and asserts its **whole printed output**, with a case for each line the checker can print (the verdict line and every advisory line); it is a liveness control over those fixtures, not a proof about inputs they do not contain. Run it before submission; it is what makes item 11 checkable by a person who does not share your machine — **and read its whole output: the verdict line covers the count and the coverage only** (see the reference gate below).
+    **Citation mechanics.** *Counting.* Count the entries of a single formal `## References` section — two or three
+    such sections do not sum to 100. *Coverage.* Every entry must be cited in the body; a single entry may support
+    **more than one** claim, so coverage is a **presence** test (does this entry appear in the body?), not a per-claim
+    occurrence count. *Citation key.* Every entry carries an explicit in-text key matching the bibliography (`[12]`,
+    `[12,14]`, `[12–14]`). Citing a work by name, title or bare arXiv ID **without** its bibliography key does not
+    discharge coverage — a reviewer cannot tell whether an entry was left in by accident. (This is why the journal
+    names the key: the alternative is an unenforceable "all entries are cited somewhere" declaration.) **And the key
+    names a work, not a position**: an entry whose record resolves to a different work than the one its key names has
+    a key indexing the wrong thing — the read that catches it is *Anchor accuracy* below. *Ambiguity.* Bracket numbers
+    that match no entry are ambiguous — they may be numeric ranges in prose (e.g. a latency span `[25,30]` ms), not
+    citations. Say which reading applies in `reference-check.md`; reviewers treat an unexplained unmatched bracket as
+    a defect only where it is load-bearing. *Running the count.*
+    [`.github/tools/refgate.py`](.github/tools/refgate.py) performs this count and coverage check over a manuscript —
+    the numbering styles, numbered headings, wrapped entries and the one-section rule are all handled, **and its
+    window is stated with its output** — the section it counts is the *last* accepted heading to the **end of the
+    file**, so a numbered appendix placed after the bibliography is read as entries; its heading must be an ATX one
+    (`#`…`######`, optional section number, case-insensitive) and its entries a line-start marker `[12]`, `12.` or
+    `12)`, and `--selftest` runs the checker over fixed fixtures and asserts its **whole printed output**, with a case
+    for **each form the window admits and each it drops** (*A control owes the window's boundary*, below) — the
+    printed-line set (the verdict line and every advisory line) is that set's **floor, not its extent**; it is a
+    liveness control over those fixtures, not a proof about inputs they do not contain. Run it before submission; it
+    is what makes item 11 checkable by a person who does not share your machine — **and read its whole output: the
+    verdict line covers the count and the coverage only** (see the reference gate below).
 
 ### Presentation requirements (completeness — missing = returned at triage)
 
@@ -294,10 +316,11 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
 - Reference gate: [`.github/tools/refgate.py`](.github/tools/refgate.py) — counts the bibliography and checks in-text
   coverage (quality-bar item 11); run it **from the repository root**
   (`python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`), `--selftest` runs the checker over fixed
-  fixtures and asserts its **whole printed output**, with a case for each line the checker can print (the verdict line
-  and every advisory line); it is a liveness control over those fixtures, not a proof about inputs they do not
-  contain. **Read the whole output, not the verdict line: `GATE: PASS` means exactly *`entries ≥ 100` and no uncited
-  entries*, and the same run may also print `WARN` lines — a bibliography/body numbering-style mismatch, and
+  fixtures and asserts its **whole printed output**, with a case for **each form the window admits and each it
+  drops** (*A control owes the window's boundary*, below) — the printed-line set (the verdict line and every advisory
+  line) is that set's floor, not its extent; it is a liveness control over those fixtures, not a proof about inputs
+  they do not contain. **Read the whole output, not the verdict line: `GATE: PASS` means exactly *`entries ≥ 100` and
+  no uncited entries*, and the same run may also print `WARN` lines — a bibliography/body numbering-style mismatch, and
   **duplicate entry numbers** — a `NOTE`, and `AMBIGUOUS` bracket numbers, none of which moves the verdict.** A
   `WARN: duplicate entry numbers` line means two entries carry one key, which *Citation mechanics* → *Citation key*
   forbids and which a passing verdict does not cover (measured 2026-09-15, and re-takeable as the `--selftest` case
@@ -430,6 +453,20 @@ acquisition paths, two verdicts**. So a reading names how it obtained the tree, 
 form it needs; **the reader this workflow binds obtains it by export** — a PR is read as an archive of its head, never
 as a working tree — so a spec that silently requires a checkout is **incomplete in the same way** as one that needs an
 unstated directory or environment.
+
+**A control owes the window's boundary.** A control over a checker — a self-test, a liveness fixture, a canary — is a
+claim about what the checker catches, and its cases are drawn from a set smaller than the forms the window admits and
+drops: the **lines the checker can print**, or the **spellings a detector matches**. A case set drawn from either
+exercises exactly the fixtures it contains, so a branch no case reaches can be deleted, or a form a carrier documents
+can stop matching, with the control still green — the control then certifies the checker it does not test. So the
+cases are drawn from the **forms**: one for each form the window admits and each it drops, and the printed-line set is
+that set's **floor, not its extent**. *Measured 2026-09-16 on this repository's own gate, and re-takeable from the
+tree*: of ten mutations of `.github/tools/refgate.py`'s window and matchers — dropping the heading's
+case-insensitivity, its level range, its trailing-space tolerance, the `12)` entry marker, the whitespace before a
+marker, the en-dash in-text range, or a listing's cap — **seven left `--selftest` green**, while the three that failed
+it (the entry-marker digit cap, the coverage ratio, the duplicate-number listing's cap) are the probe's liveness; over
+the four published manuscripts no escaping mutation moved a printed output, so what was wrong was the claim and not a
+number. Each of the seven is a case now, and all ten mutations fail the control.
 
 **A claim of an act is a receipt — it is read at the destination it names.** A sentence asserting that something was
 *done elsewhere* — a revision pushed, a report verified, a carrier written, a field set — makes a claim about
