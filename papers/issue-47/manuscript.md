@@ -661,3 +661,418 @@ cluster units (§3.4), so the robustness question is not whether the numbers mov
   until it exists this paper does not claim a sensitivity margin it has not measured. The three
   results that stand on a contrast rather than on an identity are the ones it will have to cover.
 
+
+## 5. The limits, each with the measurement that establishes it
+
+A limit is stated here as a measurement rather than an apology. Each was found by running the
+instrument, and each was declared before this manuscript was written.
+
+**L1 — the paging attachment is model-dependent.** Two attachments are possible, and they are not the
+same experiment (Section 3.3). The step-common attachment is blind to positive errors and reproduces
+the zero-error cost exactly, while the per-page attachment differs on the same information. Both
+relations are measured, and the third is the trap: a positive *bias* is not a non-negative
+*multiplier*. **Consequence:** every statement this paper makes about positive-bias predictions in
+paging is a statement about the per-page attachment. **Why it does not sink the paper:** the
+attachment is declared, the alternative is measured against it, and the paging result is reported as
+unresolved anyway — so no claim in this paper rests on the attachment being canonical.
+
+**L2 — the null of the object-level design is shifted, so negative verdicts are uninterpretable.**
+Under a synthetic even target with no sign dependence, the odd parameter is penalised by
+`-12.95` / `-13.12` /
+`-1.53` cluster MDEs (ski / sched / paging). A design that
+punishes its own odd term under a sign-free target cannot read a negative as evidence. **Consequence:
+only the positive resolutions are reported as evidence, and the unmatched-form reading is retired.
+Why it does not sink the paper:** the surviving verdicts are the conservative ones — a positive result
+obtained against a null that is shifted *against* it is a lower bound on the effect, and the paper
+says so in the result itself rather than in a footnote.
+
+**L3 — unit reach is uneven, and the external cell says where.** Against the published robustness
+scale (a 0.8–8.8% worst-trace degradation), the harness reaches that scale in ski rental
+(`12` of
+`13` profiles at or above 0.8%,
+`11` at or above 8.8%) and in **neither** paging
+nor scheduling (`0` and
+`0` of 13; the harness's worst unit is better
+than the non-learned baseline at every profile there, minima
+`-0.4060` and
+`-0.3080`). **Consequence:** the cell
+supports a claim about ordering in all three problems and about magnitude in one. **Why it does not
+sink the paper:** the reach row is reported as a measurement rather than gated, so a reader knows
+exactly which of the two claims each problem carries; and the asymmetry itself is informative — it
+locates the interface between an error generator and predictor-like errors.
+
+**L4 — concordance is rank agreement, not a magnitude match.** No unit conversion between the
+harness's ratios and the published cache's miss ratios is attempted or claimed. **Consequence:** the
+external cell is a sign-level anchor. **Why it does not sink the paper:** the claim made from it is
+the one the measurement supports — the *ordering* — and the derived comparison figure (`1.26/1.08-1`)
+is written into the artefact as a derivation rather than presented as a transcription.
+
+**L5 — the generalising unit is the profile, not the repeated measurement.** Measured: an MDE computed
+over paired units that share the error generator, implementation and fit was optimistic by 3.7–6.3×.
+**Consequence:** every resolution verdict quotes the cluster unit `(profile, replicate)`, and the
+tightest resolution quoted anywhere in this paper is `0.0187`.
+**Why it does not sink the paper:** the correction moves the verdicts in the conservative direction
+and is itself one of the paper's method contributions (Section 1.3, C5) — the instrument was corrected
+by its own controls.
+
+**L6 — a synthetic harness with one real anchor.** All losses come from this paper's generators; the
+external cell anchors ordering against a published system and is not a reproduction of it.
+**Consequence:** the paper's claims are about the relationship between prediction-error structure and
+realized loss *in this harness*, with the published anchor carrying the sign of that relationship into
+the literature. **Why it does not sink the paper:** the counterfactual is exact by construction — the
+offline optimum is computable for every instance — which is precisely what a measured-live-system
+study cannot have; the harness buys ground truth at the price of realism, and the price is stated.
+
+**One further item, owed rather than measured.** The registration's fourth success criterion names a
+flip-count bound per headline number, and no stage of this package computes it (Section 4.6). It is
+listed here as owed: this paper does not claim a sensitivity margin it has not measured.
+
+## 6. Methodology, and how to reproduce it
+
+### 6.1 The methodological stance, and what this paper takes from the evaluation literature
+
+The instrument is built on four methodological commitments, each borrowed from a literature that
+already argues for it, and each applied here to a simulation rather than to a deployed system.
+
+* **A simulation is designed, not repeated arbitrarily.** The profile grid is declared before any run
+  and used unchanged by every result, so a cell's meaning is fixed by construction [148]
+  — versus growing the number of replicates until a verdict appears — and where replication is carried
+  out at scale it needs a framework of its own rather than more repetitions [149].
+* **A resolution is quoted, not assumed.** Every verdict is stated in cluster-unit minimum detectable
+  effects [141] [142] [143], so "the design can see this" is a number rather
+  than a hope.
+* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised:
+  one command, byte-identical output, and a published digest block [144]
+  [145] [146]; and what an independent re-run can and cannot establish is
+  part of the claim [150] [147].
+* **A replication's result is not self-authenticating.** The literature on replications is a warning
+  that a repeated measurement can misread its own remit [151] [152]
+  [153] [154], and the same field argues that reproducibility and
+  benchmarking practice need explicit machinery rather than good intentions [155]
+  [156], which is why every stage of this package recomputes its numbers from the primitives
+  and a liveness control requires each recomputation to be able to fail (below).
+
+**Specific difference.** That literature studies replications of *published* systems and analyses,
+usually in software engineering; this paper applies the same disciplines to a measurement instrument
+it builds itself, on a theory problem, and it publishes the two things that literature asks for and
+rarely gets — a resolution unit and a liveness control — as committed machinery rather than as
+guidance.
+
+### 6.2 The package: one command, and what it recomputes
+
+`bash reproduce.sh` runs the whole package on one CPU core with the Python standard library and **no
+network**, and exits non-zero unless every step passes. It has seven steps: (1) `8`
+stages plus the canonical aggregate, which **recomputes** every cited number from the stage artefacts'
+primitives and cross-checks it against the value each stage recorded about itself
+(`77` facts, 0 disagreements when this was written); (2) the aggregate's liveness control,
+which corrupts each recomputation in a throwaway copy and requires it to notice; (3) the external
+cell's own check-liveness, 13 mutations, one per named check, each of which must make exactly that
+check fail; (4) the design-freeze document checked against the artefacts, 46 checks including the
+digest table; (5) the manuscript assembly, which resolves every measurement placeholder out of the
+artefacts and fails on an unresolvable one or a citation key with no reference entry; (6) the
+**support limb** of citation integrity (Section 6.3); and (7) the digest block.
+
+Two further properties are reported rather than assumed. The **coordinate census** scans the package
+for hidden inputs the authoring machine supplies silently: it reports
+`0` violations over the classes it declares, with 8 of 8 detectors
+firing on a planted instance — and it reports the classes where the package *does* read the outside
+world (its own directory, the manuscript parts one level above the package, and the interpreter),
+because a census that printed only its zeroes would be a census of one direction. The **run
+environment** is recorded with the run: the package is deterministic (no clock, no entropy, no
+socket), and two full runs to byte-identical logs are the check.
+
+### 6.3 The two relations of a citation, and the one this paper had to build
+
+A citation owes two relations, and they are read in different places. **Identity** — the record is the
+work the entry names — is read in the list, by comparing the returned year, venue and authors against
+the entry's own line; every entry's record was resolved against Crossref or arXiv and the report is
+`reference-check.md`. **Support** — that work is the work the claim at the key needs — is read in the
+text, and no step of this pipeline read it until this paper built one.
+
+The support limb is read per **occurrence**, not per key: the `77`-fact aggregate is not a
+citation, and the manuscript's 39 blocks are not references either,
+but of the cited keys 51 appear in more than one sentence, and a per-key read would hide the
+occurrence that fails. Each occurrence is recorded against the sentence it sits in, with the role the
+key plays there (a bound source, a survey, an instance of the enumerated class, the published anchor,
+…), and the check fails on a missing read, on an edit that leaves a recorded sentence no longer in the
+text, and on an occurrence marked unsupported. The read found four occurrences in this manuscript's
+own draft where the work could not carry its sentence — a source for the exactness of an offline
+optimum that was three competitive analyses; a structural-equation sample-size app cited for
+cluster-level resolution; five asymmetric-loss papers cited for a claim about guarantees; and a
+theory bound listed among systems measurements. All four were corrected, and all four are kept on the
+record in `support-read.md`: a corrected finding that leaves no trace is indistinguishable from one
+that was never made.
+
+**Specific difference.** The citation-integrity literature and the journal's own bar both read the
+list; the relation that a *sentence* depends on is usually left to the author's judgement with no
+record of what was judged. This paper makes the second relation a mechanism: the quote is what binds
+a verdict to a sentence, so an edit anywhere in the text either moves nothing (if it is not a cited
+sentence) or is reported as the pair it is.
+
+### 6.4 Threats to validity, and why this is still worth publishing
+
+Four things could make the paper wrong, and each is bounded rather than waved away.
+
+1. **The harness is synthetic (L6).** Its realism is anchored at one point — the sign of a published
+   system's ordering — and the anchor's own reach is measured and reported as uneven (L3). The
+   counterfactual is exact by construction, which no live measurement of this quantity has. A reader
+   who wants live numbers gets none here; a reader who wants the *structure* of the loss gets a
+   ground-truth instrument, and the two are complements rather than substitutes.
+2. **The object-level design is weak by construction (L2, L5).** Its null is shifted against the
+   hypothesis, and the resolution unit was corrected upward by 3.7–6.3×. Both move the paper's
+   verdicts in the conservative direction: the reported resolutions are what survived a design that
+   is biased *against* reporting them. That is also why the headline does not rest on the object-level
+   test — it rests on a constructive identity (Section 4.1), which no test resolution can overturn.
+3. **The scope is three problems and one profile family.** The profile grid moves mean, spread and
+   tail independently, but the real predictor-error structures of deployed systems are not enumerated
+   here. The claims are stated per problem throughout and never pooled, so a reader can see which of
+   them rests on one problem's cell and which on three.
+4. **One anchor, one derived comparison figure (L4).** The external cell reproduces the *ordering* of
+   one published pair. The concordance could be a property of the harness rather than of caching; the
+   paper's response is to make the reach row a measurement and to report the rank agreement without a
+   magnitude claim.
+
+Against these: the paper's first claim is not a statistical result but an identity — two arms with the
+same multiset of `|error|` whose realized losses differ by up to
+`-0.568` competitive-ratio units — and its fourth claim prices the
+field's standard calibration rule in the currency a deployer uses, with a between-stream interval and
+an out-of-sample check on the parameter it accuses. Both survive the limits above, and neither was
+available before this instrument.
+
+## 7. The registered priors, and what happened to each
+
+The registration stated three prior beliefs, with directions and justifications, before any deciding
+run. Each is reported here with its outcome, and the criteria the registration fixed are reported in
+Section 4.5.
+
+**P1 — the realized loss is signed-asymmetric, so `|error|` is not a sufficient statistic.
+Outcome: confirmed, and more strongly than predicted.** The registration's falsification condition was
+that the scalar regression match the decomposition on held-out cells. It does not: the constructive
+witness (§4.1) is an identity, not a comparison — identical scalar features by construction, losses
+that differ by up to `-0.568` competitive-ratio units against a
+cluster MDE of `0.0187`. The registered *predictive* clause — that
+the decomposition explains held-out loss better — resolved in one of three problems at the clean
+object-level design (§4.2), which is weaker than the witness and is reported as such.
+
+**P2 — the worst-case calibration costs a measurable factor, and the loss tracks the spread's tail
+rather than its mean. Outcome: the first half confirmed, the second half only partially.**
+The factor is measured: a median of `1.701` /
+`1.285` /
+`1.493` (ski / sched / paging), with the worst
+profile's factor at `1.751` /
+`1.457` / `1.825`
+and a 95% between-stream interval that stays away from 1. The direction the prior predicted — the
+tail, not the mean — is present in all three problems (the two tail profiles carry the higher mean
+factor, `1.69` /
+`1.40` /
+`1.76` against
+`1.54` /
+`1.25` /
+`1.38`), and the *magnitude* the prior implied is
+not: the correlations are `0.166`,
+`0.301` and
+`0.390`, and the relation is non-monotone in spread —
+in ski rental the extreme-spread profiles carry the *lowest* factor. Reported as **partially
+confirmed**: the direction stands, the mechanism sentence does not.
+
+**P3 — which sign is priced is problem-structured. Outcome: refuted, and the refutation is
+informative.** The registration predicted that paging prices over-prediction and ski rental
+under-prediction, stable across algorithms within a problem. Measured: **under-prediction is the worse
+arm in all three problems** — the dominant sign is a property of the harness's cost structure, not of
+the problem's decision direction. The prior was anchored on a mechanism (act early versus defer) that
+would make the sign follow the problem; the measurement says the sign follows something the mechanism
+did not name. That is a genuine contradiction of a theory-anchored prior, and it is reported as the
+paper's most surprising single result rather than buried: it means a statement of the form "this
+problem prices that sign" cannot be inferred from the shape of the decision alone.
+
+**On reporting a refutation.** A prior whose falsification condition was met is the strongest
+available evidence that the instrument can fail — the paper is not only confirming its own beliefs.
+The refuted prior (P3) and the partially confirmed one (P2) are the two places where this work changed
+what its author believed going in, and both are stated in the abstract.
+
+## 8. Conclusion
+
+The question this paper set out to answer was what a prediction buys — not what it guarantees in the
+worst case, but what the loss actually is as a function of *which way* the prediction is wrong. The
+answer has four parts, and the first is an identity rather than a statistic: two arms with the same
+scalar error statistics, differing only in sign, realize losses that differ by up to
+`-0.568` competitive-ratio units — above the resolution of their
+own block in `31` of
+`39` blocks. `|error|` is therefore not the object the field's
+guarantees should be stated over; a decomposition into signed components is.
+
+The second part is where the instrument can resolve and what happens there: the sign channel carries
+information beyond the scalar when the design is matched in form, in
+`measured` form for scheduling and as an
+object-level contrast for ski rental, with paging reported unresolved rather than as a small effect.
+The third is a published system ordering reproduced in sign, with the cell's own reach reported as a
+limit instead of hidden as a success. The fourth prices the field's standard worst-case calibration:
+a factor of `1.70`–`1.29`
+per problem in the typical case, with the parameter the rule chooses differing from the profile's own
+best on most profiles and the factor surviving an out-of-sample refit.
+
+What a reader should take away is not a number but a change of object. A consistency bound written in
+`eta` or `|error|` is a statement about the magnitude of an error; the measurement here says the loss
+is governed by its direction, and that the direction is not the direction the literature's mechanism
+arguments predict. A deployer's next unit of effort — spend it on the predictor or on the fallback —
+is a question about a signed quantity, and this paper supplies the instrument that prices it, together
+with the limits under which that price holds.
+
+## References
+
+[1] Mitzenmacher, M.; Vassilvitskii, S. *Algorithms with Predictions*. Beyond the Worst-Case Analysis of Algorithms, 2020. `10.1017/9781108637435.037`
+[2] Lykouris, T.; Vassilvitskii, S. *Competitive Caching with Machine Learned Advice*. Journal of the ACM, 2021. `10.1145/3447579`
+[3] Feng, Y.; Yang, Z.; Zhang, Y. *Competitive Non-Clairvoyant KV-Cache Scheduling for LLM Inference*. arXiv preprint, 2026. `arXiv:2601.22996v1`
+[4] Zhou, W.; Wang, Q. *An Efficient Cache Eviction Strategy based on Learning and Belady Algorithm*. 2023 IEEE 12th International Conference on Cloud Networking (CloudNet), 2023. `10.1109/cloudnet59005.2023.10490040`
+[5] Zhao, H.; Tang, X.; Chen, P.; et al. *Learning-Augmented Algorithms: Guarantees, Construction Mechanisms, and System-Level Implications*. arXiv preprint, 2026. `arXiv:2609.04787v2`
+[6] Wei, A.; Zhang, F. *Optimal Robustness-Consistency Trade-offs for Learning-Augmented Online Algorithms*. arXiv preprint, 2020. `arXiv:2010.11443v1`
+[7] Shen, J. H.; Vitercik, E.; Wikum, A. *Algorithms with Calibrated Machine Learning Predictions*. arXiv preprint, 2025. `arXiv:2502.02861v4`
+[8] Elmachtoub, A. N.; Grigas, P. *Smart "Predict, then Optimize"*. arXiv preprint, 2017. `arXiv:1710.08005v5`
+[9] Vanderschueren, T.; Verdonck, T.; Baesens, B.; et al. *Predict-then-optimize or predict-and-optimize? An empirical evaluation of cost-sensitive learning strategies*. Information Sciences, 2022. `10.1016/j.ins.2022.02.021`
+[10] Xia, H.; Nixon, W.; Marthen, B. D.; et al. *Learning-Augmented Heuristics: Simple, yet Smart, Robust and Interpretable Cache Eviction*. arXiv preprint, 2026. `arXiv:2608.27975v1`
+[11] Rohatgi, D. *Near-Optimal Bounds for Online Caching with Machine Learned Advice*. arXiv preprint, 2019. `arXiv:1910.12172v2`
+[12] Bansal, N.; Coester, C.; Kumar, R.; et al. *Learning-Augmented Weighted Paging*. arXiv preprint, 2020. `arXiv:2011.09076v2`
+[13] Jiang, Z.; Panigrahi, D.; Sun, K. *Online Algorithms for Weighted Paging with Predictions*. arXiv preprint, 2020. `arXiv:2006.09509v1`
+[14] Wei, A. *Better and Simpler Learning-Augmented Online Caching*. arXiv preprint, 2020. `arXiv:2005.13716v1`
+[15] Dinitz, M.; Im, S.; Lavastida, T.; et al. *Algorithms with Prediction Portfolios*. arXiv preprint, 2022. `arXiv:2210.12438v2`
+[16] Anand, K.; Ge, R.; Kumar, A.; et al. *Online Algorithms with Multiple Predictions*. arXiv preprint, 2022. `arXiv:2205.03921v3`
+[17] Kodialam, R. *Optimal Algorithms for Ski Rental with Soft Machine-Learned Predictions*. arXiv preprint, 2019. `arXiv:1903.00092v2`
+[18] Antoniadis, A.; Coester, C.; Eliáš, M.; et al. *Mixing predictions for online metric algorithms*. arXiv preprint, 2023. `arXiv:2304.01781v2`
+[19] Coester, C.; Tudose, A.; Turoczy, A. *Learning-Augmented Online Minimization with Dual Predictions*. arXiv preprint, 2026. `arXiv:2606.05380v1`
+[20] Khodak, M.; Balcan, M. F.; Talwalkar, A.; et al. *Learning Predictions for Algorithms with Predictions*. arXiv preprint, 2022. `arXiv:2202.09312v2`
+[21] Sun, B.; Huang, J.; Christianson, N.; et al. *Online Algorithms with Uncertainty-Quantified Predictions*. arXiv preprint, 2023. `arXiv:2310.11558v2`
+[22] Gupta, A.; Panigrahi, D.; Subercaseaux, B.; et al. *Augmenting Online Algorithms with e-Accurate Predictions*. Advances in Neural Information Processing Systems 35, 2022. `10.52202/068431-0154`
+[23] Li, S.; Christianson, N.; Li, T. *Prediction-Specific Design of Learning-Augmented Algorithms*. arXiv preprint, 2025. `arXiv:2510.14887v1`
+[24] Fotakis, D.; Gergatsouli, E.; Gouleakis, T.; et al. *Improved Bounds for Online Facility Location with Predictions*. arXiv preprint, 2021. `arXiv:2107.08277v4`
+[25] Angelopoulos, S.; Arsenio, D.; Kamali, S. *Competitive Sequencing with Query Predictions*. Elsevier BV, 2024. `10.2139/ssrn.4975891`
+[26] Lavastida, T.; Moseley, B.; Ravi, R.; et al. *Learnable and Instance-Robust Predictions for Online Matching, Flows and Load Balancing*. arXiv preprint, 2020. `arXiv:2011.11743v2`
+[27] Lassota, A.; Lindermayr, A.; Megow, N.; et al. *Minimalistic Predictions to Schedule Jobs with Online Precedence Constraints*. arXiv preprint, 2023. `arXiv:2301.12863v1`
+[28] Boyar, J.; Favrholdt, L. M.; Kamali, S.; et al. *Online Interval Scheduling with Predictions*. arXiv preprint, 2023. `arXiv:2302.13701v2`
+[29] Balkanski, E.; Ou, T.; Stein, C.; et al. *Scheduling with Speed Predictions*. arXiv preprint, 2022. `arXiv:2205.01247v2`
+[30] Bampis, E.; Escoffier, B.; Xefteris, M. *Canadian Traveller Problem with Predictions*. arXiv preprint, 2022. `arXiv:2209.11100v1`
+[31] Azar, Y.; Panigrahi, D.; Touitou, N. *Online Graph Algorithms with Predictions*. arXiv preprint, 2021. `arXiv:2112.11831v1`
+[32] Rutten, D.; Mukherjee, D. *Online Capacity Scaling Augmented With Unreliable Machine Learning Predictions*. arXiv preprint, 2021. `arXiv:2101.12160v2`
+[33] Rutten, D.; Christianson, N.; Mukherjee, D.; et al. *Smoothed Online Optimization with Unreliable Predictions*. arXiv preprint, 2022. `arXiv:2202.03519v2`
+[34] Lindermayr, A.; Megow, N. *Permutation Predictions for Non-Clairvoyant Scheduling*. arXiv preprint, 2022. `arXiv:2202.10199v2`
+[35] Azar, Y.; Leonardi, S.; Touitou, N. *Flow Time Scheduling with Uncertain Processing Time*. arXiv preprint, 2021. `arXiv:2103.05604v1`
+[36] Grigorescu, E.; Lin, Y. S.; Song, M. *A Simple Learning-Augmented Algorithm for Online Packing with Concave Objectives*. arXiv preprint, 2024. `arXiv:2406.03574v1`
+[37] Hsieh, W. H.; Liang, Y. C. *Asymptotically Robust Learning-Augmented Algorithms for Preemptive FIFO Buffer Management*. arXiv preprint, 2026. `arXiv:2604.26349v1`
+[38] Chawla, S.; Christou, D. *Online Time-Windows TSP with Predictions*. arXiv preprint, 2023. `arXiv:2304.01958v1`
+[39] Cohen, I. R.; Panigrahi, D. *A General Framework for Learning-Augmented Online Allocation*. arXiv preprint, 2023. `arXiv:2305.18861v1`
+[40] Komm, D. *Advice Complexity*. Texts in Theoretical Computer Science. An EATCS Series, 2016. `10.1007/978-3-319-42749-2_3`
+[41] Boyar, J.; Favrholdt, L. M.; Kudahl, C.; et al. *The Advice Complexity of a Class of Hard Online Problems*. arXiv preprint, 2014. `arXiv:1408.7033v3`
+[42] Berg, M.; Boyar, J.; Favrholdt, L. M.; et al. *Complexity Classes for Online Problems with and without Predictions*. arXiv preprint, 2024. `arXiv:2406.18265v4`
+[43] Cho, W. H.; Henderson, S.; Shmoys, D. *Scheduling with Predictions*. arXiv preprint, 2022. `arXiv:2212.10433v1`
+[44] Mitzenmacher, M.; Shahout, R. *Queueing, Predictions, and LLMs: Challenges and Open Problems*. arXiv preprint, 2025. `arXiv:2503.07545v1`
+[45] Mitzenmacher, M. *Scheduling with Predictions and the Price of Misprediction*. arXiv preprint, 2019. `arXiv:1902.00732v2`
+[46] Mandarapu, M.; Kunkunuru, S. *Caching for Dollars, Not Hits: An Exact Offline Reference for Cloud-Egress Caching and the Crossover That Decides When It Pays*. arXiv preprint, 2026. `arXiv:2606.20539v2`
+[47] Gómez-Vargas, N.; Maldonado, S.; Vairetti, C. *A predict-and-optimize approach to profit-driven churn prevention*. arXiv preprint, 2023. `arXiv:2310.07047v2`
+[48] Fujiwara, H.; Iwama, K. *Average-Case Competitive Analyses for Ski-Rental Problems*. Algorithmica, 2005. `10.1007/s00453-004-1142-x`
+[49] Lotker, Z.; Patt-Shamir, B.; Rawitz, D. *Rent, Lease or Buy: Randomized Algorithms for Multislope Ski Rental*. arXiv preprint, 2008. `arXiv:0802.2832v1`
+[50] Shin, Y.; Lee, C.; Lee, G.; et al. *Improved Learning-Augmented Algorithms for the Multi-Option Ski Rental Problem via Best-Possible Competitive Analysis*. arXiv preprint, 2023. `arXiv:2302.06832v1`
+[51] Shin, Y.; Lee, C.; An, H. C. *On Optimal Consistency-Robustness Trade-Off for Learning-Augmented Multi-Option Ski Rental*. arXiv preprint, 2023. `arXiv:2312.02547v1`
+[52] Kang, B.; Park, H.; Fan, C. *Learning-Augmented Ski Rental with Discrete Distributions: A Bayesian Approach*. arXiv preprint, 2025. `arXiv:2512.07313v1`
+[53] Cui, Q.; Dinitz, M. *Ski Rental with Distributional Predictions of Unknown Quality*. arXiv preprint, 2026. `arXiv:2602.21104v1`
+[54] Kim, J.; Fan, C. *Robust and Consistent Ski Rental with Distributional Advice*. arXiv preprint, 2026. `arXiv:2603.29233v1`
+[55] Wang, S.; Li, J.; Wang, S. *Online Algorithms for Multi-shop Ski Rental with Machine Learned Advice*. arXiv preprint, 2020. `arXiv:2002.05808v2`
+[56] Cui, Q.; Dinitz, M. *Controlling tail risk in two-slope ski rental*. arXiv preprint, 2025. `arXiv:2508.06809v2`
+[57] Dinitz, M.; Im, S.; Lavastida, T.; et al. *Controlling Tail Risk in Online Ski-Rental*. arXiv preprint, 2023. `arXiv:2308.05067v1`
+[58] Chen, J.; Zhang, J. *A new performance metric for the ski rental problem*. Operations Research Letters, 2026. `10.1016/j.orl.2025.107382`
+[59] Antoniadis, A.; Coester, C.; Eliáš, M.; et al. *Learning-Augmented Dynamic Power Management with Multiple States via New Ski Rental Bounds*. arXiv preprint, 2021. `arXiv:2110.13116v1`
+[60] Zhang, H.; Conitzer, V. *Combinatorial Ski Rental and Online Bipartite Matching*. Proceedings of the 21st ACM Conference on Economics and Computation, 2020. `10.1145/3391403.3399470`
+[61] Khanafer, A.; Kodialam, M.; Puttaswamy, K. P. N. *The constrained Ski-Rental problem and its application to online cloud cost optimization*. 2013 Proceedings IEEE INFOCOM, 2013. `10.1109/infcom.2013.6566944`
+[62] Irani, S. *Competitive analysis of paging*. Lecture Notes in Computer Science, 1998. `10.1007/bfb0029564`
+[63] Achlioptas, D.; Chrobak, M.; Noga, J. *Competitive analysis of randomized paging algorithms*. Theoretical Computer Science, 2000. `10.1016/s0304-3975(98)00116-9`
+[64] McGeoch, L. A.; Sleator, D. D. *A strongly competitive randomized paging algorithm*. Algorithmica, 1991. `10.1007/bf01759073`
+[65] Blum, A.; Burch, C.; Kalai, A. *Finely-competitive paging*. 40th Annual Symposium on Foundations of Computer Science (Cat. No.99CB37039), 1999. `10.1109/sffcs.1999.814617`
+[66] Albers, S. *On the Influence of Lookahead in Competitive Paging Algorithms*. Algorithmica, 1997. `10.1007/pl00009158`
+[67] Peserico, E. *Paging with dynamic memory capacity*. arXiv preprint, 2013. `arXiv:1304.6007v1`
+[68] Peserico, E.; Scquizzato, M. *Is competitive online paging an artifact?*. arXiv preprint, 2026. `arXiv:2606.23955v1`
+[69] Moruz, G.; Negoescu, A. *Outperforming LRU via Competitive Analysis on Parametrized Inputs for Paging*. Proceedings of the Twenty-Third Annual ACM-SIAM Symposium on Discrete Algorithms, 2012. `10.1137/1.9781611973099.132`
+[70] Emek, Y.; Kutten, S.; Shi, Y. *Online Paging with a Vanishing Regret*. arXiv preprint, 2020. `arXiv:2011.09439v2`
+[71] Levy, O.; Touitou, N.; Rosenberg, A. *Online Weighted Paging with Unknown Weights*. arXiv preprint, 2024. `arXiv:2410.21266v1`
+[72] Chen, P.; Zhao, H.; Tang, X.; et al. *Towards Optimal Robustness in Learning-Augmented Paging*. arXiv preprint, 2026. `arXiv:2606.01342v3`
+[73] Antoniadis, A.; Boyar, J.; Eliáš, M.; et al. *Paging with Succinct Predictions*. arXiv preprint, 2022. `arXiv:2210.02775v1`
+[74] Jain, A.; Lin, C. *A Taxonomy of Cache Replacement Policies*. Synthesis Lectures on Computer Architecture, 2019. `10.1007/978-3-031-01762-9_2`
+[75] Sethumurugan, S.; Yin, J.; Sartori, J. *Designing a Cost-Effective Cache Replacement Policy using Machine Learning*. 2021 IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2021. `10.1109/hpca51647.2021.00033`
+[76] Souza, M. A.; Freitas, H. C. *Reinforcement Learning-Based Cache Replacement Policies for Multicore Processors*. IEEE Access, 2024. `10.1109/access.2024.3409228`
+[77] Student, D. o. C. S. R. C. o. E. B. I.; P, P.; A, R. S.; et al. *Machine Learning-Based Cache Replacement Policies: A Survey*. International Journal of Engineering and Advanced Technology, 2021. `10.35940/ijeat.f2907.0810621`
+[78] Im, S.; Kumar, R.; Montazer Qaem, M.; et al. *Non-Clairvoyant Scheduling with Predictions*. Proceedings of the 33rd ACM Symposium on Parallelism in Algorithms and Architectures, 2021. `10.1145/3409964.3461790`
+[79] Benomar, Z.; Perchet, V. *Non-clairvoyant Scheduling with Partial Predictions*. arXiv preprint, 2024. `arXiv:2405.01013v2`
+[80] Benomar, Z.; Cosson, R.; Lindermayr, A.; et al. *Non-Clairvoyant Scheduling with Progress Bars*. arXiv preprint, 2025. `arXiv:2509.19662v1`
+[81] Lindermayr, A.; Megow, N.; Rapp, M. *Speed-Oblivious Online Scheduling: Knowing (Precise) Speeds is not Necessary*. arXiv preprint, 2023. `arXiv:2302.00985v2`
+[82] Lindermayr, A.; Schlöter, J. *Delayed-Clairvoyant Flow Time Scheduling via a Borrow Graph Analysis*. arXiv preprint, 2026. `arXiv:2602.21827v1`
+[83] Chen, T.; Tan, Z. *Tighter Bounds on Non-clairvoyant Parallel Machine Scheduling with Prediction to Minimize Makespan*. arXiv preprint, 2025. `arXiv:2504.10945v1`
+[84] Baba, K.; Bampis, E.; Mitropoulos, G. *Learning-Augmented Approximation for Unrelated-Machines Makespan Scheduling*. arXiv preprint, 2026. `arXiv:2606.13133v1`
+[85] Angelopoulos, S.; Bienkowski, M.; Dürr, C.; et al. *Contract Scheduling with Distributional and Multiple Advice*. arXiv preprint, 2024. `arXiv:2404.12485v1`
+[86] Bansal, N.; Dhamdhere, K.; Könemann, J.; et al. *Non-Clairvoyant Scheduling for Minimizing Mean Slowdown*. Algorithmica, 2004. `10.1007/s00453-004-1115-0`
+[87] Kim, J. H.; Chwa, K. Y. *Non-clairvoyant scheduling for weighted flow time*. Information Processing Letters, 2003. `10.1016/s0020-0190(03)00231-x`
+[88] Albers, S.; Eckl, A. *Explorable Uncertainty in Scheduling with Non-uniform Testing Times*. Lecture Notes in Computer Science, 2021. `10.1007/978-3-030-80879-2_9`
+[89] Bamas, É.; Maggiori, A.; Rohwedder, L.; et al. *Learning Augmented Energy Minimization via Speed Scaling*. arXiv preprint, 2020. `arXiv:2010.11629v1`
+[90] Mandi, J.; Kotary, J.; Berden, S.; et al. *Decision-Focused Learning: Foundations, State of the Art, Benchmark and Future Opportunities*. Journal of Artificial Intelligence Research, 2024. `10.1613/jair.1.15320`
+[91] Mandi, J.; Bucarey, V.; Mulamba, M.; et al. *Decision-Focused Learning: Through the Lens of Learning to Rank*. arXiv preprint, 2021. `arXiv:2112.03609v4`
+[92] Schutte, N.; Postek, K.; Yorke-Smith, N. *Robust Losses for Decision-Focused Learning*. arXiv preprint, 2023. `arXiv:2310.04328v2`
+[93] Farhat, Y. *On the Robustness of Decision-Focused Learning*. arXiv preprint, 2023. `arXiv:2311.16487v4`
+[94] Liu, M. *Decision-Focused Learning: When and Why Traditional Prediction Models Fail*. arXiv preprint, 2026. `arXiv:2606.21773v1`
+[95] Wang, S.; Tian, X. *A Deficiency of the Predict-Then-Optimize Framework: Decreased Decision Quality with Increased Data Size*. Mathematics, 2023. `10.3390/math11153359`
+[96] Huang, M.; Gupta, V. *Decision-Focused Learning with Directional Gradients*. arXiv preprint, 2024. `arXiv:2402.03256v4`
+[97] Wang, Z.; Loke, G. G.; Zuo, R. *Autocorrelated Optimize-via-Estimate: Predict-then-Optimize versus Finite-sample Optimal*. arXiv preprint, 2026. `arXiv:2602.01877v1`
+[98] Ziliaskopoulos, K.; Vinel, A.; Smith, A. E. *Decision-Value Attribution in Predict-then-Optimize Systems*. arXiv preprint, 2026. `arXiv:2606.29878v1`
+[99] Balghiti, O. E.; Elmachtoub, A. N.; Grigas, P.; et al. *Generalization Bounds in the Predict-then-Optimize Framework*. arXiv preprint, 2019. `arXiv:1905.11488v3`
+[100] Shariatmadar, K.; Yorke-Smith, N.; Osman, A.; et al. *Generalized Decision Focused Learning under Imprecise Uncertainty--Theoretical Study*. arXiv preprint, 2025. `arXiv:2502.17984v2`
+[101] Ben-Baruch, E.; Ridnik, T.; Zamir, N.; et al. *Asymmetric Loss For Multi-Label Classification*. arXiv preprint, 2020. `arXiv:2009.14119v4`
+[102] Zhou, X.; Liu, X.; Jiang, J.; et al. *Asymmetric Loss Functions for Learning with Noisy Labels*. arXiv preprint, 2021. `arXiv:2106.03110v1`
+[103] Barnes, B. M.; Henn, M. A. *Addressing misclassification costs in machine learning through asymmetric loss functions*. Metrology, Inspection, and Process Control XXXVII, 2023. `10.1117/12.2662027`
+[104] Lozano, A. C.; Abe, N. *Multi-class cost-sensitive boosting with p-norm loss functions*. Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining, 2008. `10.1145/1401890.1401953`
+[105] Fu, S.; Tian, Y.; Tang, J.; et al. *Cost-sensitive learning with modified Stein loss function*. Neurocomputing, 2023. `10.1016/j.neucom.2023.01.052`
+[106] Kotary, J.; Di Vito, V.; Cristopher, J.; et al. *Learning Joint Models of Prediction and Optimization*. arXiv preprint, 2024. `arXiv:2409.04898v1`
+[107] Kotary, J.; Di Vito, V.; Christopher, J.; et al. *Predict-Then-Optimize by Proxy: Learning Joint Models of Prediction and Optimization*. arXiv preprint, 2023. `arXiv:2311.13087v1`
+[108] Elmachtoub, A. N.; Liang, J. C. N.; McNellis, R. *Decision Trees for Decision-Making under the Predict-then-Optimize Framework*. arXiv preprint, 2020. `arXiv:2003.00360v2`
+[109] Kang, J.; Kim, Y. S. *Decision-Focused Learning to Bridge the Prediction-Operation Gap in Energy Storage System Participation in Reserve Markets*. 2026 IEEE PES International Meeting (PES IM), 2026. `10.1109/pesim67009.2026.11438642`
+[110] Tang, B.; Khalil, E. B. *PyEPO: a PyTorch-based end-to-end predict-then-optimize library for linear and integer programming*. Mathematical Programming Computation, 2024. `10.1007/s12532-024-00255-x`
+[111] Sun, H.; Liu, A. L. *Robust Generalization with Adaptive Optimal Transport Priors for Decision-Focused Learning*. arXiv preprint, 2026. `arXiv:2602.01427v2`
+[112] Jin, B.; Ma, W. *Online Bipartite Matching with Advice: Tight Robustness-Consistency Tradeoffs for the Two-Stage Model*. Advances in Neural Information Processing Systems 35, 2022. `10.52202/068431-1058`
+[113] Chan, H.; Lin, J.; Wang, C. *Consistency-Robustness Tradeoffs for Strategyproof Scheduling with Predictions*. arXiv preprint, 2026. `arXiv:2609.14088v1`
+[114] Pokou, F. *Learning-Augmented Online Allocation under Unreliable Advice: Robustness, Exposure Fairness, and Distribution Shift*. arXiv preprint, 2026. `arXiv:2608.26889v1`
+[115] Yoshinaga, T.; Kawase, Y. *Analyzing the effect of prediction accuracy on the distributionally-robust competitive ratio*. arXiv preprint, 2026. `arXiv:2601.06813v1`
+[116] Patel, Y.; Tewari, A. *Distribution-Free Robust Predict-Then-Optimize in Function Spaces*. arXiv preprint, 2026. `arXiv:2602.08215v2`
+[117] Albers, S. *Online algorithms: a survey*. Mathematical Programming, 2003. `10.1007/s10107-003-0436-0`
+[118] Fiat, A.; Woeginger, G. J. *Competitive analysis of algorithms*. Lecture Notes in Computer Science, 1998. `10.1007/bfb0029562`
+[119] Chen, M.; Chau, S. C. K. *Preliminaries of Online Algorithms and Competitive Analysis*. Synthesis Lectures on Learning, Networks, and Algorithms, 2022. `10.1007/978-3-031-11549-3_2`
+[120] Anand, K.; Ge, R.; Kumar, A.; et al. *A Regression Approach to Learning-Augmented Online Algorithms*. arXiv preprint, 2022. `arXiv:2205.08717v2`
+[121] Ameli, A. J.; Sanita, L.; Venzin, M. *Learning-Augmented Online Covering Problems*. arXiv preprint, 2025. `arXiv:2507.06032v1`
+[122] Kevi, E.; Nguyen, K. T. *Online Covering with Multiple Experts*. arXiv preprint, 2023. `arXiv:2312.14564v1`
+[123] Kesselheim, T.; Molinaro, M.; Patton, K.; et al. *Online Algorithms via Minimax and Posterior Matching*. arXiv preprint, 2026. `arXiv:2608.01616v1`
+[124] Coester, C.; Turoczy, A. *Primal-Dual Online Algorithms for the Parking Permit Problem*. arXiv preprint, 2026. `arXiv:2607.08262v1`
+[125] Tiedemann, M.; Ide, J.; Schöbel, A. *Competitive Analysis for Multi-objective Online Algorithms*. Lecture Notes in Computer Science, 2015. `10.1007/978-3-319-15612-5_19`
+[126] Zhao, X.; Shen, H. *Online algorithms for 2D bin packing with advice*. Neurocomputing, 2016. `10.1016/j.neucom.2015.11.035`
+[127] Ma, M.; Tzamos, C. *Buying Information for Stochastic Optimization*. arXiv preprint, 2023. `arXiv:2306.03607v1`
+[128] Horiyama, T.; Iwama, K.; Kawahara, J. *Finite-State Online Algorithms and Their Automated Competitive Analysis*. Lecture Notes in Computer Science, 2006. `10.1007/11940128_9`
+[129] Parkhouse, J. *Competitive Online Algorithms for the Discrete Evacuation Problem in General Graphs*. Elsevier BV, 2025. `10.2139/ssrn.5200079`
+[130] Christou, D.; Fotakis, D.; Koumoutsos, G. *Memoryless Algorithms for the Generalized k-server Problem on Uniform Metrics*. Lecture Notes in Computer Science, 2021. `10.1007/978-3-030-80879-2_10`
+[131] Kraska, T.; Beutel, A.; Chi, E. H.; et al. *The Case for Learned Index Structures*. arXiv preprint, 2017. `arXiv:1712.01208v3`
+[132] Marcus, R.; Kipf, A.; van Renen, A.; et al. *Benchmarking learned indexes*. Proceedings of the VLDB Endowment, 2020. `10.14778/3421424.3421425`
+[133] Kipf, A.; Marcus, R.; van Renen, A.; et al. *SOSD: A Benchmark for Learned Indexes*. arXiv preprint, 2019. `arXiv:1911.13014v1`
+[134] Bachfischer, M.; Borovica-Gajic, R.; Rubinstein, B. I. P. *Testing the Robustness of Learned Index Structures*. arXiv preprint, 2022. `arXiv:2207.11575v1`
+[135] Ding, J.; Minhas, U. F.; Yu, J.; et al. *ALEX: An Updatable Adaptive Learned Index*. Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data, 2020. `10.1145/3318464.3389711`
+[136] Kipf, A.; Marcus, R.; van Renen, A.; et al. *RadixSpline: A Single-Pass Learned Index*. arXiv preprint, 2020. `arXiv:2004.14541v2`
+[137] Abu-Libdeh, H.; Altınbüken, D.; Beutel, A.; et al. *Learned Indexes for a Google-scale Disk-based Database*. arXiv preprint, 2020. `arXiv:2012.12501v1`
+[138] Jue, A. *Poisoning Learned Index Structures: Static and Dynamic Adversarial Attacks on ALEX*. arXiv preprint, 2026. `arXiv:2604.24975v1`
+[139] Yang, J.; Karimi, R.; Sæmundsson, T.; et al. *MITHRIL: Mining Sporadic Associations for Cache Prefetching*. arXiv preprint, 2017. `arXiv:1705.07400v1`
+[140] Kim, K.; Li, J.; Hong, K.; et al. *Saving GPU Hours in LLM Inference System Development and Online Workloads with Simulation and DBMS-Inspired Cache Replacement Policies*. arXiv preprint, 2024. `arXiv:2411.07447v5`
+[141] Bulus, M. *Minimum Detectable Effect Size Computations for Cluster-Level Regression Discontinuity: Quadratic Functional Form and Beyond*. arXiv preprint, 2019. `arXiv:1910.12925v2`
+[142] Burstyn, I.; Cox, L. A.; Carneal, T.; et al. *Minimum Detectable Effect (MDE) Calculator for Linear Regression: Optimizing Number of Subjects (LIN-N)*. SciPinion, 2025. `10.63565/scipinion.resource.lin-n`
+[143] Hunter, K.; Miratrix, L.; Porter, K. *Power Under Multiplicity Project (PUMP): Estimating Power, Minimum Detectable Effect Size, and Sample Size When Adjusting for Multiple Outcomes in Multi-level Experiments*. arXiv preprint, 2021. `arXiv:2112.15273v3`
+[144] Fehr, J.; 1 Institute of Engineering and Computational Mechanics at the University of Stuttgart, P. 9. D. 7. S. G.; Heiland, J.; et al. *Best practices for replicability, reproducibility and reusability of computer-based experiments exemplified by model reduction software*. AIMS Mathematics, 2016. `10.3934/math.2016.3.261`
+[145] Flittner, M.; Bauer, R.; Rizk, A.; et al. *Taming the Complexity of Artifact Reproducibility*. Proceedings of the Reproducibility Workshop, 2017. `10.1145/3097766.3097770`
+[146] Thorpe, B. *The ReproRubric: Evaluation Criteria for the Reproducibility of Computational Analyses*. Center for Open Science, 2019. `10.31219/osf.io/thvef`
+[147] Brooks, A.; Chambers, J.; Lee, C. N.; et al. *A Partial Replication with a Sample Size of One: A Smoke Test for Empirical Software Engineering*. 2013 3rd International Workshop on Replication in Empirical Software Engineering Research, 2013. `10.1109/reser.2013.7`
+[148] Souto, H. G.; Neto, F. L. *Beyond Arbitrary Replications: A Principled Approach to Simulation Design in Causal Inference*. arXiv preprint, 2024. `arXiv:2409.05161v3`
+[149] Gardner, J.; Brooks, C.; Andres, J. M. L.; et al. *MORF: A Framework for Predictive Modeling and Replication At Scale With Privacy-Restricted MOOC Data*. arXiv preprint, 2018. `arXiv:1801.05236v3`
+[150] Zilberman, N. *An Artifact Evaluation of NDP*. ACM SIGCOMM Computer Communication Review, 2020. `10.1145/3402413.3402418`
+[151] Shepperd, M. *Replication studies considered harmful*. Proceedings of the 40th International Conference on Software Engineering: New Ideas and Emerging Results, 2018. `10.1145/3183399.3183423`
+[152] Santos, A.; Vegas, S.; Oivo, M.; et al. *Comparing the Results of Replications in Software Engineering*. arXiv preprint, 2020. `arXiv:2011.02861v1`
+[153] Penzenstadler, B.; Eckhardt, J.; Fernandez, D. M. *Two Replication Studies for Evaluating Artefact Models in RE: Results and Lessons Learnt*. 2013 3rd International Workshop on Replication in Empirical Software Engineering Research, 2013. `10.1109/reser.2013.17`
+[154] Liu, C.; Gao, C.; Xia, X.; et al. *On the Reproducibility and Replicability of Deep Learning in Software Engineering*. ACM Transactions on Software Engineering and Methodology, 2021. `10.1145/3477535`
+[155] Fund, F. *We Need More Reproducibility Content Across the Computer Science Curriculum*. Proceedings of the 2023 ACM Conference on Reproducibility and Replicability, 2023. `10.1145/3589806.3600033`
+[156] Geng, H.; Ruan, H.; Wang, R.; et al. *Benchmarking PtO and PnO Methods in the Predictive Combinatorial Optimization Regime*. arXiv preprint, 2023. `arXiv:2311.07633v5`

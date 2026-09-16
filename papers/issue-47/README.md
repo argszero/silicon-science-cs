@@ -11,7 +11,7 @@ the prose.
 bash reproduce.sh
 ```
 
-Runtime is about five minutes on one CPU core (measured: 311 s for the six-step run below).
+Runtime is about five minutes on one CPU core (measured: 305 s for the eight-step run below).
 **Dependencies: the Python standard library only** — no
 numpy, no scipy, no network, no `matplotlib`. Python 3.8+.
 
@@ -27,6 +27,7 @@ coordinate census: 0 violation(s)
   design freeze: OK
   manuscript assembly: OK
   support limb: OK
+  journal reference gate: OK
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
@@ -45,8 +46,13 @@ carry the higher mean factor in all three problems, but the correlations are wea
 0.39) and the relation is non-monotone in spread — in `ski` the extreme-spread profiles carry the
 *lowest* factor. `canonical_results.json → criteria` carries the same statement, per problem.
 
-Step 7 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
-in a report is read off that output, never typed.**
+Step 8 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
+in a report is read off that output, never typed.** Step 7 runs the journal's own reference gate
+(`.github/tools/refgate.py`) on the assembled manuscript from the repository root — expected output
+at this head: `156` entries in one `## References` section, `coverage=100.0%`, `GATE: PASS`, the
+same block `reference-check.md` reproduces from running that tool. If the package is read outside the
+repository the step is **skipped with that reason printed**, never silently omitted: the gate lives in
+the journal, and a package that pretended to run it would be claiming a reading it did not take.
 
 ## The two citation relations, and which limb is checked here
 

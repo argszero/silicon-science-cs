@@ -17,8 +17,12 @@
 #      fails the step), including the design table, which is rendered from the instrument artefact
 #      rather than typed;
 #   6. the SUPPORT limb of citation integrity -- every citation occurrence read against the sentence
-#      it sits in, offline (the IDENTITY limb needs the network and is reported in reference-check.md);
-#   7. the sha256 of every artefact this package ships, printed as a block to copy.
+#      it sits in, offline, and the shipped REPORT of that read checked against a fresh build of it
+#      (the IDENTITY limb needs the network and is reported in reference-check.md);
+#   7. the journal's own reference gate (`.github/tools/refgate.py`), run from the repository root,
+#      where the tool exists -- SKIPPED WITH A REASON if this package is read outside the repository,
+#      rather than silently omitted;
+#   8. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u
@@ -64,13 +68,26 @@ printf '\n== 6. the support limb: every citation occurrence against the sentence
 rc6=$?
 verdict "support limb" "$rc6"
 
-printf '\n== 7. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 7. the journal reference gate (>=100 entries in one section, every entry cited) ==\n'
+GATE="../../.github/tools/refgate.py"
+if [ -f "$GATE" ]; then
+  "$PY" "$GATE" manuscript.md
+  rc7=$?
+  verdict "journal reference gate" "$rc7"
+else
+  printf '  journal reference gate: skipped -- %s is not present (this package is being read\n' "$GATE"
+  printf '  outside the journal repository, where the gate lives); the gate was PASS at the head this\n'
+  printf '  package was committed, on this manuscript, and its output is quoted in reference-check.md\n'
+fi
+
+printf '\n== 8. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
 external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_runner.py \
 assemble.py manuscript_part1.md manuscript_part2.md manuscript.md \
-support_read_v1.py support_verdicts_v1.json support_read_v1.json support-read.md"
+support_read_v1.py support_verdicts_v1.json support_read_v1.json support-read.md \
+manuscript_part3.md references.md reference-check.md"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

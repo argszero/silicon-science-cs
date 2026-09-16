@@ -1344,6 +1344,102 @@
    "role": "bound-source",
    "basis": "the worst-case choice of the blend is what these works state",
    "sentence": "The rule evaluated here is the worst-case choice the consistency–robustness literature states [@weioptimal] [@shintradeoff] [@lipredictionspecific], and the measured object is its cost relative to the profile's own best blend setting, per profile, in cluster units."
+  },
+  "rt3:soutosimulation:c8bfa6623d9d": {
+   "verdict": "supports",
+   "role": "method-source",
+   "basis": "the work argues that a simulation must be designed rather than repeated until a verdict appears, which is the clause at this key",
+   "sentence": "* **A simulation is designed, not repeated arbitrarily.** The profile grid is declared before any run and used unchanged by every result, so a cell's meaning is fixed by construction [@soutosimulation] — versus growing the number of replicates until a verdict appears — and where replication is carried out at scale it needs a framework of its own rather than more repetitions [@gardnermorf]."
+  },
+  "rt3:gardnermorf:c8bfa6623d9d": {
+   "verdict": "supports",
+   "role": "method-source",
+   "basis": "the work supplies the framework that replication at scale needs, which is the clause this key carries",
+   "sentence": "* **A simulation is designed, not repeated arbitrarily.** The profile grid is declared before any run and used unchanged by every result, so a cell's meaning is fixed by construction [@soutosimulation] — versus growing the number of replicates until a verdict appears — and where replication is carried out at scale it needs a framework of its own rather than more repetitions [@gardnermorf]."
+  },
+  "rt3:bulusmde:619b281aa7ea": {
+   "verdict": "supports",
+   "role": "method-source",
+   "basis": "the work supplies the cluster-level minimum-detectable-effect computation the sentence quotes a verdict in",
+   "sentence": "* **A resolution is quoted, not assumed.** Every verdict is stated in cluster-unit minimum detectable effects [@bulusmde] [@burstynmde] [@hunterpump], so \"the design can see this\" is a number rather than a hope."
+  },
+  "rt3:burstynmde:619b281aa7ea": {
+   "verdict": "supports",
+   "role": "method-source",
+   "basis": "the work supplies the cluster-level minimum-detectable-effect computation the sentence quotes a verdict in",
+   "sentence": "* **A resolution is quoted, not assumed.** Every verdict is stated in cluster-unit minimum detectable effects [@bulusmde] [@burstynmde] [@hunterpump], so \"the design can see this\" is a number rather than a hope."
+  },
+  "rt3:hunterpump:619b281aa7ea": {
+   "verdict": "supports",
+   "role": "method-source",
+   "basis": "the work supplies the cluster-level minimum-detectable-effect computation the sentence quotes a verdict in",
+   "sentence": "* **A resolution is quoted, not assumed.** Every verdict is stated in cluster-unit minimum detectable effects [@bulusmde] [@burstynmde] [@hunterpump], so \"the design can see this\" is a number rather than a hope."
+  },
+  "rt3:fehrbestpractices:ec09901844ec": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work states reproducibility practice for computational experiments -- the reading-not-intention clause this key carries",
+   "sentence": "* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised: one command, byte-identical output, and a published digest block [@fehrbestpractices] [@flittnerartefact] [@thorpereprorubric]; and what an independent re-run can and cannot establish is part of the claim [@zilberman] [@brookssmoke]."
+  },
+  "rt3:flittnerartefact:ec09901844ec": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work states reproducibility practice for computational experiments -- the reading-not-intention clause this key carries",
+   "sentence": "* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised: one command, byte-identical output, and a published digest block [@fehrbestpractices] [@flittnerartefact] [@thorpereprorubric]; and what an independent re-run can and cannot establish is part of the claim [@zilberman] [@brookssmoke]."
+  },
+  "rt3:thorpereprorubric:ec09901844ec": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work states reproducibility practice for computational experiments -- the reading-not-intention clause this key carries",
+   "sentence": "* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised: one command, byte-identical output, and a published digest block [@fehrbestpractices] [@flittnerartefact] [@thorpereprorubric]; and what an independent re-run can and cannot establish is part of the claim [@zilberman] [@brookssmoke]."
+  },
+  "rt3:zilberman:ec09901844ec": {
+   "verdict": "supports",
+   "role": "systems-evidence",
+   "basis": "the work reports what an independent re-run can and cannot establish, which is the second clause of the sentence",
+   "sentence": "* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised: one command, byte-identical output, and a published digest block [@fehrbestpractices] [@flittnerartefact] [@thorpereprorubric]; and what an independent re-run can and cannot establish is part of the claim [@zilberman] [@brookssmoke]."
+  },
+  "rt3:brookssmoke:ec09901844ec": {
+   "verdict": "supports",
+   "role": "systems-evidence",
+   "basis": "the work reports what an independent re-run can and cannot establish, which is the second clause of the sentence",
+   "sentence": "* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised: one command, byte-identical output, and a published digest block [@fehrbestpractices] [@flittnerartefact] [@thorpereprorubric]; and what an independent re-run can and cannot establish is part of the claim [@zilberman] [@brookssmoke]."
+  },
+  "rt3:shepperd:bc3b2c71cd58": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+  },
+  "rt3:santoscomparing:bc3b2c71cd58": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+  },
+  "rt3:penzenstadler:bc3b2c71cd58": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+  },
+  "rt3:liureproducibility:bc3b2c71cd58": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+  },
+  "rt3:fundcurriculum:bc3b2c71cd58": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work argues that reproducibility practice needs explicit machinery rather than good intentions, which is the clause this key carries",
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+  },
+  "rt3:gengptopno:bc3b2c71cd58": {
+   "verdict": "supports",
+   "role": "survey",
+   "basis": "the work argues that reproducibility practice needs explicit machinery rather than good intentions, which is the clause this key carries",
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
   }
  },
  "findings": [
@@ -1356,8 +1452,9 @@
   {
    "occurrence": "rt2:84:ansanipower",
    "found": "a required-sample-size app for structural-equation models (PLS-SEM) was cited as the methodology for cluster-level minimum detectable effects",
-   "action": "dropped from the sentence; the entry is uncited and goes on the drop list for the reference-layer rebuild",
-   "status": "corrected"
+   "action": "dropped from the sentence (R343); the work itself left the reference layer in R345 (`refs_selection_v1.json -> dropped`), so the layer now equals the cited set and this row is not an entry the manuscript carries",
+   "status": "corrected",
+   "dropped_from_layer": "R345"
   },
   {
    "occurrence": "rt2:176:barnesmisclassification / benbaruch / zhounoisylabels / fusteinsloss / lozanoboosting",
@@ -1369,6 +1466,18 @@
    "occurrence": "rt2:213:hsiehfifo",
    "found": "an asymptotically-robust learning-augmented FIFO BOUND (a theory result) was listed among works that report end-to-end deltas with no prediction-error measure",
    "action": "dropped from that sentence; the work stays cited where it belongs, among the problems the framework is carried to",
+   "status": "corrected"
+  },
+  {
+   "occurrence": "rt3:soutosimulation / gardnermorf (section 6.1, first bullet)",
+   "found": "the bullet attributed 'designed, not repeated arbitrarily' to both works; the second is a framework for replication AT SCALE, which is the opposite side of the contrast",
+   "action": "bullet reworded: the design argument is carried by the first work and the scale-framework clause by the second",
+   "status": "corrected"
+  },
+  {
+   "occurrence": "rt3:fundcurriculum / gengptopno (section 6.1, fourth bullet)",
+   "found": "the bullet attributed 'a repeated measurement can misread its own remit' to six works; two belong to a different claim (a call for reproducibility content and benchmarking practice, not a claim about replications)",
+   "action": "bullet reworded into two clauses, each work carrying its own",
    "status": "corrected"
   }
  ]

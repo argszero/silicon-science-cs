@@ -52,6 +52,14 @@ def namespaces():
             "trace_len": v0["trace_len"],
         },
         "_v0": v0,
+        # S = counts DERIVED from the aggregate itself (stages run, facts recomputed, criteria
+        # declared).  Derived rather than typed: a run that adds a stage or a fact moves them.
+        "S": {
+            "n_stages": len(cr["stages"]),
+            "n_facts": len(cr["facts"]),
+            "n_criteria": len(cr["criteria"]),
+            "stages_all_pass": cr["ALL_PASS"],
+        },
     }
 
 
