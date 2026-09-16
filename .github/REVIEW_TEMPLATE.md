@@ -73,8 +73,8 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Overclaiming check**: does the abstract / the stated contribution stay within what the data shows? quote any overclaim with its location <...>
 - **Contribution-level consistency**: the declared level (case study / system / theory+empirics) against the actual evidence — <consistent | overclaimed, with location>
 - **Registered priors and their outcome**: the registration's P1–P3 and registered success criteria, each with the outcome the **manuscript** reports (met | unmet with reason | refuted), and which novelty-cap exemption (a/b/c) you credit, if any — <...>; a registration `Outcome` line left stale is itself a finding
-- **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> / **misattributed <j>** (a record that resolves to a *different* work than the entry names — read the returned year/venue/authors against the entry's own line) — <detail>
-- **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for, **or whose record is not the work the entry names** (read the returned year/venue/authors against the entry's own line — a record resolved by title or by key can be a different real work) — checked entry by entry **and on every sampled entry**, not just for resolvability>
+- **Citation verification** (independent spot-check): `refgate.py` output — entries <T> (≥100 required in **one** `## References` section), coverage <%>, entries with no in-text key <u>; authenticity sample: sampled <n> / fabricated <m> / unverifiable <k> / **misattributed <j>** (a record that resolves to a *different* work than the entry names — read the returned year/venue/authors against the entry's own line) / **unsupported <u>** (the record *is* the work the entry names, and that work cannot carry the claim the key is attached to — read the sentence the key appears in) — <detail>
+- **Anchor accuracy**: <any cited anchor whose ID resolves to a different paper than the one it is cited for, **or whose record is not the work the entry names** (read the returned year/venue/authors against the entry's own line — a record resolved by title or by key can be a different real work) **or whose work cannot carry the claim at its key** (read the sentence the key appears in: a real, correctly identified record that cannot carry it is an *unsupported* anchor) — checked entry by entry **and on every sampled entry**, not just for resolvability, with the support limb read at the sample **and at every key a load-bearing claim rests on**>
 - **Presentation and format**: the manuscript's own carriage of the result — **read the property first, not only the tests named below it: every statement the manuscript makes about its own content agrees with that content** (a stated count agrees with the objects it counts, a stated list length with the items listed, a caption or a sentence complete enough to carry a claim) — and then the tests that are instances of it: each figure **shown** in the text (`![...]`, with a caption, in the section that makes the claim), the tables complete and aligned, the bibliography readable **entry by entry** (authors, year, title, venue or identifier, link, and the one-line stated difference), consistent notation, and cross-references that point at what exists — <the defects with their locations, or "none found">
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
@@ -234,6 +234,16 @@ entry names**, which is what a record resolved by title or by key can be. Verify
 entry, not just that the IDs exist, **and read the property at the sample too**: for each sampled entry, and for any
 entry whose record was resolved by title or by key, read the returned year, venue and authors against the entry's own
 line. A load-bearing claim resting on misattributed anchors does not stand.
+
+**And the mapping has two relations, not one.** The read above settles *identity* — the record is the work the entry
+names. **Support** is the other: the work the entry names must be the work **the claim at that key needs**, so it is
+read in the text and not in the list — take the sentence the key appears in and ask whether that work can carry it. A
+record that is real and correctly identified and cannot carry its sentence is an **unsupported anchor**: the identity
+read passes it, which is why the two are reported as separate members of the same sample (the row above). Read the
+support limb at the same set as the identity limb — the sampled entries and every entry whose record was resolved by
+title or by key — **and at every key an anchor a load-bearing claim rests on appears in**, because a load-bearing claim
+is where an unsupported anchor does its damage. The author's own carrier of the relation is each entry's one-line
+stated difference: it is a claim about the sentence the key sits in, not a line to be present.
 
 **Presentation and format.** This row is where the *Presentation requirements* of `README.md` are actually read, and it is not a
 style note: a requirement stated in the bar and read by no step is the journal's recurring defect class, and this one was
