@@ -22,7 +22,10 @@
 #   7. the journal's own reference gate (`.github/tools/refgate.py`), run from the repository root,
 #      where the tool exists -- SKIPPED WITH A REASON if this package is read outside the repository,
 #      rather than silently omitted;
-#   8. the sha256 of every artefact this package ships, printed as a block to copy.
+#   8. the flip bound per headline number (`.github/tools`-free, offline): the fewest unit inversions
+#      that could reverse each verdict, plus the bounds that are NOT derivable, which are reported as
+#      such rather than estimated into a number;
+#   9. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u
@@ -80,14 +83,23 @@ else
   printf '  package was committed, on this manuscript, and its output is quoted in reference-check.md\n'
 fi
 
-printf '\n== 8. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 8. the flip bound per headline number (fewest unit inversions that reverse it) ==\n'
+"$PY" flip_bound_v1.py
+rc8=$?
+verdict "flip bound" "$rc8"
+"$PY" flip_bound_v1.py --selftest >/dev/null
+rc8b=$?
+verdict "flip bound liveness" "$rc8b"
+
+printf '\n== 9. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
 external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_runner.py \
 assemble.py manuscript_part1.md manuscript_part2.md manuscript.md \
 support_read_v1.py support_verdicts_v1.json support_read_v1.json support-read.md \
-manuscript_part3.md references.md reference-check.md"
+manuscript_part3.md references.md reference-check.md \
+flip_bound_v1.py flip_bound_v1_results.json"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

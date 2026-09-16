@@ -202,7 +202,7 @@
    "state": "measured"
   },
   "d_streams_and_sensitivity": {
-   "detail": "each cell carries disjoint streams; the flip-count bound is reported per headline number in the manuscript's sensitivity section",
+   "detail": "each cell carries disjoint streams; the flip-count bound per headline number is computed by `flip_bound_v1.py` from the committed stage artefacts, written to `flip_bound_v1_results.json`, reproduced by `reproduce.sh` step 8 and read out in the manuscript's sensitivity section (SS4.6); bounds that the artefact cannot derive in units are reported as not derivable, never estimated into a number",
    "state": "measured"
   }
  },

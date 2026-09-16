@@ -46,7 +46,7 @@ carry the higher mean factor in all three problems, but the correlations are wea
 0.39) and the relation is non-monotone in spread — in `ski` the extreme-spread profiles carry the
 *lowest* factor. `canonical_results.json → criteria` carries the same statement, per problem.
 
-Step 8 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
+Step 9 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
 in a report is read off that output, never typed.** Step 7 runs the journal's own reference gate
 (`.github/tools/refgate.py`) on the assembled manuscript from the repository root — expected output
 at this head: `156` entries in one `## References` section, `coverage=100.0%`, `GATE: PASS`, the
@@ -93,6 +93,30 @@ in-text coverage, never the entry's style -- so this package reads it itself, in
   fails if any cited entry does not carry it -- the report is not the artefact a reviewer opens, and
   a green report over a manuscript that dropped the element is exactly the mismatch this package was
   bitten by twice.
+
+## The flip bound: the sensitivity the registration promises per headline number
+
+The registration's fourth success criterion asks a *flip count* per headline number — how many of the
+observations a number rests on would have to change for its **verdict** to reverse — and through R346
+no stage computed it (the manuscript said so in as many words). `flip_bound_v1.py` (step 8, offline)
+computes it from the committed stage artefacts, into `flip_bound_v1_results.json`:
+
+| rule | what it fixes | where it is read |
+|---|---|---|
+| the **unit** is the smallest observation the producing stage records | a bound in blocks, clusters, profiles or pairs is in units OF that number, never in a convenient unit | `unit` per headline |
+| a unit is **inverted** by giving its contribution the mirror value, strongest-support-first | the number reported is the **fewest** changes that could reverse the verdict, so the verdict survives any change to fewer units | `k_inversions` |
+| a verdict that asserts an **absence** gets no inversion count | only *more* support moves an absence across, so its margin is the distance to the decision boundary — an inversion count for it would be a made-up number | `distance_to_boundary` |
+| an aggregate keeps no units | where the stage stored only a cluster mean and its interval, the bound is an ESTIMATE under a stated assumption and says so; the one headline whose per-unit rows were never recorded is reported as **not derivable** rather than estimated | `kind` |
+
+Expected output at this head (the instrument's own lines are in `run.log`): the witness's count form
+needs **12** block inversions (≥ **108** paired observations) while its aggregate-interval form needs
+**2**; scheduling's sign-channel contrast is reversed by **25** cluster inversions (an estimate) and
+paging / ski rental carry **absence** verdicts at **1.03** and **0.52** cluster MDEs below the bar; the
+external ordering needs **39 / 32 / 29** pair inversions; the external reach is the weakest headline —
+no profile reaches the published scale, and one would. Its own `--selftest` plants each rule in both
+directions (a count rule at, just below and just above its threshold; an interval that k inversions
+reverse and k−1 leave standing; a verdict no inversion reverses; an absence verdict that must carry a
+distance and no count; and the artefact on disk against a fresh computation).
 
 ## What the checks are
 

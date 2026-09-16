@@ -39,8 +39,13 @@ def load(path):
 def namespaces():
     cr = load(os.path.join(HERE, "canonical_results.json"))
     v0 = load(os.path.join(HERE, "instrument_v0_results.json"))
+    fb = load(os.path.join(HERE, "flip_bound_v1_results.json"))
     return {
         "X": cr,
+        # F = the flip-bound artefact (the sensitivity arithmetic the registration promises per
+        # headline number). Its own file, because the numbers are computed by its own stage and the
+        # prose must not be able to quote a value that stage did not write.
+        "F": fb,
         "D": {
             "n_profiles": len(v0["profiles"]),
             "n_lambdas": len(v0["lambdas"]),

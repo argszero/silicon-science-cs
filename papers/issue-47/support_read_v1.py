@@ -101,7 +101,15 @@ def rid_of(part_key, key, sentence):
 
 
 def occurrences(pkg):
-    """Every citation occurrence: content identity, key, sentence, and the line it sits on."""
+    """Every citation occurrence: content identity, key, sentence -- and deliberately NOT a line.
+
+    The line was recorded as a convenience and it is a COORDINATE: inserting one sentence above a
+    citation moves it, so the built artefact disagreed with a fresh build for a reason unrelated to
+    any read -- the same defect class the row identity already shed (rows were keyed `part:line:key`
+    until one edit re-keyed 41 of them).  A field that is neither the identity nor the claim cannot
+    be checked against anything, and its only possible effect is to make a report look stale when
+    nothing about the reading changed.  A reader navigates by the quoted sentence.
+    """
     rows = []
     for p in sorted(PARTS):
         path = os.path.join(pkg, p)
@@ -113,7 +121,7 @@ def occurrences(pkg):
         for start, para in paragraphs(text):
             for s in sentences(para):
                 for k in CITE.findall(s):
-                    rows.append({"id": rid_of(kp, k, s), "part": p, "part_key": kp, "line": start,
+                    rows.append({"id": rid_of(kp, k, s), "part": p, "part_key": kp,
                                  "key": k, "sentence": s})
     ids = [r["id"] for r in rows]
     if len(set(ids)) != len(ids):

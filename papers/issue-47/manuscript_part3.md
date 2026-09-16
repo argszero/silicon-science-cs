@@ -60,9 +60,14 @@ the literature. **Why it does not sink the paper:** the counterfactual is exact 
 offline optimum is computable for every instance — which is precisely what a measured-live-system
 study cannot have; the harness buys ground truth at the price of realism, and the price is stated.
 
-**One further item, owed rather than measured.** The registration's fourth success criterion names a
-flip-count bound per headline number, and no stage of this package computes it (Section 4.6). It is
-listed here as owed: this paper does not claim a sensitivity margin it has not measured.
+**The sensitivity margin is measured, and its limits are stated.** The registration's fourth success
+criterion names a flip-count bound per headline number, and it is computed per unit in §4.6 — with two
+limits that belong here rather than there: where a headline rests on a number the stage recorded only
+as an aggregate, the bound is an *estimate* under a stated equal-magnitude assumption (exact bounds
+are reported for the block-level, pair-level and threshold-count headlines, which the stage records
+unit by unit); and for the specificity control no bound in units is derivable at all from the
+committed artefact, which is stated instead of estimated. A sensitivity margin is only as good as the
+units the stage kept.
 
 ## 6. Methodology, and how to reproduce it
 

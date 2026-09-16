@@ -639,11 +639,11 @@ committed artefacts, with no pooling across problems:
 what it returned. Criterion (a) is reported per problem because the criterion is a comparison, and a
 comparison that resolves in one problem and not the others is not a single verdict.
 
-### 4.6 Streams, the unit of inference, and the sensitivity bound the reader is owed
+### 4.6 Streams, the unit of inference, and the flip bound per headline number
 
 Each cell is measured over `16` replicate streams, and every verdict above is quoted in
 cluster units (§3.4), so the robustness question is not whether the numbers move but whether the
-**verdicts** move. Two things are measured, and one is owed:
+**verdicts** move. Three things are measured:
 
 * **Disjoint streams.** Every cell's streams are its own: no stream is reused across cells, so a
   verdict that holds in two cells is not one measurement counted twice. The registration's fourth
@@ -655,11 +655,53 @@ cluster units (§3.4), so the robustness question is not whether the numbers mov
   no such check: an identity plus a gap that clears its own resolution in
   `31` of `39`
   blocks does not depend on which streams are drawn.
-* **The flip bound, stated as owed rather than as read.** The criterion's own wording promises a
-  *flip count* per headline number — how many streams would have to change for the verdict to
-  reverse — and that count is **not yet computed**. It is listed in §5 with the other open item, and
-  until it exists this paper does not claim a sensitivity margin it has not measured. The three
-  results that stand on a contrast rather than on an identity are the ones it will have to cover.
+* **The flip bound, per headline number.** The criterion's wording promises a *flip count* — how
+  many of the observations a number rests on would have to change for its verdict to reverse. It is
+  computed over the committed stage artefacts (`flip_bound_v1.py`), one unit at a time: the unit is
+  the smallest observation the producing stage records, a unit is *inverted* by giving its
+  contribution the mirror value, and inversions are applied strongest-support-first, so each count
+  below is the **fewest** changes that could reverse that verdict — the number a reader can rely on,
+  since the verdict survives any change to fewer units. Two distinctions are part of the reading, and
+  both are reported rather than assumed:
+
+  * **Direction.** A verdict that asserts an effect is falsified by evidence against it, and gets an
+    inversion count. A verdict that asserts an *absence* — a limit, a "not resolved" — cannot be
+    reversed by inversions at all, because only *more* support moves it across; for those the margin
+    is the distance to the decision boundary, and no inversion count is invented. The sign-channel
+    result is both at once: it asserts an effect for scheduling
+    (`25` cluster inversions reverse it), and asserts an
+    *absence* for paging and
+    ski rental, whose margins are the
+    `0.5206` and
+    `1.0335` cluster MDEs they sit below the bar.
+  * **Exactness.** Where the stage records the units individually the bound is exact; where it keeps
+    only an aggregate (a cluster mean with its interval) the bound is an estimate under a stated
+    equal-magnitude assumption, and the artefact says which is which. The specificity control (§4.5)
+    is the case where the bound is **not derivable** at all from the committed artefact — the per-unit
+    rows behind its aggregate were never recorded — and it is reported that way rather than estimated
+    into a number.
+
+  **What the bound buys, and the one place it changes the paper's emphasis.** The witness of §4.1 has
+  two forms, and they are not equally robust. Its **count form** — the sign channel clears its own
+  resolution in `31` of
+  `39` blocks — needs
+  `12` block inversions to reverse, and inverting a block's
+  median takes more than half of that block's paired observations
+  (`9 of 16`), so the count form resists any change
+  to fewer than `108` paired observations.
+  Its **aggregate-interval form** needs `2` blocks —
+  `18` paired observations — because
+  the aggregate's interval is tight and two well-placed blocks erase it. The identity leg is stronger still: the
+  scalar-feature gap is exactly zero in every block, and no change to the streams can move a quantity
+  that is zero by construction, so it has no flip bound at all. The paper therefore reports the
+  identity and the count as the load-bearing evidence for the witness and treats the aggregate
+  interval as the weaker statement it is — which is what a flip bound is for. The external ordering
+  (§4.3) carries the largest margins on this instrument
+  (`39` / `32` /
+  `29` pair inversions for scheduling, paging and ski rental), and
+  the external *reach* statement is the weakest headline in the paper by this measure: no profile
+  reaches the published robustness scale, and a single profile would (`L3`), which is why the excluded
+  profiles are listed one by one in §4.3 rather than summarised.
 
 
 ## 5. The limits, each with the measurement that establishes it
@@ -723,9 +765,14 @@ the literature. **Why it does not sink the paper:** the counterfactual is exact 
 offline optimum is computable for every instance — which is precisely what a measured-live-system
 study cannot have; the harness buys ground truth at the price of realism, and the price is stated.
 
-**One further item, owed rather than measured.** The registration's fourth success criterion names a
-flip-count bound per headline number, and no stage of this package computes it (Section 4.6). It is
-listed here as owed: this paper does not claim a sensitivity margin it has not measured.
+**The sensitivity margin is measured, and its limits are stated.** The registration's fourth success
+criterion names a flip-count bound per headline number, and it is computed per unit in §4.6 — with two
+limits that belong here rather than there: where a headline rests on a number the stage recorded only
+as an aggregate, the bound is an *estimate* under a stated equal-magnitude assumption (exact bounds
+are reported for the block-level, pair-level and threshold-count headlines, which the stage records
+unit by unit); and for the specificity control no bound in units is derivable at all from the
+committed artefact, which is stated instead of estimated. A sensitivity margin is only as good as the
+units the stage kept.
 
 ## 6. Methodology, and how to reproduce it
 

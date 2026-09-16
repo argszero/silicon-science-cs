@@ -286,11 +286,11 @@ committed artefacts, with no pooling across problems:
 what it returned. Criterion (a) is reported per problem because the criterion is a comparison, and a
 comparison that resolves in one problem and not the others is not a single verdict.
 
-### 4.6 Streams, the unit of inference, and the sensitivity bound the reader is owed
+### 4.6 Streams, the unit of inference, and the flip bound per headline number
 
 Each cell is measured over `{{D:replicates}}` replicate streams, and every verdict above is quoted in
 cluster units (§3.4), so the robustness question is not whether the numbers move but whether the
-**verdicts** move. Two things are measured, and one is owed:
+**verdicts** move. Three things are measured:
 
 * **Disjoint streams.** Every cell's streams are its own: no stream is reused across cells, so a
   verdict that holds in two cells is not one measurement counted twice. The registration's fourth
@@ -302,9 +302,51 @@ cluster units (§3.4), so the robustness question is not whether the numbers mov
   no such check: an identity plus a gap that clears its own resolution in
   `{{X:facts.claim1.blocks_exceeding_own_mde.value}}` of `{{X:facts.claim1.blocks_total.value}}`
   blocks does not depend on which streams are drawn.
-* **The flip bound, stated as owed rather than as read.** The criterion's own wording promises a
-  *flip count* per headline number — how many streams would have to change for the verdict to
-  reverse — and that count is **not yet computed**. It is listed in §5 with the other open item, and
-  until it exists this paper does not claim a sensitivity margin it has not measured. The three
-  results that stand on a contrast rather than on an identity are the ones it will have to cover.
+* **The flip bound, per headline number.** The criterion's wording promises a *flip count* — how
+  many of the observations a number rests on would have to change for its verdict to reverse. It is
+  computed over the committed stage artefacts (`flip_bound_v1.py`), one unit at a time: the unit is
+  the smallest observation the producing stage records, a unit is *inverted* by giving its
+  contribution the mirror value, and inversions are applied strongest-support-first, so each count
+  below is the **fewest** changes that could reverse that verdict — the number a reader can rely on,
+  since the verdict survives any change to fewer units. Two distinctions are part of the reading, and
+  both are reported rather than assumed:
+
+  * **Direction.** A verdict that asserts an effect is falsified by evidence against it, and gets an
+    inversion count. A verdict that asserts an *absence* — a limit, a "not resolved" — cannot be
+    reversed by inversions at all, because only *more* support moves it across; for those the margin
+    is the distance to the decision boundary, and no inversion count is invented. The sign-channel
+    result is both at once: it asserts an effect for scheduling
+    (`{{F:F1_2_sign_channel.sched.k_inversions}}` cluster inversions reverse it), and asserts an
+    *absence* for paging and
+    ski rental, whose margins are the
+    `{{F:F1_2_sign_channel.ski.distance_to_boundary}}` and
+    `{{F:F1_2_sign_channel.paging.distance_to_boundary}}` cluster MDEs they sit below the bar.
+  * **Exactness.** Where the stage records the units individually the bound is exact; where it keeps
+    only an aggregate (a cluster mean with its interval) the bound is an estimate under a stated
+    equal-magnitude assumption, and the artefact says which is which. The specificity control (§4.5)
+    is the case where the bound is **not derivable** at all from the committed artefact — the per-unit
+    rows behind its aggregate were never recorded — and it is reported that way rather than estimated
+    into a number.
+
+  **What the bound buys, and the one place it changes the paper's emphasis.** The witness of §4.1 has
+  two forms, and they are not equally robust. Its **count form** — the sign channel clears its own
+  resolution in `{{X:facts.claim1.blocks_exceeding_own_mde.value}}` of
+  `{{X:facts.claim1.blocks_total.value}}` blocks — needs
+  `{{F:F1_1_witness.legs.count.k_inversions}}` block inversions to reverse, and inverting a block's
+  median takes more than half of that block's paired observations
+  (`{{F:F1_1_witness.paired_observations_per_inverted_block}}`), so the count form resists any change
+  to fewer than `{{F:F1_1_witness.legs.count.k_paired_observations_lower_bound}}` paired observations.
+  Its **aggregate-interval form** needs `{{F:F1_1_witness.legs.interval.k_inversions}}` blocks —
+  `{{F:F1_1_witness.legs.interval.k_paired_observations_lower_bound}}` paired observations — because
+  the aggregate's interval is tight and two well-placed blocks erase it. The identity leg is stronger still: the
+  scalar-feature gap is exactly zero in every block, and no change to the streams can move a quantity
+  that is zero by construction, so it has no flip bound at all. The paper therefore reports the
+  identity and the count as the load-bearing evidence for the witness and treats the aggregate
+  interval as the weaker statement it is — which is what a flip bound is for. The external ordering
+  (§4.3) carries the largest margins on this instrument
+  (`{{F:F1_3_ordering.sched.k_inversions}}` / `{{F:F1_3_ordering.paging.k_inversions}}` /
+  `{{F:F1_3_ordering.ski.k_inversions}}` pair inversions for scheduling, paging and ski rental), and
+  the external *reach* statement is the weakest headline in the paper by this measure: no profile
+  reaches the published robustness scale, and a single profile would (`L3`), which is why the excluded
+  profiles are listed one by one in §4.3 rather than summarised.
 
