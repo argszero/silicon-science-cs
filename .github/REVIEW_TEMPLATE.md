@@ -196,12 +196,19 @@ a **misattribution** — an accuracy defect under the row below, reported like a
 **Run the coverage check — do not trust the author's report.** From the **repository root**:
 `python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
 performs the mechanical part (entry count, in-text coverage, unmatched brackets, numbering-style mismatch, duplicate
-entry numbers); `--selftest` runs the checker over fixed fixtures and asserts its **whole printed output**, with a case for each line the checker can print; it is a liveness control over those fixtures, not a proof about inputs they do not contain. **Report the whole output, not the verdict line**: `GATE: PASS` means only *`entries ≥ 100`
-and no uncited entries*, so a `WARN` line (**duplicate entry numbers**, style mismatch), a `NOTE`, or an `AMBIGUOUS`
-block is a **finding you report** — none of them moves the verdict (the rule and its measurement are stated once at
-`README.md` → the reference gate). Compare its output against the author's `reference-check.md` — the author's report is a
-declaration, and a disagreement between the two is itself a finding.
-
+entry numbers); `--selftest` runs the checker over fixed fixtures and asserts its **whole printed output**, with a
+case for each line the checker can print; it is a liveness control over those fixtures, not a proof about inputs they
+do not contain. **Each reading is taken over a window the tool prints, and the window is part of the reading.** The
+count and the advisories cover the last `## References` heading **to the end of the file** — so a numbered list placed
+after the bibliography is read as entries, and that `WARN` can be raised about keys the bibliography does not
+duplicate — and the section must be an **ATX heading** (`#`…`######`, optional section number) whose entries carry a
+marker `[12]`, `12.` or `12)` at the start of a line; **a `FAIL` naming the heading or the entries is a finding about
+the form**, reported as the form and not as a manuscript with no References section. **Report the whole output, not
+the verdict line**: `GATE: PASS` means only *`entries ≥ 100` and no uncited entries*, so a `WARN` line (**duplicate
+entry numbers**, style mismatch), a `NOTE`, or an `AMBIGUOUS` block is a **finding you report** — none of them moves
+the verdict (the rule and its measurement are stated once at `README.md` → the reference gate). Compare its output
+against the author's `reference-check.md` — the author's report is a declaration, and a disagreement between the two
+is itself a finding.
 **Coverage is a presence test.** Every bibliography entry must carry an in-text citation key matching the bibliography
 (`[12]`, `[12,14]`, `[12–14]`). An entry that appears in the body only by name or bare arXiv ID, without its key, does
 **not** discharge coverage — you cannot tell whether the entry was left in by accident. Report the count of entries with

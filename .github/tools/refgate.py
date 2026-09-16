@@ -18,6 +18,15 @@ name — which is why the citation gate names an explicit in-text key (quality-b
 item 11, *Citation mechanics*) and why this checker reports entries with no key
 rather than guessing.
 
+Window. A reading owes the region it read and the forms it admits, so both are
+printed with the reading. The region is the **LAST accepted heading to the end of
+the file** — an appendix (or any numbered list) placed after the bibliography is
+read as entries, and its markers can raise the duplicate-number warning. The
+accepted forms are an **ATX heading** (`#`..`######`, optional section number,
+case-insensitive) for the section, and an **entry marker** `[12]`, `12.` or
+`12)` at the start of a line (1-3 digits — a 4-digit run at line start is a
+YEAR on a wrapped URL or title line) for the entries.
+
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
     python3 .github/tools/refgate.py --selftest
@@ -48,17 +57,22 @@ FENCE = re.compile(r'^\s*```')
 
 
 def split_doc(text):
-    """Return (body, references_section_or_None).
+    """Return (body, references_section_or_None, region_or_None).
 
     Uses the LAST References heading so that an earlier, separate list cannot
     be relied on — quality-bar item 11 requires exactly one formal section.
+    The section runs from that heading TO THE END OF THE FILE: every numbered
+    line after it is read as an entry, so an appendix placed after the
+    bibliography is counted as entries and its markers can raise a duplicate
+    warning. The region is returned as (heading_line, last_line), 1-based, so
+    report() can print the window it read — the reading names its object.
     """
     lines = text.splitlines()
     starts = [i for i, l in enumerate(lines) if HDR.match(l)]
     if not starts:
-        return text, None
+        return text, None, None
     s = starts[-1]
-    return "\n".join(lines[:s]), "\n".join(lines[s + 1:])
+    return "\n".join(lines[:s]), "\n".join(lines[s + 1:]), (s + 1, len(lines))
 
 
 def strip_fences(text):
@@ -117,14 +131,20 @@ def _dups(refsec):
 def report(path):
     with open(path, encoding='utf-8') as fh:
         text = fh.read()
-    body, refsec = split_doc(text)
+    body, refsec, region = split_doc(text)
     print(f"=== {path}")
     if refsec is None:
-        print("  FAIL: no `## References` heading found")
+        # The message names what was SEARCHED FOR: a heading in another form is
+        # a form finding, not a manuscript that has no References section.
+        print("  FAIL: no `## References` heading found — searched: an ATX heading "
+              "(`#`..`######`),\n        optional section number, case-insensitive")
         return False
+    print(f"  window: the last `## References` heading (line {region[0]}) to the end "
+          f"of the file (line {region[1]})\n          — its numbered lines are read as entries")
     ents, style = parse_entries(refsec)
     if not ents:
-        print("  FAIL: References section has no parseable numbered entries")
+        print("  FAIL: References section has no parseable numbered entries — searched: a\n"
+              "        marker `[12]`, `12.` or `12)` at the start of a line (1-3 digits)")
         return False
 
     cited = cited_numbers(body)
@@ -216,7 +236,9 @@ def selftest():
     CLEAN = ("WARN", "NOTE", "AMBIGUOUS", "uncited entries")
 
     # --- the verdict line, over the input forms the matchers admit ---------
-    case("pass_exactly_100", _make(100, 100), ["GATE: PASS", "entries=100"], CLEAN)
+    # every run prints the window it read: the reading names its object
+    case("pass_exactly_100", _make(100, 100),
+         ["GATE: PASS", "entries=100", "window:"], CLEAN)
     case("wrapped_marker_ends_line",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
@@ -242,12 +264,35 @@ def selftest():
     # a wrapped URL line starting with a year must not become a phantom entry
     case("year_not_an_entry", _make(100, 100).rstrip() + "\n2025. https://example.org/x\n",
          ["GATE: PASS", "entries=100"], CLEAN)
-    # the two early failures: no verdict line is printed for either
+    # the two early failures: no verdict line is printed for either, and each
+    # NAMES THE FORM IT SEARCHED FOR — the window stated, not an absence
     case("no_references_heading", "## Introduction\n\nsee [1]\n",
-         ["FAIL: no `## References` heading found"], ("GATE",), expect_pass=False)
+         ["FAIL: no `## References` heading found", "searched:", "ATX"], ("GATE",),
+         expect_pass=False)
+    # a heading in another form is a FORM finding, and the message says so: the
+    # manuscript has a References section, in a form this checker does not admit
+    case("heading_in_another_form",
+         _make(100, 100).replace("## References", "**References**"),
+         ["FAIL: no `## References` heading found", "searched:", "ATX"], ("GATE",),
+         expect_pass=False)
     case("no_parseable_entries",
          "## Introduction\n\nsee [1]\n\n## References\n\nNot a numbered entry.\n",
-         ["FAIL: References section has no parseable numbered entries"], ("GATE",),
+         ["FAIL: References section has no parseable numbered entries", "searched:", "`[12]`"],
+         ("GATE",), expect_pass=False)
+    # the region runs to the end of the file, so a numbered appendix placed after
+    # the bibliography is read as entries — and its markers raise the duplicate
+    # warning about keys the bibliography does not duplicate. Pinned, not blessed:
+    # a reader sees both the WARN and the window that produced it.
+    case("region_runs_to_end_of_file",
+         _make(101, 101) + "\n\n## Appendix\n\n1. Step one.\n2. Step two.\n3. Step three.\n",
+         ["window:", "entries=101", "WARN: duplicate entry numbers: [1, 2, 3]"],
+         ("NOTE", "AMBIGUOUS"))
+    # and the count itself moves: an appendix numbered past the bibliography's own
+    # last key raises `entries` above the number of bibliography entries
+    case("appendix_numbered_list_counts_as_entries",
+         _make(96, 96) + "\n\n## Appendix\n\n97. Step one.\n98. Step two.\n99. Step three.\n"
+         "100. Step four.\n101. Step five.\n",
+         ["window:", "entries=101", "uncited entries (5)"], ("WARN", "NOTE", "AMBIGUOUS"),
          expect_pass=False)
 
     # --- every advisory line the checker can print ------------------------
