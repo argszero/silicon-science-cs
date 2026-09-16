@@ -1,0 +1,703 @@
+{
+  "alpha": 0.05,
+  "criteria": {
+    "a": {
+      "limit": 0.1,
+      "max_abs_error": 0.04494625598935481,
+      "mean_abs_error": 0.00357072919433522,
+      "median_abs_error": 0.0009204106773119114,
+      "n_cells": 31,
+      "registered": "held-out prediction: median absolute error <= 10 pp",
+      "status": "MET"
+    },
+    "b": {
+      "edge_position_max_rel_err_refined": 0.06283649543502783,
+      "max_width_rel_err_coarse": 0.011122083076459763,
+      "max_width_rel_err_refined": 0.008646758557846737,
+      "registered": "insensitivity region non-empty (|slope in log k| <= 0.01) with its boundary within +/-20 % of the predicted band width",
+      "slope_at_delta_zero": -0.00010219089872963699,
+      "slope_cut": 0.01,
+      "status": "MET",
+      "tol": 0.2,
+      "width_law_spreads": {
+        "0.5": 0.0,
+        "1.0": 0.0,
+        "2.0": 0.0
+      }
+    },
+    "c": {
+      "factor": {
+        "max": 1.5454329715349162,
+        "median": 1.0896905670745465,
+        "min": 0.8380774615025665
+      },
+      "mechanism": {
+        "distribution_mechanism": {
+          "max_abs_z": 4.1584135450385915,
+          "n_unmatched_of_48": 1,
+          "verdict": "fails",
+          "why": "power is a NONLINEAR function of the threshold, so the MAGNITUDE of the loss is carried by the whole distribution of tau_c, not by its mean (Jensen: E[Phi((delta - tau_c)/se)] != Phi((delta - E[tau_c])/se))."
+        },
+        "factor_falls_with_gap": 44,
+        "factor_rises_with_gap": 510,
+        "order_free": true,
+        "ordering_is_not_determination": {
+          "gap_quartiles": [
+            {
+              "factor_max": 1.0904455013380783,
+              "factor_min": 0.8380774615025665,
+              "factor_spread": 0.2523680398355118,
+              "gap_hi": 0.1102272714249104,
+              "gap_lo": -0.01393398691537049,
+              "n": 10
+            },
+            {
+              "factor_max": 1.136466733870968,
+              "factor_min": 1.0312343577935728,
+              "factor_spread": 0.10523237607739522,
+              "gap_hi": 0.1569430118973837,
+              "gap_lo": 0.11536408814857857,
+              "n": 11
+            },
+            {
+              "factor_max": 1.2373338189765068,
+              "factor_min": 1.059112319570644,
+              "factor_spread": 0.17822149940586285,
+              "gap_hi": 0.2137119372988623,
+              "gap_lo": 0.16042556811855352,
+              "n": 10
+            },
+            {
+              "factor_max": 1.5454329715349162,
+              "factor_min": 1.084446485410842,
+              "factor_spread": 0.4609864861240742,
+              "gap_hi": 0.42244289946171804,
+              "gap_lo": 0.21664670642222902,
+              "n": 11
+            }
+          ],
+          "max_factor_spread_inside_a_quartile": 0.4609864861240742
+        },
+        "pairs_compared": 554,
+        "statistic": "every unordered pair of informative cells whose mean standardised threshold gaps differ by more than 0.05, oriented by the gap",
+        "tau_like": 0.8411552346570397,
+        "verdict": "the mean gap ORDERS the factor"
+      },
+      "n_constant_better": 1,
+      "n_derived_better": 41,
+      "n_informative_cells": 42,
+      "n_significantly_better": 26,
+      "n_significantly_worse": 0,
+      "registered": "the derived rule beats the best constant threshold matched to zero honest rejections, as a factor with CIs",
+      "secondary_strict_reading": {
+        "n_failing_cells": 17,
+        "status": "UNMET",
+        "wording": "the factor's 95 % CI lower bound exceeds 1 in every informative cell"
+      },
+      "sign_test_p_one_sided": 9.777068044058979e-12,
+      "status": "MET"
+    },
+    "d": {
+      "n_streams_per_stage": {
+        "v0": 3,
+        "v1": 5,
+        "v2": 5,
+        "v3": 41,
+        "v4": 41
+      },
+      "registered": "at least 3 disjoint streams per cell, mean +/- sd, with intervals on the key contrasts",
+      "status": "MET",
+      "v3_per_stream_array_length": 41
+    }
+  },
+  "cross_checks": {
+    "failures": [],
+    "n_checks": 85,
+    "n_failed": 0,
+    "note": "every criterion and every sensitivity number is recomputed from the stage artefacts' primitives and compared with the flag the stage recorded about itself; the two must agree"
+  },
+  "experiment": "issue #44 -- canonical aggregate over the five stage artefacts",
+  "manuscript_facts": {
+    "S1": {
+      "bin_labels": [
+        "0-0.25",
+        "0.25-0.5",
+        "0.5-1",
+        "1-2",
+        "2-100"
+      ],
+      "gaussian_max_abs_error": 0.0013478944078105792,
+      "gaussian_tighter_by": 241.0813026108279,
+      "largest_ratio_exceeding": 5.05,
+      "max_abs_error_by_ratio_bin": {
+        "0-0.25": 0.0007389481002354481,
+        "0.25-0.5": 0.07140673863200953,
+        "0.5-1": 0.16419593709285452,
+        "1-2": 0.23489530119163005,
+        "2-100": 0.3249521396168249
+      },
+      "median_abs_error_by_ratio_bin": {
+        "0-0.25": 1.3785354524564752e-09,
+        "0.25-0.5": 0.00523403405044548,
+        "0.5-1": 0.031696023027821,
+        "1-2": 0.057373659848117875,
+        "2-100": 0.3068912769117095
+      },
+      "mirror_opposite": true,
+      "n_cells": 36,
+      "n_cells_inside_boundary": 11,
+      "r_star": 0.25,
+      "sign_flips_stage_rule": {
+        "0.3": 4,
+        "0.6": 2,
+        "1.497": 5,
+        "3.0": 1
+      },
+      "sign_flips_ties_excluded": {
+        "0.3": 3,
+        "0.6": 1,
+        "1.497": 5,
+        "3.0": 1
+      },
+      "tol_pp": 0.01,
+      "worst_abs_error_inside": 0.0017209011650581862,
+      "worst_abs_error_overall": 0.3249521396168249
+    },
+    "S2": {
+      "max_overshoot": -8.130081300860865e-06,
+      "measured": [
+        {
+          "bound": 0.7770467479674796,
+          "ci_hi": 0.07177165897594012,
+          "ci_lo": -0.014247268732037681,
+          "difference": 0.028762195121951217,
+          "k": 16,
+          "lam": 1.0,
+          "n_cal": 20,
+          "saturated": false
+        },
+        {
+          "bound": 0.41740040650406507,
+          "ci_hi": 0.10143787164807813,
+          "ci_lo": -0.005002912298484631,
+          "difference": 0.048217479674796754,
+          "k": 16,
+          "lam": 2.0,
+          "n_cal": 20,
+          "saturated": false
+        },
+        {
+          "bound": 0.0238739837398374,
+          "ci_hi": 0.02170665014691506,
+          "ci_lo": 0.006626683186418277,
+          "difference": 0.01416666666666667,
+          "k": 16,
+          "lam": 4.0,
+          "n_cal": 20,
+          "saturated": false
+        },
+        {
+          "bound": 0.00019308943089435537,
+          "ci_hi": 0.0003650398148907452,
+          "ci_lo": 4.8788842962437776e-06,
+          "difference": 0.0001849593495934945,
+          "k": 16,
+          "lam": 6.0,
+          "n_cal": 20,
+          "saturated": true
+        },
+        {
+          "bound": 0.9148008130081301,
+          "ci_hi": 0.025270010574078516,
+          "ci_lo": -0.013814726021232989,
+          "difference": 0.005727642276422763,
+          "k": 4,
+          "lam": 1.0,
+          "n_cal": 100,
+          "saturated": false
+        },
+        {
+          "bound": 0.6344166666666666,
+          "ci_hi": 0.048896844522906484,
+          "ci_lo": -0.03788464940095527,
+          "difference": 0.005506097560975607,
+          "k": 4,
+          "lam": 2.0,
+          "n_cal": 100,
+          "saturated": false
+        },
+        {
+          "bound": 0.09683130081300817,
+          "ci_hi": 0.07773180664815686,
+          "ci_lo": 0.021719412864038248,
+          "difference": 0.04972560975609756,
+          "k": 4,
+          "lam": 4.0,
+          "n_cal": 100,
+          "saturated": false
+        },
+        {
+          "bound": 0.0009837398373984119,
+          "ci_hi": 0.0014207544498888078,
+          "ci_lo": 0.0002987577452331652,
+          "difference": 0.0008597560975609866,
+          "k": 4,
+          "lam": 6.0,
+          "n_cal": 100,
+          "saturated": true
+        }
+      ],
+      "n_grid": 108,
+      "n_measured": 8,
+      "n_measured_ci_excludes_zero": 4,
+      "n_saturated": 18,
+      "n_saturated_measured": 2,
+      "n_unsaturated_measured": 6,
+      "saturated_gain_ratio": 929.92148760327,
+      "saturated_max_gain": 0.0009837398373984119,
+      "unsaturated_max_gain": 0.9148008130081301
+    },
+    "S3": {
+      "n_agree": 41,
+      "n_cells": 42,
+      "n_decidable": 25,
+      "n_indecidable": 17,
+      "n_min_max": 1854.4671896983991,
+      "n_min_median": 30.324835762576,
+      "n_min_min": 11.453398652846657,
+      "n_never_decidable": 1,
+      "never_decidable_cells": [
+        "n1000_k4_l1"
+      ]
+    },
+    "crit_a": {
+      "limit": 0.1,
+      "max_abs_error": 0.04494625598935481,
+      "mean_abs_error": 0.00357072919433522,
+      "median_abs_error": 0.0009204106773119114,
+      "n_cells": 31,
+      "n_cells_within_1pp": 28
+    },
+    "crit_a_calibration_cell": {
+      "alpha_anchor": 0.022222222222222254,
+      "c_alpha_anchor": 2.009874772195384,
+      "fabrication_abs_error": 0.06896551724137931,
+      "fabrication_observed": 0.06896551724137931,
+      "fabrication_predicted": 0.0,
+      "implied_delta": 1.9473792941368955,
+      "implied_u": 2.344597707470272,
+      "k": 5,
+      "observed_power": 0.9904761904761905
+    },
+    "crit_a_invariance": {
+      "max_spread": 0.04718666666666671,
+      "n_groups": 10
+    },
+    "crit_a_mechanism_blindness": {
+      "max_abs_error": 0.04494625598935481,
+      "n_cells": 4
+    },
+    "crit_b": {
+      "edge_rel_err_coarse": 0.2240978207019527,
+      "edge_rel_err_refined": 0.06283649543502783,
+      "k_band": [
+        8,
+        32,
+        128,
+        512
+      ],
+      "k_band_max": 512,
+      "k_band_mid1": 32,
+      "k_band_mid2": 128,
+      "k_band_min": 8,
+      "margin_factor": 23,
+      "max_width_rel_err_coarse": 0.011122083076459763,
+      "max_width_rel_err_refined": 0.008646758557846737,
+      "n_grid": 81,
+      "n_sigma": 3,
+      "per_sigma": {
+        "0.5": {
+          "delta_hi_meas": 0.8846985918209875,
+          "delta_hi_pred": 0.8881249999999998,
+          "delta_lo_meas": 0.03494936342592592,
+          "delta_lo_pred": 0.03465212953625292,
+          "width_meas": 0.8629652666325492,
+          "width_pred": 0.8534728704637469,
+          "width_rel_err": 0.011122083076459763,
+          "width_rel_err_refined": -0.004362929622662705
+        },
+        "1.0": {
+          "delta_hi_meas": 1.191579861111111,
+          "delta_hi_pred": 1.1925,
+          "delta_lo_meas": 0.01564236111111111,
+          "delta_lo_pred": 0.015070104624791837,
+          "width_meas": 1.1837691531206567,
+          "width_pred": 1.177429895375208,
+          "width_rel_err": 0.00538397892761889,
+          "width_rel_err_refined": -0.0012675025333313797
+        },
+        "2.0": {
+          "delta_hi_meas": 1.7953356481481482,
+          "delta_hi_pred": 1.81,
+          "delta_lo_meas": 0.014664351851851852,
+          "delta_lo_pred": 0.01379737326939419,
+          "width_meas": 1.7976953124255477,
+          "width_pred": 1.796202626730606,
+          "width_rel_err": 0.0008310229997039399,
+          "width_rel_err_refined": -0.008646758557846737
+        }
+      },
+      "slope_at_delta_zero": -0.00010219089872963699,
+      "slope_cut": 0.01,
+      "tol": 0.2,
+      "width_law_spread_max": 0.0,
+      "width_law_spreads": {
+        "0.5": 0.0,
+        "1.0": 0.0,
+        "2.0": 0.0
+      },
+      "zero_delta_insensitive": true
+    },
+    "crit_c": {
+      "by_lambda": {
+        "1.0": {
+          "lam": 1.0,
+          "max_factor": 1.5454329715349162,
+          "median_factor": 1.1047412701369268,
+          "min_factor": 0.8380774615025665,
+          "n_better": 11,
+          "n_cells": 12,
+          "n_significantly_better": 3
+        },
+        "2.0": {
+          "lam": 2.0,
+          "max_factor": 1.2825441274549196,
+          "median_factor": 1.1743734482769022,
+          "min_factor": 1.051388004287512,
+          "n_better": 12,
+          "n_cells": 12,
+          "n_significantly_better": 9
+        },
+        "3.0": {
+          "lam": 3.0,
+          "max_factor": 1.1388553676302224,
+          "median_factor": 1.0774078166110757,
+          "min_factor": 1.0258610040254734,
+          "n_better": 12,
+          "n_cells": 12,
+          "n_significantly_better": 10
+        },
+        "4.0": {
+          "lam": 4.0,
+          "max_factor": 1.0720839142975744,
+          "median_factor": 1.0408045333121092,
+          "min_factor": 1.0264793754818815,
+          "n_better": 6,
+          "n_cells": 6,
+          "n_significantly_better": 4
+        }
+      },
+      "by_n_cal": {
+        "100": {
+          "max_factor": 1.206636361233713,
+          "median_factor": 1.0840630309838404,
+          "min_factor": 1.0264793754818815,
+          "n_better": 12,
+          "n_cal": 100,
+          "n_cells": 12,
+          "n_significantly_better": 7
+        },
+        "1000": {
+          "max_factor": 1.3141490287039723,
+          "median_factor": 1.0936688860892634,
+          "min_factor": 0.8380774615025665,
+          "n_better": 11,
+          "n_cal": 1000,
+          "n_cells": 12,
+          "n_significantly_better": 5
+        },
+        "20": {
+          "max_factor": 1.5454329715349162,
+          "median_factor": 1.0761477516678377,
+          "min_factor": 1.0312343577935728,
+          "n_better": 9,
+          "n_cal": 20,
+          "n_cells": 9,
+          "n_significantly_better": 7
+        },
+        "5": {
+          "max_factor": 1.2405775038672133,
+          "median_factor": 1.0899229537357265,
+          "min_factor": 1.0258610040254734,
+          "n_better": 9,
+          "n_cal": 5,
+          "n_cells": 9,
+          "n_significantly_better": 7
+        }
+      },
+      "max_factor": 1.5454329715349162,
+      "median_factor": 1.0896905670745465,
+      "min_factor": 0.8380774615025665,
+      "n_cells_with_ci_excluding_one": 25,
+      "n_constant_better": 1,
+      "n_derived_better": 41,
+      "n_informative_cells": 42,
+      "n_significantly_better": 26,
+      "n_significantly_worse": 0,
+      "sign_test_p_one_sided": 9.777068044058979e-12,
+      "strict_reading_n_failures": 17
+    },
+    "crit_c_mechanism": {
+      "factor_falls_with_gap": 44,
+      "factor_rises_with_gap": 510,
+      "k1_max_abs_z": 3.2360416040493862,
+      "k1_n_checks": 96,
+      "k4_max_abs_z": 4.1584135450385915,
+      "k4_n_unmatched_of_48": 1,
+      "pairs_compared": 554,
+      "quartile_spread": 0.4609864861240742,
+      "tau_like": 0.8411552346570397,
+      "z_tol": 4.0
+    },
+    "crit_d": {
+      "streams": 41,
+      "streams_by_stage": {
+        "v0": 3,
+        "v1": 5,
+        "v2": 5,
+        "v3": 41,
+        "v4": 41
+      }
+    },
+    "priors": {
+      "P1_status": "CONFIRMED",
+      "P2_status": "CONFIRMED",
+      "P3_status": "CONFIRMED",
+      "best_response_max_power": 0.0,
+      "best_response_node": [
+        "collapse_c0"
+      ],
+      "mean_stat_flat_max_delta": 0.0005833333333333246,
+      "n_best_response_budgets": 3,
+      "n_null_cells": 12,
+      "var_k4_max": 0.6656666666666666,
+      "var_k64_max": 1.0,
+      "worst_null_abs_err": 0.0020079880014478024
+    },
+    "stage_params": {
+      "v0": {
+        "all_pass": true,
+        "alpha": 0.05,
+        "n_controls": 4,
+        "n_mc": 8000,
+        "n_streams": 3
+      },
+      "v1": {
+        "all_pass": true,
+        "c_alpha": 1.6448536269514715,
+        "n_mc": 15000,
+        "n_streams": 5
+      },
+      "v2": {
+        "all_pass": true,
+        "k_band": [
+          8,
+          32,
+          128,
+          512
+        ],
+        "n_grid": 81,
+        "n_mc": 8000,
+        "n_streams": 5,
+        "sigmas": [
+          0.5,
+          1.0,
+          2.0
+        ]
+      },
+      "v3": {
+        "all_pass": false,
+        "k_grid": [
+          4,
+          16,
+          64
+        ],
+        "lam_grid": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "n_cal_grid": [
+          5,
+          20,
+          100,
+          1000
+        ],
+        "n_cells": 48,
+        "n_mc": 12000,
+        "n_streams": 41,
+        "sigma_h": 1.0
+      },
+      "v4": {
+        "all_pass": true,
+        "n_mc": 12000,
+        "n_streams": 41,
+        "s1_delta": 0.3,
+        "s1_node_sigmas": [
+          0.3,
+          0.6,
+          1.497,
+          3.0
+        ]
+      }
+    }
+  },
+  "prior_evidence": {
+    "P1": {
+      "evidence": {
+        "mean_statistic_flat_in_k": true,
+        "n_null_cells": 12,
+        "variance_statistic_grows_in_k": true,
+        "worst_null_abs_err": 0.0020079880014478024
+      },
+      "registered": "against a location-preserving divergence, detection is bounded away from 1 by a constant no budget improves",
+      "status": "CONFIRMED"
+    },
+    "P2": {
+      "evidence": {
+        "width_law_spreads": {
+          "0.5": 0.0,
+          "1.0": 0.0,
+          "2.0": 0.0
+        }
+      },
+      "registered": "against a location-shifting divergence, detection improves only inside a transition band around the threshold, whose width shrinks like sigma/sqrt(k)",
+      "status": "CONFIRMED"
+    },
+    "P3": {
+      "evidence": {
+        "best_response_per_budget": {
+          "k=16": [
+            "collapse_c0",
+            0.0
+          ],
+          "k=256": [
+            "collapse_c0",
+            0.0
+          ],
+          "k=64": [
+            "collapse_c0",
+            0.0
+          ]
+        }
+      },
+      "registered": "against a best-responding node, the marginal value of one more re-execution at the verifier's optimum tends to zero",
+      "status": "CONFIRMED"
+    }
+  },
+  "sensitivity": {
+    "S1_lattice": {
+      "gaussian_control_max_abs_error": 0.0013478944078105792,
+      "gaussian_control_tighter_by_factor": 241.0813026108279,
+      "largest_ratio_still_exceeding_tolerance": 5.05,
+      "n_cells": 36,
+      "sign_flips_in_k_per_node": {
+        "0.3": 4,
+        "0.6": 2,
+        "1.497": 5,
+        "3.0": 1
+      },
+      "sign_flips_with_exact_ties_excluded": {
+        "0.3": 3,
+        "0.6": 1,
+        "1.497": 5,
+        "3.0": 1
+      },
+      "statement": "|error| <= 1 pp for every measured cell with big/(sigma*sqrt(k)) <= 0.2500",
+      "tolerance_pp": 0.01,
+      "usable_boundary_r_star": 0.25,
+      "worst_abs_error_inside_the_boundary": 0.0017209011650581862,
+      "worst_abs_error_over_all_measured_cells": 0.3249521396168249
+    },
+    "S2_ceiling": {
+      "max_overshoot_of_the_bound": -8.130081300860865e-06,
+      "n_grid": 108,
+      "n_saturated_in_the_grid": 18,
+      "n_saturated_measured": 2,
+      "n_unsaturated_measured": 6,
+      "saturated_max_achievable_gain": 0.0009837398373984119,
+      "unsaturated_max_achievable_gain": 0.9148008130081301
+    },
+    "S3_decidability": {
+      "n_cells": 42,
+      "n_decidable_at_41": 25,
+      "n_indecidable_at_41": 17,
+      "n_min_max": 1854.4671896983991,
+      "n_min_median": 30.324835762576,
+      "n_min_min": 11.453398652846657,
+      "n_never_decidable": 1
+    }
+  },
+  "stage_order_is_load_bearing": true,
+  "stage_verdicts": {
+    "v0": {},
+    "v1": {},
+    "v2": {
+      "ALL_PASS": true
+    },
+    "v3": {
+      "ALL_PASS": false
+    },
+    "v4": {
+      "ALL_PASS": true
+    }
+  },
+  "stages": [
+    {
+      "artefact": "results_v0.json",
+      "artefact_sha256": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+      "exit_code": 0,
+      "purpose": "controls only: closed-form versus Monte-Carlo agreement, the mean/var discrimination, the null and the needle -- no claim is made from v0",
+      "script": "instrument_v0.py",
+      "script_sha256": "a9dd4ef6f64256db417f48f020d25326f0ea5e78b2b04cd843f0d47408243d28",
+      "tag": "v0"
+    },
+    {
+      "artefact": "results_v1.json",
+      "artefact_sha256": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+      "exit_code": 0,
+      "purpose": "criterion (a): out-of-sample prediction error, invariance, and the calibration cell anchored to the antecedent's measured rates",
+      "script": "instrument_v1.py",
+      "script_sha256": "9cb707f0a3d54b660a2ef25c8826a74b06a93fb33e2cb31f51fa101611217e89",
+      "tag": "v1"
+    },
+    {
+      "artefact": "results_v2.json",
+      "artefact_sha256": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+      "exit_code": 0,
+      "purpose": "criterion (b): the insensitivity band, its boundary and its width law",
+      "script": "instrument_v2.py",
+      "script_sha256": "a6111626ced05e2c6845a0753ba8944f9b2c2072566141a147063021d38afff0",
+      "tag": "v2"
+    },
+    {
+      "artefact": "results_v3.json",
+      "artefact_sha256": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+      "exit_code": 0,
+      "purpose": "criterion (c): the derived per-execution rule versus the best constant threshold matched to zero honest rejections",
+      "script": "instrument_v3.py",
+      "script_sha256": "43ed2837e1c2ba594a2afa3522898f5553b0d4dfaa6c51df6e2cda90020688df",
+      "tag": "v3"
+    },
+    {
+      "artefact": "results_v4.json",
+      "artefact_sha256": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842",
+      "exit_code": 0,
+      "purpose": "sensitivity: the lattice boundary of the construct, what the ceiling bounds, and where the comparison is decidable",
+      "script": "instrument_v4.py",
+      "script_sha256": "5044073f9bb2be22f7e0d52a30927d561e0853aac3f3697fe3b27d5a78673edc",
+      "tag": "v4"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "figures": [
+    {
+      "caption": "(a) predicted against measured power over the crossed cells, with the prediction interval on each measurement; (b) the invariance groups, in which one u arises from different decompositions.",
+      "figure": "figures/fig1_prediction.png",
+      "png_sha256": "5fd7571b632041e28ea53e470e52c6202db53dc95d03fd4d4d18f0fb10205a61",
+      "series_sha256": "013dc1402bc22faad77c421eea01943ffbd980cef88ecc71a2bd33b0c3241e8a",
+      "sources": {
+        "results_v0.json": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+        "results_v1.json": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+        "results_v2.json": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+        "results_v3.json": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+        "results_v4.json": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842"
+      }
+    },
+    {
+      "caption": "criterion (b): the measured band against the construct's own band edges, and width*sqrt(k)/sigma constant in k at each honest spread.",
+      "figure": "figures/fig2_band.png",
+      "png_sha256": "fe6bda7ec00702312c50d4470934c681380f065f69e9d3a5d9945decac68a9c3",
+      "series_sha256": "2fa30865d89b9c7ba7664906d10a917ba99afbaf3ffde453c7d56a48d14562aa",
+      "sources": {
+        "results_v0.json": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+        "results_v1.json": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+        "results_v2.json": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+        "results_v3.json": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+        "results_v4.json": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842"
+      }
+    },
+    {
+      "caption": "criterion (c): every informative cell's factor with its 95 % interval, and the factor against the standardised margin at four calibration budgets.",
+      "figure": "figures/fig3_rule.png",
+      "png_sha256": "796e1666e1ebb71674bb3614c2c4c02ea0bda9ceb1ef136be4307d00425f8556",
+      "series_sha256": "eb251500c7d12e71791352f7461c92f2512f213b591e19f99d4cf052c5703f9c",
+      "sources": {
+        "results_v0.json": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+        "results_v1.json": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+        "results_v2.json": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+        "results_v3.json": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+        "results_v4.json": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842"
+      }
+    },
+    {
+      "caption": "S1: |error| against the lattice ratio with the usable boundary; the same error against the budget, showing it is not monotone; and the Gaussian control.",
+      "figure": "figures/fig4_lattice.png",
+      "png_sha256": "f5c7acd808fb7a33e8bbd2eb0048513fcb9fb65d2a75570a5facac23f52b2605",
+      "series_sha256": "859bbc65e3097dfa1a8714293d8b4d23259af8232d038c7ed0450c5c3e3de437",
+      "sources": {
+        "results_v0.json": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+        "results_v1.json": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+        "results_v2.json": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+        "results_v3.json": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+        "results_v4.json": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842"
+      }
+    },
+    {
+      "caption": "S2: the saturated and unsaturated grids against their 1-p_c bound, and the measured differences with intervals, showing the bound is never crossed.",
+      "figure": "figures/fig5_ceiling.png",
+      "png_sha256": "cadd48b777a025e8468de8d64243eeab8979954225dd53d335f963c30ae7cf86",
+      "series_sha256": "950f7bda0ee30ff3ff53aa2d278f5e51b8aeaceb7ee76ce685f50f94af06a5b7",
+      "sources": {
+        "results_v0.json": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+        "results_v1.json": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+        "results_v2.json": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+        "results_v3.json": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+        "results_v4.json": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842"
+      }
+    },
+    {
+      "caption": "S3: the streams each informative cell needs to certify the factor against the budget the study ran, and the measured factor per cell on the same order.",
+      "figure": "figures/fig6_decidability.png",
+      "png_sha256": "4b1c270560d39b5a02a1ae63e2a4ba36e888cffc48ee3f3db89a948cc4636d55",
+      "series_sha256": "8b8cf1f51842ba0a93ca2a9c02d7742f1d67abd685a63ab8fd6702772b3cb599",
+      "sources": {
+        "results_v0.json": "9cc6160f3d452a4179a30f57a2384f701e3b267399c1620689df37c8b45eeb5b",
+        "results_v1.json": "eec995d92db43f75476dddbc2501980ad7b21644a8afdcb8e4f2586cc3110a40",
+        "results_v2.json": "db7b0834d7a238c06a106ef150f59707b1a10486d3680fa21b60efa81fe98157",
+        "results_v3.json": "edccf0f49c320128a3ee2322373d03a8a4b341f2a8323967b5f8504fc16cca42",
+        "results_v4.json": "0671ebedc46e277bf1552adc3c2519afce15b669a97b1b64988384c0d91fb842"
+      }
+    }
+  ],
+  "matplotlib": "3.9.4",
+  "note": "series_sha256 covers BOTH the declared arrays and the numbers read back off the axes' artists after drawing, so a change to the plotting expression moves it; sources records every artefact the figure read. PNG bytes depend on the matplotlib build, so the manifest records that build and pins the DATA instead."
+}
