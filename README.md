@@ -398,16 +398,30 @@ the pre-correction reading.
 So: verify a reference's target **in the cycle that writes it**, and where the target lies **outside
 this repository**, cite what it is and where it lives — never a bare number.
 
-**A count is a measurement, and it owes its set — a position needs its list, and a count needs its class.** A number
-written into a carrier and read as current is taken over an object, and where that object is one this journal keeps
-changing — its carriers, its sections, its registered rows, its filed registrations — the sentence **names the set
-it was taken over**, or no reader can re-take it and no step can see it go stale: a date says *when* and a round says
-*in which cycle*, and neither says *over what*. The set is named **in the sentence** (its members), or **held by a
-carrier that states it once** (*Links* above, for the carriers), or the sentence states the **instrument** — the
-command and the set it ran over, as `.github/REVIEW_TEMPLATE.md` → *What makes a concern major* does (`git grep -n
--o major` over two named carriers at a named head). **A count whose set is in no carrier is not a weaker measurement
-but an unfalsifiable one**, and its repair is the one *Time and units* already applies to its own set: **state the
-set by its entries, not by a number**, so that a member added later joins by being added.
+**A count is a measurement, and it owes its set and its instrument — a position needs its list, and a count needs
+its class.** A number written into a carrier and read as current is taken over an object, and where that object is
+one this journal keeps changing — its carriers, its sections, its registered rows, its filed registrations — the
+sentence **names the set it was taken over**, or no reader can re-take it and no step can see it go stale: a date
+says *when* and a round says *in which cycle*, and neither says *over what*. The set is named **in the sentence**
+(its members), or **held by a carrier that states it once** (*Links* above, for the carriers), or the sentence
+states the **instrument** — the command, the set it ran over, **and the coordinates that fixed the invocation** —
+as `.github/REVIEW_TEMPLATE.md` → *What makes a concern major* does (`git grep -n -o major` over two named carriers
+at a named head). **A count whose set is in no carrier is not a weaker measurement but an unfalsifiable one**, and
+its repair is the one *Time and units* already applies to its own set: **state the set by its entries, not by a
+number**, so that a member added later joins by being added.
+
+**An instrument is a relation, not a name — the command identifies it, the coordinates fix its class.** A command
+name does not decide the number it returns, so a sentence naming *which command ran* has named the instrument and
+not its **class**: the same command over the same set, on the same machine and the same day, returns a different
+count when the interpreter, the build or the binary resolution underneath it differs. The class is what the
+sentence owes — **the unit it counts in** (bytes against characters, matches against lines) and **the coordinates
+that fixed the invocation** (the head, the interpreter or venv with its version, the build or manifest the count
+came from) — which are the coordinates a reproduction spec already owes (*Quality bar* item 5), so none of that
+vocabulary is restated here. Its test is the reader's own: **re-take the count from the sentence alone — if the
+number moves, the sentence is missing a coordinate.** *Measured at `#44`'s published head*: its figure check adds
+one PNG-byte comparison per figure **only when the local matplotlib build equals the recorded one** (six figures,
+so six added checks), and the same command over the same set therefore returns one count on the build the manifest
+pins and another on a different build — the package's own README states both, with the build each belongs to.
 
 **A duty that names its subjects owes each of them the step at which it is discharged.** A clause read as binding *the
 author, the reviewer and the editor* is read as a **complete** duty, so it owes every subject it names a place they
@@ -446,13 +460,16 @@ negative in place of a named window.
 in a checkout and the same tree exported as an archive of the same commit are not the same object: an export carries
 the tracked files and **no `.git` and no ignored path**, so a check that resolves a git object, or reads a file the
 repository does not track, cannot run there at all — and a verdict it returns is then a fact about the path, not about
-the package. *Measured 2026-09-15 on the package that filed this item*: `bash reproduce.sh` over an exported copy of
-exactly its head exits **1** with `instrument audit: 18 run, 1 failed` / `verdict: NOT READY`, while a checkout of the
-same commit is `ALL GREEN` exit 0 with every governing artefact byte-identical — **one commit, one package, two
-acquisition paths, two verdicts**. So a reading names how it obtained the tree, and a reproduction spec names the tree
-form it needs; **the reader this workflow binds obtains it by export** — a PR is read as an archive of its head, never
-as a working tree — so a spec that silently requires a checkout is **incomplete in the same way** as one that needs an
-unstated directory or environment.
+the package. *Measured 2026-09-15 at `e23207d`, the head of the package that filed this item — named, because a count
+belongs to a head and not to a package*: `bash reproduce.sh` over an exported copy of exactly `e23207d` exits **1**
+with `instrument audit: 18 run, 1 failed` / `verdict: NOT READY`, while a checkout of the same commit is `ALL GREEN`
+exit 0 with every governing artefact byte-identical — **one commit, one package, two acquisition paths, two
+verdicts**. The package's instrument has grown and its git read has been confined since, so that count is not
+re-takeable at its published head: an export of that head prints `instrument audit: 44 run, 0 failed` and exits 0 —
+a count moves when the thing it counts does, which is what naming its set is for. So a reading names how it obtained
+the tree, and a reproduction spec names the tree form it needs; **the reader this workflow binds obtains it by
+export** — a PR is read as an archive of its head, never as a working tree — so a spec that silently requires a
+checkout is **incomplete in the same way** as one that needs an unstated directory or environment.
 
 **A control owes the window's boundary.** A control over a checker — a self-test, a liveness fixture, a canary — is a
 claim about what the checker catches, and its cases are drawn from a set smaller than the forms the window admits and
