@@ -457,13 +457,25 @@ only from that step's mood. **Both directions are one rule:** an actor a reader 
 carrier that fixes its population — the `Author instance` line for the author, the `assigned-<instance-id>` label for
 the reviewer, the *Editor-row churn* row for the editor, and the two senses of *instance* and *participant* with the
 rule that picks between them — while an actor that exists only as a step's addressee is read **as that step**.
-*Measured 2026-09-17 at `c7dcdbd` — instrument: case-insensitive word-boundary token matches over the seven tracked
-non-manuscript carriers (`README.md` → *Links* states the set), every hit read in its own sentence; population: every
-actor noun the carriers read in the third person* ⇒ **8 nouns** — `author` (151 uses / 6 carriers) · `reviewer` (73 / 4)
-· `editor` (206 / 6) · `instance` (185 / 5) · `participant` (33 / 3) · `collaborator` (9 / 3) · `owner` (5 / 2) ·
+**A count is read from the instrument that produced it — a class names a family, so the member is stated with it.** A
+class of read is not the member that produced a figure: naming this census's instrument a `word-boundary token match`
+gathers a family, and the member whose output the figures below are — the same read **minus every form joined to a
+hyphen** — returns **151 / 73 / 206 / 185 / 33 / 9 / 5 / 2** where the class returns **159 / 73 / 226 / 223 / 34 / 9 /
+5 / 2**, four of the eight differing. Its sibling above has the shape this lacked: there the channel set is enumerated
+and its parts sum to its total (`42 + 67 + 9 + 31 = 149`). *Measured 2026-09-17 at `c7dcdbd` — instrument: a
+case-insensitive token match over the seven **tracked non-manuscript files** (the six carriers `README.md` → *Links*
+states, plus `.gitignore`, which is tracked and is not a carrier) that counts the **singular lemma only** (`authors`,
+`instances` and `collaborators` name other objects, not further uses of the noun) and admits **no form joined to a
+hyphen** (`instance-id`, `Editor-row`); every hit then read in its own sentence; population: every actor noun the
+carriers read in the third person* ⇒ **8 nouns** — `author` (151 uses / 6 carriers) · `reviewer` (73 / 4) ·
+`editor` (206 / 6) · `instance` (185 / 5) · `participant` (33 / 3) · `collaborator` (9 / 3) · `owner` (5 / 2) ·
 `registrant` (**2 / 2**) — of which **7 are settled** (named above; `owner` occurs only inside the column name
-`Machine / Owner`, which no rule reads) and **one is not**: `registrant`, **2 uses in 2 carriers, 0 binding sentences**
-— once inside the `Status` column's rule, where a row's initial value is attributed to it, and once as the gloss a
+`Machine / Owner`, which no rule reads; and `collaborator` is the external artefact's own name — of its **9 uses**
+over 3 carriers, **8 are that artefact's vocabulary** (`collaborator grant` ×4, `collaborator listing` ×2 with its
+`/collaborators` path, `collaborator invitation` ×2) and the **1 prose use** (`## Contact`, the rule on third-party
+threads) names a person outside the journal — so the word is bound where the tree takes it from, and no rule's
+population is written in it) and **one is not**: `registrant`, **2 uses in 2 carriers, 0 binding sentences** — once
+inside the `Status` column's rule, where a row's initial value is attributed to it, and once as the gloss a
 cross-reference identifies a position by — and the two sites name that step now.
 
 **A reading owes its window — the region it reads and the forms it admits.** A check decides by reading a *region* of
