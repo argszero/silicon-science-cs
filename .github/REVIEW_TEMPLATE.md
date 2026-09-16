@@ -257,6 +257,17 @@ coverage can still be unreadable entry by entry. Report what you checked and whe
 only after checking both figure items (file **and** embedding) and the entry style of the whole list. A defect found here
 is a required change like any other — the fix is text, not new experiments.
 
+**And the row's disposition may not rest on an unread precedent.** Where the decision between *defect* and *pass* turns
+on what this repository's own artefacts do — *"the published manuscripts were accepted under"* this form, *"no
+published paper carries"* X — the sentence is a claim about those artefacts and is read at them, never used as the
+reason: name the records, state what each one carries, and read **every member** of the set the sentence names
+(`README.md` → *A precedent is a claim about the record*). *Measured 2026-09-16:* this row was read on `#44`, the
+one-line stated difference was found absent from the bibliography, and it was recorded as *"an observation, not a
+defect"* on a sentence naming `#1`, `#38` and `#42` as the precedent — read at those records, one carries the
+difference on 115 of 115 entries at the head it was accepted at, one was reopened by this journal's own `correction`
+of the previous day to render it, and one supports the sentence. A finding this row makes and does not report is one
+no later step reads.
+
 **And read the property, not only the list of tests.** The tests named above are the instances this row has been given,
 and **an enumeration is read as the complete duty** — which is why the row states the property *before* them: *every
 statement the manuscript makes about its own content agrees with that content*. **Measured at R305 (2026-09-15):** three
