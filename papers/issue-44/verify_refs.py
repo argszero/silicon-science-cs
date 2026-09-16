@@ -668,10 +668,28 @@ def provenance_counts(path):
 # The support test above can only check a row whose intent was written from the
 # sentence (provenance `claim`).  For a `backfilled` row it asserts that the locator
 # agrees with itself, so a wrong locator cannot show up there -- which is how `pbft`
-# survived three rounds.  This screen covers that side: for every cited key it takes
-# the manuscript clause that names the key and asks whether that clause carries a
-# distinctive token of the record's TITLE, or a SURNAME of the record's authors.  If
-# neither, the row is flagged for a human read -- never passed.
+# survived three rounds.  On the `backfilled` side this screen removes the SILENT pass:
+# for every cited key it takes the manuscript clause that names the key and asks whether
+# that clause carries a token of the record's TITLE that exactly ONE title in this corpus
+# carries, or a SURNAME of the record's authors.  If neither, the row is flagged for a
+# human read -- never passed.
+#
+# WHAT IT IS NOT, stated here because a carrier of this screen once claimed more
+# (correction round 1, defect 3): it is a detector of UNEARNED SILENCE, not of
+# SUBSTITUTION.  Its mechanism is token overlap, so a near substitute that shares the
+# record's own binding token still passes -- the selftest pins exactly such a clause as a
+# BLIND SPOT -- and what closes that class is the identity read (the returned year, venue
+# and authors read against the entry's own line, recorded per row in `reference-check.md`).
+#
+# The uniqueness requirement is itself the repair of a measured defect.  The screen first
+# accepted a title token carried by up to TWO titles, and the instrument here is a
+# spelling set: planting Lamport, Shostak & Pease, *The Byzantine Generals Problem* over
+# `[@pbft]` left the row certified, because the clause "practical Byzantine replication
+# ..." carries `byzantine` and the neighbouring `bft` title carries it too.  A token two
+# titles share is a coincidence of vocabulary, not a name.  Under the uniqueness rule 37
+# of the 103 clauses certify themselves and 66 are read (before: 53 / 50) and no verdict
+# moved -- the 16 demoted rows were read against their records and every one is correctly
+# anchored.
 #
 # It is a screen, not a proof, and the direction of its error is the safe one: a clause
 # that names a work's ROLE ("two-sample comparison") rather than its title is flagged
@@ -741,7 +759,10 @@ def binding_screen(flat, records):
     for rec in records.values():
         for w in set(screen_tokens(rec["title"])):
             count[w] = count.get(w, 0) + 1
-    distinct = set(w for w, n in count.items() if n <= 2)
+    # A token carried by exactly ONE title in the corpus.  This was `n <= 2` until
+    # correction round 1: `byzantine` is carried by both `bft` and `pbft`, so a clause
+    # naming neither could still be certified through the vocabulary the two share.
+    distinct = set(w for w, n in count.items() if n == 1)
     out = {}
     for key, rec in records.items():
         cl = screen_clause(flat, key)
@@ -816,21 +837,32 @@ def binding_section(flat, records, marks):
     problems, screen, counts = binding_check(flat, records, marks)
     out = ["## Does the citing sentence bind to the record?  (round-3 question 2)\n\n",
            "The support test above cannot see a wrong locator on a `backfilled` row, because\n"
-           "such a row's intent IS what the locator returned. This screen covers that side and\n"
-           "runs on every cited key, whichever way its intent was written: it takes the\n"
-           "manuscript **clause that names the key** and asks whether that clause carries a\n"
-           "distinctive token of the record's title or a surname of its authors. A clause that\n"
-           "names the work's *role* rather than its title (\"two-sample comparison\") is flagged\n"
-           "even when the record is right, so the screen's error is in the safe direction and a\n"
-           "flagged row is never passed -- it is read against its record by the author, and the\n"
-           "mark is recorded per row in column 7 (`anchor`) of the batch.\n\n",
+           "such a row's intent IS what the locator returned. This screen removes the *silent*\n"
+           "pass on that side, and runs on every cited key, whichever way its intent was\n"
+           "written: it takes the manuscript **clause that names the key** and asks whether\n"
+           "that clause carries a token of the record's title that **exactly one** title in this\n"
+           "corpus carries, or a surname of its authors. A clause that names the work's *role*\n"
+           "rather than its title (\"two-sample comparison\") is flagged even when the record is\n"
+           "right, so the screen's error is in the safe direction and a flagged row is never\n"
+           "passed -- it is read against its record by the author, and the mark is recorded per\n"
+           "row in column 7 (`anchor`) of the batch.\n\n",
            "| measure | value |\n|---|---|\n",
            "| cited keys | %d |\n" % counts["cited"],
            "| clause names the record (screen) | **%d** |\n" % counts["screen"],
-           "| flagged for reading (clause names neither) | %d |\n" % counts["flagged"],
+           "| flagged for reading (clause names no unique token, no surname) | %d |\n"
+           % counts["flagged"],
            "| flagged rows read and marked `read` | %d |\n" % counts["read"],
            "| **flagged rows left unread** | **%d** |\n" % (counts["flagged"] - counts["read"]),
            "| marks that disagree with the screen | %d |\n\n" % len(problems),
+           "**What it is not.** The mechanism is token overlap, so a near substitute that shares\n"
+           "the record's own binding token still passes: the screen detects *unearned silence*,\n"
+           "not substitution. What closes that class is the **identity read** -- the returned\n"
+           "year, venue and authors read against the entry's own line, which the authenticity\n"
+           "table above records per row. The uniqueness requirement is itself a repair: the\n"
+           "screen first accepted a title token carried by up to **two** titles, and planting\n"
+           "Lamport, Shostak & Pease, *The Byzantine Generals Problem* over `[@pbft]` left the row\n"
+           "certified through the `byzantine` the neighbouring `bft` title also carries. A token\n"
+           "two titles share is a coincidence of vocabulary, not a name.\n\n",
            "The screen is a control, and its control is the defect it was built for. Applied to\n"
            "the round-3 `pbft` row as it stood -- clause *\"practical Byzantine replication makes\n"
            "that bound an engineering parameter\"* against the record its locator then returned,\n"
@@ -867,6 +899,22 @@ def binding_selftest():
     case("bound_after_repair", pbft_clause,
          {"pbft": {"title": "Practical byzantine fault tolerance and proactive recovery",
                    "names": ["Castro", "Liskov"]}}, "pbft", "BOUND")
+    # The uniqueness rule, against a constructed member of the class the older rule
+    # passed: two Byzantine titles, and a clause whose only overlap with the record it
+    # cites is the token the two share.  Under `n <= 2` this row was certified.
+    case("shared_token_does_not_certify",
+         "the byzantine agreement literature is where this bound comes from [@pbft].",
+         {"bft": {"title": "The Byzantine Generals Problem", "names": ["Lamport"]},
+          "pbft": {"title": "Practical byzantine fault tolerance and proactive recovery",
+                   "names": ["Castro"]}}, "pbft", "NEEDS-READ")
+    # BLIND SPOT, constructed rather than asserted: a clause that cites a DIFFERENT work
+    # while carrying a unique token of the record's own title is certified.  The screen
+    # detects unearned silence, not substitution; this case is where its reach stops, and
+    # the identity read is what closes the class.
+    case("BLIND SPOT: a substitute sharing the record's own unique token passes",
+         "approximate query processing over sampled data is a different line of work [@aqp].",
+         {"aqp": {"title": "Approximate Query Processing: What is New and Where to Go?",
+                  "names": ["Chaudhuri"]}}, "aqp", "BOUND")
     case("bound_by_surname",
          "the Dvoretzky-Kiefer-Wolfowitz bound with its sharp constant [@dkw].",
          {"dkw": {"title": "Asymptotic minimax character of the sample distribution function",

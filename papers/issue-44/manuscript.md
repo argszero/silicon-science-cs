@@ -40,8 +40,10 @@ a pre-registered study: four registered criteria, all met, and three registered 
 confirmed. A sensitivity block
 then measures the construct's own limits rather than hedging them: its usable boundary is a
 lattice ratio rather than a rate of convergence, the ceiling's cost is a fraction of a
-percentage point, and the saturated cells' intervals contain zero, so their bound is reported as
-an upper bound rather than as a certified gain. The practical answer to
+percentage point, and the `2` saturated cells this study measured
+have intervals that exclude zero — though their lower bounds reach down to
+`4.9e-06` — so the ceiling bounds the prize, not the
+detection. The practical answer to
 the title question is that the marginal value of a re-execution is set by *where* the node sits
 relative to the threshold and how dispersed it is — never by the budget alone.
 
@@ -812,18 +814,22 @@ below parity".
 
 | `n_cal` | `k` | `lambda` | Bound `1 - p_c` | Measured gain | `95%` interval |
 |---|---|---|---|---|---|
-| `20` | `16` | `1` | `0.7770` | `0.0288` | `[-0.0142, 0.0718]` |
-| `20` | `16` | `2` | `0.4174` | `0.0482` | `[-0.0050, 0.1014]` |
-| `20` | `16` | `4` | `0.0239` | `0.0142` | `[0.0066, 0.0217]` |
-| `20` | `16` | `6` | `0.0002` | `0.0002` | `[0.0000, 0.0004]` |
-| `100` | `4` | `1` | `0.9148` | `0.0057` | `[-0.0138, 0.0253]` |
-| `100` | `4` | `2` | `0.6344` | `0.0055` | `[-0.0379, 0.0489]` |
-| `100` | `4` | `4` | `0.0968` | `0.0497` | `[0.0217, 0.0777]` |
-| `100` | `4` | `6` | `0.0010` | `0.0009` | `[0.0003, 0.0014]` |
+| `20` | `16` | `1` | `0.7770` | `0.0288` | `[-1.42e-02, 7.18e-02]` |
+| `20` | `16` | `2` | `0.4174` | `0.0482` | `[-5.00e-03, 1.01e-01]` |
+| `20` | `16` | `4` | `0.0239` | `0.0142` | `[6.63e-03, 2.17e-02]` |
+| `20` | `16` | `6` | `0.0002` | `0.0002` | `[4.88e-06, 3.65e-04]` |
+| `100` | `4` | `1` | `0.9148` | `0.0057` | `[-1.38e-02, 2.53e-02]` |
+| `100` | `4` | `2` | `0.6344` | `0.0055` | `[-3.79e-02, 4.89e-02]` |
+| `100` | `4` | `4` | `0.0968` | `0.0497` | `[2.17e-02, 7.77e-02]` |
+| `100` | `4` | `6` | `0.0010` | `0.0009` | `[2.99e-04, 1.42e-03]` |
 
 **Table 6.** The measured ceiling cells: the bound from the constant rule's own power, the measured
-gain, and the between-stream interval. The cells with the tightest bounds are exactly the saturated
-ones, and their intervals contain zero — which is the honest reading of "the prize is gone".
+gain, and the between-stream interval — printed in scientific notation, because the smallest lower
+bound would otherwise round to `0.0000` and read as a sign the data does not have. The cells with
+the tightest bounds are exactly the saturated ones, and their intervals exclude zero
+(`2` of `2` saturated
+measured cells), the smaller lower bound at `4.9e-06`: the prize is gone in
+the sense of a fraction of a percentage point, not in the sense of an uncertified gain.
 
 ### 7.3 S3: the comparison is decidable for a minority of cells at this budget
 
@@ -940,8 +946,8 @@ checkout, in one command, with no network access.
 * **Numbers.** The five stage scripts are re-run, then `canonical_runner.py` recomputes the criteria,
   the sensitivity block and the `manuscript_facts` block from the stage artefacts' primitives and
   cross-checks each recomputation against the flag the stage recorded about itself:
-  `8000`+ draws per cell as listed in Table 1,
-  `85` cross-checks, 0 failures. The run prints `REPRODUCE: ALL GREEN` and exits non-zero on any mismatch, so a
+  `8000`+ draws per cell as listed in the instrument table of Section 5,
+  `88` cross-checks, 0 failures. The run prints `REPRODUCE: ALL GREEN` and exits non-zero on any mismatch, so a
   logging accident cannot outrank the verdict.
 * **Expected output.** `canonical_results.json`; criteria `a`, `b`, `c`, `d` all `MET`; the
   three registered priors all `CONFIRMED`. The run prints the artefact's `sha256` and compares
