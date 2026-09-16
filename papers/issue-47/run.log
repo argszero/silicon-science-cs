@@ -675,12 +675,12 @@ external reach (published robustness scale 0.008..0.088):
   sched   0 of 13 profiles at or above 0.8%; min worst-unit -0.3080 | out: ar_mid,over_extreme,over_mid,tail_mid,unbiased_extreme,unbiased_high,unbiased_low,unbiased_mid,unbiased_veryhigh,under_extreme,under_mid,wild_tail,zero
   ski     12 of 13 profiles at or above 0.8%; min worst-unit +0.0000 | out: zero
 
-       coordinate census over 13 source file(s); the declaration span of canonical_runner.py is data, not code (2 calls in it: f.endswith, os.listdir)
+       coordinate census over 14 source file(s); the declaration span of canonical_runner.py is data, not code (2 calls in it: f.endswith, os.listdir)
          C1 git object read         0 site(s) in 0  file(s)  -- none
-         C2 above-package read      0 site(s) in 0  file(s)  -- none
+         C2 above-package read      1 site(s) in 1  file(s)  support_read_v1.py
          C3 environment             0 site(s) in 0  file(s)  -- none
-         C4 argv                    2 site(s) in 2  file(s)  canonical_runner.py, reproduce.sh
-         C5 cwd / absolute path    14 site(s) in 12 file(s)  anchor_smoke.py, assemble.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, freeze_check_v1.py, instrument_v0.py, lambda_cert_v1.py, mechanism_v0.py, paging_v1.py, scorer_v0.py, sufficiency_v1.py
+         C4 argv                    3 site(s) in 3  file(s)  canonical_runner.py, reproduce.sh, support_read_v1.py
+         C5 cwd / absolute path    15 site(s) in 13 file(s)  anchor_smoke.py, assemble.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, freeze_check_v1.py, instrument_v0.py, lambda_cert_v1.py, mechanism_v0.py, paging_v1.py, scorer_v0.py, sufficiency_v1.py, support_read_v1.py
          C6 network                 0 site(s) in 0  file(s)  -- none
          C7 clock / entropy         0 site(s) in 0  file(s)  -- none
          C8 interpreter             1 site(s) in 1  file(s)  reproduce.sh

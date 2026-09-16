@@ -16,7 +16,9 @@
 #      artefacts (a placeholder that cannot be resolved, or a citation key with no reference entry,
 #      fails the step), including the design table, which is rendered from the instrument artefact
 #      rather than typed;
-#   6. the sha256 of every artefact this package ships, printed as a block to copy.
+#   6. the SUPPORT limb of citation integrity -- every citation occurrence read against the sentence
+#      it sits in, offline (the IDENTITY limb needs the network and is reported in reference-check.md);
+#   7. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u
@@ -57,12 +59,18 @@ printf '\n== 5. the manuscript assembles: placeholders, tables and citation keys
 rc5=$?
 verdict "manuscript assembly" "$rc5"
 
-printf '\n== 6. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 6. the support limb: every citation occurrence against the sentence it sits in ==\n'
+"$PY" support_read_v1.py --check
+rc6=$?
+verdict "support limb" "$rc6"
+
+printf '\n== 7. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
 external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_runner.py \
-assemble.py manuscript_part1.md manuscript_part2.md manuscript.md"
+assemble.py manuscript_part1.md manuscript_part2.md manuscript.md \
+support_read_v1.py support_verdicts_v1.json support_read_v1.json support-read.md"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

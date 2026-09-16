@@ -360,9 +360,10 @@ optima are computable exactly for every instance the instrument generates:
   the field's canonical test-bed [49] [61] [60], and its
   prediction-augmented variants are the most numerous in the literature
   [17] [48] [52] [55] [50].
-* **Paging** (`paging`) — evict-on-full with a cache. Belady's optimum is exact
-  [62] [63] [66], and the problem is the one the learning-augmented
-  caching literature is built on [2] [11] [12] [13].
+* **Paging** (`paging`) — evict-on-full with a cache. The offline optimum is Belady's, computable
+  exactly for every trace, and the classical analyses of paging are stated against it
+  [62] [63] [66]; the problem is the one the learning-augmented caching
+  literature is built on [2] [11] [12] [13].
 * **Scheduling** (`sched`) — single machine, known processing times, minimise total completion time.
   The optimum is exactly the shortest-processing-time order [43], the problem on which
   scheduling-with-predictions results are stated [45] [34].
@@ -436,7 +437,7 @@ attachment as a property of the problem.
 
 Every verdict is quoted in **cluster** units: the minimum detectable effect is computed over
 `(profile, replicate)` clusters, not over the paired units an earlier version of this pipeline used
-[141] [142] [143] [144]. Paired units share the error generator, the
+[141] [142] [143]. Paired units share the error generator, the
 implementation and the fit, so an MDE computed over them was optimistic by 3.7–6.3×, measured. Under
 the cluster unit the tightest resolution in the design is
 `0.0187` competitive-ratio units. This is a correction of the
@@ -478,8 +479,8 @@ a promise:
   authoring machine supplies silently — an accidental git-object read, a network read, and a clock
   or entropy read — and reports `0` violations over all three.
   Reproducibility apparatus in this literature
-  is usually stated as an intention [145] [146] [147];
-  here it is a reading, and its own limits are reported with it [148] [68].
+  is usually stated as an intention [144] [145] [146];
+  here it is a reading, and its own limits are reported with it [147] [68].
 
 ## 4. Results
 
@@ -529,8 +530,9 @@ closest to resolving and still does not.
 This is the result that makes the paper's object *directional*, and it is where the decision-focused
 literature and this instrument meet from opposite sides: that literature shows that a scalar
 training objective is the wrong objective for a downstream decision
-[8] [9] [92] [94], while a guarantee stated in `eta` is
-the wrong *statement* for the same reason
+[8] [9] [92] [94], while on the objective side the loss
+literature says the same thing about what a learner minimises: the loss must carry the *direction* of
+the cost, not its magnitude
 [103] [101] [102] [105] [104]. The
 instrument says which half of the error a loss is reacting to, and §4.4 prices the consequence.
 
@@ -566,7 +568,7 @@ row is zero, and the cell supports a claim about **ordering** there and none abo
 That asymmetry is itself informative: it locates the interface between an error generator and
 predictor-like errors, which is the quantity the learned-systems literature reports from the other
 end — end-to-end deltas against a strong baseline, with no prediction-error measure on the horizontal
-axis [75] [74] [77] [4] [37]
+axis [75] [74] [77] [4]
 [3]. Read as limits **L3** and **L4**, the cell is a sign-level anchor, not a
 reproduction: no unit conversion is attempted or claimed.
 
