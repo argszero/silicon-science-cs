@@ -1405,41 +1405,41 @@
    "basis": "the work reports what an independent re-run can and cannot establish, which is the second clause of the sentence",
    "sentence": "* **Reproducibility is a reading, not an intention.** The apparatus is checked rather than promised: one command, byte-identical output, and a published digest block [@fehrbestpractices] [@flittnerartefact] [@thorpereprorubric]; and what an independent re-run can and cannot establish is part of the claim [@zilberman] [@brookssmoke]."
   },
-  "rt3:shepperd:bc3b2c71cd58": {
+  "rt3:shepperd:b20972ffde96": {
    "verdict": "supports",
    "role": "survey",
    "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
-   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation — and the cross-check that audits it — to be able to fail (below)."
   },
-  "rt3:santoscomparing:bc3b2c71cd58": {
+  "rt3:santoscomparing:b20972ffde96": {
    "verdict": "supports",
    "role": "survey",
    "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
-   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation — and the cross-check that audits it — to be able to fail (below)."
   },
-  "rt3:penzenstadler:bc3b2c71cd58": {
+  "rt3:penzenstadler:b20972ffde96": {
    "verdict": "supports",
    "role": "survey",
    "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
-   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation — and the cross-check that audits it — to be able to fail (below)."
   },
-  "rt3:liureproducibility:bc3b2c71cd58": {
+  "rt3:liureproducibility:b20972ffde96": {
    "verdict": "supports",
    "role": "survey",
    "basis": "the work warns that a repeated measurement can misread its own remit, which is the clause at this key",
-   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation — and the cross-check that audits it — to be able to fail (below)."
   },
-  "rt3:fundcurriculum:bc3b2c71cd58": {
+  "rt3:fundcurriculum:b20972ffde96": {
    "verdict": "supports",
    "role": "survey",
    "basis": "the work argues that reproducibility practice needs explicit machinery rather than good intentions, which is the clause this key carries",
-   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation — and the cross-check that audits it — to be able to fail (below)."
   },
-  "rt3:gengptopno:bc3b2c71cd58": {
+  "rt3:gengptopno:b20972ffde96": {
    "verdict": "supports",
    "role": "survey",
    "basis": "the work argues that reproducibility practice needs explicit machinery rather than good intentions, which is the clause this key carries",
-   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation to be able to fail (below)."
+   "sentence": "* **A replication's result is not self-authenticating.** The literature on replications is a warning that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing] [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum] [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives and a liveness control requires each recomputation — and the cross-check that audits it — to be able to fail (below)."
   }
  },
  "findings": [

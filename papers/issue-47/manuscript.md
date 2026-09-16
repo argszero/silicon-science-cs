@@ -830,7 +830,8 @@ already argues for it, and each applied here to a simulation rather than to a de
   [153] [154], and the same field argues that reproducibility and
   benchmarking practice need explicit machinery rather than good intentions [155]
   [156], which is why every stage of this package recomputes its numbers from the primitives
-  and a liveness control requires each recomputation to be able to fail (below).
+  and a liveness control requires each recomputation — and the cross-check that audits it —
+  to be able to fail (below).
 
 **Specific difference.** That literature studies replications of *published* systems and analyses,
 usually in software engineering; this paper applies the same disciplines to a measurement instrument
