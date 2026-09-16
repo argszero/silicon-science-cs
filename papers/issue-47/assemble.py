@@ -112,6 +112,21 @@ def fmt(value, spec):
     raise ValueError("unknown format spec %r" % spec)
 
 
+def carries_difference(entry):
+    """The journal's own read of the element: a `Difference` marker AFTER the entry's last link token.
+
+    Same rule as `refs_resolve_v1.py` (`carries_difference`), restated here because this file must
+    be able to fail on its own artefact; `reproduce.sh` runs both, and the selftest plants the
+    near-misses (no marker, marker before the last link, the word inside the title) so a change to
+    one definition cannot silently diverge from the other.
+    """
+    toks = list(re.finditer(r"https?://\S+|arXiv:[0-9.]+v?\d*|\b10\.\d{4,5}/\S+", entry))
+    if not toks:
+        return False
+    end = toks[-1].start() + len(toks[-1].group(0))
+    return end < len(entry) and "Difference" in entry[end:]
+
+
 def parse_references(path):
     refs = {}
     if not os.path.exists(path):
@@ -176,6 +191,17 @@ def assemble(facts_ns=None, refs_path=None, parts=None):
     if "<!-- REFERENCES -->" in text:
         lines = ["[%d] %s" % (i + 1, refs[k]) for i, k in enumerate(order)]
         text = text.replace("<!-- REFERENCES -->", "\n".join(lines) if lines else "_(none cited)_")
+    # The journal's presentation requirement (Ops R334, e81090c): every entry in the reference list
+    # carries a ONE-LINE STATED DIFFERENCE, read as a `Difference` marker following the entry's last
+    # link token.  Checked here, at the manuscript, because that is the artefact a reviewer opens --
+    # the resolver's own report is not it (a green report over a manuscript that dropped the element
+    # is exactly the product mismatch this package was already bitten by once).
+    missing = [k for k in order if not carries_difference(refs[k])]
+    if missing:
+        sys.stderr.write("assemble: FAIL -- %d of %d cited entries do not carry a stated difference "
+                         "(the marker must follow the entry's last link token): %s\n"
+                         % (len(missing), len(order), missing[:5]))
+        return None
     return text, order, n[0], n_tables[0]
 
 
@@ -186,15 +212,18 @@ def main():
     ap.add_argument("--check-only", action="store_true",
                     help="resolve and cite-check without writing manuscript.md")
     args = ap.parse_args()
-    text, order, n, nt = assemble()
+    got = assemble()
+    if got is None:
+        return 1
+    text, order, n, nt = got
     if args.stdout:
         sys.stdout.write(text)
         return 0
     if not args.check_only:
         io.open(args.out, "w", encoding="utf-8").write(text)
     print("assemble: %d placeholder(s) resolved, %d table(s) rendered, "
-          "%d reference(s) cited, %d line(s)"
-          % (n, nt, len(order), text.count("\n") + 1))
+          "%d reference(s) cited, %d line(s), %d entry(ies) carrying a stated difference"
+          % (n, nt, len(order), text.count("\n") + 1, len(order)))
     return 0
 
 

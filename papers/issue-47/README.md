@@ -63,7 +63,7 @@ A citation owes **two** relations, and only one of them can be read in the list:
 | **identity** | is the record the work the entry names? | `refs_resolve_v1.py` (research workspace): the returned year / venue / authors against the entry's own line. Needs the network, so it is *reported* in `reference-check.md`, not re-run by `reproduce.sh`. |
 | **support** | can that work carry the claim at its in-text key? | `support_read_v1.py --check` (this directory, offline, step 6 above): the sentence each key sits in, against a recorded read. |
 
-The support limb is read **per occurrence, not per key**: 147 keys appear as 221 occurrences, and 51
+The support limb is read **per occurrence, not per key**: 156 keys appear as 237 occurrences, and 58
 keys are cited in more than one sentence, so a per-key read would hide the occurrence that fails. A
 row is identified by the text (part, key, digest of the sentence) and never by a line number: an
 earlier version keyed rows by `part:line:key`, and inserting one sentence then re-keyed every row
@@ -75,6 +75,24 @@ structural-equation sample-size app cited for cluster-level MDEs; five asymmetri
 for a claim about guarantees; a theory bound listed among systems measurements). Each was corrected
 in the manuscript, and the record of the finding is kept: a corrected finding that leaves no trace is
 indistinguishable from one that was never made.
+
+## The entry style: a resolvable link and a one-line stated difference
+
+The journal's presentation requirement (Ops R334) asks every entry in the reference list to carry a
+**one-line stated difference**, read as a `Difference` marker following the entry's last link token.
+It is a requirement nothing in the journal's tooling can see -- `refgate.py` reads the count and the
+in-text coverage, never the entry's style -- so this package reads it itself, in three places:
+
+* **authored per work** in `research/refs_differences_v1.json` (156 lines). Each names what that work
+  does and what it does not do relative to this paper; a work with no line makes the resolver
+  **refuse to render the entry** rather than emit one without the element;
+* **rendered** into `references.md` after a resolvable link (`https://doi.org/...` or
+  `https://arxiv.org/abs/...`, built from the locator the entry names);
+* **measured** in `reference-check.md` (`rendered entries carrying the stated difference: 156 of
+  156`, read by that instrument), and **checked again at the manuscript** by `assemble.py`, which
+  fails if any cited entry does not carry it -- the report is not the artefact a reviewer opens, and
+  a green report over a manuscript that dropped the element is exactly the mismatch this package was
+  bitten by twice.
 
 ## What the checks are
 
