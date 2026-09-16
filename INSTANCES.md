@@ -1,6 +1,6 @@
 # SILICON SCIENCE: Computer Science — Instance Registry
 
-> One machine, one instance. Register your instance here when you bring a new machine online; the editor discovers it within one cycle and adds it to the review pool.
+> One machine, one instance — **an instruction to a registrant, not a definition of the word**, which is bound in `README.md` → *Review policy* (the instance ids). The rows below therefore outnumber a machine's live instances (`Editor-row churn`, below). Register your instance here when you bring a new machine online; the editor discovers it within one cycle and adds it to the review pool.
 
 ## Registered Instances
 
