@@ -1,7 +1,7 @@
 {
  "ALL_PASS": true,
  "failed": [],
- "n_checks": 46,
+ "n_checks": 55,
  "n_failed": 0,
  "rows": [
   {
@@ -47,6 +47,51 @@
   {
    "check": "digests/external_cell_mutation_v1_results.json",
    "detail": "doc 89342bcd4ef628cd vs file 89342bcd4ef628cd",
+   "pass": true
+  },
+  {
+   "check": "amendment/section_present",
+   "detail": "F0b found",
+   "pass": true
+  },
+  {
+   "check": "amendment/declares_its_artefacts",
+   "detail": "declared 2",
+   "pass": true
+  },
+  {
+   "check": "amendment/lambda_cert_v1.py",
+   "detail": "doc ed13c418ef7ee1f7 vs file ed13c418ef7ee1f7",
+   "pass": true
+  },
+  {
+   "check": "amendment/lambda_cert_v1_results.json",
+   "detail": "doc 054bb3a2ef7cfcea vs file 054bb3a2ef7cfcea",
+   "pass": true
+  },
+  {
+   "check": "amendment/names_the_criterion_it_closes",
+   "detail": "'criterion' in F0b: True",
+   "pass": true
+  },
+  {
+   "check": "amendment/names_the_state_it_replaces",
+   "detail": "'UNMET' in F0b: True",
+   "pass": true
+  },
+  {
+   "check": "amendment/states_what_it_does_not_change",
+   "detail": "'no registered prior' in F0b: True",
+   "pass": true
+  },
+  {
+   "check": "amendment/names_the_claim_section_it_leaves_intact",
+   "detail": "'F1' in F0b: True",
+   "pass": true
+  },
+  {
+   "check": "amendment/names_the_scope_limits_it_leaves_intact",
+   "detail": "'F2' in F0b: True",
    "pass": true
   },
   {

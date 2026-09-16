@@ -48,6 +48,38 @@ def main():
         real = hashlib.sha256(io.open(path, "rb").read()).hexdigest()[:16]
         check("digests/%s" % fname, real == quoted, "doc %s vs file %s" % (quoted, real))
 
+    # ---- 1b. the post-registration amendment: a separate record, separately checked ----------
+    # The registered table above must keep exactly its eight rows, so the certificate stage added
+    # after registration is declared in its own section (F0b) in its own format, and checked here.
+    # Folding it into the table would have rewritten the record of what was registered; leaving it
+    # unchecked would have made the newest artefact the only unverified one.
+    amend = re.search(r"## F0b\..*?(?=\n## )", doc, re.S)
+    check("amendment/section_present", amend is not None,
+          "F0b found" if amend else "no F0b section in the freeze document")
+    # FAIL CLOSED, and without an early return: a missing section must make every amendment check
+    # fail and the run exit non-zero.  The first version of this block called a `finish()` helper
+    # that does not exist, so a missing F0b would have raised NameError instead of reporting -- a
+    # guard whose failure mode is a crash is indistinguishable, to a reader of the exit status,
+    # from one that works.
+    text = amend.group(0) if amend is not None else ""
+    pairs = re.findall(r"^- `([^`]+)` \u2014 sha256 \(first 16\) `([0-9a-f]{16})`$", text, re.M)
+    check("amendment/declares_its_artefacts", len(pairs) == 2, "declared %d" % len(pairs))
+    for fname, quoted in pairs:
+        path = os.path.join(HERE, fname)
+        present_ = os.path.exists(path)
+        real = hashlib.sha256(io.open(path, "rb").read()).hexdigest()[:16] if present_ else None
+        check("amendment/%s" % fname, present_ and real == quoted,
+              "doc %s vs file %s" % (quoted, real))
+    # The amendment must say WHAT it adds and WHAT it leaves alone -- an amendment that does not
+    # state its scope is indistinguishable from a silent edit of the registered design.
+    for phrase, label in (("criterion", "names the criterion it closes"),
+                          ("UNMET", "names the state it replaces"),
+                          ("no registered prior", "states what it does not change"),
+                          ("F1", "names the claim section it leaves intact"),
+                          ("F2", "names the scope limits it leaves intact")):
+        check("amendment/%s" % label.replace(" ", "_"), phrase in text,
+              "%r in F0b: %s" % (phrase, phrase in text))
+
     # ---- 2. sufficiency (step 6) ------------------------------------------------------------
     B = suf["part_B_matched_magnitude_witness"]["blocks"]
     witness = [b for b in B if b["problem"] == "ski" and b["profile"] == "unbiased_extreme"][0]

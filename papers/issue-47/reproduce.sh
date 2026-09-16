@@ -4,7 +4,8 @@
 #   bash reproduce.sh
 #
 # Steps, and what each one is for:
-#   1. the seven frozen stages, then the canonical aggregate (canonical_runner.py), which RECOMPUTES
+#   1. the nine stages (eight frozen, plus the certificate stage added by the F0b amendment),
+#      then the canonical aggregate (canonical_runner.py), which RECOMPUTES
 #      every cited number from the stage artefacts' primitives and cross-checks it against the value
 #      the stage recorded about itself;
 #   2. the liveness control -- each recomputation is corrupted in a throwaway copy and must notice;
@@ -27,7 +28,7 @@ verdict() {   # verdict <label> <rc>
 
 printf 'interpreter: %s (%s)\n' "$PY" "$("$PY" -c 'import sys; print(sys.version.split()[0])')"
 
-printf '\n== 1. the frozen stages and the canonical aggregate ==\n'
+printf '\n== 1. the stages and the canonical aggregate ==\n'
 "$PY" canonical_runner.py
 rc1=$?
 verdict "stages and aggregate" "$rc1"
@@ -51,7 +52,7 @@ printf '\n== 5. digests of the artefacts this package ships (copy this block, ne
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
-external_cell_mutation_v1_results.json canonical_runner.py"
+external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_runner.py"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

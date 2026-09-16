@@ -75,6 +75,9 @@ STAGES = [
     {"tag": "external", "script": "external_cell_v1.py", "artefact": "external_cell_v1_results.json",
      "flag": "ALL_PASS", "evidence": None,
      "what": "the committed external cell anchored to a published system result"},
+    {"tag": "lambdacert", "script": "lambda_cert_v1.py", "artefact": "lambda_cert_v1_results.json",
+     "flag": "CHECKS_ALL_PASS", "evidence": ("checks", "ok"),
+     "what": "the registered criterion (c): the certificate rule's calibration loss, as a factor"},
 ]
 
 
@@ -327,6 +330,136 @@ def external_reach(ext, facts):
     return {"tau": tau, "reach": reach}
 
 
+def pearson(xs, ys):
+    """Pearson r, computed here -- the direction finding is a claim about these numbers, so the
+    correlation must not be read out of the stage's field.  Returns None when either variate is
+    constant: an undefined correlation is reported as undefined, never as a number.
+    """
+    n = len(xs)
+    if n < 2:
+        return None
+    mx, my = sum(xs) / n, sum(ys) / n
+    sxy = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    sxx = sum((x - mx) ** 2 for x in xs)
+    syy = sum((y - my) ** 2 for y in ys)
+    if sxx == 0 or syy == 0:
+        return None
+    return sxy / (sxx ** 0.5 * syy ** 0.5)
+
+
+def lambda_calibration(lc, facts):
+    """(c) -- the registered lambda-calibration loss, RECOMPUTED from the per-profile primitives.
+
+    The registered metric is a FACTOR: how much worse the certificate rule's worst-case ratio is
+    than the profile's own best lambda.  The stage stores, per profile, the two ratio primitives
+    (`ratio_wc`, `ratio_star`), the per-profile loss with its between-stream interval, the two
+    lambdas, and the profile's own tail and spread.  Everything the manuscript quotes is derived
+    here from those, and cross-checked against the stage's summary:
+
+      * the factor itself is the MEAN OF PER-STREAM RATIOS, not the ratio of the two means -- they
+        are different numbers, and the stage's `loss` is the former.  The ratio of means is
+        reported beside it (`*_ratio_of_means`) so a reader can see the gap is small rather than
+        take the equivalence on faith;
+      * the median is the stage's convention, an UPPER median (`sorted(...)[n//2]`), not the
+        average of the two central values that `statistics.median` would return -- on an even
+        profile count the two differ, and a convention is part of a rule;
+      * `displaced` is recomputed from the two stored lambdas rather than read from the flag;
+      * the direction statistics (mean loss over tail vs non-tail profiles, and the two
+        correlations) are recomputed, so the registered prior P2's fate is decided here.
+    """
+    problems = ("ski", "sched", "paging")
+    out = {}
+    for p in problems:
+        rows = {name: r for name, r in lc["losses"][p].items() if name != "zero"}
+        rec = lc["criterion_c"][p]
+        losses = [r["loss"] for r in rows.values()]
+        n = len(losses)
+        upper_median = sorted(losses)[n // 2]
+        big_name = max(rows, key=lambda k: (rows[k]["loss"], k))
+        big = rows[big_name]
+        displaced = sum(1 for r in rows.values() if r["lam_wc"] != r["lam_star"])
+        rom = {k: (r["ratio_wc"] / r["ratio_star"] if r["ratio_star"] else None)
+               for k, r in rows.items()}
+        facts["claim4.lambda_loss_median.%s" % p] = {
+            "value": upper_median, "recorded": rec["loss_median"], "rule":
+            "upper median (sorted(losses)[n//2]) of the per-profile factors, n=%d profiles" % n,
+            "source": "lambda_cert_v1_results.json:losses[...].loss -- the per-profile factor is "
+                      "the stage's primitive; the median is the derived statistic"}
+        facts["claim4.lambda_loss_max.%s" % p] = {
+            "value": big["loss"], "recorded": rec["loss_max"], "rule":
+            "the largest per-profile factor (profile %s, spread %.2f), with its own 95%% "
+            "between-stream interval [%.4f, %.4f]" % (big_name, big["spread"], big["loss_lo"],
+                                                      big["loss_hi"]),
+            "source": "lambda_cert_v1_results.json:losses[...].loss (max over profiles)"}
+        facts["claim4.lambda_loss_interval_%s.%s" % ("lo", p)] = {
+            "value": big["loss_lo"], "recorded": rec["loss_max_lo"],
+            "rule": "lower end of the max profile's 95% between-stream interval",
+            "source": "lambda_cert_v1_results.json:losses[...].loss_lo"}
+        facts["claim4.lambda_loss_interval_%s.%s" % ("hi", p)] = {
+            "value": big["loss_hi"], "recorded": rec["loss_max_hi"],
+            "rule": "upper end of the max profile's 95% between-stream interval",
+            "source": "lambda_cert_v1_results.json:losses[...].loss_hi"}
+        facts["claim4.lambda_displaced.%s" % p] = {
+            "value": displaced, "recorded": rec["n_displaced"], "rule":
+            "profiles whose certificate lambda differs from the profile's own best lambda (%d of "
+            "%d), recomputed from the two stored lambdas rather than read from the `displaced` flag"
+            % (displaced, n),
+            "source": "lambda_cert_v1_results.json:losses[...].{lam_wc,lam_star}"}
+        facts["claim4.lambda_wc_values.%s" % p] = {
+            "value": sorted(set(r["lam_wc"] for r in rows.values())),
+            "recorded": rec["lam_wc_values"],
+            "rule": "the distinct lambdas the certificate rule selects across profiles",
+            "source": "lambda_cert_v1_results.json:losses[...].lam_wc"}
+        rom_median = sorted(v for v in rom.values() if v is not None)[n // 2]
+        facts["claim4.lambda_ratio_of_means_median.%s" % p] = {
+            "value": rom_median, "recorded": None, "rule":
+            "ratio of the two MEANS (ratio_wc/ratio_star), the counterpart of the mean-of-ratios "
+            "factor above; recorded=None because the artefact does not store it. Reported so the "
+            "gap between the two aggregations is visible (max |gap| over profiles: %.4f)"
+            % max((abs(rom[k] - rows[k]["loss"]) for k in rows), default=0.0),
+            "source": "lambda_cert_v1_results.json:losses[...].{ratio_wc,ratio_star}"}
+
+        tail_rows = [r for r in rows.values() if r["tail"] > 0]
+        other_rows = [r for r in rows.values() if r["tail"] == 0]
+        dir_rec = lc["direction"][p]
+        means = {
+            "mean_loss_tail": sum(r["loss"] for r in tail_rows) / len(tail_rows),
+            "mean_loss_other": sum(r["loss"] for r in other_rows) / len(other_rows),
+        }
+        facts["claim4.lambda_mean_loss_tail.%s" % p] = {
+            "value": means["mean_loss_tail"], "recorded": dir_rec["mean_loss_tail_profiles"],
+            "rule": "mean factor over the profiles with a non-zero tail (%d of %d)"
+                    % (len(tail_rows), n),
+            "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}"}
+        facts["claim4.lambda_mean_loss_other.%s" % p] = {
+            "value": means["mean_loss_other"], "recorded": dir_rec["mean_loss_other_profiles"],
+            "rule": "mean factor over the profiles with no tail (%d of %d)"
+                    % (len(other_rows), n),
+            "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}"}
+        for key in ("tail", "spread"):
+            r_ = pearson([r[key] for r in rows.values()], [r["loss"] for r in rows.values()])
+            facts["claim4.lambda_corr_%s.%s" % (key, p)] = {
+                "value": r_, "recorded": dir_rec["corr_" + key],
+                "rule": "Pearson r between the profile's %s and its factor, over the %d non-zero "
+                        "profiles (None if a variate is constant)" % (key, n),
+                "source": "lambda_cert_v1_results.json:losses[...]"}
+
+        lam_wc_by_eta = {}
+        for eta_key, entry in lc["rule"][p].items():
+            lam_wc_by_eta.setdefault(entry["lam_wc"], []).append(float(eta_key))
+        interior = sorted(k for k, etas in lam_wc_by_eta.items() if 0.0 < k < 1.0)
+        out[p] = {"n_profiles": n, "median": upper_median, "max": big["loss"],
+                  "max_profile": big_name, "max_lo": big["loss_lo"], "max_hi": big["loss_hi"],
+                  "displaced": displaced, "lam_wc_values": sorted(set(r["lam_wc"]
+                                                                      for r in rows.values())),
+                  "mean_loss_tail": means["mean_loss_tail"],
+                  "mean_loss_other": means["mean_loss_other"],
+                  "corr_tail": facts["claim4.lambda_corr_tail.%s" % p]["value"],
+                  "interior_lambdas": interior,
+                  "oos_median": rec.get("loss_oos_median")}
+    return out
+
+
 def attachment_controls(ext, facts):
     """L1 -- the attachment is model-dependent.  Three exact relations, with the trap named: a
     positive BIAS is not a non-negative MULTIPLIER (clamping), so the shared attachment is not
@@ -346,13 +479,36 @@ def attachment_controls(ext, facts):
 def criteria(suf, ext, extras, facts):
     """The registered success metrics, each with a MEASURED / UNMET state.
 
-    Metric (c) -- the lambda-calibration loss as a factor -- was never measured: step 4 established
-    that the realised ratio is affine in lambda for a randomized blend, so the optimum sits at an
-    endpoint, and the registered measurement needed a certificate-chosen lambda that no stage
-    computes.  It is reported UNMET, which is a state, not a number: the alternative -- reporting the
-    fixed-grid proxy as if it were the registered quantity, when its own direction is contradicted --
-    would be a negative finding printed in place of an undefined one.
+    Metric (c) -- the lambda-calibration loss as a factor -- WAS unmet in the first submission of
+    this package: the registered measurement needs a certificate-chosen lambda, and no stage
+    computed that formula, so the package reported the state rather than a number (the alternative,
+    reporting the fixed-grid proxy whose own direction the registered prior contradicts, would have
+    been a negative finding printed in place of an undefined one).  The stage `lambdacert` now
+    computes the certificate rule and the factor per profile, and `lambda_calibration()` above
+    recomputes every number quoted here from the per-profile primitives, so (c) reports a measured
+    quantity.
+
+    The registered prior P2 -- that the gap grows with the tail -- is reported as HALF confirmed and
+    the numbers are in `detail`: the tail profiles do carry a higher mean factor in all three
+    problems, but the correlation is weak and the relation is non-monotone in spread, so the
+    registered wording is not supported as written.  A prior that survives at half strength is
+    reported at half strength.
     """
+    lam = extras["lambda"]
+
+    def c_detail(p):
+        d = lam[p]
+        interior = ("interior (lambda %s)" % ", ".join("%.2f" % v for v in d["interior_lambdas"])
+                    if d["interior_lambdas"] else "an endpoint (bang-bang)")
+        return ("median factor %.4f over %d non-zero profiles; worst profile %s at %.4f "
+                "[%.4f, %.4f] (95%% between-stream, in-sample lambda*); the same worst profile "
+                "under a lambda* fitted out of sample gives %.4f, so the factor does not rest on "
+                "choosing lambda on the streams it is scored on; the certificate lambda differs "
+                "from the profile's own best lambda on %d of %d profiles; the certificate rule's "
+                "lambda is %s on this problem"
+                % (d["median"], d["n_profiles"], d["max_profile"], d["max"], d["max_lo"],
+                   d["max_hi"], d["oos_median"], d["displaced"], d["n_profiles"], interior))
+
     return {
         "a_signed_beats_scalar_on_held_out_cells": {
             "state": "measured",
@@ -363,11 +519,24 @@ def criteria(suf, ext, extras, facts):
         "b_classic_anchors_recovered": {
             "state": "measured", "detail": "stage 'anchor' plus the end anchors inside stage 'v0'"},
         "c_lambda_calibration_loss": {
-            "state": "unmet",
-            "detail": ("the registered measurement is ratio(lambda_worst_case) - ratio(1) with "
-                       "lambda_worst_case from a certificate formula; no stage computes that "
-                       "formula, so the metric is unmet. The fixed-grid proxy contradicts the "
-                       "registered direction and is therefore NOT reported as the metric.")},
+            "state": "measured",
+            "detail": ("reported as a factor per problem (mean of per-stream ratios of the "
+                       "certificate rule's worst-case ratio to the profile's own best lambda), "
+                       "with a 95% between-stream interval -- " + "; ".join(
+                           "%s: %s" % (p, c_detail(p)) for p in ("ski", "sched", "paging"))
+                       + ". Prior P2 (the gap grows with the tail) is HALF confirmed: tail "
+                         "profiles carry the higher mean factor in all three problems (ski "
+                         "%.4f vs %.4f, sched %.4f vs %.4f, paging %.4f vs %.4f) while the "
+                         "correlations are weak and the relation is non-monotone in spread, "
+                         "so the registered wording is not supported as written."
+                       % (lam["ski"]["mean_loss_tail"], lam["ski"]["mean_loss_other"],
+                          lam["sched"]["mean_loss_tail"], lam["sched"]["mean_loss_other"],
+                          lam["paging"]["mean_loss_tail"], lam["paging"]["mean_loss_other"])),
+            "evidence": {p: {"median": lam[p]["median"], "max": lam[p]["max"],
+                             "max_interval": [lam[p]["max_lo"], lam[p]["max_hi"]],
+                             "displaced": "%d/%d" % (lam[p]["displaced"], lam[p]["n_profiles"]),
+                             "corr_tail": lam[p]["corr_tail"]}
+                         for p in ("ski", "sched", "paging")}},
         "d_streams_and_sensitivity": {
             "state": "measured",
             "detail": "each cell carries disjoint streams; the flip-count bound is reported per "
@@ -385,8 +554,9 @@ def build(log):
     ns = null_shift(suf, facts)
     ex = external_reach(ext, facts)
     ac = attachment_controls(ext, facts)
+    lc = lambda_calibration(load("lambda_cert_v1_results.json"), facts)
     return stages, {"witness": w, "sign_channel": sc, "null_shift": ns, "external": ex,
-                    "attachment": ac}, facts
+                    "attachment": ac, "lambda": lc}, facts
 
 
 # --- coordinate census declaration: begin (the detector's own tables; excluded from the scan) --
@@ -553,6 +723,30 @@ def main():
     log("criteria: %s" % ", ".join(
         "%s=%s" % (letter, "MET" if crit[key]["state"] == "measured" else "UNMET")
         for letter, key in zip("abcd", [k for k in crit])))
+
+    # THE STATE WORD MUST FOLLOW THE EVIDENCE.  A criterion is a claim about the run, and the run
+    # knows which stages it executed: a criterion whose stages are present and green cannot be
+    # reported `unmet`, and one whose stages are absent cannot be reported `measured`.  Without this
+    # rule the round-3 change to criterion (c) would be a sentence rather than a consequence -- and
+    # a future edit that reverted it while the certificate stage kept passing would be invisible.
+    # (d) is deliberately OUT of the mapping: its evidence is the disjoint-stream design of the
+    # cells, not a stage, and putting it here would fabricate a stage link that does not exist.
+    CRIT_STAGES = {"a_signed_beats_scalar_on_held_out_cells": ("scorer", "sufficiency"),
+                   "b_classic_anchors_recovered": ("anchor", "v0"),
+                   "c_lambda_calibration_loss": ("lambdacert",)}
+    by_tag = {s["tag"]: s for s in stages}
+    state_bad = []
+    for key, tags in CRIT_STAGES.items():
+        green = all(t in by_tag and by_tag[t]["agree"] and not by_tag[t]["checks_failed"]
+                    for t in tags)
+        measured = crit[key]["state"] == "measured"
+        if green != measured:
+            state_bad.append("%s: state=%s but stages %s are %s"
+                             % (key, crit[key]["state"], ",".join(tags),
+                                "green" if green else "absent or failing"))
+    for msg in state_bad:
+        log("  CRITERION STATE DISAGREES WITH THE EVIDENCE: %s" % msg)
+    log("criterion states vs their stages: %d disagreement(s)" % len(state_bad))
     log("")
     for k in ("claim1.worst_loss_gap", "claim1.scalar_gap_max_exact", "claim1.blocks_exceeding_own_mde",
               "claim2.clean_advantage_mde.ski", "claim2.clean_advantage_mde.sched",
@@ -570,7 +764,7 @@ def main():
     log("")
     census_violations = coordinate_check(log)
 
-    verdict = not bad and not disagree and not census_violations
+    verdict = not bad and not disagree and not census_violations and not state_bad
     out = {
         "study": "issue-47 signed-error decomposition (cs.DS)",
         "stages": stages,
@@ -657,6 +851,26 @@ def selftest():
         ("L3: a profile's worst-unit value moved out of the reach window",
          "external_cell_v1_results.json", "limit.L3_reach_at_or_above_0.8pct.ski", "value",
          lambda d: d["cells"]["ski"][3].__setitem__("worst_unit_degradation", -0.5)),
+        # --- criterion (c): the stage added in round 3 to close the metric that was UNMET --------
+        ("claim4: a profile's factor moved, shifting the median",
+         "lambda_cert_v1_results.json", "claim4.lambda_loss_median.ski", "value",
+         lambda d: d["losses"]["ski"]["unbiased_low"].__setitem__("loss", 9.0)),
+        # The certificate lambda and the profile's own best lambda are two primitives; `displaced`
+        # is RECOMPUTED from them, so it must ignore the stage's own flag when the lambdas move.
+        # The mutation must move the object it names: `tail_mid` is the ONE paging profile whose
+        # two lambdas already coincide, so setting them equal there changes nothing and the case
+        # passed for the wrong reason on its first run -- the same "a model of the adversary that
+        # cannot move the object under test" family this package's own lesson file records.
+        ("claim4: two lambdas made equal, moving the displaced count",
+         "lambda_cert_v1_results.json", "claim4.lambda_displaced.paging", "value",
+         lambda d: d["losses"]["paging"]["over_mid"].__setitem__(
+             "lam_wc", d["losses"]["paging"]["over_mid"]["lam_star"])),
+        ("claim4/CROSSCHECK: the recorded median no longer follows the profiles",
+         "lambda_cert_v1_results.json", "claim4.lambda_loss_median.sched", "crosscheck",
+         lambda d: d["criterion_c"]["sched"].__setitem__("loss_median", 4.25)),
+        ("claim4: the tail and non-tail means recompute from a moved profile",
+         "lambda_cert_v1_results.json", "claim4.lambda_mean_loss_other.paging", "value",
+         lambda d: d["losses"]["paging"]["unbiased_mid"].__setitem__("loss", 0.5)),
     ]
 
     def recompute(artefact, d):
@@ -664,6 +878,8 @@ def selftest():
         if artefact == "sufficiency_v1_results.json":
             witness(d, facts)
             sign_channel(d, facts)
+        elif artefact == "lambda_cert_v1_results.json":
+            lambda_calibration(d, facts)
         else:
             external_reach(d, facts)
         return facts

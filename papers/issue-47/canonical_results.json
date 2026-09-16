@@ -166,8 +166,40 @@
    "state": "measured"
   },
   "c_lambda_calibration_loss": {
-   "detail": "the registered measurement is ratio(lambda_worst_case) - ratio(1) with lambda_worst_case from a certificate formula; no stage computes that formula, so the metric is unmet. The fixed-grid proxy contradicts the registered direction and is therefore NOT reported as the metric.",
-   "state": "unmet"
+   "detail": "reported as a factor per problem (mean of per-stream ratios of the certificate rule's worst-case ratio to the profile's own best lambda), with a 95% between-stream interval -- ski: median factor 1.7006 over 12 non-zero profiles; worst profile unbiased_mid at 1.7514 [1.7381, 1.7652] (95% between-stream, in-sample lambda*); the same worst profile under a lambda* fitted out of sample gives 1.7030, so the factor does not rest on choosing lambda on the streams it is scored on; the certificate lambda differs from the profile's own best lambda on 11 of 12 profiles; the certificate rule's lambda is an endpoint (bang-bang) on this problem; sched: median factor 1.2851 over 12 non-zero profiles; worst profile under_mid at 1.4573 [1.4438, 1.4699] (95% between-stream, in-sample lambda*); the same worst profile under a lambda* fitted out of sample gives 1.2838, so the factor does not rest on choosing lambda on the streams it is scored on; the certificate lambda differs from the profile's own best lambda on 8 of 12 profiles; the certificate rule's lambda is an endpoint (bang-bang) on this problem; paging: median factor 1.4934 over 12 non-zero profiles; worst profile tail_mid at 1.8252 [1.8109, 1.8404] (95% between-stream, in-sample lambda*); the same worst profile under a lambda* fitted out of sample gives 1.4517, so the factor does not rest on choosing lambda on the streams it is scored on; the certificate lambda differs from the profile's own best lambda on 11 of 12 profiles; the certificate rule's lambda is interior (lambda 0.90) on this problem. Prior P2 (the gap grows with the tail) is HALF confirmed: tail profiles carry the higher mean factor in all three problems (ski 1.6915 vs 1.5416, sched 1.3987 vs 1.2536, paging 1.7608 vs 1.3833) while the correlations are weak and the relation is non-monotone in spread, so the registered wording is not supported as written.",
+   "evidence": {
+    "paging": {
+     "corr_tail": 0.3897988911745347,
+     "displaced": "11/12",
+     "max": 1.825155324456907,
+     "max_interval": [
+      1.8108503178815527,
+      1.8404474906738424
+     ],
+     "median": 1.4933843433076794
+    },
+    "sched": {
+     "corr_tail": 0.3006727046956521,
+     "displaced": "8/12",
+     "max": 1.4573166528229982,
+     "max_interval": [
+      1.443779046408056,
+      1.4699231443752163
+     ],
+     "median": 1.2851483600436249
+    },
+    "ski": {
+     "corr_tail": 0.1661661928151977,
+     "displaced": "11/12",
+     "max": 1.7514135799079629,
+     "max_interval": [
+      1.7380976350025825,
+      1.7651683328564751
+     ],
+     "median": 1.7006015272007502
+    }
+   },
+   "state": "measured"
   },
   "d_streams_and_sensitivity": {
    "detail": "each cell carries disjoint streams; the flip-count bound is reported per headline number in the manuscript's sensitivity section",
@@ -342,6 +374,222 @@
    "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it) (zero-error anchor excluded, paired)",
    "source": "external_cell_v1_results.json:cells[ski]",
    "value": 0.696969696969697
+  },
+  "claim4.lambda_corr_spread.paging": {
+   "recorded": 0.40780630359378955,
+   "rule": "Pearson r between the profile's spread and its factor, over the 12 non-zero profiles (None if a variate is constant)",
+   "source": "lambda_cert_v1_results.json:losses[...]",
+   "value": 0.40780630359378955
+  },
+  "claim4.lambda_corr_spread.sched": {
+   "recorded": -0.00832673380515704,
+   "rule": "Pearson r between the profile's spread and its factor, over the 12 non-zero profiles (None if a variate is constant)",
+   "source": "lambda_cert_v1_results.json:losses[...]",
+   "value": -0.00832673380515704
+  },
+  "claim4.lambda_corr_spread.ski": {
+   "recorded": -0.32100413629721136,
+   "rule": "Pearson r between the profile's spread and its factor, over the 12 non-zero profiles (None if a variate is constant)",
+   "source": "lambda_cert_v1_results.json:losses[...]",
+   "value": -0.32100413629721136
+  },
+  "claim4.lambda_corr_tail.paging": {
+   "recorded": 0.3897988911745347,
+   "rule": "Pearson r between the profile's tail and its factor, over the 12 non-zero profiles (None if a variate is constant)",
+   "source": "lambda_cert_v1_results.json:losses[...]",
+   "value": 0.3897988911745347
+  },
+  "claim4.lambda_corr_tail.sched": {
+   "recorded": 0.3006727046956521,
+   "rule": "Pearson r between the profile's tail and its factor, over the 12 non-zero profiles (None if a variate is constant)",
+   "source": "lambda_cert_v1_results.json:losses[...]",
+   "value": 0.3006727046956521
+  },
+  "claim4.lambda_corr_tail.ski": {
+   "recorded": 0.1661661928151977,
+   "rule": "Pearson r between the profile's tail and its factor, over the 12 non-zero profiles (None if a variate is constant)",
+   "source": "lambda_cert_v1_results.json:losses[...]",
+   "value": 0.1661661928151977
+  },
+  "claim4.lambda_displaced.paging": {
+   "recorded": 11,
+   "rule": "profiles whose certificate lambda differs from the profile's own best lambda (11 of 12), recomputed from the two stored lambdas rather than read from the `displaced` flag",
+   "source": "lambda_cert_v1_results.json:losses[...].{lam_wc,lam_star}",
+   "value": 11
+  },
+  "claim4.lambda_displaced.sched": {
+   "recorded": 8,
+   "rule": "profiles whose certificate lambda differs from the profile's own best lambda (8 of 12), recomputed from the two stored lambdas rather than read from the `displaced` flag",
+   "source": "lambda_cert_v1_results.json:losses[...].{lam_wc,lam_star}",
+   "value": 8
+  },
+  "claim4.lambda_displaced.ski": {
+   "recorded": 11,
+   "rule": "profiles whose certificate lambda differs from the profile's own best lambda (11 of 12), recomputed from the two stored lambdas rather than read from the `displaced` flag",
+   "source": "lambda_cert_v1_results.json:losses[...].{lam_wc,lam_star}",
+   "value": 11
+  },
+  "claim4.lambda_loss_interval_hi.paging": {
+   "recorded": 1.8404474906738424,
+   "rule": "upper end of the max profile's 95% between-stream interval",
+   "source": "lambda_cert_v1_results.json:losses[...].loss_hi",
+   "value": 1.8404474906738424
+  },
+  "claim4.lambda_loss_interval_hi.sched": {
+   "recorded": 1.4699231443752163,
+   "rule": "upper end of the max profile's 95% between-stream interval",
+   "source": "lambda_cert_v1_results.json:losses[...].loss_hi",
+   "value": 1.4699231443752163
+  },
+  "claim4.lambda_loss_interval_hi.ski": {
+   "recorded": 1.7651683328564751,
+   "rule": "upper end of the max profile's 95% between-stream interval",
+   "source": "lambda_cert_v1_results.json:losses[...].loss_hi",
+   "value": 1.7651683328564751
+  },
+  "claim4.lambda_loss_interval_lo.paging": {
+   "recorded": 1.8108503178815527,
+   "rule": "lower end of the max profile's 95% between-stream interval",
+   "source": "lambda_cert_v1_results.json:losses[...].loss_lo",
+   "value": 1.8108503178815527
+  },
+  "claim4.lambda_loss_interval_lo.sched": {
+   "recorded": 1.443779046408056,
+   "rule": "lower end of the max profile's 95% between-stream interval",
+   "source": "lambda_cert_v1_results.json:losses[...].loss_lo",
+   "value": 1.443779046408056
+  },
+  "claim4.lambda_loss_interval_lo.ski": {
+   "recorded": 1.7380976350025825,
+   "rule": "lower end of the max profile's 95% between-stream interval",
+   "source": "lambda_cert_v1_results.json:losses[...].loss_lo",
+   "value": 1.7380976350025825
+  },
+  "claim4.lambda_loss_max.paging": {
+   "recorded": 1.825155324456907,
+   "rule": "the largest per-profile factor (profile tail_mid, spread 0.15), with its own 95% between-stream interval [1.8109, 1.8404]",
+   "source": "lambda_cert_v1_results.json:losses[...].loss (max over profiles)",
+   "value": 1.825155324456907
+  },
+  "claim4.lambda_loss_max.sched": {
+   "recorded": 1.4573166528229982,
+   "rule": "the largest per-profile factor (profile under_mid, spread 0.15), with its own 95% between-stream interval [1.4438, 1.4699]",
+   "source": "lambda_cert_v1_results.json:losses[...].loss (max over profiles)",
+   "value": 1.4573166528229982
+  },
+  "claim4.lambda_loss_max.ski": {
+   "recorded": 1.7514135799079629,
+   "rule": "the largest per-profile factor (profile unbiased_mid, spread 0.15), with its own 95% between-stream interval [1.7381, 1.7652]",
+   "source": "lambda_cert_v1_results.json:losses[...].loss (max over profiles)",
+   "value": 1.7514135799079629
+  },
+  "claim4.lambda_loss_median.paging": {
+   "recorded": 1.4933843433076794,
+   "rule": "upper median (sorted(losses)[n//2]) of the per-profile factors, n=12 profiles",
+   "source": "lambda_cert_v1_results.json:losses[...].loss -- the per-profile factor is the stage's primitive; the median is the derived statistic",
+   "value": 1.4933843433076794
+  },
+  "claim4.lambda_loss_median.sched": {
+   "recorded": 1.2851483600436249,
+   "rule": "upper median (sorted(losses)[n//2]) of the per-profile factors, n=12 profiles",
+   "source": "lambda_cert_v1_results.json:losses[...].loss -- the per-profile factor is the stage's primitive; the median is the derived statistic",
+   "value": 1.2851483600436249
+  },
+  "claim4.lambda_loss_median.ski": {
+   "recorded": 1.7006015272007502,
+   "rule": "upper median (sorted(losses)[n//2]) of the per-profile factors, n=12 profiles",
+   "source": "lambda_cert_v1_results.json:losses[...].loss -- the per-profile factor is the stage's primitive; the median is the derived statistic",
+   "value": 1.7006015272007502
+  },
+  "claim4.lambda_mean_loss_other.paging": {
+   "recorded": 1.3832968308341531,
+   "rule": "mean factor over the profiles with no tail (10 of 12)",
+   "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}",
+   "value": 1.3832968308341531
+  },
+  "claim4.lambda_mean_loss_other.sched": {
+   "recorded": 1.2535677770722133,
+   "rule": "mean factor over the profiles with no tail (10 of 12)",
+   "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}",
+   "value": 1.2535677770722133
+  },
+  "claim4.lambda_mean_loss_other.ski": {
+   "recorded": 1.5416036774747974,
+   "rule": "mean factor over the profiles with no tail (10 of 12)",
+   "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}",
+   "value": 1.5416036774747974
+  },
+  "claim4.lambda_mean_loss_tail.paging": {
+   "recorded": 1.7607749805526958,
+   "rule": "mean factor over the profiles with a non-zero tail (2 of 12)",
+   "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}",
+   "value": 1.7607749805526958
+  },
+  "claim4.lambda_mean_loss_tail.sched": {
+   "recorded": 1.3987290185985866,
+   "rule": "mean factor over the profiles with a non-zero tail (2 of 12)",
+   "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}",
+   "value": 1.3987290185985866
+  },
+  "claim4.lambda_mean_loss_tail.ski": {
+   "recorded": 1.691450234453086,
+   "rule": "mean factor over the profiles with a non-zero tail (2 of 12)",
+   "source": "lambda_cert_v1_results.json:losses[...].{loss,tail}",
+   "value": 1.691450234453086
+  },
+  "claim4.lambda_ratio_of_means_median.paging": {
+   "recorded": null,
+   "rule": "ratio of the two MEANS (ratio_wc/ratio_star), the counterpart of the mean-of-ratios factor above; recorded=None because the artefact does not store it. Reported so the gap between the two aggregations is visible (max |gap| over profiles: 0.0169)",
+   "source": "lambda_cert_v1_results.json:losses[...].{ratio_wc,ratio_star}",
+   "value": 1.48574286681663
+  },
+  "claim4.lambda_ratio_of_means_median.sched": {
+   "recorded": null,
+   "rule": "ratio of the two MEANS (ratio_wc/ratio_star), the counterpart of the mean-of-ratios factor above; recorded=None because the artefact does not store it. Reported so the gap between the two aggregations is visible (max |gap| over profiles: 0.0005)",
+   "source": "lambda_cert_v1_results.json:losses[...].{ratio_wc,ratio_star}",
+   "value": 1.2847728043222
+  },
+  "claim4.lambda_ratio_of_means_median.ski": {
+   "recorded": null,
+   "rule": "ratio of the two MEANS (ratio_wc/ratio_star), the counterpart of the mean-of-ratios factor above; recorded=None because the artefact does not store it. Reported so the gap between the two aggregations is visible (max |gap| over profiles: 0.0015)",
+   "source": "lambda_cert_v1_results.json:losses[...].{ratio_wc,ratio_star}",
+   "value": 1.7003142559971987
+  },
+  "claim4.lambda_wc_values.paging": {
+   "recorded": [
+    0.9,
+    1.0
+   ],
+   "rule": "the distinct lambdas the certificate rule selects across profiles",
+   "source": "lambda_cert_v1_results.json:losses[...].lam_wc",
+   "value": [
+    0.9,
+    1.0
+   ]
+  },
+  "claim4.lambda_wc_values.sched": {
+   "recorded": [
+    0.0,
+    1.0
+   ],
+   "rule": "the distinct lambdas the certificate rule selects across profiles",
+   "source": "lambda_cert_v1_results.json:losses[...].lam_wc",
+   "value": [
+    0.0,
+    1.0
+   ]
+  },
+  "claim4.lambda_wc_values.ski": {
+   "recorded": [
+    0.0,
+    1.0
+   ],
+   "rule": "the distinct lambdas the certificate rule selects across profiles",
+   "source": "lambda_cert_v1_results.json:losses[...].lam_wc",
+   "value": [
+    0.0,
+    1.0
+   ]
   },
   "limit.L1_attachment.C5_attachment_control": {
    "recorded": null,
@@ -552,6 +800,22 @@
    "script_sha256": "3d21412ecaaaf5ba247f23eef81a54cc846e71fb2a9ecb9199a55046eb9c2d56",
    "tag": "external",
    "what": "the committed external cell anchored to a published system result"
+  },
+  {
+   "agree": true,
+   "artefact": "lambda_cert_v1_results.json",
+   "artefact_sha256": "054bb3a2ef7cfceac8caae8e5d378dc9ea172e455ed1717f16361c0e8ed93904",
+   "checks_failed": 0,
+   "checks_run": 6,
+   "evidence_persisted": true,
+   "failed_checks": [],
+   "flag": "CHECKS_ALL_PASS",
+   "flag_value": true,
+   "recomputed_all_pass": true,
+   "script": "lambda_cert_v1.py",
+   "script_sha256": "ed13c418ef7ee1f7683c3cb5870d76e24c18667383b8aff04b7aa42f528ac233",
+   "tag": "lambdacert",
+   "what": "the registered criterion (c): the certificate rule's calibration loss, as a factor"
   }
  ],
  "study": "issue-47 signed-error decomposition (cs.DS)"

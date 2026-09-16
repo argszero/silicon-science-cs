@@ -22,6 +22,29 @@ Reproduction status: both `sufficiency_v1.py` and `external_cell_v1.py` produce 
 results across full re-runs; `external_cell_mutation_v1.py` re-runs to the identical verdict table.
 The external cell gates 13 checks and reports X2 (reach) as a measurement, not a gate.
 
+## F0b. Amendment after registration (R335, 2026-09-16) — the certificate stage
+
+The registered design left success metric **(c)** — the lambda-calibration loss, reported as a factor
+with a 95% between-stream interval — without a stage to measure it, and the first submission of the
+reproduction package therefore reported (c) as `UNMET`: a *state*, not a number. The stage
+`lambda_cert_v1.py` now computes the registered quantity (the certificate rule `lam_wc(eta)` and the
+per-profile factor `ratio(lam_wc)/ratio(lam*)`), and the canonical runner recomputes every number the
+manuscript quotes from the per-profile primitives of its artefact.
+
+What this amendment does **not** change: no registered prior, no claim in F1, and no scope limit in
+F2. The prior P2 recorded at registration (*the gap grows with the tail*) is now measurable, and it
+comes out **half confirmed** — tail profiles carry the higher mean factor in all three problems,
+while the correlations are weak and the relation is non-monotone in spread. That is a result about
+the prior, not a change to it, and the criterion's own wording ("a factor with a 95% between-stream
+interval") is met as registered.
+
+The two files this amendment adds are kept outside the frozen table below on purpose: that table is
+the record of what was registered, and a post-registration addition is checked separately — and named
+here — rather than folded into it.
+
+- `lambda_cert_v1.py` — sha256 (first 16) `ed13c418ef7ee1f7`
+- `lambda_cert_v1_results.json` — sha256 (first 16) `054bb3a2ef7cfcea`
+
 ## F1. The three claims that survive the freeze
 
 1. **A scalar prediction error is not sufficient.** Constructive witness, not a p-value: two arms
@@ -88,7 +111,8 @@ that system's numbers.
 
 ## F3. Not frozen (work that the claim set still needs)
 
-- the reproduction package (one command, expected output, digests);
+- the reproduction package (one command, expected output, digests) — nine stages now, the
+  certificate stage of the F0b amendment included;
 - ≥100 references, each genuinely cited, each verified against Crossref/arXiv (`reference-check.md`);
 - contribution-level declaration, prior-belief reporting, and the manuscript itself;
 - an independent re-run from a foreign working directory (coordinates supplied silently by the

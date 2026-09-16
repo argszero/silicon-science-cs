@@ -17,8 +17,8 @@ numpy, no scipy, no network, no `matplotlib`. Python 3.8+.
 Expected final lines, and the lines that carry the verdict:
 
 ```
-criteria: a=MET, b=MET, c=UNMET, d=MET
-facts recomputed: 44 | disagreeing with the artefact's own value: 0
+criteria: a=MET, b=MET, c=MET, d=MET
+facts recomputed: 77 | disagreeing with the artefact's own value: 0
 coordinate census: 0 violation(s)
   stages and aggregate: OK
   aggregate liveness: OK
@@ -28,11 +28,19 @@ verdict: OK
 REPRODUCE: ALL GREEN
 ```
 
-Criterion (c) is **UNMET by design of the record, not by failure of the run**: the registered
-measurement is `ratio(λ_worst-case) − ratio(1)` with λ chosen by a certificate formula, and no stage
-computes that formula. The package reports the state instead of substituting the fixed-grid proxy,
-whose own direction contradicts the registered one. `canonical_results.json → criteria` carries the
-same statement.
+Criterion (c) was **UNMET by design of the record, not by failure of the run** in the first
+submission of this package: the registered measurement needed a certificate-chosen λ, and no stage
+computed that formula — the package reported the state rather than substitute a proxy whose own
+direction contradicted the registered one. The stage `lambda_cert_v1.py` (added by the **F0b
+amendment** to the design freeze) now computes it, and the runner recomputes every number quoted
+from the per-profile primitives, so (c) is **MEASURED**: a factor per problem — median 1.7006
+(ski), 1.2851 (sched), 1.4934 (paging), worst profile 1.8252 with a 95% between-stream interval
+[1.8109, 1.8404] — with the same factor under an out-of-sample λ* agreeing to 0.01–0.04.
+
+The registered prior **P2 is half confirmed**, and the criterion's detail says so: the tail profiles
+carry the higher mean factor in all three problems, but the correlations are weak (0.17 / 0.30 /
+0.39) and the relation is non-monotone in spread — in `ski` the extreme-spread profiles carry the
+*lowest* factor. `canonical_results.json → criteria` carries the same statement, per problem.
 
 Step 5 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
 in a report is read off that output, never typed.**
@@ -58,18 +66,36 @@ The package's instruments are held to four disciplines, and so is `canonical_run
   paging       paging_v1.py                          9      0 yes
   sufficiency  sufficiency_v1.py                    15      0 yes
   external     external_cell_v1.py                 n/p    n/p yes
+  lambdacert   lambda_cert_v1.py                     6      0 yes
   ```
 
-* **recomputation, not transcription** — 44 named facts are derived from primitives (the witness's
+  The `lambdacert` row is the certificate stage added by the **F0b amendment**; on the `ski` profile
+  `under_mid` its own control is what proves the stage's factor is not free — the runner mutates one
+  profile's factor, one profile's λ, and the recorded median, and each mutation must be noticed
+  (12 cases in all, 0 not noticed).
+
+* **recomputation, not transcription** — 77 named facts are derived from primitives (the witness's
   exact-zero scalar identity, the argmin loss gap, the resolved contrasts, the ordering taus, the
-  reach counts). Where the artefact records the same quantity, the two must agree; **0 of 44
-  disagree**;
+  reach counts, and the calibration factor's medians, extremes, displaced counts and direction
+  correlations). Where the artefact records the same quantity, the two must agree; **0 of 77
+  disagree**. Two conventions are named rather than assumed, because each is part of its rule: the
+  factor is the mean of per-stream ratios (**not** the ratio of the two means, whose value is
+  reported beside it so the difference is visible), and the median over an even profile count is the
+  **upper** median the stage uses, not the average of the two central values;
 * **liveness** — `canonical_runner.py --selftest` corrupts each recomputation's input in a throwaway
   copy and requires the change to be noticed, comparing against a baseline rather than against the
   recorded field. It distinguishes the two mechanisms: a corrupted *primitive* must move the
   recomputed value, while a corrupted *recorded* field moves nothing and must be caught by the
-  cross-check. 8 cases, 0 not noticed;
-* **coordinates** — a census over all 11 source files enumerates the eight ways an input can enter
+  cross-check. 12 cases, 0 not noticed;
+* **the state word follows the evidence** — a criterion's `MEASURED`/`UNMET` state is checked
+  against the stages that carry it: a criterion whose stages are present and green cannot be
+  reported `unmet`, and one whose stages are absent cannot be reported `measured` (the mapping is
+  declared in the runner, and criterion (d) is deliberately out of it — its evidence is the
+  disjoint-stream design of the cells, not a stage). Without this rule the round-3 change to (c)
+  would be a sentence rather than a consequence, and reverting the state while the certificate stage
+  kept passing would be invisible; two mutations of a throwaway copy — state reverted, and stages
+  replaced by a name that does not exist — each turn the run red naming the criterion;
+* **coordinates** — a census over all 12 source files enumerates the eight ways an input can enter
   from outside the package, and requires the three that would make the evidence machine-dependent
   (git object, network, clock/entropy) to be **empty**. It is empty here because the censused
   detector tables are a banner-delimited **declaration span** — data, not code — asserted
@@ -81,7 +107,7 @@ Two further controls live in their own files and are run by `reproduce.sh`:
 * `external_cell_mutation_v1.py` — **13 mutations** of the external cell, one per named check, each
   of which must make exactly that check fail and no other. This is the control that shows the cell's
   gates can fail at all;
-* `freeze_check_v1.py` — **46 checks** re-deriving every number in `design_freeze_v1.md` from the
+* `freeze_check_v1.py` — **55 checks** re-deriving every number in `design_freeze_v1.md` from the
   artefacts, including its 8-row digest table.
 
 ## The claims, and where each one comes from
@@ -131,8 +157,10 @@ limit is measured and reported per profile, not hidden.
 | `paging_v1.py` | the per-page attachment, against the step-common one it replaces |
 | `sufficiency_v1.py` | the scalar-insufficiency witness and the object-level contrast design |
 | `external_cell_v1.py` | the committed external cell anchored to the published system result |
+| `lambda_cert_v1.py` | the certificate stage of the F0b amendment: the rule λ_wc(η) and the calibration factor (c) |
+| `lambda_cert_v1_results.json` | its artefact: the per-profile factors, intervals, λs and direction statistics |
 | `external_cell_mutation_v1.py` | the cell's check-liveness control (13 mutations) |
-| `freeze_check_v1.py` | the design-freeze document against the artefacts (46 checks) |
+| `freeze_check_v1.py` | the design-freeze document against the artefacts (55 checks, the F0b amendment included) |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |
 | `run.log` | the transcript of the last `canonical_runner.py` run |
