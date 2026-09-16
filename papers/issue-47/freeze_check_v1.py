@@ -112,6 +112,19 @@ def main():
     for prob, want in (("ski", "-9.16"), ("sched", "+6.62"), ("paging", "-3.70")):
         present("%+.2f" % confounded[prob]["advantage_vs_MDE_cluster"], want,
                 "confounded_contrast_%s" % prob)
+    # ---- L5's figure is the ONE number in this document that was never derived here, and it is a
+    # claim about an object the document does not read: "optimistic by 3.7-6.3x" is the min-max of the
+    # sufficiency artefact's OWN `mde_inflation_factor` over its six (problem, slice) blocks. Derived
+    # now, in the same style as every other figure in this file: build the string from the artefact,
+    # then require the document to carry it.  (A figure in the record is read at its own object.)
+    infl = [b["mde_inflation_factor"]
+            for b in suf["part_A_why_the_cell_design_cannot_resolve"]["blocks"]]
+    check("suff/the_optimism_factor_is_derived_from_the_artefact_not_quoted",
+          len(infl) == 6 and min(infl) > 1.0,
+          "%d block(s), inflation %.4f..%.4f" % (len(infl), min(infl), max(infl)))
+    present("%.1f\u2013%.1f\u00d7" % (min(infl), max(infl)), "3.7\u20136.3\u00d7",
+            "l5_resolution_unit_optimism")
+
     shift = suf["null_shift_from_the_even_target_adv_over_mde"]
     check("suff/the_null_shift_dictionary_agrees_with_the_control_rows",
           all(abs(shift[p] - even[p]["advantage_vs_MDE_cluster"]) < 1e-12 for p in shift),

@@ -4,14 +4,14 @@
 #   bash reproduce.sh
 #
 # Steps, and what each one is for:
-#   1. the nine stages (eight frozen, plus the certificate stage added by the F0b amendment),
+#   1. the eight stages (seven frozen, plus the certificate stage added by the F0b amendment),
 #      then the canonical aggregate (canonical_runner.py), which RECOMPUTES
 #      every cited number from the stage artefacts' primitives and cross-checks it against the value
 #      the stage recorded about itself;
 #   2. the liveness control -- each recomputation is corrupted in a throwaway copy and must notice;
 #   3. the external cell's own check-liveness -- 13 mutations of the cell script, one per named check,
 #      each of which must make exactly that check fail;
-#   4. the design-freeze document against the artefacts -- 46 checks, including the digest table;
+#   4. the design-freeze document against the artefacts -- 57 checks, including the digest table;
 #   5. the manuscript assembly -- every measurement in the prose is a placeholder resolved out of the
 #      artefacts (a placeholder that cannot be resolved, or a citation key with no reference entry,
 #      fails the step), including the design table, which is rendered from the instrument artefact
@@ -25,7 +25,9 @@
 #   8. the flip bound per headline number (`.github/tools`-free, offline): the fewest unit inversions
 #      that could reverse each verdict, plus the bounds that are NOT derivable, which are reported as
 #      such rather than estimated into a number;
-#   9. the sha256 of every artefact this package ships, printed as a block to copy.
+#   9. the README's own numbers, each read against the artefact that owns it (so a figure in the
+#      prose cannot drift from the run), with a mutation per figure as its liveness control;
+#  10. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u
@@ -91,7 +93,15 @@ verdict "flip bound" "$rc8"
 rc8b=$?
 verdict "flip bound liveness" "$rc8b"
 
-printf '\n== 9. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 9. the README against the artefacts that own its numbers ==\n'
+"$PY" readme_check_v1.py
+rc9=$?
+verdict "README figures" "$rc9"
+"$PY" readme_check_v1.py --selftest >/dev/null
+rc9b=$?
+verdict "README figure liveness" "$rc9b"
+
+printf '\n== 10. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
@@ -99,7 +109,7 @@ external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_run
 assemble.py manuscript_part1.md manuscript_part2.md manuscript.md \
 support_read_v1.py support_verdicts_v1.json support_read_v1.json support-read.md \
 manuscript_part3.md references.md reference-check.md \
-flip_bound_v1.py flip_bound_v1_results.json"
+flip_bound_v1.py flip_bound_v1_results.json readme_check_v1.py"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

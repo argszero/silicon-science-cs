@@ -1,0 +1,339 @@
+#!/usr/bin/env python3
+"""Issue #47 -- the README's own figures, each read against the artefact that OWNS it.
+
+    python3 readme_check_v1.py            # check: exit 0 iff every figure matches
+    python3 readme_check_v1.py --selftest # liveness: one planted wrong figure per check
+
+WHY THIS FILE EXISTS.  A number written into a README is a claim about some other artefact, and
+nothing in this package read the README's numbers against those artefacts.  Three of them had drifted
+by two rounds: the step count still said eight when `reproduce.sh` ran nine, the freeze-check count
+said 55 when the check reported 57, and the coordinate bullet typed "12 source files" while the census
+enumerated 15 (it had listed a draft file that the commit does not ship).  Every one of those figures
+was read by a human and none by a check -- the same failure this package has been bitten by twice
+already: the object that is verified and the object a reader opens are two artefacts.
+
+WHAT IS CHECKED, and against what:
+
+* the quoted verdict block -- `facts recomputed` and the four criterion states, against
+  `canonical_results.json` (the file the runner writes, not the runner's own printout);
+* the stage table -- against the table `run.log` printed in the same run, line for line (a
+  repaginated table differs, which is the defect R330 found in this very table);
+* the freeze-check count and the external-mutation count, against their result files' own counts;
+* the support counts (keys / occurrences / multi-sentence keys), against the verdict rows;
+* the stated-difference count, against `reference-check.md` AND recomputed from `references.md`;
+* the reference-entry count, against the manuscript's numbered `## References` section;
+* the step count, against `reproduce.sh`'s own step markers;
+* the census's source-file count, against the directory -- and the README must NAME that instrument
+  rather than type a number, because the list is enumerated at run time.
+
+A figure whose anchor is missing fails rather than passes: "the claim is not in the file" and "the
+claim is right" must never look alike.  `--selftest` plants one wrong figure per check and requires
+that check -- and ONLY that check -- to fail, so every check is known to be able to fail, and to fail
+on its own claim.
+"""
+import io
+import json
+import os
+import re
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+FILES = ("README.md", "reproduce.sh", "run.log", "canonical_results.json",
+         "freeze_check_v1_results.json", "external_cell_mutation_v1_results.json",
+         "support_verdicts_v1.json", "references.md", "reference-check.md", "manuscript.md")
+
+WORDNUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+           "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
+
+
+def load():
+    return {f: io.open(os.path.join(HERE, f), encoding="utf-8").read() for f in FILES}
+
+
+def grab(pat, text, flags=0):
+    m = re.search(pat, text, flags)
+    return m.groups() if m else None
+
+
+def table(text):
+    """The stage table as printed: the header line plus every consecutive row-shaped line after it."""
+    out, started = [], False
+    for raw in text.split("\n"):
+        s = raw.strip()
+        if not started:
+            if s.startswith("stage") and "script" in s and "flag agrees" in s:
+                started, out = True, [s]
+            continue
+        if re.match(r"^\S+\s+\S+\s+\S+\s+\S+\s+\S+$", s):
+            out.append(s)
+        else:
+            break
+    return out
+
+
+def marker_carriers(entries):
+    """Entries carrying the journal's element: a `Difference` marker after the LAST link token.
+
+    The rule is restated here rather than imported so this file can fail on its own artefact; the two
+    other implementations in the package are checked against each other by their own selftests.
+    """
+    ok = 0
+    for e in entries:
+        toks = list(re.finditer(r"https?://\S+|arXiv:[0-9.]+v?\d*|\b10\.\d{4,5}/\S+", e))
+        if toks and toks[-1].end() < len(e) and "Difference" in e[toks[-1].end():]:
+            ok += 1
+    return ok
+
+
+def ref_entries(text):
+    return re.findall(r"(?m)^\[@[^\]]+\].*$", text)
+
+
+# ---------------------------------------------------------------------------------------------
+# Each check returns (ok, detail).  `t` is the dict of file texts; the artefacts are parsed in
+# `ctx()` so a broken JSON file fails the checks that need it instead of raising at import.
+# ---------------------------------------------------------------------------------------------
+def ctx(t):
+    return {"canon": json.loads(t["canonical_results.json"]),
+            "fz": json.loads(t["freeze_check_v1_results.json"]),
+            "ext": json.loads(t["external_cell_mutation_v1_results.json"]),
+            "sup": json.loads(t["support_verdicts_v1.json"])}
+
+
+def ck_facts(t, c):
+    g = grab(r"facts recomputed: (\d+) \| disagreeing with the artefact's own value: (\d+)",
+             t["README.md"])
+    n = len(c["canon"]["facts"])
+    return (g is not None and int(g[0]) == n and int(g[1]) == 0
+            and c["canon"]["ALL_PASS"] is True,
+            "README %s | canonical_results.json: %d fact(s), ALL_PASS=%s"
+            % (g, n, c["canon"]["ALL_PASS"]))
+
+
+def ck_states(t, c):
+    st = c["canon"]["criteria"]
+    want = "criteria: " + ", ".join(
+        "%s=%s" % (k[0], "MET" if st[k]["state"] == "measured" else "UNMET") for k in sorted(st))
+    return want in t["README.md"], "want %r | present=%s" % (want, want in t["README.md"])
+
+
+def ck_table(t, c):
+    r_rows, l_rows = table(t["README.md"]), table(t["run.log"])
+    n = len(c["canon"]["stages"])
+    diff = next(("%s != %s" % (a, b) for a, b in zip(r_rows, l_rows) if a != b), "")
+    return ((r_rows == l_rows and len(l_rows) - 1 == n),
+            "%d README row(s) vs %d run.log row(s) vs %d stage(s)%s"
+            % (len(r_rows) - 1, len(l_rows) - 1, n, (" | first difference: " + diff) if diff else ""))
+
+
+def ck_freeze(t, c):
+    g1 = grab(r"\*\*(\d+) checks\*\* re-deriving every number in `design_freeze_v1\.md`", t["README.md"])
+    g2 = grab(r"\((\d+) checks, the F0b amendment included\)", t["README.md"])
+    want = str(c["fz"]["n_checks"])
+    return (g1 is not None and g2 is not None and g1[0] == g2[0] == want,
+            "README %s / %s | freeze_check_v1_results.json: %s check(s)" % (g1, g2, want))
+
+
+def ck_mutations(t, c):
+    g1 = grab(r"\*\*(\d+) mutations\*\* of the external cell", t["README.md"])
+    g2 = grab(r"\((\d+) mutations\)", t["README.md"])
+    want = str(c["ext"]["n_mutations"])
+    return (g1 is not None and g2 is not None and g1[0] == g2[0] == want,
+            "README %s / %s | external_cell_mutation_v1_results.json: %s mutation(s)"
+            % (g1, g2, want))
+
+
+def ck_support(t, c):
+    keys = [rid.split(":", 2)[1] for rid in c["sup"]["rows"]]
+    distinct, multi = len(set(keys)), len(set(k for k in keys if keys.count(k) > 1))
+    g = grab(r"(\d+) keys appear as (\d+) occurrences, and (\d+)\s+keys are cited", t["README.md"])
+    return (g is not None and (int(g[0]), int(g[1]), int(g[2])) == (distinct, len(keys), multi),
+            "README %s | verdict rows: %d key(s), %d occurrence(s), %d multi-sentence key(s)"
+            % (g, distinct, len(keys), multi))
+
+
+def ck_difference(t, c):
+    entries = ref_entries(t["references.md"])
+    g1 = grab(r"rendered entries carrying the stated difference: (\d+) of\s+(\d+)", t["README.md"])
+    g2 = grab(r"rendered entries carrying the stated difference.*?\|\s*\*\*(\d+) of (\d+)\*\*",
+              t["reference-check.md"], re.S)
+    carriers = marker_carriers(entries)
+    return (g1 is not None and g2 is not None and g1 == g2
+            and (int(g2[0]), int(g2[1])) == (carriers, len(entries)),
+            "README %s / reference-check.md %s | references.md: %d carrier(s) of %d entr(y|ies)"
+            % (g1, g2, carriers, len(entries)))
+
+
+def ck_refcount(t, c):
+    md = t["manuscript.md"]
+    m_entries = re.findall(r"(?m)^\[(\d+)\]", md[md.index("## References"):])
+    entries = ref_entries(t["references.md"])
+    g1 = grab(r"`(\d+)` entries in one `## References` section", t["README.md"])
+    g2 = grab(r"\((\d+) lines\)\. Each names what that work", t["README.md"])
+    return (g1 is not None and g2 is not None and g1[0] == g2[0] == str(len(m_entries)) == str(len(entries)),
+            "README %s / %s | manuscript.md: %d numbered entry(ies); references.md: %d"
+            % (g1, g2, len(m_entries), len(entries)))
+
+
+def ck_steps(t, c):
+    g = grab(r"the (\w+)-step run below", t["README.md"])
+    steps = re.findall(r"printf '\\n== (\d+)\.", t["reproduce.sh"])
+    return (g is not None and WORDNUM.get(g[0]) == len(steps)
+            and steps == [str(i) for i in range(1, len(steps) + 1)],
+            "README '%s' (%s) | reproduce.sh: %d step marker(s) %s"
+            % (g[0] if g else None, WORDNUM.get(g[0]) if g else None, len(steps), steps))
+
+
+def ck_census(t, c):
+    typed = re.search(r"over \d+ source file", t["README.md"])
+    named = "a census over **every** `.py`/`.sh` file the package ships" in t["README.md"]
+    g = grab(r"coordinate census over (\d+) source file", t["run.log"])
+    on_disk = len([f for f in os.listdir(HERE) if f.endswith((".py", ".sh"))])
+    return (typed is None and named and g is not None and int(g[0]) == on_disk,
+            "README types a count: %s | names the instrument: %s | run.log %s vs %d file(s) on disk"
+            % (typed.group(0) if typed else "no", named, g, on_disk))
+
+
+def ck_verdicts(t, c):
+    """Every verdict `reproduce.sh` prints is listed in the README, and nothing else is.
+
+    The list is one line per VERDICT, so it goes stale the moment a step is added -- it already had
+    (the two flip-bound verdicts of R347 were never added).  The script is the owner: it prints a
+    label, and the label is the claim.
+    """
+    labels = re.findall(r'(?m)^\s*verdict "([^"]+)"', t["reproduce.sh"])
+    blocks = re.findall(r"```[a-z]*\n(.*?)```", t["README.md"], re.S)
+    block = next((b for b in blocks if "REPRODUCE: ALL GREEN" in b), None)
+    listed = re.findall(r"(?m)^  ([^:\n]+): OK$", block or "")
+    return (block is not None and listed == labels,
+            "README lists %s | reproduce.sh prints %s" % (listed, labels))
+
+
+def ck_repro_freeze(t, c):
+    g = grab(r"design-freeze document against the artefacts -- (\d+) checks", t["reproduce.sh"])
+    want = str(c["fz"]["n_checks"])
+    return (g is not None and g[0] == want,
+            "reproduce.sh %s | freeze_check_v1_results.json: %s check(s)" % (g, want))
+
+
+def ck_repro_stages(t, c):
+    g = grab(r"#   1\. the (\w+) stages \(", t["reproduce.sh"])
+    n = len(c["canon"]["stages"])
+    return (g is not None and WORDNUM.get(g[0]) == n,
+            "reproduce.sh '%s' (%s) | canonical_results.json: %d stage(s)"
+            % (g[0] if g else None, WORDNUM.get(g[0]) if g else None, n))
+
+
+CHECKS = [
+    ("readme/facts_recomputed_is_the_artefact's_own_count", ck_facts),
+    ("readme/criterion_states_are_their_recorded_states", ck_states),
+    ("readme/stage_table_is_the_one_run_log_printed", ck_table),
+    ("readme/freeze_check_count_is_the_freeze_result's", ck_freeze),
+    ("readme/mutation_count_is_the_mutation_result's", ck_mutations),
+    ("readme/support_counts_are_the_verdict_rows", ck_support),
+    ("readme/stated_difference_count_is_the_rendered_layer", ck_difference),
+    ("readme/reference_count_is_the_manuscript's_section", ck_refcount),
+    ("readme/step_count_is_reproduce_sh's_own_markers", ck_steps),
+    ("readme/census_count_is_the_directory_and_is_not_typed", ck_census),
+    ("readme/verdict_list_is_the_one_reproduce_sh_prints", ck_verdicts),
+    ("reproduce_sh/freeze_check_count_is_the_freeze_result's", ck_repro_freeze),
+    ("reproduce_sh/stage_count_is_the_runner's_stage_list", ck_repro_stages),
+]
+
+# (check name, file, the figure to break, what to replace it with).  Breaking a figure must fail its
+# own check and no other -- an exact count, not "something went red": a mutation battery whose cases
+# already fail for other reasons proves nothing (the confounded battery of R343).
+MUTATIONS = [
+    ("readme/facts_recomputed_is_the_artefact's_own_count",
+     "README.md", "facts recomputed: 77 |", "facts recomputed: 76 |"),
+    ("readme/criterion_states_are_their_recorded_states",
+     "README.md", "criteria: a=MET, b=MET", "criteria: a=UNMET, b=MET"),
+    ("readme/stage_table_is_the_one_run_log_printed",
+     "README.md", "  anchor       anchor_smoke.py                       8      0 yes",
+     "  anchor       anchor_smoke.py                       9      0 yes"),
+    ("readme/freeze_check_count_is_the_freeze_result's",
+     "README.md", "**57 checks**", "**56 checks**"),
+    ("readme/mutation_count_is_the_mutation_result's",
+     "README.md", "**13 mutations**", "**12 mutations**"),
+    ("readme/support_counts_are_the_verdict_rows",
+     "README.md", "237 occurrences", "236 occurrences"),
+    ("readme/stated_difference_count_is_the_rendered_layer",
+     "README.md", "stated difference: 156 of", "stated difference: 155 of"),
+    ("readme/reference_count_is_the_manuscript's_section",
+     "README.md", "`156` entries in one", "`157` entries in one"),
+    ("readme/step_count_is_reproduce_sh's_own_markers",
+     "README.md", "the ten-step run below", "the nine-step run below"),
+    ("readme/census_count_is_the_directory_and_is_not_typed",
+     "README.md", "a census over **every** `.py`/`.sh` file the package ships",
+     "a census over all 12 source files"),
+    ("readme/verdict_list_is_the_one_reproduce_sh_prints",
+     "README.md", "  design freeze: OK\n", ""),
+    ("reproduce_sh/freeze_check_count_is_the_freeze_result's",
+     "reproduce.sh", "-- 57 checks, including the digest table",
+     "-- 56 checks, including the digest table"),
+    ("reproduce_sh/stage_count_is_the_runner's_stage_list",
+     "reproduce.sh", "the eight stages (seven frozen", "the nine stages (seven frozen"),
+]
+
+
+def run_all(texts):
+    """Every check, each in its own guard: a check that raises is a FAILED check, not a crash."""
+    try:
+        c = ctx(texts)
+    except Exception as exc:
+        return [(n, False, "the artefacts a check reads could not be parsed: %s: %s"
+                 % (type(exc).__name__, exc)) for n, _ in CHECKS]
+    rows = []
+    for name, fn in CHECKS:
+        try:
+            ok, detail = fn(texts, c)
+        except Exception as exc:
+            ok, detail = False, "raised %s: %s" % (type(exc).__name__, exc)
+        rows.append((name, bool(ok), detail))
+    return rows
+
+
+def report(rows):
+    bad = 0
+    for name, ok, detail in rows:
+        bad += 0 if ok else 1
+        print("%-6s %-58s %s" % ("PASS" if ok else "FAIL", name, detail))
+    return bad
+
+
+def selftest():
+    texts = load()
+    # The battery runs on a CLEAN base.  If the shipped package is already failing, the cases would
+    # prove nothing (every mutation would show the same failures for someone else's reason) -- the
+    # confounded battery of R343.  Say so instead of reporting cases that fire for the wrong reason.
+    base = [n for n, ok, _ in run_all(texts) if not ok]
+    if base:
+        print("FAIL   the battery needs a clean base; already failing: %s" % base)
+        return 1
+    bad = 0
+    for name, f, old, new in MUTATIONS:
+        hits = texts[f].count(old)
+        if hits != 1:
+            print("FAIL   %-58s the mutation anchor occurs %d time(s) in %s" % (name, hits, f))
+            bad += 1
+            continue
+        kept = dict(texts)
+        kept[f] = texts[f].replace(old, new)
+        failed = [n for n, ok, _ in run_all(kept) if not ok]
+        ok = failed == [name]
+        print("%-6s %-58s failed=%s expected=[%r]" % ("PASS" if ok else "FAIL", name, failed, name))
+        bad += 0 if ok else 1
+    print("selftest: %d case(s), %d failure(s) over %d check(s)" % (len(MUTATIONS), bad, len(CHECKS)))
+    return 1 if bad else 0
+
+
+def main():
+    rows = run_all(load())
+    bad = report(rows)
+    print("readme check: %d check(s), %d failed" % (len(rows), bad))
+    return 1 if bad else 0
+
+
+if __name__ == "__main__":
+    sys.exit(selftest() if "--selftest" in sys.argv else main())

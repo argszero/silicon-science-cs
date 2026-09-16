@@ -1,7 +1,7 @@
 {
  "ALL_PASS": true,
  "failed": [],
- "n_checks": 55,
+ "n_checks": 57,
  "n_failed": 0,
  "rows": [
   {
@@ -177,6 +177,16 @@
   {
    "check": "quote/confounded_contrast_paging",
    "detail": "doc has '-3.70' == '-3.70' (count 1)",
+   "pass": true
+  },
+  {
+   "check": "suff/the_optimism_factor_is_derived_from_the_artefact_not_quoted",
+   "detail": "6 block(s), inflation 3.7074..6.3316",
+   "pass": true
+  },
+  {
+   "check": "quote/l5_resolution_unit_optimism",
+   "detail": "doc has '3.7\u20136.3\u00d7' == '3.7\u20136.3\u00d7' (count 1)",
    "pass": true
   },
   {

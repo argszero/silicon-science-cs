@@ -679,8 +679,8 @@ external reach (published robustness scale 0.008..0.088):
          C1 git object read         0 site(s) in 0  file(s)  -- none
          C2 above-package read      4 site(s) in 2  file(s)  reproduce.sh, support_read_v1.py
          C3 environment             0 site(s) in 0  file(s)  -- none
-         C4 argv                    4 site(s) in 4  file(s)  canonical_runner.py, flip_bound_v1.py, reproduce.sh, support_read_v1.py
-         C5 cwd / absolute path    17 site(s) in 15 file(s)  anchor_smoke.py, assemble.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, flip_bound_v1.py, freeze_check_v1.py, instrument_v0.py, lambda_cert_v1.py, mechanism_v0.py, paging_v1.py, r347_flip_bound_v1.py, scorer_v0.py, sufficiency_v1.py, support_read_v1.py
+         C4 argv                    5 site(s) in 5  file(s)  canonical_runner.py, flip_bound_v1.py, readme_check_v1.py, reproduce.sh, support_read_v1.py
+         C5 cwd / absolute path    17 site(s) in 15 file(s)  anchor_smoke.py, assemble.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, flip_bound_v1.py, freeze_check_v1.py, instrument_v0.py, lambda_cert_v1.py, mechanism_v0.py, paging_v1.py, readme_check_v1.py, scorer_v0.py, sufficiency_v1.py, support_read_v1.py
          C6 network                 0 site(s) in 0  file(s)  -- none
          C7 clock / entropy         0 site(s) in 0  file(s)  -- none
          C8 interpreter             1 site(s) in 1  file(s)  reproduce.sh

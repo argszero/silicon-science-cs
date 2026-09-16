@@ -11,11 +11,11 @@ the prose.
 bash reproduce.sh
 ```
 
-Runtime is about five minutes on one CPU core (measured: 305 s for the eight-step run below).
+Runtime is about five minutes on one CPU core (measured: 305 s for the ten-step run below).
 **Dependencies: the Python standard library only** — no
 numpy, no scipy, no network, no `matplotlib`. Python 3.8+.
 
-Expected final lines, and the lines that carry the verdict:
+The verdict of every step, and the exit status:
 
 ```
 criteria: a=MET, b=MET, c=MET, d=MET
@@ -28,6 +28,10 @@ coordinate census: 0 violation(s)
   manuscript assembly: OK
   support limb: OK
   journal reference gate: OK
+  flip bound: OK
+  flip bound liveness: OK
+  README figures: OK
+  README figure liveness: OK
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
@@ -46,7 +50,7 @@ carry the higher mean factor in all three problems, but the correlations are wea
 0.39) and the relation is non-monotone in spread — in `ski` the extreme-spread profiles carry the
 *lowest* factor. `canonical_results.json → criteria` carries the same statement, per problem.
 
-Step 9 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
+Step 10 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
 in a report is read off that output, never typed.** Step 7 runs the journal's own reference gate
 (`.github/tools/refgate.py`) on the assembled manuscript from the repository root — expected output
 at this head: `156` entries in one `## References` section, `coverage=100.0%`, `GATE: PASS`, the
@@ -168,20 +172,29 @@ The package's instruments are held to four disciplines, and so is `canonical_run
   would be a sentence rather than a consequence, and reverting the state while the certificate stage
   kept passing would be invisible; two mutations of a throwaway copy — state reverted, and stages
   replaced by a name that does not exist — each turn the run red naming the criterion;
-* **coordinates** — a census over all 12 source files enumerates the eight ways an input can enter
+* **coordinates** — a census over **every** `.py`/`.sh` file the package ships enumerates the eight ways an input can enter
   from outside the package, and requires the three that would make the evidence machine-dependent
   (git object, network, clock/entropy) to be **empty**. It is empty here because the censused
   detector tables are a banner-delimited **declaration span** — data, not code — asserted
   structurally, with the control that a read planted *outside* that span is still caught. An
   exclusion wider than the thing it excludes is the defect this discipline exists for.
 
-Two further controls live in their own files and are run by `reproduce.sh`:
+Three further controls live in their own files and are run by `reproduce.sh`:
 
 * `external_cell_mutation_v1.py` — **13 mutations** of the external cell, one per named check, each
   of which must make exactly that check fail and no other. This is the control that shows the cell's
   gates can fail at all;
-* `freeze_check_v1.py` — **55 checks** re-deriving every number in `design_freeze_v1.md` from the
-  artefacts, including its 8-row digest table.
+* `freeze_check_v1.py` — **57 checks** re-deriving every number in `design_freeze_v1.md` from the
+  artefacts, including its 8-row digest table;
+* `readme_check_v1.py` — **this file's own numbers**, each against the artefact that owns it: the
+  facts and criterion states against `canonical_results.json`, the stage table against the one
+  `run.log` printed, the freeze and mutation counts against their result files, the support
+  counts against the verdict rows, the stated-difference count against `reference-check.md` and
+  `references.md`, the step count against `reproduce.sh` itself, and the census's source-file
+  count against the directory. `--selftest` plants one wrong figure per check and requires that
+  check -- and only that check -- to fail. A count in a README is a claim about an artefact; if
+  nothing reads it against that artefact it drifts, and this file's did (three figures quoted a
+  tree two rounds old).
 
 ## The claims, and where each one comes from
 
@@ -233,7 +246,7 @@ limit is measured and reported per profile, not hidden.
 | `lambda_cert_v1.py` | the certificate stage of the F0b amendment: the rule λ_wc(η) and the calibration factor (c) |
 | `lambda_cert_v1_results.json` | its artefact: the per-profile factors, intervals, λs and direction statistics |
 | `external_cell_mutation_v1.py` | the cell's check-liveness control (13 mutations) |
-| `freeze_check_v1.py` | the design-freeze document against the artefacts (55 checks, the F0b amendment included) |
+| `freeze_check_v1.py` | the design-freeze document against the artefacts (57 checks, the F0b amendment included) |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |
 | `run.log` | the transcript of the last `canonical_runner.py` run |
@@ -243,6 +256,6 @@ limit is measured and reported per profile, not hidden.
 | `manuscript.md` | the assembled manuscript — generated by `assemble.py`, never edited by hand |
 | `references.md` | the reference layer's output: one rendered entry per cited key, from the record the resolver returned |
 | `reference-check.md` | the citation report (the **identity** limb): one row per entry, with the verification method and the record it resolved to |
-| `support_read_v1.py` | the **support** limb: the sentence at every citation occurrence against a recorded read; `--check` (offline, step 6), `--bind`, `--build`, `--selftest` (10 cases) |
+| `support_read_v1.py` | the **support** limb: the sentence at every citation occurrence against a recorded read; `--check` (offline, step 6), `--bind`, `--build`, `--selftest` (11 cases) |
 | `support_verdicts_v1.json` | the readings: one row per occurrence, each quoting the sentence it was made on |
 | `support_read_v1.json` / `support-read.md` | the support report, generated from the readings |
