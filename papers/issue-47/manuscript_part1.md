@@ -141,8 +141,9 @@ Section 2 places the instrument against the literature it borrows from and the l
 measures. Section 3 defines the instrument and the design, including the two attachments, the
 shifted null and the resolution unit. Section 4 reports the four results. Section 5 states the six
 frozen limits, each with the measurement that establishes it. Section 6 gives the methodology and
-the reproduction specification. Section 7 reports the registered priors. Section 8 states the
-threats and argues why the result is still worth publishing. Section 9 concludes.
+the reproduction specification, and its Section 6.4 states the threats and argues why the result is
+still worth publishing. Section 7 reports the registered priors, against the verdict rules the
+registration fixed in advance. Section 8 concludes.
 
 ## 2. Related work
 

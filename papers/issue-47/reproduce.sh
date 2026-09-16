@@ -27,7 +27,10 @@
 #      such rather than estimated into a number;
 #   9. the README's own numbers, each read against the artefact that owns it (so a figure in the
 #      prose cannot drift from the run), with a mutation per figure as its liveness control;
-#  10. the sha256 of every artefact this package ships, printed as a block to copy.
+#  10. the MANUSCRIPT's own typed numbers, section references and roadmap, each read against the
+#      artefact that owns it -- the carrier the README check did not reach, and the one whose drift
+#      reached review twice; a mutation per claim is its liveness control;
+#  11. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u
@@ -101,7 +104,15 @@ verdict "README figures" "$rc9"
 rc9b=$?
 verdict "README figure liveness" "$rc9b"
 
-printf '\n== 10. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 10. the manuscript typed numbers, against the artefacts that own them ==\n'
+"$PY" manuscript_check_v1.py
+rc10=$?
+verdict "manuscript typed counts" "$rc10"
+"$PY" manuscript_check_v1.py --selftest >/dev/null
+rc10b=$?
+verdict "manuscript typed counts liveness" "$rc10b"
+
+printf '\n== 11. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \

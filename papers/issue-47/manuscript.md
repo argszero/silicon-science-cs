@@ -141,8 +141,9 @@ Section 2 places the instrument against the literature it borrows from and the l
 measures. Section 3 defines the instrument and the design, including the two attachments, the
 shifted null and the resolution unit. Section 4 reports the four results. Section 5 states the six
 frozen limits, each with the measurement that establishes it. Section 6 gives the methodology and
-the reproduction specification. Section 7 reports the registered priors. Section 8 states the
-threats and argues why the result is still worth publishing. Section 9 concludes.
+the reproduction specification, and its Section 6.4 states the threats and argues why the result is
+still worth publishing. Section 7 reports the registered priors, against the verdict rules the
+registration fixed in advance. Section 8 concludes.
 
 ## 2. Related work
 
@@ -452,7 +453,8 @@ instrument by the instrument, and it is carried as limit **L5**.
 The design compares a signed arm against a scalar arm matched **in form** — both are two-term, and
 they differ in the odd term. Matching the form is necessary but not sufficient, because the
 object-level test is not sign-free: under a synthetic **even** target, which by construction has no
-sign dependence, the odd parameter is penalised by roughly 13 cluster MDEs (ski
+sign dependence, the odd parameter is penalised by up to `13` cluster MDEs — `12.95` for ski
+rental, `13.12` for scheduling and `1.53` for paging (ski
 `-12.95`, sched
 `-13.12`, paging
 `-1.53`). A design that punishes its own odd term under a
@@ -839,16 +841,24 @@ guidance.
 ### 6.2 The package: one command, and what it recomputes
 
 `bash reproduce.sh` runs the whole package on one CPU core with the Python standard library and **no
-network**, and exits non-zero unless every step passes. It has seven steps: (1) `8`
-stages plus the canonical aggregate, which **recomputes** every cited number from the stage artefacts'
-primitives and cross-checks it against the value each stage recorded about itself
-(`113` facts, 0 disagreements when this was written); (2) the aggregate's liveness control,
-which corrupts each recomputation in a throwaway copy and requires it to notice; (3) the external
-cell's own check-liveness, 13 mutations, one per named check, each of which must make exactly that
-check fail; (4) the design-freeze document checked against the artefacts, 46 checks including the
-digest table; (5) the manuscript assembly, which resolves every measurement placeholder out of the
-artefacts and fails on an unresolvable one or a citation key with no reference entry; (6) the
-**support limb** of citation integrity (Section 6.3); and (7) the digest block.
+network**, and exits non-zero unless every step passes. It has **eleven** steps, and they are
+enumerated here in the order the script prints them: (1) the stages plus the canonical aggregate,
+which **recomputes** every cited number from the stage artefacts' primitives and cross-checks it
+against the value each stage recorded about itself (`113` facts, 0 disagreements when this
+was written); (2) the aggregate's liveness control, which corrupts the input of each of its **12
+named cases** in a throwaway copy and requires the change to be noticed — ten cases corrupt a
+**primitive**, which must move the recomputed value, and two corrupt a **recorded field**, which
+moves nothing in the recomputation and must be caught by the cross-check alone, while the remainder
+of the `113` facts is covered by that cross-check, with which they agree (`0` disagreeing);
+(3) the external cell's own check-liveness, `13` mutations, one per named check, each of which must
+make exactly that check fail; (4) the design-freeze document checked against the artefacts, `57`
+checks including the digest table; (5) the manuscript assembly, which resolves every measurement
+placeholder out of the artefacts and fails on an unresolvable one or a citation key with no reference
+entry; (6) the **support limb** of citation integrity (Section 6.3); (7) the journal reference gate
+(one `## References` section, at least 100 entries, every entry cited); (8) the flip bound per
+headline number, and its liveness control; (9) the README against the artefacts that own its numbers,
+and that check's liveness control; (10) the manuscript's own typed counts against the artefacts that
+own them, with that check's liveness control; and (11) the digest block.
 
 Two further properties are reported rather than assumed. The **coordinate census** scans the package
 for hidden inputs the authoring machine supplies silently: it reports
@@ -869,7 +879,7 @@ text, and no step of this pipeline read it until this paper built one.
 
 The support limb is read per **occurrence**, not per key: the `113`-fact aggregate is not a
 citation, and the manuscript's 39 blocks are not references either,
-but of the cited keys 51 appear in more than one sentence, and a per-key read would hide the
+but of the cited keys `58` appear in more than one sentence, and a per-key read would hide the
 occurrence that fails. Each occurrence is recorded against the sentence it sits in, with the role the
 key plays there (a bound source, a survey, an instance of the enumerated class, the published anchor,
 …), and the check fails on a missing read, on an edit that leaves a recorded sentence no longer in the

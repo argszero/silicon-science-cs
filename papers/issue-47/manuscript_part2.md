@@ -95,7 +95,8 @@ instrument by the instrument, and it is carried as limit **L5**.
 The design compares a signed arm against a scalar arm matched **in form** — both are two-term, and
 they differ in the odd term. Matching the form is necessary but not sufficient, because the
 object-level test is not sign-free: under a synthetic **even** target, which by construction has no
-sign dependence, the odd parameter is penalised by roughly 13 cluster MDEs (ski
+sign dependence, the odd parameter is penalised by up to `13` cluster MDEs — `12.95` for ski
+rental, `13.12` for scheduling and `1.53` for paging (ski
 `{{X:facts.limit.L2_null_shift.ski.value|2f}}`, sched
 `{{X:facts.limit.L2_null_shift.sched.value|2f}}`, paging
 `{{X:facts.limit.L2_null_shift.paging.value|2f}}`). A design that punishes its own odd term under a

@@ -13,7 +13,7 @@ bash reproduce.sh
 
 Runtime is about five minutes on one CPU core, and **no wall-clock tolerance is claimed**: the runtime
 is a coordinate of the machine that ran it — and of what else that machine was doing — not a result the
-package asserts, so the check is on the printed verdicts of the ten-step run below and on every
+package asserts, so the check is on the printed verdicts of the eleven-step run below and on every
 *measurement* the run reports, never on how long it took.
 **Dependencies: the Python standard library only** — no
 numpy, no scipy, no network, no `matplotlib`. Python 3.8+.
@@ -35,6 +35,8 @@ coordinate census: 0 violation(s)
   flip bound liveness: OK
   README figures: OK
   README figure liveness: OK
+  manuscript typed counts: OK
+  manuscript typed counts liveness: OK
 verdict: OK
 REPRODUCE: ALL GREEN
 ```
@@ -190,6 +192,14 @@ Three further controls live in their own files and are run by `reproduce.sh`:
   gates can fail at all;
 * `freeze_check_v1.py` — **57 checks** re-deriving every number in `design_freeze_v1.md` from the
   artefacts, including its 8-row digest table;
+* `manuscript_check_v1.py` — the **manuscript's** typed numbers, its section references and its
+  roadmap, each against the artefact that owns it. This is the carrier the README check did not reach,
+  and the one whose drift reached review twice: a step count of seven against the eleven the script
+  prints, "46 checks" against the freeze check's 57, and a roadmap pointing one section past its
+  object. Its claims are read out of the **part files**, not out of the rendered `manuscript.md`,
+  because the parts are what the next assembly reads; every section reference must resolve to a
+  heading that exists; and the roadmap's sentences are matched against the headings they name. Nine
+  claims, nine mutations, one per claim, each required to fail its own check and no other.
 * `readme_check_v1.py` — **this file's own numbers**, each against the artefact that owns it: the
   facts and criterion states against `canonical_results.json`, the stage table against the one
   `run.log` printed, the freeze and mutation counts against their result files, the support
@@ -251,6 +261,8 @@ limit is measured and reported per profile, not hidden.
 | `lambda_cert_v1_results.json` | its artefact: the per-profile factors, intervals, λs and direction statistics |
 | `external_cell_mutation_v1.py` | the cell's check-liveness control (13 mutations) |
 | `freeze_check_v1.py` | the design-freeze document against the artefacts (57 checks, the F0b amendment included) |
+| `manuscript_check_v1.py` | the manuscript's typed numbers, section references and roadmap against the artefacts that own them (9 checks, 9 mutations) |
+| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (13 checks, 13 mutations) |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |
 | `run.log` | the transcript of the last `canonical_runner.py` run |
