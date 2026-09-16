@@ -231,6 +231,48 @@
    "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness -- the blocks carry no summary field, so this is recomputation without a recorded value to cross-check against",
    "value": 0.0
   },
+  "claim1.sign_separating_blocks.paging": {
+   "recorded": null,
+   "rule": "count of the problem's blocks in which the two arms separate at all (plus_arm_better != minus_arm_better); counted here from the block's recorded arm-winner counts, whose per-problem sum is cross-checked against the stage's aggregate below",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+   "value": 7
+  },
+  "claim1.sign_separating_blocks.sched": {
+   "recorded": null,
+   "rule": "count of the problem's blocks in which the two arms separate at all (plus_arm_better != minus_arm_better); counted here from the block's recorded arm-winner counts, whose per-problem sum is cross-checked against the stage's aggregate below",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+   "value": 12
+  },
+  "claim1.sign_separating_blocks.ski": {
+   "recorded": null,
+   "rule": "count of the problem's blocks in which the two arms separate at all (plus_arm_better != minus_arm_better); counted here from the block's recorded arm-winner counts, whose per-problem sum is cross-checked against the stage's aggregate below",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+   "value": 12
+  },
+  "claim1.sign_under_worse_blocks.paging": {
+   "recorded": null,
+   "rule": "count of those separating blocks in which the OVER-predicting arm is the better one, i.e. under-prediction is the worse arm; counted here from the block's recorded arm-winner counts, whose per-problem sum is cross-checked against the stage's aggregate below",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+   "value": 7
+  },
+  "claim1.sign_under_worse_blocks.sched": {
+   "recorded": null,
+   "rule": "count of those separating blocks in which the OVER-predicting arm is the better one, i.e. under-prediction is the worse arm; counted here from the block's recorded arm-winner counts, whose per-problem sum is cross-checked against the stage's aggregate below",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+   "value": 12
+  },
+  "claim1.sign_under_worse_blocks.ski": {
+   "recorded": null,
+   "rule": "count of those separating blocks in which the OVER-predicting arm is the better one, i.e. under-prediction is the worse arm; counted here from the block's recorded arm-winner counts, whose per-problem sum is cross-checked against the stage's aggregate below",
+   "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+   "value": 12
+  },
+  "claim1.sign_uniform_under_worse": {
+   "recorded": true,
+   "rule": "True iff EVERY separating block in EVERY problem has the over-predicting arm better; the manuscript's SS7 states the outcome of the registered prior P3 in this form, so it is asserted here and a violation stops the run rather than leaving prose that the artefact no longer supports",
+   "source": "sufficiency_v1_results.json:controls",
+   "value": true
+  },
   "claim1.worst_block_mde": {
    "recorded": null,
    "rule": "mde_cluster_unit of the argmin block",
@@ -327,6 +369,126 @@
    "source": "same",
    "value": true
   },
+  "claim3.anchor_concordant_pairs.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 9
+  },
+  "claim3.anchor_concordant_pairs.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 12
+  },
+  "claim3.anchor_concordant_pairs.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 12
+  },
+  "claim3.bootstrap_reps": {
+   "recorded": 2000,
+   "rule": "the stage's own resample count, read from the frozen script",
+   "source": "external_cell_v1.py:boot_tau(reps=)",
+   "value": 2000
+  },
+  "claim3.bootstrap_seed": {
+   "recorded": 31,
+   "rule": "the stage's own seed, read from the frozen script",
+   "source": "external_cell_v1.py:boot_tau(seed=)",
+   "value": 31
+  },
+  "claim3.concordant_all.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 68
+  },
+  "claim3.concordant_all.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 78
+  },
+  "claim3.concordant_all.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 68
+  },
+  "claim3.discordant_all.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 4
+  },
+  "claim3.discordant_all.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 0
+  },
+  "claim3.discordant_all.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 10
+  },
+  "claim3.discordant_excl_zero.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 4
+  },
+  "claim3.discordant_excl_zero.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 0
+  },
+  "claim3.discordant_excl_zero.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 10
+  },
+  "claim3.pairs_all.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 78
+  },
+  "claim3.pairs_all.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 78
+  },
+  "claim3.pairs_all.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 78
+  },
+  "claim3.pairs_excl_zero.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 66
+  },
+  "claim3.pairs_excl_zero.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 66
+  },
+  "claim3.pairs_excl_zero.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 66
+  },
   "claim3.published_implied_mean_gain": {
    "recorded": 0.16666666666666652,
    "rule": "DERIVED: mean_gain_over_classic / comparison_gain_over_classic - 1, in the artefact",
@@ -357,6 +519,42 @@
    "source": "external_cell_v1_results.json:cells[ski]",
    "value": 0.7435897435897436
   },
+  "claim3.tau_ci_hi.paging": {
+   "recorded": 1.0,
+   "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, 2000 reps, seed 31, 2.5/97.5 percentiles); the recorded bound is cross-checked",
+   "source": "external_cell_v1_results.json:X1_order.ci95",
+   "value": 1.0
+  },
+  "claim3.tau_ci_hi.sched": {
+   "recorded": 1.0,
+   "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, 2000 reps, seed 31, 2.5/97.5 percentiles); the recorded bound is cross-checked",
+   "source": "external_cell_v1_results.json:X1_order.ci95",
+   "value": 1.0
+  },
+  "claim3.tau_ci_hi.ski": {
+   "recorded": 1.0,
+   "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, 2000 reps, seed 31, 2.5/97.5 percentiles); the recorded bound is cross-checked",
+   "source": "external_cell_v1_results.json:X1_order.ci95",
+   "value": 1.0
+  },
+  "claim3.tau_ci_lo.paging": {
+   "recorded": 0.6666666666666666,
+   "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, 2000 reps, seed 31, 2.5/97.5 percentiles); the recorded bound is cross-checked",
+   "source": "external_cell_v1_results.json:X1_order.ci95",
+   "value": 0.6666666666666666
+  },
+  "claim3.tau_ci_lo.sched": {
+   "recorded": 1.0,
+   "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, 2000 reps, seed 31, 2.5/97.5 percentiles); the recorded bound is cross-checked",
+   "source": "external_cell_v1_results.json:X1_order.ci95",
+   "value": 1.0
+  },
+  "claim3.tau_ci_lo.ski": {
+   "recorded": 0.42028985507246375,
+   "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, 2000 reps, seed 31, 2.5/97.5 percentiles); the recorded bound is cross-checked",
+   "source": "external_cell_v1_results.json:X1_order.ci95",
+   "value": 0.42028985507246375
+  },
   "claim3.tau_excluding_zero_anchor.paging": {
    "recorded": 0.873015873015873,
    "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it) (zero-error anchor excluded, paired)",
@@ -374,6 +572,24 @@
    "rule": "Kendall tau of mean_gain against the tail read as higher-is-better (-worst_unit_degradation; ties dropped from numerator and denominator, as the stage computes it) (zero-error anchor excluded, paired)",
    "source": "external_cell_v1_results.json:cells[ski]",
    "value": 0.696969696969697
+  },
+  "claim3.tied_all.paging": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[paging]",
+   "value": 6
+  },
+  "claim3.tied_all.sched": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[sched]",
+   "value": 0
+  },
+  "claim3.tied_all.ski": {
+   "recorded": null,
+   "rule": "counted over every pair of the cell's 13 profiles, ties dropped from both sides as the stage's tau drops them",
+   "source": "external_cell_v1_results.json:cells[ski]",
+   "value": 0
   },
   "claim4.lambda_corr_spread.paging": {
    "recorded": 0.40780630359378955,

@@ -27,14 +27,16 @@ signed model's advantage over the magnitude model is
 `{{X:facts.claim2.clean_advantage_mde.ski.value|2f}}` /
 `{{X:facts.claim2.clean_advantage_mde.sched.value|2f}}` /
 `{{X:facts.claim2.clean_advantage_mde.paging.value|2f}}` cluster MDEs (ski / sched / paging), and the
-third is **reported unresolved** rather than rounded into a claim. **(3) A published systems-level
+third contrast is **not resolved** at this design's resolution, a limit of this result rather
+than the outcome of a registered prior (the priors' outcomes are stated below and in Section 7), so
+it is reported rather than rounded into a claim. **(3) A published systems-level
 ordering survives contact with this harness in sign, not in magnitude:** the external anchor reports
 a concordant pair (larger mean gain, smaller worst-trace degradation), and the harness reproduces
 the *sign* of that concordance in all three problems — Kendall tau
 `{{X:facts.claim3.tau_all.ski.value|3f}}` / `{{X:facts.claim3.tau_all.paging.value|3f}}` /
 `{{X:facts.claim3.tau_all.sched.value|3f}}` — while reaching the published *magnitude* in one
 problem only. **(4) Calibrating the trade-off parameter by the worst-case rule costs a measurable
-factor under realistic profiles:** the median factor is
+factor on this instrument's generated profiles:** the median factor is
 `{{X:facts.claim4.lambda_loss_median.ski.value|4f}}` /
 `{{X:facts.claim4.lambda_loss_median.sched.value|4f}}` /
 `{{X:facts.claim4.lambda_loss_median.paging.value|4f}}` per problem, the worst profile
@@ -53,8 +55,9 @@ higher mean factor in all three problems (ski
 `{{X:facts.claim4.lambda_mean_loss_other.paging.value|4f}}`) while the correlations are weak
 (`{{X:facts.claim4.lambda_corr_tail.ski.value|2f}}` / `{{X:facts.claim4.lambda_corr_tail.sched.value|2f}}`
 / `{{X:facts.claim4.lambda_corr_tail.paging.value|2f}}`) and the relation is non-monotone in spread;
-and the problem-structured-sign prior is not resolved by this design at the resolution it was
-registered at (Section 7). Six frozen limits travel with the claims — an attachment that is
+and the problem-structured-sign prior is **refuted**: the registration fixed the verdict rule in
+advance, and the measured dominant sign for paging is the opposite of the registered one, with the
+measured direction uniform across the design (Section 7). Six frozen limits travel with the claims — an attachment that is
 model-dependent, a design whose own null is **shifted** so that negative verdicts are
 uninterpretable, an uneven unit reach reported per profile, a concordance that is rank agreement and
 not magnitude, a generalising unit that is the profile rather than the repeated measurement, and a
@@ -112,8 +115,9 @@ is carried along as the baseline, on the same held-out cells.
   an out-of-sample check on the `lambda` it uses (Section 4.4), reported per problem rather than
   pooled.
 * **C5 — a method contribution**: the resolution unit, the shifted null, the reach statement and the
-  coordinate census are shipped as procedures, and the registered priors are reported one by one,
-  including the one that does not resolve (Sections 5–7).
+  coordinate census are shipped as procedures, and the registered priors are reported one by one
+  against the verdict rules the registration fixed in advance — including the one it refutes, and the
+  mechanism that refutation leaves unresolved (Sections 5–7).
 
 ### 1.4 Significance: whose belief changes
 

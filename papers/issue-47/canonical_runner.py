@@ -36,6 +36,7 @@ import io
 import itertools
 import json
 import os
+import random
 import re
 import statistics
 import subprocess
@@ -164,6 +165,46 @@ def stage_summary(st):
     }
 
 
+def pair_stats(xs, ys):
+    """(concordant, discordant, tied) over every pair, with the SAME tie rule as `kendall_tau`.
+
+    A tau is a ratio; a ratio can be small because the ranking is coarse (few pairs, or many tied
+    ones) or because many pairs genuinely disagree, and the two have the same value.  A review of
+    the manuscript's §4.3 asked which of the two carries the weakest reading, so the counts behind
+    the ratio are recomputed here and published with it rather than inferred from the tau.
+    """
+    c = d = t = 0
+    for i, j in itertools.combinations(range(len(xs)), 2):
+        a, b = xs[i] - xs[j], ys[i] - ys[j]
+        if a == 0 or b == 0:
+            t += 1
+        elif a * b > 0:
+            c += 1
+        else:
+            d += 1
+    return c, d, t
+
+
+def boot_tau(xs, ys, reps, seed):
+    """The stage's interval, recomputed here: profiles resampled with replacement, `reps` times,
+    2.5/97.5 percentiles.  Re-running the STAGE's interval rather than quoting its field is what
+    makes the published interval a recomputed number; the percentile rule and both constants are
+    read from the frozen stage's own source below, so neither is typed here.
+    """
+    rng = random.Random(seed)
+    n = len(xs)
+    vals = []
+    for _ in range(reps):
+        idx = [rng.randrange(n) for _ in range(n)]
+        t = kendall_tau([xs[i] for i in idx], [ys[i] for i in idx])
+        if t is not None:
+            vals.append(t)
+    if not vals:
+        return [None, None]
+    vals.sort()
+    return [vals[int(0.025 * len(vals))], vals[min(len(vals) - 1, int(0.975 * len(vals)))]]
+
+
 def kendall_tau(xs, ys):
     """Kendall tau-a over paired observations, computed here so the ordering claim is not taken
     from a stored field.
@@ -224,6 +265,71 @@ def witness(suf, facts):
             "blocks": len(B), "blocks_over_mde": len(over)}
 
 
+def sign_blocks(suf, facts):
+    """F1.1b -- WHICH SIGN IS PRICED, counted per problem on the same blocks as the witness.
+
+    This is the measurement behind the registered prior P3's outcome, so it is recomputed and
+    published rather than left as a sentence.  The unit is the BLOCK (a problem x profile cell of the
+    matched-magnitude design), and the block's own recorded counts say which arm won: `plus_arm_better`
+    counts the pairs in which the over-predicting arm realized the smaller loss, `minus_arm_better`
+    the under-predicting arm's.  A block whose two counts are both zero does not separate the arms
+    (the zero-error profile, and the cells where the two arms coincide exactly) and is reported as
+    non-separating rather than as evidence for either side.
+
+    THE CROSS-CHECK IS INDEPENDENT OF THIS SLICE: the per-problem sums must reproduce the frozen
+    stage's own aggregate controls (`C5_blocks_where_under_prediction_is_worse`, `C5_blocks_total`),
+    which the stage recorded without reference to this function.  If they disagree the run stops --
+    a per-problem breakdown that cannot reproduce the stage's own total is a different measurement,
+    not a finer one.
+    """
+    B = suf["part_B_matched_magnitude_witness"]["blocks"]
+    ctl = suf["controls"]
+    per = {}
+    for b in B:
+        d = per.setdefault(b["problem"], {"separating": 0, "under_worse": 0, "blocks": 0})
+        d["blocks"] += 1
+        if b["plus_arm_better"] == b["minus_arm_better"]:
+            continue                      # the arms did not separate on this block
+        d["separating"] += 1
+        if b["plus_arm_better"] > b["minus_arm_better"]:
+            d["under_worse"] += 1         # over-predicting arm is better => under-prediction is worse
+    for p in sorted(per):
+        for key, rule in (
+                ("sign_separating_blocks",
+                 "count of the problem's blocks in which the two arms separate at all "
+                 "(plus_arm_better != minus_arm_better)"),
+                ("sign_under_worse_blocks",
+                 "count of those separating blocks in which the OVER-predicting arm is the better "
+                 "one, i.e. under-prediction is the worse arm")):
+            facts["claim1.%s.%s" % (key, p)] = {
+                "value": per[p]["separating" if key == "sign_separating_blocks" else "under_worse"],
+                "recorded": None, "source": "sufficiency_v1_results.json:part_B_matched_magnitude_witness",
+                "rule": rule + "; counted here from the block's recorded arm-winner counts, whose "
+                              "per-problem sum is cross-checked against the stage's aggregate below"}
+    sep = sum(d["separating"] for d in per.values())
+    unw = sum(d["under_worse"] for d in per.values())
+    if unw != ctl["C5_blocks_where_under_prediction_is_worse"] or sep != ctl["C5_blocks_where_under_prediction_is_worse"]:
+        raise SystemExit("sign_blocks: the per-problem counts (%d under-worse over %d separating) do "
+                         "not reproduce the stage's own control (%d of %d) -- the per-problem "
+                         "breakdown is not a slice of the aggregate"
+                         % (unw, sep, ctl["C5_blocks_where_under_prediction_is_worse"],
+                            ctl["C5_blocks_total"]))
+    if sum(d["blocks"] for d in per.values()) != ctl["C5_blocks_total"]:
+        raise SystemExit("sign_blocks: the block count does not reproduce the stage's control")
+    facts["claim1.sign_uniform_under_worse"] = {
+        "value": unw == sep,
+        "recorded": unw == ctl["C5_blocks_where_under_prediction_is_worse"],
+        "source": "sufficiency_v1_results.json:controls",
+        "rule": "True iff EVERY separating block in EVERY problem has the over-predicting arm better; "
+                "the manuscript's SS7 states the outcome of the registered prior P3 in this form, so "
+                "it is asserted here and a violation stops the run rather than leaving prose that "
+                "the artefact no longer supports"}
+    if unw != sep:
+        raise SystemExit("sign_blocks: the direction is NOT uniform (%d of %d separating blocks); "
+                         "SS7's statement of P3's outcome depends on it" % (unw, sep))
+    return {"per_problem": per, "separating": sep, "under_worse": unw}
+
+
 def sign_channel(suf, facts):
     """F1.2 -- the sign channel, recomputed as (median advantage) / (cluster MDE of the same block).
 
@@ -278,6 +384,20 @@ def external_reach(ext, facts):
     """
     pub = ext["anchor_published_numbers"]
     lo, hi = pub["worst_trace_degradation"], pub["comparison_worst_trace_degradation"]
+    # The interval's constants come from the FROZEN stage's source, not from this file: the stage
+    # owns the rule and the freeze pins the file, so reading them here keeps the two in step without
+    # editing the frozen script (whose digest the freeze table pins).
+    m = re.search(r"def boot_tau\(xs, ys, reps=(\d+), seed=(\d+)\)", read("external_cell_v1.py"))
+    if not m:
+        raise SystemExit("the frozen stage's boot_tau signature could not be read: the interval's "
+                         "rule is part of the claim, so the run stops rather than quoting a default")
+    reps, seed = int(m.group(1)), int(m.group(2)) 
+    facts["claim3.bootstrap_reps"] = {
+        "value": reps, "recorded": reps, "source": "external_cell_v1.py:boot_tau(reps=)",
+        "rule": "the stage's own resample count, read from the frozen script"}
+    facts["claim3.bootstrap_seed"] = {
+        "value": seed, "recorded": seed, "source": "external_cell_v1.py:boot_tau(seed=)",
+        "rule": "the stage's own seed, read from the frozen script"}
     tau = {}
     reach = {}
     for p, rows in ext["cells"].items():
@@ -302,7 +422,27 @@ def external_reach(ext, facts):
                     "in_window": in_lo, "out_of_window": sorted(r["profile"] for r in rows
                                                                 if r["profile"] not in in_lo),
                     "min_worst_unit_degradation": min(w)}
+        # the counts behind the ratio, and the interval re-run rather than quoted
+        c_all, d_all, tied_all = pair_stats(g, better_tail)
+        c_keep, d_keep, tied_keep = pair_stats([g[i] for i in keep], [better_tail[i] for i in keep])
+        ci = boot_tau(g, better_tail, reps, seed)
         rec = [b for b in ext["tests"]["X1_order"]["blocks"] if b["problem"] == p][0]
+        for key, val in (("pairs_all", len(g) * (len(g) - 1) // 2),
+                         ("pairs_excl_zero", len(keep) * (len(keep) - 1) // 2),
+                         ("concordant_all", c_all), ("discordant_all", d_all), ("tied_all", tied_all),
+                         ("discordant_excl_zero", d_keep),
+                         ("anchor_concordant_pairs", c_all - c_keep)):
+            facts["claim3.%s.%s" % (key, p)] = {
+                "value": val, "recorded": None, "source": "external_cell_v1_results.json:cells[%s]" % p,
+                "rule": "counted over every pair of the cell's %d profiles, ties dropped from both "
+                        "sides as the stage's tau drops them" % len(g)}
+        for key, val, recd in (("tau_ci_lo", ci[0], rec["ci95"][0]),
+                               ("tau_ci_hi", ci[1], rec["ci95"][1])):
+            facts["claim3.%s.%s" % (key, p)] = {
+                "value": val, "recorded": recd, "source": "external_cell_v1_results.json:X1_order.ci95",
+                "rule": "the stage's interval RE-RUN here (profiles resampled with replacement, "
+                        "%d reps, seed %d, 2.5/97.5 percentiles); the recorded bound is cross-checked"
+                        % (reps, seed)}
         for key, val in tau[p].items():
             facts["claim3.tau_%s.%s" % (key, p)] = {
                 "value": val,
@@ -553,13 +693,14 @@ def build(log):
     ext = load("external_cell_v1_results.json")
     facts = {}
     w = witness(suf, facts)
+    sb = sign_blocks(suf, facts)
     sc = sign_channel(suf, facts)
     ns = null_shift(suf, facts)
     ex = external_reach(ext, facts)
     ac = attachment_controls(ext, facts)
     lc = lambda_calibration(load("lambda_cert_v1_results.json"), facts)
-    return stages, {"witness": w, "sign_channel": sc, "null_shift": ns, "external": ex,
-                    "attachment": ac, "lambda": lc}, facts
+    return stages, {"witness": w, "sign_blocks": sb, "sign_channel": sc, "null_shift": ns,
+                    "external": ex, "attachment": ac, "lambda": lc}, facts
 
 
 # --- coordinate census declaration: begin (the detector's own tables; excluded from the scan) --

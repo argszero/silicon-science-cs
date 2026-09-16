@@ -244,9 +244,39 @@ CHECKS = [
 # (check name, file, the figure to break, what to replace it with).  Breaking a figure must fail its
 # own check and no other -- an exact count, not "something went red": a mutation battery whose cases
 # already fail for other reasons proves nothing (the confounded battery of R343).
+def mut_step_count(texts):
+    """Break the README's step-count word wherever it stands, wrapping and all.
+
+    Same defect as `mut_facts_recomputed`'s pinned figure: the anchor `the ten-step run below` is a
+    literal embedding a word the README owns, and re-wrapping the sentence is enough to make it match
+    nothing -- which happened while this very paragraph was corrected.  The word is read from the
+    README instead of typed.
+    """
+    m = re.search(r"(the\s+)([a-z]+)(-step run below)", texts["README.md"])
+    if not m:
+        return ("README.md", None, None)
+    wrong = "nine" if m.group(2) != "nine" else "eight"
+    return ("README.md", m.group(0), m.group(1) + wrong + m.group(3))
+
+
+def mut_facts_recomputed(texts):
+    """Break the README's `facts recomputed` figure wherever it stands.
+
+    DERIVED, NOT PINNED.  The first version typed the figure (`facts recomputed: 77 |`), so when the
+    figure legitimately moved to 113 the anchor matched nothing and the battery reported a failure
+    about a correction that had just made the package correct.  A mutation anchor is itself a claim
+    about an artefact, and a typed copy of a number the package can change is the defect this whole
+    file exists to catch -- so the case reads the README and breaks the value it finds.
+    """
+    m = re.search(r"facts recomputed: (\d+) \|", texts["README.md"])
+    if not m:
+        return ("README.md", None, None)
+    n = int(m.group(1))
+    return ("README.md", "facts recomputed: %d |" % n, "facts recomputed: %d |" % (n - 1))
+
+
 MUTATIONS = [
-    ("readme/facts_recomputed_is_the_artefact's_own_count",
-     "README.md", "facts recomputed: 77 |", "facts recomputed: 76 |"),
+    ("readme/facts_recomputed_is_the_artefact's_own_count", mut_facts_recomputed),
     ("readme/criterion_states_are_their_recorded_states",
      "README.md", "criteria: a=MET, b=MET", "criteria: a=UNMET, b=MET"),
     ("readme/stage_table_is_the_one_run_log_printed",
@@ -262,8 +292,7 @@ MUTATIONS = [
      "README.md", "stated difference: 156 of", "stated difference: 155 of"),
     ("readme/reference_count_is_the_manuscript's_section",
      "README.md", "`156` entries in one", "`157` entries in one"),
-    ("readme/step_count_is_reproduce_sh's_own_markers",
-     "README.md", "the ten-step run below", "the nine-step run below"),
+    ("readme/step_count_is_reproduce_sh's_own_markers", mut_step_count),
     ("readme/census_count_is_the_directory_and_is_not_typed",
      "README.md", "a census over **every** `.py`/`.sh` file the package ships",
      "a census over all 12 source files"),
@@ -312,7 +341,12 @@ def selftest():
         print("FAIL   the battery needs a clean base; already failing: %s" % base)
         return 1
     bad = 0
-    for name, f, old, new in MUTATIONS:
+    for name, spec, *rest in MUTATIONS:
+        f, old, new = spec(texts) if callable(spec) else (spec,) + tuple(rest)
+        if old is None:
+            print("FAIL   %-58s the mutation anchor could not be derived from %s" % (name, f))
+            bad += 1
+            continue
         hits = texts[f].count(old)
         if hits != 1:
             print("FAIL   %-58s the mutation anchor occurs %d time(s) in %s" % (name, hits, f))

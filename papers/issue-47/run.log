@@ -651,7 +651,7 @@ sufficiency  sufficiency_v1.py                    15      0 yes
 external     external_cell_v1.py                 n/p    n/p yes
 lambdacert   lambda_cert_v1.py                     6      0 yes
 
-facts recomputed: 77 | disagreeing with the artefact's own value: 0
+facts recomputed: 113 | disagreeing with the artefact's own value: 0
 
 criterion a_signed_beats_scalar_on_held_out_cells      MEASURED
 criterion b_classic_anchors_recovered                  MEASURED
@@ -687,6 +687,6 @@ external reach (published robustness scale 0.008..0.088):
          detectors firing on a planted instance: 8 of 8
          controls: a git read planted in another file and one planted outside the declaration span are both caught: True
 
-canonical_results.json sha256 2498de23ed897d2be9ef82d8613a101861afc184b1b216eeb92afcafdf830542
+canonical_results.json sha256 ff93194cad19a16a52f7019a57f87f296ffaad27e02fd6cd8565aaa77e136b25
 coordinate census: 0 violation(s)
 verdict: OK

@@ -220,12 +220,37 @@ confirmed**: the direction stands, the mechanism sentence does not.
 **P3 — which sign is priced is problem-structured. Outcome: refuted, and the refutation is
 informative.** The registration predicted that paging prices over-prediction and ski rental
 under-prediction, stable across algorithms within a problem. Measured: **under-prediction is the worse
-arm in all three problems** — the dominant sign is a property of the harness's cost structure, not of
-the problem's decision direction. The prior was anchored on a mechanism (act early versus defer) that
-would make the sign follow the problem; the measurement says the sign follows something the mechanism
-did not name. That is a genuine contradiction of a theory-anchored prior, and it is reported as the
-paper's most surprising single result rather than buried: it means a statement of the form "this
-problem prices that sign" cannot be inferred from the shape of the decision alone.
+arm in all three problems**, and the direction is uniform rather than marginal — in every block that
+separates the two arms at all, the over-predicting arm is the better one:
+`{{X:facts.claim1.sign_under_worse_blocks.ski.value|d}}` of `{{X:facts.claim1.sign_separating_blocks.ski.value|d}}`
+blocks for ski rental, `{{X:facts.claim1.sign_under_worse_blocks.paging.value|d}}` of
+`{{X:facts.claim1.sign_separating_blocks.paging.value|d}}` for paging, and
+`{{X:facts.claim1.sign_under_worse_blocks.sched.value|d}}` of
+`{{X:facts.claim1.sign_separating_blocks.sched.value|d}}` for scheduling. For paging that is the
+opposite of the registered prediction, and the registration fixed the verdict rule in advance — "if
+the coefficients' signs differ across algorithms within one problem, or the measured dominant sign is
+the opposite of the above for a stated problem, P3 is refuted" — so the clause is met for a stated
+problem, and the prior is **refuted on the registration's own terms** rather than on a reading chosen
+afterwards. The prior was anchored on a mechanism (act early versus defer) that would make the sign
+follow the problem; the measurement says the sign follows something the mechanism did not name. That
+is a genuine contradiction of a theory-anchored prior, and it is reported as the paper's most
+surprising single result rather than buried: a statement of the form "this problem prices that sign"
+cannot be inferred from the shape of the decision alone.
+
+**What the refutation does not establish, stated so the two are not conflated.** The uniform direction
+has at least two readings, and this design does not separate them: the sign may follow the harness's own
+cost structure — the same asymmetric cost form is used in all three problems — or the three problems may
+share a dominant sign for a reason the prior did not name. The first reading is measurable rather than
+rhetorical: §3.5's shifted null is that structure's own pull, measured at
+`{{X:facts.limit.L2_null_shift.ski.value|2f}}` / `{{X:facts.limit.L2_null_shift.sched.value|2f}}`
+/ `{{X:facts.limit.L2_null_shift.paging.value|2f}}` cluster MDEs under a sign-free target. The ambiguity is
+about the **cause** — which mechanism produces the uniform direction — and it is a limit (**L2**, and the
+synthetic-harness limit **L6**), not a rescue of the prediction: on both readings, the registered claim
+that the dominant sign is *problem-structured* is not what the instrument observed, and the falsification
+clause the registration wrote is met. What the design cannot do is say what *does* determine the sign;
+the prior's mechanism cannot be repaired here by re-reading the same cells, and a design that varies the
+cost structure while holding the problem fixed is named as future work rather than claimed as this
+paper's result.
 
 **On reporting a refutation.** A prior whose falsification condition was met is the strongest
 available evidence that the instrument can fail — the paper is not only confirming its own beliefs.

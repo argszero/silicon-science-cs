@@ -27,14 +27,16 @@ signed model's advantage over the magnitude model is
 `1.48` /
 `2.61` /
 `0.97` cluster MDEs (ski / sched / paging), and the
-third is **reported unresolved** rather than rounded into a claim. **(3) A published systems-level
+third contrast is **not resolved** at this design's resolution, a limit of this result rather
+than the outcome of a registered prior (the priors' outcomes are stated below and in Section 7), so
+it is reported rather than rounded into a claim. **(3) A published systems-level
 ordering survives contact with this harness in sign, not in magnitude:** the external anchor reports
 a concordant pair (larger mean gain, smaller worst-trace degradation), and the harness reproduces
 the *sign* of that concordance in all three problems — Kendall tau
 `0.744` / `0.889` /
 `1.000` — while reaching the published *magnitude* in one
 problem only. **(4) Calibrating the trade-off parameter by the worst-case rule costs a measurable
-factor under realistic profiles:** the median factor is
+factor on this instrument's generated profiles:** the median factor is
 `1.7006` /
 `1.2851` /
 `1.4934` per problem, the worst profile
@@ -53,8 +55,9 @@ higher mean factor in all three problems (ski
 `1.3833`) while the correlations are weak
 (`0.17` / `0.30`
 / `0.39`) and the relation is non-monotone in spread;
-and the problem-structured-sign prior is not resolved by this design at the resolution it was
-registered at (Section 7). Six frozen limits travel with the claims — an attachment that is
+and the problem-structured-sign prior is **refuted**: the registration fixed the verdict rule in
+advance, and the measured dominant sign for paging is the opposite of the registered one, with the
+measured direction uniform across the design (Section 7). Six frozen limits travel with the claims — an attachment that is
 model-dependent, a design whose own null is **shifted** so that negative verdicts are
 uninterpretable, an uneven unit reach reported per profile, a concordance that is rank agreement and
 not magnitude, a generalising unit that is the profile rather than the repeated measurement, and a
@@ -112,8 +115,9 @@ is carried along as the baseline, on the same held-out cells.
   an out-of-sample check on the `lambda` it uses (Section 4.4), reported per problem rather than
   pooled.
 * **C5 — a method contribution**: the resolution unit, the shifted null, the reach statement and the
-  coordinate census are shipped as procedures, and the registered priors are reported one by one,
-  including the one that does not resolve (Sections 5–7).
+  coordinate census are shipped as procedures, and the registered priors are reported one by one
+  against the verdict rules the registration fixed in advance — including the one it refutes, and the
+  mechanism that refutation leaves unresolved (Sections 5–7).
 
 ### 1.4 Significance: whose belief changes
 
@@ -543,14 +547,41 @@ reproduces the *ordering* of its reported pair. The published pair is concordant
 larger mean gain (`26%` over its predecessor, against
 `16.7%` for the comparison cache, derived as a
 ratio in the artefact rather than asserted) is also the one with the smaller worst-trace degradation
-over the non-learned baseline (0.8% against 8.8%). Ranking the harness's own profiles by mean gain
-and by the best unit's tail, the concordance holds in all three problems — Kendall's tau
+over the non-learned baseline (0.8% against 8.8%). Ranking the harness's own
+78-pair grid of 13 profiles by mean gain and by
+the best unit's tail, the concordance holds in all three problems — Kendall's tau
 `0.744` for ski, `0.889` for
 paging and `1.000` for scheduling — and it still holds when the
 zero-error anchor, which is extreme on both axes by construction, is dropped:
 `0.697` /
 `0.873` /
 `1.000`.
+
+**A tau is a ratio, so the counts behind it travel with it.** Each problem ranks
+78 pairs; the disagreeing ones number
+`10` (ski),
+`4` (paging) and
+`0` (scheduling), and the pairs tied on one axis — which
+the stage's tau drops from numerator and denominator alike — are
+`6` in paging and none elsewhere. The weakest reading is
+ski's, and its source is stated rather than left to be inferred: it is carried by
+`10` of 78 pairs
+disagreeing, **not** by a coarse ranking — dropping the anchor leaves
+66 pairs and moves the tau by less than the interval's
+width (`0.697` against
+`0.744`), the anchor itself being concordant against
+`12` others. The interval is the stage's
+**profile-level bootstrap** — the profiles resampled with replacement
+2000 times from seed
+31, 2.5/97.5 percentiles, re-run in the canonical runner
+rather than quoted from the artefact — so it measures how much the ordering read depends on *which
+profiles the grid happens to contain*, not unit-level sampling error: ski
+[`0.420`, `1.000`], paging
+[`0.667`, `1.000`],
+scheduling [`1.000`,
+`1.000`]. No lower bound crosses zero, so the **sign-level**
+concordance survives the grid-dependence the interval quantifies; the **magnitude** of the agreement
+does not, which is what the reach row below then bounds.
 
 The honest second half of this result is the reach row, and it is a limit before it is a finding. The
 published robustness scale is a 0.8–8.8% worst-trace degradation; the harness reaches that scale in
@@ -811,7 +842,7 @@ guidance.
 network**, and exits non-zero unless every step passes. It has seven steps: (1) `8`
 stages plus the canonical aggregate, which **recomputes** every cited number from the stage artefacts'
 primitives and cross-checks it against the value each stage recorded about itself
-(`77` facts, 0 disagreements when this was written); (2) the aggregate's liveness control,
+(`113` facts, 0 disagreements when this was written); (2) the aggregate's liveness control,
 which corrupts each recomputation in a throwaway copy and requires it to notice; (3) the external
 cell's own check-liveness, 13 mutations, one per named check, each of which must make exactly that
 check fail; (4) the design-freeze document checked against the artefacts, 46 checks including the
@@ -836,7 +867,7 @@ the entry's own line; every entry's record was resolved against Crossref or arXi
 `reference-check.md`. **Support** — that work is the work the claim at the key needs — is read in the
 text, and no step of this pipeline read it until this paper built one.
 
-The support limb is read per **occurrence**, not per key: the `77`-fact aggregate is not a
+The support limb is read per **occurrence**, not per key: the `113`-fact aggregate is not a
 citation, and the manuscript's 39 blocks are not references either,
 but of the cited keys 51 appear in more than one sentence, and a per-key read would hide the
 occurrence that fails. Each occurrence is recorded against the sentence it sits in, with the role the
@@ -925,12 +956,37 @@ confirmed**: the direction stands, the mechanism sentence does not.
 **P3 — which sign is priced is problem-structured. Outcome: refuted, and the refutation is
 informative.** The registration predicted that paging prices over-prediction and ski rental
 under-prediction, stable across algorithms within a problem. Measured: **under-prediction is the worse
-arm in all three problems** — the dominant sign is a property of the harness's cost structure, not of
-the problem's decision direction. The prior was anchored on a mechanism (act early versus defer) that
-would make the sign follow the problem; the measurement says the sign follows something the mechanism
-did not name. That is a genuine contradiction of a theory-anchored prior, and it is reported as the
-paper's most surprising single result rather than buried: it means a statement of the form "this
-problem prices that sign" cannot be inferred from the shape of the decision alone.
+arm in all three problems**, and the direction is uniform rather than marginal — in every block that
+separates the two arms at all, the over-predicting arm is the better one:
+`12` of `12`
+blocks for ski rental, `7` of
+`7` for paging, and
+`12` of
+`12` for scheduling. For paging that is the
+opposite of the registered prediction, and the registration fixed the verdict rule in advance — "if
+the coefficients' signs differ across algorithms within one problem, or the measured dominant sign is
+the opposite of the above for a stated problem, P3 is refuted" — so the clause is met for a stated
+problem, and the prior is **refuted on the registration's own terms** rather than on a reading chosen
+afterwards. The prior was anchored on a mechanism (act early versus defer) that would make the sign
+follow the problem; the measurement says the sign follows something the mechanism did not name. That
+is a genuine contradiction of a theory-anchored prior, and it is reported as the paper's most
+surprising single result rather than buried: a statement of the form "this problem prices that sign"
+cannot be inferred from the shape of the decision alone.
+
+**What the refutation does not establish, stated so the two are not conflated.** The uniform direction
+has at least two readings, and this design does not separate them: the sign may follow the harness's own
+cost structure — the same asymmetric cost form is used in all three problems — or the three problems may
+share a dominant sign for a reason the prior did not name. The first reading is measurable rather than
+rhetorical: §3.5's shifted null is that structure's own pull, measured at
+`-12.95` / `-13.12`
+/ `-1.53` cluster MDEs under a sign-free target. The ambiguity is
+about the **cause** — which mechanism produces the uniform direction — and it is a limit (**L2**, and the
+synthetic-harness limit **L6**), not a rescue of the prediction: on both readings, the registered claim
+that the dominant sign is *problem-structured* is not what the instrument observed, and the falsification
+clause the registration wrote is met. What the design cannot do is say what *does* determine the sign;
+the prior's mechanism cannot be repaired here by re-reading the same cells, and a design that varies the
+cost structure while holding the problem fixed is named as future work rather than claimed as this
+paper's result.
 
 **On reporting a refutation.** A prior whose falsification condition was met is the strongest
 available evidence that the instrument can fail — the paper is not only confirming its own beliefs.

@@ -11,7 +11,10 @@ the prose.
 bash reproduce.sh
 ```
 
-Runtime is about five minutes on one CPU core (measured: 305 s for the ten-step run below).
+Runtime is about five minutes on one CPU core, and **no wall-clock tolerance is claimed**: the runtime
+is a coordinate of the machine that ran it — and of what else that machine was doing — not a result the
+package asserts, so the check is on the printed verdicts of the ten-step run below and on every
+*measurement* the run reports, never on how long it took.
 **Dependencies: the Python standard library only** — no
 numpy, no scipy, no network, no `matplotlib`. Python 3.8+.
 
@@ -19,7 +22,7 @@ The verdict of every step, and the exit status:
 
 ```
 criteria: a=MET, b=MET, c=MET, d=MET
-facts recomputed: 77 | disagreeing with the artefact's own value: 0
+facts recomputed: 113 | disagreeing with the artefact's own value: 0
 coordinate census: 0 violation(s)
   stages and aggregate: OK
   aggregate liveness: OK
@@ -151,11 +154,12 @@ The package's instruments are held to four disciplines, and so is `canonical_run
   profile's factor, one profile's λ, and the recorded median, and each mutation must be noticed
   (12 cases in all, 0 not noticed).
 
-* **recomputation, not transcription** — 77 named facts are derived from primitives (the witness's
-  exact-zero scalar identity, the argmin loss gap, the resolved contrasts, the ordering taus, the
-  reach counts, and the calibration factor's medians, extremes, displaced counts and direction
-  correlations). Where the artefact records the same quantity, the two must agree; **0 of 77
-  disagree**. Two conventions are named rather than assumed, because each is part of its rule: the
+* **recomputation, not transcription** — 113 named facts are derived from primitives (the witness's
+  exact-zero scalar identity, the argmin loss gap, the per-problem sign counts that carry the
+  registered prior `P3`'s outcome, the resolved contrasts, the ordering taus **together with the pair
+  counts and the bootstrap interval behind each**, the reach counts, and the calibration factor's
+  medians, extremes, displaced counts and direction correlations). Where the artefact records the
+  same quantity, the two must agree; **0 of 113 disagree**. Two conventions are named rather than assumed, because each is part of its rule: the
   factor is the mean of per-stream ratios (**not** the ratio of the two means, whose value is
   reported beside it so the difference is visible), and the median over an even profile count is the
   **upper** median the stage uses, not the average of the two central values;

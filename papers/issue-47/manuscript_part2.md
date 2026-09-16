@@ -190,14 +190,41 @@ reproduces the *ordering* of its reported pair. The published pair is concordant
 larger mean gain (`{{X:facts.claim3.published_mean_gain.value|p0}}` over its predecessor, against
 `{{X:facts.claim3.published_implied_mean_gain.value|p1}}` for the comparison cache, derived as a
 ratio in the artefact rather than asserted) is also the one with the smaller worst-trace degradation
-over the non-learned baseline (0.8% against 8.8%). Ranking the harness's own profiles by mean gain
-and by the best unit's tail, the concordance holds in all three problems — Kendall's tau
+over the non-learned baseline (0.8% against 8.8%). Ranking the harness's own
+{{X:facts.claim3.pairs_all.ski.value|d}}-pair grid of {{D:n_profiles}} profiles by mean gain and by
+the best unit's tail, the concordance holds in all three problems — Kendall's tau
 `{{X:facts.claim3.tau_all.ski.value|3f}}` for ski, `{{X:facts.claim3.tau_all.paging.value|3f}}` for
 paging and `{{X:facts.claim3.tau_all.sched.value|3f}}` for scheduling — and it still holds when the
 zero-error anchor, which is extreme on both axes by construction, is dropped:
 `{{X:facts.claim3.tau_excluding_zero_anchor.ski.value|3f}}` /
 `{{X:facts.claim3.tau_excluding_zero_anchor.paging.value|3f}}` /
 `{{X:facts.claim3.tau_excluding_zero_anchor.sched.value|3f}}`.
+
+**A tau is a ratio, so the counts behind it travel with it.** Each problem ranks
+{{X:facts.claim3.pairs_all.ski.value|d}} pairs; the disagreeing ones number
+`{{X:facts.claim3.discordant_all.ski.value|d}}` (ski),
+`{{X:facts.claim3.discordant_all.paging.value|d}}` (paging) and
+`{{X:facts.claim3.discordant_all.sched.value|d}}` (scheduling), and the pairs tied on one axis — which
+the stage's tau drops from numerator and denominator alike — are
+`{{X:facts.claim3.tied_all.paging.value|d}}` in paging and none elsewhere. The weakest reading is
+ski's, and its source is stated rather than left to be inferred: it is carried by
+`{{X:facts.claim3.discordant_all.ski.value|d}}` of {{X:facts.claim3.pairs_all.ski.value|d}} pairs
+disagreeing, **not** by a coarse ranking — dropping the anchor leaves
+{{X:facts.claim3.pairs_excl_zero.ski.value|d}} pairs and moves the tau by less than the interval's
+width (`{{X:facts.claim3.tau_excluding_zero_anchor.ski.value|3f}}` against
+`{{X:facts.claim3.tau_all.ski.value|3f}}`), the anchor itself being concordant against
+`{{X:facts.claim3.anchor_concordant_pairs.ski.value|d}}` others. The interval is the stage's
+**profile-level bootstrap** — the profiles resampled with replacement
+{{X:facts.claim3.bootstrap_reps.value|d}} times from seed
+{{X:facts.claim3.bootstrap_seed.value|d}}, 2.5/97.5 percentiles, re-run in the canonical runner
+rather than quoted from the artefact — so it measures how much the ordering read depends on *which
+profiles the grid happens to contain*, not unit-level sampling error: ski
+[`{{X:facts.claim3.tau_ci_lo.ski.value|3f}}`, `{{X:facts.claim3.tau_ci_hi.ski.value|3f}}`], paging
+[`{{X:facts.claim3.tau_ci_lo.paging.value|3f}}`, `{{X:facts.claim3.tau_ci_hi.paging.value|3f}}`],
+scheduling [`{{X:facts.claim3.tau_ci_lo.sched.value|3f}}`,
+`{{X:facts.claim3.tau_ci_hi.sched.value|3f}}`]. No lower bound crosses zero, so the **sign-level**
+concordance survives the grid-dependence the interval quantifies; the **magnitude** of the agreement
+does not, which is what the reach row below then bounds.
 
 The honest second half of this result is the reach row, and it is a limit before it is a finding. The
 published robustness scale is a 0.8–8.8% worst-trace degradation; the harness reaches that scale in
