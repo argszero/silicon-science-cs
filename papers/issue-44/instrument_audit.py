@@ -170,7 +170,13 @@ def d2():
         for label, old, new in (
                 ("counter", "def bracket_groups(body):", "def bracket_groups(body):\n    return set(), set()  # MUTANT"),
                 ("support", "    if norm_seq(rec[\"title\"]) != norm_seq(intent):",
-                 "    if False:  # MUTANT: the support test can no longer reject anything")):
+                 "    if False:  # MUTANT: the support test can no longer reject anything"),
+                # The round-3 screen: a screen that never flags a row passes every case that
+                # expects a BOUND, so the mutation below is invisible to the BOUND cases alone.
+                # It is caught by the flagging cases AND by the offline mark agreement check.
+                ("binding", '        out[key] = ("BOUND", ", ".join(sig), cl) if sig else '
+                            '("NEEDS-READ", "", cl)',
+                 '        out[key] = ("BOUND", ", ".join(sig), cl)  # MUTANT: flags nothing')):
             src = read("verify_refs.py")
             assert src.count(old) == 1, "mutation anchor not unique for %s" % label
             p = os.path.join(scratch, "mutant_%s.py" % label)

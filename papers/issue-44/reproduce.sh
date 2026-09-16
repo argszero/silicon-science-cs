@@ -63,7 +63,7 @@
 # matplotlib fatal.  Override the interpreters with PYTHON=... and PYTHON_FIGURES=...
 #
 # THE BIBLIOGRAPHY IS NOT RE-VERIFIED HERE.  `verify_refs.sh` re-queries Crossref and arXiv
-# for all 102 keys and rewrites `references.md` and `reference-check.md`; it needs network
+# for all 103 keys and rewrites `references.md` and `reference-check.md`; it needs network
 # access and is run deliberately, not on every reproduction.  The submission's bibliography
 # is the output of that run, and every row of `reference-check.md` records which lookup
 # produced it.

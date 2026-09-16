@@ -81,7 +81,8 @@
 [@goalmisspec] Langosco, L.; Koch, J.; Sharkey, L.; et al. *Goal Misgeneralization in Deep Reinforcement Learning*. arXiv preprint, 2021. `arXiv:2105.14111`
 [@rewardoveropt] Gao, L.; Schulman, J.; Hilton, J. *Scaling Laws for Reward Model Overoptimization*. arXiv preprint, 2022. `arXiv:2210.10760`
 [@bft] Lamport, L.; Shostak, R.; Pease, M. *The Byzantine Generals Problem*. ACM Transactions on Programming Languages and Systems, 1982. `10.1145/357172.357176`
-[@pbft] Herlihy, M.; Luchangco, V.; Martin, P.; et al. *Dynamic-sized lock-free data structures*. Proceedings of the twenty-first annual symposium on Principles of distributed computing, 2002. `10.1145/571825.571847`
+[@pbft] Castro, M.; Liskov, B. *Practical byzantine fault tolerance and proactive recovery*. ACM Transactions on Computer Systems, 2002. `10.1145/571637.571640`
+[@orderstats] David, H. A.; Nagaraja, H. N. *Order Statistics*. Wiley Series in Probability and Statistics, 2003. `10.1002/0471722162`
 [@extremevalue] de Haan, L.; Ferreira, A. *Extreme Value Theory: An Introduction*. Springer Series in Operations Research and Financial Engineering, 2006. `10.1007/0-387-34471-3`
 [@quantiles] Hyndman, R. J.; Fan, Y. *Sample Quantiles in Statistical Packages*. The American Statistician, 1996. `10.1080/00031305.1996.10473566`
 [@bootstrap] Efron, B.; Tibshirani, R. J. *An Introduction to the Bootstrap*. Springer US, 1993. `10.1007/978-1-4899-4541-9`

@@ -87,8 +87,8 @@ writes this file. A key with no verified record is a hard failure.
 | `goalmisspec` | arxiv | verified | OK | Goal Misgeneralization in Deep Reinforcement Learning -- arXiv:2105.14111 |
 | `rewardoveropt` | arxiv | verified | OK | Scaling Laws for Reward Model Overoptimization -- arXiv:2210.10760 |
 | `bft` | doi | verified | OK | The Byzantine Generals Problem -- 10.1145/357172.357176 |
-| `pbft` | doi | verified | OK | Dynamic-sized lock-free data structures -- 10.1145/571825.571847 |
-| `orderstats` | title | UNVERIFIED | n/a | no matching record |
+| `pbft` | doi | verified | OK | Practical byzantine fault tolerance and proactive recovery -- 10.1145/571637.571640 |
+| `orderstats` | doi | verified | OK | Order Statistics -- 10.1002/0471722162 |
 | `extremevalue` | doi | verified | OK | Extreme Value Theory: An Introduction -- 10.1007/0-387-34471-3 |
 | `quantiles` | title | verified | OK | Sample Quantiles in Statistical Packages -- 10.1080/00031305.1996.10473566 |
 | `bootstrap` | doi | verified | OK | An Introduction to the Bootstrap -- 10.1007/978-1-4899-4541-9 |
@@ -104,7 +104,6 @@ writes this file. A key with no verified record is a hard failure.
 | `effectsize` | doi | verified | OK | Statistical Power Analysis for the Behavioral Sciences -- 10.4324/9780203771587 |
 | `tost` | doi | verified | OK | A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability -- 10.1007/bf01068419 |
 | `roc` | doi | verified | OK | The meaning and use of the area under a receiver operating characteristic (ROC) curve. -- 10.1148/radiology.143.1.7063747 |
-| `detectiontheory` | title | UNVERIFIED | n/a | no matching record |
 | `costsensitive` | doi | verified | OK | MetaCost: a general method for making classifiers cost-sensitive -- 10.1145/312129.312220 |
 | `runtimeverif` | doi | verified | OK | Introduction to Runtime Verification -- 10.1007/978-3-319-75632-5_1 |
 | `outlierexposure` | arxiv | verified | OK | Deep Anomaly Detection with Outlier Exposure -- arXiv:1812.04606 |
@@ -122,10 +121,10 @@ same-titled encyclopedia entry, or a DOI that points at another paper entirely).
 
 | measure | value |
 |---|---|
-| keys checked | 104 |
-| **support OK** (record is the declared work) | **102** |
+| keys checked | 103 |
+| **support OK** (record is the declared work) | **103** |
 | support FAIL | 0 |
-| unverified (no record at all) | 2 |
+| unverified (no record at all) | 0 |
 
 How the test decides: the batch (`refs_to_verify.tsv`) now carries, for every key,
 the **intended work's title** as a fourth column, declared independently of the
@@ -135,24 +134,34 @@ source (a reference work -- encyclopedia, dictionary, reference-entry). The
 previous test compared unordered token **sets** at 0.85 overlap, which is why a
 2010 encyclopedia entry could stand in for a 1908 paper: the words matched.
 
-**What this test would and would not have caught.** It fails on every entry whose
-locator points at a different work, and it fails on a `title`-method search
-answered by a reference work. It would **not**, on its own, have caught the
-mis-anchored entries found at review: for 84 of the 104 keys the intent column was
-back-filled from the record that the locator returned, so those rows assert the
-locator agrees with itself. For the 20 corrected keys -- and for the two
-paragraphs the decision names as the place to check first -- the intent was
-written from the sentence's claim, and there the test is a genuine check.
-**That split is a declaration by the author, not a property derivable from
-the batch**: the rows record the intent, not which of the two ways it was
-written. Counts of "how many entries were touched" are different sets and
-are all correct at once -- the 104 rows carrying a declared intent here, the
-rows whose (method, value) changed between two heads, and the rendered
-locator tokens that changed (a key can move from a title search to a DOI
-while its locator token stays identical). A sentence quoting one of these
-must name which. Going
-forward it is a **drift guard**: changing a DOI, or a Crossref record being
-replaced, now fails the run instead of silently rewording a citation.
+**What this test would and would not have caught, per row.** It fails on every
+entry whose locator points at a different work, and it fails on a `title`-method
+search answered by a reference work. It can only *check* a row whose intent was
+written from the citing sentence, so the batch now carries a **provenance column**
+and the counts below are **counted from it, per row**:
+
+| provenance | rows | what the support test means for them |
+|---|---|---|
+| `claim` | **18** | the sentence fixed the work and the locator was then found -- a genuine check |
+| `backfilled` | **85** | the intent is the locator's own returned title -- the test asserts the locator agrees with itself |
+
+This replaces a header that DECLARED the split as a bare count ("20"), which a
+reviewer could not run: the rows did not record which way any intent was written.
+The MARK is still a declaration by the author -- what the column changes is that the
+blind spot is now per row and spot-checkable: any row marked `claim` can be checked
+by reading its citing sentence and deciding whether that record is the work the
+sentence needs.
+and the round-3 review found the declared blind spot live in `pbft`. That row was
+a **backfilled** row when the review met it, i.e. the defect sat on the side the
+declaration named; its repair is itself marked `claim`, because the sentence
+fixed the work and the locator was then chosen for that work. The historical 20 is
+not recoverable from the tree and is no longer quoted; the rule by which a row is
+marked is stated in the batch header, and the number of corrected locators the
+tree CAN derive (16, from the round-1 repair diff) is a different set from the
+marked rows -- so the batch quotes only what the column carries.
+
+Going forward the column is also a **drift guard**: changing a DOI, or a Crossref
+record being replaced, fails the run instead of silently rewording a citation.
 
 ## Rendered punctuation -- one period per separator, over the whole list
 
@@ -168,7 +177,7 @@ The same count was 47 on the head before the name-order change, all of them
 
 | measure | value |
 |---|---|
-| entries rendered | 102 |
+| entries rendered | 103 |
 | entries carrying a doubled period | **0** |
 | doubled periods | **0** |
 
@@ -177,9 +186,92 @@ The same count was 47 on the head before the name-order change, all of them
 The condition lives in one place, `render()`: the separator period is written
 only when the name does not already end in one (`name.endswith('.')`), which also
 removes the `et al..` form that predates this revision. The count above is the
-property, held over all 102 entries.
+property, held over all 103 entries.
 
-**Run status: FAIL** -- 0 support failures and 2 unverified keys.
+## Does the citing sentence bind to the record?  (round-3 question 2)
+
+The support test above cannot see a wrong locator on a `backfilled` row, because
+such a row's intent IS what the locator returned. This screen covers that side and
+runs on every cited key, whichever way its intent was written: it takes the
+manuscript **clause that names the key** and asks whether that clause carries a
+distinctive token of the record's title or a surname of its authors. A clause that
+names the work's *role* rather than its title ("two-sample comparison") is flagged
+even when the record is right, so the screen's error is in the safe direction and a
+flagged row is never passed -- it is read against its record by the author, and the
+mark is recorded per row in column 7 (`anchor`) of the batch.
+
+| measure | value |
+|---|---|
+| cited keys | 103 |
+| clause names the record (screen) | **53** |
+| flagged for reading (clause names neither) | 50 |
+| flagged rows read and marked `read` | 50 |
+| **flagged rows left unread** | **0** |
+| marks that disagree with the screen | 0 |
+
+The screen is a control, and its control is the defect it was built for. Applied to
+the round-3 `pbft` row as it stood -- clause *"practical Byzantine replication makes
+that bound an engineering parameter"* against the record its locator then returned,
+*"Dynamic-sized lock-free data structures"* -- it shares no title token and no author
+surname, so the row is flagged for reading, and the reading finds the mis-anchor. The
+screen would thus have surfaced the defect the review found by hand; the selftest pins
+that case, and the flagged clauses are printed so the reading is checkable rather than
+asserted:
+
+| key | record | clause that cites it |
+|---|---|---|
+| `adapt` | Adaptive designs for confirmatory clinical trials | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
+| `agentbench` | AgentBench: Evaluating LLMs as Agents | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
+| `attestation` | Innovative instructions and software model for isolated execution | and neither answers the budget question.** Hardware attestation executes inside a minimised trusted computing  |
+| `bh1995` | Controlling the False Discovery Rate: A Practical and Powerful Approac | stopping and peeking.** The statistics of repeated looks are well understood *given* a fixed null hypothesis:  |
+| `bigbench` | Beyond the Imitation Game: Quantifying and extrapolating the capabilit | contamination and overfitting to the test set inflate scores [@contamination] [@bigbench] |
+| `bootstrap` | An Introduction to the Bootstrap | resampling where a closed form is unavailable [@bootstrap] [@permutationtests] |
+| `byk2001` | The control of the false discovery rate in multiple testing under depe | stopping and peeking.** The statistics of repeated looks are well understood *given* a fixed null hypothesis:  |
+| `chainofver` | Chain-of-Verification Reduces Hallucination in Large Language Models | and verification chains by *spending more tokens* [@chainofver] [@selfrefine] |
+| `clopperpearson` | The Use of Confidence Or Fiducial Limits Illustrated in the Case of th | with the interval estimators we use for proportions [@wilson] [@clopperpearson] and quantiles [@quantiles] |
+| `concreteproblems` | Concrete Problems in AI Safety | proxies are optimised instead of goals [@concreteproblems] |
+| `conformalreg` | Distribution-Free Predictive Inference for Regression | conformal prediction for set-valued guarantees [@conformalgentle] [@conformalreg] [@conformalvalid] |
+| `costsampling` | Blink and it's done: interactive queries on very large data | and from cost-aware sampling in data systems [@costsampling] |
+| `drlrepro` | Deep Reinforcement Learning That Matters | and as variance accounting when benchmark scores are compared across runs [@bouthillier] [@drlrepro] |
+| `effectsize` | Statistical Power Analysis for the Behavioral Sciences | and the reporting conventions that keep a p-value from being read as an effect size [@pvalues] [@effectsize] [ |
+| `ekiden` | Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Pe | which is enough to build confidential contract platforms [@ekiden] and secure approval devices [@notary] but l |
+| `evalharness` | Holistic Evaluation of Language Models | harness choice changes conclusions at fixed models [@evalharness] [@mmlu] |
+| `extremevalue` | Extreme Value Theory: An Introduction | the asymptotic theory that justifies the normal approximation and its limits [@vanderVaart] [@extremevalue] |
+| `flicker` | Flicker: an execution infrastructure for tcb minimization | and neither answers the budget question.** Hardware attestation executes inside a minimised trusted computing  |
+| `gaia` | GAIA: a benchmark for General AI Assistants | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
+| `goalmisspec` | Goal Misgeneralization in Deep Reinforcement Learning | objectives are misgeneralised [@goalmisspec] |
+| `groupseq` | Group sequential methods in the design and analysis of clinical trials | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
+| `hochberg1988` | A sharper Bonferroni procedure for multiple tests of significance | stopping and peeking.** The statistics of repeated looks are well understood *given* a fixed null hypothesis:  |
+| `impossibility` | The Nonexistence of Certain Statistical Procedures in Nonparametric Pr | **Distribution-free testing and its impossibility results.** Unrestricted alternative sets admit no consistent |
+| `ingster` | Nonparametric Goodness-of-Fit Testing Under Gaussian Models | the same machinery underlies minimax lower bounds for testing [@ingster] |
+| `instructgpt` | Training language models to follow instructions with human feedback | instruction tuning and prompting change the score distribution rather than a deterministic output [@instructgp |
+| `judgebias` | Large Language Models are not Fair Evaluators | and the evaluation literature has spent a decade learning what that costs: judge-based evaluation is itself a  |
+| `landemets` | Discrete sequential boundaries for clinical trials | alpha spending across interim analyses [@landemets] |
+| `leaderboard` | The Leaderboard Illusion | leaderboards create incentives that erode their own signal [@leaderboard] |
+| `massey` | The Kolmogorov-Smirnov Test for Goodness of Fit | two-sample comparison [@massey] |
+| `mcmcse` | Implementing MCMC: Estimating with Confidence | Monte-Carlo error accounting for the estimates themselves [@mcmcse] |
+| `mltesting` | Machine Learning Testing: Survey, Landscapes and Horizons | machine-learning testing surveys the same trade-off for learned components [@mltesting] |
+| `mmlu` | Measuring Massive Multitask Language Understanding | harness choice changes conclusions at fixed models [@evalharness] [@mmlu] |
+| `optdesign` | Optimum Experimental Designs, with SAS | and classical optimal design chooses the measurement that maximises information per unit cost [@optdesign] |
+| `passk` | Evaluating Large Language Models Trained on Code | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
+| `permutationtests` | Permutation, Parametric and Bootstrap Tests of Hypotheses | resampling where a closed form is unavailable [@bootstrap] [@permutationtests] |
+| `power` | A power primer | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
+| `pvalues` | Statistical tests, P values, confidence intervals, and power: a guide  | and the reporting conventions that keep a p-value from being read as an effect size [@pvalues] [@effectsize] [ |
+| `recsyeval` | Are we really making much progress? A worrying analysis of recent neur | and offline evaluation can diverge from what practitioners actually need [@recsyeval] |
+| `reportscores` | Reporting Score Distributions Makes a Difference: Performance Study of | as significance-testing guidance for NLP and ML evaluation [@hitchhiker] [@reportscores] |
+| `selfrefine` | Self-Refine: Iterative Refinement with Self-Feedback | and verification chains by *spending more tokens* [@chainofver] [@selfrefine] |
+| `snarkc` | On the Size of Pairing-Based Non-interactive Arguments | Cryptographic proofs of computation avoid that assumption [@verifiablecompute] [@pinocchio] [@snarkc] and are  |
+| `spectre` | Spectre Attacks: Exploiting Speculative Execution | which is enough to build confidential contract platforms [@ekiden] and secure approval devices [@notary] but l |
+| `swebench` | SWE-bench: Can Language Models Resolve Real-World GitHub Issues? | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
+| `timeuniform` | Time-uniform Chernoff bounds via nonnegative supermartingales | always-valid inference through confidence sequences and e-values [@timeuniform] [@evalues] |
+| `tost` | A comparison of the Two One-Sided Tests Procedure and the Power Approa | and the reporting conventions that keep a p-value from being read as an effect size [@pvalues] [@effectsize] [ |
+| `tsybakov` | Introduction to Nonparametric Estimation | and minimax rates over smoothness classes [@tsybakov] |
+| `valiant` | A theory of the learnable | uniform convergence over function classes [@vc1971] [@valiant] |
+| `wald` | Sequential Tests of Statistical Hypotheses | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
+| `wilson` | Probable Inference, the Law of Succession, and Statistical Inference | with the interval estimators we use for proportions [@wilson] [@clopperpearson] and quantiles [@quantiles] |
+| `zeroshotreason` | Large Language Models are Zero-Shot Reasoners | instruction tuning and prompting change the score distribution rather than a deterministic output [@instructgp |
+
+**Run status: PASS** -- every key that resolved is the declared work.
 
 
 ## Coverage and ambiguity (checklist duty ii)
@@ -194,24 +286,24 @@ resolves there and nowhere else:
 
 ```
 === papers/issue-44/manuscript.md
-  entries=102  numbering=[n]
-  in-text cited numbers=102  covered=102/102  coverage=100.0%
+  entries=103  numbering=[n]
+  in-text cited numbers=103  covered=103/103  coverage=100.0%
   GATE: PASS
 ```
 
 | measure | value |
 |---|---|
-| bibliography entries | 102 |
-| in-text citation markers resolved | 102 |
-| entries carrying an in-text key | 102 of 102 |
+| bibliography entries | 103 |
+| in-text citation markers resolved | 103 |
+| entries carrying an in-text key | 103 of 103 |
 | coverage | 100.0% |
 | uncited entries (padding: they do not count toward the bar) | 0 |
 | bracket numbers matching no entry | 0 |
 | bracketed groups that are **not** citations (listed below) | 15 |
 
-**(a) Every entry carries an in-text key.** Measured: **102 of 102** (100.0%), so
+**(a) Every entry carries an in-text key.** Measured: **103 of 103** (100.0%), so
 **none is uncited**: every entry is cited in the body, so no entry is padding
-and each of the 102 counts toward the 100-reference bar.
+and each of the 103 counts toward the 100-reference bar.
 
 **(b) Bracketed groups that are not citations.** The manuscript writes its 95%
 intervals, its figure embeds and one mathematical expression in square brackets,
@@ -252,8 +344,8 @@ across a line break:
 | no brackets yields no citation and no non-citation group | **pass** | `cites=[] other=[]` |
 
 
-**Agreement between the two counters.** This section's counter reports 102
-entries and 102 covered; the journal's gate above reports 102 and 102 -- **they agree**.
+**Agreement between the two counters.** This section's counter reports 103
+entries and 103 covered; the journal's gate above reports 103 and 103 -- **they agree**.
 The counter exists to name the non-citation groups, so the two must agree; a
 divergence is a defect in one of them and is printed here rather than left to be
 noticed.

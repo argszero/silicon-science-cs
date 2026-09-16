@@ -467,11 +467,19 @@ def _selftest_only():
     reproduction. This is the entry point a reproduction (and the instrument audit) can call.
     """
     bad = 0
-    for label, tests in (("counter", bracket_groups_selftest()), ("support", support_selftest())):
+    for label, tests in (("counter", bracket_groups_selftest()), ("support", support_selftest()),
+                    ("binding", binding_selftest())):
         print("%s self-test: %d cases" % (label, len(tests)))
         for name, ok, detail in tests:
             print("  %-4s %s -- %s" % ("PASS" if ok else "FAIL", name, detail))
             bad += 0 if ok else 1
+    counts, disagreement = batch_marks_report()
+    print("batch marks: %d cited -- clause-names-record %d, flagged %d, read %d"
+          % (counts["cited"], counts["screen"], counts["flagged"], counts["read"]))
+    print("  %-4s every committed mark equals the screen's verdict -- %d disagreement(s)%s"
+          % ("PASS" if not disagreement else "FAIL", len(disagreement),
+             "" if not disagreement else ": " + "; ".join(disagreement[:3])))
+    bad += len(disagreement)
     print("selftest: %d case(s) failed" % bad)
     return 1 if bad else 0
 
@@ -616,40 +624,324 @@ def coverage_section():
                       "**the sets agree**" if sets_agree else
                       "**THE SETS DISAGREE: the gate is authoritative**"))
     return "".join(out)
-def hand_written_intents(path):
-    """The number of intents written from the sentence's claim (batch header).
+def provenance_counts(path):
+    """(claim, backfilled): counted PER ROW from the batch's provenance column.
 
-    A DECLARATION by the author, not a property derivable from the rows: the
-    split between claim-written and back-filled intents is provenance, and the
-    report prints that qualification beside the number rather than presenting it
-    as a measurement.  Counts of "how many entries were touched" are three
-    different sets at once -- rows carrying a declared intent, rows whose
-    (method, value) changed, rendered entries whose locator token changed -- so
-    each sentence must name its set.  This file quotes only the first, which is
-    the one derivable at the head it ships with.
+    This replaces a header sentence that DECLARED the split ("Intents from the
+    sentence's CLAIM: 20").  A declaration is not checkable: a reviewer could not
+    tell which rows it described, and the round-3 review found the declared blind
+    spot live in `pbft` -- a row whose intent had been back-filled from the record,
+    so the support test asserted the record agreed with itself.
 
-    Quoted in the report instead of a literal, because a literal of this kind goes
-    stale the moment the batch changes -- the same reason the profile count in the
-    instrument is derived rather than typed.
+    The column makes the split derivable and the blind spot bounded per row: for a
+    `claim` row the support test is a genuine check of the sentence against the
+    record; for a `backfilled` row it is a tautology, and now says so where the row
+    is, not in a header the rows cannot confirm.
+
+    Fail-closed on a missing column, like every other absent-input path here: an
+    unmarked batch is a malformed batch, not a batch with no claim-written intents.
     """
+    n_claim = n_back = 0
     for line in io.open(path, encoding="utf-8"):
-        m = re.match(r"#\s*Intents from the sentence's CLAIM:\s*(\d+)", line)
-        if m:
-            return int(m.group(1))
-    # NOT `return 0`.  A parse miss used to make the report print "for 104 of the 104
-    # keys the intent column was back-filled ... For the 0 corrected keys", i.e. a wrong
-    # number that reads like a finding.  An absent header is a defect in the batch, not
-    # a batch with no claim-written intents, so the run stops.
-    raise SystemExit("refs_to_verify.tsv carries no parseable "
-                     "\"# Intents from the sentence's CLAIM: <n>\" header -- the batch is "
-                     "malformed, and defaulting to 0 would print a wrong count in the report")
+        if line.startswith("#") or not line.strip():
+            continue
+        cols = line.rstrip("\n").split("\t")
+        if len(cols) < 6 or not cols[5].strip():
+            raise SystemExit(
+                "refs_to_verify.tsv row %r carries no provenance field (column 6 must be "
+                "`claim` or `backfilled`); defaulting would print a count the rows cannot "
+                "confirm" % cols[0])
+        mark = cols[5].strip()
+        if mark == "claim":
+            n_claim += 1
+        elif mark == "backfilled":
+            n_back += 1
+        else:
+            raise SystemExit("refs_to_verify.tsv row %r has provenance %r -- the only "
+                             "values are `claim` and `backfilled`" % (cols[0], mark))
+    return n_claim, n_back
+
+
+# ---------------------------------------------------------------------------
+# Round-3 question 2: does the CITING SENTENCE bind to the RECORD?
+#
+# The support test above can only check a row whose intent was written from the
+# sentence (provenance `claim`).  For a `backfilled` row it asserts that the locator
+# agrees with itself, so a wrong locator cannot show up there -- which is how `pbft`
+# survived three rounds.  This screen covers that side: for every cited key it takes
+# the manuscript clause that names the key and asks whether that clause carries a
+# distinctive token of the record's TITLE, or a SURNAME of the record's authors.  If
+# neither, the row is flagged for a human read -- never passed.
+#
+# It is a screen, not a proof, and the direction of its error is the safe one: a clause
+# that names a work's ROLE ("two-sample comparison") rather than its title is flagged
+# even when the record is right.  So the flagged rows are read and marked (column 7 of
+# the batch, `anchor`), and the check below is that the marks agree with this screen --
+# a row marked `screen` must actually bind, and no flagged row may stay unread.
+# ---------------------------------------------------------------------------
+PARTS = ["manuscript_part1.md", "manuscript_part2.md", "manuscript_part3.md"]
+
+_SCREEN_CITE = re.compile(r"\s*\[@[^\]]+\]")
+_SCREEN_SEPS = (", ", "; ", ". ", " \u2014 ", "\u2014")
+_SCREEN_STOP = frozenset("""
+the of and to in a is for on with that this by as at from are be we can their its our it
+an not but which when where who how what why than then they these those was were has have
+had does do did done using used use between among over under both each more most other
+some such only also into out up down no yes if while during new novel based study paper
+work works approach method methods model models result results data set sets system
+systems analysis analyses
+""".split())
+
+
+def screen_tokens(s):
+    return [w for w in re.findall(r"[a-z0-9]+", s.lower())
+            if len(w) >= 5 and w not in _SCREEN_STOP]
+
+
+def screen_clause(flat, key):
+    """The clause that NAMES the key (not the one before its citation cluster).
+
+    The first version of this function cut at the previous separator, so for any key
+    that is not the last of a citation cluster it read the PREVIOUS item's text -- an
+    instrument measuring a span its name does not describe.  The clause now runs from
+    the separator before the key to the separator after the key's cluster.
+    """
+    pat = "[@%s]" % key
+    i = flat.find(pat)
+    if i < 0:
+        return None
+    j = i + len(pat)
+    while True:
+        m = _SCREEN_CITE.match(flat, j)
+        if not m:
+            break
+        j = m.end()
+    right = min([x for x in (flat.find(s, j) for s in _SCREEN_SEPS) if x >= 0] or [len(flat)])
+    left = max(flat.rfind(s, 0, i) for s in _SCREEN_SEPS)
+    while left > 0 and not re.sub(r"\[@[^\]]+\]|[\s,;.]", "", flat[left + 1:i]):
+        left = max(flat.rfind(s, 0, left) for s in _SCREEN_SEPS)
+    return flat[left + 1:right].strip()
+
+
+def screen_names(authors):
+    return [w for w in re.findall(r"[A-Z][A-Za-z'\-]{3,}", authors or "")]
+
+
+def screen_records(records):
+    """{key: {"title":..., "names":[...]}} from the records THIS RUN resolved."""
+    out = {}
+    for key, rec in records.items():
+        out[key] = {"title": title_of(rec["title"]), "names": screen_names(rec["authors"])}
+    return out
+
+
+def binding_screen(flat, records):
+    """{key: (verdict, signal, clause)} -- BOUND, or NEEDS-READ (never PASS)."""
+    count = {}
+    for rec in records.values():
+        for w in set(screen_tokens(rec["title"])):
+            count[w] = count.get(w, 0) + 1
+    distinct = set(w for w, n in count.items() if n <= 2)
+    out = {}
+    for key, rec in records.items():
+        cl = screen_clause(flat, key)
+        if cl is None:
+            out[key] = ("UNCITED", "", "")
+            continue
+        # The clause WITHOUT its citation markers.  A key is often an author's surname
+        # (`massey`, `massart`), so testing the names against the clause as printed made
+        # the marker match itself: `two-sample comparison [@massey]` "named" Massey's paper
+        # and the row was screened rather than read.  The prose is what is being tested.
+        prose = _SCREEN_CITE.sub(" ", cl)
+        ct = set(screen_tokens(prose))
+        sig = sorted((ct & distinct & set(screen_tokens(rec["title"]))) |
+                     set(n for n in rec["names"] if n.lower() in prose.lower()))
+        out[key] = ("BOUND", ", ".join(sig), cl) if sig else ("NEEDS-READ", "", cl)
+    return out
+
+
+def manuscript_flat():
+    text = ""
+    for part in PARTS:
+        p = os.path.join(HERE, part)
+        if os.path.exists(p):
+            text += io.open(p, encoding="utf-8").read() + "\n"
+    return re.sub(r"\s+", " ", text)
+
+
+def anchor_counts(path):
+    """Column 7 (`anchor`) of the batch: `screen` | `read`.  Counted, not declared."""
+    n_screen, n_read, marks = 0, 0, {}
+    for raw in io.open(path, encoding="utf-8"):
+        raw = raw.rstrip("\n")
+        if not raw.strip() or raw.startswith("#"):
+            continue
+        cols = raw.split("\t")
+        mark = cols[6].strip() if len(cols) > 6 else ""
+        if mark not in ("screen", "read"):
+            raise SystemExit(
+                "refs_to_verify.tsv row %r carries anchor %r -- every row must say how its "
+                "anchoring was established: `screen` (the citing clause names the record) or "
+                "`read` (the clause was read against the record by the author)" % (cols[0], mark))
+        marks[cols[0].strip()] = mark
+        n_screen += mark == "screen"
+        n_read += mark == "read"
+    return n_screen, n_read, marks
+
+
+def binding_check(flat, records, marks):
+    """The marks must agree with the screen.  Returns (problems, screen, counts)."""
+    screen = binding_screen(flat, records)
+    problems = []
+    for key in sorted(marks):
+        if key not in screen:
+            continue
+        verdict, mark = screen[key][0], marks[key]
+        if verdict == "BOUND" and mark != "screen":
+            problems.append("row %r is marked %s but its clause does name the record"
+                            % (key, mark))
+        if verdict == "NEEDS-READ" and mark != "read":
+            problems.append("row %r is marked %s but its clause names neither the record's "
+                            "title nor its authors" % (key, mark))
+    counts = {"cited": len(screen),
+              "flagged": sum(1 for v in screen.values() if v[0] == "NEEDS-READ"),
+              "screen": sum(1 for v in screen.values() if v[0] == "BOUND"),
+              "uncited": sum(1 for v in screen.values() if v[0] == "UNCITED"),
+              "read": sum(1 for k, m in marks.items() if m == "read" and k in screen
+                          and screen[k][0] == "NEEDS-READ")}
+    return problems, screen, counts
+
+
+def binding_section(flat, records, marks):
+    problems, screen, counts = binding_check(flat, records, marks)
+    out = ["## Does the citing sentence bind to the record?  (round-3 question 2)\n\n",
+           "The support test above cannot see a wrong locator on a `backfilled` row, because\n"
+           "such a row's intent IS what the locator returned. This screen covers that side and\n"
+           "runs on every cited key, whichever way its intent was written: it takes the\n"
+           "manuscript **clause that names the key** and asks whether that clause carries a\n"
+           "distinctive token of the record's title or a surname of its authors. A clause that\n"
+           "names the work's *role* rather than its title (\"two-sample comparison\") is flagged\n"
+           "even when the record is right, so the screen's error is in the safe direction and a\n"
+           "flagged row is never passed -- it is read against its record by the author, and the\n"
+           "mark is recorded per row in column 7 (`anchor`) of the batch.\n\n",
+           "| measure | value |\n|---|---|\n",
+           "| cited keys | %d |\n" % counts["cited"],
+           "| clause names the record (screen) | **%d** |\n" % counts["screen"],
+           "| flagged for reading (clause names neither) | %d |\n" % counts["flagged"],
+           "| flagged rows read and marked `read` | %d |\n" % counts["read"],
+           "| **flagged rows left unread** | **%d** |\n" % (counts["flagged"] - counts["read"]),
+           "| marks that disagree with the screen | %d |\n\n" % len(problems),
+           "The screen is a control, and its control is the defect it was built for. Applied to\n"
+           "the round-3 `pbft` row as it stood -- clause *\"practical Byzantine replication makes\n"
+           "that bound an engineering parameter\"* against the record its locator then returned,\n"
+           "*\"Dynamic-sized lock-free data structures\"* -- it shares no title token and no author\n"
+           "surname, so the row is flagged for reading, and the reading finds the mis-anchor. The\n"
+           "screen would thus have surfaced the defect the review found by hand; the selftest pins\n"
+           "that case, and the flagged clauses are printed so the reading is checkable rather than\n"
+           "asserted:\n\n",
+           "| key | record | clause that cites it |\n|---|---|---|\n"]
+    for key in sorted(screen):
+        verdict, _sig, cl = screen[key]
+        if verdict == "NEEDS-READ":
+            out.append("| `%s` | %s | %s |\n"
+                       % (key, records[key]["title"][:70].replace("|", "/"),
+                          cl[:110].replace("|", "/")))
+    out.append("\n")
+    return "".join(out), problems, counts
+
+
+def binding_selftest():
+    """Cases a screen for sentence-to-record binding must fail on when broken."""
+    tests = []
+
+    def case(name, text, records, key, want):
+        flat = re.sub(r"\s+", " ", text)
+        got = binding_screen(flat, records)[key][0]
+        tests.append((name, got == want, "verdict %s (wanted %s)" % (got, want)))
+
+    pbft_clause = ("and practical Byzantine replication makes that bound an engineering "
+                   "parameter [@pbft].")
+    case("flag_wrong_locator", pbft_clause,
+         {"pbft": {"title": "Dynamic-sized lock-free data structures",
+                   "names": ["Castro", "Liskov"]}}, "pbft", "NEEDS-READ")
+    case("bound_after_repair", pbft_clause,
+         {"pbft": {"title": "Practical byzantine fault tolerance and proactive recovery",
+                   "names": ["Castro", "Liskov"]}}, "pbft", "BOUND")
+    case("bound_by_surname",
+         "the Dvoretzky-Kiefer-Wolfowitz bound with its sharp constant [@dkw].",
+         {"dkw": {"title": "Asymptotic minimax character of the sample distribution function",
+                  "names": ["Dvoretzky", "Kiefer", "Wolfowitz"]}}, "dkw", "BOUND")
+    # A key that is also an author surname must not let the citation marker certify itself.
+    case("marker_is_not_a_name", "two-sample comparison [@massey].",
+         {"massey": {"title": "The Kolmogorov-Smirnov Test for Goodness of Fit",
+                     "names": ["Massey"]}}, "massey", "NEEDS-READ")
+    case("list_not_decided", "proxies are optimised instead of goals [@concreteproblems].",
+         {"concreteproblems": {"title": "Concrete Problems in AI Safety", "names": ["Amodei"]}},
+         "concreteproblems", "NEEDS-READ")
+    # The clause must be the one that NAMES the key, not the previous item's text.
+    mid = ("step-up and step-down multiplicity corrections [@bh1995] [@hochberg1988] [@byk2001], "
+           "alpha spending across interim analyses [@landemets].")
+    flat_mid = re.sub(r"\s+", " ", mid)
+    cl = screen_clause(flat_mid, "hochberg1988")
+    tests.append(("mid_cluster_clause_is_own_item",
+                  "multiplicity corrections" in cl and "alpha spending" not in cl,
+                  "clause %r" % cl[:70]))
+    cl2 = screen_clause(flat_mid, "landemets")
+    tests.append(("later_item_clause", "alpha spending" in cl2 and "multiplicity" not in cl2,
+                  "clause %r" % cl2[:70]))
+    return tests
+
+
+def rendered_records(path):
+    """{key: {"title":..., "names":[...]}} read back off the committed references.md."""
+    out = {}
+    if not os.path.exists(path):
+        return out
+    for line in io.open(path, encoding="utf-8"):
+        m = re.match(r"\[@([A-Za-z0-9_.:-]+)\]\s*(.*)", line)
+        if not m:
+            continue
+        rest = m.group(2).strip()
+        t = re.search(r"\*(.+?)\*", rest)
+        out[m.group(1)] = {"title": title_of(t.group(1) if t else rest),
+                           "names": screen_names(rest.split("*")[0])}
+    return out
+
+
+def batch_marks_report():
+    """Network-free: every committed mark must equal the screen's verdict, recomputed here.
+
+    This is the half a reproduction can run -- `binding_check` needs the freshly resolved
+    records, so its agreement check lives in the resolver; this reads the committed
+    references.md and the manuscript text and repeats the comparison offline.  Returns
+    (counts, disagreements).
+    """
+    marks = anchor_counts(BATCH)[2]
+    screen = binding_screen(manuscript_flat(), rendered_records(OUT_REFS))
+    bad = []
+    for key, mark in sorted(marks.items()):
+        if key not in screen:
+            bad.append("%s: carries a mark but no sentence cites it" % key)
+            continue
+        want = "screen" if screen[key][0] == "BOUND" else "read"
+        if mark != want:
+            bad.append("%s: marked %s, its clause scores %s" % (key, mark, want))
+    for key in sorted(screen):
+        if key not in marks:
+            bad.append("%s: cited but carries no mark" % key)
+    counts = {"cited": len(screen),
+              "screen": sum(1 for v in screen.values() if v[0] == "BOUND"),
+              "flagged": sum(1 for v in screen.values() if v[0] == "NEEDS-READ"),
+              "read": sum(1 for k, m in marks.items()
+                          if m == "read" and k in screen and screen[k][0] == "NEEDS-READ")}
+    return counts, bad
 
 
 def main():
     if "--selftest-only" in sys.argv:
         return _selftest_only()
     rows, refs, problems = [], [], []
-    n_hand = hand_written_intents(BATCH)
+    n_claim, n_backfill = provenance_counts(BATCH)
     with io.open(BATCH, encoding="utf-8") as fh:
         for raw in fh:
             raw = raw.rstrip("\n")
@@ -659,6 +951,9 @@ def main():
             key, kind, value = cols[0], cols[1], cols[2]
             intent = cols[3] if len(cols) > 3 else ""
             exp_auth = cols[4] if len(cols) > 4 and cols[4] != "-" else None
+            prov = cols[5].strip() if len(cols) > 5 else ""
+            if prov not in ("claim", "backfilled"):
+                raise SystemExit("row %r has no valid provenance field" % key)
             if kind == "doi":
                 rec = crossref_doi(value)
             elif kind == "arxiv":
@@ -697,6 +992,17 @@ def main():
                         (len(set(k for k, _ in dbl)),
                          ", ".join(sorted(set(k for k, _ in dbl))[:5])))
 
+    # Round-3 question 2: the marks in column 7 must agree with a screen recomputed here,
+    # from the manuscript text and the records THIS run resolved.
+    _n_screen_rows, _n_read_rows, marks = anchor_counts(BATCH)
+    binding_text, binding_problems, binding_counts = binding_section(
+        manuscript_flat(), screen_records(dict((k, rec) for k, _l, rec in refs)), marks)
+    problems.extend(binding_problems)
+    print("binding screen: %d cited -- %d clause-names-record, %d flagged, %d read, %d mark(s) "
+          "disagreeing" % (binding_counts["cited"], binding_counts["screen"],
+                           binding_counts["flagged"], binding_counts["read"],
+                           len(binding_problems)))
+
     with io.open(OUT_CHECK, "w", encoding="utf-8") as fh:
         fh.write("# Reference check: authenticity, coverage and ambiguity\n\n")
         fh.write("Every citation key used in the manuscript is verified below against a real\n")
@@ -728,27 +1034,34 @@ def main():
                  "source (a reference work -- encyclopedia, dictionary, reference-entry). The\n"
                  "previous test compared unordered token **sets** at 0.85 overlap, which is why a\n"
                  "2010 encyclopedia entry could stand in for a 1908 paper: the words matched.\n\n"
-                 "**What this test would and would not have caught.** It fails on every entry whose\n"
-                 "locator points at a different work, and it fails on a `title`-method search\n"
-                 "answered by a reference work. It would **not**, on its own, have caught the\n"
-                 "mis-anchored entries found at review: for %d of the %d keys the intent column was\n"
-                 "back-filled from the record that the locator returned, so those rows assert the\n"
-                 "locator agrees with itself. For the %d corrected keys -- and for the two\n"
-                 "paragraphs the decision names as the place to check first -- the intent was\n"
-                 "written from the sentence's claim, and there the test is a genuine check.\n"
-                 "**That split is a declaration by the author, not a property derivable from\n"
-                 "the batch**: the rows record the intent, not which of the two ways it was\n"
-                 "written. Counts of \"how many entries were touched\" are different sets and\n"
-                 "are all correct at once -- the %d rows carrying a declared intent here, the\n"
-                 "rows whose (method, value) changed between two heads, and the rendered\n"
-                 "locator tokens that changed (a key can move from a title search to a DOI\n"
-                 "while its locator token stays identical). A sentence quoting one of these\n"
-                 "must name which. Going\n"
-                 "forward it is a **drift guard**: changing a DOI, or a Crossref record being\n"
-                 "replaced, now fails the run instead of silently rewording a citation.\n\n"
-                 % (len(rows), n_ok, n_bad, n_unv, len(rows) - n_hand, len(rows), n_hand,
-                    len(rows)))
+                 "**What this test would and would not have caught, per row.** It fails on every\n"
+                 "entry whose locator points at a different work, and it fails on a `title`-method\n"
+                 "search answered by a reference work. It can only *check* a row whose intent was\n"
+                 "written from the citing sentence, so the batch now carries a **provenance column**\n"
+                 "and the counts below are **counted from it, per row**:\n\n"
+                 "| provenance | rows | what the support test means for them |\n"
+                 "|---|---|---|\n"
+                 "| `claim` | **%d** | the sentence fixed the work and the locator was then found -- a genuine check |\n"
+                 "| `backfilled` | **%d** | the intent is the locator's own returned title -- the test asserts the locator agrees with itself |\n\n"
+                 "This replaces a header that DECLARED the split as a bare count (\"20\"), which a\n"
+                 "reviewer could not run: the rows did not record which way any intent was written.\n"
+                 "The MARK is still a declaration by the author -- what the column changes is that the\n"
+                 "blind spot is now per row and spot-checkable: any row marked `claim` can be checked\n"
+                 "by reading its citing sentence and deciding whether that record is the work the\n"
+                 "sentence needs.\n"
+                 "and the round-3 review found the declared blind spot live in `pbft`. That row was\n"
+                 "a **backfilled** row when the review met it, i.e. the defect sat on the side the\n"
+                 "declaration named; its repair is itself marked `claim`, because the sentence\n"
+                 "fixed the work and the locator was then chosen for that work. The historical 20 is\n"
+                 "not recoverable from the tree and is no longer quoted; the rule by which a row is\n"
+                 "marked is stated in the batch header, and the number of corrected locators the\n"
+                 "tree CAN derive (16, from the round-1 repair diff) is a different set from the\n"
+                 "marked rows -- so the batch quotes only what the column carries.\n\n"
+                 "Going forward the column is also a **drift guard**: changing a DOI, or a Crossref\n"
+                 "record being replaced, fails the run instead of silently rewording a citation.\n\n"
+                 % (len(rows), n_ok, n_bad, n_unv, n_claim, n_backfill))
         fh.write(punctuation_section(dbl, len(refs)))
+        fh.write(binding_text)
         if n_bad or n_unv:
             fh.write("**Run status: FAIL** -- %d support failures and %d unverified keys.\n\n"
                      % (n_bad, n_unv))
@@ -763,7 +1076,8 @@ def main():
         print("  UNVERIFIED:", k)
     # A self-test whose failure does not reach the status is not a control: until this line the
     # counter's cases were printed into the report and the run exited 0 whatever they said.
-    for label, tests in (("counter", bracket_groups_selftest()), ("support", support_selftest())):
+    for label, tests in (("counter", bracket_groups_selftest()), ("support", support_selftest()),
+                    ("binding", binding_selftest())):
         for name, ok, _detail in tests:
             if not ok:
                 problems.append("SELFTEST %s: %s" % (label, name))

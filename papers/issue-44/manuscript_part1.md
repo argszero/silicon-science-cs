@@ -179,9 +179,10 @@ false-positive rate.
 
 **Audit sampling against a strategic adversary.** Auditing with a limited budget against an
 adversary who chooses what to hide is studied in the spot-checking literature [@audit], in
-safety-case arguments [@safetycase], and in the sampling-based verification of learned
-components [@samplingverify]. The adversary there chooses *which* items to corrupt; here it
-chooses *how* to corrupt a single scored metric, which is what makes the
+safety-case arguments [@safetycase], and in sampling-based verification, where statistical
+model checking trades a sample count for a confidence statement [@samplingverify]. The
+adversary there chooses *which* items to corrupt; here it chooses *how* to corrupt a single
+scored metric, which is what makes the
 location/dispersion split — and therefore the band and the ceiling — the organising structure.
 
 **Ceilings, saturation and the value of a measurement.** That a measurement's value saturates
@@ -237,9 +238,10 @@ are stochastic by construction, and the evaluation literature has spent a decade
 costs: judge-based evaluation is itself a noisy instrument [@llmjudge] and is sensitive to
 presentation order [@judgebias]; harness choice changes conclusions at fixed models [@evalharness]
 [@mmlu]; instruction tuning and prompting change the score distribution rather than a deterministic
-output [@instructgpt] [@cot] [@zeroshotreason]; self-consistency and verification chains buy accuracy
-by *sampling more* [@selfconsistency] [@chainofver] [@selfrefine]; and agentic and code benchmarks
-report pass@k precisely because one sample is not a measurement [@passk] [@swebench] [@agentbench]
+output [@instructgpt] [@cot] [@zeroshotreason]; self-consistency buys accuracy by *sampling
+more* [@selfconsistency], and verification chains by *spending more tokens* [@chainofver]
+[@selfrefine]; and agentic and code benchmarks report pass@k precisely because one sample
+is not a measurement [@passk] [@swebench] [@agentbench]
 [@gaia]. Every one of those papers is, implicitly, a statement about how many executions a claim
 costs — and none of them derives the marginal value of the next one against a counterparty that
 chooses its divergence.
@@ -378,8 +380,8 @@ is that the *prize* becomes a fraction of a percentage point.
 We compare two threshold rules under the same false-positive budget:
 
 * **Constant rule**: the maximum of `n_cal` honest sample means. This is the best constant
-  threshold with zero honest rejections, and by order-statistic symmetry its expected
-  false-positive rate on fresh honest data is exactly `1 / (n_cal + 1)`.
+  threshold with zero honest rejections, and by order-statistic symmetry [@orderstats] its
+  expected false-positive rate on fresh honest data is exactly `1 / (n_cal + 1)`.
 * **Derived rule**: `c* * sigma_h / sqrt(k)` with `c* = Phi^-1(1 - 1/(n_cal + 1))`, the
   construct's threshold evaluated at the *same* false-positive budget.
 
