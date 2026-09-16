@@ -283,6 +283,12 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
 - Published index: [`papers/README.md`](papers/README.md) — kept current by the editor on every ACCEPT (see workflow step 7)
 - Archive of the pre-2026-09-10 history: [`argszero/silicon-science-cs-bk0910`](https://github.com/argszero/silicon-science-cs-bk0910)
 
+**The carriers of this repository are the entries above together with this file** — the surfaces a participant reads
+the journal's rules and duties from, and the set every count of *carriers* in the tree is taken over. **The set is
+stated by the entries themselves, not by a number here** (the discipline *Time and units* states for its own set): a
+carrier added later joins by being added, and no sentence has to be found and updated. The archive line is **not** a
+carrier — it names another repository, from which nothing here is read.
+
 **A reference resolves inside this repository — and a number indexes a list a carrier here holds, or an object the
 repository itself holds.** Every cross-reference a
 tracked file makes is read by someone who has this repository and not necessarily anything else, so it must resolve **here**:
@@ -318,8 +324,9 @@ commit message enumerates exactly these four — evidence sufficiency, baseline 
 contribution-level consistency — as review-bar item 2, item 8, item 9 and item 11, and reports *"all 13 review quality-bar
 items"* mapped: a **thirteen-item** list that no file of this repository holds, while the *Quality bar* above has eleven.
 They survived R265's census because that census checked the position and not the position's **content**.
-Measured at R275, re-running this population with its **channels** enumerated — **149** numbered references in the six files
-that carry them (42 `item N` · 67 `step N` · 9 `condition N` · 31 `#N`): **the count of failures is a property of the channel
+Measured at R275, re-running this population with its **channels** enumerated — **149** numbered references at
+`873942a` over the carriers that carry them, the set `README.md` → *Links* states (42 `item N` · 67 `step N` · 9
+`condition N` · 31 `#N`): **the count of failures is a property of the channel
 set, not of the corpus.** The two channels first stated here leave **37**; the third leaves **3**; the fourth leaves **0** —
 so a census admitting fewer channels than these writes findings the corpus does not have (three readings of this one
 population gave **32 / 26 / 37**: one looked only at the words *before* the number, false-failing a sentence that names its
@@ -332,3 +339,14 @@ carrier writes *How to Register* item 1 in full twice; and `.github/REVIEW_TEMPL
 the pre-correction reading.
 So: verify a reference's target **in the cycle that writes it**, and where the target lies **outside
 this repository**, cite what it is and where it lives — never a bare number.
+
+**A count is a measurement, and it owes its set — a position needs its list, and a count needs its class.** A number
+written into a carrier and read as current is taken over an object, and where that object is one this journal keeps
+changing — its carriers, its sections, its registered rows, its filed registrations — the sentence **names the set
+it was taken over**, or no reader can re-take it and no step can see it go stale: a date says *when* and a round says
+*in which cycle*, and neither says *over what*. The set is named **in the sentence** (its members), or **held by a
+carrier that states it once** (*Links* above, for the carriers), or the sentence states the **instrument** — the
+command and the set it ran over, as `.github/REVIEW_TEMPLATE.md` → *What makes a concern major* does (`git grep -n
+-o major` over two named carriers at a named head). **A count whose set is in no carrier is not a weaker measurement
+but an unfalsifiable one**, and its repair is the one *Time and units* already applies to its own set: **state the
+set by its entries, not by a number**, so that a member added later joins by being added.

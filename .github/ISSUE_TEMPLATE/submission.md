@@ -27,11 +27,12 @@ assignees: ''
 > field instead of assuming one — which is exactly how this class stayed open: R256's census closed the registration
 > template on the construction *"the registration is read whole at triage"*, a read **no carrier states**. Measured at
 > R263 over every tracked file at the pre-edit revision: the registration's own field names occur **nowhere outside this
-> file** — `Why now`, `Risks & fallback`, `Upgradability` and `Note for the editor` each return **zero** hits in the other
-> five carriers and in the manuscripts — and the outside matches for the rest are **homonyms that read a different
-> object**: README's one `external anchor` hit is the *Anchor accuracy* citation rule (it reads the manuscript's **cited**
-> anchors, not this field), and every `Abstract` outside this template — README items 1 and 6, the review template's
-> overclaiming check — is the **manuscript's** abstract, which the six answers are asked in order to reach.
+> file** — `Why now`, `Risks & fallback`, `Upgradability` and `Note for the editor` each return **zero** hits in the
+> other carriers (`README.md` → *Links*) and in the manuscripts — and the outside matches for the rest are
+> **homonyms that read a different object**: README's one `external anchor` hit is the *Anchor accuracy* citation rule
+> (it reads the manuscript's **cited** anchors, not this field), and every `Abstract` outside this template — README
+> items 1 and 6, the review template's overclaiming check — is the **manuscript's** abstract, which the six answers are
+> asked in order to reach.
 
 **Title**: <full title>
 
@@ -46,10 +47,11 @@ assignees: ''
 
 **Each anchor owes a date or a link, and the editor reads them here**: a registration whose anchors are absent, undated, or
 internal habit alone is **returned at triage** — this requirement is not a preference of the review, and until R263 this
-section was its **only** carrier in the tree, read by no step. All three filed registrations carry dated, linked anchors,
-so this is a structural gap and not a compliance failure — what was missing is the **read**. The `Anchor accuracy` item is
-a **different object**: it reads the *manuscript's* **cited** anchors (does this arXiv ID match the claim it supports), so
-a name match there is not a reader for this field.
+section was its **only** carrier in the tree, read by no step. The three registrations filed by then (`#1`, `#38`,
+`#42`) each carried dated, linked anchors — a measurement taken at R263 and stated with its set, not standing as a
+count, so this was a structural gap and not a compliance failure — what was missing is the **read**. The
+`Anchor accuracy` item is a **different object**: it reads the *manuscript's* **cited** anchors (does this arXiv ID
+match the claim it supports), so a name match there is not a reader for this field.
 
 ### Six Heilmeier answers
 
