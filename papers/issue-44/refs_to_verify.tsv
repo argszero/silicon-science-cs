@@ -21,14 +21,25 @@
 # marked `claim`, read its citing sentence, and decide whether that record is the
 # work the sentence needs. Before this column the same review question could not be
 # run at all, because the split was one number in a header the rows could not confirm.
-# (Columns: key, method, value, declared intent, optional author, provenance.)
+# (Columns: key, method, value, declared intent, optional author, provenance,
+#  anchor -- column 7.)
 # Batch 1 of the bibliography, clusters A-E. Format: key <TAB> doi|arxiv|title <TAB> value
 # Every line is verified before it is cited; an unverified line is dropped, not softened.
 # Batch 2 of the bibliography, clusters F-J plus the estimation-theory block.
 # Column 7 (`anchor`) records how each row's anchoring was established, one value
-# per row: `screen` -- the citing clause in the manuscript names the record (a
-# distinctive token of its title, or one of its authors' surnames); `read` -- the
-# screen cannot decide, so the clause was READ against the record by the author.
+# per row: `screen` -- the citing clause in the manuscript names the record by a
+# token of its title that exactly ONE title in this corpus carries, or by one of its
+# authors' surnames; `read` -- the screen cannot decide (no unique title token and no
+# surname), so the clause was READ against the record by the author -- identity and
+# all: the returned year, venue and authors against the entry's own line.
+# The screen detects UNEARNED SILENCE, not substitution: a substitute that shares the
+# record's own unique token passes it, and the selftest pins that clause as a blind
+# spot. A `screen` mark is therefore a statement about the clause's vocabulary, not a
+# certification of identity; the identity reads are what cover the rest.
+# Sixteen rows were `screen` under the older rule (a token shared by up to two titles
+# was accepted, which is how `byzantine` certified a clause about another work) and
+# are `read` here: each was read against its record and every one is correctly
+# anchored, so the rule changed what the instrument may assert, not any verdict.
 # verify_refs.py recomputes the screen and FAILS if a mark disagrees with it or if a
 # flagged row is left unread, so the column cannot drift away from the instrument.
 # `detectiontheory` (a title search with no matching record) was dropped here: it is
@@ -42,45 +53,45 @@ groupseq	doi	10.1093/biomet/64.2.191	Group sequential methods in the design and 
 adapt	doi	10.1002/sim.3538	Adaptive designs for confirmatory clinical trials	-	backfilled	read
 impossibility	doi	10.1214/aoms/1177728077	The Nonexistence of Certain Statistical Procedures in Nonparametric Problems	-	backfilled	read
 ingster	doi	10.1007/978-0-387-21580-8	Nonparametric Goodness-of-Fit Testing Under Gaussian Models	-	backfilled	read
-audit	doi	10.1109/TCSS.2020.2998732	Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsourcing: Application to Peer Grading Systems	-	backfilled	screen
-safetycase	doi	10.1016/j.ssci.2016.09.014	An investigation of proposed techniques for quantifying confidence in assurance arguments	-	backfilled	screen
+audit	doi	10.1109/TCSS.2020.2998732	Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsourcing: Application to Peer Grading Systems	-	backfilled	read
+safetycase	doi	10.1016/j.ssci.2016.09.014	An investigation of proposed techniques for quantifying confidence in assurance arguments	-	backfilled	read
 costsampling	doi	10.14778/2367502.2367533	Blink and it's done: interactive queries on very large data	-	backfilled	read
 design	doi	10.1109/TSSC.1966.300074	Information Value Theory	-	backfilled	screen
-samplingverify	title	Statistical Model Checking: An Overview	Statistical Model Checking: An Overview	-	backfilled	screen
+samplingverify	title	Statistical Model Checking: An Overview	Statistical Model Checking: An Overview	-	backfilled	read
 metricsat	doi	10.1038/s41467-022-34591-0	Mapping global dynamics of benchmark creation and saturation in artificial intelligence	-	backfilled	screen
 attestation	title	Innovative instructions and software model for isolated execution	Innovative instructions and software model for isolated execution	-	backfilled	read
-verifiablecompute	doi	10.1007/978-3-642-14623-7_25	Non-interactive Verifiable Computing: Outsourcing Computation to Untrusted Workers	-	backfilled	screen
-pinocchio	doi	10.1109/SP.2013.47	Pinocchio: Nearly Practical Verifiable Computation	-	backfilled	screen
+verifiablecompute	doi	10.1007/978-3-642-14623-7_25	Non-interactive Verifiable Computing: Outsourcing Computation to Untrusted Workers	-	backfilled	read
+pinocchio	doi	10.1109/SP.2013.47	Pinocchio: Nearly Practical Verifiable Computation	-	backfilled	read
 ekiden	doi	10.1109/EuroSP.2019.00023	Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts	-	backfilled	read
 flicker	doi	10.1145/1357010.1352625	Flicker: an execution infrastructure for tcb minimization	-	backfilled	read
 notary	doi	10.1145/3341301.3359661	Notary: a device for secure transaction approval	-	backfilled	screen
 spectre	doi	10.1109/SP.2019.00002	Spectre Attacks: Exploiting Speculative Execution	-	backfilled	read
 snarkc	doi	10.1007/978-3-662-49896-5_11	On the Size of Pairing-Based Non-interactive Arguments	-	claim	read
-zktraining	doi	10.1145/3576915.3623202	Experimenting with Zero-Knowledge Proofs of Training	-	claim	screen
-zkcnn	doi	10.1145/3627703.3650088	ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs	-	claim	screen
+zktraining	doi	10.1145/3576915.3623202	Experimenting with Zero-Knowledge Proofs of Training	-	claim	read
+zkcnn	doi	10.1145/3627703.3650088	ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs	-	claim	read
 peng2011	doi	10.1126/science.1213847	Reproducible Research in Computational Science	-	backfilled	screen
-neuripsrepro	arxiv	2003.12206	Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)	-	backfilled	screen
-atoml	title	State of the Art: Reproducibility in Artificial Intelligence	State of the Art: Reproducibility in Artificial Intelligence	-	backfilled	screen
-showyourwork	doi	10.18653/v1/D19-1224	Show Your Work: Improved Reporting of Experimental Results	-	backfilled	screen
+neuripsrepro	arxiv	2003.12206	Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)	-	backfilled	read
+atoml	title	State of the Art: Reproducibility in Artificial Intelligence	State of the Art: Reproducibility in Artificial Intelligence	-	backfilled	read
+showyourwork	doi	10.18653/v1/D19-1224	Show Your Work: Improved Reporting of Experimental Results	-	backfilled	read
 provdb	doi	10.1561/1900000006	Provenance in Databases: Why, How, and Where	-	backfilled	screen
 bh1995	doi	10.1111/j.2517-6161.1995.tb02031.x	Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing	-	backfilled	read
 hochberg1988	doi	10.1093/biomet/75.4.800	A sharper Bonferroni procedure for multiple tests of significance	-	backfilled	read
 byk2001	doi	10.1214/aos/1013699998	The control of the false discovery rate in multiple testing under dependency	-	backfilled	read
 landemets	doi	10.1093/biomet/70.3.659	Discrete sequential boundaries for clinical trials	-	backfilled	read
-evalues	doi	10.1214/20-AOS2020	E-values: Calibration, combination and applications	-	backfilled	screen
+evalues	doi	10.1214/20-AOS2020	E-values: Calibration, combination and applications	-	backfilled	read
 peeking	doi	10.1145/3097983.3097992	Peeking at A/B Tests: Why it matters, and what to do about it	-	claim	screen
 timeuniform	arxiv	1808.03204	Time-uniform Chernoff bounds via nonnegative supermartingales	-	backfilled	read
 tsybakov	doi	10.1007/b13794	Introduction to Nonparametric Estimation	-	backfilled	read
 conformalgentle	arxiv	2107.07511	A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification	-	backfilled	screen
 conformalreg	doi	10.1080/01621459.2017.1307116	Distribution-Free Predictive Inference for Regression	-	backfilled	read
-conformalvalid	doi	10.1007/s10994-013-5355-6	Conditional validity of inductive conformal predictors	-	backfilled	screen
+conformalvalid	doi	10.1007/s10994-013-5355-6	Conditional validity of inductive conformal predictors	-	backfilled	read
 valiant	doi	10.1145/1968.1972	A theory of the learnable	-	backfilled	read
 vc1971	doi	10.1137/1116025	On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities	-	claim	screen
 dkw	doi	10.1214/aoms/1177728174	Asymptotic Minimax Character of the Sample Distribution Function and of the Classical Multinomial Estimator	-	claim	screen
 massart	doi	10.1214/aop/1176990746	The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality	-	backfilled	screen
 massey	doi	10.1080/01621459.1951.10500769	The Kolmogorov-Smirnov Test for Goodness of Fit	-	claim	read
 dyba2006	doi	10.1016/j.infsof.2005.08.009	A systematic review of statistical power in software engineering experiments	-	claim	screen
-hitchhiker	doi	10.18653/v1/P18-1128	The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing	-	backfilled	screen
+hitchhiker	doi	10.18653/v1/P18-1128	The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing	-	backfilled	read
 reportscores	doi	10.18653/v1/D17-1035	Reporting Score Distributions Makes a Difference: Performance Study of LSTM-networks for Sequence Tagging	-	claim	read
 bouthillier	arxiv	2103.03098	Accounting for Variance in Machine Learning Benchmarks	-	backfilled	screen
 drlrepro	doi	10.1609/aaai.v32i1.11694	Deep Reinforcement Learning That Matters	-	backfilled	read
@@ -114,8 +125,8 @@ recsyeval	doi	10.1145/3298689.3347058	Are we really making much progress? A worr
 concreteproblems	arxiv	1606.06565	Concrete Problems in AI Safety	-	backfilled	read
 goalmisspec	arxiv	2105.14111	Goal Misgeneralization in Deep Reinforcement Learning	-	backfilled	read
 rewardoveropt	arxiv	2210.10760	Scaling Laws for Reward Model Overoptimization	-	backfilled	screen
-bft	doi	10.1145/357172.357176	The Byzantine Generals Problem	-	backfilled	screen
-pbft	doi	10.1145/571637.571640	Practical byzantine fault tolerance and proactive recovery	-	claim	screen
+bft	doi	10.1145/357172.357176	The Byzantine Generals Problem	-	backfilled	read
+pbft	doi	10.1145/571637.571640	Practical byzantine fault tolerance and proactive recovery	-	claim	read
 orderstats	doi	10.1002/0471722162	Order Statistics	-	claim	screen
 extremevalue	doi	10.1007/0-387-34471-3	Extreme Value Theory: An Introduction	-	backfilled	read
 quantiles	title	Sample Quantiles in Statistical Packages	Sample Quantiles in Statistical Packages	-	backfilled	screen
@@ -125,7 +136,7 @@ clopperpearson	doi	10.1093/biomet/26.4.404	The Use of Confidence Or Fiducial Lim
 neymanpearson	doi	10.1098/rsta.1933.0009	IX. On the problem of the most efficient tests of statistical hypotheses	-	backfilled	screen
 fisher1922	doi	10.1098/rsta.1922.0009	On the mathematical foundations of theoretical statistics	-	backfilled	screen
 student1908	doi	10.2307/2331554	The Probable Error of a Mean	-	claim	screen
-vanderVaart	doi	10.1017/CBO9780511802256	Asymptotic Statistics	-	backfilled	screen
+vanderVaart	doi	10.1017/CBO9780511802256	Asymptotic Statistics	-	backfilled	read
 permutationtests	doi	10.1007/b138696	Permutation, Parametric and Bootstrap Tests of Hypotheses	Phillip Good	claim	read
 pvalues	doi	10.1007/s10654-016-0149-3	Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations	-	backfilled	read
 mcmcse	doi	10.1201/b10905-8	Implementing MCMC: Estimating with Confidence	-	claim	read

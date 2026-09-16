@@ -13,7 +13,7 @@ Expected final line, and the lines that carry the verdict:
 
 ```
 criteria: a=MET, b=MET, c=MET, d=MET
-cross-checks: 85 run, 0 failed
+cross-checks: 88 run, 0 failed
 figure checks: 106 run, 0 failed   (106 on the matplotlib build the manifest pins;
                                     100 on another build, where the six PNG byte hashes
                                     are REPORTED rather than required -- the six DATA
@@ -243,7 +243,8 @@ resolved to a 2010 SAGE encyclopedia entry bearing the same normalised words, an
 so the bibliography cited an encyclopedia article for Student's paper. That class of defect is
 structural, and no reviewer should be the check that catches it.
 
-### The screen for the other half: does the sentence name the record?  (round-3 question 2)
+### The screen aimed at the other half: does the sentence name the record?
+  (round-3 question 2; what it does and what it does not, after the correction round)
 
 The support test can only *check* a row whose declared intent was written from the citing sentence.
 For a row whose intent is the title the locator returned, that test asserts only that the locator
@@ -252,16 +253,36 @@ pointing at the DOI of a paper on lock-free data structures. The batch therefore
 per row**: `provenance` (how the intent was written -- `claim` or `backfilled`) and `anchor` (how the
 anchoring was established -- `screen` or `read`); both are counted from the column, never declared in
 a header. On top of them `verify_refs.py` runs a **clause-binding screen** over every cited key: it
-takes the manuscript clause that names the key and asks whether that clause carries a distinctive
-token of the record's title, or a surname of the record's authors.
+takes the manuscript clause that names the key and asks whether that clause carries a token of the
+record's title that **exactly one** title in this corpus carries, or a surname of the record's
+authors.
 
-* **53 of 103** clauses name their record; those rows are marked `screen`. The screen is
+**What the screen is not** -- stated because an earlier version of this paragraph claimed a wider
+reach than the mechanism has, and the correction round narrowed both the claim and the mechanism.
+Its mechanism is *token overlap*, so what it detects is **unearned silence**: a clause that names
+none of its record's distinctive vocabulary, and therefore cannot be certified without a human.
+It does **not** detect substitution. A near substitute that shares the record's own binding token
+still passes, and the selftest pins exactly such a clause as a `BLIND SPOT` case instead of
+leaving the reach implicit. What closes that class is the **identity read** -- the returned year,
+venue and authors read against the entry's own line, which the authenticity table at the top of
+this file records per row. A `screen` mark is a statement about the clause's vocabulary, not a
+certification of identity.
+
+* **37 of 103** clauses name their record; those rows are marked `screen`. The screen is
   recomputed in `reproduce.sh` (`verify_refs.py --selftest-only`), which fails if any mark
   disagrees with it -- the marks cannot drift away from the instrument.
-* The other **50** are flagged, because the screen never passes a row it cannot decide: a clause
+* The other **66** are flagged, because the screen never passes a row it cannot decide: a clause
   that names a work's *role* ("two-sample comparison") is flagged even when the record is right.
   Each was read against its record and marked `read`, and the flagged clauses are printed in
   `reference-check.md` so the reading is checkable rather than asserted.
+* **16 of the 66** were marked `screen` until the correction round. The screen first accepted a
+  title token carried by up to **two** titles, and the instrument here is a spelling set: planting
+  Lamport, Shostak & Pease, *The Byzantine Generals Problem* over `[@pbft]` left the row certified
+  because the clause "practical Byzantine replication..." carries `byzantine`, which the
+  neighbouring `bft` title carries too. A token two titles share is a coincidence of vocabulary,
+  not a name. Under the uniqueness rule **no verdict moved**: all 16 demoted rows were read
+  against their records and every one is correctly anchored, so the rule changed what the
+  instrument may assert *without a human*, not what the bibliography contains.
 * `instrument_audit.py` mutates the screen into one that never flags a row, and requires the
   self-test to catch it (`D2/MUTATION: a broken binding ...`); the self-test also pins the
   screen's own blind spot, a clause that appears to name its record only because the

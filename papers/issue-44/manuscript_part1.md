@@ -40,8 +40,10 @@ a pre-registered study: four registered criteria, all met, and three registered 
 confirmed. A sensitivity block
 then measures the construct's own limits rather than hedging them: its usable boundary is a
 lattice ratio rather than a rate of convergence, the ceiling's cost is a fraction of a
-percentage point, and the saturated cells' intervals contain zero, so their bound is reported as
-an upper bound rather than as a certified gain. The practical answer to
+percentage point, and the `{{F:S2.n_saturated_measured|d}}` saturated cells this study measured
+have intervals that exclude zero — though their lower bounds reach down to
+`{{F:S2.min_saturated_ci_lo|1e}}` — so the ceiling bounds the prize, not the
+detection. The practical answer to
 the title question is that the marginal value of a re-execution is set by *where* the node sits
 relative to the threshold and how dispersed it is — never by the budget alone.
 

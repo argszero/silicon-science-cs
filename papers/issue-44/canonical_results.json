@@ -112,7 +112,7 @@
   },
   "cross_checks": {
     "failures": [],
-    "n_checks": 85,
+    "n_checks": 88,
     "n_failed": 0,
     "note": "every criterion and every sensitivity number is recomputed from the stage artefacts' primitives and compared with the flag the stage recorded about itself; the two must agree"
   },
@@ -247,11 +247,13 @@
           "saturated": true
         }
       ],
+      "min_saturated_ci_lo": 4.8788842962437776e-06,
       "n_grid": 108,
       "n_measured": 8,
       "n_measured_ci_excludes_zero": 4,
       "n_saturated": 18,
       "n_saturated_measured": 2,
+      "n_saturated_measured_ci_excludes_zero": 2,
       "n_unsaturated_measured": 6,
       "saturated_gain_ratio": 929.92148760327,
       "saturated_max_gain": 0.0009837398373984119,

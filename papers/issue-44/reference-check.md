@@ -191,23 +191,34 @@ property, held over all 103 entries.
 ## Does the citing sentence bind to the record?  (round-3 question 2)
 
 The support test above cannot see a wrong locator on a `backfilled` row, because
-such a row's intent IS what the locator returned. This screen covers that side and
-runs on every cited key, whichever way its intent was written: it takes the
-manuscript **clause that names the key** and asks whether that clause carries a
-distinctive token of the record's title or a surname of its authors. A clause that
-names the work's *role* rather than its title ("two-sample comparison") is flagged
-even when the record is right, so the screen's error is in the safe direction and a
-flagged row is never passed -- it is read against its record by the author, and the
-mark is recorded per row in column 7 (`anchor`) of the batch.
+such a row's intent IS what the locator returned. This screen removes the *silent*
+pass on that side, and runs on every cited key, whichever way its intent was
+written: it takes the manuscript **clause that names the key** and asks whether
+that clause carries a token of the record's title that **exactly one** title in this
+corpus carries, or a surname of its authors. A clause that names the work's *role*
+rather than its title ("two-sample comparison") is flagged even when the record is
+right, so the screen's error is in the safe direction and a flagged row is never
+passed -- it is read against its record by the author, and the mark is recorded per
+row in column 7 (`anchor`) of the batch.
 
 | measure | value |
 |---|---|
 | cited keys | 103 |
-| clause names the record (screen) | **53** |
-| flagged for reading (clause names neither) | 50 |
-| flagged rows read and marked `read` | 50 |
+| clause names the record (screen) | **37** |
+| flagged for reading (clause names no unique token, no surname) | 66 |
+| flagged rows read and marked `read` | 66 |
 | **flagged rows left unread** | **0** |
 | marks that disagree with the screen | 0 |
+
+**What it is not.** The mechanism is token overlap, so a near substitute that shares
+the record's own binding token still passes: the screen detects *unearned silence*,
+not substitution. What closes that class is the **identity read** -- the returned
+year, venue and authors read against the entry's own line, which the authenticity
+table above records per row. The uniqueness requirement is itself a repair: the
+screen first accepted a title token carried by up to **two** titles, and planting
+Lamport, Shostak & Pease, *The Byzantine Generals Problem* over `[@pbft]` left the row
+certified through the `byzantine` the neighbouring `bft` title also carries. A token
+two titles share is a coincidence of vocabulary, not a name.
 
 The screen is a control, and its control is the defect it was built for. Applied to
 the round-3 `pbft` row as it stood -- clause *"practical Byzantine replication makes
@@ -222,7 +233,10 @@ asserted:
 |---|---|---|
 | `adapt` | Adaptive designs for confirmatory clinical trials | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
 | `agentbench` | AgentBench: Evaluating LLMs as Agents | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
+| `atoml` | State of the Art: Reproducibility in Artificial Intelligence | **Reproducibility and provenance.** A large body of work makes computational results reproducible and traceabl |
 | `attestation` | Innovative instructions and software model for isolated execution | and neither answers the budget question.** Hardware attestation executes inside a minimised trusted computing  |
+| `audit` | Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsou | **Audit sampling against a strategic adversary.** Auditing with a limited budget against an adversary who choo |
+| `bft` | The Byzantine Generals Problem | **Fault-tolerant systems with adversarial participants.** The question of how much redundancy is enough agains |
 | `bh1995` | Controlling the False Discovery Rate: A Practical and Powerful Approac | stopping and peeking.** The statistics of repeated looks are well understood *given* a fixed null hypothesis:  |
 | `bigbench` | Beyond the Imitation Game: Quantifying and extrapolating the capabilit | contamination and overfitting to the test set inflate scores [@contamination] [@bigbench] |
 | `bootstrap` | An Introduction to the Bootstrap | resampling where a closed form is unavailable [@bootstrap] [@permutationtests] |
@@ -231,16 +245,19 @@ asserted:
 | `clopperpearson` | The Use of Confidence Or Fiducial Limits Illustrated in the Case of th | with the interval estimators we use for proportions [@wilson] [@clopperpearson] and quantiles [@quantiles] |
 | `concreteproblems` | Concrete Problems in AI Safety | proxies are optimised instead of goals [@concreteproblems] |
 | `conformalreg` | Distribution-Free Predictive Inference for Regression | conformal prediction for set-valued guarantees [@conformalgentle] [@conformalreg] [@conformalvalid] |
+| `conformalvalid` | Conditional validity of inductive conformal predictors | conformal prediction for set-valued guarantees [@conformalgentle] [@conformalreg] [@conformalvalid] |
 | `costsampling` | Blink and it's done: interactive queries on very large data | and from cost-aware sampling in data systems [@costsampling] |
 | `drlrepro` | Deep Reinforcement Learning That Matters | and as variance accounting when benchmark scores are compared across runs [@bouthillier] [@drlrepro] |
 | `effectsize` | Statistical Power Analysis for the Behavioral Sciences | and the reporting conventions that keep a p-value from being read as an effect size [@pvalues] [@effectsize] [ |
 | `ekiden` | Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Pe | which is enough to build confidential contract platforms [@ekiden] and secure approval devices [@notary] but l |
 | `evalharness` | Holistic Evaluation of Language Models | harness choice changes conclusions at fixed models [@evalharness] [@mmlu] |
+| `evalues` | E-values: Calibration, combination and applications | always-valid inference through confidence sequences and e-values [@timeuniform] [@evalues] |
 | `extremevalue` | Extreme Value Theory: An Introduction | the asymptotic theory that justifies the normal approximation and its limits [@vanderVaart] [@extremevalue] |
 | `flicker` | Flicker: an execution infrastructure for tcb minimization | and neither answers the budget question.** Hardware attestation executes inside a minimised trusted computing  |
 | `gaia` | GAIA: a benchmark for General AI Assistants | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
 | `goalmisspec` | Goal Misgeneralization in Deep Reinforcement Learning | objectives are misgeneralised [@goalmisspec] |
 | `groupseq` | Group sequential methods in the design and analysis of clinical trials | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
+| `hitchhiker` | The Hitchhiker’s Guide to Testing Statistical Significance in Natural  | as significance-testing guidance for NLP and ML evaluation [@hitchhiker] [@reportscores] |
 | `hochberg1988` | A sharper Bonferroni procedure for multiple tests of significance | stopping and peeking.** The statistics of repeated looks are well understood *given* a fixed null hypothesis:  |
 | `impossibility` | The Nonexistence of Certain Statistical Procedures in Nonparametric Pr | **Distribution-free testing and its impossibility results.** Unrestricted alternative sets admit no consistent |
 | `ingster` | Nonparametric Goodness-of-Fit Testing Under Gaussian Models | the same machinery underlies minimax lower bounds for testing [@ingster] |
@@ -252,14 +269,20 @@ asserted:
 | `mcmcse` | Implementing MCMC: Estimating with Confidence | Monte-Carlo error accounting for the estimates themselves [@mcmcse] |
 | `mltesting` | Machine Learning Testing: Survey, Landscapes and Horizons | machine-learning testing surveys the same trade-off for learned components [@mltesting] |
 | `mmlu` | Measuring Massive Multitask Language Understanding | harness choice changes conclusions at fixed models [@evalharness] [@mmlu] |
+| `neuripsrepro` | Improving Reproducibility in Machine Learning Research (A Report from  | **Reproducibility and provenance.** A large body of work makes computational results reproducible and traceabl |
 | `optdesign` | Optimum Experimental Designs, with SAS | and classical optimal design chooses the measurement that maximises information per unit cost [@optdesign] |
 | `passk` | Evaluating Large Language Models Trained on Code | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
+| `pbft` | Practical byzantine fault tolerance and proactive recovery | and practical Byzantine replication makes that bound an engineering parameter [@pbft] |
 | `permutationtests` | Permutation, Parametric and Bootstrap Tests of Hypotheses | resampling where a closed form is unavailable [@bootstrap] [@permutationtests] |
+| `pinocchio` | Pinocchio: Nearly Practical Verifiable Computation | Cryptographic proofs of computation avoid that assumption [@verifiablecompute] [@pinocchio] [@snarkc] and are  |
 | `power` | A power primer | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
 | `pvalues` | Statistical tests, P values, confidence intervals, and power: a guide  | and the reporting conventions that keep a p-value from being read as an effect size [@pvalues] [@effectsize] [ |
 | `recsyeval` | Are we really making much progress? A worrying analysis of recent neur | and offline evaluation can diverge from what practitioners actually need [@recsyeval] |
 | `reportscores` | Reporting Score Distributions Makes a Difference: Performance Study of | as significance-testing guidance for NLP and ML evaluation [@hitchhiker] [@reportscores] |
+| `safetycase` | An investigation of proposed techniques for quantifying confidence in  | in safety-case arguments [@safetycase] |
+| `samplingverify` | Statistical Model Checking: An Overview | where statistical model checking trades a sample count for a confidence statement [@samplingverify] |
 | `selfrefine` | Self-Refine: Iterative Refinement with Self-Feedback | and verification chains by *spending more tokens* [@chainofver] [@selfrefine] |
+| `showyourwork` | Show Your Work: Improved Reporting of Experimental Results | fixes reporting practice so that variance is visible [@showyourwork] |
 | `snarkc` | On the Size of Pairing-Based Non-interactive Arguments | Cryptographic proofs of computation avoid that assumption [@verifiablecompute] [@pinocchio] [@snarkc] and are  |
 | `spectre` | Spectre Attacks: Exploiting Speculative Execution | which is enough to build confidential contract platforms [@ekiden] and secure approval devices [@notary] but l |
 | `swebench` | SWE-bench: Can Language Models Resolve Real-World GitHub Issues? | and agentic and code benchmarks report pass@k precisely because one sample is not a measurement [@passk] [@swe |
@@ -267,9 +290,13 @@ asserted:
 | `tost` | A comparison of the Two One-Sided Tests Procedure and the Power Approa | and the reporting conventions that keep a p-value from being read as an effect size [@pvalues] [@effectsize] [ |
 | `tsybakov` | Introduction to Nonparametric Estimation | and minimax rates over smoothness classes [@tsybakov] |
 | `valiant` | A theory of the learnable | uniform convergence over function classes [@vc1971] [@valiant] |
+| `vanderVaart` | Asymptotic Statistics | the asymptotic theory that justifies the normal approximation and its limits [@vanderVaart] [@extremevalue] |
+| `verifiablecompute` | Non-interactive Verifiable Computing: Outsourcing Computation to Untru | Cryptographic proofs of computation avoid that assumption [@verifiablecompute] [@pinocchio] [@snarkc] and are  |
 | `wald` | Sequential Tests of Statistical Hypotheses | with its antecedents in the sample-size literature ([@power] [@wald] [@groupseq] [@adapt]) |
 | `wilson` | Probable Inference, the Law of Succession, and Statistical Inference | with the interval estimators we use for proportions [@wilson] [@clopperpearson] and quantiles [@quantiles] |
 | `zeroshotreason` | Large Language Models are Zero-Shot Reasoners | instruction tuning and prompting change the score distribution rather than a deterministic output [@instructgp |
+| `zkcnn` | ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs | Cryptographic proofs of computation avoid that assumption [@verifiablecompute] [@pinocchio] [@snarkc] and are  |
+| `zktraining` | Experimenting with Zero-Knowledge Proofs of Training | Cryptographic proofs of computation avoid that assumption [@verifiablecompute] [@pinocchio] [@snarkc] and are  |
 
 **Run status: PASS** -- every key that resolved is the declared work.
 
@@ -311,14 +338,14 @@ so the body carries 15 bracket groups that are not citation markers. They are
 listed here so a reviewer who meets one can resolve it, and none of them is
 mistaken for a reference by either counter:
 
-* `[-0.0050, 0.1014]`
-* `[-0.0138, 0.0253]`
-* `[-0.0142, 0.0718]`
-* `[-0.0379, 0.0489]`
-* `[0.0000, 0.0004]`
-* `[0.0003, 0.0014]`
-* `[0.0066, 0.0217]`
-* `[0.0217, 0.0777]`
+* `[-1.38e-02, 2.53e-02]`
+* `[-1.42e-02, 7.18e-02]`
+* `[-3.79e-02, 4.89e-02]`
+* `[-5.00e-03, 1.01e-01]`
+* `[2.17e-02, 7.77e-02]`
+* `[2.99e-04, 1.42e-03]`
+* `[4.88e-06, 3.65e-04]`
+* `[6.63e-03, 2.17e-02]`
 * `[Figure 1]`
 * `[Figure 2]`
 * `[Figure 3]`

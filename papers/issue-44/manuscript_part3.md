@@ -88,18 +88,22 @@ below parity".
 
 | `n_cal` | `k` | `lambda` | Bound `1 - p_c` | Measured gain | `95%` interval |
 |---|---|---|---|---|---|
-| `{{F:S2.measured.0.n_cal|d}}` | `{{F:S2.measured.0.k|d}}` | `{{F:S2.measured.0.lam|g}}` | `{{F:S2.measured.0.bound|4f}}` | `{{F:S2.measured.0.difference|4f}}` | `[{{F:S2.measured.0.ci_lo|4f}}, {{F:S2.measured.0.ci_hi|4f}}]` |
-| `{{F:S2.measured.1.n_cal|d}}` | `{{F:S2.measured.1.k|d}}` | `{{F:S2.measured.1.lam|g}}` | `{{F:S2.measured.1.bound|4f}}` | `{{F:S2.measured.1.difference|4f}}` | `[{{F:S2.measured.1.ci_lo|4f}}, {{F:S2.measured.1.ci_hi|4f}}]` |
-| `{{F:S2.measured.2.n_cal|d}}` | `{{F:S2.measured.2.k|d}}` | `{{F:S2.measured.2.lam|g}}` | `{{F:S2.measured.2.bound|4f}}` | `{{F:S2.measured.2.difference|4f}}` | `[{{F:S2.measured.2.ci_lo|4f}}, {{F:S2.measured.2.ci_hi|4f}}]` |
-| `{{F:S2.measured.3.n_cal|d}}` | `{{F:S2.measured.3.k|d}}` | `{{F:S2.measured.3.lam|g}}` | `{{F:S2.measured.3.bound|4f}}` | `{{F:S2.measured.3.difference|4f}}` | `[{{F:S2.measured.3.ci_lo|4f}}, {{F:S2.measured.3.ci_hi|4f}}]` |
-| `{{F:S2.measured.4.n_cal|d}}` | `{{F:S2.measured.4.k|d}}` | `{{F:S2.measured.4.lam|g}}` | `{{F:S2.measured.4.bound|4f}}` | `{{F:S2.measured.4.difference|4f}}` | `[{{F:S2.measured.4.ci_lo|4f}}, {{F:S2.measured.4.ci_hi|4f}}]` |
-| `{{F:S2.measured.5.n_cal|d}}` | `{{F:S2.measured.5.k|d}}` | `{{F:S2.measured.5.lam|g}}` | `{{F:S2.measured.5.bound|4f}}` | `{{F:S2.measured.5.difference|4f}}` | `[{{F:S2.measured.5.ci_lo|4f}}, {{F:S2.measured.5.ci_hi|4f}}]` |
-| `{{F:S2.measured.6.n_cal|d}}` | `{{F:S2.measured.6.k|d}}` | `{{F:S2.measured.6.lam|g}}` | `{{F:S2.measured.6.bound|4f}}` | `{{F:S2.measured.6.difference|4f}}` | `[{{F:S2.measured.6.ci_lo|4f}}, {{F:S2.measured.6.ci_hi|4f}}]` |
-| `{{F:S2.measured.7.n_cal|d}}` | `{{F:S2.measured.7.k|d}}` | `{{F:S2.measured.7.lam|g}}` | `{{F:S2.measured.7.bound|4f}}` | `{{F:S2.measured.7.difference|4f}}` | `[{{F:S2.measured.7.ci_lo|4f}}, {{F:S2.measured.7.ci_hi|4f}}]` |
+| `{{F:S2.measured.0.n_cal|d}}` | `{{F:S2.measured.0.k|d}}` | `{{F:S2.measured.0.lam|g}}` | `{{F:S2.measured.0.bound|4f}}` | `{{F:S2.measured.0.difference|4f}}` | `[{{F:S2.measured.0.ci_lo|2e}}, {{F:S2.measured.0.ci_hi|2e}}]` |
+| `{{F:S2.measured.1.n_cal|d}}` | `{{F:S2.measured.1.k|d}}` | `{{F:S2.measured.1.lam|g}}` | `{{F:S2.measured.1.bound|4f}}` | `{{F:S2.measured.1.difference|4f}}` | `[{{F:S2.measured.1.ci_lo|2e}}, {{F:S2.measured.1.ci_hi|2e}}]` |
+| `{{F:S2.measured.2.n_cal|d}}` | `{{F:S2.measured.2.k|d}}` | `{{F:S2.measured.2.lam|g}}` | `{{F:S2.measured.2.bound|4f}}` | `{{F:S2.measured.2.difference|4f}}` | `[{{F:S2.measured.2.ci_lo|2e}}, {{F:S2.measured.2.ci_hi|2e}}]` |
+| `{{F:S2.measured.3.n_cal|d}}` | `{{F:S2.measured.3.k|d}}` | `{{F:S2.measured.3.lam|g}}` | `{{F:S2.measured.3.bound|4f}}` | `{{F:S2.measured.3.difference|4f}}` | `[{{F:S2.measured.3.ci_lo|2e}}, {{F:S2.measured.3.ci_hi|2e}}]` |
+| `{{F:S2.measured.4.n_cal|d}}` | `{{F:S2.measured.4.k|d}}` | `{{F:S2.measured.4.lam|g}}` | `{{F:S2.measured.4.bound|4f}}` | `{{F:S2.measured.4.difference|4f}}` | `[{{F:S2.measured.4.ci_lo|2e}}, {{F:S2.measured.4.ci_hi|2e}}]` |
+| `{{F:S2.measured.5.n_cal|d}}` | `{{F:S2.measured.5.k|d}}` | `{{F:S2.measured.5.lam|g}}` | `{{F:S2.measured.5.bound|4f}}` | `{{F:S2.measured.5.difference|4f}}` | `[{{F:S2.measured.5.ci_lo|2e}}, {{F:S2.measured.5.ci_hi|2e}}]` |
+| `{{F:S2.measured.6.n_cal|d}}` | `{{F:S2.measured.6.k|d}}` | `{{F:S2.measured.6.lam|g}}` | `{{F:S2.measured.6.bound|4f}}` | `{{F:S2.measured.6.difference|4f}}` | `[{{F:S2.measured.6.ci_lo|2e}}, {{F:S2.measured.6.ci_hi|2e}}]` |
+| `{{F:S2.measured.7.n_cal|d}}` | `{{F:S2.measured.7.k|d}}` | `{{F:S2.measured.7.lam|g}}` | `{{F:S2.measured.7.bound|4f}}` | `{{F:S2.measured.7.difference|4f}}` | `[{{F:S2.measured.7.ci_lo|2e}}, {{F:S2.measured.7.ci_hi|2e}}]` |
 
 **Table 6.** The measured ceiling cells: the bound from the constant rule's own power, the measured
-gain, and the between-stream interval. The cells with the tightest bounds are exactly the saturated
-ones, and their intervals contain zero — which is the honest reading of "the prize is gone".
+gain, and the between-stream interval — printed in scientific notation, because the smallest lower
+bound would otherwise round to `0.0000` and read as a sign the data does not have. The cells with
+the tightest bounds are exactly the saturated ones, and their intervals exclude zero
+(`{{F:S2.n_saturated_measured_ci_excludes_zero|d}}` of `{{F:S2.n_saturated_measured|d}}` saturated
+measured cells), the smaller lower bound at `{{F:S2.min_saturated_ci_lo|1e}}`: the prize is gone in
+the sense of a fraction of a percentage point, not in the sense of an uncertified gain.
 
 ### 7.3 S3: the comparison is decidable for a minority of cells at this budget
 
@@ -216,7 +220,7 @@ checkout, in one command, with no network access.
 * **Numbers.** The five stage scripts are re-run, then `canonical_runner.py` recomputes the criteria,
   the sensitivity block and the `manuscript_facts` block from the stage artefacts' primitives and
   cross-checks each recomputation against the flag the stage recorded about itself:
-  `{{F:stage_params.v0.n_mc|d}}`+ draws per cell as listed in Table 1,
+  `{{F:stage_params.v0.n_mc|d}}`+ draws per cell as listed in the instrument table of Section 5,
   `{{X:cross_checks.n_checks|d}}` cross-checks, 0 failures. The run prints `REPRODUCE: ALL GREEN` and exits non-zero on any mismatch, so a
   logging accident cannot outrank the verdict.
 * **Expected output.** `canonical_results.json`; criteria `a`, `b`, `c`, `d` all `MET`; the

@@ -237,5 +237,5 @@ S3 resolution: 42 informative cells; decidable at 41 streams: 25; not: 17; never
 ## aggregate
    criteria: a=MET, b=MET, c=MET, d=MET
    prior evidence: P1=CONFIRMED, P2=CONFIRMED, P3=CONFIRMED
-   cross-checks: 85 run, 0 failed
-   canonical_results.json sha256 05ac2e39613fcdc7c58286bfb07236afa937b9e0ba2c94a34e2508ecd8009a69
+   cross-checks: 88 run, 0 failed
+   canonical_results.json sha256 7422c7f87daa75bae09ec240b28a33a5c04ce3aa0e5f048e10cf8b837fc890a1

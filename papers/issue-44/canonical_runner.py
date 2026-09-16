@@ -671,6 +671,16 @@ def manuscript_facts(v0, v1, v2, v3, v4, out, ck):
                                     for e in v4["S2_measured"]),
                "n_measured_ci_excludes_zero": sum(1 for e in v4["S2_measured"]
                                                   if e["ci_excludes_zero"]),
+               # The saturated cells' intervals, counted rather than described.  The round-4
+               # correction found two statements in the manuscript asserting that these intervals
+               # CONTAIN zero while the artefact's lower bounds are strictly positive; the numbers
+               # are derived here so the prose can be a function of the artefact instead of a claim
+               # about it.
+               "n_saturated_measured_ci_excludes_zero":
+                   sum(1 for e in v4["S2_measured"]
+                       if e["saturated"] and e["ci_excludes_zero"]),
+               "min_saturated_ci_lo": min(e["ci_lo"] for e in v4["S2_measured"]
+                                          if e["saturated"]),
                "n_measured": len(v4["S2_measured"]),
                "measured": [{"n_cal": e["n_cal"], "k": e["k"], "lam": e["lam"],
                              "saturated": e["saturated"], "bound": e["bound_1_minus_pc"],
@@ -734,6 +744,17 @@ def manuscript_facts(v0, v1, v2, v3, v4, out, ck):
     ck.same("facts/crit_c_ci_excluding_one_matches_strict_failures",
             facts["crit_c"]["n_cells_with_ci_excluding_one"],
             len(inf) - v3["criterion_c_strict_n_failures"])
+    ck.same("facts/saturated_measured_partitions_the_measured_cells",
+            facts["S2"]["n_saturated_measured"] + facts["S2"]["n_unsaturated_measured"],
+            facts["S2"]["n_measured"])
+    ck.same("facts/saturated_ci_sign_recomputed_from_the_rows",
+            facts["S2"]["n_saturated_measured_ci_excludes_zero"],
+            sum(1 for r in facts["S2"]["measured"] if r["saturated"] and r["ci_lo"] > 0))
+    ck.ok("facts/min_saturated_ci_lo_is_the_minimum_over_saturated_rows",
+          facts["S2"]["min_saturated_ci_lo"]
+          == min(r["ci_lo"] for r in facts["S2"]["measured"] if r["saturated"]),
+          "%.3e over %d saturated measured cells"
+          % (facts["S2"]["min_saturated_ci_lo"], facts["S2"]["n_saturated_measured"]))
     ck.same("facts/s3_decidable_plus_indecidable",
             facts["S3"]["n_decidable"] + facts["S3"]["n_indecidable"], facts["S3"]["n_cells"])
     ck.same("facts/s1_cells_inside_boundary_counted",
