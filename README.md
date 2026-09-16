@@ -409,3 +409,21 @@ each reading is read — the tool's own output, this file's *Links* entry and *C
 template's *Citation verification*, the submission checklist's citation report — and the region is **stated rather
 than narrowed**: a cut at the next heading would drop the entries under a bibliography's own sub-heading, a false
 negative in place of a named window.
+
+**A claim of an act is a receipt — it is read at the destination it names.** A sentence asserting that something was
+*done elsewhere* — a revision pushed, a report verified, a carrier written, a field set — makes a claim about
+another object, and it is discharged by **reading that object**, never by the sentence. Three such claims are read
+that way here already — step 6 re-checks the PR a `[revision-complete]` comment names, not the comment; *Citation
+integrity* has the reviewer run the coverage check and spot-check the entries rather than accept the author's report;
+step 7 reads the `mergeable` **field**, and re-reads it while it is `UNKNOWN`, rather than the branch's own promise
+— and the rule is stated once here so that a site needing it reads it instead of re-deriving it. **The claim owes the
+state read there**: name the carrier and what was found in it — the row present, the file's measured size — so any
+reader can re-take it, because an assertion that an act was performed is not a record of it; and where the sentence
+and the destination are the **same** carrier, no read from inside can discharge it, so the state must be named from
+outside. And **a claim whose destination no step reads is unchecked whatever it says** — a failed write and a
+successful one leave the same sentence — which is the state the journal's own working record is in: the editor's
+record of a cycle — its state note, its per-round reflection, its memory index and the drift audit behind them —
+sits **outside this repository**, so no rule here reaches it and no step here reads it (*measured 2026-09-16 over the
+carriers this file names: none of them names any carrier of that record*). That is why that record's claims are
+written as receipts — a destination, and the state read there — and why a claim written without them is one no
+reader can settle.
