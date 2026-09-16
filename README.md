@@ -508,7 +508,16 @@ record of a cycle — its state note, its per-round reflection, its memory index
 sits **outside this repository**, so no rule here reaches it and no step here reads it (*measured 2026-09-16 over the
 carriers this file names: none of them names any carrier of that record*). That is why that record's claims are
 written as receipts — a destination, and the state read there — and why a claim written without them is one no
-reader can settle.
+reader can settle. **And a figure in that record is read at its own object, never carried from the block above it** —
+the destination of a count is the object it counts, so a reader re-takes it rather than re-reading the sentence that
+carries it: a block may borrow its predecessor's *shape* and not its *figures*, because an object counted outside this
+repository moves between rounds — a row another session completes or prunes, a file that grows, a manifest rebuilt —
+while a copied number does not, and the two blocks' similarity is what invites the copy. The read that settles it is
+the opening one: the next round re-reads the previous round's claims at their destinations, and it owes the
+**measurements** there, not only the carriers' sizes. *Measured 2026-09-17:* a list the record scans was pruned by
+another session between one round's scan and the next; the blocks written after that prune carried the figure the
+scans before it had returned, while each round's own scan — kept in that round's own history — had returned
+the pruned list.
 
 **A mandated verification is read over the artefact the requirement governs — not over the requirement's own
 sentence.** Every verification this workflow mandates is written as a duty plus a predicate (*re-check the PR against
