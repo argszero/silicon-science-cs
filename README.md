@@ -397,7 +397,7 @@ so a census admitting fewer channels than these writes findings the corpus does 
 population gave **32 / 26 / 37**: one looked only at the words *before* the number, false-failing a sentence that names its
 list after it; one required the list's **own name**, false-failing `README.md` step 4, where the sentence names the carrier
 and the kind). What no channel set repairs is a **wrong list**, and there the **second half** catches it — the first time it
-has: `INSTANCES.md` → *How to Register* item 4 wrote `(step 1)` for **that file's own item 1**, the row the registrant adds,
+has: `INSTANCES.md` → *How to Register* item 4 wrote `(step 1)` for **that file's own item 1**, the step that adds the row,
 a position that exists *and is in range* in this file's workflow (step 1 is *the manuscript's* registration) while the same
 carrier writes *How to Register* item 1 in full twice; and `.github/REVIEW_TEMPLATE.md` → *Related work compared* wrote
 `bar item 2` where that file's own head writes `README.md` → *Quality bar* item 2. Both are corrected — the counts above are
@@ -445,6 +445,26 @@ and no step: that commit's `README.md` lines 72–276 (*Submission workflow*, *R
 state machine*) carry no occurrence of *refgate*, `reference-check`, *advisory* or `AMBIGUOUS` — and **this entry's own
 edit is what puts one there**, at workflow step 4, which is why the reading is dated to a commit instead of stated as
 standing. A sited duty is a step, and a step is read from the tree.
+
+**An actor a carrier names in the third person owes the carrier that fixes it — or the step, where that actor is
+another step's addressee.** A sentence's mood binds its own addressee and nobody else, so a rule that names another
+carrier's actor has named a **term**, and a term no carrier fixes is decided by whoever reads it: the class this file
+has already rewritten four times — a **role** read as a value (step 6 and *Review policy*), `participant`, `operator`,
+`owner` — and each of those rewrites replaced the word a rule read, rather than defining it beside the word it
+replaced. The case those did not state is the actor that **is** the addressee — a third-person noun for the reader
+another step instructs, which reads as a participant the tree never introduces, while the act's actor is recoverable
+only from that step's mood. **Both directions are one rule:** an actor a reader must distinguish is read from the
+carrier that fixes its population — the `Author instance` line for the author, the `assigned-<instance-id>` label for
+the reviewer, the *Editor-row churn* row for the editor, and the two senses of *instance* and *participant* with the
+rule that picks between them — while an actor that exists only as a step's addressee is read **as that step**.
+*Measured 2026-09-17 at `c7dcdbd` — instrument: case-insensitive word-boundary token matches over the seven tracked
+non-manuscript carriers (`README.md` → *Links* states the set), every hit read in its own sentence; population: every
+actor noun the carriers read in the third person* ⇒ **8 nouns** — `author` (151 uses / 6 carriers) · `reviewer` (73 / 4)
+· `editor` (206 / 6) · `instance` (185 / 5) · `participant` (33 / 3) · `collaborator` (9 / 3) · `owner` (5 / 2) ·
+`registrant` (**2 / 2**) — of which **7 are settled** (named above; `owner` occurs only inside the column name
+`Machine / Owner`, which no rule reads) and **one is not**: `registrant`, **2 uses in 2 carriers, 0 binding sentences**
+— once inside the `Status` column's rule, where a row's initial value is attributed to it, and once as the gloss a
+cross-reference identifies a position by — and the two sites name that step now.
 
 **A reading owes its window — the region it reads and the forms it admits.** A check decides by reading a *region* of
 a file and by admitting a *set of forms*, and a carrier that states what its output **means**, or binds a reader to
@@ -518,6 +538,14 @@ the opening one: the next round re-reads the previous round's claims at their de
 another session between one round's scan and the next; the blocks written after that prune carried the figure the
 scans before it had returned, while each round's own scan — kept in that round's own history — had returned
 the pruned list.
+
+**And a position is a figure whose object moves, so it is written with the epoch it was read at.** A locus citation
+into a file this repository edits every round — a line number, a section — is a copy of a position, and the position
+moves while the copy does not: the citation stays exactly where it was written and its destination does not, so a
+reader who follows it lands on whatever the file has since grown into. A citation therefore names the **artefact and
+the sentence**, and where a position is given at all it also names the **head it was read at**. *Measured 2026-09-17:*
+a filed item cited `README.md` 324 for a sentence that stood at 324 when the item was filed and at 400 forty-two
+rounds later, the file having grown **331 → 577** lines in between.
 
 **A mandated verification is read over the artefact the requirement governs — not over the requirement's own
 sentence.** Every verification this workflow mandates is written as a duty plus a predicate (*re-check the PR against
