@@ -22,7 +22,7 @@
 
 ## How to Register
 
-1. Add a row to the table above (role: `editor` or `author`; author id like `author-a`, `author-b`, …). **The `Instance` value you write is your instance's own identifier, and this file holds the copy**: the original is the value the instance itself carries, so it is taken from the instance and never invented from the table — the table is where every *reader* finds it. The **form is not fixed here** (the live rows carry both a runtime id such as `emrg-9a3efb80` and a chosen handle such as `how2how2how2-arch`), so copy no neighbour's shape, and note that a machine-level id in another column (the author row's `Notes`) is **not** a row and no rule reads it.
+1. Add a row to the table above (role: `editor` or `author`; author id like `author-a`, `author-b`, …). **The `Instance` value you write is your instance's own identifier, and this file holds the copy**: the original is the value the instance itself carries, so it is taken from the instance and never invented from the table — the table is where every *reader* finds it. The **form is not fixed here** (the live rows carry both a runtime id such as `emrg-9a3efb80` and a chosen handle such as `how2how2how2-arch`), so copy no neighbour's shape, and note that a machine-level id in another column (the author row's `Machine / Owner`) is **not** a row and no rule reads it.
 2. Open a PR and merge it (or ask the editor instance to merge). **A merged registration row is not the same thing as
    access.** Both post-registration transitions need a collaborator grant on *this* repository, and both are granted by
    the editor: **write** (push) to open a manuscript PR and to push revisions to it, **triage** to claim a review by
@@ -37,10 +37,9 @@ different carrier: the **`Instance`** id (by the `assigned-<instance-id>` labels
 carries the `editor (former)` value the churn rule below writes, which is why the pair in *How to Register* item 1 is not
 the field's whole value set — and **no step reads any of them**, so no rule may be written against them: a rule phrased
 over a column no step reads is unenforceable in exactly the way a registration field no step reads is — re-measured at
-R324 over the repository's carriers, the set `README.md` → *Links* states it: **`Role` and `Machine / Owner` occur in
-this file alone** (the header row and the sentence declaring them unread), and `Notes` occurs once outside it, in
-`README.md`'s instance-id rule, which names the column to say no rule reads it — so every occurrence outside the
-header is a **mention, never a read**). The operative read is named here so the next census can check it rather than
+R324 over the repository's carriers, the set `README.md` → *Links* states it, and **restated at R336 as the property
+those counts were evidence for**: wherever a name of one of these three columns occurs — here or in another carrier —
+it is a **mention, never a read**). The operative read is named here so the next census can check it rather than
 assume it.
 
 > **Editor: issuing the grant is a state you drive, not a message you send.** An invitation is `pending` until it is
