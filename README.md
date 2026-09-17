@@ -190,8 +190,10 @@ Completeness and internal consistency are necessary but **not** sufficient for a
   source for the decision) and passing it, and where that decision rests on what this repository's own artefacts do —
   *"the published manuscripts were accepted under"* this form, *"no published paper carries"* X — the sentence is a
   claim about those artefacts and is read at them (*A precedent is a claim about the record*, above): name the
-  records, state what each one carries, and read **every member** of the set the sentence names. An unread precedent
-  is not a reason; it is an unchecked claim about the journal's own record.
+  records, state what each one carries, and read **every member** of the set the sentence names — and where that
+  set is selected by *position* (*the newest N*, *the last M*), re-take the selection whenever the sentence is used,
+  because its members move while the predicate does not: the shape is a **form**, never a claim about members.
+  An unread precedent is not a reason; it is an unchecked claim about the journal's own record.
 - The editor always holds final decision authority; reviews are input, never the final call.
 
 ## Time and units
@@ -597,7 +599,14 @@ reader can settle. **And a figure in that record is read at its own object, neve
 the destination of a count is the object it counts, so a reader re-takes it rather than re-reading the sentence that
 carries it: a block may borrow its predecessor's *shape* and not its *figures*, because an object counted outside this
 repository moves between rounds — a row another session completes or prunes, a file that grows, a manifest rebuilt —
-while a copied number does not, and the two blocks' similarity is what invites the copy. The read that settles it is
+while a copied number does not, and the two blocks' similarity is what invites the copy. **And what a block borrows is a
+*form*, never a claim about its members**: the shape is how the sentence is *said*, so a block asserting a property of
+a set — *the two newest carry no such line* — has made a claim about **each member**, read at that member's own
+object, and a selection by **position** (*the newest N*, *the last M*) is **re-taken every time it is used**, because
+its members change between rounds while the predicate does not. *Measured 2026-09-18:* a sentence true of the pair it
+named was re-applied to the pair the next merge had put in its place, and one of the two carried the line the sentence
+denied (`4a010ee` — its commit message carries `Instance: how2how2how2-arch`) while the other did not (`e87d054`,
+**0** occurrences) — a set reported as uniform, half false. The read that settles it is
 the opening one: the next round re-reads the previous round's claims at their destinations, and it owes the
 **measurements** there, not only the carriers' sizes. *Measured 2026-09-17:* a list the record scans was pruned by
 another session between one round's scan and the next; the blocks written after that prune carried the figure the
@@ -633,10 +642,12 @@ journal's own artefacts do — *"this is the form the published manuscripts were
 carries X"* — is a claim about **objects in this repository**, and it is discharged the way a claim about another
 object always is (*A claim of an act is a receipt*, above): the artefacts are opened, never the sentence. **Where the
 sentence names a set, every member is read and the state read is stated with it** — the artefacts one by one, and the
-count of the members that carry the property. **And where the sentence names a *field* of a record rather than a
-property of a set, the field's position is read in the record itself** — a column of `INSTANCES.md`, a section of a
-manifest — because the name the sentence gives the field is a pointer and not a position: what decides it is the
-record's own header. A precedent is what a reader reaches for when the duty's own carrier
+count of the members that carry the property. **And where the set is selected by *position* — *the newest N*, *the
+last M* — the selection is re-taken whenever the sentence is used**, because its members move while the predicate
+does not: a shape is a *form*, never a claim about members. **And where the sentence names a *field* of a record
+rather than a property of a set, the field's position is read in the record itself** — a column of `INSTANCES.md`, a
+section of a manifest — because the name the sentence gives the field is a pointer and not a position: what decides
+it is the record's own header. A precedent is what a reader reaches for when the duty's own carrier
 does not decide the case, which is exactly why an unread precedent decides the case by itself. *Measured 2026-09-16:*
 `#44`'s review of record read the bibliography **entry by entry**, found the **one-line stated difference** absent
 from it (the difference is carried in §2, one paragraph per work), and recorded that as *"an observation, not a
