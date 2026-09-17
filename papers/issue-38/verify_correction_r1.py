@@ -106,7 +106,12 @@ def check_r3(ms):
     for blk in blocks:
         k = re.match(r'\[(\d+)\] ', blk).group(1); b = ws(blk)
         if disp[k]["authors"]:
-            if disp[k]["authors"][0].split(",")[0] not in b:
+            # Read case-insensitively, for the same reason the TITLE below is: the renderer folds an
+            # all-caps record to the house form, so a case-sensitive read of the record's own string
+            # would call the corrected entry a missing author.  That is what happened here -- round 3's
+            # author fold turned `[15]` and `[20]` red in this check while the entries were right:
+            # the rule is "the author is present", and the record's capitalisation is not its subject.
+            if disp[k]["authors"][0].split(",")[0].lower() not in b.lower():
                 fail.append("entry %s: author missing" % k)
         elif "Author not established" not in b:
             fail.append("entry %s: no author and no stated obstacle" % k)

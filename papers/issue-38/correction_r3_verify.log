@@ -1,0 +1,24 @@
+issue #38 correction round 3 -- verification at /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-38/manuscript.md
+
+R3-a case fold           PASS
+   125 entries: 0 ALL-CAPS author component(s); every author block equals the folded record (2 record(s) state a component in capitals)
+
+R3-b record text         PASS
+   0 escaped character reference(s) over 125 entries (1 record(s) state one; the page renders both forms identically -- measured, see R3-b2)
+
+R3-b2 page               PASS
+   GitHub's own renderer returns "<p>X O'Brien</p>" for the escaped and for the decoded form
+
+R3-c conservation        PASS
+   re-rendering with the case fold removed moves exactly entries ['15', '20'] (both author-only); with the decode removed, exactly ['95']
+
+R3-d the shipped check   PASS
+   `refs_render.py --check` on a copy whose renderer lost the fold: exit 1, names [15] and [20]; on the same copy with the fold: exit 0
+
+R3-e the initial         PASS
+   `SMITH, A. B.` -> 'Smith, A. B.' (the title fold would give 'Smith, a. B.'); a mixed-case component is unchanged
+
+R3-f data liveness       PASS
+   the record read states capitals in 2 record(s) and an escaped reference in 1 record(s), so both rules are exercised
+
+R3: ALL PASS

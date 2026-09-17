@@ -751,7 +751,7 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
     Difference: the assignment game and its core; a cooperative solution concept with no
     attention-limited planner to compare against
 
-[15] GALE, D.; SHAPLEY, L. (1961). College Admissions and the Stability of Marriage.
+[15] Gale, D.; Shapley, L. (1961). College Admissions and the Stability of Marriage.
     10.21236/ad0251958 (report). https://doi.org/10.21236/ad0251958
     Difference: deferred acceptance and stability in two-sided matching; a matching-institution
     result rather than a cost-regret boundary
@@ -776,7 +776,7 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
     Difference: efficiency of bilateral trade with an informed broker; two parties, whereas we
     compare an N-agent market against a single planner
 
-[20] SMITH, R. G. (1988). The Contract Net Protocol: High-Level Communication and Control in a
+[20] Smith, R. G. (1988). The Contract Net Protocol: High-Level Communication and Control in a
     Distributed Problem Solver. Readings in Distributed Artificial Intelligence.
     https://doi.org/10.1016/b978-0-934613-63-7.50039-5
     Difference: the contract-net protocol, a decentralised announce-bid-award scheme and a direct
@@ -1178,7 +1178,7 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
     Difference: a behavioural study of dashboard mechanisms; asks how humans behave in a mechanism,
     not how much noise a market tolerates
 
-[95] Li, Z.; Zhang, H.; O&#39;Brien, L.; et al. (2017). Spot Pricing in the Cloud Ecosystem: A
+[95] Li, Z.; Zhang, H.; O'Brien, L.; et al. (2017). Spot Pricing in the Cloud Ecosystem: A
     Comparative Investigation. arXiv preprint arXiv:1708.01401. https://arxiv.org/abs/1708.01401
     Difference: compares spot pricing in cloud ecosystems; a survey of offerings rather than a
     controlled comparison of allocators
