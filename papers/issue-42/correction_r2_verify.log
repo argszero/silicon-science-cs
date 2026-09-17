@@ -1,5 +1,5 @@
 taken on: build Python 3.13.9 / numpy 2.5.1   |   named build Python 3.13.9 / numpy 2.5.1 (the named build)
-taken in: a plain directory at head b2b8955976bf (declared by the run; no .git to derive it from); journal gate (.github/tools/refgate.py): present
+taken in: a plain directory at head eae7ede6c5f4 (declared by the run; no .git to derive it from); journal gate (.github/tools/refgate.py): present
 issue #42 correction round 2 -- the build coordinate, four required changes, each two-sided
 
 R2-1  the record names the build, its band and the head the pair was measured at PASS  -- Python 3.13.9 / numpy 2.5.1 in the block=True ; band numeric=True ; evidence names a head=True
@@ -23,7 +23,7 @@ R2-5  the comparison attributes a cross-build difference (10 planted arms) PASS 
 R2-6a identical artefacts are identical on ANY machine (the comparator's logic) PASS  -- a fixture copied from the committed artefacts: exit=0, and the verdict says so=True
 R2-6b the package on THIS machine reaches the outcome its own coordinate warrants PASS  -- the four instruments ran under this machine's interpreter and the comparator was told THIS machine's pair, never the named one -- so this check cannot report the machine's arithmetic as a failure of the package
 observed: R2-6b on this machine (Python 3.13.9 / numpy 2.5.1): instruments ran=all, comparator exit=0, the named build: exactness is required, and the four artefacts are identical
-R2-7  the log comparison is itself two-sided (a real difference vs a declared one) PASS  -- a planted verdict change is caught=True ; a changed coordinate line is declared=True ; an inserted NOT TAKEN reading is not a disagreement=True
+R2-7  the log comparison is itself two-sided (a real difference vs a declared one) PASS  -- a planted verdict change is caught=True ; one changed coordinate line is declared (counted once)=True ; an inserted reading reported as not taken is not a disagreement=True
 
 CORRECTION R2: ALL PASS (10/10)
    every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass
