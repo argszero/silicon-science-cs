@@ -174,6 +174,11 @@ def compare(committed_text, fresh_text):
             i += 1
             j += 1
             continue
+        if x is not None and y is not None and is_declared(x) and is_declared(y):
+            declared += 1               # one declared line that differs on both sides, counted once
+            i += 1
+            j += 1
+            continue
         if x is not None and is_declared(x):
             declared += 1
             i += 1

@@ -455,8 +455,11 @@ def run_checks():
                            " / numpy 9.9.9 (DIFFERENT)") if l.startswith("taken on:") else l
                           for l in committed_log.split("\n")]
                 ok2, declared2, _nt2, _m2 = EL.compare(committed_log, "\n".join(lines2))
-                arm_coord = ok2 and declared2 >= 2
-                # (c) a reading not taken inserted where the committed log records one: not taken
+                # ONE changed coordinate line is one declared line. (This arm read `>= 2` while the
+                # comparison counted a both-sides declared line twice -- the control was pinned to the
+                # defect it was meant to detect, and it is the reason the count is asserted, not just ok.)
+                arm_coord = ok2 and declared2 == 1
+                # (c) a reading reported as not taken, inserted where the committed log records one
                 lines3 = []
                 for l in committed_log.split("\n"):
                     if l.startswith("CORRECTION R2:"):
@@ -468,8 +471,9 @@ def run_checks():
                 arm_skip = ok3 and d3 >= 1
             check("R2-7", "the log comparison is itself two-sided (a real difference vs a declared one)",
                   arm_real is False and arm_coord and arm_skip,
-                  "a planted verdict change is caught=%s ; a changed coordinate line is declared=%s ;"
-                  " an inserted NOT TAKEN reading is not a disagreement=%s"
+                  "a planted verdict change is caught=%s ; one changed coordinate line is declared"
+                  " (counted once)=%s ; an inserted reading reported as not taken is not a"
+                  " disagreement=%s"
                   % (arm_real is False, bool(arm_coord), bool(arm_skip)))
             if not is_named:
                 not_taken("R2-6 the named build's exactness",

@@ -54,7 +54,7 @@ trap 'rm -rf "$BUILD"' EXIT
 
 # The revision, DECLARED: this may be a plain directory (an export carries no .git), and a reading
 # should say which version of the package it was taken on.
-HEAD="$(git rev-parse HEAD 2>/dev/null || echo 'not declared (no .git in this tree)')"
+HEAD="$(git rev-parse HEAD 2>/dev/null || true)"
 
 echo
 echo "== 0. build coordinate =="
