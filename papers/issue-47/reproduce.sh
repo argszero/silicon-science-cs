@@ -94,12 +94,20 @@ if [ -f "$GATE" ]; then
   if [ "$rc7" -eq 0 ] && [ "$rc7b" -eq 0 ] && [ "$rc7c" -eq 0 ]; then rc7=0; else rc7=1; fi
 else
   # A fact about the tree, not a defect of the package: the gate lives in the journal.  The report
-  # states it in those terms, and `gate_read_v1.py` checks that statement.
+  # states it in those terms, and `gate_read_v1.py` checks that statement -- so the branch below is a
+  # READING of the report, not a waiver of the step.  Until correction round 2 this branch could
+  # never pass: the report did not carry the sentence `gate_read_v1.py`'s absent path requires, so
+  # the check exited 1 and this step read FAILED in the very tree the branch was written for.  The
+  # liveness control runs here too: its cases about a copy are SKIPped with a reason where there is
+  # no copy, and the case about the absent statement is derivable in both trees.
   "$PY" gate_read_v1.py --check
-  rc7=$?
+  rc7a=$?
+  "$PY" gate_read_v1.py --selftest
+  rc7b=$?
+  if [ "$rc7a" -eq 0 ] && [ "$rc7b" -eq 0 ]; then rc7=0; else rc7=1; fi
   printf '  journal reference gate: NOT RUN -- %s is not in this tree (a package read as a\n' "$GATE"
-  printf '  path-limited export carries no .github/); the report states this, and the copies that were\n'
-  printf '  read, with their identities, in reference-check.md\n'
+  printf '  path-limited export carries no .github/); the report states this fact and names the copies\n'
+  printf '  that were read, with their identities, in reference-check.md\n'
 fi
 verdict "journal reference gate" "$rc7"
 

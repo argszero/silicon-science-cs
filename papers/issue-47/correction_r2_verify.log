@@ -1,0 +1,16 @@
+issue #47 correction round 2 -- the absent-tree branch, read in the trees it names
+  package: /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-47
+
+R2-1 report states it    PASS
+   the report states the absent-tree fact: 2 occurrence(s) of 'not in this tree', and it names the copy reading as a copy of another tree
+
+R2-2 absent reader tree  PASS
+   no `.github/`: --check exit 0, battery exit 0, reproduce.sh exit 0, step 7 reads 'journal reference gate: OK'
+
+R2-3 present reader tree PASS
+   this tree carries the gate (479 lines): --check exit 0, battery exit 0
+
+R2-2 control             PASS
+   control caught: without the sentence the check exits 1 (47-r2ctl-orqo7co1/.github/tools/refgate.py); the report does NOT state that fact)
+
+R2: ALL PASS

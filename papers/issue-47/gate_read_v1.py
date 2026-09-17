@@ -123,16 +123,31 @@ def check(text, ident):
 CHECKS = ["gate_read/copy_is_named_and_quoted"]
 
 # One planted defect per case, each DERIVED from the copy in this tree: a pinned anchor turns a
-# legitimate change of copy into a red battery (the defect R354 recorded).
+# legitimate change of copy into a red battery (the defect R354 recorded).  The five cases fall in
+# two groups, and each group is derivable in the tree it belongs to:
+#
+#   * four about the copy THIS tree carries  -- derivable only where there is a copy to read;
+#   * one about the ABSENT-tree statement      -- derivable in BOTH trees, because the report states
+#     that fact unconditionally (correction round 2, 2026-09-17).  Before that case existed, a
+#     path-limited export could not run this battery at all: `plant` returned None for every kind.
 MUTATIONS = [
     (CHECKS[0], "sha"),
     (CHECKS[0], "cases"),
     (CHECKS[0], "output"),
     (CHECKS[0], "revision"),
+    (CHECKS[0], "absent"),
 ]
+
+# Which tree each case belongs to.  A case that belongs to the OTHER tree is SKIPped with a reason
+# rather than failed: the copy cases read a file this tree does not have, and the absent case reads a
+# path this tree does not take.  Every case that belongs to the tree at hand must be caught -- a
+# battery that skipped everything would be caught by the counts below.
+COPY_CASES = ("sha", "cases", "output", "revision")
 
 
 def plant(kind, text, ident):
+    if ident is None and kind != "absent":
+        raise AssertionError("case %r needs a copy, and this tree carries none" % kind)
     if kind == "sha":
         other = ("0" if ident["sha12"][-1] != "0" else "1")
         return text.replace(ident["sha12"], ident["sha12"][:-1] + other)
@@ -149,6 +164,15 @@ def plant(kind, text, ident):
         if not foreign:
             return None
         return text.replace(foreign[0], foreign[0].replace(", read at ", ", revision "))
+    if kind == "absent":
+        # The statement the absent-tree branch of `check()` requires, moved to a near-miss: the
+        # paragraph stays about a tree without `.github/` and stops carrying the string the branch
+        # reads.  EVERY occurrence goes -- the statement carries the anchor twice, and a planter that
+        # replaced only the first left the read satisfied (measured: the case read "NOT caught" the
+        # first time it ran, because the second occurrence still answered the branch's test).
+        if ABSENT_ANCHOR not in text:
+            return None
+        return text.replace(ABSENT_ANCHOR, "absent from this export")
     raise AssertionError(kind)
 
 
@@ -180,8 +204,23 @@ def selftest():
     ok, detail = check(text, ident)
     print("%-6s %-56s %s" % ("PASS" if ok else "FAIL", "control/unmodified_report", detail[:90]))
     bad = 0 if ok else 1
+    skipped = 0
     for name, kind in MUTATIONS:
-        planted = plant(kind, text, ident) if ident else None
+        # A case about the copy this tree carries cannot be derived where there IS no copy -- and
+        # that is a property of the tree, not a defect of the package.  It is reported as SKIP WITH A
+        # REASON rather than as a failure (the branch that reads the absent tree is what carries the
+        # verdict there), and the case that IS derivable in both trees -- the absent statement -- is
+        # what keeps this battery alive in an export that carries no `.github/`.
+        if ident is None and kind in COPY_CASES:
+            print("SKIP   %-56s no copy in this tree to derive the case from" % ("%s [%s]" % (name, kind)))
+            skipped += 1
+            continue
+        if ident is not None and kind not in COPY_CASES:
+            print("SKIP   %-56s this tree carries a copy, so the absent-tree paragraph is not the "
+                  "read taken here" % ("%s [%s]" % (name, kind)))
+            skipped += 1
+            continue
+        planted = plant(kind, text, ident)
         if planted is None:
             print("FAIL   %-56s the case could not be derived from this tree" % name)
             bad += 1
@@ -195,7 +234,15 @@ def selftest():
         print("%-6s %-56s %s" % ("PASS" if good else "FAIL", "%s [%s]" % (name, kind),
                                  ("caught: " + was_detail[:56]) if good else "NOT caught"))
         bad += 0 if good else 1
-    print("selftest: %d case(s), %d failure(s) over 1 check" % (len(MUTATIONS) + 1, bad))
+    derived = len(MUTATIONS) - skipped
+    print("selftest: %d case(s), %d failure(s) over 1 check -- %d derived in this tree, %d SKIPped%s"
+          % (len(MUTATIONS) + 1, bad, derived, skipped,
+             " (no copy in this tree)" if ident is None else ""))
+    if derived == 0:
+        # A battery in which every case was skipped is not a battery: it would print `0 failure(s)`
+        # and pass while reading nothing, which is the shape this file exists to catch.
+        print("FAIL   no case could be derived in this tree: the battery read nothing")
+        bad += 1
     return 1 if bad else 0
 
 
