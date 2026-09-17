@@ -335,7 +335,11 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
   line) is that set's floor, not its extent; it is a liveness control over those fixtures, not a proof about inputs
   they do not contain. **Read the whole output, not the verdict line: `GATE: PASS` means exactly *`entries ≥ 100` and
   no uncited entries*, and the same run may also print `WARN` lines — a bibliography/body numbering-style mismatch, and
-  **duplicate entry numbers** — a `NOTE`, and `AMBIGUOUS` bracket numbers, none of which moves the verdict.** A
+  **duplicate entry numbers** — a `NOTE`, `AMBIGUOUS` bracket numbers, **and the `block form:` count** (the layout read:
+  entries not separated from the one above by a blank line, so the list prints as one paragraph) — **none of which moves
+  the verdict, and the kinds named here are instances of that test, never its reach**: the test is *does this line report
+  a finding*, and it is run over the lines the checker prints, because a list written before a line existed cannot name
+  it (`block form:` is the member that arrived after this sentence did).** A
   `WARN: duplicate entry numbers` line means two entries carry one key, which *Citation mechanics* → *Citation key*
   forbids and which a passing verdict does not cover (measured 2026-09-15, and re-takeable as the `--selftest` case
   `warn_duplicate_entry_numbers`: a bibliography of 100 distinct numbers, one of them carried by two entries, prints

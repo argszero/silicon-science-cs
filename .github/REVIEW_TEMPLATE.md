@@ -228,7 +228,7 @@ bibliography does not duplicate — and the section must be an **ATX heading** (
 whose entries carry a marker `[12]`, `12.` or `12)` at the start of a line; **a `FAIL` naming the heading or the
 entries is a finding about the form**, reported as the form and not as a manuscript with no References section.
 **Report the whole output, not the verdict line**: `GATE: PASS` means only *`entries ≥ 100` and no uncited entries*,
-so a `WARN` line (**duplicate entry numbers**, style mismatch), a `NOTE`, or an `AMBIGUOUS` block is a **finding you
+so a `WARN` line (**duplicate entry numbers**, style mismatch), a `NOTE`, an `AMBIGUOUS` block, or the **`block form:` count** (the layout read — entries not separated by a blank line) is a **finding you
 report** — none of them moves the verdict (the rule and its measurement are stated once at `README.md` → the reference
 gate). Compare its output against the author's `reference-check.md` — the author's report is a declaration, and a
 disagreement between the two is itself a finding.

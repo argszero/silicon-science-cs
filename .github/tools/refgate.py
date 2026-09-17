@@ -36,7 +36,15 @@ CommonMark renderer (GitHub's preview included), so a list with none separated
 prints as a single block whose entry boundaries are invisible to a reader. That
 count is printed as the advisory `block form:` line; it is the instrument the
 rendering requirement in quality-bar item 11 is read by, and like every advisory
-line here it does not move the verdict.
+line here it does not move the verdict. **It differs from the other advisory lines
+in one respect, and the difference is what this paragraph is here to state: it is
+a COUNT and it is printed in every run, `0 of them not separated` included** — a
+verdict's name never clears it and no absence of it can be read as a pass. So it
+cannot be a member of a "must not appear" list of markers (`--selftest`'s CLEAN
+tuple, which names the marker strings alone) and it is asserted beside that tuple
+as the layout read's **clean form**; a fixture whose entries are not separated
+fails the control with the missing line named, which is what keeps the control's
+set as wide as the lines this checker prints.
 
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
@@ -225,17 +233,20 @@ def report(path):
 # instead of re-deriving the rule, so the two cannot drift apart.
 # --------------------------------------------------------------------------
 
-def _make(n_entries, cite_upto, style='[]', first_section_hi=0):
+def _make(n_entries, cite_upto, style='[]', first_section_hi=0, separated=True):
     body = "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, cite_upto + 1)) + "\n\n"
 
     def section(lo, hi, sty):
-        out = ["## References", ""]
+        entries = []
         for i in range(lo, hi + 1):
             if sty == '[]':
-                out.append(f"[{i}] Author {i}, Title {i}, arXiv:2500.{i:05d}, 2026.")
+                entries.append(f"[{i}] Author {i}, Title {i}, arXiv:2500.{i:05d}, 2026.")
             else:
-                out.append(f"{i}. Author {i}, Title {i}, arXiv:2500.{i:05d}, 2026.")
-        return "\n".join(out) + "\n\n"
+                entries.append(f"{i}. Author {i}, Title {i}, arXiv:2500.{i:05d}, 2026.")
+        # A fixture is a bibliography in the house form unless a case wants the
+        # collapsed one on purpose: entries on their own lines, separated by a
+        # blank line, which is what the layout read below counts.
+        return "## References\n\n" + ("\n\n" if separated else "\n").join(entries) + "\n\n"
 
     txt = body
     if first_section_hi:
@@ -244,10 +255,11 @@ def _make(n_entries, cite_upto, style='[]', first_section_hi=0):
     return txt
 
 
-def _refs(lo, hi, style='[]'):
-    return "## References\n\n" + "".join(
-        (f"[{i}] A{i}. arXiv:2500.{i:05d}.\n" if style == '[]' else f"{i}. A{i}. arXiv:2500.{i:05d}.\n")
-        for i in range(lo, hi + 1))
+def _refs(lo, hi, style='[]', separated=True):
+    sep = "\n\n" if separated else "\n"
+    return "## References\n\n" + sep.join(
+        (f"[{i}] A{i}. arXiv:2500.{i:05d}." if style == '[]' else f"{i}. A{i}. arXiv:2500.{i:05d}.")
+        for i in range(lo, hi + 1)) + "\n"
 
 
 def selftest():
@@ -264,8 +276,15 @@ def selftest():
     def case(name, text, appear=(), forbid=(), expect_pass=True):
         cases.append((name, text, list(appear), list(forbid), expect_pass))
 
-    # a clean run prints none of these
+    # A clean run prints none of these — the marker strings, which is the form a
+    # "must not appear" list can hold. It is NOT the whole advisory set: the
+    # layout read prints a COUNT and prints it in every run (`0 of them not
+    # separated` included), so no member of this tuple can carry it. Its clean
+    # form is asserted by name, for every case that asserts this tuple — a
+    # fixture that asserts CLEAN and whose entries are not separated fails, with
+    # the missing line stated.
     CLEAN = ("WARN", "NOTE", "AMBIGUOUS", "uncited entries")
+    LAYOUT_CLEAN = re.compile(r"block form: \d+ entries, 0 of them not separated")
 
     # --- the verdict line, over the input forms the matchers admit ---------
     # every run prints the window it read: the reading names its object
@@ -274,15 +293,15 @@ def selftest():
     case("wrapped_marker_ends_line",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"[{i}]\nAuthor {i}, Title {i}.\n" for i in range(1, 101)),
+         + "".join(f"[{i}]\nAuthor {i}, Title {i}.\n\n" for i in range(1, 101)),
          ["GATE: PASS", "entries=100"], CLEAN)
     case("numbered_heading", _make(100, 100).replace("## References", "## 7 References"),
          ["GATE: PASS", "entries=100"], CLEAN)
     case("mixed_numbering",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 121))
          + "\n\n## References\n\n"
-         + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 61))
-         + "".join(f"{i}. A{i}. arXiv:2500.{i:05d}.\n" for i in range(61, 121)),
+         + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 61))
+         + "".join(f"{i}. A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(61, 121)),
          ["GATE: PASS", "numbering=.+[]"], CLEAN)
     case("fail_uncited_padding", _make(120, 110),
          ["GATE: FAIL", "uncited entries (10)"], ("WARN", "NOTE", "AMBIGUOUS"),
@@ -360,7 +379,7 @@ def selftest():
     # is an advisory and the count and the coverage are still met
     case("block_form_collapsed",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
-         + "\n\n" + _refs(1, 100),
+         + "\n\n" + _refs(1, 100, separated=False),
          ["GATE: PASS", "entries=100",
           "block form: 100 entries, 99 of them not separated"],
          CLEAN)
@@ -391,7 +410,7 @@ def selftest():
     case("indented_entry_marker",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"  [{i}] A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 101)),
+         + "".join(f"  [{i}] A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
          ["GATE: PASS", "entries=100"], CLEAN)
     case("en_dash_range_marker",
          "## Introduction\n\nsee [1\u201397] and [98, 99, 100]\n\n" + _refs(1, 100),
@@ -426,6 +445,14 @@ def selftest():
                 verdict = report(path)
             printed = buf.getvalue()
             missing = [s for s in appear if s not in printed]
+            # ...and the layout read's clean form is asserted for every case that
+            # asserts CLEAN — except the one case whose subject IS the layout
+            # line, which pins the count in `appear` instead (the same assertion
+            # read from the other side).
+            if (tuple(forbid) == CLEAN
+                    and not any(s.startswith("block form:") for s in appear)
+                    and not LAYOUT_CLEAN.search(printed)):
+                missing.append("<block form: T entries, 0 of them not separated>")
             spurious = [s for s in forbid if s in printed]
             ok = verdict == expect_pass and not missing and not spurious
             print(f"  [{'ok' if ok else 'FAIL'}] {name}: "
