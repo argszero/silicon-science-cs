@@ -91,9 +91,12 @@ already argues for it, and each applied here to a simulation rather than to a de
   that a repeated measurement can misread its own remit [@shepperd] [@santoscomparing]
   [@penzenstadler] [@liureproducibility], and the same field argues that reproducibility and
   benchmarking practice need explicit machinery rather than good intentions [@fundcurriculum]
-  [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives
-  and a liveness control requires each recomputation — and the cross-check that audits it —
-  to be able to fail (below).
+  [@gengptopno], which is why every stage of this package recomputes its numbers from the primitives,
+  and why the liveness control is bounded rather than total: it requires each of its **12 named
+  cases** to be able to fail — a case that corrupts a **primitive** must move the recomputed value, a
+  case that corrupts a **recorded field** must be caught by the **cross-check** alone — with the
+  remainder of the `{{S:n_facts}}` facts carried by that same cross-check (§6.2 measures the bound;
+  this sentence is read against the runner's own case list by `manuscript_check_v1.py`).
 
 **Specific difference.** That literature studies replications of *published* systems and analyses,
 usually in software engineering; this paper applies the same disciplines to a measurement instrument

@@ -131,21 +131,34 @@ def ck_steps(texts, c):
 
 
 def ck_liveness(texts, c):
-    """The sentence's bound must be the runner's own case list, and both mechanisms must be named."""
+    """EVERY statement of this bound must be the runner's own case list, and its mechanisms named.
+
+    Written over one sentence until correction round 1 of issue #47 (2026-09-17): section 6.1 said the
+    control "requires each recomputation -- and the cross-check that audits it -- to be able to fail",
+    which reads as EVERY recomputation while the control is taken over **12 named cases**, with the
+    remainder of the facts carried by the cross-check alone.  The editor's required change 3 bounded
+    that sentence, and its own question (Q2 of the review of record) was whether this check reads the
+    clause at all: it read the statement in 6.2 and never the one in 6.1, so a second statement of the
+    same bound could have said anything.  A `findall` is the repair -- the claim is one claim, and it
+    is bound wherever the manuscript makes it, not at the first sentence that happens to carry it.
+    """
     m = manuscript(texts)
-    hit = re.search(r"corrupts the input of each of its \*\*(\d+)\s*\n?named cases\*\*", m)
-    if not hit:
-        return False, "the liveness sentence's bound is not in the manuscript parts"
+    hits = list(re.finditer(r"\*\*(\d+)\s*\n?named\s*\n?cases\*\*", m))
+    if not hits:
+        return False, "no statement of the liveness bound is in the manuscript parts"
     want = _liveness_cases(texts)
     if want == 0:
         return False, "the runner's case list could not be read: nothing to compare against"
-    if int(hit.group(1)) != want:
-        return False, "manuscript says %s named cases; the runner's list holds %d" % (hit.group(1), want)
-    body = m[hit.start():hit.start() + 900]
+    wrong = [(h.start(), h.group(1)) for h in hits if int(h.group(1)) != want]
+    if wrong:
+        return False, ("%d of %d statement(s) of the bound disagree with the runner's list of %d: %s"
+                       % (len(wrong), len(hits), want, wrong))
+    body = m[hits[0].start():hits[0].start() + 900]
     missing = [w for w in ("primitive", "recorded field", "cross-check") if w not in body]
     if missing:
         return False, "the bound's mechanisms are unstated: %s" % missing
-    return True, "%d named case(s), both mechanisms named (the runner's own case list)" % want
+    return True, ("%d statement(s) of the bound, all = the runner's own %d case(s), both mechanisms "
+                  "named" % (len(hits), want))
 
 
 def ck_freeze(texts, c):

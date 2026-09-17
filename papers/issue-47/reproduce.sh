@@ -30,7 +30,9 @@
 #  10. the MANUSCRIPT's own typed numbers, section references and roadmap, each read against the
 #      artefact that owns it -- the carrier the README check did not reach, and the one whose drift
 #      reached review twice; a mutation per claim is its liveness control;
-#  11. the sha256 of every artefact this package ships, printed as a block to copy.
+#  11. the FIGURES, each regenerated from the artefacts and compared byte for byte, with its own
+#      liveness control;
+#  12. the sha256 of every artefact this package ships, printed as a block to copy.
 #
 # Exit status carries the verdict: 0 only when every step passes.  No network, CPU only.
 set -u

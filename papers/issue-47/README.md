@@ -61,8 +61,10 @@ Step 12 prints the sha256 of every artefact the package ships, as a block to cop
 in a report is read off that output, never typed.** Step 7 runs the journal's own reference gate
 (`.github/tools/refgate.py`) on the assembled manuscript, resolved relative to **this directory**. The
 copy that resolves is a property of the reader's tree and not of the path — this branch never touches
-`.github/`, so an archive of it carries the base's copy, whose run prints no `window:` line and whose
-`--selftest` holds fewer cases than the journal `main` copy's, both copies returning the same verdict
+`.github/`, so an archive of it carries its base's copy, and the copies differ in ways a reader would
+otherwise read as the author's omissions: the published head's copy (`d9e7356`) is 253 lines, prints no
+`window:` line and self-tests 8 of 8 cases, while the copy at this correction's base is the journal's
+own, 479 lines, self-testing 28 of 28 and printing the window line -- both returning the same verdict
 here. So step 7 prints the copy it is about to run and `gate_read_v1.py` reads
 `reference-check.md` against the copy this tree actually holds, requiring its identity and its verbatim
 output; `reference-check.md` states each copy's reading with that copy's own identity, and marks a copy
@@ -272,7 +274,7 @@ limit is measured and reported per profile, not hidden.
 | `external_cell_mutation_v1.py` | the cell's check-liveness control (13 mutations) |
 | `freeze_check_v1.py` | the design-freeze document against the artefacts (57 checks, the F0b amendment included) |
 | `manuscript_check_v1.py` | the manuscript's typed numbers, section references and roadmap against the artefacts that own them (11 checks, 12 mutations) |
-| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (15 checks, 16 mutations) |
+| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (16 checks, 17 mutations) |
 | `gate_read_v1.py` | the copy of the journal's reference gate this tree carries, against `reference-check.md`'s own statement of it (1 check, 4 mutations) |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |

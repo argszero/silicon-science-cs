@@ -305,6 +305,13 @@ STEP_POINTERS = (
     ("Step %d runs the journal's own reference gate", "the journal reference gate"),
     ("offline, step %d above", "the support limb"),
     ("(step %d, offline)", "the flip bound"),
+    # The two the list did not carry until the #47 correction round: the read stated its rule over a
+    # CLASS ("4 pointer(s)") while the README made six, so the two it did not type were green by not
+    # being read -- this package's own recurring defect, named by the review of record as an
+    # observation.  Both point at a step whose banner carries their subject, so the extension adds
+    # coverage and moves no verdict.
+    ("So step %d prints the copy it is about to run", "the journal reference gate"),
+    ("(offline, step %d)", "the support limb"),
 )
 
 
@@ -343,6 +350,27 @@ def ck_step_pointers(t, c):
         len(seen), "; ".join(seen))
 
 
+def ck_step_header(texts, c):
+    """`reproduce.sh`'s own header list must enumerate the steps its own banners print.
+
+    The header is a carrier whose self-description disagreed with its content until the #47 correction
+    round: it listed steps 1..11 while the script printed **12** banners -- the figures step was in the
+    script and not in the list -- so a reader who trusted the header would not know the figures were
+    checked at all.  The review of record recorded it as an observation rather than a required change
+    ("a carrier whose self-description disagrees with its content"), and an observation fixed without a
+    reader is the defect class this file exists for, so the list is bound to the banners here.
+    """
+    src = texts["reproduce.sh"]
+    cut = src.index("set -u") if "set -u" in src else len(src)
+    items = re.findall(r"(?m)^#\s+(\d+)\. ", src[:cut])
+    printed = re.findall(r"(?m)^printf '\\n== (\d+)\. ", src)
+    if not printed:
+        return False, "reproduce.sh prints no step banner: nothing to bind the header against"
+    want = [str(i) for i in range(1, len(printed) + 1)]
+    return (items == want, "header lists %d item(s) %s | banners print %d step(s)"
+            % (len(items), items if items == want else "%s != %s" % (items, want), len(printed)))
+
+
 CHECKS = [
     ("readme/facts_recomputed_is_the_artefact's_own_count", ck_facts),
     ("readme/criterion_states_are_their_recorded_states", ck_states),
@@ -359,6 +387,7 @@ CHECKS = [
     ("readme/step_pointers_name_the_step_their_subject_belongs_to", ck_step_pointers),
     ("reproduce_sh/freeze_check_count_is_the_freeze_result's", ck_repro_freeze),
     ("reproduce_sh/stage_count_is_the_runner's_stage_list", ck_repro_stages),
+    ("reproduce_sh/step_header_enumerates_its_own_banners", ck_step_header),
 ]
 
 # (check name, file, the figure to break, what to replace it with).  Breaking a figure must fail its
@@ -449,6 +478,10 @@ MUTATIONS = [
      "Step 11 prints the sha256 of every artefact"),
     ("readme/step_pointers_name_the_step_their_subject_belongs_to",
      "README.md", "(step 8, offline)", "(step 7, offline)"),
+    # Moves the header's LAST number to one the banners do not print: the case breaks the LIST, not a
+    # step -- the header is a claim about the enumeration, and dropping an item is how it went wrong.
+    ("reproduce_sh/step_header_enumerates_its_own_banners",
+     "reproduce.sh", "#  12. the sha256 of every artefact", "#  13. the sha256 of every artefact"),
 ]
 
 
