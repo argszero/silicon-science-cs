@@ -1,0 +1,1843 @@
+{
+ "a2c2024": {
+  "authors": [
+   "Tariq, S.",
+   "Chhetri, M. B.",
+   "Nepal, S.",
+   "Paris, C."
+  ],
+  "difference": "composes decision stages for accuracy; we show that the composition, not the summary statistic, decides whether an added stage pays.",
+  "key": "a2c2024",
+  "n": 32,
+  "title": "A2C: A Modular Multi-stage Collaborative Decision Framework for Human-AI Teams",
+  "url": "https://arxiv.org/abs/2401.14432",
+  "venue": "arXiv preprint arXiv:2401.14432",
+  "year": "2024"
+ },
+ "abstainfair2023": {
+  "authors": [
+   "Yin, T.",
+   "Ton, J. F.",
+   "Guo, R.",
+   "Yao, Y.",
+   "Liu, M.",
+   "Liu, Y."
+  ],
+  "difference": "makes abstaining classifiers fair; fairness is orthogonal to the composition question this paper isolates.",
+  "key": "abstainfair2023",
+  "n": 45,
+  "title": "Fair Classifiers that Abstain without Harm",
+  "url": "https://arxiv.org/abs/2310.06205",
+  "venue": "arXiv preprint arXiv:2310.06205",
+  "year": "2023"
+ },
+ "abstainrank2025": {
+  "authors": [
+   "Ferrara, A.",
+   "Pugnana, A.",
+   "Bonchi, F.",
+   "Ruggieri, S."
+  ],
+  "difference": "places bounded abstention inside a pairwise ranker; the added layer's marginal catch is the quantity we measure.",
+  "key": "abstainrank2025",
+  "n": 36,
+  "title": "Bounded-Abstention Pairwise Learning to Rank",
+  "url": "https://arxiv.org/abs/2505.23437",
+  "venue": "arXiv preprint arXiv:2505.23437",
+  "year": "2025"
+ },
+ "aniso2026": {
+  "authors": [
+   "Islam, M. S.",
+   "Bappy, M. M.",
+   "Tushar, S. R.",
+   "Arifuzzaman, M."
+  ],
+  "difference": "trades privacy against utility in a local differential-privacy mechanism; a different trade-off with the same structure of one layer added to another.",
+  "key": "aniso2026",
+  "n": 114,
+  "title": "Feature-Aware Anisotropic Local Differential Privacy for Utility-Preserving Graph Representation Learning in Metal Additive Manufacturing",
+  "url": "https://arxiv.org/abs/2604.05077",
+  "venue": "arXiv preprint arXiv:2604.05077",
+  "year": "2026"
+ },
+ "ask2025": {
+  "authors": [
+   "Pugnana, A.",
+   "De Toni, G.",
+   "Barbera, C.",
+   "Pellungrini, R.",
+   "Lepri, B.",
+   "Passerini, A."
+  ],
+  "difference": "decides when to require human feedback; asking is our added layer, and we measure the marginal catch it earns.",
+  "key": "ask2025",
+  "n": 40,
+  "title": "To Ask or Not to Ask: Learning to Require Human Feedback",
+  "url": "https://arxiv.org/abs/2510.08314",
+  "venue": "arXiv preprint arXiv:2510.08314",
+  "year": "2025"
+ },
+ "avizienis1985nversion": {
+  "authors": [
+   "Avizienis, A."
+  ],
+  "difference": "builds independent implementations for fault tolerance; we ask when the Nth version repays its capacity.",
+  "key": "avizienis1985nversion",
+  "n": 97,
+  "title": "The N-Version Approach to Fault-Tolerant Software",
+  "url": "https://doi.org/10.1109/tse.1985.231893",
+  "venue": "IEEE Transactions on Software Engineering",
+  "year": "1985"
+ },
+ "bacchelli2013codereview": {
+  "authors": [
+   "Bacchelli, A.",
+   "Bird, C."
+  ],
+  "difference": "studies what code review expects and what it finds; we treat review as a layer and ask when a second check pays.",
+  "key": "bacchelli2013codereview",
+  "n": 1,
+  "title": "Expectations, outcomes, and challenges of modern code review",
+  "url": "https://doi.org/10.1109/ICSE.2013.6606617",
+  "venue": "2013 35th International Conference on Software Engineering (ICSE)",
+  "year": "2013"
+ },
+ "bai2022constitutional": {
+  "authors": [
+   "Bai, Y.",
+   "Kadavath, S.",
+   "Kundu, S.",
+   "Askell, A.",
+   "Kernion, J.",
+   "Jones, A.",
+   "Chen, A.",
+   "Goldie, A.",
+   "Mirhoseini, A.",
+   "McKinnon, C.",
+   "Chen, C.",
+   "Olsson, C.",
+   "Olah, C.",
+   "Hernandez, D.",
+   "Drain, D.",
+   "Ganguli, D.",
+   "Li, D.",
+   "Tran-Johnson, E.",
+   "Perez, E.",
+   "Kerr, J.",
+   "Mueller, J.",
+   "Ladish, J.",
+   "Landau, J.",
+   "Ndousse, K.",
+   "Lukosuite, K.",
+   "Lovitt, L.",
+   "Sellitto, M.",
+   "Elhage, N.",
+   "Schiefer, N.",
+   "Mercado, N.",
+   "DasSarma, N.",
+   "Lasenby, R.",
+   "Larson, R.",
+   "Ringer, S.",
+   "Johnston, S.",
+   "Kravec, S.",
+   "Showk, S. E.",
+   "Fort, S.",
+   "Lanham, T.",
+   "Telleen-Lawton, T.",
+   "Conerly, T.",
+   "Henighan, T.",
+   "Hume, T.",
+   "Bowman, S. R.",
+   "Hatfield-Dodds, Z.",
+   "Mann, B.",
+   "Amodei, D.",
+   "Joseph, N.",
+   "McCandlish, S.",
+   "Brown, T.",
+   "Kaplan, J."
+  ],
+  "difference": "uses AI feedback to steer a model towards harmlessness; the feedback layer's value against the base model is what we quantify.",
+  "key": "bai2022constitutional",
+  "n": 70,
+  "title": "Constitutional AI: Harmlessness from AI Feedback",
+  "url": "https://arxiv.org/abs/2212.08073",
+  "venue": "arXiv preprint arXiv:2212.08073",
+  "year": "2022"
+ },
+ "bainbridge1983ironies": {
+  "authors": [
+   "Bainbridge, L."
+  ],
+  "difference": "explains why automation degrades the operator's skill; we price the layer meant to catch what the automation missed.",
+  "key": "bainbridge1983ironies",
+  "n": 83,
+  "title": "Ironies of automation",
+  "url": "https://doi.org/10.1016/0005-1098(83)90046-8",
+  "venue": "Automatica",
+  "year": "1983"
+ },
+ "benjamini1995fdr": {
+  "authors": [
+   "Benjamini, Y.",
+   "Hochberg, Y."
+  ],
+  "difference": "controls the false discovery rate across many tests; we use it where many grid cells are screened.",
+  "key": "benjamini1995fdr",
+  "n": 108,
+  "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+  "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+  "year": "1995"
+ },
+ "bmc2026": {
+  "authors": [
+   "Sun, Y.",
+   "Liu, J.",
+   "Kroening, D.",
+   "Xue, J."
+  ],
+  "difference": "uses LLM agents for model checking; a checking agent is an added layer, and its marginal catch is what we measure.",
+  "key": "bmc2026",
+  "n": 111,
+  "title": "Agentic Model Checking",
+  "url": "https://arxiv.org/abs/2605.21434",
+  "venue": "arXiv preprint arXiv:2605.21434",
+  "year": "2026"
+ },
+ "branchynet2016": {
+  "authors": [
+   "Teerapittayanon, S.",
+   "McDanel, B.",
+   "Kung, H."
+  ],
+  "difference": "adds early-exit branches to a network; a branch is an added layer, and we price its catches.",
+  "key": "branchynet2016",
+  "n": 78,
+  "title": "BranchyNet: Fast inference via early exiting from deep neural networks",
+  "url": "https://doi.org/10.1109/icpr.2016.7900006",
+  "venue": "2016 23rd International Conference on Pattern Recognition (ICPR)",
+  "year": "2016"
+ },
+ "breiman1996bagging": {
+  "authors": [
+   "Breiman, L."
+  ],
+  "difference": "shows averaging reduces variance when errors are decorrelated; we show decorrelation is not sufficient, because where the catches fall sets the marginal value.",
+  "key": "breiman1996bagging",
+  "n": 14,
+  "title": "Bagging predictors",
+  "url": "https://doi.org/10.1007/BF00058655",
+  "venue": "Machine Learning",
+  "year": "1996"
+ },
+ "breiman2001forests": {
+  "authors": [
+   "Breiman, L."
+  ],
+  "difference": "builds an ensemble whose strength is chiefly empirical; we ask what one added member is worth at fixed accuracy.",
+  "key": "breiman2001forests",
+  "n": 50,
+  "title": "Random Forests",
+  "url": "https://doi.org/10.1023/A:1010933404324",
+  "venue": "Machine Learning",
+  "year": "2001"
+ },
+ "calibrateddefer2022": {
+  "authors": [
+   "Verma, R.",
+   "Nalisnick, E."
+  ],
+  "difference": "improves the calibration of the deferral score; calibration is necessary but not sufficient here, since equal calibration can accompany different composition.",
+  "key": "calibrateddefer2022",
+  "n": 10,
+  "title": "Calibrated Learning to Defer with One-vs-All Classifiers",
+  "url": "https://arxiv.org/abs/2202.03673",
+  "venue": "arXiv preprint arXiv:2202.03673",
+  "year": "2022"
+ },
+ "castro1999pbft": {
+  "authors": [
+   "Castro, M.",
+   "Liskov, B."
+  ],
+  "difference": "makes Byzantine replication practical; replication is redundancy under an independence assumption our construct measures.",
+  "key": "castro1999pbft",
+  "n": 100,
+  "title": "Practical byzantine fault tolerance and proactive recovery",
+  "url": "https://doi.org/10.1145/571637.571640",
+  "venue": "ACM Transactions on Computer Systems",
+  "year": "2002"
+ },
+ "causaldefer2024": {
+  "authors": [
+   "Palomba, F.",
+   "Pugnana, A.",
+   "Alvarez, J. M.",
+   "Ruggieri, S."
+  ],
+  "difference": "gives a causal framework for evaluating a deferring system; we evaluate the marginal effect of adding one, which a whole-system evaluation averages away.",
+  "key": "causaldefer2024",
+  "n": 33,
+  "title": "A Causal Framework for Evaluating Deferring Systems",
+  "url": "https://arxiv.org/abs/2405.18902",
+  "venue": "arXiv preprint arXiv:2405.18902",
+  "year": "2024"
+ },
+ "causalperception2024": {
+  "authors": [
+   "Alvarez, J. M.",
+   "Ruggieri, S."
+  ],
+  "difference": "models perception within a causal framework; we isolate composition with a dial rather than with a model.",
+  "key": "causalperception2024",
+  "n": 92,
+  "title": "Toward A Causal Framework for Modeling Perception",
+  "url": "https://arxiv.org/abs/2401.13408",
+  "venue": "arXiv preprint arXiv:2401.13408",
+  "year": "2024"
+ },
+ "cerberus2026": {
+  "authors": [
+   "Kim, J.",
+   "Kim, S.",
+   "Ryu, Y.",
+   "Gorgin, S.",
+   "Kim, J."
+  ],
+  "difference": "co-designs error-correcting codes across hardware layers; our layers are decision layers, and the dial is where their errors fall, not how they are encoded.",
+  "key": "cerberus2026",
+  "n": 110,
+  "title": "Cerberus: Cross-Layer ECC Co-Design for Robust and Efficient Memory Protection",
+  "url": "https://arxiv.org/abs/2605.02220",
+  "venue": "arXiv preprint arXiv:2605.02220",
+  "year": "2026"
+ },
+ "chilgrader2026": {
+  "authors": [
+   "Raikote, P.",
+   "Randl, K.",
+   "Miliou, I.",
+   "Lakes, A.",
+   "Papapetrou, P."
+  ],
+  "difference": "calibrates a human-in-the-loop short-answer grading layer; calibration sharpens the score without settling whether the layer pays.",
+  "key": "chilgrader2026",
+  "n": 90,
+  "title": "CHiL(L)Grader: Calibrated Human-in-the-Loop Short-Answer Grading",
+  "url": "https://arxiv.org/abs/2603.11957",
+  "venue": "arXiv preprint arXiv:2603.11957",
+  "year": "2026"
+ },
+ "chow1970reject": {
+  "authors": [
+   "Chow, C."
+  ],
+  "difference": "gives the optimal abstention threshold for a single classifier; we hold a layer's accuracy fixed and ask whether adding it is worth the capacity, not where one model should stop.",
+  "key": "chow1970reject",
+  "n": 7,
+  "title": "On optimum recognition error and reject tradeoff",
+  "url": "https://doi.org/10.1109/TIT.1970.1054406",
+  "venue": "IEEE Transactions on Information Theory",
+  "year": "1970"
+ },
+ "closedloop2022": {
+  "authors": [
+   "Keswani, V.",
+   "Lease, M.",
+   "Kenthapadi, K."
+  ],
+  "difference": "designs closed human-in-the-loop deferral pipelines end to end; we hold the pipeline fixed and vary the placement of the added layer's catches.",
+  "key": "closedloop2022",
+  "n": 27,
+  "title": "Designing Closed Human-in-the-loop Deferral Pipelines",
+  "url": "https://arxiv.org/abs/2202.04718",
+  "venue": "arXiv preprint arXiv:2202.04718",
+  "year": "2022"
+ },
+ "cobbe2021verifiers": {
+  "authors": [
+   "Cobbe, K.",
+   "Kosaraju, V.",
+   "Bavarian, M.",
+   "Chen, M.",
+   "Jun, H.",
+   "Kaiser, L.",
+   "Plappert, M.",
+   "Tworek, J.",
+   "Hilton, J.",
+   "Nakano, R.",
+   "Hesse, C.",
+   "Schulman, J."
+  ],
+  "difference": "trains verifiers that raise math accuracy; our break-even states when the verifier beats more of the generator.",
+  "key": "cobbe2021verifiers",
+  "n": 4,
+  "title": "Training Verifiers to Solve Math Word Problems",
+  "url": "https://arxiv.org/abs/2110.14168",
+  "venue": "arXiv preprint arXiv:2110.14168",
+  "year": "2021"
+ },
+ "complement2022": {
+  "authors": [
+   "Hemmer, P.",
+   "Schellhammer, S.",
+   "Vössing, M.",
+   "Jakubik, J.",
+   "Satzger, G."
+  ],
+  "difference": "trains a model to complement a human's decisions; we ask whether that complementarity repays the capacity it takes from the primary.",
+  "key": "complement2022",
+  "n": 28,
+  "title": "Forming Effective Human-AI Teams: Building Machine Learning Models that Complement the Capabilities of Multiple Experts",
+  "url": "https://arxiv.org/abs/2206.07948",
+  "venue": "arXiv preprint arXiv:2206.07948",
+  "year": "2022"
+ },
+ "confidadptive2022": {
+  "authors": [
+   "Schuster, T.",
+   "Fisch, A.",
+   "Gupta, J.",
+   "Dehghani, M.",
+   "Bahri, D.",
+   "Tran, V.",
+   "Tay, Y.",
+   "Metzler, D."
+  ],
+  "difference": "exits a language model early to save compute; we compare that saved compute with a layer that catches errors.",
+  "key": "confidadptive2022",
+  "n": 79,
+  "title": "Confident Adaptive Language Modeling",
+  "url": "https://doi.org/10.52202/068431-1269",
+  "venue": "Advances in Neural Information Processing Systems 35",
+  "year": "2022"
+ },
+ "coverage2024": {
+  "authors": [
+   "Zhang, Z.",
+   "Nguyen, C.",
+   "Wells, K.",
+   "Do, T. T.",
+   "Rosewarne, D.",
+   "Carneiro, G."
+  ],
+  "difference": "enforces a coverage constraint on human-AI cooperation; we show equal coverage and equal accuracy can still be worth different amounts.",
+  "key": "coverage2024",
+  "n": 18,
+  "title": "Coverage-Constrained Human-AI Cooperation with Multiple Experts",
+  "url": "https://arxiv.org/abs/2411.11976",
+  "venue": "arXiv preprint arXiv:2411.11976",
+  "year": "2024"
+ },
+ "deceptionensembles2019": {
+  "authors": [
+   "Liu, L.",
+   "Wei, W.",
+   "Chow, K. H.",
+   "Loper, M.",
+   "Gursoy, E.",
+   "Truex, S.",
+   "Wu, Y."
+  ],
+  "difference": "uses ensemble diversity as a defence against deception; our dial is the constructive version of the same lever.",
+  "key": "deceptionensembles2019",
+  "n": 58,
+  "title": "Deep Neural Network Ensembles against Deception: Ensemble Diversity, Accuracy and Robustness",
+  "url": "https://arxiv.org/abs/1908.11091",
+  "venue": "arXiv preprint arXiv:1908.11091",
+  "year": "2019"
+ },
+ "deepensembles2016": {
+  "authors": [
+   "Lakshminarayanan, B.",
+   "Pritzel, A.",
+   "Blundell, C."
+  ],
+  "difference": "improves predictive uncertainty by ensembling; we show uncertainty summaries can be identical while downstream worth is not.",
+  "key": "deepensembles2016",
+  "n": 56,
+  "title": "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles",
+  "url": "https://arxiv.org/abs/1612.01474",
+  "venue": "arXiv preprint arXiv:1612.01474",
+  "year": "2016"
+ },
+ "deferpopulation2024": {
+  "authors": [
+   "Tailor, D.",
+   "Patra, A.",
+   "Verma, R.",
+   "Manggala, P.",
+   "Nalisnick, E."
+  ],
+  "difference": "meta-learns deferral to a population of experts; that population is a single layer in our terms, and we price it against the primary.",
+  "key": "deferpopulation2024",
+  "n": 19,
+  "title": "Learning to Defer to a Population: A Meta-Learning Approach",
+  "url": "https://arxiv.org/abs/2403.02683",
+  "venue": "arXiv preprint arXiv:2403.02683",
+  "year": "2024"
+ },
+ "deferredseg2026": {
+  "authors": [
+   "Tian, Q.",
+   "Sun, H.",
+   "Wang, Y.",
+   "Shi, Y.",
+   "Yin, Y."
+  ],
+  "difference": "defers medical image segmentation among experts; the domain is not what governs the marginal value in our results.",
+  "key": "deferredseg2026",
+  "n": 42,
+  "title": "DeferredSeg:A Multi-Expert Deferral Framework for Medical Image Segmentation",
+  "url": "https://arxiv.org/abs/2604.12411",
+  "venue": "arXiv preprint arXiv:2604.12411",
+  "year": "2026"
+ },
+ "dexdeepfm2021": {
+  "authors": [
+   "Chen, L.",
+   "Shi, H."
+  ],
+  "difference": "adds diversity to factorisation machines for recommendation; we price diversity where one layer follows another.",
+  "key": "dexdeepfm2021",
+  "n": 59,
+  "title": "DexDeepFM: Ensemble Diversity Enhanced Extreme Deep Factorization Machine Model",
+  "url": "https://arxiv.org/abs/2104.01924",
+  "venue": "arXiv preprint arXiv:2104.01924",
+  "year": "2021"
+ },
+ "dietterich2000ensemble": {
+  "authors": [
+   "Dietterich, T. G."
+  ],
+  "difference": "classifies ensembles by how they are constructed; we classify them by what their errors are worth to the layer already in place.",
+  "key": "dietterich2000ensemble",
+  "n": 15,
+  "title": "Ensemble Methods in Machine Learning",
+  "url": "https://doi.org/10.1007/3-540-45014-9_1",
+  "venue": "Lecture Notes in Computer Science",
+  "year": "2000"
+ },
+ "dietvorst2015aversion": {
+  "authors": [
+   "Dietvorst, B. J.",
+   "Simmons, J. P.",
+   "Massey, C."
+  ],
+  "difference": "explains why people abandon algorithms after seeing them err; the residual catch is the quantity that makes that abandonment rational or not.",
+  "key": "dietvorst2015aversion",
+  "n": 86,
+  "title": "Algorithm aversion: People erroneously avoid algorithms after seeing them err",
+  "url": "https://doi.org/10.1037/xge0000033",
+  "venue": "Journal of Experimental Psychology: General",
+  "year": "2015"
+ },
+ "eckhardt1985coincident": {
+  "authors": [
+   "Eckhardt, D.",
+   "Lee, L."
+  ],
+  "difference": "analyses multiversion software subject to correlated faults; we show correlation alone does not fix the marginal value.",
+  "key": "eckhardt1985coincident",
+  "n": 102,
+  "title": "A Theoretical Basis for the Analysis of Multiversion Software Subject to Coincident Errors",
+  "url": "https://doi.org/10.1109/tse.1985.231895",
+  "venue": "IEEE Transactions on Software Engineering",
+  "year": "1985"
+ },
+ "efron1979bootstrap": {
+  "authors": [
+   "Efron, B."
+  ],
+  "difference": "introduces resampling for standard errors; we use it to put intervals on the rank correlations and margins the law reports.",
+  "key": "efron1979bootstrap",
+  "n": 107,
+  "title": "Bootstrap Methods: Another Look at the Jackknife",
+  "url": "https://doi.org/10.1214/aos/1176344552",
+  "venue": "The Annals of Statistics",
+  "year": "1979"
+ },
+ "exemplars2021": {
+  "authors": [
+   "Mozannar, H.",
+   "Satyanarayan, A.",
+   "Sontag, D."
+  ],
+  "difference": "teaches humans when to defer to a classifier; we measure the layer's marginal catch on the primary's wrongness instead of the human's learned policy.",
+  "key": "exemplars2021",
+  "n": 26,
+  "title": "Teaching Humans When To Defer to a Classifier via Exemplars",
+  "url": "https://arxiv.org/abs/2111.11297",
+  "venue": "arXiv preprint arXiv:2111.11297",
+  "year": "2021"
+ },
+ "failfast2025": {
+  "authors": [
+   "Zellinger, M. J.",
+   "Thomson, M."
+  ],
+  "difference": "uses deferral to patch the deficiencies of reasoning models; we ask whether that patch beats spending the same capacity on the model.",
+  "key": "failfast2025",
+  "n": 38,
+  "title": "Fail Fast, or Ask: Mitigating the Deficiencies of Reasoning LLMs with Human-in-the-Loop Systems Engineering",
+  "url": "https://arxiv.org/abs/2507.14406",
+  "venue": "arXiv preprint arXiv:2507.14406",
+  "year": "2025"
+ },
+ "faircoop2026": {
+  "authors": [
+   "Zhang, Z.",
+   "Masroor, M.",
+   "Nguyen, C.",
+   "Hassan, T.",
+   "Chen, Y.",
+   "Rosewarne, D.",
+   "Wells, K.",
+   "Do, T. T.",
+   "Carneiro, G."
+  ],
+  "difference": "optimises fairness in human-AI cooperation on medical images; we hold the layer's accuracy fixed and measure marginal value instead.",
+  "key": "faircoop2026",
+  "n": 44,
+  "title": "People-Centred Medical Image Analysis via Fairness-Aware Human-AI Cooperation",
+  "url": "https://arxiv.org/abs/2604.26991",
+  "venue": "arXiv preprint arXiv:2604.26991",
+  "year": "2026"
+ },
+ "fatigue2026": {
+  "authors": [
+   "Zhang, Z.",
+   "Nguyen, C. C.",
+   "Rosewarne, D.",
+   "Wells, K.",
+   "Carneiro, G."
+  ],
+  "difference": "models expert fatigue in a constrained deferral objective; our dial abstracts human cost away to isolate error composition.",
+  "key": "fatigue2026",
+  "n": 41,
+  "title": "Fatigue-Aware Learning to Defer via Constrained Optimisation",
+  "url": "https://arxiv.org/abs/2604.00904",
+  "venue": "arXiv preprint arXiv:2604.00904",
+  "year": "2026"
+ },
+ "fawcett2006roc": {
+  "authors": [
+   "Fawcett, T."
+  ],
+  "difference": "summarises a detector by its ranking curve; we show two configurations with the same summary can differ in downstream worth, which no curve read off one layer can express.",
+  "key": "fawcett2006roc",
+  "n": 105,
+  "title": "An introduction to ROC analysis",
+  "url": "https://doi.org/10.1016/j.patrec.2005.10.010",
+  "venue": "Pattern Recognition Letters",
+  "year": "2006"
+ },
+ "feat2025": {
+  "authors": [
+   "Shen, C.",
+   "Zhang, W.",
+   "Li, K.",
+   "Huang, E.",
+   "Bi, H.",
+   "Fan, A.",
+   "Shen, Y.",
+   "Dong, H.",
+   "Zhang, J.",
+   "Shao, Y.",
+   "Liu, Z.",
+   "Liu, X.",
+   "Li, T.",
+   "Yan, C.",
+   "Fan, S.",
+   "Wu, D.",
+   "Ma, J.",
+   "Cong, B.",
+   "Wang, Z.",
+   "Lian, C."
+  ],
+  "difference": "builds a multi-agent forensic system on domain-adapted LLMs; agent count is redundancy, and we ask what the additional agent adds.",
+  "key": "feat2025",
+  "n": 117,
+  "title": "FEAT: A Multi-Agent Forensic AI System with Domain-Adapted Large Language Model for Automated Cause-of-Death Analysis",
+  "url": "https://arxiv.org/abs/2508.07950",
+  "venue": "arXiv preprint arXiv:2508.07950",
+  "year": "2025"
+ },
+ "fifar2023": {
+  "authors": [
+   "Alves, J. V.",
+   "Leitão, D.",
+   "Jesus, S.",
+   "Sampaio, M. O. P.",
+   "Saleiro, P.",
+   "Figueiredo, M. A. T.",
+   "Bizarro, P."
+  ],
+  "difference": "contributes a fraud-detection benchmark for learning to defer; we calibrate on published systems and report the span of the break-even across them.",
+  "key": "fifar2023",
+  "n": 31,
+  "title": "FiFAR: A Fraud Detection Dataset for Learning to Defer",
+  "url": "https://arxiv.org/abs/2312.13218",
+  "venue": "arXiv preprint arXiv:2312.13218",
+  "year": "2023"
+ },
+ "flowbyflow2026": {
+  "authors": [
+   "Naito, H."
+  ],
+  "difference": "governs AI output by bypassing content judgment in high-stakes settings; the bypass is an added layer and we price it.",
+  "key": "flowbyflow2026",
+  "n": 115,
+  "title": "Flow-by-Flow:Content-Judgment Bypass for Governing AI Output in High-Loss Domains",
+  "url": "https://arxiv.org/abs/2608.07474",
+  "venue": "arXiv preprint arXiv:2608.07474",
+  "year": "2026"
+ },
+ "freund1997boosting": {
+  "authors": [
+   "Freund, Y.",
+   "Schapire, R. E."
+  ],
+  "difference": "bounds boosting's error under weak learners; the catch rate on the primary's errors is exactly what that bound takes as given.",
+  "key": "freund1997boosting",
+  "n": 51,
+  "title": "A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting",
+  "url": "https://doi.org/10.1006/jcss.1997.1504",
+  "venue": "Journal of Computer and System Sciences",
+  "year": "1997"
+ },
+ "gnnensembles2023": {
+  "authors": [
+   "Busk, J.",
+   "Schmidt, M. N.",
+   "Winther, O.",
+   "Vegge, T.",
+   "Jørgensen, P. B."
+  ],
+  "difference": "delivers calibrated uncertainty from interatomic-potential ensembles; calibration and marginal value come apart in our results.",
+  "key": "gnnensembles2023",
+  "n": 60,
+  "title": "Graph Neural Network Interatomic Potential Ensembles with Calibrated Aleatoric and Epistemic Uncertainty on Energy and Forces",
+  "url": "https://arxiv.org/abs/2305.16325",
+  "venue": "arXiv preprint arXiv:2305.16325",
+  "year": "2023"
+ },
+ "guideexperts2023": {
+  "authors": [
+   "Banerjee, D.",
+   "Teso, S.",
+   "Passerini, A."
+  ],
+  "difference": "uses a personalised model to guide human experts; a guiding layer is not a checking layer, and we measure the checking layer against residual errors.",
+  "key": "guideexperts2023",
+  "n": 30,
+  "title": "Learning to Guide Human Experts via Personalized Large Language Models",
+  "url": "https://arxiv.org/abs/2308.06039",
+  "venue": "arXiv preprint arXiv:2308.06039",
+  "year": "2023"
+ },
+ "helios2026": {
+  "authors": [
+   "Huang, A. Y."
+  ],
+  "difference": "drives indirect trajectory optimisation with an LLM agent; we ask when such an additional agent repays its capacity.",
+  "key": "helios2026",
+  "n": 112,
+  "title": "HELIOS: An LLM-Driven Autonomous Indirect Trajectory Optimization Agent",
+  "url": "https://arxiv.org/abs/2607.24051",
+  "venue": "arXiv preprint arXiv:2607.24051",
+  "year": "2026"
+ },
+ "heteroens2025": {
+  "authors": [
+   "Liu, K.",
+   "Wei, Z.",
+   "Gao, W.",
+   "Dey, P.",
+   "Sluiter, M. H. F.",
+   "Shuang, F."
+  ],
+  "difference": "proposes a heterogeneous ensemble as a universal uncertainty metric; a better metric does not settle whether the member repaid its capacity.",
+  "key": "heteroens2025",
+  "n": 62,
+  "title": "Heterogeneous Ensemble Enables a Universal Uncertainty Metric for Atomistic Foundation Models",
+  "url": "https://arxiv.org/abs/2507.21297",
+  "venue": "arXiv preprint arXiv:2507.21297",
+  "year": "2025"
+ },
+ "hinton1999product": {
+  "authors": [
+   "Hinton, G."
+  ],
+  "difference": "multiplies expert distributions so errors cancel; we isolate that cancellation by reallocating catches at fixed accuracy.",
+  "key": "hinton1999product",
+  "n": 54,
+  "title": "Products of experts",
+  "url": "https://doi.org/10.1049/cp:19991075",
+  "venue": "9th International Conference on Artificial Neural Networks: ICANN '99",
+  "year": "1999"
+ },
+ "howard1966valueinfo": {
+  "authors": [
+   "Howard, R."
+  ],
+  "difference": "prices information before it is acquired; our break-even is the same calculus applied to a supervisor's catches.",
+  "key": "howard1966valueinfo",
+  "n": 104,
+  "title": "Information Value Theory",
+  "url": "https://doi.org/10.1109/tssc.1966.300074",
+  "venue": "IEEE Transactions on Systems Science and Cybernetics",
+  "year": "1966"
+ },
+ "huang2023selfcorrect": {
+  "authors": [
+   "Huang, J.",
+   "Chen, X.",
+   "Mishra, S.",
+   "Zheng, H. S.",
+   "Yu, A. W.",
+   "Song, X.",
+   "Zhou, D."
+  ],
+  "difference": "documents that models cannot yet self-correct reasoning unaided; we give the condition under which a correction layer earns its capacity.",
+  "key": "huang2023selfcorrect",
+  "n": 75,
+  "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+  "url": "https://arxiv.org/abs/2310.01798",
+  "venue": "arXiv preprint arXiv:2310.01798",
+  "year": "2023"
+ },
+ "identityfree2025": {
+  "authors": [
+   "Strong, J.",
+   "Saha, P.",
+   "Ibrahim, Y.",
+   "Ouyang, C.",
+   "Noble, A."
+  ],
+  "difference": "defers to experts not seen in training; we take the layer's identity and accuracy as given and ask what it buys.",
+  "key": "identityfree2025",
+  "n": 35,
+  "title": "Identity-Free Deferral For Unseen Experts",
+  "url": "https://arxiv.org/abs/2502.10533",
+  "venue": "arXiv preprint arXiv:2502.10533",
+  "year": "2025"
+ },
+ "jacobs1991mixture": {
+  "authors": [
+   "Jacobs, R. A.",
+   "Jordan, M. I.",
+   "Nowlan, S. J.",
+   "Hinton, G. E."
+  ],
+  "difference": "divides labour among local experts through a gating network; our dial divides where each expert's errors fall.",
+  "key": "jacobs1991mixture",
+  "n": 53,
+  "title": "Adaptive Mixtures of Local Experts",
+  "url": "https://doi.org/10.1162/neco.1991.3.1.79",
+  "venue": "Neural Computation",
+  "year": "1991"
+ },
+ "jiang2018trust": {
+  "authors": [
+   "Jiang, H.",
+   "Kim, B.",
+   "Guan, M. Y.",
+   "Gupta, M."
+  ],
+  "difference": "scores individual instances for trust; we condition the layer's value on the population the primary got wrong (the residual catch), not on the instance's apparent difficulty.",
+  "key": "jiang2018trust",
+  "n": 16,
+  "title": "To Trust Or Not To Trust A Classifier",
+  "url": "https://arxiv.org/abs/1805.11783",
+  "venue": "arXiv preprint arXiv:1805.11783",
+  "year": "2018"
+ },
+ "knight1986nversion": {
+  "authors": [
+   "Knight, J. C.",
+   "Leveson, N. G."
+  ],
+  "difference": "tests whether version failures are independent; that assumption is what our residual catch replaces with a measurement.",
+  "key": "knight1986nversion",
+  "n": 101,
+  "title": "An experimental evaluation of the assumption of independence in multiversion programming",
+  "url": "https://doi.org/10.1109/TSE.1986.6312924",
+  "venue": "IEEE Transactions on Software Engineering",
+  "year": "1986"
+ },
+ "knowdefer2025": {
+  "authors": [
+   "Mitton, J.",
+   "Bhattacharyya, P.",
+   "Abboud, R.",
+   "Woodhead, S."
+  ],
+  "difference": "applies selective prediction to responsible knowledge use; our layer is priced by its catch on the primary's errors.",
+  "key": "knowdefer2025",
+  "n": 39,
+  "title": "Knowing When to Defer: Selective Prediction for Responsible Knowledge Tracing",
+  "url": "https://arxiv.org/abs/2509.21514",
+  "venue": "arXiv preprint arXiv:2509.21514",
+  "year": "2025"
+ },
+ "kuncheva2003diversity": {
+  "authors": [
+   "Kuncheva, L. I.",
+   "Whitaker, C. J."
+  ],
+  "difference": "relates ensemble diversity measures to accuracy; we relate the placement of errors to the decision to add a layer at all.",
+  "key": "kuncheva2003diversity",
+  "n": 11,
+  "title": "Measures of Diversity in Classifier Ensembles and Their Relationship with the Ensemble Accuracy",
+  "url": "https://doi.org/10.1023/A:1022859003006",
+  "venue": "Machine Learning",
+  "year": "2003"
+ },
+ "l2dclinical2026": {
+  "authors": [
+   "Kondadadi, R.",
+   "Ortega, J. E."
+  ],
+  "difference": "selects a model adaptively in a clinical pipeline; we price the second model against the first rather than choosing among them.",
+  "key": "l2dclinical2026",
+  "n": 43,
+  "title": "L2D-Clinical: Learning to Defer for Adaptive Model Selection in Clinical Text Classification",
+  "url": "https://arxiv.org/abs/2604.13285",
+  "venue": "arXiv preprint arXiv:2604.13285",
+  "year": "2026"
+ },
+ "lamport1982byzantine": {
+  "authors": [
+   "Lamport, L.",
+   "Shostak, R.",
+   "Pease, M."
+  ],
+  "difference": "gives the agreement problem under arbitrary faults; we study a two-layer cascade with correlated failures rather than a consensus protocol.",
+  "key": "lamport1982byzantine",
+  "n": 99,
+  "title": "The Byzantine Generals Problem",
+  "url": "https://doi.org/10.1145/357172.357176",
+  "venue": "ACM Transactions on Programming Languages and Systems",
+  "year": "1982"
+ },
+ "layered2026": {
+  "authors": [
+   "Stolze, M.",
+   "Strässle, M."
+  ],
+  "difference": "argues for layered supervision in AI-assisted review; we give the condition under which the extra layer pays, and the break-even that sets it.",
+  "key": "layered2026",
+  "n": 13,
+  "title": "When Review Alone No Longer Scales: Layered Supervision in AI-Assisted Software Engineering",
+  "url": "https://arxiv.org/abs/2608.26316",
+  "venue": "arXiv preprint arXiv:2608.26316",
+  "year": "2026"
+ },
+ "lecun2015deeplearning": {
+  "authors": [
+   "LeCun, Y.",
+   "Bengio, Y.",
+   "Hinton, G."
+  ],
+  "difference": "surveys deep learning's methods and prospects; our manuscript prices one component of such systems.",
+  "key": "lecun2015deeplearning",
+  "n": 82,
+  "title": "Deep learning",
+  "url": "https://doi.org/10.1038/nature14539",
+  "venue": "Nature",
+  "year": "2015"
+ },
+ "leesee2004trust": {
+  "authors": [
+   "Lee, J. D.",
+   "See, K. A."
+  ],
+  "difference": "states design principles for appropriate reliance on automation; our dial turns the reliance decision into a measurable quantity.",
+  "key": "leesee2004trust",
+  "n": 85,
+  "title": "Trust in Automation: Designing for Appropriate Reliance",
+  "url": "https://doi.org/10.1518/hfes.46.1.50_30392",
+  "venue": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+  "year": "2004"
+ },
+ "lightman2023verify": {
+  "authors": [
+   "Lightman, H.",
+   "Kosaraju, V.",
+   "Burda, Y.",
+   "Edwards, H.",
+   "Baker, B.",
+   "Lee, T.",
+   "Leike, J.",
+   "Schulman, J.",
+   "Sutskever, I.",
+   "Cobbe, K."
+  ],
+  "difference": "shows process supervision improves reasoning; we measure the verifier's marginal catch on the primary's wrong outputs.",
+  "key": "lightman2023verify",
+  "n": 3,
+  "title": "Let's Verify Step by Step",
+  "url": "https://arxiv.org/abs/2305.20050",
+  "venue": "arXiv preprint arXiv:2305.20050",
+  "year": "2023"
+ },
+ "limitedexpert2023": {
+  "authors": [
+   "Hemmer, P.",
+   "Thede, L.",
+   "Vössing, M.",
+   "Jakubik, J.",
+   "Kühl, N."
+  ],
+  "difference": "works around scarce expert predictions; our binding constraint is capacity rather than labels.",
+  "key": "limitedexpert2023",
+  "n": 23,
+  "title": "Learning to Defer with Limited Expert Predictions",
+  "url": "https://arxiv.org/abs/2304.07306",
+  "venue": "arXiv preprint arXiv:2304.07306",
+  "year": "2023"
+ },
+ "littlewood1989coincident": {
+  "authors": [
+   "Littlewood, B.",
+   "Miller, D."
+  ],
+  "difference": "models coincident failures of redundant software; our dial is the controlled version of that correlation.",
+  "key": "littlewood1989coincident",
+  "n": 12,
+  "title": "Conceptual modeling of coincident failures in multiversion software",
+  "url": "https://doi.org/10.1109/32.58771",
+  "venue": "IEEE Transactions on Software Engineering",
+  "year": "1989"
+ },
+ "liu2023lostmiddle": {
+  "authors": [
+   "Liu, N. F.",
+   "Lin, K.",
+   "Hewitt, J.",
+   "Paranjape, A.",
+   "Bevilacqua, M.",
+   "Petroni, F.",
+   "Liang, P."
+  ],
+  "difference": "finds position effects in long-context use; the placement of information is a composition effect of the same kind as the placement of a layer's catches.",
+  "key": "liu2023lostmiddle",
+  "n": 80,
+  "title": "Lost in the Middle: How Language Models Use Long Contexts",
+  "url": "https://arxiv.org/abs/2307.03172",
+  "venue": "arXiv preprint arXiv:2307.03172",
+  "year": "2023"
+ },
+ "ltauf2024": {
+  "authors": [
+   "Vita, J. A.",
+   "Samanta, A.",
+   "Zhou, F.",
+   "Lordi, V."
+  ],
+  "difference": "derives uncertainty from training loss trajectories; a different summary of the same errors, which our result shows is not decisive.",
+  "key": "ltauf2024",
+  "n": 61,
+  "title": "LTAU-FF: Loss Trajectory Analysis for Uncertainty in Atomistic Force Fields",
+  "url": "https://arxiv.org/abs/2402.00853",
+  "venue": "arXiv preprint arXiv:2402.00853",
+  "year": "2024"
+ },
+ "ltd2026": {
+  "authors": [
+   "Pesenti, D.",
+   "Bogani, A.",
+   "Teso, S.",
+   "Pugnana, A."
+  ],
+  "difference": "traces algorithmic to human bias in learned deferral; we separate bias from composition by holding accuracy fixed.",
+  "key": "ltd2026",
+  "n": 113,
+  "title": "Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer",
+  "url": "https://arxiv.org/abs/2608.28050",
+  "venue": "arXiv preprint arXiv:2608.28050",
+  "year": "2026"
+ },
+ "lyons1962tmr": {
+  "authors": [
+   "Lyons, R. E.",
+   "Vanderkulk, W."
+  ],
+  "difference": "uses majority voting for reliability; TMR assumes independence, which our dial relaxes explicitly.",
+  "key": "lyons1962tmr",
+  "n": 95,
+  "title": "The Use of Triple-Modular Redundancy to Improve Computer Reliability",
+  "url": "https://doi.org/10.1147/rd.62.0200",
+  "venue": "IBM Journal of Research and Development",
+  "year": "1962"
+ },
+ "madaan2023selfrefine": {
+  "authors": [
+   "Madaan, A.",
+   "Tandon, N.",
+   "Gupta, P.",
+   "Hallinan, S.",
+   "Gao, L.",
+   "Wiegreffe, S.",
+   "Alon, U.",
+   "Dziri, N.",
+   "Prabhumoye, S.",
+   "Yang, Y.",
+   "Gupta, S.",
+   "Majumder, B. P.",
+   "Hermann, K.",
+   "Welleck, S.",
+   "Yazdanbakhsh, A.",
+   "Clark, P."
+  ],
+  "difference": "iterates refinement with self-feedback; the iteration is an added layer and we ask what it is worth at fixed accuracy.",
+  "key": "madaan2023selfrefine",
+  "n": 66,
+  "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+  "url": "https://arxiv.org/abs/2303.17651",
+  "venue": "arXiv preprint arXiv:2303.17651",
+  "year": "2023"
+ },
+ "metacog2026": {
+  "authors": [
+   "Yang, W.",
+   "Cao, D.",
+   "Pang, J.",
+   "Weng, M.",
+   "Liu, Y."
+  ],
+  "difference": "meta-learns a policy for collaborating with humans; that collaboration decision is our break-even.",
+  "key": "metacog2026",
+  "n": 91,
+  "title": "Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning",
+  "url": "https://arxiv.org/abs/2603.07972",
+  "venue": "arXiv preprint arXiv:2603.07972",
+  "year": "2026"
+ },
+ "mllmunc2026": {
+  "authors": [
+   "Boudiaf, A.",
+   "Hussain, I.",
+   "Javed, S."
+  ],
+  "difference": "makes multimodal LLM decisions uncertainty-aware; uncertainty is one summary of a layer's errors and does not by itself settle its value.",
+  "key": "mllmunc2026",
+  "n": 116,
+  "title": "Uncertainty-Aware Decision Making in Multimodal Large Language Models",
+  "url": "https://arxiv.org/abs/2608.17084",
+  "venue": "arXiv preprint arXiv:2608.17084",
+  "year": "2026"
+ },
+ "mozannar2020defer": {
+  "authors": [
+   "Mozannar, H.",
+   "Sontag, D."
+  ],
+  "difference": "characterises the Bayes-optimal rule for deferring to an expert; we keep the rule fixed and ask when the deferral capacity is better spent improving the primary.",
+  "key": "mozannar2020defer",
+  "n": 8,
+  "title": "Consistent Estimators for Learning to Defer to an Expert",
+  "url": "https://arxiv.org/abs/2006.01862",
+  "venue": "arXiv preprint arXiv:2006.01862",
+  "year": "2020"
+ },
+ "multidefer2024": {
+  "authors": [
+   "Charusaie, M. A.",
+   "Samadi, S."
+  ],
+  "difference": "post-processes a trained multi-objective deferrer; we hold the layer fixed and move where its catches land.",
+  "key": "multidefer2024",
+  "n": 34,
+  "title": "A Unifying Post-Processing Framework for Multi-Objective Learn-to-Defer Problems",
+  "url": "https://arxiv.org/abs/2407.12710",
+  "venue": "arXiv preprint arXiv:2407.12710",
+  "year": "2024"
+ },
+ "negcorr2020": {
+  "authors": [
+   "Buschjäger, S.",
+   "Pfahler, L.",
+   "Morik, K."
+  ],
+  "difference": "shapes member correlation during training; we vary correlation after training with accuracy held fixed.",
+  "key": "negcorr2020",
+  "n": 57,
+  "title": "Generalized Negative Correlation Learning for Deep Ensembling",
+  "url": "https://arxiv.org/abs/2011.02952",
+  "venue": "arXiv preprint arXiv:2011.02952",
+  "year": "2020"
+ },
+ "neuroformal2026": {
+  "authors": [
+   "Zhang, L.",
+   "Chen, T.",
+   "Wu, X.",
+   "Liu, Q.",
+   "Zhai, X.",
+   "Wang, X.",
+   "Cao, Q."
+  ],
+  "difference": "pairs neural generation with symbolic validation of formal functions; that pairing is a deliberately uncorrelated layer, and our dial explains when it pays.",
+  "key": "neuroformal2026",
+  "n": 74,
+  "title": "Neuro-Symbolic Generation and Validation of Memory-Aware Formal Function Specifications",
+  "url": "https://arxiv.org/abs/2603.13414",
+  "venue": "arXiv preprint arXiv:2603.13414",
+  "year": "2026"
+ },
+ "nodefer2025": {
+  "authors": [
+   "Bary, T.",
+   "Macq, B.",
+   "Petit, L."
+  ],
+  "difference": "removes training from the deferral rule; we remove the assumption that the rule's accuracy determines its value.",
+  "key": "nodefer2025",
+  "n": 49,
+  "title": "No Need for Learning to Defer? A Training Free Deferral Framework to Multiple Experts through Conformal Prediction",
+  "url": "https://arxiv.org/abs/2509.12573",
+  "venue": "arXiv preprint arXiv:2509.12573",
+  "year": "2025"
+ },
+ "oodunc2024": {
+  "authors": [
+   "Mouli, S. C.",
+   "Maddix, D. C.",
+   "Alizadeh, S.",
+   "Gupta, G.",
+   "Stuart, A.",
+   "Mahoney, M. W.",
+   "Wang, Y."
+  ],
+  "difference": "uses uncertainty to characterise out-of-distribution inputs; distribution shift moves the residual catch, which is what our law reads.",
+  "key": "oodunc2024",
+  "n": 94,
+  "title": "Using Uncertainty Quantification to Characterize and Improve Out-of-Domain Learning for PDEs",
+  "url": "https://arxiv.org/abs/2403.10642",
+  "venue": "arXiv preprint arXiv:2403.10642",
+  "year": "2024"
+ },
+ "opv2025": {
+  "authors": [
+   "Wu, Z.",
+   "Kong, L.",
+   "Zhang, W.",
+   "Gao, S.",
+   "Gu, Y.",
+   "Cai, Z.",
+   "Ma, T.",
+   "Liu, Y.",
+   "Wang, Z.",
+   "Ma, R.",
+   "Wang, G.",
+   "Li, W.",
+   "He, C.",
+   "Lin, D.",
+   "Chen, K."
+  ],
+  "difference": "builds an efficient outcome-based process verifier; efficiency changes the cost side of our break-even, not its form.",
+  "key": "opv2025",
+  "n": 72,
+  "title": "OPV: Outcome-based Process Verifier for Efficient Long Chain-of-Thought Verification",
+  "url": "https://arxiv.org/abs/2512.10756",
+  "venue": "arXiv preprint arXiv:2512.10756",
+  "year": "2025"
+ },
+ "parasuraman1997automationbias": {
+  "authors": [
+   "Parasuraman, R.",
+   "Riley, V."
+  ],
+  "difference": "gives a taxonomy of reliance failures; we give the break-even that separates use from disuse.",
+  "key": "parasuraman1997automationbias",
+  "n": 84,
+  "title": "Humans and Automation: Use, Misuse, Disuse, Abuse",
+  "url": "https://doi.org/10.1518/001872097778543886",
+  "venue": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+  "year": "1997"
+ },
+ "partialdefer2025": {
+  "authors": [
+   "Rayan, S.",
+   "Tewari, A."
+  ],
+  "difference": "partially defers over a sequence; the granularity of deferral is not what our dial varies, which is the composition of the layer's errors.",
+  "key": "partialdefer2025",
+  "n": 21,
+  "title": "Learning to Partially Defer for Sequences",
+  "url": "https://arxiv.org/abs/2502.01459",
+  "venue": "arXiv preprint arXiv:2502.01459",
+  "year": "2025"
+ },
+ "peng2023copilot": {
+  "authors": [
+   "Peng, S.",
+   "Kalliamvakou, E.",
+   "Cihon, P.",
+   "Demirer, M."
+  ],
+  "difference": "measures productivity effects of an AI assistant; we ask whether the supervision of its output repays its cost.",
+  "key": "peng2023copilot",
+  "n": 87,
+  "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+  "url": "https://arxiv.org/abs/2302.06590",
+  "venue": "arXiv preprint arXiv:2302.06590",
+  "year": "2023"
+ },
+ "popdemos2025": {
+  "authors": [
+   "Ramgolam, N.",
+   "Carneiro, G.",
+   "Chen, H. T."
+  ],
+  "difference": "defers to a population from limited demonstrations; capacity rather than demonstrations is our binding constraint.",
+  "key": "popdemos2025",
+  "n": 20,
+  "title": "Learning To Defer To A Population With Limited Demonstrations",
+  "url": "https://arxiv.org/abs/2510.19351",
+  "venue": "arXiv preprint arXiv:2510.19351",
+  "year": "2025"
+ },
+ "psychmachines2026": {
+  "authors": [
+   "Qadir, J.",
+   "Mumtaz, M."
+  ],
+  "difference": "studies how people learn from machine feedback; we study when the machine's feedback layer is worth its capacity.",
+  "key": "psychmachines2026",
+  "n": 88,
+  "title": "The Psychology of Learning from Machines: Anthropomorphic AI and the Paradox of Automation in Education",
+  "url": "https://arxiv.org/abs/2601.06172",
+  "venue": "arXiv preprint arXiv:2601.06172",
+  "year": "2026"
+ },
+ "querycontrol2025": {
+  "authors": [
+   "Firouzkouhi, A.",
+   "Mirzaeedodangeh, O.",
+   "Lindemann, L."
+  ],
+  "difference": "controls the expert-query budget in active imitation learning; we compare that budget with spending it on the primary.",
+  "key": "querycontrol2025",
+  "n": 47,
+  "title": "Sample-Efficient Expert Query Control in Active Imitation Learning via Conformal Prediction",
+  "url": "https://arxiv.org/abs/2512.00453",
+  "venue": "arXiv preprint arXiv:2512.00453",
+  "year": "2025"
+ },
+ "randell1975faulttolerance": {
+  "authors": [
+   "Randell, B."
+  ],
+  "difference": "defines the recovery-block structure; we price the added block.",
+  "key": "randell1975faulttolerance",
+  "n": 98,
+  "title": "System structure for software fault tolerance",
+  "url": "https://doi.org/10.1145/800027.808467",
+  "venue": "Proceedings of the international conference on Reliable software  -",
+  "year": "1975"
+ },
+ "rashomon2025": {
+  "authors": [
+   "Feng, S.",
+   "Zhang, C.",
+   "Xi, M.",
+   "Hsu, E.",
+   "Semenova, L.",
+   "Zhong, C."
+  ],
+  "difference": "characterises the set of near-equally-good concept models; our two configurations are precisely such a set, with different downstream worth.",
+  "key": "rashomon2025",
+  "n": 63,
+  "title": "Exploring the Rashomon Set for Concept-Based Models",
+  "url": "https://arxiv.org/abs/2511.19636",
+  "venue": "arXiv preprint arXiv:2511.19636",
+  "year": "2025"
+ },
+ "recoveryblocks1985": {
+  "authors": [
+   "Anderson, T.",
+   "Kerr, R."
+  ],
+  "difference": "pairs an acceptance test with a backup block; the backup is an added layer whose residual catch is set by its acceptance test.",
+  "key": "recoveryblocks1985",
+  "n": 96,
+  "title": "Recovery Blocks in Action: A System Supporting High Reliability",
+  "url": "https://doi.org/10.1007/978-3-642-82470-8_9",
+  "venue": "Reliable Computer Systems",
+  "year": "1985"
+ },
+ "reviewerconfidence2025": {
+  "authors": [
+   "Wu, W.",
+   "Xi, H.",
+   "Zhang, C."
+  ],
+  "difference": "audits whether reviewer confidence matches review content; confidence is one summary, and summaries do not fix worth.",
+  "key": "reviewerconfidence2025",
+  "n": 89,
+  "title": "Are the confidence scores of reviewers consistent with the review content? Evidence from top conference proceedings in AI",
+  "url": "https://arxiv.org/abs/2505.15031",
+  "venue": "arXiv preprint arXiv:2505.15031",
+  "year": "2025"
+ },
+ "russell1991metareasoning": {
+  "authors": [
+   "Russell, S.",
+   "Wefald, E."
+  ],
+  "difference": "decides how much computation to spend thinking; we decide whether to add a thinker, with the primary's errors as the population.",
+  "key": "russell1991metareasoning",
+  "n": 103,
+  "title": "Principles of metareasoning",
+  "url": "https://doi.org/10.1016/0004-3702(91)90015-c",
+  "venue": "Artificial Intelligence",
+  "year": "1991"
+ },
+ "sadowski2018googlereview": {
+  "authors": [
+   "Sadowski, C.",
+   "Söderberg, E.",
+   "Church, L.",
+   "Sipko, M.",
+   "Bacchelli, A."
+  ],
+  "difference": "describes modern code review practice at Google; we quantify the marginal value of adding a reviewer.",
+  "key": "sadowski2018googlereview",
+  "n": 2,
+  "title": "Modern code review",
+  "url": "https://doi.org/10.1145/3183519.3183525",
+  "venue": "Proceedings of the 40th International Conference on Software Engineering: Software Engineering in Practice",
+  "year": "2018"
+ },
+ "sampleefficient2022": {
+  "authors": [
+   "Charusaie, M. A.",
+   "Mozannar, H.",
+   "Sontag, D.",
+   "Samadi, S."
+  ],
+  "difference": "reduces the labels needed to learn human-complementary predictors; we take the learned layer as given and price it.",
+  "key": "sampleefficient2022",
+  "n": 29,
+  "title": "Sample Efficient Learning of Predictors that Complement Humans",
+  "url": "https://arxiv.org/abs/2207.09584",
+  "venue": "arXiv preprint arXiv:2207.09584",
+  "year": "2022"
+ },
+ "selectivegeifman2017": {
+  "authors": [
+   "Geifman, Y.",
+   "El-Yaniv, R."
+  ],
+  "difference": "learns when a classifier should abstain under a risk target; we take the abstaining layer as given and price it against spending the same capacity on the primary.",
+  "key": "selectivegeifman2017",
+  "n": 5,
+  "title": "Selective Classification for Deep Neural Networks",
+  "url": "https://arxiv.org/abs/1705.08500",
+  "venue": "arXiv preprint arXiv:1705.08500",
+  "year": "2017"
+ },
+ "selectivenet2019": {
+  "authors": [
+   "Geifman, Y.",
+   "El-Yaniv, R."
+  ],
+  "difference": "makes abstention differentiable inside one model; we treat the added check as an option whose value is set by the primary's error population.",
+  "key": "selectivenet2019",
+  "n": 6,
+  "title": "SelectiveNet: A Deep Neural Network with an Integrated Reject Option",
+  "url": "https://arxiv.org/abs/1901.09192",
+  "venue": "arXiv preprint arXiv:1901.09192",
+  "year": "2019"
+ },
+ "seqdefer2021": {
+  "authors": [
+   "Joshi, S.",
+   "Parbhoo, S.",
+   "Doshi-Velez, F."
+  ],
+  "difference": "defers sequential clinical decisions to a human; we analyse one added layer's marginal catch across a calibrated population of published systems rather than one pipeline.",
+  "key": "seqdefer2021",
+  "n": 22,
+  "title": "Learning-to-defer for sequential medical decision-making under uncertainty",
+  "url": "https://arxiv.org/abs/2109.06312",
+  "venue": "arXiv preprint arXiv:2109.06312",
+  "year": "2021"
+ },
+ "shazeer2017moe": {
+  "authors": [
+   "Shazeer, N.",
+   "Mirhoseini, A.",
+   "Maziarz, K.",
+   "Davis, A.",
+   "Le, Q.",
+   "Hinton, G.",
+   "Dean, J."
+  ],
+  "difference": "routes tokens to experts to raise capacity; our question is when an extra expert repays its share of that capacity.",
+  "key": "shazeer2017moe",
+  "n": 55,
+  "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+  "url": "https://arxiv.org/abs/1701.06538",
+  "venue": "arXiv preprint arXiv:1701.06538",
+  "year": "2017"
+ },
+ "shinn2023reflexion": {
+  "authors": [
+   "Shinn, N.",
+   "Cassano, F.",
+   "Berman, E.",
+   "Gopinath, A.",
+   "Narasimhan, K.",
+   "Yao, S."
+  ],
+  "difference": "reinforces an agent verbally across attempts; the redundancy is implicit, where ours is a dial.",
+  "key": "shinn2023reflexion",
+  "n": 67,
+  "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2303.11366",
+  "venue": "arXiv preprint arXiv:2303.11366",
+  "year": "2023"
+ },
+ "socdefer2025": {
+  "authors": [
+   "Jalalvand, F.",
+   "Chhetri, M. B.",
+   "Nepal, S.",
+   "Paris, C."
+  ],
+  "difference": "applies deferral to alert triage in security operations; our result is methodological, about why an added check helps, rather than a further application.",
+  "key": "socdefer2025",
+  "n": 37,
+  "title": "Adaptive alert prioritisation in security operations centres via learning to defer with human feedback",
+  "url": "https://arxiv.org/abs/2506.18462",
+  "venue": "arXiv preprint arXiv:2506.18462",
+  "year": "2025"
+ },
+ "specgen2026": {
+  "authors": [
+   "Yang, F.",
+   "Li, X.",
+   "Wang, S.",
+   "An, J.",
+   "Sun, Z.",
+   "Feng, S.",
+   "Wang, W.",
+   "Wang, W.",
+   "Zhan, N.",
+   "Xu, F."
+  ],
+  "difference": "measures how well LLMs generate formal specifications; generation quality is a summary, and our result is that summaries do not fix worth.",
+  "key": "specgen2026",
+  "n": 109,
+  "title": "How Powerful are LLMs in Generating Formal Program Specifications?",
+  "url": "https://arxiv.org/abs/2608.13077",
+  "venue": "arXiv preprint arXiv:2608.13077",
+  "year": "2026"
+ },
+ "triage2021": {
+  "authors": [
+   "Okati, N.",
+   "De, A.",
+   "Gomez-Rodriguez, M."
+  ],
+  "difference": "triages among models with different costs; our dial holds accuracy fixed, isolating where catches fall from how many there are.",
+  "key": "triage2021",
+  "n": 24,
+  "title": "Differentiable Learning Under Triage",
+  "url": "https://arxiv.org/abs/2103.08902",
+  "venue": "arXiv preprint arXiv:2103.08902",
+  "year": "2021"
+ },
+ "unbiaseddeferral2021": {
+  "authors": [
+   "Keswani, V.",
+   "Lease, M.",
+   "Kenthapadi, K."
+  ],
+  "difference": "optimises which of several experts receives a case; we reallocate where a fixed-accuracy layer's catches fall and show the choice changes what it is worth.",
+  "key": "unbiaseddeferral2021",
+  "n": 9,
+  "title": "Towards Unbiased and Accurate Deferral to Multiple Experts",
+  "url": "https://arxiv.org/abs/2102.13004",
+  "venue": "arXiv preprint arXiv:2102.13004",
+  "year": "2021"
+ },
+ "uncertaintydefer2021": {
+  "authors": [
+   "Liu, J.",
+   "Gallego, B.",
+   "Barbieri, S."
+  ],
+  "difference": "uses predictive uncertainty as the defer signal; we show uncertainty-style summaries can be identical while the layer's worth is not.",
+  "key": "uncertaintydefer2021",
+  "n": 25,
+  "title": "Incorporating Uncertainty in Learning to Defer Algorithms for Safe Computer-Aided Diagnosis",
+  "url": "https://arxiv.org/abs/2108.07392",
+  "venue": "arXiv preprint arXiv:2108.07392",
+  "year": "2021"
+ },
+ "unequalunc2025": {
+  "authors": [
+   "Sargeant, H.",
+   "Jorgensen, M.",
+   "Shah, A.",
+   "Goring, S.",
+   "Weller, A.",
+   "Bhatt, U."
+  ],
+  "difference": "shows uncertainty is unevenly distributed across groups; that unevenness is one face of the composition effect we formalise.",
+  "key": "unequalunc2025",
+  "n": 93,
+  "title": "Unequal Uncertainty: Rethinking Algorithmic Interventions for Mitigating Discrimination from AI",
+  "url": "https://arxiv.org/abs/2508.07872",
+  "venue": "arXiv preprint arXiv:2508.07872",
+  "year": "2025"
+ },
+ "uqsurvey2023": {
+  "authors": [
+   "Hasan, M.",
+   "Abdar, M.",
+   "Khosravi, A.",
+   "Aickelin, U.",
+   "Lio', P.",
+   "Hossain, I.",
+   "Rahman, A.",
+   "Nahavandi, S."
+  ],
+  "difference": "surveys uncertainty estimation as a trust signal; we show such summaries can be identical while worth differs.",
+  "key": "uqsurvey2023",
+  "n": 76,
+  "title": "Survey on Leveraging Uncertainty Estimation Towards Trustworthy Deep Neural Networks: The Case of Reject Option and Post-training Processing",
+  "url": "https://arxiv.org/abs/2304.04906",
+  "venue": "arXiv preprint arXiv:2304.04906",
+  "year": "2023"
+ },
+ "uqvsdefer2025": {
+  "authors": [
+   "Wundram, A. M.",
+   "Baumgartner, C. F."
+  ],
+  "difference": "compares uncertainty quantification with learned deferral as signals; we compare adding a layer with not adding one.",
+  "key": "uqvsdefer2025",
+  "n": 48,
+  "title": "Is Uncertainty Quantification a Viable Alternative to Learned Deferral?",
+  "url": "https://arxiv.org/abs/2508.02319",
+  "venue": "arXiv preprint arXiv:2508.02319",
+  "year": "2025"
+ },
+ "vaswani2017attention": {
+  "authors": [
+   "Vaswani, A.",
+   "Shazeer, N.",
+   "Parmar, N.",
+   "Uszkoreit, J.",
+   "Jones, L.",
+   "Gomez, A. N.",
+   "Kaiser, L.",
+   "Polosukhin, I."
+  ],
+  "difference": "introduces the transformer architecture; we ask whether an additional verification pass over its outputs repays the capacity it takes.",
+  "key": "vaswani2017attention",
+  "n": 81,
+  "title": "Attention Is All You Need",
+  "url": "https://arxiv.org/abs/1706.03762",
+  "venue": "arXiv preprint arXiv:1706.03762",
+  "year": "2017"
+ },
+ "viola2001cascade": {
+  "authors": [
+   "Viola, P.",
+   "Jones, M."
+  ],
+  "difference": "builds a boosted cascade tuned for speed and false positives; we make the value of an added cascade stage the object of study.",
+  "key": "viola2001cascade",
+  "n": 77,
+  "title": "Rapid object detection using a boosted cascade of simple features",
+  "url": "https://doi.org/10.1109/CVPR.2001.990517",
+  "venue": "Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001",
+  "year": "2001"
+ },
+ "vlgenrm2025": {
+  "authors": [
+   "Zhang, J.",
+   "Miao, K.",
+   "Pi, R.",
+   "Wang, Z.",
+   "Liu, R.",
+   "Pan, R.",
+   "Zhang, T."
+  ],
+  "difference": "applies generative reward models to vision-language verification; the modality is not what decides the marginal value.",
+  "key": "vlgenrm2025",
+  "n": 73,
+  "title": "VL-GenRM: Enhancing Vision-Language Verification via Vision Experts and Iterative Training",
+  "url": "https://arxiv.org/abs/2506.13888",
+  "venue": "arXiv preprint arXiv:2506.13888",
+  "year": "2025"
+ },
+ "vqaabstain2022": {
+  "authors": [
+   "Whitehead, S.",
+   "Petryk, S.",
+   "Shakib, V.",
+   "Gonzalez, J.",
+   "Darrell, T.",
+   "Rohrbach, A.",
+   "Rohrbach, M."
+  ],
+  "difference": "abstains to avoid incorrect visual answers; our unit is a layer's marginal catch, not one model's decision to answer.",
+  "key": "vqaabstain2022",
+  "n": 46,
+  "title": "Reliable Visual Question Answering: Abstain Rather Than Answer Incorrectly",
+  "url": "https://arxiv.org/abs/2204.13631",
+  "venue": "arXiv preprint arXiv:2204.13631",
+  "year": "2022"
+ },
+ "wang2023selfconsistency": {
+  "authors": [
+   "Wang, X.",
+   "Wei, J.",
+   "Schuurmans, D.",
+   "Le, Q.",
+   "Chi, E.",
+   "Narang, S.",
+   "Chowdhery, A.",
+   "Zhou, D."
+  ],
+  "difference": "samples several reasoning paths and takes a vote; that is internal redundancy, and our dial makes the redeployment explicit and priced.",
+  "key": "wang2023selfconsistency",
+  "n": 64,
+  "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+  "url": "https://arxiv.org/abs/2203.11171",
+  "venue": "arXiv preprint arXiv:2203.11171",
+  "year": "2022"
+ },
+ "wei2022cot": {
+  "authors": [
+   "Wei, J.",
+   "Wang, X.",
+   "Schuurmans, D.",
+   "Bosma, M.",
+   "Ichter, B.",
+   "Xia, F.",
+   "Chi, E.",
+   "Le, Q.",
+   "Zhou, D."
+  ],
+  "difference": "elicits multi-step reasoning by prompting; we ask when a second check on that reasoning pays.",
+  "key": "wei2022cot",
+  "n": 65,
+  "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+  "url": "https://arxiv.org/abs/2201.11903",
+  "venue": "arXiv preprint arXiv:2201.11903",
+  "year": "2022"
+ },
+ "wilson1927probable": {
+  "authors": [
+   "Wilson, E. B."
+  ],
+  "difference": "gives an interval for a binomial proportion; we use it for the calibrated held-out cells.",
+  "key": "wilson1927probable",
+  "n": 106,
+  "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+  "url": "https://doi.org/10.1080/01621459.1927.10502953",
+  "venue": "Journal of the American Statistical Association",
+  "year": "1927"
+ },
+ "wolpert1992stacked": {
+  "authors": [
+   "Wolpert, D. H."
+  ],
+  "difference": "learns a combiner over base models; we ask whether the combiner's capacity was better spent strengthening a single model.",
+  "key": "wolpert1992stacked",
+  "n": 52,
+  "title": "Stacked generalization",
+  "url": "https://doi.org/10.1016/s0893-6080(05)80023-1",
+  "venue": "Neural Networks",
+  "year": "1992"
+ },
+ "workload2024": {
+  "authors": [
+   "Alves, J. V.",
+   "Leitão, D.",
+   "Jesus, S.",
+   "Sampaio, M. O. P.",
+   "Liébana, J.",
+   "Saleiro, P.",
+   "Figueiredo, M. A. T.",
+   "Bizarro, P."
+  ],
+  "difference": "makes deferral cost-sensitive to expert workload; our budget is the primary's capacity, so the trade-off we study is reallocation.",
+  "key": "workload2024",
+  "n": 17,
+  "title": "Cost-Sensitive Learning to Defer to Multiple Experts with Workload Constraints",
+  "url": "https://arxiv.org/abs/2403.06906",
+  "venue": "arXiv preprint arXiv:2403.06906",
+  "year": "2024"
+ },
+ "yao2022react": {
+  "authors": [
+   "Yao, S.",
+   "Zhao, J.",
+   "Yu, D.",
+   "Du, N.",
+   "Shafran, I.",
+   "Narasimhan, K.",
+   "Cao, Y."
+  ],
+  "difference": "interleaves reasoning with acting; verifying an action is an added layer whose marginal catch matters.",
+  "key": "yao2022react",
+  "n": 68,
+  "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "url": "https://arxiv.org/abs/2210.03629",
+  "venue": "arXiv preprint arXiv:2210.03629",
+  "year": "2022"
+ },
+ "yao2023tree": {
+  "authors": [
+   "Yao, S.",
+   "Yu, D.",
+   "Zhao, J.",
+   "Shafran, I.",
+   "Griffiths, T. L.",
+   "Cao, Y.",
+   "Narasimhan, K."
+  ],
+  "difference": "searches over intermediate thoughts; search multiplies checks, and we price that multiplication.",
+  "key": "yao2023tree",
+  "n": 69,
+  "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+  "url": "https://arxiv.org/abs/2305.10601",
+  "venue": "arXiv preprint arXiv:2305.10601",
+  "year": "2023"
+ },
+ "zheng2023judge": {
+  "authors": [
+   "Zheng, L.",
+   "Chiang, W. L.",
+   "Sheng, Y.",
+   "Zhuang, S.",
+   "Wu, Z.",
+   "Zhuang, Y.",
+   "Lin, Z.",
+   "Li, Z.",
+   "Li, D.",
+   "Xing, E. P.",
+   "Zhang, H.",
+   "Gonzalez, J. E.",
+   "Stoica, I."
+  ],
+  "difference": "shows LLM judges correlate with human preferences; we ask when the judge's verdict adds to the first pass rather than repeating it.",
+  "key": "zheng2023judge",
+  "n": 71,
+  "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+  "url": "https://arxiv.org/abs/2306.05685",
+  "venue": "arXiv preprint arXiv:2306.05685",
+  "year": "2023"
+ }
+}
