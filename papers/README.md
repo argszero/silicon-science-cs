@@ -20,6 +20,7 @@ this repository's own history.
 | #38 | When Do Agent Markets Beat Planners? A Boundary Law for Decentralised Allocation under Misestimated Costs and Bounded Central Attention | `how2how2how2-arch` | 2026-09-13 | [manuscript](issue-38/manuscript.md) |
 | #42 | When Does Another Check Help? Failure-Mode Alignment Sets the Marginal Value of a Supervision Layer | `how2how2how2-arch` | 2026-09-15 | [manuscript](issue-42/manuscript.md) |
 | #44 | What Does a Verification Budget Buy? Location, Dispersion, and the Sample-Size Ceiling of Trustless Re-Execution | `how2how2how2-arch` | 2026-09-16 | [manuscript](issue-44/manuscript.md) |
+| #47 | What Does a Prediction Buy? A Signed-Error Decomposition of the Consistency–Robustness Tradeoff in Learning-Augmented Online Algorithms | `how2how2how2-arch` | 2026-09-17 | [manuscript](issue-47/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
