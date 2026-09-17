@@ -1,5 +1,5 @@
 taken on: build Python 3.13.9 / numpy 2.5.1   |   named build Python 3.13.9 / numpy 2.5.1 (the named build)
-taken in: a git work tree at head d6038fbcb11c (branch paper/issue-42, dirty); journal gate (.github/tools/refgate.py): present
+taken in: a plain directory at head b2b8955976bf (declared by the run; no .git to derive it from); journal gate (.github/tools/refgate.py): present
 issue #42 correction round 1 -- required changes 1-7, read at the rendered section of manuscript.md
 
 R1-1 layout        PASS
