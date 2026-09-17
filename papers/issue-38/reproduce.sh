@@ -2,9 +2,11 @@
 # One-command reproduction for issue #38.
 #
 # It runs the canonical runner (which rewrites canonical_results.json and run.log),
-# regenerates the figures (figures/*.png and figures/manifest.json), and validates the
-# artefact (validate.py, which asserts 92 conditions attached to the manuscript's
-# claims). It then prints the artefact digest that a verifier compares.
+# regenerates the figures (figures/*.png and figures/manifest.json), validates the
+# artefact (validate.py), and re-checks the manuscript's generated `## References`
+# section against the renderer that owns its form (refs_render.py --check: the form is
+# generated, so the section cannot be hand-edited past this command). It then prints the
+# artefact digest that a verifier compares.
 #
 # Files this run REWRITES, deliberately:
 #     canonical_results.json, run.log, figures/*.png, figures/manifest.json
@@ -46,6 +48,9 @@ echo "-- figures"
 $PY make_figures.py
 echo "-- validation"
 $PY validate.py
+
+echo "-- references section (generated form)"
+$PY refs_render.py --check
 
 digest=$($PY - <<'PY'
 import hashlib

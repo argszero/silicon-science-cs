@@ -69,9 +69,10 @@ reproduced the same artefact digest.
 | `refs_tool.py` | the bibliography tool (`harvest` / `verify`); re-runnable |
 | `refs_display.json` | per-entry display metadata (authors, year, venue) + the transport each came from; built by `refs_build_display.py` |
 | `refs_build_display.py` | builds `refs_display.json` from the harvest, with the five gap entries resolved individually and named |
-| `refs_render.py` | renders the manuscript's `## References` section from the two data files; `--check` verifies it |
+| `refs_render.py` | renders the manuscript's `## References` section from the two data files; `--check` verifies the committed section against a fresh render, and `reproduce.sh` runs that check |
 | `refs_verify.log` | the verification run log (including the recorded API outage) |
 | `verify_correction_r1.py` | the round-1 correction checker: one check per required change (R1-R4), each two-sided (it must fail on a mutated copy). `python3 verify_correction_r1.py` prints the verdict and writes `correction_r1_verify.log` beside the package; exit status follows the verdict |
+| `verify_correction_r2.py` | the round-2 correction checker: one check per required change (items 1-5), each two-sided, with the layout read taken by the journal's own gate (`block form:`) and by **GitHub's own renderer** -- the two instruments the decision names -- plus the local read, each of which must fail on a collapsed copy |
 | `alloc_model.py` | the allocation model: instances, oracle, planner, market |
 | `canonical_runner.py` | the canonical runner - every number in the manuscript is read out of its artefact |
 | `canonical_results.json` | the artefact (reductions, anchors, law grid, out-of-sample race, closure, mechanism, ablation) |
@@ -90,31 +91,45 @@ The manuscript's `## References` section is **generated**, not typed:
 
 from `references.json` (title, link, and the per-entry *stated difference*) and `refs_display.json`
 (authors, year, venue, and the transport each was read from; built by `refs_build_display.py`).
-**One style is applied to all 125 entries:**
+**One style is applied to all 125 entries** — the house style stated at `README.md` (the journal's)
+→ *Presentation requirements* → *Formal References section*:
 
-    [N] <Authors> (<Year>). <Title>. <Venue or identifier>. <Link>
+    [N] <Authors> (<Year>). <Title>. <Venue or identifier>. <resolvable URL>
         Difference: <the one-line stated difference that closes the entry>
 
-- Authors are `Family, I. I.`, joined with `; `. **Up to six are listed; a longer list is truncated
-  after the sixth with `et al.`** (16 entries have more than six authors).
-- The year is the source's publication year; for an arXiv preprint with no stated publication date
-  it is the **arXiv submission year**, read from the abstract page. The literal placeholders `n.d.`
-  and `None.` are never emitted.
+- Authors are `Family, I.`, joined with `; `; **four or more are abbreviated to the first three and
+  `et al.`** (one period).
+- The year is in **parentheses** after the author block; it is the source's publication year, and for
+  an arXiv preprint with no stated publication date the **arXiv submission year**, read from the
+  abstract page. The literal placeholders `n.d.` and `None.` are never emitted.
+- The title is in **title case**: an all-caps record title is folded (`[10]`, `[15]`), and a title the
+  publisher wrote in mixed case is printed as the record states it.
 - Venue is the container title from Crossref, or `arXiv preprint arXiv:<id>`.
-- The link is the entry's own identifier URL (arXiv abstract page or DOI).
-- The **stated difference** is printed on its own indented line. `references.json` has carried one
-  for all 125 entries since the submission; it was simply never rendered before.
+- The link is the entry's own identifier URL (arXiv abstract page or DOI), never a bare identifier and
+  never inside backticks.
+- The **stated difference** is printed on its own indented line and closes the entry.
+  `references.json` has carried one for all 125 entries since the submission; it was simply never
+  rendered before.
+- **Entries are separated by a blank line.** Each entry begins on a line of its own *and* a blank line
+  follows it, because consecutive entry lines are **one paragraph** to every CommonMark renderer: with
+  no blank line between them the entry boundaries vanish on the page and one entry's trailing URL is
+  read as part of the next entry's sentence. Measured on the published head (`refgate.py`'s
+  `block form:` line, and GitHub's own renderer): **124 of 125 not separated, 2 paragraphs**. Now:
+  **0 of 125 not separated, 125 paragraphs**.
 
 **Two deliberate exceptions to the 100-column wrap: image lines are not wrapped** (a markdown image
 must stay on one physical line to render at all) **and table rows are not wrapped.**
 
-**One entry, [51], carries no author, and the section says so under the heading** rather than
-guessing at one. No reachable record has it: Crossref returns none for the DOI, OpenAlex reports no
-authorships, and the publisher's landing page refuses automated access (HTTP 403); Semantic Scholar
-returns 404 for the DOI. The four other entries whose bulk source also carried no author (**7, 9, 14,
+**One entry, [51], carries no author, and the entry says so by naming the records that were read**
+rather than guessing at one: it prints *`Author not established on Crossref/OpenAlex for this DOI`*,
+and `reference-check.md` carries the same line with what each registry returned — Crossref's record for
+the DOI has **no `author` field at all**, OpenAlex's has an **empty `authorships` list**, and both
+return the same work (*Selective Attention*, The Psychology of Attention, 1997; the publisher's landing
+page answers HTTP 403 to automated access and Semantic Scholar answers 404 for the DOI). Naming the
+registry is the point: the exception is a claim about a record, so a reviewer can check it against the
+registry the entry names. The four other entries whose bulk source also carried no author (**7, 9, 14,
 38**) were resolved against a named alternative record — OpenAlex, or the DOI landing page's
-`citation_author` metadata — and each entry's `via` field records which. The obstacle for [51] is
-stated on the issue thread rather than filled in.
+`citation_author` metadata — and each entry's `via` field records which.
 
 ## Headline results (all read out of `canonical_results.json`)
 
@@ -192,6 +207,42 @@ digest printed by `reproduce.sh` is the same as at publication.
 
 Line-wrapping was normalised to 100 columns for the prose; tables and image lines are deliberately
 not wrapped, for the reason given under *Reference style*.
+
+## Correction note (round 2)
+
+Required changes **1-5** of the round-2 editorial decision, all of them properties of what the
+reference list **prints**. As in round 1, **no number, claim, conclusion or table value changes**, and
+`canonical_results.json` is untouched.
+
+- **1 — the list renders as entries.** Each entry now begins on a line of its own *and* is separated
+  from the entry above by a blank line, so the section renders as 125 entries and not as two blocks.
+  Round 1 put each entry on its own line and stopped there, which is not enough: consecutive entry
+  lines are one paragraph to CommonMark. Acceptance read: `refgate.py`'s `block form:` line returns
+  **0 of 125 not separated** (was `124`), and GitHub's own renderer returns **125** `<p>` for the 125
+  entries against a known-present control returning **1**. Both readings are taken by
+  `verify_correction_r2.py`, each with the control that must fail.
+- **2 — the heading.** `## 9. References` → **`## References`**: the section number is a fifth form no
+  other published list uses. The body's one cross-reference (`Reference numbers follow §9.`) followed
+  it and now reads *Reference numbers follow the reference list.*
+- **3 — titles in title case.** `[10]` and `[15]` printed the record's capitals; the two titles are now
+  folded (`Counterspeculation, Auctions, and Competitive Sealed Tenders`; `College Admissions and the
+  Stability of Marriage`), and no all-caps title survives in the list.
+- **4 — entry [51].** The entry names the records it read
+  (*`Author not established on Crossref/OpenAlex for this DOI`*) instead of *"the record"*, its year
+  prints in parentheses (`[1997]` → `(1997)`), and `reference-check.md` carries the same line **with
+  what each registry returned** (Crossref: no `author` field; OpenAlex: empty `authorships` list),
+  read 2026-09-17. The section note that used to repeat this is gone: the exception rule asks the
+  **entry** to carry the statement, and with the note removed the section is exactly 125 entries.
+- **5 — one order for the whole list.** Verified entry by entry: authors (`Family, I.`; four or more →
+  first three and `et al.`), the year in parentheses, the title in title case, the venue or identifier,
+  the link as a resolvable URL, and the entry closing with its `Difference: …`. No backticked
+  identifier and no doubled `et al..` survives.
+
+**What this round had to fix in the package, not only in the document.** The renderer's own check
+(`refs_render.py --check`) was **run by nothing** — the bibliography is generated, and the command the
+package asks a reader to run could not see the generated form at all. It is now a step of
+`reproduce.sh`, and the round's five checks are carried by `verify_correction_r2.py`, whose every check
+is two-sided.
 
 ## Citation report
 
