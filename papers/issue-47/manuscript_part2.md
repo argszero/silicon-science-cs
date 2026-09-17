@@ -94,12 +94,12 @@ instrument by the instrument, and it is carried as limit **L5**.
 
 The design compares a signed arm against a scalar arm matched **in form** — both are two-term, and
 they differ in the odd term. Matching the form is necessary but not sufficient, because the
-object-level test is not sign-free: under a synthetic **even** target, which by construction has no
-sign dependence, the odd parameter is penalised by up to `13` cluster MDEs — `12.95` for ski
-rental, `13.12` for scheduling and `1.53` for paging (ski
-`{{X:facts.limit.L2_null_shift.ski.value|2f}}`, sched
-`{{X:facts.limit.L2_null_shift.sched.value|2f}}`, paging
-`{{X:facts.limit.L2_null_shift.paging.value|2f}}`). A design that punishes its own odd term under a
+object-level test is not sign-free. The instrument calls this test the **specificity control**:
+under a synthetic **even** target, which by construction has no sign dependence, the odd parameter
+is penalised by up to `13` cluster MDEs, one per problem: ski rental
+`{{X:facts.limit.L2_null_shift.ski.value|2f}}`, scheduling
+`{{X:facts.limit.L2_null_shift.sched.value|2f}}` and paging
+`{{X:facts.limit.L2_null_shift.paging.value|2f}}`. A design that punishes its own odd term under a
 sign-free target cannot read a negative as evidence against a signed model.
 
 Two consequences are frozen as limit **L2** and applied everywhere below: only the **positive**
@@ -149,10 +149,28 @@ above its own resolution threshold in `{{X:facts.claim1.blocks_exceeding_own_mde
 `{{X:facts.claim1.blocks_total.value}}` blocks, with at least
 `{{X:facts.claim1.pairs_per_block_min.value}}` pairs in every block.
 
+![The witness, in the two panels its claim has. **Top:** the largest scalar-feature gap between the
+two arms, for each of the 39 design blocks — every mark on the axis, because the gap is exactly zero
+in every block by construction (the arms share a multiset of `|error|`). **Bottom:** the same blocks'
+realized loss differences, each divided by that block's own cluster-unit minimum detectable effect,
+so the dashed line at 1 is the block's own resolution; the 31 filled bars above it are differences
+the block can resolve, and the 8 hollow marks on the axis are the blocks where the arms did not
+separate at all — the error-free and coincident-arm control cases. Generated from
+`sufficiency_v1_results.json` by `figures/make_figures_v1.py`, regenerated and byte-compared by
+`reproduce.sh`.](figures/fig1_witness.svg)
+
 The reading is not statistical. A loss that is not a function of the scalar cannot be predicted from
 it, so no amount of capacity in the scalar regression can recover the difference — which is why the
 witness is stated as an identity (the scalar features are equal) plus a measured gap (the losses are
-not). This is the sharpest available form of the objection to the field's own quantifier, where
+not). **What the witness is a claim about, stated because the design cannot separate the two:** the
+sign is uniform across all three problems (§7: `12`/`12`, `7`/`7`, `12`/`12` separating blocks), and
+this harness prices over-prediction and under-prediction through **one** asymmetric cost form (limits
+L2, L6). So the witness is a claim about how these **algorithms** consume a signed prediction *under a
+fixed cost geometry*; it is not evidence that the same sign ordering survives a design that varies the
+cost structure across problems, which is a different experiment and is not run here. What survives
+such a change is the identity half — two arms with equal scalar features and unequal losses — because
+that half is a property of how the arms are built, not of how the loss is priced; the direction of the
+gap is the half that would move, and §1.4's decision sentence is the sentence that would move with it. This is the sharpest available form of the objection to the field's own quantifier, where
 `|error|` or `eta` appears as a sufficient statistic for the price of misprediction
 [@mitzenmacher] [@lassurvey] [@mitzenmachermisprediction] [@weioptimal]. Criterion (a)'s held-out
 model comparison returns **`{{X:criteria.a_signed_beats_scalar_on_held_out_cells.state}}`** for
@@ -351,7 +369,7 @@ cluster units (§3.4), so the robustness question is not whether the numbers mov
     `{{F:F1_2_sign_channel.paging.distance_to_boundary}}` cluster MDEs they sit below the bar.
   * **Exactness.** Where the stage records the units individually the bound is exact; where it keeps
     only an aggregate (a cluster mean with its interval) the bound is an estimate under a stated
-    equal-magnitude assumption, and the artefact says which is which. The specificity control (§4.5)
+    equal-magnitude assumption, and the artefact says which is which. The **specificity control** — the sign-free even target of §3.5, frozen as limit L2 —
     is the case where the bound is **not derivable** at all from the committed artefact — the per-unit
     rows behind its aggregate were never recorded — and it is reported that way rather than estimated
     into a number.

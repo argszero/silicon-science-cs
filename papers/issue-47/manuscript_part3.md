@@ -104,7 +104,7 @@ guidance.
 ### 6.2 The package: one command, and what it recomputes
 
 `bash reproduce.sh` runs the whole package on one CPU core with the Python standard library and **no
-network**, and exits non-zero unless every step passes. It has **eleven** steps, and they are
+network**, and exits non-zero unless every step passes. It has **twelve** steps, and they are
 enumerated here in the order the script prints them: (1) the stages plus the canonical aggregate,
 which **recomputes** every cited number from the stage artefacts' primitives and cross-checks it
 against the value each stage recorded about itself (`{{S:n_facts}}` facts, 0 disagreements when this
@@ -121,7 +121,8 @@ entry; (6) the **support limb** of citation integrity (Section 6.3); (7) the jou
 (one `## References` section, at least 100 entries, every entry cited); (8) the flip bound per
 headline number, and its liveness control; (9) the README against the artefacts that own its numbers,
 and that check's liveness control; (10) the manuscript's own typed counts against the artefacts that
-own them, with that check's liveness control; and (11) the digest block.
+own them, with that check's liveness control; (11) the figures, each regenerated from the artefacts
+and compared byte for byte, with its own liveness control; and (12) the digest block.
 
 Two further properties are reported rather than assumed. The **coordinate census** scans the package
 for hidden inputs the authoring machine supplies silently: it reports

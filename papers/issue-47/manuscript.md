@@ -127,10 +127,13 @@ the two signs by a measurable amount**, and the object a theorem should be state
 between, which is a question for the theory of this field, not a matter of numeric polish
 [6] [7].
 
-If C4 is true, then a systems team that follows the standard worst-case calibration of `lambda` pays
-a factor of roughly `1.29`–`1.70`
-in the typical case, and a signed decomposition tells that team **which half of their predictor's
-error is worth reducing**. The decision "spend the next unit of effort on the predictor or on the
+If C4 is true, then a systems team that follows the standard worst-case calibration of `lambda` pays, **on
+this instrument's generated profiles**, a factor of roughly `1.29`–`1.70`
+per problem, and a signed decomposition tells that team **which half of their predictor's error is
+worth reducing**. That factor is measured here, and so is the population it holds on: the external
+cell reaches the published robustness scale in one problem of three (§4.3, limit L3), so a team
+whose workload differs from this generator's should read the direction of the effect, not its
+magnitude. The decision "spend the next unit of effort on the predictor or on the
 fallback" is exactly the quantity measured here. This is the audience named by the decision-focused
 literature from the other direction [8] [9], and it is the audience the
 published cache systems are built for [10].
@@ -452,12 +455,12 @@ instrument by the instrument, and it is carried as limit **L5**.
 
 The design compares a signed arm against a scalar arm matched **in form** — both are two-term, and
 they differ in the odd term. Matching the form is necessary but not sufficient, because the
-object-level test is not sign-free: under a synthetic **even** target, which by construction has no
-sign dependence, the odd parameter is penalised by up to `13` cluster MDEs — `12.95` for ski
-rental, `13.12` for scheduling and `1.53` for paging (ski
-`-12.95`, sched
-`-13.12`, paging
-`-1.53`). A design that punishes its own odd term under a
+object-level test is not sign-free. The instrument calls this test the **specificity control**:
+under a synthetic **even** target, which by construction has no sign dependence, the odd parameter
+is penalised by up to `13` cluster MDEs, one per problem: ski rental
+`-12.95`, scheduling
+`-13.12` and paging
+`-1.53`. A design that punishes its own odd term under a
 sign-free target cannot read a negative as evidence against a signed model.
 
 Two consequences are frozen as limit **L2** and applied everywhere below: only the **positive**
@@ -507,10 +510,28 @@ above its own resolution threshold in `31` of
 `39` blocks, with at least
 `16` pairs in every block.
 
+![The witness, in the two panels its claim has. **Top:** the largest scalar-feature gap between the
+two arms, for each of the 39 design blocks — every mark on the axis, because the gap is exactly zero
+in every block by construction (the arms share a multiset of `|error|`). **Bottom:** the same blocks'
+realized loss differences, each divided by that block's own cluster-unit minimum detectable effect,
+so the dashed line at 1 is the block's own resolution; the 31 filled bars above it are differences
+the block can resolve, and the 8 hollow marks on the axis are the blocks where the arms did not
+separate at all — the error-free and coincident-arm control cases. Generated from
+`sufficiency_v1_results.json` by `figures/make_figures_v1.py`, regenerated and byte-compared by
+`reproduce.sh`.](figures/fig1_witness.svg)
+
 The reading is not statistical. A loss that is not a function of the scalar cannot be predicted from
 it, so no amount of capacity in the scalar regression can recover the difference — which is why the
 witness is stated as an identity (the scalar features are equal) plus a measured gap (the losses are
-not). This is the sharpest available form of the objection to the field's own quantifier, where
+not). **What the witness is a claim about, stated because the design cannot separate the two:** the
+sign is uniform across all three problems (§7: `12`/`12`, `7`/`7`, `12`/`12` separating blocks), and
+this harness prices over-prediction and under-prediction through **one** asymmetric cost form (limits
+L2, L6). So the witness is a claim about how these **algorithms** consume a signed prediction *under a
+fixed cost geometry*; it is not evidence that the same sign ordering survives a design that varies the
+cost structure across problems, which is a different experiment and is not run here. What survives
+such a change is the identity half — two arms with equal scalar features and unequal losses — because
+that half is a property of how the arms are built, not of how the loss is priced; the direction of the
+gap is the half that would move, and §1.4's decision sentence is the sentence that would move with it. This is the sharpest available form of the objection to the field's own quantifier, where
 `|error|` or `eta` appears as a sufficient statistic for the price of misprediction
 [1] [5] [45] [6]. Criterion (a)'s held-out
 model comparison returns **`measured`** for
@@ -709,7 +730,7 @@ cluster units (§3.4), so the robustness question is not whether the numbers mov
     `1.0335` cluster MDEs they sit below the bar.
   * **Exactness.** Where the stage records the units individually the bound is exact; where it keeps
     only an aggregate (a cluster mean with its interval) the bound is an estimate under a stated
-    equal-magnitude assumption, and the artefact says which is which. The specificity control (§4.5)
+    equal-magnitude assumption, and the artefact says which is which. The **specificity control** — the sign-free even target of §3.5, frozen as limit L2 —
     is the case where the bound is **not derivable** at all from the committed artefact — the per-unit
     rows behind its aggregate were never recorded — and it is reported that way rather than estimated
     into a number.
@@ -842,7 +863,7 @@ guidance.
 ### 6.2 The package: one command, and what it recomputes
 
 `bash reproduce.sh` runs the whole package on one CPU core with the Python standard library and **no
-network**, and exits non-zero unless every step passes. It has **eleven** steps, and they are
+network**, and exits non-zero unless every step passes. It has **twelve** steps, and they are
 enumerated here in the order the script prints them: (1) the stages plus the canonical aggregate,
 which **recomputes** every cited number from the stage artefacts' primitives and cross-checks it
 against the value each stage recorded about itself (`113` facts, 0 disagreements when this
@@ -859,7 +880,8 @@ entry; (6) the **support limb** of citation integrity (Section 6.3); (7) the jou
 (one `## References` section, at least 100 entries, every entry cited); (8) the flip bound per
 headline number, and its liveness control; (9) the README against the artefacts that own its numbers,
 and that check's liveness control; (10) the manuscript's own typed counts against the artefacts that
-own them, with that check's liveness control; and (11) the digest block.
+own them, with that check's liveness control; (11) the figures, each regenerated from the artefacts
+and compared byte for byte, with its own liveness control; and (12) the digest block.
 
 Two further properties are reported rather than assumed. The **coordinate census** scans the package
 for hidden inputs the authoring machine supplies silently: it reports

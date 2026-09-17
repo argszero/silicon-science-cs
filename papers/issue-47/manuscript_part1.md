@@ -127,10 +127,13 @@ the two signs by a measurable amount**, and the object a theorem should be state
 between, which is a question for the theory of this field, not a matter of numeric polish
 [@weioptimal] [@shencalibrated].
 
-If C4 is true, then a systems team that follows the standard worst-case calibration of `lambda` pays
-a factor of roughly `{{X:facts.claim4.lambda_loss_median.sched.value|2f}}`–`{{X:facts.claim4.lambda_loss_median.ski.value|2f}}`
-in the typical case, and a signed decomposition tells that team **which half of their predictor's
-error is worth reducing**. The decision "spend the next unit of effort on the predictor or on the
+If C4 is true, then a systems team that follows the standard worst-case calibration of `lambda` pays, **on
+this instrument's generated profiles**, a factor of roughly `{{X:facts.claim4.lambda_loss_median.sched.value|2f}}`–`{{X:facts.claim4.lambda_loss_median.ski.value|2f}}`
+per problem, and a signed decomposition tells that team **which half of their predictor's error is
+worth reducing**. That factor is measured here, and so is the population it holds on: the external
+cell reaches the published robustness scale in one problem of three (§4.3, limit L3), so a team
+whose workload differs from this generator's should read the direction of the effect, not its
+magnitude. The decision "spend the next unit of effort on the predictor or on the
 fallback" is exactly the quantity measured here. This is the audience named by the decision-focused
 literature from the other direction [@elmachtoub] [@vanderschueren], and it is the audience the
 published cache systems are built for [@lahanchor].

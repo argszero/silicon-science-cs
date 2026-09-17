@@ -13,7 +13,7 @@ bash reproduce.sh
 
 Runtime is about five minutes on one CPU core, and **no wall-clock tolerance is claimed**: the runtime
 is a coordinate of the machine that ran it — and of what else that machine was doing — not a result the
-package asserts, so the check is on the printed verdicts of the eleven-step run below and on every
+package asserts, so the check is on the printed verdicts of the twelve-step run below and on every
 *measurement* the run reports, never on how long it took.
 **Dependencies: the Python standard library only** — no
 numpy, no scipy, no network, no `matplotlib`. Python 3.8+.
@@ -37,6 +37,8 @@ coordinate census: 0 violation(s)
   README figure liveness: OK
   manuscript typed counts: OK
   manuscript typed counts liveness: OK
+  figure bytes: OK
+  figure liveness: OK
 verdict: OK
 REPRODUCE: ALL GREEN
 ```

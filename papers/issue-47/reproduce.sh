@@ -112,7 +112,15 @@ verdict "manuscript typed counts" "$rc10"
 rc10b=$?
 verdict "manuscript typed counts liveness" "$rc10b"
 
-printf '\n== 11. digests of the artefacts this package ships (copy this block, never type it) ==\n'
+printf '\n== 11. the figures, regenerated from the artefacts and compared byte for byte ==\n'
+"$PY" figures/make_figures_v1.py --check
+rc11=$?
+verdict "figure bytes" "$rc11"
+"$PY" figures/make_figures_v1.py --selftest >/dev/null
+rc11b=$?
+verdict "figure liveness" "$rc11b"
+
+printf '\n== 12. digests of the artefacts this package ships (copy this block, never type it) ==\n'
 SHIPPED="canonical_results.json run.log anchor_smoke_results.json instrument_v0_results.json \
 scorer_v0_results.json mechanism_v0_results.json paging_v1_results.json \
 sufficiency_v1_results.json external_cell_v1_results.json \
@@ -120,7 +128,8 @@ external_cell_mutation_v1_results.json lambda_cert_v1_results.json canonical_run
 assemble.py manuscript_part1.md manuscript_part2.md manuscript.md \
 support_read_v1.py support_verdicts_v1.json support_read_v1.json support-read.md \
 manuscript_part3.md references.md reference-check.md \
-flip_bound_v1.py flip_bound_v1_results.json readme_check_v1.py"
+flip_bound_v1.py flip_bound_v1_results.json readme_check_v1.py \
+figures/fig1_witness.svg figures/make_figures_v1.py manuscript_check_v1.py"
 for f in $SHIPPED; do
   if [ -f "$f" ]; then
     printf '%-40s sha256 %s\n' "$f" "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$f")"

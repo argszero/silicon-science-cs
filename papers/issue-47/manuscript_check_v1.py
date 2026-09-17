@@ -232,6 +232,66 @@ def ck_roadmap(texts, c):
                        "%d roadmap entr(ies) name the section they describe" % len(ROADMAP))
 
 
+def ck_witness_magnitudes(texts, c):
+    """The specificity control's magnitudes must be resolved from the artefact, never typed beside it.
+
+    The claim this binds: a number the manuscript states about its own measurement must be the number the
+    artefact holds.  The rule is read over the SENTENCE that states them, not over the file -- read over
+    the file it fired on the section heading "### 1.5 Roadmap", because paging's value rounds to "1.5",
+    which is a coordinate of an entirely different object.  So: every magnitude the sentence states must
+    be a placeholder the assembler resolves, and the bare decimals the artefact holds must not occur in
+    the sentence at all.  Measured before this check existed, at an export of the reviewed head: changing
+    the typed `12.95` to `99.95` left this file at `9 check(s), 0 failed` and `assemble.py` at exit 0.
+    """
+    m = manuscript(texts)
+    marker = "The instrument calls this test the **specificity control**"
+    if marker not in m:
+        return False, "the specificity-control sentence is not in the manuscript parts"
+    start = m.index(marker)
+    stop = m.find("\n\n", start)
+    sent = m[start:stop if stop != -1 else len(m)]
+    facts = json.loads(texts["canonical_results.json"])["facts"]
+    vals = {}
+    for prob in ("ski", "sched", "paging"):
+        key = "limit.L2_null_shift.%s" % prob
+        if key not in facts:
+            return False, "the artefact does not carry %s -- nothing to bind against" % key
+        vals[prob] = facts[key]["value"]
+    typed = sorted({("%.2f" % v) for v in vals.values()} | {"%.1f" % abs(v) for v in vals.values()})
+    found = [x for x in typed if re.search(r"(?<![\w.])%s(?![\w])" % re.escape(x), sent)]
+    placeholders = len(re.findall(r"\{\{X:facts\.limit\.L2_null_shift\.[a-z]+\.value", sent))
+    if found:
+        return False, ("%d typed magnitude(s) beside the placeholders: %s -- one of the two carriages "
+                       "can disagree with the artefact silently" % (len(found), found))
+    if placeholders != 3:
+        return False, "the sentence carries %d resolved magnitude(s), expected 3 (one per problem)" % placeholders
+    return True, ("3 magnitudes, each a placeholder resolved from the artefact (%s); 0 typed copies"
+                  % ", ".join("%s %.2f" % (p, vals[p]) for p in ("ski", "sched", "paging")))
+
+
+def ck_figure(texts, c):
+    """The figure must be shown in the manuscript AND the file it names must be committed.
+
+    Both halves, because the bar asks for both and each can fail alone: an embed naming a file that is not
+    in the tree is a broken image, and a committed figure no sentence shows is a package the reader never
+    sees.  The byte-level read -- that the file is what the generator produces -- lives in
+    `figures/make_figures_v1.py --check`, which `reproduce.sh` runs; this is the manuscript's half.
+    """
+    m = manuscript(texts)
+    embeds = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", m, re.S)
+    if not embeds:
+        return False, ("the manuscript shows no figure at all (`![...](...)` occurs 0 times) -- "
+                       "Presentation requirements item 1: text-only manuscripts are incomplete")
+    missing = [e for e in embeds if not os.path.exists(os.path.join(HERE, e))]
+    if missing:
+        return False, "the manuscript embeds %s, which is not in the package" % missing
+    for e in embeds:
+        if not e.startswith("figures/"):
+            return False, "the embedded figure %r does not live under figures/" % e
+    return True, "%d figure(s) shown, each naming a committed file (%s)" % (len(embeds), ", ".join(embeds))
+
+
+
 CHECKS = [
     ("manuscript/step_count_is_the_one_reproduce_sh_prints", ck_steps),
     ("manuscript/liveness_bound_is_the_runner's_case_list", ck_liveness),
@@ -242,13 +302,27 @@ CHECKS = [
     ("manuscript/inflation_range_is_the_sufficiency_artifact's", ck_inflation),
     ("manuscript/every_section_reference_resolves", ck_section_refs),
     ("manuscript/the_roadmap_names_the_section_it_describes", ck_roadmap),
+    ("manuscript/the_witness_magnitudes_are_resolved_not_typed", ck_witness_magnitudes),
+    ("manuscript/the_figure_is_shown_and_its_file_is_committed", ck_figure),
 ]
 
 # (check, file, the claim to break, what to replace it with).  Breaking one claim must fail its own
 # check and no other -- an exact list, not "something went red" (the confounded battery of R343).
+def _mut_steps(texts):
+    """Break the manuscript's step-count word wherever it stands, read from the text, never typed."""
+    m = re.search(r"It has \*\*([a-z]+)\*\* steps", texts["manuscript_part3.md"])
+    if not m:
+        return ("manuscript_part3.md", None, None)
+    wrong = "seven" if m.group(1) != "seven" else "eight"
+    return ("manuscript_part3.md", m.group(0), "It has **%s** steps" % wrong)
+
+
 MUTATIONS = [
-    ("manuscript/step_count_is_the_one_reproduce_sh_prints",
-     "manuscript_part3.md", "It has **eleven** steps,", "It has **seven** steps,"),
+    # DERIVED, NOT PINNED.  This anchor first read `**eleven**`, and the step count legitimately became
+    # `twelve` in the same round that added a step -- so the case reported "the anchor occurs 0 time(s)"
+    # about a correction that had just made the package right.  A mutation anchor is itself a claim about
+    # an artefact; read the word out of the manuscript and break that.
+    ("manuscript/step_count_is_the_one_reproduce_sh_prints", _mut_steps),
     ("manuscript/liveness_bound_is_the_runner's_case_list",
      "manuscript_part3.md", "each of its **12\nnamed cases**", "each of its **113\nnamed cases**"),
     ("manuscript/freeze_check_count_is_the_freeze_result's",
@@ -265,6 +339,12 @@ MUTATIONS = [
      "manuscript_part1.md", "### 1.5 Roadmap", "### 1.5 Roadmap\n\nSection 9 is a phantom."),
     ("manuscript/the_roadmap_names_the_section_it_describes",
      "manuscript_part1.md", "and its Section 6.4 states", "and its Section 8 states"),
+    ("manuscript/the_witness_magnitudes_are_resolved_not_typed",
+     "manuscript_part2.md",
+     "one per problem: ski rental\n`{{X:facts.limit.L2_null_shift.ski.value|2f}}`",
+     "one per problem: ski rental\n`12.95`"),
+    ("manuscript/the_figure_is_shown_and_its_file_is_committed",
+     "manuscript_part2.md", "](figures/fig1_witness.svg)", "](figures/fig_absent.svg)"),
 ]
 
 
@@ -294,7 +374,15 @@ def selftest():
         print("FAIL   the battery needs a clean base; already failing: %s" % base)
         return 1
     bad = 0
-    for name, f, old, new in MUTATIONS:
+    for name, spec, *rest in MUTATIONS:
+        # A case is either a literal (file, old, new) or a callable that derives its own anchor from the
+        # text -- the derived form is preferred wherever the value can legitimately move (see _mut_steps),
+        # because a typed anchor turns a correct change into a red battery.
+        f, old, new = spec(texts) if callable(spec) else (spec,) + tuple(rest)
+        if old is None:
+            print("FAIL   %-58s the mutation anchor could not be derived from %s" % (name, f))
+            bad += 1
+            continue
         hits = texts[f].count(old)
         if hits != 1:
             print("FAIL   %-58s the mutation anchor occurs %d time(s) in %s" % (name, hits, f))
