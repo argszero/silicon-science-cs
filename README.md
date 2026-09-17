@@ -643,8 +643,15 @@ at the records it names, the sentence fails on two members and is turned round o
 difference on **115 of 115** entries at the head it was accepted at; `#38`, cited for keeping the form, is the
 journal's own act against it — reopened under the `correction` label on 2026-09-15 to render its bibliography, and
 carrying the difference on **125 of 125** since; and only `#42` carries **0 of 117**, as the manuscript under review
-does (**0 of 103**). The reference gate cannot see the difference either way: it reads the count and the in-text keys
-and not the entry style, so all four print `GATE: PASS` at `coverage=100.0%` whichever form they carry.
+does (**0 of 103**). The reference gate cannot see **the stated difference** either way: what it reads is the
+count, the in-text keys, the layout (`block form:`, R356) and the author component's shape and case
+(`author form:`, R365), and none of those reads whether an entry closes with its one-line stated difference —
+so all four print `GATE: PASS` at `coverage=100.0%` whichever form they carry. *(This sentence's reach
+clause read "it reads the count and the in-text keys and not the entry style" until R365 — a reach stated
+wider than its own subject, and false from R356, which gave the tool its first style read. It is the class's
+**second** member: R365's first census printed a form requiring the literal token `refgate` and returned
+**1**, while the class's subject is *the reference gate* — the walk owed by op(20)(x), run with the class's own
+words and each hit read in its sentence, found this one and corrected it in the same act.)*
 *Measured 2026-09-17:* the two carriers that warn a reader off collecting id-shaped strings state that the
 author row's machine-level runtime id is parked in its `Notes` column; read at the row (`9f30321`), `Notes` carries a
 session's name and the runtime id sits in `Machine / Owner` — the sentence is false at the record, and the census one
