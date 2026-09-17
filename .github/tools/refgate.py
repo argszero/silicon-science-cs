@@ -27,7 +27,16 @@ case-insensitive, trailing whitespace tolerated) for the section, an **entry
 marker** `[12]`, `12.` or `12)` at the start of a line, optionally indented
 (1-3 digits — a 4-digit run at line start is a YEAR on a wrapped URL or title
 line) for the entries, and an **in-text key** `[12]`, `[12,14]` or `[12-14]`
-(hyphen or en dash) for the body citations.
+(hyphen or en dash) for the body citations, plus one **layout** form that none of
+the three can see: an entry set is not a paragraph, so each entry begins on a line
+of its own and the entries are separated from one another by a blank line. The
+checker counts the entries and the entries that are **not separated from the entry
+above by a blank line** — consecutive entry lines are ONE paragraph to any
+CommonMark renderer (GitHub's preview included), so a list with none separated
+prints as a single block whose entry boundaries are invisible to a reader. That
+count is printed as the advisory `block form:` line; it is the instrument the
+rendering requirement in quality-bar item 11 is read by, and like every advisory
+line here it does not move the verdict.
 
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
@@ -105,6 +114,21 @@ def parse_entries(refsec):
     return ents, style
 
 
+def block_form(refsec):
+    """Return (n_entries, n_not_separated).
+
+    The layout read: an entry is *not separated* when the line above it is not
+    blank, i.e. when it sits directly under the tail of the entry before it —
+    which is what merges the whole list into one paragraph. The first entry is
+    excluded: a heading already ends its own line, so nothing merges into it.
+    """
+    lines = refsec.splitlines()
+    idx = [i for i, l in enumerate(lines) if ENTRY.match(l)]
+    unsep = sum(1 for k, i in enumerate(idx)
+                if k > 0 and lines[i - 1].strip() != "")
+    return len(idx), unsep
+
+
 def cited_numbers(body):
     """Numbers appearing as in-text bracket markers (fences stripped)."""
     nums = set()
@@ -159,6 +183,10 @@ def report(path):
     style_s = '+'.join(sorted(style)) or '?'
 
     print(f"  entries={total}  numbering={'[n]' if style_s == '[]' else style_s}")
+    bf_total, bf_unsep = block_form(refsec)
+    print(f"  block form: {bf_total} entries, {bf_unsep} of them not separated from the entry "
+          f"above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark "
+          f"renderer (GitHub's preview included); read the page, not the source")
     print(f"  in-text cited numbers={len(cited)}  covered={len(covered)}/{total}"
           f"  coverage={100.0 * len(covered) / total:.1f}%")
     if total >= THRESHOLD and len(covered) / total < 0.9:
@@ -318,6 +346,24 @@ def selftest():
          + " over a latency span [900,901]\n\n" + _refs(1, 100),
          ["AMBIGUOUS: bracket numbers matching no entry (2)", "GATE: PASS"],
          ("WARN", "NOTE", "uncited entries"))
+
+    # --- the LAYOUT read: the same entries, separated and collapsed ---------
+    # one entry per line, entries separated by a blank line: renders as entries
+    case("block_form_separated",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "entries=100", "block form: 100 entries, 0 of them not separated"],
+         CLEAN)
+    # the same 100 entries with no blank lines: ONE paragraph on the page, and
+    # the line says so — while the verdict does not move, because the layout read
+    # is an advisory and the count and the coverage are still met
+    case("block_form_collapsed",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n" + _refs(1, 100),
+         ["GATE: PASS", "entries=100",
+          "block form: 100 entries, 99 of them not separated"],
+         CLEAN)
 
     # --- one case per WINDOW FORM, not per printed line --------------------
     # A control owes the window's boundary: a case set drawn from the lines the
