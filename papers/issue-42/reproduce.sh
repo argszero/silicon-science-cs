@@ -4,8 +4,10 @@
 #   bash reproduce.sh
 #
 # Runs the four instruments in an isolated build directory, compares their output with the
-# committed artefacts, verifies every calibration quote against the committed evidence, and
-# asserts every number quoted in the manuscript against the artefact that produced it.
+# committed artefacts, verifies every calibration quote against the committed evidence, checks the
+# manuscript's GENERATED bibliography against the file that renders its form (`refs_render.py
+# --check`, plus `refs_build_display.py --check` for the data the renderer reads), and asserts every
+# number quoted in the manuscript against the artefact that produced it.
 #
 # Expected final line: "REPRODUCE: ALL GREEN".
 set -euo pipefail
@@ -64,7 +66,11 @@ PYEOF
 echo "== 3. calibration quotes vs committed evidence =="
 "$PY" verify_quotes.py
 
-echo "== 4. manuscript numbers vs artefacts =="
+echo "== 4. references (generated form) =="
+"$PY" refs_build_display.py --check
+"$PY" refs_render.py --check
+
+echo "== 5. manuscript numbers vs artefacts =="
 "$PY" assemble.py > /dev/null
 "$PY" trace_check.py
 "$PY" validate.py | tail -2

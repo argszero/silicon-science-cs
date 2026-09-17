@@ -24,7 +24,21 @@ Expected output (tail):
        results_v3.json    IDENTICAL  ...
     quotes 12/12 found ; mutated-needle control rejected = True
     VERIFY QUOTES: OK
+    == 4. references (generated form) ==
+    artefacts/refs_display.json matches a fresh build: True
+      117 entries, every entry carrying a stated difference, 1 declarative date(s)
+    references section matches the renderer: True
+      117 entries, 117 blank line(s), 117 stated difference(s), 117 resolvable URL(s)
+      bare `DOI: ` identifiers: 0 | doubled `et al..`: 0 | heading '## References'
+    == 5. manuscript numbers vs artefacts ==
+       figures: 6 referenced, 6 on disk, missing=none
+       orphaned figures: none
+       bibliography: 117 entries, dense=True, max citation=117, all in range=True
+       unverified references: none
+       reference count: 117 (threshold 100)
+       references never cited: none
     TRACE: OK
+
     VALIDATE 54/54
 
     REPRODUCE: ALL GREEN
@@ -51,8 +65,10 @@ only (everything else is the standard library). `make_figures.py` additionally n
 that can import numpy and fails with an explicit message if none can.
 
 **Files this run rewrites, deliberately:** `manuscript.md` (re-assembled from
-`manuscript_part1..3.md` by `assemble.py`, which renumbers citations by first appearance), and
-nothing else. The instrument artefacts are produced in a temporary build directory and compared
+`manuscript_part1..3.md` by `assemble.py`, which renumbers citations by first appearance and renders
+the bibliography through `refs_render.py`), and nothing else. The generated bibliography's data
+(`artefacts/refs_display.json`) is **compared** rather than rewritten, so a stale data file fails the
+run instead of being silently refreshed. The instrument artefacts are produced in a temporary build directory and compared
 against the committed copies, so the package is **re-entrant**: the same command prints
 `REPRODUCE: ALL GREEN` on the first run and on every run after it. Figure bytes are not compared -
 they depend on the matplotlib build - which is why `make_figures.py` is a separate, optional step.
@@ -65,6 +81,10 @@ they depend on the matplotlib build - which is why `make_figures.py` is a separa
 | `manuscript_part1..3.md` | the source parts; `assemble.py` numbers the citations |
 | `reference-check.md` | per-entry citation authenticity report against Crossref and DataCite |
 | `reproduce.sh` | the one command |
+| `refs_build_display.py` | builds `artefacts/refs_display.json` (authors in `Family, I.` form, year, title, venue, resolvable URL) from `artefacts/refs_ordered.json`; `--check` compares the committed file with a fresh build and is a step of `reproduce.sh` |
+| `refs_render.py` | renders the manuscript's `## References` section in the house style (authors — `(year)` — title — venue — resolvable URL — closing `Difference:`, one blank line between entries); `--check` verifies the committed section against a fresh render and is a step of `reproduce.sh` |
+| `refs_differences.json` | the **authored** one-line stated difference for each of the 117 entries (correction round 1, required change 2) |
+| `verify_correction_r1.py` | the round-1 correction checker: one check per required change (1-7), each two-sided, with the layout read taken by the journal's own gate (`block form:`) and by **GitHub's own renderer** — the two instruments the decision names — plus the local read. `python3 verify_correction_r1.py` prints the verdict and writes `correction_r1_verify.log` beside the package |
 | `validate.py` | 54 conditions, each anchored to BOTH an artefact path and its claim sentence |
 | `trace_check.py` | checks the chain: figures referenced vs on disk, citation numbering, no uncited reference |
 | `verify_quotes.py` | re-verifies all 12 calibration quotes against the committed evidence, with a mutated-needle control |
@@ -93,6 +113,49 @@ they depend on the matplotlib build - which is why `make_figures.py` is a separa
    smoothed.
 6. **The operational law is derived from the budget model**, so its small error is an
    input-estimation-error result and is not evidence that the budget model is correct.
+
+## Correction note (round 1)
+
+Required changes **1-7** of the round-1 editorial decision, all of them properties of **what the
+reference list prints**. No result, number, figure or claim changes and no new experiment is run: the
+manuscript's diff is a single hunk, the `## References` section.
+
+- **1 — the list renders as entries.** Each entry now begins on a line of its own *and* is separated
+  from the entry above by a blank line. Measured on the published head, the whole bibliography was
+  **one** paragraph to CommonMark and each entry's trailing `DOI:` was read as part of the next
+  entry's sentence. Acceptance reads, both taken by `verify_correction_r1.py`: the journal's gate
+  prints **`block form: 117 entries, 0 of them not separated`** (was `116 of 117`), and GitHub's own
+  renderer returns **117 `<p>`** for the 117 entries against a known-present control returning **1**.
+- **2 — the stated difference, on every entry.** 0 of 117 entries carried one; all 117 now close with
+  an **authored** line naming what that work is and what this paper does differently. The lines live
+  in `refs_differences.json` as data, and `refs_build_display.py` **refuses to build** an entry
+  without one, so the gap cannot come back silently.
+- **3 — a resolvable link.** Every entry printed a bare `DOI: 10.…` string; all 117 now print an
+  `https://doi.org/…` or `https://arxiv.org/abs/…` URL.
+- **4 — year form and position.** The year moves into parentheses directly after the author block and
+  prints once per entry (several entries printed it twice).
+- **5 — `et al..`.** The doubled period is gone: the renderer writes the period itself, so the form
+  cannot produce it. **57** entries carry four or more authors and print the single-period `et al.`.
+- **6 — author form.** Authors are normalised to `Family, I.` from the record, whether the registry
+  returned `Family, Given` or `Given Family` (the published list mixed both inside one entry in
+  places). Normalisation happens in `refs_build_display.py`; the record's full author list is kept.
+- **7 — one order for the whole list.** `[n]` — authors — `(year)` — title — venue or identifier —
+  resolvable URL — closing `Difference:`. Verified entry by entry.
+
+**What the round had to fix in the package, not only in the document.** The bibliography had no
+renderer: `assemble.py` built the entry string inline, so the form was not readable anywhere and no
+check could gate it. The form now lives in `refs_render.py`, the data in
+`artefacts/refs_display.json`, the authored content in `refs_differences.json`, and **both checks are
+steps of `reproduce.sh`** — a generated artefact whose check nothing runs is how this family's
+earlier rounds lost the same class of defect. `assemble.py` additionally asserts that the citation
+order it computes is the order the display data was built in, so a body edit that renumbers cannot
+desynchronise the list.
+
+**One date is supplied by declaration.** `viola2001cascade` has no year from any registry: Crossref
+returns `issued: [[None]]` for its DOI (read 2026-09-17) — the absence-blindness shape this package
+has recorded before. The venue string names `CVPR 2001` and the DOI itself carries `CVPR.2001`, so the
+year is supplied as **2001** by declaration in `refs_build_display.py`, printed by every build, and an
+entry with no year and no declaration **fails the build** rather than printing a blank.
 
 ## Citation verification
 

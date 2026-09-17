@@ -5,12 +5,20 @@ The parts carry symbolic keys (@key or [@k1; @k2]); this script assigns numbers 
 first appearance and emits the bibliography from artefacts/refs_final.json.  It FAILS LOUDLY
 if a cited key is not in the verified reference set, or if a verified reference is never
 cited -- an uncited reference is padding and does not count toward the reference threshold.
+
+The bibliography's FORM is not written here: `refs_render.py` owns it (house style, house entry
+order, blank line between entries, the closing `Difference:` line) and renders it from
+`artefacts/refs_display.json`.  This script asserts that the order it computes is the order that data
+was built in, so a body edit that re-numbers the citations cannot silently desynchronise the list.
 """
 import io
 import json
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import refs_render
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 GROUP = re.compile(r"\[@\{?([a-z0-9_]+)\}?(?:\s*;\s*@\{?([a-z0-9_]+)\}?)*\]")
@@ -39,14 +47,27 @@ def main():
     if len(order) < 100:
         print("ASSEMBLY FAILED: only %d references (threshold is 100)" % len(order))
         return 1
-    bib = []
-    for k in order:
-        r = refs[k]
-        au = r.get("authors") or []
-        astr = ", ".join(au[:3]) + (", et al." if len(au) > 3 else "")
-        bib.append("[%d] %s. %s. %s, %s. DOI: %s" % (num[k], astr or "(no author metadata)",
-                    r["title"].rstrip("."), r.get("venue") or "preprint", r.get("year"), r.get("doi")))
-    doc = body.replace("@@REFERENCES@@", "\n".join(bib))
+    # The bibliography is rendered by the file that owns its form, from the built display data.
+    disp = json.load(io.open(os.path.join(HERE, "artefacts", "refs_display.json"), encoding="utf-8"))
+    built_order = sorted(disp, key=lambda k: disp[k]["n"])
+    if order != built_order:
+        first = next((i for i, (a, b) in enumerate(zip(order, built_order)) if a != b), None)
+        print("ASSEMBLY FAILED: the citation order computed here differs from artefacts/refs_display.json"
+              " at position %s (%s vs %s). Re-run refs_build_display.py after a body edit that renumbers."
+              % (first, order[first] if first is not None else "-",
+                 built_order[first] if first is not None else "-"))
+        return 1
+    rendered = refs_render.render()
+    section = rendered.split("\n", 2)[2].rstrip("\n")
+    n_rendered = len(re.findall(r"(?m)^\[\d+\] ", rendered))
+    if n_rendered != len(order):
+        print("ASSEMBLY FAILED: the renderer emitted %d entries for %d cited keys"
+              % (n_rendered, len(order)))
+        return 1
+    if "@@REFERENCES@@" not in body:
+        print("ASSEMBLY FAILED: the part files carry no @@REFERENCES@@ placeholder")
+        return 1
+    doc = body.replace("@@REFERENCES@@", section)
     io.open(os.path.join(HERE, "manuscript.md"), "w", encoding="utf-8").write(doc)
     print("manuscript.md assembled: %d references, %d figures, %d bytes"
           % (len(order), doc.count("](figures/"), len(doc)))

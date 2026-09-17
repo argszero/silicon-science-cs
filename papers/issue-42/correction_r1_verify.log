@@ -1,0 +1,35 @@
+issue #42 correction round 1 -- required changes 1-7 verification at /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-42/manuscript.md
+
+R1-1 layout        PASS
+   117 entries, 0 of them not separated from the entry above by a blank line | refgate.py: block form = 117 entries, 0 not separated
+   control: mutation caught = True
+
+R1-1b renderer     PASS
+   GitHub's own renderer: 117 <p> for the 117 entries
+   control: mutation caught = True
+
+R1-2 differences   PASS
+   117 of 117 entries close with their authored stated difference
+   control: mutation caught = True
+
+R1-3 urls          PASS
+   117 entries each carry a resolvable https URL; 0 bare `DOI: ` identifiers
+   control: mutation caught = True
+
+R1-4 year          PASS
+   117 entries print exactly one parenthesised year, after the author block
+   control: mutation caught = True
+
+R1-5 etal          PASS
+   0 doubled `et al..`; 57 entries print the single-period `et al.`
+   control: mutation caught = True
+
+R1-6 authors       PASS
+   117 entries print their authors as `Family, I.` (first three + `et al.` for 4+)
+   control: mutation caught = True
+
+R1-7 order         PASS
+   117 entries: authors, (year), title, venue, resolvable URL, closing `Difference:`
+   control: mutation caught = True
+
+R1 changes 1-7: ALL PASS

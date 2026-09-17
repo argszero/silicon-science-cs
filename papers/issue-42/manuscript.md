@@ -652,121 +652,632 @@ per-entry verification result.
 
 ## References
 
-[1] Alberto Bacchelli, Christian Bird. Expectations, outcomes, and challenges of modern code review. 2013 35th International Conference on Software Engineering (ICSE), 2013. DOI: 10.1109/icse.2013.6606617
-[2] Caitlin Sadowski, Emma Söderberg, Luke Church, et al.. Modern code review. Proceedings of the 40th International Conference on Software Engineering: Software Engineering in Practice, 2018. DOI: 10.1145/3183519.3183525
-[3] Lightman, Hunter, Kosaraju, Vineet, Burda, Yura, et al.. Let's Verify Step by Step. arXiv preprint, 2023. DOI: 10.48550/arXiv.2305.20050
-[4] Cobbe, Karl, Kosaraju, Vineet, Bavarian, Mohammad, et al.. Training Verifiers to Solve Math Word Problems. arXiv preprint, 2021. DOI: 10.48550/arXiv.2110.14168
-[5] Geifman, Yonatan, El-Yaniv, Ran. Selective Classification for Deep Neural Networks. arXiv preprint, 2017. DOI: 10.48550/arXiv.1705.08500
-[6] Geifman, Yonatan, El-Yaniv, Ran. SelectiveNet: A Deep Neural Network with an Integrated Reject Option. arXiv preprint, 2019. DOI: 10.48550/arXiv.1901.09192
-[7] C. Chow. On optimum recognition error and reject tradeoff. IEEE Transactions on Information Theory, 1970. DOI: 10.1109/tit.1970.1054406
-[8] Mozannar, Hussein, Sontag, David. Consistent Estimators for Learning to Defer to an Expert. arXiv preprint, 2020. DOI: 10.48550/arXiv.2006.01862
-[9] Keswani, Vijay, Lease, Matthew, Kenthapadi, Krishnaram. Towards Unbiased and Accurate Deferral to Multiple Experts. arXiv preprint, 2021. DOI: 10.48550/arXiv.2102.13004
-[10] Verma, Rajeev, Nalisnick, Eric. Calibrated Learning to Defer with One-vs-All Classifiers. arXiv preprint, 2022. DOI: 10.48550/arXiv.2202.03673
-[11] Ludmila I. Kuncheva, Christopher J. Whitaker. Measures of Diversity in Classifier Ensembles and Their Relationship with the Ensemble Accuracy. Machine Learning, 2003. DOI: 10.1023/a:1022859003006
-[12] B. Littlewood, D.R. Miller. Conceptual modeling of coincident failures in multiversion software. IEEE Transactions on Software Engineering, 1989. DOI: 10.1109/32.58771
-[13] Stolze, Markus, Strässle, Mirco. When Review Alone No Longer Scales: Layered Supervision in AI-Assisted Software Engineering. arXiv preprint, 2026. DOI: 10.48550/arXiv.2608.26316
-[14] Leo Breiman. Bagging predictors. Machine Learning, 1996. DOI: 10.1007/bf00058655
-[15] Thomas G. Dietterich. Ensemble Methods in Machine Learning. Lecture Notes in Computer Science, 2000. DOI: 10.1007/3-540-45014-9_1
-[16] Jiang, Heinrich, Kim, Been, Guan, Melody Y., et al.. To Trust Or Not To Trust A Classifier. arXiv preprint, 2018. DOI: 10.48550/arXiv.1805.11783
-[17] Alves, Jean V., Leitão, Diogo, Jesus, Sérgio, et al.. Cost-Sensitive Learning to Defer to Multiple Experts with Workload Constraints. arXiv preprint, 2024. DOI: 10.48550/arXiv.2403.06906
-[18] Zhang, Zheng, Nguyen, Cuong, Wells, Kevin, et al.. Coverage-Constrained Human-AI Cooperation with Multiple Experts. arXiv preprint, 2024. DOI: 10.48550/arXiv.2411.11976
-[19] Tailor, Dharmesh, Patra, Aditya, Verma, Rajeev, et al.. Learning to Defer to a Population: A Meta-Learning Approach. arXiv preprint, 2024. DOI: 10.48550/arXiv.2403.02683
-[20] Ramgolam, Nilesh, Carneiro, Gustavo, Chen, Hsiang-Ting. Learning To Defer To A Population With Limited Demonstrations. arXiv preprint, 2025. DOI: 10.48550/arXiv.2510.19351
-[21] Rayan, Sahana, Tewari, Ambuj. Learning to Partially Defer for Sequences. arXiv preprint, 2025. DOI: 10.48550/arXiv.2502.01459
-[22] Joshi, Shalmali, Parbhoo, Sonali, Doshi-Velez, Finale. Learning-to-defer for sequential medical decision-making under uncertainty. arXiv preprint, 2021. DOI: 10.48550/arXiv.2109.06312
-[23] Hemmer, Patrick, Thede, Lukas, Vössing, Michael, et al.. Learning to Defer with Limited Expert Predictions. arXiv preprint, 2023. DOI: 10.48550/arXiv.2304.07306
-[24] Okati, Nastaran, De, Abir, Gomez-Rodriguez, Manuel. Differentiable Learning Under Triage. arXiv preprint, 2021. DOI: 10.48550/arXiv.2103.08902
-[25] Liu, Jessie, Gallego, Blanca, Barbieri, Sebastiano. Incorporating Uncertainty in Learning to Defer Algorithms for Safe Computer-Aided Diagnosis. arXiv preprint, 2021. DOI: 10.48550/arXiv.2108.07392
-[26] Mozannar, Hussein, Satyanarayan, Arvind, Sontag, David. Teaching Humans When To Defer to a Classifier via Exemplars. arXiv preprint, 2021. DOI: 10.48550/arXiv.2111.11297
-[27] Keswani, Vijay, Lease, Matthew, Kenthapadi, Krishnaram. Designing Closed Human-in-the-loop Deferral Pipelines. arXiv preprint, 2022. DOI: 10.48550/arXiv.2202.04718
-[28] Hemmer, Patrick, Schellhammer, Sebastian, Vössing, Michael, et al.. Forming Effective Human-AI Teams: Building Machine Learning Models that Complement the Capabilities of Multiple Experts. arXiv preprint, 2022. DOI: 10.48550/arXiv.2206.07948
-[29] Charusaie, Mohammad-Amin, Mozannar, Hussein, Sontag, David, et al.. Sample Efficient Learning of Predictors that Complement Humans. arXiv preprint, 2022. DOI: 10.48550/arXiv.2207.09584
-[30] Banerjee, Debodeep, Teso, Stefano, Passerini, Andrea. Learning to Guide Human Experts via Personalized Large Language Models. arXiv preprint, 2023. DOI: 10.48550/arXiv.2308.06039
-[31] Alves, Jean V., Leitão, Diogo, Jesus, Sérgio, et al.. FiFAR: A Fraud Detection Dataset for Learning to Defer. arXiv preprint, 2023. DOI: 10.48550/arXiv.2312.13218
-[32] Tariq, Shahroz, Chhetri, Mohan Baruwal, Nepal, Surya, et al.. A2C: A Modular Multi-stage Collaborative Decision Framework for Human-AI Teams. arXiv preprint, 2024. DOI: 10.48550/arXiv.2401.14432
-[33] Palomba, Filippo, Pugnana, Andrea, Alvarez, José Manuel, et al.. A Causal Framework for Evaluating Deferring Systems. arXiv preprint, 2024. DOI: 10.48550/arXiv.2405.18902
-[34] Charusaie, Mohammad-Amin, Samadi, Samira. A Unifying Post-Processing Framework for Multi-Objective Learn-to-Defer Problems. arXiv preprint, 2024. DOI: 10.48550/arXiv.2407.12710
-[35] Strong, Joshua, Saha, Pramit, Ibrahim, Yasin, et al.. Identity-Free Deferral For Unseen Experts. arXiv preprint, 2025. DOI: 10.48550/arXiv.2502.10533
-[36] Ferrara, Antonio, Pugnana, Andrea, Bonchi, Francesco, et al.. Bounded-Abstention Pairwise Learning to Rank. arXiv preprint, 2025. DOI: 10.48550/arXiv.2505.23437
-[37] Jalalvand, Fatemeh, Chhetri, Mohan Baruwal, Nepal, Surya, et al.. Adaptive alert prioritisation in security operations centres via learning to defer with human feedback. arXiv preprint, 2025. DOI: 10.48550/arXiv.2506.18462
-[38] Zellinger, Michael J., Thomson, Matt. Fail Fast, or Ask: Mitigating the Deficiencies of Reasoning LLMs with Human-in-the-Loop Systems Engineering. arXiv preprint, 2025. DOI: 10.48550/arXiv.2507.14406
-[39] Mitton, Joshua, Bhattacharyya, Prarthana, Abboud, Ralph, et al.. Knowing When to Defer: Selective Prediction for Responsible Knowledge Tracing. arXiv preprint, 2025. DOI: 10.48550/arXiv.2509.21514
-[40] Pugnana, Andrea, De Toni, Giovanni, Barbera, Cesare, et al.. To Ask or Not to Ask: Learning to Require Human Feedback. arXiv preprint, 2025. DOI: 10.48550/arXiv.2510.08314
-[41] Zhang, Zheng, Nguyen, Cuong C., Rosewarne, David, et al.. Fatigue-Aware Learning to Defer via Constrained Optimisation. arXiv preprint, 2026. DOI: 10.48550/arXiv.2604.00904
-[42] Tian, Qiuyu, Sun, Haoliang, Wang, Yunshan, et al.. DeferredSeg:A Multi-Expert Deferral Framework for Medical Image Segmentation. arXiv preprint, 2026. DOI: 10.48550/arXiv.2604.12411
-[43] Kondadadi, Rishik, Ortega, John E.. L2D-Clinical: Learning to Defer for Adaptive Model Selection in Clinical Text Classification. arXiv preprint, 2026. DOI: 10.48550/arXiv.2604.13285
-[44] Zhang, Zheng, Masroor, Milad, Nguyen, Cuong, et al.. People-Centred Medical Image Analysis via Fairness-Aware Human-AI Cooperation. arXiv preprint, 2026. DOI: 10.48550/arXiv.2604.26991
-[45] Yin, Tongxin, Ton, Jean-François, Guo, Ruocheng, et al.. Fair Classifiers that Abstain without Harm. arXiv preprint, 2023. DOI: 10.48550/arXiv.2310.06205
-[46] Whitehead, Spencer, Petryk, Suzanne, Shakib, Vedaad, et al.. Reliable Visual Question Answering: Abstain Rather Than Answer Incorrectly. arXiv preprint, 2022. DOI: 10.48550/arXiv.2204.13631
-[47] Firouzkouhi, Arad, Mirzaeedodangeh, Omid, Lindemann, Lars. Sample-Efficient Expert Query Control in Active Imitation Learning via Conformal Prediction. arXiv preprint, 2025. DOI: 10.48550/arXiv.2512.00453
-[48] Wundram, Anna M., Baumgartner, Christian F.. Is Uncertainty Quantification a Viable Alternative to Learned Deferral?. arXiv preprint, 2025. DOI: 10.48550/arXiv.2508.02319
-[49] Bary, Tim, Macq, Benoît, Petit, Louis. No Need for Learning to Defer? A Training Free Deferral Framework to Multiple Experts through Conformal Prediction. arXiv preprint, 2025. DOI: 10.48550/arXiv.2509.12573
-[50] Leo Breiman. Random Forests. Machine Learning, 2001. DOI: 10.1023/a:1010933404324
-[51] Yoav Freund, Robert E Schapire. A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting. Journal of Computer and System Sciences, 1997. DOI: 10.1006/jcss.1997.1504
-[52] David H. Wolpert. Stacked generalization. Neural Networks, 1992. DOI: 10.1016/s0893-6080(05)80023-1
-[53] Robert A. Jacobs, Michael I. Jordan, Steven J. Nowlan, et al.. Adaptive Mixtures of Local Experts. Neural Computation, 1991. DOI: 10.1162/neco.1991.3.1.79
-[54] G.E. Hinton. Products of experts. 9th International Conference on Artificial Neural Networks: ICANN '99, 1999. DOI: 10.1049/cp:19991075
-[55] Shazeer, Noam, Mirhoseini, Azalia, Maziarz, Krzysztof, et al.. Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer. arXiv preprint, 2017. DOI: 10.48550/arXiv.1701.06538
-[56] Lakshminarayanan, Balaji, Pritzel, Alexander, Blundell, Charles. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. arXiv preprint, 2016. DOI: 10.48550/arXiv.1612.01474
-[57] Buschjäger, Sebastian, Pfahler, Lukas, Morik, Katharina. Generalized Negative Correlation Learning for Deep Ensembling. arXiv preprint, 2020. DOI: 10.48550/arXiv.2011.02952
-[58] Liu, Ling, Wei, Wenqi, Chow, Ka-Ho, et al.. Deep Neural Network Ensembles against Deception: Ensemble Diversity, Accuracy and Robustness. arXiv preprint, 2019. DOI: 10.48550/arXiv.1908.11091
-[59] Chen, Ling, Shi, Hongyu. DexDeepFM: Ensemble Diversity Enhanced Extreme Deep Factorization Machine Model. arXiv preprint, 2021. DOI: 10.48550/arXiv.2104.01924
-[60] Busk, Jonas, Schmidt, Mikkel N., Winther, Ole, et al.. Graph Neural Network Interatomic Potential Ensembles with Calibrated Aleatoric and Epistemic Uncertainty on Energy and Forces. arXiv preprint, 2023. DOI: 10.48550/arXiv.2305.16325
-[61] Vita, Joshua A., Samanta, Amit, Zhou, Fei, et al.. LTAU-FF: Loss Trajectory Analysis for Uncertainty in Atomistic Force Fields. arXiv preprint, 2024. DOI: 10.48550/arXiv.2402.00853
-[62] Liu, Kai, Wei, Zixiong, Gao, Wei, et al.. Heterogeneous Ensemble Enables a Universal Uncertainty Metric for Atomistic Foundation Models. arXiv preprint, 2025. DOI: 10.48550/arXiv.2507.21297
-[63] Feng, Shihan, Zhang, Cheng, Xi, Michael, et al.. Exploring the Rashomon Set for Concept-Based Models. arXiv preprint, 2025. DOI: 10.48550/arXiv.2511.19636
-[64] Wang, Xuezhi, Wei, Jason, Schuurmans, Dale, et al.. Self-Consistency Improves Chain of Thought Reasoning in Language Models. arXiv preprint, 2022. DOI: 10.48550/arXiv.2203.11171
-[65] Wei, Jason, Wang, Xuezhi, Schuurmans, Dale, et al.. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. arXiv preprint, 2022. DOI: 10.48550/arXiv.2201.11903
-[66] Madaan, Aman, Tandon, Niket, Gupta, Prakhar, et al.. Self-Refine: Iterative Refinement with Self-Feedback. arXiv preprint, 2023. DOI: 10.48550/arXiv.2303.17651
-[67] Shinn, Noah, Cassano, Federico, Berman, Edward, et al.. Reflexion: Language Agents with Verbal Reinforcement Learning. arXiv preprint, 2023. DOI: 10.48550/arXiv.2303.11366
-[68] Yao, Shunyu, Zhao, Jeffrey, Yu, Dian, et al.. ReAct: Synergizing Reasoning and Acting in Language Models. arXiv preprint, 2022. DOI: 10.48550/arXiv.2210.03629
-[69] Yao, Shunyu, Yu, Dian, Zhao, Jeffrey, et al.. Tree of Thoughts: Deliberate Problem Solving with Large Language Models. arXiv preprint, 2023. DOI: 10.48550/arXiv.2305.10601
-[70] Bai, Yuntao, Kadavath, Saurav, Kundu, Sandipan, et al.. Constitutional AI: Harmlessness from AI Feedback. arXiv preprint, 2022. DOI: 10.48550/arXiv.2212.08073
-[71] Zheng, Lianmin, Chiang, Wei-Lin, Sheng, Ying, et al.. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. arXiv preprint, 2023. DOI: 10.48550/arXiv.2306.05685
-[72] Wu, Zijian, Kong, Lingkai, Zhang, Wenwei, et al.. OPV: Outcome-based Process Verifier for Efficient Long Chain-of-Thought Verification. arXiv preprint, 2025. DOI: 10.48550/arXiv.2512.10756
-[73] Zhang, Jipeng, Miao, Kehao, Pi, Renjie, et al.. VL-GenRM: Enhancing Vision-Language Verification via Vision Experts and Iterative Training. arXiv preprint, 2025. DOI: 10.48550/arXiv.2506.13888
-[74] Zhang, Liao, Chen, Tong, Wu, Xiwei, et al.. Neuro-Symbolic Generation and Validation of Memory-Aware Formal Function Specifications. arXiv preprint, 2026. DOI: 10.48550/arXiv.2603.13414
-[75] Huang, Jie, Chen, Xinyun, Mishra, Swaroop, et al.. Large Language Models Cannot Self-Correct Reasoning Yet. arXiv preprint, 2023. DOI: 10.48550/arXiv.2310.01798
-[76] Hasan, Mehedi, Abdar, Moloud, Khosravi, Abbas, et al.. Survey on Leveraging Uncertainty Estimation Towards Trustworthy Deep Neural Networks: The Case of Reject Option and Post-training Processing. arXiv preprint, 2023. DOI: 10.48550/arXiv.2304.04906
-[77] P. Viola, M. Jones. Rapid object detection using a boosted cascade of simple features. Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001, None. DOI: 10.1109/cvpr.2001.990517
-[78] Surat Teerapittayanon, Bradley McDanel, H.T. Kung. BranchyNet: Fast inference via early exiting from deep neural networks. 2016 23rd International Conference on Pattern Recognition (ICPR), 2016. DOI: 10.1109/icpr.2016.7900006
-[79] Tal Schuster, Adam Fisch, Jai Gupta, et al.. Confident Adaptive Language Modeling. Advances in Neural Information Processing Systems 35, 2022. DOI: 10.52202/068431-1269
-[80] Liu, Nelson F., Lin, Kevin, Hewitt, John, et al.. Lost in the Middle: How Language Models Use Long Contexts. arXiv preprint, 2023. DOI: 10.48550/arXiv.2307.03172
-[81] Vaswani, Ashish, Shazeer, Noam, Parmar, Niki, et al.. Attention Is All You Need. arXiv preprint, 2017. DOI: 10.48550/arXiv.1706.03762
-[82] Yann LeCun, Yoshua Bengio, Geoffrey Hinton. Deep learning. Nature, 2015. DOI: 10.1038/nature14539
-[83] Lisanne Bainbridge. Ironies of automation. Automatica, 1983. DOI: 10.1016/0005-1098(83)90046-8
-[84] Raja Parasuraman, Victor Riley. Humans and Automation: Use, Misuse, Disuse, Abuse. Human Factors: The Journal of the Human Factors and Ergonomics Society, 1997. DOI: 10.1518/001872097778543886
-[85] J. D. Lee, K. A. See. Trust in Automation: Designing for Appropriate Reliance. Human Factors: The Journal of the Human Factors and Ergonomics Society, 2004. DOI: 10.1518/hfes.46.1.50_30392
-[86] Berkeley J. Dietvorst, Joseph P. Simmons, Cade Massey. Algorithm aversion: People erroneously avoid algorithms after seeing them err. Journal of Experimental Psychology: General, 2015. DOI: 10.1037/xge0000033
-[87] Peng, Sida, Kalliamvakou, Eirini, Cihon, Peter, et al.. The Impact of AI on Developer Productivity: Evidence from GitHub Copilot. arXiv preprint, 2023. DOI: 10.48550/arXiv.2302.06590
-[88] Qadir, Junaid, Mumtaz, Muhammad. The Psychology of Learning from Machines: Anthropomorphic AI and the Paradox of Automation in Education. arXiv preprint, 2026. DOI: 10.48550/arXiv.2601.06172
-[89] Wu, Wenqing, Xi, Haixu, Zhang, Chengzhi. Are the confidence scores of reviewers consistent with the review content? Evidence from top conference proceedings in AI. arXiv preprint, 2025. DOI: 10.48550/arXiv.2505.15031
-[90] Raikote, Pranav, Randl, Korbinian, Miliou, Ioanna, et al.. CHiL(L)Grader: Calibrated Human-in-the-Loop Short-Answer Grading. arXiv preprint, 2026. DOI: 10.48550/arXiv.2603.11957
-[91] Yang, Wei, Cao, Defu, Pang, Jiacheng, et al.. Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning. arXiv preprint, 2026. DOI: 10.48550/arXiv.2603.07972
-[92] Alvarez, Jose M., Ruggieri, Salvatore. Toward A Causal Framework for Modeling Perception. arXiv preprint, 2024. DOI: 10.48550/arXiv.2401.13408
-[93] Sargeant, Holli, Jorgensen, Mackenzie, Shah, Arina, et al.. Unequal Uncertainty: Rethinking Algorithmic Interventions for Mitigating Discrimination from AI. arXiv preprint, 2025. DOI: 10.48550/arXiv.2508.07872
-[94] Mouli, S. Chandra, Maddix, Danielle C., Alizadeh, Shima, et al.. Using Uncertainty Quantification to Characterize and Improve Out-of-Domain Learning for PDEs. arXiv preprint, 2024. DOI: 10.48550/arXiv.2403.10642
-[95] R. E. Lyons, W. Vanderkulk. The Use of Triple-Modular Redundancy to Improve Computer Reliability. IBM Journal of Research and Development, 1962. DOI: 10.1147/rd.62.0200
-[96] T. Anderson, R. Kerr. Recovery Blocks in Action: A System Supporting High Reliability. Reliable Computer Systems, 1985. DOI: 10.1007/978-3-642-82470-8_9
-[97] A. Avizienis. The N-Version Approach to Fault-Tolerant Software. IEEE Transactions on Software Engineering, 1985. DOI: 10.1109/tse.1985.231893
-[98] B. Randell. System structure for software fault tolerance. Proceedings of the international conference on Reliable software  -, 1975. DOI: 10.1145/800027.808467
-[99] Leslie Lamport, Robert Shostak, Marshall Pease. The Byzantine Generals Problem. ACM Transactions on Programming Languages and Systems, 1982. DOI: 10.1145/357172.357176
-[100] Miguel Castro, Barbara Liskov. Practical byzantine fault tolerance and proactive recovery. ACM Transactions on Computer Systems, 2002. DOI: 10.1145/571637.571640
-[101] John C. Knight, Nancy G. Leveson. An experimental evaluation of the assumption of independence in multiversion programming. IEEE Transactions on Software Engineering, 1986. DOI: 10.1109/tse.1986.6312924
-[102] D.E. Eckhardt, L.D. Lee. A Theoretical Basis for the Analysis of Multiversion Software Subject to Coincident Errors. IEEE Transactions on Software Engineering, 1985. DOI: 10.1109/tse.1985.231895
-[103] Stuart Russell, Eric Wefald. Principles of metareasoning. Artificial Intelligence, 1991. DOI: 10.1016/0004-3702(91)90015-c
-[104] Ronald Howard. Information Value Theory. IEEE Transactions on Systems Science and Cybernetics, 1966. DOI: 10.1109/tssc.1966.300074
-[105] Tom Fawcett. An introduction to ROC analysis. Pattern Recognition Letters, 2006. DOI: 10.1016/j.patrec.2005.10.010
-[106] Edwin B. Wilson. Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association, 1927. DOI: 10.1080/01621459.1927.10502953
-[107] B. Efron. Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics, 1979. DOI: 10.1214/aos/1176344552
-[108] Yoav Benjamini, Yosef Hochberg. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society Series B: Statistical Methodology, 1995. DOI: 10.1111/j.2517-6161.1995.tb02031.x
-[109] Yang, Fanpeng, Li, Xing, Wang, Shuling, et al.. How Powerful are LLMs in Generating Formal Program Specifications?. arXiv preprint, 2026. DOI: 10.48550/arXiv.2608.13077
-[110] Kim, Junhwan, Kim, Seunghyun, Ryu, Yesin, et al.. Cerberus: Cross-Layer ECC Co-Design for Robust and Efficient Memory Protection. arXiv preprint, 2026. DOI: 10.48550/arXiv.2605.02220
-[111] Sun, Youcheng, Liu, Jiawen, Kroening, Daniel, et al.. Agentic Model Checking. arXiv preprint, 2026. DOI: 10.48550/arXiv.2605.21434
-[112] Huang, An-yi. HELIOS: An LLM-Driven Autonomous Indirect Trajectory Optimization Agent. arXiv preprint, 2026. DOI: 10.48550/arXiv.2607.24051
-[113] Pesenti, Dario, Bogani, Alessandro, Teso, Stefano, et al.. Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer. arXiv preprint, 2026. DOI: 10.48550/arXiv.2608.28050
-[114] Islam, MD Shafikul, Bappy, Mahathir Mohammad, Tushar, Saifur Rahman, et al.. Feature-Aware Anisotropic Local Differential Privacy for Utility-Preserving Graph Representation Learning in Metal Additive Manufacturing. arXiv preprint, 2026. DOI: 10.48550/arXiv.2604.05077
-[115] Naito, Hiroki. Flow-by-Flow:Content-Judgment Bypass for Governing AI Output in High-Loss Domains. arXiv preprint, 2026. DOI: 10.48550/arXiv.2608.07474
-[116] Boudiaf, Abderrahmene, Hussain, Irfan, Javed, Sajid. Uncertainty-Aware Decision Making in Multimodal Large Language Models. arXiv preprint, 2026. DOI: 10.48550/arXiv.2608.17084
-[117] Shen, Chen, Zhang, Wanqing, Li, Kehan, et al.. FEAT: A Multi-Agent Forensic AI System with Domain-Adapted Large Language Model for Automated Cause-of-Death Analysis. arXiv preprint, 2025. DOI: 10.48550/arXiv.2508.07950
+[1] Bacchelli, A.; Bird, C. (2013). Expectations, outcomes, and challenges of modern code review.
+    2013 35th International Conference on Software Engineering (ICSE).
+    https://doi.org/10.1109/ICSE.2013.6606617
+    Difference: studies what code review expects and what it finds; we treat review as a layer and
+    ask when a second check pays.
+
+[2] Sadowski, C.; Söderberg, E.; Church, L.; et al. (2018). Modern code review. Proceedings of the
+    40th International Conference on Software Engineering: Software Engineering in Practice.
+    https://doi.org/10.1145/3183519.3183525
+    Difference: describes modern code review practice at Google; we quantify the marginal value of
+    adding a reviewer.
+
+[3] Lightman, H.; Kosaraju, V.; Burda, Y.; et al. (2023). Let's Verify Step by Step. arXiv preprint
+    arXiv:2305.20050. https://arxiv.org/abs/2305.20050
+    Difference: shows process supervision improves reasoning; we measure the verifier's marginal
+    catch on the primary's wrong outputs.
+
+[4] Cobbe, K.; Kosaraju, V.; Bavarian, M.; et al. (2021). Training Verifiers to Solve Math Word
+    Problems. arXiv preprint arXiv:2110.14168. https://arxiv.org/abs/2110.14168
+    Difference: trains verifiers that raise math accuracy; our break-even states when the verifier
+    beats more of the generator.
+
+[5] Geifman, Y.; El-Yaniv, R. (2017). Selective Classification for Deep Neural Networks. arXiv
+    preprint arXiv:1705.08500. https://arxiv.org/abs/1705.08500
+    Difference: learns when a classifier should abstain under a risk target; we take the abstaining
+    layer as given and price it against spending the same capacity on the primary.
+
+[6] Geifman, Y.; El-Yaniv, R. (2019). SelectiveNet: A Deep Neural Network with an Integrated Reject
+    Option. arXiv preprint arXiv:1901.09192. https://arxiv.org/abs/1901.09192
+    Difference: makes abstention differentiable inside one model; we treat the added check as an
+    option whose value is set by the primary's error population.
+
+[7] Chow, C. (1970). On optimum recognition error and reject tradeoff. IEEE Transactions on
+    Information Theory. https://doi.org/10.1109/TIT.1970.1054406
+    Difference: gives the optimal abstention threshold for a single classifier; we hold a layer's
+    accuracy fixed and ask whether adding it is worth the capacity, not where one model should stop.
+
+[8] Mozannar, H.; Sontag, D. (2020). Consistent Estimators for Learning to Defer to an Expert. arXiv
+    preprint arXiv:2006.01862. https://arxiv.org/abs/2006.01862
+    Difference: characterises the Bayes-optimal rule for deferring to an expert; we keep the rule
+    fixed and ask when the deferral capacity is better spent improving the primary.
+
+[9] Keswani, V.; Lease, M.; Kenthapadi, K. (2021). Towards Unbiased and Accurate Deferral to
+    Multiple Experts. arXiv preprint arXiv:2102.13004. https://arxiv.org/abs/2102.13004
+    Difference: optimises which of several experts receives a case; we reallocate where a
+    fixed-accuracy layer's catches fall and show the choice changes what it is worth.
+
+[10] Verma, R.; Nalisnick, E. (2022). Calibrated Learning to Defer with One-vs-All Classifiers.
+    arXiv preprint arXiv:2202.03673. https://arxiv.org/abs/2202.03673
+    Difference: improves the calibration of the deferral score; calibration is necessary but not
+    sufficient here, since equal calibration can accompany different composition.
+
+[11] Kuncheva, L. I.; Whitaker, C. J. (2003). Measures of Diversity in Classifier Ensembles and
+    Their Relationship with the Ensemble Accuracy. Machine Learning.
+    https://doi.org/10.1023/A:1022859003006
+    Difference: relates ensemble diversity measures to accuracy; we relate the placement of errors
+    to the decision to add a layer at all.
+
+[12] Littlewood, B.; Miller, D. (1989). Conceptual modeling of coincident failures in multiversion
+    software. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.58771
+    Difference: models coincident failures of redundant software; our dial is the controlled version
+    of that correlation.
+
+[13] Stolze, M.; Strässle, M. (2026). When Review Alone No Longer Scales: Layered Supervision in
+    AI-Assisted Software Engineering. arXiv preprint arXiv:2608.26316.
+    https://arxiv.org/abs/2608.26316
+    Difference: argues for layered supervision in AI-assisted review; we give the condition under
+    which the extra layer pays, and the break-even that sets it.
+
+[14] Breiman, L. (1996). Bagging predictors. Machine Learning. https://doi.org/10.1007/BF00058655
+    Difference: shows averaging reduces variance when errors are decorrelated; we show decorrelation
+    is not sufficient, because where the catches fall sets the marginal value.
+
+[15] Dietterich, T. G. (2000). Ensemble Methods in Machine Learning. Lecture Notes in Computer
+    Science. https://doi.org/10.1007/3-540-45014-9_1
+    Difference: classifies ensembles by how they are constructed; we classify them by what their
+    errors are worth to the layer already in place.
+
+[16] Jiang, H.; Kim, B.; Guan, M. Y.; et al. (2018). To Trust Or Not To Trust A Classifier. arXiv
+    preprint arXiv:1805.11783. https://arxiv.org/abs/1805.11783
+    Difference: scores individual instances for trust; we condition the layer's value on the
+    population the primary got wrong (the residual catch), not on the instance's apparent
+    difficulty.
+
+[17] Alves, J. V.; Leitão, D.; Jesus, S.; et al. (2024). Cost-Sensitive Learning to Defer to
+    Multiple Experts with Workload Constraints. arXiv preprint arXiv:2403.06906.
+    https://arxiv.org/abs/2403.06906
+    Difference: makes deferral cost-sensitive to expert workload; our budget is the primary's
+    capacity, so the trade-off we study is reallocation.
+
+[18] Zhang, Z.; Nguyen, C.; Wells, K.; et al. (2024). Coverage-Constrained Human-AI Cooperation with
+    Multiple Experts. arXiv preprint arXiv:2411.11976. https://arxiv.org/abs/2411.11976
+    Difference: enforces a coverage constraint on human-AI cooperation; we show equal coverage and
+    equal accuracy can still be worth different amounts.
+
+[19] Tailor, D.; Patra, A.; Verma, R.; et al. (2024). Learning to Defer to a Population: A
+    Meta-Learning Approach. arXiv preprint arXiv:2403.02683. https://arxiv.org/abs/2403.02683
+    Difference: meta-learns deferral to a population of experts; that population is a single layer
+    in our terms, and we price it against the primary.
+
+[20] Ramgolam, N.; Carneiro, G.; Chen, H. T. (2025). Learning To Defer To A Population With Limited
+    Demonstrations. arXiv preprint arXiv:2510.19351. https://arxiv.org/abs/2510.19351
+    Difference: defers to a population from limited demonstrations; capacity rather than
+    demonstrations is our binding constraint.
+
+[21] Rayan, S.; Tewari, A. (2025). Learning to Partially Defer for Sequences. arXiv preprint
+    arXiv:2502.01459. https://arxiv.org/abs/2502.01459
+    Difference: partially defers over a sequence; the granularity of deferral is not what our dial
+    varies, which is the composition of the layer's errors.
+
+[22] Joshi, S.; Parbhoo, S.; Doshi-Velez, F. (2021). Learning-to-defer for sequential medical
+    decision-making under uncertainty. arXiv preprint arXiv:2109.06312.
+    https://arxiv.org/abs/2109.06312
+    Difference: defers sequential clinical decisions to a human; we analyse one added layer's
+    marginal catch across a calibrated population of published systems rather than one pipeline.
+
+[23] Hemmer, P.; Thede, L.; Vössing, M.; et al. (2023). Learning to Defer with Limited Expert
+    Predictions. arXiv preprint arXiv:2304.07306. https://arxiv.org/abs/2304.07306
+    Difference: works around scarce expert predictions; our binding constraint is capacity rather
+    than labels.
+
+[24] Okati, N.; De, A.; Gomez-Rodriguez, M. (2021). Differentiable Learning Under Triage. arXiv
+    preprint arXiv:2103.08902. https://arxiv.org/abs/2103.08902
+    Difference: triages among models with different costs; our dial holds accuracy fixed, isolating
+    where catches fall from how many there are.
+
+[25] Liu, J.; Gallego, B.; Barbieri, S. (2021). Incorporating Uncertainty in Learning to Defer
+    Algorithms for Safe Computer-Aided Diagnosis. arXiv preprint arXiv:2108.07392.
+    https://arxiv.org/abs/2108.07392
+    Difference: uses predictive uncertainty as the defer signal; we show uncertainty-style summaries
+    can be identical while the layer's worth is not.
+
+[26] Mozannar, H.; Satyanarayan, A.; Sontag, D. (2021). Teaching Humans When To Defer to a
+    Classifier via Exemplars. arXiv preprint arXiv:2111.11297. https://arxiv.org/abs/2111.11297
+    Difference: teaches humans when to defer to a classifier; we measure the layer's marginal catch
+    on the primary's wrongness instead of the human's learned policy.
+
+[27] Keswani, V.; Lease, M.; Kenthapadi, K. (2022). Designing Closed Human-in-the-loop Deferral
+    Pipelines. arXiv preprint arXiv:2202.04718. https://arxiv.org/abs/2202.04718
+    Difference: designs closed human-in-the-loop deferral pipelines end to end; we hold the pipeline
+    fixed and vary the placement of the added layer's catches.
+
+[28] Hemmer, P.; Schellhammer, S.; Vössing, M.; et al. (2022). Forming Effective Human-AI Teams:
+    Building Machine Learning Models that Complement the Capabilities of Multiple Experts. arXiv
+    preprint arXiv:2206.07948. https://arxiv.org/abs/2206.07948
+    Difference: trains a model to complement a human's decisions; we ask whether that
+    complementarity repays the capacity it takes from the primary.
+
+[29] Charusaie, M. A.; Mozannar, H.; Sontag, D.; et al. (2022). Sample Efficient Learning of
+    Predictors that Complement Humans. arXiv preprint arXiv:2207.09584.
+    https://arxiv.org/abs/2207.09584
+    Difference: reduces the labels needed to learn human-complementary predictors; we take the
+    learned layer as given and price it.
+
+[30] Banerjee, D.; Teso, S.; Passerini, A. (2023). Learning to Guide Human Experts via Personalized
+    Large Language Models. arXiv preprint arXiv:2308.06039. https://arxiv.org/abs/2308.06039
+    Difference: uses a personalised model to guide human experts; a guiding layer is not a checking
+    layer, and we measure the checking layer against residual errors.
+
+[31] Alves, J. V.; Leitão, D.; Jesus, S.; et al. (2023). FiFAR: A Fraud Detection Dataset for
+    Learning to Defer. arXiv preprint arXiv:2312.13218. https://arxiv.org/abs/2312.13218
+    Difference: contributes a fraud-detection benchmark for learning to defer; we calibrate on
+    published systems and report the span of the break-even across them.
+
+[32] Tariq, S.; Chhetri, M. B.; Nepal, S.; et al. (2024). A2C: A Modular Multi-stage Collaborative
+    Decision Framework for Human-AI Teams. arXiv preprint arXiv:2401.14432.
+    https://arxiv.org/abs/2401.14432
+    Difference: composes decision stages for accuracy; we show that the composition, not the summary
+    statistic, decides whether an added stage pays.
+
+[33] Palomba, F.; Pugnana, A.; Alvarez, J. M.; et al. (2024). A Causal Framework for Evaluating
+    Deferring Systems. arXiv preprint arXiv:2405.18902. https://arxiv.org/abs/2405.18902
+    Difference: gives a causal framework for evaluating a deferring system; we evaluate the marginal
+    effect of adding one, which a whole-system evaluation averages away.
+
+[34] Charusaie, M. A.; Samadi, S. (2024). A Unifying Post-Processing Framework for Multi-Objective
+    Learn-to-Defer Problems. arXiv preprint arXiv:2407.12710. https://arxiv.org/abs/2407.12710
+    Difference: post-processes a trained multi-objective deferrer; we hold the layer fixed and move
+    where its catches land.
+
+[35] Strong, J.; Saha, P.; Ibrahim, Y.; et al. (2025). Identity-Free Deferral For Unseen Experts.
+    arXiv preprint arXiv:2502.10533. https://arxiv.org/abs/2502.10533
+    Difference: defers to experts not seen in training; we take the layer's identity and accuracy as
+    given and ask what it buys.
+
+[36] Ferrara, A.; Pugnana, A.; Bonchi, F.; et al. (2025). Bounded-Abstention Pairwise Learning to
+    Rank. arXiv preprint arXiv:2505.23437. https://arxiv.org/abs/2505.23437
+    Difference: places bounded abstention inside a pairwise ranker; the added layer's marginal catch
+    is the quantity we measure.
+
+[37] Jalalvand, F.; Chhetri, M. B.; Nepal, S.; et al. (2025). Adaptive alert prioritisation in
+    security operations centres via learning to defer with human feedback. arXiv preprint
+    arXiv:2506.18462. https://arxiv.org/abs/2506.18462
+    Difference: applies deferral to alert triage in security operations; our result is
+    methodological, about why an added check helps, rather than a further application.
+
+[38] Zellinger, M. J.; Thomson, M. (2025). Fail Fast, or Ask: Mitigating the Deficiencies of
+    Reasoning LLMs with Human-in-the-Loop Systems Engineering. arXiv preprint arXiv:2507.14406.
+    https://arxiv.org/abs/2507.14406
+    Difference: uses deferral to patch the deficiencies of reasoning models; we ask whether that
+    patch beats spending the same capacity on the model.
+
+[39] Mitton, J.; Bhattacharyya, P.; Abboud, R.; et al. (2025). Knowing When to Defer: Selective
+    Prediction for Responsible Knowledge Tracing. arXiv preprint arXiv:2509.21514.
+    https://arxiv.org/abs/2509.21514
+    Difference: applies selective prediction to responsible knowledge use; our layer is priced by
+    its catch on the primary's errors.
+
+[40] Pugnana, A.; De Toni, G.; Barbera, C.; et al. (2025). To Ask or Not to Ask: Learning to Require
+    Human Feedback. arXiv preprint arXiv:2510.08314. https://arxiv.org/abs/2510.08314
+    Difference: decides when to require human feedback; asking is our added layer, and we measure
+    the marginal catch it earns.
+
+[41] Zhang, Z.; Nguyen, C. C.; Rosewarne, D.; et al. (2026). Fatigue-Aware Learning to Defer via
+    Constrained Optimisation. arXiv preprint arXiv:2604.00904. https://arxiv.org/abs/2604.00904
+    Difference: models expert fatigue in a constrained deferral objective; our dial abstracts human
+    cost away to isolate error composition.
+
+[42] Tian, Q.; Sun, H.; Wang, Y.; et al. (2026). DeferredSeg:A Multi-Expert Deferral Framework for
+    Medical Image Segmentation. arXiv preprint arXiv:2604.12411. https://arxiv.org/abs/2604.12411
+    Difference: defers medical image segmentation among experts; the domain is not what governs the
+    marginal value in our results.
+
+[43] Kondadadi, R.; Ortega, J. E. (2026). L2D-Clinical: Learning to Defer for Adaptive Model
+    Selection in Clinical Text Classification. arXiv preprint arXiv:2604.13285.
+    https://arxiv.org/abs/2604.13285
+    Difference: selects a model adaptively in a clinical pipeline; we price the second model against
+    the first rather than choosing among them.
+
+[44] Zhang, Z.; Masroor, M.; Nguyen, C.; et al. (2026). People-Centred Medical Image Analysis via
+    Fairness-Aware Human-AI Cooperation. arXiv preprint arXiv:2604.26991.
+    https://arxiv.org/abs/2604.26991
+    Difference: optimises fairness in human-AI cooperation on medical images; we hold the layer's
+    accuracy fixed and measure marginal value instead.
+
+[45] Yin, T.; Ton, J. F.; Guo, R.; et al. (2023). Fair Classifiers that Abstain without Harm. arXiv
+    preprint arXiv:2310.06205. https://arxiv.org/abs/2310.06205
+    Difference: makes abstaining classifiers fair; fairness is orthogonal to the composition
+    question this paper isolates.
+
+[46] Whitehead, S.; Petryk, S.; Shakib, V.; et al. (2022). Reliable Visual Question Answering:
+    Abstain Rather Than Answer Incorrectly. arXiv preprint arXiv:2204.13631.
+    https://arxiv.org/abs/2204.13631
+    Difference: abstains to avoid incorrect visual answers; our unit is a layer's marginal catch,
+    not one model's decision to answer.
+
+[47] Firouzkouhi, A.; Mirzaeedodangeh, O.; Lindemann, L. (2025). Sample-Efficient Expert Query
+    Control in Active Imitation Learning via Conformal Prediction. arXiv preprint arXiv:2512.00453.
+    https://arxiv.org/abs/2512.00453
+    Difference: controls the expert-query budget in active imitation learning; we compare that
+    budget with spending it on the primary.
+
+[48] Wundram, A. M.; Baumgartner, C. F. (2025). Is Uncertainty Quantification a Viable Alternative
+    to Learned Deferral?. arXiv preprint arXiv:2508.02319. https://arxiv.org/abs/2508.02319
+    Difference: compares uncertainty quantification with learned deferral as signals; we compare
+    adding a layer with not adding one.
+
+[49] Bary, T.; Macq, B.; Petit, L. (2025). No Need for Learning to Defer? A Training Free Deferral
+    Framework to Multiple Experts through Conformal Prediction. arXiv preprint arXiv:2509.12573.
+    https://arxiv.org/abs/2509.12573
+    Difference: removes training from the deferral rule; we remove the assumption that the rule's
+    accuracy determines its value.
+
+[50] Breiman, L. (2001). Random Forests. Machine Learning. https://doi.org/10.1023/A:1010933404324
+    Difference: builds an ensemble whose strength is chiefly empirical; we ask what one added member
+    is worth at fixed accuracy.
+
+[51] Freund, Y.; Schapire, R. E. (1997). A Decision-Theoretic Generalization of On-Line Learning and
+    an Application to Boosting. Journal of Computer and System Sciences.
+    https://doi.org/10.1006/jcss.1997.1504
+    Difference: bounds boosting's error under weak learners; the catch rate on the primary's errors
+    is exactly what that bound takes as given.
+
+[52] Wolpert, D. H. (1992). Stacked generalization. Neural Networks.
+    https://doi.org/10.1016/s0893-6080(05)80023-1
+    Difference: learns a combiner over base models; we ask whether the combiner's capacity was
+    better spent strengthening a single model.
+
+[53] Jacobs, R. A.; Jordan, M. I.; Nowlan, S. J.; et al. (1991). Adaptive Mixtures of Local Experts.
+    Neural Computation. https://doi.org/10.1162/neco.1991.3.1.79
+    Difference: divides labour among local experts through a gating network; our dial divides where
+    each expert's errors fall.
+
+[54] Hinton, G. (1999). Products of experts. 9th International Conference on Artificial Neural
+    Networks: ICANN '99. https://doi.org/10.1049/cp:19991075
+    Difference: multiplies expert distributions so errors cancel; we isolate that cancellation by
+    reallocating catches at fixed accuracy.
+
+[55] Shazeer, N.; Mirhoseini, A.; Maziarz, K.; et al. (2017). Outrageously Large Neural Networks:
+    The Sparsely-Gated Mixture-of-Experts Layer. arXiv preprint arXiv:1701.06538.
+    https://arxiv.org/abs/1701.06538
+    Difference: routes tokens to experts to raise capacity; our question is when an extra expert
+    repays its share of that capacity.
+
+[56] Lakshminarayanan, B.; Pritzel, A.; Blundell, C. (2016). Simple and Scalable Predictive
+    Uncertainty Estimation using Deep Ensembles. arXiv preprint arXiv:1612.01474.
+    https://arxiv.org/abs/1612.01474
+    Difference: improves predictive uncertainty by ensembling; we show uncertainty summaries can be
+    identical while downstream worth is not.
+
+[57] Buschjäger, S.; Pfahler, L.; Morik, K. (2020). Generalized Negative Correlation Learning for
+    Deep Ensembling. arXiv preprint arXiv:2011.02952. https://arxiv.org/abs/2011.02952
+    Difference: shapes member correlation during training; we vary correlation after training with
+    accuracy held fixed.
+
+[58] Liu, L.; Wei, W.; Chow, K. H.; et al. (2019). Deep Neural Network Ensembles against Deception:
+    Ensemble Diversity, Accuracy and Robustness. arXiv preprint arXiv:1908.11091.
+    https://arxiv.org/abs/1908.11091
+    Difference: uses ensemble diversity as a defence against deception; our dial is the constructive
+    version of the same lever.
+
+[59] Chen, L.; Shi, H. (2021). DexDeepFM: Ensemble Diversity Enhanced Extreme Deep Factorization
+    Machine Model. arXiv preprint arXiv:2104.01924. https://arxiv.org/abs/2104.01924
+    Difference: adds diversity to factorisation machines for recommendation; we price diversity
+    where one layer follows another.
+
+[60] Busk, J.; Schmidt, M. N.; Winther, O.; et al. (2023). Graph Neural Network Interatomic
+    Potential Ensembles with Calibrated Aleatoric and Epistemic Uncertainty on Energy and Forces.
+    arXiv preprint arXiv:2305.16325. https://arxiv.org/abs/2305.16325
+    Difference: delivers calibrated uncertainty from interatomic-potential ensembles; calibration
+    and marginal value come apart in our results.
+
+[61] Vita, J. A.; Samanta, A.; Zhou, F.; et al. (2024). LTAU-FF: Loss Trajectory Analysis for
+    Uncertainty in Atomistic Force Fields. arXiv preprint arXiv:2402.00853.
+    https://arxiv.org/abs/2402.00853
+    Difference: derives uncertainty from training loss trajectories; a different summary of the same
+    errors, which our result shows is not decisive.
+
+[62] Liu, K.; Wei, Z.; Gao, W.; et al. (2025). Heterogeneous Ensemble Enables a Universal
+    Uncertainty Metric for Atomistic Foundation Models. arXiv preprint arXiv:2507.21297.
+    https://arxiv.org/abs/2507.21297
+    Difference: proposes a heterogeneous ensemble as a universal uncertainty metric; a better metric
+    does not settle whether the member repaid its capacity.
+
+[63] Feng, S.; Zhang, C.; Xi, M.; et al. (2025). Exploring the Rashomon Set for Concept-Based
+    Models. arXiv preprint arXiv:2511.19636. https://arxiv.org/abs/2511.19636
+    Difference: characterises the set of near-equally-good concept models; our two configurations
+    are precisely such a set, with different downstream worth.
+
+[64] Wang, X.; Wei, J.; Schuurmans, D.; et al. (2022). Self-Consistency Improves Chain of Thought
+    Reasoning in Language Models. arXiv preprint arXiv:2203.11171. https://arxiv.org/abs/2203.11171
+    Difference: samples several reasoning paths and takes a vote; that is internal redundancy, and
+    our dial makes the redeployment explicit and priced.
+
+[65] Wei, J.; Wang, X.; Schuurmans, D.; et al. (2022). Chain-of-Thought Prompting Elicits Reasoning
+    in Large Language Models. arXiv preprint arXiv:2201.11903. https://arxiv.org/abs/2201.11903
+    Difference: elicits multi-step reasoning by prompting; we ask when a second check on that
+    reasoning pays.
+
+[66] Madaan, A.; Tandon, N.; Gupta, P.; et al. (2023). Self-Refine: Iterative Refinement with
+    Self-Feedback. arXiv preprint arXiv:2303.17651. https://arxiv.org/abs/2303.17651
+    Difference: iterates refinement with self-feedback; the iteration is an added layer and we ask
+    what it is worth at fixed accuracy.
+
+[67] Shinn, N.; Cassano, F.; Berman, E.; et al. (2023). Reflexion: Language Agents with Verbal
+    Reinforcement Learning. arXiv preprint arXiv:2303.11366. https://arxiv.org/abs/2303.11366
+    Difference: reinforces an agent verbally across attempts; the redundancy is implicit, where ours
+    is a dial.
+
+[68] Yao, S.; Zhao, J.; Yu, D.; et al. (2022). ReAct: Synergizing Reasoning and Acting in Language
+    Models. arXiv preprint arXiv:2210.03629. https://arxiv.org/abs/2210.03629
+    Difference: interleaves reasoning with acting; verifying an action is an added layer whose
+    marginal catch matters.
+
+[69] Yao, S.; Yu, D.; Zhao, J.; et al. (2023). Tree of Thoughts: Deliberate Problem Solving with
+    Large Language Models. arXiv preprint arXiv:2305.10601. https://arxiv.org/abs/2305.10601
+    Difference: searches over intermediate thoughts; search multiplies checks, and we price that
+    multiplication.
+
+[70] Bai, Y.; Kadavath, S.; Kundu, S.; et al. (2022). Constitutional AI: Harmlessness from AI
+    Feedback. arXiv preprint arXiv:2212.08073. https://arxiv.org/abs/2212.08073
+    Difference: uses AI feedback to steer a model towards harmlessness; the feedback layer's value
+    against the base model is what we quantify.
+
+[71] Zheng, L.; Chiang, W. L.; Sheng, Y.; et al. (2023). Judging LLM-as-a-Judge with MT-Bench and
+    Chatbot Arena. arXiv preprint arXiv:2306.05685. https://arxiv.org/abs/2306.05685
+    Difference: shows LLM judges correlate with human preferences; we ask when the judge's verdict
+    adds to the first pass rather than repeating it.
+
+[72] Wu, Z.; Kong, L.; Zhang, W.; et al. (2025). OPV: Outcome-based Process Verifier for Efficient
+    Long Chain-of-Thought Verification. arXiv preprint arXiv:2512.10756.
+    https://arxiv.org/abs/2512.10756
+    Difference: builds an efficient outcome-based process verifier; efficiency changes the cost side
+    of our break-even, not its form.
+
+[73] Zhang, J.; Miao, K.; Pi, R.; et al. (2025). VL-GenRM: Enhancing Vision-Language Verification
+    via Vision Experts and Iterative Training. arXiv preprint arXiv:2506.13888.
+    https://arxiv.org/abs/2506.13888
+    Difference: applies generative reward models to vision-language verification; the modality is
+    not what decides the marginal value.
+
+[74] Zhang, L.; Chen, T.; Wu, X.; et al. (2026). Neuro-Symbolic Generation and Validation of
+    Memory-Aware Formal Function Specifications. arXiv preprint arXiv:2603.13414.
+    https://arxiv.org/abs/2603.13414
+    Difference: pairs neural generation with symbolic validation of formal functions; that pairing
+    is a deliberately uncorrelated layer, and our dial explains when it pays.
+
+[75] Huang, J.; Chen, X.; Mishra, S.; et al. (2023). Large Language Models Cannot Self-Correct
+    Reasoning Yet. arXiv preprint arXiv:2310.01798. https://arxiv.org/abs/2310.01798
+    Difference: documents that models cannot yet self-correct reasoning unaided; we give the
+    condition under which a correction layer earns its capacity.
+
+[76] Hasan, M.; Abdar, M.; Khosravi, A.; et al. (2023). Survey on Leveraging Uncertainty Estimation
+    Towards Trustworthy Deep Neural Networks: The Case of Reject Option and Post-training
+    Processing. arXiv preprint arXiv:2304.04906. https://arxiv.org/abs/2304.04906
+    Difference: surveys uncertainty estimation as a trust signal; we show such summaries can be
+    identical while worth differs.
+
+[77] Viola, P.; Jones, M. (2001). Rapid object detection using a boosted cascade of simple features.
+    Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern
+    Recognition. CVPR 2001. https://doi.org/10.1109/CVPR.2001.990517
+    Difference: builds a boosted cascade tuned for speed and false positives; we make the value of
+    an added cascade stage the object of study.
+
+[78] Teerapittayanon, S.; McDanel, B.; Kung, H. (2016). BranchyNet: Fast inference via early exiting
+    from deep neural networks. 2016 23rd International Conference on Pattern Recognition (ICPR).
+    https://doi.org/10.1109/icpr.2016.7900006
+    Difference: adds early-exit branches to a network; a branch is an added layer, and we price its
+    catches.
+
+[79] Schuster, T.; Fisch, A.; Gupta, J.; et al. (2022). Confident Adaptive Language Modeling.
+    Advances in Neural Information Processing Systems 35. https://doi.org/10.52202/068431-1269
+    Difference: exits a language model early to save compute; we compare that saved compute with a
+    layer that catches errors.
+
+[80] Liu, N. F.; Lin, K.; Hewitt, J.; et al. (2023). Lost in the Middle: How Language Models Use
+    Long Contexts. arXiv preprint arXiv:2307.03172. https://arxiv.org/abs/2307.03172
+    Difference: finds position effects in long-context use; the placement of information is a
+    composition effect of the same kind as the placement of a layer's catches.
+
+[81] Vaswani, A.; Shazeer, N.; Parmar, N.; et al. (2017). Attention Is All You Need. arXiv preprint
+    arXiv:1706.03762. https://arxiv.org/abs/1706.03762
+    Difference: introduces the transformer architecture; we ask whether an additional verification
+    pass over its outputs repays the capacity it takes.
+
+[82] LeCun, Y.; Bengio, Y.; Hinton, G. (2015). Deep learning. Nature.
+    https://doi.org/10.1038/nature14539
+    Difference: surveys deep learning's methods and prospects; our manuscript prices one component
+    of such systems.
+
+[83] Bainbridge, L. (1983). Ironies of automation. Automatica.
+    https://doi.org/10.1016/0005-1098(83)90046-8
+    Difference: explains why automation degrades the operator's skill; we price the layer meant to
+    catch what the automation missed.
+
+[84] Parasuraman, R.; Riley, V. (1997). Humans and Automation: Use, Misuse, Disuse, Abuse. Human
+    Factors: The Journal of the Human Factors and Ergonomics Society.
+    https://doi.org/10.1518/001872097778543886
+    Difference: gives a taxonomy of reliance failures; we give the break-even that separates use
+    from disuse.
+
+[85] Lee, J. D.; See, K. A. (2004). Trust in Automation: Designing for Appropriate Reliance. Human
+    Factors: The Journal of the Human Factors and Ergonomics Society.
+    https://doi.org/10.1518/hfes.46.1.50_30392
+    Difference: states design principles for appropriate reliance on automation; our dial turns the
+    reliance decision into a measurable quantity.
+
+[86] Dietvorst, B. J.; Simmons, J. P.; Massey, C. (2015). Algorithm aversion: People erroneously
+    avoid algorithms after seeing them err. Journal of Experimental Psychology: General.
+    https://doi.org/10.1037/xge0000033
+    Difference: explains why people abandon algorithms after seeing them err; the residual catch is
+    the quantity that makes that abandonment rational or not.
+
+[87] Peng, S.; Kalliamvakou, E.; Cihon, P.; et al. (2023). The Impact of AI on Developer
+    Productivity: Evidence from GitHub Copilot. arXiv preprint arXiv:2302.06590.
+    https://arxiv.org/abs/2302.06590
+    Difference: measures productivity effects of an AI assistant; we ask whether the supervision of
+    its output repays its cost.
+
+[88] Qadir, J.; Mumtaz, M. (2026). The Psychology of Learning from Machines: Anthropomorphic AI and
+    the Paradox of Automation in Education. arXiv preprint arXiv:2601.06172.
+    https://arxiv.org/abs/2601.06172
+    Difference: studies how people learn from machine feedback; we study when the machine's feedback
+    layer is worth its capacity.
+
+[89] Wu, W.; Xi, H.; Zhang, C. (2025). Are the confidence scores of reviewers consistent with the
+    review content? Evidence from top conference proceedings in AI. arXiv preprint arXiv:2505.15031.
+    https://arxiv.org/abs/2505.15031
+    Difference: audits whether reviewer confidence matches review content; confidence is one
+    summary, and summaries do not fix worth.
+
+[90] Raikote, P.; Randl, K.; Miliou, I.; et al. (2026). CHiL(L)Grader: Calibrated Human-in-the-Loop
+    Short-Answer Grading. arXiv preprint arXiv:2603.11957. https://arxiv.org/abs/2603.11957
+    Difference: calibrates a human-in-the-loop short-answer grading layer; calibration sharpens the
+    score without settling whether the layer pays.
+
+[91] Yang, W.; Cao, D.; Pang, J.; et al. (2026). Adaptive Collaboration with Humans: Metacognitive
+    Policy Optimization for Multi-Agent LLMs with Continual Learning. arXiv preprint
+    arXiv:2603.07972. https://arxiv.org/abs/2603.07972
+    Difference: meta-learns a policy for collaborating with humans; that collaboration decision is
+    our break-even.
+
+[92] Alvarez, J. M.; Ruggieri, S. (2024). Toward A Causal Framework for Modeling Perception. arXiv
+    preprint arXiv:2401.13408. https://arxiv.org/abs/2401.13408
+    Difference: models perception within a causal framework; we isolate composition with a dial
+    rather than with a model.
+
+[93] Sargeant, H.; Jorgensen, M.; Shah, A.; et al. (2025). Unequal Uncertainty: Rethinking
+    Algorithmic Interventions for Mitigating Discrimination from AI. arXiv preprint
+    arXiv:2508.07872. https://arxiv.org/abs/2508.07872
+    Difference: shows uncertainty is unevenly distributed across groups; that unevenness is one face
+    of the composition effect we formalise.
+
+[94] Mouli, S. C.; Maddix, D. C.; Alizadeh, S.; et al. (2024). Using Uncertainty Quantification to
+    Characterize and Improve Out-of-Domain Learning for PDEs. arXiv preprint arXiv:2403.10642.
+    https://arxiv.org/abs/2403.10642
+    Difference: uses uncertainty to characterise out-of-distribution inputs; distribution shift
+    moves the residual catch, which is what our law reads.
+
+[95] Lyons, R. E.; Vanderkulk, W. (1962). The Use of Triple-Modular Redundancy to Improve Computer
+    Reliability. IBM Journal of Research and Development. https://doi.org/10.1147/rd.62.0200
+    Difference: uses majority voting for reliability; TMR assumes independence, which our dial
+    relaxes explicitly.
+
+[96] Anderson, T.; Kerr, R. (1985). Recovery Blocks in Action: A System Supporting High Reliability.
+    Reliable Computer Systems. https://doi.org/10.1007/978-3-642-82470-8_9
+    Difference: pairs an acceptance test with a backup block; the backup is an added layer whose
+    residual catch is set by its acceptance test.
+
+[97] Avizienis, A. (1985). The N-Version Approach to Fault-Tolerant Software. IEEE Transactions on
+    Software Engineering. https://doi.org/10.1109/tse.1985.231893
+    Difference: builds independent implementations for fault tolerance; we ask when the Nth version
+    repays its capacity.
+
+[98] Randell, B. (1975). System structure for software fault tolerance. Proceedings of the
+    international conference on Reliable software  -. https://doi.org/10.1145/800027.808467
+    Difference: defines the recovery-block structure; we price the added block.
+
+[99] Lamport, L.; Shostak, R.; Pease, M. (1982). The Byzantine Generals Problem. ACM Transactions on
+    Programming Languages and Systems. https://doi.org/10.1145/357172.357176
+    Difference: gives the agreement problem under arbitrary faults; we study a two-layer cascade
+    with correlated failures rather than a consensus protocol.
+
+[100] Castro, M.; Liskov, B. (2002). Practical byzantine fault tolerance and proactive recovery. ACM
+    Transactions on Computer Systems. https://doi.org/10.1145/571637.571640
+    Difference: makes Byzantine replication practical; replication is redundancy under an
+    independence assumption our construct measures.
+
+[101] Knight, J. C.; Leveson, N. G. (1986). An experimental evaluation of the assumption of
+    independence in multiversion programming. IEEE Transactions on Software Engineering.
+    https://doi.org/10.1109/TSE.1986.6312924
+    Difference: tests whether version failures are independent; that assumption is what our residual
+    catch replaces with a measurement.
+
+[102] Eckhardt, D.; Lee, L. (1985). A Theoretical Basis for the Analysis of Multiversion Software
+    Subject to Coincident Errors. IEEE Transactions on Software Engineering.
+    https://doi.org/10.1109/tse.1985.231895
+    Difference: analyses multiversion software subject to correlated faults; we show correlation
+    alone does not fix the marginal value.
+
+[103] Russell, S.; Wefald, E. (1991). Principles of metareasoning. Artificial Intelligence.
+    https://doi.org/10.1016/0004-3702(91)90015-c
+    Difference: decides how much computation to spend thinking; we decide whether to add a thinker,
+    with the primary's errors as the population.
+
+[104] Howard, R. (1966). Information Value Theory. IEEE Transactions on Systems Science and
+    Cybernetics. https://doi.org/10.1109/tssc.1966.300074
+    Difference: prices information before it is acquired; our break-even is the same calculus
+    applied to a supervisor's catches.
+
+[105] Fawcett, T. (2006). An introduction to ROC analysis. Pattern Recognition Letters.
+    https://doi.org/10.1016/j.patrec.2005.10.010
+    Difference: summarises a detector by its ranking curve; we show two configurations with the same
+    summary can differ in downstream worth, which no curve read off one layer can express.
+
+[106] Wilson, E. B. (1927). Probable Inference, the Law of Succession, and Statistical Inference.
+    Journal of the American Statistical Association. https://doi.org/10.1080/01621459.1927.10502953
+    Difference: gives an interval for a binomial proportion; we use it for the calibrated held-out
+    cells.
+
+[107] Efron, B. (1979). Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics.
+    https://doi.org/10.1214/aos/1176344552
+    Difference: introduces resampling for standard errors; we use it to put intervals on the rank
+    correlations and margins the law reports.
+
+[108] Benjamini, Y.; Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and
+    Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society Series B:
+    Statistical Methodology. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
+    Difference: controls the false discovery rate across many tests; we use it where many grid cells
+    are screened.
+
+[109] Yang, F.; Li, X.; Wang, S.; et al. (2026). How Powerful are LLMs in Generating Formal Program
+    Specifications?. arXiv preprint arXiv:2608.13077. https://arxiv.org/abs/2608.13077
+    Difference: measures how well LLMs generate formal specifications; generation quality is a
+    summary, and our result is that summaries do not fix worth.
+
+[110] Kim, J.; Kim, S.; Ryu, Y.; et al. (2026). Cerberus: Cross-Layer ECC Co-Design for Robust and
+    Efficient Memory Protection. arXiv preprint arXiv:2605.02220. https://arxiv.org/abs/2605.02220
+    Difference: co-designs error-correcting codes across hardware layers; our layers are decision
+    layers, and the dial is where their errors fall, not how they are encoded.
+
+[111] Sun, Y.; Liu, J.; Kroening, D.; et al. (2026). Agentic Model Checking. arXiv preprint
+    arXiv:2605.21434. https://arxiv.org/abs/2605.21434
+    Difference: uses LLM agents for model checking; a checking agent is an added layer, and its
+    marginal catch is what we measure.
+
+[112] Huang, A. Y. (2026). HELIOS: An LLM-Driven Autonomous Indirect Trajectory Optimization Agent.
+    arXiv preprint arXiv:2607.24051. https://arxiv.org/abs/2607.24051
+    Difference: drives indirect trajectory optimisation with an LLM agent; we ask when such an
+    additional agent repays its capacity.
+
+[113] Pesenti, D.; Bogani, A.; Teso, S.; et al. (2026). Too Much of the Same: From Algorithmic to
+    Human Bias in Learning to Defer. arXiv preprint arXiv:2608.28050.
+    https://arxiv.org/abs/2608.28050
+    Difference: traces algorithmic to human bias in learned deferral; we separate bias from
+    composition by holding accuracy fixed.
+
+[114] Islam, M. S.; Bappy, M. M.; Tushar, S. R.; et al. (2026). Feature-Aware Anisotropic Local
+    Differential Privacy for Utility-Preserving Graph Representation Learning in Metal Additive
+    Manufacturing. arXiv preprint arXiv:2604.05077. https://arxiv.org/abs/2604.05077
+    Difference: trades privacy against utility in a local differential-privacy mechanism; a
+    different trade-off with the same structure of one layer added to another.
+
+[115] Naito, H. (2026). Flow-by-Flow:Content-Judgment Bypass for Governing AI Output in High-Loss
+    Domains. arXiv preprint arXiv:2608.07474. https://arxiv.org/abs/2608.07474
+    Difference: governs AI output by bypassing content judgment in high-stakes settings; the bypass
+    is an added layer and we price it.
+
+[116] Boudiaf, A.; Hussain, I.; Javed, S. (2026). Uncertainty-Aware Decision Making in Multimodal
+    Large Language Models. arXiv preprint arXiv:2608.17084. https://arxiv.org/abs/2608.17084
+    Difference: makes multimodal LLM decisions uncertainty-aware; uncertainty is one summary of a
+    layer's errors and does not by itself settle its value.
+
+[117] Shen, C.; Zhang, W.; Li, K.; et al. (2025). FEAT: A Multi-Agent Forensic AI System with
+    Domain-Adapted Large Language Model for Automated Cause-of-Death Analysis. arXiv preprint
+    arXiv:2508.07950. https://arxiv.org/abs/2508.07950
+    Difference: builds a multi-agent forensic system on domain-adapted LLMs; agent count is
+    redundancy, and we ask what the additional agent adds.
 
