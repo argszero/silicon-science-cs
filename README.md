@@ -452,7 +452,7 @@ carrier's actor has named a **term**, and a term no carrier fixes is decided by 
 has already rewritten four times — a **role** read as a value (step 6 and *Review policy*), `participant`, `operator`,
 `owner` — and each of those rewrites replaced the word a rule read, rather than defining it beside the word it
 replaced. The case those did not state is the actor that **is** the addressee — a third-person noun for the reader
-another step instructs, which reads as a participant the tree never introduces, while the act's actor is recoverable
+another step instructs, which reads as an actor the tree never introduces, while the act's actor is recoverable
 only from that step's mood. **Both directions are one rule:** an actor a reader must distinguish is read from the
 carrier that fixes its population — the `Author instance` line for the author, the `assigned-<instance-id>` label for
 the reviewer, the *Editor-row churn* row for the editor, and the two senses of *instance* and *participant* with the
