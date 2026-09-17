@@ -46,6 +46,22 @@ as the layout read's **clean form**; a fixture whose entries are not separated
 fails the control with the missing line named, which is what keeps the control's
 set as wide as the lines this checker prints.
 
+A second count is printed the same way, for the **entry component** instead of the
+list's layout: `author form:` reads whether the author component is printed in the
+form the house style states (`Family, I.`) — a family token printed ALL-CAPS is the
+form a registry's stored field has, and a character reference (`&#39;`, `&amp;`) is
+the form an undecoded field has. Its window is narrower than the entry set and is
+printed with the counts (`window/entries`), because an entry in another order is
+outside it and a zero over an empty window is not a passing read. Like the layout
+count, it is an advisory that does not move the verdict, and its clean form is
+asserted beside the layout read's for every case that asserts the marker tuple — so
+a fixture whose family token is printed ALL-CAPS fails the control with the missing
+line named, exactly as a collapsed one does. The two counts differ in what they owe
+the reader: the layout count is printed in every run because every entry set has a
+layout, while the component count owes its **window** — the entries whose author
+component has the house style's shape at all — because a list in another order is
+outside the read and its zero must not be presented as a held form.
+
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
     python3 .github/tools/refgate.py --selftest
@@ -62,6 +78,7 @@ Requires only the Python 3 standard library.
 """
 import re
 import sys
+import unicodedata
 
 THRESHOLD = 100
 
@@ -75,6 +92,42 @@ ENTRY = re.compile(r'^\s*(?:\[(\d{1,3})\]|(\d{1,3})[.)])(?:\s|$)')
 # In-text citation: [12]  [12,14]  [12-14]  [12, 14]
 CITE = re.compile(r'\[(\d+(?:\s*[,\u2013-]\s*\d+)*)\]')
 FENCE = re.compile(r'^\s*```')
+
+# The AUTHOR COMPONENT's printed form (README → *Presentation requirements*: the
+# component is stated as a form, `Family, I.`) — and the case and the encoding
+# are part of that form, because a registry's stored field is not what an entry
+# prints. Two failures are readable **by position**, and both are read only in
+# the form the house style asks for:
+#
+#   * the component's SHAPE — a family token of two or more letters, a comma, an
+#     initial (COMPONENT). That shape is this read's **window**: an entry in
+#     another order (a given-name-first list, or one that never names an author)
+#     is outside it, so the line prints `window/entries` — a count taken over an
+#     empty window is not a passing read, and the liveness figure is what tells
+#     the two apart.
+#   * inside that window, an entry whose family token is printed ALL-CAPS — read
+#     off the SAME match as the window (`str.isupper()`), so the failure set is by
+#     construction inside the set it is counted over. It is the form a record's
+#     stored field has, and the form the fold removes, exactly as the title rule
+#     folds an ALL-CAPS stored title to title case. Initials are the house style's
+#     OWN capitals and are not read: `D.` is one letter, and a matcher that flags
+#     any run of capitals in the entry flags middle initials, acronyms (`DOI`,
+#     `IEEE`) and venue names instead — measured 2026-09-17 over `#38`'s entries,
+#     where a loose run-of-capitals rule returned 4 hits and none of them was a
+#     defect.
+#   * a CHARACTER REFERENCE anywhere in the entry (CHARREF: `&#39;`, `&amp;`) —
+#     the form a field has when it is copied out of JSON/XML undecoded. It has no
+#     legitimate place in a printed entry, so it needs no window.
+# A family token is a **letter** followed by one or more letters, apostrophes or
+# hyphens — Unicode letters, because the window's own printed line names the class
+# as "a family name", and an ASCII-only class silently drops a member the sentence
+# says is in: *measured 2026-09-17 over the five published bibliographies (616
+# entries), the ASCII form of this class returned a window of **389** where this
+# one returns **390** — the single entry is `#38`'s `[54] Bilò, V.`, plainly in
+# the house form. `--selftest` pins the boundary from both sides.*
+FAMILY = r"[^\W\d_](?:[^\W\d_]|['\u2019-]){1,}"
+COMPONENT = re.compile(r"(?<![\w'\u2019-])(" + FAMILY + r")\s*,\s*[A-Z]\.")
+CHARREF = re.compile(r"&(?:#\d+|#x[0-9A-Fa-f]+|[a-zA-Z]+);")
 
 
 def split_doc(text):
@@ -137,6 +190,43 @@ def block_form(refsec):
     return len(idx), unsep
 
 
+def author_form(refsec):
+    """Return (n_entries, window, n_allcaps, n_charref).
+
+    The entry COMPONENT read: whether the author component is printed in the form
+    the house style states. `window` is the number of entries this read could be
+    taken over — the entries whose author component has the house style's shape
+    (`Family, I.`: a family token of two or more letters, a comma, an initial).
+    `n_allcaps` counts those whose family token is printed ALL-CAPS (the form a
+    registry's stored field has, which the fold removes, as the title rule folds
+    an ALL-CAPS stored title); `n_charref` counts entries carrying a character
+    reference anywhere (`&#39;`, `&amp;`) — the form an undecoded field has.
+
+    The window is printed with the counts because the two failures are readable
+    only inside it: `0` ALL-CAPS over a window of `0` is a read of nothing, and
+    the same `0` over 123 entries is the reading that the form is held.
+    """
+    lines = refsec.splitlines()
+    idx = [i for i, l in enumerate(lines) if ENTRY.match(l)]
+    window = caps = refs = 0
+    for i in idx:
+        # NFC first: the class is stated over *letters*, and a decomposed
+        # letter (`o` + U+0300) is the same letter as `ò` — reading the raw
+        # bytes would put it outside a window its own line says it is in.
+        l = unicodedata.normalize('NFC', lines[i])
+        hits = list(COMPONENT.finditer(l))
+        if hits:
+            window += 1
+            # `any` and not "the first component": the line's own words are "N
+            # print the family name ALL-CAPS", so an entry that prints one is
+            # counted once, wherever in the entry it stands.
+            if any(m.group(1).isupper() for m in hits):
+                caps += 1
+        if CHARREF.search(l):
+            refs += 1
+    return len(idx), window, caps, refs
+
+
 def cited_numbers(body):
     """Numbers appearing as in-text bracket markers (fences stripped)."""
     nums = set()
@@ -195,6 +285,11 @@ def report(path):
     print(f"  block form: {bf_total} entries, {bf_unsep} of them not separated from the entry "
           f"above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark "
           f"renderer (GitHub's preview included); read the page, not the source")
+    af_total, af_window, af_caps, af_refs = author_form(refsec)
+    print(f"  author form: {af_window}/{af_total} entry(s) carry the read's window "
+          f"(a family name, a comma, an initial); {af_caps} print the family name ALL-CAPS, "
+          f"{af_refs} carry a character reference (&\u2026;) — a record's stored field is not "
+          f"the form an entry prints")
     print(f"  in-text cited numbers={len(cited)}  covered={len(covered)}/{total}"
           f"  coverage={100.0 * len(covered) / total:.1f}%")
     if total >= THRESHOLD and len(covered) / total < 0.9:
@@ -239,10 +334,15 @@ def _make(n_entries, cite_upto, style='[]', first_section_hi=0, separated=True):
     def section(lo, hi, sty):
         entries = []
         for i in range(lo, hi + 1):
+            # `Family{i}, A.` is the house style's author component, so every
+            # fixture built here exercises the COMPONENT read's window as well as
+            # the entry counts: a fixture that cannot carry the form makes that
+            # read vacuous in the control, which is how the layout read was green
+            # over 13 collapsed fixtures before R359.
             if sty == '[]':
-                entries.append(f"[{i}] Author {i}, Title {i}, arXiv:2500.{i:05d}, 2026.")
+                entries.append(f"[{i}] Family, A. Title {i}. arXiv:2500.{i:05d}.")
             else:
-                entries.append(f"{i}. Author {i}, Title {i}, arXiv:2500.{i:05d}, 2026.")
+                entries.append(f"{i}. Family, A. Title {i}. arXiv:2500.{i:05d}.")
         # A fixture is a bibliography in the house form unless a case wants the
         # collapsed one on purpose: entries on their own lines, separated by a
         # blank line, which is what the layout read below counts.
@@ -258,7 +358,8 @@ def _make(n_entries, cite_upto, style='[]', first_section_hi=0, separated=True):
 def _refs(lo, hi, style='[]', separated=True):
     sep = "\n\n" if separated else "\n"
     return "## References\n\n" + sep.join(
-        (f"[{i}] A{i}. arXiv:2500.{i:05d}." if style == '[]' else f"{i}. A{i}. arXiv:2500.{i:05d}.")
+        (f"[{i}] Family, A. arXiv:2500.{i:05d}." if style == '[]'
+         else f"{i}. Family, A. arXiv:2500.{i:05d}.")
         for i in range(lo, hi + 1)) + "\n"
 
 
@@ -285,6 +386,12 @@ def selftest():
     # the missing line stated.
     CLEAN = ("WARN", "NOTE", "AMBIGUOUS", "uncited entries")
     LAYOUT_CLEAN = re.compile(r"block form: \d+ entries, 0 of them not separated")
+    # The component read's clean form, for the same reason and by the same
+    # mechanism: it prints a COUNT of the form's two failures over a WINDOW, so no
+    # marker tuple can hold it and a clean fixture has to assert it by name.
+    AUTHOR_CLEAN = re.compile(
+        r"author form: \d+/\d+ entry\(s\) carry the read's window.*?"
+        r"0 print the family name ALL-CAPS, 0 carry a character reference")
 
     # --- the verdict line, over the input forms the matchers admit ---------
     # every run prints the window it read: the reading names its object
@@ -293,15 +400,15 @@ def selftest():
     case("wrapped_marker_ends_line",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"[{i}]\nAuthor {i}, Title {i}.\n\n" for i in range(1, 101)),
+         + "".join(f"[{i}]\nFamily, A. Title {i}.\n\n" for i in range(1, 101)),
          ["GATE: PASS", "entries=100"], CLEAN)
     case("numbered_heading", _make(100, 100).replace("## References", "## 7 References"),
          ["GATE: PASS", "entries=100"], CLEAN)
     case("mixed_numbering",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 121))
          + "\n\n## References\n\n"
-         + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 61))
-         + "".join(f"{i}. A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(61, 121)),
+         + "".join(f"[{i}] Family, A. arXiv:2500.{i:05d}.\n\n" for i in range(1, 61))
+         + "".join(f"{i}. Family, A. arXiv:2500.{i:05d}.\n\n" for i in range(61, 121)),
          ["GATE: PASS", "numbering=.+[]"], CLEAN)
     case("fail_uncited_padding", _make(120, 110),
          ["GATE: FAIL", "uncited entries (10)"], ("WARN", "NOTE", "AMBIGUOUS"),
@@ -371,7 +478,7 @@ def selftest():
     case("block_form_separated",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"[{i}] A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         + "".join(f"[{i}] Family, A. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
          ["GATE: PASS", "entries=100", "block form: 100 entries, 0 of them not separated"],
          CLEAN)
     # the same 100 entries with no blank lines: ONE paragraph on the page, and
@@ -384,7 +491,100 @@ def selftest():
           "block form: 100 entries, 99 of them not separated"],
          CLEAN)
 
-    # --- one case per WINDOW FORM, not per printed line --------------------
+    # --- the COMPONENT read: the stored form of a record is not the printed form
+    # the window is live, and it is asserted WITH the counts: `100/100` is what
+    # makes the two zeros below it a reading rather than a read of nothing
+    case("author_form_window_live", _make(100, 100),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "0 print the family name ALL-CAPS", "0 carry a character reference"],
+         CLEAN)
+    # one family token printed ALL-CAPS — the form a registry's stored field has
+    case("author_form_allcaps_family",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'GALE, D.' if i == 15 else 'Family, A.'} "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "1 print the family name ALL-CAPS, 0 carry a character reference"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # an undecoded character reference — the form a field has out of JSON/XML
+    case("author_form_character_reference",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'Li, Z.; O&#39;Brien, L.' if i == 95 else 'Family, A.'} "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "1 carry a character reference"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # the read's WINDOW can be empty, and the line then says so: a list in another
+    # order (given-name-first) is outside this read, so its zero is not a held form
+    case("author_form_window_empty",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] Author {i}. Title {i}. arXiv:2500.{i:05d}.\n\n"
+                   for i in range(1, 101)),
+         ["GATE: PASS", "author form: 0/100 entry(s) carry the read's window"],
+         ("WARN", "NOTE", "AMBIGUOUS", "uncited entries"))
+    # ...and what the read must NOT flag: the house style's own capitals (initials,
+    # middle initials), an acronym, and a venue — the four false positives a
+    # run-of-capitals matcher returns (measured 2026-09-17 over #38: 4 hits, 0
+    # defects). Only a family token in the component's own shape is read.
+    case("author_form_capitals_not_read",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {('Smith, A. M. H. W.' if i == 28 else 'Chen, L.')} "
+                   f"Title {i}. IEEE Trans. ACM. arXiv:2500.{i:05d}.\n\n"
+                   for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "0 print the family name ALL-CAPS, 0 carry a character reference"],
+         CLEAN)
+
+    # --- the WINDOW's class, pinned from both sides ------------------------
+    # A family token is a LETTER followed by letters/apostrophes/hyphens, and the
+    # line names that class as "a family name". An ASCII-only class is narrower
+    # than the name: measured over the five published bibliographies (616 entries)
+    # it returned a window of 389 where the letter class returns 390, the one
+    # entry being #38's `[54] Bilò, V.`. These two cases are that boundary read
+    # from the inside and from the outside, so a future narrowing turns the first
+    # red (99/100) rather than passing quietly.
+    case("author_form_letter_class_in_window",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'Bilò, V.' if i == 54 else 'Family, A.'} "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "0 print the family name ALL-CAPS, 0 carry a character reference"],
+         CLEAN)
+    # ...and the same letter in a record's capitals is a defect, so the ALL-CAPS
+    # count is read off the window's own match (`isupper()`) and not a second,
+    # ASCII-only pattern that would leave this entry uncounted.
+    case("author_form_letter_class_allcaps",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'BILÒ, V.' if i == 54 else 'Family, A.'} "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "1 print the family name ALL-CAPS, 0 carry a character reference"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # ...and a decomposed letter is the same letter: the read normalises to NFC
+    # first, so `Bilo` + U+0300 is in the window rather than outside it.
+    case("author_form_decomposed_letter_in_window",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'Bilo\u0300, V.' if i == 54 else 'Family, A.'} "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "0 print the family name ALL-CAPS, 0 carry a character reference"],
+         CLEAN)
+    # the line's words are "N print the family name ALL-CAPS", so an entry that
+    # prints ONE — wherever it stands in the component — is counted once.
+    case("author_form_second_component_allcaps",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'Gale, D.; SHAPLEY, L.' if i == 15 else 'Family, A.'} "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "1 print the family name ALL-CAPS, 0 carry a character reference"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
     # A control owes the window's boundary: a case set drawn from the lines the
     # checker can print exercises exactly the fixtures it holds, so a branch of
     # the window no case reaches can be deleted with this run still green. Each
@@ -403,14 +603,14 @@ def selftest():
     case("paren_entry_marker",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"{i}) A{i}. arXiv:2500.{i:05d}.\n" for i in range(1, 101)),
+         + "".join(f"{i}) Family, A. arXiv:2500.{i:05d}.\n" for i in range(1, 101)),
          ["GATE: PASS", "entries=100", "numbering=.",
           "WARN: bib uses '1.' but body uses '[n]'"],
          ("NOTE", "AMBIGUOUS", "uncited entries"))
     case("indented_entry_marker",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"  [{i}] A{i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         + "".join(f"  [{i}] Family, A. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
          ["GATE: PASS", "entries=100"], CLEAN)
     case("en_dash_range_marker",
          "## Introduction\n\nsee [1\u201397] and [98, 99, 100]\n\n" + _refs(1, 100),
@@ -453,6 +653,13 @@ def selftest():
                     and not any(s.startswith("block form:") for s in appear)
                     and not LAYOUT_CLEAN.search(printed)):
                 missing.append("<block form: T entries, 0 of them not separated>")
+            # ...and the component read's clean form on the same terms: a case
+            # whose subject IS that line pins the count in `appear` instead.
+            if (tuple(forbid) == CLEAN
+                    and not any(s.startswith("author form:") for s in appear)
+                    and not AUTHOR_CLEAN.search(printed)):
+                missing.append("<author form: W/T entry(s) carry the read's window, "
+                               "0 print the family name ALL-CAPS, 0 carry a character reference>")
             spurious = [s for s in forbid if s in printed]
             ok = verdict == expect_pass and not missing and not spurious
             print(f"  [{'ok' if ok else 'FAIL'}] {name}: "
