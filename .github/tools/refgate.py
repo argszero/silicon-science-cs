@@ -47,20 +47,23 @@ fails the control with the missing line named, which is what keeps the control's
 set as wide as the lines this checker prints.
 
 A second count is printed the same way, for the **entry component** instead of the
-list's layout: `author form:` reads whether the author component is printed in the
-form the house style states (`Family, I.`) — a family token printed ALL-CAPS is the
-form a registry's stored field has, and a character reference (`&#39;`, `&amp;`) is
-the form an undecoded field has. Its window is narrower than the entry set and is
-printed with the counts (`window/entries`), because an entry in another order is
-outside it and a zero over an empty window is not a passing read. Like the layout
+list's layout: `author form:` reads whether the author component is printed in a
+form the house style **admits** — `Family, I.`, or, for a work whose record gives
+one author token and no more, that token alone (`Student.`) — a family token printed
+ALL-CAPS is the form a registry's stored field has, and a character reference
+(`&#39;`, `&amp;`) is the form an undecoded field has. Its window is narrower than the
+entry set and is printed with the counts (`window/entries`), because an entry whose
+author component is printed in **neither** form is outside it and a zero over an
+empty window is not a passing read. Like the layout
 count, it is an advisory that does not move the verdict, and its clean form is
 asserted beside the layout read's for every case that asserts the marker tuple — so
 a fixture whose family token is printed ALL-CAPS fails the control with the missing
 line named, exactly as a collapsed one does. The two counts differ in what they owe
 the reader: the layout count is printed in every run because every entry set has a
 layout, while the component count owes its **window** — the entries whose author
-component has the house style's shape at all — because a list in another order is
-outside the read and its zero must not be presented as a held form.
+component is printed in one of the two forms the rule admits at all — because a list
+that prints neither is outside the read and its zero must not be presented as a held
+form.
 
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
@@ -94,17 +97,28 @@ CITE = re.compile(r'\[(\d+(?:\s*[,\u2013-]\s*\d+)*)\]')
 FENCE = re.compile(r'^\s*```')
 
 # The AUTHOR COMPONENT's printed form (README → *Presentation requirements*: the
-# component is stated as a form, `Family, I.`) — and the case and the encoding
-# are part of that form, because a registry's stored field is not what an entry
-# prints. Two failures are readable **by position**, and both are read only in
-# the form the house style asks for:
+# component is stated as a form, `Family, I.` — **and the rule admits a second form
+# for a member that has no initial to print**: a work whose *record* gives one author
+# token and no more prints that token alone) — and the case and the encoding are part
+# of that form, because a registry's stored field is not what an entry prints. Two
+# failures are readable **by position**, and both are read only in a form the house
+# style admits:
 #
-#   * the component's SHAPE — a family token of two or more letters, a comma, an
-#     initial (COMPONENT). That shape is this read's **window**: an entry in
-#     another order (a given-name-first list, or one that never names an author)
-#     is outside it, so the line prints `window/entries` — a count taken over an
-#     empty window is not a passing read, and the liveness figure is what tells
-#     the two apart.
+#   * the component's SHAPE — a family token of two or more letters closed by a comma
+#     and an initial (COMPONENT), **or a lone family token at the author position
+#     closed by a period and followed by the year's parenthesis (SOLO)**. That union
+#     is this read's **window**: an entry whose component is printed in neither form
+#     (a given-name-first list, or one that never names an author) is outside it, so
+#     the line prints `window/entries` — a count taken over an empty window is not a
+#     passing read, and the liveness figure is what tells the two apart. **The lone
+#     token is admitted because the failure read inside the window — the component's
+#     case and its encoding — is readable over it too**: the rule gives that member
+#     no initial, and that is the rule's exception, never a licence for its family
+#     token to print the capitals a record stores. A window narrower than the read it
+#     bounds reports `0 print the family name ALL-CAPS` over entries that do
+#     (measured over `#44`'s `[88] Student. (1908) …`: the member left outside the
+#     window was 1 of the 2 published entries the rule's own exception covers, and
+#     the only entry a record's capitals could hide in).
 #   * inside that window, an entry whose family token is printed ALL-CAPS — read
 #     off the SAME match as the window (`str.isupper()`), so the failure set is by
 #     construction inside the set it is counted over. It is the form a record's
@@ -121,12 +135,25 @@ FENCE = re.compile(r'^\s*```')
 # A family token is a **letter** followed by one or more letters, apostrophes or
 # hyphens — Unicode letters, because the window's own printed line names the class
 # as "a family name", and an ASCII-only class silently drops a member the sentence
-# says is in: *measured 2026-09-17 over the five published bibliographies (616
-# entries), the ASCII form of this class returned a window of **389** where this
-# one returns **390** — the single entry is `#38`'s `[54] Bilò, V.`, plainly in
-# the house form. `--selftest` pins the boundary from both sides.*
+# says is in: *the ASCII form of this class returns exactly one entry fewer than this
+# one over the five published bibliographies — `#38`'s `[54] Bilò, V.`, plainly in
+# the house form. The two figures move with the set they are read over and with the
+# window they are read through, so the mechanism is the sentence and the numbers
+# carry their head and their reader: over the five lists at `13b2b1e`, **this** copy
+# returns 499 (ASCII) → 500 (letter class) of 616 entries, while the copy of that same
+# head — its window admitting `Family, I.` alone — returned 498 → 499.* `--selftest`
+# pins the boundary from both sides.
 FAMILY = r"[^\W\d_](?:[^\W\d_]|['\u2019-]){1,}"
 COMPONENT = re.compile(r"(?<![\w'\u2019-])(" + FAMILY + r")\s*,\s*[A-Z]\.")
+# The component's SECOND admitted form — a lone family token at the author position,
+# closed by a period and followed by the year's parenthesis (the house order's own
+# next component). Position is what keeps the class tight: the token must stand
+# immediately after the entry marker, so a title-first list's first word is not read
+# as an author (`BERT. arXiv:…` is outside, its successor being the venue rather than
+# the year). It is read for the SAME failure as `Family, I.` — the component's case —
+# so both forms share one window rather than one being read as a shape and the other
+# as an exception to it.
+SOLO = re.compile(r"^\s*(?:\[\d{1,3}\]|\d{1,3}[.)])\s+(" + FAMILY + r")\.\s*\(")
 CHARREF = re.compile(r"&(?:#\d+|#x[0-9A-Fa-f]+|[a-zA-Z]+);")
 
 
@@ -193,14 +220,21 @@ def block_form(refsec):
 def author_form(refsec):
     """Return (n_entries, window, n_allcaps, n_charref).
 
-    The entry COMPONENT read: whether the author component is printed in the form
-    the house style states. `window` is the number of entries this read could be
-    taken over — the entries whose author component has the house style's shape
-    (`Family, I.`: a family token of two or more letters, a comma, an initial).
-    `n_allcaps` counts those whose family token is printed ALL-CAPS (the form a
-    registry's stored field has, which the fold removes, as the title rule folds
-    an ALL-CAPS stored title); `n_charref` counts entries carrying a character
-    reference anywhere (`&#39;`, `&amp;`) — the form an undecoded field has.
+    The entry COMPONENT read: whether the author component is printed in a form
+    the house style admits. `window` is the number of entries this read could be
+    taken over — the entries whose author component is printed in one of the
+    rule's two forms: `Family, I.` (COMPONENT: a family token of two or more
+    letters, a comma, an initial), or, for a work whose record gives one author
+    token and no more, that token alone at the author position (SOLO). The second
+    is not an exception *to* this read: the failure counted below is the
+    component's **case**, and a lone token's case is read exactly as a
+    `Family, I.`'s is — a window that dropped it would print `0` over an entry
+    printing the capitals a record stores. `n_allcaps` counts those whose family
+    token is printed ALL-CAPS (the form a registry's stored field has, which the
+    fold removes, as the title rule folds an ALL-CAPS stored title); `n_charref`
+    counts entries carrying a character reference anywhere (`&#39;`, `&amp;`) —
+    the form an undecoded field has, read with no window because it has no
+    legitimate place in a printed entry.
 
     The window is printed with the counts because the two failures are readable
     only inside it: `0` ALL-CAPS over a window of `0` is a read of nothing, and
@@ -215,12 +249,14 @@ def author_form(refsec):
         # bytes would put it outside a window its own line says it is in.
         l = unicodedata.normalize('NFC', lines[i])
         hits = list(COMPONENT.finditer(l))
-        if hits:
+        solo = SOLO.match(l)
+        if hits or solo:
             window += 1
             # `any` and not "the first component": the line's own words are "N
             # print the family name ALL-CAPS", so an entry that prints one is
             # counted once, wherever in the entry it stands.
-            if any(m.group(1).isupper() for m in hits):
+            if any(m.group(1).isupper() for m in hits) or (
+                    solo and solo.group(1).isupper()):
                 caps += 1
         if CHARREF.search(l):
             refs += 1
@@ -287,7 +323,8 @@ def report(path):
           f"renderer (GitHub's preview included); read the page, not the source")
     af_total, af_window, af_caps, af_refs = author_form(refsec)
     print(f"  author form: {af_window}/{af_total} entry(s) carry the read's window "
-          f"(a family name, a comma, an initial); {af_caps} print the family name ALL-CAPS, "
+          f"(a family name, a comma, an initial — or a lone family name before the "
+          f"year); {af_caps} print the family name ALL-CAPS, "
           f"{af_refs} carry a character reference (&\u2026;) — a record's stored field is not "
           f"the form an entry prints")
     print(f"  in-text cited numbers={len(cited)}  covered={len(covered)}/{total}"
@@ -541,11 +578,13 @@ def selftest():
     # --- the WINDOW's class, pinned from both sides ------------------------
     # A family token is a LETTER followed by letters/apostrophes/hyphens, and the
     # line names that class as "a family name". An ASCII-only class is narrower
-    # than the name: measured over the five published bibliographies (616 entries)
-    # it returned a window of 389 where the letter class returns 390, the one
-    # entry being #38's `[54] Bilò, V.`. These two cases are that boundary read
-    # from the inside and from the outside, so a future narrowing turns the first
-    # red (99/100) rather than passing quietly.
+    # than the name: over the five published bibliographies it returns exactly one
+    # entry fewer than the letter class, #38's `[54] Bilò, V.` — the mechanism is the
+    # sentence, and the figures carry their head and their reader (over the five lists
+    # at 13b2b1e this copy reads 499 → 500 of 616 entries; the copy of that head, its
+    # window admitting `Family, I.` alone, read 498 → 499). These two cases are that
+    # boundary read from the inside and from the outside, so a future narrowing turns
+    # the first red (99/100) rather than passing quietly.
     case("author_form_letter_class_in_window",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
@@ -585,6 +624,42 @@ def selftest():
          ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
           "1 print the family name ALL-CAPS, 0 carry a character reference"],
          ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # The component's SECOND admitted form: a work whose record gives one author
+    # token and no more prints that token alone, and it is read for the SAME
+    # failure — the component's case — so it stands INSIDE this read's window
+    # rather than being a member the zero is silent about. Before this case's
+    # form was admitted (filed at R370, fixed at R371), `STUDENT. (1908) …`
+    # printed `102/103 … 0 print the family name ALL-CAPS` — a true sentence about
+    # a window, and a false one about the entries.
+    case("author_form_lone_token_in_window",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'Student.' if i == 88 else 'Family, A.'} (1908). "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "0 print the family name ALL-CAPS, 0 carry a character reference"],
+         CLEAN)
+    # ...and the capitals a record stores are that failure here too
+    case("author_form_lone_token_allcaps",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'STUDENT.' if i == 88 else 'Family, A.'} (1908). "
+                   f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
+          "1 print the family name ALL-CAPS, 0 carry a character reference"],
+         ("NOTE", "AMBIGUOUS", "uncited entries"))
+    # ...and the boundary from outside it: the lone-token form is pinned BY
+    # POSITION and by the year's parenthesis, so a title-first list's first word
+    # is not read as an author — the component that follows a title is the venue,
+    # not the year. A window grown past the rule's own set turns this case red.
+    case("author_form_lone_token_not_an_author",
+         "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
+         + "\n\n## References\n\n"
+         + "".join(f"[{i}] {'BERT.' if i == 54 else 'Family, A.'} arXiv:2500.{i:05d}, 2018. "
+                   f"Title {i}.\n\n" for i in range(1, 101)),
+         ["GATE: PASS", "author form: 99/100 entry(s) carry the read's window",
+          "0 print the family name ALL-CAPS, 0 carry a character reference"],
+         CLEAN)
     # A control owes the window's boundary: a case set drawn from the lines the
     # checker can print exercises exactly the fixtures it holds, so a branch of
     # the window no case reaches can be deleted with this run still green. Each
