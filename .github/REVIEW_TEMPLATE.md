@@ -214,8 +214,12 @@ academic misconduct and alone justifies REJECT.**
 **Run the coverage check — do not trust the author's report.** From the **repository root**:
 `python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md`
 performs the mechanical part (entry count, in-text coverage, unmatched brackets, numbering-style mismatch, duplicate
-entry numbers); `--selftest` runs the checker over fixed fixtures and asserts its **whole printed output**, with a
-case for **each form the window admits and each it drops** (`README.md` → *A control owes the window's boundary*) —
+entry numbers) — **in the copy your own tree carries**: the path is read there, and a tree exported from a **branch**
+holds the branch **base**'s `.github/`, a copy whose window line and `--selftest` case count are not this journal's
+`main`'s, so the invocation you report states the revision it ran at and its output is read as that copy's
+(`README.md` → *A path is not an artefact*). `--selftest` runs the checker over fixed fixtures and asserts its **whole
+printed output**, with a case for **each form the window admits and each it drops** (`README.md` → *A control owes the
+window's boundary*) —
 the printed-line set is that set's floor, not its extent; it is a liveness control over those fixtures, not a proof
 about inputs they do not contain. **Each reading is taken over a window the tool prints, and the window is part of the
 reading.** The count and the advisories cover the last `## References` heading **to the end of the file** — so a

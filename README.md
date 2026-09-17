@@ -339,7 +339,12 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
   `WARN: duplicate entry numbers` line means two entries carry one key, which *Citation mechanics* → *Citation key*
   forbids and which a passing verdict does not cover (measured 2026-09-15, and re-takeable as the `--selftest` case
   `warn_duplicate_entry_numbers`: a bibliography of 100 distinct numbers, one of them carried by two entries, prints
-  that `WARN` **and** `GATE: PASS`). **Each reading has a window, and the tool prints it**: the count and every
+  that `WARN` **and** `GATE: PASS`). **Each reading has a window, and the tool prints it** — *in the **copy the
+  reader's tree carries**, which is this entry's copy only where that tree is a checkout of this repository's `main`*:
+  an export of a **branch** holds the branch **base**'s `.github/`, whose copy prints **no** window line and whose
+  `--selftest` holds **8/8** cases against this one's **26/26**, on this manuscript returning the same verdict
+  (*A path is not an artefact*, below — the two copies' sizes, hashes and measurements are stated there, so a claim
+  about the tool's own properties names the revision it was read at): the count and every
   advisory line are taken over the last `## References` heading **to the end of the file**, so a numbered list placed
   after the bibliography is read as entries — 101 entries followed by an appendix numbered `1.`–`3.` print that `WARN`
   for keys the bibliography does not duplicate — and the section must be an **ATX heading** (`#`…`######`, optional
@@ -516,6 +521,23 @@ a count moves when the thing it counts does, which is what naming its set is for
 the tree, and a reproduction spec names the tree form it needs; **the reader this workflow binds obtains it by
 export** — a PR is read as an archive of its head, never as a working tree — so a spec that silently requires a
 checkout is **incomplete in the same way** as one that needs an unstated directory or environment.
+
+**A path is not an artefact — the copy a tree carries is the one that is read, and an export of a *branch*
+carries the branch's base.** The two acquisition forms above differ in *what exists*; this differs in **which version
+of a file that already exists** is there, and a check that names a file by its **path** cannot tell the two apart. A
+branch cut from `main` and rebased onto it edits a handful of paths and leaves every other one exactly as its base had
+it, so **an export of that branch carries the base's copy of everything the branch never touched** — this repository's
+own instruments under `.github/` included, since no manuscript branch edits them. *Measured 2026-09-17 at the live
+heads, and re-takeable from the tree*: `main` at `3b53bf6` carries `.github/tools/refgate.py` at **406** lines, sha256
+`6d2e0227…`, whose `--selftest` prints **`26/26 cases ok`** and whose run prints its **window** line; the base of
+`origin/paper/issue-47` — `aacabe0` — holds the same path at **253** lines, sha256 `e4c5a9cc…`, whose `--selftest`
+prints **`8/8 cases ok`** and whose run prints **no window line at all** (the branch's own head carries that same
+copy, byte-identical, because the branch never touched the file), while the two return the **same verdict** on the same
+manuscript (`entries=156`, `156/156`, `100.0%`, `GATE: PASS`). So a read that reports an instrument's *own* properties —
+the window it prints, the cases its self-test holds, the lines it can emit — is a claim about the **copy** it ran, and
+it names the revision it read (the commit the copy sits at, and the copy's own size or case count where two copies are
+in play), because a carrier's sentence about what a tool prints is otherwise satisfied by a copy the sentence was not
+written about.
 
 **A control owes the window's boundary.** A control over a checker — a self-test, a liveness fixture, a canary — is a
 claim about what the checker catches, and its cases are drawn from a set smaller than the forms the window admits and
