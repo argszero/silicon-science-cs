@@ -7,12 +7,18 @@
 WHY THIS FILE EXISTS.  `readme_check_v1.py` binds the README's figures to the artefacts that own them,
 and until this file existed **nothing bound the manuscript's prose** -- so the same defect kept
 appearing in the carrier with no check, found by review instead of by the package.  The round-2 review
-located three instances (a step count of seven against the ten `reproduce.sh` prints, "46 checks"
-against the freeze check's 57, and a roadmap pointing one section past its object); the author's own
-census of the manuscript then found a fourth of the same class that the review had not carried
-(SS6.3's "51 appear in more than one sentence", where the verdict rows say 58) and a fifth
-sentence-shaped one (SS3.5's "roughly 13 cluster MDEs" where paging's value is 1.53).  A class is fixed
-by binding the carrier, not by repairing instances -- four repairs without a binding guarantee a fifth.
+located three instances (a step count that disagreed with the script's own printed step list, a
+freeze-check count that disagreed with its result file, and a roadmap pointing one section past its
+object); the author's own census of the manuscript then found a fourth of the same class that the
+review had not carried (SS6.3's multi-sentence key count, which then read "51 appear in more than one
+sentence" where the verdict rows say 58) and a fifth sentence-shaped one (SS3.5's sentence, which then
+read "roughly 13 cluster MDEs" where paging's value is 1.53).  A class is fixed by binding the carrier,
+not by repairing instances -- four repairs without a binding guarantee a fifth.
+
+The probe that closed the fifth then found a SIXTH inside the very sentence it reads: the repaired
+sentence typed the aggregate "up to 13" beside its three placeholders, so the rule this file states and
+the implementation of it disagreed (measured in `ck_witness_magnitudes`, which now reads the rule as
+written).  A repair that leaves a magnitude in the prose is not a binding.
 
 WHAT IS CHECKED, and against what:
 
@@ -233,15 +239,20 @@ def ck_roadmap(texts, c):
 
 
 def ck_witness_magnitudes(texts, c):
-    """The specificity control's magnitudes must be resolved from the artefact, never typed beside it.
+    """The specificity-control sentence must state every magnitude it carries as a resolved placeholder.
 
-    The claim this binds: a number the manuscript states about its own measurement must be the number the
-    artefact holds.  The rule is read over the SENTENCE that states them, not over the file -- read over
-    the file it fired on the section heading "### 1.5 Roadmap", because paging's value rounds to "1.5",
-    which is a coordinate of an entirely different object.  So: every magnitude the sentence states must
-    be a placeholder the assembler resolves, and the bare decimals the artefact holds must not occur in
-    the sentence at all.  Measured before this check existed, at an export of the reviewed head: changing
-    the typed `12.95` to `99.95` left this file at `9 check(s), 0 failed` and `assemble.py` at exit 0.
+    The rule is a UNIVERSAL -- "every magnitude this sentence states is one the assembler resolves" -- and
+    it was first implemented as a search for the decimals the artefact holds, in the two spellings the
+    author computed (2dp and 1dp).  A universal implemented as a search for the expected forms cannot see
+    the form that was not expected.  Measured, at an export of the round-3 head, in this very sentence: the
+    aggregate `13` -- typed in prose beside the three placeholders -- became `99` and left this file at
+    `11 check(s), 0 failed` with `assemble.py` at exit 0; the spelling set held {12.95, 13.12, 1.53, 13.0,
+    13.1, 1.5} and `13` was not in it.  The typed form was also FALSE: it read "up to 13" while the largest
+    of the three magnitudes it summarises is 13.12.
+
+    Both are repaired: the sentence carries one carriage per magnitude, and this check reads the rule as
+    written -- with the placeholder spans taken out, NO digit may remain.  The artefact is still read, so
+    the sentence cannot be bound to nothing: the owner must carry all three keys.
     """
     m = manuscript(texts)
     marker = "The instrument calls this test the **specificity control**"
@@ -251,22 +262,24 @@ def ck_witness_magnitudes(texts, c):
     stop = m.find("\n\n", start)
     sent = m[start:stop if stop != -1 else len(m)]
     facts = json.loads(texts["canonical_results.json"])["facts"]
-    vals = {}
-    for prob in ("ski", "sched", "paging"):
-        key = "limit.L2_null_shift.%s" % prob
-        if key not in facts:
-            return False, "the artefact does not carry %s -- nothing to bind against" % key
-        vals[prob] = facts[key]["value"]
-    typed = sorted({("%.2f" % v) for v in vals.values()} | {"%.1f" % abs(v) for v in vals.values()})
-    found = [x for x in typed if re.search(r"(?<![\w.])%s(?![\w])" % re.escape(x), sent)]
-    placeholders = len(re.findall(r"\{\{X:facts\.limit\.L2_null_shift\.[a-z]+\.value", sent))
-    if found:
-        return False, ("%d typed magnitude(s) beside the placeholders: %s -- one of the two carriages "
-                       "can disagree with the artefact silently" % (len(found), found))
-    if placeholders != 3:
-        return False, "the sentence carries %d resolved magnitude(s), expected 3 (one per problem)" % placeholders
-    return True, ("3 magnitudes, each a placeholder resolved from the artefact (%s); 0 typed copies"
-                  % ", ".join("%s %.2f" % (p, vals[p]) for p in ("ski", "sched", "paging")))
+    keys = ["limit.L2_null_shift.%s" % prob for prob in ("ski", "sched", "paging")]
+    missing = [k for k in keys if k not in facts]
+    if missing:
+        return False, "the artefact does not carry %s -- nothing to bind against" % missing
+    held = ", ".join("%s %.2f" % (k.split(".")[-1], facts[k]["value"]) for k in keys)
+    outside = re.sub(r"\{\{[^{}]*\}\}", "", sent)
+    typed = re.findall(r"\d[\d.,]*", outside)
+    if typed:
+        return False, ("%d magnitude(s) typed in the sentence, resolved from nothing: %s -- the artefact "
+                       "holds %s; a typed copy beside a placeholder can disagree with it silently"
+                       % (len(typed), typed, held))
+    spans = re.findall(r"\{\{[^{}]*\}\}", sent)
+    named = re.findall(r"\{\{X:facts\.limit\.L2_null_shift\.([a-z]+)\.value", sent)
+    if len(spans) != 3 or sorted(named) != ["paging", "sched", "ski"]:
+        return False, ("the sentence carries %d placeholder(s) (%s), expected exactly the three "
+                       "specificity-control magnitudes" % (len(spans), named or "none"))
+    return True, ("3 magnitudes, each only a placeholder resolved from the artefact (%s); "
+                  "0 digit outside a placeholder" % held)
 
 
 def ck_figure(texts, c):
@@ -341,8 +354,16 @@ MUTATIONS = [
      "manuscript_part1.md", "and its Section 6.4 states", "and its Section 8 states"),
     ("manuscript/the_witness_magnitudes_are_resolved_not_typed",
      "manuscript_part2.md",
-     "one per problem: ski rental\n`{{X:facts.limit.L2_null_shift.ski.value|2f}}`",
-     "one per problem: ski rental\n`12.95`"),
+     "one per problem, by ski rental\n`{{X:facts.limit.L2_null_shift.ski.value|2f}}`",
+     "one per problem, by ski rental\n`12.95`"),
+    # The same check at the member the first implementation could NOT see: a ROUNDED aggregate typed in
+    # the prose beside the three placeholders.  The text is the one the round-3 delivery actually carried
+    # (measured then: `13` -> `99` left 11 checks at 0 failed, `assemble.py` at exit 0), restored verbatim
+    # -- so the case fails on the rule as written and would have passed the rule as first implemented.
+    ("manuscript/the_witness_magnitudes_are_resolved_not_typed",
+     "manuscript_part2.md",
+     "is penalised, one per problem, by ski rental",
+     "is penalised by up to `13` cluster MDEs, one per problem: ski rental"),
     ("manuscript/the_figure_is_shown_and_its_file_is_committed",
      "manuscript_part2.md", "](figures/fig1_witness.svg)", "](figures/fig_absent.svg)"),
 ]
@@ -372,6 +393,13 @@ def selftest():
     base = [n for n, ok, _ in run_all(texts) if not ok]
     if base:
         print("FAIL   the battery needs a clean base; already failing: %s" % base)
+        return 1
+    # Coverage is itself a claim about the battery and needs its own read: a check with NO planted claim
+    # is decoration -- nothing shows it can fail -- and the case list is what claims it can.  A check may
+    # carry more than one case (a class repaired at one spelling needs the case for the other).
+    uncovered = [n for n, _ in CHECKS if n not in set(case[0] for case in MUTATIONS)]
+    if uncovered:
+        print("FAIL   %d check(s) carry no planted claim: %s" % (len(uncovered), uncovered))
         return 1
     bad = 0
     for name, spec, *rest in MUTATIONS:

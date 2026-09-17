@@ -96,11 +96,11 @@ The design compares a signed arm against a scalar arm matched **in form** — bo
 they differ in the odd term. Matching the form is necessary but not sufficient, because the
 object-level test is not sign-free. The instrument calls this test the **specificity control**:
 under a synthetic **even** target, which by construction has no sign dependence, the odd parameter
-is penalised by up to `13` cluster MDEs, one per problem: ski rental
+is penalised, one per problem, by ski rental
 `{{X:facts.limit.L2_null_shift.ski.value|2f}}`, scheduling
 `{{X:facts.limit.L2_null_shift.sched.value|2f}}` and paging
-`{{X:facts.limit.L2_null_shift.paging.value|2f}}`. A design that punishes its own odd term under a
-sign-free target cannot read a negative as evidence against a signed model.
+`{{X:facts.limit.L2_null_shift.paging.value|2f}}` cluster MDEs. A design that punishes its own odd
+term under a sign-free target cannot read a negative as evidence against a signed model.
 
 Two consequences are frozen as limit **L2** and applied everywhere below: only the **positive**
 resolutions are reported as evidence, and the earlier unmatched-form reading is **retired** — its

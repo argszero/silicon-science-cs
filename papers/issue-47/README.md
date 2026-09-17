@@ -196,18 +196,20 @@ Three further controls live in their own files and are run by `reproduce.sh`:
   artefacts, including its 8-row digest table;
 * `manuscript_check_v1.py` — the **manuscript's** typed numbers, its section references and its
   roadmap, each against the artefact that owns it. This is the carrier the README check did not reach,
-  and the one whose drift reached review twice: a step count of seven against the eleven the script
-  prints, "46 checks" against the freeze check's 57, and a roadmap pointing one section past its
-  object. Its claims are read out of the **part files**, not out of the rendered `manuscript.md`,
+  and the one whose drift reached review twice: a step count that disagreed with the script's own
+  printed step list, a freeze-check count that disagreed with its result file, and a roadmap pointing
+  one section past its object. Its claims are read out of the **part files**, not out of the rendered `manuscript.md`,
   because the parts are what the next assembly reads; every section reference must resolve to a
-  heading that exists; and the roadmap's sentences are matched against the headings they name. Nine
-  claims, nine mutations, one per claim, each required to fail its own check and no other.
+  heading that exists; and the roadmap's sentences are matched against the headings they name. Every
+  check has a planted claim behind it, each required to fail its own check and no other (its counts are
+  stated once, in the table below, and read there against the module itself).
 * `readme_check_v1.py` — **this file's own numbers**, each against the artefact that owns it: the
   facts and criterion states against `canonical_results.json`, the stage table against the one
   `run.log` printed, the freeze and mutation counts against their result files, the support
   counts against the verdict rows, the stated-difference count against `reference-check.md` and
-  `references.md`, the step count against `reproduce.sh` itself, and the census's source-file
-  count against the directory. `--selftest` plants one wrong figure per check and requires that
+  `references.md`, the step count against `reproduce.sh` itself, the census's source-file count
+  against the directory, and the counts this table states for the two checker modules against the
+  modules themselves -- a program's count is read by asking the program. `--selftest` plants one wrong figure per check and requires that
   check -- and only that check -- to fail. A count in a README is a claim about an artefact; if
   nothing reads it against that artefact it drifts, and this file's did (three figures quoted a
   tree two rounds old).
@@ -263,8 +265,8 @@ limit is measured and reported per profile, not hidden.
 | `lambda_cert_v1_results.json` | its artefact: the per-profile factors, intervals, λs and direction statistics |
 | `external_cell_mutation_v1.py` | the cell's check-liveness control (13 mutations) |
 | `freeze_check_v1.py` | the design-freeze document against the artefacts (57 checks, the F0b amendment included) |
-| `manuscript_check_v1.py` | the manuscript's typed numbers, section references and roadmap against the artefacts that own them (9 checks, 9 mutations) |
-| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (13 checks, 13 mutations) |
+| `manuscript_check_v1.py` | the manuscript's typed numbers, section references and roadmap against the artefacts that own them (11 checks, 12 mutations) |
+| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (14 checks, 14 mutations) |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |
 | `run.log` | the transcript of the last `canonical_runner.py` run |

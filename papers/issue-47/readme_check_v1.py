@@ -24,13 +24,19 @@ WHAT IS CHECKED, and against what:
 * the reference-entry count, against the manuscript's numbered `## References` section;
 * the step count, against `reproduce.sh`'s own step markers;
 * the census's source-file count, against the directory -- and the README must NAME that instrument
-  rather than type a number, because the list is enumerated at run time.
+  rather than type a number, because the list is enumerated at run time;
+* the counts the script table states for the two CHECKER modules, against the modules themselves: every
+  other figure in this README has an artefact that owns it and these two had none, so the table drifted
+  (it said nine checks and nine mutations for `manuscript_check_v1.py` while the module held eleven of
+  each, and nothing read either number).  The owner of a program's count is the program, so the check
+  asks it and compares -- a count with no owner is a count that will not be read again.
 
 A figure whose anchor is missing fails rather than passes: "the claim is not in the file" and "the
 claim is right" must never look alike.  `--selftest` plants one wrong figure per check and requires
 that check -- and ONLY that check -- to fail, so every check is known to be able to fail, and to fail
 on its own claim.
 """
+import importlib.util
 import io
 import json
 import os
@@ -225,6 +231,59 @@ def ck_repro_stages(t, c):
             % (g[0] if g else None, WORDNUM.get(g[0]) if g else None, n))
 
 
+TOOL_COUNT_ROWS = ("manuscript_check_v1.py", "readme_check_v1.py")
+
+
+def _tool_lists(fname):
+    """Ask the program for its own counts.
+
+    A count about a tool has no artefact behind it unless the tool is read.  The module's own lists are
+    the owner: this module answers for itself -- loading a second copy of itself would be a second owner
+    -- and any other module is loaded from its file, which is the same object the run reads.
+    """
+    if fname == "readme_check_v1.py":
+        return len(CHECKS), len(MUTATIONS)
+    spec = importlib.util.spec_from_file_location(
+        "_asked_" + os.path.splitext(fname)[0], os.path.join(HERE, fname))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return len(mod.CHECKS), len(mod.MUTATIONS)
+
+
+def ck_tool_counts(t, c):
+    """The counts the script table states for the two checker modules are the lists those modules hold.
+
+    The rule, stated as it is implemented (a rule implemented more narrowly than it is written is the
+    defect this very round repaired in the manuscript check): the README states, for
+    `manuscript_check_v1.py` and `readme_check_v1.py`, one `(N checks, M mutations)` pair each; the
+    multiset of such pairs in the document must equal the modules' own (checks, mutations) counts, and
+    each pair must stand in the table row that names its module -- the README carries these counts in
+    that one shape and nowhere else, so a pair appearing twice, or a third pair, fails.
+
+    Every other figure in this README is bound to a result file, a printed log line or the directory;
+    these two were bound to nothing, so the table drifted.  Measured at an export of the head this check
+    was written against: the README stated nine checks and nine mutations for `manuscript_check_v1.py`
+    while the module held eleven of each, and the README check was green.  A number is only read if
+    something reads it; when the owner is a program, it is read by asking the program.
+    """
+    readme = t["README.md"]
+    pairs = sorted((int(a), int(b))
+                   for a, b in re.findall(r"\((\d+) checks, (\d+) mutations\)", readme))
+    want = {fname: _tool_lists(fname) for fname in TOOL_COUNT_ROWS}
+    if sorted(want.values()) != pairs:
+        return False, "the README states the pair(s) %s; the modules hold %s" % (
+            pairs, sorted(want.values()))
+    rows = []
+    for fname in TOOL_COUNT_ROWS:
+        n, m = want[fname]
+        row = [line for line in readme.splitlines() if line.startswith("| `%s` |" % fname)]
+        if len(row) != 1 or "(%d checks, %d mutations)" % (n, m) not in row[0]:
+            return False, ("the README's row for `%s` does not carry `(%d checks, %d mutations)` "
+                           "(%d row(s) name it)" % (fname, n, m, len(row)))
+        rows.append("`%s` %d/%d" % (fname, n, m))
+    return True, "README pair(s) %s == the modules' own lists (%s)" % (pairs, "; ".join(rows))
+
+
 CHECKS = [
     ("readme/facts_recomputed_is_the_artefact's_own_count", ck_facts),
     ("readme/criterion_states_are_their_recorded_states", ck_states),
@@ -237,6 +296,7 @@ CHECKS = [
     ("readme/step_count_is_reproduce_sh's_own_markers", ck_steps),
     ("readme/census_count_is_the_directory_and_is_not_typed", ck_census),
     ("readme/verdict_list_is_the_one_reproduce_sh_prints", ck_verdicts),
+    ("readme/tool_counts_are_the_modules'_own_lists", ck_tool_counts),
     ("reproduce_sh/freeze_check_count_is_the_freeze_result's", ck_repro_freeze),
     ("reproduce_sh/stage_count_is_the_runner's_stage_list", ck_repro_stages),
 ]
@@ -303,6 +363,8 @@ MUTATIONS = [
      "-- 56 checks, including the digest table"),
     ("reproduce_sh/stage_count_is_the_runner's_stage_list",
      "reproduce.sh", "the eight stages (seven frozen", "the nine stages (seven frozen"),
+    ("readme/tool_counts_are_the_modules'_own_lists",
+     "README.md", "(11 checks, 12 mutations)", "(10 checks, 12 mutations)"),
 ]
 
 
@@ -339,6 +401,12 @@ def selftest():
     base = [n for n, ok, _ in run_all(texts) if not ok]
     if base:
         print("FAIL   the battery needs a clean base; already failing: %s" % base)
+        return 1
+    # Coverage is itself a claim about the battery and needs its own read: a check with NO planted
+    # figure is decoration -- nothing shows it can fail -- and the case list is what claims it can.
+    uncovered = [n for n, _ in CHECKS if n not in set(case[0] for case in MUTATIONS)]
+    if uncovered:
+        print("FAIL   %d check(s) carry no planted figure: %s" % (len(uncovered), uncovered))
         return 1
     bad = 0
     for name, spec, *rest in MUTATIONS:
