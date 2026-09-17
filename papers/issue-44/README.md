@@ -19,6 +19,12 @@ figure checks: 106 run, 0 failed   (106 on the matplotlib build the manifest pin
                                     are REPORTED rather than required -- the six DATA
                                     digests are required on every build)
 manuscript check: 22 run, 0 failed
+refs_display.json matches a fresh build: True
+  103 entries, 103 carrying a stated difference, 103 resolvable URL(s), 0 title(s) folded
+references section matches the renderer: True
+  103 entries, 103 blank line(s), 103 stated difference(s), 103 resolvable URL(s)
+  backticked tokens: 0 | entries with no resolvable URL: 0 | venue-named identifiers: 31
+  doubled periods: 0 | heading '## References'
 instrument audit: 44 run, 0 failed
 selftest: 0 case(s) failed
 verdict: OK
@@ -32,7 +38,7 @@ checkout, `not available here: no .git above this package ...` in an exported co
 itself comes from the package's own record (`coordinate_evidence.json`), so no check gains or loses
 a pass with the coordinate; the condition is stated because the line differs.
 
-Step 5 then prints the sha256 of the five artefacts this package ships, as a block to copy: a
+Step 6 then prints the sha256 of the five artefacts this package ships, as a block to copy: a
 digest quoted in a report is read off that output, never typed.
 
 Exit status carries the verdict: 0 only if every check passes, and any disagreement names the
@@ -61,6 +67,10 @@ matplotlib fatal.
 | `assemble.py` | builds `manuscript.md` from its part files, resolving every printed number out of `canonical_results.json` |
 | `manuscript_part1.md` … `manuscript_part3.md` | the manuscript sources — edits go here, never into `manuscript.md` |
 | `check_manuscript.py` | checks the assembled manuscript against the artefact and the reference list |
+| `refs_build_display.py` | builds `refs_display.json`: the printed parts of each entry (`authors`, `year`, `title`, `venue`, `url`) plus the authored one-line stated difference — refuses an entry without one |
+| `refs_render.py` | owns the `## References` section's FORM: house entry order, a blank line between entries, the year in parentheses after the author block, a resolvable URL, the closing `Difference:` line. `--check` re-renders and compares |
+| `refs_display.json` | the display data, in citation order (the order `assemble.py` numbers them in) |
+| `refs_differences.json` | the authored one-line stated difference per entry, keyed by `[@key]` — one authoring act per reference |
 | `coordinate_evidence_v1.py` | the package's only coordinate-dependent read: resolves a pinned commit's blob. `--write` records it (and refuses when the coordinate is unavailable); `--check` verifies the record, and needs no repository |
 | `coordinate_evidence.json` | the record it writes: commit, blob digest, the extracted lines and the reading -- generated, never hand-edited |
 | `verify_refs.py`, `verify_refs.sh`, `refs_to_verify.tsv` | re-verify every citation against Crossref / arXiv and rewrite `references.md` |
@@ -115,7 +125,7 @@ before:
   judged, and the scanner carries a six-case self-test so that a pattern which silently stopped
   matching is caught by the same run that depends on it.
 
-### The instruments audit themselves (`instrument_audit.py`, step 4)
+### The instruments audit themselves (`instrument_audit.py`, step 5)
 
 Written after a review of this package's own measurement instruments, which are checks like any
 other and carry the same failure modes:

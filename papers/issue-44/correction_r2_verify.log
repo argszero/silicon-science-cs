@@ -1,0 +1,31 @@
+issue #44 correction round 2 -- required changes 1-5 verification at /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-44/manuscript.md
+
+R2-1 layout        PASS
+   103 entries, 0 of them not separated from the entry above by a blank line | refgate.py (python3.13): block form = 103 entries, 0 not separated
+   control: mutation caught = True
+
+R2-1b renderer     PASS
+   GitHub's own renderer: 103 <p> for the 103 entries
+   control: mutation caught = True
+
+R2-2 differences   PASS
+   103 of 103 entries close with their authored stated difference
+   control: mutation caught = True
+
+R2-3 urls          PASS
+   103 entries each carry a resolvable https URL; 0 backticked token(s) in the section
+   control: mutation caught = True
+
+R2-4 year          PASS
+   103 entries print exactly one parenthesised year, after the author block and before the URL
+   control: mutation caught = True
+
+R2-5 order         PASS
+   103 entries: authors, (year), title, venue, resolvable URL, closing `Difference:`
+   control: mutation caught = True
+
+R2-6 content       PASS
+   103 entries name the authors, title, venue and link of the verified record
+   control: mutation caught = True
+
+R2 changes 1-5: ALL PASS

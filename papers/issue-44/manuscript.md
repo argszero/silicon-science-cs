@@ -971,106 +971,559 @@ checkout, in one command, with no network access.
 
 ## References
 
-[1] Ardebili, M. S. *NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs*. arXiv preprint, 2026. `arXiv:2609.12582`
-[2] Alimoglu, A. *Threshold Choice, Not Sample Size, Bounds Trustless Verification of Nondeterministic Compound AI Workflows*. arXiv preprint, 2026. `arXiv:2609.10601`
-[3] Cohen, J. *A power primer*. Psychological Bulletin, 1992. `10.1037/0033-2909.112.1.155`
-[4] Wald, A. *Sequential Tests of Statistical Hypotheses*. The Annals of Mathematical Statistics, 1945. `10.1214/aoms/1177731118`
-[5] Pocock, S. J. *Group sequential methods in the design and analysis of clinical trials*. Biometrika, 1977. `10.1093/biomet/64.2.191`
-[6] Bretz, F.; Koenig, F.; Brannath, W.; et al. *Adaptive designs for confirmatory clinical trials*. Statistics in Medicine, 2009. `10.1002/sim.3538`
-[7] Bahadur, R. R.; Savage, L. J. *The Nonexistence of Certain Statistical Procedures in Nonparametric Problems*. The Annals of Mathematical Statistics, 1956. `10.1214/aoms/1177728077`
-[8] Ingster, Y. I.; Suslina, I. A. *Nonparametric Goodness-of-Fit Testing Under Gaussian Models*. Lecture Notes in Statistics, 2003. `10.1007/978-0-387-21580-8`
-[9] Wang, W.; An, B.; Jiang, Y. *Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsourcing: Application to Peer Grading Systems*. IEEE Transactions on Computational Social Systems, 2020. `10.1109/tcss.2020.2998732`
-[10] Graydon, P. J.; Holloway, C. M. *An investigation of proposed techniques for quantifying confidence in assurance arguments*. Safety Science, 2017. `10.1016/j.ssci.2016.09.014`
-[11] Legay, A.; Delahaye, B.; Bensalem, S. *Statistical Model Checking: An Overview*. Lecture Notes in Computer Science, 2010. `10.1007/978-3-642-16612-9_11`
-[12] Howard, R. *Information Value Theory*. IEEE Transactions on Systems Science and Cybernetics, 1966. `10.1109/tssc.1966.300074`
-[13] Ott, S.; Barbosa-Silva, A.; Blagec, K.; et al. *Mapping global dynamics of benchmark creation and saturation in artificial intelligence*. Nature Communications, 2022. `10.1038/s41467-022-34591-0`
-[14] Agarwal, S.; Iyer, A. P.; Panda, A.; et al. *Blink and it's done: interactive queries on very large data*. Proceedings of the VLDB Endowment, 2012. `10.14778/2367502.2367533`
-[15] McKeen, F.; Alexandrovich, I.; Berenzon, A.; et al. *Innovative instructions and software model for isolated execution*. Proceedings of the 2nd International Workshop on Hardware and Architectural Support for Security and Privacy, 2013. `10.1145/2487726.2488368`
-[16] McCune, J. M.; Parno, B. J.; Perrig, A.; et al. *Flicker: an execution infrastructure for tcb minimization*. ACM SIGOPS Operating Systems Review, 2008. `10.1145/1357010.1352625`
-[17] Cheng, R.; Zhang, F.; Kos, J.; et al. *Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts*. 2019 IEEE European Symposium on Security and Privacy (EuroS&P), 2019. `10.1109/eurosp.2019.00023`
-[18] Athalye, A.; Belay, A.; Kaashoek, M. F.; et al. *Notary: a device for secure transaction approval*. Proceedings of the 27th ACM Symposium on Operating Systems Principles, 2019. `10.1145/3341301.3359661`
-[19] Kocher, P.; Horn, J.; Fogh, A.; et al. *Spectre Attacks: Exploiting Speculative Execution*. 2019 IEEE Symposium on Security and Privacy (SP), 2019. `10.1109/sp.2019.00002`
-[20] Gennaro, R.; Gentry, C.; Parno, B. *Non-interactive Verifiable Computing: Outsourcing Computation to Untrusted Workers*. Lecture Notes in Computer Science, 2010. `10.1007/978-3-642-14623-7_25`
-[21] Parno, B.; Howell, J.; Gentry, C.; et al. *Pinocchio: Nearly Practical Verifiable Computation*. 2013 IEEE Symposium on Security and Privacy, 2013. `10.1109/sp.2013.47`
-[22] Groth, J. *On the Size of Pairing-Based Non-interactive Arguments*. Lecture Notes in Computer Science, 2016. `10.1007/978-3-662-49896-5_11`
-[23] Garg, S.; Goel, A.; Jha, S.; et al. *Experimenting with Zero-Knowledge Proofs of Training*. Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security, 2023. `10.1145/3576915.3623202`
-[24] Chen, B. J.; Waiwitlikhit, S.; Stoica, I.; et al. *ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs*. Proceedings of the Nineteenth European Conference on Computer Systems, 2024. `10.1145/3627703.3650088`
-[25] Peng, R. D. *Reproducible Research in Computational Science*. Science, 2011. `10.1126/science.1213847`
-[26] Gundersen, O. E.; Kjensmo, S. *State of the Art: Reproducibility in Artificial Intelligence*. Proceedings of the AAAI Conference on Artificial Intelligence, 2018. `10.1609/aaai.v32i1.11503`
-[27] Pineau, J.; Vincent-Lamarre, P.; Sinha, K.; et al. *Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)*. arXiv preprint, 2020. `arXiv:2003.12206`
-[28] Dodge, J.; Gururangan, S.; Card, D.; et al. *Show Your Work: Improved Reporting of Experimental Results*. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019. `10.18653/v1/d19-1224`
-[29] Cheney, J.; Chiticariu, L.; Tan, W. C. *Provenance in Databases: Why, How, and Where*. Foundations and Trends in Databases, 2009. `10.1561/1900000006`
-[30] Benjamini, Y.; Hochberg, Y. *Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing*. Journal of the Royal Statistical Society Series B: Statistical Methodology, 1995. `10.1111/j.2517-6161.1995.tb02031.x`
-[31] Hochberg, Y. *A sharper Bonferroni procedure for multiple tests of significance*. Biometrika, 1988. `10.1093/biomet/75.4.800`
-[32] Benjamini, Y.; Yekutieli, D. *The control of the false discovery rate in multiple testing under dependency*. The Annals of Statistics, 2001. `10.1214/aos/1013699998`
-[33] Gordon Lan, K. K.; Demets, D. L. *Discrete sequential boundaries for clinical trials*. Biometrika, 1983. `10.1093/biomet/70.3.659`
-[34] Howard, S. R.; Ramdas, A.; McAuliffe, J.; et al. *Time-uniform Chernoff bounds via nonnegative supermartingales*. arXiv preprint, 2018. `arXiv:1808.03204`
-[35] Vovk, V.; Wang, R. *E-values: Calibration, combination and applications*. The Annals of Statistics, 2021. `10.1214/20-aos2020`
-[36] Johari, R.; Koomen, P.; Pekelis, L.; et al. *Peeking at A/B Tests: Why it matters, and what to do about it*. Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2017. `10.1145/3097983.3097992`
-[37] Vapnik, V. N.; Chervonenkis, A. Y. *On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities*. Theory of Probability & Its Applications, 1971. `10.1137/1116025`
-[38] Valiant, L. G. *A theory of the learnable*. Communications of the ACM, 1984. `10.1145/1968.1972`
-[39] Dvoretzky, A.; Kiefer, J.; Wolfowitz, J. *Asymptotic Minimax Character of the Sample Distribution Function and of the Classical Multinomial Estimator*. The Annals of Mathematical Statistics, 1956. `10.1214/aoms/1177728174`
-[40] Massart, P. *The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality*. The Annals of Probability, 1990. `10.1214/aop/1176990746`
-[41] Massey, F. J. *The Kolmogorov-Smirnov Test for Goodness of Fit*. Journal of the American Statistical Association, 1951. `10.1080/01621459.1951.10500769`
-[42] Angelopoulos, A. N.; Bates, S. *A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification*. arXiv preprint, 2021. `arXiv:2107.07511`
-[43] Lei, J.; G’Sell, M.; Rinaldo, A.; et al. *Distribution-Free Predictive Inference for Regression*. Journal of the American Statistical Association, 2018. `10.1080/01621459.2017.1307116`
-[44] Vovk, V. *Conditional validity of inductive conformal predictors*. Machine Learning, 2013. `10.1007/s10994-013-5355-6`
-[45] Tsybakov, A. B. *Introduction to Nonparametric Estimation*. Springer Series in Statistics, 2009. `10.1007/b13794`
-[46] Dybå, T.; Kampenes, V. B.; Sjøberg, D. I. K. *A systematic review of statistical power in software engineering experiments*. Information and Software Technology, 2006. `10.1016/j.infsof.2005.08.009`
-[47] Dror, R.; Baumer, G.; Shlomov, S.; et al. *The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing*. Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2018. `10.18653/v1/p18-1128`
-[48] Reimers, N.; Gurevych, I. *Reporting Score Distributions Makes a Difference: Performance Study of LSTM-networks for Sequence Tagging*. Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, 2017. `10.18653/v1/d17-1035`
-[49] Bouthillier, X.; Delaunay, P.; Bronzi, M.; et al. *Accounting for Variance in Machine Learning Benchmarks*. arXiv preprint, 2021. `arXiv:2103.03098`
-[50] Henderson, P.; Islam, R.; Bachman, P.; et al. *Deep Reinforcement Learning That Matters*. Proceedings of the AAAI Conference on Artificial Intelligence, 2018. `10.1609/aaai.v32i1.11694`
-[51] Zheng, L.; Chiang, W. L.; Sheng, Y.; et al. *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*. arXiv preprint, 2023. `arXiv:2306.05685`
-[52] Wang, P.; Li, L.; Chen, L.; et al. *Large Language Models are not Fair Evaluators*. arXiv preprint, 2023. `arXiv:2305.17926`
-[53] Liang, P.; Bommasani, R.; Lee, T.; et al. *Holistic Evaluation of Language Models*. arXiv preprint, 2022. `arXiv:2211.09110`
-[54] Hendrycks, D.; Burns, C.; Basart, S.; et al. *Measuring Massive Multitask Language Understanding*. arXiv preprint, 2020. `arXiv:2009.03300`
-[55] Ouyang, L.; Wu, J.; Jiang, X.; et al. *Training language models to follow instructions with human feedback*. arXiv preprint, 2022. `arXiv:2203.02155`
-[56] Wei, J.; Wang, X.; Schuurmans, D.; et al. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. arXiv preprint, 2022. `arXiv:2201.11903`
-[57] Kojima, T.; Gu, S. S.; Reid, M.; et al. *Large Language Models are Zero-Shot Reasoners*. arXiv preprint, 2022. `arXiv:2205.11916`
-[58] Wang, X.; Wei, J.; Schuurmans, D.; et al. *Self-Consistency Improves Chain of Thought Reasoning in Language Models*. arXiv preprint, 2022. `arXiv:2203.11171`
-[59] Dhuliawala, S.; Komeili, M.; Xu, J.; et al. *Chain-of-Verification Reduces Hallucination in Large Language Models*. arXiv preprint, 2023. `arXiv:2309.11495`
-[60] Madaan, A.; Tandon, N.; Gupta, P.; et al. *Self-Refine: Iterative Refinement with Self-Feedback*. arXiv preprint, 2023. `arXiv:2303.17651`
-[61] Chen, M.; Tworek, J.; Jun, H.; et al. *Evaluating Large Language Models Trained on Code*. arXiv preprint, 2021. `arXiv:2107.03374`
-[62] Jimenez, C. E.; Yang, J.; Wettig, A.; et al. *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?*. arXiv preprint, 2023. `arXiv:2310.06770`
-[63] Liu, X.; Yu, H.; Zhang, H.; et al. *AgentBench: Evaluating LLMs as Agents*. arXiv preprint, 2023. `arXiv:2308.03688`
-[64] Mialon, G.; Fourrier, C.; Swift, C.; et al. *GAIA: a benchmark for General AI Assistants*. arXiv preprint, 2023. `arXiv:2311.12983`
-[65] D'Amour, A.; Heller, K.; Moldovan, D.; et al. *Underspecification Presents Challenges for Credibility in Modern Machine Learning*. arXiv preprint, 2020. `arXiv:2011.03395`
-[66] Singh, S.; Nan, Y.; Wang, A.; et al. *The Leaderboard Illusion*. arXiv preprint, 2025. `arXiv:2504.20879`
-[67] Deng, C.; Zhao, Y.; Tang, X.; et al. *Investigating Data Contamination in Modern Benchmarks for Large Language Models*. arXiv preprint, 2023. `arXiv:2311.09783`
-[68] Srivastava, A.; Rastogi, A.; Rao, A.; et al. *Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models*. arXiv preprint, 2022. `arXiv:2206.04615`
-[69] Ferrari Dacrema, M.; Cremonesi, P.; Jannach, D. *Are we really making much progress? A worrying analysis of recent neural recommendation approaches*. Proceedings of the 13th ACM Conference on Recommender Systems, 2019. `10.1145/3298689.3347058`
-[70] Amodei, D.; Olah, C.; Steinhardt, J.; et al. *Concrete Problems in AI Safety*. arXiv preprint, 2016. `arXiv:1606.06565`
-[71] Langosco, L.; Koch, J.; Sharkey, L.; et al. *Goal Misgeneralization in Deep Reinforcement Learning*. arXiv preprint, 2021. `arXiv:2105.14111`
-[72] Gao, L.; Schulman, J.; Hilton, J. *Scaling Laws for Reward Model Overoptimization*. arXiv preprint, 2022. `arXiv:2210.10760`
-[73] Perez, E.; Huang, S.; Song, F.; et al. *Red Teaming Language Models with Language Models*. arXiv preprint, 2022. `arXiv:2202.03286`
-[74] Goldreich, O.; Goldwasser, S.; Ron, D. *Property testing and its connection to learning and approximation*. Journal of the ACM, 1998. `10.1145/285055.285060`
-[75] Ben-Tal, A.; Nemirovski, A. *Robust optimization – methodology and applications*. Mathematical Programming, 2002. `10.1007/s101070100286`
-[76] Bartocci, E.; Falcone, Y.; Francalanza, A.; et al. *Introduction to Runtime Verification*. Lecture Notes in Computer Science, 2018. `10.1007/978-3-319-75632-5_1`
-[77] Zhang, J. M.; Harman, M.; Ma, L.; et al. *Machine Learning Testing: Survey, Landscapes and Horizons*. arXiv preprint, 2019. `arXiv:1906.10742`
-[78] Geifman, Y.; El-Yaniv, R. *Selective Classification for Deep Neural Networks*. arXiv preprint, 2017. `arXiv:1705.08500`
-[79] Hendrycks, D.; Mazeika, M.; Dietterich, T. *Deep Anomaly Detection with Outlier Exposure*. arXiv preprint, 2018. `arXiv:1812.04606`
-[80] Domingos, P. *MetaCost: a general method for making classifiers cost-sensitive*. Proceedings of the fifth ACM SIGKDD international conference on Knowledge discovery and data mining, 1999. `10.1145/312129.312220`
-[81] Hellerstein, J. M.; Haas, P. J.; Wang, H. J. *Online aggregation*. ACM SIGMOD Record, 1997. `10.1145/253262.253291`
-[82] Li, K.; Li, G. *Approximate Query Processing: What is New and Where to Go?: A Survey on Approximate Query Processing*. Data Science and Engineering, 2018. `10.1007/s41019-018-0074-4`
-[83] Auer, P.; Cesa-Bianchi, N.; Freund, Y.; et al. *The Nonstochastic Multiarmed Bandit Problem*. SIAM Journal on Computing, 2002. `10.1137/s0097539701398375`
-[84] Seung, H. S.; Opper, M.; Sompolinsky, H. *Query by committee*. Proceedings of the fifth annual workshop on Computational learning theory, 1992. `10.1145/130385.130417`
-[85] Atkinson, A. C.; Donev, A. N.; Tobias, R. D. *Optimum Experimental Designs, with SAS*. Oxford University PressOxford, 2007. `10.1093/oso/9780199296590.001.0001`
-[86] Neyman, J.; Pearson, E. S. *IX. On the problem of the most efficient tests of statistical hypotheses*. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 1933. `10.1098/rsta.1933.0009`
-[87] Fisher, R. A. *On the mathematical foundations of theoretical statistics*. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 1922. `10.1098/rsta.1922.0009`
-[88] Student. *The Probable Error of a Mean*. Biometrika, 1908. `10.2307/2331554`
-[89] Wilson, E. B. *Probable Inference, the Law of Succession, and Statistical Inference*. Journal of the American Statistical Association, 1927. `10.1080/01621459.1927.10502953`
-[90] Clopper, C. J.; Pearson, E. S. *The Use of Confidence Or Fiducial Limits Illustrated in the Case of the Binomial*. Biometrika, 1934. `10.1093/biomet/26.4.404`
-[91] Hyndman, R. J.; Fan, Y. *Sample Quantiles in Statistical Packages*. The American Statistician, 1996. `10.1080/00031305.1996.10473566`
-[92] Vaart, A. W. v. d. *Asymptotic Statistics*. Cambridge University Press, 1998. `10.1017/cbo9780511802256`
-[93] de Haan, L.; Ferreira, A. *Extreme Value Theory: An Introduction*. Springer Series in Operations Research and Financial Engineering, 2006. `10.1007/0-387-34471-3`
-[94] Efron, B.; Tibshirani, R. J. *An Introduction to the Bootstrap*. Springer US, 1993. `10.1007/978-1-4899-4541-9`
-[95] Good, P. *Permutation, Parametric and Bootstrap Tests of Hypotheses*. Springer Series in Statistics, 2005. `10.1007/b138696`
-[96] Flegal, J. M.; Jones, G. L. *Implementing MCMC: Estimating with Confidence*. Handbook of Markov Chain Monte Carlo, 2011. `10.1201/b10905-8`
-[97] Greenland, S.; Senn, S. J.; Rothman, K. J.; et al. *Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations*. European Journal of Epidemiology, 2016. `10.1007/s10654-016-0149-3`
-[98] Cohen, J. *Statistical Power Analysis for the Behavioral Sciences*. Routledge, 2013. `10.4324/9780203771587`
-[99] Schuirmann, D. J. *A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability*. Journal of Pharmacokinetics and Biopharmaceutics, 1987. `10.1007/bf01068419`
-[100] Hanley, J. A.; McNeil, B. J. *The meaning and use of the area under a receiver operating characteristic (ROC) curve*. Radiology, 1982. `10.1148/radiology.143.1.7063747`
-[101] Lamport, L.; Shostak, R.; Pease, M. *The Byzantine Generals Problem*. ACM Transactions on Programming Languages and Systems, 1982. `10.1145/357172.357176`
-[102] Castro, M.; Liskov, B. *Practical byzantine fault tolerance and proactive recovery*. ACM Transactions on Computer Systems, 2002. `10.1145/571637.571640`
-[103] David, H. A.; Nagaraja, H. N. *Order Statistics*. Wiley Series in Probability and Statistics, 2003. `10.1002/0471722162`
+[1] Ardebili, M. S. (2026). NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent
+    Runs. arXiv preprint arXiv:2609.12582. https://arxiv.org/abs/2609.12582
+    Difference: builds tamper-evident, replayable evidence for agent runs; an evidence substrate,
+    where we study how many re-executions a policy-pinned metric needs before a verdict is
+    decidable.
+
+[2] Alimoglu, A. (2026). Threshold Choice, Not Sample Size, Bounds Trustless Verification of
+    Nondeterministic Compound AI Workflows. arXiv preprint arXiv:2609.10601.
+    https://arxiv.org/abs/2609.10601
+    Difference: bounds trustless verification of nondeterministic workflows by a threshold choice;
+    we derive and measure the whole detection-power curve in the budget, including where extra
+    re-executions buy nothing.
+
+[3] Cohen, J. (1992). A power primer. Psychological Bulletin.
+    https://doi.org/10.1037/0033-2909.112.1.155
+    Difference: gives the conventional closed form for detecting a standardised mean difference; we
+    give the same form for a re-execution budget and then measure where its band actually sits.
+
+[4] Wald, A. (1945). Sequential Tests of Statistical Hypotheses. The Annals of Mathematical
+    Statistics. https://doi.org/10.1214/aoms/1177731118
+    Difference: introduces sequential tests that stop early on a likelihood ratio; designed for a
+    known alternative, while our measured object is the power curve over an unknown node's
+    dispersion.
+
+[5] Pocock, S. J. (1977). Group sequential methods in the design and analysis of clinical trials.
+    Biometrika. https://doi.org/10.1093/biomet/64.2.191
+    Difference: fixes group-sequential boundaries for clinical trials under a planned effect size;
+    we take the effect size as the unknown and ask which nodes a budget can decide.
+
+[6] Bretz, F.; Koenig, F.; Brannath, W.; et al. (2009). Adaptive designs for confirmatory clinical
+    trials. Statistics in Medicine. https://doi.org/10.1002/sim.3538
+    Difference: designs confirmatory trials able to adapt mid-course; adaptation is a different
+    lever from repetition count, which is the one we hold.
+
+[7] Bahadur, R. R.; Savage, L. J. (1956). The Nonexistence of Certain Statistical Procedures in
+    Nonparametric Problems. The Annals of Mathematical Statistics.
+    https://doi.org/10.1214/aoms/1177728077
+    Difference: proves no nonparametric procedure is uniformly consistent on all alternatives; that
+    is why our construct is stated as a curve over node dispersion rather than a uniform guarantee.
+
+[8] Ingster, Y. I.; Suslina, I. A. (2003). Nonparametric Goodness-of-Fit Testing Under Gaussian
+    Models. Lecture Notes in Statistics. https://doi.org/10.1007/978-0-387-21580-8
+    Difference: characterises the separation rate at which nonparametric tests can detect a
+    departure; we measure detection for a specific mean-shift node class inside a verification
+    budget.
+
+[9] Wang, W.; An, B.; Jiang, Y. (2020). Optimal Spot-Checking for Improving the Evaluation Quality
+    of Crowdsourcing: Application to Peer Grading Systems. IEEE Transactions on Computational Social
+    Systems. https://doi.org/10.1109/tcss.2020.2998732
+    Difference: optimises spot-checking effort for crowdsourced grading quality; an allocation
+    problem among items, while ours is how many repetitions decide one item's verdict.
+
+[10] Graydon, P. J.; Holloway, C. M. (2017). An investigation of proposed techniques for quantifying
+    confidence in assurance arguments. Safety Science. https://doi.org/10.1016/j.ssci.2016.09.014
+    Difference: quantifies confidence in assurance arguments; we quantify the power of a
+    re-execution comparison used as one premise of such an argument.
+
+[11] Legay, A.; Delahaye, B.; Bensalem, S. (2010). Statistical Model Checking: An Overview. Lecture
+    Notes in Computer Science. https://doi.org/10.1007/978-3-642-16612-9_11
+    Difference: surveys statistical model checking; we derive the budget-to-power mapping that a
+    statistical model checker's parameters imply.
+
+[12] Howard, R. (1966). Information Value Theory. IEEE Transactions on Systems Science and
+    Cybernetics. https://doi.org/10.1109/tssc.1966.300074
+    Difference: prices information before it is bought; the same calculus applied to a different
+    good, where the buyer sets the number of re-executions.
+
+[13] Ott, S.; Barbosa-Silva, A.; Blagec, K.; et al. (2022). Mapping global dynamics of benchmark
+    creation and saturation in artificial intelligence. Nature Communications.
+    https://doi.org/10.1038/s41467-022-34591-0
+    Difference: maps benchmark creation and saturation dynamics; the saturation we measure is of a
+    rule's advantage in the budget, not of a benchmark's headroom.
+
+[14] Agarwal, S.; Iyer, A. P.; Panda, A.; et al. (2012). Blink and it's done: interactive queries on
+    very large data. Proceedings of the VLDB Endowment. https://doi.org/10.14778/2367502.2367533
+    Difference: computes approximate answers within an error bound over large data; we ask whether a
+    budget's verdict is decidable, not whether an approximation is accurate.
+
+[15] McKeen, F.; Alexandrovich, I.; Berenzon, A.; et al. (2013). Innovative instructions and
+    software model for isolated execution. Proceedings of the 2nd International Workshop on Hardware
+    and Architectural Support for Security and Privacy. https://doi.org/10.1145/2487726.2488368
+    Difference: defines a hardware instruction set for isolated execution; the mechanism that makes
+    an execution attributable, while we ask how many such executions a verdict needs.
+
+[16] McCune, J. M.; Parno, B. J.; Perrig, A.; et al. (2008). Flicker: an execution infrastructure
+    for tcb minimization. ACM SIGOPS Operating Systems Review.
+    https://doi.org/10.1145/1357010.1352625
+    Difference: minimises the trusted computing base per execution; a smaller base changes what one
+    run attests, not how many runs a metric needs.
+
+[17] Cheng, R.; Zhang, F.; Kos, J.; et al. (2019). Ekiden: A Platform for
+    Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts. 2019 IEEE European
+    Symposium on Security and Privacy (EuroS&P). https://doi.org/10.1109/eurosp.2019.00023
+    Difference: gives confidentiality-preserving smart contracts with attested execution; we study a
+    verifier that repeats a nondeterministic pipeline instead of trusting one attested run.
+
+[18] Athalye, A.; Belay, A.; Kaashoek, M. F.; et al. (2019). Notary: a device for secure transaction
+    approval. Proceedings of the 27th ACM Symposium on Operating Systems Principles.
+    https://doi.org/10.1145/3341301.3359661
+    Difference: builds a device for secure transaction approval; the approval is a single
+    attestation, where we price repetition.
+
+[19] Kocher, P.; Horn, J.; Fogh, A.; et al. (2019). Spectre Attacks: Exploiting Speculative
+    Execution. 2019 IEEE Symposium on Security and Privacy (SP).
+    https://doi.org/10.1109/sp.2019.00002
+    Difference: shows speculative execution leaks across isolation boundaries; attacker modelling is
+    upstream of our question, which is about the verifier's own sampling budget.
+
+[20] Gennaro, R.; Gentry, C.; Parno, B. (2010). Non-interactive Verifiable Computing: Outsourcing
+    Computation to Untrusted Workers. Lecture Notes in Computer Science.
+    https://doi.org/10.1007/978-3-642-14623-7_25
+    Difference: outsources computation with correctness proofs; proofs make one execution checkable,
+    whereas our verifier re-runs rather than proves.
+
+[21] Parno, B.; Howell, J.; Gentry, C.; et al. (2013). Pinocchio: Nearly Practical Verifiable
+    Computation. 2013 IEEE Symposium on Security and Privacy. https://doi.org/10.1109/sp.2013.47
+    Difference: makes verifiable computation practical; practical proving is an alternative to
+    repetition, and we measure the repetition lever on its own.
+
+[22] Groth, J. (2016). On the Size of Pairing-Based Non-interactive Arguments. Lecture Notes in
+    Computer Science. https://doi.org/10.1007/978-3-662-49896-5_11
+    Difference: shrinks pairing-based arguments; argument size and repetition count are two
+    different costs of verification, and we quantify the second.
+
+[23] Garg, S.; Goel, A.; Jha, S.; et al. (2023). Experimenting with Zero-Knowledge Proofs of
+    Training. Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security.
+    https://doi.org/10.1145/3576915.3623202
+    Difference: proves training runs in zero knowledge; that certifies a computation happened, while
+    our question is whether a re-execution comparison can detect a divergence.
+
+[24] Chen, B. J.; Waiwitlikhit, S.; Stoica, I.; et al. (2024). ZKML: An Optimizing System for ML
+    Inference in Zero-Knowledge Proofs. Proceedings of the Nineteenth European Conference on
+    Computer Systems. https://doi.org/10.1145/3627703.3650088
+    Difference: optimises ML inference inside zero-knowledge proofs; a proof-based route to trust
+    that bypasses the statistical route we analyse.
+
+[25] Peng, R. D. (2011). Reproducible Research in Computational Science. Science.
+    https://doi.org/10.1126/science.1213847
+    Difference: argues for reproducible research in computational science; we measure what a
+    verifier can conclude when it re-runs rather than reads.
+
+[26] Gundersen, O. E.; Kjensmo, S. (2018). State of the Art: Reproducibility in Artificial
+    Intelligence. Proceedings of the AAAI Conference on Artificial Intelligence.
+    https://doi.org/10.1609/aaai.v32i1.11503
+    Difference: surveys reproducibility in AI venues; a survey of practice, while we derive the
+    sampling quantity that practice needs.
+
+[27] Pineau, J.; Vincent-Lamarre, P.; Sinha, K.; et al. (2020). Improving Reproducibility in Machine
+    Learning Research (A Report from the NeurIPS 2019 Reproducibility Program). arXiv preprint
+    arXiv:2003.12206. https://arxiv.org/abs/2003.12206
+    Difference: reports a conference reproducibility programme's findings; programme-level practice,
+    where we quantify a single verifier's detection power.
+
+[28] Dodge, J.; Gururangan, S.; Card, D.; et al. (2019). Show Your Work: Improved Reporting of
+    Experimental Results. Proceedings of the 2019 Conference on Empirical Methods in Natural
+    Language Processing and the 9th International Joint Conference on Natural Language Processing
+    (EMNLP-IJCNLP). https://doi.org/10.18653/v1/d19-1224
+    Difference: improves reporting of experimental results across runs; reporting variance is the
+    descriptive act, and we price the runs it would take to decide.
+
+[29] Cheney, J.; Chiticariu, L.; Tan, W. C. (2009). Provenance in Databases: Why, How, and Where.
+    Foundations and Trends in Databases. https://doi.org/10.1561/1900000006
+    Difference: surveys provenance in databases; provenance records what happened in one execution,
+    whereas our verifier compares metrics across executions.
+
+[30] Benjamini, Y.; Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and
+    Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society Series B:
+    Statistical Methodology. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
+    Difference: controls the false discovery rate over many hypotheses; we control nothing across
+    hypotheses and instead characterise one comparison's power in the budget.
+
+[31] Hochberg, Y. (1988). A sharper Bonferroni procedure for multiple tests of significance.
+    Biometrika. https://doi.org/10.1093/biomet/75.4.800
+    Difference: sharpens the Bonferroni step-up procedure; a multiplicity correction is orthogonal
+    to the repetition budget we vary.
+
+[32] Benjamini, Y.; Yekutieli, D. (2001). The control of the false discovery rate in multiple
+    testing under dependency. The Annals of Statistics. https://doi.org/10.1214/aos/1013699998
+    Difference: extends false-discovery control to dependent tests; dependence between re-executions
+    is part of our node's dispersion term rather than a multiplicity setting.
+
+[33] Gordon Lan, K. K.; Demets, D. L. (1983). Discrete sequential boundaries for clinical trials.
+    Biometrika. https://doi.org/10.1093/biomet/70.3.659
+    Difference: gives discrete sequential boundaries for clinical trials; a boundary rule that
+    assumes a planned effect, across which we instead measure decidability.
+
+[34] Howard, S. R.; Ramdas, A.; McAuliffe, J.; et al. (2018). Time-uniform Chernoff bounds via
+    nonnegative supermartingales. arXiv preprint arXiv:1808.03204. https://arxiv.org/abs/1808.03204
+    Difference: builds time-uniform Chernoff bounds from supermartingales; uniform validity over
+    time, where we measure the non-uniform band in which a budget changes a verdict.
+
+[35] Vovk, V.; Wang, R. (2021). E-values: Calibration, combination and applications. The Annals of
+    Statistics. https://doi.org/10.1214/20-aos2020
+    Difference: calibrates and combines e-values; a different evidence currency, where we use the
+    closed-form power of a mean test under repetition.
+
+[36] Johari, R.; Koomen, P.; Pekelis, L.; et al. (2017). Peeking at A/B Tests: Why it matters, and
+    what to do about it. Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge
+    Discovery and Data Mining. https://doi.org/10.1145/3097983.3097992
+    Difference: shows why peeking at A/B tests inflates error rates; peeking inflates the error
+    rate, while our non-monotonicity is in the comparison between rules and in the construct's own
+    approximation error.
+
+[37] Vapnik, V. N.; Chervonenkis, A. Y. (1971). On the Uniform Convergence of Relative Frequencies
+    of Events to Their Probabilities. Theory of Probability & Its Applications.
+    https://doi.org/10.1137/1116025
+    Difference: introduces the uniform convergence of relative frequencies; the concentration family
+    our interval-based decidability rests on.
+
+[38] Valiant, L. G. (1984). A theory of the learnable. Communications of the ACM.
+    https://doi.org/10.1145/1968.1972
+    Difference: founds learnability in a distribution-free setting; a separability idealisation that
+    a finite re-execution budget does not reach.
+
+[39] Dvoretzky, A.; Kiefer, J.; Wolfowitz, J. (1956). Asymptotic Minimax Character of the Sample
+    Distribution Function and of the Classical Multinomial Estimator. The Annals of Mathematical
+    Statistics. https://doi.org/10.1214/aoms/1177728174
+    Difference: gives the asymptotic minimax behaviour of the empirical distribution function; a
+    limit statement where our object is a finite-budget interval.
+
+[40] Massart, P. (1990). The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality. The Annals
+    of Probability. https://doi.org/10.1214/aop/1176990746
+    Difference: gives the tight constant in the Dvoretzky-Kiefer-Wolfowitz inequality; a tight
+    constant sharpens intervals, which we use rather than derive.
+
+[41] Massey, F. J. (1951). The Kolmogorov-Smirnov Test for Goodness of Fit. Journal of the American
+    Statistical Association. https://doi.org/10.1080/01621459.1951.10500769
+    Difference: introduces the Kolmogorov-Smirnov goodness-of-fit test; a distributional test, where
+    our comparison is between two rules' expected decisions.
+
+[42] Angelopoulos, A. N.; Bates, S. (2021). A Gentle Introduction to Conformal Prediction and
+    Distribution-Free Uncertainty Quantification. arXiv preprint arXiv:2107.07511.
+    https://arxiv.org/abs/2107.07511
+    Difference: introduces conformal prediction as distribution-free uncertainty quantification; a
+    per-item guarantee, while our quantity is a per-node detectability under repetition.
+
+[43] Lei, J.; G’Sell, M.; Rinaldo, A.; et al. (2018). Distribution-Free Predictive Inference for
+    Regression. Journal of the American Statistical Association.
+    https://doi.org/10.1080/01621459.2017.1307116
+    Difference: gives distribution-free predictive inference for regression; prediction coverage is
+    not the comparison we derive, which is between two verification rules.
+
+[44] Vovk, V. (2013). Conditional validity of inductive conformal predictors. Machine Learning.
+    https://doi.org/10.1007/s10994-013-5355-6
+    Difference: establishes conditional validity of inductive conformal predictors; validity is a
+    property of a predictor, and we study a test's power.
+
+[45] Tsybakov, A. B. (2009). Introduction to Nonparametric Estimation. Springer Series in
+    Statistics. https://doi.org/10.1007/b13794
+    Difference: gives the theory of nonparametric estimation, including separation rates; we
+    instantiate one separation question as a verifier's budget decision.
+
+[46] Dybå, T.; Kampenes, V. B.; Sjøberg, D. I. K. (2006). A systematic review of statistical power
+    in software engineering experiments. Information and Software Technology.
+    https://doi.org/10.1016/j.infsof.2005.08.009
+    Difference: reviews statistical power in software-engineering experiments; we derive the same
+    power object for a re-execution verification budget rather than for a treatment effect.
+
+[47] Dror, R.; Baumer, G.; Shlomov, S.; et al. (2018). The Hitchhiker’s Guide to Testing Statistical
+    Significance in Natural Language Processing. Proceedings of the 56th Annual Meeting of the
+    Association for Computational Linguistics (Volume 1: Long Papers).
+    https://doi.org/10.18653/v1/p18-1128
+    Difference: guides significance testing in NLP; guidance on practice, while we give the
+    closed-form budget-to-power relation practice would need.
+
+[48] Reimers, N.; Gurevych, I. (2017). Reporting Score Distributions Makes a Difference: Performance
+    Study of LSTM-networks for Sequence Tagging. Proceedings of the 2017 Conference on Empirical
+    Methods in Natural Language Processing. https://doi.org/10.18653/v1/d17-1035
+    Difference: shows score distributions matter for LSTM tagging comparisons; reporting
+    distributions is descriptive and we ask what conclusion a reader may draw.
+
+[49] Bouthillier, X.; Delaunay, P.; Bronzi, M.; et al. (2021). Accounting for Variance in Machine
+    Learning Benchmarks. arXiv preprint arXiv:2103.03098. https://arxiv.org/abs/2103.03098
+    Difference: accounts for variance in ML benchmarks; variance accounting is the input to our
+    curve, where the curve itself is the contribution.
+
+[50] Henderson, P.; Islam, R.; Bachman, P.; et al. (2018). Deep Reinforcement Learning That Matters.
+    Proceedings of the AAAI Conference on Artificial Intelligence.
+    https://doi.org/10.1609/aaai.v32i1.11694
+    Difference: shows deep RL results are sensitive to seeds; seed sensitivity motivates our
+    dispersion term and we measure its effect on detection.
+
+[51] Zheng, L.; Chiang, W. L.; Sheng, Y.; et al. (2023). Judging LLM-as-a-Judge with MT-Bench and
+    Chatbot Arena. arXiv preprint arXiv:2306.05685. https://arxiv.org/abs/2306.05685
+    Difference: shows LLM judges correlate with human preference; a judge is a scorer, and we ask
+    how many re-executions make a scorer's comparison decidable.
+
+[52] Wang, P.; Li, L.; Chen, L.; et al. (2023). Large Language Models are not Fair Evaluators. arXiv
+    preprint arXiv:2305.17926. https://arxiv.org/abs/2305.17926
+    Difference: finds LLM evaluators biased in position and format; evaluator bias shifts a node's
+    mean, which is exactly the coordinate our curve reads.
+
+[53] Liang, P.; Bommasani, R.; Lee, T.; et al. (2022). Holistic Evaluation of Language Models. arXiv
+    preprint arXiv:2211.09110. https://arxiv.org/abs/2211.09110
+    Difference: holistically evaluates language models across scenarios; a broad measurement
+    programme where our object is one decision's power.
+
+[54] Hendrycks, D.; Burns, C.; Basart, S.; et al. (2020). Measuring Massive Multitask Language
+    Understanding. arXiv preprint arXiv:2009.03300. https://arxiv.org/abs/2009.03300
+    Difference: measures multitask language understanding; a benchmark whose scores would be
+    compared under exactly the variance structure we quantify.
+
+[55] Ouyang, L.; Wu, J.; Jiang, X.; et al. (2022). Training language models to follow instructions
+    with human feedback. arXiv preprint arXiv:2203.02155. https://arxiv.org/abs/2203.02155
+    Difference: trains models to follow instructions from human feedback; a training method,
+    upstream of the verification question we study.
+
+[56] Wei, J.; Wang, X.; Schuurmans, D.; et al. (2022). Chain-of-Thought Prompting Elicits Reasoning
+    in Large Language Models. arXiv preprint arXiv:2201.11903. https://arxiv.org/abs/2201.11903
+    Difference: elicits reasoning with chain-of-thought prompting; a capability result, not a
+    statement about the number of runs a verdict needs.
+
+[57] Kojima, T.; Gu, S. S.; Reid, M.; et al. (2022). Large Language Models are Zero-Shot Reasoners.
+    arXiv preprint arXiv:2205.11916. https://arxiv.org/abs/2205.11916
+    Difference: shows zero-shot reasoning is elicitable by prompting; capability, where our quantity
+    is detectability under repetition.
+
+[58] Wang, X.; Wei, J.; Schuurmans, D.; et al. (2022). Self-Consistency Improves Chain of Thought
+    Reasoning in Language Models. arXiv preprint arXiv:2203.11171. https://arxiv.org/abs/2203.11171
+    Difference: improves reasoning by sampling several chains and voting; sampling is spent on
+    agreement, where we spend it on detecting a divergence.
+
+[59] Dhuliawala, S.; Komeili, M.; Xu, J.; et al. (2023). Chain-of-Verification Reduces Hallucination
+    in Large Language Models. arXiv preprint arXiv:2309.11495. https://arxiv.org/abs/2309.11495
+    Difference: reduces hallucination by verifying generated claims in stages; an internal
+    verification pass, which is a different budget from external re-execution.
+
+[60] Madaan, A.; Tandon, N.; Gupta, P.; et al. (2023). Self-Refine: Iterative Refinement with
+    Self-Feedback. arXiv preprint arXiv:2303.17651. https://arxiv.org/abs/2303.17651
+    Difference: iterates refinement with self-feedback; iteration improves output, while we price
+    repeated measurement of an already-fixed pipeline.
+
+[61] Chen, M.; Tworek, J.; Jun, H.; et al. (2021). Evaluating Large Language Models Trained on Code.
+    arXiv preprint arXiv:2107.03374. https://arxiv.org/abs/2107.03374
+    Difference: evaluates code models with pass@k; pass@k measures capability growth with attempts,
+    whereas our budget buys detection power, not capability.
+
+[62] Jimenez, C. E.; Yang, J.; Wettig, A.; et al. (2023). SWE-bench: Can Language Models Resolve
+    Real-World GitHub Issues?. arXiv preprint arXiv:2310.06770. https://arxiv.org/abs/2310.06770
+    Difference: evaluates models on real GitHub issues; an execution-grounded benchmark whose
+    variance is the kind our dispersion term describes.
+
+[63] Liu, X.; Yu, H.; Zhang, H.; et al. (2023). AgentBench: Evaluating LLMs as Agents. arXiv
+    preprint arXiv:2308.03688. https://arxiv.org/abs/2308.03688
+    Difference: evaluates LLMs as agents across tasks; a benchmark comparison between systems, not a
+    powered test of one system's change.
+
+[64] Mialon, G.; Fourrier, C.; Swift, C.; et al. (2023). GAIA: a benchmark for General AI
+    Assistants. arXiv preprint arXiv:2311.12983. https://arxiv.org/abs/2311.12983
+    Difference: introduces a benchmark for general assistants; benchmark design, while we supply the
+    sampling arithmetic a benchmark comparison needs.
+
+[65] D'Amour, A.; Heller, K.; Moldovan, D.; et al. (2020). Underspecification Presents Challenges
+    for Credibility in Modern Machine Learning. arXiv preprint arXiv:2011.03395.
+    https://arxiv.org/abs/2011.03395
+    Difference: shows underspecification makes ML results brittle across pipeline choices;
+    brittleness across pipelines is the heterogeneity our node population samples.
+
+[66] Singh, S.; Nan, Y.; Wang, A.; et al. (2025). The Leaderboard Illusion. arXiv preprint
+    arXiv:2504.20879. https://arxiv.org/abs/2504.20879
+    Difference: analyses leaderboard dynamics and rank instability; rank instability is a
+    comparative symptom of the variance we model directly.
+
+[67] Deng, C.; Zhao, Y.; Tang, X.; et al. (2023). Investigating Data Contamination in Modern
+    Benchmarks for Large Language Models. arXiv preprint arXiv:2311.09783.
+    https://arxiv.org/abs/2311.09783
+    Difference: investigates benchmark contamination; contamination shifts a metric's meaning, and
+    we ask whether a shift is detectable at a given budget.
+
+[68] Srivastava, A.; Rastogi, A.; Rao, A.; et al. (2022). Beyond the Imitation Game: Quantifying and
+    extrapolating the capabilities of language models. arXiv preprint arXiv:2206.04615.
+    https://arxiv.org/abs/2206.04615
+    Difference: quantifies capabilities beyond the imitation game; a broad capability benchmark, not
+    a powered comparison of two systems.
+
+[69] Ferrari Dacrema, M.; Cremonesi, P.; Jannach, D. (2019). Are we really making much progress? A
+    worrying analysis of recent neural recommendation approaches. Proceedings of the 13th ACM
+    Conference on Recommender Systems. https://doi.org/10.1145/3298689.3347058
+    Difference: questions progress claims in neural recommendation; a critique of comparisons that
+    our power curve explains in sampling terms.
+
+[70] Amodei, D.; Olah, C.; Steinhardt, J.; et al. (2016). Concrete Problems in AI Safety. arXiv
+    preprint arXiv:1606.06565. https://arxiv.org/abs/1606.06565
+    Difference: frames concrete research problems in AI safety; a research agenda where our
+    contribution is one measurable sub-question inside verification.
+
+[71] Langosco, L.; Koch, J.; Sharkey, L.; et al. (2021). Goal Misgeneralization in Deep
+    Reinforcement Learning. arXiv preprint arXiv:2105.14111. https://arxiv.org/abs/2105.14111
+    Difference: studies goal misgeneralisation in reinforcement learning; a failure of objectives,
+    where we study the cost of detecting a metric divergence.
+
+[72] Gao, L.; Schulman, J.; Hilton, J. (2022). Scaling Laws for Reward Model Overoptimization. arXiv
+    preprint arXiv:2210.10760. https://arxiv.org/abs/2210.10760
+    Difference: gives scaling laws for reward-model overoptimisation; an empirical scaling law in a
+    different coordinate, which inspired our curve's shape but not its derivation.
+
+[73] Perez, E.; Huang, S.; Song, F.; et al. (2022). Red Teaming Language Models with Language
+    Models. arXiv preprint arXiv:2202.03286. https://arxiv.org/abs/2202.03286
+    Difference: generates adversarial test cases with language models; test generation finds
+    failures, while our test decides whether a metric change is detectable.
+
+[74] Goldreich, O.; Goldwasser, S.; Ron, D. (1998). Property testing and its connection to learning
+    and approximation. Journal of the ACM. https://doi.org/10.1145/285055.285060
+    Difference: relates property testing to learning and approximation; the sublinear-in-size logic
+    is complementary to our sublinear-in-repeats question.
+
+[75] Ben-Tal, A.; Nemirovski, A. (2002). Robust optimization – methodology and applications.
+    Mathematical Programming. https://doi.org/10.1007/s101070100286
+    Difference: surveys robust optimisation methodology; robustification changes the objective,
+    where repetition changes the evidence for an objective comparison.
+
+[76] Bartocci, E.; Falcone, Y.; Francalanza, A.; et al. (2018). Introduction to Runtime
+    Verification. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-319-75632-5_1
+    Difference: introduces runtime verification of executions against monitors; monitors judge
+    traces, while we judge a metric comparison across repeated runs.
+
+[77] Zhang, J. M.; Harman, M.; Ma, L.; et al. (2019). Machine Learning Testing: Survey, Landscapes
+    and Horizons. arXiv preprint arXiv:1906.10742. https://arxiv.org/abs/1906.10742
+    Difference: surveys machine-learning testing; a survey of testing practice where our
+    contribution is the sampling arithmetic of one test family.
+
+[78] Geifman, Y.; El-Yaniv, R. (2017). Selective Classification for Deep Neural Networks. arXiv
+    preprint arXiv:1705.08500. https://arxiv.org/abs/1705.08500
+    Difference: lets a classifier abstain under a risk target; abstention is one model's decision,
+    and our rule is a verifier's decision to ask for more runs.
+
+[79] Hendrycks, D.; Mazeika, M.; Dietterich, T. (2018). Deep Anomaly Detection with Outlier
+    Exposure. arXiv preprint arXiv:1812.04606. https://arxiv.org/abs/1812.04606
+    Difference: trains anomaly detectors with outlier exposure; improves a detector's accuracy,
+    which enters our curve as a dispersion coordinate.
+
+[80] Domingos, P. (1999). MetaCost: a general method for making classifiers cost-sensitive.
+    Proceedings of the fifth ACM SIGKDD international conference on Knowledge discovery and data
+    mining. https://doi.org/10.1145/312129.312220
+    Difference: makes classifiers cost-sensitive by wrapping them in a meta-procedure; a cost-aware
+    learning method, where our cost is verification effort.
+
+[81] Hellerstein, J. M.; Haas, P. J.; Wang, H. J. (1997). Online aggregation. ACM SIGMOD Record.
+    https://doi.org/10.1145/253262.253291
+    Difference: gives online aggregation with running confidence intervals; an interval over a query
+    statistic, where our interval decides a rule comparison.
+
+[82] Li, K.; Li, G. (2018). Approximate Query Processing: What is New and Where to Go?: A Survey on
+    Approximate Query Processing. Data Science and Engineering.
+    https://doi.org/10.1007/s41019-018-0074-4
+    Difference: surveys approximate query processing; AQP trades accuracy for cost inside one query,
+    while we trade re-executions for decisiveness across a comparison.
+
+[83] Auer, P.; Cesa-Bianchi, N.; Freund, Y.; et al. (2002). The Nonstochastic Multiarmed Bandit
+    Problem. SIAM Journal on Computing. https://doi.org/10.1137/s0097539701398375
+    Difference: analyses the nonstochastic multiarmed bandit; sequential allocation of effort, which
+    we do not do — our budget is fixed in advance.
+
+[84] Seung, H. S.; Opper, M.; Sompolinsky, H. (1992). Query by committee. Proceedings of the fifth
+    annual workshop on Computational learning theory. https://doi.org/10.1145/130385.130417
+    Difference: selects informative examples by committee disagreement; an active-sampling result,
+    and our verifier samples uniformly rather than selectively.
+
+[85] Atkinson, A. C.; Donev, A. N.; Tobias, R. D. (2007). Optimum Experimental Designs, with SAS.
+    Oxford University PressOxford. https://doi.org/10.1093/oso/9780199296590.001.0001
+    Difference: treats optimum experimental design; optimal allocation of a fixed design budget,
+    which is the closest classical analogue of our question and assumes a known model.
+
+[86] Neyman, J.; Pearson, E. S. (1933). IX. On the problem of the most efficient tests of
+    statistical hypotheses. Philosophical Transactions of the Royal Society of London. Series A,
+    Containing Papers of a Mathematical or Physical Character.
+    https://doi.org/10.1098/rsta.1933.0009
+    Difference: founds the most efficient test of a statistical hypothesis; the power framework our
+    closed form instantiates for a re-execution budget.
+
+[87] Fisher, R. A. (1922). On the mathematical foundations of theoretical statistics. Philosophical
+    Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or
+    Physical Character. https://doi.org/10.1098/rsta.1922.0009
+    Difference: lays the foundations of theoretical statistics; the estimation theory our
+    effect-size coordinates presuppose.
+
+[88] Student. (1908). The Probable Error of a Mean. Biometrika. https://doi.org/10.2307/2331554
+    Difference: gives the probable error of a mean; the small-sample mean problem whose modern form
+    we apply to repeated re-executions.
+
+[89] Wilson, E. B. (1927). Probable Inference, the Law of Succession, and Statistical Inference.
+    Journal of the American Statistical Association. https://doi.org/10.1080/01621459.1927.10502953
+    Difference: gives an interval for a binomial proportion; the interval family used for the
+    registration's rate quantities.
+
+[90] Clopper, C. J.; Pearson, E. S. (1934). The Use of Confidence Or Fiducial Limits Illustrated in
+    the Case of the Binomial. Biometrika. https://doi.org/10.1093/biomet/26.4.404
+    Difference: gives exact binomial fiducial limits; an exact alternative to the interval we use,
+    with a conservatism we do not need here.
+
+[91] Hyndman, R. J.; Fan, Y. (1996). Sample Quantiles in Statistical Packages. The American
+    Statistician. https://doi.org/10.1080/00031305.1996.10473566
+    Difference: describes sample quantile conventions in statistical packages; a convention we rely
+    on when reading quantile thresholds, not a claim we extend.
+
+[92] Vaart, A. W. v. d. (1998). Asymptotic Statistics. Cambridge University Press.
+    https://doi.org/10.1017/cbo9780511802256
+    Difference: gives asymptotic statistics for estimators and tests; asymptotics are the limit our
+    measured band approaches as the budget grows.
+
+[93] de Haan, L.; Ferreira, A. (2006). Extreme Value Theory: An Introduction. Springer Series in
+    Operations Research and Financial Engineering. https://doi.org/10.1007/0-387-34471-3
+    Difference: introduces extreme-value theory; tail modelling for maxima, where our object is a
+    mean-shift comparison with a dispersion term.
+
+[94] Efron, B.; Tibshirani, R. J. (1993). An Introduction to the Bootstrap. Springer US.
+    https://doi.org/10.1007/978-1-4899-4541-9
+    Difference: introduces the bootstrap; the resampling method we use to build the intervals whose
+    inversion gives decidability.
+
+[95] Good, P. (2005). Permutation, Parametric and Bootstrap Tests of Hypotheses. Springer Series in
+    Statistics. https://doi.org/10.1007/b138696
+    Difference: treats permutation, parametric and bootstrap tests of hypotheses; a comparison of
+    test families, where we compare two verification rules.
+
+[96] Flegal, J. M.; Jones, G. L. (2011). Implementing MCMC: Estimating with Confidence. Handbook of
+    Markov Chain Monte Carlo. https://doi.org/10.1201/b10905-8
+    Difference: estimates Monte Carlo standard errors; the same estimation problem for a single
+    sampler, applied here to a metric comparison across runs.
+
+[97] Greenland, S.; Senn, S. J.; Rothman, K. J.; et al. (2016). Statistical tests, P values,
+    confidence intervals, and power: a guide to misinterpretations. European Journal of
+    Epidemiology. https://doi.org/10.1007/s10654-016-0149-3
+    Difference: warns against misinterpreting p-values, intervals and power; a misinterpretation
+    guide whose power quantity we make budget-explicit.
+
+[98] Cohen, J. (2013). Statistical Power Analysis for the Behavioral Sciences. Routledge.
+    https://doi.org/10.4324/9780203771587
+    Difference: tabulates effect sizes for behavioural-science power analysis; a reference for
+    standardised effects, which we reformulate for verification nodes.
+
+[99] Schuirmann, D. J. (1987). A comparison of the Two One-Sided Tests Procedure and the Power
+    Approach for assessing the equivalence of average bioavailability. Journal of Pharmacokinetics
+    and Biopharmaceutics. https://doi.org/10.1007/bf01068419
+    Difference: compares two one-sided tests with the power approach for equivalence; equivalence
+    testing is a different decision, where we ask whether an advantage is certifiable.
+
+[100] Hanley, J. A.; McNeil, B. J. (1982). The meaning and use of the area under a receiver
+    operating characteristic (ROC) curve. Radiology. https://doi.org/10.1148/radiology.143.1.7063747
+    Difference: explains the area under the ROC curve; a discrimination summary whose measurement
+    variance follows the same repetition logic.
+
+[101] Lamport, L.; Shostak, R.; Pease, M. (1982). The Byzantine Generals Problem. ACM Transactions
+    on Programming Languages and Systems. https://doi.org/10.1145/357172.357176
+    Difference: states the Byzantine generals problem; agreement is reached by protocols, while our
+    verifier decides by sampling repeated runs.
+
+[102] Castro, M.; Liskov, B. (2002). Practical byzantine fault tolerance and proactive recovery. ACM
+    Transactions on Computer Systems. https://doi.org/10.1145/571637.571640
+    Difference: makes Byzantine replication practical; replication assumes faulty replicas, and we
+    assume honest re-executions of a nondeterministic pipeline.
+
+[103] David, H. A.; Nagaraja, H. N. (2003). Order Statistics. Wiley Series in Probability and
+    Statistics. https://doi.org/10.1002/0471722162
+    Difference: gives the theory of order statistics; the distributional machinery behind the
+    quantile-based quantities our intervals use.
