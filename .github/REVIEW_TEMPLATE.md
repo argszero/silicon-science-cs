@@ -274,7 +274,9 @@ is a required change like any other — the fix is text, not new experiments.
 **And the row's disposition may not rest on an unread precedent.** Where the decision between *defect* and *pass* turns
 on what this repository's own artefacts do — *"the published manuscripts were accepted under"* this form, *"no
 published paper carries"* X — the sentence is a claim about those artefacts and is read at them, never used as the
-reason: name the records, state what each one carries, and read **every member** of the set the sentence names
+reason: name the records, state what each one carries, and read **every member** of the set the sentence names — and
+where that set is selected by *position* (*the newest N*, *the last M*), re-take the selection whenever you use the
+sentence, because its members move while the predicate does not: the shape is a **form**, never a claim about members
 (`README.md` → *A precedent is a claim about the record*). *Measured 2026-09-16:* this row was read on `#44`, the
 one-line stated difference was found absent from the bibliography, and it was recorded as *"an observation, not a
 defect"* on a sentence naming `#1`, `#38` and `#42` as the precedent — read at those records, one carries the
