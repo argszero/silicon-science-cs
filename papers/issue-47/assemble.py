@@ -195,7 +195,17 @@ def assemble(facts_ns=None, refs_path=None, parts=None):
     text = CITE.sub(crepl, text)
     if "<!-- REFERENCES -->" in text:
         lines = ["[%d] %s" % (i + 1, refs[k]) for i, k in enumerate(order)]
-        text = text.replace("<!-- REFERENCES -->", "\n".join(lines) if lines else "_(none cited)_")
+        # ONE blank line between entries, because the requirement is read as the reader's page reads
+        # it: consecutive entry lines are ONE paragraph to every CommonMark renderer, so the entry
+        # boundaries disappear and a trailing URL is read as part of the next entry's sentence.
+        # Measured on the published head (2026-09-17, the correction round's item 1): the journal
+        # gate's `block form:` line read `156 entries, 155 of them not separated`, a blank-line census
+        # inside the block found 2 blank lines over 158 lines, and GitHub's own renderer returned
+        # **1** `<p>` for the 156 entries against a known-present control returning 156.  The
+        # acceptance read is that line returning `0 of them not separated` in the tree the reader
+        # gets, and `reproduce.sh` step 7 is where it is taken.
+        text = text.replace("<!-- REFERENCES -->",
+                            "\n\n".join(lines) if lines else "_(none cited)_")
     # The journal's presentation requirement (Ops R334, e81090c): every entry in the reference list
     # carries a ONE-LINE STATED DIFFERENCE, read as a `Difference` marker following the entry's last
     # link token.  Checked here, at the manuscript, because that is the artefact a reviewer opens --
