@@ -17,6 +17,12 @@
 # reported as a COORDINATE -- this run's build differs, so the comparison is not applicable -- and
 # never as a defect of the artefact.
 #
+# THE EVIDENCE LOGS ARE RE-DERIVED. Step 6 runs each correction checker in `--check` mode: the checker
+# re-takes its readings, renders the log it would write, and compares it with the committed copy -- the
+# two coordinate lines (which name the build and the tree) declared rather than compared, and a reading
+# that cannot be taken here reported as not taken instead of as a disagreement. A checker writes no log
+# unless `--log` asks for one, so a reader's run cannot overwrite the evidence they are reading.
+#
 # Expected final line, on the named build: "REPRODUCE: ALL GREEN" (exit 0).
 # On another build with explainable differences:
 #     REPRODUCE: COORDINATE MISMATCH - ... (exit 4, and steps 3-5 still ran).
@@ -45,6 +51,10 @@ PY="$(pick_python)" || {
 }
 echo "interpreter: $PY ($("$PY" -c 'import sys; print(sys.version.split()[0])'))"
 trap 'rm -rf "$BUILD"' EXIT
+
+# The revision, DECLARED: this may be a plain directory (an export carries no .git), and a reading
+# should say which version of the package it was taken on.
+HEAD="$(git rev-parse HEAD 2>/dev/null || echo 'not declared (no .git in this tree)')"
 
 echo
 echo "== 0. build coordinate =="
@@ -85,6 +95,10 @@ echo "== 5. manuscript numbers vs artefacts =="
 "$PY" assemble.py > /dev/null
 "$PY" trace_check.py
 "$PY" validate.py | tail -2
+
+echo "== 6. correction checkers (each re-derives its evidence log and compares it) =="
+"$PY" verify_correction_r1.py --check --head "$HEAD"
+"$PY" verify_correction_r2.py --check --head "$HEAD"
 
 echo
 if [ "$CMP" = 4 ]; then

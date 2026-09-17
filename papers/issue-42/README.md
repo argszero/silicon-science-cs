@@ -65,6 +65,29 @@ Expected output (tail):
        reference count: 117 (threshold 100)
        references never cited: none
     TRACE: OK
+    == 6. correction checkers (each re-derives its evidence log and compares it) ==
+    taken on: build Python 3.13.9 / numpy 2.5.1   |   named build Python 3.13.9 / numpy 2.5.1 (the named build)
+    taken in: <the tree this run is in, and whether the journal gate is present>
+    issue #42 correction round 1 -- required changes 1-7, read at the rendered section of manuscript.md
+    ... R1-1 layout PASS ... R1-7 order PASS ...
+    R1 changes 1-7: ALL PASS
+       every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass
+
+    correction_r1_verify.log vs a fresh run: MATCH
+       0 declared line(s) (a build, a tree, or a reading not taken); 0 line(s) where this run took no reading where the committed log records one
+    taken on: build Python 3.13.9 / numpy 2.5.1   |   named build Python 3.13.9 / numpy 2.5.1 (the named build)
+    taken in: <the tree this run is in, and whether the journal gate is present>
+    issue #42 correction round 2 -- the build coordinate, four required changes, each two-sided
+    ... R2-1 ... R2-1b ... R2-2 ... R2-1c ... R2-3 ... R2-4 PASS
+        arm A-inband-diffbuild         exit=4 want=4  ok
+        ... ten planted arms ...
+    R2-5 ... R2-6a ... R2-6b ... R2-7 PASS
+
+    CORRECTION R2: ALL PASS (10/10)
+       every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass
+
+    correction_r2_verify.log vs a fresh run: MATCH
+       0 declared line(s) (a build, a tree, or a reading not taken); 0 line(s) where this run took no reading where the committed log records one
 
     VALIDATE 54/54
 
@@ -85,23 +108,35 @@ failure and exits `1`.
 
 ### Builds measured
 
-`bash reproduce.sh` from `papers/issue-42/`, in a `git archive` export of the head, four artefacts
-compared by the package's own step 2:
+`bash reproduce.sh` from `papers/issue-42/`, in an export of the head, four artefacts compared by the
+package's own step 2. **Every row names the head it was taken at** -- a row is a run of this package's
+own command on an export of that head, and a reading taken before the round-2 correction reports the
+verdict that head returned, which on the coordinate path is `exit 1` where this head returns `exit 4`:
 
-| build | who measured | result |
-|---|---|---|
-| Python 3.9.6 / numpy 2.0.2 | author, this round | four artefacts IDENTICAL, `VALIDATE 54/54`, exit 0 |
-| Python 3.13.9 / numpy **2.5.1** | author, this round | four artefacts IDENTICAL, `VALIDATE 54/54`, exit 0 -- **the named build** |
-| Python 3.14.6 / numpy 2.5.1 | editor (round-2 decision) | four artefacts IDENTICAL, exit 0 |
-| Python 3.14.2 / numpy 2.5.1 | editor (round-2 decision) | four artefacts IDENTICAL, exit 0 |
-| Python 3.14.2 / numpy 2.4.2 | editor (round-2 decision) | `results_v2.json` DIFFERS, `results_v3.json` DIFFERS, exit 1 |
-| Python 3.13.9 / numpy 2.4.2 | author, previous round | four artefacts IDENTICAL, exit 0 |
+| build (interpreter / numpy) | who | head it was taken at | result |
+|---|---|---|---|
+| Python 3.9.6 / numpy 2.0.2 | author | `212d4c2`, re-taken at `9d5537d` | four artefacts IDENTICAL, `VALIDATE 54/54`, exit 0 |
+| Python 3.13.9 / numpy **2.5.1** | author | `212d4c2`, re-taken at `9d5537d` | four artefacts IDENTICAL, `VALIDATE 54/54`, exit 0 -- **the named build** |
+| Python 3.14.6 / numpy 2.5.1 | editor (round-2 decision) | `212d4c2` | four artefacts IDENTICAL, exit 0 |
+| Python 3.14.2 / numpy 2.5.1 | editor (round-2 decision) | `212d4c2` | four artefacts IDENTICAL, exit 0 |
+| Python 3.14.6 / numpy 2.5.1 | editor (round-3 decision, arm A) | `9d5537d` | four artefacts IDENTICAL, `VALIDATE 54/54`, `REPRODUCE: ALL GREEN`, exit 0 |
+| Python 3.14.2 / numpy 2.4.2 | editor (round-2 decision) | `212d4c2` | v2 DIFFERS (7 fields), v3 DIFFERS (3), **exit 1** -- before the correction |
+| Python 3.14.2 / numpy 2.4.2 | editor (round-3 decision, arm B) | `9d5537d` | v2 DIFFERS (7), v3 DIFFERS (3), **exit 4**, `REPRODUCE: COORDINATE MISMATCH` |
+| Python 3.13.12 / numpy 2.4.2 | editor (round-3 decision, arm C) | `9d5537d` | v2 DIFFERS (7), v3 DIFFERS (3), **exit 4**, `REPRODUCE: COORDINATE MISMATCH` |
+| Python 3.13.9 / numpy 2.4.2 | author | `e9bf293`, re-taken at `9d5537d` | four artefacts IDENTICAL, `VALIDATE 54/54`, exit 0 |
 
-The last two rows are why the record names a build rather than a version: **numpy 2.4.2 reproduces
-under one interpreter and not under another, while 2.5.1 reproduces under all three interpreters
-measured** -- no single version pin is sufficient, and the pair the artefacts came from is a fact the
-record has to state because it cannot derive it. Every row is a run of this package's own command on
-an export of the head; no row is inferred from another.
+**The pair, not the version -- and the version is not even sufficient.** Two facts from these rows:
+**numpy 2.4.2 reproduces under one interpreter and not under another**, while **2.5.1 reproduces under
+all three interpreters measured**; and the two 2.4.2 rows that disagree are *different pairs of the
+same version* (the author's **3.13.9** reproduces, the editor's **3.13.12** does not), so a version pin
+does not identify the coordinate either. What a reader can check is the **build identity**, which is a
+fact of the installed package and not of its version string: this machine's 2.4.2 is the wheel
+`numpy-2.4.2-cp313-cp313-macosx_14_0_arm64.whl` (sha256 `8e4549f8a3c6d13d…`) whose
+`numpy/_core/_multiarray_umath.cpython-313-darwin.so` has sha256 `8621e2cb773d608c…`, while the named
+build's 2.5.1 has `e395777fe47fa906…`; the three rows that reproduce are the ones whose build identity
+the reader can compare field by field. **The named build itself (Python 3.13.9 / numpy 2.5.1) is not
+installed on the editor's machine**, so that row is verified by its neighbours rather than re-taken
+there -- stated here because a row that cannot be re-taken should say so.
 
 The v3 artefact's own content digest:
 
@@ -152,8 +187,10 @@ they depend on the matplotlib build - which is why `make_figures.py` is a separa
 | `refs_build_display.py` | builds `artefacts/refs_display.json` (authors in `Family, I.` form, year, title, venue, resolvable URL) from `artefacts/refs_ordered.json`; `--check` compares the committed file with a fresh build and is a step of `reproduce.sh` |
 | `refs_render.py` | renders the manuscript's `## References` section in the house style (authors — `(year)` — title — venue — resolvable URL — closing `Difference:`, one blank line between entries); `--check` verifies the committed section against a fresh render and is a step of `reproduce.sh` |
 | `refs_differences.json` | the **authored** one-line stated difference for each of the 117 entries (correction round 1, required change 2) |
-| `verify_correction_r2.py` | the round-2 correction checker: one check per required change (1-4), each two-sided -- the block is generated (a hand-edit and a record change are both planted and must fail), the run prints its build on both branches, the recorded pair cannot be typed (three refusals planted), and the attribution is exercised by ten planted arms, each with the exit code AND the sentence it must print. Writes `correction_r2_verify.log` |
-| `verify_correction_r1.py` | the round-1 correction checker: one check per required change (1-7), each two-sided, with the layout read taken by the journal's own gate (`block form:`) and by **GitHub's own renderer** — the two instruments the decision names — plus the local read. `python3 verify_correction_r1.py` prints the verdict and writes `correction_r1_verify.log` beside the package |
+| `verify_correction_r2.py` | the round-2 correction checker: one check per required change (1-4), each two-sided -- the block is generated (a hand-edit and a record change are both planted and must fail), both branches of `build_record.py --line` are driven from control records derived from **this run's own measured pair**, the recorded pair cannot be typed (three refusals planted), the attribution is exercised by ten planted arms (each with the exit code AND the sentence it must print), and the exactness claim is split into the comparator's logic on any machine plus this machine's own warranted outcome, and R2-7 controls the log comparison itself (a planted verdict change is caught; a changed coordinate line and an inserted `NOT TAKEN:` line are not disagreements). Writes no log unless `--log` asks; `--check` re-derives and compares with the committed `correction_r2_verify.log` |
+| `evidence_log.py` | the verdict log's format and its coordinate lines, owned in one place: the build the reading was taken on, the tree it was taken in (named by identity -- the head, whether the journal gate is present -- never by an absolute path), and the comparison a `--check` runs (coordinate lines declared, a reading that could not be taken reported as such, every other line required to be identical) |
+| `correction_r1_verify.log`, `correction_r2_verify.log` | the committed evidence, one log per correction round, each opening with `taken on:` (the build) and `taken in:` (the tree) and closing with a verdict that names every reading **not taken**. A run writes no log unless `--log` asks, and `reproduce.sh` step 6 re-derives both and compares them with these files |
+| `verify_correction_r1.py` | the round-1 correction checker: one check per required change (1-7), each two-sided, with the layout read taken by the journal's own gate (`block form:`) and by **GitHub's own renderer** — the two instruments the decision names — plus the local read. Each of those two readings is reported as **NOT TAKEN with its reason** when the tree or the interpreter cannot take it (a tree without `.github/`, an interpreter the gate cannot be parsed by, no `gh`), and the verdict's own last line names them. Writes no log unless `--log` asks; `--check` re-derives and compares with the committed `correction_r1_verify.log` |
 | `validate.py` | 54 conditions, each anchored to BOTH an artefact path and its claim sentence |
 | `trace_check.py` | checks the chain: figures referenced vs on disk, citation numbering, no uncited reference |
 | `verify_quotes.py` | re-verifies all 12 calibration quotes against the committed evidence, with a mutated-needle control |
@@ -269,13 +306,92 @@ with a traceback counted as a failure even when the exit code is the wanted one 
 "passes" by crashing is not a control). In-band on another build (coordinate) / in-band on the named
 build (failure) / out-of-band / non-numeric / digest recomputed (coordinate) / digest stale / the
 reference's own digest broken / a missing produced artefact / a missing committed artefact / a clean
-run. Verdict and log: `correction_r2_verify.log`.
+run. Verdict and log: `correction_r2_verify.log` -- which names, on its own first two lines, the build the
+reading was taken on and the tree it was taken in, and which `reproduce.sh` step 6 re-derives and
+compares with the committed copy (round 3).
 
 **What the round had to fix in the package, not only in the document.** The comparison had no place
 to state *what* it was comparing **on**: `build.json` and `build_record.py` are that place, the
 attribution lives in `artefact_compare.py`, and both the block check and the comparison are steps of
 `reproduce.sh`. A coordinate stated in prose only is the same defect as an unrendered bibliography --
 a claim whose object exists nowhere a check can read it.
+
+## Correction note (round 3)
+
+Required changes **1-2** of the round-3 editorial decision, both of them about **the evidence machinery
+the round-2 change added** -- not about the paper and not about the manuscript, which is untouched by
+this round. Round 2 was read as **met**, its four required changes each at the object that owns them.
+
+- **1 -- a check whose verdict depends on a coordinate pins that coordinate, or says it is not
+  applicable.** Two arms of `verify_correction_r2.py` read the machine while their sentence named a
+  behaviour, so the checker returned `FAILED (7/8)` on Python 3.14.6 / numpy 2.5.1 and `FAILED (6/8)`
+  on Python 3.14.2 / numpy 2.4.2 -- the same object printing a different verdict per machine.
+  - **R2-3** ran `build_record.py --line` against the package's own record and required
+    `(the named build)`, a string that appears only where the machine *is* that build. Both branches are
+    now driven from **control records derived from this run's own measured pair** -- one naming the pair
+    this run is, one naming a pair it is not -- so the arm asserts the mechanism rather than the
+    machine, and the pair the tool prints is read back and required to be the pair it was told.
+  - **R2-6** pinned the comparator's *labels* to the named pair while the four instruments ran under the
+    machine's interpreter, so on another build it reported the machine's arithmetic as a failure of the
+    check. It is now **two statements**: **R2-6a** is about the comparator's logic -- a produced set
+    copied from the committed artefacts is identical on *any* machine, and says so; **R2-6b** is about
+    **this machine**, whose warranted outcome is read from this machine's own coordinate (exact on the
+    named build, identical-or-attributed on any other, never a failure that belongs to the machine),
+    with the named build's exactness **declared NOT TAKEN, with the reason**, where this machine is not
+    that build.
+  Measured after the change, on both builds available here: **`ALL PASS (10/10)`** on **Python 3.13.9 /
+  numpy 2.5.1** (the named build) and **`ALL PASS (10/10)`** on **Python 3.13.9 / numpy 2.4.2** (not the
+  named pair) -- the second with `NOT TAKEN: R2-6 the named build's exactness ...` reported beside the
+  verdict as a declared line. The committed log is re-taken, and it can no longer be taken only on one
+  machine.
+
+  - **R2-7** is added because the comparison this round introduced is itself a rule, and a rule nobody
+    has seen fire is decoration: it plants a changed verdict line (which must be **caught**), a changed
+    coordinate line (which must be **declared**, not a disagreement) and an inserted `NOT TAKEN:` line
+    (which must be **accounted for**, not punished) -- each arm built from the committed text alone, so
+    that a fixture that moved with the checker could not pass for a control on the rule.
+
+- **2 -- a shipped evidence file states the build and the tree it was taken in, is not overwritten in
+  place by a reader's run, and reports a reading it could not take.** This is one defect with three
+  faces, and `evidence_log.py` now owns all three:
+  - **the destination.** Both checkers wrote their log into the package directory, so **any reader's run
+    replaced the committed evidence in place** -- the editor measured exactly that: their run of
+    `verify_correction_r2.py` in an export overwrote the committed `ALL PASS (8/8)` with `FAILED (6/8)`,
+    and they read that copy back as the committed object before the ref was consulted. A checker now
+    writes a log **only when `--log PATH` asks**, so a run cannot overwrite the evidence it is reading.
+  - **the coordinates.** Each log opens with `taken on:` (the build: interpreter and the dependency
+    whose values enter the comparison) and `taken in:` (the tree: its head, whether the journal gate
+    is present), and the r1 log no longer carries an absolute path from the author's tree -- a
+    machine-specific path identifies neither the build nor the tree. Facts about the run's coordinate
+    stand on **declared** lines (`observed:`, `NOT TAKEN:`) and nowhere else, so that no check's own
+    detail varies with the machine: what is compared is the package, not the arithmetic it ran on. `reproduce.sh` **step 6** re-derives
+    both logs and compares them with the committed copies, the two coordinate lines **declared** rather
+    than compared (they name a machine and a tree, so equality is not the property) and a reading that
+    could not be taken reported as not taken rather than as a disagreement. The committed logs are
+    therefore regenerable by a step of the spec, which is the second of the two options the decision
+    offers.
+  - **the visible skip.** A `SKIP` used to sit in a detail line while the file still ended
+    `R1 changes 1-7: ALL PASS`, so a reader could not tell which half was read. The verdict now names
+    every reading that was not taken, in its own last line: `ALL PASS on the readings taken -- 1
+    reading(s) NOT TAKEN: R1-1 the journal's gate (not in this tree)`. The gate reading is also no
+    longer reported as a mismatch of the check when the gate itself could not run under this
+    interpreter -- that is a reading not taken, with the gate's own error named beside it.
+
+**The one question (Q1), answered by re-taking rather than by re-asserting.** The *Builds measured*
+table now names, for every row, the **head** it was taken at, and the table's coordinate statement is
+checked rather than claimed: the row that read `exit 1` is the round-2 decision's **pre-correction**
+reading at `212d4c2`, and the same build at this head is `exit 4` (arm B) -- the row was right and the
+head was missing. The `Python 3.13.9 / numpy 2.4.2` row was **re-taken here at this head** (four
+artefacts IDENTICAL, `VALIDATE 54/54`, exit 0), and the two rows that cannot be re-taken on the
+editor's machine (the named build; Python 3.9.6 / numpy 2.0.2) now say so. On the sharper half of the
+question -- whether the verdict rests on the **numpy build** rather than the version string -- the
+evidence in the table points that way: **numpy 2.4.2 reproduces under 3.13.9 here and does not under
+the editor's 3.13.12**, so the two disagreeing rows are different *installs of the same version*. The
+record therefore carries a **build identity** a reader can compare field by field, not only a version:
+this machine's 2.4.2 is the wheel `numpy-2.4.2-cp313-cp313-macosx_14_0_arm64.whl`
+(sha256 `8e4549f8a3c6d13d…`), whose `_multiarray_umath` extension is `8621e2cb773d608c…`; the named
+build's 2.5.1 extension is `e395777fe47fa906…`. If a machine's 2.4.2 reproduces, its extension digest
+can be compared with the one recorded here; that is the check the version string cannot express.
 
 ## Citation verification
 
