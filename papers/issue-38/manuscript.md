@@ -526,7 +526,7 @@ designer to measure `p` rather than to reason from a specialisation story.
 ## 7. Related work
 
 We group the relevant literature into ten clusters and state, for each, the specific difference from
-this paper rather than a generic contrast. Reference numbers follow §9.
+this paper rather than a generic contrast. Reference numbers follow the reference list.
 
 **7.1 Assignment and combinatorial-assignment solvers.** The exact solver we use as the oracle is
 classical [1, 2, 9]. The modern literature makes it faster — new auction-style algorithms [3],
@@ -673,567 +673,675 @@ artefact carries no wall-clock or environment fields, so a rerun is byte-identic
 
 **References.**
 
-## 9. References
-
-One entry, **[51]**, is printed without an author: no reachable record carries one for its DOI
-(Crossref has none, OpenAlex reports no authorships, and the publisher's landing page refuses
-automated access). The obstacle is stated on the issue thread rather than filled in by guesswork. The
-Kahneman attribution on that entry's `Difference:` line is our judgement about the work, not a field of
-any record; the entry's author field is absent because no record supplies one, and the two statements
-are about different objects.
+## References
 
 [1] Bertsekas, D. (2023). New Auction Algorithms for the Assignment Problem and Extensions. arXiv
     preprint arXiv:2310.03159. https://arxiv.org/abs/2310.03159
     Difference: proposes new auction algorithms for the assignment problem; we do not propose a
     solver, we characterise when a decentralised solver family beats a bounded central one
-[2] Alfaro, C. A.; Perez, S. L.; Valencia, C. E.; Vargas, M. C. (2018). The equivalence between two
-    classic algorithms for the assignment problem. arXiv preprint arXiv:1810.03562.
+
+[2] Alfaro, C. A.; Perez, S. L.; Valencia, C. E.; et al. (2018). The equivalence between two classic
+    algorithms for the assignment problem. arXiv preprint arXiv:1810.03562.
     https://arxiv.org/abs/1810.03562
     Difference: shows an equivalence between two classic assignment algorithms; a solver-internal
     result with no central-vs-decentralised comparison
+
 [3] Khosla, M.; Anand, A. (2021). Revisiting the Auction Algorithm for Weighted Bipartite Perfect
     Matchings. arXiv preprint arXiv:2101.07155. https://arxiv.org/abs/2101.07155
     Difference: revisits convergence of the auction algorithm; no cost of misestimated costs, which
     is our crossing variable
+
 [4] Bertsekas, D. (2020). Constrained Multiagent Rollout and Multidimensional Assignment with the
     Auction Algorithm. arXiv preprint arXiv:2002.07407. https://arxiv.org/abs/2002.07407
     Difference: applies the auction algorithm to multidimensional assignment inside a rollout
     scheme; an application of the solver, not a boundary between solver families
-[5] Michael, E.; Wood, T. A.; Manzie, C.; Shames, I. (2020). Global Sensitivity Analysis for the
-    Linear Assignment Problem. arXiv preprint arXiv:2005.11792. https://arxiv.org/abs/2005.11792
+
+[5] Michael, E.; Wood, T. A.; Manzie, C.; et al. (2020). Global Sensitivity Analysis for the Linear
+    Assignment Problem. arXiv preprint arXiv:2005.11792. https://arxiv.org/abs/2005.11792
     Difference: global sensitivity analysis of the linear assignment problem; perturbs one input
     matrix rather than modelling agents who bid on noisy estimates of it
-[6] Yavlovich, I.; Agbaria, J.; Mhamed, M.; Weinberger, N.; Yallouz, J. (2026). Learning-Augmented
-    Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts. arXiv preprint
-    arXiv:2605.09382. https://arxiv.org/abs/2605.09382
+
+[6] Yavlovich, I.; Agbaria, J.; Mhamed, M.; et al. (2026). Learning-Augmented Scalable Linear
+    Assignment Problem Optimization via Neural Dual Warm-Starts. arXiv preprint arXiv:2605.09382.
+    https://arxiv.org/abs/2605.09382
     Difference: learns neural dual warm starts for the assignment problem; accelerates the central
     solver instead of asking when central allocation stops being competitive
+
 [7] Dlask, T.; Savchynskyy, B. (2023). Relative-Interior Solution for the (Incomplete) Linear
     Assignment Problem with Applications to the Quadratic Assignment Problem. arXiv preprint
     arXiv:2301.11201. https://arxiv.org/abs/2301.11201
     Difference: an interior-point solver for incomplete assignment problems; solver quality, not an
     allocation-regime boundary
+
 [8] Makarychev, K.; Manokaran, R.; Sviridenko, M. (2014). Maximum Quadratic Assignment Problem:
     Reduction from Maximum Label Cover and LP-based Approximation Algorithm. arXiv preprint
     arXiv:1403.7721. https://arxiv.org/abs/1403.7721
     Difference: worst-case approximation bounds for quadratic assignment; theory over adversarial
     instances, whereas our boundary is a measured response to estimation noise
-[9] Alam, S. T.; Sagor, E.; Ahmed, T.; Haque, T.; Mahmud, M. S.; Ibrahim, S. (2023). Assessment of
-    Assignment Problem using Hungarian Method. Proceedings of the International Conference on
-    Industrial Engineering and Operations Management. https://doi.org/10.46254/au01.20220498
+
+[9] Alam, S. T.; Sagor, E.; Ahmed, T.; et al. (2023). Assessment of Assignment Problem using
+    Hungarian Method. Proceedings of the International Conference on Industrial Engineering and
+    Operations Management. https://doi.org/10.46254/au01.20220498
     Difference: surveys Hungarian-method usage in an application domain; reports solver accuracy, no
     central-vs-market comparison
-[10] Vickrey, W. (1961). COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS. The Journal
+
+[10] Vickrey, W. (1961). Counterspeculation, Auctions, and Competitive Sealed Tenders. The Journal
     of Finance. https://doi.org/10.1111/j.1540-6261.1961.tb02789.x
     Difference: Vickrey's sealed-tender analysis; assumes truthful revelation of valuations, while
     our market bids on estimates of cost and can be wrong
+
 [11] Williams, A. W.; Bratton, W. K.; Vannoni, M. G. (1991). Competitive Market Institutions: Double
     Auctions vs. Sealed Bid-Offer Auctions. Papers in Experimental Economics.
     https://doi.org/10.1017/cbo9780511528354.015
     Difference: compares double auctions with sealed bid-offer institutions in the laboratory; an
     institution comparison without a bounded central counterpart
+
 [12] Skreta, V. (2008). Optimal Auction Design Under Non-Commitment. 10.2139/ssrn.1120963
     (posted-content). https://doi.org/10.2139/ssrn.1120963
     Difference: optimal auction design without commitment; revenue-theoretic, with no cost of
     misestimated values
+
 [13] Ozbek, K. (2025). Optimal Auction Design under Costly Learning. 10.2139/ssrn.5861082
     (posted-content). https://doi.org/10.2139/ssrn.5861082
     Difference: optimal auction design when learning the distribution is costly; closest to our
     misestimation premise but measures the seller's revenue, not which allocator to run
+
 [14] Shapley, L. S.; Shubik, M. (1971). The Assignment Game I: The Core. RAND Corporation.
     https://doi.org/10.7249/r0874
     Difference: the assignment game and its core; a cooperative solution concept with no
     attention-limited planner to compare against
-[15] GALE, D.; SHAPLEY, L. (1961). COLLEGE ADMISSIONS AND THE STABILITY OF MARRIAGE.
+
+[15] GALE, D.; SHAPLEY, L. (1961). College Admissions and the Stability of Marriage.
     10.21236/ad0251958 (report). https://doi.org/10.21236/ad0251958
     Difference: deferred acceptance and stability in two-sided matching; a matching-institution
     result rather than a cost-regret boundary
+
 [16] Stiglitz, J. E. (2013). The market for 'lemons': quality uncertainty and the market mechanism.
     Market Failure or Success. https://doi.org/10.4337/9781781950005.00012
     Difference: information asymmetry between market participants; motivates why bids are noisy but
     says nothing about how much noise flips the allocator choice
+
 [17] Milgrom, P. R.; Weber, R. J. (1982). A Theory of Auctions and Competitive Bidding.
     Econometrica. https://doi.org/10.2307/1911865
     Difference: the common-value bidding framework in which estimates are noisy; predicts
     overbidding, not the margin by which a market beats a planner
+
 [18] Lee, S.; Kim, J. Y. (2022). Revisiting the convergence theorem for competitive bidding in
     common value auctions. Economic Theory Bulletin. https://doi.org/10.1007/s40505-022-00234-2
     Difference: revisits the convergence theorem for competitive bidding in common-value auctions; a
     refinement of the same theory
+
 [19] Zhang, X. (2016). Efficient Mechanisms for Bilateral Trading with Moderately Informed Broker.
     SSRN Electronic Journal. https://doi.org/10.2139/ssrn.2753074
     Difference: efficiency of bilateral trade with an informed broker; two parties, whereas we
     compare an N-agent market against a single planner
+
 [20] SMITH, R. G. (1988). The Contract Net Protocol: High-Level Communication and Control in a
     Distributed Problem Solver. Readings in Distributed Artificial Intelligence.
     https://doi.org/10.1016/b978-0-934613-63-7.50039-5
     Difference: the contract-net protocol, a decentralised announce-bid-award scheme and a direct
     ancestor of our market rule, but never swept in estimation noise
-[21] Guo, Y.; Hao, D.; Li, B.; Xiao, M.; Khoussainov, B. (2025). Strategyproofness and Monotone
-    Allocation of Auction in Social Networks. arXiv preprint arXiv:2507.14472.
-    https://arxiv.org/abs/2507.14472
+
+[21] Guo, Y.; Hao, D.; Li, B.; et al. (2025). Strategyproofness and Monotone Allocation of Auction
+    in Social Networks. arXiv preprint arXiv:2507.14472. https://arxiv.org/abs/2507.14472
     Difference: strategyproofness and monotone allocation in a networked auction; incentive
     properties rather than an accuracy boundary
-[22] Li, X.; Wang, Z.; Zhu, B.; He, F.; Wang, Y.; Wang, X. (2024). Deep Automated Mechanism Design
-    for Integrating Ad Auction and Allocation in Feed. arXiv preprint arXiv:2401.01656.
+
+[22] Li, X.; Wang, Z.; Zhu, B.; et al. (2024). Deep Automated Mechanism Design for Integrating Ad
+    Auction and Allocation in Feed. arXiv preprint arXiv:2401.01656.
     https://arxiv.org/abs/2401.01656
     Difference: learns an auction mechanism end-to-end for feed allocation; it optimises a mechanism
     instead of comparing it with a limited planner
+
 [23] Wang, R.; Kocyigit, C.; Rujeerapaiboon, N. (2025). Equitable Auction Design with Provable
     Regret Guarantees. arXiv preprint arXiv:2502.08369. https://arxiv.org/abs/2502.08369
     Difference: regret guarantees for an auction designer who knows the bid distribution; our
     planner is uncertain about its own cost estimates
+
 [24] Li, Y.; Lu, P.; Ye, H. (2019). Revenue Maximization with Imprecise Distribution. arXiv preprint
     arXiv:1903.00836. https://arxiv.org/abs/1903.00836
     Difference: revenue maximisation when the bid distribution is imprecise; closest in spirit to
     misestimation but scored in revenue, not allocation regret
-[25] Wang, G.; Han, H.; Liu, X.; Jiang, H.; Zhang, M. (2025). A Group Consensus-Driven Auction
-    Algorithm for Cooperative Task Allocation Among Heterogeneous Multi-Agents. arXiv preprint
-    arXiv:2508.02015. https://arxiv.org/abs/2508.02015
+
+[25] Wang, G.; Han, H.; Liu, X.; et al. (2025). A Group Consensus-Driven Auction Algorithm for
+    Cooperative Task Allocation Among Heterogeneous Multi-Agents. arXiv preprint arXiv:2508.02015.
+    https://arxiv.org/abs/2508.02015
     Difference: a consensus-plus-auction allocation algorithm for heterogeneous agents; a single
     algorithm reported at one operating point, no regime boundary
+
 [26] Braquet, M.; Bakolas, E. (2021). Greedy Decentralized Auction-based Task Allocation for
     Multi-Agent Systems. arXiv preprint arXiv:2107.00144. https://arxiv.org/abs/2107.00144
     Difference: greedy decentralised auctions for multi-agent task allocation; performance reported
     without a noise sweep or a central baseline
-[27] Dahlquist, N.; Lindqvist, B.; Saradagi, A.; Nikolakopoulos, G. (2023). Reactive Multi-agent
-    Coordination using Auction-based Task Allocation and Behavior Trees. arXiv preprint
-    arXiv:2304.01976. https://arxiv.org/abs/2304.01976
+
+[27] Dahlquist, N.; Lindqvist, B.; Saradagi, A.; et al. (2023). Reactive Multi-agent Coordination
+    using Auction-based Task Allocation and Behavior Trees. arXiv preprint arXiv:2304.01976.
+    https://arxiv.org/abs/2304.01976
     Difference: auction-based allocation embedded in a behaviour-tree controller; the cost model is
     assumed exact
-[28] Engelaar, M. H. W.; Zhang, Z.; Vlahakis, E. E.; Dimarogonas, D. V.; Lazar, M.; Haesaert, S.
-    (2024). Risk-Aware Real-Time Task Allocation for Stochastic Multi-Agent Systems under STL
-    Specifications. arXiv preprint arXiv:2404.02111. https://arxiv.org/abs/2404.02111
+
+[28] Engelaar, M. H. W.; Zhang, Z.; Vlahakis, E. E.; et al. (2024). Risk-Aware Real-Time Task
+    Allocation for Stochastic Multi-Agent Systems under STL Specifications. arXiv preprint
+    arXiv:2404.02111. https://arxiv.org/abs/2404.02111
     Difference: risk-aware allocation under temporal-logic specifications; stochastic task
     durations, not misestimated agent costs
+
 [29] Dahlquist, N.; Saradagi, A.; Nikolakopoulos, G. (2023). Reactive Task Allocation for Balanced
     Servicing of Multiple Task Queues. arXiv preprint arXiv:2304.02333.
     https://arxiv.org/abs/2304.02333
     Difference: reactive allocation that balances servicing across queues; a queueing objective
     rather than an allocator comparison
-[30] Rodriguez, J.; Tarawneh, C.; Koenig, S.; Dong, W.; Lu, Q. (2026). Auction-Consensus Algorithm
-    with Learned Bidding Scheme for Multi-Robot Systems. arXiv preprint arXiv:2605.21932.
+
+[30] Rodriguez, J.; Tarawneh, C.; Koenig, S.; et al. (2026). Auction-Consensus Algorithm with
+    Learned Bidding Scheme for Multi-Robot Systems. arXiv preprint arXiv:2605.21932.
     https://arxiv.org/abs/2605.21932
     Difference: learns the bidding scheme itself, which removes exactly the misestimation we vary
+
 [31] Dahlquist, N.; Velhal, S.; Nikolakopoulos, G. (2026). Varying Bundle Size Reactive Multi-Task
     Assignment using Selective Cost Estimation for Multi-Agent Systems. arXiv preprint
     arXiv:2606.24462. https://arxiv.org/abs/2606.24462
     Difference: selective cost estimation for reactive multi-task assignment in robotics; the
     closest robotics work, but with no planner counterpart and no noise scale
+
 [32] Kaur, S.; Kaur, H.; Sehra, S. K. (2013). Modification of Contract Net Protocol(CNP) : A
     Rule-Updation Approach. arXiv preprint arXiv:1312.4259. https://arxiv.org/abs/1312.4259
     Difference: modifies the contract net protocol for rule updates; protocol engineering without a
     control variable
-[33] Liu, B.; Deng, M.; Wu, G.; Pei, X.; Li, H.; Pedrycz, W. (2020). Bottom-up mechanism and
-    improved contract net protocol for the dynamic task planning of heterogeneous Earth observation
-    resources. arXiv preprint arXiv:2007.06172. https://arxiv.org/abs/2007.06172
+
+[33] Liu, B.; Deng, M.; Wu, G.; et al. (2020). Bottom-up mechanism and improved contract net
+    protocol for the dynamic task planning of heterogeneous Earth observation resources. arXiv
+    preprint arXiv:2007.06172. https://arxiv.org/abs/2007.06172
     Difference: improves the contract net protocol for heterogeneous Earth-observation resources; no
     allocator comparison under noise
+
 [34] Lajili, S.; Brahmi, Z. (2026). Multi-Agent Scheduling with LLM-Assisted Contract Net
     Negotiation for Stream Processing in Mobile Edge Computing. arXiv preprint arXiv:2608.12371.
     https://arxiv.org/abs/2608.12371
     Difference: an LLM-assisted contract net for mobile edge scheduling; reports makespan at one
     configuration rather than a boundary
-[35] Wang, D.; Zhang, W.; Song, B.; Du, X.; Guizani, M. (2019). Market-Based Model in CR-WSN: A
-    Q-Probabilistic Multi-agent Learning Approach. arXiv preprint arXiv:1902.09687.
-    https://arxiv.org/abs/1902.09687
+
+[35] Wang, D.; Zhang, W.; Song, B.; et al. (2019). Market-Based Model in CR-WSN: A Q-Probabilistic
+    Multi-agent Learning Approach. arXiv preprint arXiv:1902.09687. https://arxiv.org/abs/1902.09687
     Difference: a market-based model for a wireless sensor network; a domain application of market
     allocation, not a boundary study
+
 [36] Nan, T.; Gao, Y.; Kroer, C. (2023). Fast and Interpretable Dynamics for Fisher Markets via
     Block-Coordinate Updates. arXiv preprint arXiv:2303.00506. https://arxiv.org/abs/2303.00506
     Difference: computes Fisher-market equilibria quickly; the equilibrium concept presumes fully
     known utilities, which is the assumption we relax
+
 [37] Maheshwari, C.; Mazumdar, E.; Sastry, S. (2022). Decentralized, Communication- and
     Coordination-free Learning in Structured Matching Markets. arXiv preprint arXiv:2206.02344.
     https://arxiv.org/abs/2206.02344
     Difference: coordination-free learning in structured matching markets; converges to a stable
     match under a known preference structure
+
 [38] Simon, H. A. (1953). Behavioral Model of Rational Choice. RAND Corporation.
     https://doi.org/10.7249/p365
     Difference: Simon's behavioural model of rational choice; the origin of satisficing, stated
     qualitatively rather than as a parametric allocation error we can sweep
+
 [39] Caplin, A.; Dean, M. (2013). Behavioral Implications of Rational Inattention with Shannon
     Entropy. 10.3386/w19318 (report). https://doi.org/10.3386/w19318
     Difference: rational inattention with a Shannon-entropy cost; supplies our information-cost
     intuition but has no competing allocator and no measured boundary
+
 [40] Marwala, T. (2013). Semi-bounded Rationality: A model for decision making. arXiv preprint
     arXiv:1305.6037. https://arxiv.org/abs/1305.6037
     Difference: a semi-bounded rationality model for decision making; a modelling proposal without
     an allocator comparison
+
 [41] Grau-Moya, J.; Braun, D. A. (2015). Adaptive information-theoretic bounded rational
     decision-making with parametric priors. arXiv preprint arXiv:1511.01710.
     https://arxiv.org/abs/1511.01710
     Difference: adaptive information-theoretic bounded-rational decision making; optimises a single
     decision-maker's policy rather than comparing institutions
+
 [42] Cushing, W.; Benton, J.; Kambhampati, S. (2011). Cost Based Satisficing Search Considered
     Harmful. arXiv preprint arXiv:1103.3687. https://arxiv.org/abs/1103.3687
     Difference: shows cost-based satisficing search can be harmful; a heuristic-search result, not
     an allocation-regime boundary
+
 [43] Wall, F. (2021). Modeling Managerial Search Behavior based on Simon's Concept of Satisficing.
     arXiv preprint arXiv:2104.14002. https://arxiv.org/abs/2104.14002
     Difference: models managerial search behaviour after Simon's satisficing; an empirical
     description with no market counterpart
+
 [44] Brera, R.; Fu, F. (2023). The satisficing secretary problem: when closed-form solutions meet
     simulated annealing. arXiv preprint arXiv:2302.03220. https://arxiv.org/abs/2302.03220
     Difference: the satisficing secretary problem; a stopping-rule analysis, not a comparison of a
     market against a limited planner
+
 [45] Carpentiere, D.; Petralia, A. (2025). Limited attention and models of choice: A behavioral
     equivalence. arXiv preprint arXiv:2502.14879. https://arxiv.org/abs/2502.14879
     Difference: behavioural equivalence of limited-attention choice models; shows models are hard to
     distinguish rather than measuring a performance boundary
+
 [46] Engh, C. W. (2025). Rational Inattention to States and Choice Characteristics. arXiv preprint
     arXiv:2508.05939. https://arxiv.org/abs/2508.05939
     Difference: rational inattention to states and choice characteristics; a specification of
     preferences, with attention as an assumption not a swept variable
+
 [47] Denti, T.; Ravid, D. (2023). Robust Predictions in Games with Rational Inattention. arXiv
     preprint arXiv:2306.09964. https://arxiv.org/abs/2306.09964
     Difference: robust predictions in games with rational inattention; an equilibrium-analysis
     result, not an allocator comparison
-[48] Qiu, X.; Oliveira, D. F. M.; Shirazi, A. S.; Flammini, A.; Menczer, F. (2017). Limited
-    individual attention and online virality of low-quality information. arXiv preprint
-    arXiv:1701.02694. https://arxiv.org/abs/1701.02694
+
+[48] Qiu, X.; Oliveira, D. F. M.; Shirazi, A. S.; et al. (2017). Limited individual attention and
+    online virality of low-quality information. arXiv preprint arXiv:1701.02694.
+    https://arxiv.org/abs/1701.02694
     Difference: limited individual attention and virality of low-quality information; attention is a
     resource consumers allocate, not an allocator's capacity
-[49] Feng, L.; Hu, Y.; Li, B.; Stanley, H. E.; Havlin, S.; Braunstein, L. A. (2014). Competing for
-    Attention in Social Media under Information Overload Conditions. arXiv preprint arXiv:1410.1668.
-    https://arxiv.org/abs/1410.1668
+
+[49] Feng, L.; Hu, Y.; Li, B.; et al. (2014). Competing for Attention in Social Media under
+    Information Overload Conditions. arXiv preprint arXiv:1410.1668. https://arxiv.org/abs/1410.1668
     Difference: competition for attention under information overload; a social-media mechanism
     rather than an allocation-cost boundary
+
 [50] Bruya, B.; Tang, Y. Y. (2018). Is Attention Really Effort? Revisiting Daniel Kahneman’s
     Influential 1973 Book Attention and Effort. Frontiers in Psychology.
     https://doi.org/10.3389/fpsyg.2018.01133
     Difference: reassesses whether attention is really effort in Kahneman's framework; conceptual,
     giving no parametric form we could enter into a model
-[51] Author not established from the record [1997]. Selective Attention. The Psychology of
-    Attention, The MIT Press. https://doi.org/10.7551/mitpress/5677.003.0005
+
+[51] Author not established on Crossref/OpenAlex for this DOI (1997). Selective Attention. The
+    Psychology of Attention, The MIT Press. https://doi.org/10.7551/mitpress/5677.003.0005
     Difference: Kahneman's selective-attention chapter; establishes attention as a scarce resource
     but not how its scarcity costs a central allocator
+
 [52] Roughgarden, T.; Tardos, E. (2002). How bad is selfish routing?. Proceedings 41st Annual
     Symposium on Foundations of Computer Science. https://doi.org/10.1109/sfcs.2000.892069
     Difference: the price-of-anarchy tradition: the cost of decentralisation under a fixed cost
     model, whereas our control variable is the scale of information error
+
 [53] Kannan, R.; Busch, C.; Vasilakos, A. (2010). Polynomial Bottleneck Congestion Games with
     Optimal Price of Anarchy. arXiv preprint arXiv:1010.4812. https://arxiv.org/abs/1010.4812
     Difference: price-of-anarchy bounds for bottleneck congestion games; bounds are over worst-case
     instances with known costs
+
 [54] Bilò, V. (2014). On the Robustness of the Approximate Price of Anarchy in Generalized
     Congestion Games. arXiv preprint arXiv:1412.0845. https://arxiv.org/abs/1412.0845
     Difference: robust approximate price of anarchy in generalised congestion games; robustness to
     perturbation of the game, not to agents' estimation error
+
 [55] Bosse, J. V. D.; Uetz, M.; Walter, M. (2022). Exact Price of Anarchy for Weighted Congestion
     Games with Two Players. arXiv preprint arXiv:2203.01740. https://arxiv.org/abs/2203.01740
     Difference: exact price of anarchy for weighted congestion games with two players; a closed form
     at a fixed information regime
+
 [56] Kannan, R.; Busch, C.; Spirakis, P. (2013). The Price of Anarchy is Unbounded for Congestion
     Games with Superpolynomial Latency Costs. arXiv preprint arXiv:1308.4101.
     https://arxiv.org/abs/1308.4101
     Difference: shows the price of anarchy is unbounded for superpolynomial latency costs; an
     impossibility in the worst case rather than a measured crossing
-[57] Chen, P. A.; de Keijzer, B.; Kempe, D.; Schaefer, G. (2011). The Robust Price of Anarchy of
+
+[57] Chen, P. A.; de Keijzer, B.; Kempe, D.; et al. (2011). The Robust Price of Anarchy of
     Altruistic Games. arXiv preprint arXiv:1112.3680. https://arxiv.org/abs/1112.3680
     Difference: the robust price of anarchy of altruistic games; alters agent preferences instead of
     their information
+
 [58] Chandan, R.; Paccagnan, D.; Marden, J. R. (2021). The Unintended Consequences of Minimizing the
     Price of Anarchy in Congestion Games. arXiv preprint arXiv:2107.06331.
     https://arxiv.org/abs/2107.06331
     Difference: unintended consequences of minimising the price of anarchy; warns that the objective
     can backfire, but keeps perfect information
+
 [59] Scherrer, S.; Perrig, A.; Schmid, S. (2020). The Value of Information in Selfish Routing. arXiv
     preprint arXiv:2005.05191. https://arxiv.org/abs/2005.05191
     Difference: the value of information in selfish routing; information is binary (have it or not)
     rather than a continuous error scale
-[60] Basu, S.; Yang, G.; Lianeas, T.; Nikolova, E.; Chen, Y. (2017). Reconciling Selfish Routing
-    with Social Good. arXiv preprint arXiv:1707.00208. https://arxiv.org/abs/1707.00208
+
+[60] Basu, S.; Yang, G.; Lianeas, T.; et al. (2017). Reconciling Selfish Routing with Social Good.
+    arXiv preprint arXiv:1707.00208. https://arxiv.org/abs/1707.00208
     Difference: reconciling selfish routing with social good; a policy discussion over the same
     equilibrium model
+
 [61] Christodoulou, G.; Mehlhorn, K.; Pyrga, E. (2012). Improving the Price of Anarchy for Selfish
     Routing via Coordination Mechanisms. arXiv preprint arXiv:1202.2877.
     https://arxiv.org/abs/1202.2877
     Difference: improves the price of anarchy via coordination mechanisms; a mechanism-design fix
     rather than a boundary in a control variable
+
 [62] Babichenko, Y.; Rubinstein, A. (2020). Settling the complexity of Nash equilibrium in
     congestion games. arXiv preprint arXiv:2012.04327. https://arxiv.org/abs/2012.04327
     Difference: the computational complexity of Nash equilibrium in congestion games; complexity,
     not allocator performance
+
 [63] Xu, P. (2022). Exploring the Tradeoff between Competitive Ratio and Variance in Online-Matching
     Markets. arXiv preprint arXiv:2209.07580. https://arxiv.org/abs/2209.07580
     Difference: tradeoff between competitive ratio and variance in online-matching markets; a
     frontier in the algorithm's own guarantees
-[64] Wang, R.; Ling, Q.; Wai, H. T.; Tian, Z. (2025). Byzantine-Resilient Decentralized Online
+
+[64] Wang, R.; Ling, Q.; Wai, H. T.; et al. (2025). Byzantine-Resilient Decentralized Online
     Resource Allocation. arXiv preprint arXiv:2508.08658. https://arxiv.org/abs/2508.08658
     Difference: Byzantine-resilient decentralised online resource allocation; adversarial agents
     rather than honest agents with noisy estimates
-[65] Ao, R.; Chen, H.; Simchi-Levi, D.; Zhu, F. (2024). Online Resource Allocation with Average
+
+[65] Ao, R.; Chen, H.; Simchi-Levi, D.; et al. (2024). Online Resource Allocation with Average
     Budget Constraints. arXiv preprint arXiv:2402.11425. https://arxiv.org/abs/2402.11425
     Difference: online resource allocation with average budget constraints; constraints on the
     allocator, not on its information
+
 [66] Zhang, X.; Qin, H.; Chou, M. C. (2024). Online Resource Allocation with Non-Stationary
     Customers. arXiv preprint arXiv:2401.16945. https://arxiv.org/abs/2401.16945
     Difference: online allocation with non-stationary customers; non-stationarity of demand, not
     error in the allocator's cost model
+
 [67] Lyu, L.; Cheung, W. C. (2023). Online Resource Allocation: Bandits feedback and Advice on
     Time-varying Demands. arXiv preprint arXiv:2302.04182. https://arxiv.org/abs/2302.04182
     Difference: bandit feedback with advice for time-varying demands; the learner is the allocator
     and there is no market arm
+
 [68] Harada, T.; Ito, S.; Sumita, H. (2025). Bandit Max-Min Fair Allocation. arXiv preprint
     arXiv:2505.05169. https://arxiv.org/abs/2505.05169
     Difference: bandit max-min fair allocation; a fairness objective under bandit feedback
+
 [69] Lim, E.; Tan, V. Y. F.; Soh, H. (2024). Stochastic Bandits for Egalitarian Assignment. arXiv
     preprint arXiv:2410.05856. https://arxiv.org/abs/2410.05856
     Difference: stochastic bandits for egalitarian assignment; fairness as the target rather than
     the allocator's regime
+
 [70] Villar, S. S.; Bowden, J.; Wason, J. (2015). Multi-armed Bandit Models for the Optimal Design
     of Clinical Trials: Benefits and Challenges. arXiv preprint arXiv:1507.08025.
     https://arxiv.org/abs/1507.08025
     Difference: multi-armed bandits for clinical-trial design; an application in which exploration
     cost is ethical, not monetary
+
 [71] Pokhriyal, S.; Jain, S.; Aggarwal, V. (2026). Multi-Agent Combinatorial-Multi-Armed-Bandit
     framework for the Submodular Welfare Problem under Bandit Feedback. arXiv preprint
     arXiv:2602.16183. https://arxiv.org/abs/2602.16183
     Difference: a combinatorial multi-armed-bandit framework for submodular welfare; learning the
     arms, with no competing institution
-[72] Fan, W.; Hong, L. J.; Jiang, G.; Luo, J. (2024). Review of Large-Scale Simulation Optimization.
+
+[72] Fan, W.; Hong, L. J.; Jiang, G.; et al. (2024). Review of Large-Scale Simulation Optimization.
     arXiv preprint arXiv:2403.15669. https://arxiv.org/abs/2403.15669
     Difference: a review of large-scale simulation optimisation; methodology for our simulator, not
     an allocation-boundary claim
-[73] Zhang, H.; Chen, H.; Zhan, D.; Zhao, H.; Lam, H.; Tang, W.; et al. (2025). SOCRATES: Simulation
-    Optimization with Correlated Replicas and Adaptive Trajectory Evaluations. arXiv preprint
-    arXiv:2511.00685. https://arxiv.org/abs/2511.00685
+
+[73] Zhang, H.; Chen, H.; Zhan, D.; et al. (2025). SOCRATES: Simulation Optimization with Correlated
+    Replicas and Adaptive Trajectory Evaluations. arXiv preprint arXiv:2511.00685.
+    https://arxiv.org/abs/2511.00685
     Difference: simulation optimisation with correlated replicas; variance reduction for our
     machinery rather than a result about allocation
+
 [74] Bubeck, S.; Perchet, V.; Rigollet, P. (2013). Bounded regret in stochastic multi-armed bandits.
     arXiv preprint arXiv:1302.1611. https://arxiv.org/abs/1302.1611
     Difference: bounded regret in stochastic bandits; regret is measured against a fixed benchmark,
     not between two institutions
+
 [75] Bubeck, S.; Cesa-Bianchi, N. (2012). Regret Analysis of Stochastic and Nonstochastic
     Multi-armed Bandit Problems. arXiv preprint arXiv:1204.5721. https://arxiv.org/abs/1204.5721
     Difference: regret analysis of stochastic and nonstochastic bandit problems; the standard
     reference for our regret metric, with no institutional comparison
+
 [76] Berkhout, J. (2024). A new Simheuristics procedure for stochastic combinatorial optimization.
     arXiv preprint arXiv:2408.05214. https://arxiv.org/abs/2408.05214
     Difference: a simheuristics procedure for stochastic combinatorial optimisation; a solver rather
     than a regime boundary
+
 [77] Agrawal, S.; Saberi, A.; Ye, Y. (2008). Stochastic Combinatorial Optimization under
     Probabilistic Constraints. arXiv preprint arXiv:0809.0460. https://arxiv.org/abs/0809.0460
     Difference: stochastic combinatorial optimisation under probabilistic constraints;
     chance-constrained feasibility, not allocator comparison
+
 [78] Le, P. (2024). A survey on combinatorial optimization. arXiv preprint arXiv:2409.00075.
     https://arxiv.org/abs/2409.00075
     Difference: a survey of combinatorial optimisation; general background, no decentralised
     alternative
-[79] Bouvier, L.; Prunet, T.; Leclère, V.; Parmentier, A. (2025). Primal-dual algorithm for
-    contextual stochastic combinatorial optimization. arXiv preprint arXiv:2505.04757.
+
+[79] Bouvier, L.; Prunet, T.; Leclère, V.; et al. (2025). Primal-dual algorithm for contextual
+    stochastic combinatorial optimization. arXiv preprint arXiv:2505.04757.
     https://arxiv.org/abs/2505.04757
     Difference: primal-dual algorithms for contextual stochastic combinatorial optimisation; uses
     context to reduce uncertainty rather than varying it
+
 [80] Ibrahimpur, S.; Swamy, C. (2020). Approximation Algorithms for Stochastic Minimum Norm
     Combinatorial Optimization. arXiv preprint arXiv:2010.05127. https://arxiv.org/abs/2010.05127
     Difference: approximation algorithms for stochastic minimum-norm combinatorial optimisation;
     worst-case guarantees under a known distribution
+
 [81] Zhu, K.; Bertsimas, D. (2025). Overfitting in Adaptive Robust Optimization. arXiv preprint
     arXiv:2509.16451. https://arxiv.org/abs/2509.16451
     Difference: overfitting in adaptive robust optimisation; a caution about the method, not a
     boundary between institutions
+
 [82] Hartisch, M. (2021). Adaptive Relaxations for Multistage Robust Optimization. arXiv preprint
     arXiv:2106.12858. https://arxiv.org/abs/2106.12858
     Difference: adaptive relaxations for multistage robust optimisation; the central solver becomes
     adaptive but stays central
+
 [83] Goerigk, M.; Henke, D.; Wulf, L. (2026). The Complexity Landscape of Two-Stage Robust Selection
     Problems with Budgeted Uncertainty. arXiv preprint arXiv:2602.16465.
     https://arxiv.org/abs/2602.16465
     Difference: complexity of two-stage robust selection under budgeted uncertainty; uncertainty is
     budgeted, and no market is modelled
-[84] Anagnostopoulos, S. J.; Toscano, J. D.; Stergiopulos, N.; Karniadakis, G. E. (2024). Learning
-    in PINNs: Phase transition, diffusion equilibrium, and generalization. arXiv preprint
-    arXiv:2403.18494. https://arxiv.org/abs/2403.18494
+
+[84] Anagnostopoulos, S. J.; Toscano, J. D.; Stergiopulos, N.; et al. (2024). Learning in PINNs:
+    Phase transition, diffusion equilibrium, and generalization. arXiv preprint arXiv:2403.18494.
+    https://arxiv.org/abs/2403.18494
     Difference: phase transition in physics-informed network training; a transition in a learner's
     generalisation, not in an allocator's regime
-[85] Liu, J.; Yadav, V.; Sehgal, H.; Olson, J. M.; Liu, H.; Elia, N. (2008). Phase Transitions on
-    Fixed Connected Graphs and Random Graphs in the Presence of Noise. arXiv preprint
-    arXiv:0808.3230. https://arxiv.org/abs/0808.3230
+
+[85] Liu, J.; Yadav, V.; Sehgal, H.; et al. (2008). Phase Transitions on Fixed Connected Graphs and
+    Random Graphs in the Presence of Noise. arXiv preprint arXiv:0808.3230.
+    https://arxiv.org/abs/0808.3230
     Difference: phase transitions on graphs in the presence of noise; the noise is on the graph, not
     on the agents' cost estimates
+
 [86] Wu, Y.; Verdú, S. (2011). Optimal Phase Transitions in Compressed Sensing. arXiv preprint
     arXiv:1111.6822. https://arxiv.org/abs/1111.6822
     Difference: optimal phase transitions in compressed sensing; a sampling-rate threshold, a
     different control variable
-[87] Allegra, N.; Bamieh, B.; Mitra, P. P.; Sire, C. (2016). Phase transitions in distributed
-    control systems with multiplicative noise. arXiv preprint arXiv:1610.00653.
+
+[87] Allegra, N.; Bamieh, B.; Mitra, P. P.; et al. (2016). Phase transitions in distributed control
+    systems with multiplicative noise. arXiv preprint arXiv:1610.00653.
     https://arxiv.org/abs/1610.00653
     Difference: phase transitions in distributed control with multiplicative noise; closest in form,
     but the transition is in stability rather than allocation cost
+
 [88] Mergny, P.; Ko, J.; Krzakala, F. (2024). Spectral Phase Transition and Optimal PCA in
     Block-Structured Spiked models. arXiv preprint arXiv:2403.03695.
     https://arxiv.org/abs/2403.03695
     Difference: spectral phase transition in block-structured spiked models; a statistical-physics
     threshold with no economic mechanism
+
 [89] Kim, D. H.; Motter, A. E. (2008). Resource allocation pattern in infrastructure networks. arXiv
     preprint arXiv:0801.1877. https://arxiv.org/abs/0801.1877
     Difference: resource-allocation patterns in infrastructure networks; topology-driven allocation,
     no agents and no misestimation
+
 [90] Belcak, P.; Calliess, J. P.; Zohren, S. (2020). Fast Agent-Based Simulation Framework with
     Applications to Reinforcement Learning and the Study of Trading Latency Effects. arXiv preprint
     arXiv:2008.07871. https://arxiv.org/abs/2008.07871
     Difference: an agent-based simulation framework for trading latency; a testbed rather than a
     boundary claim
+
 [91] Yagi, I.; Hoshino, M.; Mizuta, T. (2020). Analysis of the impact of maker-taker fees on the
     stock market using agent-based simulation. arXiv preprint arXiv:2010.08992.
     https://arxiv.org/abs/2010.08992
     Difference: analyses maker-taker fees with an agent-based simulation; a fee-design question at a
     fixed information regime
+
 [92] Zhou, C. (2024). The Impact of Designated Market Makers on Market Liquidity and Competition: A
     Simulation Approach. arXiv preprint arXiv:2409.16589. https://arxiv.org/abs/2409.16589
     Difference: designated market makers, liquidity and competition in simulation;
     market-microstructure policy rather than allocator choice
-[93] Liu, R.; Argyros, D.; Jiang, Y.; Ben-Akiva, M. E.; Seshadri, R.; Azevedo, C. L. (2025).
-    Assessing the impacts of tradable credit schemes through agent-based simulation. arXiv preprint
-    arXiv:2502.11822. https://arxiv.org/abs/2502.11822
+
+[93] Liu, R.; Argyros, D.; Jiang, Y.; et al. (2025). Assessing the impacts of tradable credit
+    schemes through agent-based simulation. arXiv preprint arXiv:2502.11822.
+    https://arxiv.org/abs/2502.11822
     Difference: tradable credit schemes assessed by agent-based simulation; a policy instrument
     evaluated in one domain
+
 [94] Kayongo, P.; Hullman, J.; Hartline, J. (2025). Behavioral Study of Dashboard Mechanisms. arXiv
     preprint arXiv:2507.20985. https://arxiv.org/abs/2507.20985
     Difference: a behavioural study of dashboard mechanisms; asks how humans behave in a mechanism,
     not how much noise a market tolerates
-[95] Li, Z.; Zhang, H.; O&#39;Brien, L.; Jiang, S.; Zhou, Y.; Kihl, M.; et al. (2017). Spot Pricing
-    in the Cloud Ecosystem: A Comparative Investigation. arXiv preprint arXiv:1708.01401.
-    https://arxiv.org/abs/1708.01401
+
+[95] Li, Z.; Zhang, H.; O&#39;Brien, L.; et al. (2017). Spot Pricing in the Cloud Ecosystem: A
+    Comparative Investigation. arXiv preprint arXiv:1708.01401. https://arxiv.org/abs/1708.01401
     Difference: compares spot pricing in cloud ecosystems; a survey of offerings rather than a
     controlled comparison of allocators
-[96] Ousterhout, K.; Wendell, P.; Zaharia, M.; Stoica, I. (2013). Sparrow. Proceedings of the
+
+[96] Ousterhout, K.; Wendell, P.; Zaharia, M.; et al. (2013). Sparrow. Proceedings of the
     Twenty-Fourth ACM Symposium on Operating Systems Principles.
     https://doi.org/10.1145/2517349.2522716
     Difference: Sparrow's randomised probe-and-hold scheduler; a decentralised scheduler whose
     design point is fixed rather than swept in error
-[97] Verma, A.; Pedrosa, L.; Korupolu, M.; Oppenheimer, D.; Tune, E.; Wilkes, J. (2015). Large-scale
-    cluster management at Google with Borg. Proceedings of the Tenth European Conference on Computer
-    Systems. https://doi.org/10.1145/2741948.2741964
+
+[97] Verma, A.; Pedrosa, L.; Korupolu, M.; et al. (2015). Large-scale cluster management at Google
+    with Borg. Proceedings of the Tenth European Conference on Computer Systems.
+    https://doi.org/10.1145/2741948.2741964
     Difference: Borg's centralised cluster scheduler with a measured scale ceiling; it reports
     quotas and priorities, not a cost-of-misestimation boundary
-[98] Vavilapalli, V. K.; Murthy, A. C.; Douglas, C.; Agarwal, S.; Konar, M.; Evans, R.; et al.
-    (2013). Apache Hadoop YARN. Proceedings of the 4th annual Symposium on Cloud Computing.
-    https://doi.org/10.1145/2523616.2523633
+
+[98] Vavilapalli, V. K.; Murthy, A. C.; Douglas, C.; et al. (2013). Apache Hadoop YARN. Proceedings
+    of the 4th annual Symposium on Cloud Computing. https://doi.org/10.1145/2523616.2523633
     Difference: YARN's central resource negotiator; the reference design of the central-allocator
     family we model, without a market arm
+
 [99] Buyya, R.; Yeo, C. S.; Venugopal, S. (2008). Market-Oriented Cloud Computing: Vision, Hype, and
     Reality for Delivering IT Services as Computing Utilities. 2008 10th IEEE International
     Conference on High Performance Computing and Communications.
     https://doi.org/10.1109/hpcc.2008.172
     Difference: the market-oriented cloud computing vision; argues market allocation is preferable
     without measuring where it stops being preferable
+
 [100] Zhang, Y.; Niyato, D.; Wang, P. (2013). An Auction Mechanism for Resource Allocation in Mobile
     Cloud Computing Systems. arXiv preprint arXiv:1304.6176. https://arxiv.org/abs/1304.6176
     Difference: an auction mechanism for mobile cloud resource allocation; a mechanism proposal
     evaluated against a central scheduler at one noise level
-[101] Zhang, X.; Wu, C.; Li, Z.; Lau, F. C. M. (2016). A Truthful $(1-\epsilon)$-Optimal Mechanism
-    for On-demand Cloud Resource Provisioning. arXiv preprint arXiv:1611.07619.
+
+[101] Zhang, X.; Wu, C.; Li, Z.; et al. (2016). A Truthful $(1-\epsilon)$-Optimal Mechanism for
+    On-demand Cloud Resource Provisioning. arXiv preprint arXiv:1611.07619.
     https://arxiv.org/abs/1611.07619
     Difference: a truthful near-optimal mechanism for on-demand cloud provisioning; truthfulness is
     the target, and estimates are exact along the equilibrium path
+
 [102] Perukari, A. K.; Khoroshevskaya, P. (2025). Resilient and Efficient Allocation for Large-Scale
     Autonomous Fleets via Decentralized Coordination. arXiv preprint arXiv:2511.12879.
     https://arxiv.org/abs/2511.12879
     Difference: resilient allocation for autonomous fleets via decentralised coordination;
     robustness to failures rather than to estimation error
+
 [103] Dinh-Tuan, H.; Nguyen, T. H.; Pandey, S. R. (2025). DREAMS: Decentralized Resource Allocation
     and Service Management across the Compute Continuum Using Service Affinity. arXiv preprint
     arXiv:2509.07497. https://arxiv.org/abs/2509.07497
     Difference: decentralised resource allocation across a compute continuum using service affinity;
     an architecture, with no planner baseline
-[104] Shah, A.; Zhu, K.; Jiang, Y.; Wang, J. G.; Dayi, A. K.; Horton, J. J.; et al. (2025). Learning
-    from Synthetic Labs: Language Models as Auction Participants. arXiv preprint arXiv:2507.09083.
-    https://arxiv.org/abs/2507.09083
+
+[104] Shah, A.; Zhu, K.; Jiang, Y.; et al. (2025). Learning from Synthetic Labs: Language Models as
+    Auction Participants. arXiv preprint arXiv:2507.09083. https://arxiv.org/abs/2507.09083
     Difference: uses language models as auction participants to study bidding behaviour; a
     behavioural study of bidders, not an allocator boundary
-[105] Liu, X.; Li, H.; Li, S.; Fang, H.; Xu, F.; Shi, F.; et al. (2026). Markets, Not Planners:
-    Decentralized Orchestration of LLM Agents with Private Information. arXiv preprint
-    arXiv:2608.23867. https://arxiv.org/abs/2608.23867
+
+[105] Liu, X.; Li, H.; Li, S.; et al. (2026). Markets, Not Planners: Decentralized Orchestration of
+    LLM Agents with Private Information. arXiv preprint arXiv:2608.23867.
+    https://arxiv.org/abs/2608.23867
     Difference: the anchor work: it demonstrates a market beating centralised orchestration on four
     task families and names the frictions, but gives no boundary in any control variable
-[106] Zhang, X.; Lu, P.; Ye, L.; Liu, P. (2026). ERPBench: Evaluating LLM Agents for Enterprise
+
+[106] Zhang, X.; Lu, P.; Ye, L.; et al. (2026). ERPBench: Evaluating LLM Agents for Enterprise
     Decision-Making Across Competitive Market Ecologies. arXiv preprint arXiv:2609.04667.
     https://arxiv.org/abs/2609.04667
     Difference: a benchmark for LLM agents in competitive market ecologies; measures agent
     performance rather than the allocator's regime
+
 [107] Erlei, A.; Meub, L. (2026). LLM-Agent Interactions on Markets with Information Asymmetries.
     arXiv preprint arXiv:2603.08853. https://arxiv.org/abs/2603.08853
     Difference: LLM-agent interactions under information asymmetries; studies behaviour under
     asymmetry, not the noise scale at which a market wins
-[108] Lei, S.; Nguyen, Q.; Mehta, S. S.; Li, Z.; Fu, H.; Zheng, X.; et al. (2026). Strategic
-    Exploitation in LLM Agent Markets: A Simulation Framework for E-Commerce Trust. arXiv preprint
-    arXiv:2605.10059. https://arxiv.org/abs/2605.10059
+
+[108] Lei, S.; Nguyen, Q.; Mehta, S. S.; et al. (2026). Strategic Exploitation in LLM Agent Markets:
+    A Simulation Framework for E-Commerce Trust. arXiv preprint arXiv:2605.10059.
+    https://arxiv.org/abs/2605.10059
     Difference: strategic exploitation in LLM agent markets for e-commerce trust; a security framing
     rather than an allocation boundary
+
 [109] Tian, Y. (2026). Prompt Optimization Enables Stable Algorithmic Collusion in LLM Agents. arXiv
     preprint arXiv:2604.17774. https://arxiv.org/abs/2604.17774
     Difference: shows prompt optimisation can induce collusion in LLM markets; a failure mode of the
     market arm, not a comparison with a planner
-[110] Tomasev, N.; Franklin, M.; Leibo, J. Z.; Jacobs, J.; Cunningham, W. A.; Gabriel, I.; et al.
-    (2025). Virtual Agent Economies. arXiv preprint arXiv:2509.10147.
-    https://arxiv.org/abs/2509.10147
+
+[110] Tomasev, N.; Franklin, M.; Leibo, J. Z.; et al. (2025). Virtual Agent Economies. arXiv
+    preprint arXiv:2509.10147. https://arxiv.org/abs/2509.10147
     Difference: a virtual-agent-economy agenda; positions the field without measurement
-[111] Rothschild, D. M.; Mobius, M.; Hofman, J. M.; Dillon, E. W.; Goldstein, D. G.; Immorlica, N.;
-    et al. (2025). The Agentic Economy. arXiv preprint arXiv:2505.15799.
-    https://arxiv.org/abs/2505.15799
+
+[111] Rothschild, D. M.; Mobius, M.; Hofman, J. M.; et al. (2025). The Agentic Economy. arXiv
+    preprint arXiv:2505.15799. https://arxiv.org/abs/2505.15799
     Difference: an agenda for the agentic economy; vision rather than a controlled result
-[112] Saxena, M.; Pangallo, M.; Hommes, C.; Caccioli, F.; del Rio-Chanona, R. M. (2026). Machine
-    Spirits: Speculation and Adaptation of LLM Agents in Asset Markets. arXiv preprint
-    arXiv:2604.18602. https://arxiv.org/abs/2604.18602
+
+[112] Saxena, M.; Pangallo, M.; Hommes, C.; et al. (2026). Machine Spirits: Speculation and
+    Adaptation of LLM Agents in Asset Markets. arXiv preprint arXiv:2604.18602.
+    https://arxiv.org/abs/2604.18602
     Difference: speculation and adaptation of LLM agents in asset markets; price dynamics rather
     than allocator choice
-[113] Struski, P.; Swistak, J.; Okulska, I.; Biecek, P. (2026). Competitive Market Behavior of LLMs.
+
+[113] Struski, P.; Swistak, J.; Okulska, I.; et al. (2026). Competitive Market Behavior of LLMs.
     arXiv preprint arXiv:2609.02580. https://arxiv.org/abs/2609.02580
     Difference: competitive market behaviour of LLMs; behavioural observation, no planner
     counterpart
+
 [114] Inverso, O.; Tuosto, E.; Zunic, D. (2026). Fundamental market design as a layer of AI-agent
     alignment. arXiv preprint arXiv:2607.09702. https://arxiv.org/abs/2607.09702
     Difference: market design as a layer of AI-agent alignment; a design proposal without a measured
     boundary
+
 [115] Ye, Q.; Tan, J. (2026). Agent Contracts: A Formal Framework for Resource-Bounded Autonomous AI
     Systems. arXiv preprint arXiv:2601.08815. https://arxiv.org/abs/2601.08815
     Difference: a formal framework for resource-bounded autonomous agents; specifies budgets rather
     than comparing institutions
+
 [116] Derouiche, H.; Brahmi, Z.; Mazeni, H. (2025). Agentic AI Frameworks: Architectures, Protocols,
     and Design Challenges. arXiv preprint arXiv:2508.10146. https://arxiv.org/abs/2508.10146
     Difference: a survey of agentic-AI architectures and protocols; taxonomy, no controlled
     comparison
+
 [117] Orogat, A.; Rostam, A.; Mansour, E. (2026). Understanding Multi-Agent LLM Frameworks: A
     Unified Benchmark and Experimental Analysis. arXiv preprint arXiv:2602.03128.
     https://arxiv.org/abs/2602.03128
     Difference: a unified benchmark and experimental analysis of multi-agent LLM frameworks;
     compares frameworks on tasks, not allocators under noise
+
 [118] Li, S.; Abdelmoniem, A. M.; Wang, S. (2026). ProgRouter: Online Progress-Guided Orchestration
     for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs. arXiv preprint arXiv:2608.25992.
     https://arxiv.org/abs/2608.25992
     Difference: online progress-guided orchestration for LLM workflows under quality-cost tradeoffs;
     a router/policy, not a market-vs-planner boundary
+
 [119] Zhang, C. (2026). Reinforcement Learning for LLM-based Multi-Agent Systems through
     Orchestration Traces. arXiv preprint arXiv:2605.02801. https://arxiv.org/abs/2605.02801
     Difference: reinforcement learning over orchestration traces; improves a central orchestrator
     instead of testing when to abandon it
-[120] Gho, B.; Muppavarapu, S.; Shaik, A.; Tsay, T.; Mohan, A.; Begin, J.; et al. (2025). From
-    Competition to Coordination: Market Making as a Scalable Framework for Safe and Aligned
-    Multi-Agent LLM Systems. arXiv preprint arXiv:2511.17621. https://arxiv.org/abs/2511.17621
+
+[120] Gho, B.; Muppavarapu, S.; Shaik, A.; et al. (2025). From Competition to Coordination: Market
+    Making as a Scalable Framework for Safe and Aligned Multi-Agent LLM Systems. arXiv preprint
+    arXiv:2511.17621. https://arxiv.org/abs/2511.17621
     Difference: market making as a framework for safe multi-agent LLM systems; an alignment-oriented
     design, with no central baseline
-[121] Yang, Y.; Chai, H.; Shao, S.; Song, Y.; Qi, S.; Rui, R.; et al. (2025). AgentNet:
-    Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems. arXiv preprint
-    arXiv:2504.00587. https://arxiv.org/abs/2504.00587
+
+[121] Yang, Y.; Chai, H.; Shao, S.; et al. (2025). AgentNet: Decentralized Evolutionary Coordination
+    for LLM-based Multi-Agent Systems. arXiv preprint arXiv:2504.00587.
+    https://arxiv.org/abs/2504.00587
     Difference: decentralised evolutionary coordination for LLM agents; an architecture without a
     noise sweep
+
 [122] Nechepurenko, M.; Shuvalov, P. (2026). Coordination as an Architectural Layer for LLM-Based
     Multi-Agent Systems. arXiv preprint arXiv:2605.03310. https://arxiv.org/abs/2605.03310
     Difference: coordination as an architectural layer for LLM multi-agent systems; a taxonomy of
     layers, no allocator comparison
-[123] Duetting, P.; Mirrokni, V.; Leme, R. P.; Xu, H.; Zuo, S. (2023). Mechanism Design for Large
-    Language Models. arXiv preprint arXiv:2310.10826. https://arxiv.org/abs/2310.10826
+
+[123] Duetting, P.; Mirrokni, V.; Leme, R. P.; et al. (2023). Mechanism Design for Large Language
+    Models. arXiv preprint arXiv:2310.10826. https://arxiv.org/abs/2310.10826
     Difference: mechanism design for large language models, primarily for preference elicitation;
     the mechanism is the subject, not the planner
-[124] Hu, Q. J.; Bieker, J.; Li, X.; Jiang, N.; Keigwin, B.; Ranganath, G.; et al. (2024).
-    RouterBench: A Benchmark for Multi-LLM Routing System. arXiv preprint arXiv:2403.12031.
-    https://arxiv.org/abs/2403.12031
+
+[124] Hu, Q. J.; Bieker, J.; Li, X.; et al. (2024). RouterBench: A Benchmark for Multi-LLM Routing
+    System. arXiv preprint arXiv:2403.12031. https://arxiv.org/abs/2403.12031
     Difference: a benchmark for multi-LLM routing; measures router accuracy and cost at fixed
     budgets
-[125] Dohan, D.; Xu, W.; Lewkowycz, A.; Austin, J.; Bieber, D.; Lopes, R. G.; et al. (2022).
-    Language Model Cascades. arXiv preprint arXiv:2207.10342. https://arxiv.org/abs/2207.10342
+
+[125] Dohan, D.; Xu, W.; Lewkowycz, A.; et al. (2022). Language Model Cascades. arXiv preprint
+    arXiv:2207.10342. https://arxiv.org/abs/2207.10342
     Difference: language model cascades as a computational model; a central cascade with no market
     alternative

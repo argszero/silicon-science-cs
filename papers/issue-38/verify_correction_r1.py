@@ -20,8 +20,21 @@ def say(s):
     out.append(s); print(s)
 
 
+# The heading the renderer EMITS is the unnumbered `## References` (round 2 of the correction renamed
+# it, and the number is now carried by nothing).  The split accepts both forms so this file keeps
+# splitting at the section it means, rather than at a heading a later correction must not restore.
+REF_HEAD = re.compile(r"(?m)^##\s*(?:\d+\.\s*)?References\s*$")
+
+
+def split_refs(ms):
+    """(body, section) at the one Reference heading, whatever the heading carries."""
+    parts = REF_HEAD.split(ms, 1)
+    assert len(parts) == 2, "expected exactly one Reference heading, found %d" % (len(parts) - 1)
+    return parts[0], parts[1]
+
+
 def body(ms):
-    return ms.split("## 9. References", 1)[0]
+    return split_refs(ms)[0]
 
 
 def check_r1(ms):
@@ -83,7 +96,7 @@ def check_r2(ms):
 def check_r3(ms):
     """Every entry: authors, year, title, venue/identifier, link, stated difference."""
     fail = []
-    sec = ms.split("## 9. References", 1)[1]
+    sec = split_refs(ms)[1]
     blocks = re.split(r'\n(?=\[\d+\] )', sec)[1:]
     refs = {str(e["key"]): e for e in json.load(io.open(os.path.join(HERE, "references.json"), encoding="utf-8"))["entries"]}
     disp = json.load(io.open(os.path.join(HERE, "refs_display.json"), encoding="utf-8"))
@@ -97,11 +110,16 @@ def check_r3(ms):
                 fail.append("entry %s: author missing" % k)
         elif "Author not established" not in b:
             fail.append("entry %s: no author and no stated obstacle" % k)
-        for what, needle in (("year", disp[k]["year"]), ("title", refs[k]["title"]),
-                             ("venue", disp[k]["venue"]), ("link", refs[k]["url"]),
-                             ("difference", refs[k]["difference"])):
+        for what, needle in (("year", disp[k]["year"]), ("venue", disp[k]["venue"]),
+                             ("link", refs[k]["url"]), ("difference", refs[k]["difference"])):
             if needle and ws(needle) not in b:
                 fail.append("entry %s: %s missing" % (k, what))
+        # The TITLE is read case-insensitively: the renderer folds an all-caps record title to title
+        # case (the house style asks for title case), so a case-sensitive read of the record's own
+        # string would call the corrected entry a missing title.  What must hold is that the entry
+        # prints THAT title -- not that it prints the publisher's capitals.
+        if refs[k]["title"] and ws(refs[k]["title"]).lower() not in b.lower():
+            fail.append("entry %s: title missing" % k)
     if re.search(r'\bn\.d\.\b', sec) or "None." in sec:
         fail.append("a placeholder year (n.d. / None.) survives")
     noauth = sum(1 for v in disp.values() if not v["authors"])

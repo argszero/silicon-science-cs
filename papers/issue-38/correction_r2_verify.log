@@ -1,0 +1,27 @@
+issue #38 correction round 2 -- items 1-5 verification at /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-38/manuscript.md
+
+R2-1 layout      PASS
+   125 entries, 0 of them not separated from the entry above by a blank line | refgate.py: block form = 125 entries, 0 not separated
+   control: mutation caught = True
+
+R2-1b renderer   PASS
+   GitHub's own renderer: 125 <p> for the 125 entries
+   control: mutation caught = True
+
+R2-2 heading     PASS
+   one unnumbered `## References` heading; no body cross-reference to a numbered one
+   control: mutation caught = True
+
+R2-3 titles      PASS
+   no all-caps title survives; [10] and [15] print in title case
+   control: mutation caught = True
+
+R2-4 exception   PASS
+   [51] names Crossref/OpenAlex in the entry and the report, year in parentheses
+   control: mutation caught = True
+
+R2-5 house form  PASS
+   125 entries: authors, (year), title, venue, URL, closing `Difference:`; no backticked identifier, no doubled `et al..`
+   control: mutation caught = True
+
+R2 items 1-5: ALL PASS
