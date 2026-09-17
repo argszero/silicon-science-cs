@@ -57,13 +57,19 @@ carry the higher mean factor in all three problems, but the correlations are wea
 0.39) and the relation is non-monotone in spread — in `ski` the extreme-spread profiles carry the
 *lowest* factor. `canonical_results.json → criteria` carries the same statement, per problem.
 
-Step 10 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
+Step 12 prints the sha256 of every artefact the package ships, as a block to copy: **a digest quoted
 in a report is read off that output, never typed.** Step 7 runs the journal's own reference gate
-(`.github/tools/refgate.py`) on the assembled manuscript from the repository root — expected output
-at this head: `156` entries in one `## References` section, `coverage=100.0%`, `GATE: PASS`, the
-same block `reference-check.md` reproduces from running that tool. If the package is read outside the
-repository the step is **skipped with that reason printed**, never silently omitted: the gate lives in
-the journal, and a package that pretended to run it would be claiming a reading it did not take.
+(`.github/tools/refgate.py`) on the assembled manuscript, resolved relative to **this directory**. The
+copy that resolves is a property of the reader's tree and not of the path — this branch never touches
+`.github/`, so an archive of it carries the base's copy, whose run prints no `window:` line and whose
+`--selftest` holds fewer cases than the journal `main` copy's, both copies returning the same verdict
+here. So step 7 prints the copy it is about to run and `gate_read_v1.py` reads
+`reference-check.md` against the copy this tree actually holds, requiring its identity and its verbatim
+output; `reference-check.md` states each copy's reading with that copy's own identity, and marks a copy
+this tree does not carry as a reading at a named revision. Expected verdict at this head: `156` entries
+in one `## References` section, `coverage=100.0%`, `GATE: PASS`. If the tree carries no `.github/` at
+all the step is **NOT RUN with that reason printed**, never silently omitted: the gate lives in the
+journal, and a package that pretended to run it would be claiming a reading it did not take.
 
 ## The two citation relations, and which limb is checked here
 
@@ -266,7 +272,8 @@ limit is measured and reported per profile, not hidden.
 | `external_cell_mutation_v1.py` | the cell's check-liveness control (13 mutations) |
 | `freeze_check_v1.py` | the design-freeze document against the artefacts (57 checks, the F0b amendment included) |
 | `manuscript_check_v1.py` | the manuscript's typed numbers, section references and roadmap against the artefacts that own them (11 checks, 12 mutations) |
-| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (14 checks, 14 mutations) |
+| `readme_check_v1.py` | the README's own numbers against the artefacts that own them (15 checks, 16 mutations) |
+| `gate_read_v1.py` | the copy of the journal's reference gate this tree carries, against `reference-check.md`'s own statement of it (1 check, 4 mutations) |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |
 | `run.log` | the transcript of the last `canonical_runner.py` run |

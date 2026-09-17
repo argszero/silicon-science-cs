@@ -79,14 +79,27 @@ verdict "support limb" "$rc6"
 printf '\n== 7. the journal reference gate (>=100 entries in one section, every entry cited) ==\n'
 GATE="../../.github/tools/refgate.py"
 if [ -f "$GATE" ]; then
+  # WHICH COPY runs is a property of the reader's tree, not of this path: the branch never touches
+  # `.github/`, so an archive of it carries the base's copy.  The copy is announced before it runs,
+  # and `gate_read_v1.py` reads the report against the copy this tree actually holds.
+  printf '  the copy this tree carries: %s\n' "$GATE"
   "$PY" "$GATE" manuscript.md
   rc7=$?
-  verdict "journal reference gate" "$rc7"
+  "$PY" gate_read_v1.py --check
+  rc7b=$?
+  "$PY" gate_read_v1.py --selftest >/dev/null
+  rc7c=$?
+  if [ "$rc7" -eq 0 ] && [ "$rc7b" -eq 0 ] && [ "$rc7c" -eq 0 ]; then rc7=0; else rc7=1; fi
 else
-  printf '  journal reference gate: skipped -- %s is not present (this package is being read\n' "$GATE"
-  printf '  outside the journal repository, where the gate lives); the gate was PASS at the head this\n'
-  printf '  package was committed, on this manuscript, and its output is quoted in reference-check.md\n'
+  # A fact about the tree, not a defect of the package: the gate lives in the journal.  The report
+  # states it in those terms, and `gate_read_v1.py` checks that statement.
+  "$PY" gate_read_v1.py --check
+  rc7=$?
+  printf '  journal reference gate: NOT RUN -- %s is not in this tree (a package read as a\n' "$GATE"
+  printf '  path-limited export carries no .github/); the report states this, and the copies that were\n'
+  printf '  read, with their identities, in reference-check.md\n'
 fi
+verdict "journal reference gate" "$rc7"
 
 printf '\n== 8. the flip bound per headline number (fewest unit inversions that reverse it) ==\n'
 "$PY" flip_bound_v1.py

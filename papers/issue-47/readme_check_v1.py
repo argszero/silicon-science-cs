@@ -153,7 +153,8 @@ def ck_mutations(t, c):
 def ck_support(t, c):
     keys = [rid.split(":", 2)[1] for rid in c["sup"]["rows"]]
     distinct, multi = len(set(keys)), len(set(k for k in keys if keys.count(k) > 1))
-    g = grab(r"(\d+) keys appear as (\d+) occurrences, and (\d+)\s+keys are cited", t["README.md"])
+    g = grab(r"(\d+)\s+keys\s+appear\s+as\s+(\d+)\s+occurrences,\s+and\s+(\d+)\s+keys\s+are\s+cited",
+              t["README.md"])
     return (g is not None and (int(g[0]), int(g[1]), int(g[2])) == (distinct, len(keys), multi),
             "README %s | verdict rows: %d key(s), %d occurrence(s), %d multi-sentence key(s)"
             % (g, distinct, len(keys), multi))
@@ -175,8 +176,11 @@ def ck_refcount(t, c):
     md = t["manuscript.md"]
     m_entries = re.findall(r"(?m)^\[(\d+)\]", md[md.index("## References"):])
     entries = ref_entries(t["references.md"])
-    g1 = grab(r"`(\d+)` entries in one `## References` section", t["README.md"])
-    g2 = grab(r"\((\d+) lines\)\. Each names what that work", t["README.md"])
+    # Word gaps are `\s+`: a phrase the checker identifies must not be defeated by a line break --
+    # reading "entries in one" only when one line happens to carry it is a check on formatting, not on
+    # the claim (the same defect the step-count case hit in R354).
+    g1 = grab(r"`(\d+)`\s+entries\s+in\s+one\s+`## References`\s+section", t["README.md"])
+    g2 = grab(r"\((\d+)\s+lines\)\.\s+Each\s+names\s+what\s+that\s+work", t["README.md"])
     return (g1 is not None and g2 is not None and g1[0] == g2[0] == str(len(m_entries)) == str(len(entries)),
             "README %s / %s | manuscript.md: %d numbered entry(ies); references.md: %d"
             % (g1, g2, len(m_entries), len(entries)))
@@ -231,7 +235,13 @@ def ck_repro_stages(t, c):
             % (g[0] if g else None, WORDNUM.get(g[0]) if g else None, n))
 
 
-TOOL_COUNT_ROWS = ("manuscript_check_v1.py", "readme_check_v1.py")
+TOOL_COUNT_ROWS = ("manuscript_check_v1.py", "readme_check_v1.py", "gate_read_v1.py")
+
+
+# A checker that imports the module it audits must not write `__pycache__` into the package it reads:
+# byte-code is a build artefact, and an `add <path>` that stages the package stages it too (measured in
+# this round: 18 `.pyc` files reached the index through exactly that path).
+sys.dont_write_bytecode = True
 
 
 def _tool_lists(fname):
@@ -268,7 +278,7 @@ def ck_tool_counts(t, c):
     """
     readme = t["README.md"]
     pairs = sorted((int(a), int(b))
-                   for a, b in re.findall(r"\((\d+) checks, (\d+) mutations\)", readme))
+                   for a, b in re.findall(r"\((\d+) checks?, (\d+) mutations\)", readme))
     want = {fname: _tool_lists(fname) for fname in TOOL_COUNT_ROWS}
     if sorted(want.values()) != pairs:
         return False, "the README states the pair(s) %s; the modules hold %s" % (
@@ -277,11 +287,60 @@ def ck_tool_counts(t, c):
     for fname in TOOL_COUNT_ROWS:
         n, m = want[fname]
         row = [line for line in readme.splitlines() if line.startswith("| `%s` |" % fname)]
-        if len(row) != 1 or "(%d checks, %d mutations)" % (n, m) not in row[0]:
+        if len(row) != 1 or re.search(r"\(%d checks?, %d mutations\)" % (n, m),
+                                      row[0]) is None:
             return False, ("the README's row for `%s` does not carry `(%d checks, %d mutations)` "
                            "(%d row(s) name it)" % (fname, n, m, len(row)))
         rows.append("`%s` %d/%d" % (fname, n, m))
     return True, "README pair(s) %s == the modules' own lists (%s)" % (pairs, "; ".join(rows))
+
+
+# Every `Step N` pointer the README makes, declared: a fragment of the claim as the README states it
+# (with %d standing for the number), and a substring of that step's OWN banner in `reproduce.sh`.  A
+# pointer RESOLVES either way -- `Step 10 prints the sha256` named a step that exists -- so what has to
+# be read is whether it names the step whose banner carries its subject, which is the same defect as a
+# section reference that resolves to a section about something else (the manuscript's roadmap check).
+STEP_POINTERS = (
+    ("Step %d prints the sha256 of every artefact", "digests of the artefacts"),
+    ("Step %d runs the journal's own reference gate", "the journal reference gate"),
+    ("offline, step %d above", "the support limb"),
+    ("(step %d, offline)", "the flip bound"),
+)
+
+
+def ck_step_pointers(t, c):
+    """Each `Step N` in the README must carry the N of the step whose banner states its subject.
+
+    Measured at the head this check was written against: the README read "Step 10 prints the sha256 of
+    every artefact the package ships" while the digest block is `reproduce.sh`'s step **12** (step 10
+    is the manuscript's typed counts), and nothing read it -- the step count itself was bound to the
+    script, and the script moves its steps around, so a pointer is exactly what the count cannot fix.
+    """
+    readme = t["README.md"]
+    banners = {}
+    for m in re.finditer(r"printf '\\n== (\d+)\. (.*?) ==\\n'", t["reproduce.sh"]):
+        banners[int(m.group(1))] = m.group(2).strip()
+    if not banners:
+        return False, "no step banner could be read out of reproduce.sh -- nothing to bind against"
+    seen = []
+    for claim, subject in STEP_POINTERS:
+        pat = re.escape(claim % 0).replace("0", r"(\d+)", 1) if "%d" in claim else None
+        if pat is None:
+            return False, "the declared claim %r carries no number placeholder" % claim
+        hits = [int(x) for x in re.findall(pat, readme)]
+        if len(hits) != 1:
+            return False, ("the README makes %d claim(s) of the form %r; the anchor is missing or "
+                           "duplicated" % (len(hits), claim.replace("%d", "N")))
+        n = hits[0]
+        if n not in banners:
+            return False, "the README points at step %d, which no banner carries (steps 1..%d)" % (
+                n, len(banners))
+        if subject not in banners[n]:
+            return False, ("the README says `%s` -- step %d's own banner reads %r, which does not "
+                           "carry %r" % (claim % n, n, banners[n], subject))
+        seen.append("step %d: %s" % (n, subject))
+    return True, "%d pointer(s), each naming the step whose banner carries its subject (%s)" % (
+        len(seen), "; ".join(seen))
 
 
 CHECKS = [
@@ -297,6 +356,7 @@ CHECKS = [
     ("readme/census_count_is_the_directory_and_is_not_typed", ck_census),
     ("readme/verdict_list_is_the_one_reproduce_sh_prints", ck_verdicts),
     ("readme/tool_counts_are_the_modules'_own_lists", ck_tool_counts),
+    ("readme/step_pointers_name_the_step_their_subject_belongs_to", ck_step_pointers),
     ("reproduce_sh/freeze_check_count_is_the_freeze_result's", ck_repro_freeze),
     ("reproduce_sh/stage_count_is_the_runner's_stage_list", ck_repro_stages),
 ]
@@ -304,6 +364,24 @@ CHECKS = [
 # (check name, file, the figure to break, what to replace it with).  Breaking a figure must fail its
 # own check and no other -- an exact count, not "something went red": a mutation battery whose cases
 # already fail for other reasons proves nothing (the confounded battery of R343).
+def mut_refcount(texts):
+    """Break the README's reference-entry count wherever it stands, wrapping and all.
+
+    Pinned to the literal phrase "`156` entries in one", this case reported "the anchor occurs 0
+    time(s)" the first time the sentence was legitimately re-wrapped in the round that added a check --
+    a mutation anchor is a claim about an artefact too, and the claim was about a line break.  Read the
+    phrase out of the README instead, whitespace and all, so the case breaks the NUMBER and nothing
+    else.  (The backticks here are prose: an escaped backtick inside a non-raw docstring is a
+    SyntaxWarning in the shipped tool, which the whole-branch export run printed -- found by reading the
+    run's own log, where a warning from a package tool is a defect of the package.)
+    """
+    m = re.search(r"`(\d+)`\s+entries\s+in\s+one", texts["README.md"])
+    if not m:
+        return "README.md", None, None
+    return ("README.md", m.group(0),
+            "`%d` entries in one" % (int(m.group(1)) + 1))
+
+
 def mut_step_count(texts):
     """Break the README's step-count word wherever it stands, wrapping and all.
 
@@ -350,8 +428,7 @@ MUTATIONS = [
      "README.md", "237 occurrences", "236 occurrences"),
     ("readme/stated_difference_count_is_the_rendered_layer",
      "README.md", "stated difference: 156 of", "stated difference: 155 of"),
-    ("readme/reference_count_is_the_manuscript's_section",
-     "README.md", "`156` entries in one", "`157` entries in one"),
+    ("readme/reference_count_is_the_manuscript's_section", mut_refcount),
     ("readme/step_count_is_reproduce_sh's_own_markers", mut_step_count),
     ("readme/census_count_is_the_directory_and_is_not_typed",
      "README.md", "a census over **every** `.py`/`.sh` file the package ships",
@@ -365,6 +442,13 @@ MUTATIONS = [
      "reproduce.sh", "the eight stages (seven frozen", "the nine stages (seven frozen"),
     ("readme/tool_counts_are_the_modules'_own_lists",
      "README.md", "(11 checks, 12 mutations)", "(10 checks, 12 mutations)"),
+    # Each pointer case moves the number to a step that exists, so it is caught by DESCRIPTION and not
+    # by resolution -- the property the check claims.
+    ("readme/step_pointers_name_the_step_their_subject_belongs_to",
+     "README.md", "Step 12 prints the sha256 of every artefact",
+     "Step 11 prints the sha256 of every artefact"),
+    ("readme/step_pointers_name_the_step_their_subject_belongs_to",
+     "README.md", "(step 8, offline)", "(step 7, offline)"),
 ]
 
 

@@ -675,12 +675,12 @@ external reach (published robustness scale 0.008..0.088):
   sched   0 of 13 profiles at or above 0.8%; min worst-unit -0.3080 | out: ar_mid,over_extreme,over_mid,tail_mid,unbiased_extreme,unbiased_high,unbiased_low,unbiased_mid,unbiased_veryhigh,under_extreme,under_mid,wild_tail,zero
   ski     12 of 13 profiles at or above 0.8%; min worst-unit +0.0000 | out: zero
 
-       coordinate census over 17 source file(s); the declaration span of canonical_runner.py is data, not code (2 calls in it: f.endswith, os.listdir)
+       coordinate census over 18 source file(s); the declaration span of canonical_runner.py is data, not code (2 calls in it: f.endswith, os.listdir)
          C1 git object read         0 site(s) in 0  file(s)  -- none
-         C2 above-package read      4 site(s) in 2  file(s)  reproduce.sh, support_read_v1.py
+         C2 above-package read      9 site(s) in 3  file(s)  gate_read_v1.py, reproduce.sh, support_read_v1.py
          C3 environment             0 site(s) in 0  file(s)  -- none
-         C4 argv                    6 site(s) in 6  file(s)  canonical_runner.py, flip_bound_v1.py, manuscript_check_v1.py, readme_check_v1.py, reproduce.sh, support_read_v1.py
-         C5 cwd / absolute path    18 site(s) in 16 file(s)  anchor_smoke.py, assemble.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, flip_bound_v1.py, freeze_check_v1.py, instrument_v0.py, lambda_cert_v1.py, manuscript_check_v1.py, mechanism_v0.py, paging_v1.py, readme_check_v1.py, scorer_v0.py, sufficiency_v1.py, support_read_v1.py
+         C4 argv                    7 site(s) in 7  file(s)  canonical_runner.py, flip_bound_v1.py, gate_read_v1.py, manuscript_check_v1.py, readme_check_v1.py, reproduce.sh, support_read_v1.py
+         C5 cwd / absolute path    21 site(s) in 17 file(s)  anchor_smoke.py, assemble.py, canonical_runner.py, external_cell_mutation_v1.py, external_cell_v1.py, flip_bound_v1.py, freeze_check_v1.py, gate_read_v1.py, instrument_v0.py, lambda_cert_v1.py, manuscript_check_v1.py, mechanism_v0.py, paging_v1.py, readme_check_v1.py, scorer_v0.py, sufficiency_v1.py, support_read_v1.py
          C6 network                 0 site(s) in 0  file(s)  -- none
          C7 clock / entropy         0 site(s) in 0  file(s)  -- none
          C8 interpreter             1 site(s) in 1  file(s)  reproduce.sh
