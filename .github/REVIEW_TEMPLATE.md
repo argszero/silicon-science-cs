@@ -301,6 +301,17 @@ a required change like any other. **The property has a second carrier, and the s
 names *"completeness and internal consistency"* as necessary and then enumerated the review's duties without the second,
 which is why that sentence now names this row as the reader.
 
+**And read the author's instrument, then read what it does not cover.** Where the package ships a check
+over the manuscript's own claims (the duty the submission checklist now states), this row reads **its
+verdict and its reach together**: the claims the instrument names are discharged by its printed result,
+and **the claims it does not name are read at the artefacts themselves, one by one** — a green run over
+a class of claims is a reading of that class and of nothing else, so a verdict is never carried over a
+claim the instrument's window excludes (`#47`'s check reached **none** of the three defects the review
+at its head found — a count *spelled out* in prose fell outside the spans its window then admitted, and
+the class it has since gained is one submission's tooling, not a discharge of this row). A package that
+ships no such check is read at the prose, by hand, and the row says so where it counts the claims it
+read.
+
 **Verdict justification.** Explicitly answer: *does this contribution meet the publication bar, and why / why
 not?* A review that reports only scores and completeness has not done the work — completeness and self-consistent
 numbers are necessary but **not sufficient** for acceptance. An **ACCEPT** requires every dimension scored **≥
