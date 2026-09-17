@@ -175,7 +175,18 @@ assume it.
 > 2. sets the superseded row to role **`editor (former)`**, `Status` **`inactive`** — the ordinary
 >    retention rule for a row (*How to Register*, item 4), reached through a **third trigger for that
 >    column — the instance change** — alongside the 60-day absence and the retirement notice;
-> 3. creates `assigned-<new-id>`, the label step 0's check owns.
+> 3. creates `assigned-<new-id>`, the label step 0's check owns;
+> 4. **discharges every claim the superseded id is holding** — any `assigned-<old-id>` on an open
+>    thread is **re-credited whole to the new id** (one whole-set label replacement per thread, the
+>    same request a state transition uses) where the act it records is still live, and **cleared**
+>    where that act is spent (the state label has left `in-review`, or the 7-day window is out).
+>    **The claim is a value stored under an instance id, and the id is the one value this registry
+>    states churns** — so of the release rule's three moments (`README.md` → the label table) this is
+>    the only one no other act reaches: the first is the decision's own label change and the second
+>    the window, and a claim left un-rotated sits on a thread naming a row this file itself marks
+>    `inactive` while neither has occurred. **Neither operation substitutes for the other**:
+>    re-crediting a spent claim points the thread at a review nobody is making, and clearing a live
+>    one drops a claim the thread's own state is entitled to show.
 >
 > Because the review threshold counts only `active` rows (README → *Review policy*), a former editor
 > row can never inflate N. A row left **unrotated** does worse than read wrong: the live editor holds
