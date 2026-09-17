@@ -1,0 +1,81 @@
+{
+ "ANCHORS_ALL_PASS": true,
+ "anchors": {
+  "paging": {
+   "adversarial_approaches_k": true,
+   "adversarial_bound_never_exceeded": true,
+   "adversarial_ratio_by_k": {
+    "2": {
+     "reps200": 1.9933554817275747,
+     "reps2000": 1.9993335554815062
+    },
+    "3": {
+     "reps200": 2.973977695167286,
+     "reps2000": 2.9973772948669914
+    },
+    "4": {
+     "reps200": 3.952569169960474,
+     "reps2000": 3.9952057530962843
+    },
+    "5": {
+     "reps200": 4.918032786885246,
+     "reps2000": 4.9916805324459235
+    }
+   },
+   "belady_equals_exhaustive_optimum": true,
+   "brute_cases": 24,
+   "random_traces": 240,
+   "ratio_gt_k_violations": 0,
+   "worst_random_ratio": 2.1785714285714284
+  },
+  "scheduling": {
+   "brute_cases": 200,
+   "fifo_never_beats_opt": true,
+   "fifo_over_opt_max": 2.366336633663366,
+   "fifo_over_opt_median": 1.3843167701863355,
+   "fifo_over_opt_min": 1.0,
+   "spt_equals_bruteforce_optimum": true
+  },
+  "ski_rental": {
+   "bruteforce_offline_matches_formula": true,
+   "classic_bound_2_minus_r_over_b_attained": true,
+   "long_instances": 16,
+   "n_instances": 42,
+   "worst_ratio_all": 1.999
+  }
+ },
+ "verdict": [
+  {
+   "check": "ski: offline exact",
+   "ok": true
+  },
+  {
+   "check": "ski: classic 2-r/b attained",
+   "ok": true
+  },
+  {
+   "check": "paging: Belady == exhaustive optimum",
+   "ok": true
+  },
+  {
+   "check": "paging: LRU/OPT <= k (0 violations)",
+   "ok": true
+  },
+  {
+   "check": "paging: adversarial never exceeds k",
+   "ok": true
+  },
+  {
+   "check": "paging: adversarial approaches k from below (limit)",
+   "ok": true
+  },
+  {
+   "check": "sched: SPT == brute-force optimum",
+   "ok": true
+  },
+  {
+   "check": "sched: FIFO >= opt",
+   "ok": true
+  }
+ ]
+}

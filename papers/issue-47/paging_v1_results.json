@@ -1,0 +1,968 @@
+{
+ "CHECKS_ALL_PASS": true,
+ "checks": [
+  {
+   "check": "C1 the same error on every page reproduces Belady exactly",
+   "ok": true,
+   "value": {
+    "constant_error_traces_exactly_belady": 128,
+    "traces": 128
+   }
+  },
+  {
+   "check": "C3 the zero profile reproduces Belady exactly",
+   "ok": true,
+   "value": {
+    "traces": 32,
+    "zero_profile_traces_exactly_belady": 32
+   }
+  },
+  {
+   "check": "C5 with the shared error this harness equals the instrument",
+   "ok": true,
+   "value": {
+    "cells": 128,
+    "mismatches": 0,
+    "worst_abs_diff": 0.0
+   }
+  },
+  {
+   "check": "C4 the corrected waste count separates the extreme signs by more than the inverted R320 count did",
+   "ok": true,
+   "value": {
+    "corrected": {
+     "over": 1,
+     "ratio": 56.0,
+     "under": 56
+    },
+    "inverted_r320": {
+     "over": 154,
+     "ratio": 0.9545454545454546,
+     "under": 147
+    }
+   }
+  },
+  {
+   "check": "the per-page sign gap between the extreme signs is reported (direction is a FINDING, not a check)",
+   "note": "informational",
+   "ok": true,
+   "value": {
+    "per_page_clampfree_extreme_gap": 0.2749522281891268,
+    "per_page_extreme_gap": 0.2512363521108607,
+    "shared_r320_extreme_gap": 0.09446725993312333
+   }
+  },
+  {
+   "check": "the wrong-victim rate ORDERS the excess cost ratio across the profiles (a count that does not order the cost is not the mechanism)",
+   "ok": true,
+   "value": {
+    "per_page": {
+     "excess_ratio": [
+      0.005296653838613663,
+      0.0041795999677947115,
+      0.00829455061762796,
+      0.34563065524161996,
+      0.043545151010736305,
+      0.294781503121597
+     ],
+     "n": 6,
+     "profiles": [
+      "unbiased_mid",
+      "over_mid",
+      "under_mid",
+      "unbiased_extreme",
+      "over_extreme",
+      "under_extreme"
+     ],
+     "spearman": 1.0,
+     "wrong_victim_rate": [
+      0.08824372075255467,
+      0.06884023329190171,
+      0.10045705579889545,
+      0.6039025779803446,
+      0.2344339188816334,
+      0.5780094646554274
+     ]
+    },
+    "shared_r320": {
+     "excess_ratio": [
+      0.0,
+      0.0,
+      0.0,
+      0.0891290666346265,
+      0.0008436802492552964,
+      0.09531094018237862
+     ],
+     "n": 6,
+     "profiles": [
+      "unbiased_mid",
+      "over_mid",
+      "under_mid",
+      "unbiased_extreme",
+      "over_extreme",
+      "under_extreme"
+     ],
+     "spearman": 1.0,
+     "wrong_victim_rate": [
+      0.0,
+      0.0,
+      0.0,
+      0.13885709254204456,
+      0.001343054489639294,
+      0.151011117919986
+     ]
+    }
+   }
+  },
+  {
+   "check": "DECISIVE: in the shared arm wrong victims are bounded by the tie-broken decisions (a clamp artefact cannot exceed its own ties), while in the per-page arm they exceed them by an order of magnitude (so the repaired effect is reordering, not tie-breaking renamed)",
+   "ok": true,
+   "value": {
+    "per_page": {
+     "evictions": 13524,
+     "ties": 421,
+     "wrong_victim": 7817
+    },
+    "per_page_wrong_victim_vs_ties": {
+     "over_extreme": [
+      2549,
+      0
+     ],
+     "over_mid": [
+      720,
+      0
+     ],
+     "unbiased_extreme": [
+      8480,
+      127
+     ],
+     "unbiased_mid": [
+      924,
+      0
+     ],
+     "under_extreme": [
+      7817,
+      421
+     ],
+     "under_mid": [
+      1055,
+      0
+     ],
+     "zero": [
+      0,
+      74
+     ]
+    },
+    "shared_r320": {
+     "evictions": 11423,
+     "ties": 2304,
+     "wrong_victim": 1725
+    },
+    "shared_r320_wrong_victim_vs_ties": {
+     "over_extreme": [
+      14,
+      97
+     ],
+     "over_mid": [
+      0,
+      74
+     ],
+     "unbiased_extreme": [
+      1577,
+      2048
+     ],
+     "unbiased_mid": [
+      0,
+      74
+     ],
+     "under_extreme": [
+      1725,
+      2304
+     ],
+     "under_mid": [
+      0,
+      74
+     ],
+     "zero": [
+      0,
+      74
+     ]
+    }
+   }
+  },
+  {
+   "check": "the effect SURVIVES the redrawn-per-decision attachment (the claim must not silently assume the stable per-page predictor)",
+   "ok": true,
+   "value": {
+    "redraw_extreme_gap": 0.11539585049915191,
+    "stable_extreme_gap": 0.2512363521108607
+   }
+  },
+  {
+   "check": "the ski and scheduling counts REPRODUCE the published artefact exactly under this round's harness (same aggregation as mechanism_v0: every sign profile x REPS)",
+   "ok": true,
+   "value": {
+    "abs_diff_vs_published": {
+     "sched_mean_displacement_over": 0.0,
+     "sched_mean_displacement_under": 0.0,
+     "ski_branch_errors_over": 0,
+     "ski_branch_errors_under": 0
+    },
+    "published": {
+     "sched_mean_displacement_over": -21.0,
+     "sched_mean_displacement_under": -38.0,
+     "ski_branch_errors_over": 257,
+     "ski_branch_errors_under": 1103
+    },
+    "reproduces_published_exactly": true,
+    "sched_mean_displacement_over": -21.0,
+    "sched_mean_displacement_under": -38.0,
+    "ski_branch_errors_over": 257,
+    "ski_branch_errors_under": 1103
+   }
+  }
+ ],
+ "control_clamp_free": {
+  "over_extreme": {
+   "clamp_binds": 357,
+   "dead_evicted": 160,
+   "evictions": 10873,
+   "floor": 1e-09,
+   "mean_cost": 344.78125,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0435451510107363,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "over_extreme",
+   "sign": "over",
+   "tied_evictions": 0,
+   "waste_corrected": 1,
+   "waste_corrected_over": 1,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 154,
+   "wrong_victim": 2549,
+   "wrong_victim_over": 2502,
+   "wrong_victim_rate": 0.2344339188816334,
+   "wrong_victim_under": 47
+  },
+  "under_extreme": {
+   "clamp_binds": 23261,
+   "dead_evicted": 160,
+   "evictions": 13775,
+   "floor": 1e-09,
+   "mean_cost": 435.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.318497379199863,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "under_extreme",
+   "sign": "under",
+   "tied_evictions": 0,
+   "waste_corrected": 61,
+   "waste_corrected_over": 16,
+   "waste_corrected_under": 45,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 146,
+   "wrong_victim": 8130,
+   "wrong_victim_over": 2517,
+   "wrong_victim_rate": 0.5901996370235935,
+   "wrong_victim_under": 5613
+  }
+ },
+ "control_clamp_free_zero": {
+  "clamp_binds": 0,
+  "dead_evicted": 160,
+  "evictions": 10415,
+  "floor": 1e-09,
+  "mean_cost": 330.46875,
+  "mean_optimal": 330.46875,
+  "mean_ratio": 1.0,
+  "mode": "per_page",
+  "n_traces": 32,
+  "profile": "zero",
+  "sign": "zero",
+  "tied_evictions": 74,
+  "waste_corrected": 0,
+  "waste_corrected_over": 0,
+  "waste_corrected_under": 0,
+  "waste_corrected_zero": 0,
+  "waste_inverted_r320": 149,
+  "wrong_victim": 0,
+  "wrong_victim_over": 0,
+  "wrong_victim_rate": 0.0,
+  "wrong_victim_under": 0
+ },
+ "control_degeneracy": {
+  "constant_error_traces_exactly_belady": 128,
+  "traces": 128
+ },
+ "control_harness": {
+  "cells": 128,
+  "mismatches": 0,
+  "worst_abs_diff": 0.0
+ },
+ "control_zero": {
+  "traces": 32,
+  "zero_profile_traces_exactly_belady": 32
+ },
+ "discriminator": {
+  "per_page": {
+   "evictions": 13524,
+   "ties": 421,
+   "wrong_victim": 7817
+  },
+  "per_page_wrong_victim_vs_ties": {
+   "over_extreme": [
+    2549,
+    0
+   ],
+   "over_mid": [
+    720,
+    0
+   ],
+   "unbiased_extreme": [
+    8480,
+    127
+   ],
+   "unbiased_mid": [
+    924,
+    0
+   ],
+   "under_extreme": [
+    7817,
+    421
+   ],
+   "under_mid": [
+    1055,
+    0
+   ],
+   "zero": [
+    0,
+    74
+   ]
+  },
+  "shared_r320": {
+   "evictions": 11423,
+   "ties": 2304,
+   "wrong_victim": 1725
+  },
+  "shared_r320_wrong_victim_vs_ties": {
+   "over_extreme": [
+    14,
+    97
+   ],
+   "over_mid": [
+    0,
+    74
+   ],
+   "unbiased_extreme": [
+    1577,
+    2048
+   ],
+   "unbiased_mid": [
+    0,
+    74
+   ],
+   "under_extreme": [
+    1725,
+    2304
+   ],
+   "under_mid": [
+    0,
+    74
+   ],
+   "zero": [
+    0,
+    74
+   ]
+  }
+ },
+ "explains": {
+  "excess_ratio": [
+   0.005296653838613663,
+   0.0041795999677947115,
+   0.00829455061762796,
+   0.34563065524161996,
+   0.043545151010736305,
+   0.294781503121597
+  ],
+  "n": 6,
+  "profiles": [
+   "unbiased_mid",
+   "over_mid",
+   "under_mid",
+   "unbiased_extreme",
+   "over_extreme",
+   "under_extreme"
+  ],
+  "spearman": 1.0,
+  "wrong_victim_rate": [
+   0.08824372075255467,
+   0.06884023329190171,
+   0.10045705579889545,
+   0.6039025779803446,
+   0.2344339188816334,
+   0.5780094646554274
+  ]
+ },
+ "explains_shared_r320": {
+  "excess_ratio": [
+   0.0,
+   0.0,
+   0.0,
+   0.0891290666346265,
+   0.0008436802492552964,
+   0.09531094018237862
+  ],
+  "n": 6,
+  "profiles": [
+   "unbiased_mid",
+   "over_mid",
+   "under_mid",
+   "unbiased_extreme",
+   "over_extreme",
+   "under_extreme"
+  ],
+  "spearman": 1.0,
+  "wrong_victim_rate": [
+   0.0,
+   0.0,
+   0.0,
+   0.13885709254204456,
+   0.001343054489639294,
+   0.151011117919986
+  ]
+ },
+ "gaps": {
+  "per_page_clampfree_extreme_gap": 0.2749522281891268,
+  "per_page_extreme_gap": 0.2512363521108607,
+  "per_page_mid_gap": 0.004114950649833249,
+  "shared_r320_extreme_gap": 0.09446725993312333
+ },
+ "k_pages": 5,
+ "n_pages": 10,
+ "per_page": [
+  {
+   "clamp_binds": 0,
+   "dead_evicted": 160,
+   "evictions": 10415,
+   "floor": 1.0,
+   "mean_cost": 330.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "zero",
+   "sign": "zero",
+   "tied_evictions": 74,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 0,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.0,
+   "wrong_victim_under": 0
+  },
+  {
+   "clamp_binds": 3701,
+   "dead_evicted": 160,
+   "evictions": 10471,
+   "floor": 1.0,
+   "mean_cost": 332.21875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0052966538386137,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "unbiased_mid",
+   "sign": "unbiased",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 152,
+   "wrong_victim": 924,
+   "wrong_victim_over": 783,
+   "wrong_victim_rate": 0.08824372075255467,
+   "wrong_victim_under": 141
+  },
+  {
+   "clamp_binds": 1338,
+   "dead_evicted": 160,
+   "evictions": 10459,
+   "floor": 1.0,
+   "mean_cost": 331.84375,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0041795999677947,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "over_mid",
+   "sign": "over",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 720,
+   "wrong_victim_over": 707,
+   "wrong_victim_rate": 0.06884023329190171,
+   "wrong_victim_under": 13
+  },
+  {
+   "clamp_binds": 6008,
+   "dead_evicted": 160,
+   "evictions": 10502,
+   "floor": 1.0,
+   "mean_cost": 333.1875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.008294550617628,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "under_mid",
+   "sign": "under",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 152,
+   "wrong_victim": 1055,
+   "wrong_victim_over": 495,
+   "wrong_victim_rate": 0.10045705579889545,
+   "wrong_victim_under": 560
+  },
+  {
+   "clamp_binds": 34117,
+   "dead_evicted": 160,
+   "evictions": 14042,
+   "floor": 1.0,
+   "mean_cost": 443.8125,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.34563065524162,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "unbiased_extreme",
+   "sign": "unbiased",
+   "tied_evictions": 127,
+   "waste_corrected": 69,
+   "waste_corrected_over": 51,
+   "waste_corrected_under": 18,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 142,
+   "wrong_victim": 8480,
+   "wrong_victim_over": 6510,
+   "wrong_victim_rate": 0.6039025779803446,
+   "wrong_victim_under": 1970
+  },
+  {
+   "clamp_binds": 2144,
+   "dead_evicted": 160,
+   "evictions": 10873,
+   "floor": 1.0,
+   "mean_cost": 344.78125,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0435451510107363,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "over_extreme",
+   "sign": "over",
+   "tied_evictions": 0,
+   "waste_corrected": 1,
+   "waste_corrected_over": 1,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 154,
+   "wrong_victim": 2549,
+   "wrong_victim_over": 2502,
+   "wrong_victim_rate": 0.2344339188816334,
+   "wrong_victim_under": 47
+  },
+  {
+   "clamp_binds": 36197,
+   "dead_evicted": 160,
+   "evictions": 13524,
+   "floor": 1.0,
+   "mean_cost": 427.625,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.294781503121597,
+   "mode": "per_page",
+   "n_traces": 32,
+   "profile": "under_extreme",
+   "sign": "under",
+   "tied_evictions": 421,
+   "waste_corrected": 56,
+   "waste_corrected_over": 15,
+   "waste_corrected_under": 41,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 147,
+   "wrong_victim": 7817,
+   "wrong_victim_over": 2493,
+   "wrong_victim_rate": 0.5780094646554274,
+   "wrong_victim_under": 5324
+  }
+ ],
+ "per_page_redraw": [
+  {
+   "clamp_binds": 0,
+   "dead_evicted": 160,
+   "evictions": 10415,
+   "floor": 1.0,
+   "mean_cost": 330.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "zero",
+   "sign": "zero",
+   "tied_evictions": 74,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 0,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.0,
+   "wrong_victim_under": 0
+  },
+  {
+   "clamp_binds": 3417,
+   "dead_evicted": 160,
+   "evictions": 10461,
+   "floor": 1.0,
+   "mean_cost": 331.90625,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0043554549513425,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "unbiased_mid",
+   "sign": "unbiased",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 150,
+   "wrong_victim": 805,
+   "wrong_victim_over": 689,
+   "wrong_victim_rate": 0.07695249020170156,
+   "wrong_victim_under": 116
+  },
+  {
+   "clamp_binds": 1085,
+   "dead_evicted": 160,
+   "evictions": 10450,
+   "floor": 1.0,
+   "mean_cost": 331.5625,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0033063877126676,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "over_mid",
+   "sign": "over",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 148,
+   "wrong_victim": 718,
+   "wrong_victim_over": 713,
+   "wrong_victim_rate": 0.06870813397129187,
+   "wrong_victim_under": 5
+  },
+  {
+   "clamp_binds": 5950,
+   "dead_evicted": 160,
+   "evictions": 10487,
+   "floor": 1.0,
+   "mean_cost": 332.71875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0068294044008046,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "under_mid",
+   "sign": "under",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 151,
+   "wrong_victim": 998,
+   "wrong_victim_over": 445,
+   "wrong_victim_rate": 0.09516544292934109,
+   "wrong_victim_under": 553
+  },
+  {
+   "clamp_binds": 15076,
+   "dead_evicted": 160,
+   "evictions": 11996,
+   "floor": 1.0,
+   "mean_cost": 379.875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.1497039073944826,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "unbiased_extreme",
+   "sign": "unbiased",
+   "tied_evictions": 12,
+   "waste_corrected": 21,
+   "waste_corrected_over": 17,
+   "waste_corrected_under": 4,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 152,
+   "wrong_victim": 5055,
+   "wrong_victim_over": 4504,
+   "wrong_victim_rate": 0.42139046348782927,
+   "wrong_victim_under": 551
+  },
+  {
+   "clamp_binds": 1464,
+   "dead_evicted": 160,
+   "evictions": 10751,
+   "floor": 1.0,
+   "mean_cost": 340.96875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0317902608103457,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "over_extreme",
+   "sign": "over",
+   "tied_evictions": 0,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 151,
+   "wrong_victim": 2193,
+   "wrong_victim_over": 2170,
+   "wrong_victim_rate": 0.2039810250209283,
+   "wrong_victim_under": 23
+  },
+  {
+   "clamp_binds": 20995,
+   "dead_evicted": 160,
+   "evictions": 11969,
+   "floor": 1.0,
+   "mean_cost": 379.03125,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.1471861113094977,
+   "mode": "per_page_redraw",
+   "n_traces": 32,
+   "profile": "under_extreme",
+   "sign": "under",
+   "tied_evictions": 40,
+   "waste_corrected": 22,
+   "waste_corrected_over": 7,
+   "waste_corrected_under": 15,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 148,
+   "wrong_victim": 5018,
+   "wrong_victim_over": 2147,
+   "wrong_victim_rate": 0.41924972846520175,
+   "wrong_victim_under": 2871
+  }
+ ],
+ "reps": 8,
+ "shared_r320": [
+  {
+   "clamp_binds": 0,
+   "dead_evicted": 160,
+   "evictions": 10415,
+   "floor": 1.0,
+   "mean_cost": 330.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "zero",
+   "sign": "zero",
+   "tied_evictions": 74,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 0,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.0,
+   "wrong_victim_under": 0
+  },
+  {
+   "clamp_binds": 3469,
+   "dead_evicted": 160,
+   "evictions": 10415,
+   "floor": 1.0,
+   "mean_cost": 330.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "unbiased_mid",
+   "sign": "unbiased",
+   "tied_evictions": 74,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 0,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.0,
+   "wrong_victim_under": 0
+  },
+  {
+   "clamp_binds": 1075,
+   "dead_evicted": 160,
+   "evictions": 10415,
+   "floor": 1.0,
+   "mean_cost": 330.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "over_mid",
+   "sign": "over",
+   "tied_evictions": 74,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 0,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.0,
+   "wrong_victim_under": 0
+  },
+  {
+   "clamp_binds": 5853,
+   "dead_evicted": 160,
+   "evictions": 10415,
+   "floor": 1.0,
+   "mean_cost": 330.46875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "under_mid",
+   "sign": "under",
+   "tied_evictions": 74,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 0,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.0,
+   "wrong_victim_under": 0
+  },
+  {
+   "clamp_binds": 14114,
+   "dead_evicted": 160,
+   "evictions": 11357,
+   "floor": 1.0,
+   "mean_cost": 359.90625,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0891290666346265,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "unbiased_extreme",
+   "sign": "unbiased",
+   "tied_evictions": 2048,
+   "waste_corrected": 24,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 24,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 144,
+   "wrong_victim": 1577,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.13885709254204456,
+   "wrong_victim_under": 1577
+  },
+  {
+   "clamp_binds": 1480,
+   "dead_evicted": 160,
+   "evictions": 10424,
+   "floor": 1.0,
+   "mean_cost": 330.75,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0008436802492553,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "over_extreme",
+   "sign": "over",
+   "tied_evictions": 97,
+   "waste_corrected": 0,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 0,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 14,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.001343054489639294,
+   "wrong_victim_under": 14
+  },
+  {
+   "clamp_binds": 20319,
+   "dead_evicted": 160,
+   "evictions": 11423,
+   "floor": 1.0,
+   "mean_cost": 361.96875,
+   "mean_optimal": 330.46875,
+   "mean_ratio": 1.0953109401823786,
+   "mode": "shared",
+   "n_traces": 32,
+   "profile": "under_extreme",
+   "sign": "under",
+   "tied_evictions": 2304,
+   "waste_corrected": 12,
+   "waste_corrected_over": 0,
+   "waste_corrected_under": 12,
+   "waste_corrected_zero": 0,
+   "waste_inverted_r320": 149,
+   "wrong_victim": 1725,
+   "wrong_victim_over": 0,
+   "wrong_victim_rate": 0.151011117919986,
+   "wrong_victim_under": 1725
+  }
+ ],
+ "ski_sched_survive": {
+  "abs_diff_vs_published": {
+   "sched_mean_displacement_over": 0.0,
+   "sched_mean_displacement_under": 0.0,
+   "ski_branch_errors_over": 0,
+   "ski_branch_errors_under": 0
+  },
+  "published": {
+   "sched_mean_displacement_over": -21.0,
+   "sched_mean_displacement_under": -38.0,
+   "ski_branch_errors_over": 257,
+   "ski_branch_errors_under": 1103
+  },
+  "reproduces_published_exactly": true,
+  "sched_mean_displacement_over": -21.0,
+  "sched_mean_displacement_under": -38.0,
+  "ski_branch_errors_over": 257,
+  "ski_branch_errors_under": 1103
+ },
+ "trace_len": 1200,
+ "traces_per_rep": 4,
+ "waste_comparison": {
+  "corrected": {
+   "over": 1,
+   "ratio": 56.0,
+   "under": 56
+  },
+  "inverted_r320": {
+   "over": 154,
+   "ratio": 0.9545454545454546,
+   "under": 147
+  }
+ }
+}

@@ -1,0 +1,209 @@
+{
+ "schema": 1,
+ "note": "criterion (d)'s flip-count bound, computed from the committed stage artefacts. The unit is the smallest observation the producing stage records and the bound is the FEWEST unit inversions that could reverse the number's verdict (inversions applied strongest-support-first). A verdict that asserts an ABSENCE has no inversion bound: it is reversed by MORE support, so its margin is reported as a distance to the decision boundary instead. `kind` marks exact bounds apart from estimates under a stated assumption.",
+ "F1_1_witness": {
+  "unit": "block (a problem x profile cell; 39 of them, each block's median taken over its own 16 paired observations)",
+  "asserts": "an effect (the sign channel is resolvable)",
+  "legs": {
+   "count": {
+    "rule": "a MAJORITY of blocks (20 of 39) have |loss gap| above their own cluster MDE",
+    "value": "31 of 39",
+    "k_inversions": 12,
+    "k_paired_observations_lower_bound": 108,
+    "kind": "exact (the blocks are recorded individually)"
+   },
+   "interval": {
+    "rule": "the 95% interval over the 39 block medians excludes 0",
+    "value": [
+     -0.087511,
+     -0.133616,
+     -0.041406
+    ],
+    "k_inversions": 2,
+    "k_paired_observations_lower_bound": 18,
+    "kind": "exact (the blocks are recorded individually)"
+   }
+  },
+  "k_inversions": 2,
+  "binding_leg": "interval",
+  "paired_observations_per_inverted_block": "9 of 16",
+  "paired_observations_rule": "a median over 16 paired observations is inverted only if more than half of them move",
+  "note": "the IDENTITY leg of this claim (the scalar-feature gap is exactly 0 in every block) has no flip bound: no change to the streams can move a quantity that is 0 by construction, and that is the stronger statement"
+ },
+ "F1_2_sign_channel": {
+  "ski": {
+   "unit": "cluster (208 per row; the stage records the cluster mean and its interval only)",
+   "asserts": "an ABSENCE (this problem is not resolved)",
+   "rule": "the row's 95% cluster interval excludes 0 AND the advantage exceeds 2 cluster MDEs (the registered reading of a resolvable contrast)",
+   "value": {
+    "advantage_vs_mde": 1.4794,
+    "ci95_cluster_unit": [
+     0.004572,
+     0.012182
+    ],
+    "resolvable": true
+   },
+   "k_inversions": null,
+   "distance_to_boundary": 0.5206,
+   "distance_rule": "the observed ratio sits this many cluster MDEs BELOW the 2-MDE bar; only MORE support moves it across, so no inversion bound exists for this verdict",
+   "kind": "exact distance (from the recorded ratio), no inversion bound"
+  },
+  "sched": {
+   "unit": "cluster (208 per row; the stage records the cluster mean and its interval only)",
+   "asserts": "an effect",
+   "rule": "the row's 95% cluster interval excludes 0 AND the advantage exceeds 2 cluster MDEs (the registered reading of a resolvable contrast)",
+   "value": {
+    "advantage_vs_mde": 2.6132,
+    "ci95_cluster_unit": [
+     0.000101,
+     0.000136
+    ],
+    "resolvable": true
+   },
+   "k_inversions": 25,
+   "legs": {
+    "interval_reaches_zero": {
+     "k_inversions": 94,
+     "kind": "ESTIMATE (equal-magnitude mean shift)"
+    },
+    "advantage_falls_below_the_bar": {
+     "k_inversions": 25,
+     "kind": "ESTIMATE (equal-magnitude mean shift)"
+    }
+   },
+   "binding_leg": "advantage_falls_below_the_bar",
+   "kind": "ESTIMATE -- the stage records the cluster mean and interval, not the cluster values, so the mean-shift is assumed to come from equal-magnitude inversions"
+  },
+  "paging": {
+   "unit": "cluster (208 per row; the stage records the cluster mean and its interval only)",
+   "asserts": "an ABSENCE (this problem is not resolved)",
+   "rule": "the row's 95% cluster interval excludes 0 AND the advantage exceeds 2 cluster MDEs (the registered reading of a resolvable contrast)",
+   "value": {
+    "advantage_vs_mde": 0.9665,
+    "ci95_cluster_unit": [
+     0.002315,
+     0.003126
+    ],
+    "resolvable": false
+   },
+   "k_inversions": null,
+   "distance_to_boundary": 1.0335,
+   "distance_rule": "the observed ratio sits this many cluster MDEs BELOW the 2-MDE bar; only MORE support moves it across, so no inversion bound exists for this verdict",
+   "kind": "exact distance (from the recorded ratio), no inversion bound"
+  }
+ },
+ "F1_3_ordering": {
+  "paging": {
+   "unit": "comparable pair of profiles (72 pairs over 13 profiles; ties dropped)",
+   "asserts": "an effect (the ordering is concordant)",
+   "rule": "Kendall tau of mean gain against the tail read as higher-is-better is > 0",
+   "value": {
+    "tau": 0.8889,
+    "concordant": 68,
+    "discordant": 4,
+    "pairs": 72
+   },
+   "k_inversions": 32,
+   "kind": "exact (every pair is recomputed from the recorded rows)"
+  },
+  "sched": {
+   "unit": "comparable pair of profiles (78 pairs over 13 profiles; ties dropped)",
+   "asserts": "an effect (the ordering is concordant)",
+   "rule": "Kendall tau of mean gain against the tail read as higher-is-better is > 0",
+   "value": {
+    "tau": 1.0,
+    "concordant": 78,
+    "discordant": 0,
+    "pairs": 78
+   },
+   "k_inversions": 39,
+   "kind": "exact (every pair is recomputed from the recorded rows)"
+  },
+  "ski": {
+   "unit": "comparable pair of profiles (78 pairs over 13 profiles; ties dropped)",
+   "asserts": "an effect (the ordering is concordant)",
+   "rule": "Kendall tau of mean gain against the tail read as higher-is-better is > 0",
+   "value": {
+    "tau": 0.7436,
+    "concordant": 68,
+    "discordant": 10,
+    "pairs": 78
+   },
+   "k_inversions": 29,
+   "kind": "exact (every pair is recomputed from the recorded rows)"
+  }
+ },
+ "L2_null_shift": {
+  "paging": {
+   "unit": "not derivable: the stage records one aggregate per problem",
+   "asserts": "an ABSENCE (the design does not favour its own odd term under a sign-free target)",
+   "rule": "the advantage over MDE under the EVEN synthetic target is negative",
+   "value": -1.5311761839029192,
+   "k_inversions": null,
+   "distance_to_boundary": 1.5311761839029192,
+   "distance_rule": "the aggregate sits this many MDEs below zero",
+   "kind": "the margin is exact; NO bound in units is derivable, because the per-unit rows behind the aggregate are not recorded -- stated as such rather than estimated into a number"
+  },
+  "sched": {
+   "unit": "not derivable: the stage records one aggregate per problem",
+   "asserts": "an ABSENCE (the design does not favour its own odd term under a sign-free target)",
+   "rule": "the advantage over MDE under the EVEN synthetic target is negative",
+   "value": -13.120172246838967,
+   "k_inversions": null,
+   "distance_to_boundary": 13.120172246838967,
+   "distance_rule": "the aggregate sits this many MDEs below zero",
+   "kind": "the margin is exact; NO bound in units is derivable, because the per-unit rows behind the aggregate are not recorded -- stated as such rather than estimated into a number"
+  },
+  "ski": {
+   "unit": "not derivable: the stage records one aggregate per problem",
+   "asserts": "an ABSENCE (the design does not favour its own odd term under a sign-free target)",
+   "rule": "the advantage over MDE under the EVEN synthetic target is negative",
+   "value": -12.953134387288548,
+   "k_inversions": null,
+   "distance_to_boundary": 12.953134387288548,
+   "distance_rule": "the aggregate sits this many MDEs below zero",
+   "kind": "the margin is exact; NO bound in units is derivable, because the per-unit rows behind the aggregate are not recorded -- stated as such rather than estimated into a number"
+  }
+ },
+ "L3_reach": {
+  "paging": {
+   "unit": "profile (13 of them)",
+   "asserts": "an ABSENCE (no profile reaches the published scale)",
+   "rule": "a profile reaches the published robustness scale (0.008)",
+   "value": {
+    "in_window": 0,
+    "profiles": 13
+   },
+   "k_inversions": null,
+   "distance_to_boundary": 0.004667,
+   "distance_rule": "the best profile sits this far BELOW the published scale (in worst-unit degradation); only a better profile crosses it",
+   "kind": "exact (a threshold count over the recorded profiles)"
+  },
+  "sched": {
+   "unit": "profile (13 of them)",
+   "asserts": "an ABSENCE (no profile reaches the published scale)",
+   "rule": "a profile reaches the published robustness scale (0.008)",
+   "value": {
+    "in_window": 0,
+    "profiles": 13
+   },
+   "k_inversions": null,
+   "distance_to_boundary": 0.118535,
+   "distance_rule": "the best profile sits this far BELOW the published scale (in worst-unit degradation); only a better profile crosses it",
+   "kind": "exact (a threshold count over the recorded profiles)"
+  },
+  "ski": {
+   "unit": "profile (13 of them)",
+   "asserts": "an effect (the harness reaches the published scale)",
+   "rule": "a profile reaches the published robustness scale (0.008)",
+   "value": {
+    "in_window": 12,
+    "profiles": 13
+   },
+   "k_inversions": 12,
+   "distance_to_boundary": null,
+   "distance_rule": null,
+   "kind": "exact (a threshold count over the recorded profiles)"
+  }
+ }
+}
