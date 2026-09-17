@@ -32,12 +32,21 @@
 #     figure checks: <n> run, 0 failed                        (n = 106 at the time of writing)
 #     assemble: <n> placeholders resolved, <m> references cited
 #     manuscript check: <n> run, 0 failed
+#     refs_display.json matches a fresh build: True
+#     references section matches the renderer: True
 #     instrument audit: <n> run, 0 failed
 #     selftest: 0 case(s) failed
 #     verdict: OK
 #     REPRODUCE: ALL GREEN
 #
-# Step 4 audits the instruments themselves against four disciplines: any criterion whose branch
+# Step 4 takes the two reads the correction round's required changes name: that
+# `refs_display.json` is the file a fresh build produces (every entry carrying its
+# authored stated difference and a resolvable URL), and that the committed
+# `## References` section is the section the renderer produces -- one entry per line,
+# blank line between entries, the year in parentheses after the author block, no
+# backticked identifier.
+#
+# Step 5 audits the instruments themselves against four disciplines: any criterion whose branch
 # depends on a variable must name that variable and declare the regime where it is undefined;
 # any exclusion must publish the excluded VALUES and not only its rate; every guard must state
 # the fraction of the surface it audits and must be able to fail the run; and it runs the two
@@ -132,12 +141,16 @@ echo "== 3. manuscript =="
 "$PY" check_manuscript.py
 
 echo
-echo "== 4. instrument audit (the checks' own regimes, exclusions and coverage) =="
+echo "== 4. references (generated form) =="
+"$PY" refs_build_display.py --check
+"$PY" refs_render.py --check
+
+echo "== 5. instrument audit (the checks' own regimes, exclusions and coverage) =="
 "$PY" instrument_audit.py
 "$PY" verify_refs.py --selftest-only
 
 echo
-echo "== 5. digests of the artefacts this package ships (copy this block, never type it) =="
+echo "== 6. digests of the artefacts this package ships (copy this block, never type it) =="
 for f in canonical_results.json run.log references.md manuscript.md reference-check.md; do
   if [ -f "$f" ]; then
     printf '%s sha256 %s\n' "$f" \

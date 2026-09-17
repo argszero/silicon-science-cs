@@ -1,0 +1,1032 @@
+{
+ "adapt": {
+  "authors": "Bretz, F.; Koenig, F.; Brannath, W.; et al.",
+  "difference": "designs confirmatory trials able to adapt mid-course; adaptation is a different lever from repetition count, which is the one we hold.",
+  "key": "adapt",
+  "n": 6,
+  "title": "Adaptive designs for confirmatory clinical trials",
+  "url": "https://doi.org/10.1002/sim.3538",
+  "venue": "Statistics in Medicine",
+  "year": "2009"
+ },
+ "agentbench": {
+  "authors": "Liu, X.; Yu, H.; Zhang, H.; et al.",
+  "difference": "evaluates LLMs as agents across tasks; a benchmark comparison between systems, not a powered test of one system's change.",
+  "key": "agentbench",
+  "n": 63,
+  "title": "AgentBench: Evaluating LLMs as Agents",
+  "url": "https://arxiv.org/abs/2308.03688",
+  "venue": "arXiv preprint arXiv:2308.03688",
+  "year": "2023"
+ },
+ "aqp": {
+  "authors": "Li, K.; Li, G.",
+  "difference": "surveys approximate query processing; AQP trades accuracy for cost inside one query, while we trade re-executions for decisiveness across a comparison.",
+  "key": "aqp",
+  "n": 82,
+  "title": "Approximate Query Processing: What is New and Where to Go?: A Survey on Approximate Query Processing",
+  "url": "https://doi.org/10.1007/s41019-018-0074-4",
+  "venue": "Data Science and Engineering",
+  "year": "2018"
+ },
+ "atoml": {
+  "authors": "Gundersen, O. E.; Kjensmo, S.",
+  "difference": "surveys reproducibility in AI venues; a survey of practice, while we derive the sampling quantity that practice needs.",
+  "key": "atoml",
+  "n": 26,
+  "title": "State of the Art: Reproducibility in Artificial Intelligence",
+  "url": "https://doi.org/10.1609/aaai.v32i1.11503",
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "year": "2018"
+ },
+ "attestation": {
+  "authors": "McKeen, F.; Alexandrovich, I.; Berenzon, A.; et al.",
+  "difference": "defines a hardware instruction set for isolated execution; the mechanism that makes an execution attributable, while we ask how many such executions a verdict needs.",
+  "key": "attestation",
+  "n": 15,
+  "title": "Innovative instructions and software model for isolated execution",
+  "url": "https://doi.org/10.1145/2487726.2488368",
+  "venue": "Proceedings of the 2nd International Workshop on Hardware and Architectural Support for Security and Privacy",
+  "year": "2013"
+ },
+ "audit": {
+  "authors": "Wang, W.; An, B.; Jiang, Y.",
+  "difference": "optimises spot-checking effort for crowdsourced grading quality; an allocation problem among items, while ours is how many repetitions decide one item's verdict.",
+  "key": "audit",
+  "n": 9,
+  "title": "Optimal Spot-Checking for Improving the Evaluation Quality of Crowdsourcing: Application to Peer Grading Systems",
+  "url": "https://doi.org/10.1109/tcss.2020.2998732",
+  "venue": "IEEE Transactions on Computational Social Systems",
+  "year": "2020"
+ },
+ "bandits": {
+  "authors": "Auer, P.; Cesa-Bianchi, N.; Freund, Y.; et al.",
+  "difference": "analyses the nonstochastic multiarmed bandit; sequential allocation of effort, which we do not do — our budget is fixed in advance.",
+  "key": "bandits",
+  "n": 83,
+  "title": "The Nonstochastic Multiarmed Bandit Problem",
+  "url": "https://doi.org/10.1137/s0097539701398375",
+  "venue": "SIAM Journal on Computing",
+  "year": "2002"
+ },
+ "bft": {
+  "authors": "Lamport, L.; Shostak, R.; Pease, M.",
+  "difference": "states the Byzantine generals problem; agreement is reached by protocols, while our verifier decides by sampling repeated runs.",
+  "key": "bft",
+  "n": 101,
+  "title": "The Byzantine Generals Problem",
+  "url": "https://doi.org/10.1145/357172.357176",
+  "venue": "ACM Transactions on Programming Languages and Systems",
+  "year": "1982"
+ },
+ "bh1995": {
+  "authors": "Benjamini, Y.; Hochberg, Y.",
+  "difference": "controls the false discovery rate over many hypotheses; we control nothing across hypotheses and instead characterise one comparison's power in the budget.",
+  "key": "bh1995",
+  "n": 30,
+  "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+  "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+  "year": "1995"
+ },
+ "bigbench": {
+  "authors": "Srivastava, A.; Rastogi, A.; Rao, A.; et al.",
+  "difference": "quantifies capabilities beyond the imitation game; a broad capability benchmark, not a powered comparison of two systems.",
+  "key": "bigbench",
+  "n": 68,
+  "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+  "url": "https://arxiv.org/abs/2206.04615",
+  "venue": "arXiv preprint arXiv:2206.04615",
+  "year": "2022"
+ },
+ "bootstrap": {
+  "authors": "Efron, B.; Tibshirani, R. J.",
+  "difference": "introduces the bootstrap; the resampling method we use to build the intervals whose inversion gives decidability.",
+  "key": "bootstrap",
+  "n": 94,
+  "title": "An Introduction to the Bootstrap",
+  "url": "https://doi.org/10.1007/978-1-4899-4541-9",
+  "venue": "Springer US",
+  "year": "1993"
+ },
+ "bouthillier": {
+  "authors": "Bouthillier, X.; Delaunay, P.; Bronzi, M.; et al.",
+  "difference": "accounts for variance in ML benchmarks; variance accounting is the input to our curve, where the curve itself is the contribution.",
+  "key": "bouthillier",
+  "n": 49,
+  "title": "Accounting for Variance in Machine Learning Benchmarks",
+  "url": "https://arxiv.org/abs/2103.03098",
+  "venue": "arXiv preprint arXiv:2103.03098",
+  "year": "2021"
+ },
+ "byk2001": {
+  "authors": "Benjamini, Y.; Yekutieli, D.",
+  "difference": "extends false-discovery control to dependent tests; dependence between re-executions is part of our node's dispersion term rather than a multiplicity setting.",
+  "key": "byk2001",
+  "n": 32,
+  "title": "The control of the false discovery rate in multiple testing under dependency",
+  "url": "https://doi.org/10.1214/aos/1013699998",
+  "venue": "The Annals of Statistics",
+  "year": "2001"
+ },
+ "chainofver": {
+  "authors": "Dhuliawala, S.; Komeili, M.; Xu, J.; et al.",
+  "difference": "reduces hallucination by verifying generated claims in stages; an internal verification pass, which is a different budget from external re-execution.",
+  "key": "chainofver",
+  "n": 59,
+  "title": "Chain-of-Verification Reduces Hallucination in Large Language Models",
+  "url": "https://arxiv.org/abs/2309.11495",
+  "venue": "arXiv preprint arXiv:2309.11495",
+  "year": "2023"
+ },
+ "clopperpearson": {
+  "authors": "Clopper, C. J.; Pearson, E. S.",
+  "difference": "gives exact binomial fiducial limits; an exact alternative to the interval we use, with a conservatism we do not need here.",
+  "key": "clopperpearson",
+  "n": 90,
+  "title": "The Use of Confidence Or Fiducial Limits Illustrated in the Case of the Binomial",
+  "url": "https://doi.org/10.1093/biomet/26.4.404",
+  "venue": "Biometrika",
+  "year": "1934"
+ },
+ "concreteproblems": {
+  "authors": "Amodei, D.; Olah, C.; Steinhardt, J.; et al.",
+  "difference": "frames concrete research problems in AI safety; a research agenda where our contribution is one measurable sub-question inside verification.",
+  "key": "concreteproblems",
+  "n": 70,
+  "title": "Concrete Problems in AI Safety",
+  "url": "https://arxiv.org/abs/1606.06565",
+  "venue": "arXiv preprint arXiv:1606.06565",
+  "year": "2016"
+ },
+ "conformalgentle": {
+  "authors": "Angelopoulos, A. N.; Bates, S.",
+  "difference": "introduces conformal prediction as distribution-free uncertainty quantification; a per-item guarantee, while our quantity is a per-node detectability under repetition.",
+  "key": "conformalgentle",
+  "n": 42,
+  "title": "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification",
+  "url": "https://arxiv.org/abs/2107.07511",
+  "venue": "arXiv preprint arXiv:2107.07511",
+  "year": "2021"
+ },
+ "conformalreg": {
+  "authors": "Lei, J.; G’Sell, M.; Rinaldo, A.; et al.",
+  "difference": "gives distribution-free predictive inference for regression; prediction coverage is not the comparison we derive, which is between two verification rules.",
+  "key": "conformalreg",
+  "n": 43,
+  "title": "Distribution-Free Predictive Inference for Regression",
+  "url": "https://doi.org/10.1080/01621459.2017.1307116",
+  "venue": "Journal of the American Statistical Association",
+  "year": "2018"
+ },
+ "conformalvalid": {
+  "authors": "Vovk, V.",
+  "difference": "establishes conditional validity of inductive conformal predictors; validity is a property of a predictor, and we study a test's power.",
+  "key": "conformalvalid",
+  "n": 44,
+  "title": "Conditional validity of inductive conformal predictors",
+  "url": "https://doi.org/10.1007/s10994-013-5355-6",
+  "venue": "Machine Learning",
+  "year": "2013"
+ },
+ "contamination": {
+  "authors": "Deng, C.; Zhao, Y.; Tang, X.; et al.",
+  "difference": "investigates benchmark contamination; contamination shifts a metric's meaning, and we ask whether a shift is detectable at a given budget.",
+  "key": "contamination",
+  "n": 67,
+  "title": "Investigating Data Contamination in Modern Benchmarks for Large Language Models",
+  "url": "https://arxiv.org/abs/2311.09783",
+  "venue": "arXiv preprint arXiv:2311.09783",
+  "year": "2023"
+ },
+ "costsampling": {
+  "authors": "Agarwal, S.; Iyer, A. P.; Panda, A.; et al.",
+  "difference": "computes approximate answers within an error bound over large data; we ask whether a budget's verdict is decidable, not whether an approximation is accurate.",
+  "key": "costsampling",
+  "n": 14,
+  "title": "Blink and it's done: interactive queries on very large data",
+  "url": "https://doi.org/10.14778/2367502.2367533",
+  "venue": "Proceedings of the VLDB Endowment",
+  "year": "2012"
+ },
+ "costsensitive": {
+  "authors": "Domingos, P.",
+  "difference": "makes classifiers cost-sensitive by wrapping them in a meta-procedure; a cost-aware learning method, where our cost is verification effort.",
+  "key": "costsensitive",
+  "n": 80,
+  "title": "MetaCost: a general method for making classifiers cost-sensitive",
+  "url": "https://doi.org/10.1145/312129.312220",
+  "venue": "Proceedings of the fifth ACM SIGKDD international conference on Knowledge discovery and data mining",
+  "year": "1999"
+ },
+ "cot": {
+  "authors": "Wei, J.; Wang, X.; Schuurmans, D.; et al.",
+  "difference": "elicits reasoning with chain-of-thought prompting; a capability result, not a statement about the number of runs a verdict needs.",
+  "key": "cot",
+  "n": 56,
+  "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+  "url": "https://arxiv.org/abs/2201.11903",
+  "venue": "arXiv preprint arXiv:2201.11903",
+  "year": "2022"
+ },
+ "design": {
+  "authors": "Howard, R.",
+  "difference": "prices information before it is bought; the same calculus applied to a different good, where the buyer sets the number of re-executions.",
+  "key": "design",
+  "n": 12,
+  "title": "Information Value Theory",
+  "url": "https://doi.org/10.1109/tssc.1966.300074",
+  "venue": "IEEE Transactions on Systems Science and Cybernetics",
+  "year": "1966"
+ },
+ "dkw": {
+  "authors": "Dvoretzky, A.; Kiefer, J.; Wolfowitz, J.",
+  "difference": "gives the asymptotic minimax behaviour of the empirical distribution function; a limit statement where our object is a finite-budget interval.",
+  "key": "dkw",
+  "n": 39,
+  "title": "Asymptotic Minimax Character of the Sample Distribution Function and of the Classical Multinomial Estimator",
+  "url": "https://doi.org/10.1214/aoms/1177728174",
+  "venue": "The Annals of Mathematical Statistics",
+  "year": "1956"
+ },
+ "drlrepro": {
+  "authors": "Henderson, P.; Islam, R.; Bachman, P.; et al.",
+  "difference": "shows deep RL results are sensitive to seeds; seed sensitivity motivates our dispersion term and we measure its effect on detection.",
+  "key": "drlrepro",
+  "n": 50,
+  "title": "Deep Reinforcement Learning That Matters",
+  "url": "https://doi.org/10.1609/aaai.v32i1.11694",
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "year": "2018"
+ },
+ "dyba2006": {
+  "authors": "Dybå, T.; Kampenes, V. B.; Sjøberg, D. I. K.",
+  "difference": "reviews statistical power in software-engineering experiments; we derive the same power object for a re-execution verification budget rather than for a treatment effect.",
+  "key": "dyba2006",
+  "n": 46,
+  "title": "A systematic review of statistical power in software engineering experiments",
+  "url": "https://doi.org/10.1016/j.infsof.2005.08.009",
+  "venue": "Information and Software Technology",
+  "year": "2006"
+ },
+ "effectsize": {
+  "authors": "Cohen, J.",
+  "difference": "tabulates effect sizes for behavioural-science power analysis; a reference for standardised effects, which we reformulate for verification nodes.",
+  "key": "effectsize",
+  "n": 98,
+  "title": "Statistical Power Analysis for the Behavioral Sciences",
+  "url": "https://doi.org/10.4324/9780203771587",
+  "venue": "Routledge",
+  "year": "2013"
+ },
+ "ekiden": {
+  "authors": "Cheng, R.; Zhang, F.; Kos, J.; et al.",
+  "difference": "gives confidentiality-preserving smart contracts with attested execution; we study a verifier that repeats a nondeterministic pipeline instead of trusting one attested run.",
+  "key": "ekiden",
+  "n": 17,
+  "title": "Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts",
+  "url": "https://doi.org/10.1109/eurosp.2019.00023",
+  "venue": "2019 IEEE European Symposium on Security and Privacy (EuroS&P)",
+  "year": "2019"
+ },
+ "evalharness": {
+  "authors": "Liang, P.; Bommasani, R.; Lee, T.; et al.",
+  "difference": "holistically evaluates language models across scenarios; a broad measurement programme where our object is one decision's power.",
+  "key": "evalharness",
+  "n": 53,
+  "title": "Holistic Evaluation of Language Models",
+  "url": "https://arxiv.org/abs/2211.09110",
+  "venue": "arXiv preprint arXiv:2211.09110",
+  "year": "2022"
+ },
+ "evalues": {
+  "authors": "Vovk, V.; Wang, R.",
+  "difference": "calibrates and combines e-values; a different evidence currency, where we use the closed-form power of a mean test under repetition.",
+  "key": "evalues",
+  "n": 35,
+  "title": "E-values: Calibration, combination and applications",
+  "url": "https://doi.org/10.1214/20-aos2020",
+  "venue": "The Annals of Statistics",
+  "year": "2021"
+ },
+ "extremevalue": {
+  "authors": "de Haan, L.; Ferreira, A.",
+  "difference": "introduces extreme-value theory; tail modelling for maxima, where our object is a mean-shift comparison with a dispersion term.",
+  "key": "extremevalue",
+  "n": 93,
+  "title": "Extreme Value Theory: An Introduction",
+  "url": "https://doi.org/10.1007/0-387-34471-3",
+  "venue": "Springer Series in Operations Research and Financial Engineering",
+  "year": "2006"
+ },
+ "fisher1922": {
+  "authors": "Fisher, R. A.",
+  "difference": "lays the foundations of theoretical statistics; the estimation theory our effect-size coordinates presuppose.",
+  "key": "fisher1922",
+  "n": 87,
+  "title": "On the mathematical foundations of theoretical statistics",
+  "url": "https://doi.org/10.1098/rsta.1922.0009",
+  "venue": "Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character",
+  "year": "1922"
+ },
+ "flicker": {
+  "authors": "McCune, J. M.; Parno, B. J.; Perrig, A.; et al.",
+  "difference": "minimises the trusted computing base per execution; a smaller base changes what one run attests, not how many runs a metric needs.",
+  "key": "flicker",
+  "n": 16,
+  "title": "Flicker: an execution infrastructure for tcb minimization",
+  "url": "https://doi.org/10.1145/1357010.1352625",
+  "venue": "ACM SIGOPS Operating Systems Review",
+  "year": "2008"
+ },
+ "gaia": {
+  "authors": "Mialon, G.; Fourrier, C.; Swift, C.; et al.",
+  "difference": "introduces a benchmark for general assistants; benchmark design, while we supply the sampling arithmetic a benchmark comparison needs.",
+  "key": "gaia",
+  "n": 64,
+  "title": "GAIA: a benchmark for General AI Assistants",
+  "url": "https://arxiv.org/abs/2311.12983",
+  "venue": "arXiv preprint arXiv:2311.12983",
+  "year": "2023"
+ },
+ "goalmisspec": {
+  "authors": "Langosco, L.; Koch, J.; Sharkey, L.; et al.",
+  "difference": "studies goal misgeneralisation in reinforcement learning; a failure of objectives, where we study the cost of detecting a metric divergence.",
+  "key": "goalmisspec",
+  "n": 71,
+  "title": "Goal Misgeneralization in Deep Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2105.14111",
+  "venue": "arXiv preprint arXiv:2105.14111",
+  "year": "2021"
+ },
+ "groupseq": {
+  "authors": "Pocock, S. J.",
+  "difference": "fixes group-sequential boundaries for clinical trials under a planned effect size; we take the effect size as the unknown and ask which nodes a budget can decide.",
+  "key": "groupseq",
+  "n": 5,
+  "title": "Group sequential methods in the design and analysis of clinical trials",
+  "url": "https://doi.org/10.1093/biomet/64.2.191",
+  "venue": "Biometrika",
+  "year": "1977"
+ },
+ "hitchhiker": {
+  "authors": "Dror, R.; Baumer, G.; Shlomov, S.; et al.",
+  "difference": "guides significance testing in NLP; guidance on practice, while we give the closed-form budget-to-power relation practice would need.",
+  "key": "hitchhiker",
+  "n": 47,
+  "title": "The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing",
+  "url": "https://doi.org/10.18653/v1/p18-1128",
+  "venue": "Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+  "year": "2018"
+ },
+ "hochberg1988": {
+  "authors": "Hochberg, Y.",
+  "difference": "sharpens the Bonferroni step-up procedure; a multiplicity correction is orthogonal to the repetition budget we vary.",
+  "key": "hochberg1988",
+  "n": 31,
+  "title": "A sharper Bonferroni procedure for multiple tests of significance",
+  "url": "https://doi.org/10.1093/biomet/75.4.800",
+  "venue": "Biometrika",
+  "year": "1988"
+ },
+ "impossibility": {
+  "authors": "Bahadur, R. R.; Savage, L. J.",
+  "difference": "proves no nonparametric procedure is uniformly consistent on all alternatives; that is why our construct is stated as a curve over node dispersion rather than a uniform guarantee.",
+  "key": "impossibility",
+  "n": 7,
+  "title": "The Nonexistence of Certain Statistical Procedures in Nonparametric Problems",
+  "url": "https://doi.org/10.1214/aoms/1177728077",
+  "venue": "The Annals of Mathematical Statistics",
+  "year": "1956"
+ },
+ "ingster": {
+  "authors": "Ingster, Y. I.; Suslina, I. A.",
+  "difference": "characterises the separation rate at which nonparametric tests can detect a departure; we measure detection for a specific mean-shift node class inside a verification budget.",
+  "key": "ingster",
+  "n": 8,
+  "title": "Nonparametric Goodness-of-Fit Testing Under Gaussian Models",
+  "url": "https://doi.org/10.1007/978-0-387-21580-8",
+  "venue": "Lecture Notes in Statistics",
+  "year": "2003"
+ },
+ "instructgpt": {
+  "authors": "Ouyang, L.; Wu, J.; Jiang, X.; et al.",
+  "difference": "trains models to follow instructions from human feedback; a training method, upstream of the verification question we study.",
+  "key": "instructgpt",
+  "n": 55,
+  "title": "Training language models to follow instructions with human feedback",
+  "url": "https://arxiv.org/abs/2203.02155",
+  "venue": "arXiv preprint arXiv:2203.02155",
+  "year": "2022"
+ },
+ "judgebias": {
+  "authors": "Wang, P.; Li, L.; Chen, L.; et al.",
+  "difference": "finds LLM evaluators biased in position and format; evaluator bias shifts a node's mean, which is exactly the coordinate our curve reads.",
+  "key": "judgebias",
+  "n": 52,
+  "title": "Large Language Models are not Fair Evaluators",
+  "url": "https://arxiv.org/abs/2305.17926",
+  "venue": "arXiv preprint arXiv:2305.17926",
+  "year": "2023"
+ },
+ "landemets": {
+  "authors": "Gordon Lan, K. K.; Demets, D. L.",
+  "difference": "gives discrete sequential boundaries for clinical trials; a boundary rule that assumes a planned effect, across which we instead measure decidability.",
+  "key": "landemets",
+  "n": 33,
+  "title": "Discrete sequential boundaries for clinical trials",
+  "url": "https://doi.org/10.1093/biomet/70.3.659",
+  "venue": "Biometrika",
+  "year": "1983"
+ },
+ "leaderboard": {
+  "authors": "Singh, S.; Nan, Y.; Wang, A.; et al.",
+  "difference": "analyses leaderboard dynamics and rank instability; rank instability is a comparative symptom of the variance we model directly.",
+  "key": "leaderboard",
+  "n": 66,
+  "title": "The Leaderboard Illusion",
+  "url": "https://arxiv.org/abs/2504.20879",
+  "venue": "arXiv preprint arXiv:2504.20879",
+  "year": "2025"
+ },
+ "llmjudge": {
+  "authors": "Zheng, L.; Chiang, W. L.; Sheng, Y.; et al.",
+  "difference": "shows LLM judges correlate with human preference; a judge is a scorer, and we ask how many re-executions make a scorer's comparison decidable.",
+  "key": "llmjudge",
+  "n": 51,
+  "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+  "url": "https://arxiv.org/abs/2306.05685",
+  "venue": "arXiv preprint arXiv:2306.05685",
+  "year": "2023"
+ },
+ "massart": {
+  "authors": "Massart, P.",
+  "difference": "gives the tight constant in the Dvoretzky-Kiefer-Wolfowitz inequality; a tight constant sharpens intervals, which we use rather than derive.",
+  "key": "massart",
+  "n": 40,
+  "title": "The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality",
+  "url": "https://doi.org/10.1214/aop/1176990746",
+  "venue": "The Annals of Probability",
+  "year": "1990"
+ },
+ "massey": {
+  "authors": "Massey, F. J.",
+  "difference": "introduces the Kolmogorov-Smirnov goodness-of-fit test; a distributional test, where our comparison is between two rules' expected decisions.",
+  "key": "massey",
+  "n": 41,
+  "title": "The Kolmogorov-Smirnov Test for Goodness of Fit",
+  "url": "https://doi.org/10.1080/01621459.1951.10500769",
+  "venue": "Journal of the American Statistical Association",
+  "year": "1951"
+ },
+ "mcmcse": {
+  "authors": "Flegal, J. M.; Jones, G. L.",
+  "difference": "estimates Monte Carlo standard errors; the same estimation problem for a single sampler, applied here to a metric comparison across runs.",
+  "key": "mcmcse",
+  "n": 96,
+  "title": "Implementing MCMC: Estimating with Confidence",
+  "url": "https://doi.org/10.1201/b10905-8",
+  "venue": "Handbook of Markov Chain Monte Carlo",
+  "year": "2011"
+ },
+ "metricsat": {
+  "authors": "Ott, S.; Barbosa-Silva, A.; Blagec, K.; et al.",
+  "difference": "maps benchmark creation and saturation dynamics; the saturation we measure is of a rule's advantage in the budget, not of a benchmark's headroom.",
+  "key": "metricsat",
+  "n": 13,
+  "title": "Mapping global dynamics of benchmark creation and saturation in artificial intelligence",
+  "url": "https://doi.org/10.1038/s41467-022-34591-0",
+  "venue": "Nature Communications",
+  "year": "2022"
+ },
+ "mltesting": {
+  "authors": "Zhang, J. M.; Harman, M.; Ma, L.; et al.",
+  "difference": "surveys machine-learning testing; a survey of testing practice where our contribution is the sampling arithmetic of one test family.",
+  "key": "mltesting",
+  "n": 77,
+  "title": "Machine Learning Testing: Survey, Landscapes and Horizons",
+  "url": "https://arxiv.org/abs/1906.10742",
+  "venue": "arXiv preprint arXiv:1906.10742",
+  "year": "2019"
+ },
+ "mmlu": {
+  "authors": "Hendrycks, D.; Burns, C.; Basart, S.; et al.",
+  "difference": "measures multitask language understanding; a benchmark whose scores would be compared under exactly the variance structure we quantify.",
+  "key": "mmlu",
+  "n": 54,
+  "title": "Measuring Massive Multitask Language Understanding",
+  "url": "https://arxiv.org/abs/2009.03300",
+  "venue": "arXiv preprint arXiv:2009.03300",
+  "year": "2020"
+ },
+ "neuripsrepro": {
+  "authors": "Pineau, J.; Vincent-Lamarre, P.; Sinha, K.; et al.",
+  "difference": "reports a conference reproducibility programme's findings; programme-level practice, where we quantify a single verifier's detection power.",
+  "key": "neuripsrepro",
+  "n": 27,
+  "title": "Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)",
+  "url": "https://arxiv.org/abs/2003.12206",
+  "venue": "arXiv preprint arXiv:2003.12206",
+  "year": "2020"
+ },
+ "neymanpearson": {
+  "authors": "Neyman, J.; Pearson, E. S.",
+  "difference": "founds the most efficient test of a statistical hypothesis; the power framework our closed form instantiates for a re-execution budget.",
+  "key": "neymanpearson",
+  "n": 86,
+  "title": "IX. On the problem of the most efficient tests of statistical hypotheses",
+  "url": "https://doi.org/10.1098/rsta.1933.0009",
+  "venue": "Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character",
+  "year": "1933"
+ },
+ "notary": {
+  "authors": "Athalye, A.; Belay, A.; Kaashoek, M. F.; et al.",
+  "difference": "builds a device for secure transaction approval; the approval is a single attestation, where we price repetition.",
+  "key": "notary",
+  "n": 18,
+  "title": "Notary: a device for secure transaction approval",
+  "url": "https://doi.org/10.1145/3341301.3359661",
+  "venue": "Proceedings of the 27th ACM Symposium on Operating Systems Principles",
+  "year": "2019"
+ },
+ "nova": {
+  "authors": "Ardebili, M. S.",
+  "difference": "builds tamper-evident, replayable evidence for agent runs; an evidence substrate, where we study how many re-executions a policy-pinned metric needs before a verdict is decidable.",
+  "key": "nova",
+  "n": 1,
+  "title": "NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs",
+  "url": "https://arxiv.org/abs/2609.12582",
+  "venue": "arXiv preprint arXiv:2609.12582",
+  "year": "2026"
+ },
+ "onlineagg": {
+  "authors": "Hellerstein, J. M.; Haas, P. J.; Wang, H. J.",
+  "difference": "gives online aggregation with running confidence intervals; an interval over a query statistic, where our interval decides a rule comparison.",
+  "key": "onlineagg",
+  "n": 81,
+  "title": "Online aggregation",
+  "url": "https://doi.org/10.1145/253262.253291",
+  "venue": "ACM SIGMOD Record",
+  "year": "1997"
+ },
+ "optdesign": {
+  "authors": "Atkinson, A. C.; Donev, A. N.; Tobias, R. D.",
+  "difference": "treats optimum experimental design; optimal allocation of a fixed design budget, which is the closest classical analogue of our question and assumes a known model.",
+  "key": "optdesign",
+  "n": 85,
+  "title": "Optimum Experimental Designs, with SAS",
+  "url": "https://doi.org/10.1093/oso/9780199296590.001.0001",
+  "venue": "Oxford University PressOxford",
+  "year": "2007"
+ },
+ "orderstats": {
+  "authors": "David, H. A.; Nagaraja, H. N.",
+  "difference": "gives the theory of order statistics; the distributional machinery behind the quantile-based quantities our intervals use.",
+  "key": "orderstats",
+  "n": 103,
+  "title": "Order Statistics",
+  "url": "https://doi.org/10.1002/0471722162",
+  "venue": "Wiley Series in Probability and Statistics",
+  "year": "2003"
+ },
+ "outlierexposure": {
+  "authors": "Hendrycks, D.; Mazeika, M.; Dietterich, T.",
+  "difference": "trains anomaly detectors with outlier exposure; improves a detector's accuracy, which enters our curve as a dispersion coordinate.",
+  "key": "outlierexposure",
+  "n": 79,
+  "title": "Deep Anomaly Detection with Outlier Exposure",
+  "url": "https://arxiv.org/abs/1812.04606",
+  "venue": "arXiv preprint arXiv:1812.04606",
+  "year": "2018"
+ },
+ "passk": {
+  "authors": "Chen, M.; Tworek, J.; Jun, H.; et al.",
+  "difference": "evaluates code models with pass@k; pass@k measures capability growth with attempts, whereas our budget buys detection power, not capability.",
+  "key": "passk",
+  "n": 61,
+  "title": "Evaluating Large Language Models Trained on Code",
+  "url": "https://arxiv.org/abs/2107.03374",
+  "venue": "arXiv preprint arXiv:2107.03374",
+  "year": "2021"
+ },
+ "pbft": {
+  "authors": "Castro, M.; Liskov, B.",
+  "difference": "makes Byzantine replication practical; replication assumes faulty replicas, and we assume honest re-executions of a nondeterministic pipeline.",
+  "key": "pbft",
+  "n": 102,
+  "title": "Practical byzantine fault tolerance and proactive recovery",
+  "url": "https://doi.org/10.1145/571637.571640",
+  "venue": "ACM Transactions on Computer Systems",
+  "year": "2002"
+ },
+ "peeking": {
+  "authors": "Johari, R.; Koomen, P.; Pekelis, L.; et al.",
+  "difference": "shows why peeking at A/B tests inflates error rates; peeking inflates the error rate, while our non-monotonicity is in the comparison between rules and in the construct's own approximation error.",
+  "key": "peeking",
+  "n": 36,
+  "title": "Peeking at A/B Tests: Why it matters, and what to do about it",
+  "url": "https://doi.org/10.1145/3097983.3097992",
+  "venue": "Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+  "year": "2017"
+ },
+ "peng2011": {
+  "authors": "Peng, R. D.",
+  "difference": "argues for reproducible research in computational science; we measure what a verifier can conclude when it re-runs rather than reads.",
+  "key": "peng2011",
+  "n": 25,
+  "title": "Reproducible Research in Computational Science",
+  "url": "https://doi.org/10.1126/science.1213847",
+  "venue": "Science",
+  "year": "2011"
+ },
+ "permutationtests": {
+  "authors": "Good, P.",
+  "difference": "treats permutation, parametric and bootstrap tests of hypotheses; a comparison of test families, where we compare two verification rules.",
+  "key": "permutationtests",
+  "n": 95,
+  "title": "Permutation, Parametric and Bootstrap Tests of Hypotheses",
+  "url": "https://doi.org/10.1007/b138696",
+  "venue": "Springer Series in Statistics",
+  "year": "2005"
+ },
+ "pinocchio": {
+  "authors": "Parno, B.; Howell, J.; Gentry, C.; et al.",
+  "difference": "makes verifiable computation practical; practical proving is an alternative to repetition, and we measure the repetition lever on its own.",
+  "key": "pinocchio",
+  "n": 21,
+  "title": "Pinocchio: Nearly Practical Verifiable Computation",
+  "url": "https://doi.org/10.1109/sp.2013.47",
+  "venue": "2013 IEEE Symposium on Security and Privacy",
+  "year": "2013"
+ },
+ "power": {
+  "authors": "Cohen, J.",
+  "difference": "gives the conventional closed form for detecting a standardised mean difference; we give the same form for a re-execution budget and then measure where its band actually sits.",
+  "key": "power",
+  "n": 3,
+  "title": "A power primer",
+  "url": "https://doi.org/10.1037/0033-2909.112.1.155",
+  "venue": "Psychological Bulletin",
+  "year": "1992"
+ },
+ "propertytesting": {
+  "authors": "Goldreich, O.; Goldwasser, S.; Ron, D.",
+  "difference": "relates property testing to learning and approximation; the sublinear-in-size logic is complementary to our sublinear-in-repeats question.",
+  "key": "propertytesting",
+  "n": 74,
+  "title": "Property testing and its connection to learning and approximation",
+  "url": "https://doi.org/10.1145/285055.285060",
+  "venue": "Journal of the ACM",
+  "year": "1998"
+ },
+ "provdb": {
+  "authors": "Cheney, J.; Chiticariu, L.; Tan, W. C.",
+  "difference": "surveys provenance in databases; provenance records what happened in one execution, whereas our verifier compares metrics across executions.",
+  "key": "provdb",
+  "n": 29,
+  "title": "Provenance in Databases: Why, How, and Where",
+  "url": "https://doi.org/10.1561/1900000006",
+  "venue": "Foundations and Trends in Databases",
+  "year": "2009"
+ },
+ "pvalues": {
+  "authors": "Greenland, S.; Senn, S. J.; Rothman, K. J.; et al.",
+  "difference": "warns against misinterpreting p-values, intervals and power; a misinterpretation guide whose power quantity we make budget-explicit.",
+  "key": "pvalues",
+  "n": 97,
+  "title": "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations",
+  "url": "https://doi.org/10.1007/s10654-016-0149-3",
+  "venue": "European Journal of Epidemiology",
+  "year": "2016"
+ },
+ "qbc": {
+  "authors": "Seung, H. S.; Opper, M.; Sompolinsky, H.",
+  "difference": "selects informative examples by committee disagreement; an active-sampling result, and our verifier samples uniformly rather than selectively.",
+  "key": "qbc",
+  "n": 84,
+  "title": "Query by committee",
+  "url": "https://doi.org/10.1145/130385.130417",
+  "venue": "Proceedings of the fifth annual workshop on Computational learning theory",
+  "year": "1992"
+ },
+ "quantiles": {
+  "authors": "Hyndman, R. J.; Fan, Y.",
+  "difference": "describes sample quantile conventions in statistical packages; a convention we rely on when reading quantile thresholds, not a claim we extend.",
+  "key": "quantiles",
+  "n": 91,
+  "title": "Sample Quantiles in Statistical Packages",
+  "url": "https://doi.org/10.1080/00031305.1996.10473566",
+  "venue": "The American Statistician",
+  "year": "1996"
+ },
+ "recsyeval": {
+  "authors": "Ferrari Dacrema, M.; Cremonesi, P.; Jannach, D.",
+  "difference": "questions progress claims in neural recommendation; a critique of comparisons that our power curve explains in sampling terms.",
+  "key": "recsyeval",
+  "n": 69,
+  "title": "Are we really making much progress? A worrying analysis of recent neural recommendation approaches",
+  "url": "https://doi.org/10.1145/3298689.3347058",
+  "venue": "Proceedings of the 13th ACM Conference on Recommender Systems",
+  "year": "2019"
+ },
+ "redteam": {
+  "authors": "Perez, E.; Huang, S.; Song, F.; et al.",
+  "difference": "generates adversarial test cases with language models; test generation finds failures, while our test decides whether a metric change is detectable.",
+  "key": "redteam",
+  "n": 73,
+  "title": "Red Teaming Language Models with Language Models",
+  "url": "https://arxiv.org/abs/2202.03286",
+  "venue": "arXiv preprint arXiv:2202.03286",
+  "year": "2022"
+ },
+ "reportscores": {
+  "authors": "Reimers, N.; Gurevych, I.",
+  "difference": "shows score distributions matter for LSTM tagging comparisons; reporting distributions is descriptive and we ask what conclusion a reader may draw.",
+  "key": "reportscores",
+  "n": 48,
+  "title": "Reporting Score Distributions Makes a Difference: Performance Study of LSTM-networks for Sequence Tagging",
+  "url": "https://doi.org/10.18653/v1/d17-1035",
+  "venue": "Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing",
+  "year": "2017"
+ },
+ "rewardoveropt": {
+  "authors": "Gao, L.; Schulman, J.; Hilton, J.",
+  "difference": "gives scaling laws for reward-model overoptimisation; an empirical scaling law in a different coordinate, which inspired our curve's shape but not its derivation.",
+  "key": "rewardoveropt",
+  "n": 72,
+  "title": "Scaling Laws for Reward Model Overoptimization",
+  "url": "https://arxiv.org/abs/2210.10760",
+  "venue": "arXiv preprint arXiv:2210.10760",
+  "year": "2022"
+ },
+ "robustopt": {
+  "authors": "Ben-Tal, A.; Nemirovski, A.",
+  "difference": "surveys robust optimisation methodology; robustification changes the objective, where repetition changes the evidence for an objective comparison.",
+  "key": "robustopt",
+  "n": 75,
+  "title": "Robust optimization – methodology and applications",
+  "url": "https://doi.org/10.1007/s101070100286",
+  "venue": "Mathematical Programming",
+  "year": "2002"
+ },
+ "roc": {
+  "authors": "Hanley, J. A.; McNeil, B. J.",
+  "difference": "explains the area under the ROC curve; a discrimination summary whose measurement variance follows the same repetition logic.",
+  "key": "roc",
+  "n": 100,
+  "title": "The meaning and use of the area under a receiver operating characteristic (ROC) curve",
+  "url": "https://doi.org/10.1148/radiology.143.1.7063747",
+  "venue": "Radiology",
+  "year": "1982"
+ },
+ "runtimeverif": {
+  "authors": "Bartocci, E.; Falcone, Y.; Francalanza, A.; et al.",
+  "difference": "introduces runtime verification of executions against monitors; monitors judge traces, while we judge a metric comparison across repeated runs.",
+  "key": "runtimeverif",
+  "n": 76,
+  "title": "Introduction to Runtime Verification",
+  "url": "https://doi.org/10.1007/978-3-319-75632-5_1",
+  "venue": "Lecture Notes in Computer Science",
+  "year": "2018"
+ },
+ "safetycase": {
+  "authors": "Graydon, P. J.; Holloway, C. M.",
+  "difference": "quantifies confidence in assurance arguments; we quantify the power of a re-execution comparison used as one premise of such an argument.",
+  "key": "safetycase",
+  "n": 10,
+  "title": "An investigation of proposed techniques for quantifying confidence in assurance arguments",
+  "url": "https://doi.org/10.1016/j.ssci.2016.09.014",
+  "venue": "Safety Science",
+  "year": "2017"
+ },
+ "samplingverify": {
+  "authors": "Legay, A.; Delahaye, B.; Bensalem, S.",
+  "difference": "surveys statistical model checking; we derive the budget-to-power mapping that a statistical model checker's parameters imply.",
+  "key": "samplingverify",
+  "n": 11,
+  "title": "Statistical Model Checking: An Overview",
+  "url": "https://doi.org/10.1007/978-3-642-16612-9_11",
+  "venue": "Lecture Notes in Computer Science",
+  "year": "2010"
+ },
+ "selective": {
+  "authors": "Geifman, Y.; El-Yaniv, R.",
+  "difference": "lets a classifier abstain under a risk target; abstention is one model's decision, and our rule is a verifier's decision to ask for more runs.",
+  "key": "selective",
+  "n": 78,
+  "title": "Selective Classification for Deep Neural Networks",
+  "url": "https://arxiv.org/abs/1705.08500",
+  "venue": "arXiv preprint arXiv:1705.08500",
+  "year": "2017"
+ },
+ "selfconsistency": {
+  "authors": "Wang, X.; Wei, J.; Schuurmans, D.; et al.",
+  "difference": "improves reasoning by sampling several chains and voting; sampling is spent on agreement, where we spend it on detecting a divergence.",
+  "key": "selfconsistency",
+  "n": 58,
+  "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+  "url": "https://arxiv.org/abs/2203.11171",
+  "venue": "arXiv preprint arXiv:2203.11171",
+  "year": "2022"
+ },
+ "selfrefine": {
+  "authors": "Madaan, A.; Tandon, N.; Gupta, P.; et al.",
+  "difference": "iterates refinement with self-feedback; iteration improves output, while we price repeated measurement of an already-fixed pipeline.",
+  "key": "selfrefine",
+  "n": 60,
+  "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+  "url": "https://arxiv.org/abs/2303.17651",
+  "venue": "arXiv preprint arXiv:2303.17651",
+  "year": "2023"
+ },
+ "showyourwork": {
+  "authors": "Dodge, J.; Gururangan, S.; Card, D.; et al.",
+  "difference": "improves reporting of experimental results across runs; reporting variance is the descriptive act, and we price the runs it would take to decide.",
+  "key": "showyourwork",
+  "n": 28,
+  "title": "Show Your Work: Improved Reporting of Experimental Results",
+  "url": "https://doi.org/10.18653/v1/d19-1224",
+  "venue": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)",
+  "year": "2019"
+ },
+ "snarkc": {
+  "authors": "Groth, J.",
+  "difference": "shrinks pairing-based arguments; argument size and repetition count are two different costs of verification, and we quantify the second.",
+  "key": "snarkc",
+  "n": 22,
+  "title": "On the Size of Pairing-Based Non-interactive Arguments",
+  "url": "https://doi.org/10.1007/978-3-662-49896-5_11",
+  "venue": "Lecture Notes in Computer Science",
+  "year": "2016"
+ },
+ "spectre": {
+  "authors": "Kocher, P.; Horn, J.; Fogh, A.; et al.",
+  "difference": "shows speculative execution leaks across isolation boundaries; attacker modelling is upstream of our question, which is about the verifier's own sampling budget.",
+  "key": "spectre",
+  "n": 19,
+  "title": "Spectre Attacks: Exploiting Speculative Execution",
+  "url": "https://doi.org/10.1109/sp.2019.00002",
+  "venue": "2019 IEEE Symposium on Security and Privacy (SP)",
+  "year": "2019"
+ },
+ "student1908": {
+  "authors": "Student.",
+  "difference": "gives the probable error of a mean; the small-sample mean problem whose modern form we apply to repeated re-executions.",
+  "key": "student1908",
+  "n": 88,
+  "title": "The Probable Error of a Mean",
+  "url": "https://doi.org/10.2307/2331554",
+  "venue": "Biometrika",
+  "year": "1908"
+ },
+ "swebench": {
+  "authors": "Jimenez, C. E.; Yang, J.; Wettig, A.; et al.",
+  "difference": "evaluates models on real GitHub issues; an execution-grounded benchmark whose variance is the kind our dispersion term describes.",
+  "key": "swebench",
+  "n": 62,
+  "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+  "url": "https://arxiv.org/abs/2310.06770",
+  "venue": "arXiv preprint arXiv:2310.06770",
+  "year": "2023"
+ },
+ "threshold": {
+  "authors": "Alimoglu, A.",
+  "difference": "bounds trustless verification of nondeterministic workflows by a threshold choice; we derive and measure the whole detection-power curve in the budget, including where extra re-executions buy nothing.",
+  "key": "threshold",
+  "n": 2,
+  "title": "Threshold Choice, Not Sample Size, Bounds Trustless Verification of Nondeterministic Compound AI Workflows",
+  "url": "https://arxiv.org/abs/2609.10601",
+  "venue": "arXiv preprint arXiv:2609.10601",
+  "year": "2026"
+ },
+ "timeuniform": {
+  "authors": "Howard, S. R.; Ramdas, A.; McAuliffe, J.; et al.",
+  "difference": "builds time-uniform Chernoff bounds from supermartingales; uniform validity over time, where we measure the non-uniform band in which a budget changes a verdict.",
+  "key": "timeuniform",
+  "n": 34,
+  "title": "Time-uniform Chernoff bounds via nonnegative supermartingales",
+  "url": "https://arxiv.org/abs/1808.03204",
+  "venue": "arXiv preprint arXiv:1808.03204",
+  "year": "2018"
+ },
+ "tost": {
+  "authors": "Schuirmann, D. J.",
+  "difference": "compares two one-sided tests with the power approach for equivalence; equivalence testing is a different decision, where we ask whether an advantage is certifiable.",
+  "key": "tost",
+  "n": 99,
+  "title": "A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability",
+  "url": "https://doi.org/10.1007/bf01068419",
+  "venue": "Journal of Pharmacokinetics and Biopharmaceutics",
+  "year": "1987"
+ },
+ "tsybakov": {
+  "authors": "Tsybakov, A. B.",
+  "difference": "gives the theory of nonparametric estimation, including separation rates; we instantiate one separation question as a verifier's budget decision.",
+  "key": "tsybakov",
+  "n": 45,
+  "title": "Introduction to Nonparametric Estimation",
+  "url": "https://doi.org/10.1007/b13794",
+  "venue": "Springer Series in Statistics",
+  "year": "2009"
+ },
+ "underspec": {
+  "authors": "D'Amour, A.; Heller, K.; Moldovan, D.; et al.",
+  "difference": "shows underspecification makes ML results brittle across pipeline choices; brittleness across pipelines is the heterogeneity our node population samples.",
+  "key": "underspec",
+  "n": 65,
+  "title": "Underspecification Presents Challenges for Credibility in Modern Machine Learning",
+  "url": "https://arxiv.org/abs/2011.03395",
+  "venue": "arXiv preprint arXiv:2011.03395",
+  "year": "2020"
+ },
+ "valiant": {
+  "authors": "Valiant, L. G.",
+  "difference": "founds learnability in a distribution-free setting; a separability idealisation that a finite re-execution budget does not reach.",
+  "key": "valiant",
+  "n": 38,
+  "title": "A theory of the learnable",
+  "url": "https://doi.org/10.1145/1968.1972",
+  "venue": "Communications of the ACM",
+  "year": "1984"
+ },
+ "vanderVaart": {
+  "authors": "Vaart, A. W. v. d.",
+  "difference": "gives asymptotic statistics for estimators and tests; asymptotics are the limit our measured band approaches as the budget grows.",
+  "key": "vanderVaart",
+  "n": 92,
+  "title": "Asymptotic Statistics",
+  "url": "https://doi.org/10.1017/cbo9780511802256",
+  "venue": "Cambridge University Press",
+  "year": "1998"
+ },
+ "vc1971": {
+  "authors": "Vapnik, V. N.; Chervonenkis, A. Y.",
+  "difference": "introduces the uniform convergence of relative frequencies; the concentration family our interval-based decidability rests on.",
+  "key": "vc1971",
+  "n": 37,
+  "title": "On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities",
+  "url": "https://doi.org/10.1137/1116025",
+  "venue": "Theory of Probability & Its Applications",
+  "year": "1971"
+ },
+ "verifiablecompute": {
+  "authors": "Gennaro, R.; Gentry, C.; Parno, B.",
+  "difference": "outsources computation with correctness proofs; proofs make one execution checkable, whereas our verifier re-runs rather than proves.",
+  "key": "verifiablecompute",
+  "n": 20,
+  "title": "Non-interactive Verifiable Computing: Outsourcing Computation to Untrusted Workers",
+  "url": "https://doi.org/10.1007/978-3-642-14623-7_25",
+  "venue": "Lecture Notes in Computer Science",
+  "year": "2010"
+ },
+ "wald": {
+  "authors": "Wald, A.",
+  "difference": "introduces sequential tests that stop early on a likelihood ratio; designed for a known alternative, while our measured object is the power curve over an unknown node's dispersion.",
+  "key": "wald",
+  "n": 4,
+  "title": "Sequential Tests of Statistical Hypotheses",
+  "url": "https://doi.org/10.1214/aoms/1177731118",
+  "venue": "The Annals of Mathematical Statistics",
+  "year": "1945"
+ },
+ "wilson": {
+  "authors": "Wilson, E. B.",
+  "difference": "gives an interval for a binomial proportion; the interval family used for the registration's rate quantities.",
+  "key": "wilson",
+  "n": 89,
+  "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+  "url": "https://doi.org/10.1080/01621459.1927.10502953",
+  "venue": "Journal of the American Statistical Association",
+  "year": "1927"
+ },
+ "zeroshotreason": {
+  "authors": "Kojima, T.; Gu, S. S.; Reid, M.; et al.",
+  "difference": "shows zero-shot reasoning is elicitable by prompting; capability, where our quantity is detectability under repetition.",
+  "key": "zeroshotreason",
+  "n": 57,
+  "title": "Large Language Models are Zero-Shot Reasoners",
+  "url": "https://arxiv.org/abs/2205.11916",
+  "venue": "arXiv preprint arXiv:2205.11916",
+  "year": "2022"
+ },
+ "zkcnn": {
+  "authors": "Chen, B. J.; Waiwitlikhit, S.; Stoica, I.; et al.",
+  "difference": "optimises ML inference inside zero-knowledge proofs; a proof-based route to trust that bypasses the statistical route we analyse.",
+  "key": "zkcnn",
+  "n": 24,
+  "title": "ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs",
+  "url": "https://doi.org/10.1145/3627703.3650088",
+  "venue": "Proceedings of the Nineteenth European Conference on Computer Systems",
+  "year": "2024"
+ },
+ "zktraining": {
+  "authors": "Garg, S.; Goel, A.; Jha, S.; et al.",
+  "difference": "proves training runs in zero knowledge; that certifies a computation happened, while our question is whether a re-execution comparison can detect a divergence.",
+  "key": "zktraining",
+  "n": 23,
+  "title": "Experimenting with Zero-Knowledge Proofs of Training",
+  "url": "https://doi.org/10.1145/3576915.3623202",
+  "venue": "Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security",
+  "year": "2023"
+ }
+}

@@ -14,10 +14,14 @@ Specs:  d = integer, Nf = fixed decimals, Ne = scientific, g = general, pN =
 percentage with N decimals, empty = the value's own str.
 
 Citation keys written [@key] in the parts are renumbered as [n] in order of first
-appearance, and the numbered list is rendered from references.md into the
-<!-- REFERENCES --> marker.  An unresolvable placeholder or an uncited /
-unmatching reference key is a hard error: this script exits non-zero rather than
-producing a manuscript with a number whose home cannot be found.
+appearance.  The bibliography's FORM is not written here: `refs_render.py` owns it
+and renders the `<!-- REFERENCES -->` marker from `refs_display.json`, the display
+data `refs_build_display.py` builds from the verified reference list plus the
+per-entry stated difference.  The order computed here is asserted against the order
+that data was built in, so an edit that renumbers the citations cannot leave the
+list numbering one thing and the body another.  An unresolvable placeholder or an
+uncited / unmatching reference key is a hard error: this script exits non-zero
+rather than producing a manuscript with a number whose home cannot be found.
 """
 
 import argparse
@@ -30,6 +34,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PARTS = ["manuscript_part1.md", "manuscript_part2.md", "manuscript_part3.md"]
 PLACEHOLDER = re.compile(r"\{\{([A-Za-z]+):([^}|]+?)(?:\|([^}]*))?\}\}")
 CITE = re.compile(r"\[@([A-Za-z0-9_.:-]+)\]")
+
+sys.path.insert(0, HERE)
+import refs_render  # noqa: E402  -- the file that owns the bibliography's form
 
 
 def load_json(path):
@@ -148,11 +155,35 @@ def assemble(facts_path, refs_path=None):
     text, order = render_citations(text, refs)
 
     if "<!-- REFERENCES -->" in text:
-        # The entry marker is the form the body cites with, so the bibliography and the
-        # running text carry ONE numbering style (the journal's checklist names [1]-[n]).
-        lines = ["[%d] %s" % (i + 1, refs[k]) for i, k in enumerate(order)]
-        block = "\n".join(lines) if lines else "_(no references cited)_"
-        text = text.replace("<!-- REFERENCES -->", block)
+        # The bibliography's FORM is not written here.  `refs_render.py` owns it -- house entry
+        # order, the year in parentheses after the author block, a resolvable URL instead of a
+        # backticked identifier, a blank line between entries, and the closing `Difference:` line
+        # -- and renders it from `refs_display.json`, built by `refs_build_display.py` out of the
+        # verified list and the authored per-entry differences.  The entry marker is the form the
+        # body cites with, so the bibliography and the running text carry ONE numbering style.
+        display = os.path.join(HERE, "refs_display.json")
+        if not os.path.exists(display):
+            raise SystemExit("ASSEMBLY FAILED: %s is missing -- run refs_build_display.py"
+                             % os.path.basename(display))
+        disp = json.load(open(display, encoding="utf-8"))
+        built_order = sorted(disp, key=lambda k: disp[k]["n"])
+        # Two independent computations of "citation order" -- this script's scan of the parts and
+        # the builder's -- must agree.  If they do not, the printed list is numbered for a body
+        # that no longer exists, which is exactly the failure this package has met before (a
+        # correction that changed the body and left a list describing the previous one).
+        if order != built_order:
+            first = next((i for i, (a, b) in enumerate(zip(order, built_order)) if a != b), None)
+            raise SystemExit("ASSEMBLY FAILED: the citation order computed here differs from "
+                             "refs_display.json at position %s (%s vs %s). Re-run "
+                             "refs_build_display.py after a body edit that renumbers."
+                             % (first, order[first] if first is not None else "-",
+                                built_order[first] if first is not None else "-"))
+        rendered = refs_render.render()
+        n_rendered = len(re.findall(r"(?m)^\[\d+\] ", rendered))
+        if n_rendered != len(order):
+            raise SystemExit("ASSEMBLY FAILED: the renderer emitted %d entries for %d cited keys"
+                             % (n_rendered, len(order)))
+        text = text.replace("<!-- REFERENCES -->", rendered.split("\n", 2)[2].rstrip("\n"))
     body_text = text.split("## References")[0]
     return text, order, n_resolved[0], body_text
 

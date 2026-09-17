@@ -383,7 +383,7 @@ COORD_CLASSES = [
     ("C5 cwd / absolute path", "INFORMATIONAL",
      r'cwd=|abspath|getcwd|chdir',
      ("os.getcwd", "os.path.abspath", "os.chdir", "pathlib.Path.cwd"), None),
-    ("C6 network", "CONFINED:verify_refs.py",
+    ("C6 network", "CONFINED:verify_refs.py,verify_correction_r2.py",
      r'\bcurl\b|\bwget\b|urlopen|urllib\.request|requests\.(?:get|post)|socket\.socket|'
      r'http\.client|HTTPSConnection|ftplib|smtplib',
      # `curl` is this package's own helper: it is where the binary is run, so every site that calls
@@ -393,7 +393,13 @@ COORD_CLASSES = [
       "http.client.HTTPSConnection", "http.client.HTTPConnection",
       "ftplib.FTP", "smtplib.SMTP", "xmlrpc.client.ServerProxy"),
      ("curl", "wget", "nc", "ncat", "ssh", "scp", "sftp", "ftp", "dig", "host", "nslookup",
-      "ping", "telnet")),
+      "ping", "telnet",
+      # `gh api /markdown` is a network read: it calls GitHub's own CommonMark renderer, which is
+      # how this package reads the PAGE its references section produces (correction round 2, the
+      # layout read).  It was added when the correction verifier took that read: the spelling net
+      # matched the call and no class claimed it, which is the census reporting a gap rather than
+      # letting one through.
+      "gh")),
     ("C7 clock / entropy", "REQUIRED EMPTY",
      r'time\.time\(|time\.monotonic|perf_counter|datetime\.|os\.urandom|uuid4|secrets\.|'
      r'random\.(?!Random)',
@@ -428,6 +434,11 @@ COORD_DECLARED_UNRESOLVED = {
     "check_manuscript.py": "subprocess.run: the argv is assembled into `cmd` (a Name), so the binary "
                            "is not a constant -- it is `sys.executable` by construction, and the "
                            "resolver reports rather than guesses",
+    "verify_correction_r2.py": "subprocess.run: the journal's gate is invoked through one of a "
+                               "candidate list of interpreters, chosen at run time, because the gate "
+                               "needs an interpreter with PEP 701 (a backslash inside an f-string "
+                               "expression) and a reader's `python3` may be older -- a genuine "
+                               "run-time choice, so the resolver reports rather than guesses",
 }
 # The calls that execute a command or an external program.  Which class such a call belongs to is
 # decided by the BINARY it runs, not by the callable -- which is why this entry-point set is separate
@@ -863,8 +874,11 @@ def d5():
         if disposition == "REQUIRED EMPTY" and n_s:
             problems.append("%s is REQUIRED EMPTY but has %d structural site(s)" % (cls, n_s))
         if disposition.startswith("CONFINED:"):
-            allowed = disposition.split(":", 1)[1]
-            others = sorted(set(stc[cls]) - {allowed})
+            #  A confinement row may name MORE THAN ONE file, comma-separated: the disposition is a
+            #  set, and reading it as one string made a two-file claim read as a violation of
+            #  itself.  The row's own text is the declaration; the count is read off the sources.
+            allowed = {a.strip() for a in disposition.split(":", 1)[1].split(",") if a.strip()}
+            others = sorted(set(stc[cls]) - allowed)
             if others:
                 problems.append("%s is confined to %s but reads occur in %s"
                                 % (cls, allowed, ", ".join(others)))
@@ -975,9 +989,16 @@ def d5():
           set(structural_census(leak2, exclude)[0]["C1 git object read"])
           != {"coordinate_evidence_v1.py"},
           "the exclusion is a boundary, not an immunity")
-    check("D5/the network class is CONFINED to the resolver, which is what its row says",
-          set(stc["C6 network"]) == {"verify_refs.py"},
-          "C6 structural sites: %s" % (sorted(stc["C6 network"]) or "none"))
+    #  The allowed set is written HERE as well as in the row, so the two have to agree and a third
+    #  network site has to be added in both places -- the point of a confinement claim.  The second
+    #  file is this package's correction verifier: its page read (GitHub's own CommonMark renderer)
+    #  is OPTIONAL, it prints SKIP with the reason when it cannot be taken, and the local `block
+    #  form:` read of the journal's gate carries the verdict without it.  The reproduction itself
+    #  needs no network: verify_correction_r2.py is not a step of reproduce.sh.
+    check("D5/the network class is CONFINED to the two files that declare a network read",
+          set(stc["C6 network"]) == {"verify_refs.py", "verify_correction_r2.py"},
+          "C6 structural sites: %s -- the resolver, and the correction verifier's optional page read"
+          % (sorted(stc["C6 network"]) or "none"))
     c7 = next(c for c, _d, _p, _c, _b in COORD_CLASSES if c.split()[0] == "C7")
     c7_spell = [(f, ln) for f in txt[c7] for ln, _l, _a, _b2 in txt[c7][f]]
     c7_callee = [(f, ln) for (c, f, ln), kind in kind_of.items()
