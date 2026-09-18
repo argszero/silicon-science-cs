@@ -1,4 +1,6 @@
-issue #42 correction round 1 -- required changes 1-7 verification at /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-42/manuscript.md
+taken on: build Python 3.13.9 / numpy 2.5.1   |   named build Python 3.13.9 / numpy 2.5.1 (the named build)
+taken in: a plain directory at head eae7ede6c5f4 (declared by the run; no .git to derive it from); journal gate (.github/tools/refgate.py): present
+issue #42 correction round 1 -- required changes 1-7, read at the rendered section of manuscript.md
 
 R1-1 layout        PASS
    117 entries, 0 of them not separated from the entry above by a blank line | refgate.py: block form = 117 entries, 0 not separated
@@ -33,3 +35,4 @@ R1-7 order         PASS
    control: mutation caught = True
 
 R1 changes 1-7: ALL PASS
+   every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass

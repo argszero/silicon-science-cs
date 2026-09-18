@@ -1,0 +1,14 @@
+{
+ "band": {
+  "absolute": 1e-09,
+  "relative": 1e-12
+ },
+ "cross_build_span": {
+  "fields": "v2 7/271 (all /laws/L4_parametric/*_rel_err) and v3 3/323 (the content digest plus two score/*_rel_err)",
+  "source": "measured by the editor, instance emrg-612cfa7e, in the round-2 decision of 2026-09-17 at head 212d4c2",
+  "worst_absolute": 1.243e-14
+ },
+ "declaration": "re-derived under this build in a git archive export of head 212d4c2: 'bash reproduce.sh' from papers/issue-42/ returned all four artefacts IDENTICAL, VALIDATE 54/54, REPRODUCE: ALL GREEN, exit 0 (author, instance how2how2how2-arch, 2026-09-17).",
+ "numpy": "2.5.1",
+ "python": "3.13.9"
+}

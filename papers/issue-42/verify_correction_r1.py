@@ -9,13 +9,23 @@ decoration.
 Two readings are taken with instruments that are NOT this package's own re-implementation of the rule:
 the `block form:` line of the journal's gate (`.github/tools/refgate.py`, the layout read the decision
 names) and GitHub's own CommonMark renderer.  Both need something outside the package, so when either
-is absent the check says SKIP WITH THE REASON and the local read carries the verdict -- never silently
-green.
+is absent or cannot run, the reading is reported as NOT TAKEN with its reason -- the verdict says so in
+its own last line and the local read carries the decision.  Never silently green.
 
-Run:  python3 verify_correction_r1.py            (from papers/issue-42/)
-      python3 verify_correction_r1.py --no-network
-Writes correction_r1_verify.log beside this package.
+**The log is evidence, so it names its coordinates** (`evidence_log.py`, correction round 3): the build
+the reading was taken on and the tree it was taken in, plus every reading that could not be taken.
+Nothing is written unless `--log PATH` asks for it, so a reader's run cannot overwrite the committed
+copy; `--check` re-derives the log and compares it with the committed one, the DECLARED lines (which
+name the build, the tree, or a reading not taken) present on both sides rather than equal, and every
+check line paired with the same check on the other side.
+
+Run:  python3 verify_correction_r1.py                  # verdict to stdout, writes no file
+      python3 verify_correction_r1.py --log FILE       # and writes the log to FILE
+      python3 verify_correction_r1.py --check          # re-derive and compare with the committed log
+      python3 verify_correction_r1.py --no-network     # skip the renderer read (it needs `gh`)
+      python3 verify_correction_r1.py --head SHA       # declare the revision of a plain directory
 """
+import argparse
 import io
 import json
 import os
@@ -23,19 +33,37 @@ import re
 import subprocess
 import sys
 
+import evidence_log as EL
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 MS = os.path.join(HERE, "manuscript.md")
-LOG = os.path.join(HERE, "correction_r1_verify.log")
-GATE = os.path.normpath(os.path.join(HERE, "..", "..", ".github", "tools", "refgate.py"))
+LOG_NAME = "correction_r1_verify.log"
+LOG = os.path.join(HERE, LOG_NAME)
+GATE = EL.gate_path(HERE)
 REF_HEAD = re.compile(r"(?m)^##\s*(?:\d+\.\s*)?References\s*$")
 ENTRY = re.compile(r"(?m)^\[(\d+)\] ")
 
 out = []
+NOT_TAKEN = []
+ARGS = None
+HEADER_HEAD = None          # the revision the reading is taken at, when the tree cannot say (see --head)
 
 
 def say(s):
     out.append(s)
     print(s)
+
+
+def not_taken(what, why):
+    """A reading this run could not take. Recorded, and printed as a DECLARED `NOT TAKEN:` line beside
+    the verdict: present in every log, its content a fact about this run's coordinate, so a reader sees
+    it and the comparison does not read the machine as a disagreement.
+
+    Registered once per reading. The control pass is what keeps that true: a check is also run against a
+    planted copy to prove it can fail, and that pass is not a reading of the package (see `run_checks`),
+    so it cannot register a second copy of the same fact -- which would be printed twice and counted
+    twice by `--check`'s declared-line tally. `verdict` fails the run if a duplicate ever survives."""
+    NOT_TAKEN.append((what, why))
 
 
 def load_ms():
@@ -82,28 +110,42 @@ def check_layout(ms):
                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         line = next((l.strip() for l in p.stdout.splitlines() if "block form:" in l), "")
         m = re.search(r"block form: (\d+) entries, (\d+) of them not separated", line)
-        if not m:
-            fails.append("the journal's gate printed no readable `block form:` line")
-        elif (int(m.group(1)), int(m.group(2))) != (117, 0):
-            fails.append("the gate reads %s entries / %s unseparated" % m.groups())
+        if m:
+            if (int(m.group(1)), int(m.group(2))) != (117, 0):
+                fails.append("the gate reads %s entries / %s unseparated" % m.groups())
+            else:
+                detail += " | refgate.py: block form = %s entries, %s not separated" % m.groups()
+        elif p.returncode != 0:
+            # The gate did not run here -- it needs an interpreter that parses it (PEP 701). That is a
+            # reading NOT TAKEN, not a reading that disagreed, and the local read above carries the
+            # verdict. Reported as such so a reader can see which half was read.
+            detail += " | NOT TAKEN: the gate did not run under this interpreter"
+            not_taken("R1-1 the journal's gate",
+                      "refgate.py exited %d under Python %s and printed no `block form:` line: %s"
+                      % (p.returncode, sys.version.split()[0],
+                         (p.stdout.strip().splitlines() or ["(no output)"])[-1][:120]))
         else:
-            detail += " | refgate.py: block form = %s entries, %s not separated" % m.groups()
+            fails.append("the journal's gate printed no readable `block form:` line")
     else:
-        detail += " | SKIP the journal gate is not in this tree (%s)" % GATE
+        not_taken("R1-1 the journal's gate",
+                  "not in this tree (no .github/tools/refgate.py beside the package; a machine-specific"
+                  " path identifies neither the build nor the tree)")
+        detail += " | NOT TAKEN: the journal gate is not in this tree"
     return fails, detail
 
 
 def check_render(ms):
     """Change 1, the page read: GitHub's own renderer must return 117 paragraphs."""
     text = section(ms)
+    if ARGS is not None and ARGS.no_network:
+        return [], "the renderer read was not requested (--no-network)"
     try:
         p = subprocess.run(["gh", "api", "-X", "POST", "/markdown", "-f", "mode=gfm", "-f", "text=" + text],
                            capture_output=True, text=True, timeout=180)
     except (OSError, subprocess.SubprocessError) as exc:
-        return [], "SKIP could not run `gh api /markdown` (%s): the renderer read was not taken" % exc
+        return [], "SKIP could not run `gh api /markdown` (%s)" % exc
     if p.returncode != 0:
-        return [], ("SKIP `gh api /markdown` failed (exit %d): the renderer read was not taken"
-                    % p.returncode)
+        return [], "SKIP `gh api /markdown` failed (exit %d)" % p.returncode
     n_p = p.stdout.count("<p>")
     return ([] if n_p == 117 else ["GitHub's renderer returns %d <p> for the 117 entries" % n_p],
             "GitHub's own renderer: %d <p> for the 117 entries" % n_p)
@@ -251,29 +293,49 @@ CHECKS = [
 ]
 
 
-def main():
+def run_checks():
+    """The log this run produces: the two coordinate lines, the checks, the verdict."""
+    out[:] = []
+    for line in EL.header(HERE, declared_head=HEADER_HEAD):
+        say(line)
+
     ms = load_ms()
-    say("issue #42 correction round 1 -- required changes 1-7 verification at %s" % MS)
+    say("issue #42 correction round 1 -- required changes 1-7, read at the rendered section of"
+        " manuscript.md")
     say("")
     allfail = []
     for name, fn, mutate in CHECKS:
         try:
             fails, detail = fn(ms)
-        except Exception as exc:
+        except Exception as exc:                                              # noqa: BLE001
             fails, detail = ["the check raised %s: %s" % (type(exc).__name__, exc)], "no reading taken"
+        skipped = False
+        if detail.startswith("SKIP"):
+            detail = "NOT TAKEN: " + detail[5:].strip()
+            not_taken(name, detail[10:].strip())
+            skipped = True
         try:
             planted = mutate(ms)
-        except Exception as exc:
+        except Exception as exc:                                              # noqa: BLE001
             planted = ms
             detail += " | control could not be derived (%s)" % exc
         if planted == ms:
             catches = ["the control could not be derived: the mutation changed nothing"]
         else:
+            # The planted copy is a CONTROL, not a reading of the package. A reading this machine cannot
+            # take cannot be taken there either, so without this the same reading not taken was
+            # registered twice: printed twice in the file a reader opens, and counted twice by
+            # `--check`'s declared-line tally -- one missed reading reported as two.
+            registered = len(NOT_TAKEN)
             try:
                 catches = fn(planted)[0]
-            except Exception as exc:
+            except Exception as exc:                                          # noqa: BLE001
                 catches = ["the check raised on the planted copy: %s" % exc]
-        say("%-18s %s" % (name, "PASS" if not fails else "FAIL"))
+            del NOT_TAKEN[registered:]
+        # the check LINE carries the marker too, so the reading this line names is recognisable as the
+        # same reading on both sides even where one run could not take it
+        say("%-18s %s%s" % (name, "PASS" if not fails else "FAIL",
+                            "   (NOT TAKEN)" if skipped else ""))
         say("   %s" % detail)
         for f in fails:
             say("   !! %s" % f)
@@ -282,13 +344,63 @@ def main():
         if not catches:
             allfail.append("%s: control not caught -- the check cannot fail" % name)
         say("")
-    say("R1 changes 1-7: %s" % ("ALL PASS" if not allfail else "FAIL"))
-    try:
-        io.open(LOG, "w", encoding="utf-8").write("\n".join(out) + "\n")
-        say("log written to %s" % LOG)
-    except OSError as exc:
-        say("NOTE: could not write %s (%s). The verdict above stands." % (LOG, exc))
+    allfail = verdict(allfail)
     return 1 if allfail else 0
+
+
+def verdict(allfail):
+    """The end of the file. Every reading that was not taken is printed HERE as a declared line, so a
+    `SKIP` is visible to a reader who reads only the verdict -- `ALL PASS` over a silent skip is the
+    defect this shape exists to prevent -- while the verdict line itself stays the same on every
+    machine."""
+    for w, y in NOT_TAKEN:
+        say("NOT TAKEN: %s -- %s" % (w, y))
+    dup = len(NOT_TAKEN) - len(set(NOT_TAKEN))
+    if dup:
+        say("!! the log registers %d reading(s) more than once: a missed reading must be one line" % dup)
+        allfail = allfail + ["the log registers %d reading(s) more than once" % dup]
+    say("R1 changes 1-7: %s" % ("FAIL" if allfail else "ALL PASS"))
+    say("   every check above was read on this machine; a reading marked NOT TAKEN is not covered by this"
+        " verdict and is reported as not taken, never as a pass")
+    # RETURNED, not reassigned in place: a finding this function adds must move the exit code too. It did
+    # not, once -- the log said FAIL while the process exited 0, so a reader following the exit code read
+    # a failed run as a pass (found by the duplicate guard's own control).
+    return allfail
+
+
+def main():
+    global ARGS
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--log", default=None, help="also write the log to this path (default: write nothing)")
+    ap.add_argument("--check", action="store_true",
+                    help="re-derive the log and compare it with the committed %s" % LOG_NAME)
+    ap.add_argument("--no-network", action="store_true", help="skip the renderer read (it needs `gh`)")
+    ap.add_argument("--head", default=None,
+                    help="the revision this reading is taken at, DECLARED: a plain directory (a git"
+                         " archive export) cannot derive it")
+    ARGS = ap.parse_args()
+    global HEADER_HEAD
+    HEADER_HEAD = ARGS.head
+
+    rc = run_checks()
+    lines = list(out)
+    if ARGS.check:
+        committed = io.open(LOG, encoding="utf-8").read()
+        ok, declared, nottaken, mism = EL.compare(committed, EL.render(lines))
+        print("")
+        print("%s vs a fresh run: %s" % (LOG_NAME, "MATCH" if ok else "MISMATCH"))
+        print("   %d declared line(s) (a build, a tree, or a reading not taken); %d line(s) where this"
+              " run took no reading where the committed log records one" % (declared, nottaken))
+        for n, x, y in mism[:6]:
+            print("   !! line %d" % n)
+            print("      committed: %s" % x[:160])
+            print("      fresh:     %s" % y[:160])
+        return 0 if ok else 1
+    if ARGS.log:
+        EL.write(ARGS.log, lines)
+        print("")
+        print("log written to %s" % ARGS.log)
+    return rc
 
 
 if __name__ == "__main__":
