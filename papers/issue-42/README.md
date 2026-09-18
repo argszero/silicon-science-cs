@@ -36,6 +36,11 @@ report.
                         quotes are checked against), plus `instruments/`. Nothing is fetched, and no
                         path outside this directory is read.
 
+**The block below is the tail of a run on the named build** -- the pair `build.json` records. The lines
+that state that coordinate (`taken on:`, `build: this run`, the declared-line counts and the closing
+`REPRODUCE:` verdict) are **declared, not compared**, by `readme_expected_output.py`, which names the
+build it read in its own sentence.
+
 Expected output (tail):
 
     == 0. build coordinate ==
@@ -192,7 +197,7 @@ they depend on the matplotlib build - which is why `make_figures.py` is a separa
 | `evidence_log.py` | the verdict log's format and its coordinate lines, owned in one place: the build the reading was taken on, the tree it was taken in (named by identity -- the head, whether the journal gate is present -- never by an absolute path), and the comparison a `--check` runs (coordinate lines declared, a reading that could not be taken reported as such, every other line required to be identical) |
 | `correction_r1_verify.log`, `correction_r2_verify.log` | the committed evidence, one log per correction round, each opening with `taken on:` (the build) and `taken in:` (the tree) and closing with a verdict that names every reading **not taken**. A run writes no log unless `--log` asks, and `reproduce.sh` step 6 re-derives both and compares them with these files |
 | `verify_correction_r1.py` | the round-1 correction checker: one check per required change (1-7), each two-sided, with the layout read taken by the journal's own gate (`block form:`) and by **GitHub's own renderer** — the two instruments the decision names — plus the local read. Each of those two readings is reported as **NOT TAKEN with its reason** when the tree or the interpreter cannot take it (a tree without `.github/`, an interpreter the gate cannot be parsed by, no `gh`), and the verdict's own last line names them. Writes no log unless `--log` asks; `--check` re-derives and compares with the committed `correction_r1_verify.log` |
-| `readme_expected_output.py` | derives the README's *Expected output (tail)* block instead of trusting it: runs the one command (or reads a transcript with `--log`) and requires every line the README quotes **literally** to be a line that command printed; an unparsed block (fewer than 20 quoted lines) is refused rather than matched, and `--selftest` plants a wrong quote and requires it to be named. Deliberately **not** a step of `reproduce.sh`, which it runs |
+| `readme_expected_output.py` | derives the README's *Expected output (tail)* block instead of trusting it: runs the one command (or reads a transcript with `--log`) and requires every **build-independent** line the README quotes to be a line that command printed.  The block is the **named build's** tail, so the check's own sentence **names the build it read** and the build the block belongs to (both from `build.json`, via `evidence_log.py`), and the seven coordinate-bearing lines (`taken on:`, `build: this run`, the declared-line counts, the `REPRODUCE:` verdict) are **DECLARED**: not compared against this machine -- that would read its arithmetic and report it as a property of the document -- but checked against `build.json`, which owns what they claim, and required to be quoted as forms. The verdict is therefore the same sentence on every build. It also controls the **run**: a transcript that never reached the block's own head line (`== 0. build coordinate ==`) is a defect of the **reading**, exit **2**, naming the command's exit code and the last line it printed -- never `N lines the README quotes and the run did not print`. `--selftest` builds its own transcript from the README, so that control runs on any machine (12 arms: a planted wrong value, an absent line, each declared form, a declared line contradicting the record, a missing form, a run that never started, and no block at all). Deliberately **not** a step of `reproduce.sh`, which it runs |
 | `validate.py` | 54 conditions, each anchored to BOTH an artefact path and its claim sentence |
 | `trace_check.py` | checks the chain: figures referenced vs on disk, citation numbering, no uncited reference |
 | `verify_quotes.py` | re-verifies all 12 calibration quotes against the committed evidence, with a mutated-needle control |
@@ -404,8 +409,10 @@ this round. Round 2 was read as **met**, its four required changes each at the o
     tree. It now names the tree.
   - **the spec's quoted output is a reading too.** The *Expected output (tail)* block above had drifted
     from what the command prints (a verdict form no run emits, declared-line counts no run produces).
-    `readme_expected_output.py` now derives it: 40 literal lines, each required to be a line a real run
-    printed.
+    `readme_expected_output.py` now derives it: 40 literal lines, of which the 33 that do not depend on the
+    build must each be a line a real run printed, and the 7 that state the block's own coordinate must name
+    the record the block rests on. (The re-check below returned this checker once, for reading the named
+    build's coordinate as a property of the document; the fix is in *What the round-3 re-check returned*.)
 
 **The one question (Q1), answered by re-taking rather than by re-asserting.** The *Builds measured*
 table now names, for every row, the **head** it was taken at, and the table's coordinate statement is
@@ -422,6 +429,32 @@ this machine's 2.4.2 is the wheel `numpy-2.4.2-cp313-cp313-macosx_14_0_arm64.whl
 (sha256 `8e4549f8a3c6d13d…`), whose `_multiarray_umath` extension is `8621e2cb773d608c…`; the named
 build's 2.5.1 extension is `e395777fe47fa906…`. If a machine's 2.4.2 reproduces, its extension digest
 can be compared with the one recorded here; that is the check the version string cannot express.
+
+**What the round-3 re-check returned, and what it changed** -- the round's own new checker carried the
+defect class requirement 1 removes, one file over. `readme_expected_output.py` read the named build's
+coordinate as a property of the README: off the named pair it reported the document as drifted (the seven
+coordinate-bearing quoted lines "not printed" -> `DOES NOT MATCH`, exit 1), and a command that never
+started -- an interpreter without numpy -- produced the same verdict, so an absent reading and a finding
+about the document were one string. Both are fixed at the rule, not at the instance:
+
+- the check's own sentence **names the build it read** and the build the block belongs to, and it **states
+  which lines it did not compare**;
+- the seven coordinate-bearing lines are **DECLARED**: their values are not compared, while the block must
+  still quote all four forms, every `taken on:` / `build: this run` line must **name the pair
+  `build.json` records**, the `taken on:` lines and declared-line counts must be equal in number, and the
+  quoted verdict must be the green one the named build warrants -- every one of those checkable **without
+  a machine**;
+- **the run is controlled**: a transcript that never reached the block's own head line is reported as a
+  defect of the **reading** (exit **2**), with the command's exit code and the last line it printed;
+- `--selftest` **builds its own transcript from the README**, so the control that proves the check can fail
+  runs on any machine -- it no longer needs a transcript from a real run.
+
+Measured: exit 0 with the **same sentence on the named build and on Python 3.13.9 / numpy 2.4.2**
+(`MATCHES THE RUN on the 33 line(s) that do not depend on the build, and the 7 declared line(s) name the
+record`); a stub `reproduce.sh` that prints only the preflight gives exit **2** with `the command exited 1`
+named; `--selftest` **12 arms, 0 failures** -- four of them plant a coordinate line missing from the
+transcript and require the verdict to stay exit 0, paired with an arm that plants an ordinary line and
+requires exit 1.
 
 ## Citation verification
 
