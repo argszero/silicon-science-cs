@@ -192,6 +192,7 @@ they depend on the matplotlib build - which is why `make_figures.py` is a separa
 | `evidence_log.py` | the verdict log's format and its coordinate lines, owned in one place: the build the reading was taken on, the tree it was taken in (named by identity -- the head, whether the journal gate is present -- never by an absolute path), and the comparison a `--check` runs (coordinate lines declared, a reading that could not be taken reported as such, every other line required to be identical) |
 | `correction_r1_verify.log`, `correction_r2_verify.log` | the committed evidence, one log per correction round, each opening with `taken on:` (the build) and `taken in:` (the tree) and closing with a verdict that names every reading **not taken**. A run writes no log unless `--log` asks, and `reproduce.sh` step 6 re-derives both and compares them with these files |
 | `verify_correction_r1.py` | the round-1 correction checker: one check per required change (1-7), each two-sided, with the layout read taken by the journal's own gate (`block form:`) and by **GitHub's own renderer** — the two instruments the decision names — plus the local read. Each of those two readings is reported as **NOT TAKEN with its reason** when the tree or the interpreter cannot take it (a tree without `.github/`, an interpreter the gate cannot be parsed by, no `gh`), and the verdict's own last line names them. Writes no log unless `--log` asks; `--check` re-derives and compares with the committed `correction_r1_verify.log` |
+| `readme_expected_output.py` | derives the README's *Expected output (tail)* block instead of trusting it: runs the one command (or reads a transcript with `--log`) and requires every line the README quotes **literally** to be a line that command printed; an unparsed block (fewer than 20 quoted lines) is refused rather than matched, and `--selftest` plants a wrong quote and requires it to be named. Deliberately **not** a step of `reproduce.sh`, which it runs |
 | `validate.py` | 54 conditions, each anchored to BOTH an artefact path and its claim sentence |
 | `trace_check.py` | checks the chain: figures referenced vs on disk, citation numbering, no uncited reference |
 | `verify_quotes.py` | re-verifies all 12 calibration quotes against the committed evidence, with a mutated-needle control |
@@ -385,6 +386,26 @@ this round. Round 2 was read as **met**, its four required changes each at the o
     The reason names the tree, not a path on the machine the reading was taken on. The gate reading is
     also no longer reported as a mismatch of the check when the gate itself could not run under this
     interpreter -- that is a reading not taken too, with the gate's own error named beside it.
+
+- **3 -- what the round's own controls found in the round's own machinery** (not asked for; each one is
+  a place where the delivery would have misled a reader, and each was found by running a control rather
+  than by reading the code):
+  - **an untaken reading was registered twice.** A check is run twice -- once as the reading, once
+    against a planted copy to prove it can fail -- and a reading this machine cannot take cannot be
+    taken on the planted copy either, so the same missed reading was printed twice in the file a reader
+    opens and counted twice by `--check`'s declared-line tally: one missed reading reported as two. The
+    control pass can no longer register (one owner), and a duplicate that survives by any other path
+    fails the run by name.
+  - **a finding the verdict added did not move the exit code.** The duplicate guard's own control caught
+    it: with the guard firing, the log said `FAIL` while the process exited **0**, so a reader following
+    the exit code would read a failed run as a pass. `verdict()` now returns its verdict.
+  - **the `NOT TAKEN` reason named the author's absolute path** -- the same defect the decision found in
+    the log's opening line, one line lower: a path on one machine identifies neither the build nor the
+    tree. It now names the tree.
+  - **the spec's quoted output is a reading too.** The *Expected output (tail)* block above had drifted
+    from what the command prints (a verdict form no run emits, declared-line counts no run produces).
+    `readme_expected_output.py` now derives it: 40 literal lines, each required to be a line a real run
+    printed.
 
 **The one question (Q1), answered by re-taking rather than by re-asserting.** The *Builds measured*
 table now names, for every row, the **head** it was taken at, and the table's coordinate statement is
