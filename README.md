@@ -452,6 +452,17 @@ in range, and that is how a wrong one survives. And **being in range is not agre
 requirement the reference **names**, not merely exist — a number whose position holds a *different* requirement resolves
 to nothing while *looking* resolved, and the tell is that the **same number reads two different requirements in two
 carriers**, which no single list can produce.
+**And this rule's first form has an instrument in this tree**: `.github/tools/linkgate.py` resolves every markdown
+link target of every tracked markdown carrier — `python3 .github/tools/linkgate.py --check` — at the **linking
+file's own directory**, which is where a renderer resolves it (resolving from the repository root manufactures
+false BROKENs: the defect the first census instrument carried), and it **names every form it does not read as a
+link**: a URL to another repository, a placeholder an author instantiates, an in-page anchor. Its count is
+`targets=<T> links=<L> resolved=<R> broken=<B>`, a `broken=0` printed too — measured at R393 over **34** tracked
+markdown carriers: **targets=74 links=69 resolved=69 broken=0**, with `url=2 placeholder=3 anchor=0`, the anchor
+clause **vacuous at that head** (its first anchored link is the first case the clause can be tested on). The
+rule's **other two forms** — a `see X` pointer and a numbered reference — resolve only inside a list the citing
+sentence names, which no instrument can infer, so they stay a read, and the tool's own header states that
+boundary.
 **A number whose list is in no tracked file resolves to nothing** for every reader of this
 repository — and it does not look broken, which is what lets it stand: the list's *name* usually resembles one that is here.
 Measured at R265: `.github/REVIEW_TEMPLATE.md` → *Citation verification* cited `#12/#13 in the review quality bar` — a
