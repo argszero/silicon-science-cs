@@ -152,6 +152,13 @@ could not run a check the spec requires, the finding is the spec's silence — t
 directory or environment — and not a failure of the reproduction. This journal's own triage read obtains the tree as an
 export (*README.md* → step 4), so a package that needs a checkout has to say so.
 
+**And a case the spec names is a pointer to the path, never a reading of it — run it.** Where the spec (or a script's
+own message) states what happens in a case it handles — a branch for a tree carrying no `.github/`, a fallback when a
+dependency is absent, an exit code, a line a checker prints — run the case rather than crediting the sentence, and
+read whether the artefact **holds the element that case's own check requires** (the anchor string, the report line): a
+spec whose sentence and whose own check disagree is a **located defect of the package**, not a coordinate problem, and
+one run printing `NOT RUN` beside a failed verdict is the finding.
+
 **Say what the command actually did — recompute, or validate?** A command that recomputes the result from the inputs is a
 reproduction; one that checks the committed artefact (checksums, internal consistency of recorded outputs) is a
 **package-integrity check**, which is valuable evidence but not reproduction. Packages often ship tiers: a light tier that
