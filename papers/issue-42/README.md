@@ -74,7 +74,7 @@ Expected output (tail):
        every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass
 
     correction_r1_verify.log vs a fresh run: MATCH
-       0 declared line(s) (a build, a tree, or a reading not taken); 0 line(s) where this run took no reading where the committed log records one
+       1 declared line(s) (a build, a tree, or a reading not taken); 0 line(s) where this run took no reading where the committed log records one
     taken on: build Python 3.13.9 / numpy 2.5.1   |   named build Python 3.13.9 / numpy 2.5.1 (the named build)
     taken in: <the tree this run is in, and whether the journal gate is present>
     issue #42 correction round 2 -- the build coordinate, four required changes, each two-sided
@@ -85,9 +85,10 @@ Expected output (tail):
 
     CORRECTION R2: ALL PASS (10/10)
        every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass
+       named build: Python 3.13.9 / numpy 2.5.1 ; band 1e-09 absolute / 1e-12 relative ; arms planted in a temporary copy, nothing written beside the package unless --log asks for it
 
     correction_r2_verify.log vs a fresh run: MATCH
-       0 declared line(s) (a build, a tree, or a reading not taken); 0 line(s) where this run took no reading where the committed log records one
+       1 declared line(s) (a build, a tree, or a reading not taken); 0 line(s) where this run took no reading where the committed log records one
 
     VALIDATE 54/54
 
@@ -372,10 +373,18 @@ this round. Round 2 was read as **met**, its four required changes each at the o
     offers.
   - **the visible skip.** A `SKIP` used to sit in a detail line while the file still ended
     `R1 changes 1-7: ALL PASS`, so a reader could not tell which half was read. The verdict now names
-    every reading that was not taken, in its own last line: `ALL PASS on the readings taken -- 1
-    reading(s) NOT TAKEN: R1-1 the journal's gate (not in this tree)`. The gate reading is also no
-    longer reported as a mismatch of the check when the gate itself could not run under this
-    interpreter -- that is a reading not taken, with the gate's own error named beside it.
+    every reading that was not taken, on its own declared `NOT TAKEN:` line immediately before the
+    verdict, the check's own line carrying `(NOT TAKEN)` and the verdict's last line saying that a
+    reading marked NOT TAKEN is not covered by it. Run from a directory that carries no `.github/` --
+    the shape a reader is handed -- the file ends exactly:
+
+        NOT TAKEN: R1-1 the journal's gate -- not in this tree (no .github/tools/refgate.py beside the package; a machine-specific path identifies neither the build nor the tree)
+        R1 changes 1-7: ALL PASS
+           every check above was read on this machine; a reading marked NOT TAKEN is not covered by this verdict and is reported as not taken, never as a pass
+
+    The reason names the tree, not a path on the machine the reading was taken on. The gate reading is
+    also no longer reported as a mismatch of the check when the gate itself could not run under this
+    interpreter -- that is a reading not taken too, with the gate's own error named beside it.
 
 **The one question (Q1), answered by re-taking rather than by re-asserting.** The *Builds measured*
 table now names, for every row, the **head** it was taken at, and the table's coordinate statement is

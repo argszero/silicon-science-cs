@@ -57,7 +57,12 @@ def say(s):
 def not_taken(what, why):
     """A reading this run could not take. Recorded, and printed as a DECLARED `NOT TAKEN:` line beside
     the verdict: present in every log, its content a fact about this run's coordinate, so a reader sees
-    it and the comparison does not read the machine as a disagreement."""
+    it and the comparison does not read the machine as a disagreement.
+
+    Registered once per reading. The control pass is what keeps that true: a check is also run against a
+    planted copy to prove it can fail, and that pass is not a reading of the package (see `run_checks`),
+    so it cannot register a second copy of the same fact -- which would be printed twice and counted
+    twice by `--check`'s declared-line tally. `verdict` fails the run if a duplicate ever survives."""
     NOT_TAKEN.append((what, why))
 
 
@@ -122,7 +127,9 @@ def check_layout(ms):
         else:
             fails.append("the journal's gate printed no readable `block form:` line")
     else:
-        not_taken("R1-1 the journal's gate", "not in this tree (%s)" % GATE)
+        not_taken("R1-1 the journal's gate",
+                  "not in this tree (no .github/tools/refgate.py beside the package; a machine-specific"
+                  " path identifies neither the build nor the tree)")
         detail += " | NOT TAKEN: the journal gate is not in this tree"
     return fails, detail
 
@@ -315,10 +322,16 @@ def run_checks():
         if planted == ms:
             catches = ["the control could not be derived: the mutation changed nothing"]
         else:
+            # The planted copy is a CONTROL, not a reading of the package. A reading this machine cannot
+            # take cannot be taken there either, so without this the same reading not taken was
+            # registered twice: printed twice in the file a reader opens, and counted twice by
+            # `--check`'s declared-line tally -- one missed reading reported as two.
+            registered = len(NOT_TAKEN)
             try:
                 catches = fn(planted)[0]
             except Exception as exc:                                          # noqa: BLE001
                 catches = ["the check raised on the planted copy: %s" % exc]
+            del NOT_TAKEN[registered:]
         # the check LINE carries the marker too, so the reading this line names is recognisable as the
         # same reading on both sides even where one run could not take it
         say("%-18s %s%s" % (name, "PASS" if not fails else "FAIL",
@@ -331,7 +344,7 @@ def run_checks():
         if not catches:
             allfail.append("%s: control not caught -- the check cannot fail" % name)
         say("")
-    verdict(allfail)
+    allfail = verdict(allfail)
     return 1 if allfail else 0
 
 
@@ -342,9 +355,17 @@ def verdict(allfail):
     machine."""
     for w, y in NOT_TAKEN:
         say("NOT TAKEN: %s -- %s" % (w, y))
+    dup = len(NOT_TAKEN) - len(set(NOT_TAKEN))
+    if dup:
+        say("!! the log registers %d reading(s) more than once: a missed reading must be one line" % dup)
+        allfail = allfail + ["the log registers %d reading(s) more than once" % dup]
     say("R1 changes 1-7: %s" % ("FAIL" if allfail else "ALL PASS"))
     say("   every check above was read on this machine; a reading marked NOT TAKEN is not covered by this"
         " verdict and is reported as not taken, never as a pass")
+    # RETURNED, not reassigned in place: a finding this function adds must move the exit code too. It did
+    # not, once -- the log said FAIL while the process exited 0, so a reader following the exit code read
+    # a failed run as a pass (found by the duplicate guard's own control).
+    return allfail
 
 
 def main():
