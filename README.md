@@ -678,9 +678,15 @@ the pruned list.
 into a file this repository edits every round — a line number, a section — is a copy of a position, and the position
 moves while the copy does not: the citation stays exactly where it was written and its destination does not, so a
 reader who follows it lands on whatever the file has since grown into. A citation therefore names the **artefact and
-the sentence**, and where a position is given at all it also names the **head it was read at**. *Measured 2026-09-17:*
-a filed item cited `README.md` 324 for a sentence that stood at 324 when the item was filed and at 400 forty-two
-rounds later, the file having grown **331 → 577** lines in between.
+the sentence**, and where a position is given at all it also names the **head it was read at** — **by a name a reader
+can resolve, the commit itself**, because a head given as a *description* (*"the head before this change"*) is not a
+name: it resolves for a reader who holds the carrier's history and for no other, and a verifier reads a tree as an
+**export**, which carries no `.git` (see *A reading owes its tree*). *Measured 2026-09-19 over this repository's own
+carriers:* the seven tracked non-manuscript files name a revision in **26** citations (**24** distinct commits, every
+one resolvable here), and the tree's **one** citation of a position named the head it was read at by a relation and no
+name — at the reading head **4 of its five positions** no longer carry the word they were counted for. *Measured
+2026-09-17:* a filed item cited `README.md` 324 for a sentence that stood at 324 when the item was filed and at 400
+forty-two rounds later, the file having grown **331 → 577** lines in between.
 
 **A mandated verification is read over the artefact the requirement governs — not over the requirement's own
 sentence.** Every verification this workflow mandates is written as a duty plus a predicate (*re-check the PR against

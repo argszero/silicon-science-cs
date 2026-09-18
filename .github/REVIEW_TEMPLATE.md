@@ -340,8 +340,9 @@ the reviews received and how the ACCEPT criteria were checked.
 **What makes a concern *major*.** The criterion above names a **severity** — a term each concern carries, with two
 values, of which the criterion reads only *major* — and until this paragraph no carrier bound it: the word occurs
 **six occurrences over five lines in two carriers** (`git grep -n -o major` over `README.md` and this file, at the
-head before this change) — `README.md:143` (the criterion, named where the decision reads it) and `:223` twice, and
-this file's `:30`, `:80`, `:252` — and none of those sites said which concerns are major, while the row the criterion
+head before this change — **named, `20f249e`**, because a description of a head resolves for no reader who lacks this
+carrier's history) — `README.md:143` (the criterion, named where the decision reads it) and `:223` twice, and this
+file's `:30`, `:80`, `:252` — and none of those sites said which concerns are major, while the row the criterion
 is *read from* (`Weaknesses`, above) asked for locations and carried no severity field. The severity was therefore
 decided by whoever read it, which is what a decision had to do: R320 ruled **three** located defects non-major with
 nothing to read but the paper. **A concern is *major* when it bears on what the manuscript claims or on whether that
