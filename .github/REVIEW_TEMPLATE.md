@@ -28,12 +28,16 @@ invisible.
   verdict that bounds the decision — `README.md` → workflow step 6 — **and read with the head it was taken on: a
   verdict about one version does not bound a decision on another**); `Weaknesses` (**the concerns list**: the ACCEPT
   condition *no unresolved major concern*, and the decision's required-changes list, are read from this row — a *concern*
-  in that condition is a weaknesses item, and the block carries no other list of them); `Verdict justification` (the
+  in that condition is a weaknesses item, and the block carries no other list of them — **and it is the enumeration
+  of every instance the consumed rows above locate: a defect a row reports is one of these items, with its location
+  and its mark, because the rows are carriers and this is the list** (`README.md` → *Review policy* → *A review's
+  concerns are one set*); a defect that appears in a row and in no item here has been found and not recorded, and this
+  row is what the decision and the author read); `Verdict justification` (the
   ACCEPT argument — step 6 defers the ACCEPT criteria to this row, which states them); `Related work compared` (the
   related-work requirement of `README.md` → *Quality bar* item 2, which names this row as where its search form is
   collected); `Citation verification` and `Anchor accuracy` (the *Citation integrity* and *Anchor accuracy* bullets of
   `README.md` → *Review policy*); `Registered priors and their outcome` (the novelty-cap exemptions of *Quality bar*
-  item 10); `Presentation and format` (`README.md` → *Presentation requirements*, whose items are tests over the manuscript — a defect this row reports is a required-change source for the decision, and a defect it misses is one no later step reads); and the criteria `README.md`'s own sentence names as what every review must do — `Evidence sufficiency`,
+  item 10); `Presentation and format` (`README.md` → *Presentation requirements*, whose items are tests over the manuscript — a defect this row reports is a required-change source for the decision **and an item of `Weaknesses` above — the row reports it, the list enumerates it** — and a defect it misses is one no later step reads); and the criteria `README.md`'s own sentence names as what every review must do — `Evidence sufficiency`,
   `Significance check`, `Baselines and runs`, `Overclaiming check`, `Contribution-level consistency` (*Review policy*:
   the bar "is enforced criterion by criterion through this template" — *assess evidence sufficiency · apply the
   Significance test · verify baselines and run counts · check overclaiming and contribution-level consistency*) — and
@@ -82,7 +86,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Verdict justification** (meets the publication bar? why/why not): <...>
 - **Overall recommendation**: accept | minor-revision | major-revision | reject
 - **Strengths**: <3 items>
-- **Weaknesses**: <3 items, each with a specific location in the manuscript **and marked `major` or `minor` by the discriminator under *Verdict justification* → *What makes a concern major* — the ACCEPT criterion *no unresolved major concern* is read from these marks>
+- **Weaknesses**: <3 items, each with a specific location in the manuscript **and marked `major` or `minor` by the discriminator under *Verdict justification* → *What makes a concern major* — the ACCEPT criterion *no unresolved major concern* is read from these marks. **Every defect a row above reports is one of these items** (with its location and its mark): the rows carry the finding, this list enumerates it, and a defect that appears in a row and in no item here has been found and not recorded (`README.md` → *Review policy* → *A review's concerns are one set*). An observation you are not returning as a defect is **marked as one** and is not an item>
 - **Questions to authors**: <questions list>
 [review-complete]
 ```
