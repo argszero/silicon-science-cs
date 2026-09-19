@@ -75,7 +75,7 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
 - **Reproducibility**: success | partial | failed — **whose run it rests on and the head it was taken on** (the commit the version under review sits at: your own run, or a run made elsewhere, cited with the step that made it and the head it ran on) **and the build the verdict binds** — the versions the spec pins for the dependencies whose values the comparison reads, or **`none pinned`**: the build *you* ran under is recorded in the deviation clause below, and the two are one statement only where they coincide — what the command **recomputed** (not merely validated) vs. what it could not run and why; observed deviation: <what you ran, **from which directory**, **in which environment** (interpreter/venv + pinned versions), **and over which tree** — a checkout, or an exported archive of the head (a check that resolves a git object cannot run in an export), **and whether your run changed that tree** — a package that writes its log or regenerates an artefact makes the copy a different object, so a file the package *ships* is read at the head, never out of the copy you ran in, observed vs. expected values, tolerance>
 - **Related work compared** (2–3 items with stated differences): <name concrete prior works and state the actual difference>; **if the submission makes an absence claim, also report the search form it gives** — the indices, the terms, and the window **with its date field and both endpoints** — and whether that window reaches the newest work the submission cites
 - **Significance check** (name a community; if this result is true, whose belief or decision changes and how): <...>
-- **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? <...>
+- **Evidence sufficiency**: does each core claim follow from the committed data/scripts/experiments? which claim is **not** backed by the evidence as presented? — **and every count or absence this review reports about the submission's own artefacts, in *any* row above or below, is read back at the artefact it names, never from a neighbour**: state the **artefact** (its path), the **set or class the count was taken over** (a list's length is not its class's size — say which rows you counted, not how long the list is), and, for an absence, the **place you read** together with a **known-present control** — something the same read must return (`README.md` → *A read that reports an absence*) — because an absence has two causes and one word for both, and a count over one field of one file is not a count over the class the sentence predicates it of <...>
 - **Baselines and runs**: is the comparison against prior work / a standard baseline (not the artifact's own before/after)? for stochastic results, are there **≥3 independent runs** with mean ± variance / a confidence interval? <...>
 - **Overclaiming check**: does the abstract / the stated contribution stay within what the data shows? quote any overclaim with its location <...>
 - **Contribution-level consistency**: the declared level (case study / system / theory+empirics) against the actual evidence — <consistent | overclaimed, with location>
@@ -175,6 +175,18 @@ claim needs **both arms**, and each must move the artefact; if neither does, the
 posted. (R242: an editor's review, and the decision it drove, asserted a withdrawn annotation was *"baked into the
 committed PNG"*; it was never drawn — deleting the call left the figure byte-identical and forcing
 `annotation_clip=False` changed the bytes.)
+
+**And a claim about an artefact's *extent* is read at the artefact too — the count you report and the absence you
+report.** Both are claims about a set, and both are read back at the object rather than from a neighbouring field or a
+remembered shape. **A count names the class it was taken over**, because a list's length is not its class's size: R407
+found a review stating *"`FETCH_FAILED` on all **44** arXiv per-query rows"* — a count of a **44**-row list whose
+**arXiv** class holds **28** members and carries **three** statuses — so the sentence predicates of one class a count
+taken over a wider set. **An absence names the place read and carries a known-present control**, because an empty
+return has two causes — the thing is not there, or the read did not reach it — and one word for both: the same round's
+other member asserts an artefact *"carries no control of its own"* while that artefact's own `meta.control` is
+present and returns, the absence being true only of the neighbour the reviewer had looked at. This is the collector
+half of `README.md` → *A read that reports an absence* (the rule and its measurement there), and the row that collects
+it in the block above is *Evidence sufficiency*.
 
 **Related work compared.** Two or three concrete prior works with the actual difference from this submission. "No prior
 work exists" is not acceptable without a search — and that sentence is an **absence claim**, so it owes the search's

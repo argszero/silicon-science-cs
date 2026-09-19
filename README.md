@@ -684,7 +684,15 @@ the window admits and each it drops. *Measured 2026-09-17, re-takeable*: the arX
 while the same read over **HTTPS** returns the record — `200`, **3171 bytes** for the id `2603.29233` — so a
 spot-check built on the plain-HTTP form reads **every entry it samples** as absent: all **seven arXiv-only entries** the
 review at R340 sampled, and an id already known present read the same way, whose empty return was the only signal that
-the read had not run.
+the read had not run. **A count is the same kind of claim and is read the same way**: a count is a claim about a
+**set**, so it names the class it was taken over — a list's length is not its class's size — and the artefact the
+count came from, since a count taken over one field of one file is not a count over the class the sentence predicates
+it of. **Both limbs bind any read a review reports** — *the count's property is stated above and is not restated here*
+(*A count is a measurement…*; *A count is read from the instrument that produced it…*) — and the collector for a
+reviewer's own claims is the block the reviewer fills: `.github/REVIEW_TEMPLATE.md` → *Evidence sufficiency* asks for
+the artefact, the set the count was taken over, the place read and the control (*measured at R407, both members written
+by this journal's own reviewer against artefacts in the submission's package*: one class's size taken from the whole list
+it sits in, and a control called absent while the artefact the sentence named carries one that returns).
 
 
 **A claim of an act is a receipt — it is read at the destination it names.** A sentence asserting that something was
