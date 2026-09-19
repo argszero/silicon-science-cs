@@ -1,0 +1,4057 @@
+{
+ "declared_modelling_choices": [
+  "the external cell is the SINGLE-AGENT, UNLOADED regime (one agent loop, one worker): the published numbers are one agent's own latency against its own tools",
+  "p = mS/(mT+mS) is the tool-wait share SPORK reports; mT is fixed at 1.0 so p is the free coordinate",
+  "the probe accuracy band is used as h (the fraction of steps issued early), declared as a modelling choice -- the probe predicts a tool name, not a step",
+  "the model's benefit is positive when speculation helps, while the published numbers are latency REDUCTIONS: one function converts, and its plant is an arm"
+ ],
+ "metric_f": {
+  "rule": "every published cell reproduces the published SIGN; the cell whose own paper reports an operating region is REPRODUCED inside that region; and a cell the model cannot reach is reported as NOT REACHED with its shortfall rather than smoothed into an agreement (reported, not failed)",
+  "status": "MET"
+ },
+ "parsed_cells": [
+  {
+   "key": "smc_telecom",
+   "published_reduction_pct": 18.59,
+   "quantity": "latency reduction over sequential execution, tau2-Bench Telecom subset",
+   "region": {
+    "kind": "required_wait_share",
+    "why": "the paper reports no tool-wait share; the model inverts p(1-p) to say WHICH shares could produce this reduction"
+   },
+   "sentence": "SMC matches the sequential agent's overall accuracy while reducing latency by 10.23\\% over the Speculative Actions (SA) baseline and 18.59\\% over sequential execution on the $\\tau^2$-Bench Telecom subset.",
+   "source": "2609.03236",
+   "system": "Speculative Macro Commit (SMC)"
+  },
+  {
+   "key": "smc_appworld",
+   "published_reduction_pct": 44.9,
+   "quantity": "wall-time reduction over sequential execution, AppWorld",
+   "region": {
+    "kind": "required_wait_share",
+    "why": "same inversion as smc_telecom"
+   },
+   "sentence": "On AppWorld, SMC reduces wall time by 7.7\\% over SA baseline and 44.9\\% over sequential execution, with a small reduction in task completion.",
+   "source": "2609.03236",
+   "system": "Speculative Macro Commit (SMC)"
+  },
+  {
+   "key": "spork_p95",
+   "published_reduction_pct": 18.0,
+   "quantity": "GAIA P95 reduction",
+   "region": {
+    "band": [
+     16.0,
+     37.0
+    ],
+    "kind": "reported_wait_share",
+    "why": "the paper reports the tool wait as a share of wall time in its own workloads -- this is its operating region, stated by the paper itself"
+   },
+   "sentence": "On real-tool benchmarks, SPORK cuts Qwen3-32B's GAIA P95 by 18% (131.9 to 108.1 s);",
+   "source": "2607.03333",
+   "system": "SPORK (Self-sPeculative fORKing)"
+  },
+  {
+   "key": "spork_wait_share",
+   "published_band_pct": [
+    16.0,
+    37.0
+   ],
+   "quantity": "tool wait as a share of wall time, our workloads",
+   "region": {
+    "kind": "published_share",
+    "why": "this is the external estimate the model's coordinate p is compared against"
+   },
+   "sentence": "This wait consumes 16-37% of wall time in our workloads and 35-61% in prior reports.",
+   "source": "2607.03333",
+   "system": "SPORK (Self-sPeculative fORKing)"
+  },
+  {
+   "key": "spork_probe_accuracy",
+   "published_band_frac": [
+    0.746,
+    0.996
+   ],
+   "quantity": "upcoming-tool-name probe accuracy across five benchmarks",
+   "region": {
+    "kind": "hit_rate",
+    "why": "the model's h is the fraction of steps issued early; the probe accuracy is the paper's own estimate of how often that is right, so it is used as h and DECLARED as a modelling choice, not measured"
+   },
+   "sentence": "a probe forked at the start of generation predicts Qwen3-32B's upcoming tool name with 74.6-99.6% accuracy across five benchmarks.",
+   "source": "2607.03333",
+   "system": "SPORK (Self-sPeculative fORKing)"
+  }
+ ],
+ "read_date": "2026-09-19",
+ "read_via": "arXiv API: export.arxiv.org/api/query?id_list=<id>",
+ "regime_check": [
+  {
+   "cycle_mean": 2.0,
+   "h": 1.0,
+   "p": 0.5,
+   "serial_mean": 1.990907385054073,
+   "serial_over_cycle": 0.9954536925270365,
+   "which": "smc_appworld"
+  },
+  {
+   "cycle_mean": 1.5,
+   "h": 1.0,
+   "p": 0.3333333333333333,
+   "serial_mean": 1.4929862119815955,
+   "serial_over_cycle": 0.9953241413210637,
+   "which": "smc_telecom"
+  },
+  {
+   "cycle_mean": 2.0,
+   "h": 1.0,
+   "p": 0.5,
+   "serial_mean": 1.990907385054073,
+   "serial_over_cycle": 0.9954536925270365,
+   "which": "smc_telecom"
+  },
+  {
+   "cycle_mean": 1.1904761904761905,
+   "h": 1.0,
+   "p": 0.16,
+   "serial_mean": 1.184749295317681,
+   "serial_over_cycle": 0.9951894080668521,
+   "which": "spork_p95"
+  },
+  {
+   "cycle_mean": 1.3079159382974497,
+   "h": 1.0,
+   "p": 0.23542486889354092,
+   "serial_mean": 1.3017007693186755,
+   "serial_over_cycle": 0.9952480363632049,
+   "which": "spork_p95"
+  },
+  {
+   "cycle_mean": 1.5873015873015874,
+   "h": 1.0,
+   "p": 0.37,
+   "serial_mean": 1.5799248295021866,
+   "serial_over_cycle": 0.9953526425863775,
+   "which": "spork_p95"
+  },
+  {
+   "cycle_mean": 1.5873015873015874,
+   "h": 0.746,
+   "p": 0.37,
+   "serial_mean": 1.5799248295021866,
+   "serial_over_cycle": 0.9953526425863775,
+   "which": "spork_p95_h_probe"
+  }
+ ],
+ "runs": {
+  "smc_appworld": [
+   {
+    "benefit_pct_ci": [
+     24.625653992481794,
+     25.076112482888426
+    ],
+    "benefit_pct_max": 26.09088578971401,
+    "benefit_pct_mean": 24.85088323768511,
+    "benefit_pct_min": 23.624413177977715,
+    "ceiling_pct": 25.0,
+    "h": 1.0,
+    "mS": 1.0,
+    "n_seeds": 32,
+    "p": 0.5,
+    "rho_max": 0.7311350732577236,
+    "rows": [
+     {
+      "benefit_pct": 26.09088578971401,
+      "rho": 0.6677213892741651,
+      "seed": 101,
+      "serial_mean": 2.0217518983066465,
+      "spec_mean": 1.4942589195680844,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.53808410674717,
+      "rho": 0.6703149646964439,
+      "seed": 102,
+      "serial_mean": 2.125931759117845,
+      "spec_mean": 1.58300951842228,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.564815346646586,
+      "rho": 0.6605646828726921,
+      "seed": 103,
+      "serial_mean": 2.014899208044539,
+      "spec_mean": 1.4997939460869083,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.16053483334053,
+      "rho": 0.6688516930692684,
+      "seed": 104,
+      "serial_mean": 2.006888941158147,
+      "spec_mean": 1.522013839463174,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.416854061016323,
+      "rho": 0.6316435765372393,
+      "seed": 105,
+      "serial_mean": 1.9471921320927232,
+      "spec_mean": 1.4717490709120509,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.72796809640998,
+      "rho": 0.6729710670885806,
+      "seed": 106,
+      "serial_mean": 2.0136425807521325,
+      "spec_mean": 1.53584611161554,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.47433692685172,
+      "rho": 0.6524250289253164,
+      "seed": 107,
+      "serial_mean": 2.011003588865376,
+      "spec_mean": 1.4987137590267303,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.864044033852082,
+      "rho": 0.6606925369128193,
+      "seed": 108,
+      "serial_mean": 2.0670893491397284,
+      "spec_mean": 1.55312734315056,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.624413177977715,
+      "rho": 0.6346672613562805,
+      "seed": 109,
+      "serial_mean": 1.9826446342514656,
+      "spec_mean": 1.5142564740048943,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.01559598905842,
+      "rho": 0.6430866820632425,
+      "seed": 110,
+      "serial_mean": 2.0206420729675445,
+      "spec_mean": 1.5151664156090485,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.188694974984767,
+      "rho": 0.677716184756926,
+      "seed": 111,
+      "serial_mean": 1.9990155853572438,
+      "spec_mean": 1.4954896470592014,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.188666118186905,
+      "rho": 0.6459114348354352,
+      "seed": 112,
+      "serial_mean": 2.0223264947973134,
+      "spec_mean": 1.5331526911511588,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.42198787908217,
+      "rho": 0.6597034939194307,
+      "seed": 113,
+      "serial_mean": 1.960975830042056,
+      "spec_mean": 1.4624567922170335,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.965593127367647,
+      "rho": 0.6678258724573787,
+      "seed": 114,
+      "serial_mean": 1.9946655902484114,
+      "spec_mean": 1.4966854947353867,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.573645999034213,
+      "rho": 0.6712460470561753,
+      "seed": 115,
+      "serial_mean": 2.0863953150681205,
+      "spec_mean": 1.5528279630521649,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.932950329042825,
+      "rho": 0.721805588218864,
+      "seed": 116,
+      "serial_mean": 1.9150686297768227,
+      "spec_mean": 1.4375855195474865,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.01906325659845,
+      "rho": 0.6438610514913491,
+      "seed": 117,
+      "serial_mean": 1.9135424839936104,
+      "spec_mean": 1.4539275043212998,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.000087701887175,
+      "rho": 0.6616788678697012,
+      "seed": 118,
+      "serial_mean": 1.9458195239628047,
+      "spec_mean": 1.478821131691288,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.844245884835562,
+      "rho": 0.6606297537937013,
+      "seed": 119,
+      "serial_mean": 1.9989465602896634,
+      "spec_mean": 1.48233389614194,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.025887802598973,
+      "rho": 0.6732757497720664,
+      "seed": 120,
+      "serial_mean": 2.030915098510301,
+      "spec_mean": 1.5429697155761737,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.828764936026865,
+      "rho": 0.6765017813140528,
+      "seed": 121,
+      "serial_mean": 1.9552962367502917,
+      "spec_mean": 1.4698203303245825,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.842358991708974,
+      "rho": 0.6316924124624276,
+      "seed": 122,
+      "serial_mean": 1.942703559087427,
+      "spec_mean": 1.4600901667942214,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.45275666544158,
+      "rho": 0.6791494559248487,
+      "seed": 123,
+      "serial_mean": 1.959593243618471,
+      "spec_mean": 1.4608227436878278,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.225106235169935,
+      "rho": 0.6791567938425279,
+      "seed": 124,
+      "serial_mean": 1.959747508363145,
+      "spec_mean": 1.4849965925210773,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.090783485600944,
+      "rho": 0.6446644565041846,
+      "seed": 125,
+      "serial_mean": 1.924349865996967,
+      "spec_mean": 1.441515407614216,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.050932463424452,
+      "rho": 0.6757583658368608,
+      "seed": 126,
+      "serial_mean": 2.0160174016113412,
+      "spec_mean": 1.5109862438827997,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.1682930582655,
+      "rho": 0.6776000906605618,
+      "seed": 127,
+      "serial_mean": 2.001498143087504,
+      "spec_mean": 1.5177702063103737,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.80477632572842,
+      "rho": 0.6612435226938053,
+      "seed": 128,
+      "serial_mean": 1.9479530825472076,
+      "spec_mean": 1.4647676774912408,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.864650012033433,
+      "rho": 0.658177073511324,
+      "seed": 129,
+      "serial_mean": 1.9372833832815468,
+      "spec_mean": 1.45558465028731,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.55884546174607,
+      "rho": 0.7311350732577236,
+      "seed": 130,
+      "serial_mean": 1.9767921985695536,
+      "spec_mean": 1.4913148574230044,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.949441886944722,
+      "rho": 0.6618356141277746,
+      "seed": 131,
+      "serial_mean": 1.9944121566367736,
+      "spec_mean": 1.4968174546305208,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.753198648599433,
+      "rho": 0.6629309130520751,
+      "seed": 132,
+      "serial_mean": 2.014032265437611,
+      "spec_mean": 1.4953545352725754,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.990907385054073,
+    "steps": 800
+   }
+  ],
+  "smc_telecom": [
+   {
+    "benefit_pct_ci": [
+     21.85939869577015,
+     22.24404217328051
+    ],
+    "benefit_pct_max": 23.224038158479473,
+    "benefit_pct_mean": 22.05172043452533,
+    "benefit_pct_min": 20.651874071717156,
+    "ceiling_pct": 22.22222222222222,
+    "h": 1.0,
+    "mS": 0.49999999999999994,
+    "n_seeds": 32,
+    "p": 0.3333333333333333,
+    "rho_max": 0.49323855813226564,
+    "rows": [
+     {
+      "benefit_pct": 22.86671553205404,
+      "rho": 0.42513481592409624,
+      "seed": 101,
+      "serial_mean": 1.522738428538936,
+      "spec_mean": 1.1745381637876675,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.715230138710353,
+      "rho": 0.43072988889911273,
+      "seed": 102,
+      "serial_mean": 1.5984204683211392,
+      "spec_mean": 1.2353355803577406,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.42640795765261,
+      "rho": 0.42057343913998424,
+      "seed": 103,
+      "serial_mean": 1.5192012891011737,
+      "spec_mean": 1.178499010309427,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.850957829886816,
+      "rho": 0.43430230458619457,
+      "seed": 104,
+      "serial_mean": 1.495774877180926,
+      "spec_mean": 1.1689337395380806,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.498275728751967,
+      "rho": 0.39982790679908575,
+      "seed": 105,
+      "serial_mean": 1.4840770278594881,
+      "spec_mean": 1.1650260563831882,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.00343179997226,
+      "rho": 0.4425888089331098,
+      "seed": 106,
+      "serial_mean": 1.492139626034965,
+      "spec_mean": 1.1638177010600004,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.173427242062825,
+      "rho": 0.41275032764977126,
+      "seed": 107,
+      "serial_mean": 1.5167658869496892,
+      "spec_mean": 1.180446906574471,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.93763337349065,
+      "rho": 0.4225658360261966,
+      "seed": 108,
+      "serial_mean": 1.5543323867533023,
+      "spec_mean": 1.213348646341936,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 20.651874071717156,
+      "rho": 0.4035671093526358,
+      "seed": 109,
+      "serial_mean": 1.5037681046138163,
+      "spec_mean": 1.193211809318323,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.574617650606445,
+      "rho": 0.405004541034015,
+      "seed": 110,
+      "serial_mean": 1.534439700046219,
+      "spec_mean": 1.203390201682135,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.359020356966564,
+      "rho": 0.43758914105254326,
+      "seed": 111,
+      "serial_mean": 1.4915671123099963,
+      "spec_mean": 1.1580673180307859,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.23091532829706,
+      "rho": 0.41204754704154317,
+      "seed": 112,
+      "serial_mean": 1.5317752701880998,
+      "spec_mean": 1.2065653595546708,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.09239358170477,
+      "rho": 0.4187619684856743,
+      "seed": 113,
+      "serial_mean": 1.47679178587156,
+      "spec_mean": 1.1505331321545282,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.25255107746905,
+      "rho": 0.4297059034109207,
+      "seed": 114,
+      "serial_mean": 1.4931137872480247,
+      "spec_mean": 1.1608578790959254,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.737283172116193,
+      "rho": 0.4305068284673712,
+      "seed": 115,
+      "serial_mean": 1.5614585387797684,
+      "spec_mean": 1.2064252892022247,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.224038158479473,
+      "rho": 0.48359690772177677,
+      "seed": 116,
+      "serial_mean": 1.3953497594198716,
+      "spec_mean": 1.071293198847949,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.65808930954741,
+      "rho": 0.4137113549356767,
+      "seed": 117,
+      "serial_mean": 1.449030828277132,
+      "spec_mean": 1.1351984373659962,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.390278568184293,
+      "rho": 0.4270791111387559,
+      "seed": 118,
+      "serial_mean": 1.455853297123798,
+      "spec_mean": 1.144442221324922,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.556040490479106,
+      "rho": 0.4193599778533926,
+      "seed": 119,
+      "serial_mean": 1.505779007764449,
+      "spec_mean": 1.1661348850759654,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.46671458263452,
+      "rho": 0.4369373829442171,
+      "seed": 120,
+      "serial_mean": 1.5123967285801472,
+      "spec_mean": 1.1877348394987453,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.062882020915815,
+      "rho": 0.4369512753239541,
+      "seed": 121,
+      "serial_mean": 1.456287162217931,
+      "spec_mean": 1.134988243732046,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.68815576532562,
+      "rho": 0.39727592517288063,
+      "seed": 122,
+      "serial_mean": 1.4824973025378068,
+      "spec_mean": 1.1609709783466566,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.34198533270576,
+      "rho": 0.4381214488347808,
+      "seed": 123,
+      "serial_mean": 1.4668425873946211,
+      "spec_mean": 1.1391208316650332,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.132141167508223,
+      "rho": 0.4449598239992996,
+      "seed": 124,
+      "serial_mean": 1.4519422901930714,
+      "spec_mean": 1.130596372856789,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.781248492050636,
+      "rho": 0.40755331417307206,
+      "seed": 125,
+      "serial_mean": 1.460914332157612,
+      "spec_mean": 1.1427089512143804,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.520686901840964,
+      "rho": 0.43810638740397456,
+      "seed": 126,
+      "serial_mean": 1.5063414208178358,
+      "spec_mean": 1.1671029857627084,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.853134005962502,
+      "rho": 0.44225291230774344,
+      "seed": 127,
+      "serial_mean": 1.4866984876763454,
+      "spec_mean": 1.1618082748998158,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.91969060119675,
+      "rho": 0.42405739400671627,
+      "seed": 128,
+      "serial_mean": 1.4638141935200757,
+      "spec_mean": 1.1429506513240717,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.58738433102305,
+      "rho": 0.41883009906130714,
+      "seed": 129,
+      "serial_mean": 1.4586502102071772,
+      "spec_mean": 1.1437657832844783,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.749515707391843,
+      "rho": 0.49323855813226564,
+      "seed": 130,
+      "serial_mean": 1.4307580749264468,
+      "spec_mean": 1.1052675419362776,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.631933065646745,
+      "rho": 0.42254407128430693,
+      "seed": 131,
+      "serial_mean": 1.501774540667948,
+      "spec_mean": 1.1769116772337336,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.72040056245904,
+      "rho": 0.4220578078093672,
+      "seed": 132,
+      "serial_mean": 1.5142642701316849,
+      "spec_mean": 1.1702173623835692,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.4929862119815955,
+    "steps": 800
+   },
+   {
+    "benefit_pct_ci": [
+     24.625653992481794,
+     25.076112482888426
+    ],
+    "benefit_pct_max": 26.09088578971401,
+    "benefit_pct_mean": 24.85088323768511,
+    "benefit_pct_min": 23.624413177977715,
+    "ceiling_pct": 25.0,
+    "h": 1.0,
+    "mS": 1.0,
+    "n_seeds": 32,
+    "p": 0.5,
+    "rho_max": 0.7311350732577236,
+    "rows": [
+     {
+      "benefit_pct": 26.09088578971401,
+      "rho": 0.6677213892741651,
+      "seed": 101,
+      "serial_mean": 2.0217518983066465,
+      "spec_mean": 1.4942589195680844,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.53808410674717,
+      "rho": 0.6703149646964439,
+      "seed": 102,
+      "serial_mean": 2.125931759117845,
+      "spec_mean": 1.58300951842228,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.564815346646586,
+      "rho": 0.6605646828726921,
+      "seed": 103,
+      "serial_mean": 2.014899208044539,
+      "spec_mean": 1.4997939460869083,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.16053483334053,
+      "rho": 0.6688516930692684,
+      "seed": 104,
+      "serial_mean": 2.006888941158147,
+      "spec_mean": 1.522013839463174,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.416854061016323,
+      "rho": 0.6316435765372393,
+      "seed": 105,
+      "serial_mean": 1.9471921320927232,
+      "spec_mean": 1.4717490709120509,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.72796809640998,
+      "rho": 0.6729710670885806,
+      "seed": 106,
+      "serial_mean": 2.0136425807521325,
+      "spec_mean": 1.53584611161554,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.47433692685172,
+      "rho": 0.6524250289253164,
+      "seed": 107,
+      "serial_mean": 2.011003588865376,
+      "spec_mean": 1.4987137590267303,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.864044033852082,
+      "rho": 0.6606925369128193,
+      "seed": 108,
+      "serial_mean": 2.0670893491397284,
+      "spec_mean": 1.55312734315056,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.624413177977715,
+      "rho": 0.6346672613562805,
+      "seed": 109,
+      "serial_mean": 1.9826446342514656,
+      "spec_mean": 1.5142564740048943,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.01559598905842,
+      "rho": 0.6430866820632425,
+      "seed": 110,
+      "serial_mean": 2.0206420729675445,
+      "spec_mean": 1.5151664156090485,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.188694974984767,
+      "rho": 0.677716184756926,
+      "seed": 111,
+      "serial_mean": 1.9990155853572438,
+      "spec_mean": 1.4954896470592014,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.188666118186905,
+      "rho": 0.6459114348354352,
+      "seed": 112,
+      "serial_mean": 2.0223264947973134,
+      "spec_mean": 1.5331526911511588,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.42198787908217,
+      "rho": 0.6597034939194307,
+      "seed": 113,
+      "serial_mean": 1.960975830042056,
+      "spec_mean": 1.4624567922170335,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.965593127367647,
+      "rho": 0.6678258724573787,
+      "seed": 114,
+      "serial_mean": 1.9946655902484114,
+      "spec_mean": 1.4966854947353867,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.573645999034213,
+      "rho": 0.6712460470561753,
+      "seed": 115,
+      "serial_mean": 2.0863953150681205,
+      "spec_mean": 1.5528279630521649,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.932950329042825,
+      "rho": 0.721805588218864,
+      "seed": 116,
+      "serial_mean": 1.9150686297768227,
+      "spec_mean": 1.4375855195474865,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.01906325659845,
+      "rho": 0.6438610514913491,
+      "seed": 117,
+      "serial_mean": 1.9135424839936104,
+      "spec_mean": 1.4539275043212998,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.000087701887175,
+      "rho": 0.6616788678697012,
+      "seed": 118,
+      "serial_mean": 1.9458195239628047,
+      "spec_mean": 1.478821131691288,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.844245884835562,
+      "rho": 0.6606297537937013,
+      "seed": 119,
+      "serial_mean": 1.9989465602896634,
+      "spec_mean": 1.48233389614194,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.025887802598973,
+      "rho": 0.6732757497720664,
+      "seed": 120,
+      "serial_mean": 2.030915098510301,
+      "spec_mean": 1.5429697155761737,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.828764936026865,
+      "rho": 0.6765017813140528,
+      "seed": 121,
+      "serial_mean": 1.9552962367502917,
+      "spec_mean": 1.4698203303245825,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.842358991708974,
+      "rho": 0.6316924124624276,
+      "seed": 122,
+      "serial_mean": 1.942703559087427,
+      "spec_mean": 1.4600901667942214,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.45275666544158,
+      "rho": 0.6791494559248487,
+      "seed": 123,
+      "serial_mean": 1.959593243618471,
+      "spec_mean": 1.4608227436878278,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.225106235169935,
+      "rho": 0.6791567938425279,
+      "seed": 124,
+      "serial_mean": 1.959747508363145,
+      "spec_mean": 1.4849965925210773,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.090783485600944,
+      "rho": 0.6446644565041846,
+      "seed": 125,
+      "serial_mean": 1.924349865996967,
+      "spec_mean": 1.441515407614216,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.050932463424452,
+      "rho": 0.6757583658368608,
+      "seed": 126,
+      "serial_mean": 2.0160174016113412,
+      "spec_mean": 1.5109862438827997,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.1682930582655,
+      "rho": 0.6776000906605618,
+      "seed": 127,
+      "serial_mean": 2.001498143087504,
+      "spec_mean": 1.5177702063103737,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.80477632572842,
+      "rho": 0.6612435226938053,
+      "seed": 128,
+      "serial_mean": 1.9479530825472076,
+      "spec_mean": 1.4647676774912408,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.864650012033433,
+      "rho": 0.658177073511324,
+      "seed": 129,
+      "serial_mean": 1.9372833832815468,
+      "spec_mean": 1.45558465028731,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.55884546174607,
+      "rho": 0.7311350732577236,
+      "seed": 130,
+      "serial_mean": 1.9767921985695536,
+      "spec_mean": 1.4913148574230044,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.949441886944722,
+      "rho": 0.6618356141277746,
+      "seed": 131,
+      "serial_mean": 1.9944121566367736,
+      "spec_mean": 1.4968174546305208,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 25.753198648599433,
+      "rho": 0.6629309130520751,
+      "seed": 132,
+      "serial_mean": 2.014032265437611,
+      "spec_mean": 1.4953545352725754,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.990907385054073,
+    "steps": 800
+   }
+  ],
+  "spork_p95": [
+   {
+    "benefit_pct_ci": [
+     13.145192553944865,
+     13.5478205898722
+    ],
+    "benefit_pct_max": 15.03447912815155,
+    "benefit_pct_mean": 13.346506571908533,
+    "benefit_pct_min": 12.440778683312503,
+    "ceiling_pct": 13.44,
+    "h": 1.0,
+    "mS": 0.1904761904761905,
+    "n_seeds": 32,
+    "p": 0.16,
+    "rho_max": 0.22344339544543412,
+    "rows": [
+     {
+      "benefit_pct": 13.355467623935963,
+      "rho": 0.1810875185761253,
+      "seed": 101,
+      "serial_mean": 1.2138253282065468,
+      "spec_mean": 1.051713279486787,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.566102092303604,
+      "rho": 0.18456683270741392,
+      "seed": 102,
+      "serial_mean": 1.2718658597327,
+      "spec_mean": 1.099323238724207,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.29854526840316,
+      "rho": 0.1798897952797248,
+      "seed": 103,
+      "serial_mean": 1.212340672612426,
+      "spec_mean": 1.0511169994577991,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.680745629833499,
+      "rho": 0.18970788052779416,
+      "seed": 104,
+      "serial_mean": 1.1793709328140756,
+      "spec_mean": 1.0180241954635874,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.55979522739402,
+      "rho": 0.16964155059625682,
+      "seed": 105,
+      "serial_mean": 1.1973867252389157,
+      "spec_mean": 1.0469974044689088,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.882237996315489,
+      "rho": 0.19441890800933223,
+      "seed": 106,
+      "serial_mean": 1.169304463591006,
+      "spec_mean": 1.0069788350537623,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.177198239431343,
+      "rho": 0.1763463799688093,
+      "seed": 107,
+      "serial_mean": 1.210809214335219,
+      "spec_mean": 1.051258483860966,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.299011541593458,
+      "rho": 0.18210728805905863,
+      "seed": 108,
+      "serial_mean": 1.2369114100378953,
+      "spec_mean": 1.0724144188576692,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.440778683312503,
+      "rho": 0.17379736369647175,
+      "seed": 109,
+      "serial_mean": 1.2073207291238395,
+      "spec_mean": 1.0571206292157878,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.734617235000911,
+      "rho": 0.17234673735928271,
+      "seed": 110,
+      "serial_mean": 1.2334572787139702,
+      "spec_mean": 1.0763812155124877,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.499406172338567,
+      "rho": 0.18946705338553813,
+      "seed": 111,
+      "serial_mean": 1.177432343280746,
+      "spec_mean": 1.0184859688567944,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.667407854380846,
+      "rho": 0.17715783147009204,
+      "seed": 112,
+      "serial_mean": 1.2281007025728756,
+      "spec_mean": 1.0725321777154528,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.133036966513178,
+      "rho": 0.17926011243628653,
+      "seed": 113,
+      "serial_mean": 1.177058806146967,
+      "spec_mean": 1.022475238018087,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.310549937522321,
+      "rho": 0.18525358807571932,
+      "seed": 114,
+      "serial_mean": 1.1826293377715937,
+      "spec_mean": 1.0252148691917162,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.61550976471709,
+      "rho": 0.18481647577373314,
+      "seed": 115,
+      "serial_mean": 1.2364976772679326,
+      "spec_mean": 1.0681422152790172,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 14.911930157294329,
+      "rho": 0.21568855363654418,
+      "seed": 116,
+      "serial_mean": 1.0736190301512816,
+      "spec_mean": 0.9135217102197017,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.847767709202767,
+      "rho": 0.17740721867394962,
+      "seed": 117,
+      "serial_mean": 1.161475993785977,
+      "spec_mean": 1.0122522561062004,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.977299808169686,
+      "rho": 0.18558525998735342,
+      "seed": 118,
+      "serial_mean": 1.1525408709853635,
+      "spec_mean": 1.0029721867459027,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.561742147850099,
+      "rho": 0.17927968360422367,
+      "seed": 119,
+      "serial_mean": 1.2004848085821709,
+      "spec_mean": 1.037678154318145,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.447789273688185,
+      "rho": 0.19133564513524515,
+      "seed": 120,
+      "serial_mean": 1.1914091662424282,
+      "spec_mean": 1.0311909721787411,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.487311709585532,
+      "rho": 0.18987127672710782,
+      "seed": 121,
+      "serial_mean": 1.1473767827455197,
+      "spec_mean": 0.9926264995732175,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.560820312783406,
+      "rho": 0.1677244959735133,
+      "seed": 122,
+      "serial_mean": 1.1976077151499505,
+      "spec_mean": 1.0471783619979342,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.47157595595879,
+      "rho": 0.19030794180931737,
+      "seed": 123,
+      "serial_mean": 1.1618064668750987,
+      "spec_mean": 1.0052928262287786,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.953772937656582,
+      "rho": 0.1954805040717807,
+      "seed": 124,
+      "serial_mean": 1.1375866789449303,
+      "spec_mean": 0.9788504167959263,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.673884895454334,
+      "rho": 0.1731636790751009,
+      "seed": 125,
+      "serial_mean": 1.1740256683522976,
+      "spec_mean": 1.025231006502239,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.482650747323845,
+      "rho": 0.18932640269834822,
+      "seed": 126,
+      "serial_mean": 1.1908277184218525,
+      "spec_mean": 1.0302725761447091,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.692334851322103,
+      "rho": 0.19405256182279065,
+      "seed": 127,
+      "serial_mean": 1.168012986707532,
+      "spec_mean": 1.0080847374606083,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.272253339377135,
+      "rho": 0.1831294419712678,
+      "seed": 128,
+      "serial_mean": 1.1641091669794725,
+      "spec_mean": 1.0096056491910441,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.126983351622131,
+      "rho": 0.18068581047270937,
+      "seed": 129,
+      "serial_mean": 1.1623534840182776,
+      "spec_mean": 1.0097715356841985,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 15.03447912815155,
+      "rho": 0.22344339544543412,
+      "seed": 130,
+      "serial_mean": 1.0927369507664304,
+      "spec_mean": 0.9284496419778517,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 12.95180127324055,
+      "rho": 0.182194093182212,
+      "seed": 131,
+      "serial_mean": 1.1968083974491486,
+      "spec_mean": 1.04180015219008,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 13.413402469396047,
+      "rho": 0.17992938371214576,
+      "seed": 132,
+      "serial_mean": 1.2048840825613525,
+      "spec_mean": 1.0432681312777081,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.184749295317681,
+    "steps": 800
+   },
+   {
+    "benefit_pct_ci": [
+     17.664664021871413,
+     18.07094864947604
+    ],
+    "benefit_pct_max": 19.442378153248512,
+    "benefit_pct_mean": 17.867806335673727,
+    "benefit_pct_min": 16.691021583181335,
+    "ceiling_pct": 17.999999999999996,
+    "h": 1.0,
+    "mS": 0.3079159382974497,
+    "n_seeds": 32,
+    "p": 0.23542486889354092,
+    "rho_max": 0.3400899924539105,
+    "rows": [
+     {
+      "benefit_pct": 18.16751950912735,
+      "rho": 0.282481759878763,
+      "seed": 101,
+      "serial_mean": 1.3310333603044089,
+      "spec_mean": 1.089217614898112,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.445924731280147,
+      "rho": 0.2880544872561737,
+      "seed": 102,
+      "serial_mean": 1.3957674456607632,
+      "spec_mean": 1.1383052332104673,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.014425215137067,
+      "rho": 0.2803724780571955,
+      "seed": 103,
+      "serial_mean": 1.3287699498048884,
+      "spec_mean": 1.0893996809160724,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.093182325600804,
+      "rho": 0.2934300557220959,
+      "seed": 104,
+      "serial_mean": 1.2994211463768433,
+      "spec_mean": 1.0643145091854689,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.13455617006092,
+      "rho": 0.26517524526657626,
+      "seed": 105,
+      "serial_mean": 1.3061629673456492,
+      "spec_mean": 1.0823577400332745,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.29132131592011,
+      "rho": 0.30005025167850996,
+      "seed": 106,
+      "serial_mean": 1.2917948145710554,
+      "spec_mean": 1.0555084742954692,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.765586966511883,
+      "rho": 0.27471964594457177,
+      "seed": 107,
+      "serial_mean": 1.3268955164886918,
+      "spec_mean": 1.0911647395521462,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.806300960835298,
+      "rho": 0.2830110898307436,
+      "seed": 108,
+      "serial_mean": 1.3573475067504077,
+      "spec_mean": 1.115654124614036,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.691021583181335,
+      "rho": 0.27000777571436635,
+      "seed": 109,
+      "serial_mean": 1.3197990068801693,
+      "spec_mean": 1.0995110697871873,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.246196308585052,
+      "rho": 0.26899811775972204,
+      "seed": 110,
+      "serial_mean": 1.347656246845926,
+      "spec_mean": 1.1152368049499681,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.064359208284653,
+      "rho": 0.2937769425465246,
+      "seed": 111,
+      "serial_mean": 1.2966215846946492,
+      "spec_mean": 1.062395204063255,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.08324424367427,
+      "rho": 0.27539260599238646,
+      "seed": 112,
+      "serial_mean": 1.3433211267959104,
+      "spec_mean": 1.1138382977284877,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.632409209144427,
+      "rho": 0.2788839444945977,
+      "seed": 113,
+      "serial_mean": 1.2907837102398891,
+      "spec_mean": 1.0631874444454148,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.92709921936295,
+      "rho": 0.28766024968949544,
+      "seed": 114,
+      "serial_mean": 1.3004335722989206,
+      "spec_mean": 1.067303555510987,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.293881317672163,
+      "rho": 0.2874416994715471,
+      "seed": 115,
+      "serial_mean": 1.3597945625267498,
+      "spec_mean": 1.1110353590939468,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 19.442378153248512,
+      "rho": 0.330875295521341,
+      "seed": 116,
+      "serial_mean": 1.1956903362966202,
+      "spec_mean": 0.9632196995719825,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.286509555085704,
+      "rho": 0.2758160473705196,
+      "seed": 117,
+      "serial_mean": 1.270580257200733,
+      "spec_mean": 1.0509412796346957,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.386513230035632,
+      "rho": 0.2873710562368963,
+      "seed": 118,
+      "serial_mean": 1.2676238912271784,
+      "spec_mean": 1.0472282956718726,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.168547050892197,
+      "rho": 0.2793249336857621,
+      "seed": 119,
+      "serial_mean": 1.3163197545865513,
+      "spec_mean": 1.077163580634305,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.637284239454193,
+      "rho": 0.29514315596938456,
+      "seed": 120,
+      "serial_mean": 1.3131984994530037,
+      "spec_mean": 1.0815859474762302,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.069171783125885,
+      "rho": 0.2943572633387097,
+      "seed": 121,
+      "serial_mean": 1.2645837824927213,
+      "spec_mean": 1.0360839664925605,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.145681842315827,
+      "rho": 0.26248687326809494,
+      "seed": 122,
+      "serial_mean": 1.305700728579856,
+      "spec_mean": 1.0818294358447542,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.10778422024599,
+      "rho": 0.29483834583589136,
+      "seed": 123,
+      "serial_mean": 1.2775434924864753,
+      "spec_mean": 1.0462086735472298,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.38125436362415,
+      "rho": 0.3016854142822839,
+      "seed": 124,
+      "serial_mean": 1.2568597124733571,
+      "spec_mean": 1.0258331317297142,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.218599804361087,
+      "rho": 0.270186167200363,
+      "seed": 125,
+      "serial_mean": 1.282877172803307,
+      "spec_mean": 1.0619836864368037,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.156183039485608,
+      "rho": 0.29386924065789105,
+      "seed": 126,
+      "serial_mean": 1.310540155731738,
+      "spec_mean": 1.072596086251124,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.081053383651874,
+      "rho": 0.29957563007725146,
+      "seed": 127,
+      "serial_mean": 1.2889288701274475,
+      "spec_mean": 1.0558769530424028,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.653042009356394,
+      "rho": 0.2838469558877917,
+      "seed": 128,
+      "serial_mean": 1.2778234650550901,
+      "spec_mean": 1.0522487519635015,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.5299979810369,
+      "rho": 0.28063732897607796,
+      "seed": 129,
+      "serial_mean": 1.2747746023077648,
+      "spec_mean": 1.0513066402604425,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 19.204152873477486,
+      "rho": 0.3400899924539105,
+      "seed": 130,
+      "serial_mean": 1.2209891703313271,
+      "spec_mean": 0.9865085434922947,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.516735443443455,
+      "rho": 0.2832491473452634,
+      "seed": 131,
+      "serial_mean": 1.312518872222439,
+      "spec_mean": 1.0826084137299667,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.12788548433989,
+      "rho": 0.28055209214514126,
+      "seed": 132,
+      "serial_mean": 1.3222693372370817,
+      "spec_mean": 1.0825698659882035,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.3017007693186755,
+    "steps": 800
+   },
+   {
+    "benefit_pct_ci": [
+     22.938745977054666,
+     23.33155133149006
+    ],
+    "benefit_pct_max": 24.140135402865546,
+    "benefit_pct_mean": 23.135148654272363,
+    "benefit_pct_min": 21.743249769005836,
+    "ceiling_pct": 23.31,
+    "h": 1.0,
+    "mS": 0.5873015873015873,
+    "n_seeds": 32,
+    "p": 0.37,
+    "rho_max": 0.5495838536273084,
+    "rows": [
+     {
+      "benefit_pct": 24.109512710379875,
+      "rho": 0.4799952006378258,
+      "seed": 101,
+      "serial_mean": 1.6098677645301223,
+      "spec_mean": 1.221736491220424,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.819977133783887,
+      "rho": 0.4851277581327895,
+      "seed": 102,
+      "serial_mean": 1.6905256143332639,
+      "spec_mean": 1.2878427995583208,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.59179184955409,
+      "rho": 0.47444951468799806,
+      "seed": 103,
+      "serial_mean": 1.605751719392873,
+      "spec_mean": 1.2269261161330705,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.75114044519052,
+      "rho": 0.4872926935863309,
+      "seed": 104,
+      "serial_mean": 1.5850170153356788,
+      "spec_mean": 1.2244075680964916,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.61764702648013,
+      "rho": 0.45165774502916717,
+      "seed": 105,
+      "serial_mean": 1.5649383952652889,
+      "spec_mean": 1.2109861528423234,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.84089509823678,
+      "rho": 0.4956516917932098,
+      "seed": 106,
+      "serial_mean": 1.5831956974935195,
+      "spec_mean": 1.2215796290292267,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.447667857406216,
+      "rho": 0.4666048079966434,
+      "seed": 107,
+      "serial_mean": 1.6030613587127478,
+      "spec_mean": 1.2271808557713595,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.026692453724067,
+      "rho": 0.4759933552879303,
+      "seed": 108,
+      "serial_mean": 1.6438613801858497,
+      "spec_mean": 1.2653344758049103,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 21.743249769005836,
+      "rho": 0.4550893076179469,
+      "seed": 109,
+      "serial_mean": 1.5873814669315012,
+      "spec_mean": 1.2422331497896761,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.79625524318112,
+      "rho": 0.4579738343172631,
+      "seed": 110,
+      "serial_mean": 1.6193321778578798,
+      "spec_mean": 1.2501850813584339,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.424212384288055,
+      "rho": 0.49195122869214797,
+      "seed": 111,
+      "serial_mean": 1.5801692266515788,
+      "spec_mean": 1.2100270309695509,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.380284931114538,
+      "rho": 0.4647366842084826,
+      "seed": 112,
+      "serial_mean": 1.6174270713103451,
+      "spec_mean": 1.2554422841981088,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.337954331794098,
+      "rho": 0.47294816080574603,
+      "seed": 113,
+      "serial_mean": 1.561331857075933,
+      "spec_mean": 1.196948941303799,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.363313866384075,
+      "rho": 0.48388760863967417,
+      "seed": 114,
+      "serial_mean": 1.5806863242798395,
+      "spec_mean": 1.211385617095331,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.847721726789814,
+      "rho": 0.48493862255201825,
+      "seed": 115,
+      "serial_mean": 1.6531141663856674,
+      "spec_mean": 1.2588841001598723,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 24.140135402865546,
+      "rho": 0.5400046990752321,
+      "seed": 116,
+      "serial_mean": 1.4860943240853721,
+      "spec_mean": 1.1273491420368638,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.651893015901635,
+      "rho": 0.46576904283283244,
+      "seed": 117,
+      "serial_mean": 1.530136038005405,
+      "spec_mean": 1.1835312596786647,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.37767358260977,
+      "rho": 0.4799427258273562,
+      "seed": 118,
+      "serial_mean": 1.5414029557782258,
+      "spec_mean": 1.1964728337414756,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.787842950104224,
+      "rho": 0.473595054830783,
+      "seed": 119,
+      "serial_mean": 1.591887628046629,
+      "spec_mean": 1.2132118991447576,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.496427606111588,
+      "rho": 0.49090443255549604,
+      "seed": 120,
+      "serial_mean": 1.6029316820600132,
+      "spec_mean": 1.2423293166299556,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.069458008048976,
+      "rho": 0.4908785755359997,
+      "seed": 121,
+      "serial_mean": 1.5434157307870724,
+      "spec_mean": 1.1873580868835265,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.80044244993272,
+      "rho": 0.4490655934470519,
+      "seed": 122,
+      "serial_mean": 1.5628507759036143,
+      "spec_mean": 1.2065138841653837,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.463435326787263,
+      "rho": 0.4925324393402207,
+      "seed": 123,
+      "serial_mean": 1.5528784162591043,
+      "spec_mean": 1.188519793356511,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.005584075462913,
+      "rho": 0.49843065698027067,
+      "seed": 124,
+      "serial_mean": 1.540606693365624,
+      "spec_mean": 1.1861811252511862,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.96468042983063,
+      "rho": 0.46040667467874324,
+      "seed": 125,
+      "serial_mean": 1.5418316475898795,
+      "spec_mean": 1.1877549369548712,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.628871019115596,
+      "rho": 0.4927111960613383,
+      "seed": 126,
+      "serial_mean": 1.5953324650833682,
+      "spec_mean": 1.2183734145827418,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.81210355359206,
+      "rho": 0.4959683062139383,
+      "seed": 127,
+      "serial_mean": 1.5765841417957522,
+      "spec_mean": 1.2169321347597946,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.037718302851147,
+      "rho": 0.47762915032363773,
+      "seed": 128,
+      "serial_mean": 1.5483463804930666,
+      "spec_mean": 1.1916427030026822,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.706256810180683,
+      "rho": 0.47206341248287087,
+      "seed": 129,
+      "serial_mean": 1.5422210816963506,
+      "spec_mean": 1.1920404023056308,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.65644783787281,
+      "rho": 0.5495838536273084,
+      "seed": 130,
+      "serial_mean": 1.5260973663561976,
+      "spec_mean": 1.165076938928993,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 22.75798283255747,
+      "rho": 0.47590066359130007,
+      "seed": 131,
+      "serial_mean": 1.5877906323450428,
+      "spec_mean": 1.2264415128190023,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 23.86948690557755,
+      "rho": 0.4761389617980096,
+      "seed": 132,
+      "serial_mean": 1.6015253486771648,
+      "spec_mean": 1.2192494652851638,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.5799248295021866,
+    "steps": 800
+   }
+  ],
+  "spork_p95_h_probe": [
+   {
+    "benefit_pct_ci": [
+     17.112989234341367,
+     17.485616685570246
+    ],
+    "benefit_pct_max": 18.264422100382234,
+    "benefit_pct_mean": 17.299302959955806,
+    "benefit_pct_min": 16.08748205858367,
+    "ceiling_pct": 23.31,
+    "h": 0.746,
+    "mS": 0.5873015873015873,
+    "n_seeds": 32,
+    "p": 0.37,
+    "rho_max": 0.5087260280867658,
+    "rows": [
+     {
+      "benefit_pct": 18.264422100382234,
+      "rho": 0.4453720162692686,
+      "seed": 101,
+      "serial_mean": 1.6098677645301223,
+      "spec_mean": 1.3158347207583532,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.004740735952904,
+      "rho": 0.45030340731453505,
+      "seed": 102,
+      "serial_mean": 1.6905256143332639,
+      "spec_mean": 1.3861508603976846,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.040416656721565,
+      "rho": 0.43758048964269386,
+      "seed": 103,
+      "serial_mean": 1.605751719392873,
+      "spec_mean": 1.332124935935857,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.10276225176683,
+      "rho": 0.45343365448278217,
+      "seed": 104,
+      "serial_mean": 1.5850170153356788,
+      "spec_mean": 1.313935323552767,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.818302048121197,
+      "rho": 0.4204961243164304,
+      "seed": 105,
+      "serial_mean": 1.5649383952652889,
+      "spec_mean": 1.3017423290825518,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.54774500035769,
+      "rho": 0.4641647413896782,
+      "seed": 106,
+      "serial_mean": 1.5831956974935195,
+      "spec_mean": 1.3053805536407224,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 18.243036283393547,
+      "rho": 0.4367925886447255,
+      "seed": 107,
+      "serial_mean": 1.6030613587127478,
+      "spec_mean": 1.3106142933977196,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.861995590883165,
+      "rho": 0.44081854694969036,
+      "seed": 108,
+      "serial_mean": 1.6438613801858497,
+      "spec_mean": 1.3666735467386806,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.08748205858367,
+      "rho": 0.42437839083467194,
+      "seed": 109,
+      "serial_mean": 1.5873814669315012,
+      "spec_mean": 1.3320117582376136,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.725271234985183,
+      "rho": 0.4296378910001207,
+      "seed": 110,
+      "serial_mean": 1.6193321778578798,
+      "spec_mean": 1.332301157137178,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.53990375075953,
+      "rho": 0.4565255596477867,
+      "seed": 111,
+      "serial_mean": 1.5801692266515788,
+      "spec_mean": 1.3030090651977706,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.335299589256405,
+      "rho": 0.4316816149777392,
+      "seed": 112,
+      "serial_mean": 1.6174270713103451,
+      "spec_mean": 1.3532155135740644,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.46301368142749,
+      "rho": 0.4396800843231965,
+      "seed": 113,
+      "serial_mean": 1.561331857075933,
+      "spec_mean": 1.2886762612622769,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.28174370910329,
+      "rho": 0.44896562271338386,
+      "seed": 114,
+      "serial_mean": 1.5806863242798395,
+      "spec_mean": 1.3075161648729523,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.517184307422962,
+      "rho": 0.4430275367056373,
+      "seed": 115,
+      "serial_mean": 1.6531141663856674,
+      "spec_mean": 1.380066252711628,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.557297966558743,
+      "rho": 0.4961961519390267,
+      "seed": 116,
+      "serial_mean": 1.4860943240853721,
+      "spec_mean": 1.2251763155415862,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.729832011741273,
+      "rho": 0.43294386642812116,
+      "seed": 117,
+      "serial_mean": 1.530136038005405,
+      "spec_mean": 1.274146849295987,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.4179569321029,
+      "rho": 0.4504683473102878,
+      "seed": 118,
+      "serial_mean": 1.5414029557782258,
+      "spec_mean": 1.2729220527906133,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.801848874431272,
+      "rho": 0.4391269702701385,
+      "seed": 119,
+      "serial_mean": 1.591887628046629,
+      "spec_mean": 1.3085021982509994,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.451815710124727,
+      "rho": 0.4605848129360863,
+      "seed": 120,
+      "serial_mean": 1.6029316820600132,
+      "spec_mean": 1.3231909989476973,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.794900300382167,
+      "rho": 0.45328098546966494,
+      "seed": 121,
+      "serial_mean": 1.5434157307870724,
+      "spec_mean": 1.2842005975809687,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.537729837198185,
+      "rho": 0.41551976504342447,
+      "seed": 122,
+      "serial_mean": 1.5628507759036143,
+      "spec_mean": 1.304390736826119,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.804646604291058,
+      "rho": 0.45871208482987536,
+      "seed": 123,
+      "serial_mean": 1.5528784162591043,
+      "spec_mean": 1.276393902049859,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.790311629635337,
+      "rho": 0.4668473030943135,
+      "seed": 124,
+      "serial_mean": 1.540606693365624,
+      "spec_mean": 1.266527961628859,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.359892178208487,
+      "rho": 0.4291614345940301,
+      "seed": 125,
+      "serial_mean": 1.5418316475898795,
+      "spec_mean": 1.274171335998781,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.931895601093597,
+      "rho": 0.45877914053272306,
+      "seed": 126,
+      "serial_mean": 1.5953324650833682,
+      "spec_mean": 1.3092591129542657,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 16.888063371396125,
+      "rho": 0.4610043073745663,
+      "seed": 127,
+      "serial_mean": 1.5765841417957522,
+      "spec_mean": 1.3103296128259039,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.150953919679075,
+      "rho": 0.4441213696370789,
+      "seed": 128,
+      "serial_mean": 1.5483463804930666,
+      "spec_mean": 1.282790206257682,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.060474922516796,
+      "rho": 0.4399766445278973,
+      "seed": 129,
+      "serial_mean": 1.5422210816963506,
+      "spec_mean": 1.2791108408037775,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.426724947107047,
+      "rho": 0.5087260280867658,
+      "seed": 130,
+      "serial_mean": 1.5260973663561976,
+      "spec_mean": 1.2601485758962585,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.53959238246571,
+      "rho": 0.4453696776235541,
+      "seed": 131,
+      "serial_mean": 1.5877906323450428,
+      "spec_mean": 1.3092986275447476,
+      "steps": 780
+     },
+     {
+      "benefit_pct": 17.500438530535597,
+      "rho": 0.4396208587835426,
+      "seed": 132,
+      "serial_mean": 1.6015253486771648,
+      "spec_mean": 1.3212513894809716,
+      "steps": 780
+     }
+    ],
+    "serial_mean": 1.5799248295021866,
+    "steps": 800
+   }
+  ]
+ },
+ "selftest": {
+  "arms": [
+   {
+    "arm": "a cell's number is parsed from its sentence (editing the sentence moves the cell)",
+    "detail": {
+     "after_edit": 31.42,
+     "baseline_matches_sentence": true,
+     "edited_sentence_moves_it": true,
+     "parsed": 18.59,
+     "tokens": [
+      [
+       "single",
+       10.23
+      ],
+      [
+       "single",
+       18.59
+      ]
+     ]
+    },
+    "ok": true
+   },
+   {
+    "arm": "swapping the two reported numbers is caught (the choice is anchored on a property)",
+    "detail": {
+     "planted_sentence_swaps_the_reduction": true
+    },
+    "ok": true
+   },
+   {
+    "arm": "the verdict compares BOTH signs (a negative publication reads MISMATCH, the real one MATCH)",
+    "detail": {
+     "model_sign": "POSITIVE",
+     "published_as_benefit_plant": -18.0,
+     "published_sign_true": "POSITIVE",
+     "verdict_paper_reporting_a_loss": "MISMATCH",
+     "verdict_plant": "MISMATCH",
+     "verdict_true": "MATCH"
+    },
+    "ok": true
+   },
+   {
+    "arm": "a published reduction above the model's ceiling reads NOT REACHED, with a shortfall",
+    "detail": {
+     "magnitude": "NOT REACHED",
+     "real_ceiling_pct": 25.0,
+     "shortfall_pp": 19.9,
+     "under_generous_ceiling": "REACHABLE"
+    },
+    "ok": true
+   },
+   {
+    "arm": "the closed-form ceiling is inside the simulator's own interval at two shares",
+    "detail": [
+     {
+      "ceiling": 22.22222222222222,
+      "ceiling_inside_ci": true,
+      "ci": [
+       21.541566916379367,
+       22.339850918648757
+      ],
+      "measured": 21.940708917514062,
+      "p": 0.3333333333333333
+     },
+     {
+      "ceiling": 25.0,
+      "ceiling_inside_ci": true,
+      "ci": [
+       24.32277047817538,
+       25.319711764288996
+      ],
+      "measured": 24.821241121232188,
+      "p": 0.5
+     }
+    ],
+    "ok": true
+   },
+   {
+    "arm": "the unloaded premise is measured: free is the cycle, four agents on one worker is not",
+    "detail": {
+     "four_agents_one_worker": 1.46257,
+     "one_agent_one_worker": 1.01529
+    },
+    "ok": true
+   },
+   {
+    "arm": "the required-share band inverts p(1-p) exactly, and refuses a target above the ceiling",
+    "detail": {
+     "above_ceiling": null,
+     "bands": [
+      {
+       "band": [
+        0.2468202219765568,
+        0.7531797780234433
+       ],
+       "exact": true,
+       "p_hi_times": 18.59,
+       "p_lo_times": 18.590000000000003,
+       "target": 18.59
+      },
+      {
+       "band": [
+        0.5,
+        0.5
+       ],
+       "exact": true,
+       "p_hi_times": 25.0,
+       "p_lo_times": 25.0,
+       "target": 25.0
+      }
+     ]
+    },
+    "ok": true
+   },
+   {
+    "arm": "the reported-region cell takes the INVERSION answer (inside the band REACHED, outside SHORTFALL), while the sampled shares alone would say otherwise",
+    "detail": {
+     "grid_shares": [
+      0.16,
+      0.265,
+      0.37
+     ],
+     "grid_shares_whose_ci_contains_the_published_number": [],
+     "implied_share": [
+      0.23542486889354092,
+      0.764575131106459
+     ],
+     "overlap": [
+      0.23542486889354092,
+      0.37
+     ],
+     "reported_band": [
+      0.16,
+      0.37
+     ],
+     "sim_at_implied": {
+      "ci": [
+       17.382029222494616,
+       18.0852438672052
+      ],
+      "mean": 17.733636544849908,
+      "p": 0.23542486889354092
+     },
+     "verdict_band_planted_outside": "SHORTFALL",
+     "verdict_on_the_grid_alone": "SHORTFALL",
+     "verdict_real": "REACHED"
+    },
+    "ok": true
+   },
+   {
+    "arm": "lowering h to the paper's own reported probe accuracy MOVES the benefit (the knob is live)",
+    "detail": {
+     "difference_pp": 5.7482,
+     "h_oracle": 23.045777241862094,
+     "h_probe": 17.297614775096992
+    },
+    "ok": true
+   }
+  ],
+  "fails": [],
+  "n_fails": 0
+ },
+ "sources": {
+  "2607.03333": {
+   "read": "2026-09-19",
+   "sentences": {
+    "p95": "On real-tool benchmarks, SPORK cuts Qwen3-32B's GAIA P95 by 18% (131.9 to 108.1 s);",
+    "probe": "a probe forked at the start of generation predicts Qwen3-32B's upcoming tool name with 74.6-99.6% accuracy across five benchmarks.",
+    "wait": "This wait consumes 16-37% of wall time in our workloads and 35-61% in prior reports."
+   },
+   "system": "SPORK (Self-sPeculative fORKing)",
+   "url": "https://arxiv.org/abs/2607.03333"
+  },
+  "2609.03236": {
+   "read": "2026-09-19",
+   "sentences": {
+    "appworld": "On AppWorld, SMC reduces wall time by 7.7\\% over SA baseline and 44.9\\% over sequential execution, with a small reduction in task completion.",
+    "telecom": "SMC matches the sequential agent's overall accuracy while reducing latency by 10.23\\% over the Speculative Actions (SA) baseline and 18.59\\% over sequential execution on the $\\tau^2$-Bench Telecom subset."
+   },
+   "system": "Speculative Macro Commit (SMC)",
+   "url": "https://arxiv.org/abs/2609.03236"
+  }
+ },
+ "summary": {
+  "h_sensitivity": {
+   "h_oracle": 23.135148654272363,
+   "h_probe_low": 17.299302959955806,
+   "h_probe_low_ci": [
+    17.112989234341367,
+    17.485616685570246
+   ],
+   "published_target_pct": 18.0
+  },
+  "magnitudes": {
+   "smc_appworld": "NOT REACHED",
+   "smc_telecom": "REACHABLE",
+   "spork_p95": "REACHED"
+  },
+  "model_band_pct_in_reported_region": [
+   13.145192553944865,
+   23.33155133149006
+  ],
+  "n_cells": 3,
+  "reported_region_cell": "spork_p95",
+  "reported_region_inside": true,
+  "reported_region_overlap_p": [
+   0.23542486889354092,
+   0.37
+  ],
+  "reported_region_verdict": "MATCH/REACHED",
+  "sign_match": 3,
+  "sign_rule": "published sign vs model sign, both computed (not the model's sign against a constant)"
+ },
+ "verdicts": [
+  {
+   "band": [
+    0.2468202219765568,
+    0.7531797780234433
+   ],
+   "key": "smc_telecom",
+   "magnitude": "REACHABLE",
+   "model_ceiling_pct": 25.0,
+   "model_sign": "POSITIVE",
+   "model_signs": [
+    "POSITIVE"
+   ],
+   "published_as_benefit_pct": 18.59,
+   "published_reduction_pct": 18.59,
+   "published_sign": "POSITIVE",
+   "quantity": "latency reduction over sequential execution, tau2-Bench Telecom subset",
+   "reachable": true,
+   "region": {
+    "kind": "required_wait_share",
+    "why": "the paper reports no tool-wait share; the model inverts p(1-p) to say WHICH shares could produce this reduction"
+   },
+   "runs": [
+    {
+     "benefit_pct_ci": [
+      21.85939869577015,
+      22.24404217328051
+     ],
+     "benefit_pct_max": 23.224038158479473,
+     "benefit_pct_mean": 22.05172043452533,
+     "benefit_pct_min": 20.651874071717156,
+     "ceiling_pct": 22.22222222222222,
+     "h": 1.0,
+     "mS": 0.49999999999999994,
+     "n_seeds": 32,
+     "p": 0.3333333333333333,
+     "rho_max": 0.49323855813226564,
+     "rows": [
+      {
+       "benefit_pct": 22.86671553205404,
+       "rho": 0.42513481592409624,
+       "seed": 101,
+       "serial_mean": 1.522738428538936,
+       "spec_mean": 1.1745381637876675,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.715230138710353,
+       "rho": 0.43072988889911273,
+       "seed": 102,
+       "serial_mean": 1.5984204683211392,
+       "spec_mean": 1.2353355803577406,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.42640795765261,
+       "rho": 0.42057343913998424,
+       "seed": 103,
+       "serial_mean": 1.5192012891011737,
+       "spec_mean": 1.178499010309427,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.850957829886816,
+       "rho": 0.43430230458619457,
+       "seed": 104,
+       "serial_mean": 1.495774877180926,
+       "spec_mean": 1.1689337395380806,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.498275728751967,
+       "rho": 0.39982790679908575,
+       "seed": 105,
+       "serial_mean": 1.4840770278594881,
+       "spec_mean": 1.1650260563831882,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.00343179997226,
+       "rho": 0.4425888089331098,
+       "seed": 106,
+       "serial_mean": 1.492139626034965,
+       "spec_mean": 1.1638177010600004,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.173427242062825,
+       "rho": 0.41275032764977126,
+       "seed": 107,
+       "serial_mean": 1.5167658869496892,
+       "spec_mean": 1.180446906574471,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.93763337349065,
+       "rho": 0.4225658360261966,
+       "seed": 108,
+       "serial_mean": 1.5543323867533023,
+       "spec_mean": 1.213348646341936,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 20.651874071717156,
+       "rho": 0.4035671093526358,
+       "seed": 109,
+       "serial_mean": 1.5037681046138163,
+       "spec_mean": 1.193211809318323,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.574617650606445,
+       "rho": 0.405004541034015,
+       "seed": 110,
+       "serial_mean": 1.534439700046219,
+       "spec_mean": 1.203390201682135,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.359020356966564,
+       "rho": 0.43758914105254326,
+       "seed": 111,
+       "serial_mean": 1.4915671123099963,
+       "spec_mean": 1.1580673180307859,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.23091532829706,
+       "rho": 0.41204754704154317,
+       "seed": 112,
+       "serial_mean": 1.5317752701880998,
+       "spec_mean": 1.2065653595546708,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.09239358170477,
+       "rho": 0.4187619684856743,
+       "seed": 113,
+       "serial_mean": 1.47679178587156,
+       "spec_mean": 1.1505331321545282,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.25255107746905,
+       "rho": 0.4297059034109207,
+       "seed": 114,
+       "serial_mean": 1.4931137872480247,
+       "spec_mean": 1.1608578790959254,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.737283172116193,
+       "rho": 0.4305068284673712,
+       "seed": 115,
+       "serial_mean": 1.5614585387797684,
+       "spec_mean": 1.2064252892022247,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.224038158479473,
+       "rho": 0.48359690772177677,
+       "seed": 116,
+       "serial_mean": 1.3953497594198716,
+       "spec_mean": 1.071293198847949,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.65808930954741,
+       "rho": 0.4137113549356767,
+       "seed": 117,
+       "serial_mean": 1.449030828277132,
+       "spec_mean": 1.1351984373659962,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.390278568184293,
+       "rho": 0.4270791111387559,
+       "seed": 118,
+       "serial_mean": 1.455853297123798,
+       "spec_mean": 1.144442221324922,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.556040490479106,
+       "rho": 0.4193599778533926,
+       "seed": 119,
+       "serial_mean": 1.505779007764449,
+       "spec_mean": 1.1661348850759654,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.46671458263452,
+       "rho": 0.4369373829442171,
+       "seed": 120,
+       "serial_mean": 1.5123967285801472,
+       "spec_mean": 1.1877348394987453,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.062882020915815,
+       "rho": 0.4369512753239541,
+       "seed": 121,
+       "serial_mean": 1.456287162217931,
+       "spec_mean": 1.134988243732046,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.68815576532562,
+       "rho": 0.39727592517288063,
+       "seed": 122,
+       "serial_mean": 1.4824973025378068,
+       "spec_mean": 1.1609709783466566,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.34198533270576,
+       "rho": 0.4381214488347808,
+       "seed": 123,
+       "serial_mean": 1.4668425873946211,
+       "spec_mean": 1.1391208316650332,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.132141167508223,
+       "rho": 0.4449598239992996,
+       "seed": 124,
+       "serial_mean": 1.4519422901930714,
+       "spec_mean": 1.130596372856789,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.781248492050636,
+       "rho": 0.40755331417307206,
+       "seed": 125,
+       "serial_mean": 1.460914332157612,
+       "spec_mean": 1.1427089512143804,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.520686901840964,
+       "rho": 0.43810638740397456,
+       "seed": 126,
+       "serial_mean": 1.5063414208178358,
+       "spec_mean": 1.1671029857627084,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.853134005962502,
+       "rho": 0.44225291230774344,
+       "seed": 127,
+       "serial_mean": 1.4866984876763454,
+       "spec_mean": 1.1618082748998158,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.91969060119675,
+       "rho": 0.42405739400671627,
+       "seed": 128,
+       "serial_mean": 1.4638141935200757,
+       "spec_mean": 1.1429506513240717,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.58738433102305,
+       "rho": 0.41883009906130714,
+       "seed": 129,
+       "serial_mean": 1.4586502102071772,
+       "spec_mean": 1.1437657832844783,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.749515707391843,
+       "rho": 0.49323855813226564,
+       "seed": 130,
+       "serial_mean": 1.4307580749264468,
+       "spec_mean": 1.1052675419362776,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.631933065646745,
+       "rho": 0.42254407128430693,
+       "seed": 131,
+       "serial_mean": 1.501774540667948,
+       "spec_mean": 1.1769116772337336,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.72040056245904,
+       "rho": 0.4220578078093672,
+       "seed": 132,
+       "serial_mean": 1.5142642701316849,
+       "spec_mean": 1.1702173623835692,
+       "steps": 780
+      }
+     ],
+     "serial_mean": 1.4929862119815955,
+     "steps": 800
+    },
+    {
+     "benefit_pct_ci": [
+      24.625653992481794,
+      25.076112482888426
+     ],
+     "benefit_pct_max": 26.09088578971401,
+     "benefit_pct_mean": 24.85088323768511,
+     "benefit_pct_min": 23.624413177977715,
+     "ceiling_pct": 25.0,
+     "h": 1.0,
+     "mS": 1.0,
+     "n_seeds": 32,
+     "p": 0.5,
+     "rho_max": 0.7311350732577236,
+     "rows": [
+      {
+       "benefit_pct": 26.09088578971401,
+       "rho": 0.6677213892741651,
+       "seed": 101,
+       "serial_mean": 2.0217518983066465,
+       "spec_mean": 1.4942589195680844,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.53808410674717,
+       "rho": 0.6703149646964439,
+       "seed": 102,
+       "serial_mean": 2.125931759117845,
+       "spec_mean": 1.58300951842228,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.564815346646586,
+       "rho": 0.6605646828726921,
+       "seed": 103,
+       "serial_mean": 2.014899208044539,
+       "spec_mean": 1.4997939460869083,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.16053483334053,
+       "rho": 0.6688516930692684,
+       "seed": 104,
+       "serial_mean": 2.006888941158147,
+       "spec_mean": 1.522013839463174,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.416854061016323,
+       "rho": 0.6316435765372393,
+       "seed": 105,
+       "serial_mean": 1.9471921320927232,
+       "spec_mean": 1.4717490709120509,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.72796809640998,
+       "rho": 0.6729710670885806,
+       "seed": 106,
+       "serial_mean": 2.0136425807521325,
+       "spec_mean": 1.53584611161554,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.47433692685172,
+       "rho": 0.6524250289253164,
+       "seed": 107,
+       "serial_mean": 2.011003588865376,
+       "spec_mean": 1.4987137590267303,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.864044033852082,
+       "rho": 0.6606925369128193,
+       "seed": 108,
+       "serial_mean": 2.0670893491397284,
+       "spec_mean": 1.55312734315056,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.624413177977715,
+       "rho": 0.6346672613562805,
+       "seed": 109,
+       "serial_mean": 1.9826446342514656,
+       "spec_mean": 1.5142564740048943,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.01559598905842,
+       "rho": 0.6430866820632425,
+       "seed": 110,
+       "serial_mean": 2.0206420729675445,
+       "spec_mean": 1.5151664156090485,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.188694974984767,
+       "rho": 0.677716184756926,
+       "seed": 111,
+       "serial_mean": 1.9990155853572438,
+       "spec_mean": 1.4954896470592014,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.188666118186905,
+       "rho": 0.6459114348354352,
+       "seed": 112,
+       "serial_mean": 2.0223264947973134,
+       "spec_mean": 1.5331526911511588,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.42198787908217,
+       "rho": 0.6597034939194307,
+       "seed": 113,
+       "serial_mean": 1.960975830042056,
+       "spec_mean": 1.4624567922170335,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.965593127367647,
+       "rho": 0.6678258724573787,
+       "seed": 114,
+       "serial_mean": 1.9946655902484114,
+       "spec_mean": 1.4966854947353867,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.573645999034213,
+       "rho": 0.6712460470561753,
+       "seed": 115,
+       "serial_mean": 2.0863953150681205,
+       "spec_mean": 1.5528279630521649,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.932950329042825,
+       "rho": 0.721805588218864,
+       "seed": 116,
+       "serial_mean": 1.9150686297768227,
+       "spec_mean": 1.4375855195474865,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.01906325659845,
+       "rho": 0.6438610514913491,
+       "seed": 117,
+       "serial_mean": 1.9135424839936104,
+       "spec_mean": 1.4539275043212998,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.000087701887175,
+       "rho": 0.6616788678697012,
+       "seed": 118,
+       "serial_mean": 1.9458195239628047,
+       "spec_mean": 1.478821131691288,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.844245884835562,
+       "rho": 0.6606297537937013,
+       "seed": 119,
+       "serial_mean": 1.9989465602896634,
+       "spec_mean": 1.48233389614194,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.025887802598973,
+       "rho": 0.6732757497720664,
+       "seed": 120,
+       "serial_mean": 2.030915098510301,
+       "spec_mean": 1.5429697155761737,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.828764936026865,
+       "rho": 0.6765017813140528,
+       "seed": 121,
+       "serial_mean": 1.9552962367502917,
+       "spec_mean": 1.4698203303245825,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.842358991708974,
+       "rho": 0.6316924124624276,
+       "seed": 122,
+       "serial_mean": 1.942703559087427,
+       "spec_mean": 1.4600901667942214,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.45275666544158,
+       "rho": 0.6791494559248487,
+       "seed": 123,
+       "serial_mean": 1.959593243618471,
+       "spec_mean": 1.4608227436878278,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.225106235169935,
+       "rho": 0.6791567938425279,
+       "seed": 124,
+       "serial_mean": 1.959747508363145,
+       "spec_mean": 1.4849965925210773,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.090783485600944,
+       "rho": 0.6446644565041846,
+       "seed": 125,
+       "serial_mean": 1.924349865996967,
+       "spec_mean": 1.441515407614216,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.050932463424452,
+       "rho": 0.6757583658368608,
+       "seed": 126,
+       "serial_mean": 2.0160174016113412,
+       "spec_mean": 1.5109862438827997,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.1682930582655,
+       "rho": 0.6776000906605618,
+       "seed": 127,
+       "serial_mean": 2.001498143087504,
+       "spec_mean": 1.5177702063103737,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.80477632572842,
+       "rho": 0.6612435226938053,
+       "seed": 128,
+       "serial_mean": 1.9479530825472076,
+       "spec_mean": 1.4647676774912408,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.864650012033433,
+       "rho": 0.658177073511324,
+       "seed": 129,
+       "serial_mean": 1.9372833832815468,
+       "spec_mean": 1.45558465028731,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.55884546174607,
+       "rho": 0.7311350732577236,
+       "seed": 130,
+       "serial_mean": 1.9767921985695536,
+       "spec_mean": 1.4913148574230044,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.949441886944722,
+       "rho": 0.6618356141277746,
+       "seed": 131,
+       "serial_mean": 1.9944121566367736,
+       "spec_mean": 1.4968174546305208,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.753198648599433,
+       "rho": 0.6629309130520751,
+       "seed": 132,
+       "serial_mean": 2.014032265437611,
+       "spec_mean": 1.4953545352725754,
+       "steps": 780
+      }
+     ],
+     "serial_mean": 1.990907385054073,
+     "steps": 800
+    }
+   ],
+   "sentence": "SMC matches the sequential agent's overall accuracy while reducing latency by 10.23\\% over the Speculative Actions (SA) baseline and 18.59\\% over sequential execution on the $\\tau^2$-Bench Telecom subset.",
+   "sign": "MATCH",
+   "source": "2609.03236",
+   "system": "Speculative Macro Commit (SMC)"
+  },
+  {
+   "key": "smc_appworld",
+   "magnitude": "NOT REACHED",
+   "magnitude_reason": "the published reduction exceeds the model's unloaded ceiling p(1-p) <= 25%% at p = 1/2, so no tool-wait share reproduces it with single-step speculation; the published mechanism (multi-step macro commits) is outside this instrument's action space",
+   "model_ceiling_pct": 25.0,
+   "model_sign": "POSITIVE",
+   "model_signs": [
+    "POSITIVE"
+   ],
+   "published_as_benefit_pct": 44.9,
+   "published_reduction_pct": 44.9,
+   "published_sign": "POSITIVE",
+   "quantity": "wall-time reduction over sequential execution, AppWorld",
+   "reachable": false,
+   "region": {
+    "kind": "required_wait_share",
+    "why": "same inversion as smc_telecom"
+   },
+   "runs": [
+    {
+     "benefit_pct_ci": [
+      24.625653992481794,
+      25.076112482888426
+     ],
+     "benefit_pct_max": 26.09088578971401,
+     "benefit_pct_mean": 24.85088323768511,
+     "benefit_pct_min": 23.624413177977715,
+     "ceiling_pct": 25.0,
+     "h": 1.0,
+     "mS": 1.0,
+     "n_seeds": 32,
+     "p": 0.5,
+     "rho_max": 0.7311350732577236,
+     "rows": [
+      {
+       "benefit_pct": 26.09088578971401,
+       "rho": 0.6677213892741651,
+       "seed": 101,
+       "serial_mean": 2.0217518983066465,
+       "spec_mean": 1.4942589195680844,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.53808410674717,
+       "rho": 0.6703149646964439,
+       "seed": 102,
+       "serial_mean": 2.125931759117845,
+       "spec_mean": 1.58300951842228,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.564815346646586,
+       "rho": 0.6605646828726921,
+       "seed": 103,
+       "serial_mean": 2.014899208044539,
+       "spec_mean": 1.4997939460869083,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.16053483334053,
+       "rho": 0.6688516930692684,
+       "seed": 104,
+       "serial_mean": 2.006888941158147,
+       "spec_mean": 1.522013839463174,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.416854061016323,
+       "rho": 0.6316435765372393,
+       "seed": 105,
+       "serial_mean": 1.9471921320927232,
+       "spec_mean": 1.4717490709120509,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.72796809640998,
+       "rho": 0.6729710670885806,
+       "seed": 106,
+       "serial_mean": 2.0136425807521325,
+       "spec_mean": 1.53584611161554,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.47433692685172,
+       "rho": 0.6524250289253164,
+       "seed": 107,
+       "serial_mean": 2.011003588865376,
+       "spec_mean": 1.4987137590267303,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.864044033852082,
+       "rho": 0.6606925369128193,
+       "seed": 108,
+       "serial_mean": 2.0670893491397284,
+       "spec_mean": 1.55312734315056,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.624413177977715,
+       "rho": 0.6346672613562805,
+       "seed": 109,
+       "serial_mean": 1.9826446342514656,
+       "spec_mean": 1.5142564740048943,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.01559598905842,
+       "rho": 0.6430866820632425,
+       "seed": 110,
+       "serial_mean": 2.0206420729675445,
+       "spec_mean": 1.5151664156090485,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.188694974984767,
+       "rho": 0.677716184756926,
+       "seed": 111,
+       "serial_mean": 1.9990155853572438,
+       "spec_mean": 1.4954896470592014,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.188666118186905,
+       "rho": 0.6459114348354352,
+       "seed": 112,
+       "serial_mean": 2.0223264947973134,
+       "spec_mean": 1.5331526911511588,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.42198787908217,
+       "rho": 0.6597034939194307,
+       "seed": 113,
+       "serial_mean": 1.960975830042056,
+       "spec_mean": 1.4624567922170335,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.965593127367647,
+       "rho": 0.6678258724573787,
+       "seed": 114,
+       "serial_mean": 1.9946655902484114,
+       "spec_mean": 1.4966854947353867,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.573645999034213,
+       "rho": 0.6712460470561753,
+       "seed": 115,
+       "serial_mean": 2.0863953150681205,
+       "spec_mean": 1.5528279630521649,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.932950329042825,
+       "rho": 0.721805588218864,
+       "seed": 116,
+       "serial_mean": 1.9150686297768227,
+       "spec_mean": 1.4375855195474865,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.01906325659845,
+       "rho": 0.6438610514913491,
+       "seed": 117,
+       "serial_mean": 1.9135424839936104,
+       "spec_mean": 1.4539275043212998,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.000087701887175,
+       "rho": 0.6616788678697012,
+       "seed": 118,
+       "serial_mean": 1.9458195239628047,
+       "spec_mean": 1.478821131691288,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.844245884835562,
+       "rho": 0.6606297537937013,
+       "seed": 119,
+       "serial_mean": 1.9989465602896634,
+       "spec_mean": 1.48233389614194,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.025887802598973,
+       "rho": 0.6732757497720664,
+       "seed": 120,
+       "serial_mean": 2.030915098510301,
+       "spec_mean": 1.5429697155761737,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.828764936026865,
+       "rho": 0.6765017813140528,
+       "seed": 121,
+       "serial_mean": 1.9552962367502917,
+       "spec_mean": 1.4698203303245825,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.842358991708974,
+       "rho": 0.6316924124624276,
+       "seed": 122,
+       "serial_mean": 1.942703559087427,
+       "spec_mean": 1.4600901667942214,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.45275666544158,
+       "rho": 0.6791494559248487,
+       "seed": 123,
+       "serial_mean": 1.959593243618471,
+       "spec_mean": 1.4608227436878278,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.225106235169935,
+       "rho": 0.6791567938425279,
+       "seed": 124,
+       "serial_mean": 1.959747508363145,
+       "spec_mean": 1.4849965925210773,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.090783485600944,
+       "rho": 0.6446644565041846,
+       "seed": 125,
+       "serial_mean": 1.924349865996967,
+       "spec_mean": 1.441515407614216,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.050932463424452,
+       "rho": 0.6757583658368608,
+       "seed": 126,
+       "serial_mean": 2.0160174016113412,
+       "spec_mean": 1.5109862438827997,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.1682930582655,
+       "rho": 0.6776000906605618,
+       "seed": 127,
+       "serial_mean": 2.001498143087504,
+       "spec_mean": 1.5177702063103737,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.80477632572842,
+       "rho": 0.6612435226938053,
+       "seed": 128,
+       "serial_mean": 1.9479530825472076,
+       "spec_mean": 1.4647676774912408,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.864650012033433,
+       "rho": 0.658177073511324,
+       "seed": 129,
+       "serial_mean": 1.9372833832815468,
+       "spec_mean": 1.45558465028731,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.55884546174607,
+       "rho": 0.7311350732577236,
+       "seed": 130,
+       "serial_mean": 1.9767921985695536,
+       "spec_mean": 1.4913148574230044,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.949441886944722,
+       "rho": 0.6618356141277746,
+       "seed": 131,
+       "serial_mean": 1.9944121566367736,
+       "spec_mean": 1.4968174546305208,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 25.753198648599433,
+       "rho": 0.6629309130520751,
+       "seed": 132,
+       "serial_mean": 2.014032265437611,
+       "spec_mean": 1.4953545352725754,
+       "steps": 780
+      }
+     ],
+     "serial_mean": 1.990907385054073,
+     "steps": 800
+    }
+   ],
+   "sentence": "On AppWorld, SMC reduces wall time by 7.7\\% over SA baseline and 44.9\\% over sequential execution, with a small reduction in task completion.",
+   "shortfall_pp": 19.9,
+   "sign": "MATCH",
+   "source": "2609.03236",
+   "system": "Speculative Macro Commit (SMC)"
+  },
+  {
+   "band": [
+    0.23542486889354092,
+    0.764575131106459
+   ],
+   "implied_shares_p": [
+    0.23542486889354092,
+    0.764575131106459
+   ],
+   "inside_reported_region": true,
+   "key": "spork_p95",
+   "magnitude": "REACHED",
+   "magnitude_reason": "the share the model's inversion points at (p = 0.2354) lies inside the band the paper reports for its own workloads (0.16-0.37), and the simulator run at that share returns the published number inside its interval",
+   "model_band_pct": [
+    13.145192553944865,
+    23.33155133149006
+   ],
+   "model_ceiling_pct": 25.0,
+   "model_sign": "POSITIVE",
+   "model_signs": [
+    "POSITIVE"
+   ],
+   "overlap_p": [
+    0.23542486889354092,
+    0.37
+   ],
+   "published_as_benefit_pct": 18.0,
+   "published_reduction_pct": 18.0,
+   "published_sign": "POSITIVE",
+   "quantity": "GAIA P95 reduction",
+   "reachable": true,
+   "region": {
+    "band": [
+     16.0,
+     37.0
+    ],
+    "kind": "reported_wait_share",
+    "why": "the paper reports the tool wait as a share of wall time in its own workloads -- this is its operating region, stated by the paper itself"
+   },
+   "reported_band_p": [
+    0.16,
+    0.37
+   ],
+   "runs": [
+    {
+     "benefit_pct_ci": [
+      13.145192553944865,
+      13.5478205898722
+     ],
+     "benefit_pct_max": 15.03447912815155,
+     "benefit_pct_mean": 13.346506571908533,
+     "benefit_pct_min": 12.440778683312503,
+     "ceiling_pct": 13.44,
+     "h": 1.0,
+     "mS": 0.1904761904761905,
+     "n_seeds": 32,
+     "p": 0.16,
+     "rho_max": 0.22344339544543412,
+     "rows": [
+      {
+       "benefit_pct": 13.355467623935963,
+       "rho": 0.1810875185761253,
+       "seed": 101,
+       "serial_mean": 1.2138253282065468,
+       "spec_mean": 1.051713279486787,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.566102092303604,
+       "rho": 0.18456683270741392,
+       "seed": 102,
+       "serial_mean": 1.2718658597327,
+       "spec_mean": 1.099323238724207,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.29854526840316,
+       "rho": 0.1798897952797248,
+       "seed": 103,
+       "serial_mean": 1.212340672612426,
+       "spec_mean": 1.0511169994577991,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.680745629833499,
+       "rho": 0.18970788052779416,
+       "seed": 104,
+       "serial_mean": 1.1793709328140756,
+       "spec_mean": 1.0180241954635874,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.55979522739402,
+       "rho": 0.16964155059625682,
+       "seed": 105,
+       "serial_mean": 1.1973867252389157,
+       "spec_mean": 1.0469974044689088,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.882237996315489,
+       "rho": 0.19441890800933223,
+       "seed": 106,
+       "serial_mean": 1.169304463591006,
+       "spec_mean": 1.0069788350537623,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.177198239431343,
+       "rho": 0.1763463799688093,
+       "seed": 107,
+       "serial_mean": 1.210809214335219,
+       "spec_mean": 1.051258483860966,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.299011541593458,
+       "rho": 0.18210728805905863,
+       "seed": 108,
+       "serial_mean": 1.2369114100378953,
+       "spec_mean": 1.0724144188576692,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.440778683312503,
+       "rho": 0.17379736369647175,
+       "seed": 109,
+       "serial_mean": 1.2073207291238395,
+       "spec_mean": 1.0571206292157878,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.734617235000911,
+       "rho": 0.17234673735928271,
+       "seed": 110,
+       "serial_mean": 1.2334572787139702,
+       "spec_mean": 1.0763812155124877,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.499406172338567,
+       "rho": 0.18946705338553813,
+       "seed": 111,
+       "serial_mean": 1.177432343280746,
+       "spec_mean": 1.0184859688567944,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.667407854380846,
+       "rho": 0.17715783147009204,
+       "seed": 112,
+       "serial_mean": 1.2281007025728756,
+       "spec_mean": 1.0725321777154528,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.133036966513178,
+       "rho": 0.17926011243628653,
+       "seed": 113,
+       "serial_mean": 1.177058806146967,
+       "spec_mean": 1.022475238018087,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.310549937522321,
+       "rho": 0.18525358807571932,
+       "seed": 114,
+       "serial_mean": 1.1826293377715937,
+       "spec_mean": 1.0252148691917162,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.61550976471709,
+       "rho": 0.18481647577373314,
+       "seed": 115,
+       "serial_mean": 1.2364976772679326,
+       "spec_mean": 1.0681422152790172,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 14.911930157294329,
+       "rho": 0.21568855363654418,
+       "seed": 116,
+       "serial_mean": 1.0736190301512816,
+       "spec_mean": 0.9135217102197017,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.847767709202767,
+       "rho": 0.17740721867394962,
+       "seed": 117,
+       "serial_mean": 1.161475993785977,
+       "spec_mean": 1.0122522561062004,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.977299808169686,
+       "rho": 0.18558525998735342,
+       "seed": 118,
+       "serial_mean": 1.1525408709853635,
+       "spec_mean": 1.0029721867459027,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.561742147850099,
+       "rho": 0.17927968360422367,
+       "seed": 119,
+       "serial_mean": 1.2004848085821709,
+       "spec_mean": 1.037678154318145,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.447789273688185,
+       "rho": 0.19133564513524515,
+       "seed": 120,
+       "serial_mean": 1.1914091662424282,
+       "spec_mean": 1.0311909721787411,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.487311709585532,
+       "rho": 0.18987127672710782,
+       "seed": 121,
+       "serial_mean": 1.1473767827455197,
+       "spec_mean": 0.9926264995732175,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.560820312783406,
+       "rho": 0.1677244959735133,
+       "seed": 122,
+       "serial_mean": 1.1976077151499505,
+       "spec_mean": 1.0471783619979342,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.47157595595879,
+       "rho": 0.19030794180931737,
+       "seed": 123,
+       "serial_mean": 1.1618064668750987,
+       "spec_mean": 1.0052928262287786,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.953772937656582,
+       "rho": 0.1954805040717807,
+       "seed": 124,
+       "serial_mean": 1.1375866789449303,
+       "spec_mean": 0.9788504167959263,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.673884895454334,
+       "rho": 0.1731636790751009,
+       "seed": 125,
+       "serial_mean": 1.1740256683522976,
+       "spec_mean": 1.025231006502239,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.482650747323845,
+       "rho": 0.18932640269834822,
+       "seed": 126,
+       "serial_mean": 1.1908277184218525,
+       "spec_mean": 1.0302725761447091,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.692334851322103,
+       "rho": 0.19405256182279065,
+       "seed": 127,
+       "serial_mean": 1.168012986707532,
+       "spec_mean": 1.0080847374606083,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.272253339377135,
+       "rho": 0.1831294419712678,
+       "seed": 128,
+       "serial_mean": 1.1641091669794725,
+       "spec_mean": 1.0096056491910441,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.126983351622131,
+       "rho": 0.18068581047270937,
+       "seed": 129,
+       "serial_mean": 1.1623534840182776,
+       "spec_mean": 1.0097715356841985,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 15.03447912815155,
+       "rho": 0.22344339544543412,
+       "seed": 130,
+       "serial_mean": 1.0927369507664304,
+       "spec_mean": 0.9284496419778517,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 12.95180127324055,
+       "rho": 0.182194093182212,
+       "seed": 131,
+       "serial_mean": 1.1968083974491486,
+       "spec_mean": 1.04180015219008,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 13.413402469396047,
+       "rho": 0.17992938371214576,
+       "seed": 132,
+       "serial_mean": 1.2048840825613525,
+       "spec_mean": 1.0432681312777081,
+       "steps": 780
+      }
+     ],
+     "serial_mean": 1.184749295317681,
+     "steps": 800
+    },
+    {
+     "benefit_pct_ci": [
+      17.664664021871413,
+      18.07094864947604
+     ],
+     "benefit_pct_max": 19.442378153248512,
+     "benefit_pct_mean": 17.867806335673727,
+     "benefit_pct_min": 16.691021583181335,
+     "ceiling_pct": 17.999999999999996,
+     "h": 1.0,
+     "mS": 0.3079159382974497,
+     "n_seeds": 32,
+     "p": 0.23542486889354092,
+     "rho_max": 0.3400899924539105,
+     "rows": [
+      {
+       "benefit_pct": 18.16751950912735,
+       "rho": 0.282481759878763,
+       "seed": 101,
+       "serial_mean": 1.3310333603044089,
+       "spec_mean": 1.089217614898112,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.445924731280147,
+       "rho": 0.2880544872561737,
+       "seed": 102,
+       "serial_mean": 1.3957674456607632,
+       "spec_mean": 1.1383052332104673,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.014425215137067,
+       "rho": 0.2803724780571955,
+       "seed": 103,
+       "serial_mean": 1.3287699498048884,
+       "spec_mean": 1.0893996809160724,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.093182325600804,
+       "rho": 0.2934300557220959,
+       "seed": 104,
+       "serial_mean": 1.2994211463768433,
+       "spec_mean": 1.0643145091854689,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.13455617006092,
+       "rho": 0.26517524526657626,
+       "seed": 105,
+       "serial_mean": 1.3061629673456492,
+       "spec_mean": 1.0823577400332745,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.29132131592011,
+       "rho": 0.30005025167850996,
+       "seed": 106,
+       "serial_mean": 1.2917948145710554,
+       "spec_mean": 1.0555084742954692,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.765586966511883,
+       "rho": 0.27471964594457177,
+       "seed": 107,
+       "serial_mean": 1.3268955164886918,
+       "spec_mean": 1.0911647395521462,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.806300960835298,
+       "rho": 0.2830110898307436,
+       "seed": 108,
+       "serial_mean": 1.3573475067504077,
+       "spec_mean": 1.115654124614036,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 16.691021583181335,
+       "rho": 0.27000777571436635,
+       "seed": 109,
+       "serial_mean": 1.3197990068801693,
+       "spec_mean": 1.0995110697871873,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.246196308585052,
+       "rho": 0.26899811775972204,
+       "seed": 110,
+       "serial_mean": 1.347656246845926,
+       "spec_mean": 1.1152368049499681,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.064359208284653,
+       "rho": 0.2937769425465246,
+       "seed": 111,
+       "serial_mean": 1.2966215846946492,
+       "spec_mean": 1.062395204063255,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.08324424367427,
+       "rho": 0.27539260599238646,
+       "seed": 112,
+       "serial_mean": 1.3433211267959104,
+       "spec_mean": 1.1138382977284877,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.632409209144427,
+       "rho": 0.2788839444945977,
+       "seed": 113,
+       "serial_mean": 1.2907837102398891,
+       "spec_mean": 1.0631874444454148,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.92709921936295,
+       "rho": 0.28766024968949544,
+       "seed": 114,
+       "serial_mean": 1.3004335722989206,
+       "spec_mean": 1.067303555510987,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.293881317672163,
+       "rho": 0.2874416994715471,
+       "seed": 115,
+       "serial_mean": 1.3597945625267498,
+       "spec_mean": 1.1110353590939468,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 19.442378153248512,
+       "rho": 0.330875295521341,
+       "seed": 116,
+       "serial_mean": 1.1956903362966202,
+       "spec_mean": 0.9632196995719825,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.286509555085704,
+       "rho": 0.2758160473705196,
+       "seed": 117,
+       "serial_mean": 1.270580257200733,
+       "spec_mean": 1.0509412796346957,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.386513230035632,
+       "rho": 0.2873710562368963,
+       "seed": 118,
+       "serial_mean": 1.2676238912271784,
+       "spec_mean": 1.0472282956718726,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.168547050892197,
+       "rho": 0.2793249336857621,
+       "seed": 119,
+       "serial_mean": 1.3163197545865513,
+       "spec_mean": 1.077163580634305,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.637284239454193,
+       "rho": 0.29514315596938456,
+       "seed": 120,
+       "serial_mean": 1.3131984994530037,
+       "spec_mean": 1.0815859474762302,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.069171783125885,
+       "rho": 0.2943572633387097,
+       "seed": 121,
+       "serial_mean": 1.2645837824927213,
+       "spec_mean": 1.0360839664925605,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.145681842315827,
+       "rho": 0.26248687326809494,
+       "seed": 122,
+       "serial_mean": 1.305700728579856,
+       "spec_mean": 1.0818294358447542,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.10778422024599,
+       "rho": 0.29483834583589136,
+       "seed": 123,
+       "serial_mean": 1.2775434924864753,
+       "spec_mean": 1.0462086735472298,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.38125436362415,
+       "rho": 0.3016854142822839,
+       "seed": 124,
+       "serial_mean": 1.2568597124733571,
+       "spec_mean": 1.0258331317297142,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.218599804361087,
+       "rho": 0.270186167200363,
+       "seed": 125,
+       "serial_mean": 1.282877172803307,
+       "spec_mean": 1.0619836864368037,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.156183039485608,
+       "rho": 0.29386924065789105,
+       "seed": 126,
+       "serial_mean": 1.310540155731738,
+       "spec_mean": 1.072596086251124,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.081053383651874,
+       "rho": 0.29957563007725146,
+       "seed": 127,
+       "serial_mean": 1.2889288701274475,
+       "spec_mean": 1.0558769530424028,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.653042009356394,
+       "rho": 0.2838469558877917,
+       "seed": 128,
+       "serial_mean": 1.2778234650550901,
+       "spec_mean": 1.0522487519635015,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.5299979810369,
+       "rho": 0.28063732897607796,
+       "seed": 129,
+       "serial_mean": 1.2747746023077648,
+       "spec_mean": 1.0513066402604425,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 19.204152873477486,
+       "rho": 0.3400899924539105,
+       "seed": 130,
+       "serial_mean": 1.2209891703313271,
+       "spec_mean": 0.9865085434922947,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 17.516735443443455,
+       "rho": 0.2832491473452634,
+       "seed": 131,
+       "serial_mean": 1.312518872222439,
+       "spec_mean": 1.0826084137299667,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 18.12788548433989,
+       "rho": 0.28055209214514126,
+       "seed": 132,
+       "serial_mean": 1.3222693372370817,
+       "spec_mean": 1.0825698659882035,
+       "steps": 780
+      }
+     ],
+     "serial_mean": 1.3017007693186755,
+     "steps": 800
+    },
+    {
+     "benefit_pct_ci": [
+      22.938745977054666,
+      23.33155133149006
+     ],
+     "benefit_pct_max": 24.140135402865546,
+     "benefit_pct_mean": 23.135148654272363,
+     "benefit_pct_min": 21.743249769005836,
+     "ceiling_pct": 23.31,
+     "h": 1.0,
+     "mS": 0.5873015873015873,
+     "n_seeds": 32,
+     "p": 0.37,
+     "rho_max": 0.5495838536273084,
+     "rows": [
+      {
+       "benefit_pct": 24.109512710379875,
+       "rho": 0.4799952006378258,
+       "seed": 101,
+       "serial_mean": 1.6098677645301223,
+       "spec_mean": 1.221736491220424,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.819977133783887,
+       "rho": 0.4851277581327895,
+       "seed": 102,
+       "serial_mean": 1.6905256143332639,
+       "spec_mean": 1.2878427995583208,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.59179184955409,
+       "rho": 0.47444951468799806,
+       "seed": 103,
+       "serial_mean": 1.605751719392873,
+       "spec_mean": 1.2269261161330705,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.75114044519052,
+       "rho": 0.4872926935863309,
+       "seed": 104,
+       "serial_mean": 1.5850170153356788,
+       "spec_mean": 1.2244075680964916,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.61764702648013,
+       "rho": 0.45165774502916717,
+       "seed": 105,
+       "serial_mean": 1.5649383952652889,
+       "spec_mean": 1.2109861528423234,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.84089509823678,
+       "rho": 0.4956516917932098,
+       "seed": 106,
+       "serial_mean": 1.5831956974935195,
+       "spec_mean": 1.2215796290292267,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.447667857406216,
+       "rho": 0.4666048079966434,
+       "seed": 107,
+       "serial_mean": 1.6030613587127478,
+       "spec_mean": 1.2271808557713595,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.026692453724067,
+       "rho": 0.4759933552879303,
+       "seed": 108,
+       "serial_mean": 1.6438613801858497,
+       "spec_mean": 1.2653344758049103,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 21.743249769005836,
+       "rho": 0.4550893076179469,
+       "seed": 109,
+       "serial_mean": 1.5873814669315012,
+       "spec_mean": 1.2422331497896761,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.79625524318112,
+       "rho": 0.4579738343172631,
+       "seed": 110,
+       "serial_mean": 1.6193321778578798,
+       "spec_mean": 1.2501850813584339,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.424212384288055,
+       "rho": 0.49195122869214797,
+       "seed": 111,
+       "serial_mean": 1.5801692266515788,
+       "spec_mean": 1.2100270309695509,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.380284931114538,
+       "rho": 0.4647366842084826,
+       "seed": 112,
+       "serial_mean": 1.6174270713103451,
+       "spec_mean": 1.2554422841981088,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.337954331794098,
+       "rho": 0.47294816080574603,
+       "seed": 113,
+       "serial_mean": 1.561331857075933,
+       "spec_mean": 1.196948941303799,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.363313866384075,
+       "rho": 0.48388760863967417,
+       "seed": 114,
+       "serial_mean": 1.5806863242798395,
+       "spec_mean": 1.211385617095331,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.847721726789814,
+       "rho": 0.48493862255201825,
+       "seed": 115,
+       "serial_mean": 1.6531141663856674,
+       "spec_mean": 1.2588841001598723,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 24.140135402865546,
+       "rho": 0.5400046990752321,
+       "seed": 116,
+       "serial_mean": 1.4860943240853721,
+       "spec_mean": 1.1273491420368638,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.651893015901635,
+       "rho": 0.46576904283283244,
+       "seed": 117,
+       "serial_mean": 1.530136038005405,
+       "spec_mean": 1.1835312596786647,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.37767358260977,
+       "rho": 0.4799427258273562,
+       "seed": 118,
+       "serial_mean": 1.5414029557782258,
+       "spec_mean": 1.1964728337414756,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.787842950104224,
+       "rho": 0.473595054830783,
+       "seed": 119,
+       "serial_mean": 1.591887628046629,
+       "spec_mean": 1.2132118991447576,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.496427606111588,
+       "rho": 0.49090443255549604,
+       "seed": 120,
+       "serial_mean": 1.6029316820600132,
+       "spec_mean": 1.2423293166299556,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.069458008048976,
+       "rho": 0.4908785755359997,
+       "seed": 121,
+       "serial_mean": 1.5434157307870724,
+       "spec_mean": 1.1873580868835265,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.80044244993272,
+       "rho": 0.4490655934470519,
+       "seed": 122,
+       "serial_mean": 1.5628507759036143,
+       "spec_mean": 1.2065138841653837,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.463435326787263,
+       "rho": 0.4925324393402207,
+       "seed": 123,
+       "serial_mean": 1.5528784162591043,
+       "spec_mean": 1.188519793356511,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.005584075462913,
+       "rho": 0.49843065698027067,
+       "seed": 124,
+       "serial_mean": 1.540606693365624,
+       "spec_mean": 1.1861811252511862,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.96468042983063,
+       "rho": 0.46040667467874324,
+       "seed": 125,
+       "serial_mean": 1.5418316475898795,
+       "spec_mean": 1.1877549369548712,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.628871019115596,
+       "rho": 0.4927111960613383,
+       "seed": 126,
+       "serial_mean": 1.5953324650833682,
+       "spec_mean": 1.2183734145827418,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.81210355359206,
+       "rho": 0.4959683062139383,
+       "seed": 127,
+       "serial_mean": 1.5765841417957522,
+       "spec_mean": 1.2169321347597946,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.037718302851147,
+       "rho": 0.47762915032363773,
+       "seed": 128,
+       "serial_mean": 1.5483463804930666,
+       "spec_mean": 1.1916427030026822,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.706256810180683,
+       "rho": 0.47206341248287087,
+       "seed": 129,
+       "serial_mean": 1.5422210816963506,
+       "spec_mean": 1.1920404023056308,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.65644783787281,
+       "rho": 0.5495838536273084,
+       "seed": 130,
+       "serial_mean": 1.5260973663561976,
+       "spec_mean": 1.165076938928993,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 22.75798283255747,
+       "rho": 0.47590066359130007,
+       "seed": 131,
+       "serial_mean": 1.5877906323450428,
+       "spec_mean": 1.2264415128190023,
+       "steps": 780
+      },
+      {
+       "benefit_pct": 23.86948690557755,
+       "rho": 0.4761389617980096,
+       "seed": 132,
+       "serial_mean": 1.6015253486771648,
+       "spec_mean": 1.2192494652851638,
+       "steps": 780
+      }
+     ],
+     "serial_mean": 1.5799248295021866,
+     "steps": 800
+    }
+   ],
+   "sentence": "On real-tool benchmarks, SPORK cuts Qwen3-32B's GAIA P95 by 18% (131.9 to 108.1 s);",
+   "sign": "MATCH",
+   "simulation_at_implied_share": {
+    "ci": [
+     17.664664021871413,
+     18.07094864947604
+    ],
+    "mean": 17.867806335673727,
+    "p": 0.23542486889354092
+   },
+   "simulation_confirms_published": true,
+   "source": "2607.03333",
+   "system": "SPORK (Self-sPeculative fORKing)"
+  }
+ ]
+}

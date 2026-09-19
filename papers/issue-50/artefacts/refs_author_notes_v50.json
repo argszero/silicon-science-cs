@@ -1,0 +1,14 @@
+{
+ "what": "author declarations for issue #50 entries whose record printed the author's two name fields transposed",
+ "rule": "an entry prints the record's own author strings; a declaration here is accepted ONLY when swapping the two fields of each record string reproduces the declared author, character for character after case/punctuation folding - so the declaration is a READING of the record rather than a correction typed over it. The build prints how many it applied and how many records it was offered.",
+ "rows": {
+  "linearspeedup2005": {
+   "authors": [
+    "Grigoriev, A.",
+    "Uetz, M. J."
+   ],
+   "why": "the record states its two name fields the wrong way round: it reads `A., Grigoriev` and `M.J., Uetz`, i.e. the family field carries the given name",
+   "evidence": "api.crossref.org/works/10.1007/11516798_30 author[].family/given as returned at R380"
+  }
+ }
+}

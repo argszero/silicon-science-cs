@@ -1,0 +1,11 @@
+{
+ "what": "title declarations for issue #50 entries whose record title field carries more than the work's title",
+ "rule": "an entry prints the record's title VERBATIM unless a declaration here names it; a declaration is accepted only when the title it states is a PREFIX of the record's title field (so it can be read off the record rather than typed), and the build prints how many entries it applied to and how many records it was offered",
+ "rows": {
+  "memdep2005": {
+   "title": "Exploiting Load/Store Parallelism via Memory Dependence Prediction",
+   "why": "the record's title field is the chapter title followed by the chapter's author and affiliation: 'Exploiting Load/Store Parallelism via Memory Dependence Prediction Andreas Moshovos University of Toronto'",
+   "evidence": "record_title prefix; the record carries no author field of its own"
+  }
+ }
+}

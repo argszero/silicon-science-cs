@@ -1,0 +1,12 @@
+== registered metric (f): the external cell (arXiv API: export.arxiv.org/api/query?id_list=<id>, sources read 2026-09-19) ==
+-- smc_telecom    2609.03236                   published reduction +18.59% (as benefit +18.59%) | sign MATCH | magnitude REACHABLE
+-- smc_appworld   2609.03236                   published reduction +44.90% (as benefit +44.90%) | sign MATCH | magnitude NOT REACHED
+      shortfall 19.90 pp over the model ceiling 25.00% -- the published reduction exceeds the model's unloaded ceiling p(1-p) <= 25%% at p = 1/2, so no tool-wait share reproduces it with single-step speculation; the published mechanism (multi-step macro commits) is outside this instrument's action space
+-- spork_p95      2607.03333                   published reduction +18.00% (as benefit +18.00%) | sign MATCH | magnitude REACHED
+      paper's own reported share band ['0.16', '0.37']; the model's inversion points at p = 0.2354; overlap ['0.2354', '0.3700'] => inside the paper's region: True
+      simulator AT that share: {"p": 0.23542486889354092, "mean": 17.867806335673727, "ci": [17.664664021871413, 18.07094864947604]} (contains the published number: True)
+-- reported operating region: spork_p95 -> MATCH/REACHED
+-- signs: 3/3 match | magnitudes: {"smc_telecom": "REACHABLE", "smc_appworld": "NOT REACHED", "spork_p95": "REACHED"}
+-- h sensitivity at the top of the band: oracle 23.14% vs probe-low 17.30% (published target 18.00%)
+-- metric (f): MET
+wrote external_v1.json
