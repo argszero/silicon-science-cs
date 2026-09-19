@@ -1,0 +1,6568 @@
+{
+ "what": "issue #50 line-by-line reference verification (R379)",
+ "controls": {
+  "doi": "10.1145/2408776.2408794",
+  "arxiv": "1706.03762v7"
+ },
+ "channels": {
+  "arxiv": {
+   "control": "1706.03762v7",
+   "batches": [
+    {
+     "batch": 0,
+     "ids": [
+      "2301.07642v1",
+      "2105.05801v3",
+      "1905.10311v4",
+      "1903.01843v3",
+      "2607.03333v1",
+      "2609.03236v1",
+      "2607.23933v2",
+      "2604.16469v1",
+      "2606.07846v1",
+      "2512.15834v1",
+      "2605.21965v1",
+      "2605.13360v2",
+      "2609.15397v1",
+      "2606.02483v1",
+      "2609.05274v1",
+      "2608.24004v1",
+      "2608.26004v1",
+      "2609.10964v1",
+      "2608.20743v2",
+      "2606.17518v1",
+      "2608.19659v1",
+      "2609.14889v1",
+      "1904.04054v1",
+      "2606.24881v1",
+      "2309.01874v1",
+      "2311.01641v1",
+      "2107.04557v1",
+      "1912.11661v3",
+      "2309.08373v1",
+      "2211.02313v1",
+      "2505.21331v2",
+      "2609.09237v1",
+      "2309.09428v1",
+      "2605.13749v1"
+     ],
+     "requested": 35,
+     "returned": 35,
+     "control": true,
+     "shortfall": 0
+    },
+    {
+     "batch": 1,
+     "ids": [
+      "1710.00748v1",
+      "1710.00414v1",
+      "2208.07359v1",
+      "2502.02861v4",
+      "2510.14887v1",
+      "2508.06809v2",
+      "2507.15727v2",
+      "2507.12822v1",
+      "2607.08262v1",
+      "2603.29233v1",
+      "2602.21104v1",
+      "2505.04949v2",
+      "2606.18431v1",
+      "2604.00499v2",
+      "2608.10506v1",
+      "2609.16206v1",
+      "2110.07822v2",
+      "2603.20654v4",
+      "2606.01927v1",
+      "1708.01462v2",
+      "1705.07280v1",
+      "2405.07250v1",
+      "2505.09999v3",
+      "2608.25053v1",
+      "2605.00428v1",
+      "2605.29740v1",
+      "2309.02680v1",
+      "2403.08790v1",
+      "2405.02086v2",
+      "2606.11937v1",
+      "2304.14127v1",
+      "2305.18730v2"
+     ],
+     "requested": 33,
+     "returned": 33,
+     "control": true,
+     "shortfall": 0
+    }
+   ],
+   "single": [],
+   "requested": 66,
+   "returned": 66
+  },
+  "crossref_control_title": "The tail at scale",
+  "crossref": {
+   "control": "10.1145/2408776.2408794",
+   "returned": 71,
+   "not_returned": []
+  }
+ },
+ "pool_field_census": {
+  "arxiv_has_published": 553,
+  "arxiv_has_year": 0,
+  "crossref_has_year": 358,
+  "crossref_has_published": 0
+ },
+ "n": 137,
+ "verdict_counts": {
+  "VERIFIED": 67,
+  "DECLARED": 4,
+  "SUPPLIED": 66
+ },
+ "rows": [
+  {
+   "key": "advised2022",
+   "section": "S2.6",
+   "locator": "10.1016/j.tcs.2022.10.006",
+   "locator_kind": "DOI",
+   "entry_title": "Machine learning advised algorithms for the ski rental problem with a discount",
+   "entry_year_stored": 2022,
+   "entry_authors": [
+    "Arghya Bhattacharya",
+    "Rathish Das"
+   ],
+   "anchor": "Machine learning advised algorithms for the ski rental problem",
+   "method": "crossref_doi",
+   "record_doi": "10.1016/j.tcs.2022.10.006",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1016/j.tcs.2022.10.006>",
+   "record_title": "Machine learning advised algorithms for the ski rental problem with a discount",
+   "record_year": 2022,
+   "record_year_field": "issued",
+   "record_venue": "Theoretical Computer Science",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Bhattacharya, Arghya",
+    "Das, Rathish"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "bhattacharya",
+    "das"
+   ],
+   "record_families": [
+    "bhattacharya",
+    "das"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2022,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "agentboundary2026",
+   "section": "S2.2",
+   "locator": "2609.15397v1",
+   "locator_kind": "arXiv",
+   "entry_title": "When Tool Calls Succeed but Workflows Fail: Anomalies at the Agent-Tool Boundary",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Artem Trofimov",
+    "Boris Novikov"
+   ],
+   "anchor": "When Tool Calls Succeed but Workflows Fail",
+   "method": "arxiv_id_list",
+   "record_id": "2609.15397v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.15397v1>",
+   "record_title": "When Tool Calls Succeed but Workflows Fail: Anomalies at the Agent-Tool Boundary",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.15397v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Artem Trofimov",
+    "Boris Novikov"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "novikov",
+    "trofimov"
+   ],
+   "record_families": [
+    "novikov",
+    "trofimov"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "agentspec2026",
+   "section": "S2.2",
+   "locator": "2608.24004v1",
+   "locator_kind": "arXiv",
+   "entry_title": "AgentSpec: Speculative Decoding for Batch Inference of LLM Agents",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Xin Wang",
+    "Ziming Miao",
+    "Yi Zhu",
+    "Hui Shen",
+    "Zhongwei Wan",
+    "Fan Yang",
+    "Mi Zhang"
+   ],
+   "anchor": "AgentSpec",
+   "method": "arxiv_id_list",
+   "record_id": "2608.24004v1",
+   "arxiv_link": "<https://arxiv.org/abs/2608.24004v1>",
+   "record_title": "AgentSpec: Speculative Decoding for Batch Inference of LLM Agents",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2608.24004v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Xin Wang",
+    "Ziming Miao",
+    "Yi Zhu",
+    "Hui Shen",
+    "Zhongwei Wan",
+    "Fan Yang",
+    "Mi Zhang"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 7,
+   "entry_families": [
+    "miao",
+    "shen",
+    "wan",
+    "wang",
+    "yang",
+    "zhang",
+    "zhu"
+   ],
+   "record_families": [
+    "miao",
+    "shen",
+    "wan",
+    "wang",
+    "yang",
+    "zhang",
+    "zhu"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "aktas2017",
+   "section": "S2.4",
+   "locator": "1710.00748v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Effective Straggler Mitigation: Which Clones Should Attack and When?",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Mehmet Fatih Aktas",
+    "Pei Peng",
+    "Emina Soljanin"
+   ],
+   "anchor": "Which Clones Should Attack and When",
+   "method": "arxiv_id_list",
+   "record_id": "1710.00748v1",
+   "arxiv_link": "<https://arxiv.org/abs/1710.00748v1>",
+   "record_title": "Effective Straggler Mitigation: Which Clones Should Attack and When?",
+   "record_year": 2017,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1710.00748v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Mehmet Fatih Aktas",
+    "Pei Peng",
+    "Emina Soljanin"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "aktas",
+    "peng",
+    "soljanin"
+   ],
+   "record_families": [
+    "aktas",
+    "peng",
+    "soljanin"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "aktas2017b",
+   "section": "S2.4",
+   "locator": "1710.00414v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Straggler Mitigation by Delayed Relaunch of Tasks",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Mehmet Fatih Aktas",
+    "Pei Peng",
+    "Emina Soljanin"
+   ],
+   "anchor": "Straggler Mitigation by Delayed Relaunch",
+   "method": "arxiv_id_list",
+   "record_id": "1710.00414v1",
+   "arxiv_link": "<https://arxiv.org/abs/1710.00414v1>",
+   "record_title": "Straggler Mitigation by Delayed Relaunch of Tasks",
+   "record_year": 2017,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1710.00414v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Mehmet Fatih Aktas",
+    "Pei Peng",
+    "Emina Soljanin"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "aktas",
+    "peng",
+    "soljanin"
+   ],
+   "record_families": [
+    "aktas",
+    "peng",
+    "soljanin"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "alossurvey2026",
+   "section": "S2.2",
+   "locator": "2608.20743v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Is Multimodal Speculative Decoding Ready for Diffusion-Based Parallel Drafting? A Survey and Empirical Diagnosis",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Yantao Li",
+    "Huanlin Gao",
+    "Fang Zhao",
+    "Chao Tan",
+    "Qiang Hui",
+    "Shuting Liu",
+    "Fuyuan Shi",
+    "Ting Lu",
+    "Shaoan Zhao",
+    "Xueqiang Guo",
+    "Xinpei Su",
+    "Jianbing Zhang",
+    "Xinyu Dai",
+    "Kai Wang",
+    "Shiguo Lian"
+   ],
+   "anchor": "Is Multimodal Speculative Decoding Ready",
+   "method": "arxiv_id_list",
+   "record_id": "2608.20743v2",
+   "arxiv_link": "<https://arxiv.org/abs/2608.20743v2>",
+   "record_title": "Is Multimodal Speculative Decoding Ready for Diffusion-Based Parallel Drafting? A Survey and Empirical Diagnosis",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2608.20743v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Yantao Li",
+    "Huanlin Gao",
+    "Fang Zhao",
+    "Chao Tan",
+    "Qiang Hui",
+    "Shuting Liu",
+    "Fuyuan Shi",
+    "Ting Lu",
+    "Shaoan Zhao",
+    "Xueqiang Guo",
+    "Xinpei Su",
+    "Jianbing Zhang",
+    "Xinyu Dai",
+    "Kai Wang",
+    "Shiguo Lian"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 14,
+   "entry_families": [
+    "dai",
+    "gao",
+    "guo",
+    "hui",
+    "li",
+    "lian",
+    "liu",
+    "lu",
+    "shi",
+    "su",
+    "tan",
+    "wang",
+    "zhang",
+    "zhao"
+   ],
+   "record_families": [
+    "dai",
+    "gao",
+    "guo",
+    "hui",
+    "li",
+    "lian",
+    "liu",
+    "lu",
+    "shi",
+    "su",
+    "tan",
+    "wang",
+    "zhang",
+    "zhao"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "amdahl2007",
+   "section": "S2.7",
+   "locator": "10.1109/autest.2007.4374292",
+   "locator_kind": "DOI",
+   "entry_title": "Parallel test description and analysis of parallel test system speedup through Amdahl&amp;#x0027;s law",
+   "entry_year_stored": 2007,
+   "entry_authors": [
+    "Nathan Waivio"
+   ],
+   "anchor": "Parallel test description and analysis",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/autest.2007.4374292",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/autest.2007.4374292>",
+   "record_title": "Parallel test description and analysis of parallel test system speedup through Amdahl&amp;#x0027;s law",
+   "record_year": 2007,
+   "record_year_field": "issued",
+   "record_venue": "2007 IEEE Autotestcon",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Waivio, Nathan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "waivio"
+   ],
+   "record_families": [
+    "waivio"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2007,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "amdahl2013",
+   "section": "S2.7",
+   "locator": "10.1109/mc.2013.418",
+   "locator_kind": "DOI",
+   "entry_title": "Computer Architecture and Amdahl's Law",
+   "entry_year_stored": 2013,
+   "entry_authors": [
+    "Gene M. Amdahl"
+   ],
+   "anchor": "Computer Architecture and Amdahl's Law",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/mc.2013.418",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1109/mc.2013.418>",
+   "record_title": "Computer Architecture and Amdahl's Law",
+   "record_year": 2013,
+   "record_year_field": "issued",
+   "record_venue": "Computer",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Amdahl, Gene M."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "amdahl"
+   ],
+   "record_families": [
+    "amdahl"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2013,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "amdahl2017",
+   "section": "S2.7",
+   "locator": "1708.01462v2",
+   "locator_kind": "arXiv",
+   "entry_title": "How Amdahl's low restricts supercomputer applications and building ever bigger supercomputers",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "János Végh"
+   ],
+   "anchor": "How Amdahl's low restricts supercomputer applications",
+   "method": "arxiv_id_list",
+   "record_id": "1708.01462v2",
+   "arxiv_link": "<https://arxiv.org/abs/1708.01462v2>",
+   "record_title": "How Amdahl's low restricts supercomputer applications and building ever bigger supercomputers",
+   "record_year": 2017,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1708.01462v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "János Végh"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "vegh"
+   ],
+   "record_families": [
+    "vegh"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "amdahl2017b",
+   "section": "S2.7",
+   "locator": "1705.07280v1",
+   "locator_kind": "arXiv",
+   "entry_title": "The Effect of Temperature on Amdahl Law in 3D Multicore Era",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Leonid Yavits",
+    "Amir Morad",
+    "Ran Ginosar"
+   ],
+   "anchor": "The Effect of Temperature on Amdahl Law",
+   "method": "arxiv_id_list",
+   "record_id": "1705.07280v1",
+   "arxiv_link": "<https://arxiv.org/abs/1705.07280v1>",
+   "record_title": "The Effect of Temperature on Amdahl Law in 3D Multicore Era",
+   "record_year": 2017,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1705.07280v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Leonid Yavits",
+    "Amir Morad",
+    "Ran Ginosar"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "ginosar",
+    "morad",
+    "yavits"
+   ],
+   "record_families": [
+    "ginosar",
+    "morad",
+    "yavits"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "amdahl2021",
+   "section": "S2.7",
+   "locator": "2110.07822v2",
+   "locator_kind": "arXiv",
+   "entry_title": "On Extending Amdahl's law to Learn Computer Performance",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Chaitanya Poolla",
+    "Rahul Saxena"
+   ],
+   "anchor": "On Extending Amdahl's law to Learn Computer Performance",
+   "method": "arxiv_id_list",
+   "record_id": "2110.07822v2",
+   "arxiv_link": "<https://arxiv.org/abs/2110.07822v2>",
+   "record_title": "On Extending Amdahl's law to Learn Computer Performance",
+   "record_year": 2021,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2110.07822v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Chaitanya Poolla",
+    "Rahul Saxena"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "poolla",
+    "saxena"
+   ],
+   "record_families": [
+    "poolla",
+    "saxena"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2021,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "amdahl2026",
+   "section": "S2.7",
+   "locator": "2603.20654v4",
+   "locator_kind": "arXiv",
+   "entry_title": "Modernizing Amdahl's Law: How AI Scaling Laws Shape Computer Architecture",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Chien-Ping Lu"
+   ],
+   "anchor": "Modernizing Amdahl's Law",
+   "method": "arxiv_id_list",
+   "record_id": "2603.20654v4",
+   "arxiv_link": "<https://arxiv.org/abs/2603.20654v4>",
+   "record_title": "Modernizing Amdahl's Law: How AI Scaling Laws Shape Computer Architecture",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2603.20654v4",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Chien-Ping Lu"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "lu"
+   ],
+   "record_families": [
+    "lu"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "amdahl2026b",
+   "section": "S2.7",
+   "locator": "2606.01927v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Scaling LLM Inference Beyond Amdahl`s Limits via Eliminating Non-Scalable Overheads",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Alan Zhao",
+    "Cyril Y. He",
+    "Wei Xu"
+   ],
+   "anchor": "Scaling LLM Inference Beyond Amdahl",
+   "method": "arxiv_id_list",
+   "record_id": "2606.01927v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.01927v1>",
+   "record_title": "Scaling LLM Inference Beyond Amdahl`s Limits via Eliminating Non-Scalable Overheads",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.01927v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Alan Zhao",
+    "Cyril Y. He",
+    "Wei Xu"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "he",
+    "xu",
+    "zhao"
+   ],
+   "record_families": [
+    "he",
+    "xu",
+    "zhao"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "anotherview1990",
+   "section": "S2.7",
+   "locator": "10.1109/superc.1990.130037",
+   "locator_kind": "DOI",
+   "entry_title": "Another view on parallel speedup",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "X.-H. Sun",
+    "L.M. Ni"
+   ],
+   "anchor": "Another view on parallel speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/superc.1990.130037",
+   "year_declared": {
+    "year": 1990,
+    "sources": [
+     {
+      "field": "event.name",
+      "value": "SUPERCOMPUTING '90"
+     },
+     {
+      "field": "locator",
+      "value": "10.1109/superc.1990.130037"
+     }
+    ],
+    "note": "issued is [[null]] and no published-* field is present; the event name and the locator both carry the year",
+    "findings": []
+   },
+   "year_declared_ok": true,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/superc.1990.130037>",
+   "record_title": "Another view on parallel speedup",
+   "record_year": 1990,
+   "record_year_field": "declared",
+   "record_venue": "Proceedings SUPERCOMPUTING '90",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Sun, X.-H.",
+    "Ni, L.M."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "ni",
+    "sun"
+   ],
+   "record_families": [
+    "ni",
+    "sun"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 1990,
+   "key_year_agrees": true,
+   "verdict": "DECLARED"
+  },
+  {
+   "key": "antoniadis2022",
+   "section": "S2.6",
+   "locator": "10.1145/3548774",
+   "locator_kind": "DOI",
+   "entry_title": "Online Algorithms for Weighted Paging with Predictions",
+   "entry_year_stored": 2022,
+   "entry_authors": [
+    "Zhihao Jiang",
+    "Debmalya Panigrahi",
+    "Kevin Sun"
+   ],
+   "anchor": "Weighted Paging with Predictions",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3548774",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1145/3548774>",
+   "record_title": "Online Algorithms for Weighted Paging with Predictions",
+   "record_year": 2022,
+   "record_year_field": "issued",
+   "record_venue": "ACM Transactions on Algorithms",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Jiang, Zhihao",
+    "Panigrahi, Debmalya",
+    "Sun, Kevin"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "jiang",
+    "panigrahi",
+    "sun"
+   ],
+   "record_families": [
+    "jiang",
+    "panigrahi",
+    "sun"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2022,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "antoniadis2023metric",
+   "section": "S2.6",
+   "locator": "10.1145/3582689",
+   "locator_kind": "DOI",
+   "entry_title": "Online Metric Algorithms with Untrusted Predictions",
+   "entry_year_stored": 2023,
+   "entry_authors": [
+    "Antonios Antoniadis",
+    "Christian Coester",
+    "Marek Eliáš",
+    "Adam Polak",
+    "Bertrand Simon"
+   ],
+   "anchor": "Untrusted Predictions",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3582689",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1145/3582689>",
+   "record_title": "Online Metric Algorithms with Untrusted Predictions",
+   "record_year": 2023,
+   "record_year_field": "issued",
+   "record_venue": "ACM Transactions on Algorithms",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Antoniadis, Antonios",
+    "Coester, Christian",
+    "Eliáš, Marek",
+    "Polak, Adam",
+    "Simon, Bertrand"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "antoniadis",
+    "coester",
+    "elias",
+    "polak",
+    "simon"
+   ],
+   "record_families": [
+    "antoniadis",
+    "coester",
+    "elias",
+    "polak",
+    "simon"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "asymspec2026",
+   "section": "S2.2",
+   "locator": "2608.26004v1",
+   "locator_kind": "arXiv",
+   "entry_title": "AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Sheng Liang",
+    "Yongyue Zhang",
+    "Nathanael Brian",
+    "Hang Lv",
+    "Hao Wang",
+    "Chen Zhang",
+    "Yong Liu"
+   ],
+   "anchor": "AsymSpec",
+   "method": "arxiv_id_list",
+   "record_id": "2608.26004v1",
+   "arxiv_link": "<https://arxiv.org/abs/2608.26004v1>",
+   "record_title": "AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2608.26004v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Sheng Liang",
+    "Yongyue Zhang",
+    "Nathanael Brian",
+    "Hang Lv",
+    "Hao Wang",
+    "Chen Zhang",
+    "Yong Liu"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 6,
+   "entry_families": [
+    "brian",
+    "liang",
+    "liu",
+    "lv",
+    "wang",
+    "zhang"
+   ],
+   "record_families": [
+    "brian",
+    "liang",
+    "liu",
+    "lv",
+    "wang",
+    "zhang"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "barik2026",
+   "section": "S2.3",
+   "locator": "10.1007/s12597-026-01126-w",
+   "locator_kind": "DOI",
+   "entry_title": "Analysis and optimal control in an $$M^X/G/1$$ queueing model with heavy-tailed service-time distribution",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Sitaram Barik",
+    "A. D. Banik",
+    "Mohan Chaudhry",
+    "Souvik Ghosh"
+   ],
+   "anchor": "queueing model with heavy",
+   "method": "crossref_doi",
+   "record_doi": "10.1007/s12597-026-01126-w",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1007/s12597-026-01126-w>",
+   "record_title": "Analysis and optimal control in an $$M^X/G/1$$ queueing model with heavy-tailed service-time distribution",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "OPSEARCH",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Barik, Sitaram",
+    "Banik, A. D.",
+    "Chaudhry, Mohan",
+    "Ghosh, Souvik"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "banik",
+    "barik",
+    "chaudhry",
+    "ghosh"
+   ],
+   "record_families": [
+    "banik",
+    "barik",
+    "chaudhry",
+    "ghosh"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "bhattacharyya2019",
+   "section": "S2.1",
+   "locator": "1903.01843v3",
+   "locator_kind": "arXiv",
+   "entry_title": "SMoTherSpectre: exploiting speculative execution through port contention",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Atri Bhattacharyya",
+    "Alexandra Sandulescu",
+    "Matthias Neugschwandtner",
+    "Alessandro Sorniotti",
+    "Babak Falsafi",
+    "Mathias Payer",
+    "Anil Kurmus"
+   ],
+   "anchor": "SMoTherSpectre",
+   "method": "arxiv_id_list",
+   "record_id": "1903.01843v3",
+   "arxiv_link": "<https://arxiv.org/abs/1903.01843v3>",
+   "record_title": "SMoTherSpectre: exploiting speculative execution through port contention",
+   "record_year": 2019,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1903.01843v3",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Atri Bhattacharyya",
+    "Alexandra Sandulescu",
+    "Matthias Neugschwandtner",
+    "Alessandro Sorniotti",
+    "Babak Falsafi",
+    "Mathias Payer",
+    "Anil Kurmus"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 7,
+   "entry_families": [
+    "bhattacharyya",
+    "falsafi",
+    "kurmus",
+    "neugschwandtner",
+    "payer",
+    "sandulescu",
+    "sorniotti"
+   ],
+   "record_families": [
+    "bhattacharyya",
+    "falsafi",
+    "kurmus",
+    "neugschwandtner",
+    "payer",
+    "sandulescu",
+    "sorniotti"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2019,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "bpaste2026",
+   "section": "S2.2",
+   "locator": "2604.16469v1",
+   "locator_kind": "arXiv",
+   "entry_title": "B-PASTE: Beam-Aware Pattern-Guided Speculative Execution for Resource-Constrained LLM Agents",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Yanfei Song"
+   ],
+   "anchor": "B-PASTE",
+   "method": "arxiv_id_list",
+   "record_id": "2604.16469v1",
+   "arxiv_link": "<https://arxiv.org/abs/2604.16469v1>",
+   "record_title": "B-PASTE: Beam-Aware Pattern-Guided Speculative Execution for Resource-Constrained LLM Agents",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2604.16469v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Yanfei Song"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "song"
+   ],
+   "record_families": [
+    "song"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "bush2022",
+   "section": "S2.5",
+   "locator": "2208.07359v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Stable Scheduling in Transactional Memory",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Costas Busch",
+    "Bogdan S. Chlebus",
+    "Dariusz R. Kowalski",
+    "Pavan Poudel"
+   ],
+   "anchor": "Stable Scheduling in Transactional Memory",
+   "method": "arxiv_id_list",
+   "record_id": "2208.07359v1",
+   "arxiv_link": "<https://arxiv.org/abs/2208.07359v1>",
+   "record_title": "Stable Scheduling in Transactional Memory",
+   "record_year": 2022,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2208.07359v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Costas Busch",
+    "Bogdan S. Chlebus",
+    "Dariusz R. Kowalski",
+    "Pavan Poudel"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "busch",
+    "chlebus",
+    "kowalski",
+    "poudel"
+   ],
+   "record_families": [
+    "busch",
+    "chlebus",
+    "kowalski",
+    "poudel"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2022,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "calibrated2025",
+   "section": "S2.6",
+   "locator": "2502.02861v4",
+   "locator_kind": "arXiv",
+   "entry_title": "Algorithms with Calibrated Machine Learning Predictions",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Judy Hanwen Shen",
+    "Ellen Vitercik",
+    "Anders Wikum"
+   ],
+   "anchor": "Calibrated Machine Learning Predictions",
+   "method": "arxiv_id_list",
+   "record_id": "2502.02861v4",
+   "arxiv_link": "<https://arxiv.org/abs/2502.02861v4>",
+   "record_title": "Algorithms with Calibrated Machine Learning Predictions",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2502.02861v4",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Judy Hanwen Shen",
+    "Ellen Vitercik",
+    "Anders Wikum"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "shen",
+    "vitercik",
+    "wikum"
+   ],
+   "record_families": [
+    "shen",
+    "vitercik",
+    "wikum"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "calibrateroute2026",
+   "section": "S2.6",
+   "locator": "2609.16206v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Srikanta Datta Tumkur",
+    "Jay Iyer",
+    "Mehar Simhadri",
+    "Sai Pavan Kumar",
+    "Sai Kapil Kumar",
+    "Ramesh Nampelly"
+   ],
+   "anchor": "Calibrate, Then Route",
+   "method": "arxiv_id_list",
+   "record_id": "2609.16206v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.16206v1>",
+   "record_title": "Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.16206v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Srikanta Datta Tumkur",
+    "Jay Iyer",
+    "Mehar Simhadri",
+    "Sai Pavan Kumar",
+    "Sai Kapil Kumar",
+    "Ramesh Nampelly"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "iyer",
+    "kumar",
+    "nampelly",
+    "simhadri",
+    "tumkur"
+   ],
+   "record_families": [
+    "iyer",
+    "kumar",
+    "nampelly",
+    "simhadri",
+    "tumkur"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "canonne2025",
+   "section": "S2.6",
+   "locator": "2505.04949v2",
+   "locator_kind": "arXiv",
+   "entry_title": "With a Little Help From My Friends: Exploiting Probability Distribution Advice in Algorithm Design",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Clément L. Canonne",
+    "Kenny Chen",
+    "Julián Mestre"
+   ],
+   "anchor": "With a Little Help From My Friends",
+   "method": "arxiv_id_list",
+   "record_id": "2505.04949v2",
+   "arxiv_link": "<https://arxiv.org/abs/2505.04949v2>",
+   "record_title": "With a Little Help From My Friends: Exploiting Probability Distribution Advice in Algorithm Design",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2505.04949v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Clément L. Canonne",
+    "Kenny Chen",
+    "Julián Mestre"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "canonne",
+    "chen",
+    "mestre"
+   ],
+   "record_families": [
+    "canonne",
+    "chen",
+    "mestre"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "cauligi2021",
+   "section": "S2.1",
+   "locator": "2105.05801v3",
+   "locator_kind": "arXiv",
+   "entry_title": "SoK: Practical Foundations for Software Spectre Defenses",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Sunjay Cauligi",
+    "Craig Disselkoen",
+    "Daniel Moghimi",
+    "Gilles Barthe",
+    "Deian Stefan"
+   ],
+   "anchor": "Practical Foundations for Software Spectre Defenses",
+   "method": "arxiv_id_list",
+   "record_id": "2105.05801v3",
+   "arxiv_link": "<https://arxiv.org/abs/2105.05801v3>",
+   "record_title": "SoK: Practical Foundations for Software Spectre Defenses",
+   "record_year": 2021,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2105.05801v3",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Sunjay Cauligi",
+    "Craig Disselkoen",
+    "Daniel Moghimi",
+    "Gilles Barthe",
+    "Deian Stefan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "barthe",
+    "cauligi",
+    "disselkoen",
+    "moghimi",
+    "stefan"
+   ],
+   "record_families": [
+    "barthe",
+    "cauligi",
+    "disselkoen",
+    "moghimi",
+    "stefan"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2021,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "chen2008",
+   "section": "S2.1",
+   "locator": "10.1109/sc.2008.5213209",
+   "locator_kind": "DOI",
+   "entry_title": "Hiding I/O latency with pre-execution prefetching for parallel applications",
+   "entry_year_stored": 2008,
+   "entry_authors": [
+    "Yong Chen",
+    "S. Byna",
+    "Xian-He Sun",
+    "R. Thakur",
+    "W. Gropp"
+   ],
+   "anchor": "Hiding I/O latency with pre-execution prefetching for parallel applications",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/sc.2008.5213209",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/sc.2008.5213209>",
+   "record_title": "Hiding I/O latency with pre-execution prefetching for parallel applications",
+   "record_year": 2008,
+   "record_year_field": "issued",
+   "record_venue": "2008 SC - International Conference for High Performance Computing, Networking, Storage and Analysis",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Yong Chen",
+    "Byna, S.",
+    "Xian-He Sun",
+    "Thakur, R.",
+    "Gropp, W."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "byna",
+    "chen",
+    "gropp",
+    "sun",
+    "thakur"
+   ],
+   "record_families": [
+    "byna",
+    "chen",
+    "gropp",
+    "sun",
+    "thakur"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2008,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "chen2009",
+   "section": "S2.4",
+   "locator": "10.3724/sp.j.1087.2009.01520",
+   "locator_kind": "DOI",
+   "entry_title": "Influence of heavytailed distribution on network traffic",
+   "entry_year_stored": 2009,
+   "entry_authors": [
+    "Chu CHEN",
+    "Yong XU",
+    "Ling ZHANG"
+   ],
+   "anchor": "distribution on network traffic",
+   "method": "crossref_doi",
+   "record_doi": "10.3724/sp.j.1087.2009.01520",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.3724/sp.j.1087.2009.01520>",
+   "record_title": "Influence of heavytailed distribution on network traffic",
+   "record_year": 2009,
+   "record_year_field": "issued",
+   "record_venue": "Journal of Computer Applications",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "CHEN, Chu",
+    "XU, Yong",
+    "ZHANG, Ling"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "chen",
+    "xu",
+    "zhang"
+   ],
+   "record_families": [
+    "chen",
+    "xu",
+    "zhang"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2009,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "chen2014",
+   "section": "S2.1",
+   "locator": "10.1109/tc.2013.15",
+   "locator_kind": "DOI",
+   "entry_title": "Improving MapReduce Performance Using Smart Speculative Execution Strategy",
+   "entry_year_stored": 2014,
+   "entry_authors": [
+    "Qi Chen",
+    "Cheng Liu",
+    "Zhen Xiao"
+   ],
+   "anchor": "Smart Speculative Execution Strategy",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/tc.2013.15",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1109/tc.2013.15>",
+   "record_title": "Improving MapReduce Performance Using Smart Speculative Execution Strategy",
+   "record_year": 2014,
+   "record_year_field": "issued",
+   "record_venue": "IEEE Transactions on Computers",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Chen, Qi",
+    "Liu, Cheng",
+    "Xiao, Zhen"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "chen",
+    "liu",
+    "xiao"
+   ],
+   "record_families": [
+    "chen",
+    "liu",
+    "xiao"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2014,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "chronos2026",
+   "section": "S2.2",
+   "locator": "2609.14889v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Chronos: Efficient Bolt-on Branching Across Data Stores for Stateful Agentic Applications",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Xinjing Zhou",
+    "Jason Mohoney",
+    "Samuel Madden",
+    "Michael Stonebraker",
+    "Lei Cao"
+   ],
+   "anchor": "Chronos",
+   "method": "arxiv_id_list",
+   "record_id": "2609.14889v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.14889v1>",
+   "record_title": "Chronos: Efficient Bolt-on Branching Across Data Stores for Stateful Agentic Applications",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.14889v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Xinjing Zhou",
+    "Jason Mohoney",
+    "Samuel Madden",
+    "Michael Stonebraker",
+    "Lei Cao"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "cao",
+    "madden",
+    "mohoney",
+    "stonebraker",
+    "zhou"
+   ],
+   "record_families": [
+    "cao",
+    "madden",
+    "mohoney",
+    "stonebraker",
+    "zhou"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "chydzinski2024b",
+   "section": "S2.3",
+   "locator": "10.3390/sym16030271",
+   "locator_kind": "DOI",
+   "entry_title": "Response Time of Queueing Mechanisms",
+   "entry_year_stored": 2024,
+   "entry_authors": [
+    "Andrzej Chydzinski",
+    "Blazej Adamczyk"
+   ],
+   "anchor": "Response Time of Queueing Mechanisms",
+   "method": "crossref_doi",
+   "record_doi": "10.3390/sym16030271",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.3390/sym16030271>",
+   "record_title": "Response Time of Queueing Mechanisms",
+   "record_year": 2024,
+   "record_year_field": "issued",
+   "record_venue": "Symmetry",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Chydzinski, Andrzej",
+    "Adamczyk, Blazej"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "adamczyk",
+    "chydzinski"
+   ],
+   "record_families": [
+    "adamczyk",
+    "chydzinski"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "cnncost2026",
+   "section": "S2.6",
+   "locator": "2608.10506v1",
+   "locator_kind": "arXiv",
+   "entry_title": "CARB: A Characterization-Guided Framework for CNN Inference Cost Prediction and Deployment Screening",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Linh Nguyen",
+    "Zhixin Pan"
+   ],
+   "anchor": "Characterization-Guided Framework for CNN Inference Cost",
+   "method": "arxiv_id_list",
+   "record_id": "2608.10506v1",
+   "arxiv_link": "<https://arxiv.org/abs/2608.10506v1>",
+   "record_title": "CARB: A Characterization-Guided Framework for CNN Inference Cost Prediction and Deployment Screening",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2608.10506v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Linh Nguyen",
+    "Zhixin Pan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "nguyen",
+    "pan"
+   ],
+   "record_families": [
+    "nguyen",
+    "pan"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "combinatorial2025",
+   "section": "S2.6",
+   "locator": "10.52202/085713-4014",
+   "locator_kind": "DOI",
+   "entry_title": "Combinatorial Ski Rental Problem: Robust and Learning-Augmented Algorithms",
+   "entry_year_stored": 2025,
+   "entry_authors": [
+    "Ziwei Li",
+    "Bo Sun",
+    "Zhiqiu Zhang",
+    "Mohammad Hajiesmaili",
+    "Binghan Wu",
+    "Lin Yang",
+    "Yang Gao"
+   ],
+   "anchor": "Combinatorial Ski Rental Problem",
+   "method": "crossref_doi",
+   "record_doi": "10.52202/085713-4014",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.52202/085713-4014>",
+   "record_title": "Combinatorial Ski Rental Problem: Robust and Learning-Augmented Algorithms",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "Advances in Neural Information Processing Systems 38",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Li, Ziwei",
+    "Sun, Bo",
+    "Zhang, Zhiqiu",
+    "Hajiesmaili, Mohammad",
+    "Wu, Binghan",
+    "Yang, Lin",
+    "Gao, Yang"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 7,
+   "entry_families": [
+    "gao",
+    "hajiesmaili",
+    "li",
+    "sun",
+    "wu",
+    "yang",
+    "zhang"
+   ],
+   "record_families": [
+    "gao",
+    "hajiesmaili",
+    "li",
+    "sun",
+    "wu",
+    "yang",
+    "zhang"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "costaware2026",
+   "section": "S2.2",
+   "locator": "2606.07846v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Faisal Fareed"
+   ],
+   "anchor": "Cost-Aware Speculative Execution for LLM-Agent Workflows",
+   "method": "arxiv_id_list",
+   "record_id": "2606.07846v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.07846v1>",
+   "record_title": "Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.07846v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Faisal Fareed"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "fareed"
+   ],
+   "record_families": [
+    "fareed"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "cui2026",
+   "section": "S2.6",
+   "locator": "2602.21104v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Ski Rental with Distributional Predictions of Unknown Quality",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Qiming Cui",
+    "Michael Dinitz"
+   ],
+   "anchor": "Ski Rental with Distributional Predictions of Unknown Quality",
+   "method": "arxiv_id_list",
+   "record_id": "2602.21104v1",
+   "arxiv_link": "<https://arxiv.org/abs/2602.21104v1>",
+   "record_title": "Ski Rental with Distributional Predictions of Unknown Quality",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2602.21104v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Qiming Cui",
+    "Michael Dinitz"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "cui",
+    "dinitz"
+   ],
+   "record_families": [
+    "cui",
+    "dinitz"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "dauria2021",
+   "section": "S2.3",
+   "locator": "2107.04557v1",
+   "locator_kind": "arXiv",
+   "entry_title": "An M/M/c queue with queueing-time dependent service rates",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Bernardo D'Auria",
+    "Ivo J. B. F. Adan",
+    "René Bekker",
+    "Vidyadhar Kulkarni"
+   ],
+   "anchor": "queueing-time dependent service rates",
+   "method": "arxiv_id_list",
+   "record_id": "2107.04557v1",
+   "arxiv_link": "<https://arxiv.org/abs/2107.04557v1>",
+   "record_title": "An M/M/c queue with queueing-time dependent service rates",
+   "record_year": 2021,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2107.04557v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Bernardo D'Auria",
+    "Ivo J. B. F. Adan",
+    "René Bekker",
+    "Vidyadhar Kulkarni"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "adan",
+    "bekker",
+    "d auria",
+    "kulkarni"
+   ],
+   "record_families": [
+    "adan",
+    "bekker",
+    "d auria",
+    "kulkarni"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2021,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "desai2026",
+   "section": "S2.5",
+   "locator": "10.52783/jisem.v11i2s.14608",
+   "locator_kind": "DOI",
+   "entry_title": "Reliable Event-Driven Processing in Distributed Systems: Stage-Aware Retries, Idempotency, and Exactly-Once Semantics",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Jay Bankimchandra Desai"
+   ],
+   "anchor": "Reliable Event-Driven Processing",
+   "method": "crossref_doi",
+   "record_doi": "10.52783/jisem.v11i2s.14608",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.52783/jisem.v11i2s.14608>",
+   "record_title": "Reliable Event-Driven Processing in Distributed Systems: Stage-Aware Retries, Idempotency, and Exactly-Once Semantics",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "Journal of Information Systems Engineering and Management",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Jay Bankimchandra Desai"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "desai"
+   ],
+   "record_families": [
+    "desai"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "discount2022",
+   "section": "S2.6",
+   "locator": "10.1007/978-3-030-96731-4_18",
+   "locator_kind": "DOI",
+   "entry_title": "Machine Learning Advised Ski Rental Problem with a Discount",
+   "entry_year_stored": 2022,
+   "entry_authors": [
+    "Arghya Bhattacharya",
+    "Rathish Das"
+   ],
+   "anchor": "Machine Learning Advised Ski Rental Problem with a Discount",
+   "method": "crossref_doi",
+   "record_doi": "10.1007/978-3-030-96731-4_18",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1007/978-3-030-96731-4_18>",
+   "record_title": "Machine Learning Advised Ski Rental Problem with a Discount",
+   "record_year": 2022,
+   "record_year_field": "issued",
+   "record_venue": "Lecture Notes in Computer Science",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Bhattacharya, Arghya",
+    "Das, Rathish"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "bhattacharya",
+    "das"
+   ],
+   "record_families": [
+    "bhattacharya",
+    "das"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2022,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "discrete2026",
+   "section": "S2.6",
+   "locator": "10.1609/aaai.v40i43.40991",
+   "locator_kind": "DOI",
+   "entry_title": "Learning-Augmented Ski Rental with Discrete Distribution: A Bayesian Approach",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Bosun Kang",
+    "Hyejun Park",
+    "Chenglin Fan"
+   ],
+   "anchor": "Learning-Augmented Ski Rental with Discrete Distribution",
+   "method": "crossref_doi",
+   "record_doi": "10.1609/aaai.v40i43.40991",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1609/aaai.v40i43.40991>",
+   "record_title": "Learning-Augmented Ski Rental with Discrete Distribution: A Bayesian Approach",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Kang, Bosun",
+    "Park, Hyejun",
+    "Fan, Chenglin"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "fan",
+    "kang",
+    "park"
+   ],
+   "record_families": [
+    "fan",
+    "kang",
+    "park"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "divisible2021",
+   "section": "S2.7",
+   "locator": "10.1142/s0129626421500080",
+   "locator_kind": "DOI",
+   "entry_title": "Integrating Amdahl-like Laws and Divisible Load Theory",
+   "entry_year_stored": 2021,
+   "entry_authors": [
+    "Yang Cao",
+    "Fei Wu",
+    "Thomas Robertazzi"
+   ],
+   "anchor": "Integrating Amdahl-like Laws and Divisible Load Theory",
+   "method": "crossref_doi",
+   "record_doi": "10.1142/s0129626421500080",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1142/s0129626421500080>",
+   "record_title": "Integrating Amdahl-like Laws and Divisible Load Theory",
+   "record_year": 2021,
+   "record_year_field": "issued",
+   "record_venue": "Parallel Processing Letters",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Cao, Yang",
+    "Wu, Fei",
+    "Robertazzi, Thomas"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "cao",
+    "robertazzi",
+    "wu"
+   ],
+   "record_families": [
+    "cao",
+    "robertazzi",
+    "wu"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2021,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "dlt2025",
+   "section": "S2.7",
+   "locator": "10.3390/fi17110519",
+   "locator_kind": "DOI",
+   "entry_title": "A DLT-Aware Performance Evaluation Framework for Virtual-Core Speedup Modeling",
+   "entry_year_stored": 2025,
+   "entry_authors": [
+    "Zile Xiang",
+    "Thomas G. Robertazzi"
+   ],
+   "anchor": "DLT-Aware Performance Evaluation Framework for Virtual-Core Speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.3390/fi17110519",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.3390/fi17110519>",
+   "record_title": "A DLT-Aware Performance Evaluation Framework for Virtual-Core Speedup Modeling",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "Future Internet",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Xiang, Zile",
+    "Robertazzi, Thomas G."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "robertazzi",
+    "xiang"
+   ],
+   "record_families": [
+    "robertazzi",
+    "xiang"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "dusad2025",
+   "section": "S2.5",
+   "locator": "10.32996/jcsts.2025.7.11.33",
+   "locator_kind": "DOI",
+   "entry_title": "Taming Asynchrony in Distributed Payment Systems: Guarantees, Idempotency, and End-to-End Reconciliation",
+   "entry_year_stored": 2025,
+   "entry_authors": [
+    "Krishna Dusad"
+   ],
+   "anchor": "Taming Asynchrony in Distributed Payment Systems",
+   "method": "crossref_doi",
+   "record_doi": "10.32996/jcsts.2025.7.11.33",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.32996/jcsts.2025.7.11.33>",
+   "record_title": "Taming Asynchrony in Distributed Payment Systems: Guarantees, Idempotency, and End-to-End Reconciliation",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "Journal of Computer Science and Technology Studies",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Krishna Dusad"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "dusad"
+   ],
+   "record_families": [
+    "dusad"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "eeckhout2025",
+   "section": "S2.7",
+   "locator": "10.1109/ispass64960.2025.00033",
+   "locator_kind": "DOI",
+   "entry_title": "Use Equal-Work or Equal-Time Speedup, Not Geomean Speedup",
+   "entry_year_stored": 2025,
+   "entry_authors": [
+    "Lieven Eeckhout"
+   ],
+   "anchor": "Use Equal-Work or Equal-Time Speedup, Not Geomean Speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/ispass64960.2025.00033",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/ispass64960.2025.00033>",
+   "record_title": "Use Equal-Work or Equal-Time Speedup, Not Geomean Speedup",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "2025 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Eeckhout, Lieven"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "eeckhout"
+   ],
+   "record_families": [
+    "eeckhout"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "eeckhout2025b",
+   "section": "S2.7",
+   "locator": "10.1109/hpca61900.2025.00132",
+   "locator_kind": "DOI",
+   "entry_title": "R.I.P. Geomean Speedup Use Equal-Work (Or Equal-Time) Harmonic Mean Speedup Instead",
+   "entry_year_stored": 2025,
+   "entry_authors": [
+    "Lieven Eeckhout"
+   ],
+   "anchor": "R.I.P. Geomean Speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/hpca61900.2025.00132",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/hpca61900.2025.00132>",
+   "record_title": "R.I.P. Geomean Speedup Use Equal-Work (Or Equal-Time) Harmonic Mean Speedup Instead",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "2025 IEEE International Symposium on High Performance Computer Architecture (HPCA)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Eeckhout, Lieven"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "eeckhout"
+   ],
+   "record_families": [
+    "eeckhout"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "exp2024",
+   "section": "S2.7",
+   "locator": "2405.02086v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Multi-level projection with exponential parallel speedup; Application to sparse auto-encoders neural networks",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Guillaume Perez",
+    "Michel Barlaud"
+   ],
+   "anchor": "Multi-level projection with exponential parallel speedup",
+   "method": "arxiv_id_list",
+   "record_id": "2405.02086v2",
+   "arxiv_link": "<https://arxiv.org/abs/2405.02086v2>",
+   "record_title": "Multi-level projection with exponential parallel speedup; Application to sparse auto-encoders neural networks",
+   "record_year": 2024,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2405.02086v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Guillaume Perez",
+    "Michel Barlaud"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "barlaud",
+    "perez"
+   ],
+   "record_families": [
+    "barlaud",
+    "perez"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "fagin2024",
+   "section": "S2.5",
+   "locator": "10.5802/pmb.53",
+   "locator_kind": "DOI",
+   "entry_title": "Minimal idempotency, partial idempotency, search heuristics and constructive algorithms for idempotent integers",
+   "entry_year_stored": 2024,
+   "entry_authors": [
+    "Barry S. Fagin"
+   ],
+   "anchor": "Minimal idempotency",
+   "method": "crossref_doi",
+   "record_doi": "10.5802/pmb.53",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.5802/pmb.53>",
+   "record_title": "Minimal idempotency, partial idempotency, search heuristics and constructive algorithms for idempotent integers",
+   "record_year": 2024,
+   "record_year_field": "issued",
+   "record_venue": "Publications mathématiques de Besançon. Algèbre et théorie des nombres",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Fagin, Barry S."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "fagin"
+   ],
+   "record_families": [
+    "fagin"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "finch2019",
+   "section": "S2.3",
+   "locator": "1904.04054v1",
+   "locator_kind": "arXiv",
+   "entry_title": "M/M/$c$ Queues and the Poisson Clumping Heuristic",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Steven Finch"
+   ],
+   "anchor": "Poisson Clumping Heuristic",
+   "method": "arxiv_id_list",
+   "record_id": "1904.04054v1",
+   "arxiv_link": "<https://arxiv.org/abs/1904.04054v1>",
+   "record_title": "M/M/$c$ Queues and the Poisson Clumping Heuristic",
+   "record_year": 2019,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1904.04054v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Steven Finch"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "finch"
+   ],
+   "record_families": [
+    "finch"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2019,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "fixedsize2011",
+   "section": "S2.7",
+   "locator": "10.1007/978-0-387-09766-4_2184",
+   "locator_kind": "DOI",
+   "entry_title": "Fixed-Size Speedup",
+   "entry_year_stored": 2011,
+   "entry_authors": [],
+   "anchor": "Fixed-Size Speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.1007/978-0-387-09766-4_2184",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1007/978-0-387-09766-4_2184>",
+   "record_title": "Fixed-Size Speedup",
+   "record_year": 2011,
+   "record_year_field": "issued",
+   "record_venue": "Encyclopedia of Parallel Computing",
+   "record_venue_field": "container-title",
+   "record_authors": [],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 0,
+   "entry_families": [],
+   "record_families": [],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2011,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "fleet2026",
+   "section": "S2.2",
+   "locator": "2608.19659v1",
+   "locator_kind": "arXiv",
+   "entry_title": "FleetSieve: Decision-Critical Profiling for SLO-Aware LLM Fleet Configuration",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Huang Cheng",
+    "Scott Zhang",
+    "Aubert Li"
+   ],
+   "anchor": "FleetSieve",
+   "method": "arxiv_id_list",
+   "record_id": "2608.19659v1",
+   "arxiv_link": "<https://arxiv.org/abs/2608.19659v1>",
+   "record_title": "FleetSieve: Decision-Critical Profiling for SLO-Aware LLM Fleet Configuration",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2608.19659v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Huang Cheng",
+    "Scott Zhang",
+    "Aubert Li"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "cheng",
+    "li",
+    "zhang"
+   ],
+   "record_families": [
+    "cheng",
+    "li",
+    "zhang"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "forkjoin2026",
+   "section": "S2.7",
+   "locator": "2606.11937v1",
+   "locator_kind": "arXiv",
+   "entry_title": "From Fork-Join to Asynchronous Tasks: Parallelizing Tiled Cholesky Decomposition with OpenMP and HPX",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Alexander Strack",
+    "Alexander Van Craen",
+    "Dirk Pflüger"
+   ],
+   "anchor": "From Fork-Join to Asynchronous Tasks",
+   "method": "arxiv_id_list",
+   "record_id": "2606.11937v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.11937v1>",
+   "record_title": "From Fork-Join to Asynchronous Tasks: Parallelizing Tiled Cholesky Decomposition with OpenMP and HPX",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.11937v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Alexander Strack",
+    "Alexander Van Craen",
+    "Dirk Pflüger"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "craen",
+    "pfluger",
+    "strack"
+   ],
+   "record_families": [
+    "craen",
+    "pfluger",
+    "strack"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "gao2026",
+   "section": "S2.3",
+   "locator": "2609.09237v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Stability of Fork-Join Systems with Redundancy and Heterogeneous Servers",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Chutong Gao",
+    "Seyed Iravani",
+    "Ohad Perry"
+   ],
+   "anchor": "Stability of Fork-Join Systems with Redundancy",
+   "method": "arxiv_id_list",
+   "record_id": "2609.09237v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.09237v1>",
+   "record_title": "Stability of Fork-Join Systems with Redundancy and Heterogeneous Servers",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.09237v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Chutong Gao",
+    "Seyed Iravani",
+    "Ohad Perry"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "gao",
+    "iravani",
+    "perry"
+   ],
+   "record_families": [
+    "gao",
+    "iravani",
+    "perry"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "ghosttools2026",
+   "section": "S2.2",
+   "locator": "2606.02483v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Ghost Tool Calls: Issue-Time Privacy for Speculative Agent Tools",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Bardia Mohammadi",
+    "Lars Klein",
+    "Akhil Arora",
+    "Laurent Bindschaedler"
+   ],
+   "anchor": "Ghost Tool Calls",
+   "method": "arxiv_id_list",
+   "record_id": "2606.02483v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.02483v1>",
+   "record_title": "Ghost Tool Calls: Issue-Time Privacy for Speculative Agent Tools",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.02483v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Bardia Mohammadi",
+    "Lars Klein",
+    "Akhil Arora",
+    "Laurent Bindschaedler"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "arora",
+    "bindschaedler",
+    "klein",
+    "mohammadi"
+   ],
+   "record_families": [
+    "arora",
+    "bindschaedler",
+    "klein",
+    "mohammadi"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "gocmen2025",
+   "section": "S2.3",
+   "locator": "2505.21331v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Scheduling in Queueing Systems with Uncertain and Evolving Holding Costs",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Caner Gocmen",
+    "Thodoris Lykouris",
+    "Deeksha Sinha",
+    "Wentao Weng"
+   ],
+   "anchor": "Uncertain and Evolving Holding Costs",
+   "method": "arxiv_id_list",
+   "record_id": "2505.21331v2",
+   "arxiv_link": "<https://arxiv.org/abs/2505.21331v2>",
+   "record_title": "Scheduling in Queueing Systems with Uncertain and Evolving Holding Costs",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2505.21331v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Caner Gocmen",
+    "Thodoris Lykouris",
+    "Deeksha Sinha",
+    "Wentao Weng"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "gocmen",
+    "lykouris",
+    "sinha",
+    "weng"
+   ],
+   "record_families": [
+    "gocmen",
+    "lykouris",
+    "sinha",
+    "weng"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "grotov2026",
+   "section": "S2.2",
+   "locator": "2609.05274v1",
+   "locator_kind": "arXiv",
+   "entry_title": "How to Speculate about Uncertainty in Agentic Coding? A Draft-Model Gate Method",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Konstantin Grotov",
+    "Valentin Malykh"
+   ],
+   "anchor": "How to Speculate about Uncertainty in Agentic Coding",
+   "method": "arxiv_id_list",
+   "record_id": "2609.05274v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.05274v1>",
+   "record_title": "How to Speculate about Uncertainty in Agentic Coding? A Draft-Model Gate Method",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.05274v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Konstantin Grotov",
+    "Valentin Malykh"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "grotov",
+    "malykh"
+   ],
+   "record_families": [
+    "grotov",
+    "malykh"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "hidelatency2026",
+   "section": "S2.2",
+   "locator": "10.1145/3806789.3810973",
+   "locator_kind": "DOI",
+   "entry_title": "Hiding Service Latency: A Deterministic Asynchronous Execution Paradigm for Agent-Based Transport Simulations",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Paul Heinrich",
+    "Kai Nagel"
+   ],
+   "anchor": "Hiding Service Latency",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3806789.3810973",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/3806789.3810973>",
+   "record_title": "Hiding Service Latency: A Deterministic Asynchronous Execution Paradigm for Agent-Based Transport Simulations",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 40th ACM SIGSIM International Conference on Principles of Advanced Discrete Simulation",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Heinrich, Paul",
+    "Nagel, Kai"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "heinrich",
+    "nagel"
+   ],
+   "record_families": [
+    "heinrich",
+    "nagel"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "hydra2026",
+   "section": "S2.7",
+   "locator": "2608.25053v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Hydra: Phase-Aware Workload Characterization of LLM Inference across Edge SoC Generations, Backends, and Quantization Levels",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Amir Taherin",
+    "Sana Taghipour Anvari",
+    "Charles Amante",
+    "Yixiao Chen",
+    "Ruben Noroian",
+    "Zlatan Feric",
+    "Nicolas Bohm Agostini",
+    "Pu Zhao",
+    "José Cano",
+    "Bin Ren",
+    "Yanzhi Wang",
+    "David Kaeli"
+   ],
+   "anchor": "Phase-Aware Workload Characterization of LLM Inference",
+   "method": "arxiv_id_list",
+   "record_id": "2608.25053v1",
+   "arxiv_link": "<https://arxiv.org/abs/2608.25053v1>",
+   "record_title": "Hydra: Phase-Aware Workload Characterization of LLM Inference across Edge SoC Generations, Backends, and Quantization Levels",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2608.25053v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Amir Taherin",
+    "Sana Taghipour Anvari",
+    "Charles Amante",
+    "Yixiao Chen",
+    "Ruben Noroian",
+    "Zlatan Feric",
+    "Nicolas Bohm Agostini",
+    "Pu Zhao",
+    "José Cano",
+    "Bin Ren",
+    "Yanzhi Wang",
+    "David Kaeli"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 12,
+   "entry_families": [
+    "agostini",
+    "amante",
+    "anvari",
+    "cano",
+    "chen",
+    "feric",
+    "kaeli",
+    "noroian",
+    "ren",
+    "taherin",
+    "wang",
+    "zhao"
+   ],
+   "record_families": [
+    "agostini",
+    "amante",
+    "anvari",
+    "cano",
+    "chen",
+    "feric",
+    "kaeli",
+    "noroian",
+    "ren",
+    "taherin",
+    "wang",
+    "zhao"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "ibrahim2017",
+   "section": "S2.1",
+   "locator": "10.1109/smartcloud.2017.25",
+   "locator_kind": "DOI",
+   "entry_title": "Improving MapReduce Performance with Progress and Feedback Based Speculative Execution",
+   "entry_year_stored": 2017,
+   "entry_authors": [
+    "Ibrahim Adel Ibrahim",
+    "Mostafa Bassiouni"
+   ],
+   "anchor": "Progress and Feedback Based Speculative Execution",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/smartcloud.2017.25",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/smartcloud.2017.25>",
+   "record_title": "Improving MapReduce Performance with Progress and Feedback Based Speculative Execution",
+   "record_year": 2017,
+   "record_year_field": "issued",
+   "record_venue": "2017 IEEE International Conference on Smart Cloud (SmartCloud)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Ibrahim, Ibrahim Adel",
+    "Bassiouni, Mostafa"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "bassiouni",
+    "ibrahim"
+   ],
+   "record_families": [
+    "bassiouni",
+    "ibrahim"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "idempotency2025",
+   "section": "S2.5",
+   "locator": "10.48047/jocaaa.2025.34.11.02",
+   "locator_kind": "DOI",
+   "entry_title": "Idempotency Mechanisms in Digital Payment Systems: Preventing Duplicate Transaction Processing",
+   "entry_year_stored": 2025,
+   "entry_authors": [],
+   "anchor": "Idempotency Mechanisms in Digital Payment Systems",
+   "method": "crossref_doi",
+   "record_doi": "10.48047/jocaaa.2025.34.11.02",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.48047/jocaaa.2025.34.11.02>",
+   "record_title": "Idempotency Mechanisms in Digital Payment Systems: Preventing Duplicate Transaction Processing",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "Journal of Computational Analysis and Applications",
+   "record_venue_field": "container-title",
+   "record_authors": [],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 0,
+   "entry_families": [],
+   "record_families": [],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "improved2025",
+   "section": "S2.6",
+   "locator": "10.1145/3763239",
+   "locator_kind": "DOI",
+   "entry_title": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds for Multi-Option Ski Rental Problem",
+   "entry_year_stored": 2025,
+   "entry_authors": [
+    "Yongho Shin",
+    "Changyeol Lee",
+    "Gukryeol Lee",
+    "Hyung-Chan An"
+   ],
+   "anchor": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3763239",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1145/3763239>",
+   "record_title": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds for Multi-Option Ski Rental Problem",
+   "record_year": 2025,
+   "record_year_field": "issued",
+   "record_venue": "ACM Transactions on Algorithms",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Shin, Yongho",
+    "Lee, Changyeol",
+    "Lee, Gukryeol",
+    "An, Hyung-Chan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "an",
+    "lee",
+    "shin"
+   ],
+   "record_families": [
+    "an",
+    "lee",
+    "shin"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "intro1998",
+   "section": "S2.5",
+   "locator": "10.1017/cbo9780511662508.003",
+   "locator_kind": "DOI",
+   "entry_title": "An introduction to idempotency",
+   "entry_year_stored": 1998,
+   "entry_authors": [
+    "Jeremy Gunawardena"
+   ],
+   "anchor": "An introduction to idempotency",
+   "method": "crossref_doi",
+   "record_doi": "10.1017/cbo9780511662508.003",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1017/cbo9780511662508.003>",
+   "record_title": "An introduction to idempotency",
+   "record_year": 1998,
+   "record_year_field": "issued",
+   "record_venue": "Idempotency",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Gunawardena, Jeremy"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "gunawardena"
+   ],
+   "record_families": [
+    "gunawardena"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1998,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "irani1998paging",
+   "section": "S2.6",
+   "locator": "10.1007/bfb0029564",
+   "locator_kind": "DOI",
+   "entry_title": "Competitive analysis of paging",
+   "entry_year_stored": 1998,
+   "entry_authors": [
+    "Sandy Irani"
+   ],
+   "anchor": "Competitive analysis of paging",
+   "method": "crossref_doi",
+   "record_doi": "10.1007/bfb0029564",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1007/bfb0029564>",
+   "record_title": "Competitive analysis of paging",
+   "record_year": 1998,
+   "record_year_field": "issued",
+   "record_venue": "Lecture Notes in Computer Science",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Irani, Sandy"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "irani"
+   ],
+   "record_families": [
+    "irani"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1998,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "iyer2023",
+   "section": "S2.4",
+   "locator": "10.1145/3600006.3613136",
+   "locator_kind": "DOI",
+   "entry_title": "Achieving Microsecond-Scale Tail Latency Efficiently with Approximate Optimal Scheduling",
+   "entry_year_stored": 2023,
+   "entry_authors": [
+    "Rishabh Iyer",
+    "Musa Unal",
+    "Marios Kogias",
+    "George Candea"
+   ],
+   "anchor": "Microsecond-Scale Tail Latency",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3600006.3613136",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/3600006.3613136>",
+   "record_title": "Achieving Microsecond-Scale Tail Latency Efficiently with Approximate Optimal Scheduling",
+   "record_year": 2023,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 29th Symposium on Operating Systems Principles",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Iyer, Rishabh",
+    "Unal, Musa",
+    "Kogias, Marios",
+    "Candea, George"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "candea",
+    "iyer",
+    "kogias",
+    "unal"
+   ],
+   "record_families": [
+    "candea",
+    "iyer",
+    "kogias",
+    "unal"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "ji2024",
+   "section": "S2.3",
+   "locator": "10.1007/s11134-024-09929-8",
+   "locator_kind": "DOI",
+   "entry_title": "Heavy traffic scaling limits for shortest remaining processing time queues with light tailed processing time distributions",
+   "entry_year_stored": 2024,
+   "entry_authors": [
+    "Chunxu Ji",
+    "Amber L. Puha"
+   ],
+   "anchor": "Heavy traffic scaling limits for shortest remaining processing time",
+   "method": "crossref_doi",
+   "record_doi": "10.1007/s11134-024-09929-8",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1007/s11134-024-09929-8>",
+   "record_title": "Heavy traffic scaling limits for shortest remaining processing time queues with light tailed processing time distributions",
+   "record_year": 2024,
+   "record_year_field": "issued",
+   "record_venue": "Queueing Systems",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Ji, Chunxu",
+    "Puha, Amber L."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "ji",
+    "puha"
+   ],
+   "record_families": [
+    "ji",
+    "puha"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "kanev2014",
+   "section": "S2.4",
+   "locator": "10.1109/iiswc.2014.6983037",
+   "locator_kind": "DOI",
+   "entry_title": "Tradeoffs between power management and tail latency in warehouse-scale applications",
+   "entry_year_stored": 2014,
+   "entry_authors": [
+    "Svilen Kanev",
+    "Kim Hazelwood",
+    "Gu-Yeon Wei",
+    "David Brooks"
+   ],
+   "anchor": "power management and tail latency",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/iiswc.2014.6983037",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/iiswc.2014.6983037>",
+   "record_title": "Tradeoffs between power management and tail latency in warehouse-scale applications",
+   "record_year": 2014,
+   "record_year_field": "issued",
+   "record_venue": "2014 IEEE International Symposium on Workload Characterization (IISWC)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Kanev, Svilen",
+    "Hazelwood, Kim",
+    "Wei, Gu-Yeon",
+    "Brooks, David"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "brooks",
+    "hazelwood",
+    "kanev",
+    "wei"
+   ],
+   "record_families": [
+    "brooks",
+    "hazelwood",
+    "kanev",
+    "wei"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2014,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "kim2026",
+   "section": "S2.6",
+   "locator": "2603.29233v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Robust and Consistent Ski Rental with Distributional Advice",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Jihwan Kim",
+    "Chenglin Fan"
+   ],
+   "anchor": "Robust and Consistent Ski Rental with Distributional Advice",
+   "method": "arxiv_id_list",
+   "record_id": "2603.29233v1",
+   "arxiv_link": "<https://arxiv.org/abs/2603.29233v1>",
+   "record_title": "Robust and Consistent Ski Rental with Distributional Advice",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2603.29233v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Jihwan Kim",
+    "Chenglin Fan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "fan",
+    "kim"
+   ],
+   "record_families": [
+    "fan",
+    "kim"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "konasani2026",
+   "section": "S2.5",
+   "locator": "10.22399/ijcesen.4940",
+   "locator_kind": "DOI",
+   "entry_title": "Graph-Based Duplicate Trade Detection and Idempotency Framework Implementation in Distributed Electronic Trading Systems",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Iswarya Konasani"
+   ],
+   "anchor": "Duplicate Trade Detection and Idempotency",
+   "method": "crossref_doi",
+   "record_doi": "10.22399/ijcesen.4940",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.22399/ijcesen.4940>",
+   "record_title": "Graph-Based Duplicate Trade Detection and Idempotency Framework Implementation in Distributed Electronic Trading Systems",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "International Journal of Computational and Experimental Science and Engineering",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Iswarya Konasani"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "konasani"
+   ],
+   "record_families": [
+    "konasani"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "koroliouk2021",
+   "section": "S2.3",
+   "locator": "10.1002/9781119755432.ch3",
+   "locator_kind": "DOI",
+   "entry_title": "Diffusion Approximation of Queueing Systems and Networks",
+   "entry_year_stored": 2021,
+   "entry_authors": [
+    "Dimitri Koroliouk",
+    "Vladimir S. Koroliuk"
+   ],
+   "anchor": "Diffusion Approximation of Queueing Systems",
+   "method": "crossref_doi",
+   "record_doi": "10.1002/9781119755432.ch3",
+   "year_declared": null,
+   "record_type": "other",
+   "link": "<https://doi.org/10.1002/9781119755432.ch3>",
+   "record_title": "Diffusion Approximation of Queueing Systems and Networks",
+   "record_year": 2021,
+   "record_year_field": "issued",
+   "record_venue": "Queueing Theory 1",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Koroliouk, Dimitri",
+    "Koroliuk, Vladimir S."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "koroliouk",
+    "koroliuk"
+   ],
+   "record_families": [
+    "koroliouk",
+    "koroliuk"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2021,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "latencyhiding1993",
+   "section": "S2.1",
+   "locator": "10.1145/165939.165972",
+   "locator_kind": "DOI",
+   "entry_title": "Empirical study of latency hiding on a fine-grain parallel processor",
+   "entry_year_stored": 1993,
+   "entry_authors": [
+    "Kei Hiraki",
+    "Toshio Shimada",
+    "Satoshi Sekiguchi"
+   ],
+   "anchor": "Empirical study of latency hiding on a fine-grain parallel processor",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/165939.165972",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/165939.165972>",
+   "record_title": "Empirical study of latency hiding on a fine-grain parallel processor",
+   "record_year": 1993,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 7th international conference on Supercomputing",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Hiraki, Kei",
+    "Shimada, Toshio",
+    "Sekiguchi, Satoshi"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "hiraki",
+    "sekiguchi",
+    "shimada"
+   ],
+   "record_families": [
+    "hiraki",
+    "sekiguchi",
+    "shimada"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1993,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "lawniczak2024",
+   "section": "S2.4",
+   "locator": "10.1145/3652892.3700775",
+   "locator_kind": "DOI",
+   "entry_title": "Targeting Tail Latency in Replicated Systems with Proactive Rejection",
+   "entry_year_stored": 2024,
+   "entry_authors": [
+    "Laura Lawniczak",
+    "Tobias Distler"
+   ],
+   "anchor": "Proactive Rejection",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3652892.3700775",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/3652892.3700775>",
+   "record_title": "Targeting Tail Latency in Replicated Systems with Proactive Rejection",
+   "record_year": 2024,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 25th International Middleware Conference",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Lawniczak, Laura",
+    "Distler, Tobias"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "distler",
+    "lawniczak"
+   ],
+   "record_families": [
+    "distler",
+    "lawniczak"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "lengthpred2026",
+   "section": "S2.6",
+   "locator": "2604.00499v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Haoyu Zheng",
+    "Yongqiang Zhang",
+    "Fangcheng Fu",
+    "Xiaokai Zhou",
+    "Hao Luo",
+    "Hongchao Zhu",
+    "Yuanyuan Zhu",
+    "Hao Wang",
+    "Xiao Yan",
+    "Jiawei Jiang"
+   ],
+   "anchor": "Uncertainty-Aware Output Length Prediction",
+   "method": "arxiv_id_list",
+   "record_id": "2604.00499v2",
+   "arxiv_link": "<https://arxiv.org/abs/2604.00499v2>",
+   "record_title": "Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2604.00499v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Haoyu Zheng",
+    "Yongqiang Zhang",
+    "Fangcheng Fu",
+    "Xiaokai Zhou",
+    "Hao Luo",
+    "Hongchao Zhu",
+    "Yuanyuan Zhu",
+    "Hao Wang",
+    "Xiao Yan",
+    "Jiawei Jiang"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 9,
+   "entry_families": [
+    "fu",
+    "jiang",
+    "luo",
+    "wang",
+    "yan",
+    "zhang",
+    "zheng",
+    "zhou",
+    "zhu"
+   ],
+   "record_families": [
+    "fu",
+    "jiang",
+    "luo",
+    "wang",
+    "yan",
+    "zhang",
+    "zheng",
+    "zhou",
+    "zhu"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "linearspeedup2005",
+   "section": "S2.7",
+   "locator": "10.26481/umamet.2005015",
+   "locator_kind": "DOI",
+   "entry_title": "Scheduling parallel jobs with linear speedup",
+   "entry_year_stored": 2005,
+   "entry_authors": [
+    "Grigoriev A.",
+    "Uetz M.J."
+   ],
+   "anchor": "Scheduling parallel jobs with linear speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.26481/umamet.2005015",
+   "year_declared": null,
+   "record_type": "component",
+   "link": "<https://doi.org/10.26481/umamet.2005015>",
+   "record_title": "Scheduling parallel jobs with linear speedup",
+   "record_year": 2005,
+   "record_year_field": "issued",
+   "record_venue": "",
+   "record_venue_field": "none",
+   "record_authors": [
+    "A., Grigoriev",
+    "M.J., Uetz"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "a",
+    "m j"
+   ],
+   "record_families": [
+    "a",
+    "m j"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2005,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "mackenzie2020",
+   "section": "S2.4",
+   "locator": "10.1145/3451964.3451982",
+   "locator_kind": "DOI",
+   "entry_title": "Managing tail latency in large scale information retrieval systems",
+   "entry_year_stored": 2020,
+   "entry_authors": [
+    "Joel M. Mackenzie"
+   ],
+   "anchor": "Managing tail latency in large scale information retrieval",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3451964.3451982",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1145/3451964.3451982>",
+   "record_title": "Managing tail latency in large scale information retrieval systems",
+   "record_year": 2020,
+   "record_year_field": "issued",
+   "record_venue": "ACM SIGIR Forum",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Mackenzie, Joel M."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "mackenzie"
+   ],
+   "record_families": [
+    "mackenzie"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2020,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "marcuello2000",
+   "section": "S2.1",
+   "locator": "10.1109/ipdps.2000.846040",
+   "locator_kind": "DOI",
+   "entry_title": "A quantitative assessment of thread-level speculation techniques",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "P. Marcuello",
+    "A. Gonzalez"
+   ],
+   "anchor": "A quantitative assessment of thread-level speculation",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/ipdps.2000.846040",
+   "year_declared": {
+    "year": 2000,
+    "sources": [
+     {
+      "field": "event.acronym",
+      "value": "IPDPS-00"
+     },
+     {
+      "field": "container-title.0",
+      "value": "Proceedings 14th International Parallel and Distributed Processing Symposium. IPDPS 2000"
+     }
+    ],
+    "note": "issued is [[null]] and no published-* field is present; the container title and the event acronym both name the year",
+    "findings": []
+   },
+   "year_declared_ok": true,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/ipdps.2000.846040>",
+   "record_title": "A quantitative assessment of thread-level speculation techniques",
+   "record_year": 2000,
+   "record_year_field": "declared",
+   "record_venue": "Proceedings 14th International Parallel and Distributed Processing Symposium. IPDPS 2000",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Marcuello, P.",
+    "Gonzalez, A."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "gonzalez",
+    "marcuello"
+   ],
+   "record_families": [
+    "gonzalez",
+    "marcuello"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2000,
+   "key_year_agrees": true,
+   "verdict": "DECLARED"
+  },
+  {
+   "key": "martinez2004",
+   "section": "S2.1",
+   "locator": "10.1007/978-1-4419-8987-1_2",
+   "locator_kind": "DOI",
+   "entry_title": "Speculative Locks: Concurrent Execution of Critical Sections in Shared-Memory Multiprocessors",
+   "entry_year_stored": 2004,
+   "entry_authors": [
+    "José F. Martínez",
+    "Josep Torrellas"
+   ],
+   "anchor": "Speculative Locks",
+   "method": "crossref_doi",
+   "record_doi": "10.1007/978-1-4419-8987-1_2",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1007/978-1-4419-8987-1_2>",
+   "record_title": "Speculative Locks: Concurrent Execution of Critical Sections in Shared-Memory Multiprocessors",
+   "record_year": 2004,
+   "record_year_field": "issued",
+   "record_venue": "High Performance Memory Systems",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Martínez, José F.",
+    "Torrellas, Josep"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "martinez",
+    "torrellas"
+   ],
+   "record_families": [
+    "martinez",
+    "torrellas"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2004,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "mehan2026",
+   "section": "S2.5",
+   "locator": "10.2139/ssrn.6313332",
+   "locator_kind": "DOI",
+   "entry_title": "Retry Amplification in Distributed Systems: ASystematic Analysis of Retry Policies and TheirRole in Cascading Failures",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Rishabh Mehan"
+   ],
+   "anchor": "Retry Amplification",
+   "method": "crossref_doi",
+   "record_doi": "10.2139/ssrn.6313332",
+   "year_declared": null,
+   "record_type": "posted-content",
+   "link": "<https://doi.org/10.2139/ssrn.6313332>",
+   "record_title": "Retry Amplification in Distributed Systems: ASystematic Analysis of Retry Policies and TheirRole in Cascading Failures",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "",
+   "record_venue_field": "none",
+   "record_authors": [
+    "Mehan, Rishabh"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "mehan"
+   ],
+   "record_families": [
+    "mehan"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "memdep2005",
+   "section": "S2.1",
+   "locator": "10.1201/9781420035155-21",
+   "locator_kind": "DOI",
+   "entry_title": "Exploiting Load/Store Parallelism via Memory Dependence Prediction Andreas Moshovos University of Toronto",
+   "entry_year_stored": 2005,
+   "entry_authors": [],
+   "anchor": "Exploiting Load/Store Parallelism via Memory Dependence Prediction",
+   "method": "crossref_doi",
+   "record_doi": "10.1201/9781420035155-21",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1201/9781420035155-21>",
+   "record_title": "Exploiting Load/Store Parallelism via Memory Dependence Prediction Andreas Moshovos University of Toronto",
+   "record_year": 2005,
+   "record_year_field": "issued",
+   "record_venue": "Speculative Execution in High Performance Computer Architectures",
+   "record_venue_field": "container-title",
+   "record_authors": [],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 0,
+   "entry_families": [],
+   "record_families": [],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2005,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "misra2019",
+   "section": "S2.4",
+   "locator": "10.1145/3302424.3303973",
+   "locator_kind": "DOI",
+   "entry_title": "Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints",
+   "entry_year_stored": 2019,
+   "entry_authors": [
+    "Pulkit A. Misra",
+    "María F. Borge",
+    "Íñigo Goiri",
+    "Alvin R. Lebeck",
+    "Willy Zwaenepoel",
+    "Ricardo Bianchini"
+   ],
+   "anchor": "Tail Latency in Datacenter-Scale File Systems",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3302424.3303973",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/3302424.3303973>",
+   "record_title": "Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints",
+   "record_year": 2019,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the Fourteenth EuroSys Conference 2019",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Misra, Pulkit A.",
+    "Borge, María F.",
+    "Goiri, Íñigo",
+    "Lebeck, Alvin R.",
+    "Zwaenepoel, Willy",
+    "Bianchini, Ricardo"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 6,
+   "entry_families": [
+    "bianchini",
+    "borge",
+    "goiri",
+    "lebeck",
+    "misra",
+    "zwaenepoel"
+   ],
+   "record_families": [
+    "bianchini",
+    "borge",
+    "goiri",
+    "lebeck",
+    "misra",
+    "zwaenepoel"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2019,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "model1997",
+   "section": "S2.7",
+   "locator": "10.21236/ada637068",
+   "locator_kind": "DOI",
+   "entry_title": "A Model for Speedup of Parallel Programs",
+   "entry_year_stored": 1997,
+   "entry_authors": [
+    "Allen B. Downey"
+   ],
+   "anchor": "A Model for Speedup of Parallel Programs",
+   "method": "crossref_doi",
+   "record_doi": "10.21236/ada637068",
+   "year_declared": null,
+   "record_type": "report",
+   "link": "<https://doi.org/10.21236/ada637068>",
+   "record_title": "A Model for Speedup of Parallel Programs",
+   "record_year": 1997,
+   "record_year_field": "issued",
+   "record_venue": "",
+   "record_venue_field": "none",
+   "record_authors": [
+    "Downey, Allen B."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "downey"
+   ],
+   "record_families": [
+    "downey"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1997,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "mohanty2024",
+   "section": "S2.3",
+   "locator": "10.1109/tnet.2024.3432183",
+   "locator_kind": "DOI",
+   "entry_title": "Analysis of Fork-Join Scheduling on Heterogeneous Parallel Servers",
+   "entry_year_stored": 2024,
+   "entry_authors": [
+    "Moonmoon Mohanty",
+    "Gaurav Gautam",
+    "Vaneet Aggarwal",
+    "Parimal Parag"
+   ],
+   "anchor": "Analysis of Fork-Join Scheduling on Heterogeneous Parallel Servers",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/tnet.2024.3432183",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1109/tnet.2024.3432183>",
+   "record_title": "Analysis of Fork-Join Scheduling on Heterogeneous Parallel Servers",
+   "record_year": 2024,
+   "record_year_field": "issued",
+   "record_venue": "IEEE/ACM Transactions on Networking",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Mohanty, Moonmoon",
+    "Gautam, Gaurav",
+    "Aggarwal, Vaneet",
+    "Parag, Parimal"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "aggarwal",
+    "gautam",
+    "mohanty",
+    "parag"
+   ],
+   "record_families": [
+    "aggarwal",
+    "gautam",
+    "mohanty",
+    "parag"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "moldable2023",
+   "section": "S2.7",
+   "locator": "2304.14127v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Improved Online Scheduling of Moldable Task Graphs under Common Speedup Models",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Lucas Perotin",
+    "Hongyang Sun"
+   ],
+   "anchor": "Improved Online Scheduling of Moldable Task Graphs",
+   "method": "arxiv_id_list",
+   "record_id": "2304.14127v1",
+   "arxiv_link": "<https://arxiv.org/abs/2304.14127v1>",
+   "record_title": "Improved Online Scheduling of Moldable Task Graphs under Common Speedup Models",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2304.14127v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Lucas Perotin",
+    "Hongyang Sun"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "perotin",
+    "sun"
+   ],
+   "record_families": [
+    "perotin",
+    "sun"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "multiagent2025",
+   "section": "S2.6",
+   "locator": "2507.15727v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Competitive Algorithms for Multi-Agent Ski-Rental Problems",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Xuchuang Wang",
+    "Bo Sun",
+    "Hedyeh Beyhaghi",
+    "John C. S. Lui",
+    "Mohammad Hajiesmaili",
+    "Adam Wierman"
+   ],
+   "anchor": "Multi-Agent Ski-Rental",
+   "method": "arxiv_id_list",
+   "record_id": "2507.15727v2",
+   "arxiv_link": "<https://arxiv.org/abs/2507.15727v2>",
+   "record_title": "Competitive Algorithms for Multi-Agent Ski-Rental Problems",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2507.15727v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Xuchuang Wang",
+    "Bo Sun",
+    "Hedyeh Beyhaghi",
+    "John C. S. Lui",
+    "Mohammad Hajiesmaili",
+    "Adam Wierman"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 6,
+   "entry_families": [
+    "beyhaghi",
+    "hajiesmaili",
+    "lui",
+    "sun",
+    "wang",
+    "wierman"
+   ],
+   "record_families": [
+    "beyhaghi",
+    "hajiesmaili",
+    "lui",
+    "sun",
+    "wang",
+    "wierman"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "multishop2014",
+   "section": "S2.6",
+   "locator": "10.1145/2591971.2591984",
+   "locator_kind": "DOI",
+   "entry_title": "The multi-shop ski rental problem",
+   "entry_year_stored": 2014,
+   "entry_authors": [
+    "Lingqing Ai",
+    "Xian Wu",
+    "Lingxiao Huang",
+    "Longbo Huang",
+    "Pingzhong Tang",
+    "Jian Li"
+   ],
+   "anchor": "The multi-shop ski rental problem",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/2591971.2591984",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/2591971.2591984>",
+   "record_title": "The multi-shop ski rental problem",
+   "record_year": 2014,
+   "record_year_field": "issued",
+   "record_venue": "The 2014 ACM international conference on Measurement and modeling of computer systems",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Ai, Lingqing",
+    "Wu, Xian",
+    "Huang, Lingxiao",
+    "Huang, Longbo",
+    "Tang, Pingzhong",
+    "Li, Jian"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "ai",
+    "huang",
+    "li",
+    "tang",
+    "wu"
+   ],
+   "record_families": [
+    "ai",
+    "huang",
+    "li",
+    "tang",
+    "wu"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2014,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "newmetric2026",
+   "section": "S2.6",
+   "locator": "10.1016/j.orl.2025.107382",
+   "locator_kind": "DOI",
+   "entry_title": "A new performance metric for the ski rental problem",
+   "entry_year_stored": 2026,
+   "entry_authors": [
+    "Jonathan Chen",
+    "Jiawei Zhang"
+   ],
+   "anchor": "A new performance metric for the ski rental problem",
+   "method": "crossref_doi",
+   "record_doi": "10.1016/j.orl.2025.107382",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1016/j.orl.2025.107382>",
+   "record_title": "A new performance metric for the ski rental problem",
+   "record_year": 2026,
+   "record_year_field": "issued",
+   "record_venue": "Operations Research Letters",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Chen, Jonathan",
+    "Zhang, Jiawei"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "chen",
+    "zhang"
+   ],
+   "record_families": [
+    "chen",
+    "zhang"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "nylander2020",
+   "section": "S2.1",
+   "locator": "10.1145/3375555.3384379",
+   "locator_kind": "DOI",
+   "entry_title": "Towards Performance Modeling of Speculative Execution for Cloud Applications",
+   "entry_year_stored": 2020,
+   "entry_authors": [
+    "Tommi Nylander",
+    "Johan Ruuskanen",
+    "Karl-Erik Årzén",
+    "Martina Maggio"
+   ],
+   "anchor": "Towards Performance Modeling of Speculative Execution for Cloud Applications",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/3375555.3384379",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/3375555.3384379>",
+   "record_title": "Towards Performance Modeling of Speculative Execution for Cloud Applications",
+   "record_year": 2020,
+   "record_year_field": "issued",
+   "record_venue": "Companion of the ACM/SPEC International Conference on Performance Engineering",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Nylander, Tommi",
+    "Ruuskanen, Johan",
+    "Årzén, Karl-Erik",
+    "Maggio, Martina"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "arzen",
+    "maggio",
+    "nylander",
+    "ruuskanen"
+   ],
+   "record_families": [
+    "arzen",
+    "maggio",
+    "nylander",
+    "ruuskanen"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2020,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "oancea2007",
+   "section": "S2.1",
+   "locator": "10.1109/pact.2007.4336247",
+   "locator_kind": "DOI",
+   "entry_title": "A Lightweight Model for Software Thread-Level Speculation (TLS)",
+   "entry_year_stored": 2007,
+   "entry_authors": [
+    "Cosmin E. Oancea",
+    "Alan Mycroft"
+   ],
+   "anchor": "A Lightweight Model for Software Thread-Level Speculation",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/pact.2007.4336247",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/pact.2007.4336247>",
+   "record_title": "A Lightweight Model for Software Thread-Level Speculation (TLS)",
+   "record_year": 2007,
+   "record_year_field": "issued",
+   "record_venue": "16th International Conference on Parallel Architecture and Compilation Techniques (PACT 2007)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Oancea, Cosmin E.",
+    "Mycroft, Alan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "mycroft",
+    "oancea"
+   ],
+   "record_families": [
+    "mycroft",
+    "oancea"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2007,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "oancea2008",
+   "section": "S2.1",
+   "locator": "10.1145/1370082.1370090",
+   "locator_kind": "DOI",
+   "entry_title": "Software thread-level speculation",
+   "entry_year_stored": 2008,
+   "entry_authors": [
+    "Cosmin E. Oancea",
+    "Alan Mycroft"
+   ],
+   "anchor": "Software thread-level speculation",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/1370082.1370090",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/1370082.1370090>",
+   "record_title": "Software thread-level speculation",
+   "record_year": 2008,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 1st international workshop on Multicore software engineering",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Oancea, Cosmin E.",
+    "Mycroft, Alan"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "mycroft",
+    "oancea"
+   ],
+   "record_families": [
+    "mycroft",
+    "oancea"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2008,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "oleksenko2019",
+   "section": "S2.1",
+   "locator": "1905.10311v4",
+   "locator_kind": "arXiv",
+   "entry_title": "SpecFuzz: Bringing Spectre-type vulnerabilities to the surface",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Oleksii Oleksenko",
+    "Bohdan Trach",
+    "Mark Silberstein",
+    "Christof Fetzer"
+   ],
+   "anchor": "SpecFuzz",
+   "method": "arxiv_id_list",
+   "record_id": "1905.10311v4",
+   "arxiv_link": "<https://arxiv.org/abs/1905.10311v4>",
+   "record_title": "SpecFuzz: Bringing Spectre-type vulnerabilities to the surface",
+   "record_year": 2019,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1905.10311v4",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Oleksii Oleksenko",
+    "Bohdan Trach",
+    "Mark Silberstein",
+    "Christof Fetzer"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "fetzer",
+    "oleksenko",
+    "silberstein",
+    "trach"
+   ],
+   "record_families": [
+    "fetzer",
+    "oleksenko",
+    "silberstein",
+    "trach"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2019,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "oleksenko2023",
+   "section": "S2.1",
+   "locator": "2301.07642v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Hide and Seek with Spectres: Efficient discovery of speculative information leaks with random testing",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Oleksii Oleksenko",
+    "Marco Guarnieri",
+    "Boris Köpf",
+    "Mark Silberstein"
+   ],
+   "anchor": "Hide and Seek with Spectres",
+   "method": "arxiv_id_list",
+   "record_id": "2301.07642v1",
+   "arxiv_link": "<https://arxiv.org/abs/2301.07642v1>",
+   "record_title": "Hide and Seek with Spectres: Efficient discovery of speculative information leaks with random testing",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2301.07642v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Oleksii Oleksenko",
+    "Marco Guarnieri",
+    "Boris Köpf",
+    "Mark Silberstein"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "guarnieri",
+    "kopf",
+    "oleksenko",
+    "silberstein"
+   ],
+   "record_families": [
+    "guarnieri",
+    "kopf",
+    "oleksenko",
+    "silberstein"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "onlinegraph2022",
+   "section": "S2.6",
+   "locator": "10.1137/1.9781611977073.3",
+   "locator_kind": "DOI",
+   "entry_title": "Online Graph Algorithms with Predictions",
+   "entry_year_stored": 2022,
+   "entry_authors": [
+    "Yossi Azar",
+    "Debmalya Panigrahi",
+    "Noam Touitou"
+   ],
+   "anchor": "Online Graph Algorithms with Predictions",
+   "method": "crossref_doi",
+   "record_doi": "10.1137/1.9781611977073.3",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1137/1.9781611977073.3>",
+   "record_title": "Online Graph Algorithms with Predictions",
+   "record_year": 2022,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Azar, Yossi",
+    "Panigrahi, Debmalya",
+    "Touitou, Noam"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "azar",
+    "panigrahi",
+    "touitou"
+   ],
+   "record_families": [
+    "azar",
+    "panigrahi",
+    "touitou"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2022,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "optimistic2002",
+   "section": "S2.1",
+   "locator": "10.1006/jpdc.2001.1801",
+   "locator_kind": "DOI",
+   "entry_title": "Latency Hiding with Optimistic Computations",
+   "entry_year_stored": 2002,
+   "entry_authors": [
+    "Maria Hybinette",
+    "Richard M Fujimoto"
+   ],
+   "anchor": "Latency Hiding with Optimistic Computations",
+   "method": "crossref_doi",
+   "record_doi": "10.1006/jpdc.2001.1801",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1006/jpdc.2001.1801>",
+   "record_title": "Latency Hiding with Optimistic Computations",
+   "record_year": 2002,
+   "record_year_field": "issued",
+   "record_venue": "Journal of Parallel and Distributed Computing",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Hybinette, Maria",
+    "Fujimoto, Richard M"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "fujimoto",
+    "hybinette"
+   ],
+   "record_families": [
+    "fujimoto",
+    "hybinette"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2002,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "pajuelo2004",
+   "section": "S2.1",
+   "locator": "10.1145/1101868.1101877",
+   "locator_kind": "DOI",
+   "entry_title": "Speculative execution for hiding memory latency",
+   "entry_year_stored": 2004,
+   "entry_authors": [
+    "Alex Pajuelo",
+    "Antonio González",
+    "Mateo Valero"
+   ],
+   "anchor": "Speculative execution for hiding memory latency",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/1101868.1101877",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1145/1101868.1101877>",
+   "record_title": "Speculative execution for hiding memory latency",
+   "record_year": 2004,
+   "record_year_field": "issued",
+   "record_venue": "ACM SIGARCH Computer Architecture News",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Pajuelo, Alex",
+    "González, Antonio",
+    "Valero, Mateo"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "gonzalez",
+    "pajuelo",
+    "valero"
+   ],
+   "record_families": [
+    "gonzalez",
+    "pajuelo",
+    "valero"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2004,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "pan2023",
+   "section": "S2.3",
+   "locator": "10.1002/nav.22131",
+   "locator_kind": "DOI",
+   "entry_title": "Refined mean‐field approximation for discrete‐time queueing networks with blocking",
+   "entry_year_stored": 2023,
+   "entry_authors": [
+    "Yang Pan",
+    "Pengyi Shi"
+   ],
+   "anchor": "Refined mean",
+   "method": "crossref_doi",
+   "record_doi": "10.1002/nav.22131",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1002/nav.22131>",
+   "record_title": "Refined mean‐field approximation for discrete‐time queueing networks with blocking",
+   "record_year": 2023,
+   "record_year_field": "issued",
+   "record_venue": "Naval Research Logistics (NRL)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Pan, Yang",
+    "Shi, Pengyi"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "pan",
+    "shi"
+   ],
+   "record_families": [
+    "pan",
+    "shi"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "parking2026",
+   "section": "S2.6",
+   "locator": "2607.08262v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Primal-Dual Online Algorithms for the Parking Permit Problem",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Christian Coester",
+    "Alex Turoczy"
+   ],
+   "anchor": "Parking Permit Problem",
+   "method": "arxiv_id_list",
+   "record_id": "2607.08262v1",
+   "arxiv_link": "<https://arxiv.org/abs/2607.08262v1>",
+   "record_title": "Primal-Dual Online Algorithms for the Parking Permit Problem",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2607.08262v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Christian Coester",
+    "Alex Turoczy"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "coester",
+    "turoczy"
+   ],
+   "record_families": [
+    "coester",
+    "turoczy"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "predictionspecific2025",
+   "section": "S2.6",
+   "locator": "2510.14887v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Prediction-Specific Design of Learning-Augmented Algorithms",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Sizhe Li",
+    "Nicolas Christianson",
+    "Tongxin Li"
+   ],
+   "anchor": "Prediction-Specific Design of Learning-Augmented Algorithms",
+   "method": "arxiv_id_list",
+   "record_id": "2510.14887v1",
+   "arxiv_link": "<https://arxiv.org/abs/2510.14887v1>",
+   "record_title": "Prediction-Specific Design of Learning-Augmented Algorithms",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2510.14887v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Sizhe Li",
+    "Nicolas Christianson",
+    "Tongxin Li"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "christianson",
+    "li"
+   ],
+   "record_families": [
+    "christianson",
+    "li"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "progressive1993",
+   "section": "S2.5",
+   "locator": "10.21236/ada260075",
+   "locator_kind": "DOI",
+   "entry_title": "Progressive Retry for Software Error Recovery in Distributed Systems",
+   "entry_year_stored": 1993,
+   "entry_authors": [
+    "Yi-Min Wang",
+    "Yennun Huang",
+    "W. K. Fuchs"
+   ],
+   "anchor": "Progressive Retry",
+   "method": "crossref_doi",
+   "record_doi": "10.21236/ada260075",
+   "year_declared": null,
+   "record_type": "report",
+   "link": "<https://doi.org/10.21236/ada260075>",
+   "record_title": "Progressive Retry for Software Error Recovery in Distributed Systems",
+   "record_year": 1993,
+   "record_year_field": "issued",
+   "record_venue": "",
+   "record_venue_field": "none",
+   "record_authors": [
+    "Wang, Yi-Min",
+    "Huang, Yennun",
+    "Fuchs, W. K."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "fuchs",
+    "huang",
+    "wang"
+   ],
+   "record_families": [
+    "fuchs",
+    "huang",
+    "wang"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1993,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "raghavan2003",
+   "section": "S2.1",
+   "locator": "10.1016/s0166-5316(02)00229-8",
+   "locator_kind": "DOI",
+   "entry_title": "Dynamic schemes for speculative execution of code",
+   "entry_year_stored": 2003,
+   "entry_authors": [
+    "Prabhakar Raghavan",
+    "Hadas Shachnai",
+    "Mira Yaniv"
+   ],
+   "anchor": "Dynamic schemes for speculative execution of code",
+   "method": "crossref_doi",
+   "record_doi": "10.1016/s0166-5316(02)00229-8",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1016/s0166-5316(02)00229-8>",
+   "record_title": "Dynamic schemes for speculative execution of code",
+   "record_year": 2003,
+   "record_year_field": "issued",
+   "record_venue": "Performance Evaluation",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Raghavan, Prabhakar",
+    "Shachnai, Hadas",
+    "Yaniv, Mira"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "raghavan",
+    "shachnai",
+    "yaniv"
+   ],
+   "record_families": [
+    "raghavan",
+    "shachnai",
+    "yaniv"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2003,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "redkha2017",
+   "section": "S2.1",
+   "locator": "10.18535/ijetst/v4i9.06",
+   "locator_kind": "DOI",
+   "entry_title": "Big Data Cluster Processing Through Optimized Speculative Execution",
+   "entry_year_stored": 2017,
+   "entry_authors": [
+    "D. Sasi Redkha"
+   ],
+   "anchor": "Optimized Speculative Execution",
+   "method": "crossref_doi",
+   "record_doi": "10.18535/ijetst/v4i9.06",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.18535/ijetst/v4i9.06>",
+   "record_title": "Big Data Cluster Processing Through Optimized Speculative Execution",
+   "record_year": 2017,
+   "record_year_field": "issued",
+   "record_venue": "International Journal of Emerging Trends in Science and Technology",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Redkha, D. Sasi"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "redkha"
+   ],
+   "record_families": [
+    "redkha"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "roofline2026",
+   "section": "S2.7",
+   "locator": "2605.29740v1",
+   "locator_kind": "arXiv",
+   "entry_title": "CARM Tool: Cache-Aware Roofline Model Automatic Benchmarking and Application Analysis",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "José Morgado",
+    "Leonel Sousa",
+    "Aleksandar Ilic"
+   ],
+   "anchor": "Cache-Aware Roofline Model Automatic Benchmarking",
+   "method": "arxiv_id_list",
+   "record_id": "2605.29740v1",
+   "arxiv_link": "<https://arxiv.org/abs/2605.29740v1>",
+   "record_title": "CARM Tool: Cache-Aware Roofline Model Automatic Benchmarking and Application Analysis",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2605.29740v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "José Morgado",
+    "Leonel Sousa",
+    "Aleksandar Ilic"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "ilic",
+    "morgado",
+    "sousa"
+   ],
+   "record_families": [
+    "ilic",
+    "morgado",
+    "sousa"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "schol2019",
+   "section": "S2.3",
+   "locator": "1912.11661v3",
+   "locator_kind": "arXiv",
+   "entry_title": "Large fork-join queues with nearly deterministic arrival and service times",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "anchor": "Large fork-join queues with nearly deterministic",
+   "method": "arxiv_id_list",
+   "record_id": "1912.11661v3",
+   "arxiv_link": "<https://arxiv.org/abs/1912.11661v3>",
+   "record_title": "Large fork-join queues with nearly deterministic arrival and service times",
+   "record_year": 2019,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:1912.11661v3",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "schol",
+    "vlasiou",
+    "zwart"
+   ],
+   "record_families": [
+    "schol",
+    "vlasiou",
+    "zwart"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2019,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "schol2022",
+   "section": "S2.3",
+   "locator": "2211.02313v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Maximum waiting time in heavy-tailed fork-join queues",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "anchor": "Maximum waiting time in heavy-tailed fork-join queues",
+   "method": "arxiv_id_list",
+   "record_id": "2211.02313v1",
+   "arxiv_link": "<https://arxiv.org/abs/2211.02313v1>",
+   "record_title": "Maximum waiting time in heavy-tailed fork-join queues",
+   "record_year": 2022,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2211.02313v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "schol",
+    "vlasiou",
+    "zwart"
+   ],
+   "record_families": [
+    "schol",
+    "vlasiou",
+    "zwart"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2022,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "schol2023",
+   "section": "S2.3",
+   "locator": "2309.08373v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Extreme values for the waiting time in large fork-join queues",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "anchor": "Extreme values for the waiting time in large fork-join queues",
+   "method": "arxiv_id_list",
+   "record_id": "2309.08373v1",
+   "arxiv_link": "<https://arxiv.org/abs/2309.08373v1>",
+   "record_title": "Extreme values for the waiting time in large fork-join queues",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2309.08373v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "schol",
+    "vlasiou",
+    "zwart"
+   ],
+   "record_families": [
+    "schol",
+    "vlasiou",
+    "zwart"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "servegen2025",
+   "section": "S2.7",
+   "locator": "2505.09999v3",
+   "locator_kind": "arXiv",
+   "entry_title": "ServeGen: Workload Characterization and Generation of Large Language Model Serving in Production",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Yuxing Xiang",
+    "Xue Li",
+    "Kun Qian",
+    "Wenyuan Yu",
+    "Ennan Zhai",
+    "Xin Jin"
+   ],
+   "anchor": "ServeGen",
+   "method": "arxiv_id_list",
+   "record_id": "2505.09999v3",
+   "arxiv_link": "<https://arxiv.org/abs/2505.09999v3>",
+   "record_title": "ServeGen: Workload Characterization and Generation of Large Language Model Serving in Production",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2505.09999v3",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Yuxing Xiang",
+    "Xue Li",
+    "Kun Qian",
+    "Wenyuan Yu",
+    "Ennan Zhai",
+    "Xin Jin"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 6,
+   "entry_families": [
+    "jin",
+    "li",
+    "qian",
+    "xiang",
+    "yu",
+    "zhai"
+   ],
+   "record_families": [
+    "jin",
+    "li",
+    "qian",
+    "xiang",
+    "yu",
+    "zhai"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "sigman1999",
+   "section": "S2.4",
+   "locator": "10.1023/a:1019180230133",
+   "locator_kind": "DOI",
+   "entry_title": "Appendix: A primer on heavy-tailed distributions",
+   "entry_year_stored": 1999,
+   "entry_authors": [
+    "Karl Sigman"
+   ],
+   "anchor": "A primer on heavy-tailed distributions",
+   "method": "crossref_doi",
+   "record_doi": "10.1023/a:1019180230133",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1023/a:1019180230133>",
+   "record_title": "Appendix: A primer on heavy-tailed distributions",
+   "record_year": 1999,
+   "record_year_field": "issued",
+   "record_venue": "Queueing Systems",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Sigman, Karl"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "sigman"
+   ],
+   "record_families": [
+    "sigman"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1999,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "smc2026",
+   "section": "S2.2",
+   "locator": "2609.03236v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Speculative Macro Commit for Faster Tool-Using Agents",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Zeyu Liu",
+    "Souvik Kundu",
+    "Peter A. Beerel"
+   ],
+   "anchor": "Speculative Macro Commit",
+   "method": "arxiv_id_list",
+   "record_id": "2609.03236v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.03236v1>",
+   "record_title": "Speculative Macro Commit for Faster Tool-Using Agents",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.03236v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Zeyu Liu",
+    "Souvik Kundu",
+    "Peter A. Beerel"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "beerel",
+    "kundu",
+    "liu"
+   ],
+   "record_families": [
+    "beerel",
+    "kundu",
+    "liu"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "smoothness2023",
+   "section": "S2.6",
+   "locator": "10.52202/075280-1817",
+   "locator_kind": "DOI",
+   "entry_title": "Discrete-Smoothness in Online Algorithms with Predictions",
+   "entry_year_stored": 2023,
+   "entry_authors": [
+    "Yossi Azar",
+    "Debmalya Panigrahi",
+    "Noam Touitou"
+   ],
+   "anchor": "Discrete-Smoothness in Online Algorithms with Predictions",
+   "method": "crossref_doi",
+   "record_doi": "10.52202/075280-1817",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.52202/075280-1817>",
+   "record_title": "Discrete-Smoothness in Online Algorithms with Predictions",
+   "record_year": 2023,
+   "record_year_field": "issued",
+   "record_venue": "Advances in Neural Information Processing Systems 36",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Azar, Yossi",
+    "Panigrahi, Debmalya",
+    "Touitou, Noam"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "azar",
+    "panigrahi",
+    "touitou"
+   ],
+   "record_families": [
+    "azar",
+    "panigrahi",
+    "touitou"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "specagents2026",
+   "section": "S2.2",
+   "locator": "2605.13360v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Speculative Interaction Agents: Building Real-Time Agents with Asynchronous I/O and Speculative Tool Calling",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Coleman Hooper",
+    "Minwoo Kang",
+    "Suhong Moon",
+    "Nicholas Lee",
+    "Eric Wen",
+    "John Wawrzynek",
+    "Michael W. Mahoney",
+    "Yakun Sophia Shao",
+    "Amir Gholami",
+    "Kurt Keutzer"
+   ],
+   "anchor": "Speculative Interaction Agents",
+   "method": "arxiv_id_list",
+   "record_id": "2605.13360v2",
+   "arxiv_link": "<https://arxiv.org/abs/2605.13360v2>",
+   "record_title": "Speculative Interaction Agents: Building Real-Time Agents with Asynchronous I/O and Speculative Tool Calling",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2605.13360v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Coleman Hooper",
+    "Minwoo Kang",
+    "Suhong Moon",
+    "Nicholas Lee",
+    "Eric Wen",
+    "John Wawrzynek",
+    "Michael W. Mahoney",
+    "Yakun Sophia Shao",
+    "Amir Gholami",
+    "Kurt Keutzer"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 10,
+   "entry_families": [
+    "gholami",
+    "hooper",
+    "kang",
+    "keutzer",
+    "lee",
+    "mahoney",
+    "moon",
+    "shao",
+    "wawrzynek",
+    "wen"
+   ],
+   "record_families": [
+    "gholami",
+    "hooper",
+    "kang",
+    "keutzer",
+    "lee",
+    "mahoney",
+    "moon",
+    "shao",
+    "wawrzynek",
+    "wen"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "specbook2005",
+   "section": "S2.1",
+   "locator": "10.1201/9781420035155",
+   "locator_kind": "DOI",
+   "entry_title": "Speculative Execution in High Performance Computer Architectures",
+   "entry_year_stored": 2005,
+   "entry_authors": [],
+   "anchor": "Speculative Execution in High Performance Computer Architectures",
+   "method": "crossref_doi",
+   "record_doi": "10.1201/9781420035155",
+   "year_declared": null,
+   "record_type": "reference-book",
+   "link": "<https://doi.org/10.1201/9781420035155>",
+   "record_title": "Speculative Execution in High Performance Computer Architectures",
+   "record_year": 2005,
+   "record_year_field": "issued",
+   "record_venue": "",
+   "record_venue_field": "none",
+   "record_authors": [],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 0,
+   "entry_families": [],
+   "record_families": [],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2005,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "specbox2026",
+   "section": "S2.2",
+   "locator": "2607.23933v2",
+   "locator_kind": "arXiv",
+   "entry_title": "SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Yihui Zhang",
+    "Tianyu Wo",
+    "Jinghao Wang",
+    "Xiaoyang Sun",
+    "Menghao Zhang",
+    "Cangzhou Yuan",
+    "Li Li",
+    "Chunming Hu",
+    "Albert Y. Zomaya",
+    "Renyu Yang"
+   ],
+   "anchor": "SpecBox",
+   "method": "arxiv_id_list",
+   "record_id": "2607.23933v2",
+   "arxiv_link": "<https://arxiv.org/abs/2607.23933v2>",
+   "record_title": "SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2607.23933v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Yihui Zhang",
+    "Tianyu Wo",
+    "Jinghao Wang",
+    "Xiaoyang Sun",
+    "Menghao Zhang",
+    "Cangzhou Yuan",
+    "Li Li",
+    "Chunming Hu",
+    "Albert Y. Zomaya",
+    "Renyu Yang"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 9,
+   "entry_families": [
+    "hu",
+    "li",
+    "sun",
+    "wang",
+    "wo",
+    "yang",
+    "yuan",
+    "zhang",
+    "zomaya"
+   ],
+   "record_families": [
+    "hu",
+    "li",
+    "sun",
+    "wang",
+    "wo",
+    "yang",
+    "yuan",
+    "zhang",
+    "zomaya"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "specgen2026",
+   "section": "S2.2",
+   "locator": "2606.17518v1",
+   "locator_kind": "arXiv",
+   "entry_title": "SpecGen: Accelerating Agentic Kernel Optimization with Speculative Generation",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Jihu Guo",
+    "Sitian Lu",
+    "Tenghui Ma",
+    "Wei Gao",
+    "Zhisheng Ye",
+    "Xingcheng Zhang",
+    "Dahua Lin"
+   ],
+   "anchor": "SpecGen",
+   "method": "arxiv_id_list",
+   "record_id": "2606.17518v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.17518v1>",
+   "record_title": "SpecGen: Accelerating Agentic Kernel Optimization with Speculative Generation",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.17518v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Jihu Guo",
+    "Sitian Lu",
+    "Tenghui Ma",
+    "Wei Gao",
+    "Zhisheng Ye",
+    "Xingcheng Zhang",
+    "Dahua Lin"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 7,
+   "entry_families": [
+    "gao",
+    "guo",
+    "lin",
+    "lu",
+    "ma",
+    "ye",
+    "zhang"
+   ],
+   "record_families": [
+    "gao",
+    "guo",
+    "lin",
+    "lu",
+    "ma",
+    "ye",
+    "zhang"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "spechop2026",
+   "section": "S2.2",
+   "locator": "2605.21965v1",
+   "locator_kind": "arXiv",
+   "entry_title": "SpecHop: Continuous Speculation for Accelerating Multi-Hop Retrieval Agents",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Mehrdad Saberi",
+    "Keivan Rezaei",
+    "Soheil Feizi"
+   ],
+   "anchor": "SpecHop",
+   "method": "arxiv_id_list",
+   "record_id": "2605.21965v1",
+   "arxiv_link": "<https://arxiv.org/abs/2605.21965v1>",
+   "record_title": "SpecHop: Continuous Speculation for Accelerating Multi-Hop Retrieval Agents",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2605.21965v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Mehrdad Saberi",
+    "Keivan Rezaei",
+    "Soheil Feizi"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "feizi",
+    "rezaei",
+    "saberi"
+   ],
+   "record_families": [
+    "feizi",
+    "rezaei",
+    "saberi"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "speculativecalls2025",
+   "section": "S2.2",
+   "locator": "2512.15834v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Optimizing Agentic Language Model Inference via Speculative Tool Calls",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Daniel Nichols",
+    "Prajwal Singhania",
+    "Charles Jekel",
+    "Abhinav Bhatele",
+    "Harshitha Menon"
+   ],
+   "anchor": "Speculative Tool Calls",
+   "method": "arxiv_id_list",
+   "record_id": "2512.15834v1",
+   "arxiv_link": "<https://arxiv.org/abs/2512.15834v1>",
+   "record_title": "Optimizing Agentic Language Model Inference via Speculative Tool Calls",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2512.15834v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Daniel Nichols",
+    "Prajwal Singhania",
+    "Charles Jekel",
+    "Abhinav Bhatele",
+    "Harshitha Menon"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "bhatele",
+    "jekel",
+    "menon",
+    "nichols",
+    "singhania"
+   ],
+   "record_families": [
+    "bhatele",
+    "jekel",
+    "menon",
+    "nichols",
+    "singhania"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "speedupdist2024",
+   "section": "S2.7",
+   "locator": "2403.08790v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Using Sequential Runtime Distributions for the Parallel Speedup Prediction of SAT Local Search",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Alejandro Arbelaez",
+    "Charlotte Truchet",
+    "Philippe Codognet"
+   ],
+   "anchor": "Sequential Runtime Distributions for the Parallel Speedup Prediction",
+   "method": "arxiv_id_list",
+   "record_id": "2403.08790v1",
+   "arxiv_link": "<https://arxiv.org/abs/2403.08790v1>",
+   "record_title": "Using Sequential Runtime Distributions for the Parallel Speedup Prediction of SAT Local Search",
+   "record_year": 2024,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2403.08790v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Alejandro Arbelaez",
+    "Charlotte Truchet",
+    "Philippe Codognet"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "arbelaez",
+    "codognet",
+    "truchet"
+   ],
+   "record_families": [
+    "arbelaez",
+    "codognet",
+    "truchet"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "split2026",
+   "section": "S2.4",
+   "locator": "2605.13749v1",
+   "locator_kind": "arXiv",
+   "entry_title": "SPLIT: SymPathy for Large jobs Improves Tail latency",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Zhouzi Li",
+    "Mor Harchol-Balter",
+    "Alan Scheller-Wolf"
+   ],
+   "anchor": "SymPathy for Large jobs Improves Tail latency",
+   "method": "arxiv_id_list",
+   "record_id": "2605.13749v1",
+   "arxiv_link": "<https://arxiv.org/abs/2605.13749v1>",
+   "record_title": "SPLIT: SymPathy for Large jobs Improves Tail latency",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2605.13749v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Zhouzi Li",
+    "Mor Harchol-Balter",
+    "Alan Scheller-Wolf"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "harchol balter",
+    "li",
+    "scheller wolf"
+   ],
+   "record_families": [
+    "harchol balter",
+    "li",
+    "scheller wolf"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "spork2026",
+   "section": "S2.2",
+   "locator": "2607.03333v1",
+   "locator_kind": "arXiv",
+   "entry_title": "SPORK: Self-Speculative Forking to Accelerate Agentic LLM Inference",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Huajun Bai",
+    "Weiwei Lv",
+    "Huichuan Zheng",
+    "Youyou Lu",
+    "Jiwu Shu"
+   ],
+   "anchor": "SPORK",
+   "method": "arxiv_id_list",
+   "record_id": "2607.03333v1",
+   "arxiv_link": "<https://arxiv.org/abs/2607.03333v1>",
+   "record_title": "SPORK: Self-Speculative Forking to Accelerate Agentic LLM Inference",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2607.03333v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Huajun Bai",
+    "Weiwei Lv",
+    "Huichuan Zheng",
+    "Youyou Lu",
+    "Jiwu Shu"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "bai",
+    "lu",
+    "lv",
+    "shu",
+    "zheng"
+   ],
+   "record_families": [
+    "bai",
+    "lu",
+    "lv",
+    "shu",
+    "zheng"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "stats2026",
+   "section": "S2.7",
+   "locator": "2605.00428v1",
+   "locator_kind": "arXiv",
+   "entry_title": "How to Do Statistical Evaluations in ECE/CS Papers: A Practical Playbook for Defensible Results",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Bhaskar Krishnamachari"
+   ],
+   "anchor": "How to Do Statistical Evaluations in ECE/CS Papers",
+   "method": "arxiv_id_list",
+   "record_id": "2605.00428v1",
+   "arxiv_link": "<https://arxiv.org/abs/2605.00428v1>",
+   "record_title": "How to Do Statistical Evaluations in ECE/CS Papers: A Practical Playbook for Defensible Results",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2605.00428v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Bhaskar Krishnamachari"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "krishnamachari"
+   ],
+   "record_families": [
+    "krishnamachari"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "steffan2000",
+   "section": "S2.1",
+   "locator": "10.1109/isca.2000.854372",
+   "locator_kind": "DOI",
+   "entry_title": "A scalable approach to thread-level speculation",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "J.G. Steffan",
+    "C.B. Colohan",
+    "A. Zhai",
+    "T.C. Mowry"
+   ],
+   "anchor": "A scalable approach to thread-level speculation",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/isca.2000.854372",
+   "year_declared": {
+    "year": 2000,
+    "sources": [
+     {
+      "field": "event.acronym",
+      "value": "ISCA-00"
+     },
+     {
+      "field": "locator",
+      "value": "10.1109/isca.2000.854372"
+     }
+    ],
+    "note": "issued is [[null]] and no published-* field is present; the event the record names carries the year in its acronym",
+    "findings": []
+   },
+   "year_declared_ok": true,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/isca.2000.854372>",
+   "record_title": "A scalable approach to thread-level speculation",
+   "record_year": 2000,
+   "record_year_field": "declared",
+   "record_venue": "Proceedings of 27th International Symposium on Computer Architecture (IEEE Cat. No.RS00201)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Steffan, J.G.",
+    "Colohan, C.B.",
+    "Zhai, A.",
+    "Mowry, T.C."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "colohan",
+    "mowry",
+    "steffan",
+    "zhai"
+   ],
+   "record_families": [
+    "colohan",
+    "mowry",
+    "steffan",
+    "zhai"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2000,
+   "key_year_agrees": true,
+   "verdict": "DECLARED"
+  },
+  {
+   "key": "superlinear1987",
+   "section": "S2.7",
+   "locator": "10.1016/0167-8191(87)90053-6",
+   "locator_kind": "DOI",
+   "entry_title": "A note on superlinear speedup",
+   "entry_year_stored": 1987,
+   "entry_authors": [
+    "R Janßen"
+   ],
+   "anchor": "A note on superlinear speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.1016/0167-8191(87)90053-6",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1016/0167-8191(87)90053-6>",
+   "record_title": "A note on superlinear speedup",
+   "record_year": 1987,
+   "record_year_field": "issued",
+   "record_venue": "Parallel Computing",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Janßen, R"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "jan en"
+   ],
+   "record_families": [
+    "jan en"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1987,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "tailaware2026",
+   "section": "S2.2",
+   "locator": "2609.10964v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Decoupling Readiness from Release for Tail-Aware Scheduling of Agentic LLM Workflows",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Bochao Feng",
+    "Jianjiang Li",
+    "Haojie Wang",
+    "Lin Qiao",
+    "Yinghui Li",
+    "Yukun Yan",
+    "Jidong Zhai"
+   ],
+   "anchor": "Decoupling Readiness from Release",
+   "method": "arxiv_id_list",
+   "record_id": "2609.10964v1",
+   "arxiv_link": "<https://arxiv.org/abs/2609.10964v1>",
+   "record_title": "Decoupling Readiness from Release for Tail-Aware Scheduling of Agentic LLM Workflows",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2609.10964v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Bochao Feng",
+    "Jianjiang Li",
+    "Haojie Wang",
+    "Lin Qiao",
+    "Yinghui Li",
+    "Yukun Yan",
+    "Jidong Zhai"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 6,
+   "entry_families": [
+    "feng",
+    "li",
+    "qiao",
+    "wang",
+    "yan",
+    "zhai"
+   ],
+   "record_families": [
+    "feng",
+    "li",
+    "qiao",
+    "wang",
+    "yan",
+    "zhai"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "tailawarellm2026",
+   "section": "S2.6",
+   "locator": "2606.18431v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Beyond Prediction: Tail-Aware Scheduling for LLM Inference",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Yueying Li",
+    "Yuanfan Chen",
+    "Jiayang Chen",
+    "Esha Choukse",
+    "Haoran Qiu",
+    "G. Edward Suh",
+    "Rodrigo Fonseca",
+    "Ziv Scully",
+    "Udit Gupta"
+   ],
+   "anchor": "Beyond Prediction: Tail-Aware Scheduling for LLM Inference",
+   "method": "arxiv_id_list",
+   "record_id": "2606.18431v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.18431v1>",
+   "record_title": "Beyond Prediction: Tail-Aware Scheduling for LLM Inference",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.18431v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Yueying Li",
+    "Yuanfan Chen",
+    "Jiayang Chen",
+    "Esha Choukse",
+    "Haoran Qiu",
+    "G. Edward Suh",
+    "Rodrigo Fonseca",
+    "Ziv Scully",
+    "Udit Gupta"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 8,
+   "entry_families": [
+    "chen",
+    "choukse",
+    "fonseca",
+    "gupta",
+    "li",
+    "qiu",
+    "scully",
+    "suh"
+   ],
+   "record_families": [
+    "chen",
+    "choukse",
+    "fonseca",
+    "gupta",
+    "li",
+    "qiu",
+    "scully",
+    "suh"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "tmretry2008",
+   "section": "S2.5",
+   "locator": "10.1145/1400751.1400850",
+   "locator_kind": "DOI",
+   "entry_title": "Transactional memory retry mechanisms",
+   "entry_year_stored": 2008,
+   "entry_authors": [
+    "Michael F. Spear",
+    "Andrew Sveikauskas",
+    "Michael L. Scott"
+   ],
+   "anchor": "Transactional memory retry mechanisms",
+   "method": "crossref_doi",
+   "record_doi": "10.1145/1400751.1400850",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1145/1400751.1400850>",
+   "record_title": "Transactional memory retry mechanisms",
+   "record_year": 2008,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the twenty-seventh ACM symposium on Principles of distributed computing",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Spear, Michael F.",
+    "Sveikauskas, Andrew",
+    "Scott, Michael L."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "scott",
+    "spear",
+    "sveikauskas"
+   ],
+   "record_families": [
+    "scott",
+    "spear",
+    "sveikauskas"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2008,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "twoslope2025",
+   "section": "S2.6",
+   "locator": "2508.06809v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Controlling tail risk in two-slope ski rental",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Qiming Cui",
+    "Michael Dinitz"
+   ],
+   "anchor": "two-slope ski rental",
+   "method": "arxiv_id_list",
+   "record_id": "2508.06809v2",
+   "arxiv_link": "<https://arxiv.org/abs/2508.06809v2>",
+   "record_title": "Controlling tail risk in two-slope ski rental",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2508.06809v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Qiming Cui",
+    "Michael Dinitz"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "cui",
+    "dinitz"
+   ],
+   "record_families": [
+    "cui",
+    "dinitz"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "uht1995",
+   "section": "S2.1",
+   "locator": "10.1109/micro.1995.476841",
+   "locator_kind": "DOI",
+   "entry_title": "Disjoint eager execution: an optimal form of speculative execution",
+   "entry_year_stored": 1995,
+   "entry_authors": [
+    "A.K. Uht",
+    "V. Sindagi",
+    "K. Hall"
+   ],
+   "anchor": "Disjoint eager execution",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/micro.1995.476841",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/micro.1995.476841>",
+   "record_title": "Disjoint eager execution: an optimal form of speculative execution",
+   "record_year": 1995,
+   "record_year_field": "issued",
+   "record_venue": "Proceedings of the 28th Annual International Symposium on Microarchitecture",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Uht, A.K.",
+    "Sindagi, V.",
+    "Hall, K."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "hall",
+    "sindagi",
+    "uht"
+   ],
+   "record_families": [
+    "hall",
+    "sindagi",
+    "uht"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 1995,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "unconv2019",
+   "section": "S2.7",
+   "locator": "10.1201/9781315167084-16",
+   "locator_kind": "DOI",
+   "entry_title": "Unconventional Wisdom: Superlinear Speedup and Inherently Parallel Computations",
+   "entry_year_stored": 2019,
+   "entry_authors": [
+    "Selim G. Akl"
+   ],
+   "anchor": "Unconventional Wisdom: Superlinear Speedup",
+   "method": "crossref_doi",
+   "record_doi": "10.1201/9781315167084-16",
+   "year_declared": null,
+   "record_type": "book-chapter",
+   "link": "<https://doi.org/10.1201/9781315167084-16>",
+   "record_title": "Unconventional Wisdom: Superlinear Speedup and Inherently Parallel Computations",
+   "record_year": 2019,
+   "record_year_field": "issued",
+   "record_venue": "From Parallel to Emergent Computing",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Akl, Selim G."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "akl"
+   ],
+   "record_families": [
+    "akl"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2019,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "util2024",
+   "section": "S2.7",
+   "locator": "10.1109/iscs61804.2024.10581223",
+   "locator_kind": "DOI",
+   "entry_title": "Efficient Workload Distribution for Sustainable Server Utilization in Cloud Data Centers",
+   "entry_year_stored": 2024,
+   "entry_authors": [
+    "Monika Yadav",
+    "Atul Mishra"
+   ],
+   "anchor": "Efficient Workload Distribution for Sustainable Server Utilization",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/iscs61804.2024.10581223",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/iscs61804.2024.10581223>",
+   "record_title": "Efficient Workload Distribution for Sustainable Server Utilization in Cloud Data Centers",
+   "record_year": 2024,
+   "record_year_field": "issued",
+   "record_venue": "2024 International Conference on Intelligent Systems for Cybersecurity (ISCS)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Yadav, Monika",
+    "Mishra, Atul"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "mishra",
+    "yadav"
+   ],
+   "record_families": [
+    "mishra",
+    "yadav"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "variance2023",
+   "section": "S2.7",
+   "locator": "2305.18730v2",
+   "locator_kind": "arXiv",
+   "entry_title": "Blockwise Stochastic Variance-Reduced Methods with Parallel Speedup for Multi-Block Bilevel Optimization",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Quanqi Hu",
+    "Zi-Hao Qiu",
+    "Zhishuai Guo",
+    "Lijun Zhang",
+    "Tianbao Yang"
+   ],
+   "anchor": "Blockwise Stochastic Variance-Reduced Methods with Parallel Speedup",
+   "method": "arxiv_id_list",
+   "record_id": "2305.18730v2",
+   "arxiv_link": "<https://arxiv.org/abs/2305.18730v2>",
+   "record_title": "Blockwise Stochastic Variance-Reduced Methods with Parallel Speedup for Multi-Block Bilevel Optimization",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2305.18730v2",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Quanqi Hu",
+    "Zi-Hao Qiu",
+    "Zhishuai Guo",
+    "Lijun Zhang",
+    "Tianbao Yang"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "guo",
+    "hu",
+    "qiu",
+    "yang",
+    "zhang"
+   ],
+   "record_families": [
+    "guo",
+    "hu",
+    "qiu",
+    "yang",
+    "zhang"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "vectorproc2023",
+   "section": "S2.7",
+   "locator": "2309.02680v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Vector-Processing for Mobile Devices: Benchmark and Analysis",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Alireza Khadem",
+    "Daichi Fujiki",
+    "Nishil Talati",
+    "Scott Mahlke",
+    "Reetuparna Das"
+   ],
+   "anchor": "Vector-Processing for Mobile Devices: Benchmark and Analysis",
+   "method": "arxiv_id_list",
+   "record_id": "2309.02680v1",
+   "arxiv_link": "<https://arxiv.org/abs/2309.02680v1>",
+   "record_title": "Vector-Processing for Mobile Devices: Benchmark and Analysis",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2309.02680v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Alireza Khadem",
+    "Daichi Fujiki",
+    "Nishil Talati",
+    "Scott Mahlke",
+    "Reetuparna Das"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "das",
+    "fujiki",
+    "khadem",
+    "mahlke",
+    "talati"
+   ],
+   "record_families": [
+    "das",
+    "fujiki",
+    "khadem",
+    "mahlke",
+    "talati"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "waiting2025",
+   "section": "S2.6",
+   "locator": "2507.12822v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Waiting is worth it and can be improved with predictions",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Ya-Chun Liang",
+    "Meng-Hsi Li",
+    "Chung-Shou Liao",
+    "Clifford Stein"
+   ],
+   "anchor": "Waiting is worth it and can be improved with predictions",
+   "method": "arxiv_id_list",
+   "record_id": "2507.12822v1",
+   "arxiv_link": "<https://arxiv.org/abs/2507.12822v1>",
+   "record_title": "Waiting is worth it and can be improved with predictions",
+   "record_year": 2025,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2507.12822v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Ya-Chun Liang",
+    "Meng-Hsi Li",
+    "Chung-Shou Liao",
+    "Clifford Stein"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 4,
+   "entry_families": [
+    "li",
+    "liang",
+    "liao",
+    "stein"
+   ],
+   "record_families": [
+    "li",
+    "liang",
+    "liao",
+    "stein"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2025,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "whitt2000",
+   "section": "S2.4",
+   "locator": "10.1023/a:1019143505968",
+   "locator_kind": "DOI",
+   "entry_title": "The impact of a heavy-tailed service-time distribution upon the M/GI/s waiting-time distribution",
+   "entry_year_stored": 2000,
+   "entry_authors": [
+    "Ward Whitt"
+   ],
+   "anchor": "M/GI/s",
+   "method": "crossref_doi",
+   "record_doi": "10.1023/a:1019143505968",
+   "year_declared": null,
+   "record_type": "journal-article",
+   "link": "<https://doi.org/10.1023/a:1019143505968>",
+   "record_title": "The impact of a heavy-tailed service-time distribution upon the M/GI/s waiting-time distribution",
+   "record_year": 2000,
+   "record_year_field": "issued",
+   "record_venue": "Queueing Systems",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Whitt, Ward"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "whitt"
+   ],
+   "record_families": [
+    "whitt"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2000,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "workload2015",
+   "section": "S2.7",
+   "locator": "10.1109/iiswc.2015.12",
+   "locator_kind": "DOI",
+   "entry_title": "Locality Exists in Graph Processing: Workload Characterization on an Ivy Bridge Server",
+   "entry_year_stored": 2015,
+   "entry_authors": [
+    "Scott Beamer",
+    "Krste Asanovic",
+    "David Patterson"
+   ],
+   "anchor": "Locality Exists in Graph Processing",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/iiswc.2015.12",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/iiswc.2015.12>",
+   "record_title": "Locality Exists in Graph Processing: Workload Characterization on an Ivy Bridge Server",
+   "record_year": 2015,
+   "record_year_field": "issued",
+   "record_venue": "2015 IEEE International Symposium on Workload Characterization",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Beamer, Scott",
+    "Asanovic, Krste",
+    "Patterson, David"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "asanovic",
+    "beamer",
+    "patterson"
+   ],
+   "record_families": [
+    "asanovic",
+    "beamer",
+    "patterson"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2015,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "workload2017",
+   "section": "S2.7",
+   "locator": "10.1109/iiswc.2017.8167770",
+   "locator_kind": "DOI",
+   "entry_title": "Workload characterization of interactive cloud services on big and small server platforms",
+   "entry_year_stored": 2017,
+   "entry_authors": [
+    "Shuang Chen",
+    "Shay GalOn",
+    "Christina Delimitrou",
+    "Srilatha Manne",
+    "Jose F. Martinez"
+   ],
+   "anchor": "Workload characterization of interactive cloud services",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/iiswc.2017.8167770",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/iiswc.2017.8167770>",
+   "record_title": "Workload characterization of interactive cloud services on big and small server platforms",
+   "record_year": 2017,
+   "record_year_field": "issued",
+   "record_venue": "2017 IEEE International Symposium on Workload Characterization (IISWC)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Chen, Shuang",
+    "GalOn, Shay",
+    "Delimitrou, Christina",
+    "Manne, Srilatha",
+    "Martinez, Jose F."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "chen",
+    "delimitrou",
+    "galon",
+    "manne",
+    "martinez"
+   ],
+   "record_families": [
+    "chen",
+    "delimitrou",
+    "galon",
+    "manne",
+    "martinez"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2017,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "workload2024",
+   "section": "S2.7",
+   "locator": "2405.07250v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Towards Cloud Efficiency with Large-scale Workload Characterization",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Anjaly Parayil",
+    "Jue Zhang",
+    "Xiaoting Qin",
+    "Íñigo Goiri",
+    "Lexiang Huang",
+    "Timothy Zhu",
+    "Chetan Bansal"
+   ],
+   "anchor": "Towards Cloud Efficiency with Large-scale Workload Characterization",
+   "method": "arxiv_id_list",
+   "record_id": "2405.07250v1",
+   "arxiv_link": "<https://arxiv.org/abs/2405.07250v1>",
+   "record_title": "Towards Cloud Efficiency with Large-scale Workload Characterization",
+   "record_year": 2024,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2405.07250v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Anjaly Parayil",
+    "Jue Zhang",
+    "Xiaoting Qin",
+    "Íñigo Goiri",
+    "Lexiang Huang",
+    "Timothy Zhu",
+    "Chetan Bansal"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 7,
+   "entry_families": [
+    "bansal",
+    "goiri",
+    "huang",
+    "parayil",
+    "qin",
+    "zhang",
+    "zhu"
+   ],
+   "record_families": [
+    "bansal",
+    "goiri",
+    "huang",
+    "parayil",
+    "qin",
+    "zhang",
+    "zhu"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2024,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "ye2020",
+   "section": "S2.1",
+   "locator": "10.1109/isca45697.2020.00064",
+   "locator_kind": "DOI",
+   "entry_title": "Speculative Data-Oblivious Execution: Mobilizing Safe Prediction For Safe and Efficient Speculative Execution",
+   "entry_year_stored": 2020,
+   "entry_authors": [
+    "Jiyong Yu",
+    "Namrata Mantri",
+    "Josep Torrellas",
+    "Adam Morrison",
+    "Christopher W. Fletcher"
+   ],
+   "anchor": "Speculative Data-Oblivious",
+   "method": "crossref_doi",
+   "record_doi": "10.1109/isca45697.2020.00064",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.1109/isca45697.2020.00064>",
+   "record_title": "Speculative Data-Oblivious Execution: Mobilizing Safe Prediction For Safe and Efficient Speculative Execution",
+   "record_year": 2020,
+   "record_year_field": "issued",
+   "record_venue": "2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Yu, Jiyong",
+    "Mantri, Namrata",
+    "Torrellas, Josep",
+    "Morrison, Adam",
+    "Fletcher, Christopher W."
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 5,
+   "entry_families": [
+    "fletcher",
+    "mantri",
+    "morrison",
+    "torrellas",
+    "yu"
+   ],
+   "record_families": [
+    "fletcher",
+    "mantri",
+    "morrison",
+    "torrellas",
+    "yu"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2020,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "zhao2012",
+   "section": "S2.1",
+   "locator": "10.2316/p.2012.789-015",
+   "locator_kind": "DOI",
+   "entry_title": "Hiding I/O Latency with Parallel Pre-Execution Prefetching",
+   "entry_year_stored": 2012,
+   "entry_authors": [
+    "Yue Zhao",
+    "Kenji Yoshigoe"
+   ],
+   "anchor": "Hiding I/O Latency with Parallel Pre-Execution Prefetching",
+   "method": "crossref_doi",
+   "record_doi": "10.2316/p.2012.789-015",
+   "year_declared": null,
+   "record_type": "proceedings-article",
+   "link": "<https://doi.org/10.2316/p.2012.789-015>",
+   "record_title": "Hiding I/O Latency with Parallel Pre-Execution Prefetching",
+   "record_year": 2012,
+   "record_year_field": "issued",
+   "record_venue": "Parallel and Distributed Computing and Systems / 790: Software Engineering and Applications",
+   "record_venue_field": "container-title",
+   "record_authors": [
+    "Zhao, Yue",
+    "Yoshigoe, Kenji"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "yoshigoe",
+    "zhao"
+   ],
+   "record_families": [
+    "yoshigoe",
+    "zhao"
+   ],
+   "year_supplied": false,
+   "differing_fields": [],
+   "key_year": 2012,
+   "key_year_agrees": true,
+   "verdict": "VERIFIED"
+  },
+  {
+   "key": "zhou2021layered",
+   "section": "S2.3",
+   "locator": "10.22215/etd/2021-14846",
+   "locator_kind": "DOI",
+   "entry_title": "A New Approximation for Multiserver Waiting Time, for Layered Queueing Systems",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Siyu Zhou"
+   ],
+   "anchor": "A New Approximation for Multiserver Waiting Time",
+   "method": "crossref_doi",
+   "record_doi": "10.22215/etd/2021-14846",
+   "year_declared": {
+    "year": 2021,
+    "sources": [
+     {
+      "field": "locator",
+      "value": "10.22215/etd/2021-14846"
+     }
+    ],
+    "note": "a dissertation: the record carries no publication date, no container and no event, so the locator's own year segment is the only reading - ONE SOURCE, and it is stated rather than multiplied",
+    "findings": []
+   },
+   "year_declared_ok": true,
+   "record_type": "dissertation",
+   "link": "<https://doi.org/10.22215/etd/2021-14846>",
+   "record_title": "A New Approximation for Multiserver Waiting Time, for Layered Queueing Systems",
+   "record_year": 2021,
+   "record_year_field": "declared",
+   "record_venue": "",
+   "record_venue_field": "none",
+   "record_authors": [
+    "Zhou, Siyu"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 1,
+   "entry_families": [
+    "zhou"
+   ],
+   "record_families": [
+    "zhou"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2021,
+   "key_year_agrees": true,
+   "verdict": "DECLARED"
+  },
+  {
+   "key": "zhu2026",
+   "section": "S2.3",
+   "locator": "2606.24881v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Queues with Correlated Service Times -- the $M/M_D/c$ Model",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Qihui Bu",
+    "Suman Thapa",
+    "Yiqiang Q. Zhao"
+   ],
+   "anchor": "Queues with Correlated Service Times",
+   "method": "arxiv_id_list",
+   "record_id": "2606.24881v1",
+   "arxiv_link": "<https://arxiv.org/abs/2606.24881v1>",
+   "record_title": "Queues with Correlated Service Times -- the $M/M_D/c$ Model",
+   "record_year": 2026,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2606.24881v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Qihui Bu",
+    "Suman Thapa",
+    "Yiqiang Q. Zhao"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 3,
+   "entry_families": [
+    "bu",
+    "thapa",
+    "zhao"
+   ],
+   "record_families": [
+    "bu",
+    "thapa",
+    "zhao"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2026,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "zuk2023",
+   "section": "S2.3",
+   "locator": "2309.01874v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Exact Results for the Distribution of the Partial Busy Period for a Multi-Server Queue",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "anchor": "Partial Busy Period",
+   "method": "arxiv_id_list",
+   "record_id": "2309.01874v1",
+   "arxiv_link": "<https://arxiv.org/abs/2309.01874v1>",
+   "record_title": "Exact Results for the Distribution of the Partial Busy Period for a Multi-Server Queue",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2309.01874v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "kirszenblat",
+    "zuk"
+   ],
+   "record_families": [
+    "kirszenblat",
+    "zuk"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "zuk2023b",
+   "section": "S2.3",
+   "locator": "2311.01641v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Joint Queue-Length Distribution for the Non-Preemptive Multi-Server Multi-Level Markovian Priority Queue",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "anchor": "Joint Queue-Length Distribution",
+   "method": "arxiv_id_list",
+   "record_id": "2311.01641v1",
+   "arxiv_link": "<https://arxiv.org/abs/2311.01641v1>",
+   "record_title": "Joint Queue-Length Distribution for the Non-Preemptive Multi-Server Multi-Level Markovian Priority Queue",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2311.01641v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "kirszenblat",
+    "zuk"
+   ],
+   "record_families": [
+    "kirszenblat",
+    "zuk"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  },
+  {
+   "key": "zuk2023c",
+   "section": "S2.3",
+   "locator": "2309.09428v1",
+   "locator_kind": "arXiv",
+   "entry_title": "Explicit Results for the Distributions of Queue Lengths for a Non-Preemptive Two-Level Priority Queue",
+   "entry_year_stored": null,
+   "entry_authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "anchor": "Explicit Results for the Distributions of Queue Lengths",
+   "method": "arxiv_id_list",
+   "record_id": "2309.09428v1",
+   "arxiv_link": "<https://arxiv.org/abs/2309.09428v1>",
+   "record_title": "Explicit Results for the Distributions of Queue Lengths for a Non-Preemptive Two-Level Priority Queue",
+   "record_year": 2023,
+   "record_year_field": "published",
+   "record_venue": "arXiv preprint arXiv:2309.09428v1",
+   "record_venue_field": "locator",
+   "record_authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "title_class": "exact",
+   "anchor_in_record": true,
+   "authors_shared": 2,
+   "entry_families": [
+    "kirszenblat",
+    "zuk"
+   ],
+   "record_families": [
+    "kirszenblat",
+    "zuk"
+   ],
+   "year_supplied": true,
+   "differing_fields": [],
+   "key_year": 2023,
+   "key_year_agrees": true,
+   "verdict": "SUPPLIED"
+  }
+ ]
+}

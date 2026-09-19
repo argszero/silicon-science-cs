@@ -1,0 +1,1398 @@
+{
+ "1": {
+  "authors": [
+   "Uht, A. K.",
+   "Sindagi, V.",
+   "Hall, K."
+  ],
+  "year": "1995",
+  "venue": "Proceedings of the 28th Annual International Symposium on Microarchitecture",
+  "via": "api.crossref.org/works/ 10.1109/micro.1995.476841"
+ },
+ "2": {
+  "authors": [
+   "Steffan, J. G.",
+   "Colohan, C. B.",
+   "Zhai, A.",
+   "Mowry, T. C."
+  ],
+  "year": "2000",
+  "venue": "Proceedings of 27th International Symposium on Computer Architecture (IEEE Cat. No.RS00201)",
+  "via": "api.crossref.org/works/ 10.1109/isca.2000.854372"
+ },
+ "3": {
+  "authors": [
+   "Oancea, C. E.",
+   "Mycroft, A."
+  ],
+  "year": "2007",
+  "venue": "16th International Conference on Parallel Architecture and Compilation Techniques (PACT 2007)",
+  "via": "api.crossref.org/works/ 10.1109/pact.2007.4336247"
+ },
+ "4": {
+  "authors": [
+   "Oancea, C. E.",
+   "Mycroft, A."
+  ],
+  "year": "2008",
+  "venue": "Proceedings of the 1st international workshop on Multicore software engineering",
+  "via": "api.crossref.org/works/ 10.1145/1370082.1370090"
+ },
+ "5": {
+  "authors": [
+   "Bai, H.",
+   "Lv, W.",
+   "Zheng, H.",
+   "Lu, Y.",
+   "Shu, J."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2607.03333v1",
+  "via": "export.arxiv.org id_list 2607.03333v1"
+ },
+ "6": {
+  "authors": [
+   "Liu, Z.",
+   "Kundu, S.",
+   "Beerel, P. A."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.03236v1",
+  "via": "export.arxiv.org id_list 2609.03236v1"
+ },
+ "7": {
+  "authors": [
+   "Zhang, Y.",
+   "Wo, T.",
+   "Wang, J.",
+   "Sun, X.",
+   "Zhang, M.",
+   "Yuan, C.",
+   "Li, L.",
+   "Hu, C.",
+   "Zomaya, A. Y.",
+   "Yang, R."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2607.23933v2",
+  "via": "export.arxiv.org id_list 2607.23933v2"
+ },
+ "8": {
+  "authors": [
+   "Nichols, D.",
+   "Singhania, P.",
+   "Jekel, C.",
+   "Bhatele, A.",
+   "Menon, H."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2512.15834v1",
+  "via": "export.arxiv.org id_list 2512.15834v1"
+ },
+ "9": {
+  "authors": [],
+  "year": "2005",
+  "venue": "Speculative Execution in High Performance Computer Architectures",
+  "via": "api.crossref.org/works/ 10.1201/9781420035155-21"
+ },
+ "10": {
+  "authors": [
+   "Marcuello, P.",
+   "Gonzalez, A."
+  ],
+  "year": "2000",
+  "venue": "Proceedings 14th International Parallel and Distributed Processing Symposium. IPDPS 2000",
+  "via": "api.crossref.org/works/ 10.1109/ipdps.2000.846040"
+ },
+ "11": {
+  "authors": [
+   "Pajuelo, A.",
+   "González, A.",
+   "Valero, M."
+  ],
+  "year": "2004",
+  "venue": "ACM SIGARCH Computer Architecture News",
+  "via": "api.crossref.org/works/ 10.1145/1101868.1101877"
+ },
+ "12": {
+  "authors": [
+   "Chen, Y.",
+   "Byna, S.",
+   "Sun, X.-H.",
+   "Thakur, R.",
+   "Gropp, W."
+  ],
+  "year": "2008",
+  "venue": "2008 SC - International Conference for High Performance Computing, Networking, Storage and Analysis",
+  "via": "api.crossref.org/works/ 10.1109/sc.2008.5213209"
+ },
+ "13": {
+  "authors": [
+   "Zhao, Y.",
+   "Yoshigoe, K."
+  ],
+  "year": "2012",
+  "venue": "Parallel and Distributed Computing and Systems / 790: Software Engineering and Applications",
+  "via": "api.crossref.org/works/ 10.2316/p.2012.789-015"
+ },
+ "14": {
+  "authors": [
+   "Hiraki, K.",
+   "Shimada, T.",
+   "Sekiguchi, S."
+  ],
+  "year": "1993",
+  "venue": "Proceedings of the 7th international conference on Supercomputing",
+  "via": "api.crossref.org/works/ 10.1145/165939.165972"
+ },
+ "15": {
+  "authors": [
+   "Hybinette, M.",
+   "Fujimoto, R. M."
+  ],
+  "year": "2002",
+  "venue": "Journal of Parallel and Distributed Computing",
+  "via": "api.crossref.org/works/ 10.1006/jpdc.2001.1801"
+ },
+ "16": {
+  "authors": [
+   "Martínez, J. F.",
+   "Torrellas, J."
+  ],
+  "year": "2004",
+  "venue": "High Performance Memory Systems",
+  "via": "api.crossref.org/works/ 10.1007/978-1-4419-8987-1_2"
+ },
+ "17": {
+  "authors": [
+   "Raghavan, P.",
+   "Shachnai, H.",
+   "Yaniv, M."
+  ],
+  "year": "2003",
+  "venue": "Performance Evaluation",
+  "via": "api.crossref.org/works/ 10.1016/s0166-5316(02)00229-8"
+ },
+ "18": {
+  "authors": [
+   "Chen, Q.",
+   "Liu, C.",
+   "Xiao, Z."
+  ],
+  "year": "2014",
+  "venue": "IEEE Transactions on Computers",
+  "via": "api.crossref.org/works/ 10.1109/tc.2013.15"
+ },
+ "19": {
+  "authors": [
+   "Ibrahim, I. A.",
+   "Bassiouni, M."
+  ],
+  "year": "2017",
+  "venue": "2017 IEEE International Conference on Smart Cloud (SmartCloud)",
+  "via": "api.crossref.org/works/ 10.1109/smartcloud.2017.25"
+ },
+ "20": {
+  "authors": [
+   "Redkha, D. S."
+  ],
+  "year": "2017",
+  "venue": "International Journal of Emerging Trends in Science and Technology",
+  "via": "api.crossref.org/works/ 10.18535/ijetst/v4i9.06"
+ },
+ "21": {
+  "authors": [
+   "Nylander, T.",
+   "Ruuskanen, J.",
+   "Årzén, K.-E.",
+   "Maggio, M."
+  ],
+  "year": "2020",
+  "venue": "Companion of the ACM/SPEC International Conference on Performance Engineering",
+  "via": "api.crossref.org/works/ 10.1145/3375555.3384379"
+ },
+ "22": {
+  "authors": [
+   "Cauligi, S.",
+   "Disselkoen, C.",
+   "Moghimi, D.",
+   "Barthe, G.",
+   "Stefan, D."
+  ],
+  "year": "2021",
+  "venue": "arXiv preprint arXiv:2105.05801v3",
+  "via": "export.arxiv.org id_list 2105.05801v3"
+ },
+ "23": {
+  "authors": [
+   "Oleksenko, O.",
+   "Guarnieri, M.",
+   "Köpf, B.",
+   "Silberstein, M."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2301.07642v1",
+  "via": "export.arxiv.org id_list 2301.07642v1"
+ },
+ "24": {
+  "authors": [
+   "Oleksenko, O.",
+   "Trach, B.",
+   "Silberstein, M.",
+   "Fetzer, C."
+  ],
+  "year": "2019",
+  "venue": "arXiv preprint arXiv:1905.10311v4",
+  "via": "export.arxiv.org id_list 1905.10311v4"
+ },
+ "25": {
+  "authors": [
+   "Bhattacharyya, A.",
+   "Sandulescu, A.",
+   "Neugschwandtner, M.",
+   "Sorniotti, A.",
+   "Falsafi, B.",
+   "Payer, M.",
+   "Kurmus, A."
+  ],
+  "year": "2019",
+  "venue": "arXiv preprint arXiv:1903.01843v3",
+  "via": "export.arxiv.org id_list 1903.01843v3"
+ },
+ "26": {
+  "authors": [
+   "Yu, J.",
+   "Mantri, N.",
+   "Torrellas, J.",
+   "Morrison, A.",
+   "Fletcher, C. W."
+  ],
+  "year": "2020",
+  "venue": "2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)",
+  "via": "api.crossref.org/works/ 10.1109/isca45697.2020.00064"
+ },
+ "27": {
+  "authors": [],
+  "year": "2005",
+  "venue": "",
+  "via": "api.crossref.org/works/ 10.1201/9781420035155"
+ },
+ "28": {
+  "authors": [
+   "Song, Y."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2604.16469v1",
+  "via": "export.arxiv.org id_list 2604.16469v1"
+ },
+ "29": {
+  "authors": [
+   "Fareed, F."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.07846v1",
+  "via": "export.arxiv.org id_list 2606.07846v1"
+ },
+ "30": {
+  "authors": [
+   "Wang, X.",
+   "Miao, Z.",
+   "Zhu, Y.",
+   "Shen, H.",
+   "Wan, Z.",
+   "Yang, F.",
+   "Zhang, M."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2608.24004v1",
+  "via": "export.arxiv.org id_list 2608.24004v1"
+ },
+ "31": {
+  "authors": [
+   "Liang, S.",
+   "Zhang, Y.",
+   "Brian, N.",
+   "Lv, H.",
+   "Wang, H.",
+   "Zhang, C.",
+   "Liu, Y."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2608.26004v1",
+  "via": "export.arxiv.org id_list 2608.26004v1"
+ },
+ "32": {
+  "authors": [
+   "Guo, J.",
+   "Lu, S.",
+   "Ma, T.",
+   "Gao, W.",
+   "Ye, Z.",
+   "Zhang, X.",
+   "Lin, D."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.17518v1",
+  "via": "export.arxiv.org id_list 2606.17518v1"
+ },
+ "33": {
+  "authors": [
+   "Li, Y.",
+   "Gao, H.",
+   "Zhao, F.",
+   "Tan, C.",
+   "Hui, Q.",
+   "Liu, S.",
+   "Shi, F.",
+   "Lu, T.",
+   "Zhao, S.",
+   "Guo, X.",
+   "Su, X.",
+   "Zhang, J.",
+   "Dai, X.",
+   "Wang, K.",
+   "Lian, S."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2608.20743v2",
+  "via": "export.arxiv.org id_list 2608.20743v2"
+ },
+ "34": {
+  "authors": [
+   "Saberi, M.",
+   "Rezaei, K.",
+   "Feizi, S."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2605.21965v1",
+  "via": "export.arxiv.org id_list 2605.21965v1"
+ },
+ "35": {
+  "authors": [
+   "Hooper, C.",
+   "Kang, M.",
+   "Moon, S.",
+   "Lee, N.",
+   "Wen, E.",
+   "Wawrzynek, J.",
+   "Mahoney, M. W.",
+   "Shao, Y. S.",
+   "Gholami, A.",
+   "Keutzer, K."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2605.13360v2",
+  "via": "export.arxiv.org id_list 2605.13360v2"
+ },
+ "36": {
+  "authors": [
+   "Heinrich, P.",
+   "Nagel, K."
+  ],
+  "year": "2026",
+  "venue": "Proceedings of the 40th ACM SIGSIM International Conference on Principles of Advanced Discrete Simulation",
+  "via": "api.crossref.org/works/ 10.1145/3806789.3810973"
+ },
+ "37": {
+  "authors": [
+   "Trofimov, A.",
+   "Novikov, B."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.15397v1",
+  "via": "export.arxiv.org id_list 2609.15397v1"
+ },
+ "38": {
+  "authors": [
+   "Mohammadi, B.",
+   "Klein, L.",
+   "Arora, A.",
+   "Bindschaedler, L."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.02483v1",
+  "via": "export.arxiv.org id_list 2606.02483v1"
+ },
+ "39": {
+  "authors": [
+   "Grotov, K.",
+   "Malykh, V."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.05274v1",
+  "via": "export.arxiv.org id_list 2609.05274v1"
+ },
+ "40": {
+  "authors": [
+   "Feng, B.",
+   "Li, J.",
+   "Wang, H.",
+   "Qiao, L.",
+   "Li, Y.",
+   "Yan, Y.",
+   "Zhai, J."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.10964v1",
+  "via": "export.arxiv.org id_list 2609.10964v1"
+ },
+ "41": {
+  "authors": [
+   "Cheng, H.",
+   "Zhang, S.",
+   "Li, A."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2608.19659v1",
+  "via": "export.arxiv.org id_list 2608.19659v1"
+ },
+ "42": {
+  "authors": [
+   "Zhou, X.",
+   "Mohoney, J.",
+   "Madden, S.",
+   "Stonebraker, M.",
+   "Cao, L."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.14889v1",
+  "via": "export.arxiv.org id_list 2609.14889v1"
+ },
+ "43": {
+  "authors": [
+   "Finch, S."
+  ],
+  "year": "2019",
+  "venue": "arXiv preprint arXiv:1904.04054v1",
+  "via": "export.arxiv.org id_list 1904.04054v1"
+ },
+ "44": {
+  "authors": [
+   "Chydzinski, A.",
+   "Adamczyk, B."
+  ],
+  "year": "2024",
+  "venue": "Symmetry",
+  "via": "api.crossref.org/works/ 10.3390/sym16030271"
+ },
+ "45": {
+  "authors": [
+   "D'Auria, B.",
+   "Adan, I. J. B. F.",
+   "Bekker, R.",
+   "Kulkarni, V."
+  ],
+  "year": "2021",
+  "venue": "arXiv preprint arXiv:2107.04557v1",
+  "via": "export.arxiv.org id_list 2107.04557v1"
+ },
+ "46": {
+  "authors": [
+   "Bu, Q.",
+   "Thapa, S.",
+   "Zhao, Y. Q."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.24881v1",
+  "via": "export.arxiv.org id_list 2606.24881v1"
+ },
+ "47": {
+  "authors": [
+   "Zuk, J.",
+   "Kirszenblat, D."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2309.01874v1",
+  "via": "export.arxiv.org id_list 2309.01874v1"
+ },
+ "48": {
+  "authors": [
+   "Zuk, J.",
+   "Kirszenblat, D."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2311.01641v1",
+  "via": "export.arxiv.org id_list 2311.01641v1"
+ },
+ "49": {
+  "authors": [
+   "Zuk, J.",
+   "Kirszenblat, D."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2309.09428v1",
+  "via": "export.arxiv.org id_list 2309.09428v1"
+ },
+ "50": {
+  "authors": [
+   "Pan, Y.",
+   "Shi, P."
+  ],
+  "year": "2023",
+  "venue": "Naval Research Logistics (NRL)",
+  "via": "api.crossref.org/works/ 10.1002/nav.22131"
+ },
+ "51": {
+  "authors": [
+   "Koroliouk, D.",
+   "Koroliuk, V. S."
+  ],
+  "year": "2021",
+  "venue": "Queueing Theory 1",
+  "via": "api.crossref.org/works/ 10.1002/9781119755432.ch3"
+ },
+ "52": {
+  "authors": [
+   "Schol, D.",
+   "Vlasiou, M.",
+   "Zwart, B."
+  ],
+  "year": "2019",
+  "venue": "arXiv preprint arXiv:1912.11661v3",
+  "via": "export.arxiv.org id_list 1912.11661v3"
+ },
+ "53": {
+  "authors": [
+   "Schol, D.",
+   "Vlasiou, M.",
+   "Zwart, B."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2309.08373v1",
+  "via": "export.arxiv.org id_list 2309.08373v1"
+ },
+ "54": {
+  "authors": [
+   "Schol, D.",
+   "Vlasiou, M.",
+   "Zwart, B."
+  ],
+  "year": "2022",
+  "venue": "arXiv preprint arXiv:2211.02313v1",
+  "via": "export.arxiv.org id_list 2211.02313v1"
+ },
+ "55": {
+  "authors": [
+   "Mohanty, M.",
+   "Gautam, G.",
+   "Aggarwal, V.",
+   "Parag, P."
+  ],
+  "year": "2024",
+  "venue": "IEEE/ACM Transactions on Networking",
+  "via": "api.crossref.org/works/ 10.1109/tnet.2024.3432183"
+ },
+ "56": {
+  "authors": [
+   "Gao, C.",
+   "Iravani, S.",
+   "Perry, O."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.09237v1",
+  "via": "export.arxiv.org id_list 2609.09237v1"
+ },
+ "57": {
+  "authors": [
+   "Zhou, S."
+  ],
+  "year": "2021",
+  "venue": "",
+  "via": "api.crossref.org/works/ 10.22215/etd/2021-14846"
+ },
+ "58": {
+  "authors": [
+   "Gocmen, C.",
+   "Lykouris, T.",
+   "Sinha, D.",
+   "Weng, W."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2505.21331v2",
+  "via": "export.arxiv.org id_list 2505.21331v2"
+ },
+ "59": {
+  "authors": [
+   "Ji, C.",
+   "Puha, A. L."
+  ],
+  "year": "2024",
+  "venue": "Queueing Systems",
+  "via": "api.crossref.org/works/ 10.1007/s11134-024-09929-8"
+ },
+ "60": {
+  "authors": [
+   "Barik, S.",
+   "Banik, A. D.",
+   "Chaudhry, M.",
+   "Ghosh, S."
+  ],
+  "year": "2026",
+  "venue": "OPSEARCH",
+  "via": "api.crossref.org/works/ 10.1007/s12597-026-01126-w"
+ },
+ "61": {
+  "authors": [
+   "Whitt, W."
+  ],
+  "year": "2000",
+  "venue": "Queueing Systems",
+  "via": "api.crossref.org/works/ 10.1023/a:1019143505968"
+ },
+ "62": {
+  "authors": [
+   "Sigman, K."
+  ],
+  "year": "1999",
+  "venue": "Queueing Systems",
+  "via": "api.crossref.org/works/ 10.1023/a:1019180230133"
+ },
+ "63": {
+  "authors": [
+   "Misra, P. A.",
+   "Borge, M. F.",
+   "Goiri, Í.",
+   "Lebeck, A. R.",
+   "Zwaenepoel, W.",
+   "Bianchini, R."
+  ],
+  "year": "2019",
+  "venue": "Proceedings of the Fourteenth EuroSys Conference 2019",
+  "via": "api.crossref.org/works/ 10.1145/3302424.3303973"
+ },
+ "64": {
+  "authors": [
+   "Lawniczak, L.",
+   "Distler, T."
+  ],
+  "year": "2024",
+  "venue": "Proceedings of the 25th International Middleware Conference",
+  "via": "api.crossref.org/works/ 10.1145/3652892.3700775"
+ },
+ "65": {
+  "authors": [
+   "Kanev, S.",
+   "Hazelwood, K.",
+   "Wei, G.-Y.",
+   "Brooks, D."
+  ],
+  "year": "2014",
+  "venue": "2014 IEEE International Symposium on Workload Characterization (IISWC)",
+  "via": "api.crossref.org/works/ 10.1109/iiswc.2014.6983037"
+ },
+ "66": {
+  "authors": [
+   "Mackenzie, J. M."
+  ],
+  "year": "2020",
+  "venue": "ACM SIGIR Forum",
+  "via": "api.crossref.org/works/ 10.1145/3451964.3451982"
+ },
+ "67": {
+  "authors": [
+   "Iyer, R.",
+   "Unal, M.",
+   "Kogias, M.",
+   "Candea, G."
+  ],
+  "year": "2023",
+  "venue": "Proceedings of the 29th Symposium on Operating Systems Principles",
+  "via": "api.crossref.org/works/ 10.1145/3600006.3613136"
+ },
+ "68": {
+  "authors": [
+   "Li, Z.",
+   "Harchol-Balter, M.",
+   "Scheller-Wolf, A."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2605.13749v1",
+  "via": "export.arxiv.org id_list 2605.13749v1"
+ },
+ "69": {
+  "authors": [
+   "Aktas, M. F.",
+   "Peng, P.",
+   "Soljanin, E."
+  ],
+  "year": "2017",
+  "venue": "arXiv preprint arXiv:1710.00748v1",
+  "via": "export.arxiv.org id_list 1710.00748v1"
+ },
+ "70": {
+  "authors": [
+   "Aktas, M. F.",
+   "Peng, P.",
+   "Soljanin, E."
+  ],
+  "year": "2017",
+  "venue": "arXiv preprint arXiv:1710.00414v1",
+  "via": "export.arxiv.org id_list 1710.00414v1"
+ },
+ "71": {
+  "authors": [
+   "CHEN, C.",
+   "XU, Y.",
+   "ZHANG, L."
+  ],
+  "year": "2009",
+  "venue": "Journal of Computer Applications",
+  "via": "api.crossref.org/works/ 10.3724/sp.j.1087.2009.01520"
+ },
+ "72": {
+  "authors": [
+   "Mehan, R."
+  ],
+  "year": "2026",
+  "venue": "",
+  "via": "api.crossref.org/works/ 10.2139/ssrn.6313332"
+ },
+ "73": {
+  "authors": [
+   "Dusad, K."
+  ],
+  "year": "2025",
+  "venue": "Journal of Computer Science and Technology Studies",
+  "via": "api.crossref.org/works/ 10.32996/jcsts.2025.7.11.33"
+ },
+ "74": {
+  "authors": [],
+  "year": "2025",
+  "venue": "Journal of Computational Analysis and Applications",
+  "via": "api.crossref.org/works/ 10.48047/jocaaa.2025.34.11.02"
+ },
+ "75": {
+  "authors": [
+   "Desai, J. B."
+  ],
+  "year": "2026",
+  "venue": "Journal of Information Systems Engineering and Management",
+  "via": "api.crossref.org/works/ 10.52783/jisem.v11i2s.14608"
+ },
+ "76": {
+  "authors": [
+   "Konasani, I."
+  ],
+  "year": "2026",
+  "venue": "International Journal of Computational and Experimental Science and Engineering",
+  "via": "api.crossref.org/works/ 10.22399/ijcesen.4940"
+ },
+ "77": {
+  "authors": [
+   "Gunawardena, J."
+  ],
+  "year": "1998",
+  "venue": "Idempotency",
+  "via": "api.crossref.org/works/ 10.1017/cbo9780511662508.003"
+ },
+ "78": {
+  "authors": [
+   "Fagin, B. S."
+  ],
+  "year": "2024",
+  "venue": "Publications mathématiques de Besançon. Algèbre et théorie des nombres",
+  "via": "api.crossref.org/works/ 10.5802/pmb.53"
+ },
+ "79": {
+  "authors": [
+   "Spear, M. F.",
+   "Sveikauskas, A.",
+   "Scott, M. L."
+  ],
+  "year": "2008",
+  "venue": "Proceedings of the twenty-seventh ACM symposium on Principles of distributed computing",
+  "via": "api.crossref.org/works/ 10.1145/1400751.1400850"
+ },
+ "80": {
+  "authors": [
+   "Busch, C.",
+   "Chlebus, B. S.",
+   "Kowalski, D. R.",
+   "Poudel, P."
+  ],
+  "year": "2022",
+  "venue": "arXiv preprint arXiv:2208.07359v1",
+  "via": "export.arxiv.org id_list 2208.07359v1"
+ },
+ "81": {
+  "authors": [
+   "Wang, Y.-M.",
+   "Huang, Y.",
+   "Fuchs, W. K."
+  ],
+  "year": "1993",
+  "venue": "",
+  "via": "api.crossref.org/works/ 10.21236/ada260075"
+ },
+ "82": {
+  "authors": [
+   "Irani, S."
+  ],
+  "year": "1998",
+  "venue": "Lecture Notes in Computer Science",
+  "via": "api.crossref.org/works/ 10.1007/bfb0029564"
+ },
+ "83": {
+  "authors": [
+   "Jiang, Z.",
+   "Panigrahi, D.",
+   "Sun, K."
+  ],
+  "year": "2022",
+  "venue": "ACM Transactions on Algorithms",
+  "via": "api.crossref.org/works/ 10.1145/3548774"
+ },
+ "84": {
+  "authors": [
+   "Antoniadis, A.",
+   "Coester, C.",
+   "Eliáš, M.",
+   "Polak, A.",
+   "Simon, B."
+  ],
+  "year": "2023",
+  "venue": "ACM Transactions on Algorithms",
+  "via": "api.crossref.org/works/ 10.1145/3582689"
+ },
+ "85": {
+  "authors": [
+   "Shen, J. H.",
+   "Vitercik, E.",
+   "Wikum, A."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2502.02861v4",
+  "via": "export.arxiv.org id_list 2502.02861v4"
+ },
+ "86": {
+  "authors": [
+   "Li, S.",
+   "Christianson, N.",
+   "Li, T."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2510.14887v1",
+  "via": "export.arxiv.org id_list 2510.14887v1"
+ },
+ "87": {
+  "authors": [
+   "Bhattacharya, A.",
+   "Das, R."
+  ],
+  "year": "2022",
+  "venue": "Theoretical Computer Science",
+  "via": "api.crossref.org/works/ 10.1016/j.tcs.2022.10.006"
+ },
+ "88": {
+  "authors": [
+   "Bhattacharya, A.",
+   "Das, R."
+  ],
+  "year": "2022",
+  "venue": "Lecture Notes in Computer Science",
+  "via": "api.crossref.org/works/ 10.1007/978-3-030-96731-4_18"
+ },
+ "89": {
+  "authors": [
+   "Ai, L.",
+   "Wu, X.",
+   "Huang, L.",
+   "Huang, L.",
+   "Tang, P.",
+   "Li, J."
+  ],
+  "year": "2014",
+  "venue": "The 2014 ACM international conference on Measurement and modeling of computer systems",
+  "via": "api.crossref.org/works/ 10.1145/2591971.2591984"
+ },
+ "90": {
+  "authors": [
+   "Kim, J.",
+   "Fan, C."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2603.29233v1",
+  "via": "export.arxiv.org id_list 2603.29233v1"
+ },
+ "91": {
+  "authors": [
+   "Cui, Q.",
+   "Dinitz, M."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2602.21104v1",
+  "via": "export.arxiv.org id_list 2602.21104v1"
+ },
+ "92": {
+  "authors": [
+   "Kang, B.",
+   "Park, H.",
+   "Fan, C."
+  ],
+  "year": "2026",
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "via": "api.crossref.org/works/ 10.1609/aaai.v40i43.40991"
+ },
+ "93": {
+  "authors": [
+   "Canonne, C. L.",
+   "Chen, K.",
+   "Mestre, J."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2505.04949v2",
+  "via": "export.arxiv.org id_list 2505.04949v2"
+ },
+ "94": {
+  "authors": [
+   "Cui, Q.",
+   "Dinitz, M."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2508.06809v2",
+  "via": "export.arxiv.org id_list 2508.06809v2"
+ },
+ "95": {
+  "authors": [
+   "Wang, X.",
+   "Sun, B.",
+   "Beyhaghi, H.",
+   "Lui, J. C. S.",
+   "Hajiesmaili, M.",
+   "Wierman, A."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2507.15727v2",
+  "via": "export.arxiv.org id_list 2507.15727v2"
+ },
+ "96": {
+  "authors": [
+   "Liang, Y.-C.",
+   "Li, M.-H.",
+   "Liao, C.-S.",
+   "Stein, C."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2507.12822v1",
+  "via": "export.arxiv.org id_list 2507.12822v1"
+ },
+ "97": {
+  "authors": [
+   "Li, Z.",
+   "Sun, B.",
+   "Zhang, Z.",
+   "Hajiesmaili, M.",
+   "Wu, B.",
+   "Yang, L.",
+   "Gao, Y."
+  ],
+  "year": "2025",
+  "venue": "Advances in Neural Information Processing Systems 38",
+  "via": "api.crossref.org/works/ 10.52202/085713-4014"
+ },
+ "98": {
+  "authors": [
+   "Coester, C.",
+   "Turoczy, A."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2607.08262v1",
+  "via": "export.arxiv.org id_list 2607.08262v1"
+ },
+ "99": {
+  "authors": [
+   "Shin, Y.",
+   "Lee, C.",
+   "Lee, G.",
+   "An, H.-C."
+  ],
+  "year": "2025",
+  "venue": "ACM Transactions on Algorithms",
+  "via": "api.crossref.org/works/ 10.1145/3763239"
+ },
+ "100": {
+  "authors": [
+   "Azar, Y.",
+   "Panigrahi, D.",
+   "Touitou, N."
+  ],
+  "year": "2022",
+  "venue": "Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)",
+  "via": "api.crossref.org/works/ 10.1137/1.9781611977073.3"
+ },
+ "101": {
+  "authors": [
+   "Azar, Y.",
+   "Panigrahi, D.",
+   "Touitou, N."
+  ],
+  "year": "2023",
+  "venue": "Advances in Neural Information Processing Systems 36",
+  "via": "api.crossref.org/works/ 10.52202/075280-1817"
+ },
+ "102": {
+  "authors": [
+   "Zheng, H.",
+   "Zhang, Y.",
+   "Fu, F.",
+   "Zhou, X.",
+   "Luo, H.",
+   "Zhu, H.",
+   "Zhu, Y.",
+   "Wang, H.",
+   "Yan, X.",
+   "Jiang, J."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2604.00499v2",
+  "via": "export.arxiv.org id_list 2604.00499v2"
+ },
+ "103": {
+  "authors": [
+   "Li, Y.",
+   "Chen, Y.",
+   "Chen, J.",
+   "Choukse, E.",
+   "Qiu, H.",
+   "Suh, G. E.",
+   "Fonseca, R.",
+   "Scully, Z.",
+   "Gupta, U."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.18431v1",
+  "via": "export.arxiv.org id_list 2606.18431v1"
+ },
+ "104": {
+  "authors": [
+   "Nguyen, L.",
+   "Pan, Z."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2608.10506v1",
+  "via": "export.arxiv.org id_list 2608.10506v1"
+ },
+ "105": {
+  "authors": [
+   "Tumkur, S. D.",
+   "Iyer, J.",
+   "Simhadri, M.",
+   "Kumar, S. P.",
+   "Kumar, S. K.",
+   "Nampelly, R."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2609.16206v1",
+  "via": "export.arxiv.org id_list 2609.16206v1"
+ },
+ "106": {
+  "authors": [
+   "Chen, J.",
+   "Zhang, J."
+  ],
+  "year": "2026",
+  "venue": "Operations Research Letters",
+  "via": "api.crossref.org/works/ 10.1016/j.orl.2025.107382"
+ },
+ "107": {
+  "authors": [
+   "Eeckhout, L."
+  ],
+  "year": "2025",
+  "venue": "2025 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)",
+  "via": "api.crossref.org/works/ 10.1109/ispass64960.2025.00033"
+ },
+ "108": {
+  "authors": [
+   "Eeckhout, L."
+  ],
+  "year": "2025",
+  "venue": "2025 IEEE International Symposium on High Performance Computer Architecture (HPCA)",
+  "via": "api.crossref.org/works/ 10.1109/hpca61900.2025.00132"
+ },
+ "109": {
+  "authors": [
+   "Janßen, R."
+  ],
+  "year": "1987",
+  "venue": "Parallel Computing",
+  "via": "api.crossref.org/works/ 10.1016/0167-8191(87)90053-6"
+ },
+ "110": {
+  "authors": [
+   "Akl, S. G."
+  ],
+  "year": "2019",
+  "venue": "From Parallel to Emergent Computing",
+  "via": "api.crossref.org/works/ 10.1201/9781315167084-16"
+ },
+ "111": {
+  "authors": [
+   "Amdahl, G. M."
+  ],
+  "year": "2013",
+  "venue": "Computer",
+  "via": "api.crossref.org/works/ 10.1109/mc.2013.418"
+ },
+ "112": {
+  "authors": [
+   "Poolla, C.",
+   "Saxena, R."
+  ],
+  "year": "2021",
+  "venue": "arXiv preprint arXiv:2110.07822v2",
+  "via": "export.arxiv.org id_list 2110.07822v2"
+ },
+ "113": {
+  "authors": [
+   "Végh, J."
+  ],
+  "year": "2017",
+  "venue": "arXiv preprint arXiv:1708.01462v2",
+  "via": "export.arxiv.org id_list 1708.01462v2"
+ },
+ "114": {
+  "authors": [
+   "Yavits, L.",
+   "Morad, A.",
+   "Ginosar, R."
+  ],
+  "year": "2017",
+  "venue": "arXiv preprint arXiv:1705.07280v1",
+  "via": "export.arxiv.org id_list 1705.07280v1"
+ },
+ "115": {
+  "authors": [
+   "Waivio, N."
+  ],
+  "year": "2007",
+  "venue": "2007 IEEE Autotestcon",
+  "via": "api.crossref.org/works/ 10.1109/autest.2007.4374292"
+ },
+ "116": {
+  "authors": [
+   "Cao, Y.",
+   "Wu, F.",
+   "Robertazzi, T."
+  ],
+  "year": "2021",
+  "venue": "Parallel Processing Letters",
+  "via": "api.crossref.org/works/ 10.1142/s0129626421500080"
+ },
+ "117": {
+  "authors": [
+   "Lu, C.-P."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2603.20654v4",
+  "via": "export.arxiv.org id_list 2603.20654v4"
+ },
+ "118": {
+  "authors": [
+   "Zhao, A.",
+   "He, C. Y.",
+   "Xu, W."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.01927v1",
+  "via": "export.arxiv.org id_list 2606.01927v1"
+ },
+ "119": {
+  "authors": [],
+  "year": "2011",
+  "venue": "Encyclopedia of Parallel Computing",
+  "via": "api.crossref.org/works/ 10.1007/978-0-387-09766-4_2184"
+ },
+ "120": {
+  "authors": [
+   "Sun, X.-H.",
+   "Ni, L. M."
+  ],
+  "year": "1990",
+  "venue": "Proceedings SUPERCOMPUTING '90",
+  "via": "api.crossref.org/works/ 10.1109/superc.1990.130037"
+ },
+ "121": {
+  "authors": [
+   "Xiang, Z.",
+   "Robertazzi, T. G."
+  ],
+  "year": "2025",
+  "venue": "Future Internet",
+  "via": "api.crossref.org/works/ 10.3390/fi17110519"
+ },
+ "122": {
+  "authors": [
+   "Arbelaez, A.",
+   "Truchet, C.",
+   "Codognet, P."
+  ],
+  "year": "2024",
+  "venue": "arXiv preprint arXiv:2403.08790v1",
+  "via": "export.arxiv.org id_list 2403.08790v1"
+ },
+ "123": {
+  "authors": [
+   "Downey, A. B."
+  ],
+  "year": "1997",
+  "venue": "",
+  "via": "api.crossref.org/works/ 10.21236/ada637068"
+ },
+ "124": {
+  "authors": [
+   "Grigoriev, A.",
+   "Uetz, M. J."
+  ],
+  "year": "2005",
+  "venue": "",
+  "via": "api.crossref.org/works/ 10.26481/umamet.2005015"
+ },
+ "125": {
+  "authors": [
+   "Perotin, L.",
+   "Sun, H."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2304.14127v1",
+  "via": "export.arxiv.org id_list 2304.14127v1"
+ },
+ "126": {
+  "authors": [
+   "Perez, G.",
+   "Barlaud, M."
+  ],
+  "year": "2024",
+  "venue": "arXiv preprint arXiv:2405.02086v2",
+  "via": "export.arxiv.org id_list 2405.02086v2"
+ },
+ "127": {
+  "authors": [
+   "Hu, Q.",
+   "Qiu, Z.-H.",
+   "Guo, Z.",
+   "Zhang, L.",
+   "Yang, T."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2305.18730v2",
+  "via": "export.arxiv.org id_list 2305.18730v2"
+ },
+ "128": {
+  "authors": [
+   "Chen, S.",
+   "GalOn, S.",
+   "Delimitrou, C.",
+   "Manne, S.",
+   "Martinez, J. F."
+  ],
+  "year": "2017",
+  "venue": "2017 IEEE International Symposium on Workload Characterization (IISWC)",
+  "via": "api.crossref.org/works/ 10.1109/iiswc.2017.8167770"
+ },
+ "129": {
+  "authors": [
+   "Beamer, S.",
+   "Asanovic, K.",
+   "Patterson, D."
+  ],
+  "year": "2015",
+  "venue": "2015 IEEE International Symposium on Workload Characterization",
+  "via": "api.crossref.org/works/ 10.1109/iiswc.2015.12"
+ },
+ "130": {
+  "authors": [
+   "Parayil, A.",
+   "Zhang, J.",
+   "Qin, X.",
+   "Goiri, Í.",
+   "Huang, L.",
+   "Zhu, T.",
+   "Bansal, C."
+  ],
+  "year": "2024",
+  "venue": "arXiv preprint arXiv:2405.07250v1",
+  "via": "export.arxiv.org id_list 2405.07250v1"
+ },
+ "131": {
+  "authors": [
+   "Xiang, Y.",
+   "Li, X.",
+   "Qian, K.",
+   "Yu, W.",
+   "Zhai, E.",
+   "Jin, X."
+  ],
+  "year": "2025",
+  "venue": "arXiv preprint arXiv:2505.09999v3",
+  "via": "export.arxiv.org id_list 2505.09999v3"
+ },
+ "132": {
+  "authors": [
+   "Taherin, A.",
+   "Anvari, S. T.",
+   "Amante, C.",
+   "Chen, Y.",
+   "Noroian, R.",
+   "Feric, Z.",
+   "Agostini, N. B.",
+   "Zhao, P.",
+   "Cano, J.",
+   "Ren, B.",
+   "Wang, Y.",
+   "Kaeli, D."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2608.25053v1",
+  "via": "export.arxiv.org id_list 2608.25053v1"
+ },
+ "133": {
+  "authors": [
+   "Morgado, J.",
+   "Sousa, L.",
+   "Ilic, A."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2605.29740v1",
+  "via": "export.arxiv.org id_list 2605.29740v1"
+ },
+ "134": {
+  "authors": [
+   "Khadem, A.",
+   "Fujiki, D.",
+   "Talati, N.",
+   "Mahlke, S.",
+   "Das, R."
+  ],
+  "year": "2023",
+  "venue": "arXiv preprint arXiv:2309.02680v1",
+  "via": "export.arxiv.org id_list 2309.02680v1"
+ },
+ "135": {
+  "authors": [
+   "Yadav, M.",
+   "Mishra, A."
+  ],
+  "year": "2024",
+  "venue": "2024 International Conference on Intelligent Systems for Cybersecurity (ISCS)",
+  "via": "api.crossref.org/works/ 10.1109/iscs61804.2024.10581223"
+ },
+ "136": {
+  "authors": [
+   "Strack, A.",
+   "Craen, A. V.",
+   "Pflüger, D."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2606.11937v1",
+  "via": "export.arxiv.org id_list 2606.11937v1"
+ },
+ "137": {
+  "authors": [
+   "Krishnamachari, B."
+  ],
+  "year": "2026",
+  "venue": "arXiv preprint arXiv:2605.00428v1",
+  "via": "export.arxiv.org id_list 2605.00428v1"
+ }
+}
