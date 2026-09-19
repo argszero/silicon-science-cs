@@ -1,0 +1,2818 @@
+{
+ "what": "issue #50 authored bibliography selection, bound to the controlled pool",
+ "n": 137,
+ "rows": [
+  {
+   "key": "uht1995",
+   "section": "S2.1",
+   "difference": "shows eager execution outside program order is optimal when the extra work is free; we price that work, since a discarded tool call is charged to a shared pool.",
+   "anchor": "Disjoint eager execution",
+   "locator": "10.1109/micro.1995.476841",
+   "locator_kind": "DOI",
+   "title": "Disjoint eager execution: an optimal form of speculative execution",
+   "year": 1995,
+   "authors": [
+    "A.K. Uht",
+    "V. Sindagi",
+    "K. Hall"
+   ],
+   "venue": "Proceedings of the 28th Annual International Symposium on Microarchitecture",
+   "source": "crossref",
+   "seen_in": [
+    "speculative tool execution"
+   ]
+  },
+  {
+   "key": "oancea2007",
+   "section": "S2.1",
+   "difference": "models speculation across loop iterations in one address space; our speculation crosses a tool boundary and can have external effects.",
+   "anchor": "A Lightweight Model for Software Thread-Level Speculation",
+   "locator": "10.1109/pact.2007.4336247",
+   "locator_kind": "DOI",
+   "title": "A Lightweight Model for Software Thread-Level Speculation (TLS)",
+   "year": 2007,
+   "authors": [
+    "Cosmin E. Oancea",
+    "Alan Mycroft"
+   ],
+   "venue": "16th International Conference on Parallel Architecture and Compilation Techniques (PACT 2007)",
+   "source": "crossref",
+   "seen_in": [
+    "thread level speculation"
+   ]
+  },
+  {
+   "key": "oancea2008",
+   "section": "S2.1",
+   "difference": "measures speculation speedups for parallel loops; we locate the contention at which one in-flight call costs more than it hides.",
+   "anchor": "Software thread-level speculation",
+   "locator": "10.1145/1370082.1370090",
+   "locator_kind": "DOI",
+   "title": "Software thread-level speculation",
+   "year": 2008,
+   "authors": [
+    "Cosmin E. Oancea",
+    "Alan Mycroft"
+   ],
+   "venue": "Proceedings of the 1st international workshop on Multicore software engineering",
+   "source": "crossref",
+   "seen_in": [
+    "thread level speculation"
+   ]
+  },
+  {
+   "key": "steffan2000",
+   "section": "S2.1",
+   "difference": "supplies the memory-dependence machinery that makes speculative threads legal; we speculate on an agent's own tool calls, not on addresses.",
+   "anchor": "A scalable approach to thread-level speculation",
+   "locator": "10.1109/isca.2000.854372",
+   "locator_kind": "DOI",
+   "title": "A scalable approach to thread-level speculation",
+   "year": null,
+   "authors": [
+    "J.G. Steffan",
+    "C.B. Colohan",
+    "A. Zhai",
+    "T.C. Mowry"
+   ],
+   "venue": "Proceedings of 27th International Symposium on Computer Architecture (IEEE Cat. No.RS00201)",
+   "source": "crossref",
+   "seen_in": [
+    "thread level speculation"
+   ]
+  },
+  {
+   "key": "raghavan2003",
+   "section": "S2.1",
+   "difference": "adapts when to speculate from observed outcomes inside a processor; we index the boundary by measured contention, not by predictor accuracy.",
+   "anchor": "Dynamic schemes for speculative execution of code",
+   "locator": "10.1016/s0166-5316(02)00229-8",
+   "locator_kind": "DOI",
+   "title": "Dynamic schemes for speculative execution of code",
+   "year": 2003,
+   "authors": [
+    "Prabhakar Raghavan",
+    "Hadas Shachnai",
+    "Mira Yaniv"
+   ],
+   "venue": "Performance Evaluation",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance"
+   ]
+  },
+  {
+   "key": "pajuelo2004",
+   "section": "S2.1",
+   "difference": "hides memory latency by executing past a miss; we hide tool latency in an agent loop and report where hiding stops paying.",
+   "anchor": "Speculative execution for hiding memory latency",
+   "locator": "10.1145/1101868.1101877",
+   "locator_kind": "DOI",
+   "title": "Speculative execution for hiding memory latency",
+   "year": 2004,
+   "authors": [
+    "Alex Pajuelo",
+    "Antonio González",
+    "Mateo Valero"
+   ],
+   "venue": "ACM SIGARCH Computer Architecture News",
+   "source": "crossref",
+   "seen_in": [
+    "latency hiding parallel execution",
+    "latency hiding parallel execution"
+   ]
+  },
+  {
+   "key": "zhao2012",
+   "section": "S2.1",
+   "difference": "overlaps I/O with computation into a private buffer; our harm concentrates in a shared worker pool rather than in a local cache.",
+   "anchor": "Hiding I/O Latency with Parallel Pre-Execution Prefetching",
+   "locator": "10.2316/p.2012.789-015",
+   "locator_kind": "DOI",
+   "title": "Hiding I/O Latency with Parallel Pre-Execution Prefetching",
+   "year": 2012,
+   "authors": [
+    "Yue Zhao",
+    "Kenji Yoshigoe"
+   ],
+   "venue": "Parallel and Distributed Computing and Systems / 790: Software Engineering and Applications",
+   "source": "crossref",
+   "seen_in": [
+    "latency hiding parallel execution"
+   ]
+  },
+  {
+   "key": "chen2008",
+   "section": "S2.1",
+   "difference": "hides I/O in HPC kernels where loss is bounded by wasted bandwidth; we show a large share of individual speculative steps lose time outright.",
+   "anchor": "Hiding I/O latency with pre-execution prefetching for parallel applications",
+   "locator": "10.1109/sc.2008.5213209",
+   "locator_kind": "DOI",
+   "title": "Hiding I/O latency with pre-execution prefetching for parallel applications",
+   "year": 2008,
+   "authors": [
+    "Yong Chen",
+    "S. Byna",
+    "Xian-He Sun",
+    "R. Thakur",
+    "W. Gropp"
+   ],
+   "venue": "2008 SC - International Conference for High Performance Computing, Networking, Storage and Analysis",
+   "source": "crossref",
+   "seen_in": [
+    "latency hiding parallel execution"
+   ]
+  },
+  {
+   "key": "nylander2020",
+   "section": "S2.1",
+   "difference": "models speculative execution for cloud applications in the mean; we report that the mean is the wrong statistic and the tail pair moves the boundary.",
+   "anchor": "Towards Performance Modeling of Speculative Execution for Cloud Applications",
+   "locator": "10.1145/3375555.3384379",
+   "locator_kind": "DOI",
+   "title": "Towards Performance Modeling of Speculative Execution for Cloud Applications",
+   "year": 2020,
+   "authors": [
+    "Tommi Nylander",
+    "Johan Ruuskanen",
+    "Karl-Erik Årzén",
+    "Martina Maggio"
+   ],
+   "venue": "Companion of the ACM/SPEC International Conference on Performance Engineering",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance"
+   ]
+  },
+  {
+   "key": "marcuello2000",
+   "section": "S2.1",
+   "difference": "quantifies speculation benefit across benchmark loops; our quantity is a boundary in a contention coordinate with a per-seed interval.",
+   "anchor": "A quantitative assessment of thread-level speculation",
+   "locator": "10.1109/ipdps.2000.846040",
+   "locator_kind": "DOI",
+   "title": "A quantitative assessment of thread-level speculation techniques",
+   "year": null,
+   "authors": [
+    "P. Marcuello",
+    "A. Gonzalez"
+   ],
+   "venue": "Proceedings 14th International Parallel and Distributed Processing Symposium. IPDPS 2000",
+   "source": "crossref",
+   "seen_in": [
+    "thread level speculation"
+   ]
+  },
+  {
+   "key": "martinez2004",
+   "section": "S2.1",
+   "difference": "speculates past a critical section to raise concurrency; we speculate past a remote call whose compensation cost we vary explicitly.",
+   "anchor": "Speculative Locks",
+   "locator": "10.1007/978-1-4419-8987-1_2",
+   "locator_kind": "DOI",
+   "title": "Speculative Locks: Concurrent Execution of Critical Sections in Shared-Memory Multiprocessors",
+   "year": 2004,
+   "authors": [
+    "José F. Martínez",
+    "Josep Torrellas"
+   ],
+   "venue": "High Performance Memory Systems",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance"
+   ]
+  },
+  {
+   "key": "redkha2017",
+   "section": "S2.1",
+   "difference": "uses speculative task replicates to shorten big-data job tails; we measure the boundary of one such mechanism in a controlled model.",
+   "anchor": "Optimized Speculative Execution",
+   "locator": "10.18535/ijetst/v4i9.06",
+   "locator_kind": "DOI",
+   "title": "Big Data Cluster Processing Through Optimized Speculative Execution",
+   "year": 2017,
+   "authors": [
+    "D. Sasi Redkha"
+   ],
+   "venue": "International Journal of Emerging Trends in Science and Technology",
+   "source": "crossref",
+   "seen_in": [
+    "speculative tool execution"
+   ]
+  },
+  {
+   "key": "chen2014",
+   "section": "S2.1",
+   "difference": "launches speculative MapReduce tasks past a progress threshold; our boundary is indexed by measured contention instead.",
+   "anchor": "Smart Speculative Execution Strategy",
+   "locator": "10.1109/tc.2013.15",
+   "locator_kind": "DOI",
+   "title": "Improving MapReduce Performance Using Smart Speculative Execution Strategy",
+   "year": 2014,
+   "authors": [
+    "Qi Chen",
+    "Cheng Liu",
+    "Zhen Xiao"
+   ],
+   "venue": "IEEE Transactions on Computers",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance"
+   ]
+  },
+  {
+   "key": "ibrahim2017",
+   "section": "S2.1",
+   "difference": "tunes when to launch a speculative task from progress feedback; we show where that threshold sits and how it moves with the pool size.",
+   "anchor": "Progress and Feedback Based Speculative Execution",
+   "locator": "10.1109/smartcloud.2017.25",
+   "locator_kind": "DOI",
+   "title": "Improving MapReduce Performance with Progress and Feedback Based Speculative Execution",
+   "year": 2017,
+   "authors": [
+    "Ibrahim Adel Ibrahim",
+    "Mostafa Bassiouni"
+   ],
+   "venue": "2017 IEEE International Conference on Smart Cloud (SmartCloud)",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance"
+   ]
+  },
+  {
+   "key": "oleksenko2023",
+   "section": "S2.1",
+   "difference": "searches for speculative information leaks; we study the performance side of speculation, which those defences did not price.",
+   "anchor": "Hide and Seek with Spectres",
+   "locator": "2301.07642v1",
+   "locator_kind": "arXiv",
+   "title": "Hide and Seek with Spectres: Efficient discovery of speculative information leaks with random testing",
+   "year": null,
+   "authors": [
+    "Oleksii Oleksenko",
+    "Marco Guarnieri",
+    "Boris Köpf",
+    "Mark Silberstein"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "cauligi2021",
+   "section": "S2.1",
+   "difference": "taxonomises software defences against speculative leakage; those defences pay a cost our instrument would book as congestion.",
+   "anchor": "Practical Foundations for Software Spectre Defenses",
+   "locator": "2105.05801v3",
+   "locator_kind": "arXiv",
+   "title": "SoK: Practical Foundations for Software Spectre Defenses",
+   "year": null,
+   "authors": [
+    "Sunjay Cauligi",
+    "Craig Disselkoen",
+    "Daniel Moghimi",
+    "Gilles Barthe",
+    "Deian Stefan"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "oleksenko2019",
+   "section": "S2.1",
+   "difference": "surfaces Spectre-type vulnerabilities by fuzzing; our instrument excludes the security channel entirely and measures time.",
+   "anchor": "SpecFuzz",
+   "locator": "1905.10311v4",
+   "locator_kind": "arXiv",
+   "title": "SpecFuzz: Bringing Spectre-type vulnerabilities to the surface",
+   "year": null,
+   "authors": [
+    "Oleksii Oleksenko",
+    "Bohdan Trach",
+    "Mark Silberstein",
+    "Christof Fetzer"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "bhattacharyya2019",
+   "section": "S2.1",
+   "difference": "leaks through port contention between speculative and victim threads; the same contention is what our instrument charges as harm.",
+   "anchor": "SMoTherSpectre",
+   "locator": "1903.01843v3",
+   "locator_kind": "arXiv",
+   "title": "SMoTherSpectre: exploiting speculative execution through port contention",
+   "year": null,
+   "authors": [
+    "Atri Bhattacharyya",
+    "Alexandra Sandulescu",
+    "Matthias Neugschwandtner",
+    "Alessandro Sorniotti",
+    "Babak Falsafi",
+    "Mathias Payer",
+    "Anil Kurmus"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "ye2020",
+   "section": "S2.1",
+   "difference": "makes speculative execution safe by making it data-oblivious; the leakage question is out of scope here and we price the contention that remains.",
+   "anchor": "Speculative Data-Oblivious",
+   "locator": "10.1109/isca45697.2020.00064",
+   "locator_kind": "DOI",
+   "title": "Speculative Data-Oblivious Execution: Mobilizing Safe Prediction For Safe and Efficient Speculative Execution",
+   "year": 2020,
+   "authors": [
+    "Jiyong Yu",
+    "Namrata Mantri",
+    "Josep Torrellas",
+    "Adam Morrison",
+    "Christopher W. Fletcher"
+   ],
+   "venue": "2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)",
+   "source": "crossref",
+   "seen_in": [
+    "speculative tool execution"
+   ]
+  },
+  {
+   "key": "specbook2005",
+   "section": "S2.1",
+   "difference": "collects the architecture literature on speculation; it predates the agent setting, where a speculative call has an external side effect.",
+   "anchor": "Speculative Execution in High Performance Computer Architectures",
+   "locator": "10.1201/9781420035155",
+   "locator_kind": "DOI",
+   "title": "Speculative Execution in High Performance Computer Architectures",
+   "year": 2005,
+   "authors": [],
+   "venue": "",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance",
+    "speculative tool execution"
+   ]
+  },
+  {
+   "key": "spork2026",
+   "section": "S2.2",
+   "difference": "self-speculates a fork of the agent's own trajectory, reporting a 16-37% tool-wait share and an 18% P95 reduction; we reproduce that sign inside its own reported share and locate where it stops paying.",
+   "anchor": "SPORK",
+   "locator": "2607.03333v1",
+   "locator_kind": "arXiv",
+   "title": "SPORK: Self-Speculative Forking to Accelerate Agentic LLM Inference",
+   "year": null,
+   "authors": [
+    "Huajun Bai",
+    "Weiwei Lv",
+    "Huichuan Zheng",
+    "Youyou Lu",
+    "Jiwu Shu"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative tool\""
+   ]
+  },
+  {
+   "key": "smc2026",
+   "section": "S2.2",
+   "difference": "commits predicted macro-actions for tool-using agents and reports up to 44.9% over sequential execution; we show that cell sits above the ceiling our model admits and say why rather than smoothing it.",
+   "anchor": "Speculative Macro Commit",
+   "locator": "2609.03236v1",
+   "locator_kind": "arXiv",
+   "title": "Speculative Macro Commit for Faster Tool-Using Agents",
+   "year": null,
+   "authors": [
+    "Zeyu Liu",
+    "Souvik Kundu",
+    "Peter A. Beerel"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "specbox2026",
+   "section": "S2.2",
+   "difference": "warms sandboxes ahead of use to cut agent setup latency; it measures one interval, while we derive the contention at which warming hurts.",
+   "anchor": "SpecBox",
+   "locator": "2607.23933v2",
+   "locator_kind": "arXiv",
+   "title": "SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving",
+   "year": null,
+   "authors": [
+    "Yihui Zhang",
+    "Tianyu Wo",
+    "Jinghao Wang",
+    "Xiaoyang Sun",
+    "Menghao Zhang",
+    "Cangzhou Yuan",
+    "Li Li",
+    "Chunming Hu",
+    "Albert Y. Zomaya",
+    "Renyu Yang"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"tail latency\""
+   ]
+  },
+  {
+   "key": "bpaste2026",
+   "section": "S2.2",
+   "difference": "selects speculative executions under a co-run interference budget; we measure the boundary it budgets against, with compensation priced explicitly.",
+   "anchor": "B-PASTE",
+   "locator": "2604.16469v1",
+   "locator_kind": "arXiv",
+   "title": "B-PASTE: Beam-Aware Pattern-Guided Speculative Execution for Resource-Constrained LLM Agents",
+   "year": null,
+   "authors": [
+    "Yanfei Song"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "costaware2026",
+   "section": "S2.2",
+   "difference": "states an admissibility precondition that excludes side-effecting edges; we test that rule and find adverse states inside its permitted region.",
+   "anchor": "Cost-Aware Speculative Execution for LLM-Agent Workflows",
+   "locator": "2606.07846v1",
+   "locator_kind": "arXiv",
+   "title": "Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method",
+   "year": null,
+   "authors": [
+    "Faisal Fareed"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "speculativecalls2025",
+   "section": "S2.2",
+   "difference": "speculates tool calls for agentic inference and reports an isolated speedup; we add the serial baseline and the parallelism it already had.",
+   "anchor": "Speculative Tool Calls",
+   "locator": "2512.15834v1",
+   "locator_kind": "arXiv",
+   "title": "Optimizing Agentic Language Model Inference via Speculative Tool Calls",
+   "year": null,
+   "authors": [
+    "Daniel Nichols",
+    "Prajwal Singhania",
+    "Charles Jekel",
+    "Abhinav Bhatele",
+    "Harshitha Menon"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative tool\""
+   ]
+  },
+  {
+   "key": "spechop2026",
+   "section": "S2.2",
+   "difference": "speculates continuously across multi-hop retrieval steps; our mechanism is a single tool call priced by contention.",
+   "anchor": "SpecHop",
+   "locator": "2605.21965v1",
+   "locator_kind": "arXiv",
+   "title": "SpecHop: Continuous Speculation for Accelerating Multi-Hop Retrieval Agents",
+   "year": null,
+   "authors": [
+    "Mehrdad Saberi",
+    "Keivan Rezaei",
+    "Soheil Feizi"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative tool\""
+   ]
+  },
+  {
+   "key": "specagents2026",
+   "section": "S2.2",
+   "difference": "builds real-time agents with asynchronous I/O and speculation; we quantify the share of that gain any parallel schedule would have bought.",
+   "anchor": "Speculative Interaction Agents",
+   "locator": "2605.13360v2",
+   "locator_kind": "arXiv",
+   "title": "Speculative Interaction Agents: Building Real-Time Agents with Asynchronous I/O and Speculative Tool Calling",
+   "year": null,
+   "authors": [
+    "Coleman Hooper",
+    "Minwoo Kang",
+    "Suhong Moon",
+    "Nicholas Lee",
+    "Eric Wen",
+    "John Wawrzynek",
+    "Michael W. Mahoney",
+    "Yakun Sophia Shao",
+    "Amir Gholami",
+    "Kurt Keutzer"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative tool\""
+   ]
+  },
+  {
+   "key": "agentboundary2026",
+   "section": "S2.2",
+   "difference": "catalogues anomalies at the agent-tool boundary; we take that side-effect risk as given and price compensation instead.",
+   "anchor": "When Tool Calls Succeed but Workflows Fail",
+   "locator": "2609.15397v1",
+   "locator_kind": "arXiv",
+   "title": "When Tool Calls Succeed but Workflows Fail: Anomalies at the Agent-Tool Boundary",
+   "year": null,
+   "authors": [
+    "Artem Trofimov",
+    "Boris Novikov"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "ghosttools2026",
+   "section": "S2.2",
+   "difference": "protects the privacy of speculative tool calls by not issuing them; we issue them and charge the pool, which is the cost counterpart.",
+   "anchor": "Ghost Tool Calls",
+   "locator": "2606.02483v1",
+   "locator_kind": "arXiv",
+   "title": "Ghost Tool Calls: Issue-Time Privacy for Speculative Agent Tools",
+   "year": null,
+   "authors": [
+    "Bardia Mohammadi",
+    "Lars Klein",
+    "Akhil Arora",
+    "Laurent Bindschaedler"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative tool\""
+   ]
+  },
+  {
+   "key": "grotov2026",
+   "section": "S2.2",
+   "difference": "gates speculation on a draft model's uncertainty; we show the gate is not the binding constraint when the pool is the constraint.",
+   "anchor": "How to Speculate about Uncertainty in Agentic Coding",
+   "locator": "2609.05274v1",
+   "locator_kind": "arXiv",
+   "title": "How to Speculate about Uncertainty in Agentic Coding? A Draft-Model Gate Method",
+   "year": null,
+   "authors": [
+    "Konstantin Grotov",
+    "Valentin Malykh"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative decoding\""
+   ]
+  },
+  {
+   "key": "agentspec2026",
+   "section": "S2.2",
+   "difference": "applies token-level speculative decoding inside a batch of agent requests; our speculation is at the tool-call granularity where effects are external.",
+   "anchor": "AgentSpec",
+   "locator": "2608.24004v1",
+   "locator_kind": "arXiv",
+   "title": "AgentSpec: Speculative Decoding for Batch Inference of LLM Agents",
+   "year": null,
+   "authors": [
+    "Xin Wang",
+    "Ziming Miao",
+    "Yi Zhu",
+    "Hui Shen",
+    "Zhongwei Wan",
+    "Fan Yang",
+    "Mi Zhang"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative decoding\""
+   ]
+  },
+  {
+   "key": "asymspec2026",
+   "section": "S2.2",
+   "difference": "makes drafting context-asymmetric for agentic decoding; it accelerates the model, not the tool round trip our instrument isolates.",
+   "anchor": "AsymSpec",
+   "locator": "2608.26004v1",
+   "locator_kind": "arXiv",
+   "title": "AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs",
+   "year": null,
+   "authors": [
+    "Sheng Liang",
+    "Yongyue Zhang",
+    "Nathanael Brian",
+    "Hang Lv",
+    "Hao Wang",
+    "Chen Zhang",
+    "Yong Liu"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative decoding\""
+   ]
+  },
+  {
+   "key": "tailaware2026",
+   "section": "S2.2",
+   "difference": "decouples readiness from release to cut tail latency of agentic inference; we locate the crossover of the same trade under a fixed pool.",
+   "anchor": "Decoupling Readiness from Release",
+   "locator": "2609.10964v1",
+   "locator_kind": "arXiv",
+   "title": "Decoupling Readiness from Release for Tail-Aware Scheduling of Agentic LLM Workflows",
+   "year": null,
+   "authors": [
+    "Bochao Feng",
+    "Jianjiang Li",
+    "Haojie Wang",
+    "Lin Qiao",
+    "Yinghui Li",
+    "Yukun Yan",
+    "Jidong Zhai"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"tail latency\""
+   ]
+  },
+  {
+   "key": "alossurvey2026",
+   "section": "S2.2",
+   "difference": "surveys speculative drafting methods and their readiness; none of the surveyed methods prices contention in a shared pool.",
+   "anchor": "Is Multimodal Speculative Decoding Ready",
+   "locator": "2608.20743v2",
+   "locator_kind": "arXiv",
+   "title": "Is Multimodal Speculative Decoding Ready for Diffusion-Based Parallel Drafting? A Survey and Empirical Diagnosis",
+   "year": null,
+   "authors": [
+    "Yantao Li",
+    "Huanlin Gao",
+    "Fang Zhao",
+    "Chao Tan",
+    "Qiang Hui",
+    "Shuting Liu",
+    "Fuyuan Shi",
+    "Ting Lu",
+    "Shaoan Zhao",
+    "Xueqiang Guo",
+    "Xinpei Su",
+    "Jianbing Zhang",
+    "Xinyu Dai",
+    "Kai Wang",
+    "Shiguo Lian"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative decoding\""
+   ]
+  },
+  {
+   "key": "specgen2026",
+   "section": "S2.2",
+   "difference": "speculatively generates kernel-optimisation candidates; its speculative artefacts are compute-only, so its harm channel is not compensation.",
+   "anchor": "SpecGen",
+   "locator": "2606.17518v1",
+   "locator_kind": "arXiv",
+   "title": "SpecGen: Accelerating Agentic Kernel Optimization with Speculative Generation",
+   "year": null,
+   "authors": [
+    "Jihu Guo",
+    "Sitian Lu",
+    "Tenghui Ma",
+    "Wei Gao",
+    "Zhisheng Ye",
+    "Xingcheng Zhang",
+    "Dahua Lin"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "fleet2026",
+   "section": "S2.2",
+   "difference": "profiles decision-critical requests for SLO-aware fleet configuration; our instrument holds the fleet fixed and moves contention.",
+   "anchor": "FleetSieve",
+   "locator": "2608.19659v1",
+   "locator_kind": "arXiv",
+   "title": "FleetSieve: Decision-Critical Profiling for SLO-Aware LLM Fleet Configuration",
+   "year": null,
+   "authors": [
+    "Huang Cheng",
+    "Scott Zhang",
+    "Aubert Li"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"tail latency\""
+   ]
+  },
+  {
+   "key": "chronos2026",
+   "section": "S2.2",
+   "difference": "adds bolt-on branching across data stores for stateful applications; that branching is exactly the side-effect case our model charges.",
+   "anchor": "Chronos",
+   "locator": "2609.14889v1",
+   "locator_kind": "arXiv",
+   "title": "Chronos: Efficient Bolt-on Branching Across Data Stores for Stateful Agentic Applications",
+   "year": null,
+   "authors": [
+    "Xinjing Zhou",
+    "Jason Mohoney",
+    "Samuel Madden",
+    "Michael Stonebraker",
+    "Lei Cao"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"speculative execution\" AND all:tools"
+   ]
+  },
+  {
+   "key": "hidelatency2026",
+   "section": "S2.2",
+   "difference": "hides service latency with deterministic asynchronous execution; we measure the regime where that determinism is what removes the boundary.",
+   "anchor": "Hiding Service Latency",
+   "locator": "10.1145/3806789.3810973",
+   "locator_kind": "DOI",
+   "title": "Hiding Service Latency: A Deterministic Asynchronous Execution Paradigm for Agent-Based Transport Simulations",
+   "year": 2026,
+   "authors": [
+    "Paul Heinrich",
+    "Kai Nagel"
+   ],
+   "venue": "Proceedings of the 40th ACM SIGSIM International Conference on Principles of Advanced Discrete Simulation",
+   "source": "crossref",
+   "seen_in": [
+    "latency hiding parallel execution"
+   ]
+  },
+  {
+   "key": "finch2019",
+   "section": "S2.3",
+   "difference": "derives M/M/c approximations from a clumping heuristic; our closed form is from the same family and is checked against the simulator, not against itself.",
+   "anchor": "Poisson Clumping Heuristic",
+   "locator": "1904.04054v1",
+   "locator_kind": "arXiv",
+   "title": "M/M/$c$ Queues and the Poisson Clumping Heuristic",
+   "year": null,
+   "authors": [
+    "Steven Finch"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"M/M/c\""
+   ]
+  },
+  {
+   "key": "chydzinski2024b",
+   "section": "S2.3",
+   "difference": "computes response-time distributions for queueing mechanisms; we need only the mean wait, and we report where that mean misleads.",
+   "anchor": "Response Time of Queueing Mechanisms",
+   "locator": "10.3390/sym16030271",
+   "locator_kind": "DOI",
+   "title": "Response Time of Queueing Mechanisms",
+   "year": 2024,
+   "authors": [
+    "Andrzej Chydzinski",
+    "Blazej Adamczyk"
+   ],
+   "venue": "Symmetry",
+   "source": "crossref",
+   "seen_in": [
+    "queueing approximation M/M/c response time"
+   ]
+  },
+  {
+   "key": "zhu2026",
+   "section": "S2.3",
+   "difference": "allows correlated service times in a multi-server queue; our simulator draws independent service times, so that channel is out of scope.",
+   "anchor": "Queues with Correlated Service Times",
+   "locator": "2606.24881v1",
+   "locator_kind": "arXiv",
+   "title": "Queues with Correlated Service Times -- the $M/M_D/c$ Model",
+   "year": null,
+   "authors": [
+    "Qihui Bu",
+    "Suman Thapa",
+    "Yiqiang Q. Zhao"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"M/M/c\""
+   ]
+  },
+  {
+   "key": "zuk2023",
+   "section": "S2.3",
+   "difference": "gives exact busy-period distributions for a multi-server queue; busy-period reasoning underlies the load we back out of a measured makespan.",
+   "anchor": "Partial Busy Period",
+   "locator": "2309.01874v1",
+   "locator_kind": "arXiv",
+   "title": "Exact Results for the Distribution of the Partial Busy Period for a Multi-Server Queue",
+   "year": null,
+   "authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"M/M/c\""
+   ]
+  },
+  {
+   "key": "zuk2023b",
+   "section": "S2.3",
+   "difference": "solves a non-preemptive multi-server queue explicitly; our workers are non-preemptive but our arrivals are generated endogenously by the agents.",
+   "anchor": "Joint Queue-Length Distribution",
+   "locator": "2311.01641v1",
+   "locator_kind": "arXiv",
+   "title": "Joint Queue-Length Distribution for the Non-Preemptive Multi-Server Multi-Level Markovian Priority Queue",
+   "year": null,
+   "authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"M/M/c\""
+   ]
+  },
+  {
+   "key": "dauria2021",
+   "section": "S2.3",
+   "difference": "lets service rates depend on queueing time; our instrument holds rates fixed and moves the offered load instead.",
+   "anchor": "queueing-time dependent service rates",
+   "locator": "2107.04557v1",
+   "locator_kind": "arXiv",
+   "title": "An M/M/c queue with queueing-time dependent service rates",
+   "year": null,
+   "authors": [
+    "Bernardo D'Auria",
+    "Ivo J. B. F. Adan",
+    "René Bekker",
+    "Vidyadhar Kulkarni"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"M/M/c\""
+   ]
+  },
+  {
+   "key": "schol2019",
+   "section": "S2.3",
+   "difference": "characterises fork-join queues with near-deterministic arrivals; our pool is shared across one agent's own calls rather than per-job fork.",
+   "anchor": "Large fork-join queues with nearly deterministic",
+   "locator": "1912.11661v3",
+   "locator_kind": "arXiv",
+   "title": "Large fork-join queues with nearly deterministic arrival and service times",
+   "year": null,
+   "authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"fork-join\""
+   ]
+  },
+  {
+   "key": "schol2023",
+   "section": "S2.3",
+   "difference": "studies waiting-time extremes in fork-join queues; we study the wait of a call issued before it is needed.",
+   "anchor": "Extreme values for the waiting time in large fork-join queues",
+   "locator": "2309.08373v1",
+   "locator_kind": "arXiv",
+   "title": "Extreme values for the waiting time in large fork-join queues",
+   "year": null,
+   "authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"fork-join\""
+   ]
+  },
+  {
+   "key": "schol2022",
+   "section": "S2.3",
+   "difference": "derives maximum waiting times under heavy tails; our tail pair matches means, so tail shape enters without a mean shift.",
+   "anchor": "Maximum waiting time in heavy-tailed fork-join queues",
+   "locator": "2211.02313v1",
+   "locator_kind": "arXiv",
+   "title": "Maximum waiting time in heavy-tailed fork-join queues",
+   "year": null,
+   "authors": [
+    "Dennis Schol",
+    "Maria Vlasiou",
+    "Bert Zwart"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"fork-join\""
+   ]
+  },
+  {
+   "key": "gocmen2025",
+   "section": "S2.3",
+   "difference": "schedules under evolving holding costs in a queue; our compensation cost is a fixed holding cost paid only on a miss.",
+   "anchor": "Uncertain and Evolving Holding Costs",
+   "locator": "2505.21331v2",
+   "locator_kind": "arXiv",
+   "title": "Scheduling in Queueing Systems with Uncertain and Evolving Holding Costs",
+   "year": null,
+   "authors": [
+    "Caner Gocmen",
+    "Thodoris Lykouris",
+    "Deeksha Sinha",
+    "Wentao Weng"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "ji2024",
+   "section": "S2.3",
+   "difference": "gives heavy-traffic limits for SRPT queues; our instrument never reorders the queue and only changes when work is admitted.",
+   "anchor": "Heavy traffic scaling limits for shortest remaining processing time",
+   "locator": "10.1007/s11134-024-09929-8",
+   "locator_kind": "DOI",
+   "title": "Heavy traffic scaling limits for shortest remaining processing time queues with light tailed processing time distributions",
+   "year": 2024,
+   "authors": [
+    "Chunxu Ji",
+    "Amber L. Puha"
+   ],
+   "venue": "Queueing Systems",
+   "source": "crossref",
+   "seen_in": [
+    "heavy tailed distribution queueing"
+   ]
+  },
+  {
+   "key": "gao2026",
+   "section": "S2.3",
+   "difference": "proves stability for fork-join systems with redundant servers; a redundant task is the closest queueing analogue of a speculative call.",
+   "anchor": "Stability of Fork-Join Systems with Redundancy",
+   "locator": "2609.09237v1",
+   "locator_kind": "arXiv",
+   "title": "Stability of Fork-Join Systems with Redundancy and Heterogeneous Servers",
+   "year": null,
+   "authors": [
+    "Chutong Gao",
+    "Seyed Iravani",
+    "Ohad Perry"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"fork-join\""
+   ]
+  },
+  {
+   "key": "mohanty2024",
+   "section": "S2.3",
+   "difference": "analyses fork-join scheduling on heterogeneous servers; our pool is homogeneous, which isolates width from placement.",
+   "anchor": "Analysis of Fork-Join Scheduling on Heterogeneous Parallel Servers",
+   "locator": "10.1109/tnet.2024.3432183",
+   "locator_kind": "DOI",
+   "title": "Analysis of Fork-Join Scheduling on Heterogeneous Parallel Servers",
+   "year": 2024,
+   "authors": [
+    "Moonmoon Mohanty",
+    "Gaurav Gautam",
+    "Vaneet Aggarwal",
+    "Parimal Parag"
+   ],
+   "venue": "IEEE/ACM Transactions on Networking",
+   "source": "crossref",
+   "seen_in": [
+    "fork join scheduling analysis"
+   ]
+  },
+  {
+   "key": "zhou2021layered",
+   "section": "S2.3",
+   "difference": "approximates multiserver waiting times for layered networks; our closed form is a single-station approximation whose error we bound.",
+   "anchor": "A New Approximation for Multiserver Waiting Time",
+   "locator": "10.22215/etd/2021-14846",
+   "locator_kind": "DOI",
+   "title": "A New Approximation for Multiserver Waiting Time, for Layered Queueing Systems",
+   "year": null,
+   "authors": [
+    "Siyu Zhou"
+   ],
+   "venue": "",
+   "source": "crossref",
+   "seen_in": [
+    "queueing approximation M/M/c response time"
+   ]
+  },
+  {
+   "key": "zuk2023c",
+   "section": "S2.3",
+   "difference": "gives explicit queue-length distributions for a non-preemptive multi-server queue; we report a boundary rather than a distribution.",
+   "anchor": "Explicit Results for the Distributions of Queue Lengths",
+   "locator": "2309.09428v1",
+   "locator_kind": "arXiv",
+   "title": "Explicit Results for the Distributions of Queue Lengths for a Non-Preemptive Two-Level Priority Queue",
+   "year": null,
+   "authors": [
+    "Josef Zuk",
+    "David Kirszenblat"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"M/M/c\""
+   ]
+  },
+  {
+   "key": "pan2023",
+   "section": "S2.3",
+   "difference": "refines mean-field approximation for queueing networks; a mean-field fixed point is what we test and find cannot express the flip.",
+   "anchor": "Refined mean",
+   "locator": "10.1002/nav.22131",
+   "locator_kind": "DOI",
+   "title": "Refined mean‐field approximation for discrete‐time queueing networks with blocking",
+   "year": 2023,
+   "authors": [
+    "Yang Pan",
+    "Pengyi Shi"
+   ],
+   "venue": "Naval Research Logistics (NRL)",
+   "source": "crossref",
+   "seen_in": [
+    "queueing approximation M/M/c response time"
+   ]
+  },
+  {
+   "key": "koroliouk2021",
+   "section": "S2.3",
+   "difference": "approximates queueing systems by diffusion; we test our closed form against the simulator rather than against an approximation of it.",
+   "anchor": "Diffusion Approximation of Queueing Systems",
+   "locator": "10.1002/9781119755432.ch3",
+   "locator_kind": "DOI",
+   "title": "Diffusion Approximation of Queueing Systems and Networks",
+   "year": 2021,
+   "authors": [
+    "Dimitri Koroliouk",
+    "Vladimir S. Koroliuk"
+   ],
+   "venue": "Queueing Theory 1",
+   "source": "crossref",
+   "seen_in": [
+    "queueing approximation M/M/c response time"
+   ]
+  },
+  {
+   "key": "barik2026",
+   "section": "S2.3",
+   "difference": "analyses an M^X/G/1 model with heavy arrivals; our arrivals are Poisson at a rate the agents generate, so batch structure is absent.",
+   "anchor": "queueing model with heavy",
+   "locator": "10.1007/s12597-026-01126-w",
+   "locator_kind": "DOI",
+   "title": "Analysis and optimal control in an $$M^X/G/1$$ queueing model with heavy-tailed service-time distribution",
+   "year": 2026,
+   "authors": [
+    "Sitaram Barik",
+    "A. D. Banik",
+    "Mohan Chaudhry",
+    "Souvik Ghosh"
+   ],
+   "venue": "OPSEARCH",
+   "source": "crossref",
+   "seen_in": [
+    "heavy tailed distribution queueing"
+   ]
+  },
+  {
+   "key": "whitt2000",
+   "section": "S2.4",
+   "difference": "shows heavy-tailed service times dominate multi-server waiting; our matched-mean pair tests that claim inside a simulated agent loop.",
+   "anchor": "M/GI/s",
+   "locator": "10.1023/a:1019143505968",
+   "locator_kind": "DOI",
+   "title": "The impact of a heavy-tailed service-time distribution upon the M/GI/s waiting-time distribution",
+   "year": 2000,
+   "authors": [
+    "Ward Whitt"
+   ],
+   "venue": "Queueing Systems",
+   "source": "crossref",
+   "seen_in": [
+    "heavy tailed distribution queueing"
+   ]
+  },
+  {
+   "key": "sigman1999",
+   "section": "S2.4",
+   "difference": "explains when heavy tails matter in queues; we construct the pair so means match and only the shape moves.",
+   "anchor": "A primer on heavy-tailed distributions",
+   "locator": "10.1023/a:1019180230133",
+   "locator_kind": "DOI",
+   "title": "Appendix: A primer on heavy-tailed distributions",
+   "year": 1999,
+   "authors": [
+    "Karl Sigman"
+   ],
+   "venue": "Queueing Systems",
+   "source": "crossref",
+   "seen_in": [
+    "heavy tailed distribution queueing"
+   ]
+  },
+  {
+   "key": "iyer2023",
+   "section": "S2.4",
+   "difference": "reaches microsecond tail latency by approximate operations; we show the tail statistic is not what decides the speculation boundary.",
+   "anchor": "Microsecond-Scale Tail Latency",
+   "locator": "10.1145/3600006.3613136",
+   "locator_kind": "DOI",
+   "title": "Achieving Microsecond-Scale Tail Latency Efficiently with Approximate Optimal Scheduling",
+   "year": 2023,
+   "authors": [
+    "Rishabh Iyer",
+    "Musa Unal",
+    "Marios Kogias",
+    "George Candea"
+   ],
+   "venue": "Proceedings of the 29th Symposium on Operating Systems Principles",
+   "source": "crossref",
+   "seen_in": [
+    "tail latency large scale systems"
+   ]
+  },
+  {
+   "key": "misra2019",
+   "section": "S2.4",
+   "difference": "manages tail latency in production file systems by scheduling; our intervention is admitting work early rather than reordering it.",
+   "anchor": "Tail Latency in Datacenter-Scale File Systems",
+   "locator": "10.1145/3302424.3303973",
+   "locator_kind": "DOI",
+   "title": "Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints",
+   "year": 2019,
+   "authors": [
+    "Pulkit A. Misra",
+    "María F. Borge",
+    "Íñigo Goiri",
+    "Alvin R. Lebeck",
+    "Willy Zwaenepoel",
+    "Ricardo Bianchini"
+   ],
+   "venue": "Proceedings of the Fourteenth EuroSys Conference 2019",
+   "source": "crossref",
+   "seen_in": [
+    "tail latency large scale systems"
+   ]
+  },
+  {
+   "key": "lawniczak2024",
+   "section": "S2.4",
+   "difference": "targets tail latency by proactively rejecting work in replicated systems; rejection and early admission are two ends of one trade in our model.",
+   "anchor": "Proactive Rejection",
+   "locator": "10.1145/3652892.3700775",
+   "locator_kind": "DOI",
+   "title": "Targeting Tail Latency in Replicated Systems with Proactive Rejection",
+   "year": 2024,
+   "authors": [
+    "Laura Lawniczak",
+    "Tobias Distler"
+   ],
+   "venue": "Proceedings of the 25th International Middleware Conference",
+   "source": "crossref",
+   "seen_in": [
+    "tail latency large scale systems"
+   ]
+  },
+  {
+   "key": "kanev2014",
+   "section": "S2.4",
+   "difference": "measures the tradeoff between power management and tail latency; the same trade shape appears between speculation width and pool contention.",
+   "anchor": "power management and tail latency",
+   "locator": "10.1109/iiswc.2014.6983037",
+   "locator_kind": "DOI",
+   "title": "Tradeoffs between power management and tail latency in warehouse-scale applications",
+   "year": 2014,
+   "authors": [
+    "Svilen Kanev",
+    "Kim Hazelwood",
+    "Gu-Yeon Wei",
+    "David Brooks"
+   ],
+   "venue": "2014 IEEE International Symposium on Workload Characterization (IISWC)",
+   "source": "crossref",
+   "seen_in": [
+    "tail latency large scale systems"
+   ]
+  },
+  {
+   "key": "split2026",
+   "section": "S2.4",
+   "difference": "improves tail latency by treating large jobs differently; our instrument classifies no jobs and still reproduces a boundary.",
+   "anchor": "SymPathy for Large jobs Improves Tail latency",
+   "locator": "2605.13749v1",
+   "locator_kind": "arXiv",
+   "title": "SPLIT: SymPathy for Large jobs Improves Tail latency",
+   "year": null,
+   "authors": [
+    "Zhouzi Li",
+    "Mor Harchol-Balter",
+    "Alan Scheller-Wolf"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"heavy-tailed\" AND all:latency"
+   ]
+  },
+  {
+   "key": "aktas2017",
+   "section": "S2.4",
+   "difference": "decides which straggler clones to launch and when; we ask when launching anything early stops paying.",
+   "anchor": "Which Clones Should Attack and When",
+   "locator": "1710.00748v1",
+   "locator_kind": "arXiv",
+   "title": "Effective Straggler Mitigation: Which Clones Should Attack and When?",
+   "year": null,
+   "authors": [
+    "Mehmet Fatih Aktas",
+    "Pei Peng",
+    "Emina Soljanin"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"heavy-tailed\" AND all:latency"
+   ]
+  },
+  {
+   "key": "aktas2017b",
+   "section": "S2.4",
+   "difference": "delays relaunches to cut straggler tails; our speculation starts before a call is needed rather than after it is late.",
+   "anchor": "Straggler Mitigation by Delayed Relaunch",
+   "locator": "1710.00414v1",
+   "locator_kind": "arXiv",
+   "title": "Straggler Mitigation by Delayed Relaunch of Tasks",
+   "year": null,
+   "authors": [
+    "Mehmet Fatih Aktas",
+    "Pei Peng",
+    "Emina Soljanin"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"heavy-tailed\" AND all:latency"
+   ]
+  },
+  {
+   "key": "mackenzie2020",
+   "section": "S2.4",
+   "difference": "manages tail latency in large-scale retrieval systems; we measure a tail change that the mean does not show.",
+   "anchor": "Managing tail latency in large scale information retrieval",
+   "locator": "10.1145/3451964.3451982",
+   "locator_kind": "DOI",
+   "title": "Managing tail latency in large scale information retrieval systems",
+   "year": 2020,
+   "authors": [
+    "Joel M. Mackenzie"
+   ],
+   "venue": "ACM SIGIR Forum",
+   "source": "crossref",
+   "seen_in": [
+    "tail latency large scale systems"
+   ]
+  },
+  {
+   "key": "chen2009",
+   "section": "S2.4",
+   "difference": "relates heavy-tailed distributions to network traffic behaviour; our tail pair is generated, so no network measurement is assumed.",
+   "anchor": "distribution on network traffic",
+   "locator": "10.3724/sp.j.1087.2009.01520",
+   "locator_kind": "DOI",
+   "title": "Influence of heavytailed distribution on network traffic",
+   "year": 2009,
+   "authors": [
+    "Chu CHEN",
+    "Yong XU",
+    "Ling ZHANG"
+   ],
+   "venue": "Journal of Computer Applications",
+   "source": "crossref",
+   "seen_in": [
+    "heavy tailed distribution queueing"
+   ]
+  },
+  {
+   "key": "mehan2026",
+   "section": "S2.5",
+   "difference": "analyses how retries amplify load in distributed systems; a discarded speculative call is a retry nobody requested.",
+   "anchor": "Retry Amplification",
+   "locator": "10.2139/ssrn.6313332",
+   "locator_kind": "DOI",
+   "title": "Retry Amplification in Distributed Systems: ASystematic Analysis of Retry Policies and TheirRole in Cascading Failures",
+   "year": 2026,
+   "authors": [
+    "Rishabh Mehan"
+   ],
+   "venue": "",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "dusad2025",
+   "section": "S2.5",
+   "difference": "states the idempotency guarantees payment systems need; our non-idempotent fraction is the probability a discarded call cannot be undone.",
+   "anchor": "Taming Asynchrony in Distributed Payment Systems",
+   "locator": "10.32996/jcsts.2025.7.11.33",
+   "locator_kind": "DOI",
+   "title": "Taming Asynchrony in Distributed Payment Systems: Guarantees, Idempotency, and End-to-End Reconciliation",
+   "year": 2025,
+   "authors": [
+    "Krishna Dusad"
+   ],
+   "venue": "Journal of Computer Science and Technology Studies",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "desai2026",
+   "section": "S2.5",
+   "difference": "makes event processing reliable with stage-aware retries; we charge compensation as worker-busy time rather than as a correctness loss.",
+   "anchor": "Reliable Event-Driven Processing",
+   "locator": "10.52783/jisem.v11i2s.14608",
+   "locator_kind": "DOI",
+   "title": "Reliable Event-Driven Processing in Distributed Systems: Stage-Aware Retries, Idempotency, and Exactly-Once Semantics",
+   "year": 2026,
+   "authors": [
+    "Jay Bankimchandra Desai"
+   ],
+   "venue": "Journal of Information Systems Engineering and Management",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "konasani2026",
+   "section": "S2.5",
+   "difference": "detects duplicate trades and enforces idempotency; our instrument assumes compensation succeeds and prices only its contention.",
+   "anchor": "Duplicate Trade Detection and Idempotency",
+   "locator": "10.22399/ijcesen.4940",
+   "locator_kind": "DOI",
+   "title": "Graph-Based Duplicate Trade Detection and Idempotency Framework Implementation in Distributed Electronic Trading Systems",
+   "year": 2026,
+   "authors": [
+    "Iswarya Konasani"
+   ],
+   "venue": "International Journal of Computational and Experimental Science and Engineering",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "bush2022",
+   "section": "S2.5",
+   "difference": "schedules transactional memory to remain stable; an aborted transaction pays the same kind of loss as our non-idempotent miss.",
+   "anchor": "Stable Scheduling in Transactional Memory",
+   "locator": "2208.07359v1",
+   "locator_kind": "arXiv",
+   "title": "Stable Scheduling in Transactional Memory",
+   "year": null,
+   "authors": [
+    "Costas Busch",
+    "Bogdan S. Chlebus",
+    "Dariusz R. Kowalski",
+    "Pavan Poudel"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"transactional memory\""
+   ]
+  },
+  {
+   "key": "progressive1993",
+   "section": "S2.5",
+   "difference": "retries software recovery progressively after a failure; we measure the pool cost of redoing work that was started speculatively.",
+   "anchor": "Progressive Retry",
+   "locator": "10.21236/ada260075",
+   "locator_kind": "DOI",
+   "title": "Progressive Retry for Software Error Recovery in Distributed Systems",
+   "year": 1993,
+   "authors": [
+    "Yi-Min Wang",
+    "Yennun Huang",
+    "W. K. Fuchs"
+   ],
+   "venue": "",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems",
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "tmretry2008",
+   "section": "S2.5",
+   "difference": "compares retry mechanisms for transactional memory; that retry policy is local, while ours competes for a shared pool.",
+   "anchor": "Transactional memory retry mechanisms",
+   "locator": "10.1145/1400751.1400850",
+   "locator_kind": "DOI",
+   "title": "Transactional memory retry mechanisms",
+   "year": 2008,
+   "authors": [
+    "Michael F. Spear",
+    "Andrew Sveikauskas",
+    "Michael L. Scott"
+   ],
+   "venue": "Proceedings of the twenty-seventh ACM symposium on Principles of distributed computing",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "fagin2024",
+   "section": "S2.5",
+   "difference": "formalises minimal and partial idempotency; our q is the partial-idempotency case in which a repeat is not free.",
+   "anchor": "Minimal idempotency",
+   "locator": "10.5802/pmb.53",
+   "locator_kind": "DOI",
+   "title": "Minimal idempotency, partial idempotency, search heuristics and constructive algorithms for idempotent integers",
+   "year": 2024,
+   "authors": [
+    "Barry S. Fagin"
+   ],
+   "venue": "Publications mathématiques de Besançon. Algèbre et théorie des nombres",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "idempotency2025",
+   "section": "S2.5",
+   "difference": "documents idempotency keys as the industry answer to duplicate requests; our speculative miss duplicates work no key can suppress.",
+   "anchor": "Idempotency Mechanisms in Digital Payment Systems",
+   "locator": "10.48047/jocaaa.2025.34.11.02",
+   "locator_kind": "DOI",
+   "title": "Idempotency Mechanisms in Digital Payment Systems: Preventing Duplicate Transaction Processing",
+   "year": 2025,
+   "authors": [],
+   "venue": "Journal of Computational Analysis and Applications",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "intro1998",
+   "section": "S2.5",
+   "difference": "introduces idempotency as an algebraic property; we use it as a workload parameter, the probability an effect can be repeated.",
+   "anchor": "An introduction to idempotency",
+   "locator": "10.1017/cbo9780511662508.003",
+   "locator_kind": "DOI",
+   "title": "An introduction to idempotency",
+   "year": 1998,
+   "authors": [
+    "Jeremy Gunawardena"
+   ],
+   "venue": "Idempotency",
+   "source": "crossref",
+   "seen_in": [
+    "idempotency retry distributed systems"
+   ]
+  },
+  {
+   "key": "antoniadis2023metric",
+   "section": "S2.6",
+   "difference": "bounds the competitive ratio as a function of prediction error; we hold prediction accuracy fixed and move contention instead.",
+   "anchor": "Untrusted Predictions",
+   "locator": "10.1145/3582689",
+   "locator_kind": "DOI",
+   "title": "Online Metric Algorithms with Untrusted Predictions",
+   "year": 2023,
+   "authors": [
+    "Antonios Antoniadis",
+    "Christian Coester",
+    "Marek Eliáš",
+    "Adam Polak",
+    "Bertrand Simon"
+   ],
+   "venue": "ACM Transactions on Algorithms",
+   "source": "crossref",
+   "seen_in": [
+    "online algorithms with predictions paging"
+   ]
+  },
+  {
+   "key": "antoniadis2022",
+   "section": "S2.6",
+   "difference": "uses predictions to beat the paging competitive ratio; our decision is whether to issue one call early, not which page to evict.",
+   "anchor": "Weighted Paging with Predictions",
+   "locator": "10.1145/3548774",
+   "locator_kind": "DOI",
+   "title": "Online Algorithms for Weighted Paging with Predictions",
+   "year": 2022,
+   "authors": [
+    "Zhihao Jiang",
+    "Debmalya Panigrahi",
+    "Kevin Sun"
+   ],
+   "venue": "ACM Transactions on Algorithms",
+   "source": "crossref",
+   "seen_in": [
+    "online algorithms with predictions paging"
+   ]
+  },
+  {
+   "key": "irani1998paging",
+   "section": "S2.6",
+   "difference": "is the classical competitive-analysis account of paging; our instrument is a simulation with intervals, not a worst-case bound.",
+   "anchor": "Competitive analysis of paging",
+   "locator": "10.1007/bfb0029564",
+   "locator_kind": "DOI",
+   "title": "Competitive analysis of paging",
+   "year": 1998,
+   "authors": [
+    "Sandy Irani"
+   ],
+   "venue": "Lecture Notes in Computer Science",
+   "source": "crossref",
+   "seen_in": [
+    "online algorithms with predictions paging"
+   ]
+  },
+  {
+   "key": "calibrated2025",
+   "section": "S2.6",
+   "difference": "trusts a prediction in proportion to its calibration; we show a perfectly calibrated predictor still leaves a contention boundary to locate.",
+   "anchor": "Calibrated Machine Learning Predictions",
+   "locator": "2502.02861v4",
+   "locator_kind": "arXiv",
+   "title": "Algorithms with Calibrated Machine Learning Predictions",
+   "year": null,
+   "authors": [
+    "Judy Hanwen Shen",
+    "Ellen Vitercik",
+    "Anders Wikum"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "predictionspecific2025",
+   "section": "S2.6",
+   "difference": "designs algorithms around the prediction's own structure; our predictor is an oracle, so the fraction we report bounds any real predictor.",
+   "anchor": "Prediction-Specific Design of Learning-Augmented Algorithms",
+   "locator": "2510.14887v1",
+   "locator_kind": "arXiv",
+   "title": "Prediction-Specific Design of Learning-Augmented Algorithms",
+   "year": null,
+   "authors": [
+    "Sizhe Li",
+    "Nicolas Christianson",
+    "Tongxin Li"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "twoslope2025",
+   "section": "S2.6",
+   "difference": "controls tail risk in a two-slope ski-rental variant; our tail pair is a workload property rather than a decision-rule variant.",
+   "anchor": "two-slope ski rental",
+   "locator": "2508.06809v2",
+   "locator_kind": "arXiv",
+   "title": "Controlling tail risk in two-slope ski rental",
+   "year": null,
+   "authors": [
+    "Qiming Cui",
+    "Michael Dinitz"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "multiagent2025",
+   "section": "S2.6",
+   "difference": "solves ski rental when several agents share a cost; several agents also share our worker pool, which is where the harm lands.",
+   "anchor": "Multi-Agent Ski-Rental",
+   "locator": "2507.15727v2",
+   "locator_kind": "arXiv",
+   "title": "Competitive Algorithms for Multi-Agent Ski-Rental Problems",
+   "year": null,
+   "authors": [
+    "Xuchuang Wang",
+    "Bo Sun",
+    "Hedyeh Beyhaghi",
+    "John C. S. Lui",
+    "Mohammad Hajiesmaili",
+    "Adam Wierman"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "improved2025",
+   "section": "S2.6",
+   "difference": "gives tight lower bounds for learning-augmented problems; we report a measured boundary with a per-seed interval rather than a bound.",
+   "anchor": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds",
+   "locator": "10.1145/3763239",
+   "locator_kind": "DOI",
+   "title": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds for Multi-Option Ski Rental Problem",
+   "year": 2025,
+   "authors": [
+    "Yongho Shin",
+    "Changyeol Lee",
+    "Gukryeol Lee",
+    "Hyung-Chan An"
+   ],
+   "venue": "ACM Transactions on Algorithms",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "waiting2025",
+   "section": "S2.6",
+   "difference": "asks when waiting before acting is optimal; speculation is the dual decision, acting before the wait begins.",
+   "anchor": "Waiting is worth it and can be improved with predictions",
+   "locator": "2507.12822v1",
+   "locator_kind": "arXiv",
+   "title": "Waiting is worth it and can be improved with predictions",
+   "year": null,
+   "authors": [
+    "Ya-Chun Liang",
+    "Meng-Hsi Li",
+    "Chung-Shou Liao",
+    "Clifford Stein"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"online algorithms with predictions\""
+   ]
+  },
+  {
+   "key": "discrete2026",
+   "section": "S2.6",
+   "difference": "uses a discrete distributional prediction for ski rental; our prediction's accuracy is fixed by construction, so the predictor is not the variable.",
+   "anchor": "Learning-Augmented Ski Rental with Discrete Distribution",
+   "locator": "10.1609/aaai.v40i43.40991",
+   "locator_kind": "DOI",
+   "title": "Learning-Augmented Ski Rental with Discrete Distribution: A Bayesian Approach",
+   "year": 2026,
+   "authors": [
+    "Bosun Kang",
+    "Hyejun Park",
+    "Chenglin Fan"
+   ],
+   "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "parking2026",
+   "section": "S2.6",
+   "difference": "gives primal-dual online algorithms for a rent-or-buy problem; our rent-or-buy is whether to pay for a call that may be discarded.",
+   "anchor": "Parking Permit Problem",
+   "locator": "2607.08262v1",
+   "locator_kind": "arXiv",
+   "title": "Primal-Dual Online Algorithms for the Parking Permit Problem",
+   "year": null,
+   "authors": [
+    "Christian Coester",
+    "Alex Turoczy"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "kim2026",
+   "section": "S2.6",
+   "difference": "separates consistency from robustness under distributional advice; we report our confirmed and refuted priors in those same terms.",
+   "anchor": "Robust and Consistent Ski Rental with Distributional Advice",
+   "locator": "2603.29233v1",
+   "locator_kind": "arXiv",
+   "title": "Robust and Consistent Ski Rental with Distributional Advice",
+   "year": null,
+   "authors": [
+    "Jihwan Kim",
+    "Chenglin Fan"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "cui2026",
+   "section": "S2.6",
+   "difference": "handles predictions of unknown quality; our accuracy is known exactly because the simulator issues the predictions itself.",
+   "anchor": "Ski Rental with Distributional Predictions of Unknown Quality",
+   "locator": "2602.21104v1",
+   "locator_kind": "arXiv",
+   "title": "Ski Rental with Distributional Predictions of Unknown Quality",
+   "year": null,
+   "authors": [
+    "Qiming Cui",
+    "Michael Dinitz"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"ski rental\""
+   ]
+  },
+  {
+   "key": "canonne2025",
+   "section": "S2.6",
+   "difference": "exploits probability distributions as advice in online problems; our advice is a random draw whose distribution we control.",
+   "anchor": "With a Little Help From My Friends",
+   "locator": "2505.04949v2",
+   "locator_kind": "arXiv",
+   "title": "With a Little Help From My Friends: Exploiting Probability Distribution Advice in Algorithm Design",
+   "year": null,
+   "authors": [
+    "Clément L. Canonne",
+    "Kenny Chen",
+    "Julián Mestre"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"online algorithms with predictions\""
+   ]
+  },
+  {
+   "key": "onlinegraph2022",
+   "section": "S2.6",
+   "difference": "carries predictions into online graph problems; our stream is an agent's own calls, whose order we also generate.",
+   "anchor": "Online Graph Algorithms with Predictions",
+   "locator": "10.1137/1.9781611977073.3",
+   "locator_kind": "DOI",
+   "title": "Online Graph Algorithms with Predictions",
+   "year": 2022,
+   "authors": [
+    "Yossi Azar",
+    "Debmalya Panigrahi",
+    "Noam Touitou"
+   ],
+   "venue": "Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)",
+   "source": "crossref",
+   "seen_in": [
+    "online algorithms with predictions paging"
+   ]
+  },
+  {
+   "key": "smoothness2023",
+   "section": "S2.6",
+   "difference": "introduces discrete smoothness for prediction-augmented algorithms; we use a two-point tail pair rather than a smoothness parameter.",
+   "anchor": "Discrete-Smoothness in Online Algorithms with Predictions",
+   "locator": "10.52202/075280-1817",
+   "locator_kind": "DOI",
+   "title": "Discrete-Smoothness in Online Algorithms with Predictions",
+   "year": 2023,
+   "authors": [
+    "Yossi Azar",
+    "Debmalya Panigrahi",
+    "Noam Touitou"
+   ],
+   "venue": "Advances in Neural Information Processing Systems 36",
+   "source": "crossref",
+   "seen_in": [
+    "online algorithms with predictions paging"
+   ]
+  },
+  {
+   "key": "newmetric2026",
+   "section": "S2.6",
+   "difference": "proposes a new metric for ski rental; our metric is a boundary in measured contention with a confidence interval.",
+   "anchor": "A new performance metric for the ski rental problem",
+   "locator": "10.1016/j.orl.2025.107382",
+   "locator_kind": "DOI",
+   "title": "A new performance metric for the ski rental problem",
+   "year": 2026,
+   "authors": [
+    "Jonathan Chen",
+    "Jiawei Zhang"
+   ],
+   "venue": "Operations Research Letters",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "multishop2014",
+   "section": "S2.6",
+   "difference": "generalises rent-or-buy to several shops; our several-shop case is several workers sharing one pool.",
+   "anchor": "The multi-shop ski rental problem",
+   "locator": "10.1145/2591971.2591984",
+   "locator_kind": "DOI",
+   "title": "The multi-shop ski rental problem",
+   "year": 2014,
+   "authors": [
+    "Lingqing Ai",
+    "Xian Wu",
+    "Lingxiao Huang",
+    "Longbo Huang",
+    "Pingzhong Tang",
+    "Jian Li"
+   ],
+   "venue": "The 2014 ACM international conference on Measurement and modeling of computer systems",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented",
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "discount2022",
+   "section": "S2.6",
+   "difference": "adds a discount to the advised ski-rental problem; our counterpart is a compensation cost charged on each missed prediction.",
+   "anchor": "Machine Learning Advised Ski Rental Problem with a Discount",
+   "locator": "10.1007/978-3-030-96731-4_18",
+   "locator_kind": "DOI",
+   "title": "Machine Learning Advised Ski Rental Problem with a Discount",
+   "year": 2022,
+   "authors": [
+    "Arghya Bhattacharya",
+    "Rathish Das"
+   ],
+   "venue": "Lecture Notes in Computer Science",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "advised2022",
+   "section": "S2.6",
+   "difference": "advises the ski-rental decision with machine learning; we remove the learner and vary the load, isolating the contention channel.",
+   "anchor": "Machine learning advised algorithms for the ski rental problem",
+   "locator": "10.1016/j.tcs.2022.10.006",
+   "locator_kind": "DOI",
+   "title": "Machine learning advised algorithms for the ski rental problem with a discount",
+   "year": 2022,
+   "authors": [
+    "Arghya Bhattacharya",
+    "Rathish Das"
+   ],
+   "venue": "Theoretical Computer Science",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "combinatorial2025",
+   "section": "S2.6",
+   "difference": "extends ski rental to combinatorial decisions; our decision is one binary per step, priced by the pool.",
+   "anchor": "Combinatorial Ski Rental Problem",
+   "locator": "10.52202/085713-4014",
+   "locator_kind": "DOI",
+   "title": "Combinatorial Ski Rental Problem: Robust and Learning-Augmented Algorithms",
+   "year": 2025,
+   "authors": [
+    "Ziwei Li",
+    "Bo Sun",
+    "Zhiqiu Zhang",
+    "Mohammad Hajiesmaili",
+    "Binghan Wu",
+    "Lin Yang",
+    "Yang Gao"
+   ],
+   "venue": "Advances in Neural Information Processing Systems 38",
+   "source": "crossref",
+   "seen_in": [
+    "ski rental problem learning augmented"
+   ]
+  },
+  {
+   "key": "tailawarellm2026",
+   "section": "S2.6",
+   "difference": "schedules LLM inference using tail-aware prediction; we ask what that prediction buys when the pool, not the queue, is binding.",
+   "anchor": "Beyond Prediction: Tail-Aware Scheduling for LLM Inference",
+   "locator": "2606.18431v1",
+   "locator_kind": "arXiv",
+   "title": "Beyond Prediction: Tail-Aware Scheduling for LLM Inference",
+   "year": null,
+   "authors": [
+    "Yueying Li",
+    "Yuanfan Chen",
+    "Jiayang Chen",
+    "Esha Choukse",
+    "Haoran Qiu",
+    "G. Edward Suh",
+    "Rodrigo Fonseca",
+    "Ziv Scully",
+    "Udit Gupta"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"tail latency\""
+   ]
+  },
+  {
+   "key": "lengthpred2026",
+   "section": "S2.6",
+   "difference": "predicts output length with uncertainty for LLM scheduling; our instrument's predicted quantity is the call's duration, known exactly.",
+   "anchor": "Uncertainty-Aware Output Length Prediction",
+   "locator": "2604.00499v2",
+   "locator_kind": "arXiv",
+   "title": "Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions",
+   "year": null,
+   "authors": [
+    "Haoyu Zheng",
+    "Yongqiang Zhang",
+    "Fangcheng Fu",
+    "Xiaokai Zhou",
+    "Hao Luo",
+    "Hongchao Zhu",
+    "Yuanyuan Zhu",
+    "Hao Wang",
+    "Xiao Yan",
+    "Jiawei Jiang"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"heavy-tailed\" AND all:latency"
+   ]
+  },
+  {
+   "key": "cnncost2026",
+   "section": "S2.6",
+   "difference": "predicts inference cost from characterisation; cost prediction is the input our instrument assumes exact.",
+   "anchor": "Characterization-Guided Framework for CNN Inference Cost",
+   "locator": "2608.10506v1",
+   "locator_kind": "arXiv",
+   "title": "CARB: A Characterization-Guided Framework for CNN Inference Cost Prediction and Deployment Screening",
+   "year": null,
+   "authors": [
+    "Linh Nguyen",
+    "Zhixin Pan"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "calibrateroute2026",
+   "section": "S2.6",
+   "difference": "measures learned request routing after calibration; we show routing and early issue are different uses of the same prediction.",
+   "anchor": "Calibrate, Then Route",
+   "locator": "2609.16206v1",
+   "locator_kind": "arXiv",
+   "title": "Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving",
+   "year": null,
+   "authors": [
+    "Srikanta Datta Tumkur",
+    "Jay Iyer",
+    "Mehar Simhadri",
+    "Sai Pavan Kumar",
+    "Sai Kapil Kumar",
+    "Ramesh Nampelly"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"tail latency\""
+   ]
+  },
+  {
+   "key": "eeckhout2025",
+   "section": "S2.7",
+   "difference": "argues geomean speedup misstates parallel gains; our headline is a ratio against the serial schedule of the same work.",
+   "anchor": "Use Equal-Work or Equal-Time Speedup, Not Geomean Speedup",
+   "locator": "10.1109/ispass64960.2025.00033",
+   "locator_kind": "DOI",
+   "title": "Use Equal-Work or Equal-Time Speedup, Not Geomean Speedup",
+   "year": 2025,
+   "authors": [
+    "Lieven Eeckhout"
+   ],
+   "venue": "2025 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)",
+   "source": "crossref",
+   "seen_in": [
+    "performance evaluation methodology speedup"
+   ]
+  },
+  {
+   "key": "eeckhout2025b",
+   "section": "S2.7",
+   "difference": "shows geomean speedup is not a valid aggregate; we report per-cell intervals instead of an aggregate over cells.",
+   "anchor": "R.I.P. Geomean Speedup",
+   "locator": "10.1109/hpca61900.2025.00132",
+   "locator_kind": "DOI",
+   "title": "R.I.P. Geomean Speedup Use Equal-Work (Or Equal-Time) Harmonic Mean Speedup Instead",
+   "year": 2025,
+   "authors": [
+    "Lieven Eeckhout"
+   ],
+   "venue": "2025 IEEE International Symposium on High Performance Computer Architecture (HPCA)",
+   "source": "crossref",
+   "seen_in": [
+    "performance evaluation methodology speedup"
+   ]
+  },
+  {
+   "key": "amdahl2013",
+   "section": "S2.7",
+   "difference": "re-reads Amdahl's law for modern architectures; our serial baseline is exactly the reference it requires.",
+   "anchor": "Computer Architecture and Amdahl's Law",
+   "locator": "10.1109/mc.2013.418",
+   "locator_kind": "DOI",
+   "title": "Computer Architecture and Amdahl's Law",
+   "year": 2013,
+   "authors": [
+    "Gene M. Amdahl"
+   ],
+   "venue": "Computer",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "amdahl2021",
+   "section": "S2.7",
+   "difference": "extends Amdahl's law to learned performance models; we measure where the parallel fraction stops buying anything.",
+   "anchor": "On Extending Amdahl's law to Learn Computer Performance",
+   "locator": "2110.07822v2",
+   "locator_kind": "arXiv",
+   "title": "On Extending Amdahl's law to Learn Computer Performance",
+   "year": null,
+   "authors": [
+    "Chaitanya Poolla",
+    "Rahul Saxena"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"Amdahl\""
+   ]
+  },
+  {
+   "key": "amdahl2026",
+   "section": "S2.7",
+   "difference": "modernises Amdahl's law for AI scaling laws; our point is that part of a reported speculation gain was never serial work.",
+   "anchor": "Modernizing Amdahl's Law",
+   "locator": "2603.20654v4",
+   "locator_kind": "arXiv",
+   "title": "Modernizing Amdahl's Law: How AI Scaling Laws Shape Computer Architecture",
+   "year": null,
+   "authors": [
+    "Chien-Ping Lu"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"Amdahl\""
+   ]
+  },
+  {
+   "key": "amdahl2026b",
+   "section": "S2.7",
+   "difference": "seeks speedups beyond Amdahl's limit by removing non-scalable work; we quantify how much of a reported speedup was already available.",
+   "anchor": "Scaling LLM Inference Beyond Amdahl",
+   "locator": "2606.01927v1",
+   "locator_kind": "arXiv",
+   "title": "Scaling LLM Inference Beyond Amdahl`s Limits via Eliminating Non-Scalable Overheads",
+   "year": null,
+   "authors": [
+    "Alan Zhao",
+    "Cyril Y. He",
+    "Wei Xu"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"Amdahl\""
+   ]
+  },
+  {
+   "key": "amdahl2017",
+   "section": "S2.7",
+   "difference": "uses Amdahl's law to bound supercomputer applications; the same bound applies when the baseline is one agent's serial loop.",
+   "anchor": "How Amdahl's low restricts supercomputer applications",
+   "locator": "1708.01462v2",
+   "locator_kind": "arXiv",
+   "title": "How Amdahl's low restricts supercomputer applications and building ever bigger supercomputers",
+   "year": null,
+   "authors": [
+    "János Végh"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"Amdahl\""
+   ]
+  },
+  {
+   "key": "amdahl2017b",
+   "section": "S2.7",
+   "difference": "studies an environmental modifier of Amdahl's law; our modifier is contention rather than temperature, and it is measured.",
+   "anchor": "The Effect of Temperature on Amdahl Law",
+   "locator": "1705.07280v1",
+   "locator_kind": "arXiv",
+   "title": "The Effect of Temperature on Amdahl Law in 3D Multicore Era",
+   "year": null,
+   "authors": [
+    "Leonid Yavits",
+    "Amir Morad",
+    "Ran Ginosar"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"Amdahl\""
+   ]
+  },
+  {
+   "key": "amdahl2007",
+   "section": "S2.7",
+   "difference": "analyses speedup for a parallel test system; its baseline is a dedicated machine rather than an agent's serial schedule.",
+   "anchor": "Parallel test description and analysis",
+   "locator": "10.1109/autest.2007.4374292",
+   "locator_kind": "DOI",
+   "title": "Parallel test description and analysis of parallel test system speedup through Amdahl&amp;#x0027;s law",
+   "year": 2007,
+   "authors": [
+    "Nathan Waivio"
+   ],
+   "venue": "2007 IEEE Autotestcon",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "divisible2021",
+   "section": "S2.7",
+   "difference": "integrates fixed-size and scaled speedup views; our boundary is in contention, not in problem size.",
+   "anchor": "Integrating Amdahl-like Laws and Divisible Load Theory",
+   "locator": "10.1142/s0129626421500080",
+   "locator_kind": "DOI",
+   "title": "Integrating Amdahl-like Laws and Divisible Load Theory",
+   "year": 2021,
+   "authors": [
+    "Yang Cao",
+    "Fei Wu",
+    "Thomas Robertazzi"
+   ],
+   "venue": "Parallel Processing Letters",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "workload2017",
+   "section": "S2.7",
+   "difference": "characterises interactive cloud workloads on two machine sizes; our workload is generated so its properties are known by construction.",
+   "anchor": "Workload characterization of interactive cloud services",
+   "locator": "10.1109/iiswc.2017.8167770",
+   "locator_kind": "DOI",
+   "title": "Workload characterization of interactive cloud services on big and small server platforms",
+   "year": 2017,
+   "authors": [
+    "Shuang Chen",
+    "Shay GalOn",
+    "Christina Delimitrou",
+    "Srilatha Manne",
+    "Jose F. Martinez"
+   ],
+   "venue": "2017 IEEE International Symposium on Workload Characterization (IISWC)",
+   "source": "crossref",
+   "seen_in": [
+    "workload characterization server utilization"
+   ]
+  },
+  {
+   "key": "workload2015",
+   "section": "S2.7",
+   "difference": "characterises graph-processing locality on a real machine; we run no real workload, which is why our ground truth is by construction.",
+   "anchor": "Locality Exists in Graph Processing",
+   "locator": "10.1109/iiswc.2015.12",
+   "locator_kind": "DOI",
+   "title": "Locality Exists in Graph Processing: Workload Characterization on an Ivy Bridge Server",
+   "year": 2015,
+   "authors": [
+    "Scott Beamer",
+    "Krste Asanovic",
+    "David Patterson"
+   ],
+   "venue": "2015 IEEE International Symposium on Workload Characterization",
+   "source": "crossref",
+   "seen_in": [
+    "workload characterization server utilization"
+   ]
+  },
+  {
+   "key": "workload2024",
+   "section": "S2.7",
+   "difference": "characterises cloud workloads at scale to improve efficiency; our contention is an instrument coordinate, not a production measurement.",
+   "anchor": "Towards Cloud Efficiency with Large-scale Workload Characterization",
+   "locator": "2405.07250v1",
+   "locator_kind": "arXiv",
+   "title": "Towards Cloud Efficiency with Large-scale Workload Characterization",
+   "year": null,
+   "authors": [
+    "Anjaly Parayil",
+    "Jue Zhang",
+    "Xiaoting Qin",
+    "Íñigo Goiri",
+    "Lexiang Huang",
+    "Timothy Zhu",
+    "Chetan Bansal"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "servegen2025",
+   "section": "S2.7",
+   "difference": "characterises and generates LLM serving workloads; our workload is a synthetic agent loop whose parameters are all declared.",
+   "anchor": "ServeGen",
+   "locator": "2505.09999v3",
+   "locator_kind": "arXiv",
+   "title": "ServeGen: Workload Characterization and Generation of Large Language Model Serving in Production",
+   "year": null,
+   "authors": [
+    "Yuxing Xiang",
+    "Xue Li",
+    "Kun Qian",
+    "Wenyuan Yu",
+    "Ennan Zhai",
+    "Xin Jin"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "hydra2026",
+   "section": "S2.7",
+   "difference": "characterises LLM inference phases across devices; our two phases, think and tool, are separated so the speculation can be priced.",
+   "anchor": "Phase-Aware Workload Characterization of LLM Inference",
+   "locator": "2608.25053v1",
+   "locator_kind": "arXiv",
+   "title": "Hydra: Phase-Aware Workload Characterization of LLM Inference across Edge SoC Generations, Backends, and Quantization Levels",
+   "year": null,
+   "authors": [
+    "Amir Taherin",
+    "Sana Taghipour Anvari",
+    "Charles Amante",
+    "Yixiao Chen",
+    "Ruben Noroian",
+    "Zlatan Feric",
+    "Nicolas Bohm Agostini",
+    "Pu Zhao",
+    "José Cano",
+    "Bin Ren",
+    "Yanzhi Wang",
+    "David Kaeli"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "stats2026",
+   "section": "S2.7",
+   "difference": "gives a practical playbook for statistical evaluation; we follow it with per-seed intervals and a declared pairing rule.",
+   "anchor": "How to Do Statistical Evaluations in ECE/CS Papers",
+   "locator": "2605.00428v1",
+   "locator_kind": "arXiv",
+   "title": "How to Do Statistical Evaluations in ECE/CS Papers: A Practical Playbook for Defensible Results",
+   "year": null,
+   "authors": [
+    "Bhaskar Krishnamachari"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"heavy-tailed\" AND all:latency"
+   ]
+  },
+  {
+   "key": "roofline2026",
+   "section": "S2.7",
+   "difference": "automates roofline benchmarking; our instrument reports its own resolution rather than a peak.",
+   "anchor": "Cache-Aware Roofline Model Automatic Benchmarking",
+   "locator": "2605.29740v1",
+   "locator_kind": "arXiv",
+   "title": "CARM Tool: Cache-Aware Roofline Model Automatic Benchmarking and Application Analysis",
+   "year": null,
+   "authors": [
+    "José Morgado",
+    "Leonel Sousa",
+    "Aleksandar Ilic"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "vectorproc2023",
+   "section": "S2.7",
+   "difference": "benchmarks vector processing on mobile devices; our claim is about a mechanism's boundary rather than one platform's throughput.",
+   "anchor": "Vector-Processing for Mobile Devices: Benchmark and Analysis",
+   "locator": "2309.02680v1",
+   "locator_kind": "arXiv",
+   "title": "Vector-Processing for Mobile Devices: Benchmark and Analysis",
+   "year": null,
+   "authors": [
+    "Alireza Khadem",
+    "Daichi Fujiki",
+    "Nishil Talati",
+    "Scott Mahlke",
+    "Reetuparna Das"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"workload characterization\""
+   ]
+  },
+  {
+   "key": "speedupdist2024",
+   "section": "S2.7",
+   "difference": "predicts parallel speedup from sequential runtime distributions; we predict a crossover from a measured contention coordinate.",
+   "anchor": "Sequential Runtime Distributions for the Parallel Speedup Prediction",
+   "locator": "2403.08790v1",
+   "locator_kind": "arXiv",
+   "title": "Using Sequential Runtime Distributions for the Parallel Speedup Prediction of SAT Local Search",
+   "year": null,
+   "authors": [
+    "Alejandro Arbelaez",
+    "Charlotte Truchet",
+    "Philippe Codognet"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"parallel speedup\""
+   ]
+  },
+  {
+   "key": "exp2024",
+   "section": "S2.7",
+   "difference": "reports exponential parallel speedup for a projection method; it is the kind of isolated speedup claim our serial baseline re-prices.",
+   "anchor": "Multi-level projection with exponential parallel speedup",
+   "locator": "2405.02086v2",
+   "locator_kind": "arXiv",
+   "title": "Multi-level projection with exponential parallel speedup; Application to sparse auto-encoders neural networks",
+   "year": null,
+   "authors": [
+    "Guillaume Perez",
+    "Michel Barlaud"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"parallel speedup\""
+   ]
+  },
+  {
+   "key": "superlinear1987",
+   "section": "S2.7",
+   "difference": "explains when speedups exceed the processor count; we show a series of speedups all bought by the same parallelism.",
+   "anchor": "A note on superlinear speedup",
+   "locator": "10.1016/0167-8191(87)90053-6",
+   "locator_kind": "DOI",
+   "title": "A note on superlinear speedup",
+   "year": 1987,
+   "authors": [
+    "R Janßen"
+   ],
+   "venue": "Parallel Computing",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "model1997",
+   "section": "S2.7",
+   "difference": "models parallel speedup from program structure; our structure is a think phase and a call phase sharing a pool.",
+   "anchor": "A Model for Speedup of Parallel Programs",
+   "locator": "10.21236/ada637068",
+   "locator_kind": "DOI",
+   "title": "A Model for Speedup of Parallel Programs",
+   "year": 1997,
+   "authors": [
+    "Allen B. Downey"
+   ],
+   "venue": "",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "linearspeedup2005",
+   "section": "S2.7",
+   "difference": "schedules parallel jobs that speed up linearly; our jobs are single-threaded and the linear part comes from issuing them early.",
+   "anchor": "Scheduling parallel jobs with linear speedup",
+   "locator": "10.26481/umamet.2005015",
+   "locator_kind": "DOI",
+   "title": "Scheduling parallel jobs with linear speedup",
+   "year": 2005,
+   "authors": [
+    "Grigoriev A.",
+    "Uetz M.J."
+   ],
+   "venue": "",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "fixedsize2011",
+   "section": "S2.7",
+   "difference": "defines fixed-size speedup as a metric; our ratio is taken at fixed work, which is that definition.",
+   "anchor": "Fixed-Size Speedup",
+   "locator": "10.1007/978-0-387-09766-4_2184",
+   "locator_kind": "DOI",
+   "title": "Fixed-Size Speedup",
+   "year": 2011,
+   "authors": [],
+   "venue": "Encyclopedia of Parallel Computing",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "unconv2019",
+   "section": "S2.7",
+   "difference": "explains superlinear speedup by search-space effects; our speedups come from overlapping waits, which is a different source.",
+   "anchor": "Unconventional Wisdom: Superlinear Speedup",
+   "locator": "10.1201/9781315167084-16",
+   "locator_kind": "DOI",
+   "title": "Unconventional Wisdom: Superlinear Speedup and Inherently Parallel Computations",
+   "year": 2019,
+   "authors": [
+    "Selim G. Akl"
+   ],
+   "venue": "From Parallel to Emergent Computing",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "anotherview1990",
+   "section": "S2.7",
+   "difference": "re-examines how parallel speedup should be measured; we adopt a paired per-seed ratio over the serial schedule.",
+   "anchor": "Another view on parallel speedup",
+   "locator": "10.1109/superc.1990.130037",
+   "locator_kind": "DOI",
+   "title": "Another view on parallel speedup",
+   "year": null,
+   "authors": [
+    "X.-H. Sun",
+    "L.M. Ni"
+   ],
+   "venue": "Proceedings SUPERCOMPUTING '90",
+   "source": "crossref",
+   "seen_in": [
+    "Amdahl law parallel speedup"
+   ]
+  },
+  {
+   "key": "dlt2025",
+   "section": "S2.7",
+   "difference": "builds a performance-evaluation framework for virtual-core speedup; we use a deterministic simulator with ground truth by construction.",
+   "anchor": "DLT-Aware Performance Evaluation Framework for Virtual-Core Speedup",
+   "locator": "10.3390/fi17110519",
+   "locator_kind": "DOI",
+   "title": "A DLT-Aware Performance Evaluation Framework for Virtual-Core Speedup Modeling",
+   "year": 2025,
+   "authors": [
+    "Zile Xiang",
+    "Thomas G. Robertazzi"
+   ],
+   "venue": "Future Internet",
+   "source": "crossref",
+   "seen_in": [
+    "performance evaluation methodology speedup"
+   ]
+  },
+  {
+   "key": "util2024",
+   "section": "S2.7",
+   "difference": "distributes workload for sustainable server utilisation; our utilisation is derived from busy time and makespan, not assumed.",
+   "anchor": "Efficient Workload Distribution for Sustainable Server Utilization",
+   "locator": "10.1109/iscs61804.2024.10581223",
+   "locator_kind": "DOI",
+   "title": "Efficient Workload Distribution for Sustainable Server Utilization in Cloud Data Centers",
+   "year": 2024,
+   "authors": [
+    "Monika Yadav",
+    "Atul Mishra"
+   ],
+   "venue": "2024 International Conference on Intelligent Systems for Cybersecurity (ISCS)",
+   "source": "crossref",
+   "seen_in": [
+    "workload characterization server utilization"
+   ]
+  },
+  {
+   "key": "forkjoin2026",
+   "section": "S2.7",
+   "difference": "parallelises a tiled decomposition from fork-join to asynchronous tasks; our structure is one agent with an early-issued call.",
+   "anchor": "From Fork-Join to Asynchronous Tasks",
+   "locator": "2606.11937v1",
+   "locator_kind": "arXiv",
+   "title": "From Fork-Join to Asynchronous Tasks: Parallelizing Tiled Cholesky Decomposition with OpenMP and HPX",
+   "year": null,
+   "authors": [
+    "Alexander Strack",
+    "Alexander Van Craen",
+    "Dirk Pflüger"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"fork-join\""
+   ]
+  },
+  {
+   "key": "moldable2023",
+   "section": "S2.7",
+   "difference": "schedules moldable task graphs online under a speedup function; our width is fixed per run and the schedule is what varies.",
+   "anchor": "Improved Online Scheduling of Moldable Task Graphs",
+   "locator": "2304.14127v1",
+   "locator_kind": "arXiv",
+   "title": "Improved Online Scheduling of Moldable Task Graphs under Common Speedup Models",
+   "year": null,
+   "authors": [
+    "Lucas Perotin",
+    "Hongyang Sun"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"Amdahl\""
+   ]
+  },
+  {
+   "key": "variance2023",
+   "section": "S2.7",
+   "difference": "reports parallel speedup for a variance-reduced optimiser; its parallelism is a numerical property, ours is an issue policy.",
+   "anchor": "Blockwise Stochastic Variance-Reduced Methods with Parallel Speedup",
+   "locator": "2305.18730v2",
+   "locator_kind": "arXiv",
+   "title": "Blockwise Stochastic Variance-Reduced Methods with Parallel Speedup for Multi-Block Bilevel Optimization",
+   "year": null,
+   "authors": [
+    "Quanqi Hu",
+    "Zi-Hao Qiu",
+    "Zhishuai Guo",
+    "Lijun Zhang",
+    "Tianbao Yang"
+   ],
+   "venue": "",
+   "source": "arxiv",
+   "seen_in": [
+    "all:\"parallel speedup\""
+   ]
+  },
+  {
+   "key": "latencyhiding1993",
+   "section": "S2.1",
+   "difference": "measures latency hiding empirically on a fine-grain processor; we measure it in an agent loop where the hidden unit is a tool call.",
+   "anchor": "Empirical study of latency hiding on a fine-grain parallel processor",
+   "locator": "10.1145/165939.165972",
+   "locator_kind": "DOI",
+   "title": "Empirical study of latency hiding on a fine-grain parallel processor",
+   "year": 1993,
+   "authors": [
+    "Kei Hiraki",
+    "Toshio Shimada",
+    "Satoshi Sekiguchi"
+   ],
+   "venue": "Proceedings of the 7th international conference on Supercomputing",
+   "source": "crossref",
+   "seen_in": [
+    "latency hiding parallel execution"
+   ]
+  },
+  {
+   "key": "optimistic2002",
+   "section": "S2.1",
+   "difference": "hides latency by computing optimistically and rolling back; our rollback has a cost on a shared pool and we vary it.",
+   "anchor": "Latency Hiding with Optimistic Computations",
+   "locator": "10.1006/jpdc.2001.1801",
+   "locator_kind": "DOI",
+   "title": "Latency Hiding with Optimistic Computations",
+   "year": 2002,
+   "authors": [
+    "Maria Hybinette",
+    "Richard M Fujimoto"
+   ],
+   "venue": "Journal of Parallel and Distributed Computing",
+   "source": "crossref",
+   "seen_in": [
+    "latency hiding parallel execution"
+   ]
+  },
+  {
+   "key": "memdep2005",
+   "section": "S2.1",
+   "difference": "predicts memory dependences to expose parallelism; our prediction is of which call comes next, and its accuracy is an oracle.",
+   "anchor": "Exploiting Load/Store Parallelism via Memory Dependence Prediction",
+   "locator": "10.1201/9781420035155-21",
+   "locator_kind": "DOI",
+   "title": "Exploiting Load/Store Parallelism via Memory Dependence Prediction Andreas Moshovos University of Toronto",
+   "year": 2005,
+   "authors": [],
+   "venue": "Speculative Execution in High Performance Computer Architectures",
+   "source": "crossref",
+   "seen_in": [
+    "speculative execution performance"
+   ]
+  }
+ ],
+ "renamed_at_r379": {
+  "auclair2020": {
+   "was": "auclair2020",
+   "now": "specbook2005",
+   "why": "the record is the 2005 book and carries no author field; the key named neither"
+  },
+  "chydzinski2024c": {
+   "was": "chydzinski2024c",
+   "now": "zhou2021layered",
+   "why": "the record's author is Siyu Zhou and its year 2021 (declared); the key named neither"
+  },
+  "karlin1990": {
+   "was": "karlin1990",
+   "now": "irani1998paging",
+   "why": "the record's author is Sandy Irani and its year 1998; the key named neither"
+  },
+  "kim2024svc": {
+   "was": "kim2024svc",
+   "now": "idempotency2025",
+   "why": "the record carries no author field and its year is 2025"
+  },
+  "lai2024": {
+   "was": "lai2024",
+   "now": "desai2026",
+   "why": "the record's author is Jay Bankimchandra Desai and its year 2026"
+  },
+  "lykouris2021": {
+   "was": "lykouris2021",
+   "now": "antoniadis2023metric",
+   "why": "the record's authors are Antoniadis et al. and its year 2023 - the key named the PREPRINT year of a work by other authors"
+  },
+  "specagents2025": {
+   "was": "specagents2025",
+   "now": "specagents2026",
+   "why": "arXiv 2605.13360 is a 2026 submission; the key said 2025"
+  },
+  "spechop2025": {
+   "was": "spechop2025",
+   "now": "spechop2026",
+   "why": "arXiv 2605.21965 is a 2026 submission; the key said 2025"
+  }
+ }
+}

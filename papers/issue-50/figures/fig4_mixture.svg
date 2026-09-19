@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="486" viewBox="0 0 760 486" font-family="Helvetica,Arial,sans-serif">
+<rect width="760" height="486" fill="#ffffff"/>
+<text x="16" y="24" font-size="14.5" font-weight="bold" fill="#1a1a1a">At the boundary the mean hides a mixture: about half the steps lose</text>
+<text x="16" y="41" font-size="10.5" fill="#555555">artefacts/sideeffect_v1.json - the swept cells that straddle each family's crossing (q = 0); bar = share of steps with negative benefit, rule = the artefact's interval</text>
+<line x1="78" y1="403.0" x2="584" y2="403.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="406.4" font-size="9.5" fill="#555555" text-anchor="end">0</text>
+<line x1="78" y1="315.2" x2="584" y2="315.2" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="318.6" font-size="9.5" fill="#555555" text-anchor="end">0.250</text>
+<line x1="78" y1="227.5" x2="584" y2="227.5" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="230.9" font-size="9.5" fill="#555555" text-anchor="end">0.500</text>
+<line x1="78" y1="139.7" x2="584" y2="139.7" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="143.1" font-size="9.5" fill="#555555" text-anchor="end">0.750</text>
+<line x1="78" y1="52.0" x2="584" y2="52.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="55.4" font-size="9.5" fill="#555555" text-anchor="end">1.00</text>
+<line x1="107.8" y1="52" x2="107.8" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="107.8" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="167.3" y1="52" x2="167.3" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="167.3" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="226.8" y1="52" x2="226.8" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="226.8" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="286.4" y1="52" x2="286.4" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="286.4" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="345.9" y1="52" x2="345.9" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="345.9" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="405.4" y1="52" x2="405.4" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="405.4" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="464.9" y1="52" x2="464.9" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="464.9" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="524.5" y1="52" x2="524.5" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="524.5" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<rect x="78" y="52" width="506" height="358" fill="none" stroke="#1a1a1a"/>
+<text x="331" y="444" font-size="11" fill="#1a1a1a" text-anchor="middle">cell (pool size / workers), each read at its family's crossing</text>
+<text x="15" y="231" font-size="11" fill="#1a1a1a" text-anchor="middle" transform="rotate(-90 15 231)">share of steps with negative benefit</text>
+<rect x="95.76" y="234.06" width="24" height="168.92" fill="#1f4e79" opacity="0.85"/>
+<line x1="107.76" y1="235.24" x2="107.76" y2="232.88" stroke="#c0392b" stroke-width="1.7"/>
+<text x="107.76" y="227.06" font-size="9" fill="#1a1a1a" text-anchor="middle">48.1%</text>
+<text x="107.76" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A16/w4</text>
+<text x="107.76" y="246.06" font-size="8.5" fill="#e8eef5" text-anchor="middle">46820 of 97280</text>
+<rect x="155.29" y="220.05" width="24" height="182.93" fill="#1f4e79" opacity="0.85"/>
+<line x1="167.29" y1="221.09" x2="167.29" y2="219.00" stroke="#c0392b" stroke-width="1.7"/>
+<text x="167.29" y="213.05" font-size="9" fill="#1a1a1a" text-anchor="middle">52.1%</text>
+<text x="167.29" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A16/w3</text>
+<text x="167.29" y="232.05" font-size="8.5" fill="#e8eef5" text-anchor="middle">50703 of 97280</text>
+<rect x="214.82" y="220.20" width="24" height="182.78" fill="#1f4e79" opacity="0.85"/>
+<line x1="226.82" y1="220.66" x2="226.82" y2="219.73" stroke="#c0392b" stroke-width="1.7"/>
+<text x="226.82" y="213.20" font-size="9" fill="#1a1a1a" text-anchor="middle">52.1%</text>
+<text x="226.82" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A64/w17</text>
+<text x="226.82" y="232.20" font-size="8.5" fill="#e8eef5" text-anchor="middle">202645 of 389120</text>
+<rect x="274.35" y="215.66" width="24" height="187.33" fill="#1f4e79" opacity="0.85"/>
+<line x1="286.35" y1="216.15" x2="286.35" y2="215.16" stroke="#c0392b" stroke-width="1.7"/>
+<text x="286.35" y="208.66" font-size="9" fill="#1a1a1a" text-anchor="middle">53.4%</text>
+<text x="286.35" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A64/w16</text>
+<text x="286.35" y="227.66" font-size="8.5" fill="#e8eef5" text-anchor="middle">207681 of 389120</text>
+<rect x="333.88" y="279.95" width="24" height="123.03" fill="#1f4e79" opacity="0.85"/>
+<line x1="345.88" y1="283.22" x2="345.88" y2="276.68" stroke="#c0392b" stroke-width="1.7"/>
+<text x="345.88" y="272.95" font-size="9" fill="#1a1a1a" text-anchor="middle">35.1%</text>
+<text x="345.88" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A16/w6</text>
+<text x="345.88" y="291.95" font-size="8.5" fill="#e8eef5" text-anchor="middle">34099 of 97280</text>
+<rect x="393.41" y="234.02" width="24" height="168.96" fill="#1f4e79" opacity="0.85"/>
+<line x1="405.41" y1="236.67" x2="405.41" y2="231.37" stroke="#c0392b" stroke-width="1.7"/>
+<text x="405.41" y="227.02" font-size="9" fill="#1a1a1a" text-anchor="middle">48.1%</text>
+<text x="405.41" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A16/w5</text>
+<text x="405.41" y="246.02" font-size="8.5" fill="#e8eef5" text-anchor="middle">46830 of 97280</text>
+<rect x="452.94" y="242.77" width="24" height="160.21" fill="#1f4e79" opacity="0.85"/>
+<line x1="464.94" y1="244.08" x2="464.94" y2="241.47" stroke="#c0392b" stroke-width="1.7"/>
+<text x="464.94" y="235.77" font-size="9" fill="#1a1a1a" text-anchor="middle">45.6%</text>
+<text x="464.94" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A64/w23</text>
+<text x="464.94" y="254.77" font-size="8.5" fill="#e8eef5" text-anchor="middle">177615 of 389120</text>
+<rect x="512.47" y="228.48" width="24" height="174.50" fill="#1f4e79" opacity="0.85"/>
+<line x1="524.47" y1="229.72" x2="524.47" y2="227.23" stroke="#c0392b" stroke-width="1.7"/>
+<text x="524.47" y="221.48" font-size="9" fill="#1a1a1a" text-anchor="middle">49.7%</text>
+<text x="524.47" y="426" font-size="9" fill="#1a1a1a" text-anchor="middle">A64/w22</text>
+<text x="524.47" y="240.48" font-size="8.5" fill="#e8eef5" text-anchor="middle">193467 of 389120</text>
+<text x="16" y="462.0" font-size="10.0" fill="#1a1a1a">the same cells' mean benefit is positive (section 4.6): the average and the per-step</text>
+<text x="16" y="476.0" font-size="10.0" fill="#1a1a1a">sign are two readings of the same steps, and the interval rules overlap at the top</text>
+</svg>

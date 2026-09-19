@@ -1,0 +1,58 @@
+{
+ "what": "declared years for issue #50 rows whose locator's record carries no publication date",
+ "rule": "a row may print a year from a DECLARATION only where the record carries none; every source named here is re-read from the live record at build time, and a row with neither a record year nor a declaration refuses to build",
+ "rows": {
+  "steffan2000": {
+   "year": 2000,
+   "sources": [
+    {
+     "field": "event.acronym",
+     "value": "ISCA-00"
+    },
+    {
+     "field": "locator",
+     "value": "10.1109/isca.2000.854372"
+    }
+   ],
+   "note": "issued is [[null]] and no published-* field is present; the event the record names carries the year in its acronym"
+  },
+  "marcuello2000": {
+   "year": 2000,
+   "sources": [
+    {
+     "field": "event.acronym",
+     "value": "IPDPS-00"
+    },
+    {
+     "field": "container-title.0",
+     "value": "Proceedings 14th International Parallel and Distributed Processing Symposium. IPDPS 2000"
+    }
+   ],
+   "note": "issued is [[null]] and no published-* field is present; the container title and the event acronym both name the year"
+  },
+  "anotherview1990": {
+   "year": 1990,
+   "sources": [
+    {
+     "field": "event.name",
+     "value": "SUPERCOMPUTING '90"
+    },
+    {
+     "field": "locator",
+     "value": "10.1109/superc.1990.130037"
+    }
+   ],
+   "note": "issued is [[null]] and no published-* field is present; the event name and the locator both carry the year"
+  },
+  "zhou2021layered": {
+   "year": 2021,
+   "sources": [
+    {
+     "field": "locator",
+     "value": "10.22215/etd/2021-14846"
+    }
+   ],
+   "note": "a dissertation: the record carries no publication date, no container and no event, so the locator's own year segment is the only reading - ONE SOURCE, and it is stated rather than multiplied"
+  }
+ }
+}

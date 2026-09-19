@@ -1,0 +1,162 @@
+{
+ "anchors": {
+  "A1/M-M-1-mean-sojourn": {
+   "detail": [
+    {
+     "ci": [
+      1.4115250968220177,
+      1.442154942682131
+     ],
+     "closed_form": 1.4285714285714286,
+     "closed_form_in_ci": true,
+     "measured": 1.4268400197520743,
+     "rel_error": 0.0012119861735480075,
+     "resolution": 0.010733454849912151,
+     "rho": 0.3,
+     "within_resolution": true
+    },
+    {
+     "ci": [
+      1.9674177551857113,
+      2.0387616140479214
+     ],
+     "closed_form": 2.0,
+     "closed_form_in_ci": true,
+     "measured": 2.0030896846168162,
+     "rel_error": 0.001544842308408123,
+     "resolution": 0.017808453463195283,
+     "rho": 0.5,
+     "within_resolution": true
+    },
+    {
+     "ci": [
+      3.2249098997892056,
+      3.50212332803263
+     ],
+     "closed_form": 3.333333333333333,
+     "closed_form_in_ci": true,
+     "measured": 3.363516613910918,
+     "rel_error": 0.009054984173275438,
+     "resolution": 0.04120886858368977,
+     "rho": 0.7,
+     "within_resolution": true
+    },
+    {
+     "ci": [
+      9.019241043785387,
+      12.562625748151161
+     ],
+     "closed_form": 10.000000000000002,
+     "closed_form_in_ci": true,
+     "measured": 10.790933395968274,
+     "rel_error": 0.07909333959682721,
+     "resolution": 0.16418342020763743,
+     "rho": 0.9,
+     "within_resolution": true
+    }
+   ],
+   "ok": true
+  },
+  "A2/no-speculation-is-the-serial-schedule": {
+   "detail": {
+    "h0_mean": 2.9784933106071945,
+    "identical_trace": true,
+    "policy_switched": false,
+    "rule": "h = 0 must schedule nothing the serial run does not schedule",
+    "serial_mean": 2.9784933106071945
+   },
+   "ok": true
+  },
+  "A3/zero-contention-hiding-limit": {
+   "detail": {
+    "benefit": 0.7198970390921358,
+    "hiding_limit": 0.6666666666666666,
+    "n": 380,
+    "rel_error": 0.0798455586382037,
+    "rho": 0.4431987489019957,
+    "serial": 3.104298752470418,
+    "spec": 2.384401713378282
+   },
+   "ok": true
+  },
+  "A4/benefit-falls-across-the-saturated-half": {
+   "detail": {
+    "low_contention_rises_at": [
+     0.20476970969495487
+    ],
+    "n_saturated": 2,
+    "refuted_as_first_stated": true,
+    "rows": [
+     {
+      "agents": 4,
+      "benefit_pct": 21.913277742901702,
+      "c": 8,
+      "rho": 0.20476970969495487
+     },
+     {
+      "agents": 8,
+      "benefit_pct": 22.015414020142494,
+      "c": 8,
+      "rho": 0.4039543513340416
+     },
+     {
+      "agents": 16,
+      "benefit_pct": 21.06005264613702,
+      "c": 8,
+      "rho": 0.781301867782561
+     },
+     {
+      "agents": 20,
+      "benefit_pct": 16.77374218307126,
+      "c": 8,
+      "rho": 0.9202129953196644
+     }
+    ],
+    "saturated_half_falls": true,
+    "saturated_rho": 0.6
+   },
+   "ok": true
+  }
+ },
+ "config": {
+  "a1_levels": [
+   0.3,
+   0.5,
+   0.7,
+   0.9
+  ],
+  "a1_n": 60000,
+  "a1_tol": 0.05,
+  "a3_tol": 0.15,
+  "a4_cells": [
+   [
+    8,
+    4
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    8,
+    16
+   ],
+   [
+    8,
+    20
+   ]
+  ],
+  "a4_slack": 1e-09,
+  "agents": 4,
+  "c": 4,
+  "comp": 0.0,
+  "h": 1.0,
+  "mS": 1.0,
+  "mT": 2.0,
+  "q": 0.0,
+  "saturated_rho": 0.6,
+  "seed": 11,
+  "steps": 400,
+  "tail": "light"
+ }
+}

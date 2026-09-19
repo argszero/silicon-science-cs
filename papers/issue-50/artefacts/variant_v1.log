@@ -1,0 +1,38 @@
+building arms ...
+== step 9: the matched-parallelism control (registered P3) | 16 seeds 101..116 | mT=2.0 mS=1.0 steps=400 ==
+   width h = the fraction of steps issued early (the capacity, IDENTICAL in both arms);
+   choice  = which h-fraction: blind draw vs a selector ranking steps by min(T,S).
+
+     h      c    k/agent  rho         G blind     G selected  F = (Gsel-Gb)/Gsel   flags    
+     0.25   2    100      0.6096      +5.252%     +11.781%    0.5542 [+0.5358..+0.5726] =        
+     0.25   4    100      0.3201      +5.525%     +13.237%    0.5826 [+0.5736..+0.5916] =        
+     0.25   8    100      0.1600      +5.525%     +13.237%    0.5826 [+0.5736..+0.5916] =        
+     0.25   16   100      0.0800      +5.525%     +13.237%    0.5826 [+0.5736..+0.5916] =        
+     0.50   2    200      0.6096      +10.500%    +17.141%    0.3872 [+0.3742..+0.4001] =        
+     0.50   4    200      0.3201      +11.009%    +18.878%    0.4169 [+0.4084..+0.4254] =        
+     0.50   8    200      0.1600      +11.009%    +18.878%    0.4169 [+0.4084..+0.4254] =        
+     0.50   16   200      0.0800      +11.009%    +18.878%    0.4169 [+0.4084..+0.4254] =        
+     0.75   2    300      0.6096      +15.756%    +19.837%    0.2055 [+0.1911..+0.2198] =        
+     0.75   4    300      0.3201      +16.651%    +21.536%    0.2268 [+0.2197..+0.2339] =        
+     0.75   8    300      0.1600      +16.651%    +21.536%    0.2268 [+0.2197..+0.2339] =        
+     0.75   16   300      0.0800      +16.651%    +21.536%    0.2268 [+0.2197..+0.2339] =        
+
+   P3a (registered: F < 0.7 over every cell): CONFIRMED (every one of the 12 cells strictly below 0.7)
+   P3b (registered: F decreasing in rho):    CONFIRMED (no increase, 3 decreases, over 3 informative pair(s); 6 pair(s) are coordinate-only and carry no load difference)
+     h=0.25  rho 0.0800 -> 0.1600 : n=16 mean +0.00000  COORDINATE-ONLY (the two cells are the same run: identical per-seed latencies, so this pair carries no load difference)
+     h=0.25  rho 0.1600 -> 0.3201 : n=16 mean +0.00000  COORDINATE-ONLY (the two cells are the same run: identical per-seed latencies, so this pair carries no load difference)
+     h=0.25  rho 0.3201 -> 0.6096 : n=16 mean -0.02841  DECREASE
+     h=0.50  rho 0.0800 -> 0.1600 : n=16 mean +0.00000  COORDINATE-ONLY (the two cells are the same run: identical per-seed latencies, so this pair carries no load difference)
+     h=0.50  rho 0.1600 -> 0.3201 : n=16 mean +0.00000  COORDINATE-ONLY (the two cells are the same run: identical per-seed latencies, so this pair carries no load difference)
+     h=0.50  rho 0.3201 -> 0.6096 : n=16 mean -0.02975  DECREASE
+     h=0.75  rho 0.0800 -> 0.1600 : n=16 mean +0.00000  COORDINATE-ONLY (the two cells are the same run: identical per-seed latencies, so this pair carries no load difference)
+     h=0.75  rho 0.1600 -> 0.3201 : n=16 mean +0.00000  COORDINATE-ONLY (the two cells are the same run: identical per-seed latencies, so this pair carries no load difference)
+     h=0.75  rho 0.3201 -> 0.6096 : n=16 mean -0.02136  DECREASE
+     (3 informative pair(s), 6 coordinate-only)
+
+   checks: a_pool_beyond_the_agent_count_is_a_coordinate=OK | the_blind_mask_is_not_the_top_k=OK | the_per_step_effect_equals_min_T_S=OK | the_scheduler_reproduces_v0_bitwise=OK | the_selected_mask_is_the_top_k=OK | the_selector_ranks_the_steps=OK | the_two_arms_flag_the_same_capacity=OK
+   V1 per-step effect vs min(T,S): worst |d - min| 2.24e-13 | selector's ranking agreement 1.000
+   V2 reproduction of the v0 instrument: worst per-step |delta| 0.00e+00 over 4800 steps
+   V3 capacity: k = 100 flags per agent, identical in both arms on every seed
+   V4 selector: selected mask equals the top-k on 1.000 of positions, blind on 0.493
+   V5 pool vs agent count: READ -- at or above 4 worker(s) the cells with the same h are one run, and each differs from the contended one: True
