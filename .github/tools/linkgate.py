@@ -12,7 +12,8 @@ Two things the tool does not decide, and says so:
 * the rule's **second and third forms** - a `see X` pointer and a numbered
   reference - resolve only inside the namespace of a list the citing sentence
   or its carrier names.  Which list is meant is a read, not a computation, so
-  those forms stay a read (op(4); README.md -> Links).
+  those forms stay a read (README.md -> Links; the census that collects them
+  is the editor's own, carried in the record outside this repository).
 * a target resolves at the **linking file's own directory** - the renderer's
   base - never at the repository root.  Resolving from the root manufactures
   false BROKENs (`papers/README.md` -> `issue-42/manuscript.md`): the defect

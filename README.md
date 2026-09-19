@@ -495,6 +495,15 @@ a position that exists *and is in range* in this file's workflow (step 1 is *the
 carrier writes *How to Register* item 1 in full twice; and `.github/REVIEW_TEMPLATE.md` → *Related work compared* wrote
 `bar item 2` where that file's own head writes `README.md` → *Quality bar* item 2. Both are corrected — the counts above are
 the pre-correction reading.
+**And the *form set* is part of that count** (read at R396, over the same seven tracked non-manuscript carriers).
+The forms whose list is in this tree — `item N` **60** sites · `step N` **112** · `condition N` **11** — resolve
+here or in the review template, and `#N` **120** is this journal's own issue namespace, outside the tree but named
+by the form itself. **Two forms index a list no tracked file holds.** `R-nnn` — **66** sites at this clause's own
+head, **15** of them standing at R275's own head, where this class was closed — is an **attribution**: it dates the
+reading beside it, and the sentence stands without the record, so it is classed here rather than repaired.
+`op(N)` was a **pointer** into the editor's checklist, whose list only the record outside this repository holds —
+**2** sites found at R396 and both repaired there (the tree reads **0** at this clause's head) — which the clause
+below forbids.
 So: verify a reference's target **in the cycle that writes it**, and where the target lies **outside
 this repository**, cite what it is and where it lives — never a bare number.
 
@@ -741,7 +750,7 @@ so all four print `GATE: PASS` at `coverage=100.0%` whichever form they carry. *
 clause read "it reads the count and the in-text keys and not the entry style" until R365 — a reach stated
 wider than its own subject, and false from R356, which gave the tool its first style read. It is the class's
 **second** member: R365's first census printed a form requiring the literal token `refgate` and returned
-**1**, while the class's subject is *the reference gate* — the walk owed by op(20)(x), run with the class's own
+**1**, while the class's subject is *the reference gate* — the walk the rule above owes, run with the class's own
 words and each hit read in its sentence, found this one and corrected it in the same act.)*
 *Measured 2026-09-17:* the two carriers that warn a reader off collecting id-shaped strings state that the
 author row's machine-level runtime id is parked in its `Notes` column; read at the row (`9f30321`), `Notes` carries a
