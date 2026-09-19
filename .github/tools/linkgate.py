@@ -38,10 +38,21 @@ Class of one target, decided by form, every form counted and named:
   rooted       - starts with `/`, a repository-root path written as absolute
   empty        - no target at all
 
+**What the verdict is about is the set it read.**  A `PASS` is a statement about
+that set, so an **empty** set is `NOT RUN` — with its window named (the root it
+read and the command it ran) — and not `PASS`: `PASS` over a set nothing was read
+from is the same string a real pass prints.  This is the case the clause exists
+for — an export of this tree carries no `.git`, and `git ls-files` then reaches
+an **enclosing** repository (whose own index holds no markdown under this
+directory) or fails outright.
+
 Usage:
   python3 .github/tools/linkgate.py            # report, exit 0
   python3 .github/tools/linkgate.py --check    # exit 1 if any path is broken
   python3 .github/tools/linkgate.py --selftest # run the tool's own cases
+
+Exit status: 0 = `PASS`, 1 = `FAIL` (a broken link), 2 = `NOT RUN` (the set was
+empty or unreadable — no verdict is taken).
 
 Run it from the repository root; the relative tool path resolves there.
 """
@@ -104,6 +115,36 @@ def resolves(root, rel_file, target):
     return os.path.exists(os.path.normpath(os.path.join(base, bare)))
 
 
+def header(files):
+    print("linkgate_v1 - the tree's markdown cross-references, resolved at "
+          "the linking file's own directory")
+    print("set: %d tracked markdown carriers (git ls-files '*.md') at the "
+          "reader's head" % len(files))
+
+
+def verdict(files, broken):
+    """The verdict over the set: an empty set is `NOT RUN`, never `PASS`.
+
+    The set is read off the tree, so it is empty exactly when **nothing was
+    read** - an export carries no `.git` and `git ls-files` then reaches an
+    enclosing repository (whose index holds no markdown under this directory)
+    or fails.  `PASS` over that set is indistinguishable from a real pass, so
+    the tool refuses the word and names its window instead (the audit's instance 195, R413).
+    """
+    if not files:
+        return "NOT RUN"
+    return "FAIL" if broken else "PASS"
+
+
+def read_set(root):
+    """`(files, why)` - the set, or a named failure to read it at all."""
+    try:
+        return carriers(root), ""
+    except (OSError, subprocess.CalledProcessError) as exc:
+        msg = getattr(exc, "stderr", "") or str(exc)
+        return [], "`git ls-files '*.md'` failed at %s: %s" % (root, msg.strip())
+
+
 def report(root, files=None, verbose=True):
     counts = {"path": 0, "url": 0, "placeholder": 0, "anchor": 0,
               "rooted": 0, "empty": 0}
@@ -125,10 +166,7 @@ def report(root, files=None, verbose=True):
     total = sum(counts.values())
     paths = counts["path"] + counts["rooted"]
     if verbose:
-        print("linkgate_v1 - the tree's markdown cross-references, resolved at "
-              "the linking file's own directory")
-        print("set: %d tracked markdown carriers (git ls-files '*.md') at the "
-              "reader's head" % len(files))
+        header(files)
         print("targets=%d links=%d resolved=%d broken=%d"
               % (total, paths, resolved, len(broken)))
         print("forms not read as links: url=%d placeholder=%d anchor=%d "
@@ -184,6 +222,11 @@ def selftest():
              {"path", "url", "placeholder", "anchor"} <= by_form),
             ("non_markdown_carriers_are_outside_the_set",
              is_carrier("note.py") is False and is_carrier("sub/a.md") is True),
+            ("an_empty_set_is_not_run_and_never_a_pass",
+             verdict([], []) == "NOT RUN"),
+            ("a_nonempty_clean_set_passes", verdict(["a.md"], []) == "PASS"),
+            ("a_nonempty_set_with_a_broken_link_fails",
+             verdict(["a.md"], [("a.md", "nope.md")]) == "FAIL"),
         ]
         ok = sum(1 for _, passed in cases if passed)
         for name, passed in cases:
@@ -195,9 +238,22 @@ def selftest():
 def main(argv):
     if "--selftest" in argv:
         return selftest()
-    broken, _, _, _, _ = report(repo_root())
+    root = repo_root()
+    files, why = read_set(root)
+    if not files:
+        header(files)
+        print("NOT RUN: the carrier set is empty - %s"
+              % (why or "`git ls-files '*.md'` returned nothing at %s" % root))
+        print("         A verdict is about a set, and no set was read, so none is "
+              "taken. An export of this tree carries no `.git`, and `git` then "
+              "reaches an enclosing repository (or fails): run this from a "
+              "checkout at the head you mean.")
+        if "--check" in argv:
+            print("LINKGATE: NOT RUN")
+        return 2
+    broken, _, _, _, _ = report(root, files)
     if "--check" in argv:
-        print("LINKGATE: %s" % ("FAIL" if broken else "PASS"))
+        print("LINKGATE: %s" % verdict(files, broken))
         return 1 if broken else 0
     return 0
 

@@ -63,6 +63,18 @@ Usage:
   python3 .github/tools/numgate.py --check    # exit 1 if the forbidden form is present
   python3 .github/tools/numgate.py --selftest # run the tool's own cases
 
+**What the verdict is about is the set it read.**  Every site this tool counts is
+read out of the tracked files, so a `PASS` is a statement about that set - and an
+**empty** set is `NOT RUN`, with its window named (the root it read and the
+command it ran), never `PASS`: `PASS` over a set nothing was read from is the
+same string a real pass prints.  This is the case the clause exists for - an
+export of this tree carries no `.git`, and `git ls-files` then reaches an
+**enclosing** repository (whose own index holds none of these files) or fails
+outright.
+
+Exit status: 0 = `PASS`, 1 = `FAIL` (the forbidden form is present), 2 = `NOT RUN`
+(the set was empty or unreadable - no verdict is taken).
+
 Run it from the repository root; the relative tool path resolves there.
 """
 
@@ -205,6 +217,29 @@ def report(root, verbose=True):
     return per, pkg
 
 
+def read_set(root):
+    """`(files, why)` - the tracked files, or a named failure to read them at all."""
+    try:
+        return tracked(root), ""
+    except (OSError, subprocess.CalledProcessError) as exc:
+        msg = getattr(exc, "stderr", "") or str(exc)
+        return [], "`git ls-files` failed at %s: %s" % (root, msg.strip())
+
+
+def verdict(files, bad):
+    """The verdict over the set: an empty set is `NOT RUN`, never `PASS`.
+
+    Every site is read out of the tracked files, so the set is empty exactly when
+    **nothing was read** - an export carries no `.git` and `git ls-files` then
+    reaches an enclosing repository (whose index holds none of these files) or
+    fails.  `PASS` over that set is the same string a real pass prints, so the
+    tool refuses the word and names its window instead (the audit's instance 195, R413).
+    """
+    if not files:
+        return "NOT RUN"
+    return "FAIL" if bad else "PASS"
+
+
 def check(per, pkg=None):
     """The verdict: the forbidden form is absent, and named where present."""
     rows = [(f, ln, tok) for label in FORBIDDEN for f, ln, tok in per.get(label, [])]
@@ -272,6 +307,11 @@ def selftest():
                   {label for _, label, _ in
                    sites(open(os.path.abspath(__file__), encoding="utf-8").read())}
                   <= {"Rnnn"}))
+    cases.append(("an_empty_set_is_not_run_and_never_a_pass",
+                  verdict([], []) == "NOT RUN"))
+    cases.append(("a_nonempty_clean_set_passes", verdict(["a.md"], []) == "PASS"))
+    cases.append(("a_nonempty_set_with_a_forbidden_form_fails",
+                  verdict(["a.md"], [("a.md", 1, _t("op", 9))]) == "FAIL"))
     ok = sum(1 for _, passed in cases if passed)
     for name, passed in cases:
         print("  %s %s" % ("ok  " if passed else "FAIL", name))
@@ -282,10 +322,24 @@ def selftest():
 def main(argv):
     if "--selftest" in argv:
         return selftest()
-    per, pkg = report(repo_root())
+    root = repo_root()
+    files, why = read_set(root)
+    if not files:
+        print("numgate_v1 - the tree's numbered references, by the form each one takes")
+        print("set: 0 tracked files (`git ls-files`) at %s" % root)
+        print("NOT RUN: the carrier set is empty - %s"
+              % (why or "`git ls-files` returned nothing at %s" % root))
+        print("         A verdict is about a set, and no set was read, so none is "
+              "taken. An export of this tree carries no `.git`, and `git` then "
+              "reaches an enclosing repository (or fails): run this from a "
+              "checkout at the head you mean.")
+        if "--check" in argv:
+            print("NUMGATE: NOT RUN")
+        return 2
+    per, pkg = report(root)
     if "--check" in argv:
         bad = check(per, pkg)
-        print("NUMGATE: %s" % ("FAIL" if bad else "PASS"))
+        print("NUMGATE: %s" % verdict(files, bad))
         return 1 if bad else 0
     return 0
 
