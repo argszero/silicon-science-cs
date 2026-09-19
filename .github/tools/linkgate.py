@@ -9,11 +9,19 @@ carriers (`git ls-files '*.md'`).
 
 Two things the tool does not decide, and says so:
 
-* the rule's **second and third forms** - a `see X` pointer and a numbered
-  reference - resolve only inside the namespace of a list the citing sentence
-  or its carrier names.  Which list is meant is a read, not a computation, so
-  those forms stay a read (README.md -> Links; the census that collects them
-  is the editor's own, carried in the record outside this repository).
+* the rule's **third form** - a numbered reference - resolves only inside the
+  namespace of a list the citing sentence or its carrier names.  Which list is
+  meant is a read, not a computation, so that form stays a read (README.md ->
+  Links; the census that collects it is the editor's own, carried in the record
+  outside this repository).  The rule's **second form** - a **named pointer**
+  (`-> *Name*`, `see *Name*`) - is *not* of that kind and **is** a computation:
+  it indexes no list, and it carries its target's name and the carrier the name
+  lives in.  This header classed the two together (*"the second and third forms
+  ... a read, not a computation"*) and that sentence is true only of the third;
+  the exemption it carried for the second is why no instrument was written for
+  it until R399, which wrote `.github/tools/pointgate.py` (measured over the
+  tree's 149 named pointers: 130 resolve in the carrier the sentence names, 3
+  in the linking file, 16 are code-span arrows of the other sense, 0 nowhere).
 * a target resolves at the **linking file's own directory** - the renderer's
   base - never at the repository root.  Resolving from the root manufactures
   false BROKENs (`papers/README.md` -> `issue-42/manuscript.md`): the defect
@@ -124,8 +132,8 @@ def report(root, files=None, verbose=True):
               "empty=%d rooted=%d"
               % (counts["url"], counts["placeholder"], counts["anchor"],
                  counts["empty"], counts["rooted"]))
-        print("not decided here: a `see X` pointer and a numbered reference - "
-              "the list they index is a read")
+        print("not decided here: a numbered reference - the list it indexes is a read; "
+              "a named pointer (`-> *Name*`) is read by .github/tools/pointgate.py")
         for rel, target in broken:
             print("BROKEN %s -> %s" % (rel, target))
     return len(broken), total, paths, resolved, counts

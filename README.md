@@ -440,6 +440,21 @@ carrier — it names another repository, from which nothing here is read.
 repository itself holds.** Every cross-reference a
 tracked file makes is read by someone who has this repository and not necessarily anything else, so it must resolve **here**:
 name the **carrier** (its path) and the **name** of the thing in it — a section heading, a bold lead, an item's own name.
+**The named pointer is a computation, and the forms that decide it are stated here** — because `.github/tools/linkgate.py`'s
+header classed it with the **number** (*"resolve only inside the namespace of a list … a read, not a computation"*), which is
+true of the number and false of the name: a name indexes no list, and the tool for it is
+[`.github/tools/pointgate.py`](.github/tools/pointgate.py) (**measured at R399** over the **149** named pointers the **34**
+tracked carriers make). A name resolves on a **heading**, a **lead** — a bold or italic run at the start of a line **or of a
+sentence in it** — or a **blockquote item** of the named carrier, read as **rendered text** (the target's own emphasis is part
+of how it prints and not of its name: `**What makes a concern *major*.**` is the name *What makes a concern major*) and matched
+up to the **break** the tree writes between a name and its gloss (`.`, `,`, `:`, `;`, `—`, `-`, `)`) — after the line's own
+indentation, blockquote and list markers, and a bold lead may **wrap across source lines**. The **carrier** is the nearest
+path the pointer's sentence names to its left, written as a path **or as the stem the tree also writes** (`README`); where the
+sentence names a **chain** (`*A* → *B*`), B is read in the carrier **A** lives in, since B is a name inside the section A names;
+a sentence naming neither leaves the name in the **linking file**. Where a pointer resolves in the **linking file and not** in
+the carrier the sentence names, the instrument reports that class separately rather than folding it into the resolved count —
+a path in another clause is not a carrier (measured at R399: **3** of the 149), and a **pointer that resolves nowhere** is the
+finding, not a silence.
 A **number** is a position, and the rule is the **set of the ways its list is identified — four, not the two one sentence
 states**: the **file carrying the number holds** the list; the **citing sentence names** it — the list's own name (`item 11`,
 the *Quality bar* above) or the **carrier** plus the kind, where that carrier holds one list of that kind (`README.md` step
