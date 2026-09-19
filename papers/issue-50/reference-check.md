@@ -47,7 +47,7 @@ both reads agree.
 
 `VERIFIED` = every field matched the entry's own line. `SUPPLIED` = the entry's stored
 year was null and the live record carries one (the selection layer read a field only one
-channel carries - see *What the first pass got wrong*, below). `DECLARED` = the record
+channel carries - see *What the first pass of this instrument got wrong*, below). `DECLARED` = the record
 carries no publication date at all and the year comes from the declaration in
 `refs_year_supply_v50.json`.
 
@@ -241,7 +241,7 @@ quotes.
 
 ```
 === manuscript.md
-  window: the last `## References` heading (line 972) to the end of the file (line 1726)
+  window: the last `## References` heading (line 977) to the end of the file (line 1731)
           — its numbered lines are read as entries
   entries=137  numbering=[n]
   block form: 137 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source

@@ -22,7 +22,9 @@ speculation rate**: at `h = 1.0` it moves from {{rho_star_A16}} at `A = 16` to
 magnitude larger than the per-seed interval width - and cells with the *same* utilisation
 to five decimals straddle the boundary with opposite signs. The registered single-variable
 law (`rho*(h)`) is therefore **unresolved**, and we report it as such rather than as a
-confirmation. (ii) **The registered claim that the tail, rather than the mean, locates the
+confirmation; the sharpness statistic the same criterion registered is reported **unmet with
+its reason**, because the committed windows bracket the zero crossing rather than the
+registered `+/-5%` band. (ii) **The registered claim that the tail, rather than the mean, locates the
 boundary is refuted in both halves**: at matched means a heavier tail moves the boundary
 *down* and its descent is *shallower*; the quantity that actually indexes the boundary is a
 count (the fraction of steps that can be hidden at all), not a magnitude. (iii) A

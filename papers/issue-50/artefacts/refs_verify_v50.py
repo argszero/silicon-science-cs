@@ -687,7 +687,7 @@ def report():
     A("")
     A("`VERIFIED` = every field matched the entry's own line. `SUPPLIED` = the entry's stored")
     A("year was null and the live record carries one (the selection layer read a field only one")
-    A("channel carries - see *What the first pass got wrong*, below). `DECLARED` = the record")
+    A("channel carries - see *What the first pass of this instrument got wrong*, below). `DECLARED` = the record")
     A("carries no publication date at all and the year comes from the declaration in")
     A("`refs_year_supply_v50.json`.")
     A("")

@@ -22,7 +22,9 @@ speculation rate**: at `h = 1.0` it moves from 0.991908 at `A = 16` to
 magnitude larger than the per-seed interval width - and cells with the *same* utilisation
 to five decimals straddle the boundary with opposite signs. The registered single-variable
 law (`rho*(h)`) is therefore **unresolved**, and we report it as such rather than as a
-confirmation. (ii) **The registered claim that the tail, rather than the mean, locates the
+confirmation; the sharpness statistic the same criterion registered is reported **unmet with
+its reason**, because the committed windows bracket the zero crossing rather than the
+registered `+/-5%` band. (ii) **The registered claim that the tail, rather than the mean, locates the
 boundary is refuted in both halves**: at matched means a heavier tail moves the boundary
 *down* and its descent is *shallower*; the quantity that actually indexes the boundary is a
 count (the fraction of steps that can be hidden at all), not a magnitude. (iii) A
@@ -471,9 +473,10 @@ admissibility rule permits but that have negative benefit; (v) the closed-form f
 `+/- 0.05` of the simulated `rho*` in at least 80% of cells; (vi) the external cell reproducing the
 published result's sign in its reported operating region.
 
-Registration is a promise about *reporting*, and it is kept literally: the outcomes of the four
-registered prior beliefs and of these six criteria are stated again in §7 in the same words as here, so
-that a reader can check the results section against the registration without leaving the paper.
+Registration is a promise about *reporting*, and it is kept literally: each of the six criteria is
+marked met or unmet where it is decided (4.2-4.8), and the outcomes of the four registered prior
+beliefs are stated again in §7 in the same words as here, so that a reader can check the results
+section against the registration without leaving the paper.
 
 ### 3.7 What this instrument cannot show
 
@@ -496,9 +499,11 @@ reason**; no criterion is silently replaced by a nearby quantity that happens to
 number here is typed: every one is computed from a committed artefact by the assembly step, so a
 sentence that disagrees with a measurement fails the build rather than the review.
 
-Two of the six criteria are unmet, and both for reasons that are themselves results: the sharpness
-statistic asked for a fall the measured windows do not contain, and the closed-form comparison found no
-comparable boundary to compare against. Section 4.9 records a correction the study made to one of its
+Of the six criteria, 2 are unmet outright and 1 more
+carries an unmet part, and in each case the reason is itself a result: (ii) is unmet, the separation
+coming out in the opposite direction to the registered one (4.4); (v) is unmet, for the closed-form
+comparison found no comparable boundary to compare against (4.7); and (i) is partly unmet, the
+sharpness statistic having asked for a fall the measured windows do not contain (4.2). Section 4.9 records a correction the study made to one of its
 own earlier readings, because the wrong reading was reported first.
 
 ### 4.2 (i) The boundary, cell by cell
@@ -906,8 +911,8 @@ of cells from different pools whose measured contention agrees to that tolerance
 **23 disagree in sign**, which is not a small-sample artefact of a
 location estimate -- it is a count. *External validity:* three published cells (5.6), one of which the
 instrument cannot reach; the paper reports that cell as unreached rather than as evidence. *Publication
-validity:* the two unmet criteria are stated in the abstract's own voice (4.2, 4.7), so a reader who
-only reads the summary sees them.
+validity:* the criteria that could not be met as registered are stated in the abstract's own voice
+(4.2, 4.4, 4.7), so a reader who only reads the summary sees them.
 
 **8.2 Whose belief changes, and how.** Three decisions, three communities.
 

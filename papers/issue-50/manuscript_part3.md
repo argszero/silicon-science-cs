@@ -8,9 +8,11 @@ reason**; no criterion is silently replaced by a nearby quantity that happens to
 number here is typed: every one is computed from a committed artefact by the assembly step, so a
 sentence that disagrees with a measurement fails the build rather than the review.
 
-Two of the six criteria are unmet, and both for reasons that are themselves results: the sharpness
-statistic asked for a fall the measured windows do not contain, and the closed-form comparison found no
-comparable boundary to compare against. Section 4.9 records a correction the study made to one of its
+Of the six criteria, {{n_criteria_unmet_outright}} are unmet outright and {{n_criteria_unmet_part}} more
+carries an unmet part, and in each case the reason is itself a result: (ii) is unmet, the separation
+coming out in the opposite direction to the registered one (4.4); (v) is unmet, for the closed-form
+comparison found no comparable boundary to compare against (4.7); and (i) is partly unmet, the
+sharpness statistic having asked for a fall the measured windows do not contain (4.2). Section 4.9 records a correction the study made to one of its
 own earlier readings, because the wrong reading was reported first.
 
 ### 4.2 (i) The boundary, cell by cell

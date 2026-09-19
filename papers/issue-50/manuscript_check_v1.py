@@ -240,10 +240,50 @@ def check_typed(root):
     return out
 
 
+STATUS_ANCHOR = "are unmet outright"      # the summary sentence that names the criteria's outcome
+
+
+def check_criteria(root):
+    """E: the sentence saying which registered criteria are unmet is the one the artefacts decide.
+
+    The claim has an owner in `assemble.py` (`criteria_status`), read here through the SAME reader the
+    assembler uses -- so a planted verdict reaches this check as a changed set, not as a stale copy.
+    Two-sided: every criterion the artefacts mark unmet must be stated unmet in that paragraph, and no
+    criterion they mark met may be.  An anchor that no longer occurs is a FAILURE, not a pass.
+    """
+    ms = read(root, MS)
+    facts = facts_of(root)
+    try:
+        outright = [s for s in facts["criteria_unmet_outright"]().split(",") if s]
+        part = [s for s in facts["criteria_unmet_part"]().split(",") if s]
+        met = [s for s in facts["criteria_met"]().split(",") if s]
+    except KeyError as exc:
+        return ["the assembler no longer derives the criteria's statuses (%s)" % exc]
+    i = ms.find(STATUS_ANCHOR)
+    if i < 0:
+        return ["the sentence stating the criteria's outcome (%r) is not in the manuscript"
+                % STATUS_ANCHOR]
+    j = ms.find("\n\n", i)
+    para = ms[i:j if j > 0 else len(ms)]
+    out = []
+    for cid in outright + part:
+        if not re.search(r"\(%s\)[^.;]{0,60}?unmet" % re.escape(cid), para):
+            out.append("the artefacts mark criterion (%s) unmet and the paragraph beginning %r does"
+                       " not state it unmet" % (cid, STATUS_ANCHOR))
+    for cid in met:
+        if re.search(r"\(%s\)[^.;]{0,60}?unmet" % re.escape(cid), para):
+            out.append("the artefacts mark criterion (%s) met and the paragraph beginning %r states"
+                       " it unmet" % (cid, STATUS_ANCHOR))
+    if not outright and not part:
+        out.append("no criterion is derived as unmet at all -- the artefacts or the derivation moved")
+    return out
+
+
 CHECKS = [("the registered verdicts against their artefacts", check_verdicts),
           ("the section references resolve", check_sections),
           ("the figures exist, are numbered and are pointed at", check_figures),
-          ("no headline measurement is typed into the prose", check_typed)]
+          ("no headline measurement is typed into the prose", check_typed),
+          ("which registered criteria are unmet, against the artefacts", check_criteria)]
 
 
 def run(root):
@@ -307,6 +347,14 @@ def selftest():
         ("D", CHECKS[3][1], lambda r: io.open(os.path.join(r, "manuscript_part4.md"), "a",
                                               encoding="utf-8").write(
             "\nA typed copy: the crossing is 0.991908 at the smallest pool.\n")),
+        # E: the closed form's verdict in the artefact moves from UNMET to MET, so (v) joins the met
+        # set while the summary paragraph still says (v) is unmet.  The check must report that.
+        ("E", CHECKS[4][1], lambda r: flip_artefact(r, "artefacts/fixedpoint_v1.json",
+                                                   ("verdict", "status"), "MET")),
+        # F: and the OTHER branch of the same rule -- the artefacts stay put and the PROSE drops a
+        # criterion they mark unmet.  One plant would have exercised only the "states too much" side.
+        ("F", CHECKS[4][1], lambda r: edit(os.path.join(r, MS),
+                                           "(ii) is unmet, the separation", "(ii) is discussed, the separation")),
     ]
     for tag, fn, plant in plants:
         tmp = tempfile.mkdtemp(prefix="issue50-claims-%s-" % tag)

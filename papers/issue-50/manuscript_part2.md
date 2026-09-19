@@ -144,9 +144,10 @@ admissibility rule permits but that have negative benefit; (v) the closed-form f
 `+/- 0.05` of the simulated `rho*` in at least 80% of cells; (vi) the external cell reproducing the
 published result's sign in its reported operating region.
 
-Registration is a promise about *reporting*, and it is kept literally: the outcomes of the four
-registered prior beliefs and of these six criteria are stated again in §7 in the same words as here, so
-that a reader can check the results section against the registration without leaving the paper.
+Registration is a promise about *reporting*, and it is kept literally: each of the six criteria is
+marked met or unmet where it is decided (4.2-4.8), and the outcomes of the four registered prior
+beliefs are stated again in §7 in the same words as here, so that a reader can check the results
+section against the registration without leaving the paper.
 
 ### 3.7 What this instrument cannot show
 

@@ -228,6 +228,36 @@ def build_results_facts():
     sec = fix["verdict"]
     es = ext["summary"]
 
+    # -- the six registered criteria's own verdicts, DERIVED here rather than typed anywhere -------
+    # Section 4.1's summary says which criteria are unmet, and that sentence is a claim about the six
+    # registered tests -- so the artefacts that decided the tests own it.  Three of the six carry a
+    # verdict a run wrote (P3a's threshold, the fixed point's status, the external cell's status); the
+    # other three are decided by a rule over the artefact's own numbers (does the committed window
+    # cover the registered +/-5% band; is any mean-matched family's separation at least the registered
+    # 0.15 with an interval that excludes zero).  The prose may not disagree with what is computed
+    # here, and the assembler prints the whole table so a reader sees the derivation, not only its
+    # effect.
+    def criteria_status():
+        band_lo = min(r["benefit_pct"] for r in rows)
+        band_hi = max(r["benefit_pct"] for r in rows)
+        sharpness_measured = band_lo <= -5.0 and band_hi >= 5.0
+        located_first_half = b100["direction"]["rho_spec"]["n_located"] == len(fs)
+        separation_met = any(abs(f["delta"]["mean"]) >= 0.15 and (f["delta"]["ci"][0] > 0.0
+                                                                  or f["delta"]["ci"][1] < 0.0)
+                             for f in tail["p2_first_half"]["per_family"])
+        return {
+            "i": "met" if (sharpness_measured and located_first_half)
+                 else ("part" if located_first_half else "outright"),
+            "ii": "met" if separation_met else "outright",
+            "iii": "met" if var["verdicts"]["P3a"].startswith("CONFIRMED") else "outright",
+            "iv": "met" if (v4["P4a"]["verdict"] == "CONFIRMED"
+                            and v4["P4c"]["verdict"] == "CONFIRMED") else "outright",
+            "v": "met" if sec["status"] != "UNMET" else "outright",
+            "vi": "met" if ext["metric_f"]["status"] == "MET" else "outright",
+        }
+
+    crit = criteria_status()
+
     return {
         # -- (i) the boundary, cell by cell
         "b_families_located": lambda: b100["direction"]["rho_spec"]["n_located"],
@@ -332,6 +362,17 @@ def build_results_facts():
         "dec_carrying_overshoot": lambda: dec["contrast_rho"]["largest_count"]["overshoot"],
         "dec_overshoot_abs": lambda: dec["contrast_rho"]["mean_abs_delta"]["overshoot"],
         "dec_S_abs": lambda: dec["contrast_rho"]["mean_abs_delta"]["S"],
+        # -- which of the six criteria the artefacts say are unmet, and how many ------------
+        # The owner of section 4.1's summary sentence.  `outright` = the registered test is
+        # not met; `part` = one half of the criterion is met and the other is not; `met` =
+        # every half of it is.  The three sets are printed by the assembler.
+        "criteria_unmet_outright": lambda: ",".join(sorted(k for k, v in crit.items()
+                                                           if v == "outright")),
+        "criteria_unmet_part": lambda: ",".join(sorted(k for k, v in crit.items()
+                                                       if v == "part")),
+        "criteria_met": lambda: ",".join(sorted(k for k, v in crit.items() if v == "met")),
+        "n_criteria_unmet_outright": lambda: sum(1 for v in crit.values() if v == "outright"),
+        "n_criteria_unmet_part": lambda: sum(1 for v in crit.values() if v == "part"),
     }
 
 
