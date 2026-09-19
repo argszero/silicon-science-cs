@@ -81,7 +81,7 @@ report; `figures/*.svg` are the figures. `reproduce.sh` uses one scratch directo
 | 6 `.github/tools/refgate.py` | `manuscript.md` | `GATE: PASS`, 137/137 entries cited — *skipped with a reason* if this package is read as a path-limited export (see below) |
 | 7 `.github/tools/linkgate.py --check` | every tracked markdown carrier | `broken=0` |
 | 8 `figures/make_figures_v1.py --check/--selftest` | `artefacts/*.json` | 4 of 4 figures regenerate byte-identically; one planted change per figure moves its figure |
-| 9 `manuscript_check_v1.py` + `--selftest` | the parts, `manuscript.md`, the artefacts | the registered verdicts are the ones the artefacts decided; every section reference resolves; every figure is reachable and pointed at; no headline measurement is typed into the prose — each with a planted defect that must be reported |
+| 9 `manuscript_check_v1.py` + `--selftest` | the parts, `manuscript.md`, the artefacts | the registered verdicts are the ones the artefacts decided; every section reference resolves; every figure is reachable and pointed at; no headline measurement is typed into the prose; the criteria the artefacts mark unmet are the ones the summary states as unmet, with the count quoted through its own placeholder — each with a planted defect that must be reported |
 | 10 `readme_check_v1.py` + `--selftest` | this README, and the objects that own its numbers | the file count, the module count, the reference layer, the figures and the sweeps are their owners' values — one planted defect per claim |
 
 Steps 6 and 7 read the journal's tools from **this tree** (`.github/tools/`, two directories up). A

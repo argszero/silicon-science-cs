@@ -183,8 +183,8 @@ of cells from different pools whose measured contention agrees to that tolerance
 **{{boundary_matched_disagreeing}} disagree in sign**, which is not a small-sample artefact of a
 location estimate -- it is a count. *External validity:* three published cells (5.6), one of which the
 instrument cannot reach; the paper reports that cell as unreached rather than as evidence. *Publication
-validity:* the two unmet criteria are stated in the abstract's own voice (4.2, 4.7), so a reader who
-only reads the summary sees them.
+validity:* the criteria that could not be met as registered are stated in the abstract's own voice
+(4.2, 4.4, 4.7), so a reader who only reads the summary sees them.
 
 **8.2 Whose belief changes, and how.** Three decisions, three communities.
 
