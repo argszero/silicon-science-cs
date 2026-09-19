@@ -25,9 +25,15 @@
 #      renderer takes that as an argument; this step supplies the coordinate the committed report
 #      declares, so the comparison is about the rendering rather than about the day it is read.  Every
 #      other line must match, including the gate's window, which is read live from the manuscript;
-#   6. the journal's own citation gate (`.github/tools/refgate.py`) -- SKIPPED WITH A REASON where
-#      this package is read as a path-limited export that carries no `.github/`, never silently;
-#   7. the journal's link gate over the tracked markdown carriers (broken=0), same skip rule;
+#   6. the journal's own citation gate (`.github/tools/refgate.py`).  A gate's exit code has THREE
+#      meanings -- 0 PASS, 1 FAIL, 2 NOT RUN (it refused a verdict over an empty set) -- and this step
+#      reads all three: a NOT RUN is neither a pass nor a defect of this package, so it is printed with
+#      its reason and counted under `steps NOT RUN`.  Where this package is read as a path-limited
+#      export that carries no `.github/` at all, the step is SKIPPED WITH A REASON, never silently;
+#   7. the journal's link gate over the markdown carriers it can see -- `git ls-files '*.md'` under the
+#      tree it runs in, `broken=0`.  Same three-way read and same skip rule: "every tracked markdown
+#      carrier" is true of a checkout and VACUOUS of an export, so the step reports the NOT RUN instead
+#      of reading the gate's exit 2 as a failure;
 #   8. the four figures, regenerated from the artefacts and compared byte for byte, with the liveness
 #      control that plants one change per figure;
 #   9. the manuscript's own claims -- the registered verdicts against the artefacts that decided them,
@@ -39,7 +45,8 @@
 #  11. the sha256 of every file this package ships, printed as a block to copy rather than to type.
 #
 # Exit status carries the verdict: 0 only when every step passes.  Steps 1-2 are CPU-only and need no
-# network; step 5 re-renders an offline report; steps 6-7 read the journal's tools from this tree.
+# network; step 5 re-renders an offline report; steps 6-7 read the journal's tools from this tree and
+# each reads its gate's three exit codes rather than two (see gate_verdict above).
 set -u
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
@@ -51,6 +58,23 @@ fail=0
 skip=0
 verdict() {   # verdict <label> <rc>
   if [ "$2" -eq 0 ]; then printf '  %s: OK\n' "$1"; else printf '  %s: FAILED (exit %s)\n' "$1" "$2"; fail=1; fi
+}
+
+gate_verdict() {   # gate_verdict <label> <rc> -- a journal gate's exit code has THREE meanings
+  # 0 = PASS, 1 = FAIL, 2 = NOT RUN.  A gate takes its set from `git ls-files` under the root it reads,
+  # so in a `git archive` export that carries `.github/` and no `.git` the set is EMPTY and the gate
+  # refuses a verdict (exit 2) rather than printing a clean-looking PASS over nothing.  An empty set is
+  # neither a pass nor a defect of this package, so a NOT RUN never sets `fail`: it is printed with its
+  # reason, counted under `skip`, and its verdict line reads OK -- the accounting the absent-tool arm
+  # below already uses, at a second place a reader's tree can produce.
+  case "$2" in
+    0) printf '  %s: OK\n' "$1" ;;
+    2) printf '  %s: OK\n' "$1"
+       printf '  NOT RUN -- the gate took no verdict over an empty set (exit 2).  Not a pass, and not\n'
+       printf '  a failure of this package; the step is excluded from the run and counted below.\n'
+       skip=$(( skip + 1 )) ;;
+    *) printf '  %s: FAILED (exit %s)\n' "$1" "$2"; fail=1 ;;
+  esac
 }
 
 printf 'interpreter: %s (%s)\n' "$(command -v "$PY")" "$("$PY" -c 'import sys; print(sys.version.split()[0])')"
@@ -122,7 +146,7 @@ if [ -f "$GATE" ]; then
     "$("$PY" -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest()[:16])' "$GATE")"
   ( cd ../.. && "$PY" .github/tools/refgate.py papers/issue-50/manuscript.md ) | tail -3
   rc6=${PIPESTATUS[0]}
-  verdict "journal reference gate" "$rc6"
+  gate_verdict "journal reference gate" "$rc6"
 else
   printf '  NOT RUN -- %s is not in this tree.  A path-limited export carries no `.github/`, so the\n' "$GATE"
   printf '  gate cannot be run from here; its verdict in the tree this package was submitted from is\n'
@@ -134,7 +158,7 @@ printf '\n== 7. the journal link gate over the tracked markdown carriers ==\n'
 if [ -f "$LINKGATE" ]; then
   ( cd ../.. && "$PY" .github/tools/linkgate.py --check )
   rc7=$?
-  verdict "journal link gate" "$rc7"
+  gate_verdict "journal link gate" "$rc7"
 else
   printf '  NOT RUN -- %s is not in this tree (same reason as step 6)\n' "$LINKGATE"
   skip=$(( skip + 1 ))

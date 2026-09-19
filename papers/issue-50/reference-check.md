@@ -233,7 +233,7 @@ and a declaration that fails its property fails the build.
 
 ## The journal's reference gate, as run
 
-Copy run: `../../.github/tools/refgate.py` at this working tree -- **761 line(s), sha256 `4e460be9a526fc90...`, its own `--selftest` reports selftest: 40/40 cases ok**.
+Copy run: `../../.github/tools/refgate.py` at this working tree -- **805 line(s), sha256 `08a6f7acb3c9a2a7...`, its own `--selftest` reports selftest: 41/41 cases ok**.
 The gate reads the last `## References` heading to the end of the file, so the section
 below is the object it judged. Invoked as the package's own reader invokes it (from this
 directory, on the manuscript's basename), so the name it prints is the name this report
@@ -241,7 +241,7 @@ quotes.
 
 ```
 === manuscript.md
-  window: the last `## References` heading (line 992) to the end of the file (line 1746)
+  window: the last `## References` heading (line 1032) to the end of the file (line 1786)
           — its numbered lines are read as entries
   entries=137  numbering=[n]
   block form: 137 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source

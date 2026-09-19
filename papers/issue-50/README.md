@@ -75,19 +75,22 @@ report; `figures/*.svg` are the figures. `reproduce.sh` uses one scratch directo
 |---|---|---|
 | 1 `rebuild_artefacts_v1.py --rebuild` | `artefacts/*.py`, `artefacts/*.json` | each sweep re-run from the command **derived from its own recorded parameters** returns byte-identical output |
 | 2 `rebuild_artefacts_v1.py --selftest` | the comparison itself | the comparison reports a rebuilt file identical **and** a moved file different |
-| 3 `assemble.py --check`, `--selftest` | the parts, the artefacts | the committed manuscript is what the evidence produces; 137 citations numbered in first-use order; 0 uncited entries. The build also reads every *quantified* sentence (a ratio, a count of a registered set) and fails on one binding used on both sides, on a ratio across two domains, or on a declared count no sentence quotes — three plants, one per branch, in throwaway copies |
+| 3 `assemble.py --check`, `--selftest` | the parts, the artefacts | the committed manuscript is what the evidence produces; 137 citations numbered in first-use order; 0 uncited entries. The build also reads every *quantified* sentence (a ratio, a count of a registered set) and fails on one binding used on both sides, on a ratio across two domains, or on a declared count no sentence quotes — three plants, one per branch, and a fourth, of a different kind, that flips one half of a two-half prior in the artefacts and requires the partition 4.9 and 7.1 state to name it — all four in throwaway copies, each its own |
 | 4 `refs_build_display.py --check`, `refs_render.py --check` | `artefacts/refs_selection_v50.json`, `artefacts/refs_verified_v50.json` | both bibliography writers reproduce, and the citation order matches the body |
 | 5 `artefacts/refs_verify_v50.py --report --taken …` | `artefacts/refs_verified_v50.json` | `reference-check.md` is a **rendering** of the verification artefact, byte for byte except the one line the report itself declares a *coordinate* (the date the verification was taken, which the step supplies back); the gate's window is read live from the manuscript, so a stale window still fails |
-| 6 `.github/tools/refgate.py` | `manuscript.md` | `GATE: PASS`, 137/137 entries cited — *skipped with a reason* if this package is read as a path-limited export (see below) |
-| 7 `.github/tools/linkgate.py --check` | every tracked markdown carrier | `broken=0` |
+| 6 `.github/tools/refgate.py` | `manuscript.md`, read in the tree the gate runs in | `GATE: PASS`, 137/137 entries cited. Exit 2 is `GATE: NOT RUN` — a named window that could not be read — and the step reports it as `NOT RUN` with its reason: not a pass, and not a failure of this package |
+| 7 `.github/tools/linkgate.py --check` | the markdown carriers the gate can read — every `git ls-files '*.md'` under the tree it is run from | `broken=0` over that set, which the gate names before its verdict. A `git archive` export has no `.git`, so the set is **empty**: an empty set is a window nothing was read from, not a pass — the gate prints `set: 0 tracked markdown carriers` and `LINKGATE: NOT RUN` (exit 2), and this step reports `NOT RUN` with that reason rather than reading the exit code as a failure |
 | 8 `figures/make_figures_v1.py --check/--selftest` | `artefacts/*.json` | 4 of 4 figures regenerate byte-identically; one planted change per figure moves its figure |
-| 9 `manuscript_check_v1.py` + `--selftest` | the parts, `manuscript.md`, the artefacts | the registered verdicts are the ones the artefacts decided; every section reference resolves; every figure is reachable and pointed at; no headline measurement is typed into the prose; the criteria the artefacts mark unmet are the ones the summary states as unmet, with the count quoted through its own placeholder — each with a planted defect that must be reported |
+| 9 `manuscript_check_v1.py` + `--selftest` | the parts, `manuscript.md`, the artefacts | the registered verdicts are the ones the artefacts decided, in **every** carrier that states them (a claim that is right in one section and stale in another is not half-right); every section reference resolves; every figure is reachable and pointed at; no headline measurement is typed into the prose; the criteria the artefacts mark unmet are the ones the summary states as unmet, with the count quoted through its own placeholder — each with a planted defect that must be reported |
 | 10 `readme_check_v1.py` + `--selftest` | this README, and the objects that own its numbers | the file count, the module count, the reference layer, the figures and the sweeps are their owners' values — one planted defect per claim |
 
-Steps 6 and 7 read the journal's tools from **this tree** (`.github/tools/`, two directories up). A
-path-limited export of the package carries no `.github/`, so where the tool is absent the step prints
-`NOT RUN` **with that reason**, the summary counts it under `steps NOT RUN`, and it is not counted as a
-pass. In the tree this package was submitted from, both ran and both passed; their own output is what
+Steps 6 and 7 read the journal's tools from **this tree** (`.github/tools/`, two directories up), and
+both gates take their set from the tree they are run in — so a gate's exit code has **three** meanings,
+and the step reads all three: `0` PASS, `1` FAIL, `2` `NOT RUN` (a window that was not read, most often
+because the carrier set is empty). A `NOT RUN` is a third state, not a failure: the step prints it with
+its reason, the summary counts it under `steps NOT RUN`, and it is not counted as a pass. A
+path-limited export carries no `.github/` at all, and there the step prints `NOT RUN` for the same
+reason at a different place: the tool is absent. In the tree this package was submitted from, both ran and both passed; their own output is what
 steps 6 and 7 print, and their verdicts are in the run block above.
 
 ## The figures

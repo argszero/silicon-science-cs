@@ -14,7 +14,11 @@ binds four such carriers, and each of the four failed at least once in this pack
   A  **the registered verdicts, against the artefacts that decided them.**  Section 7 states, for each
      registered prior, confirmed / contradicted / unresolved.  Each of those words is read here out of
      the artefact's own verdict field, through a declared word map; if the artefact flips, the sentence
-     the manuscript must carry flips with it, and a manuscript that kept the old word FAILS.
+     the manuscript must carry flips with it, and a manuscript that kept the old word FAILS.  A verdict
+     the paper states in more than one place is read in **every** place: each carrier is a declared
+     window, so a claim that is right in one section and stale in another is not half-right, it is
+     wrong.  (This binding was added after exactly that failure: P3's direction read `not met` in the
+     results section while the artefact's own rule returned CONFIRMED.)
   B  **every section reference resolves.**  A phantom `4.11` or `Section 9` is a sentence whose only
      job is navigation, so it fails the reader silently.  The forms read are `§N`, `Section N` and the
      parenthesised `(N.M)` the results section uses -- a bare `4.11` in running text is a reference
@@ -52,6 +56,13 @@ VERDICTS = [
      ("p2_first_half", "verdict"), {"CONTRADICTED": "contradicted"}, "4.4 / 7"),
     ("P2  second half (the fall is shallower)", "artefacts/tail_v1_h100.json",
      ("p2_second_half", "verdict"), {"CONTRADICTED": "contradicted"}, "4.4 / 7"),
+    # P3 is two registered claims, as P2 is, and the artefact states each half in its own field; the
+    # two entries share their windows and differ in the word they demand exactly when the halves
+    # DISAGREE, which is the case a reader must not be able to paper over.
+    ("P3  first half (the threshold: F < 0.7 in every cell)", "artefacts/variant_v1.json",
+     ("verdicts", "P3a"), {"CONFIRMED": "confirmed", "CONTRADICTED": "contradicted"}, "4.5 / 4.9 / 7"),
+    ("P3  second half (the direction: F falls in rho)", "artefacts/variant_v1.json",
+     ("verdicts", "P3b"), {"CONFIRMED": "confirmed", "CONTRADICTED": "contradicted"}, "4.5 / 4.9 / 7"),
     ("P4a the safe region shrinks", "artefacts/sideeffect_v1.json", ("verdicts", "P4a", "verdict"),
      {"CONFIRMED": "confirmed", "CONTRADICTED": "contradicted"}, "4.6 / 7"),
     ("P4b the registered magnitude", "artefacts/sideeffect_v1.json", ("verdicts", "P4b", "verdict"),
@@ -117,38 +128,58 @@ def check_verdicts(root):
             out.append("%s: the artefact's verdict %r has no word in the declared map" % (name, raw))
             continue
         want = wordmap[key]
-        if want not in ms:
-            out.append("%s (%s): the artefact says %r -> the manuscript must state %r, and does not "
-                       "carry that word anywhere" % (name, where, key, want))
-            continue
-        # ... and the word must sit in the criterion's own paragraph, not anywhere in the paper
-        anchor = PARAGRAPH[name]
-        para = between(ms, anchor)
-        if para is None:
-            out.append("%s: the paragraph anchor %r is not in the manuscript" % (name, anchor))
-        elif want not in para:
-            out.append("%s (%s): the artefact says %r; the paragraph beginning %r does not state %r"
-                       % (name, where, key, anchor, want))
+        # ... and the word must sit in EVERY carrier that states this criterion, read as its own
+        # window.  A carrier whose anchor has gone is a FAILURE ("the sentence is not there" and "the
+        # sentence is right" must never look alike), and a carrier that is right while another is
+        # stale is a failure too -- the paper states the verdict twice, so it must be right twice.
+        for start, end in CARRIERS[name]:
+            win = window(ms, start, end)
+            if win is None:
+                out.append("%s: the carrier anchor %r is not in the manuscript" % (name, start))
+            elif want not in win:
+                out.append("%s (%s): the artefact says %r -> the manuscript must state %r in the "
+                           "carrier beginning %r, and does not" % (name, where, key, want, start))
     return out
 
 
-# The paragraph each criterion's outcome must be stated in.  An anchor that no longer occurs in the
-# manuscript is a FAILURE of the check, not a check that passes vacuously (see the module docstring).
-PARAGRAPH = {
-    "P1  unresolved as registered": "P1 -- \"a sharp boundary exists",
-    "P2  first half (heavier tail lowers rho*)": "P2 -- \"the tail, not the mean",
-    "P2  second half (the fall is shallower)": "P2 -- \"the tail, not the mean",
-    "P4a the safe region shrinks": "P4a -- \"the safe region shrinks",
-    "P4b the registered magnitude": "P4b -- \"the shrinkage is at least 0.05",
-    "P4c permitted-but-harmful is non-empty": "P4c -- \"a domain admissibility rule",
+# The carriers each criterion's outcome must be stated in, as (start, end) WINDOWS.  A window whose
+# start anchor no longer occurs is a FAILURE of the check, not a check that passes vacuously (see the
+# module docstring); an end anchor of `None` means "up to the next criterion paragraph".
+#
+# P1/P2/P4a-c are stated once per prior, in section 7.  P3 is stated three times -- the results
+# sentence that names the direction (4.5), the outcome row (4.9) and the prior paragraph (7) -- so all
+# three are declared here: a verdict that is right in one place and stale in another is not half-right.
+_P4 = ("\n\n**P", None)          # a section-7 prior paragraph runs to the next one
+
+
+def _p4(start):
+    return (start, _P4[0])
+
+
+CARRIERS = {
+    "P1  unresolved as registered": (_p4("P1 -- \"a sharp boundary exists"),),
+    "P2  first half (heavier tail lowers rho*)": (_p4("P2 -- \"the tail, not the mean"),),
+    "P2  second half (the fall is shallower)": (_p4("P2 -- \"the tail, not the mean"),),
+    "P3  first half (the threshold: F < 0.7 in every cell)": (
+        ("The registered *direction* holds, and it holds only", "### 4.6"),
+        ("| P3 | the prediction-attributable fraction is below 0.7", "\n\n"),
+        _p4("P3 -- \"part of the reported gain")),
+    "P3  second half (the direction: F falls in rho)": (
+        ("The registered *direction* holds, and it holds only", "### 4.6"),
+        ("| P3 | the prediction-attributable fraction is below 0.7", "\n\n"),
+        _p4("P3 -- \"part of the reported gain")),
+    "P4a the safe region shrinks": (_p4("P4a -- \"the safe region shrinks"),),
+    "P4b the registered magnitude": (_p4("P4b -- \"the shrinkage is at least 0.05"),),
+    "P4c permitted-but-harmful is non-empty": (_p4("P4c -- \"a domain admissibility rule"),),
 }
 
 
-def between(text, anchor):
-    i = text.find(anchor)
+def window(text, start, end):
+    """The carrier's own text: from `start` to `end` (or to the next criterion paragraph if None)."""
+    i = text.find(start)
     if i < 0:
         return None
-    j = text.find("\n\n**P", i + len(anchor))
+    j = text.find(end if end is not None else "\n\n**P", i + len(start))
     return text[i:j if j > 0 else len(text)]
 
 
@@ -351,6 +382,11 @@ def selftest():
         # set while the summary paragraph still says (v) is unmet.  The check must report that.
         ("E", CHECKS[4][1], lambda r: flip_artefact(r, "artefacts/fixedpoint_v1.json",
                                                    ("verdict", "status"), "MET")),
+        # G: P3's second half -- bound this round, because the field that went wrong had no reader.
+        # The plant moves the ARTEFACT (the manuscript keeps saying "confirmed"), so the check fires on
+        # the new binding rather than on a stale sentence.
+        ("G", CHECKS[0][1], lambda r: flip_artefact(r, "artefacts/variant_v1.json",
+                                                   ("verdicts", "P3b"), "CONTRADICTED (planted)")),
         # F: and the OTHER branch of the same rule -- the artefacts stay put and the PROSE drops a
         # criterion they mark unmet.  One plant would have exercised only the "states too much" side.
         ("F", CHECKS[4][1], lambda r: edit(os.path.join(r, MS),

@@ -611,12 +611,17 @@ Over 12 cells (0.25, 0.50, 0.75 in width by 2, 4, 8, 16 in pool size,
 [0.408448, 0.425358], and at `h = 0.75` 0.226814. In words: at half width, a blind
 schedule of the same size already buys 0.583097 of the informed gain.
 
-The registered *direction* is not the direction the data has. The registration predicted `F` falling in
-`rho`; what the data shows is `F` falling in the **width** `h` -- a factor of about
-2.56872 from the narrowest to the widest setting -- while at fixed `h` the pool
-coordinate changes nothing at all once the pool is at least the agent count (`c = 4, 8, 16` are the same
-run; only `c = 2` differs). The criterion's threshold half is **met at every cell**; its registered
-direction is **not met**, and the honest report is both.
+The registered *direction* holds, and it holds only where the instrument can read it. The registration
+predicted `F` falling in `rho`, and over the 3 adjacent pool pairs that carry
+a load difference at all, `F` does fall: no increase and 3 significant
+decreases, which is the artefact's own rule for this half and its own verdict, **confirmed**. The
+qualification is the size of the window: over the other 6 adjacent pairs the
+pool coordinate carries *no* load difference at all, because at `c = 4, 8, 16` the pool is at least the
+agent count and those cells are the same run. The registered variable is therefore nearly inert over the
+range swept, and the movement a reader sees is the **width** `h` -- a factor of about
+2.56872 from the narrowest to the widest setting, an effect the registration did not
+name. The criterion's threshold half is **met at every cell**; its registered direction is **met where it
+can be read**, and the honest report is all three sentences.
 
 **The other reading of the same threshold, reported rather than chosen.** The same 0.7 was tested
 earlier against a different quantity: the share of the net benefit contributed by the hiding channel,
@@ -639,10 +644,18 @@ The registered belief had three parts; it is confirmed, refuted, and confirmed.
 * **The registered magnitude -- refuted.** The registration expected a shrinkage of at least 0.05 in
   `rho*` at `q = 0.05`, `comp = 1.0`. The four families measured there shrink by between
   0.00304174 and 0.0212722, all below the threshold, with a shortfall factor of
-  2.13162. The channel is real and it is smaller than believed.
-* **The permitted-but-harmful set is non-empty -- confirmed, and carried by individual steps.** Of
-  8 cells that can be read, **8 contain steps with negative
-  benefit**, at a fraction between 0.350524 and 0.53372. The other reading of the same
+  2.13162 -- a **minimum over the four paired intervals**, not a ratio of the means printed
+  here: it is the smallest over the four families of `0.05 / <that family's upper interval end>`, the
+  largest upper end among them being 0.0234563. Against the means instead the same threshold
+  gives 2.35048, which is the number a reader checking 0.00304174-0.0212722
+  against 0.05 would compute; the recorded statistic is the conservative one, and the shortfall is at
+  least 2.13162. The channel is real and it is smaller than believed.
+* **The permitted-but-harmful set is non-empty -- confirmed, and carried by individual steps.** The
+  step-level pass covers the crossing and nothing else: for each of the 4 families it
+  was run on, the **two cells that bound that family's located crossing**, one either side. Of those
+  8 cells, **8 contain steps with negative benefit**, at a
+  fraction between 0.350524 and 0.53372; whether the mixture survives further into the
+  permitted region is not measured here. The other reading of the same
   claim is by construction (18 cells above a located crossing are negative whatever
   the crossing's location is), so the claim is carried by the step-level reading, not by the
   constructive one.
@@ -659,8 +672,12 @@ contention rather than to a side effect.
 **A declared-load law is inconsistent.** If the charge were a matter of load alone, families with the
 same declared load and different `h` would shrink by the same amount. Their intervals are not merely
 different but disjoint. The effect is carried by the slope rather than by the load level
-(117.851 to 140.772 basis points per unit load between two families at the same
-load `q = 0.01`, `comp = 1.0`), and the load that would be required to reach the registered 0.05
+(117.851 to 140.772 basis points per unit load, between the two members of *one
+matched pair*: `A` = 16 at `h` = 0.5 with `q` = 0.01, and
+at `h` = 0.9 with `q` = 0.05, both `comp` = 1.0. They share the *derived*
+load `(1 - h) * q * comp` = 0.005 and differ in `q`, which is what "same declared load"
+means here and what the two sentences above force), and the load that would be required to reach the
+registered 0.05
 threshold differs by a factor of about 5.96704 between two families of the same
 pool size (0.0779317 against 0.465021). The charge channel is therefore indexed by the same three coordinates
 as the boundary, not by a scalar load.
@@ -709,23 +726,36 @@ model's sign compared against a constant.
 The criterion is **met** on the sign, which is what it asked for, with the unreachable magnitude
 reported beside it rather than dropped.
 
+**What a sign test settles, and what it does not.** The agreement is 3 of
+3 cells, whose exact one-sided probability under a fair-coin null is
+0.125 -- the weakest form of external support, and it discriminates only against a model
+that places the boundary *below* the published region, since such a model predicts the opposite sign.
+A model that places the boundary *above* the region predicts the same sign this one does, so this
+reading does not separate this boundary location from a larger one; it is consistency, not a location
+measurement. What would separate them is a **boundary located inside the published region** -- not
+measured here, because each cell is read at its own reported operating point -- or a **magnitude inside
+the published band**, which is exactly where the third cell is short by
+19.9 percentage points. Reporting the sign as the criterion asked, and the power
+of that reading beside it, is the same rule the rest of this section follows.
+
 ### 4.9 The registered prior beliefs, one line each
 
 | prior | registered claim | outcome |
 |---|---|---|
 | P1 | a sharp boundary `rho*(h)` exists and moves with the speculation rate | **unresolved as registered** -- the boundary moves with the *pool*; the registered closed-form law for its movement deviates in 10 of 10 groups, and the shift decomposition is mixed (2 of 10 groups consistent) |
 | P2 | the tail, not the mean, sets the boundary; heavier tail gives larger `rho*` and a steeper fall | **refuted in both halves** (4.4) |
-| P3 | the prediction-attributable fraction is below 0.7 and falls with contention | **threshold met at every cell; registered direction not met** -- it falls with the width, not with contention (4.5) |
+| P3 | the prediction-attributable fraction is below 0.7 and falls with contention | **both halves confirmed, the registered variable nearly inert** -- `F` is below 0.7 in every cell and falls in `rho` over the 3 pairs that carry a load difference; the width moves it too, which the registration did not name (4.5) |
 | P4a | the safe region shrinks under a non-idempotent fraction | **confirmed** |
 | P4b | the shrinkage is at least 0.05 at `q = 0.05` | **refuted** (shortfall factor 2.13162) |
 | P4c | an admissibility rule leaves permitted-but-harmful states | **confirmed**, carried by the step-level reading |
 
-Three of the six registered beliefs were refuted or left unresolved, and the two that were confirmed did
-not survive unchanged: P3's threshold held while its direction did not, and P4's shrinkage arrived an
-order of magnitude smaller than registered. For a study whose contribution is a boundary rather than a
-speedup, that is the expected shape -- but it is worth saying plainly that the pre-registration did not
-make the results more comfortable; it made three of them falsifiable in advance, which is the only thing
-it was for.
+The six outcomes partition as P1 left unresolved as registered; P2, P4b contradicted; P3, P4a, P4c confirmed. Two of them are qualified, and
+the qualifications are in the sections above rather than smoothed here: P1's registered law is
+unresolved because the boundary moves with the pool as well, and P3's registered variable is nearly inert
+over the range swept, so the direction it names is readable only over the pairs that carry a load
+difference. For a study whose contribution is a boundary rather than a speedup, that is the expected
+shape -- but it is worth saying plainly that the pre-registration did not make the results more
+comfortable; it made them falsifiable in advance, which is the only thing it was for.
 
 ### 4.10 A correction we made to our own earlier reading
 
@@ -813,10 +843,10 @@ the manuscript is only reproducible if, the following all hold:
 | assembly | the rebuilt artefacts | `assemble.py --check` exits 0: the committed manuscript is the one the evidence produces |
 | bibliography | `references.json`, `refs_order.json` | the two writers' `--check`s exit 0 and the order matches the body's first-use numbering |
 | reference verification | `refs_verification` artefact | `reference-check.md` re-renders, differing from the committed copy in nothing but its own run coordinates |
-| citation gate | `manuscript.md` | `refgate.py` reports `GATE: PASS` |
-| link gate | every tracked markdown carrier | `linkgate.py --check` reports `broken=0` |
+| citation gate | `manuscript.md`, in the tree the gate runs in | `refgate.py` reports `GATE: PASS`; exit 2 is `GATE: NOT RUN` (a named window that could not be read) and is reported as `NOT RUN`, not as a pass and not as a failure |
+| link gate | the markdown carriers the gate can read -- every `git ls-files '*.md'` under the tree it runs in | `linkgate.py --check` reports `broken=0` **over that set, and names the set it read**; in a `git archive` export the set is empty and an empty set is not a pass -- the gate prints `set: 0 tracked markdown carriers` and `LINKGATE: NOT RUN` (exit 2), which the step reports as `NOT RUN` rather than as a failure |
 | figures | `artefacts/*.json` | `figures/make_figures_v1.py --check` reports the four figures regenerated byte-identically |
-| the paper's own claims | the parts, the artefacts, the figures | `manuscript_check_v1.py` reports no unbound claim: each registered verdict is the one its artefact decided, every section reference resolves, every figure is reachable and pointed at, and no headline measurement is typed into the prose |
+| the paper's own claims | the parts, the artefacts, the figures | `manuscript_check_v1.py` reports no unbound claim: each registered verdict is the one its artefact decided **in every place the paper states it**, every section reference resolves, every figure is reachable and pointed at, and no headline measurement is typed into the prose |
 
 **6.2 The evidence is in the package, and the package is closed.** 46 files
 (6.83 MB) sit under `artefacts/`, including 22 scripts. The scripts
@@ -879,18 +909,27 @@ the thing being hidden) and the mechanism does not survive a queue.
 
 **P3 -- "part of the reported gain is parallelism, not prediction".** *Registered:* the
 prediction-attributable fraction `F` against a serial baseline is **below 0.7** once the baseline may
-spend the same capacity, and `F` **decreases in `rho`**. *Outcome:* **half confirmed, half
-contradicted**. `F` is below 0.7 in every cell of the matched-parallelism control (4.5), and it does not
-decrease in `rho`: at fixed width, the pool coordinate changes nothing at all once the pool is at least
-the agent count, and what moves `F` is the width. The registered threshold was right and the registered
-mechanism for its movement was wrong, which is a strong result reported as a partial one.
+spend the same capacity, and `F` **decreases in `rho`**. *Outcome:* **confirmed in both halves**, with
+the registered variable nearly inert over the range swept. `F` is below 0.7 in every cell of the
+matched-parallelism control, and it decreases in `rho` over the 3 adjacent
+pairs that carry a load difference (no increase, 3 significant decreases --
+the artefact's own rule and its own verdict, **confirmed**). Over the other
+6 adjacent pairs the pool coordinate carries no load difference at all: at
+`c = 4, 8, 16` the pool is at least the agent count and those cells are the same run. The movement a
+reader sees is therefore the **width**, by a factor of about 2.56872 -- an effect the
+registration did not name, and the reason this half is reported with its window rather than as a bare
+confirmation. The registered threshold was right and the registered variable was nearly inert, which is
+a weaker claim than "refuted" and the one the object supports.
 
 **P4a -- "the safe region shrinks".** *Registered:* with a non-idempotent fraction `q` and compensating
 cost, the safe region shrinks by a measurable amount. *Outcome:* **confirmed** -- all
 12 load-bearing families have a paired shrinkage interval strictly above zero (4.6).
 
 **P4b -- "the shrinkage is at least 0.05 in `rho*` at `q = 0.05`".** *Outcome:* **contradicted**, with a
-shortfall factor of 2.13162 (measured 0.00304174 to 0.0212722). The channel is real
+shortfall factor of 2.13162 (measured 0.00304174 to 0.0212722; the factor is the
+smallest over the four families of `0.05 / <that family's upper paired-interval end>` =
+`0.05 / 0.0234563` -- a minimum over the four paired intervals, not a ratio of the means, which
+would be 2.35048). The channel is real
 and an order of magnitude smaller than registered; a reader deciding whether to spend effort on
 side-effect accounting should read this number rather than the prior.
 
@@ -902,12 +941,13 @@ carried by individual steps rather than by construction: of 8 readable cells,
 (4.6). The reading that *is* by construction (18 cells above a located crossing)
 is reported separately and does not carry the claim.
 
-**7.1 Why pre-registration changed the paper rather than decorating it.** Three of the six registered
-beliefs were contradicted and one was left unresolved; two were confirmed. In each case the registered
-sentence named the *quantity* and the *direction* in advance, which is what made the failures
-interpretable: P2's refutation is informative because the prior specified both the sign and the ordering
-and the data inverted both, and P3's partial result is informative because the prior separated "how
-much" from "which way it moves". A study that had measured the same numbers without registering them
+**7.1 Why pre-registration changed the paper rather than decorating it.** Of the six registered
+beliefs the partition is: P1 left unresolved as registered; P2, P4b contradicted; P3, P4a, P4c confirmed. In each case the registered sentence named the *quantity* and the
+*direction* in advance, which is what made the outcomes interpretable: P2's refutation is informative
+because the prior specified both the sign and the ordering and the data inverted both, and P3's
+confirmation is informative because the prior separated "how much" from "which way it moves" -- the
+threshold held, the direction held over the only pairs it is readable on, and the variable it named
+turned out to be nearly inert. A study that had measured the same numbers without registering them
 could have reported all of this as exploration; it would then have had no way to show that it was not
 choosing the axis after seeing the data.
 

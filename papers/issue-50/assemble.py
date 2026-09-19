@@ -232,6 +232,7 @@ def build_results_facts():
     v4 = side["verdicts"]
     m4b = side["m4b"][0]["cells"][0]
     ll = side["load_law"]["load_to_reach"]["groups"]
+    ld0 = mech["load_decomposition"][0]
     sec = fix["verdict"]
     es = ext["summary"]
 
@@ -244,6 +245,42 @@ def build_results_facts():
     # 0.15 with an interval that excludes zero).  The prose may not disagree with what is computed
     # here, and the assembler prints the whole table so a reader sees the derivation, not only its
     # effect.
+    # -- the six registered prior beliefs' own outcomes, DERIVED here rather than typed anywhere ------
+    # R387 (review round 2): the paragraph in 4.9 that partitions the six beliefs was the SECOND
+    # claim-about-a-SET in this package with no owner -- the first was the criteria's, in R385 -- and it
+    # had gone wrong in the way such claims go: it reached for P3 and P4b to illustrate "the two that
+    # were confirmed".  Each status below is read from the object that decided it: two are pairs of
+    # verdict words a run wrote (P2's two halves, P3's two halves), three are single verdict words
+    # (P4a/P4b/P4c), and one is a rule over the artefact's own counts (P1: the registered
+    # single-variable law is compared against the shift decomposition it implied).
+    WORD = {"CONFIRMED": "confirmed", "CONTRADICTED": "contradicted", "UNRESOLVED": "unresolved"}
+
+    def word_of(s):
+        for k, v in WORD.items():
+            if s.startswith(k):
+                return v
+        return "unmapped"
+
+    def pair_word(a, b):
+        """A prior registered as two claims is `part` when the two halves disagree, else its own word."""
+        return a if a == b else "part"
+
+    def prior_status():
+        hr, hs = mech["hr_rho"], mech["h_shift"]
+        p1 = "unresolved" if (len(hr["deviating"]) == hr["n_groups"]
+                              and len(hs["consistent"]) < hs["n_groups"]) else "confirmed"
+        return {
+            "P1": p1,
+            "P2": pair_word(word_of(tail["p2_first_half"]["verdict"]),
+                            word_of(tail["p2_second_half"]["verdict"])),
+            "P3": pair_word(word_of(var["verdicts"]["P3a"]), word_of(var["verdicts"]["P3b"])),
+            "P4a": word_of(v4["P4a"]["verdict"]),
+            "P4b": word_of(v4["P4b"]["verdict"]),
+            "P4c": word_of(v4["P4c"]["verdict"]),
+        }
+
+    priors = prior_status()
+
     def criteria_status():
         band_lo = min(r["benefit_pct"] for r in rows)
         band_hi = max(r["benefit_pct"] for r in rows)
@@ -299,6 +336,22 @@ def build_results_facts():
                                         - min(r["rho_spec"] for r in f["rows"]) for f in fs),
         "win_benefit_span_max": lambda: max(max(r["benefit_pct"] for r in f["rows"])
                                             - min(r["benefit_pct"] for r in f["rows"]) for f in fs),
+        # the partition of the six beliefs, as SETS: the two sentences that state it (4.9, 7.1) quote
+        # these, so the two carriers cannot be different widths and neither can drift from the artefacts
+        # ... composed here rather than quoted category by category.  `prior_status()` can return
+        # FOUR words -- confirmed, contradicted, unresolved, and `part` (which `pair_word` returns
+        # whenever a two-half prior's halves disagree) -- and the sentence that states the partition
+        # had three slots, so a `part` outcome would have been DROPPED from it: the same defect this
+        # round repaired for P4c, one level down.  The composer iterates every category with a slot
+        # for each and skips only the empty ones, so a category cannot go missing from the sentence
+        # without going missing from this list first.
+        "priors_partition": lambda: "; ".join(
+            "%s %s" % (", ".join(k for k in sorted(priors) if priors[k] == key), word)
+            for key, word in (("unresolved", "left unresolved as registered"),
+                              ("contradicted", "contradicted"),
+                              ("part", "part-confirmed, the two halves disagreeing"),
+                              ("confirmed", "confirmed"))
+            if any(priors[k] == key for k in priors)),
         # -- (ii) the tail separation test
         "tail_hiding_limit_heavy": lambda: tail["premise"]["16"]["hiding_limit_heavy"],
         "tail_hiding_limit_light": lambda: tail["premise"]["16"]["hiding_limit_light"],
@@ -366,11 +419,50 @@ def build_results_facts():
         # -- (v) the closed-form fixed point
         "fix_secondary_within": lambda: sec["secondary_same_cell_within"],
         "fix_secondary_n": lambda: sec["secondary_same_cell_n"],
+        # RC1 (review round 2, `minor`): the sentence that reports the load law named ONE member's
+        # `q` and said the pair was "at the same load".  The two members are matched on the DERIVED
+        # load `(1 - h) * q * comp`, so the record's own group is the object: `load_decomposition[0]`
+        # carries its members by key and the load they share, and each member's `h`/`q`/`comp` is read
+        # from its own row of the family table -- no component is parsed out of a key string, and the
+        # pairing cannot be read one member short again.
+        "load_pair_value": lambda: ld0["load"],
+        "load_pair_agents": lambda: mech["families"][ld0["low_h"]]["agents"],
+        "load_pair_h_lo": lambda: mech["families"][ld0["low_h"]]["h"],
+        "load_pair_q_lo": lambda: mech["families"][ld0["low_h"]]["q"],
+        "load_pair_h_hi": lambda: mech["families"][ld0["high_h"]]["h"],
+        "load_pair_q_hi": lambda: mech["families"][ld0["high_h"]]["q"],
+        # RC2 (review round 2, `minor`): the printed shortfall factor is the MINIMUM over the four
+        # paired intervals, not a ratio of the means printed beside it.  Both numbers are bound here so
+        # the sentence states the basis instead of leaving a referee to find a discrepancy: the largest
+        # upper interval end among the four families, and the ratio of means a reader would compute.
+        # (The instrument's threshold is not stored as its own field; it is recovered from the pair the
+        # record already carries -- `shortfall_factor * ci_hi_max` -- so the ratio below cannot drift
+        # from the recorded factor.)
+        "p4b_ci_hi_max": lambda: max(ci[1] for _m, ci in v4["P4b"]["measured"].values()),
+        "p4b_ratio_of_means": lambda: (v4["P4b"]["shortfall_factor"]
+                                       * max(ci[1] for _m, ci in v4["P4b"]["measured"].values())
+                                       / max(m for m, _ci in v4["P4b"]["measured"].values())),
+        # the registered direction's window, read from the control's own verdicts: how many adjacent
+        # pool pairs carry a load difference at all, and on how many of those F falls.  R387's fourth
+        # defect lived here -- the prose said the direction was "not met" while this rule's verdict was
+        # CONFIRMED, so the counts and the verdict word are both bound and `manuscript_check_v1.py`
+        # check A now requires the word.
+        "variant_informative_pairs": lambda: var["verdicts"]["n_informative"],
+        "variant_coordinate_pairs": lambda: var["verdicts"]["n_coordinate_only"],
+        "variant_decreasing_pairs": lambda: sum(1 for a in var["verdicts"]["adjacent"]
+                                                if a["verdict"] == "DECREASE"),
+        # the step-level reading's coverage: one family per crossing read, two cells per family
+        "p4c_step_families": lambda: len(side["m4b"]),
         "fix_secondary_median": lambda: sec["secondary_same_cell_median"],
         "fix_secondary_worst": lambda: sec["secondary_same_cell_worst"],
         # -- (vi) the external cell
         "ext_cells": lambda: es["n_cells"],
         "ext_sign_match": lambda: es["sign_match"],
+        # Q1 (review round 2, recorded and not adopted as a required change): what a sign
+        # agreement of k of n can separate.  The exact one-sided probability of an all-match
+        # under a fair-coin null is a DERIVED fact -- `0.5 ** n` -- so the sentence that states
+        # the test's power moves with the count that decides it rather than carrying a numeral.
+        "ext_sign_p": lambda: 0.5 ** es["n_cells"],
         "ext_band_lo": lambda: es["model_band_pct_in_reported_region"][0],
         "ext_band_hi": lambda: es["model_band_pct_in_reported_region"][1],
         "ext_region_lo": lambda: es["reported_region_overlap_p"][0],
@@ -641,9 +733,30 @@ def selftest():
             if not fired:
                 bad += 1
                 print("    " + out.strip().replace("\n", "\n    ")[-400:])
+        # ... and a fourth plant of a DIFFERENT kind, because the third one above plants in prose and
+        # this one plants in an ARTEFACT.  The partition that 4.9 and 7.1 state is composed from the
+        # statuses the artefacts decide, and `prior_status()` can return a word the sentence once had
+        # no slot for -- `part`, which `pair_word` returns whenever a two-half prior's halves disagree.
+        # The plant flips ONE half in a throwaway copy and requires the composed sentence to say so:
+        # the composer's fourth branch must be reachable, or the composition is decoration.
+        root = os.path.join(work, "plant-part")
+        shutil.copytree(HERE, root, ignore=shutil.ignore_patterns("research", ".repro-scratch",
+                                                                 "__pycache__", ".git"))
+        v = os.path.join(root, "artefacts", "variant_v1.json")
+        doc = json.load(io.open(v, encoding="utf-8"))
+        doc["verdicts"]["P3a"] = "CONTRADICTED (planted: one half of a two-half prior)"
+        io.open(v, "w", encoding="utf-8").write(json.dumps(doc, indent=1, sort_keys=True))
+        rc2, out2 = build(root)
+        built = io.open(os.path.join(root, "manuscript.md"), encoding="utf-8").read()
+        fired = rc2 == 0 and "P3 part-confirmed" in built
+        print("  plant %-42s in %-18s fired=%s" % ("a half that disagrees (the `part` category)",
+                                                   "artefacts", fired))
+        if not fired:
+            bad += 1
+            print("    " + out2.strip().replace("\n", "\n    ")[-400:])
     finally:
         shutil.rmtree(work, ignore_errors=True)
-    print("ASSEMBLE SELFTEST: %d plant(s), %d not firing" % (len(plants), bad))
+    print("ASSEMBLE SELFTEST: %d plant(s), %d not firing" % (len(plants) + 1, bad))
     return 0 if bad == 0 else 1
 
 

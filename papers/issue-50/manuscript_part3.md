@@ -120,12 +120,17 @@ Over {{variant_cells}} cells ({{variant_h_values}} in width by {{variant_c_value
 [{{F_h050_ci_lo}}, {{F_h050_ci_hi}}], and at `h = 0.75` {{F_h075}}. In words: at half width, a blind
 schedule of the same size already buys {{blind_share_h050}} of the informed gain.
 
-The registered *direction* is not the direction the data has. The registration predicted `F` falling in
-`rho`; what the data shows is `F` falling in the **width** `h` -- a factor of about
-{{F_ratio_narrow_to_wide}} from the narrowest to the widest setting -- while at fixed `h` the pool
-coordinate changes nothing at all once the pool is at least the agent count (`c = 4, 8, 16` are the same
-run; only `c = 2` differs). The criterion's threshold half is **met at every cell**; its registered
-direction is **not met**, and the honest report is both.
+The registered *direction* holds, and it holds only where the instrument can read it. The registration
+predicted `F` falling in `rho`, and over the {{variant_informative_pairs}} adjacent pool pairs that carry
+a load difference at all, `F` does fall: no increase and {{variant_decreasing_pairs}} significant
+decreases, which is the artefact's own rule for this half and its own verdict, **confirmed**. The
+qualification is the size of the window: over the other {{variant_coordinate_pairs}} adjacent pairs the
+pool coordinate carries *no* load difference at all, because at `c = 4, 8, 16` the pool is at least the
+agent count and those cells are the same run. The registered variable is therefore nearly inert over the
+range swept, and the movement a reader sees is the **width** `h` -- a factor of about
+{{F_ratio_narrow_to_wide}} from the narrowest to the widest setting, an effect the registration did not
+name. The criterion's threshold half is **met at every cell**; its registered direction is **met where it
+can be read**, and the honest report is all three sentences.
 
 **The other reading of the same threshold, reported rather than chosen.** The same 0.7 was tested
 earlier against a different quantity: the share of the net benefit contributed by the hiding channel,
@@ -148,10 +153,18 @@ The registered belief had three parts; it is confirmed, refuted, and confirmed.
 * **The registered magnitude -- refuted.** The registration expected a shrinkage of at least 0.05 in
   `rho*` at `q = 0.05`, `comp = 1.0`. The four families measured there shrink by between
   {{p4b_lowest}} and {{p4b_highest}}, all below the threshold, with a shortfall factor of
-  {{p4b_shortfall}}. The channel is real and it is smaller than believed.
-* **The permitted-but-harmful set is non-empty -- confirmed, and carried by individual steps.** Of
-  {{p4c_cells_located}} cells that can be read, **{{p4c_cells_losing}} contain steps with negative
-  benefit**, at a fraction between {{p4c_frac_lo}} and {{p4c_frac_hi}}. The other reading of the same
+  {{p4b_shortfall}} -- a **minimum over the four paired intervals**, not a ratio of the means printed
+  here: it is the smallest over the four families of `0.05 / <that family's upper interval end>`, the
+  largest upper end among them being {{p4b_ci_hi_max}}. Against the means instead the same threshold
+  gives {{p4b_ratio_of_means}}, which is the number a reader checking {{p4b_lowest}}-{{p4b_highest}}
+  against 0.05 would compute; the recorded statistic is the conservative one, and the shortfall is at
+  least {{p4b_shortfall}}. The channel is real and it is smaller than believed.
+* **The permitted-but-harmful set is non-empty -- confirmed, and carried by individual steps.** The
+  step-level pass covers the crossing and nothing else: for each of the {{p4c_step_families}} families it
+  was run on, the **two cells that bound that family's located crossing**, one either side. Of those
+  {{p4c_cells_located}} cells, **{{p4c_cells_losing}} contain steps with negative benefit**, at a
+  fraction between {{p4c_frac_lo}} and {{p4c_frac_hi}}; whether the mixture survives further into the
+  permitted region is not measured here. The other reading of the same
   claim is by construction ({{p4c_by_construction}} cells above a located crossing are negative whatever
   the crossing's location is), so the claim is carried by the step-level reading, not by the
   constructive one.
@@ -168,8 +181,12 @@ contention rather than to a side effect.
 **A declared-load law is inconsistent.** If the charge were a matter of load alone, families with the
 same declared load and different `h` would shrink by the same amount. Their intervals are not merely
 different but disjoint. The effect is carried by the slope rather than by the load level
-({{db_per_load_lo}} to {{db_per_load_hi}} basis points per unit load between two families at the same
-load `q = 0.01`, `comp = 1.0`), and the load that would be required to reach the registered 0.05
+({{db_per_load_lo}} to {{db_per_load_hi}} basis points per unit load, between the two members of *one
+matched pair*: `A` = {{load_pair_agents}} at `h` = {{load_pair_h_lo}} with `q` = {{load_pair_q_lo}}, and
+at `h` = {{load_pair_h_hi}} with `q` = {{load_pair_q_hi}}, both `comp` = 1.0. They share the *derived*
+load `(1 - h) * q * comp` = {{load_pair_value}} and differ in `q`, which is what "same declared load"
+means here and what the two sentences above force), and the load that would be required to reach the
+registered 0.05
 threshold differs by a factor of about {{load_for_threshold_ratio}} between two families of the same
 pool size ({{load_for_threshold_lo}} against {{load_for_threshold_hi}}). The charge channel is therefore indexed by the same three coordinates
 as the boundary, not by a scalar load.
@@ -218,23 +235,36 @@ model's sign compared against a constant.
 The criterion is **met** on the sign, which is what it asked for, with the unreachable magnitude
 reported beside it rather than dropped.
 
+**What a sign test settles, and what it does not.** The agreement is {{ext_sign_match}} of
+{{ext_cells}} cells, whose exact one-sided probability under a fair-coin null is
+{{ext_sign_p|.3f}} -- the weakest form of external support, and it discriminates only against a model
+that places the boundary *below* the published region, since such a model predicts the opposite sign.
+A model that places the boundary *above* the region predicts the same sign this one does, so this
+reading does not separate this boundary location from a larger one; it is consistency, not a location
+measurement. What would separate them is a **boundary located inside the published region** -- not
+measured here, because each cell is read at its own reported operating point -- or a **magnitude inside
+the published band**, which is exactly where the third cell is short by
+{{ext_appworld_shortfall}} percentage points. Reporting the sign as the criterion asked, and the power
+of that reading beside it, is the same rule the rest of this section follows.
+
 ### 4.9 The registered prior beliefs, one line each
 
 | prior | registered claim | outcome |
 |---|---|---|
 | P1 | a sharp boundary `rho*(h)` exists and moves with the speculation rate | **unresolved as registered** -- the boundary moves with the *pool*; the registered closed-form law for its movement deviates in {{hr_deviating}} of {{hr_groups}} groups, and the shift decomposition is mixed ({{hshift_consistent}} of {{hr_groups}} groups consistent) |
 | P2 | the tail, not the mean, sets the boundary; heavier tail gives larger `rho*` and a steeper fall | **refuted in both halves** (4.4) |
-| P3 | the prediction-attributable fraction is below 0.7 and falls with contention | **threshold met at every cell; registered direction not met** -- it falls with the width, not with contention (4.5) |
+| P3 | the prediction-attributable fraction is below 0.7 and falls with contention | **both halves confirmed, the registered variable nearly inert** -- `F` is below 0.7 in every cell and falls in `rho` over the {{variant_informative_pairs}} pairs that carry a load difference; the width moves it too, which the registration did not name (4.5) |
 | P4a | the safe region shrinks under a non-idempotent fraction | **confirmed** |
 | P4b | the shrinkage is at least 0.05 at `q = 0.05` | **refuted** (shortfall factor {{p4b_shortfall}}) |
 | P4c | an admissibility rule leaves permitted-but-harmful states | **confirmed**, carried by the step-level reading |
 
-Three of the six registered beliefs were refuted or left unresolved, and the two that were confirmed did
-not survive unchanged: P3's threshold held while its direction did not, and P4's shrinkage arrived an
-order of magnitude smaller than registered. For a study whose contribution is a boundary rather than a
-speedup, that is the expected shape -- but it is worth saying plainly that the pre-registration did not
-make the results more comfortable; it made three of them falsifiable in advance, which is the only thing
-it was for.
+The six outcomes partition as {{priors_partition}}. Two of them are qualified, and
+the qualifications are in the sections above rather than smoothed here: P1's registered law is
+unresolved because the boundary moves with the pool as well, and P3's registered variable is nearly inert
+over the range swept, so the direction it names is readable only over the pairs that carry a load
+difference. For a study whose contribution is a boundary rather than a speedup, that is the expected
+shape -- but it is worth saying plainly that the pre-registration did not make the results more
+comfortable; it made them falsifiable in advance, which is the only thing it was for.
 
 ### 4.10 A correction we made to our own earlier reading
 
