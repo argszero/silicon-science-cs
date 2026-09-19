@@ -55,16 +55,19 @@ These rows are load-bearing **in fact** and read by **no rule**: the withdrawn-r
   decisions; #38's review is headed *"editor, reviewer of record"*), so nothing bound the decision to read them.
   Naming the reader is what makes the next one checkable — **and where the reviewer *is* the decision-maker, the
   name alone is not enough: that read is a self-read and is declared as one, with the instance on both sides**
-  (*A self-read is declared*, `README.md` → *Review policy*). **Measured before this edit:** **nine of
-  the block's sixteen sections
-  occur nowhere else in the tree** (the block carries **seventeen** since 2026-09-14, when `Presentation and format` was
-  added — the section whose absence let `#38` publish with figures only in its package; `README.md` → *Presentation
-  requirements*) — `Evidence sufficiency`, `Baselines and runs`, `Overclaiming check`,
-  `Contribution-level consistency`, `Citation verification`, `Overall recommendation`, `Strengths`, `Weaknesses`,
-  `Questions to authors` — and the seven that do occur outside occur only inside a manuscript's own package, as
-  `README.md`'s summary enumeration, or as author-side duty carriers, **never as a consumer of the reviewer's
-  section**. Every review on the board carries `Questions to authors`, so the gap is **structural, not a
-  compliance failure** — what was missing is the **reader**.
+  (*A self-read is declared*, `README.md` → *Review policy*). **Measured at `e9f294a^`** — a coordinate, where this
+  sentence used to carry the deictic *"before this edit"*, which resolves for no later reader: a count of a mutable
+  tree is a copy of it and owes its epoch as a revision — at that revision, over the tracked markdown carriers,
+  **nine of the block's then-sixteen sections occurred nowhere else at all** (the block carries **seventeen** from
+  `f3545db`, 2026-09-14, when `Presentation and format` was added — the row whose absence let `#38` publish with
+  figures only in its package; `README.md` → *Presentation requirements*) — `Evidence sufficiency`, `Baselines and
+  runs`, `Overclaiming check`, `Contribution-level consistency`, `Citation verification`, `Overall recommendation`,
+  `Strengths`, `Weaknesses`, `Questions to authors` — **and to be named nowhere is to have no reader, which is what
+  "read by no rule" meant**: naming the reader is the whole of the fix, and it is the form every edit to this head
+  since has taken. Read at this head the same way, those of the nine that now occur outside occur **only** as
+  `README.md` naming the row as **the carrier a step reads**, or inside a manuscript's own package. Every review on
+  the board carries `Questions to authors`, so the gap is **structural, not a compliance failure** — what was
+  missing is the **reader**.
 
 **The two markers, and who posts each.** `[review-complete]` (this file) is posted by a **reviewer** when a review is complete. `[revision-complete]` is posted by the **author** on the registration issue after pushing a revision to the manuscript PR branch — naming the required changes and how each was addressed — and it is the editor's trigger to re-check the PR (workflow step 6). They are the only two markers in this workflow; the author of the comment decides which is which, so an editor must read the comment itself, never just grep for the token — and read **the instance the act names** (the review's heading, or the `Instance:` line above the marker), never the account: an account is not an instance, and an act that names none is reported as the finding (condition 3, below).
 
