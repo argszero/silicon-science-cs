@@ -65,11 +65,20 @@ component is printed in one of the two forms the rule admits at all — because 
 that prints neither is outside the read and its zero must not be presented as a held
 form.
 
+**What the verdict is about is the window it read.**  This gate takes its set as
+arguments, so a `PASS` is a statement about the files it opened — and when **no
+window was read** (no file named, or a named file that cannot be opened) the
+verdict is `NOT RUN`, with the window named, never a traceback and never `PASS`:
+`PASS` over a window nothing was read from is the same string a real pass prints.
+This is the case the clause exists for — `papers/issue-<N>/` may live only on a
+branch, and an export carries no `.git` (the audit's instance 195, R413).
+
 Usage:
     python3 .github/tools/refgate.py papers/issue-<N>/manuscript.md ...
     python3 .github/tools/refgate.py --selftest
 
-Exit status: 0 = gate PASS, 1 = FAIL (including unparseable input).
+Exit status: 0 = gate PASS, 1 = FAIL (including unparseable input), 2 = `NOT RUN`
+(no window read — no verdict is taken).
 `--selftest` runs the checker over fixed fixtures and asserts its whole printed
 output, with a case for **each form this window admits and each it drops** — the
 printed-line set (the verdict line and every advisory line) is that set's floor,
@@ -291,10 +300,23 @@ def _dups(refsec):
 
 
 def report(path):
-    with open(path, encoding='utf-8') as fh:
-        text = fh.read()
-    body, refsec, region = split_doc(text)
     print(f"=== {path}")
+    try:
+        with open(path, encoding='utf-8') as fh:
+            text = fh.read()
+    except OSError as exc:
+        # The set this gate reads is its arguments, so a path it cannot open is a
+        # window that was not read: `NOT RUN`, named, and **no verdict** - never a
+        # traceback, which reads as a defect of the package rather than of the read.
+        print(f"  NOT RUN: cannot read the file — {exc}")
+        print("          A verdict is about the window it read, and no window was "
+              "read, so none is taken.\n"
+              "          `papers/issue-<N>/` may live only on a branch, and an "
+              "export carries no `.git`:\n"
+              "          run this from a checkout at the head you mean, on a path "
+              "it holds.")
+        return None
+    body, refsec, region = split_doc(text)
     if refsec is None:
         # The message names what was SEARCHED FOR: a heading in another form is
         # a form finding, not a manuscript that has no References section.
@@ -708,13 +730,22 @@ def selftest():
          "## Introduction\n\nsee [1-97] and [98, 99, 100]\n\n" + _refs(1, 100),
          ["GATE: PASS", "covered=100/100"], CLEAN)
 
+    # --- the window that was not read: NOT RUN, and no verdict ----------------
+    # The set this gate reads is its arguments, so a path the tree does not hold is
+    # a window nothing was read from: `NOT RUN`, named, and never a traceback (which
+    # reads as a defect of the package) nor a `GATE:` line of any kind. `text=None`
+    # means the runner writes no file for this case.
+    case("a_window_this_tree_does_not_hold", None,
+         ["NOT RUN: cannot read the file"], ("GATE:", "window:"), None)
+
     failures = []
     tmpdir = tempfile.mkdtemp(prefix="refgate-selftest-")
     try:
         for name, text, appear, forbid, expect_pass in cases:
             path = os.path.join(tmpdir, f"{name}.md")
-            with open(path, "w", encoding="utf-8") as fh:
-                fh.write(text)
+            if text is not None:          # `None` = a window this tree does not hold
+                with open(path, "w", encoding="utf-8") as fh:
+                    fh.write(text)
             buf = io.StringIO()
             with contextlib.redirect_stdout(buf):
                 verdict = report(path)
@@ -737,8 +768,9 @@ def selftest():
                                "0 print the family name ALL-CAPS, 0 carry a character reference>")
             spurious = [s for s in forbid if s in printed]
             ok = verdict == expect_pass and not missing and not spurious
+            shown = ("NOT RUN" if verdict is None else ("PASS" if verdict else "FAIL"))
             print(f"  [{'ok' if ok else 'FAIL'}] {name}: "
-                  f"verdict={'PASS' if verdict else 'FAIL'}"
+                  f"verdict={shown}"
                   + (f"  MISSING={missing}" if missing else "")
                   + (f"  UNEXPECTED={spurious}" if spurious else ""))
             if not ok:
@@ -755,7 +787,19 @@ def selftest():
 if __name__ == '__main__':
     args = sys.argv[1:]
     if not args:
-        sys.exit(__doc__.strip().split("Usage:")[1].strip())
+        print("refgate_v1 - the journal reference gate")
+        print("NOT RUN: no file was named — the set this gate reads is its arguments, "
+              "so no window\n         was read and no verdict is taken.")
+        print()
+        print(__doc__.strip().split("Usage:")[1].strip())
+        sys.exit(2)
     if args == ['--selftest']:
         sys.exit(0 if selftest() else 1)
-    sys.exit(0 if all([report(f) for f in args]) else 1)
+    verdicts = [report(f) for f in args]
+    if any(v is None for v in verdicts):
+        # A window that was not read outranks the windows that were: the run states
+        # `NOT RUN` beside its per-file verdicts rather than turning an unread window
+        # into a `FAIL` of a package (`None` is the report's own NOT RUN).
+        print("  GATE: NOT RUN (a named window could not be read — no verdict)")
+        sys.exit(2)
+    sys.exit(0 if all(verdicts) else 1)

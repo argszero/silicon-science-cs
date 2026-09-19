@@ -64,6 +64,18 @@ Usage:
   python3 .github/tools/pointgate.py --check    # exit 1 on any UNRESOLVED pointer
   python3 .github/tools/pointgate.py --selftest # the tool's own cases
 
+**What the verdict is about is the set it read.**  Every pointer this tool
+resolves is read out of the tracked carriers, so a `PASS` is a statement about
+that set - and an **empty** set is `NOT RUN`, with its window named (the root it
+read and the command it ran), never `PASS`: `PASS` over a set nothing was read
+from is the same string a real pass prints.  This is the case the clause exists
+for - an export of this tree carries no `.git`, and `git ls-files` then reaches
+an **enclosing** repository (whose own index holds no markdown under this
+directory) or fails outright.
+
+Exit status: 0 = `PASS`, 1 = `FAIL` (an unresolved pointer), 2 = `NOT RUN` (the
+set was empty or unreadable - no verdict is taken).
+
 Run it from the repository root; the relative tool path resolves there.
 """
 
@@ -266,18 +278,45 @@ def scan(root, files):
     return rows
 
 
-def report(rows):
-    """every class counted and named, then the members of the classes that need a reader"""
-    kinds = {}
-    for r in rows:
-        kinds[r[3]] = kinds.get(r[3], 0) + 1
+def verdict(files, bad):
+    """The verdict over the set: an empty set is `NOT RUN`, never `PASS`.
+
+    The rows are read off the carriers, so the set is empty exactly when
+    **nothing was read** - an export carries no `.git` and `git ls-files` then
+    reaches an enclosing repository (whose index holds no markdown under this
+    directory) or fails.  `PASS` over that set is the same string a real pass
+    prints, so the tool refuses the word and names its window instead (the audit's instance 195, R413).
+    """
+    if not files:
+        return "NOT RUN"
+    return "FAIL" if bad else "PASS"
+
+
+def read_set(root):
+    """`(files, why)` - the carriers, or a named failure to read them at all."""
+    try:
+        return tracked(root, ["*.md"]), ""
+    except (OSError, subprocess.CalledProcessError) as exc:
+        msg = getattr(exc, "stderr", "") or str(exc)
+        return [], "`git ls-files '*.md'` failed at %s: %s" % (root, msg.strip())
+
+
+def header(files):
     print("pointgate_v1 - the tree's named pointers (`-> *Name*`, `see *Name*`), "
           "resolved at the carrier they name")
     print("rule: README.md -> Links; a name resolves on a heading, a lead (line- or "
           "sentence-initial) or a blockquote item\n"
           "      of the named carrier, read as rendered text and compared to the "
           "break before the lead's gloss")
-    print("set: the tracked markdown carriers (`git ls-files '*.md'`)")
+    print("set: %d tracked markdown carriers (`git ls-files '*.md'`)" % len(files))
+
+
+def report(rows, files):
+    """every class counted and named, then the members of the classes that need a reader"""
+    kinds = {}
+    for r in rows:
+        kinds[r[3]] = kinds.get(r[3], 0) + 1
+    header(files)
     print("pointers=%d" % len(rows))
     for k in sorted(kinds):
         print("  %-44s %d" % (k, kinds[k]))
@@ -351,6 +390,11 @@ def selftest(root):
     ch = "`README.md` → *A* → *B*"
     case(carrier_left(root, ch, len(ch) - 1, files), "README.md",
          "a path in the sentence is the carrier for the name that follows it")
+    case(verdict([], 0), "NOT RUN", "an empty set is not run and never a pass")
+    case(verdict([("a.md", 1, "x", "resolved")], 0), "PASS",
+         "a nonempty clean set passes")
+    case(verdict([("a.md", 1, "x", "UNRESOLVED in a.md")], 1), "FAIL",
+         "a nonempty set with an unresolved pointer fails")
     for label in ok:
         print("  ok   %s" % label)
     for label in bad:
@@ -364,11 +408,23 @@ def main(argv):
     root = repo_root()
     if "--selftest" in argv:
         return selftest(root)
-    rows = scan(root, tracked(root, ["*.md"]))
-    bad = report(rows)
+    files, why = read_set(root)
+    if not files:
+        header(files)
+        print("NOT RUN: the carrier set is empty - %s"
+              % (why or "`git ls-files '*.md'` returned nothing at %s" % root))
+        print("         A verdict is about a set, and no set was read, so none is "
+              "taken. An export of this tree carries no `.git`, and `git` then "
+              "reaches an enclosing repository (or fails): run this from a "
+              "checkout at the head you mean.")
+        if "--check" in argv:
+            print("POINTGATE: NOT RUN")
+        return 2
+    rows = scan(root, files)
+    bad = report(rows, files)
     rc = 0 if bad == 0 else 1
     if "--check" in argv:
-        print("POINTGATE: %s" % ("PASS" if rc == 0 else "FAIL"))
+        print("POINTGATE: %s" % verdict(files, bad))
     return rc
 
 
