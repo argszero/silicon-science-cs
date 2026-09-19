@@ -472,16 +472,24 @@ link target of every tracked markdown carrier — `python3 .github/tools/linkgat
 file's own directory**, which is where a renderer resolves it (resolving from the repository root manufactures
 false BROKENs: the defect the first census instrument carried), and it **names every form it does not read as a
 link**: a URL to another repository, a placeholder an author instantiates, an in-page anchor. Its count is
-`targets=<T> links=<L> resolved=<R> broken=<B>`, a `broken=0` printed too — re-taken at **R400** over **34** tracked
-markdown carriers: **targets=76 links=71 resolved=71 broken=0**, with `url=2 placeholder=3 anchor=0`, the anchor
-clause **vacuous at that head** (its first anchored link is the first case the clause can be tested on; R393 read
-**74/69/69** here, the two added since being this clause's own two `pointgate.py` links). The
+`targets=<T> links=<L> resolved=<R> broken=<B>`, a `broken=0` printed too — re-taken at **R406** over **34** tracked
+markdown carriers: **targets=77 links=72 resolved=72 broken=0**, with `url=2 placeholder=3 anchor=0`, the anchor
+clause **vacuous at that head** (its first anchored link is the first case the clause can be tested on; R400 read
+**76/71/71** here, the one added since being this clause's own `numgate.py` link). The
 rule's **other two forms are not one class**, and this sentence classed them together until R399 — a **numbered
-reference** resolves only inside a list the citing sentence or its carrier names, which no instrument can infer, so it
-stays a read (its four identification forms are stated above); a **named pointer** resolves by the rule stated above,
+reference** resolves only inside a list the citing sentence or its carrier names, **which no instrument can infer**, so
+its **position** stays a read; its **sites and the home of the list each one indexes** are enumerated by
+[`.github/tools/numgate.py`](.github/tools/numgate.py) — landed at R406, its carrier set read off *this section* and
+its sites counted in **two classes apart, never merged** (the carriers here, where the form fixes the list's home; and
+every other tracked file, a submission's own lists, where no home is claimed), with `--check` failing on the one form
+the rule **forbids** — the sentence that stood here until then called its census *"the editor's own, carried in the
+record outside this repository"*, which was true while the census was a scratch script and is false now (its four
+identification forms are stated above; what `numgate.py` does not read is the position a number means and whether that
+position holds the requirement the reference names — *being in range is not agreeing*); a **named pointer** resolves by the rule stated above,
 and the tool for it is [`.github/tools/pointgate.py`](.github/tools/pointgate.py). `linkgate.py`'s own header now
-states which half it covers and names that tool for the other — this paragraph was a **copy** of that header's older
-sentence, and it was corrected one round after the header was.
+states which half it covers and names the tools for the others — this paragraph was a **copy** of that header's older
+sentence and was corrected one round after the header was, **and at R406 all three carriers' copies of it moved in the
+same act**, in the commit that landed the third form's instrument.
 **A number whose list is in no tracked file resolves to nothing** for every reader of this
 repository — and it does not look broken, which is what lets it stand: the list's *name* usually resembles one that is here.
 Measured at R265: `.github/REVIEW_TEMPLATE.md` → *Citation verification* cited `#12/#13 in the review quality bar` — a

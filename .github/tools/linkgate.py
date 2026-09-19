@@ -11,9 +11,12 @@ Two things the tool does not decide, and says so:
 
 * the rule's **third form** - a numbered reference - resolves only inside the
   namespace of a list the citing sentence or its carrier names.  Which list is
-  meant is a read, not a computation, so that form stays a read (README.md ->
-  Links; the census that collects it is the editor's own, carried in the record
-  outside this repository).  The rule's **second form** - a **named pointer**
+  meant is a read, not a computation, so the **position** a number means stays a
+  read - but the **site and the home of the list it indexes** are enumerated by
+  `.github/tools/numgate.py`, which reads its own carrier set off `README.md` ->
+  *Links*.  This clause said the census "is the editor's own, carried in the
+  record outside this repository": true until R406, false since, corrected in
+  the act that landed the tool.  The rule's **second form** - a **named pointer**
   (`-> *Name*`, `see *Name*`) - is *not* of that kind and **is** a computation:
   it indexes no list, and it carries its target's name and the carrier the name
   lives in.  This header classed the two together (*"the second and third forms
@@ -132,8 +135,9 @@ def report(root, files=None, verbose=True):
               "empty=%d rooted=%d"
               % (counts["url"], counts["placeholder"], counts["anchor"],
                  counts["empty"], counts["rooted"]))
-        print("not decided here: a numbered reference - the list it indexes is a read; "
-              "a named pointer (`-> *Name*`) is read by .github/tools/pointgate.py")
+        print("not read here: a numbered reference - `.github/tools/numgate.py` "
+              "(the site and the list it indexes); a named pointer (`-> *Name*`) "
+              "is read by .github/tools/pointgate.py")
         for rel, target in broken:
             print("BROKEN %s -> %s" % (rel, target))
     return len(broken), total, paths, resolved, counts

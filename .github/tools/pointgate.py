@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """pointgate_v1 - the tree's named pointers, resolved at the carrier they name.
 
-The rule (README.md -> Links, op(0)/op(4) of the audit that collects it):
+The rule (README.md -> Links; the requirement is collected by the editor's own
+audit, carried outside this repository -- no tracked file holds its list):
 
     every cross-reference a tracked file makes is read by someone who has this
     repository and not necessarily anything else, so it must resolve *here*.
@@ -289,7 +290,9 @@ def report(rows):
     print()
     print("not read here: the rule's first form (a markdown link target - "
           "`.github/tools/linkgate.py`)")
-    print("not decided here: the rule's third form (a number indexing a list - a read)")
+    print("not read here: the rule's third form (a number indexing a list - "
+          "`.github/tools/numgate.py` reads the site and the list it indexes; "
+          "the position it means is a read)")
     return bad
 
 
