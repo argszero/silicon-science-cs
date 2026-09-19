@@ -5,8 +5,14 @@
 The study registered six success criteria and four prior beliefs before its deciding runs, and this
 section reports them in the registered order. Each criterion is reported **met** or **unmet with the
 reason**; no criterion is silently replaced by a nearby quantity that happens to be available, and no
-number here is typed: every one is computed from a committed artefact by the assembly step, so a
-sentence that disagrees with a measurement fails the build rather than the review.
+number here is typed: every one is computed from a committed artefact by the assembly step. What that
+step *enforces* is a named list rather than everything: the six registered verdicts must be the words
+the deciding artefacts carry (A), every section reference must resolve (B), every figure must be
+embedded and pointed at (C), the headline measurements must not be typed into the prose (D), and every
+quantified sentence -- a ratio, or a count of a registered set -- must rest on two independent
+bindings of one declared domain, with no registered count left unquoted (E). A sentence that
+disagrees with a measurement one of those checks covers fails the build; a number outside their reach
+is the review's, which is what the round-1 review found and what this revision repairs.
 
 Of the six criteria, {{n_criteria_unmet_outright}} are unmet outright and {{n_criteria_unmet_part}} more
 carries an unmet part, and in each case the reason is itself a result: (ii) is unmet, the separation
@@ -18,14 +24,18 @@ own earlier readings, because the wrong reading was reported first.
 ### 4.2 (i) The boundary, cell by cell
 
 Six pool sizes were swept at `h = 1.0` with {{boundary_seeds}} seeds each. **{{b_families_located}} of
-{{b_families_located}} located a crossing and none was ambiguous**: every family had exactly one
+{{b_families_total}} families located a crossing and {{b_families_ambiguous}} were ambiguous**:
+every family had exactly one
 positive-to-nonpositive sign change inside its window, which is the condition the crossing rule
 requires before it will report a number at all.
 
-`rho*` falls as the pool grows (Figure 1): {{rho_star_A16}} at `A = 16` and {{rho_star_A96}} at `A = 96` for the
+`rho*` declines across the range (Figure 1): {{rho_star_A16}} at `A = 16` and {{rho_star_A96}} at `A = 96` for the
 speculative arm, {{rho_star_serial_A16}} to {{rho_star_serial_A96}} for the serial arm. The span is
 {{rho_star_span}}, against a mean per-seed interval width of {{rho_interval_width}} -- a ratio of
-{{rho_span_over_interval}}. A two-sample comparison of the two extreme pool sizes gives a difference of
+{{rho_span_over_interval}} -- but the decline is not strict, and the artefact records the step itself:
+{{rho_star_A64}} at `A = 64` sits above {{rho_star_A48}} at `A = 48` by {{rho_rise_A48_A64}}, a rise
+smaller than that interval width, so the statement is about the mean and not about every step. A
+two-sample comparison of the two extreme pool sizes gives a difference of
 {{rho_two_sample_delta}} with an interval of [{{rho_two_sample_ci_lo}}, {{rho_two_sample_ci_hi}}], which
 excludes zero and therefore does not rest on the span exceeding an interval width.
 
@@ -71,9 +81,9 @@ by construction, with a worst relative mean gap of {{tail_mean_gap_rel_worst}} o
 the heavy class does have the *larger* unloaded hiding limit ({{tail_hiding_limit_heavy}} against
 {{tail_hiding_limit_light}}). That is the quantity the registered belief said would order the boundary.
 
-![The registered tail claim, refuted: mean-matched heavy and light latency classes, paired by seed, at three pool sizes. In {{tail_families_located}} of {{tail_families_located}} located families the heavy tail's boundary sits *below* the light tail's, and the paired difference is strictly below zero.](figures/fig2_tail.svg)
+![The registered tail claim, refuted: mean-matched heavy and light latency classes, paired by seed, at three pool sizes. In {{tail_families_located}} of {{tail_families_tested}} located families the heavy tail's boundary sits *below* the light tail's, and the paired difference is strictly below zero.](figures/fig2_tail.svg)
 
-* **First half, refuted.** In **{{tail_families_located}} of {{tail_families_located}}** located
+* **First half, refuted.** In **{{tail_families_located}} of {{tail_families_tested}}** located
   families the heavy tail's boundary is **below** the light tail's, not above it: at `A = 16` the paired
   difference is {{tail_delta_A16}} with an interval of [{{tail_delta_ci_lo}}, {{tail_delta_ci_hi}}],
   entirely below zero.
@@ -98,7 +108,9 @@ distribution's tail weight does to a queue.
 The registered criterion asked whether the fraction `F` of the gain attributable to prediction stays
 below 0.7 once the baseline is allowed to spend the same capacity on unpredicted useful work. That
 control was built directly: two arms issue **exactly the same number of early calls against the same
-pool** (checked as an identity, `k` = {{variant_k}} in every run), differing only in *which* steps are issued
+pool** -- the identity `k` = {{variant_k_by_width}} early calls per agent at the three widths,
+verified over {{variant_identity_runs}} runs with {{variant_identity_bad}} exceptions -- differing
+only in *which* steps are issued
 early -- the treatment picks the steps with the largest hideable amount, the control picks uniformly at
 random. `F = (G_selected - G_blind) / G_selected`, paired by seed.
 
@@ -159,17 +171,20 @@ different but disjoint. The effect is carried by the slope rather than by the lo
 ({{db_per_load_lo}} to {{db_per_load_hi}} basis points per unit load between two families at the same
 load `q = 0.01`, `comp = 1.0`), and the load that would be required to reach the registered 0.05
 threshold differs by a factor of about {{load_for_threshold_ratio}} between two families of the same
-pool size. The charge channel is therefore indexed by the same three coordinates
+pool size ({{load_for_threshold_lo}} against {{load_for_threshold_hi}}). The charge channel is therefore indexed by the same three coordinates
 as the boundary, not by a scalar load.
 
 ### 4.7 (v) The closed-form fixed point: no boundary to compare with
 
 The criterion asked the closed-form fixed point to land within +/- 0.05 of the simulated `rho*` in at
 least 80% of cells. **It is unmet, and the reason is a property of the comparison, not a tuning
-residual**: {{fixedpoint_excluded}} of {{fixedpoint_excluded}} cells were excluded for one kind of
-reason -- the closed-form model's benefit stays positive at every pool size from 1 upwards, so it has no
-boundary in the simulated window to be compared with. There is no cell in which both models have a
-boundary in their own terms, and the fraction is therefore undefined rather than zero.
+residual**: the criterion was read over {{fixedpoint_evaluated}} swept (family, width) pairs, and all
+{{fixedpoint_excluded}} of them were excluded for one kind of reason -- the closed-form model's
+benefit stays positive at every pool size from 1 upwards, so it has no
+boundary in the simulated window to be compared with. (The unit matters: a *pair* is a family at a
+width, and it is not the same object as the {{fix_secondary_n}} same-cell rows the secondary reading
+below counts.) No pair produced a boundary in both models' own terms, and the fraction is therefore
+undefined rather than zero.
 
 What the study reports instead is a *secondary* reading in a coordinate both models do have: at equal
 `rho` and equal `h`, the closed-form and simulated *benefits* agree within the declared tolerance in
@@ -181,7 +196,7 @@ This is reported as a secondary reading of a different quantity, and it does not
 
 Three published cells from three independent 2026 systems were read at their own reported operating
 points ({{ext_cells}} cells, sources and quoted sentences recorded in the artefact). **The published
-sign reproduces in {{ext_sign_match}} of {{ext_sign_match}}**, with both signs computed rather than the
+sign reproduces in {{ext_sign_match}} of {{ext_cells}}**, with both signs computed rather than the
 model's sign compared against a constant.
 
 * **SPORK** (reported P95 reduction {{ext_spork_published}}%): the model's band for the reported region

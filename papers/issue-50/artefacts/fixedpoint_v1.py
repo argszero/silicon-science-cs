@@ -394,7 +394,14 @@ def verdict(results, excluded, same_cell, tol=TOLERANCE, frac=MIN_FRACTION):
     sc = [x["d_rho_spec"] for x in same_cell]
     scm = sorted(sc)[len(sc) // 2] if sc else None
     ben = sorted(x["d_benefit_pct"] for x in same_cell)
+    # The DENOMINATOR the criterion is read over, recorded as its own field.  `n_excluded` and
+    # `n_evaluated` are written by different expressions on purpose: with both sides of a
+    # sentence like "18 of 18 excluded" bound to `len(excluded)`, no run of this instrument can
+    # ever make it read anything but "N of N" -- and that is exactly the defect the review of
+    # round 1 returned (major, required change 3).  A pair that produced a boundary enters
+    # `results`; a pair that could not enters `excluded`; this field counts both.
     base = {"tolerance": tol, "min_fraction": frac, "n": n, "n_excluded": len(excluded),
+            "n_evaluated": len(results) + len(excluded),
             "exclusion_kinds": kinds, "n_within": None, "fraction": None,
             "secondary_same_cell_n": len(sc), "secondary_same_cell_median": scm,
             "secondary_same_cell_worst": max(sc) if sc else None,

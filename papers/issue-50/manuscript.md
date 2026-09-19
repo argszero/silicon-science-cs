@@ -496,8 +496,14 @@ would be required to remove each; §8 argues why the boundary is worth having an
 The study registered six success criteria and four prior beliefs before its deciding runs, and this
 section reports them in the registered order. Each criterion is reported **met** or **unmet with the
 reason**; no criterion is silently replaced by a nearby quantity that happens to be available, and no
-number here is typed: every one is computed from a committed artefact by the assembly step, so a
-sentence that disagrees with a measurement fails the build rather than the review.
+number here is typed: every one is computed from a committed artefact by the assembly step. What that
+step *enforces* is a named list rather than everything: the six registered verdicts must be the words
+the deciding artefacts carry (A), every section reference must resolve (B), every figure must be
+embedded and pointed at (C), the headline measurements must not be typed into the prose (D), and every
+quantified sentence -- a ratio, or a count of a registered set -- must rest on two independent
+bindings of one declared domain, with no registered count left unquoted (E). A sentence that
+disagrees with a measurement one of those checks covers fails the build; a number outside their reach
+is the review's, which is what the round-1 review found and what this revision repairs.
 
 Of the six criteria, 2 are unmet outright and 1 more
 carries an unmet part, and in each case the reason is itself a result: (ii) is unmet, the separation
@@ -509,14 +515,18 @@ own earlier readings, because the wrong reading was reported first.
 ### 4.2 (i) The boundary, cell by cell
 
 Six pool sizes were swept at `h = 1.0` with 32 seeds each. **6 of
-6 located a crossing and none was ambiguous**: every family had exactly one
+6 families located a crossing and 0 were ambiguous**:
+every family had exactly one
 positive-to-nonpositive sign change inside its window, which is the condition the crossing rule
 requires before it will report a number at all.
 
-`rho*` falls as the pool grows (Figure 1): 0.991908 at `A = 16` and 0.970357 at `A = 96` for the
+`rho*` declines across the range (Figure 1): 0.991908 at `A = 16` and 0.970357 at `A = 96` for the
 speculative arm, 0.977735 to 0.946379 for the serial arm. The span is
 0.021551, against a mean per-seed interval width of 0.00105099 -- a ratio of
-20.5055. A two-sample comparison of the two extreme pool sizes gives a difference of
+20.5055 -- but the decline is not strict, and the artefact records the step itself:
+0.978593 at `A = 64` sits above 0.978577 at `A = 48` by 1.61624e-05, a rise
+smaller than that interval width, so the statement is about the mean and not about every step. A
+two-sample comparison of the two extreme pool sizes gives a difference of
 0.0205478 with an interval of [0.0197849, 0.0213108], which
 excludes zero and therefore does not rest on the span exceeding an interval width.
 
@@ -589,7 +599,9 @@ distribution's tail weight does to a queue.
 The registered criterion asked whether the fraction `F` of the gain attributable to prediction stays
 below 0.7 once the baseline is allowed to spend the same capacity on unpredicted useful work. That
 control was built directly: two arms issue **exactly the same number of early calls against the same
-pool** (checked as an identity, `k` = 100 in every run), differing only in *which* steps are issued
+pool** -- the identity `k` = 100, 200, 300 early calls per agent at the three widths,
+verified over 192 runs with 0 exceptions -- differing
+only in *which* steps are issued
 early -- the treatment picks the steps with the largest hideable amount, the control picks uniformly at
 random. `F = (G_selected - G_blind) / G_selected`, paired by seed.
 
@@ -650,17 +662,20 @@ different but disjoint. The effect is carried by the slope rather than by the lo
 (117.851 to 140.772 basis points per unit load between two families at the same
 load `q = 0.01`, `comp = 1.0`), and the load that would be required to reach the registered 0.05
 threshold differs by a factor of about 5.96704 between two families of the same
-pool size. The charge channel is therefore indexed by the same three coordinates
+pool size (0.0779317 against 0.465021). The charge channel is therefore indexed by the same three coordinates
 as the boundary, not by a scalar load.
 
 ### 4.7 (v) The closed-form fixed point: no boundary to compare with
 
 The criterion asked the closed-form fixed point to land within +/- 0.05 of the simulated `rho*` in at
 least 80% of cells. **It is unmet, and the reason is a property of the comparison, not a tuning
-residual**: 18 of 18 cells were excluded for one kind of
-reason -- the closed-form model's benefit stays positive at every pool size from 1 upwards, so it has no
-boundary in the simulated window to be compared with. There is no cell in which both models have a
-boundary in their own terms, and the fraction is therefore undefined rather than zero.
+residual**: the criterion was read over 18 swept (family, width) pairs, and all
+18 of them were excluded for one kind of reason -- the closed-form model's
+benefit stays positive at every pool size from 1 upwards, so it has no
+boundary in the simulated window to be compared with. (The unit matters: a *pair* is a family at a
+width, and it is not the same object as the 141 same-cell rows the secondary reading
+below counts.) No pair produced a boundary in both models' own terms, and the fraction is therefore
+undefined rather than zero.
 
 What the study reports instead is a *secondary* reading in a coordinate both models do have: at equal
 `rho` and equal `h`, the closed-form and simulated *benefits* agree within the declared tolerance in
@@ -803,9 +818,9 @@ the manuscript is only reproducible if, the following all hold:
 | figures | `artefacts/*.json` | `figures/make_figures_v1.py --check` reports the four figures regenerated byte-identically |
 | the paper's own claims | the parts, the artefacts, the figures | `manuscript_check_v1.py` reports no unbound claim: each registered verdict is the one its artefact decided, every section reference resolves, every figure is reachable and pointed at, and no headline measurement is typed into the prose |
 
-**6.2 The evidence is in the package, and the package is closed.** 44 files
-(6.81 MB) sit under `artefacts/`, including 21 scripts. The scripts
-import 27 distinct modules in total, of which **0 are outside the
+**6.2 The evidence is in the package, and the package is closed.** 46 files
+(6.83 MB) sit under `artefacts/`, including 22 scripts. The scripts
+import 28 distinct modules in total, of which **0 are outside the
 standard library and outside the package itself**: the instrument is stdlib-only, and each script that
 imports a sibling imports a file the package ships. That property is not a claim about good intentions;
 it was read from the sources by the assembly step, by *parsing* them, and it is the check that found

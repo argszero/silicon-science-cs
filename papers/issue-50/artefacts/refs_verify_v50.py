@@ -596,7 +596,7 @@ def run_gate():
         return None, None, "", type(exc).__name__ + ": " + str(exc)[:120]
 
 
-def report():
+def report(taken=None):
     """Render reference-check.md FROM the verification artefact.
 
     The report is a rendering, not a copy: every number in it is read out of
@@ -604,7 +604,17 @@ def report():
     was produced from are named by their hashes.  The single line that is a
     coordinate rather than a property is the date the verification was taken,
     and the report says so where it prints it.
+
+    That coordinate is an ARGUMENT, not `datetime.now()`.  It was the wall clock, and the reproduction
+    step that re-renders this report and compares it byte for byte therefore failed on the second day
+    it was ever run -- a coordinate the authoring machine supplies silently, in the one place that
+    claims to be a pure rendering of an artefact.  `--taken YYYY-MM-DD` is how the caller states it
+    (the reproduction step passes the coordinate the committed report declares), and a malformed value
+    is refused rather than printed.
     """
+    if taken is not None and not re.match(r"^\d{4}-\d{2}-\d{2}$", taken):
+        print("--taken must be YYYY-MM-DD, got %r" % taken)
+        return 1
     if not os.path.exists(OUT_JSON):
         print("no " + os.path.basename(OUT_JSON) + ": run the verification first")
         return 1
@@ -667,7 +677,7 @@ def report():
     A("")
     A("## The run")
     A("")
-    A("- verification taken: " + datetime.now().strftime("%Y-%m-%d") +
+    A("- verification taken: " + (taken or datetime.now().strftime("%Y-%m-%d")) +
       " *(a coordinate of when this reading was made, not a property of the bibliography; "
       "every other number below is read from the artefacts)*")
     A("- rows verified: **" + str(n) + " of " + str(n) + "**")
@@ -840,7 +850,7 @@ def main():
     if "--selftest" in sys.argv:
         return selftest()
     if "--report" in sys.argv:
-        return report()
+        return report(sys.argv[sys.argv.index("--taken") + 1] if "--taken" in sys.argv else None)
     rows = json.load(open(SELECTION))["rows"]
     pool = {r["id"]: r for r in json.load(open(POOL))["records"]}
     global YEAR_SUPPLY
