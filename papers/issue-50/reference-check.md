@@ -241,7 +241,7 @@ quotes.
 
 ```
 === manuscript.md
-  window: the last `## References` heading (line 977) to the end of the file (line 1731)
+  window: the last `## References` heading (line 992) to the end of the file (line 1746)
           — its numbered lines are read as entries
   entries=137  numbering=[n]
   block form: 137 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source

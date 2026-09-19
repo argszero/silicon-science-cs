@@ -75,9 +75,9 @@ report; `figures/*.svg` are the figures. `reproduce.sh` uses one scratch directo
 |---|---|---|
 | 1 `rebuild_artefacts_v1.py --rebuild` | `artefacts/*.py`, `artefacts/*.json` | each sweep re-run from the command **derived from its own recorded parameters** returns byte-identical output |
 | 2 `rebuild_artefacts_v1.py --selftest` | the comparison itself | the comparison reports a rebuilt file identical **and** a moved file different |
-| 3 `assemble.py --check` | the parts, the artefacts | the committed manuscript is what the evidence produces; 137 citations numbered in first-use order; 0 uncited entries |
+| 3 `assemble.py --check`, `--selftest` | the parts, the artefacts | the committed manuscript is what the evidence produces; 137 citations numbered in first-use order; 0 uncited entries. The build also reads every *quantified* sentence (a ratio, a count of a registered set) and fails on one binding used on both sides, on a ratio across two domains, or on a declared count no sentence quotes — three plants, one per branch, in throwaway copies |
 | 4 `refs_build_display.py --check`, `refs_render.py --check` | `artefacts/refs_selection_v50.json`, `artefacts/refs_verified_v50.json` | both bibliography writers reproduce, and the citation order matches the body |
-| 5 `artefacts/refs_verify_v50.py --report` | `artefacts/refs_verified_v50.json` | `reference-check.md` is a **rendering** of the verification artefact, byte for byte |
+| 5 `artefacts/refs_verify_v50.py --report --taken …` | `artefacts/refs_verified_v50.json` | `reference-check.md` is a **rendering** of the verification artefact, byte for byte except the one line the report itself declares a *coordinate* (the date the verification was taken, which the step supplies back); the gate's window is read live from the manuscript, so a stale window still fails |
 | 6 `.github/tools/refgate.py` | `manuscript.md` | `GATE: PASS`, 137/137 entries cited — *skipped with a reason* if this package is read as a path-limited export (see below) |
 | 7 `.github/tools/linkgate.py --check` | every tracked markdown carrier | `broken=0` |
 | 8 `figures/make_figures_v1.py --check/--selftest` | `artefacts/*.json` | 4 of 4 figures regenerate byte-identically; one planted change per figure moves its figure |
@@ -134,8 +134,15 @@ the parameters the artefact records rather than by typing it.
   report names that path, not the git-ignored research workspace it was developed in).
 - `rebuild_artefacts_v1.py`, `manuscript_check_v1.py`, `figures/make_figures_v1.py`, `reproduce.sh` — the
   checks and the one command; each has a `--selftest` that plants a defect it must report.
-- `artefacts/` — 44 files, the instrument's scripts and the JSON evidence every number comes from. The
-  scripts import 27 modules in total, **none outside the standard library and none outside this
+- `artefacts/` — 46 files, the instrument's scripts and the JSON evidence every number comes from. The
+  scripts import 28 modules in total, **none outside the standard library and none outside this
   directory** (read by parsing the sources, in 6.2).
+- `artefacts/arxiv_liveness_v50.py`, `artefacts/arxiv_liveness_v50.json` — the **candidate pool's arXiv
+  channel**, recorded for revision round 1. The pool scan's own control (`artefacts/bib_scan_v50.json →
+  control`) reads `ok: false`: its arXiv arm returned nothing on any per-query row in that window, and the
+  pass-2 supply carries no control of its own. The instrument re-runs **the same control query through the
+  same function** and re-runs the queries pass 1 could not read; the committed JSON is the result (`CONTROL
+  RETURNS`). It reads the network, so it is **not** one of the twelve sweeps `reproduce.sh` re-runs and its
+  output is a record of a reading rather than a rebuild — the artefact says so in its own field.
 - `research/` — the git-ignored design workspace (notes, registrations, drafts). It is **not** needed to
   reproduce anything here.

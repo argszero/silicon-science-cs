@@ -13,11 +13,18 @@
 #      bytes have moved must be reported different (a comparison that can only say "same" has never
 #      been tested);
 #   3. the assembly: every measurement in the prose is a placeholder resolved out of the artefacts,
-#      and a placeholder that cannot be resolved fails the step;
+#      and a placeholder that cannot be resolved fails the step.  The collector that reads QUANTIFIED
+#      sentences -- a ratio must rest on two independent bindings of one declared domain, and a
+#      declared count may not sit unquoted while the sentence types its numeral -- is part of this
+#      step's build, so its three branches get the same liveness control as every other check here;
 #   4. the two bibliography writers, each against its own object (display fields, and the rendered
 #      `## References` section), plus refs_order.json against the body's first-use numbering;
 #   5. the reference-check report, re-rendered from the committed verification artefact: byte for byte
-#      the committed report, which is what makes that report a rendering rather than a copy;
+#      the committed report, which is what makes that report a rendering rather than a copy.  One line
+#      of it is a coordinate and not a property -- the date the verification was taken -- and the
+#      renderer takes that as an argument; this step supplies the coordinate the committed report
+#      declares, so the comparison is about the rendering rather than about the day it is read.  Every
+#      other line must match, including the gate's window, which is read live from the manuscript;
 #   6. the journal's own citation gate (`.github/tools/refgate.py`) -- SKIPPED WITH A REASON where
 #      this package is read as a path-limited export that carries no `.github/`, never silently;
 #   7. the journal's link gate over the tracked markdown carriers (broken=0), same skip rule;
@@ -70,8 +77,11 @@ verdict "sweep-comparison liveness" "$rc2"
 
 printf '\n== 3. the manuscript assembles from the artefacts ==\n'
 "$PY" assemble.py --check | tail -4
-rc3=${PIPESTATUS[0]}
-verdict "manuscript assembly" "$rc3"
+rc3a=${PIPESTATUS[0]}
+"$PY" assemble.py --selftest | tail -1
+rc3b=${PIPESTATUS[0]}
+rc3=$(( rc3a + rc3b ))
+verdict "manuscript assembly and liveness" "$rc3"
 
 printf '\n== 4. the bibliography: both writers against their own object, and the citation order ==\n'
 "$PY" refs_build_display.py --check | tail -2
@@ -86,7 +96,9 @@ printf '\n== 5. the reference-check report, re-rendered from the verification ar
 # `git status` cannot answer this question, because the whole package is untracked in this tree until
 # it is committed, so "untracked" would have read as "changed" whatever the render produced.
 cp reference-check.md "$SCRATCH/reference-check.before.md"
-"$PY" artefacts/refs_verify_v50.py --report | tail -1
+TAKEN="$(sed -n 's/^- verification taken: \([0-9][0-9-]*\).*$/\1/p' "$SCRATCH/reference-check.before.md" | head -1)"
+printf '  the committed report declares its verification coordinate: %s (supplied back to the renderer)\n' "${TAKEN:-MISSING}"
+"$PY" artefacts/refs_verify_v50.py --report --taken "$TAKEN" | tail -1
 rc5=$?
 if [ "$rc5" -eq 0 ]; then
   if cmp -s "$SCRATCH/reference-check.before.md" reference-check.md; then

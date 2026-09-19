@@ -2165,6 +2165,7 @@
   "min_fraction": 0.8,
   "n": 0,
   "n_boundary_inside_measured_window": null,
+  "n_evaluated": 18,
   "n_excluded": 18,
   "n_within": null,
   "reason": "no family produced a comparable boundary in either model's own terms (18 exclusion(s), see exclusion_kinds)",

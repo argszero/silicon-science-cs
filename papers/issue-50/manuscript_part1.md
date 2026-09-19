@@ -45,7 +45,7 @@ comparable cells within +/-0.05 in the same coordinate) but expresses **no bound
 all** - it is optimistic on every cell in which the simulator's benefit has already turned
 negative - so the registered calibration criterion is reported **unmet, with that reason**;
 and an external cell built from two published systems' own reported numbers reproduces
-their signs 3 of 3, reaching one inside its reported operating region, reaching a second,
+their signs {{ext_sign_match}} of {{ext_cells}}, reaching one inside its reported operating region, reaching a second,
 and reporting the third as out of the model's reach rather than as a disagreement.
 
 The instrument, every measurement behind every number, and the reference layer are

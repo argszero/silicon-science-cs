@@ -13,8 +13,8 @@ an artefact can change is a claim with no owner), one carrier further out.
 
 WHAT IS CHECKED, and against what:
 
-  * **the evidence size** -- "44 files" against the contents of `artefacts/`;
-  * **the dependency claim** -- "27 modules in total", "none outside the standard library and none
+  * **the evidence size** -- "46 files" against the contents of `artefacts/`;
+  * **the dependency claim** -- "28 modules in total", "none outside the standard library and none
     outside this directory", against the assembler's own import census (which parses the sources);
   * **the reference layer** -- "137 entries, each cited" and "0 uncited entries" against
     `refs_order.json` and the selection layer;
