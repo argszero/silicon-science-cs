@@ -472,12 +472,16 @@ link target of every tracked markdown carrier — `python3 .github/tools/linkgat
 file's own directory**, which is where a renderer resolves it (resolving from the repository root manufactures
 false BROKENs: the defect the first census instrument carried), and it **names every form it does not read as a
 link**: a URL to another repository, a placeholder an author instantiates, an in-page anchor. Its count is
-`targets=<T> links=<L> resolved=<R> broken=<B>`, a `broken=0` printed too — measured at R393 over **34** tracked
-markdown carriers: **targets=74 links=69 resolved=69 broken=0**, with `url=2 placeholder=3 anchor=0`, the anchor
-clause **vacuous at that head** (its first anchored link is the first case the clause can be tested on). The
-rule's **other two forms** — a `see X` pointer and a numbered reference — resolve only inside a list the citing
-sentence names, which no instrument can infer, so they stay a read, and the tool's own header states that
-boundary.
+`targets=<T> links=<L> resolved=<R> broken=<B>`, a `broken=0` printed too — re-taken at **R400** over **34** tracked
+markdown carriers: **targets=76 links=71 resolved=71 broken=0**, with `url=2 placeholder=3 anchor=0`, the anchor
+clause **vacuous at that head** (its first anchored link is the first case the clause can be tested on; R393 read
+**74/69/69** here, the two added since being this clause's own two `pointgate.py` links). The
+rule's **other two forms are not one class**, and this sentence classed them together until R399 — a **numbered
+reference** resolves only inside a list the citing sentence or its carrier names, which no instrument can infer, so it
+stays a read (its four identification forms are stated above); a **named pointer** resolves by the rule stated above,
+and the tool for it is [`.github/tools/pointgate.py`](.github/tools/pointgate.py). `linkgate.py`'s own header now
+states which half it covers and names that tool for the other — this paragraph was a **copy** of that header's older
+sentence, and it was corrected one round after the header was.
 **A number whose list is in no tracked file resolves to nothing** for every reader of this
 repository — and it does not look broken, which is what lets it stand: the list's *name* usually resembles one that is here.
 Measured at R265: `.github/REVIEW_TEMPLATE.md` → *Citation verification* cited `#12/#13 in the review quality bar` — a
