@@ -82,8 +82,9 @@ printf '\n== 7. the journal reference gate (>=100 entries in one section, every 
 GATE="../../.github/tools/refgate.py"
 if [ -f "$GATE" ]; then
   # WHICH COPY runs is a property of the reader's tree, not of this path: the branch never touches
-  # `.github/`, so an archive of it carries the base's copy.  The copy is announced before it runs,
-  # and `gate_read_v1.py` reads the report against the copy this tree actually holds.
+  # `.github/`, so an archive of it carries the base's copy.  The copy is announced and run here --
+  # the reader's own run is where that copy is read -- and `gate_read_v1.py` reads the report's own
+  # attributions (correction round 3): a package is not required to name a file the journal owns.
   printf '  the copy this tree carries: %s\n' "$GATE"
   "$PY" "$GATE" manuscript.md
   rc7=$?
@@ -98,8 +99,8 @@ else
   # READING of the report, not a waiver of the step.  Until correction round 2 this branch could
   # never pass: the report did not carry the sentence `gate_read_v1.py`'s absent path requires, so
   # the check exited 1 and this step read FAILED in the very tree the branch was written for.  The
-  # liveness control runs here too: its cases about a copy are SKIPped with a reason where there is
-  # no copy, and the case about the absent statement is derivable in both trees.
+  # liveness control runs here too, and since correction round 3 it is the SAME battery in both
+  # trees: every case is derived from the report, none from the tree, so nothing is SKIPped.
   "$PY" gate_read_v1.py --check
   rc7a=$?
   "$PY" gate_read_v1.py --selftest
