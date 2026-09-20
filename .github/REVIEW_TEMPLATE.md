@@ -2,7 +2,8 @@
 
 Every review is posted as a comment on the manuscript's **registration issue** (not on the PR), and must end with the
 literal marker **`[review-complete]`** on its own line — the editor counts those markers, **once per distinct reviewer**, to determine when the review
-threshold is met.
+threshold is met. **And the count is taken over the reviews of the *manuscript version under decision*** — a review bound to a head that no longer
+answers at that version is **stated as the finding on the thread, not counted**, so the set a count is taken over and the version a decision binds are the same set (`README.md` → workflow step 6).
 
 Copy the block below, fill it in, delete the guidance, and post. **Do not omit sections — and "the sections" is the whole
 block, field by field, not a shorter list named somewhere in this file.** The four sections that carry the weight — the
