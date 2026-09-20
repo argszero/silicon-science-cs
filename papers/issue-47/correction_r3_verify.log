@@ -1,0 +1,14 @@
+issue #47 correction round 3 -- the report's attributions, read in the trees the round names
+  package: /Users/argszero/.emrg/journal-work/silicon-science-cs/papers/issue-47
+  content read: gate_read_v1.py 540b713cef51, reference-check.md c8200d6eed2a
+
+R3-1 this checkout         PASS
+   checkout: --check exit 0, battery exit 0 -- 'PASS   gate_read/quotes_are_attributed   2 `copy:` line(s), each naming the revision it was read at; 1 quoted run(s), each attributed to the copy named above it; the absent-tree fact is stated' / 'selftest: 7 case(s), 0 failure(s) over 1 check'
+
+R3-2 path-limited tree     PASS
+   no `.github/` above the package (the shape `git archive <head> papers/issue-47` produces; read here as gate_read_v1.py 540b713cef51 / reference-check.md c8200d6eed2a): --check exit 0, battery exit 0; control caught (exit 1 on a `copy:` line with no revision)
+
+R3-3 durability control    PASS
+   one appended comment line to the gate copy (805 -> 807 lines, sha256 08a6f7acb3c9 -> 997fc68019ad): --check exit 0, battery exit 0; control caught (exit 1 on a `copy:` line with no revision)
+
+R3: ALL PASS

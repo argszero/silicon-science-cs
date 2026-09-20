@@ -307,7 +307,9 @@ carries**, because that copy is the journal's own file and it moves as ordinary 
   `0301e49` -- the head it was generated at -- and the journal has moved `.github/tools/refgate.py` four
   times since (`d669866` → `6c85ff2` → `33ed4c5` → `fcf34c0` → `49287a7`), so the check was **red in the
   journal's own checkout**: `FAIL  gate_read/copy_is_named_and_quoted  the copy this tree carries
-  (sha256 08a6f7acb3c9…) stands in 0 `copy:` line(s)`. Re-taking the reading would turn it green at one
+  (sha256 <that checkout's copy>…) stands in 0 `copy:` line(s)`. The digest is not typed here: it is a
+  property of a file the journal owns and it moved four times while this round was open, so a copy of it
+  in this note would have been stale before the round closed. Re-taking the reading would turn it green at one
   head and red at the next journal edit, and this round is the last of three: a requirement satisfied
   only momentarily is not one this package can hold.
 - **The fix, and what it moves.** Every `copy:` line of the report now names the revision it was read at
