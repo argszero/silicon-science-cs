@@ -1,0 +1,234 @@
+{
+ "what": "the candidate pool's arXiv channel: pass 1 as committed, its control re-run, the queries pass 1 could not read re-run through the same function, and the pass-2 supply reconciled against its own record",
+ "instrument": "arxiv_liveness_v50.py (reads bib_scan_v50.json + arxiv_pass2_v50.json)",
+ "code_path": "bib_scan_v50.arxiv",
+ "scanned_utc": "2026-09-19T16:14:28Z",
+ "not_byte_reproducible": "a reading of a live channel at a stated time; the package's byte-identical claim covers the twelve deterministic sweeps",
+ "pass1": {
+  "per_query_rows_total": 44,
+  "arxiv_rows": 28,
+  "arxiv_ok": 9,
+  "arxiv_failed": 18,
+  "arxiv_empty_body": 1,
+  "crossref_rows": 16,
+  "control": {
+   "arxiv": {
+    "query": "all:\"tail latency\"",
+    "status": "FETCH_FAILED",
+    "n": 0
+   },
+   "crossref": {
+    "query": "speculative execution performance",
+    "status": "OK",
+    "n": 5
+   },
+   "ok": false
+  },
+  "window": [
+   "2026-09-18T22:12:46Z",
+   "2026-09-18T22:17:55Z"
+  ]
+ },
+ "control_rerun": {
+  "query": "all:\"tail latency\"",
+  "status": "OK",
+  "n": 5,
+  "n_requested": 5,
+  "titles": [
+   "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+   "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati",
+   "Embedding Models Measure in Peculiar Ways"
+  ]
+ },
+ "reruns": [
+  {
+   "query": "all:\"speculative execution\" AND all:tools",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati",
+    "Quantifying Overclaiming Propensity in Frontier LLM Agents"
+   ]
+  },
+  {
+   "query": "all:\"speculative tool\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"tool call\" AND all:speculation",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Workspace Models: Lightweight Robotic Memory via Saliency-Driven Super",
+    "Quantifying Overclaiming Propensity in Frontier LLM Agents"
+   ]
+  },
+  {
+   "query": "all:prefetch AND all:agent AND all:execution",
+   "status_now": "EMPTY_BODY",
+   "n_now": 0,
+   "titles": []
+  },
+  {
+   "query": "all:\"speculative decoding\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"branch prediction\" AND all:misprediction",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations"
+   ]
+  },
+  {
+   "query": "all:\"memory prefetching\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"thread-level speculation\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"software speculation\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"latency hiding\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"M/M/c\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"queueing theory\" AND all:approximation",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Statistics, 't Hooft Anomaly, and the Else-Nayak Index: a careful comp",
+    "Quantifying Overclaiming Propensity in Frontier LLM Agents"
+   ]
+  },
+  {
+   "query": "all:\"tail latency\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"heavy-tailed\" AND all:latency",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+    "A note on generating polyhedra and quadrangulations"
+   ]
+  },
+  {
+   "query": "all:\"parallel speedup\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"Amdahl\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"fork-join\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:\"worker pool\"",
+   "status_now": "OK",
+   "n_now": 40,
+   "titles": [
+    "Environment Alignment and Redundant Record Formation in Imperfect-CNOT",
+    "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulati"
+   ]
+  },
+  {
+   "query": "all:LLM AND all:agent AND all:scheduling",
+   "status_now": "EMPTY_BODY",
+   "n_now": 0,
+   "titles": []
+  }
+ ],
+ "pass2": {
+  "control": {
+   "query": "all:\"tail latency\"",
+   "status": "OK",
+   "n": 10
+  },
+  "n_control_ok": 1,
+  "per_query_rows": 18,
+  "per_query_ok": 18,
+  "n_records": 585,
+  "n_unique_ids": 566,
+  "scanned_utc": "2026-09-18T22:20:02Z"
+ },
+ "summary": {
+  "control_ok": true,
+  "queries_rerun": 19,
+  "recovered": 17,
+  "still_failing": 2,
+  "still_failing_queries": [
+   "all:prefetch AND all:agent AND all:execution",
+   "all:LLM AND all:agent AND all:scheduling"
+  ]
+ },
+ "verdict": "CONTROL RETURNS: the same control query returns now, so the pass-1 failures are a property of that window and not of the query set (17 of 19 re-run queries returned)"
+}

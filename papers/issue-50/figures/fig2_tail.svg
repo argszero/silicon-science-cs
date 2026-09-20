@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="486" viewBox="0 0 760 486" font-family="Helvetica,Arial,sans-serif">
+<rect width="760" height="486" fill="#ffffff"/>
+<text x="16" y="24" font-size="14.5" font-weight="bold" fill="#1a1a1a">The registered tail claim, refuted: a heavier tail moves the boundary DOWN</text>
+<text x="16" y="41" font-size="10.5" fill="#555555">artefacts/tail_v1_h100.json - mean-matched classes, paired by seed, 32 seeds, h = 1.0</text>
+<line x1="78" y1="410.0" x2="584" y2="410.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="413.4" font-size="9.5" fill="#555555" text-anchor="end">0.975</text>
+<line x1="78" y1="312.7" x2="584" y2="312.7" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="316.1" font-size="9.5" fill="#555555" text-anchor="end">0.980</text>
+<line x1="78" y1="215.5" x2="584" y2="215.5" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="218.9" font-size="9.5" fill="#555555" text-anchor="end">0.985</text>
+<line x1="78" y1="118.3" x2="584" y2="118.3" stroke="#dcdcdc" stroke-width="1"/>
+<text x="72" y="121.7" font-size="9.5" fill="#555555" text-anchor="end">0.990</text>
+<line x1="150.3" y1="52" x2="150.3" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="150.3" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="294.9" y1="52" x2="294.9" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="294.9" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<line x1="439.4" y1="52" x2="439.4" y2="410" stroke="#dcdcdc" stroke-width="1"/>
+<text x="439.4" y="426" font-size="9.5" fill="#555555" text-anchor="middle"></text>
+<rect x="78" y="52" width="506" height="358" fill="none" stroke="#1a1a1a"/>
+<text x="331" y="444" font-size="11" fill="#1a1a1a" text-anchor="middle">pool size - each pair is one family, heavy on the left</text>
+<text x="15" y="231" font-size="11" fill="#1a1a1a" text-anchor="middle" transform="rotate(-90 15 231)">located boundary rho* (rho_spec)</text>
+<line x1="132.21" y1="124.33" x2="132.21" y2="99.29" stroke="#c0392b" stroke-width="1.5"/>
+<circle cx="132.21" cy="109.10" r="3.40" fill="#c0392b"/>
+<line x1="168.36" y1="86.86" x2="168.36" y2="73.41" stroke="#1f4e79" stroke-width="1.5"/>
+<circle cx="168.36" cy="81.17" r="3.40" fill="#1f4e79"/>
+<text x="150.29" y="426" font-size="9.5" fill="#1a1a1a" text-anchor="middle">A = 16</text>
+<text x="150.29" y="68.0" font-size="9" fill="#555555" text-anchor="middle">heavy - light = -0.00163</text>
+<line x1="276.79" y1="297.60" x2="276.79" y2="282.03" stroke="#c0392b" stroke-width="1.5"/>
+<circle cx="276.79" cy="293.73" r="3.40" fill="#c0392b"/>
+<line x1="312.93" y1="224.59" x2="312.93" y2="200.32" stroke="#1f4e79" stroke-width="1.5"/>
+<circle cx="312.93" cy="213.12" r="3.40" fill="#1f4e79"/>
+<text x="294.86" y="426" font-size="9.5" fill="#1a1a1a" text-anchor="middle">A = 32</text>
+<text x="294.86" y="68.0" font-size="9" fill="#555555" text-anchor="middle">heavy - light = -0.00398</text>
+<line x1="421.36" y1="385.58" x2="421.36" y2="365.30" stroke="#c0392b" stroke-width="1.5"/>
+<circle cx="421.36" cy="380.83" r="3.40" fill="#c0392b"/>
+<line x1="457.50" y1="350.03" x2="457.50" y2="326.98" stroke="#1f4e79" stroke-width="1.5"/>
+<circle cx="457.50" cy="340.11" r="3.40" fill="#1f4e79"/>
+<text x="439.43" y="426" font-size="9.5" fill="#1a1a1a" text-anchor="middle">A = 64</text>
+<text x="439.43" y="68.0" font-size="9" fill="#555555" text-anchor="middle">heavy - light = -0.00190</text>
+<line x1="592" y1="66.0" x2="610" y2="66.0" stroke="#c0392b" stroke-width="2"/>
+<text x="615" y="69.5" font-size="10" fill="#1a1a1a">heavy tail</text>
+<line x1="592" y1="82.0" x2="610" y2="82.0" stroke="#1f4e79" stroke-width="2"/>
+<text x="615" y="85.5" font-size="10" fill="#1a1a1a">light tail</text>
+<text x="16" y="462.0" font-size="10.0" fill="#1a1a1a">the artefact's own verdict: CONTRADICTED (3 of 3 located families strictly below zero)</text>
+<text x="16" y="476.0" font-size="10.0" fill="#1a1a1a">the mean-matched premise holds in 2 of the 2 pool sizes the artefact reports it for</text>
+</svg>

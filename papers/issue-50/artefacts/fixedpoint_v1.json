@@ -1,0 +1,2181 @@
+{
+ "anchors": {
+  "H1": {
+   "abs_diff": 0.0,
+   "closed": 0.6666666666666666,
+   "limit": 0.6666666666666666
+  },
+  "H2": {
+   "abs_dL": 0.0,
+   "benefit_pct": 0.0
+  },
+  "H3": [
+   {
+    "abs_diff": 0.0,
+    "c": 1,
+    "closed_form": 1.0,
+    "wait": 1.0
+   },
+   {
+    "abs_diff": null,
+    "c": 3,
+    "closed_form": null,
+    "wait": 0.006060606060606063
+   },
+   {
+    "abs_diff": null,
+    "c": 8,
+    "closed_form": null,
+    "wait": 8.357179500390275e-09
+   }
+  ],
+  "H4": {
+   "cells": [
+    {
+     "abs_from_limit": 17.700432155534166,
+     "benefit_pct": 4.52179006668805,
+     "c": 4,
+     "rho_spec": 0.9210947606548461
+    },
+    {
+     "abs_from_limit": 3.6826429966564866,
+     "benefit_pct": 18.53957922556573,
+     "c": 8,
+     "rho_spec": 0.7993216295337388
+    },
+    {
+     "abs_from_limit": 0.0038948017997597617,
+     "benefit_pct": 22.218327420422458,
+     "c": 16,
+     "rho_spec": 0.4285479822265074
+    },
+    {
+     "abs_from_limit": 1.7763568394002505e-14,
+     "benefit_pct": 22.2222222222222,
+     "c": 64,
+     "rho_spec": 0.10714285714285711
+    },
+    {
+     "abs_from_limit": 1.7763568394002505e-14,
+     "benefit_pct": 22.2222222222222,
+     "c": 256,
+     "rho_spec": 0.026785714285714277
+    }
+   ],
+   "limit_pct": 22.222222222222218,
+   "limit_time": 0.6666666666666666
+  }
+ },
+ "cells": [],
+ "declared_assumptions": [
+  "M1 Poisson arrivals at A/L",
+  "M2 D = Q+S exponential",
+  "M3 queue-position effect not modelled",
+  "M4 no tail term (P2 refuted in step 5)"
+ ],
+ "excluded": [
+  {
+   "agents": 16,
+   "benefit_max_pct": 4.127452087934918,
+   "benefit_min_pct": 0.3649658077821995,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 5 (min benefit 0.365%, max 4.127%)"
+  },
+  {
+   "agents": 24,
+   "benefit_max_pct": 3.0988438446333038,
+   "benefit_min_pct": 0.16620168871792307,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 7 (min benefit 0.166%, max 3.099%)"
+  },
+  {
+   "agents": 32,
+   "benefit_max_pct": 2.4984839765250233,
+   "benefit_min_pct": 0.09456138354736306,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 9 (min benefit 0.095%, max 2.498%)"
+  },
+  {
+   "agents": 48,
+   "benefit_max_pct": 2.353422419192015,
+   "benefit_min_pct": 0.0424926824645163,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 14 (min benefit 0.042%, max 2.353%)"
+  },
+  {
+   "agents": 64,
+   "benefit_max_pct": 2.216469802838938,
+   "benefit_min_pct": 0.024031176044719996,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 19 (min benefit 0.024%, max 2.216%)"
+  },
+  {
+   "agents": 96,
+   "benefit_max_pct": 1.2037083321757787,
+   "benefit_min_pct": 0.010737476653554805,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 26 (min benefit 0.011%, max 1.204%)"
+  },
+  {
+   "agents": 16,
+   "benefit_max_pct": 6.684847563663316,
+   "benefit_min_pct": 0.6334480056928161,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 5 (min benefit 0.633%, max 6.685%)"
+  },
+  {
+   "agents": 24,
+   "benefit_max_pct": 4.919942665800602,
+   "benefit_min_pct": 0.2912235845420992,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 7 (min benefit 0.291%, max 4.920%)"
+  },
+  {
+   "agents": 32,
+   "benefit_max_pct": 3.919643086780084,
+   "benefit_min_pct": 0.16663133492102952,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 9 (min benefit 0.167%, max 3.920%)"
+  },
+  {
+   "agents": 48,
+   "benefit_max_pct": 3.597307155168932,
+   "benefit_min_pct": 0.07535273378629512,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 14 (min benefit 0.075%, max 3.597%)"
+  },
+  {
+   "agents": 64,
+   "benefit_max_pct": 3.32161446674508,
+   "benefit_min_pct": 0.04276114334859218,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 19 (min benefit 0.043%, max 3.322%)"
+  },
+  {
+   "agents": 96,
+   "benefit_max_pct": 1.8097727060509712,
+   "benefit_min_pct": 0.019175681013588255,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 26 (min benefit 0.019%, max 1.810%)"
+  },
+  {
+   "agents": 16,
+   "benefit_max_pct": 7.2234936825643645,
+   "benefit_min_pct": 0.6975414292384104,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 5 (min benefit 0.698%, max 7.223%)"
+  },
+  {
+   "agents": 24,
+   "benefit_max_pct": 5.294910966504465,
+   "benefit_min_pct": 0.32144014470792576,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 7 (min benefit 0.321%, max 5.295%)"
+  },
+  {
+   "agents": 32,
+   "benefit_max_pct": 4.208560679634976,
+   "benefit_min_pct": 0.18417532980312135,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 9 (min benefit 0.184%, max 4.209%)"
+  },
+  {
+   "agents": 48,
+   "benefit_max_pct": 3.840572259584357,
+   "benefit_min_pct": 0.08341569385231445,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 14 (min benefit 0.083%, max 3.841%)"
+  },
+  {
+   "agents": 64,
+   "benefit_max_pct": 3.5317118587375287,
+   "benefit_min_pct": 0.04737675938633078,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 19 (min benefit 0.047%, max 3.532%)"
+  },
+  {
+   "agents": 96,
+   "benefit_max_pct": 1.9270716459949337,
+   "benefit_min_pct": 0.021264552251461948,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "reason": "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays positive at every pool size from 1 to 26 (min benefit 0.021%, max 1.927%)"
+  }
+ ],
+ "min_fraction": 0.8,
+ "model": {
+  "mS": 1.0,
+  "mT": 2.0,
+  "q": 0.0
+ },
+ "primary_coordinate": "rho_spec",
+ "same_cell": [
+  {
+   "agents": 16,
+   "closed_benefit_pct": 4.127452087934918,
+   "d_benefit_pct": 1.244682857950142,
+   "d_rho_serial": 0.04583871376207116,
+   "d_rho_spec": 0.06307836183417748,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 5.37213494588506,
+   "within_spec": false,
+   "workers": 5
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 2.5616332130267367,
+   "d_benefit_pct": 0.9517194701172147,
+   "d_rho_serial": 0.07358936388075032,
+   "d_rho_spec": 0.07271548450079623,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 1.609913742909522,
+   "within_spec": false,
+   "workers": 4
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 1.524095222564467,
+   "d_benefit_pct": 1.4946613931668455,
+   "d_rho_serial": 0.07876856929336984,
+   "d_rho_spec": 0.06964674917061009,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.02943382939762148,
+   "within_spec": false,
+   "workers": 3
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 0.8404520207639998,
+   "d_benefit_pct": 0.9631001695026155,
+   "d_rho_serial": 0.07203464827899597,
+   "d_rho_spec": 0.06578685319844091,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.12264814873861563,
+   "within_spec": false,
+   "workers": 2
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 0.3649658077821995,
+   "d_benefit_pct": 0.4317568896389449,
+   "d_rho_serial": 0.06513685044710926,
+   "d_rho_spec": 0.062153836845028065,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.06679108185674534,
+   "within_spec": false,
+   "workers": 1
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 3.0988438446333038,
+   "d_benefit_pct": 0.046732922071349936,
+   "d_rho_serial": 0.03442319886915568,
+   "d_rho_spec": 0.039284291515646386,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 3.052110922561954,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 2.108925430396417,
+   "d_benefit_pct": 1.269869125757161,
+   "d_rho_serial": 0.04866741224174398,
+   "d_rho_spec": 0.04356520799602159,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.8390563046392558,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 1.4293474784965476,
+   "d_benefit_pct": 1.3917439794946995,
+   "d_rho_serial": 0.051387080789599415,
+   "d_rho_spec": 0.043211532632313254,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.03760349900184809,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 0.9572213288767544,
+   "d_benefit_pct": 1.0404862850263996,
+   "d_rho_serial": 0.05005510818572667,
+   "d_rho_spec": 0.044321692254918665,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.08326495614964528,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 0.6183614112910629,
+   "d_benefit_pct": 0.6784849810173063,
+   "d_rho_serial": 0.04917569634874719,
+   "d_rho_spec": 0.04412020442668274,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.06012356972624329,
+   "within_spec": true,
+   "workers": 3
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 0.36493305295782935,
+   "d_benefit_pct": 0.4402108324942751,
+   "d_rho_serial": 0.04597070384478552,
+   "d_rho_spec": 0.04303639440518703,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.07527777953644575,
+   "within_spec": true,
+   "workers": 2
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 0.16620168871792307,
+   "d_benefit_pct": 0.20124620467065207,
+   "d_rho_serial": 0.042944156334639216,
+   "d_rho_spec": 0.04153984826029067,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.035044515952729005,
+   "within_spec": true,
+   "workers": 1
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 2.4984839765250233,
+   "d_benefit_pct": 0.81286722839859,
+   "d_rho_serial": 0.027614562194711256,
+   "d_rho_spec": 0.026002477610963748,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 1.6856167481264333,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 1.807740476915414,
+   "d_benefit_pct": 1.3368055570320463,
+   "d_rho_serial": 0.03389263800370246,
+   "d_rho_spec": 0.028270981347715995,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.47093491988336766,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 1.3153224215549122,
+   "d_benefit_pct": 1.277954403818025,
+   "d_rho_serial": 0.036040246744193705,
+   "d_rho_spec": 0.029027603847965655,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.03736801773688707,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.958554745701346,
+   "d_benefit_pct": 1.0217820921281418,
+   "d_rho_serial": 0.03673671426117742,
+   "d_rho_spec": 0.030711358023405633,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.06322734642679581,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.6935073132909177,
+   "d_benefit_pct": 0.7895611483166589,
+   "d_rho_serial": 0.03593022198319662,
+   "d_rho_spec": 0.03154991281042718,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.09605383502574112,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.4909920698669397,
+   "d_benefit_pct": 0.579126412707809,
+   "d_rho_serial": 0.03596519198424064,
+   "d_rho_spec": 0.03204326546410041,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.08813434284086921,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.3317043177059924,
+   "d_benefit_pct": 0.40999926428203287,
+   "d_rho_serial": 0.034777112280043765,
+   "d_rho_spec": 0.03255193702339487,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.07829494657604046,
+   "within_spec": true,
+   "workers": 3
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.20262064746889435,
+   "d_benefit_pct": 0.26208229958895846,
+   "d_rho_serial": 0.03374134562101572,
+   "d_rho_spec": 0.031976033832387674,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.059461652120064074,
+   "within_spec": true,
+   "workers": 2
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.09456138354736306,
+   "d_benefit_pct": 0.11552287726077992,
+   "d_rho_serial": 0.03202161617601651,
+   "d_rho_spec": 0.03115904483775722,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.020961493713416858,
+   "within_spec": true,
+   "workers": 1
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 2.353422419192015,
+   "d_benefit_pct": 0.7716707860377541,
+   "d_rho_serial": 0.0024044447698747806,
+   "d_rho_spec": 0.0035397175315766694,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 1.581751633154261,
+   "within_spec": true,
+   "workers": 14
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.8211397055718328,
+   "d_benefit_pct": 1.1551010770693475,
+   "d_rho_serial": 0.008097171202677167,
+   "d_rho_spec": 0.005490769426481523,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.6660386285024854,
+   "within_spec": true,
+   "workers": 13
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.4224289545302178,
+   "d_benefit_pct": 1.1863907909862323,
+   "d_rho_serial": 0.011319940491441582,
+   "d_rho_spec": 0.007139957966657451,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.2360381635439854,
+   "within_spec": true,
+   "workers": 12
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.1207200649964062,
+   "d_benefit_pct": 1.0462903026245913,
+   "d_rho_serial": 0.01346763919754923,
+   "d_rho_spec": 0.010485632784219434,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.07442976237181485,
+   "within_spec": true,
+   "workers": 11
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.8888192179304463,
+   "d_benefit_pct": 0.8742861001896564,
+   "d_rho_serial": 0.015106497384198447,
+   "d_rho_spec": 0.012674926926051433,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.014533117740789941,
+   "within_spec": true,
+   "workers": 10
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.7074107096332719,
+   "d_benefit_pct": 0.7316466389986526,
+   "d_rho_serial": 0.016694136527560244,
+   "d_rho_spec": 0.01521221438550846,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.02423592936538061,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.5629462588674149,
+   "d_benefit_pct": 0.6067783581736302,
+   "d_rho_serial": 0.01926843714821025,
+   "d_rho_spec": 0.017024390609387208,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.04383209930621531,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.4458900189260522,
+   "d_benefit_pct": 0.4930272253440781,
+   "d_rho_serial": 0.020920544408072117,
+   "d_rho_spec": 0.01869980154479689,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.047137206418025934,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.349453350238495,
+   "d_benefit_pct": 0.4102368994820975,
+   "d_rho_serial": 0.02169260544073548,
+   "d_rho_spec": 0.01981973723175734,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.06078354924360254,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.2687279586403631,
+   "d_benefit_pct": 0.33040038165712143,
+   "d_rho_serial": 0.02215263985682736,
+   "d_rho_spec": 0.020716683658302593,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.061672423016758335,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.2001002917685427,
+   "d_benefit_pct": 0.25735108882927443,
+   "d_rho_serial": 0.02238150954698237,
+   "d_rho_spec": 0.021274752107372175,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.057250797060731766,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 2.216469802838938,
+   "d_benefit_pct": 0.7774994058991542,
+   "d_rho_serial": 0.009843845096730863,
+   "d_rho_spec": 0.007018172408302825,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 1.4389703969397838,
+   "within_spec": true,
+   "workers": 19
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.7812856983794074,
+   "d_benefit_pct": 1.1296696613324992,
+   "d_rho_serial": 0.0043405878374395135,
+   "d_rho_spec": 0.0050571963742552795,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.6516160370469083,
+   "within_spec": true,
+   "workers": 18
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.4443889973754749,
+   "d_benefit_pct": 1.1713617115846788,
+   "d_rho_serial": 0.0018503159551470638,
+   "d_rho_spec": 0.003152225232078254,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.273027285790796,
+   "within_spec": true,
+   "workers": 17
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.1815358870872166,
+   "d_benefit_pct": 1.0779455494306385,
+   "d_rho_serial": 0.0009453252268387669,
+   "d_rho_spec": 0.00023252949520202737,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.10359033765657805,
+   "within_spec": true,
+   "workers": 16
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.9740704826880977,
+   "d_benefit_pct": 0.9515751028277148,
+   "d_rho_serial": 0.0023213272494715387,
+   "d_rho_spec": 0.0018588170575449814,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.022495379860382886,
+   "within_spec": true,
+   "workers": 15
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.8081654989059751,
+   "d_benefit_pct": 0.8242647752789797,
+   "d_rho_serial": 0.004701143276095832,
+   "d_rho_spec": 0.0038247345537487654,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.016099276373004588,
+   "within_spec": true,
+   "workers": 14
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.6737070922155888,
+   "d_benefit_pct": 0.7285366097650356,
+   "d_rho_serial": 0.006527791701513963,
+   "d_rho_spec": 0.005954431307210295,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.054829517549446836,
+   "within_spec": true,
+   "workers": 13
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.5633010491475169,
+   "d_benefit_pct": 0.6472605726391857,
+   "d_rho_serial": 0.007762586159203222,
+   "d_rho_spec": 0.007682048080937309,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.08395952349166884,
+   "within_spec": true,
+   "workers": 12
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.4715073804981847,
+   "d_benefit_pct": 0.5549314629545777,
+   "d_rho_serial": 0.009805969383207547,
+   "d_rho_spec": 0.009996364332106933,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.083424082456393,
+   "within_spec": true,
+   "workers": 11
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.39428444426273707,
+   "d_benefit_pct": 0.4889845692893184,
+   "d_rho_serial": 0.011484874027119396,
+   "d_rho_spec": 0.01097795963404924,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.0947001250265813,
+   "within_spec": true,
+   "workers": 10
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.3285947009905454,
+   "d_benefit_pct": 0.4350987723497625,
+   "d_rho_serial": 0.012868342515997,
+   "d_rho_spec": 0.01257308854019945,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.10650407135921713,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.27212700353010416,
+   "d_benefit_pct": 0.36094841493897967,
+   "d_rho_serial": 0.014136383854224999,
+   "d_rho_spec": 0.013394397926797863,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.08882141140887549,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.2231005435076716,
+   "d_benefit_pct": 0.3166919200984236,
+   "d_rho_serial": 0.01500179346586683,
+   "d_rho_spec": 0.014260367004783836,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.09359137659075202,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.2037083321757787,
+   "d_benefit_pct": 0.9915223880805473,
+   "d_rho_serial": 0.01849814535884642,
+   "d_rho_spec": 0.019467843470088786,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.21218594409523145,
+   "within_spec": true,
+   "workers": 26
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.0325808897815705,
+   "d_benefit_pct": 0.9124453909655951,
+   "d_rho_serial": 0.016689518538183346,
+   "d_rho_spec": 0.01772502701440637,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.12013549881597536,
+   "within_spec": true,
+   "workers": 25
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.8912378116066814,
+   "d_benefit_pct": 0.824542143393761,
+   "d_rho_serial": 0.014852590329450521,
+   "d_rho_spec": 0.01506163552732065,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.06669566821292043,
+   "within_spec": true,
+   "workers": 24
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.7734331021794427,
+   "d_benefit_pct": 0.74551580697697,
+   "d_rho_serial": 0.012763310404793615,
+   "d_rho_spec": 0.013240627854770759,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.027917295202472797,
+   "within_spec": true,
+   "workers": 23
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.6743622402415343,
+   "d_benefit_pct": 0.6668502093113255,
+   "d_rho_serial": 0.01118062372223938,
+   "d_rho_spec": 0.010835653989863303,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": 0.007512030930208776,
+   "within_spec": true,
+   "workers": 22
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.5903210295312892,
+   "d_benefit_pct": 0.6085179085481565,
+   "d_rho_serial": 0.009325056366169093,
+   "d_rho_spec": 0.00841329027594484,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.018196879016867288,
+   "within_spec": true,
+   "workers": 21
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.5184386880173244,
+   "d_benefit_pct": 0.558321352099299,
+   "d_rho_serial": 0.007550003462598376,
+   "d_rho_spec": 0.006864838078342705,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.039882664081974634,
+   "within_spec": true,
+   "workers": 20
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.45647502171648435,
+   "d_benefit_pct": 0.5193917486246405,
+   "d_rho_serial": 0.005392604665692358,
+   "d_rho_spec": 0.0048405382085129345,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.06291672690815621,
+   "within_spec": true,
+   "workers": 19
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.40266835139902124,
+   "d_benefit_pct": 0.4783058537122206,
+   "d_rho_serial": 0.0036182552942503055,
+   "d_rho_spec": 0.003083429237942581,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.07563750231319938,
+   "within_spec": true,
+   "workers": 18
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.3556220198073145,
+   "d_benefit_pct": 0.44399260955091796,
+   "d_rho_serial": 0.0017687003374324828,
+   "d_rho_spec": 0.0015695912706965576,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.08837058974360346,
+   "within_spec": true,
+   "workers": 17
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.3142196484998018,
+   "d_benefit_pct": 0.4112593228228607,
+   "d_rho_serial": 0.00028900171220624937,
+   "d_rho_spec": 0.00025044843290245034,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.09703967432305893,
+   "within_spec": true,
+   "workers": 16
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.27756163380285714,
+   "d_benefit_pct": 0.3849242096299606,
+   "d_rho_serial": 0.0012390053781194954,
+   "d_rho_spec": 0.0019768547251765023,
+   "file": "boundary_v2_h050.json",
+   "h": 0.5,
+   "sim_benefit_pct": -0.10736257582710347,
+   "within_spec": true,
+   "workers": 15
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 6.684847563663316,
+   "d_benefit_pct": 0.5646095210167079,
+   "d_rho_serial": 0.04583871376207116,
+   "d_rho_spec": 0.06566674625229252,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 7.2494570846800235,
+   "within_spec": false,
+   "workers": 5
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 4.1738080585051,
+   "d_benefit_pct": 2.5175253835681097,
+   "d_rho_serial": 0.07358936388075032,
+   "d_rho_spec": 0.06564825970743582,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 1.6562826749369899,
+   "within_spec": false,
+   "workers": 4
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 2.521854298865174,
+   "d_benefit_pct": 2.7596581312345885,
+   "d_rho_serial": 0.07876856929336984,
+   "d_rho_spec": 0.06480569510318068,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.2378038323694145,
+   "within_spec": false,
+   "workers": 3
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 1.4201239269851549,
+   "d_benefit_pct": 1.8047415023667361,
+   "d_rho_serial": 0.07203464827899597,
+   "d_rho_spec": 0.0626231953552574,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.38461757538158126,
+   "within_spec": false,
+   "workers": 2
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 4.919942665800602,
+   "d_benefit_pct": 1.4489727010558635,
+   "d_rho_serial": 0.03442319886915568,
+   "d_rho_spec": 0.03749434569137311,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 3.4709699647447385,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 3.3847683449595345,
+   "d_benefit_pct": 2.649484124676749,
+   "d_rho_serial": 0.04866741224174398,
+   "d_rho_spec": 0.04039244352214211,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.7352842202827853,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 2.3267128377281834,
+   "d_benefit_pct": 2.524510121469052,
+   "d_rho_serial": 0.051387080789599415,
+   "d_rho_spec": 0.04155792312968065,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.19779728374086875,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 1.5828492604752942,
+   "d_benefit_pct": 1.9541519901644828,
+   "d_rho_serial": 0.05005510818572667,
+   "d_rho_spec": 0.041891825977108166,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.37130272968918854,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 1.0401092390502935,
+   "d_benefit_pct": 1.3935052840464865,
+   "d_rho_serial": 0.04917569634874719,
+   "d_rho_spec": 0.04210627878504658,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3533960449961931,
+   "within_spec": true,
+   "workers": 3
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 3.919643086780084,
+   "d_benefit_pct": 2.165603127027552,
+   "d_rho_serial": 0.027614562194711256,
+   "d_rho_spec": 0.023204887511321437,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 1.754039959752532,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 2.8708037158556095,
+   "d_benefit_pct": 2.5218932265148895,
+   "d_rho_serial": 0.03389263800370246,
+   "d_rho_spec": 0.026033304532392054,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.34891048934072,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 2.116735741260415,
+   "d_benefit_pct": 2.2584260822171793,
+   "d_rho_serial": 0.036040246744193705,
+   "d_rho_spec": 0.027552431354609497,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.1416903409567644,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 1.563673599712862,
+   "d_benefit_pct": 1.8610446274604235,
+   "d_rho_serial": 0.03673671426117742,
+   "d_rho_spec": 0.029650379925632797,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.2973710277475616,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 1.1469755137828543,
+   "d_benefit_pct": 1.4832437066603632,
+   "d_rho_serial": 0.03593022198319662,
+   "d_rho_spec": 0.029589756997718042,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3362681928775088,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.8236070119482952,
+   "d_benefit_pct": 1.139053368496058,
+   "d_rho_serial": 0.03596519198424064,
+   "d_rho_spec": 0.03099581404071816,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3154463565477628,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 3.597307155168932,
+   "d_benefit_pct": 1.9978081100517628,
+   "d_rho_serial": 0.0024044447698747806,
+   "d_rho_spec": 0.0014476196650929918,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 1.5994990451171693,
+   "within_spec": true,
+   "workers": 14
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 2.816811311899569,
+   "d_benefit_pct": 2.2640088862858727,
+   "d_rho_serial": 0.008097171202677167,
+   "d_rho_spec": 0.0050646037003372335,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.5528024256136963,
+   "within_spec": true,
+   "workers": 13
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 2.2269047170335896,
+   "d_benefit_pct": 2.149984337354262,
+   "d_rho_serial": 0.011319940491441582,
+   "d_rho_spec": 0.008530750832377754,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.07692037967932729,
+   "within_spec": true,
+   "workers": 12
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.775446825527786,
+   "d_benefit_pct": 1.9253782843067797,
+   "d_rho_serial": 0.01346763919754923,
+   "d_rho_spec": 0.012049456300705197,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.1499314587789938,
+   "within_spec": true,
+   "workers": 11
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.42420392957728,
+   "d_benefit_pct": 1.6580394305810824,
+   "d_rho_serial": 0.015106497384198447,
+   "d_rho_spec": 0.014034084732949204,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.23383550100380252,
+   "within_spec": true,
+   "workers": 10
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.1460266773285546,
+   "d_benefit_pct": 1.4388139623343554,
+   "d_rho_serial": 0.016694136527560244,
+   "d_rho_spec": 0.016337165787673746,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.292787285005801,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.9217558730892446,
+   "d_benefit_pct": 1.2334765316351597,
+   "d_rho_serial": 0.01926843714821025,
+   "d_rho_spec": 0.017939661676386165,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3117206585459152,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.7377791136883564,
+   "d_benefit_pct": 1.0459762157143668,
+   "d_rho_serial": 0.020920544408072117,
+   "d_rho_spec": 0.019280425446469573,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3081971020260106,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 3.32161446674508,
+   "d_benefit_pct": 1.8326937374188175,
+   "d_rho_serial": 0.009843845096730863,
+   "d_rho_spec": 0.006032089390466178,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 1.4889207293262627,
+   "within_spec": true,
+   "workers": 19
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 2.700559254150969,
+   "d_benefit_pct": 2.0762436468397123,
+   "d_rho_serial": 0.0043405878374395135,
+   "d_rho_spec": 0.0029253149484070873,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.6243156073112568,
+   "within_spec": true,
+   "workers": 18
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 2.215276360007652,
+   "d_benefit_pct": 2.032529551552168,
+   "d_rho_serial": 0.0018503159551470638,
+   "d_rho_spec": 0.00037639780280096513,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.1827468084554836,
+   "within_spec": true,
+   "workers": 17
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.832485936031469,
+   "d_benefit_pct": 1.866488006366662,
+   "d_rho_serial": 0.0009453252268387669,
+   "d_rho_spec": 0.0022116774108288384,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.0340020703351931,
+   "within_spec": true,
+   "workers": 16
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.5268540507887323,
+   "d_benefit_pct": 1.6818593364437748,
+   "d_rho_serial": 0.0023213272494715387,
+   "d_rho_spec": 0.005348146798297981,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.15500528565504249,
+   "within_spec": true,
+   "workers": 15
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.279608103594069,
+   "d_benefit_pct": 1.5047218125237183,
+   "d_rho_serial": 0.004701143276095832,
+   "d_rho_spec": 0.007213114174021373,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.2251137089296493,
+   "within_spec": true,
+   "workers": 14
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.0769473307452075,
+   "d_benefit_pct": 1.3570317390994928,
+   "d_rho_serial": 0.006527791701513963,
+   "d_rho_spec": 0.008475749840692659,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.2800844083542853,
+   "within_spec": true,
+   "workers": 13
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.9087027107946279,
+   "d_benefit_pct": 1.2245131798718312,
+   "d_rho_serial": 0.007762586159203222,
+   "d_rho_spec": 0.010358028191172819,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.31581046907720317,
+   "within_spec": true,
+   "workers": 12
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.7673229054366203,
+   "d_benefit_pct": 1.088972819528456,
+   "d_rho_serial": 0.009805969383207547,
+   "d_rho_spec": 0.01084300245543679,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3216499140918357,
+   "within_spec": true,
+   "workers": 11
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.6471406438116004,
+   "d_benefit_pct": 0.9820479927961434,
+   "d_rho_serial": 0.011484874027119396,
+   "d_rho_spec": 0.012179780400506157,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.334907348984543,
+   "within_spec": true,
+   "workers": 10
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.8097727060509712,
+   "d_benefit_pct": 1.6898023187087425,
+   "d_rho_serial": 0.01849814535884642,
+   "d_rho_spec": 0.013850767957683363,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": 0.11997038734222874,
+   "within_spec": true,
+   "workers": 26
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.567844255203982,
+   "d_benefit_pct": 1.5693443728051553,
+   "d_rho_serial": 0.016689518538183346,
+   "d_rho_spec": 0.011880616413769585,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.0015001176011732252,
+   "within_spec": true,
+   "workers": 25
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.3658797737731583,
+   "d_benefit_pct": 1.4490214666202244,
+   "d_rho_serial": 0.014852590329450521,
+   "d_rho_spec": 0.009884915131899707,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.08314169284706606,
+   "within_spec": true,
+   "workers": 24
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.1957811721788674,
+   "d_benefit_pct": 1.343775969784927,
+   "d_rho_serial": 0.012763310404793615,
+   "d_rho_spec": 0.007304094311978537,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.1479947976060595,
+   "within_spec": true,
+   "workers": 23
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.0512783357336508,
+   "d_benefit_pct": 1.2431634318459273,
+   "d_rho_serial": 0.01118062372223938,
+   "d_rho_spec": 0.005784696773670772,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.19188509611227653,
+   "within_spec": true,
+   "workers": 22
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.9274993350045759,
+   "d_benefit_pct": 1.1558418546265425,
+   "d_rho_serial": 0.009325056366169093,
+   "d_rho_spec": 0.004181324561389754,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.2283425196219665,
+   "within_spec": true,
+   "workers": 21
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.8206362534173526,
+   "d_benefit_pct": 1.0886905331123624,
+   "d_rho_serial": 0.007550003462598376,
+   "d_rho_spec": 0.0021208613447363245,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.2680542796950097,
+   "within_spec": true,
+   "workers": 20
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.7276912872661654,
+   "d_benefit_pct": 1.0232496962687105,
+   "d_rho_serial": 0.005392604665692358,
+   "d_rho_spec": 0.0003437847131426697,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.29555840900254504,
+   "within_spec": true,
+   "workers": 19
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.646285774057808,
+   "d_benefit_pct": 0.9589408814316236,
+   "d_rho_serial": 0.0036182552942503055,
+   "d_rho_spec": 0.0010931289899364094,
+   "file": "boundary_v2_h090.json",
+   "h": 0.9,
+   "sim_benefit_pct": -0.3126551073738157,
+   "within_spec": true,
+   "workers": 18
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 7.2234936825643645,
+   "d_benefit_pct": 0.1445784548567639,
+   "d_rho_serial": 0.04583871376207116,
+   "d_rho_spec": 0.06441497171484212,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 7.368072137421128,
+   "within_spec": false,
+   "workers": 5
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 4.52179006668805,
+   "d_benefit_pct": 2.96691582107601,
+   "d_rho_serial": 0.07358936388075032,
+   "d_rho_spec": 0.06392713929236249,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 1.5548742456120397,
+   "within_spec": false,
+   "workers": 4
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 2.7439785623001565,
+   "d_benefit_pct": 3.1168893108013322,
+   "d_rho_serial": 0.07876856929336984,
+   "d_rho_spec": 0.06313851181984032,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.3729107485011759,
+   "within_spec": false,
+   "workers": 3
+  },
+  {
+   "agents": 16,
+   "closed_benefit_pct": 1.5535171005793216,
+   "d_benefit_pct": 2.0528704164151454,
+   "d_rho_serial": 0.07203464827899597,
+   "d_rho_spec": 0.0617562867221263,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.499353315835824,
+   "within_spec": false,
+   "workers": 2
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 5.294910966504465,
+   "d_benefit_pct": 1.8556670815603615,
+   "d_rho_serial": 0.03442319886915568,
+   "d_rho_spec": 0.037041299306758924,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 3.439243884944103,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 3.6546244830373666,
+   "d_benefit_pct": 3.029371356182469,
+   "d_rho_serial": 0.04866741224174398,
+   "d_rho_spec": 0.04028689595632717,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 0.6252531268548974,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 2.521715624621313,
+   "d_benefit_pct": 2.846390077397481,
+   "d_rho_serial": 0.051387080789599415,
+   "d_rho_spec": 0.04140066263545472,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.32467445277616824,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 1.722395253130946,
+   "d_benefit_pct": 2.229964370399351,
+   "d_rho_serial": 0.05005510818572667,
+   "d_rho_spec": 0.04271393563685577,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.5075691172684049,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 24,
+   "closed_benefit_pct": 1.1366168067427305,
+   "d_benefit_pct": 1.6147052187877162,
+   "d_rho_serial": 0.04917569634874719,
+   "d_rho_spec": 0.04176189363904148,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.4780884120449858,
+   "within_spec": true,
+   "workers": 3
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 4.208560679634976,
+   "d_benefit_pct": 2.5231927149153166,
+   "d_rho_serial": 0.027614562194711256,
+   "d_rho_spec": 0.02358022896597811,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 1.6853679647196596,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 3.0925752065551024,
+   "d_benefit_pct": 2.8512737721517993,
+   "d_rho_serial": 0.03389263800370246,
+   "d_rho_spec": 0.0260411568051212,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 0.24130143440330312,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 2.288040712939339,
+   "d_benefit_pct": 2.5554439794957924,
+   "d_rho_serial": 0.036040246744193705,
+   "d_rho_spec": 0.029012956888149866,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.267403266556453,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 1.6959881727941097,
+   "d_benefit_pct": 2.1234486400798156,
+   "d_rho_serial": 0.03673671426117742,
+   "d_rho_spec": 0.029907379101146714,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.4274604672857061,
+   "within_spec": true,
+   "workers": 6
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 1.2482759912136345,
+   "d_benefit_pct": 1.716516838825686,
+   "d_rho_serial": 0.03593022198319662,
+   "d_rho_spec": 0.03114831891433023,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.4682408476120514,
+   "within_spec": true,
+   "workers": 5
+  },
+  {
+   "agents": 32,
+   "closed_benefit_pct": 0.8994632405183133,
+   "d_benefit_pct": 1.339034849513569,
+   "d_rho_serial": 0.03596519198424064,
+   "d_rho_spec": 0.031206767272157543,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.43957160899525577,
+   "within_spec": true,
+   "workers": 4
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 3.840572259584357,
+   "d_benefit_pct": 2.2918590201872933,
+   "d_rho_serial": 0.0024044447698747806,
+   "d_rho_spec": 0.0032186301296652786,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 1.5487132393970635,
+   "within_spec": true,
+   "workers": 14
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 3.016312951992505,
+   "d_benefit_pct": 2.5408796445160458,
+   "d_rho_serial": 0.008097171202677167,
+   "d_rho_spec": 0.007034288272029676,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 0.4754333074764592,
+   "within_spec": true,
+   "workers": 13
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 2.3917356514002015,
+   "d_benefit_pct": 2.425157553141826,
+   "d_rho_serial": 0.011319940491441582,
+   "d_rho_spec": 0.009652116168883729,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.033421901741624585,
+   "within_spec": true,
+   "workers": 12
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.9123632042245189,
+   "d_benefit_pct": 2.17251033944832,
+   "d_rho_serial": 0.01346763919754923,
+   "d_rho_spec": 0.012857337403135327,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.2601471352238014,
+   "within_spec": true,
+   "workers": 11
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.5382819268729209,
+   "d_benefit_pct": 1.896038673968045,
+   "d_rho_serial": 0.015106497384198447,
+   "d_rho_spec": 0.015065236740072874,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.35775674709512423,
+   "within_spec": true,
+   "workers": 10
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.241121670339221,
+   "d_benefit_pct": 1.6707200431843563,
+   "d_rho_serial": 0.016694136527560244,
+   "d_rho_spec": 0.017538513864431393,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.42959837284513525,
+   "within_spec": true,
+   "workers": 9
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 1.0008239248975297,
+   "d_benefit_pct": 1.439396886990543,
+   "d_rho_serial": 0.01926843714821025,
+   "d_rho_spec": 0.0185192474358149,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.4385729620930132,
+   "within_spec": true,
+   "workers": 8
+  },
+  {
+   "agents": 48,
+   "closed_benefit_pct": 0.8031027930186796,
+   "d_benefit_pct": 1.24560943630694,
+   "d_rho_serial": 0.020920544408072117,
+   "d_rho_spec": 0.01955218899153255,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.44250664328826045,
+   "within_spec": true,
+   "workers": 7
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 3.5317118587375287,
+   "d_benefit_pct": 2.109043426817024,
+   "d_rho_serial": 0.009843845096730863,
+   "d_rho_spec": 0.0028765472741495435,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 1.4226684319205045,
+   "within_spec": true,
+   "workers": 19
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 2.8793898219737906,
+   "d_benefit_pct": 2.3373781334360944,
+   "d_rho_serial": 0.0043405878374395135,
+   "d_rho_spec": 0.0003985400874187972,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 0.5420116885376964,
+   "within_spec": true,
+   "workers": 18
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 2.3684369070237414,
+   "d_benefit_pct": 2.289268391733038,
+   "d_rho_serial": 0.0018503159551470638,
+   "d_rho_spec": 0.0023917740178925895,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 0.0791685152907034,
+   "within_spec": true,
+   "workers": 17
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.964333062617236,
+   "d_benefit_pct": 2.1051153337251876,
+   "d_rho_serial": 0.0009453252268387669,
+   "d_rho_spec": 0.00452987132880911,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.14078227110795138,
+   "within_spec": true,
+   "workers": 16
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.6408098633988517,
+   "d_benefit_pct": 1.9159932941629223,
+   "d_rho_serial": 0.0023213272494715387,
+   "d_rho_spec": 0.006325396258369365,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.2751834307640707,
+   "within_spec": true,
+   "workers": 15
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.3783848046713425,
+   "d_benefit_pct": 1.7310964967782865,
+   "d_rho_serial": 0.004701143276095832,
+   "d_rho_spec": 0.008231855258555187,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.35271169210694386,
+   "within_spec": true,
+   "workers": 14
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 1.1627129519408,
+   "d_benefit_pct": 1.5731599009018098,
+   "d_rho_serial": 0.006527791701513963,
+   "d_rho_spec": 0.009632474366434884,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.41044694896100986,
+   "within_spec": true,
+   "workers": 13
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.983204008476823,
+   "d_benefit_pct": 1.430613571475339,
+   "d_rho_serial": 0.007762586159203222,
+   "d_rho_spec": 0.010957600780486687,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.447409562998516,
+   "within_spec": true,
+   "workers": 12
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.831977001029411,
+   "d_benefit_pct": 1.2869246613013123,
+   "d_rho_serial": 0.009805969383207547,
+   "d_rho_spec": 0.012256688160032891,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.4549476602719013,
+   "within_spec": true,
+   "workers": 11
+  },
+  {
+   "agents": 64,
+   "closed_benefit_pct": 0.7031037619672891,
+   "d_benefit_pct": 1.176641272542679,
+   "d_rho_serial": 0.011484874027119396,
+   "d_rho_spec": 0.013222849163283645,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.47353751057538984,
+   "within_spec": true,
+   "workers": 10
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.9270716459949337,
+   "d_benefit_pct": 1.8900643237984194,
+   "d_rho_serial": 0.01849814535884642,
+   "d_rho_spec": 0.012814996191245931,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": 0.03700732219651436,
+   "within_spec": true,
+   "workers": 26
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.6731339170450117,
+   "d_benefit_pct": 1.761331330591934,
+   "d_rho_serial": 0.016689518538183346,
+   "d_rho_spec": 0.010674692898252403,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.08819741354692244,
+   "within_spec": true,
+   "workers": 25
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.4606538624464873,
+   "d_benefit_pct": 1.636493720515864,
+   "d_rho_serial": 0.014852590329450521,
+   "d_rho_spec": 0.008364355073812946,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.17583985806937663,
+   "within_spec": true,
+   "workers": 24
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.2812925888915296,
+   "d_benefit_pct": 1.5276891231348093,
+   "d_rho_serial": 0.012763310404793615,
+   "d_rho_spec": 0.006240125903605898,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.2463965342432796,
+   "within_spec": true,
+   "workers": 23
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 1.1285838539646287,
+   "d_benefit_pct": 1.4262990431603324,
+   "d_rho_serial": 0.01118062372223938,
+   "d_rho_spec": 0.004106947194569721,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.2977151891957038,
+   "within_spec": true,
+   "workers": 22
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.9974950589266122,
+   "d_benefit_pct": 1.3496018909265903,
+   "d_rho_serial": 0.009325056366169093,
+   "d_rho_spec": 0.001999616747890065,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.35210683199997816,
+   "within_spec": true,
+   "workers": 21
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.8840858803802972,
+   "d_benefit_pct": 1.266688776503274,
+   "d_rho_serial": 0.007550003462598376,
+   "d_rho_spec": 0.0005877117949493194,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.38260289612297677,
+   "within_spec": true,
+   "workers": 20
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.7852487364134466,
+   "d_benefit_pct": 1.2003610683985728,
+   "d_rho_serial": 0.005392604665692358,
+   "d_rho_spec": 0.0010301207050392724,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.4151123319851262,
+   "within_spec": true,
+   "workers": 19
+  },
+  {
+   "agents": 96,
+   "closed_benefit_pct": 0.6985133891141495,
+   "d_benefit_pct": 1.127710378261908,
+   "d_rho_serial": 0.0036182552942503055,
+   "d_rho_spec": 0.002680967851797389,
+   "file": "boundary_v2_h100.json",
+   "h": 1.0,
+   "sim_benefit_pct": -0.42919698914775845,
+   "within_spec": true,
+   "workers": 18
+  }
+ ],
+ "selftest": {
+  "arms": [
+   {
+    "arm": "H1 zero-queueing limit is E[min(T,S)]",
+    "detail": {
+     "abs_diff": 0.0,
+     "closed": 0.6666666666666666,
+     "limit": 0.6666666666666666
+    },
+    "ok": true
+   },
+   {
+    "arm": "H2 h=0 reduces to the serial fixed point",
+    "detail": {
+     "abs_dL": 0.0,
+     "benefit_pct": 0.0
+    },
+    "ok": true
+   },
+   {
+    "arm": "H3 c=1 wait is the M/M/1 wait",
+    "detail": {
+     "abs_diff": 0.0,
+     "c": 1,
+     "closed_form": 1.0,
+     "wait": 1.0
+    },
+    "ok": true
+   },
+   {
+    "arm": "H3 more servers wait less",
+    "detail": [
+     1.0,
+     0.006060606060606063,
+     8.357179500390275e-09
+    ],
+    "ok": true
+   },
+   {
+    "arm": "H4 benefit rises toward the zero-contention limit IN PERCENT",
+    "detail": [
+     {
+      "abs_from_limit": 17.700432155534166,
+      "benefit_pct": 4.52179006668805,
+      "c": 4,
+      "rho_spec": 0.9210947606548461
+     },
+     {
+      "abs_from_limit": 3.6826429966564866,
+      "benefit_pct": 18.53957922556573,
+      "c": 8,
+      "rho_spec": 0.7993216295337388
+     },
+     {
+      "abs_from_limit": 0.0038948017997597617,
+      "benefit_pct": 22.218327420422458,
+      "c": 16,
+      "rho_spec": 0.4285479822265074
+     },
+     {
+      "abs_from_limit": 1.7763568394002505e-14,
+      "benefit_pct": 22.2222222222222,
+      "c": 64,
+      "rho_spec": 0.10714285714285711
+     },
+     {
+      "abs_from_limit": 1.7763568394002505e-14,
+      "benefit_pct": 22.2222222222222,
+      "c": 256,
+      "rho_spec": 0.026785714285714277
+     }
+    ],
+    "ok": true
+   },
+   {
+    "arm": "H4 the largest pool is within 0.5pp of that limit",
+    "detail": {
+     "abs_from_limit": 1.7763568394002505e-14,
+     "benefit_pct": 22.2222222222222,
+     "c": 256,
+     "rho_spec": 0.026785714285714277
+    },
+    "ok": true
+   },
+   {
+    "arm": "H4 the limit is the percent form, not the time form",
+    "detail": {
+     "limit_pct": 22.222222222222218,
+     "limit_time": 0.6666666666666666
+    },
+    "ok": true
+   },
+   {
+    "arm": "the crossing rule reports AMBIGUOUS for two sign changes",
+    "detail": {
+     "ambiguous": true,
+     "crossings": [
+      0.905,
+      0.925
+     ],
+     "n_crossings": 2
+    },
+    "ok": true
+   },
+   {
+    "arm": "the crossing rule is step 3's own function",
+    "detail": "Step 3's rule, imported so the two sides cannot drift apart.",
+    "ok": true
+   },
+   {
+    "arm": "the sweep is extended below the measured window",
+    "detail": {
+     "n_narrow": 4,
+     "n_wide": 5,
+     "narrow_last_pool": 2,
+     "wide_last_pool": 1
+    },
+    "ok": true
+   },
+   {
+    "arm": "the comparison ran on every family step 3 published",
+    "detail": {
+     "kinds": {
+      "no closed-form boundary": 18
+     },
+     "n_comparable": 0,
+     "n_excluded": 18
+    },
+    "ok": true
+   },
+   {
+    "arm": "every exclusion carries a reason",
+    "detail": [
+     "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays posit",
+     "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays posit",
+     "NO CLOSED-FORM BOUNDARY: the closed-form benefit stays posit"
+    ],
+    "ok": true
+   },
+   {
+    "arm": "the same-cell block is populated and names its coordinate",
+    "detail": {
+     "median_d_rho_spec": 0.013394397926797863,
+     "n": 141
+    },
+    "ok": true
+   },
+   {
+    "arm": "a returned cell IS a root (residual at machine level) and the unplanted cell is answered",
+    "detail": {
+     "benefit_pct": 4.52179006668805,
+     "residual": 1.7763568394002505e-15
+    },
+    "ok": true
+   },
+   {
+    "arm": "a bracket that starts above the root is REFUSED, while the same call unplanted is answered",
+    "detail": {
+     "planted": null,
+     "unplanted_L": 4.342658509050933
+    },
+    "ok": true
+   },
+   {
+    "arm": "the bracket scales with the charged load (half the load is still answered)",
+    "detail": {
+     "L": 4.627425155847845,
+     "residual": 3.552713678800501e-15
+    },
+    "ok": true
+   },
+   {
+    "arm": "the benefit plant creates a boundary the unplanted curve does not have",
+    "detail": {
+     "fixed_points_untouched": true,
+     "offset_pct": 1.0463121438576157,
+     "planted_crossing": {
+      "pools": [
+       [
+        16,
+        2
+       ],
+       [
+        16,
+        1
+       ]
+      ],
+      "x_star": 0.938904894793383
+     },
+     "unplanted_crossing": null
+    },
+    "ok": true
+   },
+   {
+    "arm": "a simulated side ON the closed boundary reads MET (the primary path is reachable)",
+    "detail": {
+     "excluded": 0,
+     "kinds": {},
+     "n": 18,
+     "same_cell_n": 240,
+     "status": "MET",
+     "within": 18
+    },
+    "ok": true
+   },
+   {
+    "arm": "a 0.10 shift in the simulated boundary reads UNMET (the tolerance is load-bearing)",
+    "detail": {
+     "n": 18,
+     "status": "UNMET",
+     "tol": 0.05,
+     "within": 0
+    },
+    "ok": true
+   },
+   {
+    "arm": "the planted side covered EVERY family step 3 published (MET is not read off a handful)",
+    "detail": {
+     "n_met_side": 18,
+     "n_unmet_side": 18
+    },
+    "ok": true
+   },
+   {
+    "arm": "a missing artifact is NOT TAKEN and cannot be a pass",
+    "detail": {
+     "excluded": 1,
+     "n": 0
+    },
+    "ok": true
+   }
+  ],
+  "fails": [],
+  "n_fails": 0
+ },
+ "sweep_floor": 1,
+ "tolerance": 0.05,
+ "verdict": {
+  "exclusion_kinds": {
+   "no closed-form boundary": 18
+  },
+  "fraction": 0.0,
+  "min_fraction": 0.8,
+  "n": 0,
+  "n_boundary_inside_measured_window": null,
+  "n_evaluated": 18,
+  "n_excluded": 18,
+  "n_within": null,
+  "reason": "no family produced a comparable boundary in either model's own terms (18 exclusion(s), see exclusion_kinds)",
+  "secondary_same_cell_benefit_median": 1.269869125757161,
+  "secondary_same_cell_median": 0.013394397926797863,
+  "secondary_same_cell_n": 141,
+  "secondary_same_cell_within": 128,
+  "secondary_same_cell_worst": 0.07271548450079623,
+  "status": "UNMET",
+  "tolerance": 0.05,
+  "within": 0
+ }
+}
