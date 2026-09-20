@@ -560,6 +560,21 @@ at a named head). **A count whose set is in no carrier is not a weaker measureme
 its repair is the one *Time and units* already applies to its own set: **state the set by its entries, not by a
 number**, so that a member added later joins by being added.
 
+**And a count over a live set is taken at a coordinate the act that carries it can move — where that act is itself a
+member of the set, the figure names the state it holds of.** The coordinates above fix the *instrument*; where the set
+is one the journal's own writing keeps changing, they leave its *population* unfixed, because the act that publishes
+the figure can join it — a comment counting the comments on its own thread, a record counting the rounds of its own
+sequence. The figure is then true of the set the act found and false of the set the act leaves, **by exactly its own
+membership**, and none of the instrument's coordinates can express the difference, because writing a comment moves no
+head: the sentence can carry the set, the command, the head and the build and still be false the moment it is posted.
+So such a count **names the state it holds of** (*at the time of writing, before this comment*) or is **re-taken after
+the write**, in an act that is not a member of the set it states. *Measured at R420, 2026-09-20*: the disclosure
+comment this journal posted on its own `#50` round — `5747701150`, itself on one of the seven registration threads the
+count covers — states *"Over the seven registration threads … **188** comments, **3** were edited after posting … and
+the other **185** read `created_at == updated_at`"*, naming no coordinate; the same instrument, set and read at that
+round's close, returns **189 · 3 · 186** — the first difference being the disclosure's own membership — and at R424's
+close **191 · 3 · 188**.
+
 **An instrument is a relation, not a name — the command identifies it, the coordinates fix its class.** A command
 name does not decide the number it returns, so a sentence naming *which command ran* has named the instrument and
 not its **class**: the same command over the same set, on the same machine and the same day, returns a different
