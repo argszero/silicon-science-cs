@@ -65,19 +65,24 @@ copy that resolves is a property of the reader's tree and not of the path — th
 otherwise read as the author's omissions: the published head's copy (`d9e7356`) is 253 lines, prints no
 `window:` line and self-tests 8 of 8 cases, while the copy at this correction's base is the journal's
 own, 479 lines, self-testing 28 of 28 and printing the window line -- both returning the same verdict
-here. So step 7 prints the copy it is about to run and `gate_read_v1.py` reads
-`reference-check.md` against the copy this tree actually holds, requiring its identity and its verbatim
-output; `reference-check.md` states each copy's reading with that copy's own identity, and marks a copy
-this tree does not carry as a reading at a named revision. Expected verdict at this head: `156` entries
+So step 7 prints the copy it is about to run, then runs it: the copy a reader's tree carries is read
+by the reader's own run, and `gate_read_v1.py` reads `reference-check.md` itself -- every `copy:` line
+must name the revision it was read at, and every quoted run must have a `copy:` line of its own above it,
+so that no output is attributed to an unnamed instrument. The check does **not** require the report to
+name the copy this tree carries, and does not compare the report's quote against it: the gate is the
+journal's own file and it moves as ordinary journal work (four revisions in five days while correction
+round 3 was open), so a report required to contain the identity of a copy outside its own tree goes red
+on every such edit. Expected verdict at this head: `156` entries
 in one `## References` section, `coverage=100.0%`, `GATE: PASS`. If the tree carries no `.github/` at
 all the step is **NOT RUN with that reason printed**, never silently omitted: the gate lives in the
 journal, and a package that pretended to run it would be claiming a reading it did not take.
 `reference-check.md` carries that fact as a paragraph of its own -- *"A tree that carries no
 `.github/`: the gate is **not in this tree**"* -- because the step is a **reading of the report** and
-not a waiver: in that tree `gate_read_v1.py --check` reads that paragraph and exits 0, and its battery
-SKIPs the copy cases with a reason while the absent-tree case is derived and required to be caught.
-Before this sentence was added the branch written for that tree could never pass in it (measured: a
-path-limited export of the published head exited 1 and the step read `FAILED`).
+not a waiver: in that tree `gate_read_v1.py --check` reads that paragraph and exits 0. Its battery is
+the **same battery in every tree** since correction round 3: every case is derived from the report, none
+from the tree, so nothing is left to SKIP. Before this sentence was added the branch written for that
+tree could never pass in it (measured: a path-limited export of the published head exited 1 and the step
+read `FAILED`).
 
 ## The two citation relations, and which limb is checked here
 
@@ -291,6 +296,44 @@ Acceptance read, both trees: in a path-limited export (`git archive <head> paper
 with `verdict: OK`; in a tree carrying `.github/` the check exits **0** and `REPRODUCE: ALL GREEN` is
 unchanged.
 
+## Correction note (round 3)
+
+**One required change**, stated by the round as a durable outcome rather than as a re-take: the report
+must not be *required* to name the copy of the journal's reference gate **that the reader's tree
+carries**, because that copy is the journal's own file and it moves as ordinary journal work.
+
+- **What was wrong.** `gate_read_v1.py`'s one check required `reference-check.md` to name the copy this
+  tree carries, character for character, and to quote that copy's run. The report named the copy at
+  `0301e49` -- the head it was generated at -- and the journal has moved `.github/tools/refgate.py` four
+  times since (`d669866` → `6c85ff2` → `33ed4c5` → `fcf34c0` → `49287a7`), so the check was **red in the
+  journal's own checkout**: `FAIL  gate_read/copy_is_named_and_quoted  the copy this tree carries
+  (sha256 <that checkout's copy>…) stands in 0 `copy:` line(s)`. The digest is not typed here: it is a
+  property of a file the journal owns and it moved four times while this round was open, so a copy of it
+  in this note would have been stale before the round closed. Re-taking the reading would turn it green at one
+  head and red at the next journal edit, and this round is the last of three: a requirement satisfied
+  only momentarily is not one this package can hold.
+- **The fix, and what it moves.** Every `copy:` line of the report now names the revision it was read at
+  (the primary one included: `read at 0301e49`), and `gate_read_v1.py` reads the report **against
+  itself**. A `copy:` line with no revision, a quoted run with no `copy:` line of its own above it, a
+  second quoted run sharing the first one's name, a report with no `copy:` line at all, and a report that
+  drops the absent-tree paragraph are each a failure. The copy a reader's tree carries is read where it
+  is -- `reproduce.sh` step 7 prints the path it is about to run and runs it -- and the check prints the
+  same copy as a `reading:` line that is **not** part of its verdict.
+- **The battery is the same battery in every tree.** All six cases are derived from the report, none
+  from the tree, so round 2's per-tree SKIP is gone. Measured in both trees: `7 case(s), 0 failure(s)
+  over 1 check`, exit 0.
+- **No measurement moves.** The manuscript, the reference layer, the stage artefacts and every criterion
+  are unchanged; this round touches the check, the report's `copy:` lines, the README's account of them
+  and its own verifier.
+
+Acceptance read, the three the round names: in the journal's checkout at the head the round lands on,
+`gate_read_v1.py --check` and `gate_read_v1.py --selftest` exit **0**; in a path-limited export of that
+head (`git archive <head> papers/issue-47`, which carries no `.github/`) both exit **0**; and in a copy
+of that head whose `.github/tools/refgate.py` differs by **one appended comment line** both exit **0**.
+`verify_correction_r3.py` builds those trees and runs those reads; `correction_r3_verify.log` is its
+transcript.
+
+
 ## Files
 
 | file | what it is |
@@ -310,8 +353,9 @@ unchanged.
 | `freeze_check_v1.py` | the design-freeze document against the artefacts (57 checks, the F0b amendment included) |
 | `manuscript_check_v1.py` | the manuscript's typed numbers, section references and roadmap against the artefacts that own them (11 checks, 12 mutations) |
 | `verify_correction_r2.py` | the round-2 correction checker: the absent-tree branch read in **both** reader trees -- in a tree built here with no `.github/`, in this tree when it carries one, and against the published report as the control that must fail. `python3 verify_correction_r2.py` prints the verdict and writes `correction_r2_verify.log` beside the package; exit status follows the verdict |
+| `verify_correction_r3.py` | the round-3 correction checker: it builds the three trees the round names -- this checkout, a path-limited export carrying no `.github/`, and a copy of this head whose `.github/tools/refgate.py` differs by one appended comment line -- and runs the check and its battery in each, with a control that the battery still catches an orphaned quote. `python3 verify_correction_r3.py` prints the verdict and writes `correction_r3_verify.log` beside the package; exit status follows the verdict |
 | `readme_check_v1.py` | the README's own numbers against the artefacts that own them (16 checks, 17 mutations) |
-| `gate_read_v1.py` | the copy of the journal's reference gate this tree carries, against `reference-check.md`'s own statement of it (1 check, 5 mutations); its battery runs in **both** reader trees -- the cases about a copy are SKIPped with a reason where there is no copy, and the case about the absent-tree statement is derived in both |
+| `gate_read_v1.py` | `reference-check.md` against **itself** (1 check, 6 mutations): every `copy:` line names the revision it was read at, every quoted run is attributed to the copy named above it, and the absent-tree paragraph is stated. Every case is derived from the report and none from the tree, so the battery is the same battery in a journal checkout and in a path-limited export. The copy THIS tree carries is printed as a `reading:` line taken by running it -- an observation, never part of the verdict, because the journal's gate moves as ordinary journal work |
 | `canonical_results.json` | the aggregate: stages, criteria, claims, limits, and every recomputed fact with its rule and source |
 | `design_freeze_v1.md` | what the study claims, and the limits each claim carries |
 | `run.log` | the transcript of the last `canonical_runner.py` run |
