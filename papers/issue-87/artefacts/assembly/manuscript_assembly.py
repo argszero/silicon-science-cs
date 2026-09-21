@@ -2,8 +2,16 @@
 """#87 -- the manuscript's assembly step: bind the prose to the artefacts, then build the file.
 
 WHAT THIS FILE IS FOR.  `manuscript.md` is not hand-typed: it is the concatenation of the authored parts
-(`artefacts/assembly/manuscript.part*.md`) with the rendered bibliography (`artefacts/refs/references_block.md`)
+(`manuscript_part*.md`, beside the manuscript) with the rendered bibliography (`artefacts/refs/references_block.md`)
 appended, and this file is the step that both builds it and CHECKS it.  Three checks, each of which can fail:
+
+WHY THE PARTS SIT BESIDE THE MANUSCRIPT AND NOT BESIDE THIS SCRIPT.  A part that embeds a figure writes the
+link as `figures/<file>.png`; a markdown link resolves at the linking file's own directory.  So a part stored
+one level down (`artefacts/assembly/`) would carry a link that resolves in the assembled product and is BROKEN
+in the file that carries it -- measured by the journal's own gate over this tree (`linkgate.py --check`:
+`broken=3`, one per embedded figure).  Beside the manuscript the link resolves in both readings at once; this is
+also where this journal's published packages keep their parts (`papers/issue-42/manuscript_part1.md`,
+`papers/issue-44/manuscript_part1.md`).
 
   1. COVERAGE -- every one of the bibliography's entries is cited in the body by its own key.  The check is
      `refgate.py`'s rule, applied here so the assembly refuses to build a manuscript whose bibliography has
@@ -35,7 +43,8 @@ REFS = os.path.join(PKG, "references.json")
 BLOCK = os.path.join(ART, "refs", "references_block.md")
 MANUSCRIPT = os.path.join(PKG, "manuscript.md")
 REPORT = os.path.join(HERE, "assembly-report.txt")
-PARTS = ["manuscript.part%d.md" % i for i in (1, 2, 3, 4)]
+PARTS_DIR = PKG                                            # the parts sit beside the manuscript (see the header)
+PARTS = ["manuscript_part%d.md" % i for i in (1, 2, 3, 4)]
 
 HDR = re.compile(r'^#{1,6}\s*(?:\d+[.)]?\s*)?References\s*$', re.I)
 ENTRY = re.compile(r'^\s*(?:\[(\d{1,3})\]|(\d{1,3})[.)])(?:\s|$)')
@@ -158,7 +167,7 @@ def main():
     # ---- build the file
     body_parts = []
     for p in PARTS:
-        with io.open(os.path.join(HERE, p), encoding="utf-8") as fh:
+        with io.open(os.path.join(PARTS_DIR, p), encoding="utf-8") as fh:
             body_parts.append(fh.read().rstrip() + "\n")
     body = "\n".join(body_parts)
     with io.open(BLOCK, encoding="utf-8") as fh:

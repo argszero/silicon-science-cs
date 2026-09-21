@@ -9,12 +9,13 @@ Submission package for the research registration
 | path | what it is |
 |------|-----------|
 | `manuscript.md` | the paper: 4 authored parts + the rendered bibliography (169 entries, 1294 lines) |
+| `manuscript_part1.md` … `manuscript_part4.md` | the authored parts, **beside the manuscript**: a part that embeds a figure writes `figures/<file>.png`, and a markdown link resolves at the linking file's own directory — so a part stored one level down would carry a link that resolves in the assembled product and is broken in the file that carries it (the journal's gate measured exactly that: `linkgate.py --check` → `broken=3`, one per figure) |
 | `figures/` | the three figures the manuscript embeds, and `make_figures.py`, which draws them from the digest alone |
 | `reproduce.sh` | the one-command reproduction (below) |
 | `reference-check.md` | the citation-authenticity report: one line per entry, its verification method and the record found |
 | `references.json` | the bibliography as data (each entry's key, authors, year, title, venue, URL, stated difference, verification method) |
 | `artefacts/results_digest.py` / `.json` | **the owner of every number the manuscript prints**: 55 quantities, each read out of an instrument's own committed record, with the file and field it was read from |
-| `artefacts/assembly/` | the authored manuscript parts and `manuscript_assembly.py`, which builds `manuscript.md` and checks it (coverage, stray citation keys, 91 numeric bindings) |
+| `artefacts/assembly/` | `manuscript_assembly.py`, which builds `manuscript.md` from the parts and checks it (coverage, stray citation keys, 91 numeric bindings), and the report it writes |
 | `artefacts/instruments/` | the instruments and their result records: `smoke_v0.py` … `smoke_v16.py`, their `*_results.json`, and the run logs |
 | `artefacts/refs/` | the bibliography's limb: the harvest pools, the selection (which record carries which claim), the builder, the verifier, the renderer |
 | `artefacts/round-notes/` | the round-by-round records, including every instrument defect this study found and the repair applied |
@@ -49,6 +50,21 @@ the committed copy is what the run is measured against, and `git checkout -- <fi
 themselves: the study is exact statevector simulation with fixed seeds — no sampling, no noise model, no clock,
 no network, no GPU.
 
+**Tree: a checkout of this branch, not an export of its head.** Step 4 runs the journal's gates from the
+repository root, and both of them resolve their **carrier set** off the tree with `git ls-files`, so the tree
+form is a coordinate of the run and is stated here rather than assumed. In a checkout the set is the 65 tracked
+markdown carriers of the head and the gate reads them — `linkgate.py --check` → `targets=100 links=94
+resolved=94 broken=0 · LINKGATE: PASS`. Over an **export** of the same head (no `.git`, so `git ls-files`
+reaches an enclosing repository, whose index holds no markdown under this directory) the two readings are,
+measured here: `linkgate.py` prints `set: 0 tracked markdown carriers` and **`NOT RUN`** — never `PASS`, because
+a verdict is about a set and no set was read — and `numgate.py --selftest` prints `selftest: 16/17 cases ok`,
+the missing case being `the_carrier_set_is_read_off_links`, which needs the same repository. **Neither is a
+finding about this package**, and neither is a claim this specification needs: every input the recompute path
+reads is committed (`git ls-files` reaches all of it), no step resolves a `.git` object, and steps 1–3 (the
+digest, the figures, the assembled manuscript) run as written in **both** tree forms — step 4's gate readings
+are the part that needs the checkout. `reproduce.sh` prints the head it ran at, and in a tree that is not a
+work tree it prints `not a git work tree` on that line instead of failing.
+
 ## The build the tolerance is read against
 
 A tolerance is a statement about a build, so both interpreters and the versions of the dependencies whose values
@@ -76,9 +92,24 @@ statement about values rather than about dict ordering.
 ## Re-running the science (the instruments)
 
 Every instrument is deterministic and CPU-only; each writes its result JSON beside itself and prints a report
-SHA-256 that must match the one below. They are run from `artefacts/instruments/` with `/usr/bin/python3`:
+SHA-256. They are run from `artefacts/instruments/` with `/usr/bin/python3`:
 
-| instrument | what it produced | report SHA-256 (first 8) | wall-clock in the record |
+**What that hash is exact over — and what it is not.** It is exact over a **build**: the interpreter and the
+dependency versions pinned above, together with the linear-algebra reduction order that ships with them. It is
+**not a machine-independent constant**, and this package states that rather than let the table read as one.
+Measured on a second machine over the same pinned build (`/usr/bin/python3` 3.9.6, numpy 2.0.2): re-running
+`smoke_v15.py` returns report SHA-256 `6aa39c4b…` against the committed `2317774c…`, and the two records differ
+in **321 of 526 numeric leaves**, every one of them last-ULP, largest **absolute** difference **4.2e-16** —
+carried by a quantity that is analytically zero, so what moves is the 1e-16 floor itself
+(`4.1986615992165113e-16` → `8.3973231984330236e-16`). Three runs of the instrument there, and three more under
+`OPENBLAS_NUM_THREADS=1`, all returned the same `6aa39c4b…`: deterministic **per build**, not across builds
+(numpy's bundled `scipy-openblas64` is multi-threaded — `MAX_THREADS=64`, `NO_AFFINITY` — so the reduction order
+is a machine coordinate). **No claim in the manuscript rests on this tier**, and the one-command reproduction is
+unaffected: it reads the instruments' committed records by design, and the manifest it prints was byte-identical
+on that second machine as well. A reader who re-runs an instrument elsewhere should read a last-ULP difference
+as this coordinate, not as a defect.
+
+| instrument | what it produced | report SHA-256 (first 8, on the authoring build above) | wall-clock in the record |
 |-----------|------------------|--------------------------|--------------------------|
 | `smoke_v5.py` | the generator, the seven arms, the first single-cell read (R391) | `986baa2c` | not recorded |
 | `smoke_v6.py` | the phase-convention limb (R392) | `2dfc9794` | not recorded |
