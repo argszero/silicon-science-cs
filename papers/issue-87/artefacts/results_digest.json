@@ -1,12 +1,125 @@
 {
- "n_quantities": 55,
+ "n_quantities": 71,
  "quantities": {
+  "alignment.attenuation": {
+   "from": "r409_align_streams_results.json",
+   "path": "verdicts.P4_gap_from_alpha_plus1_negative.per_gamma",
+   "value": {
+    "gamma1": {
+     "mean": -0.1400942458611066,
+     "n": 5,
+     "n_negative": 5
+    },
+    "gamma2": {
+     "mean": 0.046147620189899194,
+     "n": 5,
+     "n_negative": 0
+    }
+   }
+  },
+  "alignment.control_reproduction": {
+   "from": "r409_align_streams_results.json",
+   "path": "control_P1",
+   "value": {
+    "all_bitwise": true,
+    "n_rows": 12
+   }
+  },
+  "alignment.falsifier_fired": {
+   "from": "r409_align_streams_results.json",
+   "path": "falsifier_fired",
+   "value": true
+  },
   "alignment.fdr_predictive": {
    "from": "smoke_v10_results.json",
    "path": "fdr.predictive",
    "value": {
     "n_declared": 24,
     "n_leads": 9
+   }
+  },
+  "alignment.near_zero_cell_flip": {
+   "from": "r409_align_streams_results.json",
+   "path": "verdicts.P5_near_zero_cells_flip.cells[0]",
+   "value": {
+    "committed": -0.03720426596374845,
+    "flips": true,
+    "gamma": 0.1,
+    "mean": 0.0038417057798257534,
+    "sd": 0.04006525768812128
+   }
+  },
+  "alignment.panel_gamma1": {
+   "from": "r409_align_streams_results.json",
+   "path": "verdicts.P2_pooled_13_streams.per_gamma[1]",
+   "value": {
+    "mean": 0.284779778920446,
+    "n": 13,
+    "n_negative": 0,
+    "sd": 0.10796069347489953,
+    "t_hi": 0.36790129410337835,
+    "t_lo": 0.2016582637375136
+   }
+  },
+  "alignment.panel_gamma2": {
+   "from": "r409_align_streams_results.json",
+   "path": "verdicts.P2_pooled_13_streams.per_gamma[2]",
+   "value": {
+    "mean": 0.040219545254371845,
+    "n": 13,
+    "n_negative": 2,
+    "sd": 0.049722341782985006,
+    "t_hi": 0.07850196318276581,
+    "t_lo": 0.0019371273259778735
+   }
+  },
+  "alignment.panel_n_streams": {
+   "from": "r409_align_streams_results.json",
+   "path": "stream_seeds",
+   "value": 13
+  },
+  "alignment.panel_seed_families": {
+   "from": "r409_align_streams_results.json",
+   "path": "seed_families",
+   "value": {
+    "adjacent": [
+     20260922,
+     20260923,
+     20260924
+    ],
+    "cluster": [
+     41020261,
+     41020262,
+     41020263,
+     41020264,
+     41020265
+    ],
+    "wide_magnitude": [
+     7,
+     1009,
+     123457,
+     2718281,
+     14142135
+    ]
+   }
+  },
+  "alignment.six_target_average": {
+   "from": "r409_align_streams_results.json",
+   "path": "verdicts.P6_six_target_average_keeps_sign",
+   "value": {
+    "gamma1": 0.25726458915790623,
+    "gamma2": 0.051736648262846,
+    "n_target": 6
+   }
+  },
+  "alignment.unshifted_stays_positive": {
+   "from": "r409_align_streams_results.json",
+   "path": "verdicts.P3_unshifted_stays_positive",
+   "value": {
+    "mean": 0.5228596435980066,
+    "met": true,
+    "n": 5,
+    "n_positive": 5
    }
   },
   "alignment.zero_alignment_cells": {
@@ -1264,6 +1377,57 @@
    "from": "smoke_v5_results.json",
    "path": "derived: risks.quantum - risks.randfeat at gamma=0.5",
    "value": -0.010871444599407698
+  },
+  "rivals.matchedlocal_blowup": {
+   "from": "r412_matchedlocal_tuned_results.json",
+   "path": "summary",
+   "value": {
+    "1.0": 2.230647994626337,
+    "2.0": 3.6963272126751363
+   }
+  },
+  "rivals.matchedlocal_n_streams": {
+   "from": "r412_matchedlocal_tuned_results.json",
+   "path": "stream_seeds",
+   "value": 5
+  },
+  "rivals.matchedlocal_trivial_fixed": {
+   "from": "r412_matchedlocal_tuned_results.json",
+   "path": "summary",
+   "value": {
+    "0.5": 1.0123181265270664,
+    "1.0": 1.0552517021144534,
+    "2.0": 1.0553576485074596
+   }
+  },
+  "rivals.matchedlocal_tuned": {
+   "from": "r412_matchedlocal_tuned_results.json",
+   "path": "summary.gamma=0.5",
+   "value": {
+    "quantum_minus_matched": 0.42836406419667916,
+    "quantum_minus_tuned": 0.439578224727032,
+    "risk_local_fixed": 1.0123181265270664,
+    "risk_local_tuned": 0.1314938295736352,
+    "risk_matched": 0.142707990103988,
+    "risk_quantum": 0.5710720543006673,
+    "s_hat": 0.028000000000000004,
+    "sd_quantum_minus_tuned": 0.04778916030605948
+   }
+  },
+  "rivals.matchedlocal_usable_cells": {
+   "from": "r412_matchedlocal_tuned_results.json",
+   "path": "verdict.cells_with_a_usable_tuned_local_rival",
+   "value": 1
+  },
+  "rivals.midband_arm_gaps": {
+   "from": "smoke_v5_results.json",
+   "path": "cells[alpha=1].rows[gamma=0.5]",
+   "value": {
+    "closedform": 0.0008271661811163622,
+    "matched": 0.0,
+    "randfeat": 0.3961367271786463,
+    "rbf": 0.021216645140208157
+   }
   },
   "rivals.quantum_minus_arm": {
    "from": "smoke_v5_results.json",

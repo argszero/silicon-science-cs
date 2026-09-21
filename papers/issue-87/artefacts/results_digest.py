@@ -45,6 +45,80 @@ def main():
     v14 = load("smoke_v14_results.json")    # the fallback clause through the calibrated predictive null
     v15 = load("smoke_v15_results.json")    # the q = 8 cell
     v16 = load("smoke_v16_results.json")    # the k = 5 stream panel (the headline)
+    r409 = load("r409_align_streams_results.json")   # R409/R412: the 13-stream alignment panel (the review's Q1)
+    r412 = load("r412_matchedlocal_tuned_results.json")  # R412: the local rival under the same envelope grid (Q3)
+
+    # ------------------------------------------------- the alignment panel (r409): the review's Q1, answered
+    #
+    # Every entry here is read out of the instrument that re-measured the alpha = 0 cell over 13 disjoint
+    # streams in 3 declared seed families.  The committed cell (alignment.zero_alignment_cells) stays where it
+    # is: it is what the submission printed, and the panel's job is to report whether it reproduces.
+    _p2 = r409["verdicts"]["P2_pooled_13_streams"]["per_gamma"]
+    _p4 = r409["verdicts"]["P4_gap_from_alpha_plus1_negative"]["per_gamma"]
+    _xs = r409["cross_stream"]
+    put("alignment.panel_gamma1", dict(mean=_p2["1"]["mean"], sd=_p2["1"]["sd"], n=_p2["1"]["n"],
+                                       n_negative=_p2["1"]["n_negative"],
+                                       t_lo=_xs["shifted|alpha=+0|1"]["t_lo"], t_hi=_xs["shifted|alpha=+0|1"]["t_hi"]),
+        "r409_align_streams_results.json", "verdicts.P2_pooled_13_streams.per_gamma[1]")
+    put("alignment.panel_gamma2", dict(mean=_p2["2"]["mean"], sd=_p2["2"]["sd"], n=_p2["2"]["n"],
+                                       n_negative=_p2["2"]["n_negative"],
+                                       t_lo=_xs["shifted|alpha=+0|2"]["t_lo"], t_hi=_xs["shifted|alpha=+0|2"]["t_hi"]),
+        "r409_align_streams_results.json", "verdicts.P2_pooled_13_streams.per_gamma[2]")
+    put("alignment.panel_n_streams", len(r409["stream_seeds"]), "r409_align_streams_results.json", "stream_seeds")
+    put("alignment.panel_seed_families", r409["seed_families"], "r409_align_streams_results.json", "seed_families")
+    put("alignment.attenuation", dict(gamma1=dict(mean=_p4["1"]["mean"], n_negative=_p4["1"]["n_negative"],
+                                                 n=len(_p4["1"]["per_stream"])),
+                                      gamma2=dict(mean=_p4["2"]["mean"], n_negative=_p4["2"]["n_negative"],
+                                                  n=len(_p4["2"]["per_stream"]))),
+        "r409_align_streams_results.json", "verdicts.P4_gap_from_alpha_plus1_negative.per_gamma")
+    put("alignment.six_target_average", dict(gamma1=r409["verdicts"]["P6_six_target_average_keeps_sign"]["gamma1"],
+                                             gamma2=r409["verdicts"]["P6_six_target_average_keeps_sign"]["gamma2"],
+                                             n_target=r409["six_target"]["shifted"]["1"]["n"]),
+        "r409_align_streams_results.json", "verdicts.P6_six_target_average_keeps_sign")
+    put("alignment.near_zero_cell_flip", r409["verdicts"]["P5_near_zero_cells_flip"]["cells"][0],
+        "r409_align_streams_results.json", "verdicts.P5_near_zero_cells_flip.cells[0]")
+    put("alignment.unshifted_stays_positive", r409["verdicts"]["P3_unshifted_stays_positive"],
+        "r409_align_streams_results.json", "verdicts.P3_unshifted_stays_positive")
+    put("alignment.control_reproduction", dict(all_bitwise=r409["control_P1"]["all_bitwise"],
+                                               n_rows=len(r409["control_P1"]["rows"])),
+        "r409_align_streams_results.json", "control_P1")
+    put("alignment.falsifier_fired", r409["falsifier_fired"], "r409_align_streams_results.json", "falsifier_fired")
+
+    # ------------------------------------------------- the locally matched rival, tuned (r412): the review's Q3
+    _s = r412["summary"]
+    put("rivals.matchedlocal_tuned", dict(
+        s_hat=_s["gamma=0.5"]["s_hat_local_tuned"],
+        risk_local_fixed=_s["gamma=0.5"]["risks"]["matchedlocal_fixed"],
+        risk_local_tuned=_s["gamma=0.5"]["risks"]["matchedlocal_tuned"],
+        risk_matched=_s["gamma=0.5"]["risks"]["matched"],
+        risk_quantum=_s["gamma=0.5"]["risks"]["quantum"],
+        quantum_minus_tuned=_s["gamma=0.5"]["dQ_minus_local_tuned"]["mean"],
+        quantum_minus_matched=_s["gamma=0.5"]["dQ_minus_matched"]["mean"],
+        sd_quantum_minus_tuned=_s["gamma=0.5"]["dQ_minus_local_tuned"]["sd"]),
+        "r412_matchedlocal_tuned_results.json", "summary.gamma=0.5")
+    put("rivals.matchedlocal_blowup", {g: _s["gamma=%g" % g]["risks"]["matchedlocal_tuned"]
+                                       for g in (1.0, 2.0)},
+        "r412_matchedlocal_tuned_results.json", "summary")
+    put("rivals.matchedlocal_trivial_fixed", {g: _s["gamma=%g" % g]["risks"]["matchedlocal_fixed"]
+                                              for g in (0.5, 1.0, 2.0)},
+        "r412_matchedlocal_tuned_results.json", "summary")
+    put("rivals.matchedlocal_n_streams", len(r412["stream_seeds"]), "r412_matchedlocal_tuned_results.json",
+        "stream_seeds")
+    put("rivals.matchedlocal_usable_cells", r412["verdict"]["cells_with_a_usable_tuned_local_rival"],
+        "r412_matchedlocal_tuned_results.json", "verdict.cells_with_a_usable_tuned_local_rival")
+    # the mid-band cell at q = 6 (alpha = +1, shifted), as the four arms stand against the SAME matched rival:
+    # this is the cell F3's scoping sentence has to name, so it is read here rather than re-typed.
+    _mid = None
+    for _c in v5["cells"]:
+        if abs(_c["alpha"] - 1.0) < 1e-12:
+            for _r in _c["rows"]:
+                if abs(_r["gamma"] - 0.5) < 1e-12:
+                    _mid = _r
+    put("rivals.midband_arm_gaps", dict(matched=0.0,
+                                        rbf=_mid["risks"]["rbf"]["mean"] - _mid["risks"]["matched"]["mean"],
+                                        randfeat=_mid["risks"]["randfeat"]["mean"] - _mid["risks"]["matched"]["mean"],
+                                        closedform=_mid["risks"]["closedform"]["mean"] - _mid["risks"]["matched"]["mean"]),
+        "smoke_v5_results.json", "cells[alpha=1].rows[gamma=0.5]")
 
     # ---------------------------------------------------------------- design
     put("design.qubits", v16["qubits"], "smoke_v16_results.json", "qubits")

@@ -82,10 +82,10 @@ grep -q "GATE: PASS" "$TMP/refgate.out" || fail "refgate did not print GATE: PAS
 echo
 echo "REPRODUCE: ALL GREEN"
 echo "  manifest of what was compared:"
-echo "    artefacts/results_digest.json          55 quantities read out of the instruments' own records"
+echo "    artefacts/results_digest.json          71 quantities read out of the instruments' own records"
 echo "    figures/fig1_advantage_map.png         the advantage map (Fig. 1)"
 echo "    figures/fig2_power_arm.png             the power arm (Fig. 2)"
 echo "    figures/fig3_metric_structure.png      the metric's structure (Fig. 3)"
 echo "    manuscript.md                          parts + the rendered bibliography"
-echo "    artefacts/assembly/assembly-report.txt coverage 169/169, 0 stray keys, 91 bindings"
+echo "    artefacts/assembly/assembly-report.txt coverage 169/169, 0 stray keys, 128 bindings"
 echo "    refgate                                entries 169, 0 not separated, coverage 100.0%, GATE: PASS"

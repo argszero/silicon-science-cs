@@ -189,8 +189,9 @@ What it has instead is a **valley with two rims**: the kernel loses **+0.41 … 
 contiguous mid-band block at q = 6 (sign-unanimous in all five streams, every 95 % lower bound ≥ +0.398), loses
 **+0.25 … +0.34** in the same block at q = 8, and leads by at most **0.073** on the two flanks. The loss survives
 the strongest *valid* handicap of the rival, and the rival's own geometry is the mechanism: where the planted
-target's interaction structure is the map's graph, the rival is exactly right and wins by half a variance; where
-alignment is removed (in the shifted convention) the sign inverts.
+target's interaction structure is the map's graph, the rival is exactly right and wins by half a variance. Where
+alignment is removed the loss is *attenuated* at γ = 1 (by 0.1401, in 5 of 5 streams) and unchanged at γ = 2: the
+sign does not move, and the sign inversion an earlier version of this paragraph reported is withdrawn.
 
 ### 6.2 Significance: whose belief changes
 
@@ -227,25 +228,46 @@ metric as the matching object.
 
 ## 7. Threats to validity
 
-1. **The matched rival is a proxy, not the geometry.** The map's metric is a *field* — the per-point metric
-   varies over the data (spread 1.14 to 6.18 across the bandwidth grid) — so a global Mahalanobis rival can be
-   matched only at the mean. The mid-band loss is therefore a statement about a *mean-matched* rival, and a
-   stronger construction (a per-point or local metric, as in the `matchedlocal` arm of the first instrument,
-   which is *worse* than the mean-matched one) would be the next test. This is the study's largest single
-   limitation, and it is the reason the paper reports the field's spread in every cell rather than a single
-   matching figure.
+1. **The matched rival is a proxy, not the geometry — and the per-point construction that was supposed to test
+   that is now measured.** The map's metric is a *field* (spread 1.14 to 6.18 across the bandwidth grid), so a
+   global Mahalanobis rival can be matched only at the mean. This is the study's largest single limitation, and
+   it is the reason the paper reports the field's spread in every cell. The obvious follow-up — replace the
+   mean-matched rival with a per-point one — is answered here rather than deferred (`r412_matchedlocal_tuned.py`,
+   shipped in this package, five disjoint streams). The instrument's scale is fixed before any arm runs: excess
+   risk is measured against the Bayes predictor on the same test set, so 0 is the Bayes predictor and ≈ 1 is
+   predict-the-mean. On that scale:
+   - the **per-point rival as previously committed** (envelope held at 1) reads **1.012 / 1.055 / 1.055** at
+     γ = 0.5 / 1 / 2 — it is the trivial predictor, not a rival, so the earlier parenthetical that it is "worse
+     than the mean-matched one" was comparing the quantum arm against predict-the-mean;
+   - **swept over the same nested-CV envelope grid as every other family**, it becomes a real rival in exactly
+     one of the three mid-band cells (γ = 0.5: excess risk **0.131** against the mean-matched **0.143**) and
+     there **the mid-band loss does not shrink: it is +0.4396 against it, against +0.4284 against the
+     mean-matched rival** — larger by 0.011, the wrong sign for the caveat's hope;
+   - at γ = 1 and γ = 2 the same sweep **blows up** (excess risk 2.231 and 3.696: the nested CV's own choice
+     lands at the small edge of the envelope grid, where the kernel is near rank one and the ridge solve
+     diverges), so no reading is available there and none is reported.
+   The conclusion the measurement supports is therefore not "a stronger local rival shrinks the loss" but
+   "the per-point construction is either the trivial predictor or numerically unusable in this regime", which
+   is why the mid-band result rests on the mean-matched rival and states so.
 2. **One generator, planted targets.** The alignment axis is swept by construction, which is the study's
    methodological advantage over a dataset and also its scope limit: the target family is a quadratic
    interaction function of a uniform hypercube. A reader who believes real data are not of this form should read
    the map as a *bound* on what alignment can buy — the direction of the alignment effect (aligned ⇒ loss) is the
    transferable claim, not its magnitude.
-3. **The alignment axis is measured on a single instrument.** The α = 0 cells of §5.3 come from the study's
-   alignment instrument (6 draws × 50 splits, declared through the calibrated null), not from the 5-stream panel,
-   which runs α = ±1 only. The sign inversion they show is FDR-declared at q = 0.05, but it has not been
-   re-measured across disjoint streams, and it holds under the shifted convention but not the unshifted one. PB2's
-   refutation therefore rests on the α = ±1 panel (which is panel-backed and shows the alignment *sign* to be
-   irrelevant and the aligned direction to be the worst) plus a single-instrument α = 0 read; a panel over the
-   full alignment axis is the first item of future work.
+3. **The alignment axis is measured on two instruments, and the axis reads as an attenuation rather than a sign
+   effect.** Table 4's α = 0 rows come from the alignment instrument (`smoke_v10.py`: one target draw, one noise
+   realisation, 50 splits inside that draw, declared through the calibrated null); Table 5's α = ±1 rows come
+   from the map's own design (`smoke_v12.py`: 6 independent target draws × 50 splits). The α = 0 cell has now
+   been re-measured over 13 disjoint streams in three declared seed families (Table 6, instrument shipped), and
+   the one-draw sign inversion **does not reproduce** — the cell is positive in 13 of 13 streams at γ = 1 and 11
+   of 13 at γ = 2 — so that claim is withdrawn at every site. What the alignment axis supports is an
+   **attenuation** (removing the alignment reduces the mid-band loss by 0.1401 at γ = 1, 5 of 5 streams) and a
+   **null at γ = 2** (+0.0461, 0 of 5 negative); the registered direction's remaining contradiction is the *size*
+   of the loss at the prior's strongest point, which is read on the α = ±1 panel (Table 5) rather than on a sign
+   change. Two further reads are missing and are the axis's own future work: the interpolation between the two
+   `diag(W)` poles (**cycle with k chords**, §5.1), and an alignment level between α = 0 and α = ±1 — a
+   half-aligned target, which the construction currently cannot express because the support of A is the edge set
+   or empty.
 4. **Qubit count is not a continuum.** The attenuation at q = 8 (mean ratio 0.689) is measured at two points. If
    the trend continued, the mid-band loss would vanish near q ≈ 14 — outside exact statevector reach, where the
    comparison would need a different instrument and a noise model this study deliberately does not have.
