@@ -43,7 +43,12 @@ a split trains on half the points.
 
 Every arm is a kernel ridge predictor sharing one protocol: the same training half, the same nested tuning over
 the envelope grid `s ∈ {0.003, 0.01, 0.03, 0.1, 0.3, 1, 3, 10}` and the ridge grid `λ ∈ {1e−5 … 1}`, selected on
-the training half only.
+the training half only. Two things this sentence used to paper over are now stated, because a fixed
+hyperparameter on one arm converts that hyperparameter into part of the finding: the arms whose kernel is a
+*family* are `matched`, `closedform`, `rbf`, `randfeat` and `matchedlocal`, and the arms whose kernel is fixed by
+construction are `quantum`, `product`, `linear` and `oracle` — the map fixes its own kernel, and the last two have
+no envelope to tune. The local arm's envelope was left at 1 in the instrument of record, a handicap larger than
+the effect under study; it is swept here like every other family, and §7 item 1 reports the measurement.
 
 | arm | kernel | role |
 |-----|--------|------|
@@ -117,6 +122,15 @@ and `diag(W)` is uniform to machine precision — a max relative deviation of **
 **4.8e−16** on the complete graph at q = 6, and **1.7e−15** / **1.9e−15** at q = 8. On a **path** the symmetry is
 broken and the same statistic reads **6.1e−1** at q = 6 and **6.4e−1** at q = 8 — twelve orders of magnitude
 above the vertex-transitive value, and stable across qubit counts.
+
+**What that is evidence for, stated exactly.** The record holds **two poles, not a boundary curve**: three
+graphs, two of them vertex-transitive and one not, with nothing measured between them. The statistic is therefore
+a **two-case classification** — vertex-transitive (≈ 1e−15, and it is exact there rather than threshold-fitted)
+versus not (6.1e−1) — and "the map's boundary is a computable statistic" is a statement about those two cases,
+not about a location in graph space. The experiment that would give it a resolution is the **cycle-with-k-chords**
+family: `k = 0` and `k = q` are the two poles already measured, and a sweep over `k` would say whether the
+deviation moves continuously with the symmetry deficit or jumps. That sweep is not run here; §7 item 3 records it
+as future work.
 
 ![Fig. 3 — the map's metric is scale-uniform on vertex-transitive graphs and not on a path: the statistic that locates the region](figures/fig3_metric_structure.png)
 
@@ -221,7 +235,12 @@ convention. Table 4 reads the dedicated alignment instrument (the same generator
 draws × 50 splits, declared through the calibrated predictive null of §5.6).
 
 **Table 4 — the alignment axis at α = 0 (no alignment between the target's interaction structure and Q).**
-Positive = the quantum kernel is worse; dates are FDR-declared at q = 0.05 across the 36-cell grid.
+Positive = the quantum kernel is worse; the `p` row belongs to the shifted row above it, and `p` values are
+FDR-declared at q = 0.05 across the 36-cell grid. **The instrument that produced these rows is `smoke_v10.py`,
+whose `rows` at `alpha == 0` are one `cell_runner` call per cell — one target draw, one noise realisation, and 50
+train/test splits inside that draw. It is not the map's `6 target draws × 50
+splits` design: that design belongs to `smoke_v12.py`, which runs α = ±1 only. Its α = ±1 panel is reported
+beside these rows as Table 5, so the two designs can be read side by side.**
 
 | convention | γ = 0.1 | 0.25 | 0.5 | 1 | 2 | 3 |
 |------------|---------|------|-----|---|---|---|
@@ -229,19 +248,50 @@ Positive = the quantum kernel is worse; dates are FDR-declared at q = 0.05 acros
 | shifted, α = 0 (p) | 0.203 | 0.044 | 0.013 | 0.0010 | 0.0010 | 0.0010 |
 | unshifted, α = 0 | −0.0267 | +0.0312 | +0.0127 | **+0.4110** | +0.0832 | +0.0746 |
 
-Under the shifted convention, deleting the target's alignment to the map's graph **inverts** the mid-band sign:
-the cells at γ = 1 and γ = 2 move from +0.4546/+0.0238 (α = +1) to −0.1676/−0.2754 (α = 0), and both are
-declared by the calibrated procedure. Under the unshifted convention the same manipulation leaves the mid-band
-loss intact (+0.4110 at γ = 1). The mechanism the two readings share is not "the quantum kernel becomes
-stronger" but "the rival becomes wrong": the matched rival is a Mahalanobis Gaussian whose precision is the
-map's metric, so its geometry is the graph's; when the target's interaction structure *is* that graph (α = +1)
-the rival's assumption is exactly right and it wins by half a variance, and when the target is orthogonal to the
-graph (α = 0) that assumption is uninformative and the rival's advantage disappears.
+**Table 5 — the α = ±1 panel the map itself is measured on (`smoke_v12.py`: 6 independent target draws × 50
+splits per cell, the design Table 4's caption used to name).** The two rows of a pair differ only in the sign of
+the planted alignment.
 
-**PB2 outcome: mechanism confirmed, direction refuted.** The *mechanism* clause — the sign is set by alignment
-rather than by qubit count or Hilbert-space dimension — is confirmed in both halves: the alignment manipulation
-flips the sign of the mid-band decision while qubit count (§5.8) flips no sign at all. The *direction* clause is
-refuted: the registered prediction is that alignment to Q produces advantage, and the measurement is that
-alignment to Q produces *loss*, with the advantage appearing where alignment is absent or inverted. This is the
-study's strongest novelty signal: a registered, theory-anchored prior is contradicted by the measurement, and the
-contradiction is with the prior's own instrument ([19]'s metric) rather than with a different comparison.
+| convention | γ | α = +1 | α = −1 |
+|------------|-----|--------|--------|
+| shifted | 0.5 | **+0.4213** | **+0.4303** |
+| shifted | 1 | **+0.4482** | **+0.4691** |
+| shifted | 2 | +0.0105 | +0.0155 |
+| unshifted | 0.5 | −0.0025 | +0.0010 |
+| unshifted | 1 | **+0.3983** | **+0.4098** |
+| unshifted | 2 | **+0.4192** | **+0.4233** |
+
+Read against Table 4, the two instruments answer different questions. Table 5 is the map's own design and says
+the *sign* of the planted alignment is irrelevant: flipping α from +1 to −1 moves no mid-band cell by more than
+0.021, in either convention. Table 4 removes the alignment instead of flipping it, on one target draw, and the
+submission read a sign inversion out of it. **That inversion does not survive the panel below, and is
+withdrawn.**
+
+**Table 6 — the α = 0 cell re-measured over 13 disjoint streams in three declared seed families**
+(`r409_align_streams.py`, shipped in this package; the committed single-draw value is shown beside each).
+
+| γ | pool of 13 streams | sd | streams negative | committed draw | gap to the pool |
+|---|--------------------|----|------------------|----------------|-----------------|
+| 1 | **+0.2848** | 0.1080 | **0 / 13** | −0.1676 | −4.2 sd |
+| 2 | **+0.0402** | 0.0497 | 2 / 13 | −0.2754 | −6.3 sd |
+
+The γ = 1 cell is **positive in every one of the thirteen streams** (95 % t interval [+0.2017, +0.3679]) and the
+γ = 2 cell is positive in eleven of thirteen: the one-draw value the submission printed is an outlier of its own
+ensemble, and the ensemble itself says the cell is not inverted. The instrument's first control reproduces the
+committed twelve-cell Table 4 exactly (12 of 12 bitwise), so the panel is measuring the same thing the
+submission measured, more than once.
+
+**PB2 outcome: the mechanism clause stands as measured, and the direction clause is not refuted on the
+alignment axis.** The registered criterion's first half — the sign is not set by qubit count or Hilbert-space
+dimension — is confirmed: qubit count (§5.8) flips no sign in any cell. The half that names *alignment* is now
+measured on two instruments, and what it measures is an **attenuation rather than a sign effect**: fixing the
+target's alignment to the map's own structure makes the mid-band loss **larger** by 0.1401 at γ = 1 (5 of 5
+streams) and leaves it unchanged at γ = 2 (+0.0461, 0 of 5 negative), while the α = ±1 panel (Table 5) shows the
+*sign* of the planted alignment to move no mid-band cell by more than 0.021 in either convention. Because the
+α = 0 sign inversion the submission reported does not reproduce (Table 6), the registered direction clause is
+**not refuted on this axis**: the axis establishes the *size* of the loss where the target is aligned — the worst
+mid-band cell in the map is the aligned one, on the panel's own design — and this paper reports that, with the
+inversion withdrawn. The prior is therefore neither confirmed nor refuted in its direction clause, and the
+novelty signal an earlier version of this section claimed on it is withdrawn with the inversion. The map's
+headline does not rest on it: the mid-band loss, its survival under the strongest valid handicap, and the absence
+of the registered inverted-U all stand on the α = ±1 panel and on the 24-cell grid.

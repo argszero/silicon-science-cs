@@ -82,6 +82,14 @@ def e2(v):
     return _short(v, 2)
 
 
+def f3(v):
+    return ("%+.3f" % v).replace("-", "−")
+
+
+def p3(v):
+    return ("%.3f" % v).replace("-", "−")
+
+
 def n0(v):
     return "%.0f" % v
 
@@ -110,6 +118,47 @@ def main():
     bind("diag uniformity complete q8", "structure.diag_uniformity_rel_q8", ["complete"], e1)
     bind("diag uniformity path q8", "structure.diag_uniformity_rel_q8", ["path"], e1)
     bind("C7 exact cells", "structure.cycle_reproduction_of_q6", ["n_exact"], n0)
+    # ---- the revision round (R412): the alignment panel, and the locally matched rival
+    bind("panel g1 mean", "alignment.panel_gamma1", ["mean"], f4)
+    bind("panel g1 sd", "alignment.panel_gamma1", ["sd"], p4)
+    bind("panel g1 n", "alignment.panel_gamma1", ["n"], n0)
+    bind("panel g1 zero-negative", "alignment.panel_gamma1", ["n_negative"], n0)
+    bind("panel g1 t-lo", "alignment.panel_gamma1", ["t_lo"], f4)
+    bind("panel g1 t-hi", "alignment.panel_gamma1", ["t_hi"], f4)
+    bind("panel g2 mean", "alignment.panel_gamma2", ["mean"], f4)
+    bind("panel g2 sd", "alignment.panel_gamma2", ["sd"], p4)
+    bind("panel g2 n", "alignment.panel_gamma2", ["n"], n0)
+    bind("panel g2 negative", "alignment.panel_gamma2", ["n_negative"], n0)
+    bind("attenuation g1", "alignment.attenuation", ["gamma1", "mean"], f4)
+    bind("attenuation g1 negative", "alignment.attenuation", ["gamma1", "n_negative"], n0)
+    bind("attenuation g1 n", "alignment.attenuation", ["gamma1", "n"], n0)
+    bind("attenuation g2", "alignment.attenuation", ["gamma2", "mean"], f4)
+    bind("attenuation g2 negative", "alignment.attenuation", ["gamma2", "n_negative"], n0)
+    bind("attenuation g2 n", "alignment.attenuation", ["gamma2", "n"], n0)
+    bind("matchedlocal risk tuned", "rivals.matchedlocal_tuned", ["risk_local_tuned"], p3)
+    bind("matchedlocal risk matched", "rivals.matchedlocal_tuned", ["risk_matched"], p3)
+    bind("matchedlocal risk fixed", "rivals.matchedlocal_tuned", ["risk_local_fixed"], p3)
+    bind("matchedlocal dq tuned", "rivals.matchedlocal_tuned", ["quantum_minus_tuned"], f4)
+    bind("matchedlocal dq matched", "rivals.matchedlocal_tuned", ["quantum_minus_matched"], f4)
+    bind("matchedlocal blowup g1", "rivals.matchedlocal_blowup", ["1.0"], p3)
+    bind("matchedlocal blowup g2", "rivals.matchedlocal_blowup", ["2.0"], p3)
+    bind("matchedlocal trivial at gamma 1", "rivals.matchedlocal_trivial_fixed", ["1.0"], p3)
+    bind("midband rbf gap", "rivals.midband_arm_gaps", ["rbf"], "%.4f" if False else (lambda v: "%.4f" % v))
+    # Table 5 -- the map's own alpha = +-1 design, the 12 mid-band cells
+    _T5 = [("shifted|0.5|a=+1|a=+1", "T5 shifted 0.5 plus", True),
+           ("shifted|0.5|a=-1|a=-1", "T5 shifted 0.5 minus", True),
+           ("shifted|1|a=+1|a=+1", "T5 shifted 1 plus", True),
+           ("shifted|1|a=-1|a=-1", "T5 shifted 1 minus", True),
+           ("shifted|2|a=+1|a=+1", "T5 shifted 2 plus", True),
+           ("shifted|2|a=-1|a=-1", "T5 shifted 2 minus", True),
+           ("unshifted|0.5|a=+1|a=+1", "T5 unshifted 0.5 plus", True),
+           ("unshifted|0.5|a=-1|a=-1", "T5 unshifted 0.5 minus", True),
+           ("unshifted|1|a=+1|a=+1", "T5 unshifted 1 plus", True),
+           ("unshifted|1|a=-1|a=-1", "T5 unshifted 1 minus", True),
+           ("unshifted|2|a=+1|a=+1", "T5 unshifted 2 plus", True),
+           ("unshifted|2|a=-1|a=-1", "T5 unshifted 2 minus", True)]
+    for _key, _label, _ in _T5:
+        bind(_label, "map_q6.base_map_delta_vs_matched", [_key, "delta_mean"], f4)
     bind("ladder C cycle", "power.ladder_by_axis", ["C_wrong_metric", "cycle_median"], p4)
     bind("ladder C path", "power.ladder_by_axis", ["C_wrong_metric", "path_median"], p4)
     bind("ladder A cycle", "power.ladder_by_axis", ["A_registered", "cycle_median"], p4)

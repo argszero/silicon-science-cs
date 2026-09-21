@@ -2,13 +2,13 @@ assembly report -- issue #87
 
 parts: manuscript_part1.md, manuscript_part2.md, manuscript_part3.md, manuscript_part4.md
 bibliography: 169 entries (125 arxiv, 44 crossref)
-body charset length: 81981
-manuscript length: 141980 chars
+body charset length: 89053
+manuscript length: 149138 chars
 
 CHECK 1 coverage: cited 169 distinct keys; missing 0
         missing: none
 CHECK 2 keys    : bracket numbers matching no entry: none
-CHECK 3 bindings: 91 bound (all present) 
+CHECK 3 bindings: 128 bound (all present) 
 
 
-ADVISORY order of first citation: 169 keys cited, 1873 inversions (the bibliography's numbering is the selection order; coverage is a presence test, so an inversion is not a defect)
+ADVISORY order of first citation: 169 keys cited, 1870 inversions (the bibliography's numbering is the selection order; coverage is a presence test, so an inversion is not a defect)

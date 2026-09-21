@@ -1,0 +1,132 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+P1  control  : committed rows reproduced bitwise at all 12 cells: True
+      shifted   gamma=0.1   committed -0.037204  recomputed -0.037204  same
+      shifted   gamma=0.25  committed +0.060224  recomputed +0.060224  same
+      unshifted gamma=0.1   committed -0.026682  recomputed -0.026682  same
+      unshifted gamma=0.25  committed +0.031236  recomputed +0.031236  same
+      stream 41020261 shifted   alpha=+1 done  (8s)
+      stream 41020262 shifted   alpha=+1 done  (11s)
+      stream 41020263 shifted   alpha=+1 done  (13s)
+      stream 41020264 shifted   alpha=+1 done  (15s)
+      stream 41020265 shifted   alpha=+1 done  (18s)
+      stream 7 shifted   alpha=+1 done  (20s)
+      stream 1009 shifted   alpha=+1 done  (22s)
+      stream 123457 shifted   alpha=+1 done  (25s)
+      stream 2718281 shifted   alpha=+1 done  (27s)
+      stream 14142135 shifted   alpha=+1 done  (30s)
+      stream 20260922 shifted   alpha=+1 done  (32s)
+      stream 20260923 shifted   alpha=+1 done  (34s)
+      stream 20260924 shifted   alpha=+1 done  (37s)
+      stream 41020261 shifted   alpha=+0 done  (39s)
+      stream 41020262 shifted   alpha=+0 done  (42s)
+      stream 41020263 shifted   alpha=+0 done  (44s)
+      stream 41020264 shifted   alpha=+0 done  (46s)
+      stream 41020265 shifted   alpha=+0 done  (49s)
+      stream 7 shifted   alpha=+0 done  (51s)
+      stream 1009 shifted   alpha=+0 done  (54s)
+      stream 123457 shifted   alpha=+0 done  (56s)
+      stream 2718281 shifted   alpha=+0 done  (58s)
+      stream 14142135 shifted   alpha=+0 done  (61s)
+      stream 20260922 shifted   alpha=+0 done  (63s)
+      stream 20260923 shifted   alpha=+0 done  (66s)
+      stream 20260924 shifted   alpha=+0 done  (68s)
+      stream 41020261 shifted   alpha=-1 done  (70s)
+      stream 41020262 shifted   alpha=-1 done  (73s)
+      stream 41020263 shifted   alpha=-1 done  (75s)
+      stream 41020264 shifted   alpha=-1 done  (78s)
+      stream 41020265 shifted   alpha=-1 done  (80s)
+      stream 7 shifted   alpha=-1 done  (82s)
+      stream 1009 shifted   alpha=-1 done  (85s)
+      stream 123457 shifted   alpha=-1 done  (87s)
+      stream 2718281 shifted   alpha=-1 done  (90s)
+      stream 14142135 shifted   alpha=-1 done  (92s)
+      stream 20260922 shifted   alpha=-1 done  (95s)
+      stream 20260923 shifted   alpha=-1 done  (97s)
+      stream 20260924 shifted   alpha=-1 done  (99s)
+      stream 41020261 unshifted alpha=+1 done  (102s)
+      stream 41020262 unshifted alpha=+1 done  (104s)
+      stream 41020263 unshifted alpha=+1 done  (107s)
+      stream 41020264 unshifted alpha=+1 done  (109s)
+      stream 41020265 unshifted alpha=+1 done  (111s)
+      stream 7 unshifted alpha=+1 done  (114s)
+      stream 1009 unshifted alpha=+1 done  (116s)
+      stream 123457 unshifted alpha=+1 done  (119s)
+      stream 2718281 unshifted alpha=+1 done  (121s)
+      stream 14142135 unshifted alpha=+1 done  (123s)
+      stream 20260922 unshifted alpha=+1 done  (126s)
+      stream 20260923 unshifted alpha=+1 done  (128s)
+      stream 20260924 unshifted alpha=+1 done  (131s)
+      stream 41020261 unshifted alpha=+0 done  (133s)
+      stream 41020262 unshifted alpha=+0 done  (135s)
+      stream 41020263 unshifted alpha=+0 done  (138s)
+      stream 41020264 unshifted alpha=+0 done  (140s)
+      stream 41020265 unshifted alpha=+0 done  (143s)
+      stream 7 unshifted alpha=+0 done  (145s)
+      stream 1009 unshifted alpha=+0 done  (148s)
+      stream 123457 unshifted alpha=+0 done  (150s)
+      stream 2718281 unshifted alpha=+0 done  (152s)
+      stream 14142135 unshifted alpha=+0 done  (155s)
+      stream 20260922 unshifted alpha=+0 done  (157s)
+      stream 20260923 unshifted alpha=+0 done  (160s)
+      stream 20260924 unshifted alpha=+0 done  (162s)
+      stream 41020261 unshifted alpha=-1 done  (164s)
+      stream 41020262 unshifted alpha=-1 done  (167s)
+      stream 41020263 unshifted alpha=-1 done  (169s)
+      stream 41020264 unshifted alpha=-1 done  (172s)
+      stream 41020265 unshifted alpha=-1 done  (174s)
+      stream 7 unshifted alpha=-1 done  (176s)
+      stream 1009 unshifted alpha=-1 done  (179s)
+      stream 123457 unshifted alpha=-1 done  (181s)
+      stream 2718281 unshifted alpha=-1 done  (183s)
+      stream 14142135 unshifted alpha=-1 done  (186s)
+      stream 20260922 unshifted alpha=-1 done  (188s)
+      stream 20260923 unshifted alpha=-1 done  (191s)
+      stream 20260924 unshifted alpha=-1 done  (193s)
+
+-- the ensemble checked for clustering (shifted, alpha = 0): the three seed families --
+   gamma=0.1   cluster         +0.0038 (sd 0.0401, neg 3/5) | wide_magnitude  +0.0493 (sd 0.0668, neg 1/5) | adjacent        -0.0037 (sd 0.0136, neg 2/3)
+   gamma=0.25  cluster         +0.2086 (sd 0.1804, neg 0/5) | wide_magnitude  +0.2061 (sd 0.1218, neg 0/5) | adjacent        +0.0677 (sd 0.0501, neg 0/3)
+   gamma=0.5   cluster         +0.4640 (sd 0.1527, neg 0/5) | wide_magnitude  +0.4265 (sd 0.1854, neg 0/5) | adjacent        +0.3112 (sd 0.1997, neg 0/3)
+   gamma=1     cluster         +0.3147 (sd 0.0677, neg 0/5) | wide_magnitude  +0.2951 (sd 0.1261, neg 0/5) | adjacent        +0.2177 (sd 0.1404, neg 0/3)
+   gamma=2     cluster         +0.0640 (sd 0.0279, neg 0/5) | wide_magnitude  +0.0425 (sd 0.0537, neg 1/5) | adjacent        -0.0032 (sd 0.0571, neg 1/3)
+   gamma=3     cluster         +0.2430 (sd 0.0972, neg 0/5) | wide_magnitude  +0.3218 (sd 0.1256, neg 0/5) | adjacent        +0.3546 (sd 0.1868, neg 0/3)
+      six-target shifted   alpha=+0 done  (207s)
+      six-target unshifted alpha=+0 done  (222s)
+
+-- verdicts ----------------------------------------------------------------------------------------
+   P2_shifted_midband_negative_in_4of5    met=False
+   P2_replication_wide_magnitude          met=False
+   P2_replication_adjacent                met=False
+   P2_pooled_13_streams                   met=False
+   P3_unshifted_stays_positive            met=True
+   P4_gap_from_alpha_plus1_negative       met=False
+   P5_near_zero_cells_flip                met=True
+   P6_six_target_average_keeps_sign       met=False
+   falsifier fired (P2 failed): True
+
+-- the two cells section 5.3 calls the inversion, pooled over ALL 13 streams of the ensemble --
+   shifted   gamma=1     alpha= 0  mean +0.2848  sd 0.1080  negative 0/13  95% CI [+0.2195, +0.3500]
+                                   committed single draw -0.1676  =  -4.2 cross-stream sd away
+   shifted   gamma=2     alpha= 0  mean +0.0402  sd 0.0497  negative 2/13  95% CI [+0.0102, +0.0703]
+                                   committed single draw -0.2754  =  -6.3 cross-stream sd away
+   shifted   gamma=1     alpha=+1  mean +0.4523  sd 0.0241  negative 0/13  95% CI [+0.4377, +0.4668]
+   shifted   gamma=2     alpha=+1  mean +0.0180  sd 0.0104  negative 0/13  95% CI [+0.0117, +0.0243]
+
+-- the gap delta(alpha = 0) - delta(alpha = +1): the sentence 'deleting alignment inverts it' --
+   gamma=1     mean -0.1401  sd 0.0775  negative 5/5   (a negative gap = removing alignment
+             helps the kernel, but the sign is only inverted if the alpha = 0 mean is negative)
+   gamma=2     mean +0.0461  sd 0.0251  negative 0/5   (a negative gap = removing alignment
+             helps the kernel, but the sign is only inverted if the alpha = 0 mean is negative)
+
+wrote /Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/r409_align_streams_results.json   (222s total)

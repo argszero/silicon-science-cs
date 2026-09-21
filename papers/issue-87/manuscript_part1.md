@@ -41,17 +41,24 @@ degrades, but the mid-band block still loses by **+0.27 … +0.32** where the ri
 positive middle band) is **refuted in its middle clause, with the sign inverted**, and refuted in the direction
 of its large-bandwidth clause; only its small-bandwidth clause (≈ 0) survives, as an approximation
 (|lead| ≤ 0.017 against a mid-band loss of 0.455). PB2 (the *sign* is predicted by alignment to the entanglement
-graph's signless Laplacian, not by qubit count) is **confirmed in its mechanism and refuted in its direction**:
-at its strongest point — a target whose interaction structure *is* the graph's — the loss is largest, and in the
-shifted convention removing the alignment inverts the sign from +0.023 to −0.275 at γ = 2; qubit count leaves
-every sign intact. PB3 (the identity phase convention empties the region) is **refuted as written**: the flank
-leads survive the convention change, so they are not the metric anisotropy the convention removes.
+graph's signless Laplacian, not by qubit count) is **confirmed in its mechanism clause, and its direction
+clause is not refuted on the alignment axis**: re-measured over **13 disjoint streams** in three declared seed
+families, the α = 0 mid-band cell is **positive**, not inverted (+0.2848 ± 0.1080 at γ = 1, **0 of 13** streams
+negative; +0.0402 ± 0.0497 at γ = 2), so the sign inversion the submission reported is **withdrawn** and what the
+axis measures is an **attenuation** at γ = 1 (removing the alignment *reduces* the mid-band loss by 0.1401, 5 of
+5 streams) and a **null at γ = 2**. The registered direction's remaining contradiction is the *size* of the loss
+at the prior's strongest point, on the α = ±1 panel, not a sign change. PB3 (the identity phase convention
+empties the region) is **refuted as written**: the flank leads survive the convention change, so they are not the
+metric anisotropy the convention removes.
 
-**Contribution level: `theory + empirics`** — a controlled model with ground truth by construction, an
-exact-simulation instrument with a closed-form rival, a six-axis handicap audit that can fail, a calibrated
-declaration procedure whose size is validated on a holdout, and a boundary stated as a computable statistic of
-the map (the relative deviation of `diag(W)` from uniformity: **8.2e−16** on a cycle and **4.8e−16** on the
-complete graph, against **6.1e−1** on a path) rather than as a fitted curve.
+**Contribution level: `empirics`**, with one theoretical observation attached — a controlled model with ground
+truth by construction, an exact-simulation instrument with a closed-form rival, a six-axis handicap audit that
+can fail, a calibrated declaration procedure whose size is validated on a holdout, and a boundary *measured* as a
+statistic of the map (the relative deviation of `diag(W)` from uniformity: **8.2e−16** on a cycle and **4.8e−16**
+on the complete graph, against **6.1e−1** on a path). The theory half is not proved here: the `diag(W)`
+uniformity statement follows from [19] on vertex-transitive graphs and is *applied* to this map rather than
+established by it, and the interpolating case that would turn it into a classification with a resolution is left
+as an experiment (§5.1).
 
 **Significance.** If this map is right, then the benchmark practice that produced the field's residual
 "quantum-kernel advantages" is measuring the weakness of its rival, not the strength of the map: in the code
@@ -126,11 +133,11 @@ graph and reaches 0.61 on a path.
 |---|---------|---------|
 | F1 | The metric-matched rival **loses nowhere in the mid-band**: 8 of 24 cells carry a sign-unanimous loss of +0.411 … +0.455 (q = 6) and +0.252 … +0.337 (q = 8) of the target's variance | §5.2, Fig. 1 |
 | F2 | The only leads are at the two flanks and are an order of magnitude smaller: +0.017 … +0.072 (q = 6) | §5.2, Fig. 1 |
-| F3 | The rival's identity flips the verdict in the same cell: matched Δ = +0.385 vs a random-feature surrogate Δ = −0.011 | §5.5 |
+| F3 | The rival's identity flips the verdict in the same cell — but only for the surrogate the field's residual claims are measured against: random-feature Δ = −0.011, against a nested-CV-tuned radial-basis kernel that sits **0.0212** from the matched rival in the same cell | §5.5 |
 | F4 | The registered power arm is inert as registered; exactly one of six axes is valid and informative (median handicap +0.126, 24/24) | §5.4, Fig. 2 |
 | F5 | The mid-band loss survives the strongest valid handicap (+0.27 … +0.32 at maximum handicap) | §5.6, Fig. 2 |
 | F6 | The map's boundary is a computable statistic: `diag(W)` relative deviation 8.2e−16 (cycle) / 4.8e−16 (complete) vs 6.1e−1 (path) | §5.1, Fig. 3 |
-| F7 | Under the shifted convention, removing the target's alignment inverts the mid-band sign (+0.023 → −0.275 at γ = 2, FDR-declared) | §5.3 |
+| F7 | Under the shifted convention, removing the target's alignment **attenuates** the mid-band loss (δ(α = 0) − δ(α = +1) = −0.1401 at γ = 1, 5/5 streams) with no sign change (13-stream panel: +0.2848, 0/13 negative); γ = 2 is a null | §5.3, Table 5 |
 | F8 | Qubit count leaves every sign intact and compresses every magnitude by ×0.689 | §5.8 |
 
 ### 1.2 Registered prior beliefs and their outcomes
