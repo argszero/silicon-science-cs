@@ -71,3 +71,58 @@ those works are simply not in the bibliography (a work that cannot be identified
 The raw pools (~2.6 MB) are **not committed**: they are regenerable from the scripts above plus the stated
 form (`python3 refs_harvest.py && python3 refs_harvest2.py && python3 refs_classic.py`), and every entry that
 enters the manuscript is committed in `../references.json` with the record it was read from.
+
+## Stage 2: selection, entry form, verification (`R404`)
+
+Files: `refs_selection_v87.py` (the authored part — one entry per work, keyed by its identifier, each with the
+one-line `Difference:`), `refs_build_v87.py` (resolves every record from the committed pools and formats the
+house entry form), `refs_verify_v87.py` (reads every entry at the index that owns it and writes the report),
+`refs_render_v87.py` (renders the block the manuscript embeds).
+
+**169 entries** (125 arXiv, 44 DOI), of which **169 found and identity-matched** — the read returns the record
+and compares its title with the pooled title the entry's difference line was written against.
+
+### Controls (all pass; the instrument can report absence)
+
+| control | item | reading |
+|---|---|---|
+| C1 | known-present arXiv id `2608.29422` | found |
+| C1 | known-present DOI `10.1093/biomet/6.1.1` | found |
+| C2 | known-absent arXiv id `2401.99999` | reported NOT FOUND |
+| C2 | known-absent DOI `10.9999/definitely-not-a-record-r404` | reported NOT FOUND |
+| C3 | a corrupted title fed to the same matcher | detected as a mismatch |
+
+### What the controls caught in this round's own work
+
+* **Two hand-transcribed identifiers were wrong** (`2505.24324` and `2509.15047`, both recalled from a listing
+  whose year prefix was `2605`/`2609`). The pool lookup refused them: *"not found in the committed pools"*. The
+  same failure mode at registry scale is the retired DOI limb's (see stage 1) — an identifier recalled by hand
+  is a claim, not a citation.
+* **One DOI was dropped rather than printed without a year** (`10.1201/9780429500459-11`): its Crossref record
+  carries no publication date, and the house form requires a year.
+* **The journal's own gate read the entry form back and found one entry outside its window**: the mononym
+  `Student` needed the period the house form's second admitted shape carries (`Student. (1908). …`). With it,
+  the gate reads `author form: 169/169`.
+* **The gate needs Python >= 3.12** (its f-string fixtures fail on the system `/usr/bin/python3`, 3.9.6); the
+  readings below were taken with `/Users/argszero/.local/bin/python3.12`.
+
+### The journal's own instrument over the rendered block
+
+```
+window: the last `## References` heading (line 1) to the end of the file (line 339)
+entries=169  numbering=[n]
+block form: 169 entries, 0 of them not separated from the entry above by a blank line
+author form: 169/169 entry(s) carry the read's window; 0 print the family name ALL-CAPS, 0 carry a character reference
+in-text cited numbers=0  covered=0/169  coverage=0.0%
+GATE: FAIL (uncited entries count as padding)
+```
+
+The coverage failure is the state of the work, not a defect of the list: the manuscript body that cites these
+keys is the next stage, and the gate is to be re-run over the assembled manuscript where every key is reached.
+
+### Counting rule the block satisfies
+
+One `## References` section, numbered `[n]`, entries separated by a blank line, each entry on its own line,
+`Family, I.` (or the lone-family-name form) · year in parentheses · title in title case · venue or identifier ·
+resolvable URL · one-line `Difference:`. The raw pools (~2.6 MB) remain uncommitted and regenerable; the
+committed record of what was read is `refs_built.json`, `refs_verified.json` and `../refs_form.json`.
