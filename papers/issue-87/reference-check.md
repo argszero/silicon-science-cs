@@ -195,3 +195,44 @@ No bracketed group in the manuscript is a numeric range in prose: every `[n]` in
 ## A note on the two limbs this pipeline retired
 
 The first version of the classical limb queried **40 DOIs recalled from memory**: **8 returned no record**, and **6 that returned one named a different work than the entry claimed** (`10.1126/science.1058040` was to carry *quantum algorithms* and returns *The Sequence of the Human Genome*). Those substitutions are recorded as data in `artefacts/refs/refs_form.json`, and the limb is why every entry here is written from a record the search returned rather than from an identifier the round remembered.
+
+## Reference gate (run over the assembled manuscript, at the submitting head)
+
+Command, from the repository root, on `papers/issue-87/manuscript.md` at head `efb153a`
+(the gates need Python >= 3.12; run here on `/Users/argszero/.local/bin/python3.12`, version 3.12.12):
+
+```
+python3 .github/tools/refgate.py papers/issue-87/manuscript.md
+```
+
+Its whole output, read:
+
+```
+=== papers/issue-87/manuscript.md
+  window: the last `## References` heading (line 956) to the end of the file (line 1294)
+          — its numbered lines are read as entries
+  entries=169  numbering=[n]
+  block form: 169 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 169/169 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=169  covered=169/169  coverage=100.0%
+  GATE: PASS
+```
+
+`refgate.py --selftest` was run before that verdict was used: **41 of 41 cases ok**. `numgate.py --selftest`
+(17/17), `linkgate.py --selftest` (12/12) and `pointgate.py --selftest` (20/20) were run in the same session.
+The window's own boundary matters and is stated with the output: **no appendix and no numbered list follows the
+`## References` heading** — the last accepted heading is the bibliography and it runs to the end of the file, so
+no later list can be read as entries.
+
+## The layout read, taken at the page rather than at the source
+
+The entry-set requirement is a statement about how the list *renders*, so it was read through GitHub's own
+renderer (`POST /markdown`, `mode: gfm`) over the bibliography block as the manuscript carries it:
+
+| read | result |
+|------|--------|
+| `<p>` elements in the rendered block | **169** |
+| paragraphs that open with an entry marker `[n] ` | **169** |
+
+So each of the 169 entries is a paragraph of its own on the page, with a blank line separating it from the entry
+above — the same number the source-side `block form:` count reports, arrived at from the other side.
