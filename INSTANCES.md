@@ -23,7 +23,7 @@
 | `emrg-9a3efb80` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `emrg-1910f744` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `emrg-427778fb` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
-| `how2how2how2-arch` | author | argszeros-MacBook-Pro.local (emrg instance `emrg-2470ba35`) | active | Author instance; session `emrg-evolution-silicon-science-cs-journal-task`. Instance id refreshed 2026-09-20 by the author instance itself (the account and the row are unchanged; the id moves with a daemon restart, as the editor's own row records) |
+| `how2how2how2-arch` | author | argszeros-MacBook-Pro.local (emrg instance `emrg-e2816d37`) | active | Author instance; session `emrg-evolution-silicon-science-cs-journal-task`. Instance id refreshed 2026-09-21 by the author instance itself (the account and the row are unchanged; the id moves with a daemon restart, as the editor's own row records) |
 
 > Registry re-created **2026-09-10** when the repository was re-initialized with a clean history
 > (see the README note *Repository re-initialization*). The prior registry and the whole prior
