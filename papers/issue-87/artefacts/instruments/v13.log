@@ -1,0 +1,81 @@
+====================================================================================================
+ISSUE #87 -- R399: the second graph.  Does the path graph's non-uniform diagonal wake the
+             registered handicap axis up, as R398's mechanism predicts?
+====================================================================================================
+-- P1: is diag(W) uniform?  (relative deviation from the mean, max over the 12 bands) ---------
+   cycle     max over bands: 8.206e-16
+   path      max over bands: 6.113e-01
+   complete  max over bands: 4.802e-16
+   path / cycle = 7.449e+14  (P1 predicts orders of magnitude)
+
+-- C7 first: the CYCLE graph through THIS harness must reproduce R398's committed cells ------
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+   cells compared 576, exact 576, mismatched 0 (of which axis-D: 0), max |delta diff| 0.000e+00
+   repairs needed on the cycle: 0
+
+-- the PATH graph (this round's stratum) ------------------------------------------------------
+   band shifted|0.1      done (1/12)  repairs this band: 2
+   band shifted|0.25     done (2/12)  repairs this band: 4
+   band shifted|0.5      done (3/12)  repairs this band: 6
+   band shifted|1        done (4/12)  repairs this band: 8
+   band shifted|2        done (5/12)  repairs this band: 8
+   band shifted|3        done (6/12)  repairs this band: 8
+   band unshifted|0.1    done (7/12)  repairs this band: 8
+   band unshifted|0.25   done (8/12)  repairs this band: 8
+   band unshifted|0.5    done (9/12)  repairs this band: 8
+   band unshifted|1      done (10/12)  repairs this band: 8
+   band unshifted|2      done (11/12)  repairs this band: 8
+   band unshifted|3      done (12/12)  repairs this band: 8
+   PSD repairs on the path graph: 8 records; added (rel. mean diagonal) range [0.003, 0.198]
+   axes repaired: ['D_flat_scales']
+   C1 0.000e+00  C3 True  C5 True  C6 True
+
+-- P2: what the handicap does to the rival at t = 1, path vs cycle (median dR, one variance) --
+   axis                           cycle (R398)        path (this round)
+   A_registered          +0.0074   5/ 0/19       +0.0059   8/ 1/15
+   B_wrong_graph         +0.0240  18/ 0/6        +0.0120  21/ 0/3 
+   C_wrong_metric        +0.1256  24/ 0/0        +0.1215  24/ 0/0 
+   D_flat_scales         -0.0000   1/ 1/22       +0.0080  14/ 0/10
+   E_permuted            +0.0282  15/ 1/8        +0.0511  20/ 1/3 
+   F_identity            +0.0000   0/ 0/24       +0.0000   0/ 0/24
+   (valid/reversed/mixed over 24 cells; 'valid' = all six draws agree the rival got worse)
+
+-- the path stratum's own cells at t = 0 (delta = R_quantum - R_matched_rival) ----------------
+   shifted|0.1|a=+1           delta -0.0356   R_quantum 0.1036
+   shifted|0.1|a=-1           delta -0.0292   R_quantum 0.1075
+   shifted|0.25|a=+1          delta +0.0240   R_quantum 0.1635
+   shifted|0.25|a=-1          delta +0.0331   R_quantum 0.1547
+   shifted|0.5|a=+1           delta +0.4720   R_quantum 0.6076
+   shifted|0.5|a=-1           delta +0.4755   R_quantum 0.6169
+   shifted|1|a=+1             delta +0.4653   R_quantum 0.6086
+   shifted|1|a=-1             delta +0.4947   R_quantum 0.6323
+   shifted|2|a=+1             delta +0.0325   R_quantum 0.1825
+   shifted|2|a=-1             delta +0.0437   R_quantum 0.1854
+   shifted|3|a=+1             delta -0.0744   R_quantum 0.0687
+   shifted|3|a=-1             delta -0.0687   R_quantum 0.0730
+   unshifted|0.1|a=+1         delta -0.0077   R_quantum 0.1421
+   unshifted|0.1|a=-1         delta -0.0072   R_quantum 0.1543
+   unshifted|0.25|a=+1        delta -0.0247   R_quantum 0.1401
+   unshifted|0.25|a=-1        delta -0.0339   R_quantum 0.1353
+   unshifted|0.5|a=+1         delta -0.0107   R_quantum 0.1383
+   unshifted|0.5|a=-1         delta -0.0121   R_quantum 0.1373
+   unshifted|1|a=+1           delta +0.4089   R_quantum 0.5506
+   unshifted|1|a=-1           delta +0.4173   R_quantum 0.5589
+   unshifted|2|a=+1           delta +0.5136   R_quantum 0.6611
+   unshifted|2|a=-1           delta +0.5168   R_quantum 0.6642
+   unshifted|3|a=+1           delta -0.0708   R_quantum 0.0747
+   unshifted|3|a=-1           delta -0.0702   R_quantum 0.0756
+
+   report sha256 = 49e7659eea99258cc884f184dd7b4beb9514cf57202f4c5beb3784ca3a31207e
+   written to smoke_v13_results.json

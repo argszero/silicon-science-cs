@@ -1,0 +1,83 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+Issue #87 R393 -- FDR control across the declared grid, and the correction layer's validation
+  q=6 cycle  L=2  splits=120  flips=10000  numpy=2.0.2
+
+  DECLARED FAMILY: the whole grid, 42 rows (degenerate gamma=0 rows excluded by construction)
+  TESTED: m = 39
+  marginal leads (uncorrected 95% CI excludes 0): 12   <-- the R391/R392 number
+  after Benjamini-Hochberg  q=0.05: 28 declared   q=0.10: 29 declared
+  after Benjamini-Yekutieli q=0.05: 28 declared   (valid under ARBITRARY dependence)
+  family dependence, measured: mean |off-diag correlation| = 0.173, max = 0.945
+
+  CONTROLS
+   C4 max disagreement across the three p-value routes = 2.91e-02
+        > 1e-3: shifted|alpha=1 gamma=0.00 gap=8.53e-03
+        > 1e-3: shifted|alpha=1 gamma=0.10 gap=3.20e-03
+        > 1e-3: shifted|alpha=1 gamma=2.00 gap=1.04e-02
+        > 1e-3: shifted|alpha=0 gamma=0.00 gap=2.89e-02
+        > 1e-3: shifted|alpha=0 gamma=0.10 gap=1.90e-03
+        > 1e-3: shifted|alpha=-1 gamma=0.00 gap=2.91e-02
+        > 1e-3: shifted|alpha=-1 gamma=0.10 gap=5.29e-03
+        > 1e-3: shifted|alpha=-1 gamma=2.00 gap=1.68e-03
+        > 1e-3: unshifted|alpha=1 gamma=0.10 gap=1.36e-02
+        > 1e-3: unshifted|alpha=1 gamma=0.50 gap=1.69e-02
+        > 1e-3: unshifted|alpha=0 gamma=0.10 gap=2.60e-03
+        > 1e-3: unshifted|alpha=0 gamma=0.50 gap=5.55e-03
+        > 1e-3: unshifted|alpha=-1 gamma=0.10 gap=2.62e-03
+        > 1e-3: unshifted|alpha=-1 gamma=0.50 gap=6.36e-03
+   C1 SIZE on the null (56 p-values from 8 null cells, 56 tests):
+        uniformity of the null p-values: KS = 0.3589 (p = 0.0000)   [~uniform is what we want]
+        false declarations -- marginal CI: 12, BH q=0.05: 15, BH q=0.10: 19, BY q=0.05: 12
+   C2 POWER on the planted handicap ladder (registered planted-alignment control):
+        t=0     of  0 tests:  0 declared at q=0.05 (marginal:  0), best delta +0.0000
+        t=0.25  of 21 tests: 16 declared at q=0.05 (marginal:  5), best delta -0.0959
+        t=0.5   of 21 tests: 15 declared at q=0.05 (marginal:  4), best delta -0.0685
+        t=1     of 21 tests: 16 declared at q=0.05 (marginal:  4), best delta -0.0750
+   C6 report byte-identical on rebuild = True
+
+  THE DECLARED LEADS (BH q <= 0.05), sorted by p:
+     shifted|alpha=1  gamma=0.25  delta +0.0707 [+0.0473,+0.0936]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.212
+     shifted|alpha=1  gamma=0.50  delta +0.3911 [+0.3483,+0.4316]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.053
+     shifted|alpha=1  gamma=1.00  delta +0.4289 [+0.3925,+0.4665]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.064
+     shifted|alpha=1  gamma=3.00  delta -0.0528 [-0.0657,-0.0409]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.578
+     shifted|alpha=0  gamma=0.50  delta -0.1192 [-0.1559,-0.0857]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.053
+     shifted|alpha=0  gamma=1.00  delta -0.1676 [-0.2061,-0.1331]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.064
+     shifted|alpha=0  gamma=2.00  delta -0.2754 [-0.3098,-0.2402]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.160
+     shifted|alpha=0  gamma=3.00  delta +0.3671 [+0.3262,+0.4093]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.578
+     shifted|alpha=-1 gamma=0.25  delta +0.0835 [+0.0610,+0.1063]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.212
+     shifted|alpha=-1 gamma=0.50  delta +0.4070 [+0.3696,+0.4465]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.053
+     shifted|alpha=-1 gamma=1.00  delta +0.4464 [+0.4107,+0.4846]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.064
+     shifted|alpha=-1 gamma=3.00  delta -0.0664 [-0.0807,-0.0526]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.578
+     unshifted|alpha=1 gamma=0.25  delta -0.0268 [-0.0368,-0.0155]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.783
+     unshifted|alpha=1 gamma=1.00  delta +0.3871 [+0.3492,+0.4254]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.033
+     unshifted|alpha=1 gamma=2.00  delta +0.4325 [+0.4016,+0.4645]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.117
+     unshifted|alpha=1 gamma=3.00  delta -0.0673 [-0.0780,-0.0568]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.577
+     unshifted|alpha=0 gamma=1.00  delta +0.4110 [+0.3703,+0.4505]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.033
+     unshifted|alpha=0 gamma=2.00  delta +0.0832 [+0.0494,+0.1159]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.117
+     unshifted|alpha=-1 gamma=0.25  delta -0.0308 [-0.0402,-0.0225]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.783
+     unshifted|alpha=-1 gamma=1.00  delta +0.4029 [+0.3644,+0.4425]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.033
+     unshifted|alpha=-1 gamma=2.00  delta +0.4317 [+0.4004,+0.4638]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.117
+     unshifted|alpha=-1 gamma=3.00  delta -0.0767 [-0.0882,-0.0651]  p=1.00e-04  q_BH=0.0002  q_BY=0.001  alive=0.577
+     shifted|alpha=0  gamma=0.25  delta +0.0602 [+0.0273,+0.0904]  p=4.00e-04  q_BH=0.0006  q_BY=0.003  alive=0.212
+     unshifted|alpha=0 gamma=0.10  delta -0.0267 [-0.0414,-0.0117]  p=4.00e-04  q_BH=0.0006  q_BY=0.003  alive=0.967
+     unshifted|alpha=0 gamma=3.00  delta +0.0746 [+0.0339,+0.1134]  p=5.00e-04  q_BH=0.0008  q_BY=0.003  alive=0.577
+     unshifted|alpha=0 gamma=0.25  delta +0.0312 [+0.0132,+0.0500]  p=1.20e-03  q_BH=0.0018  q_BY=0.008  alive=0.783
+     shifted|alpha=0  gamma=0.10  delta -0.0372 [-0.0621,-0.0140]  p=2.90e-03  q_BH=0.0042  q_BY=0.018  alive=0.693
+     shifted|alpha=1  gamma=0.10  delta -0.0133 [-0.0219,-0.0044]  p=4.20e-03  q_BH=0.0058  q_BY=0.025  alive=0.693
+
+  MARGINAL-ONLY (uncorrected CI excluded 0 but BH does not declare it) -- these are the ones the
+  uncorrected counts were counting:
+
+  report sha256 = 56db65ad4d6c1caa0a32901338765434a8cde83d1e44086d36efb0c41eb73e24
+  written to smoke_v7_results.json
