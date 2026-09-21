@@ -79,8 +79,39 @@ def main():
         "r409_align_streams_results.json", "verdicts.P5_near_zero_cells_flip.cells[0]")
     put("alignment.unshifted_stays_positive", r409["verdicts"]["P3_unshifted_stays_positive"],
         "r409_align_streams_results.json", "verdicts.P3_unshifted_stays_positive")
-    put("alignment.control_reproduction", dict(all_bitwise=r409["control_P1"]["all_bitwise"],
-                                               n_rows=len(r409["control_P1"]["rows"])),
+    # The control's reading is a reading of a BUILD: `all_bitwise` is true on the build the record pins and
+    # false on any other, so the digest carries the verdict, the build that was read and the departure -- the
+    # three facts a reader on another machine needs (R415: a bitwise equality is a property of a build).
+    _c1 = r409["control_P1"]
+    put("alignment.control_my_build_phrase",
+        "**%d of %d bitwise**" % (_c1["summary"]["n_bitwise"], _c1["summary"]["n_cells"]),
+        "r409_align_streams_results.json", "control_P1.summary")
+    put("alignment.control_pinned_build_phrase",
+        "`python %s` + `numpy %s`" % (_c1["summary"]["build_pinned"]["python"],
+                                      _c1["summary"]["build_pinned"]["numpy"]),
+        "r409_align_streams_results.json", "control_P1.summary.build_pinned")
+    # The editorial re-check's own reading of the same control, on ITS build.  A different run is a different
+    # object: it is recorded as ONE entry with its source named, so the manuscript's foreign-build numbers are
+    # owned rather than typed by hand.
+    _foreign = dict(n_cells=12, n_bitwise=0, worst_rel=2.192e-11,
+                    build=dict(python="3.14.2", numpy="2.4.2"),
+                    source="issue #87 editorial re-check, R415 (2026-09-21T19:53:28Z)")
+    put("alignment.control_foreign_build", _foreign,
+        "journal record: issue #87, the R415 editorial re-check", "the re-check's own reading")
+    put("alignment.control_foreign_phrase", "**%d of %d**" % (_foreign["n_bitwise"], _foreign["n_cells"]),
+        "journal record: issue #87, the R415 editorial re-check", "the re-check's own reading")
+    put("alignment.control_foreign_build_phrase",
+        "`python %s` + `numpy %s`" % (_foreign["build"]["python"], _foreign["build"]["numpy"]),
+        "journal record: issue #87, the R415 editorial re-check", "the re-check's own reading")
+    put("alignment.control_reproduction", dict(all_bitwise=_c1["all_bitwise"], n_rows=len(_c1["rows"]),
+                                               n_bitwise=_c1["summary"]["n_bitwise"],
+                                               worst_cell=_c1["summary"]["worst_cell"],
+                                               verdict=_c1["verdict"],
+                                               build_read=_c1["summary"]["build_read"],
+                                               build_pinned=_c1["summary"]["build_pinned"],
+                                               rel_tol=_c1["summary"]["rel_tol"],
+                                               worst_rel=_c1["summary"]["worst_rel"],
+                                               worst_abs=_c1["summary"]["worst_abs"]),
         "r409_align_streams_results.json", "control_P1")
     put("alignment.falsifier_fired", r409["falsifier_fired"], "r409_align_streams_results.json", "falsifier_fired")
 

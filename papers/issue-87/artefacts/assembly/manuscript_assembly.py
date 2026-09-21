@@ -3,7 +3,7 @@
 
 WHAT THIS FILE IS FOR.  `manuscript.md` is not hand-typed: it is the concatenation of the authored parts
 (`manuscript_part*.md`, beside the manuscript) with the rendered bibliography (`artefacts/refs/references_block.md`)
-appended, and this file is the step that both builds it and CHECKS it.  Three checks, each of which can fail:
+appended, and this file is the step that both builds it and CHECKS it.  Four checks, each of which can fail:
 
 WHY THE PARTS SIT BESIDE THE MANUSCRIPT AND NOT BESIDE THIS SCRIPT.  A part that embeds a figure writes the
 link as `figures/<file>.png`; a markdown link resolves at the linking file's own directory.  So a part stored
@@ -22,6 +22,11 @@ also where this journal's published packages keep their parts (`papers/issue-42/
      string that MUST appear in the body and the digest path it is read from, so a number typed by hand instead
      of read from the artefact (or a stale copy of one) fails the build.  A binding whose formatted value is
      absent is a hard error: the assembly stops and names it.
+  4. TABLES -- each table number appears on exactly ONE caption line, and every mention of a table number in
+     the prose names a number some caption defines.  A caption is a definition and a mention is a reference;
+     two captions sharing a number make every mention of that number unresolvable (the reader cannot tell
+     which table it points at), and a mention no caption defines points at nothing.  Read over the PARTS,
+     because the built manuscript is generated from them.
 
 The order of first citation is reported as an advisory (the bibliography's numbering is the selection order),
 never as a verdict: coverage is a presence test, and a numbered list re-ordered by an edit is not a defect.
@@ -49,6 +54,8 @@ PARTS = ["manuscript_part%d.md" % i for i in (1, 2, 3, 4)]
 HDR = re.compile(r'^#{1,6}\s*(?:\d+[.)]?\s*)?References\s*$', re.I)
 ENTRY = re.compile(r'^\s*(?:\[(\d{1,3})\]|(\d{1,3})[.)])(?:\s|$)')
 CITE = re.compile(r'\[(\d+(?:\s*[,\u2013-]\s*\d+)*)\]')
+CAPTION = re.compile(r'^\*\*Table (\d+)\b')
+MENTION = re.compile(r'Table (\d+)\b')
 
 # ---------------------------------------------------------------- the bindings
 # (formatted string that must appear in the body, digest key, path inside it, format)
@@ -144,6 +151,12 @@ def main():
     bind("matchedlocal blowup g2", "rivals.matchedlocal_blowup", ["2.0"], p3)
     bind("matchedlocal trivial at gamma 1", "rivals.matchedlocal_trivial_fixed", ["1.0"], p3)
     bind("midband rbf gap", "rivals.midband_arm_gaps", ["rbf"], "%.4f" if False else (lambda v: "%.4f" % v))
+    # the build-bound control's printed phrases: ours, and the editorial re-check's on its own build
+    bind("control bitwise phrase", "alignment.control_my_build_phrase", None, lambda v: v)
+    bind("control pinned build phrase", "alignment.control_pinned_build_phrase", None, lambda v: v)
+    bind("control foreign phrase", "alignment.control_foreign_phrase", None, lambda v: v)
+    bind("control foreign build phrase", "alignment.control_foreign_build_phrase", None, lambda v: v)
+    bind("control foreign worst rel", "alignment.control_foreign_build", ["worst_rel"], e2)
     # Table 5 -- the map's own alpha = +-1 design, the 12 mid-band cells
     _T5 = [("shifted|0.5|a=+1|a=+1", "T5 shifted 0.5 plus", True),
            ("shifted|0.5|a=-1|a=-1", "T5 shifted 0.5 minus", True),
@@ -252,6 +265,24 @@ def main():
             bad.append("%-14s <- %s%s renders %r, absent from the body"
                        % (label, key, "" if path is None else "[" + "][".join(path) + "]", want))
 
+    # ---- check 4: the tables, read over the parts (the manuscript is generated from them).
+    captions, mentions = [], []
+    for p in PARTS:
+        for i, l in enumerate(io.open(os.path.join(PARTS_DIR, p), encoding="utf-8").read().split("\n"), 1):
+            cap = CAPTION.match(l)
+            if cap:
+                captions.append((int(cap.group(1)), p, i))
+            for m in MENTION.finditer(l):
+                if cap and m.start() < 9:          # the caption's own number is the definition, not a mention
+                    continue
+                mentions.append((int(m.group(1)), p, i))
+    cap_nums = [c[0] for c in captions]
+    defined = set(cap_nums)
+    dup = sorted({n for n in cap_nums if cap_nums.count(n) > 1})
+    missing_num = [n for n in range(1, len(cap_nums) + 1) if n not in defined]
+    undefined = sorted({n for n, _, _ in mentions if n not in defined})
+    tables_bad = bool(dup or missing_num or undefined)
+
     # ---- advisory: order of first citation
     first = {}
     for m in CITE.finditer(text_body):
@@ -274,6 +305,9 @@ def main():
            "CHECK 2 keys    : bracket numbers matching no entry: %s" % (unmatched or "none"),
            "CHECK 3 bindings: %d bound (all present) " % len(B) if not bad else
            "CHECK 3 bindings: %d FAILED" % len(bad),
+           "CHECK 4 tables  : %d captions, numbering %s -- duplicate numbers %s, gaps %s, mentions with no "
+           "caption %s" % (len(captions), cap_nums, dup or "none", missing_num or "none", undefined or "none"),
+           "        captions : %s" % "; ".join("Table %d = %s L%d" % (n, p, i) for n, p, i in captions),
            ""]
     rep += ["        FAILED: " + b for b in bad]
     rep += ["",
@@ -284,7 +318,7 @@ def main():
     with io.open(REPORT, "w", encoding="utf-8") as fh:
         fh.write(out)
     print(out)
-    if missing or unmatched or bad:
+    if missing or unmatched or bad or tables_bad:
         print("ASSEMBLY: FAIL")
         return 1
     print("ASSEMBLY: PASS")

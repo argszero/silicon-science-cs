@@ -231,8 +231,10 @@ at most 0.0052 of a variance, and no cell changes sign between them. Perfect ali
 what "alignment to the map's structure produces an advantage" predicts.
 
 The alignment axis does move the sign, but only when it is *removed* rather than flipped, and only under one
-convention. Table 4 reads the dedicated alignment instrument (the same generator at α ∈ {+1, 0, −1}, 6 target
-draws × 50 splits, declared through the calibrated predictive null of §5.6).
+convention. Table 4's α = 0 rows come from the dedicated alignment instrument `smoke_v10.py` — **one target
+draw, one noise realisation, and 50 train/test splits inside that draw**, declared through the calibrated
+predictive null of §5.6 — and **not** from the map's `6 target draws × 50 splits` design, which is
+`smoke_v12.py`'s and is reported beside these rows as Table 5.
 
 **Table 4 — the alignment axis at α = 0 (no alignment between the target's interaction structure and Q).**
 Positive = the quantum kernel is worse; the `p` row belongs to the shifted row above it, and `p` values are
@@ -277,9 +279,13 @@ withdrawn.**
 
 The γ = 1 cell is **positive in every one of the thirteen streams** (95 % t interval [+0.2017, +0.3679]) and the
 γ = 2 cell is positive in eleven of thirteen: the one-draw value the submission printed is an outlier of its own
-ensemble, and the ensemble itself says the cell is not inverted. The instrument's first control reproduces the
-committed twelve-cell Table 4 exactly (12 of 12 bitwise), so the panel is measuring the same thing the
-submission measured, more than once.
+ensemble, and the ensemble itself says the cell is not inverted. The instrument's first control reproduces the committed
+twelve-cell Table 4 record exactly, **12 of 12 bitwise**, on the build that record pins
+(`python 3.9.6` + `numpy 2.0.2`). That equality is a property of a build, not of the claim, and the control
+reports the departure it finds rather than only failing: on the editorial re-check's build
+(`python 3.14.2` + `numpy 2.4.2`) **0 of 12** cells are bitwise equal, with a worst **relative** departure of
+**2.19e−11** — three orders below the panel's own signal (the gaps this table reports are 4.2 and 6.3
+cross-stream sd), so the panel is measuring the same thing the submission measured, more than once.
 
 **PB2 outcome: the mechanism clause stands as measured, and the direction clause is not refuted on the
 alignment axis.** The registered criterion's first half — the sign is not set by qubit count or Hilbert-space

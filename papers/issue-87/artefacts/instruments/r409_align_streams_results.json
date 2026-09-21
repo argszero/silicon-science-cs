@@ -190,90 +190,143 @@
   "all_bitwise": true,
   "rows": [
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "shifted|gamma=0.1",
     "committed": -0.03720426596374845,
     "conv": "shifted",
     "gamma": 0.1,
-    "recomputed": -0.03720426596374845
+    "recomputed": -0.03720426596374845,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "shifted|gamma=0.25",
     "committed": 0.06022407177786158,
     "conv": "shifted",
     "gamma": 0.25,
-    "recomputed": 0.06022407177786158
+    "recomputed": 0.06022407177786158,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "shifted|gamma=0.5",
     "committed": -0.1191789109482157,
     "conv": "shifted",
     "gamma": 0.5,
-    "recomputed": -0.1191789109482157
+    "recomputed": -0.1191789109482157,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "shifted|gamma=1",
     "committed": -0.167622358925973,
     "conv": "shifted",
     "gamma": 1.0,
-    "recomputed": -0.167622358925973
+    "recomputed": -0.167622358925973,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "shifted|gamma=2",
     "committed": -0.27535957598030075,
     "conv": "shifted",
     "gamma": 2.0,
-    "recomputed": -0.27535957598030075
+    "recomputed": -0.27535957598030075,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "shifted|gamma=3",
     "committed": 0.3670834146843196,
     "conv": "shifted",
     "gamma": 3.0,
-    "recomputed": 0.3670834146843196
+    "recomputed": 0.3670834146843196,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "unshifted|gamma=0.1",
     "committed": -0.026681896186411643,
     "conv": "unshifted",
     "gamma": 0.1,
-    "recomputed": -0.026681896186411643
+    "recomputed": -0.026681896186411643,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "unshifted|gamma=0.25",
     "committed": 0.031236229266896356,
     "conv": "unshifted",
     "gamma": 0.25,
-    "recomputed": 0.031236229266896356
+    "recomputed": 0.031236229266896356,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "unshifted|gamma=0.5",
     "committed": 0.012660986320240347,
     "conv": "unshifted",
     "gamma": 0.5,
-    "recomputed": 0.012660986320240347
+    "recomputed": 0.012660986320240347,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "unshifted|gamma=1",
     "committed": 0.41099853593605845,
     "conv": "unshifted",
     "gamma": 1.0,
-    "recomputed": 0.41099853593605845
+    "recomputed": 0.41099853593605845,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "unshifted|gamma=2",
     "committed": 0.08319849460595874,
     "conv": "unshifted",
     "gamma": 2.0,
-    "recomputed": 0.08319849460595874
+    "recomputed": 0.08319849460595874,
+    "rel_diff": 0.0
    },
    {
+    "abs_diff": 0.0,
     "bitwise_same": true,
+    "cell": "unshifted|gamma=3",
     "committed": 0.0746417127117556,
     "conv": "unshifted",
     "gamma": 3.0,
-    "recomputed": 0.0746417127117556
+    "recomputed": 0.0746417127117556,
+    "rel_diff": 0.0
    }
-  ]
+  ],
+  "summary": {
+   "build_pinned": {
+    "numpy": "2.0.2",
+    "python": "3.9.6"
+   },
+   "build_read": {
+    "numpy": "2.0.2",
+    "python": "3.9.6"
+   },
+   "n_bitwise": 12,
+   "n_cells": 12,
+   "rel_tol": 1e-08,
+   "worst_abs": 0.0,
+   "worst_cell": "shifted|gamma=0.1",
+   "worst_rel": 0.0
+  },
+  "verdict": "BITWISE"
  },
  "cross_stream": {
   "shifted|alpha=+0|0.1": {
@@ -1843,7 +1896,7 @@
   "P6": "the six-target average keeps the sign at gamma = 1 and gamma = 2",
   "falsifier": "P2 fails (<= 3 of 5) -> the inversion is one draw's property; PB2's direction refutation rests on the alpha = +-1 panel alone and the abstract must be weakened"
  },
- "report_sha256": "1c5b8c6d6e16fc5bc440f6513f0a50b883cd365c1066ff2bd4ecb5c347b76a3b",
+ "report_sha256": "2bf0dc8b96e773fa57e0c1f304b28a186c6dafcc4fa60dd5117b478f768f08b6",
  "report_sha256_source": null,
  "scope": "q = 6, cycle graph, depth 2, matched (Mahalanobis) rival, both phase conventions",
  "seed_families": {

@@ -43,6 +43,25 @@ import os
 import sys
 import zlib
 
+# ---- THE CONTROL'S BUILD COORDINATE, DECLARED (R415).  See the sibling note in `r409_align_streams.py`: C1
+# compares against a committed record with exact float equality, and exact equality is a property of a BUILD.
+# The build it is bound to is named here, and on any other build the control REPORTS the departure it found
+# and judges it against the tolerance declared below, before the run.
+C1_BUILD_PINNED = dict(python="3.9.6", numpy="2.0.2")
+C1_REL_TOL = 1e-8
+
+
+def C1_control_verdict(rows, rel_tol=C1_REL_TOL):
+    """C1's verdict as a function of its readings: (verdict, worst, n_bitwise)."""
+    n_bit = sum(1 for r in rows if r["bitwise"])
+    worst = max(rows, key=lambda r: r["rel_diff"])
+    if n_bit == len(rows):
+        return "BITWISE", worst, n_bit
+    if worst["rel_diff"] <= rel_tol:
+        return "BUILD_BOUND", worst, n_bit
+    return "FAIL", worst, n_bit
+
+
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -149,9 +168,13 @@ def main():
     Z = S5.bits_of(q)
     metrics = {g: S5.metric_field(q, edges, Z, g, CONVENTION, LAYERS) for g in GAMMAS}
 
+    control_only = "--control-only" in sys.argv
+    build_read = dict(python="%s.%s.%s" % tuple(map(str, sys.version_info[:3])), numpy=np.__version__)
     rows = []
     for g in GAMMAS:
-        for seed in STREAM_SEEDS:
+        # --control-only computes the committed stream alone: C1 is the only reading it needs, and a control
+        # that costs the whole panel is a control nobody runs.
+        for seed in ([COMMITTED_SEED] if control_only else STREAM_SEEDS):
             rows.append(run_stream(q, edges, Z, g, metrics, seed))
             print("  gamma=%.2f seed=%d  dQ-m=%.4f  dQ-loc_fixed=%.4f  dQ-loc_tuned=%.4f  s_hat(loc)=%.4g"
                   % (g, seed, rows[-1]["delta_quantum_minus_matched"]["mean"],
@@ -177,8 +200,22 @@ def main():
                if abs(r["gamma"] - g) < 1e-12 and r["seed"] == COMMITTED_SEED][0]
         c1.append(dict(gamma=g, committed=want, recomputed=got, bitwise=bool(want == got),
                        abs_diff=abs(want - got)))
-    if not all(r["bitwise"] for r in c1):
-        raise RuntimeError("C1: the committed local arm does not reproduce bit-for-bit: %s" % c1)
+    for r in c1:
+        r["cell"] = "gamma=%g" % r["gamma"]
+        r["rel_diff"] = r["abs_diff"] / max(abs(r["committed"]), 1e-12)
+    c1_verdict, c1_worst, c1_bit = C1_control_verdict(c1)
+    if c1_verdict == "FAIL":
+        raise RuntimeError("C1: the committed local arm departs by a worst relative %.3e at %s, beyond the "
+                           "declared %.0e (build read: python %s / numpy %s): %s"
+                           % (c1_worst["rel_diff"], c1_worst["cell"], C1_REL_TOL,
+                              "%s.%s.%s" % tuple(map(str, sys.version_info[:3])), __import__("numpy").__version__, c1))
+    if "--strict-bitwise" in sys.argv and c1_verdict != "BITWISE":
+        print("C1 strict-bitwise: this build is not the pinned one; exiting 2")
+        sys.exit(2)
+    if control_only:
+        print("-- control-only: C1 at the committed stream, the panel is not run, nothing written")
+        print_C1(build_read, c1, c1_verdict, c1_worst, c1_bit)
+        return 0
 
     # ---- C2: determinism on the committed stream
     a = run_stream(q, edges, Z, 1.0, metrics, COMMITTED_SEED)
@@ -268,19 +305,23 @@ def main():
         stream_seeds=list(STREAM_SEEDS), committed_stream=COMMITTED_SEED,
         envelope_grid=list(S_GRID), n_splits=N_SPLITS,
         rows=rows,
-        controls=dict(C1_committed_arm_bitwise=c1, C2_determinism=c2, C3_bayes_exact=c3,
+        controls=dict(C1_committed_arm_bitwise=c1,
+                      C1_verdict=c1_verdict,
+                      C1_summary=dict(n_cells=len(c1), n_bitwise=c1_bit, worst_abs=c1_worst["abs_diff"],
+                                      worst_rel=c1_worst["rel_diff"], worst_cell=c1_worst["cell"],
+                                      rel_tol=C1_REL_TOL, build_pinned=C1_BUILD_PINNED),
+                      C2_determinism=c2, C3_bayes_exact=c3,
                       C4_unusable_arms=unusable, C5_trivial_end_arms=degenerate),
         summary=summary,
         verdict=verdict,
-        build=dict(python="%s.%s.%s" % tuple(map(str, sys.version_info[:3])), numpy=np.__version__,
-                   script_crc32="%08x" % zlib.crc32(io.open(os.path.abspath(__file__), "rb").read())),
+        build=dict(build_read, script_crc32="%08x" % zlib.crc32(io.open(os.path.abspath(__file__), "rb").read())),
     )
     res["report_sha256"] = "%08x" % zlib.crc32(json.dumps(res, indent=1, sort_keys=True).encode("utf-8"))
     with io.open(OUT, "w") as fh:
         json.dump(res, fh, indent=1, sort_keys=True)
 
     print()
-    print("C1 committed arm bit-for-bit: %s" % all(r["bitwise"] for r in c1))
+    print_C1(build_read, c1, c1_verdict, c1_worst, c1_bit)
     print("C2 determinism: %s | C3 Bayes exact: %.17g" % (c2["identical"], c3))
     print("C4 arms the scale rules out: %s" % (unusable or "none"))
     by_arm = {}
@@ -307,5 +348,41 @@ def main():
     print("wrote %s (report id %s)" % (OUT, res["report_sha256"]))
 
 
+def print_C1(build_read, c1, c1_verdict, c1_worst, c1_bit):
+    """The C1 reading, printed identically by the full run and by --control-only."""
+    print("C1 committed arm   : a BITWISE control against `smoke_v5_results.json`, and bitwise is a property of "
+          "a BUILD")
+    print("      build read  : python %s / numpy %s" % (build_read["python"], build_read["numpy"]))
+    print("      build pinned: python %s / numpy %s   (the build the committed record names)"
+          % (C1_BUILD_PINNED["python"], C1_BUILD_PINNED["numpy"]))
+    print("      cells       : %d | bitwise %d | worst abs %.3e | worst rel %.3e (cell %s)"
+          % (len(c1), c1_bit, c1_worst["abs_diff"], c1_worst["rel_diff"], c1_worst["cell"]))
+    print("      verdict     : %s%s" % (c1_verdict, {
+        "BITWISE": " -- the committed arm is reproduced on this build",
+        "BUILD_BOUND": " -- NOT bitwise on this build; the worst relative departure %.3e is within the declared "
+                       "%.0e, so this is the same instrument up to floating-point reduction order"
+                       % (c1_worst["rel_diff"], C1_REL_TOL),
+        "FAIL": " -- the departure exceeds the declared %.0e: this is NOT the committed arm" % C1_REL_TOL,
+    }[c1_verdict]))
+
+def _control_selftest():
+    """C1's verdict must be able to say all three things."""
+    def row(committed, recomputed):
+        a = abs(committed - recomputed)
+        return dict(cell="x", committed=committed, recomputed=recomputed, bitwise=bool(committed == recomputed),
+                    abs_diff=a, rel_diff=a / max(abs(committed), 1e-12))
+    cases = [("all equal", [row(1.0, 1.0)], "BITWISE"),
+             ("within tolerance", [row(1.0, 1.0 + 1e-12)], "BUILD_BOUND"),
+             ("beyond tolerance", [row(1.0, 1.0 + 1e-6)], "FAIL")]
+    ok = True
+    for name, rows, want in cases:
+        got, worst, n_bit = C1_control_verdict(rows)
+        print("    selftest %-18s -> %-12s %s" % (name, got, "as expected" if got == want else "WRONG"))
+        ok = ok and (got == want)
+    return 0 if ok else 1
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        sys.exit(_control_selftest())
     main()

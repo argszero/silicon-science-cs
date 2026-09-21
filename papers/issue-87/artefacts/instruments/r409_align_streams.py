@@ -85,6 +85,41 @@ SEED_FAMILIES = {
 }
 STREAM_SEEDS = tuple(s for fam in SEED_FAMILIES.values() for s in fam)
 MID_BAND = (1.0, 2.0)                      # the two cells section 5.3 calls the inversion
+
+# ---- THE CONTROL'S BUILD COORDINATE, DECLARED (R415).  A bitwise equality is a property of a BUILD: the
+# committed record pins one (its own `build` field), and a different interpreter/numpy pair sums the same
+# expressions in a different order.  So the control names the build it is bound to, and on any other build it
+# REPORTS the departure it found and judges it against a tolerance declared HERE, before the run.
+BUILD_PINNED = dict(python="3.9.6", numpy="2.0.2")
+REL_TOL = 1e-8                             # declared: a relative departure beyond this is not the instrument
+
+
+def control_verdict(rows, rel_tol=REL_TOL):
+    """The control's verdict as a function of its readings: (verdict, worst, n_bitwise)."""
+    n_bit = sum(1 for r in rows if r["bitwise_same"])
+    worst = max(rows, key=lambda r: r["rel_diff"])
+    if n_bit == len(rows):
+        return "BITWISE", worst, n_bit
+    if worst["rel_diff"] <= rel_tol:
+        return "BUILD_BOUND", worst, n_bit
+    return "FAIL", worst, n_bit
+
+
+def _control_selftest():
+    """The verdict must be able to say all three things (a check that cannot fail is decoration)."""
+    def row(committed, recomputed):
+        a = abs(committed - recomputed)
+        return dict(cell="x", committed=committed, recomputed=recomputed, bitwise_same=bool(committed == recomputed),
+                    abs_diff=a, rel_diff=a / max(abs(committed), 1e-12))
+    cases = [("all equal", [row(1.0, 1.0), row(-0.25, -0.25)], "BITWISE"),
+             ("within tolerance", [row(1.0, 1.0 + 1e-12)], "BUILD_BOUND"),
+             ("beyond tolerance", [row(1.0, 1.0 + 1e-6)], "FAIL")]
+    ok = True
+    for name, rows, want in cases:
+        got, worst, n_bit = control_verdict(rows)
+        print("      selftest %-18s -> %-12s %s" % (name, got, "as expected" if got == want else "WRONG"))
+        ok = ok and got == want
+    return 0 if ok else 1
 NEAR_ZERO_MAX = 0.05                       # |committed| <= this -> the cell is a near-zero cell for P5
 
 
@@ -139,21 +174,51 @@ def main():
     for row in rep["rows"]:
         if row["alpha"] == 0.0:
             committed[row["conv"]][row["gamma"]] = row["delta_mean"]
-    ctl_rows, ctl_ok = [], True
+    ctl_rows = []
     for c in CONVS:
         got = cell(edges, Z, metrics, c, 0.0, S5.SEED_GEN)["rows"]
         for g in GAMMAS:
             same = bool(got[g]["mean"] == committed[c][g])
-            ctl_ok = ctl_ok and same
-            ctl_rows.append(dict(conv=c, gamma=g, committed=committed[c][g], recomputed=got[g]["mean"],
-                                 bitwise_same=same))
-    res["control_P1"] = dict(rows=ctl_rows, all_bitwise=ctl_ok)
-    print("P1  control  : committed rows reproduced bitwise at all %d cells: %s" % (len(ctl_rows), ctl_ok))
+            a = abs(committed[c][g] - got[g]["mean"])
+            ctl_rows.append(dict(cell="%s|gamma=%g" % (c, g), conv=c, gamma=g, committed=committed[c][g],
+                                 recomputed=got[g]["mean"], bitwise_same=same, abs_diff=a,
+                                 rel_diff=a / max(abs(committed[c][g]), 1e-12)))
+    ctl_verdict, worst, n_bit = control_verdict(ctl_rows)
+    ctl_ok = (ctl_verdict == "BITWISE")
+    res["control_P1"] = dict(
+        rows=ctl_rows, all_bitwise=ctl_ok, verdict=ctl_verdict,
+        summary=dict(n_cells=len(ctl_rows), n_bitwise=n_bit, worst_abs=worst["abs_diff"],
+                     worst_rel=worst["rel_diff"], worst_cell=worst["cell"],
+                     rel_tol=REL_TOL, build_read=res["build"], build_pinned=BUILD_PINNED))
+    print("P1  control  : a BITWISE control against the committed record -- and bitwise is a property of a BUILD")
+    print("      build read  : python %s / numpy %s" % (res["build"]["python"], res["build"]["numpy"]))
+    print("      build pinned: python %s / numpy %s   (the build the committed record names)" % (
+        BUILD_PINNED["python"], BUILD_PINNED["numpy"]))
+    print("      cells       : %d | bitwise %d | worst abs %.3e | worst rel %.3e (cell %s)"
+          % (len(ctl_rows), n_bit, worst["abs_diff"], worst["rel_diff"], worst["cell"]))
+    print("      verdict     : %s%s" % (ctl_verdict, {
+        "BITWISE": " -- the committed record is reproduced on this build",
+        "BUILD_BOUND": " -- NOT bitwise on this build; the worst relative departure %.3e is within the declared"
+                       " %.0e, so the panel is the same instrument up to floating-point reduction order"
+                       % (worst["rel_diff"], REL_TOL),
+        "FAIL": " -- the departure exceeds the declared %.0e: this panel is NOT the instrument" % REL_TOL,
+    }[ctl_verdict]))
     for r in ctl_rows[:2] + ctl_rows[6:8]:
-        print("      %-9s gamma=%-5g committed %+.6f  recomputed %+.6f  %s"
-              % (r["conv"], r["gamma"], r["committed"], r["recomputed"], "same" if r["bitwise_same"] else "DIFF"))
-    if not ctl_ok:
-        raise RuntimeError("the panel is not the instrument: the committed alpha = 0 rows do not reproduce")
+        print("      %-9s gamma=%-5g committed %+.9f  recomputed %+.9f  rel %.2e  %s"
+              % (r["conv"], r["gamma"], r["committed"], r["recomputed"], r["rel_diff"],
+                 "same" if r["bitwise_same"] else "DIFF"))
+    if ctl_verdict == "FAIL":
+        raise RuntimeError("the panel is not the instrument: the committed alpha = 0 rows depart by a worst "
+                           "relative %.3e at %s, beyond the declared %.0e (build read: python %s / numpy %s)"
+                           % (worst["rel_diff"], worst["cell"], REL_TOL, res["build"]["python"],
+                              res["build"]["numpy"]))
+    if "--strict-bitwise" in sys.argv and ctl_verdict != "BITWISE":
+        print("      strict-bitwise: this build is not the pinned one; exiting 2 (the reading stands above)")
+        sys.exit(2)
+    if "--control-only" in sys.argv:
+        print()
+        print("-- control-only: the panel is not run; nothing written")
+        return 0
 
     # ---- the five-stream panel
     panel = {}
@@ -329,4 +394,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "--selftest" in sys.argv:
+        sys.exit(_control_selftest())
+    sys.exit(main())
