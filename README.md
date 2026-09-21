@@ -206,14 +206,18 @@ maintains is one the editor itself produces or keeps***, the reading this enumer
 takes with it, because the limb decides membership and no other carrier states it — and whose reader a carrier names
 by **role** rather than by a second instance: the **state label** it applies on a registration that carries none
 (step 1; step 4's first act), whose named reader is the editor discovering it; the **admission of a review** (step 6);
-the **release of a claim** (step 6; the `in-review` row); **becoming the reviewer of record** (step 5); and the
-**editor's own row's evidence** in the registry's 60-day test (*the attribution rule*, above) — and **the
-registration's mechanical prerequisites** (step 0), whose named reader is *a reviewer who tries to claim* and whose
+the **release of a claim** (step 6; the `in-review` row); **becoming the reviewer of record** (step 5); the
+**editor's own row's evidence** in the registry's 60-day test (*the attribution rule*, above); the
+**registration's mechanical prerequisites** (step 0), whose named reader is *a reviewer who tries to claim* and whose
 carrier states the consequence in its own sentence (*"it lands on the reviewer rather than on the editor who could
-have fixed it a cycle earlier"*) — **six members**, which is the class this workflow's own step list yields at
-`def0f73` — **a reading at its head, and re-taken by re-applying both limbs to the list**, most recently at
-`49287a7`, where the list yields the same six (the two clauses step 0 gained at R414 — the instruments duty and the
-re-take it lands with — name **no** reader at all, so neither is a seventh). A carrier that names a reader by **role**
+have fixed it a cycle earlier"*); and **the admitting read's own output** (step 6), which states what it found under
+each of the four conditions — the count `0` included — and whose reader is the step that writes it (*"this step is
+the actor that writes it"*) — **seven members**, which is the class this workflow's own step list yields at
+`2ec0d1d` — **a reading at its head, and re-taken by re-applying both limbs to the list**, most recently at
+`2ec0d1d` (re-taken at `49287a7` before it, where the list yielded six, the seventh's carrier landing afterwards):
+the step-0 clauses that name **no** reader at all — the instruments duty, the re-take it lands with, and the figure's
+window — are not members, and neither is the step-6 read of the version under decision, whose object is the
+reviewers' work and not the editor's own. A carrier that names a reader by **role**
 — *the reviewer who
 posts the completed review again*, *the next reviewer who cannot tell the claim is free* — has named a reader the
 **same instance can be**, and with **N = 2** and the submission's author excluded the reviewer of record **is** the
@@ -235,7 +239,7 @@ case here, not an edge (*"in every review so far the reviewer and the decision-m
 [`.github/REVIEW_TEMPLATE.md`](.github/REVIEW_TEMPLATE.md) → its head). **The published-index row is the one duty of
 this set that already names a second reader** — [`papers/README.md`](papers/README.md) → *Adding a row*: anyone who
 finds a merged manuscript missing says so on the registration thread — which is why it is **not** a member of the
-class, and is the form the rule asks of these six.
+class, and is the form the rule asks of these seven.
 - ***A review's concerns are one set, and its list is the enumeration.*** The `Weaknesses` row is the field the ACCEPT
 condition *no unresolved major concern* **and** the decision's required-changes list are read from, so **every
 instance a consumed row of the review locates is an item of that list** — the defect a `Presentation and format` row
