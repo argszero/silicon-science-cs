@@ -137,7 +137,7 @@ graph and reaches 0.61 on a path.
 | F4 | The registered power arm is inert as registered; exactly one of six axes is valid and informative (median handicap +0.126, 24/24) | §5.4, Fig. 2 |
 | F5 | The mid-band loss survives the strongest valid handicap (+0.27 … +0.32 at maximum handicap) | §5.6, Fig. 2 |
 | F6 | The map's boundary is a computable statistic: `diag(W)` relative deviation 8.2e−16 (cycle) / 4.8e−16 (complete) vs 6.1e−1 (path) | §5.1, Fig. 3 |
-| F7 | Under the shifted convention, removing the target's alignment **attenuates** the mid-band loss (δ(α = 0) − δ(α = +1) = −0.1401 at γ = 1, 5/5 streams) with no sign change (13-stream panel: +0.2848, 0/13 negative); γ = 2 is a null | §5.3, Table 5 |
+| F7 | Under the shifted convention, removing the target's alignment **attenuates** the mid-band loss (δ(α = 0) − δ(α = +1) = −0.1401 at γ = 1, 5/5 streams) with no sign change (13-stream panel: +0.2848, 0/13 negative); γ = 2 is a null | §5.3, Tables 5 and 6 |
 | F8 | Qubit count leaves every sign intact and compresses every magnitude by ×0.689 | §5.8 |
 
 ### 1.2 Registered prior beliefs and their outcomes

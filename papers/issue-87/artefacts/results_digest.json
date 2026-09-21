@@ -1,5 +1,5 @@
 {
- "n_quantities": 71,
+ "n_quantities": 76,
  "quantities": {
   "alignment.attenuation": {
    "from": "r409_align_streams_results.json",
@@ -17,12 +17,60 @@
     }
    }
   },
+  "alignment.control_foreign_build": {
+   "from": "journal record: issue #87, the R415 editorial re-check",
+   "path": "the re-check's own reading",
+   "value": {
+    "build": {
+     "numpy": "2.4.2",
+     "python": "3.14.2"
+    },
+    "n_bitwise": 0,
+    "n_cells": 12,
+    "source": "issue #87 editorial re-check, R415 (2026-09-21T19:53:28Z)",
+    "worst_rel": 2.192e-11
+   }
+  },
+  "alignment.control_foreign_build_phrase": {
+   "from": "journal record: issue #87, the R415 editorial re-check",
+   "path": "the re-check's own reading",
+   "value": "`python 3.14.2` + `numpy 2.4.2`"
+  },
+  "alignment.control_foreign_phrase": {
+   "from": "journal record: issue #87, the R415 editorial re-check",
+   "path": "the re-check's own reading",
+   "value": "**0 of 12**"
+  },
+  "alignment.control_my_build_phrase": {
+   "from": "r409_align_streams_results.json",
+   "path": "control_P1.summary",
+   "value": "**12 of 12 bitwise**"
+  },
+  "alignment.control_pinned_build_phrase": {
+   "from": "r409_align_streams_results.json",
+   "path": "control_P1.summary.build_pinned",
+   "value": "`python 3.9.6` + `numpy 2.0.2`"
+  },
   "alignment.control_reproduction": {
    "from": "r409_align_streams_results.json",
    "path": "control_P1",
    "value": {
     "all_bitwise": true,
-    "n_rows": 12
+    "build_pinned": {
+     "numpy": "2.0.2",
+     "python": "3.9.6"
+    },
+    "build_read": {
+     "numpy": "2.0.2",
+     "python": "3.9.6"
+    },
+    "n_bitwise": 12,
+    "n_rows": 12,
+    "rel_tol": 1e-08,
+    "verdict": "BITWISE",
+    "worst_abs": 0.0,
+    "worst_cell": "shifted|gamma=0.1",
+    "worst_rel": 0.0
    }
   },
   "alignment.falsifier_fired": {

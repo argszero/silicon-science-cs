@@ -15,7 +15,7 @@ Submission package for the research registration
 | `reference-check.md` | the citation-authenticity report: one line per entry, its verification method and the record found |
 | `references.json` | the bibliography as data (each entry's key, authors, year, title, venue, URL, stated difference, verification method) |
 | `artefacts/results_digest.py` / `.json` | **the owner of every number the manuscript prints**: 55 quantities, each read out of an instrument's own committed record, with the file and field it was read from |
-| `artefacts/assembly/` | `manuscript_assembly.py`, which builds `manuscript.md` from the parts and checks it (coverage, stray citation keys, 91 numeric bindings), and the report it writes |
+| `artefacts/assembly/` | `manuscript_assembly.py`, which builds `manuscript.md` from the parts and checks it (coverage, stray citation keys, 133 numeric bindings, one numbering for the tables), and the report it writes |
 | `artefacts/instruments/` | the instruments and their result records: `smoke_v0.py` … `smoke_v16.py`, their `*_results.json`, and the run logs |
 | `artefacts/refs/` | the bibliography's limb: the harvest pools, the selection (which record carries which claim), the builder, the verifier, the renderer |
 | `artefacts/round-notes/` | the round-by-round records, including every instrument defect this study found and the repair applied |
@@ -32,13 +32,15 @@ bash reproduce.sh
 ```
 REPRODUCE: ALL GREEN
   manifest of what was compared:
-    artefacts/results_digest.json          55 quantities read out of the instruments' own records
+    artefacts/results_digest.json          76 quantities read out of the instruments' own records
     figures/fig1_advantage_map.png         the advantage map (Fig. 1)
     figures/fig2_power_arm.png             the power arm (Fig. 2)
     figures/fig3_metric_structure.png      the metric's structure (Fig. 3)
     manuscript.md                          parts + the rendered bibliography
-    artefacts/assembly/assembly-report.txt coverage 169/169, 0 stray keys, 91 bindings
+    artefacts/assembly/assembly-report.txt coverage 169/169, 0 stray keys, 133 bindings
     refgate                                entries 169, 0 not separated, coverage 100.0%, GATE: PASS
+    the two build-bound controls           step 4/5: verdict + build read + build pinned + worst
+                                           relative departure, with both --selftests
 ```
 
 **Tolerance: exact — byte-identical.** Every artefact the script writes is compared with `cmp` against the
@@ -50,7 +52,7 @@ the committed copy is what the run is measured against, and `git checkout -- <fi
 themselves: the study is exact statevector simulation with fixed seeds — no sampling, no noise model, no clock,
 no network, no GPU.
 
-**Tree: a checkout of this branch, not an export of its head.** Step 4 runs the journal's gates from the
+**Tree: a checkout of this branch, not an export of its head.** Step 5 runs the journal's gates from the
 repository root, and both of them resolve their **carrier set** off the tree with `git ls-files`, so the tree
 form is a coordinate of the run and is stated here rather than assumed. In a checkout the set is the 65 tracked
 markdown carriers of the head and the gate reads them — `linkgate.py --check` → `targets=100 links=94
@@ -61,7 +63,7 @@ a verdict is about a set and no set was read — and `numgate.py --selftest` pri
 the missing case being `the_carrier_set_is_read_off_links`, which needs the same repository. **Neither is a
 finding about this package**, and neither is a claim this specification needs: every input the recompute path
 reads is committed (`git ls-files` reaches all of it), no step resolves a `.git` object, and steps 1–3 (the
-digest, the figures, the assembled manuscript) run as written in **both** tree forms — step 4's gate readings
+digest, the figures, the assembled manuscript) run as written in **both** tree forms — step 5's gate readings
 are the part that needs the checkout. `reproduce.sh` prints the head it ran at, and in a tree that is not a
 work tree it prints `not a git work tree` on that line instead of failing.
 
@@ -149,7 +151,7 @@ checks, printed by `reproduce.sh` and recorded in `artefacts/assembly/assembly-r
 
 1. **coverage** — every one of the 169 bibliography entries is cited in the body by its own key (169/169);
 2. **stray keys** — every in-text bracket group that looks like a citation names an entry (none stray);
-3. **bindings** — each of the 91 numeric claims in the prose is read out of `results_digest.json` and required to
+3. **bindings** — each of the 133 numeric claims in the prose is read out of `results_digest.json` and required to
    appear as the manuscript prints it. A number typed by hand instead of read, or left stale by a later edit,
    fails the build.
 

@@ -8,7 +8,7 @@ mixture `W_t = (1−t) W + t (…)` so that every level of an axis has the same 
 tuning problem is unchanged and the differences are pure shape. The read is the rival's *own* excess-risk change
 `dR(t) = R_rival(t) − R_rival(0)`; positive means the handicap acted.
 
-**Table 5 — the handicap ladder (median of the per-cell `dR` at the maximum handicap t = 1; `valid/mixed/rev`
+**Table 7 — the handicap ladder (median of the per-cell `dR` at the maximum handicap t = 1; `valid/mixed/rev`
 counts cells whose effect is resolvably positive, sign-unstable inside the ladder, or resolvably negative).**
 
 | axis | manipulation | cycle: median (valid/mixed/rev) | path: median (valid/mixed/rev) |
@@ -62,10 +62,10 @@ rescale so the trace is restored exactly, which adds between **0.30 % and 19.8 %
 ### 5.5 The identity of the rival decides the reported verdict
 
 The methodological claim of this paper is not that the quantum kernel loses to *a* rival; it is that the
-*literature's* rival produces the opposite verdict in the same cell. Table 6 is the study's first instrument
+*literature's* rival produces the opposite verdict in the same cell. Table 8 is the study's first instrument
 (the cycle, q = 6, α = +1, 6 draws × 40 splits) read arm by arm across the bandwidth axis.
 
-**Table 6 — excess risk by arm and bandwidth, and the verdict each rival implies (cycle, q = 6, α = +1).**
+**Table 8 — excess risk by arm and bandwidth, and the verdict each rival implies (cycle, q = 6, α = +1).**
 `Δ` columns are the quantum arm minus that arm; negative means the quantum kernel is better.
 
 | γ | quantum | matched | closed form | product | RBF | random features | oracle | Δ matched | Δ RBF | Δ random features |
@@ -103,7 +103,7 @@ the procedure's resolution at **1.0e−4** — below the smallest Benjamini–Ho
 (2.08e−3 at m = 24), so the counts cannot be floor-limited. Its size is validated on a holdout half of the null:
 **0.28 %** (1 of 360 cells declared), i.e. twenty times conservative, so every count below is a lower bound.
 
-**Table 7 — the fallback clause along the valid handicap axis (C), with the pre-registered expectations.**
+**Table 9 — the fallback clause along the valid handicap axis (C), with the pre-registered expectations.**
 
 | read | registered | measured |
 |------|-----------|----------|
@@ -153,7 +153,7 @@ the mid-band loss attenuates. Across the 8-cell mid-band block the ratio q = 8 /
 sign in the grid**: PB2's "not by qubit count or Hilbert-space dimension" half is confirmed, and the compression
 is reported as a magnitude effect with an error bar rather than as a new regime.
 
-**Table 8 — the panel's pre-registered questions.**
+**Table 10 — the panel's pre-registered questions.**
 
 | Q | prediction | result |
 |---|-----------|--------|
