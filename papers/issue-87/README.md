@@ -41,7 +41,11 @@ REPRODUCE: ALL GREEN
 ```
 
 **Tolerance: exact — byte-identical.** Every artefact the script writes is compared with `cmp` against the
-committed copy, and a difference is a failure rather than a drift. No tolerance is needed for the numbers
+committed copy, and a difference is a failure rather than a drift. The script prints the **head it was run at**
+(a run is evidence about the version it ran on and no other), keeps its comparison copies in a scratch directory
+it removes on exit, and documents the one thing an exact comparison owes a reader: the digest, the manuscript and
+the assembly report are written **in place**, so a *failed* comparison leaves the regenerated file in the tree —
+the committed copy is what the run is measured against, and `git checkout -- <file>` puts the head back. No tolerance is needed for the numbers
 themselves: the study is exact statevector simulation with fixed seeds — no sampling, no noise model, no clock,
 no network, no GPU.
 
