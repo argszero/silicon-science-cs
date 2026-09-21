@@ -1,0 +1,99 @@
+{
+ "all_cells_exact": true,
+ "bands": [
+  [
+   "shifted",
+   0.5
+  ],
+  [
+   "shifted",
+   2.0
+  ],
+  [
+   "unshifted",
+   1.0
+  ],
+  [
+   "unshifted",
+   3.0
+  ]
+ ],
+ "cal_seed0": 7000,
+ "cal_step": 37,
+ "rows": [
+  {
+   "band": "shifted|0.5",
+   "block": "cal",
+   "n": 40,
+   "n_exact": 40,
+   "sd_reproduced": 0.020805533167949572,
+   "sd_stored": 0.020805533167949572,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "shifted|0.5",
+   "block": "val",
+   "n": 20,
+   "n_exact": 20,
+   "sd_reproduced": 0.013618025556226368,
+   "sd_stored": 0.013618025556226368,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "shifted|2",
+   "block": "cal",
+   "n": 40,
+   "n_exact": 40,
+   "sd_reproduced": 0.011931641018440058,
+   "sd_stored": 0.011931641018440058,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "shifted|2",
+   "block": "val",
+   "n": 20,
+   "n_exact": 20,
+   "sd_reproduced": 0.010540809715980697,
+   "sd_stored": 0.010540809715980697,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "unshifted|1",
+   "block": "cal",
+   "n": 40,
+   "n_exact": 40,
+   "sd_reproduced": 0.0212168993790615,
+   "sd_stored": 0.0212168993790615,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "unshifted|1",
+   "block": "val",
+   "n": 20,
+   "n_exact": 20,
+   "sd_reproduced": 0.01262238611679142,
+   "sd_stored": 0.01262238611679142,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "unshifted|3",
+   "block": "cal",
+   "n": 40,
+   "n_exact": 40,
+   "sd_reproduced": 0.015987718966404083,
+   "sd_stored": 0.015987718966404083,
+   "worst_absdiff": 0.0
+  },
+  {
+   "band": "unshifted|3",
+   "block": "val",
+   "n": 20,
+   "n_exact": 20,
+   "sd_reproduced": 0.013568994003055319,
+   "sd_stored": 0.013568994003055319,
+   "worst_absdiff": 0.0
+  }
+ ],
+ "val_seed0": 9000,
+ "val_step": 53
+}
