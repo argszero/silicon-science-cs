@@ -55,7 +55,10 @@ HDR = re.compile(r'^#{1,6}\s*(?:\d+[.)]?\s*)?References\s*$', re.I)
 ENTRY = re.compile(r'^\s*(?:\[(\d{1,3})\]|(\d{1,3})[.)])(?:\s|$)')
 CITE = re.compile(r'\[(\d+(?:\s*[,\u2013-]\s*\d+)*)\]')
 CAPTION = re.compile(r'^\*\*Table (\d+)\b')
-MENTION = re.compile(r'Table (\d+)\b')
+# A reference to a table is written `Table N` or `Tables N and M` (the plural form carries more than one
+# number, and a check that reads only the singular is blind to exactly the pointer F7 carries -- found by
+# reading this check's own reach, R415).
+MENTION = re.compile(r'Tables? ((?:\d+)(?:\s*(?:,|and|\u2013|-)\s*\d+)*)')
 
 # ---------------------------------------------------------------- the bindings
 # (formatted string that must appear in the body, digest key, path inside it, format)
@@ -275,7 +278,10 @@ def main():
             for m in MENTION.finditer(l):
                 if cap and m.start() < 9:          # the caption's own number is the definition, not a mention
                     continue
-                mentions.append((int(m.group(1)), p, i))
+                for tok in re.split(r'[,\u2013-]|and', m.group(1)):
+                    tok = tok.strip()
+                    if tok:
+                        mentions.append((int(tok), p, i))
     cap_nums = [c[0] for c in captions]
     defined = set(cap_nums)
     dup = sorted({n for n in cap_nums if cap_nums.count(n) > 1})
