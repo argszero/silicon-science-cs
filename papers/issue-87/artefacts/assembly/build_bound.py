@@ -14,12 +14,19 @@ WHAT A READING IS.  Three numbers and a verdict, printed under the same keys eve
     build read  : python X.Y.Z / numpy A.B.C        the interpreter and the dependency that ran THIS comparison
     build pinned: python X.Y.Z / numpy A.B.C        the build the committed record names
     departure   : N differing leaf/leaves, worst abs E, worst rel R, at <the leaf's own path>
-    verdict     : BITWISE | BUILD_BOUND | FAIL
+    verdict     : BITWISE | BUILD_BOUND | FAIL | NOT RUN
 
   * `BITWISE`     -- every leaf equal.  A property of the pinned build, not of the claim.
   * `BUILD_BOUND` -- leaves differ, every one within the DECLARED relative tolerance (`REL_TOL`, passed in).
                      The same instrument up to floating-point reduction order; the caller continues.
   * `FAIL`        -- a leaf departs beyond `REL_TOL`.  Exit 1; the message carries the departure and both builds.
+  * `NOT RUN`     -- the comparison could not be taken at all, because THIS interpreter carries no numpy.  Exit 2,
+                     the same code the journal's gates use, and **not** a verdict about the record: the number
+                     that is missing is a fact about the interpreter.  (Added after the R446 editorial re-check
+                     found the same defect one level up: an instrument that cannot run reported its own
+                     environment as a finding about the manuscript.  A traceback here would be read by a caller
+                     as `FAIL`, i.e. as a departure -- the worst possible confusion, since a departure is the one
+                     thing this file exists to detect.)
 
 A zero test is RELATIVE to the value's own scale, never absolute: `abs(d) <= REL_TOL * max(abs(a), abs(b))` --
 an absolute threshold on a quantity that is analytically zero reports a defect where there is none (and, in the
@@ -29,10 +36,14 @@ departure and is reported as such -- it is not a rounding difference.
 Usage:
   python3 build_bound.py json <committed.json> <regenerated.json> [--rel-tol 1e-8] [--label NAME]
   python3 build_bound.py png  <regenerated.png> --version-line "<matplotlib X>"  [--committed <committed.png>]
+
+Exit: 0 = compared with every departure within tolerance | 1 = a departure beyond tolerance, or a structural
+      one | 2 = NOT RUN (nothing was compared) | 3 = usage error.
 """
 import io
 import json
 import os
+import subprocess
 import sys
 
 REL_TOL_DEFAULT = 1e-8
@@ -53,8 +64,29 @@ def _flat(node, path=""):
 
 
 def build_line():
-    import numpy
+    """The build this reading is taken at -- printed even when the dependency is MISSING, because that is
+    exactly the case a reader needs named (a raise here would turn an environment fact into a traceback)."""
+    try:
+        import numpy
+    except ImportError:
+        return "python %s / numpy ABSENT" % sys.version.split()[0]
     return "python %s / numpy %s" % (sys.version.split()[0], numpy.__version__)
+
+
+def numpy_at(interp):
+    """The numpy version an interpreter carries, or None.  Declared once, so callers can ask the question."""
+    r = subprocess.run([interp, "-c", "import numpy;print(numpy.__version__)"],
+                       capture_output=True, text=True)
+    return r.stdout.strip() if r.returncode == 0 else None
+
+
+def not_run(reason, label=None):
+    """Nothing was compared.  Exit 2 (the journal's own NOT RUN code) and say WHICH build failed to run."""
+    print("  %sbuild read  : %s" % ("%-10s " % label if label else "", build_line()))
+    print("  build pinned: %s   (the build the committed record names)" % PINNED)
+    print("  verdict     : NOT RUN -- %s.  NOTHING WAS COMPARED: this is a reading about the interpreter, not "
+          "about the record, and it is not a pass." % reason)
+    return 2
 
 
 def cmp_json(a_path, b_path, rel_tol, label=None):
@@ -116,6 +148,15 @@ def main(argv):
             i = rest.index("--label")
             label = rest[i + 1]
             del rest[i:i + 2]
+        # The reading is taken at the interpreter that runs this file (this process), so a json comparison --
+        # which reads numeric leaves -- cannot be taken at all where numpy is absent: say that, print the build,
+        # and return 2.  Never let a missing dependency surface as a traceback, which a caller reads as FAIL,
+        # i.e. as a departure -- the one thing this file exists to detect.
+        if numpy_at(sys.executable) is None:
+            others = ", ".join("%s -> numpy %s" % (c, numpy_at(c) or "ABSENT")
+                               for c in ("/usr/bin/python3",
+                                         os.path.expanduser("~/.asdf/installs/python/3.14.6/bin/python3")))
+            return not_run("%s carries no numpy (checked: %s)" % (sys.executable, others), label)
         return cmp_json(rest[0], rest[1], rel_tol, label)
     if kind == "png":
         # A PNG is a RENDERING: its bytes are a property of matplotlib + freetype + libpng, not of the claim.
