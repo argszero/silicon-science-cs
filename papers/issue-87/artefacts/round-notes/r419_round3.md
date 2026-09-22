@@ -62,7 +62,7 @@ old 1/5, a foreign-build reader stopped before the `BUILD_BOUND` line existed at
 
 ## 4. The verifier, and what it caught in itself
 
-`artefacts/assembly/verify_revision_round3.py` reads each property of the repair at its object (10 checks, all
+`artefacts/assembly/verify_revision_round3.py` — **renamed in the follow-up round to `verify_revision_round2_followup.py`**, because the journal's clock counts editor decisions and this turn is the round-2 decision's follow-up, not a round — reads each property of the repair at its object (10 checks, all
 green) and is its own battery (9 plants, 9 caught). Its four self-caught defects are worth recording, because
 every one is a rule this project has already written down and broken again:
 
