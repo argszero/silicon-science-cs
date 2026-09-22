@@ -59,24 +59,46 @@ the last one. They are not the same kind of step, so they are not treated alike:
 | 4/5 | `manuscript.md`, `artefacts/assembly/assembly-report.txt` | **EXACT**: `cmp` against the committed copy | exact, and that is the stop condition |
 | 5/5 | nothing (the journal's gates) | **EXACT** verdicts (`GATE: PASS`) over the built manuscript | exact |
 
-The declared relative tolerance for the numbers is `1e-8`: three orders above the `1.610e-16` a foreign build
-returns here and nine orders below the panel's own signal. Only a departure beyond it fails the run.
+Where that leaves the tolerance, measured against named numbers rather than described: `1e-8` is **2.7 orders
+above** the worst departure the controls return on a foreign build (`2.192e-11`, the R446 re-check), **7.8 orders
+above** the digest's (`1.610e-16`), and **5.3 orders below** the smallest panel separation the manuscript claims
+(`2.153e-03`, `panel.q6_matched_vs_rbf.value.median_abs_sep[8]`). Only a departure beyond `1e-8` fails the run.
+
+Both margins above were once stated as one sentence about one number — *"three orders above the `1.610e-16`"* —
+which does not follow from it (`1e-8 / 1.610e-16` is ~7.8 orders), and whose two carriers (`reproduce.sh` and
+this README) named two different numbers for the same claim. A margin is arithmetic on a named number, so it is
+now written as such, in both carriers.
+
+**A third state on step 2/5: `NOT RUN`.** The comparison reads numeric leaves, so it cannot be taken at an
+interpreter without numpy at all. `build_bound.py` then prints the build line, the words `NOT RUN` and the
+interpreters it checked, and exits **2** — the journal's own code for *not run* (`numgate`, `linkgate` use it for
+the same reason) — and `reproduce.sh` stops with *"the digest comparison could NOT BE TAKEN at this
+interpreter"* rather than reporting a departure that was never measured. Before this round a missing dependency
+surfaced as a traceback, which a caller reads as `FAIL` — i.e. as the one thing the comparator exists to detect.
+Measured here at `python3.12.12` (no numpy): `build read: python 3.12.12 / numpy ABSENT`, `verdict: NOT RUN`,
+exit **2**.
 
 **Measured on a foreign build, not asserted.** The same package, same head, run with
 `PY=~/.asdf/installs/python/3.14.6/bin/python3` (Python 3.14.6 / numpy 2.5.1) while the pinned build is Python
 3.9.6 / numpy 2.0.2: step 1/5 reports `build read: python 3.14.6 / numpy 2.5.1` with both controls `BITWISE`;
 step 2/5 reports **`BUILD_BOUND`** — 1 leaf differs, worst absolute `1.110e-16`, worst relative `1.610e-16` at
-`quantities.panel.q8_over_q6_ratio_of_the_mid_band.value.mean` — and **the run continues**; step 3/5 prints
-`NOT RUN` (no matplotlib on that interpreter — `NOT RUN` is not a pass, and the step says so); steps 4/5 and 5/5
+`quantities.panel.q8_over_q6_ratio_of_the_mid_band.value.mean` — and **the run continues**; steps 4/5 and 5/5
 are `byte-identical` and `GATE: PASS`; the run exits **0** with `REPRODUCE: ALL GREEN`. This is the reading the
 previous revision could not deliver: with the digest compared by `cmp` in step 1/5, a foreign-build reader
 stopped before the `BUILD_BOUND` line existed at all.
 
-The step-3 `RENDER_BOUND` path is exercised in the same run on the pinned build (`BITWISE`, matplotlib 3.9.4)
-and its other branch is reachable — `build_bound.py png figures/fig1_advantage_map.png --committed
-figures/fig2_power_arm.png` prints `RENDER_BOUND` and still exits 0. No foreign renderer is installed here, so
-the claim that a foreign matplotlib yields `RENDER_BOUND` is left as what it is: an expectation from the
-renderer's own record, not a measurement.
+**Which packages that interpreter carries is a property of the ENVIRONMENT, not of the version** — and this
+paragraph used to get that wrong. On the environment this package was authored in, that same interpreter has
+`numpy 2.5.1` and **no matplotlib**, so step 3/5 printed `NOT RUN`; the sentence here generalised that absence to
+"the interpreter", which is false: the editorial re-check at `0d33c51`, running the same path on its own host,
+measured **matplotlib 3.11.1** there and step 3/5 printing **`RENDER_BOUND` for all three figures, exit 0**. Both
+readings are true of their own environment, and the second is the stronger evidence for this step's own claim
+(a foreign renderer is reported, not stopped on). Recorded here as measured by that re-check, at that head:
+`RENDER_BOUND`, renderer 3.11.1 against the pinned 3.9.4, exit **0**.
+
+The `RENDER_BOUND` path is also reachable on the authoring build (`BITWISE` there, matplotlib 3.9.4, since the
+renderer matches), and its other branch can be exercised directly: `build_bound.py png
+figures/fig1_advantage_map.png --committed figures/fig2_power_arm.png` prints `RENDER_BOUND` and still exits 0.
 
 The script prints the **head it was run at** (a run is evidence about the version it ran on and no other), keeps
 its comparison copies in a scratch directory it removes on exit, and restores every reported artefact before the

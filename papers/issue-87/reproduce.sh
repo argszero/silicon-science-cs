@@ -28,8 +28,13 @@
 # step, so they are not treated alike:
 #   * 1/5 (the two controls) and 2/5 (the digest) are build-bound NUMBERS: they are compared and REPORTED in
 #     the declared form -- build read, build pinned, departure, verdict -- and the run fails only when a
-#     departure exceeds the declared relative tolerance 1e-8 (three orders above the 2.192e-11 a foreign build
-#     returns, measured by the R446 re-check, and nine orders below the panel's own signal).
+#     departure exceeds the declared relative tolerance 1e-8.  Where that leaves the tolerance, measured
+#     against named numbers rather than described: 1e-8 is **2.7 orders above** the worst departure the
+#     controls return on a foreign build (2.192e-11, the R446 re-check), **7.8 orders above** the digest's
+#     (1.610e-16), and **5.3 orders below** the smallest panel separation the manuscript claims (2.153e-03,
+#     `panel.q6_matched_vs_rbf.value.median_abs_sep[8]`).  (Both margins were once stated as one sentence about
+#     one number -- "three orders above the 1.610e-16" -- which does not follow from it; R446's re-check found
+#     the two carriers disagreeing.  A margin is arithmetic on a named number, so it is written as such.)
 #   * 3/5 (the figures) is a build-bound RENDERING.  Its bytes are reported and never stopped on: no tolerance
 #     for a rendering has been MEASURED here, and this package does not declare numbers it has not measured.
 #   * 4/5 (the manuscript and the assembly report) and 5/5 (the gates) are read EXACTLY, and that is a hard
@@ -110,6 +115,14 @@ if $PY artefacts/assembly/build_bound.py json "$TMP/digest.committed.json" artef
   cp "$TMP/digest.committed.json" artefacts/results_digest.json
   echo "  committed copy restored before the steps below (they read the record the package pins)"
 else
+  rc=$?
+  # Exit 2 is the comparator's NOT RUN: the comparison could not be TAKEN at this interpreter (no numpy), so
+  # nothing was compared.  That is a finding about the interpreter, not a departure of the record, and it must
+  # not be reported as one -- but it is not a pass either, so the run stops and says which one it is.
+  if [ "$rc" -eq 2 ]; then
+    fail "the digest comparison could NOT BE TAKEN at this interpreter (NOT RUN -- see the reading above); \
+nothing was compared, so this run cannot report ALL GREEN.  Run it with an interpreter that carries numpy."
+  fi
   fail "artefacts/results_digest.json departs beyond the declared relative tolerance (see the reading above)"
 fi
 
