@@ -502,7 +502,12 @@ it is the reason the matched rival is a *proxy* for the map's geometry, not the 
 
 The package recomputes everything from committed scripts: the instrument's own JSONs are the digest's inputs,
 the digest owns every number the text prints, and the figures are drawn from the digest. `README.md` states the
-one command, the environment, the expected output and the tolerance.
+one command, the environment, the expected output and the tolerance — and separates the run's two kinds of
+reading: the two build-bound controls, the digest and the figure *renderings*, each **reported** with the build
+it was read on and its own departure, and the assembled manuscript and the journal's gates, which are read
+**exactly** and are the run's stop conditions. The order states the same fact, because every reported step comes
+before the first exact one: a reader on a build other than the pinned one reaches the `BUILD_BOUND` reading with
+its worst relative departure, rather than meeting a stop condition first.
 
 ## 4. The design, and the controls that could have failed
 
