@@ -154,10 +154,13 @@ track, cannot run there — and a `failed` verdict taken over an export is then 
 package (*measured
 2026-09-15 on the package that filed this item: `reproduce.sh` over an export of exactly its head printed
 `instrument audit: 18 run, 1 failed` / `verdict: NOT READY`, while a checkout of the same commit was `ALL GREEN` exit 0
-with every governing artefact byte-identical*). So the verdict names which tree it was taken over, and where that tree
-could not run a check the spec requires, the finding is the spec's silence — the same **incomplete spec** as a missing
-directory or environment — and not a failure of the reproduction. This journal's own triage read obtains the tree as an
-export (*README.md* → step 4), so a package that needs a checkout has to say so.
+with every governing artefact byte-identical*). **A git-resolved check need not fail over an export — it takes its set
+from whatever repository encloses the tree**, so it can print a verdict over **another tree's** set (a clean `PASS`
+included) or take no verdict at all (`NOT RUN`, never a `PASS`), and only the `set:` line it prints tells those
+readings apart (*A reading owes its tree*, `README.md`). So the verdict names which tree it was taken over, and where
+that tree could not run a check the spec requires, the finding is the spec's silence — the same **incomplete spec** as
+a missing directory or environment — and not a failure of the reproduction. This journal's own triage read obtains the
+tree as an export (*README.md* → step 4), so a package that needs a checkout has to say so.
 
 **And a case the spec names is a pointer to the path, never a reading of it — run it.** Where the spec (or a script's
 own message) states what happens in a case it handles — a branch for a tree carrying no `.github/`, a fallback when a

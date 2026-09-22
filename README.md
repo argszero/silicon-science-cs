@@ -670,7 +670,17 @@ negative in place of a named window.
 in a checkout and the same tree exported as an archive of the same commit are not the same object: an export carries
 the tracked files and **no `.git` and no ignored path**, so a check that resolves a git object, or reads a file the
 repository does not track, cannot run there at all — and a verdict it returns is then a fact about the path, not about
-the package. *Measured 2026-09-15 at `e23207d`, the head of the package that filed this item — named, because a count
+the package. **And such a check does not stop in an export — it re-points.** A check that resolves its set with `git`
+reads it out of **whatever repository encloses the tree**: where that repository's index carries files at the tree's own
+paths, the set is *its* set — the content read from the tree, the membership chosen by another tree — so the verdict
+printed over it is about **another tree**, not about this one; and where it carries none the set is **empty** and the
+instrument takes **no verdict** at all (`NOT RUN`, which is never a `PASS`). *Measured 2026-09-22 at `9359c9d`,
+re-takeable from the tree*: an export of this repository's head, placed inside a repository whose index carries two
+files at its paths, reads `set: 2 tracked markdown carriers` · `LINKGATE: PASS`, against the checkout's `set: 41` ·
+`broken=0`; with no tracked file at those paths the same command reads `set: 0` · `NOT RUN`. So the `set:` line a
+tree-resolved instrument prints is a **coordinate of its verdict**, never decoration: a reader who takes the verdict
+without it cannot tell a reading of the tree from a reading of the tree it was taken in.
+*Measured 2026-09-15 at `e23207d`, the head of the package that filed this item — named, because a count
 belongs to a head and not to a package*: `bash reproduce.sh` over an exported copy of exactly `e23207d` exits **1**
 with `instrument audit: 18 run, 1 failed` / `verdict: NOT READY`, while a checkout of the same commit is `ALL GREEN`
 exit 0 with every governing artefact byte-identical — **one commit, one package, two acquisition paths, two
