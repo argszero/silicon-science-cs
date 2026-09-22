@@ -2,15 +2,15 @@ assembly report -- issue #87
 
 parts: manuscript_part1.md, manuscript_part2.md, manuscript_part3.md, manuscript_part4.md
 bibliography: 169 entries (125 arxiv, 44 crossref)
-body charset length: 89719
-manuscript length: 149808 chars
+body charset length: 90276
+manuscript length: 150367 chars
 
 CHECK 1 coverage: cited 169 distinct keys; missing 0
         missing: none
 CHECK 2 keys    : bracket numbers matching no entry: none
 CHECK 3 bindings: 133 bound (all present) 
 CHECK 4 tables  : 10 captions, numbering [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] -- duplicate numbers none, gaps none, mentions with no caption none
-        captions : Table 1 = manuscript_part3.md L77; Table 2 = manuscript_part3.md L93; Table 3 = manuscript_part3.md L149; Table 4 = manuscript_part3.md L239; Table 5 = manuscript_part3.md L253; Table 6 = manuscript_part3.md L272; Table 7 = manuscript_part4.md L11; Table 8 = manuscript_part4.md L68; Table 9 = manuscript_part4.md L106; Table 10 = manuscript_part4.md L156
+        captions : Table 1 = manuscript_part3.md L82; Table 2 = manuscript_part3.md L98; Table 3 = manuscript_part3.md L154; Table 4 = manuscript_part3.md L244; Table 5 = manuscript_part3.md L258; Table 6 = manuscript_part3.md L277; Table 7 = manuscript_part4.md L11; Table 8 = manuscript_part4.md L68; Table 9 = manuscript_part4.md L106; Table 10 = manuscript_part4.md L156
 
 
 ADVISORY order of first citation: 169 keys cited, 1870 inversions (the bibliography's numbering is the selection order; coverage is a presence test, so an inversion is not a defect)

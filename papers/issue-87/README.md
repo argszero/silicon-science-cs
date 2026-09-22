@@ -8,13 +8,13 @@ Submission package for the research registration
 
 | path | what it is |
 |------|-----------|
-| `manuscript.md` | the paper: 4 authored parts + the rendered bibliography (169 entries, 1294 lines) |
+| `manuscript.md` | the paper: 4 authored parts + the rendered bibliography (169 entries) |
 | `manuscript_part1.md` … `manuscript_part4.md` | the authored parts, **beside the manuscript**: a part that embeds a figure writes `figures/<file>.png`, and a markdown link resolves at the linking file's own directory — so a part stored one level down would carry a link that resolves in the assembled product and is broken in the file that carries it (the journal's gate measured exactly that: `linkgate.py --check` → `broken=3`, one per figure) |
 | `figures/` | the three figures the manuscript embeds, and `make_figures.py`, which draws them from the digest alone |
 | `reproduce.sh` | the one-command reproduction (below) |
 | `reference-check.md` | the citation-authenticity report: one line per entry, its verification method and the record found |
 | `references.json` | the bibliography as data (each entry's key, authors, year, title, venue, URL, stated difference, verification method) |
-| `artefacts/results_digest.py` / `.json` | **the owner of every number the manuscript prints**: 55 quantities, each read out of an instrument's own committed record, with the file and field it was read from |
+| `artefacts/results_digest.py` / `.json` | **the owner of every number the manuscript prints**: 76 quantities, each read out of an instrument's own committed record, with the file and field it was read from |
 | `artefacts/assembly/` | `manuscript_assembly.py`, which builds `manuscript.md` from the parts and checks it (coverage, stray citation keys, 133 numeric bindings, one numbering for the tables), and the report it writes |
 | `artefacts/instruments/` | the instruments and their result records: `smoke_v0.py` … `smoke_v16.py`, their `*_results.json`, and the run logs |
 | `artefacts/refs/` | the bibliography's limb: the harvest pools, the selection (which record carries which claim), the builder, the verifier, the renderer |
@@ -31,26 +31,57 @@ bash reproduce.sh
 
 ```
 REPRODUCE: ALL GREEN
-  manifest of what was compared:
-    artefacts/results_digest.json          76 quantities read out of the instruments' own records
-    figures/fig1_advantage_map.png         the advantage map (Fig. 1)
-    figures/fig2_power_arm.png             the power arm (Fig. 2)
-    figures/fig3_metric_structure.png      the metric's structure (Fig. 3)
-    manuscript.md                          parts + the rendered bibliography
-    artefacts/assembly/assembly-report.txt coverage 169/169, 0 stray keys, 133 bindings
-    refgate                                entries 169, 0 not separated, coverage 100.0%, GATE: PASS
-    the two build-bound controls           step 4/5: verdict + build read + build pinned + worst
-                                           relative departure, with both --selftests
+  manifest of what was compared, and how each step was read:
+    1/5 the two build-bound controls         REPORTED -- verdict + build read + build pinned + worst
+                                             relative departure, with both --selftests
+    2/5 artefacts/results_digest.json        REPORTED -- 76 quantities read out, leaf by leaf against the committed copy
+                                             (BITWISE on the pinned build; BUILD_BOUND reported within 1e-8)
+    3/5 figures/fig{1,2,3}*.png              RENDERED -- bytes reported (BITWISE | RENDER_BOUND + renderer)
+    4/5 manuscript.md + assembly report       EXACT -- coverage 169/169, 0 stray keys, 133 bindings
+    5/5 refgate over the built manuscript     EXACT -- entries 169, 0 not separated, coverage 100.0%, GATE: PASS
 ```
 
-**Tolerance: exact — byte-identical.** Every artefact the script writes is compared with `cmp` against the
-committed copy, and a difference is a failure rather than a drift. The script prints the **head it was run at**
-(a run is evidence about the version it ran on and no other), keeps its comparison copies in a scratch directory
-it removes on exit, and documents the one thing an exact comparison owes a reader: the digest, the manuscript and
-the assembly report are written **in place**, so a *failed* comparison leaves the regenerated file in the tree —
-the committed copy is what the run is measured against, and `git checkout -- <file>` puts the head back. No tolerance is needed for the numbers
-themselves: the study is exact statevector simulation with fixed seeds — no sampling, no noise model, no clock,
-no network, no GPU.
+The five steps are numbered on **one** basis and the build-bound readings come **first**, which is a property of
+the reading rather than a layout choice: a reader on a build other than the pinned one must reach the step that
+tells them *what is happening* before any byte comparison can stop the run. The manifest closes by naming what
+each step's reading is (REPORTED / RENDERED / EXACT), so "ALL GREEN" is read together with how it was taken.
+
+## Which steps are read against the pinned build
+
+A tolerance names the build it is read against, and this run has **three** build-bound steps — not one, and not
+the last one. They are not the same kind of step, so they are not treated alike:
+
+| step | what it writes | the reading | on a build other than the pinned one |
+|------|----------------|-------------|--------------------------------------|
+| 1/5 | nothing (two controls) | **REPORTED**: build read, build pinned, cells, worst relative departure, verdict per control, plus both `--selftest`s | `BITWISE` or `BUILD_BOUND`, either way the run continues |
+| 2/5 | `artefacts/results_digest.json` | **REPORTED**, leaf by leaf: departure count, worst absolute and worst relative departure at the leaf's own path, verdict | `BUILD_BOUND` when every differing leaf is within `1e-8`, **and the run continues**; the committed copy is then restored, because a reported departure must not become the next step's input |
+| 3/5 | `figures/*.png` | **RENDERED**: the bytes, against the saved committed copy, with the renderer named | `RENDER_BOUND` — reported and never stopped on: **no tolerance for a rendering has been measured here**, and this package does not declare numbers it has not measured. What the figures carry is the digest, held by 2/5 |
+| 4/5 | `manuscript.md`, `artefacts/assembly/assembly-report.txt` | **EXACT**: `cmp` against the committed copy | exact, and that is the stop condition |
+| 5/5 | nothing (the journal's gates) | **EXACT** verdicts (`GATE: PASS`) over the built manuscript | exact |
+
+The declared relative tolerance for the numbers is `1e-8`: three orders above the `1.610e-16` a foreign build
+returns here and nine orders below the panel's own signal. Only a departure beyond it fails the run.
+
+**Measured on a foreign build, not asserted.** The same package, same head, run with
+`PY=~/.asdf/installs/python/3.14.6/bin/python3` (Python 3.14.6 / numpy 2.5.1) while the pinned build is Python
+3.9.6 / numpy 2.0.2: step 1/5 reports `build read: python 3.14.6 / numpy 2.5.1` with both controls `BITWISE`;
+step 2/5 reports **`BUILD_BOUND`** — 1 leaf differs, worst absolute `1.110e-16`, worst relative `1.610e-16` at
+`quantities.panel.q8_over_q6_ratio_of_the_mid_band.value.mean` — and **the run continues**; step 3/5 prints
+`NOT RUN` (no matplotlib on that interpreter — `NOT RUN` is not a pass, and the step says so); steps 4/5 and 5/5
+are `byte-identical` and `GATE: PASS`; the run exits **0** with `REPRODUCE: ALL GREEN`. This is the reading the
+previous revision could not deliver: with the digest compared by `cmp` in step 1/5, a foreign-build reader
+stopped before the `BUILD_BOUND` line existed at all.
+
+The step-3 `RENDER_BOUND` path is exercised in the same run on the pinned build (`BITWISE`, matplotlib 3.9.4)
+and its other branch is reachable — `build_bound.py png figures/fig1_advantage_map.png --committed
+figures/fig2_power_arm.png` prints `RENDER_BOUND` and still exits 0. No foreign renderer is installed here, so
+the claim that a foreign matplotlib yields `RENDER_BOUND` is left as what it is: an expectation from the
+renderer's own record, not a measurement.
+
+The script prints the **head it was run at** (a run is evidence about the version it ran on and no other), keeps
+its comparison copies in a scratch directory it removes on exit, and restores every reported artefact before the
+next step, so a run leaves the tree as it found it. No tolerance is needed for the numbers themselves: the study
+is exact statevector simulation with fixed seeds — no sampling, no noise model, no clock, no network, no GPU.
 
 **Tree: a checkout of this branch, not an export of its head.** Step 5 runs the journal's gates from the
 repository root, and both of them resolve their **carrier set** off the tree with `git ls-files`, so the tree
@@ -62,10 +93,10 @@ measured here: `linkgate.py` prints `set: 0 tracked markdown carriers` and **`NO
 a verdict is about a set and no set was read — and `numgate.py --selftest` prints `selftest: 16/17 cases ok`,
 the missing case being `the_carrier_set_is_read_off_links`, which needs the same repository. **Neither is a
 finding about this package**, and neither is a claim this specification needs: every input the recompute path
-reads is committed (`git ls-files` reaches all of it), no step resolves a `.git` object, and steps 1–3 (the
-digest, the figures, the assembled manuscript) run as written in **both** tree forms — step 5's gate readings
-are the part that needs the checkout. `reproduce.sh` prints the head it ran at, and in a tree that is not a
-work tree it prints `not a git work tree` on that line instead of failing.
+reads is committed (`git ls-files` reaches all of it), no step resolves a `.git` object, and steps 1–4 (the two
+controls, the digest, the figures, the assembled manuscript) run as written in **both** tree forms — step 5's
+gate readings are the part that needs the checkout. `reproduce.sh` prints the head it ran at, and in a tree that
+is not a work tree it prints `not a git work tree` on that line instead of failing.
 
 ## The build the tolerance is read against
 
@@ -159,6 +190,30 @@ The digest is itself checked the same way in the other direction: every entry na
 was read from (`{ "value": …, "from": "smoke_v16_results.json", "path": "cells[…]" }`), and a field that is
 absent is a hard error rather than a default.
 
+**The counts have one owner, and every carrier is read against it.** `artefacts/assembly/counts_check.py` takes
+the counts from the assembly report this run just rebuilt (and the digest's own `n_quantities`) and reads each
+carrier — this README, `reproduce.sh`, the manuscript — against them. Two properties of that check are stated
+because the previous revision lacked both:
+
+- **Its rows are two-sided.** Each declared phrasing says what it *expects* of its carrier: a **required** row
+  whose carrier stops stating the count is a failure, not an absence to be printed over. (The first version let a
+  row that matched nothing pass silently; the R419 repair of `reproduce.sh` deleted that carrier's phrase and the
+  checker went on printing `PASS`. A count can be **lost** as well as contradicted, and a loss left no trace.)
+  One row is declared **absent by design** with its reason written beside it: the manuscript states no count of
+  its own apparatus — a count added to the paper to feed this checker would be a claim in service of the
+  apparatus — and if it ever starts stating one, the statement is read against the owner like any other.
+- **Its reach is printed and its row count is not its hit count.** The report prints every declared phrasing,
+  its expectation and what it found, then `rows: 10 declared (9 required, 1 absent-by-design) | firing: 9`.
+- **It has a battery, run by `reproduce.sh`: `counts_check.py --selftest` → 9 cases, 9 caught**, on scratch
+  copies of the package — a contradicted count, a count **removed** from a carrier, a re-worded count, a changed
+  header, a changed owner, an absent carrier, a stale copy in a phrasing the list had missed, and the
+  absent-by-design row starting to state a wrong count. Every case must move the exit code, and the unmutated
+  copy must exit 0: a checker is believed once it has been made to fail on purpose.
+
+Two stale copies this round's reading found in this README — the digest described as 55 quantities (the owner
+prints 76), and a manuscript line count that had drifted — are corrected above, and the second phrasing was added
+to the checker's list so the copy no one edits is not the copy no check can see.
+
 ## Reference pipeline
 
 `reference-check.md` carries the authenticity report: for every entry, the method used (arXiv API by id, or
@@ -176,7 +231,8 @@ GATE: PASS
 ```
 
 `refgate.py --selftest` was run before that verdict was used (41/41 cases), as were `numgate.py` (17/17),
-`linkgate.py` (12/12) and `pointgate.py` (20/20).
+`linkgate.py` (12/12) and `pointgate.py` (`POINTGATE SELFTEST: PASS` — that gate prints a verdict rather than a
+case count, so no count is asserted here).
 
 ## Disclosure
 
