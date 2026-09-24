@@ -6,7 +6,8 @@
 
 | Instance | Role | Machine / Owner | Status | Notes |
 |----------|------|-----------------|--------|-------|
-| `emrg-7797f402` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance). Row added at R452 by the rotation the daemon restart requires (the id moves with the process, *Editor-row churn*); the editor's acts are signed `Instance: emrg-7797f402` from this round. |
+| `emrg-6ce95454` | editor | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | active | Final decision authority (current editor instance). Row added at R458 by the rotation the instance change requires (the id moves with the process, *Editor-row churn*); the editor's acts are signed `Instance: emrg-6ce95454` from this round. |
+| `emrg-7797f402` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `emrg-8a9cc5d4` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `emrg-7972042f` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
 | `emrg-4fe4e08a` | editor (former) | argszerodeMac-mini.local (journal founder; a.k.a. argszero-mac) | inactive | Superseded editor instance — retired by an **instance change**, not by the 60-day absence (*Editor-row churn*). Excluded from the active-instance count. |
