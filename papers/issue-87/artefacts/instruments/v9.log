@@ -1,0 +1,101 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+====================================================================================================
+ISSUE #87 -- R395: a PARTIALLY POOLED smooth null, audited on data the fit never saw
+====================================================================================================
+source integrity: {'recorded_sha256': '6c7f5c5556017fb275a0dd67c9c4d1980d5bef9ea4c2f84258640873a339c154', 'recomputed_sha256': '6c7f5c5556017fb275a0dd67c9c4d1980d5bef9ea4c2f84258640873a339c154', 'matches': True, 'what': 'sha256 of the reported JSON with its own sha field removed'}
+fresh null cell matches stored draws: {'0.1': True, '0.25': True, '0.5': True, '1': True, '2': True, '3': True}
+this round's cell runner agrees with v8's: {'0.1': True, '0.25': True, '0.5': True, '1': True, '2': True, '3': True}
+
+-- C1b WHY the fit is pooled: per-band 4-parameter MLE at this sample size ---------------
+   40 synthetic draws per band, truth eps=-0.60 delta=1.40:
+     per-band MLE  : eps |max|=59.39  delta mean 3.23 (sd 3.69)  sigma mean 0.84 (sd 1.24)
+     pooled shape  : {'eps': -0.0785, 'delta': 1.0136}
+
+-- C1 the pooled fit's own recovery control (distributional) ------------------------------
+   fitted_shape             {'eps': -0.077, 'delta': 1.0421}
+   n_fresh                  2000
+   pit_frac_below_005       0.018
+   pit_ks                   0.04756257715315529
+   pit_ks_p                 0.00022368495479443601
+   pit_mean                 0.5072483315931976
+   truth_shape              {'eps': -0.6, 'delta': 1.4}
+
+-- C5 pooled shapes + per-band locations/scales -------------------------------------------
+   shifted   eps=-0.0785 delta=1.0136  (from n=240 standardised draws)
+   unshifted eps=-0.1074 delta=0.9214  (from n=240 standardised draws)
+
+-- C2 analytic size, OUT OF SAMPLE, by instrument -----------------------------------------
+   normal   5/240 = 0.0208  Wilson95 [0.0089,0.0478]
+   perband  10/240 = 0.0417  Wilson95 [0.0228,0.0750]
+   pooled   8/240 = 0.0333  Wilson95 [0.0170,0.0644]
+
+-- C3 PIT uniformity, OUT OF SAMPLE (pooled instrument) -----------------------------------
+   n=240  KS=0.1903  p=0.0000  mean=0.5819  frac<0.05=0.0208  frac>0.95=0.0500
+
+-- C4 the detector FIRES on injected shifts -----------------------------------------------
+   shift 0.5 sigma -> 19/240 declared (0.079) Wilson95 [0.051,0.120]
+   shift 1.0 sigma -> 41/240 declared (0.171) Wilson95 [0.128,0.224]
+   shift 2.0 sigma -> 151/240 declared (0.629) Wilson95 [0.566,0.688]
+   shift 3.0 sigma -> 229/240 declared (0.954) Wilson95 [0.920,0.974]
+
+-- C6 the registered power arm: planted-alignment (handicap) ladder -----------------------
+   t=0.25 n=18  declared=16  leads=3  best_delta=-0.0959
+   t=0.5  n=18  declared=15  leads=2  best_delta=-0.0685
+   t=1    n=18  declared=16  leads=2  best_delta=-0.0750
+
+-- the real read ---------------------------------------------------------------------------
+   pooled     declared 28  (11 leads, 17 losses)
+   perband    declared 29  (10 leads, 19 losses)
+   normal     declared 29  (11 leads, 18 losses)
+   pooled_t5  declared 18  (6 leads, 12 losses)
+   for comparison -- R394 empirical band: 0 declared ; R393 zero-anchored: 28
+
+   DECLARED under the pooled instrument:
+     shifted|alpha=1    gamma=0.50 delta +0.3911  p=0.000000  q=0.000000  loss
+     shifted|alpha=1    gamma=1.00 delta +0.4289  p=0.000000  q=0.000000  loss
+     shifted|alpha=0    gamma=3.00 delta +0.3671  p=0.000000  q=0.000000  loss
+     shifted|alpha=-1   gamma=0.50 delta +0.4070  p=0.000000  q=0.000000  loss
+     shifted|alpha=-1   gamma=1.00 delta +0.4464  p=0.000000  q=0.000000  loss
+     unshifted|alpha=1  gamma=1.00 delta +0.3871  p=0.000000  q=0.000000  loss
+     unshifted|alpha=1  gamma=2.00 delta +0.4325  p=0.000000  q=0.000000  loss
+     unshifted|alpha=0  gamma=1.00 delta +0.4110  p=0.000000  q=0.000000  loss
+     unshifted|alpha=-1 gamma=1.00 delta +0.4029  p=0.000000  q=0.000000  loss
+     unshifted|alpha=-1 gamma=2.00 delta +0.4317  p=0.000000  q=0.000000  loss
+     shifted|alpha=0    gamma=2.00 delta -0.2754  p=0.000000  q=0.000000  lead
+     shifted|alpha=0    gamma=1.00 delta -0.1676  p=0.000000  q=0.000000  lead
+     shifted|alpha=-1   gamma=3.00 delta -0.0664  p=0.000000  q=0.000000  lead
+     shifted|alpha=1    gamma=3.00 delta -0.0528  p=0.000000  q=0.000000  lead
+     unshifted|alpha=-1 gamma=3.00 delta -0.0767  p=0.000000  q=0.000001  lead
+     unshifted|alpha=1  gamma=3.00 delta -0.0673  p=0.000003  q=0.000007  lead
+     unshifted|alpha=0  gamma=2.00 delta +0.0832  p=0.000197  q=0.000418  loss
+     shifted|alpha=-1   gamma=0.25 delta +0.0835  p=0.001527  q=0.003053  loss
+     shifted|alpha=0    gamma=0.50 delta -0.1192  p=0.003586  q=0.006794  lead
+     shifted|alpha=1    gamma=0.25 delta +0.0707  p=0.007901  q=0.014221  loss
+     shifted|alpha=-1   gamma=2.00 delta +0.0114  p=0.011821  q=0.020264  loss
+     shifted|alpha=1    gamma=2.00 delta +0.0116  p=0.012440  q=0.020356  loss
+     unshifted|alpha=0  gamma=3.00 delta +0.0746  p=0.013774  q=0.021559  loss
+     unshifted|alpha=1  gamma=0.50 delta -0.0069  p=0.014496  q=0.021744  lead
+     unshifted|alpha=-1 gamma=0.50 delta -0.0059  p=0.016139  q=0.023240  lead
+     unshifted|alpha=0  gamma=0.10 delta -0.0267  p=0.022261  q=0.030761  lead
+     unshifted|alpha=-1 gamma=0.25 delta -0.0308  p=0.023071  q=0.030761  lead
+     shifted|alpha=0    gamma=0.25 delta +0.0602  p=0.025141  q=0.032325  loss
+
+   instrument disagreements (pooled vs per-band vs normal): 4
+     unshifted|alpha=0  gamma=0.10 delta -0.0267  p_pooled=0.02226 q=0.03076 | p_perband=0.14037 | p_normal=0.09560  lead
+     unshifted|alpha=1  gamma=0.25 delta -0.0268  p_pooled=0.04200 q=0.05213 | p_perband=0.05251 | p_normal=0.03029  lead
+     unshifted|alpha=0  gamma=0.25 delta +0.0312  p_pooled=0.04388 q=0.05265 | p_perband=0.01304 | p_normal=0.05941  loss
+     unshifted|alpha=0  gamma=0.50 delta +0.0127  p_pooled=0.09671 q=0.11231 | p_perband=0.00001 | p_normal=0.00995  loss
+
+   report sha256 = dc56c90dc8203b66603c64e8255f9f5b5172c9986ac46d67056d8076dfa754a8
+   written to smoke_v9_results.json

@@ -1,0 +1,74 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:154: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:154: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:154: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:210: RuntimeWarning: divide by zero encountered in matmul
+  return Kte @ coef + m, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:210: RuntimeWarning: overflow encountered in matmul
+  return Kte @ coef + m, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:210: RuntimeWarning: invalid value encountered in matmul
+  return Kte @ coef + m, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:229: RuntimeWarning: divide by zero encountered in matmul
+  G = Ftr.T @ Ftr
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:229: RuntimeWarning: overflow encountered in matmul
+  G = Ftr.T @ Ftr
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:229: RuntimeWarning: invalid value encountered in matmul
+  G = Ftr.T @ Ftr
+Issue #87 R391 -- generator + rivals + first PB1 read
+  q=6 cycle (m=6 edges)  L=2  convention=shifted  noise=0.30 sigma  splits=40  numpy=2.0.2
+
+  CONTROLS
+   C1 max |cos_F(A,Q_int) - alpha| = 2.22e-16   (algebraic identity)
+   C2 A's support == edge set: alpha=1:False, alpha=0:False, alpha=-1:False
+   C3 oracle is the best predictor in every cell = False
+        VIOLATION alpha=1.00 gamma=0.00 rbf (0.0681 < oracle 0.1241)
+        VIOLATION alpha=1.00 gamma=0.10 quantum (0.0162 < oracle 0.1241)
+        VIOLATION alpha=1.00 gamma=0.10 matched (0.0260 < oracle 0.1241)
+        VIOLATION alpha=1.00 gamma=0.10 rbf (0.0681 < oracle 0.1241)
+        VIOLATION alpha=1.00 gamma=0.10 product (0.0770 < oracle 0.1241)
+   C4 null advantage <= aligned advantage = True  (null -0.0000 vs aligned 0.9443)
+   C5 gamma=0: max |K-1| = 4.44e-16, rank-1 = True
+   C6 report byte-identical on rebuild = True
+
+  FIRST READ (excess risk over the Bayes floor, in units of the target's variance;
+             delta = quantum - matched, so NEGATIVE means the quantum kernel leads)
+
+  alpha  gamma  spread  quantum            matched            rbf                randfeat           oracle   delta_q-m [95%% CI]        lead?
+    1.0   0.00   0.000    0.9284 [0.8657,0.9915]   0.9284 [0.8657,0.9915]  0.0681  0.4674   0.1241  -0.0000 [-0.0000,+0.0000]  tie
+    1.0   0.10   1.143    0.0162 [0.0016,0.0323]   0.0260 [0.0100,0.0436]  0.0681  0.4674   0.1241  -0.0098 [-0.0173,-0.0014]  YES
+    1.0   0.25   2.131    0.1052 [0.0676,0.1456]   0.1448 [0.1005,0.1957]  0.0681  0.4674   0.1241  -0.0397 [-0.0530,-0.0282]  YES
+    1.0   0.50   2.162    0.4297 [0.3646,0.4976]   0.8794 [0.8155,0.9431]  0.0681  0.4674   0.1241  -0.4497 [-0.4673,-0.4333]  YES
+    1.0   1.00   3.029    0.4711 [0.4090,0.5440]   0.9284 [0.8656,0.9915]  0.0681  0.4674   0.1241  -0.4573 [-0.4790,-0.4299]  YES
+    1.0   2.00   5.760    0.0633 [0.0336,0.0990]   0.9284 [0.8657,0.9915]  0.0681  0.4674   0.1241  -0.8651 [-0.9017,-0.8262]  YES
+    1.0   3.00   6.176   -0.0159 [-0.0331,0.0032]   0.9284 [0.8657,0.9915]  0.0681  0.4674   0.1241  -0.9443 [-0.9929,-0.8914]  YES
+    0.0   0.00   0.000    0.9711 [0.9326,1.0106]   0.9711 [0.9326,1.0106]  0.1304  0.9970   0.1241  -0.0000 [-0.0000,+0.0000]  tie
+    0.0   0.10   1.143    0.7369 [0.6906,0.7803]   0.7454 [0.6990,0.7917]  0.1304  0.9970   0.1241  -0.0084 [-0.0280,+0.0138]  tie
+    0.0   0.25   2.131    0.9021 [0.8488,0.9521]   0.9631 [0.9140,1.0130]  0.1304  0.9970   0.1241  -0.0610 [-0.0855,-0.0391]  YES
+    0.0   0.50   2.162    0.6517 [0.6135,0.6899]   0.9706 [0.9314,1.0096]  0.1304  0.9970   0.1241  -0.3189 [-0.3394,-0.2986]  YES
+    0.0   1.00   3.029    0.6327 [0.5954,0.6732]   0.9711 [0.9326,1.0106]  0.1304  0.9970   0.1241  -0.3384 [-0.3731,-0.3057]  YES
+    0.0   2.00   5.760    0.2549 [0.2296,0.2809]   0.9711 [0.9326,1.0106]  0.1304  0.9970   0.1241  -0.7162 [-0.7524,-0.6818]  YES
+    0.0   3.00   6.176    0.6651 [0.6164,0.7185]   0.9711 [0.9326,1.0106]  0.1304  0.9970   0.1241  -0.3060 [-0.3580,-0.2507]  YES
+   -1.0   0.00   0.000    0.9061 [0.8436,0.9655]   0.9061 [0.8436,0.9655]  0.0696  0.5159   0.1241  -0.0000 [-0.0000,+0.0000]  tie
+   -1.0   0.10   1.143    0.0225 [0.0087,0.0366]   0.0297 [0.0160,0.0448]  0.0696  0.5159   0.1241  -0.0072 [-0.0130,-0.0003]  YES
+   -1.0   0.25   2.131    0.1055 [0.0702,0.1434]   0.1495 [0.1070,0.1974]  0.0696  0.5159   0.1241  -0.0440 [-0.0566,-0.0326]  YES
+   -1.0   0.50   2.162    0.4169 [0.3522,0.4835]   0.8573 [0.7941,0.9175]  0.0696  0.5159   0.1241  -0.4405 [-0.4554,-0.4241]  YES
+   -1.0   1.00   3.029    0.4510 [0.3936,0.5116]   0.9061 [0.8436,0.9655]  0.0696  0.5159   0.1241  -0.4550 [-0.4791,-0.4301]  YES
+   -1.0   2.00   5.760    0.0595 [0.0299,0.0961]   0.9061 [0.8436,0.9655]  0.0696  0.5159   0.1241  -0.8466 [-0.8823,-0.8079]  YES
+   -1.0   3.00   6.176   -0.0192 [-0.0342,-0.0019]   0.9061 [0.8436,0.9655]  0.0696  0.5159   0.1241  -0.9253 [-0.9738,-0.8731]  YES
+
+  closed form read (this study's graph):  2g(0) ~ -7.8696*I + 18.39083*Q   (pi^2 = 9.86960)
+     max relative residual of that fit = 3.92e-01 ;  cos_F(W_cf, Q_int) = 0.6688
+
+  NULL CELL (A = 0, pure noise) -- quantum vs matched:
+     gamma= 0.00  quantum  -0.9767  matched  -0.9767  delta +0.0000
+     gamma= 0.10  quantum  -0.9017  matched  -0.9127  delta +0.0110
+     gamma= 0.25  quantum  -0.9089  matched  -0.9147  delta +0.0059
+     gamma= 0.50  quantum  -0.9533  matched  -0.9762  delta +0.0229
+     gamma= 1.00  quantum  -0.9301  matched  -0.9767  delta +0.0465
+     gamma= 2.00  quantum  -0.9264  matched  -0.9767  delta +0.0503
+     gamma= 3.00  quantum  -0.8933  matched  -0.9767  delta +0.0834
+
+  report sha256 = 9a6aa430328d8d7ba403eb42e078a059e4cc99669e0ba7ea0cc01457d2d739f3
+  written to smoke_v5_results.json

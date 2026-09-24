@@ -1,0 +1,665 @@
+{
+  "bandwidth_shifted": [
+    {
+      "K_range": [
+        0.9992206369435008,
+        0.9999885401275788
+      ],
+      "anisotropy_ratio": 1.2724462397642924,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -44.61785511525137,
+            36.76515583463212
+          ],
+          "max_abs_residual": 9.922006502679181
+        },
+        "I_and_D-A": {
+          "coef": [
+            102.44276822327718,
+            -36.76515583463212
+          ],
+          "max_abs_residual": 9.922006502679181
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 28.912456554012905,
+      "gamma": 0.02,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.00012878165625447718,
+      "linear_over_quadratic": 8.603825846202536e-07,
+      "max_relative_error_reconstructed_kernel": 4.755444416767489e-06,
+      "offdiag_off_edges_max_abs": 9.922006502679181,
+      "offdiag_on_edges_max_abs": 36.789546624502194,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9951085883901946,
+        0.9999300068548771
+      ],
+      "anisotropy_ratio": 1.272708790481667,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -44.5623992592579,
+            36.738210018475485
+          ],
+          "max_abs_residual": 9.999051000908056
+        },
+        "I_and_D-A": {
+          "coef": [
+            102.3904408146441,
+            -36.73821001847548
+          ],
+          "max_abs_residual": 9.999051000908056
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 28.914020777693093,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.0008048551664740027,
+      "linear_over_quadratic": 5.3801286489924195e-06,
+      "max_relative_error_reconstructed_kernel": 7.429239041708268e-05,
+      "offdiag_off_edges_max_abs": 9.999051000908056,
+      "offdiag_on_edges_max_abs": 36.79912841193956,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9559922965708808,
+        0.9994130989915031
+      ],
+      "anisotropy_ratio": 1.2725221241360347,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -44.33033621093233,
+            36.62882226936676
+          ],
+          "max_abs_residual": 10.2417882173235
+        },
+        "I_and_D-A": {
+          "coef": [
+            102.18495286653477,
+            -36.62882226936676
+          ],
+          "max_abs_residual": 10.2417882173235
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 28.92730832780121,
+      "gamma": 0.15,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.007240948730333897,
+      "linear_over_quadratic": 4.850938178118033e-05,
+      "max_relative_error_reconstructed_kernel": 0.0020003971374640316,
+      "offdiag_off_edges_max_abs": 10.2417882173235,
+      "offdiag_on_edges_max_abs": 36.810639838831605,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    }
+  ],
+  "bandwidth_unshifted": [
+    {
+      "K_range": [
+        0.9999724281116233,
+        0.999999110780759
+      ],
+      "anisotropy_ratio": 0.0037203776504592216,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            1.9942074207355474,
+            0.0029980372850806976
+          ],
+          "max_abs_residual": 0.008179507632729788
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0061995698758697,
+            -0.0029980372850805163
+          ],
+          "max_abs_residual": 0.008179507632729788
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.000203495305708,
+      "gamma": 0.02,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 2.5838045451063695e-05,
+      "linear_over_quadratic": 5.2735580363347165e-06,
+      "max_relative_error_reconstructed_kernel": 7.384202110477099e-07,
+      "offdiag_off_edges_max_abs": 0.00801224460081671,
+      "offdiag_on_edges_max_abs": 0.007441512380305772,
+      "offdiag_on_edges_sign": [
+        -1,
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.999823444881761,
+        0.9999943642490968
+      ],
+      "anisotropy_ratio": 0.009412021600202478,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            1.986873509790068,
+            0.007560283065025995
+          ],
+          "max_abs_residual": 0.02071395786015584
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0171146420501715,
+            -0.007560283065025904
+          ],
+          "max_abs_residual": 0.020713957860156285
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.0019940759201194,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.00016164835725621427,
+      "linear_over_quadratic": 3.296055194788619e-05,
+      "max_relative_error_reconstructed_kernel": 1.1683874210404933e-05,
+      "offdiag_off_edges_max_abs": 0.020476200667625108,
+      "offdiag_on_edges_max_abs": 0.018842811486037562,
+      "offdiag_on_edges_sign": [
+        -1,
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.998243422334134,
+        0.9999465077067051
+      ],
+      "anisotropy_ratio": 0.029157197092484367,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            1.9741691394940304,
+            0.0233338672955283
+          ],
+          "max_abs_residual": 0.06772488309951358
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0675046086761433,
+            -0.02333386729552821
+          ],
+          "max_abs_residual": 0.06772488309951358
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.0208368740850857,
+      "gamma": 0.15,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.0014601265014393132,
+      "linear_over_quadratic": 0.0002947354131638381,
+      "max_relative_error_reconstructed_kernel": 0.00032867339223599176,
+      "offdiag_off_edges_max_abs": 0.06772488309951358,
+      "offdiag_on_edges_max_abs": 0.05892193902945886,
+      "offdiag_on_edges_sign": [
+        -1,
+        1
+      ],
+      "q": 6
+    }
+  ],
+  "depth_rows": [
+    {
+      "K_range": [
+        0.9951085883901946,
+        0.9999300068548771
+      ],
+      "anisotropy_ratio": 1.272708790481667,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -44.5623992592579,
+            36.738210018475485
+          ],
+          "max_abs_residual": 9.999051000908056
+        },
+        "I_and_D-A": {
+          "coef": [
+            102.3904408146441,
+            -36.73821001847548
+          ],
+          "max_abs_residual": 9.999051000908056
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 28.914020777693093,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.0008048551664740027,
+      "linear_over_quadratic": 5.3801286489924195e-06,
+      "max_relative_error_reconstructed_kernel": 7.429239041708268e-05,
+      "offdiag_off_edges_max_abs": 9.999051000908056,
+      "offdiag_on_edges_max_abs": 36.79912841193956,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9906692925324709,
+        0.9999308041114932
+      ],
+      "anisotropy_ratio": 1.4239318708475408,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -76.78437994330267,
+            60.07891037325887
+          ],
+          "max_abs_residual": 26.133558373334463
+        },
+        "I_and_D-A": {
+          "coef": [
+            163.5312615497329,
+            -60.07891037325886
+          ],
+          "max_abs_residual": 26.133558373334463
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 43.3734408032151,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 2,
+      "linear_block_norm": 0.02883356193845251,
+      "linear_over_quadratic": 0.00011699640678962624,
+      "max_relative_error_reconstructed_kernel": 0.002111232349300185,
+      "offdiag_off_edges_max_abs": 26.133558373334463,
+      "offdiag_on_edges_max_abs": 61.76082470801713,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9874642913008691,
+        0.9998751086125962
+      ],
+      "anisotropy_ratio": 1.3710191987995126,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -112.0768353502046,
+            89.24416638989139
+          ],
+          "max_abs_residual": 27.796885498298508
+        },
+        "I_and_D-A": {
+          "coef": [
+            244.89983020936114,
+            -89.24416638989139
+          ],
+          "max_abs_residual": 27.796885498298508
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 66.41149742957822,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 3,
+      "linear_block_norm": 0.01431915677074898,
+      "linear_over_quadratic": 3.971386775487892e-05,
+      "max_relative_error_reconstructed_kernel": 0.00168386357541216,
+      "offdiag_off_edges_max_abs": 27.796885498298508,
+      "offdiag_on_edges_max_abs": 91.05143799697622,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    }
+  ],
+  "q": 6,
+  "rows": [
+    {
+      "K_range": [
+        0.996405801822691,
+        0.9999530548156643
+      ],
+      "anisotropy_ratio": 1.613848486862231,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -26.810908128463403,
+            29.754811714234133
+          ],
+          "max_abs_residual": 9.881229682655757
+        },
+        "I_and_D-A": {
+          "coef": [
+            59.46556880430418,
+            -22.0110744454264
+          ],
+          "max_abs_residual": 26.948687843071752
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 22.780444728593505,
+      "gamma": 0.05,
+      "graph": "path",
+      "graph_edges": 5,
+      "layers": 1,
+      "linear_block_norm": 0.000628767518617978,
+      "linear_over_quadratic": 5.079781176060277e-06,
+      "max_relative_error_reconstructed_kernel": 6.228950803345356e-05,
+      "offdiag_off_edges_max_abs": 9.881229682655757,
+      "offdiag_on_edges_max_abs": 36.76418625528931,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9998230000648084,
+        0.9999942771588904
+      ],
+      "anisotropy_ratio": 0.00869892443657838,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            1.994172987863589,
+            0.005157351449262748
+          ],
+          "max_abs_residual": 0.02141506392520623
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0123576079123042,
+            -0.0057534205799664164
+          ],
+          "max_abs_residual": 0.02141506392520623
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.0027685736123595,
+      "gamma": 0.05,
+      "graph": "path",
+      "graph_edges": 5,
+      "layers": 1,
+      "linear_block_norm": 0.0001279296873331904,
+      "linear_over_quadratic": 2.6075404829394257e-05,
+      "max_relative_error_reconstructed_kernel": 1.0376839045436411e-05,
+      "offdiag_off_edges_max_abs": 0.02141506392520623,
+      "offdiag_on_edges_max_abs": 0.01742193248580778,
+      "offdiag_on_edges_sign": [
+        -1,
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9951085883901946,
+        0.9999300068548771
+      ],
+      "anisotropy_ratio": 1.272708790481667,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -44.5623992592579,
+            36.738210018475485
+          ],
+          "max_abs_residual": 9.999051000908056
+        },
+        "I_and_D-A": {
+          "coef": [
+            102.3904408146441,
+            -36.73821001847548
+          ],
+          "max_abs_residual": 9.999051000908056
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 28.914020777693093,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.0008048551664740027,
+      "linear_over_quadratic": 5.3801286489924195e-06,
+      "max_relative_error_reconstructed_kernel": 7.429239041708268e-05,
+      "offdiag_off_edges_max_abs": 9.999051000908056,
+      "offdiag_on_edges_max_abs": 36.79912841193956,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.999823444881761,
+        0.9999943642490968
+      ],
+      "anisotropy_ratio": 0.009412021600202478,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            1.986873509790068,
+            0.007560283065025995
+          ],
+          "max_abs_residual": 0.02071395786015584
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0171146420501715,
+            -0.007560283065025904
+          ],
+          "max_abs_residual": 0.020713957860156285
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.0019940759201194,
+      "gamma": 0.05,
+      "graph": "cycle",
+      "graph_edges": 6,
+      "layers": 1,
+      "linear_block_norm": 0.00016164835725621427,
+      "linear_over_quadratic": 3.296055194788619e-05,
+      "max_relative_error_reconstructed_kernel": 1.1683874210404933e-05,
+      "offdiag_off_edges_max_abs": 0.020476200667625108,
+      "offdiag_on_edges_max_abs": 0.018842811486037562,
+      "offdiag_on_edges_sign": [
+        -1,
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9705135546792747,
+        0.9995955929480589
+      ],
+      "anisotropy_ratio": 0.9477596578435507,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            -532.2184191170672,
+            135.08499543089974
+          ],
+          "max_abs_residual": 0.6404030156091949
+        },
+        "I_and_D-A": {
+          "coef": [
+            818.6315351919309,
+            -135.0849954308997
+          ],
+          "max_abs_residual": 0.6404030156092233
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 143.2065580374318,
+      "gamma": 0.05,
+      "graph": "complete",
+      "graph_edges": 15,
+      "layers": 1,
+      "linear_block_norm": 0.0034287271366882145,
+      "linear_over_quadratic": 4.187328438630441e-06,
+      "max_relative_error_reconstructed_kernel": 0.00036730523052824223,
+      "offdiag_off_edges_max_abs": 0.0,
+      "offdiag_on_edges_max_abs": 135.72539844650893,
+      "offdiag_on_edges_sign": [
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9998132674313275,
+        0.999994146683812
+      ],
+      "anisotropy_ratio": 0.023498366915792844,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            1.935605541413351,
+            0.013533131899080869
+          ],
+          "max_abs_residual": 0.0537061520145079
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0709368604041587,
+            -0.01353313189908065
+          ],
+          "max_abs_residual": 0.053706152014508346
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.003271200908754,
+      "gamma": 0.05,
+      "graph": "complete",
+      "graph_edges": 15,
+      "layers": 1,
+      "linear_block_norm": 0.0003422044079820777,
+      "linear_over_quadratic": 6.97066449512161e-05,
+      "max_relative_error_reconstructed_kernel": 2.4823407264734702e-05,
+      "offdiag_off_edges_max_abs": 0.0,
+      "offdiag_on_edges_max_abs": 0.04707360171079486,
+      "offdiag_on_edges_sign": [
+        -1,
+        1
+      ],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9998264552615821,
+        0.9999944908330893
+      ],
+      "anisotropy_ratio": 0.0,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            2.0000082715731087,
+            0.0
+          ],
+          "max_abs_residual": 1.2072353700146893e-06
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0000082715731087,
+            0.0
+          ],
+          "max_abs_residual": 1.2072353700146893e-06
+        }
+      },
+      "convention": "shifted",
+      "diag_mean_abs": 2.000008271573108,
+      "gamma": 0.05,
+      "graph": "empty",
+      "graph_edges": 0,
+      "layers": 1,
+      "linear_block_norm": 2.8104060744699096e-09,
+      "linear_over_quadratic": 5.73669365131658e-10,
+      "max_relative_error_reconstructed_kernel": 2.1764248573459495e-10,
+      "offdiag_off_edges_max_abs": 1.2072353700146893e-06,
+      "offdiag_on_edges_max_abs": 0.0,
+      "offdiag_on_edges_sign": [],
+      "q": 6
+    },
+    {
+      "K_range": [
+        0.9998264552615821,
+        0.9999944908330893
+      ],
+      "anisotropy_ratio": 0.0,
+      "basis_fits": {
+        "I_and_D+A": {
+          "coef": [
+            2.0000082715731087,
+            0.0
+          ],
+          "max_abs_residual": 1.2072353700146893e-06
+        },
+        "I_and_D-A": {
+          "coef": [
+            2.0000082715731087,
+            0.0
+          ],
+          "max_abs_residual": 1.2072353700146893e-06
+        }
+      },
+      "convention": "unshifted",
+      "diag_mean_abs": 2.000008271573108,
+      "gamma": 0.05,
+      "graph": "empty",
+      "graph_edges": 0,
+      "layers": 1,
+      "linear_block_norm": 2.8104060744699096e-09,
+      "linear_over_quadratic": 5.73669365131658e-10,
+      "max_relative_error_reconstructed_kernel": 2.1764248573459495e-10,
+      "offdiag_off_edges_max_abs": 1.2072353700146893e-06,
+      "offdiag_on_edges_max_abs": 0.0,
+      "offdiag_on_edges_sign": [],
+      "q": 6
+    }
+  ],
+  "simulator_controls": {
+    "PSD_within_1e-10": true,
+    "max_abs_K(x,x)-1": 4.440892098500626e-16,
+    "max_abs_asymmetry": 0.0,
+    "min_eigenvalue": 8.90890055860889e-07
+  }
+}

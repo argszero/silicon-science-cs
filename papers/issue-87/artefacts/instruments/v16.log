@@ -1,0 +1,104 @@
+========================================================================================================
+ISSUE #87 -- R402: does the advantage map survive re-drawing the noise?  (k = 5 streams, q = 6 and 8)
+========================================================================================================
+-- harvest: R398's q = 6 stream 24 cells (all finite True); R401's q = 8 stream 24 cells
+   structure set (|delta_R398| >= 0.10): 8 cells -- ['shifted|0.5|a=+1', 'shifted|0.5|a=-1', 'shifted|1|a=+1', 'shifted|1|a=-1', 'unshifted|1|a=+1', 'unshifted|1|a=-1', 'unshifted|2|a=+1', 'unshifted|2|a=-1']
+   near-zero set (|delta_R398| <= 0.05): 10 cells
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+   stream 1/5 (SEED_T0 = 1100003): q = 6 map done (24 cells)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: divide by zero encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: overflow encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: invalid value encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: divide by zero encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: overflow encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: invalid value encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+   stream 1/5 (SEED_T0 = 1100003): q = 8 map done (24 cells)
+   stream 2/5 (SEED_T0 = 1210007): q = 6 map done (24 cells)
+   stream 2/5 (SEED_T0 = 1210007): q = 8 map done (24 cells)
+   stream 3/5 (SEED_T0 = 1320011): q = 6 map done (24 cells)
+   stream 3/5 (SEED_T0 = 1320011): q = 8 map done (24 cells)
+   stream 4/5 (SEED_T0 = 1430017): q = 6 map done (24 cells)
+   stream 4/5 (SEED_T0 = 1430017): q = 8 map done (24 cells)
+   stream 5/5 (SEED_T0 = 1540021): q = 6 map done (24 cells)
+   stream 5/5 (SEED_T0 = 1540021): q = 8 map done (24 cells)
+-- C1 determinism within stream 1: q = 6 True (max |diff| 0.000e+00) | q = 8 True (max |diff| 0.000e+00)
+-- C2 committed-stream reproduction (R401 stream, band shifted|1, q = 8): identical True (8 values, max |diff| 0.000e+00)
+-- C3 sign instrument fires: True (clean 5/5, one flip 4/5)
+-- C4 paired instrument fires: True (injected -0.10 recovered -0.100000000000; zero-effect resolvable False)
+-- C5a seed ranges disjoint: True (offset_max 51146 < stride 110000)
+
+-- B  the map across streams (per-cell cross-stream mean +/- sd, 5 streams) -------------------
+   cell                       ref6    mean6     sd6      u6 |    mean8      sd8      u8 | paired q-effect
+   shifted|0.1|a=+1        -0.0229  -0.0173  0.0056     5/5 |  +0.0100  +0.0014     5/5 | +0.0273 (sd 0.0051, 0/5 neg)  ~tie~
+   shifted|0.1|a=-1        -0.0181  -0.0169  0.0029     5/5 |  +0.0102  +0.0009     5/5 | +0.0271 (sd 0.0029, 0/5 neg)  ~tie~
+   shifted|0.25|a=+1       +0.0961  +0.0861  0.0069     5/5 |  +0.0663  +0.0013     5/5 | -0.0198 (sd 0.0077, 5/5 neg)
+   shifted|0.25|a=-1       +0.0933  +0.0847  0.0073     5/5 |  +0.0661  +0.0013     5/5 | -0.0185 (sd 0.0085, 5/5 neg)
+   shifted|0.5|a=+1        +0.4213  +0.4314  0.0104     5/5 |  +0.3366  +0.0061     5/5 | -0.0948 (sd 0.0132, 5/5 neg)  *STRUCT*
+   shifted|0.5|a=-1        +0.4303  +0.4264  0.0133     5/5 |  +0.3370  +0.0031     5/5 | -0.0894 (sd 0.0130, 5/5 neg)  *STRUCT*
+   shifted|1|a=+1          +0.4482  +0.4546  0.0120     5/5 |  +0.2791  +0.0013     5/5 | -0.1755 (sd 0.0111, 5/5 neg)  *STRUCT*
+   shifted|1|a=-1          +0.4691  +0.4550  0.0109     5/5 |  +0.2785  +0.0019     5/5 | -0.1765 (sd 0.0125, 5/5 neg)  *STRUCT*
+   shifted|2|a=+1          +0.0105  +0.0238  0.0075     5/5 |  +0.0316  +0.0013     5/5 | +0.0078 (sd 0.0071, 0/5 neg)  ~tie~
+   shifted|2|a=-1          +0.0155  +0.0271  0.0051     5/5 |  +0.0316  +0.0023     5/5 | +0.0045 (sd 0.0055, 1/5 neg)  ~tie~
+   shifted|3|a=+1          -0.0531  -0.0523  0.0050     5/5 |  -0.0143  +0.0010     5/5 | +0.0381 (sd 0.0052, 0/5 neg)
+   shifted|3|a=-1          -0.0518  -0.0552  0.0041     5/5 |  -0.0139  +0.0005     5/5 | +0.0413 (sd 0.0042, 0/5 neg)
+   unshifted|0.1|a=+1      -0.0048  -0.0076  0.0034     5/5 |  -0.0024  +0.0003     5/5 | +0.0052 (sd 0.0032, 0/5 neg)  ~tie~
+   unshifted|0.1|a=-1      -0.0090  -0.0087  0.0020     5/5 |  -0.0021  +0.0004     5/5 | +0.0066 (sd 0.0023, 0/5 neg)  ~tie~
+   unshifted|0.25|a=+1     -0.0234  -0.0266  0.0032     5/5 |  +0.0028  +0.0006     5/5 | +0.0295 (sd 0.0036, 0/5 neg)  ~tie~
+   unshifted|0.25|a=-1     -0.0350  -0.0283  0.0031     5/5 |  +0.0028  +0.0007     5/5 | +0.0310 (sd 0.0027, 0/5 neg)  ~tie~
+   unshifted|0.5|a=+1      -0.0025  -0.0038  0.0050     4/5 |  +0.0278  +0.0016     5/5 | +0.0316 (sd 0.0036, 0/5 neg)  ~tie~
+   unshifted|0.5|a=-1      +0.0010  -0.0044  0.0043     4/5 |  +0.0277  +0.0011     5/5 | +0.0321 (sd 0.0040, 0/5 neg)  ~tie~
+   unshifted|1|a=+1        +0.3983  +0.4158  0.0134     5/5 |  +0.3216  +0.0057     5/5 | -0.0942 (sd 0.0172, 5/5 neg)  *STRUCT*
+   unshifted|1|a=-1        +0.4098  +0.4110  0.0102     5/5 |  +0.3216  +0.0049     5/5 | -0.0894 (sd 0.0137, 5/5 neg)  *STRUCT*
+   unshifted|2|a=+1        +0.4192  +0.4402  0.0145     5/5 |  +0.2521  +0.0062     5/5 | -0.1881 (sd 0.0162, 5/5 neg)  *STRUCT*
+   unshifted|2|a=-1        +0.4233  +0.4294  0.0128     5/5 |  +0.2533  +0.0038     5/5 | -0.1762 (sd 0.0096, 5/5 neg)  *STRUCT*
+   unshifted|3|a=+1        -0.0700  -0.0726  0.0023     5/5 |  -0.0351  +0.0011     5/5 | +0.0375 (sd 0.0021, 0/5 neg)
+   unshifted|3|a=-1        -0.0603  -0.0632  0.0038     5/5 |  -0.0352  +0.0011     5/5 | +0.0280 (sd 0.0043, 0/5 neg)
+
+-- C  the paired q-effect on the attenuation cells (q = 8 minus q = 6, same stream) ------------
+   shifted|0.5|a=+1       mean -0.0948  sd 0.0132  negative in 5/5  resolvable True
+   shifted|0.5|a=-1       mean -0.0894  sd 0.0130  negative in 5/5  resolvable True
+   shifted|1|a=+1         mean -0.1755  sd 0.0111  negative in 5/5  resolvable True
+   shifted|1|a=-1         mean -0.1765  sd 0.0125  negative in 5/5  resolvable True
+   unshifted|2|a=+1       mean -0.1881  sd 0.0162  negative in 5/5  resolvable True
+   unshifted|2|a=-1       mean -0.1762  sd 0.0096  negative in 5/5  resolvable True
+
+-- D/Q4 the four main-claim cells, 95 %% t interval at q = 6 (df = 4) ---------------------------
+   shifted|0.5|a=+1       mean +0.4314  95% CI [+0.4184, +0.4444]  lower bound > 0.15: True
+   shifted|0.5|a=-1       mean +0.4264  95% CI [+0.4098, +0.4429]  lower bound > 0.15: True
+   shifted|1|a=+1         mean +0.4546  95% CI [+0.4396, +0.4695]  lower bound > 0.15: True
+   shifted|1|a=-1         mean +0.4550  95% CI [+0.4414, +0.4686]  lower bound > 0.15: True
+   unshifted|1|a=+1       mean +0.4158  95% CI [+0.3991, +0.4324]  lower bound > 0.15: True
+   unshifted|1|a=-1       mean +0.4110  95% CI [+0.3984, +0.4237]  lower bound > 0.15: True
+   unshifted|2|a=+1       mean +0.4402  95% CI [+0.4222, +0.4582]  lower bound > 0.15: True
+   unshifted|2|a=-1       mean +0.4294  95% CI [+0.4135, +0.4453]  lower bound > 0.15: True
+
+-- verdicts ------------------------------------------------------------------------------------
+   Q1 structure stream-stable : q=6 8/8 unanimous (max sd 0.0145) met=True | q=8 8/8 (max sd 0.0062) met=True
+   Q2 near-zero unresolved    : 2 of 10 near-zero cells flip sign across streams met=False -> ['unshifted|0.5|a=+1', 'unshifted|0.5|a=-1']
+   Q3 attenuation is a q effect: 6 of 6 attenuation readings negative in >= 4/5 streams and resolvable met=True
+   Q4 headline interval       : 8 of 8 main-claim readings have CI lower bound > 0.15 met=True
+   Q5 stream > draw           : 0 of 24 cells met=False (median sd ratio 0.28)
+   Q6 matched-vs-RBF separation: median q=6 0.0054 q=8 0.0022 met=True
+   C5b streams differ          : max stream spread in the structure cells 0.0337 fires=True
+   quantum leads per stream    : q=6 [10, 12, 12, 12, 12] (mean 11.6) | q=8 [6, 6, 6, 6, 6] (mean 6.0)
+
+   controls ALL PASS: True
+   report sha256 = 861285cb9d593ee95738cae4624cedb771aa1ac928aef1fe4667c0337831248f
+   written to smoke_v16_results.json

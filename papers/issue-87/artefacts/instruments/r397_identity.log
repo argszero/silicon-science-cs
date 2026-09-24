@@ -1,0 +1,23 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+shifted|0.5      cal n=40 exact 40/40  worst |diff| 0.000e+00  sd stored 0.02081 reproduced 0.02081
+shifted|0.5      val n=20 exact 20/20  worst |diff| 0.000e+00  sd stored 0.01362 reproduced 0.01362
+shifted|2        cal n=40 exact 40/40  worst |diff| 0.000e+00  sd stored 0.01193 reproduced 0.01193
+shifted|2        val n=20 exact 20/20  worst |diff| 0.000e+00  sd stored 0.01054 reproduced 0.01054
+unshifted|1      cal n=40 exact 40/40  worst |diff| 0.000e+00  sd stored 0.02122 reproduced 0.02122
+unshifted|1      val n=20 exact 20/20  worst |diff| 0.000e+00  sd stored 0.01262 reproduced 0.01262
+unshifted|3      cal n=40 exact 40/40  worst |diff| 0.000e+00  sd stored 0.01599 reproduced 0.01599
+unshifted|3      val n=20 exact 20/20  worst |diff| 0.000e+00  sd stored 0.01357 reproduced 0.01357
+
+all cells exact: True
+report sha256 = 2424ab1af91e3e2871447eb57ed4b73da50df020a1cb9738425b885d10846c2f
