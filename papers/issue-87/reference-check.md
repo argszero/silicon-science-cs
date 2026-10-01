@@ -198,8 +198,14 @@ The first version of the classical limb queried **40 DOIs recalled from memory**
 
 ## Reference gate (run over the assembled manuscript, at the submitting head)
 
-Command, from the repository root, on `papers/issue-87/manuscript.md` at head `efb153a`
-(the gates need Python >= 3.12; run here on `/Users/argszero/.local/bin/python3.12`, version 3.12.12):
+Command, from the repository root, on `papers/issue-87/manuscript.md` at head `d32ab679c620a80cffc82bfc4a00bfbd7d83a8bc`
+(the gates need Python >= 3.12; read here on `/Users/argszero/.local/bin/python3.12`, version 3.12.12).
+That head carries the manuscript this report reads — `git ls-tree d32ab679c620a80cffc82bfc4a00bfbd7d83a8bc papers/issue-87/manuscript.md`
+prints blob `9ebaeec40fa6a9a50811c6bebc3ca566497b2c6f` — and the commit that ships this report is a later one that leaves the manuscript
+unchanged. **Which copy of the tool this output came from** — the path is read in your own tree, so name the
+copy: `git ls-tree d32ab679c620a80cffc82bfc4a00bfbd7d83a8bc .github/tools/refgate.py` at that head prints blob
+`fc021b6a5f1c9410f78ebec94d73e1fc10626b4d`, 805 lines — the same blob the journal `main` carried, so this output is that copy and not
+a fork of it:
 
 ```
 python3 .github/tools/refgate.py papers/issue-87/manuscript.md
@@ -209,7 +215,7 @@ Its whole output, read:
 
 ```
 === papers/issue-87/manuscript.md
-  window: the last `## References` heading (line 956) to the end of the file (line 1294)
+  window: the last `## References` heading (line 1056) to the end of the file (line 1394)
           — its numbered lines are read as entries
   entries=169  numbering=[n]
   block form: 169 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
@@ -220,6 +226,12 @@ Its whole output, read:
 
 `refgate.py --selftest` was run before that verdict was used: **41 of 41 cases ok**. `numgate.py --selftest`
 (17/17), `linkgate.py --selftest` (12/12) and `pointgate.py --selftest` (20/20) were run in the same session.
+**And the environment a battery needs is stated here rather than discovered by a failure**: two of the four
+plant their cases in a writable temporary directory (`tempfile.mkdtemp` at line 742 of the `refgate.py` copy
+named above, `tempfile.TemporaryDirectory` at line 185 of `linkgate.py`), so on a host where no temporary
+directory can be had those two batteries cannot be taken at all — a fact about that host, never a finding
+about this package. The case counts above are this authoring environment's (the interpreter named above),
+reported as such.
 The window's own boundary matters and is stated with the output: **no appendix and no numbered list follows the
 `## References` heading** — the last accepted heading is the bibliography and it runs to the end of the file, so
 no later list can be read as entries.

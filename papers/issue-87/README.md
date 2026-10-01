@@ -127,8 +127,10 @@ repository root, and both of them resolve their **carrier set** off the tree wit
 form is a coordinate of the run and is stated here rather than assumed. In a checkout the set is the tracked
 markdown carriers of the head — `git ls-files '*.md'`, **68** here, and the gate prints the count it read on its
 own `set:` line, which is the copy to trust if this specification is read at another head — and the gate
-reads them — `linkgate.py --check` → `targets=100 links=94
-resolved=94 broken=0 · LINKGATE: PASS`. Over an **export** of the same head (no `.git`, so `git ls-files`
+reads them — `linkgate.py --check` → at this head `targets=102 links=96
+resolved=96 broken=0 · LINKGATE: PASS` (the two totals are this head's reading, exactly as the carrier
+count above is — the rebase a revision carries is part of the set — while `broken=0` is the claim the
+specification makes and the counts are the reading's). Over an **export** of the same head (no `.git`, so `git ls-files`
 reaches an enclosing repository, whose index holds no markdown under this directory) the two readings are,
 measured here: `linkgate.py` prints `set: 0 tracked markdown carriers` and **`NOT RUN`** — never `PASS`, because
 a verdict is about a set and no set was read — and `numgate.py --selftest` prints `selftest: 16/17 cases ok`,
