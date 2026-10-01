@@ -1,0 +1,61 @@
+{
+ "artifact": "canonical_results.json",
+ "artifact_sha256": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79",
+ "figures": [
+  {
+   "caption": "Detection and breakage against specificity `s`, each drawn as the full band over the 96 declared draws. Left: detection saturates in `s` and its band narrows as the spec gets stronger. Right: breakage is exactly 0 at every `s` when exposure `r = 0`, and rises with `r` once representation is exposed.",
+   "figure": "figures/fig1_bands.png",
+   "png_sha256": "eaea369bae8e526b81f29a032630f98743ed33e970bfdc8e282b03cb5bf96ee0",
+   "series_sha256": "511bf4b96ddabbd509314a8a70d9dd433f6c384bf456af04bd8ac4f6ffea89ea",
+   "sources": {
+    "canonical_results.json": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79"
+   }
+  },
+  {
+   "caption": "The graded optimum `s*(lambda, r)`: each horizontal bar spans the argmax observed across the 96 draws, with the modal value marked. At `r = 0` the optimum is the boundary `s = 1` for every `lambda` (the strongest spec wins, because there is no breakage to pay for). For `r > 0` the optimum moves interior and falls with `lambda`, until the empty spec (`s = 0`) wins outright at `lambda >= 2`.",
+   "figure": "figures/fig2_frontier.png",
+   "png_sha256": "ec85733693a912d12f0ca168aa53a17fd517e2d7fa7b859ea7d4154306def536",
+   "series_sha256": "5771ed55748f73925807f403f2f238d69806af68b6650af88eb2ecbc4e2d0230",
+   "sources": {
+    "canonical_results.json": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79"
+   }
+  },
+  {
+   "caption": "Matched specificity, twelve pin-set alignments (prior P1). Detection against `s` at `r = 0.05`: the structured pin sets are the extremes (`edges` best, `block-low`/`high` worst) and the seeded random ones sit between them. The span is 1.37x at most and collapses to 1.00 at `s = 1` -- the registered prediction of at least 2x is refuted.",
+   "figure": "figures/fig3_alignment.png",
+   "png_sha256": "96f496577c76d23d0813898fc8c17d374a30c863564c8275a06f37708ed94eb4",
+   "series_sha256": "6a3472b1df000ed3b12145c62634a2b9c809162d9e11f54fc479693a624f5f14",
+   "sources": {
+    "canonical_results.json": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79"
+   }
+  },
+  {
+   "caption": "The composition band at matched (s, r): for each exposure `r` at `s = 0.125`, the vertical extent of breakage across the eight clause orderings (which kinds fill the budget; the clause COUNT is unchanged) against the same extent for detection. Breakage swings by up to 0.479 while detection never moves by more than 0.096, so a claim of the form 'at exposure r the false-alarm rate is x' is not well posed.",
+   "figure": "figures/fig4_mixband.png",
+   "png_sha256": "7da6878627c34d999843c6400857765b2600805bec2185a186e94a51d57a8b99",
+   "series_sha256": "af262ccb8d4ebf50b63f1e6ad60ecca105d8bd868aa0bcb45e7ad05520c5a06c",
+   "sources": {
+    "canonical_results.json": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79"
+   }
+  },
+  {
+   "caption": "The reachable region of the (s, r) plane. A specification that spends `s*M` clauses on observable behaviour can carry at most `r <= B/(B + s*M)` representational ones, with `B` the menu the reference's syntax offers (21-47 here). The curve is the boundary for the smallest, median and largest menu; the points are the measured cells, hollow where the request was out of reach.",
+   "figure": "figures/fig5_region.png",
+   "png_sha256": "332aa1d9efd24c84f772c1812dd77dd6b2c646bd62cda60232321daeded7a284",
+   "series_sha256": "6fdb34df22694ebf1e719aecffb7ac2dc67b8f5e86fc937573996b7dee9774e2",
+   "sources": {
+    "canonical_results.json": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79"
+   }
+  },
+  {
+   "caption": "The mechanism, by clause kind: the share of semantics-changing mutations a kind alone can reject, against the share of semantics-preserving mutations it alone rejects. The observational family rejects every defect and no legitimate change; among the representational kinds the literal-presence family is the only one with a favourable ratio (const_present 0.643 against 0.0005), while `size_le` and `depth_le` reject a thousand legitimate rewrites and no defect at all.",
+   "figure": "figures/fig6_mechanism.png",
+   "png_sha256": "ffefaa8ac8efa133f9362a00c70f85673d135e1c528fd0d161b274bb96c18ed6",
+   "series_sha256": "1d880ffdf14912d2c0953619711bf4b379189c78e93e17dd42b0ed970836cd7f",
+   "sources": {
+    "canonical_results.json": "287303022687168d159cbca71fe23de37999d9bb308aeae59a7ae5f98f5e7a79"
+   }
+  }
+ ],
+ "renderer": "plotlib.py (stdlib PNG; no third-party dependency)"
+}
