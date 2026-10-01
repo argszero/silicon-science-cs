@@ -1,0 +1,5319 @@
+{
+ "C1_mapping": {
+  "bad": [],
+  "band_z": 4.0,
+  "rows": [
+   {
+    "b": 0.0,
+    "channel": "mismatch",
+    "closed": -0.011999999999999999,
+    "drawn": -0.011047749999999995,
+    "se": 0.0008736050535159667,
+    "z": 1.0900234564435236
+   },
+   {
+    "b": 0.25,
+    "channel": "mismatch",
+    "closed": 0.025500000000000005,
+    "drawn": 0.023745250000000023,
+    "se": 0.0008060252486093067,
+    "z": 2.177040983551791
+   },
+   {
+    "b": 0.5,
+    "channel": "mismatch",
+    "closed": 0.06300000000000001,
+    "drawn": 0.062586,
+    "se": 0.0007131616619096823,
+    "z": 0.5805135386714636
+   },
+   {
+    "b": 0.75,
+    "channel": "mismatch",
+    "closed": 0.1005,
+    "drawn": 0.10078000000000001,
+    "se": 0.0005961052631099842,
+    "z": 0.46971569843083427
+   },
+   {
+    "b": 1.0,
+    "channel": "mismatch",
+    "closed": 0.13800000000000004,
+    "drawn": 0.13739675,
+    "se": 0.00044099217716155585,
+    "z": 1.3679380978656883
+   },
+   {
+    "b": 0.0,
+    "channel": "substitution",
+    "closed": -0.8200000000000001,
+    "drawn": -0.8200000000000001,
+    "se": 4.96508071921186e-19,
+    "z": 0.0
+   },
+   {
+    "b": 0.25,
+    "channel": "substitution",
+    "closed": -0.5805000000000001,
+    "drawn": -0.581407,
+    "se": 0.0009518275482635538,
+    "z": 0.9529037078770688
+   },
+   {
+    "b": 0.5,
+    "channel": "substitution",
+    "closed": -0.341,
+    "drawn": -0.3398655,
+    "se": 0.0011150036550229348,
+    "z": 1.0174854538720794
+   },
+   {
+    "b": 0.75,
+    "channel": "substitution",
+    "closed": -0.10149999999999999,
+    "drawn": -0.10212149999999998,
+    "se": 0.0010028142646427588,
+    "z": 0.619755843043762
+   },
+   {
+    "b": 1.0,
+    "channel": "substitution",
+    "closed": 0.13800000000000004,
+    "drawn": 0.13739675,
+    "se": 0.00044099217716155585,
+    "z": 1.3679380978656883
+   }
+  ],
+  "worst_z": 2.177040983551791
+ },
+ "C2_estimator": {
+  "n_in_axis": 30,
+  "pass_": true,
+  "worst_abs_dev": 0.053779552637451156,
+  "worst_interval_width": 0.15402246033043532
+ },
+ "C3_two_routes": {
+  "disagree": [],
+  "n_compared_in_axis": 29,
+  "n_out_of_axis": 14,
+  "out_of_axis": [
+   {
+    "boot": [
+     -4.487185632385094,
+     -1.6505110456791814
+    ],
+    "cell": "pi=0.05",
+    "channel": "none",
+    "family": "wide_magnitude",
+    "fie": [
+     -62.6762109620688,
+     -1.6815347104164988
+    ],
+    "gap": 0.031023664737317436
+   },
+   {
+    "boot": [
+     -0.05722148799122789,
+     0.016278124559784564
+    ],
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "fie": [
+     -0.0646358602616622,
+     0.02094468423203354
+    ],
+    "gap": 0.004666559672248976
+   },
+   {
+    "boot": [
+     -0.026147630669472142,
+     0.051344271952062
+    ],
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "fie": [
+     -0.02950962036527836,
+     0.05016413583820997
+    ],
+    "gap": 0.0011801361138520303
+   },
+   {
+    "boot": [
+     -0.04624981792151934,
+     0.03772329401748257
+    ],
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "family": "cluster",
+    "fie": [
+     -0.04819125765976022,
+     0.03504667821198191
+    ],
+    "gap": 0.0026766158055006595
+   },
+   {
+    "boot": [
+     -0.9216272912144681,
+     0.033260883887125586
+    ],
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "fie": [
+     -1.279688528264048,
+     0.043622454017330795
+    ],
+    "gap": 0.010361570130205208
+   },
+   {
+    "boot": [
+     -0.951200728125805,
+     -0.045282879135329496
+    ],
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "fie": [
+     -1.7239656896330056,
+     -0.039960910648308604
+    ],
+    "gap": 0.005321968487020892
+   },
+   {
+    "boot": [
+     -1.1329586532477975,
+     -0.06163799638423905
+    ],
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "family": "cluster",
+    "fie": [
+     -1.2277559856354932,
+     -0.0506054873603776
+    ],
+    "gap": 0.01103250902386145
+   },
+   {
+    "boot": [
+     0.0023478919220750296,
+     0.10308051658650383
+    ],
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "mismatch",
+    "family": "cluster",
+    "fie": [
+     -0.0007116875357272699,
+     0.10931085201690585
+    ],
+    "gap": 0.006230335430402023
+   },
+   {
+    "boot": [
+     2.948992731837175,
+     4.233603014006263
+    ],
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "fie": [
+     2.8547356185443222,
+     4.0109893350845685
+    ],
+    "gap": 0.2226136789216948
+   },
+   {
+    "boot": [
+     2.783858114328072,
+     3.868163171056672
+    ],
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "fie": [
+     2.7936339721173518,
+     3.937490382317071
+    ],
+    "gap": 0.06932721126039887
+   },
+   {
+    "boot": [
+     3.4148307896270302,
+     5.678752504564963
+    ],
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "family": "cluster",
+    "fie": [
+     3.3323073633422564,
+     5.33612168617718
+    ],
+    "gap": 0.3426308183877831
+   },
+   {
+    "boot": [
+     1.0245197336452196,
+     1.0258963633278817
+    ],
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "family": "adjacent",
+    "fie": [
+     1.0244249808845163,
+     1.0260513689062418
+    ],
+    "gap": 0.0001550055783601234
+   },
+   {
+    "boot": [
+     1.0240724850162017,
+     1.0259535666747974
+    ],
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "fie": [
+     1.0240569465378353,
+     1.0259654741355722
+    ],
+    "gap": 1.1907460774729373e-05
+   },
+   {
+    "boot": [
+     1.0252286172457197,
+     1.0269037015953622
+    ],
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "family": "cluster",
+    "fie": [
+     1.025112087593357,
+     1.027024829597078
+    ],
+    "gap": 0.00012112800171593108
+   }
+  ],
+  "regime": "the comparison is taken where the Fieller set lies inside the axis; the intervals that leave it are an extrapolation regime and are reported, not adjudicated",
+  "tolerance": 0.05,
+  "worst_flat_frac": 0.9833333333333333,
+  "worst_out_of_axis_gap": 0.3426308183877831
+ },
+ "C4_width_law": {
+  "n_bounded": 43,
+  "n_in_regime": 39,
+  "n_out_of_regime": 4,
+  "rows": [
+   {
+    "cell": "defaults",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.09980414499385487,
+    "predicted": 0.09932554698184999,
+    "ratio": 0.9952046279036372,
+    "se_at_b_star": 0.003863923799560489,
+    "slope_z": 26.360597243880598
+   },
+   {
+    "cell": "defaults",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.10444793706733849,
+    "predicted": 0.10391988110121875,
+    "ratio": 0.9949443140674067,
+    "se_at_b_star": 0.003965950475515378,
+    "slope_z": 25.79734233117817
+   },
+   {
+    "cell": "defaults",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.10966397044545324,
+    "predicted": 0.10907636727056187,
+    "ratio": 0.9946417846034159,
+    "se_at_b_star": 0.004045506560076196,
+    "slope_z": 25.126234960559394
+   },
+   {
+    "cell": "defaults",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.01002090839522074,
+    "predicted": 0.010020563564197563,
+    "ratio": 0.9999655888458834,
+    "se_at_b_star": 0.0024542306142939837,
+    "slope_z": 334.1169306682665
+   },
+   {
+    "cell": "defaults",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.010180755477057435,
+    "predicted": 0.010180395740889426,
+    "ratio": 0.9999646650812094,
+    "se_at_b_star": 0.0024869541962408,
+    "slope_z": 329.72058803474766
+   },
+   {
+    "cell": "defaults",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.010214945986875557,
+    "predicted": 0.01021458337194426,
+    "ratio": 0.9999645015321899,
+    "se_at_b_star": 0.002492703127090465,
+    "slope_z": 328.9601521690716
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.1357915871613154,
+    "predicted": 0.13327140816851354,
+    "ratio": 0.9814408311627731,
+    "se_at_b_star": 0.0011407032875949733,
+    "slope_z": 10.947265443217365
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.10728098174462936,
+    "predicted": 0.10598620998729105,
+    "ratio": 0.9879310224768415,
+    "se_at_b_star": 0.0011320394107870604,
+    "slope_z": 14.307938864133403
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.15402246033043532,
+    "predicted": 0.15048749595915595,
+    "ratio": 0.9770490332144055,
+    "se_at_b_star": 0.00117249630055895,
+    "slope_z": 10.173486683431433
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.0064358581002478266,
+    "predicted": 0.006435789081145839,
+    "ratio": 0.9999892758508792,
+    "se_at_b_star": 0.0016207086086641748,
+    "slope_z": 598.5036389727677
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.005236406537371119,
+    "predicted": 0.005236369141651769,
+    "ratio": 0.9999928585148836,
+    "se_at_b_star": 0.0013225675205129602,
+    "slope_z": 733.4219122693893
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.006320044739926867,
+    "predicted": 0.00631997947929923,
+    "ratio": 0.999989674024422,
+    "se_at_b_star": 0.0015903377207431833,
+    "slope_z": 609.9333414205302
+   },
+   {
+    "cell": "pi=0.05",
+    "channel": "none",
+    "family": "wide_magnitude",
+    "in_regime": false,
+    "observed": 60.9946762516523,
+    "predicted": 8.117504194388037,
+    "ratio": 0.13308545422713247,
+    "se_at_b_star": 0.008476693437275357,
+    "slope_z": 2.1045621078010894
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.08558054449369573,
+    "predicted": 0.08529191807721112,
+    "ratio": 0.9966274295379615,
+    "se_at_b_star": 0.006104969927790838,
+    "slope_z": 31.348444555924658
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.07967375620348834,
+    "predicted": 0.07942407638366321,
+    "ratio": 0.996866222559064,
+    "se_at_b_star": 0.005867356906161887,
+    "slope_z": 32.292728323693154
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.08323793587174214,
+    "predicted": 0.082962315163779,
+    "ratio": 0.9966887608987827,
+    "se_at_b_star": 0.005996027823832389,
+    "slope_z": 31.530983256065255
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.015226208820842357,
+    "predicted": 0.015224053025021764,
+    "ratio": 0.9998584154567982,
+    "se_at_b_star": 0.003156917073287694,
+    "slope_z": 164.71766217744158
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.015532144863992903,
+    "predicted": 0.01552989865641588,
+    "ratio": 0.9998553832972399,
+    "se_at_b_star": 0.0031905421138124493,
+    "slope_z": 162.9817070111137
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.015722786491842555,
+    "predicted": 0.015720472696036877,
+    "ratio": 0.9998528380572439,
+    "se_at_b_star": 0.003218496268187566,
+    "slope_z": 161.56613420366898
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": false,
+    "observed": 1.323310982281379,
+    "predicted": 0.9534988326547699,
+    "ratio": 0.7205402550282962,
+    "se_at_b_star": 0.006150498569129656,
+    "slope_z": 3.5926821468735133
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": false,
+    "observed": 1.684004778984697,
+    "predicted": 1.150794626061998,
+    "ratio": 0.6833677911269487,
+    "se_at_b_star": 0.007059868250380886,
+    "slope_z": 3.406849394341979
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": false,
+    "observed": 1.1771504982751155,
+    "predicted": 0.9212143119778837,
+    "ratio": 0.7825798938434326,
+    "se_at_b_star": 0.006721696990211247,
+    "slope_z": 4.089183305705885
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.019310985711892492,
+    "predicted": 0.019309005290380703,
+    "ratio": 0.9998974458610588,
+    "se_at_b_star": 0.004236842854052741,
+    "slope_z": 193.5403384658534
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.019739365008925702,
+    "predicted": 0.019737276587653965,
+    "ratio": 0.9998942001796516,
+    "se_at_b_star": 0.004303365407275299,
+    "slope_z": 190.54854105898195
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.01916007691707522,
+    "predicted": 0.019158147828541038,
+    "ratio": 0.9998993172865365,
+    "se_at_b_star": 0.004198007567276182,
+    "slope_z": 195.33075795097852
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.07810795275192489,
+    "predicted": 0.0779242262637015,
+    "ratio": 0.9976477876867812,
+    "se_at_b_star": 0.003756656046041648,
+    "slope_z": 38.98830032631104
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.0772828560320816,
+    "predicted": 0.07710661743875644,
+    "ratio": 0.9977195641779595,
+    "se_at_b_star": 0.003751808220320569,
+    "slope_z": 39.69267478991745
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.07837450192600715,
+    "predicted": 0.078201503390354,
+    "ratio": 0.9977926681331071,
+    "se_at_b_star": 0.0037787164840070594,
+    "slope_z": 40.54661968830667
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.005461658174190864,
+    "predicted": 0.005461598906927059,
+    "ratio": 0.999989148485329,
+    "se_at_b_star": 0.0013781956029887633,
+    "slope_z": 594.9808562890079
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.005235777668434527,
+    "predicted": 0.005235725423830224,
+    "ratio": 0.9999900216151999,
+    "se_at_b_star": 0.001321587361147258,
+    "slope_z": 620.4659821263464
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.004733925208224243,
+    "predicted": 0.0047338864662140314,
+    "ratio": 0.9999918160916137,
+    "se_at_b_star": 0.0011968670716120712,
+    "slope_z": 685.1220318857418
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.10020074062594803,
+    "predicted": 0.09971932856040999,
+    "ratio": 0.9951955238800564,
+    "se_at_b_star": 0.019393036181596175,
+    "slope_z": 26.350210331785807
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.10480065529734081,
+    "predicted": 0.1042703304414539,
+    "ratio": 0.9949396799630472,
+    "se_at_b_star": 0.019901616802592653,
+    "slope_z": 25.798145023483155
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.11002253955263312,
+    "predicted": 0.10943265857672643,
+    "ratio": 0.9946385442627917,
+    "se_at_b_star": 0.020301338715376347,
+    "slope_z": 25.13046358788544
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.010013003428630984,
+    "predicted": 0.010012659132286997,
+    "ratio": 0.9999656150777895,
+    "se_at_b_star": 0.012266475671040026,
+    "slope_z": 334.2443347178935
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.010172024459123019,
+    "predicted": 0.010171665329343538,
+    "ratio": 0.9999646943653229,
+    "se_at_b_star": 0.012429617347364964,
+    "slope_z": 329.85729853294197
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.01020589462010335,
+    "predicted": 0.010205532636273384,
+    "ratio": 0.9999645318863813,
+    "se_at_b_star": 0.01245818655452955,
+    "slope_z": 329.1008672935084
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 1.1562537165402462,
+    "predicted": 1.0995367826214621,
+    "ratio": 0.950947674279921,
+    "se_at_b_star": 0.002975325018245344,
+    "slope_z": 8.824824438937659
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 1.143856410199719,
+    "predicted": 1.0878765654942886,
+    "ratio": 0.9510604266354933,
+    "se_at_b_star": 0.003030469211402414,
+    "slope_z": 8.828693698861084
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 2.003814322834924,
+    "predicted": 1.8454528924673343,
+    "ratio": 0.920970007768212,
+    "se_at_b_star": 0.003893104120103189,
+    "slope_z": 6.958514498168574
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "family": "adjacent",
+    "in_regime": true,
+    "observed": 0.0016263880217255444,
+    "predicted": 0.0016263869985076104,
+    "ratio": 0.9999993708648118,
+    "se_at_b_star": 0.00040468891774533307,
+    "slope_z": 2471.0338142476403
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "family": "wide_magnitude",
+    "in_regime": true,
+    "observed": 0.0019085275977368532,
+    "predicted": 0.0019085259435664937,
+    "ratio": 0.9999991332740688,
+    "se_at_b_star": 0.0004749979578044964,
+    "slope_z": 2105.2722092156623
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "family": "cluster",
+    "in_regime": true,
+    "observed": 0.0019127420037210463,
+    "predicted": 0.0019127403419808332,
+    "ratio": 0.9999991312261612,
+    "se_at_b_star": 0.00047555633434376526,
+    "slope_z": 2102.8002946904926
+   }
+  ],
+  "slope_regime": 4.382612702882908,
+  "slope_regime_source": "derived from 1/sqrt(1-u) with u = (z/slope_z)^2: slope_z >= z/sqrt(2*tol)",
+  "tolerance": 0.1,
+  "violations": [],
+  "worst_dev_in_regime": 0.07902999223178797
+ },
+ "C5_scaling": {
+  "expected": 2.0,
+  "rows": [
+   {
+    "channel": "mismatch",
+    "ratio": 1.981095601126984,
+    "width_4n": 0.050378257837269125,
+    "width_n": 0.09980414499385487
+   },
+   {
+    "channel": "substitution",
+    "ratio": 2.0423513648874767,
+    "width_4n": 0.00490655455643052,
+    "width_n": 0.01002090839522074
+   }
+  ],
+  "tolerance": 0.5,
+  "worst_dev": 0.042351364887476706
+ },
+ "C6_states": {
+  "counts": {
+   "bounded": 43,
+   "flat": 20
+  },
+  "flat_exercised": true,
+  "null_for_the_slope_test": {
+   "channel": "none",
+   "consistent_with_nominal": true,
+   "denominator": 21,
+   "false_positives": 1,
+   "nominal_alpha": 0.05,
+   "rate": 0.047619047619047616,
+   "wilson": [
+    0.008455987809826399,
+    0.22669360074122563
+   ]
+  },
+  "states_are_two": "an affine read attains zero at b* = -A/B and the set's radius there is z*SE(b*) > 0, so the crossing is always inside the set: the quadratic's discriminant is never negative and the region is FLAT or BOUNDED.  There is no third state to report, and C4d asserts the containment rather than leaving the theorem as prose"
+ },
+ "C7_calibration": {
+  "bootstrap_covered": 28,
+  "bootstrap_rate": 0.9333333333333333,
+  "bootstrap_wilson": [
+   0.7867654163738308,
+   0.9815229762087295
+  ],
+  "by_family": {
+   "adjacent": {
+    "boot": 8,
+    "fie": 9,
+    "n": 10
+   },
+   "cluster": {
+    "boot": 10,
+    "fie": 10,
+    "n": 10
+   },
+   "wide_magnitude": {
+    "boot": 10,
+    "fie": 10,
+    "n": 10
+   }
+  },
+  "denominator": 30,
+  "fieller_consistent_with_nominal": true,
+  "fieller_covered": 29,
+  "fieller_rate": 0.9666666666666667,
+  "fieller_wilson": [
+   0.8332960900859082,
+   0.9940914096183874
+  ],
+  "n_no_target": 21,
+  "n_out_of_axis_excluded": 12,
+  "no_target": [
+   {
+    "cell": "defaults",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "defaults",
+    "family": "wide_magnitude",
+    "state": "flat"
+   },
+   {
+    "cell": "defaults",
+    "family": "cluster",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.05",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.05",
+    "family": "wide_magnitude",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.05",
+    "family": "cluster",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "family": "wide_magnitude",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "family": "cluster",
+    "state": "flat"
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "family": "wide_magnitude",
+    "state": "flat"
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "family": "cluster",
+    "state": "flat"
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "family": "wide_magnitude",
+    "state": "flat"
+   },
+   {
+    "cell": "a=0.95,f=0.0",
+    "family": "cluster",
+    "state": "flat"
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "family": "wide_magnitude",
+    "state": "flat"
+   },
+   {
+    "cell": "L=5,c=0.1,cb=0.2",
+    "family": "cluster",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "family": "adjacent",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "family": "wide_magnitude",
+    "state": "flat"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "family": "cluster",
+    "state": "flat"
+   }
+  ],
+  "nominal": 0.95,
+  "out_of_axis_excluded": [
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "exact_b_star": -0.013636363636363637,
+    "family": "adjacent",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "exact_b_star": -0.013636363636363637,
+    "family": "wide_magnitude",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.5,a=0.6",
+    "channel": "mismatch",
+    "exact_b_star": -0.013636363636363637,
+    "family": "cluster",
+    "state": "bounded"
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "exact_b_star": -0.6000000000000001,
+    "family": "adjacent",
+    "state": "bounded"
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "exact_b_star": -0.6000000000000001,
+    "family": "wide_magnitude",
+    "state": "bounded"
+   },
+   {
+    "cell": "a=0.3,f=0.2",
+    "channel": "mismatch",
+    "exact_b_star": -0.6000000000000001,
+    "family": "cluster",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "exact_b_star": 3.5204081632653055,
+    "family": "adjacent",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "exact_b_star": 3.5204081632653055,
+    "family": "wide_magnitude",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "mismatch",
+    "exact_b_star": 3.5204081632653055,
+    "family": "cluster",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "exact_b_star": 1.0253255408592228,
+    "family": "adjacent",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "exact_b_star": 1.0253255408592228,
+    "family": "wide_magnitude",
+    "state": "bounded"
+   },
+   {
+    "cell": "pi=0.02,a=0.99,f=0.5",
+    "channel": "substitution",
+    "exact_b_star": 1.0253255408592228,
+    "family": "cluster",
+    "state": "bounded"
+   }
+  ]
+ },
+ "C8_registered_wording": {
+  "finding": "metric (a)'s wording 'with bootstrap CIs' has no stated carrier: the manuscript must name which of the two readings each interval belongs to",
+  "reading_1": "estimator uncertainty: what is reported above (the boundary located from sampled actions)",
+  "reading_2": "parameter uncertainty: no sampling distribution exists -- (a, s, L, c) are design points of a harness with ground truth by construction, not estimates"
+ },
+ "b_pts": [
+  0.0,
+  0.25,
+  0.5,
+  0.75,
+  1.0
+ ],
+ "build": {
+  "script_crc32": "b3bd8a26"
+ },
+ "channels": {
+  "mismatch": {
+   "delta": 0.5,
+   "sigma_i": 0.0,
+   "sigma_v": 0.0
+  },
+  "none": {
+   "delta": 0.0,
+   "sigma_i": 0.0,
+   "sigma_v": 0.0
+  },
+  "substitution": {
+   "delta": 0.0,
+   "sigma_i": 0.5,
+   "sigma_v": 0.0
+  }
+ },
+ "checks": {
+  "C1_mapping": "PASS",
+  "C2_estimator": "PASS",
+  "C3_two_routes": "PASS",
+  "C4_width_law": "PASS",
+  "C5_scaling": "PASS",
+  "C6_states": "PASS",
+  "C7_calibration": "PASS",
+  "C8_wording": "reported"
+ },
+ "design": "D1",
+ "n_boot": 300,
+ "n_draw": 4000,
+ "nominal": 0.95,
+ "preregistered": {
+  "P1": "the drawn route reproduces v1's closed form for both channels, |diff| <= 4 SE",
+  "P2": "the estimator recovers the exact boundary within the reported interval's own width",
+  "P3": "the bootstrap percentile endpoint lies inside the Fieller bracket within one axis step, in the regime where the Fieller set lies inside the axis (intervals that leave the axis are an extrapolation regime, reported and not adjudicated)",
+  "P4": "in the well-determined regime the width is z*SE(V at b*)/|B-hat| per side, halving at 4n",
+  "P5": "the FLAT state is exercised by the `none` channel, which is also the slope test's NULL (its rejection rate is the test's measured size); EMPTY was expected from the grid and CANNOT occur for an affine read (theorem, stated in C6), so it is exercised by a battery plant instead",
+  "P6": "the Fieller set's coverage of the exact boundary is consistent with the nominal 0.95"
+ },
+ "readings": [
+  {
+   "a_hat": -0.01614751634065459,
+   "b_hat": 0.1524915133370387,
+   "b_hat_star": 0.10589124592766773,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.1503063740048905,
+    "lo": 0.06077803424337074,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.08952833976151975
+   },
+   "cell": "defaults",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.9359899797799995e-05,
+     -2.268943755609472e-05
+    ],
+    [
+     -2.2689437556094715e-05,
+     3.3464231611775505e-05
+    ]
+   ],
+   "exact_b_star": 0.08,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.01614751634065459,
+    "b_hat": 0.1524915133370387,
+    "clips": false,
+    "disc": 5.326780213544978e-06,
+    "hi": 0.15261287671391105,
+    "kind": "bounded",
+    "leading": 0.023125110172117446,
+    "lo": 0.05280873172005618,
+    "sd_b": 0.005784827708045894,
+    "slope_z": 26.360597243880598,
+    "width": 0.09980414499385487
+   },
+   "losses": [
+    0.208925,
+    0.18365,
+    0.14146250000000002,
+    0.104525,
+    0.061924999999999994
+   ],
+   "n": 4000,
+   "sd_b": 0.005784827708045894,
+   "se": [
+    0.006148249656382644,
+    0.005811571471275343,
+    0.0051203321155644695,
+    0.004343835957014879,
+    0.003096293405341779
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.008924999999999988,
+    0.016350000000000003,
+    0.05853749999999999,
+    0.095475,
+    0.138075
+   ]
+  },
+  {
+   "a_hat": -0.012211468606801557,
+   "b_hat": 0.14959832544282003,
+   "b_hat_star": 0.08162837766168088,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.12915366776169432,
+    "lo": 0.03217304100237143,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.0969806267593229
+   },
+   "cell": "defaults",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.9205642976151996e-05,
+     -2.266951160606562e-05
+    ],
+    [
+     -2.266951160606562e-05,
+     3.3628192963060655e-05
+    ]
+   ],
+   "exact_b_star": 0.08,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.012211468606801557,
+    "b_hat": 0.14959832544282003,
+    "clips": false,
+    "disc": 5.40105264587151e-06,
+    "hi": 0.13041245896917047,
+    "kind": "bounded",
+    "leading": 0.02225047765681394,
+    "lo": 0.025964521901831992,
+    "sd_b": 0.005798982062660709,
+    "slope_z": 25.79734233117817,
+    "width": 0.10444793706733849
+   },
+   "losses": [
+    0.21113749999999998,
+    0.178,
+    0.1360375,
+    0.0987625,
+    0.0631625
+   ],
+   "n": 4000,
+   "sd_b": 0.005798982062660709,
+   "se": [
+    0.006181606655121884,
+    0.005721259319594815,
+    0.005022447077082846,
+    0.004203116694302453,
+    0.0031326880361792334
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.011137499999999967,
+    0.02200000000000002,
+    0.0639625,
+    0.10123750000000001,
+    0.1368375
+   ]
+  },
+  {
+   "a_hat": -0.008826311882662807,
+   "b_hat": 0.145385244400412,
+   "b_hat_star": 0.06070981906770309,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.10528704706467996,
+    "lo": 0.005444697750916436,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.09984234931376353
+   },
+   "cell": "defaults",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.8967296242813785e-05,
+     -2.2439283319525074e-05
+    ],
+    [
+     -2.2439283319525074e-05,
+     3.348002922841884e-05
+    ]
+   ],
+   "exact_b_star": 0.08,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.008826311882662807,
+    "b_hat": 0.145385244400412,
+    "clips": false,
+    "disc": 5.307719706330777e-06,
+    "hi": 0.1118103399544564,
+    "kind": "bounded",
+    "leading": 0.02100825713577092,
+    "lo": 0.002146369509003152,
+    "sd_b": 0.005786192982300093,
+    "slope_z": 25.126234960559394,
+    "width": 0.10966397044545324
+   },
+   "losses": [
+    0.213375,
+    0.17165,
+    0.1284625,
+    0.104575,
+    0.063225
+   ],
+   "n": 4000,
+   "sd_b": 0.005786192982300093,
+   "se": [
+    0.006209638052651397,
+    0.005626753901217488,
+    0.004869746541790736,
+    0.004343664547265914,
+    0.003132597266671666
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.013374999999999998,
+    0.028350000000000014,
+    0.0715375,
+    0.09542500000000001,
+    0.136775
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.9600664838768511,
+   "b_hat_star": 0.8541075162719485,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8586256775457145,
+    "lo": 0.8493774183836577,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.009248259162056849
+   },
+   "cell": "defaults",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.354164128570029e-35
+    ],
+    [
+     -1.354164128570029e-35,
+     8.256683760555883e-06
+    ]
+   ],
+   "exact_b_star": 0.8559498956158664,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.9600664838768511,
+    "clips": false,
+    "disc": 8.530795459593676e-05,
+    "hi": 0.859147362304788,
+    "kind": "bounded",
+    "leading": 0.9216959357529984,
+    "lo": 0.8491264539095673,
+    "sd_b": 0.002873444581083109,
+    "slope_z": 334.1169306682665,
+    "width": 0.01002090839522074
+   },
+   "losses": [
+    1.02,
+    0.7767875000000001,
+    0.52965,
+    0.2929,
+    0.061924999999999994
+   ],
+   "n": 4000,
+   "sd_b": 0.002873444581083109,
+   "se": [
+    3.5112724050625794e-18,
+    0.006774869993349997,
+    0.007887911584335272,
+    0.007016183378967645,
+    0.003096293405341779
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.8200000000000001,
+    -0.5767875,
+    -0.32964999999999994,
+    -0.09289999999999998,
+    0.138075
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.9575935513498754,
+   "b_hat_star": 0.8563132018214656,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8611331754201443,
+    "lo": 0.851510494435075,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.009622680985069354
+   },
+   "cell": "defaults",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.3562659823076933e-35
+    ],
+    [
+     -1.3562659823076933e-35,
+     8.434712694667179e-06
+    ]
+   ],
+   "exact_b_star": 0.8559498956158664,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.9575935513498754,
+    "clips": false,
+    "disc": 8.714734734383e-05,
+    "hi": 0.8614338383833656,
+    "kind": "bounded",
+    "leading": 0.9169530079853856,
+    "lo": 0.8512530829063082,
+    "sd_b": 0.002904257683930126,
+    "slope_z": 329.72058803474766,
+    "width": 0.010180755477057435
+   },
+   "losses": [
+    1.02,
+    0.77655,
+    0.5412,
+    0.29814999999999997,
+    0.0631625
+   ],
+   "n": 4000,
+   "sd_b": 0.002904257683930126,
+   "se": [
+    3.5112724050625794e-18,
+    0.006776900543039021,
+    0.007885274845548977,
+    0.007062266865413653,
+    0.0031326880361792334
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.8200000000000001,
+    -0.5765499999999999,
+    -0.3412,
+    -0.09814999999999996,
+    0.1368375
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.9565947381988515,
+   "b_hat_star": 0.8572073076044278,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8621638052481235,
+    "lo": 0.8525491792925334,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.00961462595559015
+   },
+   "cell": "defaults",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.3556021475355243e-35
+    ],
+    [
+     -1.3556021475355246e-35,
+     8.456085930652976e-06
+    ]
+   ],
+   "exact_b_star": 0.8559498956158664,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.9565947381988515,
+    "clips": false,
+    "disc": 8.736817535348607e-05,
+    "hi": 0.8623452112231347,
+    "kind": "bounded",
+    "leading": 0.9150410094438425,
+    "lo": 0.8521302652362591,
+    "sd_b": 0.0029079349942275146,
+    "slope_z": 328.9601521690716,
+    "width": 0.010214945986875557
+   },
+   "losses": [
+    1.02,
+    0.7777625,
+    0.5302250000000001,
+    0.3112625,
+    0.063225
+   ],
+   "n": 4000,
+   "sd_b": 0.0029079349942275146,
+   "se": [
+    3.5112724050625794e-18,
+    0.0067660438578100385,
+    0.00789036528367524,
+    0.007159662035567977,
+    0.003132597266671666
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.8200000000000001,
+    -0.5777625,
+    -0.33022500000000005,
+    -0.11126249999999999,
+    0.136775
+   ]
+  },
+  {
+   "a_hat": 0.13646652059581116,
+   "b_hat": -0.001017986803183546,
+   "b_hat_star": 134.05529439973088,
+   "bootstrap": {
+    "flat_frac": 0.94,
+    "hi": 18.215403187373003,
+    "lo": -17.791132037311556,
+    "n_flat": 282,
+    "n_nonflat": 18,
+    "width": 36.006535224684555
+   },
+   "cell": "defaults",
+   "channel": "none",
+   "cov": [
+    [
+     5.78630484734559e-06,
+     -7.606545068321445e-06
+    ],
+    [
+     -7.606545068321445e-06,
+     1.5321999669494483e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.13646652059581116,
+    "b_hat": -0.001017986803183546,
+    "kind": "flat",
+    "sd_b": 0.003914332595666148,
+    "slope_z": 0.2600665064360233,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.060425,
+    0.06615,
+    0.06721250000000001,
+    0.065275,
+    0.061924999999999994
+   ],
+   "n": 4000,
+   "sd_b": 0.003914332595666148,
+   "se": [
+    0.003030418816484089,
+    0.0032490665557003977,
+    0.003283667435794119,
+    0.003213710951263285,
+    0.003096293405341779
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.139575,
+    0.13385000000000002,
+    0.1327875,
+    0.134725,
+    0.138075
+   ]
+  },
+  {
+   "a_hat": 0.13768993713861233,
+   "b_hat": 0.0008316410521124196,
+   "b_hat_star": -165.56414187211104,
+   "bootstrap": {
+    "flat_frac": 0.93,
+    "hi": 18.77249583893268,
+    "lo": -16.301576448642496,
+    "n_flat": 279,
+    "n_nonflat": 21,
+    "width": 35.07407228757518
+   },
+   "cell": "defaults",
+   "channel": "none",
+   "cov": [
+    [
+     5.797463907260954e-06,
+     -7.727639311018264e-06
+    ],
+    [
+     -7.727639311018264e-06,
+     1.536666736049571e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.13768993713861233,
+    "b_hat": 0.0008316410521124196,
+    "kind": "flat",
+    "sd_b": 0.00392003410195571,
+    "slope_z": 0.21215148401324183,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.061387500000000005,
+    0.0645,
+    0.0617875,
+    0.0590125,
+    0.0631625
+   ],
+   "n": 4000,
+   "sd_b": 0.00392003410195571,
+   "se": [
+    0.003077780148678329,
+    0.003177748734836573,
+    0.003096480584298848,
+    0.0029827649392146463,
+    0.0031326880361792334
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.1386125,
+    0.1355,
+    0.13821250000000002,
+    0.14098750000000002,
+    0.1368375
+   ]
+  },
+  {
+   "a_hat": 0.13881608130430528,
+   "b_hat": -0.0002980857641520229,
+   "b_hat_star": 465.6917504906724,
+   "bootstrap": {
+    "flat_frac": 0.9833333333333333,
+    "hi": 16.59401348957831,
+    "lo": -16.756834783229078,
+    "n_flat": 295,
+    "n_nonflat": 5,
+    "width": 33.35084827280738
+   },
+   "cell": "defaults",
+   "channel": "none",
+   "cov": [
+    [
+     5.842030688144432e-06,
+     -7.919065323109155e-06
+    ],
+    [
+     -7.919065323109155e-06,
+     1.584214988341739e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.13881608130430528,
+    "b_hat": -0.0002980857641520229,
+    "kind": "flat",
+    "sd_b": 0.003980219828529247,
+    "slope_z": 0.07489178412092135,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.064125,
+    0.061399999999999996,
+    0.0554625,
+    0.063825,
+    0.063225
+   ],
+   "n": 4000,
+   "sd_b": 0.003980219828529247,
+   "se": [
+    0.003178318583937937,
+    0.003068100114008243,
+    0.002843792505157611,
+    0.003160027893519606,
+    0.003132597266671666
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.13587500000000002,
+    0.1386,
+    0.1445375,
+    0.136175,
+    0.136775
+   ]
+  },
+  {
+   "a_hat": -0.017613210518540808,
+   "b_hat": 0.033551643093702885,
+   "b_hat_star": 0.5249582105219321,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.5866454812679018,
+    "lo": 0.452775249650364,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.13387023161753786
+   },
+   "cell": "pi=0.05",
+   "channel": "mismatch",
+   "cov": [
+    [
+     5.301733980973002e-06,
+     -6.275866032870614e-06
+    ],
+    [
+     -6.275866032870614e-06,
+     9.39325882444642e-06
+    ]
+   ],
+   "exact_b_star": 0.5299999999999999,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.017613210518540808,
+    "b_hat": 0.033551643093702885,
+    "clips": false,
+    "disc": 2.189288448399354e-08,
+    "hi": 0.588112954402889,
+    "kind": "bounded",
+    "leading": 0.0010896289373209878,
+    "lo": 0.4523213672415736,
+    "sd_b": 0.0030648423816644174,
+    "slope_z": 10.947265443217365,
+    "width": 0.1357915871613154
+   },
+   "losses": [
+    0.0631875,
+    0.0665375,
+    0.0501125,
+    0.0422125,
+    0.033825
+   ],
+   "n": 4000,
+   "sd_b": 0.0030648423816644174,
+   "se": [
+    0.003123158215692501,
+    0.003248429943482225,
+    0.002596541178656833,
+    0.0022013959200781526,
+    0.0016902645036422754
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.013187499999999991,
+    -0.016537499999999997,
+    -0.00011249999999999455,
+    0.007787500000000003,
+    0.016175000000000002
+   ]
+  },
+  {
+   "a_hat": -0.022054599290744638,
+   "b_hat": 0.0418687765981751,
+   "b_hat_star": 0.5267552835949334,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.5722839358994554,
+    "lo": 0.4640160205039598,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.10826791539549557
+   },
+   "cell": "pi=0.05",
+   "channel": "mismatch",
+   "cov": [
+    [
+     5.5044410460739445e-06,
+     -6.263739294438546e-06
+    ],
+    [
+     -6.263739294438546e-06,
+     8.563008802506674e-06
+    ]
+   ],
+   "exact_b_star": 0.5299999999999999,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.022054599290744638,
+    "b_hat": 0.0418687765981751,
+    "clips": false,
+    "disc": 3.405280364101486e-08,
+    "hi": 0.5764805524104027,
+    "kind": "bounded",
+    "leading": 0.0017201000081318244,
+    "lo": 0.4691995706657734,
+    "sd_b": 0.002926261916251974,
+    "slope_z": 14.307938864133403,
+    "width": 0.10728098174462936
+   },
+   "losses": [
+    0.0711,
+    0.061875,
+    0.0517,
+    0.041,
+    0.0299875
+   ],
+   "n": 4000,
+   "sd_b": 0.002926261916251974,
+   "se": [
+    0.0034010239988950777,
+    0.0030674559353361225,
+    0.002674521595807671,
+    0.0021324016470158826,
+    0.0013717239582335425
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.021099999999999994,
+    -0.011874999999999997,
+    -0.0017000000000000001,
+    0.009000000000000001,
+    0.020012500000000003
+   ]
+  },
+  {
+   "a_hat": -0.014544446237818406,
+   "b_hat": 0.03054141483921973,
+   "b_hat_star": 0.47622044736254876,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.5489840862738289,
+    "lo": 0.37823334176292966,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.17075074451089922
+   },
+   "cell": "pi=0.05",
+   "channel": "mismatch",
+   "cov": [
+    [
+     5.006952987679104e-06,
+     -5.959511360565381e-06
+    ],
+    [
+     -5.959511360565382e-06,
+     9.012362712901602e-06
+    ]
+   ],
+   "exact_b_star": 0.5299999999999999,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.014544446237818406,
+    "b_hat": 0.03054141483921973,
+    "clips": false,
+    "disc": 1.9136963032760792e-08,
+    "hi": 0.5460991078646119,
+    "kind": "bounded",
+    "leading": 0.0008981574001425405,
+    "lo": 0.3920766475341766,
+    "sd_b": 0.0030020597450586494,
+    "slope_z": 10.173486683431433,
+    "width": 0.15402246033043532
+   },
+   "losses": [
+    0.06447499999999999,
+    0.0576875,
+    0.047237499999999995,
+    0.0438875,
+    0.033525
+   ],
+   "n": 4000,
+   "sd_b": 0.0030020597450586494,
+   "se": [
+    0.0031777870722279533,
+    0.002913761201097605,
+    0.0024565488101097465,
+    0.0022942333060421605,
+    0.0016542415853059791
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.014474999999999988,
+    -0.0076875,
+    0.002762500000000008,
+    0.0061125,
+    0.016475000000000004
+   ]
+  },
+  {
+   "a_hat": -0.9699999999999999,
+   "b_hat": 0.9871456203316868,
+   "b_hat_star": 0.9826311134056129,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.9856247614790462,
+    "lo": 0.9796625381073893,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.005962223371656861
+   },
+   "cell": "pi=0.05",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2734502953065855e-35
+    ],
+    [
+     -1.2734502953065855e-35,
+     2.7203755033790964e-06
+    ]
+   ],
+   "exact_b_star": 0.9821541577015568,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.9699999999999999,
+    "b_hat": 0.9871456203316868,
+    "clips": false,
+    "disc": 3.933041213688426e-05,
+    "hi": 0.9858595804452032,
+    "kind": "bounded",
+    "leading": 0.9744460255295577,
+    "lo": 0.9794237223449553,
+    "sd_b": 0.0016493560875017548,
+    "slope_z": 598.5036389727677,
+    "width": 0.0064358581002478266
+   },
+   "losses": [
+    1.02,
+    0.768325,
+    0.5136499999999999,
+    0.2667,
+    0.033825
+   ],
+   "n": 4000,
+   "sd_b": 0.0016493560875017548,
+   "se": [
+    3.5112724050625794e-18,
+    0.00685265282985003,
+    0.007884983361786752,
+    0.006782931117049226,
+    0.0016902645036422754
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.97,
+    -0.718325,
+    -0.46364999999999995,
+    -0.2167,
+    0.016175000000000002
+   ]
+  },
+  {
+   "a_hat": -0.9699999999999999,
+   "b_hat": 0.9900695070211029,
+   "b_hat_star": 0.9797291938810563,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.9825001622496266,
+    "lo": 0.977204062598035,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.0052960996515915015
+   },
+   "cell": "pi=0.05",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.259872800354556e-35
+    ],
+    [
+     -1.259872800354556e-35,
+     1.822315661566918e-06
+    ]
+   ],
+   "exact_b_star": 0.9821541577015568,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.9699999999999999,
+    "b_hat": 0.9900695070211029,
+    "clips": false,
+    "disc": 2.634651941368915e-05,
+    "hi": 0.9823543939193023,
+    "kind": "bounded",
+    "leading": 0.9802306283824375,
+    "lo": 0.9771179873819312,
+    "sd_b": 0.0013499317247797824,
+    "slope_z": 733.4219122693893,
+    "width": 0.005236406537371119
+   },
+   "losses": [
+    1.02,
+    0.769375,
+    0.5281125,
+    0.275,
+    0.0299875
+   ],
+   "n": 4000,
+   "sd_b": 0.0013499317247797824,
+   "se": [
+    3.5112724050625794e-18,
+    0.006842243339521717,
+    0.007888909101240767,
+    0.006862207915413857,
+    0.0013717239582335425
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.97,
+    -0.719375,
+    -0.4781125,
+    -0.22500000000000003,
+    0.020012500000000003
+   ]
+  },
+  {
+   "a_hat": -0.9699999999999999,
+   "b_hat": 0.9863970812315915,
+   "b_hat_star": 0.9833767946564494,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.9864439201255202,
+    "lo": 0.9803495461848281,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.006094373940692122
+   },
+   "cell": "pi=0.05",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2712419417584399e-35
+    ],
+    [
+     -1.2712419417584399e-35,
+     2.6154041493520922e-06
+    ]
+   ],
+   "exact_b_star": 0.9821541577015568,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.9699999999999999,
+    "b_hat": 0.9863970812315915,
+    "clips": false,
+    "disc": 3.781276627723429e-05,
+    "hi": 0.9865469714639798,
+    "kind": "bounded",
+    "leading": 0.9729691548948638,
+    "lo": 0.980226926724053,
+    "sd_b": 0.0016172211194985342,
+    "slope_z": 609.9333414205302,
+    "width": 0.006320044739926867
+   },
+   "losses": [
+    1.02,
+    0.7705625,
+    0.51725,
+    0.2880125,
+    0.033525
+   ],
+   "n": 4000,
+   "sd_b": 0.0016172211194985342,
+   "se": [
+    3.5112724050625794e-18,
+    0.006832472855399239,
+    0.007887761949510333,
+    0.006974167761455752,
+    0.0016542415853059791
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.97,
+    -0.7205625,
+    -0.46725,
+    -0.23801250000000002,
+    0.016475000000000004
+   ]
+  },
+  {
+   "a_hat": 0.01823150808013728,
+   "b_hat": -0.0021424099164698285,
+   "b_hat_star": 8.509813150126927,
+   "bootstrap": {
+    "flat_frac": 0.78,
+    "hi": 5.707926216869958,
+    "lo": -2.9753726654394894,
+    "n_flat": 234,
+    "n_nonflat": 66,
+    "width": 8.683298882309447
+   },
+   "cell": "pi=0.05",
+   "channel": "none",
+   "cov": [
+    [
+     1.384492748640868e-06,
+     -1.8347204004609404e-06
+    ],
+    [
+     -1.8347204004609404e-06,
+     3.882587813665594e-06
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.01823150808013728,
+    "b_hat": -0.0021424099164698285,
+    "kind": "flat",
+    "sd_b": 0.001970428332537267,
+    "slope_z": 1.0872813190374224,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.0301875,
+    0.0365375,
+    0.032862499999999996,
+    0.0324625,
+    0.033825
+   ],
+   "n": 4000,
+   "sd_b": 0.001970428332537267,
+   "se": [
+    0.0013937388880129195,
+    0.0018771261076559326,
+    0.0016167324235537065,
+    0.0015787893834887713,
+    0.0016902645036422754
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.019812500000000004,
+    0.013462500000000002,
+    0.017137500000000007,
+    0.017537500000000004,
+    0.016175000000000002
+   ]
+  },
+  {
+   "a_hat": 0.01551300068795542,
+   "b_hat": 0.0040933797993064625,
+   "b_hat_star": -3.7897779948451826,
+   "bootstrap": {
+    "flat_frac": 0.4266666666666667,
+    "hi": -1.6505110456791814,
+    "lo": -4.487185632385094,
+    "n_flat": 128,
+    "n_nonflat": 172,
+    "width": 2.8366745867059127
+   },
+   "cell": "pi=0.05",
+   "channel": "none",
+   "cov": [
+    [
+     1.6469039939430905e-06,
+     -2.09430098456006e-06
+    ],
+    [
+     -2.0943009845600605e-06,
+     3.7830370137075956e-06
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.01551300068795542,
+    "b_hat": 0.0040933797993064625,
+    "clips": true,
+    "disc": 1.839120504081678e-08,
+    "hi": -1.6815347104164988,
+    "kind": "bounded",
+    "leading": 2.223377276050811e-06,
+    "lo": -62.6762109620688,
+    "sd_b": 0.0019450030883542565,
+    "slope_z": 2.1045621078010894,
+    "width": 60.9946762516523
+   },
+   "losses": [
+    0.0341,
+    0.033125,
+    0.0337,
+    0.0315,
+    0.0299875
+   ],
+   "n": 4000,
+   "sd_b": 0.0019450030883542565,
+   "se": [
+    0.0017081867507664009,
+    0.001617219819237921,
+    0.0016900566774203825,
+    0.001499583171225209,
+    0.0013717239582335425
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.015900000000000004,
+    0.016875,
+    0.016300000000000002,
+    0.018500000000000003,
+    0.020012500000000003
+   ]
+  },
+  {
+   "a_hat": 0.01895751630123641,
+   "b_hat": -0.0019515176849522198,
+   "b_hat_star": 9.71424263659725,
+   "bootstrap": {
+    "flat_frac": 0.8733333333333333,
+    "hi": 5.68517262707419,
+    "lo": 2.5590621808381817,
+    "n_flat": 262,
+    "n_nonflat": 38,
+    "width": 3.126110446236008
+   },
+   "cell": "pi=0.05",
+   "channel": "none",
+   "cov": [
+    [
+     1.428171739642887e-06,
+     -1.983496558397683e-06
+    ],
+    [
+     -1.9834965583976826e-06,
+     4.136312146726169e-06
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.01895751630123641,
+    "b_hat": -0.0019515176849522198,
+    "kind": "flat",
+    "sd_b": 0.0020337925525299207,
+    "slope_z": 0.959546086706161,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.032225000000000004,
+    0.0311875,
+    0.0302375,
+    0.0336375,
+    0.033525
+   ],
+   "n": 4000,
+   "sd_b": 0.0020337925525299207,
+   "se": [
+    0.0015783132172997147,
+    0.0014789271507808723,
+    0.0013938715392404267,
+    0.0016722881137296085,
+    0.0016542415853059791
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.017775,
+    0.018812500000000003,
+    0.019762500000000002,
+    0.016362500000000002,
+    0.016475000000000004
+   ]
+  },
+  {
+   "a_hat": 0.0054900387789077465,
+   "b_hat": 0.28057807714766747,
+   "b_hat_star": -0.019566884322250004,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.016278124559784564,
+    "lo": -0.05722148799122789,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.07349961255101245
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "mismatch",
+   "cov": [
+    [
+     3.548099938411251e-05,
+     -4.4948088034994216e-05
+    ],
+    [
+     -4.4948088034994216e-05,
+     8.010792367385977e-05
+    ]
+   ],
+   "exact_b_star": -0.013636363636363637,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.0054900387789077465,
+    "b_hat": 0.28057807714766747,
+    "clips": true,
+    "disc": 4.5036338309774353e-05,
+    "hi": 0.02094468423203354,
+    "kind": "bounded",
+    "leading": 0.078416326085878,
+    "lo": -0.0646358602616622,
+    "sd_b": 0.00895030299341088,
+    "slope_z": 31.348444555924658,
+    "width": 0.08558054449369573
+   },
+   "losses": [
+    0.4799125,
+    0.44545,
+    0.3536875,
+    0.28047500000000003,
+    0.21295
+   ],
+   "n": 4000,
+   "sd_b": 0.00895030299341088,
+   "se": [
+    0.007859912460829987,
+    0.007800050292859835,
+    0.007437528893721942,
+    0.006919391272911723,
+    0.006217293467379104
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.02008749999999998,
+    0.05454999999999999,
+    0.1463125,
+    0.21952499999999997,
+    0.28705
+   ]
+  },
+  {
+   "a_hat": -0.0035769211512246546,
+   "b_hat": 0.2895799043345264,
+   "b_hat_star": 0.01235210419536761,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.051344271952062,
+    "lo": -0.026147630669472142,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.07749190262153414
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "mismatch",
+   "cov": [
+    [
+     3.552607599506753e-05,
+     -4.5031515104965026e-05
+    ],
+    [
+     -4.5031515104965026e-05,
+     8.041320329715082e-05
+    ]
+   ],
+   "exact_b_star": -0.013636363636363637,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": -0.0035769211512246546,
+    "b_hat": 0.2895799043345264,
+    "clips": true,
+    "disc": 4.4309690746831816e-05,
+    "hi": 0.05016413583820997,
+    "kind": "bounded",
+    "leading": 0.08354761698528736,
+    "lo": -0.02950962036527836,
+    "sd_b": 0.008967340926782634,
+    "slope_z": 32.292728323693154,
+    "width": 0.07967375620348834
+   },
+   "losses": [
+    0.50405,
+    0.4349875,
+    0.3506125,
+    0.2901875,
+    0.2140125
+   ],
+   "n": 4000,
+   "sd_b": 0.008967340926782634,
+   "se": [
+    0.007883094898026589,
+    0.007772671102327289,
+    0.007421355610042559,
+    0.007001912535566724,
+    0.0062244180094067
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.004049999999999998,
+    0.06501249999999997,
+    0.1493875,
+    0.2098125,
+    0.2859875
+   ]
+  },
+  {
+   "a_hat": 0.001242729561044098,
+   "b_hat": 0.2833093209082099,
+   "b_hat_star": -0.004386476085785872,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.03772329401748257,
+    "lo": -0.04624981792151934,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.08397311193900191
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "mismatch",
+   "cov": [
+    [
+     3.555478337338751e-05,
+     -4.514021063558712e-05
+    ],
+    [
+     -4.5140210635587116e-05,
+     8.073218344283622e-05
+    ]
+   ],
+   "exact_b_star": -0.013636363636363637,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.001242729561044098,
+    "b_hat": 0.2833093209082099,
+    "clips": true,
+    "disc": 4.4291812383585106e-05,
+    "hi": 0.03504667821198191,
+    "kind": "bounded",
+    "leading": 0.0799540419552707,
+    "lo": -0.04819125765976022,
+    "sd_b": 0.008985108983358867,
+    "slope_z": 31.530983256065255,
+    "width": 0.08323793587174214
+   },
+   "losses": [
+    0.49641250000000003,
+    0.4335625,
+    0.3558375,
+    0.28226249999999997,
+    0.2174375
+   ],
+   "n": 4000,
+   "sd_b": 0.008985108983358867,
+   "se": [
+    0.007880376818124653,
+    0.007767593242094436,
+    0.007451058093661349,
+    0.006934147180635711,
+    0.006267567131501223
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.0035874999999999657,
+    0.06643749999999998,
+    0.14416250000000003,
+    0.21773750000000003,
+    0.2825625
+   ]
+  },
+  {
+   "a_hat": -0.52,
+   "b_hat": 0.8128510529560021,
+   "b_hat_star": 0.6397235977107684,
+   "boot_covers": false,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.6461055128785929,
+    "lo": 0.6327974271184668,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.013308085760126098
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.5894885306793902e-35
+    ],
+    [
+     -1.5894885306793902e-35,
+     2.4352390868075353e-05
+    ]
+   ],
+   "exact_b_star": 0.651017214397496,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": false,
+   "fieller": {
+    "a_hat": -0.52,
+    "b_hat": 0.8128510529560021,
+    "clips": false,
+    "disc": 0.00010118228117239614,
+    "hi": 0.6474272899200797,
+    "kind": "bounded",
+    "leading": 0.6606332855849761,
+    "lo": 0.6322010810992373,
+    "sd_b": 0.004934814167532082,
+    "slope_z": 164.71766217744158,
+    "width": 0.015226208820842357
+   },
+   "losses": [
+    1.02,
+    0.8120875,
+    0.6071875,
+    0.4049625,
+    0.21295
+   ],
+   "n": 4000,
+   "sd_b": 0.004934814167532082,
+   "se": [
+    3.5112724050625794e-18,
+    0.006411032847481003,
+    0.007775050904340032,
+    0.007679696874516508,
+    0.006217293467379104
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.52,
+    -0.31208749999999996,
+    -0.10718749999999999,
+    0.0950375,
+    0.28705
+   ]
+  },
+  {
+   "a_hat": -0.52,
+   "b_hat": 0.8053301277207296,
+   "b_hat_star": 0.6456979344256252,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.6524010267072028,
+    "lo": 0.638421466094948,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.013979560612254804
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.594396410148538e-35
+    ],
+    [
+     -1.5943964101485376e-35,
+     2.441575558560039e-05
+    ]
+   ],
+   "exact_b_star": 0.651017214397496,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.52,
+    "b_hat": 0.8053301277207296,
+    "clips": false,
+    "disc": 0.00010144555662217059,
+    "hi": 0.6535573990704484,
+    "kind": "bounded",
+    "leading": 0.6484628224950285,
+    "lo": 0.6380252542064555,
+    "sd_b": 0.004941230169259512,
+    "slope_z": 162.9817070111137,
+    "width": 0.015532144863992903
+   },
+   "losses": [
+    1.02,
+    0.8208624999999999,
+    0.614625,
+    0.41805000000000003,
+    0.2140125
+   ],
+   "n": 4000,
+   "sd_b": 0.004941230169259512,
+   "se": [
+    3.5112724050625794e-18,
+    0.006308271858987946,
+    0.007754232513551458,
+    0.007728290949184614,
+    0.0062244180094067
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.52,
+    -0.32086249999999994,
+    -0.11462499999999998,
+    0.08194999999999997,
+    0.2859875
+   ]
+  },
+  {
+   "a_hat": -0.52,
+   "b_hat": 0.8025377979396858,
+   "b_hat_star": 0.6479445595397119,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.6564349071738522,
+    "lo": 0.6405404556145071,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.015894451559345102
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.5952537253722982e-35
+    ],
+    [
+     -1.5952537253722982e-35,
+     2.467347527610732e-05
+    ]
+   ],
+   "exact_b_star": 0.651017214397496,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.52,
+    "b_hat": 0.8025377979396858,
+    "clips": false,
+    "disc": 0.00010251636179814394,
+    "hi": 0.6559013196006297,
+    "kind": "bounded",
+    "leading": 0.6439721349826435,
+    "lo": 0.6401785331087871,
+    "sd_b": 0.004967240207208357,
+    "slope_z": 161.56613420366898,
+    "width": 0.015722786491842555
+   },
+   "losses": [
+    1.02,
+    0.816575,
+    0.6125375000000001,
+    0.4236375,
+    0.2174375
+   ],
+   "n": 4000,
+   "sd_b": 0.004967240207208357,
+   "se": [
+    3.5112724050625794e-18,
+    0.006359539352731826,
+    0.0077618688584310275,
+    0.0077448551693260195,
+    0.006267567131501223
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.52,
+    -0.31657500000000005,
+    -0.11253750000000007,
+    0.0763625,
+    0.2825625
+   ]
+  },
+  {
+   "a_hat": 0.27940453967940526,
+   "b_hat": 0.006395602349937635,
+   "b_hat_star": -43.686978081451514,
+   "bootstrap": {
+    "flat_frac": 0.8866666666666667,
+    "hi": -10.578449969545527,
+    "lo": -18.010112818262545,
+    "n_flat": 266,
+    "n_nonflat": 34,
+    "width": 7.431662848717018
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "none",
+   "cov": [
+    [
+     2.3654015942198212e-05,
+     -3.139522207548327e-05
+    ],
+    [
+     -3.1395222075483274e-05,
+     6.241890172366898e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.27940453967940526,
+    "b_hat": 0.006395602349937635,
+    "kind": "flat",
+    "sd_b": 0.007900563380143784,
+    "slope_z": 0.8095121882081832,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.2159125,
+    0.22469999999999998,
+    0.2191875,
+    0.214475,
+    0.21295
+   ],
+   "n": 4000,
+   "sd_b": 0.007900563380143784,
+   "se": [
+    0.006249559471221439,
+    0.006358033001322931,
+    0.006293316309266493,
+    0.006235575490215281,
+    0.006217293467379104
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.2840875,
+    0.2753,
+    0.2808125,
+    0.28552500000000003,
+    0.28705
+   ]
+  },
+  {
+   "a_hat": 0.2743140996730329,
+   "b_hat": 0.01220290878632424,
+   "b_hat_star": -22.479402614273067,
+   "bootstrap": {
+    "flat_frac": 0.6633333333333333,
+    "hi": -7.927432663902443,
+    "lo": -17.409263513999985,
+    "n_flat": 199,
+    "n_nonflat": 101,
+    "width": 9.481830850097541
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "none",
+   "cov": [
+    [
+     2.4109196682722737e-05,
+     -3.198912200986725e-05
+    ],
+    [
+     -3.198912200986725e-05,
+     6.323078521924625e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.2743140996730329,
+    "b_hat": 0.01220290878632424,
+    "kind": "flat",
+    "sd_b": 0.007951778745616998,
+    "slope_z": 1.5346137231308725,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.22255,
+    0.2284875,
+    0.21811250000000001,
+    0.2149375,
+    0.2140125
+   ],
+   "n": 4000,
+   "sd_b": 0.007951778745616998,
+   "se": [
+    0.006331046115076702,
+    0.006400894640516061,
+    0.0062818493291136755,
+    0.006241948974894685,
+    0.0062244180094067
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.27745,
+    0.2715125,
+    0.28188749999999996,
+    0.2850625,
+    0.2859875
+   ]
+  },
+  {
+   "a_hat": 0.28083632826725413,
+   "b_hat": 0.003962539408333576,
+   "b_hat_star": -70.8728164763813,
+   "bootstrap": {
+    "flat_frac": 0.9,
+    "hi": 17.645155877302493,
+    "lo": -17.303769599756116,
+    "n_flat": 270,
+    "n_nonflat": 30,
+    "width": 34.94892547705861
+   },
+   "cell": "pi=0.5,a=0.6",
+   "channel": "none",
+   "cov": [
+    [
+     2.366410520587325e-05,
+     -3.14859692323878e-05
+    ],
+    [
+     -3.1485969232387804e-05,
+     6.271366573150744e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.28083632826725413,
+    "b_hat": 0.003962539408333576,
+    "kind": "flat",
+    "sd_b": 0.00791919602810206,
+    "slope_z": 0.5003714258710238,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.2154125,
+    0.2248125,
+    0.21783750000000002,
+    0.2107625,
+    0.2174375
+   ],
+   "n": 4000,
+   "sd_b": 0.00791919602810206,
+   "se": [
+    0.006248222149615459,
+    0.00635723759414375,
+    0.0062790151422198815,
+    0.006188923500251113,
+    0.006267567131501223
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.2845875,
+    0.27518750000000003,
+    0.2821625,
+    0.28923750000000004,
+    0.2825625
+   ]
+  },
+  {
+   "a_hat": 0.007082766583657536,
+   "b_hat": 0.02528530768914719,
+   "b_hat_star": -0.280113917170071,
+   "bootstrap": {
+    "flat_frac": 0.043333333333333335,
+    "hi": 0.033260883887125586,
+    "lo": -0.9216272912144681,
+    "n_flat": 13,
+    "n_nonflat": 287,
+    "width": 0.9548881751015936
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.9584710650440147e-05,
+     -2.5627673683799295e-05
+    ],
+    [
+     -2.562767368379929e-05,
+     4.953348607679496e-05
+    ]
+   ],
+   "exact_b_star": -0.6000000000000001,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.007082766583657536,
+    "b_hat": 0.02528530768914719,
+    "clips": true,
+    "disc": 3.531376827199457e-07,
+    "hi": 0.043622454017330795,
+    "kind": "bounded",
+    "leading": 0.00044906593792541237,
+    "lo": -1.279688528264048,
+    "sd_b": 0.007038002989257319,
+    "slope_z": 3.5926821468735133,
+    "width": 1.323310982281379
+   },
+   "losses": [
+    0.1870125,
+    0.189025,
+    0.18763749999999998,
+    0.1756375,
+    0.1627375
+   ],
+   "n": 4000,
+   "sd_b": 0.007038002989257319,
+   "se": [
+    0.005729371159595842,
+    0.0057581997238516265,
+    0.005751361181259339,
+    0.005556015048957622,
+    0.00535733334118474
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.012987500000000013,
+    0.010975000000000013,
+    0.012362500000000026,
+    0.02436250000000001,
+    0.037262500000000004
+   ]
+  },
+  {
+   "a_hat": 0.010082213215205367,
+   "b_hat": 0.024047883424159963,
+   "b_hat_star": -0.41925574227776585,
+   "bootstrap": {
+    "flat_frac": 0.07,
+    "hi": -0.045282879135329496,
+    "lo": -0.951200728125805,
+    "n_flat": 21,
+    "n_nonflat": 279,
+    "width": 0.9059178489904756
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.9523056744664295e-05,
+     -2.571302162866185e-05
+    ],
+    [
+     -2.5713021628661853e-05,
+     4.9825061722073434e-05
+    ]
+   ],
+   "exact_b_star": -0.6000000000000001,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.010082213215205367,
+    "b_hat": 0.024047883424159963,
+    "clips": true,
+    "disc": 4.24505764559079e-07,
+    "hi": -0.039960910648308604,
+    "kind": "bounded",
+    "leading": 0.0003868997743380993,
+    "lo": -1.7239656896330056,
+    "sd_b": 0.007058686968698459,
+    "slope_z": 3.406849394341979,
+    "width": 1.684004778984697
+   },
+   "losses": [
+    0.186875,
+    0.18841249999999998,
+    0.17895,
+    0.168775,
+    0.16667500000000002
+   ],
+   "n": 4000,
+   "sd_b": 0.007058686968698459,
+   "se": [
+    0.005725038437427954,
+    0.005751704898397262,
+    0.00562142103641216,
+    0.005460873797242282,
+    0.005423608344600383
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.013124999999999998,
+    0.011587500000000028,
+    0.021050000000000013,
+    0.031225000000000003,
+    0.033324999999999994
+   ]
+  },
+  {
+   "a_hat": 0.010661396348274593,
+   "b_hat": 0.02860199596230678,
+   "b_hat_star": -0.3727500822783397,
+   "bootstrap": {
+    "flat_frac": 0.0033333333333333335,
+    "hi": -0.06163799638423905,
+    "lo": -1.1329586532477975,
+    "n_flat": 1,
+    "n_nonflat": 299,
+    "width": 1.0713206568635585
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.9397394318768932e-05,
+     -2.5467768051215803e-05
+    ],
+    [
+     -2.5467768051215803e-05,
+     4.8923725841495746e-05
+    ]
+   ],
+   "exact_b_star": -0.6000000000000001,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.010661396348274593,
+    "b_hat": 0.02860199596230678,
+    "clips": true,
+    "disc": 5.502146434485283e-07,
+    "hi": -0.0506054873603776,
+    "kind": "bounded",
+    "leading": 0.0006301356948527785,
+    "lo": -1.2277559856354932,
+    "sd_b": 0.00699454972399909,
+    "slope_z": 4.089183305705885,
+    "width": 1.1771504982751155
+   },
+   "losses": [
+    0.189675,
+    0.18234999999999998,
+    0.1703,
+    0.1759375,
+    0.1575
+   ],
+   "n": 4000,
+   "sd_b": 0.00699454972399909,
+   "se": [
+    0.0057747292549730905,
+    0.005658886827374378,
+    0.005484751418663487,
+    0.005570264781486736,
+    0.005257052087354879
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.010325,
+    0.017650000000000027,
+    0.029700000000000004,
+    0.024062500000000014,
+    0.04250000000000001
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.860122960993351,
+   "b_hat_star": 0.9533520638176974,
+   "boot_covers": false,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.9608135832663507,
+    "lo": 0.9442276918243846,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.016585891441966094
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.524978794649014e-35
+    ],
+    [
+     -1.5249787946490137e-35,
+     1.9750499799254164e-05
+    ]
+   ],
+   "exact_b_star": 0.9624413145539906,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.860122960993351,
+    "clips": false,
+    "disc": 0.0002040619198917515,
+    "hi": 0.9631053369007562,
+    "kind": "bounded",
+    "leading": 0.7397356372963025,
+    "lo": 0.9437943511888637,
+    "sd_b": 0.00444415344011142,
+    "slope_z": 193.5403384658534,
+    "width": 0.019310985711892492
+   },
+   "losses": [
+    1.02,
+    0.803275,
+    0.5869875,
+    0.37010000000000004,
+    0.1627375
+   ],
+   "n": 4000,
+   "sd_b": 0.00444415344011142,
+   "se": [
+    3.5112724050625794e-18,
+    0.006473714802150686,
+    0.007778537064940629,
+    0.007438335143526868,
+    0.00535733334118474
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.8200000000000001,
+    -0.603275,
+    -0.3869875,
+    -0.17010000000000003,
+    0.037262500000000004
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.8546712281319528,
+   "b_hat_star": 0.9594332569171266,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.9691549744690493,
+    "lo": 0.9507738398359478,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.018381134633101537
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.5305021002962392e-35
+    ],
+    [
+     -1.5305021002962392e-35,
+     2.0118097665599237e-05
+    ]
+   ],
+   "exact_b_star": 0.9624413145539906,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.8546712281319528,
+    "clips": false,
+    "disc": 0.0002078599365049616,
+    "hi": 0.9694044580275051,
+    "kind": "bounded",
+    "leading": 0.7303856253528475,
+    "lo": 0.9496650930185794,
+    "sd_b": 0.004485320241142124,
+    "slope_z": 190.54854105898195,
+    "width": 0.019739365008925702
+   },
+   "losses": [
+    1.02,
+    0.8046875,
+    0.5943125,
+    0.3753,
+    0.16667500000000002
+   ],
+   "n": 4000,
+   "sd_b": 0.004485320241142124,
+   "se": [
+    3.5112724050625794e-18,
+    0.006459810978303184,
+    0.007760734603523953,
+    0.007476760862047619,
+    0.005423608344600383
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.8200000000000001,
+    -0.6046875,
+    -0.3943125,
+    -0.1753,
+    0.033324999999999994
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.8589498016536093,
+   "b_hat_star": 0.9546541583936278,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.9641016412437515,
+    "lo": 0.945285046504853,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.018816594738898518
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.5170442281343666e-35
+    ],
+    [
+     -1.517044228134367e-35,
+     1.9337231517495402e-05
+    ]
+   ],
+   "exact_b_star": 0.9624413145539906,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.8589498016536093,
+    "clips": false,
+    "disc": 0.00019979203711062432,
+    "hi": 0.9643303237015475,
+    "kind": "bounded",
+    "leading": 0.7377204785821941,
+    "lo": 0.9451702467844723,
+    "sd_b": 0.004397411911283204,
+    "slope_z": 195.33075795097852,
+    "width": 0.01916007691707522
+   },
+   "losses": [
+    1.02,
+    0.8039375,
+    0.58615,
+    0.3888625,
+    0.1575
+   ],
+   "n": 4000,
+   "sd_b": 0.004397411911283204,
+   "se": [
+    3.5112724050625794e-18,
+    0.006468060120613326,
+    0.007774029087742357,
+    0.007538076739040828,
+    0.005257052087354879
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.8200000000000001,
+    -0.6039375,
+    -0.38614999999999994,
+    -0.1888625,
+    0.04250000000000001
+   ]
+  },
+  {
+   "a_hat": 0.029155613758088797,
+   "b_hat": 0.0020050617386994513,
+   "b_hat_star": -14.54100549392563,
+   "bootstrap": {
+    "flat_frac": 0.9466666666666667,
+    "hi": -0.758137024711431,
+    "lo": -2.008768941452281,
+    "n_flat": 284,
+    "n_nonflat": 16,
+    "width": 1.25063191674085
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "none",
+   "cov": [
+    [
+     1.766880659566976e-05,
+     -2.330844793071241e-05
+    ],
+    [
+     -2.3308447930712407e-05,
+     4.6493364949661003e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.029155613758088797,
+    "b_hat": 0.0020050617386994513,
+    "kind": "flat",
+    "sd_b": 0.0068186043256417955,
+    "slope_z": 0.29405749959112437,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.16351249999999998,
+    0.174775,
+    0.17813749999999998,
+    0.1711375,
+    0.1627375
+   ],
+   "n": 4000,
+   "sd_b": 0.0068186043256417955,
+   "se": [
+    0.005364141621897435,
+    0.005545024722085749,
+    0.005610389526681528,
+    0.005485365081829808,
+    0.00535733334118474
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.036487500000000034,
+    0.025224999999999997,
+    0.021862500000000035,
+    0.028862500000000013,
+    0.037262500000000004
+   ]
+  },
+  {
+   "a_hat": 0.03126187339222683,
+   "b_hat": 0.0020032095410373596,
+   "b_hat_star": -15.605892819399166,
+   "bootstrap": {
+    "flat_frac": 0.9266666666666666,
+    "hi": 2.9032255822644584,
+    "lo": -1.987758401598304,
+    "n_flat": 278,
+    "n_nonflat": 22,
+    "width": 4.890983983862762
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "none",
+   "cov": [
+    [
+     1.76558032545352e-05,
+     -2.343293150470594e-05
+    ],
+    [
+     -2.343293150470594e-05,
+     4.677514143811509e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.03126187339222683,
+    "b_hat": 0.0020032095410373596,
+    "kind": "flat",
+    "sd_b": 0.006839235442512203,
+    "slope_z": 0.29289963152687376,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.164125,
+    0.1734125,
+    0.17195,
+    0.163025,
+    0.16667500000000002
+   ],
+   "n": 4000,
+   "sd_b": 0.006839235442512203,
+   "se": [
+    0.0053718151209040405,
+    0.0055261484815554455,
+    0.005513088781434414,
+    0.005366828724338899,
+    0.005423608344600383
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.03587500000000002,
+    0.026587500000000014,
+    0.02805000000000002,
+    0.03697500000000001,
+    0.033324999999999994
+   ]
+  },
+  {
+   "a_hat": 0.030413788096738004,
+   "b_hat": 0.008459758435409886,
+   "b_hat_star": -3.595113067228428,
+   "bootstrap": {
+    "flat_frac": 0.7633333333333333,
+    "hi": -0.8188810010881583,
+    "lo": -2.3243598080760073,
+    "n_flat": 229,
+    "n_nonflat": 71,
+    "width": 1.505478806987849
+   },
+   "cell": "a=0.3,f=0.2",
+   "channel": "none",
+   "cov": [
+    [
+     1.770615955665156e-05,
+     -2.3441741915824425e-05
+    ],
+    [
+     -2.3441741915824428e-05,
+     4.624904628714313e-05
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.030413788096738004,
+    "b_hat": 0.008459758435409886,
+    "kind": "flat",
+    "sd_b": 0.006800665135642478,
+    "slope_z": 1.2439604460263824,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.16867500000000002,
+    0.1686,
+    0.16205,
+    0.1704375,
+    0.1575
+   ],
+   "n": 4000,
+   "sd_b": 0.006800665135642478,
+   "se": [
+    0.005456000419620101,
+    0.00544553013485486,
+    0.005350009815528993,
+    0.0054839654327552435,
+    0.005257052087354879
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.03132499999999999,
+    0.03140000000000001,
+    0.03795000000000001,
+    0.02956250000000002,
+    0.04250000000000001
+   ]
+  },
+  {
+   "a_hat": -0.021199744277506705,
+   "b_hat": 0.18897616070333823,
+   "b_hat_star": 0.11218210910098257,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.1470696040646109,
+    "lo": 0.07593381421710108,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.07113578984750982
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.8199470116309074e-05,
+     -1.9533709734996757e-05
+    ],
+    [
+     -1.9533709734996757e-05,
+     2.3493376433740218e-05
+    ]
+   ],
+   "exact_b_star": 0.10526315789473684,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.021199744277506705,
+    "b_hat": 0.18897616070333823,
+    "clips": false,
+    "disc": 7.741422675886552e-06,
+    "hi": 0.14941378157798813,
+    "kind": "bounded",
+    "leading": 0.03562174047604464,
+    "lo": 0.07130582882606323,
+    "sd_b": 0.004846996640574472,
+    "slope_z": 38.98830032631104,
+    "width": 0.07810795275192489
+   },
+   "losses": [
+    0.21475,
+    0.17875,
+    0.12775,
+    0.0815,
+    0.03175
+   ],
+   "n": 4000,
+   "sd_b": 0.004846996640574472,
+   "se": [
+    0.0062622211098225435,
+    0.005778880362108208,
+    0.004903161696666337,
+    0.0037990848584152945,
+    0.0017040276707188903
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.014749999999999985,
+    0.02125000000000002,
+    0.07225000000000001,
+    0.11850000000000001,
+    0.16825
+   ]
+  },
+  {
+   "a_hat": -0.021364098005320464,
+   "b_hat": 0.19073353839105267,
+   "b_hat_star": 0.11201018019976426,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.14465817862610103,
+    "lo": 0.07558934779305015,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.06906883083305088
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.8133442534297846e-05,
+     -1.9404832378595e-05
+    ],
+    [
+     -1.9404832378595e-05,
+     2.3090503312314702e-05
+    ]
+   ],
+   "exact_b_star": 0.10526315789473684,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.021364098005320464,
+    "b_hat": 0.19073353839105267,
+    "clips": false,
+    "disc": 7.866004303893473e-06,
+    "hi": 0.14887132742243356,
+    "kind": "bounded",
+    "leading": 0.036290581449547804,
+    "lo": 0.07158847139035196,
+    "sd_b": 0.004805257881978313,
+    "slope_z": 39.69267478991745,
+    "width": 0.0772828560320816
+   },
+   "losses": [
+    0.22025,
+    0.1765,
+    0.125,
+    0.0775,
+    0.03075
+   ],
+   "n": 4000,
+   "sd_b": 0.004805257881978313,
+   "se": [
+    0.006328309114531486,
+    0.00574544950787246,
+    0.004847641169293222,
+    0.003681280409906869,
+    0.0016307281176052577
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.02024999999999999,
+    0.02350000000000002,
+    0.07500000000000001,
+    0.12250000000000001,
+    0.16925
+   ]
+  },
+  {
+   "a_hat": -0.018484268525621905,
+   "b_hat": 0.18941191397492219,
+   "b_hat_star": 0.0975876761800168,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.13128158795333134,
+    "lo": 0.05813690719346921,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.07314468075986214
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.7735138810553403e-05,
+     -1.8774216495578365e-05
+    ],
+    [
+     -1.8774216495578365e-05,
+     2.1822538984564342e-05
+    ]
+   ],
+   "exact_b_star": 0.10526315789473684,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.018484268525621905,
+    "b_hat": 0.18941191397492219,
+    "clips": false,
+    "disc": 7.869494325209708e-06,
+    "hi": 0.13498855855974307,
+    "kind": "bounded",
+    "leading": 0.035793042770771125,
+    "lo": 0.056614056633735914,
+    "sd_b": 0.004671460048482096,
+    "slope_z": 40.54661968830667,
+    "width": 0.07837450192600715
+   },
+   "losses": [
+    0.22125,
+    0.168,
+    0.12025,
+    0.08125,
+    0.02875
+   ],
+   "n": 4000,
+   "sd_b": 0.004671460048482096,
+   "se": [
+    0.006340122921889304,
+    0.005615325722586597,
+    0.0047492760796588995,
+    0.0037918602197314043,
+    0.0014727191179583772
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.02124999999999999,
+    0.032,
+    0.07975000000000002,
+    0.11875000000000001,
+    0.17125
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.9891659169930744,
+   "b_hat_star": 0.8289812516920163,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8315203458473018,
+    "lo": 0.8264441261459055,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.005076219701396378
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2737473718764913e-35
+    ],
+    [
+     -1.273747371876491e-35,
+     2.7639634947380207e-06
+    ]
+   ],
+   "exact_b_star": 0.8282828282828284,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.9891659169930744,
+    "clips": false,
+    "disc": 2.855723667671839e-05,
+    "hi": 0.8317210765755346,
+    "kind": "bounded",
+    "leading": 0.9784385936888028,
+    "lo": 0.8262594184013438,
+    "sd_b": 0.0016625172163734186,
+    "slope_z": 594.9808562890079,
+    "width": 0.005461658174190864
+   },
+   "losses": [
+    1.02,
+    0.76575,
+    0.513,
+    0.267,
+    0.03175
+   ],
+   "n": 4000,
+   "sd_b": 0.0016625172163734186,
+   "se": [
+    3.5112724050625794e-18,
+    0.006885752520381703,
+    0.0079059076546568,
+    0.006819778394078218,
+    0.0017040276707188903
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.8200000000000001,
+    -0.56575,
+    -0.313,
+    -0.067,
+    0.16825
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.9894573991533093,
+   "b_hat_star": 0.8287370438602853,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8308266824979273,
+    "lo": 0.8259802145011371,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.004846467996790227
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2703223907114165e-35
+    ],
+    [
+     -1.2703223907114162e-35,
+     2.543069619024461e-06
+    ]
+   ],
+   "exact_b_star": 0.8282828282828284,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.9894573991533093,
+    "clips": false,
+    "disc": 2.627496388196704e-05,
+    "hi": 0.831363202233814,
+    "kind": "bounded",
+    "leading": 0.9790161756420117,
+    "lo": 0.8261274245653795,
+    "sd_b": 0.0015947004794081116,
+    "slope_z": 620.4659821263464,
+    "width": 0.005235777668434527
+   },
+   "losses": [
+    1.02,
+    0.7685,
+    0.525,
+    0.2745,
+    0.03075
+   ],
+   "n": 4000,
+   "sd_b": 0.0015947004794081116,
+   "se": [
+    3.5112724050625794e-18,
+    0.006861028051719482,
+    0.007906287203506845,
+    0.006887982184547494,
+    0.0016307281176052577
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.8200000000000001,
+    -0.5685,
+    -0.325,
+    -0.07450000000000001,
+    0.16925
+   ]
+  },
+  {
+   "a_hat": -0.82,
+   "b_hat": 0.9910741930055915,
+   "b_hat_star": 0.8273850795299375,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8297455947358399,
+    "lo": 0.8251438296078484,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.004601765127991486
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2633947756490874e-35
+    ],
+    [
+     -1.2633947756490871e-35,
+     2.0925530058297833e-06
+    ]
+   ],
+   "exact_b_star": 0.8282828282828284,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.82,
+    "b_hat": 0.9910741930055915,
+    "clips": false,
+    "disc": 2.162023180130035e-05,
+    "hi": 0.8297588134262295,
+    "kind": "bounded",
+    "leading": 0.9822200175854825,
+    "lo": 0.8250248882180052,
+    "sd_b": 0.0014465659355279259,
+    "slope_z": 685.1220318857418,
+    "width": 0.004733925208224243
+   },
+   "losses": [
+    1.02,
+    0.769,
+    0.517,
+    0.287,
+    0.02875
+   ],
+   "n": 4000,
+   "sd_b": 0.0014465659355279259,
+   "se": [
+    3.5112724050625794e-18,
+    0.006856493482511228,
+    0.007906540225951306,
+    0.006995711900603762,
+    0.0014727191179583772
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.8200000000000001,
+    -0.569,
+    -0.317,
+    -0.08699999999999997,
+    0.17125
+   ]
+  },
+  {
+   "a_hat": 0.17062052315026371,
+   "b_hat": -0.0032056045347037543,
+   "b_hat_star": 53.2256930956805,
+   "bootstrap": {
+    "flat_frac": 0.6433333333333333,
+    "hi": 45.00432944278903,
+    "lo": 17.880517803068457,
+    "n_flat": 193,
+    "n_nonflat": 107,
+    "width": 27.12381163972057
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "none",
+   "cov": [
+    [
+     1.4250238197114037e-06,
+     -1.9207301495020924e-06
+    ],
+    [
+     -1.9207301495020924e-06,
+     4.155303320757059e-06
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.17062052315026371,
+    "b_hat": -0.0032056045347037543,
+    "kind": "flat",
+    "sd_b": 0.00203845611205075,
+    "slope_z": 1.5725649013256493,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.02875,
+    0.03125,
+    0.0305,
+    0.033,
+    0.03175
+   ],
+   "n": 4000,
+   "sd_b": 0.00203845611205075,
+   "se": [
+    0.0014727191179583772,
+    0.0016677993775304398,
+    0.0016118582511360727,
+    0.0017912431822716054,
+    0.0017040276707188903
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.17125,
+    0.16875,
+    0.1695,
+    0.167,
+    0.16825
+   ]
+  },
+  {
+   "a_hat": 0.1704511968778042,
+   "b_hat": -0.0009904480597968668,
+   "b_hat_star": 172.09503839379767,
+   "bootstrap": {
+    "flat_frac": 0.9466666666666667,
+    "hi": 43.64267570398035,
+    "lo": -40.99932933045497,
+    "n_flat": 284,
+    "n_nonflat": 16,
+    "width": 84.64200503443533
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "none",
+   "cov": [
+    [
+     1.4524672051595728e-06,
+     -1.9589196420260576e-06
+    ],
+    [
+     -1.9589196420260576e-06,
+     4.01489907006099e-06
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.1704511968778042,
+    "b_hat": -0.0009904480597968668,
+    "kind": "flat",
+    "sd_b": 0.0020037213054866164,
+    "slope_z": 0.49430430124429414,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.02975,
+    0.0295,
+    0.03025,
+    0.03,
+    0.03075
+   ],
+   "n": 4000,
+   "sd_b": 0.0020037213054866164,
+   "se": [
+    0.0015538140041491044,
+    0.0015339575471436976,
+    0.001592755032058614,
+    0.0015734099607941287,
+    0.0016307281176052577
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.17025,
+    0.1705,
+    0.16975,
+    0.17,
+    0.16925
+   ]
+  },
+  {
+   "a_hat": 0.17241682370446532,
+   "b_hat": -0.002917084939536907,
+   "b_hat_star": 59.10586331155542,
+   "bootstrap": {
+    "flat_frac": 0.5966666666666667,
+    "hi": 51.98938884560531,
+    "lo": 22.184057094456097,
+    "n_flat": 179,
+    "n_nonflat": 121,
+    "width": 29.805331751149215
+   },
+   "cell": "a=0.95,f=0.0",
+   "channel": "none",
+   "cov": [
+    [
+     1.100027901853713e-06,
+     -1.4475454655097093e-06
+    ],
+    [
+     -1.4475454655097093e-06,
+     3.181927089510154e-06
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.17241682370446532,
+    "b_hat": -0.002917084939536907,
+    "kind": "flat",
+    "sd_b": 0.001783795697245106,
+    "slope_z": 1.6353245744689557,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.0265,
+    0.02925,
+    0.03,
+    0.03175,
+    0.02875
+   ],
+   "n": 4000,
+   "sd_b": 0.001783795697245106,
+   "se": [
+    0.0012707640262072954,
+    0.0015138303390981086,
+    0.0015734099607941287,
+    0.0017040276707188898,
+    0.0014727191179583772
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.17350000000000002,
+    0.17075,
+    0.17,
+    0.16825,
+    0.17125
+   ]
+  },
+  {
+   "a_hat": -0.0786766116506139,
+   "b_hat": 0.7623326994983608,
+   "b_hat_star": 0.10320508578785302,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.14783067817389436,
+    "lo": 0.05784042951105032,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.08999024866284405
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "mismatch",
+   "cov": [
+    [
+     0.00048433108728378925,
+     -0.0005675896226808286
+    ],
+    [
+     -0.0005675896226808286,
+     0.0008369912642471223
+    ]
+   ],
+   "exact_b_star": 0.07733333333333335,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.0786766116506139,
+    "b_hat": 0.7623326994983608,
+    "clips": false,
+    "disc": 0.003353522112056249,
+    "hi": 0.15010693481192122,
+    "kind": "bounded",
+    "leading": 0.5779358772495721,
+    "lo": 0.04990619418597319,
+    "sd_b": 0.028930801306689076,
+    "slope_z": 26.350210331785807,
+    "width": 0.10020074062594803
+   },
+   "losses": [
+    1.04245,
+    0.91635,
+    0.70535,
+    0.5206000000000001,
+    0.3077
+   ],
+   "n": 4000,
+   "sd_b": 0.028930801306689076,
+   "se": [
+    0.030753958295847303,
+    0.02906754031303582,
+    0.02560896911630376,
+    0.021723763266814945,
+    0.01548095903111725
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.0424500000000001,
+    0.08365,
+    0.29464999999999997,
+    0.47939999999999994,
+    0.6923
+   ]
+  },
+  {
+   "a_hat": -0.05913079275085131,
+   "b_hat": 0.7481793143275839,
+   "b_hat_star": 0.07903291579772466,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.1266225684314217,
+    "lo": 0.029314794868892935,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.09730777356252876
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "mismatch",
+   "cov": [
+    [
+     0.00048045570218268956,
+     -0.0005670730389205372
+    ],
+    [
+     -0.0005670730389205372,
+     0.0008410744372895881
+    ]
+   ],
+   "exact_b_star": 0.07733333333333335,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.05913079275085131,
+    "b_hat": 0.7481793143275839,
+    "clips": false,
+    "disc": 0.0034019101976725994,
+    "hi": 0.12797790960237415,
+    "kind": "bounded",
+    "leading": 0.5565413335717072,
+    "lo": 0.023177254305033337,
+    "sd_b": 0.029001283373147266,
+    "slope_z": 25.798145023483155,
+    "width": 0.10480065529734081
+   },
+   "losses": [
+    1.0537999999999998,
+    0.88775,
+    0.6784,
+    0.4918,
+    0.31365
+   ],
+   "n": 4000,
+   "sd_b": 0.029001283373147266,
+   "se": [
+    0.030919175099721072,
+    0.028617384979340167,
+    0.025118540866734644,
+    0.021019601468902256,
+    0.015663085661456033
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.05379999999999985,
+    0.11224999999999996,
+    0.3216,
+    0.5082,
+    0.68635
+   ]
+  },
+  {
+   "a_hat": -0.04221174612156364,
+   "b_hat": 0.7272032542678004,
+   "b_hat_star": 0.058046695849931815,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.10308051658650383,
+    "lo": 0.0023478919220750296,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.1007326246644288
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "mismatch",
+   "cov": [
+    [
+     0.0004744867385486249,
+     -0.0005613049138788518
+    ],
+    [
+     -0.0005613049138788517,
+     0.0008373569456049582
+    ]
+   ],
+   "exact_b_star": 0.07733333333333335,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -0.04221174612156364,
+    "b_hat": 0.7272032542678004,
+    "clips": true,
+    "disc": 0.003344160400473242,
+    "hi": 0.10931085201690585,
+    "kind": "bounded",
+    "leading": 0.5256079007929155,
+    "lo": -0.0007116875357272699,
+    "sd_b": 0.028937120547921802,
+    "slope_z": 25.13046358788544,
+    "width": 0.11002253955263312
+   },
+   "losses": [
+    1.065,
+    0.8561,
+    0.64035,
+    0.5207999999999999,
+    0.31389999999999996
+   ],
+   "n": 4000,
+   "sd_b": 0.028937120547921802,
+   "se": [
+    0.03105937734775615,
+    0.02814393749645652,
+    0.02435510751753208,
+    0.02172302493791123,
+    0.015662631547947226
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.06499999999999995,
+    0.14390000000000003,
+    0.35965,
+    0.47920000000000007,
+    0.6861
+   ]
+  },
+  {
+   "a_hat": -4.1,
+   "b_hat": 4.802290823014132,
+   "b_hat_star": 0.8537592059921637,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8582749886051566,
+    "lo": 0.8490180079540242,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.009256980651132451
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "substitution",
+   "cov": [
+    [
+     0.0,
+     -0.0
+    ],
+    [
+     -0.0,
+     0.00020642809478251344
+    ]
+   ],
+   "exact_b_star": 0.85559265442404,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [
+    0.0
+   ],
+   "family": "adjacent",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -4.1,
+    "b_hat": 4.802290823014132,
+    "clips": false,
+    "disc": 0.053320313117183105,
+    "hi": 0.8587950651615783,
+    "kind": "bounded",
+    "leading": 23.061204163780204,
+    "lo": 0.8487820617329473,
+    "sd_b": 0.014367605742868692,
+    "slope_z": 334.2443347178935,
+    "width": 0.010013003428630984
+   },
+   "losses": [
+    5.1,
+    3.8834,
+    2.6471,
+    1.46285,
+    0.3077
+   ],
+   "n": 4000,
+   "sd_b": 0.014367605742868692,
+   "se": [
+    0.0,
+    0.0338884673163934,
+    0.039456489975038166,
+    0.0350943068312795,
+    0.01548095903111725
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -4.1,
+    -2.8834,
+    -1.6471,
+    -0.46285,
+    0.6923
+   ]
+  },
+  {
+   "a_hat": -4.1,
+   "b_hat": 4.790091209975322,
+   "b_hat_star": 0.8559335971435755,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8607315893362388,
+    "lo": 0.8511273594396258,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.009604229896613026
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "substitution",
+   "cov": [
+    [
+     0.0,
+     -0.0
+    ],
+    [
+     -0.0,
+     0.00021087998906244582
+    ]
+   ],
+   "exact_b_star": 0.85559265442404,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [
+    0.0
+   ],
+   "family": "wide_magnitude",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -4.1,
+    "b_hat": 4.790091209975322,
+    "clips": false,
+    "disc": 0.054470236035058406,
+    "hi": 0.8610498297164165,
+    "kind": "bounded",
+    "leading": 22.94416371308875,
+    "lo": 0.8508778052572935,
+    "sd_b": 0.01452170751194383,
+    "slope_z": 329.85729853294197,
+    "width": 0.010172024459123019
+   },
+   "losses": [
+    5.1,
+    3.8821999999999997,
+    2.7050500000000004,
+    1.48935,
+    0.31365
+   ],
+   "n": 4000,
+   "sd_b": 0.01452170751194383,
+   "se": [
+    0.0,
+    0.03389893913559286,
+    0.03944071521764305,
+    0.03532288310561191,
+    0.015663085661456033
+   ],
+   "seed": 1009,
+   "vhat": [
+    -4.1,
+    -2.8821999999999997,
+    -1.7050500000000004,
+    -0.48934999999999995,
+    0.68635
+   ]
+  },
+  {
+   "a_hat": -4.1,
+   "b_hat": 4.785168560976805,
+   "b_hat_star": 0.856814122168156,
+   "boot_covers": true,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 0.8617489511814006,
+    "lo": 0.8521334760322125,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.009615475149188146
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "substitution",
+   "cov": [
+    [
+     0.0,
+     -0.0
+    ],
+    [
+     -0.0,
+     0.000211415306847528
+    ]
+   ],
+   "exact_b_star": 0.85559265442404,
+   "exact_in_axis": true,
+   "exact_out_of_axis": false,
+   "exact_pts": [
+    0.0
+   ],
+   "family": "cluster",
+   "fie_covers": true,
+   "fieller": {
+    "a_hat": -4.1,
+    "b_hat": 4.785168560976805,
+    "clips": false,
+    "disc": 0.05460850845292953,
+    "hi": 0.8619474601393596,
+    "kind": "bounded",
+    "leading": 22.897026013765508,
+    "lo": 0.8517415655192563,
+    "sd_b": 0.014540127470126526,
+    "slope_z": 329.1008672935084,
+    "width": 0.01020589462010335
+   },
+   "losses": [
+    5.1,
+    3.8883,
+    2.65015,
+    1.5548,
+    0.31389999999999996
+   ],
+   "n": 4000,
+   "sd_b": 0.014540127470126526,
+   "se": [
+    0.0,
+    0.03384371620820762,
+    0.03946619616247408,
+    0.035811309002368445,
+    0.015662631547947226
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -4.1,
+    -2.8883,
+    -1.65015,
+    -0.5548,
+    0.6861
+   ]
+  },
+  {
+   "a_hat": 0.6844147464014567,
+   "b_hat": -0.0052511035168949505,
+   "b_hat_star": 130.3373175180063,
+   "bootstrap": {
+    "flat_frac": 0.94,
+    "hi": 18.194316390201184,
+    "lo": -17.85314929688473,
+    "n_flat": 282,
+    "n_nonflat": 18,
+    "width": 36.04746568708592
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "none",
+   "cov": [
+    [
+     0.00014464765789747519,
+     -0.00019014820952065366
+    ],
+    [
+     -0.00019014820952065366,
+     0.0003830225570303296
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": 0.6844147464014567,
+    "b_hat": -0.0052511035168949505,
+    "kind": "flat",
+    "sd_b": 0.01957096208749916,
+    "slope_z": 0.2683109544343281,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.29995,
+    0.32885000000000003,
+    0.3341,
+    0.32435,
+    0.3077
+   ],
+   "n": 4000,
+   "sd_b": 0.01957096208749916,
+   "se": [
+    0.01515123392160971,
+    0.016245473160993375,
+    0.01641863850697144,
+    0.016068566179960483,
+    0.01548095903111725
+   ],
+   "seed": 20260922,
+   "vhat": [
+    0.7000500000000001,
+    0.6711499999999999,
+    0.6658999999999999,
+    0.67565,
+    0.6923
+   ]
+  },
+  {
+   "a_hat": 0.6904019379472761,
+   "b_hat": 0.004286876838091924,
+   "b_hat_star": -161.0500987134895,
+   "bootstrap": {
+    "flat_frac": 0.9333333333333333,
+    "hi": 18.61385184759611,
+    "lo": -16.343979966404664,
+    "n_flat": 280,
+    "n_nonflat": 20,
+    "width": 34.95783181400077
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "none",
+   "cov": [
+    [
+     0.0001449282334432259,
+     -0.0001931797122622716
+    ],
+    [
+     -0.0001931797122622716,
+     0.0003841417362686529
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": 0.6904019379472761,
+    "b_hat": 0.004286876838091924,
+    "kind": "flat",
+    "sd_b": 0.01959953408294832,
+    "slope_z": 0.21872340536000423,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.30505,
+    0.32025,
+    0.30715,
+    0.29305000000000003,
+    0.31365
+   ],
+   "n": 4000,
+   "sd_b": 0.01959953408294832,
+   "se": [
+    0.015388317791627321,
+    0.015888615307795066,
+    0.015481913376112348,
+    0.014912780496290174,
+    0.015663085661456033
+   ],
+   "seed": 1009,
+   "vhat": [
+    0.69495,
+    0.6797500000000001,
+    0.69285,
+    0.70695,
+    0.68635
+   ]
+  },
+  {
+   "a_hat": 0.6960140867058704,
+   "b_hat": -0.0012443058566851128,
+   "b_hat_star": 559.3593271031316,
+   "bootstrap": {
+    "flat_frac": 0.9833333333333333,
+    "hi": 16.75855720901555,
+    "lo": -16.747603675016958,
+    "n_flat": 295,
+    "n_nonflat": 5,
+    "width": 33.50616088403251
+   },
+   "cell": "L=5,c=0.1,cb=0.2",
+   "channel": "none",
+   "cov": [
+    [
+     0.00014604256081976924,
+     -0.00019796891119806134
+    ],
+    [
+     -0.0001979689111980613,
+     0.00039603868366943295
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": 0.6960140867058704,
+    "b_hat": -0.0012443058566851128,
+    "kind": "flat",
+    "sd_b": 0.019900720682162063,
+    "slope_z": 0.06252566811816226,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.31875,
+    0.30485,
+    0.27535000000000004,
+    0.31705,
+    0.31389999999999996
+   ],
+   "n": 4000,
+   "sd_b": 0.019900720682162063,
+   "se": [
+    0.015891436178362004,
+    0.015339832039065705,
+    0.014217282692441243,
+    0.01579991245809358,
+    0.015662631547947226
+   ],
+   "seed": 41020261,
+   "vhat": [
+    0.68125,
+    0.6951499999999999,
+    0.72465,
+    0.68295,
+    0.6861
+   ]
+  },
+  {
+   "a_hat": -0.03505885810300291,
+   "b_hat": 0.010607248379919776,
+   "b_hat_star": 3.30517933089713,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 4.233603014006263,
+    "lo": 2.948992731837175,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 1.2846102821690883
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.1336449821818484e-06,
+     -1.2198826324167375e-06
+    ],
+    [
+     -1.2198826324167375e-06,
+     1.4447520796576318e-06
+    ]
+   ],
+   "exact_b_star": 3.5204081632653055,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": -0.03505885810300291,
+    "b_hat": 0.010607248379919776,
+    "clips": true,
+    "disc": 1.5296061675421944e-08,
+    "hi": 4.0109893350845685,
+    "kind": "bounded",
+    "leading": 0.00010696376257319373,
+    "lo": 2.8547356185443222,
+    "sd_b": 0.0012019784023257788,
+    "slope_z": 8.824824438937659,
+    "width": 1.1562537165402462
+   },
+   "losses": [
+    0.0551625,
+    0.0535,
+    0.050175,
+    0.0458125,
+    0.044675
+   ],
+   "n": 4000,
+   "sd_b": 0.0012019784023257788,
+   "se": [
+    0.0016017013642538249,
+    0.0014484774840346807,
+    0.0012549695537722118,
+    0.0007562095768823231,
+    0.0003953007202306287
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.0351625,
+    -0.0335,
+    -0.030174999999999997,
+    -0.0258125,
+    -0.024675
+   ]
+  },
+  {
+   "a_hat": -0.035374004422666555,
+   "b_hat": 0.01091964051621519,
+   "b_hat_star": 3.2394843374319606,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 3.868163171056672,
+    "lo": 2.783858114328072,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 1.0843050567286001
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.1319622793285279e-06,
+     -1.2350628878570692e-06
+    ],
+    [
+     -1.235062887857069e-06,
+     1.5297616984594765e-06
+    ]
+   ],
+   "exact_b_star": 3.5204081632653055,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": -0.035374004422666555,
+    "b_hat": 0.01091964051621519,
+    "clips": true,
+    "disc": 1.6814279717015204e-08,
+    "hi": 3.937490382317071,
+    "kind": "bounded",
+    "leading": 0.00011336203243326116,
+    "lo": 2.7936339721173518,
+    "sd_b": 0.0012368353562457197,
+    "slope_z": 8.828693698861084,
+    "width": 1.143856410199719
+   },
+   "losses": [
+    0.05535,
+    0.0539,
+    0.0484375,
+    0.048037500000000004,
+    0.0444125
+   ],
+   "n": 4000,
+   "sd_b": 0.0012368353562457197,
+   "se": [
+    0.0015827493954862942,
+    0.0015081499027060467,
+    0.00107840699128261,
+    0.0009623148709831046,
+    0.00046431951185554594
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.035350000000000006,
+    -0.0339,
+    -0.0284375,
+    -0.028037500000000003,
+    -0.0244125
+   ]
+  },
+  {
+   "a_hat": -0.033516478837506775,
+   "b_hat": 0.008269345584069748,
+   "b_hat_star": 4.053099304747121,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 5.678752504564963,
+    "lo": 3.4148307896270302,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 2.263921714937933
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "mismatch",
+   "cov": [
+    [
+     1.0095672916888289e-06,
+     -1.1168093870182545e-06
+    ],
+    [
+     -1.1168093870182545e-06,
+     1.412242285149348e-06
+    ]
+   ],
+   "exact_b_star": 3.5204081632653055,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": -0.033516478837506775,
+    "b_hat": 0.008269345584069748,
+    "clips": true,
+    "disc": 1.5914869551101204e-08,
+    "hi": 5.33612168617718,
+    "kind": "bounded",
+    "leading": 6.295700580552966e-05,
+    "lo": 3.3323073633422564,
+    "sd_b": 0.0011883780060020245,
+    "slope_z": 6.958514498168574,
+    "width": 2.003814322834924
+   },
+   "losses": [
+    0.055450000000000006,
+    0.05052500000000001,
+    0.049125,
+    0.046875,
+    0.0454
+   ],
+   "n": 4000,
+   "sd_b": 0.0011883780060020245,
+   "se": [
+    0.001637908746318096,
+    0.001230699902215129,
+    0.0010498912618292508,
+    0.0008656260282912094,
+    0.00046436936777465406
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.03545000000000001,
+    -0.030525000000000007,
+    -0.029125,
+    -0.026875,
+    -0.025400000000000002
+   ]
+  },
+  {
+   "a_hat": -1.0,
+   "b_hat": 0.9753837241089255,
+   "b_hat_star": 1.0252375298896472,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 1.0258963633278817,
+    "lo": 1.0245197336452196,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.001376629682662056
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2353380726739662e-35
+    ],
+    [
+     -1.2353380726739662e-35,
+     1.5580939165778456e-07
+    ]
+   ],
+   "exact_b_star": 1.0253255408592228,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": -1.0,
+    "b_hat": 0.9753837241089255,
+    "clips": true,
+    "disc": 2.3941414477590683e-06,
+    "hi": 1.0260513689062418,
+    "kind": "bounded",
+    "leading": 0.9513728107212346,
+    "lo": 1.0244249808845163,
+    "sd_b": 0.0003947269836960536,
+    "slope_z": 2471.0338142476403,
+    "width": 0.0016263880217255444
+   },
+   "losses": [
+    1.02,
+    0.7694,
+    0.5199874999999999,
+    0.2749375,
+    0.044675
+   ],
+   "n": 4000,
+   "sd_b": 0.0003947269836960536,
+   "se": [
+    3.5112724050625794e-18,
+    0.006736607489687783,
+    0.0077206538476282055,
+    0.006566427187972256,
+    0.0003953007202306287
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -1.0,
+    -0.7494,
+    -0.4999874999999999,
+    -0.2549375,
+    -0.024675
+   ]
+  },
+  {
+   "a_hat": -1.0,
+   "b_hat": 0.9755999316280226,
+   "b_hat_star": 1.0250103219372515,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 1.0259535666747974,
+    "lo": 1.0240724850162017,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.0018810816585956847
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.2362386515940194e-35
+    ],
+    [
+     -1.2362386515940192e-35,
+     2.1474695143958995e-07
+    ]
+   ],
+   "exact_b_star": 1.0253255408592228,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": -1.0,
+    "b_hat": 0.9755999316280226,
+    "clips": true,
+    "disc": 3.2997662833267327e-06,
+    "hi": 1.0259654741355722,
+    "kind": "bounded",
+    "leading": 0.9517944016510316,
+    "lo": 1.0240569465378353,
+    "sd_b": 0.00046340797515751706,
+    "slope_z": 2105.2722092156623,
+    "width": 0.0019085275977368532
+   },
+   "losses": [
+    1.02,
+    0.7734125000000001,
+    0.532875,
+    0.2854375,
+    0.0444125
+   ],
+   "n": 4000,
+   "sd_b": 0.00046340797515751706,
+   "se": [
+    3.5112724050625794e-18,
+    0.006703267181655873,
+    0.007715852492671965,
+    0.006661628665165572,
+    0.00046431951185554594
+   ],
+   "seed": 1009,
+   "vhat": [
+    -1.0,
+    -0.7534125,
+    -0.512875,
+    -0.2654375,
+    -0.0244125
+   ]
+  },
+  {
+   "a_hat": -1.0,
+   "b_hat": 0.9745946875030759,
+   "b_hat_star": 1.0260675671873534,
+   "bootstrap": {
+    "flat_frac": 0.0,
+    "hi": 1.0269037015953622,
+    "lo": 1.0252286172457197,
+    "n_flat": 0,
+    "n_nonflat": 300,
+    "width": 0.001675084349642475
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "substitution",
+   "cov": [
+    [
+     1.2329033902553952e-35,
+     -1.236211362936314e-35
+    ],
+    [
+     -1.2362113629363142e-35,
+     2.1480877627575098e-07
+    ]
+   ],
+   "exact_b_star": 1.0253255408592228,
+   "exact_in_axis": false,
+   "exact_out_of_axis": true,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": -1.0,
+    "b_hat": 0.9745946875030759,
+    "clips": true,
+    "disc": 3.3007162736353735e-06,
+    "hi": 1.027024829597078,
+    "kind": "bounded",
+    "leading": 0.9498339797301497,
+    "lo": 1.025112087593357,
+    "sd_b": 0.0004634746770598702,
+    "slope_z": 2102.8002946904926,
+    "width": 0.0019127420037210463
+   },
+   "losses": [
+    1.02,
+    0.77335,
+    0.525225,
+    0.2954,
+    0.0454
+   ],
+   "n": 4000,
+   "sd_b": 0.0004634746770598702,
+   "se": [
+    3.5112724050625794e-18,
+    0.006700534953805315,
+    0.0077088565274617896,
+    0.006756394912825516,
+    0.00046436936777465406
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -1.0,
+    -0.75335,
+    -0.505225,
+    -0.2754,
+    -0.025400000000000002
+   ]
+  },
+  {
+   "a_hat": -0.025057836146266187,
+   "b_hat": 0.000526441461578181,
+   "b_hat_star": 47.598523245390105,
+   "bootstrap": {
+    "flat_frac": 0.8333333333333334,
+    "hi": 25.613770158538657,
+    "lo": 14.454202182557216,
+    "n_flat": 250,
+    "n_nonflat": 50,
+    "width": 11.15956797598144
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "none",
+   "cov": [
+    [
+     9.674025599248835e-08,
+     -1.246676047279218e-07
+    ],
+    [
+     -1.246676047279218e-07,
+     2.575765825391972e-07
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "adjacent",
+   "fieller": {
+    "a_hat": -0.025057836146266187,
+    "b_hat": 0.000526441461578181,
+    "kind": "flat",
+    "sd_b": 0.0005075200316629849,
+    "slope_z": 1.037282134171525,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.0449125,
+    0.04525,
+    0.044675,
+    0.0443125,
+    0.044675
+   ],
+   "n": 4000,
+   "sd_b": 0.0005075200316629849,
+   "se": [
+    0.0003953317059469577,
+    0.0003953143601753423,
+    0.0005244448058076128,
+    0.0004642851775784252,
+    0.0003953007202306287
+   ],
+   "seed": 20260922,
+   "vhat": [
+    -0.0249125,
+    -0.025249999999999998,
+    -0.024675,
+    -0.024312499999999997,
+    -0.024675
+   ]
+  },
+  {
+   "a_hat": -0.025406595298657353,
+   "b_hat": 0.0008598399732251127,
+   "b_hat_star": 29.548050904590486,
+   "bootstrap": {
+    "flat_frac": 0.6133333333333333,
+    "hi": 23.591596925454564,
+    "lo": 12.90252263598324,
+    "n_flat": 184,
+    "n_nonflat": 116,
+    "width": 10.689074289471323
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "none",
+   "cov": [
+    [
+     1.1208655917999129e-07,
+     -1.449805118481943e-07
+    ],
+    [
+     -1.449805118481943e-07,
+     3.0682228623461423e-07
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "wide_magnitude",
+   "fieller": {
+    "a_hat": -0.025406595298657353,
+    "b_hat": 0.0008598399732251127,
+    "kind": "flat",
+    "sd_b": 0.0005539154143320207,
+    "slope_z": 1.5522947204168591,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.04535,
+    0.0454,
+    0.0446875,
+    0.0450375,
+    0.0444125
+   ],
+   "n": 4000,
+   "sd_b": 0.0005539154143320207,
+   "se": [
+    0.00039529538273284004,
+    0.0005244318422724705,
+    0.0005244467056091173,
+    0.00046441206711230056,
+    0.00046431951185554594
+   ],
+   "seed": 1009,
+   "vhat": [
+    -0.02535,
+    -0.025400000000000002,
+    -0.024687499999999998,
+    -0.0250375,
+    -0.0244125
+   ]
+  },
+  {
+   "a_hat": -0.024730794135206048,
+   "b_hat": -0.0003238034975287657,
+   "b_hat_star": -76.3759326997666,
+   "bootstrap": {
+    "flat_frac": 0.9266666666666666,
+    "hi": 24.18987655110743,
+    "lo": -24.162381310484317,
+    "n_flat": 278,
+    "n_nonflat": 22,
+    "width": 48.35225786159175
+   },
+   "cell": "pi=0.02,a=0.99,f=0.5",
+   "channel": "none",
+   "cov": [
+    [
+     9.841601059500474e-08,
+     -1.3252853107477705e-07
+    ],
+    [
+     -1.3252853107477705e-07,
+     2.8320058384015244e-07
+    ]
+   ],
+   "exact_b_star": null,
+   "exact_in_axis": false,
+   "exact_out_of_axis": false,
+   "exact_pts": [],
+   "family": "cluster",
+   "fieller": {
+    "a_hat": -0.024730794135206048,
+    "b_hat": -0.0003238034975287657,
+    "kind": "flat",
+    "sd_b": 0.0005321659363771346,
+    "slope_z": 0.6084634047288835,
+    "why": "the value's slope in fidelity is not distinguishable from zero"
+   },
+   "losses": [
+    0.044700000000000004,
+    0.044775,
+    0.045625,
+    0.044375,
+    0.0454
+   ],
+   "n": 4000,
+   "sd_b": 0.0005321659363771346,
+   "se": [
+    0.0003953056622939525,
+    0.0003953181160195082,
+    0.0005243768554404652,
+    0.00039521056615163957,
+    0.00046436936777465406
+   ],
+   "seed": 41020261,
+   "vhat": [
+    -0.024700000000000003,
+    -0.024775000000000002,
+    -0.025625,
+    -0.024374999999999997,
+    -0.025400000000000002
+   ]
+  }
+ ],
+ "s": 1.0,
+ "state_counts": {
+  "bounded": 43,
+  "flat": 20
+ },
+ "streams": [
+  {
+   "family": "adjacent",
+   "seed": 20260922
+  },
+  {
+   "family": "wide_magnitude",
+   "seed": 1009
+  },
+  {
+   "family": "cluster",
+   "seed": 41020261
+  }
+ ],
+ "what": "issue #93 v5 -- the boundary's interval: the registration's metric (a)",
+ "why": "metric (a) is registered as 'the boundary b*(a,s,L,c) WITH BOOTSTRAP CIs'; v1 owns the point estimate and nothing owned the interval"
+}

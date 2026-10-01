@@ -1,0 +1,219 @@
+{
+ "checks": [
+  {
+   "id": "A1-numeric-vs-closed",
+   "ok": true,
+   "readings": 6,
+   "worst": 7.709388682997087e-13
+  },
+  {
+   "id": "A2-declared-vs-measured-axis",
+   "ok": true,
+   "per_variant": {
+    "mismatch": {
+     "declared": true,
+     "measured_has_axis": true,
+     "ratios": [
+      0.0,
+      0.666666666666975,
+      1.3333333333325623
+     ],
+     "rows": 3
+    },
+    "none": {
+     "declared": false,
+     "measured_has_axis": false,
+     "ratios": [
+      null,
+      null,
+      null
+     ],
+     "rows": 3
+    },
+    "substitution": {
+     "declared": true,
+     "measured_has_axis": true,
+     "ratios": [
+      0.0,
+      0.10438413361123859,
+      0.20876826722340366
+     ],
+     "rows": 3
+    }
+   }
+  },
+  {
+   "id": "A3-zero-fidelity-inert",
+   "ok": true,
+   "rows": 2
+  },
+  {
+   "id": "B-step-independence",
+   "ok": true,
+   "spread": {
+    "mismatch": {
+     "h": [
+      0.01,
+      0.001,
+      0.0001,
+      1e-05
+     ],
+     "ratios": [
+      0.666666666666679,
+      0.6666666666666975,
+      0.666666666666975,
+      0.6666666666728345
+     ],
+     "relative_spread": 9.233280806597407e-12
+    },
+    "substitution": {
+     "h": [
+      0.01,
+      0.001,
+      0.0001,
+      1e-05
+     ],
+     "ratios": [
+      0.10438413361169196,
+      0.1043841336117238,
+      0.10438413361123859,
+      0.10438413361459431
+     ],
+     "relative_spread": 3.2147783046720654e-11
+    }
+   },
+   "worst": 3.2147783046720654e-11
+  },
+  {
+   "id": "B2-boundary-rule",
+   "ok": true,
+   "readings": {
+    "mismatch": {
+     "central": -0.14999999999987246,
+     "forward": -0.15000000000015,
+     "relative": 1.8503717077101675e-12
+    },
+    "substitution": {
+     "central": -0.9579999999997924,
+     "forward": -0.9580000000009026,
+     "relative": 1.1588966854127318e-12
+    }
+   },
+   "worst": 1.8503717077101675e-12
+  },
+  {
+   "id": "C-same-model",
+   "ok": true,
+   "readings": 9,
+   "worst": 2.220446049250313e-16
+  },
+  {
+   "id": "D-sign-convention",
+   "ok": true,
+   "readings": 9
+  },
+  {
+   "denominators": {
+    "mismatch": 0.15000000000000002,
+    "substitution": 0.15800000000000003
+   },
+   "id": "E-channel-term",
+   "measured": {
+    "mismatch": 0.666666666666975,
+    "substitution": 0.6329113924049632
+   },
+   "ok": true,
+   "predicted": {
+    "mismatch": 0.6666666666666666,
+    "substitution": 0.6329113924050632
+   }
+  },
+  {
+   "a_minus_f": 0.75,
+   "cross": {
+    "mismatch": {
+     "deviation": 2.986499936241671e-13,
+     "inside_unit_interval": true,
+     "numeric": 0.7500000000002986,
+     "predicted": 0.75
+    },
+    "substitution": {
+     "deviation": null,
+     "inside_unit_interval": false,
+     "numeric": null,
+     "predicted": 4.79
+    }
+   },
+   "id": "F-crossover",
+   "ok": true
+  }
+ ],
+ "coverage": 1.0,
+ "default": {
+  "L": 1.0,
+  "a": 0.8,
+  "c": 0.02,
+  "cb": 0.05,
+  "eta": 1.0,
+  "f": 0.05,
+  "pi": 0.2
+ },
+ "log": [
+  "=== A. the metric at the registered fidelities (E from the exact enumeration)",
+  "  none          b=0.00 [forward ] dE/da=-2.00e-01  dE/db= 0.00e+00  ratio=None  predicted=None  NO b-AXIS: E is constant in fidelity, so thi",
+  "  none          b=0.50 [central ] dE/da=-2.00e-01  dE/db=-3.47e-14  ratio=None  predicted=None  NO b-AXIS: E is constant in fidelity, so thi",
+  "  none          b=1.00 [backward] dE/da=-2.00e-01  dE/db= 0.00e+00  ratio=None  predicted=None  NO b-AXIS: E is constant in fidelity, so thi",
+  "  mismatch      b=0.00 [forward ] dE/da= 0.00e+00  dE/db=-1.50e-01  ratio=0.000000  predicted=0.000000  ACCURACY IS INERT: the reviewer's decision c",
+  "  mismatch      b=0.50 [central ] dE/da=-1.00e-01  dE/db=-1.50e-01  ratio=0.666667  predicted=0.666667  ok",
+  "  mismatch      b=1.00 [backward] dE/da=-2.00e-01  dE/db=-1.50e-01  ratio=1.333333  predicted=1.333333  ok",
+  "  substitution  b=0.00 [forward ] dE/da=-2.22e-12  dE/db=-9.58e-01  ratio=0.000000  predicted=0.000000  ACCURACY IS INERT: the reviewer's decision c",
+  "  substitution  b=0.50 [central ] dE/da=-1.00e-01  dE/db=-9.58e-01  ratio=0.104384  predicted=0.104384  ok",
+  "  substitution  b=1.00 [backward] dE/da=-2.00e-01  dE/db=-9.58e-01  ratio=0.208768  predicted=0.208768  ok",
+  "  A1-numeric-vs-closed               PASS  {\"readings\": 6, \"worst\": 7.709388682997087e-13}",
+  "  A2-declared-vs-measured-axis       PASS  {\"per_variant\": {\"mismatch\": {\"declared\": true, \"measured_has_axis\": true, \"ratios\": [0.0, 0.666",
+  "  A3-zero-fidelity-inert             PASS  {\"rows\": 2}",
+  "  B-step-independence                PASS  {\"spread\": {\"mismatch\": {\"h\": [0.01, 0.001, 0.0001, 1e-05], \"ratios\": [0.666666666666679, 0.6666",
+  "  B2-boundary-rule                   PASS  {\"readings\": {\"mismatch\": {\"central\": -0.14999999999987246, \"forward\": -0.15000000000015, \"relat",
+  "  C-same-model                       PASS  {\"readings\": 9, \"worst\": 2.220446049250313e-16}",
+  "  D-sign-convention                  PASS  {\"readings\": 9}",
+  "  E-channel-term                     PASS  {\"denominators\": {\"mismatch\": 0.15000000000000002, \"substitution\": 0.15800000000000003}, \"measur",
+  "  F-crossover                        PASS  {\"a_minus_f\": 0.75, \"cross\": {\"mismatch\": {\"deviation\": 2.986499936241671e-13, \"inside_unit_inte",
+  "\n=== B/C/D detail",
+  "  step independence: worst relative spread 3.21e-11 over 4 steps",
+  "  boundary rule vs central at b = 0.5: worst relative 1.85e-12",
+  "  value read two ways: 9 readings, worst difference 2.220e-16",
+  "  eta = 0: mismatch ratio 0.666667 (den 0.1500), substitution ratio 0.632911 (den 0.1580)",
+  "\n=== F. the crossover: the fidelity at which reviewer accuracy stops paying more than binding",
+  "  mismatch      numeric=0.750000   predicted=0.750000  inside the unit interval",
+  "  substitution  numeric=none in [0,1] predicted=4.790000  OUTSIDE the unit interval -> no crossover exists",
+  "  the predicted crossover for a misrepresenting channel is a - f = 0.750000 (the reviewer's own Youden margin)",
+  "\n=== G. PB2's own verdict: does reviewer accuracy pay more than binding fidelity? (ratio > 1)",
+  "  mismatch      {0.5: 'fidelity pays more (0.6667 < 1)', 1.0: 'accuracy pays more (1.3333 > 1)'}",
+  "  substitution  {0.5: 'fidelity pays more (0.1044 < 1)', 1.0: 'fidelity pays more (0.2088 < 1)'}"
+ ],
+ "note": "metric (b) of the registration: (dE/da)/(dE/db) at b in {0,0.5,1}; E is the expected loss under the gate read from v0's exact enumeration; the closed form is the prediction",
+ "pb2_verdict": {
+  "mismatch": {
+   "0.5": {
+    "accuracy_pays_more": false,
+    "ratio": 0.666666666666975
+   },
+   "1.0": {
+    "accuracy_pays_more": true,
+    "ratio": 1.3333333333325623
+   }
+  },
+  "substitution": {
+   "0.5": {
+    "accuracy_pays_more": false,
+    "ratio": 0.10438413361123859
+   },
+   "1.0": {
+    "accuracy_pays_more": false,
+    "ratio": 0.20876826722340366
+   }
+  }
+ },
+ "round": "R418",
+ "step": 0.0001
+}

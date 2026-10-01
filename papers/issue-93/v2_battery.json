@@ -1,0 +1,128 @@
+{
+ "all_fired": true,
+ "cases": [
+  {
+   "check": "reduces_to_v1_screening",
+   "error": "RuntimeError: a gated design does not reduce to v1's screening case: 1.580e-01",
+   "fired": true,
+   "kind": "direct (the clean class stops binding)",
+   "object": "a gated design with a perfect channel must be v1's screening case",
+   "returncode": 1
+  },
+  {
+   "check": "no_gate_loss",
+   "error": "RuntimeError: the no-gate design's loss is not L*pi: 0.20019999999999999",
+   "fired": true,
+   "kind": "direct",
+   "object": "the no-gate design's loss must be L*pi",
+   "returncode": 1
+  },
+  {
+   "check": "no_gate_value",
+   "error": "RuntimeError: the no-gate design's value is not 0: 0.10000000000000001",
+   "fired": true,
+   "kind": "direct (the value and the loss are read at their own alarms)",
+   "object": "the no-gate design's VALUE must be 0 (E1 = E0), a different object from its loss",
+   "returncode": 1
+  },
+  {
+   "check": "design_ordering",
+   "error": "RuntimeError: the design ordering misses the external-validation arm: {'unbound_is_worst': True, 'checked_reduces': False, 'rederived_reaches_zero': False, 'vac_beats_unbound': True, 'value_monotone_D1_to_D4': True, 'gate_worse_than_no_gate': ['D1', 'D2', 'D3', 'D4', 'D5'], 'attack_success': {'D0': None, 'D1': 1.0, 'D2': 1.0, 'D3': 1.0, 'D4': 0.6666666666666667, 'D5': 1.0}, 'values': {'D0': 0.0, 'D1': -0.19440000000000007, 'D2': -0.1494000000000001, 'D3': -0.1494000000000001, 'D4': -0.04940000000000003, 'D5': -0.19440000000000007}}",
+   "fired": true,
+   "kind": "direct (the check stops catching anything)",
+   "object": "the ordering must match the external-validation arm",
+   "returncode": 1
+  },
+  {
+   "check": "check_value_follows_sigma_v",
+   "error": "RuntimeError: the check's value does not follow sigma_v: [{'sigma_v': 0.0, 'gain': 0.1}, {'sigma_v': 0.1, 'gain': 0.20000000000000004}, {'sigma_v': 0.2, 'gain': 0.3000000000000001}, {'sigma_v': 0.4, 'gain': 0.5}]",
+   "fired": true,
+   "kind": "direct (the same-R check now catches the invisible class, so its value no longer tracks sigma_v)",
+   "object": "the check's value must follow the R-visible mass",
+   "returncode": 1
+  },
+  {
+   "check": "blind_spot_follows_sigma_i",
+   "error": "RuntimeError: the same-representation check's blind spot does not follow sigma_i: [{'sigma_i': 0.0, 'gap': 0.20000000000000004}, {'sigma_i': 0.05, 'gap': 0.25000000000000006}, {'sigma_i': 0.1, 'gap': 0.3000000000000001}, {'sigma_i': 0.3, 'gap': 0.5}]",
+   "fired": true,
+   "kind": "CARVED (the ordering alarm reads the same table and fires first)",
+   "object": "the blind spot must follow the R-invisible mass",
+   "returncode": 1
+  },
+  {
+   "check": "display_class_blind",
+   "error": "RuntimeError: the check appears to repair the display class: [{'delta': 0.0, 'gap': 0.0}, {'delta': 0.15, 'gap': 0.0}, {'delta': 0.3, 'gap': 0.0}, {'delta': 0.5, 'gap': 0.0}]",
+   "fired": true,
+   "kind": "direct (the canonical rendering stops mattering)",
+   "object": "the check must not repair the display class",
+   "returncode": 1
+  },
+  {
+   "check": "routes_agree_on_the_model",
+   "error": "RuntimeError: the Monte Carlo route missed its interval in 2 cells",
+   "fired": true,
+   "kind": "direct (one carrier moved, the other route notices)",
+   "object": "the enumeration and the drawing must apply the SAME rule",
+   "returncode": 1
+  },
+  {
+   "check": "defect_params_exceed_one",
+   "error": "RuntimeError: the defect parameters exceed 1: delta + sigma_v + sigma_i = 1.2000000000000002",
+   "fired": true,
+   "kind": "direct (three masses cannot sum above 1)",
+   "object": "defect masses that exceed 1 must be refused before any reading",
+   "returncode": 1
+  },
+  {
+   "check": "class_masses_sum_to_one",
+   "error": "RuntimeError: the channel's class masses do not sum to 1: 1.1000000000000001",
+   "fired": true,
+   "kind": "direct (a class mass inflated above its share)",
+   "object": "the channel's classes must PARTITION its state space",
+   "returncode": 1
+  },
+  {
+   "check": "anchor_zero_isolated",
+   "error": "RuntimeError: D3's attack success is not the R-invisible share: [{'label': 'channel fully R-visible', 'D1': 1.0, 'D3': 0.0, 'D4': 0.0, 'predicted_D3': 0.0, 'D3_matches_sigma_share': True}, {'label': '10% of it R-invisible', 'D1': 1.0, 'D3': 0.25000000000000006, 'D4': 0.0, 'predicted_D3': 0.125, 'D3_matches_sigma_share': False}, {'label': 'half of it R-invisible', 'D1': 1.0, 'D3': 0.5, 'D4': 0.0, 'predicted_D3': 0.25, 'D3_matches_sigma_share': False}]",
+   "fired": true,
+   "kind": "direct",
+   "object": "the zero-attack case must be isolated to a fully visible channel",
+   "returncode": 1
+  },
+  {
+   "check": "anchor_zero_case",
+   "error": "RuntimeError: the anchor's zero-attack case is not isolated: [{'label': 'channel fully R-visible', 'D1': 1.0, 'D3': 0.03225806451612903, 'D4': 0.0, 'predicted_D3': 0.03225806451612903, 'D3_matches_sigma_share': True}, {'label': '10% of it R-invisible', 'D1': 1.0, 'D3': 0.25000000000000006, 'D4': 0.0, 'predicted_D3': 0.25, 'D3_matches_sigma_share': True}, {'label': 'half of it R-invisible', 'D1': 1.0, 'D3': 0.5, 'D4': 0.0, 'predicted_D3': 0.5, 'D3_matches_sigma_share': True}]",
+   "fired": true,
+   "kind": "direct",
+   "object": "the anchor's zero case must actually be zero",
+   "returncode": 1
+  },
+  {
+   "check": "rederived_closes_channel",
+   "error": "RuntimeError: the same-representation check's blind spot does not follow sigma_i: [{'sigma_i': 0.0, 'gap': 0.0}, {'sigma_i': 0.05, 'gap': 0.0}, {'sigma_i': 0.1, 'gap': 0.0}, {'sigma_i': 0.3, 'gap': 0.0}]",
+   "fired": true,
+   "kind": "CARVED (P3 reads the same V(D4) - V(D3) table and fires first; P6's own site is reached by its sibling case, which moves the reported attack share instead of the caught set)",
+   "object": "the re-derived check must close the channel",
+   "returncode": 1
+  },
+  {
+   "check": "mc_coverage",
+   "error": "RuntimeError: the Monte Carlo route missed its interval in 5 cells",
+   "fired": true,
+   "kind": "direct (the interval is narrowed around a draw the exact value now misses)",
+   "object": "the drawn interval must cover the exact design values",
+   "returncode": 1
+  },
+  {
+   "check": "mc_bias",
+   "error": "RuntimeError: the drawn design values are biased: 4.996e-01 +- 1.766e-04",
+   "fired": true,
+   "kind": "CARVED (a biased draw also leaves the interval)",
+   "object": "the drawn design values must be unbiased",
+   "returncode": 1
+  }
+ ],
+ "cases_run": 15,
+ "missed": [],
+ "raise_sites_in_model": 14
+}

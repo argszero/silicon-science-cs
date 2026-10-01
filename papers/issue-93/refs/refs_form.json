@@ -1,0 +1,2205 @@
+{
+ "form": {
+  "arxiv": {
+   "date_field": "submittedDate",
+   "index": "arXiv API (export.arxiv.org)",
+   "sorts": {
+    "pass1": "submittedDate descending",
+    "pass2": "relevance"
+   },
+   "unavailable": "no filter on a paper's latest version: a work revised into relevance after its original posting is invisible to a window that reaches only the posting",
+   "windows": {
+    "W1": [
+     "202601010000",
+     "202609222359"
+    ],
+    "W2": [
+     "201801010000",
+     "202512312359"
+    ],
+    "W3": [
+     "201501010000",
+     "202609222359"
+    ]
+   }
+  },
+  "authored_inputs": {
+   "classic_titles": [
+    "A method of comparing the areas under receiver operating characteristic curves derived from the same cases",
+    "A note on the confinement problem",
+    "A surgical safety checklist to reduce morbidity and mortality in a global population",
+    "Alarm fatigue: a patient safety concern",
+    "Algorithmic accountability: journalistic investigation of computational power structures",
+    "Alice in warningland: a large-scale field study of browser security warning effectiveness",
+    "An intervention to decrease catheter-related bloodstream infections in the ICU",
+    "Aviation automation: the search for a human-centered approach",
+    "Basic principles of ROC analysis",
+    "Characteristics of useful code reviews: an empirical study at Microsoft",
+    "Complacency and bias in human use of automation: an attentional integration",
+    "Costly monitoring, financial intermediation, and equilibrium credit rationing",
+    "Crime and punishment: an economic approach",
+    "Cry Wolf: The Psychology of False Alarms",
+    "Crying wolf: an empirical study of SSL warning effectiveness",
+    "Effect of screening and adjuvant therapy on mortality from breast cancer",
+    "Effects of computerized physician order entry and clinical decision support systems on medication safety",
+    "Expectations, outcomes, and challenges of modern code review",
+    "How polymorphic warnings reduce habituation in the brain: insights from an fMRI study",
+    "Human-in-the-loop machine learning: a state of the art",
+    "Humans and automation: use, misuse, disuse, abuse",
+    "If not now, when? The effects of interruption at different moments within task execution",
+    "Improving SSL warnings: comprehension and adherence",
+    "Improving computer security dialogs",
+    "Index for rating diagnostic tests",
+    "Interactive machine learning for health informatics: when do we need the human-in-the-loop?",
+    "Ironies of automation",
+    "Long-term psychosocial consequences of false-positive screening mammography",
+    "Meaningful human control over autonomous systems: a philosophical account",
+    "Modern code review: a case study at Google",
+    "Monitor alarm fatigue: an integrative review",
+    "Moral crumple zones: cautionary tales in human-robot interaction",
+    "Moral hazard and observability",
+    "On the formal definition of separation-of-duty policies and their composition",
+    "Optimal contracts and competitive markets with costly state verification",
+    "Overdiagnosis in cancer",
+    "Overriding of drug safety alerts in computerized physician order entry",
+    "Physicians' decisions to override computerized drug alerts in primary care",
+    "Principles of mixed-initiative user interfaces",
+    "Programming semantics for multiprogrammed computations",
+    "Protection",
+    "Reading this may harm your computer: the psychology of malware warnings",
+    "Reflections on trusting trust",
+    "Security engineering: a guide to building dependable distributed systems",
+    "So long, and no thanks for the externalities: the rational rejection of security advice by users",
+    "The Byzantine generals problem",
+    "The confused deputy: (or why capabilities might have been invented)",
+    "The economic theory of public enforcement of law",
+    "The economics of information",
+    "The effect of computerised physician order entry with clinical decision support on the rates of adverse drug events",
+    "The effects of interruptions on task performance, annoyance, and anxiety in the user interface",
+    "The ethics of algorithms: mapping the debate",
+    "The market for lemons: quality uncertainty and the market mechanism",
+    "The meaning and use of the area under a receiver operating characteristic (ROC) curve",
+    "The out-of-the-loop performance problem and level of control in automation",
+    "The protection of information in computer systems",
+    "The psychological costs of screening",
+    "The relative operating characteristic in psychology",
+    "Theory of the firm: managerial behavior, agency costs and ownership structure",
+    "Trust in automation: designing for appropriate reliance",
+    "Why phishing works",
+    "You've been warned: an empirical study of the effectiveness of web browser phishing warnings",
+    "Your attention please: designing security-decision UIs to make genuine risks harder to ignore",
+    "Zero trust architecture"
+   ],
+   "expectations": {
+    "Alarm fatigue: a patient safety concern": [
+     "Sendelbach",
+     2013
+    ],
+    "Algorithmic accountability: journalistic investigation of computational power structures": [
+     "Diakopoulos",
+     2014
+    ],
+    "Alice in warningland: a large-scale field study of browser security warning effectiveness": [
+     "Akhawe",
+     2013
+    ],
+    "Aviation automation: the search for a human-centered approach": [
+     "Billings",
+     1997
+    ],
+    "Crime and punishment: an economic approach": [
+     "Becker",
+     1968
+    ],
+    "Cry Wolf: The Psychology of False Alarms": [
+     "Breznitz",
+     1984
+    ],
+    "How polymorphic warnings reduce habituation in the brain: insights from an fMRI study": [
+     "Anderson",
+     2015
+    ],
+    "Humans and automation: use, misuse, disuse, abuse": [
+     "Parasuraman",
+     1997
+    ],
+    "Improving SSL warnings: comprehension and adherence": [
+     "Felt",
+     2015
+    ],
+    "Ironies of automation": [
+     "Bainbridge",
+     1983
+    ],
+    "Modern code review: a case study at Google": [
+     "Sadowski",
+     2018
+    ],
+    "Monitor alarm fatigue: an integrative review": [
+     "Cvach",
+     2012
+    ],
+    "Overdiagnosis in cancer": [
+     "Welch",
+     2010
+    ],
+    "Protection": [
+     "Lampson",
+     1974
+    ],
+    "Security engineering: a guide to building dependable distributed systems": [
+     "Anderson",
+     2020
+    ],
+    "So long, and no thanks for the externalities: the rational rejection of security advice by users": [
+     "Herley",
+     2009
+    ],
+    "The confused deputy: (or why capabilities might have been invented)": [
+     "Hardy",
+     1988
+    ],
+    "The economics of information": [
+     "Stigler",
+     1961
+    ],
+    "The effect of computerised physician order entry with clinical decision support on the rates of adverse drug events": [
+     "Wolfstadt",
+     2008
+    ],
+    "The ethics of algorithms: mapping the debate": [
+     "Mittelstadt",
+     2016
+    ],
+    "The market for lemons: quality uncertainty and the market mechanism": [
+     "Akerlof",
+     1970
+    ],
+    "Theory of the firm: managerial behavior, agency costs and ownership structure": [
+     "Jensen",
+     1976
+    ],
+    "Trust in automation: designing for appropriate reliance": [
+     "Lee",
+     2004
+    ],
+    "You've been warned: an empirical study of the effectiveness of web browser phishing warnings": [
+     "Egelman",
+     2008
+    ],
+    "Your attention please: designing security-decision UIs to make genuine risks harder to ignore": [
+     "Bravo-Lillo",
+     2013
+    ]
+   },
+   "pass1_queries": [
+    {
+     "body": "all:\"abstention\" AND all:\"LLM\"",
+     "label": "arx-W1-abstention"
+    },
+    {
+     "body": "all:\"AI control\"",
+     "label": "arx-W1-aicontrol"
+    },
+    {
+     "body": "all:\"alarm fatigue\" OR all:\"alert fatigue\"",
+     "label": "arx-W1-alarmfatigue"
+    },
+    {
+     "body": "all:\"human approval\"",
+     "label": "arx-W1-approval"
+    },
+    {
+     "body": "all:\"approval fatigue\"",
+     "label": "arx-W1-approvalfatigue"
+    },
+    {
+     "body": "all:\"authorization\" AND all:\"agent\"",
+     "label": "arx-W1-authz"
+    },
+    {
+     "body": "all:\"automation bias\"",
+     "label": "arx-W1-automationbias"
+    },
+    {
+     "body": "all:\"binding\" AND all:\"tool call\"",
+     "label": "arx-W1-binding"
+    },
+    {
+     "body": "all:\"confused deputy\" OR all:\"capability-based\"",
+     "label": "arx-W1-confused"
+    },
+    {
+     "body": "all:\"when to defer\" OR all:\"learning to defer\"",
+     "label": "arx-W1-defer"
+    },
+    {
+     "body": "all:\"escalation\" AND all:\"agent\"",
+     "label": "arx-W1-escalation"
+    },
+    {
+     "body": "all:\"reviewer fatigue\" OR all:\"rubber stamp\"",
+     "label": "arx-W1-fatigue"
+    },
+    {
+     "body": "all:\"approval\" AND all:\"hijack\"",
+     "label": "arx-W1-hijack"
+    },
+    {
+     "body": "all:\"human-in-the-loop\" AND all:\"agent\"",
+     "label": "arx-W1-hitl-agent"
+    },
+    {
+     "body": "all:\"prompt injection\" AND all:\"agent\"",
+     "label": "arx-W1-injection"
+    },
+    {
+     "body": "all:\"least privilege\"",
+     "label": "arx-W1-leastpriv"
+    },
+    {
+     "body": "all:\"out-of-band\" AND all:\"verification\"",
+     "label": "arx-W1-oob"
+    },
+    {
+     "body": "all:\"human oversight\" AND cat:cs.AI",
+     "label": "arx-W1-oversight"
+    },
+    {
+     "body": "all:\"provenance\" AND all:\"agent\" AND all:\"tool\"",
+     "label": "arx-W1-provenance"
+    },
+    {
+     "body": "all:\"rendering\" AND all:\"approval\"",
+     "label": "arx-W1-rendering"
+    },
+    {
+     "body": "all:\"scalable oversight\"",
+     "label": "arx-W1-scalable"
+    },
+    {
+     "body": "all:\"tool call\" AND all:\"mismatch\"",
+     "label": "arx-W1-substitution"
+    },
+    {
+     "body": "all:\"time-of-check\" OR all:\"TOCTOU\"",
+     "label": "arx-W1-toctou"
+    },
+    {
+     "body": "all:\"adversarial\" AND all:\"agent\" AND all:\"tool\"",
+     "label": "arx-W2-adversarial"
+    },
+    {
+     "body": "all:\"human\" AND all:\"automation\" AND all:\"complacency\"",
+     "label": "arx-W2-aviation"
+    },
+    {
+     "body": "all:\"learning to defer\" OR all:\"learning to reject\"",
+     "label": "arx-W2-defer"
+    },
+    {
+     "body": "all:\"guardrail\" AND all:\"LLM\"",
+     "label": "arx-W2-guardrail"
+    },
+    {
+     "body": "all:\"human-in-the-loop\"",
+     "label": "arx-W2-hitl"
+    },
+    {
+     "body": "all:\"human computation\"",
+     "label": "arx-W2-humancomp"
+    },
+    {
+     "body": "all:\"interactive machine learning\"",
+     "label": "arx-W2-imitl"
+    },
+    {
+     "body": "all:\"monitor\" AND all:\"detection\" AND all:\"entropy\"",
+     "label": "arx-W2-monitorlaw"
+    },
+    {
+     "body": "all:\"mixed-initiative\" OR all:\"mixed initiative\"",
+     "label": "arx-W2-partial"
+    },
+    {
+     "body": "all:\"reject option\"",
+     "label": "arx-W2-reject"
+    },
+    {
+     "body": "all:\"sandbox\" AND all:\"untrusted\"",
+     "label": "arx-W2-sandbox"
+    },
+    {
+     "body": "all:\"selective classification\"",
+     "label": "arx-W2-selectclass"
+    }
+   ],
+   "pass2_queries": [
+    {
+     "body": "abs:\"approval\" AND abs:\"agent\" AND cat:cs.AI",
+     "label": "arx-W3-approvalagent"
+    },
+    {
+     "body": "abs:\"approval fatigue\" OR abs:\"rubber stamp\"",
+     "label": "arx-W3-approvalfatigue"
+    },
+    {
+     "body": "abs:\"human approval\"",
+     "label": "arx-W3-approvalgate"
+    },
+    {
+     "body": "abs:\"capability\" AND abs:\"attenuation\"",
+     "label": "arx-W3-attenuation"
+    },
+    {
+     "body": "abs:\"audit\" AND abs:\"agent\" AND abs:\"authorization\"",
+     "label": "arx-W3-audit"
+    },
+    {
+     "body": "abs:\"costly\" AND abs:\"verification\" AND abs:\"monitoring\"",
+     "label": "arx-W3-costverif"
+    },
+    {
+     "body": "abs:\"false alarm\" AND abs:\"trust\"",
+     "label": "arx-W3-crywolf"
+    },
+    {
+     "body": "abs:\"defer\" AND abs:\"expert\"",
+     "label": "arx-W3-defer"
+    },
+    {
+     "body": "abs:\"detection\" AND abs:\"entropy\" AND abs:\"attack\"",
+     "label": "arx-W3-entropy"
+    },
+    {
+     "body": "abs:\"escalation\" AND abs:\"human\"",
+     "label": "arx-W3-escalation"
+    },
+    {
+     "body": "abs:\"faithfulness\" AND abs:\"user interface\"",
+     "label": "arx-W3-faithful"
+    },
+    {
+     "body": "abs:\"guardrail\" AND (abs:\"bypass\" OR abs:\"jailbreak\")",
+     "label": "arx-W3-guardrailbypass"
+    },
+    {
+     "body": "abs:\"habituation\" AND abs:\"warning\"",
+     "label": "arx-W3-habituation"
+    },
+    {
+     "body": "abs:\"hijack\" AND abs:\"approval\"",
+     "label": "arx-W3-hijack"
+    },
+    {
+     "body": "abs:\"indirect prompt injection\"",
+     "label": "arx-W3-injection"
+    },
+    {
+     "body": "abs:\"Model Context Protocol\" AND abs:\"security\"",
+     "label": "arx-W3-mcpsec"
+    },
+    {
+     "body": "abs:\"mixed-initiative\" OR abs:\"when to ask\"",
+     "label": "arx-W3-mixedinit"
+    },
+    {
+     "body": "abs:\"monitorability\" OR abs:\"monitoring\" AND abs:\"untrusted\"",
+     "label": "arx-W3-monitorability"
+    },
+    {
+     "body": "abs:\"human oversight\" OR abs:\"scalable oversight\"",
+     "label": "arx-W3-oversight"
+    },
+    {
+     "body": "abs:\"policy enforcement point\" OR abs:\"reference monitor\"",
+     "label": "arx-W3-pep"
+    },
+    {
+     "body": "abs:\"principal-agent\" AND abs:\"security\"",
+     "label": "arx-W3-principalagent"
+    },
+    {
+     "body": "abs:\"reject option\" OR abs:\"selective prediction\"",
+     "label": "arx-W3-reject"
+    },
+    {
+     "body": "abs:\"signal detection\" AND abs:\"threshold\"",
+     "label": "arx-W3-screening"
+    },
+    {
+     "body": "abs:\"separation of duties\" OR abs:\"least privilege\"",
+     "label": "arx-W3-sepduty"
+    },
+    {
+     "body": "abs:\"semantic\" AND abs:\"substitution\" AND abs:\"tool\"",
+     "label": "arx-W3-substitution"
+    },
+    {
+     "body": "abs:\"time-of-check\" OR abs:\"TOCTOU\" OR abs:\"race condition\" AND abs:\"authorization\"",
+     "label": "arx-W3-toctou"
+    },
+    {
+     "body": "abs:\"tool\" AND abs:\"poison\" AND abs:\"agent\"",
+     "label": "arx-W3-toolpoison"
+    },
+    {
+     "body": "abs:\"abstain\" AND abs:\"safety\"",
+     "label": "arx-W3-withhold"
+    }
+   ]
+  },
+  "crossref": {
+   "date_fields_not_read": [
+    "created",
+    "published-online",
+    "published-print"
+   ],
+   "field": "query.bibliographic (a title search; no date window)",
+   "format_not_read": "Crossref's own date field is read for the year only; a record without a date is reported with year null rather than dropped silently (stage 2 owns whether such an entry is admitted)",
+   "index": "Crossref REST API (api.crossref.org)",
+   "rows_read": 8,
+   "rules": {
+    "A_full_title": "normalized-title token Jaccard >= 0.85",
+    "B_main_title": "same test on the text before the first ':', AND the returned record must satisfy a declared (author family, year +-1) expectation; without an expectation rule B is refused"
+   }
+  }
+ },
+ "limitations": [
+  "The classical limb's NOT FOUND means NOT FOUND WITHIN 8 CANDIDATE ROWS: the title query is a recall-limited instrument, and 9 of the 64 queries returned no row whose main title reached the identity rule although the work is citable. A work that cannot be identified is not cited.",
+  "The arXiv window is the submission date; a paper's later versions are not reachable by any window arXiv exposes.",
+  "Rule B is admitted only where the query declares a metadata expectation; a registry record whose author field is '&NA;' cannot satisfy any expectation and is refused (two such refusals are recorded above)."
+ ],
+ "measured": {
+  "arxiv_ids_returned_by_more_than_one_query": 213,
+  "arxiv_union": 1263,
+  "classic": {
+   "collisions": {},
+   "matched": 50,
+   "queries": 64,
+   "ruleA": 41,
+   "ruleB": 13,
+   "ruleB_refused": 51,
+   "unique_dois": 50
+  },
+  "controls": {
+   "A note on the confinement problem": {
+    "expected": "match",
+    "ok": true,
+    "rule_selects": "A",
+    "top": "A further note on the confinement problem",
+    "top_jaccard_main": 0.75,
+    "verdict": "match"
+   },
+   "Crying wolf: an empirical study of SSL warning effectiveness": {
+    "expected": "NOT FOUND",
+    "ok": true,
+    "rule_selects": null,
+    "top": "Crying about a Strategic Wolf: A Theory of Crime and Warning",
+    "top_jaccard_main": 0.5,
+    "verdict": "NOT FOUND"
+   },
+   "Protection": {
+    "expected": "NOT FOUND",
+    "ok": true,
+    "rule_selects": null,
+    "top": "Protection anodique. Protection cathodique",
+    "top_jaccard_main": 0.3333,
+    "verdict": "NOT FOUND"
+   },
+   "Quantum kernels for underwater basket weaving": {
+    "expected": "NOT FOUND",
+    "ok": true,
+    "rule_selects": null,
+    "top": "Bamboo basket weaving",
+    "top_jaccard_main": 0.3333,
+    "verdict": "NOT FOUND"
+   }
+  },
+  "errors": {
+   "classic": [],
+   "pass1": [],
+   "pass2": []
+  },
+  "pass1": {
+   "per_query": {
+    "arx-W1-abstention": {
+     "n_returned": 25,
+     "query": "all:\"abstention\" AND all:\"LLM\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-aicontrol": {
+     "n_returned": 30,
+     "query": "all:\"AI control\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-alarmfatigue": {
+     "n_returned": 30,
+     "query": "all:\"alarm fatigue\" OR all:\"alert fatigue\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-approval": {
+     "n_returned": 40,
+     "query": "all:\"human approval\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-approvalfatigue": {
+     "n_returned": 1,
+     "query": "all:\"approval fatigue\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-authz": {
+     "n_returned": 40,
+     "query": "all:\"authorization\" AND all:\"agent\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-automationbias": {
+     "n_returned": 23,
+     "query": "all:\"automation bias\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-binding": {
+     "n_returned": 25,
+     "query": "all:\"binding\" AND all:\"tool call\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-confused": {
+     "n_returned": 25,
+     "query": "all:\"confused deputy\" OR all:\"capability-based\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-defer": {
+     "n_returned": 30,
+     "query": "all:\"when to defer\" OR all:\"learning to defer\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-escalation": {
+     "n_returned": 40,
+     "query": "all:\"escalation\" AND all:\"agent\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-fatigue": {
+     "n_returned": 12,
+     "query": "all:\"reviewer fatigue\" OR all:\"rubber stamp\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-hijack": {
+     "n_returned": 3,
+     "query": "all:\"approval\" AND all:\"hijack\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-hitl-agent": {
+     "n_returned": 40,
+     "query": "all:\"human-in-the-loop\" AND all:\"agent\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-injection": {
+     "n_returned": 40,
+     "query": "all:\"prompt injection\" AND all:\"agent\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-leastpriv": {
+     "n_returned": 30,
+     "query": "all:\"least privilege\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-oob": {
+     "n_returned": 6,
+     "query": "all:\"out-of-band\" AND all:\"verification\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-oversight": {
+     "n_returned": 40,
+     "query": "all:\"human oversight\" AND cat:cs.AI",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-provenance": {
+     "n_returned": 30,
+     "query": "all:\"provenance\" AND all:\"agent\" AND all:\"tool\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-rendering": {
+     "n_returned": 20,
+     "query": "all:\"rendering\" AND all:\"approval\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-scalable": {
+     "n_returned": 25,
+     "query": "all:\"scalable oversight\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-substitution": {
+     "n_returned": 25,
+     "query": "all:\"tool call\" AND all:\"mismatch\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W1-toctou": {
+     "n_returned": 25,
+     "query": "all:\"time-of-check\" OR all:\"TOCTOU\"",
+     "window": [
+      "202601010000",
+      "202609222359"
+     ]
+    },
+    "arx-W2-adversarial": {
+     "n_returned": 30,
+     "query": "all:\"adversarial\" AND all:\"agent\" AND all:\"tool\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-aviation": {
+     "n_returned": 4,
+     "query": "all:\"human\" AND all:\"automation\" AND all:\"complacency\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-defer": {
+     "n_returned": 30,
+     "query": "all:\"learning to defer\" OR all:\"learning to reject\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-guardrail": {
+     "n_returned": 25,
+     "query": "all:\"guardrail\" AND all:\"LLM\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-hitl": {
+     "n_returned": 40,
+     "query": "all:\"human-in-the-loop\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-humancomp": {
+     "n_returned": 30,
+     "query": "all:\"human computation\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-imitl": {
+     "n_returned": 30,
+     "query": "all:\"interactive machine learning\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-monitorlaw": {
+     "n_returned": 25,
+     "query": "all:\"monitor\" AND all:\"detection\" AND all:\"entropy\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-partial": {
+     "n_returned": 25,
+     "query": "all:\"mixed-initiative\" OR all:\"mixed initiative\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-reject": {
+     "n_returned": 25,
+     "query": "all:\"reject option\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-sandbox": {
+     "n_returned": 20,
+     "query": "all:\"sandbox\" AND all:\"untrusted\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    },
+    "arx-W2-selectclass": {
+     "n_returned": 25,
+     "query": "all:\"selective classification\"",
+     "window": [
+      "201801010000",
+      "202512312359"
+     ]
+    }
+   },
+   "queries": 35,
+   "rows": 914,
+   "unique_ids": 843
+  },
+  "pass2": {
+   "per_query": {
+    "arx-W3-approvalagent": {
+     "n_returned": 30,
+     "query": "abs:\"approval\" AND abs:\"agent\" AND cat:cs.AI",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-approvalfatigue": {
+     "n_returned": 9,
+     "query": "abs:\"approval fatigue\" OR abs:\"rubber stamp\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-approvalgate": {
+     "n_returned": 30,
+     "query": "abs:\"human approval\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-attenuation": {
+     "n_returned": 25,
+     "query": "abs:\"capability\" AND abs:\"attenuation\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-audit": {
+     "n_returned": 25,
+     "query": "abs:\"audit\" AND abs:\"agent\" AND abs:\"authorization\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-costverif": {
+     "n_returned": 8,
+     "query": "abs:\"costly\" AND abs:\"verification\" AND abs:\"monitoring\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-crywolf": {
+     "n_returned": 25,
+     "query": "abs:\"false alarm\" AND abs:\"trust\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-defer": {
+     "n_returned": 30,
+     "query": "abs:\"defer\" AND abs:\"expert\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-entropy": {
+     "n_returned": 25,
+     "query": "abs:\"detection\" AND abs:\"entropy\" AND abs:\"attack\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-escalation": {
+     "n_returned": 30,
+     "query": "abs:\"escalation\" AND abs:\"human\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-faithful": {
+     "n_returned": 7,
+     "query": "abs:\"faithfulness\" AND abs:\"user interface\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-guardrailbypass": {
+     "n_returned": 30,
+     "query": "abs:\"guardrail\" AND (abs:\"bypass\" OR abs:\"jailbreak\")",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-habituation": {
+     "n_returned": 4,
+     "query": "abs:\"habituation\" AND abs:\"warning\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-hijack": {
+     "n_returned": 5,
+     "query": "abs:\"hijack\" AND abs:\"approval\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-injection": {
+     "n_returned": 30,
+     "query": "abs:\"indirect prompt injection\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-mcpsec": {
+     "n_returned": 25,
+     "query": "abs:\"Model Context Protocol\" AND abs:\"security\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-mixedinit": {
+     "n_returned": 25,
+     "query": "abs:\"mixed-initiative\" OR abs:\"when to ask\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-monitorability": {
+     "n_returned": 25,
+     "query": "abs:\"monitorability\" OR abs:\"monitoring\" AND abs:\"untrusted\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-oversight": {
+     "n_returned": 30,
+     "query": "abs:\"human oversight\" OR abs:\"scalable oversight\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-pep": {
+     "n_returned": 25,
+     "query": "abs:\"policy enforcement point\" OR abs:\"reference monitor\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-principalagent": {
+     "n_returned": 14,
+     "query": "abs:\"principal-agent\" AND abs:\"security\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-reject": {
+     "n_returned": 30,
+     "query": "abs:\"reject option\" OR abs:\"selective prediction\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-screening": {
+     "n_returned": 25,
+     "query": "abs:\"signal detection\" AND abs:\"threshold\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-sepduty": {
+     "n_returned": 25,
+     "query": "abs:\"separation of duties\" OR abs:\"least privilege\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-substitution": {
+     "n_returned": 25,
+     "query": "abs:\"semantic\" AND abs:\"substitution\" AND abs:\"tool\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-toctou": {
+     "n_returned": 25,
+     "query": "abs:\"time-of-check\" OR abs:\"TOCTOU\" OR abs:\"race condition\" AND abs:\"authorization\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-toolpoison": {
+     "n_returned": 25,
+     "query": "abs:\"tool\" AND abs:\"poison\" AND abs:\"agent\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    },
+    "arx-W3-withhold": {
+     "n_returned": 25,
+     "query": "abs:\"abstain\" AND abs:\"safety\"",
+     "window": [
+      "201501010000",
+      "202609222359"
+     ]
+    }
+   },
+   "queries": 28,
+   "rows": 637,
+   "unique_ids": 607
+  },
+  "verdicts": {
+   "A method of comparing the areas under receiver operating characteristic curves derived from the same cases": {
+    "doi": "10.1148/radiology.148.3.6878708",
+    "expectation": null,
+    "main_title_tokens": 11,
+    "near_miss_below_main_rule": [
+     "10.1148/radiol.2471071321"
+    ],
+    "record": "A method of comparing the areas under receiver operating characteristic curves derived from the same cases.",
+    "record_authors": [
+     "Hanley, J"
+    ],
+    "record_year": 1983,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "A note on the confinement problem": {
+    "doi": "10.1145/362375.362389",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1109/ccst.1996.551864"
+    ],
+    "record": "A note on the confinement problem",
+    "record_authors": [
+     "Lampson, Butler"
+    ],
+    "record_year": 1973,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "A surgical safety checklist to reduce morbidity and mortality in a global population": {
+    "doi": "10.1111/j.1749-4486.2009.02137.x",
+    "expectation": null,
+    "main_title_tokens": 8,
+    "near_miss_below_main_rule": [
+     "10.3410/f.1158143.618252",
+     "10.3410/f.1158143.626470",
+     "10.3410/f.1158143.8936054"
+    ],
+    "record": "A Surgical Safety Checklist to Reduce Morbidity and Mortality in a Global Population",
+    "record_authors": [],
+    "record_year": 2010,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Alarm fatigue: a patient safety concern": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Sendelbach",
+     "year": 2013
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "record authors (&NA;, ) do not carry the declared family 'Sendelbach'",
+    "verdict": "NOT FOUND"
+   },
+   "Algorithmic accountability: journalistic investigation of computational power structures": {
+    "doi": "10.1080/21670811.2014.976411",
+    "expectation": {
+     "author_family": "Diakopoulos",
+     "year": 2014
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": "Algorithmic Accountability",
+    "record_authors": [
+     "Diakopoulos, Nicholas"
+    ],
+    "record_year": 2014,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Alice in warningland: a large-scale field study of browser security warning effectiveness": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Akhawe",
+     "year": 2013
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no candidate row reached the main-title rule (>= 0.85)",
+    "verdict": "NOT FOUND"
+   },
+   "An intervention to decrease catheter-related bloodstream infections in the ICU": {
+    "doi": "10.1093/med/9780190467654.003.0047",
+    "expectation": null,
+    "main_title_tokens": 7,
+    "near_miss_below_main_rule": [
+     "10.3410/f.1060727.512644",
+     "10.3410/f.1060727.523696"
+    ],
+    "record": "An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU",
+    "record_authors": [
+     "Maxey-Jones, Courtney"
+    ],
+    "record_year": 2018,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Aviation automation: the search for a human-centered approach": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Billings",
+     "year": 1997
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "record authors (none) do not carry the declared family 'Billings'",
+    "verdict": "NOT FOUND"
+   },
+   "Basic principles of ROC analysis": {
+    "doi": "10.1016/s0001-2998(78)80014-2",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [
+     "10.1007/978-94-009-0785-0_2",
+     "10.1093/acprof:oso/9780198790426.003.0005"
+    ],
+    "record": "Basic principles of ROC analysis",
+    "record_authors": [
+     "Metz, Charles"
+    ],
+    "record_year": 1978,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Characteristics of useful code reviews: an empirical study at Microsoft": {
+    "doi": "10.1109/msr.2015.21",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [],
+    "record": "Characteristics of Useful Code Reviews: An Empirical Study at Microsoft",
+    "record_authors": [
+     "Bosu, Amiangshu"
+    ],
+    "record_year": 2015,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Complacency and bias in human use of automation: an attentional integration": {
+    "doi": "10.1177/0018720810376055",
+    "expectation": null,
+    "main_title_tokens": 5,
+    "near_miss_below_main_rule": [
+     "10.1177/0018720815581940"
+    ],
+    "record": "Complacency and Bias in Human Use of Automation: An Attentional Integration",
+    "record_authors": [
+     "Parasuraman, Raja"
+    ],
+    "record_year": 2010,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Costly monitoring, financial intermediation, and equilibrium credit rationing": {
+    "doi": "10.1016/0304-3932(86)90074-7",
+    "expectation": null,
+    "main_title_tokens": 7,
+    "near_miss_below_main_rule": [],
+    "record": "Costly monitoring, financial intermediation, and equilibrium credit rationing",
+    "record_authors": [
+     "Williamson, Stephen"
+    ],
+    "record_year": 1986,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Crime and punishment: an economic approach": {
+    "doi": "10.1007/978-1-349-62853-7_2",
+    "expectation": {
+     "author_family": "Becker",
+     "year": 1968
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.3386/w1884"
+    ],
+    "record": "Crime and Punishment: an Economic Approach",
+    "record_authors": [
+     "Becker, Gary"
+    ],
+    "record_year": 1968,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Cry Wolf: The Psychology of False Alarms": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Breznitz",
+     "year": 1984
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.1177/0959353501011003006"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no candidate row reached the main-title rule (>= 0.85)",
+    "verdict": "NOT FOUND"
+   },
+   "Crying wolf: an empirical study of SSL warning effectiveness": {
+    "doi": null,
+    "expectation": null,
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.1136/bmj.330.7502.s220",
+     "10.3390/info17050434"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "NOT FOUND"
+   },
+   "Effect of screening and adjuvant therapy on mortality from breast cancer": {
+    "doi": null,
+    "expectation": null,
+    "main_title_tokens": 7,
+    "near_miss_below_main_rule": [
+     "10.1016/s1043-321x(07)80120-2",
+     "10.1136/bmj.321.7275.1527/a",
+     "10.1186/bcr198"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "NOT FOUND"
+   },
+   "Effects of computerized physician order entry and clinical decision support systems on medication safety": {
+    "doi": "10.1001/archinte.163.12.1409",
+    "expectation": null,
+    "main_title_tokens": 11,
+    "near_miss_below_main_rule": [],
+    "record": "Effects of Computerized Physician Order Entry and Clinical Decision Support Systems on Medication Safety",
+    "record_authors": [
+     "Kaushal, Rainu"
+    ],
+    "record_year": 2003,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Expectations, outcomes, and challenges of modern code review": {
+    "doi": "10.1109/icse.2013.6606617",
+    "expectation": null,
+    "main_title_tokens": 6,
+    "near_miss_below_main_rule": [],
+    "record": "Expectations, outcomes, and challenges of modern code review",
+    "record_authors": [
+     "Bacchelli, Alberto"
+    ],
+    "record_year": 2013,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "How polymorphic warnings reduce habituation in the brain: insights from an fMRI study": {
+    "doi": "10.1145/2702123.2702322",
+    "expectation": {
+     "author_family": "Anderson",
+     "year": 2015
+    },
+    "main_title_tokens": 6,
+    "near_miss_below_main_rule": [],
+    "record": "How Polymorphic Warnings Reduce Habituation in the Brain",
+    "record_authors": [
+     "Anderson, Bonnie"
+    ],
+    "record_year": 2015,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Human-in-the-loop machine learning: a state of the art": {
+    "doi": "10.54660/.jfmr.2022.3.1.656-669",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [],
+    "record": "Human-in-the-Loop Machine Learning: A State of the Art",
+    "record_authors": [
+     "Ladapo, Olasunkanmi"
+    ],
+    "record_year": 2022,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Humans and automation: use, misuse, disuse, abuse": {
+    "doi": "10.1518/001872097778543886",
+    "expectation": {
+     "author_family": "Parasuraman",
+     "year": 1997
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": "Humans and Automation: Use, Misuse, Disuse, Abuse",
+    "record_authors": [
+     "Parasuraman, Raja"
+    ],
+    "record_year": 1997,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "If not now, when? The effects of interruption at different moments within task execution": {
+    "doi": null,
+    "expectation": null,
+    "main_title_tokens": 11,
+    "near_miss_below_main_rule": [],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "NOT FOUND"
+   },
+   "Improving SSL warnings: comprehension and adherence": {
+    "doi": "10.1145/2702123.2702442",
+    "expectation": {
+     "author_family": "Felt",
+     "year": 2015
+    },
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [],
+    "record": "Improving SSL Warnings",
+    "record_authors": [
+     "Felt, Adrienne"
+    ],
+    "record_year": 2015,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Improving computer security dialogs": {
+    "doi": "10.1007/978-3-642-23768-3_2",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [],
+    "record": "Improving Computer Security Dialogs",
+    "record_authors": [
+     "Bravo-Lillo, Cristian"
+    ],
+    "record_year": 2011,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Index for rating diagnostic tests": {
+    "doi": "10.1002/1097-0142(1950)3:1<32::aid-cncr2820030106>3.0.co;2-3",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [],
+    "record": "Index for rating diagnostic tests",
+    "record_authors": [
+     "Youden, W."
+    ],
+    "record_year": 1950,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Interactive machine learning for health informatics: when do we need the human-in-the-loop?": {
+    "doi": "10.1007/s40708-016-0042-6",
+    "expectation": null,
+    "main_title_tokens": 5,
+    "near_miss_below_main_rule": [],
+    "record": "Interactive machine learning for health informatics: when do we need the human-in-the-loop?",
+    "record_authors": [
+     "Holzinger, Andreas"
+    ],
+    "record_year": 2016,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Ironies of automation": {
+    "doi": "10.1016/0005-1098(83)90046-8",
+    "expectation": {
+     "author_family": "Bainbridge",
+     "year": 1983
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.2139/ssrn.2549285",
+     "10.31229/osf.io/f46bu"
+    ],
+    "record": "Ironies of automation",
+    "record_authors": [
+     "Bainbridge, Lisanne"
+    ],
+    "record_year": 1983,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "record authors (Martorell, Enric) do not carry the declared family 'Bainbridge'",
+    "verdict": "match"
+   },
+   "Long-term psychosocial consequences of false-positive screening mammography": {
+    "doi": "10.1370/afm.1466",
+    "expectation": null,
+    "main_title_tokens": 8,
+    "near_miss_below_main_rule": [],
+    "record": "Long-Term Psychosocial Consequences of False-Positive Screening Mammography",
+    "record_authors": [
+     "Brodersen, J."
+    ],
+    "record_year": 2013,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Meaningful human control over autonomous systems: a philosophical account": {
+    "doi": "10.3389/frobt.2018.00015",
+    "expectation": null,
+    "main_title_tokens": 5,
+    "near_miss_below_main_rule": [
+     "10.1007/s11948-025-00554-z",
+     "10.4337/9781802204131.00016"
+    ],
+    "record": "Meaningful Human Control over Autonomous Systems: A Philosophical Account",
+    "record_authors": [
+     "Santoni de Sio, Filippo"
+    ],
+    "record_year": 2018,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Modern code review: a case study at Google": {
+    "doi": "10.1145/3183519.3183525",
+    "expectation": {
+     "author_family": "Sadowski",
+     "year": 2018
+    },
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [],
+    "record": "Modern code review",
+    "record_authors": [
+     "Sadowski, Caitlin"
+    ],
+    "record_year": 2018,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Monitor alarm fatigue: an integrative review": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Cvach",
+     "year": 2012
+    },
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.2345/0899-8205-46.4.268",
+     "10.4037/nci.0b013e318232ed55"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "record authors (none) do not carry the declared family 'Cvach'",
+    "verdict": "NOT FOUND"
+   },
+   "Moral crumple zones: cautionary tales in human-robot interaction": {
+    "doi": "10.4337/9781800887305.00010",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1063/pt.5.010103"
+    ],
+    "record": "Moral crumple zones: cautionary tales in human\u2013robot interaction",
+    "record_authors": [
+     "Elish, Madeleine"
+    ],
+    "record_year": 2025,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Moral hazard and observability": {
+    "doi": "10.2307/3003320",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.4135/9781529731309"
+    ],
+    "record": "Moral Hazard and Observability",
+    "record_authors": [
+     "Holmstrom, Bengt"
+    ],
+    "record_year": 1979,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "On the formal definition of separation-of-duty policies and their composition": {
+    "doi": "10.1109/secpri.1998.674833",
+    "expectation": null,
+    "main_title_tokens": 7,
+    "near_miss_below_main_rule": [],
+    "record": "On the formal definition of separation-of-duty policies and their composition",
+    "record_authors": [
+     "Gligor, V.D."
+    ],
+    "record_year": null,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Optimal contracts and competitive markets with costly state verification": {
+    "doi": "10.21034/sr.45",
+    "expectation": null,
+    "main_title_tokens": 7,
+    "near_miss_below_main_rule": [],
+    "record": "Optimal Contracts and Competitive Markets With Costly State Verification",
+    "record_authors": [
+     "Townsend, Robert"
+    ],
+    "record_year": 1979,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Overdiagnosis in cancer": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Welch",
+     "year": 2010
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no candidate row reached the main-title rule (>= 0.85)",
+    "verdict": "NOT FOUND"
+   },
+   "Overriding of drug safety alerts in computerized physician order entry": {
+    "doi": "10.1197/jamia.m1809",
+    "expectation": null,
+    "main_title_tokens": 8,
+    "near_miss_below_main_rule": [],
+    "record": "Overriding of Drug Safety Alerts in Computerized Physician Order Entry",
+    "record_authors": [
+     "van der Sijs, H."
+    ],
+    "record_year": 2006,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Physicians' decisions to override computerized drug alerts in primary care": {
+    "doi": "10.1001/archinte.163.21.2625",
+    "expectation": null,
+    "main_title_tokens": 8,
+    "near_miss_below_main_rule": [],
+    "record": "Physicians' Decisions to Override Computerized Drug Alerts in Primary Care",
+    "record_authors": [
+     "Weingart, Saul"
+    ],
+    "record_year": 2003,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Principles of mixed-initiative user interfaces": {
+    "doi": "10.1145/302979.303030",
+    "expectation": null,
+    "main_title_tokens": 5,
+    "near_miss_below_main_rule": [],
+    "record": "Principles of mixed-initiative user interfaces",
+    "record_authors": [
+     "Horvitz, Eric"
+    ],
+    "record_year": 1999,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Programming semantics for multiprogrammed computations": {
+    "doi": "10.1145/357980.357993",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [
+     "10.1109/pgec.1966.264429"
+    ],
+    "record": "Programming semantics for multiprogrammed computations",
+    "record_authors": [
+     "Dennis, Jack"
+    ],
+    "record_year": 1983,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Protection": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Lampson",
+     "year": 1974
+    },
+    "main_title_tokens": 1,
+    "near_miss_below_main_rule": [],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no candidate row reached the main-title rule (>= 0.85)",
+    "verdict": "NOT FOUND"
+   },
+   "Reading this may harm your computer: the psychology of malware warnings": {
+    "doi": "10.2139/ssrn.2374379",
+    "expectation": null,
+    "main_title_tokens": 6,
+    "near_miss_below_main_rule": [],
+    "record": "Reading this May Harm Your Computer: The Psychology of Malware Warnings",
+    "record_authors": [
+     "Modic, David"
+    ],
+    "record_year": 2014,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Reflections on trusting trust": {
+    "doi": "10.1145/1283920.1283940",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1145/3563766.3564089",
+     "10.1145/777313.777347"
+    ],
+    "record": "Reflections on trusting trust",
+    "record_authors": [
+     "Thompson, Ken"
+    ],
+    "record_year": 2007,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Security engineering: a guide to building dependable distributed systems": {
+    "doi": "10.1002/9781119644682",
+    "expectation": {
+     "author_family": "Anderson",
+     "year": 2020
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.1002/9781119644682.ch1"
+    ],
+    "record": "Security Engineering",
+    "record_authors": [
+     "Anderson, Ross"
+    ],
+    "record_year": 2020,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "So long, and no thanks for the externalities: the rational rejection of security advice by users": {
+    "doi": "10.1145/1719030.1719050",
+    "expectation": {
+     "author_family": "Herley",
+     "year": 2009
+    },
+    "main_title_tokens": 5,
+    "near_miss_below_main_rule": [],
+    "record": "So long, and no thanks for the externalities",
+    "record_authors": [
+     "Herley, Cormac"
+    ],
+    "record_year": 2009,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "The Byzantine generals problem": {
+    "doi": "10.1145/3335772.3335936",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1016/0167-9236(85)90107-1",
+     "10.1016/s0019-9958(85)80042-5",
+     "10.1145/2402.322398"
+    ],
+    "record": "The Byzantine generals problem",
+    "record_authors": [
+     ", "
+    ],
+    "record_year": 2019,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "The confused deputy: (or why capabilities might have been invented)": {
+    "doi": "10.1145/54289.871709",
+    "expectation": {
+     "author_family": "Hardy",
+     "year": 1988
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": "The Confused Deputy",
+    "record_authors": [
+     "Hardy, Norm"
+    ],
+    "record_year": 1988,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "The economic theory of public enforcement of law": {
+    "doi": "10.3386/w6993",
+    "expectation": null,
+    "main_title_tokens": 5,
+    "near_miss_below_main_rule": [],
+    "record": "The Economic Theory of Public Enforcement of Law",
+    "record_authors": [
+     "Polinsky, A."
+    ],
+    "record_year": 1999,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "The economics of information": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Stigler",
+     "year": 1961
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.1007/978-1-4757-3367-9_2",
+     "10.1016/0167-6245(93)90006-3",
+     "10.1016/s0167-6245(98)00002-x"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no candidate row reached the main-title rule (>= 0.85)",
+    "verdict": "NOT FOUND"
+   },
+   "The effect of computerised physician order entry with clinical decision support on the rates of adverse drug events": {
+    "doi": null,
+    "expectation": {
+     "author_family": "Wolfstadt",
+     "year": 2008
+    },
+    "main_title_tokens": 12,
+    "near_miss_below_main_rule": [
+     "10.1007/s11606-008-0504-5"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no candidate row reached the main-title rule (>= 0.85)",
+    "verdict": "NOT FOUND"
+   },
+   "The effects of interruptions on task performance, annoyance, and anxiety in the user interface": {
+    "doi": null,
+    "expectation": null,
+    "main_title_tokens": 8,
+    "near_miss_below_main_rule": [
+     "10.1109/icsmc.2000.885940"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "NOT FOUND"
+   },
+   "The ethics of algorithms: mapping the debate": {
+    "doi": "10.1177/2053951716679679",
+    "expectation": {
+     "author_family": "Mittelstadt",
+     "year": 2016
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.1093/oso/9780198883098.003.0007"
+    ],
+    "record": "The ethics of algorithms: Mapping the debate",
+    "record_authors": [
+     "Mittelstadt, Brent"
+    ],
+    "record_year": 2016,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "The market for lemons: quality uncertainty and the market mechanism": {
+    "doi": "10.4337/9781781950005.00012",
+    "expectation": {
+     "author_family": "Akerlof",
+     "year": 1970
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": "The market for 'lemons': quality uncertainty and the market mechanism",
+    "record_authors": [
+     "Stiglitz, Joseph"
+    ],
+    "record_year": null,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "record authors (Stiglitz, Joseph) do not carry the declared family 'Akerlof'",
+    "verdict": "match"
+   },
+   "The meaning and use of the area under a receiver operating characteristic (ROC) curve": {
+    "doi": "10.1148/radiology.143.1.7063747",
+    "expectation": null,
+    "main_title_tokens": 9,
+    "near_miss_below_main_rule": [],
+    "record": "The meaning and use of the area under a receiver operating characteristic (ROC) curve.",
+    "record_authors": [
+     "Hanley, J"
+    ],
+    "record_year": 1982,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "The out-of-the-loop performance problem and level of control in automation": {
+    "doi": "10.1518/001872095779064555",
+    "expectation": null,
+    "main_title_tokens": 7,
+    "near_miss_below_main_rule": [],
+    "record": "The Out-of-the-Loop Performance Problem and Level of Control in Automation",
+    "record_authors": [
+     "Endsley, Mica"
+    ],
+    "record_year": 1995,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "The protection of information in computer systems": {
+    "doi": null,
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [
+     "10.31799/978-5-8088-1452-3-2020-1"
+    ],
+    "record": null,
+    "record_authors": [],
+    "record_year": null,
+    "rule": null,
+    "ruleA": "NOT FOUND",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "NOT FOUND"
+   },
+   "The psychological costs of screening": {
+    "doi": "10.1136/bmj.299.6698.527",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1016/0022-3999(92)90051-3",
+     "10.1016/0960-9776(93)90154-8"
+    ],
+    "record": "Psychological costs of screening.",
+    "record_authors": [
+     "Marteau, T."
+    ],
+    "record_year": 1989,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "The relative operating characteristic in psychology": {
+    "doi": "10.1126/science.182.4116.990",
+    "expectation": null,
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [
+     "10.1007/978-0-387-39940-9_3457",
+     "10.1007/springerreference_65643"
+    ],
+    "record": "The Relative Operating Characteristic in Psychology",
+    "record_authors": [
+     "Swets, John"
+    ],
+    "record_year": 1973,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "Theory of the firm: managerial behavior, agency costs and ownership structure": {
+    "doi": "10.2139/ssrn.94043",
+    "expectation": {
+     "author_family": "Jensen",
+     "year": 1976
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [
+     "10.4159/9780674274051-006"
+    ],
+    "record": "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure",
+    "record_authors": [
+     "Jensen (Deceased), Michael"
+    ],
+    "record_year": 1998,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "record year 1998 is outside 1976 +-1",
+    "verdict": "match"
+   },
+   "Trust in automation: designing for appropriate reliance": {
+    "doi": "10.1518/hfes.46.1.50.30392",
+    "expectation": {
+     "author_family": "Lee",
+     "year": 2004
+    },
+    "main_title_tokens": 2,
+    "near_miss_below_main_rule": [],
+    "record": "Trust in Automation: Designing for Appropriate Reliance",
+    "record_authors": [
+     "Lee, John"
+    ],
+    "record_year": 2004,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Why phishing works": {
+    "doi": "10.1145/1124772.1124861",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1016/j.ijhcs.2015.05.005",
+     "10.24251/hicss.2021.863"
+    ],
+    "record": "Why phishing works",
+    "record_authors": [
+     "Dhamija, Rachna"
+    ],
+    "record_year": 2006,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   },
+   "You've been warned: an empirical study of the effectiveness of web browser phishing warnings": {
+    "doi": "10.1145/1357054.1357219",
+    "expectation": {
+     "author_family": "Egelman",
+     "year": 2008
+    },
+    "main_title_tokens": 4,
+    "near_miss_below_main_rule": [
+     "10.1016/s0262-4079(08)60720-4",
+     "10.1145/3564625.3568000",
+     "10.1145/3638287"
+    ],
+    "record": "You've been warned",
+    "record_authors": [
+     "Egelman, Serge"
+    ],
+    "record_year": 2008,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Your attention please: designing security-decision UIs to make genuine risks harder to ignore": {
+    "doi": "10.1145/2501604.2501610",
+    "expectation": {
+     "author_family": "Bravo-Lillo",
+     "year": 2013
+    },
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [],
+    "record": "Your attention please",
+    "record_authors": [
+     "Bravo-Lillo, Cristian"
+    ],
+    "record_year": 2013,
+    "rule": "B",
+    "ruleA": "NOT FOUND",
+    "ruleB": "match",
+    "ruleB_refusal_reason": null,
+    "verdict": "match"
+   },
+   "Zero trust architecture": {
+    "doi": "10.6028/nist.sp.800-207-draft",
+    "expectation": null,
+    "main_title_tokens": 3,
+    "near_miss_below_main_rule": [
+     "10.1201/9781003225096-8",
+     "10.21275/sr20522094157",
+     "10.2139/ssrn.6962724"
+    ],
+    "record": "Zero Trust Architecture",
+    "record_authors": [
+     "Rose, Scott"
+    ],
+    "record_year": 2019,
+    "rule": "A",
+    "ruleA": "match",
+    "ruleB": "NOT FOUND",
+    "ruleB_refusal_reason": "no expectation declared: rule B has no identity power without one",
+    "verdict": "match"
+   }
+  }
+ },
+ "pool_hashes": {
+  "refs_classic_json": "ea887aaa0a6e65d8",
+  "refs_classic_r1_json": "f3c5b8793ca54808",
+  "refs_raw2_json": "61ed7ce4c0273f98",
+  "refs_raw_json": "4e11512a1d39c163"
+ },
+ "round": "R414",
+ "scan_date": "2026-09-22",
+ "study": "issue #93 (binding fidelity sets the net value of a human approval gate)"
+}
