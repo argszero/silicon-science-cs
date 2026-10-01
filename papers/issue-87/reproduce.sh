@@ -5,6 +5,14 @@
 # enter the comparisons are printed before anything runs, because a tolerance names the build it is read
 # against (R439) and the run must be able to say which build it was read on.
 #
+# THE TWO INTERPRETERS, AND THE THIRD STATE.  PY carries numpy (and matplotlib for 3/5); PYGATE must be a Python
+# of 3.12 or newer, because the journal's gates' own --selftest fixtures use an f-string form 3.9.6 cannot parse.
+# The gate interpreter is DISCOVERED from a declared candidate list, or NAMED by the caller and then binding --
+# never assumed to sit at one host's path, which is what made this script die as a shell error at 5/5 on any other
+# host.  Where a step cannot be taken at all (no numpy at 2/5, no Python 3.12+ at 5/5) the run prints
+# "REPRODUCE: NOT RUN" with the interpreters it tried and exits 2 -- the journal's own code for NOT RUN --
+# while "REPRODUCE: FAIL" (a difference the run DID measure) exits 1.
+#
 # THE FIVE STEPS, in this order, and the order is part of the reading:
 #   1/5 the two new instruments' build-bound controls -- REPORTED, and run FIRST so that a reader on a build
 #       other than the pinned one sees this reading before any byte comparison can stop the run (the R446
@@ -56,7 +64,31 @@ set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$HERE/../.." && pwd)"          # the repository root, for .github/tools/*.py
 PY="${PY:-/usr/bin/python3}"               # numpy + matplotlib live here
-PYGATE="${PYGATE:-$HOME/.local/bin/python3.12}"   # the journal's gates need Python >= 3.12
+
+# The gate interpreter (see THE TWO INTERPRETERS in the header).  A caller-named PYGATE is BINDING: falling back
+# to another interpreter would answer a different question than the one asked.  With no name given, the default
+# walks this declared candidate list, prints its choice with the version it carries, and where nothing can carry
+# the gates, 5/5 reports NOT RUN and the run exits 2.
+PYGATE_NAMED=0
+if [ -n "${PYGATE:-}" ]; then
+  PYGATE_NAMED=1
+  PYGATE_CANDS="$PYGATE"
+else
+  PYGATE_CANDS="python3.13 python3.12 python3 /opt/homebrew/bin/python3.13 /opt/homebrew/bin/python3.12 /usr/local/bin/python3.13 /usr/local/bin/python3.12 /usr/bin/python3.13 /usr/bin/python3.12 $HOME/.local/bin/python3.12"
+fi
+GATE_CANDS="$(echo $PYGATE_CANDS)"
+if [ "$PYGATE_NAMED" = 1 ]; then
+  GATE_WHY="the interpreter NAMED by the caller (a named interpreter is binding: nothing else is tried)"
+else
+  GATE_WHY="the declared candidate list, tried in order"
+fi
+PYGATE=""
+for c in $PYGATE_CANDS; do
+  if command -v "$c" >/dev/null 2>&1 && "$c" -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 12) else 1)' >/dev/null 2>&1; then
+    PYGATE="$(command -v "$c")"
+    break
+  fi
+done
 BINDINGS=133                               # the count the assembly prints; asserted in step 4/5
 COVERAGE=169                               # bibliography entries, all cited; asserted in step 4/5 and by refgate
 REL_TOL=1e-8                               # the declared relative tolerance for the build-bound numbers
@@ -67,6 +99,8 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 fail() { echo "REPRODUCE: FAIL -- $*" >&2; exit 1; }
+# NOT RUN is not a pass and not a failure: a step could not be taken on this environment.  One state, one code.
+notrun() { echo "REPRODUCE: NOT RUN -- $*" >&2; exit 2; }
 same() { cmp -s "$1" "$2" || fail "$3: $1 differs from the committed copy"; echo "  byte-identical: $3"; }
 
 echo "=== build (the preamble, not a step)"
@@ -85,7 +119,18 @@ except ImportError as e:
     print("  matplotlib   : ABSENT (%s) -- the figures step reports NOT RUN" % e)
 print("  json order   : sort_keys=True everywhere (an unsorted dump would make byte-identity a spelling test)")
 EOF
-echo "  gate interp  : $PYGATE  ($($PYGATE -V 2>&1))"
+if [ -n "$PYGATE" ]; then
+  if [ "$PYGATE_NAMED" = 1 ]; then
+    echo "  gate interp  : $PYGATE  ($($PYGATE -V 2>&1))  [named by the caller: binding]"
+  else
+    echo "  gate interp  : $PYGATE  ($($PYGATE -V 2>&1))  [found on this host: the gates need 3.12 or newer]"
+  fi
+else
+  echo "  gate interp  : NONE -- nothing that can carry the gates, from $GATE_WHY:"
+  echo "                 $GATE_CANDS"
+  echo "                 (the gates' own --selftest fixtures need 3.12 or newer; 3.9.6 cannot parse them)"
+  echo "                 step 5/5 will report NOT RUN and the run will exit 2.  Name one by setting PYGATE."
+fi
 echo "  head         : $(git -C "$ROOT" rev-parse HEAD 2>/dev/null || echo 'not a git work tree')"
 echo "  pinned build : python 3.9.6 / numpy 2.0.2 / matplotlib 3.9.4  (the build the committed records name)"
 echo "  inputs       : artefacts/instruments/*.json (the instruments' own committed records)"
@@ -120,7 +165,7 @@ else
   # nothing was compared.  That is a finding about the interpreter, not a departure of the record, and it must
   # not be reported as one -- but it is not a pass either, so the run stops and says which one it is.
   if [ "$rc" -eq 2 ]; then
-    fail "the digest comparison could NOT BE TAKEN at this interpreter (NOT RUN -- see the reading above); \
+    notrun "the digest comparison could NOT BE TAKEN at this interpreter (NOT RUN -- see the reading above); \
 nothing was compared, so this run cannot report ALL GREEN.  Run it with an interpreter that carries numpy."
   fi
   fail "artefacts/results_digest.json departs beyond the declared relative tolerance (see the reading above)"
@@ -171,6 +216,15 @@ same artefacts/assembly/assembly-report.txt "$TMP/assembly-report.committed.txt"
      "artefacts/assembly/assembly-report.txt"
 
 echo "=== 5/5 the journal's gates over the built manuscript (exact: GATE: PASS is a stop condition)"
+if [ -z "$PYGATE" ]; then
+  echo "  NOT RUN -- the journal's gates were NOT run: no Python 3.12+ interpreter that could carry them was"
+  echo "  found, from $GATE_WHY:"
+  echo "    $GATE_CANDS"
+  echo "  A named PYGATE is binding and is not second-guessed; where nothing was named, this is a property of"
+  echo "  the environment rather than a finding about the package.  Steps 1/5-4/5 were read above (their readings"
+  echo "  stand); THIS step compared nothing, so the run cannot report ALL GREEN."
+  notrun "step 5/5 (the journal's gates) could not be taken: no Python 3.12+ interpreter was found."
+fi
 for g in refgate linkgate numgate pointgate; do
   echo "-- $g --selftest"
   ( cd "$ROOT" && $PYGATE ".github/tools/$g.py" --selftest ) | tail -1

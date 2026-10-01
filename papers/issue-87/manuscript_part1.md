@@ -13,7 +13,8 @@ nested cross-validation envelope protocol as every other arm, and we map the adv
 is a pure interaction function with **ground truth by construction** — every number below is a paired excess-risk
 difference in units of the target's variance, in which the Bayes predictor scores exactly zero.
 
-**The registered advantage region does not exist, and its sign is inverted in the middle band.** Against the
+**The registered advantage region does not exist, and the sign of that registered advantage is inverted
+in the middle band.** Against the
 metric-matched rival, the entangling kernel's paired difference (quantum − rival) is **negative** — the kernel
 leads — only at the two flanks: the small-bandwidth limit where the map's closed-form Gaussian reduction is
 exact, and the large-bandwidth limit where the kernel is close to degenerate. Both flank leads are an order of
@@ -38,27 +39,31 @@ calibrated predictive null on the valid axis, the quantum kernel's lead count ri
 degrades, but the mid-band block still loses by **+0.27 … +0.32** where the rival is worst-matched.
 
 **Registered priors, reported against their registered criteria.** PB1 (an inverted U in bandwidth with a
-positive middle band) is **refuted in its middle clause, with the sign inverted**, and refuted in the direction
+positive middle band) is **refuted in its middle clause, with that clause's sign inverted**, and refuted in the direction
 of its large-bandwidth clause; only its small-bandwidth clause (≈ 0) survives, as an approximation
 (|lead| ≤ 0.017 against a mid-band loss of 0.455). PB2 (the *sign* is predicted by alignment to the entanglement
 graph's signless Laplacian, not by qubit count) is **confirmed in its mechanism clause, and its direction
 clause is not refuted on the alignment axis**: re-measured over **13 disjoint streams** in three declared seed
 families, the α = 0 mid-band cell is **positive**, not inverted (+0.2848 ± 0.1080 at γ = 1, **0 of 13** streams
-negative; +0.0402 ± 0.0497 at γ = 2), so the sign inversion the submission reported is **withdrawn** and what the
+negative; +0.0402 ± 0.0497 at γ = 2), so the **alignment-axis (α = 0)** sign inversion the submission reported is
+**withdrawn** and what the
 axis measures is an **attenuation** at γ = 1 (removing the alignment *reduces* the mid-band loss by 0.1401, 5 of
 5 streams) and a **null at γ = 2**. The registered direction's remaining contradiction is the *size* of the loss
 at the prior's strongest point, on the α = ±1 panel, not a sign change. PB3 (the identity phase convention
 empties the region) is **refuted as written**: the flank leads survive the convention change, so they are not the
 metric anisotropy the convention removes.
 
-**Contribution level: `empirics`**, with one theoretical observation attached — a controlled model with ground
-truth by construction, an exact-simulation instrument with a closed-form rival, a six-axis handicap audit that
-can fail, a calibrated declaration procedure whose size is validated on a holdout, and a boundary *measured* as a
-statistic of the map (the relative deviation of `diag(W)` from uniformity: **8.2e−16** on a cycle and **4.8e−16**
-on the complete graph, against **6.1e−1** on a path). The theory half is not proved here: the `diag(W)`
-uniformity statement follows from [19] on vertex-transitive graphs and is *applied* to this map rather than
-established by it, and the interpolating case that would turn it into a classification with a resolution is left
-as an experiment (§5.1).
+**Contribution level: `theory + empirics`.** The theory half is carried as the three analytic objects the
+study is read against, each named where it is used: the by-construction ground truth (the Bayes predictor is
+known exactly and scores zero — checked as an anchor, not assumed), the closed-form Gaussian reduction that
+makes the small-bandwidth flank exact, and the `diag(W)` uniformity statement applied from [19] on
+vertex-transitive graphs. None of the three is *proved* here: the third follows from [19] and is applied to
+this map rather than established by it, and the interpolating case that would turn it into a classification
+with a resolution is left as an experiment (§5.1). What this paper establishes is the empirical half — a
+controlled model with ground truth by construction, an exact-simulation instrument with a closed-form rival,
+a six-axis handicap audit that can fail, a calibrated declaration procedure whose size is validated on a
+holdout, and a boundary *measured* as a statistic of the map (the relative deviation of `diag(W)` from
+uniformity: **8.2e−16** on a cycle and **4.8e−16** on the complete graph, against **6.1e−1** on a path).
 
 **Significance.** If this map is right, then the benchmark practice that produced the field's residual
 "quantum-kernel advantages" is measuring the weakness of its rival, not the strength of the map: in the code

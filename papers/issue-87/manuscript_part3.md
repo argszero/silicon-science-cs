@@ -218,7 +218,7 @@ make its claims.
 **PB1 outcome.** The small-bandwidth clause (≈ 0) is the only one standing, and it stands as an approximation:
 the largest small-bandwidth reading is 0.0173 against a mid-band loss of 0.4550, and under the unshifted
 convention at q = 8 the same rim reads +0.0028, i.e. a small loss. The middle clause (advantage > 0 in an
-intermediate band) is **refuted with the sign inverted** — the intermediate band is where the loss is largest.
+intermediate band) is **refuted with that clause's sign inverted** — the intermediate band is where the loss is largest.
 The large-bandwidth clause (≤ 0) is **refuted in direction**, with the scope stated above: the positive lead
 there is ≤ 0.0726 and shrinks by roughly a factor of 4 at q = 8. **PB3** — "under the identity-metric
 convention the advantage region is empty at every alignment level" — is **refuted as written**: the collapse-rim
@@ -271,7 +271,8 @@ the planted alignment.
 Read against Table 4, the two instruments answer different questions. Table 5 is the map's own design and says
 the *sign* of the planted alignment is irrelevant: flipping α from +1 to −1 moves no mid-band cell by more than
 0.021, in either convention. Table 4 removes the alignment instead of flipping it, on one target draw, and the
-submission read a sign inversion out of it. **That inversion does not survive the panel below, and is
+submission read an **alignment-axis (α = 0)** sign inversion out of it. **That inversion does not survive the
+panel below, and is
 withdrawn.**
 
 **Table 6 — the α = 0 cell re-measured over 13 disjoint streams in three declared seed families**
@@ -284,7 +285,7 @@ withdrawn.**
 
 The γ = 1 cell is **positive in every one of the thirteen streams** (95 % t interval [+0.2017, +0.3679]) and the
 γ = 2 cell is positive in eleven of thirteen: the one-draw value the submission printed is an outlier of its own
-ensemble, and the ensemble itself says the cell is not inverted. The instrument's first control reproduces the committed
+ensemble, and the ensemble itself says the α = 0 cell is not inverted. The instrument's first control reproduces the committed
 twelve-cell Table 4 record exactly, **12 of 12 bitwise**, on the build that record pins
 (`python 3.9.6` + `numpy 2.0.2`). That equality is a property of a build, not of the claim, and the control
 reports the departure it finds rather than only failing: on the editorial re-check's build
@@ -299,7 +300,7 @@ measured on two instruments, and what it measures is an **attenuation rather tha
 target's alignment to the map's own structure makes the mid-band loss **larger** by 0.1401 at γ = 1 (5 of 5
 streams) and leaves it unchanged at γ = 2 (+0.0461, 0 of 5 negative), while the α = ±1 panel (Table 5) shows the
 *sign* of the planted alignment to move no mid-band cell by more than 0.021 in either convention. Because the
-α = 0 sign inversion the submission reported does not reproduce (Table 6), the registered direction clause is
+**alignment-axis (α = 0)** sign inversion the submission reported does not reproduce (Table 6), the registered direction clause is
 **not refuted on this axis**: the axis establishes the *size* of the loss where the target is aligned — the worst
 mid-band cell in the map is the aligned one, on the panel's own design — and this paper reports that, with the
 inversion withdrawn. The prior is therefore neither confirmed nor refuted in its direction clause, and the

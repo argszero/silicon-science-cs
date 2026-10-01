@@ -7,7 +7,9 @@ is generated: the record's own fields (authors, year, title, venue, URL) are res
 from the committed pools and re-read from the index by `refs_verify_v87.py`, so a mistyped identifier fails a
 control instead of entering the list.
 
-Ordering is the bibliography's order, which is the manuscript's order of first citation:
+Ordering is the bibliography's own order (the selection order, its sections A-K).  It is NOT the
+manuscript's order of first citation -- the assembly reports that order as an advisory, and coverage is a
+presence test, so a re-ordering by an edit is not a defect:
   A  the advantage claim and its audits            G  random features and approximations
   B  quantum-kernel theory and closed forms        H  statistics of comparison
   C  feature maps, encoding and geometry           I  model selection and tuning bias

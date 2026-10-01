@@ -24,8 +24,22 @@ Submission package for the research registration
 
 ```bash
 cd papers/issue-87
-bash reproduce.sh
+bash reproduce.sh                                  # two interpreters are wanted, both named below
+PYGATE=<path to a python3.12+> bash reproduce.sh   # ... and this names the second one explicitly
 ```
+
+**The environment, named here rather than discovered by a failure.** The run wants two interpreters and picks each
+up in its own declared way:
+
+- **`PY`** (default `/usr/bin/python3`) carries `numpy` — and `matplotlib`, for the figure step. Where `numpy` is
+  absent the digest comparison is reported **`NOT RUN`** at 2/5 rather than as a departure nobody measured.
+- **`PYGATE`** must be **Python ≥ 3.12**: the journal's gates live in `.github/tools/*.py` and their own
+  `--selftest` fixtures use an f-string form the system interpreter cannot parse (measured: `SyntaxError` on
+  3.9.6, `selftest: 41/41 cases ok` on 3.12.12). With no `PYGATE` in the environment the script walks a declared
+  candidate list, prints the interpreter it chose with that interpreter's version, and **binds** a caller-named
+  interpreter rather than second-guessing it. If no candidate can carry the gates, step 5/5 is reported
+  **`NOT RUN`** naming the interpreters it tried, and the run exits **2** — the journal's own code for *not run* —
+  instead of dying as a shell error at the last step.
 
 **Expected output** — the last lines are the manifest, and the script fails loudly on any difference:
 
@@ -57,7 +71,7 @@ the last one. They are not the same kind of step, so they are not treated alike:
 | 2/5 | `artefacts/results_digest.json` | **REPORTED**, leaf by leaf: departure count, worst absolute and worst relative departure at the leaf's own path, verdict | `BUILD_BOUND` when every differing leaf is within `1e-8`, **and the run continues**; the committed copy is then restored, because a reported departure must not become the next step's input |
 | 3/5 | `figures/*.png` | **RENDERED**: the bytes, against the saved committed copy, with the renderer named | `RENDER_BOUND` — reported and never stopped on: **no tolerance for a rendering has been measured here**, and this package does not declare numbers it has not measured. What the figures carry is the digest, held by 2/5 |
 | 4/5 | `manuscript.md`, `artefacts/assembly/assembly-report.txt` | **EXACT**: `cmp` against the committed copy | exact, and that is the stop condition |
-| 5/5 | nothing (the journal's gates) | **EXACT** verdicts (`GATE: PASS`) over the built manuscript | exact |
+| 5/5 | nothing (the journal's gates) | **EXACT** verdicts (`GATE: PASS`) over the built manuscript | exact — and where no Python ≥ 3.12 can be found, **`NOT RUN`** with the interpreters tried, run exit **2** |
 
 Where that leaves the tolerance, measured against named numbers rather than described: `1e-8` is **2.7 orders
 above** the worst departure the controls return on a foreign build (`2.192e-11`, the R446 re-check), **7.8 orders
@@ -73,7 +87,10 @@ now written as such, in both carriers.
 interpreter without numpy at all. `build_bound.py` then prints the build line, the words `NOT RUN` and the
 interpreters it checked, and exits **2** — the journal's own code for *not run* (`numgate`, `linkgate` use it for
 the same reason) — and `reproduce.sh` stops with *"the digest comparison could NOT BE TAKEN at this
-interpreter"* rather than reporting a departure that was never measured. Before this round a missing dependency
+interpreter"* rather than reporting a departure that was never measured. **`NOT RUN` is one state with one exit
+code**: wherever a step could not be taken — here at 2/5, and at 5/5 where no Python ≥ 3.12 can be found — the run
+prints `REPRODUCE: NOT RUN -- …` and exits **2**, while `REPRODUCE: FAIL` (a difference the run did measure)
+exits **1**. The two states are told apart by the exit code, not only by the prose. Before this round a missing dependency
 surfaced as a traceback, which a caller reads as `FAIL` — i.e. as the one thing the comparator exists to detect.
 Measured here at `python3.12.12` (no numpy): `build read: python 3.12.12 / numpy ABSENT`, `verdict: NOT RUN`,
 exit **2**.
@@ -128,8 +145,11 @@ enter the comparison are named here and printed by `reproduce.sh`:
 | role | interpreter | versions |
 |------|-------------|----------|
 | digest, figures, manuscript assembly, and the instruments themselves | `/usr/bin/python3` | Python 3.9.6, numpy **2.0.2**, matplotlib **3.9.4** |
-| the journal's gates (`.github/tools/*.py`) | `~/.local/bin/python3.12` | Python **3.12.12** (the gates' fixtures use f-string forms the system interpreter cannot parse) |
+| the journal's gates (`.github/tools/*.py`) | **any Python ≥ 3.12** — the script's declared candidate list (`python3.13` · `python3.12` · `python3` · the platform paths) or a caller-named `PYGATE` | authoring host: Python **3.12.12** (the gates' fixtures use an f-string form the system interpreter cannot parse: `SyntaxError` on 3.9.6) |
 
+The gate interpreter is the one role whose **path** is not portable, and this table used to name the authoring
+host's path as if it were the requirement: the requirement is the version, the interpreter is discovered (or
+named), and its absence is the reported `NOT RUN` state above — never a path a reader is expected to have.
 `numpy` enters every number (the simulator's linear algebra, `eigvalsh`, the least-squares metric fit), and
 `matplotlib` enters the figure bytes. The digest's JSON is dumped with `sort_keys=True`, so byte-identity is a
 statement about values rather than about dict ordering.
@@ -258,10 +278,16 @@ case count, so no count is asserted here).
 
 ## Disclosure
 
-- **Contribution level: `theory + empirics`** — a controlled model with ground truth by construction (the Bayes
-  predictor is known, so every number is an excess risk over it), a fitted-metric rival built from a published
-  closed form, a six-axis handicap audit that can fail, and a calibrated declaration procedure whose size is
-  validated on a holdout null.
+- **Contribution level: `theory + empirics`** — the **empirical half**: a controlled model with ground truth by
+  construction (the Bayes predictor is known, so every number is an excess risk over it), a fitted-metric rival
+  built from a published closed form, a six-axis handicap audit that can fail, and a calibrated declaration
+  procedure whose size is validated on a holdout null. The **theory half** is carried as the three analytic
+  objects the study is read against, each named where it is used: the by-construction ground truth, the
+  closed-form Gaussian reduction that makes the small-bandwidth flank exact, and the `diag(W)` uniformity
+  statement applied from [19] on vertex-transitive graphs. None of the three is *proved* here, and the
+  manuscript's own paragraph says which is applied and what is left as an experiment (§5.1). This is the value
+  the registration's *Contribution-level declaration (target)* states, so target, README and manuscript now read
+  one value for one field.
 - **Not a pipeline reuse.** This study is not the journal's census family: the instrument (exact statevector
   simulation of an entangling map, a metric-matched classical rival, a swept-alignment generator) is built here,
   and no census corpus, classifier or head-SHA-pinned repository set is reused.

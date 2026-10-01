@@ -13,7 +13,8 @@ nested cross-validation envelope protocol as every other arm, and we map the adv
 is a pure interaction function with **ground truth by construction** — every number below is a paired excess-risk
 difference in units of the target's variance, in which the Bayes predictor scores exactly zero.
 
-**The registered advantage region does not exist, and its sign is inverted in the middle band.** Against the
+**The registered advantage region does not exist, and the sign of that registered advantage is inverted
+in the middle band.** Against the
 metric-matched rival, the entangling kernel's paired difference (quantum − rival) is **negative** — the kernel
 leads — only at the two flanks: the small-bandwidth limit where the map's closed-form Gaussian reduction is
 exact, and the large-bandwidth limit where the kernel is close to degenerate. Both flank leads are an order of
@@ -38,27 +39,31 @@ calibrated predictive null on the valid axis, the quantum kernel's lead count ri
 degrades, but the mid-band block still loses by **+0.27 … +0.32** where the rival is worst-matched.
 
 **Registered priors, reported against their registered criteria.** PB1 (an inverted U in bandwidth with a
-positive middle band) is **refuted in its middle clause, with the sign inverted**, and refuted in the direction
+positive middle band) is **refuted in its middle clause, with that clause's sign inverted**, and refuted in the direction
 of its large-bandwidth clause; only its small-bandwidth clause (≈ 0) survives, as an approximation
 (|lead| ≤ 0.017 against a mid-band loss of 0.455). PB2 (the *sign* is predicted by alignment to the entanglement
 graph's signless Laplacian, not by qubit count) is **confirmed in its mechanism clause, and its direction
 clause is not refuted on the alignment axis**: re-measured over **13 disjoint streams** in three declared seed
 families, the α = 0 mid-band cell is **positive**, not inverted (+0.2848 ± 0.1080 at γ = 1, **0 of 13** streams
-negative; +0.0402 ± 0.0497 at γ = 2), so the sign inversion the submission reported is **withdrawn** and what the
+negative; +0.0402 ± 0.0497 at γ = 2), so the **alignment-axis (α = 0)** sign inversion the submission reported is
+**withdrawn** and what the
 axis measures is an **attenuation** at γ = 1 (removing the alignment *reduces* the mid-band loss by 0.1401, 5 of
 5 streams) and a **null at γ = 2**. The registered direction's remaining contradiction is the *size* of the loss
 at the prior's strongest point, on the α = ±1 panel, not a sign change. PB3 (the identity phase convention
 empties the region) is **refuted as written**: the flank leads survive the convention change, so they are not the
 metric anisotropy the convention removes.
 
-**Contribution level: `empirics`**, with one theoretical observation attached — a controlled model with ground
-truth by construction, an exact-simulation instrument with a closed-form rival, a six-axis handicap audit that
-can fail, a calibrated declaration procedure whose size is validated on a holdout, and a boundary *measured* as a
-statistic of the map (the relative deviation of `diag(W)` from uniformity: **8.2e−16** on a cycle and **4.8e−16**
-on the complete graph, against **6.1e−1** on a path). The theory half is not proved here: the `diag(W)`
-uniformity statement follows from [19] on vertex-transitive graphs and is *applied* to this map rather than
-established by it, and the interpolating case that would turn it into a classification with a resolution is left
-as an experiment (§5.1).
+**Contribution level: `theory + empirics`.** The theory half is carried as the three analytic objects the
+study is read against, each named where it is used: the by-construction ground truth (the Bayes predictor is
+known exactly and scores zero — checked as an anchor, not assumed), the closed-form Gaussian reduction that
+makes the small-bandwidth flank exact, and the `diag(W)` uniformity statement applied from [19] on
+vertex-transitive graphs. None of the three is *proved* here: the third follows from [19] and is applied to
+this map rather than established by it, and the interpolating case that would turn it into a classification
+with a resolution is left as an experiment (§5.1). What this paper establishes is the empirical half — a
+controlled model with ground truth by construction, an exact-simulation instrument with a closed-form rival,
+a six-axis handicap audit that can fail, a calibrated declaration procedure whose size is validated on a
+holdout, and a boundary *measured* as a statistic of the map (the relative deviation of `diag(W)` from
+uniformity: **8.2e−16** on a cycle and **4.8e−16** on the complete graph, against **6.1e−1** on a path).
 
 **Significance.** If this map is right, then the benchmark practice that produced the field's residual
 "quantum-kernel advantages" is measuring the weakness of its rival, not the strength of the map: in the code
@@ -650,7 +655,7 @@ make its claims.
 **PB1 outcome.** The small-bandwidth clause (≈ 0) is the only one standing, and it stands as an approximation:
 the largest small-bandwidth reading is 0.0173 against a mid-band loss of 0.4550, and under the unshifted
 convention at q = 8 the same rim reads +0.0028, i.e. a small loss. The middle clause (advantage > 0 in an
-intermediate band) is **refuted with the sign inverted** — the intermediate band is where the loss is largest.
+intermediate band) is **refuted with that clause's sign inverted** — the intermediate band is where the loss is largest.
 The large-bandwidth clause (≤ 0) is **refuted in direction**, with the scope stated above: the positive lead
 there is ≤ 0.0726 and shrinks by roughly a factor of 4 at q = 8. **PB3** — "under the identity-metric
 convention the advantage region is empty at every alignment level" — is **refuted as written**: the collapse-rim
@@ -703,7 +708,8 @@ the planted alignment.
 Read against Table 4, the two instruments answer different questions. Table 5 is the map's own design and says
 the *sign* of the planted alignment is irrelevant: flipping α from +1 to −1 moves no mid-band cell by more than
 0.021, in either convention. Table 4 removes the alignment instead of flipping it, on one target draw, and the
-submission read a sign inversion out of it. **That inversion does not survive the panel below, and is
+submission read an **alignment-axis (α = 0)** sign inversion out of it. **That inversion does not survive the
+panel below, and is
 withdrawn.**
 
 **Table 6 — the α = 0 cell re-measured over 13 disjoint streams in three declared seed families**
@@ -716,7 +722,7 @@ withdrawn.**
 
 The γ = 1 cell is **positive in every one of the thirteen streams** (95 % t interval [+0.2017, +0.3679]) and the
 γ = 2 cell is positive in eleven of thirteen: the one-draw value the submission printed is an outlier of its own
-ensemble, and the ensemble itself says the cell is not inverted. The instrument's first control reproduces the committed
+ensemble, and the ensemble itself says the α = 0 cell is not inverted. The instrument's first control reproduces the committed
 twelve-cell Table 4 record exactly, **12 of 12 bitwise**, on the build that record pins
 (`python 3.9.6` + `numpy 2.0.2`). That equality is a property of a build, not of the claim, and the control
 reports the departure it finds rather than only failing: on the editorial re-check's build
@@ -731,7 +737,7 @@ measured on two instruments, and what it measures is an **attenuation rather tha
 target's alignment to the map's own structure makes the mid-band loss **larger** by 0.1401 at γ = 1 (5 of 5
 streams) and leaves it unchanged at γ = 2 (+0.0461, 0 of 5 negative), while the α = ±1 panel (Table 5) shows the
 *sign* of the planted alignment to move no mid-band cell by more than 0.021 in either convention. Because the
-α = 0 sign inversion the submission reported does not reproduce (Table 6), the registered direction clause is
+**alignment-axis (α = 0)** sign inversion the submission reported does not reproduce (Table 6), the registered direction clause is
 **not refuted on this axis**: the axis establishes the *size* of the loss where the target is aligned — the worst
 mid-band cell in the map is the aligned one, on the panel's own design — and this paper reports that, with the
 inversion withdrawn. The prior is therefore neither confirmed nor refuted in its direction clause, and the
@@ -932,7 +938,8 @@ contiguous mid-band block at q = 6 (sign-unanimous in all five streams, every 95
 the strongest *valid* handicap of the rival, and the rival's own geometry is the mechanism: where the planted
 target's interaction structure is the map's graph, the rival is exactly right and wins by half a variance. Where
 alignment is removed the loss is *attenuated* at γ = 1 (by 0.1401, in 5 of 5 streams) and unchanged at γ = 2: the
-sign does not move, and the sign inversion an earlier version of this paragraph reported is withdrawn.
+sign does not move, and the **alignment-axis (α = 0)** sign inversion an earlier version of this
+paragraph reported is withdrawn.
 
 ### 6.2 Significance: whose belief changes
 
@@ -1000,7 +1007,8 @@ metric as the matching object.
    realisation, 50 splits inside that draw, declared through the calibrated null); Table 5's α = ±1 rows come
    from the map's own design (`smoke_v12.py`: 6 independent target draws × 50 splits). The α = 0 cell has now
    been re-measured over 13 disjoint streams in three declared seed families (Table 6, instrument shipped), and
-   the one-draw sign inversion **does not reproduce** — the cell is positive in 13 of 13 streams at γ = 1 and 11
+   the one-draw **alignment-axis (α = 0)** sign inversion **does not reproduce** — the cell is positive in 13 of 13
+streams at γ = 1 and 11
    of 13 at γ = 2 — so that claim is withdrawn at every site. What the alignment axis supports is an
    **attenuation** (removing the alignment reduces the mid-band loss by 0.1401 at γ = 1, 5 of 5 streams) and a
    **null at γ = 2** (+0.0461, 0 of 5 negative); the registered direction's remaining contradiction is the *size*
@@ -1033,7 +1041,7 @@ metric as the matching object.
 We built the rival that the quantum-kernel advantage claim requires — a classical kernel given the map's own
 metric under the same tuning protocol — and mapped the advantage over conventions, bandwidths, alignment signs
 and qubit counts on a generator with ground truth by construction. The registered region does not exist, and the
-sign of the mid-band is inverted: the map is a valley whose rims are the two degenerate limits, and the band
+sign of the mid-band is inverted relative to the registered claim: the map is a valley whose rims are the two degenerate limits, and the band
 where the field reads its evidence is the band where a metric-matched rival wins by half a target-variance, in
 eight cells, at both qubit counts, with five streams of sign-unanimity and every lower bound above +0.39. The
 same cell yields an apparent win of +0.42 against the weak surrogate the field uses. The registered power arm

@@ -191,7 +191,8 @@ contiguous mid-band block at q = 6 (sign-unanimous in all five streams, every 95
 the strongest *valid* handicap of the rival, and the rival's own geometry is the mechanism: where the planted
 target's interaction structure is the map's graph, the rival is exactly right and wins by half a variance. Where
 alignment is removed the loss is *attenuated* at γ = 1 (by 0.1401, in 5 of 5 streams) and unchanged at γ = 2: the
-sign does not move, and the sign inversion an earlier version of this paragraph reported is withdrawn.
+sign does not move, and the **alignment-axis (α = 0)** sign inversion an earlier version of this
+paragraph reported is withdrawn.
 
 ### 6.2 Significance: whose belief changes
 
@@ -259,7 +260,8 @@ metric as the matching object.
    realisation, 50 splits inside that draw, declared through the calibrated null); Table 5's α = ±1 rows come
    from the map's own design (`smoke_v12.py`: 6 independent target draws × 50 splits). The α = 0 cell has now
    been re-measured over 13 disjoint streams in three declared seed families (Table 6, instrument shipped), and
-   the one-draw sign inversion **does not reproduce** — the cell is positive in 13 of 13 streams at γ = 1 and 11
+   the one-draw **alignment-axis (α = 0)** sign inversion **does not reproduce** — the cell is positive in 13 of 13
+streams at γ = 1 and 11
    of 13 at γ = 2 — so that claim is withdrawn at every site. What the alignment axis supports is an
    **attenuation** (removing the alignment reduces the mid-band loss by 0.1401 at γ = 1, 5 of 5 streams) and a
    **null at γ = 2** (+0.0461, 0 of 5 negative); the registered direction's remaining contradiction is the *size*
@@ -292,7 +294,7 @@ metric as the matching object.
 We built the rival that the quantum-kernel advantage claim requires — a classical kernel given the map's own
 metric under the same tuning protocol — and mapped the advantage over conventions, bandwidths, alignment signs
 and qubit counts on a generator with ground truth by construction. The registered region does not exist, and the
-sign of the mid-band is inverted: the map is a valley whose rims are the two degenerate limits, and the band
+sign of the mid-band is inverted relative to the registered claim: the map is a valley whose rims are the two degenerate limits, and the band
 where the field reads its evidence is the band where a metric-matched rival wins by half a target-variance, in
 eight cells, at both qubit counts, with five streams of sign-unanimity and every lower bound above +0.39. The
 same cell yields an apparent win of +0.42 against the weak surrogate the field uses. The registered power arm

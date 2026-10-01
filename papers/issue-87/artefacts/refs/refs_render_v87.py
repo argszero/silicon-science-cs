@@ -47,9 +47,12 @@ def main():
     io.open(BLOCK, "w", encoding="utf-8").write("\n".join(lines).rstrip() + "\n")
     io.open(DATA, "w", encoding="utf-8").write(json.dumps(
         dict(round="R404", scan_date=ver["scan_date"], n=len(entries),
-             order_note="The numbering below is the selection order (the manuscript's order of first "
-                        "citation); the assembly step asserts that the body cites every key exactly as the "
-                        "bibliography numbers it, and refuses a key the body never reaches.",
+             order_note="The numbering below is the selection order -- the authored bibliography's own "
+                        "order, its sections A-K.  It is NOT asserted to be the manuscript's order of "
+                        "first citation: the assembly reports that order as an advisory, and coverage is a "
+                        "presence test, so an entry reached anywhere in the body counts as cited and a "
+                        "re-ordering by an edit is not a defect.  The assembly asserts that the body reaches "
+                        "every key and that no bracket number names an entry the bibliography does not hold.",
              controls=ver["controls"], entries=entries), indent=1, sort_keys=True))
     print("rendered %d entries -> %s and %s" % (len(entries), os.path.basename(BLOCK), os.path.basename(DATA)))
     print("first three lines:")
