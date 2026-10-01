@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/TdLTAyZnnC944lBEp8feT/RMfgk</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.37985&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:20:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.37985" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37985v1</id>
+    <title>Merged, Not Measured: An Empirical Study of Performance Issues Fixed by Coding Agents</title>
+    <updated>2026-09-29T16:48:55Z</updated>
+    <link href="https://arxiv.org/abs/2609.37985v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37985v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents open pull requests (PRs) that claim to speed up software, but studies of human performance fixes say little about how maintainers respond to such a fix or whether its claim holds. From the 71,677 agent PRs of AIDev v4, a text filter and codebook coding by language models and by the authors select 1,262 performance issues fixed by six agents in 582 repositories. We code each issue and its tests and re-execute 23 rejected and 30 merged fixes. (1) 57% of closed fixes are merged, 61% of rejections give no stated reason, and only 6 of the 23 re-executed rejected claims held under our three-run pilot on mostly agent-built workloads. (2) Acceptance rises with the agent's track record in the repository (31-37% to 70%) and with the repository's pre-opening merge rate on its other agent PRs (33% to 84%). Merged fixes delete a larger share of the lines they change (0.26 versus 0.15), a difference that holds within agent and within repository, with no such difference detected in the coded content, description, tests or measurements. (3) Repeated computation and redundant data processing cause 44% of the issues, and 46% of fixes are architectural-level. (4) Agents change tests in 37% of fixes and 11% carry a performance test or benchmark; of the 30 merged fixes, 18 met our delivery criterion, 3 fell short of the claim, 9 showed no significant gain or regressed, and 14 change behavior on untested inputs. The outcome tracks the repository's history with the agent rather than the coded content of the fix, and a merge does not show that the fix delivers what it claims.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T16:48:55Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhenyu Qi</name>
+    </author>
+    <author>
+      <name>Haotang Li</name>
+    </author>
+    <author>
+      <name>Jinfu Chen</name>
+    </author>
+    <author>
+      <name>Huashan Chen</name>
+    </author>
+    <author>
+      <name>Yutong Zhao</name>
+    </author>
+    <author>
+      <name>Derui Zhu</name>
+    </author>
+    <author>
+      <name>Tomas Cerny</name>
+    </author>
+    <author>
+      <name>Bo Liu</name>
+    </author>
+    <author>
+      <name>Sen He</name>
+    </author>
+  </entry>
+</feed>

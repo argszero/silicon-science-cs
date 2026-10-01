@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/im2knLfimZ4iDqiYQBP7iVepLCc</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.37322&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:09Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.37322" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37322v1</id>
+    <title>Mubric: Mutation Testing-Guided Rubric Generation for LLM Evaluation</title>
+    <updated>2026-09-29T12:00:16Z</updated>
+    <link href="https://arxiv.org/abs/2609.37322v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37322v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Rubric-based evaluation is widely used to assess LLM-based systems by decomposing response quality into task-specific scoring criteria. However, automatically generating rubrics that reliably capture task-specific quality requirements remains challenging. We introduce Mubric, a mutation testing-guided approach to rubric generation. Mutation testing, a classic software testing methodology, evaluates a test suite by injecting faults into programs and checking whether the tests detect them. We draw an analogy between test suites and rubrics: if a rubric captures an important quality requirement, introducing a corresponding defect into an otherwise high-quality response should reduce its score. Mubric first mines common defects from real pairs of preferred and dispreferred responses and abstracts these defects into reusable mutation operators, each specifying how to introduce a particular type of response defect. For a new task, it applies relevant operators to a reference response, checks whether the injected defects reduce response quality, and uses insufficiently penalized defects to refine the rubric. We evaluate Mubric on 703 tasks across four representative domains against six advanced rubric generation methods. Mubric achieves the highest overall evaluation accuracy, outperforming the strongest baseline by 7.48 percentage points.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T12:00:16Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jiayuxuan Yang</name>
+    </author>
+    <author>
+      <name>Jie M. Zhang</name>
+    </author>
+    <author>
+      <name>Yiling Lou</name>
+    </author>
+    <author>
+      <name>Zhenpeng Chen</name>
+    </author>
+  </entry>
+</feed>

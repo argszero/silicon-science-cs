@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/IY7eOmdVunQiHyDyEiIkj+2rwqg</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.34646&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:54:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.34646" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.34646v1</id>
+    <title>Episodic Loops: Finitary Event Structures and Operational Semantics for C11 Programs with Retries</title>
+    <updated>2026-09-28T08:55:53Z</updated>
+    <link href="https://arxiv.org/abs/2609.34646v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.34646v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lock-free synchronisation algorithms are often implemented with fallible operations, such as compare-and-swap (CAS), wrapped in unbounded retry loops. Verifying such algorithms requires considering arbitrarily many failing iterations, yielding large state spaces, compounded by the interleavings of concurrent threads. Prior work discarded failing iterations, arguing that they leave no trace in the post-loop state.
+  Compilers and hardware reorder instructions, and load-store reorderings may cross the boundaries of failing iterations, introducing subtle concurrency bugs. We demonstrate one such bug, making use-after-free possible in a previously verified variant of Read-Copy-Update - a synchronisation primitive widely adopted in the Linux Kernel - and we provide and verify a fix.
+  We find that practical retries in lock-free algorithms adhere to a common pattern. We introduce episodic loops, a semantic characterisation of unbounded retry loops which is syntactically recognisable in many practical cases, and synchronisation points, operations that bound both instruction reordering and state space within episodic loops. We show that SMRD - a symbolic event structure semantics for C11 programs which allows for load-store reordering - admits a finite representation in programs where unbounded loops are episodic. We further introduce a finitary operational semantics that allows safety properties to be verified in finitely many steps. For the use-after-free bug we demonstrate, verification takes a single pass over the program, linear in the program size.
+  We provide a reference implementation of SMRD reproducing the bug and verifying the fix, and mechanise the operational semantics together with the minimal bug and its fix in Isabelle/HOL.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T08:55:53Z</published>
+    <arxiv:comment>115 pages (42 pages main text plus appendices), 19 figures, 2 tables. Reference implementation: https://github.com/christiankissig/mordor ; Isabelle/HOL mechanisation: https://github.com/christiankissig/isa-smrd-opsem</arxiv:comment>
+    <arxiv:primary_category term="cs.PL"/>
+    <author>
+      <name>Christian Kissig</name>
+    </author>
+    <author>
+      <name>Jay Richards</name>
+    </author>
+    <author>
+      <name>Mark Batty</name>
+    </author>
+  </entry>
+</feed>

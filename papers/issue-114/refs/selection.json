@@ -1,0 +1,3206 @@
+{
+ "accepted": [
+  {
+   "key": "non-testable",
+   "title": "On Testing Non-Testable Programs",
+   "year": 1982,
+   "venue": "The Computer Journal",
+   "doi": "10.1093/comjnl/25.4.465",
+   "authors": [
+    {
+     "family": "Weyuker",
+     "given": "E. J."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "On testing non-testable programs Weyuker",
+   "difference": "introduced the oracle problem for programs with no expected output; we do not need an oracle because our semantics is decidable"
+  },
+  {
+   "key": "oraclesurvey",
+   "title": "The Oracle Problem in Software Testing: A Survey",
+   "year": 2015,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2014.2372785",
+   "authors": [
+    {
+     "family": "Barr",
+     "given": "Earl T."
+    },
+    {
+     "family": "Harman",
+     "given": "Mark"
+    },
+    {
+     "family": "McMinn",
+     "given": "Phil"
+    },
+    {
+     "family": "Shahbaz",
+     "given": "Muzammil"
+    },
+    {
+     "family": "Yoo",
+     "given": "Shin"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "The Oracle Problem in Software Testing: A Survey Barr Harman McMinn Shahbaz Yoo",
+   "difference": "catalogues oracle-construction techniques; we ask a different question -- what a specification's own STRENGTH costs"
+  },
+  {
+   "key": "metasurvey",
+   "title": "A Survey on Metamorphic Testing",
+   "year": 2016,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2016.2532875",
+   "authors": [
+    {
+     "family": "Segura",
+     "given": "Sergio"
+    },
+    {
+     "family": "Fraser",
+     "given": "Gordon"
+    },
+    {
+     "family": "Sanchez",
+     "given": "Ana B."
+    },
+    {
+     "family": "Ruiz-Cortes",
+     "given": "Antonio"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A Survey on Metamorphic Testing Segura Fraser Sanchez Ruiz-Cortes",
+   "difference": ""
+  },
+  {
+   "key": "feedbackrandom",
+   "title": "Feedback-Directed Random Test Generation",
+   "year": 2007,
+   "venue": "29th International Conference on Software Engineering (ICSE'07)",
+   "doi": "10.1109/icse.2007.37",
+   "authors": [
+    {
+     "family": "Pacheco",
+     "given": "Carlos"
+    },
+    {
+     "family": "Lahiri",
+     "given": "Shuvendu K."
+    },
+    {
+     "family": "Ernst",
+     "given": "Michael D."
+    },
+    {
+     "family": "Ball",
+     "given": "Thomas"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Feedback-directed random test generation Pacheco Lahiri Ernst Ball",
+   "difference": ""
+  },
+  {
+   "key": "tamingfuzzers",
+   "title": "Taming compiler fuzzers",
+   "year": 2013,
+   "venue": "ACM SIGPLAN Notices",
+   "doi": "10.1145/2499370.2462173",
+   "authors": [
+    {
+     "family": "Chen",
+     "given": "Yang"
+    },
+    {
+     "family": "Groce",
+     "given": "Alex"
+    },
+    {
+     "family": "Zhang",
+     "given": "Chaoqiang"
+    },
+    {
+     "family": "Wong",
+     "given": "Weng-Keen"
+    },
+    {
+     "family": "Fern",
+     "given": "Xiaoli"
+    },
+    {
+     "family": "Eide",
+     "given": "Eric"
+    },
+    {
+     "family": "Regehr",
+     "given": "John"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Taming compiler fuzzers Chen Groce Zhang Wong Fern Eide Regehr",
+   "difference": "tests compilers against a reference; we test specifications against a decidable semantics"
+  },
+  {
+   "key": "findingbugs",
+   "title": "Finding and understanding bugs in C compilers",
+   "year": 2012,
+   "venue": "ACM SIGPLAN Notices",
+   "doi": "10.1145/2345156.1993532",
+   "authors": [
+    {
+     "family": "Yang",
+     "given": "Xuejun"
+    },
+    {
+     "family": "Chen",
+     "given": "Yang"
+    },
+    {
+     "family": "Eide",
+     "given": "Eric"
+    },
+    {
+     "family": "Regehr",
+     "given": "John"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Finding and understanding bugs in C compilers Yang Chen Eide Regehr",
+   "difference": "differential testing of compilers; a change population of the same kind, without a specification axis"
+  },
+  {
+   "key": "mutationsurvey",
+   "title": "An Analysis and Survey of the Development of Mutation Testing",
+   "year": 2011,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2010.62",
+   "authors": [
+    {
+     "family": "Jia",
+     "given": "Yue"
+    },
+    {
+     "family": "Harman",
+     "given": "Mark"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "An Analysis and Survey of the Development of Mutation Testing Jia Harman",
+   "difference": "the standard survey of mutation testing; we invert it -- mutants are our instruments, not our object of study"
+  },
+  {
+   "key": "hints",
+   "title": "Hints on Test Data Selection: Help for the Practicing Programmer",
+   "year": 1978,
+   "venue": "Computer",
+   "doi": "10.1109/c-m.1978.218136",
+   "authors": [
+    {
+     "family": "DeMillo",
+     "given": "R.A."
+    },
+    {
+     "family": "Lipton",
+     "given": "R.J."
+    },
+    {
+     "family": "Sayward",
+     "given": "F.G."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Hints on Test Data Selection: Help for the Practicing Programmer DeMillo Lipton Sayward",
+   "difference": ""
+  },
+  {
+   "key": "equivmutants",
+   "title": "Using compiler optimization techniques to detect equivalent mutants",
+   "year": 1994,
+   "venue": "Software Testing, Verification and Reliability",
+   "doi": "10.1002/stvr.4370040303",
+   "authors": [
+    {
+     "family": "Offutt",
+     "given": "A. Jefferson"
+    },
+    {
+     "family": "Craft",
+     "given": "W. Michael"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Using compiler optimization techniques to detect equivalent mutants Offutt Craft",
+   "difference": "detects equivalent mutants by compiler optimisation, case by case; our oracle decides equivalence over the whole input domain by construction"
+  },
+  {
+   "key": "aremutants",
+   "title": "Are mutants a valid substitute for real faults in software testing?",
+   "year": 2014,
+   "venue": "Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering",
+   "doi": "10.1145/2635868.2635929",
+   "authors": [
+    {
+     "family": "Just",
+     "given": "Ren\u00e9"
+    },
+    {
+     "family": "Jalali",
+     "given": "Darioush"
+    },
+    {
+     "family": "Inozemtseva",
+     "given": "Laura"
+    },
+    {
+     "family": "Ernst",
+     "given": "Michael D."
+    },
+    {
+     "family": "Holmes",
+     "given": "Reid"
+    },
+    {
+     "family": "Fraser",
+     "given": "Gordon"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Are mutants a valid substitute for real faults in software testing Just Jalali Inozemtseva Ernst Holmes Fraser",
+   "difference": "asks whether mutants substitute for real faults; we ask what a specification's shape implies about which changes it will catch"
+  },
+  {
+   "key": "trivialequiv",
+   "title": "Trivial Compiler Equivalence: A Large Scale Empirical Study of a Simple, Fast and Effective Equivalent Mutant Detection Technique",
+   "year": 2015,
+   "venue": "2015 IEEE/ACM 37th IEEE International Conference on Software Engineering",
+   "doi": "10.1109/icse.2015.103",
+   "authors": [
+    {
+     "family": "Papadakis",
+     "given": "Mike"
+    },
+    {
+     "family": "Jia",
+     "given": "Yue"
+    },
+    {
+     "family": "Harman",
+     "given": "Mark"
+    },
+    {
+     "family": "Le Traon",
+     "given": "Yves"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Trivial Compiler Equivalence: A Large Scale Empirical Study of a Simple, Fast and Effective Equivalent Mutant Detection Technique",
+   "difference": "a large-scale empirical study of equivalent-mutant detection; our ground truth is exact and needs no detector"
+  },
+  {
+   "key": "threatsvalidity",
+   "title": "Threats to the validity of mutation-based test assessment",
+   "year": 2016,
+   "venue": "Proceedings of the 25th International Symposium on Software Testing and Analysis",
+   "doi": "10.1145/2931037.2931040",
+   "authors": [
+    {
+     "family": "Papadakis",
+     "given": "Mike"
+    },
+    {
+     "family": "Henard",
+     "given": "Christopher"
+    },
+    {
+     "family": "Harman",
+     "given": "Mark"
+    },
+    {
+     "family": "Jia",
+     "given": "Yue"
+    },
+    {
+     "family": "Le Traon",
+     "given": "Yves"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Threats to the validity of mutation-based test assessment Papadakis Jia Harman",
+   "difference": ""
+  },
+  {
+   "key": "impactequiv",
+   "title": "The Impact of Equivalent Mutants",
+   "year": 2009,
+   "venue": "2009 International Conference on Software Testing, Verification, and Validation Workshops",
+   "doi": "10.1109/icstw.2009.37",
+   "authors": [
+    {
+     "family": "Gr\u00fcn",
+     "given": "Bernhard J. M."
+    },
+    {
+     "family": "Schuler",
+     "given": "David"
+    },
+    {
+     "family": "Zeller",
+     "given": "Andreas"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.8,
+   "query": "The Impact of Equivalent Mutants Gruen Schuler",
+   "difference": ""
+  },
+  {
+   "key": "secondorder",
+   "title": "Isolating First Order Equivalent Mutants via Second Order Mutation",
+   "year": 2012,
+   "venue": "2012 IEEE Fifth International Conference on Software Testing, Verification and Validation",
+   "doi": "10.1109/icst.2012.160",
+   "authors": [
+    {
+     "family": "Kintis",
+     "given": "Marinos"
+    },
+    {
+     "family": "Papadakis",
+     "given": "Mike"
+    },
+    {
+     "family": "Malevris",
+     "given": "Nicos"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Isolating First Order Equivalent Mutants via Second Order Mutation Kintis Papadakis Malevris",
+   "difference": ""
+  },
+  {
+   "key": "hoare",
+   "title": "An Axiomatic Basis for Computer Programming",
+   "year": 1978,
+   "venue": "Programming Methodology",
+   "doi": "10.1007/978-1-4612-6315-9_9",
+   "authors": [
+    {
+     "family": "Hoare",
+     "given": "C. A. R."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "An axiomatic basis for computer programming Hoare",
+   "difference": ""
+  },
+  {
+   "key": "guarded",
+   "title": "Guarded Commands, Nondeterminacy, and Formal Derivation of Programs",
+   "year": 1978,
+   "venue": "Programming Methodology",
+   "doi": "10.1007/978-1-4612-6315-9_14",
+   "authors": [
+    {
+     "family": "Dijkstra",
+     "given": "Edsger W."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Guarded commands, nondeterminacy and formal derivation of programs Dijkstra",
+   "difference": ""
+  },
+  {
+   "key": "tla",
+   "title": "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers [Book Review]",
+   "year": 2002,
+   "venue": "Computer",
+   "doi": "10.1109/mc.2002.1033032",
+   "authors": [],
+   "source": "crossref",
+   "match_score": 0.923,
+   "query": "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers Lamport",
+   "difference": ""
+  },
+  {
+   "key": "awsformal",
+   "title": "How Amazon web services uses formal methods",
+   "year": 2015,
+   "venue": "Communications of the ACM",
+   "doi": "10.1145/2699417",
+   "authors": [
+    {
+     "family": "Newcombe",
+     "given": "Chris"
+    },
+    {
+     "family": "Rath",
+     "given": "Tim"
+    },
+    {
+     "family": "Zhang",
+     "given": "Fan"
+    },
+    {
+     "family": "Munteanu",
+     "given": "Bogdan"
+    },
+    {
+     "family": "Brooker",
+     "given": "Marc"
+    },
+    {
+     "family": "Deardeuff",
+     "given": "Michael"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "How Amazon Web Services Uses Formal Methods Newcombe Rath Zhang Munteanu Brooker Deardeuff",
+   "difference": "industrial evidence; we quantify the trade-off it reports anecdotally"
+  },
+  {
+   "key": "wing",
+   "title": "A specifier's introduction to formal methods",
+   "year": 1990,
+   "venue": "Computer",
+   "doi": "10.1109/2.58215",
+   "authors": [
+    {
+     "family": "Wing",
+     "given": "J.M."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A specifier's introduction to formal methods Wing",
+   "difference": "the classical formal-methods primer; it treats specification strength as monotone, which is what we test"
+  },
+  {
+   "key": "designbycontract",
+   "title": "Applying 'design by contract'",
+   "year": 1992,
+   "venue": "Computer",
+   "doi": "10.1109/2.161279",
+   "authors": [
+    {
+     "family": "Meyer",
+     "given": "B."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Applying design by contract Meyer",
+   "difference": ""
+  },
+  {
+   "key": "jml",
+   "title": "JML: A Notation for Detailed Design",
+   "year": 1999,
+   "venue": "Behavioral Specifications of Businesses and Systems",
+   "doi": "10.1007/978-1-4615-5229-1_12",
+   "authors": [
+    {
+     "family": "Leavens",
+     "given": "Gary T."
+    },
+    {
+     "family": "Baker",
+     "given": "Albert L."
+    },
+    {
+     "family": "Ruby",
+     "given": "Clyde"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "JML: A Notation for Detailed Design Leavens Baker Ruby",
+   "difference": ""
+  },
+  {
+   "key": "qedatlarge",
+   "title": "QED at Large: A Survey of Engineering of Formally Verified Software",
+   "year": 2019,
+   "venue": "",
+   "doi": "10.1561/9781680835953",
+   "authors": [
+    {
+     "family": "Ringer",
+     "given": "Talia"
+    },
+    {
+     "family": "Palmskog",
+     "given": "Karl"
+    },
+    {
+     "family": "Sergey",
+     "given": "Ilya"
+    },
+    {
+     "family": "Gligoric",
+     "given": "Milos"
+    },
+    {
+     "family": "Tatlock",
+     "given": "Zachary"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "QED at Large: A Survey of Engineering of Formally Verified Software Ringer Palmskog Sergey Gligoric Tatlock",
+   "difference": "documents proof-engineering cost and maintenance; we make the cost of REPRESENTATION a measurable axis"
+  },
+  {
+   "key": "adaptingproof",
+   "title": "Adapting proof automation to adapt proofs",
+   "year": 2018,
+   "venue": "Proceedings of the 7th ACM SIGPLAN International Conference on Certified Programs and Proofs",
+   "doi": "10.1145/3167094",
+   "authors": [
+    {
+     "family": "Ringer",
+     "given": "Talia"
+    },
+    {
+     "family": "Yazdani",
+     "given": "Nathaniel"
+    },
+    {
+     "family": "Leo",
+     "given": "John"
+    },
+    {
+     "family": "Grossman",
+     "given": "Dan"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Adapting proof automation to adapt proofs Ringer Yazdani Leo Grossman",
+   "difference": ""
+  },
+  {
+   "key": "compcert",
+   "title": "Formal verification of a realistic compiler",
+   "year": 2009,
+   "venue": "Communications of the ACM",
+   "doi": "10.1145/1538788.1538814",
+   "authors": [
+    {
+     "family": "Leroy",
+     "given": "Xavier"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Formal verification of a realistic compiler Leroy",
+   "difference": ""
+  },
+  {
+   "key": "kepler",
+   "title": "A FORMAL PROOF OF THE KEPLER CONJECTURE",
+   "year": 2017,
+   "venue": "Forum of Mathematics, Pi",
+   "doi": "10.1017/fmp.2017.1",
+   "authors": [
+    {
+     "family": "HALES",
+     "given": "THOMAS"
+    },
+    {
+     "family": "ADAMS",
+     "given": "MARK"
+    },
+    {
+     "family": "BAUER",
+     "given": "GERTRUD"
+    },
+    {
+     "family": "DANG",
+     "given": "TAT DAT"
+    },
+    {
+     "family": "HARRISON",
+     "given": "JOHN"
+    },
+    {
+     "family": "HOANG",
+     "given": "LE TRUONG"
+    },
+    {
+     "family": "KALISZYK",
+     "given": "CEZARY"
+    },
+    {
+     "family": "MAGRON",
+     "given": "VICTOR"
+    },
+    {
+     "family": "MCLAUGHLIN",
+     "given": "SEAN"
+    },
+    {
+     "family": "NGUYEN",
+     "given": "TAT\u00a0THANG"
+    },
+    {
+     "family": "NGUYEN",
+     "given": "QUANG TRUONG"
+    },
+    {
+     "family": "NIPKOW",
+     "given": "TOBIAS"
+    },
+    {
+     "family": "OBUA",
+     "given": "STEVEN"
+    },
+    {
+     "family": "PLESO",
+     "given": "JOSEPH"
+    },
+    {
+     "family": "RUTE",
+     "given": "JASON"
+    },
+    {
+     "family": "SOLOVYEV",
+     "given": "ALEXEY"
+    },
+    {
+     "family": "TA",
+     "given": "THI HOAI AN"
+    },
+    {
+     "family": "TRAN",
+     "given": "NAM TRUNG"
+    },
+    {
+     "family": "TRIEU",
+     "given": "THI DIEP"
+    },
+    {
+     "family": "URBAN",
+     "given": "JOSEF"
+    },
+    {
+     "family": "VU",
+     "given": "KY"
+    },
+    {
+     "family": "ZUMKELLER",
+     "given": "ROLAND"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A formal proof of the Kepler conjecture Hales Adams Bauer Dang Harrison",
+   "difference": ""
+  },
+  {
+   "key": "fourcolor",
+   "title": "The Four Colour Theorem: Engineering of a Formal Proof",
+   "year": 2008,
+   "venue": "Lecture Notes in Computer Science",
+   "doi": "10.1007/978-3-540-87827-8_28",
+   "authors": [
+    {
+     "family": "Gonthier",
+     "given": "Georges"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.833,
+   "query": "Formal Proof - The Four-Color Theorem Gonthier",
+   "difference": ""
+  },
+  {
+   "key": "translatevalid",
+   "title": "Translation validation for an optimizing compiler",
+   "year": 2000,
+   "venue": "ACM SIGPLAN Notices",
+   "doi": "10.1145/358438.349314",
+   "authors": [
+    {
+     "family": "Necula",
+     "given": "George C."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Translation validation for an optimizing compiler Necula",
+   "difference": "proves a compiler transformation equivalent; we ask what a specification can DETECT about one"
+  },
+  {
+   "key": "valuegraph",
+   "title": "Evaluating value-graph translation validation for LLVM",
+   "year": 2012,
+   "venue": "ACM SIGPLAN Notices",
+   "doi": "10.1145/2345156.1993533",
+   "authors": [
+    {
+     "family": "Tristan",
+     "given": "Jean-Baptiste"
+    },
+    {
+     "family": "Govereau",
+     "given": "Paul"
+    },
+    {
+     "family": "Morrisett",
+     "given": "Greg"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Evaluating value-graph translation validation for LLVM Tristan Govereau Morrisett",
+   "difference": "translation validation at scale; same question, compiler-specific instrument, no strength axis"
+  },
+  {
+   "key": "verificationcost",
+   "title": "A Survey of Automated Techniques for Formal Software Verification",
+   "year": 2008,
+   "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+   "doi": "10.1109/tcad.2008.923410",
+   "authors": [
+    {
+     "family": "D'Silva",
+     "given": "Vijay"
+    },
+    {
+     "family": "Kroening",
+     "given": "Daniel"
+    },
+    {
+     "family": "Weissenbacher",
+     "given": "Georg"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.875,
+   "query": "A Survey of Automated Techniques for Formal Software Verification DSilva Kroening Weissenbacher",
+   "difference": ""
+  },
+  {
+   "key": "slamsdecade",
+   "title": "A decade of software model checking with SLAM",
+   "year": 2011,
+   "venue": "Communications of the ACM",
+   "doi": "10.1145/1965724.1965743",
+   "authors": [
+    {
+     "family": "Ball",
+     "given": "Thomas"
+    },
+    {
+     "family": "Levin",
+     "given": "Vladimir"
+    },
+    {
+     "family": "Rajamani",
+     "given": "Sriram K."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A decade of software model checking with SLAM Ball Levin Rajamani",
+   "difference": ""
+  },
+  {
+   "key": "swnodechecking",
+   "title": "Software model checking",
+   "year": 2009,
+   "venue": "ACM Computing Surveys",
+   "doi": "10.1145/1592434.1592438",
+   "authors": [
+    {
+     "family": "Jhala",
+     "given": "Ranjit"
+    },
+    {
+     "family": "Majumdar",
+     "given": "Rupak"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Software model checking Jhala Majumdar",
+   "difference": ""
+  },
+  {
+   "key": "regressionsurvey",
+   "title": "Regression testing minimization, selection and prioritization: a survey",
+   "year": 2012,
+   "venue": "Software Testing, Verification and Reliability",
+   "doi": "10.1002/stv.430",
+   "authors": [
+    {
+     "family": "Yoo",
+     "given": "S."
+    },
+    {
+     "family": "Harman",
+     "given": "M."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Regression testing minimization, selection and prioritization: a survey Yoo Harman",
+   "difference": "prices test suites by cost and detection; we price a specification by detection AND false alarms"
+  },
+  {
+   "key": "rtssurvey",
+   "title": "Analyzing regression test selection techniques",
+   "year": 1996,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/32.536955",
+   "authors": [
+    {
+     "family": "Rothermel",
+     "given": "G."
+    },
+    {
+     "family": "Harrold",
+     "given": "M.J."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Analyzing regression test selection techniques Rothermel Harrold",
+   "difference": ""
+  },
+  {
+   "key": "prioritization",
+   "title": "Test case prioritization: a family of empirical studies",
+   "year": 2002,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/32.988497",
+   "authors": [
+    {
+     "family": "Elbaum",
+     "given": "S."
+    },
+    {
+     "family": "Malishevsky",
+     "given": "A.G."
+    },
+    {
+     "family": "Rothermel",
+     "given": "G."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Test case prioritization: a family of empirical studies Elbaum Malishevsky Rothermel",
+   "difference": "orders tests; we order specifications by net value at a given change rate"
+  },
+  {
+   "key": "flakysurvey",
+   "title": "An empirical analysis of flaky tests",
+   "year": 2014,
+   "venue": "Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering",
+   "doi": "10.1145/2635868.2635920",
+   "authors": [
+    {
+     "family": "Luo",
+     "given": "Qingzhou"
+    },
+    {
+     "family": "Hariri",
+     "given": "Farah"
+    },
+    {
+     "family": "Eloussi",
+     "given": "Lamyaa"
+    },
+    {
+     "family": "Marinov",
+     "given": "Darko"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "An empirical analysis of flaky tests Luo Hariri Eloussi Marinov",
+   "difference": "flaky tests as a symptom of brittleness; we make the brittleness a designed axis rather than a discovered symptom"
+  },
+  {
+   "key": "flakypython",
+   "title": "An Empirical Study of Flaky Tests in Python",
+   "year": 2021,
+   "venue": "2021 14th IEEE Conference on Software Testing, Verification and Validation (ICST)",
+   "doi": "10.1109/icst49551.2021.00026",
+   "authors": [
+    {
+     "family": "Gruber",
+     "given": "Martin"
+    },
+    {
+     "family": "Lukasczyk",
+     "given": "Stephan"
+    },
+    {
+     "family": "Krois",
+     "given": "Florian"
+    },
+    {
+     "family": "Fraser",
+     "given": "Gordon"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.833,
+   "query": "An Empirical Study of Flaky Tests in Python Gruber Lukasczyk Kroiss Fraser",
+   "difference": "same, in Python; our change population is generated, so the brittleness is not a property of one repository"
+  },
+  {
+   "key": "googleci",
+   "title": "Taming Google-scale continuous testing",
+   "year": 2017,
+   "venue": "2017 IEEE/ACM 39th International Conference on Software Engineering: Software Engineering in Practice Track (ICSE-SEIP)",
+   "doi": "10.1109/icse-seip.2017.16",
+   "authors": [
+    {
+     "family": "Memon",
+     "given": "Atif"
+    },
+    {
+     "family": "Zebao Gao",
+     "given": ""
+    },
+    {
+     "family": "Bao Nguyen",
+     "given": ""
+    },
+    {
+     "family": "Dhanda",
+     "given": "Sanjeev"
+    },
+    {
+     "family": "Nickell",
+     "given": "Eric"
+    },
+    {
+     "family": "Siemborski",
+     "given": "Rob"
+    },
+    {
+     "family": "Micco",
+     "given": "John"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Taming Google-Scale Continuous Testing Memon Gao Nguyen",
+   "difference": ""
+  },
+  {
+   "key": "genprog",
+   "title": "GenProg: A Generic Method for Automatic Software Repair",
+   "year": 2012,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2011.104",
+   "authors": [
+    {
+     "family": "Le Goues",
+     "given": "Claire"
+    },
+    {
+     "family": "Nguyen",
+     "given": "ThanhVu"
+    },
+    {
+     "family": "Forrest",
+     "given": "Stephanie"
+    },
+    {
+     "family": "Weimer",
+     "given": "Westley"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "GenProg: A Generic Method for Automatic Software Repair Le Goues Nguyen Forrest Weimer",
+   "difference": ""
+  },
+  {
+   "key": "aprsurvey",
+   "title": "Automatic Software Repair: A Survey",
+   "year": 2019,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2017.2755013",
+   "authors": [
+    {
+     "family": "Gazzola",
+     "given": "Luca"
+    },
+    {
+     "family": "Micucci",
+     "given": "Daniela"
+    },
+    {
+     "family": "Mariani",
+     "given": "Leonardo"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Automatic Software Repair: A Survey Gazzola Micucci Mariani",
+   "difference": ""
+  },
+  {
+   "key": "daikon",
+   "title": "Dynamically discovering likely program invariants to support program evolution",
+   "year": 1999,
+   "venue": "Proceedings of the 21st international conference on Software engineering",
+   "doi": "10.1145/302405.302467",
+   "authors": [
+    {
+     "family": "Ernst",
+     "given": "Michael D."
+    },
+    {
+     "family": "Cockrell",
+     "given": "Jake"
+    },
+    {
+     "family": "Griswold",
+     "given": "William G."
+    },
+    {
+     "family": "Notkin",
+     "given": "David"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Dynamically discovering likely program invariants to support program evolution Ernst Cockrell Griswold Notkin",
+   "difference": "infers invariants from executions -- a specification PROPOSER; we study what a given specification costs"
+  },
+  {
+   "key": "daikonsystem",
+   "title": "The Daikon system for dynamic detection of likely invariants",
+   "year": 2007,
+   "venue": "Science of Computer Programming",
+   "doi": "10.1016/j.scico.2007.01.015",
+   "authors": [
+    {
+     "family": "Ernst",
+     "given": "Michael D."
+    },
+    {
+     "family": "Perkins",
+     "given": "Jeff H."
+    },
+    {
+     "family": "Guo",
+     "given": "Philip J."
+    },
+    {
+     "family": "McCamant",
+     "given": "Stephen"
+    },
+    {
+     "family": "Pacheco",
+     "given": "Carlos"
+    },
+    {
+     "family": "Tschantz",
+     "given": "Matthew S."
+    },
+    {
+     "family": "Xiao",
+     "given": "Chen"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "The Daikon system for dynamic detection of likely invariants Ernst Perkins Guo McCamant Pacheco Tschantz Xiao",
+   "difference": "the Daikon implementation; our specs are constructed from a generator, not inferred"
+  },
+  {
+   "key": "lehman",
+   "title": "Programs, life cycles, and laws of software evolution",
+   "year": 1980,
+   "venue": "Proceedings of the IEEE",
+   "doi": "10.1109/proc.1980.11805",
+   "authors": [
+    {
+     "family": "Lehman",
+     "given": "M.M."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Programs, life cycles, and laws of software evolution Lehman",
+   "difference": ""
+  },
+  {
+   "key": "complexityfaults",
+   "title": "Predicting faults using the complexity of code changes",
+   "year": 2009,
+   "venue": "2009 IEEE 31st International Conference on Software Engineering",
+   "doi": "10.1109/icse.2009.5070510",
+   "authors": [
+    {
+     "family": "Hassan",
+     "given": "Ahmed E."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Predicting faults using the complexity of code changes Hassan",
+   "difference": ""
+  },
+  {
+   "key": "changedistilling",
+   "title": "Change Distilling:Tree Differencing for Fine-Grained Source Code Change Extraction",
+   "year": 2007,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2007.70731",
+   "authors": [
+    {
+     "family": "Fluri",
+     "given": "Beat"
+    },
+    {
+     "family": "Wursch",
+     "given": "Michael"
+    },
+    {
+     "family": "PInzger",
+     "given": "Martin"
+    },
+    {
+     "family": "Gall",
+     "given": "Harald"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.917,
+   "query": "Change Distilling: Tree Differencing for Fine-Grained Source Code Change Extraction Fluri Wuersch Pinzger Gall",
+   "difference": ""
+  },
+  {
+   "key": "tangled",
+   "title": "The impact of tangled code changes",
+   "year": 2013,
+   "venue": "2013 10th Working Conference on Mining Software Repositories (MSR)",
+   "doi": "10.1109/msr.2013.6624018",
+   "authors": [
+    {
+     "family": "Herzig",
+     "given": "Kim"
+    },
+    {
+     "family": "Zeller",
+     "given": "Andreas"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "The impact of tangled code changes Herzig Zeller",
+   "difference": ""
+  },
+  {
+   "key": "metricsvalidation",
+   "title": "A validation of object-oriented design metrics as quality indicators",
+   "year": 1996,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/32.544352",
+   "authors": [
+    {
+     "family": "Basili",
+     "given": "V.R."
+    },
+    {
+     "family": "Briand",
+     "given": "L.C."
+    },
+    {
+     "family": "Melo",
+     "given": "W.L."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A Validation of Object-Oriented Design Metrics as Quality Indicators Basili Briand Melo",
+   "difference": ""
+  },
+  {
+   "key": "ckmetrics",
+   "title": "Towards a metrics suite for object oriented design",
+   "year": 1991,
+   "venue": "Conference proceedings on Object-oriented programming systems, languages, and applications",
+   "doi": "10.1145/117954.117970",
+   "authors": [
+    {
+     "family": "Chidamber",
+     "given": "Shyam R."
+    },
+    {
+     "family": "Kemerer",
+     "given": "Chris F."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A metrics suite for object oriented design Chidamber Kemerer",
+   "difference": ""
+  },
+  {
+   "key": "expguidelines",
+   "title": "Preliminary guidelines for empirical research in software engineering",
+   "year": 2002,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2002.1027796",
+   "authors": [
+    {
+     "family": "Kitchenham",
+     "given": "B.A."
+    },
+    {
+     "family": "Pfleeger",
+     "given": "S.L."
+    },
+    {
+     "family": "Pickard",
+     "given": "L.M."
+    },
+    {
+     "family": "Jones",
+     "given": "P.W."
+    },
+    {
+     "family": "Hoaglin",
+     "given": "D.C."
+    },
+    {
+     "family": "El Emam",
+     "given": "K."
+    },
+    {
+     "family": "Rosenberg",
+     "given": "J."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Preliminary Guidelines for Empirical Research in Software Engineering Kitchenham Pfleeger Pickard Jones Hoaglin El Emam Rosenberg",
+   "difference": "the standard empirical-methodology guidelines; our controls are built to its spirit"
+  },
+  {
+   "key": "samplingse",
+   "title": "Sampling in software engineering research: a critical review and guidelines",
+   "year": 2022,
+   "venue": "Empirical Software Engineering",
+   "doi": "10.1007/s10664-021-10072-8",
+   "authors": [
+    {
+     "family": "Baltes",
+     "given": "Sebastian"
+    },
+    {
+     "family": "Ralph",
+     "given": "Paul"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Sampling in software engineering research: a critical review and guidelines Baltes Ralph",
+   "difference": "how to sample a population for SE research; we enumerate our population and report bands instead"
+  },
+  {
+   "key": "tichy",
+   "title": "Should computer scientists experiment more?",
+   "year": 1998,
+   "venue": "Computer",
+   "doi": "10.1109/2.675631",
+   "authors": [
+    {
+     "family": "Tichy",
+     "given": "W.F."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Should computer scientists experiment more Tichy",
+   "difference": "argues for experiment in CS; this paper is an experiment on specifications"
+  },
+  {
+   "key": "experimentation",
+   "title": "Experimentation in Software Engineering",
+   "year": 2024,
+   "venue": "",
+   "doi": "10.1007/978-3-662-69306-3",
+   "authors": [
+    {
+     "family": "Wohlin",
+     "given": "Claes"
+    },
+    {
+     "family": "Runeson",
+     "given": "Per"
+    },
+    {
+     "family": "H\u00f6st",
+     "given": "Martin"
+    },
+    {
+     "family": "Ohlsson",
+     "given": "Magnus C."
+    },
+    {
+     "family": "Regnell",
+     "given": "Bj\u00f6rn"
+    },
+    {
+     "family": "Wessl\u00e9n",
+     "given": "Anders"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.75,
+   "query": "Experimentation in Software Engineering Wohlin Runeson Host Ohlsson Regnell",
+   "difference": ""
+  },
+  {
+   "key": "mltestscore",
+   "title": "The ML test score: A rubric for ML production readiness and technical debt reduction",
+   "year": 2017,
+   "venue": "2017 IEEE International Conference on Big Data (Big Data)",
+   "doi": "10.1109/bigdata.2017.8258038",
+   "authors": [
+    {
+     "family": "Breck",
+     "given": "Eric"
+    },
+    {
+     "family": "Cai",
+     "given": "Shanqing"
+    },
+    {
+     "family": "Nielsen",
+     "given": "Eric"
+    },
+    {
+     "family": "Salib",
+     "given": "Michael"
+    },
+    {
+     "family": "Sculley",
+     "given": "D."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction Breck Cai Nielsen Salib Sculley",
+   "difference": ""
+  },
+  {
+   "key": "mltestingsurvey",
+   "title": "Machine Learning Testing: Survey, Landscapes and Horizons",
+   "year": 2022,
+   "venue": "IEEE Transactions on Software Engineering",
+   "doi": "10.1109/tse.2019.2962027",
+   "authors": [
+    {
+     "family": "Zhang",
+     "given": "Jie M."
+    },
+    {
+     "family": "Harman",
+     "given": "Mark"
+    },
+    {
+     "family": "Ma",
+     "given": "Lei"
+    },
+    {
+     "family": "Liu",
+     "given": "Yang"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.875,
+   "query": "Machine Learning Testing: Survey, Landscapes and Horizons Zhang Harman Ma Liu Inoue",
+   "difference": "documents ML testing practice; a different notion of specification (data, not code)"
+  },
+  {
+   "key": "mldeploysurvey",
+   "title": "Challenges in Deploying Machine Learning: A Survey of Case Studies",
+   "year": 2022,
+   "venue": "ACM Computing Surveys",
+   "doi": "10.1145/3533378",
+   "authors": [
+    {
+     "family": "Paleyes",
+     "given": "Andrei"
+    },
+    {
+     "family": "Urma",
+     "given": "Raoul-Gabriel"
+    },
+    {
+     "family": "Lawrence",
+     "given": "Neil D."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Challenges in Deploying Machine Learning: a Survey of Case Studies Paleyes Urma Lawrence",
+   "difference": ""
+  },
+  {
+   "key": "rvmonitor",
+   "title": "A survey of challenges for runtime verification from advanced application domains (beyond software)",
+   "year": 2019,
+   "venue": "Formal Methods in System Design",
+   "doi": "10.1007/s10703-019-00337-w",
+   "authors": [
+    {
+     "family": "S\u00e1nchez",
+     "given": "C\u00e9sar"
+    },
+    {
+     "family": "Schneider",
+     "given": "Gerardo"
+    },
+    {
+     "family": "Ahrendt",
+     "given": "Wolfgang"
+    },
+    {
+     "family": "Bartocci",
+     "given": "Ezio"
+    },
+    {
+     "family": "Bianculli",
+     "given": "Domenico"
+    },
+    {
+     "family": "Colombo",
+     "given": "Christian"
+    },
+    {
+     "family": "Falcone",
+     "given": "Yli\u00e8s"
+    },
+    {
+     "family": "Francalanza",
+     "given": "Adrian"
+    },
+    {
+     "family": "Krsti\u0107",
+     "given": "Sr\u0111an"
+    },
+    {
+     "family": "Louren\u00e7o",
+     "given": "Joa\u030bo M."
+    },
+    {
+     "family": "Nickovic",
+     "given": "Dejan"
+    },
+    {
+     "family": "Pace",
+     "given": "Gordon J."
+    },
+    {
+     "family": "Rufino",
+     "given": "Jose"
+    },
+    {
+     "family": "Signoles",
+     "given": "Julien"
+    },
+    {
+     "family": "Traytel",
+     "given": "Dmitriy"
+    },
+    {
+     "family": "Weiss",
+     "given": "Alexander"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "A survey of challenges for runtime verification from advanced application domains",
+   "difference": ""
+  },
+  {
+   "key": "why3",
+   "title": "Why3 \u2014 Where Programs Meet Provers",
+   "year": 2013,
+   "venue": "Lecture Notes in Computer Science",
+   "doi": "10.1007/978-3-642-37036-6_8",
+   "authors": [
+    {
+     "family": "Filli\u00e2tre",
+     "given": "Jean-Christophe"
+    },
+    {
+     "family": "Paskevich",
+     "given": "Andrei"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.833,
+   "query": "Why3: Where Programs Meet Provers Filliatre Paskevich",
+   "difference": ""
+  },
+  {
+   "key": "frama-c",
+   "title": "Frama-C: A software analysis perspective",
+   "year": 2015,
+   "venue": "Formal Aspects of Computing",
+   "doi": "10.1007/s00165-014-0326-7",
+   "authors": [
+    {
+     "family": "Kirchner",
+     "given": "Florent"
+    },
+    {
+     "family": "Kosmatov",
+     "given": "Nikolai"
+    },
+    {
+     "family": "Prevosto",
+     "given": "Virgile"
+    },
+    {
+     "family": "Signoles",
+     "given": "Julien"
+    },
+    {
+     "family": "Yakobowski",
+     "given": "Boris"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Frama-C: A software analysis perspective Kirchner Kosmatov Prevosto Signoles Yakobowski",
+   "difference": ""
+  },
+  {
+   "key": "dafny",
+   "title": "Dafny: An Automatic Program Verifier for Functional Correctness",
+   "year": 2010,
+   "venue": "Lecture Notes in Computer Science",
+   "doi": "10.1007/978-3-642-17511-4_20",
+   "authors": [
+    {
+     "family": "Leino",
+     "given": "K. Rustan M."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Dafny: An Automatic Program Verifier for Functional Correctness Leino",
+   "difference": ""
+  },
+  {
+   "key": "lean",
+   "title": "The lean mathematical library",
+   "year": 2020,
+   "venue": "Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs",
+   "doi": "10.1145/3372885.3373824",
+   "authors": [
+    {
+     "family": "The mathlib Community",
+     "given": ""
+    }
+   ],
+   "source": "crossref",
+   "match_score": 0.8,
+   "query": "The Lean Mathematical Library mathlib: building a community library",
+   "difference": ""
+  },
+  {
+   "key": "abstractionrefinement",
+   "title": "Abstraction Refinement for Large Scale Model Checking",
+   "year": 2006,
+   "venue": "Series on Integrated Circuits and Systems",
+   "doi": "10.1007/0-387-34600-7",
+   "authors": [],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Abstraction Refinement for Large Scale Model Checking",
+   "difference": ""
+  },
+  {
+   "key": "refinementtypes",
+   "title": "Refinement types for Haskell",
+   "year": 2014,
+   "venue": "ACM SIGPLAN Notices",
+   "doi": "10.1145/2692915.2628161",
+   "authors": [
+    {
+     "family": "Vazou",
+     "given": "Niki"
+    },
+    {
+     "family": "Seidel",
+     "given": "Eric L."
+    },
+    {
+     "family": "Jhala",
+     "given": "Ranjit"
+    },
+    {
+     "family": "Vytiniotis",
+     "given": "Dimitrios"
+    },
+    {
+     "family": "Peyton-Jones",
+     "given": "Simon"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Refinement types for Haskell Vazou Seidel Jhala Vytiniotis Peyton Jones",
+   "difference": ""
+  },
+  {
+   "key": "blame",
+   "title": "Well-Typed Programs Can\u2019t Be Blamed",
+   "year": 2009,
+   "venue": "Lecture Notes in Computer Science",
+   "doi": "10.1007/978-3-642-00590-9_1",
+   "authors": [
+    {
+     "family": "Wadler",
+     "given": "Philip"
+    },
+    {
+     "family": "Findler",
+     "given": "Robert Bruce"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Well-typed programs can't be blamed Wadler Findler",
+   "difference": ""
+  },
+  {
+   "key": "dart",
+   "title": "DART: Directed Automated Random Testing",
+   "year": 2011,
+   "venue": "Lecture Notes in Computer Science",
+   "doi": "10.1007/978-3-642-19237-1_4",
+   "authors": [
+    {
+     "family": "Sen",
+     "given": "Koushik"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "DART: directed automated random testing",
+   "difference": ""
+  },
+  {
+   "key": "hiddendebt",
+   "title": "Technical Debt in Machine Learning Systems",
+   "year": 2021,
+   "venue": "Technical Debt in Practice",
+   "doi": "10.7551/mitpress/12440.003.0011",
+   "authors": [],
+   "source": "crossref",
+   "match_score": 0.833,
+   "query": "Hidden Technical Debt in Machine Learning Systems",
+   "difference": "names technical debt in ML systems; we make one class of it -- representation coupling -- measurable"
+  },
+  {
+   "key": "mutationadvances",
+   "title": "Mutation Testing Advances: An Analysis and Survey",
+   "year": 2019,
+   "venue": "Advances in Computers",
+   "doi": "10.1016/bs.adcom.2018.03.015",
+   "authors": [],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Mutation Testing Advances: An Analysis and Survey",
+   "difference": ""
+  },
+  {
+   "key": "modularity",
+   "title": "On the Criteria to Be Used in Decomposing Systems into Modules",
+   "year": 1971,
+   "venue": "",
+   "doi": "10.21236/ad0773837",
+   "authors": [
+    {
+     "family": "Parnas",
+     "given": "D. L."
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "On the criteria to be used in decomposing systems into modules",
+   "difference": ""
+  },
+  {
+   "key": "silverbullet",
+   "title": "No Silver Bullet Essence and Accidents of Software Engineering",
+   "year": 1987,
+   "venue": "Computer",
+   "doi": "10.1109/mc.1987.1663532",
+   "authors": [
+    {
+     "family": "Brooks",
+     "given": ""
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "No Silver Bullet: Essence and Accidents of Software Engineering",
+   "difference": ""
+  },
+  {
+   "key": "assertmining",
+   "title": "Mining API Usage Specifications via Searching Source Code from the Web",
+   "year": 2011,
+   "venue": "Chapman &amp; Hall/CRC Data Mining and Knowledge Discovery Series",
+   "doi": "10.1201/b10928-11",
+   "authors": [
+    {
+     "family": "Thummalapenta",
+     "given": "Suresh"
+    },
+    {
+     "family": "Xie",
+     "given": "Tao"
+    },
+    {
+     "family": "Marri",
+     "given": "Madhuri"
+    }
+   ],
+   "source": "crossref",
+   "match_score": 1.0,
+   "query": "Mining specifications from source code",
+   "difference": ""
+  },
+  {
+   "key": "gradertl",
+   "title": "GRADE-RTL: Evaluating LLM-Generated RTL Beyond Compilation",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.25335",
+   "authors": [
+    {
+     "family": "Hepziba Susan",
+     "given": ""
+    },
+    {
+     "family": "Shivaranjani G. R.",
+     "given": ""
+    },
+    {
+     "family": "Malik Imran",
+     "given": ""
+    },
+    {
+     "family": "Muhammad Rashid",
+     "given": ""
+    },
+    {
+     "family": "Sumathi Gokulanathan",
+     "given": ""
+    },
+    {
+     "family": "Zain Ul Abideen",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.25335",
+   "difference": "",
+   "role": "evaluating generated RTL beyond compilation"
+  },
+  {
+   "key": "oxidize",
+   "title": "Lifting the Preprocessor with Oxidize: Structure-Preserving C-to-Rust Translation (Technical Report)",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.30062",
+   "authors": [
+    {
+     "family": "Robbe De Greef",
+     "given": ""
+    },
+    {
+     "family": "Th\u00e9o Engels",
+     "given": ""
+    },
+    {
+     "family": "Felix Van den Broucke",
+     "given": ""
+    },
+    {
+     "family": "Ken Hasselmann",
+     "given": ""
+    },
+    {
+     "family": "Antonio Paolillo",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.30062",
+   "difference": "",
+   "role": "structure-preserving C-to-Rust translation"
+  },
+  {
+   "key": "forte",
+   "title": "Forte: A sensitivity type system for imperative Rust",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.30254",
+   "authors": [
+    {
+     "family": "Chik\u00e9 Abuah",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.30254",
+   "difference": "",
+   "role": "a sensitivity type system for imperative Rust"
+  },
+  {
+   "key": "multilanglogics",
+   "title": "Multi-language Program Logics",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.32877",
+   "authors": [
+    {
+     "family": "Alexander Loitzl",
+     "given": ""
+    },
+    {
+     "family": "Niklas M\u00fcck",
+     "given": ""
+    },
+    {
+     "family": "Michael Sammler",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.32877",
+   "difference": "",
+   "role": "multi-language program logics"
+  },
+  {
+   "key": "refinedstream",
+   "title": "Designing a Producer-driven Stream Protocol by Formal Refinement",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.33813",
+   "authors": [
+    {
+     "family": "Erick Lavoie",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.33813",
+   "difference": "",
+   "role": "a stream protocol designed by formal refinement"
+  },
+  {
+   "key": "certporting",
+   "title": "Towards Certificate-Driven Software Porting: A Self-Improving Agentic Harness for Scientific Program Optimization",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34069",
+   "authors": [
+    {
+     "family": "Piyush Jha",
+     "given": ""
+    },
+    {
+     "family": "Aishik Ghosh",
+     "given": ""
+    },
+    {
+     "family": "Vijay Ganesh",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34069",
+   "difference": "",
+   "role": "certificate-driven software porting"
+  },
+  {
+   "key": "faultless",
+   "title": "Faultless: A Program Equivalence Technique for Validating and Evaluating Neural Decompilers",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34089",
+   "authors": [
+    {
+     "family": "Luke Dramko",
+     "given": ""
+    },
+    {
+     "family": "Claire Le Goues",
+     "given": ""
+    },
+    {
+     "family": "Edward Schwartz",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34089",
+   "difference": "",
+   "role": "a program-equivalence technique for validating decompilation"
+  },
+  {
+   "key": "c11semantics",
+   "title": "Episodic Loops: Finitary Event Structures and Operational Semantics for C11 Programs with Retries",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34646",
+   "authors": [
+    {
+     "family": "Christian Kissig",
+     "given": ""
+    },
+    {
+     "family": "Jay Richards",
+     "given": ""
+    },
+    {
+     "family": "Mark Batty",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34646",
+   "difference": "",
+   "role": "operational semantics for C11 programs"
+  },
+  {
+   "key": "omegatest",
+   "title": "Formalizing the Omega Test in Dafny",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34882",
+   "authors": [
+    {
+     "family": "Ariadna Br\u0103nici-Faraon",
+     "given": ""
+    },
+    {
+     "family": "\u015etefan Ciob\u00e2c\u0103",
+     "given": ""
+    },
+    {
+     "family": "Diana-Elena Gratie",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34882",
+   "difference": "",
+   "role": "the Omega test formalized in Dafny"
+  },
+  {
+   "key": "dafnymodels",
+   "title": "The Formalization of two Computational Models in Dafny",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34883",
+   "authors": [
+    {
+     "family": "\u015etefan Ciob\u00e2c\\b{a}",
+     "given": ""
+    },
+    {
+     "family": "Diana-Elena Gratie",
+     "given": ""
+    },
+    {
+     "family": "Drago\u015f-Irinel Rotariu",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34883",
+   "difference": "",
+   "role": "two computational models formalized in Dafny"
+  },
+  {
+   "key": "patiencesort",
+   "title": "Certification of Bilateral Patience Sort in Theorema and Rocq",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34889",
+   "authors": [
+    {
+     "family": "Isabela Dr\u01cemnesc",
+     "given": ""
+    },
+    {
+     "family": "Tudor Jebelean",
+     "given": ""
+    },
+    {
+     "family": "Sorin Stratulat",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34889",
+   "difference": "",
+   "role": "certification of a sorting algorithm in two provers"
+  },
+  {
+   "key": "matchedcomposition",
+   "title": "Dependently Typed Model Composition for Matching Logic",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34892",
+   "authors": [
+    {
+     "family": "\u00c1d\u00e1m Kurucz",
+     "given": ""
+    },
+    {
+     "family": "P\u00e9ter Bereczky",
+     "given": ""
+    },
+    {
+     "family": "D\u00e1niel Horp\u00e1csi",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34892",
+   "difference": "",
+   "role": "dependently typed model composition"
+  },
+  {
+   "key": "sessionlattices",
+   "title": "Session Type State Spaces Form Lattices",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.34927",
+   "authors": [
+    {
+     "family": "Alexandre Zua Caldeira",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.34927",
+   "difference": "",
+   "role": "session-type state spaces as lattices"
+  },
+  {
+   "key": "prefixoracles",
+   "title": "Semantic Prefix Oracles for LLM Decoding: Contracts and Differential Validation",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.35425",
+   "authors": [
+    {
+     "family": "Paul Kronlund-Drouault",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.35425",
+   "difference": "",
+   "role": "semantic prefix oracles and differential validation"
+  },
+  {
+   "key": "quantumequiv",
+   "title": "Irene: Equivalence Checking of Hybrid Quantum Programs via Structure-Preserving Symbolic Reduction",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.36065",
+   "authors": [
+    {
+     "family": "Jingyu Ke",
+     "given": ""
+    },
+    {
+     "family": "Jingyang Li",
+     "given": ""
+    },
+    {
+     "family": "Guoqiang Li",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.36065",
+   "difference": "",
+   "role": "equivalence checking of hybrid quantum programs"
+  },
+  {
+   "key": "nominalproofs",
+   "title": "Proofs Without Nominals: G\u00f6del's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.36279",
+   "authors": [
+    {
+     "family": "Christoph Benzm\u00fcller",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.36279",
+   "difference": "",
+   "role": "shallow embeddings and proofs without nominals"
+  },
+  {
+   "key": "safellmse",
+   "title": "SafeLLM4SE: Statistical Evaluation and Reporting for LLM-based Software Engineering Systems",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37294",
+   "authors": [
+    {
+     "family": "Francisco Ortin",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37294",
+   "difference": "",
+   "role": "statistical evaluation and reporting for LLM-based SE"
+  },
+  {
+   "key": "contractaudit",
+   "title": "Do Agent Benchmarks Do What They Say? An Executable-Contract Audit of Tool-Using Agent Environments",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37315",
+   "authors": [
+    {
+     "family": "Rohith Reddy Bellibatlu",
+     "given": ""
+    },
+    {
+     "family": "Zichong Wang",
+     "given": ""
+    },
+    {
+     "family": "Wenbin Zhang",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37315",
+   "difference": "",
+   "role": "executable-contract audit of tool-using agents"
+  },
+  {
+   "key": "mubric",
+   "title": "Mubric: Mutation Testing-Guided Rubric Generation for LLM Evaluation",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37322",
+   "authors": [
+    {
+     "family": "Jiayuxuan Yang",
+     "given": ""
+    },
+    {
+     "family": "Jie M. Zhang",
+     "given": ""
+    },
+    {
+     "family": "Yiling Lou",
+     "given": ""
+    },
+    {
+     "family": "Zhenpeng Chen",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37322",
+   "difference": "",
+   "role": "mutation testing used to guide rubric generation"
+  },
+  {
+   "key": "mcrl2coordination",
+   "title": "Modelling Shared-Space Coordination in mCRL2: a Bach-to-mCRL2 Translation Framework",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37726",
+   "authors": [
+    {
+     "family": "Corentin Reuther",
+     "given": ""
+    },
+    {
+     "family": "Jean-Marie Jacquet",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37726",
+   "difference": "",
+   "role": "modelling shared-space coordination in mCRL2"
+  },
+  {
+   "key": "perfmodels",
+   "title": "Formal Reasoning about Performance Models",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37728",
+   "authors": [
+    {
+     "family": "Moussa Labbadi",
+     "given": ""
+    },
+    {
+     "family": "Rupak Majumdar",
+     "given": ""
+    },
+    {
+     "family": "V. R. Sathiyanarayana",
+     "given": ""
+    },
+    {
+     "family": "Sadegh Soudjani",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37728",
+   "difference": "",
+   "role": "formal reasoning about performance models"
+  },
+  {
+   "key": "manualopt",
+   "title": "Is manual software optimization a thing of the past?",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37849",
+   "authors": [
+    {
+     "family": "Pavlin G. Poli\u010dar",
+     "given": ""
+    },
+    {
+     "family": "Martin \u0160pendl",
+     "given": ""
+    },
+    {
+     "family": "Toma\u017e Ho\u010devar",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37849",
+   "difference": "",
+   "role": "whether manual software optimisation is still worthwhile"
+  },
+  {
+   "key": "mergednotmeasured",
+   "title": "Merged, Not Measured: An Empirical Study of Performance Issues Fixed by Coding Agents",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.37985",
+   "authors": [
+    {
+     "family": "Zhenyu Qi",
+     "given": ""
+    },
+    {
+     "family": "Haotang Li",
+     "given": ""
+    },
+    {
+     "family": "Jinfu Chen",
+     "given": ""
+    },
+    {
+     "family": "Huashan Chen",
+     "given": ""
+    },
+    {
+     "family": "Yutong Zhao",
+     "given": ""
+    },
+    {
+     "family": "Derui Zhu",
+     "given": ""
+    },
+    {
+     "family": "Tomas Cerny",
+     "given": ""
+    },
+    {
+     "family": "Bo Liu",
+     "given": ""
+    },
+    {
+     "family": "Sen He",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.37985",
+   "difference": "",
+   "role": "empirical study of performance fixes merged without measurement"
+  },
+  {
+   "key": "trustledger",
+   "title": "A Trust Ledger and an Execution Check for CPG-Based C-to-Lean 4 Autoformalization: Separating Declined from Silently Incorrect Translations",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.38237",
+   "authors": [
+    {
+     "family": "Ishan K Singavarapu",
+     "given": ""
+    },
+    {
+     "family": "Manish Bhatt",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.38237",
+   "difference": "",
+   "role": "execution check for C-to-Lean autoformalization"
+  },
+  {
+   "key": "culpritsearch",
+   "title": "From Codebase to Culprit (C2C): Reducing the Search Space for Bugs with Semantic Retrieval and Hierarchical Reinforcement Learning",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.38402",
+   "authors": [
+    {
+     "family": "Ankur Garg",
+     "given": ""
+    },
+    {
+     "family": "Corey Yang-Smith",
+     "given": ""
+    },
+    {
+     "family": "Rishav Rishav",
+     "given": ""
+    },
+    {
+     "family": "Ahmad Abdellatif",
+     "given": ""
+    },
+    {
+     "family": "Samira Ebrahimi Kahou",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.38402",
+   "difference": "",
+   "role": "reducing a bug search space with semantic retrieval"
+  },
+  {
+   "key": "leangroups",
+   "title": "Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.38492",
+   "authors": [
+    {
+     "family": "Volkan Da\u011fl\u0131",
+     "given": ""
+    },
+    {
+     "family": "Zerrin Da\u011fl\u0131",
+     "given": ""
+    },
+    {
+     "family": "Da\u011fhan Da\u011fl\u0131",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.38492",
+   "difference": "",
+   "role": "machine-checked computational group theory in Lean 4"
+  },
+  {
+   "key": "vosti",
+   "title": "Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.38981",
+   "authors": [
+    {
+     "family": "Jianxing Qin",
+     "given": ""
+    },
+    {
+     "family": "Alexander Du",
+     "given": ""
+    },
+    {
+     "family": "Danfeng Zhang",
+     "given": ""
+    },
+    {
+     "family": "Matthew Lentz",
+     "given": ""
+    },
+    {
+     "family": "Danyang Zhuo",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.38981",
+   "difference": "",
+   "role": "specifying, implementing and verifying a deterministic inference pipeline"
+  },
+  {
+   "key": "tristate",
+   "title": "Improved Tristate Multiplication With Formalization in Rocq",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.39009",
+   "authors": [
+    {
+     "family": "Nandakumar Edamana",
+     "given": ""
+    },
+    {
+     "family": "Piyush P Kurur",
+     "given": ""
+    },
+    {
+     "family": "Unnikrishnan Cheramangalath",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.39009",
+   "difference": "",
+   "role": "a tristate multiplier formalized in Rocq"
+  },
+  {
+   "key": "verifguidance",
+   "title": "From Verification Failures to Reusable Guidance for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.39022",
+   "authors": [
+    {
+     "family": "Yuqing Zhai",
+     "given": ""
+    },
+    {
+     "family": "Xiaohong Chen",
+     "given": ""
+    },
+    {
+     "family": "Lingming Zhang",
+     "given": ""
+    },
+    {
+     "family": "Sriram Vishwanath",
+     "given": ""
+    },
+    {
+     "family": "Grigore Rosu",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.39022",
+   "difference": "",
+   "role": "verification failures turned into reusable guidance"
+  },
+  {
+   "key": "errhealing",
+   "title": "Trustworthy Runtime Error Healing in Real-World Repositories: A Benchmark and Guardrail",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.39086",
+   "authors": [
+    {
+     "family": "Gou Tan",
+     "given": ""
+    },
+    {
+     "family": "Pengfei Chen",
+     "given": ""
+    },
+    {
+     "family": "Zhensu Sun",
+     "given": ""
+    },
+    {
+     "family": "Jieke Shi",
+     "given": ""
+    },
+    {
+     "family": "Junkai Chen",
+     "given": ""
+    },
+    {
+     "family": "Ting Zhang",
+     "given": ""
+    },
+    {
+     "family": "Weifeng Sun",
+     "given": ""
+    },
+    {
+     "family": "Junda He",
+     "given": ""
+    },
+    {
+     "family": "Shuai Liang",
+     "given": ""
+    },
+    {
+     "family": "Chuanfu Zhang",
+     "given": ""
+    },
+    {
+     "family": "Lwin Khin Shar",
+     "given": ""
+    },
+    {
+     "family": "David Lo",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.39086",
+   "difference": "",
+   "role": "benchmark and guarantees for runtime error healing"
+  },
+  {
+   "key": "selfspec",
+   "title": "Self-Spec Verifiable Code Generation",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.39568",
+   "authors": [
+    {
+     "family": "Jiaru Qian",
+     "given": ""
+    },
+    {
+     "family": "Yihong Dong",
+     "given": ""
+    },
+    {
+     "family": "Yongmin Li",
+     "given": ""
+    },
+    {
+     "family": "Hao Zhu",
+     "given": ""
+    },
+    {
+     "family": "Bin Gu",
+     "given": ""
+    },
+    {
+     "family": "Ge Li",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.39568",
+   "difference": "",
+   "role": "self-specifying verifiable code generation"
+  },
+  {
+   "key": "aletheia",
+   "title": "Aletheia: Permission-Minimality Testing for Coding-Agent Rules",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.39678",
+   "authors": [
+    {
+     "family": "Jieke Shi",
+     "given": ""
+    },
+    {
+     "family": "Yuchen Chen",
+     "given": ""
+    },
+    {
+     "family": "Junda He",
+     "given": ""
+    },
+    {
+     "family": "Yue Liu",
+     "given": ""
+    },
+    {
+     "family": "David Lo",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.39678",
+   "difference": "",
+   "role": "permission-minimality testing for coding-agent rules"
+  },
+  {
+   "key": "compasspatches",
+   "title": "COMPASS: Predicting the Relationship of Multiple Patches for Vulnerabilities with LLMs",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.39783",
+   "authors": [
+    {
+     "family": "Yi Song",
+     "given": ""
+    },
+    {
+     "family": "Dongchen Xie",
+     "given": ""
+    },
+    {
+     "family": "Xiaoyuan Xie",
+     "given": ""
+    },
+    {
+     "family": "He Zhang",
+     "given": ""
+    },
+    {
+     "family": "Lin Xu",
+     "given": ""
+    },
+    {
+     "family": "Chunying Zhou",
+     "given": ""
+    },
+    {
+     "family": "Zhi Jin",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.39783",
+   "difference": "",
+   "role": "predicting relationships among vulnerability patches"
+  },
+  {
+   "key": "assurancecases",
+   "title": "Automatically Building Machine-Checked Assurance Cases from C Codebases to Requirements",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "doi": "",
+   "arxiv": "2609.40119",
+   "authors": [
+    {
+     "family": "Haokun Li",
+     "given": ""
+    },
+    {
+     "family": "Zhongyi Wang",
+     "given": ""
+    },
+    {
+     "family": "Guanyan Li",
+     "given": ""
+    },
+    {
+     "family": "Xiao Yi",
+     "given": ""
+    },
+    {
+     "family": "Shengchao Qin",
+     "given": ""
+    },
+    {
+     "family": "Jianwei Yin",
+     "given": ""
+    },
+    {
+     "family": "Mingshuai Chen",
+     "given": ""
+    }
+   ],
+   "source": "arxiv",
+   "match_score": 1.0,
+   "query": "harvested by topic, id 2609.40119",
+   "difference": "",
+   "role": "machine-checked assurance cases generated from a codebase"
+  }
+ ],
+ "rejected": [
+  {
+   "key": "sel4",
+   "why": "matched 'Is Formal Verification of seL4 Adequate...', not the seL4 SOSP paper"
+  },
+  {
+   "key": "isabelle",
+   "why": "matched a program-logic paper about Isabelle, not the Isabelle/HOL book"
+  },
+  {
+   "key": "liquidtypes",
+   "why": "matched 'Liquid Crystals: Main Types and Classification' -- a chemistry paper"
+  },
+  {
+   "key": "fmstate",
+   "why": "matched a book titled '...State of the Art and New Directions', not the roadmap paper"
+  },
+  {
+   "key": "fmpractice",
+   "why": "matched a teaching-index record, not the practice-and-experience survey"
+  },
+  {
+   "key": "metacacm",
+   "why": "matched a metamorphic-testing-for-ML paper, not the CACM review"
+  },
+  {
+   "key": "mldatavalidation",
+   "why": "matched a geospatial cross-validation paper; the query was a topic phrase, not a title"
+  },
+  {
+   "key": "specificationpatterns",
+   "why": "matched an unrelated tools paper"
+  },
+  {
+   "key": "monitorlearning",
+   "why": "matched an artificial-pancreas verification paper; duplicates rvmonitor's query"
+  },
+  {
+   "key": "testoraclellm",
+   "why": "matched an LLM test-case-generation paper, not an oracle-generation one"
+  },
+  {
+   "key": "aprbiblio",
+   "why": "matched 'Automatic Software Repair' -- ambiguous with aprsurvey, not the bibliography"
+  },
+  {
+   "key": "softwareaging",
+   "why": "record carries no year and the title is a fragment ('Software aging')"
+  },
+  {
+   "key": "churndefects",
+   "why": "record carries no year; a citation needs one"
+  },
+  {
+   "key": "equivalencetesting",
+   "why": "matched a book on digital-circuit equivalence, not program equivalence"
+  },
+  {
+   "key": "propchecking",
+   "why": "matched a PropEr integration paper; cite that work, not a book by that name"
+  },
+  {
+   "key": "covolution",
+   "why": "matched 'Specification and Implementation' -- a different work entirely"
+  },
+  {
+   "key": "alloyfindbugs",
+   "why": "matched a copy-paste-detection paper"
+  },
+  {
+   "key": "theoryofbrittle",
+   "why": "matched a software-quality-measurement paper, not a brittleness study"
+  },
+  {
+   "key": "spin",
+   "why": "matched 'Parallelizing the Spin Model Checker', not Holzmann's SPIN paper"
+  },
+  {
+   "key": "null",
+   "why": "no such work"
+  },
+  {
+   "key": "ossdoc",
+   "why": "no such work"
+  },
+  {
+   "key": "metascience",
+   "why": "query was a placeholder; no such work"
+  },
+  {
+   "key": "fuzzing",
+   "why": "query was a placeholder; no such work"
+  },
+  {
+   "key": "behavioralequiv",
+   "why": "query was a placeholder; no such work"
+  },
+  {
+   "key": "specevolution",
+   "why": "matched an SOA maintenance paper"
+  },
+  {
+   "key": "coq",
+   "why": "the Coq manual is not a citable record in this index"
+  },
+  {
+   "key": "runtimeverification",
+   "why": "matched an introduction chapter; the survey is rvmonitor"
+  }
+ ],
+ "unmatched": [
+  {
+   "key": "metacacm",
+   "query": "Metamorphic Testing: A Review of Challenges and Opportunities Chen Cheung Yiu",
+   "why": "best match 0.56",
+   "best_title": "Metamorphic Testing For Machine Learning: Applicability, Challenges, and Research Opportunities"
+  },
+  {
+   "key": "quickcheck",
+   "query": "QuickCheck: a lightweight tool for random testing of Haskell programs Claessen Hughes",
+   "why": "best match 0.25",
+   "best_title": "Testing monadic code with QuickCheck"
+  },
+  {
+   "key": "korat",
+   "query": "Korat: automated testing based on Java predicates Boyapati Khurshid Marinov",
+   "why": "best match 0.43",
+   "best_title": "TestEra: Specification-Based Testing of Java Programs Using SAT"
+  },
+  {
+   "key": "dart",
+   "query": "DART: directed automated random testing Godefroid Klarlund Sen",
+   "why": "best match 0.71",
+   "best_title": "DART: Directed Automated Random Testing"
+  },
+  {
+   "key": "klee",
+   "query": "KLEE: unassisted and automatic generation of high-coverage tests for complex systems programs",
+   "why": "best match 0.58",
+   "best_title": "Automatic generation of high-coverage tests for RTL designs using software techniques and tools"
+  },
+  {
+   "key": "mutationadvances",
+   "query": "Mutation Testing Advances: An Analysis and Survey Papadakis Kintis Zhang Jia Traon Harman",
+   "why": "best match 0.44",
+   "best_title": "How effective are mutation testing tools? An empirical analysis of Java mutation testing tools with manual analysis and real faults"
+  },
+  {
+   "key": "refinementcalc",
+   "query": "Refinement Calculus: A Systematic Introduction Back von Wright",
+   "why": "best match 0.50",
+   "best_title": "Interpreting Nondeterminism in the Refinement Calculus"
+  },
+  {
+   "key": "bbook",
+   "query": "The B-Book: Assigning Programs to Meanings Abrial",
+   "why": "best match 0.40",
+   "best_title": "The B-Book"
+  },
+  {
+   "key": "alloy",
+   "query": "Alloy: a lightweight object modelling notation Jackson",
+   "why": "best match 0.40",
+   "best_title": "Lightweight extraction of object models from bytecode"
+  },
+  {
+   "key": "fmpractice",
+   "query": "Formal methods: practice and experience Woodcock Larsen Bicarregui Fitzgerald",
+   "why": "best match 0.60",
+   "best_title": "Industrial Practice in Formal Methods: A Review"
+  },
+  {
+   "key": "fmstate",
+   "query": "Formal methods: state of the art and future directions Clarke Wing",
+   "why": "best match 0.70",
+   "best_title": "Formal Methods: State of the Art and New Directions"
+  },
+  {
+   "key": "modelbasedtesting",
+   "query": "Practical Model-Based Testing: A Tools Approach Utting Legeard",
+   "why": "best match 0.50",
+   "best_title": "A taxonomy of model\u2010based testing approaches"
+  },
+  {
+   "key": "sel4",
+   "query": "seL4: formal verification of an OS kernel Klein Elphinstone Heiser Andronick Cock Derrin",
+   "why": "best match 0.33",
+   "best_title": "Comprehensive formal verification of an OS microkernel"
+  },
+  {
+   "key": "agitator",
+   "query": "From Daikon to Agitator: lessons and challenges in building a commercial tool for developer testing Boshernitsan Doong Savoia",
+   "why": "best match 0.40",
+   "best_title": "Lessons learned from deployed CBR systems and design decisions made in building a commercial CBR tool"
+  },
+  {
+   "key": "empiricalstandards",
+   "query": "Empirical Standards for Software Engineering Research Ralph Baltes Bianculli",
+   "why": "best match 0.57",
+   "best_title": "Teaching Literature Reviewing for Software Engineering Research"
+  },
+  {
+   "key": "metascience",
+   "query": "A Large-Scale Study of the Software Engineering Research Landscape",
+   "why": "best match 0.62",
+   "best_title": "Software reliability engineering study of a large-scale telecommunications software system"
+  },
+  {
+   "key": "hiddendebt",
+   "query": "Hidden Technical Debt in Machine Learning Systems Sculley Holt Golovin Davydov Phillips",
+   "why": "best match 0.45",
+   "best_title": "Technical Debt in Machine Learning Systems"
+  },
+  {
+   "key": "mldatavalidation",
+   "query": "Data Validation for Machine Learning Breck Polyzotis Roy Whang Zinkevich",
+   "why": "best match 0.50",
+   "best_title": "Data Management Challenges in Production Machine Learning"
+  },
+  {
+   "key": "runtimeverification",
+   "query": "Introduction to the special section on runtime verification Bartocci Falcone Francalanza Reger",
+   "why": "best match 0.50",
+   "best_title": "Introduction to Runtime Verification"
+  },
+  {
+   "key": "behavioralequiv",
+   "query": "Behavioral equivalence and the semantics of programs",
+   "why": "best match 0.67",
+   "best_title": "Strong equivalence of logic programs under the infinite-valued semantics"
+  },
+  {
+   "key": "fuzzing",
+   "query": "Coverage-guided fuzzing as a software testing technique survey",
+   "why": "best match 0.57",
+   "best_title": "Improve Model Testing by Integrating Bounded Model Checking and Coverage Guided Fuzzing"
+  },
+  {
+   "key": "smtbasedverif",
+   "query": "Satisfiability Modulo Theories: Introduction and Applications Barrett Sebastiani Seshia Tinelli",
+   "why": "best match 0.50",
+   "best_title": "Satisfiability Modulo Theories"
+  },
+  {
+   "key": "coq",
+   "query": "The Coq proof assistant reference manual",
+   "why": "best match 0.33",
+   "best_title": "Coq, assistant de preuve"
+  },
+  {
+   "key": "isabelle",
+   "query": "Isabelle/HOL: A Proof Assistant for Higher-Order Logic Nipkow Paulson Wenzel",
+   "why": "best match 0.25",
+   "best_title": "From LCF to Isabelle/HOL"
+  },
+  {
+   "key": "specevolution",
+   "query": "Specification evolution and its impact on software maintenance",
+   "why": "best match 0.71",
+   "best_title": "Service-Oriented Architecture and its implications for software maintenance and evolution"
+  },
+  {
+   "key": "alloyfindbugs",
+   "query": "Finding bugs in software with Alloy",
+   "why": "best match 0.60",
+   "best_title": "CP-Miner: finding copy-paste and related bugs in large-scale software code"
+  },
+  {
+   "key": "liquid",
+   "query": "Liquid Types Rondon Kawauchi Jhala",
+   "why": "best match 0.67",
+   "best_title": "Liquid types"
+  },
+  {
+   "key": "gradualtypes",
+   "query": "Gradual Typing for Functional Languages Siek Taha",
+   "why": "best match 0.50",
+   "best_title": "Design and evaluation of gradual typing for python"
+  },
+  {
+   "key": "ossdoc",
+   "query": "Software documents: concepts and tools",
+   "why": "best match 0.40",
+   "best_title": "Systematic evaluation of design choices for software development tools"
+  },
+  {
+   "key": "null",
+   "query": "The Null Pointer Reference Problem",
+   "why": "best match 0.40",
+   "best_title": "isnullptr: Check if an 'externalptr' is a Null Pointer"
+  },
+  {
+   "key": "quickcheck",
+   "query": "QuickCheck: a lightweight tool for random testing of Haskell programs",
+   "why": "best match 0.62",
+   "best_title": "A Sound and Reproducible Method for Generating Random Well-Typed Haskell Programs Applied for Differential Testing"
+  },
+  {
+   "key": "korat",
+   "query": "Korat: automated testing based on Java predicates",
+   "why": "best match 0.67",
+   "best_title": "Extension-Aware Automated Testing Based on Imperative Predicates"
+  },
+  {
+   "key": "klee",
+   "query": "KLEE: unassisted and automatic generation of high-coverage tests for complex systems programs",
+   "why": "best match 0.58",
+   "best_title": "Automatic generation of high-coverage tests for RTL designs using software techniques and tools"
+  },
+  {
+   "key": "alloy",
+   "query": "Alloy: a lightweight object modelling notation",
+   "why": "best match 0.40",
+   "best_title": "Business Object Notation (BON)"
+  },
+  {
+   "key": "bbook",
+   "query": "The B-Book: Assigning Programs to Meanings",
+   "why": "best match 0.00",
+   "best_title": null
+  },
+  {
+   "key": "empiricalstandards",
+   "query": "Empirical Standards for Software Engineering Research",
+   "why": "best match 0.67",
+   "best_title": "Standards of validity and the validity of standards in behavioral software engineering research"
+  },
+  {
+   "key": "gradualtypes",
+   "query": "Gradual Typing for Functional Languages",
+   "why": "best match 0.60",
+   "best_title": "Typed contracts for gradual typing"
+  },
+  {
+   "key": "modelbasedtesting",
+   "query": "Practical Model-Based Testing: A Tools Approach",
+   "why": "best match 0.67",
+   "best_title": "Open-Source Model-Based Testing Tools"
+  },
+  {
+   "key": "refinementcalc",
+   "query": "Refinement Calculus: A Systematic Introduction",
+   "why": "best match 0.50",
+   "best_title": "The Refinement Calculus Hierarchy"
+  },
+  {
+   "key": "agitator",
+   "query": "From Daikon to Agitator: lessons and challenges in building a commercial tool",
+   "why": "best match 0.67",
+   "best_title": "Lessons learned from deployed CBR systems and design decisions made in building a commercial CBR tool"
+  },
+  {
+   "key": "proofrepair",
+   "query": "Program repair for proofs: a formal framework for proof repair",
+   "why": "best match 0.44",
+   "best_title": "Challenging the Stigma of Formal Program Repair"
+  },
+  {
+   "key": "verifycost",
+   "query": "The economics of formal verification",
+   "why": "best match 0.50",
+   "best_title": "Formal Verification of Impure Coq JITs"
+  },
+  {
+   "key": "analysisoss",
+   "query": "Large-scale study of the adoption of formal methods in open source",
+   "why": "best match 0.67",
+   "best_title": "A Study of Quality Indicator Model of Large-Scale Open Source Software Projects for Adoption Decision-making"
+  },
+  {
+   "key": "mutationllm",
+   "query": "Mutation testing of large language model generated code",
+   "why": "best match 0.71",
+   "best_title": "Silent numerical failures in large language model\u2013generated pharmacokinetic simulation code: a benchmark against target-controlled infusion validation criteria using the Marsh propofol model"
+  }
+ ]
+}

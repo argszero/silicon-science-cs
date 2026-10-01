@@ -1,0 +1,4914 @@
+[
+ {
+  "src": "crossref",
+  "id": "10.2172/15150",
+  "title": "Towards an Approach to Overcome Software Brittleness",
+  "year": 1999,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "OSBOURN|GORDON C."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/iwssd.1998.667912",
+  "title": "Proceedings Ninth International Workshop on Software Specification and Design",
+  "year": 1998,
+  "venue": "Proceedings Ninth International Workshop on Software Specification and Design",
+  "type": "proceedings-article",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.14264/275872",
+  "title": "Using specification animation to support specification testing and software testing",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "|",
+   "Timothy Miller|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21236/ada153989",
+  "title": "Specification of Software Quality Attributes. Volume 2. Software Quality Specification Guidebook.",
+  "year": 1985,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Bowen|T. P.",
+   "Wigle|G. B.",
+   "Tsai|J. T."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/9780203496299.ch3",
+  "title": "Operational Specification",
+  "year": 2005,
+  "venue": "Software Specification and Design",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/9780203011188-13",
+  "title": "Software Specification and Design",
+  "year": 2003,
+  "venue": "Software Engineering Measurement",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4302-0181-6_3",
+  "title": "Software Factory Specification",
+  "year": null,
+  "venue": "Practical Software Factories in .NET",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.3403/30284608",
+  "title": "Software Trustworthiness. Governance and management. Specification",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/iccsn.2016.7586587",
+  "title": "Application of complexity and brittleness on software architecture",
+  "year": 2016,
+  "venue": "2016 8th IEEE International Conference on Communication Software and Networks (ICCSN)",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhang|Hong",
+   "Hu|Changzhen",
+   "Wang|Xiaojun"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/iwssd.1996.501140",
+  "title": "8th International Workshop on Software Specification and Design",
+  "year": 1996,
+  "venue": "Proceedings of the 8th International Workshop on Software Specification and Design IWSSD-96",
+  "type": "proceedings-article",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.21236/ada087679",
+  "title": "Software Interface Specification",
+  "year": 1980,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Iwamura|Warren"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21236/ada311137",
+  "title": "Application of Formal Specification to Software Maintenance.",
+  "year": 1990,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Madhav|Neel",
+   "Sankar|Sriram"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsm.1990.131361",
+  "title": "Application of formal specification to software maintenance",
+  "year": null,
+  "venue": "Proceedings. Conference on Software Maintenance 1990",
+  "type": "proceedings-article",
+  "authors": [
+   "Madhav|N.",
+   "Sankar|S."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1049/ic:19970925",
+  "title": "Formal methods light: experience applying formal specification in the aerospace and nuclear sectors",
+  "year": 1997,
+  "venue": "IEE Colloquium on Industrial Use of Formal Methods",
+  "type": "proceedings-article",
+  "authors": [
+   "Fitzgerald|J.S."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-0701-9_1",
+  "title": "Z: A Formal Specification Notation",
+  "year": 2001,
+  "venue": "Software Specification Methods",
+  "type": "book-chapter",
+  "authors": [
+   "Bowen|Jonathan P."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/99569.99837",
+  "title": "Application of formal methods to system and software specification",
+  "year": 1990,
+  "venue": "Conference proceedings on Formal methods in software development",
+  "type": "proceedings-article",
+  "authors": [
+   "Wood|William G."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icfem.1998.730576",
+  "title": "From monolithic to modular formal specification",
+  "year": null,
+  "venue": "Proceedings Second International Conference on Formal Engineering Methods (Cat.No.98EX241)",
+  "type": "proceedings-article",
+  "authors": [
+   "Rose|G."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1049/ic:19950704",
+  "title": "A pragmatic approach to harnessing formal specification",
+  "year": 1995,
+  "venue": "IEE Colloquium on `Practical Application of Formal Methods'",
+  "type": "proceedings-article",
+  "authors": [
+   "Bryant|A."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1049/ic:19950706",
+  "title": "The benefits of formal specification are not automatic",
+  "year": 1995,
+  "venue": "IEE Colloquium on `Practical Application of Formal Methods'",
+  "type": "proceedings-article",
+  "authors": [
+   "Paynter|S.E."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1049/ic:19950705",
+  "title": "Use of a functional programming language for formal specification",
+  "year": 1995,
+  "venue": "IEE Colloquium on `Practical Application of Formal Methods'",
+  "type": "proceedings-article",
+  "authors": [
+   "Butler|J."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sefm.2007.20",
+  "title": "Formal Specification using Interaction Diagrams",
+  "year": 2007,
+  "venue": "Fifth IEEE International Conference on Software Engineering and Formal Methods (SEFM 2007)",
+  "type": "proceedings-article",
+  "authors": [
+   "Lano|K."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icfem.1998.730582",
+  "title": "Formal specification of CORBA services using Object-Z",
+  "year": null,
+  "venue": "Proceedings Second International Conference on Formal Engineering Methods (Cat.No.98EX241)",
+  "type": "proceedings-article",
+  "authors": [
+   "Kreuz|D."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/99569.99814",
+  "title": "Formal specification for a clinical cyclotron control system",
+  "year": 1990,
+  "venue": "Conference proceedings on Formal methods in software development",
+  "type": "proceedings-article",
+  "authors": [
+   "Jacky|Jonathan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/bs.adcom.2018.03.015",
+  "title": "Mutation Testing Advances: An Analysis and Survey",
+  "year": 2019,
+  "venue": "Advances in Computers",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.21275/sr26313164836",
+  "title": "Mutation Testing with Machine Learning Approaches for Fuzzing, Smart Contracts, and Automated Repair: A Critical Survey",
+  "year": 2026,
+  "venue": "International Journal of Science and Research (IJSR)",
+  "type": "journal-article",
+  "authors": [
+   "Kumar Bedajna|Sobhan",
+   "Roy|Sudipta"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icet.2012.6375480",
+  "title": "Object oriented mutation testing: A survey",
+  "year": 2012,
+  "venue": "2012 International Conference on Emerging Technologies",
+  "type": "proceedings-article",
+  "authors": [
+   "Bashir|Muhammad Bilal",
+   "Nadeem|Aamer"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ms.2010.79",
+  "title": "Mutation Testing Cost Reduction Techniques: A Survey",
+  "year": 2010,
+  "venue": "IEEE Software",
+  "type": "journal-article",
+  "authors": [
+   "Usaola|Macario Polo",
+   "Mateo|Pedro Reales"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/mutation.2006.11",
+  "title": "Mutation Testing implements Grammar-Based Testing",
+  "year": 2006,
+  "venue": "Second Workshop on Mutation Analysis (Mutation 2006 - ISSRE Workshops 2006)",
+  "type": "proceedings-article",
+  "authors": [
+   "Offutt|Jeff",
+   "Ammann|Paul",
+   "Liu|Lisa (Ling)"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/taicpart.2007.4344099",
+  "title": "State-based Testing is Functional Testing",
+  "year": 2007,
+  "venue": "Testing: Academic and Industrial Conference Practice and Research Techniques - MUTATION (TAICPART-MUTATION 2007)",
+  "type": "proceedings-article",
+  "authors": [
+   "Ipate|Florentin",
+   "Lefticaru|Raluca"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/taicpart.2007.4344118",
+  "title": "Mutation Testing from Probabilistic Finite State Machines",
+  "year": 2007,
+  "venue": "Testing: Academic and Industrial Conference Practice and Research Techniques - MUTATION (TAICPART-MUTATION 2007)",
+  "type": "proceedings-article",
+  "authors": [
+   "Hierons|Robert M.",
+   "Merayo|Mercedes G."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/taicpart.2007.4344127",
+  "title": "Lightweight State Based Mutation Testing for Security",
+  "year": 2007,
+  "venue": "Testing: Academic and Industrial Conference Practice and Research Techniques - MUTATION (TAICPART-MUTATION 2007)",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhang|Songtao",
+   "Dean|Thomas",
+   "Knight|Scott"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1089/10906570152742317",
+  "title": "A Pilot Survey of Cystic Fibrosis Clinical Manifestations in <i>CFTR</i> Mutation Heterozygotes",
+  "year": 2001,
+  "venue": "Genetic Testing",
+  "type": "journal-article",
+  "authors": [
+   "Castellani|C.",
+   "Quinzii|C.",
+   "Altieri|S.",
+   "Mastella|G.",
+   "Assael|B.M."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst.2012.160",
+  "title": "Isolating First Order Equivalent Mutants via Second Order Mutation",
+  "year": 2012,
+  "venue": "2012 IEEE Fifth International Conference on Software Testing, Verification and Validation",
+  "type": "proceedings-article",
+  "authors": [
+   "Kintis|Marinos",
+   "Papadakis|Mike",
+   "Malevris|Nicos"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/stvr.1529",
+  "title": "Employing second\u2010order mutation for isolating first\u2010order equivalent mutants",
+  "year": 2014,
+  "venue": "Software Testing, Verification and Reliability",
+  "type": "journal-article",
+  "authors": [
+   "Kintis|Marinos",
+   "Papadakis|Mike",
+   "Malevris|Nicos"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.3390/sym14040820",
+  "title": "Automatic Classification of Equivalent Mutants in Mutation Testing of Android Applications",
+  "year": 2022,
+  "venue": "Symmetry",
+  "type": "journal-article",
+  "authors": [
+   "Kusharki|Muhammad Bello",
+   "Misra|Sanjay",
+   "Muhammad-Bello|Bilkisu",
+   "Salihu|Ibrahim Anka",
+   "Suri|Bharti"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/s10664-022-10149-y",
+  "title": "Static detection of equivalent mutants in real-time model-based mutation testing",
+  "year": 2022,
+  "venue": "Empirical Software Engineering",
+  "type": "journal-article",
+  "authors": [
+   "Basile|Davide",
+   "Beek|Maurice H. ter",
+   "Lazreg|Sami",
+   "Cordy|Maxime",
+   "Legay|Axel"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.12681/eadd/38297",
+  "title": "Effective methods to tackle the equivalent mutant problem when testing software with mutation",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "\u039a\u03b9\u03bd\u03c4\u03ae\u03c2|\u039c\u03b1\u03c1\u03af\u03bd\u03bf\u03c2"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/incite.2016.7857578",
+  "title": "Design of a Fuzzy model to detect equivalent mutants for weak and strong mutation testing",
+  "year": 2016,
+  "venue": "2016 International Conference on Information Technology (InCITe) - The Next Generation IT Summit on the Theme - Internet of Things: Connect your Worlds",
+  "type": "proceedings-article",
+  "authors": [
+   "Bhatia|Vasundhara",
+   "Singhal|Abhishek"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst.2010.30",
+  "title": "(Un-)Covering Equivalent Mutants",
+  "year": 2010,
+  "venue": "2010 Third International Conference on Software Testing, Verification and Validation",
+  "type": "proceedings-article",
+  "authors": [
+   "Schuler|David",
+   "Zeller|Andreas"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3650212.3680310",
+  "title": "Equivalent Mutants in the Wild: Identifying and Efficiently Suppressing Equivalent Mutants for Java Programs",
+  "year": 2024,
+  "venue": "Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis",
+  "type": "proceedings-article",
+  "authors": [
+   "Kushigian|Benjamin",
+   "Kaufman|Samuel J.",
+   "Featherman|Ryan",
+   "Potter|Hannah",
+   "Madadi|Ardi",
+   "Just|Ren\u00e9"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0010481103970404",
+  "title": "Using Type Analysis for Dealing with Incompetent Mutants in Mutation Testing of Python Programs",
+  "year": 2021,
+  "venue": "Proceedings of the 16th International Conference on Evaluation of Novel Approaches to Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Derezi\u0144ska|Anna",
+   "Skupinska|Anna"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/stvr.1473",
+  "title": "Covering and Uncovering Equivalent Mutants",
+  "year": 2012,
+  "venue": "Software Testing, Verification and Reliability",
+  "type": "journal-article",
+  "authors": [
+   "Schuler|David",
+   "Zeller|Andreas"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icstw55395.2022.00040",
+  "title": "Random Mutant Selection and Equivalent Mutants Revisited",
+  "year": 2022,
+  "venue": "2022 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)",
+  "type": "proceedings-article",
+  "authors": [
+   "Pitts|Rowland"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icstw.2009.37",
+  "title": "The Impact of Equivalent Mutants",
+  "year": 2009,
+  "venue": "2009 International Conference on Software Testing, Verification, and Validation Workshops",
+  "type": "proceedings-article",
+  "authors": [
+   "Gr\u00fcn|Bernhard J. M.",
+   "Schuler|David",
+   "Zeller|Andreas"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ast.2015.18",
+  "title": "Metamorphic Testing: A Simple Method for Alleviating the Test Oracle Problem",
+  "year": 2015,
+  "venue": "2015 IEEE/ACM 10th International Workshop on Automation of Software Test",
+  "type": "proceedings-article",
+  "authors": [
+   "Chen|Tsong Yueh"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7717/peerj-cs.3695/fig-13",
+  "title": "Figure 13: Test oracle process.",
+  "year": null,
+  "venue": "",
+  "type": "component",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.4864547",
+  "title": "&lt;span&gt;UNDERSTANDING THE ORACLE PROBLEM AND AUTOMATED TEST CASE GENERATION: A COMPARATIVE SURVEY&lt;/span&gt; &lt;br&gt;",
+  "year": 2024,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Panwar|Arti"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2975954.2975959",
+  "title": "MD-ART: a test case generation method without test oracle problem",
+  "year": 2016,
+  "venue": "Proceedings of the 1st International Workshop on Specification, Comprehension, Testing, and Debugging of Concurrent Programs",
+  "type": "proceedings-article",
+  "authors": [
+   "Hui|Zhan-Wei",
+   "Huang|Song"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4842-2436-6_16",
+  "title": "Building Good Test Cases",
+  "year": 2017,
+  "venue": "Oracle SQL Tuning with Oracle SQLTXPLAIN",
+  "type": "book-chapter",
+  "authors": [
+   "Charalambides|Stelios"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4842-4321-3_10",
+  "title": "Test Cases",
+  "year": 2019,
+  "venue": "Oracle DBA Mentor",
+  "type": "book-chapter",
+  "authors": [
+   "Peasland|Brian"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.22215/etd/2009-09134",
+  "title": "Learning a test Oracle towards automating image segmentation evaluation",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Frounchi|Kambiz"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.55277/researchhub.ydwnx14h",
+  "title": "Oracle 1Z0-1060-26 Practice Test Questions with PDF",
+  "year": 2026,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Scott|Sarah"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.55277/researchhub.tu5h8yly",
+  "title": "How to test high availability Oracle 1Z0-590 exam",
+  "year": 2026,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Dop|Joseph"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0009471903450352",
+  "title": "Test Oracle using Semantic Analysis from Natural Language Requirements",
+  "year": 2020,
+  "venue": "Proceedings of the 22nd International Conference on Enterprise Information Systems",
+  "type": "proceedings-article",
+  "authors": [
+   "Malik|Maryam",
+   "Sindhu|Muddassar",
+   "Abbasi|Rabeeh"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4842-9553-3_8",
+  "title": "Test Cases: Using Oracle GDS with Oracle RAC",
+  "year": 2023,
+  "venue": "Oracle Global Data Services for Mission-critical Systems",
+  "type": "book-chapter",
+  "authors": [
+   "Kumar|Y V Ravi",
+   "Kupatadze|Mariami",
+   "Sammeta|Sambaiah"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/met.2017.7",
+  "title": "Metamorphic Testing: Beyond Testing Numerical Computations",
+  "year": 2017,
+  "venue": "2017 IEEE/ACM 2nd International Workshop on Metamorphic Testing (MET)",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhou|Zhi Quan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3193977.3193986",
+  "title": "Metamorphic testing",
+  "year": 2018,
+  "venue": "Proceedings of the 3rd International Workshop on Metamorphic Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Segura|Sergio"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7717/peerj-cs.2658/fig-2",
+  "title": "Figure 2: Metamorphic testing approach.",
+  "year": null,
+  "venue": "",
+  "type": "component",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/met.2019.00008",
+  "title": "Metamorphic Testing of Android Graphics Drivers",
+  "year": 2019,
+  "venue": "2019 IEEE/ACM 4th International Workshop on Metamorphic Testing (MET)",
+  "type": "proceedings-article",
+  "authors": [
+   "Donaldson|Alastair F."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2896971.2896981",
+  "title": "An application of metamorphic testing for testing scientific software",
+  "year": 2016,
+  "venue": "Proceedings of the 1st International Workshop on Metamorphic Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Ding|Junhua",
+   "Zhang|Dongmei",
+   "Hu|Xin-Hua"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/met52542.2021.00011",
+  "title": "Applying Metamorphic Testing to Homomorphic Cryptography",
+  "year": 2021,
+  "venue": "2021 IEEE/ACM 6th International Workshop on Metamorphic Testing (MET)",
+  "type": "proceedings-article",
+  "authors": [
+   "Wolf|Melvin",
+   "Schonwalder|Jurgen"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2896971.2896978",
+  "title": "Metamorphic testing for (graphics) compilers",
+  "year": 2016,
+  "venue": "Proceedings of the 1st International Workshop on Metamorphic Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Donaldson|Alastair F.",
+   "Lascu|Andrei"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3524846.3527341",
+  "title": "Testing ocean software with metamorphic testing",
+  "year": 2022,
+  "venue": "Proceedings of the 7th International Workshop on Metamorphic Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Luu|Quang-Hung",
+   "Liu|Huai",
+   "Chen|Tsong Yueh",
+   "Vu|Hai L."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7717/peerj-cs.2658/fig-3",
+  "title": "Figure 3: Proposed statistical metamorphic testing approach.",
+  "year": null,
+  "venue": "",
+  "type": "component",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3679006.3695734",
+  "title": "AI-Driven Metamorphic Testing for Autonomous Systems (Keynote)",
+  "year": 2024,
+  "venue": "Proceedings of the 9th ACM International Workshop on Metamorphic Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Gotlieb|Arnaud"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst69053.2026.00016",
+  "title": "Automated Inference of Expressive Metamorphic Relations for Effective Metamorphic Testing",
+  "year": 2026,
+  "venue": "2026 IEEE International Conference on Software Testing, Verification and Validation (ICST)",
+  "type": "proceedings-article",
+  "authors": [
+   "Nolasco|Agust\u00edn"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/qsic.2007.4385527",
+  "title": "Statistical Metamorphic Testing Testing Programs with Random Output by Means of Statistical Hypothesis Tests and Metamorphic Testing",
+  "year": 2007,
+  "venue": "Seventh International Conference on Quality Software (QSIC 2007)",
+  "type": "proceedings-article",
+  "authors": [
+   "Guderlei|Ralph",
+   "Mayer|Johannes"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0011101700003176",
+  "title": "Application of Property-based Testing Tools for Metamorphic Testing",
+  "year": 2022,
+  "venue": "Proceedings of the 17th International Conference on Evaluation of Novel Approaches to Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Alzahrani|Nasser",
+   "Spichkova|Maria",
+   "Harland|James"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.32614/cran.package.quickcheck",
+  "title": "quickcheck: Property Based Testing",
+  "year": 2022,
+  "venue": "CRAN: Contributed Packages",
+  "type": "dataset",
+  "authors": [
+   "McNeil|Andrew"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.32614/cran.package.hedgehog",
+  "title": "hedgehog: Property-Based Testing",
+  "year": 2018,
+  "venue": "CRAN: Contributed Packages",
+  "type": "dataset",
+  "authors": [
+   "Campbell|Huw"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/stvr.1625",
+  "title": "Automatic property-based testing and path validation of XQuery programs",
+  "year": 2017,
+  "venue": "Software Testing, Verification and Reliability",
+  "type": "journal-article",
+  "authors": [
+   "Almendros-Jim\u00e9nez|Jes\u00fas M.",
+   "Becerra-Ter\u00f3n|Antonio"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0006340302410246",
+  "title": "From Temporal Models to Property-based Testing",
+  "year": 2017,
+  "venue": "Proceedings of the 12th International Conference on Evaluation of Novel Approaches to Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Alzahrani|Nasser",
+   "Spichkova|Maria",
+   "Blech|Jan Olaf"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.2172/920828",
+  "title": "Some attributes of a language for property-based testing.",
+  "year": 2004,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Neagoe|Vicentiu",
+   "Bishop|Matt"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst.2018.00017",
+  "title": "Automating Targeted Property-Based Testing",
+  "year": 2018,
+  "venue": "2018 IEEE 11th International Conference on Software Testing, Verification and Validation (ICST)",
+  "type": "proceedings-article",
+  "authors": [
+   "Loscher|Andreas",
+   "Sagonas|Konstantinos"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3786155.3795697",
+  "title": "Schemathesis 4: Multi-Phase Property-Based Testing",
+  "year": 2026,
+  "venue": "Proceedings of the 19th ACM/IEEE International Workshop on Search-Based and Fuzz Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Hatfield-Dodds|Zac",
+   "Dygalo|Dmitry"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1017/9781108135252.006",
+  "title": "Testing Monotonicity",
+  "year": null,
+  "venue": "Introduction to Property Testing",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst57152.2023.00029",
+  "title": "Property-Based Mutation Testing",
+  "year": 2023,
+  "venue": "2023 IEEE Conference on Software Testing, Verification and Validation (ICST)",
+  "type": "proceedings-article",
+  "authors": [
+   "Bartocci|Ezio",
+   "Mariani|Leonardo",
+   "Ni\u010dkovi\u0107|Dejan",
+   "Yadav|Drishti"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3092703.3092711",
+  "title": "Targeted property-based testing",
+  "year": 2017,
+  "venue": "Proceedings of the 26th ACM SIGSOFT International Symposium on Software Testing and Analysis",
+  "type": "proceedings-article",
+  "authors": [
+   "L\u00f6scher|Andreas",
+   "Sagonas|Konstantinos"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst.2017.42",
+  "title": "Statistical Model Checking Meets Property-Based Testing",
+  "year": 2017,
+  "venue": "2017 IEEE International Conference on Software Testing, Verification and Validation (ICST)",
+  "type": "proceedings-article",
+  "authors": [
+   "Aichernig|Bernhard K.",
+   "Schumi|Richard"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.18122/td.2363.boisestate",
+  "title": "Diverse Program Input Generation for Dynamic Invariant Inference",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Bhusal|Sandesh"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21236/ad1009345",
+  "title": "Framework for Evaluating Loop Invariant Detection Games in Relation to Automated Dynamic Invariant Detectors",
+  "year": 2015,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Yilmaz|Mehmet"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/1368088.1368127",
+  "title": "DySy",
+  "year": 2008,
+  "venue": "Proceedings of the 30th international conference on Software engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Csallner|Christoph",
+   "Tillmann|Nikolai",
+   "Smaragdakis|Yannis"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/9781003049340-9",
+  "title": "Group Structure and Invariant Inference",
+  "year": 2021,
+  "venue": "Theory of Statistical Inference",
+  "type": "book-chapter",
+  "authors": [
+   "Almudevar|Anthony"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-48317-9_20",
+  "title": "Temporally Invariant Junction Tree for Inference in Dynamic Bayesian Network",
+  "year": 1999,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Xiang|Y."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2491411.2491457",
+  "title": "Second-order constraints in dynamic invariant inference",
+  "year": 2013,
+  "venue": "Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Li|Kaituo",
+   "Reichenbach|Christoph",
+   "Smaragdakis|Yannis",
+   "Young|Michal"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2002951.2002955",
+  "title": "Dynamic invariant detection for relational databases",
+  "year": 2011,
+  "venue": "Proceedings of the Ninth International Workshop on Dynamic Analysis",
+  "type": "proceedings-article",
+  "authors": [
+   "Cobb|Jake",
+   "Jones|James A.",
+   "Kapfhammer|Gregory M.",
+   "Harrold|Mary Jean"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sai.2017.8252116",
+  "title": "Anomaly detection in dynamic programming languages through heuristics based type inference",
+  "year": 2017,
+  "venue": "2017 Computing Conference",
+  "type": "proceedings-article",
+  "authors": [
+   "Jia|Xiaoping",
+   "Dittmer|Howard"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1017/9781009769532.004",
+  "title": "Invariant Causal Mechanisms",
+  "year": 2026,
+  "venue": "Qualitative Causal Inference and Explanation",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.6427863",
+  "title": "RADIANT: Regime-Adaptive Dynamic Inference &amp;amp; Allocation Network with Temporal-Hysteresis for High-Frequency Market Regime Detection",
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Saraf|Ishan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.23919/acc.1993.4793062",
+  "title": "Inductive Inference of Invariant Subspaces",
+  "year": 1993,
+  "venue": "1993 American Control Conference",
+  "type": "proceedings-article",
+  "authors": [
+   "Lemmon|Michael"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-319-41644-1_7",
+  "title": "Examples of Invariant Measures",
+  "year": 2016,
+  "venue": "Bayesian Inference",
+  "type": "book-chapter",
+  "authors": [
+   "Harney|Hanns Ludwig"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.22215/etd/2002-05049",
+  "title": "Regression test selection based on UML models",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Soccar|George"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21203/rs.3.rs-2707846/v1",
+  "title": "Regression Test Selection in Test-Driven Development",
+  "year": 2023,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "mafi|Zohreh",
+   "Mirian-Hosseinabadi|Seyyed-Hassan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21275/v4i12.nov151808",
+  "title": "A Study on Different Approaches for Regression Test Selection",
+  "year": 2015,
+  "venue": "International Journal of Science and Research (IJSR)",
+  "type": "journal-article",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.22215/etd/2009-09312",
+  "title": "A regression test selection and prioritization technique for TDE/UML",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "He|Siyuan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4018/979-8-3693-9851-7.ch008",
+  "title": "Regression Test Selection Approaches",
+  "year": 2025,
+  "venue": "Modern Insights on Smart and Secure Software Development",
+  "type": "book-chapter",
+  "authors": [
+   "Al-Refai|Mohammed",
+   "Hammad|Mahmoud",
+   "Al-Refai|Ghaith",
+   "Alzu'bi|Ahmad"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.26756/th.2001.19",
+  "title": "Implementation of a regression test selection technique for C++ software. (c2001)",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Hajjar|Rania M."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.11606/t.55.2024.tde-28112024-143829",
+  "title": "Investigation of Code Change and Smell to Support the Software Regression Test Selection",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Mori|Allan Victor"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.4680129",
+  "title": "Variable Selection in Macroeconomic Stress Test: A Bayesian Quantile Regression Approach",
+  "year": 2024,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Nguyen|Lam",
+   "Dao|Mai"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.4281784",
+  "title": "Generic and Industrial Scale Many-Criteria Regression Test Selection",
+  "year": 2022,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Dobslaw|Felix",
+   "Wan|Ruiyuan",
+   "Hao|Yuechan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1017/cbo9781139196185.008",
+  "title": "Selection, Minimization and Prioritization of Test Cases for Regression Testing",
+  "year": 2011,
+  "venue": "Software Testing",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1101/2022.09.08.507150",
+  "title": "Selection Of Models For The Regression Problems In Biology Using Chi-Square Test",
+  "year": 2022,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Gupta|Aaditya Prasad"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3786178.3788327",
+  "title": "Flaky Tests in a Large Industrial Database Management System: An Empirical Study of Fixed Issue Reports for SAP HANA",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 IEEE/ACM 3rd International Flaky Tests Workshop",
+  "type": "proceedings-article",
+  "authors": [
+   "Berndt|Alexander",
+   "Bach|Thomas",
+   "Baltes|Sebastian"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsme.2018.00062",
+  "title": "An Empirical Study of Flaky Tests in Android Apps",
+  "year": 2018,
+  "venue": "2018 IEEE International Conference on Software Maintenance and Evolution (ICSME)",
+  "type": "proceedings-article",
+  "authors": [
+   "Thorve|Swapna",
+   "Sreshtha|Chandani",
+   "Meng|Na"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsme55016.2022.00011",
+  "title": "An Empirical Study of Flaky Tests in JavaScript",
+  "year": 2022,
+  "venue": "2022 IEEE International Conference on Software Maintenance and Evolution (ICSME)",
+  "type": "proceedings-article",
+  "authors": [
+   "Hashemi|Negar",
+   "Tahir|Amjed",
+   "Rasheed|Shawn"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ftw66604.2025.00010",
+  "title": "A Preliminary Study of Fixed Flaky Tests in Rust Projects on GitHub",
+  "year": 2025,
+  "venue": "2025 IEEE/ACM International Flaky Tests Workshop (FTW)",
+  "type": "proceedings-article",
+  "authors": [
+   "Schroeder|Tom",
+   "Phan|Minh",
+   "Chen|Yang"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3786178.3788328",
+  "title": "A Preliminary Study on the Vocabulary of Flaky Tests in Swift",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 IEEE/ACM 3rd International Flaky Tests Workshop",
+  "type": "proceedings-article",
+  "authors": [
+   "Medeiros|Jo\u00e3o",
+   "Miranda|Breno"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst49551.2021.00026",
+  "title": "An Empirical Study of Flaky Tests in Python",
+  "year": 2021,
+  "venue": "2021 14th IEEE Conference on Software Testing, Verification and Validation (ICST)",
+  "type": "proceedings-article",
+  "authors": [
+   "Gruber|Martin",
+   "Lukasczyk|Stephan",
+   "Krois|Florian",
+   "Fraser|Gordon"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst62969.2025.10989030",
+  "title": "An Empirical Study of Web Flaky Tests: Understanding and Unveiling DOM Event Interaction Challenges",
+  "year": 2025,
+  "venue": "2025 IEEE Conference on Software Testing, Verification and Validation (ICST)",
+  "type": "proceedings-article",
+  "authors": [
+   "Pei|Yu",
+   "Sohn|Jeongju",
+   "Papadakis|Mike"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3643656.3643899",
+  "title": "Predicting the Lifetime of Flaky Tests on Chrome",
+  "year": 2024,
+  "venue": "Proceedings of the 1st International Workshop on Flaky Tests",
+  "type": "proceedings-article",
+  "authors": [
+   "Malmir|Samaneh",
+   "Rigby|Peter Christopher"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3643656.3643897",
+  "title": "Flaky Tests in the AI Domain",
+  "year": 2024,
+  "venue": "Proceedings of the 1st International Workshop on Flaky Tests",
+  "type": "proceedings-article",
+  "authors": [
+   "Soha|Peter Attila",
+   "Vancsics|Bela",
+   "Gergely|Tam\u00e1s",
+   "Beszedes|Arpad"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3643656.3643900",
+  "title": "Can ChatGPT Repair Non-Order-Dependent Flaky Tests?",
+  "year": 2024,
+  "venue": "Proceedings of the 1st International Workshop on Flaky Tests",
+  "type": "proceedings-article",
+  "authors": [
+   "Chen|Yang",
+   "Jabbarvand|Reyhaneh"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ftw66604.2025.00009",
+  "title": "Empirically Evaluating Flaky Tests for Autonomous Driving Systems in Simulated Environments",
+  "year": 2025,
+  "venue": "2025 IEEE/ACM International Flaky Tests Workshop (FTW)",
+  "type": "proceedings-article",
+  "authors": [
+   "Osikowicz|Olek",
+   "McMinn|Phil",
+   "Shin|Donghwan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ftw66604.2025.00006",
+  "title": "Reduction of Test Re-runs by Prioritizing Potential Order Dependent Flaky Tests",
+  "year": 2025,
+  "venue": "2025 IEEE/ACM International Flaky Tests Workshop (FTW)",
+  "type": "proceedings-article",
+  "authors": [
+   "Iqbal|Hasnain",
+   "Begum|Zerina",
+   "Sakib|Kazi"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.3403/02046122u",
+  "title": "Imaging materials. Photographic films and papers. Wedge test for brittleness",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.3403/00707567u",
+  "title": "Photography. Photographic films and papers. Wedge test for brittleness",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1520/d1790-08",
+  "title": "Test Method for Brittleness Temperature of Plastic Sheeting by Impact",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": [
+   "|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1520/d0746",
+  "title": "Test Method for Brittleness Temperature of Plastics and Elastomers by Impact",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": [
+   "|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.62973/07-056r1",
+  "title": "The Specification Model -- Structuring an OGC specification to encourage implementation",
+  "year": 2007,
+  "venue": "",
+  "type": "report",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1093/oso/9780198835646.003.0011",
+  "title": "Specification and Implementation",
+  "year": 2019,
+  "venue": "On the Foundations of Computing",
+  "type": "book-chapter",
+  "authors": [
+   "Primiero|Giuseppe"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.62973/05-077r4",
+  "title": "OpenGIS Symbology Encoding Implementation Specification",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.17487/rfc883",
+  "title": "Domain names: Implementation specification",
+  "year": 1983,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Mockapetris|P."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.70675/0e9faebcz8690z43ceza934z9277bafd805f",
+  "title": "Co-design and implementation of a minimal kernel oriented by its proof, and evolution towards multicore architectures",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Bergougnoux|Quentin"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-319-61518-9_2",
+  "title": "Specification of Constraints",
+  "year": 2017,
+  "venue": "Software Engineering: Specification, Implementation, Verification",
+  "type": "book-chapter",
+  "authors": [
+   "Alagi\u0107|Suad"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.62973/05-005",
+  "title": "OpenGIS Web Map Context Implementation Specification",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.3403/30434905",
+  "title": "Design, implementation and maintenance of voluntary agreements. Specification",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.62973/01-009",
+  "title": "OpenGIS Coordinate Transformation Service Implementation Specification",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.62973/06-121r3",
+  "title": "OpenGIS Web Service Common Implementation Specification",
+  "year": null,
+  "venue": "",
+  "type": "standard",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.17487/rfc1035",
+  "title": "Domain names - implementation and specification",
+  "year": 1987,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Mockapetris|P.V."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/b978-0-8155-1362-9.50005-6",
+  "title": "An International Survey of Industrial Applications of Formal Methods",
+  "year": 1995,
+  "venue": "Industrial Applications of Formal Methods to Model, Design and Analyze Computer Systems",
+  "type": "book-chapter",
+  "authors": [
+   "Craigen|Dan",
+   "Gerhart|Susan",
+   "Ralston|Ted"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118459898.ch1",
+  "title": "Formal Methods: Applying {Logics in, Theoretical} Computer Science",
+  "year": 2012,
+  "venue": "Formal Methods for Industrial Critical Systems",
+  "type": "other",
+  "authors": [
+   "Latella|Diego"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118459898.fmatter",
+  "title": "Frontmatter",
+  "year": 2012,
+  "venue": "Formal Methods for Industrial Critical Systems",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118459898.index",
+  "title": "Index",
+  "year": 2012,
+  "venue": "Formal Methods for Industrial Critical Systems",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118459898",
+  "title": "Formal Methods for Industrial Critical Systems",
+  "year": 2012,
+  "venue": "",
+  "type": "edited-book",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118459898.ch4",
+  "title": "Some Trends in Formal Methods Applications to Railway Signaling",
+  "year": 2012,
+  "venue": "Formal Methods for Industrial Critical Systems",
+  "type": "other",
+  "authors": [
+   "Fantechi|Alessandro",
+   "Fokkink|Wan",
+   "Morzenti|Angelo"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1049/ic:19970923",
+  "title": "Formal methods (Europe) industrial seminars",
+  "year": 1997,
+  "venue": "IEE Colloquium on Industrial Use of Formal Methods",
+  "type": "proceedings-article",
+  "authors": [
+   "null|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118459898.ch6",
+  "title": "Applying Formal Methods to Telecommunication Services with Active Networks",
+  "year": 2012,
+  "venue": "Formal Methods for Industrial Critical Systems",
+  "type": "other",
+  "authors": [
+   "del Mar Gallardo|Mar\u00eda",
+   "Mart\u00ednez|Jes\u00fas",
+   "Merino|Pedro"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/b978-0-444-89402-1.50016-3",
+  "title": "The Adoption of Formal Methods Within OTC",
+  "year": 1992,
+  "venue": "Formal Description Techniques, IV",
+  "type": "book-chapter",
+  "authors": [
+   "Rosenberg|Karen"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-41010-9_5",
+  "title": "Study on the Barriers to the Industrial Adoption of Formal Methods",
+  "year": 2013,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Davis|Jennifer A.",
+   "Clark|Matthew",
+   "Cofer|Darren",
+   "Fifarek|Aaron",
+   "Hinchman|Jacob",
+   "Hoffman|Jonathan",
+   "Hulbert|Brian",
+   "Miller|Steven P.",
+   "Wagner|Lucas"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-981-10-4121-1_5",
+  "title": "Adoption of Formal Methods in Software Safety Analysis",
+  "year": 2017,
+  "venue": "Formal Methods for Safety and Security",
+  "type": "book-chapter",
+  "authors": [
+   "Srivastava|Ankita",
+   "Goswami|S. K."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781118561829.ch6",
+  "title": "Partial Applications of Formal Methods",
+  "year": 2012,
+  "venue": "Industrial Use of Formal Methods",
+  "type": "other",
+  "authors": [
+   "Russo|Aryldo G."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-030-28483-1_13",
+  "title": "Learning Logic and Proof with an Interactive Theorem Prover",
+  "year": 2019,
+  "venue": "Mathematics Education in the Digital Era",
+  "type": "book-chapter",
+  "authors": [
+   "Avigad|Jeremy"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/s0304-3975(01)00045-7",
+  "title": "Proof assistance for real-time systems using an interactive theorem prover",
+  "year": 2002,
+  "venue": "Theoretical Computer Science",
+  "type": "journal-article",
+  "authors": [
+   "Kolano|Paul Z"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.23889/suthesis.67283",
+  "title": "Verification of Smart Contracts using the Interactive Theorem Prover Agda",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "|",
+   "Alhabardi|Fahad"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/j.asoc.2021.107200",
+  "title": "An evolutionary/heuristic-based proof searching framework for interactive theorem prover",
+  "year": 2021,
+  "venue": "Applied Soft Computing",
+  "type": "journal-article",
+  "authors": [
+   "Nawaz|M. Saqib",
+   "Nawaz|M. Zohaib",
+   "Hasan|Osman",
+   "Fournier-Viger|Philippe",
+   "Sun|Meng"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/bf00244993",
+  "title": "An experiment with the Boyer-Moore theorem prover: A proof of Wilson's theorem",
+  "year": 1985,
+  "venue": "Journal of Automated Reasoning",
+  "type": "journal-article",
+  "authors": [
+   "Russinoff|DavidM."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-319-08970-6_27",
+  "title": "The Reflective Milawa Theorem Prover Is Sound",
+  "year": 2014,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Myreen|Magnus O.",
+   "Davis|Jared"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.14264/da6cfd2",
+  "title": "Agent-based proof support for interactive theorem proving",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "|",
+   "Hunter|Christopher"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-4002-3_8",
+  "title": "A Prototype Theorem Prover",
+  "year": 2012,
+  "venue": "SpringerBriefs in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Rademaker|Alexandre"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.62056/a0txomja5",
+  "title": "A classical proof of quantum knowledge for multi-prover interactive proof systems",
+  "year": 2026,
+  "venue": "IACR Communications in Cryptology",
+  "type": "journal-article",
+  "authors": [
+   "Broadbent|Anne",
+   "Grilo|Alex",
+   "Hara|Nagisa",
+   "Mehta|Arthur"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1090/conm/029/16",
+  "title": "Student Use of an Interactive Theorem Prover",
+  "year": 1984,
+  "venue": "Contemporary Mathematics",
+  "type": "other",
+  "authors": [
+   "McDonald|James",
+   "Suppes|Patrick"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-57826-9_129",
+  "title": "A proof development system for the HOL theorem prover",
+  "year": 1994,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Th\u00e9ry|Laurent"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-540-68164-9_6",
+  "title": "An (Almost) Constant-Effort Solution-Verification Proof-of-Work Protocol Based on Merkle Trees",
+  "year": null,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Coelho|Fabien"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7717/peerjcs.1790/fig-6",
+  "title": "Figure 6: Computation cost of proof verification.",
+  "year": null,
+  "venue": "",
+  "type": "component",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.6485409",
+  "title": "Proof verification by polynomial fingerprinting",
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Prunescu|Mihai"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21236/ada027455",
+  "title": "Automatic Program Verification V: Verification-Oriented Proof Rules for Arrays, Records, and Pointers",
+  "year": 1976,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Luckham|David",
+   "Suzuki|Norihisa"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1142/9789811236488_0009",
+  "title": "Logic and Verification of Product Configuration in the Automotive Industry",
+  "year": 2021,
+  "venue": "Proof and Computation II",
+  "type": "book-chapter",
+  "authors": [
+   "K\u00fcchlin|Wolfgang"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.36227/techrxiv.175606842.21500827/v1",
+  "title": "Supplement: Recursive Verification Depth Analysis Hermetic Proof Framework for Polynomial-Time Verification of Cryptographic Problems",
+  "year": 2025,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Edwards|Josef Kurk"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-44798-9_18",
+  "title": "Proof Engineering in the Large: Formal Verification of Pentium\u00ae4 Floating-Point Divider",
+  "year": 2001,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Kaivola|Roope",
+   "Kohatsu|Katherine"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7717/peerj-cs.4104/supp-2",
+  "title": "Supplemental Information 2: Privacy-preserving verification workflow using a zero-knowledge proof.",
+  "year": null,
+  "venue": "",
+  "type": "component",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.17226/14647",
+  "title": "Off-Board Fare Payment Using Proof-of-Payment Verification",
+  "year": 2012,
+  "venue": "",
+  "type": "edited-book",
+  "authors": [
+   "|",
+   "|",
+   "|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sose66311.2025.11083849",
+  "title": "Simulation-Based Integration-Verification-Validation-Quality (IVVQ) for Effective Use in Battlefield: A Neccesity to Measure Engineering Effort",
+  "year": 2025,
+  "venue": "2025 20th Annual System of Systems Engineering Conference (SoSE)",
+  "type": "proceedings-article",
+  "authors": [
+   "Brisacier-Porchon|Lorraine"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.2196/preprints.111260",
+  "title": "Proof of Verification: From Detection to Inspectable Verification in the Scientific Record (Preprint)",
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Yu|Yunguo"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-3273-8_2",
+  "title": "Specification Statements and Refinement",
+  "year": 1987,
+  "venue": "On the Refinement Calculus",
+  "type": "book-chapter",
+  "authors": [
+   "Morgan|Carroll",
+   "Robinson|Ken"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-3273-8_1",
+  "title": "The Specification Statement",
+  "year": 1988,
+  "venue": "On the Refinement Calculus",
+  "type": "book-chapter",
+  "authors": [
+   "Morgan|Carroll"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4612-1674-2_27",
+  "title": "Specification Statements",
+  "year": 1998,
+  "venue": "Refinement Calculus",
+  "type": "book-chapter",
+  "authors": [
+   "Back|Ralph-Johan",
+   "Wright|Joakim"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/bfb0024672",
+  "title": "Adding specification constructors to the refinement calculus",
+  "year": null,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Ward|Nigel"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/bfb0024440",
+  "title": "The RPC-memory specification problem: UNITY + refinement calculus",
+  "year": 1996,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Udink|Rob T.",
+   "Kok|Joost N."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-3534-0_15",
+  "title": "Hennessy-Milner Logic with recursion as a specification language, and a refinement calculus based on it",
+  "year": 1990,
+  "venue": "Workshops in Computing",
+  "type": "book-chapter",
+  "authors": [
+   "Holmstr\u00f6m|S\u00f6ren"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4612-1674-2_12",
+  "title": "The Refinement Calculus Hierarchy",
+  "year": 1998,
+  "venue": "Refinement Calculus",
+  "type": "book-chapter",
+  "authors": [
+   "Back|Ralph-Johan",
+   "Wright|Joakim"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-44525-0_20",
+  "title": "Program Development and Specification Refinement in the Schema Calculus",
+  "year": 2000,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Henson|Martin C.",
+   "Reeves|Steve"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-3273-8_9",
+  "title": "Types and Invariants in the Refinement Calculus",
+  "year": 1992,
+  "venue": "On the Refinement Calculus",
+  "type": "book-chapter",
+  "authors": [
+   "Morgan|Carroll",
+   "Vickers|Trevor"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.14264/106036",
+  "title": "Contextual and data refinement for the refinement calculus for logic programs",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "|",
+   "Colvin|Robert John."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4471-3273-8_4",
+  "title": "Data Refinement by Miracles",
+  "year": 1988,
+  "venue": "On the Refinement Calculus",
+  "type": "book-chapter",
+  "authors": [
+   "Morgan|Carroll"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/11415787_23",
+  "title": "Practical Data Refinement for the Z Schema Calculus",
+  "year": 2005,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Groves|Lindsay"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.5205202",
+  "title": "Formal Computer Programming, Semantic Foundations for Software Engineering, and Lightweight Formal Methods for Programming",
+  "year": 2025,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Amarasinghege|Thushan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-45251-6_1",
+  "title": "Lightweight Formal Methods",
+  "year": 2001,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Jackson|Daniel"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0006770803050313",
+  "title": "Towards Classification of Lightweight Formal Methods",
+  "year": 2018,
+  "venue": "Proceedings of the 13th International Conference on Evaluation of Novel Approaches to Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Zamansky|Anna",
+   "Spichkova|Maria",
+   "Rodriguez-Navas|Guillermo",
+   "Herrmann|Peter",
+   "Blech|Jan Olaf"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-48257-1_10",
+  "title": "A Lightweight Approach to Formal Methods",
+  "year": 1999,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Agerholm|Sten",
+   "Larsen|Peter Gorm"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/11813040_39",
+  "title": "Formal Methods for Security: Lightweight Plug-In or New Engineering Discipline",
+  "year": 2006,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Stephan|Werner"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/formalise.2013.6612277",
+  "title": "Lightweight formal models of software weaknesses",
+  "year": 2013,
+  "venue": "2013 1st FME Workshop on Formal Methods in Software Engineering (FormaliSE)",
+  "type": "proceedings-article",
+  "authors": [
+   "Gandhi|Robin",
+   "Siy|Harvey",
+   "Wu|Yan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-11811-1_26",
+  "title": "Formalising and Validating RBAC-to-XACML Translation Using Lightweight Formal Methods",
+  "year": 2010,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Slaymaker|Mark",
+   "Power|David",
+   "Simpson|Andrew"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-540-30472-2_7",
+  "title": "Specification-Driven Design with Eiffel and Agents for Teaching Lightweight Formal Methods",
+  "year": 2004,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Paige|Richard F.",
+   "Ostroff|Jonathan S."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.18260/1-2--1320",
+  "title": "Experiences With Alloy In Undergraduate Formal Methods",
+  "year": null,
+  "venue": "2006 Annual Conference &amp; Exposition Proceedings",
+  "type": "proceedings-article",
+  "authors": [
+   "Lutz|Michael"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-32759-9_37",
+  "title": "Specification-Based Test Repair Using a Lightweight Formal Method",
+  "year": 2012,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Yang|Guowei",
+   "Khurshid|Sarfraz",
+   "Kim|Miryung"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/52.896246",
+  "title": "Validating voice communication requirements using lightweight formal methods",
+  "year": 2000,
+  "venue": "IEEE Software",
+  "type": "journal-article",
+  "authors": [
+   "Aichernig|B.K.",
+   "Horl|J."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/iscait64916.2025.11010371",
+  "title": "Securing GPU Kernels with Lightweight Formal Methods",
+  "year": 2025,
+  "venue": "2025 4th International Symposium on Computer Applications and Information Technology (ISCAIT)",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhao|Jiacheng",
+   "Hua|Baojian"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.22541/au.167878273.32599918/v1",
+  "title": "Formal specification and verification of a team formation protocol using TLA",
+  "year": 2023,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Niyogi|Rajdeep",
+   "Nath|Amar"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.19153/cleiej.26.1.6",
+  "title": "On the specification and verification of the PCR parallel programming pattern in TLA+",
+  "year": 2023,
+  "venue": "CLEI Electronic Journal",
+  "type": "journal-article",
+  "authors": [
+   "Solsona|Jos\u00e9"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-7091-6355-9_16",
+  "title": "Modular reasoning about structured TLA specifications",
+  "year": 1999,
+  "venue": "Tool Support for System Specification, Development and Verification",
+  "type": "book-chapter",
+  "authors": [
+   "Rock|Georg",
+   "Stephan|Werner",
+   "Wolpers|Andreas"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0013094700003896",
+  "title": "LLFSMs to TLA+: A Model-to-Text Transformation of Executable Models Enabling Specification and Verification of Multi-Threaded and Concurrent Systems",
+  "year": 2025,
+  "venue": "Proceedings of the 13th International Conference on Model-Based Software and Systems Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Estivill-Castro|Vladimir",
+   "Carrillo|Miguel",
+   "Rosenblueth|David"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/access.2025.3558081",
+  "title": "Formal Specification and Verification of Smart Contract-Based Loan Management System Using TLA+",
+  "year": 2025,
+  "venue": "IEEE Access",
+  "type": "journal-article",
+  "authors": [
+   "Yoon|Seongho",
+   "Choi|Jin-Young"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.32515/2664-262x.2025.11(42).2.38-44",
+  "title": "Specification and Verification of a Formal Model for a Real-Time System Using TLA+",
+  "year": 2025,
+  "venue": "Central Ukrainian Scientific Bulletin. Technical Sciences",
+  "type": "journal-article",
+  "authors": [
+   "|",
+   "Shyshatska|Olena",
+   "Matiichuk|Liubomyr",
+   "|",
+   "Shyshatskyy|Andrii",
+   "|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sbesc.2018.00039",
+  "title": "Specification and Verification of a Multi-agent Coordination Protocol with TLA+",
+  "year": 2018,
+  "venue": "2018 VIII Brazilian Symposium on Computing Systems Engineering (SBESC)",
+  "type": "proceedings-article",
+  "authors": [
+   "Arbs Paiva|Pedro Yuri",
+   "Saotome|Osamu",
+   "Brandauer|Christof"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1142/s0218126606003416",
+  "title": "SPECIFICATION AND VERIFICATION OF A PARAMETRIC HANDOVER PROCEDURE USING TLA",
+  "year": 2006,
+  "venue": "Journal of Circuits, Systems and Computers",
+  "type": "journal-article",
+  "authors": [
+   "KAPUS|TATJANA"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0015234600004088",
+  "title": "TLA-Prover: Verifiable TLA+ Specification Synthesis via Preference-Optimized Low-Rank Adaptation",
+  "year": 2026,
+  "venue": "Proceedings of the 21st International Conference on Software Technologies",
+  "type": "proceedings-article",
+  "authors": [
+   "Spencer|Eric",
+   "Bisharat|Arslan",
+   "Ortiz|Brian",
+   "Nazari|Mujtaba",
+   "Bhadauria|Khushboo",
+   "Wang|TaiNing",
+   "Thiruvathukal|George",
+   "L\u00e4ufer|Konstantin",
+   "Abuhamad|Mohammed"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/spe.3307",
+  "title": "Formal specification and verification of a team formation protocol using TLA<sup>+</sup>",
+  "year": 2023,
+  "venue": "Software: Practice and Experience",
+  "type": "journal-article",
+  "authors": [
+   "Niyogi|Rajdeep",
+   "Nath|Amar"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9780470612514.ch7",
+  "title": "TLA <sup>+</sup>",
+  "year": 2006,
+  "venue": "Software Specification Methods",
+  "type": "other",
+  "authors": [
+   "Lamport|Leslie"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/j.entcs.2009.05.054",
+  "title": "A TLA+ Formal Specification and Verification of a New Real-Time Communication Protocol",
+  "year": 2009,
+  "venue": "Electronic Notes in Theoretical Computer Science",
+  "type": "journal-article",
+  "authors": [
+   "Regnier|Paul",
+   "Lima|George",
+   "Andrade|Aline"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781839102288.00026",
+  "title": "Business contract design via Contract Management operationalized methodology",
+  "year": 2022,
+  "venue": "Research Handbook on Contract Design",
+  "type": "book-chapter",
+  "authors": [
+   "Hirvonen-Ere|Suvi"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781839102288.00024",
+  "title": "Contract simplification - a user-centered approach to contract structure design",
+  "year": 2022,
+  "venue": "Research Handbook on Contract Design",
+  "type": "book-chapter",
+  "authors": [
+   "Finnegan|Milva"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546.00007",
+  "title": "Direct damages",
+  "year": null,
+  "venue": "Rethinking Contract Law and Contract Design",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546.00014",
+  "title": "Consequential damages",
+  "year": null,
+  "venue": "Rethinking Contract Law and Contract Design",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546",
+  "title": "Rethinking Contract Law and Contract Design",
+  "year": 2015,
+  "venue": "",
+  "type": "monograph",
+  "authors": [
+   "Goldberg|Victor P."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781839102288.00019",
+  "title": "Genre blending and contract design",
+  "year": 2022,
+  "venue": "Research Handbook on Contract Design",
+  "type": "book-chapter",
+  "authors": [
+   "Salmi-Tolonen|Tarja"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781119670155.ch6",
+  "title": "SWING\u2010CONTRACT MARKET DESIGN",
+  "year": 2020,
+  "venue": "A New Swing\u2010Contract Design for Wholesale Power Markets",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546.00022",
+  "title": "Offer and acceptance",
+  "year": null,
+  "venue": "Rethinking Contract Law and Contract Design",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546.00004",
+  "title": "Acknowledgements",
+  "year": 2015,
+  "venue": "Rethinking Contract Law and Contract Design",
+  "type": "book-chapter",
+  "authors": [
+   "Goldberg|Victor P."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546.00018",
+  "title": "Excuse and changed circumstances",
+  "year": null,
+  "venue": "Rethinking Contract Law and Contract Design",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.4337/9781783471546.00006",
+  "title": "Introduction",
+  "year": 2015,
+  "venue": "Rethinking Contract Law and Contract Design",
+  "type": "book-chapter",
+  "authors": [
+   "Goldberg|Victor P."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-40787-1_7",
+  "title": "Synthesising Correct Concurrent Runtime Monitors",
+  "year": 2013,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Francalanza|Adrian",
+   "Seychell|Aldrin"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-16612-9_8",
+  "title": "Clara: Partially Evaluating Runtime Monitors at Compile Time",
+  "year": 2010,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Bodden|Eric",
+   "Lam|Patrick"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-35632-2_12",
+  "title": "Temporal Monitors for TinyOS",
+  "year": 2013,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Bucur|Doina"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-030-88494-9_9",
+  "title": "Nested Monitors: Monitors as Expressions to Build Monitors",
+  "year": 2021,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Gorostiaga|Felipe",
+   "S\u00e1nchez|C\u00e9sar"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-16612-9_15",
+  "title": "Clara: A Framework for Partially Evaluating Finite-State Runtime Monitors Ahead of Time",
+  "year": 2010,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Bodden|Eric",
+   "Lam|Patrick",
+   "Hendren|Laurie"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-319-67531-2_26",
+  "title": "Operational Semantics of Process Monitors",
+  "year": 2017,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Inoue|Jun",
+   "Yamagata|Yoriyuki"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2744769.2744856",
+  "title": "In-circuit temporal monitors for runtime verification of reconfigurable designs",
+  "year": 2015,
+  "venue": "Proceedings of the 52nd Annual Design Automation Conference",
+  "type": "proceedings-article",
+  "authors": [
+   "Todman|Tim",
+   "Stilkerich|Stephan",
+   "Luk|Wayne"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/cbms55023.2022.00066",
+  "title": "Policy-Based Diabetes Detection using Formal Runtime Verification Monitors",
+  "year": 2022,
+  "venue": "2022 IEEE 35th International Symposium on Computer-Based Medical Systems (CBMS)",
+  "type": "proceedings-article",
+  "authors": [
+   "Panda|Abhinandan",
+   "Pinisetty|Srinivas",
+   "Roop|Partha"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/j.vlsi.2017.11.003",
+  "title": "Runtime hardware Trojan monitors through modeling burst mode communication using formal verification",
+  "year": 2018,
+  "venue": "Integration",
+  "type": "journal-article",
+  "authors": [
+   "Khalid|Faiq",
+   "Hasan|Syed Rafay",
+   "Hasan|Osman",
+   "Awwad|Falah"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-030-32079-9_22",
+  "title": "Overhead-Aware Deployment of Runtime Monitors",
+  "year": 2019,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Zhang|Teng",
+   "Eakman|Greg",
+   "Lee|Insup",
+   "Sokolsky|Oleg"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-030-32079-9_7",
+  "title": "Accelerated Learning of Predictive Runtime Monitors for Rare Failure",
+  "year": 2019,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Babaee|Reza",
+   "Ganesh|Vijay",
+   "Sedwards|Sean"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-319-11164-3_12",
+  "title": "Organising LTL Monitors over Distributed Systems with a Global Clock",
+  "year": 2014,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Colombo|Christian",
+   "Falcone|Yli\u00e8s"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3524459.3527353",
+  "title": "Scaling genetic improvement and automated program repair",
+  "year": 2022,
+  "venue": "Proceedings of the Third International Workshop on Automated Program Repair",
+  "type": "proceedings-article",
+  "authors": [
+   "Harman|Mark"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3643788.3648019",
+  "title": "ARJA-e for the First International Competition on Automated Program Repair",
+  "year": 2024,
+  "venue": "Proceedings of the 5th ACM/IEEE International Workshop on Automated Program Repair",
+  "type": "proceedings-article",
+  "authors": [
+   "Yuan|Yuan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3524459.3527354",
+  "title": "Revisiting object similarity-based patch ranking in automated program repair",
+  "year": 2022,
+  "venue": "Proceedings of the Third International Workshop on Automated Program Repair",
+  "type": "proceedings-article",
+  "authors": [
+   "Ghanbari|Ali"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3524459.3527346",
+  "title": "Be realistic",
+  "year": 2022,
+  "venue": "Proceedings of the Third International Workshop on Automated Program Repair",
+  "type": "proceedings-article",
+  "authors": [
+   "Nilizadeh|Amirfarhad",
+   "Leavens|Gary T."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3643788.3648011",
+  "title": "ASAP-Repair: API-Specific Automated Program Repair Based on API Usage Graphs",
+  "year": 2024,
+  "venue": "Proceedings of the 5th ACM/IEEE International Workshop on Automated Program Repair",
+  "type": "proceedings-article",
+  "authors": [
+   "Nielebock|Sebastian",
+   "Blockhaus|Paul",
+   "Kruger|Jacob",
+   "Ortmeier|Frank"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/apr59189.2023.00010",
+  "title": "Program Repair Competition",
+  "year": 2023,
+  "venue": "2023 IEEE/ACM International Workshop on Automated Program Repair (APR)",
+  "type": "proceedings-article",
+  "authors": [
+   "Shariffdeen|Ridwan",
+   "Mirchev|Martin",
+   "Roychoudhury|Abhik"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/apr52552.2021.00007",
+  "title": "Program Committee",
+  "year": 2021,
+  "venue": "2021 IEEE/ACM International Workshop on Automated Program Repair (APR)",
+  "type": "proceedings-article",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/apr52552.2021.00009",
+  "title": "Please hold on: more time = more patches? Automated program repair as anytime algorithms",
+  "year": 2021,
+  "venue": "2021 IEEE/ACM International Workshop on Automated Program Repair (APR)",
+  "type": "proceedings-article",
+  "authors": [
+   "Vu|Duc-Ly",
+   "Pashchenko|Ivan",
+   "Massacci|Fabio"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/apr52552.2021.00015",
+  "title": "Challenging the Stigma of Formal Program Repair",
+  "year": 2021,
+  "venue": "2021 IEEE/ACM International Workshop on Automated Program Repair (APR)",
+  "type": "proceedings-article",
+  "authors": [
+   "Rothenberg|Bat-Chen"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.21236/ada568179",
+  "title": "Generic and Automated Runtime Program Repair",
+  "year": 2012,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "Weimer|Westley",
+   "Forrest|Stephanie"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/apr59189.2023.00013",
+  "title": "An Extensive Study on Model Architecture and Program Representation in the Domain of Learning-based Automated Program Repair",
+  "year": 2023,
+  "venue": "2023 IEEE/ACM International Workshop on Automated Program Repair (APR)",
+  "type": "proceedings-article",
+  "authors": [
+   "Horv\u00e1th|D\u00e1niel",
+   "Csuvik|Viktor",
+   "Gyim\u00f3thy|Tibor",
+   "Vid\u00e1cs|L\u00e1szl\u00f3"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/apr66717.2025",
+  "title": "2025 IEEE/ACM International Workshop on Automated Program Repair (APR)",
+  "year": 2025,
+  "venue": "",
+  "type": "proceedings",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.70675/498d2a1cz6865z4526z990bzd7da0c200534",
+  "title": "Formally verified compilation of low-level C code",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Wilke|Pierre"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.70675/4ca8962fz96b1z4291zbc7bz64918999dbe3",
+  "title": "Optimized and formally-verified compilation for a VLIW processor",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Six|Cyril"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.70675/c041309azf0faz4ae5za91fz3eb6c96c0d82",
+  "title": "Verifying constant-time implementations in a verified compilation toolchain",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Trieu|Alix"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.70675/39a5d53bzce3fz4517z9ee1z77b5242313f9",
+  "title": "Verified compilation of a synchronous dataflow language with state machines",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Pesin|Basile"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.14418/wes01.1.1413",
+  "title": "Thinking Outside the Box: Verified Compilation of ML5 to JavaScript",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Korkut|Joomy"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.70675/0d242e5czfe16z49f6za04ezf51f4dabb08e",
+  "title": "Mechanized semantics and verified compilation for a dataflow synchronous language with reset",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Brun|L\u00e9lio"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3705593.3705598",
+  "title": "Designing Formally Verified JITs",
+  "year": 2025,
+  "venue": "Formal Verification of Just-in-Time Compilation",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3705593.3705599",
+  "title": "Formally Verified Speculative Optimizations",
+  "year": 2025,
+  "venue": "Formal Verification of Just-in-Time Compilation",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/csf.2017.16",
+  "title": "Verified Translation Validation of Static Analyses",
+  "year": 2017,
+  "venue": "2017 IEEE 30th Computer Security Foundations Symposium (CSF)",
+  "type": "proceedings-article",
+  "authors": [
+   "Barthe|Gilles",
+   "Blazy|Sandrine",
+   "Laporte|Vincent",
+   "Pichardie|David",
+   "Trieu|Alix"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3411506.3417601",
+  "title": "From Verified Compilation to Secure Compilation: a Semantic Approach",
+  "year": 2020,
+  "venue": "Proceedings of the 15th Workshop on Programming Languages and Analysis for Security",
+  "type": "proceedings-article",
+  "authors": [
+   "Blazy|Sandrine"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.31274/td-20251215-313",
+  "title": "Formally verified temporal logic validation",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Wang|Zili"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/b978-0-444-89901-9.50016-1",
+  "title": "Program Compilation",
+  "year": 1994,
+  "venue": "Real-Time Safety Critical Systems",
+  "type": "book-chapter",
+  "authors": [
+   "Hale|R.W.S."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2998392.2998397",
+  "title": "RandIR: differential testing for embedded compilers",
+  "year": 2016,
+  "venue": "Proceedings of the 2016 7th ACM SIGPLAN Symposium on Scala",
+  "type": "proceedings-article",
+  "authors": [
+   "Ofenbeck|Georg",
+   "Rompf|Tiark",
+   "P\u00fcschel|Markus"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.14711/thesis-991013340453403412",
+  "title": "Testing secure multi-party computation compilers",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Li|Yichen"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.14711/thesis-hdl167751",
+  "title": "Fault Characterization and Testing for Domain-Speci\ufb01c Compilers",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Ma|Haoyang"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5753/eres.2025.16803",
+  "title": "A Differential Testing Pipeline for Validating Lambda Expression Handling in Java Compilers Through LLM-Generated Test Cases",
+  "year": 2025,
+  "venue": "Anais da IX Escola Regional de Engenharia de Software (ERES 2025)",
+  "type": "proceedings-article",
+  "authors": [
+   "Kosvoski|Douglas",
+   "Braga|Andrei",
+   "Ribeiro|Rodrigo",
+   "Feitosa|Samuel"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icstw50294.2020.00039",
+  "title": "On Using Ontologies for Testing Compilers",
+  "year": 2020,
+  "venue": "2020 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)",
+  "type": "proceedings-article",
+  "authors": [
+   "Li|Yihao",
+   "Wotawa|Franz"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/187387.187402",
+  "title": "Testing student-made compilers",
+  "year": 1994,
+  "venue": "ACM SIGCSE Bulletin",
+  "type": "journal-article",
+  "authors": [
+   "Guimar\u00e3es|Jos\u00e9 de Oliveira"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/stvr.1812",
+  "title": "High\u2010coverage metamorphic testing of concurrency support in C compilers",
+  "year": 2022,
+  "venue": "Software Testing, Verification and Reliability",
+  "type": "journal-article",
+  "authors": [
+   "Windsor|Matt",
+   "Donaldson|Alastair F.",
+   "Wickerson|John"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/stvr.4370040204",
+  "title": "The automated generation of test cases for compilers",
+  "year": 1994,
+  "venue": "Software Testing, Verification and Reliability",
+  "type": "journal-article",
+  "authors": [
+   "Burgess|Colin J."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-540-73066-8_25",
+  "title": "Model-Based Testing of Optimizing Compilers",
+  "year": 2007,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Zelenov|Sergey",
+   "Zelenova|Sophia"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/tcad.2026.3681224",
+  "title": "Structural Mutation Based Differential Testing for FPGA Logic Synthesis Compilers",
+  "year": 2026,
+  "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+  "type": "journal-article",
+  "authors": [
+   "Xu|Zhihao",
+   "Guo|Shikai",
+   "Zhao|Guilin",
+   "Wang|Siwen",
+   "Ma|Qian",
+   "Li|Hui",
+   "Zhan|Furui"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/iccd65941.2025.00057",
+  "title": "Concolic Testing for Quantum Compilers",
+  "year": 2025,
+  "venue": "2025 IEEE 43rd International Conference on Computer Design (ICCD)",
+  "type": "proceedings-article",
+  "authors": [
+   "Choudhury|Navnil",
+   "Bhave|Ameya",
+   "Basu|Kanad"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.3724/sp.j.1001.2009.00578",
+  "title": "Experimental Study to Compare the Use of Metamorphic Testing and Assertion Checking",
+  "year": 2009,
+  "venue": "Journal of Software",
+  "type": "journal-article",
+  "authors": [
+   "ZHANG|Zhen-Yu",
+   "CHAN|WK",
+   "TSE|TH",
+   "HU|Pei-Feng"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1049/ic:20040422",
+  "title": "Adaptable assertion checking for scientific software components",
+  "year": 2004,
+  "venue": "\"Software Engineering for High Performance Computing System (HPCS) Applications\" W3S Workshop - 26th International Conference on Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Dahlgren|T.L."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/1127878.1127900",
+  "title": "A historical perspective on runtime assertion checking in software development",
+  "year": 2006,
+  "venue": "ACM SIGSOFT Software Engineering Notes",
+  "type": "journal-article",
+  "authors": [
+   "Clarke|Lori A.",
+   "Rosenblum|David S."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0004877804800487",
+  "title": "Runtime Assertion Checking and Theorem Proving for Concurrent and Distributed Systems",
+  "year": 2014,
+  "venue": "Proceedings of the 2nd International Conference on Model-Driven Engineering and Software Development",
+  "type": "proceedings-article",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ets.2018.8400691",
+  "title": "A software reconfigurable assertion checking unit for run-time error detection",
+  "year": 2018,
+  "venue": "2018 IEEE 23rd European Test Symposium (ETS)",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhou|Yumin",
+   "Burg|Sebastian",
+   "Bringmann|Oliver",
+   "Rosenstiel|Wolfgang"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2491411.2491452",
+  "title": "Differential assertion checking",
+  "year": 2013,
+  "venue": "Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Lahiri|Shuvendu K.",
+   "McMillan|Kenneth L.",
+   "Sharma|Rahul",
+   "Hawblitzel|Chris"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2830719.2830729",
+  "title": "Distributed Assertion Checking Using Symbolic Execution",
+  "year": 2015,
+  "venue": "ACM SIGSOFT Software Engineering Notes",
+  "type": "journal-article",
+  "authors": [
+   "Yang|Guowei",
+   "Do|Quan Chau Dong",
+   "Wen|Junye"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/1082983.1083138",
+  "title": "A model-driven approach to enforce crosscutting assertion checking",
+  "year": 2005,
+  "venue": "ACM SIGSOFT Software Engineering Notes",
+  "type": "journal-article",
+  "authors": [
+   "Zhang|Jing",
+   "Gray|Jeff",
+   "Lin|Yuehua"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst.2009.19",
+  "title": "Using JML Runtime Assertion Checking to Automate Metamorphic Testing in Applications without Test Oracles",
+  "year": 2009,
+  "venue": "2009 International Conference on Software Testing Verification and Validation",
+  "type": "proceedings-article",
+  "authors": [
+   "Murphy|Christian",
+   "Shen|Kuang",
+   "Kaiser|Gail"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/cmpsac.1978.810479",
+  "title": "Dynamic validation of programs using assertion checking facilities",
+  "year": null,
+  "venue": "The IEEE Computer Society's Second International Computer Software and Applications Conference, 1978. COMPSAC '78.",
+  "type": "proceedings-article",
+  "authors": [
+   "Wen-Tsuen Chen|",
+   "Jone-Ping Ho|",
+   "Chia-Hsien Wen|"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sefm.2010.15",
+  "title": "temporaljmlc: A JML Runtime Assertion Checker Extension for Specification and Checking of Temporal Properties",
+  "year": 2010,
+  "venue": "2010 8th IEEE International Conference on Software Engineering and Formal Methods",
+  "type": "proceedings-article",
+  "authors": [
+   "Hussain|Faraz",
+   "Leavens|Gary T."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-3-642-12029-9_24",
+  "title": "Efficient Runtime Assertion Checking of Assignable Clauses with Datagroups",
+  "year": 2010,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Lehner|Hermann",
+   "M\u00fcller|Peter"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/hase.2004.1281742",
+  "title": "Specification test coverage adequacy criteria = specification test generation in adequacy criteria?",
+  "year": null,
+  "venue": "Eighth IEEE International Symposium on High Assurance Systems Engineering, 2004. Proceedings.",
+  "type": "proceedings-article",
+  "authors": [
+   "Heimdahl|M.P.E.",
+   "George|D.",
+   "Weber|R."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2593501.2593505",
+  "title": "Social coverage for customized test adequacy and selection criteria",
+  "year": 2014,
+  "venue": "Proceedings of the 9th International Workshop on Automation of Software Test",
+  "type": "proceedings-article",
+  "authors": [
+   "Miranda|Breno",
+   "Bertolino|Antonia"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icst.2013.22",
+  "title": "Behaviour Abstraction Coverage as Black-Box Adequacy Criteria",
+  "year": 2013,
+  "venue": "2013 IEEE Sixth International Conference on Software Testing, Verification and Validation",
+  "type": "proceedings-article",
+  "authors": [
+   "Czemerinski|Hernan",
+   "Braberman|Victor",
+   "Uchitel|Sebastian"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4159/harvard.9780674420120.c5",
+  "title": "CHAPTER II. MEASUREMENT OF COVERAGE",
+  "year": 1947,
+  "venue": "Adequacy of Workmen's Compensation",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.4324/9780203072103-20",
+  "title": "Criteria of Adequacy",
+  "year": 2013,
+  "venue": "Imagining the University",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/hpcc64274.2024.00062",
+  "title": "Revisiting Diversity Metrics and Coverage Criteria for Deep Neural Networks Quality Assessment from the Perspective of Test Adequacy",
+  "year": 2024,
+  "venue": "2024 IEEE International Conference on High Performance Computing and Communications (HPCC)",
+  "type": "proceedings-article",
+  "authors": [
+   "Wang|Siyi",
+   "Dai|Shengxin",
+   "Guo|Bing",
+   "Luo|Zheng"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.5086504",
+  "title": "Reforming the Pension System in Nepal: Sustainability, Adequacy, and Coverage",
+  "year": 2025,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Paudel, PhD|Dilip Raj"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1596/36253",
+  "title": "Adequacy of Coverage, Targeting and Benefits of Social Protection Programs",
+  "year": 2021,
+  "venue": "",
+  "type": "book",
+  "authors": [
+   "Sabbih|Mostafa Amir",
+   "Coudouel|Aline"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.22541/au.177516559.93068302/v1",
+  "title": "Coverage Adequacy as an Alternative to Demand Forecasting for Aftermarket Spare Parts: The DNEIF Framework",
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Pardasani|Arjun"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/b978-0-323-54763-5.50033-7",
+  "title": "Specimen Types in Respiratory Cytology and Adequacy Criteria",
+  "year": 2018,
+  "venue": "Diagnostic Pathology: Cytopathology",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.6717138",
+  "title": "Nowcasting Kuwait's IMF ARA Reserve Adequacy Coverage Without Short-Term Debt or Other Liabilities Data",
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Mohammad|Qutaiba"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.65425/641869",
+  "title": "Adequacy and Coverage of Social Assistance Benefits During the Covid-19 Pandemic",
+  "year": 2020,
+  "venue": "",
+  "type": "report",
+  "authors": [
+   "(TNPK)|Tim Nasional Percepatan Penanggulangan Kemiskinan"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/512058.512060",
+  "title": "Change impact analysis for aspect-oriented software evolution",
+  "year": 2002,
+  "venue": "Proceedings of the international workshop on Principles of software evolution  - IWPSE '02",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhao|Jianjun"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2024445.2024454",
+  "title": "A taxonomy for software change impact analysis",
+  "year": 2011,
+  "venue": "Proceedings of the 12th International Workshop on Principles of Software Evolution and the 7th annual ERCIM Workshop on Software Evolution",
+  "type": "proceedings-article",
+  "authors": [
+   "Lehnert|Steffen"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsea.2010.43",
+  "title": "Change Impact Analysis and Software Evolution Specification for Continually Evolving Systems",
+  "year": 2010,
+  "venue": "2010 Fifth International Conference on Software Engineering Advances",
+  "type": "proceedings-article",
+  "authors": [
+   "Vora|Urjaswala"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsme.2016.69",
+  "title": "Modular Change Impact Analysis for Configurable Software",
+  "year": 2016,
+  "venue": "2016 IEEE International Conference on Software Maintenance and Evolution (ICSME)",
+  "type": "proceedings-article",
+  "authors": [
+   "Angerer|Florian",
+   "Prahofer|Herbert",
+   "Grunbacher|Paul"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/saner64311.2025.00023",
+  "title": "Towards Change Impact Analysis in Microservices-based System Evolution",
+  "year": 2025,
+  "venue": "2025 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
+  "type": "proceedings-article",
+  "authors": [
+   "Cerny|Tomas",
+   "Goulis|Gabriel",
+   "Abdelfattah|Amr S."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/iwpse.2005.8",
+  "title": "Change Impact Analysis for Requirement Evolution using Use Case Maps",
+  "year": null,
+  "venue": "Eighth International Workshop on Principles of Software Evolution (IWPSE'05)",
+  "type": "proceedings-article",
+  "authors": [
+   "Hassine|J.",
+   "Rilling|J.",
+   "Hewitt|J."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsme.2019.00031",
+  "title": "Aiding Code Change Understanding with Semantic Change Impact Analysis",
+  "year": 2019,
+  "venue": "2019 IEEE International Conference on Software Maintenance and Evolution (ICSME)",
+  "type": "proceedings-article",
+  "authors": [
+   "Hanam|Quinn",
+   "Mesbah|Ali",
+   "Holmes|Reid"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/saner.2016.101",
+  "title": "Generalizing the Analysis of Evolutionary Coupling for Software Change Impact Analysis",
+  "year": 2016,
+  "venue": "2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER)",
+  "type": "proceedings-article",
+  "authors": [
+   "Rolfsnes|Thomas",
+   "Di Alesio|Stefano",
+   "Behjati|Razieh",
+   "Moonen|Leon",
+   "Binkley|Dave W."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.31274/rtd-20200716-65",
+  "title": "Software change impact analysis for Java code",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Ma|Xiaozheng"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4018/978-1-61350-438-3.ch002",
+  "title": "Change Impact Analysis for UML Model Maintenance",
+  "year": null,
+  "venue": "Emerging Technologies for the Evolution and Maintenance of Software Models",
+  "type": "book-chapter",
+  "authors": [
+   "Keller|Anne",
+   "Demeyer|Serge"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7717/peerjcs.293/fig-2",
+  "title": "Figure 2: Fault detection capability versus test suite length of the presented methods.",
+  "year": null,
+  "venue": "",
+  "type": "component",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.2139/ssrn.7123939",
+  "title": "Optimizing Test Suite Quality: A Minimalist Approach to Fault Detection in Python Codebases",
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "authors": [
+   "Liang|Eric"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/icsm.2007.4362646",
+  "title": "Fault Detection Probability Analysis for Coverage-Based Test Suite Reduction",
+  "year": 2007,
+  "venue": "2007 IEEE International Conference on Software Maintenance",
+  "type": "proceedings-article",
+  "authors": [
+   "McMaster|Scott",
+   "Memon|Atif"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/tse.2007.18",
+  "title": "Improving Fault Detection Capability by Selectively Retaining Test Cases during Test Suite Reduction",
+  "year": 2007,
+  "venue": "IEEE Transactions on Software Engineering",
+  "type": "journal-article",
+  "authors": [
+   "Jeffrey|Dennis",
+   "Gupta|Neelam"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/2338965.2336759",
+  "title": "State aware test case regeneration for improving web application test suite coverage and fault detection",
+  "year": 2012,
+  "venue": "Proceedings of the 2012 International Symposium on Software Testing and Analysis",
+  "type": "proceedings-article",
+  "authors": [
+   "Alshahwan|Nadia",
+   "Harman|Mark"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0012063900003538",
+  "title": "Semantic Coverage: Measuring Test Suite Effectiveness",
+  "year": 2023,
+  "venue": "Proceedings of the 18th International Conference on Software Technologies",
+  "type": "proceedings-article",
+  "authors": [
+   "Al Blwi|Samia",
+   "Ayad|Amani",
+   "Khaireddine|Besma",
+   "Marsit|Imen",
+   "Mili|Ali"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/3-540-45136-6_20",
+  "title": "Test Suite Reduction and Fault Detecting Effectiveness: An Empirical Evaluation",
+  "year": 2001,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Chen|Tsong Y.",
+   "Lau|Man F."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/test.1988.207809",
+  "title": "Fault detection effectiveness of weighted random patterns",
+  "year": null,
+  "venue": "International Test Conference 1988 Proceeding@m_New Frontiers in Testing",
+  "type": "proceedings-article",
+  "authors": [
+   "Waicukauski|J.A.",
+   "Lindbloom|E."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sate.2017.10",
+  "title": "A Test Suite Reduction Approach to Improving the Effectiveness of Fault Localization",
+  "year": 2017,
+  "venue": "2017 International Conference on Software Analysis, Testing and Evolution (SATE)",
+  "type": "proceedings-article",
+  "authors": [
+   "Fu|Wenhao",
+   "Yu|Huiqun",
+   "Fan|Guisheng",
+   "Ji|Xiang",
+   "Pei|Xin"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.4028/www.scientific.net/amm.577.1022",
+  "title": "A Test-Suite Reduction Approach for Improving Path-Based Fault-Localization Effectiveness",
+  "year": 2014,
+  "venue": "Applied Mechanics and Materials",
+  "type": "journal-article",
+  "authors": [
+   "Gong|Dan Dan",
+   "Su|Xiao Hong",
+   "Wang|Tian Tian",
+   "Ma|Pei Jun"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/j.cl.2013.04.001",
+  "title": "A test-suite reduction approach to improving fault-localization effectiveness",
+  "year": 2013,
+  "venue": "Computer Languages, Systems &amp; Structures",
+  "type": "journal-article",
+  "authors": [
+   "Dandan|Gong",
+   "Tiantian|Wang",
+   "Xiaohong|Su",
+   "Peijun|Ma"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3478301.3478304",
+  "title": "Empirically Comparing the Test Suite Reduction Techniques in Continuous Integration Process",
+  "year": 2021,
+  "venue": "The 2nd European Symposium on Computer and Communications",
+  "type": "proceedings-article",
+  "authors": [
+   "Intasara|Jutarporn",
+   "Lin|Chu-Ti"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/bfb0028735",
+  "title": "Integrating proof-based and model-checking techniques for the formal verification of cryptographic protocols",
+  "year": 1998,
+  "venue": "Lecture Notes in Computer Science",
+  "type": "book-chapter",
+  "authors": [
+   "Bolignano|Dominique"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.14711/thesis-hdl172503",
+  "title": "Scalable Formal Verification of HLS Designs: A Methodology with Semantic and Proof Awareness",
+  "year": null,
+  "venue": "",
+  "type": "dissertation",
+  "authors": [
+   "Zhou|Xiaofeng"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1007/978-1-4419-5998-0_6",
+  "title": "Connecting Different Proof Styles",
+  "year": 2010,
+  "venue": "Scalable Techniques for Formal Verification",
+  "type": "book-chapter",
+  "authors": [
+   "Ray|Sandip"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.1/reviews/2",
+  "title": "Peer Review #2 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.1)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.3/reviews/3",
+  "title": "Peer Review #3 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.3)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.3/reviews/2",
+  "title": "Peer Review #2 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.3)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.1/reviews/3",
+  "title": "Peer Review #3 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.1)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.2/reviews/3",
+  "title": "Peer Review #3 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.2)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.4/reviews/3",
+  "title": "Peer Review #3 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.4)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.2/reviews/1",
+  "title": "Peer Review #1 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.2)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.7287/peerj-cs.1284v0.2/reviews/2",
+  "title": "Peer Review #2 of \"Transport Layer Security 1.0 handshake protocol formal verification case study: How to use a proof script generator for existing large proof scores (v0.2)\"",
+  "year": 2023,
+  "venue": "",
+  "type": "peer-review",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/9781315204970-1",
+  "title": "Overview of Model-Based Testing",
+  "year": 2017,
+  "venue": "The Craft of Model-Based Testing",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/9781315204970-20",
+  "title": "Open-Source Model-Based Testing Tools",
+  "year": 2017,
+  "venue": "The Craft of Model-Based Testing",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-25",
+  "title": "Model-Based Testing of Hybrid Systems",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-22",
+  "title": "Model-Based X-in-the-Loop Testing",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-31",
+  "title": "Model-Based Testing in Embedded Automotive Systems",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-34",
+  "title": "Model-Based Testing of Analog Embedded Systems Components",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/9781315204970-13",
+  "title": "Information Provided to Model-Based Testing Tool Vendors",
+  "year": 2017,
+  "venue": "The Craft of Model-Based Testing",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-27",
+  "title": "Model-Based Passive Testing of Safety-Critical Components",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-19",
+  "title": "Model-Based Integration Testing with Communication Sequence Graphs",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1002/9781119130161.ch1",
+  "title": "Introduction to model\u2010based testing",
+  "year": 2016,
+  "venue": "Model\u2010Based Testing Essentials",
+  "type": "other",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.1201/b11321-11",
+  "title": "Test Framework Architectures for Model-Based Embedded System Testing",
+  "year": 2017,
+  "venue": "Model-Based Testing for Embedded Systems",
+  "type": "book-chapter",
+  "authors": []
+ },
+ {
+  "src": "crossref",
+  "id": "10.5220/0006849603640371",
+  "title": "Combining Design by Contract and Inference Rules of Programming Logic towards Software Reliability",
+  "year": 2018,
+  "venue": "Proceedings of the 15th International Joint Conference on e-Business and Telecommunications",
+  "type": "proceedings-article",
+  "authors": [
+   "Aldausari|Nuha",
+   "Zhang|Cui",
+   "Dai|Jun"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3803437.3807384",
+  "title": "SPECTRA: Specification-Oriented Static Analysis for Smart Contract Security and Behavioral Contract Inference",
+  "year": 2026,
+  "venue": "Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering",
+  "type": "proceedings-article",
+  "authors": [
+   "Zhang|Haoyi",
+   "Liang|Tianfeng",
+   "Ran|Huaijin",
+   "Hasan|Md Maruf",
+   "Tang|Xunzhu"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.3390/s20154252",
+  "title": "Smart Contract Centric Inference Engine For Intelligent Electric Vehicle Transportation System",
+  "year": 2020,
+  "venue": "Sensors",
+  "type": "journal-article",
+  "authors": [
+   "Khan|Prince Waqas",
+   "Byun|Yung-Cheol"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/sp54263.2024.00126",
+  "title": "SmartInv: Multimodal Learning for Smart Contract Invariant Inference",
+  "year": 2024,
+  "venue": "2024 IEEE Symposium on Security and Privacy (SP)",
+  "type": "proceedings-article",
+  "authors": [
+   "Wang|Sally Junsong",
+   "Pei|Kexin",
+   "Yang|Junfeng"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.5381/jot.2012.11.1.a6",
+  "title": "JSConTest: Contract-Driven Testing and Path Effect Inference for JavaScript.",
+  "year": 2012,
+  "venue": "The Journal of Object Technology",
+  "type": "journal-article",
+  "authors": [
+   "Heidegger|Phillip",
+   "Thiemann|Peter"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/ciss56502.2023.10089699",
+  "title": "Prospect Theoretic Contract Design in a Stackelberg Game via Bayesian Inference",
+  "year": 2023,
+  "venue": "2023 57th Annual Conference on Information Sciences and Systems (CISS)",
+  "type": "proceedings-article",
+  "authors": [
+   "Jamalinia|Elham",
+   "Venkitasubramaniam|Parv"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.3390/app11031010",
+  "title": "Towards Blockchain-Based Federated Machine Learning: Smart Contract for Model Inference",
+  "year": 2021,
+  "venue": "Applied Sciences",
+  "type": "journal-article",
+  "authors": [
+   "Drungilas|Vaidotas",
+   "Vai\u010diukynas|Evaldas",
+   "Jurgelaitis|Mantas",
+   "Butkien\u0117|Rita",
+   "\u010ceponien\u0117|Lina"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3278177.3278181",
+  "title": "On the significance of contract-based typestate specification",
+  "year": 2018,
+  "venue": "Proceedings of the 1st ACM SIGSOFT International Workshop on Automated Specification Inference",
+  "type": "proceedings-article",
+  "authors": [
+   "Khairunnesa|Samantha Syeda",
+   "Nguyen|Hoan Anh",
+   "Rajan|Hridesh"
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1016/j.ress.2015.01.011",
+  "title": "Imprecise inference for warranty contract analysis",
+  "year": 2015,
+  "venue": "Reliability Engineering &amp; System Safety",
+  "type": "journal-article",
+  "authors": [
+   "Utkin|Lev V.",
+   "Coolen|Frank P.A.",
+   "Gurov|Sergey V."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1145/3278177.3278179",
+  "title": "Contract discovery from black-box components",
+  "year": 2018,
+  "venue": "Proceedings of the 1st ACM SIGSOFT International Workshop on Automated Specification Inference",
+  "type": "proceedings-article",
+  "authors": [
+   "Sharma|Vaibhav",
+   "Byun|Taejoon",
+   "McCamant|Stephen",
+   "Rayadurgam|Sanjai",
+   "Heimdahl|Mats P. E."
+  ]
+ },
+ {
+  "src": "crossref",
+  "id": "10.1109/access.2026.3733686",
+  "title": "Verifiable Legal Contract Question Answering Using Natural Language Inference Grounding and Knowledge Graphs",
+  "year": 2026,
+  "venue": "IEEE Access",
+  "type": "journal-article",
+  "authors": [
+   "Gautam|Ganesh",
+   "Adhikari|Prabin",
+   "Sah|Nirajan",
+   "Thapa|Rohan",
+   "Cheol|Lee",
+   "Shrestha|Bhanu"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.40119v1",
+  "title": "Automatically Building Machine-Checked Assurance Cases from C Codebases to Requirements",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Haokun Li",
+   "Zhongyi Wang",
+   "Guanyan Li",
+   "Xiao Yi",
+   "Shengchao Qin",
+   "Jianwei Yin",
+   "Mingshuai Chen"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39022v1",
+  "title": "From Verification Failures to Reusable Guidance for Coding Agents",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Yuqing Zhai",
+   "Xiaohong Chen",
+   "Lingming Zhang",
+   "Sriram Vishwanath",
+   "Grigore Rosu"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38981v1",
+  "title": "Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Jianxing Qin",
+   "Alexander Du",
+   "Danfeng Zhang",
+   "Matthew Lentz",
+   "Danyang Zhuo"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38497v1",
+  "title": "The Mode of Null-A: Compositional Computation of a Generalized Inverse",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Barak A. Pearlmutter",
+   "Jeffrey Mark Siskind"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38439v1",
+  "title": "Automated Prefetching for Object Spatial Programming Using Temporal Trace Graphs",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Baichuan Li",
+   "Jayanaka Dantanarayana",
+   "Savini Kashmira",
+   "Lingjia Tang",
+   "Jason Mars"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37726v1",
+  "title": "Modelling Shared-Space Coordination in mCRL2: a Bach-to-mCRL2 Translation Framework",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Corentin Reuther",
+   "Jean-Marie Jacquet"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.35425v1",
+  "title": "Semantic Prefix Oracles for LLM Decoding: Contracts and Differential Validation",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Paul Kronlund-Drouault"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34886v1",
+  "title": "Fewer Assumptions by Design: A Reusable Skill for LLM-Assisted Verus Verification",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Andrada-Livia Antoneac",
+   "Dorel Lucanu",
+   "Drago\u015f Teodor Gavrilu\u0163"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.33813v1",
+  "title": "Designing a Producer-driven Stream Protocol by Formal Refinement",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Erick Lavoie"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.33081v1",
+  "title": "SafePar: Monitoring Asynchrony in Microservices",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Karuna Grewal",
+   "P. Brighten Godfrey",
+   "Justin Hsu",
+   "Umang Mathur"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.32877v1",
+  "title": "Multi-language Program Logics",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Alexander Loitzl",
+   "Niklas M\u00fcck",
+   "Michael Sammler"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.30394v1",
+  "title": "SafeNom: Data-Aware Microservice Policies",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Karuna Grewal",
+   "P. Brighten Godfrey",
+   "Justin Hsu"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.29219v1",
+  "title": "Schedules Are Solvable Symbols: Tuning-Free Compilation of Tile Programs on Dataflow Architectures",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Heru Wang",
+   "Wei Li",
+   "Zhenyu Bai",
+   "Tulika Mitra"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.25335v1",
+  "title": "GRADE-RTL: Evaluating LLM-Generated RTL Beyond Compilation",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Hepziba Susan",
+   "Shivaranjani G. R.",
+   "Malik Imran",
+   "Muhammad Rashid",
+   "Sumathi Gokulanathan",
+   "Zain Ul Abideen"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.24628v1",
+  "title": "Bridging the Vendor Gap: Enabling AMD GPU Support for Awkward Array via ROCm/HIP for the HL-LHC Era",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Ianna Osborne",
+   "Maxym Naumchyk",
+   "Tai Sakuma",
+   "Andres Rios-Tascon",
+   "Peter Elmer"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39717v1",
+  "title": "Trust Is Not a Score: Runtime Assurance Contracts for High-Risk AI Agents",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Serhii Zabolotnii"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39678v1",
+  "title": "Aletheia: Permission-Minimality Testing for Coding-Agent Rules",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Jieke Shi",
+   "Yuchen Chen",
+   "Junda He",
+   "Yue Liu",
+   "David Lo"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39568v1",
+  "title": "Self-Spec Verifiable Code Generation",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Jiaru Qian",
+   "Yihong Dong",
+   "Yongmin Li",
+   "Hao Zhu",
+   "Bin Gu",
+   "Ge Li"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39086v1",
+  "title": "Trustworthy Runtime Error Healing in Real-World Repositories: A Benchmark and Guardrail",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Gou Tan",
+   "Pengfei Chen",
+   "Zhensu Sun",
+   "Jieke Shi",
+   "Junkai Chen",
+   "Ting Zhang",
+   "Weifeng Sun",
+   "Junda He",
+   "Shuai Liang",
+   "Chuanfu Zhang",
+   "Lwin Khin Shar",
+   "David Lo"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38983v1",
+  "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Yang Wang"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38762v1",
+  "title": "Adaptive-GEPA: Make Your Harness Fit Heterogeneous Requests",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Tianyu Chen",
+   "Yasi Zhang",
+   "Ruiyi Wang",
+   "Xinran Zhao",
+   "Taoran Li",
+   "Mingyuan Zhou"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38499v1",
+  "title": "MallocSan: A Memory Safety Tool for Native Closed-Source Applications",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Adel Belkhiri",
+   "Michel Dagenais",
+   "Maxime Lamothe"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38335v1",
+  "title": "E2E-SWE: Benchmarking LLMs on Building Working Codebases from Scratch",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Hantian Ding",
+   "Chloe Bi",
+   "Jiacheng Zhu",
+   "John Yang",
+   "Matt Deitke",
+   "Pengcheng Yin",
+   "Zijian Wang",
+   "Rui Hou"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37985v1",
+  "title": "Merged, Not Measured: An Empirical Study of Performance Issues Fixed by Coding Agents",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Zhenyu Qi",
+   "Haotang Li",
+   "Jinfu Chen",
+   "Huashan Chen",
+   "Yutong Zhao",
+   "Derui Zhu",
+   "Tomas Cerny",
+   "Bo Liu",
+   "Sen He"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37849v1",
+  "title": "Is manual software optimization a thing of the past?",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Pavlin G. Poli\u010dar",
+   "Martin \u0160pendl",
+   "Toma\u017e Ho\u010devar"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38269v1",
+  "title": "Zero2Repo: Can Coding Agents Build Repositories from Scratch?",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Pei Yang",
+   "Tianyu Shi",
+   "Yuhang Yao",
+   "Wanyi Chen",
+   "Tongyun Yang",
+   "Dun Pei",
+   "Haonan Wang",
+   "Pengbin Feng",
+   "Guanxu Yu",
+   "Jingchun Huang",
+   "Zeyu Zhang",
+   "Shuhan Sun",
+   "Hao Li",
+   "Xiang Li",
+   "Jie Xiao",
+   "Xinyu Wang",
+   "Hanxin Chen",
+   "Daqi Li",
+   "Qi Jia",
+   "Hongshan Lin",
+   "Zhizhou Gu",
+   "Zijun Tian",
+   "Weizhi Du",
+   "Lynn Ai",
+   "Eric Yang"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37526v1",
+  "title": "Exploring Emotional Intelligence in Software Testing",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Cristina Martinez Montes",
+   "Pushpamalar Rajendran",
+   "Grace Karuri",
+   "Felix Dobslaw"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37322v1",
+  "title": "Mubric: Mutation Testing-Guided Rubric Generation for LLM Evaluation",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Jiayuxuan Yang",
+   "Jie M. Zhang",
+   "Yiling Lou",
+   "Zhenpeng Chen"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37315v1",
+  "title": "Do Agent Benchmarks Do What They Say? An Executable-Contract Audit of Tool-Using Agent Environments",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Rohith Reddy Bellibatlu",
+   "Zichong Wang",
+   "Wenbin Zhang"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37669v1",
+  "title": "Retrieve, Reproduce, Reveal: Dissecting Retrieval-Augmented Software Vulnerability Detection",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Sabrina Kaniewski",
+   "Tim Kr\u00e4mer",
+   "Julius B\u00e4chle",
+   "Markus Enzweiler",
+   "Michael Menth",
+   "Tobias Heer"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37294v1",
+  "title": "SafeLLM4SE: Statistical Evaluation and Reporting for LLM-based Software Engineering Systems",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Francisco Ortin"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37728v1",
+  "title": "Formal Reasoning about Performance Models",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Moussa Labbadi",
+   "Rupak Majumdar",
+   "V. R. Sathiyanarayana",
+   "Sadegh Soudjani"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38242v1",
+  "title": "A Calculus for Units of Measure with Conversion",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Eric Allen"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38237v1",
+  "title": "A Trust Ledger and an Execution Check for CPG-Based C-to-Lean 4 Autoformalization: Separating Declined from Silently Incorrect Translations",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Ishan K Singavarapu",
+   "Manish Bhatt"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34925v1",
+  "title": "On Asynchrony and Reversibility in CCS",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Hern\u00e1n Melgratti",
+   "Claudio Antares Mezzina",
+   "G. Michele Pinna"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34883v1",
+  "title": "The Formalization of two Computational Models in Dafny",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "\u015etefan Ciob\u00e2c\\b{a}",
+   "Diana-Elena Gratie",
+   "Drago\u015f-Irinel Rotariu"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34882v1",
+  "title": "Formalizing the Omega Test in Dafny",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Ariadna Br\u0103nici-Faraon",
+   "\u015etefan Ciob\u00e2c\u0103",
+   "Diana-Elena Gratie"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34069v1",
+  "title": "Towards Certificate-Driven Software Porting: A Self-Improving Agentic Harness for Scientific Program Optimization",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Piyush Jha",
+   "Aishik Ghosh",
+   "Vijay Ganesh"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39009v1",
+  "title": "Improved Tristate Multiplication With Formalization in Rocq",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Nandakumar Edamana",
+   "Piyush P Kurur",
+   "Unnikrishnan Cheramangalath"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38492v1",
+  "title": "Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Volkan Da\u011fl\u0131",
+   "Zerrin Da\u011fl\u0131",
+   "Da\u011fhan Da\u011fl\u0131"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37440v1",
+  "title": "Dynamic Proof Theory for Dynamic Epistemic Logic",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Clara Lerouvillois",
+   "Francesca Poggiolesi"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37337v1",
+  "title": "A Rank-Preserving Gaifman Normal Form for First-Order Logic on Weighted Structures",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Steffen van Bergerem",
+   "Martin Grohe",
+   "Charlotte Lenz",
+   "Nicole Schweikardt"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.36663v1",
+  "title": "GenLimitLib: A Formal Library for Language Generation in the Limit and AI-Assisted Mathematical Research",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Shuangping Li",
+   "Peng Zhang"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.36279v1",
+  "title": "Proofs Without Nominals: G\u00f6del's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Christoph Benzm\u00fcller"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.35691v1",
+  "title": "Coinductive reasoning for parametrized functors and monads",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Ugo Dal Lago",
+   "Zeinab Galal"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34922v1",
+  "title": "Safe Composition of CFSM Systems via Partial Gateways",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Franco Barbanera"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34894v1",
+  "title": "Complete Heyting Algebra Semantics for an Intuitionistic Version of Matching Logic (Extended Abstract)",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Hora\u0163iu Cheval"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34892v1",
+  "title": "Dependently Typed Model Composition for Matching Logic",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "\u00c1d\u00e1m Kurucz",
+   "P\u00e9ter Bereczky",
+   "D\u00e1niel Horp\u00e1csi"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34889v1",
+  "title": "Certification of Bilateral Patience Sort in Theorema and Rocq",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Isabela Dr\u01cemnesc",
+   "Tudor Jebelean",
+   "Sorin Stratulat"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.40046v1",
+  "title": "Freely Generated Categorical Structures and Automatic Differentiation, PhD Thesis (Introduction and Conclusion)",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Fernando Lucatelli Nunes"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37233v1",
+  "title": "DatalogBench: Evaluating Large Language Models on Text-to-Datalog Synthesis",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Yuan Li",
+   "Hanyun Jiang",
+   "Guowei Tian",
+   "Chengpeng Wang",
+   "Peisen Yao"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.36065v1",
+  "title": "Irene: Equivalence Checking of Hybrid Quantum Programs via Structure-Preserving Symbolic Reduction",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Jingyu Ke",
+   "Jingyang Li",
+   "Guoqiang Li"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34927v1",
+  "title": "Session Type State Spaces Form Lattices",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Alexandre Zua Caldeira"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34089v1",
+  "title": "Faultless: A Program Equivalence Technique for Validating and Evaluating Neural Decompilers",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Luke Dramko",
+   "Claire Le Goues",
+   "Edward Schwartz"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39957v1",
+  "title": "Learning When and How to Intervene: A Hindsight-Distilled Sentinel for Coding Agents",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Jiangrui Zhao",
+   "Chenglong Li",
+   "Meng Zhang",
+   "Xiaoting Du"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38807v1",
+  "title": "PatchHolmes: Agentic Patch Retrieval via Listwise Selection",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Guanqun Yang",
+   "Yingming Zhou",
+   "Jiangrui Zheng",
+   "Shudong Hao",
+   "Xueqing Liu"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.33547v2",
+  "title": "Neuro-Symbolic Indirect-Call Analysis under Opaque Pointers",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Kaixuan Li",
+   "Bozhi Wu",
+   "Jian Zhang",
+   "Peixin Wang",
+   "Ting Su",
+   "Yang Liu"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.30254v1",
+  "title": "Forte: A sensitivity type system for imperative Rust",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Chik\u00e9 Abuah"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.30062v1",
+  "title": "Lifting the Preprocessor with Oxidize: Structure-Preserving C-to-Rust Translation (Technical Report)",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Robbe De Greef",
+   "Th\u00e9o Engels",
+   "Felix Van den Broucke",
+   "Ken Hasselmann",
+   "Antonio Paolillo"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39909v1",
+  "title": "DoGBench: Can Agents Meet Expert Standards for User-Facing Documentation?",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Frances Liu",
+   "Manny Silva",
+   "Paige Calvert",
+   "Ayu Adiati",
+   "Sarah Sanders"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39783v1",
+  "title": "COMPASS: Predicting the Relationship of Multiple Patches for Vulnerabilities with LLMs",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Yi Song",
+   "Dongchen Xie",
+   "Xiaoyuan Xie",
+   "He Zhang",
+   "Lin Xu",
+   "Chunying Zhou",
+   "Zhi Jin"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.39284v1",
+  "title": "EngramBench: A Capability-Grounded Benchmark for Skill-Evolution Harnesses",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Zhixuan Tan",
+   "Pengjie Gu",
+   "Zhao Li",
+   "Yihan Hu",
+   "Xu He",
+   "Dong Li",
+   "Jianye Hao"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38885v1",
+  "title": "Doing More with Less Tokens: Hierarchical Reinforcement Learning for Efficient Coding Agents",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Haobin Li",
+   "Liang Jiang",
+   "Zhenyu Huang",
+   "Mouxing Yang",
+   "Xi Peng"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38883v1",
+  "title": "Toward Quantum Software Automation: A Quantum-Aware Harness for LLM-Guided Evolution",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Lily Jiaxin Wan",
+   "Deming Chen",
+   "Klara Nahrstedt",
+   "Bo Chen"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.34646v1",
+  "title": "Episodic Loops: Finitary Event Structures and Operational Semantics for C11 Programs with Retries",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Christian Kissig",
+   "Jay Richards",
+   "Mark Batty"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.40086v1",
+  "title": "Leveraging Game-Based Platform to Teach Code Refactoring: An Experience with Refactoria",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Eman Abdullah AlOmar",
+   "Christopher Engelbart",
+   "Stephen Pachucki",
+   "Nerissa Lundquist",
+   "David Van Hist"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38504v1",
+  "title": "An Empirical Study of Architectural Shift from Traditional to AI-Enabled Simulink Controllers",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Hadiza Umar Yusuf",
+   "Khouloud Gaaloul"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.38402v1",
+  "title": "From Codebase to Culprit (C2C): Reducing the Search Space for Bugs with Semantic Retrieval and Hierarchical Reinforcement Learning",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Ankur Garg",
+   "Corey Yang-Smith",
+   "Rishav Rishav",
+   "Ahmad Abdellatif",
+   "Samira Ebrahimi Kahou"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37864v1",
+  "title": "AgentBug-Smith: Automatically Reproducing Real-World Harness Bugs in Agentic Systems",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Yiming Cheng",
+   "Alfin Wijaya Rahardja",
+   "Mengshi Zhang",
+   "Zihao Chen",
+   "Zhenpeng Chen",
+   "Yiling Lou"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37645v1",
+  "title": "Beyond Productivity: Measuring Developers' Cognitive Load During GenAI-Supported Software Development",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Charlotte Brandebusemeyer",
+   "Daniela Gasser",
+   "Tobias Schimmer",
+   "Bert Arnrich"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37603v1",
+  "title": "Independent Verification Paths Are Not Independent: A Case Study of Common-Mode Failure in a Satellite Catalogue Pipeline",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "Fabio Rovai"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "id": "2609.37531v1",
+  "title": "Profiling the Energy Consumption of Serverless Functions with Joule Profiler",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "authors": [
+   "J\u00e9r\u00e9my Woirhaye",
+   "Fran\u00e7ois Gibier",
+   "Anderson Andrei Da Silva",
+   "Francescomaria Faticanti",
+   "Thomas Ledoux",
+   "Romain Rouvoy"
+  ]
+ }
+]

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/YEKCFomwc+p+hQXQVrZT0T7oIZU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.30062&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.30062" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.30062v1</id>
+    <title>Lifting the Preprocessor with Oxidize: Structure-Preserving C-to-Rust Translation (Technical Report)</title>
+    <updated>2026-09-24T16:22:17Z</updated>
+    <link href="https://arxiv.org/abs/2609.30062v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.30062v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This technical report accompanies our EuroSys 2027 paper "Lifting the Preprocessor with Oxidize: Structure-Preserving C-to-Rust Translation" (DOI 10.1145/3842654.3848533). Oxidize is a C-to-Rust translator that retains C macros as Rust macros instead of expanding them away, so that the translated code keeps the abstractions its developers wrote. The report collects material the paper cites but has no room for: the translator's intermediate representation, pass structure and back-end emission; the details of macro typing through helper traits and the generic cast macro; the sources and pinned revisions of the nine evaluated C codebases; the per-codebase macro population and how macros are attributed to classes; a roadmap from structure-preserving translation toward safe Rust; the performance overhead study and its methodology; and the configuration and prompt used for the LLM-based baselines.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T16:22:17Z</published>
+    <arxiv:comment>11 pages. Technical report accompanying the EuroSys 2027 paper, DOI 10.1145/3842654.3848533</arxiv:comment>
+    <arxiv:primary_category term="cs.PL"/>
+    <author>
+      <name>Robbe De Greef</name>
+    </author>
+    <author>
+      <name>Théo Engels</name>
+    </author>
+    <author>
+      <name>Felix Van den Broucke</name>
+    </author>
+    <author>
+      <name>Ken Hasselmann</name>
+    </author>
+    <author>
+      <name>Antonio Paolillo</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/uGGAdfr2/M20oZmiQ73fP6/QBrU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.34927&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T23:01:25Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.34927" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.34927v1</id>
+    <title>Session Type State Spaces Form Lattices</title>
+    <updated>2026-09-28T11:26:09Z</updated>
+    <link href="https://arxiv.org/abs/2609.34927v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.34927v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove that the state space of every well-formed session type, quotiented by strongly connected components, forms a bounded lattice; n-ary parallel composition yields product lattices. Two consequences follow: duality preserves the lattice up to isomorphism, and Gay-Hole width subtyping corresponds to lattice embedding for non-recursive types. We validate this on 108 benchmark protocols across networking, databases, distributed systems, AI, and fault tolerance: all form lattices, 93 distributive, 15 non-distributive. Mechanised in Lean 4 with two independently developed tool implementations.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T11:26:09Z</published>
+    <arxiv:comment>In Proceedings ICE 2026, arXiv:2609.30353</arxiv:comment>
+    <arxiv:primary_category term="cs.PL"/>
+    <arxiv:journal_ref>EPTCS 453, 2026, pp. 40-58</arxiv:journal_ref>
+    <author>
+      <name>Alexandre Zua Caldeira</name>
+    </author>
+    <arxiv:doi>10.4204/EPTCS.453.4</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.4204/EPTCS.453.4" title="doi"/>
+  </entry>
+</feed>

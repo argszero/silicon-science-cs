@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/6KgQWWHhG5FKq3TYci1uPDEvJDs</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.34889&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:16Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.34889" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.34889v1</id>
+    <title>Certification of Bilateral Patience Sort in Theorema and Rocq</title>
+    <updated>2026-09-28T10:59:16Z</updated>
+    <link href="https://arxiv.org/abs/2609.34889v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.34889v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This is a case study on a specific version of the Patience Sort algorithm in which we illustrate the evolution of it from an intuitive but inefficient nested recursion into a more complex but more efficient tail recursion, together with its formal implementation and certification in Theorema and Rocq (formerly Coq). We identify some general principles of algorithm transformation, and we develop the necessary background theory and proof methods. As a significant distinctive aspect, the approach in Theorema uses multisets, which simplifies the whole process and makes it more intuitive. The certification process reveals significant differences between the Theorema and Rocq approaches, about which we provide a comparative analysis with respect to algorithm definition, proof development, and proof effort. This analysis offers insights into how algorithm design influences the complexity and structure of formal proofs and demonstrates how non-trivial algorithms can be effectively verified across different formal frameworks.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T10:59:16Z</published>
+    <arxiv:comment>In Proceedings FROM 2026, arXiv:2609.30324</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <arxiv:journal_ref>EPTCS 452, 2026, pp. 138-157</arxiv:journal_ref>
+    <author>
+      <name>Isabela Drǎmnesc</name>
+      <arxiv:affiliation>West University of Timişoara, Romania</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Tudor Jebelean</name>
+      <arxiv:affiliation>RISC, Johannes Kepler University, Austria, ICAM, West University of Timişoara, Romania</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sorin Stratulat</name>
+      <arxiv:affiliation>Université de Lorraine, CNRS, LORIA, France</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.4204/EPTCS.452.10</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.4204/EPTCS.452.10" title="doi"/>
+  </entry>
+</feed>

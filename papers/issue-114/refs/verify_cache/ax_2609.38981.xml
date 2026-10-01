@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/IkLJy25MrkZGK7wj1i1nmdFUkBo</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.38981&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:34:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.38981" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.38981v1</id>
+    <title>Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference</title>
+    <updated>2026-09-30T04:58:09Z</updated>
+    <link href="https://arxiv.org/abs/2609.38981v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.38981v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM inference systems may vary batch composition, prompt chunking, prefill/decode execution, and KV-cache reuse, eviction, or recomputation. These optimizations should not affect system outputs. Production systems, including vLLM's batch-invariant mode and SGLang's deterministic mode, target this goal but lack a formal system-level specification.
+  We formalize deterministic LLM inference: under a fixed model and deployment configuration, requests with the same prompt and initial sampler state produce bitwise-identical logits at corresponding output positions across executions. Our tests find that these production modes produce different logits under some execution variations. To address this limitation, we present Vosti, an inference engine designed and verified against this specification. Vosti chooses kernels independently of runtime engine state and ties cached KV values to their logical token prefixes. Its proof decomposes at the engine/GPU kernel boundary: a Verus inductive proof establishes that scheduling and the paged, prefix-sharing KV-cache preserve output logits, while a Triton analyzer proves bitwise-equal selected kernel outputs across batches, query lengths, and paged KV-cache layouts. Vosti produces bitwise-identical logits across every tested execution variation and achieves performance comparable to vLLM's batch-invariant mode on decode-heavy workloads, while providing a stronger, formally verified determinism guarantee.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T04:58:09Z</published>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Jianxing Qin</name>
+    </author>
+    <author>
+      <name>Alexander Du</name>
+    </author>
+    <author>
+      <name>Danfeng Zhang</name>
+    </author>
+    <author>
+      <name>Matthew Lentz</name>
+    </author>
+    <author>
+      <name>Danyang Zhuo</name>
+    </author>
+  </entry>
+</feed>
