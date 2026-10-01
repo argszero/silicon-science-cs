@@ -195,111 +195,119 @@ success unbound against 0% bound at a 0% false-block rate; [12] makes the bindin
 places it at the `b = 1` end of our axis rather than as a quantity computed across it. Each of these fixes an
 endpoint of the axis we sweep, and none gives the gate a value as a function of the position on it.
 
+The substitution itself has since been systematized and measured in a deployed harness. [32], concurrent
+work published while this study was in preparation, enumerates six ways an approved action can be replaced by an
+executed one — scope, argument, temporal, tool, delegation and semantic laundering — reports a bound-gap rate per
+class over repeated headless runs against a stated authorization policy, and prototypes a keyed token as the
+binding defence. That work supplies the taxonomy and the measured rate for the channel this study prices; what it
+does not carry is the gate's value as a function of the fidelity, which is the quantity the sign law of Section 3
+supplies, together with the threshold below which that value turns negative, which is Section 5.
+
 The defect appears in several time and representation shapes, and each is a different axis of the same channel.
 Staleness: [8] shows a guardrail can approve correctly at check time and be stale by act time, and
-[32] identifies decision conflicts for long-running agents whose authorizing state changes after the check;
+[33] identifies decision conflicts for long-running agents whose authorizing state changes after the check;
 both place the defect on the **time** axis, whereas our substitution channel is a mismatch at a single decision
 instant. Representation: [7] exposes UI desynchronization between what a mobile agent sees and what it acts
 on — a vulnerability class measured as a rate, where we make the same gap a continuous fidelity parameter with a
 sign law. Hardware and OS boundaries: [13] closes the time-of-check-to-time-of-use gap inside a
 root-of-trust-protected subsystem, a mechanism rather than a human reviewer's view. Authority structure:
-[33] argues authority should be held by a substrate other than the agent's own context, and [34]
+[34] argues authority should be held by a substrate other than the agent's own context, and [35]
 studies trust propagation and structural containment when a low-privilege agent can influence a high-privilege
 one; both settle *where* authority should live, not what a human-mediated step is worth once it has been placed.
 
-Attacks and defences bound the same channel from both sides. [35] shows malicious instructions can persist
+Attacks and defences bound the same channel from both sides. [36] shows malicious instructions can persist
 in agent memory and re-enter later execution — persistence is a temporal channel whose harm no single approval's
-fidelity modulates. [36] audits candidate actions before execution to block indirect-injection
-consequences, and [37] gives universal defences for tool-integrated agents; these are *programmatic*
-audits, which our design ladder prices against a reviewer-mediated step. [38] trains
+fidelity modulates. [37] audits candidate actions before execution to block indirect-injection
+consequences, and [38] gives universal defences for tool-integrated agents; these are *programmatic*
+audits, which our design ladder prices against a reviewer-mediated step. [39] trains
 provenance-awareness into the model so that trust boundaries separate structurally, i.e. provenance as a learned
 property, where we treat the reviewer's information as a channel whose fidelity is an experimental axis.
-[39] measures and exploits implicit trust in tool-calling pipelines — the model's trust, not the
-reviewer's. [40] finds instruction arbitration to be configuration-dependent and that recognition does not
+[40] measures and exploits implicit trust in tool-calling pipelines — the model's trust, not the
+reviewer's. [41] finds instruction arbitration to be configuration-dependent and that recognition does not
 imply enforcement, the closest published statement to a mismatch channel in *agent* terms; it is measured as a
-failure mode, where we give the boundary at which the failure stops mattering. [41] resolves tool names in a
+failure mode, where we give the boundary at which the failure stops mattering. [42] resolves tool names in a
 closed world against hallucinated calls — a defect upstream of the approval channel, since a hallucinated tool was
-never an approved object. [42] shows GUI agents are distracted by environmental content, an input-side effect
-on the agent rather than on the human reviewing it, and [43] trains GUI agents toward faithful behaviour,
+never an approved object. [43] shows GUI agents are distracted by environmental content, an input-side effect
+on the agent rather than on the human reviewing it, and [44] trains GUI agents toward faithful behaviour,
 which is the agent's faithfulness to its task rather than the artifact's fidelity to its action.
-[44] stress-tests long-horizon multi-agent systems adversarially so that failures propagate through
+[45] stress-tests long-horizon multi-agent systems adversarially so that failures propagate through
 memory and tools; it reports propagation, where this study gives a value law for one gate at one fidelity.
 
 ### 2.3 Authorization, capability, and the artifact that authorizes
 
 A second tradition decides who may act, and it is where our construct's vocabulary comes from. Confinement bounds
-what a compromised component can reach: [45] confines reachable capabilities under indirect injection and
+what a compromised component can reach: [46] confines reachable capabilities under indirect injection and
 [11] is the confinement problem's original statement. Delegation governs who may act on whose behalf:
-[46] delegates privileges among collaborating agents with a capability-based scheme, [47] separates
+[47] delegates privileges among collaborating agents with a capability-based scheme, [48] separates
 inference from authority in agentic finance so that a model's suggestion cannot confer authorization, and
-[48] studies delegating authorization to *misaligned* agents through coalitional alignment — misalignment
+[49] studies delegating authorization to *misaligned* agents through coalitional alignment — misalignment
 being a property of the objective, where the laundering channel this paper prices requires no misalignment at all,
-only an unfaithful artifact. Runtime acquisition and binding are the operational forms: [49] governs
-authority an agent acquires at runtime for resources such as credentials, [50] binds a dependency closure
-and governs effects at operation time for agent skills, and [51] refuses to trust regenerated code and
+only an unfaithful artifact. Runtime acquisition and binding are the operational forms: [50] governs
+authority an agent acquires at runtime for resources such as credentials, [51] binds a dependency closure
+and governs effects at operation time for agent skills, and [52] refuses to trust regenerated code and
 instead checks its effects at runtime. Effect governance and use-time checks are exactly the second repair limb of
 our design ladder; this paper measures what such a check is worth as a function of what it can see, and shows it
 cannot reach a defect defined by invisibility in the representation it reads (Section 5).
 
-The remaining works in this group place the artifact in a pipeline. [52] argues capabilities should follow
+The remaining works in this group place the artifact in a pipeline. [53] argues capabilities should follow
 task intent and the source of context, so that authority tracks provenance — a normative argument whose implied
-approval step this paper prices. [53] proposes an intent-aware control plane for policy-governed agentic
+approval step this paper prices. [54] proposes an intent-aware control plane for policy-governed agentic
 systems; a control plane enforces policy at a boundary, and our unit is a single reviewer-mediated decision with a
-computable value. [54] delivers prompt-space security skills to coding agents so privilege use is mediated,
-which mediates the agent's own requests rather than a human's. [55] anchors agent communication and human
+computable value. [55] delivers prompt-space security skills to coding agents so privilege use is mediated,
+which mediates the agent's own requests rather than a human's. [56] anchors agent communication and human
 approvals in blockchain evidence for auditability — auditability after the fact is a separate good from the
 expected value of the approval the record attests.
 
 ### 2.4 The human's signal: detect, defer, escalate
 
 A large recent literature asks *when* a system should hand a decision to a human, and its answers are rules over
-a signal. Competence and routing: [56] estimates whether a model should act or defer and adapts deferral
+a signal. Competence and routing: [57] estimates whether a model should act or defer and adapts deferral
 across experts — the same structure as our escalation coverage, with the channel's fidelity held fixed and no harm
-term — and [57] shows learning-to-defer reproduces algorithmic bias in the human it defers to, i.e. a
+term — and [58] shows learning-to-defer reproduces algorithmic bias in the human it defers to, i.e. a
 property of the reviewer's decisions where our construct separates reviewer accuracy from the fidelity of what the
-reviewer sees. Abstention theory supplies the guarantees: [58] predicts with an explicit reject option,
-[59] gives distribution-free error guarantees for classification with a reject option via conformal
-prediction, [60] extends selective prediction to distributional regression, and [61] asks what
+reviewer sees. Abstention theory supplies the guarantees: [59] predicts with an explicit reject option,
+[60] gives distribution-free error guarantees for classification with a reject option via conformal
+prediction, [61] extends selective prediction to distributional regression, and [62] asks what
 it takes to build a performant selective classifier. All four measure abstention *performance*; none prices the
 escalated cases, which is the quantity this paper computes — and Section 5 shows the value is exactly affine in
 the escalation rate under our model, so the abstention rate is not the lever those literatures treat it as.
 
-Signal quality closes the group. [62] audits whether models defer to a source-attributed cue and can be
-led to wrong answers — the mirror image of our reviewer trusting an unfaithful rendering — and [63]
+Signal quality closes the group. [63] audits whether models defer to a source-attributed cue and can be
+led to wrong answers — the mirror image of our reviewer trusting an unfaithful rendering — and [64]
 estimates confidence from experience so a system can defer reliably, i.e. calibration of a self-report rather than
-the fidelity with which an approval denotes an action. [64] gates a call to an LLM on confidence to
-control cost, a cost/accuracy trade where ours is a harm/harm comparison. [65] decides when a failing
+the fidelity with which an approval denotes an action. [65] gates a call to an LLM on confidence to
+control cost, a cost/accuracy trade where ours is a harm/harm comparison. [66] decides when a failing
 robot should ask, given audited sensor evidence: asking is escalation, and the reviewed evidence is assumed
-faithful there, which is precisely the assumption this study varies. [66] decides whether, when and how to
+faithful there, which is precisely the assumption this study varies. [67] decides whether, when and how to
 assist a user from scenario knowledge and thresholds — an intervention policy whose input can misrepresent the
-action, the case this paper's channel models. [67] places a human in the loop for nugget annotation and
+action, the case this paper's channel models. [68] places a human in the loop for nugget annotation and
 asks how the human is incorporated: an incorporation-protocol choice, with the net value of the step not derived.
 
 ### 2.5 The human's limits: fatigue, bias, and warnings
 
 A long literature documents why the human in the loop degrades, and it is the reason a gate's cost is not zero.
-The mechanism by which a human stop becomes a rubber stamp is [68], with the dispositions behind it
+The mechanism by which a human stop becomes a rubber stamp is [69], with the dispositions behind it
 named in the canonical typology [19], and the founding statement that the operator left to supervise
-is the least able to intervene is [69] — a human gate can be worse than none, argued without a model.
-The out-of-the-loop performance problem [70] is the human's degraded state, which this paper *holds
-fixed* so that the channel can be varied alone; the same choice appears in [71], where reliance is the
+is the least able to intervene is [70] — a human gate can be worse than none, argued without a model.
+The out-of-the-loop performance problem [71] is the human's degraded state, which this paper *holds
+fixed* so that the channel can be varied alone; the same choice appears in [72], where reliance is the
 reviewer's disposition toward the checker, whereas the failure this paper prices lives in the artifact.
 
 Warning design is the applied form of the same literature, and it already prices the gate's own errors.
-Comprehension and adherence are the reviewer-side properties of [72] and the interface designs of
-[73] and [74]; the psychology of the false positive is [75], whose cost to the
+Comprehension and adherence are the reviewer-side properties of [73] and the interface designs of
+[74] and [75]; the psychology of the false positive is [76], whose cost to the
 user who receives it is this study's false-block term; habituation under repeated warnings is measured
-electrophysiologically in [76], which is the fatigue coupling our model needs in order to have an
-interior optimum at all. [77] shows a warning that arrives unfaithfully or too often loses its force, and
-[78] explains why phishing works by defeating the user's judgement rather than the system's — the human
-as the deceived party, which this paper formalises as an unfaithful review. [79] gives the reviewer's own
+electrophysiologically in [77], which is the fatigue coupling our model needs in order to have an
+interior optimum at all. [78] shows a warning that arrives unfaithfully or too often loses its force, and
+[79] explains why phishing works by defeating the user's judgement rather than the system's — the human
+as the deceived party, which this paper formalises as an unfaithful review. [80] gives the reviewer's own
 side of the argument: users rationally reject security advice given its externalities, which is why a gate's cost
 can exceed its benefit.
 
-The deployment studies measure override behaviour without an artifact-fidelity axis: [80] documents
-how often clinicians override drug-safety alerts and why, [81] reports physicians' override decisions in
-primary care, and [82] measures the adverse-event outcome of adding computerised order entry with
-decision support. [83] is the positive case — a checklist and a human-checked protocol reduced
+The deployment studies measure override behaviour without an artifact-fidelity axis: [81] documents
+how often clinicians override drug-safety alerts and why, [82] reports physicians' override decisions in
+primary care, and [83] measures the adverse-event outcome of adding computerised order entry with
+decision support. [84] is the positive case — a checklist and a human-checked protocol reduced
 catheter-related bloodstream infections — a human verification step with a measured field benefit, which this paper
 turns into a value that depends on the fidelity of what the checker sees. Trust in the mechanism rather than the
 artifact is where [6] sits: it audits approval integrity and recovery in one publication mechanism and
@@ -307,49 +315,49 @@ reports a production response-act checker accepting 291 of 302 unsupported-label
 false-accept rate, where this study asks for the boundary at which the rate stops mattering.
 
 Four recent works extend the same limits to machine reviewers, and this paper's design ladder prices them.
-[84] finds a prior audit-repair context shifts an LLM verifier's threshold toward leniency — drift in a
-checker's operating point, which is the accuracy axis we hold fixed while varying fidelity. [85] shows
+[85] finds a prior audit-repair context shifts an LLM verifier's threshold toward leniency — drift in a
+checker's operating point, which is the accuracy axis we hold fixed while varying fidelity. [86] shows
 deepfake detectors learn some attack families less well than others, the same shape as an effective sensitivity
-falling below its nominal one, and [86] builds a guard model whose value under a defective channel is
-bounded by what it can see. [87] addresses the false-block side by reducing over-refusal with competing
+falling below its nominal one, and [87] builds a guard model whose value under a defective channel is
+bounded by what it can see. [88] addresses the false-block side by reducing over-refusal with competing
 rewards, optimising the rate where this study asks when the harm from the *other* error makes a gate net-negative.
-[88] asks whether reasoning representations help humans evaluate model outputs: human evaluation quality
+[89] asks whether reasoning representations help humans evaluate model outputs: human evaluation quality
 measured against a representation is a fidelity-like input evaluated for helpfulness, not a channel priced in a
-decision. [89] frames hallucination false alarms as consuming limited human review capacity, which is this
+decision. [90] frames hallucination false alarms as consuming limited human review capacity, which is this
 study's false-block cost entering a value law as an explicit term rather than as a monitoring concern.
 
-Human-factors work in specific domains is descriptive rather than priced: [90] reviews human factors of
-satellite operations, [91] names complacency, comfort, relapse and distrust as side effects of
-automation in IoT, and [92] measures productivity and trust when people take, leave or fix human-AI
-collaboration outputs. [93] surveys human-in-the-loop machine learning as a taxonomy of where the human
-acts, with the value of the step itself not a quantity in it, and [94] argues for the human in health
-informatics on capability grounds, with no channel between reviewer and object modelled. [95] is the
+Human-factors work in specific domains is descriptive rather than priced: [91] reviews human factors of
+satellite operations, [92] names complacency, comfort, relapse and distrust as side effects of
+automation in IoT, and [93] measures productivity and trust when people take, leave or fix human-AI
+collaboration outputs. [94] surveys human-in-the-loop machine learning as a taxonomy of where the human
+acts, with the value of the step itself not a quantity in it, and [95] argues for the human in health
+informatics on capability grounds, with no channel between reviewer and object modelled. [96] is the
 closest of these: mixed-initiative principles say when a system should ask the user, which is this study's
-escalation decision with a cost model attached. [96] enforces temporal constraints on agents through
+escalation decision with a cost model attached. [97] enforces temporal constraints on agents through
 guardrails — a constraint on the action, where the subject here is a human step that may or may not have positive
 value under such a constraint.
 
 ### 2.6 The cost of the gate
 
 Only two works in this bibliography price an oversight-adjacent decision, and neither prices the human step.
-[97] prices the security of data-centre execution assurance in a BFT setting — the closest economics to
+[98] prices the security of data-centre execution assurance in a BFT setting — the closest economics to
 this study, but the priced resource is hardware-backed execution rather than a human decision with a mismatch
-channel. [98] studies token economics for LLM agents from computing and economics views, pricing token
+channel. [99] studies token economics for LLM agents from computing and economics views, pricing token
 consumption, where this study prices a human decision whose harm term is absent there.
 
 ### 2.7 Verifying the artifact
 
 A separate tradition verifies objects rather than decisions, and the difference matters for the design ladder.
-[99] analyses software-based fault isolation empirically through controlled fault injection, and
-[100] formally verifies a software fault isolation system including its verifier; isolation boundaries
+[100] analyses software-based fault isolation empirically through controlled fault injection, and
+[101] formally verifies a software fault isolation system including its verifier; isolation boundaries
 are enforcement mechanisms, and a verifier proved correct is a different claim from a reviewer shown a faithful
-object. [101] layers several defences for LLM applications, reducing attack success — a layering result,
-where this study asks whether the *human* layer pays. [102] detonates malware in an ephemeral containerized
+object. [102] layers several defences for LLM applications, reducing attack success — a layering result,
+where this study asks whether the *human* layer pays. [103] detonates malware in an ephemeral containerized
 sandbox: containment bounds the blast radius, which is an alternative to a gate rather than a value for one.
 
 ### 2.8 What a programmatic monitor can and cannot do
 
-Two works state the monitor-side facts this paper's construct is adjacent to. [103] bounds the recall of a
+Two works state the monitor-side facts this paper's construct is adjacent to. [104] bounds the recall of a
 fixed-invariant FSA monitor by the entropy of the attack distribution — a coverage law for a programmatic
 detector, and no analogous bound is published for a human gate, which is what this study supplies.
 [14] shows step-scoped monitors cannot detect compositional violations however accurate they are: the
@@ -362,30 +370,30 @@ makes its variable.
 
 The instruments this paper imports are older than the systems it studies. A reviewer's accuracy is a curve, not a
 number: [16], [17] and [18] are the classical statements, with [20] the
-one-number summary used here as a reviewer-accuracy summary, and [104] contributing the paired-comparison
+one-number summary used here as a reviewer-accuracy summary, and [105] contributing the paired-comparison
 procedure this study's per-stream pairing follows. The gate itself has a deployed history of being measured in the
-field and of failing in the field: [83] and [105] price its errors' real consequences
+field and of failing in the field: [84] and [106] price its errors' real consequences
 (false-positive screening harms and their long-term psychosocial cost, with the psychological costs of screening
-stated in [106]), and the review-practice literature measures the human step without a value for it —
-[107], [108] and [109] study code review as a deployed practice whose benefit is
-reported as practice rather than derived, and [108] judges usefulness by the reviewed person rather than by
+stated in [107]), and the review-practice literature measures the human step without a value for it —
+[108], [109] and [110] study code review as a deployed practice whose benefit is
+reported as practice rather than derived, and [109] judges usefulness by the reviewed person rather than by
 whether the reviewer's object denoted the change.
 
 ### 2.10 The economics of an oversight decision
 
 The structure this paper instantiates is standard in two economic literatures, and both already contain the
-decision rule in general form. Costly verification: [110] derives that verification is used only when it
-pays, [111] prices monitoring against the difference it makes, and [112] is the reason an
+decision rule in general form. Costly verification: [111] derives that verification is used only when it
+pays, [112] prices monitoring against the difference it makes, and [113] is the reason an
 unfaithful observation is worth less than a faithful one — the informational statement underneath this paper's
-fidelity parameter. Enforcement: [113] prices enforcement against the harm it deters and [114]
+fidelity parameter. Enforcement: [114] prices enforcement against the harm it deters and [115]
 prices public enforcement intensity, which are policy-level analogues of this study's per-decision value, while
-[115] supplies the principal-agent structure in which a check on an agent's action is priced. The
+[116] supplies the principal-agent structure in which a check on an agent's action is priced. The
 authorization artifact's own lineage is the capability model [10], the confused deputy [9] and
-the confinement problem [11]; provenance as an independent good is [116], the architectural
-claim that every step must be verified is [117] (whose *value* is what this study asks about), and the
-engineering frame in which an approval step is one control among several is [118]. The normative
-literature that ordinarily justifies the gate — accountability as a practice [119] and the ethics
-debate's map [120] — is cited here for exactly that role: this paper asks what the mandate costs.
+the confinement problem [11]; provenance as an independent good is [117], the architectural
+claim that every step must be verified is [118] (whose *value* is what this study asks about), and the
+engineering frame in which an approval step is one control among several is [119]. The normative
+literature that ordinarily justifies the gate — accountability as a practice [120] and the ethics
+debate's map [121] — is cited here for exactly that role: this paper asks what the mandate costs.
 
 ### 2.11 What no group above supplies
 
@@ -393,10 +401,10 @@ Three things are absent from every group, and they are this paper's contribution
 literature reports that binding fails [2,3] and that it can be enforced
 [12,13], while audits report one system's rate [5,6]; none gives the fidelity at
 which the sign of the gate's value changes. Second, **the sign**: the human-factors literature says a human gate
-can be worse than none [69] and the automation literature measures habituation
-[68,76], but neither derives when a gate is worth less than no gate, which requires the
+can be worse than none [70] and the automation literature measures habituation
+[69,77], but neither derives when a gate is worth less than no gate, which requires the
 laundering channel as an explicit term. Third, **the axis**: the monitor and abstention literatures decide the
-question on accuracy or on the signal [14,58,61,103], whereas this paper
+question on accuracy or on the signal [14,59,62,104], whereas this paper
 separates the reviewer's accuracy from the artifact's fidelity and shows that the binding axis carries a coordinate
 — and the reading that decides an engineering budget — where the accuracy axis carries only a preference.
 
@@ -422,8 +430,8 @@ with `L` the harm of an executed harmful action. The gate's value is a differenc
 Three costs make up `E1`: the harm that still executes, the attention cost of a review (`c` per escalated
 operation), and the harm of a **false block** — a benign action rejected by the reviewer, `c_b` per occurrence.
 The false-block term is not decoration: the empirical literature on the reviewer's own errors prices exactly this
-[75,105,106], and a warning system that never trades it off is the system users
-rationally ignore [79].
+[76,106,107], and a warning system that never trades it off is the system users
+rationally ignore [80].
 
 ### 3.2 The channel: binding fidelity, and the exhaustive partition of its defects
 
@@ -436,7 +444,7 @@ At `b = 1` the gate is the screening channel the deployed argument assumes. Belo
 is not one way but three, and the partition is exhaustive by construction:
 
 * **display defect (`δ`)** — the reviewer reads a re-rendering of the request that loses the harm, so a harmful
-  action is executed although nothing was substituted. The human is the deceived party [78], and the
+  action is executed although nothing was substituted. The human is the deceived party [79], and the
   representation has simply lost the property the decision was supposed to turn on.
 * **visible substitution (`σ_v`)** — the executed action differs from the reviewed one, and the difference is
   visible **in `R`**: a checker that reads the request can see it.
@@ -449,7 +457,7 @@ transform in 100.0% of 1,296 controlled episodes with 54.2% of downstream execut
 action [5], approval can be hijacked across agent frameworks [3], and a card that binds the
 action removes the success [2]. The three classes correspond to the mechanisms the same literature
 separates — a mis-rendered object [7], a check that passes at check time and is stale at act time
-[8,32], and an authorization that does not bind what executes [3,12] — and
+[8,33], and an authorization that does not bind what executes [3,12] — and
 Section 5 shows they are repaired by **different** things, which is why the partition earns its three names.
 
 The model distinguishes the *intent* of the human from the *effect* of their approval: an approval is an
@@ -500,7 +508,7 @@ study; none is chosen for convenience.  *Table 3* gives the values and the ancho
 | `f` | 0.05 | false-positive rate at that operating point |
 | `L` | 1.0 | the unit of harm |
 | `c` | 0.02 | attention cost of one review, as a fraction of `L` |
-| `c_b` | 0.05 | false-block cost [75] |
+| `c_b` | 0.05 | false-block cost [76] |
 | `η` | 1.0 | a substituted harmful action is as severe as the proposed one |
 | `b` | **swept** | the study's axis |
 | `s` | **swept** | escalation coverage, the deployed policy lever |
@@ -509,7 +517,7 @@ study; none is chosen for convenience.  *Table 3* gives the values and the ancho
 
 The anchors that the channel itself rests on are the measured ones: `b` far below 1 in ordinary pipelines
 [5], attack success falling from 68–100% unbound to 0% bound [2], and the reviewer's own errors
-priced in the field [83,105].
+priced in the field [84,106].
 
 ### 3.4 The falsifiable claim, in the model's own terms
 
@@ -592,7 +600,7 @@ The repairs are not substitutes, and the harness measures the difference rather 
 check is worth exactly the defect mass it can **see**: `V(D3) − V(D2)` is `0.000000` where the class is absent and
 otherwise exactly the visible mass; and it is worth **nothing** against a display defect, where the canonical
 rendering supplies what the check cannot. The two repairs are therefore **complements** ([2] supplies
-the canonical rendering as a design, [51] the use-time effect check), which is a structural statement about
+the canonical rendering as a design, [52] the use-time effect check), which is a structural statement about
 which defects each one can reach, not a preference between them.
 
 ### 4.3 The guards: what the harness refuses to read
@@ -897,9 +905,9 @@ record too.
 
 The reference pipeline has three stages and each has its own battery: **24 checks, 0 failed**; **15 checks, 15
 PASS with 22 mutations, 22 caught**; **8 checks, 8 PASS with a 19-case battery, 19 fired**. The build line is
-**120 of 120 selected entries (74 arXiv + 46 DOI), 1 not selected, 0 duplicates, 0 errors**, and each entry carries
-the stated difference from this study that its selection rests on. `cite_check.py` reads the manuscript back: **210
-citations, 120 distinct keys of 120 built records, 0 unknown keys, 0 malformed, 0 records uncited** — the
+**121 of 121 selected entries (75 arXiv + 46 DOI), 1 not selected, 0 duplicates, 0 errors**, and each entry carries
+the stated difference from this study that its selection rests on. `cite_check.py` reads the manuscript back: **211
+citations, 121 distinct keys of 121 built records, 0 unknown keys, 0 malformed, 0 records uncited** — the
 uncited-records count being the one that keeps the reference list from being padding. One convention in that
 pipeline is worth stating because it is a reporting rule: a number that was true in an earlier round is **kept with
 its epoch** (`196 citations (at R426)`) rather than corrected in place, so a later round can still see what a
@@ -908,21 +916,31 @@ defect cost.
 The rendered entries carry the house order — **authors, year, venue, link, stated difference** — and every one of
 the five fields is now required rather than optional: `assemble.py` refuses an entry that is missing any of them.
 That rule was written after its own first failure: the map the manuscript cites by carries no venue field at all,
-so the first assembled bibliography rendered all **120** entries as `[n] Authors (year). *Title*. URL -- difference`
+so the first assembled bibliography rendered all **120** entries (at R427) as `[n] Authors (year). *Title*. URL -- difference`
 — a complete-looking list with a field silently absent. Nothing in the citation checker, the reference pipeline or
 the authenticity report could see it, because each of them reads the *record* and not the *rendered page*; it was
 found by reading the product, which is where a reviewer reads it too.
 
-**Authenticity, entry by entry.** Every one of the 120 entries was checked against an external record — a DOI
+**Authenticity, entry by entry.** Every one of the 121 entries was checked against an external record — a DOI
 through Crossref, an arXiv key through the arXiv API — and the method, the record found and the title agreement are
 recorded per entry in `reference-check.md`, in the citation order the bibliography renders in. The report's own
-line is **120 of 120 verified**, with **0 mismatch** and **0 unverified** (46 DOI, 74 arXiv; agreement measured as
+line is **121 of 121 verified**, with **0 mismatch** and **0 unverified** (46 DOI, 75 arXiv; agreement measured as
 normalized token overlap
 against a 0.80 floor; one year difference is printed rather than failed, because an arXiv preprint and its
 published version legitimately carry different years). The check that owns that report is offline and two-sided
-(**12 checks, 0 failed** against a **9-case battery, 9 fired**), and it makes two demands a hand-written report
+(**14 checks, 0 failed** against an **11-case battery, 11 fired**), and it makes two demands a hand-written report
 cannot: no entry is retained on the strength of its own text, and the counts in the summary must be the counts read
 off the rows.
+
+**One entry was re-read rather than trusted, and the reason is a check the build had already written.** Each built
+record keeps `pool_title`, "the title the difference line was written against, so a later read can check the live
+record still bears it". Running that check re-read the registry and it fired: an arXiv entry carried the harvest's
+reading of **v1** while the identifier now serves a **retitled v3**, so the bibliography was citing a title its own
+link no longer shows. The repair is a re-fetch recorded in `refs/reread.json` — with the fetched title, the version
+it came from and the pool title it replaces — and the bibliography now prints what the record prints, so the entry
+is the same work at the same identifier with the title a reader will find there. The number that changed is the
+number of references: the count in this Section and in *Table 9* is the count the run produces, and the spec
+compares the two rather than restating one of them.
 
 The first version of that report verified **nothing** and said so quietly: it joined the manuscript's citation
 labels against the built records' identifiers and got **0 rows**, printing `verified 0, mismatch 0, unverified 0` —
@@ -939,7 +957,9 @@ links and the submission bar are the ten steps of this table (*Table 9*), and ea
 reading fails. The bar itself is a check rather than a claim: `submission_check.py` reads the thirteen items the
 journal's submission rules state — the contribution level and its evidence, the falsifiable claim, the related-work
 comparisons, the threats argument, the baseline, the determinism/multi-run reading, the README spec, completeness,
-the new-construct positioning, the prior-belief outcomes, the authenticity report and the reference volume — and
+the new-construct positioning, the prior-belief outcomes, the authenticity report and the reference volume — plus
+the five readings this package adds to them (the level's evidence named, the in-text key form, and the three
+presentation items), **eighteen in all**.  It then
 distinguishes what it **CHECKS** from what is **DECLARED** (a statement only the author can make, quoted rather
 than verified).  *Table 9* lists them with what each must print.
 
@@ -950,11 +970,11 @@ than verified).  *Table 9* lists them with what each must print.
 | outcomes | `python3 outcome_check.py --selftest` | `OUTCOME CHECK: PASS` + `24 case(s), 24 caught` |
 | Section 5 | `python3 verify_s5.py --selftest` | `PASS -- 52 claim(s), 0 missing`, `52 of 52`, alphabet control `0 of 52` |
 | references | `python3 refs/refs_check{,2,3}.py --selftest` | `24 checks, 0 failed`; `15/15` + `22/22`; `8/8` + `19/19` |
-| citations | `python3 cite_check.py` | `210 citations, 120 distinct keys of 120`, `0 malformed`, `0 uncited` |
-| authenticity | `python3 refs/reference_check.py --selftest` | `REFERENCE CHECK: PASS -- 12 check(s), 0 failed`, `BATTERY: 9 of 9` |
+| citations | `python3 cite_check.py` | `211 citations, 121 distinct keys of 121`, `0 malformed`, `0 uncited` |
+| authenticity | `python3 refs/reference_check.py --selftest` | `REFERENCE CHECK: PASS -- 14 check(s), 0 failed`, `BATTERY: 11 of 11` |
 | figures | `python3 figures/make_figures.py --check` | `CURRENT -- ... byte-identical to a fresh draw` |
 | links | `python3 check_links.py --selftest` | `LINK CHECK: PASS -- 1 local, 0 broken`, `BATTERY: 4 of 4` |
-| submission bar | `python3 submission_check.py --selftest` | `SUBMISSION CHECK: PASS -- 17 item(s), 0 failed`, `BATTERY: 8 of 8` |
+| submission bar | `python3 submission_check.py --selftest` | `SUBMISSION CHECK: PASS -- 18 item(s), 0 failed`, `BATTERY: 8 of 8` |
 
 **Table 9.** What a reader can re-run, and what each step must print.
 
@@ -1056,7 +1076,7 @@ Two consequences are decidable today with the paper's own numbers:
 2. **The two obvious repairs are complements, not alternatives.** A canonical rendering makes the display defect
    impossible and does nothing for substitution; a use-time check is worth exactly the defect mass it can see and
    exactly nothing for a display defect. Budget allocated to one is not budget taken from the other, and the
-   "which is better" framing [2,51] is the wrong question — the right one is the coverage of
+   "which is better" framing [2,52] is the wrong question — the right one is the coverage of
    defect classes, which is checkable.
 
 The falsifiability is the third reason. Each of the paper's three structural statements was registered as a
@@ -1135,180 +1155,182 @@ practitioner whether to invest in the gate at all, and a threshold can.
 
 [31] Turan, E. (2026). *Oversight Has a Capacity: Calibrating Agent Guards to a Subjective, Fatiguing Human*. arXiv:2606.08919. https://arxiv.org/abs/2606.08919 -- Calibrates agent guards to a subjective, fatiguing human and shows oversight has a capacity; it prices the reviewer's capacity, and our model keeps the reviewer fixed and varies the channel's fidelity, so the two are complementary inputs to one value.
 
-[32] Lyu, Y. et al. (2026). *From Version Conflicts to Decision Conflicts: Selective Revalidation for Long-Running AI Agents*. arXiv:2609.08015. https://arxiv.org/abs/2609.08015 -- Identifies decision conflicts for long-running agents whose authorising state changes after the check, and proposes selective revalidation; revalidation is a repair, and this study gives the threshold on the fidelity axis at which a repair is worth its cost.
+[32] Wang, Y. (2026). *Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses*. arXiv:2609.38983. https://arxiv.org/abs/2609.38983 -- Systematizes six ways a harness can dispatch an action other than the one a human approved and measures a bound-gap rate for each in one harness, then prototypes a keyed token as a binding defence; it measures and defends the failure, where this study takes binding fidelity as a parameter of a value functional and derives the fidelity below which the gate's net value turns negative, the accuracy-insensitivity that survives there, and the equivalence of the repair.
 
-[33] Li, Y. et al. (2026). *Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems*. arXiv:2609.08472. https://arxiv.org/abs/2609.08472 -- Argues authority should be held by a substrate other than the agent's own context, with a cross-substrate notion of authority; it settles where authority should live, not what an approval step is worth once authority has been placed.
+[33] Lyu, Y. et al. (2026). *From Version Conflicts to Decision Conflicts: Selective Revalidation for Long-Running AI Agents*. arXiv:2609.08015. https://arxiv.org/abs/2609.08015 -- Identifies decision conflicts for long-running agents whose authorising state changes after the check, and proposes selective revalidation; revalidation is a repair, and this study gives the threshold on the fidelity axis at which a repair is worth its cost.
 
-[34] Safin, T. et al. (2026). *Trust Propagation and Structural Containment in Multi-Agent LLM Pipelines*. arXiv:2609.17648. https://arxiv.org/abs/2609.17648 -- Studies trust propagation and structural containment in multi-agent pipelines, where a low-privilege agent can influence a high-privilege one; influence propagation across agents is a different channel from the fidelity with which one approval denotes its action.
+[34] Li, Y. et al. (2026). *From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents*. arXiv:2609.08472. https://arxiv.org/abs/2609.08472 -- Argues authority should be held by a substrate other than the agent's own context, with a cross-substrate notion of authority; it settles where authority should live, not what an approval step is worth once authority has been placed.
 
-[35] Huang, S., Zhang, J., Jia, H. (2026). *When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents*. arXiv:2609.13889. https://arxiv.org/abs/2609.13889 -- Shows malicious instructions can persist in agent memory and re-enter later execution; persistence is a temporal channel, and its harm is not modulated by the fidelity of any single approval.
+[35] Safin, T. et al. (2026). *Trust Propagation and Structural Containment in Multi-Agent LLM Pipelines*. arXiv:2609.17648. https://arxiv.org/abs/2609.17648 -- Studies trust propagation and structural containment in multi-agent pipelines, where a low-privilege agent can influence a high-privilege one; influence propagation across agents is a different channel from the fidelity with which one approval denotes its action.
 
-[36] Wang, B. et al. (2026). *ActGuard: Pre-Execution Action Auditing Against Indirect Prompt Injection in LLM Agents*. arXiv:2609.14987. https://arxiv.org/abs/2609.14987 -- Audits candidate actions before execution to block indirect-injection consequences; a pre-execution audit is a programmatic check, which is one of the repairs this study prices against a reviewer-mediated one.
+[36] Huang, S., Zhang, J., Jia, H. (2026). *When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents*. arXiv:2609.13889. https://arxiv.org/abs/2609.13889 -- Shows malicious instructions can persist in agent memory and re-enter later execution; persistence is a temporal channel, and its harm is not modulated by the fidelity of any single approval.
 
-[37] Li, X., Wang, Y. (2026). *Universal Defenses for Tool-Integrated LLM Agents Against Adversarial Attacks*. arXiv:2609.16098. https://arxiv.org/abs/2609.16098 -- Gives defences for tool-integrated agents against adversarial tool outputs; it measures blocking effectiveness, and this study measures when a human-mediated step is worth its own cost, including when it is worth less than no step.
+[37] Wang, B. et al. (2026). *ActGuard: Pre-Execution Action Auditing Against Indirect Prompt Injection in LLM Agents*. arXiv:2609.14987. https://arxiv.org/abs/2609.14987 -- Audits candidate actions before execution to block indirect-injection consequences; a pre-execution audit is a programmatic check, which is one of the repairs this study prices against a reviewer-mediated one.
 
-[38] Zhang, Y., Huang, J., Gu, G. (2026). *Origin Is All You Need: Provenance-Aware Transformers for Structural Trust-Boundary Separation*. arXiv:2609.21088. https://arxiv.org/abs/2609.21088 -- Separates trust boundaries with provenance-aware transformers; provenance is a property the model is trained to use, while this study treats the reviewer's information as a channel whose fidelity is an experimental axis.
+[38] Li, X., Wang, Y. (2026). *Universal Defenses for Tool-Integrated LLM Agents Against Adversarial Attacks*. arXiv:2609.16098. https://arxiv.org/abs/2609.16098 -- Gives defences for tool-integrated agents against adversarial tool outputs; it measures blocking effectiveness, and this study measures when a human-mediated step is worth its own cost, including when it is worth less than no step.
 
-[39] Ediga, M., Chattopadhyay, S. (2026). *Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines*. arXiv:2609.18217. https://arxiv.org/abs/2609.18217 -- Measures and exploits implicit trust in LLM tool-calling pipelines, including a protocol's trust assumptions; the trust measured is the model's, not the reviewer's, and no approval value is derived.
+[39] Zhang, Y., Huang, J., Gu, G. (2026). *Origin Is All You Need: Provenance-Aware Transformers for Structural Trust-Boundary Separation*. arXiv:2609.21088. https://arxiv.org/abs/2609.21088 -- Separates trust boundaries with provenance-aware transformers; provenance is a property the model is trained to use, while this study treats the reviewer's information as a channel whose fidelity is an experimental axis.
 
-[40] Leong, J. (2026). *Recognition Without Enforcement: Configuration-Dependent Failures in LLM Agent Instruction Arbitration and External Control*. arXiv:2608.28502. https://arxiv.org/abs/2608.28502 -- Finds that instruction arbitration in agents is configuration-dependent and that recognition does not imply enforcement; the gap between recognising and enforcing is the same family as a mismatch channel, measured as a failure mode rather than as a fidelity parameter.
+[40] Ediga, M., Chattopadhyay, S. (2026). *Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines*. arXiv:2609.18217. https://arxiv.org/abs/2609.18217 -- Measures and exploits implicit trust in LLM tool-calling pipelines, including a protocol's trust assumptions; the trust measured is the model's, not the reviewer's, and no approval value is derived.
 
-[41] Iyer, L. (2026). *Closed-World Resolution Against Tool Hallucination in LLM Agents*. arXiv:2609.19425. https://arxiv.org/abs/2609.19425 -- Resolves tool names in a closed world to stop hallucinated calls; a hallucinated tool is not an approved object that failed to denote its action, so the defect it repairs is upstream of the approval channel.
+[41] Leong, J. (2026). *Recognition Without Enforcement: Configuration-Dependent Failures in LLM Agent Instruction Arbitration and External Control*. arXiv:2608.28502. https://arxiv.org/abs/2608.28502 -- Finds that instruction arbitration in agents is configuration-dependent and that recognition does not imply enforcement; the gap between recognising and enforcing is the same family as a mismatch channel, measured as a failure mode rather than as a fidelity parameter.
 
-[42] Ma, X. et al. (2024). *Caution for the Environment: Multimodal LLM Agents Are Susceptible to Environmental Distractions*. arXiv:2408.02544. https://arxiv.org/abs/2408.02544 -- Shows multimodal GUI agents are distracted by environmental content; distraction is an input-side effect on the agent, whereas this study's channel carries the object to a human.
+[42] Iyer, L. (2026). *Closed-World Resolution Against Tool Hallucination in LLM Agents*. arXiv:2609.19425. https://arxiv.org/abs/2609.19425 -- Resolves tool names in a closed world to stop hallucinated calls; a hallucinated tool is not an approved object that failed to denote its action, so the defect it repairs is upstream of the approval channel.
 
-[43] Hu, H. et al. (2026). *Faithful Mobile GUI Agents with Guided Advantage Estimator*. arXiv:2605.01208. https://arxiv.org/abs/2605.01208 -- Trains GUI agents towards faithful behaviour rather than memorised shortcuts; it makes the agent's action faithful to the task, and our fidelity is between the object a reviewer approves and the object the system executes.
+[43] Ma, X. et al. (2024). *Caution for the Environment: Multimodal LLM Agents Are Susceptible to Environmental Distractions*. arXiv:2408.02544. https://arxiv.org/abs/2408.02544 -- Shows multimodal GUI agents are distracted by environmental content; distraction is an input-side effect on the agent, whereas this study's channel carries the object to a human.
 
-[44] Akkil, D. et al. (2026). *Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems*. arXiv:2609.17320. https://arxiv.org/abs/2609.17320 -- Stress-tests long-horizon multi-agent systems adversarially so failures propagate through memory and tools; it reports propagation, where this study gives a value law for one gate at one fidelity.
+[44] Hu, H. et al. (2026). *Faithful Mobile GUI Agents with Guided Advantage Estimator*. arXiv:2605.01208. https://arxiv.org/abs/2605.01208 -- Trains GUI agents towards faithful behaviour rather than memorised shortcuts; it makes the agent's action faithful to the task, and our fidelity is between the object a reviewer approves and the object the system executes.
 
-[45] Xiong, W. et al. (2026). *Reachability-Based Capability Confinement for LLM Agents under Indirect Prompt Injection*. arXiv:2608.30041. https://arxiv.org/abs/2608.30041 -- Confines reachable capabilities for LLM agents under indirect injection, at the level of what a compromised agent can reach; capability reach is a bound on harm, and the value of an approval gate is a different quantity, which this study makes depend on fidelity.
+[45] Akkil, D. et al. (2026). *Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems*. arXiv:2609.17320. https://arxiv.org/abs/2609.17320 -- Stress-tests long-horizon multi-agent systems adversarially so failures propagate through memory and tools; it reports propagation, where this study gives a value law for one gate at one fidelity.
 
-[46] Veski, R., Guerraoui, R., Froelicher, D. (2026). *CAPMAS: Capability-Based Delegation of Privileges in Multi-Agent Systems*. arXiv:2609.06500. https://arxiv.org/abs/2609.06500 -- Delegates privileges among collaborating agents with a capability-based scheme; delegation governs who may act, while the question here is whether the object presented for review denotes the action taken.
+[46] Xiong, W. et al. (2026). *Reachability-Based Capability Confinement for LLM Agents under Indirect Prompt Injection*. arXiv:2608.30041. https://arxiv.org/abs/2608.30041 -- Confines reachable capabilities for LLM agents under indirect injection, at the level of what a compromised agent can reach; capability reach is a bound on harm, and the value of an approval gate is a different quantity, which this study makes depend on fidelity.
 
-[47] Gong, H., Samawi, M., Medda, F. (2026). *Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance*. arXiv:2608.30519. https://arxiv.org/abs/2608.30519 -- Separates inference from authority in agentic finance, so that a model's suggestion cannot confer authorisation; that separation is a policy design, and this study quantifies the step that implements it.
+[47] Veski, R., Guerraoui, R., Froelicher, D. (2026). *CAPMAS: Capability-Based Delegation of Privileges in Multi-Agent Systems*. arXiv:2609.06500. https://arxiv.org/abs/2609.06500 -- Delegates privileges among collaborating agents with a capability-based scheme; delegation governs who may act, while the question here is whether the object presented for review denotes the action taken.
 
-[48] Collina, N. et al. (2026). *Delegating Authorization to Misaligned Agents: Coalitional Alignment and Safe Control*. arXiv:2609.15803. https://arxiv.org/abs/2609.15803 -- Studies delegating authorization to misaligned agents through coalitional alignment and safe control; misalignment is a property of the agent's objective, and the laundering channel here requires no misalignment, only an unfaithful artifact.
+[48] Gong, H., Samawi, M., Medda, F. (2026). *Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance*. arXiv:2608.30519. https://arxiv.org/abs/2608.30519 -- Separates inference from authority in agentic finance, so that a model's suggestion cannot confer authorisation; that separation is a policy design, and this study quantifies the step that implements it.
 
-[49] Zhu, G., Wang, C. (2026). *Runtime Authorization for Resources Acquired by AI Agents*. arXiv:2609.14744. https://arxiv.org/abs/2609.14744 -- Governs authority an agent acquires at runtime, for resources such as credentials and accounts; acquired authority is a flow the policy must contain, and it is orthogonal to the fidelity of an approval artifact.
+[49] Collina, N. et al. (2026). *Delegating Authorization to Misaligned Agents: Coalitional Alignment and Safe Control*. arXiv:2609.15803. https://arxiv.org/abs/2609.15803 -- Studies delegating authorization to misaligned agents through coalitional alignment and safe control; misalignment is a property of the agent's objective, and the laundering channel here requires no misalignment, only an unfaithful artifact.
 
-[50] Zhu, G., Wang, C. (2026). *Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound*. arXiv:2609.05920. https://arxiv.org/abs/2609.05920 -- Binds a dependency closure and governs effects at operation time for agent skills; effect governance is a check on the operation, which is the repair axis this study prices.
+[50] Zhu, G., Wang, C. (2026). *Runtime Authorization for Resources Acquired by AI Agents*. arXiv:2609.14744. https://arxiv.org/abs/2609.14744 -- Governs authority an agent acquires at runtime, for resources such as credentials and accounts; acquired authority is a flow the policy must contain, and it is orthogonal to the fidelity of an approval artifact.
 
-[51] Hu, J., Goel, A., Bindschaedler, L. (2026). *Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code under an Adversarial Generator*. arXiv:2609.00430. https://arxiv.org/abs/2609.00430 -- Checks effects at runtime rather than trusting regenerated systems code; checking effects is one of the two repairs in this study's design ladder, and its value is measured here as a function of what the check can see.
+[51] Zhu, G., Wang, C. (2026). *Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound*. arXiv:2609.05920. https://arxiv.org/abs/2609.05920 -- Binds a dependency closure and governs effects at operation time for agent skills; effect governance is a check on the operation, which is the repair axis this study prices.
 
-[52] Zheng, Y., Zhang, W., Mao, Y. (2026). *LLM Agent Capabilities Should Follow Task Intent and Context Source*. arXiv:2609.14631. https://arxiv.org/abs/2609.14631 -- Argues agent capabilities should follow task intent and the source of context, so that authority tracks provenance; the argument is normative, and the value of the approval step it implies is what this study measures.
+[52] Hu, J., Goel, A., Bindschaedler, L. (2026). *Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code under an Adversarial Generator*. arXiv:2609.00430. https://arxiv.org/abs/2609.00430 -- Checks effects at runtime rather than trusting regenerated systems code; checking effects is one of the two repairs in this study's design ladder, and its value is measured here as a function of what the check can see.
 
-[53] Chernov, A. (2026). *Brain API: An Intent-Aware Control Plane for Policy-Governed Agentic Systems*. arXiv:2609.21299. https://arxiv.org/abs/2609.21299 -- Proposes an intent-aware control plane for policy-governed agentic systems; a control plane enforces policy at a boundary, and this study's unit is a single reviewer-mediated decision with a computable value.
+[53] Zheng, Y., Zhang, W., Mao, Y. (2026). *LLM Agent Capabilities Should Follow Task Intent and Context Source*. arXiv:2609.14631. https://arxiv.org/abs/2609.14631 -- Argues agent capabilities should follow task intent and the source of context, so that authority tracks provenance; the argument is normative, and the value of the approval step it implies is what this study measures.
 
-[54] Wu, X. et al. (2026). *SkillShield: Prompt-Space Security Skills for LLM Coding Agents*. arXiv:2608.25817. https://arxiv.org/abs/2608.25817 -- Delivers prompt-space security skills to coding agents so that privilege use is mediated; it mediates the agent's own requests, while this study asks when a human-mediated mediation step has positive expected value.
+[54] Chernov, A. (2026). *Brain API: An Intent-Aware Control Plane for Policy-Governed Agentic Systems*. arXiv:2609.21299. https://arxiv.org/abs/2609.21299 -- Proposes an intent-aware control plane for policy-governed agentic systems; a control plane enforces policy at a boundary, and this study's unit is a single reviewer-mediated decision with a computable value.
 
-[55] Brömme, A. (2026). *A Black Box for Agentic Processes: Blockchain-Anchored Evidence for AI Agent Communication, Human Oversight, and GRC Audits*. arXiv:2609.04017. https://arxiv.org/abs/2609.04017 -- Anchors agent communication and human approvals in blockchain evidence for auditability; auditability after the fact is a separate good from the expected value of the approval the record attests.
+[55] Wu, X. et al. (2026). *SkillShield: Prompt-Space Security Skills for LLM Coding Agents*. arXiv:2608.25817. https://arxiv.org/abs/2608.25817 -- Delivers prompt-space security skills to coding agents so that privilege use is mediated; it mediates the agent's own requests, while this study asks when a human-mediated mediation step has positive expected value.
 
-[56] Strong, J. et al. (2026). *RACER: Role-Aligned Competence Estimation for Human-AI Routing*. arXiv:2609.21953. https://arxiv.org/abs/2609.21953 -- Estimates whether a model should act or defer to a human expert, and adapts deferral across experts; the deferral rule is the same structure as this study's escalation coverage, with the channel's fidelity held fixed and no harm term from an unfaithful review.
+[56] Brömme, A. (2026). *A Black Box for Agentic Processes: Blockchain-Anchored Evidence for AI Agent Communication, Human Oversight, and GRC Audits*. arXiv:2609.04017. https://arxiv.org/abs/2609.04017 -- Anchors agent communication and human approvals in blockchain evidence for auditability; auditability after the fact is a separate good from the expected value of the approval the record attests.
 
-[57] Pesenti, D. et al. (2026). *Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer*. arXiv:2608.28050. https://arxiv.org/abs/2608.28050 -- Shows learning-to-defer reproduces algorithmic bias in the human it defers to; bias in the deferred-to label is a property of the reviewer's decisions, and our construct separates reviewer accuracy from the fidelity of the object reviewed.
+[57] Strong, J. et al. (2026). *RACER: Role-Aligned Competence Estimation for Human-AI Routing*. arXiv:2609.21953. https://arxiv.org/abs/2609.21953 -- Estimates whether a model should act or defer to a human expert, and adapts deferral across experts; the deferral rule is the same structure as this study's escalation coverage, with the channel's fidelity held fixed and no harm term from an unfaithful review.
 
-[58] Franc, V., Paplham, J. (2025). *Epistemic Reject Option Prediction*. arXiv:2511.04855. https://arxiv.org/abs/2511.04855 -- Predicts with an explicit reject option and communicates uncertainty; the reject option is escalation with no cost model, and this study's value is affine in coverage with a term for the mismatch escalation itself can introduce.
+[58] Pesenti, D. et al. (2026). *Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer*. arXiv:2608.28050. https://arxiv.org/abs/2608.28050 -- Shows learning-to-defer reproduces algorithmic bias in the human it defers to; bias in the deferred-to label is a property of the reviewer's decisions, and our construct separates reviewer accuracy from the fidelity of the object reviewed.
 
-[59] Szabadváry, J. et al. (2025). *Classification with Reject Option: Distribution-Free Error Guarantees via Conformal Prediction*. arXiv:2506.21802. https://arxiv.org/abs/2506.21802 -- Gives distribution-free error guarantees for classification with a reject option via conformal prediction; the guarantee is about the abstention rate, not about the net value of the escalated cases, which is what this study computes.
+[59] Franc, V., Paplham, J. (2025). *Epistemic Reject Option Prediction*. arXiv:2511.04855. https://arxiv.org/abs/2511.04855 -- Predicts with an explicit reject option and communicates uncertainty; the reject option is escalation with no cost model, and this study's value is affine in coverage with a term for the mismatch escalation itself can introduce.
 
-[60] Zaoui, A., Dombry, C. (2025). *Distributional Regression with Reject Option*. arXiv:2503.23782. https://arxiv.org/abs/2503.23782 -- Extends selective prediction to distributional regression with a reject option; abstention is placed on a distributional target, and no channel between the reviewer and the executed object appears.
+[60] Szabadváry, J. et al. (2025). *Classification with Reject Option: Distribution-Free Error Guarantees via Conformal Prediction*. arXiv:2506.21802. https://arxiv.org/abs/2506.21802 -- Gives distribution-free error guarantees for classification with a reject option via conformal prediction; the guarantee is about the abstention rate, not about the net value of the escalated cases, which is what this study computes.
 
-[61] Rabanser, S., Papernot, N. (2025). *What Does It Take to Build a Performant Selective Classifier?*. arXiv:2510.20242. https://arxiv.org/abs/2510.20242 -- Asks what it takes to build a performant selective classifier; it measures abstention performance, where this study measures the value of the human who receives the abstentions and the fidelity of what they are shown.
+[61] Zaoui, A., Dombry, C. (2025). *Distributional Regression with Reject Option*. arXiv:2503.23782. https://arxiv.org/abs/2503.23782 -- Extends selective prediction to distributional regression with a reject option; abstention is placed on a distributional target, and no channel between the reviewer and the executed object appears.
 
-[62] Ravikiran, M., Vohra, S. (2026). *When Models Defer to Wrong Answers: A Robustness Audit of Source-Attributed Cues in Multiple-Choice QA*. arXiv:2609.08934. https://arxiv.org/abs/2609.08934 -- Audits whether models defer to a source-attributed cue and can be led to wrong answers; the cue's provenance affects the model, which is the mirror image of our reviewer trusting an unfaithful rendering.
+[62] Rabanser, S., Papernot, N. (2025). *What Does It Take to Build a Performant Selective Classifier?*. arXiv:2510.20242. https://arxiv.org/abs/2510.20242 -- Asks what it takes to build a performant selective classifier; it measures abstention performance, where this study measures the value of the human who receives the abstentions and the fidelity of what they are shown.
 
-[63] Zhang, C. et al. (2026). *Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents*. arXiv:2609.17708. https://arxiv.org/abs/2609.17708 -- Estimates confidence from experience so that a system can defer reliably; calibration of a self-report is a different object from the fidelity with which an approval denotes an action, and this study varies the latter.
+[63] Ravikiran, M., Vohra, S. (2026). *When Models Defer to Wrong Answers: A Robustness Audit of Source-Attributed Cues in Multiple-Choice QA*. arXiv:2609.08934. https://arxiv.org/abs/2609.08934 -- Audits whether models defer to a source-attributed cue and can be led to wrong answers; the cue's provenance affects the model, which is the mirror image of our reviewer trusting an unfaithful rendering.
 
-[64] Udayagiri, S. et al. (2026). *When to Call an LLM: A Confidence-Gated Hybrid for Cost-Effective Emotion Recognition in Conversational AI*. arXiv:2609.17977. https://arxiv.org/abs/2609.17977 -- Gates a call to an LLM on confidence to control cost in emotion recognition; a confidence gate trades accuracy against cost, and this study's gate trades harm against the harm an unfaithful review can authorise.
+[64] Zhang, C. et al. (2026). *Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents*. arXiv:2609.17708. https://arxiv.org/abs/2609.17708 -- Estimates confidence from experience so that a system can defer reliably; calibration of a self-report is a different object from the fidelity with which an approval denotes an action, and this study varies the latter.
 
-[65] Pathak, E., Krishna, L. (2026). *When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence*. arXiv:2609.21942. https://arxiv.org/abs/2609.21942 -- Decides when a failing robot should ask a human, given audited sensor evidence; asking is escalation, and the reviewed evidence is assumed faithful there, which is the assumption this study varies.
+[65] Udayagiri, S. et al. (2026). *When to Call an LLM: A Confidence-Gated Hybrid for Cost-Effective Emotion Recognition in Conversational AI*. arXiv:2609.17977. https://arxiv.org/abs/2609.17977 -- Gates a call to an LLM on confidence to control cost in emotion recognition; a confidence gate trades accuracy against cost, and this study's gate trades harm against the harm an unfaithful review can authorise.
 
-[66] Li, Z., Hara, T., Ota, J. (2026). *A Scenario-Knowledge-Driven Pipeline for Just-In-Time Assistance*. arXiv:2609.17132. https://arxiv.org/abs/2609.17132 -- Decides whether, when and how to assist a user from scenario knowledge and thresholds; the decision is an intervention policy, and the object of the study is a gate whose input can misrepresent the action.
+[66] Pathak, E., Krishna, L. (2026). *When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence*. arXiv:2609.21942. https://arxiv.org/abs/2609.21942 -- Decides when a failing robot should ask a human, given audited sensor evidence; asking is escalation, and the reviewed evidence is assumed faithful there, which is the assumption this study varies.
 
-[67] Dietz, L. (2026). *Human-In-The-Loop Nugget Annotation for Accountable LLM-as-a-Judge Evaluations*. arXiv:2606.29033. https://arxiv.org/abs/2606.29033 -- Places a human in the loop for nugget annotation and asks how the human is incorporated; incorporation design is a protocol choice, and the net value of the step is not derived there.
+[67] Li, Z., Hara, T., Ota, J. (2026). *A Scenario-Knowledge-Driven Pipeline for Just-In-Time Assistance*. arXiv:2609.17132. https://arxiv.org/abs/2609.17132 -- Decides whether, when and how to assist a user from scenario knowledge and thresholds; the decision is an intervention policy, and the object of the study is a gate whose input can misrepresent the action.
 
-[68] Parasuraman, R., Manzey, D. (2010). *Complacency and Bias in Human Use of Automation: An Attentional Integration*. Human Factors: The Journal of the Human Factors and Ergonomics Society. https://doi.org/10.1177/0018720810376055 -- An attentional integration of complacency and bias in human use of automation; the mechanism by which a human stop becomes a rubber stamp.
+[68] Dietz, L. (2026). *Human-In-The-Loop Nugget Annotation for Accountable LLM-as-a-Judge Evaluations*. arXiv:2606.29033. https://arxiv.org/abs/2606.29033 -- Places a human in the loop for nugget annotation and asks how the human is incorporated; incorporation design is a protocol choice, and the net value of the step is not derived there.
 
-[69] Bainbridge, L. (1983). *Ironies of Automation*. Automatica. https://doi.org/10.1016/0005-1098(83)90046-8 -- Ironies of automation: the operator left to supervise is least able to intervene; the founding statement of why a human gate can be worse than none, stated without a model.
+[69] Parasuraman, R., Manzey, D. (2010). *Complacency and Bias in Human Use of Automation: An Attentional Integration*. Human Factors: The Journal of the Human Factors and Ergonomics Society. https://doi.org/10.1177/0018720810376055 -- An attentional integration of complacency and bias in human use of automation; the mechanism by which a human stop becomes a rubber stamp.
 
-[70] Endsley, M., Kiris, E. (1995). *The Out-Of-The-Loop Performance Problem and Level of Control in Automation*. Human Factors: The Journal of the Human Factors and Ergonomics Society. https://doi.org/10.1518/001872095779064555 -- The out-of-the-loop performance problem and level of control in automation; the human's degraded state, held fixed here so that the channel can be varied alone.
+[70] Bainbridge, L. (1983). *Ironies of Automation*. Automatica. https://doi.org/10.1016/0005-1098(83)90046-8 -- Ironies of automation: the operator left to supervise is least able to intervene; the founding statement of why a human gate can be worse than none, stated without a model.
 
-[71] Lee, J., See, K. (2004). *Trust in Automation: Designing for Appropriate Reliance*. Human Factors: The Journal of the Human Factors and Ergonomics Society. https://doi.org/10.1518/hfes.46.1.50.30392 -- Trust in automation and designing for appropriate reliance; reliance is the reviewer's disposition toward a checker, whereas this study's failure lives in the artifact's fidelity.
+[71] Endsley, M., Kiris, E. (1995). *The Out-Of-The-Loop Performance Problem and Level of Control in Automation*. Human Factors: The Journal of the Human Factors and Ergonomics Society. https://doi.org/10.1518/001872095779064555 -- The out-of-the-loop performance problem and level of control in automation; the human's degraded state, held fixed here so that the channel can be varied alone.
 
-[72] Felt, A. et al. (2015). *Improving SSL Warnings*. Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems. https://doi.org/10.1145/2702123.2702442 -- Improves SSL warnings for comprehension and adherence; comprehension is the reviewer-side property, while this study's channel property is whether the object reviewed is the object executed.
+[72] Lee, J., See, K. (2004). *Trust in Automation: Designing for Appropriate Reliance*. Human Factors: The Journal of the Human Factors and Ergonomics Society. https://doi.org/10.1518/hfes.46.1.50.30392 -- Trust in automation and designing for appropriate reliance; reliance is the reviewer's disposition toward a checker, whereas this study's failure lives in the artifact's fidelity.
 
-[73] Bravo-Lillo, C. et al. (2011). *Improving Computer Security Dialogs*. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-23768-3_2 -- Improves computer security dialogs; a dialog is the artifact a human reads, and this study prices the decision that dialog mediates.
+[73] Felt, A. et al. (2015). *Improving SSL Warnings*. Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems. https://doi.org/10.1145/2702123.2702442 -- Improves SSL warnings for comprehension and adherence; comprehension is the reviewer-side property, while this study's channel property is whether the object reviewed is the object executed.
 
-[74] Bravo-Lillo, C. et al. (2013). *Your Attention Please*. Proceedings of the Ninth Symposium on Usable Privacy and Security. https://doi.org/10.1145/2501604.2501610 -- Designs security-decision interfaces so genuine risks are harder to ignore; the design improves the reviewer's attention, whereas this study varies whether the artifact is faithful at all.
+[74] Bravo-Lillo, C. et al. (2011). *Improving Computer Security Dialogs*. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-23768-3_2 -- Improves computer security dialogs; a dialog is the artifact a human reads, and this study prices the decision that dialog mediates.
 
-[75] Modic, D., Anderson, R. (2014). *Reading This May Harm Your Computer: The Psychology of Malware Warnings*. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.2374379 -- The psychology of malware warnings, including the cost of false positives to the user who receives them; that cost is this study's false-block term.
+[75] Bravo-Lillo, C. et al. (2013). *Your Attention Please*. Proceedings of the Ninth Symposium on Usable Privacy and Security. https://doi.org/10.1145/2501604.2501610 -- Designs security-decision interfaces so genuine risks are harder to ignore; the design improves the reviewer's attention, whereas this study varies whether the artifact is faithful at all.
 
-[76] Anderson, B. et al. (2015). *How Polymorphic Warnings Reduce Habituation in the Brain*. Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems. https://doi.org/10.1145/2702123.2702322 -- Shows polymorphic warnings reduce habituation measured in the brain; habituation is the fatigue coupling this study names as the mechanism a registered interior optimum would require.
+[76] Modic, D., Anderson, R. (2014). *Reading This May Harm Your Computer: The Psychology of Malware Warnings*. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.2374379 -- The psychology of malware warnings, including the cost of false positives to the user who receives them; that cost is this study's false-block term.
 
-[77] Egelman, S., Cranor, L., Hong, J. (2008). *You've Been Warned*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. https://doi.org/10.1145/1357054.1357219 -- Finds phishing warnings are often ignored; a warning that arrives unfaithfully or too often loses its force, which is the fatigue mechanism this study writes as an explicit cost term.
+[77] Anderson, B. et al. (2015). *How Polymorphic Warnings Reduce Habituation in the Brain*. Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems. https://doi.org/10.1145/2702123.2702322 -- Shows polymorphic warnings reduce habituation measured in the brain; habituation is the fatigue coupling this study names as the mechanism a registered interior optimum would require.
 
-[78] Dhamija, R., Tygar, J., Hearst, M. (2006). *Why Phishing Works*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. https://doi.org/10.1145/1124772.1124861 -- Explains why phishing works by defeating the user's judgement rather than the system's; the human is the deceived party, which this study formalises as an unfaithful review.
+[78] Egelman, S., Cranor, L., Hong, J. (2008). *You've Been Warned*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. https://doi.org/10.1145/1357054.1357219 -- Finds phishing warnings are often ignored; a warning that arrives unfaithfully or too often loses its force, which is the fatigue mechanism this study writes as an explicit cost term.
 
-[79] Herley, C. (2009). *So Long, and No Thanks for the Externalities*. Proceedings of the 2009 workshop on New security paradigms workshop. https://doi.org/10.1145/1719030.1719050 -- Argues users rationally reject security advice given its externalities; the rational-rejection argument is the reviewer's side of why a gate's cost can exceed its benefit.
+[79] Dhamija, R., Tygar, J., Hearst, M. (2006). *Why Phishing Works*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. https://doi.org/10.1145/1124772.1124861 -- Explains why phishing works by defeating the user's judgement rather than the system's; the human is the deceived party, which this study formalises as an unfaithful review.
 
-[80] van der Sijs, H. et al. (2006). *Overriding of Drug Safety Alerts in Computerized Physician Order Entry*. Journal of the American Medical Informatics Association. https://doi.org/10.1197/jamia.m1809 -- Documents how often clinicians override drug-safety alerts and why; the reviewer disagreeing with the checker, measured in deployment rather than derived from a channel.
+[80] Herley, C. (2009). *So Long, and No Thanks for the Externalities*. Proceedings of the 2009 workshop on New security paradigms workshop. https://doi.org/10.1145/1719030.1719050 -- Argues users rationally reject security advice given its externalities; the rational-rejection argument is the reviewer's side of why a gate's cost can exceed its benefit.
 
-[81] Weingart, S. et al. (2003). *Physicians' Decisions to Override Computerized Drug Alerts in Primary Care*. Archives of Internal Medicine. https://doi.org/10.1001/archinte.163.21.2625 -- Reports physicians' decisions to override computerised drug alerts in primary care; override behaviour is the human step's cost side, measured with no artifact-fidelity axis.
+[81] van der Sijs, H. et al. (2006). *Overriding of Drug Safety Alerts in Computerized Physician Order Entry*. Journal of the American Medical Informatics Association. https://doi.org/10.1197/jamia.m1809 -- Documents how often clinicians override drug-safety alerts and why; the reviewer disagreeing with the checker, measured in deployment rather than derived from a channel.
 
-[82] Kaushal, R., Shojania, K., Bates, D. (2003). *Effects of Computerized Physician Order Entry and Clinical Decision Support Systems on Medication Safety*. Archives of Internal Medicine. https://doi.org/10.1001/archinte.163.12.1409 -- Measures the effect of computerised order entry with decision support on adverse drug events; the outcome of adding a check, where this study asks when adding one is worth more than adding nothing.
+[82] Weingart, S. et al. (2003). *Physicians' Decisions to Override Computerized Drug Alerts in Primary Care*. Archives of Internal Medicine. https://doi.org/10.1001/archinte.163.21.2625 -- Reports physicians' decisions to override computerised drug alerts in primary care; override behaviour is the human step's cost side, measured with no artifact-fidelity axis.
 
-[83] Maxey-Jones, C., Bittner, E. (2018). *An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU*. 50 Studies Every Intensivist Should Know. https://doi.org/10.1093/med/9780190467654.003.0047 -- Reports that a checklist and a human-checked protocol reduced catheter-related bloodstream infections; a human verification step with a measured field benefit, which this study turns into a value that depends on the fidelity of what the checker sees.
+[83] Kaushal, R., Shojania, K., Bates, D. (2003). *Effects of Computerized Physician Order Entry and Clinical Decision Support Systems on Medication Safety*. Archives of Internal Medicine. https://doi.org/10.1001/archinte.163.12.1409 -- Measures the effect of computerised order entry with decision support on adverse drug events; the outcome of adding a check, where this study asks when adding one is worth more than adding nothing.
 
-[84] Mazaheri, P., Mazaheri, K. (2026). *Prior Audit-Repair Context Shifts LLM Verifier Thresholds Toward Leniency*. arXiv:2608.16003. https://arxiv.org/abs/2608.16003 -- Finds that a prior audit-repair context shifts an LLM verifier's threshold towards leniency; drift in a checker's operating point is the reviewer-accuracy axis, which this study holds fixed while varying fidelity, and the two are complementary.
+[84] Maxey-Jones, C., Bittner, E. (2018). *An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU*. 50 Studies Every Intensivist Should Know. https://doi.org/10.1093/med/9780190467654.003.0047 -- Reports that a checklist and a human-checked protocol reduced catheter-related bloodstream infections; a human verification step with a measured field benefit, which this study turns into a value that depends on the fidelity of what the checker sees.
 
-[85] Singh, A. et al. (2026). *Not All Attacks Are Learned Equally in Speech Deepfake Detection*. arXiv:2609.11763. https://arxiv.org/abs/2609.11763 -- Shows deepfake detectors learn some attack families less well than others; uneven detection across attack families is the same shape as a reviewer's effective sensitivity falling below its nominal one.
+[85] Mazaheri, P., Mazaheri, K. (2026). *Prior Audit-Repair Context Shifts LLM Verifier Thresholds Toward Leniency*. arXiv:2608.16003. https://arxiv.org/abs/2608.16003 -- Finds that a prior audit-repair context shifts an LLM verifier's threshold towards leniency; drift in a checker's operating point is the reviewer-accuracy axis, which this study holds fixed while varying fidelity, and the two are complementary.
 
-[86] Kasundra, J. et al. (2025). *AprielGuard*. arXiv:2512.20293. https://arxiv.org/abs/2512.20293 -- Builds a guard model for unsafe or adversarial behaviour; a guard classifier is a programmatic reviewer, whose value under a defective channel is bounded by what it can see.
+[86] Singh, A. et al. (2026). *Not All Attacks Are Learned Equally in Speech Deepfake Detection*. arXiv:2609.11763. https://arxiv.org/abs/2609.11763 -- Shows deepfake detectors learn some attack families less well than others; uneven detection across attack families is the same shape as a reviewer's effective sensitivity falling below its nominal one.
 
-[87] Kim, T., Kumar, A. (2026). *Addressing Over-Refusal in LLMs with Competing Rewards*. arXiv:2606.31748. https://arxiv.org/abs/2606.31748 -- Reduces over-refusal in LLMs with competing rewards, i.e. the false-block side of a filter; it optimises the rate, while this study asks when the harm from the other error makes a gate net-negative.
+[87] Kasundra, J. et al. (2025). *AprielGuard*. arXiv:2512.20293. https://arxiv.org/abs/2512.20293 -- Builds a guard model for unsafe or adversarial behaviour; a guard classifier is a programmatic reviewer, whose value under a defective channel is bounded by what it can see.
 
-[88] Lim, J., Shin, S., Hong, S. (2026). *Do Reasoning Representations Help Humans Evaluate LLM Outputs?*. arXiv:2609.09038. https://arxiv.org/abs/2609.09038 -- Asks whether reasoning representations help humans evaluate model outputs; human evaluation quality is measured against a representation, which is a fidelity-like input evaluated for helpfulness rather than priced in a decision.
+[88] Kim, T., Kumar, A. (2026). *Addressing Over-Refusal in LLMs with Competing Rewards*. arXiv:2606.31748. https://arxiv.org/abs/2606.31748 -- Reduces over-refusal in LLMs with competing rewards, i.e. the false-block side of a filter; it optimises the rate, while this study asks when the harm from the other error makes a gate net-negative.
 
-[89] Pawar, U. et al. (2026). *From Tokens to Semantics: Leveraging Complementary Signals for Hallucination Detection in Black-Box LLMs*. arXiv:2609.02679. https://arxiv.org/abs/2609.02679 -- Detects hallucination from complementary signals and frames false alarms as consuming limited human review capacity; that framing is this study's false-block cost, which enters its value law as an explicit term rather than as a motivation.
+[89] Lim, J., Shin, S., Hong, S. (2026). *Do Reasoning Representations Help Humans Evaluate LLM Outputs?*. arXiv:2609.09038. https://arxiv.org/abs/2609.09038 -- Asks whether reasoning representations help humans evaluate model outputs; human evaluation quality is measured against a representation, which is a fidelity-like input evaluated for helpfulness rather than priced in a decision.
 
-[90] Heinrich, D., McAndrew, I., Pretty, J. (2021). *Human Factors Considerations in Satellite Operation's Human-Computer Interaction Technologies: A Review of Current Applications and Theory*. arXiv:2110.04880. https://arxiv.org/abs/2110.04880 -- Reviews human factors of satellite operations and interaction technologies; the domain is remote operation, and the treatment of the human is descriptive rather than priced.
+[90] Pawar, U. et al. (2026). *From Tokens to Semantics: Leveraging Complementary Signals for Hallucination Detection in Black-Box LLMs*. arXiv:2609.02679. https://arxiv.org/abs/2609.02679 -- Detects hallucination from complementary signals and frames false alarms as consuming limited human review capacity; that framing is this study's false-block cost, which enters its value law as an explicit term rather than as a motivation.
 
-[91] Casado-Mansilla, D. et al. (2019). *On the Side Effects of Automation in IoT: Complacency and Comfort vs. Relapse and Distrust*. arXiv:1911.08657. https://arxiv.org/abs/1911.08657 -- Discusses complacency, comfort, relapse and distrust as side effects of automation in IoT; these are the dispositions that make a gate's value collapse, named qualitatively.
+[91] Heinrich, D., McAndrew, I., Pretty, J. (2021). *Human Factors Considerations in Satellite Operation's Human-Computer Interaction Technologies: A Review of Current Applications and Theory*. arXiv:2110.04880. https://arxiv.org/abs/2110.04880 -- Reviews human factors of satellite operations and interaction technologies; the domain is remote operation, and the treatment of the human is descriptive rather than priced.
 
-[92] Qian, C., Wexler, J. (2024). *Take It, Leave It, or Fix It: Measuring Productivity and Trust in Human-AI Collaboration*. arXiv:2402.18498. https://arxiv.org/abs/2402.18498 -- Measures productivity and trust when people take, leave or fix human-AI collaboration outputs; the human's disposition is measured directly, and this study instead fixes the human and varies whether their information is faithful.
+[92] Casado-Mansilla, D. et al. (2019). *On the Side Effects of Automation in IoT: Complacency and Comfort vs. Relapse and Distrust*. arXiv:1911.08657. https://arxiv.org/abs/1911.08657 -- Discusses complacency, comfort, relapse and distrust as side effects of automation in IoT; these are the dispositions that make a gate's value collapse, named qualitatively.
 
-[93] Ladapo, O. et al. (2022). *Human-In-The-Loop Machine Learning: A State of the Art*. Journal of Frontiers in Multidisciplinary Research. https://doi.org/10.54660/.jfmr.2022.3.1.656-669 -- Surveys human-in-the-loop machine learning as a field; a taxonomy of where the human acts, with the value of the human step itself not a quantity in the survey.
+[93] Qian, C., Wexler, J. (2024). *Take It, Leave It, or Fix It: Measuring Productivity and Trust in Human-AI Collaboration*. arXiv:2402.18498. https://arxiv.org/abs/2402.18498 -- Measures productivity and trust when people take, leave or fix human-AI collaboration outputs; the human's disposition is measured directly, and this study instead fixes the human and varies whether their information is faithful.
 
-[94] Holzinger, A. (2016). *Interactive Machine Learning for Health Informatics: When Do We Need the Human-In-The-Loop?*. Brain Informatics. https://doi.org/10.1007/s40708-016-0042-6 -- Argues interactive machine learning needs a human in the loop for health informatics; the case for the human is capability-based, and no channel between reviewer and object is modelled.
+[94] Ladapo, O. et al. (2022). *Human-In-The-Loop Machine Learning: A State of the Art*. Journal of Frontiers in Multidisciplinary Research. https://doi.org/10.54660/.jfmr.2022.3.1.656-669 -- Surveys human-in-the-loop machine learning as a field; a taxonomy of where the human acts, with the value of the human step itself not a quantity in the survey.
 
-[95] Horvitz, E. (1999). *Principles of Mixed-Initiative User Interfaces*. Proceedings of the SIGCHI conference on Human factors in computing systems the CHI is the limit - CHI '99. https://doi.org/10.1145/302979.303030 -- Principles of mixed-initiative user interfaces: when a system should ask the user, which is this study's escalation decision with a cost model attached.
+[95] Holzinger, A. (2016). *Interactive Machine Learning for Health Informatics: When Do We Need the Human-In-The-Loop?*. Brain Informatics. https://doi.org/10.1007/s40708-016-0042-6 -- Argues interactive machine learning needs a human in the loop for health informatics; the case for the human is capability-based, and no channel between reviewer and object is modelled.
 
-[96] Kamath, A. et al. (2025). *Enforcing Temporal Constraints for LLM Agents*. arXiv:2512.23738. https://arxiv.org/abs/2512.23738 -- Enforces temporal constraints on LLM agents through guardrails; temporal safety is a constraint on the action, and this study's subject is a human step that may or may not have positive value under such a constraint.
+[96] Horvitz, E. (1999). *Principles of Mixed-Initiative User Interfaces*. Proceedings of the SIGCHI conference on Human factors in computing systems the CHI is the limit - CHI '99. https://doi.org/10.1145/302979.303030 -- Principles of mixed-initiative user interfaces: when a system should ask the user, which is this study's escalation decision with a cost model attached.
 
-[97] Shamis, A., Stephenson, M., Zhou, L. (2025). *TEE-BFT: Pricing the Security of Data Center Execution Assurance*. arXiv:2510.26091. https://arxiv.org/abs/2510.26091 -- Prices execution assurance for data-centre workloads in a BFT setting; pricing assurance is the closest economics to this study, but the priced resource is hardware-backed execution, not a human decision with a mismatch channel.
+[97] Kamath, A. et al. (2025). *Enforcing Temporal Constraints for LLM Agents*. arXiv:2512.23738. https://arxiv.org/abs/2512.23738 -- Enforces temporal constraints on LLM agents through guardrails; temporal safety is a constraint on the action, and this study's subject is a human step that may or may not have positive value under such a constraint.
 
-[98] Chen, Y. et al. (2026). *Token Economics for LLM Agents: A Dual-View Study from Computing and Economics*. arXiv:2605.09104. https://arxiv.org/abs/2605.09104 -- Studies token economics for LLM agents from computing and economics views; it prices token consumption, and this study prices a human decision, whose harm term is absent there.
+[98] Shamis, A., Stephenson, M., Zhou, L. (2025). *TEE-BFT: Pricing the Security of Data Center Execution Assurance*. arXiv:2510.26091. https://arxiv.org/abs/2510.26091 -- Prices execution assurance for data-centre workloads in a BFT setting; pricing assurance is the closest economics to this study, but the priced resource is hardware-backed execution, not a human decision with a mismatch channel.
 
-[99] Bars, N. et al. (2025). *Empirical Security Analysis of Software-Based Fault Isolation Through Controlled Fault Injection*. arXiv:2509.07757. https://arxiv.org/abs/2509.07757 -- Analyses software-based fault isolation empirically through controlled fault injection; isolation boundaries are enforcement mechanisms, and the object verified is code rather than an artifact a human approved.
+[99] Chen, Y. et al. (2026). *Token Economics for LLM Agents: A Dual-View Study from Computing and Economics*. arXiv:2605.09104. https://arxiv.org/abs/2605.09104 -- Studies token economics for LLM agents from computing and economics views; it prices token consumption, and this study prices a human decision, whose harm term is absent there.
 
-[100] Sotoudeh, M., Yedidia, Z. (2025). *Automated Formal Verification of a Software Fault Isolation System*. arXiv:2508.15898. https://arxiv.org/abs/2508.15898 -- Formally verifies a software fault isolation system, including its verifier; a verifier proved correct is a different claim from a reviewer shown a faithful object.
+[100] Bars, N. et al. (2025). *Empirical Security Analysis of Software-Based Fault Isolation Through Controlled Fault Injection*. arXiv:2509.07757. https://arxiv.org/abs/2509.07757 -- Analyses software-based fault isolation empirically through controlled fault injection; isolation boundaries are enforcement mechanisms, and the object verified is code rather than an artifact a human approved.
 
-[101] Schwarz, D. (2025). *Countermind: A Multi-Layered Security Architecture for Large Language Models*. arXiv:2510.11837. https://arxiv.org/abs/2510.11837 -- Layers several defences for LLM applications against prompt injection and related attacks; layering reduces attack success, and this study asks whether the human layer pays.
+[101] Sotoudeh, M., Yedidia, Z. (2025). *Automated Formal Verification of a Software Fault Isolation System*. arXiv:2508.15898. https://arxiv.org/abs/2508.15898 -- Formally verifies a software fault isolation system, including its verifier; a verifier proved correct is a different claim from a reviewer shown a faithful object.
 
-[102] Avina, A., Hariprasad, Y., Chaudhary, N. (2025). *PokiSEC: A Multi-Architecture, Containerized Ephemeral Malware Detonation Sandbox*. arXiv:2512.20860. https://arxiv.org/abs/2512.20860 -- Detonates malware in an ephemeral containerized sandbox; containment bounds the blast radius, which is an alternative to a gate rather than a value for one.
+[102] Schwarz, D. (2025). *Countermind: A Multi-Layered Security Architecture for Large Language Models*. arXiv:2510.11837. https://arxiv.org/abs/2510.11837 -- Layers several defences for LLM applications against prompt injection and related attacks; layering reduces attack success, and this study asks whether the human layer pays.
 
-[103] Zhang, R. (2026). *Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety*. arXiv:2608.01388. https://arxiv.org/abs/2608.01388 -- Bounds the recall of a fixed-invariant FSA monitor by the entropy of the attack distribution; that is the adjacent monitor law for a programmatic detector, and no analogous bound is published for a human gate, which is what this study supplies.
+[103] Avina, A., Hariprasad, Y., Chaudhary, N. (2025). *PokiSEC: A Multi-Architecture, Containerized Ephemeral Malware Detonation Sandbox*. arXiv:2512.20860. https://arxiv.org/abs/2512.20860 -- Detonates malware in an ephemeral containerized sandbox; containment bounds the blast radius, which is an alternative to a gate rather than a value for one.
 
-[104] Hanley, J., McNeil, B. (1983). *A Method of Comparing the Areas under Receiver Operating Characteristic Curves Derived from the Same Cases.*. Radiology. https://doi.org/10.1148/radiology.148.3.6878708 -- Compares ROC areas estimated from the same cases with a paired procedure; the paired-comparison tradition this study's per-stream pairing follows.
+[104] Zhang, R. (2026). *Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety*. arXiv:2608.01388. https://arxiv.org/abs/2608.01388 -- Bounds the recall of a fixed-invariant FSA monitor by the entropy of the attack distribution; that is the adjacent monitor law for a programmatic detector, and no analogous bound is published for a human gate, which is what this study supplies.
 
-[105] Brodersen, J., Siersma, V. (2013). *Long-Term Psychosocial Consequences of False-Positive Screening Mammography*. The Annals of Family Medicine. https://doi.org/10.1370/afm.1466 -- Long-term psychosocial consequences of false-positive screening mammography; the harm of a false positive measured in the field, which is why this study carries a false-block term rather than treating the gate as free.
+[105] Hanley, J., McNeil, B. (1983). *A Method of Comparing the Areas under Receiver Operating Characteristic Curves Derived from the Same Cases.*. Radiology. https://doi.org/10.1148/radiology.148.3.6878708 -- Compares ROC areas estimated from the same cases with a paired procedure; the paired-comparison tradition this study's per-stream pairing follows.
 
-[106] Marteau, T. (1989). *Psychological Costs of Screening.*. BMJ. https://doi.org/10.1136/bmj.299.6698.527 -- The psychological costs of screening; screening harms borne by those screened, the empirical backing for pricing the gate's own errors.
+[106] Brodersen, J., Siersma, V. (2013). *Long-Term Psychosocial Consequences of False-Positive Screening Mammography*. The Annals of Family Medicine. https://doi.org/10.1370/afm.1466 -- Long-term psychosocial consequences of false-positive screening mammography; the harm of a false positive measured in the field, which is why this study carries a false-block term rather than treating the gate as free.
 
-[107] Bacchelli, A., Bird, C. (2013). *Expectations, Outcomes, and Challenges of Modern Code Review*. 2013 35th International Conference on Software Engineering (ICSE). https://doi.org/10.1109/icse.2013.6606617 -- Reports expectations, outcomes and challenges of modern code review in industry; a deployed human review step studied as a practice, without a value for the step.
+[107] Marteau, T. (1989). *Psychological Costs of Screening.*. BMJ. https://doi.org/10.1136/bmj.299.6698.527 -- The psychological costs of screening; screening harms borne by those screened, the empirical backing for pricing the gate's own errors.
 
-[108] Bosu, A., Greiler, M., Bird, C. (2015). *Characteristics of Useful Code Reviews: An Empirical Study at Microsoft*. 2015 IEEE/ACM 12th Working Conference on Mining Software Repositories. https://doi.org/10.1109/msr.2015.21 -- Measures what makes a code review useful; usefulness is judged by the reviewed person rather than derived from whether the reviewer's object denoted the change.
+[108] Bacchelli, A., Bird, C. (2013). *Expectations, Outcomes, and Challenges of Modern Code Review*. 2013 35th International Conference on Software Engineering (ICSE). https://doi.org/10.1109/icse.2013.6606617 -- Reports expectations, outcomes and challenges of modern code review in industry; a deployed human review step studied as a practice, without a value for the step.
 
-[109] Sadowski, C. et al. (2018). *Modern Code Review*. Proceedings of the 40th International Conference on Software Engineering: Software Engineering in Practice. https://doi.org/10.1145/3183519.3183525 -- Describes modern code review as practised at Google, including reviewer assignment and tooling; a large deployed review process whose benefit is reported as practice.
+[109] Bosu, A., Greiler, M., Bird, C. (2015). *Characteristics of Useful Code Reviews: An Empirical Study at Microsoft*. 2015 IEEE/ACM 12th Working Conference on Mining Software Repositories. https://doi.org/10.1109/msr.2015.21 -- Measures what makes a code review useful; usefulness is judged by the reviewed person rather than derived from whether the reviewer's object denoted the change.
 
-[110] Townsend, R. (1979). *Optimal Contracts and Competitive Markets with Costly State Verification*. Federal Reserve Bank of Minneapolis. https://doi.org/10.21034/sr.45 -- Optimal contracts with costly state verification; verification is itself costly and is used only when it pays, which is the decision rule this study derives for a human gate.
+[110] Sadowski, C. et al. (2018). *Modern Code Review*. Proceedings of the 40th International Conference on Software Engineering: Software Engineering in Practice. https://doi.org/10.1145/3183519.3183525 -- Describes modern code review as practised at Google, including reviewer assignment and tooling; a large deployed review process whose benefit is reported as practice.
 
-[111] Williamson, S. (1986). *Costly Monitoring, Financial Intermediation, and Equilibrium Credit Rationing*. Journal of Monetary Economics. https://doi.org/10.1016/0304-3932(86)90074-7 -- Costly monitoring and equilibrium credit rationing; monitoring is costly and worth only the difference it makes, the economic structure this study instantiates with a fidelity parameter.
+[111] Townsend, R. (1979). *Optimal Contracts and Competitive Markets with Costly State Verification*. Federal Reserve Bank of Minneapolis. https://doi.org/10.21034/sr.45 -- Optimal contracts with costly state verification; verification is itself costly and is used only when it pays, which is the decision rule this study derives for a human gate.
 
-[112] Holmstrom, B. (1979). *Moral Hazard and Observability*. The Bell Journal of Economics. https://doi.org/10.2307/3003320 -- Moral hazard and observability: effort is unobservable and the contract prices what can be seen; the reason an unfaithful observation is worth less than a faithful one.
+[112] Williamson, S. (1986). *Costly Monitoring, Financial Intermediation, and Equilibrium Credit Rationing*. Journal of Monetary Economics. https://doi.org/10.1016/0304-3932(86)90074-7 -- Costly monitoring and equilibrium credit rationing; monitoring is costly and worth only the difference it makes, the economic structure this study instantiates with a fidelity parameter.
 
-[113] Becker, G. (1968). *Crime and Punishment: An Economic Approach*. The Economic Dimensions of Crime. https://doi.org/10.1007/978-1-349-62853-7_2 -- Crime and punishment: an economic approach; enforcement is priced against the harm it deters, the framing this study applies to a single approval decision.
+[113] Holmstrom, B. (1979). *Moral Hazard and Observability*. The Bell Journal of Economics. https://doi.org/10.2307/3003320 -- Moral hazard and observability: effort is unobservable and the contract prices what can be seen; the reason an unfaithful observation is worth less than a faithful one.
 
-[114] Polinsky, A., Shavell, S. (1999). *The Economic Theory of Public Enforcement of Law*. National Bureau of Economic Research. https://doi.org/10.3386/w6993 -- The economic theory of public enforcement of law; enforcement intensity against the harm avoided, a policy-level analogue of this study's per-decision value.
+[114] Becker, G. (1968). *Crime and Punishment: An Economic Approach*. The Economic Dimensions of Crime. https://doi.org/10.1007/978-1-349-62853-7_2 -- Crime and punishment: an economic approach; enforcement is priced against the harm it deters, the framing this study applies to a single approval decision.
 
-[115] Jensen (Deceased), M., Meckling, W. (1998). *Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure*. Elsevier BV. https://doi.org/10.2139/ssrn.94043 -- Theory of the firm, agency costs and ownership structure; the principal-agent structure in which a check on an agent's action is priced.
+[115] Polinsky, A., Shavell, S. (1999). *The Economic Theory of Public Enforcement of Law*. National Bureau of Economic Research. https://doi.org/10.3386/w6993 -- The economic theory of public enforcement of law; enforcement intensity against the harm avoided, a policy-level analogue of this study's per-decision value.
 
-[116] Thompson, K. (2007). *Reflections on Trusting Trust*. ACM Turing award lectures. https://doi.org/10.1145/1283920.1283940 -- Reflections on trusting trust: trust in a chain is trust in whatever wrote it; the reason an approval artifact's provenance matters independently of its content.
+[116] Jensen (Deceased), M., Meckling, W. (1998). *Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure*. Elsevier BV. https://doi.org/10.2139/ssrn.94043 -- Theory of the firm, agency costs and ownership structure; the principal-agent structure in which a check on an agent's action is priced.
 
-[117] Rose, S. et al. (2019). *Zero Trust Architecture*. National Institute of Standards and Technology (NIST). https://doi.org/10.6028/nist.sp.800-207-draft -- Zero trust architecture: no implicit trust from network position; the architectural claim that every step must be verified, whose value this study asks about.
+[117] Thompson, K. (2007). *Reflections on Trusting Trust*. ACM Turing award lectures. https://doi.org/10.1145/1283920.1283940 -- Reflections on trusting trust: trust in a chain is trust in whatever wrote it; the reason an approval artifact's provenance matters independently of its content.
 
-[118] Anderson, R. (2020). *Security Engineering*. Wiley. https://doi.org/10.1002/9781119644682 -- Security engineering as a discipline of building dependable systems; the reference for the engineering frame in which an approval step is one control among several.
+[118] Rose, S. et al. (2019). *Zero Trust Architecture*. National Institute of Standards and Technology (NIST). https://doi.org/10.6028/nist.sp.800-207-draft -- Zero trust architecture: no implicit trust from network position; the architectural claim that every step must be verified, whose value this study asks about.
 
-[119] Diakopoulos, N. (2014). *Algorithmic Accountability*. Digital Journalism. https://doi.org/10.1080/21670811.2014.976411 -- Investigates algorithmic accountability journalistically; accountability as a practice, cited for the governance context in which approval gates are justified.
+[119] Anderson, R. (2020). *Security Engineering*. Wiley. https://doi.org/10.1002/9781119644682 -- Security engineering as a discipline of building dependable systems; the reference for the engineering frame in which an approval step is one control among several.
 
-[120] Mittelstadt, B. et al. (2016). *The Ethics of Algorithms: Mapping the Debate*. Big Data &amp; Society. https://doi.org/10.1177/2053951716679679 -- Maps the ethics debate around algorithms; the normative frame in which a human gate is usually argued for, and which this study asks to be traded against its cost.
+[120] Diakopoulos, N. (2014). *Algorithmic Accountability*. Digital Journalism. https://doi.org/10.1080/21670811.2014.976411 -- Investigates algorithmic accountability journalistically; accountability as a practice, cited for the governance context in which approval gates are justified.
+
+[121] Mittelstadt, B. et al. (2016). *The Ethics of Algorithms: Mapping the Debate*. Big Data &amp; Society. https://doi.org/10.1177/2053951716679679 -- Maps the ethics debate around algorithms; the normative frame in which a human gate is usually argued for, and which this study asks to be traded against its cost.

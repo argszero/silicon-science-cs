@@ -344,6 +344,17 @@
    "detail": "query: 2606.08919; arXiv 2606.08919; year 2026 (manuscript: 2026)"
   },
   {
+   "key": "wang2026b",
+   "identifier": "2609.38983",
+   "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "source": "arxiv",
+   "verdict": "VERIFIED",
+   "method": "arXiv API id_list",
+   "found": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "similarity": 1.0,
+   "detail": "query: 2609.38983; arXiv 2609.38983; year 2026 (manuscript: 2026)"
+  },
+  {
    "key": "lyu2026",
    "identifier": "2609.08015",
    "title": "From Version Conflicts to Decision Conflicts: Selective Revalidation for Long-Running AI Agents",
@@ -357,11 +368,11 @@
   {
    "key": "li2026a",
    "identifier": "2609.08472",
-   "title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+   "title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
    "source": "arxiv",
    "verdict": "VERIFIED",
    "method": "arXiv API id_list",
-   "found": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+   "found": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
    "similarity": 1.0,
    "detail": "query: 2609.08472; arXiv 2609.08472; year 2026 (manuscript: 2026)"
   },
@@ -1323,7 +1334,7 @@
    "detail": "query: 10.1177/2053951716679679; DOI 10.1177/2053951716679679; Big Data &amp; Society; year 2016 (manuscript: 2016)"
   }
  ],
- "n_verified": 120,
+ "n_verified": 121,
  "n_mismatch": 0,
  "n_unverified": 0
 }

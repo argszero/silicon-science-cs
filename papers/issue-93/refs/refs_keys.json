@@ -12,7 +12,8 @@
   ],
   "wang2026": [
    "wang2026",
-   "wang2026a"
+   "wang2026a",
+   "wang2026b"
   ],
   "zhang2026": [
    "zhang2026",
@@ -668,9 +669,9 @@
    "difference": "Argues authority should be held by a substrate other than the agent's own context, with a cross-substrate notion of authority; it settles where authority should live, not what an approval step is worth once authority has been placed.",
    "identifier": "2609.08472",
    "key": "li2026a",
-   "pool_title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+   "pool_title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
    "source": "arxiv",
-   "title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+   "title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
    "url": "https://arxiv.org/abs/2609.08472",
    "year": 2026
   },
@@ -1213,6 +1214,17 @@
    "url": "https://arxiv.org/abs/2609.14987",
    "year": 2026
   },
+  "wang2026b": {
+   "authors": "Wang, Y.",
+   "difference": "Systematizes six ways a harness can dispatch an action other than the one a human approved and measures a bound-gap rate for each in one harness, then prototypes a keyed token as a binding defence; it measures and defends the failure, where this study takes binding fidelity as a parameter of a value functional and derives the fidelity below which the gate's net value turns negative, the accuracy-insensitivity that survives there, and the equivalence of the repair.",
+   "identifier": "2609.38983",
+   "key": "wang2026b",
+   "pool_title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "source": "arxiv",
+   "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "url": "https://arxiv.org/abs/2609.38983",
+   "year": 2026
+  },
   "weingart2003": {
    "authors": "Weingart, S. et al.",
    "difference": "Reports physicians' decisions to override computerised drug alerts in primary care; override behaviour is the human step's cost side, measured with no artifact-fidelity axis.",
@@ -1346,6 +1358,6 @@
    "year": 2026
   }
  },
- "n": 120,
- "round": "R417; re-derived at R424"
+ "n": 121,
+ "round": "R417; re-derived at R424, R482"
 }

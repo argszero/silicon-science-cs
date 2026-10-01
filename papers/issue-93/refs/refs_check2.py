@@ -35,7 +35,9 @@ def load():
     anc = json.loads(io.open(os.path.join(HERE, "refs_anchors.json"), encoding="utf-8").read())
     cla = json.loads(io.open(os.path.join(HERE, "refs_classic.json"), encoding="utf-8").read())
     arx_pool, doi_pool = set(), {}
-    for name in ("refs_raw.json", "refs_raw2.json", "refs_anchors.json"):
+    # R482: `refs_reread.json` is a pool too, so C3 ("every identifier is in a declared pool") must read it --
+    # a limb the check cannot see would be a record outside the property the check asserts.
+    for name in ("refs_raw.json", "refs_raw2.json", "refs_anchors.json", "refs_reread.json"):
         p = json.loads(io.open(os.path.join(HERE, name), encoding="utf-8").read())
         for blk in p["arxiv"].values():
             for r in blk["rows"]:
@@ -366,8 +368,8 @@ def main():
         # that targeted the previous round's numbers becomes inert.  (Both misaimed plants this round were found
         # by the battery reporting MUTATION-as-MISS, not by reading.)
         for label, fn in (("note build line",
-                           lambda t: t.replace("built 120 of 120 selected entries (74 arXiv + 46 DOI)",
-                                               "built 119 of 120 selected entries (73 arXiv + 46 DOI)")),
+                           lambda t: t.replace("built 121 of 121 selected entries (75 arXiv + 46 DOI)",
+                                               "built 120 of 121 selected entries (74 arXiv + 46 DOI)")),
                           ("note cross-source numbers",
                            lambda t: t.replace("shared 4, agree 4, disagree 0", "shared 3, agree 4, disagree 0")),
                           ("note refusal figure w/o provenance",

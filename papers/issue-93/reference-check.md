@@ -8,8 +8,8 @@ offline and refuses a report that has drifted from them.
 
 | | |
 |---|---|
-| entries checked | 120 |
-| verified | 120 |
+| entries checked | 121 |
+| verified | 121 |
 | mismatch | 0 |
 | unverified | 0 |
 | title-agreement threshold | 0.80 (normalized token overlap; below it an entry is a MISMATCH) |
@@ -273,7 +273,15 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2606.08919; arXiv 2606.08919; year 2026 (manuscript: 2026)
 
-**[32] lyu2026** (arxiv) -- VERIFIED
+**[32] wang2026b** (arxiv) -- VERIFIED
+
+> manuscript: *Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses*
+>
+> arXiv API id_list -> found *Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses*  (title overlap 1.00)
+>
+> query: 2609.38983; arXiv 2609.38983; year 2026 (manuscript: 2026)
+
+**[33] lyu2026** (arxiv) -- VERIFIED
 
 > manuscript: *From Version Conflicts to Decision Conflicts: Selective Revalidation for Long-Running AI Agents*
 >
@@ -281,15 +289,15 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.08015; arXiv 2609.08015; year 2026 (manuscript: 2026)
 
-**[33] li2026a** (arxiv) -- VERIFIED
+**[34] li2026a** (arxiv) -- VERIFIED
 
-> manuscript: *Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems*
+> manuscript: *From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents*
 >
-> arXiv API id_list -> found *Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems*  (title overlap 1.00)
+> arXiv API id_list -> found *From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents*  (title overlap 1.00)
 >
 > query: 2609.08472; arXiv 2609.08472; year 2026 (manuscript: 2026)
 
-**[34] safin2026** (arxiv) -- VERIFIED
+**[35] safin2026** (arxiv) -- VERIFIED
 
 > manuscript: *Trust Propagation and Structural Containment in Multi-Agent LLM Pipelines*
 >
@@ -297,7 +305,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.17648; arXiv 2609.17648; year 2026 (manuscript: 2026)
 
-**[35] huang2026** (arxiv) -- VERIFIED
+**[36] huang2026** (arxiv) -- VERIFIED
 
 > manuscript: *When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents*
 >
@@ -305,7 +313,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.13889; arXiv 2609.13889; year 2026 (manuscript: 2026)
 
-**[36] wang2026a** (arxiv) -- VERIFIED
+**[37] wang2026a** (arxiv) -- VERIFIED
 
 > manuscript: *ActGuard: Pre-Execution Action Auditing Against Indirect Prompt Injection in LLM Agents*
 >
@@ -313,7 +321,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.14987; arXiv 2609.14987; year 2026 (manuscript: 2026)
 
-**[37] li2026b** (arxiv) -- VERIFIED
+**[38] li2026b** (arxiv) -- VERIFIED
 
 > manuscript: *Universal Defenses for Tool-Integrated LLM Agents Against Adversarial Attacks*
 >
@@ -321,7 +329,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.16098; arXiv 2609.16098; year 2026 (manuscript: 2026)
 
-**[38] zhang2026** (arxiv) -- VERIFIED
+**[39] zhang2026** (arxiv) -- VERIFIED
 
 > manuscript: *Origin Is All You Need: Provenance-Aware Transformers for Structural Trust-Boundary Separation*
 >
@@ -329,7 +337,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.21088; arXiv 2609.21088; year 2026 (manuscript: 2026)
 
-**[39] ediga2026** (arxiv) -- VERIFIED
+**[40] ediga2026** (arxiv) -- VERIFIED
 
 > manuscript: *Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines*
 >
@@ -337,7 +345,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.18217; arXiv 2609.18217; year 2026 (manuscript: 2026)
 
-**[40] leong2026** (arxiv) -- VERIFIED
+**[41] leong2026** (arxiv) -- VERIFIED
 
 > manuscript: *Recognition Without Enforcement: Configuration-Dependent Failures in LLM Agent Instruction Arbitration and External Control*
 >
@@ -345,7 +353,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.28502; arXiv 2608.28502; year 2026 (manuscript: 2026)
 
-**[41] iyer2026** (arxiv) -- VERIFIED
+**[42] iyer2026** (arxiv) -- VERIFIED
 
 > manuscript: *Closed-World Resolution Against Tool Hallucination in LLM Agents*
 >
@@ -353,7 +361,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.19425; arXiv 2609.19425; year 2026 (manuscript: 2026)
 
-**[42] ma2024** (arxiv) -- VERIFIED
+**[43] ma2024** (arxiv) -- VERIFIED
 
 > manuscript: *Caution for the Environment: Multimodal LLM Agents Are Susceptible to Environmental Distractions*
 >
@@ -361,7 +369,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2408.02544; arXiv 2408.02544; year 2024 (manuscript: 2024)
 
-**[43] hu2026** (arxiv) -- VERIFIED
+**[44] hu2026** (arxiv) -- VERIFIED
 
 > manuscript: *Faithful Mobile GUI Agents with Guided Advantage Estimator*
 >
@@ -369,7 +377,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2605.01208; arXiv 2605.01208; year 2026 (manuscript: 2026)
 
-**[44] akkil2026** (arxiv) -- VERIFIED
+**[45] akkil2026** (arxiv) -- VERIFIED
 
 > manuscript: *Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems*
 >
@@ -377,7 +385,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.17320; arXiv 2609.17320; year 2026 (manuscript: 2026)
 
-**[45] xiong2026** (arxiv) -- VERIFIED
+**[46] xiong2026** (arxiv) -- VERIFIED
 
 > manuscript: *Reachability-Based Capability Confinement for LLM Agents under Indirect Prompt Injection*
 >
@@ -385,7 +393,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.30041; arXiv 2608.30041; year 2026 (manuscript: 2026)
 
-**[46] veski2026** (arxiv) -- VERIFIED
+**[47] veski2026** (arxiv) -- VERIFIED
 
 > manuscript: *CAPMAS: Capability-Based Delegation of Privileges in Multi-Agent Systems*
 >
@@ -393,7 +401,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.06500; arXiv 2609.06500; year 2026 (manuscript: 2026)
 
-**[47] gong2026** (arxiv) -- VERIFIED
+**[48] gong2026** (arxiv) -- VERIFIED
 
 > manuscript: *Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance*
 >
@@ -401,7 +409,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.30519; arXiv 2608.30519; year 2026 (manuscript: 2026)
 
-**[48] collina2026** (arxiv) -- VERIFIED
+**[49] collina2026** (arxiv) -- VERIFIED
 
 > manuscript: *Delegating Authorization to Misaligned Agents: Coalitional Alignment and Safe Control*
 >
@@ -409,7 +417,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.15803; arXiv 2609.15803; year 2026 (manuscript: 2026)
 
-**[49] zhu2026** (arxiv) -- VERIFIED
+**[50] zhu2026** (arxiv) -- VERIFIED
 
 > manuscript: *Runtime Authorization for Resources Acquired by AI Agents*
 >
@@ -417,7 +425,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.14744; arXiv 2609.14744; year 2026 (manuscript: 2026)
 
-**[50] zhu2026a** (arxiv) -- VERIFIED
+**[51] zhu2026a** (arxiv) -- VERIFIED
 
 > manuscript: *Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound*
 >
@@ -425,7 +433,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.05920; arXiv 2609.05920; year 2026 (manuscript: 2026)
 
-**[51] hu2026a** (arxiv) -- VERIFIED
+**[52] hu2026a** (arxiv) -- VERIFIED
 
 > manuscript: *Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code under an Adversarial Generator*
 >
@@ -433,7 +441,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.00430; arXiv 2609.00430; year 2026 (manuscript: 2026)
 
-**[52] zheng2026** (arxiv) -- VERIFIED
+**[53] zheng2026** (arxiv) -- VERIFIED
 
 > manuscript: *LLM Agent Capabilities Should Follow Task Intent and Context Source*
 >
@@ -441,7 +449,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.14631; arXiv 2609.14631; year 2026 (manuscript: 2026)
 
-**[53] chernov2026** (arxiv) -- VERIFIED
+**[54] chernov2026** (arxiv) -- VERIFIED
 
 > manuscript: *Brain API: An Intent-Aware Control Plane for Policy-Governed Agentic Systems*
 >
@@ -449,7 +457,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.21299; arXiv 2609.21299; year 2026 (manuscript: 2026)
 
-**[54] wu2026** (arxiv) -- VERIFIED
+**[55] wu2026** (arxiv) -- VERIFIED
 
 > manuscript: *SkillShield: Prompt-Space Security Skills for LLM Coding Agents*
 >
@@ -457,7 +465,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.25817; arXiv 2608.25817; year 2026 (manuscript: 2026)
 
-**[55] bromme2026** (arxiv) -- VERIFIED
+**[56] bromme2026** (arxiv) -- VERIFIED
 
 > manuscript: *A Black Box for Agentic Processes: Blockchain-Anchored Evidence for AI Agent Communication, Human Oversight, and GRC Audits*
 >
@@ -465,7 +473,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.04017; arXiv 2609.04017; year 2026 (manuscript: 2026)
 
-**[56] strong2026** (arxiv) -- VERIFIED
+**[57] strong2026** (arxiv) -- VERIFIED
 
 > manuscript: *RACER: Role-Aligned Competence Estimation for Human-AI Routing*
 >
@@ -473,7 +481,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.21953; arXiv 2609.21953; year 2026 (manuscript: 2026)
 
-**[57] pesenti2026** (arxiv) -- VERIFIED
+**[58] pesenti2026** (arxiv) -- VERIFIED
 
 > manuscript: *Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer*
 >
@@ -481,7 +489,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.28050; arXiv 2608.28050; year 2026 (manuscript: 2026)
 
-**[58] franc2025** (arxiv) -- VERIFIED
+**[59] franc2025** (arxiv) -- VERIFIED
 
 > manuscript: *Epistemic Reject Option Prediction*
 >
@@ -489,7 +497,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2511.04855; arXiv 2511.04855; year 2025 (manuscript: 2025)
 
-**[59] szabadvary2025** (arxiv) -- VERIFIED
+**[60] szabadvary2025** (arxiv) -- VERIFIED
 
 > manuscript: *Classification with Reject Option: Distribution-Free Error Guarantees via Conformal Prediction*
 >
@@ -497,7 +505,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2506.21802; arXiv 2506.21802; year 2025 (manuscript: 2025)
 
-**[60] zaoui2025** (arxiv) -- VERIFIED
+**[61] zaoui2025** (arxiv) -- VERIFIED
 
 > manuscript: *Distributional Regression with Reject Option*
 >
@@ -505,7 +513,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2503.23782; arXiv 2503.23782; year 2025 (manuscript: 2025)
 
-**[61] rabanser2025** (arxiv) -- VERIFIED
+**[62] rabanser2025** (arxiv) -- VERIFIED
 
 > manuscript: *What Does It Take to Build a Performant Selective Classifier?*
 >
@@ -513,7 +521,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2510.20242; arXiv 2510.20242; year 2025 (manuscript: 2025)
 
-**[62] ravikiran2026** (arxiv) -- VERIFIED
+**[63] ravikiran2026** (arxiv) -- VERIFIED
 
 > manuscript: *When Models Defer to Wrong Answers: A Robustness Audit of Source-Attributed Cues in Multiple-Choice QA*
 >
@@ -521,7 +529,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.08934; arXiv 2609.08934; year 2026 (manuscript: 2026)
 
-**[63] zhang2026a** (arxiv) -- VERIFIED
+**[64] zhang2026a** (arxiv) -- VERIFIED
 
 > manuscript: *Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents*
 >
@@ -529,7 +537,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.17708; arXiv 2609.17708; year 2026 (manuscript: 2026)
 
-**[64] udayagiri2026** (arxiv) -- VERIFIED
+**[65] udayagiri2026** (arxiv) -- VERIFIED
 
 > manuscript: *When to Call an LLM: A Confidence-Gated Hybrid for Cost-Effective Emotion Recognition in Conversational AI*
 >
@@ -537,7 +545,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.17977; arXiv 2609.17977; year 2026 (manuscript: 2026)
 
-**[65] pathak2026** (arxiv) -- VERIFIED
+**[66] pathak2026** (arxiv) -- VERIFIED
 
 > manuscript: *When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence*
 >
@@ -545,7 +553,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.21942; arXiv 2609.21942; year 2026 (manuscript: 2026)
 
-**[66] li2026c** (arxiv) -- VERIFIED
+**[67] li2026c** (arxiv) -- VERIFIED
 
 > manuscript: *A Scenario-Knowledge-Driven Pipeline for Just-In-Time Assistance*
 >
@@ -553,7 +561,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.17132; arXiv 2609.17132; year 2026 (manuscript: 2026)
 
-**[67] dietz2026** (arxiv) -- VERIFIED
+**[68] dietz2026** (arxiv) -- VERIFIED
 
 > manuscript: *Human-In-The-Loop Nugget Annotation for Accountable LLM-as-a-Judge Evaluations*
 >
@@ -561,7 +569,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2606.29033; arXiv 2606.29033; year 2026 (manuscript: 2026)
 
-**[68] parasuraman2010** (crossref) -- VERIFIED
+**[69] parasuraman2010** (crossref) -- VERIFIED
 
 > manuscript: *Complacency and Bias in Human Use of Automation: An Attentional Integration*
 >
@@ -569,7 +577,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1177/0018720810376055; DOI 10.1177/0018720810376055; Human Factors: The Journal of the Human Factors and Ergonomics Society; year 2010 (manuscript: 2010)
 
-**[69] bainbridge1983** (crossref) -- VERIFIED
+**[70] bainbridge1983** (crossref) -- VERIFIED
 
 > manuscript: *Ironies of Automation*
 >
@@ -577,7 +585,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1016/0005-1098(83)90046-8; DOI 10.1016/0005-1098(83)90046-8; Automatica; year 1983 (manuscript: 1983)
 
-**[70] endsley1995** (crossref) -- VERIFIED
+**[71] endsley1995** (crossref) -- VERIFIED
 
 > manuscript: *The Out-Of-The-Loop Performance Problem and Level of Control in Automation*
 >
@@ -585,7 +593,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1518/001872095779064555; DOI 10.1518/001872095779064555; Human Factors: The Journal of the Human Factors and Ergonomics Society; year 1995 (manuscript: 1995)
 
-**[71] lee2004** (crossref) -- VERIFIED
+**[72] lee2004** (crossref) -- VERIFIED
 
 > manuscript: *Trust in Automation: Designing for Appropriate Reliance*
 >
@@ -593,7 +601,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1518/hfes.46.1.50.30392; DOI 10.1518/hfes.46.1.50.30392; Human Factors: The Journal of the Human Factors and Ergonomics Society; year 2004 (manuscript: 2004)
 
-**[72] felt2015** (crossref) -- VERIFIED
+**[73] felt2015** (crossref) -- VERIFIED
 
 > manuscript: *Improving SSL Warnings*
 >
@@ -601,7 +609,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/2702123.2702442; DOI 10.1145/2702123.2702442; Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems; year 2015 (manuscript: 2015)
 
-**[73] bravolillo2011** (crossref) -- VERIFIED
+**[74] bravolillo2011** (crossref) -- VERIFIED
 
 > manuscript: *Improving Computer Security Dialogs*
 >
@@ -609,7 +617,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1007/978-3-642-23768-3_2; DOI 10.1007/978-3-642-23768-3_2; Lecture Notes in Computer Science; year 2011 (manuscript: 2011)
 
-**[74] bravolillo2013** (crossref) -- VERIFIED
+**[75] bravolillo2013** (crossref) -- VERIFIED
 
 > manuscript: *Your Attention Please*
 >
@@ -617,7 +625,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/2501604.2501610; DOI 10.1145/2501604.2501610; Proceedings of the Ninth Symposium on Usable Privacy and Security; year 2013 (manuscript: 2013)
 
-**[75] modic2014** (crossref) -- VERIFIED
+**[76] modic2014** (crossref) -- VERIFIED
 
 > manuscript: *Reading This May Harm Your Computer: The Psychology of Malware Warnings*
 >
@@ -625,7 +633,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.2139/ssrn.2374379; DOI 10.2139/ssrn.2374379; SSRN Electronic Journal; year 2014 (manuscript: 2014)
 
-**[76] anderson2015** (crossref) -- VERIFIED
+**[77] anderson2015** (crossref) -- VERIFIED
 
 > manuscript: *How Polymorphic Warnings Reduce Habituation in the Brain*
 >
@@ -633,7 +641,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/2702123.2702322; DOI 10.1145/2702123.2702322; Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems; year 2015 (manuscript: 2015)
 
-**[77] egelman2008** (crossref) -- VERIFIED
+**[78] egelman2008** (crossref) -- VERIFIED
 
 > manuscript: *You've Been Warned*
 >
@@ -641,7 +649,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/1357054.1357219; DOI 10.1145/1357054.1357219; Proceedings of the SIGCHI Conference on Human Factors in Computing Systems; year 2008 (manuscript: 2008)
 
-**[78] dhamija2006** (crossref) -- VERIFIED
+**[79] dhamija2006** (crossref) -- VERIFIED
 
 > manuscript: *Why Phishing Works*
 >
@@ -649,7 +657,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/1124772.1124861; DOI 10.1145/1124772.1124861; Proceedings of the SIGCHI Conference on Human Factors in Computing Systems; year 2006 (manuscript: 2006)
 
-**[79] herley2009** (crossref) -- VERIFIED
+**[80] herley2009** (crossref) -- VERIFIED
 
 > manuscript: *So Long, and No Thanks for the Externalities*
 >
@@ -657,7 +665,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/1719030.1719050; DOI 10.1145/1719030.1719050; Proceedings of the 2009 workshop on New security paradigms workshop; year 2009 (manuscript: 2009)
 
-**[80] vandersijs2006** (crossref) -- VERIFIED
+**[81] vandersijs2006** (crossref) -- VERIFIED
 
 > manuscript: *Overriding of Drug Safety Alerts in Computerized Physician Order Entry*
 >
@@ -665,7 +673,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1197/jamia.m1809; DOI 10.1197/jamia.m1809; Journal of the American Medical Informatics Association; year 2006 (manuscript: 2006)
 
-**[81] weingart2003** (crossref) -- VERIFIED
+**[82] weingart2003** (crossref) -- VERIFIED
 
 > manuscript: *Physicians' Decisions to Override Computerized Drug Alerts in Primary Care*
 >
@@ -673,7 +681,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1001/archinte.163.21.2625; DOI 10.1001/archinte.163.21.2625; Archives of Internal Medicine; year 2003 (manuscript: 2003)
 
-**[82] kaushal2003** (crossref) -- VERIFIED
+**[83] kaushal2003** (crossref) -- VERIFIED
 
 > manuscript: *Effects of Computerized Physician Order Entry and Clinical Decision Support Systems on Medication Safety*
 >
@@ -681,7 +689,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1001/archinte.163.12.1409; DOI 10.1001/archinte.163.12.1409; Archives of Internal Medicine; year 2003 (manuscript: 2003)
 
-**[83] maxeyjones2018** (crossref) -- VERIFIED
+**[84] maxeyjones2018** (crossref) -- VERIFIED
 
 > manuscript: *An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU*
 >
@@ -689,7 +697,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1093/med/9780190467654.003.0047; DOI 10.1093/med/9780190467654.003.0047; 50 Studies Every Intensivist Should Know; year 2018 (manuscript: 2018)
 
-**[84] mazaheri2026** (arxiv) -- VERIFIED
+**[85] mazaheri2026** (arxiv) -- VERIFIED
 
 > manuscript: *Prior Audit-Repair Context Shifts LLM Verifier Thresholds Toward Leniency*
 >
@@ -697,7 +705,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.16003; arXiv 2608.16003; year 2026 (manuscript: 2026)
 
-**[85] singh2026** (arxiv) -- VERIFIED
+**[86] singh2026** (arxiv) -- VERIFIED
 
 > manuscript: *Not All Attacks Are Learned Equally in Speech Deepfake Detection*
 >
@@ -705,7 +713,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.11763; arXiv 2609.11763; year 2026 (manuscript: 2026)
 
-**[86] kasundra2025** (arxiv) -- VERIFIED
+**[87] kasundra2025** (arxiv) -- VERIFIED
 
 > manuscript: *AprielGuard*
 >
@@ -713,7 +721,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2512.20293; arXiv 2512.20293; year 2025 (manuscript: 2025)
 
-**[87] kim2026** (arxiv) -- VERIFIED
+**[88] kim2026** (arxiv) -- VERIFIED
 
 > manuscript: *Addressing Over-Refusal in LLMs with Competing Rewards*
 >
@@ -721,7 +729,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2606.31748; arXiv 2606.31748; year 2026 (manuscript: 2026)
 
-**[88] lim2026** (arxiv) -- VERIFIED
+**[89] lim2026** (arxiv) -- VERIFIED
 
 > manuscript: *Do Reasoning Representations Help Humans Evaluate LLM Outputs?*
 >
@@ -729,7 +737,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.09038; arXiv 2609.09038; year 2026 (manuscript: 2026)
 
-**[89] pawar2026** (arxiv) -- VERIFIED
+**[90] pawar2026** (arxiv) -- VERIFIED
 
 > manuscript: *From Tokens to Semantics: Leveraging Complementary Signals for Hallucination Detection in Black-Box LLMs*
 >
@@ -737,7 +745,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2609.02679; arXiv 2609.02679; year 2026 (manuscript: 2026)
 
-**[90] heinrich2021** (arxiv) -- VERIFIED
+**[91] heinrich2021** (arxiv) -- VERIFIED
 
 > manuscript: *Human Factors Considerations in Satellite Operation's Human-Computer Interaction Technologies: A Review of Current Applications and Theory*
 >
@@ -745,7 +753,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2110.04880; arXiv 2110.04880; year 2021 (manuscript: 2021)
 
-**[91] casadomansilla2019** (arxiv) -- VERIFIED
+**[92] casadomansilla2019** (arxiv) -- VERIFIED
 
 > manuscript: *On the Side Effects of Automation in IoT: Complacency and Comfort vs. Relapse and Distrust*
 >
@@ -753,7 +761,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 1911.08657; arXiv 1911.08657; year 2019 (manuscript: 2019)
 
-**[92] qian2024** (arxiv) -- VERIFIED
+**[93] qian2024** (arxiv) -- VERIFIED
 
 > manuscript: *Take It, Leave It, or Fix It: Measuring Productivity and Trust in Human-AI Collaboration*
 >
@@ -761,7 +769,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2402.18498; arXiv 2402.18498; year 2024 (manuscript: 2024)
 
-**[93] ladapo2022** (crossref) -- VERIFIED
+**[94] ladapo2022** (crossref) -- VERIFIED
 
 > manuscript: *Human-In-The-Loop Machine Learning: A State of the Art*
 >
@@ -769,7 +777,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.54660/.jfmr.2022.3.1.656-669; DOI 10.54660/.jfmr.2022.3.1.656-669; Journal of Frontiers in Multidisciplinary Research; year 2022 (manuscript: 2022)
 
-**[94] holzinger2016** (crossref) -- VERIFIED
+**[95] holzinger2016** (crossref) -- VERIFIED
 
 > manuscript: *Interactive Machine Learning for Health Informatics: When Do We Need the Human-In-The-Loop?*
 >
@@ -777,7 +785,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1007/s40708-016-0042-6; DOI 10.1007/s40708-016-0042-6; Brain Informatics; year 2016 (manuscript: 2016)
 
-**[95] horvitz1999** (crossref) -- VERIFIED
+**[96] horvitz1999** (crossref) -- VERIFIED
 
 > manuscript: *Principles of Mixed-Initiative User Interfaces*
 >
@@ -785,7 +793,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/302979.303030; DOI 10.1145/302979.303030; Proceedings of the SIGCHI conference on Human factors in computing systems the CHI is the limit - CHI '99; year 1999 (manuscript: 1999)
 
-**[96] kamath2025** (arxiv) -- VERIFIED
+**[97] kamath2025** (arxiv) -- VERIFIED
 
 > manuscript: *Enforcing Temporal Constraints for LLM Agents*
 >
@@ -793,7 +801,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2512.23738; arXiv 2512.23738; year 2025 (manuscript: 2025)
 
-**[97] shamis2025** (arxiv) -- VERIFIED
+**[98] shamis2025** (arxiv) -- VERIFIED
 
 > manuscript: *TEE-BFT: Pricing the Security of Data Center Execution Assurance*
 >
@@ -801,7 +809,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2510.26091; arXiv 2510.26091; year 2025 (manuscript: 2025)
 
-**[98] chen2026** (arxiv) -- VERIFIED
+**[99] chen2026** (arxiv) -- VERIFIED
 
 > manuscript: *Token Economics for LLM Agents: A Dual-View Study from Computing and Economics*
 >
@@ -809,7 +817,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2605.09104; arXiv 2605.09104; year 2026 (manuscript: 2026)
 
-**[99] bars2025** (arxiv) -- VERIFIED
+**[100] bars2025** (arxiv) -- VERIFIED
 
 > manuscript: *Empirical Security Analysis of Software-Based Fault Isolation Through Controlled Fault Injection*
 >
@@ -817,7 +825,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2509.07757; arXiv 2509.07757; year 2025 (manuscript: 2025)
 
-**[100] sotoudeh2025** (arxiv) -- VERIFIED
+**[101] sotoudeh2025** (arxiv) -- VERIFIED
 
 > manuscript: *Automated Formal Verification of a Software Fault Isolation System*
 >
@@ -825,7 +833,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2508.15898; arXiv 2508.15898; year 2025 (manuscript: 2025)
 
-**[101] schwarz2025** (arxiv) -- VERIFIED
+**[102] schwarz2025** (arxiv) -- VERIFIED
 
 > manuscript: *Countermind: A Multi-Layered Security Architecture for Large Language Models*
 >
@@ -833,7 +841,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2510.11837; arXiv 2510.11837; year 2025 (manuscript: 2025)
 
-**[102] avina2025** (arxiv) -- VERIFIED
+**[103] avina2025** (arxiv) -- VERIFIED
 
 > manuscript: *PokiSEC: A Multi-Architecture, Containerized Ephemeral Malware Detonation Sandbox*
 >
@@ -841,7 +849,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2512.20860; arXiv 2512.20860; year 2025 (manuscript: 2025)
 
-**[103] zhang2026b** (arxiv) -- VERIFIED
+**[104] zhang2026b** (arxiv) -- VERIFIED
 
 > manuscript: *Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety*
 >
@@ -849,7 +857,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 2608.01388; arXiv 2608.01388; year 2026 (manuscript: 2026)
 
-**[104] hanley1983** (crossref) -- VERIFIED
+**[105] hanley1983** (crossref) -- VERIFIED
 
 > manuscript: *A Method of Comparing the Areas under Receiver Operating Characteristic Curves Derived from the Same Cases.*
 >
@@ -857,7 +865,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1148/radiology.148.3.6878708; DOI 10.1148/radiology.148.3.6878708; Radiology; year 1983 (manuscript: 1983)
 
-**[105] brodersen2013** (crossref) -- VERIFIED
+**[106] brodersen2013** (crossref) -- VERIFIED
 
 > manuscript: *Long-Term Psychosocial Consequences of False-Positive Screening Mammography*
 >
@@ -865,7 +873,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1370/afm.1466; DOI 10.1370/afm.1466; The Annals of Family Medicine; year 2013 (manuscript: 2013)
 
-**[106] marteau1989** (crossref) -- VERIFIED
+**[107] marteau1989** (crossref) -- VERIFIED
 
 > manuscript: *Psychological Costs of Screening.*
 >
@@ -873,7 +881,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1136/bmj.299.6698.527; DOI 10.1136/bmj.299.6698.527; BMJ; year 1989 (manuscript: 1989)
 
-**[107] bacchelli2013** (crossref) -- VERIFIED
+**[108] bacchelli2013** (crossref) -- VERIFIED
 
 > manuscript: *Expectations, Outcomes, and Challenges of Modern Code Review*
 >
@@ -881,7 +889,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1109/icse.2013.6606617; DOI 10.1109/icse.2013.6606617; 2013 35th International Conference on Software Engineering (ICSE); year 2013 (manuscript: 2013)
 
-**[108] bosu2015** (crossref) -- VERIFIED
+**[109] bosu2015** (crossref) -- VERIFIED
 
 > manuscript: *Characteristics of Useful Code Reviews: An Empirical Study at Microsoft*
 >
@@ -889,7 +897,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1109/msr.2015.21; DOI 10.1109/msr.2015.21; 2015 IEEE/ACM 12th Working Conference on Mining Software Repositories; year 2015 (manuscript: 2015)
 
-**[109] sadowski2018** (crossref) -- VERIFIED
+**[110] sadowski2018** (crossref) -- VERIFIED
 
 > manuscript: *Modern Code Review*
 >
@@ -897,7 +905,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/3183519.3183525; DOI 10.1145/3183519.3183525; Proceedings of the 40th International Conference on Software Engineering: Software Engineering in Practice; year 2018 (manuscript: 2018)
 
-**[110] townsend1979** (crossref) -- VERIFIED
+**[111] townsend1979** (crossref) -- VERIFIED
 
 > manuscript: *Optimal Contracts and Competitive Markets with Costly State Verification*
 >
@@ -905,7 +913,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.21034/sr.45; DOI 10.21034/sr.45; year 1979 (manuscript: 1979)
 
-**[111] williamson1986** (crossref) -- VERIFIED
+**[112] williamson1986** (crossref) -- VERIFIED
 
 > manuscript: *Costly Monitoring, Financial Intermediation, and Equilibrium Credit Rationing*
 >
@@ -913,7 +921,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1016/0304-3932(86)90074-7; DOI 10.1016/0304-3932(86)90074-7; Journal of Monetary Economics; year 1986 (manuscript: 1986)
 
-**[112] holmstrom1979** (crossref) -- VERIFIED
+**[113] holmstrom1979** (crossref) -- VERIFIED
 
 > manuscript: *Moral Hazard and Observability*
 >
@@ -921,7 +929,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.2307/3003320; DOI 10.2307/3003320; The Bell Journal of Economics; year 1979 (manuscript: 1979)
 
-**[113] becker1968** (crossref) -- VERIFIED
+**[114] becker1968** (crossref) -- VERIFIED
 
 > manuscript: *Crime and Punishment: An Economic Approach*
 >
@@ -929,7 +937,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1007/978-1-349-62853-7_2; DOI 10.1007/978-1-349-62853-7_2; The Economic Dimensions of Crime; year 1968 (manuscript: 1968)
 
-**[114] polinsky1999** (crossref) -- VERIFIED
+**[115] polinsky1999** (crossref) -- VERIFIED
 
 > manuscript: *The Economic Theory of Public Enforcement of Law*
 >
@@ -937,7 +945,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.3386/w6993; DOI 10.3386/w6993; year 1999 (manuscript: 1999)
 
-**[115] jensendeceased1998** (crossref) -- VERIFIED
+**[116] jensendeceased1998** (crossref) -- VERIFIED
 
 > manuscript: *Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure*
 >
@@ -945,7 +953,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.2139/ssrn.94043; DOI 10.2139/ssrn.94043; year 1998 (manuscript: 1998)
 
-**[116] thompson2007** (crossref) -- VERIFIED
+**[117] thompson2007** (crossref) -- VERIFIED
 
 > manuscript: *Reflections on Trusting Trust*
 >
@@ -953,7 +961,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1145/1283920.1283940; DOI 10.1145/1283920.1283940; ACM Turing award lectures; year 2007 (manuscript: 2007)
 
-**[117] rose2019** (crossref) -- VERIFIED
+**[118] rose2019** (crossref) -- VERIFIED
 
 > manuscript: *Zero Trust Architecture*
 >
@@ -961,7 +969,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.6028/nist.sp.800-207-draft; DOI 10.6028/nist.sp.800-207-draft; year 2019 (manuscript: 2019)
 
-**[118] anderson2020** (crossref) -- VERIFIED
+**[119] anderson2020** (crossref) -- VERIFIED
 
 > manuscript: *Security Engineering*
 >
@@ -969,7 +977,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1002/9781119644682; DOI 10.1002/9781119644682; year 2020 (manuscript: 2020)
 
-**[119] diakopoulos2014** (crossref) -- VERIFIED
+**[120] diakopoulos2014** (crossref) -- VERIFIED
 
 > manuscript: *Algorithmic Accountability*
 >
@@ -977,7 +985,7 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1080/21670811.2014.976411; DOI 10.1080/21670811.2014.976411; Digital Journalism; year 2015 (manuscript: 2014)
 
-**[120] mittelstadt2016** (crossref) -- VERIFIED
+**[121] mittelstadt2016** (crossref) -- VERIFIED
 
 > manuscript: *The Ethics of Algorithms: Mapping the Debate*
 >
@@ -1002,19 +1010,19 @@ not a citation. Its second element is entry [1] and no entry is left uncited by 
 
 ```text
 === papers/issue-93/manuscript.md
-  window: the last `## References` heading (line 1074) to the end of the file (line 1314)
+  window: the last `## References` heading (line 1094) to the end of the file (line 1336)
           — its numbered lines are read as entries
-  entries=120  numbering=[n]
-  block form: 120 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
-  author form: 120/120 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 1 carry a character reference (&…;) — a record's stored field is not the form an entry prints
-  in-text cited numbers=121  covered=120/120  coverage=100.0%
+  entries=121  numbering=[n]
+  block form: 121 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 121/121 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 1 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=122  covered=121/121  coverage=100.0%
   AMBIGUOUS: bracket numbers matching no entry (1) [0] — could be numeric ranges in prose, or a missing entry; verify manually (reference-check.md)
   GATE: PASS
 ```
 
 ## Verdict
 
-**120 of 120 references verified against a real external record; 0 mismatch; 0 unverified.**
+**121 of 121 references verified against a real external record; 0 mismatch; 0 unverified.**
 
 No entry is retained on the strength of its own text: each is either matched to a record fetched from
 Crossref or arXiv, or it is reported as unverified and removed before submission.

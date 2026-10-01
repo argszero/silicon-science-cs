@@ -26,15 +26,18 @@ section 5      SECTION 5 NUMBERS: PASS -- 52 claim(s), 0 missing
   batteries    BATTERY: 52 of 52 claim(s) fired when every token stating them was removed
 references     stage 1: 24 checks, 0 failed | stage 2: 15/15 PASS with 22/22 mutations caught | stage 3: 8/8 PASS, 19-case battery
 authenticity   REFERENCE CHECK: PASS -- 14 check(s), 0 failed | BATTERY: 11 of 11 case(s) fired
-citations      the product manuscript.md | citations 210 | distinct keys 120 of 120 built records
-counts         the manuscript states the run's citation count (210 citations)
+counts         the manuscript states the authenticity checker's count (14 checks, 0 failed)
+counts         the manuscript states the authenticity battery (11-case battery, 11 fired)
+citations      the product manuscript.md | citations 211 | distinct keys 121 of 121 built records
+counts         the manuscript states the run's citation count (211 citations)
 counts         the manuscript states the run's §5 claim count (52 claim)
-counts         the manuscript states the built-record count (120 distinct keys of 120)
-counts         the manuscript states the authenticity count (120 of 120 verified)
+counts         the manuscript states the built-record count (121 distinct keys of 121)
+counts         the manuscript states the authenticity count (121 of 121 verified)
 figures        CURRENT -- fig1_sign_law_and_cost_ratio.png is byte-identical to a fresh draw (sha256 87b55876492a8e93)
 links          LINK CHECK: PASS -- 1 link(s), 1 local, 0 broken | BATTERY: 4 of 4 case(s) fired
 bar            SUBMISSION CHECK: PASS -- 18 item(s), 0 failed, 2 declared | BATTERY: 8 of 8 case(s) fired
-product        manuscript.md 128038 bytes, sha256 d7098b823bd6880c
+counts         the manuscript states the bar's own item count (18 item(s), 0 failed)
+product        manuscript.md 130624 bytes, sha256 2ba9d6a68c90db31
 
 REPRODUCE: ALL GREEN
 ```
@@ -86,6 +89,7 @@ unreadable input, a missing artefact or a raised guard stops the step with `FAIL
 | `check_links.py` | every link and image in `manuscript.md` resolves at the product's own base |
 | `submission_check.py` | the journal's submission bar (13 items + the presentation bar + the in-text key form), read rather than asserted — it reports `CHECKS` vs `DECLARED` and fails the rest |
 | `refs/` | the reference pipeline: selection, three check stages (24 / 15+22 / 8+19), the built records and the harvest log |
+| `refs/refs_reread.py` + `refs/refs_reread.json` | the by-id re-read limb: a work published after the registration (in no harvest pool, not an anchor) and an id whose pool title no longer matches the live record; it overrides the pools on the record's fields and keeps the finder's provenance label |
 | `refs/refgate_output.txt` | the journal's own reference gate (`refgate.py`) run from the repository root over `manuscript.md`, kept verbatim; `reference-check.md` quotes it and re-reads its count, coverage and verdict |
 | `outcomes.md`, `registration_priors.md`, `heilmeier.md` | the registered priors, the per-prior outcome rows, and the direction's Heilmeier answers |
 | `reproduce.sh` | the command above |
@@ -113,6 +117,20 @@ in three places, all of them reading the product's own numbered list: `research/
 link, and an entry whose link names no record is returned as unresolved rather than skipped), and bar item
 `B13b-in-text-key-form` fails the package if those two ever disagree again.
 
+**Three counts the manuscript stated and no step owned, and one title that had gone stale — all found by running
+checks this package already had.** R481 added a bar item and two authenticity checks with two battery cases, and
+updated this README; the manuscript's own rendering went on stating `17 item(s)`, `12 checks` and a `9-case
+battery`, and every step stayed green, because each step read the RUN and none read the manuscript's copy of the
+number. The three are repaired in the product and `reproduce.sh` now compares each of them against the run.
+Separately, the clause `refs_build_v93.py` writes `pool_title` for — "the title the difference line was written
+against, so a later read can check the live record still bears it" — was run this round and fired: one arXiv entry
+cited the harvest's reading of **v1** while the identifier now serves a **retitled v3**, so the bibliography was
+citing a title its own link no longer shows. The repair is a re-read recorded in `refs/reread.json` — with the
+fetched title, the version it came from and the pool title it replaces — and the entry now prints what the record
+prints. The same round added one reference: a work published nine days after this study's registration and the day
+before its submission, which is in no harvest pool and is not one of the registration's anchors, and therefore
+enters through a limb of its own (`refs/refs_reread.py`).
+
 ## What the bar items are
 
 `submission_check.py` answers the journal's submission quality bar item by item, and `reproduce.sh` runs it last so
@@ -123,8 +141,8 @@ verified).
 
 ## References
 
-The citation-volume bar is 100; this manuscript carries 120 records and cites all of them in the body
-(`uncited records 0 of 120`), numbered `[1]`–`[120]` in first-citation order. **The body cites the key the
+The citation-volume bar is 100; this manuscript carries 121 records and cites all of them in the body
+(`uncited records 0 of 121`), numbered `[1]`–`[121]` in first-citation order. **The body cites the key the
 bibliography prints**: each in-text key is the entry's `[n]`, so coverage is a property of the text (item 11,
 *Citation mechanics* — a work cited by name or by bare arXiv id does not discharge coverage). The parts, from which
 the product is assembled, cite `[@key]` instead; `research/assemble.py` renders them into `[n]` at the one place the
@@ -133,18 +151,18 @@ numbering is derived.
 The journal's own gate reads the product from the repository root:
 
 ```bash
-python3 .github/tools/refgate.py papers/issue-93/manuscript.md   # entries=120, covered=120/120, coverage=100.0%
+python3 .github/tools/refgate.py papers/issue-93/manuscript.md   # entries=121, covered=121/121, coverage=100.0%
 ```
 
 Its output is committed at `refs/refgate_output.txt` and quoted in `reference-check.md`, whose check
 `C13-the-quoted-journal-gate-re-read` re-reads the count, the coverage and the verdict line against this report's
-own 120 rows rather than trusting the quote. The gate's one `AMBIGUOUS` line (`[0]`, from the model's interval
+own 121 rows rather than trusting the quote. The gate's one `AMBIGUOUS` line (`[0]`, from the model's interval
 `[0, 1]` in §1.3 and §5.3) is answered in that report's *In-text keys, coverage and ambiguity* section, and
 `C14-every-bracket-the-gate-flags-is-explained` requires the answer to name the bracket the gate named.
 
 `reference-check.md` is the authenticity report — one block per entry: the manuscript's title, the method, the
-record found, and the title agreement — and it reads **120 of 120 verified, 0 mismatch, 0 unverified** (46 queries
-to Crossref, 74 to the arXiv API, batched). Regenerate its network half with:
+record found, and the title agreement — and it reads **121 of 121 verified, 0 mismatch, 0 unverified** (46 queries
+to Crossref, 75 to the arXiv API, batched). Regenerate its network half with:
 
 ```bash
 python3 refs/reference_check.py --query     # writes reference-check.json + reference-check.md

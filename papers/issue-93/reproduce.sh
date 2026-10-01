@@ -86,6 +86,14 @@ out=$(run "$PY" refs/reference_check.py --selftest) || bad "authenticity" "refer
 need "authenticity" "$out" 'REFERENCE CHECK: PASS -- [0-9]+ check\(s\), 0 failed' 'the verdict'
 need "authenticity" "$out" 'BATTERY: [0-9]+ of [0-9]+ case\(s\) fired' 'the battery'
 say "authenticity" "$(printf '%s' "$out" | grep -oE 'REFERENCE CHECK: .*' | tail -1) | $(printf '%s' "$out" | grep -oE 'BATTERY: .*' | tail -1)"
+# The authenticity checker's own two counts are ALSO stated in the manuscript (Section 6.5 and *Table 9*), and
+# until R482 nothing compared them: R481 added two checks and two battery cases, and the rendering went on saying
+# `12 checks` and a `9-case battery` while this step printed 14 and 11.  Same class as the bar's item count below:
+# a stated count with no owner.  Both are read off the run.
+NCHK=$(printf '%s' "$out" | grep -oE 'PASS -- [0-9]+ check\(s\)' | head -1 | grep -oE '[0-9]+')
+NCASE=$(printf '%s' "$out" | grep -oE 'BATTERY: [0-9]+ of [0-9]+' | head -1 | grep -oE '[0-9]+' | tail -1)
+if [ -n "$NCHK" ] && grep -qF "$NCHK checks, 0 failed" manuscript.md; then say "counts" "the manuscript states the authenticity checker's count ($NCHK checks, 0 failed)"; else bad "counts" "manuscript.md does not state '$NCHK checks, 0 failed'"; fi
+if [ -n "$NCASE" ] && grep -qF "$NCASE-case battery, $NCASE fired" manuscript.md; then say "counts" "the manuscript states the authenticity battery ($NCASE-case battery, $NCASE fired)"; else bad "counts" "manuscript.md does not state '$NCASE-case battery, $NCASE fired'"; fi
 
 # ---- 7. the manuscript's citations -------------------------------------------------------------------------------
 out=$(run "$PY" cite_check.py --selftest) || bad "citations" "cite_check.py --selftest exited non-zero"
@@ -96,7 +104,7 @@ need "citations" "$out" 'uncited records 0 of [0-9]+' 'zero uncited records'
 # The in-text key IS the key the bibliography prints (quality-bar item 11, *Citation mechanics*).  The package
 # shipped `[@key]` tokens beside a `[1]`-`[120]` list until R481 -- every check here read the parts, and the
 # journal's refgate read `covered=1/120` on the product (measured at d77e974) -- so the read is required here.
-need "citations" "$out" 'IN-TEXT KEY numeric, resolved through the product.s own bibliography -- entries keyed 120 of 120' 'the in-text key read'
+need "citations" "$out" 'IN-TEXT KEY numeric, resolved through the product.s own bibliography -- entries keyed [0-9]+ of [0-9]+' 'the in-text key read'
 need "citations" "$out" '(renamed \[@[a-z0-9]+\]|broke \[[0-9]+\]) -> caught' 'the resolution plant'
 need "citations" "$out" 'coverage limb live' 'the coverage plant'
 say "citations" "$(printf '%s' "$out" | grep -E 'citations [0-9]+' | head -1)"
@@ -106,9 +114,10 @@ say "citations" "$(printf '%s' "$out" | grep -E 'citations [0-9]+' | head -1)"
 # compared against the RUN and not against a value typed into this script: each check reads a number out of the
 # run's own output and then requires the manuscript to carry it.
 CITED=$(printf '%s' "$out" | grep -oE 'citations [0-9]+' | head -1 | grep -oE '[0-9]+')
+NKEYS=$(printf '%s' "$out" | grep -oE 'distinct keys [0-9]+ of [0-9]+' | head -1 | awk '{print $3}')
 if grep -qF "$CITED citations" manuscript.md; then say "counts" "the manuscript states the run's citation count ($CITED citations)"; else bad "counts" "manuscript.md does not state '$CITED citations'"; fi
 if grep -qF "$claims claim" manuscript.md; then say "counts" "the manuscript states the run's §5 claim count ($claims claim)"; else bad "counts" "manuscript.md does not state $claims claim(s)"; fi
-if grep -qF "120 distinct keys of 120" manuscript.md; then say "counts" "the manuscript states the built-record count (120 distinct keys of 120)"; else bad "counts" "manuscript.md does not state 120 distinct keys of 120"; fi
+if [ -n "$NKEYS" ] && grep -qF "$NKEYS distinct keys of $NKEYS" manuscript.md; then say "counts" "the manuscript states the built-record count ($NKEYS distinct keys of $NKEYS)"; else bad "counts" "manuscript.md does not state '$NKEYS distinct keys of $NKEYS'"; fi
 NVER=$("$PY" -c 'import json;print(json.load(open("reference-check.json"))["n_verified"])')
 NTOT=$("$PY" -c 'import json;print(len(json.load(open("reference-check.json"))["rows"]))')
 if grep -qF "$NVER of $NTOT verified" manuscript.md; then say "counts" "the manuscript states the authenticity count ($NVER of $NTOT verified)"; else bad "counts" "manuscript.md does not state '$NVER of $NTOT verified'"; fi
@@ -128,6 +137,12 @@ out=$(run "$PY" submission_check.py --selftest) || bad "bar" "submission_check.p
 need "bar" "$out" 'SUBMISSION CHECK: PASS -- [0-9]+ item\(s\), 0 failed' 'the bar verdict'
 need "bar" "$out" 'BATTERY: [0-9]+ of [0-9]+ case\(s\) fired' 'the bar battery'
 say "bar" "$(printf '%s' "$out" | grep -oE 'SUBMISSION CHECK: PASS -- [0-9]+ item\(s\), 0 failed, [0-9]+ declared' | tail -1) | $(printf '%s' "$out" | grep -oE 'BATTERY: .*' | tail -1)"
+# The bar's OWN item count is a number the manuscript states in prose (Section 6.6, *Table 9*), and until R482 no
+# check owned it: R481 added an item (the in-text key form) and the rendering was left saying `17 item(s)` while
+# this step printed 18 -- a stated count with no owner, invisible to every step because each one read the RUN.
+# So the manuscript's number is compared against the run's number, not against a literal typed in here.
+NITEMS=$(printf '%s' "$out" | grep -oE 'PASS -- [0-9]+ item\(s\)' | head -1 | grep -oE '[0-9]+')
+if [ -n "$NITEMS" ] && grep -qF "$NITEMS item(s), 0 failed" manuscript.md; then say "counts" "the manuscript states the bar's own item count ($NITEMS item(s), 0 failed)"; else bad "counts" "manuscript.md does not state '$NITEMS item(s), 0 failed'"; fi
 
 # ---- 9. the product is the assembly of the parts it claims to be --------------------------------------------------
 if [ -f manuscript.md ] && [ -f refs/refs_keys.json ]; then

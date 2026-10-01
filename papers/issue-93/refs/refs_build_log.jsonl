@@ -3,3 +3,9 @@
 {"at": "2026-09-22T05:25:36", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
 {"at": "2026-09-22T16:58:11", "duplicate_keys": [], "n_entries": 120, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 74, "n_selected_doi": 46, "n_unique": 120, "refused": [], "round": "R416"}
 {"at": "2026-09-22T16:58:17", "duplicate_keys": [], "n_entries": 120, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 74, "n_selected_doi": 46, "n_unique": 120, "refused": [], "round": "R416"}
+{"at": "2026-10-01T19:29:23", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
+{"at": "2026-10-01T19:29:25", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
+{"at": "2026-10-01T19:30:30", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
+{"at": "2026-10-01T19:34:23", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
+{"at": "2026-10-01T19:35:14", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
+{"at": "2026-10-01T19:46:18", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416; re-run at R482"}

@@ -88,6 +88,7 @@ ARXIV = [
     ("2609.14987", "Audits candidate actions before execution to block indirect-injection consequences; a "
                    "pre-execution audit is a programmatic check, which is one of the repairs this study prices "
                    "against a reviewer-mediated one."),
+    ("2609.38983", "Systematizes six ways a harness can dispatch an action other than the one a human approved and measures a bound-gap rate for each in one harness, then prototypes a keyed token as a binding defence; it measures and defends the failure, where this study takes binding fidelity as a parameter of a value functional and derives the fidelity below which the gate's net value turns negative, the accuracy-insensitivity that survives there, and the equivalence of the repair."),
     ("2609.16098", "Gives defences for tool-integrated agents against adversarial tool outputs; it measures "
                    "blocking effectiveness, and this study measures when a human-mediated step is worth its own "
                    "cost, including when it is worth less than no step."),

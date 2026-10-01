@@ -82,13 +82,20 @@ def load_pools():
     registration and live in no keyword harvest, so without `refs_anchors.json` a bibliography that cites
     its own registration's anchors cannot resolve them -- measured this round as 3 of the 43 errors."""
     arxiv, doi, sources = {}, {}, {}
-    for name in ("refs_raw.json", "refs_raw2.json", "refs_anchors.json"):
+    # `refs_reread.json` joined in R482 and it OVERRIDES.  It carries (A) a work that appeared AFTER the
+    # registration and after the harvests closed, so it is in neither pool, and (B) an id whose pool title no
+    # longer matches the live record -- the check that `pool_title` exists for, run this round, which fired.
+    # A later reading wins on the FIELDS (the bibliography must cite the title the link now shows); the
+    # provenance label stays with the pool that first found the id, because that fact has not changed.
+    for name in ("refs_raw.json", "refs_raw2.json", "refs_anchors.json", "refs_reread.json"):
         pool = json.loads(io.open(os.path.join(HERE, name), encoding="utf-8").read())
         for label, blk in pool["arxiv"].items():
             for r in blk["rows"]:
                 if r["id"] not in arxiv:
                     arxiv[r["id"]] = r
                     sources[r["id"]] = name + ":" + label
+                elif name == "refs_reread.json":
+                    arxiv[r["id"]] = r
     classic = json.loads(io.open(os.path.join(HERE, "refs_classic.json"), encoding="utf-8").read())
     for _title, v in classic["queries"].items():
         m = v.get("matched")
@@ -162,7 +169,7 @@ def main():
         if e["key"] in seen:
             dupes.append(e["key"])
         seen[e["key"]] = e
-    rep = dict(round="R416", resolved_by_pool=n_by_source,
+    rep = dict(round="R416; re-run at R482", resolved_by_pool=n_by_source,
                n_selected_arxiv=len(SEL.ARXIV), n_selected_doi=len(SEL.DOI),
                n_not_selected=len(SEL.NOT_SELECTED),
                not_selected=[dict(id=i, reason=" ".join(r.split())) for i, r in SEL.NOT_SELECTED],
@@ -173,7 +180,7 @@ def main():
     # this round's "43 of 115 refused" -- stops being re-readable the moment the selection is fixed.  The log
     # keeps each run's refusals: what the pipeline refused is evidence, and evidence must outlive the fix.
     with io.open(os.path.join(HERE, "refs_build_log.jsonl"), "a", encoding="utf-8") as fh:
-        fh.write(json.dumps(dict(round="R416", at=time.strftime("%Y-%m-%dT%H:%M:%S"),
+        fh.write(json.dumps(dict(round="R416; re-run at R482", at=time.strftime("%Y-%m-%dT%H:%M:%S"),
                                  n_selected_arxiv=len(SEL.ARXIV), n_selected_doi=len(SEL.DOI),
                                  n_not_selected=len(SEL.NOT_SELECTED),
                                  n_entries=len(entries), n_unique=len(seen), duplicate_keys=dupes,

@@ -334,22 +334,23 @@
    "authors": "Li, Y. et al.",
    "authors_raw": [
     "Yang Li",
-    "Sergey Volkov",
-    "Hai Liu",
     "Zongsi Xu",
-    "Xiyu Chen",
+    "Sergey Volkov",
+    "hai liu",
     "Tuo Zhou",
+    "Xiyu Chen",
+    "Di Wan",
     "Dian Shao",
-    "Hao Sun",
-    "Ye Lu"
+    "Ye Luo",
+    "Hao Sun"
    ],
    "difference": "Argues authority should be held by a substrate other than the agent's own context, with a cross-substrate notion of authority; it settles where authority should live, not what an approval step is worth once authority has been placed.",
    "key": "2609.08472",
    "pool": "refs_raw.json:arx-W1-toctou",
-   "pool_title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+   "pool_title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
    "primary": "cs.MA",
    "source": "arxiv",
-   "title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+   "title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
    "url": "https://arxiv.org/abs/2609.08472",
    "venue": "arXiv:2609.08472",
    "year": 2026
@@ -410,6 +411,22 @@
    "title": "ActGuard: Pre-Execution Action Auditing Against Indirect Prompt Injection in LLM Agents",
    "url": "https://arxiv.org/abs/2609.14987",
    "venue": "arXiv:2609.14987",
+   "year": 2026
+  },
+  {
+   "authors": "Wang, Y.",
+   "authors_raw": [
+    "Yang Wang"
+   ],
+   "difference": "Systematizes six ways a harness can dispatch an action other than the one a human approved and measures a bound-gap rate for each in one harness, then prototypes a keyed token as a binding defence; it measures and defends the failure, where this study takes binding fidelity as a parameter of a value functional and derives the fidelity below which the gate's net value turns negative, the accuracy-insensitivity that survives there, and the equivalence of the repair.",
+   "key": "2609.38983",
+   "pool": "refs_reread.json:concurrent-by-id",
+   "pool_title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "url": "https://arxiv.org/abs/2609.38983",
+   "venue": "arXiv:2609.38983",
    "year": 2026
   },
   {
@@ -2164,11 +2181,11 @@
   }
  ],
  "errors": [],
- "n_entries": 120,
+ "n_entries": 121,
  "n_not_selected": 1,
- "n_selected_arxiv": 74,
+ "n_selected_arxiv": 75,
  "n_selected_doi": 46,
- "n_unique_keys": 120,
+ "n_unique_keys": 121,
  "not_selected": [
   {
    "id": "2609.22062",
@@ -2209,7 +2226,8 @@
   "refs_raw2.json:arx-W3-principalagent": 2,
   "refs_raw2.json:arx-W3-screening": 1,
   "refs_raw2.json:arx-W3-substitution": 1,
-  "refs_raw2.json:arx-W3-toolpoison": 1
+  "refs_raw2.json:arx-W3-toolpoison": 1,
+  "refs_reread.json:concurrent-by-id": 1
  },
- "round": "R416"
+ "round": "R416; re-run at R482"
 }

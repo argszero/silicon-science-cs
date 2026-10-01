@@ -64,7 +64,7 @@ def build_keys():
     # The round label is a PROVENANCE claim about this file, and a constant would keep saying R417 after a later
     # round re-derives it -- the same defect as a label that names nothing (R424 fixed the build's `?` DOI label).
     # It therefore names the last round that wrote the file, and the round the pipeline was first built in.
-    return dict(round="R417; re-derived at R424", n=len(keys),
+    return dict(round="R417; re-derived at R424, R482", n=len(keys),
                 collisions={b: v for b, v in taken.items() if len(v) > 1},
                 keys=keys)
 
