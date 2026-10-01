@@ -1,0 +1,342 @@
+{
+ "P1_controls": {
+  "baseline": 0.2,
+  "d0_loss": 0.2,
+  "d0_value": 0.0,
+  "rows": [
+   {
+    "abs_diff": 2.7755575615628914e-17,
+    "design": "D1",
+    "v1_screening": 0.13800000000000004,
+    "value": 0.138
+   },
+   {
+    "abs_diff": 2.7755575615628914e-17,
+    "design": "D2",
+    "v1_screening": 0.13800000000000004,
+    "value": 0.138
+   },
+   {
+    "abs_diff": 2.7755575615628914e-17,
+    "design": "D3",
+    "v1_screening": 0.13800000000000004,
+    "value": 0.138
+   },
+   {
+    "abs_diff": 2.7755575615628914e-17,
+    "design": "D4",
+    "v1_screening": 0.13800000000000004,
+    "value": 0.138
+   },
+   {
+    "abs_diff": 2.7755575615628914e-17,
+    "design": "D5",
+    "v1_screening": 0.13800000000000004,
+    "value": 0.138
+   }
+  ],
+  "worst_abs_diff": 2.7755575615628914e-17
+ },
+ "P2_check_value": {
+  "positive_when_present": true,
+  "rows": [
+   {
+    "gain": 0.0,
+    "sigma_v": 0.0
+   },
+   {
+    "gain": 0.10000000000000003,
+    "sigma_v": 0.1
+   },
+   {
+    "gain": 0.2000000000000001,
+    "sigma_v": 0.2
+   },
+   {
+    "gain": 0.4,
+    "sigma_v": 0.4
+   }
+  ],
+  "zero_when_absent": true
+ },
+ "P3_blind_spot": {
+  "monotone": true,
+  "positive_when_present": true,
+  "rows": [
+   {
+    "gap": 0.0,
+    "sigma_i": 0.0
+   },
+   {
+    "gap": 0.05000000000000003,
+    "sigma_i": 0.05
+   },
+   {
+    "gap": 0.1,
+    "sigma_i": 0.1
+   },
+   {
+    "gap": 0.3,
+    "sigma_i": 0.3
+   }
+  ],
+  "zero_when_absent": true
+ },
+ "P4_display_blind": {
+  "positive_when_present": true,
+  "rows": [
+   {
+    "delta": 0.0,
+    "gap": 0.0
+   },
+   {
+    "delta": 0.15,
+    "gap": 0.02250000000000002
+   },
+   {
+    "delta": 0.3,
+    "gap": 0.04500000000000001
+   },
+   {
+    "delta": 0.5,
+    "gap": 0.07500000000000004
+   }
+  ],
+  "zero_when_absent": true
+ },
+ "P5_ordering": {
+  "attack_success": {
+   "D0": null,
+   "D1": 1.0,
+   "D2": 1.0,
+   "D3": 0.33333333333333337,
+   "D4": 0.0,
+   "D5": 0.33333333333333337
+  },
+  "checked_reduces": true,
+  "gate_worse_than_no_gate": [
+   "D1",
+   "D2"
+  ],
+  "rederived_reaches_zero": true,
+  "unbound_is_worst": true,
+  "vac_beats_unbound": true,
+  "value_monotone_D1_to_D4": true,
+  "values": {
+   "D0": 0.0,
+   "D1": -0.19440000000000007,
+   "D2": -0.1494000000000001,
+   "D3": 0.050600000000000006,
+   "D4": 0.1506,
+   "D5": 0.005599999999999994
+  }
+ },
+ "P6_anchor": [
+  {
+   "D1": 1.0,
+   "D3": 0.0,
+   "D3_matches_sigma_share": true,
+   "D4": 0.0,
+   "label": "channel fully R-visible",
+   "predicted_D3": 0.0
+  },
+  {
+   "D1": 1.0,
+   "D3": 0.25000000000000006,
+   "D3_matches_sigma_share": true,
+   "D4": 0.0,
+   "label": "10% of it R-invisible",
+   "predicted_D3": 0.25
+  },
+  {
+   "D1": 1.0,
+   "D3": 0.5,
+   "D3_matches_sigma_share": true,
+   "D4": 0.0,
+   "label": "half of it R-invisible",
+   "predicted_D3": 0.5
+  }
+ ],
+ "build": {
+  "numpy": "2.0.2",
+  "python": "3.9.6",
+  "script_crc32": "a993bce3"
+ },
+ "defect_defaults": {
+  "delta": 0.3,
+  "sigma_i": 0.1,
+  "sigma_v": 0.2
+ },
+ "design_table": [
+  {
+   "attack_success": null,
+   "attention": 0.0,
+   "design": "D0",
+   "false_block": 0.0,
+   "harm": 0.2,
+   "value": 0.0
+  },
+  {
+   "attack_success": 1.0,
+   "attention": 1.0000000000000002,
+   "design": "D1",
+   "false_block": 0.028000000000000004,
+   "harm": 0.37300000000000005,
+   "value": -0.19440000000000007
+  },
+  {
+   "attack_success": 1.0,
+   "attention": 1.0,
+   "design": "D2",
+   "false_block": 0.027999999999999997,
+   "harm": 0.32800000000000007,
+   "value": -0.1494000000000001
+  },
+  {
+   "attack_success": 0.33333333333333337,
+   "attention": 1.0,
+   "design": "D3",
+   "false_block": 0.027999999999999997,
+   "harm": 0.128,
+   "value": 0.050600000000000006
+  },
+  {
+   "attack_success": 0.0,
+   "attention": 1.0,
+   "design": "D4",
+   "false_block": 0.027999999999999997,
+   "harm": 0.02799999999999999,
+   "value": 0.1506
+  },
+  {
+   "attack_success": 0.33333333333333337,
+   "attention": 1.0000000000000002,
+   "design": "D5",
+   "false_block": 0.028000000000000004,
+   "harm": 0.17300000000000001,
+   "value": 0.005599999999999994
+  }
+ ],
+ "designs": {
+  "D0": {
+   "canonical": false,
+   "check": false,
+   "gate": false
+  },
+  "D1": {
+   "canonical": false,
+   "check": false,
+   "gate": true
+  },
+  "D2": {
+   "canonical": true,
+   "check": false,
+   "gate": true
+  },
+  "D3": {
+   "canonical": true,
+   "check": "R",
+   "gate": true
+  },
+  "D4": {
+   "canonical": true,
+   "check": "request",
+   "gate": true
+  },
+  "D5": {
+   "canonical": false,
+   "check": "R",
+   "gate": true
+  }
+ },
+ "headline": {
+  "D2": -0.1494000000000001,
+  "D3": 0.050600000000000006,
+  "D4": 0.1506,
+  "D5": 0.005599999999999994,
+  "check_own_value": 0.2000000000000001,
+  "display_unrepaired": 0.04500000000000001,
+  "unreachable_by_same_R": 0.1
+ },
+ "monte_carlo": {
+  "bias": -0.0003891041666667071,
+  "bias_in_band": true,
+  "bias_se": 0.00017658169856291965,
+  "covered": 6,
+  "n": 6,
+  "rows": [
+   {
+    "attack_success": null,
+    "design": "D0",
+    "exact": 0.0,
+    "in_ci": true,
+    "mc": 0.0
+   },
+   {
+    "attack_success": 1.0,
+    "design": "D1",
+    "exact": -0.19440000000000007,
+    "in_ci": true,
+    "mc": -0.19334562499999997
+   },
+   {
+    "attack_success": 1.0,
+    "design": "D2",
+    "exact": -0.1494000000000001,
+    "in_ci": true,
+    "mc": -0.14905887499999998
+   },
+   {
+    "attack_success": 0.331897702991453,
+    "design": "D3",
+    "exact": 0.050600000000000006,
+    "in_ci": true,
+    "mc": 0.051051125
+   },
+   {
+    "attack_success": 0.0,
+    "design": "D4",
+    "exact": 0.1506,
+    "in_ci": true,
+    "mc": 0.15046112500000003
+   },
+   {
+    "attack_success": 0.33273987144445283,
+    "design": "D5",
+    "exact": 0.005599999999999994,
+    "in_ci": true,
+    "mc": 0.006226875000000021
+   }
+  ]
+ },
+ "preregistered": {
+  "P1": "no defects -> every gated design equals v1's b=1 screening value; D0 equals L*pi",
+  "P2": "V(D3) > V(D2) strictly iff sigma_v > 0",
+  "P3": "V(D4) - V(D3) > 0 strictly iff sigma_i > 0, monotone, zero at sigma_i = 0",
+  "P4": "V(D3) - V(D5) > 0 strictly iff delta > 0 (the check cannot read the display class)",
+  "P5": "D0 worst; D1 <= D2 <= D3 <= D4; the published ordering holds",
+  "P6": "channel closed -> attack success exactly 0; channel open -> higher at every design"
+ },
+ "report_sha256": "2a4d41ce",
+ "residual_channel": {
+  "D1": [
+   "display",
+   "subv",
+   "subi"
+  ],
+  "D2": [
+   "subv",
+   "subi"
+  ],
+  "D3": [
+   "subi"
+  ],
+  "D4": [],
+  "D5": [
+   "display",
+   "subi"
+  ]
+ },
+ "what": "issue #93 v2 -- the design axis: is the use-time check an independent repair? (PB4)",
+ "why": "PB4 registers the repair as fidelity-equivalent, not independent; the published claim is the opposite"
+}

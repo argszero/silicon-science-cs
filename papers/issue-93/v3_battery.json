@@ -1,0 +1,64 @@
+{
+ "all_fired": true,
+ "cases": [
+  {
+   "check": "coverage_rate_is_a_rate",
+   "error": "RuntimeError: the drawn intervals' coverage rate is not consistent with the nominal 95%: {'readings': 315, 'covered': 102, 'rate': 0.3238095238095238, 'wilson': [0.2745266740363505, 0.37733792220982737], 'nominal_inside': False, 'non_degenerate': 315, 'degenerate_readings': 63, 'degenerate_exact': True, 'pooled_all': 378}",
+   "fired": true,
+   "kind": "direct (intervals 5x too narrow)",
+   "object": "the drawn intervals must cover the exact value at the rate they claim (95 %)",
+   "returncode": 1
+  },
+  {
+   "check": "no_gate_route_is_exact",
+   "error": "RuntimeError: the no-gate route is not exact on some reading: [{'cell': 'defaults', 'design': 'D0', 'family': 'adjacent', 'seed': 20260922, 'exact_loss': 0.2, 'exact_value': 0.0, 'drawn_loss': 0.200000001, 'drawn_value': -9.999999994736442e-10, 'lo': 0.2, 'hi': 0.2, 'covers': True, 'width': 0.0, 'attack': None, 'exact_attack': None, 'value_gap': 9.999999994736442e-10}, {'cell': 'defaults', 'design': 'D0', 'family': 'adjacent', 'seed': 20260923, 'exact_loss': 0.2, 'exact_value': 0.0, 'drawn_loss': 0.200000001, 'drawn_value': -9.999999994736442e-10, 'lo': 0.2, 'hi': 0.2, 'covers': True, 'width': 0.0, 'attack': None, 'exact_attack': None, 'value_gap': 9.999999994736442e-10}]",
+   "fired": true,
+   "kind": "direct (a zero-width reading that disagrees with the enumeration)",
+   "object": "the no-gate design's route must be exact (it has no sampling), so its point must equal the enumeration",
+   "returncode": 1
+  },
+  {
+   "check": "exact_ladder_is_monotone",
+   "error": "RuntimeError: the exact design ladder is not strictly monotone at every cell: ['defaults', 'pi=0.05', 'pi=0.5,a=0.6', 'a=0.3,f=0.2', 'a=0.95,f=0.0', 'L=5,c=0.1,cb=0.2', 'pi=0.02,a=0.99,f=0.5']",
+   "fired": true,
+   "kind": "direct (the ladder's last pair read backwards)",
+   "object": "the exact design ladder must be strictly monotone at every cell",
+   "returncode": 1
+  },
+  {
+   "check": "resolvable_pair_is_unanimous",
+   "error": "RuntimeError: a resolvable ordering reading is not unanimous across streams: [{'cell': 'defaults', 'pair': 'D1->D2', 'exact_gap': 0.044999999999999984, 'stream_sd': 0.016989506451593882, 'floor': 0.0332988207602349, 'ratio': 1.351399207918453, 'resolvable': True, 'unanimous': False, 'drawn_gaps': [-0.006123500000000004, 0.045825000000000005, 0.04360400000000003, 0.043710250000000006, 0.04598575000000005, 0.04712849999999996, 0.042100250000000006, 0.04273175000000001, 0.045682500000000015]}]",
+   "fired": true,
+   "kind": "direct (one stream drifts on one arm)",
+   "object": "a pair whose exact gap exceeds the streams' resolution must be unanimous in sign",
+   "returncode": 1
+  },
+  {
+   "check": "external_band_is_the_unbound_arm",
+   "error": "RuntimeError: the external-validation arm does not reproduce the published orderings: {'vac_holds_in_every_cell': True, 'attack_band': {'published': [0.68, 1.0], 'unbound_atk': 0.33333333333333337, 'inside': False, 'unbound_is_max': True, 'all_designs': {'D0': None, 'D1': 1.0, 'D2': 1.0, 'D3': 0.33333333333333337, 'D4': 0.0, 'D5': 0.33333333333333337}}}",
+   "fired": true,
+   "kind": "direct (the band read off the checked arm instead)",
+   "object": "the attack-success band is a claim about the UNBOUND arm -- the published 68-100 % band is its object",
+   "returncode": 1
+  },
+  {
+   "check": "headline_appears_on_the_grid",
+   "error": "RuntimeError: the headline does not appear anywhere on the parameter grid: the phenomenon and the grid disagree (a declared grid over 7 cells and 5 gated designs carries no net-harmful gate)",
+   "fired": true,
+   "kind": "direct (the detector's object set emptied)",
+   "object": "the net-harmful gate must appear somewhere on the declared grid, or the grid and the phenomenon disagree",
+   "returncode": 1
+  },
+  {
+   "check": "controls_can_fail",
+   "error": "RuntimeError: a control failed: {'C1_no_gate_exact': True, 'C2_determinism': False, 'C3_streams_land_within_a_bound_of_the_exact_value': True, 'C3_worst_stream_gap': 0.010917999999999317, 'C4_all_cells_have_a_nonzero_streams_spread': True}",
+   "fired": true,
+   "kind": "direct (the control reads two different streams)",
+   "object": "the determinism control must compare the SAME stream with itself",
+   "returncode": 1
+  }
+ ],
+ "cases_run": 7,
+ "missed": [],
+ "raise_sites_in_model": 7
+}

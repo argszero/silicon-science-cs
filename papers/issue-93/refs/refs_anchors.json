@@ -1,0 +1,489 @@
+{
+ "arxiv": {
+  "anchors-by-id": {
+   "n_returned": 8,
+   "query": "id_list=2605.24309,2609.21081,2609.18411,2608.24569,2609.18820,2606.29406,2608.01388,2609.15576",
+   "rows": [
+    {
+     "authors": [
+      "Yiheng Sun",
+      "Huifei Wang",
+      "Yancheng Zhu",
+      "Zhenyu Li",
+      "Zebin Zhao",
+      "Yifan Yuan"
+     ],
+     "id": "2608.24569",
+     "primary": "cs.AI",
+     "published": "2026-08-25T13:51:52Z",
+     "source": "arxiv",
+     "summary": "Large language model (LLM) agents coordinate complex tasks through multi-role and multi-stage workflows. Upstream state is repeatedly transformed into intermediate language artifacts, such as summaries, plans, tickets, memories, and handoff notes, from which downstream components act. For action-constraining state, topical retention is insufficient: an artifact may mention an unresolved condition while changing it from a requirement that must be resolved before execution into information that ma",
+     "title": "When \"Must\" Becomes \"Maybe\": Constraint Weakening in LLM Agent Workflows",
+     "url": "https://arxiv.org/abs/2608.24569",
+     "version": "2608.24569v1",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Ashwini Kurady",
+      "Sri Sai Charith Grandhi",
+      "Rajesh Gupta",
+      "Sumit Kumar"
+     ],
+     "id": "2609.18820",
+     "primary": "cs.AI",
+     "published": "2026-09-16T15:27:33Z",
+     "source": "arxiv",
+     "summary": "Agentic workflows now make consequential decisions in regulated settings, and the governance placed around them is almost entirely step-scoped: input-output classifiers, per turn rails, and span-level evaluators. The policies organizations actually hold, such as referral thresholds, authority limits, and review requirements, are properties of the whole execution rather than of any one step. This mismatch admits a failure mode we call a Compositional Policy Violation (CPV): every individual step ",
+     "title": "Compositional Policy Violations: When Step-Level Compliance Fails In Agentic AI Workflows",
+     "url": "https://arxiv.org/abs/2609.18820",
+     "version": "2609.18820v2",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Ruiyang Zhang"
+     ],
+     "id": "2608.01388",
+     "primary": "cs.CR",
+     "published": "2026-08-02T17:08:21Z",
+     "source": "arxiv",
+     "summary": "Runtime safety monitors based on Linear Temporal Logic (LTL) and finite automata (FSA) are increasingly deployed to intercept unsafe tool-call sequences in LLM agents. Yet the same monitor achieves 68-75% attack coverage on some model architectures and near-zero on others, with no explanation from capability scores, training data, or prompt design. We provide the missing theory. We prove that the recall of any fixed-invariant FSA monitor is bounded above by the concentration of the attack distri",
+     "title": "Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety",
+     "url": "https://arxiv.org/abs/2608.01388",
+     "version": "2608.01388v1",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Hasnain Irshad",
+      "Anam Mughees",
+      "Neelam Mughees",
+      "Abdullah Mughees",
+      "Imtiaz Ali Soomro"
+     ],
+     "id": "2609.18411",
+     "primary": "cs.CR",
+     "published": "2026-09-16T10:06:24Z",
+     "source": "arxiv",
+     "summary": "Agentic browsers can execute security-sensitive actions under a user's authenticated session, making indirect prompt injection and deceptive confirmation interfaces a direct threat to action integrity. Existing human-in-the-loop (HITL) safeguards are insufficient when the approval prompt itself can be influenced by untrusted page content or model-generated text. We present the \\emph{Verifiable Action Card} (VAC), an architectural defence that reconstructs approval information from the ground-tru",
+     "title": "The Verifiable Action Card: Trustworthy Human-in-the-Loop Control for Secure Autonomous Agents",
+     "url": "https://arxiv.org/abs/2609.18411",
+     "version": "2609.18411v1",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Faruk Alpay",
+      "Taylan Alpay"
+     ],
+     "id": "2609.15576",
+     "primary": "cs.CR",
+     "published": "2026-09-14T13:48:48Z",
+     "source": "arxiv",
+     "summary": "Publication integrity in LLM systems requires binding approved content to its current authorization context. We examine exact-content binding, authorization freshness and checkpoint recovery in Lightcap's publication enforcement mechanism. On 900 independently human-annotated RAGTruth responses from 150 source tasks, three dated Ministral models and a same-model direct-grounding baseline yield 3,600 assessments. The production response-act checker instantiated with 14B accepts 291 of 302 unsuppo",
+     "title": "Approval Integrity and Recovery in LLM Answer Publication",
+     "url": "https://arxiv.org/abs/2609.15576",
+     "version": "2609.15576v1",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Adithyan Arun Kumar"
+     ],
+     "id": "2609.21081",
+     "primary": "cs.CR",
+     "published": "2026-09-17T20:58:26Z",
+     "source": "arxiv",
+     "summary": "Human approval is often treated as the last security boundary before an agent executes a consequential operation. That boundary is only meaningful if the operation presented for review is the operation later authorized or released. We call failures of this binding Loopjacking: a human approves what they understand as operation A, while the implementation uses that decision for a materially different operation B. We distinguish two variants. In a representation-based attack, B is already encoded ",
+     "title": "Loopjacking: Hijacking Human-in-the-Loop Approval",
+     "url": "https://arxiv.org/abs/2609.21081",
+     "version": "2609.21081v1",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Matthew Francis Dixon"
+     ],
+     "id": "2606.29406",
+     "primary": "q-fin.RM",
+     "published": "2026-06-28T14:01:42Z",
+     "source": "arxiv",
+     "summary": "Organizations increasingly use large language models and agentic AI systems to generate probabilistic assessments and candidate actions in high-consequence settings. This creates a managerial problem distinct from prediction: how should organizations allocate decision authority to AI-generated recommendations as evidence quality, uncertainty, and organizational objectives evolve over time? Existing AI governance frameworks emphasize transparency, documentation, oversight, and regulatory complian",
+     "title": "Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority",
+     "url": "https://arxiv.org/abs/2606.29406",
+     "version": "2606.29406v1",
+     "year": 2026
+    },
+    {
+     "authors": [
+      "Peiran Wang",
+      "Ying Li",
+      "Yuan Tian"
+     ],
+     "id": "2605.24309",
+     "primary": "cs.CR",
+     "published": "2026-05-23T00:36:48Z",
+     "source": "arxiv",
+     "summary": "We argue that LLM agent security is fundamentally an agent-human interaction (AHI) problem, not a purely algorithmic one. To substantiate this position, we conduct a systematic analysis of 59 academic papers, 21 production agent systems, and 26 security plugins as of April 2026. Our analysis reveals a striking pattern: the three widely deployed human-centric security mechanisms (policy specification, runtime approval, and scope configuration) dominate industry practice, each adopted by at least ",
+     "title": "Reframing LLM Agent Security as an Agent-Human Interaction Problem",
+     "url": "https://arxiv.org/abs/2605.24309",
+     "version": "2605.24309v1",
+     "year": 2026
+    }
+   ],
+   "window": null
+  }
+ },
+ "checks": [
+  {
+   "duplicated_in_declaration": [],
+   "duplicated_in_response": [],
+   "id": "C1-completeness",
+   "missing": [],
+   "n_unique_requested": 8,
+   "ok": true,
+   "requested": 8,
+   "returned": 8,
+   "unexpected": []
+  },
+  {
+   "id": "C2-declared-expectation",
+   "n": 8,
+   "n_ok": 8,
+   "per_anchor": [
+    {
+     "desc": "runtime approval deployed by 15 of 21 production agent systems; names approval fatigue with no criterion",
+     "expectation": {
+      "declared_tokens": [
+       "approval",
+       "human",
+       "agent"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "human",
+       "agent"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2605.24309",
+     "n_authors": 3,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Reframing LLM Agent Security as an Agent-Human Interaction Problem",
+     "year": 2026
+    },
+    {
+     "desc": "approval hijacking reproduced across Agno AgentOS and LangGraph Agent Server releases",
+     "expectation": {
+      "declared_tokens": [
+       "approval",
+       "hijack",
+       "agent"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "approval",
+       "hijack"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2609.21081",
+     "n_authors": 1,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Loopjacking: Hijacking Human-in-the-Loop Approval",
+     "year": 2026
+    },
+    {
+     "desc": "attack success 68-100% without binding -> 0% with it; 0% false block",
+     "expectation": {
+      "declared_tokens": [
+       "binding",
+       "guardrail",
+       "agent"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "agent"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2609.18411",
+     "n_authors": 5,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "The Verifiable Action Card: Trustworthy Human-in-the-Loop Control for Secure Autonomous Agents",
+     "year": 2026
+    },
+    {
+     "desc": "the registration's oversight/control reading, read by hand at registration",
+     "expectation": {
+      "declared_tokens": [
+       "oversight",
+       "human",
+       "agent"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "agent"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2608.24569",
+     "n_authors": 6,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "When \"Must\" Becomes \"Maybe\": Constraint Weakening in LLM Agent Workflows",
+     "year": 2026
+    },
+    {
+     "desc": "step-scoped monitors cannot detect compositional violations however accurate they are",
+     "expectation": {
+      "declared_tokens": [
+       "monitor",
+       "compositional",
+       "detection"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "compositional"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2609.18820",
+     "n_authors": 4,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Compositional Policy Violations: When Step-Level Compliance Fails In Agentic AI Workflows",
+     "year": 2026
+    },
+    {
+     "desc": "delegation authority as a POMDP; policy under uncertainty with the channel assumed faithful",
+     "expectation": {
+      "declared_tokens": [
+       "delegation",
+       "authority",
+       "POMDP",
+       "policy"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "delegation",
+       "authority",
+       "policy"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2606.29406",
+     "n_authors": 1,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority",
+     "year": 2026
+    },
+    {
+     "desc": "recall of a fixed-invariant FSA monitor is bounded by attack-distribution entropy",
+     "expectation": {
+      "declared_tokens": [
+       "monitor",
+       "entropy",
+       "detection"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "monitor",
+       "entropy"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2608.01388",
+     "n_authors": 1,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety",
+     "year": 2026
+    },
+    {
+     "desc": "measures approval integrity and recovery in one publication mechanism; the registration describes the measurement as a production response-act checker accepting 291 of 302 unsupported-labelled answers, i.e. the false-accept side of reviewer accuracy.  TOKEN SOURCE, stated because the first declaration failed: this fetch is the only place the work itself is read, and the tokens above are taken from the registration's TITLE-LEVEL phrasing of the work (its issue body names 'approval integrity and recovery in one publication mechanism'), not from its paraphrase of the mechanism ('response-act checker'), which the returned title does not carry.  The first declaration (tokens response/checker/act/unsupported/...) was written before the fetch and FAILED -- recorded here rather than silently corrected, because a declared expectation that has never failed is not a test.",
+     "expectation": {
+      "declared_tokens": [
+       "approval",
+       "integrity",
+       "recovery",
+       "publication",
+       "answer"
+      ],
+      "form": "DISJUNCTION: >=1 token, because the registration carried no title into this file -- it catches an unrelated work, it does not prove identity (C3 carries that)",
+      "hit": [
+       "approval",
+       "integrity",
+       "recovery",
+       "publication",
+       "answer"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2609.15576",
+     "n_authors": 2,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Approval Integrity and Recovery in LLM Answer Publication",
+     "year": 2026
+    }
+   ]
+  },
+  {
+   "agree": [
+    {
+     "id": "2605.24309",
+     "title": "Reframing LLM Agent Security as an Agent-Human Interaction Problem"
+    },
+    {
+     "id": "2609.21081",
+     "title": "Loopjacking: Hijacking Human-in-the-Loop Approval"
+    },
+    {
+     "id": "2609.18411",
+     "title": "The Verifiable Action Card: Trustworthy Human-in-the-Loop Control for Secure Autonomous Agents"
+    },
+    {
+     "id": "2609.18820",
+     "title": "Compositional Policy Violations: When Step-Level Compliance Fails In Agentic AI Workflows"
+    }
+   ],
+   "anchor_only": [
+    "2608.24569",
+    "2606.29406",
+    "2608.01388",
+    "2609.15576"
+   ],
+   "disagree": [],
+   "id": "C3-cross-source-agreement",
+   "n_shared": 4,
+   "note": "the same fetch/parse mechanism is used for the pools and for the anchors, so on the shared ids it is checked exactly; the anchors only the pool lacks are the two (three with 2609.18820) that this limb exists for",
+   "ok": true,
+   "shared": 4
+  }
+ ],
+ "declared": [
+  {
+   "desc": "runtime approval deployed by 15 of 21 production agent systems; names approval fatigue with no criterion",
+   "id": "2605.24309",
+   "tokens": [
+    "approval",
+    "human",
+    "agent"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "approval hijacking reproduced across Agno AgentOS and LangGraph Agent Server releases",
+   "id": "2609.21081",
+   "tokens": [
+    "approval",
+    "hijack",
+    "agent"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "attack success 68-100% without binding -> 0% with it; 0% false block",
+   "id": "2609.18411",
+   "tokens": [
+    "binding",
+    "guardrail",
+    "agent"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "the registration's oversight/control reading, read by hand at registration",
+   "id": "2608.24569",
+   "tokens": [
+    "oversight",
+    "human",
+    "agent"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "step-scoped monitors cannot detect compositional violations however accurate they are",
+   "id": "2609.18820",
+   "tokens": [
+    "monitor",
+    "compositional",
+    "detection"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "delegation authority as a POMDP; policy under uncertainty with the channel assumed faithful",
+   "id": "2606.29406",
+   "tokens": [
+    "delegation",
+    "authority",
+    "POMDP",
+    "policy"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "recall of a fixed-invariant FSA monitor is bounded by attack-distribution entropy",
+   "id": "2608.01388",
+   "tokens": [
+    "monitor",
+    "entropy",
+    "detection"
+   ],
+   "year_floor": 2026
+  },
+  {
+   "desc": "measures approval integrity and recovery in one publication mechanism; the registration describes the measurement as a production response-act checker accepting 291 of 302 unsupported-labelled answers, i.e. the false-accept side of reviewer accuracy.  TOKEN SOURCE, stated because the first declaration failed: this fetch is the only place the work itself is read, and the tokens above are taken from the registration's TITLE-LEVEL phrasing of the work (its issue body names 'approval integrity and recovery in one publication mechanism'), not from its paraphrase of the mechanism ('response-act checker'), which the returned title does not carry.  The first declaration (tokens response/checker/act/unsupported/...) was written before the fetch and FAILED -- recorded here rather than silently corrected, because a declared expectation that has never failed is not a test.",
+   "id": "2609.15576",
+   "tokens": [
+    "approval",
+    "integrity",
+    "recovery",
+    "publication",
+    "answer"
+   ],
+   "year_floor": 2026
+  }
+ ],
+ "dropped": [
+  {
+   "id": "2609.01373",
+   "why": "not in the registration (heilmeier.md holds no such id); a corrupted recollection of this journal's #89 anchor 2608.01373"
+  }
+ ],
+ "errors": [],
+ "form": {
+  "date_field": "published",
+  "endpoint": "query?id_list=<ids>",
+  "index": "arXiv API (export.arxiv.org)",
+  "scan_date": "2026-09-22",
+  "sort": "(id_list: no sort)",
+  "why": "the registration's anchors were read by id at registration, not returned by a keyword query, so they live in no harvest pool"
+ },
+ "n_returned": 8,
+ "round": "R416",
+ "scan_date": "2026-09-22"
+}

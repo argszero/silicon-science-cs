@@ -1,0 +1,104 @@
+{
+ "cases": [
+  {
+   "alarm": "A1 FAILED: numeric ratio does not reproduce the closed form (worst 1e-06)",
+   "case": "A1: a deviation above the tolerance",
+   "expect": "A1 FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "A2 FAILED: a variant's declared axis and its measured axis disagree: {'none': {'declared': False, 'measured_has_axis': False, 'rows': 3, 'ratios': [No",
+   "case": "A2: the declared axis flipped against the measured one",
+   "expect": "A2 FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "A3 FAILED: at b = 0 reviewer accuracy is not exactly inert",
+   "case": "A3: accuracy no longer inert at zero fidelity",
+   "expect": "A3 FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "B FAILED: the ratio moves with the step (worst relative spread 1.000e-03)",
+   "case": "B: the read moves with the step",
+   "expect": "B FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "B2 FAILED: the boundary rule and the central rule disagree (1.000e-02)",
+   "case": "B2: the boundary rule reads a different point",
+   "expect": "B2 FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "C FAILED: the v4 route and v1's closed form disagree (worst 1.000e-11)",
+   "case": "C: the two routes disagree on the value",
+   "expect": "C FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "D FAILED: a derivative is positive, so the raw ratio is not the magnitude ratio",
+   "case": "D: a derivative that is positive",
+   "expect": "D FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "E FAILED: the eta = 0 channels' ratios do not follow their own denominators",
+   "case": "E: a channel whose ratio leaves its own denominator",
+   "expect": "E FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "F FAILED: the crossover does not follow its prediction ({'mismatch': {'numeric': 0.7500000000002986, 'predicted': 0.75, 'inside_unit_interval': True, ",
+   "case": "F: the crossover off its prediction",
+   "expect": "F FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "F FAILED: the crossover does not follow its prediction ({'mismatch': {'numeric': 0.7500000000002986, 'predicted': 0.75, 'inside_unit_interval': True, ",
+   "case": "F: a crossover claimed for the laundering channel (the refusal clause)",
+   "expect": "F FAILED",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "dE/db step leaves (0,1): b=0.0 h=0.0001 side=central",
+   "case": "bounds guard: a central step at b = 0 leaves the unit interval",
+   "expect": "dE/db step leaves",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "dE/da step leaves (0,1): a=0.0 h=0.0001 side=central",
+   "case": "bounds guard: the accuracy axis driven to a = 0",
+   "expect": "dE/da step leaves",
+   "verdict": "caught"
+  },
+  {
+   "alarm": "E is non-decreasing in a or b at (mismatch, b=0.5): dE/da=1.000e-01 dE/db=1.500e-01",
+   "case": "monotonicity guard: a malformed harm weight that makes E grow with fidelity",
+   "expect": "E is non-decreasing",
+   "verdict": "caught"
+  }
+ ],
+ "caught": 13,
+ "inert": [],
+ "instrument": "gate_v4.py",
+ "n_cases": 13,
+ "n_sites": 12,
+ "round": "R418",
+ "sites": [
+  "dE/da step leaves (0,1): a=%r h=%r side=",
+  "dE/db step leaves (0,1): b=%r h=%r side=",
+  "E is non-decreasing in a or b at (%s, b=",
+  "A1 FAILED: numeric ratio does not reprod",
+  "A2 FAILED: a variant's declared axis and",
+  "A3 FAILED: at b = 0 reviewer accuracy is",
+  "B FAILED: the ratio moves with the step ",
+  "B2 FAILED: the boundary rule and the cen",
+  "C FAILED: the v4 route and v1's closed f",
+  "D FAILED: a derivative is positive, so t",
+  "E FAILED: the eta = 0 channels' ratios d",
+  "F FAILED: the crossover does not follow "
+ ],
+ "uncovered": [],
+ "verdict": "PASS"
+}

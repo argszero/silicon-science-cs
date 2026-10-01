@@ -1,0 +1,626 @@
+{
+ "C1_law": {
+  "n_checked": 12,
+  "n_readings": 24,
+  "n_skipped": 12,
+  "rows": [
+   {
+    "L": 0.01,
+    "R": 0.5,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": 14.6,
+    "v_at_0": -0.021900000000000003,
+    "v_at_1": -0.0204
+   },
+   {
+    "L": 0.02,
+    "R": 1.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": 7.266666666666667,
+    "v_at_0": -0.0218,
+    "v_at_1": -0.0188
+   },
+   {
+    "L": 0.04,
+    "R": 2.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": 3.6,
+    "v_at_0": -0.0216,
+    "v_at_1": -0.015600000000000003
+   },
+   {
+    "L": 0.1,
+    "R": 5.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": 1.3999999999999997,
+    "v_at_0": -0.020999999999999998,
+    "v_at_1": -0.005999999999999998
+   },
+   {
+    "L": 0.16,
+    "R": 8.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.8499999999999999,
+    "channel": "mismatch",
+    "closed": 0.85,
+    "v_at_0": -0.0204,
+    "v_at_1": 0.003599999999999999
+   },
+   {
+    "L": 0.2,
+    "R": 10.0,
+    "abs_diff": 3.3306690738754696e-16,
+    "bisected": 0.6666666666666663,
+    "channel": "mismatch",
+    "closed": 0.6666666666666666,
+    "v_at_0": -0.019999999999999997,
+    "v_at_1": 0.010000000000000009
+   },
+   {
+    "L": 0.4,
+    "R": 20.0,
+    "abs_diff": 2.7755575615628914e-16,
+    "bisected": 0.2999999999999997,
+    "channel": "mismatch",
+    "closed": 0.3,
+    "v_at_0": -0.018000000000000002,
+    "v_at_1": 0.042000000000000016
+   },
+   {
+    "L": 1.0,
+    "R": 50.0,
+    "abs_diff": 3.191891195797325e-16,
+    "bisected": 0.07999999999999968,
+    "channel": "mismatch",
+    "closed": 0.08,
+    "v_at_0": -0.011999999999999983,
+    "v_at_1": 0.138
+   },
+   {
+    "L": 2.2,
+    "R": 110.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": -9.25185853854297e-18,
+    "v_at_0": 0.0,
+    "v_at_1": 0.33000000000000007
+   },
+   {
+    "L": 4.0,
+    "R": 200.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": -0.030000000000000002,
+    "v_at_0": 0.018000000000000016,
+    "v_at_1": 0.6180000000000001
+   },
+   {
+    "L": 20.0,
+    "R": 1000.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": -0.05933333333333334,
+    "v_at_0": 0.17800000000000038,
+    "v_at_1": 3.178
+   },
+   {
+    "L": 200.0,
+    "R": 10000.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "mismatch",
+    "closed": -0.06593333333333333,
+    "v_at_0": 1.9780000000000015,
+    "v_at_1": 31.978
+   },
+   {
+    "L": 0.01,
+    "R": 0.5,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "substitution",
+    "closed": 3.6842105263157894,
+    "v_at_0": -0.027999999999999997,
+    "v_at_1": -0.0204
+   },
+   {
+    "L": 0.02,
+    "R": 1.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "substitution",
+    "closed": 2.0930232558139537,
+    "v_at_0": -0.036000000000000004,
+    "v_at_1": -0.0188
+   },
+   {
+    "L": 0.04,
+    "R": 2.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "substitution",
+    "closed": 1.4285714285714286,
+    "v_at_0": -0.052000000000000005,
+    "v_at_1": -0.015600000000000003
+   },
+   {
+    "L": 0.1,
+    "R": 5.0,
+    "abs_diff": null,
+    "bisected": null,
+    "channel": "substitution",
+    "closed": 1.0638297872340425,
+    "v_at_0": -0.10000000000000002,
+    "v_at_1": -0.005999999999999998
+   },
+   {
+    "L": 0.16,
+    "R": 8.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.9762532981530343,
+    "channel": "substitution",
+    "closed": 0.9762532981530342,
+    "v_at_0": -0.148,
+    "v_at_1": 0.003599999999999999
+   },
+   {
+    "L": 0.2,
+    "R": 10.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.9473684210526316,
+    "channel": "substitution",
+    "closed": 0.9473684210526315,
+    "v_at_0": -0.18000000000000002,
+    "v_at_1": 0.010000000000000009
+   },
+   {
+    "L": 0.4,
+    "R": 20.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.8900523560209423,
+    "channel": "substitution",
+    "closed": 0.8900523560209425,
+    "v_at_0": -0.34,
+    "v_at_1": 0.042000000000000016
+   },
+   {
+    "L": 1.0,
+    "R": 50.0,
+    "abs_diff": 0.0,
+    "bisected": 0.8559498956158664,
+    "channel": "substitution",
+    "closed": 0.8559498956158664,
+    "v_at_0": -0.8200000000000003,
+    "v_at_1": 0.138
+   },
+   {
+    "L": 2.2,
+    "R": 110.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.8436018957345972,
+    "channel": "substitution",
+    "closed": 0.8436018957345971,
+    "v_at_0": -1.7800000000000002,
+    "v_at_1": 0.33000000000000007
+   },
+   {
+    "L": 4.0,
+    "R": 200.0,
+    "abs_diff": 0.0,
+    "bisected": 0.8389786347055759,
+    "channel": "substitution",
+    "closed": 0.8389786347055759,
+    "v_at_0": -3.2200000000000006,
+    "v_at_1": 0.6180000000000001
+   },
+   {
+    "L": 20.0,
+    "R": 1000.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.8344619231169914,
+    "channel": "substitution",
+    "closed": 0.8344619231169913,
+    "v_at_0": -16.02,
+    "v_at_1": 3.178
+   },
+   {
+    "L": 200.0,
+    "R": 10000.0,
+    "abs_diff": 1.1102230246251565e-16,
+    "bisected": 0.8334461817310597,
+    "channel": "substitution",
+    "closed": 0.8334461817310598,
+    "v_at_0": -160.01999999999998,
+    "v_at_1": 31.978
+   }
+  ],
+  "skipped": [
+   {
+    "R": 0.5,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.021900000000000003,
+    "v_at_1": -0.0204
+   },
+   {
+    "R": 1.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.0218,
+    "v_at_1": -0.0188
+   },
+   {
+    "R": 2.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.0216,
+    "v_at_1": -0.015600000000000003
+   },
+   {
+    "R": 5.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.020999999999999998,
+    "v_at_1": -0.005999999999999998
+   },
+   {
+    "R": 110.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": 0.0,
+    "v_at_1": 0.33000000000000007
+   },
+   {
+    "R": 200.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": 0.018000000000000016,
+    "v_at_1": 0.6180000000000001
+   },
+   {
+    "R": 1000.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": 0.17800000000000038,
+    "v_at_1": 3.178
+   },
+   {
+    "R": 10000.0,
+    "channel": "mismatch",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": 1.9780000000000015,
+    "v_at_1": 31.978
+   },
+   {
+    "R": 0.5,
+    "channel": "substitution",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.027999999999999997,
+    "v_at_1": -0.0204
+   },
+   {
+    "R": 1.0,
+    "channel": "substitution",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.036000000000000004,
+    "v_at_1": -0.0188
+   },
+   {
+    "R": 2.0,
+    "channel": "substitution",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.052000000000000005,
+    "v_at_1": -0.015600000000000003
+   },
+   {
+    "R": 5.0,
+    "channel": "substitution",
+    "reason": "the enumerated value does not change sign on [0, 1]",
+    "v_at_0": -0.10000000000000002,
+    "v_at_1": -0.005999999999999998
+   }
+  ],
+  "tolerance": 1e-06,
+  "worst_abs_diff": 3.3306690738754696e-16
+ },
+ "C2_monotone": {
+  "mismatch": {
+   "n_steps": 11,
+   "non_decreasing_bisected": [],
+   "non_decreasing_closed": []
+  },
+  "substitution": {
+   "n_steps": 11,
+   "non_decreasing_bisected": [],
+   "non_decreasing_closed": []
+  }
+ },
+ "C3_rate": {
+  "mismatch": {
+   "differences": [
+    0.07333333333333333,
+    0.007333333333333324,
+    0.0007333333333333358
+   ],
+   "differences_ratio": [
+    10.000000000000012,
+    9.999999999999952
+   ],
+   "expected_ratio": [
+    10.0,
+    10.0
+   ],
+   "limit": -0.06666666666666667,
+   "tolerance": 0.2,
+   "violations": []
+  },
+  "substitution": {
+   "differences": [
+    0.011296489398679221,
+    0.0011285897836580405,
+    0.00011284839772651711
+   ],
+   "differences_ratio": [
+    10.009384775807987,
+    10.000937597653143
+   ],
+   "expected_ratio": [
+    10.0,
+    10.0
+   ],
+   "limit": 0.8333333333333333,
+   "tolerance": 0.2,
+   "violations": []
+  }
+ },
+ "C4_R_zero": {
+  "R_m": 109.99999999999999,
+  "b_above": -0.006060606060606054,
+  "b_at_R_m": 9.25185853854297e-18,
+  "b_below": 0.007407407407407418,
+  "sign_change": true
+ },
+ "C5_crossover": {
+  "R_c": 6.875,
+  "R_c_closed": 6.874999999999999,
+  "b_mismatch_at_R_c": 1.0000000000000002,
+  "b_substitution_at_R_c": 1.0,
+  "both_at_the_axis_edge": true,
+  "bracket": [
+   5.0,
+   10.0
+  ],
+  "closed_vs_bisected": 8.881784197001252e-16,
+  "d_above": -0.2807017543859649,
+  "d_at_c": -1.1102230246251565e-16,
+  "d_below": 0.33617021276595715,
+  "higher_bar_above": "substitution",
+  "higher_bar_below": "mismatch",
+  "mismatch_window": [
+   6.874999999999999,
+   109.99999999999999
+  ],
+  "substitution_window": [
+   0.10416666666666666,
+   null
+  ]
+ },
+ "C6_omissions": {
+  "R_fixed": 50.0,
+  "baseline": {
+   "mismatch": 0.08,
+   "substitution": 0.8559498956158664
+  },
+  "limb_eta": [
+   {
+    "eta": 0.5,
+    "mismatch": 0.08,
+    "moved": {
+     "mismatch": 0.0,
+     "substitution": 0.10326172357285568
+    },
+    "substitution": 0.7526881720430108
+   },
+   {
+    "eta": 1.0,
+    "mismatch": 0.08,
+    "moved": {
+     "mismatch": 0.0,
+     "substitution": 0.0
+    },
+    "substitution": 0.8559498956158664
+   },
+   {
+    "eta": 1.5,
+    "mismatch": 0.08,
+    "moved": {
+     "mismatch": 0.0,
+     "substitution": 0.0424300749290526
+    },
+    "substitution": 0.898379970544919
+   }
+  ],
+  "limb_s": [
+   {
+    "mismatch": 0.07999999999999946,
+    "moved": {
+     "mismatch": 5.412337245047638e-16,
+     "substitution": 0.10295421397317472
+    },
+    "s": 0.25,
+    "substitution": 0.9589041095890412
+   },
+   {
+    "mismatch": 0.07999999999999968,
+    "moved": {
+     "mismatch": 3.191891195797325e-16,
+     "substitution": 0.06555181086877515
+    },
+    "s": 0.5,
+    "substitution": 0.9215017064846416
+   },
+   {
+    "mismatch": 0.07999999999999968,
+    "moved": {
+     "mismatch": 3.191891195797325e-16,
+     "substitution": 0.0
+    },
+    "s": 1.0,
+    "substitution": 0.8559498956158664
+   }
+  ],
+  "limb_t": [
+   {
+    "mismatch": 0.072,
+    "moved": {
+     "mismatch": 0.008000000000000007,
+     "substitution": 0.001070829727626177
+    },
+    "substitution": 0.8548790658882403,
+    "t": 1.0
+   },
+   {
+    "mismatch": 0.08,
+    "moved": {
+     "mismatch": 0.0,
+     "substitution": 0.0
+    },
+    "substitution": 0.8559498956158664,
+    "t": 2.5
+   },
+   {
+    "mismatch": 0.09333333333333332,
+    "moved": {
+     "mismatch": 0.013333333333333322,
+     "substitution": 0.0017906901581921097
+    },
+    "substitution": 0.8577405857740585,
+    "t": 5.0
+   }
+  ],
+  "moved_tolerance": 1e-09,
+  "unmoved_tolerance": 1e-09,
+  "vacuity": {
+   "rule": "each limb must vary its parameter",
+   "vacuous_limbs": []
+  }
+ },
+ "C7_interval": {
+  "n": 4,
+  "n_covering": 4,
+  "rows": [
+   {
+    "R": 10.0,
+    "b_hat_star": 0.682430267642956,
+    "channel": "mismatch",
+    "covers": true,
+    "exact_b_star": 0.6666666666666666,
+    "hi": 0.7083754360130099,
+    "lo": 0.6566020492214357,
+    "state": "bounded",
+    "width": 0.05177338679157417
+   },
+   {
+    "R": 10.0,
+    "b_hat_star": 0.9450939256893902,
+    "channel": "substitution",
+    "covers": true,
+    "exact_b_star": 0.9473684210526315,
+    "hi": 0.9508127627626553,
+    "lo": 0.9394434712967938,
+    "state": "bounded",
+    "width": 0.011369291465861409
+   },
+   {
+    "R": 20.0,
+    "b_hat_star": 0.3224957542949684,
+    "channel": "mismatch",
+    "covers": true,
+    "exact_b_star": 0.3,
+    "hi": 0.3573988148938245,
+    "lo": 0.2836654637502754,
+    "state": "bounded",
+    "width": 0.07373335114354912
+   },
+   {
+    "R": 20.0,
+    "b_hat_star": 0.8880646864012772,
+    "channel": "substitution",
+    "covers": true,
+    "exact_b_star": 0.8900523560209425,
+    "hi": 0.8933342507219689,
+    "lo": 0.8828569253083602,
+    "state": "bounded",
+    "width": 0.010477325413608685
+   }
+  ]
+ },
+ "C8_registered_wording": {
+  "finding": "the clause 'its dependence on L/c' reads as if R were the only ratio that matters; the false-block cost relative to the escalation cost (t = cb/c) is a second ratio the registered symbol does not name, and the sweep must declare it (C6 shows it moves both boundaries)",
+  "measured": "the boundary also depends on cb (through t = cb/c) and on eta, and s moves only the laundering channel while R = L/c moves both",
+  "registered_symbol": "b*(a, s, L, c)"
+ },
+ "build": {
+  "script_crc32": "fa39886a"
+ },
+ "c_fixed": 0.02,
+ "checks": {
+  "C1_law": "PASS",
+  "C2_monotone": "PASS",
+  "C3_rate": "PASS",
+  "C4_R_zero": "PASS",
+  "C5_crossover": "PASS",
+  "C6_omissions": "PASS",
+  "C7_interval": "PASS",
+  "C8_wording": "reported"
+ },
+ "eta_default": 1.0,
+ "limits": {
+  "formulas": {
+   "mismatch": "[(1 + t(1-pi)f)/(pi*R) - f] / (a - f)",
+   "substitution": "[1 + eta(1-pi)R] / [R(pi*a + eta(1-pi)) - t(1-pi)f]"
+  },
+  "mismatch_R_zero": 109.99999999999999,
+  "mismatch_limit": -0.06666666666666667,
+  "reads": "with t = cb/c: the registered symbol b*(a, s, L, c) omits the false-block cost cb",
+  "substitution_denominator_zero": 0.10416666666666666,
+  "substitution_limit": 0.8333333333333333
+ },
+ "preregistered": {
+  "P1": "the closed form equals the bisected enumeration at every reading with a sign change (< 1e-6)",
+  "P2": "both boundaries are strictly decreasing in R over the grid, on both routes",
+  "P3": "mismatch's limit is negative and substitution's positive, each approached at the rate 1/R",
+  "P4": "the mismatch bar is zero exactly at the closed-form R_m and negative beyond it",
+  "P5": "the two boundaries change which is larger at a single bracketable R_c",
+  "P6": "t moves both boundaries; eta moves only substitution; s moves only substitution",
+  "P7": "at the declared R values the exact boundary lies inside v5's measured interval"
+ },
+ "sweep_R": [
+  0.5,
+  1.0,
+  2.0,
+  5.0,
+  8.0,
+  10.0,
+  20.0,
+  50.0,
+  110.0,
+  200.0,
+  1000.0,
+  10000.0
+ ],
+ "t_default": 2.5,
+ "what": "issue #93 v6 -- the boundary's dependence on L/c: metric (a)'s second clause",
+ "why": "the registration asks for the boundary 'with bootstrap CIs AND ITS DEPENDENCE ON L/c'; v1/v5 read the boundary and its interval, nothing had read the cost-ratio dependence as its own object"
+}
