@@ -1,0 +1,2923 @@
+{
+ "entries": [
+  {
+   "authors": "Gillani, S. et al.",
+   "authors_raw": [
+    "Syeda Anshrah Gillani",
+    "Mirza Samad Ahmed Baig",
+    "Shahid Munir Shah",
+    "Asher Ali",
+    "Hamzah Siddiqui"
+   ],
+   "difference": "Benchmarks quantum models against tuned classical ones under a calibration- and noise-aware attribution protocol; its surviving advantages are measured against a random-feature surrogate, and no rival receives the quantum map's own geometry.",
+   "id": "2608.18155",
+   "pool_title": "How Quantum Is the Advantage? A Fair, Calibration- and Noise-Aware Benchmark and Attribution Audit of Quantum Machine Learning for Network Intrusion Detection",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "How Quantum Is the Advantage? A Fair, Calibration- and Noise-Aware Benchmark and Attribution Audit of Quantum Machine Learning for Network Intrusion Detection",
+   "url": "https://arxiv.org/abs/2608.18155",
+   "venue": "arXiv:2608.18155",
+   "year": 2026
+  },
+  {
+   "authors": "Schnabel, J., Roth, M.",
+   "authors_raw": [
+    "Jan Schnabel",
+    "Marco Roth"
+   ],
+   "difference": "Audits quantum-kernel methods as a family across datasets and reports where they fail; it compares kernel families rather than matching one rival to the quantum metric, and sweeps no alignment axis.",
+   "id": "2409.04406",
+   "pool_title": "Quantum Kernel Methods under Scrutiny: A Benchmarking Study",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernel Methods under Scrutiny: A Benchmarking Study",
+   "url": "https://arxiv.org/abs/2409.04406",
+   "venue": "arXiv:2409.04406",
+   "year": 2024
+  },
+  {
+   "authors": "Shen, J.",
+   "authors_raw": [
+    "Junchi Shen"
+   ],
+   "difference": "Documents a vanishing advantage on a financial cross-section and attributes it to the data; we hold the data-generating process fixed and sweep the alignment between the target's interaction structure and the map's.",
+   "id": "2607.20168",
+   "pool_title": "Quantum Kernels and the Cross-Section of Stock Returns: Anatomy of a Vanishing Advantage",
+   "primary": "q-fin.PR",
+   "source": "arxiv",
+   "title": "Quantum Kernels and the Cross-Section of Stock Returns: Anatomy of a Vanishing Advantage",
+   "url": "https://arxiv.org/abs/2607.20168",
+   "venue": "arXiv:2607.20168",
+   "year": 2026
+  },
+  {
+   "authors": "Ord\u00f3\u00f1ez, S. et al.",
+   "authors_raw": [
+    "Sebastian Cajas Ord\u00f3\u00f1ez",
+    "Felipe Ocampo Osorio",
+    "Dax Enshan Koh",
+    "Rafi Al Attrach",
+    "Aldo Marzullo",
+    "Ariel Guerra-Adames",
+    "J. Alejandro Andrade",
+    "Siong Thye Goh",
+    "Chi-Yu Chen",
+    "Rahul Gorijavolu",
+    "Xue Yang",
+    "Noah Dane Hebdon",
+    "Leo Anthony Celi"
+   ],
+   "difference": "Finds a quantum-kernel advantage inside frozen foundation-model embeddings, measured against classical kernels of a different metric rather than a rival built to receive the quantum geometry.",
+   "id": "2604.24597",
+   "pool_title": "Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings",
+   "url": "https://arxiv.org/abs/2604.24597",
+   "venue": "arXiv:2604.24597",
+   "year": 2026
+  },
+  {
+   "authors": "Mancilla, J., Tagliani, T.",
+   "authors_raw": [
+    "Javier Mancilla",
+    "Tom\u00e1s Tagliani"
+   ],
+   "difference": "Argues from a Fourier-frequency argument that public tabular data cannot support quantum advantage and offers a recipe; the claim is about datasets, ours is about where a matched rival is beaten on a controlled generator.",
+   "id": "2607.15815",
+   "pool_title": "The Fourier Wall: Why Public Tabular Datasets Refuse Quantum Advantage, and a Certified Recipe for Where It Lives",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The Fourier Wall: Why Public Tabular Datasets Refuse Quantum Advantage, and a Certified Recipe for Where It Lives",
+   "url": "https://arxiv.org/abs/2607.15815",
+   "venue": "arXiv:2607.15815",
+   "year": 2026
+  },
+  {
+   "authors": "Islam, M.",
+   "authors_raw": [
+    "Md Rezwanul Islam"
+   ],
+   "difference": "Shows evaluation choices (splits, calibration, metrics) decide the reported outcome in one application domain; we fix the protocol and vary the geometry, and the package records the choices so they can be re-read.",
+   "id": "2608.15617",
+   "pool_title": "Benchmarking Quantum Machine Learning for Power-System Attack Detection: Evaluation Choices Decide the Outcome Before the Models Do",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Benchmarking Quantum Machine Learning for Power-System Attack Detection: Evaluation Choices Decide the Outcome Before the Models Do",
+   "url": "https://arxiv.org/abs/2608.15617",
+   "venue": "arXiv:2608.15617",
+   "year": 2026
+  },
+  {
+   "authors": "Kakavand, S., Strohmeyer, C., Schlotter, M.",
+   "authors_raw": [
+    "Siavash Kakavand",
+    "Christoph Strohmeyer",
+    "Michael Schlotter"
+   ],
+   "difference": "Benchmarks quantum-kernel SVMs against classical baselines on tabular data with a tuned but unmatched classical arm, so a better geometry and a quantum geometry are not separated.",
+   "id": "2604.18837",
+   "pool_title": "Benchmarking Quantum Kernel Support Vector Machines Against Classical Baselines on Tabular Data: A Rigorous Empirical Study with Hardware Validation",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Benchmarking Quantum Kernel Support Vector Machines Against Classical Baselines on Tabular Data: A Rigorous Empirical Study with Hardware Validation",
+   "url": "https://arxiv.org/abs/2604.18837",
+   "venue": "arXiv:2604.18837",
+   "year": 2026
+  },
+  {
+   "authors": "Kurt, M.",
+   "authors_raw": [
+    "Murat Kurt"
+   ],
+   "difference": "Compares quantum feature-encoding strategies with a QSVM on a binary task; encoding is varied at fixed data, whereas our design varies the data-side alignment against a fixed encoding family.",
+   "id": "2608.27764",
+   "pool_title": "Benchmarking Quantum Feature Encoding Strategies for Binary Classification with QSVM",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Benchmarking Quantum Feature Encoding Strategies for Binary Classification with QSVM",
+   "url": "https://arxiv.org/abs/2608.27764",
+   "venue": "arXiv:2608.27764",
+   "year": 2026
+  },
+  {
+   "authors": "Hangleiter, D.",
+   "authors_raw": [
+    "Dominik Hangleiter"
+   ],
+   "difference": "Asks whether quantum advantage has been achieved and reviews the evidence; a review of claims, with no controlled instrument able to falsify a specific advantage mechanism.",
+   "id": "2603.09901",
+   "pool_title": "Has quantum advantage been achieved?",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Has Quantum Advantage Been Achieved?",
+   "url": "https://arxiv.org/abs/2603.09901",
+   "venue": "arXiv:2603.09901",
+   "year": 2026
+  },
+  {
+   "authors": "Kshetrimayum, A. et al.",
+   "authors_raw": [
+    "Augustine Kshetrimayum",
+    "Saeed S. Jahromi",
+    "Sukhbinder Singh",
+    "Rom\u00e1n Or\u00fas"
+   ],
+   "difference": "Reads quantum advantage through tensor networks and identifies where classical representations suffice; it speaks to simulability, not to the test error of a quantum kernel against a matched rival.",
+   "id": "2603.18825",
+   "pool_title": "Quantum Advantage: a Tensor Network Perspective",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Advantage: A Tensor Network Perspective",
+   "url": "https://arxiv.org/abs/2603.18825",
+   "venue": "arXiv:2603.18825",
+   "year": 2026
+  },
+  {
+   "authors": "Alavi, A., Kouchmeshki, F., Akhoundi, H.",
+   "authors_raw": [
+    "Azadeh Alavi",
+    "Fatemeh Kouchmeshki",
+    "Hossein Akhoundi"
+   ],
+   "difference": "Builds invariance audits for quantum kernels and a real-to-Hermitian taxonomy; the audit tests invariances of a map, while our question is whether the map beats a rival that inherits its metric.",
+   "id": "2607.07927",
+   "pool_title": "Invariance Audits for Quantum Kernels and Variational Rewinding: A Real-to-Hermitian Taxonomy of Projector, Flag, Anchor, and Density Geometry",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Invariance Audits for Quantum Kernels and Variational Rewinding: A Real-To-Hermitian Taxonomy of Projector, Flag, Anchor, and Density Geometry",
+   "url": "https://arxiv.org/abs/2607.07927",
+   "venue": "arXiv:2607.07927",
+   "year": 2026
+  },
+  {
+   "authors": "Kim, J.",
+   "authors_raw": [
+    "Jaeuk Kim"
+   ],
+   "difference": "Gives a closed-form benchmark for fixed-map denoising networks; a closed form for a different task family, with no paired rival and no swept data-side axis.",
+   "id": "2608.12712",
+   "pool_title": "Parity Floors in Quantum Denoisers: A Closed-Form Benchmark for Fixed-Map Denoising Networks",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Parity Floors in Quantum Denoisers: A Closed-Form Benchmark for Fixed-Map Denoising Networks",
+   "url": "https://arxiv.org/abs/2608.12712",
+   "venue": "arXiv:2608.12712",
+   "year": 2026
+  },
+  {
+   "authors": "Herbort, F. et al.",
+   "authors_raw": [
+    "Felix Herbort",
+    "Ellen Sarauer",
+    "Daniel Ohl de Mello",
+    "Paul Christiansen",
+    "Steffen Hien",
+    "Cedric Br\u00fcgmann",
+    "Dieter Jaksch",
+    "Veronika Eyring",
+    "Martin Kiffner",
+    "Mierk Schwabe"
+   ],
+   "difference": "Stress-tests variational models on a cloud-microphysics dataset and finds the advantage hard to reach; a single-domain stress test rather than a map over a controlled grid with a matched rival.",
+   "id": "2607.04915",
+   "pool_title": "How Hard Is Quantum Advantage? A Cloud Microphysics Stress Test for Variational Quantum Models",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "How Hard Is Quantum Advantage? A Cloud Microphysics Stress Test for Variational Quantum Models",
+   "url": "https://arxiv.org/abs/2607.04915",
+   "venue": "arXiv:2607.04915",
+   "year": 2026
+  },
+  {
+   "authors": "Agnihotri, V., Kaur, J., Kaushik, S.",
+   "authors_raw": [
+    "Vikas Agnihotri",
+    "Jasleen Kaur",
+    "Sarvagya Kaushik"
+   ],
+   "difference": "Evaluates quantum-kernel methods on noisy radar data against classical kernels, with no metric-matched surrogate and no planted alignment.",
+   "id": "2601.22194",
+   "pool_title": "Practical Evaluation of Quantum Kernel Methods for Radar Micro-Doppler Classification on Noisy Intermediate-Scale Quantum (NISQ) Hardware",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Practical Evaluation of Quantum Kernel Methods for Radar Micro-Doppler Classification on Noisy Intermediate-Scale Quantum (NISQ) Hardware",
+   "url": "https://arxiv.org/abs/2601.22194",
+   "venue": "arXiv:2601.22194",
+   "year": 2026
+  },
+  {
+   "authors": "Huang, H. et al.",
+   "authors_raw": [
+    "Hsin-Yuan Huang",
+    "Soonwon Choi",
+    "Jarrod R. McClean",
+    "John Preskill"
+   ],
+   "difference": "Surveys the varieties of quantum advantage and their resource requirements; it catalogues advantage claims rather than testing one under a matched-rival protocol.",
+   "id": "2508.05720",
+   "pool_title": "The vast world of quantum advantage",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The Vast World of Quantum Advantage",
+   "url": "https://arxiv.org/abs/2508.05720",
+   "venue": "arXiv:2508.05720",
+   "year": 2025
+  },
+  {
+   "authors": "Bang, J. et al.",
+   "authors_raw": [
+    "Jeongho Bang",
+    "Wooyeong Song",
+    "Kyoungho Cho",
+    "Taewan Kim",
+    "Yongsoo Hwang"
+   ],
+   "difference": "Learns in active quantum subspaces for a scalable hybrid advantage; the advantage comes from restricting the subspace, a mechanism our grid does not vary.",
+   "id": "2606.00932",
+   "pool_title": "Learning with Active Quantum Subspaces: Scalable Hybrid Advantage without Full Quantum Data-Encoding",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Learning with Active Quantum Subspaces: Scalable Hybrid Advantage Without Full Quantum Data-Encoding",
+   "url": "https://arxiv.org/abs/2606.00932",
+   "venue": "arXiv:2606.00932",
+   "year": 2026
+  },
+  {
+   "authors": "Kang, P.",
+   "authors_raw": [
+    "Pilsung Kang"
+   ],
+   "difference": "Separates trainability diagnostics from optimization claims and states which controls variational quantum studies owe; those controls are for optimization landscapes, and we adopt the lesson for a regression comparison instead.",
+   "id": "2609.21243",
+   "pool_title": "From Trainability Diagnostics to Optimization Claims: Boundaries and Controls in Variational Quantum Optimization",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "From Trainability Diagnostics to Optimization Claims: Boundaries and Controls in Variational Quantum Optimization",
+   "url": "https://arxiv.org/abs/2609.21243",
+   "venue": "arXiv:2609.21243",
+   "year": 2026
+  },
+  {
+   "authors": "Zendejas-Morales, C., Saikia, D., Singh, U.",
+   "authors_raw": [
+    "Claudia Zendejas-Morales",
+    "Debashis Saikia",
+    "Utkarsh Singh"
+   ],
+   "difference": "Mitigates exponential concentration with local and multi-scale strategies; a remedy for kernel degeneracy, while we ask what the degeneracy does to a comparison against a matched rival.",
+   "id": "2602.16097",
+   "pool_title": "Local and Multi-Scale Strategies to Mitigate Exponential Concentration in Quantum Kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Local and Multi-Scale Strategies to Mitigate Exponential Concentration in Quantum Kernels",
+   "url": "https://arxiv.org/abs/2602.16097",
+   "venue": "arXiv:2602.16097",
+   "year": 2026
+  },
+  {
+   "authors": "Tekeli, E.",
+   "authors_raw": [
+    "Erkut Tekeli"
+   ],
+   "difference": "Proves the ZZ feature map's kernel is an anisotropic Gaussian whose metric is the identity plus the signless Laplacian of the entanglement graph, and gives a closed-form classical surrogate; it reports two dataset points and states the failing regime only qualitatively, whereas we map the advantage over alignment and bandwidth with that surrogate as the rival.",
+   "id": "2608.29422",
+   "pool_title": "The ZZ feature map induces a signless Laplacian metric: a closed-form classical surrogate for quantum kernel regression",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The ZZ Feature Map Induces a Signless Laplacian Metric: A Closed-Form Classical Surrogate for Quantum Kernel Regression",
+   "url": "https://arxiv.org/abs/2608.29422",
+   "venue": "arXiv:2608.29422",
+   "year": 2026
+  },
+  {
+   "authors": "Appel, A.",
+   "authors_raw": [
+    "Ana Paula Appel"
+   ],
+   "difference": "Predicts quantum-kernel collapse from the data's fractal dimension and gives a ceiling as a qubit budget; it predicts kernel death, not the sign of the advantage against a matched rival, which is our outcome.",
+   "id": "2609.00475",
+   "pool_title": "Fractal dimension predicts quantum kernel collapse in angle-encoded data",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Fractal Dimension Predicts Quantum Kernel Collapse in Angle-Encoded Data",
+   "url": "https://arxiv.org/abs/2609.00475",
+   "venue": "arXiv:2609.00475",
+   "year": 2026
+  },
+  {
+   "authors": "Shin, S., Sweke, R., Jeong, H.",
+   "authors_raw": [
+    "Seongwook Shin",
+    "Ryan Sweke",
+    "Hyunseok Jeong"
+   ],
+   "difference": "Reads quantum kernels as entangled tensor kernels and unifies several map families; a representational identity, with no paired comparison against a rival holding the same metric.",
+   "id": "2503.20683",
+   "pool_title": "New perspectives on quantum kernels through the lens of entangled tensor kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "New Perspectives on Quantum Kernels Through the Lens of Entangled Tensor Kernels",
+   "url": "https://arxiv.org/abs/2503.20683",
+   "venue": "arXiv:2503.20683",
+   "year": 2025
+  },
+  {
+   "authors": "\u00c5sgrim, E., Markidis, S.",
+   "authors_raw": [
+    "Erik M. \u00c5sgrim",
+    "Stefano Markidis"
+   ],
+   "difference": "Shows quantum kernels are spectral tensor networks with a controlled bond dimension; a simulability construction, which we read as a mechanism witness rather than as a rival arm.",
+   "id": "2606.20402",
+   "pool_title": "Quantum Kernels are Spectral Tensor Networks",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernels Are Spectral Tensor Networks",
+   "url": "https://arxiv.org/abs/2606.20402",
+   "venue": "arXiv:2606.20402",
+   "year": 2026
+  },
+  {
+   "authors": "Gan, B., Leykam, D., Thanasilp, S.",
+   "authors_raw": [
+    "Beng Yee Gan",
+    "Daniel Leykam",
+    "Supanut Thanasilp"
+   ],
+   "difference": "Unifies trace-induced quantum kernels into one framework; the framework makes the map's form explicit but measures no advantage against a metric-matched classical kernel.",
+   "id": "2311.13552",
+   "pool_title": "A Unified Framework for Trace-induced Quantum Kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "A Unified Framework for Trace-Induced Quantum Kernels",
+   "url": "https://arxiv.org/abs/2311.13552",
+   "venue": "arXiv:2311.13552",
+   "year": 2023
+  },
+  {
+   "authors": "K\u00fcbler, J., Buchholz, S., Sch\u00f6lkopf, B.",
+   "authors_raw": [
+    "Jonas M. K\u00fcbler",
+    "Simon Buchholz",
+    "Bernhard Sch\u00f6lkopf"
+   ],
+   "difference": "Shows quantum kernels carry an inductive bias aligned with the group structure of the data; the bias is demonstrated at fixed bandwidth, and our grid sweeps bandwidth and phase convention as well.",
+   "id": "2106.03747",
+   "pool_title": "The Inductive Bias of Quantum Kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The Inductive Bias of Quantum Kernels",
+   "url": "https://arxiv.org/abs/2106.03747",
+   "venue": "arXiv:2106.03747",
+   "year": 2021
+  },
+  {
+   "authors": "Gil-Fuster, E. et al.",
+   "authors_raw": [
+    "Elies Gil-Fuster",
+    "Seongwook Shin",
+    "Sofiene Jerbi",
+    "Jens Eisert",
+    "Maximilian J. Kramer"
+   ],
+   "difference": "Gives the optimal algorithmic complexity of inference in quantum-kernel methods; a complexity statement about sampling, not a statistical comparison of test error.",
+   "id": "2604.15214",
+   "pool_title": "Optimal algorithmic complexity of inference in quantum kernel methods",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Optimal Algorithmic Complexity of Inference in Quantum Kernel Methods",
+   "url": "https://arxiv.org/abs/2604.15214",
+   "venue": "arXiv:2604.15214",
+   "year": 2026
+  },
+  {
+   "authors": "S\u00e1ez-Ortu\u00f1o, L., Forgas-Coll, S., Ferrara, M.",
+   "authors_raw": [
+    "Laura S\u00e1ez-Ortu\u00f1o",
+    "Santiago Forgas-Coll",
+    "Massimiliano Ferrara"
+   ],
+   "difference": "Develops convergence theory and separation bounds for quantum-kernel methods; the bounds are asymptotic and no finite-sample map of the advantage region is exhibited.",
+   "id": "2510.11744",
+   "pool_title": "Quantum Kernel Methods: Convergence Theory, Separation Bounds and Applications to Marketing Analytics",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernel Methods: Convergence Theory, Separation Bounds and Applications to Marketing Analytics",
+   "url": "https://arxiv.org/abs/2510.11744",
+   "venue": "arXiv:2510.11744",
+   "year": 2025
+  },
+  {
+   "authors": "Park, D., Blank, C., Petruccione, F.",
+   "authors_raw": [
+    "Daniel K. Park",
+    "Carsten Blank",
+    "Francesco Petruccione"
+   ],
+   "difference": "Establishes a theory of the quantum kernel-based binary classifier, including its consistency; a fixed-map theory with no rival that receives the map's metric.",
+   "id": "2004.03489",
+   "pool_title": "The theory of the quantum kernel-based binary classifier",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The Theory of the Quantum Kernel-Based Binary Classifier",
+   "url": "https://arxiv.org/abs/2004.03489",
+   "venue": "arXiv:2004.03489",
+   "year": 2020
+  },
+  {
+   "authors": "Gil-Fuster, E., Eisert, J., Dunjko, V.",
+   "authors_raw": [
+    "Elies Gil-Fuster",
+    "Jens Eisert",
+    "Vedran Dunjko"
+   ],
+   "difference": "Shows which kernels are expressible by embedding quantum kernels and where they gain; expressivity of the map at one bandwidth, rather than advantage against a matched rival.",
+   "id": "2309.14419",
+   "pool_title": "On the expressivity of embedding quantum kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "On the Expressivity of Embedding Quantum Kernels",
+   "url": "https://arxiv.org/abs/2309.14419",
+   "venue": "arXiv:2309.14419",
+   "year": 2023
+  },
+  {
+   "authors": "Kadri, H. et al.",
+   "authors_raw": [
+    "Hachem Kadri",
+    "Joachim Tomasi",
+    "Yuka Hashimoto",
+    "Sandrine Anthoine"
+   ],
+   "difference": "Argues quantum kernel machines should move beyond scalar-valued kernels; a position about the class of kernels, while our question is whether a scalar-valued quantum kernel beats its metric-matched counterpart.",
+   "id": "2506.03779",
+   "pool_title": "Position: Quantum Kernel Machines Should Move Beyond Scalar-Valued Kernels to Realize Their Potential",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Position: Quantum Kernel Machines Should Move Beyond Scalar-Valued Kernels to Realize Their Potential",
+   "url": "https://arxiv.org/abs/2506.03779",
+   "venue": "arXiv:2506.03779",
+   "year": 2025
+  },
+  {
+   "authors": "Sam, M., Li, T.",
+   "authors_raw": [
+    "Mei Ian Sam",
+    "Tai-Yu Li"
+   ],
+   "difference": "Simulates quantum-classical dual kernels with tensor networks at scale; a simulation result bounding what can be simulated, not what a rival attains.",
+   "id": "2602.01330",
+   "pool_title": "Scalable Tensor Network Simulation for Quantum-Classical Dual Kernel",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Scalable Tensor Network Simulation for Quantum-Classical Dual Kernel",
+   "url": "https://arxiv.org/abs/2602.01330",
+   "venue": "arXiv:2602.01330",
+   "year": 2026
+  },
+  {
+   "authors": "Kamisoyama, K., Nagano, L., Terashi, K.",
+   "authors_raw": [
+    "Kensuke Kamisoyama",
+    "Lento Nagano",
+    "Koji Terashi"
+   ],
+   "difference": "Reports double descent in quantum kernel ridge regression; the curve runs over model complexity at one geometry, whereas we fix complexity and sweep alignment.",
+   "id": "2604.17202",
+   "pool_title": "Double Descent in Quantum Kernel Ridge Regression",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Double Descent in Quantum Kernel Ridge Regression",
+   "url": "https://arxiv.org/abs/2604.17202",
+   "venue": "arXiv:2604.17202",
+   "year": 2026
+  },
+  {
+   "authors": "Kempkes, M. et al.",
+   "authors_raw": [
+    "Marie Kempkes",
+    "Aroosa Ijaz",
+    "Elies Gil-Fuster",
+    "Carlos Bravo-Prieto",
+    "Jakob Spiegelberg",
+    "Evert van Nieuwenburg",
+    "Vedran Dunjko"
+   ],
+   "difference": "Finds double descent in quantum kernel methods and locates its onset; a complexity-axis result rather than an alignment-axis map.",
+   "id": "2501.10077",
+   "pool_title": "Double descent in quantum kernel methods",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Double Descent in Quantum Kernel Methods",
+   "url": "https://arxiv.org/abs/2501.10077",
+   "venue": "arXiv:2501.10077",
+   "year": 2025
+  },
+  {
+   "authors": "Tomasi, J., Anthoine, S., Kadri, H.",
+   "authors_raw": [
+    "Joachim Tomasi",
+    "Sandrine Anthoine",
+    "Hachem Kadri"
+   ],
+   "difference": "Establishes benign overfitting for quantum kernels; a generalisation result under an assumption on the kernel, with no empirical advantage boundary.",
+   "id": "2503.17020",
+   "pool_title": "Benign Overfitting with Quantum Kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Benign Overfitting with Quantum Kernels",
+   "url": "https://arxiv.org/abs/2503.17020",
+   "venue": "arXiv:2503.17020",
+   "year": 2025
+  },
+  {
+   "authors": "Agnihotri, A. et al.",
+   "authors_raw": [
+    "Anant Agnihotri",
+    "Michael Krebsbach",
+    "Florentin Reiter",
+    "Thomas Wellens"
+   ],
+   "difference": "Constructs a scalable quantum kernel inside an SVM; scalability of the map, with the comparison against a tuned but unmatched classical arm.",
+   "id": "2605.31449",
+   "pool_title": "Support Vector Machine with a Scalable Quantum Kernel",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Support Vector Machine with a Scalable Quantum Kernel",
+   "url": "https://arxiv.org/abs/2605.31449",
+   "venue": "arXiv:2605.31449",
+   "year": 2026
+  },
+  {
+   "authors": "Guo, X., Dai, J., Krems, R.",
+   "authors_raw": [
+    "Xuyang Guo",
+    "Jun Dai",
+    "Roman V. Krems"
+   ],
+   "difference": "Benchmarks quantum fidelity kernels inside Gaussian-process regression; the rival is a classical GP kernel family, not a surrogate built from the quantum metric.",
+   "id": "2407.15961",
+   "pool_title": "Benchmarking of quantum fidelity kernels for Gaussian process regression",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Benchmarking of Quantum Fidelity Kernels for Gaussian Process Regression",
+   "url": "https://arxiv.org/abs/2407.15961",
+   "venue": "arXiv:2407.15961",
+   "year": 2024
+  },
+  {
+   "authors": "Micklethwaite, E., Lowe, A.",
+   "authors_raw": [
+    "Emily Micklethwaite",
+    "Adam Lowe"
+   ],
+   "difference": "Places quantum kernels inside a radial-basis-function network and classifies; an architecture choice, and the classical arm receives no part of the quantum geometry.",
+   "id": "2512.20567",
+   "pool_title": "Classification using quantum kernels in a radial basis function network",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Classification Using Quantum Kernels in a Radial Basis Function Network",
+   "url": "https://arxiv.org/abs/2512.20567",
+   "venue": "arXiv:2512.20567",
+   "year": 2025
+  },
+  {
+   "authors": "Vlasic, A.",
+   "authors_raw": [
+    "Andrew Vlasic"
+   ],
+   "difference": "Studies geodesics of quantum feature maps on the space of operators; the geometry of the map as a manifold, while our question is what that geometry buys against a rival that is given it.",
+   "id": "2509.02795",
+   "pool_title": "Geodesics of Quantum Feature Maps on the Space of Quantum Operators",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Geodesics of Quantum Feature Maps on the Space of Quantum Operators",
+   "url": "https://arxiv.org/abs/2509.02795",
+   "venue": "arXiv:2509.02795",
+   "year": 2025
+  },
+  {
+   "authors": "Sammartino, V.",
+   "authors_raw": [
+    "Vincenzo Sammartino"
+   ],
+   "difference": "Surveys quantum feature encoding with practical guidelines; a survey of choices, with no controlled comparison against a metric-matched rival.",
+   "id": "2606.05387",
+   "pool_title": "Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines",
+   "url": "https://arxiv.org/abs/2606.05387",
+   "venue": "arXiv:2606.05387",
+   "year": 2026
+  },
+  {
+   "authors": "Zang, O., Barru\u00e9, G., Quertier, T.",
+   "authors_raw": [
+    "Orlane Zang",
+    "Gr\u00e9goire Barru\u00e9",
+    "Tony Quertier"
+   ],
+   "difference": "Benchmarks data-encoding methods for quantum machine learning over datasets; encoding families are compared with each other, and the classical arm is unmatched.",
+   "id": "2505.14295",
+   "pool_title": "Benchmarking data encoding methods in Quantum Machine Learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Benchmarking Data Encoding Methods in Quantum Machine Learning",
+   "url": "https://arxiv.org/abs/2505.14295",
+   "venue": "arXiv:2505.14295",
+   "year": 2025
+  },
+  {
+   "authors": "Nguyen, N., Chen, K.",
+   "authors_raw": [
+    "Nam Nguyen",
+    "Kwang-Chen Chen"
+   ],
+   "difference": "Searches for quantum embeddings that improve a downstream model; a search over maps with the classical rival held fixed across the search.",
+   "id": "2105.11853",
+   "pool_title": "Quantum Embedding Search for Quantum Machine Learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Embedding Search for Quantum Machine Learning",
+   "url": "https://arxiv.org/abs/2105.11853",
+   "venue": "arXiv:2105.11853",
+   "year": 2021
+  },
+  {
+   "authors": "Biswas, H.",
+   "authors_raw": [
+    "Hillol Biswas"
+   ],
+   "difference": "Compares data-encoding schemes for variational circuits and proposes a hybrid; the target is classification accuracy of one circuit family, not the advantage's boundary.",
+   "id": "2503.14062",
+   "pool_title": "Data Encoding for VQC in Qiskit, A Comparison With Novel Hybrid Encoding",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Data Encoding for VQC in Qiskit, a Comparison with Novel Hybrid Encoding",
+   "url": "https://arxiv.org/abs/2503.14062",
+   "venue": "arXiv:2503.14062",
+   "year": 2025
+  },
+  {
+   "authors": "Zhang, X. et al.",
+   "authors_raw": [
+    "Xiao-Ming Zhang",
+    "Arthur G. Rattew",
+    "Bujiao Wu",
+    "Georgios Styliaris",
+    "Xiaoming Sun",
+    "B\u00e1lint Koczor",
+    "Xiao Yuan"
+   ],
+   "difference": "Sets out the theory and practice of quantum data encoding; a treatment of encodings as objects, without a paired rival that inherits an encoding's metric.",
+   "id": "2609.08058",
+   "pool_title": "From Bits to Qubits: The Theory and Practice of Quantum Data Encoding",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "From Bits to Qubits: The Theory and Practice of Quantum Data Encoding",
+   "url": "https://arxiv.org/abs/2609.08058",
+   "venue": "arXiv:2609.08058",
+   "year": 2026
+  },
+  {
+   "authors": "Tung, D. et al.",
+   "authors_raw": [
+    "Dao Duy Tung",
+    "Quoc Chuong Nguyen",
+    "Vu Tuan Hai",
+    "Le Bin Ho",
+    "Lan Nguyen Tran"
+   ],
+   "difference": "Meta-learns encoding selection for quantum-kernel methods; selection among encodings, where we instead sweep the data-side alignment at a fixed encoding and qubit count.",
+   "id": "2609.04652",
+   "pool_title": "Qmes: Quantum Meta-Learning for Encoding Selection in Quantum Kernel Methods",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Qmes: Quantum Meta-Learning for Encoding Selection in Quantum Kernel Methods",
+   "url": "https://arxiv.org/abs/2609.04652",
+   "venue": "arXiv:2609.04652",
+   "year": 2026
+  },
+  {
+   "authors": "Meng, F. et al.",
+   "authors_raw": [
+    "Fanxu Meng",
+    "Yuxiang Liu",
+    "Lu Wang",
+    "Sixuan Li",
+    "Xutao Yu",
+    "Zaichen Zhang"
+   ],
+   "difference": "Designs hardware-aware quantum kernels with graph neural networks; the objective is hardware performance, and no metric-matched classical arm is fitted.",
+   "id": "2506.21161",
+   "pool_title": "Hardware-Aware Quantum Kernel Design Based on Graph Neural Networks",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Hardware-Aware Quantum Kernel Design Based on Graph Neural Networks",
+   "url": "https://arxiv.org/abs/2506.21161",
+   "venue": "arXiv:2506.21161",
+   "year": 2025
+  },
+  {
+   "authors": "Sharma, D., Singh, P., Kumar, A.",
+   "authors_raw": [
+    "Diksha Sharma",
+    "Parvinder Singh",
+    "Atul Kumar"
+   ],
+   "difference": "Studies the role of entanglement for enhancing quantum kernels in classification; the entanglement axis is varied, while we ask whether the resulting geometry can be given to the rival.",
+   "id": "2209.05142",
+   "pool_title": "The role of entanglement for enhancing the efficiency of quantum kernels towards classification",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The Role of Entanglement for Enhancing the Efficiency of Quantum Kernels Towards Classification",
+   "url": "https://arxiv.org/abs/2209.05142",
+   "venue": "arXiv:2209.05142",
+   "year": 2022
+  },
+  {
+   "authors": "Quyen, N. et al.",
+   "authors_raw": [
+    "Nguyen Dinh Quyen",
+    "Vu Tuan Hai",
+    "Quoc Chuong Nguyen",
+    "Le Bin Ho",
+    "Lan Nguyen Tran"
+   ],
+   "difference": "Benchmarks loss functions for trainable quantum feature maps; a training-side comparison, whereas our comparison is between a map and a rival at matched capacity.",
+   "id": "2607.12487",
+   "pool_title": "Benchmarking loss functions for trainable quantum feature maps",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Benchmarking Loss Functions for Trainable Quantum Feature Maps",
+   "url": "https://arxiv.org/abs/2607.12487",
+   "venue": "arXiv:2607.12487",
+   "year": 2026
+  },
+  {
+   "authors": "Lin, G., Tanaka, T., Zhao, Q.",
+   "authors_raw": [
+    "Guang Lin",
+    "Toshihisa Tanaka",
+    "Qibin Zhao"
+   ],
+   "difference": "Gives structured unitary tensor-network representations for circuit-efficient data encoding; a construction that lowers encoding cost, with no advantage claim and no rival.",
+   "id": "2602.16266",
+   "pool_title": "Structured Unitary Tensor Network Representations for Circuit-Efficient Quantum Data Encoding",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Structured Unitary Tensor Network Representations for Circuit-Efficient Quantum Data Encoding",
+   "url": "https://arxiv.org/abs/2602.16266",
+   "venue": "arXiv:2602.16266",
+   "year": 2026
+  },
+  {
+   "authors": "Weso\u0142owski, A. et al.",
+   "authors_raw": [
+    "Adam Weso\u0142owski",
+    "Dimitrios Thanos",
+    "Daniel Leykam",
+    "Lirand\u00eb Pira"
+   ],
+   "difference": "Proposes a quantum topological data encoding; a new encoding whose evaluation is against classical topological descriptors, not against a metric-matched kernel.",
+   "id": "2607.13847",
+   "pool_title": "Quantum Topological Data Encoding",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Topological Data Encoding",
+   "url": "https://arxiv.org/abs/2607.13847",
+   "venue": "arXiv:2607.13847",
+   "year": 2026
+  },
+  {
+   "authors": "Vlasic, A., Solanki, P., Pham, A.",
+   "authors_raw": [
+    "Andrew Vlasic",
+    "Payal Solanki",
+    "Anh Pham"
+   ],
+   "difference": "Analyses encoding of real-world data through feature maps and expanded pseudo-entropy; a diagnostic of encodings, with no advantage boundary and no matched-rival protocol.",
+   "id": "2410.22084",
+   "pool_title": "Quantum Circuits, Feature Maps, and Expanded Pseudo-Entropy: Analysis of Encoding Real-World Data into a Quantum Computer",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Circuits, Feature Maps, and Expanded Pseudo-Entropy: Analysis of Encoding Real-World Data into a Quantum Computer",
+   "url": "https://arxiv.org/abs/2410.22084",
+   "venue": "arXiv:2410.22084",
+   "year": 2024
+  },
+  {
+   "authors": "Gujju, Y. et al.",
+   "authors_raw": [
+    "Yaswitha Gujju",
+    "Romain Harang",
+    "Chao Li",
+    "Tetsuo Shibuya",
+    "Qibin Zhao"
+   ],
+   "difference": "Searches for efficient quantum feature maps with an evolutionary, training-free procedure; the search is over maps, and the comparison is not against a rival given the chosen map's metric.",
+   "id": "2508.07104",
+   "pool_title": "QuProFS: An Evolutionary Training-free Approach to Efficient Quantum Feature Map Search",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "QuProFS: An Evolutionary Training-Free Approach to Efficient Quantum Feature Map Search",
+   "url": "https://arxiv.org/abs/2508.07104",
+   "venue": "arXiv:2508.07104",
+   "year": 2025
+  },
+  {
+   "authors": "Faryad, M.",
+   "authors_raw": [
+    "Muhammad Faryad"
+   ],
+   "difference": "Argues the input side is a permanent bottleneck for quantum machine learning; a position about data rather than a measurement of where a matched rival is beaten.",
+   "id": "2608.08433",
+   "pool_title": "The Input Problem: A Permanent Bottleneck for Quantum Machine Learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "The Input Problem: A Permanent Bottleneck for Quantum Machine Learning",
+   "url": "https://arxiv.org/abs/2608.08433",
+   "venue": "arXiv:2608.08433",
+   "year": 2026
+  },
+  {
+   "authors": "Thanasilp, S. et al.",
+   "authors_raw": [
+    "Supanut Thanasilp",
+    "Samson Wang",
+    "M. Cerezo",
+    "Zo\u00eb Holmes"
+   ],
+   "difference": "Proves exponential concentration of quantum kernels and ties it to the map's geometry; concentration is the ceiling our large-bandwidth arm observes, and we read its effect on the comparison rather than on trainability.",
+   "id": "2208.11060",
+   "pool_title": "Exponential concentration in quantum kernel methods",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Exponential Concentration in Quantum Kernel Methods",
+   "url": "https://arxiv.org/abs/2208.11060",
+   "venue": "arXiv:2208.11060",
+   "year": 2022
+  },
+  {
+   "authors": "Kairon, P., J\u00e4ger, J., Krems, R.",
+   "authors_raw": [
+    "Pranav Kairon",
+    "Jonas J\u00e4ger",
+    "Roman V. Krems"
+   ],
+   "difference": "Establishes an equivalence between exponential concentration in quantum-kernel machine learning and barren plateaus in variational models; a theoretical equivalence, with no rival arm and no swept alignment.",
+   "id": "2501.07433",
+   "pool_title": "Equivalence between exponential concentration in quantum machine learning kernels and barren plateaus in variational algorithms",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Equivalence Between Exponential Concentration in Quantum Machine Learning Kernels and Barren Plateaus in Variational Algorithms",
+   "url": "https://arxiv.org/abs/2501.07433",
+   "venue": "arXiv:2501.07433",
+   "year": 2025
+  },
+  {
+   "authors": "Alc\u00e2ntara, P., Morais, L., Chaves, R.",
+   "authors_raw": [
+    "Pedro Alc\u00e2ntara",
+    "Leandro Morais",
+    "Rafael Chaves"
+   ],
+   "difference": "Gives a representation-theoretic framework that characterises barren plateaus; a characterisation of when gradients vanish, not of when a kernel loses to a matched rival.",
+   "id": "2609.04462",
+   "pool_title": "A Representation-Theoretic Framework for Characterizing Barren Plateaus",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "A Representation-Theoretic Framework for Characterizing Barren Plateaus",
+   "url": "https://arxiv.org/abs/2609.04462",
+   "venue": "arXiv:2609.04462",
+   "year": 2026
+  },
+  {
+   "authors": "Kerenidis, I.",
+   "authors_raw": [
+    "Iordanis Kerenidis"
+   ],
+   "difference": "Studies trainability, expressivity and efficiency together for scalable quantum machine learning; the axes are the model's own, whereas our axes are the data-side alignment and the encoding bandwidth.",
+   "id": "2607.24014",
+   "pool_title": "Scalable Quantum Machine Learning: Trainability, Expressivity and Efficiency",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Scalable Quantum Machine Learning: Trainability, Expressivity and Efficiency",
+   "url": "https://arxiv.org/abs/2607.24014",
+   "venue": "arXiv:2607.24014",
+   "year": 2026
+  },
+  {
+   "authors": "Andersson, M.",
+   "authors_raw": [
+    "Martin Andersson"
+   ],
+   "difference": "Proves concentration bounds for intrinsic-dimension estimation with Gaussian kernels; a classical-kernel concentration result that bounds the behaviour of our isotropic baseline arm.",
+   "id": "2512.04861",
+   "pool_title": "Concentration bounds for intrinsic dimension estimation using Gaussian kernels",
+   "primary": "math.ST",
+   "source": "arxiv",
+   "title": "Concentration Bounds for Intrinsic Dimension Estimation Using Gaussian Kernels",
+   "url": "https://arxiv.org/abs/2512.04861",
+   "venue": "arXiv:2512.04861",
+   "year": 2025
+  },
+  {
+   "authors": "Amini, A., Razaee, Z.",
+   "authors_raw": [
+    "Arash A. Amini",
+    "Zahra S. Razaee"
+   ],
+   "difference": "Shows concentration of kernel matrices and applies it to spectral clustering; the concentration is of a classical kernel matrix as the sample grows, whereas ours is over the map's phase convention and bandwidth at fixed n.",
+   "id": "1909.03347",
+   "pool_title": "Concentration of kernel matrices with application to kernel spectral clustering",
+   "primary": "math.ST",
+   "source": "arxiv",
+   "title": "Concentration of Kernel Matrices with Application to Kernel Spectral Clustering",
+   "url": "https://arxiv.org/abs/1909.03347",
+   "venue": "arXiv:1909.03347",
+   "year": 2019
+  },
+  {
+   "authors": "Yao, Y., Hasegawa, Y.",
+   "authors_raw": [
+    "Yuhan Yao",
+    "Yoshihiko Hasegawa"
+   ],
+   "difference": "Uses Lie-algebraic subspace quantization to mitigate barren plateaus and enable zero-shot learning; a mitigation technique whose benefit is measured inside the variational setting, not against a matched classical rival.",
+   "id": "2607.11174",
+   "pool_title": "Lie-Algebraic Subspace Quantization for Zero-Shot Quantum Learning and Barren-Plateau Mitigation",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Lie-Algebraic Subspace Quantization for Zero-Shot Quantum Learning and Barren-Plateau Mitigation",
+   "url": "https://arxiv.org/abs/2607.11174",
+   "venue": "arXiv:2607.11174",
+   "year": 2026
+  },
+  {
+   "authors": "Henderson, L. et al.",
+   "authors_raw": [
+    "Laura J. Henderson",
+    "Kerstin Beer",
+    "Salini Karuvade",
+    "Riddhi Gupta",
+    "Angela White",
+    "Sally Shrapnel"
+   ],
+   "difference": "Builds trainable kernels for symmetry-structured data without exponential concentration; it shows concentration is avoidable by construction, which supports reading our large-bandwidth arm as a genuine collapse rather than a protocol artefact.",
+   "id": "2509.14337",
+   "pool_title": "Quantum advantage without exponential concentration: Trainable kernels for symmetry-structured data",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Advantage Without Exponential Concentration: Trainable Kernels for Symmetry-Structured Data",
+   "url": "https://arxiv.org/abs/2509.14337",
+   "venue": "arXiv:2509.14337",
+   "year": 2025
+  },
+  {
+   "authors": "Sahebi, M. et al.",
+   "authors_raw": [
+    "Mehrad Sahebi",
+    "Alice Barthe",
+    "Yudai Suzuki",
+    "Zo\u00eb Holmes",
+    "Michele Grossi"
+   ],
+   "difference": "Dequantizes supervised quantum machine learning with random Fourier features; the dequantization targets worst-case complexity, while we ask about average test error under a rival that holds the map's own metric.",
+   "id": "2505.15902",
+   "pool_title": "On Dequantization of Supervised Quantum Machine Learning via Random Fourier Features",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "On Dequantization of Supervised Quantum Machine Learning via Random Fourier Features",
+   "url": "https://arxiv.org/abs/2505.15902",
+   "venue": "arXiv:2505.15902",
+   "year": 2025
+  },
+  {
+   "authors": "Sweke, R., Shin, S., Gil-Fuster, E.",
+   "authors_raw": [
+    "Ryan Sweke",
+    "Seongwook Shin",
+    "Elies Gil-Fuster"
+   ],
+   "difference": "Dequantizes variational quantum machine learning kernel-based, without random Fourier features; a complexity statement, and the resulting classical model is not fitted to the quantum metric in our sense.",
+   "id": "2503.23931",
+   "pool_title": "Kernel-based dequantization of variational QML without Random Fourier Features",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Kernel-Based Dequantization of Variational QML Without Random Fourier Features",
+   "url": "https://arxiv.org/abs/2503.23931",
+   "venue": "arXiv:2503.23931",
+   "year": 2025
+  },
+  {
+   "authors": "Sweke, R. et al.",
+   "authors_raw": [
+    "Ryan Sweke",
+    "Erik Recio-Armengol",
+    "Sofiene Jerbi",
+    "Elies Gil-Fuster",
+    "Bryce Fuller",
+    "Jens Eisert",
+    "Johannes Jakob Meyer"
+   ],
+   "difference": "States the potential and the limitations of random Fourier features for dequantizing quantum machine learning; it bounds what a specific classical family can do, not what a metric-matched kernel does.",
+   "id": "2309.11647",
+   "pool_title": "Potential and limitations of random Fourier features for dequantizing quantum machine learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Potential and Limitations of Random Fourier Features for Dequantizing Quantum Machine Learning",
+   "url": "https://arxiv.org/abs/2309.11647",
+   "venue": "arXiv:2309.11647",
+   "year": 2023
+  },
+  {
+   "authors": "Gall, F.",
+   "authors_raw": [
+    "Fran\u00e7ois Le Gall"
+   ],
+   "difference": "Robustly dequantizes the quantum singular-value transformation and quantum machine learning algorithms; an algorithmic dequantization, with no comparison of kernel test error.",
+   "id": "2304.04932",
+   "pool_title": "Robust Dequantization of the Quantum Singular value Transformation and Quantum Machine Learning Algorithms",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Robust Dequantization of the Quantum Singular Value Transformation and Quantum Machine Learning Algorithms",
+   "url": "https://arxiv.org/abs/2304.04932",
+   "venue": "arXiv:2304.04932",
+   "year": 2023
+  },
+  {
+   "authors": "Shin, S., Teo, Y., Jeong, H.",
+   "authors_raw": [
+    "Seongwook Shin",
+    "Yong Siah Teo",
+    "Hyunseok Jeong"
+   ],
+   "difference": "Dequantizes quantum machine learning models with tensor networks; the surrogate is a tensor network, a different rival family from the closed-form metric-matched surrogate we use.",
+   "id": "2307.06937",
+   "pool_title": "Dequantizing quantum machine learning models using tensor networks",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Dequantizing Quantum Machine Learning Models Using Tensor Networks",
+   "url": "https://arxiv.org/abs/2307.06937",
+   "venue": "arXiv:2307.06937",
+   "year": 2023
+  },
+  {
+   "authors": "Kim, T., Choi, B.",
+   "authors_raw": [
+    "Tae-Won Kim",
+    "Byung-Soo Choi"
+   ],
+   "difference": "Studies dequantizability from inputs; it asks when an input distribution defeats dequantization, whereas we construct the input and the rival ourselves so the comparison is exact.",
+   "id": "2405.13273",
+   "pool_title": "Dequantizability from inputs",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Dequantizability from Inputs",
+   "url": "https://arxiv.org/abs/2405.13273",
+   "venue": "arXiv:2405.13273",
+   "year": 2024
+  },
+  {
+   "authors": "Isogai, N., Murao, M., Yamasaki, H.",
+   "authors_raw": [
+    "Natsuto Isogai",
+    "Mio Murao",
+    "Hayata Yamasaki"
+   ],
+   "difference": "Dequantizes diagonally weighted matrix functions in a quantum-inspired way; a matrix-function construction rather than a kernel-regression comparison.",
+   "id": "2609.10729",
+   "pool_title": "A Quantum-Inspired Dequantization Method for Diagonally Weighted Matrix Functions: Application to Learning with Optimized Random Features",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "A Quantum-Inspired Dequantization Method for Diagonally Weighted Matrix Functions: Application to Learning with Optimized Random Features",
+   "url": "https://arxiv.org/abs/2609.10729",
+   "venue": "arXiv:2609.10729",
+   "year": 2026
+  },
+  {
+   "authors": "Gentinetta, G. et al.",
+   "authors_raw": [
+    "Gian Gentinetta",
+    "David Sutter",
+    "Christa Zoufal",
+    "Bryce Fuller",
+    "Stefan Woerner"
+   ],
+   "difference": "Aligns a quantum kernel with the target by stochastic gradient descent; alignment is an objective to be optimised, while we hold the map fixed and measure what its geometry is worth against a rival given it.",
+   "id": "2304.09899",
+   "pool_title": "Quantum Kernel Alignment with Stochastic Gradient Descent",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernel Alignment with Stochastic Gradient Descent",
+   "url": "https://arxiv.org/abs/2304.09899",
+   "venue": "arXiv:2304.09899",
+   "year": 2023
+  },
+  {
+   "authors": "Islam, M., Liu, D., Sarkar, D.",
+   "authors_raw": [
+    "Mohammad Tariqul Islam",
+    "Du Liu",
+    "Deblina Sarkar"
+   ],
+   "difference": "Shows manifold approximation leads to robust kernel alignment; a classical alignment result we use to argue that alignment is the right axis for a comparison.",
+   "id": "2510.22953",
+   "pool_title": "Manifold Approximation leads to Robust Kernel Alignment",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Manifold Approximation Leads to Robust Kernel Alignment",
+   "url": "https://arxiv.org/abs/2510.22953",
+   "venue": "arXiv:2510.22953",
+   "year": 2025
+  },
+  {
+   "authors": "Ahir, S., Pandit, P.",
+   "authors_raw": [
+    "Sudhendu Ahir",
+    "Parthe Pandit"
+   ],
+   "difference": "Constructs feature maps for the Laplacian kernel and its generalisations; it makes graph-Laplacian metrics classically explicit, which is the construction our closed-form rival needs.",
+   "id": "2502.15575",
+   "pool_title": "Feature maps for the Laplacian kernel and its generalizations",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "Feature Maps for the Laplacian Kernel and Its Generalizations",
+   "url": "https://arxiv.org/abs/2502.15575",
+   "venue": "arXiv:2502.15575",
+   "year": 2025
+  },
+  {
+   "authors": "Nemb\u00e9, J.",
+   "authors_raw": [
+    "Jocelyn Nemb\u00e9"
+   ],
+   "difference": "Unifies spectral equivariance and geometric transport in reproducing kernel Hilbert spaces; a framework for kernels' geometry, with no quantum counterpart arm.",
+   "id": "2512.13073",
+   "pool_title": "Spectral Equivariance and Geometric Transport in Reproducing Kernel Hilbert Spaces: A Unified Framework for Orthogonal Polynomial and Kernel Estimation",
+   "primary": "math.ST",
+   "source": "arxiv",
+   "title": "Spectral Equivariance and Geometric Transport in Reproducing Kernel Hilbert Spaces: A Unified Framework for Orthogonal Polynomial and Kernel Estimation",
+   "url": "https://arxiv.org/abs/2512.13073",
+   "venue": "arXiv:2512.13073",
+   "year": 2025
+  },
+  {
+   "authors": "Giraldo, A. et al.",
+   "authors_raw": [
+    "Alejandro Giraldo",
+    "Daniel Ruiz",
+    "Mariano Caruso",
+    "Javier Mancilla",
+    "Guido Bellomo"
+   ],
+   "difference": "Applies quantum multiple-kernel learning to drug discovery; multiple-kernel combination is the technique, and the classical arm is not given the combined metric.",
+   "id": "2506.14920",
+   "pool_title": "Q2SAR: A Quantum Multiple Kernel Learning Approach for Drug Discovery",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Q2SAR: A Quantum Multiple Kernel Learning Approach for Drug Discovery",
+   "url": "https://arxiv.org/abs/2506.14920",
+   "venue": "arXiv:2506.14920",
+   "year": 2025
+  },
+  {
+   "authors": "Alavi, A. et al.",
+   "authors_raw": [
+    "Azadeh Alavi",
+    "Fatemeh Kouchmeshki",
+    "Muhammad Usman",
+    "Jessica Holien"
+   ],
+   "difference": "Combines classical Morgan fingerprints with quantum multiple-kernel learning for ligand classification; the hybrid's gain is measured inside one application and against unmatched classical kernels.",
+   "id": "2606.21213",
+   "pool_title": "QBioFusion-QSAR: Morgan-Anchored Quantum Multiple Kernel Learning for Small-Data Ligand Classification",
+   "primary": "physics.chem-ph",
+   "source": "arxiv",
+   "title": "QBioFusion-QSAR: Morgan-Anchored Quantum Multiple Kernel Learning for Small-Data Ligand Classification",
+   "url": "https://arxiv.org/abs/2606.21213",
+   "venue": "arXiv:2606.21213",
+   "year": 2026
+  },
+  {
+   "authors": "Caruso, M. et al.",
+   "authors_raw": [
+    "Mariano Caruso",
+    "Daniel Ruiz",
+    "Alejandro Giraldo",
+    "Guido Bellomo"
+   ],
+   "difference": "Overcomes classical bottlenecks in drug discovery with quantum multiple-kernel learning; a domain application whose classical arm does not receive the quantum metric.",
+   "id": "2607.11701",
+   "pool_title": "$\\mathtt{Q^2SAR}$: overcoming classical bottlenecks in drug discovery via quantum multiple kernel learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "$\\mathtt{Q^2SAR}$: Overcoming Classical Bottlenecks in Drug Discovery via Quantum Multiple Kernel Learning",
+   "url": "https://arxiv.org/abs/2607.11701",
+   "venue": "arXiv:2607.11701",
+   "year": 2026
+  },
+  {
+   "authors": "Ghukasyan, A. et al.",
+   "authors_raw": [
+    "Ara Ghukasyan",
+    "Jack S. Baker",
+    "Oktay Goktas",
+    "Juan Carrasquilla",
+    "Santosh Kumar Radha"
+   ],
+   "difference": "Builds quantum-classical multiple-kernel learning; the quantum part enters as an additional kernel family, which is precisely the setup our matched rival isolates.",
+   "id": "2305.17707",
+   "pool_title": "Quantum-Classical Multiple Kernel Learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum-Classical Multiple Kernel Learning",
+   "url": "https://arxiv.org/abs/2305.17707",
+   "venue": "arXiv:2305.17707",
+   "year": 2023
+  },
+  {
+   "authors": "Bifulco, M., Roversi, L.",
+   "authors_raw": [
+    "Mario Bifulco",
+    "Luca Roversi"
+   ],
+   "difference": "Explores an implementation of a quantum learning pipeline for support vector machines; an implementation study, with a tuned classical SVM rather than a metric-matched rival.",
+   "id": "2509.04983",
+   "pool_title": "Exploring an implementation of quantum learning pipeline for support vector machines",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Exploring an Implementation of Quantum Learning Pipeline for Support Vector Machines",
+   "url": "https://arxiv.org/abs/2509.04983",
+   "venue": "arXiv:2509.04983",
+   "year": 2025
+  },
+  {
+   "authors": "Pinheiro, G. et al.",
+   "authors_raw": [
+    "Gabriela Pinheiro",
+    "Donovan Slabbert",
+    "Luis Kowada",
+    "Francesco Petruccione"
+   ],
+   "difference": "Applies quantum kernel and HHL-based support vector machines to multi-class classification; the comparison includes classical SVMs but no surrogate holding the quantum metric.",
+   "id": "2509.10190",
+   "pool_title": "Quantum kernel and HHL-based support vector machines for multi-class classification",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernel and HHL-based Support Vector Machines for Multi-Class Classification",
+   "url": "https://arxiv.org/abs/2509.10190",
+   "venue": "arXiv:2509.10190",
+   "year": 2025
+  },
+  {
+   "authors": "Miroszewski, A. et al.",
+   "authors_raw": [
+    "Artur Miroszewski",
+    "Jakub Mielczarek",
+    "Filip Szczepanek",
+    "Grzegorz Czelusta",
+    "Bartosz Grabowski",
+    "Bertrand Le Saux",
+    "Jakub Nalepa"
+   ],
+   "difference": "Uses quantum-kernel SVMs for multispectral satellite cloud detection; an application with a classical SVM baseline, and no geometry-matched control.",
+   "id": "2307.07281",
+   "pool_title": "Cloud Detection in Multispectral Satellite Images Using Support Vector Machines With Quantum Kernels",
+   "primary": "cs.CV",
+   "source": "arxiv",
+   "title": "Cloud Detection in Multispectral Satellite Images Using Support Vector Machines with Quantum Kernels",
+   "url": "https://arxiv.org/abs/2307.07281",
+   "venue": "arXiv:2307.07281",
+   "year": 2023
+  },
+  {
+   "authors": "Miroszewski, A. et al.",
+   "authors_raw": [
+    "Artur Miroszewski",
+    "Marco Fellous Asiani",
+    "Jakub Mielczarek",
+    "Bertrand Le Saux",
+    "Jakub Nalepa"
+   ],
+   "difference": "Estimates the number of shots needed by quantum-kernel methods in search of advantage; a sampling-cost analysis rather than a test-error comparison against a matched rival.",
+   "id": "2407.15776",
+   "pool_title": "In Search of Quantum Advantage: Estimating the Number of Shots in Quantum Kernel Methods",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "In Search of Quantum Advantage: Estimating the Number of Shots in Quantum Kernel Methods",
+   "url": "https://arxiv.org/abs/2407.15776",
+   "venue": "arXiv:2407.15776",
+   "year": 2024
+  },
+  {
+   "authors": "Singh, U. et al.",
+   "authors_raw": [
+    "Utkarsh Singh",
+    "Jean-Fr\u00e9d\u00e9ric Laprade",
+    "Aaron Z. Goldberg",
+    "Khabat Heshami"
+   ],
+   "difference": "Proposes a resource-efficient quantum kernel; the resource is qubits and gates, while our resource question is whether the geometric information is separable from the quantum construction.",
+   "id": "2507.03689",
+   "pool_title": "A Resource Efficient Quantum Kernel",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "A Resource Efficient Quantum Kernel",
+   "url": "https://arxiv.org/abs/2507.03689",
+   "venue": "arXiv:2507.03689",
+   "year": 2025
+  },
+  {
+   "authors": "Naguleswaran, S.",
+   "authors_raw": [
+    "Sanjeev Naguleswaran"
+   ],
+   "difference": "Reviews quantum kernel methods as a class and their relation to classical kernels; a review that names the matched comparison as open, which our study performs.",
+   "id": "2405.01780",
+   "pool_title": "Quantum Machine Learning: Quantum Kernel Methods",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Machine Learning: Quantum Kernel Methods",
+   "url": "https://arxiv.org/abs/2405.01780",
+   "venue": "arXiv:2405.01780",
+   "year": 2024
+  },
+  {
+   "authors": "Tanner, J., Kam, C., Wang, J.",
+   "authors_raw": [
+    "John Tanner",
+    "Chon-Fai Kam",
+    "Jingbo Wang"
+   ],
+   "difference": "Reviews non-variational supervised quantum-kernel methods; a survey of the family without a controlled advantage map.",
+   "id": "2604.07896",
+   "pool_title": "Non-variational supervised quantum kernel methods: a review",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Non-Variational Supervised Quantum Kernel Methods: A Review",
+   "url": "https://arxiv.org/abs/2604.07896",
+   "venue": "arXiv:2604.07896",
+   "year": 2026
+  },
+  {
+   "authors": "Ogunade, T., Kassim, T., Osaro, E.",
+   "authors_raw": [
+    "Toheeb Ogunade",
+    "Taofeek Kassim",
+    "Etinosa Osaro"
+   ],
+   "difference": "Benchmarks quantum-inspired feature maps against their classical counterparts under a matched spectral design; the closest prior control, but the maps are quantum-inspired classical embeddings, not entangling quantum kernels with a phase-convention axis.",
+   "id": "2605.24324",
+   "pool_title": "A Matched Spectral Benchmark of Quantum Inspired Feature Maps",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "A Matched Spectral Benchmark of Quantum Inspired Feature Maps",
+   "url": "https://arxiv.org/abs/2605.24324",
+   "venue": "arXiv:2605.24324",
+   "year": 2026
+  },
+  {
+   "authors": "Abedsoltan, A. et al.",
+   "authors_raw": [
+    "Amirhesam Abedsoltan",
+    "Parthe Pandit",
+    "Luis Rademacher",
+    "Mikhail Belkin"
+   ],
+   "difference": "Uses the Nystr\u00f6m approximation for preconditioning in kernel machines; a classical approximation scheme whose error is analysed for a fixed kernel, not compared with a quantum map.",
+   "id": "2312.03311",
+   "pool_title": "On the Nystrom Approximation for Preconditioning in Kernel Machines",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "On the Nystrom Approximation for Preconditioning in Kernel Machines",
+   "url": "https://arxiv.org/abs/2312.03311",
+   "venue": "arXiv:2312.03311",
+   "year": 2023
+  },
+  {
+   "authors": "Pourkamali-Anaraki, F., Becker, S.",
+   "authors_raw": [
+    "Farhad Pourkamali-Anaraki",
+    "Stephen Becker"
+   ],
+   "difference": "Randomises clustered Nystr\u00f6m for large-scale kernel machines; a scaling technique whose target is runtime, not advantage.",
+   "id": "1612.06470",
+   "pool_title": "Randomized Clustered Nystrom for Large-Scale Kernel Machines",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "Randomized Clustered Nystrom for Large-Scale Kernel Machines",
+   "url": "https://arxiv.org/abs/1612.06470",
+   "venue": "arXiv:1612.06470",
+   "year": 2016
+  },
+  {
+   "authors": "Reid, I. et al.",
+   "authors_raw": [
+    "Isaac Reid",
+    "Stratis Markou",
+    "Krzysztof Choromanski",
+    "Richard E. Turner",
+    "Adrian Weller"
+   ],
+   "difference": "Reduces the variance of random-feature couplings; a refinement of the classical surrogate family that the field's residual advantages are usually measured against.",
+   "id": "2405.16541",
+   "pool_title": "Variance-Reducing Couplings for Random Features",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "Variance-Reducing Couplings for Random Features",
+   "url": "https://arxiv.org/abs/2405.16541",
+   "venue": "arXiv:2405.16541",
+   "year": 2024
+  },
+  {
+   "authors": "Reid, I. et al.",
+   "authors_raw": [
+    "Isaac Reid",
+    "Krzysztof Choromanski",
+    "Valerii Likhosherstov",
+    "Adrian Weller"
+   ],
+   "difference": "Constructs simplex random features with lower variance; another refinement of the weak surrogate, and we include the family as our weak-rival control.",
+   "id": "2301.13856",
+   "pool_title": "Simplex Random Features",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "Simplex Random Features",
+   "url": "https://arxiv.org/abs/2301.13856",
+   "venue": "arXiv:2301.13856",
+   "year": 2023
+  },
+  {
+   "authors": "Sernau, L., Bonacina, S., Saurous, R.",
+   "authors_raw": [
+    "Luke Sernau",
+    "Silvano Bonacina",
+    "Rif A. Saurous"
+   ],
+   "difference": "Shows all random-feature representations are equivalent; the equivalence explains why a random-feature rival cannot exploit a specific geometry, which is why our headline rival is not of that family.",
+   "id": "2406.18802",
+   "pool_title": "All Random Features Representations are Equivalent",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "All Random Features Representations Are Equivalent",
+   "url": "https://arxiv.org/abs/2406.18802",
+   "venue": "arXiv:2406.18802",
+   "year": 2024
+  },
+  {
+   "authors": "Aguirre-L\u00f3pez, F., Franz, S., Pastore, M.",
+   "authors_raw": [
+    "Fabi\u00e1n Aguirre-L\u00f3pez",
+    "Silvio Franz",
+    "Mauro Pastore"
+   ],
+   "difference": "Studies random features and polynomial rules; a spectral analysis of an approximation family, with no quantum arm.",
+   "id": "2402.10164",
+   "pool_title": "Random features and polynomial rules",
+   "primary": "cond-mat.dis-nn",
+   "source": "arxiv",
+   "title": "Random Features and Polynomial Rules",
+   "url": "https://arxiv.org/abs/2402.10164",
+   "venue": "arXiv:2402.10164",
+   "year": 2024
+  },
+  {
+   "authors": "Sakurai, A. et al.",
+   "authors_raw": [
+    "Akitada Sakurai",
+    "Aoi Hayashi",
+    "William John Munro",
+    "Kae Nemoto"
+   ],
+   "difference": "Frames quantum random features as a spectral framework for quantum machine learning; a spectral view of quantum maps, with no matched-rival comparison of test error.",
+   "id": "2601.21746",
+   "pool_title": "Quantum Random Features: A Spectral Framework for Quantum Machine Learning",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Random Features: A Spectral Framework for Quantum Machine Learning",
+   "url": "https://arxiv.org/abs/2601.21746",
+   "venue": "arXiv:2601.21746",
+   "year": 2026
+  },
+  {
+   "authors": "Wieck-Sosa, M., Shalizi, C.",
+   "authors_raw": [
+    "Michael Wieck-Sosa",
+    "Cosma Rohilla Shalizi"
+   ],
+   "difference": "Estimates dynamic models by matching random features; an econometric matching argument that supports our use of a matching construction for the rival's metric.",
+   "id": "2607.21916",
+   "pool_title": "Estimating dynamic models by matching random features",
+   "primary": "stat.ME",
+   "source": "arxiv",
+   "title": "Estimating Dynamic Models by Matching Random Features",
+   "url": "https://arxiv.org/abs/2607.21916",
+   "venue": "arXiv:2607.21916",
+   "year": 2026
+  },
+  {
+   "authors": "Chatalic, A. et al.",
+   "authors_raw": [
+    "Antoine Chatalic",
+    "Marco Letizia",
+    "Nicolas Schreuder",
+    "Lorenzo Rosasco"
+   ],
+   "difference": "Gives a scalable Nystr\u00f6m-based kernel two-sample test with permutations; a classical testing instrument, cited for the resampling practice our protocol follows.",
+   "id": "2502.13570",
+   "pool_title": "A Scalable Nystrom-Based Kernel Two-Sample Test with Permutations",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "A Scalable Nystrom-Based Kernel Two-Sample Test with Permutations",
+   "url": "https://arxiv.org/abs/2502.13570",
+   "venue": "arXiv:2502.13570",
+   "year": 2025
+  },
+  {
+   "authors": "Zhang, M. et al.",
+   "authors_raw": [
+    "Matthew Zhang",
+    "Jihao Andreas Lin",
+    "Krzysztof Choromanski",
+    "Adrian Weller",
+    "Richard E. Turner",
+    "Isaac Reid"
+   ],
+   "difference": "Uses graph random features for scalable Gaussian processes; a classical scalability result for the baseline family we tune against the quantum maps.",
+   "id": "2509.03691",
+   "pool_title": "Graph Random Features for Scalable Gaussian Processes",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Graph Random Features for Scalable Gaussian Processes",
+   "url": "https://arxiv.org/abs/2509.03691",
+   "venue": "arXiv:2509.03691",
+   "year": 2025
+  },
+  {
+   "authors": "Delogne, R., Jacques, L.",
+   "authors_raw": [
+    "R\u00e9mi Delogne",
+    "Laurent Jacques"
+   ],
+   "difference": "Develops random features for Grassmannian kernels; a geometry-specific classical approximation, cited to show that geometry-aware classical constructions are available outside the quantum setting.",
+   "id": "2504.21533",
+   "pool_title": "Random Features for Grassmannian Kernels",
+   "primary": "eess.SP",
+   "source": "arxiv",
+   "title": "Random Features for Grassmannian Kernels",
+   "url": "https://arxiv.org/abs/2504.21533",
+   "venue": "arXiv:2504.21533",
+   "year": 2025
+  },
+  {
+   "authors": "Cory-Wright, R., G\u00f3mez, A.",
+   "authors_raw": [
+    "Ryan Cory-Wright",
+    "Andr\u00e9s G\u00f3mez"
+   ],
+   "difference": "Regularises cross-validation for stability; a selection-side remedy, whereas our protocol fixes the selection rule and reports the comparison's uncertainty.",
+   "id": "2505.06927",
+   "pool_title": "Stability Regularized Cross-Validation",
+   "primary": "math.OC",
+   "source": "arxiv",
+   "title": "Stability Regularized Cross-Validation",
+   "url": "https://arxiv.org/abs/2505.06927",
+   "venue": "arXiv:2505.06927",
+   "year": 2025
+  },
+  {
+   "authors": "Gauran, I., Ombao, H., Yu, Z.",
+   "authors_raw": [
+    "Iris Ivy Gauran",
+    "Hernando Ombao",
+    "Zhaoxia Yu"
+   ],
+   "difference": "Tests predictive performance with exhaustive nested cross-validation for high-dimensional data; a testing procedure, which we cite for the nested-CV discipline our rival's tuning follows.",
+   "id": "2408.03138",
+   "pool_title": "Predictive Performance Test based on the Exhaustive Nested Cross-Validation for High-dimensional data",
+   "primary": "stat.ME",
+   "source": "arxiv",
+   "title": "Predictive Performance Test Based on the Exhaustive Nested Cross-Validation for High-Dimensional Data",
+   "url": "https://arxiv.org/abs/2408.03138",
+   "venue": "arXiv:2408.03138",
+   "year": 2024
+  },
+  {
+   "authors": "Wadekar, A., Soloff, J.",
+   "authors_raw": [
+    "Adway S. Wadekar",
+    "Jake A. Soloff"
+   ],
+   "difference": "Calibrates multiple testing without labels; a calibration method for testing procedures, related to our null calibration but not to the kernel comparison.",
+   "id": "2606.19737",
+   "pool_title": "Calibration without labels in multiple testing",
+   "primary": "stat.ME",
+   "source": "arxiv",
+   "title": "Calibration Without Labels in Multiple Testing",
+   "url": "https://arxiv.org/abs/2606.19737",
+   "venue": "arXiv:2606.19737",
+   "year": 2026
+  },
+  {
+   "authors": "Huo, Y. et al.",
+   "authors_raw": [
+    "Yuyang Huo",
+    "Xiaoyang Wu",
+    "Changliang Zou",
+    "Haojie Ren"
+   ],
+   "difference": "Unifies conformalised multiple testing with full data efficiency; a testing framework, cited for the family of procedures our declaration rule belongs to.",
+   "id": "2508.12085",
+   "pool_title": "Unified Conformalized Multiple Testing with Full Data Efficiency",
+   "primary": "stat.ME",
+   "source": "arxiv",
+   "title": "Unified Conformalized Multiple Testing with Full Data Efficiency",
+   "url": "https://arxiv.org/abs/2508.12085",
+   "venue": "arXiv:2508.12085",
+   "year": 2025
+  },
+  {
+   "authors": "Jamieson, K., Jain, L.",
+   "authors_raw": [
+    "Kevin Jamieson",
+    "Lalit Jain"
+   ],
+   "difference": "Controls the false discovery rate through a bandit formulation; an online multiple-testing method, from which our fixed-grid FDR control differs by design.",
+   "id": "1809.02235",
+   "pool_title": "A Bandit Approach to Multiple Testing with False Discovery Control",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "A Bandit Approach to Multiple Testing with False Discovery Control",
+   "url": "https://arxiv.org/abs/1809.02235",
+   "venue": "arXiv:1809.02235",
+   "year": 2018
+  },
+  {
+   "authors": "Rabinovich, M., Jordan, M., Wainwright, M.",
+   "authors_raw": [
+    "Max Rabinovich",
+    "Michael I. Jordan",
+    "Martin J. Wainwright"
+   ],
+   "difference": "Gives lower bounds in multiple testing through derandomised proxies; it bounds what any procedure of our kind can detect, which is why we report the declaration count's saturation as a finding.",
+   "id": "2005.03725",
+   "pool_title": "Lower bounds in multiple testing: A framework based on derandomized proxies",
+   "primary": "math.ST",
+   "source": "arxiv",
+   "title": "Lower Bounds in Multiple Testing: A Framework Based on Derandomized Proxies",
+   "url": "https://arxiv.org/abs/2005.03725",
+   "venue": "arXiv:2005.03725",
+   "year": 2020
+  },
+  {
+   "authors": "Martinez-Taboada, D., Chugg, B., Ramdas, A.",
+   "authors_raw": [
+    "Diego Martinez-Taboada",
+    "Ben Chugg",
+    "Aaditya Ramdas"
+   ],
+   "difference": "Derives Bentkus-type asymptotic e-values; a calibration result for e-value tests, cited as the modern alternative to the p-value layer we use.",
+   "id": "2606.06332",
+   "pool_title": "Bentkus-type asymptotic e-values",
+   "primary": "math.ST",
+   "source": "arxiv",
+   "title": "Bentkus-Type Asymptotic E-Values",
+   "url": "https://arxiv.org/abs/2606.06332",
+   "venue": "arXiv:2606.06332",
+   "year": 2026
+  },
+  {
+   "authors": "Xu, Z., Ramdas, A.",
+   "authors_raw": [
+    "Ziyu Xu",
+    "Aaditya Ramdas"
+   ],
+   "difference": "Gives dynamic algorithms for online multiple testing; an online setting, whereas our grid is fixed before the run.",
+   "id": "2010.13953",
+   "pool_title": "Dynamic Algorithms for Online Multiple Testing",
+   "primary": "stat.ME",
+   "source": "arxiv",
+   "title": "Dynamic Algorithms for Online Multiple Testing",
+   "url": "https://arxiv.org/abs/2010.13953",
+   "venue": "arXiv:2010.13953",
+   "year": 2020
+  },
+  {
+   "authors": "Li, X., Xie, J.",
+   "authors_raw": [
+    "Xuechan Li",
+    "Jichun Xie"
+   ],
+   "difference": "Proposes a robust multiple-testing method that leverages ancillary information; a shrinkage-style improvement, which we cite for why null calibration matters in our own predictive null.",
+   "id": "2409.03618",
+   "pool_title": "DART2: a robust multiple testing method to smartly leverage helpful or misleading ancillary information",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "DART2: A Robust Multiple Testing Method to Smartly Leverage Helpful or Misleading Ancillary Information",
+   "url": "https://arxiv.org/abs/2409.03618",
+   "venue": "arXiv:2409.03618",
+   "year": 2024
+  },
+  {
+   "authors": "Nelsen, N. et al.",
+   "authors_raw": [
+    "Nicholas H. Nelsen",
+    "Houman Owhadi",
+    "Andrew M. Stuart",
+    "Xianjin Yang",
+    "Zongren Zou"
+   ],
+   "difference": "Bilevel optimisation for learning hyperparameters; a joint tuning scheme, cited for the nested protocol our rival's envelope grid follows.",
+   "id": "2510.05568",
+   "pool_title": "Bilevel optimization for learning hyperparameters: Application to solving PDEs and inverse problems with Gaussian processes",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "Bilevel Optimization for Learning Hyperparameters: Application to Solving PDEs and Inverse Problems with Gaussian Processes",
+   "url": "https://arxiv.org/abs/2510.05568",
+   "venue": "arXiv:2510.05568",
+   "year": 2025
+  },
+  {
+   "authors": "Kam, C., Bessafi, M., Cadet, F.",
+   "authors_raw": [
+    "Chon-Fai Kam",
+    "Miloud Bessafi",
+    "Frederic Cadet"
+   ],
+   "difference": "Shows structured features overfit where random features grok; a mechanism for why a rival's family choice interacts with the data's structure, which our grid controls.",
+   "id": "2609.15047",
+   "pool_title": "Structured Features Overfit Where Random Features Grok",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Structured Features Overfit Where Random Features Grok",
+   "url": "https://arxiv.org/abs/2609.15047",
+   "venue": "arXiv:2609.15047",
+   "year": 2026
+  },
+  {
+   "authors": "Joshi, S., Mendes, U., Govia, L.",
+   "authors_raw": [
+    "Saasha Joshi",
+    "Udson C. Mendes",
+    "Luke C. G. Govia"
+   ],
+   "difference": "Balances expressivity and overfitting in quantum Gaussian-process regression; a single-model balance, with no rival receiving the model's metric.",
+   "id": "2609.09407",
+   "pool_title": "Balancing Expressivity and Overfitting in Quantum Gaussian Process Regression",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Balancing Expressivity and Overfitting in Quantum Gaussian Process Regression",
+   "url": "https://arxiv.org/abs/2609.09407",
+   "venue": "arXiv:2609.09407",
+   "year": 2026
+  },
+  {
+   "authors": "Parashar, A. et al.",
+   "authors_raw": [
+    "Ananya Parashar",
+    "Derek Long",
+    "Dwaipayan Saha",
+    "Krzysztof Choromanski"
+   ],
+   "difference": "Introduced manifold random features; a classical construction that makes a data-geometry-aware rival available outside the quantum setting.",
+   "id": "2602.03797",
+   "pool_title": "Manifold Random Features",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Manifold Random Features",
+   "url": "https://arxiv.org/abs/2602.03797",
+   "venue": "arXiv:2602.03797",
+   "year": 2026
+  },
+  {
+   "authors": "Wang, M., Jiang, P.",
+   "authors_raw": [
+    "Maida Wang",
+    "Panyun Jiang"
+   ],
+   "difference": "Applies quantum-enhanced manifold learning to anomaly recognition; an application whose classical comparison is unmatched.",
+   "id": "2512.11071",
+   "pool_title": "Q-BAR: Blogger Anomaly Recognition via Quantum-enhanced Manifold Learning",
+   "primary": "cs.MM",
+   "source": "arxiv",
+   "title": "Q-BAR: Blogger Anomaly Recognition via Quantum-Enhanced Manifold Learning",
+   "url": "https://arxiv.org/abs/2512.11071",
+   "venue": "arXiv:2512.11071",
+   "year": 2025
+  },
+  {
+   "authors": "Pandey, T.",
+   "authors_raw": [
+    "Tushar Pandey"
+   ],
+   "difference": "Builds a hybrid pipeline for parity-structured classification with quantum kernels; a pipeline for one structure, whereas our generator sweeps the alignment between structure and map.",
+   "id": "2605.05625",
+   "pool_title": "Quantum Kernels for Parity-Structured Classification: A Hybrid Pipeline",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernels for Parity-Structured Classification: A Hybrid Pipeline",
+   "url": "https://arxiv.org/abs/2605.05625",
+   "venue": "arXiv:2605.05625",
+   "year": 2026
+  },
+  {
+   "authors": "Wang, Z. et al.",
+   "authors_raw": [
+    "Zhihui Wang",
+    "Sujit Roy",
+    "Ata Akbari",
+    "Manil Maskey",
+    "Rahul Ramachandran"
+   ],
+   "difference": "Designs structured quantum kernels for chaotic forecasting; a forecasting task whose evaluation is against classical forecasters with different capacity.",
+   "id": "2609.13360",
+   "pool_title": "Structured Quantum Kernels for Chaotic Forecasting",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Structured Quantum Kernels for Chaotic Forecasting",
+   "url": "https://arxiv.org/abs/2609.13360",
+   "venue": "arXiv:2609.13360",
+   "year": 2026
+  },
+  {
+   "authors": "Garcia, R. et al.",
+   "authors_raw": [
+    "Roy J. Garcia",
+    "Chen Zhao",
+    "Kaifeng Bu",
+    "Arthur Jaffe"
+   ],
+   "difference": "Derives barren plateaus from learning scramblers with local cost functions; a variational mechanism result cited for why our large-bandwidth arm is read as collapse rather than as a tuning failure.",
+   "id": "2205.06679",
+   "pool_title": "Barren plateaus from learning scramblers with local cost functions",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Barren Plateaus from Learning Scramblers with Local Cost Functions",
+   "url": "https://arxiv.org/abs/2205.06679",
+   "venue": "arXiv:2205.06679",
+   "year": 2022
+  },
+  {
+   "authors": "Rodriguez-Grasa, P., Ban, Y., Sanz, M.",
+   "authors_raw": [
+    "Pablo Rodriguez-Grasa",
+    "Yue Ban",
+    "Mikel Sanz"
+   ],
+   "difference": "Trains quantum kernels with quantum neural networks; it moves the map to improve performance, while we fix the map and compare against a rival built from its metric.",
+   "id": "2401.04642",
+   "pool_title": "Neural quantum kernels: training quantum kernels with quantum neural networks",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Neural Quantum Kernels: Training Quantum Kernels with Quantum Neural Networks",
+   "url": "https://arxiv.org/abs/2401.04642",
+   "venue": "arXiv:2401.04642",
+   "year": 2024
+  },
+  {
+   "authors": "Hwang, Y. et al.",
+   "authors_raw": [
+    "Yunseo Hwang",
+    "Giwon Song",
+    "Kyoung Keun Park",
+    "Hyukjoon Kwon",
+    "Taehyun Kim"
+   ],
+   "difference": "Estimates expectation values efficiently with extended stabilizer frameworks and adaptive variance estimation; it measures how cheaply a quantum model can be evaluated, not how it compares with a matched classical rival.",
+   "id": "2609.14252",
+   "pool_title": "Efficient expectation value estimation for quantum circuits via extended stabilizer frameworks and adaptive variance estimation",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Efficient Expectation Value Estimation for Quantum Circuits via Extended Stabilizer Frameworks and Adaptive Variance Estimation",
+   "url": "https://arxiv.org/abs/2609.14252",
+   "venue": "arXiv:2609.14252",
+   "year": 2026
+  },
+  {
+   "authors": "Pal, P., Sharma, G., Podila, R.",
+   "authors_raw": [
+    "Prosanta Pal",
+    "Gargee Sharma",
+    "Ramakrishna Podila"
+   ],
+   "difference": "Certifies quantum advantage robustly against loopholes; a certification protocol for advantage claims, cited as the standard our controlled comparison is not.",
+   "id": "2607.13090",
+   "pool_title": "Loophole-Robust Certification of Quantum Advantage",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Loophole-Robust Certification of Quantum Advantage",
+   "url": "https://arxiv.org/abs/2607.13090",
+   "venue": "arXiv:2607.13090",
+   "year": 2026
+  },
+  {
+   "authors": "Tal, A., Yuan, W.",
+   "authors_raw": [
+    "Avishay Tal",
+    "Weiqiang Yuan"
+   ],
+   "difference": "Studies quantum advantage in tolerant junta testing; a query-complexity separation, which is an advantage of a different kind from the statistical one we map.",
+   "id": "2606.23194",
+   "pool_title": "Quantum Advantage in Tolerant Junta Testing",
+   "primary": "cs.CC",
+   "source": "arxiv",
+   "title": "Quantum Advantage in Tolerant Junta Testing",
+   "url": "https://arxiv.org/abs/2606.23194",
+   "venue": "arXiv:2606.23194",
+   "year": 2026
+  },
+  {
+   "authors": "Wang, Y. et al.",
+   "authors_raw": [
+    "Yabo Wang",
+    "Bo Qi",
+    "Xin Wang",
+    "Tongliang Liu",
+    "Daoyi Dong"
+   ],
+   "difference": "Characterises the power of noisy quantum kernels; noise is the axis, and our study is noiseless by construction, so it isolates the geometric question.",
+   "id": "2401.17526",
+   "pool_title": "Power Characterization of Noisy Quantum Kernels",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Power Characterization of Noisy Quantum Kernels",
+   "url": "https://arxiv.org/abs/2401.17526",
+   "venue": "arXiv:2401.17526",
+   "year": 2024
+  },
+  {
+   "authors": "Paine, A., Elfving, V., Kyriienko, O.",
+   "authors_raw": [
+    "Annie E. Paine",
+    "Vincent E. Elfving",
+    "Oleksandr Kyriienko"
+   ],
+   "difference": "Solves differential equations with quantum kernel methods; a solver application whose classical comparison is a numerical baseline, not a matched kernel.",
+   "id": "2203.08884",
+   "pool_title": "Quantum Kernel Methods for Solving Differential Equations",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Kernel Methods for Solving Differential Equations",
+   "url": "https://arxiv.org/abs/2203.08884",
+   "venue": "arXiv:2203.08884",
+   "year": 2022
+  },
+  {
+   "authors": "Ahmad, S., Rawat, R., Moharir, M.",
+   "authors_raw": [
+    "Syed Farhan Ahmad",
+    "Raghav Rawat",
+    "Minal Moharir"
+   ],
+   "difference": "Uses non-classically simulable feature maps in hybrid quantum-classical architectures; the map is chosen for hardness, whereas we choose maps we can read exactly so the geometry is computable.",
+   "id": "2103.11381",
+   "pool_title": "Quantum Machine Learning with HQC Architectures using non-Classically Simulable Feature Maps",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Quantum Machine Learning with HQC Architectures Using Non-Classically Simulable Feature Maps",
+   "url": "https://arxiv.org/abs/2103.11381",
+   "venue": "arXiv:2103.11381",
+   "year": 2021
+  },
+  {
+   "authors": "Heyraud, V. et al.",
+   "authors_raw": [
+    "Valentin Heyraud",
+    "Zejian Li",
+    "Zakari Denis",
+    "Alexandre Le Boit\u00e9",
+    "Cristiano Ciuti"
+   ],
+   "difference": "Studies noisy quantum kernel machines; a noise-focused study, cited because our noiseless design is what makes the metric computable in closed form.",
+   "id": "2204.12192",
+   "pool_title": "Noisy Quantum Kernel Machines",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Noisy Quantum Kernel Machines",
+   "url": "https://arxiv.org/abs/2204.12192",
+   "venue": "arXiv:2204.12192",
+   "year": 2022
+  },
+  {
+   "authors": "Blank, C. et al.",
+   "authors_raw": [
+    "Carsten Blank",
+    "Adenilton J. da Silva",
+    "Lucas P. de Albuquerque",
+    "Francesco Petruccione",
+    "Daniel K. Park"
+   ],
+   "difference": "Builds a compact quantum kernel-based binary classifier for near-term hardware; a hardware-oriented construction evaluated against unmatched classical baselines.",
+   "id": "2202.02151",
+   "pool_title": "Compact quantum kernel-based binary classifier",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Compact Quantum Kernel-Based Binary Classifier",
+   "url": "https://arxiv.org/abs/2202.02151",
+   "venue": "arXiv:2202.02151",
+   "year": 2022
+  },
+  {
+   "authors": "Masta, A. et al.",
+   "authors_raw": [
+    "Apoorv Kumar Masta",
+    "Srinjoy Ganguly",
+    "Shalini Devendrababu",
+    "Farina Riaz",
+    "Rajib Rana",
+    "Bj\u00f6rn Schuller"
+   ],
+   "difference": "Studies Fisher efficiency transitions for non-unitary quantum machine learning; an information-theoretic transition, cited as an example of a boundary derived rather than mapped.",
+   "id": "2603.27377",
+   "pool_title": "Non-Unitary Quantum Machine Learning: Fisher Efficiency Transitions from Distributed Quantum Expressivity",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Non-Unitary Quantum Machine Learning: Fisher Efficiency Transitions from Distributed Quantum Expressivity",
+   "url": "https://arxiv.org/abs/2603.27377",
+   "venue": "arXiv:2603.27377",
+   "year": 2026
+  },
+  {
+   "authors": "Paredes, C. et al.",
+   "authors_raw": [
+    "Carlos A. Dur\u00e1n Paredes",
+    "Javier E. Le\u00f3n Calder\u00f3n",
+    "Nicol\u00e1s S\u00e1nchez Perea",
+    "Germ\u00e1n Dar\u00edo D\u00edaz",
+    "Camilo Segura Quintero"
+   ],
+   "difference": "Applies quantum machine learning to cyber-physical anomaly detection in unmanned aerial vehicles; an application whose evaluation varies many factors at once.",
+   "id": "2605.19233",
+   "pool_title": "Quantum Machine Learning for Cyber-Physical Anomaly Detection in Unmanned Aerial Vehicles: A Leakage-Free Evaluation with Proxy-Audited Feature Sets",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Quantum Machine Learning for Cyber-Physical Anomaly Detection in Unmanned Aerial Vehicles: A Leakage-Free Evaluation with Proxy-Audited Feature Sets",
+   "url": "https://arxiv.org/abs/2605.19233",
+   "venue": "arXiv:2605.19233",
+   "year": 2026
+  },
+  {
+   "authors": "Kashani, S.",
+   "authors_raw": [
+    "Shlomo Kashani"
+   ],
+   "difference": "Compares array frameworks for quantum-circuit simulation; a runtime comparison of simulators, which is the cost axis our reproduction spec reports honestly.",
+   "id": "2609.19147",
+   "pool_title": "Qupertino: Pure MLX Array Kernels versus Hand-Tuned Metal Shaders for Quantum Circuit Simulation on Apple Silicon",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Qupertino: Pure MLX Array Kernels Versus Hand-Tuned Metal Shaders for Quantum Circuit Simulation on Apple Silicon",
+   "url": "https://arxiv.org/abs/2609.19147",
+   "venue": "arXiv:2609.19147",
+   "year": 2026
+  },
+  {
+   "authors": "Leipold, H.",
+   "authors_raw": [
+    "Hannes Leipold"
+   ],
+   "difference": "Simulates observable quantum dynamics on dynamic subspaces; a fast-simulation technique that bounds the cost of the exact statevector path we use at q <= 8.",
+   "id": "2609.09806",
+   "pool_title": "Dynamic Observable Subspaces: Fast Simulation of Observable Quantum Dynamics",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Dynamic Observable Subspaces: Fast Simulation of Observable Quantum Dynamics",
+   "url": "https://arxiv.org/abs/2609.09806",
+   "venue": "arXiv:2609.09806",
+   "year": 2026
+  },
+  {
+   "authors": "Szo\u0142dra, T., Schmelcher, P.",
+   "authors_raw": [
+    "Tomasz Szo\u0142dra",
+    "Peter Schmelcher"
+   ],
+   "difference": "Prepares tensor-network states with belief-propagation disentanglers; a state preparation technique, cited as an alternative to exact statevector simulation.",
+   "id": "2608.21902",
+   "pool_title": "Belief Propagation-based Disentanglers for Tensor Network State Preparation",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Belief Propagation-Based Disentanglers for Tensor Network State Preparation",
+   "url": "https://arxiv.org/abs/2608.21902",
+   "venue": "arXiv:2608.21902",
+   "year": 2026
+  },
+  {
+   "authors": "Manabe, H., Sugimoto, T., Fujii, K.",
+   "authors_raw": [
+    "Hidetaka Manabe",
+    "Takanori Sugimoto",
+    "Keisuke Fujii"
+   ],
+   "difference": "Formulates dequantized algorithms in tensor-network language; a formulation that explains when classical simulation is exact, which our closed-form rival does for the small-bandwidth regime.",
+   "id": "2512.13548",
+   "pool_title": "Tensor Network Formulation of Dequantized Algorithms for Ground State Energy Estimation",
+   "primary": "quant-ph",
+   "source": "arxiv",
+   "title": "Tensor Network Formulation of Dequantized Algorithms for Ground State Energy Estimation",
+   "url": "https://arxiv.org/abs/2512.13548",
+   "venue": "arXiv:2512.13548",
+   "year": 2025
+  },
+  {
+   "authors": "Dietterich, T.",
+   "authors_raw": [
+    "Dietterich, Thomas"
+   ],
+   "difference": "Compares supervised classifiers over multiple data sets with paired tests and recommends a procedure; a testing protocol, where our contribution is the map of a comparison's outcome rather than a test for it.",
+   "doi": "10.1162/089976698300017197",
+   "n_authors": 1,
+   "pool_title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+   "source": "crossref",
+   "title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1162/089976698300017197",
+   "venue": "Neural Computation",
+   "year": 1998
+  },
+  {
+   "authors": "Varma, S.",
+   "authors_raw": [
+    "Varma, Sudhir"
+   ],
+   "difference": "Measures the bias that cross-validation introduces when it is also used for selection; the bias our rival's nested protocol is designed to remove, cited as the reason the nested grid is part of the rival definition.",
+   "doi": "10.1186/1471-2105-7-91",
+   "n_authors": 2,
+   "pool_title": "Bias in error estimation when using cross-validation for model selection",
+   "source": "crossref",
+   "title": "Bias in Error Estimation When Using Cross-Validation for Model Selection",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1186/1471-2105-7-91",
+   "venue": "BMC Bioinformatics",
+   "year": 2006
+  },
+  {
+   "authors": "Benjamini, Y.",
+   "authors_raw": [
+    "Benjamini, Yoav"
+   ],
+   "difference": "Introduces the false discovery rate and the Benjamini-Hochberg procedure; the declaration rule we apply to our grid before any lead is announced.",
+   "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+   "n_authors": 2,
+   "pool_title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+   "source": "crossref",
+   "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+   "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+   "year": 1995
+  },
+  {
+   "authors": "Benjamini, Y.",
+   "authors_raw": [
+    "Benjamini, Yoav"
+   ],
+   "difference": "Extends false-discovery control to dependent test statistics; the dependency our grid's tests have by construction, which is why the control is reported with its structure rather than as a bare count.",
+   "doi": "10.1214/aos/1013699998",
+   "n_authors": 2,
+   "pool_title": "The control of the false discovery rate in multiple testing under dependency",
+   "source": "crossref",
+   "title": "The Control of the False Discovery Rate in Multiple Testing under Dependency",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1214/aos/1013699998",
+   "venue": "The Annals of Statistics",
+   "year": 2001
+  },
+  {
+   "authors": "Student.",
+   "authors_raw": [
+    "Student"
+   ],
+   "difference": "Gives the small-sample paired statistic and its distribution; the t-interval we report per cell across the stream panel.",
+   "doi": "10.1093/biomet/6.1.1",
+   "n_authors": null,
+   "pool_title": "The Probable Error of a Mean",
+   "source": "crossref",
+   "title": "The Probable Error of a Mean",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1093/biomet/6.1.1",
+   "venue": "Biometrika",
+   "year": 1908
+  },
+  {
+   "authors": "Breiman, L.",
+   "authors_raw": [
+    "Breiman, Leo"
+   ],
+   "difference": "Argues for the algorithmic-modelling culture against the data-modelling one; the argument for controlled generators, which is the design this study uses.",
+   "doi": "10.1214/ss/1009213726",
+   "n_authors": null,
+   "pool_title": "Statistical Modeling: The Two Cultures (with comments and a rejoinder by the author)",
+   "source": "crossref",
+   "title": "Statistical Modeling: The Two Cultures (with Comments and a Rejoinder by the Author)",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1214/ss/1009213726",
+   "venue": "Statistical Science",
+   "year": 2001
+  },
+  {
+   "authors": "Wolpert, D.",
+   "authors_raw": [
+    "Wolpert, David"
+   ],
+   "difference": "Shows no learner is a priori superior without assumptions on the problem distribution; the reason a comparison must name the geometry it holds fixed, as ours does.",
+   "doi": "10.1162/neco.1996.8.7.1341",
+   "n_authors": 1,
+   "pool_title": "The Lack of A Priori Distinctions Between Learning Algorithms",
+   "source": "crossref",
+   "title": "The Lack of a Priori Distinctions Between Learning Algorithms",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1162/neco.1996.8.7.1341",
+   "venue": "Neural Computation",
+   "year": 1996
+  },
+  {
+   "authors": "Cleveland, W.",
+   "authors_raw": [
+    "Cleveland, William"
+   ],
+   "difference": "Introduces locally weighted regression and its smoothing parameter; an early statement that a nonparametric fit's bandwidth decides its behaviour, the axis our grid sweeps for the quantum map.",
+   "doi": "10.1080/01621459.1979.10481038",
+   "n_authors": null,
+   "pool_title": "Robust Locally Weighted Regression and Smoothing Scatterplots",
+   "source": "crossref",
+   "title": "Robust Locally Weighted Regression and Smoothing Scatterplots",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1080/01621459.1979.10481038",
+   "venue": "Journal of the American Statistical Association",
+   "year": 1979
+  },
+  {
+   "authors": "Aronszajn, N.",
+   "authors_raw": [
+    "Aronszajn, N."
+   ],
+   "difference": "Establishes the theory of reproducing kernels; the framework in which a kernel is a metric, which is what makes a metric-matched rival meaningful.",
+   "doi": "10.21236/ada296533",
+   "n_authors": 1,
+   "pool_title": "Theory of Reproducing Kernels.",
+   "source": "crossref",
+   "title": "Theory of Reproducing Kernels.",
+   "type": "report",
+   "url": "https://doi.org/10.21236/ada296533",
+   "venue": "Defense Technical Information Center",
+   "year": 1950
+  },
+  {
+   "authors": "Shawe-Taylor, J., Cristianini, N.",
+   "authors_raw": [
+    "Shawe-Taylor, John",
+    "Cristianini, Nello"
+   ],
+   "difference": "Sets out kernel methods for pattern analysis as a design discipline; the classical toolbox our rival arms are drawn from.",
+   "doi": "10.1017/CBO9780511809682",
+   "n_authors": null,
+   "pool_title": "Kernel Methods for Pattern Analysis",
+   "source": "crossref",
+   "title": "Kernel Methods for Pattern Analysis",
+   "type": "monograph",
+   "url": "https://doi.org/10.1017/CBO9780511809682",
+   "venue": "Cambridge University Press",
+   "year": 2004
+  },
+  {
+   "authors": "Mercer, J.",
+   "authors_raw": [
+    "Mercer, James"
+   ],
+   "difference": "Gives the positive-definite condition for a function to be a kernel; the condition our rival metrics must satisfy for the comparison to be between kernels at all.",
+   "doi": "10.1098/rspa.1909.0075",
+   "n_authors": 1,
+   "pool_title": "Functions of positive and negative type, and their connection with the theory of integral equations",
+   "source": "crossref",
+   "title": "Functions of Positive and Negative Type, and Their Connection with the Theory of Integral Equations",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1098/rspa.1909.0075",
+   "venue": "Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character",
+   "year": 1909
+  },
+  {
+   "authors": "Boser, B.",
+   "authors_raw": [
+    "Boser, Bernhard"
+   ],
+   "difference": "Introduces the kernel trick for optimal margin classifiers; the construction that makes a geometry and a hypothesis class separable questions.",
+   "doi": "10.1145/130385.130401",
+   "n_authors": 3,
+   "pool_title": "A training algorithm for optimal margin classifiers",
+   "source": "crossref",
+   "title": "A Training Algorithm for Optimal Margin Classifiers",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/130385.130401",
+   "venue": "Proceedings of the fifth annual workshop on Computational learning theory",
+   "year": 1992
+  },
+  {
+   "authors": "Cortes, C., Vapnik, V.",
+   "authors_raw": [
+    "Cortes, Corinna",
+    "Vapnik, Vladimir"
+   ],
+   "difference": "Introduces support-vector networks with soft margins; the classifier family our arms are scored inside, through kernel ridge regression with a linear readout.",
+   "doi": "10.1023/A:1022627411411",
+   "n_authors": null,
+   "pool_title": "Support-Vector Networks",
+   "source": "crossref",
+   "title": "Support-Vector Networks",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1023/A:1022627411411",
+   "venue": "Machine Learning",
+   "year": 1995
+  },
+  {
+   "authors": "Chapelle, O. et al.",
+   "authors_raw": [
+    "Chapelle, Olivier"
+   ],
+   "difference": "Chooses multiple kernel parameters by gradient descent on a generalisation bound; an early statement that kernel parameters are themselves a fitting problem, which our nested envelope grid implements.",
+   "doi": "10.1023/a:1012450327387",
+   "n_authors": 4,
+   "pool_title": "Choosing Multiple Parameters for Support Vector Machines",
+   "source": "crossref",
+   "title": "Choosing Multiple Parameters for Support Vector Machines",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1023/a:1012450327387",
+   "venue": "Machine Learning",
+   "year": 2002
+  },
+  {
+   "authors": "Bach, F.",
+   "authors_raw": [
+    "Bach, Francis"
+   ],
+   "difference": "Learns a combination of kernels through conic duality; the multiple-kernel setting in which a rival's metric is chosen rather than given, cited to delimit what our fixed-metric rival claims.",
+   "doi": "10.1145/1015330.1015424",
+   "n_authors": 3,
+   "pool_title": "Multiple kernel learning, conic duality, and the SMO algorithm",
+   "source": "crossref",
+   "title": "Multiple Kernel Learning, Conic Duality, and the SMO Algorithm",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1015330.1015424",
+   "venue": "Twenty-first international conference on Machine learning - ICML '04",
+   "year": 2004
+  },
+  {
+   "authors": "Sch\u00f6lkopf, B.",
+   "authors_raw": [
+    "Sch\u00f6lkopf, Bernhard"
+   ],
+   "difference": "Introduces kernel principal component analysis; a classical use of a kernel's geometry, cited to show that geometry exploitation is not peculiar to the quantum setting.",
+   "doi": "10.1162/089976698300017467",
+   "n_authors": 3,
+   "pool_title": "Nonlinear Component Analysis as a Kernel Eigenvalue Problem",
+   "source": "crossref",
+   "title": "Nonlinear Component Analysis as a Kernel Eigenvalue Problem",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1162/089976698300017467",
+   "venue": "Neural Computation",
+   "year": 1998
+  },
+  {
+   "authors": "Amari, S.",
+   "authors_raw": [
+    "Amari, Shun-ichi"
+   ],
+   "difference": "Introduces natural-gradient learning; the geometry-aware optimisation idea that our rival's metric-matching transfers to regression.",
+   "doi": "10.1162/089976698300017746",
+   "n_authors": null,
+   "pool_title": "Natural Gradient Works Efficiently in Learning",
+   "source": "crossref",
+   "title": "Natural Gradient Works Efficiently in Learning",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1162/089976698300017746",
+   "venue": "Neural Computation",
+   "year": 1998
+  },
+  {
+   "authors": "Breiman, L.",
+   "authors_raw": [
+    "Breiman, Leo"
+   ],
+   "difference": "Introduces random forests; a strong classical baseline of a different family, included so the manuscript's baseline claim is not confined to kernel machines.",
+   "doi": "10.1023/A:1010933404324",
+   "n_authors": null,
+   "pool_title": "Random Forests",
+   "source": "crossref",
+   "title": "Random Forests",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1023/A:1010933404324",
+   "venue": "Machine Learning",
+   "year": 2001
+  },
+  {
+   "authors": "Geurts, P., Ernst, D., Wehenkel, L.",
+   "authors_raw": [
+    "Geurts, Pierre",
+    "Ernst, Damien",
+    "Wehenkel, Louis"
+   ],
+   "difference": "Introduces extremely randomized trees; a second tree-family baseline, cited for the same reason as random forests.",
+   "doi": "10.1007/s10994-006-6226-1",
+   "n_authors": null,
+   "pool_title": "Extremely randomized trees",
+   "source": "crossref",
+   "title": "Extremely Randomized Trees",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s10994-006-6226-1",
+   "venue": "Machine Learning",
+   "year": 2006
+  },
+  {
+   "authors": "Lecun, Y. et al.",
+   "authors_raw": [
+    "Lecun, Y."
+   ],
+   "difference": "Applies gradient-based learning to document recognition; a reference for the conventional machine-learning baselines a kernel comparison should acknowledge.",
+   "doi": "10.1109/5.726791",
+   "n_authors": 4,
+   "pool_title": "Gradient-based learning applied to document recognition",
+   "source": "crossref",
+   "title": "Gradient-Based Learning Applied to Document Recognition",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/5.726791",
+   "venue": "Proceedings of the IEEE",
+   "year": 1998
+  },
+  {
+   "authors": "Davis, J.",
+   "authors_raw": [
+    "Davis, Jesse"
+   ],
+   "difference": "Relates precision-recall and ROC curves; the reason our reported metric is excess risk against the Bayes predictor rather than an accuracy curve.",
+   "doi": "10.1145/1143844.1143874",
+   "n_authors": 2,
+   "pool_title": "The relationship between Precision-Recall and ROC curves",
+   "source": "crossref",
+   "title": "The Relationship Between Precision-Recall and ROC Curves",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1143844.1143874",
+   "venue": "Proceedings of the 23rd international conference on Machine learning - ICML '06",
+   "year": 2006
+  },
+  {
+   "authors": "Vapnik, V.",
+   "authors_raw": [
+    "Vapnik, V."
+   ],
+   "difference": "States the uniform convergence of empirical frequencies used throughout learning theory; the capacity view that motivates controlling the rival's envelope grid.",
+   "doi": "10.1007/978-3-319-21852-6_3",
+   "n_authors": 2,
+   "pool_title": "On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities",
+   "source": "crossref",
+   "title": "On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-3-319-21852-6_3",
+   "venue": "Measures of Complexity",
+   "year": 2015
+  },
+  {
+   "authors": "Wu, C.",
+   "authors_raw": [
+    "Wu, C."
+   ],
+   "difference": "Proves convergence properties of the EM algorithm; a classical estimation-theory landmark, cited to mark how far a fitted-metric rival is from a construction with a closed-form metric.",
+   "doi": "10.1214/aos/1176346060",
+   "n_authors": null,
+   "pool_title": "On the Convergence Properties of the EM Algorithm",
+   "source": "crossref",
+   "title": "On the Convergence Properties of the EM Algorithm",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1214/aos/1176346060",
+   "venue": "The Annals of Statistics",
+   "year": 1983
+  },
+  {
+   "authors": "Rumelhart, D., Hinton, G., Williams, R.",
+   "authors_raw": [
+    "Rumelhart, David",
+    "Hinton, Geoffrey",
+    "Williams, Ronald"
+   ],
+   "difference": "Shows learning by back-propagation; the historical baseline that motivates holding capacity fixed across the arms of a comparison.",
+   "doi": "10.1038/323533a0",
+   "n_authors": null,
+   "pool_title": "Learning representations by back-propagating errors",
+   "source": "crossref",
+   "title": "Learning Representations by Back-Propagating Errors",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/323533a0",
+   "venue": "Nature",
+   "year": 1986
+  },
+  {
+   "authors": "Preskill, J.",
+   "authors_raw": [
+    "Preskill, John"
+   ],
+   "difference": "Describes the NISQ era and its constraints; the hardware setting the field's advantage claims are made in, and the reason an exactly simulated comparison is informative.",
+   "doi": "10.22331/q-2018-08-06-79",
+   "n_authors": 1,
+   "pool_title": "Quantum Computing in the NISQ era and beyond",
+   "source": "crossref",
+   "title": "Quantum Computing in the NISQ Era and Beyond",
+   "type": "journal-article",
+   "url": "https://doi.org/10.22331/q-2018-08-06-79",
+   "venue": "Quantum",
+   "year": 2018
+  },
+  {
+   "authors": "Deutsch, D.",
+   "authors_raw": [
+    "Deutsch, David"
+   ],
+   "difference": "States the universal quantum computer and its relation to the Church-Turing principle; the foundational statement of what a quantum computation is.",
+   "doi": "10.1098/rspa.1985.0070",
+   "n_authors": 1,
+   "pool_title": "Quantum theory, the Church\u2013Turing principle and the universal quantum computer",
+   "source": "crossref",
+   "title": "Quantum Theory, the Church\u2013Turing Principle and the Universal Quantum Computer",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1098/rspa.1985.0070",
+   "venue": "Proceedings of the Royal Society of London. A. Mathematical and Physical Sciences",
+   "year": 1985
+  },
+  {
+   "authors": "Biamonte, J. et al.",
+   "authors_raw": [
+    "Biamonte, Jacob",
+    "Wittek, Peter",
+    "Pancotti, Nicola",
+    "Rebentrost, Patrick",
+    "Wiebe, Nathan",
+    "Lloyd, Seth"
+   ],
+   "difference": "Surveys quantum machine learning as a discipline; the field-level framing our matched-rival comparison argues within.",
+   "doi": "10.1038/nature23474",
+   "n_authors": null,
+   "pool_title": "Quantum machine learning",
+   "source": "crossref",
+   "title": "Quantum Machine Learning",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/nature23474",
+   "venue": "Nature",
+   "year": 2017
+  },
+  {
+   "authors": "Havl\u00ed\u010dek, V. et al.",
+   "authors_raw": [
+    "Havl\u00ed\u010dek, Vojt\u011bch"
+   ],
+   "difference": "Demonstrates supervised learning with quantum-enhanced feature spaces on hardware; the experiment that established the quantum-kernel advantage claim our study subjects to a matched rival.",
+   "doi": "10.1038/s41586-019-0980-2",
+   "n_authors": 7,
+   "pool_title": "Supervised learning with quantum-enhanced feature spaces",
+   "source": "crossref",
+   "title": "Supervised Learning with Quantum-Enhanced Feature Spaces",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/s41586-019-0980-2",
+   "venue": "Nature",
+   "year": 2019
+  },
+  {
+   "authors": "Schuld, M.",
+   "authors_raw": [
+    "Schuld, Maria"
+   ],
+   "difference": "Puts quantum machine learning in feature Hilbert spaces; the formal setting in which a feature map is a kernel, which our instrument computes exactly.",
+   "doi": "10.1103/physrevlett.122.040504",
+   "n_authors": 2,
+   "pool_title": "Quantum Machine Learning in Feature Hilbert Spaces",
+   "source": "crossref",
+   "title": "Quantum Machine Learning in Feature Hilbert Spaces",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1103/physrevlett.122.040504",
+   "venue": "Physical Review Letters",
+   "year": 2019
+  },
+  {
+   "authors": "Wang, X. et al.",
+   "authors_raw": [
+    "Wang, Xinbiao"
+   ],
+   "difference": "Analyses the power of quantum kernels in the NISQ era and shows where classical data defeats them; the closest prior argument, stated for specific constructions rather than as a mapped advantage region.",
+   "doi": "10.22331/q-2021-08-30-531",
+   "n_authors": 4,
+   "pool_title": "Towards understanding the power of quantum kernels in the NISQ era",
+   "source": "crossref",
+   "title": "Towards Understanding the Power of Quantum Kernels in the NISQ Era",
+   "type": "journal-article",
+   "url": "https://doi.org/10.22331/q-2021-08-30-531",
+   "venue": "Quantum",
+   "year": 2021
+  },
+  {
+   "authors": "Huang, H. et al.",
+   "authors_raw": [
+    "Huang, Hsin-Yuan",
+    "Broughton, Michael",
+    "Cotler, Jordan",
+    "Chen, Sitan",
+    "Li, Jerry",
+    "Mohseni, Masoud",
+    "Neven, Hartmut",
+    "Babbush, Ryan",
+    "Kueng, Richard",
+    "Preskill, John",
+    "McClean, Jarrod"
+   ],
+   "difference": "Demonstrates quantum advantage in learning from experiments; an advantage of a different kind (sample access), cited to separate it from the test-error advantage we map.",
+   "doi": "10.1126/science.abn7293",
+   "n_authors": null,
+   "pool_title": "Quantum advantage in learning from experiments",
+   "source": "crossref",
+   "title": "Quantum Advantage in Learning from Experiments",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1126/science.abn7293",
+   "venue": "Science",
+   "year": 2022
+  },
+  {
+   "authors": "Pesah, A. et al.",
+   "authors_raw": [
+    "Pesah, Arthur",
+    "Cerezo, M.",
+    "Wang, Samson",
+    "Volkoff, Tyler",
+    "Sornborger, Andrew",
+    "Coles, Patrick"
+   ],
+   "difference": "Shows barren plateaus are absent in quantum convolutional neural networks with local cost functions; the architectural escape from collapse, cited against our large-bandwidth arm.",
+   "doi": "10.1103/PhysRevX.11.041011",
+   "n_authors": null,
+   "pool_title": "Absence of Barren Plateaus in Quantum Convolutional Neural Networks",
+   "source": "crossref",
+   "title": "Absence of Barren Plateaus in Quantum Convolutional Neural Networks",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1103/PhysRevX.11.041011",
+   "venue": "Physical Review X",
+   "year": 2021
+  },
+  {
+   "authors": "Cong, I., Choi, S., Lukin, M.",
+   "authors_raw": [
+    "Cong, Iris",
+    "Choi, Soonwon",
+    "Lukin, Mikhail"
+   ],
+   "difference": "Introduces quantum convolutional neural networks; a variational architecture, included so the manuscript's map is not read as a statement about all quantum models.",
+   "doi": "10.1038/s41567-019-0648-8",
+   "n_authors": null,
+   "pool_title": "Quantum convolutional neural networks",
+   "source": "crossref",
+   "title": "Quantum Convolutional Neural Networks",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/s41567-019-0648-8",
+   "venue": "Nature Physics",
+   "year": 2019
+  },
+  {
+   "authors": "Thanasilp, S. et al.",
+   "authors_raw": [
+    "Thanasilp, Supanut"
+   ],
+   "difference": "Shows exponential concentration in quantum kernel methods and ties it to the kernel's spectrum; the concentration result our large-bandwidth arm reproduces as a comparison outcome.",
+   "doi": "10.1038/s41467-024-49287-w",
+   "n_authors": 4,
+   "pool_title": "Exponential concentration in quantum kernel methods",
+   "source": "crossref",
+   "title": "Exponential Concentration in Quantum Kernel Methods",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/s41467-024-49287-w",
+   "venue": "Nature Communications",
+   "year": 2024
+  },
+  {
+   "authors": "Liu, N., Rebentrost, P.",
+   "authors_raw": [
+    "Liu, Nana",
+    "Rebentrost, Patrick"
+   ],
+   "difference": "Applies quantum machine learning to quantum anomaly detection; an early kernel application whose comparison is against classical kernels of a different metric.",
+   "doi": "10.1103/PhysRevA.97.042315",
+   "n_authors": null,
+   "pool_title": "Quantum machine learning for quantum anomaly detection",
+   "source": "crossref",
+   "title": "Quantum Machine Learning for Quantum Anomaly Detection",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1103/PhysRevA.97.042315",
+   "venue": "Physical Review A",
+   "year": 2018
+  },
+  {
+   "authors": "Wang, D., Higgott, O., Brierley, S.",
+   "authors_raw": [
+    "Wang, Daochen",
+    "Higgott, Oscar",
+    "Brierley, Stephen"
+   ],
+   "difference": "Accelerates the variational quantum eigensolver; an optimisation result, cited to contrast optimisation gains with the statistical comparison this study makes.",
+   "doi": "10.1103/PhysRevLett.122.140504",
+   "n_authors": null,
+   "pool_title": "Accelerated Variational Quantum Eigensolver",
+   "source": "crossref",
+   "title": "Accelerated Variational Quantum Eigensolver",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1103/PhysRevLett.122.140504",
+   "venue": "Physical Review Letters",
+   "year": 2019
+  },
+  {
+   "authors": "Hines, M., Carnevale, N.",
+   "authors_raw": [
+    "Hines, M.",
+    "Carnevale, N."
+   ],
+   "difference": "Describes a simulation environment for compartmental neuron models; a computational-neuroscience tool, cited only as an instance of the simulator-versus-model distinction our threats section draws.",
+   "doi": "10.1162/089976600300015475",
+   "n_authors": null,
+   "pool_title": "Expanding NEURON's Repertoire of Mechanisms with NMODL",
+   "source": "crossref",
+   "title": "Expanding NEURON's Repertoire of Mechanisms with NMODL",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1162/089976600300015475",
+   "venue": "Neural Computation",
+   "year": 2000
+  },
+  {
+   "authors": "Belkin, M., Niyogi, P.",
+   "authors_raw": [
+    "Belkin, Mikhail",
+    "Niyogi, Partha"
+   ],
+   "difference": "Introduces Laplacian eigenmaps; a spectral embedding whose graph-Laplacian operator is the classical object our closed-form rival's metric is built from.",
+   "doi": "10.1162/089976603321780317",
+   "n_authors": null,
+   "pool_title": "Laplacian Eigenmaps for Dimensionality Reduction and Data Representation",
+   "source": "crossref",
+   "title": "Laplacian Eigenmaps for Dimensionality Reduction and Data Representation",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1162/089976603321780317",
+   "venue": "Neural Computation",
+   "year": 2003
+  },
+  {
+   "authors": "J\u00f6reskog, K.",
+   "authors_raw": [
+    "J\u00f6reskog, K."
+   ],
+   "difference": "Develops confirmatory maximum-likelihood factor analysis; a latent-structure method, cited as an example of a model whose geometry is fixed by construction rather than fitted.",
+   "doi": "10.1007/BF02289343",
+   "n_authors": null,
+   "pool_title": "A General Approach to Confirmatory Maximum Likelihood Factor Analysis",
+   "source": "crossref",
+   "title": "A General Approach to Confirmatory Maximum Likelihood Factor Analysis",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/BF02289343",
+   "venue": "Psychometrika",
+   "year": 1969
+  },
+  {
+   "authors": "Krishnapuram, B. et al.",
+   "authors_raw": [
+    "Krishnapuram, B.",
+    "Carin, L.",
+    "Figueiredo, M.A.T.",
+    "Hartemink, A.J."
+   ],
+   "difference": "Gives sparse multinomial logistic regression with fast algorithms; a capacity-controlled classifier, cited for the envelope discipline our rival's grid imposes.",
+   "doi": "10.1109/TPAMI.2005.127",
+   "n_authors": null,
+   "pool_title": "Sparse multinomial logistic regression: fast algorithms and generalization bounds",
+   "source": "crossref",
+   "title": "Sparse Multinomial Logistic Regression: Fast Algorithms and Generalization Bounds",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/TPAMI.2005.127",
+   "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+   "year": 2005
+  },
+  {
+   "authors": "Xu, L. et al.",
+   "authors_raw": [
+    "Xu, Linli",
+    "Wilkinson, Dana",
+    "Southey, Finnegan",
+    "Schuurmans, Dale"
+   ],
+   "difference": "Learns structured predictors discriminatively and without labels; a semi-supervised construction, cited to delimit what our supervised comparison covers.",
+   "doi": "10.1145/1143844.1143977",
+   "n_authors": null,
+   "pool_title": "Discriminative unsupervised learning of structured predictors",
+   "source": "crossref",
+   "title": "Discriminative Unsupervised Learning of Structured Predictors",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1143844.1143977",
+   "venue": "Proceedings of the 23rd international conference on Machine learning - ICML '06",
+   "year": 2006
+  },
+  {
+   "authors": "Ritchie, A., Teufel, S., Robertson, S.",
+   "authors_raw": [
+    "Ritchie, Anna",
+    "Teufel, Simone",
+    "Robertson, Stephen"
+   ],
+   "difference": "Uses citation terms for information retrieval; a term-selection study, cited as the method this package's reference search does not use.",
+   "doi": "10.1007/978-3-540-78646-7_21",
+   "n_authors": null,
+   "pool_title": "Using Terms from Citations for IR: Some First Results",
+   "source": "crossref",
+   "title": "Using Terms from Citations for IR: Some First Results",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-3-540-78646-7_21",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 2008
+  },
+  {
+   "authors": "Sarkar, S., Augusiak, R.",
+   "authors_raw": [
+    "Sarkar, Shubhayan",
+    "Augusiak, Remigiusz"
+   ],
+   "difference": "Self-tests multipartite entangled states; a certification protocol for entanglement, cited as the kind of guarantee that a statistical advantage claim does not by itself carry.",
+   "doi": "10.1103/PhysRevA.105.032416",
+   "n_authors": null,
+   "pool_title": "Self-testing of multipartite Greenberger-Horne-Zeilinger states of arbitrary local dimension with arbitrary number of measurements per party",
+   "source": "crossref",
+   "title": "Self-Testing of Multipartite Greenberger-Horne-Zeilinger States of Arbitrary Local Dimension with Arbitrary Number of Measurements per Party",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1103/PhysRevA.105.032416",
+   "venue": "Physical Review A",
+   "year": 2022
+  },
+  {
+   "authors": "McArdle, S. et al.",
+   "authors_raw": [
+    "McArdle, Sam",
+    "Jones, Tyson",
+    "Endo, Suguru",
+    "Li, Ying",
+    "Benjamin, Simon",
+    "Yuan, Xiao"
+   ],
+   "difference": "Simulates imaginary-time evolution with a variational ansatz; a variational quantum algorithm, cited as background for the ansatz-based maps our grid does not use.",
+   "doi": "10.1038/s41534-019-0187-2",
+   "n_authors": null,
+   "pool_title": "Variational ansatz-based quantum simulation of imaginary time evolution",
+   "source": "crossref",
+   "title": "Variational Ansatz-Based Quantum Simulation of Imaginary Time Evolution",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/s41534-019-0187-2",
+   "venue": "npj Quantum Information",
+   "year": 2019
+  }
+ ],
+ "errors": [],
+ "n_arxiv": 125,
+ "n_doi": 44,
+ "n_entries": 169,
+ "round": "R404"
+}

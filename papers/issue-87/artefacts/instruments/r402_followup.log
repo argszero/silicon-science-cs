@@ -1,0 +1,30 @@
+====================================================================================================
+R402 FOLLOW-UP (post-run; R1 repairs a mis-specified pre-registered comparison)
+====================================================================================================
+-- R2 finiteness: 0 non-finite values in 24 cells -> CLEAN
+
+-- R1 unit of randomness, corrected: r = sd_stream / (sigma_draw / sqrt(6)), iid benchmark r = 1 -----
+   q = 6: median r = 1.467  min 0.948  max 2.961  |  r > 1.2 in 21 of 24 cells  |  r < 0.8 in 0
+   q = 8: median r = 0.427  min 0.147  max 0.853  |  r > 1.2 in 0 of 24 cells  |  r < 0.8 in 23
+   (r ~ 1 means the stream is no more variable than the draws it averages -- the draw spread already
+    owns the sampling uncertainty; r >> 1 would mean stream-level variation is missing from it)
+
+-- R3 which cells the quantum kernel leads (delta < 0), per stream ---------------------------------
+   q = 6: counts [10, 12, 12, 12, 12]  |  identical set across all 5 streams: False
+      stable core 10: ['shifted|0.1|a=+1', 'shifted|0.1|a=-1', 'shifted|3|a=+1', 'shifted|3|a=-1', 'unshifted|0.1|a=+1', 'unshifted|0.1|a=-1', 'unshifted|0.25|a=+1', 'unshifted|0.25|a=-1', 'unshifted|3|a=+1', 'unshifted|3|a=-1']
+      contested 2: ['unshifted|0.5|a=+1', 'unshifted|0.5|a=-1']
+   q = 8: counts [6, 6, 6, 6, 6]  |  identical set across all 5 streams: True
+      set: ['shifted|3|a=+1', 'shifted|3|a=-1', 'unshifted|0.1|a=+1', 'unshifted|0.1|a=-1', 'unshifted|3|a=+1', 'unshifted|3|a=-1']
+
+-- R4 the q = 6 panel mean vs R398's committed independent stream ----------------------------------
+   |panel mean - R398| : median 0.0055  max 0.0211  |  over the panel's own sd: median 0.98  max 2.27
+   worst cell: unshifted|2|a=+1  panel +0.4402 +/- 0.0145  R398 +0.4192
+   cells where two independent realisations differ by more than 3 panel-sd: 0 []
+
+-- R5 is the q-effect a uniform compression toward zero? -------------------------------------------
+   structure cells (|mean6| >= 0.10, n = 8): ratio q8/q6 -- min 0.573 max 0.790 mean 0.689
+      shifted|0.5|a=+1       +0.4314 -> +0.3366   ratio 0.780
+      shifted|0.5|a=-1       +0.4264 -> +0.3370   ratio 0.790
+      shifted|1|a=+1         +0.4546 -> +0.2791   ratio 0.614
+      shifted|1|a=-1         +0.4550 -> +0.2785   ratio 0.612
+      unshifted|1|a=+1       +0.4158 -> +0.3216   ratio 0.773

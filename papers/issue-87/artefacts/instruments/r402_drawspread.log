@@ -1,0 +1,40 @@
+====================================================================================================
+R402 ADDENDUM -- the draw spread at a MATCHED qubit count (2 of the 5 panel streams)
+====================================================================================================
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+   stream 1 (SEED_T0 = 1100003) q = 6: 24 cells, mean draw sd 0.01924
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: divide by zero encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: overflow encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: invalid value encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: divide by zero encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: overflow encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: invalid value encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+   stream 1 (SEED_T0 = 1100003) q = 8: 24 cells, mean draw sd 0.00510
+   stream 2 (SEED_T0 = 1210007) q = 6: 24 cells, mean draw sd 0.01889
+   stream 2 (SEED_T0 = 1210007) q = 8: 24 cells, mean draw sd 0.00486
+   harvested R401's committed q = 8 draw spreads (24 cells)
+
+-- q = 6: mean draw sd 0.01906 (over 24 cells x 2 readings) | ratio r = sd_stream / (sd_draw / sqrt(6))
+   median 0.996  min 0.643  max 2.402  |  r > 1.2 in 3 of 24  |  r < 0.8 in 5
+
+-- q = 8: mean draw sd 0.00504 (over 24 cells x 3 readings) | ratio r = sd_stream / (sd_draw / sqrt(6))
+   median 1.061  min 0.310  max 2.370  |  r > 1.2 in 7 of 24  |  r < 0.8 in 8
+
+   written to r402_drawspread_results.json

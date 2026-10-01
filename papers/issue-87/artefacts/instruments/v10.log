@@ -1,0 +1,67 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+====================================================================================================
+ISSUE #87 -- R396: was the PIT audit VALID?  plug-in parameters vs a PREDICTIVE null
+====================================================================================================
+E1 identity: R395 reported KS=0.1903, recomputed 0.1903  match=True
+
+-- E2 the AUDIT'S OWN reference distribution (simulated under a known truth) ---------------
+   truth=fitted  plug-in PIT KS: median 0.067 p90 0.111 | predictive PIT KS: median 0.062 p90 0.098
+   truth=normal  plug-in PIT KS: median 0.054 p90 0.083 | predictive PIT KS: median 0.063 p90 0.099
+   truth=heavy   plug-in PIT KS: median 0.086 p90 0.124 | predictive PIT KS: median 0.067 p90 0.098
+   observed plug-in KS = 0.1903  (R395 read this as 'the shape is wrong')
+   location error of a 40-draw fit, in bandwidth sigmas: median 0.241 p90 0.514 max 0.941
+
+-- E3 the PREDICTIVE null (estimation error propagated) on the REAL draws ------------------
+   PIT of the 240 validation cells under it: KS=0.1402 mean=0.5393  frac<0.05=0.0208 frac>0.95=0.0500
+   rank of that KS inside the simulated reference: 0.99
+
+-- E3c which source produces the PIT failure (shifted convention) ----------------------
+   (a) everything from calibration (as R395 did) : KS 0.2552  mean PIT 0.6422
+   (b) location+scale refit on validation       : KS 0.0563  mean PIT 0.5009
+   (c) shape refit on validation too            : KS 0.0578  mean PIT 0.5005
+   shape fitted on validation draws: eps=-0.2108 delta=0.9419
+
+-- E6 is the difference between the two seed blocks real?  (40-draw vs 20-draw dispersion) --
+   observed   cal(40) vs val(20): median 1.44  frac>1 0.92  sign-test p=0.006  log-sd 0.201
+   split-half cal(20) vs cal(20): median 0.86  frac>1 0.17  sign-test p=0.039  log-sd 0.184
+   synthetic 40 vs 20 from the fitted null itself: median 1.02  frac>1 0.53  sign-test p=0.000
+
+-- E4b the predictive null must still FIRE ----------------------------------------------
+   shift 1.0 sigma_pred -> 48/240 declared (0.200) Wilson95 [0.154,0.255]
+   shift 2.0 sigma_pred -> 163/240 declared (0.679) Wilson95 [0.618,0.735]
+   shift 3.0 sigma_pred -> 232/240 declared (0.967) Wilson95 [0.936,0.983]
+   shift 5.0 sigma_pred -> 240/240 declared (1.000) Wilson95 [0.984,1.000]
+
+-- E4/E5 sizes and shapes ------------------------------------------------------------------
+   size on 240 independent null cells: plug-in 0.0333 | predictive 0.0208
+   shifted   pooled shape eps=-0.2511 delta=1.0118 (n=240)
+   unshifted pooled shape eps=-0.1926 delta=0.8705 (n=240)
+
+-- the real read --------------------------------------------------------------------------
+   plug-in    declared 28 (11 leads) | predictive declared 24 (9 leads)
+     shifted|alpha=1    gamma=0.50 delta +0.3911 p=0.0010 q=0.0022 loss
+     shifted|alpha=1    gamma=1.00 delta +0.4289 p=0.0010 q=0.0022 loss
+     shifted|alpha=1    gamma=3.00 delta -0.0528 p=0.0010 q=0.0022 lead
+     shifted|alpha=0    gamma=1.00 delta -0.1676 p=0.0010 q=0.0022 lead
+     shifted|alpha=0    gamma=2.00 delta -0.2754 p=0.0010 q=0.0022 lead
+     shifted|alpha=0    gamma=3.00 delta +0.3671 p=0.0010 q=0.0022 loss
+     shifted|alpha=-1   gamma=0.50 delta +0.4070 p=0.0010 q=0.0022 loss
+     shifted|alpha=-1   gamma=1.00 delta +0.4464 p=0.0010 q=0.0022 loss
+     shifted|alpha=-1   gamma=3.00 delta -0.0664 p=0.0010 q=0.0022 lead
+     unshifted|alpha=1  gamma=1.00 delta +0.3871 p=0.0010 q=0.0022 loss
+     unshifted|alpha=1  gamma=2.00 delta +0.4325 p=0.0010 q=0.0022 loss
+     unshifted|alpha=1  gamma=3.00 delta -0.0673 p=0.0010 q=0.0022 lead
+
+   report sha256 = 747504d5e9b89bcb18c2a5dc3ff2fdb7910597b42f8947db46bb37965d7576f2
+   written to smoke_v10_results.json
