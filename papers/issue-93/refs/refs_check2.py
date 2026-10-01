@@ -271,7 +271,10 @@ def check_notes(rep, anc, cla, n_checks, n_muts):
     import cite_check                                                     # noqa: E402
     kman = cite_check.load_keys()
     texts_ = [(os.path.basename(q), io.open(q, encoding="utf-8").read()) for q in cite_check.PARTS]
-    order_, occ_ = cite_check.scan(texts_)
+    # The product cites the number the bibliography prints; the index resolves it.  Without it the citation line
+    # reads `0 citations, 0 distinct keys` on the shipped package (R481).
+    idx_, _un_ = cite_check.num_index(texts_, kman)
+    order_, occ_ = cite_check.scan(texts_, idx_)
     read(r"(\d+) citations, (\d+) distinct keys of (\d+) built records",
          (len(occ_), len([k for k in order_ if k in kman]), len(kman)),
          "manuscript citation line read by %s" % os.path.relpath(cite_check.__file__, os.path.dirname(HERE)))

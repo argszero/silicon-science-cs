@@ -93,7 +93,12 @@ need "citations" "$out" 'citations [0-9]+ \| distinct keys [0-9]+ of [0-9]+ buil
 need "citations" "$out" 'unknown keys 0' 'a clean resolution'
 need "citations" "$out" 'MALFORMED +citation-shaped token\(s\) outside a well-formed bracket: 0' 'a clean malformed limb'
 need "citations" "$out" 'uncited records 0 of [0-9]+' 'zero uncited records'
-need "citations" "$out" 'renamed \[@[a-z0-9]+\] -> caught' 'the rename mutation'
+# The in-text key IS the key the bibliography prints (quality-bar item 11, *Citation mechanics*).  The package
+# shipped `[@key]` tokens beside a `[1]`-`[120]` list until R481 -- every check here read the parts, and the
+# journal's refgate read `covered=1/120` on the product (measured at d77e974) -- so the read is required here.
+need "citations" "$out" 'IN-TEXT KEY numeric, resolved through the product.s own bibliography -- entries keyed 120 of 120' 'the in-text key read'
+need "citations" "$out" '(renamed \[@[a-z0-9]+\]|broke \[[0-9]+\]) -> caught' 'the resolution plant'
+need "citations" "$out" 'coverage limb live' 'the coverage plant'
 say "citations" "$(printf '%s' "$out" | grep -E 'citations [0-9]+' | head -1)"
 
 # ---- 8. the counts the manuscript states are the counts this run produced -----------------------------------------

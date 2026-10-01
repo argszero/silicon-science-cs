@@ -39,6 +39,7 @@ BUILT = os.path.join(HERE, "refs_built.json")
 KEYS = os.path.join(HERE, "refs_keys.json")
 MD = os.path.join(ROOT, "reference-check.md")
 JSON = os.path.join(ROOT, "reference-check.json")
+GATE = os.path.join(HERE, "refgate_output.txt")
 UA = "emrg-journal-refcheck/1.0 (silicon-science-cs submission)"
 THRESH = 0.80          # normalized title token overlap below this is a MISMATCH
 
@@ -136,7 +137,11 @@ def citation_order(keys):
                 sys.path.insert(0, cand)
             import cite_check
             texts = [(os.path.basename(p), io.open(p, encoding="utf-8").read()) for p in cite_check.PARTS]
-            order, _occ = cite_check.scan(texts)
+            # The carrier decides the form: the parts cite `[@key]`, the product cites the number the bibliography
+            # prints, and the index is what lets the second be read as the first.  Read without it, this returned
+            # an EMPTY order on the product and C6 failed against the report's own 120 rows (R481).
+            index, _un = cite_check.num_index(texts, keys)
+            order, _occ = cite_check.scan(texts, index)
             return [k for k in order if k in keys]
     return sorted(keys)
 
@@ -200,7 +205,29 @@ def query():
     return 0 if obj["n_mismatch"] == 0 and obj["n_unverified"] == 0 else 1
 
 
-def render(obj):
+def gate_file():
+    """The journal's own reference gate (`refgate.py`), run from the repository root over this package, kept as the
+    output it printed -- verbatim, at the head it was run on.  It is quoted because it cannot be re-run here (the
+    tool lives in the journal, not in the package), and a quote of an instrument is a claim about the package like
+    any other: the count, the coverage and the verdict line are re-read by `checks()` rather than trusted."""
+    return io.open(GATE, encoding="utf-8").read() if os.path.exists(GATE) else ""
+
+
+def gate_reading(text):
+    """The claims the quoted output makes, read out of it."""
+    ent = re.search(r"entries=(\d+)", text)
+    cov = re.search(r"coverage=([0-9.]+)%", text)
+    amb = re.search(r"AMBIGUOUS: bracket numbers matching no entry \((\d+)\)([^\n]*)", text)
+    lines = [l.strip() for l in text.strip().split("\n") if l.strip()]
+    return dict(entries=int(ent.group(1)) if ent else None,
+                coverage=float(cov.group(1)) if cov else None,
+                ambiguous=re.findall(r"\[(\d+)\]", amb.group(2)) if amb else [],
+                verdict=lines[-1] if lines else "")
+
+
+def render(obj, gate=None):
+    if gate is None:
+        gate = gate_file()
     L = ["# Reference authenticity report -- issue #93", "",
          "Every reference in `manuscript.md` was checked against a real external record: a DOI through Crossref, an",
          "arXiv key through the arXiv API. The method, the record found and the title agreement are recorded per",
@@ -235,6 +262,32 @@ def render(obj):
             L.append(">")
             L.append("> %s" % r["detail"])
         L.append("")
+    g = gate_reading(gate)
+    L.append("## In-text keys, coverage and ambiguity")
+    L.append("")
+    L.append("Every entry carries an in-text key matching the bibliography: the body cites `[n]` and the list is")
+    L.append("numbered `[n]`, so the key in the text IS the key the list prints (quality-bar item 11,")
+    L.append("*Citation mechanics*) -- `python3 cite_check.py` reads `citations 210 | distinct keys 120 of 120` and")
+    L.append("`uncited records 0 of 120`, and it resolves each `[n]` through this package's own numbered list rather")
+    L.append("than through the parts, which cite by key.")
+    L.append("")
+    if g["ambiguous"]:
+        L.append("Bracketed groups in the prose that are NOT citations: the gate reports %d bracket number(s)"
+                 % len(g["ambiguous"]))
+        L.append("matching no entry -- %s. These are the model's interval `[0, 1]` (§1.3 and §5.3), where the ratio's"
+                 % ", ".join("`[%s]`" % b for b in g["ambiguous"]))
+        L.append("predicted crossing is said to lie outside it: a numeric range in prose, written in inline code,")
+        L.append("not a citation. Its second element is entry [1] and no entry is left uncited by the reading.")
+    else:
+        L.append("Bracketed groups in the prose that are NOT citations: none -- the gate reports no bracket number")
+        L.append("matching no entry.")
+    L.append("")
+    L.append("## Journal reference gate (`refgate.py`, run from the repository root)")
+    L.append("")
+    L.append("```text")
+    L.extend(gate.rstrip("\n").split("\n"))
+    L.append("```")
+    L.append("")
     L.append("## Verdict")
     L.append("")
     L.append("**%d of %d references verified against a real external record; %d mismatch; %d unverified.**"
@@ -245,8 +298,10 @@ def render(obj):
     return "\n".join(L) + "\n"
 
 
-def checks(obj, recs, md_text, order, built_count):
+def checks(obj, recs, md_text, order, built_count, gate=None):
     """Every property the report claims, read back.  Returns (rows, failures)."""
+    if gate is None:
+        gate = gate_file()
     rows, bad = [], []
     by = {r["key"]: r for r in obj["rows"]}
     keys = list(recs)
@@ -298,6 +353,19 @@ def checks(obj, recs, md_text, order, built_count):
         "%s" % (wrong[:4] or "none"))
     add("C11-volume-bar-and-its-two-carriers", len(obj["rows"]) >= 100 and built_count == len(obj["rows"]),
         "%d reference(s) (bar 100); refs_built.json holds %d" % (len(obj["rows"]), built_count))
+    # The journal's own gate, quoted in this report.  A quote of an instrument's output is a claim about the
+    # package, so its count, its coverage and its verdict are read here and required to agree with this report's
+    # own numbers -- and the brackets it flags are required to be the brackets the ambiguity paragraph explains,
+    # because a generic "some brackets are ranges" would leave the one the gate named unread (Class 118).
+    g = gate_reading(gate)
+    add("C13-the-quoted-journal-gate-re-read",
+        bool(gate) and g["entries"] == len(obj["rows"]) and g["coverage"] == 100.0 and g["verdict"] == "GATE: PASS",
+        "quoted gate: entries=%s coverage=%s%% verdict=%r against this report's %d entries"
+        % (g["entries"], g["coverage"], g["verdict"], len(obj["rows"])))
+    body = md_text.split("## Journal reference gate")[0]
+    unexplained = [b for b in g["ambiguous"] if ("`[%s]`" % b) not in body]
+    add("C14-every-bracket-the-gate-flags-is-explained", bool(gate) and not unexplained,
+        "bracket number(s) the gate flagged and the report does not name: %s" % (unexplained or "none"))
     return rows, bad
 
 
@@ -340,23 +408,39 @@ def main():
              lambda o: None, "C8-md-is-the-rendering-of-json"),
             ("a table entry renamed away from the built count is caught",
              lambda o: None, "C11-volume-bar"),
+            ("a quoted gate whose count disagrees with the report is caught",
+             lambda o: None, "C13-the-quoted-journal-gate", "gate_entries"),
+            ("a bracket the gate flags and the report does not name is caught",
+             lambda o: None, "C14-every-bracket-the-gate-flags", "gate_bracket"),
         ]
         fired = 0
         for case in cases:
             name, mutate, expect = case[0], case[1], case[2]
-            keep_md = len(case) > 3
+            mode = case[3] if len(case) > 3 else ""
             o = copy.deepcopy(obj)
             mutate(o)
+            g = gate_file()
             if expect.startswith("C8"):
                 md2 = md_text.replace("## Verdict", "## Verdict (stale)")
-            elif keep_md:
+            elif mode == "gate_entries":
+                # The plant is in the QUOTED OUTPUT's own alphabet: the gate is made to claim one entry fewer than
+                # the report it is quoted beside, and the report is re-rendered from the mutated quote so that
+                # item C13 -- not the .md's staleness -- is what fires.
+                g = g.replace("entries=%d" % len(obj["rows"]), "entries=%d" % (len(obj["rows"]) - 1))
+                md2 = render(o, g)
+            elif mode == "gate_bracket":
+                # The rendering stays the one made from the UNMUTATED quote: a plant re-rendered from its own
+                # mutation would write its own explanation and satisfy itself (the Class 118 family).
+                g = g.replace("matching no entry (1) [", "matching no entry (2) [7] [")
+                md2 = md_text
+            elif mode == "keep_md":
                 # The rendering must be the one from BEFORE the mutation: re-rendering the mutated object would
                 # let the plant satisfy itself -- the plant's whole point is a .json the .md does not carry.
                 md2 = md_text
             else:
-                md2 = render(o)
+                md2 = render(o, g)
             bc = built_count - 1 if expect.startswith("C11") else built_count
-            _r, b2 = checks(o, recs, md2, order, bc)
+            _r, b2 = checks(o, recs, md2, order, bc, g)
             hit = any(x.startswith(expect) for x in b2)
             print("  %-58s %s" % (name[:58], "caught" if hit else "MISSED"))
             fired += 1 if hit else 0

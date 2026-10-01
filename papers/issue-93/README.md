@@ -12,7 +12,7 @@ ground truth by construction, plus instruments that enumerate it).
 bash reproduce.sh
 ```
 
-Expected output (the transcript of a run on the declared build, 2026-09-22):
+Expected output (the transcript of a run on the declared build, 2026-10-01):
 
 ```
 == #93 reproduction ==
@@ -25,7 +25,7 @@ outcomes       OUTCOME CHECK BATTERY -- 24 case(s), 24 caught
 section 5      SECTION 5 NUMBERS: PASS -- 52 claim(s), 0 missing
   batteries    BATTERY: 52 of 52 claim(s) fired when every token stating them was removed
 references     stage 1: 24 checks, 0 failed | stage 2: 15/15 PASS with 22/22 mutations caught | stage 3: 8/8 PASS, 19-case battery
-authenticity   REFERENCE CHECK: PASS -- 12 check(s), 0 failed | BATTERY: 9 of 9 case(s) fired
+authenticity   REFERENCE CHECK: PASS -- 14 check(s), 0 failed | BATTERY: 11 of 11 case(s) fired
 citations      the product manuscript.md | citations 210 | distinct keys 120 of 120 built records
 counts         the manuscript states the run's citation count (210 citations)
 counts         the manuscript states the run's §5 claim count (52 claim)
@@ -33,8 +33,8 @@ counts         the manuscript states the built-record count (120 distinct keys o
 counts         the manuscript states the authenticity count (120 of 120 verified)
 figures        CURRENT -- fig1_sign_law_and_cost_ratio.png is byte-identical to a fresh draw (sha256 87b55876492a8e93)
 links          LINK CHECK: PASS -- 1 link(s), 1 local, 0 broken | BATTERY: 4 of 4 case(s) fired
-bar            SUBMISSION CHECK: PASS -- 17 item(s), 0 failed, 2 declared | BATTERY: 8 of 8 case(s) fired
-product        manuscript.md 129968 bytes, sha256 c8dc3b99a8cfe2c5
+bar            SUBMISSION CHECK: PASS -- 18 item(s), 0 failed, 2 declared | BATTERY: 8 of 8 case(s) fired
+product        manuscript.md 128038 bytes, sha256 d7098b823bd6880c
 
 REPRODUCE: ALL GREEN
 ```
@@ -79,13 +79,14 @@ unreadable input, a missing artefact or a raised guard stops the step with `FAIL
 | `v0_battery.py` … `v6_battery.py` | one plant per guard, with a plant that reaches no guard reported as *inert* |
 | `outcome_check.py` | reads the registered priors' rows back from the instruments and scans the prose for numbers no quantity computes |
 | `verify_s5.py` | recomputes every number in Section 5 from the instrument that owns it, and plants a claim's carriers |
-| `cite_check.py` | resolves every in-text citation key, counts citations, and fails on a citation-shaped token no well-formed bracket consumes |
+| `cite_check.py` | resolves every in-text citation key — `[@key]` in the working tree's parts, the bibliography's `[n]` in the shipped product, through the product's own numbered list — counts citations, and fails on a citation-shaped token no well-formed bracket consumes |
 | `refs/reference_check.py` | the citation authenticity report: `--query` asks Crossref/arXiv about every entry, the default mode re-reads the committed answers offline and refuses a report that drifted from them |
 | `reference-check.md` + `.json` | the report (one block per entry, in citation order) and the raw answers it is rendered from |
 | `figures/make_figures.py` | draws Figure 1 from the instruments; `--check` refuses a PNG that is not what this run draws |
 | `check_links.py` | every link and image in `manuscript.md` resolves at the product's own base |
-| `submission_check.py` | the journal's submission bar (13 items + the presentation bar), read rather than asserted — it reports `CHECKS` vs `DECLARED` and fails the rest |
+| `submission_check.py` | the journal's submission bar (13 items + the presentation bar + the in-text key form), read rather than asserted — it reports `CHECKS` vs `DECLARED` and fails the rest |
 | `refs/` | the reference pipeline: selection, three check stages (24 / 15+22 / 8+19), the built records and the harvest log |
+| `refs/refgate_output.txt` | the journal's own reference gate (`refgate.py`) run from the repository root over `manuscript.md`, kept verbatim; `reference-check.md` quotes it and re-reads its count, coverage and verdict |
 | `outcomes.md`, `registration_priors.md`, `heilmeier.md` | the registered priors, the per-prior outcome rows, and the direction's Heilmeier answers |
 | `reproduce.sh` | the command above |
 
@@ -102,6 +103,16 @@ the wrong field on its first run and verified **0 of 120 while printing a clean 
 plants were misaimed rather than the check being wrong, and its own verdict was being read from a summary counter
 instead of the rows.
 
+**The citation form itself was the third repair, and no check in this package could see it.** The manuscript was
+submitted at `d77e974` with the body citing `[@key]` and the bibliography numbered `[1]`–`[120]`; the journal's own
+gate read `covered=1/120 coverage=0.8% GATE: FAIL`, while `cite_check.py` and bar item 13 both read
+`120 cited, 0 uncited` — because every limb here read the *parts* (which cite by key) and none read the product's
+own in-text keys. That is the Class 119 shape: the check's object was not the object the rule names. The repair is
+in three places, all of them reading the product's own numbered list: `research/assemble.py` renders `[@key]` into
+`[n]`, `cite_check.py` resolves a numeric key through the bibliography the product carries (an entry is keyed by its
+link, and an entry whose link names no record is returned as unresolved rather than skipped), and bar item
+`B13b-in-text-key-form` fails the package if those two ever disagree again.
+
 ## What the bar items are
 
 `submission_check.py` answers the journal's submission quality bar item by item, and `reproduce.sh` runs it last so
@@ -113,14 +124,31 @@ verified).
 ## References
 
 The citation-volume bar is 100; this manuscript carries 120 records and cites all of them in the body
-(`uncited records 0 of 120`), numbered `[1]`–`[120]` in first-citation order. `reference-check.md` is the
-authenticity report — one block per entry: the manuscript's title, the method, the record found, and the title
-agreement — and it reads **120 of 120 verified, 0 mismatch, 0 unverified** (46 queries to Crossref, 74 to the arXiv
-API, batched). Regenerate its network half with:
+(`uncited records 0 of 120`), numbered `[1]`–`[120]` in first-citation order. **The body cites the key the
+bibliography prints**: each in-text key is the entry's `[n]`, so coverage is a property of the text (item 11,
+*Citation mechanics* — a work cited by name or by bare arXiv id does not discharge coverage). The parts, from which
+the product is assembled, cite `[@key]` instead; `research/assemble.py` renders them into `[n]` at the one place the
+numbering is derived.
+
+The journal's own gate reads the product from the repository root:
+
+```bash
+python3 .github/tools/refgate.py papers/issue-93/manuscript.md   # entries=120, covered=120/120, coverage=100.0%
+```
+
+Its output is committed at `refs/refgate_output.txt` and quoted in `reference-check.md`, whose check
+`C13-the-quoted-journal-gate-re-read` re-reads the count, the coverage and the verdict line against this report's
+own 120 rows rather than trusting the quote. The gate's one `AMBIGUOUS` line (`[0]`, from the model's interval
+`[0, 1]` in §1.3 and §5.3) is answered in that report's *In-text keys, coverage and ambiguity* section, and
+`C14-every-bracket-the-gate-flags-is-explained` requires the answer to name the bracket the gate named.
+
+`reference-check.md` is the authenticity report — one block per entry: the manuscript's title, the method, the
+record found, and the title agreement — and it reads **120 of 120 verified, 0 mismatch, 0 unverified** (46 queries
+to Crossref, 74 to the arXiv API, batched). Regenerate its network half with:
 
 ```bash
 python3 refs/reference_check.py --query     # writes reference-check.json + reference-check.md
-python3 refs/reference_check.py --selftest  # 12 checks + a 9-case battery, offline
+python3 refs/reference_check.py --selftest  # 14 checks + an 11-case battery, offline
 ```
 
 `refs/` is the pipeline the bibliography is derived from (`refs_check*.py`: 24 checks, 15+22 mutations, 8+19

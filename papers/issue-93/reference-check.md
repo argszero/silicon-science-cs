@@ -985,6 +985,33 @@ offline and refuses a report that has drifted from them.
 >
 > query: 10.1177/2053951716679679; DOI 10.1177/2053951716679679; Big Data &amp; Society; year 2016 (manuscript: 2016)
 
+## In-text keys, coverage and ambiguity
+
+Every entry carries an in-text key matching the bibliography: the body cites `[n]` and the list is
+numbered `[n]`, so the key in the text IS the key the list prints (quality-bar item 11,
+*Citation mechanics*) -- `python3 cite_check.py` reads `citations 210 | distinct keys 120 of 120` and
+`uncited records 0 of 120`, and it resolves each `[n]` through this package's own numbered list rather
+than through the parts, which cite by key.
+
+Bracketed groups in the prose that are NOT citations: the gate reports 1 bracket number(s)
+matching no entry -- `[0]`. These are the model's interval `[0, 1]` (§1.3 and §5.3), where the ratio's
+predicted crossing is said to lie outside it: a numeric range in prose, written in inline code,
+not a citation. Its second element is entry [1] and no entry is left uncited by the reading.
+
+## Journal reference gate (`refgate.py`, run from the repository root)
+
+```text
+=== papers/issue-93/manuscript.md
+  window: the last `## References` heading (line 1074) to the end of the file (line 1314)
+          — its numbered lines are read as entries
+  entries=120  numbering=[n]
+  block form: 120 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 120/120 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 1 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=121  covered=120/120  coverage=100.0%
+  AMBIGUOUS: bracket numbers matching no entry (1) [0] — could be numeric ranges in prose, or a missing entry; verify manually (reference-check.md)
+  GATE: PASS
+```
+
 ## Verdict
 
 **120 of 120 references verified against a real external record; 0 mismatch; 0 unverified.**

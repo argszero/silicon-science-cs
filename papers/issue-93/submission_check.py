@@ -195,12 +195,24 @@ def check_all(root=ROOT):
 
     # ---- 13 >=100 references, all cited -------------------------------------------------------------------------
     cc = cite_module(root)
-    uncited = []
+    uncited, index, un_entries, nkeyed = [], {}, [], 0
     if cc is not None:
-        order, _occ = cc.scan([(os.path.basename(p), read(p)) for p in cc.PARTS])
+        texts = [(os.path.basename(p), read(p)) for p in cc.PARTS]
+        index, un_entries = cc.num_index(texts, cc.load_keys())
+        order, _occ = cc.scan(texts, index)
+        nkeyed = len(order)
         uncited = [k for k in cc.load_keys() if k not in set(order)]
     add("B13-refs-volume-and-coverage", bool(keys and len(keys) >= 100 and not uncited),
         "%d reference(s) (bar 100); %d cited, %d uncited" % (len(keys), len(keys) - len(uncited), len(uncited)))
+    # ---- 13b the in-text key IS the key the bibliography prints ---------------------------------------------------
+    # Item 11's *Citation mechanics*: every entry carries an in-text key matching the bibliography, and a work cited
+    # by name or by bare arXiv id does not discharge coverage.  Nothing here read that property until R481: every
+    # limb of this package read the PARTS, which cite `[@key]`, so the product shipped `[@key]` tokens beside a
+    # `[1]`-`[120]` list, `refgate.py` read `covered=1/120`, and this bar read green (measured 2026-10-01 at
+    # `d77e974`).  The item is read over the PRODUCT, and the key it resolves is the one the product prints.
+    add("B13b-in-text-key-form", bool(index) and not un_entries and nkeyed == len(keys),
+        "in-text keys resolve through the product's own numbered bibliography: %d of %d entries keyed, %d entry(ies) "
+        "with no record, %d key(s) cited" % (len(index), len(keys), len(un_entries), nkeyed))
 
     # ---- P1 reference entries in the house order ----------------------------------------------------------------
     refs_txt = product[product.find("## References"):] if "## References" in product else ""

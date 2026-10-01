@@ -4,11 +4,10 @@
 
 ## Abstract
 
-A human approval gate is the most widely deployed control in production agent security [@wang2026], and it is
+A human approval gate is the most widely deployed control in production agent security [1], and it is
 justified by an argument that treats it as a pure screening channel: a gate can only add a rejection
-opportunity, so more escalation and a more accurate reviewer can only reduce harm [@irshad2026;@kumar2026;
-@surapani2026]. That argument ignores the second channel a gate opens. An approval is an *authorization
-artifact*: it is meaningful only if the object the human reviews is the object that executes [@kumar2026], and
+opportunity, so more escalation and a more accurate reviewer can only reduce harm [2,3,4]. That argument ignores the second channel a gate opens. An approval is an *authorization
+artifact*: it is meaningful only if the object the human reviews is the object that executes [3], and
 when it is not, the gate does not merely fail to screen — it converts an action the surrounding policy would
 have blocked into an authorized one. We call this the **laundering channel**, and we build a controlled,
 fully enumerated approval-gate harness with ground truth by construction to price it. The contribution is a **new
@@ -16,7 +15,7 @@ construct and a theory instrument for it** — binding fidelity, separated from 
 that makes their trade-off decidable — not another cross-sectional measurement of a domain. The harness carries six designs — a
 measured no-gate baseline and **five** gated ones with their structural repairs — three channel-defect classes (a display defect, a substitution
 visible in the reviewed object, a substitution invisible in it), and an exact no-gate baseline; every
-parameter is anchored to a published measurement rather than chosen [@sun2026;@alpay2026;@irshad2026]. Its
+parameter is anchored to a published measurement rather than chosen [2,5,6]. Its
 falsifiable claim is a boundary: the gate's net value changes sign at a **binding-fidelity threshold**, and on
 the studied grid a gate can be worth **less than no gate at all** — 20 of 35 (cell, design) readings, in all 7
 of 7 cells and in all five gated designs, with the weakest instance still 0.0868 of the no-gate loss on the
@@ -38,37 +37,36 @@ decision point, a rejection can only remove a harmful execution, so a gate **can
 a better reviewer is strictly better. That argument is why runtime approval appears in most surveyed
 production agent systems, why it is the mechanism the recent designs treat as the final boundary, and why the
 engineering effort goes into the reviewer: decoding-time verification, review interfaces, model-side alignment
-[@wang2026;@surapani2026;@irshad2026]. It is also why the attacks that break the gate are reported as attacks
-— an existence claim — rather than as a change in the gate's expected value [@kumar2026;@li2026;@shraga2026].
+[1,2,4]. It is also why the attacks that break the gate are reported as attacks
+— an existence claim — rather than as a change in the gate's expected value [3,7,8].
 
 The argument has a hole, and it is not the reviewer. An approval is not a verdict on the world; it is an
 **authorization artifact** on an operation. "Approved" authorizes *that* object, and the whole point of the
 authorization is that the object reviewed is the object executed. Where they differ, the approval does not
 silently fail — it **transfers authority to the executed object**, because the surrounding system reads the
 approval, not the human's intent. This is the confused-deputy structure in its modern dress
-[@hardy1988;@dennis1983;@lampson1973]: authority flows through an artifact, and an artifact that does not
+[9,10,11]: authority flows through an artifact, and an artifact that does not
 denote its action authorizes what the policy would otherwise have stopped. We call the resulting mechanism
 the **laundering channel**, and it is what makes a gate's value able to be *negative* rather than merely
 small.
 
 The gap this paper addresses is therefore narrow and concrete: the field has attacks that show binding fails
-[@kumar2026], designs that show it can be enforced [@irshad2026;@katkar2026;@qi2026], and audits reporting one
-system's rate [@alpay2026], but **no criterion** for when a gate pays and no boundary on the axis that
+[3], designs that show it can be enforced [2,12,13], and audits reporting one
+system's rate [6], but **no criterion** for when a gate pays and no boundary on the axis that
 decides it. The closest published statement that the reviewer's *accuracy* is the wrong axis concerns a
-different mechanism entirely — the accuracy of step-scoped monitors under composition [@kurady2026] — and the
+different mechanism entirely — the accuracy of step-scoped monitors under composition [14] — and the
 closest decision-theoretic work derives a delegation policy under uncertainty with the channel assumed
-faithful [@dixon2026], which is precisely the assumption we vary.
+faithful [15], which is precisely the assumption we vary.
 
 ### 1.2 The construct: binding fidelity, separated from reviewer accuracy
 
 We separate two quantities that the deployed argument fuses.
 
 **Reviewer accuracy** `a` is the reviewer's probability of rejecting a harmful operation *given that it is
-escalated* — the classical screening parameter, with its own literature [@hanley1982;@metz1978;@swets1973;
-@parasuraman1997]. **Binding fidelity** `b` is the probability that the object the reviewer decides on is the
+escalated* — the classical screening parameter, with its own literature [16,17,18,19]. **Binding fidelity** `b` is the probability that the object the reviewer decides on is the
 object that executes. Measured evidence puts `b` far from 1 in ordinary pipelines: over 1,296 controlled
 episodes, a normal handoff transform deactivates binding state in **100.0%** of them, with 54.2% downstream
-forbidden actions [@sun2026].
+forbidden actions [5].
 
 The two are not interchangeable, because the channel's defects are not one class. We partition them exactly:
 
@@ -111,7 +109,7 @@ Three readings organize the paper, and each is a statement about a *boundary* ra
 4. **Which axis pays is decided by the reviewer's own margin.** Measured as the registered ratio of marginal
    losses `(dE/da)/(dE/db)`: it reaches 1 — the fidelity at which accuracy and binding pay equally — at
    `b = a - f` for a channel that misrepresents (**0.750000** measured against **0.750000** predicted, the
-   reviewer's Youden index [@youden1950]), and **nowhere on the axis** for a channel that launders (its
+   reviewer's Youden index [20]), and **nowhere on the axis** for a channel that launders (its
    predicted crossing, 4.79, lies outside `[0, 1]`; at `b = 1` its ratio is **0.2088**). So the engineering
    question "review the request better, or bind it better?" has an answer with a coordinate rather than a
    preference.
@@ -129,7 +127,7 @@ The claim is falsifiable in three independent ways, and each was pre-registered 
 exist; (ii) if the accuracy axis dominated the fidelity axis at every fidelity, the boundary would be
 irrelevant to engineering practice; (iii) if a use-time check were independent of the representation it reads,
 it would repair a display defect and no residual channel would survive it. All three are measured here, and
-the third is measured against the published repair's own claim [@irshad2026].
+the third is measured against the published repair's own claim [2].
 
 ### 1.5 Who cares, and what changes
 
@@ -140,8 +138,7 @@ The decision this paper moves is a budget allocation and a mandate, not a mechan
   the only one that pays, and above it the first is bounded by `b`.
 * **The human-oversight literature** has attacks, designs and audits but no threshold; a boundary plus an
   insensitivity result is what lets it say which axis a study should even be about.
-* **Policy and standards work** mandates human oversight of high-risk automated actions [@paul2026;
-  @santonidesio2018;@elish2025]. A mandate that names the human but not the **binding** of what the human sees
+* **Policy and standards work** mandates human oversight of high-risk automated actions [21,22,23]. A mandate that names the human but not the **binding** of what the human sees
   locates a region in which the mandated gate is net-harmful; the paper's result is that the requirement must
   specify the artifact's fidelity, not merely its presence.
 
@@ -160,246 +157,246 @@ each we state what it fixes that this study varies.
 ### 2.1 The deployed regime, and the question this paper answers
 
 Runtime approval is the most widely deployed control in production agent security, and it is deployed without a
-criterion for when it pays. That is the finding of [@wang2026], whose survey of production systems records the
-deployment and leaves the question open; [@surapani2026] organises the same design space by *where* the check
+criterion for when it pays. That is the finding of [1], whose survey of production systems records the
+deployment and leaves the question open; [4] organises the same design space by *where* the check
 sits, comparing architectures as designs and measuring no value for any of them. Governance work converts the
-mandate into machinery — [@paul2026] compiles EU AI Act obligations into executable compliance pipelines, and
-[@raghav2026] poses an enterprise governance kernel in which every tool invocation is policy-mediated — but a
+mandate into machinery — [21] compiles EU AI Act obligations into executable compliance pipelines, and
+[24] poses an enterprise governance kernel in which every tool invocation is policy-mediated — but a
 pipeline asserts compliance rather than pricing the human step it mandates, and a kernel decides what is
 permitted rather than what a reviewer's approval is worth. Design theories of the loop come to the same edge:
-[@ferreira2026] proposes a theory of governed, proactive agency with a human in the loop and fixes no parameter at
-which oversight stops paying, and [@nijkamp2026] gives a long-horizon agent architecture in which approval is one
+[25] proposes a theory of governed, proactive agency with a human in the loop and fixes no parameter at
+which oversight stops paying, and [26] gives a long-horizon agent architecture in which approval is one
 scheduling event among others — scheduling an approval is not the same as pricing it.
 
 Two measurement traditions border this study without touching it. Protocol adoption is measured directly:
-[@chidambaram2026] studies the Model Context Protocol's publication and adoption across two dimensions, and
-[@sohail2026] characterises centralization and observability in the remote MCP ecosystem; both measure a
+[27] studies the Model Context Protocol's publication and adoption across two dimensions, and
+[28] characterises centralization and observability in the remote MCP ecosystem; both measure a
 transport's uptake, not the value of a human decision over a channel. The human's contribution is likewise
-measured as a population property — [@ming2026] finds human capital rather than model benchmarks predicts hybrid
+measured as a population property — [29] finds human capital rather than model benchmarks predicts hybrid
 human-AI forecasting gain — where our construct is whether the object the human is shown denotes the action taken.
-Operations work treats escalation as load: [@vallabhaneni2026] offloads topological reasoning from LLM agents in a
+Operations work treats escalation as load: [30] offloads topological reasoning from LLM agents in a
 security operations centre so that analyst escalation is reduced, treating escalation volume as something to
 minimise rather than as a cost term that can exceed the harm a gate prevents.
 
-Closest to this paper's object is [@turan2026], which shows oversight has a *capacity* and calibrates agent guards
+Closest to this paper's object is [31], which shows oversight has a *capacity* and calibrates agent guards
 to a subjective, fatiguing human. That is a statement about the reviewer; ours is a statement about the channel.
 The two are complements rather than rivals — a fatigue coupling is exactly the mechanism our model needs in order
 to have an interior escalation optimum at all (Section 5) — and the measurement of fidelity loss in the pipeline is
-[@sun2026], whose 1,296 controlled episodes show a normal handoff transform deactivating binding state in 100.0%
+[5], whose 1,296 controlled episodes show a normal handoff transform deactivating binding state in 100.0%
 of them with 54.2% of downstream executions performing a forbidden action. That paper measures *that* fidelity
 fails; this one derives what a gate is worth as a function of it.
 
 ### 2.2 The reviewed object is not the executed one
 
 This is the literature that establishes the failure this paper prices. Its strongest form is demonstrated rather
-than modelled: [@kumar2026] reproduces approval hijacking across agent frameworks, reporting attack success
-without binding and zero with it; [@irshad2026] binds an action to a verifiable card and reports 68–100% attack
-success unbound against 0% bound at a 0% false-block rate; [@katkar2026] makes the binding cryptographic, which
+than modelled: [3] reproduces approval hijacking across agent frameworks, reporting attack success
+without binding and zero with it; [2] binds an action to a verifiable card and reports 68–100% attack
+success unbound against 0% bound at a 0% false-block rate; [12] makes the binding cryptographic, which
 places it at the `b = 1` end of our axis rather than as a quantity computed across it. Each of these fixes an
 endpoint of the axis we sweep, and none gives the gate a value as a function of the position on it.
 
 The defect appears in several time and representation shapes, and each is a different axis of the same channel.
-Staleness: [@shraga2026] shows a guardrail can approve correctly at check time and be stale by act time, and
-[@lyu2026] identifies decision conflicts for long-running agents whose authorizing state changes after the check;
+Staleness: [8] shows a guardrail can approve correctly at check time and be stale by act time, and
+[32] identifies decision conflicts for long-running agents whose authorizing state changes after the check;
 both place the defect on the **time** axis, whereas our substitution channel is a mismatch at a single decision
-instant. Representation: [@li2026] exposes UI desynchronization between what a mobile agent sees and what it acts
+instant. Representation: [7] exposes UI desynchronization between what a mobile agent sees and what it acts
 on — a vulnerability class measured as a rate, where we make the same gap a continuous fidelity parameter with a
-sign law. Hardware and OS boundaries: [@qi2026] closes the time-of-check-to-time-of-use gap inside a
+sign law. Hardware and OS boundaries: [13] closes the time-of-check-to-time-of-use gap inside a
 root-of-trust-protected subsystem, a mechanism rather than a human reviewer's view. Authority structure:
-[@li2026a] argues authority should be held by a substrate other than the agent's own context, and [@safin2026]
+[33] argues authority should be held by a substrate other than the agent's own context, and [34]
 studies trust propagation and structural containment when a low-privilege agent can influence a high-privilege
 one; both settle *where* authority should live, not what a human-mediated step is worth once it has been placed.
 
-Attacks and defences bound the same channel from both sides. [@huang2026] shows malicious instructions can persist
+Attacks and defences bound the same channel from both sides. [35] shows malicious instructions can persist
 in agent memory and re-enter later execution — persistence is a temporal channel whose harm no single approval's
-fidelity modulates. [@wang2026a] audits candidate actions before execution to block indirect-injection
-consequences, and [@li2026b] gives universal defences for tool-integrated agents; these are *programmatic*
-audits, which our design ladder prices against a reviewer-mediated step. [@zhang2026] trains
+fidelity modulates. [36] audits candidate actions before execution to block indirect-injection
+consequences, and [37] gives universal defences for tool-integrated agents; these are *programmatic*
+audits, which our design ladder prices against a reviewer-mediated step. [38] trains
 provenance-awareness into the model so that trust boundaries separate structurally, i.e. provenance as a learned
 property, where we treat the reviewer's information as a channel whose fidelity is an experimental axis.
-[@ediga2026] measures and exploits implicit trust in tool-calling pipelines — the model's trust, not the
-reviewer's. [@leong2026] finds instruction arbitration to be configuration-dependent and that recognition does not
+[39] measures and exploits implicit trust in tool-calling pipelines — the model's trust, not the
+reviewer's. [40] finds instruction arbitration to be configuration-dependent and that recognition does not
 imply enforcement, the closest published statement to a mismatch channel in *agent* terms; it is measured as a
-failure mode, where we give the boundary at which the failure stops mattering. [@iyer2026] resolves tool names in a
+failure mode, where we give the boundary at which the failure stops mattering. [41] resolves tool names in a
 closed world against hallucinated calls — a defect upstream of the approval channel, since a hallucinated tool was
-never an approved object. [@ma2024] shows GUI agents are distracted by environmental content, an input-side effect
-on the agent rather than on the human reviewing it, and [@hu2026] trains GUI agents toward faithful behaviour,
+never an approved object. [42] shows GUI agents are distracted by environmental content, an input-side effect
+on the agent rather than on the human reviewing it, and [43] trains GUI agents toward faithful behaviour,
 which is the agent's faithfulness to its task rather than the artifact's fidelity to its action.
-[@akkil2026] stress-tests long-horizon multi-agent systems adversarially so that failures propagate through
+[44] stress-tests long-horizon multi-agent systems adversarially so that failures propagate through
 memory and tools; it reports propagation, where this study gives a value law for one gate at one fidelity.
 
 ### 2.3 Authorization, capability, and the artifact that authorizes
 
 A second tradition decides who may act, and it is where our construct's vocabulary comes from. Confinement bounds
-what a compromised component can reach: [@xiong2026] confines reachable capabilities under indirect injection and
-[@lampson1973] is the confinement problem's original statement. Delegation governs who may act on whose behalf:
-[@veski2026] delegates privileges among collaborating agents with a capability-based scheme, [@gong2026] separates
+what a compromised component can reach: [45] confines reachable capabilities under indirect injection and
+[11] is the confinement problem's original statement. Delegation governs who may act on whose behalf:
+[46] delegates privileges among collaborating agents with a capability-based scheme, [47] separates
 inference from authority in agentic finance so that a model's suggestion cannot confer authorization, and
-[@collina2026] studies delegating authorization to *misaligned* agents through coalitional alignment — misalignment
+[48] studies delegating authorization to *misaligned* agents through coalitional alignment — misalignment
 being a property of the objective, where the laundering channel this paper prices requires no misalignment at all,
-only an unfaithful artifact. Runtime acquisition and binding are the operational forms: [@zhu2026] governs
-authority an agent acquires at runtime for resources such as credentials, [@zhu2026a] binds a dependency closure
-and governs effects at operation time for agent skills, and [@hu2026a] refuses to trust regenerated code and
+only an unfaithful artifact. Runtime acquisition and binding are the operational forms: [49] governs
+authority an agent acquires at runtime for resources such as credentials, [50] binds a dependency closure
+and governs effects at operation time for agent skills, and [51] refuses to trust regenerated code and
 instead checks its effects at runtime. Effect governance and use-time checks are exactly the second repair limb of
 our design ladder; this paper measures what such a check is worth as a function of what it can see, and shows it
 cannot reach a defect defined by invisibility in the representation it reads (Section 5).
 
-The remaining works in this group place the artifact in a pipeline. [@zheng2026] argues capabilities should follow
+The remaining works in this group place the artifact in a pipeline. [52] argues capabilities should follow
 task intent and the source of context, so that authority tracks provenance — a normative argument whose implied
-approval step this paper prices. [@chernov2026] proposes an intent-aware control plane for policy-governed agentic
+approval step this paper prices. [53] proposes an intent-aware control plane for policy-governed agentic
 systems; a control plane enforces policy at a boundary, and our unit is a single reviewer-mediated decision with a
-computable value. [@wu2026] delivers prompt-space security skills to coding agents so privilege use is mediated,
-which mediates the agent's own requests rather than a human's. [@bromme2026] anchors agent communication and human
+computable value. [54] delivers prompt-space security skills to coding agents so privilege use is mediated,
+which mediates the agent's own requests rather than a human's. [55] anchors agent communication and human
 approvals in blockchain evidence for auditability — auditability after the fact is a separate good from the
 expected value of the approval the record attests.
 
 ### 2.4 The human's signal: detect, defer, escalate
 
 A large recent literature asks *when* a system should hand a decision to a human, and its answers are rules over
-a signal. Competence and routing: [@strong2026] estimates whether a model should act or defer and adapts deferral
+a signal. Competence and routing: [56] estimates whether a model should act or defer and adapts deferral
 across experts — the same structure as our escalation coverage, with the channel's fidelity held fixed and no harm
-term — and [@pesenti2026] shows learning-to-defer reproduces algorithmic bias in the human it defers to, i.e. a
+term — and [57] shows learning-to-defer reproduces algorithmic bias in the human it defers to, i.e. a
 property of the reviewer's decisions where our construct separates reviewer accuracy from the fidelity of what the
-reviewer sees. Abstention theory supplies the guarantees: [@franc2025] predicts with an explicit reject option,
-[@szabadvary2025] gives distribution-free error guarantees for classification with a reject option via conformal
-prediction, [@zaoui2025] extends selective prediction to distributional regression, and [@rabanser2025] asks what
+reviewer sees. Abstention theory supplies the guarantees: [58] predicts with an explicit reject option,
+[59] gives distribution-free error guarantees for classification with a reject option via conformal
+prediction, [60] extends selective prediction to distributional regression, and [61] asks what
 it takes to build a performant selective classifier. All four measure abstention *performance*; none prices the
 escalated cases, which is the quantity this paper computes — and Section 5 shows the value is exactly affine in
 the escalation rate under our model, so the abstention rate is not the lever those literatures treat it as.
 
-Signal quality closes the group. [@ravikiran2026] audits whether models defer to a source-attributed cue and can be
-led to wrong answers — the mirror image of our reviewer trusting an unfaithful rendering — and [@zhang2026a]
+Signal quality closes the group. [62] audits whether models defer to a source-attributed cue and can be
+led to wrong answers — the mirror image of our reviewer trusting an unfaithful rendering — and [63]
 estimates confidence from experience so a system can defer reliably, i.e. calibration of a self-report rather than
-the fidelity with which an approval denotes an action. [@udayagiri2026] gates a call to an LLM on confidence to
-control cost, a cost/accuracy trade where ours is a harm/harm comparison. [@pathak2026] decides when a failing
+the fidelity with which an approval denotes an action. [64] gates a call to an LLM on confidence to
+control cost, a cost/accuracy trade where ours is a harm/harm comparison. [65] decides when a failing
 robot should ask, given audited sensor evidence: asking is escalation, and the reviewed evidence is assumed
-faithful there, which is precisely the assumption this study varies. [@li2026c] decides whether, when and how to
+faithful there, which is precisely the assumption this study varies. [66] decides whether, when and how to
 assist a user from scenario knowledge and thresholds — an intervention policy whose input can misrepresent the
-action, the case this paper's channel models. [@dietz2026] places a human in the loop for nugget annotation and
+action, the case this paper's channel models. [67] places a human in the loop for nugget annotation and
 asks how the human is incorporated: an incorporation-protocol choice, with the net value of the step not derived.
 
 ### 2.5 The human's limits: fatigue, bias, and warnings
 
 A long literature documents why the human in the loop degrades, and it is the reason a gate's cost is not zero.
-The mechanism by which a human stop becomes a rubber stamp is [@parasuraman2010], with the dispositions behind it
-named in the canonical typology [@parasuraman1997], and the founding statement that the operator left to supervise
-is the least able to intervene is [@bainbridge1983] — a human gate can be worse than none, argued without a model.
-The out-of-the-loop performance problem [@endsley1995] is the human's degraded state, which this paper *holds
-fixed* so that the channel can be varied alone; the same choice appears in [@lee2004], where reliance is the
+The mechanism by which a human stop becomes a rubber stamp is [68], with the dispositions behind it
+named in the canonical typology [19], and the founding statement that the operator left to supervise
+is the least able to intervene is [69] — a human gate can be worse than none, argued without a model.
+The out-of-the-loop performance problem [70] is the human's degraded state, which this paper *holds
+fixed* so that the channel can be varied alone; the same choice appears in [71], where reliance is the
 reviewer's disposition toward the checker, whereas the failure this paper prices lives in the artifact.
 
 Warning design is the applied form of the same literature, and it already prices the gate's own errors.
-Comprehension and adherence are the reviewer-side properties of [@felt2015] and the interface designs of
-[@bravolillo2011] and [@bravolillo2013]; the psychology of the false positive is [@modic2014], whose cost to the
+Comprehension and adherence are the reviewer-side properties of [72] and the interface designs of
+[73] and [74]; the psychology of the false positive is [75], whose cost to the
 user who receives it is this study's false-block term; habituation under repeated warnings is measured
-electrophysiologically in [@anderson2015], which is the fatigue coupling our model needs in order to have an
-interior optimum at all. [@egelman2008] shows a warning that arrives unfaithfully or too often loses its force, and
-[@dhamija2006] explains why phishing works by defeating the user's judgement rather than the system's — the human
-as the deceived party, which this paper formalises as an unfaithful review. [@herley2009] gives the reviewer's own
+electrophysiologically in [76], which is the fatigue coupling our model needs in order to have an
+interior optimum at all. [77] shows a warning that arrives unfaithfully or too often loses its force, and
+[78] explains why phishing works by defeating the user's judgement rather than the system's — the human
+as the deceived party, which this paper formalises as an unfaithful review. [79] gives the reviewer's own
 side of the argument: users rationally reject security advice given its externalities, which is why a gate's cost
 can exceed its benefit.
 
-The deployment studies measure override behaviour without an artifact-fidelity axis: [@vandersijs2006] documents
-how often clinicians override drug-safety alerts and why, [@weingart2003] reports physicians' override decisions in
-primary care, and [@kaushal2003] measures the adverse-event outcome of adding computerised order entry with
-decision support. [@maxeyjones2018] is the positive case — a checklist and a human-checked protocol reduced
+The deployment studies measure override behaviour without an artifact-fidelity axis: [80] documents
+how often clinicians override drug-safety alerts and why, [81] reports physicians' override decisions in
+primary care, and [82] measures the adverse-event outcome of adding computerised order entry with
+decision support. [83] is the positive case — a checklist and a human-checked protocol reduced
 catheter-related bloodstream infections — a human verification step with a measured field benefit, which this paper
 turns into a value that depends on the fidelity of what the checker sees. Trust in the mechanism rather than the
-artifact is where [@alpay2026] sits: it audits approval integrity and recovery in one publication mechanism and
+artifact is where [6] sits: it audits approval integrity and recovery in one publication mechanism and
 reports a production response-act checker accepting 291 of 302 unsupported-labelled answers — one system's
 false-accept rate, where this study asks for the boundary at which the rate stops mattering.
 
 Four recent works extend the same limits to machine reviewers, and this paper's design ladder prices them.
-[@mazaheri2026] finds a prior audit-repair context shifts an LLM verifier's threshold toward leniency — drift in a
-checker's operating point, which is the accuracy axis we hold fixed while varying fidelity. [@singh2026] shows
+[84] finds a prior audit-repair context shifts an LLM verifier's threshold toward leniency — drift in a
+checker's operating point, which is the accuracy axis we hold fixed while varying fidelity. [85] shows
 deepfake detectors learn some attack families less well than others, the same shape as an effective sensitivity
-falling below its nominal one, and [@kasundra2025] builds a guard model whose value under a defective channel is
-bounded by what it can see. [@kim2026] addresses the false-block side by reducing over-refusal with competing
+falling below its nominal one, and [86] builds a guard model whose value under a defective channel is
+bounded by what it can see. [87] addresses the false-block side by reducing over-refusal with competing
 rewards, optimising the rate where this study asks when the harm from the *other* error makes a gate net-negative.
-[@lim2026] asks whether reasoning representations help humans evaluate model outputs: human evaluation quality
+[88] asks whether reasoning representations help humans evaluate model outputs: human evaluation quality
 measured against a representation is a fidelity-like input evaluated for helpfulness, not a channel priced in a
-decision. [@pawar2026] frames hallucination false alarms as consuming limited human review capacity, which is this
+decision. [89] frames hallucination false alarms as consuming limited human review capacity, which is this
 study's false-block cost entering a value law as an explicit term rather than as a monitoring concern.
 
-Human-factors work in specific domains is descriptive rather than priced: [@heinrich2021] reviews human factors of
-satellite operations, [@casadomansilla2019] names complacency, comfort, relapse and distrust as side effects of
-automation in IoT, and [@qian2024] measures productivity and trust when people take, leave or fix human-AI
-collaboration outputs. [@ladapo2022] surveys human-in-the-loop machine learning as a taxonomy of where the human
-acts, with the value of the step itself not a quantity in it, and [@holzinger2016] argues for the human in health
-informatics on capability grounds, with no channel between reviewer and object modelled. [@horvitz1999] is the
+Human-factors work in specific domains is descriptive rather than priced: [90] reviews human factors of
+satellite operations, [91] names complacency, comfort, relapse and distrust as side effects of
+automation in IoT, and [92] measures productivity and trust when people take, leave or fix human-AI
+collaboration outputs. [93] surveys human-in-the-loop machine learning as a taxonomy of where the human
+acts, with the value of the step itself not a quantity in it, and [94] argues for the human in health
+informatics on capability grounds, with no channel between reviewer and object modelled. [95] is the
 closest of these: mixed-initiative principles say when a system should ask the user, which is this study's
-escalation decision with a cost model attached. [@kamath2025] enforces temporal constraints on agents through
+escalation decision with a cost model attached. [96] enforces temporal constraints on agents through
 guardrails — a constraint on the action, where the subject here is a human step that may or may not have positive
 value under such a constraint.
 
 ### 2.6 The cost of the gate
 
 Only two works in this bibliography price an oversight-adjacent decision, and neither prices the human step.
-[@shamis2025] prices the security of data-centre execution assurance in a BFT setting — the closest economics to
+[97] prices the security of data-centre execution assurance in a BFT setting — the closest economics to
 this study, but the priced resource is hardware-backed execution rather than a human decision with a mismatch
-channel. [@chen2026] studies token economics for LLM agents from computing and economics views, pricing token
+channel. [98] studies token economics for LLM agents from computing and economics views, pricing token
 consumption, where this study prices a human decision whose harm term is absent there.
 
 ### 2.7 Verifying the artifact
 
 A separate tradition verifies objects rather than decisions, and the difference matters for the design ladder.
-[@bars2025] analyses software-based fault isolation empirically through controlled fault injection, and
-[@sotoudeh2025] formally verifies a software fault isolation system including its verifier; isolation boundaries
+[99] analyses software-based fault isolation empirically through controlled fault injection, and
+[100] formally verifies a software fault isolation system including its verifier; isolation boundaries
 are enforcement mechanisms, and a verifier proved correct is a different claim from a reviewer shown a faithful
-object. [@schwarz2025] layers several defences for LLM applications, reducing attack success — a layering result,
-where this study asks whether the *human* layer pays. [@avina2025] detonates malware in an ephemeral containerized
+object. [101] layers several defences for LLM applications, reducing attack success — a layering result,
+where this study asks whether the *human* layer pays. [102] detonates malware in an ephemeral containerized
 sandbox: containment bounds the blast radius, which is an alternative to a gate rather than a value for one.
 
 ### 2.8 What a programmatic monitor can and cannot do
 
-Two works state the monitor-side facts this paper's construct is adjacent to. [@zhang2026b] bounds the recall of a
+Two works state the monitor-side facts this paper's construct is adjacent to. [103] bounds the recall of a
 fixed-invariant FSA monitor by the entropy of the attack distribution — a coverage law for a programmatic
 detector, and no analogous bound is published for a human gate, which is what this study supplies.
-[@kurady2026] shows step-scoped monitors cannot detect compositional violations however accurate they are: the
+[14] shows step-scoped monitors cannot detect compositional violations however accurate they are: the
 statement that *accuracy is not the axis for a monitor*, against this study's statement that *fidelity, not
-accuracy, is the axis for a human gate*. [@dixon2026] formulates delegation as a POMDP and solves for a policy
+accuracy, is the axis for a human gate*. [15] formulates delegation as a POMDP and solves for a policy
 under uncertainty, with the channel between delegate and delegator assumed faithful — the assumption this study
 makes its variable.
 
 ### 2.9 The classical spine: screening, warnings, and the human step in practice
 
 The instruments this paper imports are older than the systems it studies. A reviewer's accuracy is a curve, not a
-number: [@hanley1982], [@metz1978] and [@swets1973] are the classical statements, with [@youden1950] the
-one-number summary used here as a reviewer-accuracy summary, and [@hanley1983] contributing the paired-comparison
+number: [16], [17] and [18] are the classical statements, with [20] the
+one-number summary used here as a reviewer-accuracy summary, and [104] contributing the paired-comparison
 procedure this study's per-stream pairing follows. The gate itself has a deployed history of being measured in the
-field and of failing in the field: [@maxeyjones2018] and [@brodersen2013] price its errors' real consequences
+field and of failing in the field: [83] and [105] price its errors' real consequences
 (false-positive screening harms and their long-term psychosocial cost, with the psychological costs of screening
-stated in [@marteau1989]), and the review-practice literature measures the human step without a value for it —
-[@bacchelli2013], [@bosu2015] and [@sadowski2018] study code review as a deployed practice whose benefit is
-reported as practice rather than derived, and [@bosu2015] judges usefulness by the reviewed person rather than by
+stated in [106]), and the review-practice literature measures the human step without a value for it —
+[107], [108] and [109] study code review as a deployed practice whose benefit is
+reported as practice rather than derived, and [108] judges usefulness by the reviewed person rather than by
 whether the reviewer's object denoted the change.
 
 ### 2.10 The economics of an oversight decision
 
 The structure this paper instantiates is standard in two economic literatures, and both already contain the
-decision rule in general form. Costly verification: [@townsend1979] derives that verification is used only when it
-pays, [@williamson1986] prices monitoring against the difference it makes, and [@holmstrom1979] is the reason an
+decision rule in general form. Costly verification: [110] derives that verification is used only when it
+pays, [111] prices monitoring against the difference it makes, and [112] is the reason an
 unfaithful observation is worth less than a faithful one — the informational statement underneath this paper's
-fidelity parameter. Enforcement: [@becker1968] prices enforcement against the harm it deters and [@polinsky1999]
+fidelity parameter. Enforcement: [113] prices enforcement against the harm it deters and [114]
 prices public enforcement intensity, which are policy-level analogues of this study's per-decision value, while
-[@jensendeceased1998] supplies the principal-agent structure in which a check on an agent's action is priced. The
-authorization artifact's own lineage is the capability model [@dennis1983], the confused deputy [@hardy1988] and
-the confinement problem [@lampson1973]; provenance as an independent good is [@thompson2007], the architectural
-claim that every step must be verified is [@rose2019] (whose *value* is what this study asks about), and the
-engineering frame in which an approval step is one control among several is [@anderson2020]. The normative
-literature that ordinarily justifies the gate — accountability as a practice [@diakopoulos2014] and the ethics
-debate's map [@mittelstadt2016] — is cited here for exactly that role: this paper asks what the mandate costs.
+[115] supplies the principal-agent structure in which a check on an agent's action is priced. The
+authorization artifact's own lineage is the capability model [10], the confused deputy [9] and
+the confinement problem [11]; provenance as an independent good is [116], the architectural
+claim that every step must be verified is [117] (whose *value* is what this study asks about), and the
+engineering frame in which an approval step is one control among several is [118]. The normative
+literature that ordinarily justifies the gate — accountability as a practice [119] and the ethics
+debate's map [120] — is cited here for exactly that role: this paper asks what the mandate costs.
 
 ### 2.11 What no group above supplies
 
 Three things are absent from every group, and they are this paper's contribution. First, **a boundary**: the
-literature reports that binding fails [@kumar2026;@irshad2026] and that it can be enforced
-[@katkar2026;@qi2026], while audits report one system's rate [@alpay2026;@sun2026]; none gives the fidelity at
+literature reports that binding fails [2,3] and that it can be enforced
+[12,13], while audits report one system's rate [5,6]; none gives the fidelity at
 which the sign of the gate's value changes. Second, **the sign**: the human-factors literature says a human gate
-can be worse than none [@bainbridge1983] and the automation literature measures habituation
-[@anderson2015;@parasuraman2010], but neither derives when a gate is worth less than no gate, which requires the
+can be worse than none [69] and the automation literature measures habituation
+[68,76], but neither derives when a gate is worth less than no gate, which requires the
 laundering channel as an explicit term. Third, **the axis**: the monitor and abstention literatures decide the
-question on accuracy or on the signal [@kurady2026;@zhang2026b;@franc2025;@rabanser2025], whereas this paper
+question on accuracy or on the signal [14,58,61,103], whereas this paper
 separates the reviewer's accuracy from the artifact's fidelity and shows that the binding axis carries a coordinate
 — and the reading that decides an engineering budget — where the accuracy axis carries only a preference.
 
@@ -411,8 +408,8 @@ An agent proposes an action `P` for each consequential operation. The action is 
 benign otherwise. Escalation coverage `s` is the fraction of operations escalated to the human: with probability
 `s` the operation is reviewed, with `1-s` it executes unreviewed. A reviewer's **accuracy** is the pair
 `(a, f)`: sensitivity `a` is the probability of rejecting a *harmful* object, false-positive rate `f` the
-probability of rejecting a *benign* one — the classical operating point [@hanley1982;@metz1978;@swets1973],
-summarised where a single number is wanted by the Youden index [@youden1950]. A rejection blocks the action.
+probability of rejecting a *benign* one — the classical operating point [16,17,18],
+summarised where a single number is wanted by the Youden index [20]. A rejection blocks the action.
 
 The **no-gate baseline** is exact and needs no model: every harmful action executes, every benign one does too, so
 
@@ -425,8 +422,8 @@ with `L` the harm of an executed harmful action. The gate's value is a differenc
 Three costs make up `E1`: the harm that still executes, the attention cost of a review (`c` per escalated
 operation), and the harm of a **false block** — a benign action rejected by the reviewer, `c_b` per occurrence.
 The false-block term is not decoration: the empirical literature on the reviewer's own errors prices exactly this
-[@modic2014;@brodersen2013;@marteau1989], and a warning system that never trades it off is the system users
-rationally ignore [@herley2009].
+[75,105,106], and a warning system that never trades it off is the system users
+rationally ignore [79].
 
 ### 3.2 The channel: binding fidelity, and the exhaustive partition of its defects
 
@@ -439,7 +436,7 @@ At `b = 1` the gate is the screening channel the deployed argument assumes. Belo
 is not one way but three, and the partition is exhaustive by construction:
 
 * **display defect (`δ`)** — the reviewer reads a re-rendering of the request that loses the harm, so a harmful
-  action is executed although nothing was substituted. The human is the deceived party [@dhamija2006], and the
+  action is executed although nothing was substituted. The human is the deceived party [78], and the
   representation has simply lost the property the decision was supposed to turn on.
 * **visible substitution (`σ_v`)** — the executed action differs from the reviewed one, and the difference is
   visible **in `R`**: a checker that reads the request can see it.
@@ -449,15 +446,15 @@ is not one way but three, and the partition is exhaustive by construction:
 with `clean = 1 − (δ + σ_v + σ_i)` the mass on which the channel is faithful. Two of the three are, in the
 field's own reports, measured rather than hypothesised: binding state is deactivated by an ordinary handoff
 transform in 100.0% of 1,296 controlled episodes with 54.2% of downstream executions performing a forbidden
-action [@sun2026], approval can be hijacked across agent frameworks [@kumar2026], and a card that binds the
-action removes the success [@irshad2026]. The three classes correspond to the mechanisms the same literature
-separates — a mis-rendered object [@li2026], a check that passes at check time and is stale at act time
-[@shraga2026;@lyu2026], and an authorization that does not bind what executes [@kumar2026;@katkar2026] — and
+action [5], approval can be hijacked across agent frameworks [3], and a card that binds the
+action removes the success [2]. The three classes correspond to the mechanisms the same literature
+separates — a mis-rendered object [7], a check that passes at check time and is stale at act time
+[8,32], and an authorization that does not bind what executes [3,12] — and
 Section 5 shows they are repaired by **different** things, which is why the partition earns its three names.
 
 The model distinguishes the *intent* of the human from the *effect* of their approval: an approval is an
 authorization artifact, so where `R ≠ A` the approval authorizes `A`. That is the confused-deputy structure
-[@hardy1988;@dennis1983;@lampson1973] wearing modern dress, and it is why a mismatch can make the gate's value
+[9,10,11] wearing modern dress, and it is why a mismatch can make the gate's value
 negative rather than merely small: the gate converts an action the surrounding policy would have blocked into an
 authorized one. We call this the **laundering channel**.
 
@@ -499,11 +496,11 @@ study; none is chosen for convenience.  *Table 3* gives the values and the ancho
 | parameter | value at the defaults | where it comes from |
 |---|---|---|
 | `π` | 0.20 | the harmful mass of a tool-using agent's operation stream |
-| `a` | 0.80 | reviewer sensitivity, the classical operating point of a screening test [@hanley1982] |
+| `a` | 0.80 | reviewer sensitivity, the classical operating point of a screening test [16] |
 | `f` | 0.05 | false-positive rate at that operating point |
 | `L` | 1.0 | the unit of harm |
 | `c` | 0.02 | attention cost of one review, as a fraction of `L` |
-| `c_b` | 0.05 | false-block cost [@modic2014] |
+| `c_b` | 0.05 | false-block cost [75] |
 | `η` | 1.0 | a substituted harmful action is as severe as the proposed one |
 | `b` | **swept** | the study's axis |
 | `s` | **swept** | escalation coverage, the deployed policy lever |
@@ -511,8 +508,8 @@ study; none is chosen for convenience.  *Table 3* gives the values and the ancho
 **Table 3.** The parameters, their values at the defaults, and the published measurement each anchor comes from.
 
 The anchors that the channel itself rests on are the measured ones: `b` far below 1 in ordinary pipelines
-[@sun2026], attack success falling from 68–100% unbound to 0% bound [@irshad2026], and the reviewer's own errors
-priced in the field [@maxeyjones2018;@brodersen2013].
+[5], attack success falling from 68–100% unbound to 0% bound [2], and the reviewer's own errors
+priced in the field [83,105].
 
 ### 3.4 The falsifiable claim, in the model's own terms
 
@@ -594,8 +591,8 @@ part of it.
 The repairs are not substitutes, and the harness measures the difference rather than asserting it. A use-time
 check is worth exactly the defect mass it can **see**: `V(D3) − V(D2)` is `0.000000` where the class is absent and
 otherwise exactly the visible mass; and it is worth **nothing** against a display defect, where the canonical
-rendering supplies what the check cannot. The two repairs are therefore **complements** ([@irshad2026] supplies
-the canonical rendering as a design, [@hu2026a] the use-time effect check), which is a structural statement about
+rendering supplies what the check cannot. The two repairs are therefore **complements** ([2] supplies
+the canonical rendering as a design, [51] the use-time effect check), which is a structural statement about
 which defects each one can reach, not a preference between them.
 
 ### 4.3 The guards: what the harness refuses to read
@@ -694,7 +691,7 @@ cell list so that a reader who disagrees with a cell can subtract it and see the
 Three readings of that table matter more than its size.
 
 * **A gate can be worse than none without any adversary at all.** D2 is a canonical rendering — the repair
-  [@irshad2026] proposes — with no use-time check, and it is negative. The harm is the price of asking: every
+  [2] proposes — with no use-time check, and it is negative. The harm is the price of asking: every
   escalation pays `c`, and the display defect still executes harm the reviewer never saw.
 * **The two repairs are complements, and the table says which defect each one reaches.** D2 − D1 = +0.045 is what
   the canonical rendering is worth on its own, and it is worth exactly the *display* mass; `V(D3) − V(D2)` is the
@@ -705,7 +702,7 @@ Three readings of that table matter more than its size.
   happens *after* the decision.
 * **The published repair's own endpoint is reproduced as the ladder's top.** D4's attack success is `0.0` and its
   value is the table's maximum, which is the bound direction of the published 68–100% unbound → 0% bound result
-  [@irshad2026] read here as a *value* rather than as an attack rate.
+  [2] read here as a *value* rather than as an attack rate.
 
 ### 5.3 Which axis pays: the accuracy question has a coordinate, not a preference
 
@@ -715,7 +712,7 @@ misrepresenting channel the crossing is at
 
     b = a − f                predicted 0.750000, measured 0.7500000000002986
 
-with the deviation `2.99e-13` — the reviewer's own **Youden index** [@youden1950], a quantity from the screening
+with the deviation `2.99e-13` — the reviewer's own **Youden index** [20], a quantity from the screening
 literature that appears here as the coordinate of an engineering decision. Below it, accuracy buys more; above it,
 binding does. For a **laundering** channel the ratio's predicted crossing is `4.79`, **outside `[0, 1]`**: there
 is no fidelity on the axis at which accuracy overtakes binding, and at `b = 1` — the most favourable fidelity
@@ -977,8 +974,7 @@ The paper does not report the rate at which deployed approval gates are unfaithf
 `b` is a property of a running system's plumbing, and measuring it means instrumenting the path from what the
 reviewer saw to what executed. What the paper supplies is the **criterion** — the boundary at which the fidelity
 matters, the sign law on each side of it, and the coordinate that says which axis pays — and a criterion is the
-thing a measurement programme can be pointed at. The audits that report a rate for one system [@alpay2026;
-@sun2026] are consistent with this paper and do not substitute for it: a rate is a *value* of `b`, and what was
+thing a measurement programme can be pointed at. The audits that report a rate for one system [5,6] are consistent with this paper and do not substitute for it: a rate is a *value* of `b`, and what was
 missing is what a value of `b` *decides*.
 
 What follows from the results and what does not:
@@ -1031,7 +1027,7 @@ The headline thresholds (`b* = 0.0800` misrepresenting, `b* = 0.8559` laundering
 Nothing here is estimated from people: the reviewer's signal is analytic, with a false-positive rate `f` and an
 accuracy `a` that the model takes as given. That is a strength for reproducibility (every number is enumerated or
 closed-form) and a limit on external validity: the paper cannot say what a real reviewer's `a` is, and the
-screening literature that measures it [@youden1950; @hanley1982; @metz1978; @swets1973] is where that number comes
+screening literature that measures it [16,17,18,20] is where that number comes
 from. Fatigue is treated as a *coupling the model does not otherwise contain* — supplied one, the interior
 optimum appears and its floor is the sign-law threshold — and the reading is deliberately conditional: a study
 reporting an interior escalation optimum has measured a fatigue effect, whether or not it says so.
@@ -1054,13 +1050,13 @@ threshold a better reviewer buys almost nothing — and that below the threshold
 Two consequences are decidable today with the paper's own numbers:
 
 1. **A mandate that names the human but not the binding is incomplete.** Human-oversight requirements
-   [@paul2026; @santonidesio2018; @elish2025] locate a region in which the mandated control is net-harmful; the
+   [21,22,23] locate a region in which the mandated control is net-harmful; the
    requirement has to specify the fidelity of the artifact the human reviews, not its presence. That is a change to
    the *text* of a requirement, and it costs nothing to adopt.
 2. **The two obvious repairs are complements, not alternatives.** A canonical rendering makes the display defect
    impossible and does nothing for substitution; a use-time check is worth exactly the defect mass it can see and
    exactly nothing for a display defect. Budget allocated to one is not budget taken from the other, and the
-   "which is better" framing [@irshad2026; @hu2026a] is the wrong question — the right one is the coverage of
+   "which is better" framing [2,51] is the wrong question — the right one is the coverage of
    defect classes, which is checkable.
 
 The falsifiability is the third reason. Each of the paper's three structural statements was registered as a
