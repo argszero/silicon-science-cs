@@ -2,8 +2,8 @@ assembly report -- issue #87
 
 parts: manuscript_part1.md, manuscript_part2.md, manuscript_part3.md, manuscript_part4.md
 bibliography: 169 entries (125 arxiv, 44 crossref)
-body charset length: 90859
-manuscript length: 150957 chars
+body charset length: 91837
+manuscript length: 151943 chars
 
 CHECK 1 coverage: cited 169 distinct keys; missing 0
         missing: none

@@ -124,8 +124,10 @@ is exact statevector simulation with fixed seeds — no sampling, no noise model
 
 **Tree: a checkout of this branch, not an export of its head.** Step 5 runs the journal's gates from the
 repository root, and both of them resolve their **carrier set** off the tree with `git ls-files`, so the tree
-form is a coordinate of the run and is stated here rather than assumed. In a checkout the set is the 65 tracked
-markdown carriers of the head and the gate reads them — `linkgate.py --check` → `targets=100 links=94
+form is a coordinate of the run and is stated here rather than assumed. In a checkout the set is the tracked
+markdown carriers of the head — `git ls-files '*.md'`, **68** here, and the gate prints the count it read on its
+own `set:` line, which is the copy to trust if this specification is read at another head — and the gate
+reads them — `linkgate.py --check` → `targets=100 links=94
 resolved=94 broken=0 · LINKGATE: PASS`. Over an **export** of the same head (no `.git`, so `git ls-files`
 reaches an enclosing repository, whose index holds no markdown under this directory) the two readings are,
 measured here: `linkgate.py` prints `set: 0 tracked markdown carriers` and **`NOT RUN`** — never `PASS`, because
@@ -292,8 +294,12 @@ case count, so no count is asserted here).
   simulation of an entangling map, a metric-matched classical rival, a swept-alignment generator) is built here,
   and no census corpus, classifier or head-SHA-pinned repository set is reused.
 - **What the package carries honestly:** the matched rival is a *mean*-matched proxy for a metric that is a
-  field (§7 of the manuscript); the alignment sign inversion at α = 0 rests on a single instrument and not on the
-  five-stream panel; the two-point qubit-count trend is not extrapolated; and the instrument defects this study
+  field (§7 of the manuscript); the **alignment sign inversion at α = 0 is withdrawn**, re-measured over the 13 disjoint streams Table 6
+  reports: that cell comes back **positive** at both γ (every stream at γ = 1, eleven of thirteen at γ = 2),
+  and what the axis carries is an **attenuation rather than a sign effect** — aligning the target makes the
+  mid-band loss *larger* at γ = 1 and leaves it unchanged at γ = 2. The values and their provenance are
+  carried by Table 6 and by the digest (`alignment.panel_gamma1`, `alignment.panel_gamma2`,
+  `alignment.attenuation`), not by this bullet; the two-point qubit-count trend is not extrapolated; and the instrument defects this study
   found (the oracle at λ ≈ 0, a metric copied without its bandwidth argument, a PSD violation the second graph
   exposed, a mis-specified variance inequality repaired post hoc, a `hash()` whose per-process randomisation would
   have failed a determinism control) are all in `artefacts/round-notes/` with their repairs.

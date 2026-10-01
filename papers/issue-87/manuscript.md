@@ -121,6 +121,8 @@ Four decisions distinguish this study from a benchmark, and each is a place wher
 4. **The declaration procedure is calibrated on a null whose size is measured, not assumed.** A lead set is a
    multiple-testing statement; its size is checked on a holdout null built by the same generator with the signal
    removed [128, 129, 96].
+ 
+**The contribution level, and the registration's conditional.** The level declared in the abstract was registered **conditionally**: it holds only if the paper also carries the derivable scope statement and the planted-alignment control, otherwise the paper drops to `case study`. The branch is not reached on its own terms — the map did not come back empty: the grid is a reproducible partition into a mid-band block and a collapse rim (section 5.2) — and both objects the conditional names are carried anyway: the **planted-alignment control** is audited here in item 3 and reported in section 5.4, and the map's **scope** is stated by what it excludes (section 2.12) and as its explicit limit in section 7's second threat (*One generator, planted targets*). The conditional therefore resolves in favour of the registered `theory + empirics`, and the three carriers that state the level — the registration, the README and this manuscript — now read one value for one field.
 
 The result is a map, and the map has the shape of a **valley with two rims**: the entangling kernel leads at
 small bandwidth, where the reduction is exact and the rival is the same object, and at large bandwidth, where
