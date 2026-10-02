@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/4Vnf9YoE5ofAh5lePg7d4CBvwhg</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.35425&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:20Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.35425" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.35425v1</id>
+    <title>Semantic Prefix Oracles for LLM Decoding: Contracts and Differential Validation</title>
+    <updated>2026-09-28T15:34:59Z</updated>
+    <link href="https://arxiv.org/abs/2609.35425v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.35425v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Constrained decoding can enforce regular or context-free output formats, but many program-generation failures are semantic: scope, typing, and declaration effects depend on context. We present semantic grammar specifications, a declarative formalism that attaches such constraints to a context-free surface and executes them during Earley descent. Our implementation enforces \emph{safe pruning}: it rejects only prefixes whose semantic contradictions cannot be repaired by any continuation. A separate, grammar-dependent, \emph{dead-end freedom} property guarantees the existence of a realizable witness for each remaining branch. We give simple sufficient conditions based on surface productivity, type coverage, and left-to-right constraint flow. Our finite-lambda, core ML, and C-like fragments satisfy them, while the STLC instance used in our experiments does not: plain STLC can violate type coverage, and we show how restricting its type universe recovers it. A tokenizer-lifting lemma carries character-level witnesses to token sequences under an explicit vocabulary-coverage hypothesis.
+  We validate the implementation differentially against production compilers (\texttt{ocamlc}, \texttt{cc}). Across every prefix of 65 compiler-valid programs we observe zero false prunes. The semantic oracle localizes 25/30 invalid programs mid-stream, against 0/30 for a syntax-only oracle, and agrees on 42/42 recursion probes. A twelve-model generation study, including a matched semantic-versus-syntactic ablation for nine models, finds nonnegative observed semantic-minus-syntactic point estimates for every model-language pair, with maxima of $+15.2$ points on STLC task correctness and $+14.3$ points on ML validity.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T15:34:59Z</published>
+    <arxiv:primary_category term="cs.PL"/>
+    <arxiv:journal_ref>LMPL 2026</arxiv:journal_ref>
+    <author>
+      <name>Paul Kronlund-Drouault</name>
+    </author>
+    <arxiv:doi>10.1145/3843750.3843841</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3843750.3843841" title="doi"/>
+  </entry>
+</feed>

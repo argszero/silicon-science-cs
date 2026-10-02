@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api//EkLFdY4oRI4YyEnrpIAzTeeSns</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.37849&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T23:01:12Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.37849" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37849v1</id>
+    <title>Is manual software optimization a thing of the past?</title>
+    <updated>2026-09-29T15:42:17Z</updated>
+    <link href="https://arxiv.org/abs/2609.37849v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37849v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Scientific software is increasingly required to process larger datasets while maintaining acceptable execution times. Software optimization traditionally requires substantial expertise in programming, algorithms, and numerical methods. Recent advances in large language models (LLMs) offer the possibility of automating much of this process. We investigate whether LLM-based agents can autonomously achieve substantial performance improvements in scientific software, including mature implementations that have already been extensively optimized by human developers. We tasked an LLM-based agent with optimizing software for three computational problems: t-SNE, single-sample gene set enrichment analysis (ssGSEA), and graphlet counting. Humans defined the scope, correctness criteria, and a verification mechanism, after which the agent worked autonomously, in some cases for several hours. Code maintainers reviewed each resulting implementation and verified its correctness. The optimized implementations were faster in all tested configurations, by up to two orders of magnitude over the fastest existing tools. The improvements included low-level code optimizations, mathematical reformulations, and an entirely new algorithm for graphlet counting. Software optimization can increasingly be delegated to autonomous agents, with the human role shifting from implementing optimizations to deciding which software to optimize, defining objectives, providing verification mechanisms, and ensuring the correctness of the final software. For well-scoped, verifiable problems, we argue that manual software optimization may be a thing of the past.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T15:42:17Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Pavlin G. Poličar</name>
+    </author>
+    <author>
+      <name>Martin Špendl</name>
+    </author>
+    <author>
+      <name>Tomaž Hočevar</name>
+    </author>
+  </entry>
+</feed>

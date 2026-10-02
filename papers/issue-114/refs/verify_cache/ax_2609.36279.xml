@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/TGNcctuppuPqFWKmyIS20jv0zU4</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.36279&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T23:01:22Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.36279" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.36279v1</id>
+    <title>Proofs Without Nominals: Gödel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes</title>
+    <updated>2026-09-28T21:09:57Z</updated>
+    <link href="https://arxiv.org/abs/2609.36279v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.36279v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The shallow embedding of higher-order modal logic in classical higher-order logic, used in Benzmüller and Scott's Notes on Gödel's and Scott's variants of the ontological argument (2025), reaches beyond the modal object language of the arguments: its property quantifiers range over terms that may also express nominals and satisfaction operators of hybrid logic, and a proof using one proves a theorem of the embedding that need not be one of the modal logic. That the framework affords this is not new, and whether a result is one of the modal logic can be settled in two ways: by replaying it in an explicit proof calculus, done by hand for chosen theorems, or by analysing the proofs the embedding itself produces, which this article does mechanically, for every result at once. Every statement the Notes prove has a proof inside the object language: 294 written out by hand and machine-checked, none using a nominal. The proofs the Notes themselves give instantiate no nominal either; what the detector flags there are terms a prover substituted.
+  The three questions the Notes leave open are settled too, and without nominals, but the conjunction axiom has to be emended: generalised in the Notes to Gödel's "any number of summands", it covers the conjunction of no properties, and of one; the empty one alone settles all three, and the two together yield what a separate axiom of Gödel's is for. This article restricts the conjunction axiom to at least two different conjuncts, the reading Gödel's footnote suggests, and the questions are settled again, by proofs that turn on the argument rather than a degenerate instance. The restriction holds of the object language only: with a nominal the axioms make the accessibility relation the identity and the readings coincide. Every theorem is verified in Isabelle/HOL and independently in Lean 4; the countermodels are Nitpick's, certified by the build.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T21:09:57Z</published>
+    <arxiv:comment>27 pages. Ancillary files: Isabelle/HOL and Lean 4 sources of every theorem, sixteen Isabelle sessions on the readings of the conjunction axiom with Lean counterparts and all 72 Nitpick searches as checked expect annotations, both hybrid-witness detectors with reports and census, five audit sessions and 19 cross-check theories. The sources of the Notes are in the Archive of Formal Proofs</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <author>
+      <name>Christoph Benzmüller</name>
+    </author>
+  </entry>
+</feed>

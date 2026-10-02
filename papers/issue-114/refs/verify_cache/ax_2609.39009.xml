@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/4l2MrX61SsjigxJkYBPECvvah5o</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.39009&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:30Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.39009" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39009v1</id>
+    <title>Improved Tristate Multiplication With Formalization in Rocq</title>
+    <updated>2026-09-30T05:18:02Z</updated>
+    <link href="https://arxiv.org/abs/2609.39009v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39009v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We give a new multiplication algorithm for tristate numbers improving upon the state-of-the-art implementation from the Linux kernel in terms of precision and formal proofs. Our algorithm is significantly more precise as shown by experimental evaluation (at the peak, giving better results in 95.59% cases compared to the previous work for 31-bit samples). Importantly, we achieve this additional precision with performance comparable to the previous algorithm, as demonstrated by benchmarks. Finally, we formalize and prove the soundness of the algorithm in the Rocq proof assistant, adding to the trust in the resulting implementation. Our algorithm is now part of the upstream Linux kernel.
+  Our soundness proof in Rocq for the new multiplication algorithm works for all bit widths, while the SAT/SMT-based machine-checked proof accompanying the previous algorithm was restricted to 8 bits. We also provide Rocq proofs for the soundness and optimality of the newly added tnum union operation and the existing tnum addition algorithm from the Linux kernel. Our optimality proof for tnum addition presents a simpler and straightforward lemma compared to prior work.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T05:18:02Z</published>
+    <arxiv:primary_category term="cs.LO"/>
+    <author>
+      <name>Nandakumar Edamana</name>
+    </author>
+    <author>
+      <name>Piyush P Kurur</name>
+    </author>
+    <author>
+      <name>Unnikrishnan Cheramangalath</name>
+    </author>
+  </entry>
+</feed>

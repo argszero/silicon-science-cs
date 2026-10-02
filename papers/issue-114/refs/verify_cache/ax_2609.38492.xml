@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ObbmH4e3RVxx4K9gvNXzwH/jz4E</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.38492&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:05Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.38492" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.38492v1</id>
+    <title>Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions</title>
+    <updated>2026-09-29T20:21:25Z</updated>
+    <link href="https://arxiv.org/abs/2609.38492v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.38492v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present gap-lean4-port (Release v0.2.0), a machine-checked formalization of foundational algorithms in computational discrete algebra and permutation group theory within the Lean 4 interactive theorem prover and Mathlib4. While modern proof assistants feature extensive abstract algebraic hierarchies, constructive and operational permutation group algorithms, such as Charles Sims' 1970 Schreier-Sims algorithm, transversal tree lookups, and backtrack ordered partition refinement, have remained largely unformalized in dependent type theory. Here, we formalize the operational algorithmic core of the Groups, Algorithms, Programming (GAP) system library across four foundational modules, proving 35 machine-checked theorems with zero unproven conjectures (sorry) and zero custom axioms under standard Lean 4 foundations (propext, Classical.choice, Quot.sound). We machine-check: (1) Schreier-Sims stabilizer chain hierarchies (StabLevel, StabChain) and the invariance of incremental transversal tree extensions (extendSchreierPoint_invariant); (2) single-level and multi-level Schreier sifting reductions (siftOneLevel, siftFull), proving that full sifting strictly fixes all base points (siftFull_fixes_all_basePoints); (3) constructive soundness and completeness of Base and Strong Generating Set (BSGS) membership testing (membershipTestKnownBase_iff_mem); (4) backtrack ordered partition cell refinement (splitCellByPred), proving mutual cell disjointness, union conservation, and exact cardinality preservation; (5) cyclotomic extension rings Z/nZ(eps_m) and machine-check GAP's exact size theorem |Z/nZ(eps_m)| = n^m; and (6) executable Bezout inverses via Extended Euclidean GCD (Nat.gcdA) over residue rings Z/nZ. The entire codebase compiles deterministically under 'lake build RequestProject' and is openly available at https://github.com/pCwOrM/gap-lean4-port.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T20:21:25Z</published>
+    <arxiv:comment>3 pages, 1 table, Release v0.2.0, 35 machine-checked theorems with 0 sorry in Lean 4 / Mathlib4. Repository: https://github.com/pCwOrM/gap-lean4-port</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <author>
+      <name>Volkan Dağlı</name>
+    </author>
+    <author>
+      <name>Zerrin Dağlı</name>
+    </author>
+    <author>
+      <name>Dağhan Dağlı</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.23045504</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.23045504" title="doi"/>
+  </entry>
+</feed>

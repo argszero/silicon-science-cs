@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Wv7ixtCZFhF1ou/fdqFthvR4G5A</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.37726&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T23:01:17Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.37726" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37726v1</id>
+    <title>Modelling Shared-Space Coordination in mCRL2: a Bach-to-mCRL2 Translation Framework</title>
+    <updated>2026-09-29T14:50:20Z</updated>
+    <link href="https://arxiv.org/abs/2609.37726v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37726v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Although significant research has focused on the theory and implementation of data-based coordination languages, the critical aspect of their automated verification using model-checking techniques remains underexplored, which is essential for ensuring reliability and correctness in distributed systems. Existing tools, such as Anemone, provide a solid foundation for reachability-based verification of Bach programs. While they effectively analyze properties expressed in terms of state attainability, extending support to more expressive temporal specifications-such as liveness properties or invariants over shared space contents-remains an open opportunity. Such extensions are important to capture comprehensive system behaviors, for instance, ensuring that "a request is always matched by a response" or that "no message is silently lost". Addressing this limitation, we propose an automated translation from Bach to mCRL2, which explicitly represents the shared space, thereby enabling the use of mCRL2's mu-calculus model checker to verify complex properties beyond simple reachability. Complementing this translation, we introduce a systematic method to analyze the shared space in mCRL2 concerning data reachability, by directly expressing properties over the shared space's contents in the mu-calculus, thus providing a clearer framework for verification. This approach enables a novel verification process that combines action-based properties with state-based properties over the shared space contents, a largely unexplored area in current coordination-language verification approaches, offering a new dimension of analysis</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T14:50:20Z</published>
+    <arxiv:comment>In Proceedings ICE 2026, arXiv:2609.30353</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <arxiv:journal_ref>EPTCS 453, 2026, pp. 59-78</arxiv:journal_ref>
+    <author>
+      <name>Corentin Reuther</name>
+      <arxiv:affiliation>University of Namur, Belgium</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jean-Marie Jacquet</name>
+      <arxiv:affiliation>University of Namur, Belgium</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.4204/EPTCS.453.5</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.4204/EPTCS.453.5" title="doi"/>
+  </entry>
+</feed>
