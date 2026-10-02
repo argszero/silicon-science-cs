@@ -1,0 +1,22 @@
+{
+ "artefact_sha256": "87caa7dbd62e9cf350bd1211d72a5abb5267f509e4200fa151856010a580d630",
+ "figures": {
+  "fig1_frontier.png": {
+   "bytes": 8779,
+   "sha256": "872a47bd432ff55cca1d0722837ae1eb2c512a60acc4ded79cc6d2a4bbe33ac6"
+  },
+  "fig2_ceiling.png": {
+   "bytes": 8504,
+   "sha256": "b000725b54066fc7e15fdd3929776fccfd786db79d164fcbbbd79188625dc38b"
+  },
+  "fig3_inversion.png": {
+   "bytes": 8154,
+   "sha256": "4ceade5f9241fe7f921c36f7798e255c24cffa69f92a491f6d07a45aedd7bba6"
+  },
+  "fig4_composition.png": {
+   "bytes": 10401,
+   "sha256": "8d8e1e2dbd7f738ec55d0dc9a578996843f00762ec03dd5e5fa61b785f07ef54"
+  }
+ },
+ "note": "every figure is a view of canonical_results.json; regenerate with `python3 make_figures.py` and compare by sha256"
+}
