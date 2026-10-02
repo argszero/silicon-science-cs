@@ -1,0 +1,1228 @@
+{
+ "by_role_count": {
+  "R10_setting_control_and_manipulation": 22,
+  "R1_chunked_policy_horizon": 30,
+  "R2_policy_latency_efficiency": 9,
+  "R3_delay_networked_sampled_data": 14,
+  "R4_staleness_anytime_imprecise": 14,
+  "R5_receding_horizon_and_horizon_length": 8,
+  "R6_lqg_lyapunov_covariance": 17,
+  "R7_abstraction_options_macro": 7,
+  "R8_amortization_and_compute": 5,
+  "R9_disturbance_and_saturation": 8
+ },
+ "keys": {
+  "10.15607/rss.2023.xix.016": {
+   "category": null,
+   "doi": "10.15607/rss.2023.xix.016",
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "registration anchor (DOI, Crossref-verified)",
+   "title": null,
+   "verified_title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+   "verified_year": "2023"
+  },
+  "1007.0683": {
+   "arxiv": "1007.0683",
+   "category": "cs.OH",
+   "published": "2010-06-21",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Scheduling Periodic Real-Time Tasks with Heterogeneous Reward Requirements",
+   "verified_published": "2010-06-21",
+   "verified_title": "Scheduling Periodic Real-Time Tasks with Heterogeneous Reward Requirements"
+  },
+  "1010.2265": {
+   "arxiv": "1010.2265",
+   "category": "math.ST",
+   "published": "2010-10-11",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "The Lambert Way to Gaussianize heavy tailed data with the inverse of Tukey's h as a special case",
+   "verified_published": "2010-10-11",
+   "verified_title": "The Lambert Way to Gaussianize heavy tailed data with the inverse of Tukey's h as a special case"
+  },
+  "1208.3830": {
+   "arxiv": "1208.3830",
+   "category": "math.OC",
+   "published": "2012-08-19",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "On the Stability of Receding Horizon Control for Continuous-Time Stochastic Systems",
+   "verified_published": "2012-08-19",
+   "verified_title": "On the Stability of Receding Horizon Control for Continuous-Time Stochastic Systems"
+  },
+  "1301.7381": {
+   "arxiv": "1301.7381",
+   "category": "cs.AI",
+   "published": "2013-01-30",
+   "role": "R7_abstraction_options_macro",
+   "title": "Hierarchical Solution of Markov Decision Processes using Macro-actions",
+   "verified_published": "2013-01-30",
+   "verified_title": "Hierarchical Solution of Markov Decision Processes using Macro-actions"
+  },
+  "1301.7384": {
+   "arxiv": "1301.7384",
+   "category": "cs.AI",
+   "published": "2013-01-30",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "An Anytime Algorithm for Decision Making under Uncertainty",
+   "verified_published": "2013-01-30",
+   "verified_title": "An Anytime Algorithm for Decision Making under Uncertainty"
+  },
+  "1306.0448": {
+   "arxiv": "1306.0448",
+   "category": "cs.DC",
+   "published": "2013-06-03",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Adaptive Fixed Priority End-To-End Imprecise Scheduling In Distributed Real Time Systems",
+   "verified_published": "2013-06-03",
+   "verified_title": "Adaptive Fixed Priority End-To-End Imprecise Scheduling In Distributed Real Time Systems"
+  },
+  "1311.0388": {
+   "arxiv": "1311.0388",
+   "category": "cs.RO",
+   "published": "2013-11-02",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Non-linear Task-Space Disturbance Observer for Position Regulation of Redundant Robot Arms against Perturbations in 3D Environments",
+   "verified_published": "2013-11-02",
+   "verified_title": "Non-linear Task-Space Disturbance Observer for Position Regulation of Redundant Robot Arms against Perturbations in 3D Environments"
+  },
+  "1402.4568": {
+   "arxiv": "1402.4568",
+   "category": "math.OC",
+   "published": "2014-02-19",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "Linear Receding Horizon Control with Probabilistic System Parameters",
+   "verified_published": "2014-02-19",
+   "verified_title": "Linear Receding Horizon Control with Probabilistic System Parameters"
+  },
+  "1410.5083": {
+   "arxiv": "1410.5083",
+   "category": "eess.SY",
+   "published": "2014-10-19",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Stability for Receding-horizon Stochastic Model Predictive Control",
+   "verified_published": "2014-10-19",
+   "verified_title": "Stability for Receding-horizon Stochastic Model Predictive Control"
+  },
+  "1506.08637": {
+   "arxiv": "1506.08637",
+   "category": "cs.IT",
+   "published": "2015-06-29",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "On The Age Of Information In Status Update Systems With Packet Management",
+   "verified_published": "2015-06-29",
+   "verified_title": "On The Age Of Information In Status Update Systems With Packet Management"
+  },
+  "1507.02100": {
+   "arxiv": "1507.02100",
+   "category": "math.NA",
+   "published": "2015-07-08",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Iterative methods for the delay Lyapunov equation with T-Sylvester preconditioning",
+   "verified_published": "2015-07-08",
+   "verified_title": "Iterative methods for the delay Lyapunov equation with T-Sylvester preconditioning"
+  },
+  "1511.03488": {
+   "arxiv": "1511.03488",
+   "category": "eess.SY",
+   "published": "2015-11-11",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Constraint-Tightening and Stability in Stochastic Model Predictive Control",
+   "verified_published": "2015-11-11",
+   "verified_title": "Constraint-Tightening and Stability in Stochastic Model Predictive Control"
+  },
+  "1512.04797": {
+   "arxiv": "1512.04797",
+   "category": "math.OC",
+   "published": "2015-12-15",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Pontryagin maximum principle for optimal sampled-data control problems",
+   "verified_published": "2015-12-15",
+   "verified_title": "Pontryagin maximum principle for optimal sampled-data control problems"
+  },
+  "1604.06350": {
+   "arxiv": "1604.06350",
+   "category": "math.OC",
+   "published": "2016-04-21",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Linear-quadratic optimal sampled-data control problems: convergence result and Riccati theory",
+   "verified_published": "2016-04-21",
+   "verified_title": "Linear-quadratic optimal sampled-data control problems: convergence result and Riccati theory"
+  },
+  "1608.03729": {
+   "arxiv": "1608.03729",
+   "category": "math.OC",
+   "published": "2016-08-12",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Boundary control of cascaded ODE-Heat equations under actuator saturation",
+   "verified_published": "2016-08-12",
+   "verified_title": "Boundary control of cascaded ODE-Heat equations under actuator saturation"
+  },
+  "1610.05735": {
+   "arxiv": "1610.05735",
+   "category": "cs.AI",
+   "published": "2016-10-18",
+   "role": "R8_amortization_and_compute",
+   "title": "Deep Amortized Inference for Probabilistic Programs",
+   "verified_published": "2016-10-18",
+   "verified_title": "Deep Amortized Inference for Probabilistic Programs"
+  },
+  "1612.01554": {
+   "arxiv": "1612.01554",
+   "category": "math.OC",
+   "published": "2016-12-05",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Robustness of Control Barrier Functions for Safety Critical Control",
+   "verified_published": "2016-12-05",
+   "verified_title": "Robustness of Control Barrier Functions for Safety Critical Control"
+  },
+  "1701.06927": {
+   "arxiv": "1701.06927",
+   "category": "cs.IT",
+   "published": "2017-01-24",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Age and Value of Information: Non-linear Age Case",
+   "verified_published": "2017-01-24",
+   "verified_title": "Age and Value of Information: Non-linear Age Case"
+  },
+  "1709.10087": {
+   "arxiv": "1709.10087",
+   "category": "cs.LG",
+   "published": "2017-09-28",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations",
+   "verified_published": "2017-09-28",
+   "verified_title": "Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations"
+  },
+  "1803.09487": {
+   "arxiv": "1803.09487",
+   "category": "math.OC",
+   "published": "2018-03-26",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Lower bounds on the maximum delay margin by analytic interpolation",
+   "verified_published": "2018-03-26",
+   "verified_title": "Lower bounds on the maximum delay margin by analytic interpolation"
+  },
+  "1805.08913": {
+   "arxiv": "1805.08913",
+   "category": "stat.ML",
+   "published": "2018-05-23",
+   "role": "R8_amortization_and_compute",
+   "title": "Amortized Inference Regularization",
+   "verified_published": "2018-05-23",
+   "verified_title": "Amortized Inference Regularization"
+  },
+  "1807.04700": {
+   "arxiv": "1807.04700",
+   "category": "math.OC",
+   "published": "2018-07-12",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Technical Report: Infinite Horizon Discrete-Time Linear Quadratic Gaussian Tracking Control Derivation",
+   "verified_published": "2018-07-12",
+   "verified_title": "Technical Report: Infinite Horizon Discrete-Time Linear Quadratic Gaussian Tracking Control Derivation"
+  },
+  "1807.10715": {
+   "arxiv": "1807.10715",
+   "category": "math.NA",
+   "published": "2018-07-27",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Residual-based iterations for the generalized Lyapunov equation",
+   "verified_published": "2018-07-27",
+   "verified_title": "Residual-based iterations for the generalized Lyapunov equation"
+  },
+  "1810.10983": {
+   "arxiv": "1810.10983",
+   "category": "cs.IT",
+   "published": "2018-10-25",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Stochastic Control with Stale Information--Part I: Fully Observable Systems",
+   "verified_published": "2018-10-25",
+   "verified_title": "Stochastic Control with Stale Information--Part I: Fully Observable Systems"
+  },
+  "1811.07534": {
+   "arxiv": "1811.07534",
+   "category": "eess.SY",
+   "published": "2018-11-19",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Note on the exact delay stability margin computation of hybrid dynamical systems",
+   "verified_published": "2018-11-19",
+   "verified_title": "Note on the exact delay stability margin computation of hybrid dynamical systems"
+  },
+  "1811.08067": {
+   "arxiv": "1811.08067",
+   "category": "cs.RO",
+   "published": "2018-11-20",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Reinforcement Learning of Active Vision for Manipulating Objects under Occlusions",
+   "verified_published": "2018-11-20",
+   "verified_title": "Reinforcement Learning of Active Vision for Manipulating Objects under Occlusions"
+  },
+  "1902.06235": {
+   "arxiv": "1902.06235",
+   "category": "math.OC",
+   "published": "2019-02-17",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Optimal Stabilization Control for Discrete-time Markov Jump Linear System with Control Input Delay",
+   "verified_published": "2019-02-17",
+   "verified_title": "Optimal Stabilization Control for Discrete-time Markov Jump Linear System with Control Input Delay"
+  },
+  "1902.09032": {
+   "arxiv": "1902.09032",
+   "category": "eess.SY",
+   "published": "2019-02-24",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Disturbance Observer-based Robust Control and Its Applications: 35th Anniversary Overview",
+   "verified_published": "2019-02-24",
+   "verified_title": "Disturbance Observer-based Robust Control and Its Applications: 35th Anniversary Overview"
+  },
+  "1903.06368": {
+   "arxiv": "1903.06368",
+   "category": "eess.SY",
+   "published": "2019-03-15",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Robust Decidability of Sampled-Data Control of Nonlinear Systems with Temporal Logic Specifications",
+   "verified_published": "2019-03-15",
+   "verified_title": "Robust Decidability of Sampled-Data Control of Nonlinear Systems with Temporal Logic Specifications"
+  },
+  "1904.12660": {
+   "arxiv": "1904.12660",
+   "category": "eess.SY",
+   "published": "2019-04-25",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Tracking Performance Limitations of MIMO Networked Control Systems with Multiple Communication Constraints",
+   "verified_published": "2019-04-25",
+   "verified_title": "Tracking Performance Limitations of MIMO Networked Control Systems with Multiple Communication Constraints"
+  },
+  "1905.04391": {
+   "arxiv": "1905.04391",
+   "category": "cs.DC",
+   "published": "2019-05-10",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Energy-Aware Scheduling of Task Graphs with Imprecise Computations and End-to-End Deadlines",
+   "verified_published": "2019-05-10",
+   "verified_title": "Energy-Aware Scheduling of Task Graphs with Imprecise Computations and End-to-End Deadlines"
+  },
+  "1906.01434": {
+   "arxiv": "1906.01434",
+   "category": "math.OC",
+   "published": "2019-05-31",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Sampled-Data Control of the Stefan System",
+   "verified_published": "2019-05-31",
+   "verified_title": "Sampled-Data Control of the Stefan System"
+  },
+  "1912.06331": {
+   "arxiv": "1912.06331",
+   "category": "eess.SY",
+   "published": "2019-12-13",
+   "role": "R9_disturbance_and_saturation",
+   "title": "A Guide to Design Disturbance Observer",
+   "verified_published": "2019-12-13",
+   "verified_title": "A Guide to Design Disturbance Observer"
+  },
+  "1912.08734": {
+   "arxiv": "1912.08734",
+   "category": "math.OC",
+   "published": "2019-12-18",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "An analytic interpolation approach to stability margins with emphasis on time delay",
+   "verified_published": "2019-12-18",
+   "verified_title": "An analytic interpolation approach to stability margins with emphasis on time delay"
+  },
+  "2002.06836": {
+   "arxiv": "2002.06836",
+   "category": "cs.LG",
+   "published": "2020-02-17",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Control Frequency Adaptation via Action Persistence in Batch Reinforcement Learning",
+   "verified_published": "2020-02-17",
+   "verified_title": "Control Frequency Adaptation via Action Persistence in Batch Reinforcement Learning"
+  },
+  "2003.02327": {
+   "arxiv": "2003.02327",
+   "category": "cs.CV",
+   "published": "2020-03-04",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Learning View and Target Invariant Visual Servoing for Navigation",
+   "verified_published": "2020-03-04",
+   "verified_title": "Learning View and Target Invariant Visual Servoing for Navigation"
+  },
+  "2003.05999": {
+   "arxiv": "2003.05999",
+   "category": "cs.LG",
+   "published": "2020-03-12",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Adaptive Control and Regret Minimization in Linear Quadratic Gaussian (LQG) Setting",
+   "verified_published": "2020-03-12",
+   "verified_title": "Adaptive Control and Regret Minimization in Linear Quadratic Gaussian (LQG) Setting"
+  },
+  "2004.08332": {
+   "arxiv": "2004.08332",
+   "category": "math.OC",
+   "published": "2020-04-17",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "On the Stability Margin and Input Delay Margin of Linear Multi-agent systems",
+   "verified_published": "2020-04-17",
+   "verified_title": "On the Stability Margin and Input Delay Margin of Linear Multi-agent systems"
+  },
+  "2004.08646": {
+   "arxiv": "2004.08646",
+   "category": "cs.LG",
+   "published": "2020-04-18",
+   "role": "R7_abstraction_options_macro",
+   "title": "Macro-Action-Based Deep Multi-Agent Reinforcement Learning",
+   "verified_published": "2020-04-18",
+   "verified_title": "Macro-Action-Based Deep Multi-Agent Reinforcement Learning"
+  },
+  "2004.08932": {
+   "arxiv": "2004.08932",
+   "category": "math.OC",
+   "published": "2020-04-19",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Discounted Cost Linear Quadratic Gaussian Control for Descriptor Systems",
+   "verified_published": "2020-04-19",
+   "verified_title": "Discounted Cost Linear Quadratic Gaussian Control for Descriptor Systems"
+  },
+  "2010.04296": {
+   "arxiv": "2010.04296",
+   "category": "cs.RO",
+   "published": "2020-10-08",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning",
+   "verified_published": "2020-10-08",
+   "verified_title": "CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning"
+  },
+  "2011.00778": {
+   "arxiv": "2011.00778",
+   "category": "cs.RO",
+   "published": "2020-11-02",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Learning Sequences of Manipulation Primitives for Robotic Assembly",
+   "verified_published": "2020-11-02",
+   "verified_title": "Learning Sequences of Manipulation Primitives for Robotic Assembly"
+  },
+  "2011.01112": {
+   "arxiv": "2011.01112",
+   "category": "cs.LG",
+   "published": "2020-11-02",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Scheduling Real-time Deep Learning Services as Imprecise Computations",
+   "verified_published": "2020-11-02",
+   "verified_title": "Scheduling Real-time Deep Learning Services as Imprecise Computations"
+  },
+  "2011.03813": {
+   "arxiv": "2011.03813",
+   "category": "cs.RO",
+   "published": "2020-11-07",
+   "role": "R7_abstraction_options_macro",
+   "title": "MAGIC: Learning Macro-Actions for Online POMDP Planning",
+   "verified_published": "2020-11-07",
+   "verified_title": "MAGIC: Learning Macro-Actions for Online POMDP Planning"
+  },
+  "2012.14942": {
+   "arxiv": "2012.14942",
+   "category": "cs.LG",
+   "published": "2020-12-29",
+   "role": "R7_abstraction_options_macro",
+   "title": "LISPR: An Options Framework for Policy Reuse with Reinforcement Learning",
+   "verified_published": "2020-12-29",
+   "verified_title": "LISPR: An Options Framework for Policy Reuse with Reinforcement Learning"
+  },
+  "2101.00649": {
+   "arxiv": "2101.00649",
+   "category": "eess.SY",
+   "published": "2021-01-03",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "A scheduling algorithm for networked control systems",
+   "verified_published": "2021-01-03",
+   "verified_title": "A scheduling algorithm for networked control systems"
+  },
+  "2101.02859": {
+   "arxiv": "2101.02859",
+   "category": "eess.SY",
+   "published": "2021-01-08",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Disturbance Observer",
+   "verified_published": "2021-01-08",
+   "verified_title": "Disturbance Observer"
+  },
+  "2102.11122": {
+   "arxiv": "2102.11122",
+   "category": "eess.SY",
+   "published": "2021-02-22",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "Reinforcement Learning of the Prediction Horizon in Model Predictive Control",
+   "verified_published": "2021-02-22",
+   "verified_title": "Reinforcement Learning of the Prediction Horizon in Model Predictive Control"
+  },
+  "2102.12571": {
+   "arxiv": "2102.12571",
+   "category": "cs.AI",
+   "published": "2021-02-24",
+   "role": "R7_abstraction_options_macro",
+   "title": "The Logical Options Framework",
+   "verified_published": "2021-02-24",
+   "verified_title": "The Logical Options Framework"
+  },
+  "2104.10383": {
+   "arxiv": "2104.10383",
+   "category": "eess.SY",
+   "published": "2021-04-21",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Stochastic Model Predictive Control for Linear Systems with Unbounded Additive Uncertainties",
+   "verified_published": "2021-04-21",
+   "verified_title": "Stochastic Model Predictive Control for Linear Systems with Unbounded Additive Uncertainties"
+  },
+  "2107.08149": {
+   "arxiv": "2107.08149",
+   "category": "cs.RO",
+   "published": "2021-07-17",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Dual Quaternion-Based Visual Servoing for Grasping Moving Objects",
+   "verified_published": "2021-07-17",
+   "verified_title": "Dual Quaternion-Based Visual Servoing for Grasping Moving Objects"
+  },
+  "2108.08014": {
+   "arxiv": "2108.08014",
+   "category": "eess.SY",
+   "published": "2021-08-18",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "Model Predictive Control with Models of Different Granularity and a Non-uniformly Spaced Prediction Horizon",
+   "verified_published": "2021-08-18",
+   "verified_title": "Model Predictive Control with Models of Different Granularity and a Non-uniformly Spaced Prediction Horizon"
+  },
+  "2110.13356": {
+   "arxiv": "2110.13356",
+   "category": "eess.SY",
+   "published": "2021-10-26",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Event-triggered Consensus of Matrix-weighted Networks Subject to Actuator Saturation",
+   "verified_published": "2021-10-26",
+   "verified_title": "Event-triggered Consensus of Matrix-weighted Networks Subject to Actuator Saturation"
+  },
+  "2112.14507": {
+   "arxiv": "2112.14507",
+   "category": "eess.SY",
+   "published": "2021-12-29",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Optimal Sampled-Data Control of a Nonlinear System",
+   "verified_published": "2021-12-29",
+   "verified_title": "Optimal Sampled-Data Control of a Nonlinear System"
+  },
+  "2203.08098": {
+   "arxiv": "2203.08098",
+   "category": "cs.RO",
+   "published": "2022-03-15",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "RB2: Robotic Manipulation Benchmarking with a Twist",
+   "verified_published": "2022-03-15",
+   "verified_title": "RB2: Robotic Manipulation Benchmarking with a Twist"
+  },
+  "2203.13251": {
+   "arxiv": "2203.13251",
+   "category": "cs.RO",
+   "published": "2022-03-24",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Dexterous Imitation Made Easy: A Learning-Based Framework for Efficient Dexterous Manipulation",
+   "verified_published": "2022-03-24",
+   "verified_title": "Dexterous Imitation Made Easy: A Learning-Based Framework for Efficient Dexterous Manipulation"
+  },
+  "2204.05681": {
+   "arxiv": "2204.05681",
+   "category": "cs.RO",
+   "published": "2022-04-12",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Learning Stable Dynamical Systems for Visual Servoing",
+   "verified_published": "2022-04-12",
+   "verified_title": "Learning Stable Dynamical Systems for Visual Servoing"
+  },
+  "2204.06207": {
+   "arxiv": "2204.06207",
+   "category": "eess.SY",
+   "published": "2022-04-13",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Safe Stochastic Model Predictive Control",
+   "verified_published": "2022-04-13",
+   "verified_title": "Safe Stochastic Model Predictive Control"
+  },
+  "2205.11640": {
+   "arxiv": "2205.11640",
+   "category": "stat.ML",
+   "published": "2022-05-23",
+   "role": "R8_amortization_and_compute",
+   "title": "Generalization Gap in Amortized Inference",
+   "verified_published": "2022-05-23",
+   "verified_title": "Generalization Gap in Amortized Inference"
+  },
+  "2205.14292": {
+   "arxiv": "2205.14292",
+   "category": "cs.RO",
+   "published": "2022-05-28",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "BulletArm: An Open-Source Robotic Manipulation Benchmark and Learning Framework",
+   "verified_published": "2022-05-28",
+   "verified_title": "BulletArm: An Open-Source Robotic Manipulation Benchmark and Learning Framework"
+  },
+  "2206.04477": {
+   "arxiv": "2206.04477",
+   "category": "cs.LG",
+   "published": "2022-06-09",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "Receding Horizon Inverse Reinforcement Learning",
+   "verified_published": "2022-06-09",
+   "verified_title": "Receding Horizon Inverse Reinforcement Learning"
+  },
+  "2209.08728": {
+   "arxiv": "2209.08728",
+   "category": "math.OC",
+   "published": "2022-09-19",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Control Barrier Functions for Stochastic Systems and Safety-critical Control Designs",
+   "verified_published": "2022-09-19",
+   "verified_title": "Control Barrier Functions for Stochastic Systems and Safety-critical Control Designs"
+  },
+  "2210.10549": {
+   "arxiv": "2210.10549",
+   "category": "cs.RO",
+   "published": "2022-10-19",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Visual Servoing with Geometrically Interpretable Neural Perception",
+   "verified_published": "2022-10-19",
+   "verified_title": "Visual Servoing with Geometrically Interpretable Neural Perception"
+  },
+  "2211.00867": {
+   "arxiv": "2211.00867",
+   "category": "math.ST",
+   "published": "2022-11-02",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Heavy-Tailed NGG Mixture Models",
+   "verified_published": "2022-11-02",
+   "verified_title": "Heavy-Tailed NGG Mixture Models"
+  },
+  "2303.08428": {
+   "arxiv": "2303.08428",
+   "category": "math.OC",
+   "published": "2023-03-15",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Criteria for stabilizing a multi-delay stochastic system with multiplicative control-dependent noises",
+   "verified_published": "2023-03-15",
+   "verified_title": "Criteria for stabilizing a multi-delay stochastic system with multiplicative control-dependent noises"
+  },
+  "2305.19262": {
+   "arxiv": "2305.19262",
+   "category": "eess.SY",
+   "published": "2023-05-30",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Stochastic Model Predictive Control with Dynamic Chance Constraints",
+   "verified_published": "2023-05-30",
+   "verified_title": "Stochastic Model Predictive Control with Dynamic Chance Constraints"
+  },
+  "2308.14265": {
+   "arxiv": "2308.14265",
+   "category": "math.OC",
+   "published": "2023-08-28",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "A Risk-Aware Control: Integrating Worst-Case CVaR with Control Barrier Function",
+   "verified_published": "2023-08-28",
+   "verified_title": "A Risk-Aware Control: Integrating Worst-Case CVaR with Control Barrier Function"
+  },
+  "2311.09062": {
+   "arxiv": "2311.09062",
+   "category": "cs.HC",
+   "published": "2023-11-15",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Brain Functional Connectivity under Teleoperation Latency: a fNIRS Study",
+   "verified_published": "2023-11-15",
+   "verified_title": "Brain Functional Connectivity under Teleoperation Latency: a fNIRS Study"
+  },
+  "2312.11374": {
+   "arxiv": "2312.11374",
+   "category": "cs.RO",
+   "published": "2023-12-18",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Mastering Stacking of Diverse Shapes with Large-Scale Iterative Reinforcement Learning on Real Robots",
+   "verified_published": "2023-12-18",
+   "verified_title": "Mastering Stacking of Diverse Shapes with Large-Scale Iterative Reinforcement Learning on Real Robots"
+  },
+  "2403.00336": {
+   "arxiv": "2403.00336",
+   "category": "cs.RO",
+   "published": "2024-03-01",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Never-Ending Behavior-Cloning Agent for Robotic Manipulation",
+   "verified_published": "2024-03-01",
+   "verified_title": "Never-Ending Behavior-Cloning Agent for Robotic Manipulation"
+  },
+  "2403.08807": {
+   "arxiv": "2403.08807",
+   "category": "cs.NE",
+   "published": "2024-02-06",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Effective anytime algorithm for multiobjective combinatorial optimization problems",
+   "verified_published": "2024-02-06",
+   "verified_title": "Effective anytime algorithm for multiobjective combinatorial optimization problems"
+  },
+  "2403.09504": {
+   "arxiv": "2403.09504",
+   "category": "eess.SY",
+   "published": "2024-03-14",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems",
+   "verified_published": "2024-03-14",
+   "verified_title": "Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems"
+  },
+  "2404.12484": {
+   "arxiv": "2404.12484",
+   "category": "stat.ML",
+   "published": "2024-04-18",
+   "role": "R8_amortization_and_compute",
+   "title": "Neural Methods for Amortized Inference",
+   "verified_published": "2024-04-18",
+   "verified_title": "Neural Methods for Amortized Inference"
+  },
+  "2404.16391": {
+   "arxiv": "2404.16391",
+   "category": "eess.SY",
+   "published": "2024-04-25",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "Stability-Oriented Prediction Horizons Design of Generalized Predictive Control for DC/DC Boost Converter",
+   "verified_published": "2024-04-25",
+   "verified_title": "Stability-Oriented Prediction Horizons Design of Generalized Predictive Control for DC/DC Boost Converter"
+  },
+  "2405.14636": {
+   "arxiv": "2405.14636",
+   "category": "cs.DC",
+   "published": "2024-05-23",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "PerLLM: Personalized Inference Scheduling with Edge-Cloud Collaboration for Diverse LLM Services",
+   "verified_published": "2024-05-23",
+   "verified_title": "PerLLM: Personalized Inference Scheduling with Edge-Cloud Collaboration for Diverse LLM Services"
+  },
+  "2406.06005": {
+   "arxiv": "2406.06005",
+   "category": "cs.RO",
+   "published": "2024-06-10",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts",
+   "verified_published": "2024-06-10",
+   "verified_title": "WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts"
+  },
+  "2406.07324": {
+   "arxiv": "2406.07324",
+   "category": "eess.SY",
+   "published": "2024-06-11",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Lyapunov equations: a (fixed) point of view",
+   "verified_published": "2024-06-11",
+   "verified_title": "Lyapunov equations: a (fixed) point of view"
+  },
+  "2408.00342": {
+   "arxiv": "2408.00342",
+   "category": "cs.RO",
+   "published": "2024-08-01",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "MuJoCo MPC for Humanoid Control: Evaluation on HumanoidBench",
+   "verified_published": "2024-08-01",
+   "verified_title": "MuJoCo MPC for Humanoid Control: Evaluation on HumanoidBench"
+  },
+  "2408.17355": {
+   "arxiv": "2408.17355",
+   "category": "cs.RO",
+   "published": "2024-08-30",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling",
+   "verified_published": "2024-08-30",
+   "verified_title": "Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling"
+  },
+  "2409.05113": {
+   "arxiv": "2409.05113",
+   "category": "eess.SY",
+   "published": "2024-09-08",
+   "role": "R3_delay_networked_sampled_data",
+   "title": "Nonlinear Cooperative Output Regulation with Input Delay Compensation",
+   "verified_published": "2024-09-08",
+   "verified_title": "Nonlinear Cooperative Output Regulation with Input Delay Compensation"
+  },
+  "2410.16981": {
+   "arxiv": "2410.16981",
+   "category": "cs.RO",
+   "published": "2024-10-22",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Proleptic Temporal Ensemble for Improving the Speed of Robot Tasks Generated by Imitation Learning",
+   "verified_published": "2024-10-22",
+   "verified_title": "Proleptic Temporal Ensemble for Improving the Speed of Robot Tasks Generated by Imitation Learning"
+  },
+  "2504.03515": {
+   "arxiv": "2504.03515",
+   "category": "cs.RO",
+   "published": "2025-04-04",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Dexterous Manipulation through Imitation Learning: A Survey",
+   "verified_published": "2025-04-04",
+   "verified_title": "Dexterous Manipulation through Imitation Learning: A Survey"
+  },
+  "2504.08005": {
+   "arxiv": "2504.08005",
+   "category": "math.OC",
+   "published": "2025-04-09",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Extremum Seeking Control for Multivariable Maps under Actuator Saturation",
+   "verified_published": "2025-04-09",
+   "verified_title": "Extremum Seeking Control for Multivariable Maps under Actuator Saturation"
+  },
+  "2506.01392": {
+   "arxiv": "2506.01392",
+   "category": "cs.RO",
+   "published": "2025-06-02",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Sparse Imagination for Efficient Visual World Model Planning",
+   "verified_published": "2025-06-02",
+   "verified_title": "Sparse Imagination for Efficient Visual World Model Planning"
+  },
+  "2506.13690": {
+   "arxiv": "2506.13690",
+   "category": "cs.LG",
+   "published": "2025-06-16",
+   "role": "R7_abstraction_options_macro",
+   "title": "Meta-learning how to Share Credit among Macro-Actions",
+   "verified_published": "2025-06-16",
+   "verified_title": "Meta-learning how to Share Credit among Macro-Actions"
+  },
+  "2507.07969": {
+   "arxiv": "2507.07969",
+   "category": "cs.LG",
+   "published": "2025-07-10",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Reinforcement Learning with Action Chunking",
+   "verified_published": "2025-07-10",
+   "verified_title": "Reinforcement Learning with Action Chunking"
+  },
+  "2507.10251": {
+   "arxiv": "2507.10251",
+   "category": "cs.MA",
+   "published": "2025-07-14",
+   "role": "R7_abstraction_options_macro",
+   "title": "ToMacVF : Temporal Macro-action Value Factorization for Asynchronous Multi-Agent Reinforcement Learning",
+   "verified_published": "2025-07-14",
+   "verified_title": "ToMacVF : Temporal Macro-action Value Factorization for Asynchronous Multi-Agent Reinforcement Learning"
+  },
+  "2510.06153": {
+   "arxiv": "2510.06153",
+   "category": "math.OC",
+   "published": "2025-10-07",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Robust Data-Driven Receding Horizon Control",
+   "verified_published": "2025-10-07",
+   "verified_title": "Robust Data-Driven Receding Horizon Control"
+  },
+  "2511.04421": {
+   "arxiv": "2511.04421",
+   "category": "cs.RO",
+   "published": "2025-11-06",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Temporal Action Selection for Action Chunking",
+   "verified_published": "2025-11-06",
+   "verified_title": "Temporal Action Selection for Action Chunking"
+  },
+  "2511.09290": {
+   "arxiv": "2511.09290",
+   "category": "cs.LG",
+   "published": "2025-11-12",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "Prediction horizon shapes representations in predictive learning",
+   "verified_published": "2025-11-12",
+   "verified_title": "Prediction horizon shapes representations in predictive learning"
+  },
+  "2511.14358": {
+   "arxiv": "2511.14358",
+   "category": "eess.SY",
+   "published": "2025-11-18",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Identifying Time-varying Costs in Finite-horizon Linear Quadratic Gaussian Games",
+   "verified_published": "2025-11-18",
+   "verified_title": "Identifying Time-varying Costs in Finite-horizon Linear Quadratic Gaussian Games"
+  },
+  "2512.05964": {
+   "arxiv": "2512.05964",
+   "category": "cs.RO",
+   "published": "2025-12-05",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Training-Time Action Conditioning for Efficient Real-Time Chunking",
+   "verified_published": "2025-12-05",
+   "verified_title": "Training-Time Action Conditioning for Efficient Real-Time Chunking"
+  },
+  "2512.18725": {
+   "arxiv": "2512.18725",
+   "category": "cs.LG",
+   "published": "2025-12-21",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "ML Inference Scheduling with Predictable Latency",
+   "verified_published": "2025-12-21",
+   "verified_title": "ML Inference Scheduling with Predictable Latency"
+  },
+  "2602.07425": {
+   "arxiv": "2602.07425",
+   "category": "cs.LG",
+   "published": "2026-02-07",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise",
+   "verified_published": "2026-02-07",
+   "verified_title": "Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise"
+  },
+  "2602.18002": {
+   "arxiv": "2602.18002",
+   "category": "cs.LG",
+   "published": "2026-02-20",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Asynchronous Heavy-Tailed Optimization",
+   "verified_published": "2026-02-20",
+   "verified_title": "Asynchronous Heavy-Tailed Optimization"
+  },
+  "2602.18247": {
+   "arxiv": "2602.18247",
+   "category": "eess.SY",
+   "published": "2026-02-20",
+   "role": "R9_disturbance_and_saturation",
+   "title": "Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation",
+   "verified_published": "2026-02-20",
+   "verified_title": "Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation"
+  },
+  "2603.01891": {
+   "arxiv": "2603.01891",
+   "category": "cs.LG",
+   "published": "2026-03-02",
+   "role": "R1_chunked_policy_horizon",
+   "title": "SEAR: Sample Efficient Action Chunking Reinforcement Learning",
+   "verified_published": "2026-03-02",
+   "verified_title": "SEAR: Sample Efficient Action Chunking Reinforcement Learning"
+  },
+  "2603.06403": {
+   "arxiv": "2603.06403",
+   "category": "cs.LG",
+   "published": "2026-03-06",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling",
+   "verified_published": "2026-03-06",
+   "verified_title": "Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling"
+  },
+  "2603.08493": {
+   "arxiv": "2603.08493",
+   "category": "cs.NE",
+   "published": "2026-03-09",
+   "role": "R4_staleness_anytime_imprecise",
+   "title": "Pareto-Optimal Anytime Algorithms via Bayesian Racing",
+   "verified_published": "2026-03-09",
+   "verified_title": "Pareto-Optimal Anytime Algorithms via Bayesian Racing"
+  },
+  "2603.18091": {
+   "arxiv": "2603.18091",
+   "category": "cs.CV",
+   "published": "2026-03-18",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model",
+   "verified_published": "2026-03-18",
+   "verified_title": "Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model"
+  },
+  "2603.25981": {
+   "arxiv": "2603.25981",
+   "category": "cs.RO",
+   "published": "2026-03-26",
+   "role": "R10_setting_control_and_manipulation",
+   "title": "Policy-Guided World Model Planning for Language-Conditioned Visual Navigation",
+   "verified_published": "2026-03-26",
+   "verified_title": "Policy-Guided World Model Planning for Language-Conditioned Visual Navigation"
+  },
+  "2604.02965": {
+   "arxiv": "2604.02965",
+   "category": "cs.RO",
+   "published": "2026-04-03",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Open-Loop Planning, Closed-Loop Verification: Speculative Verification for VLA",
+   "verified_published": "2026-04-03",
+   "verified_title": "Open-Loop Planning, Closed-Loop Verification: Speculative Verification for VLA"
+  },
+  "2604.06067": {
+   "arxiv": "2604.06067",
+   "category": "cs.RO",
+   "published": "2026-04-07",
+   "role": "R1_chunked_policy_horizon",
+   "title": "HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning",
+   "verified_published": "2026-04-07",
+   "verified_title": "HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning"
+  },
+  "2604.25050": {
+   "arxiv": "2604.25050",
+   "category": "cs.RO",
+   "published": "2026-04-27",
+   "role": "R1_chunked_policy_horizon",
+   "title": "DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors",
+   "verified_published": "2026-04-27",
+   "verified_title": "DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors"
+  },
+  "2605.00884": {
+   "arxiv": "2605.00884",
+   "category": "cs.CV",
+   "published": "2026-04-27",
+   "role": "R2_policy_latency_efficiency",
+   "title": "LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception",
+   "verified_published": "2026-04-27",
+   "verified_title": "LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception"
+  },
+  "2605.15926": {
+   "arxiv": "2605.15926",
+   "category": "math.DS",
+   "published": "2026-05-15",
+   "role": "R6_lqg_lyapunov_covariance",
+   "title": "Delay periodic Lyapunov equation",
+   "verified_published": "2026-05-15",
+   "verified_title": "Delay periodic Lyapunov equation"
+  },
+  "2605.15944": {
+   "arxiv": "2605.15944",
+   "category": "cs.RO",
+   "published": "2026-05-15",
+   "role": "R1_chunked_policy_horizon",
+   "title": "FocalPolicy: Frequency-Optimized Chunking and Locally Anchored Flow Matching for Coherent Visuomotor Policy",
+   "verified_published": "2026-05-15",
+   "verified_title": "FocalPolicy: Frequency-Optimized Chunking and Locally Anchored Flow Matching for Coherent Visuomotor Policy"
+  },
+  "2605.19592": {
+   "arxiv": "2605.19592",
+   "category": "cs.RO",
+   "published": "2026-05-19",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Implicit Action Chunking for Smooth Continuous Control",
+   "verified_published": "2026-05-19",
+   "verified_title": "Implicit Action Chunking for Smooth Continuous Control"
+  },
+  "2605.25537": {
+   "arxiv": "2605.25537",
+   "category": "cs.RO",
+   "published": "2026-05-25",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Action-Prior Denoising for Smooth Real-Time Chunking",
+   "verified_published": "2026-05-25",
+   "verified_title": "Action-Prior Denoising for Smooth Real-Time Chunking"
+  },
+  "2606.00537": {
+   "arxiv": "2606.00537",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "registration anchor",
+   "title": null,
+   "verified_published": "2026-05-30",
+   "verified_title": "PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking"
+  },
+  "2606.17040": {
+   "arxiv": "2606.17040",
+   "category": "cs.RO",
+   "published": "2026-06-15",
+   "role": "R2_policy_latency_efficiency",
+   "title": "R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies",
+   "verified_published": "2026-06-15",
+   "verified_title": "R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies"
+  },
+  "2606.22540": {
+   "arxiv": "2606.22540",
+   "category": "cs.CV",
+   "published": "2026-06-21",
+   "role": "R1_chunked_policy_horizon",
+   "title": "PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models",
+   "verified_published": "2026-06-21",
+   "verified_title": "PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models"
+  },
+  "2607.02646": {
+   "arxiv": "2607.02646",
+   "category": "cs.RO",
+   "published": "2026-07-02",
+   "role": "R2_policy_latency_efficiency",
+   "title": "EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots",
+   "verified_published": "2026-07-02",
+   "verified_title": "EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots"
+  },
+  "2607.12287": {
+   "arxiv": "2607.12287",
+   "category": "cs.RO",
+   "published": "2026-07-14",
+   "role": "R2_policy_latency_efficiency",
+   "title": "Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference",
+   "verified_published": "2026-07-14",
+   "verified_title": "Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference"
+  },
+  "2607.12992": {
+   "arxiv": "2607.12992",
+   "category": "cs.RO",
+   "published": "2026-07-14",
+   "role": "R1_chunked_policy_horizon",
+   "title": "ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning",
+   "verified_published": "2026-07-14",
+   "verified_title": "ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning"
+  },
+  "2608.00793": {
+   "arxiv": "2608.00793",
+   "category": "cs.RO",
+   "published": "2026-08-01",
+   "role": "R1_chunked_policy_horizon",
+   "title": "DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation",
+   "verified_published": "2026-08-01",
+   "verified_title": "DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation"
+  },
+  "2608.02547": {
+   "arxiv": "2608.02547",
+   "category": "cs.RO",
+   "published": "2026-08-03",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?",
+   "verified_published": "2026-08-03",
+   "verified_title": "Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?"
+  },
+  "2608.08644": {
+   "arxiv": "2608.08644",
+   "category": "cs.LG",
+   "published": "2026-08-09",
+   "role": "R8_amortization_and_compute",
+   "title": "Path-dependent Discrete Amortized Inference",
+   "verified_published": "2026-08-09",
+   "verified_title": "Path-dependent Discrete Amortized Inference"
+  },
+  "2608.12932": {
+   "arxiv": "2608.12932",
+   "category": "cs.AI",
+   "published": "2026-08-13",
+   "role": "R2_policy_latency_efficiency",
+   "title": "FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving",
+   "verified_published": "2026-08-13",
+   "verified_title": "FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving"
+  },
+  "2608.15938": {
+   "arxiv": "2608.15938",
+   "category": "cs.RO",
+   "published": "2026-08-16",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Revisiting Open-Loop Execution in Robotics: Toward Reactive, Higher-Performing Policies",
+   "verified_published": "2026-08-16",
+   "verified_title": "Revisiting Open-Loop Execution in Robotics: Toward Reactive, Higher-Performing Policies"
+  },
+  "2609.03715": {
+   "arxiv": "2609.03715",
+   "category": "cs.RO",
+   "published": "2026-09-03",
+   "role": "R1_chunked_policy_horizon",
+   "title": "MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO?",
+   "verified_published": "2026-09-03",
+   "verified_title": "MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO?"
+  },
+  "2609.17210": {
+   "arxiv": "2609.17210",
+   "category": "cs.RO",
+   "published": "2026-09-15",
+   "role": "R2_policy_latency_efficiency",
+   "title": "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
+   "verified_published": "2026-09-15",
+   "verified_title": "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence"
+  },
+  "2609.18732": {
+   "arxiv": "2609.18732",
+   "category": "cs.RO",
+   "published": "2026-09-16",
+   "role": "R2_policy_latency_efficiency",
+   "title": "PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments",
+   "verified_published": "2026-09-16",
+   "verified_title": "PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments"
+  },
+  "2609.19200": {
+   "arxiv": "2609.19200",
+   "category": "cs.RO",
+   "published": "2026-09-16",
+   "role": "R1_chunked_policy_horizon",
+   "title": "ULOHA: An Underwater Bimanual Robot System for Robot Learning",
+   "verified_published": "2026-09-16",
+   "verified_title": "ULOHA: An Underwater Bimanual Robot System for Robot Learning"
+  },
+  "2609.22276": {
+   "arxiv": "2609.22276",
+   "category": "cs.RO",
+   "published": "2026-09-11",
+   "role": "R5_receding_horizon_and_horizon_length",
+   "title": "D3DWA: Adaptive Weight and Prediction-Horizon for Dynamic Window Approach via Dueling Double Deep Q-Network",
+   "verified_published": "2026-09-11",
+   "verified_title": "D3DWA: Adaptive Weight and Prediction-Horizon for Dynamic Window Approach via Dueling Double Deep Q-Network"
+  },
+  "2609.27167": {
+   "arxiv": "2609.27167",
+   "category": "cs.RO",
+   "published": "2026-09-22",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies",
+   "verified_published": "2026-09-22",
+   "verified_title": "Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies"
+  },
+  "2609.34319": {
+   "arxiv": "2609.34319",
+   "category": "cs.CV",
+   "published": "2026-09-28",
+   "role": "R2_policy_latency_efficiency",
+   "title": "Text-Vision Synergistic Token Caching: A Training-Free Framework for Efficient Vision-Language-Action Inference",
+   "verified_published": "2026-09-28",
+   "verified_title": "Text-Vision Synergistic Token Caching: A Training-Free Framework for Efficient Vision-Language-Action Inference"
+  },
+  "2609.36250": {
+   "arxiv": "2609.36250",
+   "category": "cs.LG",
+   "published": "2026-09-28",
+   "role": "R1_chunked_policy_horizon",
+   "title": "Action Chunking Proximal Policy Optimization with Feedback Correction",
+   "verified_published": "2026-09-28",
+   "verified_title": "Action Chunking Proximal Policy Optimization with Feedback Correction"
+  },
+  "2609.36471": {
+   "arxiv": "2609.36471",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "registration anchor",
+   "title": null,
+   "verified_published": "2026-09-29",
+   "verified_title": "Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks"
+  },
+  "2609.36540": {
+   "arxiv": "2609.36540",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "registration anchor",
+   "title": null,
+   "verified_published": "2026-09-29",
+   "verified_title": "Reactive Real-Time Flow Policies via Asynchronous Distribution Alignment"
+  },
+  "2609.36967": {
+   "arxiv": "2609.36967",
+   "category": "cs.RO",
+   "published": "2026-09-29",
+   "role": "R2_policy_latency_efficiency",
+   "title": "Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference",
+   "verified_published": "2026-09-29",
+   "verified_title": "Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference"
+  },
+  "2609.37772": {
+   "arxiv": "2609.37772",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "registration anchor",
+   "title": null,
+   "verified_published": "2026-09-29",
+   "verified_title": "Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control"
+  },
+  "2609.39873": {
+   "arxiv": "2609.39873",
+   "category": "cs.RO",
+   "published": "2026-09-30",
+   "role": "R1_chunked_policy_horizon",
+   "title": "SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations",
+   "verified_published": "2026-09-30",
+   "verified_title": "SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations"
+  }
+ },
+ "n": 134
+}

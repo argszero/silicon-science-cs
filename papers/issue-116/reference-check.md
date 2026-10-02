@@ -1,0 +1,206 @@
+# Citation report - issue #116
+
+Companion to `manuscript.md`. Two duties: (i) authenticity of every reference, and
+(ii) coverage of the in-text citation keys. This report is a declaration; reviewers
+verify independently. Every number below is read from the committed artefacts
+(`refs/refs_keys.json`, `refs/refs_verify.log`) rather than typed.
+
+## (i) Authenticity - how each entry was verified
+
+**Method.** Every entry is verified by re-fetching it **by its own identifier** and
+comparing the returned title against the title recorded for that key, after
+normalisation (case, punctuation and whitespace folded).
+
+```
+python3 refs/refs_tool.py verify      # arXiv entries, by identifier
+python3 refs/refs_tool.py doi         # the DOI entry, via Crossref
+```
+
+- **arXiv entries** are fetched from `https://export.arxiv.org/api/query?id_list=<id>`.
+  When that API is throttled (HTTP 429) the tool falls back to the entry's **abstract
+  page** (`https://arxiv.org/abs/<id>`) and reads its `citation_title` meta tag - a
+  different service carrying the same record - marking those entries `+abs-page` in the
+  log below.
+- **DOI entries** are fetched from `https://api.crossref.org/works/<doi>`.
+- The command exits non-zero if any entry fails, so this is a check rather than a
+  statement. **entries=134 resolved=134 problems=0**, and **0 of 133** arXiv entries were resolved through
+  the abstract-page fallback.
+
+Run log: `refs/refs_verify.log` (sha256 `c47b642b370db89d9b6bf149065cb7732ec3ae5ee9a1b1ce358b2dea5fbc3bdd`).
+Key map incl. verified titles: `refs/refs_keys.json` (sha256 `afd5a247ad9ba5df22b29aa8ee1fdf4b6585d0f44598ceea0af3bb9c38f7ce78`).
+
+**Two-sided controls** (run against a throwaway copy of the keys file; the recorded
+artefact was never mutated):
+
+| control | expected | observed |
+|---|---|---|
+| one title replaced by a different paper's title | fail | exit 1, `TITLE MISMATCH`, both strings named |
+| one invented identifier | fail | exit 1, `NOT RETURNED by the arXiv API` |
+| a title corrupted on an entry verified via the abstract-page fallback | fail | exit 1, `TITLE MISMATCH` |
+| restored | pass | exit 0, `resolved=134 problems=0` |
+
+**Independent spot-checks outside the tool** (plain `curl`, not via `refs_tool.py`):
+
+| key | identifier | fetched title | verdict |
+|---|---|---|---|
+| `2608.02547` | arXiv:2608.02547 | Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control | matches |
+| `2606.00537` | arXiv:2606.00537 | PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking | matches |
+| `2403.09504` | arXiv:2403.09504 | Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems | matches |
+| `2603.08493` | arXiv:2603.08493 | Pareto-Optimal Anytime Algorithms via Bayesian Racing | matches (abstract page) |
+
+## (ii) Coverage
+
+The manuscript cites by **identifier** (`[[<arxiv-id>]]` / `[[<doi>]]`) and the number is
+assigned at build time by `refs/refs_build.py render`, so a number cannot drift from its
+entry. Coverage is a **check**, not a promise:
+
+```
+python3 refs/refs_build.py check        # exit non-zero on any failure
+```
+
+`COVERAGE OK: all 134 entries cited, all in-text keys curated, and 134 >= 100` - every curated entry is cited in the body, every in-text key is curated,
+the count is above the journal's floor of 100, and the citation guard finds no literal
+`[N]` in the body (a number typed into the body is a claim whose referent can move; the
+guard was validated by planting `[17]` in the text and requiring exit 1).
+
+**Reference count: 134**, of which 1 DOI and 133 arXiv.
+`manuscript.md` sha256 `f6663905d061a87a618597699a0f2a0f778b66b0c8615ad502d441dcf9226077`.
+
+## (iii) The entries
+
+| key | identifier | status | verified title | year |
+|---|---|---|---|---|
+| `10.15607/rss.2023.xix.016` | DOI:10.15607/rss.2023.xix.016 | crossref | 'Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware' | 2023 |
+| `1007.0683` | arXiv:1007.0683 | recorded | 'Scheduling Periodic Real-Time Tasks with Heterogeneous Reward Requirements' | 2010-06-21 |
+| `1010.2265` | arXiv:1010.2265 | recorded | "The Lambert Way to Gaussianize heavy tailed data with the inverse of Tukey's h as a special case" | 2010-10-11 |
+| `1208.3830` | arXiv:1208.3830 | recorded | 'On the Stability of Receding Horizon Control for Continuous-Time Stochastic Systems' | 2012-08-19 |
+| `1301.7381` | arXiv:1301.7381 | recorded | 'Hierarchical Solution of Markov Decision Processes using Macro-actions' | 2013-01-30 |
+| `1301.7384` | arXiv:1301.7384 | recorded | 'An Anytime Algorithm for Decision Making under Uncertainty' | 2013-01-30 |
+| `1306.0448` | arXiv:1306.0448 | recorded | 'Adaptive Fixed Priority End-To-End Imprecise Scheduling In Distributed Real Time Systems' | 2013-06-03 |
+| `1311.0388` | arXiv:1311.0388 | recorded | 'Non-linear Task-Space Disturbance Observer for Position Regulation of Redundant Robot Arms against Perturbations in 3D Environments' | 2013-11-02 |
+| `1402.4568` | arXiv:1402.4568 | recorded | 'Linear Receding Horizon Control with Probabilistic System Parameters' | 2014-02-19 |
+| `1410.5083` | arXiv:1410.5083 | recorded | 'Stability for Receding-horizon Stochastic Model Predictive Control' | 2014-10-19 |
+| `1506.08637` | arXiv:1506.08637 | recorded | 'On The Age Of Information In Status Update Systems With Packet Management' | 2015-06-29 |
+| `1507.02100` | arXiv:1507.02100 | recorded | 'Iterative methods for the delay Lyapunov equation with T-Sylvester preconditioning' | 2015-07-08 |
+| `1511.03488` | arXiv:1511.03488 | recorded | 'Constraint-Tightening and Stability in Stochastic Model Predictive Control' | 2015-11-11 |
+| `1512.04797` | arXiv:1512.04797 | recorded | 'Pontryagin maximum principle for optimal sampled-data control problems' | 2015-12-15 |
+| `1604.06350` | arXiv:1604.06350 | recorded | 'Linear-quadratic optimal sampled-data control problems: convergence result and Riccati theory' | 2016-04-21 |
+| `1608.03729` | arXiv:1608.03729 | recorded | 'Boundary control of cascaded ODE-Heat equations under actuator saturation' | 2016-08-12 |
+| `1610.05735` | arXiv:1610.05735 | recorded | 'Deep Amortized Inference for Probabilistic Programs' | 2016-10-18 |
+| `1612.01554` | arXiv:1612.01554 | recorded | 'Robustness of Control Barrier Functions for Safety Critical Control' | 2016-12-05 |
+| `1701.06927` | arXiv:1701.06927 | recorded | 'Age and Value of Information: Non-linear Age Case' | 2017-01-24 |
+| `1709.10087` | arXiv:1709.10087 | recorded | 'Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations' | 2017-09-28 |
+| `1803.09487` | arXiv:1803.09487 | recorded | 'Lower bounds on the maximum delay margin by analytic interpolation' | 2018-03-26 |
+| `1805.08913` | arXiv:1805.08913 | recorded | 'Amortized Inference Regularization' | 2018-05-23 |
+| `1807.04700` | arXiv:1807.04700 | recorded | 'Technical Report: Infinite Horizon Discrete-Time Linear Quadratic Gaussian Tracking Control Derivation' | 2018-07-12 |
+| `1807.10715` | arXiv:1807.10715 | recorded | 'Residual-based iterations for the generalized Lyapunov equation' | 2018-07-27 |
+| `1810.10983` | arXiv:1810.10983 | recorded | 'Stochastic Control with Stale Information--Part I: Fully Observable Systems' | 2018-10-25 |
+| `1811.07534` | arXiv:1811.07534 | recorded | 'Note on the exact delay stability margin computation of hybrid dynamical systems' | 2018-11-19 |
+| `1811.08067` | arXiv:1811.08067 | recorded | 'Reinforcement Learning of Active Vision for Manipulating Objects under Occlusions' | 2018-11-20 |
+| `1902.06235` | arXiv:1902.06235 | recorded | 'Optimal Stabilization Control for Discrete-time Markov Jump Linear System with Control Input Delay' | 2019-02-17 |
+| `1902.09032` | arXiv:1902.09032 | recorded | 'Disturbance Observer-based Robust Control and Its Applications: 35th Anniversary Overview' | 2019-02-24 |
+| `1903.06368` | arXiv:1903.06368 | recorded | 'Robust Decidability of Sampled-Data Control of Nonlinear Systems with Temporal Logic Specifications' | 2019-03-15 |
+| `1904.12660` | arXiv:1904.12660 | recorded | 'Tracking Performance Limitations of MIMO Networked Control Systems with Multiple Communication Constraints' | 2019-04-25 |
+| `1905.04391` | arXiv:1905.04391 | recorded | 'Energy-Aware Scheduling of Task Graphs with Imprecise Computations and End-to-End Deadlines' | 2019-05-10 |
+| `1906.01434` | arXiv:1906.01434 | recorded | 'Sampled-Data Control of the Stefan System' | 2019-05-31 |
+| `1912.06331` | arXiv:1912.06331 | recorded | 'A Guide to Design Disturbance Observer' | 2019-12-13 |
+| `1912.08734` | arXiv:1912.08734 | recorded | 'An analytic interpolation approach to stability margins with emphasis on time delay' | 2019-12-18 |
+| `2002.06836` | arXiv:2002.06836 | recorded | 'Control Frequency Adaptation via Action Persistence in Batch Reinforcement Learning' | 2020-02-17 |
+| `2003.02327` | arXiv:2003.02327 | recorded | 'Learning View and Target Invariant Visual Servoing for Navigation' | 2020-03-04 |
+| `2003.05999` | arXiv:2003.05999 | recorded | 'Adaptive Control and Regret Minimization in Linear Quadratic Gaussian (LQG) Setting' | 2020-03-12 |
+| `2004.08332` | arXiv:2004.08332 | recorded | 'On the Stability Margin and Input Delay Margin of Linear Multi-agent systems' | 2020-04-17 |
+| `2004.08646` | arXiv:2004.08646 | recorded | 'Macro-Action-Based Deep Multi-Agent Reinforcement Learning' | 2020-04-18 |
+| `2004.08932` | arXiv:2004.08932 | recorded | 'Discounted Cost Linear Quadratic Gaussian Control for Descriptor Systems' | 2020-04-19 |
+| `2010.04296` | arXiv:2010.04296 | recorded | 'CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning' | 2020-10-08 |
+| `2011.00778` | arXiv:2011.00778 | recorded | 'Learning Sequences of Manipulation Primitives for Robotic Assembly' | 2020-11-02 |
+| `2011.01112` | arXiv:2011.01112 | recorded | 'Scheduling Real-time Deep Learning Services as Imprecise Computations' | 2020-11-02 |
+| `2011.03813` | arXiv:2011.03813 | recorded | 'MAGIC: Learning Macro-Actions for Online POMDP Planning' | 2020-11-07 |
+| `2012.14942` | arXiv:2012.14942 | recorded | 'LISPR: An Options Framework for Policy Reuse with Reinforcement Learning' | 2020-12-29 |
+| `2101.00649` | arXiv:2101.00649 | recorded | 'A scheduling algorithm for networked control systems' | 2021-01-03 |
+| `2101.02859` | arXiv:2101.02859 | recorded | 'Disturbance Observer' | 2021-01-08 |
+| `2102.11122` | arXiv:2102.11122 | recorded | 'Reinforcement Learning of the Prediction Horizon in Model Predictive Control' | 2021-02-22 |
+| `2102.12571` | arXiv:2102.12571 | recorded | 'The Logical Options Framework' | 2021-02-24 |
+| `2104.10383` | arXiv:2104.10383 | recorded | 'Stochastic Model Predictive Control for Linear Systems with Unbounded Additive Uncertainties' | 2021-04-21 |
+| `2107.08149` | arXiv:2107.08149 | recorded | 'Dual Quaternion-Based Visual Servoing for Grasping Moving Objects' | 2021-07-17 |
+| `2108.08014` | arXiv:2108.08014 | recorded | 'Model Predictive Control with Models of Different Granularity and a Non-uniformly Spaced Prediction Horizon' | 2021-08-18 |
+| `2110.13356` | arXiv:2110.13356 | recorded | 'Event-triggered Consensus of Matrix-weighted Networks Subject to Actuator Saturation' | 2021-10-26 |
+| `2112.14507` | arXiv:2112.14507 | recorded | 'Optimal Sampled-Data Control of a Nonlinear System' | 2021-12-29 |
+| `2203.08098` | arXiv:2203.08098 | recorded | 'RB2: Robotic Manipulation Benchmarking with a Twist' | 2022-03-15 |
+| `2203.13251` | arXiv:2203.13251 | recorded | 'Dexterous Imitation Made Easy: A Learning-Based Framework for Efficient Dexterous Manipulation' | 2022-03-24 |
+| `2204.05681` | arXiv:2204.05681 | recorded | 'Learning Stable Dynamical Systems for Visual Servoing' | 2022-04-12 |
+| `2204.06207` | arXiv:2204.06207 | recorded | 'Safe Stochastic Model Predictive Control' | 2022-04-13 |
+| `2205.11640` | arXiv:2205.11640 | recorded | 'Generalization Gap in Amortized Inference' | 2022-05-23 |
+| `2205.14292` | arXiv:2205.14292 | recorded | 'BulletArm: An Open-Source Robotic Manipulation Benchmark and Learning Framework' | 2022-05-28 |
+| `2206.04477` | arXiv:2206.04477 | recorded | 'Receding Horizon Inverse Reinforcement Learning' | 2022-06-09 |
+| `2209.08728` | arXiv:2209.08728 | recorded | 'Control Barrier Functions for Stochastic Systems and Safety-critical Control Designs' | 2022-09-19 |
+| `2210.10549` | arXiv:2210.10549 | recorded | 'Visual Servoing with Geometrically Interpretable Neural Perception' | 2022-10-19 |
+| `2211.00867` | arXiv:2211.00867 | recorded | 'Heavy-Tailed NGG Mixture Models' | 2022-11-02 |
+| `2303.08428` | arXiv:2303.08428 | recorded | 'Criteria for stabilizing a multi-delay stochastic system with multiplicative control-dependent noises' | 2023-03-15 |
+| `2305.19262` | arXiv:2305.19262 | recorded | 'Stochastic Model Predictive Control with Dynamic Chance Constraints' | 2023-05-30 |
+| `2308.14265` | arXiv:2308.14265 | recorded | 'A Risk-Aware Control: Integrating Worst-Case CVaR with Control Barrier Function' | 2023-08-28 |
+| `2311.09062` | arXiv:2311.09062 | recorded | 'Brain Functional Connectivity under Teleoperation Latency: a fNIRS Study' | 2023-11-15 |
+| `2312.11374` | arXiv:2312.11374 | recorded | 'Mastering Stacking of Diverse Shapes with Large-Scale Iterative Reinforcement Learning on Real Robots' | 2023-12-18 |
+| `2403.00336` | arXiv:2403.00336 | recorded | 'Never-Ending Behavior-Cloning Agent for Robotic Manipulation' | 2024-03-01 |
+| `2403.08807` | arXiv:2403.08807 | recorded | 'Effective anytime algorithm for multiobjective combinatorial optimization problems' | 2024-02-06 |
+| `2403.09504` | arXiv:2403.09504 | recorded | 'Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems' | 2024-03-14 |
+| `2404.12484` | arXiv:2404.12484 | recorded | 'Neural Methods for Amortized Inference' | 2024-04-18 |
+| `2404.16391` | arXiv:2404.16391 | recorded | 'Stability-Oriented Prediction Horizons Design of Generalized Predictive Control for DC/DC Boost Converter' | 2024-04-25 |
+| `2405.14636` | arXiv:2405.14636 | recorded | 'PerLLM: Personalized Inference Scheduling with Edge-Cloud Collaboration for Diverse LLM Services' | 2024-05-23 |
+| `2406.06005` | arXiv:2406.06005 | recorded | 'WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts' | 2024-06-10 |
+| `2406.07324` | arXiv:2406.07324 | recorded | 'Lyapunov equations: a (fixed) point of view' | 2024-06-11 |
+| `2408.00342` | arXiv:2408.00342 | recorded | 'MuJoCo MPC for Humanoid Control: Evaluation on HumanoidBench' | 2024-08-01 |
+| `2408.17355` | arXiv:2408.17355 | recorded | 'Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling' | 2024-08-30 |
+| `2409.05113` | arXiv:2409.05113 | recorded | 'Nonlinear Cooperative Output Regulation with Input Delay Compensation' | 2024-09-08 |
+| `2410.16981` | arXiv:2410.16981 | recorded | 'Proleptic Temporal Ensemble for Improving the Speed of Robot Tasks Generated by Imitation Learning' | 2024-10-22 |
+| `2504.03515` | arXiv:2504.03515 | recorded | 'Dexterous Manipulation through Imitation Learning: A Survey' | 2025-04-04 |
+| `2504.08005` | arXiv:2504.08005 | recorded | 'Extremum Seeking Control for Multivariable Maps under Actuator Saturation' | 2025-04-09 |
+| `2506.01392` | arXiv:2506.01392 | recorded | 'Sparse Imagination for Efficient Visual World Model Planning' | 2025-06-02 |
+| `2506.13690` | arXiv:2506.13690 | recorded | 'Meta-learning how to Share Credit among Macro-Actions' | 2025-06-16 |
+| `2507.07969` | arXiv:2507.07969 | recorded | 'Reinforcement Learning with Action Chunking' | 2025-07-10 |
+| `2507.10251` | arXiv:2507.10251 | recorded | 'ToMacVF : Temporal Macro-action Value Factorization for Asynchronous Multi-Agent Reinforcement Learning' | 2025-07-14 |
+| `2510.06153` | arXiv:2510.06153 | recorded | 'Robust Data-Driven Receding Horizon Control' | 2025-10-07 |
+| `2511.04421` | arXiv:2511.04421 | recorded | 'Temporal Action Selection for Action Chunking' | 2025-11-06 |
+| `2511.09290` | arXiv:2511.09290 | recorded | 'Prediction horizon shapes representations in predictive learning' | 2025-11-12 |
+| `2511.14358` | arXiv:2511.14358 | recorded | 'Identifying Time-varying Costs in Finite-horizon Linear Quadratic Gaussian Games' | 2025-11-18 |
+| `2512.05964` | arXiv:2512.05964 | recorded | 'Training-Time Action Conditioning for Efficient Real-Time Chunking' | 2025-12-05 |
+| `2512.18725` | arXiv:2512.18725 | recorded | 'ML Inference Scheduling with Predictable Latency' | 2025-12-21 |
+| `2602.07425` | arXiv:2602.07425 | recorded | 'Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise' | 2026-02-07 |
+| `2602.18002` | arXiv:2602.18002 | recorded | 'Asynchronous Heavy-Tailed Optimization' | 2026-02-20 |
+| `2602.18247` | arXiv:2602.18247 | recorded | 'Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation' | 2026-02-20 |
+| `2603.01891` | arXiv:2603.01891 | recorded | 'SEAR: Sample Efficient Action Chunking Reinforcement Learning' | 2026-03-02 |
+| `2603.06403` | arXiv:2603.06403 | recorded | 'Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling' | 2026-03-06 |
+| `2603.08493` | arXiv:2603.08493 | recorded | 'Pareto-Optimal Anytime Algorithms via Bayesian Racing' | 2026-03-09 |
+| `2603.18091` | arXiv:2603.18091 | recorded | 'Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model' | 2026-03-18 |
+| `2603.25981` | arXiv:2603.25981 | recorded | 'Policy-Guided World Model Planning for Language-Conditioned Visual Navigation' | 2026-03-26 |
+| `2604.02965` | arXiv:2604.02965 | recorded | 'Open-Loop Planning, Closed-Loop Verification: Speculative Verification for VLA' | 2026-04-03 |
+| `2604.06067` | arXiv:2604.06067 | recorded | 'HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning' | 2026-04-07 |
+| `2604.25050` | arXiv:2604.25050 | recorded | 'DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors' | 2026-04-27 |
+| `2605.00884` | arXiv:2605.00884 | recorded | 'LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception' | 2026-04-27 |
+| `2605.15926` | arXiv:2605.15926 | recorded | 'Delay periodic Lyapunov equation' | 2026-05-15 |
+| `2605.15944` | arXiv:2605.15944 | recorded | 'FocalPolicy: Frequency-Optimized Chunking and Locally Anchored Flow Matching for Coherent Visuomotor Policy' | 2026-05-15 |
+| `2605.19592` | arXiv:2605.19592 | recorded | 'Implicit Action Chunking for Smooth Continuous Control' | 2026-05-19 |
+| `2605.25537` | arXiv:2605.25537 | recorded | 'Action-Prior Denoising for Smooth Real-Time Chunking' | 2026-05-25 |
+| `2606.00537` | arXiv:2606.00537 | resolved-from-api | 'PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking' | 2026-05-30 |
+| `2606.17040` | arXiv:2606.17040 | recorded | 'R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies' | 2026-06-15 |
+| `2606.22540` | arXiv:2606.22540 | recorded | 'PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models' | 2026-06-21 |
+| `2607.02646` | arXiv:2607.02646 | recorded | 'EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots' | 2026-07-02 |
+| `2607.12287` | arXiv:2607.12287 | recorded | 'Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference' | 2026-07-14 |
+| `2607.12992` | arXiv:2607.12992 | recorded | 'ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning' | 2026-07-14 |
+| `2608.00793` | arXiv:2608.00793 | recorded | 'DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation' | 2026-08-01 |
+| `2608.02547` | arXiv:2608.02547 | recorded | 'Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?' | 2026-08-03 |
+| `2608.08644` | arXiv:2608.08644 | recorded | 'Path-dependent Discrete Amortized Inference' | 2026-08-09 |
+| `2608.12932` | arXiv:2608.12932 | recorded | 'FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving' | 2026-08-13 |
+| `2608.15938` | arXiv:2608.15938 | recorded | 'Revisiting Open-Loop Execution in Robotics: Toward Reactive, Higher-Performing Policies' | 2026-08-16 |
+| `2609.03715` | arXiv:2609.03715 | recorded | 'MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO?' | 2026-09-03 |
+| `2609.17210` | arXiv:2609.17210 | recorded | 'FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence' | 2026-09-15 |
+| `2609.18732` | arXiv:2609.18732 | recorded | 'PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments' | 2026-09-16 |
+| `2609.19200` | arXiv:2609.19200 | recorded | 'ULOHA: An Underwater Bimanual Robot System for Robot Learning' | 2026-09-16 |
+| `2609.22276` | arXiv:2609.22276 | recorded | 'D3DWA: Adaptive Weight and Prediction-Horizon for Dynamic Window Approach via Dueling Double Deep Q-Network' | 2026-09-11 |
+| `2609.27167` | arXiv:2609.27167 | recorded | 'Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies' | 2026-09-22 |
+| `2609.34319` | arXiv:2609.34319 | recorded | 'Text-Vision Synergistic Token Caching: A Training-Free Framework for Efficient Vision-Language-Action Inference' | 2026-09-28 |
+| `2609.36250` | arXiv:2609.36250 | recorded | 'Action Chunking Proximal Policy Optimization with Feedback Correction' | 2026-09-28 |
+| `2609.36471` | arXiv:2609.36471 | resolved-from-api | 'Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks' | 2026-09-29 |
+| `2609.36540` | arXiv:2609.36540 | resolved-from-api | 'Reactive Real-Time Flow Policies via Asynchronous Distribution Alignment' | 2026-09-29 |
+| `2609.36967` | arXiv:2609.36967 | recorded | 'Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference' | 2026-09-29 |
+| `2609.37772` | arXiv:2609.37772 | resolved-from-api | 'Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control' | 2026-09-29 |
+| `2609.39873` | arXiv:2609.39873 | recorded | 'SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations' | 2026-09-30 |
