@@ -1,0 +1,44 @@
+# Issue #118 -- captured run of `bash reproduce.sh`, 2026-10-03
+# build: CPython 3.9.6 / numpy 2.0.2 (macOS arm64); measured wall time 17m10s on one core
+# the script writes nothing inside the package: every check regenerates into a temp dir
+
+== 0. build
+python 3.9.6 / numpy 2.0.2
+   (recorded build: python 3.9.6 / numpy 2.0.2)
+
+== 1. determinism: two independent runs of the instrument suite
+   OK   canonical_results.json byte-identical across two independent runs
+   OK   run log byte-identical across two independent runs (same directory)
+
+== 2. the committed artefact is what the code produces
+   OK   committed canonical_results.json equals the regenerated artefact
+        sha256 87caa7dbd62e9cf350bd1211d72a5abb5267f509e4200fa151856010a580d630
+
+== 3. the committed figures are views of the committed artefact
+   OK   figures/fig1_frontier.png byte-identical to the regenerated figure
+   OK   figures/fig2_ceiling.png byte-identical to the regenerated figure
+   OK   figures/fig3_inversion.png byte-identical to the regenerated figure
+   OK   figures/fig4_composition.png byte-identical to the regenerated figure
+   OK   figures/manifest.json byte-identical (the hashes are computed, not typed)
+
+== 4. the committed manuscript is what the pipeline builds
+render-check OK: manuscript.md equals the build (63187 chars)
+
+== 5. citation coverage, the citation guards, and the citation report
+entries=105  cited=105  uncited=0  uncurated=0
+COVERAGE OK: all 105 entries cited, all in-text keys curated, 105 >= 100
+   OK   reference-check.md byte-identical to its regeneration from the artefacts
+
+== 6. the manuscript's decisive numbers reappear from the code
+   OK   the two exact routes agree to 6.36e-13 (registered bar 1e-3)
+   OK   the sampler is scored: max |z| = 2.17 over 5 cells
+   OK   the ceiling: 5 of 5 tested mu<=16 cells need C > 1.25 with the ideal router
+   OK   the constant accepts 29.8928% at decode-like mu=1
+   OK   and 8.29e-05 at training load mu=128
+   OK   the closed form meets the 5% bar on mu>=8 (max 4.54%)
+   OK   the dropped set is position-biased (0.00% first decile, 19.41% last)
+   OK   8 production configurations placed
+   OK   the uniform floor the measured router converges to
+   OK   the measured router's best C_min under balancing
+
+REPRODUCE: ALL GREEN

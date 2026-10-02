@@ -1,0 +1,1358 @@
+{
+ "n": 105,
+ "roles": {
+  "construct": 12,
+  "balancing": 8,
+  "capacity": 3,
+  "serving": 27,
+  "architecture": 14,
+  "survey": 5,
+  "theory": 23,
+  "security": 4,
+  "efficiency": 9
+ },
+ "entries": [
+  {
+   "id": "2101.03961v3",
+   "bare": "2101.03961",
+   "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+   "published": "2021-01-11",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "origin of expert capacity with C = 1.25 and of token dropping as an accepted cost",
+   "source": "discovery"
+  },
+  {
+   "id": "2006.16668v1",
+   "bare": "2006.16668",
+   "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding",
+   "published": "2020-06-30",
+   "cats": [
+    "cs.CL",
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "construct",
+   "diff": "origin of the C = 2.0 capacity factor in a sharded sparse model",
+   "source": "discovery"
+  },
+  {
+   "id": "2112.06905v2",
+   "bare": "2112.06905",
+   "title": "GLaM: Efficient Scaling of Language Models with Mixture-of-Experts",
+   "published": "2021-12-13",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "a 64-expert top-2 model whose capacity factor is stated rather than derived",
+   "source": "discovery"
+  },
+  {
+   "id": "2508.12801v1",
+   "bare": "2508.12801",
+   "title": "Maximum Score Routing For Mixture-of-Experts",
+   "published": "2025-08-18",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "premises on an expert capacity constraint to keep computation GPU-friendly, without characterising it",
+   "source": "discovery"
+  },
+  {
+   "id": "2202.09368v2",
+   "bare": "2202.09368",
+   "title": "Mixture-of-Experts with Expert Choice Routing",
+   "published": "2022-02-18",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "inverts the assignment direction (experts choose tokens), which is the architectural escape this paper bounds",
+   "source": "discovery"
+  },
+  {
+   "id": "2308.00951v2",
+   "bare": "2308.00951",
+   "title": "From Sparse to Soft Mixtures of Experts",
+   "published": "2023-08-02",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV"
+   ],
+   "role": "construct",
+   "diff": "removes the discrete assignment altogether, the C -> infinity limit of the same dispatch",
+   "source": "discovery"
+  },
+  {
+   "id": "2005.07761v2",
+   "bare": "2005.07761",
+   "title": "Efficient Load-Balancing through Distributed Token Dropping",
+   "published": "2020-05-15",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "construct",
+   "diff": "drops tokens to balance load; this paper asks what dropping costs and what capacity prevents it",
+   "source": "discovery"
+  },
+  {
+   "id": "2203.13240v1",
+   "bare": "2203.13240",
+   "title": "Token Dropping for Efficient BERT Pretraining",
+   "published": "2022-03-24",
+   "cats": [
+    "cs.CL",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "token dropping as a training accelerator for BERT, a different sense of the word (importance-based, not capacity-based)",
+   "source": "discovery"
+  },
+  {
+   "id": "2211.11586v1",
+   "bare": "2211.11586",
+   "title": "Random-LTD: Random and Layerwise Token Dropping Brings Efficient Training for Large-scale Transformers",
+   "published": "2022-11-17",
+   "cats": [
+    "cs.CL",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "random layer-wise token dropping for training cost, no per-expert budget involved",
+   "source": "discovery"
+  },
+  {
+   "id": "2106.04426v3",
+   "bare": "2106.04426",
+   "title": "Hash Layers For Large Sparse Models",
+   "published": "2021-06-08",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "fixed hash-based assignment, i.e. the deterministic dispatch this paper identifies as the escape",
+   "source": "discovery"
+  },
+  {
+   "id": "2105.15082v5",
+   "bare": "2105.15082",
+   "title": "M6-T: Exploring Sparse Expert Models and Beyond",
+   "published": "2021-05-31",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "scales experts and reports capacity effects empirically without a drop law",
+   "source": "discovery"
+  },
+  {
+   "id": "2010.11018v1",
+   "bare": "2010.11018",
+   "title": "Token Drop mechanism for Neural Machine Translation",
+   "published": "2020-10-21",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "an early token-drop mechanism for NMT, before MoE capacity budgets existed",
+   "source": "discovery"
+  },
+  {
+   "id": "2408.15664v1",
+   "bare": "2408.15664",
+   "title": "Auxiliary-Loss-Free Load Balancing Strategy for Mixture-of-Experts",
+   "published": "2024-08-28",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "balancing",
+   "diff": "the bias-based auxiliary-loss-free balancing the field now uses; this paper shows it cannot fix overflow",
+   "source": "discovery"
+  },
+  {
+   "id": "2512.03915v3",
+   "bare": "2512.03915",
+   "title": "A Theoretical Framework for Auxiliary-Loss-Free Load Balancing of Sparse Mixture-of-Experts in Large-Scale AI Models",
+   "published": "2025-12-03",
+   "cats": [
+    "math.OC",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "balancing",
+   "diff": "a theory of auxiliary-loss-free balancing over the routing DISTRIBUTION, never over its tail",
+   "source": "discovery"
+  },
+  {
+   "id": "2109.11817v2",
+   "bare": "2109.11817",
+   "title": "Unbiased Gradient Estimation with Balanced Assignments for Mixtures of Experts",
+   "published": "2021-09-24",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "balancing",
+   "diff": "unbiased gradient estimators under a capacity constraint; the constraint is assumed, not derived",
+   "source": "discovery"
+  },
+  {
+   "id": "2502.15451v2",
+   "bare": "2502.15451",
+   "title": "Binary-Integer-Programming Based Algorithm for Expert Load Balancing in Mixture-of-Experts Models",
+   "published": "2025-02-21",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "balancing",
+   "diff": "formulates balancing as binary integer programming; a routing-side remedy, so bounded by the ceiling here",
+   "source": "discovery"
+  },
+  {
+   "id": "2602.03478v1",
+   "bare": "2602.03478",
+   "title": "When Routing Collapses: On the Degenerate Convergence of LLM Routers",
+   "published": "2026-02-03",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "balancing",
+   "diff": "studies degenerate routing collapse, the skew end of the imbalance this law separates from the sampling term",
+   "source": "discovery"
+  },
+  {
+   "id": "2504.01337v2",
+   "bare": "2504.01337",
+   "title": "Advancing MoE Efficiency: A Collaboration-Constrained Routing (C2R) Strategy for Better Expert Parallelism Design",
+   "published": "2025-04-02",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CL",
+    "cs.DC"
+   ],
+   "role": "balancing",
+   "diff": "a collaboration-constrained routing strategy; again a population fix for a tail problem",
+   "source": "discovery"
+  },
+  {
+   "id": "2411.19402v2",
+   "bare": "2411.19402",
+   "title": "On the Role of Discrete Representation in Sparse Mixture of Experts",
+   "published": "2024-11-28",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "balancing",
+   "diff": "argues discrete assignment matters for a different reason (representation), not for overflow",
+   "source": "discovery"
+  },
+  {
+   "id": "2602.14159v1",
+   "bare": "2602.14159",
+   "title": "Synergistic Intra- and Cross-Layer Regularization Losses for MoE Expert Specialization",
+   "published": "2026-02-15",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "balancing",
+   "diff": "regularisation losses for expert specialisation; measured against the balance floor this paper derives",
+   "source": "discovery"
+  },
+  {
+   "id": "2503.05066v5",
+   "bare": "2503.05066",
+   "title": "Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts",
+   "published": "2025-03-07",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CL"
+   ],
+   "role": "capacity",
+   "diff": "mitigates the straggler effect that an over-set capacity factor causes; treats the symptom this law prices",
+   "source": "discovery"
+  },
+  {
+   "id": "2403.07652v1",
+   "bare": "2403.07652",
+   "title": "Harder Tasks Need More Experts: Dynamic Routing in MoE Models",
+   "published": "2024-03-12",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "capacity",
+   "diff": "routes harder tasks to more experts, i.e. varies top-k, whose effect on capacity this law makes exact",
+   "source": "discovery"
+  },
+  {
+   "id": "2502.16927v2",
+   "bare": "2502.16927",
+   "title": "BigMac: A Communication-Efficient Mixture-of-Experts Model Structure for Fast Training and Inference",
+   "published": "2025-02-24",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "capacity",
+   "diff": "a communication-efficient structure whose capacity implications are not analysed",
+   "source": "discovery"
+  },
+  {
+   "id": "2201.05596v2",
+   "bare": "2201.05596",
+   "title": "DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale",
+   "published": "2022-01-14",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "an early MoE inference/training system; reports throughput without a capacity law",
+   "source": "discovery"
+  },
+  {
+   "id": "2308.12066v3",
+   "bare": "2308.12066",
+   "title": "Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference",
+   "published": "2023-08-23",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.AR"
+   ],
+   "role": "serving",
+   "diff": "pre-gates to avoid fetching inactive experts, a caching answer to the same dispatch problem",
+   "source": "discovery"
+  },
+  {
+   "id": "2401.14361v3",
+   "bare": "2401.14361",
+   "title": "MoE-Infinity: Efficient MoE Inference on Personal Machines with Sparsity-Aware Expert Cache",
+   "published": "2024-01-25",
+   "cats": [
+    "cs.LG",
+    "cs.PF"
+   ],
+   "role": "serving",
+   "diff": "expert caching for personal machines; the cache-miss regime is where per-expert load falls into the tail-dominated range",
+   "source": "discovery"
+  },
+  {
+   "id": "2410.17954v2",
+   "bare": "2410.17954",
+   "title": "ExpertFlow: Efficient Mixture-of-Experts Inference via Predictive Expert Caching and Token Scheduling",
+   "published": "2024-10-23",
+   "cats": [
+    "cs.AI",
+    "cs.CL"
+   ],
+   "role": "serving",
+   "diff": "predictive expert caching, an alternative to buying capacity",
+   "source": "discovery"
+  },
+  {
+   "id": "2411.01433v2",
+   "bare": "2411.01433",
+   "title": "HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference",
+   "published": "2024-11-03",
+   "cats": [
+    "cs.LG",
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "mixed-precision offloading; memory-bound decode where the folk constant is out of domain",
+   "source": "discovery"
+  },
+  {
+   "id": "2502.05370v2",
+   "bare": "2502.05370",
+   "title": "Taming Latency-Memory Trade-Off in MoE-Based LLM Serving via Fine-Grained Expert Offloading",
+   "published": "2025-02-07",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "fine-grained expert offloading for the latency-memory trade-off; no capacity characterisation",
+   "source": "discovery"
+  },
+  {
+   "id": "2504.05897v1",
+   "bare": "2504.05897",
+   "title": "HybriMoE: Hybrid CPU-GPU Scheduling and Cache Management for Efficient MoE Inference",
+   "published": "2025-04-08",
+   "cats": [
+    "cs.LG",
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "hybrid CPU-GPU scheduling with cache management; another systems-side answer",
+   "source": "discovery"
+  },
+  {
+   "id": "2504.02263v4",
+   "bare": "2504.02263",
+   "title": "MegaScale-Infer: Serving Mixture-of-Experts at Scale with Disaggregated Expert Parallelism",
+   "published": "2025-04-03",
+   "cats": [
+    "cs.DC",
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "disaggregated expert parallelism at scale; dispatch volume is the cost this law's capacity factor governs",
+   "source": "discovery"
+  },
+  {
+   "id": "2505.16056v4",
+   "bare": "2505.16056",
+   "title": "Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models",
+   "published": "2025-05-21",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "serving",
+   "diff": "reports that routing consistency decides offloading viability, a measured property of the load distribution",
+   "source": "discovery"
+  },
+  {
+   "id": "2506.12708v3",
+   "bare": "2506.12708",
+   "title": "Serving Large Language Models on Huawei CloudMatrix384",
+   "published": "2025-06-15",
+   "cats": [
+    "cs.DC",
+    "cs.AI",
+    "cs.AR",
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "a production serving system for large models; capacity policy is an implementation detail there",
+   "source": "discovery"
+  },
+  {
+   "id": "2512.12990v5",
+   "bare": "2512.12990",
+   "title": "SliceMoE: Bit-Sliced Expert Caching under Miss-Rate Constraints for Efficient MoE Inference",
+   "published": "2025-12-15",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "serving",
+   "diff": "bit-sliced expert caching under miss-rate constraints; the constraint this law would let one derive",
+   "source": "discovery"
+  },
+  {
+   "id": "2602.16052v1",
+   "bare": "2602.16052",
+   "title": "MoE-Spec: Expert Budgeting for Efficient Speculative Decoding",
+   "published": "2026-02-17",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "expert budgeting for speculative decoding, where draft trees activate many unique experts at once",
+   "source": "discovery"
+  },
+  {
+   "id": "2603.06350v2",
+   "bare": "2603.06350",
+   "title": "MoEless: Efficient MoE LLM Serving with Serverless Experts",
+   "published": "2026-03-06",
+   "cats": [
+    "cs.DC",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "serverless experts for MoE serving; straggler control by systems means",
+   "source": "discovery"
+  },
+  {
+   "id": "2604.18788v1",
+   "bare": "2604.18788",
+   "title": "Efficient Mixture-of-Experts LLM Inference with Apple Silicon NPUs",
+   "published": "2026-04-20",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "routing produces dynamic tensor shapes that fight fixed NPU kernels -- a hardware reason the capacity must be bounded",
+   "source": "discovery"
+  },
+  {
+   "id": "2604.23150v1",
+   "bare": "2604.23150",
+   "title": "Scaling Multi-Node Mixture-of-Experts Inference Using Expert Activation Patterns",
+   "published": "2026-04-25",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.AR"
+   ],
+   "role": "serving",
+   "diff": "multi-node inference driven by expert activation patterns; the measured load distribution this law takes as input",
+   "source": "discovery"
+  },
+  {
+   "id": "2609.33385v1",
+   "bare": "2609.33385",
+   "title": "OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading",
+   "published": "2026-09-27",
+   "cats": [
+    "cs.DC",
+    "cs.CL"
+   ],
+   "role": "serving",
+   "diff": "inter-iteration locality-aware expert caching; a decode-time system",
+   "source": "discovery"
+  },
+  {
+   "id": "2610.01950v1",
+   "bare": "2610.01950",
+   "title": "MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference",
+   "published": "2026-10-01",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "coordinated expert offloading and residency, published 2026-10-01 within the hotspot window",
+   "source": "discovery"
+  },
+  {
+   "id": "2308.15030v4",
+   "bare": "2308.15030",
+   "title": "SwapMoE: Serving Off-the-shelf MoE-based Large Language Models with Tunable Memory Budget",
+   "published": "2023-08-29",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "serving",
+   "diff": "tunable memory budgets for serving off-the-shelf MoE models",
+   "source": "discovery"
+  },
+  {
+   "id": "2502.06888v1",
+   "bare": "2502.06888",
+   "title": "Klotski: Efficient Mixture-of-Expert Inference via Expert-Aware Multi-Batch Pipeline",
+   "published": "2025-02-09",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "serving",
+   "diff": "expert-aware multi-batch pipelining; batching changes T and therefore mu, which this law makes explicit",
+   "source": "discovery"
+  },
+  {
+   "id": "2508.09208v1",
+   "bare": "2508.09208",
+   "title": "CoMoE: Collaborative Optimization of Expert Aggregation and Offloading for MoE-based LLMs at Edge",
+   "published": "2025-08-10",
+   "cats": [
+    "cs.NI",
+    "cs.AI"
+   ],
+   "role": "serving",
+   "diff": "collaborative expert aggregation and offloading",
+   "source": "discovery"
+  },
+  {
+   "id": "2508.19373v1",
+   "bare": "2508.19373",
+   "title": "HAP: Hybrid Adaptive Parallelism for Efficient Mixture-of-Experts Inference",
+   "published": "2025-08-26",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "hybrid adaptive parallelism for MoE inference",
+   "source": "discovery"
+  },
+  {
+   "id": "2508.18983v3",
+   "bare": "2508.18983",
+   "title": "SMoE: An Algorithm-System Co-Design for Pushing MoE to the Edge via Expert Substitution",
+   "published": "2025-08-26",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "serving",
+   "diff": "pushing MoE to the edge via expert substitution",
+   "source": "discovery"
+  },
+  {
+   "id": "2501.10375v3",
+   "bare": "2501.10375",
+   "title": "DAOP: Data-Aware Offloading and Predictive Pre-Calculation for Efficient MoE Inference",
+   "published": "2024-12-16",
+   "cats": [
+    "cs.DC",
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "data-aware offloading with predictive pre-calculation",
+   "source": "discovery"
+  },
+  {
+   "id": "2502.12224v2",
+   "bare": "2502.12224",
+   "title": "Fate: Fast Edge Inference of Mixture-of-Experts Models via Cross-Layer Gate",
+   "published": "2025-02-17",
+   "cats": [
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "serving",
+   "diff": "cross-layer gate prediction for edge inference",
+   "source": "discovery"
+  },
+  {
+   "id": "2601.05296v1",
+   "bare": "2601.05296",
+   "title": "MoEBlaze: Breaking the Memory Wall for Efficient MoE Training on Modern GPUs",
+   "published": "2026-01-08",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "breaking the memory wall for MoE training on modern GPUs",
+   "source": "discovery"
+  },
+  {
+   "id": "2605.10670v1",
+   "bare": "2605.10670",
+   "title": "Surviving Partial Rank Failures in Wide Expert-Parallel MoE Inference",
+   "published": "2026-05-11",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "serving",
+   "diff": "surviving partial rank failures in wide expert-parallel inference",
+   "source": "discovery"
+  },
+  {
+   "id": "2401.04088v1",
+   "bare": "2401.04088",
+   "title": "Mixtral of Experts",
+   "published": "2024-01-08",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "sparse top-2 of 8; one of the ten configurations the production map places on the law",
+   "source": "discovery"
+  },
+  {
+   "id": "2401.06066v1",
+   "bare": "2401.06066",
+   "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models",
+   "published": "2024-01-11",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "fine-grained expert segmentation with shared experts; the paper that precedes the DeepSeek line",
+   "source": "discovery"
+  },
+  {
+   "id": "2405.04434v5",
+   "bare": "2405.04434",
+   "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+   "published": "2024-05-07",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "architecture",
+   "diff": "the 160-expert top-6 configuration used in the production map",
+   "source": "discovery"
+  },
+  {
+   "id": "2412.19437v2",
+   "bare": "2412.19437",
+   "title": "DeepSeek-V3 Technical Report",
+   "published": "2024-12-27",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "architecture",
+   "diff": "states explicitly that it drops no tokens -- the architectural escape observed in a production system",
+   "source": "discovery"
+  },
+  {
+   "id": "2409.02060v2",
+   "bare": "2409.02060",
+   "title": "OLMoE: Open Mixture-of-Experts Language Models",
+   "published": "2024-09-03",
+   "cats": [
+    "cs.CL",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "architecture",
+   "diff": "a fully open MoE with published expert counts and routing",
+   "source": "discovery"
+  },
+  {
+   "id": "2406.00023v4",
+   "bare": "2406.00023",
+   "title": "Expert-Token Resonance MoE: Bidirectional Routing with Efficiency Affinity-Driven Active Selection",
+   "published": "2024-05-24",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "bidirectional routing affinity; a routing design against which the drop functional could be evaluated",
+   "source": "discovery"
+  },
+  {
+   "id": "2406.13233v2",
+   "bare": "2406.13233",
+   "title": "AdaMoE: Token-Adaptive Routing with Null Experts for Mixture-of-Experts Language Models",
+   "published": "2024-06-19",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "architecture",
+   "diff": "token-adaptive routing with null experts, i.e. a structured way to avoid overflow rather than bound it",
+   "source": "discovery"
+  },
+  {
+   "id": "2410.10456v2",
+   "bare": "2410.10456",
+   "title": "Ada-K Routing: Boosting the Efficiency of MoE-based LLMs",
+   "published": "2024-10-14",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "adaptive-k routing, which changes the number of experts per token and hence the effective capacity",
+   "source": "discovery"
+  },
+  {
+   "id": "2505.22323v5",
+   "bare": "2505.22323",
+   "title": "Advancing Expert Specialization for Better MoE",
+   "published": "2025-05-28",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "advancing expert specialisation, the objective that pushes the router toward the skew this law costs",
+   "source": "discovery"
+  },
+  {
+   "id": "2503.15798v2",
+   "bare": "2503.15798",
+   "title": "Mixture of Lookup Experts",
+   "published": "2025-03-20",
+   "cats": [
+    "cs.LG",
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "a lookup-expert structure that trades routing for retrieval",
+   "source": "discovery"
+  },
+  {
+   "id": "2412.10302v1",
+   "bare": "2412.10302",
+   "title": "DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding",
+   "published": "2024-12-13",
+   "cats": [
+    "cs.CV",
+    "cs.AI",
+    "cs.CL"
+   ],
+   "role": "architecture",
+   "diff": "the multimodal member of the DeepSeek MoE line",
+   "source": "discovery"
+  },
+  {
+   "id": "2608.08650v1",
+   "bare": "2608.08650",
+   "title": "The Evolution of Mixture-of-Experts Architectures in Large Language Models: Routing, Topology, Load Balancing, and Expert Parallelism",
+   "published": "2026-08-09",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "survey",
+   "diff": "a 2026 survey of MoE routing and topology, the closest thing to a map of the design space this paper formalises a cell of",
+   "source": "discovery"
+  },
+  {
+   "id": "2602.03204v2",
+   "bare": "2602.03204",
+   "title": "Sparsity is Combinatorial Depth: Quantifying MoE Expressivity via Tropical Geometry",
+   "published": "2026-02-03",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "survey",
+   "diff": "quantifies MoE expressivity via tropical geometry -- a capacity-free view of the same architecture",
+   "source": "discovery"
+  },
+  {
+   "id": "2602.17798v1",
+   "bare": "2602.17798",
+   "title": "Grassmannian Mixture-of-Experts: Concentration-Controlled Routing on Subspace Manifolds",
+   "published": "2026-02-19",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "survey",
+   "diff": "concentration-controlled routing on a subspace manifold, a geometric routing variant",
+   "source": "discovery"
+  },
+  {
+   "id": "2603.11114v1",
+   "bare": "2603.11114",
+   "title": "Task-Conditioned Routing Signatures in Sparse Mixture-of-Experts Transformers",
+   "published": "2026-03-11",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "survey",
+   "diff": "task-conditioned routing signatures, evidence that router distributions are measurable objects",
+   "source": "discovery"
+  },
+  {
+   "id": "math/0508451v1",
+   "bare": "math/0508451",
+   "title": "On the power of two choices: Balls and bins in continuous time",
+   "published": "2005-08-24",
+   "cats": [
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "the power of two choices, the canonical result that extra information beats extra capacity",
+   "source": "discovery"
+  },
+  {
+   "id": "1201.3310v5",
+   "bare": "1201.3310",
+   "title": "A Generalization of Multiple Choice Balls-into-Bins: Tight Bounds",
+   "published": "2012-01-16",
+   "cats": [
+    "cs.DM",
+    "cs.DC"
+   ],
+   "role": "theory",
+   "diff": "tight bounds for multiple-choice balls-into-bins, the family this paper's finite-sample term belongs to",
+   "source": "discovery"
+  },
+  {
+   "id": "2203.12400v2",
+   "bare": "2203.12400",
+   "title": "Tight Bounds for Repeated Balls-into-Bins",
+   "published": "2022-03-23",
+   "cats": [
+    "cs.DM",
+    "cs.DS",
+    "math.CO",
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "tight bounds for REPEATED balls-into-bins, the regime a serving loop actually sits in",
+   "source": "discovery"
+  },
+  {
+   "id": "2205.14494v1",
+   "bare": "2205.14494",
+   "title": "Balls and Bins -- Simple Concentration Bounds",
+   "published": "2022-05-28",
+   "cats": [
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "simple concentration bounds for balls and bins, the form used for the finite-sample term",
+   "source": "discovery"
+  },
+  {
+   "id": "1207.2125v1",
+   "bare": "1207.2125",
+   "title": "Balls into Bins via Local Search",
+   "published": "2012-07-09",
+   "cats": [
+    "math.PR",
+    "cs.DM",
+    "math.CO"
+   ],
+   "role": "theory",
+   "diff": "balls into bins via local search, an algorithmic route to lowering the maximum load",
+   "source": "discovery"
+  },
+  {
+   "id": "1310.0801v2",
+   "bare": "1310.0801",
+   "title": "Balls into bins via local search: cover time and maximum load",
+   "published": "2013-10-02",
+   "cats": [
+    "math.PR",
+    "cs.DM",
+    "math.CO"
+   ],
+   "role": "theory",
+   "diff": "cover time and maximum load under local search, the trade-off the ceiling bounds",
+   "source": "discovery"
+  },
+  {
+   "id": "2209.02220v2",
+   "bare": "2209.02220",
+   "title": "Three Distributions in the Extended Occupancy Problem",
+   "published": "2022-09-06",
+   "cats": [
+    "math.PR",
+    "math.ST",
+    "stat.AP"
+   ],
+   "role": "theory",
+   "diff": "three distributions in the extended occupancy problem, the occupancy view of per-expert counts",
+   "source": "discovery"
+  },
+  {
+   "id": "math/0410174v1",
+   "bare": "math/0410174",
+   "title": "Large deviation asymptotics for occupancy problems",
+   "published": "2004-10-06",
+   "cats": [
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "large deviation asymptotics for occupancy problems, the rate-function machinery behind a tail-exact drop functional",
+   "source": "discovery"
+  },
+  {
+   "id": "math/0609498v1",
+   "bare": "math/0609498",
+   "title": "On the variance of the number of occupied boxes",
+   "published": "2006-09-18",
+   "cats": [
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "the variance of the number of occupied boxes, the other occupancy functional a router controls",
+   "source": "discovery"
+  },
+  {
+   "id": "math/0701718v2",
+   "bare": "math/0701718",
+   "title": "Notes on the occupancy problem with infinitely many boxes: general asymptotics and power laws",
+   "published": "2007-01-24",
+   "cats": [
+    "math.PR",
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "general asymptotics for the occupancy problem with infinitely many boxes",
+   "source": "discovery"
+  },
+  {
+   "id": "1005.2616v1",
+   "bare": "1005.2616",
+   "title": "Chains-into-Bins Processes",
+   "published": "2010-05-14",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "theory",
+   "diff": "chains-into-bins, a dependent-arrival variant of the same occupancy model",
+   "source": "discovery"
+  },
+  {
+   "id": "0911.2077v2",
+   "bare": "0911.2077",
+   "title": "Central Binomial Tail Bounds",
+   "published": "2009-11-11",
+   "cats": [
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "central binomial tail bounds, one of the closed forms against which the exact route is compared",
+   "source": "discovery"
+  },
+  {
+   "id": "2211.01688v1",
+   "bare": "2211.01688",
+   "title": "Nearly tight universal bounds for the binomial tail probabilities",
+   "published": "2022-11-03",
+   "cats": [
+    "math.PR",
+    "stat.OT"
+   ],
+   "role": "theory",
+   "diff": "nearly tight universal binomial tail bounds, the modern replacement for the normal approximation this paper measures as low",
+   "source": "discovery"
+  },
+  {
+   "id": "2502.18611v1",
+   "bare": "2502.18611",
+   "title": "Tight Bounds on the Binomial CDF, and the Minimum of i.i.d Binomials, in terms of KL-Divergence",
+   "published": "2025-02-25",
+   "cats": [
+    "math.PR",
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "theory",
+   "diff": "tight binomial CDF bounds via KL-divergence, the sharpest tail reference",
+   "source": "discovery"
+  },
+  {
+   "id": "2012.09968v1",
+   "bare": "2012.09968",
+   "title": "Binomial Tails for Community Analysis",
+   "published": "2020-12-17",
+   "cats": [
+    "cs.SI",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "theory",
+   "diff": "binomial tails for community analysis, a domain application of the same tail functional",
+   "source": "discovery"
+  },
+  {
+   "id": "math/0508606v1",
+   "bare": "math/0508606",
+   "title": "Tusnady's inequality revisited",
+   "published": "2005-08-30",
+   "cats": [
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "Tusnady's inequality, a binomial-vs-Poisson comparison the lattice-correction finding touches",
+   "source": "discovery"
+  },
+  {
+   "id": "1107.1533v1",
+   "bare": "1107.1533",
+   "title": "Martingale Couplings and Bounds on the Tails of Probability Distributions",
+   "published": "2011-07-07",
+   "cats": [
+    "math.PR",
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "martingale couplings and tail bounds, the general machinery behind the tail-expectation kernel",
+   "source": "discovery"
+  },
+  {
+   "id": "1111.6358v1",
+   "bare": "1111.6358",
+   "title": "Bounds for tail probabilities of martingales using skewness and kurtosis",
+   "published": "2011-11-28",
+   "cats": [
+    "math.PR"
+   ],
+   "role": "theory",
+   "diff": "tail bounds using skewness and kurtosis, exactly what the Edgeworth correction in this paper exploits",
+   "source": "discovery"
+  },
+  {
+   "id": "0806.1007v1",
+   "bare": "0806.1007",
+   "title": "Competition between Discrete Random Variables, with Applications to Occupancy Problems",
+   "published": "2008-06-05",
+   "cats": [
+    "math.PR",
+    "math.CO"
+   ],
+   "role": "theory",
+   "diff": "competition between discrete random variables with occupancy applications, a maximum-of-counts analysis",
+   "source": "discovery"
+  },
+  {
+   "id": "cs/0407023v1",
+   "bare": "cs/0407023",
+   "title": "Efficient Hashing with Lookups in two Memory Accesses",
+   "published": "2004-07-09",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "theory",
+   "diff": "hashing with two memory accesses, the algorithmic sibling of power-of-two-choices for a shared budget",
+   "source": "discovery"
+  },
+  {
+   "id": "1203.3106v1",
+   "bare": "1203.3106",
+   "title": "Saddlepoint approximations for likelihood ratio like statistics with applications to permutation tests",
+   "published": "2012-03-14",
+   "cats": [
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "saddlepoint approximations for likelihood-ratio-like statistics, the method this paper tested and rejected with a control",
+   "source": "discovery"
+  },
+  {
+   "id": "math/0508604v1",
+   "bare": "math/0508604",
+   "title": "Saddlepoint approximation for Student's t-statistic with no moment conditions",
+   "published": "2005-08-30",
+   "cats": [
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "saddlepoint approximation without moment conditions, the family's robustness result",
+   "source": "discovery"
+  },
+  {
+   "id": "0803.2132v1",
+   "bare": "0803.2132",
+   "title": "Uniform saddlepoint approximations for ratios of quadratic forms",
+   "published": "2008-03-14",
+   "cats": [
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "uniform saddlepoint approximations for ratios of quadratic forms",
+   "source": "discovery"
+  },
+  {
+   "id": "2608.25371v1",
+   "bare": "2608.25371",
+   "title": "Capacity Overflow: A Blind Spot for Backdoor Attacks in Vision MoE",
+   "published": "2026-08-26",
+   "cats": [
+    "cs.CV",
+    "cs.CR"
+   ],
+   "role": "security",
+   "diff": "makes capacity-bounded dispatch a backdoor blind spot; this paper quantifies the displacement budget that attack consumes",
+   "source": "discovery"
+  },
+  {
+   "id": "2504.18598v2",
+   "bare": "2504.18598",
+   "title": "BadMoE: Backdooring Mixture-of-Experts LLMs via Optimizing Routing Triggers and Infecting Dormant Experts",
+   "published": "2025-04-24",
+   "cats": [
+    "cs.CR",
+    "cs.AI"
+   ],
+   "role": "security",
+   "diff": "backdoors MoE routing by trigger optimisation; routing is the attack surface, capacity is the budget",
+   "source": "discovery"
+  },
+  {
+   "id": "2510.13462v1",
+   "bare": "2510.13462",
+   "title": "Who Speaks for the Trigger? Dynamic Expert Routing in Backdoored Mixture-of-Experts Transformers",
+   "published": "2025-10-15",
+   "cats": [
+    "cs.CR"
+   ],
+   "role": "security",
+   "diff": "dynamic expert routing in backdoored MoE models, a second independent routing-attack study",
+   "source": "discovery"
+  },
+  {
+   "id": "2410.22884v1",
+   "bare": "2410.22884",
+   "title": "Stealing User Prompts from Mixture of Experts",
+   "published": "2024-10-30",
+   "cats": [
+    "cs.CR",
+    "cs.AI",
+    "cs.CL",
+    "cs.LG"
+   ],
+   "role": "security",
+   "diff": "prompt stealing from MoE models via the routing signal, evidence that per-expert load is observable to an adversary",
+   "source": "discovery"
+  },
+  {
+   "id": "2206.00277v2",
+   "bare": "2206.00277",
+   "title": "Task-Specific Expert Pruning for Sparse Mixture-of-Experts",
+   "published": "2022-06-01",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "efficiency",
+   "diff": "task-specific expert pruning, which changes E and therefore the capacity curve",
+   "source": "discovery"
+  },
+  {
+   "id": "2503.06881v1",
+   "bare": "2503.06881",
+   "title": "ResMoE: Space-efficient Compression of Mixture of Experts LLMs via Residual Restoration",
+   "published": "2025-03-10",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "efficiency",
+   "diff": "space-efficient expert compression via residual restoration",
+   "source": "discovery"
+  },
+  {
+   "id": "2404.05019v3",
+   "bare": "2404.05019",
+   "title": "Shortcut-connected Expert Parallelism for Accelerating Mixture-of-Experts",
+   "published": "2024-04-07",
+   "cats": [
+    "cs.LG",
+    "cs.CL",
+    "cs.DC"
+   ],
+   "role": "efficiency",
+   "diff": "shortcut-connected expert parallelism to cut dispatch cost",
+   "source": "discovery"
+  },
+  {
+   "id": "2504.14960v3",
+   "bare": "2504.14960",
+   "title": "MoE Parallel Folding: Heterogeneous Parallelism Mappings for Efficient Large-Scale MoE Model Training with Megatron Core",
+   "published": "2025-04-21",
+   "cats": [
+    "cs.LG",
+    "cs.DC"
+   ],
+   "role": "efficiency",
+   "diff": "heterogeneous parallelism mappings for large-scale MoE training",
+   "source": "discovery"
+  },
+  {
+   "id": "2411.15419v1",
+   "bare": "2411.15419",
+   "title": "Communication-Efficient Sparsely-Activated Model Training via Sequence Migration and Token Condensation",
+   "published": "2024-11-23",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "efficiency",
+   "diff": "sequence migration and token routing to cut communication, i.e. the cost side of a capacity choice",
+   "source": "discovery"
+  },
+  {
+   "id": "2608.28511v1",
+   "bare": "2608.28511",
+   "title": "Training Communication-Efficient Mixture-of-Experts Language Models with Layer Re-Configuration",
+   "published": "2026-08-28",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "efficiency",
+   "diff": "layer reconfiguration for communication-efficient MoE training",
+   "source": "discovery"
+  },
+  {
+   "id": "2407.04656v2",
+   "bare": "2407.04656",
+   "title": "Lazarus: Resilient and Elastic Training of Mixture-of-Experts Models",
+   "published": "2024-07-05",
+   "cats": [
+    "cs.DC",
+    "cs.LG"
+   ],
+   "role": "efficiency",
+   "diff": "resilient and elastic MoE training, where expert loss and imbalance interact",
+   "source": "discovery"
+  },
+  {
+   "id": "2411.16786v4",
+   "bare": "2411.16786",
+   "title": "Staleness-Centric Optimizations for Parallel Diffusion MoE Inference",
+   "published": "2024-11-25",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "efficiency",
+   "diff": "staleness-centric optimisations for parallel diffusion MoE inference",
+   "source": "discovery"
+  },
+  {
+   "id": "2506.23635v1",
+   "bare": "2506.23635",
+   "title": "Towards Building Private LLMs: Exploring Multi-Node Expert Parallelism on Apple Silicon for Mixture-of-Experts Large Language Model",
+   "published": "2025-06-30",
+   "cats": [
+    "cs.DC",
+    "cs.AI",
+    "cs.PF"
+   ],
+   "role": "efficiency",
+   "diff": "multi-node expert parallelism on Apple Silicon, a hardware-specific dispatch study",
+   "source": "discovery"
+  },
+  {
+   "id": "2604.12163v1",
+   "bare": "2604.12163",
+   "title": "Nucleus-Image: Sparse MoE for Image Generation",
+   "published": "2026-04-14",
+   "cats": [
+    "cs.CV"
+   ],
+   "role": "architecture",
+   "diff": "a sparse MoE image generator, evidence the routing pattern is architecture-independent",
+   "source": "discovery"
+  },
+  {
+   "id": "2608.17402v1",
+   "bare": "2608.17402",
+   "title": "MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding",
+   "published": "2026-08-18",
+   "cats": [
+    "cs.CV"
+   ],
+   "role": "architecture",
+   "diff": "an MoE vision encoder; the same dispatch discipline in a non-text modality",
+   "source": "discovery"
+  },
+  {
+   "id": "2605.11689",
+   "bare": "2605.11689",
+   "title": "Slicing and Dicing: Configuring Optimal Mixtures of Experts",
+   "published": "(author-supplied)",
+   "cats": [],
+   "role": "survey",
+   "diff": "states that MoE design choices including token dropping were studied one or two at a time over narrow configuration ranges -- the gap this paper fills",
+   "source": "author"
+  },
+  {
+   "id": "2610.01265",
+   "bare": "2610.01265",
+   "title": "RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference",
+   "published": "(author-supplied)",
+   "cats": [],
+   "role": "serving",
+   "diff": "adaptive residual offloading for large-scale MoE inference, the other half of the 2026-10-01 hotspot pair (author-anchored; not surfaced by the discovery queries)",
+   "source": "author"
+  },
+  {
+   "id": "2407.10671",
+   "bare": "2407.10671",
+   "title": "Qwen2 Technical Report",
+   "published": "(author-supplied)",
+   "cats": [],
+   "role": "architecture",
+   "diff": "the MoE member of the Qwen2 family, one of the configurations the production map places on the law (author-anchored; the discovery queries reached only Qwen-CUA)",
+   "source": "author"
+  }
+ ]
+}
