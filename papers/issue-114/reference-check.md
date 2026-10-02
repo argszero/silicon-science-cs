@@ -4,6 +4,8 @@ Every citation key used by the manuscript is verified below against a real exter
 
 `Exists` asks whether the identifier resolves; `Support` asks whether the record found is the work the manuscript means -- two separate questions, because a DOI can resolve to a real paper that is not the declared one.
 
+The instrument is the endpoint named in the `Method` column (`api.crossref.org/works/<doi>` for `doi`; `export.arxiv.org/api/query?id_list=<id>` for `arxiv`), and its known-present control is entry `[6]` (`10.1093/comjnl/25.4.465`, Weyuker 1982): a run in which the control does not resolve has read nothing and takes no verdict about the others.
+
 | # | Key | Method | Exists | Support | Record found |
 |---|---|---|---|---|---|
 | 1 | `modularity` | doi | yes | OK | On the Criteria to Be Used in Decomposing Systems into Modules -- 10.21236/ad0773837 |
@@ -25,7 +27,7 @@ Every citation key used by the manuscript is verified below against a real exter
 | 17 | `translatevalid` | doi | yes | OK | Translation validation for an optimizing compiler -- 10.1145/358438.349314 |
 | 18 | `expguidelines` | doi | yes | OK | Preliminary guidelines for empirical research in software engineering -- 10.1109/tse.2002.1027796 |
 | 19 | `prioritization` | doi | yes | OK | Test case prioritization: a family of empirical studies -- 10.1109/32.988497 |
-| 20 | `tla` | doi | yes | OK | Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers [Book Review] -- 10.1109/mc.2002.1033032 |
+| 20 | `tla` | doi | yes | OK | Specifying and verifying systems with TLA+ -- 10.1145/1133373.1133382 |
 | 21 | `abstractionrefinement` | doi | yes | OK | Abstraction Refinement for Large Scale Model Checking -- 10.1007/0-387-34600-7 |
 | 22 | `changedistilling` | doi | yes | OK | Change Distilling:Tree Differencing for Fine-Grained Source Code Change Extraction -- 10.1109/tse.2007.70731 |
 | 23 | `daikonsystem` | doi | yes | OK | The Daikon system for dynamic detection of likely invariants -- 10.1016/j.scico.2007.01.015 |
@@ -108,6 +110,59 @@ Every citation key used by the manuscript is verified below against a real exter
 | 100 | `trustledger` | arxiv | yes | OK | A Trust Ledger and an Execution Check for CPG-Based C-to-Lean 4 Autoformalization: Separating Declined from Silently Incorrect Translations -- arXiv:2609.38237 |
 | 101 | `verifguidance` | arxiv | yes | OK | From Verification Failures to Reusable Guidance for Coding Agents -- arXiv:2609.39022 |
 | 102 | `vosti` | arxiv | yes | OK | Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference -- arXiv:2609.38981 |
+
+## Where each author component came from
+
+The house form is `Family, I.`, and it is formed from a record rather than from the field a harvest stored. Three routes, and every entry is on one of them:
+
+| route | how the component is formed |
+|---|---|
+| `crossref` | the record's own structured `family`/`given` |
+| `openalex` | the record carries no author in Crossref, so OpenAlex is asked by DOI |
+| `arxiv-name` | the only form available is one string per author; the family name is the LAST token, and a name whose last token is an initial is not split |
+| `absent` | no record read carries an author; the entry says so and names the record it read |
+
+Entries whose component did not come from a structured record, with the form printed:
+
+| # | Key | Route | Printed component |
+|---|---|---|---|
+| 64 | `hiddendebt` | absent | author not established on Crossref or OpenAlex for DOI 10.7551/mitpress/12440.003.0011 |
+| 69 | `aletheia` | arxiv-name | Shi, J.; Chen, Y.; He, J.; et al. |
+| 70 | `assurancecases` | arxiv-name | Li, H.; Wang, Z.; Li, G.; et al. |
+| 71 | `c11semantics` | arxiv-name | Kissig, C.; Richards, J.; Batty, M. |
+| 72 | `certporting` | arxiv-name | Jha, P.; Ghosh, A.; Ganesh, V. |
+| 73 | `compasspatches` | arxiv-name | Song, Y.; Xie, D.; Xie, X.; et al. |
+| 74 | `contractaudit` | arxiv-name | Bellibatlu, R. R.; Wang, Z.; Zhang, W. |
+| 75 | `culpritsearch` | arxiv-name | Garg, A.; Yang-Smith, C.; Rishav, R.; et al. |
+| 76 | `dafnymodels` | arxiv-name | Ciobâcă, Ş.; Gratie, D. E.; Rotariu, D. I. |
+| 77 | `errhealing` | arxiv-name | Tan, G.; Chen, P.; Sun, Z.; et al. |
+| 78 | `faultless` | arxiv-name | Dramko, L.; Le Goues, C.; Schwartz, E. |
+| 79 | `forte` | arxiv-name | Abuah, C. |
+| 80 | `gradertl` | arxiv-name | Susan, H.; Shivaranjani G. R.; Imran, M.; et al. |
+| 81 | `leangroups` | arxiv-name | Dağlı, V.; Dağlı, Z.; Dağlı, D. |
+| 82 | `manualopt` | arxiv-name | Poličar, P. G.; Špendl, M.; Hočevar, T. |
+| 83 | `matchedcomposition` | arxiv-name | Kurucz, Á.; Bereczky, P.; Horpácsi, D. |
+| 84 | `mcrl2coordination` | arxiv-name | Reuther, C.; Jacquet, J. M. |
+| 85 | `mergednotmeasured` | arxiv-name | Qi, Z.; Li, H.; Chen, J.; et al. |
+| 86 | `mubric` | arxiv-name | Yang, J.; Zhang, J. M.; Lou, Y.; et al. |
+| 87 | `multilanglogics` | arxiv-name | Loitzl, A.; Mück, N.; Sammler, M. |
+| 88 | `nominalproofs` | arxiv-name | Benzmüller, C. |
+| 89 | `omegatest` | arxiv-name | Brănici-Faraon, A.; Ciobâcă, Ş.; Gratie, D. E. |
+| 90 | `oxidize` | arxiv-name | De Greef, R.; Engels, T.; Van den Broucke, F.; et al. |
+| 91 | `patiencesort` | arxiv-name | Drǎmnesc, I.; Jebelean, T.; Stratulat, S. |
+| 92 | `perfmodels` | arxiv-name | Labbadi, M.; Majumdar, R.; Sathiyanarayana, V. R.; et al. |
+| 93 | `prefixoracles` | arxiv-name | Kronlund-Drouault, P. |
+| 94 | `quantumequiv` | arxiv-name | Ke, J.; Li, J.; Li, G. |
+| 95 | `refinedstream` | arxiv-name | Lavoie, E. |
+| 96 | `safellmse` | arxiv-name | Ortin, F. |
+| 97 | `selfspec` | arxiv-name | Qian, J.; Dong, Y.; Li, Y.; et al. |
+| 98 | `sessionlattices` | arxiv-name | Caldeira, A. Z. |
+| 99 | `tristate` | arxiv-name | Edamana, N.; Kurur, P. P.; Cheramangalath, U. |
+| 100 | `trustledger` | arxiv-name | Singavarapu, I. K.; Bhatt, M. |
+| 101 | `verifguidance` | arxiv-name | Zhai, Y.; Chen, X.; Zhang, L.; et al. |
+| 102 | `vosti` | arxiv-name | Qin, J.; Du, A.; Zhang, D.; et al. |
+
+**Two entries stand outside the author component by the rule's own statement and are right as printed** (`README.md` -> *Presentation requirements*): a work whose record carries no author at all is recorded by naming the record read, and a corporate or multi-author work whose responsible body is named is printed as it stands. Both are listed above rather than silently left out.
 
 ## Rejections (near-misses that were NOT cited)
 

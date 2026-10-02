@@ -19,10 +19,16 @@ exported archive of the branch head runs it as a checkout does. It **writes noth
 package** — every check regenerates to a temporary path and compares — so the files a reader sees at
 this head are the committed ones and not a run's output. The **citation pipeline is the one networked
 part** and it is *not* part of `reproduce.sh`: `refs/verify_refs.py` queries Crossref and the arXiv
-API and rewrites `refs/keys.json`, `reference-list.md` and `reference-check.md`; its lookups are cached
-under `refs/verify_cache/` and its outputs are committed, so verifying the bibliography is
+API — and OpenAlex, by DOI, for the entries whose Crossref record carries no author — and rewrites
+`refs/keys.json`, `reference-list.md` and `reference-check.md`; its lookups are cached under
+`refs/verify_cache/` and its outputs are committed, so verifying the bibliography is
 `python3 refs/verify_refs.py` (network, ~2 minutes with a warm cache) and reproducing the science needs
-no network at all.
+no network at all. The bibliography is generated, never hand-written, and the generator owns the
+author component too: the house form is `Family, I.`, formed from the record (Crossref's structured
+names; OpenAlex by DOI where Crossref has none; and, where the only form is one string per author,
+the last token as the family name — with a name it cannot split printed as the record gives it and
+listed in `reference-check.md` rather than guessed at). An entry whose records carry no author at all
+prints a statement naming the record read, and the same statement is repeated in `reference-check.md`.
 
 ## What "reproduce" means here
 
@@ -89,12 +95,16 @@ each file by sha256 and `make_figures.py --check` can require a rerun to match i
 ## Regenerating after a deliberate change
 
 ```bash
+python3 refs/verify_refs.py                        # regenerate the bibliography and the citation report (network)
 python3 decide.py --json canonical_results.json    # recompute the artefact
 python3 canonical.py --write                       # or: python3 canonical.py  (check only)
 python3 make_figures.py                            # rewrite figures/ + manifest.json
+python3 assemble.py                                # rebuild manuscript.md from the source + the bibliography
 python3 check_manuscript.py                        # re-anchor the manuscript's claims
+python3 check_aggregates.py                        # re-anchor the grid-keyed claims
 ```
 
 `bash reproduce.sh` is then green again only if the committed files really are the code's
 output; a change that moves a number and not the manuscript will fail `check_manuscript.py`,
-which is the point.
+and a bibliography that is edited by hand rather than regenerated will fail `assemble.py --check`
+— which is the point.

@@ -100,7 +100,7 @@ def main(argv) -> int:
             return 1
         have = io.open(OUT, encoding="utf-8").read()
         if have == out:
-            print(f"assemble: COMMITTED MANUSCRIPT MATCHES THE BUILD ({len(out)} bytes)")
+            print(f"assemble: COMMITTED MANUSCRIPT MATCHES THE BUILD ({len(out)} characters, {len(out.encode())} bytes)")
             return 0
         # report the first differing line, so a drift names itself
         hl, bl = have.splitlines(), out.splitlines()
@@ -116,7 +116,7 @@ def main(argv) -> int:
         return 1
 
     io.open(OUT, "w", encoding="utf-8").write(out)
-    print(f"assemble: wrote {OUT} ({len(out)} bytes)")
+    print(f"assemble: wrote {OUT} ({len(out)} characters, {len(out.encode())} bytes)")
     return 0
 
 

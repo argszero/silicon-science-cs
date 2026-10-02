@@ -589,264 +589,308 @@ that numbering, so a renumbering cannot silently re-point a citation.
 
 ## References
 
-[1] Parnas, D. L. (1971). On the Criteria to Be Used in Decomposing Systems into Modules. . https://doi.org/10.21236/ad0773837
+[1] Parnas, D. L. (1971). On the Criteria to Be Used in Decomposing Systems into Modules. https://doi.org/10.21236/ad0773837.
+    Difference: gives the criterion for a module boundary -- hide the decision likely to change; we measure the cost of the decisions an artefact states instead of hiding
 
-[2] Dijkstra, E. W. (1978). Guarded Commands, Nondeterminacy, and Formal Derivation of Programs. Programming Methodology. https://doi.org/10.1007/978-1-4612-6315-9_14
+[2] Dijkstra, E. W. (1978). Guarded Commands, Nondeterminacy, and Formal Derivation of Programs. Programming Methodology. https://doi.org/10.1007/978-1-4612-6315-9_14.
+    Difference: derives programs from their specification by construction; we ask what that specification costs after the program changes
 
-[3] DeMillo, R. A.; Lipton, R. J.; Sayward, F. G. (1978). Hints on Test Data Selection: Help for the Practicing Programmer. Computer. https://doi.org/10.1109/c-m.1978.218136
+[3] DeMillo, R. A.; Lipton, R. J.; Sayward, F. G. (1978). Hints on Test Data Selection: Help for the Practicing Programmer. Computer. https://doi.org/10.1109/c-m.1978.218136.
+    Difference: introduced mutation as a test-data criterion; we use a mutation algebra with a semantics-preservation oracle, so the changing/preserving split is exact rather than sampled
 
-[4] Hoare, C. A. R. (1978). An Axiomatic Basis for Computer Programming. Programming Methodology. https://doi.org/10.1007/978-1-4612-6315-9_9
+[4] Hoare, C. A. R. (1978). An Axiomatic Basis for Computer Programming. Programming Methodology. https://doi.org/10.1007/978-1-4612-6315-9_9.
+    Difference: axiomatic semantics as the basis for proving programs; strength is a proof obligation in that frame and a cost in ours
 
-[5] Lehman, M. M. (1980). Programs, life cycles, and laws of software evolution. Proceedings of the IEEE. https://doi.org/10.1109/proc.1980.11805
+[5] Lehman, M. M. (1980). Programs, life cycles, and laws of software evolution. Proceedings of the IEEE. https://doi.org/10.1109/proc.1980.11805.
+    Difference: laws of software evolution over releases -- growth and declining quality; we isolate one cost of change, the specification's exposure to representation
 
-[6] Weyuker, E. J. (1982). On Testing Non-Testable Programs. The Computer Journal. https://doi.org/10.1093/comjnl/25.4.465
+[6] Weyuker, E. J. (1982). On Testing Non-Testable Programs. The Computer Journal. https://doi.org/10.1093/comjnl/25.4.465.
     Difference: introduced the oracle problem for programs with no expected output; we do not need an oracle because our semantics is decidable
 
-[7] Brooks (1987). No Silver Bullet Essence and Accidents of Software Engineering. Computer. https://doi.org/10.1109/mc.1987.1663532
+[7] Brooks. (1987). No Silver Bullet Essence and Accidents of Software Engineering. Computer. https://doi.org/10.1109/mc.1987.1663532.
+    Difference: essential versus accidental difficulty; we give one accidental difficulty -- representation coupling -- a measurable functional form
 
-[8] Wing, J. M. (1990). A specifier's introduction to formal methods. Computer. https://doi.org/10.1109/2.58215
+[8] Wing, J. M. (1990). A specifier's introduction to formal methods. Computer. https://doi.org/10.1109/2.58215.
     Difference: the classical formal-methods primer; it treats specification strength as monotone, which is what we test
 
-[9] Chidamber, S. R.; Kemerer, C. F. (1991). Towards a metrics suite for object oriented design. Conference proceedings on Object-oriented programming systems, languages, and applications. https://doi.org/10.1145/117954.117970
+[9] Chidamber, S. R.; Kemerer, C. F. (1991). Towards a metrics suite for object oriented design. Conference proceedings on Object-oriented programming systems, languages, and applications. https://doi.org/10.1145/117954.117970.
+    Difference: a metrics suite for object-oriented design measured against maintenance outcomes; our dependent variables are decided by an oracle rather than correlated with a proxy
 
-[10] Meyer, B. (1992). Applying 'design by contract'. Computer. https://doi.org/10.1109/2.161279
+[10] Meyer, B. (1992). Applying 'design by contract'. Computer. https://doi.org/10.1109/2.161279.
+    Difference: contracts as predicates; strength is a single dial there, and we separate it into observational specificity and representation exposure
 
-[11] Offutt, A. J.; Craft, W. M. (1994). Using compiler optimization techniques to detect equivalent mutants. Software Testing, Verification and Reliability. https://doi.org/10.1002/stvr.4370040303
+[11] Offutt, A. J.; Craft, W. M. (1994). Using compiler optimization techniques to detect equivalent mutants. Software Testing, Verification and Reliability. https://doi.org/10.1002/stvr.4370040303.
     Difference: detects equivalent mutants by compiler optimisation, case by case; our oracle decides equivalence over the whole input domain by construction
 
-[12] Basili, V. R.; Briand, L. C.; Melo, W. L. (1996). A validation of object-oriented design metrics as quality indicators. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.544352
+[12] Basili, V. R.; Briand, L. C.; Melo, W. L. (1996). A validation of object-oriented design metrics as quality indicators. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.544352.
+    Difference: validates design metrics as quality indicators statistically; we define the quantity rather than validate a proxy for it
 
-[13] Rothermel, G.; Harrold, M. J. (1996). Analyzing regression test selection techniques. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.536955
+[13] Rothermel, G.; Harrold, M. J. (1996). Analyzing regression test selection techniques. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.536955.
+    Difference: which tests to re-run after a change; our question is which constraints to keep, at matched detection
 
-[14] Tichy, W. F. (1998). Should computer scientists experiment more?. Computer. https://doi.org/10.1109/2.675631
+[14] Tichy, W. F. (1998). Should computer scientists experiment more?. Computer. https://doi.org/10.1109/2.675631.
     Difference: argues for experiment in CS; this paper is an experiment on specifications
 
-[15] Ernst, M. D.; Cockrell, J.; Griswold, W. G.; et al. (1999). Dynamically discovering likely program invariants to support program evolution. Proceedings of the 21st international conference on Software engineering. https://doi.org/10.1145/302405.302467
+[15] Ernst, M. D.; Cockrell, J.; Griswold, W. G.; et al. (1999). Dynamically discovering likely program invariants to support program evolution. Proceedings of the 21st international conference on Software engineering. https://doi.org/10.1145/302405.302467.
     Difference: infers invariants from executions -- a specification PROPOSER; we study what a given specification costs
 
-[16] Leavens, G. T.; Baker, A. L.; Ruby, C. (1999). JML: A Notation for Detailed Design. Behavioral Specifications of Businesses and Systems. https://doi.org/10.1007/978-1-4615-5229-1_12
+[16] Leavens, G. T.; Baker, A. L.; Ruby, C. (1999). JML: A Notation for Detailed Design. Behavioral Specifications of Businesses and Systems. https://doi.org/10.1007/978-1-4615-5229-1_12.
+    Difference: a notation for detailed design; a specification language, not a measurement of what using it costs
 
-[17] Necula, G. C. (2000). Translation validation for an optimizing compiler. ACM SIGPLAN Notices. https://doi.org/10.1145/358438.349314
+[17] Necula, G. C. (2000). Translation validation for an optimizing compiler. ACM SIGPLAN Notices. https://doi.org/10.1145/358438.349314.
     Difference: proves a compiler transformation equivalent; we ask what a specification can DETECT about one
 
-[18] Kitchenham, B. A.; Pfleeger, S. L.; Pickard, L. M.; et al. (2002). Preliminary guidelines for empirical research in software engineering. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2002.1027796
+[18] Kitchenham, B. A.; Pfleeger, S. L.; Pickard, L. M.; et al. (2002). Preliminary guidelines for empirical research in software engineering. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2002.1027796.
     Difference: the standard empirical-methodology guidelines; our controls are built to its spirit
 
-[19] Elbaum, S.; Malishevsky, A. G.; Rothermel, G. (2002). Test case prioritization: a family of empirical studies. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.988497
+[19] Elbaum, S.; Malishevsky, A. G.; Rothermel, G. (2002). Test case prioritization: a family of empirical studies. IEEE Transactions on Software Engineering. https://doi.org/10.1109/32.988497.
     Difference: orders tests; we order specifications by net value at a given change rate
 
-[20]  (2002). Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers [Book Review]. Computer. https://doi.org/10.1109/mc.2002.1033032
+[20] Lamport, L.; Matthews, J.; Tuttle, M.; et al. (2002). Specifying and verifying systems with TLA+. Proceedings of the 10th workshop on ACM SIGOPS European workshop: beyond the PC - EW10. https://doi.org/10.1145/1133373.1133382.
+    Difference: TLA+ and its tooling -- model checking a specification; we price the specification's maintenance instead
 
-[21]  (2006). Abstraction Refinement for Large Scale Model Checking. Series on Integrated Circuits and Systems. https://doi.org/10.1007/0-387-34600-7
+[21] Wang, C.; Somenzi, F.; Hachtel, G. D. (2006). Abstraction Refinement for Large Scale Model Checking. Series on Integrated Circuits and Systems. https://doi.org/10.1007/0-387-34600-7.
+    Difference: refinement abstracts representation away so a proof survives; we measure what the representation an artefact keeps costs
 
-[22] Fluri, B.; Wursch, M.; PInzger, M.; et al. (2007). Change Distilling:Tree Differencing for Fine-Grained Source Code Change Extraction. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2007.70731
+[22] Fluri, B.; Wursch, M.; PInzger, M.; et al. (2007). Change Distilling:Tree Differencing for Fine-Grained Source Code Change Extraction. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2007.70731.
+    Difference: extracts fine-grained source changes; we supply the change distribution's ground-truth split into semantics-changing and semantics-preserving
 
-[23] Ernst, M. D.; Perkins, J. H.; Guo, P. J.; et al. (2007). The Daikon system for dynamic detection of likely invariants. Science of Computer Programming. https://doi.org/10.1016/j.scico.2007.01.015
+[23] Ernst, M. D.; Perkins, J. H.; Guo, P. J.; et al. (2007). The Daikon system for dynamic detection of likely invariants. Science of Computer Programming. https://doi.org/10.1016/j.scico.2007.01.015.
     Difference: the Daikon implementation; our specs are constructed from a generator, not inferred
 
-[24] Pacheco, C.; Lahiri, S. K.; Ernst, M. D.; et al. (2007). Feedback-Directed Random Test Generation. 29th International Conference on Software Engineering (ICSE'07). https://doi.org/10.1109/icse.2007.37
+[24] Pacheco, C.; Lahiri, S. K.; Ernst, M. D.; et al. (2007). Feedback-Directed Random Test Generation. 29th International Conference on Software Engineering (ICSE'07). https://doi.org/10.1109/icse.2007.37.
+    Difference: generates tests from execution feedback; we generate mutations whose semantic effect is decided rather than tests whose failure is observed
 
-[25] Gonthier, G. (2008). The Four Colour Theorem: Engineering of a Formal Proof. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-540-87827-8_28
+[25] Gonthier, G. (2008). The Four Colour Theorem: Engineering of a Formal Proof. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-540-87827-8_28.
+    Difference: an engineering account of a large formal proof; a data point for the field's capability, not for its maintenance cost
 
-[26] D'Silva, V.; Kroening, D.; Weissenbacher, G. (2008). A Survey of Automated Techniques for Formal Software Verification. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems. https://doi.org/10.1109/tcad.2008.923410
+[26] D'Silva, V.; Kroening, D.; Weissenbacher, G. (2008). A Survey of Automated Techniques for Formal Software Verification. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems. https://doi.org/10.1109/tcad.2008.923410.
+    Difference: surveys the cost of automated formal verification techniques; that cost is per proof attempt, not per legitimate change
 
-[27] Wadler, P.; Findler, R. B. (2009). Well-Typed Programs Can’t Be Blamed. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-00590-9_1
+[27] Wadler, P.; Findler, R. B. (2009). Well-Typed Programs Can’t Be Blamed. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-00590-9_1.
+    Difference: localises type errors by blame; a specification whose failures are attributed rather than priced
 
-[28] Leroy, X. (2009). Formal verification of a realistic compiler. Communications of the ACM. https://doi.org/10.1145/1538788.1538814
+[28] Leroy, X. (2009). Formal verification of a realistic compiler. Communications of the ACM. https://doi.org/10.1145/1538788.1538814.
+    Difference: a verified compiler carries the preservation argument end to end; the specification is fixed once and the compiler is what changes
 
-[29] Hassan, A. E. (2009). Predicting faults using the complexity of code changes. 2009 IEEE 31st International Conference on Software Engineering. https://doi.org/10.1109/icse.2009.5070510
+[29] Hassan, A. E. (2009). Predicting faults using the complexity of code changes. 2009 IEEE 31st International Conference on Software Engineering. https://doi.org/10.1109/icse.2009.5070510.
+    Difference: predicts faults from the complexity of code changes; we predict false alarms from the contents of the specification that meets the change
 
-[30] Grün, B. J. M.; Schuler, D.; Zeller, A. (2009). The Impact of Equivalent Mutants. 2009 International Conference on Software Testing, Verification, and Validation Workshops. https://doi.org/10.1109/icstw.2009.37
+[30] Grün, B. J. M.; Schuler, D.; Zeller, A. (2009). The Impact of Equivalent Mutants. 2009 International Conference on Software Testing, Verification, and Validation Workshops. https://doi.org/10.1109/icstw.2009.37.
+    Difference: measures how many equivalent mutants a suite admits; equivalence is a nuisance to filter there and the dependent variable here
 
-[31] Jhala, R.; Majumdar, R. (2009). Software model checking. ACM Computing Surveys. https://doi.org/10.1145/1592434.1592438
+[31] Jhala, R.; Majumdar, R. (2009). Software model checking. ACM Computing Surveys. https://doi.org/10.1145/1592434.1592438.
+    Difference: software model checking as a verification method; we measure the durability of what is checked
 
-[32] Leino, K. R. M. (2010). Dafny: An Automatic Program Verifier for Functional Correctness. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-17511-4_20
+[32] Leino, K. R. M. (2010). Dafny: An Automatic Program Verifier for Functional Correctness. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-17511-4_20.
+    Difference: an automatic program verifier; the language in which practitioners write the specifications whose exposure we measure
 
-[33] Thummalapenta, S.; Xie, T.; Marri, M. (2011). Mining API Usage Specifications via Searching Source Code from the Web. Chapman &amp; Hall/CRC Data Mining and Knowledge Discovery Series. https://doi.org/10.1201/b10928-11
+[33] Thummalapenta, S.; Xie, T.; Marri, M. (2011). Mining API Usage Specifications via Searching Source Code from the Web. Chapman & Hall/CRC Data Mining and Knowledge Discovery Series. https://doi.org/10.1201/b10928-11.
+    Difference: mines usage specifications from source; it produces specifications, and we ask which of their clauses survive change
 
-[34] Sen, K. (2011). DART: Directed Automated Random Testing. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-19237-1_4
+[34] Sen, K. (2011). DART: Directed Automated Random Testing. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-19237-1_4.
+    Difference: directed automated random testing; it generates inputs, and we generate mutations
 
-[35] Jia, Y.; Harman, M. (2011). An Analysis and Survey of the Development of Mutation Testing. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2010.62
+[35] Jia, Y.; Harman, M. (2011). An Analysis and Survey of the Development of Mutation Testing. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2010.62.
     Difference: the standard survey of mutation testing; we invert it -- mutants are our instruments, not our object of study
 
-[36] Ball, T.; Levin, V.; Rajamani, S. K. (2011). A decade of software model checking with SLAM. Communications of the ACM. https://doi.org/10.1145/1965724.1965743
+[36] Ball, T.; Levin, V.; Rajamani, S. K. (2011). A decade of software model checking with SLAM. Communications of the ACM. https://doi.org/10.1145/1965724.1965743.
+    Difference: a decade of SLAM static driver verification at scale; the specification is a property and its maintenance is out of frame
 
-[37] Yang, X.; Chen, Y.; Eide, E.; et al. (2012). Finding and understanding bugs in C compilers. ACM SIGPLAN Notices. https://doi.org/10.1145/2345156.1993532
+[37] Yang, X.; Chen, Y.; Eide, E.; et al. (2012). Finding and understanding bugs in C compilers. ACM SIGPLAN Notices. https://doi.org/10.1145/2345156.1993532.
     Difference: differential testing of compilers; a change population of the same kind, without a specification axis
 
-[38] Le Goues, C.; Nguyen, T.; Forrest, S.; et al. (2012). GenProg: A Generic Method for Automatic Software Repair. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2011.104
+[38] Le Goues, C.; Nguyen, T.; Forrest, S.; et al. (2012). GenProg: A Generic Method for Automatic Software Repair. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2011.104.
+    Difference: automatic program repair -- repair after a failure, whereas we price the false alarm that produced it
 
-[39] Yoo, S.; Harman, M. (2012). Regression testing minimization, selection and prioritization: a survey. Software Testing, Verification and Reliability. https://doi.org/10.1002/stv.430
+[39] Yoo, S.; Harman, M. (2012). Regression testing minimization, selection and prioritization: a survey. Software Testing, Verification and Reliability. https://doi.org/10.1002/stv.430.
     Difference: prices test suites by cost and detection; we price a specification by detection AND false alarms
 
-[40] Kintis, M.; Papadakis, M.; Malevris, N. (2012). Isolating First Order Equivalent Mutants via Second Order Mutation. 2012 IEEE Fifth International Conference on Software Testing, Verification and Validation. https://doi.org/10.1109/icst.2012.160
+[40] Kintis, M.; Papadakis, M.; Malevris, N. (2012). Isolating First Order Equivalent Mutants via Second Order Mutation. 2012 IEEE Fifth International Conference on Software Testing, Verification and Validation. https://doi.org/10.1109/icst.2012.160.
+    Difference: isolates first-order equivalent mutants via second-order mutation; the same nuisance-filtering frame reached by a different mechanism
 
-[41] Tristan, J. B.; Govereau, P.; Morrisett, G. (2012). Evaluating value-graph translation validation for LLVM. ACM SIGPLAN Notices. https://doi.org/10.1145/2345156.1993533
+[41] Tristan, J. B.; Govereau, P.; Morrisett, G. (2012). Evaluating value-graph translation validation for LLVM. ACM SIGPLAN Notices. https://doi.org/10.1145/2345156.1993533.
     Difference: translation validation at scale; same question, compiler-specific instrument, no strength axis
 
-[42] Chen, Y.; Groce, A.; Zhang, C.; et al. (2013). Taming compiler fuzzers. ACM SIGPLAN Notices. https://doi.org/10.1145/2499370.2462173
+[42] Chen, Y.; Groce, A.; Zhang, C.; et al. (2013). Taming compiler fuzzers. ACM SIGPLAN Notices. https://doi.org/10.1145/2499370.2462173.
     Difference: tests compilers against a reference; we test specifications against a decidable semantics
 
-[43] Herzig, K.; Zeller, A. (2013). The impact of tangled code changes. 2013 10th Working Conference on Mining Software Repositories (MSR). https://doi.org/10.1109/msr.2013.6624018
+[43] Herzig, K.; Zeller, A. (2013). The impact of tangled code changes. 2013 10th Working Conference on Mining Software Repositories (MSR). https://doi.org/10.1109/msr.2013.6624018.
+    Difference: tangled changes mix concerns and break more; a property of the change rather than of the specification meeting it
 
-[44] Filliâtre, J. C.; Paskevich, A. (2013). Why3 — Where Programs Meet Provers. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-37036-6_8
+[44] Filliâtre, J. C.; Paskevich, A. (2013). Why3 — Where Programs Meet Provers. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-642-37036-6_8.
+    Difference: a platform where programs meet provers; a specification language and its tooling, not a model of the specification's cost
 
-[45] Just, R.; Jalali, D.; Inozemtseva, L.; et al. (2014). Are mutants a valid substitute for real faults in software testing?. Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering. https://doi.org/10.1145/2635868.2635929
+[45] Just, R.; Jalali, D.; Inozemtseva, L.; et al. (2014). Are mutants a valid substitute for real faults in software testing?. Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering. https://doi.org/10.1145/2635868.2635929.
     Difference: asks whether mutants substitute for real faults; we ask what a specification's shape implies about which changes it will catch
 
-[46] Luo, Q.; Hariri, F.; Eloussi, L.; et al. (2014). An empirical analysis of flaky tests. Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering. https://doi.org/10.1145/2635868.2635920
+[46] Luo, Q.; Hariri, F.; Eloussi, L.; et al. (2014). An empirical analysis of flaky tests. Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering. https://doi.org/10.1145/2635868.2635920.
     Difference: flaky tests as a symptom of brittleness; we make the brittleness a designed axis rather than a discovered symptom
 
-[47] Vazou, N.; Seidel, E. L.; Jhala, R.; et al. (2014). Refinement types for Haskell. ACM SIGPLAN Notices. https://doi.org/10.1145/2692915.2628161
+[47] Vazou, N.; Seidel, E. L.; Jhala, R.; et al. (2014). Refinement types for Haskell. ACM SIGPLAN Notices. https://doi.org/10.1145/2692915.2628161.
+    Difference: refinement types for Haskell; a specification calculus whose strength is one dial
 
-[48] Newcombe, C.; Rath, T.; Zhang, F.; et al. (2015). How Amazon web services uses formal methods. Communications of the ACM. https://doi.org/10.1145/2699417
+[48] Newcombe, C.; Rath, T.; Zhang, F.; et al. (2015). How Amazon web services uses formal methods. Communications of the ACM. https://doi.org/10.1145/2699417.
     Difference: industrial evidence; we quantify the trade-off it reports anecdotally
 
-[49] Kirchner, F.; Kosmatov, N.; Prevosto, V.; et al. (2015). Frama-C: A software analysis perspective. Formal Aspects of Computing. https://doi.org/10.1007/s00165-014-0326-7
+[49] Kirchner, F.; Kosmatov, N.; Prevosto, V.; et al. (2015). Frama-C: A software analysis perspective. Formal Aspects of Computing. https://doi.org/10.1007/s00165-014-0326-7.
+    Difference: a static analysis and verification platform; a tool for writing the specifications rather than a model of their maintenance
 
-[50] Barr, E. T.; Harman, M.; McMinn, P.; et al. (2015). The Oracle Problem in Software Testing: A Survey. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2014.2372785
+[50] Barr, E. T.; Harman, M.; McMinn, P.; et al. (2015). The Oracle Problem in Software Testing: A Survey. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2014.2372785.
     Difference: catalogues oracle-construction techniques; we ask a different question -- what a specification's own STRENGTH costs
 
-[51] Papadakis, M.; Jia, Y.; Harman, M.; et al. (2015). Trivial Compiler Equivalence: A Large Scale Empirical Study of a Simple, Fast and Effective Equivalent Mutant Detection Technique. 2015 IEEE/ACM 37th IEEE International Conference on Software Engineering. https://doi.org/10.1109/icse.2015.103
+[51] Papadakis, M.; Jia, Y.; Harman, M.; et al. (2015). Trivial Compiler Equivalence: A Large Scale Empirical Study of a Simple, Fast and Effective Equivalent Mutant Detection Technique. 2015 IEEE/ACM 37th IEEE International Conference on Software Engineering. https://doi.org/10.1109/icse.2015.103.
     Difference: a large-scale empirical study of equivalent-mutant detection; our ground truth is exact and needs no detector
 
-[52] Segura, S.; Fraser, G.; Sanchez, A. B.; et al. (2016). A Survey on Metamorphic Testing. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2016.2532875
+[52] Segura, S.; Fraser, G.; Sanchez, A. B.; et al. (2016). A Survey on Metamorphic Testing. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2016.2532875.
+    Difference: metamorphic testing sidesteps the oracle problem; we remove the oracle problem by construction instead
 
-[53] Papadakis, M.; Henard, C.; Harman, M.; et al. (2016). Threats to the validity of mutation-based test assessment. Proceedings of the 25th International Symposium on Software Testing and Analysis. https://doi.org/10.1145/2931037.2931040
+[53] Papadakis, M.; Henard, C.; Harman, M.; et al. (2016). Threats to the validity of mutation-based test assessment. Proceedings of the 25th International Symposium on Software Testing and Analysis. https://doi.org/10.1145/2931037.2931040.
+    Difference: threats to mutation-based test assessment; our measurement answers one of them by deciding equivalence exactly
 
-[54] Memon, A.; Zebao Gao; Bao Nguyen; et al. (2017). Taming Google-scale continuous testing. 2017 IEEE/ACM 39th International Conference on Software Engineering: Software Engineering in Practice Track (ICSE-SEIP). https://doi.org/10.1109/icse-seip.2017.16
+[54] Memon, A.; Gao, Z.; Nguyen, B.; et al. (2017). Taming Google-scale continuous testing. 2017 IEEE/ACM 39th International Conference on Software Engineering: Software Engineering in Practice Track (ICSE-SEIP). https://doi.org/10.1109/icse-seip.2017.16.
+    Difference: continuous testing at Google scale absorbs the volume of changes; we measure the false alarms that volume produces
 
-[55] HALES, T.; ADAMS, M.; BAUER, G.; et al. (2017). A FORMAL PROOF OF THE KEPLER CONJECTURE. Forum of Mathematics, Pi. https://doi.org/10.1017/fmp.2017.1
+[55] Hales, T.; Adams, M.; Bauer, G.; et al. (2017). A Formal Proof Of The Kepler Conjecture. Forum of Mathematics, Pi. https://doi.org/10.1017/fmp.2017.1.
+    Difference: a formal proof of the Kepler conjecture; the field's capability rather than the durability of the effort
 
-[56] Breck, E.; Cai, S.; Nielsen, E.; et al. (2017). The ML test score: A rubric for ML production readiness and technical debt reduction. 2017 IEEE International Conference on Big Data (Big Data). https://doi.org/10.1109/bigdata.2017.8258038
+[56] Breck, E.; Cai, S.; Nielsen, E.; et al. (2017). The ML test score: A rubric for ML production readiness and technical debt reduction. 2017 IEEE International Conference on Big Data (Big Data). https://doi.org/10.1109/bigdata.2017.8258038.
+    Difference: a rubric for ML production readiness; a checklist rather than a law with a located optimum
 
-[57] Ringer, T.; Yazdani, N.; Leo, J.; et al. (2018). Adapting proof automation to adapt proofs. Proceedings of the 7th ACM SIGPLAN International Conference on Certified Programs and Proofs. https://doi.org/10.1145/3167094
+[57] Ringer, T.; Yazdani, N.; Leo, J.; et al. (2018). Adapting proof automation to adapt proofs. Proceedings of the 7th ACM SIGPLAN International Conference on Certified Programs and Proofs. https://doi.org/10.1145/3167094.
+    Difference: retargets proof automation so proofs survive change -- the closest prior work to ours; it repairs after the breakage and we predict the breakage from the specification's exposure
 
-[58] Gazzola, L.; Micucci, D.; Mariani, L. (2019). Automatic Software Repair: A Survey. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2017.2755013
+[58] Gazzola, L.; Micucci, D.; Mariani, L. (2019). Automatic Software Repair: A Survey. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2017.2755013.
+    Difference: surveys automatic program repair; the repaired artefact is code, and the false alarms we price are specification failures
 
-[59]  (2019). Mutation Testing Advances: An Analysis and Survey. Advances in Computers. https://doi.org/10.1016/bs.adcom.2018.03.015
+[59] Papadakis, M.; Kintis, M.; Zhang, J.; et al. (2019). Mutation Testing Advances: An Analysis and Survey. Advances in Computers. https://doi.org/10.1016/bs.adcom.2018.03.015.
+    Difference: a survey of mutation testing advances; equivalent mutants stay a filter there and are the treatment here
 
-[60] Ringer, T.; Palmskog, K.; Sergey, I.; et al. (2019). QED at Large: A Survey of Engineering of Formally Verified Software. . https://doi.org/10.1561/9781680835953
+[60] Ringer, T.; Palmskog, K.; Sergey, I.; et al. (2019). QED at Large: A Survey of Engineering of Formally Verified Software. https://doi.org/10.1561/9781680835953.
     Difference: documents proof-engineering cost and maintenance; we make the cost of REPRESENTATION a measurable axis
 
-[61] Sánchez, C.; Schneider, G.; Ahrendt, W.; et al. (2019). A survey of challenges for runtime verification from advanced application domains (beyond software). Formal Methods in System Design. https://doi.org/10.1007/s10703-019-00337-w
+[61] Sánchez, C.; Schneider, G.; Ahrendt, W.; et al. (2019). A survey of challenges for runtime verification from advanced application domains (beyond software). Formal Methods in System Design. https://doi.org/10.1007/s10703-019-00337-w.
+    Difference: runtime verification monitors a running system; a specification at runtime, not one maintained across changes
 
-[62] The mathlib Community (2020). The lean mathematical library. Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs. https://doi.org/10.1145/3372885.3373824
+[62] The mathlib Community. (2020). The lean mathematical library. Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs. https://doi.org/10.1145/3372885.3373824.
+    Difference: the Lean mathematical library; a machine-checked library whose maintenance is exactly the cost we model
 
-[63] Gruber, M.; Lukasczyk, S.; Krois, F.; et al. (2021). An Empirical Study of Flaky Tests in Python. 2021 14th IEEE Conference on Software Testing, Verification and Validation (ICST). https://doi.org/10.1109/icst49551.2021.00026
+[63] Gruber, M.; Lukasczyk, S.; Krois, F.; et al. (2021). An Empirical Study of Flaky Tests in Python. 2021 14th IEEE Conference on Software Testing, Verification and Validation (ICST). https://doi.org/10.1109/icst49551.2021.00026.
     Difference: same, in Python; our change population is generated, so the brittleness is not a property of one repository
 
-[64]  (2021). Technical Debt in Machine Learning Systems. Technical Debt in Practice. https://doi.org/10.7551/mitpress/12440.003.0011
+[64] [Author not established on Crossref or OpenAlex for DOI 10.7551/mitpress/12440.003.0011] (2021). Technical Debt in Machine Learning Systems. Technical Debt in Practice. https://doi.org/10.7551/mitpress/12440.003.0011.
     Difference: names technical debt in ML systems; we make one class of it -- representation coupling -- measurable
 
-[65] Paleyes, A.; Urma, R. G.; Lawrence, N. D. (2022). Challenges in Deploying Machine Learning: A Survey of Case Studies. ACM Computing Surveys. https://doi.org/10.1145/3533378
+[65] Paleyes, A.; Urma, R. G.; Lawrence, N. D. (2022). Challenges in Deploying Machine Learning: A Survey of Case Studies. ACM Computing Surveys. https://doi.org/10.1145/3533378.
+    Difference: case studies of machine-learning deployment challenges; representation coupling is not isolated or priced
 
-[66] Zhang, J. M.; Harman, M.; Ma, L.; et al. (2022). Machine Learning Testing: Survey, Landscapes and Horizons. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2962027
+[66] Zhang, J. M.; Harman, M.; Ma, L.; et al. (2022). Machine Learning Testing: Survey, Landscapes and Horizons. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2962027.
     Difference: documents ML testing practice; a different notion of specification (data, not code)
 
-[67] Baltes, S.; Ralph, P. (2022). Sampling in software engineering research: a critical review and guidelines. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-10072-8
+[67] Baltes, S.; Ralph, P. (2022). Sampling in software engineering research: a critical review and guidelines. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-10072-8.
     Difference: how to sample a population for SE research; we enumerate our population and report bands instead
 
-[68] Wohlin, C.; Runeson, P.; Höst, M.; et al. (2024). Experimentation in Software Engineering. . https://doi.org/10.1007/978-3-662-69306-3
+[68] Wohlin, C.; Runeson, P.; Höst, M.; et al. (2024). Experimentation in Software Engineering. https://doi.org/10.1007/978-3-662-69306-3.
+    Difference: the methodology text for software-engineering experiments, which we follow; our design is enumerated rather than sampled
 
-[69] Jieke Shi; Yuchen Chen; Junda He; et al. (2026). Aletheia: Permission-Minimality Testing for Coding-Agent Rules. arXiv preprint. https://arxiv.org/abs/2609.39678
+[69] Shi, J.; Chen, Y.; He, J.; et al. (2026). Aletheia: Permission-Minimality Testing for Coding-Agent Rules. arXiv preprint. https://arxiv.org/abs/2609.39678.
     Difference: permission-minimality testing for coding-agent rules
 
-[70] Haokun Li; Zhongyi Wang; Guanyan Li; et al. (2026). Automatically Building Machine-Checked Assurance Cases from C Codebases to Requirements. arXiv preprint. https://arxiv.org/abs/2609.40119
+[70] Li, H.; Wang, Z.; Li, G.; et al. (2026). Automatically Building Machine-Checked Assurance Cases from C Codebases to Requirements. arXiv preprint. https://arxiv.org/abs/2609.40119.
     Difference: machine-checked assurance cases generated from a codebase
 
-[71] Christian Kissig; Jay Richards; Mark Batty (2026). Episodic Loops: Finitary Event Structures and Operational Semantics for C11 Programs with Retries. arXiv preprint. https://arxiv.org/abs/2609.34646
+[71] Kissig, C.; Richards, J.; Batty, M. (2026). Episodic Loops: Finitary Event Structures and Operational Semantics for C11 Programs with Retries. arXiv preprint. https://arxiv.org/abs/2609.34646.
     Difference: operational semantics for C11 programs
 
-[72] Piyush Jha; Aishik Ghosh; Vijay Ganesh (2026). Towards Certificate-Driven Software Porting: A Self-Improving Agentic Harness for Scientific Program Optimization. arXiv preprint. https://arxiv.org/abs/2609.34069
+[72] Jha, P.; Ghosh, A.; Ganesh, V. (2026). Towards Certificate-Driven Software Porting: A Self-Improving Agentic Harness for Scientific Program Optimization. arXiv preprint. https://arxiv.org/abs/2609.34069.
     Difference: certificate-driven software porting
 
-[73] Yi Song; Dongchen Xie; Xiaoyuan Xie; et al. (2026). COMPASS: Predicting the Relationship of Multiple Patches for Vulnerabilities with LLMs. arXiv preprint. https://arxiv.org/abs/2609.39783
+[73] Song, Y.; Xie, D.; Xie, X.; et al. (2026). COMPASS: Predicting the Relationship of Multiple Patches for Vulnerabilities with LLMs. arXiv preprint. https://arxiv.org/abs/2609.39783.
     Difference: predicting relationships among vulnerability patches
 
-[74] Rohith Reddy Bellibatlu; Zichong Wang; Wenbin Zhang (2026). Do Agent Benchmarks Do What They Say? An Executable-Contract Audit of Tool-Using Agent Environments. arXiv preprint. https://arxiv.org/abs/2609.37315
+[74] Bellibatlu, R. R.; Wang, Z.; Zhang, W. (2026). Do Agent Benchmarks Do What They Say? An Executable-Contract Audit of Tool-Using Agent Environments. arXiv preprint. https://arxiv.org/abs/2609.37315.
     Difference: executable-contract audit of tool-using agents
 
-[75] Ankur Garg; Corey Yang-Smith; Rishav Rishav; et al. (2026). From Codebase to Culprit (C2C): Reducing the Search Space for Bugs with Semantic Retrieval and Hierarchical Reinforcement Learning. arXiv preprint. https://arxiv.org/abs/2609.38402
+[75] Garg, A.; Yang-Smith, C.; Rishav, R.; et al. (2026). From Codebase to Culprit (C2C): Reducing the Search Space for Bugs with Semantic Retrieval and Hierarchical Reinforcement Learning. arXiv preprint. https://arxiv.org/abs/2609.38402.
     Difference: reducing a bug search space with semantic retrieval
 
-[76] Ştefan Ciobâc\b{a}; Diana-Elena Gratie; Dragoş-Irinel Rotariu (2026). The Formalization of two Computational Models in Dafny. arXiv preprint. https://arxiv.org/abs/2609.34883
+[76] Ciobâcă, Ş.; Gratie, D. E.; Rotariu, D. I. (2026). The Formalization of two Computational Models in Dafny. arXiv preprint. https://arxiv.org/abs/2609.34883.
     Difference: two computational models formalized in Dafny
 
-[77] Gou Tan; Pengfei Chen; Zhensu Sun; et al. (2026). Trustworthy Runtime Error Healing in Real-World Repositories: A Benchmark and Guardrail. arXiv preprint. https://arxiv.org/abs/2609.39086
+[77] Tan, G.; Chen, P.; Sun, Z.; et al. (2026). Trustworthy Runtime Error Healing in Real-World Repositories: A Benchmark and Guardrail. arXiv preprint. https://arxiv.org/abs/2609.39086.
     Difference: benchmark and guarantees for runtime error healing
 
-[78] Luke Dramko; Claire Le Goues; Edward Schwartz (2026). Faultless: A Program Equivalence Technique for Validating and Evaluating Neural Decompilers. arXiv preprint. https://arxiv.org/abs/2609.34089
+[78] Dramko, L.; Le Goues, C.; Schwartz, E. (2026). Faultless: A Program Equivalence Technique for Validating and Evaluating Neural Decompilers. arXiv preprint. https://arxiv.org/abs/2609.34089.
     Difference: a program-equivalence technique for validating decompilation
 
-[79] Chiké Abuah (2026). Forte: A sensitivity type system for imperative Rust. arXiv preprint. https://arxiv.org/abs/2609.30254
+[79] Abuah, C. (2026). Forte: A sensitivity type system for imperative Rust. arXiv preprint. https://arxiv.org/abs/2609.30254.
     Difference: a sensitivity type system for imperative Rust
 
-[80] Hepziba Susan; Shivaranjani G. R.; Malik Imran; et al. (2026). GRADE-RTL: Evaluating LLM-Generated RTL Beyond Compilation. arXiv preprint. https://arxiv.org/abs/2609.25335
+[80] Susan, H.; Shivaranjani G. R.; Imran, M.; et al. (2026). GRADE-RTL: Evaluating LLM-Generated RTL Beyond Compilation. arXiv preprint. https://arxiv.org/abs/2609.25335.
     Difference: evaluating generated RTL beyond compilation
 
-[81] Volkan Dağlı; Zerrin Dağlı; Dağhan Dağlı (2026). Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions. arXiv preprint. https://arxiv.org/abs/2609.38492
+[81] Dağlı, V.; Dağlı, Z.; Dağlı, D. (2026). Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions. arXiv preprint. https://arxiv.org/abs/2609.38492.
     Difference: machine-checked computational group theory in Lean 4
 
-[82] Pavlin G. Poličar; Martin Špendl; Tomaž Hočevar (2026). Is manual software optimization a thing of the past?. arXiv preprint. https://arxiv.org/abs/2609.37849
+[82] Poličar, P. G.; Špendl, M.; Hočevar, T. (2026). Is manual software optimization a thing of the past?. arXiv preprint. https://arxiv.org/abs/2609.37849.
     Difference: whether manual software optimisation is still worthwhile
 
-[83] Ádám Kurucz; Péter Bereczky; Dániel Horpácsi (2026). Dependently Typed Model Composition for Matching Logic. arXiv preprint. https://arxiv.org/abs/2609.34892
+[83] Kurucz, Á.; Bereczky, P.; Horpácsi, D. (2026). Dependently Typed Model Composition for Matching Logic. arXiv preprint. https://arxiv.org/abs/2609.34892.
     Difference: dependently typed model composition
 
-[84] Corentin Reuther; Jean-Marie Jacquet (2026). Modelling Shared-Space Coordination in mCRL2: a Bach-to-mCRL2 Translation Framework. arXiv preprint. https://arxiv.org/abs/2609.37726
+[84] Reuther, C.; Jacquet, J. M. (2026). Modelling Shared-Space Coordination in mCRL2: a Bach-to-mCRL2 Translation Framework. arXiv preprint. https://arxiv.org/abs/2609.37726.
     Difference: modelling shared-space coordination in mCRL2
 
-[85] Zhenyu Qi; Haotang Li; Jinfu Chen; et al. (2026). Merged, Not Measured: An Empirical Study of Performance Issues Fixed by Coding Agents. arXiv preprint. https://arxiv.org/abs/2609.37985
+[85] Qi, Z.; Li, H.; Chen, J.; et al. (2026). Merged, Not Measured: An Empirical Study of Performance Issues Fixed by Coding Agents. arXiv preprint. https://arxiv.org/abs/2609.37985.
     Difference: empirical study of performance fixes merged without measurement
 
-[86] Jiayuxuan Yang; Jie M. Zhang; Yiling Lou; et al. (2026). Mubric: Mutation Testing-Guided Rubric Generation for LLM Evaluation. arXiv preprint. https://arxiv.org/abs/2609.37322
+[86] Yang, J.; Zhang, J. M.; Lou, Y.; et al. (2026). Mubric: Mutation Testing-Guided Rubric Generation for LLM Evaluation. arXiv preprint. https://arxiv.org/abs/2609.37322.
     Difference: mutation testing used to guide rubric generation
 
-[87] Alexander Loitzl; Niklas Mück; Michael Sammler (2026). Multi-language Program Logics. arXiv preprint. https://arxiv.org/abs/2609.32877
+[87] Loitzl, A.; Mück, N.; Sammler, M. (2026). Multi-language Program Logics. arXiv preprint. https://arxiv.org/abs/2609.32877.
     Difference: multi-language program logics
 
-[88] Christoph Benzmüller (2026). Proofs Without Nominals: Gödel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes. arXiv preprint. https://arxiv.org/abs/2609.36279
+[88] Benzmüller, C. (2026). Proofs Without Nominals: Gödel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes. arXiv preprint. https://arxiv.org/abs/2609.36279.
     Difference: shallow embeddings and proofs without nominals
 
-[89] Ariadna Brănici-Faraon; Ştefan Ciobâcă; Diana-Elena Gratie (2026). Formalizing the Omega Test in Dafny. arXiv preprint. https://arxiv.org/abs/2609.34882
+[89] Brănici-Faraon, A.; Ciobâcă, Ş.; Gratie, D. E. (2026). Formalizing the Omega Test in Dafny. arXiv preprint. https://arxiv.org/abs/2609.34882.
     Difference: the Omega test formalized in Dafny
 
-[90] Robbe De Greef; Théo Engels; Felix Van den Broucke; et al. (2026). Lifting the Preprocessor with Oxidize: Structure-Preserving C-to-Rust Translation (Technical Report). arXiv preprint. https://arxiv.org/abs/2609.30062
+[90] De Greef, R.; Engels, T.; Van den Broucke, F.; et al. (2026). Lifting the Preprocessor with Oxidize: Structure-Preserving C-to-Rust Translation (Technical Report). arXiv preprint. https://arxiv.org/abs/2609.30062.
     Difference: structure-preserving C-to-Rust translation
 
-[91] Isabela Drǎmnesc; Tudor Jebelean; Sorin Stratulat (2026). Certification of Bilateral Patience Sort in Theorema and Rocq. arXiv preprint. https://arxiv.org/abs/2609.34889
+[91] Drǎmnesc, I.; Jebelean, T.; Stratulat, S. (2026). Certification of Bilateral Patience Sort in Theorema and Rocq. arXiv preprint. https://arxiv.org/abs/2609.34889.
     Difference: certification of a sorting algorithm in two provers
 
-[92] Moussa Labbadi; Rupak Majumdar; V. R. Sathiyanarayana; et al. (2026). Formal Reasoning about Performance Models. arXiv preprint. https://arxiv.org/abs/2609.37728
+[92] Labbadi, M.; Majumdar, R.; Sathiyanarayana, V. R.; et al. (2026). Formal Reasoning about Performance Models. arXiv preprint. https://arxiv.org/abs/2609.37728.
     Difference: formal reasoning about performance models
 
-[93] Paul Kronlund-Drouault (2026). Semantic Prefix Oracles for LLM Decoding: Contracts and Differential Validation. arXiv preprint. https://arxiv.org/abs/2609.35425
+[93] Kronlund-Drouault, P. (2026). Semantic Prefix Oracles for LLM Decoding: Contracts and Differential Validation. arXiv preprint. https://arxiv.org/abs/2609.35425.
     Difference: semantic prefix oracles and differential validation
 
-[94] Jingyu Ke; Jingyang Li; Guoqiang Li (2026). Irene: Equivalence Checking of Hybrid Quantum Programs via Structure-Preserving Symbolic Reduction. arXiv preprint. https://arxiv.org/abs/2609.36065
+[94] Ke, J.; Li, J.; Li, G. (2026). Irene: Equivalence Checking of Hybrid Quantum Programs via Structure-Preserving Symbolic Reduction. arXiv preprint. https://arxiv.org/abs/2609.36065.
     Difference: equivalence checking of hybrid quantum programs
 
-[95] Erick Lavoie (2026). Designing a Producer-driven Stream Protocol by Formal Refinement. arXiv preprint. https://arxiv.org/abs/2609.33813
+[95] Lavoie, E. (2026). Designing a Producer-driven Stream Protocol by Formal Refinement. arXiv preprint. https://arxiv.org/abs/2609.33813.
     Difference: a stream protocol designed by formal refinement
 
-[96] Francisco Ortin (2026). SafeLLM4SE: Statistical Evaluation and Reporting for LLM-based Software Engineering Systems. arXiv preprint. https://arxiv.org/abs/2609.37294
+[96] Ortin, F. (2026). SafeLLM4SE: Statistical Evaluation and Reporting for LLM-based Software Engineering Systems. arXiv preprint. https://arxiv.org/abs/2609.37294.
     Difference: statistical evaluation and reporting for LLM-based SE
 
-[97] Jiaru Qian; Yihong Dong; Yongmin Li; et al. (2026). Self-Spec Verifiable Code Generation. arXiv preprint. https://arxiv.org/abs/2609.39568
+[97] Qian, J.; Dong, Y.; Li, Y.; et al. (2026). Self-Spec Verifiable Code Generation. arXiv preprint. https://arxiv.org/abs/2609.39568.
     Difference: self-specifying verifiable code generation
 
-[98] Alexandre Zua Caldeira (2026). Session Type State Spaces Form Lattices. arXiv preprint. https://arxiv.org/abs/2609.34927
+[98] Caldeira, A. Z. (2026). Session Type State Spaces Form Lattices. arXiv preprint. https://arxiv.org/abs/2609.34927.
     Difference: session-type state spaces as lattices
 
-[99] Nandakumar Edamana; Piyush P Kurur; Unnikrishnan Cheramangalath (2026). Improved Tristate Multiplication With Formalization in Rocq. arXiv preprint. https://arxiv.org/abs/2609.39009
+[99] Edamana, N.; Kurur, P. P.; Cheramangalath, U. (2026). Improved Tristate Multiplication With Formalization in Rocq. arXiv preprint. https://arxiv.org/abs/2609.39009.
     Difference: a tristate multiplier formalized in Rocq
 
-[100] Ishan K Singavarapu; Manish Bhatt (2026). A Trust Ledger and an Execution Check for CPG-Based C-to-Lean 4 Autoformalization: Separating Declined from Silently Incorrect Translations. arXiv preprint. https://arxiv.org/abs/2609.38237
+[100] Singavarapu, I. K.; Bhatt, M. (2026). A Trust Ledger and an Execution Check for CPG-Based C-to-Lean 4 Autoformalization: Separating Declined from Silently Incorrect Translations. arXiv preprint. https://arxiv.org/abs/2609.38237.
     Difference: execution check for C-to-Lean autoformalization
 
-[101] Yuqing Zhai; Xiaohong Chen; Lingming Zhang; et al. (2026). From Verification Failures to Reusable Guidance for Coding Agents. arXiv preprint. https://arxiv.org/abs/2609.39022
+[101] Zhai, Y.; Chen, X.; Zhang, L.; et al. (2026). From Verification Failures to Reusable Guidance for Coding Agents. arXiv preprint. https://arxiv.org/abs/2609.39022.
     Difference: verification failures turned into reusable guidance
 
-[102] Jianxing Qin; Alexander Du; Danfeng Zhang; et al. (2026). Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference. arXiv preprint. https://arxiv.org/abs/2609.38981
+[102] Qin, J.; Du, A.; Zhang, D.; et al. (2026). Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference. arXiv preprint. https://arxiv.org/abs/2609.38981.
     Difference: specifying, implementing and verifying a deterministic inference pipeline

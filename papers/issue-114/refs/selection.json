@@ -77,7 +77,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "A Survey on Metamorphic Testing Segura Fraser Sanchez Ruiz-Cortes",
-   "difference": ""
+   "difference": "metamorphic testing sidesteps the oracle problem; we remove the oracle problem by construction instead"
   },
   {
    "key": "feedbackrandom",
@@ -106,7 +106,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Feedback-directed random test generation Pacheco Lahiri Ernst Ball",
-   "difference": ""
+   "difference": "generates tests from execution feedback; we generate mutations whose semantic effect is decided rather than tests whose failure is observed"
   },
   {
    "key": "tamingfuzzers",
@@ -222,7 +222,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Hints on Test Data Selection: Help for the Practicing Programmer DeMillo Lipton Sayward",
-   "difference": ""
+   "difference": "introduced mutation as a test-data criterion; we use a mutation algebra with a semantics-preservation oracle, so the changing/preserving split is exact rather than sampled"
   },
   {
    "key": "equivmutants",
@@ -342,7 +342,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Threats to the validity of mutation-based test assessment Papadakis Jia Harman",
-   "difference": ""
+   "difference": "threats to mutation-based test assessment; our measurement answers one of them by deciding equivalence exactly"
   },
   {
    "key": "impactequiv",
@@ -367,7 +367,7 @@
    "source": "crossref",
    "match_score": 0.8,
    "query": "The Impact of Equivalent Mutants Gruen Schuler",
-   "difference": ""
+   "difference": "measures how many equivalent mutants a suite admits; equivalence is a nuisance to filter there and the dependent variable here"
   },
   {
    "key": "secondorder",
@@ -392,7 +392,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Isolating First Order Equivalent Mutants via Second Order Mutation Kintis Papadakis Malevris",
-   "difference": ""
+   "difference": "isolates first-order equivalent mutants via second-order mutation; the same nuisance-filtering frame reached by a different mechanism"
   },
   {
    "key": "hoare",
@@ -409,7 +409,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "An axiomatic basis for computer programming Hoare",
-   "difference": ""
+   "difference": "axiomatic semantics as the basis for proving programs; strength is a proof obligation in that frame and a cost in ours"
   },
   {
    "key": "guarded",
@@ -426,19 +426,37 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Guarded commands, nondeterminacy and formal derivation of programs Dijkstra",
-   "difference": ""
+   "difference": "derives programs from their specification by construction; we ask what that specification costs after the program changes"
   },
   {
    "key": "tla",
-   "title": "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers [Book Review]",
+   "title": "Specifying and verifying systems with TLA+",
    "year": 2002,
-   "venue": "Computer",
-   "doi": "10.1109/mc.2002.1033032",
-   "authors": [],
+   "venue": "Proceedings of the 10th workshop on ACM SIGOPS European workshop: beyond the PC - EW10",
+   "doi": "10.1145/1133373.1133382",
+   "authors": [
+    {
+     "family": "Lamport",
+     "given": "Leslie"
+    },
+    {
+     "family": "Matthews",
+     "given": "John"
+    },
+    {
+     "family": "Tuttle",
+     "given": "Mark"
+    },
+    {
+     "family": "Yu",
+     "given": "Yuan"
+    }
+   ],
    "source": "crossref",
    "match_score": 0.923,
-   "query": "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers Lamport",
-   "difference": ""
+   "query": "re-pointed at a primary TLA+ work: the review record carries no author",
+   "difference": "TLA+ and its tooling -- model checking a specification; we price the specification's maintenance instead",
+   "arxiv": ""
   },
   {
    "key": "awsformal",
@@ -509,7 +527,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Applying design by contract Meyer",
-   "difference": ""
+   "difference": "contracts as predicates; strength is a single dial there, and we separate it into observational specificity and representation exposure"
   },
   {
    "key": "jml",
@@ -534,7 +552,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "JML: A Notation for Detailed Design Leavens Baker Ruby",
-   "difference": ""
+   "difference": "a notation for detailed design; a specification language, not a measurement of what using it costs"
   },
   {
    "key": "qedatlarge",
@@ -596,7 +614,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Adapting proof automation to adapt proofs Ringer Yazdani Leo Grossman",
-   "difference": ""
+   "difference": "retargets proof automation so proofs survive change -- the closest prior work to ours; it repairs after the breakage and we predict the breakage from the specification's exposure"
   },
   {
    "key": "compcert",
@@ -613,7 +631,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Formal verification of a realistic compiler Leroy",
-   "difference": ""
+   "difference": "a verified compiler carries the preservation argument end to end; the specification is fixed once and the compiler is what changes"
   },
   {
    "key": "kepler",
@@ -714,7 +732,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "A formal proof of the Kepler conjecture Hales Adams Bauer Dang Harrison",
-   "difference": ""
+   "difference": "a formal proof of the Kepler conjecture; the field's capability rather than the durability of the effort"
   },
   {
    "key": "fourcolor",
@@ -731,7 +749,7 @@
    "source": "crossref",
    "match_score": 0.833,
    "query": "Formal Proof - The Four-Color Theorem Gonthier",
-   "difference": ""
+   "difference": "an engineering account of a large formal proof; a data point for the field's capability, not for its maintenance cost"
   },
   {
    "key": "translatevalid",
@@ -798,7 +816,7 @@
    "source": "crossref",
    "match_score": 0.875,
    "query": "A Survey of Automated Techniques for Formal Software Verification DSilva Kroening Weissenbacher",
-   "difference": ""
+   "difference": "surveys the cost of automated formal verification techniques; that cost is per proof attempt, not per legitimate change"
   },
   {
    "key": "slamsdecade",
@@ -823,7 +841,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "A decade of software model checking with SLAM Ball Levin Rajamani",
-   "difference": ""
+   "difference": "a decade of SLAM static driver verification at scale; the specification is a property and its maintenance is out of frame"
   },
   {
    "key": "swnodechecking",
@@ -844,7 +862,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Software model checking Jhala Majumdar",
-   "difference": ""
+   "difference": "software model checking as a verification method; we measure the durability of what is checked"
   },
   {
    "key": "regressionsurvey",
@@ -886,7 +904,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Analyzing regression test selection techniques Rothermel Harrold",
-   "difference": ""
+   "difference": "which tests to re-run after a change; our question is which constraints to keep, at matched detection"
   },
   {
    "key": "prioritization",
@@ -1010,7 +1028,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Taming Google-Scale Continuous Testing Memon Gao Nguyen",
-   "difference": ""
+   "difference": "continuous testing at Google scale absorbs the volume of changes; we measure the false alarms that volume produces"
   },
   {
    "key": "genprog",
@@ -1039,7 +1057,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "GenProg: A Generic Method for Automatic Software Repair Le Goues Nguyen Forrest Weimer",
-   "difference": ""
+   "difference": "automatic program repair -- repair after a failure, whereas we price the false alarm that produced it"
   },
   {
    "key": "aprsurvey",
@@ -1064,7 +1082,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Automatic Software Repair: A Survey Gazzola Micucci Mariani",
-   "difference": ""
+   "difference": "surveys automatic program repair; the repaired artefact is code, and the false alarms we price are specification failures"
   },
   {
    "key": "daikon",
@@ -1151,7 +1169,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Programs, life cycles, and laws of software evolution Lehman",
-   "difference": ""
+   "difference": "laws of software evolution over releases -- growth and declining quality; we isolate one cost of change, the specification's exposure to representation"
   },
   {
    "key": "complexityfaults",
@@ -1168,7 +1186,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Predicting faults using the complexity of code changes Hassan",
-   "difference": ""
+   "difference": "predicts faults from the complexity of code changes; we predict false alarms from the contents of the specification that meets the change"
   },
   {
    "key": "changedistilling",
@@ -1197,7 +1215,7 @@
    "source": "crossref",
    "match_score": 0.917,
    "query": "Change Distilling: Tree Differencing for Fine-Grained Source Code Change Extraction Fluri Wuersch Pinzger Gall",
-   "difference": ""
+   "difference": "extracts fine-grained source changes; we supply the change distribution's ground-truth split into semantics-changing and semantics-preserving"
   },
   {
    "key": "tangled",
@@ -1218,7 +1236,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "The impact of tangled code changes Herzig Zeller",
-   "difference": ""
+   "difference": "tangled changes mix concerns and break more; a property of the change rather than of the specification meeting it"
   },
   {
    "key": "metricsvalidation",
@@ -1243,7 +1261,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "A Validation of Object-Oriented Design Metrics as Quality Indicators Basili Briand Melo",
-   "difference": ""
+   "difference": "validates design metrics as quality indicators statistically; we define the quantity rather than validate a proxy for it"
   },
   {
    "key": "ckmetrics",
@@ -1264,7 +1282,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "A metrics suite for object oriented design Chidamber Kemerer",
-   "difference": ""
+   "difference": "a metrics suite for object-oriented design measured against maintenance outcomes; our dependent variables are decided by an oracle rather than correlated with a proxy"
   },
   {
    "key": "expguidelines",
@@ -1380,7 +1398,7 @@
    "source": "crossref",
    "match_score": 0.75,
    "query": "Experimentation in Software Engineering Wohlin Runeson Host Ohlsson Regnell",
-   "difference": ""
+   "difference": "the methodology text for software-engineering experiments, which we follow; our design is enumerated rather than sampled"
   },
   {
    "key": "mltestscore",
@@ -1413,7 +1431,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction Breck Cai Nielsen Salib Sculley",
-   "difference": ""
+   "difference": "a rubric for ML production readiness; a checklist rather than a law with a located optimum"
   },
   {
    "key": "mltestingsurvey",
@@ -1467,7 +1485,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Challenges in Deploying Machine Learning: a Survey of Case Studies Paleyes Urma Lawrence",
-   "difference": ""
+   "difference": "case studies of machine-learning deployment challenges; representation coupling is not isolated or priced"
   },
   {
    "key": "rvmonitor",
@@ -1544,7 +1562,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "A survey of challenges for runtime verification from advanced application domains",
-   "difference": ""
+   "difference": "runtime verification monitors a running system; a specification at runtime, not one maintained across changes"
   },
   {
    "key": "why3",
@@ -1565,7 +1583,7 @@
    "source": "crossref",
    "match_score": 0.833,
    "query": "Why3: Where Programs Meet Provers Filliatre Paskevich",
-   "difference": ""
+   "difference": "a platform where programs meet provers; a specification language and its tooling, not a model of the specification's cost"
   },
   {
    "key": "frama-c",
@@ -1598,7 +1616,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Frama-C: A software analysis perspective Kirchner Kosmatov Prevosto Signoles Yakobowski",
-   "difference": ""
+   "difference": "a static analysis and verification platform; a tool for writing the specifications rather than a model of their maintenance"
   },
   {
    "key": "dafny",
@@ -1615,7 +1633,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Dafny: An Automatic Program Verifier for Functional Correctness Leino",
-   "difference": ""
+   "difference": "an automatic program verifier; the language in which practitioners write the specifications whose exposure we measure"
   },
   {
    "key": "lean",
@@ -1632,7 +1650,7 @@
    "source": "crossref",
    "match_score": 0.8,
    "query": "The Lean Mathematical Library mathlib: building a community library",
-   "difference": ""
+   "difference": "the Lean mathematical library; a machine-checked library whose maintenance is exactly the cost we model"
   },
   {
    "key": "abstractionrefinement",
@@ -1644,7 +1662,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Abstraction Refinement for Large Scale Model Checking",
-   "difference": ""
+   "difference": "refinement abstracts representation away so a proof survives; we measure what the representation an artefact keeps costs"
   },
   {
    "key": "refinementtypes",
@@ -1677,7 +1695,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Refinement types for Haskell Vazou Seidel Jhala Vytiniotis Peyton Jones",
-   "difference": ""
+   "difference": "refinement types for Haskell; a specification calculus whose strength is one dial"
   },
   {
    "key": "blame",
@@ -1698,7 +1716,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Well-typed programs can't be blamed Wadler Findler",
-   "difference": ""
+   "difference": "localises type errors by blame; a specification whose failures are attributed rather than priced"
   },
   {
    "key": "dart",
@@ -1715,7 +1733,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "DART: directed automated random testing",
-   "difference": ""
+   "difference": "directed automated random testing; it generates inputs, and we generate mutations"
   },
   {
    "key": "hiddendebt",
@@ -1739,7 +1757,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Mutation Testing Advances: An Analysis and Survey",
-   "difference": ""
+   "difference": "a survey of mutation testing advances; equivalent mutants stay a filter there and are the treatment here"
   },
   {
    "key": "modularity",
@@ -1756,7 +1774,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "On the criteria to be used in decomposing systems into modules",
-   "difference": ""
+   "difference": "gives the criterion for a module boundary -- hide the decision likely to change; we measure the cost of the decisions an artefact states instead of hiding"
   },
   {
    "key": "silverbullet",
@@ -1773,7 +1791,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "No Silver Bullet: Essence and Accidents of Software Engineering",
-   "difference": ""
+   "difference": "essential versus accidental difficulty; we give one accidental difficulty -- representation coupling -- a measurable functional form"
   },
   {
    "key": "assertmining",
@@ -1798,7 +1816,7 @@
    "source": "crossref",
    "match_score": 1.0,
    "query": "Mining specifications from source code",
-   "difference": ""
+   "difference": "mines usage specifications from source; it produces specifications, and we ask which of their clauses survive change"
   },
   {
    "key": "gradertl",
@@ -3201,6 +3219,14 @@
    "query": "Mutation testing of large language model generated code",
    "why": "best match 0.71",
    "best_title": "Silent numerical failures in large language model\u2013generated pharmacokinetic simulation code: a benchmark against target-controlled infusion validation criteria using the Marsh propofol model"
+  }
+ ],
+ "repointed": [
+  {
+   "from": "10.1109/mc.2002.1033032",
+   "key": "tla",
+   "to": "10.1145/1133373.1133382",
+   "why": "the book-review record carries an EMPTY author list in Crossref and OpenAlex, so the entry could print no author; the primary work carries four"
   }
  ]
 }
