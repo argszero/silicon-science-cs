@@ -1,0 +1,388 @@
+# issue #122 reproduction run
+# interpreter:    /usr/bin/python3  (Python 3.9.6)
+# numpy:          2.0.2
+# matplotlib:     /usr/bin/python3
+# mode:           full
+#
+==========================================================================================================================
+SWEEP -- the loop's loss rate vs the mean-field closed form (1-p*)^n, WORST symbol
+  source      n    lam |    loss_A    loss_B   loss_cf |   cf/meas   n_obs  absfrac | abs_worst
+  uniform    25  0.002 |   0.05374   0.06978 3.550e-02 |      0.51     521   0.8321 |    0.8909
+  uniform    25  0.005 |   0.10686   0.10178 3.550e-02 |      0.35     627   0.7856 |    0.8687
+  uniform    25  0.010 |   0.11512   0.11261 3.550e-02 |      0.32    1025   0.7008 |    0.7854
+  uniform    25  0.020 |   0.10545   0.10644 3.550e-02 |      0.33    1726   0.6040 |    0.6386
+  uniform    25  0.050 |   0.11453   0.11049 3.550e-02 |      0.32    2829   0.4095 |    0.4077
+  uniform    25  0.100 |   0.10882   0.10122 3.550e-02 |      0.35    3446   0.2577 |    0.2785
+  uniform    25  0.200 |   0.08137   0.08237 3.550e-02 |      0.43    4080   0.1387 |    0.1457
+  uniform    25  0.500 |   0.05401   0.04838 3.550e-02 |      0.73    4481   0.0551 |    0.0618
+  uniform    25  1.000 |   0.03090   0.03550 3.550e-02 |      1.00    4628   0.0336 |    0.0310
+  uniform    50  0.002 |   0.11990   0.09105 1.260e-03 |      0.01     417   0.7814 |    0.9127
+  uniform    50  0.005 |   0.09802   0.09933 1.260e-03 |      0.01    1214   0.6792 |    0.7458
+  uniform    50  0.010 |   0.10632   0.10447 1.260e-03 |      0.01    1740   0.5389 |    0.6357
+  uniform    50  0.020 |   0.07863   0.08177 1.260e-03 |      0.02    2887   0.3938 |    0.3955
+  uniform    50  0.050 |   0.07810   0.07062 1.260e-03 |      0.02    3662   0.1829 |    0.2332
+  uniform    50  0.100 |   0.04188   0.03931 1.260e-03 |      0.03    4393   0.0693 |    0.0802
+  uniform    50  0.200 |   0.01889   0.01793 1.260e-03 |      0.07    4659   0.0195 |    0.0245
+  uniform    50  0.500 |   0.00378   0.00311 1.260e-03 |      0.40    4759   0.0034 |    0.0036
+  uniform    50  1.000 |   0.00147   0.00126 1.260e-03 |      1.00    4769   0.0012 |    0.0015
+  uniform   100  0.002 |   0.06250   0.06821 1.588e-06 |      0.00    1200   0.6489 |    0.7487
+  uniform   100  0.005 |   0.07415   0.07809 1.588e-06 |      0.00    1969   0.5190 |    0.5877
+  uniform   100  0.010 |   0.06564   0.06791 1.588e-06 |      0.00    2986   0.3282 |    0.3748
+  uniform   100  0.020 |   0.06009   0.05385 1.588e-06 |      0.00    3844   0.1593 |    0.1951
+  uniform   100  0.050 |   0.02285   0.02199 1.588e-06 |      0.00    4552   0.0370 |    0.0469
+  uniform   100  0.100 |   0.00528   0.00452 1.588e-06 |      0.00    4735   0.0067 |    0.0086
+  uniform   100  0.200 |   0.00000   0.00048 1.588e-06 |      0.00    4776   0.0004 |    0.0000
+  uniform   100  0.500 |   0.00000   0.00001 1.588e-06 |      0.14    4776   0.0000 |    0.0000
+  uniform   100  1.000 |   0.00000   0.00000 1.588e-06 |      1.00    4776   0.0000 |    0.0000
+  uniform   200  0.002 |   0.07474   0.07679 2.521e-12 |      0.00    1833   0.4910 |    0.6162
+  uniform   200  0.005 |   0.06214   0.06363 2.521e-12 |      0.00    3154   0.2578 |    0.3396
+  uniform   200  0.010 |   0.03352   0.03828 2.521e-12 |      0.00    4206   0.1125 |    0.1193
+  uniform   200  0.020 |   0.01868   0.01678 2.521e-12 |      0.00    4550   0.0301 |    0.0473
+  uniform   200  0.050 |   0.00105   0.00114 2.521e-12 |      0.00    4770   0.0013 |    0.0013
+  uniform   200  0.100 |   0.00000   0.00004 2.521e-12 |      0.00    4776   0.0000 |    0.0000
+  uniform   200  0.200 |   0.00000   0.00000 2.521e-12 |      0.00    4776   0.0000 |    0.0000
+  uniform   200  0.500 |   0.00000   0.00000 2.521e-12 |      0.02    4776   0.0000 |    0.0000
+  uniform   200  1.000 |   0.00000   0.00000 2.521e-12 |      1.00    4776   0.0000 |    0.0000
+  zipf       25  0.002 |   0.07609   0.17121 3.467e-01 |      2.02      92   0.8458 |    0.9807
+  zipf       25  0.005 |   0.09322   0.12014 4.067e-01 |      3.39     236   0.8006 |    0.9506
+  zipf       25  0.010 |   0.12530   0.13719 3.467e-01 |      2.53     415   0.7423 |    0.9131
+  zipf       25  0.020 |   0.15453   0.13856 2.780e-01 |      2.01     673   0.6596 |    0.8591
+  zipf       25  0.050 |   0.16711   0.16007 3.467e-01 |      2.17    1125   0.5314 |    0.7644
+  zipf       25  0.100 |   0.19477   0.19612 4.067e-01 |      2.07    1530   0.4219 |    0.6796
+  zipf       25  0.200 |   0.25464   0.23308 3.467e-01 |      1.49    2046   0.3178 |    0.5716
+  zipf       25  0.500 |   0.31600   0.30368 4.067e-01 |      1.34    2538   0.2107 |    0.4686
+  zipf       25  1.000 |   0.39625   0.40669 4.067e-01 |      1.00    2829   0.1748 |    0.4077
+  zipf       50  0.002 |   0.14423   0.18564 7.726e-02 |      0.42     104   0.7981 |    0.9782
+  zipf       50  0.005 |   0.14175   0.14315 4.046e-02 |      0.28     515   0.7119 |    0.8922
+  zipf       50  0.010 |   0.12250   0.11328 7.726e-02 |      0.68     849   0.6076 |    0.8222
+  zipf       50  0.020 |   0.12955   0.12727 1.202e-01 |      0.94    1181   0.5145 |    0.7527
+  zipf       50  0.050 |   0.11704   0.12489 1.654e-01 |      1.32    1931   0.3266 |    0.5957
+  zipf       50  0.100 |   0.15568   0.15227 1.654e-01 |      1.09    2396   0.2278 |    0.4983
+  zipf       50  0.200 |   0.16550   0.15496 1.654e-01 |      1.07    3003   0.1403 |    0.3712
+  zipf       50  0.500 |   0.15753   0.15603 1.654e-01 |      1.06    3777   0.0724 |    0.2092
+  zipf       50  1.000 |   0.17056   0.16539 1.654e-01 |      1.00    3981   0.0521 |    0.1665
+  zipf      100  0.002 |   0.14570   0.16447 1.637e-03 |      0.01     302   0.7280 |    0.9368
+  zipf      100  0.005 |   0.12982   0.11466 2.735e-02 |      0.24     570   0.6198 |    0.8807
+  zipf      100  0.010 |   0.10864   0.10600 2.735e-02 |      0.26    1169   0.4717 |    0.7552
+  zipf      100  0.020 |   0.13597   0.13329 2.735e-02 |      0.21    1515   0.3328 |    0.6828
+  zipf      100  0.050 |   0.10187   0.09980 2.735e-02 |      0.27    2945   0.1714 |    0.3834
+  zipf      100  0.100 |   0.08921   0.09165 2.735e-02 |      0.30    3755   0.0862 |    0.2138
+  zipf      100  0.200 |   0.06204   0.06334 2.735e-02 |      0.43    4223   0.0340 |    0.1158
+  zipf      100  0.500 |   0.04169   0.03836 2.735e-02 |      0.71    4557   0.0119 |    0.0459
+  zipf      100  1.000 |   0.02802   0.02735 2.735e-02 |      1.00    4640   0.0063 |    0.0285
+  zipf      200  0.002 |   0.10608   0.10007 3.563e-05 |      0.00     773   0.5711 |    0.8381
+  zipf      200  0.005 |   0.10832   0.10840 3.563e-05 |      0.00    1274   0.4397 |    0.7332
+  zipf      200  0.010 |   0.11263   0.11098 2.085e-04 |      0.00    1971   0.2926 |    0.5873
+  zipf      200  0.020 |   0.09506   0.09234 7.483e-04 |      0.01    2735   0.1574 |    0.4273
+  zipf      200  0.050 |   0.04792   0.04866 7.483e-04 |      0.02    4090   0.0459 |    0.1436
+  zipf      200  0.100 |   0.03379   0.03320 7.483e-04 |      0.02    4469   0.0155 |    0.0643
+  zipf      200  0.200 |   0.01147   0.01147 7.483e-04 |      0.07    4709   0.0029 |    0.0140
+  zipf      200  0.500 |   0.00168   0.00187 7.483e-04 |      0.40    4768   0.0003 |    0.0017
+  zipf      200  1.000 |   0.00168   0.00075 7.483e-04 |      1.00    4768   0.0002 |    0.0017
+  twohot     25  0.002 |   0.19298   0.15963 2.774e-01 |      1.74      57   0.8482 |    0.9881
+  twohot     25  0.005 |   0.14798   0.14888 2.774e-01 |      1.86     223   0.8006 |    0.9533
+  twohot     25  0.010 |   0.11798   0.10012 2.774e-01 |      2.77     534   0.7328 |    0.8882
+  twohot     25  0.020 |   0.14796   0.13970 2.774e-01 |      1.99     784   0.6656 |    0.8358
+  twohot     25  0.050 |   0.16089   0.17235 2.774e-01 |      1.61    1386   0.5526 |    0.7098
+  twohot     25  0.100 |   0.17403   0.17806 2.774e-01 |      1.56    1925   0.4401 |    0.5969
+  twohot     25  0.200 |   0.20327   0.20142 2.774e-01 |      1.38    2450   0.3563 |    0.4870
+  twohot     25  0.500 |   0.23535   0.23336 2.774e-01 |      1.19    3174   0.2457 |    0.3354
+  twohot     25  1.000 |   0.27444   0.27739 2.774e-01 |      1.00    3458   0.2073 |    0.2760
+  twohot     50  0.002 |   0.15000   0.15200 7.694e-02 |      0.51     120   0.7925 |    0.9749
+  twohot     50  0.005 |   0.10566   0.10786 7.694e-02 |      0.71     530   0.7235 |    0.8890
+  twohot     50  0.010 |   0.13731   0.14018 7.694e-02 |      0.55     721   0.6305 |    0.8490
+  twohot     50  0.020 |   0.12238   0.13547 7.694e-02 |      0.57    1479   0.5299 |    0.6903
+  twohot     50  0.050 |   0.13385   0.13445 7.694e-02 |      0.57    2316   0.3836 |    0.5151
+  twohot     50  0.100 |   0.13532   0.13579 7.694e-02 |      0.57    3015   0.2747 |    0.3687
+  twohot     50  0.200 |   0.12705   0.12007 7.694e-02 |      0.64    3605   0.1669 |    0.2452
+  twohot     50  0.500 |   0.09084   0.08762 7.694e-02 |      0.88    4227   0.0812 |    0.1149
+  twohot     50  1.000 |   0.07670   0.07694 7.694e-02 |      1.00    4407   0.0577 |    0.0773
+  twohot    100  0.002 |   0.09004   0.09077 5.921e-03 |      0.07     522   0.7221 |    0.8907
+  twohot    100  0.005 |   0.10643   0.11470 5.921e-03 |      0.05     949   0.6046 |    0.8013
+  twohot    100  0.010 |   0.09946   0.09943 5.921e-03 |      0.06    1659   0.4867 |    0.6526
+  twohot    100  0.020 |   0.10540   0.10362 5.921e-03 |      0.06    2372   0.3675 |    0.5034
+  twohot    100  0.050 |   0.09955   0.09699 5.921e-03 |      0.06    3345   0.2050 |    0.2996
+  twohot    100  0.100 |   0.06232   0.06382 5.921e-03 |      0.09    4140   0.0984 |    0.1332
+  twohot    100  0.200 |   0.03602   0.03595 5.921e-03 |      0.16    4497   0.0380 |    0.0584
+  twohot    100  0.500 |   0.00847   0.01118 5.921e-03 |      0.53    4725   0.0081 |    0.0107
+  twohot    100  1.000 |   0.00632   0.00592 5.921e-03 |      1.00    4746   0.0051 |    0.0063
+  twohot    200  0.002 |   0.11357   0.12208 3.505e-05 |      0.00     678   0.5907 |    0.8580
+  twohot    200  0.005 |   0.08536   0.09350 3.505e-05 |      0.00    1769   0.4500 |    0.6296
+  twohot    200  0.010 |   0.07898   0.07145 3.505e-05 |      0.00    2583   0.3057 |    0.4592
+  twohot    200  0.020 |   0.07015   0.06939 3.505e-05 |      0.00    3464   0.1834 |    0.2747
+  twohot    200  0.050 |   0.02880   0.03222 3.505e-05 |      0.00    4479   0.0538 |    0.0622
+  twohot    200  0.100 |   0.01282   0.01192 3.505e-05 |      0.00    4679   0.0127 |    0.0203
+  twohot    200  0.200 |   0.00231   0.00282 3.505e-05 |      0.01    4762   0.0022 |    0.0029
+  twohot    200  0.500 |   0.00021   0.00014 3.505e-05 |      0.25    4775   0.0001 |    0.0002
+  twohot    200  1.000 |   0.00000   0.00004 3.505e-05 |      1.00    4776   0.0001 |    0.0000
+
+CERTIFICATE 1 -- E[q_t] = p* + (1-lam)^t (q_0 - p*), from a perturbed start
+   n=200  lam=0.050 : max |MC mean - exact recursion| = 0.01269 over 480 readings
+   n=50   lam=0.500 : max |MC mean - exact recursion| = 0.00790 over 480 readings
+
+CERTIFICATE 2 -- variance recursion vs measured Var(q_i)
+   uniform  n=50   lam=0.010 : max |Var_MC - Var_exact| = 0.005083  (Var_exact up to 0.05538)
+   uniform  n=200  lam=0.050 : max |Var_MC - Var_exact| = 0.000977  (Var_exact up to 0.00536)
+   twohot   n=50   lam=0.010 : max |Var_MC - Var_exact| = 0.009933  (Var_exact up to 0.11518)
+   twohot   n=200  lam=0.050 : max |Var_MC - Var_exact| = 0.001557  (Var_exact up to 0.01115)
+
+CONTROL (planted truth, two-sided) -- lam=0: absence (K-1)/K exactly; lam=1: (1-p)^n
+   uniform n=50 lam=0.0, point-mass start : absence fraction=0.8750  (exact (K-1)/K=0.8750)
+   uniform  lam=1.0      : max rel |loss_B - (1-p)^n| = 1.72e-16 (route B is exact here)
+   zipf     lam=1.0      : max rel |loss_B - (1-p)^n| = 4.62e-16 (route B is exact here)
+   twohot   lam=1.0      : max rel |loss_B - (1-p)^n| = 3.61e-16 (route B is exact here)
+
+FIRST PASSAGE -- T_loss (healthy -> any absence) vs T_recov (collapsed -> full support)
+  source      n     lam |       T_loss   cens_l |      T_recov   cens_r |  T_r/T_l
+  uniform    50   0.005 |         5.04     0.00 |       969.29     0.96 |  192.319
+  uniform    50   0.010 |         4.68     0.00 |       996.92     0.57 |  213.017
+  uniform    50   0.020 |         5.23     0.00 |       235.01     0.00 |   44.935
+  uniform    50   0.050 |         5.50     0.00 |        23.10     0.00 |    4.204
+  uniform    50   0.100 |         6.68     0.00 |         7.66     0.00 |    1.147
+  uniform    50   0.200 |        10.56     0.00 |         3.37     0.00 |    0.319
+  uniform    50   0.500 |        41.47     0.00 |         1.27     0.00 |    0.031
+  uniform    50   1.000 |        82.64     0.00 |         1.01     0.00 |    0.012
+  uniform   200   0.005 |        23.46     0.00 |       122.26     0.00 |    5.210
+  uniform   200   0.010 |        25.13     0.00 |        29.86     0.00 |    1.188
+  uniform   200   0.020 |        34.62     0.00 |         9.29     0.00 |    0.269
+  uniform   200   0.050 |       199.45     0.00 |         2.98     0.00 |    0.015
+  uniform   200   0.100 |       935.93     0.66 |         1.47     0.00 |    0.002
+  uniform   200   0.200 |       448.00     0.99 |         1.01     0.00 |    0.002
+  uniform   200   0.500 |         cens     1.00 |         1.00     0.00 |      n/a
+  uniform   200   1.000 |         cens     1.00 |         1.00     0.00 |      n/a
+  twohot     50   0.005 |         2.00     0.00 |         cens     1.00 |      n/a
+  twohot     50   0.010 |         2.09     0.00 |       771.00     0.98 |  368.900
+  twohot     50   0.020 |         2.25     0.00 |       978.62     0.60 |  434.942
+  twohot     50   0.050 |         2.23     0.00 |       214.07     0.00 |   95.783
+  twohot     50   0.100 |         2.19     0.00 |        41.88     0.00 |   19.123
+  twohot     50   0.200 |         2.23     0.00 |        11.81     0.00 |    5.286
+  twohot     50   0.500 |         2.24     0.00 |         3.50     0.00 |    1.560
+  twohot     50   1.000 |         2.53     0.00 |         1.73     0.00 |    0.682
+  twohot    200   0.005 |         9.32     0.00 |       730.27     0.20 |   78.355
+  twohot    200   0.010 |        10.42     0.00 |       198.81     0.00 |   19.080
+  twohot    200   0.020 |        10.46     0.00 |        38.58     0.00 |    3.690
+  twohot    200   0.050 |        13.99     0.00 |         9.49     0.00 |    0.679
+  twohot    200   0.100 |        23.30     0.00 |         3.64     0.00 |    0.156
+  twohot    200   0.200 |        82.58     0.00 |         1.81     0.00 |    0.022
+  twohot    200   0.500 |       835.29     0.22 |         1.02     0.00 |    0.001
+  twohot    200   1.000 |       902.15     0.67 |         1.00     0.00 |    0.001
+
+route A vs B, worst rel (all symbols): 0.3979152331927154 ; (well-counted only): 0.3979152331927154
+route A vs B, worst rel over cells with >=30 expected loss events: 0.3979152331927154 (n=602)
+Jensen gap (closed form / measured loss), per symbol, >=30 expected events: median 0.08437373632023631  min 2.8338728706125736e-47  max 6.029357209088197
+   above the closed form in 83 of 602 readings; by absence fraction:
+     absent   0-20 %: n=202  above1=2   median ratio 0.03746
+     absent  20-40 %: n=115  above1=11  median ratio 0.0691
+     absent  40-60 %: n=106  above1=20  median ratio 0.05815
+     absent  60-80 %: n=115  above1=23  median ratio 0.1369
+     absent  80-100%: n=64   above1=27  median ratio 0.8188
+wrote spike_v1_results.json
+==============================================================================================================================
+CONTROLS -- run BEFORE the readings: a reading from an uncalibrated family is not a
+            reading (C1: w=1 IS the replacement loop; C2: lam=1 is exact for every w)
+   C1  w=1 vs spike_v1's replacement simulator: max |state difference| = 0.000e+00 over 15360 states
+   C2a lam=1, w=1 n=10  : measured 0.26434 vs exact 0.26308  (rel 0.005, max z=1.73)
+   C2a lam=1, w=2 n=10  : measured 0.06941 vs exact 0.06921  (rel 0.009, max z=1.29)
+   C2a lam=1, w=4 n=10  : measured 0.00500 vs exact 0.00479  (rel 0.061, max z=1.96)
+   C2b lam=1, w=1   : measured absence 1.431e-03 vs exact 1.260e-03  (max overshoot -2.91e-04, one-sided)
+   C2b lam=1, w=4   : measured absence 0.000e+00 vs exact 2.521e-12  (max overshoot -2.52e-12, one-sided)
+   C2b lam=1, w=64  : measured absence 0.000e+00 vs exact 2.665e-186  (max overshoot -2.67e-186, one-sided)
+
+==============================================================================================================================
+PART 1 -- criterion (iii): first passage, 5 seeds/cell, mean +/- 95% CI, censoring shown
+  source      n     lam | T_loss over seeds              | T_recov over seeds            
+  uniform    50   0.005 | 4.4 [3.7,5.1]                  | 1101.9 [454.4,1749.4] cens 0.98
+  uniform    50   0.010 | 4.8 [4.2,5.4]                  | 933.3 [722.6,1144.0] cens 0.57
+  uniform    50   0.020 | 4.4 [3.7,5.1]                  | 150.0 [132.9,167.1] cens 0.00 
+  uniform    50   0.050 | 5.0 [5.0,5.0]                  | 20.6 [19.0,22.2] cens 0.00    
+  uniform    50   0.100 | 5.8 [5.2,6.4]                  | 6.8 [6.2,7.4] cens 0.00       
+  uniform    50   0.200 | 9.0 [9.0,9.0]                  | 3.0 [3.0,3.0] cens 0.00       
+  uniform    50   0.500 | 30.1 [25.3,34.9]               | 1.0 [1.0,1.0] cens 0.00       
+  uniform   200   0.005 | 21.4 [20.3,22.5]               | 116.4 [108.0,124.8] cens 0.00 
+  uniform   200   0.010 | 24.5 [22.7,26.3]               | 26.2 [25.2,27.2] cens 0.00    
+  uniform   200   0.020 | 30.6 [29.0,32.2]               | 8.6 [7.9,9.3] cens 0.00       
+  uniform   200   0.050 | 133.8 [115.0,152.6]            | 3.0 [3.0,3.0] cens 0.00       
+  uniform   200   0.100 | 835.3 [617.6,1053.0]           | 1.0 [1.0,1.0] cens 0.00       
+  uniform   200   0.200 | 1115.5 [-2861.5,5092.5]        | 1.0 [1.0,1.0] cens 0.00       
+  uniform   200   0.500 | no seed finished               | 1.0 [1.0,1.0] cens 0.00       
+  twohot     50   0.005 | 2.0 [2.0,2.0]                  | cens 1.00: none finished      
+  twohot     50   0.010 | 2.0 [2.0,2.0]                  | 1052.0 [389.5,1714.5] cens 0.98
+  twohot     50   0.020 | 2.0 [2.0,2.0]                  | 871.0 [797.0,945.0] cens 0.65 
+  twohot     50   0.050 | 2.0 [2.0,2.0]                  | 160.1 [131.2,189.0] cens 0.00 
+  twohot     50   0.100 | 2.0 [2.0,2.0]                  | 32.2 [29.5,34.9] cens 0.00    
+  twohot     50   0.200 | 2.0 [2.0,2.0]                  | 10.2 [9.6,10.8] cens 0.00     
+  twohot     50   0.500 | 2.0 [2.0,2.0]                  | 3.0 [3.0,3.0] cens 0.00       
+  twohot    200   0.005 | 8.6 [7.9,9.3]                  | 751.2 [680.5,821.9] cens 0.20 
+  twohot    200   0.010 | 8.7 [7.9,9.5]                  | 146.1 [130.0,162.2] cens 0.00 
+  twohot    200   0.020 | 8.9 [8.6,9.2]                  | 35.9 [32.3,39.5] cens 0.00    
+  twohot    200   0.050 | 11.4 [10.7,12.1]               | 8.0 [7.1,8.9] cens 0.00       
+  twohot    200   0.100 | 17.9 [17.0,18.8]               | 3.2 [2.6,3.8] cens 0.00       
+  twohot    200   0.200 | 60.9 [57.9,63.9]               | 2.0 [2.0,2.0] cens 0.00       
+  twohot    200   0.500 | 640.2 [510.4,770.0]            | 1.0 [1.0,1.0] cens 0.00       
+
+==============================================================================================================================
+PART 2 -- P2: at MATCHED per-generation lam, does the boundary move with pool history?
+  source      n |   w=1 (repl)          w=4         w=64 |   w64 / w1
+  uniform    50 |     0.293701     0.049316     0.000977 |      0.003
+  uniform   200 |     0.029297     0.008057     0.000244 |      0.008
+  zipf       50 |     1.000000     0.382812     0.010010 |      0.010
+  zipf      200 |     0.242432     0.041992     0.000244 |      0.001
+  (w is the pool window in batches; w=1 IS the replacement protocol.  A boundary that
+   moves with w, at matched lam, is P2: the fraction is not the only control variable.)
+
+==============================================================================================================================
+PART 3 -- MECHANISM: pooling turns exponential mean reversion (rate ~lam) into a slow
+          moving-average relaxation.  Measured rate vs the two candidate laws.
+  source      n    lam      w |   rate(meas) rate(w=1 law) rate(MA eig) | meas/eig
+  uniform    50  0.020      1 |      0.02011      0.02020      0.02020 |    0.995  (fit 20..98)
+  uniform    50  0.020      2 |      0.01323      0.02020      0.01345 |    0.983  (fit 20..158)
+  uniform    50  0.020      4 |      0.00798      0.02020      0.00806 |    0.990  (fit 20..290)
+  uniform    50  0.020      8 |      0.00448      0.02020      0.00448 |    1.001  (fit 40..399)
+  uniform    50  0.020     16 |      0.00237      0.02020      0.00237 |    1.001  (fit 80..399)
+  uniform    50  0.020     64 |      0.00063      0.02020      0.00062 |    1.012  (fit 320..399)
+  uniform    50  0.050      1 |      0.05200      0.05129      0.05129 |    1.014  (fit 20..44)
+  uniform    50  0.050      2 |      0.03438      0.05129      0.03410 |    1.008  (fit 20..72)
+  uniform    50  0.050      4 |      0.02095      0.05129      0.02041 |    1.026  (fit 20..129)
+  uniform    50  0.050      8 |      0.01124      0.05129      0.01132 |    0.993  (fit 40..264)
+  uniform    50  0.050     16 |      0.00598      0.05129      0.00599 |    0.998  (fit 80..399)
+  uniform    50  0.050     64 |      0.00156      0.05129      0.00157 |    0.999  (fit 320..399)
+  (If the measured rate tracks the MA eigenvalue and not the w=1 law, then pooling
+   slows the return to the source -- that is the mechanism behind P2's boundary.)
+
+wrote spike_v2_results.json
+==========================================================================================================================
+PART B -- what is INVARIANT at the boundary?  (at each located lambda*, across w)
+  source      n     w |     lambda* |     rate(MA)     mean_var          snr | loss / regain measured at the boundary
+  uniform    50     1 |    0.290983 |     0.343875    4.306e-03        1.902 | loss 0.00834 regain 0.84554
+  uniform    50     2 |    0.115913 |     0.081579    6.272e-03        1.570 | loss 0.00497 regain 0.51532
+  uniform    50     4 |    0.050474 |     0.020611    8.224e-03        1.353 | loss 0.00237 regain 0.27793
+  uniform    50     8 |    0.021383 |     0.004790    9.992e-03        1.171 | loss 0.00112 regain 0.12652
+  uniform    50    16 |    0.009350 |     0.001104    1.031e-02        1.182 | loss 0.00044 regain 0.05962
+  uniform    50    64 |    0.000478 |     0.000015    4.804e-03        1.716 | loss 0.00002 regain 0.00166
+  twohot     50     1 |    1.000000 |          inf    1.854e-03        1.612 | loss 0.05685 regain 0.92379
+  twohot     50     2 |    0.733457 |     0.826150    1.115e-03        2.085 | loss 0.00600 regain 0.84875
+  twohot     50     4 |    0.208994 |     0.091681    1.835e-03        1.618 | loss 0.00285 regain 0.40654
+  twohot     50     8 |    0.078671 |     0.018019    2.572e-03        1.342 | loss 0.00122 regain 0.18008
+  twohot     50    16 |    0.031523 |     0.003751    3.197e-03        1.168 | loss 0.00044 regain 0.07876
+  twohot     50    64 |    0.005609 |     0.000173    3.374e-03        1.181 | loss 0.00010 regain 0.01400
+
+==========================================================================================================================
+PART C -- fit the candidate on w = 1, 4 and test it against the UNSEEN w = 8, 16
+  source   candidate |          w=1          w=4          w=8         w=16 | spread(w1,w4) held-out miss
+  uniform  rate_MA   |       0.3439      0.02061      0.00479     0.001104 |      0.940    164.124
+  uniform  snr       |        1.902        1.353        1.171        1.182 |      0.288      0.390
+  twohot   rate_MA   |          inf      0.09168      0.01802     0.003751 | n/a (ceiling)        n/a
+  twohot   snr       |        1.612        1.618        1.342        1.168 |      0.004      0.382
+  (A candidate is an INVARIANT only if its w=1 and w=4 values agree AND that fit then
+   predicts the unseen w=8, 16. A small in-sample spread with a large held-out miss is
+   a coincidence of two points, not a law -- the held-out column is the verdict.)
+
+==========================================================================================================================
+PART A -- criterion (ii): the boundary must SEPARATE two behaviours, not just be a number
+  source      n     w |    lambda* | below (lam*/2)                     | above (2*lam*)                    
+  uniform    50     1 |   0.290983 | abs 0.0411  full 0.7200            | abs 0.0024  full 0.9817            | two-sided OK
+  uniform    50     4 |   0.050474 | abs 0.0574  full 0.6295            | abs 0.0006  full 0.9959            | two-sided OK
+  uniform    50    16 |   0.009350 | abs 0.0404  full 0.7456            | abs 0.0007  full 0.9976            | two-sided OK
+  twohot     50     1 |   1.000000 | CEILING: the 1% bar is met NOWHERE in lam <= 1, so there is no interior boundary to control -- reported as unsatisfiable
+  twohot     50     4 |   0.208994 | abs 0.0494  full 0.7503            | abs 0.0011  full 0.9936            | two-sided OK
+  twohot     50    16 |   0.031523 | abs 0.0614  full 0.7174            | abs 0.0006  full 0.9969            | two-sided OK
+
+==========================================================================================================================
+PART D -- THE SAME LOOP, TWO CRITERIA: keeping it intact vs healing it once broken
+  lambda_heal = smallest lam at which a FULLY COLLAPSED loop reaches full support within
+  H=2000 with probability >= 0.5 (log bisection on an uncensored proportion);
+  lambda_stationary = the 1%% absence bar located in Part B.
+  source      n     w |    lambda_heal lambda_stationary | stat / heal
+  uniform    50     1 |       0.010549       0.290983 |       27.6
+  uniform    50     4 |       0.003774       0.050474 |       13.4
+  uniform  -> a collapsed loop heals at lam >= 0.01055, but keeping it intact needs 0.29098 : 28x more fresh data
+  twohot     50     1 |       0.022173       1.000000 |       45.1   (stationary is a CEILING: ratio is a lower bound)
+  twohot     50     4 |       0.007966       0.208994 |       26.2
+  twohot   -> a collapsed loop heals at lam >= 0.02217, but keeping it intact needs 1.00000 : 45x more fresh data
+
+wrote spike_v3_results.json
+/Users/argszero/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1j/xmzmfprj2zx3s61pw_03485r0000gn/T/matplotlib-3vv7nxq_ because there was an issue with the default path (/Users/argszero/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+figures from spike_v1_results.json, spike_v2_results.json, spike_v3_results.json
+   fig1_folk_law_refuted.png        104758 bytes
+   fig2_boundary_vs_window.png       94266 bytes
+   fig3_mechanism.png                95103 bytes
+   fig4_criterion_dependence.png     53009 bytes
+   fig5_hysteresis.png               79680 bytes
+-> figures/manifest.json
+rendered 102 references -> /Users/argszero/scm/github.com/argszero/silicon-science-cs/.emrg/sessions/emrg-evolution-silicon-science-cs-journal-task/tmp/jb120/papers/issue-122/references.md (/Users/argszero/scm/github.com/argszero/silicon-science-cs/.emrg/sessions/emrg-evolution-silicon-science-cs-journal-task/tmp/jb120/papers/issue-122/refs/numbering.json)
+   construct    24
+   theory       14
+   mechanism    16
+   protocol     14
+   prevention   10
+   measurement  16
+   adjacent     8
+   n with 4+ authors (rendered 'et al.'): 48
+entries rendered      : 102
+cited by numbered key : 102
+uncited               : 0 []
+bracketed groups       : 86 citations, 0 shape-ambiguous, 11 other
+-> reference-check.md (17578 chars)
+built manuscript.md: 135 placeholders resolved from 135 values, 102 citations (102 references), 10145 words
+-> values.json (provenance for every number)
+ok   4.1 the gap is read on an expected-EVENT gate (density x rate >= 30): 602 readings   [recomputed=602 artefact=602]
+ok   4.1 median and minimum of the bound/measured ratio are the artefact's   [median 0.0843737 min 2.83e-47]
+ok   4.1 the claimed MAXIMUM is the artefact's (6.03)   [recomputed=6.02936]
+ok   4.1 the reading is above the bound in 83 of 602, below it in the rest   [recomputed=83 above1, artefact=83]
+ok   4.1 the absence-fraction bins partition the readings and their crossings sum   [n=602 above1=83]
+ok   4.1 the crossing rate rises with the absence fraction (0.010 -> 0.422)   [rates=['0.010', '0.096', '0.189', '0.200', '0.422']]
+ok   4.1 route A vs route B agree to the stated 39.8% at the gate   [recomputed=0.3979]
+ok   4.1 measured loss falls by only 3.4x from n=25 to n=200 while the closed form falls by 1.4e+10 x   [meas=3.434 cf=1.408e+10]
+ok   4.1 certificate: the mean recursion (perturbed start) holds in 2 cells   [max err 0.0127]
+ok   4.1 certificate: the variance recursion holds in 4 cells   [max err 0.0099]
+ok   4.1 control lam=0 from a point-mass start: absence fraction exactly (K-1)/K   [0.875000 vs 0.875000]
+ok   4.1 control lam=1: measured loss equals the exact (1-p)^n to 4.6e-16   [worst rel 4.62e-16]
+ok   4.2 the boundary falls monotonically in the window in 4/4 configurations   [[('uniform', 50, 0.00333), ('uniform', 200, 0.00833), ('zipf', 50, 0.01001), ('zipf', 200, 0.00101)]]
+ok   4.2 the w=64/w=1 ratio is between 1e-4 and 2e-2 (2-3 orders) in every configuration   [1.01e-03 .. 1.00e-02]
+ok   4.3 the measured relaxation rate matches the moving-average eigenvalue in 12 cells (worst 2.62%, span 82.9x)   [worst rel 0.0262 span 82.94]
+ok   4.3 at lam=0.05, w=64 the replacement law is wrong by 32.82x   [wrong=32.815]
+ok   4.3 control: w=1 reproduces the replacement loop EXACTLY (max abs diff 0.0)   [diff=0.0]
+ok   4.3 control: at lam=1 the measured loss matches the exact (1-p)^(w n) (max |z| 1.96)   [z=['1.73', '1.29', '1.96'] sigma=[-0.0002907130862875671, -2.5212191923732485e-12, -2.6654446678314545e-186]]
+ok   4.4 the two criteria differ by more than 10x in every located cell (4 cells)   [[27.6, 13.4, 45.1, 26.2]]
+ok   4.4 the two-hot w=1 prevention criterion is a domain CEILING, not a located number   [[('twohot', 1, 1.0)]]
+ok   4.4 the bisection resolution (1.4e-06 decades) is finer than the smallest boundary (4.8e-04)   [res=1.431e-06 min=4.777e-04]
+ok   4.4 the behavioural control does not saturate (0.720 below vs 0.982 above)   [below=0.720 above=0.982]
+ok   4.4 P(heal) rises with the rate in the two-hot n=50 row (0.000 -> 0.017 -> 0.351)   [0.000 0.017 0.351]
+ok   4.4 more samples help recovery at fixed rate (two-hot lam=0.005: n=200 0.803 > n=50 0.000)   [n200=0.803 n50=0.000]
+ok   4.4 every P(heal) is an uncensored proportion with a stated seed count   [cells=28]
+ok   4.5 the hysteresis ratio crosses 1 inside the bracket in all 4 configurations   [{'twohot/n200': (0.02, 0.05), 'twohot/n50': (0.5, 1.0), 'uniform/n200': (0.01, 0.02), 'uniform/n50': (0.1, 0.2)}]
+ok   4.5 the two-hot lam=0.005 recovery side is fully censored (T_recov undefined, 0 of 200 observed)   [T_recov=nan cens=1.000 n_obs=0]
+ok   4.5 the hysteresis ratio falls monotonically with the rate up to the crossing (15 uncensored cells, 4 groups)   [mono=True uncensored=15 inversions=[]]
+ok   4.5 past the crossing the ratio stays below 1 in all 9 cells (the crossing is one-way)   [max=0.1562]
+ok   4.5 below the crossing the exit time is the short one; above it the entry time is   [brackets={'twohot/n200': (0.02, 0.05), 'twohot/n50': (0.5, 1.0), 'uniform/n200': (0.01, 0.02), 'uniform/n50': (0.1, 0.2)}]
+ok   4.5 the censoring fraction is printed beside the median (uniform lam=0.005: 0.965 censored)   [cens=0.965]
+ok   4.6 every candidate mechanism quantity fails its HELD-OUT test (3 candidates)   [[('rate_MA', 'uniform', 164.124), ('snr', 'uniform', 0.39), ('snr', 'twohot', 0.382)]]
+ok   4.6 the span the manuscript prints is the span of the artefact's own cells (variance 9.24x, snr 1.17-2.09)   [var 0.001115-0.01031 snr 1.168-2.085]
+ok   refs: 102 curated entries, every one taken from the discovery artefact   [n=102 sources=['discovery']]
+ok   refs: the committed log holds 102 OK lines and 0 PROBLEM   [ok=102]
+ok   refs: every entry carries author metadata (102/102, route API batch)   [problems=0]
+ok   refs: the manuscript cites all 102 entries by numbered key (0 uncited)   [numbered=102 uncited=[]]
+ok   build: the assembled manuscript carries no placeholder-shaped text   [leftovers=0]
+ok   build: the manuscript's own count of the readings above the bound is the artefact's   [looking for '83 of the 602']
+ok   figures: 5 figures are recorded in the manifest   [n=5]
+ok   figures: every committed PNG hashes to the value the manifest records   [bad=[]]
+ok   figures: the manifest also pins the source artefacts the figures were drawn from
+VALIDATE 42/42
+RESULT: PASS
+   plant caught by: 4.1 median and minimum of the bound/measured ratio are the artefact's  4.1 median
+   plant caught by: 4.1 the claimed MAXIMUM is the artefact's (1)                          4.1 max
+   plant caught by: 4.1 the reading is above the bound in 0 of 602, below it in the rest   4.1 above-1
+   plant caught by: 4.1 the absence-fraction bins partition the readings and their crossings sum 4.1 bins
+   plant caught by: 4.2 the boundary falls monotonically in the window in 3/4 configurations 4.2 monotone
+   plant caught by: 4.3 the measured relaxation rate matches the moving-average eigenvalue in 12 cells (worst 95.98%, span 82.9x) 4.3 rate
+   plant caught by: 4.4 the two criteria differ by more than 10x in every located cell (4 cells) 4.4 criterion
+   plant caught by: 4.5 the hysteresis ratio crosses 1 inside the bracket in all 4 configurations 4.5 crossing
+   plant caught by: refs: 101 curated entries, every one taken from the discovery artefact refs count
+   plant caught by: figures: every committed PNG hashes to the value the manifest records  figure hash
+SELFTEST 10/10 plants caught
+CHECKSUMS [HARD] 29/29 files match the committed record
+#
+# wall-clock: 79 s
+RESULT: PASS

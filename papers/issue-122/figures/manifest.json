@@ -1,0 +1,21 @@
+{
+ "figures": {
+  "fig1_folk_law_refuted.png": "ef4e8132d464c6a56fdd8ef1b65757caa9bde9118a1feeb0e320d133d81126dc",
+  "fig2_boundary_vs_window.png": "1fd9b7c6df1650b491f8d459d5e63f443d8beb219dd32de8a24fe593c4b16461",
+  "fig3_mechanism.png": "55fe95e97821c23daf934735998f308b69a368c3e5b246f87e5ca43f10d00a75",
+  "fig4_criterion_dependence.png": "006f18b44ba7a9962a4ce62cccc6b034094cf22729a7a1a957d96a0b7cc9e628",
+  "fig5_hysteresis.png": "ae8acd84fb08becf25a2a6a3fbf4abd12bbcb73fe7c6d81e95819813645127b4"
+ },
+ "jensen_pairs": {
+  "median": 0.08437373632023631,
+  "min": 2.8338728706125736e-47,
+  "n": 602
+ },
+ "matplotlib": "3.9.4",
+ "note": "PNG bytes are build-dependent (matplotlib version); the Software tag is fixed so the same build is byte-identical across runs",
+ "sources": {
+  "spike_v1_results.json": "dcabb6a260e648f92890eee59fa9a4d28f0081c60c299f021b3132f4848d6a5d",
+  "spike_v2_results.json": "63bbb3be6704167fac08be1da0fe9f0faa9fb361df397dd167d612cfe2035fee",
+  "spike_v3_results.json": "11104b3e5941ecf3bd8cc7e19fb9dc571c6b539d692a860b3d0febe1efec99be"
+ }
+}
