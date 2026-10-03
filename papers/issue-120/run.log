@@ -1,0 +1,470 @@
+# issue #120 reproduction run
+# interpreter:    python3  (Python 3.13.9)
+# matplotlib:     /usr/bin/python3
+# mode:           full
+#
+====================================================================================================
+ROUTE A (Belady offline optimum) vs ROUTE B (exhaustive cache-state search)
+the two routes must agree EXACTLY; a disagreement voids every later number
+   200 random tiny traces: 0 disagreements
+   control (evict-soonest) below the optimum: 0 of 200  (must be 0)
+
+FIRST READING OF P1's DIRECTION: the LRU-vs-optimum gap vs fast-tier fraction h
+trace                   univ     cap       h     OPT       LRUgap vs OPT
+iid uniform (power 0)     40       2    0.05     333     379     13.8%
+iid uniform (power 0)     40       4    0.10     273     355     30.0%
+iid uniform (power 0)     40       8    0.20     206     308     49.5%
+iid uniform (power 0)     40      20    0.50     103     200     94.2%
+iid power-law 1.0         40       2    0.05     272     328     20.6%
+iid power-law 1.0         40       4    0.10     193     274     42.0%
+iid power-law 1.0         40       8    0.20     128     206     60.9%
+iid power-law 1.0         40      20    0.50      62     104     67.7%
+iid power-law 2.0         24       1    0.05     240     240      0.0%
+iid power-law 2.0         24       2    0.10     114     149     30.7%
+iid power-law 2.0         24       5    0.20      49      70     42.9%
+iid power-law 2.0         24      12    0.50      26      37     42.3%
+hotset 10/90              27       1    0.05     312     312      0.0%
+hotset 10/90              27       3    0.10      99     155     56.6%
+hotset 10/90              27       5    0.20      42      61     45.2%
+hotset 10/90              27      14    0.50      27      35     29.6%
+scan chunks               40       2    0.05     373     400      7.2%
+scan chunks               40       4    0.10     331     394     19.0%
+scan chunks               40       8    0.20     266     359     35.0%
+scan chunks               40      20    0.50     147     292     98.6%
+
+P1 AS REGISTERED: 'realistic policies sit above the optimum, by >=20%% at h<=0.2, the gap
+shrinking as h grows'.  Read per family off the table above:
+   iid uniform (power 0)  gap 13.8% (h=0.05) -> 94.2% (h=0.50)   GROWS with h
+   iid power-law 1.0      gap 20.6% (h=0.05) -> 67.7% (h=0.50)   GROWS with h
+   iid power-law 2.0      gap 0.0% (h=0.05) -> 42.3% (h=0.50)   falls somewhere in h
+   hotset 10/90           gap 0.0% (h=0.05) -> 29.6% (h=0.50)   falls somewhere in h
+   scan chunks            gap 7.2% (h=0.05) -> 98.6% (h=0.50)   GROWS with h
+   families matching P1's >=20%-at-small-h limb: 1 of 5
+   -> the direction is DATA, not a sentence: the spike reports whichever way it comes out.
+
+wrote spike_v0_results.json
+========================================================================================================
+CERTIFICATE: route A (naive Belady) vs route B (exhaustive) vs route C (lazy heap)
+   300 tiny traces: naive-vs-exhaustive = 0 ; heap-vs-exhaustive = 0
+   at n=4000, cap in {5,40,200}: naive == heap EXACTLY
+
+========================================================================================================
+THE CELL GRID -- each policy's misses and its gap above the EXACT optimum, 3 seeds/cell
+family          h    cap       W     h/W       OPT       LRU       LFU     SRRIP    gapLRU  gapSRRIP
+uniform      0.01     20    2000   0.010     43922     49500     49486     49501     12.7%     12.7%
+uniform      0.02     40    2000   0.020     41092     48999     48992     49007     19.2%     19.3%
+uniform      0.05    100    2000   0.050     35718     47472     47520     47458     32.9%     32.9%
+uniform      0.10    200    2000   0.100     30028     44974     45024     44999     49.8%     49.9%
+uniform      0.20    400    2000   0.200     22629     40019     40086     40053     76.9%     77.0%
+uniform      0.35    700    2000   0.350     15443     32582     32670     32600    111.0%    111.1%
+uniform      0.50   1000    2000   0.500     10492     25273     25300     25246    140.9%    140.6%
+powerlaw1    0.01     20    1980   0.010     25609     36431     28421     34538     42.3%     34.9%
+powerlaw1    0.02     40    1980   0.020     21138     31524     24168     29741     49.1%     40.7%
+powerlaw1    0.05    100    1980   0.050     15378     24779     18624     23196     61.1%     50.8%
+powerlaw1    0.10    200    1980   0.101     11254     19484     14549     18115     73.1%     61.0%
+powerlaw1    0.20    400    1980   0.202      7448     13935     10681     12975     87.1%     74.2%
+powerlaw1    0.35    700    1980   0.353      4775      9479      7643      8889     98.5%     86.2%
+powerlaw1    0.50   1000    1980   0.505      3343      6587      5632      6221     97.0%     86.1%
+powerlaw2    0.01     20     298   0.067      1286      2306      1532      2046     79.3%     59.1%
+powerlaw2    0.02     40     298   0.134       647      1141       801      1030     76.4%     59.2%
+powerlaw2    0.05    100     298   0.336       326       499       405       454     52.8%     39.0%
+powerlaw2    0.10    200     298   0.671       298       321       317       317      7.8%      6.4%
+powerlaw2    0.20    400     298   1.342       298       298       298       298      0.0%      0.0%
+powerlaw2    0.35    700     298   2.349       298       298       298       298      0.0%      0.0%
+powerlaw2    0.50   1000     298   3.356       298       298       298       298      0.0%      0.0%
+hotset       0.01     20    1835   0.011      5470     13068      6423     10337    138.9%     89.0%
+hotset       0.02     40    1835   0.022      4328      4883      4867      4868     12.8%     12.5%
+hotset       0.05    100    1835   0.055      3718      4710      4720      4713     26.7%     26.8%
+hotset       0.10    200    1835   0.109      3187      4470      4479      4472     40.2%     40.3%
+hotset       0.20    400    1835   0.218      2609      4007      4016      4007     53.6%     53.6%
+hotset       0.35    700    1835   0.382      2143      3364      3375      3363     57.0%     56.9%
+hotset       0.50   1000    1835   0.545      1848      2775      2777      2775     50.1%     50.2%
+scan8        0.01     20    2000   0.010     44898     49586     49527     49586     10.4%     10.4%
+scan8        0.02     40    2000   0.020     42033     49091     49025     49081     16.8%     16.8%
+scan8        0.05    100    2000   0.050     36510     47630     47497     47621     30.5%     30.4%
+scan8        0.10    200    2000   0.100     30613     45071     45079     45128     47.2%     47.4%
+scan8        0.20    400    2000   0.200     23096     40044     40189     40086     73.4%     73.6%
+scan8        0.35    700    2000   0.350     15810     32641     32800     32709    106.5%    106.9%
+scan8        0.50   1000    2000   0.500     10720     25351     25495     25427    136.5%    137.2%
+scan64       0.01     20    2000   0.010     47102     49922     49675     49922      6.0%      6.0%
+scan64       0.02     40    2000   0.020     44508     49742     49188     49742     11.8%     11.8%
+scan64       0.05    100    2000   0.050     39008     48362     47799     48356     24.0%     24.0%
+scan64       0.10    200    2000   0.100     32938     45745     45357     45856     38.9%     39.2%
+scan64       0.20    400    2000   0.200     24950     40607     40383     40637     62.8%     62.9%
+scan64       0.35    700    2000   0.350     17138     33543     33034     33364     95.7%     94.7%
+scan64       0.50   1000    2000   0.500     11732     25847     25842     26213    120.3%    123.4%
+
+========================================================================================================
+P1 AS REGISTERED: 'a policy sits strictly above the optimum, by >=20% at h <= 0.2, and the
+gap SHRINKS as h grows'.  Two limbs, each checked separately -- the verdict is computed:
+   uniform    gap   12.7% (h=0.01) ->  140.9% (h=0.50)   limb_a(>=20%@h<=.2)=False limb_b(shrinking)=False
+   powerlaw1  gap   42.3% (h=0.01) ->   97.0% (h=0.50)   limb_a(>=20%@h<=.2)=True  limb_b(shrinking)=False
+   powerlaw2  gap   79.3% (h=0.01) ->    0.0% (h=0.50)   limb_a(>=20%@h<=.2)=False limb_b(shrinking)=True 
+   hotset     gap  138.9% (h=0.01) ->   50.1% (h=0.50)   limb_a(>=20%@h<=.2)=False limb_b(shrinking)=False
+   scan8      gap   10.4% (h=0.01) ->  136.5% (h=0.50)   limb_a(>=20%@h<=.2)=False limb_b(shrinking)=False
+   scan64     gap    6.0% (h=0.01) ->  120.3% (h=0.50)   limb_a(>=20%@h<=.2)=False limb_b(shrinking)=False
+   families satisfying BOTH limbs: 0 of 6
+   -> P1 AS REGISTERED: REFUTED
+
+WHY the direction differs -- computed, not asserted.  The gap is a ratio of two
+quantities that each fall with capacity, so its direction is set by WHICH falls faster.
+   family       phi* x-drop   phiLRU x-drop       gap
+   uniform              4.2             2.0     GROWS
+   powerlaw1            7.7             5.5     GROWS
+   powerlaw2            4.3             7.7   shrinks
+   hotset               3.0             4.7   shrinks
+   scan8                4.2             2.0     GROWS
+   scan64               4.0             1.9     GROWS
+   -> the gap grows exactly when the OPTIMUM improves faster than the policy does: the
+      mechanism is how much freedom the clairvoyant has, a property of the workload.
+
+And the denominator in 'h' is not pinned by the registration -- W = the distinct items
+the trace ACTUALLY touches, which for a heavy-tailed workload is far below the universe:
+   family             W  cap@h=.5  h_eff@h=.5
+   uniform         2000      1000       0.500
+   powerlaw1       1980      1000       0.505
+   powerlaw2        298      1000       3.356
+   hotset          1835      1000       0.545
+   scan8           2000      1000       0.500
+   scan64          2000      1000       0.500
+   families whose gap is non-decreasing: 3 of 6 under h = cap/UNIVERSE, 3 of 6 under h_eff = cap/W
+
+========================================================================================================
+A FIRST LOOK AT P2 -- can the ceiling phi* be carried by ONE statistic?
+   family           h        phi*     slope   mean_rd head_mass
+   uniform       0.01      0.8784     1.560    1918.9     0.001
+   uniform       0.02      0.8218     1.560    1918.9     0.001
+   uniform       0.05      0.7144     1.560    1918.9     0.001
+   uniform       0.10      0.6006     1.560    1918.9     0.001
+   uniform       0.20      0.4526     1.560    1918.9     0.001
+   uniform       0.35      0.3089     1.560    1918.9     0.001
+   uniform       0.50      0.2098     1.560    1918.9     0.001
+   powerlaw1     0.01      0.5122     0.548    1436.1     0.026
+   powerlaw1     0.02      0.4228     0.548    1436.1     0.026
+   powerlaw1     0.05      0.3076     0.548    1436.1     0.026
+   powerlaw1     0.10      0.2251     0.548    1436.1     0.026
+   powerlaw1     0.20      0.1490     0.548    1436.1     0.026
+   powerlaw1     0.35      0.0955     0.548    1436.1     0.026
+   powerlaw1     0.50      0.0669     0.548    1436.1     0.026
+   powerlaw2     0.01      0.0257     0.532      97.3     0.402
+   powerlaw2     0.02      0.0129     0.532      97.3     0.402
+   powerlaw2     0.05      0.0065     0.532      97.3     0.402
+   powerlaw2     0.10      0.0060     0.532      97.3     0.402
+   powerlaw2     0.20      0.0060     0.532      97.3     0.402
+   powerlaw2     0.35      0.0060     0.532      97.3     0.402
+   powerlaw2     0.50      0.0060     0.532      97.3     0.402
+   hotset        0.01      0.1094     0.425     711.2     0.043
+   hotset        0.02      0.0866     0.425     711.2     0.043
+   hotset        0.05      0.0744     0.425     711.2     0.043
+   hotset        0.10      0.0637     0.425     711.2     0.043
+   hotset        0.20      0.0522     0.425     711.2     0.043
+   hotset        0.35      0.0429     0.425     711.2     0.043
+   hotset        0.50      0.0370     0.425     711.2     0.043
+   scan8         0.01      0.8980     1.567    1912.0     0.000
+   scan8         0.02      0.8407     1.567    1912.0     0.000
+   scan8         0.05      0.7302     1.567    1912.0     0.000
+   scan8         0.10      0.6123     1.567    1912.0     0.000
+   scan8         0.20      0.4619     1.567    1912.0     0.000
+   scan8         0.35      0.3162     1.567    1912.0     0.000
+   scan8         0.50      0.2144     1.567    1912.0     0.000
+   scan64        0.01      0.9420     1.583    1928.0     0.000
+   scan64        0.02      0.8902     1.583    1928.0     0.000
+   scan64        0.05      0.7802     1.583    1928.0     0.000
+   scan64        0.10      0.6588     1.583    1928.0     0.000
+   scan64        0.20      0.4990     1.583    1928.0     0.000
+   scan64        0.35      0.3428     1.583    1928.0     0.000
+   scan64        0.50      0.2346     1.583    1928.0     0.000
+
+   COLLISIONS -- a slope shared by >1 family, with the phi* the cells then carry:
+      slope~  1.6 : phi* 0.2098 .. 0.9420  (spread 348.9%)
+      slope~  0.5 : phi* 0.0060 .. 0.5122  (spread 8493.5%)
+   -> worst collision spread 8493.5%: the slope does NOT carry the ceiling alone
+
+wrote spike_v1_results.json
+========================================================================================================
+INSTRUMENT CONTROL -- the knee detector, on curves whose answer is known
+   planted KNOWN knee : c_knee=20   sharpness=0.6650  peak_share(at c=20)=1.0000
+   planted NO knee    : c_knee=64   sharpness=0.5106  peak_share(at c=2)=0.0484
+
+========================================================================================================
+MATTSON CERTIFICATE -- is the simulated LRU curve the stack-distance curve?
+   624 (trace, capacity) pairs: simulated LRU vs stack-distance prediction, disagreements = 0
+   -> EXACT.  The whole LRU curve is a function of the stack-distance distribution.
+
+========================================================================================================
+THE phi* KNEE -- dense grid, 3 seeds/cell, n=20000, universe=1000
+family    head kind         c_knee  h*_meas   h_true  rel.err  c_sat   sharp peakShar
+hot5      partial-credit         7   0.0070   0.0050    0.400      7  0.6494   0.4222
+hot10     partial-credit        11   0.0110   0.0100    0.100     12  0.6420   0.2753
+hot20     partial-credit        21   0.0210   0.0200    0.050     22  0.6233   0.1886
+hot40     partial-credit        40   0.0400   0.0400    0.000     48  0.5812   0.1319
+loop8     all-or-nothing         8   0.0080   0.0080    0.000      9  0.6916   0.1429
+loop16    all-or-nothing        16   0.0160   0.0160    0.000     17  0.6739   0.0667
+loop32    all-or-nothing        32   0.0320   0.0320    0.000     33  0.6384   0.0323
+uniform   control               80   0.0800        -        -     20  0.2012   0.0945
+powerlaw1 control               48   0.0480        -        -     29  0.4130   0.2224
+scan64    control              112   0.1120        -        -      3  0.1405   0.0306
+
+========================================================================================================
+THE CURVE AROUND THE HEAD -- phi* at capacities c_head-2 .. c_head+3 (relief per step)
+   hot5       3:0.3396(+0.1771)  4:0.2225(+0.1171)  5:0.1443(+0.0782)  6:0.1003(+0.0440)  7:0.0978(+0.0025)  8:0.0960(+0.0018)
+   hot10      8:0.1915(+0.0462)  9:0.1538(+0.0377)  10:0.1233(+0.0305)  11:0.1002(+0.0232)  12:0.0977(+0.0024)  13:0.0960(+0.0017)
+   hot20      18:0.1376(+0.0162)  19:0.1229(+0.0147)  20:0.1101(+0.0128)  21:0.0990(+0.0111)  22:0.0966(+0.0024)  23:0.0949(+0.0017)
+   hot40      38:0.1124(+0.0064)  39:0.1064(+0.0060)  40:0.1008(+0.0056)
+   loop8      6:0.2860(+0.1428)  7:0.1432(+0.1428)  8:0.0004(+0.1428)  9:0.0004(+0.0000)  10:0.0004(+0.0000)  11:0.0004(+0.0000)
+   loop16     14:0.1340(+0.0666)  15:0.0674(+0.0666)  16:0.0008(+0.0666)  17:0.0008(+0.0000)  18:0.0008(+0.0000)  19:0.0008(+0.0000)
+   loop32     30:0.0660(+0.0322)  31:0.0338(+0.0322)  32:0.0016(+0.0322)  33:0.0016(+0.0000)  34:0.0016(+0.0000)  35:0.0016(+0.0000)
+
+========================================================================================================
+SCORING THE DETECTOR against knees known BY CONSTRUCTION (relative error, 25% bar)
+   family     head kind        c_true   c_knee   rel.err   pass
+   hot5       partial-credit   5        7        0.400     False
+   hot10      partial-credit   10       11       0.100     True
+   hot20      partial-credit   20       21       0.050     True
+   hot40      partial-credit   40       40       0.000     True
+   loop8      all-or-nothing   8        8        0.000     True
+   loop16     all-or-nothing   16       16       0.000     True
+   loop32     all-or-nothing   32       32       0.000     True
+   constructed families whose knee is found within 25% RELATIVE error: 6 of 7
+
+========================================================================================================
+P3's SHAPE, computed -- P3 predicts the relief STRICTLY BELOW h* is ~0
+   family     head kind        h_true   below_head_share   c_sat   verdict
+   hot5       partial-credit   0.0050   0.779              7       P3 SHAPE FAILS
+   hot10      partial-credit   0.0100   0.878              12      P3 SHAPE FAILS
+   hot20      partial-credit   0.0200   0.918              22      P3 SHAPE FAILS
+   hot40      partial-credit   0.0400   0.938              48      P3 SHAPE FAILS
+   loop8      all-or-nothing   0.0080   0.857              9       P3 SHAPE FAILS
+   loop16     all-or-nothing   0.0160   0.933              17      P3 SHAPE FAILS
+   loop32     all-or-nothing   0.0320   0.968              33      P3 SHAPE FAILS
+   partial-credit heads : below-head relief share mean 0.878 (P3 predicts ~0)
+   all-or-nothing heads : below-head relief share mean 0.919 (P3 predicts ~0)
+
+========================================================================================================
+P3's SHAPE ASKED OF BOTH CURVES -- relief strictly below the head, oracle vs LRU
+   family     h_true   ORACLE below-head   LRU below-head   ORACLE c_sat  LRU c_sat
+   hot5       0.0050   0.779               0.596            7             10
+   hot10      0.0100   0.878               0.703            12            17
+   hot20      0.0200   0.918               0.753            22            30
+   hot40      0.0400   0.938               0.783            48            64
+   loop8      0.0080   0.857               0.000            9             9
+   loop16     0.0160   0.933               0.000            17            17
+   loop32     0.0320   0.968               0.000            33            33
+   oracle below-head relief share: mean 0.896  (P3 predicts ~0 -> REFUTED)
+   LRU    below-head relief share: mean 0.405  (P3 predicts ~0 -> not confirmed)
+
+wrote spike_v2_results.json
+========================================================================================================
+EXACT SHAPE ON THE BOUNDED WORKING SET -- is phi*(c) linear, rate = (W-c)/(W-1)?
+   W     cap   phi*(c)      (W-c)/(W-1)   abs.err
+   8     4     0.571600     0.571600       0.00e+00
+   8     6     0.286000     0.286000       0.00e+00
+   8     7     0.143200     0.143200       0.00e+00
+   16    8     0.533600     0.533707       1.07e-04
+   16    14    0.134000     0.134027       2.67e-05
+   16    15    0.067400     0.067413       1.33e-05
+   32    16    0.516800     0.516903       1.03e-04
+   32    30    0.066000     0.066013       1.29e-05
+   32    31    0.033800     0.033806       6.45e-06
+   max |measured - closed form| over these cells: 1.07e-04
+   -> the bounded-working-set family has an EXACT closed form: linear in c.
+
+========================================================================================================
+THE FAMILY SWEEP -- relief scale of the ORACLE and of LRU on the same traces
+family     kind             D  q50sd   hs90     c1/2    c9/10  c99/100 lru c1/2
+loop4      cyclic           4      3      4        3        4        4        4
+loop8      cyclic           8      7      8        5        8        8        8
+loop16     cyclic          16     15     15        9       15       16       16
+loop32     cyclic          32     31     29       17       29       32       32
+loop64     cyclic          64     63     58       33       64       64       64
+hot5       iid-head       877      3      5        3        6      192        4
+hot10      iid-head       874      6     10        4       10      192        7
+hot20      iid-head       875     12     20        6       18      192       13
+hot40      iid-head       885     24     40       10       35      224       24
+hot10w     iid-head      1000     33    697        8      192      320       17
+hot40w     iid-head      1000    103    695       21      192      320       64
+pow05      powerlaw      1000    362    767       56      256      320      160
+pow10      powerlaw       979     53    428       12      160      320       35
+pow15      powerlaw       583      3     38        3       28      160        6
+pow20      powerlaw       188      1      6        3        9       48        3
+pow30      powerlaw        36      0      2        2        4       10        2
+scan4      scan          1000    489    852       80      256      320      192
+scan16     scan          1000    501    851       96      256      320      192
+scan64     scan          1000    491    841      112      320      320      192
+uniform    uniform       1000    477    851       80      256      320      160
+mix8_70    mixture        998      9    508        5       96      320        8
+mix8_95    mixture        658      4      8        3        7       48        5
+mix32_70   mixture        998     34    504       11       96      320       29
+mix32_95   mixture        637     17     31        8       25       64       18
+
+========================================================================================================
+IS THE RELIEF SCALE COMPUTABLE FROM THE PROFILE?  train/test split over families
+   train families 12, test families 12
+   target   statistick(train)  maxerr(train)maxerr(TEST)
+   c_0.5    sd_q50   0.1998    0.933      0.800      
+   c_0.5    sd_q90   0.0684    6.389      5.517      
+   c_0.5    sd_q99   0.0410    6.566      6.842      
+   c_0.5    hs50     0.2419    0.919      0.879      
+   c_0.5    hs90     0.0736    6.481      5.415      
+   c_0.5    hs95     0.0565    6.892      4.830      
+   c_0.5    hs99     0.0400    6.244      8.022      
+   c_0.5    D        0.0340    6.418      8.925      
+   c_0.9    sd_q50   0.6402    0.940      0.931      
+   c_0.9    sd_q90   0.2827    0.788      0.859      
+   c_0.9    sd_q99   0.1834    9.379      16.544     
+   c_0.9    hs50     0.7528    0.953      0.961      
+   c_0.9    hs90     0.3026    0.798      0.849      
+   c_0.9    hs95     0.2426    5.137      9.593      
+   c_0.9    hs99     0.1784    11.027     19.134     
+   c_0.9    D        0.1542    12.474     21.534     
+   c_0.99   sd_q50   0.7768    0.984      0.988      
+   c_0.99   sd_q90   0.4440    0.970      0.986      
+   c_0.99   sd_q99   0.3421    0.743      0.761      
+   c_0.99   hs50     0.8939    0.983      0.989      
+   c_0.99   hs90     0.4739    0.975      0.988      
+   c_0.99   hs95     0.4176    0.887      0.913      
+   c_0.99   hs99     0.3385    0.661      2.230      
+   c_0.99   D        0.3040    0.696      3.168      
+
+   best for c_0.5   : sd_q50    k=0.1998  test max rel.err 0.800  median 0.600
+   best for c_0.9   : hs90      k=0.3026  test max rel.err 0.849  median 0.654
+   best for c_0.99  : sd_q99    k=0.3421  test max rel.err 0.761  median 0.251
+
+wrote spike_v3_results.json
+========================================================================================================
+CERTIFICATE -- the matched-profile pair: identical stack-distance multiset, identical
+LRU curve, DIFFERENT offline optimum
+   A = [1, 2, 1, 2, 0, 1, 0, 2, 1]
+   B = [2, 0, 1, 0, 2, 0, 1, 0, 2]
+   sd multiset A = [-1, -1, -1, 1, 1, 1, 2, 2, 2]
+   sd multiset B = [-1, -1, -1, 1, 1, 1, 2, 2, 2]   -> IDENTICAL
+   LRU miss curve at caps [1, 2, 3]: A [1.0, 0.6667, 0.3333]  B [1.0, 0.6667, 0.3333]  -> IDENTICAL
+   OFFLINE OPTIMUM at cap 2 (exhaustive route): A = 4, B = 6  -> DIFFERENT
+   item frequencies: A={0: 2, 1: 4, 2: 3}  B={0: 4, 1: 2, 2: 3}  -> not a relabelling of one another
+
+========================================================================================================
+IT SCALES -- repeat each pattern K times (the gap is not a small-trace artefact)
+   K     n      opt_A  opt_B   B/A-1     sd-L1     LRU identical?
+   1     9      4      6         +50.0%    0.0000  True
+   10    90     22     42        +90.9%    0.0000  True
+   100   900    202    402       +99.0%    0.0000  True
+   500   4500   1002   2002      +99.8%    0.0000  True
+   -> at every scale: sd-L1 = 0 exactly, LRU identical, and the gap B/A-1 runs
+      50.0% (K=1) to 99.8% (K=500) -- the asymptote is 2x, computed not typed.
+
+========================================================================================================
+THE PHI* CURVE OF THE PAIR -- the difference is systematic across capacities, not an
+artefact of the one capacity tested
+   cap    phi*_A   phi*_B   B/A-1    LRU_A    LRU_B
+   1      0.8894   0.8894       +0.0% 0.8894   0.8894  
+   2      0.2233   0.4456      +99.5% 0.4456   0.4456  
+   3      0.0017   0.0017       +0.0% 0.0017   0.0017  
+   4      0.0017   0.0017       +0.0% 0.0017   0.0017  
+   5      0.0017   0.0017       +0.0% 0.0017   0.0017  
+   6      0.0017   0.0017       +0.0% 0.0017   0.0017  
+
+========================================================================================================
+IS THE PHENOMENON GENERIC?  group random small traces by their sd MULTISET and count
+the groups whose members disagree about the optimum (an exhaustive-search certificate)
+   traces drawn 184275 over alphabet 3, length 9, cap 2
+   distinct sd multisets = 28 ; of these, 13 carry MORE THAN ONE optimal value (46%)
+   widest disagreement inside a single sd multiset: optimum in [4, 5, 6]
+
+========================================================================================================
+CONTROL -- a RELABELLING must not change the optimum (so the pair is not a relabel)
+   base optimum = 42 ; relabelled optimum = 42  -> IDENTICAL (control passes)
+
+wrote spike_v4_results.json
+========================================================================================================
+PART 1 -- EXHAUSTIVE: every distinct arrangement of a fixed symbol multiset, bucketed
+by its exact stack-distance multiset.  'spread' classes = those whose members do NOT all
+share one phi*; 'ratio' = phi*(max)/phi*(min) inside such a class, at cap 2.
+symbol counts     arrngs  classes    multi  spread    %spread  max ratio mean ratio
+(3, 3, 3)           1680       26       26      12      46%       1.33      1.269
+(4, 2, 2, 2)       18900       76       76      52      68%       1.50      1.233
+(2, 2, 2, 2)        2520       32       32      13      41%       1.25      1.223
+(5, 2, 2)            756       22       22       8      36%       1.33      1.292
+(4, 3, 2)           1260       27       27      13      48%       1.50      1.294
+(2, 2, 2, 2, 2)   113400      115      115      70      61%       1.40      1.176
+
+CONTROL -- an alphabet relabelling must not change the class or phi*
+   base phi*(cap2)=4  relabelled phi*(cap2)=4  same class=True
+
+========================================================================================================
+PART 2 -- MID-SCALE: random traces, bucketed by EXACT stack-distance profile
+   n     alphabet   drawn    classes   spread   %spread   max ratio   max abs spread
+   40    4          60000    2510      1791     71      % 1.500       0.1250
+
+========================================================================================================
+PART 3 -- PRACTICAL SCALE: the matched pair repeated K times (sd-L1 exactly 0)
+   K       n      phi*_A   phi*_B   B/A-1     lru_A    lru_B    sd-L1
+   1      9       0.4444   0.6667      +50.0% 0.6667   0.6667     0.0000
+   20     180     0.2333   0.4556      +95.2% 0.4556   0.4556     0.0000
+   200    1800    0.2233   0.4456      +99.5% 0.4456   0.4456     0.0000
+   1000   9000    0.2224   0.4447      +99.9% 0.4447   0.4447     0.0000
+   -> at every scale: the same profile, the same LRU curve, phi* differing by up to 2x.
+
+wrote spike_v5_results.json
+/Users/argszero/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1j/xmzmfprj2zx3s61pw_03485r0000gn/T/matplotlib-u60doyx8 because there was an issue with the default path (/Users/argszero/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+figures from the committed results artefacts
+   fig1_gap_vs_capacity.png        89103 bytes
+   fig2_matched_pair.png           75620 bytes
+   fig3_below_head.png             34418 bytes
+   fig4_policy_cliff.png           68633 bytes
+   fig5_profile_invisible.png      46797 bytes
+-> figures/manifest.json (5 figures)
+ok   5.1 certificate: naive Belady vs exhaustive cache-state, 0 disagreements over 200   [cases=200 disagreements=0]
+ok   5.1 control: a deliberately bad policy is never BELOW the floor (0 violations / 200)   [violations=0]
+ok   5.1 three routes agree on 300 tiny traces (0 + 0 disagreements)   [{"cases": 300, "naive_vs_exhaustive": 0, "heap_vs_exhaustive": 0, "grid_scale_equal": true, "grid_scale_cells": 3, "grid_scale": "naive == heap at n=4000 for cap in {5,40,200}"}]
+ok   5.1 naive Belady == lazy-heap exactly at grid scale (n=4000, 3 capacities)   [equal=True cells=3]
+ok   5.1 Mattson certified: 624 (trace, capacity) pairs, 0 disagreements   [{"pairs": 624, "disagreements": 0}]
+ok   5.1 gap at h=0.01 spans 5.99 % .. 138.9 %   [5.99% .. 138.91%]
+ok   5.1 gap at h=0.50 spans 0.0 % .. 140.9 %   [0.00% .. 140.88%]
+ok   5.2 closed form max abs error 1.07e-4   [1.067e-04]
+ok   5.2 c_0.5 = ceil((W+1)/2) on all 5 cyclic families (form not fitted to this)   [[('loop4', 3), ('loop8', 5), ('loop16', 9), ('loop32', 17), ('loop64', 33)]]
+ok   5.3 P1 REFUTED: 0 of 6 families satisfy both limbs   [{"families_both_limbs": 0, "families_n": 6, "verdict": "REFUTED"}]
+ok   5.3 limb A holds in 1 of 6, limb B in 1 of 6   [limbA=1 limbB=1]
+ok   5.3 endpoint direction is UP in 4 of 6 families   [grows=4]
+ok   5.3 monotone non-decreasing in only 3 of 6 (the normalisation block agrees)   [{"monotone_h": 3, "monotone_h_eff": 3, "families_n": 6}]
+ok   5.3 mechanism (which quantity falls faster) agrees with the endpoints in all 6   [disagree=[]]
+ok   5.4 the slope bucket collision spans 8,494 % (0.0060 .. 0.5122)   [8493.51%]
+ok   5.4 that bucket's own endpoints are 0.0060 and 0.5122   [0.0060 .. 0.5122 over ['powerlaw1', 'powerlaw2']]
+ok   5.4 c_0.5: best candidate sd_q50, held-out max rel. error 0.800   [sd_q50 0.800]
+ok   5.4 c_0.9: best candidate hs90, held-out max rel. error 0.849   [hs90 0.849]
+ok   5.4 c_0.99: best candidate sd_q99, held-out max rel. error 0.761   [sd_q99 0.761]
+ok   5.4 every candidate misses the 5 % bar by more than 10x (min held-out max error > 0.5)   [min=0.761]
+ok   5.5 oracle below-head relief mean 0.896   [0.8959]
+ok   5.5 LRU below-head relief on the cyclic families is EXACTLY 0.000   [[('loop8', 0.0), ('loop16', 0.0), ('loop32', 0.0)]]
+ok   5.5 oracle range 0.779 .. 0.968 over the seven families   [0.7794 .. 0.9677]
+ok   5.5 at capacity W-1 the gap is 598 % / 1384 % / 2859 %   [{"loop8": 598.3, "loop16": 1383.7, "loop32": 2858.6}]
+ok   5.5 knee detector two-sided control (planted cliff 1.000, planted none 0.048)   [{"planted_knee": {"c_knee": 20, "sharpness": 0.6649907033102328}, "planted_knee_peak_share": 1.0, "planted_none": {"c_knee": 64, "sharpness": 0.5105670683025194}, "planted_none_peak_share": 0.0483539425344749}]
+ok   5.5 blind knee detector finds 6 of 7 families within 0.25   [{"found": 6, "n": 7, "tol": 0.25}]
+ok   5.6 matched pair: identical stack-distance multisets AND identical LRU curves   [{"sd_identical": true, "lru_identical": true, "opt_A_cap2": 4, "opt_B_cap2": 6}]
+ok   5.6 matched pair: optima at capacity 2 are 4 and 6 misses (n = 9)   [{"sd_identical": true, "lru_identical": true, "opt_A_cap2": 4, "opt_B_cap2": 6}]
+ok   5.6 the gap is stable at scale: sd-L1 exactly 0.0 at every K, gap -> 99.8 % at K=500   [{"K": 500, "n": 4500, "opt_A": 1002, "opt_B": 2002, "gap": 0.998003992015968, "sd_l1": 0.0, "lru_identical": true}]
+ok   5.6 the floors at n = 9000 are 0.2224 and 0.4447 (2.00x)   [{"n": 9000, "phi_A": 0.22244444444444444, "phi_B": 0.44466666666666665, "gap": 0.9990009990009989, "lru": 0.44466666666666665, "sd_l1": 0.0}]
+ok   5.6 genericity: 13 of 28 sampled profiles (46 %) carry more than one optimum   [{"traces_drawn": 184275, "sd_multisets": 28, "multisets_with_multiple_optima": 13, "fraction": 0.4642857142857143, "widest": [4, 5, 6]}]
+ok   5.6 relabelling control leaves the certificate unchanged (42 == 42)   [{"base": 42, "relabelled": 42, "identical": true}]
+ok   5.6 exhaustive: 36-68 % of profile classes carry a spread, max ratio 1.25-1.50   [0.364 .. 0.684]
+ok   5.7 mid scale: 1791 of 2510 classes (71 %) carry a spread, max ratio 1.500   [{"n": 40, "alphabet": 4, "draws": 60000, "classes": 2510, "multi_classes": 1791, "max_ratio": 1.5, "max_abs_spread": 0.125}]
+ok   5.7 mid-scale max ABSOLUTE spread 0.125 in the floor   [0.1250]
+ok   5.7 relabelling control: same class membership and same phi*   [{"same_class": true, "same_phi": true}]
+ok   refs: 129 curated entries   [n=129]
+ok   refs: the committed verification log holds 129 OK lines and no PROBLEM   [ok=129]
+ok   refs: every curated entry carries author metadata (129/129)   [route=abstract pages problems=0]
+ok   refs: every entry is cited in the manuscript (0 uncited)   [uncited=0]
+VALIDATE 40/40
+RESULT: PASS
+   plant caught by: 5.1 certificate: naive Belady vs exhaustive cache-state, 0 disagreements over 200
+   plant caught by: 5.1 control: a deliberately bad policy is never BELOW the floor (0 violations / 200)
+   plant caught by: 5.3 P1 REFUTED: 0 of 6 families satisfy both limbs
+   plant caught by: 5.4 c_0.5: best candidate sd_q50, held-out max rel. error 0.800, 5.4 every candidate misses the 5 % bar by more than 10x (min held-out max error > 0.5)
+   plant caught by: 5.5 oracle below-head relief mean 0.896
+   plant caught by: 5.6 matched pair: identical stack-distance multisets AND identical LRU curves
+   plant caught by: 5.7 mid scale: 1791 of 2510 classes (71 %) carry a spread, max ratio 1.500
+SELFTEST 7/7 plants caught
+#
+# wall-clock: 97 s
+RESULT: PASS

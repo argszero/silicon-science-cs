@@ -1,0 +1,1752 @@
+{
+ "n": 129,
+ "roles": {
+  "construct": 4,
+  "profile": 26,
+  "policy": 28,
+  "theory": 3,
+  "tiering": 46,
+  "adjacent": 22
+ },
+ "rule": "cs category AND a topic anchor AND a family pattern; capped per family by query support",
+ "entries": [
+  {
+   "id": "2609.27746v1",
+   "bare": "2609.27746",
+   "title": "The KV Cache Working Set: Online Capacity Planning for LLM Inference Systems",
+   "published": "2026-09-23",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the offline optimum / the ceiling this paper computes exactly",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "1109.6643v3",
+   "bare": "1109.6643",
+   "title": "Optimal Eviction Policies for Stochastic Address Traces",
+   "published": "2011-09-29",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the offline optimum / the ceiling this paper computes exactly",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1808.05024v1",
+   "bare": "1808.05024",
+   "title": "Making Belady-Inspired Replacement Policies More Effective Using Expected Hit Count",
+   "published": "2018-08-15",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the offline optimum / the ceiling this paper computes exactly",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1112.5472v3",
+   "bare": "1112.5472",
+   "title": "Cache-Oblivious Implicit Predecessor Dictionaries with the Working Set Property",
+   "published": "2011-12-22",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1506.03181v2",
+   "bare": "1506.03181",
+   "title": "DEW: A Fast Level 1 Cache Simulation Approach for Embedded Processors with FIFO Replacement Policy",
+   "published": "2015-06-10",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2001.01653v1",
+   "bare": "2001.01653",
+   "title": "A Fast Analytical Model of Fully Associative Caches",
+   "published": "2020-01-06",
+   "cats": [
+    "cs.PF"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2511.19973v2",
+   "bare": "2511.19973",
+   "title": "Pickle: Precise, Flexible Cross-Core Last-level Cache Data Prefetching for Irregular Memory Accesses",
+   "published": "2025-11-25",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2608.01247v1",
+   "bare": "2608.01247",
+   "title": "RestoreKV: Recovering Full-Cache Behavior Under Aggressive Query-Agnostic KV Cache Eviction",
+   "published": "2026-08-02",
+   "cats": [
+    "cs.CL",
+    "cs.LG"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "cs/0601127v1",
+   "bare": "cs/0601127",
+   "title": "Truly Online Paging with Locality of Reference",
+   "published": "2006-01-30",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1202.3974v1",
+   "bare": "1202.3974",
+   "title": "A versatile and accurate approximation for LRU cache performance",
+   "published": "2012-02-17",
+   "cats": [
+    "cs.NI"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1305.7114v4",
+   "bare": "1305.7114",
+   "title": "Temporal Locality in Today's Content Caching: Why it Matters and How to Model it",
+   "published": "2013-05-30",
+   "cats": [
+    "cs.NI"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1406.5000v1",
+   "bare": "1406.5000",
+   "title": "Application Specific Cache Simulation Analysis for Application Specific Instruction set Processor",
+   "published": "2014-06-19",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1506.03186v2",
+   "bare": "1506.03186",
+   "title": "CIPARSim: Cache Intersection Property Assisted Rapid Single-pass FIFO Cache Simulation Technique",
+   "published": "2015-06-10",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1606.09206v1",
+   "bare": "1606.09206",
+   "title": "Performance of spatial Multi-LRU caching under traffic with temporal locality",
+   "published": "2016-06-29",
+   "cats": [
+    "cs.NI",
+    "cs.IT",
+    "cs.PF"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1609.00306v1",
+   "bare": "1609.00306",
+   "title": "On-Chip Mechanisms to Reduce Effective Memory Access Latency",
+   "published": "2016-09-01",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1907.05068v3",
+   "bare": "1907.05068",
+   "title": "Fast Modeling L2 Cache Reuse Distance Histograms Using Combined Locality Information from Software Traces",
+   "published": "2019-07-11",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1907.12666v1",
+   "bare": "1907.12666",
+   "title": "Modeling Shared Cache Performance of OpenMP Programs using Reuse Distance",
+   "published": "2019-07-29",
+   "cats": [
+    "cs.PF",
+    "cs.SE"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2001.09991v1",
+   "bare": "2001.09991",
+   "title": "Intel Page Modification Logging, a hardware virtualization feature: study and improvement for virtual machine working set estimation",
+   "published": "2020-01-26",
+   "cats": [
+    "cs.DC",
+    "cs.OS"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2105.14442v1",
+   "bare": "2105.14442",
+   "title": "Reuse Distance-based Copy-backs of Clean Cache Lines to Lower-level Caches",
+   "published": "2021-05-30",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2112.13306v1",
+   "bare": "2112.13306",
+   "title": "Asynchronous Memory Access Unit for General Purpose Processors",
+   "published": "2021-12-26",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2203.14845v1",
+   "bare": "2203.14845",
+   "title": "Warping Cache Simulation of Polyhedral Programs",
+   "published": "2022-03-28",
+   "cats": [
+    "cs.PL"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2303.05919v1",
+   "bare": "2303.05919",
+   "title": "eBPF-based Working Set Size Estimation in Memory Management",
+   "published": "2023-01-17",
+   "cats": [
+    "cs.PF",
+    "cs.AR",
+    "cs.LG"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2404.11044v1",
+   "bare": "2404.11044",
+   "title": "Asynchronous Memory Access Unit: Exploiting Massive Parallelism for Far Memory Access",
+   "published": "2024-04-17",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2412.16001v1",
+   "bare": "2412.16001",
+   "title": "Multi-Strided Access Patterns to Boost Hardware Prefetching",
+   "published": "2024-12-20",
+   "cats": [
+    "cs.PF"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2505.18554v1",
+   "bare": "2505.18554",
+   "title": "Garibaldi: A Pairwise Instruction-Data Management for Enhancing Shared Last-Level Cache Performance in Server Workloads",
+   "published": "2025-05-24",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2605.15645v1",
+   "bare": "2605.15645",
+   "title": "ICP: Exploiting Instruction Correlation for Prefetching Irregular Memory Accesses",
+   "published": "2026-05-15",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2606.13708v1",
+   "bare": "2606.13708",
+   "title": "Tiara: A Programmable Line-Rate ISA for Remote Memory Access",
+   "published": "2026-06-10",
+   "cats": [
+    "cs.AR",
+    "cs.NI"
+   ],
+   "role": "profile",
+   "diff": "a treatment of the recurrence profile this paper shows under-determines the ceiling",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2401.13154v2",
+   "bare": "2401.13154",
+   "title": "Nomad: Non-Exclusive Memory Tiering via Transactional Page Migration",
+   "published": "2024-01-24",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2604.12300v2",
+   "bare": "2604.12300",
+   "title": "TierBPF: Page Migration Admission Control for Tiered Memory via eBPF",
+   "published": "2026-04-14",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "1512.00727v2",
+   "bare": "1512.00727",
+   "title": "TinyLFU: A Highly Efficient Cache Admission Policy",
+   "published": "2015-12-02",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1702.04078v4",
+   "bare": "1702.04078",
+   "title": "A Cache Management Scheme for Efficient Content Eviction and Replication in Cache Networks",
+   "published": "2017-02-14",
+   "cats": [
+    "cs.NI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1703.08280v1",
+   "bare": "1703.08280",
+   "title": "LRC: Dependency-Aware Cache Management for Data Analytics Clusters",
+   "published": "2017-03-24",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2105.08770v2",
+   "bare": "2105.08770",
+   "title": "Lightweight Robust Size Aware Cache Management",
+   "published": "2021-05-18",
+   "cats": [
+    "cs.OS",
+    "cs.DB"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2110.11602v1",
+   "bare": "2110.11602",
+   "title": "An O(1) algorithm for implementing the LFU cache eviction scheme",
+   "published": "2021-10-22",
+   "cats": [
+    "cs.DS",
+    "cs.IR",
+    "cs.OS"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2304.04954v1",
+   "bare": "2304.04954",
+   "title": "An Associativity Threshold Phenomenon in Set-Associative Caches",
+   "published": "2023-04-11",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2408.03675v2",
+   "bare": "2408.03675",
+   "title": "NACL: A General and Effective KV Cache Eviction Framework for LLMs at Inference Time",
+   "published": "2024-08-07",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2410.00328v1",
+   "bare": "2410.00328",
+   "title": "Tuning Fast Memory Size based on Modeling of Page Migration for Tiered Memory",
+   "published": "2024-10-01",
+   "cats": [
+    "cs.PF"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2501.06807v2",
+   "bare": "2501.06807",
+   "title": "MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference",
+   "published": "2025-01-12",
+   "cats": [
+    "cs.CR"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.02504v1",
+   "bare": "2503.02504",
+   "title": "Energy efficiency of cache eviction algorithms for Zipf distributed objects",
+   "published": "2025-03-04",
+   "cats": [
+    "cs.PF"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.12491v2",
+   "bare": "2503.12491",
+   "title": "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+   "published": "2025-03-16",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.18140v1",
+   "bare": "2503.18140",
+   "title": "INDIGO: Page Migration for Hardware Memory Disaggregation Across a Network",
+   "published": "2025-03-23",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2505.03756v1",
+   "bare": "2505.03756",
+   "title": "Improving the Serving Performance of Multi-LoRA Large Language Models via Efficient LoRA and KV Cache Management",
+   "published": "2025-04-19",
+   "cats": [
+    "cs.AR",
+    "cs.AI",
+    "cs.LG",
+    "cs.PF"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2504.15364v4",
+   "bare": "2504.15364",
+   "title": "KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments",
+   "published": "2025-04-21",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2505.20334v2",
+   "bare": "2505.20334",
+   "title": "Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query",
+   "published": "2025-05-24",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2506.15724v1",
+   "bare": "2506.15724",
+   "title": "MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference",
+   "published": "2025-06-06",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CL"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2507.00797v1",
+   "bare": "2507.00797",
+   "title": "VEDA: Efficient LLM Generation Through Voting-based KV Cache Eviction and Dataflow-flexible Accelerator",
+   "published": "2025-07-01",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2509.00388v1",
+   "bare": "2509.00388",
+   "title": "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+   "published": "2025-08-30",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2509.10798v2",
+   "bare": "2509.10798",
+   "title": "Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction",
+   "published": "2025-09-13",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2510.22556v1",
+   "bare": "2510.22556",
+   "title": "SABlock: Semantic-Aware KV Cache Eviction with Adaptive Compression Block Size",
+   "published": "2025-10-26",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2510.22869v1",
+   "bare": "2510.22869",
+   "title": "Jenga: Responsive Tiered Memory Management without Thrashing",
+   "published": "2025-10-26",
+   "cats": [
+    "cs.ET",
+    "cs.OS"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2512.00504v1",
+   "bare": "2512.00504",
+   "title": "G-KV: Decoding-Time KV Cache Eviction with Global Attention",
+   "published": "2025-11-29",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2602.02197v1",
+   "bare": "2602.02197",
+   "title": "Hierarchical Adaptive Eviction for KV Cache Management in Multimodal Language Models",
+   "published": "2026-02-02",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2602.03203v2",
+   "bare": "2602.03203",
+   "title": "ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution",
+   "published": "2026-02-03",
+   "cats": [
+    "cs.CL",
+    "cs.LG"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2602.08585v2",
+   "bare": "2602.08585",
+   "title": "Predicting Future Utility: Global Combinatorial Optimization for Task-Agnostic KV Cache Eviction",
+   "published": "2026-02-09",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2604.25975v2",
+   "bare": "2604.25975",
+   "title": "Rethinking KV Cache Eviction via a Unified Information-Theoretic Objective",
+   "published": "2026-04-28",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.IT"
+   ],
+   "role": "policy",
+   "diff": "a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "cs/0205044v1",
+   "bare": "cs/0205044",
+   "title": "The K-Server Dual and Loose Competitiveness for Paging",
+   "published": "2002-05-18",
+   "cats": [
+    "cs.DS",
+    "cs.NI"
+   ],
+   "role": "theory",
+   "diff": "competitive-analysis theory for paging, whose bounds are asymptotic and do not bind at these trace lengths",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "cs/0205038v1",
+   "bare": "cs/0205038",
+   "title": "Competitive Paging Algorithms",
+   "published": "2002-05-18",
+   "cats": [
+    "cs.DS",
+    "cs.NI"
+   ],
+   "role": "theory",
+   "diff": "competitive-analysis theory for paging, whose bounds are asymptotic and do not bind at these trace lengths",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2206.02878v2",
+   "bare": "2206.02878",
+   "title": "TPP: Transparent Page Placement for CXL-Enabled Tiered-Memory",
+   "published": "2022-06-06",
+   "cats": [
+    "cs.DC",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2409.14317v1",
+   "bare": "2409.14317",
+   "title": "Dissecting CXL Memory Performance at Scale: Analysis, Modeling, and Optimization",
+   "published": "2024-09-22",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.17864v2",
+   "bare": "2503.17864",
+   "title": "Architectural and System Implications of CXL-enabled Tiered Memory",
+   "published": "2025-03-22",
+   "cats": [
+    "cs.AR",
+    "cs.ET"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2603.03271v1",
+   "bare": "2603.03271",
+   "title": "Virtual-Memory Assisted Buffer Management In Tiered Memory",
+   "published": "2026-03-03",
+   "cats": [
+    "cs.DB",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2604.12165v1",
+   "bare": "2604.12165",
+   "title": "Hybrid Adaptive Tuning for Tiered Memory Systems",
+   "published": "2026-04-14",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2108.03492v3",
+   "bare": "2108.03492",
+   "title": "Clio: A Hardware-Software Co-Designed Disaggregated Memory System",
+   "published": "2021-08-07",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2108.11507v2",
+   "bare": "2108.11507",
+   "title": "Hardware-assisted Trusted Memory Disaggregation for Secure Far Memory",
+   "published": "2021-08-25",
+   "cats": [
+    "cs.DC",
+    "cs.CR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2308.14780v1",
+   "bare": "2308.14780",
+   "title": "A Quantitative Approach for Adopting Disaggregated Memory in HPC Systems",
+   "published": "2023-08-28",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2309.10239v1",
+   "bare": "2309.10239",
+   "title": "Ditto: An Elastic and Adaptive Memory-Disaggregated Caching System",
+   "published": "2023-09-19",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2312.04789v2",
+   "bare": "2312.04789",
+   "title": "HybridTier: an Adaptive and Lightweight CXL-Memory Tiering System",
+   "published": "2023-12-08",
+   "cats": [
+    "cs.DC",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2403.18702v2",
+   "bare": "2403.18702",
+   "title": "NeoMem: Hardware/Software Co-Design for CXL-Native Memory Tiering",
+   "published": "2024-03-27",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2405.14209v3",
+   "bare": "2405.14209",
+   "title": "Exploring and Evaluating Real-world CXL: Use Cases and System Adoption",
+   "published": "2024-05-23",
+   "cats": [
+    "cs.PF",
+    "cs.AR",
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2412.08938v1",
+   "bare": "2412.08938",
+   "title": "Mercury: QoS-Aware Tiered Memory System",
+   "published": "2024-12-12",
+   "cats": [
+    "cs.OS",
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2412.12491v1",
+   "bare": "2412.12491",
+   "title": "Optimizing System Memory Bandwidth with Micron CXL Memory Expansion Modules on Intel Xeon 6 Processors",
+   "published": "2024-12-17",
+   "cats": [
+    "cs.OS",
+    "cs.PF"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2502.19233v3",
+   "bare": "2502.19233",
+   "title": "FPGA-based Emulation and Device-Side Management for CXL-based Memory Tiering Systems",
+   "published": "2025-02-26",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2506.09758v2",
+   "bare": "2506.09758",
+   "title": "Mainframe-Style Channel Controllers for Modern Disaggregated Memory Systems",
+   "published": "2025-06-11",
+   "cats": [
+    "cs.OS",
+    "cs.AR",
+    "cs.ET"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2510.14580v1",
+   "bare": "2510.14580",
+   "title": "ScalePool: Hybrid XLink-CXL Fabric for Composable Resource Disaggregation in Unified Scale-up Domains",
+   "published": "2025-10-16",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2511.08568v1",
+   "bare": "2511.08568",
+   "title": "Machine Learning-Guided Memory Optimization for DLRM Inference on Tiered Memory",
+   "published": "2025-11-11",
+   "cats": [
+    "cs.PF"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2512.22995v1",
+   "bare": "2512.22995",
+   "title": "Evolution of Buffer Management in Database Systems: From Classical Algorithms to Machine Learning and Disaggregated Memory",
+   "published": "2025-12-28",
+   "cats": [
+    "cs.DB"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2602.05540v1",
+   "bare": "2602.05540",
+   "title": "Taking the Leap: Efficient and Reliable Fine-Grained NUMA Migration in User-space",
+   "published": "2026-02-05",
+   "cats": [
+    "cs.DB",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2602.08800v2",
+   "bare": "2602.08800",
+   "title": "Equilibria: Fair Multi-Tenant CXL Memory Tiering At Scale",
+   "published": "2026-02-09",
+   "cats": [
+    "cs.OS",
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2605.20370v1",
+   "bare": "2605.20370",
+   "title": "Clove: Object-Level CXL Memory Management in Managed Runtimes",
+   "published": "2026-05-19",
+   "cats": [
+    "cs.OS",
+    "cs.PL"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2609.10790v1",
+   "bare": "2609.10790",
+   "title": "Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving",
+   "published": "2026-09-09",
+   "cats": [
+    "cs.DC",
+    "cs.LG"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2609.27266v1",
+   "bare": "2609.27266",
+   "title": "xTier: Intelligent Tiering for CXL-Enabled Memory",
+   "published": "2026-09-23",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1809.05921v1",
+   "bare": "1809.05921",
+   "title": "Analysis of Dynamic Memory Bandwidth Regulation in Multi-core Real-Time Systems",
+   "published": "2018-09-16",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2004.04760v1",
+   "bare": "2004.04760",
+   "title": "Efficient Kernel Object Management for Tiered Memory Systems with KLOC",
+   "published": "2020-04-09",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2103.10779v1",
+   "bare": "2103.10779",
+   "title": "Page Table Management for Heterogeneous Memory Systems",
+   "published": "2021-03-16",
+   "cats": [
+    "cs.DC",
+    "cs.OS",
+    "cs.PF"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2107.00164v2",
+   "bare": "2107.00164",
+   "title": "MIND: In-Network Memory Management for Disaggregated Data Centers",
+   "published": "2021-07-01",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2108.06893v1",
+   "bare": "2108.06893",
+   "title": "Memtrade: A Disaggregated-Memory Marketplace for Public Clouds",
+   "published": "2021-08-16",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2112.07320v2",
+   "bare": "2112.07320",
+   "title": "Sherman: A Write-Optimized Distributed B+Tree Index on Disaggregated Memory",
+   "published": "2021-12-14",
+   "cats": [
+    "cs.DC",
+    "cs.DB",
+    "cs.NI"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2202.02223v1",
+   "bare": "2202.02223",
+   "title": "Systems for Memory Disaggregation: Challenges & Opportunities",
+   "published": "2022-02-03",
+   "cats": [
+    "cs.DC",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2206.14637v1",
+   "bare": "2206.14637",
+   "title": "Assessing Intel's Memory Bandwidth Allocation for resource limitation in real-time systems",
+   "published": "2022-06-29",
+   "cats": [
+    "cs.DC",
+    "cs.AR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2207.03027v1",
+   "bare": "2207.03027",
+   "title": "The Case for Distributed Shared-Memory Databases with RDMA-Enabled Memory Disaggregation",
+   "published": "2022-07-07",
+   "cats": [
+    "cs.DB"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2209.13111v1",
+   "bare": "2209.13111",
+   "title": "HMM-V: Heterogeneous Memory Management for Virtualization",
+   "published": "2022-09-27",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2212.04344v1",
+   "bare": "2212.04344",
+   "title": "Performance Characterization of AutoNUMA Memory Tiering on Graph Analytics",
+   "published": "2022-11-09",
+   "cats": [
+    "cs.PF",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2301.09839v1",
+   "bare": "2301.09839",
+   "title": "FUSEE: A Fully Memory-Disaggregated Key-Value Store (Extended Version)",
+   "published": "2023-01-24",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2302.08055v2",
+   "bare": "2302.08055",
+   "title": "CXL over Ethernet: A Novel FPGA-based Memory Disaggregation Design in Data Centers",
+   "published": "2023-02-16",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2303.06153v2",
+   "bare": "2303.06153",
+   "title": "CXLMemSim: A pure software simulated CXL.mem for performance characterization",
+   "published": "2023-03-10",
+   "cats": [
+    "cs.PF",
+    "cs.AR",
+    "cs.OS"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2303.06420v2",
+   "bare": "2303.06420",
+   "title": "Design and Evaluation of a Rack-Scale Disaggregated Memory Architecture For Data Centers",
+   "published": "2023-03-11",
+   "cats": [
+    "cs.DC",
+    "cs.AR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2303.15375v4",
+   "bare": "2303.15375",
+   "title": "Demystifying CXL Memory with Genuine CXL-Ready Systems and Devices",
+   "published": "2023-03-27",
+   "cats": [
+    "cs.PF",
+    "cs.AR"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2305.03943v1",
+   "bare": "2305.03943",
+   "title": "Memory Disaggregation: Advances and Open Challenges",
+   "published": "2023-05-06",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2305.09977v2",
+   "bare": "2305.09977",
+   "title": "DRackSim: Simulator for Rack-scale Memory Disaggregation",
+   "published": "2023-05-17",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2306.04014v2",
+   "bare": "2306.04014",
+   "title": "Evaluating the Potential of Disaggregated Memory Systems for HPC applications",
+   "published": "2023-06-06",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2308.10714v1",
+   "bare": "2308.10714",
+   "title": "CXL Memory as Persistent Memory for Disaggregated HPC: A Practical Approach",
+   "published": "2023-08-21",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2309.01662v2",
+   "bare": "2309.01662",
+   "title": "Towards Persistent Memory based Stateful Serverless Computing for Big Data Applications",
+   "published": "2023-09-04",
+   "cats": [
+    "cs.DC",
+    "cs.PF"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2309.01736v2",
+   "bare": "2309.01736",
+   "title": "Understanding and Optimizing Serverless Workloads in CXL-Enabled Tiered Memory",
+   "published": "2023-09-04",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "tiering",
+   "diff": "a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1712.08132v1",
+   "bare": "1712.08132",
+   "title": "A Deep Reinforcement Learning-Based Framework for Content Caching",
+   "published": "2017-12-21",
+   "cats": [
+    "cs.IT"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2205.05598v1",
+   "bare": "2205.05598",
+   "title": "Studying Scientific Data Lifecycle in On-demand Distributed Storage Caches",
+   "published": "2022-05-11",
+   "cats": [
+    "cs.DC",
+    "cs.NI",
+    "eess.SY"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2609.33762v1",
+   "bare": "2609.33762",
+   "title": "EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?",
+   "published": "2026-09-27",
+   "cats": [
+    "cs.DC",
+    "cs.LG"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1501.02282v1",
+   "bare": "1501.02282",
+   "title": "Adaptive and application dependent runtime guided hardware prefetcher reconfiguration on the IBM POWER7",
+   "published": "2015-01-09",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1610.08129v1",
+   "bare": "1610.08129",
+   "title": "Memshare: a Dynamic Multi-tenant Memory Key-value Cache",
+   "published": "2016-10-26",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1808.09751v1",
+   "bare": "1808.09751",
+   "title": "Scalable and Efficient Virtual Memory Sharing in Heterogeneous SoCs with TLB Prefetching and MMU-Aware DMA Engine",
+   "published": "2018-08-29",
+   "cats": [
+    "cs.AR",
+    "cs.DC"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1911.09829v1",
+   "bare": "1911.09829",
+   "title": "Effectively Prefetching Remote Memory with Leap",
+   "published": "2019-11-22",
+   "cats": [
+    "cs.DC",
+    "cs.OS"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1911.10349v3",
+   "bare": "1911.10349",
+   "title": "Arsenal of Hardware Prefetchers",
+   "published": "2019-11-23",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2005.11259v2",
+   "bare": "2005.11259",
+   "title": "CAPre: Code-Analysis based Prefetching for Persistent Object Stores",
+   "published": "2020-05-22",
+   "cats": [
+    "cs.DB",
+    "cs.DC"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2009.00202v1",
+   "bare": "2009.00202",
+   "title": "Helper Without Threads: Customized Prefetching for Delinquent Irregular Loads",
+   "published": "2020-09-01",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2109.12021v5",
+   "bare": "2109.12021",
+   "title": "Pythia: A Customizable Hardware Prefetching Framework Using Online Reinforcement Learning",
+   "published": "2021-09-24",
+   "cats": [
+    "cs.AR",
+    "cs.LG"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2112.06280v2",
+   "bare": "2112.06280",
+   "title": "In-Memory Indexed Caching for Distributed Data Processing",
+   "published": "2021-12-12",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2207.07688v1",
+   "bare": "2207.07688",
+   "title": "3PO: Programmed Far-Memory Prefetching for Oblivious Applications",
+   "published": "2022-07-15",
+   "cats": [
+    "cs.OS"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2307.11069v1",
+   "bare": "2307.11069",
+   "title": "Effectiveness and predictability of in-network storage cache for scientific workflows",
+   "published": "2023-07-20",
+   "cats": [
+    "cs.NI",
+    "cs.DC",
+    "cs.LG"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.19390v1",
+   "bare": "2503.19390",
+   "title": "Integrating Prefetcher Selection with Dynamic Request Allocation Improves Prefetching Efficiency",
+   "published": "2025-03-25",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2504.06319v2",
+   "bare": "2504.06319",
+   "title": "Accelerating LLM Inference Throughput via Asynchronous KV Cache Prefetching",
+   "published": "2025-04-08",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2507.21433v3",
+   "bare": "2507.21433",
+   "title": "ReasonCache: Accelerating Large Reasoning Model Serving through KV Cache Sharing",
+   "published": "2025-07-29",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2508.08457v1",
+   "bare": "2508.08457",
+   "title": "Architecting Long-Context LLM Acceleration with Packing-Prefetch Scheduler and Ultra-Large Capacity On-Chip Memories",
+   "published": "2025-08-11",
+   "cats": [
+    "cs.AR",
+    "cs.ET"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2509.10719v1",
+   "bare": "2509.10719",
+   "title": "Coordinated Reinforcement Learning Prefetching Architecture for Multicore Systems",
+   "published": "2025-09-12",
+   "cats": [
+    "cs.DC",
+    "cs.AR",
+    "cs.LG",
+    "cs.PF"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2601.21686v2",
+   "bare": "2601.21686",
+   "title": "Don't be so Stief! Learning KV Cache low-rank approximation over the Stiefel manifold",
+   "published": "2026-01-29",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2602.13434v1",
+   "bare": "2602.13434",
+   "title": "ORAP: Optimized Row Access Prefetching for Rowhammer-mitigated Memory",
+   "published": "2026-02-13",
+   "cats": [
+    "cs.AR"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2604.26074v1",
+   "bare": "2604.26074",
+   "title": "DAK: Direct-Access-Enabled GPU Memory Offloading with Optimal Efficiency for LLM Inference",
+   "published": "2026-04-28",
+   "cats": [
+    "cs.DC"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery",
+   "support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "10.1147/sj.52.0078",
+   "bare": "10.1147/sj.52.0078",
+   "title": "A study of replacement algorithms for a virtual-storage computer",
+   "published": "(pre-arXiv)",
+   "cats": [],
+   "role": "construct",
+   "diff": "Belady's MIN algorithm: the offline optimum that this paper's phi* minimizes, and the origin of the whole construct",
+   "source": "author",
+   "doi": "10.1147/sj.52.0078"
+  },
+  {
+   "id": "10.1147/sj.92.0078",
+   "bare": "10.1147/sj.92.0078",
+   "title": "Evaluation techniques for storage hierarchies",
+   "published": "(pre-arXiv)",
+   "cats": [],
+   "role": "profile",
+   "diff": "Mattson et al.'s stack algorithm: the law that makes LRU's curve a function of the reuse-distance profile -- the fact this paper shows does NOT extend to the ceiling",
+   "source": "author",
+   "doi": "10.1147/sj.92.0078"
+  },
+  {
+   "id": "10.1145/2786.2793",
+   "bare": "10.1145/2786.2793",
+   "title": "Amortized efficiency of list update and paging rules",
+   "published": "(pre-arXiv)",
+   "cats": [],
+   "role": "theory",
+   "diff": "Sleator & Tarjan's competitive analysis of paging, whose ratios are asymptotic constants and do not bind at these trace lengths",
+   "source": "author",
+   "doi": "10.1145/2786.2793"
+  },
+  {
+   "id": "10.1145/363095.363141",
+   "bare": "10.1145/363095.363141",
+   "title": "The working set model for program behavior",
+   "published": "(pre-arXiv)",
+   "cats": [],
+   "role": "profile",
+   "diff": "Denning's working-set model: the origin of the 'working set' whose size this paper shows is only part of the story",
+   "source": "author",
+   "doi": "10.1145/363095.363141"
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "seed0": 20261003,
+ "caps": [
+  1,
+  2,
+  3
+ ],
+ "exhaustive": {
+  "3_3_3": {
+   "arrangements": 1680,
+   "classes": 26,
+   "multi_member": 26,
+   "spread_classes": 12,
+   "frac_spread": 0.46153846153846156,
+   "max_ratio": 1.3333333333333333,
+   "mean_ratio": 1.2694444444444444
+  },
+  "4_2_2_2": {
+   "arrangements": 18900,
+   "classes": 76,
+   "multi_member": 76,
+   "spread_classes": 52,
+   "frac_spread": 0.6842105263157895,
+   "max_ratio": 1.5,
+   "mean_ratio": 1.2326923076923075
+  },
+  "2_2_2_2": {
+   "arrangements": 2520,
+   "classes": 32,
+   "multi_member": 32,
+   "spread_classes": 13,
+   "frac_spread": 0.40625,
+   "max_ratio": 1.25,
+   "mean_ratio": 1.2230769230769232
+  },
+  "5_2_2": {
+   "arrangements": 756,
+   "classes": 22,
+   "multi_member": 22,
+   "spread_classes": 8,
+   "frac_spread": 0.36363636363636365,
+   "max_ratio": 1.3333333333333333,
+   "mean_ratio": 1.2916666666666665
+  },
+  "4_3_2": {
+   "arrangements": 1260,
+   "classes": 27,
+   "multi_member": 27,
+   "spread_classes": 13,
+   "frac_spread": 0.48148148148148145,
+   "max_ratio": 1.5,
+   "mean_ratio": 1.2935897435897437
+  },
+  "2_2_2_2_2": {
+   "arrangements": 113400,
+   "classes": 115,
+   "multi_member": 115,
+   "spread_classes": 70,
+   "frac_spread": 0.6086956521739131,
+   "max_ratio": 1.4,
+   "mean_ratio": 1.1763945578231292
+  }
+ },
+ "midscale": {
+  "n": 40,
+  "alphabet": 4,
+  "draws": 60000,
+  "classes": 2510,
+  "multi_classes": 1791,
+  "max_ratio": 1.5,
+  "max_abs_spread": 0.125
+ },
+ "practical": {
+  "K=1": {
+   "n": 9,
+   "phi_A": 0.4444444444444444,
+   "phi_B": 0.6666666666666666,
+   "gap": 0.5,
+   "lru": 0.6666666666666666,
+   "sd_l1": 0.0
+  },
+  "K=20": {
+   "n": 180,
+   "phi_A": 0.23333333333333334,
+   "phi_B": 0.45555555555555555,
+   "gap": 0.9523809523809523,
+   "lru": 0.45555555555555555,
+   "sd_l1": 0.0
+  },
+  "K=200": {
+   "n": 1800,
+   "phi_A": 0.22333333333333333,
+   "phi_B": 0.44555555555555554,
+   "gap": 0.9950248756218905,
+   "lru": 0.44555555555555554,
+   "sd_l1": 0.0
+  },
+  "K=1000": {
+   "n": 9000,
+   "phi_A": 0.22244444444444444,
+   "phi_B": 0.44466666666666665,
+   "gap": 0.9990009990009989,
+   "lru": 0.44466666666666665,
+   "sd_l1": 0.0
+  }
+ },
+ "relabel_control": {
+  "same_class": true,
+  "same_phi": true
+ }
+}
