@@ -1,0 +1,655 @@
+# What Limits Memory Tiering? An Exact Oracle and the Workload-Intrinsic Floor on Slow-Tier Traffic
+
+**Authors:** how2how2how2-arch
+
+**Abstract.** Memory tiering systems place a small fast tier in front of a large slow one, and are
+now a shipping hardware split rather than a research proposal [@2206.02878; @2405.14209;
+@2303.15375]. Every such system must answer the same question before it can claim a benefit: *at a
+given fast-tier capacity, how much slow-tier traffic is irreducible?* We study that quantity
+directly. We define `phi*(c)` — the **minimum** share of accesses that must reach the slow tier at
+capacity `c`, minimized over **all** placement policies, and therefore a property of the trace's
+reuse structure rather than of any policy — and we compute it **exactly**, with three independent
+routes certified against each other (0 disagreements over 300 exhaustive small-trace checks and
+624 (trace, capacity) pairs). Three registered hypotheses about this construct are then tested and
+**all three are refuted**: (i) the direction of the deployed-policy gap is not monotone in capacity
+(0 of 6 trace families satisfy both registered limbs); (ii) no single statistic of the recurrence
+profile predicts the ceiling, and neither does any of eight candidates fitted and held out
+(maximum relative error **0.800** against a 0.05 bar); and (iii) the "capacity knee" is the
+**policy's** thrashing cliff, not a property of the oracle — on cyclic working sets LRU's relief
+strictly below the working-set size is exactly **0.000**, where the oracle's is **0.857–0.968** on
+the same traces (and the oracle's mean over all seven families is **0.896**). The refutations share one
+cause, which we then prove as a structural result: **`phi*(c)` is not a function of the
+stack-distance profile.** We exhibit traces with **byte-identical** stack-distance multisets —
+hence, by Mattson's law, byte-identical LRU curves at every capacity [@10.1147/sj.92.0078] — whose
+optima differ by **2x**, a gap that persists at every scale we test (`sd-L1 = 0.0000` exactly at
+`n = 9000`). Grouping traces into **profile classes** shows this is the majority case: **36–68 %** of
+classes carry a spread exhaustively, and **1,791 of 2,510 (71 %)** at mid scale. We name the
+consequence the **profile-invisible fraction**: the part of the oracle's advantage that no
+workload-statistic-based method can see. It is not a rounding error — it reaches 2x — so a tiering
+benefit prediction keyed to workload statistics carries an error the statistics cannot bound. The
+construct's positive content is an exact closed form on bounded working sets,
+`phi*(c) = ((W-c)(N-W)/(W-1) + W)/N` (max absolute error **1.07e-4**), and a method (the matched
+profile pair) that settles "statistic `S` carries quantity `X`" claims without a candidate set or a
+tolerance.
+
+**Keywords:** memory tiering, CXL, cache replacement, offline optimal paging, stack distance,
+Mattson's law, miss-ratio curves, lower bounds
+
+---
+
+## 1. Introduction
+
+A memory tiering system interposes a small fast tier (DRAM, HBM) in front of a large slow one (CXL
+memory, far memory, disaggregated pools) and migrates or places data to keep the hot subset fast
+[@2206.02878; @2312.04789; @2403.18702; @2412.08938; @2609.27266]. The field has converged on a
+common shape: a placement policy, a migration or eviction rule, and a capacity decision. What the
+field has **not** converged on is a way to say how much any of this can possibly buy. A system
+paper reports its gain against a baseline on its own workloads; the natural question — *given this
+trace and this capacity, what is the least slow-tier traffic any policy could achieve, and how far
+is this policy from it?* — has no standard instrument.
+
+This paper builds that instrument and then tests what it implies.
+
+**The construct.** Let `phi*(c)` be the minimum fraction of accesses that must reach the slow tier
+when the fast tier holds `c` items, minimized over **all** placement policies with full knowledge of
+the future. It is an oracle, and deliberately so: it is the workload-intrinsic floor, the target any
+policy can at best approach. It is not a design — nobody can implement a clairvoyant policy — but it
+is exactly the quantity a claim about tiering *benefit* is implicitly about. If a policy reports a
+22 % slow-tier reduction at some capacity, the question "how much was available?" is `phi*`, and
+without it the number is uninterpretable across systems and traces.
+
+**What we find.** Three hypotheses were registered before the deciding runs (Section 8), each
+anchored in a named piece of theory or a standard practice. All three are refuted:
+
+1. **The gap's direction is not monotone in capacity.** The registered expectation was that the
+   policy gap is largest at small capacity and shrinks as the tier grows. Measured over 42 cells
+   (6 trace families x 7 capacities x 3 seeds), **0 of 6** families satisfy both registered limbs;
+   the gap *grows* with capacity in 4 of 6 by endpoint and is monotone non-decreasing in only 3 of 6.
+2. **No statistic of the recurrence profile carries the ceiling.** The registered expectation was
+   that the reuse-distance distribution's slope predicts the benefit within 5 %. Not only does the
+   slope fail (an 8,494 % spread within one slope bucket), but **no** member of an eight-candidate
+   family — stack-distance quantiles, hot-set sizes, distinct count — predicts the relief scale on
+   held-out trace families (best maximum relative error 0.800).
+3. **The knee belongs to the policy, not the oracle.** The registered expectation was a capacity
+   knee below which added fast tier buys almost nothing. The shape is real — but it is LRU's
+   thrashing cliff. Measured on the same traces, the share of relief delivered strictly below the
+   working-set size is **exactly 0.000 for LRU on the cyclic families** (0.596–0.783 on the i.i.d.
+   families; mean **0.405** over all seven) and **0.896 for the oracle**. At capacity `W-1` — the last
+   capacity strictly below the working set, where LRU misses *everything* — the oracle gap is
+   **598 % / 1,384 % / 2,859 %** for working sets of 8 / 16 / 32.
+
+**Why they all fail, and the paper's central claim.** The three refutations have one cause, which we
+then prove: **`phi*(c)` is not a function of the stack-distance profile.** Two traces can carry a
+byte-identical stack-distance multiset — and therefore, by Mattson's law [@10.1147/sj.92.0078], an
+identical miss curve for **every** stack algorithm, LRU included — while their offline optima differ.
+Our demonstration pair differs by 2x at capacity 2, and the gap is stable at every scale
+(`sd-L1 = 0.0000` exactly at n = 9,000). The scope of the failure is not anecdotal: bucketing traces
+into **profile classes**, **36–68 %** of classes carry a spread exhaustively over fixed symbol
+multisets, and **1,791 of 2,510 (71 %)** at mid scale, with a maximum ratio of 1.500.
+
+We call the within-class spread of `phi*` the **profile-invisible fraction** of the oracle's
+advantage. It is the part of the tiering opportunity that no method keyed to the recurrence profile
+can see — not because a better statistic exists and has not been found, but because the profile does
+not determine the object. Its magnitude (up to 2x) makes it a first-order term in any
+tiering-benefit estimate built from workload statistics.
+
+**The positive content.** Two results survive and are, we think, of independent use. First, an
+**exact closed form** on bounded working sets: for a trace cycling over `W` distinct items,
+`phi*(c) = ((W-c)(N-W)/(W-1) + W)/N`, which we derived by reading our own instrument's miss positions
+and checked against the exact optimum (max absolute error **1.07e-4**). Second, the **matched profile
+pair** as a method: to settle any claim of the form "statistic `S` carries quantity `X`", exhibit two
+objects with identical `S` and different `X`. It needs no candidate set, no fit and no tolerance, and
+one counterexample is a theorem — strictly stronger than the failed fit that motivated it (Section
+5.6).
+
+**Significance.** The affected community is systems researchers and practitioners who size and
+evaluate tiered memory. Two decisions change. First, *capacity sizing*: a tool that estimates
+slow-tier traffic from a workload's observed reuse profile [@1202.3974; @1907.05068]
+cannot be trusted to within a factor of two on the workloads where the profile is compatible with
+many different optima — and our measurement says that is the majority of profiles, not a tail.
+Second, *claim calibration*: a tiering paper that reports a reduction against a baseline but not
+against `phi*` leaves its own headroom unstated; our instrument makes the headroom computable
+exactly, at least for a trace one can replay [@2001.01653; @1907.12666].
+
+**Summary of contributions.**
+- An **exact, three-way-certified** computation of the offline optimum for trace-replay tiering, with
+  an efficient route (O(n log n)) that makes 50,000-access grids affordable (Section 4.1).
+- An exact **closed form** for the bounded-working-set family (Section 5.2).
+- Three **registered hypotheses refuted** with computed verdicts (Sections 5.3–5.5).
+- A **no-go theorem**: `phi*` is not a function of the recurrence profile, with an explicit matched
+  pair and a genericity measurement (Section 5.6).
+- A **quantification** of the profile-invisible fraction across three scales (Section 5.7).
+- A **verified reference layer** (129 entries, all resolved by identifier) and a one-command
+  reproduction (Appendix A).
+
+---
+
+## 2. Related work
+
+**Memory tiering systems.** The deployed literature optimizes placement and migration on real
+hardware: TPP for CXL-enabled tiered memory [@2206.02878], HybridTier [@2312.04789], NeoMem
+[@2403.18702], and a set of measurement studies that establish CXL's cost structure
+[@2303.15375; @2409.14317; @2503.17864; @2405.14209]. Recent work adds policy variety rather than a
+ceiling: xTier [@2609.27266], Nomad's transactional page migration [@2401.13154], TierBPF's
+admission control [@2604.12300], Mercury's QoS framing [@2412.08938], Jenga's anti-thrashing
+management [@2510.22869], and object-level management in managed runtimes [@2605.20370]. Others
+tune the fast tier's *size* against a migration model [@2410.00328], use ML to guide placement
+[@2511.08568], or target fairness across tenants [@2602.08800]. Tiering is also studied as a
+provisioning problem at every layer beneath the policy: kernel-object and page-table management
+[@2004.04760; @2103.10779], virtualization and hypervisor support [@2209.13111], bandwidth
+regulation and allocation [@1809.05921; @2206.14637], autotuning and adaptive tuning
+[@2212.04344; @2604.12165], fine-grained NUMA migration [@2602.05540], emulation platforms
+[@2502.19233], expansion modules measured on real hardware [@2412.12491], and the serverless and
+LLM-serving layers above it that inherit the same capacity decision [@2309.01736; @2609.10790].
+**Difference:** each reports a gain
+against a baseline on its own workloads; none computes the floor those gains are measured against,
+which is what we supply. The same is true of the disaggregation line [@2108.03492; @2107.00164;
+@2305.03943; @2202.02223] — marketplaces [@2108.06893], fabric and rack-scale designs
+[@2302.08055; @2303.06420; @2510.14580], HPC evaluations [@2306.04014; @2308.10714; @2308.14780],
+RDMA-shared databases [@2207.03027] and channel controllers [@2506.09758] — and the
+persistent/far-memory systems built on it [@2108.11507;
+@2112.07320; @2301.09839; @2309.01662], and of the simulation tools used to evaluate them
+[@2303.06153; @2305.09977].
+
+**Replacement policies.** LRU, LFU, CLOCK and their descendants remain the deployed family
+[@2110.11602; @1512.00727; @2105.08770; @2304.04954; @1702.04078; @1703.08280], and a large recent
+literature specializes eviction for KV caches in LLM serving [@2408.03675; @2501.06807; @2503.12491;
+@2504.15364; @2505.20334; @2506.15724; @2507.00797; @2509.00388; @2509.10798; @2510.22556;
+@2512.00504; @2602.02197; @2602.03203; @2602.08585; @2604.25975; @2503.18140; @2505.03756;
+@2503.02504]. **Difference:** we do not propose a policy. We show that the quantity these policies
+are implicitly competing on — distance to the optimum — is not fixed by the statistic their
+evaluations are usually keyed to, and that the policy's own curve is a strictly weaker object than
+the optimum (Section 5.5).
+
+**Reuse distance, stack distance and miss-ratio curves.** Mattson et al. proved that stack
+algorithms' miss rates are functions of the stack-distance distribution [@10.1147/sj.92.0078] — the
+law that made miss-ratio curves a standard instrument [@1202.3974; @1907.05068;
+@1907.12666; @2001.01653; @2203.14845; @1506.03181; @1506.03186; @1406.5000; @2511.19973;
+@2412.16001; @2605.15645; @2105.14442]. Denning's working-set model is the origin of the size statistic the field
+uses to describe the hot subset [@10.1145/363095.363141; @2303.05919], and the locality literature
+develops it further [@1305.7114; @1606.09206; @1112.5472; @cs/0601127]. **Difference — this is the
+paper's central comparison.** This work inherits Mattson's law exactly (we verify it: 624 pairs, 0
+disagreements) and then shows that it does **not** extend from the LRU curve to the optimum. Every
+method in this paragraph predicts a **stack algorithm's** behaviour; we show that the ceiling the
+stack algorithm is compared against is not a function of the same profile. The distinction matters
+because the field's benefit predictors are built on the profile.
+
+**Online paging and competitive analysis.** The theoretical tradition gives worst-case ratios for
+paging and `k`-server problems [@cs/0205038; @cs/0205044; @10.1145/2786.2793]. **Difference:** these
+are asymptotic constants over adversarial sequences; they do not bound the finite-trace, finite-
+capacity gap we measure, which is why the registered prior that they would was refuted (Section 8).
+Our construct is the *offline* optimum for a specific trace, which is what a trace-replay evaluation
+can actually compare against.
+
+**Adjacent caches using the same machinery.** Buffer pools, storage caches and prefetchers run the
+same replacement machinery at a different layer [@2512.22995; @2603.03271; @2309.10239;
+@2205.05598; @2307.11069; @2112.06280; @1610.08129; @1609.00306; @2001.09991; @2112.13306;
+@2404.11044; @2505.18554; @2608.01247], and prefetching is the complementary
+"see further ahead" answer to the same problem [@1501.02282; @1911.10349; @1911.09829; @2005.11259;
+@2009.00202; @2109.12021; @2207.07688; @2503.19390; @2509.10719; @2602.13434; @2504.06319;
+@2507.21433; @2508.08457; @2601.21686; @2604.26074; @1808.09751; @2606.13708]. **Difference:** these
+change *what is known at decision time*; we measure *how much knowing everything is worth*, and
+separate that from what the recurrence profile alone reveals. The KV-cache serving line is the
+closest analogue: capacity planning for LLM serving [@2609.27746] and KV offloading [@2609.33762]
+face the identical floor, and a system that never evicts [@2504.06319; @2604.26074] is buying the
+architectural escape rather than a better policy.
+
+**Stochastic and value-driven eviction.** A parallel line learns or prices eviction decisions
+[@1109.6643; @1808.05024; @1712.08132]. **Difference:** the profile-invisible fraction bounds what
+any such method can achieve from profile-derived features; our matched pair is a direct statement
+about the ceiling such methods approach.
+
+---
+
+## 3. Preliminaries
+
+### 3.1 The cache model and the floor
+
+We model the fast tier as a cache of capacity `c` over a trace `sigma = (sigma_1, ..., sigma_N)` of
+accesses to a universe `U`. An access is a **hit** if its item is in the cache and a **miss**
+otherwise (a miss is the slow-tier traffic we count). A placement policy decides, at each miss,
+which resident item (if any) to evict; the first `c` misses fill the cache.
+
+**Definition 1 (the floor).** For a trace `sigma` and capacity `c`,
+
+    phi*(c) = (1/N) * min over all placement policies of (number of misses),
+
+where the minimizing policy is clairvoyant (it may use the whole trace). `phi*(c)` is the minimum
+fraction of accesses that must reach the slow tier: the workload-intrinsic floor.
+
+**Definition 2 (the policy gap).** For a policy `P`, `gap_P(c) = M_P(c)/M*(c) - 1`, where `M_P(c)`
+and `M*(c)` are `P`'s and the optimum's miss counts. `gap_LRU` is the paper's running example.
+
+### 3.2 The profile
+
+**Definition 3 (stack distance).** For an access at position `i` whose item was last seen at position
+`j`, the stack distance is the number of **distinct** items accessed in `(j, i)`; a first touch has
+stack distance `-1`.
+
+**Definition 4 (the profile).** The **profile** of a trace is the multiset of its stack distances —
+order-free and item-label-free.
+
+**Theorem (Mattson et al. [@10.1147/sj.92.0078]).** For any stack algorithm, the miss count at
+capacity `c` is `#{first touches} + #{accesses with stack distance >= c}`. Consequently the profile
+determines the miss curve of LRU (and of every stack algorithm) at every capacity.
+
+We lean on this theorem in two directions. It is the reason the field's benefit predictors are built
+on the profile, and — in Section 5.6 — it is the reason our no-go result is sharp: the profile
+fixes the policy's curve, so a profile class is exactly the set of traces a profile-based method
+cannot distinguish, and the spread of `phi*` inside such a class is the method's irreducible error.
+
+---
+
+## 4. Method
+
+### 4.1 Computing the floor exactly
+
+We compute `phi*(c)` by three independent routes and certify them against each other:
+
+- **Route A — naive Belady.** Belady's MIN [@10.1147/sj.52.0078]: on a miss, evict the resident item
+  whose next use is farthest. Implemented with a linear scan for the farthest next use.
+- **Route B — exhaustive cache-state search.** Memoized dynamic programming over `(position, cache
+  contents)`, minimizing misses. An argument independent of Belady's.
+- **Route C — lazy max-heap over next-use positions.** Belady in O(n log n): a heap keyed by next-use
+  position, with a validity stamp per item so a hit re-schedules the item and invalidates its old
+  entry. Route C is what makes an `n = 50000` grid affordable.
+
+The three are certified in the same script that uses them (Section 5.1), so the certificate is about
+the object the grid actually reads. Route B is exponential and is used only on tiny traces.
+
+### 4.2 Profile classes and the matched pair
+
+Given a trace, its **profile class** is the set of traces sharing its profile. Inside a class we
+measure the spread of `phi*` across members while asserting the LRU curve is constant (Mattson). The
+spread is the class's **profile-invisible** component.
+
+To make the phenomenon visible we construct **matched profile pairs**: two traces with identical
+stack-distance multisets and different optima. Exhaustive search over the arrangements of fixed
+symbol multisets gives a certificate that the phenomenon is generic rather than hand-built.
+
+### 4.3 Scale-free relief statistics
+
+To ask "is the relief scale computable from the profile?" without an arbitrary epsilon, we define
+`c_d` as the smallest capacity delivering a fraction `d` of the trace's total possible relief
+(`d` in {0.5, 0.9, 0.99}), and fit `c_d ~ k * s` per candidate statistic `s` on a **train** split of
+families, scoring on held-out families.
+
+### 4.4 Implementation and reproduction
+
+Python 3.9. All instruments are deterministic — seeded `random.Random` per cell, no clocks, no
+hash-ordered iteration — and two consecutive runs are byte-identical. Appendix A gives the
+one-command reproduction.
+
+---
+
+---
+
+## 5. Results
+
+### 5.1 The floor is exactly computable and certified
+
+Every number in this paper is read from one of three routes to `phi*`, certified against each other
+inside the same script that uses them:
+
+| certificate | scope | disagreements |
+|---|---|---|
+| naive Belady vs exhaustive cache-state search | 200 random tiny traces | **0** |
+| one-sided control (evict-soonest never below the optimum) | 200 cases | **0** |
+| naive vs exhaustive vs lazy-heap, all three | 300 tiny traces | **0 / 0** |
+| naive vs lazy-heap at grid scale | n = 4000, cap in {5, 40, 200} | **exactly equal** |
+| Mattson's law: simulated LRU curve vs stack-distance prediction | 624 (trace, capacity) pairs | **0** |
+
+The second row is a control on the *bound*: a policy that deliberately evicts the item used soonest
+was never below the optimum, so `phi*` is a bound something can violate rather than one nothing can.
+The last row verifies Mattson's law itself, which is what licenses the phrase "hence identical LRU
+curves" in Section 5.6.
+
+**The gap is large and workload-dependent.** Over 42 cells (6 families x 7 capacities x 3 seeds,
+n = 50,000, universe 2,000), `gap_LRU` at capacity fraction `h = 0.01` runs from **5.99 %** (scan,
+chunk 64) to **138.9 %** (hot set 10/90); at `h = 0.50` the range is **0.0 %–140.9 %**. SRRIP's gap
+equals LRU's exactly in the uniform and both scan cells and differs by up to **0.499** in the
+hot-set family, so the two deployed policies are not interchangeable witnesses. Any claim about the
+benefit of tiering is a claim inside this range, and the range is not narrow.
+
+### 5.2 An exact closed form on bounded working sets
+
+For a trace cycling over `W` distinct items, the instrument gives
+
+    phi*(c) = ((W - c) * (N - W) / (W - 1) + W) / N    for c < W,    W/N for c >= W,
+
+with maximum absolute error **1.07e-4** at N = 20,000, W in {8, 16, 32} and c in {W/2, W-2, W-1}
+(the instrument asserts the error stays below 1e-3). The `(W - 1)` is the
+interesting part and we did not find it by algebra. We reasoned first that the steady-state miss rate
+should be `(W - c)/W` — hold `c` of the `W` items, miss `W - c` per cycle — and the instrument
+disagreed at **every** capacity. Dumping the optimum's own miss positions settled it: `0..7, 14, 21,
+28, ...`, i.e. gap `W - 1`, not `W`. The compulsory tail at `c >= W` is measured exactly
+(`W/N` = 0.0004, 0.0008, 0.0016 for W = 8, 16, 32 at N = 20,000).
+
+**The closed form also predicts a quantity it was not fitted to.** With `c_d` defined as the
+smallest capacity delivering a fraction `d` of the trace's total relief (Section 4.3), the form gives
+
+    relief(c) = phi*(1) - phi*(c) = (c - 1)(N - W) / ((W - 1) N),   total = (N - W)/N,
+
+so `c_0.5 = ceil((W + 1)/2)`. The measured readings on the cyclic families are **3, 5, 9, 17, 33**
+for W = 4, 8, 16, 32, 64 — `ceil((W+1)/2)` at every one. (Note `phi*(1) = 1` exactly in this family:
+with one slot the resident item is always the one used longest ago, so Belady misses everything.)
+
+The shape is therefore **linear-then-flat**, with no cliff anywhere in the construct.
+
+### 5.3 The direction of the policy gap is not monotone (registered prior P1: refuted)
+
+P1 registered two limbs: the gap is at least 20 % for `h <= 0.2`, **and** it shrinks as `h` grows.
+Both were checked separately, against their own definitions, over the 42 cells:
+
+| family | gap at h = 0.01 | gap at h = 0.50 | limb A (min gap over h <= 0.2 >= 20 %) | limb B (non-increasing) |
+|---|---|---|---|---|
+| uniform | 12.7 % | 140.9 % | fail | fail |
+| power-law 1.0 | 42.3 % | 97.0 % | pass | fail |
+| power-law 2.0 | 79.3 % | 0.0 % | fail | pass |
+| hot set 10/90 | 138.9 % | 50.1 % | fail | fail |
+| scan, chunk 8 | 10.4 % | 136.5 % | fail | fail |
+| scan, chunk 64 | 6.0 % | 120.3 % | fail | fail |
+
+Limb A holds in **1 of 6** families, limb B in **1 of 6**, and **0 of 6** satisfy both. The
+direction needs two readings stated apart, because both are true: by **endpoint** the gap is larger
+at `h = 0.50` than at `h = 0.01` in **4 of 6** families, while across the whole grid the gap is
+monotone non-decreasing in only **3 of 6** (power-law 1.0 rises then dips; the hot set falls then
+rises). Figure 1 shows all six curves over the grid: two families fall toward zero while three rise
+monotonically and one peaks in the middle.
+
+![Figure 1](figures/fig1_gap_vs_capacity.png)
+
+*Figure 1: The deployed policy's gap above the exact floor, against the fast-tier fraction `h`, for
+the six trace families (42 cells, n = 50,000). The registered P1 predicted a monotonically shrinking
+gap; no family shows it, and the hot set falls 138.9 % → 12.8 % between its first two cells while the
+uniform, scan-8 and scan-64 families rise to 120–141 % at `h = 0.50`.*
+
+**The mechanism is computed, and asserted against the endpoint.** The gap is a ratio of two
+quantities that both fall with capacity, so its direction is set by which falls faster:
+
+| family | `phi*` x-drop | `phi_LRU` x-drop | gap |
+|---|---|---|---|
+| uniform | 4.19 | 1.96 | grows |
+| power-law 1.0 | 7.66 | 5.53 | grows |
+| power-law 2.0 | 4.32 | 7.74 | shrinks |
+| hot set 10/90 | 2.96 | 4.71 | shrinks |
+| scan, chunk 8 | 4.19 | 1.96 | grows |
+| scan, chunk 64 | 4.01 | 1.93 | grows |
+
+All six agree with the endpoint direction, and the instrument asserts
+`grows == (gap_end > gap_start)` on the same cells, so a flipped comparison fails the run rather than
+printing a verdict beside a table that contradicts it. The reading: the oracle gap is **not a
+function of capacity at all** in direction — it is a function of how much freedom the clairvoyant has
+on this workload. Uniform and scan-8 are separate generators that happen to print alike (x-drop
+4.1863 and 4.1881) and remain separate rows.
+
+**A normalisation the registration left open.** `h` was registered as a capacity fraction without
+pinning the denominator. Under `h = c/|U|` the gap is monotone non-decreasing in 3 of 6 families;
+under `h_eff = c/W` (`W` = distinct items the trace actually touches) also 3 of 6. The normalisation
+alone does not restore a uniform direction — but the denominators differ materially for heavy-tailed
+workloads: power-law 2.0 touches only `W = 298` of 2,000 items, so its `h = 0.50` is `h_eff = 3.36`,
+i.e. already saturated, which is why its gap collapses to 0. We pin `h = c/|U|` and report `h_eff`
+where it differs.
+
+### 5.4 No statistic of the profile carries the ceiling (P2: refuted, and its repair too)
+
+P2 registered that the benefit is predictable from **one** statistic — the slope of the reuse-distance
+profile — to within 5 %, the null to beat being that the full stack-distance distribution is needed.
+
+**The slope fails by collision.** Bucketing the 42 cells by slope, one bucket contains `phi*` from
+**0.0060 to 0.5122** — a spread of **8,494 %** — across two families (power-law 1.0 and 2.0) whose
+slopes round to the same value.
+
+**And the repair fails.** `c_d` was fitted against eight candidate statistics — stack-distance
+quantiles q50/q90/q99, hot-set sizes covering 50/90/95/99 % of accesses, and the distinct count `D` —
+on a train split of trace families and scored on held-out families:
+
+| target | best statistic | max rel. error, train | max rel. error, **test** | median, test |
+|---|---|---|---|---|
+| c_0.5 | sd_q50 | 0.933 | **0.800** | 0.600 |
+| c_0.9 | hs90 | 0.798 | **0.849** | 0.654 |
+| c_0.99 | sd_q99 | 0.743 | **0.761** | 0.251 |
+
+Every candidate misses the registered 5 % bar by more than an order of magnitude on held-out
+families, and no statistic is close: the runner-up for `c_0.5` scores 0.879, for `c_0.9` 0.859, for
+`c_0.99` 0.913. This is not the failure of one statistic; it is the symptom of the structure in
+Section 5.6.
+
+### 5.5 The knee belongs to the policy, not the oracle (P3: refuted)
+
+P3 registered a capacity knee at a computable `h*` below which added fast tier buys almost nothing,
+justified by "a tier that cannot hold the head buys no reduction". The statistic that tests it is the
+share of total relief delivered **strictly below** the head size, which P3 predicts is ~0. We measure
+it on seven constructed families whose knee is known by construction — an i.i.d. head of `H` items
+(partial credit) and a cyclic working set of `W` items (all-or-nothing) — for the oracle and for LRU
+on the same traces:
+
+| family | h_true | **oracle** below-head relief | **LRU** below-head relief |
+|---|---|---|---|
+| hot 5 | 0.0050 | 0.779 | 0.596 |
+| hot 10 | 0.0100 | 0.878 | 0.703 |
+| hot 20 | 0.0200 | 0.918 | 0.753 |
+| hot 40 | 0.0400 | 0.938 | 0.783 |
+| loop 8 | 0.0080 | 0.857 | **0.000** |
+| loop 16 | 0.0160 | 0.933 | **0.000** |
+| loop 32 | 0.0320 | 0.968 | **0.000** |
+
+For the **oracle** the below-head share is 0.779–0.968, mean **0.896** — P3 predicts ~0, so P3 is
+refuted *for the construct it was registered against*. For **LRU** on the cyclic families it is
+**exactly 0.000**: LRU misses every access below `W` and none at `W`. Read at the capacities
+themselves, loop-8 gives `LRU = 1.0000, 1.0000, 0.0004` at caps 6, 7, 8 while the oracle gives
+`0.2860, 0.1432, 0.0004`. **That is P3's shape exactly** — the classic thrashing cliff, and it belongs
+to the deployed policy. Figure 3 shows the two populations side by side.
+
+![Figure 3](figures/fig3_below_head.png)
+
+*Figure 3: The share of total relief delivered strictly below the working set. P3 predicts ~0 for
+both bars; the oracle is 0.78–0.97 and the deployed policy is exactly 0.000 on the three cyclic
+families (bars absent because the value is zero). The registered knee is the policy's, not the
+floor's.*
+
+The consequence is the sharpest number in the study. At capacity `W - 1` — the last capacity strictly
+below the working set, where LRU misses *everything* — the oracle gap is **598 %** (W = 8),
+**1,384 %** (W = 16) and **2,859 %** (W = 32): the largest gaps anywhere in the grid, sitting exactly
+where P3 placed its "knee". The construct has **no cliff**: linear-then-flat on a bounded working set
+(Section 5.2) and convex on an i.i.d. head plus cold tail. Figure 4 puts the two curves on one axis
+around the capacity the registered prior names.
+
+![Figure 4](figures/fig4_policy_cliff.png)
+
+*Figure 4: Slow-tier traffic for the same three cyclic traces, oracle (blue) and LRU (red), around
+the working-set size. LRU is flat at 100 % up to `c = W` and drops to the compulsory floor in one
+step — a cliff at the exact capacity P3 registers. The oracle declines smoothly across the same
+range, and the largest gaps in the whole study sit at `c = W-1`.*
+
+The knee does exist in one corrected sense, and it is computable: the capacity at which the profile
+**saturates**. A blind detector (find the capacity maximizing the share of the total relief) locates
+it in **6 of 7** families within the 0.25 tolerance, and the detector is controlled both ways — on a
+planted knee it reports the cliff at peak share **1.000**, on a smooth exponential with no knee its
+peak share is **0.048**. But the recovered location is the *policy's* saturation, not a property of
+the floor: detecting the cliff tells you where LRU stops thrashing, not what the workload permits.
+
+### 5.6 `phi*` is not a function of the stack-distance profile (the paper's central result)
+
+Mattson's law says a stack algorithm's miss curve is a function of the stack-distance multiset. A
+natural reading — the one the field's benefit predictors are built on — is that the *ceiling* is a
+function of it too. It is not.
+
+**The matched pair.** Two traces on the same 3-symbol universe, length 9:
+
+    A = (1, 2, 1, 2, 0, 1, 0, 2, 1)        B = (2, 0, 1, 0, 2, 0, 1, 0, 2)
+
+Their stack-distance multisets are **identical** (`sd_l1 = 0`), and so — by Mattson — are their LRU
+miss counts at **every** capacity (the certificate asserts both). Their offline optima at capacity 2
+are **4** and **6** misses out of 9 — a 1.5x difference in the quantity the paper is about. Scaled by
+repeating and extending the same two structures (`K` blocks), the gap is stable and in fact widens:
+at `K = 1` the misses are 4 vs 6, at `K = 10` 22 vs 42, at `K = 100` 202 vs 402, at `K = 500` 1002 vs
+2002 — at `n = 9,000` (K = 1000) the floors are **0.2224** and **0.4447**, a **2.00x** gap, with
+`sd_l1 = 0.0` **exactly at every scale**. A relabelling control (permuting the symbol names) leaves
+the certificate unchanged (42 = 42). Figure 2 shows both halves of the witness.
+
+![Figure 2](figures/fig2_matched_pair.png)
+
+*Figure 2: (left) The matched pair at n = 9. At capacity 2 the clairvoyant policy takes 4 misses on
+trace A and 6 on trace B, while the two traces carry byte-identical stack-distance multisets and
+therefore an identical LRU curve (the dashed line, on which B sits exactly — B's own profile optimum
+is what LRU achieves, and A beats it by 2x). (right) Repeating each structure K times, the ratio
+between the two floors widens toward 2.00x while the profile distance stays exactly zero. Mattson's
+law is what makes this a no-go rather than an anecdote: the profile fixes the dashed curve, so no
+profile-derived statistic can distinguish A from B.*
+
+**The phenomenon is generic, not hand-built.** Sampling 184,275 traces and bucketing them by exact
+stack-distance profile yields 28 profiles; **13 of them (46 %)** contain traces with more than one
+optimum, the widest spanning three distinct values.
+
+**And the affected population is the majority.** Enumerating profile classes exhaustively over fixed
+symbol multisets:
+
+| symbol multiset | arrangements | classes | classes with a spread | fraction | max ratio |
+|---|---|---|---|---|---|
+| 3,3,3 | 1,680 | 26 | 12 | 46.2 % | 1.33 |
+| 4,2,2,2 | 18,900 | 76 | 52 | 68.4 % | 1.50 |
+| 2,2,2,2 | 2,520 | 32 | 13 | 40.6 % | 1.25 |
+| 5,2,2 | 756 | 22 | 8 | 36.4 % | 1.33 |
+| 4,3,2 | 1,260 | 27 | 13 | 48.1 % | 1.50 |
+| 2,2,2,2,2 | 113,400 | 115 | 70 | 60.9 % | 1.40 |
+
+At mid scale (n = 40, alphabet 4, 60,000 draws) the buckets number **2,510** and **1,791 of them
+(71 %)** carry a spread, with a maximum ratio of **1.50** and a maximum absolute spread of 0.125 in
+the floor. The fraction is measured by testing the ratio inside each bucket, not inferred from bucket
+size: a bucket with several members may still have one optimum, which is why the two counts differ
+and only the second is the claim.
+
+**The method, stated generally.** To settle any claim of the form "statistic `S` carries quantity
+`X`", exhibit two objects with the same `S` and different `X`. No candidate set, no fit, no
+tolerance; one counterexample is a theorem. This is strictly stronger than the failed eight-way fit
+of Section 5.4 — that fit shows the candidates we tried do not work, whereas the matched pair shows
+why *no* profile-derived statistic can: the profile does not determine the object. It also explains
+all three refutations at once. P1 asked for the gap's direction in capacity; the gap involves `phi*`,
+which the profile classes do not fix. P2 asked for one profile statistic to carry the ceiling; no
+profile-measurable function can. P3 asked for a knee, and any knee read off the profile is the
+policy's.
+
+### 5.7 The profile-invisible fraction
+
+We name the within-class spread of `phi*` the **profile-invisible fraction** of the oracle's
+advantage: the part of the tiering opportunity that no method keyed to the recurrence profile can
+see. Measured at three scales:
+
+| scale | population | classes / profiles | carrying a spread | max ratio |
+|---|---|---|---|---|
+| exhaustive (small) | 1,680–113,400 arrangements per multiset | 22–115 | 36–68 % | 1.25–1.50 |
+| mid | 60,000 random traces (n = 40, alphabet 4) | 2,510 | **71 %** | 1.50 |
+| practical | pairwise construction at n = 9,000 | — | (a constructed pair) | **2.00** |
+
+It is not a rounding error. A prediction of tiering benefit built from a workload's observed
+recurrence profile carries an error term of this size on the majority of profiles, and the profile
+cannot bound it. Figure 5 shows both the frequency and the magnitude of the effect.
+
+![Figure 5](figures/fig5_profile_invisible.png)
+
+*Figure 5: (left) The fraction of profile classes that carry a spread of `phi*`, measured
+exhaustively over six fixed symbol multisets (purple) and by exact bucketing of 60,000 random
+length-40 traces (dashed line: 71 %, i.e. 1,791 of 2,510 classes). (right) The largest ratio between
+two optima inside a single profile class, at each of the three scales; at practical scale it reaches
+2.00x.*
+
+---
+
+## 6. Threats to validity
+
+**The oracle is clairvoyant, and that is the point.** `phi*` is not implementable; it is the target a
+policy is measured against. A reader who wants an operational policy should read Section 5.5 as the
+warning and Section 5.6 as the reason: the distance to the ceiling is not something a better profile
+statistic will recover.
+
+**All traces are synthetic.** Every family is generated with declared parameters (universe, length,
+distribution, block size), and no production trace is replayed. This bounds external validity: the
+*quantitative* gap values (5.99 %–140.9 % over the grid) are properties of these families, and we do not claim they
+transfer to a specific production workload. What we do claim transfers is the *structure* — the
+closed form on bounded working sets is a theorem about a trace family, and the matched pair is an
+existence statement that no amount of production data can remove. A reader who wants the actual
+floor for their own workload can compute it: the O(n log n) route makes a 50,000-access trace
+affordable.
+
+**The contribution is a lower bound, not a policy.** The paper does not propose a replacement
+algorithm, and the gap it measures is the gap to an unattainable target. This is why the significance
+argument is about *sizing and claim calibration* (Section 1) rather than about a speedup.
+
+**Why it is still worth publishing.** Three things survive that no re-measurement on real traces can
+take away: an exact, three-way-certified instrument for a quantity the field currently estimates;
+an exact closed form with a second, unfitted prediction that it also matches; and a no-go theorem
+with an explicit witness pair, which settles a question the field's standard instrument (the
+stack-distance profile) was implicitly assumed to answer. The refutations are the paper's strongest
+evidence, not its failure: three priors drawn from standard practice were each falsified by the same
+structural cause, which is what makes the cause worth stating.
+
+---
+
+## 7. Conclusion
+
+A tiering system's benefit is bounded above by the workload, not by the policy. We made that bound
+exact and computable, certified it three ways, and then tested the three things the field assumes
+about it. All three are wrong, and they are wrong for one reason: **the quantity that caps tiering is
+not a function of the recurrence profile.** Two traces can present identical profile summaries — and
+identical LRU curves at every capacity, by Mattson's law — while their floors differ by 2x, and the
+majority of profiles admit such a spread. A capacity plan or a benefit prediction keyed to workload
+statistics therefore carries an error it cannot bound.
+
+The positive content is smaller but durable: an exact formula for the bounded-working-set family that
+also predicts a relief scale it was not fitted to, and a method — the matched profile pair — that
+decides "does statistic `S` carry quantity `X`?" with one counterexample instead of a tolerance.
+
+---
+
+## 8. Registered priors and their outcomes
+
+Three priors were registered in issue #120 before the deciding runs, each with its direction and a
+justification from named theory or standard practice. All three are **refuted**, and the registered
+success criteria are reported against.
+
+| prior | registered expectation | outcome |
+|---|---|---|
+| **P1** | policies sit >= 20 % above the optimum for `h <= 0.2`, and the gap **shrinks** as `h` grows | **REFUTED** — limb A holds in 1 of 6 families, limb B in 1 of 6, both in **0 of 6** |
+| **P2** | one statistic (the reuse-distance slope) predicts the benefit within 5 % on held-out cells | **REFUTED** — the slope fails by collision (8,494 % spread); its eight-candidate repair fails at **0.800** max relative error |
+| **P3** | a capacity knee `h*`, below which added fast tier buys almost nothing | **REFUTED as registered** — the below-knee relief is **0.896** for the oracle where P3 predicts ~0; the registered shape is LRU's cliff (exactly 0.000) |
+
+| registered criterion | status |
+|---|---|
+| (i) exact route certified against an independent optimum (registered: an integer program, relative <= 1e-9) | **MET in substance, FORM SUBSTITUTED** — three independent routes (naive Belady, exhaustive cache-state search, lazy-heap Belady) agree exactly (0 disagreements over 300 tiny traces, 624 Mattson pairs, exact equality at n = 4000); no integer program was built, and the substitution is stated rather than absorbed |
+| (ii) benefit law within 5 % on held-out cells | **UNMET, with reason** — best held-out max relative error 0.800; Section 5.6 shows the criterion was unachievable by any profile-keyed statistic |
+| (iii) ceiling: zero violations over >= 20 cells, two-sided control | **MET for the bound** (0 violations; 42 cells) — the control run is **one-sided** (a deliberately bad policy was never below the optimum) and the two-sided plant of a *violating* policy was **not** built; reported as a gap in the control, not as a pass |
+| (iv) >= 3 seeds for stochastic cells, mean ± CI | **MET** — 3 seeds per cell in the 42-cell grid (mean over seeds; the cells are deterministic given the seed, so the spread is over generations, not runs) |
+
+The row worth reading twice is (i): the registered criterion named an **instrument** (an integer
+program) that the study did not build. The certificate it asked for exists and is stronger than
+asked — three routes, two of them independent of Belady's argument — but a registered criterion whose
+named instrument is replaced is reported as replaced, because the substitution is exactly the kind of
+slip a registration exists to catch.
+
+---
+
+## Appendix A. Reproduction
+
+All instruments are deterministic: a seeded `random.Random` per cell, no clocks, no hash-ordered
+iteration. Two consecutive runs are byte-identical.
+
+```
+python3 spike_v0.py    # certificates: routes A/B, one-sided bound control, first P1 reading
+python3 spike_v1.py    # the 42-cell grid: P1 limbs, mechanism, normalisation, P2 first look
+python3 spike_v2.py    # P3: below-head relief, knee detector with a two-sided plant, Mattson (624)
+python3 spike_v3.py    # closed form, relief scale, the eight-candidate predictor fit and holdout
+python3 spike_v4.py    # the matched pair and the genericity sweep
+python3 spike_v5.py    # the exhaustive and mid-scale profile-class spread
+python3 refs_meta.py   # author/year metadata for the reference layer (abstract-page route)
+python3 refs_tool.py   # the two-sided verification of all 129 references
+```
+
+Expected output: each script prints its tables and writes `<name>_results.json`; the tables in
+Sections 5.1–5.7 are read from those files. Target tolerances: the certificates report
+**0 disagreements**, the closed form **max abs error <= 2e-4**, and the reference layer
+**129 OK / 0 PROBLEM**.
+
+---
+
+<!-- REFERENCES -->
