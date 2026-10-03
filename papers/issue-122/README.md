@@ -94,7 +94,7 @@ A full re-verification re-fetches every identifier and needs the network:
     python3 refs_tool.py plant      # two-sided control: corrupted title, invented id, invented DOI
     python3 refs_meta.py            # author metadata + its own plant control
 
-`reproduce.sh` does **not** run these (a verifier's host may be offline); it reads the committed log.
+`reproduce.sh` does **not** run these (a verifier's host may be offline); it reads the committed log. `run.log` is the log of the last run and is rewritten by every run, so it is committed as a record and deliberately not part of `checksums.sha256`.
 
 ## Files
 

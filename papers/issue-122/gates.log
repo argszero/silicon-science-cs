@@ -1,0 +1,61 @@
+# journal gates, run from the repository root on branch paper/issue-122 against papers/issue-122/manuscript.md
+# (the manuscript, figures and artefacts are byte-identical at this record's parent commit and at the head, which adds only this log, the regenerated citation report and the refreshed checksums.sha256)
+# interpreters: .github/tools/refgate.py,linkgate.py,numgate.py,pointgate.py under python3.13 (the tools use 3.12+ f-string syntax);
+#              the manuscript's own instruments under /usr/bin/python3 3.9.6 (build.json)
+# commit: manuscript: issue #122
+
+$ python3 .github/tools/refgate.py papers/issue-122/manuscript.md
+=== papers/issue-122/manuscript.md
+  window: the last `## References` heading (line 630) to the end of the file (line 834)
+          — its numbered lines are read as entries
+  entries=102  numbering=.
+  block form: 102 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 102/102 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=102  covered=102/102  coverage=100.0%
+  WARN: bib uses '1.' but body uses '[n]' — style mismatch (a naive '[n]' bib-count would report 0 entries)
+  GATE: PASS
+exit=0
+
+$ python3 .github/tools/linkgate.py --check
+linkgate_v1 - the tree's markdown cross-references, resolved at the linking file's own directory
+set: 46 tracked markdown carriers (git ls-files '*.md') at the reader's head
+targets=103 links=98 resolved=98 broken=0
+forms not read as links: url=2 placeholder=3 anchor=0 empty=0 rooted=0
+not read here: a numbered reference - `.github/tools/numgate.py` (the site and the list it indexes); a named pointer (`-> *Name*`) is read by .github/tools/pointgate.py
+LINKGATE: PASS
+exit=0
+
+$ python3 .github/tools/numgate.py --check
+numgate_v1 - the tree's numbered references, by the form each one takes
+set: 283 tracked files read as text (of 327, `git ls-files`); carriers: 10 (README.md -> Links); forms: 7
+sites=1640  carrier=487  package=1153
+form          carrier  carriers  list home
+item N             64         5  README.md -> Quality bar
+step N            132         6  README.md -> Submission workflow
+condition N        13         2  .github/REVIEW_TEMPLATE.md -> The two markers
+sec N               3         2  a manuscript's own sections
+#N                148         7  the journal's issue/PR namespace (the form names it)
+op(N)               0         0  the editor's checklist -- OUTSIDE this tree
+Rnnn              127         8  the round record under .emrg/** (an attribution, not a pointer)
+package sites: 1153 over 180 files - the citing file's own lists (the rule's first form; no home claimed here)
+not read here: which position of the list a number means, and whether that position holds the requirement the reference names
+NUMGATE: PASS
+exit=0
+
+$ python3 .github/tools/pointgate.py --check
+pointgate_v1 - the tree's named pointers (`-> *Name*`, `see *Name*`), resolved at the carrier they name
+rule: README.md -> Links; a name resolves on a heading, a lead (line- or sentence-initial) or a blockquote item
+      of the named carrier, read as rendered text and compared to the break before the lead's gloss
+set: 46 tracked markdown carriers (`git ls-files '*.md'`)
+pointers=169
+  code-target                                  23
+  resolved                                     142
+  resolved (linking file, not !consistency_check.py) 1
+  resolved (linking file, not .github/REVIEW_TEMPLATE.md) 2
+  resolved (linking file, not INSTANCES.md)    1
+
+
+not read here: the rule's first form (a markdown link target - `.github/tools/linkgate.py`)
+not read here: the rule's third form (a number indexing a list - `.github/tools/numgate.py` reads the site and the list it indexes; the position it means is a read)
+POINTGATE: PASS
+exit=0

@@ -302,7 +302,7 @@ PART D -- THE SAME LOOP, TWO CRITERIA: keeping it intact vs healing it once brok
 
 wrote spike_v3_results.json
 /Users/argszero/.matplotlib is not a writable directory
-Matplotlib created a temporary cache directory at /var/folders/1j/xmzmfprj2zx3s61pw_03485r0000gn/T/matplotlib-3vv7nxq_ because there was an issue with the default path (/Users/argszero/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib created a temporary cache directory at /var/folders/1j/xmzmfprj2zx3s61pw_03485r0000gn/T/matplotlib-449fi7sg because there was an issue with the default path (/Users/argszero/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
 Matplotlib is building the font cache; this may take a moment.
 figures from spike_v1_results.json, spike_v2_results.json, spike_v3_results.json
    fig1_folk_law_refuted.png        104758 bytes
@@ -324,7 +324,7 @@ entries rendered      : 102
 cited by numbered key : 102
 uncited               : 0 []
 bracketed groups       : 86 citations, 0 shape-ambiguous, 11 other
--> reference-check.md (17578 chars)
+-> reference-check.md (21425 chars)
 built manuscript.md: 135 placeholders resolved from 135 values, 102 citations (102 references), 10145 words
 -> values.json (provenance for every number)
 ok   4.1 the gap is read on an expected-EVENT gate (density x rate >= 30): 602 readings   [recomputed=602 artefact=602]
@@ -382,7 +382,7 @@ RESULT: PASS
    plant caught by: refs: 101 curated entries, every one taken from the discovery artefact refs count
    plant caught by: figures: every committed PNG hashes to the value the manifest records  figure hash
 SELFTEST 10/10 plants caught
-CHECKSUMS [HARD] 29/29 files match the committed record
+CHECKSUMS [HARD] 30/30 files match the committed record
 #
-# wall-clock: 79 s
+# wall-clock: 77 s
 RESULT: PASS
