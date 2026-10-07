@@ -1,0 +1,131 @@
+{
+ "P1_real": {
+  "M_gt_M_first": 24,
+  "corpus": "winequality-red.csv",
+  "corpus_sha256": "4a402cf041b025d4566d954c3b9ba8635a3a8a01e039005d97d6a710278cf05e",
+  "median_free_width": 0.9,
+  "n_cases": 24,
+  "whole_quota_free": 5
+ },
+ "P1_synthetic": {
+  "by_family": {
+   "clustered2d": 0.6666666666666666,
+   "unequal2d": 0.788888888888889,
+   "uniform2d": 0.9444444444444444,
+   "uniform5d": 0.8944444444444444
+  },
+  "by_setting": {
+   "A": {
+    "M_gt_M_first": 32,
+    "median_free_width": 0.8333333333333333,
+    "n_cases": 32,
+    "whole_quota_free": 11
+   },
+   "B": {
+    "M_gt_M_first": 30,
+    "median_free_width": 0.8,
+    "n_cases": 32,
+    "whole_quota_free": 8
+   },
+   "all": {
+    "median_free_width": 0.8,
+    "n_cases": 64,
+    "whole_quota_free": 19
+   }
+  }
+ },
+ "P2_real_partb": {
+  "alignment_max": 1.1171495943407537,
+  "alignment_min": 0.9020881670533643,
+  "spearman_alignment_width": 0.12994780413580562
+ },
+ "P2_wide": {
+  "alignment_max": 1.0372384956937766,
+  "alignment_min": 0.18276725062567037,
+  "alignment_spread": 0.8544712450681062,
+  "n_cells": 320,
+  "n_solved": 320,
+  "p4": {
+   "maxmin": {
+    "greedy_exact": 100,
+    "median_gap": 0.0,
+    "n": 160
+   },
+   "maxsum": {
+    "greedy_exact": 120,
+    "median_gap": 0.0,
+    "n": 160
+   }
+  },
+  "per_corpus": {
+   "seeds": {
+    "n": 160,
+    "spearman": -0.0056456181261102575
+   },
+   "wine": {
+    "n": 160,
+    "spearman": 0.11898770686591768
+   }
+  },
+  "pooled_spearman": 0.1081484252780843,
+  "rho_conventions": {
+   "pearson_raw": 0.11541716857839432,
+   "tie_corrected": 0.1081484252780843
+  },
+  "width_distinct": 9,
+  "width_spread": 1.0
+ },
+ "P3_cost_law": {
+  "maxmin": {
+   "median_beta": -8.546749068236702e-17,
+   "n_fittable": 5
+  },
+  "maxsum": {
+   "median_beta": 0.9199074884490034,
+   "n_fittable": 17
+  }
+ },
+ "P4_baseline_real": {
+  "maxmin": {
+   "greedy_exact": 4,
+   "median_gap": 0.016597902003613517,
+   "n": 12
+  },
+  "maxsum": {
+   "greedy_exact": 9,
+   "median_gap": 0.0,
+   "n": 12
+  }
+ },
+ "P4_baseline_synthetic": {
+  "maxmin": {
+   "greedy_exact": 7,
+   "max_gap": 0.46938775510204084,
+   "median_gap": 0.17140954354214677,
+   "n": 32
+  },
+  "maxsum": {
+   "greedy_exact": 29,
+   "max_gap": 0.005214929598450421,
+   "median_gap": 0.0,
+   "n": 32
+  }
+ },
+ "instrument": "issue #128 -- the zero-cost region of a group quota",
+ "route_health": {
+  "by_status": {
+   "INFEASIBLE": 8,
+   "OPTIMAL": 1144
+  },
+  "cross_disagreements": 0,
+  "infeasible": 8,
+  "n_cells": 1152,
+  "unresolved": 0,
+  "unresolved_statuses": []
+ },
+ "sources": {
+  "spike_v3_results.json": "synthetic, 64 cases / 1152 cells",
+  "spike_v4_results.json": "real corpus (Wine Quality), 24 + 72 cells",
+  "spike_v5_results.json": "real-corpus wide-alignment sweep, 320 cells"
+ }
+}
