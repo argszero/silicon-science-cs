@@ -775,25 +775,38 @@ Expected output: each instrument runs its own self-test and then the measurement
 reference list are regenerated, and the run ends with
 
 ```
-REPRODUCE: ALL GREEN (17 steps, 0 failures)
+REPRODUCE: ALL GREEN (21 steps, 0 failures)
 ```
 
 Tolerance: **exact**. Every instrument asserts that its output file is byte-identical to the committed
 one, so a deviation is a failure rather than a drift; `SHA256SUMS.reproduce` carries the 12 result
-artefacts, the 5 figures, the built manuscript and the 2 citation documents, and the script checks all
-20 digests. `manuscript.md` is a PRODUCT of `manuscript_source.md` and `build_refs.py` -- the source
-carries the citations as keys, so the reference list and the >100-cited bar are rebuilt and asserted on
-every run rather than trusted. The synthetic instruments need only the Python standard library; the
+artefacts, the 5 figures, the built manuscript, the two reference layers, the cached author reads and the
+citation report, and the script checks all 22 digests. The synthetic instruments need only the Python standard library; the
 external-validation arm (§9-§10) needs `numpy` (measured with 2.0.2 under `/usr/bin/python3` 3.9.6) and
 the script selects its interpreter by the modules the recompute path actually imports, printing the
 versions it used. The corpus is committed and re-hashed on every read, so a cache that has silently
-become a different dataset fails the same run. Three further steps are checks rather than
-reconstructions, and they are the ones that read what a reader reads: `check_numbers.py` re-derives the
-manuscript's headline numbers from the artefacts and matches them against the sentences that state
-them; `check_figures.py` asserts that every figure exists at the path the manuscript links, is
-embedded, is cited in the prose and names its source artefact; and `refscan126.py --report` rebuilds the
-citation-authenticity report and asserts that its numbering is the manuscript's numbering. Each carries
-a plant for every certificate, because a certificate that cannot fail is decoration.
+become a different dataset fails the same run.
+
+**The manuscript is a product, and the reference section is a second product of the same source.**
+`manuscript_source.md` carries citations as KEYS; `build_refs.py` numbers them in first-appearance
+order, writes the body, and emits `references.json` -- the record layer, one entry per cited work with
+its resolvable link and a one-line stated difference; `refs_build_display.py` folds each record's author
+field to the house form `Family, I.` and emits the display layer, with a certificate that the printed
+family is a contiguous suffix of the record's own name tokens and that no initial comes from a name it
+is not attached to; and `refs_render.py` (vendored from this journal's accepted copy, its claim core's
+digest asserted at every run) owns the `## References` section. Three writers, three objects: the body
+is compared with the section by `check_references.py`, because a single script that wrote both would
+agree with itself whatever it wrote.
+
+Four steps are **readers** rather than reconstructions, and they read the object a reader gets:
+`check_numbers.py` re-derives 27 headline numbers from the artefacts and matches them against the
+sentences that state them; `check_figures.py` asserts that every figure exists at the path the
+manuscript links, is embedded, is cited in the prose and names its source artefact;
+`check_references.py` reads the rendered section for its numbering, its block form, its per-entry
+`Difference:` clause, its resolvable URL, body coverage in both directions and its agreement with the
+record layer; and `refscan126.py --report` rebuilds the citation-authenticity report and asserts that
+its numbering is the manuscript's. Every script in the run carries a plant for each of its
+certificates, because a certificate that cannot fail is a decoration.
 
 ---
 
@@ -813,110 +826,558 @@ which explanations of *why* are not.
 
 ## References
 
-[1] Dekker T. J. (1971). A floating-point technique for extending the available precision. DOI: 10.1007/bf01397083. https://doi.org/10.1007/bf01397083
-[2] Katsuhisa Ozaki, Yuki Uchino, Toshiyuki Imamura (2025). Ozaki Scheme II: A GEMM-oriented emulation of floating-point matrix multiplication using an integer modular technique. arXiv preprint. https://arxiv.org/abs/2504.08009
-[3] Shun-ichiro Hayashi, Daichi Mukunoki, Tetsuya Hoshino, et al. (2026). DGEMM with Ozaki Scheme I/II on FP4 Tensor Cores: A Base-13 E2M1 Limb Representation. arXiv preprint. https://arxiv.org/abs/2608.06812
-[4] Erin Carson, Nicholas J. Higham (2018). Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions. DOI: 10.1137/17m1140819. https://doi.org/10.1137/17m1140819
-[5] Nicholas J. Higham (2002). Accuracy and Stability of Numerical Algorithms. DOI: 10.1137/1.9780898718027. https://doi.org/10.1137/1.9780898718027
-[6] James Hardy Wilkinson (2023). Rounding Errors in Algebraic Processes. DOI: 10.1137/1.9781611977523. https://doi.org/10.1137/1.9781611977523
-[7] Nicholas J. Higham, Theo Mary (2019). A New Approach to Probabilistic Rounding Error Analysis. DOI: 10.1137/18m1226312. https://doi.org/10.1137/18m1226312
-[8] Sahil Bhola, Karthik Duraisamy (2024). Bias- and Variance-Aware Probabilistic Rounding Error Analysis for Floating-Point Arithmetic. arXiv preprint. https://arxiv.org/abs/2404.12556
-[9] Sahil Bhola, Karthik Duraisamy (2024). Deterministic and Probabilistic Rounding Error Analysis for Mixed-Precision Arithmetic on Modern Computing Units. arXiv preprint. https://arxiv.org/abs/2411.18747
-[10] Jennifer A. Loe, Christian A. Glusa, Ichitaro Yamazaki, et al. (2021). A Study of Mixed Precision Strategies for GMRES on GPUs. arXiv preprint. https://arxiv.org/abs/2109.01232
-[11] Eda Oktay, Erin Carson (2021). Multistage Mixed Precision Iterative Refinement. arXiv preprint. https://arxiv.org/abs/2107.06200
-[12] Shun-ichiro Hayashi, Daichi Mukunoki, Tetsuya Hoshino, et al. (2026). AWE: Adaptive Weight Encoding for Exact Integer Matrix Products with Fewer GEMMs on FP4 Tensor Cores. arXiv preprint. https://arxiv.org/abs/2609.24519
-[13] Eric Hallman, Ilse C. F. Ipsen (2022). Precision-aware Deterministic and Probabilistic Error Bounds for Floating Point Summation. arXiv preprint. https://arxiv.org/abs/2203.15928
-[14] Juan Zhang, Yang Zhou (2026). Newton-Based Mixed Precision Iterative Refinement for Large-Scale Sparse Continuous-Time Algebraic Riccati Equations. arXiv preprint. https://arxiv.org/abs/2607.14742
-[15] Ahmad Abdelfattah, Hartwig Anzt, Erik G. Boman, et al. (2020). A Survey of Numerical Methods Utilizing Mixed Precision Arithmetic. arXiv preprint. https://arxiv.org/abs/2007.06674
-[16] Héctor Martínez, Adrián Castelló, Francisco D. Igual, et al. (2025). The Cambrian Explosion of Mixed-Precision Matrix Multiplication for Quantized Deep Learning Inference. arXiv preprint. https://arxiv.org/abs/2506.11728
-[17] W. Kahan (1965). Pracniques: further remarks on reducing truncation errors. DOI: 10.1145/363707.363723. https://doi.org/10.1145/363707.363723
-[18] Takeshi Ogita, Siegfried M. Rump, Shin'ichi Oishi (2005). Accurate Sum and Dot Product. DOI: 10.1137/030601818. https://doi.org/10.1137/030601818
-[19] James Demmel, Yozo Hida (2004). Accurate and Efficient Floating Point Summation. DOI: 10.1137/s1064827502407627. https://doi.org/10.1137/s1064827502407627
-[20] Siegfried M. Rump (2009). Ultimately Fast Accurate Summation. DOI: 10.1137/080738490. https://doi.org/10.1137/080738490
-[21] Michael P. Connolly, Nicholas J. Higham, Theo Mary (2021). Stochastic Rounding and Its Probabilistic Backward Error Analysis. DOI: 10.1137/20m1334796. https://doi.org/10.1137/20m1334796
-[22] Eric Hallman, Ilse C. F. Ipsen (2021). Deterministic and Probabilistic Error Bounds for Floating Point Summation Algorithms. arXiv preprint. https://arxiv.org/abs/2107.01604
-[23] Piyush Sao, Narasinga Miniskar, Pedro Valero-Lara, et al. (2026). A Second-Moment Theory for Floating-Point Reduction Trees. arXiv preprint. https://arxiv.org/abs/2607.18758
-[24] Erin Carson, Nicholas J. Higham (2017). A New Analysis of Iterative Refinement and Its Application to Accurate Solution of Ill-Conditioned Sparse Linear Systems. DOI: 10.1137/17m1122918. https://doi.org/10.1137/17m1122918
-[25] Eda Oktay, Erin Carson (2022). Mixed Precision GMRES-based Iterative Refinement with Recycling. arXiv preprint. https://arxiv.org/abs/2201.09827
-[26] Erin Carson, Noaman Khan (2022). Mixed Precision Iterative Refinement with Sparse Approximate Inverse Preconditioning. arXiv preprint. https://arxiv.org/abs/2202.10204
-[27] Noaman Khan, Erin Carson (2023). Mixed Precision Iterative Refinement with Adaptive Precision Sparse Approximate Inverse Preconditioning. arXiv preprint. https://arxiv.org/abs/2307.03914
-[28] Erin Carson, Eda Oktay (2024). Mixed Precision FGMRES-Based Iterative Refinement for Weighted Least Squares. arXiv preprint. https://arxiv.org/abs/2401.03755
-[29] Bowen Gao, Yuxin Ma, Meiyue Shao (2024). Mixed precision iterative refinement for least squares with linear equality constraints and generalized least squares problems. arXiv preprint. https://arxiv.org/abs/2406.16499
-[30] James G. Nagy, Lucas Onisk (2024). Mixed precision iterative refinement for linear inverse problems. arXiv preprint. https://arxiv.org/abs/2409.08335
-[31] Jifeng Ge, Juan Zhang (2025). Three-precision iterative refinement with parameter regularization and prediction for solving large sparse linear systems. arXiv preprint. https://arxiv.org/abs/2501.04229
-[32] James Quinlan, E. Theodore L. Omtzigt (2024). Iterative Refinement with Low-Precision Posits. arXiv preprint. https://arxiv.org/abs/2408.13400
-[33] Jennifer Scott, Miroslav Tůma (2024). Avoiding breakdown in incomplete factorizations in low precision arithmetic. arXiv preprint. https://arxiv.org/abs/2401.17957
-[34] Jennifer Scott, Miroslav Tůma (2024). Developing robust incomplete Cholesky factorizations in half precision arithmetic. arXiv preprint. https://arxiv.org/abs/2403.13123
-[35] Qiao Chen, Xiangmin Jiao (2021). HIFIR: Hybrid Incomplete Factorization with Iterative Refinement for Preconditioning Ill-conditioned and Singular Systems. arXiv preprint. https://arxiv.org/abs/2106.09877
-[36] Boris Krasnopolsky, Alexey Medvedev (2021). XAMG: A library for solving linear systems with multiple right-hand side vectors. arXiv preprint. https://arxiv.org/abs/2103.07329
-[37] Zijian Zhang, Rui Hong, Xuesong Chen, et al. (2025). Hybrid-Precision Block-Jacobi Preconditioned GMRES Solver for Linear System in Circuit Simulation. arXiv preprint. https://arxiv.org/abs/2509.09139
-[38] Atsushi Suzuki (2022). A Hybrid Factorization Algorithm for Sparse Matrix with Mixed Precision Arithmetic. arXiv preprint. https://arxiv.org/abs/2208.01907
-[39] Alexander V. Prolubnikov (2024). Parameter optimization for restarted mixed precision iterative sparse solver. arXiv preprint. https://arxiv.org/abs/2412.08059
-[40] Jifeng Ge, Bastien Vieublé, Juan Zhang (2025). Mixed Precision General Alternating-Direction Implicit Method for Solving Large Sparse Linear Systems. arXiv preprint. https://arxiv.org/abs/2512.21164
-[41] Erin Carson, Ieva Daužickaitė (2024). Mixed precision sketching for least-squares problems and its application in GMRES-based iterative refinement. arXiv preprint. https://arxiv.org/abs/2410.06319
-[42] Weiguo Gao, Yuxin Ma, Meiyue Shao (2022). A mixed precision Jacobi SVD algorithm. arXiv preprint. https://arxiv.org/abs/2209.04626
-[43] Bowen Gao, Daniel Kressner, Meiyue Shao (2026). A mixed precision algorithm for the matrix square root. arXiv preprint. https://arxiv.org/abs/2607.12430
-[44] Andrii Dmytryshyn, Massimiliano Fasi, Nicholas J. Higham, et al. (2025). Mixed-precision algorithms for solving the Sylvester matrix equation. arXiv preprint. https://arxiv.org/abs/2503.03456
-[45] Peter Benner, Xiaobo Liu (2025). Mixed-precision iterative refinement for low-rank Lyapunov equations. arXiv preprint. https://arxiv.org/abs/2510.02126
-[46] Stephen F. McCormick, Joseph Benzaken, Rasmus Tamstorf (2020). Algebraic error analysis for mixed-precision multigrid solvers. arXiv preprint. https://arxiv.org/abs/2007.06614
-[47] Stephen F. McCormick, Rasmus Tamstorf (2023). Rounding-Error Analysis of Multigrid V-Cycles. arXiv preprint. https://arxiv.org/abs/2307.00216
-[48] M. Croci, G. N. Wells (2024). Mixed-precision finite element kernels and assembly: Rounding error analysis and hardware acceleration. arXiv preprint. https://arxiv.org/abs/2410.12614
-[49] Michal Habera, Paul T. Kühner, Matteo Croci, et al. (2026). Running error bounds in finite element kernels. arXiv preprint. https://arxiv.org/abs/2609.37844
-[50] Issaku Kanamori, Hideo Matsufuru, Tatsumi Aoyama, et al. (2026). Mixed precision solvers with half-precision floating point numbers for Lattice QCD on A64FX processor. arXiv preprint. https://arxiv.org/abs/2602.14450
-[51] M. A. Clark, R. Babich, K. Barros, et al. (2009). Solving Lattice QCD systems of equations using mixed precision solvers on GPUs. arXiv preprint. https://arxiv.org/abs/0911.3191
-[52] Adela Habib, Joshua Finkelstein, Anders M. N. Niklasson (2024). Efficient Mixed-Precision Matrix Factorization of the Inverse Overlap Matrix in Electronic Structure Calculations with AI-Hardware and GPUs. arXiv preprint. https://arxiv.org/abs/2404.19163
-[53] Joshua Finkelstein, Justin S. Smith, Susan M. Mniszewski, et al. (2021). Quantum-based Molecular Dynamics Simulations Using Tensor Cores. arXiv preprint. https://arxiv.org/abs/2107.02737
-[54] Joshua Finkelstein, Emanuel H. Rubensson, Susan M. Mniszewski, et al. (2022). Quantum perturbation theory using Tensor cores and a deep neural network. arXiv preprint. https://arxiv.org/abs/2203.09621
-[55] Alexandre Benoit (2025). Speeding Up MACE: Low-Precision Tricks for Equivarient Force Fields. arXiv preprint. https://arxiv.org/abs/2510.23621
-[56] Tom Kimpson, E. Adam Paxton, Matthew Chantry, et al. (2022). Climate Change Modelling at Reduced Float Precision with Stochastic Rounding. arXiv preprint. https://arxiv.org/abs/2207.14598
-[57] Eric B. Ford (2008). Parallel Algorithm for Solving Kepler's Equation on Graphics Processing Units: Application to Analysis of Doppler Exoplanet Searches. arXiv preprint. https://arxiv.org/abs/0812.2976
-[58] Richard E. Zeebe (2023). orbitN: A symplectic integrator for planetary systems dominated by a central mass -- Insight into long-term solar system chaos. arXiv preprint. https://arxiv.org/abs/2306.03737
-[59] Naigang Wang, Jungwook Choi, Daniel Brand, et al. (2018). Training Deep Neural Networks with 8-bit Floating Point Numbers. arXiv preprint. https://arxiv.org/abs/1812.08011
-[60] Dhiraj Kalamkar, Dheevatsa Mudigere, Naveen Mellempudi, et al. (2019). A Study of BFLOAT16 for Deep Learning Training. arXiv preprint. https://arxiv.org/abs/1905.12322
-[61] Naveen Mellempudi, Sudarshan Srinivasan, Dipankar Das, et al. (2019). Mixed Precision Training With 8-bit Floating Point. arXiv preprint. https://arxiv.org/abs/1905.12334
-[62] Pedram Zamirai, Jian Zhang, Christopher R. Aberger, et al. (2020). Revisiting BFloat16 Training. arXiv preprint. https://arxiv.org/abs/2010.06192
-[63] Juyoung Yun, Sol Choi, Francois Rameau, et al. (2023). Revisiting 16-bit Neural Network Training: A Practical Approach for Resource-Limited Learning. arXiv preprint. https://arxiv.org/abs/2305.10947
-[64] Robert Hu, Carlo Luschi, Paul Balanca (2025). Elucidating the Design Space of FP4 training. arXiv preprint. https://arxiv.org/abs/2509.17791
-[65] Qian Zhao, Kunlong Chen, Changxin Tian, et al. (2026). Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe. arXiv preprint. https://arxiv.org/abs/2606.20381
-[66] Mehdi Rahimifar, Amin Darabi, Mehran Taghian Jazi, et al. (2026). Stable FP4 Training via Transposition-Invariant Block Quantization. arXiv preprint. https://arxiv.org/abs/2607.24953
-[67] Andrei Panferov, Erik Schultheis, Soroush Tabesh, et al. (2026). Quartet II: Accurate LLM Pre-Training in NVFP4 by Improved Unbiased Gradient Estimation. arXiv preprint. https://arxiv.org/abs/2601.22813
-[68] Yu Zhang, Hui-Ling Zhen, Mingxuan Yuan, et al. (2025). MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling. arXiv preprint. https://arxiv.org/abs/2511.05811
-[69] Hartwig Anzt, Terry Cojean, Goran Flegar, et al. (2022). Ginkgo: A Modern Linear Operator Algebra Framework for High Performance Computing. DOI: 10.1145/3480935. https://doi.org/10.1145/3480935
-[70] Daichi Mukunoki (2025). DGEMM without FP64 Arithmetic - Using FP64 Emulation and FP8 Tensor Cores with Ozaki Scheme. arXiv preprint. https://arxiv.org/abs/2508.00441
-[71] Tomonori Kouya (2021). Acceleration of multiple precision matrix multiplication based on multi-component floating-point arithmetic using AVX2. arXiv preprint. https://arxiv.org/abs/2101.06584
-[72] Denghui Lu, Alexander Maeder, Mathieu Luisier, et al. (2026). EmuGEMM: Fused Tensor Core Kernels for Precision Emulation in Matrix Multiplication. arXiv preprint. https://arxiv.org/abs/2606.25453
-[73] Angelika Schwarz, Anton Anders, Cole Brower, et al. (2025). Guaranteed DGEMM Accuracy While Using Reduced Precision Tensor Cores Through Extensions of the Ozaki Scheme. arXiv preprint. https://arxiv.org/abs/2511.13778
-[74] Ahmad Abdelfattah, Jack Dongarra, Massimiliano Fasi, et al. (2025). Analysis of Floating-Point Matrix Multiplication Computed via Integer Arithmetic. arXiv preprint. https://arxiv.org/abs/2506.11277
-[75] Louis Ledoux, Marc Casas (2024). An Open-Source Framework for Efficient Numerically-Tailored Computations. arXiv preprint. https://arxiv.org/abs/2406.02579
-[76] Tomonori Kouya (2026). Performance evaluation of branch-free fused multiply-add algorithms for multi-component-type multiple-precision floating-point arithmetic. arXiv preprint. https://arxiv.org/abs/2607.11391
-[77] Fasi Massimiliano, Higham Nicholas J., Mikaitis Mantas, et al. (2021). Numerical behavior of NVIDIA tensor cores. DOI: 10.7717/peerj-cs.330. https://doi.org/10.7717/peerj-cs.330
-[78] Faizan A. Khattak, Mantas Mikaitis (2025). Accurate Models of NVIDIA Tensor Cores. arXiv preprint. https://arxiv.org/abs/2512.07004
-[79] Peichen Xie, Shuotao Xu, Yang Wang, et al. (2025). Bit-Accurate Modeling of GPU Matrix Multiply-Accumulate Units: Demystifying Numerical Discrepancy and Accuracy. arXiv preprint. https://arxiv.org/abs/2511.10909
-[80] Wei Sun, Ang Li, Tong Geng, et al. (2022). Dissecting Tensor Cores via Microbenchmarks: Latency, Throughput and Numeric Behaviors. arXiv preprint. https://arxiv.org/abs/2206.02874
-[81] Stefano Markidis, Steven Wei Der Chien, Erwin Laure, et al. (2018). NVIDIA Tensor Core Programmability, Performance & Precision. arXiv preprint. https://arxiv.org/abs/1803.04014
-[82] Ziteng Yang, Nicholas J. Riasanovsky, Warren Deng, et al. (2026). Taming Bitwise Behavior in GPU Kernels with Tensor Core: Black-Box Reconstruction, Compiler Enforcement, and Static Verification. arXiv preprint. https://arxiv.org/abs/2609.11356
-[83] Xinyi Li, Ang Li, Bo Fang, et al. (2024). FTTN: Feature-Targeted Testing for Numerical Properties of NVIDIA & AMD Matrix Accelerators. arXiv preprint. https://arxiv.org/abs/2403.00232
-[84] Field G. Van Zee, Devangi N. Parikh, Robert A. van de Geijn (2019). Supporting mixed-datatype matrix multiplication within the BLIS framework. arXiv preprint. https://arxiv.org/abs/1901.06015
-[85] Hiroyuki Ootomo, Katsuhisa Ozaki, Rio Yokota (2023). DGEMM on Integer Matrix Multiplication Unit. arXiv preprint. https://arxiv.org/abs/2306.11975
-[86] Danny Hermes (2018). Compensated de Casteljau algorithm in $K$ times the working precision. arXiv preprint. https://arxiv.org/abs/1808.10387
-[87] Tomonori Kouya (2013). Practical Implementation of High-Order Multiple Precision Fully Implicit Runge-Kutta Methods with Step Size Control Using Embedded Formula. arXiv preprint. https://arxiv.org/abs/1306.2392
-[88] Erin Carson, Xinye Chen (2026). Precision autotuning for linear solvers via contextual bandit-based RL. arXiv preprint. https://arxiv.org/abs/2601.00728
-[89] Xinye Chen (2025). Mixed-Precision Conjugate Gradient Solvers with RL-Driven Precision Tuning. arXiv preprint. https://arxiv.org/abs/2504.14268
-[90] Ioannis Thanasis, Erin Carson (2026). Error Analysis and Precision Selection for Mixed-Precision DEIM-CUR Decompositions. arXiv preprint. https://arxiv.org/abs/2609.24509
-[91] Erez Badash, Dan Boneh, Ilan Komargodski, et al. (2026). Hawkeye: Reproducing GPU-Level Non-Determinism. arXiv preprint. https://arxiv.org/abs/2603.20421
-[92] Roman Iakymchuk, Maria Barreda, Stef Graillat, et al. (2020). Reproducibility of Parallel Preconditioned Conjugate Gradient in Hybrid Programming Environments. arXiv preprint. https://arxiv.org/abs/2005.07282
-[93] El-Mehdi El Arar, Devan Sohier, Pablo de Oliveira Castro, et al. (2022). The Positive Effects of Stochastic Rounding in Numerical Algorithms. arXiv preprint. https://arxiv.org/abs/2207.03837
-[94] Matteo Croci, Michael B. Giles (2020). Effects of round-to-nearest and stochastic rounding in the numerical solution of the heat equation in low precision. arXiv preprint. https://arxiv.org/abs/2010.16225
-[95] Lu Xia, Stefano Massei, Michiel E. Hochstenbach, et al. (2022). On the influence of stochastic roundoff errors and their bias on the convergence of the gradient descent method with low-precision floating-point computation. arXiv preprint. https://arxiv.org/abs/2202.12276
-[96] Petros Drineas, Ilse C. F. Ipsen (2024). Stochastic Rounding 2.0, with a View towards Complexity Analysis. arXiv preprint. https://arxiv.org/abs/2410.10517
-[97] El-Mehdi El Arar, Massimiliano Fasi, Silviu-Ioan Filip, et al. (2026). What is New in Stochastic Rounding: a Survey on Theory, Hardware, and Applications. arXiv preprint. https://arxiv.org/abs/2603.06060
-[98] Lu Xia, Martijn Anthonissen, Michiel Hochstenbach, et al. (2020). Improved stochastic rounding. arXiv preprint. https://arxiv.org/abs/2006.00489
-[99] Andrew Fitzgibbon, Stephen Felix (2025). On Stochastic Rounding with Few Random Bits. arXiv preprint. https://arxiv.org/abs/2504.20634
-[100] El-Mehdi El Arar, Massimiliano Fasi, Silviu-Ioan Filip, et al. (2024). Probabilistic error analysis of limited-precision stochastic rounding. arXiv preprint. https://arxiv.org/abs/2408.03069
-[101] El-Mehdi El Arar, Devan Sohier, Pablo de Oliveira Castro, et al. (2022). Stochastic rounding variance and probabilistic bounds: A new approach. arXiv preprint. https://arxiv.org/abs/2207.10321
-[102] Pablo de Oliveira Castro, El-Mehdi El Arar, Eric Petit, et al. (2024). Error Analysis of Sum-Product Algorithms under Stochastic Rounding. arXiv preprint. https://arxiv.org/abs/2411.13601
-[103] Sami Ben Ali, Silviu-Ioan Filip, Olivier Sentieys (2024). A Stochastic Rounding-Enabled Low-Precision Floating-Point MAC for DNN Training. arXiv preprint. https://arxiv.org/abs/2404.14010
-[104] Croci Matteo, Fasi Massimiliano, Higham Nicholas J., et al. (2022). Stochastic rounding: implementation, error analysis and applications. DOI: 10.1098/rsos.211631. https://doi.org/10.1098/rsos.211631
-[105] Timothy A. Davis, Yifan Hu (2011). The university of Florida sparse matrix collection. DOI: 10.1145/2049662.2049663. https://doi.org/10.1145/2049662.2049663
-[106] Azzam Haidar, Stanimire Tomov, Jack Dongarra, et al. (2018). Harnessing GPU Tensor Cores for Fast FP16 Arithmetic to Speed up Mixed-Precision Iterative Refinement Solvers. DOI: 10.1109/sc.2018.00050. https://doi.org/10.1109/sc.2018.00050
-[107] Emmanuel Agullo, Hartwig Anzt, Daniel Bauer, et al. (2026). Mixed-Precision Computing for Scientific Discovery: Formats, Co-Design, and Responsible Approximation. arXiv preprint. https://arxiv.org/abs/2609.37137
+[1] Dekker, T. J. (1971). A floating-point technique for extending the available precision. DOI:
+    10.1007/bf01397083. https://doi.org/10.1007/bf01397083
+    Difference: the limb-split primitive itself, a technique for extending the precision available;
+    it states no limit on where extending stops paying, which is the limit we measure.
+
+[2] Ozaki, K.; Uchino, Y.; Imamura, T. (2025). Ozaki Scheme II: A GEMM-oriented emulation of
+    floating-point matrix multiplication using an integer modular technique. arXiv preprint.
+    https://arxiv.org/abs/2504.08009
+    Difference: an implementation of emulation by integer limbs; we treat the emulation's accuracy
+    as the object to be bounded rather than as a scheme to be built.
+
+[3] Hayashi, S.; Mukunoki, D.; Hoshino, T.; et al. (2026). DGEMM with Ozaki Scheme I/II on FP4
+    Tensor Cores: A Base-13 E2M1 Limb Representation. arXiv preprint.
+    https://arxiv.org/abs/2608.06812
+    Difference: a limb encoding (base 13) chosen for a tensor core; we measure the floor of limb
+    splitting rather than proposing an encoding.
+
+[4] Carson, E.; Higham, N. J. (2018). Accelerating the Solution of Linear Systems by Iterative
+    Refinement in Three Precisions. SIAM Journal on Scientific Computing.
+    https://doi.org/10.1137/17m1140819
+    Difference: the reformulation path our boundary is defined against: it reaches a target accuracy
+    by iterating on the residual, while we ask which targets are reachable without reformulating at
+    all.
+
+[5] Higham, N. J. (2002). Accuracy and Stability of Numerical Algorithms. DOI:
+    10.1137/1.9780898718027. https://doi.org/10.1137/1.9780898718027
+    Difference: the textbook that states the gamma_n bound our §9 measures a real library against; a
+    bound is an upper limit, not an admission threshold.
+
+[6] Wilkinson, J. H. (2023). Rounding Errors in Algebraic Processes. DOI: 10.1137/1.9781611977523.
+    https://doi.org/10.1137/1.9781611977523
+    Difference: the origin of backward error analysis, in the same tradition as the bound our
+    central negative restricts.
+
+[7] Higham, N. J.; Mary, T. (2019). A New Approach to Probabilistic Rounding Error Analysis. SIAM
+    Journal on Scientific Computing. https://doi.org/10.1137/18m1226312
+    Difference: sharpens the constant of that bound probabilistically; the shape stays a bound, and
+    no reachability statement follows from it.
+
+[8] Bhola, S.; Duraisamy, K. (2024). Bias- and Variance-Aware Probabilistic Rounding Error Analysis
+    for Floating-Point Arithmetic. arXiv preprint. https://arxiv.org/abs/2404.12556
+    Difference: a bias- and variance-aware refinement of the probabilistic constant; no admission
+    threshold, and no second scalar.
+
+[9] Bhola, S.; Duraisamy, K. (2024). Deterministic and Probabilistic Rounding Error Analysis for
+    Mixed-Precision Arithmetic on Modern Computing Units. arXiv preprint.
+    https://arxiv.org/abs/2411.18747
+    Difference: rounding-error analysis for mixed precision on modern computing units; per-unit
+    analysis where we report a format-level floor.
+
+[10] Loe, J. A.; Glusa, C. A.; Yamazaki, I.; et al. (2021). A Study of Mixed Precision Strategies
+    for GMRES on GPUs. arXiv preprint. https://arxiv.org/abs/2109.01232
+    Difference: a study of mixed-precision strategies for one kernel family, chosen per kernel; our
+    question is which accuracies are attainable before any strategy is chosen.
+
+[11] Oktay, E.; Carson, E. (2021). Multistage Mixed Precision Iterative Refinement. arXiv preprint.
+    https://arxiv.org/abs/2107.06200
+    Difference: a multistage reformulation that buys accuracy by staging precisions; a second route
+    to a target, not a statement of which targets exist.
+
+[12] Hayashi, S.; Mukunoki, D.; Hoshino, T.; et al. (2026). AWE: Adaptive Weight Encoding for Exact
+    Integer Matrix Products with Fewer GEMMs on FP4 Tensor Cores. arXiv preprint.
+    https://arxiv.org/abs/2609.24519
+    Difference: the anchor for the claim that the limb budget is exactly computable, which is what
+    makes an exact law testable now; its contribution is the encoding, ours the boundary.
+
+[13] Hallman, E.; Ipsen, I. C. F. (2022). Precision-aware Deterministic and Probabilistic Error
+    Bounds for Floating Point Summation. arXiv preprint. https://arxiv.org/abs/2203.15928
+    Difference: precision-aware error bounds parameterised by the precision; we measure the floor
+    and the constant that sets it rather than bounding at a given precision.
+
+[14] Zhang, J.; Zhou, Y. (2026). Newton-Based Mixed Precision Iterative Refinement for Large-Scale
+    Sparse Continuous-Time Algebraic Riccati Equations. arXiv preprint.
+    https://arxiv.org/abs/2607.14742
+    Difference: a domain kernel solved by mixed-precision refinement; a kernel, not a reachability
+    region.
+
+[15] Abdelfattah, A.; Anzt, H.; Boman, E. G.; et al. (2020). A Survey of Numerical Methods Utilizing
+    Mixed Precision Arithmetic. arXiv preprint. https://arxiv.org/abs/2007.06674
+    Difference: a survey that catalogues mixed-precision methods by domain; it states no boundary,
+    which is the gap this paper answers.
+
+[16] Martínez, H.; Castelló, A.; Igual, F. D.; et al. (2025). The Cambrian Explosion of
+    Mixed-Precision Matrix Multiplication for Quantized Deep Learning Inference. arXiv preprint.
+    https://arxiv.org/abs/2506.11728
+    Difference: a survey of the mixed-precision format explosion for inference; it catalogues what
+    the formats are, we ask what they can admit.
+
+[17] Kahan, W. (1965). Pracniques: further remarks on reducing truncation errors. Communications of
+    the ACM. https://doi.org/10.1145/363707.363723
+    Difference: compensated summation, the classic lever for accumulation error; §4 measures that
+    lever's ceiling, which is the register rather than the technique.
+
+[18] Ogita, T.; Rump, S. M.; Oishi, S. (2005). Accurate Sum and Dot Product. SIAM Journal on
+    Scientific Computing. https://doi.org/10.1137/030601818
+    Difference: exactness by error-free transformation inside the working precision; a different
+    lever from limb splitting, and one our floor does not bound.
+
+[19] Demmel, J.; Hida, Y. (2004). Accurate and Efficient Floating Point Summation. SIAM Journal on
+    Scientific Computing. https://doi.org/10.1137/s1064827502407627
+    Difference: another accurate-summation algorithm family; its cost is per-operation where ours is
+    an accuracy floor.
+
+[20] Rump, S. M. (2009). Ultimately Fast Accurate Summation. SIAM Journal on Scientific Computing.
+    https://doi.org/10.1137/080738490
+    Difference: the fast side of accurate summation; the same lever, priced by throughput rather
+    than by reachable accuracy.
+
+[21] Connolly, M. P.; Higham, N. J.; Mary, T. (2021). Stochastic Rounding and Its Probabilistic
+    Backward Error Analysis. SIAM Journal on Scientific Computing.
+    https://doi.org/10.1137/20m1334796
+    Difference: backward error analysis for stochastic rounding; we use the stochastic-rounding
+    literature to fix the context of the error surface, not as the mechanism.
+
+[22] Hallman, E.; Ipsen, I. C. F. (2021). Deterministic and Probabilistic Error Bounds for Floating
+    Point Summation Algorithms. arXiv preprint. https://arxiv.org/abs/2107.01604
+    Difference: deterministic and probabilistic bounds across summation algorithms; the algorithm is
+    the variable whose effect §6 measures.
+
+[23] Sao, P.; Miniskar, N.; Valero-Lara, P.; et al. (2026). A Second-Moment Theory for
+    Floating-Point Reduction Trees. arXiv preprint. https://arxiv.org/abs/2607.18758
+    Difference: the closest prior to §10: a theory of reduction trees. It models the error of a
+    tree; we identify which tree a real library actually performs, by reproducing its per-case
+    error.
+
+[24] Carson, E.; Higham, N. J. (2017). A New Analysis of Iterative Refinement and Its Application to
+    Accurate Solution of Ill-Conditioned Sparse Linear Systems. SIAM Journal on Scientific
+    Computing. https://doi.org/10.1137/17m1122918
+    Difference: iterative refinement for ill-conditioned sparse systems, the reformulation route our
+    boundary marks the entry to.
+
+[25] Oktay, E.; Carson, E. (2022). Mixed Precision GMRES-based Iterative Refinement with Recycling.
+    arXiv preprint. https://arxiv.org/abs/2201.09827
+    Difference: adds recycling to GMRES-based refinement; a cost improvement on the reformulation
+    route we bound.
+
+[26] Carson, E.; Khan, N. (2022). Mixed Precision Iterative Refinement with Sparse Approximate
+    Inverse Preconditioning. arXiv preprint. https://arxiv.org/abs/2202.10204
+    Difference: sparse approximate inverse preconditioning in mixed precision; a preconditioner
+    choice, not a reachability limit.
+
+[27] Khan, N.; Carson, E. (2023). Mixed Precision Iterative Refinement with Adaptive Precision
+    Sparse Approximate Inverse Preconditioning. arXiv preprint. https://arxiv.org/abs/2307.03914
+    Difference: adaptive-precision SAI preconditioning; the precision is chosen adaptively per
+    problem, where we ask what the admissible set is.
+
+[28] Carson, E.; Oktay, E. (2024). Mixed Precision FGMRES-Based Iterative Refinement for Weighted
+    Least Squares. arXiv preprint. https://arxiv.org/abs/2401.03755
+    Difference: FGMRES-based refinement for weighted least squares; a kernel family on the
+    reformulation route.
+
+[29] Gao, B.; Ma, Y.; Shao, M. (2024). Mixed precision iterative refinement for least squares with
+    linear equality constraints and generalized least squares problems. arXiv preprint.
+    https://arxiv.org/abs/2406.16499
+    Difference: refinement for constrained and generalised least squares; the same route applied
+    further, and no boundary statement.
+
+[30] Nagy, J. G.; Onisk, L. (2024). Mixed precision iterative refinement for linear inverse
+    problems. arXiv preprint. https://arxiv.org/abs/2409.08335
+    Difference: refinement for linear inverse problems; a domain extension of the reformulation
+    route.
+
+[31] Ge, J.; Zhang, J. (2025). Three-precision iterative refinement with parameter regularization
+    and prediction for solving large sparse linear systems. arXiv preprint.
+    https://arxiv.org/abs/2501.04229
+    Difference: three-precision refinement with parameter prediction; its prediction is over the
+    iteration's parameters, ours over which targets are reachable.
+
+[32] Quinlan, J.; Omtzigt, E. T. L. (2024). Iterative Refinement with Low-Precision Posits. arXiv
+    preprint. https://arxiv.org/abs/2408.13400
+    Difference: refinement using low-precision posits; a format choice where our object is the
+    format's accuracy floor.
+
+[33] Scott, J.; Tůma, M. (2024). Avoiding breakdown in incomplete factorizations in low precision
+    arithmetic. arXiv preprint. https://arxiv.org/abs/2401.17957
+    Difference: avoiding breakdown in incomplete factorizations at low precision; a robustness
+    question for a factorization, not an accuracy budget.
+
+[34] Scott, J.; Tůma, M. (2024). Developing robust incomplete Cholesky factorizations in half
+    precision arithmetic. arXiv preprint. https://arxiv.org/abs/2403.13123
+    Difference: half-precision incomplete Cholesky; the same robustness question in one format.
+
+[35] Chen, Q.; Jiao, X. (2021). HIFIR: Hybrid Incomplete Factorization with Iterative Refinement for
+    Preconditioning Ill-conditioned and Singular Systems. arXiv preprint.
+    https://arxiv.org/abs/2106.09877
+    Difference: a hybrid incomplete factorization with refinement; a preconditioner construction,
+    evaluated against no accuracy floor.
+
+[36] Krasnopolsky, B.; Medvedev, A. (2021). XAMG: A library for solving linear systems with multiple
+    right-hand side vectors. arXiv preprint. https://arxiv.org/abs/2103.07329
+    Difference: a library for many-right-hand-side solves; an implementation, and no reachability
+    claim.
+
+[37] Zhang, Z.; Hong, R.; Chen, X.; et al. (2025). Hybrid-Precision Block-Jacobi Preconditioned
+    GMRES Solver for Linear System in Circuit Simulation. arXiv preprint.
+    https://arxiv.org/abs/2509.09139
+    Difference: a block-Jacobi GMRES solver for circuit simulation; a domain kernel with a precision
+    split chosen by the authors.
+
+[38] Suzuki, A. (2022). A Hybrid Factorization Algorithm for Sparse Matrix with Mixed Precision
+    Arithmetic. arXiv preprint. https://arxiv.org/abs/2208.01907
+    Difference: a hybrid factorization algorithm; a factorization structure, where our third axis is
+    the reduction structure.
+
+[39] Prolubnikov, A. V. (2024). Parameter optimization for restarted mixed precision iterative
+    sparse solver. arXiv preprint. https://arxiv.org/abs/2412.08059
+    Difference: parameter optimization for a restarted sparse solver; tuning a solver, not bounding
+    an accuracy.
+
+[40] Ge, J.; Vieublé, B.; Zhang, J. (2025). Mixed Precision General Alternating-Direction Implicit
+    Method for Solving Large Sparse Linear Systems. arXiv preprint. https://arxiv.org/abs/2512.21164
+    Difference: an ADI method across precisions; a solver family, not an admission threshold.
+
+[41] Carson, E.; Daužickaitė, I. (2024). Mixed precision sketching for least-squares problems and
+    its application in GMRES-based iterative refinement. arXiv preprint.
+    https://arxiv.org/abs/2410.06319
+    Difference: mixed-precision sketching for least squares, inside refinement; a technique on the
+    reformulation route.
+
+[42] Gao, W.; Ma, Y.; Shao, M. (2022). A mixed precision Jacobi SVD algorithm. arXiv preprint.
+    https://arxiv.org/abs/2209.04626
+    Difference: a mixed-precision Jacobi SVD; an eigenvalue-side kernel with its own error analysis.
+
+[43] Gao, B.; Kressner, D.; Shao, M. (2026). A mixed precision algorithm for the matrix square root.
+    arXiv preprint. https://arxiv.org/abs/2607.12430
+    Difference: a mixed-precision matrix square root; another kernel whose accuracy is analysed
+    rather than admitted or refused.
+
+[44] Dmytryshyn, A.; Fasi, M.; Higham, N. J.; et al. (2025). Mixed-precision algorithms for solving
+    the Sylvester matrix equation. arXiv preprint. https://arxiv.org/abs/2503.03456
+    Difference: Sylvester-equation algorithms across precisions; the matrix-equation side of the
+    same per-kernel practice.
+
+[45] Benner, P.; Liu, X. (2025). Mixed-precision iterative refinement for low-rank Lyapunov
+    equations. arXiv preprint. https://arxiv.org/abs/2510.02126
+    Difference: refinement for low-rank Lyapunov equations; a kernel where the low-rank structure,
+    not a limb count, carries the accuracy.
+
+[46] McCormick, S. F.; Benzaken, J.; Tamstorf, R. (2020). Algebraic error analysis for
+    mixed-precision multigrid solvers. arXiv preprint. https://arxiv.org/abs/2007.06614
+    Difference: algebraic error analysis for mixed-precision multigrid; a solver-level analysis, and
+    the exponent it fits is the kind our §5 shows is regime-dependent.
+
+[47] McCormick, S. F.; Tamstorf, R. (2023). Rounding-Error Analysis of Multigrid V-Cycles. arXiv
+    preprint. https://arxiv.org/abs/2307.00216
+    Difference: rounding-error analysis of a multigrid V-cycle; a fixed algorithm analysed exactly,
+    not a boundary.
+
+[48] Croci, M.; Wells, G. N. (2024). Mixed-precision finite element kernels and assembly: Rounding
+    error analysis and hardware acceleration. arXiv preprint. https://arxiv.org/abs/2410.12614
+    Difference: finite-element kernels with a rounding-error analysis; a kernel family whose
+    analysis is per-operation.
+
+[49] Habera, M.; Kühner, P. T.; Croci, M.; et al. (2026). Running error bounds in finite element
+    kernels. arXiv preprint. https://arxiv.org/abs/2609.37844
+    Difference: running error bounds for finite-element kernels; bounds computed alongside the run,
+    where our floor is a property of the format.
+
+[50] Kanamori, I.; Matsufuru, H.; Aoyama, T.; et al. (2026). Mixed precision solvers with
+    half-precision floating point numbers for Lattice QCD on A64FX processor. arXiv preprint.
+    https://arxiv.org/abs/2602.14450
+    Difference: half-precision solvers for Lattice QCD on one processor; a domain deployment.
+
+[51] Clark, M. A.; Babich, R.; Barros, K.; et al. (2009). Solving Lattice QCD systems of equations
+    using mixed precision solvers on GPUs. arXiv preprint. https://arxiv.org/abs/0911.3191
+    Difference: the GPU-era Lattice QCD mixed-precision solver; a domain deployment on the
+    reformulation route.
+
+[52] Habib, A.; Finkelstein, J.; Niklasson, A. M. N. (2024). Efficient Mixed-Precision Matrix
+    Factorization of the Inverse Overlap Matrix in Electronic Structure Calculations with
+    AI-Hardware and GPUs. arXiv preprint. https://arxiv.org/abs/2404.19163
+    Difference: mixed-precision matrix factorization in electronic structure; a domain kernel with
+    tensor-core hardware.
+
+[53] Finkelstein, J.; Smith, J. S.; Mniszewski, S. M.; et al. (2021). Quantum-based Molecular
+    Dynamics Simulations Using Tensor Cores. arXiv preprint. https://arxiv.org/abs/2107.02737
+    Difference: tensor cores used for quantum molecular dynamics; a hardware-acceleration study.
+
+[54] Finkelstein, J.; Rubensson, E. H.; Mniszewski, S. M.; et al. (2022). Quantum perturbation
+    theory using Tensor cores and a deep neural network. arXiv preprint.
+    https://arxiv.org/abs/2203.09621
+    Difference: tensor cores plus a network for quantum perturbation theory; the accuracy is
+    validated per kernel, not bounded.
+
+[55] Benoit, A. (2025). Speeding Up MACE: Low-Precision Tricks for Equivarient Force Fields. arXiv
+    preprint. https://arxiv.org/abs/2510.23621
+    Difference: low-precision tricks for an equivariant force field; a domain-specific lowering of
+    precision.
+
+[56] Kimpson, T.; Paxton, E. A.; Chantry, M.; et al. (2022). Climate Change Modelling at Reduced
+    Float Precision with Stochastic Rounding. arXiv preprint. https://arxiv.org/abs/2207.14598
+    Difference: climate modelling at reduced precision with stochastic rounding; a domain study
+    where our question is which precision is admissible.
+
+[57] Ford, E. B. (2008). Parallel Algorithm for Solving Kepler's Equation on Graphics Processing
+    Units: Application to Analysis of Doppler Exoplanet Searches. arXiv preprint.
+    https://arxiv.org/abs/0812.2976
+    Difference: a GPU Kepler solver; an early domain deployment at reduced precision.
+
+[58] Zeebe, R. E. (2023). orbitN: A symplectic integrator for planetary systems dominated by a
+    central mass -- Insight into long-term solar system chaos. arXiv preprint.
+    https://arxiv.org/abs/2306.03737
+    Difference: a symplectic integrator for planetary systems; integrates at a chosen precision
+    rather than asking which precisions admit the result.
+
+[59] Wang, N.; Choi, J.; Brand, D.; et al. (2018). Training Deep Neural Networks with 8-bit Floating
+    Point Numbers. arXiv preprint. https://arxiv.org/abs/1812.08011
+    Difference: 8-bit floating point for training; a format study for one workload family.
+
+[60] Kalamkar, D.; Mudigere, D.; Mellempudi, N.; et al. (2019). A Study of BFLOAT16 for Deep
+    Learning Training. arXiv preprint. https://arxiv.org/abs/1905.12322
+    Difference: a study of bfloat16 for training; the format our §8 shows redistributes error rather
+    than removing it, in an ML setting.
+
+[61] Mellempudi, N.; Srinivasan, S.; Das, D.; et al. (2019). Mixed Precision Training With 8-bit
+    Floating Point. arXiv preprint. https://arxiv.org/abs/1905.12334
+    Difference: 8-bit mixed-precision training; a format-and-loss study.
+
+[62] Zamirai, P.; Zhang, J.; Aberger, C. R.; et al. (2020). Revisiting BFloat16 Training. arXiv
+    preprint. https://arxiv.org/abs/2010.06192
+    Difference: revisits bfloat16 training; a training recipe, and no accuracy floor.
+
+[63] Yun, J.; Choi, S.; Rameau, F.; et al. (2023). Revisiting 16-bit Neural Network Training: A
+    Practical Approach for Resource-Limited Learning. arXiv preprint.
+    https://arxiv.org/abs/2305.10947
+    Difference: 16-bit training in a resource-limited setting; an application of the format choice.
+
+[64] Hu, R.; Luschi, C.; Balanca, P. (2025). Elucidating the Design Space of FP4 training. arXiv
+    preprint. https://arxiv.org/abs/2509.17791
+    Difference: the design space of fp4 training; a format study for the lowest precision in use.
+
+[65] Zhao, Q.; Chen, K.; Tian, C.; et al. (2026). Rethinking Shrinkage Bias in LLM FP4 Pretraining:
+    Geometric Origin, Systemic Impact, and UFP4 Recipe. arXiv preprint.
+    https://arxiv.org/abs/2606.20381
+    Difference: a bias analysis and recipe for fp4 pretraining; a training-side mechanism, where our
+    mechanism is in the reduction.
+
+[66] Rahimifar, M.; Darabi, A.; Jazi, M. T.; et al. (2026). Stable FP4 Training via
+    Transposition-Invariant Block Quantization. arXiv preprint. https://arxiv.org/abs/2607.24953
+    Difference: stabilising fp4 training by a quantisation choice; a scheme, not a boundary.
+
+[67] Panferov, A.; Schultheis, E.; Tabesh, S.; et al. (2026). Quartet II: Accurate LLM Pre-Training
+    in NVFP4 by Improved Unbiased Gradient Estimation. arXiv preprint.
+    https://arxiv.org/abs/2601.22813
+    Difference: unbiased gradient estimation in nvfp4; the accuracy question raised by the
+    gradient's bias, not by the format's floor.
+
+[68] Zhang, Y.; Zhen, H.; Yuan, M.; et al. (2025). MOSS: Efficient and Accurate FP8 LLM Training
+    with Microscaling and Automatic Scaling. arXiv preprint. https://arxiv.org/abs/2511.05811
+    Difference: fp8 training with microscaling; a scaling scheme for one format.
+
+[69] Anzt, H.; Cojean, T.; Flegar, G.; et al. (2022). Ginkgo: A Modern Linear Operator Algebra
+    Framework for High Performance Computing. ACM Transactions on Mathematical Software.
+    https://doi.org/10.1145/3480935
+    Difference: a linear-operator framework: the software layer where a precision decision is made,
+    and where an admission rule would be spent.
+
+[70] Mukunoki, D. (2025). DGEMM without FP64 Arithmetic - Using FP64 Emulation and FP8 Tensor Cores
+    with Ozaki Scheme. arXiv preprint. https://arxiv.org/abs/2508.00441
+    Difference: fp64 emulation on fp8 tensor cores through integer limbs; an implementation of the
+    same lever whose floor we measure.
+
+[71] Kouya, T. (2021). Acceleration of multiple precision matrix multiplication based on
+    multi-component floating-point arithmetic using AVX2. arXiv preprint.
+    https://arxiv.org/abs/2101.06584
+    Difference: multi-component multiple-precision matrix multiplication on AVX2; a vectorised
+    implementation of the same limb idea.
+
+[72] Lu, D.; Maeder, A.; Luisier, M.; et al. (2026). EmuGEMM: Fused Tensor Core Kernels for
+    Precision Emulation in Matrix Multiplication. arXiv preprint. https://arxiv.org/abs/2606.25453
+    Difference: fused kernels for precision emulation; the kernel-engineering side of emulation.
+
+[73] Schwarz, A.; Anders, A.; Brower, C.; et al. (2025). Guaranteed DGEMM Accuracy While Using
+    Reduced Precision Tensor Cores Through Extensions of the Ozaki Scheme. arXiv preprint.
+    https://arxiv.org/abs/2511.13778
+    Difference: guaranteed DGEMM accuracy by extending the Ozaki scheme; a guarantee constructed per
+    implementation, where we report the limit any such construction meets.
+
+[74] Abdelfattah, A.; Dongarra, J.; Fasi, M.; et al. (2025). Analysis of Floating-Point Matrix
+    Multiplication Computed via Integer Arithmetic. arXiv preprint. https://arxiv.org/abs/2506.11277
+    Difference: analysis of matmul computed via integer arithmetic; an analysis of the same
+    emulation family, without an admission threshold.
+
+[75] Ledoux, L.; Casas, M. (2024). An Open-Source Framework for Efficient Numerically-Tailored
+    Computations. arXiv preprint. https://arxiv.org/abs/2406.02579
+    Difference: a framework for numerically tailored computations; the tooling layer that would
+    consume an admission rule.
+
+[76] Kouya, T. (2026). Performance evaluation of branch-free fused multiply-add algorithms for
+    multi-component-type multiple-precision floating-point arithmetic. arXiv preprint.
+    https://arxiv.org/abs/2607.11391
+    Difference: branch-free fused multiply-add for multi-component arithmetic; a throughput study of
+    the limb primitives.
+
+[77] Fasi, M.; Higham, N. J.; Mikaitis, M.; et al. (2021). Numerical behavior of NVIDIA tensor
+    cores. DOI: 10.7717/peerj-cs.330. https://doi.org/10.7717/peerj-cs.330
+    Difference: the numerical behaviour of NVIDIA tensor cores, measured; the hardware whose
+    reduction our §10 identifies on a CPU library.
+
+[78] Khattak, F. A.; Mikaitis, M. (2025). Accurate Models of NVIDIA Tensor Cores. arXiv preprint.
+    https://arxiv.org/abs/2512.07004
+    Difference: accurate models of NVIDIA tensor cores; a model of one accelerator's arithmetic,
+    where our model is of the reduction structure.
+
+[79] Xie, P.; Xu, S.; Wang, Y.; et al. (2025). Bit-Accurate Modeling of GPU Matrix
+    Multiply-Accumulate Units: Demystifying Numerical Discrepancy and Accuracy. arXiv preprint.
+    https://arxiv.org/abs/2511.10909
+    Difference: bit-accurate modelling of GPU multiply-accumulate units; unit-level modelling at the
+    same resolution as §10 but for accelerators.
+
+[80] Sun, W.; Li, A.; Geng, T.; et al. (2022). Dissecting Tensor Cores via Microbenchmarks: Latency,
+    Throughput and Numeric Behaviors. arXiv preprint. https://arxiv.org/abs/2206.02874
+    Difference: microbenchmarks dissecting tensor cores; throughput and numeric behaviour measured
+    separately from our admission question.
+
+[81] Markidis, S.; Chien, S. W. D.; Laure, E.; et al. (2018). NVIDIA Tensor Core Programmability,
+    Performance & Precision. arXiv preprint. https://arxiv.org/abs/1803.04014
+    Difference: an early tensor-core programmability and precision study; the hardware lineage our
+    format choices come from.
+
+[82] Yang, Z.; Riasanovsky, N. J.; Deng, W.; et al. (2026). Taming Bitwise Behavior in GPU Kernels
+    with Tensor Core: Black-Box Reconstruction, Compiler Enforcement, and Static Verification. arXiv
+    preprint. https://arxiv.org/abs/2609.11356
+    Difference: bitwise behaviour of GPU tensor-core kernels, reconstructed and enforced; the
+    bitwise determinism side of reduction structure.
+
+[83] Li, X.; Li, A.; Fang, B.; et al. (2024). FTTN: Feature-Targeted Testing for Numerical
+    Properties of NVIDIA & AMD Matrix Accelerators. arXiv preprint. https://arxiv.org/abs/2403.00232
+    Difference: feature-targeted testing of matrix accelerators' numerical properties; a testing
+    lens over the same structures.
+
+[84] Van Zee, F. G.; Parikh, D. N.; van de Geijn, R. A. (2019). Supporting mixed-datatype matrix
+    multiplication within the BLIS framework. arXiv preprint. https://arxiv.org/abs/1901.06015
+    Difference: mixed-datatype matmul inside BLIS; the library-level mechanics of the per-kernel
+    precision practice we bound.
+
+[85] Ootomo, H.; Ozaki, K.; Yokota, R. (2023). DGEMM on Integer Matrix Multiplication Unit. arXiv
+    preprint. https://arxiv.org/abs/2306.11975
+    Difference: DGEMM on an integer matrix multiplication unit; emulation through integer hardware,
+    the same exact-integer ground truth we use.
+
+[86] Hermes, D. (2018). Compensated de Casteljau algorithm in $K$ times the working precision. arXiv
+    preprint. https://arxiv.org/abs/1808.10387
+    Difference: compensated de Casteljau in extended precision; a geometric kernel analysed per
+    algorithm.
+
+[87] Kouya, T. (2013). Practical Implementation of High-Order Multiple Precision Fully Implicit
+    Runge-Kutta Methods with Step Size Control Using Embedded Formula. arXiv preprint.
+    https://arxiv.org/abs/1306.2392
+    Difference: high-order multiple-precision Runge-Kutta with step control; precision raised to a
+    chosen order, without a reachability statement.
+
+[88] Carson, E.; Chen, X. (2026). Precision autotuning for linear solvers via contextual
+    bandit-based RL. arXiv preprint. https://arxiv.org/abs/2601.00728
+    Difference: learns the precision choice for linear solvers with a contextual bandit; our §7
+    compares a one-constant closed form against exactly this kind of selector.
+
+[89] Chen, X. (2025). Mixed-Precision Conjugate Gradient Solvers with RL-Driven Precision Tuning.
+    arXiv preprint. https://arxiv.org/abs/2504.14268
+    Difference: RL-driven precision tuning for conjugate gradients; a per-family selector, where we
+    ask whether a closed form matches it.
+
+[90] Thanasis, I.; Carson, E. (2026). Error Analysis and Precision Selection for Mixed-Precision
+    DEIM-CUR Decompositions. arXiv preprint. https://arxiv.org/abs/2609.24509
+    Difference: error analysis and precision selection for one decomposition; a single kernel, so it
+    cannot state which accuracies are reachable in general.
+
+[91] Badash, E.; Boneh, D.; Komargodski, I.; et al. (2026). Hawkeye: Reproducing GPU-Level
+    Non-Determinism. arXiv preprint. https://arxiv.org/abs/2603.20421
+    Difference: reproduces GPU-level non-determinism; the reproducibility consequence of a reduction
+    whose order is not fixed, which is the axis §6 measures.
+
+[92] Iakymchuk, R.; Barreda, M.; Graillat, S.; et al. (2020). Reproducibility of Parallel
+    Preconditioned Conjugate Gradient in Hybrid Programming Environments. arXiv preprint.
+    https://arxiv.org/abs/2005.07282
+    Difference: reproducibility of a parallel preconditioned CG; the same concern at the solver
+    level.
+
+[93] Arar, E. E.; Sohier, D.; de Oliveira Castro, P.; et al. (2022). The Positive Effects of
+    Stochastic Rounding in Numerical Algorithms. arXiv preprint. https://arxiv.org/abs/2207.03837
+    Difference: positive effects of stochastic rounding in numerical algorithms; a rounding-mode
+    study, orthogonal to the limb/register budget.
+
+[94] Croci, M.; Giles, M. B. (2020). Effects of round-to-nearest and stochastic rounding in the
+    numerical solution of the heat equation in low precision. arXiv preprint.
+    https://arxiv.org/abs/2010.16225
+    Difference: round-to-nearest against stochastic rounding in a low-precision PDE solve; a
+    rounding-mode comparison at fixed format.
+
+[95] Xia, L.; Massei, S.; Hochstenbach, M. E.; et al. (2022). On the influence of stochastic
+    roundoff errors and their bias on the convergence of the gradient descent method with
+    low-precision floating-point computation. arXiv preprint. https://arxiv.org/abs/2202.12276
+    Difference: stochastic roundoff bias in low-precision gradient descent; a training-side
+    mechanism.
+
+[96] Drineas, P.; Ipsen, I. C. F. (2024). Stochastic Rounding 2.0, with a View towards Complexity
+    Analysis. arXiv preprint. https://arxiv.org/abs/2410.10517
+    Difference: stochastic rounding with a complexity view; the cost axis of a rounding mode rather
+    than of a format.
+
+[97] Arar, E. E.; Fasi, M.; Filip, S.; et al. (2026). What is New in Stochastic Rounding: a Survey
+    on Theory, Hardware, and Applications. arXiv preprint. https://arxiv.org/abs/2603.06060
+    Difference: a survey of stochastic rounding across theory, hardware and applications; the
+    rounding-mode literature, not the precision budget.
+
+[98] Xia, L.; Anthonissen, M.; Hochstenbach, M.; et al. (2020). Improved stochastic rounding. arXiv
+    preprint. https://arxiv.org/abs/2006.00489
+    Difference: an improved stochastic rounding scheme; a rounding mode.
+
+[99] Fitzgibbon, A.; Felix, S. (2025). On Stochastic Rounding with Few Random Bits. arXiv preprint.
+    https://arxiv.org/abs/2504.20634
+    Difference: stochastic rounding with few random bits; a hardware-realistic variant of the
+    rounding mode.
+
+[100] Arar, E. E.; Fasi, M.; Filip, S.; et al. (2024). Probabilistic error analysis of
+    limited-precision stochastic rounding. arXiv preprint. https://arxiv.org/abs/2408.03069
+    Difference: probabilistic error analysis of limited-precision stochastic rounding; the analysis
+    of a mode at a fixed precision.
+
+[101] Arar, E. E.; Sohier, D.; de Oliveira Castro, P.; et al. (2022). Stochastic rounding variance
+    and probabilistic bounds: A new approach. arXiv preprint. https://arxiv.org/abs/2207.10321
+    Difference: stochastic rounding variance and bounds; the same mode's statistics.
+
+[102] de Oliveira Castro, P.; Arar, E. E.; Petit, E.; et al. (2024). Error Analysis of Sum-Product
+    Algorithms under Stochastic Rounding. arXiv preprint. https://arxiv.org/abs/2411.13601
+    Difference: error analysis of sum-product algorithms under stochastic rounding; the summation
+    error under a mode, where our summation error is under round-to-nearest and limb splitting.
+
+[103] Ben Ali, S.; Filip, S.; Sentieys, O. (2024). A Stochastic Rounding-Enabled Low-Precision
+    Floating-Point MAC for DNN Training. arXiv preprint. https://arxiv.org/abs/2404.14010
+    Difference: a stochastic-rounding MAC unit for training; the hardware side of the mode.
+
+[104] Croci, M.; Fasi, M.; Higham, N. J.; et al. (2022). Stochastic rounding: implementation, error
+    analysis and applications. DOI: 10.1098/rsos.211631. https://doi.org/10.1098/rsos.211631
+    Difference: a survey of stochastic rounding's implementation and analysis; the mode surveyed,
+    where the format is the variable here.
+
+[105] Davis, T. A.; Hu, Y. (2011). The university of Florida sparse matrix collection. ACM
+    Transactions on Mathematical Software. https://doi.org/10.1145/2049662.2049663
+    Difference: the matrix collection our pinned corpus is drawn from; the source of the
+    conditioning spread §5 measures, and it makes no accuracy claim.
+
+[106] Haidar, A.; Tomov, S.; Dongarra, J.; et al. (2018). Harnessing GPU Tensor Cores for Fast FP16
+    Arithmetic to Speed up Mixed-Precision Iterative Refinement Solvers. SC18: International
+    Conference for High Performance Computing, Networking, Storage and Analysis.
+    https://doi.org/10.1109/sc.2018.00050
+    Difference: fp16 tensor cores used to accelerate mixed-precision refinement; a
+    hardware-accelerated reformulation, on the route our boundary admits.
+
+[107] Agullo, E.; Anzt, H.; Bauer, D.; et al. (2026). Mixed-Precision Computing for Scientific
+    Discovery: Formats, Co-Design, and Responsible Approximation. arXiv preprint.
+    https://arxiv.org/abs/2609.37137
+    Difference: the survey that names "energy per trusted solution" as the field's objective while
+    leaving the admission question open; this paper answers the half of it that is not
+    hardware-bound.

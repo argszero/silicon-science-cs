@@ -775,25 +775,38 @@ Expected output: each instrument runs its own self-test and then the measurement
 reference list are regenerated, and the run ends with
 
 ```
-REPRODUCE: ALL GREEN (17 steps, 0 failures)
+REPRODUCE: ALL GREEN (21 steps, 0 failures)
 ```
 
 Tolerance: **exact**. Every instrument asserts that its output file is byte-identical to the committed
 one, so a deviation is a failure rather than a drift; `SHA256SUMS.reproduce` carries the 12 result
-artefacts, the 5 figures, the built manuscript and the 2 citation documents, and the script checks all
-20 digests. `manuscript.md` is a PRODUCT of `manuscript_source.md` and `build_refs.py` -- the source
-carries the citations as keys, so the reference list and the >100-cited bar are rebuilt and asserted on
-every run rather than trusted. The synthetic instruments need only the Python standard library; the
+artefacts, the 5 figures, the built manuscript, the two reference layers, the cached author reads and the
+citation report, and the script checks all 22 digests. The synthetic instruments need only the Python standard library; the
 external-validation arm (§9-§10) needs `numpy` (measured with 2.0.2 under `/usr/bin/python3` 3.9.6) and
 the script selects its interpreter by the modules the recompute path actually imports, printing the
 versions it used. The corpus is committed and re-hashed on every read, so a cache that has silently
-become a different dataset fails the same run. Three further steps are checks rather than
-reconstructions, and they are the ones that read what a reader reads: `check_numbers.py` re-derives the
-manuscript's headline numbers from the artefacts and matches them against the sentences that state
-them; `check_figures.py` asserts that every figure exists at the path the manuscript links, is
-embedded, is cited in the prose and names its source artefact; and `refscan126.py --report` rebuilds the
-citation-authenticity report and asserts that its numbering is the manuscript's numbering. Each carries
-a plant for every certificate, because a certificate that cannot fail is decoration.
+become a different dataset fails the same run.
+
+**The manuscript is a product, and the reference section is a second product of the same source.**
+`manuscript_source.md` carries citations as KEYS; `build_refs.py` numbers them in first-appearance
+order, writes the body, and emits `references.json` -- the record layer, one entry per cited work with
+its resolvable link and a one-line stated difference; `refs_build_display.py` folds each record's author
+field to the house form `Family, I.` and emits the display layer, with a certificate that the printed
+family is a contiguous suffix of the record's own name tokens and that no initial comes from a name it
+is not attached to; and `refs_render.py` (vendored from this journal's accepted copy, its claim core's
+digest asserted at every run) owns the `## References` section. Three writers, three objects: the body
+is compared with the section by `check_references.py`, because a single script that wrote both would
+agree with itself whatever it wrote.
+
+Four steps are **readers** rather than reconstructions, and they read the object a reader gets:
+`check_numbers.py` re-derives 27 headline numbers from the artefacts and matches them against the
+sentences that state them; `check_figures.py` asserts that every figure exists at the path the
+manuscript links, is embedded, is cited in the prose and names its source artefact;
+`check_references.py` reads the rendered section for its numbering, its block form, its per-entry
+`Difference:` clause, its resolvable URL, body coverage in both directions and its agreement with the
+record layer; and `refscan126.py --report` rebuilds the citation-authenticity report and asserts that
+its numbering is the manuscript's. Every script in the run carries a plant for each of its
+certificates, because a certificate that cannot fail is a decoration.
 
 ---
 
@@ -812,5 +825,3 @@ which explanations of *why* are not.
 ---
 
 ## References
-
-<!--REFERENCE-LIST-->

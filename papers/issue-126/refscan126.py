@@ -23,6 +23,8 @@ Usage: python3 refscan126.py              (discover: write refs_raw.json)
        python3 refscan126.py --report     (write reference-check.md from the verified pool)
        python3 refscan126.py --selftest   (plants + the vendoring certificate)
 """
+import ast
+import hashlib
 import io
 import json
 import os
@@ -510,6 +512,23 @@ DECLARED_REPAIRS = {
 }
 ORIGIN = os.path.join(HERE, "..", "..", "issue-124", "research", "refscan124.py")
 
+# The frozen core's digest, recorded when this copy was vendored.  The origin file lives in ANOTHER
+# package (issue #124's `research/`, which is git-ignored and reaches this tree only on that issue's
+# branch), so in the submitted tree the origin half of the certificate reports NOT RUN -- and a
+# certificate that NOT RUNs everywhere enforces nothing.  This digest is the half that does not need
+# the origin: it fires on any local edit to the claim core, in this tree, at this coordinate.
+CORE_SHA = "57ccbadea71dde64617250d8edb8cf8628181e93008ad5ba3955df15b6e40269"
+
+
+def core_sha(copy=None):
+    """sha256 of the claim core's own source, ast-extracted (so a line-shift cannot fake it)."""
+    src = io.open(copy or os.path.abspath(__file__), encoding="utf-8").read()
+    segs = []
+    for n in ast.parse(src).body:
+        if isinstance(n, ast.FunctionDef) and n.name in CLAIM_CORE:
+            segs.append(ast.get_source_segment(src, n))
+    return hashlib.sha256("\n".join(segs).encode("utf-8")).hexdigest()
+
 
 def _fn_source(path, name):
     """The SOURCE TEXT of one function, via ast -- so the comparison is of the code as parsed, not of
@@ -535,6 +554,16 @@ def _core_diff(origin, copy, names=None):
         elif a.strip() != b.strip():
             diffs.append("%s: DIFFERS" % name)
     return diffs
+
+
+def frozen_core_certificate(copy=None):
+    """The half of the vendoring claim that is checkable in THIS tree: the core is the digest recorded
+    when it was vendored.  A plant (a one-character edit inside a core function) fires it."""
+    got = core_sha(copy)
+    if got != CORE_SHA:
+        raise AssertionError("NOT PRESENT: the claim core's digest is %s, recorded %s"
+                             % (got[:16], CORE_SHA[:16]))
+    return "OK: claim core digest %s" % got[:16]
 
 
 def vendoring_certificate(verbose=True, copy=None):
@@ -608,13 +637,17 @@ def selftest():
             holds("dangling-cited-key-fails", False)
         except AssertionError:
             holds("dangling-cited-key-fails", True)
-        refs_path2 = os.path.join(HERE, "references.md")
-        if os.path.exists(refs_path2):
-            rl = read_lines(refs_path2)
-            holds("numbering-matches-reference-list", numbering_matches(rows, rl))
-            swapped = list(rl)
+        ms_path2 = os.path.join(HERE, "manuscript.md")
+        if os.path.exists(ms_path2):
+            ms2 = io.open(ms_path2, encoding="utf-8").read()
+            sec2 = ms2[ms2.rindex("\n## References"):].replace("\n    ", " ")
+            bl = entry_blocks(sec2)
+            holds("numbering-matches-manuscript", numbering_matches(rows, bl))
+            swapped = list(bl)
             swapped[0], swapped[1] = swapped[1], swapped[0]
             holds("numbering-plant-fires", not numbering_matches(rows, swapped))
+        else:
+            print("[%-30s] SKIPPED (no manuscript.md)" % "numbering-matches-manuscript")
         # the plant must be able to PASS: a genuine citation resolves and produces one row
         holds("real-citation-resolves", len(cited_rows(pool, "see [@arxiv:%s]." % an_arxiv)[0]) == 1)
     else:
@@ -623,6 +656,8 @@ def selftest():
     # edited must be caught.  Without this the certificate is decoration -- and the first run of the
     # real one DID fire, on an edit of mine to `verify()`, which is how it was shown to work.
     import tempfile
+    # the frozen core's digest: the half of the vendoring claim that does not need the origin tree
+    holds("frozen-core-digest", frozen_core_certificate().startswith("OK"))
     src = io.open(os.path.abspath(__file__), encoding="utf-8").read()
     mutated = src.replace("def norm(s):\n", "def norm(s):\n    s = s  # planted edit\n", 1)
     assert mutated != src, "the plant did not change the source"
@@ -649,6 +684,15 @@ def selftest():
         except AssertionError as e:
             holds("reverted-repair-detected", "NOT PRESENT" in str(e))
         os.unlink(tmp2)
+        with tempfile.NamedTemporaryFile("w", suffix=".py", delete=False, encoding="utf-8") as fh:
+            fh.write(src.replace("def norm(s):\n", "def norm(s):\n    s = s  # planted\n", 1))
+            tmp3 = fh.name
+        try:
+            frozen_core_certificate(tmp3)
+            holds("frozen-core-plant-fires", False)
+        except AssertionError as e:
+            holds("frozen-core-plant-fires", "NOT PRESENT" in str(e))
+        os.unlink(tmp3)
     else:
         print("[%-30s] SKIPPED (no origin tree)" % "vendoring-certificate")
     os.unlink(tmp)
@@ -690,17 +734,37 @@ def read_lines(path):
     return [l for l in io.open(path, encoding="utf-8").read().split("\n") if l.strip()]
 
 
-def numbering_matches(rows, ref_lines):
-    """Do the report's rows carry the same papers under the same numbers as the reference list?
+def entry_blocks(sec):
+    """The rendered `## References` section split into ENTRIES as a renderer groups them: a blank line
+    starts a new block, and the lines inside one block are one entry (the house style wraps an entry
+    over several lines, so a per-LINE read finds the URL on a different line from the number)."""
+    out, cur = [], []
+    for line in sec.split("\n"):
+        if not line.strip():
+            if cur:
+                out.append("\n".join(cur))
+                cur = []
+            continue
+        cur.append(line)
+    if cur:
+        out.append("\n".join(cur))
+    return [b for b in out if re.match(r"^\[\d+\] ", b)]
 
-    The report numbers a citation by its first appearance in the draft and the reference list numbers
-    it the same way -- in different code, on the same input.  The comparison is on the LINK, which is
-    the one field both artefacts carry, so a re-ordering (an inserted entry, an edited table) shows up
-    as a disagreement rather than as a pair of documents that each look internally consistent."""
-    if len(ref_lines) != len(rows):
+
+def numbering_matches(rows, blocks):
+    """Do the report's rows carry the same papers under the same numbers as the MANUSCRIPT?
+
+    The report numbers a citation by its first appearance in the source and the renderer numbers the
+    section from the same order -- in different code, on the same input.  The comparison is on the
+    resolvable URL, which is the one field both artefacts carry, so a re-ordering (an inserted entry,
+    an edited list) shows up as a disagreement rather than as a pair of documents that each look
+    internally consistent."""
+    if len(blocks) != len(rows):
         return False
-    for rl, rw in zip(ref_lines, rows):
-        if rl.rsplit(" ", 1)[-1].strip() != rw.split("|")[6].strip():
+    url = re.compile(r"https://(?:doi\.org|arxiv\.org/abs)/\S+")
+    for blk, rw in zip(blocks, rows):
+        a, b = url.search(blk), url.search(rw)
+        if not a or not b or a.group(0) != b.group(0):
             return False
     return True
 
@@ -747,12 +811,23 @@ def report():
     # different code paths (cited_rows here, build_refs.py there), so assert the two ORDERINGS are the
     # same object-level sequence -- a report whose numbers point at a different paper than the
     # manuscript's numbers is worse than no report (Class 124(a): a key derived from order re-points).
-    refs_path = os.path.join(HERE, "references.md")
-    if os.path.exists(refs_path):
-        ref_lines = read_lines(refs_path)
-        assert numbering_matches(rows, ref_lines), (
-            "the report's [n] and the reference list's [n] disagree -- the two orderings are different "
-            "objects (%d report rows, %d list entries)" % (len(rows), len(ref_lines)))
+    # The numbering this report prints must be the MANUSCRIPT's numbering.  The carrier read is the
+    # rendered `## References` section of `manuscript.md` -- the object a reader gets -- and not the
+    # source that produced it: a report built from the source would agree with the source whatever the
+    # product says (Class 123: source-side checks are not product-side checks).
+    ms_path = os.path.join(HERE, "manuscript.md")
+    assert os.path.exists(ms_path), (
+        "the numbering cannot be checked: manuscript.md is not present, so this report would state "
+        "numbers that nothing has compared against the product")
+    ms = io.open(ms_path, encoding="utf-8").read()
+    sec = ms[ms.rindex("\n## References"):]
+    # unwrap the house style's hanging indent first, so each entry is one line and the blank line
+    # between entries is what `entry_blocks` groups on
+    merged = sec.replace("\n    ", " ")
+    blocks = entry_blocks(merged)
+    assert numbering_matches(rows, blocks), (
+        "the report's [n] and the manuscript's [n] disagree -- the two orderings are different "
+        "objects (%d report rows, %d manuscript entries)" % (len(rows), len(blocks)))
     n_arxiv = sum(1 for r in rows if "| arxiv |" in r)
     log_path = os.path.join(HERE, "verify_log.txt")
     if os.path.exists(log_path):
