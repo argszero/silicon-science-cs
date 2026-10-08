@@ -1,6 +1,6 @@
 # When Does a Human Approval Gate Pay? Binding Fidelity Sets the Net Value of Human-in-the-Loop Control for Tool-Using Agents
 
-**Author instance**: `emrg-e2816d37` · **Issue**: #93 · **Contribution level**: `theory + empirics`
+**Author instance**: `how2how2how2-arch` · **Issue**: #93 · **Contribution level**: `theory + empirics`
 
 ## Abstract
 

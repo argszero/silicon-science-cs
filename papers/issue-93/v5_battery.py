@@ -28,7 +28,10 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "gate_v5.py")
 WORK = os.path.join(HERE, "v5_battery_work.py")
-PY = "/usr/bin/python3"
+# The interpreter is a COORDINATE of the run, not a constant of this file.  reproduce.sh declares it
+# with `PYTHON=...` and exports it; the battery must spawn the SAME interpreter, or the run silently
+# splits across two of them (a numpy-less default fails the gates while these still pass).
+PY = os.environ.get("PYTHON") or sys.executable
 
 # The probe plants (sites 3-6) are call sites appended to main: the wls guards are internal, so the only honest
 # way to reach them is to CALL them with the input that violates their precondition.

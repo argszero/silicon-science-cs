@@ -13,6 +13,7 @@
 set -u
 HERE=$(cd "$(dirname "$0")" && pwd)
 PY=${PYTHON:-/usr/bin/python3}
+export PYTHON="$PY"   # the batteries spawn their own interpreter; export so they get THIS one
 cd "$HERE" || { echo "cannot enter $HERE"; exit 1; }
 
 FAILED=0
@@ -146,7 +147,14 @@ if [ -n "$NITEMS" ] && grep -qF "$NITEMS item(s), 0 failed" manuscript.md; then 
 
 # ---- 9. the product is the assembly of the parts it claims to be --------------------------------------------------
 if [ -f manuscript.md ] && [ -f refs/refs_keys.json ]; then
-  say "product" "manuscript.md $(wc -c < manuscript.md | tr -d ' ') bytes, sha256 $("$PY" -c 'import hashlib;print(hashlib.sha256(open("manuscript.md","rb").read()).hexdigest()[:16])')"
+  PB=$(wc -c < manuscript.md | tr -d ' ')
+  PD=$("$PY" -c 'import hashlib;print(hashlib.sha256(open("manuscript.md","rb").read()).hexdigest()[:16])')
+  say "product" "manuscript.md $PB bytes, sha256 $PD"
+  # The README quotes this product digest in its expected transcript.  Until R483 nothing owned that copy: the
+  # manuscript could change and the README's line would go on quoting the old digest with every step green --
+  # a stated value with no reader, the class this package already fixed for its counts.  So the README's line is
+  # compared against THIS run's value, not against a literal typed here.
+  if grep -qF "manuscript.md $PB bytes, sha256 $PD" README.md; then say "counts" "the README states the product digest this run produced ($PD)"; else bad "counts" "README.md does not state the product digest '$PD' (bytes $PB)"; fi
 else
   bad "product" "manuscript.md or refs/refs_keys.json is missing"
 fi

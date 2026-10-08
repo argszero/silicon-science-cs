@@ -21,7 +21,10 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "gate_v3.py")
 WORK = os.path.join(HERE, "v3_battery_work.py")
-PY = "/usr/bin/python3"
+# The interpreter is a COORDINATE of the run, not a constant of this file.  reproduce.sh declares it
+# with `PYTHON=...` and exports it; the battery must spawn the SAME interpreter, or the run silently
+# splits across two of them (a numpy-less default fails the gates while these still pass).
+PY = os.environ.get("PYTHON") or sys.executable
 
 R_COVER = ("raise RuntimeError(\"the drawn intervals' coverage rate is not consistent with the nominal 95%%: %s\"")
 R_EXACT = ('raise RuntimeError("the no-gate route is not exact on some reading: %s" % degenerate[:2])')

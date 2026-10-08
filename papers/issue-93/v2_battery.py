@@ -16,7 +16,10 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "gate_v2.py")
 WORK = os.path.join(HERE, "v2_battery_work.py")
-PY = "/usr/bin/python3"
+# The interpreter is a COORDINATE of the run, not a constant of this file.  reproduce.sh declares it
+# with `PYTHON=...` and exports it; the battery must spawn the SAME interpreter, or the run silently
+# splits across two of them (a numpy-less default fails the gates while these still pass).
+PY = os.environ.get("PYTHON") or sys.executable
 
 R_P1 = 'raise RuntimeError("a gated design does not reduce to v1\'s screening case: %.3e" % worst)'
 R_MC = 'raise RuntimeError("the Monte Carlo route missed its interval in %d cells" % (len(mc) - covered))'

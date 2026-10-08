@@ -19,9 +19,14 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = "/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-93/research/gate_v0.py"
+# The source is the PACKAGED one.  `research/` is git-ignored, so it is absent from every export of
+# this branch; an absolute path into the author's working tree resolves only on the machine that wrote it.
+SRC = os.path.join(HERE, "gate_v0.py")
 WORK = os.path.join(HERE, "v0_battery_work.py")
-PY = "/usr/bin/python3"
+# The interpreter is a COORDINATE of the run, not a constant of this file.  reproduce.sh declares it
+# with `PYTHON=...` and exports it; the battery must spawn the SAME interpreter, or the run silently
+# splits across two of them (a numpy-less default fails the gates while these still pass).
+PY = os.environ.get("PYTHON") or sys.executable
 
 # --- the masking raises, used as carve-outs (each occurs exactly once) -------------------------------------
 R_AB = 'raise RuntimeError("routes A and B disagree beyond floating point: %.3e" % worst)'

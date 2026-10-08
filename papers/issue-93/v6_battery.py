@@ -32,7 +32,10 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "gate_v6.py")
 WORK = os.path.join(HERE, "v6_battery_work.py")
-PY = "/usr/bin/python3"
+# The interpreter is a COORDINATE of the run, not a constant of this file.  reproduce.sh declares it
+# with `PYTHON=...` and exports it; the battery must spawn the SAME interpreter, or the run silently
+# splits across two of them (a numpy-less default fails the gates while these still pass).
+PY = os.environ.get("PYTHON") or sys.executable
 
 # Anchors (exact source text), kept as names so a case names what it edits.
 A_T_LIMB = "        pr = params_at_R(R0, cb=tv * C_FIXED)"

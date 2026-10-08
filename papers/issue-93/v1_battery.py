@@ -20,7 +20,10 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "gate_v1.py")
 WORK = os.path.join(HERE, "v1_battery_work.py")
-PY = "/usr/bin/python3"
+# The interpreter is a COORDINATE of the run, not a constant of this file.  reproduce.sh declares it
+# with `PYTHON=...` and exports it; the battery must spawn the SAME interpreter, or the run silently
+# splits across two of them (a numpy-less default fails the gates while these still pass).
+PY = os.environ.get("PYTHON") or sys.executable
 
 R_CONT = 'raise RuntimeError("v1 does not reduce to v0 at b = 1: %.3e" % worst_cont)'
 R_CURV = ('raise RuntimeError("the value is NOT affine in coverage: %d cells show curvature, e.g. %s"\n'

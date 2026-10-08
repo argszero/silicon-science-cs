@@ -37,7 +37,8 @@ figures        CURRENT -- fig1_sign_law_and_cost_ratio.png is byte-identical to 
 links          LINK CHECK: PASS -- 1 link(s), 1 local, 0 broken | BATTERY: 4 of 4 case(s) fired
 bar            SUBMISSION CHECK: PASS -- 18 item(s), 0 failed, 2 declared | BATTERY: 8 of 8 case(s) fired
 counts         the manuscript states the bar's own item count (18 item(s), 0 failed)
-product        manuscript.md 130624 bytes, sha256 2ba9d6a68c90db31
+product        manuscript.md 130628 bytes, sha256 9872c7243e9e9c5c
+counts         the README states the product digest this run produced (9872c7243e9e9c5c)
 
 REPRODUCE: ALL GREEN
 ```
@@ -48,6 +49,10 @@ unreadable input, a missing artefact or a raised guard stops the step with `FAIL
 
 ## Tolerance, and the build
 
+* **Tree form: the package alone.** `reproduce.sh` and every file it runs are self-contained in `papers/issue-93/` —
+  the command needs **no working tree** and **no `research/`** (which is git-ignored and absent from any export of
+  the branch). Every source a check reads is resolved relative to the package, never by an absolute path.
+
 * **Tolerance: byte-identity.** The seven instrument reports (`gate_v*_results.json`) are deterministic — the model
   is enumerated, not sampled for the quantities the paper reports — and the run *measures* this by hashing them,
   running the instruments a second time and comparing. Any change is a failure.
@@ -56,7 +61,10 @@ unreadable input, a missing artefact or a raised guard stops the step with `FAIL
   claims rest on are compared exactly.
 * **Build.** Read on Python 3.9.6 with NumPy 2.0.2 (macOS). `gate_v0`, `gate_v1`, `gate_v2`, `gate_v3` and
   `gate_v5` import NumPy (the Monte-Carlo route and the interval); the rest are pure Python. Override the
-  interpreter with `PYTHON=/path/to/python3 bash reproduce.sh`. Full digests (sha256) of the reports on this
+  interpreter with `PYTHON=/path/to/python3 bash reproduce.sh`; the script **exports** that choice, so the
+  mutation batteries spawn the SAME interpreter rather than a hardcoded one (a battery that ignores `PYTHON`
+  silently splits the run across two interpreters: a numpy-less default fails the gates while the batteries
+  still pass). Full digests (sha256) of the reports on this
   build:
 
   | report | sha256 |
