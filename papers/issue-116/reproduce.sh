@@ -76,6 +76,15 @@ for p in frontier_R100 exponent_by_config regime_map channels; do
     ok "figures/$p.png byte-identical to the regenerated figure"
   else bad "figures/$p.png differs from the regenerated figure"; fi
 done
+# The journal's figure item has TWO conditions and the object of BOTH is the manuscript:
+# the file is committed AND the manuscript embeds it, with a caption. The loop above reads
+# the first; until this round NOTHING read the second -- this package passed while the
+# manuscript showed no figure at all, which is exactly how a text-only paper is published.
+for p in frontier_R100 exponent_by_config regime_map channels; do
+  if grep -q "](figures/$p.png)" manuscript.md; then
+    ok "manuscript.md embeds figures/$p.png"
+  else bad "manuscript.md does not embed figures/$p.png"; fi
+done
 
 step "4. the committed manuscript is what the pipeline builds"
 if "$PY" refs/refs_build.py render-check; then :; else bad "manuscript render mismatch"; fi

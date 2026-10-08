@@ -157,7 +157,9 @@ This yields a three-regime structure read directly off the objective:
 - **interior** in the middle — the FOC governs;
 - **ceiling-pinned** at high price — feasibility, not price, binds.
 
-Figure 3 (`regime_map.png`) draws every cell of the `(τ, λ_c)` plane under this classification for all four plants.
+![Figure 1. The optimal horizon for the well-damped plant at six inference latencies. Each curve is flat where its real-time floor binds, rises where the price is the binding constraint, and flattens again at its feasibility ceiling; the floor and ceiling of every curve are marked at its right end. The feasible window closes entirely at the latency wall, where the floor and the ceiling meet.](figures/frontier_R100.png)
+
+Figure 2 draws every cell of the `(τ, λ_c)` plane under this classification for all four plants.
 
 ---
 
@@ -166,6 +168,8 @@ Figure 3 (`regime_map.png`) draws every cell of the `(τ, λ_c)` plane under thi
 ### 5.1 The regime map (registered criterion iii — **MET**)
 
 Four plants × 7 latencies × 22 prices over seven decades, every cell classified: **28 `(plant, τ)` rows**, each flat at the floor, flat at the ceiling, and rising in between. The window and the wall are confirmed per plant. One row is degenerate and is recorded as such: near-margin `τ = 3` is floor-pinned at **every** price (13 cells, 0 interior), because `d_max = 6` makes the floor and the ceiling coincide. Rows with `τ > d_max/2` are recorded `infeasible` (e.g. `τ = 4, 6, 8` on the near-margin plant).
+
+![Figure 2. The regime map: every cell of the latency-by-price plane, four plants x seven latencies x 22 prices over seven decades, classified floor-pinned (blue), interior (white), ceiling-pinned (orange) or infeasible (light grey). Every row is flat at the floor, rising in between and flat at the ceiling, and the region past the latency wall is unreachable. ](figures/regime_map.png)
 
 ### 5.2 The exponent: the registered law is refuted, and so is its replacement
 
@@ -181,7 +185,9 @@ Log-log slope over interior points only, with the regression standard error:
 | 95 % interval **entirely below** 0.500 | **14 of 19** |
 | 95 % interval containing 0.500 | **1 of 19** |
 
-Examples: scalar-stable `τ=0` `+0.437 [0.354, 0.519]`; `τ=1` `+0.556 [0.535, 0.577]`; `τ=3` `+0.624 [0.583, 0.664]`; near-margin `τ=0` `+0.208 [0.162, 0.255]`; `R=10 τ=0` `+0.246 [0.210, 0.282]`; `R=100 τ=0` `+0.263 [0.220, 0.305]`. Figure 2 draws all 19 with intervals against the 0.500 line.
+Examples: scalar-stable `τ=0` `+0.437 [0.354, 0.519]`; `τ=1` `+0.556 [0.535, 0.577]`; `τ=3` `+0.624 [0.583, 0.664]`; near-margin `τ=0` `+0.208 [0.162, 0.255]`; `R=10 τ=0` `+0.246 [0.210, 0.282]`; `R=100 τ=0` `+0.263 [0.220, 0.305]`. Figure 3 draws all 19 with intervals against the 0.500 line.
+
+![Figure 3. The measured exponent of L* in the inference price, all 19 fits, each with its 95% regression interval, against the registered 0.500 line (dashed). 14 of 19 intervals lie entirely below the line and one contains it, and the exponent moves both with the plant and, within a plant, with the latency.](figures/exponent_by_config.png)
 
 Two facts follow beyond the band failure. The exponent is **plant-dependent** — a near-margin plant at `0.208` and a well-damped plant at `0.263` are not the same law — and, not anticipated at registration, it is **latency-dependent within a plant**: scalar-stable moves `0.437 → 0.635` as `τ` goes `0 → 4` on the same price grid.
 
@@ -206,7 +212,7 @@ A power law would be **constant**. It is not. Consequently `1/(1+p)` moves *with
 
 ### 5.3 The FOC as an instrument for the heuristics
 
-Because the FOC is exact, it evaluates the literature's remedies: a fixed-horizon choice is optimal only over the price interval where the FOC's solution equals that horizon, and the pinning structure says when the horizon is *not* the decision variable at all — below the floor's price, latency does not enter `L*`; above the ceiling's price, the price does not. Figure 1 draws `L*(λ_c)` per latency with the per-curve floors and ceilings; Figure 3 draws the classification.
+Because the FOC is exact, it evaluates the literature's remedies: a fixed-horizon choice is optimal only over the price interval where the FOC's solution equals that horizon, and the pinning structure says when the horizon is *not* the decision variable at all — below the floor's price, latency does not enter `L*`; above the ceiling's price, the price does not. Figure 1 draws `L*(λ_c)` per latency with the per-curve floors and ceilings; Figure 2 draws the classification.
 
 ### 5.4 The two channels act on different quantities
 
@@ -235,7 +241,9 @@ against a **linear-arm control null** of `0.000–0.080` (registering §5.4's me
 
 **The registered P3 is a tautology on the linear arm.** For a zero-mean disturbance the stationary covariance solves `P = Ā P Āᵀ + W̄`, so the cost is a functional of `W̄` alone and the disturbance's *shape* cannot enter. Two processes matched in per-step second moment therefore give identical costs to **`4.3e-16`**, and the linearity control is exact (`c(2W̄)/c(W̄) = 2.000000000000`, `0.500000000000`) while a deliberate near-miss (`1.9W̄`) correctly fails at `5.00e-2`. P3 as registered — impulses `∝ λ·A²` vs dense noise flat in the rate — **cannot be tested on the linear arm**; it is re-sited to the saturating arm, where the measured separation is the shape channel above.
 
-**One instrument defect is recorded because a check found it.** A first version computed the mean term as the Lyapunov solution with `W̄ = m mᵀ`, i.e. the covariance of an iid ±m signal rather than the deterministic mean response; it drops the cross terms and gave `0.329` instead of `25.001`, putting the Monte-Carlo `953 σ` from its own prediction. The wrong route is kept in the artifact as a **control that must keep disagreeing** (relative distance `0.79`).
+**One instrument defect is recorded because a check found it.** A first version computed the mean term as the Lyapunov solution with `W̄ = m mᵀ`, i.e. the covariance of an iid ±m signal rather than the deterministic mean response; it drops the cross terms and gave `0.329` instead of `25.001`, putting the Monte-Carlo `953 σ` from its own prediction. The wrong route is kept in the artifact as a **control that must keep disagreeing** (relative distance `0.79`). Figure 4 shows both channels side by side: the mean term flat in the delay while the centred covariance is not, and the shape ratio rising with it.
+
+![Figure 4. The two disturbance channels, at delay 3. Left: the mean channel's term is flat in the delay while the centred covariance rises, so a mean raises the cost level by a constant and cannot move the argmin. Right: the shape channel's sparse-over-gaussian cost ratio rises with the delay at matched second moment -- the same second moment, different higher moments, and the cost separates further as staleness grows.](figures/channels.png)
 
 ---
 
@@ -275,270 +283,270 @@ The execution horizon of a chunked policy is not a task-specific constant. It is
 
 ## References
 
-[1] Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware. DOI 10.15607/rss.2023.xix.016, 2023. https://doi.org/10.15607/rss.2023.xix.016 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[1] Zhao, T.; Kumar, V.; Levine, S.; et al. (2023). Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware. DOI 10.15607/rss.2023.xix.016. https://doi.org/10.15607/rss.2023.xix.016 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[2] Control Frequency Adaptation via Action Persistence in Batch Reinforcement Learning. arXiv:2002.06836, 2020-02-17. https://arxiv.org/abs/2002.06836 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[2] Metelli, A. M.; Mazzolini, F.; Bisi, L.; et al. (2020). Control Frequency Adaptation via Action Persistence in Batch Reinforcement Learning. arXiv:2002.06836. https://arxiv.org/abs/2002.06836 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[3] Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems. arXiv:2403.09504, 2024-03-14. https://arxiv.org/abs/2403.09504 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[3] Römer, R.; Brunke, L.; Zhou, S.; et al. (2024). Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems. arXiv:2403.09504. https://arxiv.org/abs/2403.09504 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[4] Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling. arXiv:2408.17355, 2024-08-30. https://arxiv.org/abs/2408.17355 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[4] Liu, Y.; Hamid, J. I.; Xie, A.; et al. (2024). Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling. arXiv:2408.17355. https://arxiv.org/abs/2408.17355 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[5] Proleptic Temporal Ensemble for Improving the Speed of Robot Tasks Generated by Imitation Learning. arXiv:2410.16981, 2024-10-22. https://arxiv.org/abs/2410.16981 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[5] Park, H.; Lim, D.; Kim, S.; et al. (2024). Proleptic Temporal Ensemble for Improving the Speed of Robot Tasks Generated by Imitation Learning. arXiv:2410.16981. https://arxiv.org/abs/2410.16981 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[6] Reinforcement Learning with Action Chunking. arXiv:2507.07969, 2025-07-10. https://arxiv.org/abs/2507.07969 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[6] Li, Q.; Zhou, Z.; Levine, S. (2025). Reinforcement Learning with Action Chunking. arXiv:2507.07969. https://arxiv.org/abs/2507.07969 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[7] Temporal Action Selection for Action Chunking. arXiv:2511.04421, 2025-11-06. https://arxiv.org/abs/2511.04421 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[7] Weng, Y.; Zhang, X.; Mu, Y.; et al. (2025). Temporal Action Selection for Action Chunking. arXiv:2511.04421. https://arxiv.org/abs/2511.04421 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[8] Training-Time Action Conditioning for Efficient Real-Time Chunking. arXiv:2512.05964, 2025-12-05. https://arxiv.org/abs/2512.05964 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[8] Black, K.; Ren, A. Z.; Equi, M.; et al. (2025). Training-Time Action Conditioning for Efficient Real-Time Chunking. arXiv:2512.05964. https://arxiv.org/abs/2512.05964 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[9] SEAR: Sample Efficient Action Chunking Reinforcement Learning. arXiv:2603.01891, 2026-03-02. https://arxiv.org/abs/2603.01891 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[9] Nagy, C. F. M.; Celik, O.; Gospodinov, E.; et al. (2026). SEAR: Sample Efficient Action Chunking Reinforcement Learning. arXiv:2603.01891. https://arxiv.org/abs/2603.01891 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[10] Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model. arXiv:2603.18091, 2026-03-18. https://arxiv.org/abs/2603.18091 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[10] Zhao, C.; Wang, Z.; Li, H.; et al. (2026). Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model. arXiv:2603.18091. https://arxiv.org/abs/2603.18091 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[11] Open-Loop Planning, Closed-Loop Verification: Speculative Verification for VLA. arXiv:2604.02965, 2026-04-03. https://arxiv.org/abs/2604.02965 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[11] Wang, Z.; Lin, Z.; Li, R.; et al. (2026). Open-Loop Planning, Closed-Loop Verification: Speculative Verification for VLA. arXiv:2604.02965. https://arxiv.org/abs/2604.02965 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[12] HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning. arXiv:2604.06067, 2026-04-07. https://arxiv.org/abs/2604.06067 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[12] Zhang, J.; Han, Z.; Wang, J.; et al. (2026). HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning. arXiv:2604.06067. https://arxiv.org/abs/2604.06067 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[13] DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors. arXiv:2604.25050, 2026-04-27. https://arxiv.org/abs/2604.25050 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[13] Wang, P.; Hong, K.; Peng, C.; et al. (2026). DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors. arXiv:2604.25050. https://arxiv.org/abs/2604.25050 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[14] FocalPolicy: Frequency-Optimized Chunking and Locally Anchored Flow Matching for Coherent Visuomotor Policy. arXiv:2605.15944, 2026-05-15. https://arxiv.org/abs/2605.15944 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[14] He, Q.; Yang, Z.; Liang, W.; et al. (2026). FocalPolicy: Frequency-Optimized Chunking and Locally Anchored Flow Matching for Coherent Visuomotor Policy. arXiv:2605.15944. https://arxiv.org/abs/2605.15944 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[15] Implicit Action Chunking for Smooth Continuous Control. arXiv:2605.19592, 2026-05-19. https://arxiv.org/abs/2605.19592 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[15] Liang, B.; Pei, S.; Chen, Z.; et al. (2026). Implicit Action Chunking for Smooth Continuous Control. arXiv:2605.19592. https://arxiv.org/abs/2605.19592 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[16] Action-Prior Denoising for Smooth Real-Time Chunking. arXiv:2605.25537, 2026-05-25. https://arxiv.org/abs/2605.25537 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[16] Liu, D.; Zheng, Z.; Sun, Y.; et al. (2026). Action-Prior Denoising for Smooth Real-Time Chunking. arXiv:2605.25537. https://arxiv.org/abs/2605.25537 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[17] PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking. arXiv:2606.00537, 2026-05-30. https://arxiv.org/abs/2606.00537 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[17] Nie, J.; Li, J.; Liu, C.; et al. (2026). PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking. arXiv:2606.00537. https://arxiv.org/abs/2606.00537 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[18] PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models. arXiv:2606.22540, 2026-06-21. https://arxiv.org/abs/2606.22540 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[18] Wang, X.; Chen, F.; Zhang, W.; et al. (2026). PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models. arXiv:2606.22540. https://arxiv.org/abs/2606.22540 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[19] ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning. arXiv:2607.12992, 2026-07-14. https://arxiv.org/abs/2607.12992 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[19] Yang, Z.; Shi, Y.; Yao, M.; et al. (2026). ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning. arXiv:2607.12992. https://arxiv.org/abs/2607.12992 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[20] DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation. arXiv:2608.00793, 2026-08-01. https://arxiv.org/abs/2608.00793 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[20] Lou, Y.; Gao, H.; Zhu, X.; et al. (2026). DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation. arXiv:2608.00793. https://arxiv.org/abs/2608.00793 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[21] Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?. arXiv:2608.02547, 2026-08-03. https://arxiv.org/abs/2608.02547 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[21] Lazzati, F.; Stachowicz, K.; Chen, W.; et al. (2026). Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?. arXiv:2608.02547. https://arxiv.org/abs/2608.02547 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[22] Revisiting Open-Loop Execution in Robotics: Toward Reactive, Higher-Performing Policies. arXiv:2608.15938, 2026-08-16. https://arxiv.org/abs/2608.15938 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[22] Zeng, M.; Agarwal, A.; Bati, A.; et al. (2026). Revisiting Open-Loop Execution in Robotics: Toward Reactive, Higher-Performing Policies. arXiv:2608.15938. https://arxiv.org/abs/2608.15938 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[23] MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO?. arXiv:2609.03715, 2026-09-03. https://arxiv.org/abs/2609.03715 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[23] Sendai, K.; Matsushima, T.; Iwasawa, Y. (2026). MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO?. arXiv:2609.03715. https://arxiv.org/abs/2609.03715 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[24] ULOHA: An Underwater Bimanual Robot System for Robot Learning. arXiv:2609.19200, 2026-09-16. https://arxiv.org/abs/2609.19200 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[24] Kobayashi, M.; Tsunoori, T. (2026). ULOHA: An Underwater Bimanual Robot System for Robot Learning. arXiv:2609.19200. https://arxiv.org/abs/2609.19200 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[25] Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies. arXiv:2609.27167, 2026-09-22. https://arxiv.org/abs/2609.27167 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[25] Jiang, Y. (2026). Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies. arXiv:2609.27167. https://arxiv.org/abs/2609.27167 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[26] Action Chunking Proximal Policy Optimization with Feedback Correction. arXiv:2609.36250, 2026-09-28. https://arxiv.org/abs/2609.36250 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[26] Hahn, S.; Choi, J. (2026). Action Chunking Proximal Policy Optimization with Feedback Correction. arXiv:2609.36250. https://arxiv.org/abs/2609.36250 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[27] Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks. arXiv:2609.36471, 2026-09-29. https://arxiv.org/abs/2609.36471 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[27] Sun, G.; Chen, C.; Wang, J.; et al. (2026). Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks. arXiv:2609.36471. https://arxiv.org/abs/2609.36471 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[28] Reactive Real-Time Flow Policies via Asynchronous Distribution Alignment. arXiv:2609.36540, 2026-09-29. https://arxiv.org/abs/2609.36540 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[28] Zoellner, M.; O'Mahoney, R.; Havoutis, I.; et al. (2026). Reactive Real-Time Flow Policies via Asynchronous Distribution Alignment. arXiv:2609.36540. https://arxiv.org/abs/2609.36540 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[29] Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control. arXiv:2609.37772, 2026-09-29. https://arxiv.org/abs/2609.37772 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[29] Wang, Z.; Han, H.; Ren, P.; et al. (2026). Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control. arXiv:2609.37772. https://arxiv.org/abs/2609.37772 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[30] SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations. arXiv:2609.39873, 2026-09-30. https://arxiv.org/abs/2609.39873 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
+[30] Guo, J.; Han, X.; Li, Q.; et al. (2026). SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations. arXiv:2609.39873. https://arxiv.org/abs/2609.39873 - Difference from this work: fixes, schedules or improves the execution horizon rather than deriving its boundary.
 
-[31] LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception. arXiv:2605.00884, 2026-04-27. https://arxiv.org/abs/2605.00884 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[31] williams, J.; Gupta, K. D.; George, R.; et al. (2026). LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception. arXiv:2605.00884. https://arxiv.org/abs/2605.00884 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[32] R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies. arXiv:2606.17040, 2026-06-15. https://arxiv.org/abs/2606.17040 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[32] Xu, X.; Sun, H.; Ma, A.; et al. (2026). R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies. arXiv:2606.17040. https://arxiv.org/abs/2606.17040 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[33] EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots. arXiv:2607.02646, 2026-07-02. https://arxiv.org/abs/2607.02646 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[33] Yang, H.; Yi, Y.; Wang, L.; et al. (2026). EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots. arXiv:2607.02646. https://arxiv.org/abs/2607.02646 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[34] Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference. arXiv:2607.12287, 2026-07-14. https://arxiv.org/abs/2607.12287 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[34] Wu, Y.; Zheng, Y.; Niu, M.; et al. (2026). Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference. arXiv:2607.12287. https://arxiv.org/abs/2607.12287 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[35] FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving. arXiv:2608.12932, 2026-08-13. https://arxiv.org/abs/2608.12932 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[35] Li, Z.; Liang, Y.; Zhang, H.; et al. (2026). FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving. arXiv:2608.12932. https://arxiv.org/abs/2608.12932 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[36] FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence. arXiv:2609.17210, 2026-09-15. https://arxiv.org/abs/2609.17210 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[36] Li, Y.; Mao, W.; Lan, Z.; et al. (2026). FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence. arXiv:2609.17210. https://arxiv.org/abs/2609.17210 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[37] PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments. arXiv:2609.18732, 2026-09-16. https://arxiv.org/abs/2609.18732 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[37] Ma, Y.; Zeng, Z.; Peng, C.; et al. (2026). PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments. arXiv:2609.18732. https://arxiv.org/abs/2609.18732 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[38] Text-Vision Synergistic Token Caching: A Training-Free Framework for Efficient Vision-Language-Action Inference. arXiv:2609.34319, 2026-09-28. https://arxiv.org/abs/2609.34319 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[38] Li, Q.; Zhang, C.; Chen, J.; et al. (2026). Text-Vision Synergistic Token Caching: A Training-Free Framework for Efficient Vision-Language-Action Inference. arXiv:2609.34319. https://arxiv.org/abs/2609.34319 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[39] Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference. arXiv:2609.36967, 2026-09-29. https://arxiv.org/abs/2609.36967 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
+[39] Chen, J.; Gao, S.; Jia, J.; et al. (2026). Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference. arXiv:2609.36967. https://arxiv.org/abs/2609.36967 - Difference from this work: lowers the per-query price; we decide how much inference to buy at that price.
 
-[40] Pontryagin maximum principle for optimal sampled-data control problems. arXiv:1512.04797, 2015-12-15. https://arxiv.org/abs/1512.04797 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[40] Bourdin, L.; Trélat, E. (2015). Pontryagin maximum principle for optimal sampled-data control problems. arXiv:1512.04797. https://arxiv.org/abs/1512.04797 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[41] Linear-quadratic optimal sampled-data control problems: convergence result and Riccati theory. arXiv:1604.06350, 2016-04-21. https://arxiv.org/abs/1604.06350 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[41] Bourdin, L.; Trélat, E. (2016). Linear-quadratic optimal sampled-data control problems: convergence result and Riccati theory. arXiv:1604.06350. https://arxiv.org/abs/1604.06350 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[42] Lower bounds on the maximum delay margin by analytic interpolation. arXiv:1803.09487, 2018-03-26. https://arxiv.org/abs/1803.09487 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[42] Ringh, A.; Karlsson, J.; Lindquist, A. (2018). Lower bounds on the maximum delay margin by analytic interpolation. arXiv:1803.09487. https://arxiv.org/abs/1803.09487 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[43] Note on the exact delay stability margin computation of hybrid dynamical systems. arXiv:1811.07534, 2018-11-19. https://arxiv.org/abs/1811.07534 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[43] Bellet, V.; Poussot-Vassal, C.; Pagetti, C.; et al. (2018). Note on the exact delay stability margin computation of hybrid dynamical systems. arXiv:1811.07534. https://arxiv.org/abs/1811.07534 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[44] Optimal Stabilization Control for Discrete-time Markov Jump Linear System with Control Input Delay. arXiv:1902.06235, 2019-02-17. https://arxiv.org/abs/1902.06235 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[44] Han, C.; Li, H.; Zhang, H. (2019). Optimal Stabilization Control for Discrete-time Markov Jump Linear System with Control Input Delay. arXiv:1902.06235. https://arxiv.org/abs/1902.06235 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[45] Robust Decidability of Sampled-Data Control of Nonlinear Systems with Temporal Logic Specifications. arXiv:1903.06368, 2019-03-15. https://arxiv.org/abs/1903.06368 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[45] Liu, J. (2019). Robust Decidability of Sampled-Data Control of Nonlinear Systems with Temporal Logic Specifications. arXiv:1903.06368. https://arxiv.org/abs/1903.06368 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[46] Tracking Performance Limitations of MIMO Networked Control Systems with Multiple Communication Constraints. arXiv:1904.12660, 2019-04-25. https://arxiv.org/abs/1904.12660 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[46] Chen, C. Y.; Gui, W.; Wu, L.; et al. (2019). Tracking Performance Limitations of MIMO Networked Control Systems with Multiple Communication Constraints. arXiv:1904.12660. https://arxiv.org/abs/1904.12660 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[47] Sampled-Data Control of the Stefan System. arXiv:1906.01434, 2019-05-31. https://arxiv.org/abs/1906.01434 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[47] Koga, S.; Karafyllis, I.; Krstic, M. (2019). Sampled-Data Control of the Stefan System. arXiv:1906.01434. https://arxiv.org/abs/1906.01434 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[48] An analytic interpolation approach to stability margins with emphasis on time delay. arXiv:1912.08734, 2019-12-18. https://arxiv.org/abs/1912.08734 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[48] Ringh, A.; Karlsson, J.; Lindquist, A. (2019). An analytic interpolation approach to stability margins with emphasis on time delay. arXiv:1912.08734. https://arxiv.org/abs/1912.08734 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[49] On the Stability Margin and Input Delay Margin of Linear Multi-agent systems. arXiv:2004.08332, 2020-04-17. https://arxiv.org/abs/2004.08332 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[49] Bhusal, R.; Subbarao, K. (2020). On the Stability Margin and Input Delay Margin of Linear Multi-agent systems. arXiv:2004.08332. https://arxiv.org/abs/2004.08332 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[50] A scheduling algorithm for networked control systems. arXiv:2101.00649, 2021-01-03. https://arxiv.org/abs/2101.00649 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[50] Kundu, A. (2021). A scheduling algorithm for networked control systems. arXiv:2101.00649. https://arxiv.org/abs/2101.00649 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[51] Optimal Sampled-Data Control of a Nonlinear System. arXiv:2112.14507, 2021-12-29. https://arxiv.org/abs/2112.14507 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[51] Oishi, Y.; Sakamoto, N. (2021). Optimal Sampled-Data Control of a Nonlinear System. arXiv:2112.14507. https://arxiv.org/abs/2112.14507 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[52] Criteria for stabilizing a multi-delay stochastic system with multiplicative control-dependent noises. arXiv:2303.08428, 2023-03-15. https://arxiv.org/abs/2303.08428 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[52] Tan, C.; Zhang, Z.; Sui, H.; et al. (2023). Criteria for stabilizing a multi-delay stochastic system with multiplicative control-dependent noises. arXiv:2303.08428. https://arxiv.org/abs/2303.08428 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[53] Nonlinear Cooperative Output Regulation with Input Delay Compensation. arXiv:2409.05113, 2024-09-08. https://arxiv.org/abs/2409.05113 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
+[53] Zheng, S.; Ahn, C. K.; Jiang, X.; et al. (2024). Nonlinear Cooperative Output Regulation with Input Delay Compensation. arXiv:2409.05113. https://arxiv.org/abs/2409.05113 - Difference from this work: treats delay as a stability constraint on a fixed controller; here delay is the age of the observation under a priced query.
 
-[54] Scheduling Periodic Real-Time Tasks with Heterogeneous Reward Requirements. arXiv:1007.0683, 2010-06-21. https://arxiv.org/abs/1007.0683 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[54] Hou, I. H.; Kumar, P. R. (2010). Scheduling Periodic Real-Time Tasks with Heterogeneous Reward Requirements. arXiv:1007.0683. https://arxiv.org/abs/1007.0683 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[55] An Anytime Algorithm for Decision Making under Uncertainty. arXiv:1301.7384, 2013-01-30. https://arxiv.org/abs/1301.7384 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[55] Horsch, M. C.; Poole, D. L. (2013). An Anytime Algorithm for Decision Making under Uncertainty. arXiv:1301.7384. https://arxiv.org/abs/1301.7384 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[56] Adaptive Fixed Priority End-To-End Imprecise Scheduling In Distributed Real Time Systems. arXiv:1306.0448, 2013-06-03. https://arxiv.org/abs/1306.0448 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[56] El-Haweet, W.; Elgedawy, I.; El-Salam, I. A. (2013). Adaptive Fixed Priority End-To-End Imprecise Scheduling In Distributed Real Time Systems. arXiv:1306.0448. https://arxiv.org/abs/1306.0448 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[57] On The Age Of Information In Status Update Systems With Packet Management. arXiv:1506.08637, 2015-06-29. https://arxiv.org/abs/1506.08637 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[57] Costa, M.; Codreanu, M.; Ephremides, A. (2015). On The Age Of Information In Status Update Systems With Packet Management. arXiv:1506.08637. https://arxiv.org/abs/1506.08637 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[58] Age and Value of Information: Non-linear Age Case. arXiv:1701.06927, 2017-01-24. https://arxiv.org/abs/1701.06927 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[58] Kosta, A.; Pappas, N.; Ephremides, A.; et al. (2017). Age and Value of Information: Non-linear Age Case. arXiv:1701.06927. https://arxiv.org/abs/1701.06927 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[59] Stochastic Control with Stale Information--Part I: Fully Observable Systems. arXiv:1810.10983, 2018-10-25. https://arxiv.org/abs/1810.10983 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[59] Soleymani, T.; Baras, J. S.; Johansson, K. H. (2018). Stochastic Control with Stale Information--Part I: Fully Observable Systems. arXiv:1810.10983. https://arxiv.org/abs/1810.10983 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[60] Energy-Aware Scheduling of Task Graphs with Imprecise Computations and End-to-End Deadlines. arXiv:1905.04391, 2019-05-10. https://arxiv.org/abs/1905.04391 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[60] Esmaili, A.; Nazemi, M.; Pedram, M. (2019). Energy-Aware Scheduling of Task Graphs with Imprecise Computations and End-to-End Deadlines. arXiv:1905.04391. https://arxiv.org/abs/1905.04391 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[61] Scheduling Real-time Deep Learning Services as Imprecise Computations. arXiv:2011.01112, 2020-11-02. https://arxiv.org/abs/2011.01112 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[61] Yao, S.; Hao, Y.; Zhao, Y.; et al. (2020). Scheduling Real-time Deep Learning Services as Imprecise Computations. arXiv:2011.01112. https://arxiv.org/abs/2011.01112 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[62] Effective anytime algorithm for multiobjective combinatorial optimization problems. arXiv:2403.08807, 2024-02-06. https://arxiv.org/abs/2403.08807 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[62] Domínguez-Ríos, M. Á.; Chicano, F.; Alba, E. (2024). Effective anytime algorithm for multiobjective combinatorial optimization problems. arXiv:2403.08807. https://arxiv.org/abs/2403.08807 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[63] PerLLM: Personalized Inference Scheduling with Edge-Cloud Collaboration for Diverse LLM Services. arXiv:2405.14636, 2024-05-23. https://arxiv.org/abs/2405.14636 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[63] Yang, Z.; Yang, Y.; Zhao, C.; et al. (2024). PerLLM: Personalized Inference Scheduling with Edge-Cloud Collaboration for Diverse LLM Services. arXiv:2405.14636. https://arxiv.org/abs/2405.14636 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[64] Robust Data-Driven Receding Horizon Control. arXiv:2510.06153, 2025-10-07. https://arxiv.org/abs/2510.06153 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[64] Zheng, J.; Kiani, S.; Sznaier, M.; et al. (2025). Robust Data-Driven Receding Horizon Control. arXiv:2510.06153. https://arxiv.org/abs/2510.06153 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[65] ML Inference Scheduling with Predictable Latency. arXiv:2512.18725, 2025-12-21. https://arxiv.org/abs/2512.18725 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[65] Zhao, H.; Georgantas, N. (2025). ML Inference Scheduling with Predictable Latency. arXiv:2512.18725. https://arxiv.org/abs/2512.18725 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[66] Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling. arXiv:2603.06403, 2026-03-06. https://arxiv.org/abs/2603.06403 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[66] Zhang, X.; Xu, Y.; Zhu, Y.; et al. (2026). Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling. arXiv:2603.06403. https://arxiv.org/abs/2603.06403 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[67] Pareto-Optimal Anytime Algorithms via Bayesian Racing. arXiv:2603.08493, 2026-03-09. https://arxiv.org/abs/2603.08493 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
+[67] Wurth, J.; Stegherr, H.; Kemper, N.; et al. (2026). Pareto-Optimal Anytime Algorithms via Bayesian Racing. arXiv:2603.08493. https://arxiv.org/abs/2603.08493 - Difference from this work: prices observation freshness or computation time exogenously; here the staleness is produced by the decision variable itself.
 
-[68] On the Stability of Receding Horizon Control for Continuous-Time Stochastic Systems. arXiv:1208.3830, 2012-08-19. https://arxiv.org/abs/1208.3830 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[68] Wei, F.; Lecchini-Visintini, A. (2012). On the Stability of Receding Horizon Control for Continuous-Time Stochastic Systems. arXiv:1208.3830. https://arxiv.org/abs/1208.3830 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[69] Linear Receding Horizon Control with Probabilistic System Parameters. arXiv:1402.4568, 2014-02-19. https://arxiv.org/abs/1402.4568 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[69] Bhattacharya, R.; Fisher, J. (2014). Linear Receding Horizon Control with Probabilistic System Parameters. arXiv:1402.4568. https://arxiv.org/abs/1402.4568 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[70] Reinforcement Learning of the Prediction Horizon in Model Predictive Control. arXiv:2102.11122, 2021-02-22. https://arxiv.org/abs/2102.11122 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[70] Bøhn, E.; Gros, S.; Moe, S.; et al. (2021). Reinforcement Learning of the Prediction Horizon in Model Predictive Control. arXiv:2102.11122. https://arxiv.org/abs/2102.11122 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[71] Model Predictive Control with Models of Different Granularity and a Non-uniformly Spaced Prediction Horizon. arXiv:2108.08014, 2021-08-18. https://arxiv.org/abs/2108.08014 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[71] Brüdigam, T.; Prader, D.; Wollherr, D.; et al. (2021). Model Predictive Control with Models of Different Granularity and a Non-uniformly Spaced Prediction Horizon. arXiv:2108.08014. https://arxiv.org/abs/2108.08014 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[72] Receding Horizon Inverse Reinforcement Learning. arXiv:2206.04477, 2022-06-09. https://arxiv.org/abs/2206.04477 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[72] Xu, Y.; Gao, W.; Hsu, D. (2022). Receding Horizon Inverse Reinforcement Learning. arXiv:2206.04477. https://arxiv.org/abs/2206.04477 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[73] Stability-Oriented Prediction Horizons Design of Generalized Predictive Control for DC/DC Boost Converter. arXiv:2404.16391, 2024-04-25. https://arxiv.org/abs/2404.16391 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[73] Li, Y.; Sahoo, S.; Vazquez, S.; et al. (2024). Stability-Oriented Prediction Horizons Design of Generalized Predictive Control for DC/DC Boost Converter. arXiv:2404.16391. https://arxiv.org/abs/2404.16391 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[74] Prediction horizon shapes representations in predictive learning. arXiv:2511.09290, 2025-11-12. https://arxiv.org/abs/2511.09290 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[74] Ratzon, A.; Barak, O. (2025). Prediction horizon shapes representations in predictive learning. arXiv:2511.09290. https://arxiv.org/abs/2511.09290 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[75] D3DWA: Adaptive Weight and Prediction-Horizon for Dynamic Window Approach via Dueling Double Deep Q-Network. arXiv:2609.22276, 2026-09-11. https://arxiv.org/abs/2609.22276 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
+[75] Jooyandeh, Z.; Kobayashi, M.; Uranishi, Y. (2026). D3DWA: Adaptive Weight and Prediction-Horizon for Dynamic Window Approach via Dueling Double Deep Q-Network. arXiv:2609.22276. https://arxiv.org/abs/2609.22276 - Difference from this work: bounds the horizon by prediction quality and a terminal cost; our window ends at a real-time floor and a stability-margin ceiling.
 
-[76] The Lambert Way to Gaussianize heavy tailed data with the inverse of Tukey's h as a special case. arXiv:1010.2265, 2010-10-11. https://arxiv.org/abs/1010.2265 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[76] Goerg, G. M. (2010). The Lambert Way to Gaussianize heavy tailed data with the inverse of Tukey's h as a special case. arXiv:1010.2265. https://arxiv.org/abs/1010.2265 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[77] Stability for Receding-horizon Stochastic Model Predictive Control. arXiv:1410.5083, 2014-10-19. https://arxiv.org/abs/1410.5083 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[77] Paulson, J. A.; Streif, S.; Mesbah, A. (2014). Stability for Receding-horizon Stochastic Model Predictive Control. arXiv:1410.5083. https://arxiv.org/abs/1410.5083 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[78] Iterative methods for the delay Lyapunov equation with T-Sylvester preconditioning. arXiv:1507.02100, 2015-07-08. https://arxiv.org/abs/1507.02100 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[78] Jarlebring, E.; Poloni, F. (2015). Iterative methods for the delay Lyapunov equation with T-Sylvester preconditioning. arXiv:1507.02100. https://arxiv.org/abs/1507.02100 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[79] Constraint-Tightening and Stability in Stochastic Model Predictive Control. arXiv:1511.03488, 2015-11-11. https://arxiv.org/abs/1511.03488 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[79] Lorenzen, M.; Dabbene, F.; Tempo, R.; et al. (2015). Constraint-Tightening and Stability in Stochastic Model Predictive Control. arXiv:1511.03488. https://arxiv.org/abs/1511.03488 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[80] Technical Report: Infinite Horizon Discrete-Time Linear Quadratic Gaussian Tracking Control Derivation. arXiv:1807.04700, 2018-07-12. https://arxiv.org/abs/1807.04700 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[80] Yazdani, K.; Hale, M. (2018). Technical Report: Infinite Horizon Discrete-Time Linear Quadratic Gaussian Tracking Control Derivation. arXiv:1807.04700. https://arxiv.org/abs/1807.04700 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[81] Residual-based iterations for the generalized Lyapunov equation. arXiv:1807.10715, 2018-07-27. https://arxiv.org/abs/1807.10715 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[81] Breiten, T.; Ringh, E. (2018). Residual-based iterations for the generalized Lyapunov equation. arXiv:1807.10715. https://arxiv.org/abs/1807.10715 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[82] Adaptive Control and Regret Minimization in Linear Quadratic Gaussian (LQG) Setting. arXiv:2003.05999, 2020-03-12. https://arxiv.org/abs/2003.05999 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[82] Lale, S.; Azizzadenesheli, K.; Hassibi, B.; et al. (2020). Adaptive Control and Regret Minimization in Linear Quadratic Gaussian (LQG) Setting. arXiv:2003.05999. https://arxiv.org/abs/2003.05999 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[83] Discounted Cost Linear Quadratic Gaussian Control for Descriptor Systems. arXiv:2004.08932, 2020-04-19. https://arxiv.org/abs/2004.08932 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[83] Mena, H.; Pfurtscheller, L. M.; Voigt, M. (2020). Discounted Cost Linear Quadratic Gaussian Control for Descriptor Systems. arXiv:2004.08932. https://arxiv.org/abs/2004.08932 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[84] Stochastic Model Predictive Control for Linear Systems with Unbounded Additive Uncertainties. arXiv:2104.10383, 2021-04-21. https://arxiv.org/abs/2104.10383 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[84] Li, F.; Li, H.; He, Y. (2021). Stochastic Model Predictive Control for Linear Systems with Unbounded Additive Uncertainties. arXiv:2104.10383. https://arxiv.org/abs/2104.10383 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[85] Safe Stochastic Model Predictive Control. arXiv:2204.06207, 2022-04-13. https://arxiv.org/abs/2204.06207 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[85] Brüdigam, T.; Jacumet, R.; Wollherr, D.; et al. (2022). Safe Stochastic Model Predictive Control. arXiv:2204.06207. https://arxiv.org/abs/2204.06207 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[86] Heavy-Tailed NGG Mixture Models. arXiv:2211.00867, 2022-11-02. https://arxiv.org/abs/2211.00867 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[86] Ramirez, V. P.; Carvalho, M. D.; Inostroza, L. G. (2022). Heavy-Tailed NGG Mixture Models. arXiv:2211.00867. https://arxiv.org/abs/2211.00867 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[87] Stochastic Model Predictive Control with Dynamic Chance Constraints. arXiv:2305.19262, 2023-05-30. https://arxiv.org/abs/2305.19262 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[87] Engelaar, M. H. W.; Haesaert, S.; Lazar, M. (2023). Stochastic Model Predictive Control with Dynamic Chance Constraints. arXiv:2305.19262. https://arxiv.org/abs/2305.19262 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[88] Lyapunov equations: a (fixed) point of view. arXiv:2406.07324, 2024-06-11. https://arxiv.org/abs/2406.07324 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[88] Pates, R. (2024). Lyapunov equations: a (fixed) point of view. arXiv:2406.07324. https://arxiv.org/abs/2406.07324 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[89] Identifying Time-varying Costs in Finite-horizon Linear Quadratic Gaussian Games. arXiv:2511.14358, 2025-11-18. https://arxiv.org/abs/2511.14358 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[89] Ren, K.; Kamgarpour, M. (2025). Identifying Time-varying Costs in Finite-horizon Linear Quadratic Gaussian Games. arXiv:2511.14358. https://arxiv.org/abs/2511.14358 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[90] Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise. arXiv:2602.07425, 2026-02-07. https://arxiv.org/abs/2602.07425 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[90] Yu, D.; Tao, H.; Wan, Y.; et al. (2026). Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise. arXiv:2602.07425. https://arxiv.org/abs/2602.07425 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[91] Asynchronous Heavy-Tailed Optimization. arXiv:2602.18002, 2026-02-20. https://arxiv.org/abs/2602.18002 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[91] Sun, J.; Yao, D.; Gong, X.; et al. (2026). Asynchronous Heavy-Tailed Optimization. arXiv:2602.18002. https://arxiv.org/abs/2602.18002 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[92] Delay periodic Lyapunov equation. arXiv:2605.15926, 2026-05-15. https://arxiv.org/abs/2605.15926 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
+[92] Aleksandrova, I. V.; Velázquez, J. J. L. (2026). Delay periodic Lyapunov equation. arXiv:2605.15926. https://arxiv.org/abs/2605.15926 - Difference from this work: used here as the exact instrument (ground truth), not as a contribution.
 
-[93] Hierarchical Solution of Markov Decision Processes using Macro-actions. arXiv:1301.7381, 2013-01-30. https://arxiv.org/abs/1301.7381 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[93] Hauskrecht, M.; Meuleau, N.; Kaelbling, L. P.; et al. (2013). Hierarchical Solution of Markov Decision Processes using Macro-actions. arXiv:1301.7381. https://arxiv.org/abs/1301.7381 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[94] Macro-Action-Based Deep Multi-Agent Reinforcement Learning. arXiv:2004.08646, 2020-04-18. https://arxiv.org/abs/2004.08646 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[94] Xiao, Y.; Hoffman, J.; Amato, C. (2020). Macro-Action-Based Deep Multi-Agent Reinforcement Learning. arXiv:2004.08646. https://arxiv.org/abs/2004.08646 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[95] MAGIC: Learning Macro-Actions for Online POMDP Planning. arXiv:2011.03813, 2020-11-07. https://arxiv.org/abs/2011.03813 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[95] Lee, Y.; Cai, P.; Hsu, D. (2020). MAGIC: Learning Macro-Actions for Online POMDP Planning. arXiv:2011.03813. https://arxiv.org/abs/2011.03813 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[96] LISPR: An Options Framework for Policy Reuse with Reinforcement Learning. arXiv:2012.14942, 2020-12-29. https://arxiv.org/abs/2012.14942 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[96] Graves, D.; Jin, J.; Luo, J. (2020). LISPR: An Options Framework for Policy Reuse with Reinforcement Learning. arXiv:2012.14942. https://arxiv.org/abs/2012.14942 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[97] The Logical Options Framework. arXiv:2102.12571, 2021-02-24. https://arxiv.org/abs/2102.12571 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[97] Araki, B.; Li, X.; Vodrahalli, K.; et al. (2021). The Logical Options Framework. arXiv:2102.12571. https://arxiv.org/abs/2102.12571 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[98] Meta-learning how to Share Credit among Macro-Actions. arXiv:2506.13690, 2025-06-16. https://arxiv.org/abs/2506.13690 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[98] Hosu, I. A.; Rebedea, T.; Pascanu, R. (2025). Meta-learning how to Share Credit among Macro-Actions. arXiv:2506.13690. https://arxiv.org/abs/2506.13690 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[99] ToMacVF : Temporal Macro-action Value Factorization for Asynchronous Multi-Agent Reinforcement Learning. arXiv:2507.10251, 2025-07-14. https://arxiv.org/abs/2507.10251 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
+[99] Zhang, W.; Zhang, W. (2025). ToMacVF : Temporal Macro-action Value Factorization for Asynchronous Multi-Agent Reinforcement Learning. arXiv:2507.10251. https://arxiv.org/abs/2507.10251 - Difference from this work: amortizes a learned decision over a span, not a priced query over a commit horizon.
 
-[100] Deep Amortized Inference for Probabilistic Programs. arXiv:1610.05735, 2016-10-18. https://arxiv.org/abs/1610.05735 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
+[100] Ritchie, D.; Horsfall, P.; Goodman, N. D. (2016). Deep Amortized Inference for Probabilistic Programs. arXiv:1610.05735. https://arxiv.org/abs/1610.05735 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
 
-[101] Amortized Inference Regularization. arXiv:1805.08913, 2018-05-23. https://arxiv.org/abs/1805.08913 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
+[101] Shu, R.; Bui, H. H.; Zhao, S.; et al. (2018). Amortized Inference Regularization. arXiv:1805.08913. https://arxiv.org/abs/1805.08913 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
 
-[102] Generalization Gap in Amortized Inference. arXiv:2205.11640, 2022-05-23. https://arxiv.org/abs/2205.11640 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
+[102] Zhang, M.; Hayes, P.; Barber, D. (2022). Generalization Gap in Amortized Inference. arXiv:2205.11640. https://arxiv.org/abs/2205.11640 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
 
-[103] Neural Methods for Amortized Inference. arXiv:2404.12484, 2024-04-18. https://arxiv.org/abs/2404.12484 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
+[103] Zammit-Mangion, A.; Sainsbury-Dale, M.; Huser, R. (2024). Neural Methods for Amortized Inference. arXiv:2404.12484. https://arxiv.org/abs/2404.12484 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
 
-[104] Path-dependent Discrete Amortized Inference. arXiv:2608.08644, 2026-08-09. https://arxiv.org/abs/2608.08644 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
+[104] Silva, T. D.; Whitammer, E. S.; Lahlou, S. (2026). Path-dependent Discrete Amortized Inference. arXiv:2608.08644. https://arxiv.org/abs/2608.08644 - Difference from this work: amortizes a modelling or learning cost, not a per-query price.
 
-[105] Non-linear Task-Space Disturbance Observer for Position Regulation of Redundant Robot Arms against Perturbations in 3D Environments. arXiv:1311.0388, 2013-11-02. https://arxiv.org/abs/1311.0388 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[105] Bhattacharjee, T.; Oh, Y.; Oh, S. R. (2013). Non-linear Task-Space Disturbance Observer for Position Regulation of Redundant Robot Arms against Perturbations in 3D Environments. arXiv:1311.0388. https://arxiv.org/abs/1311.0388 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[106] Boundary control of cascaded ODE-Heat equations under actuator saturation. arXiv:1608.03729, 2016-08-12. https://arxiv.org/abs/1608.03729 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[106] Kang, W.; Fridman, E. (2016). Boundary control of cascaded ODE-Heat equations under actuator saturation. arXiv:1608.03729. https://arxiv.org/abs/1608.03729 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[107] Disturbance Observer-based Robust Control and Its Applications: 35th Anniversary Overview. arXiv:1902.09032, 2019-02-24. https://arxiv.org/abs/1902.09032 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[107] Sariyildiz, E.; Oboe, R.; Ohnishi, K. (2019). Disturbance Observer-based Robust Control and Its Applications: 35th Anniversary Overview. arXiv:1902.09032. https://arxiv.org/abs/1902.09032 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[108] A Guide to Design Disturbance Observer. arXiv:1912.06331, 2019-12-13. https://arxiv.org/abs/1912.06331 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[108] Sariyildiz, E.; Ohnishi, K. (2019). A Guide to Design Disturbance Observer. arXiv:1912.06331. https://arxiv.org/abs/1912.06331 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[109] Disturbance Observer. arXiv:2101.02859, 2021-01-08. https://arxiv.org/abs/2101.02859 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[109] Shim, H. (2021). Disturbance Observer. arXiv:2101.02859. https://arxiv.org/abs/2101.02859 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[110] Event-triggered Consensus of Matrix-weighted Networks Subject to Actuator Saturation. arXiv:2110.13356, 2021-10-26. https://arxiv.org/abs/2110.13356 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[110] Pan, L.; Shao, H.; Li, Y.; et al. (2021). Event-triggered Consensus of Matrix-weighted Networks Subject to Actuator Saturation. arXiv:2110.13356. https://arxiv.org/abs/2110.13356 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[111] Extremum Seeking Control for Multivariable Maps under Actuator Saturation. arXiv:2504.08005, 2025-04-09. https://arxiv.org/abs/2504.08005 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[111] Silva, E. F. T.; Coutinho, P. H. S.; Oliveira, T. R.; et al. (2025). Extremum Seeking Control for Multivariable Maps under Actuator Saturation. arXiv:2504.08005. https://arxiv.org/abs/2504.08005 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[112] Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation. arXiv:2602.18247, 2026-02-20. https://arxiv.org/abs/2602.18247 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
+[112] Wu, F.; Yuan, C. (2026). Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation. arXiv:2602.18247. https://arxiv.org/abs/2602.18247 - Difference from this work: characterises the nonlinearity; we use it to break the second-moment equivalence that hides the disturbance channel.
 
-[113] Robustness of Control Barrier Functions for Safety Critical Control. arXiv:1612.01554, 2016-12-05. https://arxiv.org/abs/1612.01554 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[113] Xu, X.; Tabuada, P.; Grizzle, J. W.; et al. (2016). Robustness of Control Barrier Functions for Safety Critical Control. arXiv:1612.01554. https://arxiv.org/abs/1612.01554 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[114] Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations. arXiv:1709.10087, 2017-09-28. https://arxiv.org/abs/1709.10087 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[114] Rajeswaran, A.; Kumar, V.; Gupta, A.; et al. (2017). Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations. arXiv:1709.10087. https://arxiv.org/abs/1709.10087 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[115] Reinforcement Learning of Active Vision for Manipulating Objects under Occlusions. arXiv:1811.08067, 2018-11-20. https://arxiv.org/abs/1811.08067 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[115] Cheng, R.; Agarwal, A.; Fragkiadaki, K. (2018). Reinforcement Learning of Active Vision for Manipulating Objects under Occlusions. arXiv:1811.08067. https://arxiv.org/abs/1811.08067 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[116] Learning View and Target Invariant Visual Servoing for Navigation. arXiv:2003.02327, 2020-03-04. https://arxiv.org/abs/2003.02327 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[116] Li, Y.; Kosecka, J. (2020). Learning View and Target Invariant Visual Servoing for Navigation. arXiv:2003.02327. https://arxiv.org/abs/2003.02327 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[117] CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning. arXiv:2010.04296, 2020-10-08. https://arxiv.org/abs/2010.04296 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[117] Ahmed, O.; Träuble, F.; Goyal, A.; et al. (2020). CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning. arXiv:2010.04296. https://arxiv.org/abs/2010.04296 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[118] Learning Sequences of Manipulation Primitives for Robotic Assembly. arXiv:2011.00778, 2020-11-02. https://arxiv.org/abs/2011.00778 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[118] Vuong, N.; Pham, H.; Pham, Q. C. (2020). Learning Sequences of Manipulation Primitives for Robotic Assembly. arXiv:2011.00778. https://arxiv.org/abs/2011.00778 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[119] Dual Quaternion-Based Visual Servoing for Grasping Moving Objects. arXiv:2107.08149, 2021-07-17. https://arxiv.org/abs/2107.08149 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[119] Farias, C. D.; Adjigble, M.; Tamadazte, B.; et al. (2021). Dual Quaternion-Based Visual Servoing for Grasping Moving Objects. arXiv:2107.08149. https://arxiv.org/abs/2107.08149 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[120] RB2: Robotic Manipulation Benchmarking with a Twist. arXiv:2203.08098, 2022-03-15. https://arxiv.org/abs/2203.08098 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[120] Dasari, S.; Wang, J.; Hong, J.; et al. (2022). RB2: Robotic Manipulation Benchmarking with a Twist. arXiv:2203.08098. https://arxiv.org/abs/2203.08098 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[121] Dexterous Imitation Made Easy: A Learning-Based Framework for Efficient Dexterous Manipulation. arXiv:2203.13251, 2022-03-24. https://arxiv.org/abs/2203.13251 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[121] Arunachalam, S. P.; Silwal, S.; Evans, B.; et al. (2022). Dexterous Imitation Made Easy: A Learning-Based Framework for Efficient Dexterous Manipulation. arXiv:2203.13251. https://arxiv.org/abs/2203.13251 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[122] Learning Stable Dynamical Systems for Visual Servoing. arXiv:2204.05681, 2022-04-12. https://arxiv.org/abs/2204.05681 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[122] Paolillo, A.; Saveriano, M. (2022). Learning Stable Dynamical Systems for Visual Servoing. arXiv:2204.05681. https://arxiv.org/abs/2204.05681 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[123] BulletArm: An Open-Source Robotic Manipulation Benchmark and Learning Framework. arXiv:2205.14292, 2022-05-28. https://arxiv.org/abs/2205.14292 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[123] Wang, D.; Kohler, C.; Zhu, X.; et al. (2022). BulletArm: An Open-Source Robotic Manipulation Benchmark and Learning Framework. arXiv:2205.14292. https://arxiv.org/abs/2205.14292 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[124] Control Barrier Functions for Stochastic Systems and Safety-critical Control Designs. arXiv:2209.08728, 2022-09-19. https://arxiv.org/abs/2209.08728 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[124] Nishimura, Y.; Hoshino, K. (2022). Control Barrier Functions for Stochastic Systems and Safety-critical Control Designs. arXiv:2209.08728. https://arxiv.org/abs/2209.08728 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[125] Visual Servoing with Geometrically Interpretable Neural Perception. arXiv:2210.10549, 2022-10-19. https://arxiv.org/abs/2210.10549 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[125] Paolillo, A.; Nava, M.; Piga, D.; et al. (2022). Visual Servoing with Geometrically Interpretable Neural Perception. arXiv:2210.10549. https://arxiv.org/abs/2210.10549 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[126] A Risk-Aware Control: Integrating Worst-Case CVaR with Control Barrier Function. arXiv:2308.14265, 2023-08-28. https://arxiv.org/abs/2308.14265 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[126] Kishida, M. (2023). A Risk-Aware Control: Integrating Worst-Case CVaR with Control Barrier Function. arXiv:2308.14265. https://arxiv.org/abs/2308.14265 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[127] Brain Functional Connectivity under Teleoperation Latency: a fNIRS Study. arXiv:2311.09062, 2023-11-15. https://arxiv.org/abs/2311.09062 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[127] Ye, Y.; Zhou, T.; Zhu, Q.; et al. (2023). Brain Functional Connectivity under Teleoperation Latency: a fNIRS Study. arXiv:2311.09062. https://arxiv.org/abs/2311.09062 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[128] Mastering Stacking of Diverse Shapes with Large-Scale Iterative Reinforcement Learning on Real Robots. arXiv:2312.11374, 2023-12-18. https://arxiv.org/abs/2312.11374 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[128] Lampe, T.; Abdolmaleki, A.; Bechtle, S.; et al. (2023). Mastering Stacking of Diverse Shapes with Large-Scale Iterative Reinforcement Learning on Real Robots. arXiv:2312.11374. https://arxiv.org/abs/2312.11374 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[129] Never-Ending Behavior-Cloning Agent for Robotic Manipulation. arXiv:2403.00336, 2024-03-01. https://arxiv.org/abs/2403.00336 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[129] Liang, W.; Sun, G.; He, Y.; et al. (2024). Never-Ending Behavior-Cloning Agent for Robotic Manipulation. arXiv:2403.00336. https://arxiv.org/abs/2403.00336 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[130] WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts. arXiv:2406.06005, 2024-06-10. https://arxiv.org/abs/2406.06005 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[130] Zhang, C.; Xiao, W.; He, T.; et al. (2024). WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts. arXiv:2406.06005. https://arxiv.org/abs/2406.06005 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[131] MuJoCo MPC for Humanoid Control: Evaluation on HumanoidBench. arXiv:2408.00342, 2024-08-01. https://arxiv.org/abs/2408.00342 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[131] Meser, M.; Bhatt, A.; Belousov, B.; et al. (2024). MuJoCo MPC for Humanoid Control: Evaluation on HumanoidBench. arXiv:2408.00342. https://arxiv.org/abs/2408.00342 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[132] Dexterous Manipulation through Imitation Learning: A Survey. arXiv:2504.03515, 2025-04-04. https://arxiv.org/abs/2504.03515 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[132] An, S.; Meng, Z.; Tang, C.; et al. (2025). Dexterous Manipulation through Imitation Learning: A Survey. arXiv:2504.03515. https://arxiv.org/abs/2504.03515 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[133] Sparse Imagination for Efficient Visual World Model Planning. arXiv:2506.01392, 2025-06-02. https://arxiv.org/abs/2506.01392 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[133] Chun, J.; Jeong, Y.; Kim, T. (2025). Sparse Imagination for Efficient Visual World Model Planning. arXiv:2506.01392. https://arxiv.org/abs/2506.01392 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
 
-[134] Policy-Guided World Model Planning for Language-Conditioned Visual Navigation. arXiv:2603.25981, 2026-03-26. https://arxiv.org/abs/2603.25981 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.
+[134] Chahe, A.; Zhou, L. (2026). Policy-Guided World Model Planning for Language-Conditioned Visual Navigation. arXiv:2603.25981. https://arxiv.org/abs/2603.25981 - Difference from this work: evaluates a policy or a platform; we evaluate a deployment parameter common to all of them.

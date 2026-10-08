@@ -81,10 +81,27 @@ def parse(body):
         raw = (e.findtext("a:id", "", NS) or "").strip()
         aid = re.sub(r"v\d+$", "", raw.rsplit("/abs/", 1)[-1])
         title = re.sub(r"\s+", " ", (e.findtext("a:title", "", NS) or "")).strip()
+        # The AUTHOR component is part of the entry the house style prints, so it is
+        # captured HERE, from the record, at verification time -- never typed later.
+        # arXiv states one unstuffed token per author in "Given Family" order; the
+        # record gives no family/given split, so the split is DERIVED at render time
+        # and the RAW string is kept beside it so the split is auditable.
+        authors = [_unescape(re.sub(r"\s+", " ", (n.text or "")).strip())
+                   for n in e.findall("a:author/a:name", NS)]
+        authors = [a for a in authors if a]
         if aid:
             out[aid] = {"title": title,
-                        "published": (e.findtext("a:published", "", NS) or "")[:10]}
+                        "published": (e.findtext("a:published", "", NS) or "")[:10],
+                        "authors": authors}
     return out
+
+
+def _unescape(s):
+    """The five entities a metadata field carries, decoded once. A character
+    reference left in an entry is the form an undecoded field has (refgate's
+    `author form:` counts it), so it is decoded at the source."""
+    return (s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+             .replace("&quot;", '"').replace("&#39;", "'"))
 
 
 def fetch_abs_page(aid):
@@ -107,10 +124,12 @@ def fetch_abs_page(aid):
     m = re.search(r'<meta\s+name="citation_title"\s+content="([^"]+)"', html)
     if not m:
         return None
-    t = m.group(1)
-    t = (t.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
-          .replace("&quot;", '"').replace("&#39;", "'"))
-    return re.sub(r"\s+", " ", t).strip()
+    t = re.sub(r"\s+", " ", _unescape(m.group(1))).strip()
+    # The abstract page is a SECOND carrier of the same record, and it carries the
+    # authors too: the citation_author meta tags, in the same "Given Family" order.
+    auths = [_unescape(re.sub(r"\s+", " ", a)).strip()
+             for a in re.findall(r'<meta\s+name="citation_author"\s+content="([^"]+)"', html)]
+    return {"title": t, "authors": [a for a in auths if a]}
 
 
 def verify():
@@ -161,7 +180,20 @@ def verify():
         resolved += 1
         keys[k]["verified_title"] = title
         keys[k]["verified_year"] = year
-        lines.append(f"{k} | DOI:{k} | crossref | {title!r} | {year}")
+        # Crossref DOES give the split: each author object carries `family` and
+        # (usually) `given`. Kept structured, with the printed name beside it.
+        cauth = []
+        for a in (m.get("author") or []):
+            fam = (a.get("family") or "").strip()
+            giv = (a.get("given") or "").strip()
+            if a.get("name") and not fam:
+                cauth.append({"name": _unescape(a["name"]), "family": None, "given": None})
+            elif fam or giv:
+                cauth.append({"name": _unescape((giv + " " + fam).strip()),
+                              "family": _unescape(fam) or None,
+                              "given": _unescape(giv) or None})
+        keys[k]["verified_authors"] = cauth
+        lines.append(f"{k} | DOI:{k} | crossref | {title!r} | {year} | authors={len(cauth)}")
     for k in ids:
         if keys[k].get("doi"):
             continue
@@ -170,9 +202,7 @@ def verify():
         if got is None:                        # API throttled/failed -> the abs page
             t = fetch_abs_page(k)
             if t is not None:
-                got = {"title": t, "published": ""}
-                lines.append("")   # keep the log aligned; replaced below
-                lines.pop()
+                got = {"title": t["title"], "published": "", "authors": t["authors"]}
         if got is None:
             problems.append((k, "NOT RETURNED by the arXiv API"))
             lines.append(f"{k} | arXiv:{k} | MISSING | the API returned no entry for this id")
@@ -187,14 +217,18 @@ def verify():
         tag = "recorded" if want else "resolved-from-api"
         if not got.get("published"):
             tag += "+abs-page"
-        lines.append(f"{k} | arXiv:{k} | {tag} | {got['title']!r} | {got['published']}")
+        auths = [{"name": a, "family": None, "given": None} for a in got.get("authors") or []]
+        lines.append(f"{k} | arXiv:{k} | {tag} | {got['title']!r} | {got['published']}"
+                     f" | authors={len(auths)}")
         rec["verified_title"] = got["title"]
         rec["verified_published"] = got["published"]
+        rec["verified_authors"] = auths
     with open(LOG, "w") as fh:
         fh.write("# Issue #116 -- reference verification log\n")
         fh.write("# tool: refs_tool.py verify   source: arXiv API (export.arxiv.org)\n")
         fh.write(f"# entries={len(ids)} resolved={resolved} problems={len(problems)}\n")
-        fh.write("# format: key | identifier | status | fetched title | published\n")
+        fh.write("# format: key | identifier | status | fetched title | published |"
+             " authors=<n>\n")
         for ln in lines:
             fh.write(ln + "\n")
     with open(KEYS, "w") as fh:                    # write back the resolved titles

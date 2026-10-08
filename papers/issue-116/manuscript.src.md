@@ -157,7 +157,9 @@ This yields a three-regime structure read directly off the objective:
 - **interior** in the middle — the FOC governs;
 - **ceiling-pinned** at high price — feasibility, not price, binds.
 
-Figure 3 (`regime_map.png`) draws every cell of the `(τ, λ_c)` plane under this classification for all four plants.
+![Figure 1. The optimal horizon for the well-damped plant at six inference latencies. Each curve is flat where its real-time floor binds, rises where the price is the binding constraint, and flattens again at its feasibility ceiling; the floor and ceiling of every curve are marked at its right end. The feasible window closes entirely at the latency wall, where the floor and the ceiling meet.](figures/frontier_R100.png)
+
+Figure 2 draws every cell of the `(τ, λ_c)` plane under this classification for all four plants.
 
 ---
 
@@ -166,6 +168,8 @@ Figure 3 (`regime_map.png`) draws every cell of the `(τ, λ_c)` plane under thi
 ### 5.1 The regime map (registered criterion iii — **MET**)
 
 Four plants × 7 latencies × 22 prices over seven decades, every cell classified: **28 `(plant, τ)` rows**, each flat at the floor, flat at the ceiling, and rising in between. The window and the wall are confirmed per plant. One row is degenerate and is recorded as such: near-margin `τ = 3` is floor-pinned at **every** price (13 cells, 0 interior), because `d_max = 6` makes the floor and the ceiling coincide. Rows with `τ > d_max/2` are recorded `infeasible` (e.g. `τ = 4, 6, 8` on the near-margin plant).
+
+![Figure 2. The regime map: every cell of the latency-by-price plane, four plants x seven latencies x 22 prices over seven decades, classified floor-pinned (blue), interior (white), ceiling-pinned (orange) or infeasible (light grey). Every row is flat at the floor, rising in between and flat at the ceiling, and the region past the latency wall is unreachable. ](figures/regime_map.png)
 
 ### 5.2 The exponent: the registered law is refuted, and so is its replacement
 
@@ -181,7 +185,9 @@ Log-log slope over interior points only, with the regression standard error:
 | 95 % interval **entirely below** 0.500 | **14 of 19** |
 | 95 % interval containing 0.500 | **1 of 19** |
 
-Examples: scalar-stable `τ=0` `+0.437 [0.354, 0.519]`; `τ=1` `+0.556 [0.535, 0.577]`; `τ=3` `+0.624 [0.583, 0.664]`; near-margin `τ=0` `+0.208 [0.162, 0.255]`; `R=10 τ=0` `+0.246 [0.210, 0.282]`; `R=100 τ=0` `+0.263 [0.220, 0.305]`. Figure 2 draws all 19 with intervals against the 0.500 line.
+Examples: scalar-stable `τ=0` `+0.437 [0.354, 0.519]`; `τ=1` `+0.556 [0.535, 0.577]`; `τ=3` `+0.624 [0.583, 0.664]`; near-margin `τ=0` `+0.208 [0.162, 0.255]`; `R=10 τ=0` `+0.246 [0.210, 0.282]`; `R=100 τ=0` `+0.263 [0.220, 0.305]`. Figure 3 draws all 19 with intervals against the 0.500 line.
+
+![Figure 3. The measured exponent of L* in the inference price, all 19 fits, each with its 95% regression interval, against the registered 0.500 line (dashed). 14 of 19 intervals lie entirely below the line and one contains it, and the exponent moves both with the plant and, within a plant, with the latency.](figures/exponent_by_config.png)
 
 Two facts follow beyond the band failure. The exponent is **plant-dependent** — a near-margin plant at `0.208` and a well-damped plant at `0.263` are not the same law — and, not anticipated at registration, it is **latency-dependent within a plant**: scalar-stable moves `0.437 → 0.635` as `τ` goes `0 → 4` on the same price grid.
 
@@ -206,7 +212,7 @@ A power law would be **constant**. It is not. Consequently `1/(1+p)` moves *with
 
 ### 5.3 The FOC as an instrument for the heuristics
 
-Because the FOC is exact, it evaluates the literature's remedies: a fixed-horizon choice is optimal only over the price interval where the FOC's solution equals that horizon, and the pinning structure says when the horizon is *not* the decision variable at all — below the floor's price, latency does not enter `L*`; above the ceiling's price, the price does not. Figure 1 draws `L*(λ_c)` per latency with the per-curve floors and ceilings; Figure 3 draws the classification.
+Because the FOC is exact, it evaluates the literature's remedies: a fixed-horizon choice is optimal only over the price interval where the FOC's solution equals that horizon, and the pinning structure says when the horizon is *not* the decision variable at all — below the floor's price, latency does not enter `L*`; above the ceiling's price, the price does not. Figure 1 draws `L*(λ_c)` per latency with the per-curve floors and ceilings; Figure 2 draws the classification.
 
 ### 5.4 The two channels act on different quantities
 
@@ -235,7 +241,9 @@ against a **linear-arm control null** of `0.000–0.080` (registering §5.4's me
 
 **The registered P3 is a tautology on the linear arm.** For a zero-mean disturbance the stationary covariance solves `P = Ā P Āᵀ + W̄`, so the cost is a functional of `W̄` alone and the disturbance's *shape* cannot enter. Two processes matched in per-step second moment therefore give identical costs to **`4.3e-16`**, and the linearity control is exact (`c(2W̄)/c(W̄) = 2.000000000000`, `0.500000000000`) while a deliberate near-miss (`1.9W̄`) correctly fails at `5.00e-2`. P3 as registered — impulses `∝ λ·A²` vs dense noise flat in the rate — **cannot be tested on the linear arm**; it is re-sited to the saturating arm, where the measured separation is the shape channel above.
 
-**One instrument defect is recorded because a check found it.** A first version computed the mean term as the Lyapunov solution with `W̄ = m mᵀ`, i.e. the covariance of an iid ±m signal rather than the deterministic mean response; it drops the cross terms and gave `0.329` instead of `25.001`, putting the Monte-Carlo `953 σ` from its own prediction. The wrong route is kept in the artifact as a **control that must keep disagreeing** (relative distance `0.79`).
+**One instrument defect is recorded because a check found it.** A first version computed the mean term as the Lyapunov solution with `W̄ = m mᵀ`, i.e. the covariance of an iid ±m signal rather than the deterministic mean response; it drops the cross terms and gave `0.329` instead of `25.001`, putting the Monte-Carlo `953 σ` from its own prediction. The wrong route is kept in the artifact as a **control that must keep disagreeing** (relative distance `0.79`). Figure 4 shows both channels side by side: the mean term flat in the delay while the centred covariance is not, and the shape ratio rising with it.
+
+![Figure 4. The two disturbance channels, at delay 3. Left: the mean channel's term is flat in the delay while the centred covariance rises, so a mean raises the cost level by a constant and cannot move the argmin. Right: the shape channel's sparse-over-gaussian cost ratio rises with the delay at matched second moment -- the same second moment, different higher moments, and the cost separates further as staleness grows.](figures/channels.png)
 
 ---
 

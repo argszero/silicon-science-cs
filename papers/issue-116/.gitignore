@@ -1,1 +1,6 @@
 research/
+
+# Fetch cache of `refs/refs_tool.py verify` (batched arXiv API responses, 304K). A byproduct of
+# verification, not a product: nothing on the reproduction path reads it, and the authoritative
+# artefact of that step is the committed `refs/refs_verify.log` beside it.
+refs/arxiv_verify_cache/

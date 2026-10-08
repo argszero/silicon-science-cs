@@ -16,7 +16,9 @@ Usage:
     python3 refs_build.py check     # coverage only, exit non-zero on failure
     python3 refs_build.py render    # write manuscript_numbered.md (citations -> [N])
 """
+import hashlib
 import json
+import os
 import re
 import sys
 
@@ -80,21 +82,87 @@ def cite(txt, num):
     return TOKEN.sub(rep, txt)
 
 
+def fmt_author(a):
+    """One author in the house form `Family, I.`
+
+    The record is the source; the split is only DERIVED where the record does not
+    give it. arXiv's API states one unstuffed token in "Given Family" order and its
+    abstract page states the same author as "Family, Given" -- the two carriers of
+    one record differ in order, so the comma decides which form is in hand and the
+    last token is the family only when there is no comma. A name the record gives as
+    one token prints as that token (`Student.`), never padded to `Family, I.`.
+    """
+    fam, giv = a.get("family"), a.get("given")
+    if not fam:
+        s = (a.get("name") or "").strip()
+        if "," in s:
+            fam, giv = s.split(",", 1)
+        else:
+            toks = s.split()
+            fam, giv = ((toks[-1], " ".join(toks[:-1])) if toks else ("", ""))
+        if fam and fam.isupper() and len(fam) > 1:      # the registry's stored form
+            fam = fam.title()                            # O'BRIEN -> O'Brien
+    fam = (fam or "").strip()
+    giv = giv or ""
+    initials = " ".join(f"{p[0].upper()}." for tok in giv.split()
+                        for p in tok.split("-") if p)
+    return f"{fam}, {initials}".rstrip(", ").strip() if initials else fam
+
+
+def author_str(authors):
+    """The entry's author component, or None when the record carries no author.
+
+    `et al.` for four or more (the first three then `; et al.`), all of them for
+    two or three, one for one -- the house style the published manuscripts hold.
+    """
+    parts = [p for p in (fmt_author(a) for a in authors or []) if p]
+    if not parts:
+        return None
+    if len(parts) >= 4:
+        return "; ".join(parts[:3]) + "; et al."
+    return "; ".join(parts)
+
+
+def ident_of(i, r):
+    return f"DOI {r['doi']}" if r.get("doi") else f"arXiv:{i}"
+
+
+def url_of(i, r):
+    return (f"https://doi.org/{r['doi']}" if r.get("doi")
+            else f"https://arxiv.org/abs/{i}")
+
+
+def year_of(r):
+    y = r.get("verified_year") or r.get("published") or r.get("verified_published")
+    return str(y)[:4] if y else None
+
+
+def entry_line(i, r, num):
+    """The ONE carrier of an entry's printed form. render() and render_check() both
+    call it, so the committed product and the checked product cannot drift apart."""
+    title = r.get("verified_title") or r.get("title")
+    if not title:
+        raise SystemExit(f"entry {i} has no title: run `refs_tool.py verify` first")
+    au = author_str(r.get("verified_authors"))
+    if au is None:
+        # The rule's exception: a work whose RECORD carries no author. The position
+        # is never left silently empty and never filled by guesswork -- the absence
+        # is RECORDED, naming the record that was read (the same line stands in
+        # reference-check.md).
+        au = ("author not established on the record read for this identifier"
+              f" [{ident_of(i, r)}]")
+    yr = year_of(r) or "n.d."
+    return (f"[{num[i]}] {au} ({yr}). {title}. {ident_of(i, r)}. {url_of(i, r)}"
+            f" - Difference from this work: {DIFF[r['role']]}.")
+
+
 def render():
     keys, order, num = load()
     ms = open(MS).read()
     body = cite(ms, num)
     lines = ["## References", ""]
     for i in order:
-        r = keys[i]
-        title = r.get("verified_title") or r.get("title")
-        if not title:
-            raise SystemExit(f"entry {i} has no title: run `refs_tool.py verify` first")
-        if r.get("doi"):
-            loc = f"DOI {r['doi']}, {r.get('verified_year') or r.get('published')}. https://doi.org/{r['doi']}"
-        else:
-            loc = f"arXiv:{i}, {r.get('verified_published') or r.get('published')}. https://arxiv.org/abs/{i}"
-        lines.append(f"[{num[i]}] {title}. {loc} - Difference from this work: {DIFF[r['role']]}.")
+        lines.append(entry_line(i, keys[i], num))
         lines.append("")
     if MARKER not in body:
         raise SystemExit("the source manuscript has no REFERENCES marker")
@@ -137,6 +205,27 @@ def check():
     if len(keys) < MIN_REFS:
         print(f"  TOO FEW  {len(keys)} < {MIN_REFS}")
         bad = True
+    # The CITATION REPORT states the product's digest, and until this round no step read
+    # that copy: the manuscript could be rebuilt and the report would go on quoting the
+    # old digest with every check green -- a stated value with no reader (the class R482
+    # fixed for this package's counts). So the report's line is compared against the
+    # file the pipeline just built, not against a literal typed here.
+    rc_path = "reference-check.md"
+    if not os.path.exists(rc_path):
+        print(f"  MISSING: {rc_path} (its stated digest cannot be read)")
+        bad = True
+    else:
+        m = re.search(r"`manuscript\.md` sha256 `([0-9a-f]{64})`", open(rc_path).read())
+        dig = hashlib.sha256(open(OUT, "rb").read()).hexdigest()
+        if not m:
+            print(f"  {rc_path} states no `manuscript.md` sha256")
+            bad = True
+        elif m.group(1) != dig:
+            print(f"  {rc_path} states the digest {m.group(1)[:16]}... but the built"
+                  f" {OUT} is {dig[:16]}...")
+            bad = True
+        else:
+            print(f"  {rc_path} states the built product's digest ({dig[:16]}...)")
     if bad:
         sys.exit(1)
     print(f"COVERAGE OK: all {len(keys)} entries cited, all in-text keys curated,"
@@ -151,19 +240,7 @@ def render_check():
     built = cite(open(MS).read(), num)
     lines = ["## References", ""]
     for i in order:
-        r = keys[i]
-        title = r.get("verified_title") or r.get("title")
-        if not title:
-            print(f"  entry {i} has no title: run refs_tool.py verify first")
-            sys.exit(1)
-        if r.get("doi"):
-            loc = (f"DOI {r['doi']}, {r.get('verified_year') or r.get('published')}."
-                   f" https://doi.org/{r['doi']}")
-        else:
-            loc = (f"arXiv:{i}, {r.get('verified_published') or r.get('published')}."
-                   f" https://arxiv.org/abs/{i}")
-        lines.append(f"[{num[i]}] {title}. {loc} - Difference from this work:"
-                     f" {DIFF[r['role']]}.")
+        lines.append(entry_line(i, keys[i], num))
         lines.append("")
     if MARKER not in built:
         print("  RENDER MISMATCH: the source has no REFERENCES marker")

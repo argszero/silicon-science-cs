@@ -91,12 +91,14 @@ def fig_frontier(res, plant, taus, path):
         c.text(int(ax.X(xs[-1])) - 46, int(ax.Y(ys[-1])) - 16,
                f"T{tau} C{int(dmax - tau)}", col, 1)
     ax.frame()
-    c.text(110, 528, "CURVES: TAU = 0 (BLUE), 1 (GREEN), 2 (GREY), 4 (MAUVE),"
+    # The axis label is drawn at y1 + 14*scale (528 here with scale 2); these three
+    # lines start BELOW it. Drawn at 528/546/564 they sat on the axis label's own row.
+    c.text(110, 548, "CURVES: TAU = 0 (BLUE), 1 (GREEN), 2 (GREY), 4 (MAUVE),"
                      " 6 (ORANGE), 8 (TEAL); LABELS READ T<TAU> C<CEILING = D_MAX-TAU>",
            BLACK, 1)
-    c.text(110, 546, "EACH CURVE IS FLAT WHERE THE FLOOR (L = TAU) OR THE CEILING"
+    c.text(110, 566, "EACH CURVE IS FLAT WHERE THE FLOOR (L = TAU) OR THE CEILING"
                      " BINDS; L* RISES WITH THE PRICE ONLY IN BETWEEN", BLACK, 1)
-    c.text(110, 564, f"THE FEASIBLE WINDOW IS [TAU, D_MAX - TAU] = [TAU,"
+    c.text(110, 584, f"THE FEASIBLE WINDOW IS [TAU, D_MAX - TAU] = [TAU,"
                      f" {dmax} - TAU]: IT IS EMPTY FOR TAU >= D_MAX/2 = {dmax // 2}"
                      " (THE LATENCY WALL)", RED, 1)
     return write(c, path)
