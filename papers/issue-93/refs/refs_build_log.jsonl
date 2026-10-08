@@ -9,3 +9,4 @@
 {"at": "2026-10-01T19:34:23", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
 {"at": "2026-10-01T19:35:14", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416"}
 {"at": "2026-10-01T19:46:18", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416; re-run at R482"}
+{"at": "2026-10-09T00:03:49", "duplicate_keys": [], "n_entries": 121, "n_errors": 0, "n_not_selected": 1, "n_selected_arxiv": 75, "n_selected_doi": 46, "n_unique": 121, "refused": [], "round": "R416; re-run at R482; R575 (record_text: the printed form is decoded, not the stored one)"}

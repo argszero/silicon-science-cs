@@ -906,7 +906,7 @@ record too.
 The reference pipeline has three stages and each has its own battery: **24 checks, 0 failed**; **15 checks, 15
 PASS with 22 mutations, 22 caught**; **8 checks, 8 PASS with a 19-case battery, 19 fired**. The build line is
 **121 of 121 selected entries (75 arXiv + 46 DOI), 1 not selected, 0 duplicates, 0 errors**, and each entry carries
-the stated difference from this study that its selection rests on. `cite_check.py` reads the manuscript back: **211
+the stated difference from this study that its selection rests on. `cite_check.py` reads the manuscript back: **212
 citations, 121 distinct keys of 121 built records, 0 unknown keys, 0 malformed, 0 records uncited** — the
 uncited-records count being the one that keeps the reference list from being padding. One convention in that
 pipeline is worth stating because it is a reporting rule: a number that was true in an earlier round is **kept with
@@ -921,6 +921,19 @@ so the first assembled bibliography rendered all **120** entries (at R427) as `[
 the authenticity report could see it, because each of them reads the *record* and not the *rendered page*; it was
 found by reading the product, which is where a reviewer reads it too.
 
+The same seat failed a second time, in a way this rule does not reach: an entry can carry all five fields and still
+print one of them in the wrong **form**. Entry **[121]**'s venue comes back from Crossref with the ampersand escaped
+(`Big Data &amp; Society`), and a character reference is the form an *undecoded* field has — it is what the record
+stores, not what the entry says. The journal's own gate counts it with no window at all (`refgate.py`'s
+`author_form`), which is how this package was returned at triage on **2026-10-08**. Every check here read the
+*record* (`refs_built.json`, whose `venue` field held the escape) and passed; the product was the only object where
+the defect existed. The repair is the **decode, not a re-lookup** — the record is right, its encoding is what must be
+resolved — and it sits at the seat that builds the entry (`refs/refs_build_v93.py`'s `record_text`, applied to the
+rendered `title`, `venue` and author names while `pool_title` keeps the record's own bytes for the provenance read
+that depends on them). The property is now read where it failed — over the product's reference section — by the
+presentation item that already owns the entry's form, so an undecoded field is caught in the product and not only in
+the record.
+
 **Authenticity, entry by entry.** Every one of the 121 entries was checked against an external record — a DOI
 through Crossref, an arXiv key through the arXiv API — and the method, the record found and the title agreement are
 recorded per entry in `reference-check.md`, in the citation order the bibliography renders in. The report's own
@@ -928,7 +941,7 @@ line is **121 of 121 verified**, with **0 mismatch** and **0 unverified** (46 DO
 normalized token overlap
 against a 0.80 floor; one year difference is printed rather than failed, because an arXiv preprint and its
 published version legitimately carry different years). The check that owns that report is offline and two-sided
-(**14 checks, 0 failed** against an **11-case battery, 11 fired**), and it makes two demands a hand-written report
+(**14 checks, 0 failed** against a **12-case battery, 12 fired**), and it makes two demands a hand-written report
 cannot: no entry is retained on the strength of its own text, and the counts in the summary must be the counts read
 off the rows.
 
@@ -970,11 +983,11 @@ than verified).  *Table 9* lists them with what each must print.
 | outcomes | `python3 outcome_check.py --selftest` | `OUTCOME CHECK: PASS` + `24 case(s), 24 caught` |
 | Section 5 | `python3 verify_s5.py --selftest` | `PASS -- 52 claim(s), 0 missing`, `52 of 52`, alphabet control `0 of 52` |
 | references | `python3 refs/refs_check{,2,3}.py --selftest` | `24 checks, 0 failed`; `15/15` + `22/22`; `8/8` + `19/19` |
-| citations | `python3 cite_check.py` | `211 citations, 121 distinct keys of 121`, `0 malformed`, `0 uncited` |
-| authenticity | `python3 refs/reference_check.py --selftest` | `REFERENCE CHECK: PASS -- 14 check(s), 0 failed`, `BATTERY: 11 of 11` |
+| citations | `python3 cite_check.py` | `212 citations, 121 distinct keys of 121`, `0 malformed`, `0 uncited` |
+| authenticity | `python3 refs/reference_check.py --selftest` | `REFERENCE CHECK: PASS -- 14 check(s), 0 failed`, `BATTERY: 12 of 12` |
 | figures | `python3 figures/make_figures.py --check` | `CURRENT -- ... byte-identical to a fresh draw` |
 | links | `python3 check_links.py --selftest` | `LINK CHECK: PASS -- 1 local, 0 broken`, `BATTERY: 4 of 4` |
-| submission bar | `python3 submission_check.py --selftest` | `SUBMISSION CHECK: PASS -- 18 item(s), 0 failed`, `BATTERY: 8 of 8` |
+| submission bar | `python3 submission_check.py --selftest` | `SUBMISSION CHECK: PASS -- 18 item(s), 0 failed`, `BATTERY: 9 of 9` |
 
 **Table 9.** What a reader can re-run, and what each step must print.
 
@@ -1333,4 +1346,4 @@ practitioner whether to invest in the gate at all, and a threshold can.
 
 [120] Diakopoulos, N. (2014). *Algorithmic Accountability*. Digital Journalism. https://doi.org/10.1080/21670811.2014.976411 -- Investigates algorithmic accountability journalistically; accountability as a practice, cited for the governance context in which approval gates are justified.
 
-[121] Mittelstadt, B. et al. (2016). *The Ethics of Algorithms: Mapping the Debate*. Big Data &amp; Society. https://doi.org/10.1177/2053951716679679 -- Maps the ethics debate around algorithms; the normative frame in which a human gate is usually argued for, and which this study asks to be traded against its cost.
+[121] Mittelstadt, B. et al. (2016). *The Ethics of Algorithms: Mapping the Debate*. Big Data & Society. https://doi.org/10.1177/2053951716679679 -- Maps the ethics debate around algorithms; the normative frame in which a human gate is usually argued for, and which this study asks to be traded against its cost.

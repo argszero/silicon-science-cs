@@ -2077,7 +2077,7 @@
    "title": "The Ethics of Algorithms: Mapping the Debate",
    "type": "journal-article",
    "url": "https://doi.org/10.1177/2053951716679679",
-   "venue": "Big Data &amp; Society",
+   "venue": "Big Data & Society",
    "year": 2016
   },
   {
@@ -2229,5 +2229,5 @@
   "refs_raw2.json:arx-W3-toolpoison": 1,
   "refs_reread.json:concurrent-by-id": 1
  },
- "round": "R416; re-run at R482"
+ "round": "R416; re-run at R482; R575 (record_text: the printed form is decoded, not the stored one)"
 }

@@ -997,9 +997,9 @@ offline and refuses a report that has drifted from them.
 
 Every entry carries an in-text key matching the bibliography: the body cites `[n]` and the list is
 numbered `[n]`, so the key in the text IS the key the list prints (quality-bar item 11,
-*Citation mechanics*) -- `python3 cite_check.py` reads `citations 210 | distinct keys 120 of 120` and
-`uncited records 0 of 120`, and it resolves each `[n]` through this package's own numbered list rather
-than through the parts, which cite by key.
+*Citation mechanics*) -- `python3 cite_check.py` reads `citations 212 | distinct keys 121 of 121`
+and `uncited records 0 of 121`, and it resolves each `[n]` through this package's own numbered
+list rather than through the parts, which cite by key.
 
 Bracketed groups in the prose that are NOT citations: the gate reports 1 bracket number(s)
 matching no entry -- `[0]`. These are the model's interval `[0, 1]` (§1.3 and §5.3), where the ratio's
@@ -1010,15 +1010,37 @@ not a citation. Its second element is entry [1] and no entry is left uncited by 
 
 ```text
 === papers/issue-93/manuscript.md
-  window: the last `## References` heading (line 1094) to the end of the file (line 1336)
+  window: the last `## References` heading (line 1107) to the end of the file (line 1349)
           — its numbered lines are read as entries
   entries=121  numbering=[n]
   block form: 121 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
-  author form: 121/121 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 1 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  author form: 121/121 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
   in-text cited numbers=122  covered=121/121  coverage=100.0%
   AMBIGUOUS: bracket numbers matching no entry (1) [0] — could be numeric ranges in prose, or a missing entry; verify manually (reference-check.md)
   GATE: PASS
 ```
+
+### The gate's `author form:` read, resolved
+
+The `author form:` line above is the one reading this report had left unexplained. It was a
+returned completeness item (editorial return 2026-10-08, PR #113, head `002f06d`), which read
+`1 carry a character reference` and found nothing here saying what that is. What the line reads is
+the form each entry **prints** -- a family name, a comma, an initial, or a lone family name before
+the year -- not the field the record stores, and it counts the two ways a printed entry can fail to
+be a name: a family name in ALL-CAPS, and a **character reference**, an HTML character entity
+(`&amp;`, `&#38;`, `&#x26;`) surviving into the page as the literal escape instead of the character
+it names.
+
+Its read of this package is `0 print the family name ALL-CAPS, 0 carry a character reference` -- the count is the gate's own, read out of the quote
+above (`C13`), so this paragraph cannot go on agreeing with an earlier run.
+
+The instance was entry `[121]`: `The Ethics of Algorithms: Mapping the Debate` printed its container
+as `Big Data &amp; Society`, the escaped form of the Crossref field, verbatim. The fix belongs at the
+seat that **builds** the entry and not in the page it prints on: `refs/refs_build_v93.py`
+(`record_text`) now decodes the printed form while the stored record keeps the publisher's answer,
+so the entry prints `Big Data & Society` and the gate's count is 0. The bar owns it as well -- the
+submission checker's reference-entry-field item rejects an entry printing an undecoded character
+reference -- so a recurrence is caught by the package, not by a reader.
 
 ## Verdict
 

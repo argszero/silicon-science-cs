@@ -25,20 +25,20 @@ outcomes       OUTCOME CHECK BATTERY -- 24 case(s), 24 caught
 section 5      SECTION 5 NUMBERS: PASS -- 52 claim(s), 0 missing
   batteries    BATTERY: 52 of 52 claim(s) fired when every token stating them was removed
 references     stage 1: 24 checks, 0 failed | stage 2: 15/15 PASS with 22/22 mutations caught | stage 3: 8/8 PASS, 19-case battery
-authenticity   REFERENCE CHECK: PASS -- 14 check(s), 0 failed | BATTERY: 11 of 11 case(s) fired
+authenticity   REFERENCE CHECK: PASS -- 14 check(s), 0 failed | BATTERY: 12 of 12 case(s) fired
 counts         the manuscript states the authenticity checker's count (14 checks, 0 failed)
-counts         the manuscript states the authenticity battery (11-case battery, 11 fired)
-citations      the product manuscript.md | citations 211 | distinct keys 121 of 121 built records
-counts         the manuscript states the run's citation count (211 citations)
+counts         the manuscript states the authenticity battery (12-case battery, 12 fired)
+citations      the product manuscript.md | citations 212 | distinct keys 121 of 121 built records
+counts         the manuscript states the run's citation count (212 citations)
 counts         the manuscript states the run's §5 claim count (52 claim)
 counts         the manuscript states the built-record count (121 distinct keys of 121)
 counts         the manuscript states the authenticity count (121 of 121 verified)
 figures        CURRENT -- fig1_sign_law_and_cost_ratio.png is byte-identical to a fresh draw (sha256 87b55876492a8e93)
 links          LINK CHECK: PASS -- 1 link(s), 1 local, 0 broken | BATTERY: 4 of 4 case(s) fired
-bar            SUBMISSION CHECK: PASS -- 18 item(s), 0 failed, 2 declared | BATTERY: 8 of 8 case(s) fired
+bar            SUBMISSION CHECK: PASS -- 18 item(s), 0 failed, 2 declared | BATTERY: 9 of 9 case(s) fired
 counts         the manuscript states the bar's own item count (18 item(s), 0 failed)
-product        manuscript.md 130628 bytes, sha256 9872c7243e9e9c5c
-counts         the README states the product digest this run produced (9872c7243e9e9c5c)
+product        manuscript.md 131901 bytes, sha256 664d851dce9e2b7e
+counts         the README states the product digest this run produced (58688d5b7c4708a7)
 
 REPRODUCE: ALL GREEN
 ```
@@ -174,7 +174,7 @@ to Crossref, 75 to the arXiv API, batched). Regenerate its network half with:
 
 ```bash
 python3 refs/reference_check.py --query     # writes reference-check.json + reference-check.md
-python3 refs/reference_check.py --selftest  # 14 checks + an 11-case battery, offline
+python3 refs/reference_check.py --selftest  # 14 checks + a 12-case battery, offline
 ```
 
 `refs/` is the pipeline the bibliography is derived from (`refs_check*.py`: 24 checks, 15+22 mutations, 8+19

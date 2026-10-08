@@ -224,8 +224,17 @@ def check_all(root=ROOT):
         miss = [e[:44] for e in entries if not re.search(pat, e)]
         if miss:
             short[name] = miss[:3]
-    add("P1-reference-entry-fields", bool(entries) and not short,
-        "%d entr(ies); missing-field examples: %s" % (len(entries), short or "none"))
+    # The entry must print the FORM, not the field a record stores.  A character reference (`&amp;`, `&#39;`) is
+    # the form an UNDECODED field has, and the journal's own gate counts it with no window at all
+    # (`refgate.py`'s `author_form`, whose rule is `&(?:#\d+|#x[0-9A-Fa-f]+|[a-zA-Z]+);`).  #93 was returned at
+    # triage on 2026-10-08 for exactly one such entry -- [121]'s venue, `Big Data &amp; Society`, out of the
+    # Crossref answer -- so the property is read here, over the PRODUCT's reference section (the object the gate
+    # reads), and not only over the built records it came from.
+    CHARREF = re.compile(r"&(?:#\d+|#x[0-9A-Fa-f]+|[a-zA-Z]+);")
+    escaped = [e[:60] for e in entries if CHARREF.search(e)]
+    add("P1-reference-entry-fields", bool(entries) and not short and not escaped,
+        "%d entr(ies); missing-field examples: %s; character-reference (undecoded field) examples: %s"
+        % (len(entries), short or "none", escaped[:3] or "none"))
 
     # ---- P2 figure embedded, captioned, cited -------------------------------------------------------------------
     img = re.search(r"!\[[^\]]*\]\(([^)]+)\)", product)
@@ -261,6 +270,10 @@ def main():
              lambda d: strip(d, "manuscript.md", r"\*\*Contribution level\*\*: `theory \+ empirics`"), "B1-"),
             ("a reference entry with no venue fails",
              lambda d: strip(d, "manuscript.md", r"\. arXiv:2605\.24309\.", keep=lambda m: " ."), "P1-"),
+            ("an entry printing an undecoded character reference fails",
+             lambda d: strip(d, "manuscript.md", r"\*The Ethics of Algorithms: Mapping the Debate\*\. Big Data & Society\.",
+                             keep=lambda m: "*The Ethics of Algorithms: Mapping the Debate*. Big Data &amp; Society."),
+             "P1-"),
             ("a figure cited only by its caption fails",
              lambda d: strip(d, "manuscript.md", r"\*\*Figure 1\([ab]\)\*\*", keep=lambda m: "**fit**"), "P2-"),
             ("a table numbering gap fails",

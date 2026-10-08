@@ -15,6 +15,7 @@ that is not in the pool is an ERROR, which is the control that caught two hand-t
 previous bibliography, R404).  The house-form helpers are this journal's own (`papers/issue-87/artefacts/refs/
 refs_build_v87.py`), copied here so this package is self-contained.
 """
+import html
 import io
 import json
 import os
@@ -31,6 +32,25 @@ OUT = os.path.join(HERE, "refs_built.json")
 SMALL = {"a", "an", "the", "and", "but", "or", "for", "nor", "of", "on", "in", "to", "with", "at", "by",
          "from", "as", "into", "over", "under", "vs", "via", "per"}
 KEEP_UPPER = re.compile(r"^[A-Z0-9]{2,}$|^[A-Z][a-z]*[A-Z]")
+
+
+def record_text(s):
+    """The PRINTED form of a record's field.
+
+    A registry answers with HTML character references when the field it stores carries them: Crossref's match for
+    `10.1177/2053951716679679` returns the venue as `Big Data &amp; Society`, and a character reference is the form
+    an **undecoded** field has.  It has no place in a printed entry -- the journal's own reference gate counts it
+    with no window at all (`refgate.py`'s `author_form`: `&(?:#\\d+|#x[0-9A-Fa-f]+|[a-zA-Z]+);`), which is how
+    issue #93 was returned at triage on 2026-10-08 -- so the repair belongs at the seat that BUILDS the entry,
+    where the record's encoding is resolved once for every field that reaches the page.  The repair is the
+    **decode, not a re-lookup**: the record is right, its encoding is what must be resolved here (the same repair
+    #38's correction round made at its `refs_render.py` `record_text`).
+
+    Applied only to the RENDERED fields (`title`, `venue`, the author names).  `pool_title` stays the record's own
+    bytes, because it is the provenance field a later read compares against the live pool -- decoding it there
+    would break the check it exists to serve.
+    """
+    return html.unescape(s) if isinstance(s, str) else s
 
 
 def title_case(s):
@@ -154,10 +174,12 @@ def main():
                 e = dict(source="crossref", key=rec["doi"], url=rec.get("url") or ("https://doi.org/" + rec["doi"]),
                          pool_title=rec["title"], authors_raw=rec.get("authors") or [],
                          n_authors=rec.get("n_authors"), year=rec.get("year"),
-                         venue=rec.get("venue") or "Crossref record", type=rec.get("type", ""))
+                         venue=record_text(rec.get("venue")) or "Crossref record", type=rec.get("type", ""))
             e["difference"] = " ".join(difference.split())
-            e["title"] = title_case(e["pool_title"])
-            e["authors"] = author_string(e["authors_raw"], e.get("n_authors") or len(e["authors_raw"]))
+            # every field that reaches the page is decoded here, once, at the seat that builds the entry
+            e["title"] = title_case(record_text(e["pool_title"]))
+            e["authors"] = author_string([record_text(a) for a in e["authors_raw"]],
+                                         e.get("n_authors") or len(e["authors_raw"]))
             if not e["authors"]:
                 errors.append(dict(source=src, id=ident, why="no author resolved by the pool record"))
             if not e["year"]:
@@ -169,7 +191,8 @@ def main():
         if e["key"] in seen:
             dupes.append(e["key"])
         seen[e["key"]] = e
-    rep = dict(round="R416; re-run at R482", resolved_by_pool=n_by_source,
+    rep = dict(round="R416; re-run at R482; R575 (record_text: the printed form is decoded, not the stored one)",
+               resolved_by_pool=n_by_source,
                n_selected_arxiv=len(SEL.ARXIV), n_selected_doi=len(SEL.DOI),
                n_not_selected=len(SEL.NOT_SELECTED),
                not_selected=[dict(id=i, reason=" ".join(r.split())) for i, r in SEL.NOT_SELECTED],
@@ -180,7 +203,8 @@ def main():
     # this round's "43 of 115 refused" -- stops being re-readable the moment the selection is fixed.  The log
     # keeps each run's refusals: what the pipeline refused is evidence, and evidence must outlive the fix.
     with io.open(os.path.join(HERE, "refs_build_log.jsonl"), "a", encoding="utf-8") as fh:
-        fh.write(json.dumps(dict(round="R416; re-run at R482", at=time.strftime("%Y-%m-%dT%H:%M:%S"),
+        fh.write(json.dumps(dict(round="R416; re-run at R482; R575 (record_text: the printed form is decoded, "
+                                       "not the stored one)", at=time.strftime("%Y-%m-%dT%H:%M:%S"),
                                  n_selected_arxiv=len(SEL.ARXIV), n_selected_doi=len(SEL.DOI),
                                  n_not_selected=len(SEL.NOT_SELECTED),
                                  n_entries=len(entries), n_unique=len(seen), duplicate_keys=dupes,

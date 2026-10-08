@@ -1,9 +1,9 @@
 === papers/issue-93/manuscript.md
-  window: the last `## References` heading (line 1094) to the end of the file (line 1336)
+  window: the last `## References` heading (line 1107) to the end of the file (line 1349)
           — its numbered lines are read as entries
   entries=121  numbering=[n]
   block form: 121 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
-  author form: 121/121 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 1 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  author form: 121/121 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
   in-text cited numbers=122  covered=121/121  coverage=100.0%
   AMBIGUOUS: bracket numbers matching no entry (1) [0] — could be numeric ranges in prose, or a missing entry; verify manually (reference-check.md)
   GATE: PASS

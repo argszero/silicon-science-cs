@@ -218,11 +218,45 @@ def gate_reading(text):
     ent = re.search(r"entries=(\d+)", text)
     cov = re.search(r"coverage=([0-9.]+)%", text)
     amb = re.search(r"AMBIGUOUS: bracket numbers matching no entry \((\d+)\)([^\n]*)", text)
+    af = re.search(r"(\d+)\s+print the family name ALL-CAPS,\s+(\d+)\s+carry a character reference", text)
     lines = [l.strip() for l in text.strip().split("\n") if l.strip()]
     return dict(entries=int(ent.group(1)) if ent else None,
                 coverage=float(cov.group(1)) if cov else None,
                 ambiguous=re.findall(r"\[(\d+)\]", amb.group(2)) if amb else [],
+                allcaps=int(af.group(1)) if af else None,
+                charref=int(af.group(2)) if af else None,
                 verdict=lines[-1] if lines else "")
+
+
+def author_form_phrase(g):
+    """The gate's own author-form numbers as one phrase, so the report's explanation is READ FROM the quote
+    rather than typed beside it -- a paragraph saying `0 carry a character reference` on its own would agree
+    with the gate only by luck, and would go on agreeing after the gate stopped saying it."""
+    if g.get("allcaps") is None or g.get("charref") is None:
+        return None
+    return "%d print the family name ALL-CAPS, %d carry a character reference" % (g["allcaps"], g["charref"])
+
+
+def live_citation_counts():
+    """The counts `cite_check.py` reads off the product, so this report states the numbers the run produces.
+
+    They were TYPED INTO the renderer until R575: the sentence below read `citations 210 | distinct keys 120 of 120`
+    while the package had moved on, and C8 (which compares the `.md` to its rendering) could not see it -- the
+    rendering carried the same stale literal, so the two agreed on a false number.  A count read from its source
+    cannot drift from it.
+    """
+    keys = load_keys()
+    for cand in (ROOT, os.path.join(ROOT, "manuscript")):
+        if os.path.exists(os.path.join(cand, "cite_check.py")):
+            if cand not in sys.path:
+                sys.path.insert(0, cand)
+            import cite_check
+            texts = [(os.path.basename(p), io.open(p, encoding="utf-8").read()) for p in cite_check.PARTS]
+            index, _un = cite_check.num_index(texts, keys)
+            order, occ = cite_check.scan(texts, index)
+            return dict(citations=len(occ), used=len([k for k in order if k in keys]), built=len(keys),
+                        uncited=len([k for k in keys if k not in set(order)]))
+    return None
 
 
 def render(obj, gate=None):
@@ -263,13 +297,23 @@ def render(obj, gate=None):
             L.append("> %s" % r["detail"])
         L.append("")
     g = gate_reading(gate)
+    c = live_citation_counts()
     L.append("## In-text keys, coverage and ambiguity")
     L.append("")
     L.append("Every entry carries an in-text key matching the bibliography: the body cites `[n]` and the list is")
     L.append("numbered `[n]`, so the key in the text IS the key the list prints (quality-bar item 11,")
-    L.append("*Citation mechanics*) -- `python3 cite_check.py` reads `citations 210 | distinct keys 120 of 120` and")
-    L.append("`uncited records 0 of 120`, and it resolves each `[n]` through this package's own numbered list rather")
-    L.append("than through the parts, which cite by key.")
+    if c:
+        # READ, not stated.  These numbers were typed into this renderer until R575 and had drifted to
+        # `citations 210 | distinct keys 120 of 120` while the package carried 212 of 121 -- and C8, which holds
+        # the .md equal to its rendering, could not see it, because the rendering carried the same literal.
+        L.append("*Citation mechanics*) -- `python3 cite_check.py` reads `citations %d | distinct keys %d of %d`"
+                 % (c["citations"], c["used"], c["built"]))
+        L.append("and `uncited records %d of %d`, and it resolves each `[n]` through this package's own numbered"
+                 % (c["uncited"], c["built"]))
+        L.append("list rather than through the parts, which cite by key.")
+    else:
+        L.append("*Citation mechanics*) -- `python3 cite_check.py` reads the citation counts off the product and")
+        L.append("resolves each `[n]` through this package's own numbered list rather than through the parts.")
     L.append("")
     if g["ambiguous"]:
         L.append("Bracketed groups in the prose that are NOT citations: the gate reports %d bracket number(s)"
@@ -287,6 +331,32 @@ def render(obj, gate=None):
     L.append("```text")
     L.extend(gate.rstrip("\n").split("\n"))
     L.append("```")
+    L.append("")
+    afp = author_form_phrase(g)
+    L.append("### The gate's `author form:` read, resolved")
+    L.append("")
+    L.append("The `author form:` line above is the one reading this report had left unexplained. It was a")
+    L.append("returned completeness item (editorial return 2026-10-08, PR #113, head `002f06d`), which read")
+    L.append("`1 carry a character reference` and found nothing here saying what that is. What the line reads is")
+    L.append("the form each entry **prints** -- a family name, a comma, an initial, or a lone family name before")
+    L.append("the year -- not the field the record stores, and it counts the two ways a printed entry can fail to")
+    L.append("be a name: a family name in ALL-CAPS, and a **character reference**, an HTML character entity")
+    L.append("(`&amp;`, `&#38;`, `&#x26;`) surviving into the page as the literal escape instead of the character")
+    L.append("it names.")
+    L.append("")
+    if afp:
+        L.append("Its read of this package is `%s` -- the count is the gate's own, read out of the quote" % afp)
+        L.append("above (`C13`), so this paragraph cannot go on agreeing with an earlier run.")
+    else:
+        L.append("This package's quoted gate carries no author-form reading; re-run `refgate.py` to refresh it.")
+    L.append("")
+    L.append("The instance was entry `[121]`: `The Ethics of Algorithms: Mapping the Debate` printed its container")
+    L.append("as `Big Data &amp; Society`, the escaped form of the Crossref field, verbatim. The fix belongs at the")
+    L.append("seat that **builds** the entry and not in the page it prints on: `refs/refs_build_v93.py`")
+    L.append("(`record_text`) now decodes the printed form while the stored record keeps the publisher's answer,")
+    L.append("so the entry prints `Big Data & Society` and the gate's count is 0. The bar owns it as well -- the")
+    L.append("submission checker's reference-entry-field item rejects an entry printing an undecoded character")
+    L.append("reference -- so a recurrence is caught by the package, not by a reader.")
     L.append("")
     L.append("## Verdict")
     L.append("")
@@ -358,10 +428,17 @@ def checks(obj, recs, md_text, order, built_count, gate=None):
     # own numbers -- and the brackets it flags are required to be the brackets the ambiguity paragraph explains,
     # because a generic "some brackets are ranges" would leave the one the gate named unread (Class 118).
     g = gate_reading(gate)
+    afp = author_form_phrase(g)
+    # `author form:` is a line OF THE QUOTE, so a report that quotes the gate and leaves that line unexplained
+    # is a report with an unread claim on its face -- exactly what the 2026-10-08 return named.  The report must
+    # carry the gate's OWN numbers for it; a paragraph with the numbers typed in would pass here while the gate
+    # said something else, which is why the phrase is built from the parsed quote and compared to the text.
     add("C13-the-quoted-journal-gate-re-read",
-        bool(gate) and g["entries"] == len(obj["rows"]) and g["coverage"] == 100.0 and g["verdict"] == "GATE: PASS",
-        "quoted gate: entries=%s coverage=%s%% verdict=%r against this report's %d entries"
-        % (g["entries"], g["coverage"], g["verdict"], len(obj["rows"])))
+        bool(gate) and g["entries"] == len(obj["rows"]) and g["coverage"] == 100.0 and g["verdict"] == "GATE: PASS"
+        and afp is not None and afp in md_text,
+        "quoted gate: entries=%s coverage=%s%% verdict=%r; its `author form:` read resolved in the report: %s; "
+        "against this report's %d entries"
+        % (g["entries"], g["coverage"], g["verdict"], bool(afp and afp in (md_text or "")), len(obj["rows"])))
     body = md_text.split("## Journal reference gate")[0]
     unexplained = [b for b in g["ambiguous"] if ("`[%s]`" % b) not in body]
     add("C14-every-bracket-the-gate-flags-is-explained", bool(gate) and not unexplained,
@@ -410,6 +487,8 @@ def main():
              lambda o: None, "C11-volume-bar"),
             ("a quoted gate whose count disagrees with the report is caught",
              lambda o: None, "C13-the-quoted-journal-gate", "gate_entries"),
+            ("a gate whose author-form read the report does not carry is caught",
+             lambda o: None, "C13-the-quoted-journal-gate", "gate_authorform"),
             ("a bracket the gate flags and the report does not name is caught",
              lambda o: None, "C14-every-bracket-the-gate-flags", "gate_bracket"),
         ]
@@ -428,6 +507,15 @@ def main():
                 # item C13 -- not the .md's staleness -- is what fires.
                 g = g.replace("entries=%d" % len(obj["rows"]), "entries=%d" % (len(obj["rows"]) - 1))
                 md2 = render(o, g)
+            elif mode == "gate_authorform":
+                # The plant is in the QUOTED OUTPUT's own alphabet: the gate is made to print a character
+                # reference and the rendering stays the one made from the UNMUTATED quote -- re-rendering from
+                # the plant would write its own explanation and satisfy itself (the Class 118 family, as in
+                # `gate_bracket`).  The substitution is regex-based so it changes the numbers whatever they are.
+                g = re.sub(r"(\d+)( print the family name ALL-CAPS, )(\d+)( carry a character reference)",
+                           lambda m: "%d%s%d%s" % (int(m.group(1)) + 1, m.group(2),
+                                                   int(m.group(3)) + 1, m.group(4)), g)
+                md2 = md_text
             elif mode == "gate_bracket":
                 # The rendering stays the one made from the UNMUTATED quote: a plant re-rendered from its own
                 # mutation would write its own explanation and satisfy itself (the Class 118 family).

@@ -637,7 +637,7 @@ a refresh.
 
 **The manuscript's citation line, re-derived by `cite_check.py`:**
 
-     211 citations, 121 distinct keys of 121 built records, 0 unknown, 0 records uncited, 0 malformed
+     212 citations, 121 distinct keys of 121 built records, 0 unknown, 0 records uncited, 0 malformed
 
 **And the two counts that had no owner.**  R481 changed `submission_check.py` (one item added) and
 `reference_check.py` (two checks, two battery cases added) and updated `README.md`; the MANUSCRIPT's own rendering
