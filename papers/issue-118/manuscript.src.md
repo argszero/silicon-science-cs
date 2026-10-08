@@ -25,7 +25,7 @@ The practical consequence is stated as a **tolerance inversion** (§5.3): a capa
 
 ### Figures and tables
 
-The results are visualised in `figures/`: the **critical-capacity frontier** `C_min(µ)` for a uniform router with the folk constants drawn on it (Figure 1), the **ceiling** as the uniform floor against measured skewed routers (Figure 2), the **tolerance inversion** (Figure 3), and the **composition and displacement** arm (Figure 4). Table 1 gives the production-configuration map (§5.7), Table 2 the closed-form comparison (§5.4), and Table 3 the prior-belief scorecard (§6).
+The results are visualised in `figures/`: the **critical-capacity frontier** `C_min(µ)` for a uniform router with the folk constants drawn on it (Figure 1), the **ceiling** as the uniform floor against measured skewed routers (Figure 2), the **tolerance inversion** (Figure 3), and the **composition and displacement** arm (Figure 4). Table 6 gives the production-configuration map (§5.7), Table 3 the closed-form comparison (§5.4), and Table 8 the prior-belief scorecard (§6).
 
 ## 2. Related work
 
@@ -97,7 +97,9 @@ Route A against route B, at the same `C = 1.25`, over five certificate cells: wo
 
 ### 5.2 The ceiling is confirmed, measured from both sides
 
-**From the ideal side.** With a **perfectly uniform** router, `C_min` at tolerance `1e-6`:
+**From the ideal side.** With a **perfectly uniform** router, `C_min` at tolerance `1e-6` (Table 1):
+
+**Table 1 — the zero-drop frontier of a perfectly uniform router: `C_min` read at tolerance `1e-6` by the exact route.**
 
 | `E` | `µ` | drop rate at `C = 1.25` | `C_min` |
 |---|---|---|---|
@@ -120,7 +122,9 @@ Every cell with `µ ≤ 16` needs `C > 1.25`, and the cells at `µ ≤ 8` need `
 
 ### 5.3 The tolerance inversion: what the folk constant actually accepts
 
-`C_min` moves with the **declared** tolerance in every cell (E = 64, µ = 16, exact route: 1.619 at `1e-3`, 2.189 at `1e-6`, 2.638 at `1e-9`; a `C_min` is a reading *at* a tolerance, never a property of the router alone). Inverting the law therefore answers a question the constant leaves implicit — *what drop rate does `C = 1.25` accept?* — and the answer is regime-dependent:
+`C_min` moves with the **declared** tolerance in every cell (E = 64, µ = 16, exact route: 1.619 at `1e-3`, 2.189 at `1e-6`, 2.638 at `1e-9`; a `C_min` is a reading *at* a tolerance, never a property of the router alone). Inverting the law therefore answers a question the constant leaves implicit — *what drop rate does `C = 1.25` accept?* — and the answer is regime-dependent (Table 2):
+
+**Table 2 — the tolerance inversion: the drop rate the folk constant accepts, read off the exact route.**
 
 | `E` | `µ` | `D(C = 1.25)`, uniform, exact route | implied reading |
 |---|---|---|---|
@@ -136,6 +140,10 @@ The constant encodes an **implicit tolerance of roughly `1e-2`**, which it honou
 
 ### 5.4 A closed form exists, and it has its own domain
 
+
+Three candidates, each measured against the exact route over the sweep grid (Table 3):
+**Table 3 — three closed-form candidates for `C_min` against the exact route, and the load regime each one holds in.**
+
 | form | max relative error of `C_min` | verdict |
 |---|---|---|
 | normal | 27.8 % | fails a 5 % bar |
@@ -150,7 +158,9 @@ With independent per-token decisions, the marginal load at expert `e` is exactly
 
 ### 5.6 The composition law: overflow is a displacement channel
 
-Measured on a dispatch trace (arrival-order filling of the per-expert budget):
+Measured on a dispatch trace (arrival-order filling of the per-expert budget) (Table 4):
+
+**Table 4 — where the dropped tokens are: arrival-position deciles and the hottest expert, on a dispatch trace.**
 
 | `E` | `T` | router `α` | dropped | first-decile share (null 10 %) | last-decile share (null 10 %) | hottest-expert share (null `100/E` %) |
 |---|---|---|---|---|---|---|
@@ -158,9 +168,11 @@ Measured on a dispatch trace (arrival-order filling of the per-expert budget):
 | 64 | 1024 | 0.2 | 59.3 % | **0.00 %** | **14.83 %** | 26.36 % (null 1.56 %) |
 | 128 | 1024 | 0.5 | 43.0 % | **0.00 %** | **17.50 %** | 10.45 % (null 0.78 %) |
 
-Three separate signatures. The dropped set is **completely front/back asymmetric** — not one drop in the first decile of arrival positions, 14.8–19.4 % in the last, against a 10 % null — so a dropped token's fate is a function of its position, and hence of the batch it lands in. It is **hot-expert concentrated**, 7–17× the uniform null, so the loss falls on the tokens the router is most confident about. And it is **displaceable**:
+Three separate signatures. The dropped set is **completely front/back asymmetric** — not one drop in the first decile of arrival positions, 14.8–19.4 % in the last, against a 10 % null — so a dropped token's fate is a function of its position, and hence of the batch it lands in. It is **hot-expert concentrated**, 7–17× the uniform null, so the loss falls on the tokens the router is most confident about. And it is **displaceable** (Table 5):
 
 ![Figure 4: the composition and displacement arm. Left: where the drops are — the first and last decile of arrival positions and the single hottest expert, against the uniform null; no drop lands in the first decile. Right: victim tokens displaced against attacker load, and the displacement is exactly min(L, cap) in every cell tested, so the overflow channel's budget is one capacity per targeted expert.](figures/fig4_composition.png)
+
+**Table 5 — the displacement exchange rate: attacker load placed ahead of the victim against the victim tokens it removes.**
 
 | attacker load placed at the front, aimed at the hottest expert | victim drops displaced | rate |
 |---|---|---|
@@ -172,7 +184,9 @@ Three separate signatures. The dropped set is **completely front/back asymmetric
 
 ### 5.7 External validity: the law against eight published configurations
 
-Tokens-per-forward is not public for any production system, so the honest object is the curve `C_min(µ)`, with each configuration placed on it and its two operating points read off (Table 1). (E, top-k) are read from each source.
+Tokens-per-forward is not public for any production system, so the honest object is the curve `C_min(µ)`, with each configuration placed on it and its two operating points read off (Table 6). (E, top-k) are read from each source.
+
+**Table 6 — eight published production configurations placed on the frontier from their public `(E, topk)`.**
 
 | system | source | `E` | `topk` | `C` published | drops tokens | `C_min` at `µ = 8 / 16 / 64 / 256` |
 |---|---|---|---|---|---|---|
@@ -191,6 +205,10 @@ At **training** load (`µ ~ O(1e2)`: a batch of many thousands of tokens over a 
 
 ### 5.8 A measured router: the law's input is a measurable object
 
+
+Six balancing weights, three seeds each (Table 7):
+**Table 7 — a CPU-trained router: load ratio and `C_min` against the strength of its balancing loss, three seeds each.**
+
 | auxiliary weight | max/mean load ratio (3 seeds) | mean | `C_min` | experts used |
 |---|---|---|---|---|
 | 0.0 | 5.13 / 3.56 / 3.13 | 3.94 | 4.18 | 10 / 12 / 13 |
@@ -204,7 +222,21 @@ The uniform-router floor at this `T` is 1.0798 ± 0.0222 (500-draw Monte-Carlo) 
 
 ## 6. Prior-belief report
 
-The registration fixed three priors, each with its justifying mechanism, before the deciding runs. Table 3 is the scorecard.
+The registration fixed three priors, each with its justifying mechanism, before the deciding runs. Table 8 is the scorecard.
+
+**Table 8 — the seven registered success metrics, each reported against what the runs show.**
+
+| # | registered metric | what the runs show | verdict |
+| --- | --- | --- | --- |
+| (i) | the closed-form drop functional matches an independent sampler to ≤ 1e-3 relative | route A against route B at `C = 1.25` over five cells: worst **6.36e-13** (§5.1); the sampler scored at the same `C` reads **max |z| = 2.17** over five cells against the 2.6 expected | **MET** — the tight bar sits on the arithmetic-exact route, as filed in the registration amendment, and the sampler is scored statistically rather than asked to meet a resolution it does not have |
+| (ii) | the measured `C_min(E, µ)` lies within 5 % of the summed imbalance + finite-sample prediction over ≥ 24 cells | Edgeworth (skewness-corrected) **4.54 % on µ ≥ 8**; the normal form 27.8 %; below the break every form degrades (13.6 % at µ = 4, 50.5 % at µ = 1) (§5.4) | **MET on µ ≥ 8, UNMET below it** — the closed form has its own validity threshold, at the same order as the constant's own, because both are set by the fluctuation-to-mean ratio |
+| (iii) | a zero-drop frontier is located and the folk constant classified inside/outside it in ≥ 12 cells with no misclassification | the frontier is computed by the exact route in every cell of the sweep and `C = 1.25` lies inside it only above µ ≈ 64, and below `C_min` in every cell at µ ≤ 16 (Table 1) | **MET** — the count is met by the sweep, not by the tabulated cells: Table 1 shows 8 rows, the grid behind it is the 24+ cells the metric names |
+| (iv) | under a perfectly uniform router the no-drop capacity still exceeds 1.25 in every tested cell with µ ≤ 16 | every cell with µ ≤ 16 needs `C > 1.25`, the µ ≤ 8 cells need `C > 2`, and the measured router converges to the floor from above (4.18 → 1.37 against 1.1635) without crossing it (§5.2, §5.8) | **MET** — and this is the metric that falsifies the ceiling result, so its passing is the ceiling's evidence rather than a formality |
+| (v) | ≥ 8 published production configurations are placed on the law, the training-regime rows inside and the decode-regime rows outside | 8 placed from their public `(E, topk)` (Table 6); `C_min` at training load is 1.24–1.26 so the folk constants are sound where they were chosen, and 1.6–2.5 at decode load so `C = 1.25` is below it (§5.7) | **MET**, with its limitation stated: tokens-per-forward is not public for any of them, so the placement at an operating point is an inference and the **curve** is the claim |
+| (vi) | a small CPU-trained MoE's measured load distribution reproduces the predicted max-load/mean-load ratio within its bootstrap CI | the measured ratio falls 3.94 → 1.22 against a uniform-router floor of **1.0798 ± 0.0222**, and `C_min` 4.18 → 1.37 against 1.1635 (§5.8) | **NOT REPRODUCED as registered** — balancing drives the router *toward* the floor from above and stops outside it; the registration's own reading of this metric assumed a remedy could reach the ideal, and the measurement is what makes P2 a ceiling rather than a rate |
+| (vii) | the dropped set's positional bias exceeds the uniform-sampling null by a stated margin | first-decile share **0.00 %** against a 10 % null, last decile 14.8–19.4 %, hottest expert 7–17× its null (§5.6, Table 4) | **MET** — and sharper than registered: the asymmetry is total rather than a margin |
+
+Two of the seven do not read as a plain pass, and both are reported rather than repaired: **(ii)** holds only above the `µ ≈ 8` break it measures, and **(vi)** is a metric the registration wrote optimistically — its failure is the ceiling result. **No metric was substituted after the runs**; the one amendment to a registered bar (criterion (i), the `≤ 1e-3` relative bar) was filed in the registration before the deciding runs, because a 1500-draw sampler cannot resolve it.
 
 **P1 — the constant is outside its own validity region.** *Predicted*: at `C = 1.25` a perfectly uniform router still drops tokens whenever `µ ≲ 2 ln E`; a drop rate above 1 % at (E = 128, µ = 8) and above 0.1 % at (E = 64, µ = 16), and `C_min > 2` at (E = 64, µ ≤ 4). *Justification*: the per-expert count is `Bin(T, 1/E)` with mean `µ` and standard deviation `sqrt(µ)`, so the maximum over `E` experts sits about `sqrt(2 µ ln E)` above the mean, while the capacity is a fixed multiple of the mean — the constant's relative headroom `0.25 µ` exceeds the fluctuation only once `µ ≳ 2 ln E`. *Outcome*: **CONFIRMED**, all three numeric predictions — measured 5.27 % at (128, 8), 2.24 % at (64, 16), and `C_min` 7.97 / 5.43 / 3.80 at µ = 1 / 2 / 4.
 
@@ -212,7 +244,7 @@ The registration fixed three priors, each with its justifying mechanism, before 
 
 **P3 — the dropped set is displaced, not sampled.** *Predicted*: under first-come dispatch the dropped tokens are concentrated in late arrival positions and on the hottest experts, so the drop set is position-biased; and an adversary-aware exchange rate exists — each unit of attacker load placed before the victim displaces a computable number of victim tokens. *Justification*: capacity is consumed in arrival order, so the marginal token of an over-subscribed expert is the one that arrives last; the bias is a property of the dispatch order, independent of the router. *Outcome*: **CONFIRMED**, and sharper than predicted — the asymmetry is total (0.00 % of drops in the first decile), the hot-expert concentration is 7–17× the null, and the exchange rate is exactly 1:1 **saturating at one expert's capacity** rather than growing with the attacker's budget. The registration flagged this as the least certain prior because a dispatch implementation that randomises within an expert would weaken it; the measurement is on the standard arrival-order implementation, which the paper names as its baseline.
 
-The one registered item that is **not** a prior is the external-validity check, which we report as PASS with its limitation: eight configurations are placed on the law from published `(E, topk)`, but tokens-per-forward is unknown, so the *placement at an operating point* is an inference and the *curve* is the claim (Table 1).
+The one registered item that is **not** a prior is the external-validity check, which we report as PASS with its limitation: eight configurations are placed on the law from published `(E, topk)`, but tokens-per-forward is unknown, so the *placement at an operating point* is an inference and the *curve* is the claim (Table 6).
 
 ## 7. Threats to validity
 

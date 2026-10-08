@@ -28,6 +28,7 @@ import refs_tool as T                         # the verifier's own normaliser
 
 CUR = "refs/curated.json"
 LOG = "refs/verify.log"
+AUTH = "refs/authors.json"
 OUT = "reference-check.md"
 
 
@@ -84,6 +85,21 @@ def main():
     assert not uncurated, "in-text keys that are not curated: %s" % uncurated[:8]
     assert len(entries) >= B.MIN_REFS, "%d entries is below the floor %d" % (len(entries), B.MIN_REFS)
 
+    # -- the author records (the third committed artefact) ---------------------
+    # An entry with no author record is a DEFECT, not an authorless work: the two are only
+    # distinguishable while the record is read, so absence here is refused rather than printed.
+    authdoc = json.load(open(AUTH))
+    authors = authdoc["authors"]
+    no_auth = sorted(set(by_bare) - set(authors))
+    extra_auth = sorted(set(authors) - set(by_bare))
+    assert not no_auth, "curated entries with no author record: %s" % no_auth[:8]
+    assert not extra_auth, "author records for identifiers not curated: %s" % extra_auth[:8]
+    assert authdoc["n"] == len(authors) == len(entries), \
+        "authors.json says n=%s and carries %d records for %d entries" % (
+            authdoc["n"], len(authors), len(entries))
+    assert all(authors[b] for b in authors), \
+        "an author record is empty -- use `verify`, never a partial read"
+
     # -- write the report ------------------------------------------------------
     L = []
     L.append("# Citation report - issue #118")
@@ -116,6 +132,37 @@ def main():
     L.append("|---|---|---|")
     L.append("| `refs/verify.log` | the verifier's own output (%d lines) | `%s` |" % (len(body), sha(LOG)))
     L.append("| `refs/curated.json` | the curated set, with the role and the stated difference of each entry | `%s` |" % sha(CUR))
+    L.append("| `refs/authors.json` | the author names as the %d records state them, captured in the same fetch that resolved each title | `%s` |" % (len(authors), sha(AUTH)))
+    L.append("")
+    L.append("## (i-b) The author component of every entry")
+    L.append("")
+    L.append("The entry style is a test over **every** entry, and the author component is part of it.")
+    L.append("It is **read from the record**, never typed: the verifier captures it in the same request")
+    L.append("that resolves the title (`refs_tool.py`), so the author is evidence about the record the")
+    L.append("title check is evidence about, rather than a second, later claim about it.")
+    L.append("")
+    L.append("| carrier | what it returns | the order it states |")
+    L.append("|---|---|---|")
+    L.append("| arXiv API (`export.arxiv.org/api/query?id_list=`) | one `<author><name>` per author | `Given Family` |")
+    L.append("")
+    L.append("The printed form is `Family, I.` -- initials taken from the given names, a hyphenated given")
+    L.append("name taking one initial per part (`Maria-Florina Balcan` -> `Balcan, M. F.`); **four or more**")
+    L.append("authors print the first three then `; et al.`; a record giving **one token and no more** prints")
+    L.append("that token alone, never padded to `Family, I.`. The **raw string the record returned is kept")
+    L.append("beside the printed one** in the table below, so the split is an auditable derivation rather")
+    L.append("than a claim. Where a record carried none the renderer prints a sentence naming the gap and")
+    L.append("the identifier instead of leaving the position empty; no entry here takes that branch.")
+    L.append("")
+    L.append("The editor's own read of the rendered list is the journal gate -- run from a checkout of the")
+    L.append("repository, over the product rather than the source:")
+    L.append("")
+    L.append("```")
+    L.append("python3 .github/tools/refgate.py papers/issue-118/manuscript.md")
+    L.append("```")
+    L.append("")
+    L.append("Its `author form:` and `block form:` lines are the two readings this component exists to")
+    L.append("satisfy; they are quoted by the editor at triage, not reproduced here, because a log line")
+    L.append("copied into a generated file is a typed number the moment the gate changes.")
     L.append("")
     L.append("**Two-sided controls** (`refs_tool.py plant`, against a throwaway copy; the committed")
     L.append("artefact is never mutated). A verifier that cannot fail is decoration, so both plants must")
@@ -144,7 +191,7 @@ def main():
     L.append("the body for a literal `[N]`, which must be found zero times. The generator asserts them")
     L.append("independently, over the same inputs.")
     L.append("")
-    L.append("## (iii) The entries, by role")
+    L.append("## (iv) The entries, by role")
     L.append("")
     for role in B.ROLE_ORDER:
         group = [e for e in entries if e["role"] == role]
@@ -152,10 +199,18 @@ def main():
             continue
         L.append("### %s (%d)" % (B.ROLE_NAME.get(role, role), len(group)))
         L.append("")
-        L.append("| identifier | verdict | title as recorded | published |")
-        L.append("|---|---|---|---|")
+        L.append("| identifier | verdict | title as recorded | published | names as the record gives them | as printed |")
+        L.append("|---|---|---|---|---|---|")
         for e in sorted(group, key=lambda e: e["bare"]):
-            L.append("| `%s` | %s | %s | %s |" % (e["bare"], logged[e["bare"]][0], e["title"], e["published"]))
+            bare = e["bare"]
+            raw = authors[bare]
+            # The column shows everything the RENDER actually read: for four or more names the
+            # component is `first three; et al.`, so the tail is summarised as a count -- printing
+            # 200 names would be a wall the reader cannot check the split against anyway.
+            shown = raw if len(raw) <= 3 else raw[:3] + ["(+%d more)" % (len(raw) - 3)]
+            L.append("| `%s` | %s | %s | %s | %s | %s |" % (
+                bare, logged[bare][0], e["title"], e["published"],
+                "<br>".join(shown), B.author_component(bare, e["title"], authors)))
         L.append("")
     L.append("---")
     L.append("")

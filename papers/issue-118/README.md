@@ -34,7 +34,7 @@ The word covers several different claims, checked separately because a single
 | 2 | the **committed artefact** is what the code produces | step 2 | regenerated and `cmp`-ed against the committed `canonical_results.json` |
 | 3 | the committed **figures** are views of that artefact | step 3 | all 4 PNGs and `figures/manifest.json` re-rendered and required byte-identical |
 | 4 | the committed **manuscript** is what the pipeline builds | step 4 | `refs/refs_build.py render-check` requires `manuscript.md` to equal the render of `manuscript.src.md` |
-| 5 | **citation coverage**, the citation guards, and the **citation report** | step 5, 5b | `refs_build.py check` (every entry cited, every in-text key curated, ≥100 references, no literal `[N]` in the body) and `refs/refs_report.py` regenerating `reference-check.md` byte-identically |
+| 5 | **citation coverage**, the citation guards, and the **citation report** | step 5, 5b, 5c | `refs_build.py check` (every entry cited, every in-text key curated, ≥100 references, no literal `[N]` in the body); `refs/refs_report.py` regenerating `reference-check.md` byte-identically; and 5c re-reading the **author component** and the **block form** off the rendered `manuscript.md` |
 | 6 | the manuscript's **decisive numbers** reappear from the code | step 6 | two certificate numbers grepped from `spike_v1.py`'s **own stdout**, and seven headline numbers from the step-1 run log |
 
 Claim 2 is the one a reader relies on and the one a self-comparison does **not** cover:
@@ -59,7 +59,7 @@ It exists because claim 1 is 92 % of the runtime; every other claim still runs.
 | `model_v3.py` | the production map (eight published configurations) and a measured router |
 | `plotlib.py`, `make_figures.py` | the stdlib-only figure pipeline (raster canvas, 3×5 font, zlib PNG writer, reused from issues #114 / #116) |
 | `figures/` | the four figures, plus `manifest.json` (bytes + sha256 per figure, and the artefact's sha256) |
-| `refs/` | the citation pipeline: discover → curate → verify → number/coverage → report |
+| `refs/` | the citation pipeline: discover → curate → verify (titles **and** authors) → number/coverage → report |
 
 ### The citation pipeline is four different acts, in four files
 
@@ -74,8 +74,11 @@ It exists because claim 1 is 92 % of the runtime; every other claim still runs.
 `refs/candidates.json` is the discovery artefact (58 queries → 1100 candidates);
 `refs/curated.json` is the curatorial act (105 entries, each with a role and a stated
 difference from this work); `refs/verify.log` is the verifier's own output; and
-`reference-check.md` is **generated** from the last two by `refs/refs_report.py` rather
-than written by hand — step 5b requires the committed file to equal its regeneration.
+`refs/authors.json` records the author names **as each record states them**, captured in
+the same fetch that resolved that entry's title, so the entry's author component is
+evidence about the same record the title check is evidence about. `reference-check.md` is
+**generated** from those three by `refs/refs_report.py` rather than written by hand —
+step 5b requires the committed file to equal its regeneration.
 
 **Verification is the one networked part** and it is *not* part of `reproduce.sh`:
 
@@ -89,9 +92,27 @@ identifier (`https://export.arxiv.org/api/query?id_list=<id>`) and compares the 
 title to the one recorded for that key, after normalisation. It exits non-zero if any
 entry fails, so it is a check rather than a statement. The committed `refs/verify.log`
 records **105/105 resolved, 0 problems**, and the generator additionally asserts that the
-log and the curated set name the same identifiers in both directions. The two-sided
-control injects a corrupted title and an invented identifier (`9999.99999`) into a
-throwaway copy; **both must fail** or the command exits non-zero.
+log and the curated set name the same identifiers in both directions.
+
+The **same request** that returns the title returns the record's authors, and they are
+written to `refs/authors.json` rather than typed into the bibliography: an author list
+transcribed from memory is not evidence, and a second, later fetch could resolve a
+different revision of the record. The renderer reads them from there, prints the house
+form (`Family, I.`; the first three then `et al.` from the fourth; a record giving one
+token and no more prints that token alone), and `reference-check.md` prints the raw string
+the record gave **beside** the rendered form, so the split is an auditable derivation. An
+entry whose authors were never read is a defect and is refused — it must not render as
+though the record carried none.
+
+In practice the identifiers are fetched in **batches** (40 per request, `max_results`
+passed explicitly because arXiv's `id_list` silently caps at 10 by default), with a
+single-identifier fallback for anything a batch does not answer for. Every entry is
+separated from the next by a blank line: consecutive line-start markers are one paragraph
+to every CommonMark renderer, so the list is read as it renders, and **step 5c** re-reads
+both properties off the product.
+
+The two-sided control injects a corrupted title and an invented identifier (`9999.99999`)
+into a throwaway copy; **both must fail** or the command exits non-zero.
 
 ## Headline results (all re-derived by `reproduce.sh`)
 

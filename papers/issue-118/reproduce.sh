@@ -90,6 +90,39 @@ cp -r refs "$TMP/rep/refs"; cp manuscript.src.md "$TMP/rep/"
 if cmp -s "reference-check.md" "$TMP/rep/reference-check.md"; then
   ok "reference-check.md byte-identical to its regeneration from the artefacts"
 else bad "reference-check.md differs from what the artefacts generate"; fi
+# 5c: the two properties the editorial return of 2026-10-08 named, read off the PRODUCT (offline,
+# from committed artefacts): every entry names an author, and every entry is its own paragraph.
+# These are rendering properties, so they are measured on manuscript.md as rendered, not on the
+# source, where the newlines already exist.
+"$PY" - <<'PYCHECK' || bad "the author component or the block form is defective"
+import json, re, sys
+# The author component's shape is the journal gate's OWN class, copied from `.github/tools/
+# refgate.py` with its source named: a family token of two or more letters (Unicode letters,
+# apostrophes and hyphens -- `DeepSeek-AI` is one), closed by a comma and an initial. Writing a
+# NARROWER class here would fire on healthy entries: the first draft of this check rejected
+# `[53] DeepSeek-AI; Liu, A.; ...` because it did not admit a trailing hyphen, i.e. the check was
+# narrower than the rule it mirrors -- the same defect class as the one this block exists to catch.
+FAMILY = r"[^\W\d_](?:[^\W\d_]|['\u2019-]){1,}"
+COMPONENT = re.compile(r"(?<![\w'\u2019-])(" + FAMILY + r")\s*,\s*[A-Z]\.")
+SOLO = re.compile(r"^(" + FAMILY + r")\.\s*\(")
+cur = json.load(open("refs/curated.json"))["entries"]
+auth = json.load(open("refs/authors.json"))["authors"]
+missing = sorted(e["bare"] for e in cur if not auth.get(e["bare"]))
+assert not missing, "curated entries with no author record: %s" % missing[:8]
+txt = open("manuscript.md").read()
+lines = txt.splitlines()
+start = max(i for i, l in enumerate(lines) if l.startswith("## References"))
+sec = lines[start + 1:]
+ents = [(i, l) for i, l in enumerate(sec) if re.match(r"^\s*\[\d{1,3}\]\s", l)]
+assert len(ents) == len(cur), "read %d entries for %d curated" % (len(ents), len(cur))
+for pos, (i, l) in enumerate(ents):
+    assert pos == 0 or sec[i - 1].strip() == "", \
+        "entry %r is not separated from the one above by a blank line" % l[:40]
+    body = l.split("] ", 1)[1]
+    assert COMPONENT.search(body) or SOLO.match(body), \
+        "no author component at the entry position: %r" % l[:60]
+print("   %d entries: each names an author, each is its own paragraph" % len(ents))
+PYCHECK
 
 step "6. the manuscript's decisive numbers reappear from the code"
 # (a) the certificate numbers, from spike_v1's OWN stdout (48 s), not from a summary
