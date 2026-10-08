@@ -10,6 +10,11 @@ produce, the reference layer (discovery, curation, verification and metadata), t
 typed into the prose — and `validate.py` re-reads those artefacts and asserts the claim each number
 belongs to.
 
+**Contribution level: `theory+empirics`** (the same declaration the manuscript carries in its title
+block). A theory object — the exact moment-chain recursion, its closed form and the two boundaries —
+validated by measurement, with ground truth available by construction (exact rational trajectories)
+and a baseline comparison against the prevention-only analysis.
+
 ## One-command reproduction
 
     working directory:  papers/issue-122        (the package root — run it from there)
@@ -20,7 +25,7 @@ Expected output:
     VALIDATE 42/42
     RESULT: PASS
     SELFTEST 10/10 plants caught
-    CHECKSUMS [HARD] 29/29 files match the committed record
+    CHECKSUMS [HARD] 30/30 files match the committed record
     RESULT: PASS
 
 and, on the full tier, one `wrote <name>_results.json` line per instrument plus a per-figure line.

@@ -302,7 +302,7 @@ def suite(D):
           "problems=%d" % len(D["meta"]["problems"]))
     cited = set()
     refs_block = man.split("## References", 1)[1]
-    numbered = set(re.findall(r"^(\d+)\. ", refs_block, re.M))
+    numbered = set(re.findall(r"^\[(\d+)\] ", refs_block, re.M))
     for grp in re.findall(r"\[([\d,\s\-–]+)\]", man.split("## References", 1)[0]):
         for part in re.split(r",", grp):
             if re.match(r"^\d+$", part.strip()):

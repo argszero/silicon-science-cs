@@ -1,18 +1,17 @@
-# journal gates, run from the repository root on branch paper/issue-122 against papers/issue-122/manuscript.md
-# (the manuscript, figures and artefacts are byte-identical at this record's parent commit and at the head, which adds only this log, the regenerated citation report and the refreshed checksums.sha256)
+# journal gates, run from the repository root (worktree of branch paper/issue-122) against papers/issue-122/manuscript.md
+# at the triage-return revision: the registration priors aligned in the manuscript, the bibliography moved to the house [n] marker, and the citation report regenerated from this log
 # interpreters: .github/tools/refgate.py,linkgate.py,numgate.py,pointgate.py under python3.13 (the tools use 3.12+ f-string syntax);
 #              the manuscript's own instruments under /usr/bin/python3 3.9.6 (build.json)
-# commit: manuscript: issue #122
+# commit: revision: issue #122 respond to triage return (label stays submitted)
 
 $ python3 .github/tools/refgate.py papers/issue-122/manuscript.md
 === papers/issue-122/manuscript.md
-  window: the last `## References` heading (line 630) to the end of the file (line 834)
+  window: the last `## References` heading (line 637) to the end of the file (line 841)
           — its numbered lines are read as entries
-  entries=102  numbering=.
+  entries=102  numbering=[n]
   block form: 102 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
   author form: 102/102 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
   in-text cited numbers=102  covered=102/102  coverage=100.0%
-  WARN: bib uses '1.' but body uses '[n]' — style mismatch (a naive '[n]' bib-count would report 0 entries)
   GATE: PASS
 exit=0
 
@@ -27,7 +26,7 @@ exit=0
 
 $ python3 .github/tools/numgate.py --check
 numgate_v1 - the tree's numbered references, by the form each one takes
-set: 283 tracked files read as text (of 327, `git ls-files`); carriers: 10 (README.md -> Links); forms: 7
+set: 284 tracked files read as text (of 328, `git ls-files`); carriers: 10 (README.md -> Links); forms: 7
 sites=1640  carrier=487  package=1153
 form          carrier  carriers  list home
 item N             64         5  README.md -> Quality bar
@@ -37,7 +36,7 @@ sec N               3         2  a manuscript's own sections
 #N                148         7  the journal's issue/PR namespace (the form names it)
 op(N)               0         0  the editor's checklist -- OUTSIDE this tree
 Rnnn              127         8  the round record under .emrg/** (an attribution, not a pointer)
-package sites: 1153 over 180 files - the citing file's own lists (the rule's first form; no home claimed here)
+package sites: 1153 over 181 files - the citing file's own lists (the rule's first form; no home claimed here)
 not read here: which position of the list a number means, and whether that position holds the requirement the reference names
 NUMGATE: PASS
 exit=0

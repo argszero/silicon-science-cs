@@ -156,14 +156,19 @@ where a larger pool is often described as merely "more data".
 The direction was registered before any instrument was run, with the following prior beliefs stated in
 advance (the registration and its reasoning are in the issue record):
 
-- **P1.** The fresh-data rate needed to *restore* a collapsed loop exceeds the rate needed to keep it
-  from collapsing.
-- **P2.** The measured per-generation loss follows the closed form `(1 − p*)ⁿ`.
+- **P1.** The fresh-data rate needed to *restore* a collapsed loop strictly exceeds the rate needed to
+  keep it from collapsing, in every tested configuration, and the ratio between the two grows with the
+  depth of collapse.
+- **P2.** The prevention boundary is not a function of the fresh-data *fraction* alone: two pool
+  policies matched on per-generation fraction but differing in pool history have different boundaries.
 - **P3.** Below some rate there is a point of no return: a collapsed loop cannot be restored.
 
-These were chosen to be falsifiable and anchored: P2 to the folk literature, P1 to the intuition that
-hysteresis should be present, P3 to the "collapse is irreversible" framing. Their outcomes are
-reported in §4 and §5.3; two of the three are not what we expected, and one is refuted.
+These were chosen to be falsifiable and anchored: P1 and P3 to the **support-loss** mechanism — a
+symbol absent from the current model receives no synthetic mass, so its only route back is fresh real
+data, which is exactly what the prevention literature's contraction arguments have no reason to track
+— and P2 to the 2026 result that the field's contradictory fresh-data fractions are **protocol
+artefacts**. Their outcomes are reported in §6.3: one is confirmed, one is refuted, and one is refuted
+with its direction reversed.
 
 ---
 
@@ -551,13 +556,15 @@ implicit.
 
 | prior | registered claim | outcome |
 |---|---|---|
-| P1 | the rate to *restore* exceeds the rate to *protect* | **refuted as stated.** It holds as a *time* comparison at fixed λ — the ratio {{hiratio_uniform_lam0005:.3g}} at λ = 0.005 — but as a *threshold* comparison it is **backwards**: the prevention rate is the larger, by {{crit_uniform_w1_ratio:.1f}}×–{{crit_twohot_w1_ratio:.1f}}× (§4.4). The two limbs are different objects. |
-| P2 | the loss follows `(1 − p*)ⁿ` | **refuted as a rate.** It is a lower bound on the *unconditional* loss probability, strict for every λ < 1 — but the conditional rate a loop experiences falls on both sides of it, in a proportion the absence fraction predicts (§4.1). |
+| P1 | the rate to *restore* a collapsed loop strictly exceeds the rate to *protect* an intact one, in every configuration, with the ratio growing with collapse depth | **refuted as stated, with the sign reversed.** It holds as a *time* comparison at fixed λ — the ratio {{hiratio_uniform_lam0005:.3g}} at λ = 0.005 — but as a *threshold* comparison it is **backwards**: the prevention rate is the larger, by {{crit_uniform_w1_ratio:.1f}}×–{{crit_twohot_w1_ratio:.1f}}× (§4.4). The two limbs are different objects. |
+| P2 | the prevention boundary is not a function of the fresh-data *fraction* alone | **confirmed.** Holding the per-generation fraction fixed and varying only the pool window `w`, the boundary `λ*(w)` falls monotonically in 4 of 4 configurations — to {{bndratio_zipf_n200:.3g}}× its `w=1` value at `w=64` (the ratio the §4.2 table reports), between two and three orders of magnitude. The control variable is the window, not the fraction. |
 | P3 | below some rate there is a point of no return | **refuted in the strict sense, refined in practice.** The loop is ergodic for every λ > 0; irreversibility is finite-horizon (§4.5). |
 
-Two refutations and one reversal of direction is, we think, the right outcome for a registration: the
-priors were falsifiable and they were falsified. The reversal in P1 is the paper's most surprising
-result and it was only visible because both criteria were computed on the same loop.
+One confirmation, one refutation, and one refutation whose sign is reversed is, we think, the right
+outcome for a registration: the priors were falsifiable and they were tested. The reversal in P1 is
+the paper's most surprising result and it was only visible because both criteria were computed on the
+same loop; the confirmation in P2 is the paper's headline, and it is the answer to the literature's
+own disagreement.
 
 ---
 

@@ -35,7 +35,7 @@
 #     VALIDATE 42/42
 #     RESULT: PASS
 #     SELFTEST 10/10 plants caught
-#     CHECKSUMS [HARD] 29/29 files match the committed record
+#     CHECKSUMS [HARD] 30/30 files match the committed record
 #     RESULT: PASS
 #
 # TOLERANCE: exact, not statistical.  validate.py prints an integer count of checks passed out of

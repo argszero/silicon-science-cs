@@ -63,12 +63,12 @@ def main():
 
     body, refs_block = man.split("## References", 1)
     number = {}                       # bare id -> the number it is rendered under
-    for m in re.finditer(r"^(\d+)\. ", refs_block, re.M):
+    for m in re.finditer(r"^\[(\d+)\] ", refs_block, re.M):
         number.setdefault(m.group(1), None)
-    rendered = re.findall(r"^(\d+)\. (.*)$", refs_block, re.M)
+    rendered = re.findall(r"^\[(\d+)\] (.*)$", refs_block, re.M)
     # map each rendered entry back to its curated id by the identifier it prints
     id_of = {}
-    for m in re.finditer(r"^(\d+)\. (.*)$", refs_block, re.M):
+    for m in re.finditer(r"^\[(\d+)\] (.*)$", refs_block, re.M):
         n, line = m.group(1), m.group(2)
         found = re.search(r"(arXiv:[0-9a-z./\-]+|DOI: [0-9./]+)", line)
         if found:
@@ -90,7 +90,7 @@ def main():
     refs_heads = [i for i, (pos, h) in enumerate(heads) if h == "References"]
     prev_head = heads[refs_heads[-1] - 1][1] if refs_heads and refs_heads[-1] > 0 else "(none)"
     after = man.split("## References", 1)[1]
-    numbered_after = re.findall(r"^(\d+)\. ", after, re.M)
+    numbered_after = re.findall(r"^\[(\d+)\] ", after, re.M)
 
     # -- provenance of the curated set, read out of its own field ------------------------------
     src = collections.Counter(e.get("source", "?") for e in cur)
@@ -181,7 +181,7 @@ def main():
     w("## (ii) Coverage and ambiguity")
     w("")
     w("- **References section**: one `## References` heading, the last section of the file; the heading")
-    w("  before it is `## %s`. Entries are numbered `1.`-`%d.` and each begins on its own line," % (prev_head, len(rendered)))
+    w("  before it is `## %s`. Entries are numbered `[1]`-`[%d]` and each begins on its own line," % (prev_head, len(rendered)))
     w("  separated by a blank line, so the list is read as a list rather than as one paragraph.")
     w("- **Coverage**: %d entries, **%d cited in the body text by their numbered key**, %d uncited."
       % (len(numbered), len(cited), len(uncited)))
@@ -206,30 +206,57 @@ def main():
       % len(numbered_after))
     w("  numbered lines it holds are the entries themselves, nothing else numbered follows them, and the")
     w("  section before it is `## %s`, so the window and the bibliography section coincide." % prev_head)
+    gates = os.path.join(HERE, "gates.log")
+    # The gate's own output states the pointer syntax `pointgate.py` searches for (`see *Name*`).
+    # Written into THIS report verbatim, that quotation is itself a pointer -- and this report is a
+    # carrier the gate reads, so the gate reports its own description as an unresolved
+    # cross-reference here (measured at this revision: the head's re-run found `reference-check.md`
+    # UNRESOLVED for exactly this token).  The line is elided IN PLACE rather than dropped, and
+    # `gates.log` keeps it whole as the primary record.
+    PTR = re.compile(r"(?:\u2192|(?<![\w*])see\b)\s*\*[^`*\n]{2,90}?\*", re.I)
+    g_all = ([l for l in open(gates, encoding="utf-8").read().splitlines()]
+             if os.path.exists(gates) else [])
+    elided = sum(1 for l in g_all if PTR.search(l))
+    g_kept = [("<line elided in place: it states the pointer syntax `pointgate.py` searches for, "
+               "which this report cannot quote without the quotation being read as a pointer target "
+               "of this very file>") if PTR.search(l) else l for l in g_all]
     w("- **`refgate.py` / `linkgate.py`**: both live in the journal repository's `.github/tools/`. They")
     w("  were run **from the repository root** at the branch head, against the copy of the tools that")
     w("  `main` carries (the branch was cut from `main`; `.github/tools/` is not modified by it), and")
-    w("  their **whole output** -- every advisory line with the verdict -- is reproduced below verbatim")
-    w("  from `gates.log`.")
+    w("  their **whole output** -- every advisory line with the verdict -- is reproduced below from")
+    w("  `gates.log`%s." % (", one line elided in place (the note below says why)" if elided else ""))
     w("")
-    gates = os.path.join(HERE, "gates.log")
     if os.path.exists(gates):
         w("```")
-        for line in open(gates, encoding="utf-8").read().splitlines():
+        for line in g_kept:
             if line.startswith("# "):
                 w(line)
         w("")
-        for line in open(gates, encoding="utf-8").read().splitlines():
+        for line in g_kept:
             if not line.startswith("# "):
                 w(line)
         w("```")
         w("")
-    w("**Any advisory line is resolved rather than explained away.** A naive counter keyed on `[n]`")
-    w("reads 0 entries because the reference BLOCK uses `1.` markers; the block markers and the in-text")
-    w("`[n]` keys are two different conventions and the gate reports the pairing as a warning for that")
-    w("reason. The counts that matter are the ones printed in the block above, at the revision the")
-    w("block names. (%d entries; %d cited in the body; %d uncited.)"
+    adv = ([l.strip() for l in open(gates, encoding="utf-8").read().splitlines()
+            if l.strip().startswith("WARN")] if os.path.exists(gates) else [])
+    w("**The block markers and the in-text keys are one convention.** Both the body and the")
+    w("bibliography number entries `[n]`, so a counter keyed on `[n]` reads the same %d entries the"
+      % len(rendered))
+    w("block holds — there is no second marker form for the gate to pair against. The gate printed")
+    w("**%d** advisory line(s) on this manuscript%s. The counts that matter are the ones printed in"
+      % (len(adv), "" if not adv else " (" + "; ".join(adv) + ")"))
+    w("the block above, at the revision the block names. (%d entries; %d cited in the body; %d uncited.)"
       % (len(cur), len(cited), len(uncited)))
+    if elided:
+        w("")
+        w("**One line of the gate output above is elided in place, and the gate is its own subject.**")
+        w("`pointgate.py` opens its report by stating the pointer syntax it searches for, written with an")
+        w("emphasised metavariable for a pointer's target. Reproduced here verbatim, that line is itself a")
+        w("pointer -- and this report is one of the carriers `pointgate.py` reads, so at the head of this")
+        w("branch a re-run of the gate reported **this file** as carrying an unresolved cross-reference to")
+        w("a name the report does not make. The line is elided rather than dropped so the position is")
+        w("visible, and `gates.log` keeps it whole as the primary record. (This is a property of quoting")
+        w("the gate's output inside a carrier the gate reads, not of the citation layer.)")
     if not os.path.exists(gates):
         w("")
         w("**The journal gates (`refgate.py`, `linkgate.py`, `numgate.py`) have NOT been run for this")

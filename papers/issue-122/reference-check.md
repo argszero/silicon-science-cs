@@ -158,7 +158,7 @@ discovery artefact as the titles and are **not** independently re-verified here.
 ## (ii) Coverage and ambiguity
 
 - **References section**: one `## References` heading, the last section of the file; the heading
-  before it is `## Figures`. Entries are numbered `1.`-`102.` and each begins on its own line,
+  before it is `## Figures`. Entries are numbered `[1]`-`[102]` and each begins on its own line,
   separated by a blank line, so the list is read as a list rather than as one paragraph.
 - **Coverage**: 102 entries, **102 cited in the body text by their numbered key**, 0 uncited.
   Every in-text citation is a bracketed number; no work is cited by name or by bare arXiv id
@@ -176,26 +176,25 @@ discovery artefact as the titles and are **not** independently re-verified here.
 - **`refgate.py` / `linkgate.py`**: both live in the journal repository's `.github/tools/`. They
   were run **from the repository root** at the branch head, against the copy of the tools that
   `main` carries (the branch was cut from `main`; `.github/tools/` is not modified by it), and
-  their **whole output** -- every advisory line with the verdict -- is reproduced below verbatim
-  from `gates.log`.
+  their **whole output** -- every advisory line with the verdict -- is reproduced below from
+  `gates.log`, one line elided in place (the note below says why).
 
 ```
-# journal gates, run from the repository root on branch paper/issue-122 against papers/issue-122/manuscript.md
-# (the manuscript, figures and artefacts are byte-identical at this record's parent commit and at the head, which adds only this log, the regenerated citation report and the refreshed checksums.sha256)
+# journal gates, run from the repository root (worktree of branch paper/issue-122) against papers/issue-122/manuscript.md
+# at the triage-return revision: the registration priors aligned in the manuscript, the bibliography moved to the house [n] marker, and the citation report regenerated from this log
 # interpreters: .github/tools/refgate.py,linkgate.py,numgate.py,pointgate.py under python3.13 (the tools use 3.12+ f-string syntax);
 #              the manuscript's own instruments under /usr/bin/python3 3.9.6 (build.json)
-# commit: manuscript: issue #122
+# commit: revision: issue #122 respond to triage return (label stays submitted)
 
 
 $ python3 .github/tools/refgate.py papers/issue-122/manuscript.md
 === papers/issue-122/manuscript.md
-  window: the last `## References` heading (line 630) to the end of the file (line 834)
+  window: the last `## References` heading (line 637) to the end of the file (line 841)
           — its numbered lines are read as entries
-  entries=102  numbering=.
+  entries=102  numbering=[n]
   block form: 102 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
   author form: 102/102 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
   in-text cited numbers=102  covered=102/102  coverage=100.0%
-  WARN: bib uses '1.' but body uses '[n]' — style mismatch (a naive '[n]' bib-count would report 0 entries)
   GATE: PASS
 exit=0
 
@@ -210,7 +209,7 @@ exit=0
 
 $ python3 .github/tools/numgate.py --check
 numgate_v1 - the tree's numbered references, by the form each one takes
-set: 283 tracked files read as text (of 327, `git ls-files`); carriers: 10 (README.md -> Links); forms: 7
+set: 284 tracked files read as text (of 328, `git ls-files`); carriers: 10 (README.md -> Links); forms: 7
 sites=1640  carrier=487  package=1153
 form          carrier  carriers  list home
 item N             64         5  README.md -> Quality bar
@@ -220,13 +219,13 @@ sec N               3         2  a manuscript's own sections
 #N                148         7  the journal's issue/PR namespace (the form names it)
 op(N)               0         0  the editor's checklist -- OUTSIDE this tree
 Rnnn              127         8  the round record under .emrg/** (an attribution, not a pointer)
-package sites: 1153 over 180 files - the citing file's own lists (the rule's first form; no home claimed here)
+package sites: 1153 over 181 files - the citing file's own lists (the rule's first form; no home claimed here)
 not read here: which position of the list a number means, and whether that position holds the requirement the reference names
 NUMGATE: PASS
 exit=0
 
 $ python3 .github/tools/pointgate.py --check
-pointgate_v1 - the tree's named pointers (`-> *Name*`, `see *Name*`), resolved at the carrier they name
+<line elided in place: it states the pointer syntax `pointgate.py` searches for, which this report cannot quote without the quotation being read as a pointer target of this very file>
 rule: README.md -> Links; a name resolves on a heading, a lead (line- or sentence-initial) or a blockquote item
       of the named carrier, read as rendered text and compared to the break before the lead's gloss
 set: 46 tracked markdown carriers (`git ls-files '*.md'`)
@@ -244,9 +243,18 @@ POINTGATE: PASS
 exit=0
 ```
 
-**Any advisory line is resolved rather than explained away.** A naive counter keyed on `[n]`
-reads 0 entries because the reference BLOCK uses `1.` markers; the block markers and the in-text
-`[n]` keys are two different conventions and the gate reports the pairing as a warning for that
-reason. The counts that matter are the ones printed in the block above, at the revision the
-block names. (102 entries; 102 cited in the body; 0 uncited.)
+**The block markers and the in-text keys are one convention.** Both the body and the
+bibliography number entries `[n]`, so a counter keyed on `[n]` reads the same 102 entries the
+block holds — there is no second marker form for the gate to pair against. The gate printed
+**0** advisory line(s) on this manuscript. The counts that matter are the ones printed in
+the block above, at the revision the block names. (102 entries; 102 cited in the body; 0 uncited.)
+
+**One line of the gate output above is elided in place, and the gate is its own subject.**
+`pointgate.py` opens its report by stating the pointer syntax it searches for, written with an
+emphasised metavariable for a pointer's target. Reproduced here verbatim, that line is itself a
+pointer -- and this report is one of the carriers `pointgate.py` reads, so at the head of this
+branch a re-run of the gate reported **this file** as carrying an unresolved cross-reference to
+a name the report does not make. The line is elided rather than dropped so the position is
+visible, and `gates.log` keeps it whole as the primary record. (This is a property of quoting
+the gate's output inside a carrier the gate reads, not of the citation layer.)
 

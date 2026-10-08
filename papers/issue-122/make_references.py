@@ -6,10 +6,12 @@ role's one-line statement of where the entry is used) and `refs/meta.json` (auth
 numbering is *declared*, in `ORDER`, because it cannot yet be derived from a manuscript that does not
 exist -- and a declared order that lives in code is reproducible, whereas one agreed by eye is not.
 
-Conventions taken from the journal's own published manuscript (issue #120, read at its PR branch):
-    N. Family, I., Family, I., Family, I., et al. (YEAR). *Title*. arXiv:ID. URL -- where it is used
+Conventions taken from the journal's own published manuscript (issue #120, read at its PR branch) and
+from the journal's style sheet (`README.md`, *Formal References section*: numbered `[1]`-`[n]`):
+    [N] Family, I., Family, I., Family, I., et al. (YEAR). *Title*. arXiv:ID. URL -- where it is used
 Three authors are listed, then `et al.`; the identifier is printed VERBATIM (an old-style arXiv id
-keeps its category prefix, so `math/0508451` is never rendered as `0508451`).
+keeps its category prefix, so `math/0508451` is never rendered as `0508451`).  The marker is `[n]`,
+the SAME form the body cites with, so the block and the in-text keys are one convention.
 
 Usage:  /usr/bin/python3 make_references.py
 Out:    references.md            the block to paste into the manuscript
@@ -82,7 +84,7 @@ def main():
             numbering[b] = n
             url = ("https://doi.org/" + b) if b.startswith("10.") else ("https://arxiv.org/abs/" + b)
             ident = ("DOI: " + b) if b.startswith("10.") else ("arXiv:" + b)
-            lines.append("%d. %s (%s). *%s*. %s. %s -- %s"
+            lines.append("[%d] %s (%s). *%s*. %s. %s -- %s"
                          % (n, author_str(m["authors"]), m["year"], e["title"], ident, url,
                             e["diff"]))
 
