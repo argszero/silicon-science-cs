@@ -28,12 +28,15 @@ import io, os, sys, json, shutil, hashlib, subprocess, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 PY = sys.executable
 INSTRUMENTS = ["spike_v0", "spike_v1", "spike_v2", "spike_v3", "spike_v4", "spike_v5", "spike_v6",
-               "spike_v7", "floor_v2", "floor_v3"]
+               "spike_v7", "spike_v8", "floor_v2", "floor_v3"]
 # R570: spike_v4 (the fusion axis) joins the family. It is the FIRST instrument written after the
 # R567 audit, so it inherits every rule from the start: stable integer seeds, sorted keys,
 # math.fsum for order-independent reduction, and a `sim` call into spike_v2 rather than a
 # re-derived statistic -- an instrument that re-implements a statistic it could import is a
 # second place for the same defect to live.
+# R577: spike_v8 (the STRATUM-WEIGHTS axis, host rant item 13) joins. Its seeds are
+# derived from (L, book index, statistic code, replicate) -- all stable integers -- and every
+# statistic is imported from spike_v0 rather than re-derived.
 # R572: spike_v5 (the null KEY axis) joins. Its seeds are derived from the LENGTHS only
 # (`SEED0 + L1*1000003 + L2*10007 + salt`), never from `hash(str)`, and every statistic is imported
 # from spike_v0/spike_v2 -- which is also what makes K2/K3 (exact object identities between pools)

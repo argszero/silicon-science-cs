@@ -30,7 +30,7 @@ cd papers/issue-130 && bash reproduce.sh
   package** and verified against `corpus/SHA256SUMS` at the start of every run. Nothing is fetched:
   the run never touches the network. `corpus/fetch_corpus.sh` re-obtains the same eight files from
   `gutenberg.org` and rewrites the sums; it is needed only to rebuild the input, never to reproduce.
-* **What it recomputes** (it is not a checksum check over committed outputs): it re-runs the ten
+* **What it recomputes** (it is not a checksum check over committed outputs): it re-runs the eleven
   experiments **from their own code**, each over the committed corpus, and compares each fresh report
   byte-for-byte against the report this package ships; then it re-runs the analysis that derives the
   paper's tables from those reports; then it runs the determinism certificate's own battery.
@@ -39,14 +39,19 @@ cd papers/issue-130 && bash reproduce.sh
   build          /usr/bin/python3 3.9.6 | stdlib only (no third-party import anywhere in the package)
   corpus         8 file(s) verified against corpus/SHA256SUMS
     spike_v0  MATCH  e828ae4db8878d34
-    ... one MATCH line per instrument, ten in all ...
-  instruments    10 of 10 reports re-run byte-identically
+    ... one MATCH line per instrument, eleven in all ...
+  instruments    11 of 11 reports re-run byte-identically
   analysis       re-derived its tables (6 of 6 printed)
   analysis       the mechanism certificate (predicted vs measured eps*)
   analysis       the boundary power law (slope -0.230, R2 0.950)
   certificate    plant 1: identical objects must NOT fire
   certificate    plant 2: a one-byte change MUST fire
   certificate    plant 3: the real cross-process defect MUST fire
+  stratum        the repair is the identity when there is nothing to fix
+  stratum        the repair restores alpha on every live cell
+  stratum        the plant fires on the material cells
+  stratum        and does NOT fire on the real data
+  stratum        the certificate battery
   determinism    skipped -- REPRO_FULL=1 adds the two-run certificate (~13 min)
 
   REPRODUCE: ALL GREEN
@@ -57,8 +62,9 @@ cd papers/issue-130 && bash reproduce.sh
   **byte-identical in both** — the same ten sha256, with no version pin needed, because the
   instruments import no third-party library. A different machine's floating-point reduction order is
   the residual freedom, which is what the tier below measures rather than a widened band.
-* **Cost**: about **4 minutes** (the ten instruments; `spike_v4` ≈ 95 s and `spike_v5` ≈ 89 s are
-  most of it).
+* **Cost**: about **5.5 minutes** (the eleven instruments; `spike_v4` ≈ 95 s and `spike_v5` ≈ 89 s are
+  most of it, and `spike_v8` is run twice — once for the byte comparison and once for its own
+  certificate battery).
 * **What the run writes**: **nothing inside the package.** The instruments emit their reports into a
   private temporary directory the script creates and removes, so the ten `*_results.json` files this
   package ships are left exactly as committed. (`spike_v7.py` reads the package's
@@ -93,6 +99,7 @@ Each of these prints a verdict of its own; run them from the package directory.
 | command | expected output |
 |---|---|
 | `python3 repro_check.py --selftest` | `SELFTEST ALL PASS` — the comparator **accepts** identical objects **and fires** on a one-byte change and on a pair of `hash(str)`-seeded processes (the real cross-process defect this family once had). Exits non-zero if any plant is missed. |
+| `python3 spike_v8.py --selftest` | `SELFTEST ALL PASS` — plus the two-sided plant for the stratum certificate (`on the REAL data W3(b) flags 0 of the 11 MATERIAL cell(s)` / `on the PLANT W3(b) flags 11 of the 11`). |
 | `PYTHON=/path/to/python3 bash reproduce.sh` | the same transcript with that interpreter on the `build` line. Every instrument is pure standard library, so any 3.9+ interpreter reaches the same verdicts. |
 
 ## What is in the package
@@ -111,6 +118,7 @@ Each of these prints a verdict of its own; run them from the package directory.
 | `floor_v2.py`, `floor_v3.py` | the **certification floor** `L*`: where a statistic's null p95 reaches the floor (so no threshold at that length can certify anything) and how the floor moves with the level |
 | `analyse_v2.py` | the analysis that derives the paper's tables from `spike_v2_results.json`, including the **mechanism certificate** (predicts `eps*` from the measured decay curve and the measured threshold, then compares with the measured `eps*`) |
 | `repro_check.py` | the **determinism certificate**: two-run byte identity for every instrument, with its own three-plant battery |
+| `spike_v8.py` | the **stratum-weights** axis: the operating point calibrated on a pooled null against a scan whose per-stratum shares differ, the reweighting repair, and the per-stratum thresholds (host rant item 13) |
 | `artefact_hashes.json` | the sha256 of each shipped report, **generated** by `repro_check.py` (never typed into prose) |
 | `heilmeier.md` | the six Heilmeier answers and the adversarial checks the direction was registered with |
 
@@ -121,4 +129,6 @@ transcript: the boundary `eps*` and its spread per statistic and length from `sp
 (*Table 3*), the mechanism certificate's 21 cells and its worst deviation from *Table 4*, the
 boundary power law's slope and `R²` from *Table 5*, the fusion's recovery-and-price law and its
 certificates from `spike_v4`/`spike_v7`, the key's blind/leaky split from `spike_v5`, the band table
-and the cross-over from `spike_v6`, and the floor `L*` from `floor_v2`/`floor_v3`.
+and the cross-over from `spike_v6`, the floor `L*` from `floor_v2`/`floor_v3`, and the stratum-weights result — the inflated false-positive
+rate under a mismatched scan, its repair, and the rank correlation of the two candidate diagnostics —
+from `spike_v8`.

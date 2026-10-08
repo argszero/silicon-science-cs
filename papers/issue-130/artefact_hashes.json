@@ -50,6 +50,11 @@
    "bytes": 41822,
    "sha256": "c0394d8af0ed2e520ae8ac71458eeef7d08c39ed271ab01c2cd390048fd83f2d",
    "two_runs_identical": true
+  },
+  "spike_v8": {
+   "bytes": 13299,
+   "sha256": "95f4c594535e197b7099b335ed6cca9aa4d54cb325621140167655158de57b57",
+   "two_runs_identical": true
   }
  },
  "property": "each instrument re-run reproduces its artefact byte-for-byte"

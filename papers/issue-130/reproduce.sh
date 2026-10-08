@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # reproduce.sh -- issue #130, "A Threshold Is Not a Measurement"
 #
-# WHAT THIS RECOMPUTES (not a checksum check over committed outputs): it re-runs the ten experiments
+# WHAT THIS RECOMPUTES (not a checksum check over committed outputs): it re-runs the eleven experiments
 # from their own code over the committed corpus and compares each fresh report BYTE-FOR-BYTE against
 # the report the package ships, then re-runs the analysis that derives the paper's tables from those
 # reports, then runs the determinism certificate's own battery. Every number in the manuscript is read
@@ -20,10 +20,11 @@
 # WHAT IT WRITES: nothing inside the package. The instruments emit their reports into a private temp
 #   directory this script creates and removes. (`spike_v7.py` reads the package's
 #   `spike_v4_results.json` on purpose -- its certificate X1 asserts its pools ARE that report's pools.)
-# COST: about 4 minutes (the ten instruments; spike_v4 and spike_v5 are ~95 s and ~89 s).
+# COST: about 5.5 minutes (the eleven instruments x2 -- they are compared, then spike_v8 is re-run for
+#   its own certificate battery; spike_v4 ~95 s, spike_v5 ~89 s, spike_v8 ~50 s x2).
 #
 # SECOND TIER (opt-in, about 13 minutes more):  REPRO_FULL=1 bash reproduce.sh
-#   runs repro_check.py, which re-runs every instrument TWICE in separate processes and compares the two
+#   runs repro_check.py again, which re-runs every instrument TWICE in separate processes and compares the two
 #   artefacts -- the determinism certificate. It rewrites `artefact_hashes.json` in place (the one file
 #   this package's run may write); the last step then compares the regenerated table against the shipped
 #   one and restores the shipped copy, so the committed file is what stays on disk.
@@ -57,7 +58,7 @@ else bad "corpus" "$NOK file(s) OK, $NFAIL FAILED -- the pinned corpus is not th
 
 # ---- 2. the ten instruments reproduce the shipped reports -------------------------------------------------
 NM=0; NT=0
-for name in spike_v0 spike_v1 spike_v2 spike_v3 spike_v4 spike_v5 spike_v6 spike_v7 floor_v2 floor_v3; do
+for name in spike_v0 spike_v1 spike_v2 spike_v3 spike_v4 spike_v5 spike_v6 spike_v7 spike_v8 floor_v2 floor_v3; do
   NT=$((NT+1))
   if ! run "$name.py" > "$WORK/$name.stdout" 2>&1; then
     bad "instruments" "$name.py exited non-zero -- $(tail -1 "$WORK/$name.stdout")"; continue
@@ -67,7 +68,7 @@ for name in spike_v0 spike_v1 spike_v2 spike_v3 spike_v4 spike_v5 spike_v6 spike
   if [ "$GOT" = "$WANT" ]; then NM=$((NM+1)); printf '  %-9s MATCH  %s\n' "$name" "$(printf '%s' "$GOT" | cut -c1-16)"
   else bad "instruments" "$name produced $(printf '%s' "$GOT" | cut -c1-16) but the package ships $(printf '%s' "$WANT" | cut -c1-16)"; fi
 done
-if [ "$NM" = "10" ] && [ "$NT" = "10" ]; then say "instruments" "$NM of $NT reports re-run byte-identically"; else bad "instruments" "$NM of $NT reports matched"; fi
+if [ "$NM" = "11" ] && [ "$NT" = "11" ]; then say "instruments" "$NM of $NT reports re-run byte-identically"; else bad "instruments" "$NM of $NT reports matched"; fi
 
 # ---- 3. the analysis, and its certificate -----------------------------------------------------------------
 A2=$(run analyse_v2.py); rc=$?
@@ -86,12 +87,22 @@ if [ "$rc" != "0" ]; then bad "certificate" "repro_check.py --selftest exited $r
   need certificate "$RS" "P3 hash\(str\)-seeded processes -> FAIL" "plant 3: the real cross-process defect MUST fire"
 fi
 
-# ---- 5. opt-in: the two-run determinism certificate --------------------------------------------------------
+# ---- 5. the stratum-weights certificate (host rant item 13) ------------------------------------------------
+W8=$(run spike_v8.py --selftest); rc=$?
+if [ "$rc" != "0" ]; then bad "stratum" "spike_v8.py --selftest exited $rc"; else
+  need stratum "$W8" "W1 the uniform reweighting IS the identity .*PASS" "the repair is the identity when there is nothing to fix"
+  need stratum "$W8" "the reweighted read returns to alpha\+-0.05 in [0-9]+ of [0-9]+ LIVE" "the repair restores alpha on every live cell"
+  need stratum "$W8" "on the PLANT      W3\(b\) flags [0-9]+ of the [0-9]+ MATERIAL" "the plant fires on the material cells"
+  need stratum "$W8" "on the REAL data  W3\(b\) flags 0 of the" "and does NOT fire on the real data"
+  need stratum "$W8" "SELFTEST ALL PASS" "the certificate battery"
+fi
+
+# ---- 6. opt-in: the two-run determinism certificate --------------------------------------------------------
 if [ "${REPRO_FULL:-0}" = "1" ]; then
   cp artefact_hashes.json "$WORK/shipped_hashes.json"
   RF=$(run repro_check.py); rc=$?
   if [ "$rc" != "0" ]; then bad "determinism" "repro_check.py exited $rc"; else
-    need determinism "$RF" "DETERMINISM CERTIFICATE: ALL PASS  \(10/10" "10 of 10 instruments reproduce byte-for-byte over two runs"
+    need determinism "$RF" "DETERMINISM CERTIFICATE: ALL PASS  \(11/11" "11 of 11 instruments reproduce byte-for-byte over two runs"
   fi
   if "$PY" -c 'import json,sys
 a=json.load(open(sys.argv[1]))["instrument_hashes"]; b=json.load(open(sys.argv[2]))["instrument_hashes"]
