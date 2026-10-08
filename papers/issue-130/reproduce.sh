@@ -43,6 +43,7 @@ bad()  { printf '%-14s FAILED -- %s\n' "$1" "$2"; FAILED=$((FAILED+1)); }
 run()  { local s="$1"; shift; ( cd "$WORK" && "$PY" "$HERE/$s" "$@" ); }
 need() { if printf '%s' "$2" | grep -qE "$3"; then say "$1" "$4"; else bad "$1" "$4 (expected /$3/)"; fi; }
 
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 echo "== #130 reproduction =="
 
 # ---- 0. the build -----------------------------------------------------------------------------------------
@@ -133,6 +134,30 @@ sys.exit(0 if a==b else 1)' artefact_hashes.json "$WORK/shipped_hashes.json"; th
   cp "$WORK/shipped_hashes.json" artefact_hashes.json   # leave the committed file as committed
 else
   say "determinism" "skipped -- REPRO_FULL=1 adds the two-run certificate (~13 min)"
+fi
+
+# ---- 7. the manuscript: re-render and compare, then gate it --------------------------------------------
+# The build resolves every number from the shipped reports and every citation from the verified pool,
+# and writes nothing (it renders into memory and compares against the committed manuscript.md).  The
+# reference gate is run from the REPOSITORY ROOT, the path the spec names, over this package's manuscript.
+MS=$(run build_manuscript.py --check); rc=$?
+if [ "$rc" != "0" ]; then bad "manuscript" "build_manuscript.py --check exited $rc"; else
+  need manuscript "$MS" "MANUSCRIPT: MATCH" "the manuscript is exactly what the build renders from the reports"
+fi
+RC=$(run make_reference_check.py --check); rc=$?
+if [ "$rc" != "0" ]; then bad "manuscript" "make_reference_check.py --check exited $rc"; else
+  need manuscript "$RC" "REFERENCE-CHECK: MATCH" "and the citation report is exactly what it renders"
+fi
+BS=$(run build_manuscript.py --selftest); rc=$?
+if [ "$rc" != "0" ]; then bad "manuscript" "build_manuscript.py --selftest exited $rc"; else
+  need manuscript "$BS" "SELFTEST: ALL PLANTS CAUGHT" "the build's own plants: an unowned number, a bad path, an off-pool citation"
+fi
+if [ -f "../..//.github/tools/refgate.py" ] || [ -f "$ROOT/.github/tools/refgate.py" ]; then
+  RG=$(cd "$ROOT" && "$PY" .github/tools/refgate.py papers/issue-130/manuscript.md 2>&1)
+  need manuscript "$RG" "GATE: PASS" "refgate: >=100 entries, every one cited in the body, one entry per paragraph"
+  echo "$RG" | grep -E "entries=|coverage=" | sed 's/^/  refgate  /'
+else
+  say manuscript "refgate skipped -- run from a checkout of this journal (the tool lives in .github/tools/)"
 fi
 
 echo

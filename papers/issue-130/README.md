@@ -8,9 +8,11 @@ characteristic `R(eps; tau, L)` and its length scaling) plus measurements on rea
 truth by construction, four baseline statistics, multi-seed reproduction and a one-command
 reproduction. The registration (`issue #130`), this file and the manuscript state the same value.
 
-This directory is the reproducible package: the evidence layer every number is read from, and the
-**figure set**, both generated and both certified. The manuscript (`manuscript.md`) is added in a
-later revision of this branch.
+This directory is the reproducible package: the evidence layer every number is read from, the
+**figure set**, the **verified reference layer**, and the **manuscript** — all generated, and the
+manuscript's every number resolved from the reports by `build_manuscript.py` (nothing is typed into
+prose). The one-command reproduction re-renders the manuscript and the citation report and gates
+them, beside the eleven instruments.
 
 ## Reproduction
 
@@ -35,7 +37,9 @@ cd papers/issue-130 && bash reproduce.sh
   byte-for-byte against the report this package ships; then it re-runs the analysis that derives the
   paper's tables from those reports; then it **re-generates the five figures** from those same reports
   and compares them, and the generated captions, byte-for-byte too; then it runs both certificate
-  batteries.
+  batteries; then it **re-renders the manuscript and the citation report** from the shipped reports and
+  the verified pool and compares them byte-for-byte, runs the build's own plants, and runs
+  `refgate.py` over the manuscript.
 * **Expected output** (this machine, 3.9.6 — the `build` line names the interpreter you ran):
   ```
   build          /usr/bin/python3 3.9.6 | stdlib only (no third-party import anywhere in the package)
@@ -59,6 +63,12 @@ cd papers/issue-130 && bash reproduce.sh
   stratum        and does NOT fire on the real data
   stratum        the certificate battery
   determinism    skipped -- REPRO_FULL=1 adds the two-run certificate (~13 min)
+  manuscript     the manuscript is exactly what the build renders from the reports
+  manuscript     and the citation report is exactly what it renders
+  manuscript     the build's own plants: an unowned number, a bad path, an off-pool citation
+  manuscript     refgate: >=100 entries, every one cited in the body, one entry per paragraph
+  refgate    entries=136  numbering=[n]
+  refgate    in-text cited numbers=136  covered=136/136  coverage=100.0%
 
   REPRODUCE: ALL GREEN
   ```
@@ -130,7 +140,15 @@ Each of these prints a verdict of its own; run them from the package directory.
 | `repro_check.py` | the **determinism certificate**: two-run byte identity for every instrument, with its own three-plant battery |
 | `spike_v8.py` | the **stratum-weights** axis: the operating point calibrated on a pooled null against a scan whose per-stratum shares differ, the reweighting repair, and the per-stratum thresholds (host rant item 13) |
 | `make_figures.py` | the **figure generator**: writes the five figures as SVG straight from the shipped reports (stdlib only, so the figures reproduce byte-for-byte like everything else) |
+| `refscan130.py` | the **reference scanner**: discovers candidates from arXiv + Crossref, curates them by object, and verifies each against a live record by a two-sided title match |
+| `verify_citations.py` | the **pool-wide citation verifier** -> `citation-verification.json` (all 344 pool entries, plus a second-carrier spot check) |
+| `refs/pool.json` | the curated, live-verified **reference pool** the manuscript is built and checked against |
+| `refs/differences.json` | the one-line stated **Difference** for each cited entry (a cited key with none FAILS the build) |
+| `build_manuscript.py` | the **manuscript builder**: resolves every `{{number}}` from a shipped report and every `{ref:key}` from the verified pool, and refuses on an unowned number, an unused one, an off-pool key or fewer than 100 citations |
+| `manuscript.src.md` | the manuscript source; `manuscript.md` is what the build renders from it |
+| `make_reference_check.py` | the **citation-authenticity report** generator -> `reference-check.md` |
 | `figures/` | the figure set — five SVGs, the generated `manifest.json` and `CAPTIONS.md`, and `FIGURES.md` describing the set and its certificate |
+| `reference-check.md` | the citation-authenticity report (generated from the built manuscript and the verified pool) |
 | `artefact_hashes.json` | the sha256 of each shipped report, **generated** by `repro_check.py` (never typed into prose) |
 | `heilmeier.md` | the six Heilmeier answers and the adversarial checks the direction was registered with |
 
