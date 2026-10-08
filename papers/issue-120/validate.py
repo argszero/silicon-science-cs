@@ -227,7 +227,23 @@ def suite(D):
           "route=%s problems=%d" % (meta["route"], len(meta["problems"])))
     check("refs: every entry is cited in the manuscript (0 uncited)",
           uncited_count() == 0, "uncited=%d" % uncited_count())
+    # the companion the check above needs: an uncited COUNT of 0 is also what a reader that finds no
+    # entries at all returns, so the entry block is asserted to be READ (129 markers in the house
+    # form).  Without this, a marker-form change makes the check above pass vacuously.
+    check("refs: the entry block is READ, not empty (129 markers)",
+          entry_count() == 129, "markers=%d" % entry_count())
     return
+
+
+def entry_count():
+    """The number of reference markers the reader finds in the References window, in the house form
+    (`[n]`, `n.` or `n)`) -- the quantity that makes the uncited check able to fail."""
+    man = os.path.join(HERE, "manuscript.md")
+    if not os.path.exists(man):
+        return -1
+    text = open(man, encoding="utf-8").read()
+    tail = text.split("## References")[-1]
+    return len(re.findall(r"^\[?(\d+)[\].)] ", tail, re.M))
 
 
 def uncited_count():
@@ -238,10 +254,12 @@ def uncited_count():
     text = open(man, encoding="utf-8").read()
     entries = json.load(open(os.path.join(HERE, "refs", "curated.json")))["entries"]
     meta = json.load(open(os.path.join(HERE, "refs", "meta.json")))["meta"]
-    # build the rendered reference line for each entry, then look for its number in the body
+    # build the rendered reference line for each entry, then look for its number in the body.
+    # The marker set is the one refgate reads -- `[n]`, `n.` or `n)` at the start of a line -- so the
+    # house `[n]` form does not make this check pass vacuously by finding no entries at all.
     body = text.split("## References")[0]
     have = sorted(int(m) for m in re.findall(r"\[(\d+)\]", body))
-    numbered = set(int(m) for m in re.findall(r"^(\d+)\. ", text.split("## References")[-1], re.M))
+    numbered = set(int(m) for m in re.findall(r"^\[?(\d+)[\].)] ", text.split("## References")[-1], re.M))
     cited = set(have) & numbered
     return len(numbered) - len(cited)
 

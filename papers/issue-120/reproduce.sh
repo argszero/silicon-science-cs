@@ -53,6 +53,14 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE" || { echo "cannot enter $HERE"; exit 1; }
 
+# matplotlib writes its font cache under MPLCONFIGDIR.  Left unset on a host whose ~/.matplotlib is
+# not writable, it prints an advisory naming a PER-RUN temporary directory, which is an environment
+# reading rather than evidence -- and it would put a different string in run.log on every run, so the
+# log could not reproduce byte-for-byte.  Pinning it here removes the advisory and the nondeterminism.
+MPLCACHE="$(mktemp -d "${TMPDIR:-/tmp}/issue120-mpl.XXXXXX")"
+export MPLCONFIGDIR="$MPLCACHE"
+trap 'rm -rf "$MPLCACHE"' EXIT
+
 echo "reproduce.sh -- issue #120 reproduction"
 echo "working directory: $HERE"
 
@@ -151,7 +159,8 @@ echo "      committed report is the record of the run that was performed, and st
 END="$(date +%s)"
 {
     echo "#"
-    echo "# wall-clock: $((END - START)) s"
+    echo "# wall-clock: printed to the terminal, NOT written here -- it is a host reading, and a log"
+    echo "#             that carries one cannot reproduce byte-for-byte."
     echo "RESULT: PASS"
 } >> "$RUNLOG"
 echo

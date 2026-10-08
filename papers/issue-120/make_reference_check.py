@@ -25,13 +25,17 @@ def main():
     man = open(os.path.join(HERE, "manuscript.md"), encoding="utf-8").read()
 
     body, refs_block = man.split("## References", 1)
+    # The entry marker is read in the same three forms refgate accepts (`[n]`, `n.`, `n)`) -- the
+    # house form is `[n]`, and a reader that only knows `n.` finds NO entries at all under it, which
+    # would turn every count below into an arithmetic zero.  Set once, used by all three readers.
+    MARK = r"^\[?(\d+)[\].)] (.*)$"
     number = {}                       # bare id -> the number it is rendered under
-    for m in re.finditer(r"^(\d+)\. ", refs_block, re.M):
+    for m in re.finditer(MARK, refs_block, re.M):
         number.setdefault(m.group(1), None)
-    rendered = re.findall(r"^(\d+)\. (.*)$", refs_block, re.M)
+    rendered = [(m.group(1), m.group(2)) for m in re.finditer(MARK, refs_block, re.M)]
     # map each rendered entry back to its curated id by the identifier it prints
     id_of = {}
-    for m in re.finditer(r"^(\d+)\. (.*)$", refs_block, re.M):
+    for m in re.finditer(MARK, refs_block, re.M):
         n, line = m.group(1), m.group(2)
         found = re.search(r"(arXiv:[0-9a-z./\-]+|DOI: [0-9./]+)", line)
         if found:
@@ -46,6 +50,15 @@ def main():
                 cited.add(part)
     numbered = {n for n, _ in rendered}
     uncited = sorted(numbered - cited, key=int)
+
+    # The report defines its own completeness, so a reader that finds no entries would emit an EMPTY
+    # rendered list and `uncited 0` -- a report that reads clean while listing nothing.  Refuse to
+    # write one: the rendered count must equal the curated count.
+    if len(rendered) != len(cur):
+        print("FATAL: read %d rendered entries but there are %d curated entries -- the marker form "
+              "this reader knows does not match the manuscript's; refusing to write a report that "
+              "would pass vacuously" % (len(rendered), len(cur)))
+        return 1
 
     lines = []
     w = lines.append
@@ -119,8 +132,9 @@ def main():
     w("## (ii) Coverage and ambiguity")
     w("")
     w("- **References section**: exactly one `## References` heading, at the end of the file, after")
-    w("  Appendix A. Entries are numbered `1.`-`%d.` and each begins on its own line, separated by a"
+    w("  Appendix A. Entries carry the house marker `[n]` (`[1]`-`[%d]`) and each begins on its"
       % len(rendered))
+    w("  own line, separated by a")
     w("  blank line, so the list is read as a list rather than as one paragraph.")
     w("- **Coverage**: %d entries, **%d cited in the body text by their numbered key**, %d uncited."
       % (len(numbered), len(cited), len(uncited)))
@@ -152,14 +166,21 @@ def main():
                 w(line)
         w("```")
         w("")
-    w("**The one advisory line, resolved rather than explained away.** `refgate.py` prints")
-    w("`WARN: bib uses '1.' but body uses '[n]' -- style mismatch`. This is by construction, not a")
-    w("defect: the requirement is that **every entry be cited in the body text by its numbered key**")
-    w("(`[12]`, `[12,14]`), so the body *must* use `[n]`; the entry marker `1.` is one of the three")
-    w("markers the gate accepts at the start of an entry line (`[12]`, `12.`, `12)`), and the gate")
-    w("reports the pairing as a warning precisely because a naive counter keyed on `[n]` would read 0")
-    w("entries. The substantive counts are in the same block: `entries=129`, `coverage=100.0%`,")
-    w("`block form: 129 entries, 0 of them not separated`, `author form: 129/129`.")
+    w("**The advisory is gone, and that is the change, not a deletion.** An earlier revision of this")
+    w("package printed `WARN: bib uses '1.' but body uses '[n]' -- style mismatch`: the body cited")
+    w("`[n]` while the entry marker was `1.`, and the gate warned because a naive counter keyed on")
+    w("`[n]` would have read 0 entries. The house form is `[n] ` on both sides -- the four published")
+    w("bibliographies use it -- so the marker was converted at its source: `build_manuscript.py`")
+    w("renders `[n]`, and `manuscript.md` was rebuilt from it rather than edited by hand.")
+    w("`numbering=[n]` in the block above is the gate reading the entries in the house form, and the")
+    w("`WARN` line is absent because the mismatch no longer exists.")
+    w("")
+    w("**The conversion could have made a check pass vacuously, and that is repaired in the same")
+    w("pass.** `validate.py` read the entry numbers with `^(\\d+)\\. `; under `[n]` markers that")
+    w("pattern matches nothing, so its `0 uncited` would have become an arithmetic zero -- the shape")
+    w("of a pass with no reader behind it. The reader now accepts the same three markers `refgate`")
+    w("does (`[n]`, `n.`, `n)`), and a companion check asserts the block is **read**")
+    w("(`129 markers`), which is the one thing an uncited-count of 0 cannot distinguish on its own.")
     w("")
     open(os.path.join(HERE, "reference-check.md"), "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print("entries rendered      : %d" % len(rendered))

@@ -2,6 +2,13 @@
 
 **Authors:** how2how2how2-arch
 
+**Contribution level: `theory+empirics`** — a theory model of the tiering ceiling (the construct
+`phi*(c)`, its exact closed form on bounded working sets, and the structural result that the ceiling
+is *not* a function of the stack-distance profile) together with measurements on traces whose ground
+truth is known by construction: three independent certified routes to the exact optimum, a 42-cell
+grid over six trace families at 3 seeds per cell, a 624-pair Mattson check, and an exhaustive
+profile-class spread.
+
 **Abstract.** Memory tiering systems place a small fast tier in front of a large slow one, and are
 now a shipping hardware split rather than a research proposal [@2206.02878; @2405.14209;
 @2303.15375]. Every such system must answer the same question before it can claim a benefit: *at a

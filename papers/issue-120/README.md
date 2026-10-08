@@ -3,9 +3,16 @@
 **What Limits Memory Tiering? An Exact Oracle and the Workload-Intrinsic Floor on Slow-Tier
 Traffic**
 
+**Contribution level**: `theory+empirics` — a theory model of the tiering ceiling (the construct
+`phi*(c)`, its exact closed form on bounded working sets, and the structural result that the ceiling
+is *not* a function of the stack-distance profile) plus measurements on traces with ground truth by
+construction (three independent certified routes, a 42-cell grid over six trace families at 3 seeds
+per cell, a 624-pair Mattson check, an exhaustive profile-class spread). The manuscript and the
+registration state the same value.
+
 This directory is the committed artefact set for issue #120: the six instruments, the artefacts they
 produce, the reference layer (discovery, curation, verification and metadata), the figure generator,
-a 40-check validation suite tied to the manuscript's claims, and the citation report. Every number in
+a 41-check validation suite tied to the manuscript's claims, and the citation report. Every number in
 `manuscript.md` is read out of a committed `*_results.json`, and `validate.py` re-reads those
 artefacts and asserts the claim each number belongs to.
 
@@ -16,7 +23,7 @@ artefacts and asserts the claim each number belongs to.
 
 Expected output:
 
-    VALIDATE 40/40
+    VALIDATE 41/41
     SELFTEST 7/7 plants caught
     RESULT: PASS
 
@@ -33,7 +40,7 @@ record — every check re-derives from the files the run just wrote.
 
 | tier | command | what it does | measured wall-clock |
 |---|---|---|---|
-| **full** (default) | `bash reproduce.sh` | recomputes all six artefacts, regenerates the five figures, validates, runs the suite's own plant control | **99 s** |
+| **full** (default) | `bash reproduce.sh` | recomputes all six artefacts, regenerates the five figures, validates, runs the suite's own plant control | **95 s** |
 | **quick** | `REPRODUCE_QUICK=1 bash reproduce.sh` | validates the artefacts **as committed**, regenerates figures | 8 s |
 
 The full tier is what the package stands behind: it shows the stored artefacts are what the code
@@ -41,7 +48,7 @@ produces. The quick tier is for a reader who wants the verdict without the recom
 
 ### Tolerance: exact, not statistical
 
-`validate.py` prints `VALIDATE <passed>/<run>` and **all 40 checks must pass**; each is attached to a
+`validate.py` prints `VALIDATE <passed>/<run>` and **all 41 checks must pass**; each is attached to a
 named claim, and the check label names the section of the manuscript it belongs to (`5.1 certificate`,
 `5.6 matched pair`, `refs: ...`). A single failed check fails the run, and so does an instrument that
 exits non-zero.
@@ -54,8 +61,15 @@ check on the checks.
 ### Determinism, and the one thing it does **not** cover
 
 Every instrument is deterministic: a seeded `random.Random` per cell, no clocks, no hash-ordered
-iteration, no environment reads. **Measured: two consecutive full runs produced 11 byte-identical
-files** (6 artefacts + 5 figures, `sha256` compared).
+iteration, no environment reads. **Measured: two consecutive full runs produced 12 byte-identical
+files** (6 artefacts + 5 figures + `run.log`, `sha256` compared).
+
+`run.log` joining that set is a repair, not a coincidence. Two environment readings used to leak
+into it -- matplotlib's font-cache advisory, which names a **per-run** temporary directory, and the
+wall-clock line -- so the log differed on every run. The advisory is removed by pinning
+`MPLCONFIGDIR` to a directory the script owns, and the wall-clock is now printed to the terminal and
+**not** written into the log (it is a host reading, and a log that carries one cannot reproduce).
+`run.log` is the run's transcript, and it now reads identically twice.
 
 **The artefact bytes depend on the interpreter, not only on the code and the seed.** The committed
 artefacts were produced by **CPython 3.13.9** (`python3` on the authoring machine, recorded in
@@ -87,7 +101,7 @@ that does not name its build is a claim a verifier cannot apply.
 | `spike_v0.py` .. `spike_v5.py` | the six instruments. Each prints its tables and writes `<name>_results.json`. |
 | `spike_v*_results.json` | the artefacts. **Every number in the manuscript is read from one of these.** |
 | `make_figures.py` | draws the five figures from the artefacts; writes `figures/manifest.json` (sha256 per figure). |
-| `validate.py` | the 40-check suite; `--selftest` runs its own plant control. |
+| `validate.py` | the 41-check suite; `--selftest` runs its own plant control. |
 | `refs_discover.py` | the external scan that built the candidate pool (53 queries). |
 | `refs_curate.py` | the four-limb curation rule that produced the 129-entry set. |
 | `refs_tool.py` | verification by identifier (`verify`) and the two-sided plant control (`plant`). |
@@ -103,7 +117,7 @@ that does not name its build is a claim a verifier cannot apply.
 
 | item | value |
 |---|---|
-| full-tier run | `VALIDATE 40/40`, `SELFTEST 7/7`, `RESULT: PASS`, 99 s |
+| full-tier run | `VALIDATE 41/41`, `SELFTEST 7/7`, `RESULT: PASS`, 95 s |
 | artefacts + figures across two consecutive full runs | **11 files byte-identical** (`sha256`) |
 | interpreter that produced the committed artefacts | CPython 3.13.9, recorded in `run.log` |
 | cross-interpreter behaviour | every integer, verdict and curve shape reproduces; float sums differ in the last 1-2 ULPs (see *Determinism*) |

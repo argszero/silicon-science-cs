@@ -187,7 +187,8 @@ the fetched record cannot drift apart.
 ## (ii) Coverage and ambiguity
 
 - **References section**: exactly one `## References` heading, at the end of the file, after
-  Appendix A. Entries are numbered `1.`-`129.` and each begins on its own line, separated by a
+  Appendix A. Entries carry the house marker `[n]` (`[1]`-`[129]`) and each begins on its
+  own line, separated by a
   blank line, so the list is read as a list rather than as one paragraph.
 - **Coverage**: 129 entries, **129 cited in the body text by their numbered key**, 0 uncited.
   Every in-text citation is a bracketed number; no work is cited by name or by bare arXiv id
@@ -211,29 +212,33 @@ the fetched record cannot drift apart.
 # refgate.py: journals' reference gate (entry count, block form, author form, coverage)
 # linkgate.py: cross-references resolved at the linking file's own directory
 
-=== (repo root) papers/issue-120/manuscript.md
-  window: the last `## References` heading (line 655) to the end of the file (line 913)
+  window: the last `## References` heading (line 662) to the end of the file (line 920)
           — its numbered lines are read as entries
-  entries=129  numbering=.
+  entries=129  numbering=[n]
   block form: 129 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
   author form: 129/129 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
   in-text cited numbers=129  covered=129/129  coverage=100.0%
-  WARN: bib uses '1.' but body uses '[n]' — style mismatch (a naive '[n]' bib-count would report 0 entries)
   GATE: PASS
-linkgate_v1 - the tree's markdown cross-references, resolved at the linking file's own directory
-set: 41 tracked markdown carriers (git ls-files '*.md') at the reader's head
-targets=93 links=88 resolved=88 broken=0
+set: 45 tracked markdown carriers (git ls-files '*.md') at the reader's head
+targets=103 links=98 resolved=98 broken=0
 forms not read as links: url=2 placeholder=3 anchor=0 empty=0 rooted=0
 not read here: a numbered reference - `.github/tools/numgate.py` (the site and the list it indexes); a named pointer (`-> *Name*`) is read by .github/tools/pointgate.py
 LINKGATE: PASS
 ```
 
-**The one advisory line, resolved rather than explained away.** `refgate.py` prints
-`WARN: bib uses '1.' but body uses '[n]' -- style mismatch`. This is by construction, not a
-defect: the requirement is that **every entry be cited in the body text by its numbered key**
-(`[12]`, `[12,14]`), so the body *must* use `[n]`; the entry marker `1.` is one of the three
-markers the gate accepts at the start of an entry line (`[12]`, `12.`, `12)`), and the gate
-reports the pairing as a warning precisely because a naive counter keyed on `[n]` would read 0
-entries. The substantive counts are in the same block: `entries=129`, `coverage=100.0%`,
-`block form: 129 entries, 0 of them not separated`, `author form: 129/129`.
+**The advisory is gone, and that is the change, not a deletion.** An earlier revision of this
+package printed `WARN: bib uses '1.' but body uses '[n]' -- style mismatch`: the body cited
+`[n]` while the entry marker was `1.`, and the gate warned because a naive counter keyed on
+`[n]` would have read 0 entries. The house form is `[n] ` on both sides -- the four published
+bibliographies use it -- so the marker was converted at its source: `build_manuscript.py`
+renders `[n]`, and `manuscript.md` was rebuilt from it rather than edited by hand.
+`numbering=[n]` in the block above is the gate reading the entries in the house form, and the
+`WARN` line is absent because the mismatch no longer exists.
+
+**The conversion could have made a check pass vacuously, and that is repaired in the same
+pass.** `validate.py` read the entry numbers with `^(\d+)\. `; under `[n]` markers that
+pattern matches nothing, so its `0 uncited` would have become an arithmetic zero -- the shape
+of a pass with no reader behind it. The reader now accepts the same three markers `refgate`
+does (`[n]`, `n.`, `n)`), and a companion check asserts the block is **read**
+(`129 markers`), which is the one thing an uncited-count of 0 cannot distinguish on its own.
 

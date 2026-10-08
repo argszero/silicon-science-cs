@@ -405,8 +405,6 @@ PART 3 -- PRACTICAL SCALE: the matched pair repeated K times (sd-L1 exactly 0)
    -> at every scale: the same profile, the same LRU curve, phi* differing by up to 2x.
 
 wrote spike_v5_results.json
-/Users/argszero/.matplotlib is not a writable directory
-Matplotlib created a temporary cache directory at /var/folders/1j/xmzmfprj2zx3s61pw_03485r0000gn/T/matplotlib-u60doyx8 because there was an issue with the default path (/Users/argszero/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
 Matplotlib is building the font cache; this may take a moment.
 figures from the committed results artefacts
    fig1_gap_vs_capacity.png        89103 bytes
@@ -455,7 +453,8 @@ ok   refs: 129 curated entries   [n=129]
 ok   refs: the committed verification log holds 129 OK lines and no PROBLEM   [ok=129]
 ok   refs: every curated entry carries author metadata (129/129)   [route=abstract pages problems=0]
 ok   refs: every entry is cited in the manuscript (0 uncited)   [uncited=0]
-VALIDATE 40/40
+ok   refs: the entry block is READ, not empty (129 markers)   [markers=129]
+VALIDATE 41/41
 RESULT: PASS
    plant caught by: 5.1 certificate: naive Belady vs exhaustive cache-state, 0 disagreements over 200
    plant caught by: 5.1 control: a deliberately bad policy is never BELOW the floor (0 violations / 200)
@@ -466,5 +465,6 @@ RESULT: PASS
    plant caught by: 5.7 mid scale: 1791 of 2510 classes (71 %) carry a spread, max ratio 1.500
 SELFTEST 7/7 plants caught
 #
-# wall-clock: 97 s
+# wall-clock: printed to the terminal, NOT written here -- it is a host reading, and a log
+#             that carries one cannot reproduce byte-for-byte.
 RESULT: PASS

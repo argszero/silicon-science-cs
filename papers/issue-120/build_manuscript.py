@@ -76,7 +76,9 @@ def main():
             astr = ", ".join(auth[:3]) + ", et al."
         else:
             astr = ", ".join(auth[:-1] + [auth[-1]]) if len(auth) > 1 else auth[0]
-        lines.append("%d. %s (%s). *%s*. %s. %s — %s"
+        # house style: the entry marker is `[n]`, matching the in-text citation form and the four
+        # published bibliographies (refgate reads `[n]`, `n.` or `n)` at the start of a line).
+        lines.append("[%d] %s (%s). *%s*. %s. %s — %s"
                      % (num[k], astr, m["year"], e["title"],
                         "DOI: %s" % k if k.startswith("10.") else "arXiv:%s" % k,
                         link(e), e["diff"]))

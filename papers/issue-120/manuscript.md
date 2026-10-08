@@ -2,6 +2,13 @@
 
 **Authors:** how2how2how2-arch
 
+**Contribution level: `theory+empirics`** — a theory model of the tiering ceiling (the construct
+`phi*(c)`, its exact closed form on bounded working sets, and the structural result that the ceiling
+is *not* a function of the stack-distance profile) together with measurements on traces whose ground
+truth is known by construction: three independent certified routes to the exact optimum, a 42-cell
+grid over six trace families at 3 seeds per cell, a 624-pair Mattson check, and an exhaustive
+profile-class spread.
+
 **Abstract.** Memory tiering systems place a small fast tier in front of a large slow one, and are
 now a shipping hardware split rather than a research proposal [[1]; [2];
 [3]]. Every such system must answer the same question before it can claim a benefit: *at a
@@ -654,260 +661,260 @@ Sections 5.1–5.7 are read from those files. Target tolerances: the certificate
 
 ## References
 
-1. Maruf, H., Wang, H., Dhanotia, A., et al. (2022). *TPP: Transparent Page Placement for CXL-Enabled Tiered-Memory*. arXiv:2206.02878. https://arxiv.org/abs/2206.02878 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[1] Maruf, H., Wang, H., Dhanotia, A., et al. (2022). *TPP: Transparent Page Placement for CXL-Enabled Tiered-Memory*. arXiv:2206.02878. https://arxiv.org/abs/2206.02878 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-2. Wang, X., Liu, J., Wu, J., et al. (2024). *Exploring and Evaluating Real-world CXL: Use Cases and System Adoption*. arXiv:2405.14209. https://arxiv.org/abs/2405.14209 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[2] Wang, X., Liu, J., Wu, J., et al. (2024). *Exploring and Evaluating Real-world CXL: Use Cases and System Adoption*. arXiv:2405.14209. https://arxiv.org/abs/2405.14209 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-3. Sun, Y., Yuan, Y., Yu, Z., et al. (2023). *Demystifying CXL Memory with Genuine CXL-Ready Systems and Devices*. arXiv:2303.15375. https://arxiv.org/abs/2303.15375 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[3] Sun, Y., Yuan, Y., Yu, Z., et al. (2023). *Demystifying CXL Memory with Genuine CXL-Ready Systems and Devices*. arXiv:2303.15375. https://arxiv.org/abs/2303.15375 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-4. Mattson, R., Gecsei, J., Slutz, D., et al. (1970). *Evaluation techniques for storage hierarchies*. DOI: 10.1147/sj.92.0078. https://doi.org/10.1147/sj.92.0078 — Mattson et al.'s stack algorithm: the law that makes LRU's curve a function of the reuse-distance profile -- the fact this paper shows does NOT extend to the ceiling
+[4] Mattson, R., Gecsei, J., Slutz, D., et al. (1970). *Evaluation techniques for storage hierarchies*. DOI: 10.1147/sj.92.0078. https://doi.org/10.1147/sj.92.0078 — Mattson et al.'s stack algorithm: the law that makes LRU's curve a function of the reuse-distance profile -- the fact this paper shows does NOT extend to the ceiling
 
-5. Song, K., Yang, J., Wang, Z., et al. (2023). *HybridTier: an Adaptive and Lightweight CXL-Memory Tiering System*. arXiv:2312.04789. https://arxiv.org/abs/2312.04789 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[5] Song, K., Yang, J., Wang, Z., et al. (2023). *HybridTier: an Adaptive and Lightweight CXL-Memory Tiering System*. arXiv:2312.04789. https://arxiv.org/abs/2312.04789 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-6. Zhou, Z., Chen, Y., Zhang, T., et al. (2024). *NeoMem: Hardware/Software Co-Design for CXL-Native Memory Tiering*. arXiv:2403.18702. https://arxiv.org/abs/2403.18702 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[6] Zhou, Z., Chen, Y., Zhang, T., et al. (2024). *NeoMem: Hardware/Software Co-Design for CXL-Native Memory Tiering*. arXiv:2403.18702. https://arxiv.org/abs/2403.18702 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-7. Lu, J., Zhang, Y., Maruf, H., et al. (2024). *Mercury: QoS-Aware Tiered Memory System*. arXiv:2412.08938. https://arxiv.org/abs/2412.08938 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[7] Lu, J., Zhang, Y., Maruf, H., et al. (2024). *Mercury: QoS-Aware Tiered Memory System*. arXiv:2412.08938. https://arxiv.org/abs/2412.08938 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-8. Ramaswamy, S., Chen, Y. (2026). *xTier: Intelligent Tiering for CXL-Enabled Memory*. arXiv:2609.27266. https://arxiv.org/abs/2609.27266 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[8] Ramaswamy, S., Chen, Y. (2026). *xTier: Intelligent Tiering for CXL-Enabled Memory*. arXiv:2609.27266. https://arxiv.org/abs/2609.27266 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-9. Fricker, C., Robert, P., Roberts, J. (2012). *A versatile and accurate approximation for LRU cache performance*. arXiv:1202.3974. https://arxiv.org/abs/1202.3974 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[9] Fricker, C., Robert, P., Roberts, J. (2012). *A versatile and accurate approximation for LRU cache performance*. arXiv:1202.3974. https://arxiv.org/abs/1202.3974 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-10. Ling, M., Ge, J., Wang, G. (2019). *Fast Modeling L2 Cache Reuse Distance Histograms Using Combined Locality Information from Software Traces*. arXiv:1907.05068. https://arxiv.org/abs/1907.05068 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[10] Ling, M., Ge, J., Wang, G. (2019). *Fast Modeling L2 Cache Reuse Distance Histograms Using Combined Locality Information from Software Traces*. arXiv:1907.05068. https://arxiv.org/abs/1907.05068 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-11. Gysi, T., Grosser, T., Brandner, L., et al. (2020). *A Fast Analytical Model of Fully Associative Caches*. arXiv:2001.01653. https://arxiv.org/abs/2001.01653 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[11] Gysi, T., Grosser, T., Brandner, L., et al. (2020). *A Fast Analytical Model of Fully Associative Caches*. arXiv:2001.01653. https://arxiv.org/abs/2001.01653 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-12. Barai, A., Chennupati, G., Santhi, N., et al. (2019). *Modeling Shared Cache Performance of OpenMP Programs using Reuse Distance*. arXiv:1907.12666. https://arxiv.org/abs/1907.12666 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[12] Barai, A., Chennupati, G., Santhi, N., et al. (2019). *Modeling Shared Cache Performance of OpenMP Programs using Reuse Distance*. arXiv:1907.12666. https://arxiv.org/abs/1907.12666 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-13. Liu, J., Hadian, H., Xu, H., et al. (2024). *Dissecting CXL Memory Performance at Scale: Analysis, Modeling, and Optimization*. arXiv:2409.14317. https://arxiv.org/abs/2409.14317 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[13] Liu, J., Hadian, H., Xu, H., et al. (2024). *Dissecting CXL Memory Performance at Scale: Analysis, Modeling, and Optimization*. arXiv:2409.14317. https://arxiv.org/abs/2409.14317 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-14. Yang, Y., Xiang, L., Du, P., et al. (2025). *Architectural and System Implications of CXL-enabled Tiered Memory*. arXiv:2503.17864. https://arxiv.org/abs/2503.17864 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[14] Yang, Y., Xiang, L., Du, P., et al. (2025). *Architectural and System Implications of CXL-enabled Tiered Memory*. arXiv:2503.17864. https://arxiv.org/abs/2503.17864 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-15. Xiang, L., Lin, Z., Deng, W., et al. (2024). *Nomad: Non-Exclusive Memory Tiering via Transactional Page Migration*. arXiv:2401.13154. https://arxiv.org/abs/2401.13154 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[15] Xiang, L., Lin, Z., Deng, W., et al. (2024). *Nomad: Non-Exclusive Memory Tiering via Transactional Page Migration*. arXiv:2401.13154. https://arxiv.org/abs/2401.13154 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-16. Wang, X., Zussman, T., Ma, B., et al. (2026). *TierBPF: Page Migration Admission Control for Tiered Memory via eBPF*. arXiv:2604.12300. https://arxiv.org/abs/2604.12300 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[16] Wang, X., Zussman, T., Ma, B., et al. (2026). *TierBPF: Page Migration Admission Control for Tiered Memory via eBPF*. arXiv:2604.12300. https://arxiv.org/abs/2604.12300 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-17. Kadekodi, R., Peng, H., Bernstein, G., et al. (2025). *Jenga: Responsive Tiered Memory Management without Thrashing*. arXiv:2510.22869. https://arxiv.org/abs/2510.22869 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[17] Kadekodi, R., Peng, H., Bernstein, G., et al. (2025). *Jenga: Responsive Tiered Memory Management without Thrashing*. arXiv:2510.22869. https://arxiv.org/abs/2510.22869 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-18. Son, S., Luo, Z., Zhang, W., et al. (2026). *Clove: Object-Level CXL Memory Management in Managed Runtimes*. arXiv:2605.20370. https://arxiv.org/abs/2605.20370 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[18] Son, S., Luo, Z., Zhang, W., et al. (2026). *Clove: Object-Level CXL Memory Management in Managed Runtimes*. arXiv:2605.20370. https://arxiv.org/abs/2605.20370 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-19. Chen, S., Huang, J., Yang, S., et al. (2024). *Tuning Fast Memory Size based on Modeling of Page Migration for Tiered Memory*. arXiv:2410.00328. https://arxiv.org/abs/2410.00328 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[19] Chen, S., Huang, J., Yang, S., et al. (2024). *Tuning Fast Memory Size based on Modeling of Page Migration for Tiered Memory*. arXiv:2410.00328. https://arxiv.org/abs/2410.00328 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-20. Ren, J., Ma, B., Yang, S., et al. (2025). *Machine Learning-Guided Memory Optimization for DLRM Inference on Tiered Memory*. arXiv:2511.08568. https://arxiv.org/abs/2511.08568 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[20] Ren, J., Ma, B., Yang, S., et al. (2025). *Machine Learning-Guided Memory Optimization for DLRM Inference on Tiered Memory*. arXiv:2511.08568. https://arxiv.org/abs/2511.08568 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-21. Zhao, K., Gholkar, N., Maruf, H., et al. (2026). *Equilibria: Fair Multi-Tenant CXL Memory Tiering At Scale*. arXiv:2602.08800. https://arxiv.org/abs/2602.08800 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[21] Zhao, K., Gholkar, N., Maruf, H., et al. (2026). *Equilibria: Fair Multi-Tenant CXL Memory Tiering At Scale*. arXiv:2602.08800. https://arxiv.org/abs/2602.08800 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-22. Kannan, S., Ren, Y., Bhatacharjee, A. (2020). *Efficient Kernel Object Management for Tiered Memory Systems with KLOC*. arXiv:2004.04760. https://arxiv.org/abs/2004.04760 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[22] Kannan, S., Ren, Y., Bhatacharjee, A. (2020). *Efficient Kernel Object Management for Tiered Memory Systems with KLOC*. arXiv:2004.04760. https://arxiv.org/abs/2004.04760 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-23. Kumar, S., Prasad, A., Sarangi, S., et al. (2021). *Page Table Management for Heterogeneous Memory Systems*. arXiv:2103.10779. https://arxiv.org/abs/2103.10779 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[23] Kumar, S., Prasad, A., Sarangi, S., et al. (2021). *Page Table Management for Heterogeneous Memory Systems*. arXiv:2103.10779. https://arxiv.org/abs/2103.10779 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-24. sha, S., Li, C., Luo, Y., et al. (2022). *HMM-V: Heterogeneous Memory Management for Virtualization*. arXiv:2209.13111. https://arxiv.org/abs/2209.13111 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[24] sha, S., Li, C., Luo, Y., et al. (2022). *HMM-V: Heterogeneous Memory Management for Virtualization*. arXiv:2209.13111. https://arxiv.org/abs/2209.13111 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-25. Agrawal, A., Mancuso, R., Pellizzoni, R., et al. (2018). *Analysis of Dynamic Memory Bandwidth Regulation in Multi-core Real-Time Systems*. arXiv:1809.05921. https://arxiv.org/abs/1809.05921 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[25] Agrawal, A., Mancuso, R., Pellizzoni, R., et al. (2018). *Analysis of Dynamic Memory Bandwidth Regulation in Multi-core Real-Time Systems*. arXiv:1809.05921. https://arxiv.org/abs/1809.05921 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-26. Farina, G., Gala, G., Cinque, M., et al. (2022). *Assessing Intel's Memory Bandwidth Allocation for resource limitation in real-time systems*. arXiv:2206.14637. https://arxiv.org/abs/2206.14637 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[26] Farina, G., Gala, G., Cinque, M., et al. (2022). *Assessing Intel's Memory Bandwidth Allocation for resource limitation in real-time systems*. arXiv:2206.14637. https://arxiv.org/abs/2206.14637 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-27. Moura, D., Petrucci, V., Mosse, D. (2022). *Performance Characterization of AutoNUMA Memory Tiering on Graph Analytics*. arXiv:2212.04344. https://arxiv.org/abs/2212.04344 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[27] Moura, D., Petrucci, V., Mosse, D. (2022). *Performance Characterization of AutoNUMA Memory Tiering on Graph Analytics*. arXiv:2212.04344. https://arxiv.org/abs/2212.04344 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-28. Wang, X., Liu, J., Yang, S., et al. (2026). *Hybrid Adaptive Tuning for Tiered Memory Systems*. arXiv:2604.12165. https://arxiv.org/abs/2604.12165 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[28] Wang, X., Liu, J., Yang, S., et al. (2026). *Hybrid Adaptive Tuning for Tiered Memory Systems*. arXiv:2604.12165. https://arxiv.org/abs/2604.12165 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-29. Schuhknecht, F., Rassau, N. (2026). *Taking the Leap: Efficient and Reliable Fine-Grained NUMA Migration in User-space*. arXiv:2602.05540. https://arxiv.org/abs/2602.05540 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[29] Schuhknecht, F., Rassau, N. (2026). *Taking the Leap: Efficient and Reliable Fine-Grained NUMA Migration in User-space*. arXiv:2602.05540. https://arxiv.org/abs/2602.05540 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-30. Chen, Y., Dong, X., Zhou, Z., et al. (2025). *FPGA-based Emulation and Device-Side Management for CXL-based Memory Tiering Systems*. arXiv:2502.19233. https://arxiv.org/abs/2502.19233 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[30] Chen, Y., Dong, X., Zhou, Z., et al. (2025). *FPGA-based Emulation and Device-Side Management for CXL-based Memory Tiering Systems*. arXiv:2502.19233. https://arxiv.org/abs/2502.19233 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-31. Sehgal, R., Tanna, V., Petrucci, V., et al. (2024). *Optimizing System Memory Bandwidth with Micron CXL Memory Expansion Modules on Intel Xeon 6 Processors*. arXiv:2412.12491. https://arxiv.org/abs/2412.12491 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[31] Sehgal, R., Tanna, V., Petrucci, V., et al. (2024). *Optimizing System Memory Bandwidth with Micron CXL Memory Expansion Modules on Intel Xeon 6 Processors*. arXiv:2412.12491. https://arxiv.org/abs/2412.12491 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-32. Li, Y., Yao, S. (2023). *Understanding and Optimizing Serverless Workloads in CXL-Enabled Tiered Memory*. arXiv:2309.01736. https://arxiv.org/abs/2309.01736 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[32] Li, Y., Yao, S. (2023). *Understanding and Optimizing Serverless Workloads in CXL-Enabled Tiered Memory*. arXiv:2309.01736. https://arxiv.org/abs/2309.01736 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-33. Fan, H., Zhang, K., Habinsky, D., et al. (2026). *Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving*. arXiv:2609.10790. https://arxiv.org/abs/2609.10790 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[33] Fan, H., Zhang, K., Habinsky, D., et al. (2026). *Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving*. arXiv:2609.10790. https://arxiv.org/abs/2609.10790 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-34. Guo, Z., Shan, Y., Luo, X., et al. (2021). *Clio: A Hardware-Software Co-Designed Disaggregated Memory System*. arXiv:2108.03492. https://arxiv.org/abs/2108.03492 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[34] Guo, Z., Shan, Y., Luo, X., et al. (2021). *Clio: A Hardware-Software Co-Designed Disaggregated Memory System*. arXiv:2108.03492. https://arxiv.org/abs/2108.03492 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-35. Lee, S., Yu, Y., Tang, Y., et al. (2021). *MIND: In-Network Memory Management for Disaggregated Data Centers*. arXiv:2107.00164. https://arxiv.org/abs/2107.00164 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[35] Lee, S., Yu, Y., Tang, Y., et al. (2021). *MIND: In-Network Memory Management for Disaggregated Data Centers*. arXiv:2107.00164. https://arxiv.org/abs/2107.00164 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-36. Maruf, H., Chowdhury, M. (2023). *Memory Disaggregation: Advances and Open Challenges*. arXiv:2305.03943. https://arxiv.org/abs/2305.03943 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[36] Maruf, H., Chowdhury, M. (2023). *Memory Disaggregation: Advances and Open Challenges*. arXiv:2305.03943. https://arxiv.org/abs/2305.03943 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-37. Yelam, A. (2022). *Systems for Memory Disaggregation: Challenges & Opportunities*. arXiv:2202.02223. https://arxiv.org/abs/2202.02223 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[37] Yelam, A. (2022). *Systems for Memory Disaggregation: Challenges & Opportunities*. arXiv:2202.02223. https://arxiv.org/abs/2202.02223 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-38. Maruf, H., Zhong, Y., Wang, H., et al. (2021). *Memtrade: A Disaggregated-Memory Marketplace for Public Clouds*. arXiv:2108.06893. https://arxiv.org/abs/2108.06893 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[38] Maruf, H., Zhong, Y., Wang, H., et al. (2021). *Memtrade: A Disaggregated-Memory Marketplace for Public Clouds*. arXiv:2108.06893. https://arxiv.org/abs/2108.06893 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-39. Wang, C., He, K., Fan, R., et al. (2023). *CXL over Ethernet: A Novel FPGA-based Memory Disaggregation Design in Data Centers*. arXiv:2302.08055. https://arxiv.org/abs/2302.08055 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[39] Wang, C., He, K., Fan, R., et al. (2023). *CXL over Ethernet: A Novel FPGA-based Memory Disaggregation Design in Data Centers*. arXiv:2302.08055. https://arxiv.org/abs/2302.08055 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-40. Puri, A., Jose, J., Venkatesh, T. (2023). *Design and Evaluation of a Rack-Scale Disaggregated Memory Architecture For Data Centers*. arXiv:2303.06420. https://arxiv.org/abs/2303.06420 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[40] Puri, A., Jose, J., Venkatesh, T. (2023). *Design and Evaluation of a Rack-Scale Disaggregated Memory Architecture For Data Centers*. arXiv:2303.06420. https://arxiv.org/abs/2303.06420 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-41. Woo, H., Kwon, M., Kim, J., et al. (2025). *ScalePool: Hybrid XLink-CXL Fabric for Composable Resource Disaggregation in Unified Scale-up Domains*. arXiv:2510.14580. https://arxiv.org/abs/2510.14580 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[41] Woo, H., Kwon, M., Kim, J., et al. (2025). *ScalePool: Hybrid XLink-CXL Fabric for Composable Resource Disaggregation in Unified Scale-up Domains*. arXiv:2510.14580. https://arxiv.org/abs/2510.14580 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-42. Ding, N., Maris, P., Nam, H., et al. (2023). *Evaluating the Potential of Disaggregated Memory Systems for HPC applications*. arXiv:2306.04014. https://arxiv.org/abs/2306.04014 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[42] Ding, N., Maris, P., Nam, H., et al. (2023). *Evaluating the Potential of Disaggregated Memory Systems for HPC applications*. arXiv:2306.04014. https://arxiv.org/abs/2306.04014 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-43. Fridman, Y., Desai, S., Singh, N., et al. (2023). *CXL Memory as Persistent Memory for Disaggregated HPC: A Practical Approach*. arXiv:2308.10714. https://arxiv.org/abs/2308.10714 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[43] Fridman, Y., Desai, S., Singh, N., et al. (2023). *CXL Memory as Persistent Memory for Disaggregated HPC: A Practical Approach*. arXiv:2308.10714. https://arxiv.org/abs/2308.10714 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-44. Wahlgren, J., Schieffer, G., Gokhale, M., et al. (2023). *A Quantitative Approach for Adopting Disaggregated Memory in HPC Systems*. arXiv:2308.14780. https://arxiv.org/abs/2308.14780 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[44] Wahlgren, J., Schieffer, G., Gokhale, M., et al. (2023). *A Quantitative Approach for Adopting Disaggregated Memory in HPC Systems*. arXiv:2308.14780. https://arxiv.org/abs/2308.14780 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-45. Wang, R., Wang, J., Idreos, S., et al. (2022). *The Case for Distributed Shared-Memory Databases with RDMA-Enabled Memory Disaggregation*. arXiv:2207.03027. https://arxiv.org/abs/2207.03027 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[45] Wang, R., Wang, J., Idreos, S., et al. (2022). *The Case for Distributed Shared-Memory Databases with RDMA-Enabled Memory Disaggregation*. arXiv:2207.03027. https://arxiv.org/abs/2207.03027 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-46. Liu, Z., Schult, J., Xu, P., et al. (2025). *Mainframe-Style Channel Controllers for Modern Disaggregated Memory Systems*. arXiv:2506.09758. https://arxiv.org/abs/2506.09758 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[46] Liu, Z., Schult, J., Xu, P., et al. (2025). *Mainframe-Style Channel Controllers for Modern Disaggregated Memory Systems*. arXiv:2506.09758. https://arxiv.org/abs/2506.09758 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-47. Heo, T., Kang, S., Lee, S., et al. (2021). *Hardware-assisted Trusted Memory Disaggregation for Secure Far Memory*. arXiv:2108.11507. https://arxiv.org/abs/2108.11507 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[47] Heo, T., Kang, S., Lee, S., et al. (2021). *Hardware-assisted Trusted Memory Disaggregation for Secure Far Memory*. arXiv:2108.11507. https://arxiv.org/abs/2108.11507 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-48. Wang, Q., Lu, Y., Shu, J. (2021). *Sherman: A Write-Optimized Distributed B+Tree Index on Disaggregated Memory*. arXiv:2112.07320. https://arxiv.org/abs/2112.07320 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[48] Wang, Q., Lu, Y., Shu, J. (2021). *Sherman: A Write-Optimized Distributed B+Tree Index on Disaggregated Memory*. arXiv:2112.07320. https://arxiv.org/abs/2112.07320 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-49. Shen, J., Zuo, P., Luo, X., et al. (2023). *FUSEE: A Fully Memory-Disaggregated Key-Value Store (Extended Version)*. arXiv:2301.09839. https://arxiv.org/abs/2301.09839 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[49] Shen, J., Zuo, P., Luo, X., et al. (2023). *FUSEE: A Fully Memory-Disaggregated Key-Value Store (Extended Version)*. arXiv:2301.09839. https://arxiv.org/abs/2301.09839 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-50. Li, Y., Assogba, K., Tripathy, A., et al. (2023). *Towards Persistent Memory based Stateful Serverless Computing for Big Data Applications*. arXiv:2309.01662. https://arxiv.org/abs/2309.01662 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[50] Li, Y., Assogba, K., Tripathy, A., et al. (2023). *Towards Persistent Memory based Stateful Serverless Computing for Big Data Applications*. arXiv:2309.01662. https://arxiv.org/abs/2309.01662 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-51. Yang, Y., Zhao, B., Zheng, Y., et al. (2023). *CXLMemSim: A pure software simulated CXL.mem for performance characterization*. arXiv:2303.06153. https://arxiv.org/abs/2303.06153 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[51] Yang, Y., Zhao, B., Zheng, Y., et al. (2023). *CXLMemSim: A pure software simulated CXL.mem for performance characterization*. arXiv:2303.06153. https://arxiv.org/abs/2303.06153 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-52. Puri, A., Jose, J., Venkatesh, T., et al. (2023). *DRackSim: Simulator for Rack-scale Memory Disaggregation*. arXiv:2305.09977. https://arxiv.org/abs/2305.09977 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[52] Puri, A., Jose, J., Venkatesh, T., et al. (2023). *DRackSim: Simulator for Rack-scale Memory Disaggregation*. arXiv:2305.09977. https://arxiv.org/abs/2305.09977 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-53. Matani, D., Shah, K., Mitra, A. (2021). *An O(1) algorithm for implementing the LFU cache eviction scheme*. arXiv:2110.11602. https://arxiv.org/abs/2110.11602 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[53] Matani, D., Shah, K., Mitra, A. (2021). *An O(1) algorithm for implementing the LFU cache eviction scheme*. arXiv:2110.11602. https://arxiv.org/abs/2110.11602 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-54. Einziger, G., Friedman, R., Manes, B. (2015). *TinyLFU: A Highly Efficient Cache Admission Policy*. arXiv:1512.00727. https://arxiv.org/abs/1512.00727 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[54] Einziger, G., Friedman, R., Manes, B. (2015). *TinyLFU: A Highly Efficient Cache Admission Policy*. arXiv:1512.00727. https://arxiv.org/abs/1512.00727 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-55. Einziger, G., Eytan, O., Friedman, R., et al. (2021). *Lightweight Robust Size Aware Cache Management*. arXiv:2105.08770. https://arxiv.org/abs/2105.08770 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[55] Einziger, G., Eytan, O., Friedman, R., et al. (2021). *Lightweight Robust Size Aware Cache Management*. arXiv:2105.08770. https://arxiv.org/abs/2105.08770 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-56. Bender, M., Das, R., Farach-Colton, M., et al. (2023). *An Associativity Threshold Phenomenon in Set-Associative Caches*. arXiv:2304.04954. https://arxiv.org/abs/2304.04954 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[56] Bender, M., Das, R., Farach-Colton, M., et al. (2023). *An Associativity Threshold Phenomenon in Set-Associative Caches*. arXiv:2304.04954. https://arxiv.org/abs/2304.04954 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-57. Bilal, M., Kang, S. (2017). *A Cache Management Scheme for Efficient Content Eviction and Replication in Cache Networks*. arXiv:1702.04078. https://arxiv.org/abs/1702.04078 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[57] Bilal, M., Kang, S. (2017). *A Cache Management Scheme for Efficient Content Eviction and Replication in Cache Networks*. arXiv:1702.04078. https://arxiv.org/abs/1702.04078 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-58. Yu, Y., Wang, W., Zhang, J., et al. (2017). *LRC: Dependency-Aware Cache Management for Data Analytics Clusters*. arXiv:1703.08280. https://arxiv.org/abs/1703.08280 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[58] Yu, Y., Wang, W., Zhang, J., et al. (2017). *LRC: Dependency-Aware Cache Management for Data Analytics Clusters*. arXiv:1703.08280. https://arxiv.org/abs/1703.08280 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-59. Chen, Y., Wang, G., Shang, J., et al. (2024). *NACL: A General and Effective KV Cache Eviction Framework for LLMs at Inference Time*. arXiv:2408.03675. https://arxiv.org/abs/2408.03675 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[59] Chen, Y., Wang, G., Shang, J., et al. (2024). *NACL: A General and Effective KV Cache Eviction Framework for LLMs at Inference Time*. arXiv:2408.03675. https://arxiv.org/abs/2408.03675 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-60. Zeng, W., Dong, Y., Zhou, J., et al. (2025). *MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference*. arXiv:2501.06807. https://arxiv.org/abs/2501.06807 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[60] Zeng, W., Dong, Y., Zhou, J., et al. (2025). *MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference*. arXiv:2501.06807. https://arxiv.org/abs/2501.06807 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-61. Qin, Z., Cao, Y., Lin, M., et al. (2025). *CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences*. arXiv:2503.12491. https://arxiv.org/abs/2503.12491 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[61] Qin, Z., Cao, Y., Lin, M., et al. (2025). *CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences*. arXiv:2503.12491. https://arxiv.org/abs/2503.12491 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-62. Park, J., Jones, D., Morse, M., et al. (2025). *KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments*. arXiv:2504.15364. https://arxiv.org/abs/2504.15364 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[62] Park, J., Jones, D., Morse, M., et al. (2025). *KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments*. arXiv:2504.15364. https://arxiv.org/abs/2504.15364 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-63. Wang, Y., Ji, S., Liu, Y., et al. (2025). *Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query*. arXiv:2505.20334. https://arxiv.org/abs/2505.20334 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[63] Wang, Y., Ji, S., Liu, Y., et al. (2025). *Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query*. arXiv:2505.20334. https://arxiv.org/abs/2505.20334 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-64. Li, K., Jiang, Z., Shen, Z., et al. (2025). *MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference*. arXiv:2506.15724. https://arxiv.org/abs/2506.15724 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[64] Li, K., Jiang, Z., Shen, Z., et al. (2025). *MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference*. arXiv:2506.15724. https://arxiv.org/abs/2506.15724 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-65. Wang, Z., Fan, H., Waris, H., et al. (2025). *VEDA: Efficient LLM Generation Through Voting-based KV Cache Eviction and Dataflow-flexible Accelerator*. arXiv:2507.00797. https://arxiv.org/abs/2507.00797 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[65] Wang, Z., Fan, H., Waris, H., et al. (2025). *VEDA: Efficient LLM Generation Through Voting-based KV Cache Eviction and Dataflow-flexible Accelerator*. arXiv:2507.00797. https://arxiv.org/abs/2507.00797 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-66. Li, X., Jin, X., Zhang, L. (2025). *GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction*. arXiv:2509.00388. https://arxiv.org/abs/2509.00388 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[66] Li, X., Jin, X., Zhang, L. (2025). *GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction*. arXiv:2509.00388. https://arxiv.org/abs/2509.00388 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-67. Liu, Y., Wang, Y., Xu, Y., et al. (2025). *Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction*. arXiv:2509.10798. https://arxiv.org/abs/2509.10798 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[67] Liu, Y., Wang, Y., Xu, Y., et al. (2025). *Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction*. arXiv:2509.10798. https://arxiv.org/abs/2509.10798 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-68. Chen, J., Liu, J., Xu, H., et al. (2025). *SABlock: Semantic-Aware KV Cache Eviction with Adaptive Compression Block Size*. arXiv:2510.22556. https://arxiv.org/abs/2510.22556 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[68] Chen, J., Liu, J., Xu, H., et al. (2025). *SABlock: Semantic-Aware KV Cache Eviction with Adaptive Compression Block Size*. arXiv:2510.22556. https://arxiv.org/abs/2510.22556 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-69. Liao, M., Wang, L., Zhang, C., et al. (2025). *G-KV: Decoding-Time KV Cache Eviction with Global Attention*. arXiv:2512.00504. https://arxiv.org/abs/2512.00504 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[69] Liao, M., Wang, L., Zhang, C., et al. (2025). *G-KV: Decoding-Time KV Cache Eviction with Global Attention*. arXiv:2512.00504. https://arxiv.org/abs/2512.00504 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-70. Ma, X., Lu, Y., Zhang, P., et al. (2026). *Hierarchical Adaptive Eviction for KV Cache Management in Multimodal Language Models*. arXiv:2602.02197. https://arxiv.org/abs/2602.02197 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[70] Ma, X., Lu, Y., Zhang, P., et al. (2026). *Hierarchical Adaptive Eviction for KV Cache Management in Multimodal Language Models*. arXiv:2602.02197. https://arxiv.org/abs/2602.02197 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-71. Dong, Z., Liu, P., Li, J., et al. (2026). *ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution*. arXiv:2602.03203. https://arxiv.org/abs/2602.03203 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[71] Dong, Z., Liu, P., Li, J., et al. (2026). *ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution*. arXiv:2602.03203. https://arxiv.org/abs/2602.03203 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-72. Tang, Z., Jiao, P., Chen, X., et al. (2026). *Predicting Future Utility: Global Combinatorial Optimization for Task-Agnostic KV Cache Eviction*. arXiv:2602.08585. https://arxiv.org/abs/2602.08585 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[72] Tang, Z., Jiao, P., Chen, X., et al. (2026). *Predicting Future Utility: Global Combinatorial Optimization for Task-Agnostic KV Cache Eviction*. arXiv:2602.08585. https://arxiv.org/abs/2602.08585 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-73. Yang, J., Tang, C., Zhen, L., et al. (2026). *Rethinking KV Cache Eviction via a Unified Information-Theoretic Objective*. arXiv:2604.25975. https://arxiv.org/abs/2604.25975 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[73] Yang, J., Tang, C., Zhen, L., et al. (2026). *Rethinking KV Cache Eviction via a Unified Information-Theoretic Objective*. arXiv:2604.25975. https://arxiv.org/abs/2604.25975 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-74. Patke, A., Pinto, C., Jha, S., et al. (2025). *INDIGO: Page Migration for Hardware Memory Disaggregation Across a Network*. arXiv:2503.18140. https://arxiv.org/abs/2503.18140 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[74] Patke, A., Pinto, C., Jha, S., et al. (2025). *INDIGO: Page Migration for Hardware Memory Disaggregation Across a Network*. arXiv:2503.18140. https://arxiv.org/abs/2503.18140 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-75. Zhang, H., Shi, J., Wang, Y., et al. (2025). *Improving the Serving Performance of Multi-LoRA Large Language Models via Efficient LoRA and KV Cache Management*. arXiv:2505.03756. https://arxiv.org/abs/2505.03756 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[75] Zhang, H., Shi, J., Wang, Y., et al. (2025). *Improving the Serving Performance of Multi-LoRA Large Language Models via Efficient LoRA and KV Cache Management*. arXiv:2505.03756. https://arxiv.org/abs/2505.03756 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-76. Sziklay, E., Jursonovics, T. (2025). *Energy efficiency of cache eviction algorithms for Zipf distributed objects*. arXiv:2503.02504. https://arxiv.org/abs/2503.02504 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
+[76] Sziklay, E., Jursonovics, T. (2025). *Energy efficiency of cache eviction algorithms for Zipf distributed objects*. arXiv:2503.02504. https://arxiv.org/abs/2503.02504 — a deployed replacement policy whose miss curve the profile fixes (Mattson) but whose gap to the optimum it does not
 
-77. Morelli, C., Reineke, J. (2022). *Warping Cache Simulation of Polyhedral Programs*. arXiv:2203.14845. https://arxiv.org/abs/2203.14845 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[77] Morelli, C., Reineke, J. (2022). *Warping Cache Simulation of Polyhedral Programs*. arXiv:2203.14845. https://arxiv.org/abs/2203.14845 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-78. Haque, M., Peddersen, J., Janapsatya, A., et al. (2015). *DEW: A Fast Level 1 Cache Simulation Approach for Embedded Processors with FIFO Replacement Policy*. arXiv:1506.03181. https://arxiv.org/abs/1506.03181 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[78] Haque, M., Peddersen, J., Janapsatya, A., et al. (2015). *DEW: A Fast Level 1 Cache Simulation Approach for Embedded Processors with FIFO Replacement Policy*. arXiv:1506.03181. https://arxiv.org/abs/1506.03181 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-79. Haque, M., Peddersen, J., Parameswaran, S. (2015). *CIPARSim: Cache Intersection Property Assisted Rapid Single-pass FIFO Cache Simulation Technique*. arXiv:1506.03186. https://arxiv.org/abs/1506.03186 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[79] Haque, M., Peddersen, J., Parameswaran, S. (2015). *CIPARSim: Cache Intersection Property Assisted Rapid Single-pass FIFO Cache Simulation Technique*. arXiv:1506.03186. https://arxiv.org/abs/1506.03186 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-80. Khatwal, R., Jain, M. (2014). *Application Specific Cache Simulation Analysis for Application Specific Instruction set Processor*. arXiv:1406.5000. https://arxiv.org/abs/1406.5000 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[80] Khatwal, R., Jain, M. (2014). *Application Specific Cache Simulation Analysis for Application Specific Instruction set Processor*. arXiv:1406.5000. https://arxiv.org/abs/1406.5000 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-81. Nguyen, H., Maidee, P., Lowe-Power, J., et al. (2025). *Pickle: Precise, Flexible Cross-Core Last-level Cache Data Prefetching for Irregular Memory Accesses*. arXiv:2511.19973. https://arxiv.org/abs/2511.19973 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[81] Nguyen, H., Maidee, P., Lowe-Power, J., et al. (2025). *Pickle: Precise, Flexible Cross-Core Last-level Cache Data Prefetching for Irregular Memory Accesses*. arXiv:2511.19973. https://arxiv.org/abs/2511.19973 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-82. Blom, M., Rietveld, K., Nieuwpoort, R. (2024). *Multi-Strided Access Patterns to Boost Hardware Prefetching*. arXiv:2412.16001. https://arxiv.org/abs/2412.16001 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[82] Blom, M., Rietveld, K., Nieuwpoort, R. (2024). *Multi-Strided Access Patterns to Boost Hardware Prefetching*. arXiv:2412.16001. https://arxiv.org/abs/2412.16001 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-83. Li, M., Miao, C., Xu, B., et al. (2026). *ICP: Exploiting Instruction Correlation for Prefetching Irregular Memory Accesses*. arXiv:2605.15645. https://arxiv.org/abs/2605.15645 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[83] Li, M., Miao, C., Xu, B., et al. (2026). *ICP: Exploiting Instruction Correlation for Prefetching Irregular Memory Accesses*. arXiv:2605.15645. https://arxiv.org/abs/2605.15645 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-84. Wang, R., Wang, C., Ye, C. (2021). *Reuse Distance-based Copy-backs of Clean Cache Lines to Lower-level Caches*. arXiv:2105.14442. https://arxiv.org/abs/2105.14442 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[84] Wang, R., Wang, C., Ye, C. (2021). *Reuse Distance-based Copy-backs of Clean Cache Lines to Lower-level Caches*. arXiv:2105.14442. https://arxiv.org/abs/2105.14442 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-85. Denning, P. (1968). *The working set model for program behavior*. DOI: 10.1145/363095.363141. https://doi.org/10.1145/363095.363141 — Denning's working-set model: the origin of the 'working set' whose size this paper shows is only part of the story
+[85] Denning, P. (1968). *The working set model for program behavior*. DOI: 10.1145/363095.363141. https://doi.org/10.1145/363095.363141 — Denning's working-set model: the origin of the 'working set' whose size this paper shows is only part of the story
 
-86. Lian, Z., Li, Y., Chen, Z., et al. (2023). *eBPF-based Working Set Size Estimation in Memory Management*. arXiv:2303.05919. https://arxiv.org/abs/2303.05919 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[86] Lian, Z., Li, Y., Chen, Z., et al. (2023). *eBPF-based Working Set Size Estimation in Memory Management*. arXiv:2303.05919. https://arxiv.org/abs/2303.05919 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-87. Ahmed, M., Traverso, S., Garetto, M., et al. (2013). *Temporal Locality in Today's Content Caching: Why it Matters and How to Model it*. arXiv:1305.7114. https://arxiv.org/abs/1305.7114 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[87] Ahmed, M., Traverso, S., Garetto, M., et al. (2013). *Temporal Locality in Today's Content Caching: Why it Matters and How to Model it*. arXiv:1305.7114. https://arxiv.org/abs/1305.7114 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-88. Avranas, A., Giovanidis, A. (2016). *Performance of spatial Multi-LRU caching under traffic with temporal locality*. arXiv:1606.09206. https://arxiv.org/abs/1606.09206 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[88] Avranas, A., Giovanidis, A. (2016). *Performance of spatial Multi-LRU caching under traffic with temporal locality*. arXiv:1606.09206. https://arxiv.org/abs/1606.09206 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-89. Brodal, G., Kejlberg-Rasmussen, C. (2011). *Cache-Oblivious Implicit Predecessor Dictionaries with the Working Set Property*. arXiv:1112.5472. https://arxiv.org/abs/1112.5472 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[89] Brodal, G., Kejlberg-Rasmussen, C. (2011). *Cache-Oblivious Implicit Predecessor Dictionaries with the Working Set Property*. arXiv:1112.5472. https://arxiv.org/abs/1112.5472 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-90. Fiat, A., Mendel, M. (2006). *Truly Online Paging with Locality of Reference*. arXiv:cs/0601127. https://arxiv.org/abs/cs/0601127 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[90] Fiat, A., Mendel, M. (2006). *Truly Online Paging with Locality of Reference*. arXiv:cs/0601127. https://arxiv.org/abs/cs/0601127 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-91. Fiat, A., Karp, R., Luby, M., et al. (2002). *Competitive Paging Algorithms*. arXiv:cs/0205038. https://arxiv.org/abs/cs/0205038 — competitive-analysis theory for paging, whose bounds are asymptotic and do not bind at these trace lengths
+[91] Fiat, A., Karp, R., Luby, M., et al. (2002). *Competitive Paging Algorithms*. arXiv:cs/0205038. https://arxiv.org/abs/cs/0205038 — competitive-analysis theory for paging, whose bounds are asymptotic and do not bind at these trace lengths
 
-92. Young, N. (2002). *The K-Server Dual and Loose Competitiveness for Paging*. arXiv:cs/0205044. https://arxiv.org/abs/cs/0205044 — competitive-analysis theory for paging, whose bounds are asymptotic and do not bind at these trace lengths
+[92] Young, N. (2002). *The K-Server Dual and Loose Competitiveness for Paging*. arXiv:cs/0205044. https://arxiv.org/abs/cs/0205044 — competitive-analysis theory for paging, whose bounds are asymptotic and do not bind at these trace lengths
 
-93. Sleator, D., Tarjan, R. (1985). *Amortized efficiency of list update and paging rules*. DOI: 10.1145/2786.2793. https://doi.org/10.1145/2786.2793 — Sleator & Tarjan's competitive analysis of paging, whose ratios are asymptotic constants and do not bind at these trace lengths
+[93] Sleator, D., Tarjan, R. (1985). *Amortized efficiency of list update and paging rules*. DOI: 10.1145/2786.2793. https://doi.org/10.1145/2786.2793 — Sleator & Tarjan's competitive analysis of paging, whose ratios are asymptotic constants and do not bind at these trace lengths
 
-94. Gadupudi, P., Saha, S. (2025). *Evolution of Buffer Management in Database Systems: From Classical Algorithms to Machine Learning and Disaggregated Memory*. arXiv:2512.22995. https://arxiv.org/abs/2512.22995 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[94] Gadupudi, P., Saha, S. (2025). *Evolution of Buffer Management in Database Systems: From Classical Algorithms to Machine Learning and Disaggregated Memory*. arXiv:2512.22995. https://arxiv.org/abs/2512.22995 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-95. Rayhan, Y., Aref, W. (2026). *Virtual-Memory Assisted Buffer Management In Tiered Memory*. arXiv:2603.03271. https://arxiv.org/abs/2603.03271 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[95] Rayhan, Y., Aref, W. (2026). *Virtual-Memory Assisted Buffer Management In Tiered Memory*. arXiv:2603.03271. https://arxiv.org/abs/2603.03271 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-96. Shen, J., Zuo, P., Luo, X., et al. (2023). *Ditto: An Elastic and Adaptive Memory-Disaggregated Caching System*. arXiv:2309.10239. https://arxiv.org/abs/2309.10239 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
+[96] Shen, J., Zuo, P., Luo, X., et al. (2023). *Ditto: An Elastic and Adaptive Memory-Disaggregated Caching System*. arXiv:2309.10239. https://arxiv.org/abs/2309.10239 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 
-97. Bellavita, J., Sim, A., Wu, K., et al. (2022). *Studying Scientific Data Lifecycle in On-demand Distributed Storage Caches*. arXiv:2205.05598. https://arxiv.org/abs/2205.05598 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[97] Bellavita, J., Sim, A., Wu, K., et al. (2022). *Studying Scientific Data Lifecycle in On-demand Distributed Storage Caches*. arXiv:2205.05598. https://arxiv.org/abs/2205.05598 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-98. Sim, C., Wu, K., Sim, A., et al. (2023). *Effectiveness and predictability of in-network storage cache for scientific workflows*. arXiv:2307.11069. https://arxiv.org/abs/2307.11069 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[98] Sim, C., Wu, K., Sim, A., et al. (2023). *Effectiveness and predictability of in-network storage cache for scientific workflows*. arXiv:2307.11069. https://arxiv.org/abs/2307.11069 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-99. Uta, A., Ghit, B., Dave, A., et al. (2021). *In-Memory Indexed Caching for Distributed Data Processing*. arXiv:2112.06280. https://arxiv.org/abs/2112.06280 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[99] Uta, A., Ghit, B., Dave, A., et al. (2021). *In-Memory Indexed Caching for Distributed Data Processing*. arXiv:2112.06280. https://arxiv.org/abs/2112.06280 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-100. Cidon, A., Rushton, D., Rumble, S., et al. (2016). *Memshare: a Dynamic Multi-tenant Memory Key-value Cache*. arXiv:1610.08129. https://arxiv.org/abs/1610.08129 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[100] Cidon, A., Rushton, D., Rumble, S., et al. (2016). *Memshare: a Dynamic Multi-tenant Memory Key-value Cache*. arXiv:1610.08129. https://arxiv.org/abs/1610.08129 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-101. Hashemi, M. (2016). *On-Chip Mechanisms to Reduce Effective Memory Access Latency*. arXiv:1609.00306. https://arxiv.org/abs/1609.00306 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[101] Hashemi, M. (2016). *On-Chip Mechanisms to Reduce Effective Memory Access Latency*. arXiv:1609.00306. https://arxiv.org/abs/1609.00306 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-102. Bitchebe, S., Mvondo, D., Tchana, A., et al. (2020). *Intel Page Modification Logging, a hardware virtualization feature: study and improvement for virtual machine working set estimation*. arXiv:2001.09991. https://arxiv.org/abs/2001.09991 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[102] Bitchebe, S., Mvondo, D., Tchana, A., et al. (2020). *Intel Page Modification Logging, a hardware virtualization feature: study and improvement for virtual machine working set estimation*. arXiv:2001.09991. https://arxiv.org/abs/2001.09991 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-103. Wang, L., Zhang, X., Lu, T., et al. (2021). *Asynchronous Memory Access Unit for General Purpose Processors*. arXiv:2112.13306. https://arxiv.org/abs/2112.13306 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[103] Wang, L., Zhang, X., Lu, T., et al. (2021). *Asynchronous Memory Access Unit for General Purpose Processors*. arXiv:2112.13306. https://arxiv.org/abs/2112.13306 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-104. Wang, L., Zhang, X., Wang, S., et al. (2024). *Asynchronous Memory Access Unit: Exploiting Massive Parallelism for Far Memory Access*. arXiv:2404.11044. https://arxiv.org/abs/2404.11044 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[104] Wang, L., Zhang, X., Wang, S., et al. (2024). *Asynchronous Memory Access Unit: Exploiting Massive Parallelism for Far Memory Access*. arXiv:2404.11044. https://arxiv.org/abs/2404.11044 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-105. Kwon, J., Lee, Y., Kim, J., et al. (2025). *Garibaldi: A Pairwise Instruction-Data Management for Enhancing Shared Last-Level Cache Performance in Server Workloads*. arXiv:2505.18554. https://arxiv.org/abs/2505.18554 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[105] Kwon, J., Lee, Y., Kim, J., et al. (2025). *Garibaldi: A Pairwise Instruction-Data Management for Enhancing Shared Last-Level Cache Performance in Server Workloads*. arXiv:2505.18554. https://arxiv.org/abs/2505.18554 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-106. Baek, C., Shin, S., Kong, K. (2026). *RestoreKV: Recovering Full-Cache Behavior Under Aggressive Query-Agnostic KV Cache Eviction*. arXiv:2608.01247. https://arxiv.org/abs/2608.01247 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[106] Baek, C., Shin, S., Kong, K. (2026). *RestoreKV: Recovering Full-Cache Behavior Under Aggressive Query-Agnostic KV Cache Eviction*. arXiv:2608.01247. https://arxiv.org/abs/2608.01247 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-107. Prat, D., Ortega, C., Casas, M., et al. (2015). *Adaptive and application dependent runtime guided hardware prefetcher reconfiguration on the IBM POWER7*. arXiv:1501.02282. https://arxiv.org/abs/1501.02282 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[107] Prat, D., Ortega, C., Casas, M., et al. (2015). *Adaptive and application dependent runtime guided hardware prefetcher reconfiguration on the IBM POWER7*. arXiv:1501.02282. https://arxiv.org/abs/1501.02282 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-108. Yadav, D., Paikara, C. (2019). *Arsenal of Hardware Prefetchers*. arXiv:1911.10349. https://arxiv.org/abs/1911.10349 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[108] Yadav, D., Paikara, C. (2019). *Arsenal of Hardware Prefetchers*. arXiv:1911.10349. https://arxiv.org/abs/1911.10349 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-109. Maruf, H., Chowdhury, M. (2019). *Effectively Prefetching Remote Memory with Leap*. arXiv:1911.09829. https://arxiv.org/abs/1911.09829 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[109] Maruf, H., Chowdhury, M. (2019). *Effectively Prefetching Remote Memory with Leap*. arXiv:1911.09829. https://arxiv.org/abs/1911.09829 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-110. Touma, R., Queralt, A., Cortes, T. (2020). *CAPre: Code-Analysis based Prefetching for Persistent Object Stores*. arXiv:2005.11259. https://arxiv.org/abs/2005.11259 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[110] Touma, R., Queralt, A., Cortes, T. (2020). *CAPre: Code-Analysis based Prefetching for Persistent Object Stores*. arXiv:2005.11259. https://arxiv.org/abs/2005.11259 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-111. Sankaranarayanan, K., Lin, C., Chinya, G. (2020). *Helper Without Threads: Customized Prefetching for Delinquent Irregular Loads*. arXiv:2009.00202. https://arxiv.org/abs/2009.00202 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[111] Sankaranarayanan, K., Lin, C., Chinya, G. (2020). *Helper Without Threads: Customized Prefetching for Delinquent Irregular Loads*. arXiv:2009.00202. https://arxiv.org/abs/2009.00202 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-112. Bera, R., Kanellopoulos, K., Nori, A., et al. (2021). *Pythia: A Customizable Hardware Prefetching Framework Using Online Reinforcement Learning*. arXiv:2109.12021. https://arxiv.org/abs/2109.12021 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[112] Bera, R., Kanellopoulos, K., Nori, A., et al. (2021). *Pythia: A Customizable Hardware Prefetching Framework Using Online Reinforcement Learning*. arXiv:2109.12021. https://arxiv.org/abs/2109.12021 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-113. Branner-Augmon, C., Galstyan, N., Kumar, S., et al. (2022). *3PO: Programmed Far-Memory Prefetching for Oblivious Applications*. arXiv:2207.07688. https://arxiv.org/abs/2207.07688 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[113] Branner-Augmon, C., Galstyan, N., Kumar, S., et al. (2022). *3PO: Programmed Far-Memory Prefetching for Oblivious Applications*. arXiv:2207.07688. https://arxiv.org/abs/2207.07688 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-114. Li, M., Zhang, Q., Ren, Y., et al. (2025). *Integrating Prefetcher Selection with Dynamic Request Allocation Improves Prefetching Efficiency*. arXiv:2503.19390. https://arxiv.org/abs/2503.19390 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[114] Li, M., Zhang, Q., Ren, Y., et al. (2025). *Integrating Prefetcher Selection with Dynamic Request Allocation Improves Prefetching Efficiency*. arXiv:2503.19390. https://arxiv.org/abs/2503.19390 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-115. Siddiqui, M., Guzman, F., Wu, Y., et al. (2025). *Coordinated Reinforcement Learning Prefetching Architecture for Multicore Systems*. arXiv:2509.10719. https://arxiv.org/abs/2509.10719 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[115] Siddiqui, M., Guzman, F., Wu, Y., et al. (2025). *Coordinated Reinforcement Learning Prefetching Architecture for Multicore Systems*. arXiv:2509.10719. https://arxiv.org/abs/2509.10719 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-116. Merrell, M., Puckett, D., Chacon, G., et al. (2026). *ORAP: Optimized Row Access Prefetching for Rowhammer-mitigated Memory*. arXiv:2602.13434. https://arxiv.org/abs/2602.13434 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[116] Merrell, M., Puckett, D., Chacon, G., et al. (2026). *ORAP: Optimized Row Access Prefetching for Rowhammer-mitigated Memory*. arXiv:2602.13434. https://arxiv.org/abs/2602.13434 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-117. Dong, Y., Miao, Y., Li, W., et al. (2025). *Accelerating LLM Inference Throughput via Asynchronous KV Cache Prefetching*. arXiv:2504.06319. https://arxiv.org/abs/2504.06319 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[117] Dong, Y., Miao, Y., Li, W., et al. (2025). *Accelerating LLM Inference Throughput via Asynchronous KV Cache Prefetching*. arXiv:2504.06319. https://arxiv.org/abs/2504.06319 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-118. Chen, K., Tan, X., Yu, M., et al. (2025). *ReasonCache: Accelerating Large Reasoning Model Serving through KV Cache Sharing*. arXiv:2507.21433. https://arxiv.org/abs/2507.21433 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[118] Chen, K., Tan, X., Yu, M., et al. (2025). *ReasonCache: Accelerating Large Reasoning Model Serving through KV Cache Sharing*. arXiv:2507.21433. https://arxiv.org/abs/2507.21433 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-119. Lee, M., Waqar, F., Yang, H., et al. (2025). *Architecting Long-Context LLM Acceleration with Packing-Prefetch Scheduler and Ultra-Large Capacity On-Chip Memories*. arXiv:2508.08457. https://arxiv.org/abs/2508.08457 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[119] Lee, M., Waqar, F., Yang, H., et al. (2025). *Architecting Long-Context LLM Acceleration with Packing-Prefetch Scheduler and Ultra-Large Capacity On-Chip Memories*. arXiv:2508.08457. https://arxiv.org/abs/2508.08457 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-120. Benfenati, L., Risso, M., Vannozzi, A., et al. (2026). *Don't be so Stief! Learning KV Cache low-rank approximation over the Stiefel manifold*. arXiv:2601.21686. https://arxiv.org/abs/2601.21686 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[120] Benfenati, L., Risso, M., Vannozzi, A., et al. (2026). *Don't be so Stief! Learning KV Cache low-rank approximation over the Stiefel manifold*. arXiv:2601.21686. https://arxiv.org/abs/2601.21686 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-121. Lin, S., Guo, Z., Lin, J. (2026). *DAK: Direct-Access-Enabled GPU Memory Offloading with Optimal Efficiency for LLM Inference*. arXiv:2604.26074. https://arxiv.org/abs/2604.26074 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[121] Lin, S., Guo, Z., Lin, J. (2026). *DAK: Direct-Access-Enabled GPU Memory Offloading with Optimal Efficiency for LLM Inference*. arXiv:2604.26074. https://arxiv.org/abs/2604.26074 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-122. Kurth, A., Vogel, P., Marongiu, A., et al. (2018). *Scalable and Efficient Virtual Memory Sharing in Heterogeneous SoCs with TLB Prefetching and MMU-Aware DMA Engine*. arXiv:1808.09751. https://arxiv.org/abs/1808.09751 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[122] Kurth, A., Vogel, P., Marongiu, A., et al. (2018). *Scalable and Efficient Virtual Memory Sharing in Heterogeneous SoCs with TLB Prefetching and MMU-Aware DMA Engine*. arXiv:1808.09751. https://arxiv.org/abs/1808.09751 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-123. Li, B. (2026). *Tiara: A Programmable Line-Rate ISA for Remote Memory Access*. arXiv:2606.13708. https://arxiv.org/abs/2606.13708 — a treatment of the recurrence profile this paper shows under-determines the ceiling
+[123] Li, B. (2026). *Tiara: A Programmable Line-Rate ISA for Remote Memory Access*. arXiv:2606.13708. https://arxiv.org/abs/2606.13708 — a treatment of the recurrence profile this paper shows under-determines the ceiling
 
-124. Li, L., Wang, S., Ruan, Z., et al. (2026). *The KV Cache Working Set: Online Capacity Planning for LLM Inference Systems*. arXiv:2609.27746. https://arxiv.org/abs/2609.27746 — a treatment of the offline optimum / the ceiling this paper computes exactly
+[124] Li, L., Wang, S., Ruan, Z., et al. (2026). *The KV Cache Working Set: Online Capacity Planning for LLM Inference Systems*. arXiv:2609.27746. https://arxiv.org/abs/2609.27746 — a treatment of the offline optimum / the ceiling this paper computes exactly
 
-125. Shao, K., Chen, J., Yu, J., et al. (2026). *EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?*. arXiv:2609.33762. https://arxiv.org/abs/2609.33762 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[125] Shao, K., Chen, J., Yu, J., et al. (2026). *EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?*. arXiv:2609.33762. https://arxiv.org/abs/2609.33762 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-126. Bilardi, G., Versaci, F. (2011). *Optimal Eviction Policies for Stochastic Address Traces*. arXiv:1109.6643. https://arxiv.org/abs/1109.6643 — a treatment of the offline optimum / the ceiling this paper computes exactly
+[126] Bilardi, G., Versaci, F. (2011). *Optimal Eviction Policies for Stochastic Address Traces*. arXiv:1109.6643. https://arxiv.org/abs/1109.6643 — a treatment of the offline optimum / the ceiling this paper computes exactly
 
-127. Ghahani, S., Shahri, S., Bakhshalipour, M., et al. (2018). *Making Belady-Inspired Replacement Policies More Effective Using Expected Hit Count*. arXiv:1808.05024. https://arxiv.org/abs/1808.05024 — a treatment of the offline optimum / the ceiling this paper computes exactly
+[127] Ghahani, S., Shahri, S., Bakhshalipour, M., et al. (2018). *Making Belady-Inspired Replacement Policies More Effective Using Expected Hit Count*. arXiv:1808.05024. https://arxiv.org/abs/1808.05024 — a treatment of the offline optimum / the ceiling this paper computes exactly
 
-128. Zhong, C., Gursoy, M., Velipasalar, S. (2017). *A Deep Reinforcement Learning-Based Framework for Content Caching*. arXiv:1712.08132. https://arxiv.org/abs/1712.08132 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
+[128] Zhong, C., Gursoy, M., Velipasalar, S. (2017). *A Deep Reinforcement Learning-Based Framework for Content Caching*. arXiv:1712.08132. https://arxiv.org/abs/1712.08132 — an adjacent cache (KV / buffer pool / storage / edge) that runs the same replacement machinery
 
-129. Belady, L. (1966). *A study of replacement algorithms for a virtual-storage computer*. DOI: 10.1147/sj.52.0078. https://doi.org/10.1147/sj.52.0078 — Belady's MIN algorithm: the offline optimum that this paper's phi* minimizes, and the origin of the whole construct
+[129] Belady, L. (1966). *A study of replacement algorithms for a virtual-storage computer*. DOI: 10.1147/sj.52.0078. https://doi.org/10.1147/sj.52.0078 — Belady's MIN algorithm: the offline optimum that this paper's phi* minimizes, and the origin of the whole construct
