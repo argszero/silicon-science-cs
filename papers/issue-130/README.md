@@ -64,10 +64,12 @@ cd papers/issue-130 && bash reproduce.sh
   ```
 * **Tolerance: `exact`** — the comparison is sha256 equality against the shipped reports, not a
   numeric band. The value was read against **two builds**: the whole package was run under CPython
-  **3.9.6** (`/usr/bin/python3`, 4m58s) and under CPython **3.13.9** (3m58s), and all ten reports are
-  **byte-identical in both** — the same ten sha256, with no version pin needed, because the
-  instruments import no third-party library. A different machine's floating-point reduction order is
-  the residual freedom, which is what the tier below measures rather than a widened band.
+  **3.9.6** (`/usr/bin/python3`, 4m58s) and under CPython **3.13.9** (3m58s), and all eleven reports
+  are **byte-identical in both** — the same eleven sha256, with no version pin needed, because the
+  instruments import no third-party library; the figure step was re-measured the same way this
+  revision, and its **7 of 7 files are byte-identical across the two builds** as well. A different
+  machine's floating-point reduction order is the residual freedom, which is what the tier below
+  measures rather than a widened band.
 * **Cost**: about **5.5 minutes** (the eleven instruments; `spike_v4` ≈ 95 s and `spike_v5` ≈ 89 s are
   most of it, and `spike_v8` is run twice — once for the byte comparison and once for its own
   certificate battery). The figures add under a second: they are drawn from the shipped reports, not
