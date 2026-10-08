@@ -1,0 +1,441 @@
+{
+ "L_grid": [
+  25,
+  50,
+  100,
+  200,
+  400
+ ],
+ "cells": {
+  "cos|L=100": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.0,
+    0.45,
+    0.875,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.025
+   ],
+   "tau_benign": 0.902090572775137,
+   "tau_unrelated": 0.44303633250263147
+  },
+  "cos|L=200": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.075,
+    0.775,
+    0.975,
+    0.975,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.225
+   ],
+   "tau_benign": 0.939401677548401,
+   "tau_unrelated": 0.5913323722733541
+  },
+  "cos|L=25": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.025,
+    0.05,
+    0.2,
+    0.525,
+    0.775,
+    0.975,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.075
+   ],
+   "tau_benign": 0.7942580866369163,
+   "tau_unrelated": 0.3347652618471152
+  },
+  "cos|L=400": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.075,
+    0.95,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.125
+   ],
+   "tau_benign": 0.9632016877949436,
+   "tau_unrelated": 0.6769309419068827
+  },
+  "cos|L=50": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.025,
+    0.35,
+    0.7,
+    0.8,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.8479614205868912,
+   "tau_unrelated": 0.28266155834108675
+  },
+  "jac3c|L=100": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.05,
+    0.45,
+    0.95,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.7834394904458599,
+   "tau_unrelated": 0.2261682242990654
+  },
+  "jac3c|L=200": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.025,
+    0.725,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.8061889250814332,
+   "tau_unrelated": 0.3073341094295693
+  },
+  "jac3c|L=25": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.025,
+    0.15,
+    0.425,
+    0.625,
+    0.95,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.6666666666666666,
+   "tau_unrelated": 0.14285714285714285
+  },
+  "jac3c|L=400": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.075,
+    0.875,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.8360488798370672,
+   "tau_unrelated": 0.3697411003236246
+  },
+  "jac3c|L=50": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.0,
+    0.4,
+    0.7,
+    0.95,
+    0.975,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.7358490566037735,
+   "tau_unrelated": 0.18309859154929578
+  },
+  "jac5|L=100": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.025,
+    0.525,
+    0.9,
+    0.975,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.43283582089552236,
+   "tau_unrelated": 0.0
+  },
+  "jac5|L=200": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.075,
+    0.825,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.4961832061068702,
+   "tau_unrelated": 0.0
+  },
+  "jac5|L=25": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.05,
+    0.175,
+    0.45,
+    0.65,
+    0.95,
+    0.95
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.2727272727272727,
+   "tau_unrelated": 0.0
+  },
+  "jac5|L=400": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.025,
+    0.975,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.5399610136452242,
+   "tau_unrelated": 0.0
+  },
+  "jac5|L=50": {
+   "n_per_cell": 40,
+   "recall_benign": [
+    0.0,
+    0.025,
+    0.375,
+    0.65,
+    0.975,
+    1.0,
+    1.0
+   ],
+   "recall_unrelated": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tau_benign": 0.373134328358209,
+   "tau_unrelated": 0.0
+  }
+ },
+ "corpus": [
+  "pg1342.txt",
+  "pg1661.txt",
+  "pg2701.txt",
+  "pg345.txt",
+  "pg74.txt",
+  "pg76.txt",
+  "pg84.txt",
+  "pg98.txt"
+ ],
+ "eps_benign": 0.05,
+ "eps_grid": [
+  0.02,
+  0.05,
+  0.1,
+  0.15,
+  0.2,
+  0.3,
+  0.4
+ ],
+ "eps_star": {
+  "cos|L=100": {
+   "benign": 0.10588235294117647,
+   "unrelated": null
+  },
+  "cos|L=200": {
+   "benign": 0.08035714285714286,
+   "unrelated": null
+  },
+  "cos|L=25": {
+   "benign": 0.14615384615384613,
+   "unrelated": null
+  },
+  "cos|L=400": {
+   "benign": 0.07428571428571429,
+   "unrelated": null
+  },
+  "cos|L=50": {
+   "benign": 0.12142857142857144,
+   "unrelated": null
+  },
+  "jac3c|L=100": {
+   "benign": 0.10500000000000001,
+   "unrelated": null
+  },
+  "jac3c|L=200": {
+   "benign": 0.08392857142857144,
+   "unrelated": null
+  },
+  "jac3c|L=25": {
+   "benign": 0.16875,
+   "unrelated": null
+  },
+  "jac3c|L=400": {
+   "benign": 0.0765625,
+   "unrelated": null
+  },
+  "jac3c|L=50": {
+   "benign": 0.11666666666666667,
+   "unrelated": null
+  },
+  "jac5|L=100": {
+   "benign": 0.0975,
+   "unrelated": null
+  },
+  "jac5|L=200": {
+   "benign": 0.07833333333333334,
+   "unrelated": null
+  },
+  "jac5|L=25": {
+   "benign": 0.1625,
+   "unrelated": null
+  },
+  "jac5|L=400": {
+   "benign": 0.07500000000000001,
+   "unrelated": null
+  },
+  "jac5|L=50": {
+   "benign": 0.12272727272727273,
+   "unrelated": null
+  }
+ },
+ "n_cal": 200,
+ "n_refs": 40,
+ "seed0": 20261008
+}
