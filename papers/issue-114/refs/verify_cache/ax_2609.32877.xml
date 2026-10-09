@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ncVGupj7mL5pB7Wm/FMLJowkXUE</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.32877&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T23:01:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.32877" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.32877v1</id>
+    <title>Multi-language Program Logics</title>
+    <updated>2026-09-26T19:00:58Z</updated>
+    <link href="https://arxiv.org/abs/2609.32877v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.32877v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real-world programs are rarely written in a single language: For example, C programs call assembly routines, and high-level languages like OCaml link with low-level C libraries. Yet program logics---one of the most successful techniques for modular program verification---almost exclusively target single-language programs.
+  We present Hotpot, the first framework for building multi-language program logics. Hotpot enables compilation-independent, cross-language reasoning about languages with heterogeneous views of shared state. Hotpot rests on four key ideas: abstract calls to specify calls to unknown functions, lanes and the switching modality to move between languages inside the program logic, uniform integration of refinement reasoning via lanes, and exchanges to translate between separation logic assertions of different languages. We demonstrate that Hotpot allows reusing specifications across implementations in different languages, supports reasoning about higher-order cross-language function calls, and integrates with verified compilation. Hotpot is built on top of Iris and DimSum and mechanized in the Rocq Prover.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-26T19:00:58Z</published>
+    <arxiv:primary_category term="cs.PL"/>
+    <author>
+      <name>Alexander Loitzl</name>
+    </author>
+    <author>
+      <name>Niklas Mück</name>
+    </author>
+    <author>
+      <name>Michael Sammler</name>
+    </author>
+  </entry>
+</feed>

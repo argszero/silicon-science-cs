@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fR8W+MxT1mDL+/e6EXoZjO8fGNA</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.37728&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.37728" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37728v1</id>
+    <title>Formal Reasoning about Performance Models</title>
+    <updated>2026-09-29T14:50:33Z</updated>
+    <link href="https://arxiv.org/abs/2609.37728v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37728v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Discrete-event simulation is a standard technique for modelling and analysing the performance of computer systems, networks, and services. Although simulation tools are widely used, reasoning about the correctness and performance guarantees of the models they implement remains largely ad hoc: simulation outputs are interpreted statistically, but there is no logical foundation for deductive reasoning about their behaviour. We present a core imperative calculus that captures the essential constructs common to discrete-event simulators: asynchronous execution, continuous and discrete sampling from distributions, and time-based event scheduling through a global event queue. On top of this calculus, we develop a proof system for reasoning about almost-sure reachability and expected reaching time properties. Our main result is a sound and complete proof rule for these properties. Our framework generalizes deductive reasoning for discrete-time probabilistic programs to the setting of performance models, in which continuous time and continuous probability distributions are central. We have implemented the proof rules in a tool embedded in Lean. We demonstrate the applicability of our proof rule by deriving proofs of almost-sure reachability and expected reaching time for a number of case studies, including client-server examples that go beyond analytic solutions from queueing theory as well as convergence behaviours in network routing protocols. Establishing the soundness and completeness of our proof rules requires significantly more complex arguments than in the discrete-time setting. This is due to the fundamentally discontinuous nature of the operational semantics and the measure-theoretic challenges of continuous time and probability distributions.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PF" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T14:50:33Z</published>
+    <arxiv:comment>38 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <author>
+      <name>Moussa Labbadi</name>
+    </author>
+    <author>
+      <name>Rupak Majumdar</name>
+    </author>
+    <author>
+      <name>V. R. Sathiyanarayana</name>
+    </author>
+    <author>
+      <name>Sadegh Soudjani</name>
+    </author>
+  </entry>
+</feed>

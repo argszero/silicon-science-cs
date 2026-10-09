@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/oYoNKLykB2mEp5CM4yA1N4ty690</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.39783&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:40:26Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.39783" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39783v1</id>
+    <title>COMPASS: Predicting the Relationship of Multiple Patches for Vulnerabilities with LLMs</title>
+    <updated>2026-09-30T14:05:20Z</updated>
+    <link href="https://arxiv.org/abs/2609.39783v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39783v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern software heavily relies on code reuse, so upstream vulnerability fixes do not automatically propagate to downstream codebases. Downstream maintainers must manually adopt patches to eliminate known risks. In practice, a single vulnerability often corresponds to multiple patches, which greatly complicates downstream patch adoption because different patch relationships imply different adoption strategies. To address this challenge, we first manually inspect large-scale multi-patch vulnerabilities (about 1K) in the real world and interview experienced developers, summarizing six typical types of patch relationships, i.e., Merge, Mirror, Better Solution, Fixing-of-Fixing, Collaboration, and Separation. Based on these observations, we propose COMPASS, an automated approach that predicts the relationships of multiple vulnerability patches with large language models. Given a CVE as input, COMPASS follows a four-phase pipeline that (i) identifies the patch group and pre-scans explicit relationships, (ii) performs individual patch analysis, (iii) infers relationship instances via a hierarchy-guided prompt, and (iv) validates completeness and consistency of the inferred results. As output, COMPASS reports the predicted relationships within the patch group and visualizes them as a relationship graph. We evaluate COMPASS on a benchmark of 300 multi-patch CVEs and compare it against mainstream learning-based and LLM baselines. Results show that our method achieves strong and consistent prediction effectiveness and outperforms SOTA by 85.04% on average. We publicly release an online querying website to support community reuse of patch relationships knowledge: https://patch-relation.com.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T14:05:20Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yi Song</name>
+    </author>
+    <author>
+      <name>Dongchen Xie</name>
+    </author>
+    <author>
+      <name>Xiaoyuan Xie</name>
+    </author>
+    <author>
+      <name>He Zhang</name>
+    </author>
+    <author>
+      <name>Lin Xu</name>
+    </author>
+    <author>
+      <name>Chunying Zhou</name>
+    </author>
+    <author>
+      <name>Zhi Jin</name>
+    </author>
+  </entry>
+</feed>

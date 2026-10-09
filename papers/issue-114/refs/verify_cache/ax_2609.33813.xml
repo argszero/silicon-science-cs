@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/RL/gelGRMJA6V3nVS/vaZonf7cE</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.33813&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-01T22:55:24Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2609.33813" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.33813v1</id>
+    <title>Designing a Producer-driven Stream Protocol by Formal Refinement</title>
+    <updated>2026-09-27T18:07:17Z</updated>
+    <link href="https://arxiv.org/abs/2609.33813v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.33813v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The coroutine has broadly diffused in the practice of concurrent programming in the form of generators and asynchronous functions as well as processes communicating through pipes. We wanted to use coroutines in Python to create single-threaded Unix-style pipelines. Unfortunately, available solutions in Python are cumbersome to use. The JavaScript push-stream protocol appeared to be a good alternative. However, its specification is incomplete and ambiguous. We have used TLA$^{+}$ and the TLC model checker to re-derive the protocol and obtain protocol-specific verification tools.
+  In this paper, we present a formal specification of a push-stream protocol that 1) seamlessly combines synchronous and asynchronous modules, encapsulating the choice within each module; 2) provides flow control without using bounded buffers; 3) gracefully and unambiguously terminates; 4) does not require dynamic allocation of objects on the heap. In addition to completely describing expected behaviours, our specification improves on the original design by 1) allowing the input and output of intermediate pipeline modules to terminate independently and 2) explicitly reporting when a module is pending on the execution environment, to avoid incorrect resuming.
+  We specify the protocol as a sequence of refinement steps and derive by equivalence a specification of what an abstract module may do. We then refine the latter into a module checker that can verify concrete module specifications for conformity. We have verified the key properties of all specifications and the validity of refinement steps with TLC. In supplemental material, we provide all TLA$^{+}$ specifications, show that the protocol is sufficiently expressive to implement a superset of all original JavaScript modules, as well as a performance comparison with Python alternatives and Unix pipes.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-27T18:07:17Z</published>
+    <arxiv:primary_category term="cs.PL"/>
+    <author>
+      <name>Erick Lavoie</name>
+    </author>
+  </entry>
+</feed>
