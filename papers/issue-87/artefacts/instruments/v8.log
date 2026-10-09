@@ -1,0 +1,81 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+====================================================================================================
+ISSUE #87 -- R394: a calibrated null band, its own size, and the exchangeability arm
+====================================================================================================
+family: m = 36 usable rows (degenerate excluded: 6), N_CAL = 40, N_VAL = 20 per convention
+band resolution 1/(N_CAL+1) = 0.0244 < q_lo = 0.05 : True
+
+-- C2 the band's OWN SIZE, read on an independent pure-noise family ---------------------
+   pooled: 13 of 240 tests outside the 95 % band = 0.0542  Wilson95 [0.0319, 0.0905]
+     shifted   gamma=0.10  band [-0.0501,+0.0301]  outside  0/20
+     shifted   gamma=0.25  band [-0.0359,+0.0452]  outside  0/20
+     shifted   gamma=0.50  band [-0.0976,-0.0217]  outside  1/20
+     shifted   gamma=1.00  band [-0.0531,+0.0088]  outside  1/20
+     shifted   gamma=2.00  band [+0.0101,+0.0596]  outside  0/20
+     shifted   gamma=3.00  band [+0.0019,+0.0585]  outside  3/20
+     unshifted gamma=0.10  band [-0.0436,+0.0033]  outside  3/20
+     unshifted gamma=0.25  band [-0.0295,+0.0251]  outside  1/20
+     unshifted gamma=0.50  band [+0.0289,+0.0750]  outside  0/20
+     unshifted gamma=1.00  band [-0.0796,+0.0013]  outside  1/20
+     unshifted gamma=2.00  band [-0.0010,+0.0538]  outside  2/20
+     unshifted gamma=3.00  band [+0.0111,+0.0651]  outside  1/20
+
+-- C3 exchangeability arm (arm randomised per split; the machinery must read ~5 %%) ---------
+   signflip   rate 0.0493  Wilson95 [0.0393,0.0617]
+   bootstrap  rate 0.0556  Wilson95 [0.0449,0.0686]
+   normal     rate 0.0542  Wilson95 [0.0436,0.0671]
+   BH over the family: 0.0750  Wilson95 [0.0258,0.1986]
+
+-- C4 the OLD zero-anchored procedure, on the SAME nulls --------------------------------
+   marginal CI rate: cal 223/480 = 0.465   val 117/240 = 0.487
+   BH q=0.05 declarations: cal 182, val 93
+
+-- the real read -------------------------------------------------------------------------
+   calibrated (empirical band + BH): m=36 declared 0 (leads 0, losses 0) | BY 0
+   zero-anchored (R393):             m=36 declared 28 (leads 12, losses 16)
+
+   DECLARED under the calibrated band:
+
+   Rows the calibrated procedure does NOT declare but the old one did:
+     shifted|alpha=1    gamma=0.10 delta -0.0133  p_zero=0.0040  q=0.0051  lead
+     shifted|alpha=1    gamma=0.25 delta +0.0707  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=1    gamma=0.50 delta +0.3911  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=1    gamma=1.00 delta +0.4289  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=1    gamma=3.00 delta -0.0528  p_zero=0.0005  q=0.0008  lead
+     shifted|alpha=0    gamma=0.10 delta -0.0372  p_zero=0.0035  q=0.0047  lead
+     shifted|alpha=0    gamma=0.25 delta +0.0602  p_zero=0.0015  q=0.0021  loss
+     shifted|alpha=0    gamma=0.50 delta -0.1192  p_zero=0.0005  q=0.0008  lead
+     shifted|alpha=0    gamma=1.00 delta -0.1676  p_zero=0.0005  q=0.0008  lead
+     shifted|alpha=0    gamma=2.00 delta -0.2754  p_zero=0.0005  q=0.0008  lead
+     shifted|alpha=0    gamma=3.00 delta +0.3671  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=-1   gamma=0.25 delta +0.0835  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=-1   gamma=0.50 delta +0.4070  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=-1   gamma=1.00 delta +0.4464  p_zero=0.0005  q=0.0008  loss
+     shifted|alpha=-1   gamma=3.00 delta -0.0664  p_zero=0.0005  q=0.0008  lead
+     unshifted|alpha=1  gamma=0.25 delta -0.0268  p_zero=0.0005  q=0.0008  lead
+     unshifted|alpha=1  gamma=1.00 delta +0.3871  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=1  gamma=2.00 delta +0.4325  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=1  gamma=3.00 delta -0.0673  p_zero=0.0005  q=0.0008  lead
+     unshifted|alpha=0  gamma=0.10 delta -0.0267  p_zero=0.0010  q=0.0014  lead
+     unshifted|alpha=0  gamma=0.25 delta +0.0312  p_zero=0.0010  q=0.0014  loss
+     unshifted|alpha=0  gamma=1.00 delta +0.4110  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=0  gamma=2.00 delta +0.0832  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=0  gamma=3.00 delta +0.0746  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=-1 gamma=0.25 delta -0.0308  p_zero=0.0005  q=0.0008  lead
+     unshifted|alpha=-1 gamma=1.00 delta +0.4029  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=-1 gamma=2.00 delta +0.4317  p_zero=0.0005  q=0.0008  loss
+     unshifted|alpha=-1 gamma=3.00 delta -0.0767  p_zero=0.0005  q=0.0008  lead
+
+   report sha256 = 6c7f5c5556017fb275a0dd67c9c4d1980d5bef9ea4c2f84258640873a339c154
+   written to smoke_v8_results.json

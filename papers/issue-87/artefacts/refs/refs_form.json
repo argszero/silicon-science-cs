@@ -1,0 +1,1344 @@
+{
+ "arxiv_pass1": {
+  "arx-W1-barren": {
+   "n": 30,
+   "query": "all:\"barren plateau\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-entangle": {
+   "n": 30,
+   "query": "all:\"entanglement\" AND all:\"kernel\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-kalign": {
+   "n": 30,
+   "query": "all:\"kernel alignment\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-pqk": {
+   "n": 6,
+   "query": "all:\"projected quantum kernel\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-qmlbench": {
+   "n": 40,
+   "query": "cat:cs.LG AND all:\"quantum machine learning\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-zfeat": {
+   "n": 36,
+   "query": "all:\"quantum feature map\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-zkernel": {
+   "n": 40,
+   "query": "all:\"quantum kernel\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W1-zkernel-adv": {
+   "n": 27,
+   "query": "all:\"quantum kernel\" AND all:\"advantage\"",
+   "window": [
+    "202601010000",
+    "202609212359"
+   ]
+  },
+  "arx-W2-dequant": {
+   "n": 25,
+   "query": "all:\"dequantization\" AND cat:quant-ph",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-kalign": {
+   "n": 18,
+   "query": "all:\"kernel target alignment\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-kerneltheory": {
+   "n": 25,
+   "query": "all:\"reproducing kernel Hilbert space\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-krr": {
+   "n": 25,
+   "query": "all:\"kernel ridge regression\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-mkl": {
+   "n": 25,
+   "query": "all:\"multiple kernel learning\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-nys": {
+   "n": 6,
+   "query": "all:\"Nystrom\" AND all:\"kernel approximation\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-qksvm": {
+   "n": 25,
+   "query": "all:\"quantum\" AND all:\"support vector machine\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-randfeat": {
+   "n": 25,
+   "query": "ti:\"random features\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-zkernel": {
+   "n": 40,
+   "query": "all:\"quantum kernel\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  },
+  "arx-W2-zkernelmethods": {
+   "n": 17,
+   "query": "ti:\"quantum kernel methods\"",
+   "window": [
+    "201801010000",
+    "202512312359"
+   ]
+  }
+ },
+ "classical_limb": [
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.455,
+   "matched": null,
+   "near_misses": [],
+   "query": "A study of cross-validation and bootstrap for accuracy estimation and model selection",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.7717/peerjcs.2221/table-2",
+    "title": "Table 2: Model selection cross-validation accuracy metrics.",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Boser, Bernhard"
+    ],
+    "doi": "10.1145/130385.130401",
+    "title": "A training algorithm for optimal margin classifiers",
+    "venue": "Proceedings of the fifth annual workshop on Computational learning theory",
+    "year": 1992
+   },
+   "near_misses": [],
+   "query": "A training algorithm for optimal margin classifiers",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1145/130385.130401",
+    "title": "A training algorithm for optimal margin classifiers",
+    "year": 1992
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.231,
+   "matched": null,
+   "near_misses": [],
+   "query": "Algorithms for Hyper-Parameter Optimization",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.3390/a14060163",
+    "title": "A New Hyper-Parameter Optimization Method for Power Load Forecast Based on Recurrent Neural Networks",
+    "year": 2021
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Krause, J\u00f6rg"
+    ],
+    "doi": "10.1007/978-1-4842-6203-0_1",
+    "title": "Introduction to Bootstrap",
+    "venue": "Introducing Bootstrap 4",
+    "year": 2020
+   },
+   "near_misses": [],
+   "query": "An Introduction to the Bootstrap",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1007/978-1-4842-6203-0_1",
+    "title": "Introduction to Bootstrap",
+    "year": 2020
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Dietterich, Thomas"
+    ],
+    "doi": "10.1162/089976698300017197",
+    "title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+    "venue": "Neural Computation",
+    "year": 1998
+   },
+   "near_misses": [],
+   "query": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1162/089976698300017197",
+    "title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+    "year": 1998
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Varma, Sudhir"
+    ],
+    "doi": "10.1186/1471-2105-7-91",
+    "title": "Bias in error estimation when using cross-validation for model selection",
+    "venue": "BMC Bioinformatics",
+    "year": 2006
+   },
+   "near_misses": [],
+   "query": "Bias in error estimation when using cross-validation for model selection",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1186/1471-2105-7-91",
+    "title": "Bias in error estimation when using cross-validation for model selection",
+    "year": 2006
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 0.6,
+   "matched": {
+    "authors": [
+     "Tibshirani, Robert"
+    ],
+    "doi": "10.21236/ada147572",
+    "title": "Bootstrap Confidence Intervals",
+    "venue": "Defense Technical Information Center",
+    "year": 1984
+   },
+   "near_misses": [
+    "Uniformly consistent bootstrap confidence intervals",
+    "Better Bootstrap Confidence Intervals"
+   ],
+   "query": "Bootstrap confidence intervals",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.5353/th_b4775299",
+    "title": "Uniformly consistent bootstrap confidence intervals",
+    "year": null
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Chapelle, Olivier"
+    ],
+    "doi": "10.1023/a:1012450327387",
+    "title": "Choosing Multiple Parameters for Support Vector Machines",
+    "venue": "Machine Learning",
+    "year": 2002
+   },
+   "near_misses": [],
+   "query": "Choosing Multiple Parameters for Support Vector Machines",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1023/a:1012450327387",
+    "title": "Choosing Multiple Parameters for Support Vector Machines",
+    "year": 2002
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Benjamini, Yoav"
+    ],
+    "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+    "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+    "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+    "year": 1995
+   },
+   "near_misses": [],
+   "query": "Controlling the false discovery rate: a practical and powerful approach to multiple testing",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+    "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+    "year": 1995
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 0.833,
+   "matched": {
+    "authors": [
+     "Thanasilp, Supanut"
+    ],
+    "doi": "10.1038/s41467-024-49287-w",
+    "title": "Exponential concentration in quantum kernel methods",
+    "venue": "Nature Communications",
+    "year": 2024
+   },
+   "near_misses": [
+    "Exponential concentration and untrainability in quantum kernel methods"
+   ],
+   "query": "Exponential concentration in quantum kernel methods",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.21203/rs.3.rs-2296310/v1",
+    "title": "Exponential concentration and untrainability in quantum kernel methods",
+    "year": 2022
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.273,
+   "matched": null,
+   "near_misses": [
+    "17 Extremely Randomized Trees"
+   ],
+   "query": "Extremely randomized trees",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.7717/peerj.16972/fig-6",
+    "title": "Figure 6: Normalized variable importance of extremely randomized trees and gradient descended trees models.",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Mercer, James"
+    ],
+    "doi": "10.1098/rspa.1909.0075",
+    "title": "Functions of positive and negative type, and their connection with the theory of integral equations",
+    "venue": "Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character",
+    "year": 1909
+   },
+   "near_misses": [
+    "XVI. Functions of positive and negative type, and their connection the theory of integral equations"
+   ],
+   "query": "Functions of positive and negative type and their connection with the theory of integral equations",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1098/rspa.1909.0075",
+    "title": "Functions of positive and negative type, and their connection with the theory of integral equations",
+    "year": 1909
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.4,
+   "matched": null,
+   "near_misses": [],
+   "query": "Gaussian Processes for Machine Learning",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.7551/mitpress/3206.003.0014",
+    "title": "Gaussian Markov Processes",
+    "year": 2005
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Lecun, Y."
+    ],
+    "doi": "10.1109/5.726791",
+    "title": "Gradient-based learning applied to document recognition",
+    "venue": "Proceedings of the IEEE",
+    "year": 1998
+   },
+   "near_misses": [],
+   "query": "Gradient-based learning applied to document recognition",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1109/5.726791",
+    "title": "Gradient-based learning applied to document recognition",
+    "year": 1998
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.6,
+   "matched": null,
+   "near_misses": [
+    "List of pattern analysis methods"
+   ],
+   "query": "Kernel Methods for Pattern Analysis",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1017/cbo9780511809682.016",
+    "title": "List of pattern analysis methods",
+    "year": 2004
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.667,
+   "matched": null,
+   "near_misses": [
+    "Kernel-Based Nonlinear Independent Component Analysis",
+    "Brisk Kernel Independent Component Analysis"
+   ],
+   "query": "Kernel independent component analysis",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1007/978-3-540-74494-8_38",
+    "title": "Kernel-Based Nonlinear Independent Component Analysis",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.6,
+   "matched": null,
+   "near_misses": [
+    "Quantum-Efficient Kernel Target Alignment"
+   ],
+   "query": "Kernel-target alignment",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.5220/0013391500003890",
+    "title": "Quantum-Efficient Kernel Target Alignment",
+    "year": 2025
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.667,
+   "matched": null,
+   "near_misses": [
+    "Kernel Matrix Completion by Semidefinite Programming"
+   ],
+   "query": "Learning the Kernel Matrix with Semidefinite Programming",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1007/3-540-46084-5_113",
+    "title": "Kernel Matrix Completion by Semidefinite Programming",
+    "year": 2002
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.125,
+   "matched": null,
+   "near_misses": [],
+   "query": "Learning with Kernels: Support Vector Machines, Regularization, Optimization, and Beyond",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.7551/mitpress/4175.003.0005",
+    "title": "Kernels",
+    "year": 2001
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.5,
+   "matched": null,
+   "near_misses": [],
+   "query": "Learning with Kernels: a survey of kernel methods",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1201/b17558-19",
+    "title": "Output Kernel Learning Methods",
+    "year": 2014
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.444,
+   "matched": null,
+   "near_misses": [],
+   "query": "Model Selection for Kernel Machines",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1109/ccdc.2010.5498150",
+    "title": "Model selection for Support Vector Machines based on kernel density estimation",
+    "year": 2010
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Bach, Francis"
+    ],
+    "doi": "10.1145/1015330.1015424",
+    "title": "Multiple kernel learning, conic duality, and the SMO algorithm",
+    "venue": "Twenty-first international conference on Machine learning - ICML '04",
+    "year": 2004
+   },
+   "near_misses": [],
+   "query": "Multiple kernel learning, conic duality, and the SMO algorithm",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1145/1015330.1015424",
+    "title": "Multiple kernel learning, conic duality, and the SMO algorithm",
+    "year": 2004
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.5,
+   "matched": null,
+   "near_misses": [
+    "No Free Lunch Theorems"
+   ],
+   "query": "No free lunch theorems for optimization",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1007/978-3-030-66515-9_13",
+    "title": "What Is Important About the No Free Lunch Theorems?",
+    "year": 2021
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Sch\u00f6lkopf, Bernhard"
+    ],
+    "doi": "10.1162/089976698300017467",
+    "title": "Nonlinear Component Analysis as a Kernel Eigenvalue Problem",
+    "venue": "Neural Computation",
+    "year": 1998
+   },
+   "near_misses": [],
+   "query": "Nonlinear Component Analysis as a Kernel Eigenvalue Problem",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1162/089976698300017467",
+    "title": "Nonlinear Component Analysis as a Kernel Eigenvalue Problem",
+    "year": 1998
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.6,
+   "matched": null,
+   "near_misses": [
+    "Quantum-Efficient Kernel Target Alignment"
+   ],
+   "query": "On Kernel-Target Alignment",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.5220/0013391500003890",
+    "title": "Quantum-Efficient Kernel Target Alignment",
+    "year": 2025
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.429,
+   "matched": null,
+   "near_misses": [],
+   "query": "On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.12746/swrccc2015.0312.160",
+    "title": "Model selection and model over-fitting",
+    "year": 2015
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.125,
+   "matched": null,
+   "near_misses": [],
+   "query": "On the algorithmic implementation of multiclass kernel-based vector machines",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1017/cbo9780511801389.009",
+    "title": "Implementation Techniques",
+    "year": 2000
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Benjamini, Yoav"
+    ],
+    "doi": "10.1214/aos/1013699998",
+    "title": "The control of the false discovery rate in multiple testing under dependency",
+    "venue": "The Annals of Statistics",
+    "year": 2001
+   },
+   "near_misses": [],
+   "query": "On the control of the false discovery rate in multiple testing under dependency",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1214/aos/1013699998",
+    "title": "The control of the false discovery rate in multiple testing under dependency",
+    "year": 2001
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Vapnik, V."
+    ],
+    "doi": "10.1007/978-3-319-21852-6_3",
+    "title": "On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities",
+    "venue": "Measures of Complexity",
+    "year": 2015
+   },
+   "near_misses": [],
+   "query": "On the uniform convergence of relative frequencies of events to their probabilities",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1007/978-3-319-21852-6_3",
+    "title": "On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities",
+    "year": 2015
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.429,
+   "matched": null,
+   "near_misses": [],
+   "query": "Power of data in quantum machine learning",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1201/9781003646068-8",
+    "title": "Quantum Machine Learning Applications in Healthcare",
+    "year": 2026
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.417,
+   "matched": null,
+   "near_misses": [],
+   "query": "Practical Bayesian Optimization of Machine Learning Algorithms",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.21203/rs.3.rs-3312122/v1",
+    "title": "Ensemble-based Hybrid Optimization of Bayesian Neural Networks and Traditional Machine Learning Algorithms",
+    "year": 2023
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Preskill, John"
+    ],
+    "doi": "10.22331/q-2018-08-06-79",
+    "title": "Quantum Computing in the NISQ era and beyond",
+    "venue": "Quantum",
+    "year": 2018
+   },
+   "near_misses": [],
+   "query": "Quantum Computing in the NISQ era and beyond",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.22331/q-2018-08-06-79",
+    "title": "Quantum Computing in the NISQ era and beyond",
+    "year": 2018
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.375,
+   "matched": null,
+   "near_misses": [],
+   "query": "Quantum advantage in learning from experiments",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1038/s41534-026-01279-y",
+    "title": "Advantage of quantum machine learning from general computational advantages",
+    "year": 2026
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.625,
+   "matched": null,
+   "near_misses": [
+    "Ammonoid Taxonomy with Supervised and Unsupervised Machine Learning Algorithms",
+    "Quantum algorithms for unsupervised machine learning and neural networks"
+   ],
+   "query": "Quantum algorithms for supervised and unsupervised machine learning",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.31233/osf.io/ewkx9",
+    "title": "Ammonoid Taxonomy with Supervised and Unsupervised Machine Learning Algorithms",
+    "year": 2021
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.4,
+   "matched": null,
+   "near_misses": [],
+   "query": "Quantum computational advantage using photons",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1103/rflv-gc66",
+    "title": "Quantum Computational Advantage of Noisy Boson Sampling with Partially Distinguishable Photons",
+    "year": 2025
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.5,
+   "matched": null,
+   "near_misses": [],
+   "query": "Quantum convolutional neural networks",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1021/acs.jpclett.1c00079.s001",
+    "title": "Convolutional Neural Networks for Long Time Dissipative Quantum Dynamics",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.222,
+   "matched": null,
+   "near_misses": [],
+   "query": "Quantum kernel methods: the geometry of data in Hilbert space",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1017/cbo9780511844515.011",
+    "title": "Reproducing kernel Hilbert spaces",
+    "year": 2013
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.75,
+   "matched": null,
+   "near_misses": [
+    "Machine learning for quantum physics and quantum physics for machine learning"
+   ],
+   "query": "Quantum machine learning",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.5821/dissertation-2117-348901",
+    "title": "Machine learning for quantum physics and quantum physics for machine learning",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Schuld, Maria"
+    ],
+    "doi": "10.1103/physrevlett.122.040504",
+    "title": "Quantum Machine Learning in Feature Hilbert Spaces",
+    "venue": "Physical Review Letters",
+    "year": 2019
+   },
+   "near_misses": [],
+   "query": "Quantum machine learning in feature Hilbert spaces",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1103/physrevlett.122.040504",
+    "title": "Quantum Machine Learning in Feature Hilbert Spaces",
+    "year": 2019
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.667,
+   "matched": null,
+   "near_misses": [
+    "Quantum supremacy in a superconducting quantum processor"
+   ],
+   "query": "Quantum supremacy using a programmable superconducting processor",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1117/12.2603523",
+    "title": "Quantum supremacy in a superconducting quantum processor",
+    "year": 2021
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Deutsch, David"
+    ],
+    "doi": "10.1098/rspa.1985.0070",
+    "title": "Quantum theory, the Church\u2013Turing principle and the universal quantum computer",
+    "venue": "Proceedings of the Royal Society of London. A. Mathematical and Physical Sciences",
+    "year": 1985
+   },
+   "near_misses": [],
+   "query": "Quantum theory, the Church-Turing principle and the universal quantum computer",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1098/rspa.1985.0070",
+    "title": "Quantum theory, the Church\u2013Turing principle and the universal quantum computer",
+    "year": 1985
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.5,
+   "matched": null,
+   "near_misses": [],
+   "query": "Quantum-enhanced machine learning",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1515/9783111342276-008",
+    "title": "8 Decentralized quantum machine learning: distributed quantum computing for enhanced learning",
+    "year": 2024
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.455,
+   "matched": null,
+   "near_misses": [],
+   "query": "Random Features for Large-Scale Kernel Machines",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.2139/ssrn.5095787",
+    "title": "Rffnet: Large-Scale Interpretable Kernel Methods Via Random Fourier Features",
+    "year": 2025
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [],
+    "doi": "10.29172/7c2a6982-6d72-4cd8-bba6-2fccb06a7011",
+    "title": "Random forests",
+    "venue": "Physics Subject Headings (PhySH)",
+    "year": null
+   },
+   "near_misses": [
+    "Random Forests",
+    "Learning with random forests"
+   ],
+   "query": "Random Forests",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.29172/7c2a6982-6d72-4cd8-bba6-2fccb06a7011",
+    "title": "Random forests",
+    "year": null
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.625,
+   "matched": null,
+   "near_misses": [
+    "Hyper-Parameter Tuning based on Random Search for DenseNet Optimization"
+   ],
+   "query": "Random Search for Hyper-Parameter Optimization",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1109/icitacee50144.2020.9239164",
+    "title": "Hyper-Parameter Tuning based on Random Search for DenseNet Optimization",
+    "year": 2020
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 0.333,
+   "matched": {
+    "authors": [
+     "Feynman, Richard"
+    ],
+    "doi": "10.1201/9780429500459-11",
+    "title": "Simulating Physics with Computers",
+    "venue": "Feynman and Computation",
+    "year": null
+   },
+   "near_misses": [],
+   "query": "Simulating physics with computers",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1103/physics.19.s57",
+    "title": "A Magic Trick for Simulating Quantum Computers",
+    "year": 2026
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.308,
+   "matched": null,
+   "near_misses": [],
+   "query": "Statistical Comparisons of Classifiers over Multiple Data Sets",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1021/acs.molpharmaceut.8b01297.s001",
+    "title": "Multiple Machine Learning Comparisons of HIV Cell-based and Reverse Transcriptase Data Sets",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.571,
+   "matched": null,
+   "near_misses": [],
+   "query": "Statistical Modeling: The Two Cultures",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1214/ss/1009213726",
+    "title": "Statistical Modeling: The Two Cultures (with comments and a rejoinder by the author)",
+    "year": 2001
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Havl\u00ed\u010dek, Vojt\u011bch"
+    ],
+    "doi": "10.1038/s41586-019-0980-2",
+    "title": "Supervised learning with quantum-enhanced feature spaces",
+    "venue": "Nature",
+    "year": 2019
+   },
+   "near_misses": [],
+   "query": "Supervised learning with quantum-enhanced feature spaces",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1038/s41586-019-0980-2",
+    "title": "Supervised learning with quantum-enhanced feature spaces",
+    "year": 2019
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.429,
+   "matched": null,
+   "near_misses": [],
+   "query": "Support-Vector Networks",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.33915/etd.4200",
+    "title": "Dynamic learning with neural networks and support vector machines",
+    "year": null
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Wolpert, David"
+    ],
+    "doi": "10.1162/neco.1996.8.7.1341",
+    "title": "The Lack of A Priori Distinctions Between Learning Algorithms",
+    "venue": "Neural Computation",
+    "year": 1996
+   },
+   "near_misses": [
+    "The Existence of A Priori Distinctions Between Learning Algorithms"
+   ],
+   "query": "The Lack of A Priori Distinctions Between Learning Algorithms",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1162/neco.1996.8.7.1341",
+    "title": "The Lack of A Priori Distinctions Between Learning Algorithms",
+    "year": 1996
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.5,
+   "matched": null,
+   "near_misses": [
+    "Design and Analysis of Sequential Experiments",
+    "Design and Analysis of Sequential Experiments"
+   ],
+   "query": "The design and analysis of computer experiments",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1201/b18619-26",
+    "title": "Design of Computer Experiments: Introduction and Background",
+    "year": 2015
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Davis, Jesse"
+    ],
+    "doi": "10.1145/1143844.1143874",
+    "title": "The relationship between Precision-Recall and ROC curves",
+    "venue": "Proceedings of the 23rd international conference on Machine learning - ICML '06",
+    "year": 2006
+   },
+   "near_misses": [],
+   "query": "The relationship between Precision-Recall and ROC curves",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.1145/1143844.1143874",
+    "title": "The relationship between Precision-Recall and ROC curves",
+    "year": 2006
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Aronszajn, N."
+    ],
+    "doi": "10.21236/ada296533",
+    "title": "Theory of Reproducing Kernels.",
+    "venue": "Defense Technical Information Center",
+    "year": 1950
+   },
+   "near_misses": [
+    "Applications of the General Theory of Reproducing Kernels"
+   ],
+   "query": "Theory of Reproducing Kernels",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.21236/ada296533",
+    "title": "Theory of Reproducing Kernels.",
+    "year": 1950
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 1.0,
+   "matched": {
+    "authors": [
+     "Wang, Xinbiao"
+    ],
+    "doi": "10.22331/q-2021-08-30-531",
+    "title": "Towards understanding the power of quantum kernels in the NISQ era",
+    "venue": "Quantum",
+    "year": 2021
+   },
+   "near_misses": [],
+   "query": "Towards understanding the power of quantum kernels in the NISQ era",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.22331/q-2021-08-30-531",
+    "title": "Towards understanding the power of quantum kernels in the NISQ era",
+    "year": 2021
+   },
+   "verdict": "match"
+  },
+  {
+   "jaccard_matched": null,
+   "jaccard_top": 0.235,
+   "matched": null,
+   "near_misses": [],
+   "query": "Using the Nystr\u00f6m method to speed up kernel machines",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.21203/rs.3.rs-8962794/v1",
+    "title": "NQ-SVM: Scalable Quantum Kernel Learning via Nystr\u00f6m-Based Support Vector Machines",
+    "year": 2026
+   },
+   "verdict": "NOT FOUND"
+  },
+  {
+   "jaccard_matched": 1.0,
+   "jaccard_top": 0.375,
+   "matched": {
+    "authors": [],
+    "doi": "10.1017/9781009639651.023",
+    "title": "Variational quantum algorithms",
+    "venue": "Quantum Algorithms",
+    "year": 2025
+   },
+   "near_misses": [
+    "Variational quantum algorithms and geometry"
+   ],
+   "query": "Variational quantum algorithms",
+   "rule": "normalized-title token Jaccard >= 0.85",
+   "top_returned": {
+    "doi": "10.2172/2361123",
+    "title": "Noise-Induced Transition in Optimal Solutions of Variational Quantum Algorithms",
+    "year": 2024
+   },
+   "verdict": "match"
+  }
+ ],
+ "counts": {
+  "classical_matched": 25,
+  "classical_not_found": 32,
+  "classical_queries": 57,
+  "pass1_crossref_records": 32,
+  "pass1_doi_no_record": 8,
+  "pass1_unique_arxiv": 412,
+  "pass2_unique_arxiv": 589
+ },
+ "form": {
+  "arxiv": {
+   "date_field": "submittedDate",
+   "index": "arXiv API (export.arxiv.org)",
+   "unavailable": "no filter on the latest version: a paper revised into relevance after its original posting is invisible to a window that reaches only the posting",
+   "windows": {
+    "W1": [
+     "202601010000",
+     "202609212359"
+    ],
+    "W2": [
+     "201801010000",
+     "202512312359"
+    ]
+   }
+  },
+  "arxiv_pass2": {
+   "date_field": "submittedDate",
+   "index": "arXiv API (export.arxiv.org)",
+   "queries": {
+    "q-advantage": "ti:\"quantum advantage\" AND cat:quant-ph",
+    "q-advbench": "abs:\"quantum machine learning\" AND abs:\"classical baseline\"",
+    "q-barren": "ti:\"barren plateau\"",
+    "q-cv": "abs:\"nested cross-validation\" AND cat:stat.ML",
+    "q-dequant": "abs:\"dequantization\" AND cat:quant-ph",
+    "q-embedding": "ti:\"quantum embedding\" OR ti:\"data encoding\"",
+    "q-expressivity": "abs:\"expressivity\" AND abs:\"kernel\" AND cat:quant-ph",
+    "q-feature-map": "ti:\"feature map\" AND cat:quant-ph",
+    "q-geometry": "abs:\"quantum kernel\" AND abs:\"geometry\"",
+    "q-kalign": "abs:\"kernel alignment\" AND cat:stat.ML",
+    "q-kernel-conc": "abs:\"kernel\" AND abs:\"concentration\"",
+    "q-kernel-est": "abs:\"quantum kernel\" AND abs:\"estimating\"",
+    "q-kernel-theory": "ti:\"quantum kernel\"",
+    "q-kselect": "abs:\"kernel\" AND abs:\"hyperparameter\" AND cat:stat.ML",
+    "q-mkl": "ti:\"multiple kernel learning\"",
+    "q-multtest": "abs:\"multiple testing\" AND cat:stat.ML",
+    "q-nystrom": "ti:\"Nystrom\" AND ti:\"kernel\"",
+    "q-qmlreview": "ti:\"quantum machine learning\" AND ti:\"review\"",
+    "q-randfeat": "ti:\"random features\"",
+    "q-statcomp": "abs:\"statistical comparison\" AND abs:\"machine learning\" AND abs:\"algorithms\""
+   },
+   "window": [
+    "201501010000",
+    "202609212359"
+   ]
+  },
+  "classical_limb": {
+   "field": "query.bibliographic (a title search; no date window -- the records are named works)",
+   "index": "Crossref REST API (api.crossref.org)",
+   "n_matched": 25,
+   "n_queries": 57,
+   "rule": "stopword-free title-token Jaccard >= 0.85"
+  },
+  "crossref": {
+   "date_field": "published",
+   "index": "Crossref REST API (api.crossref.org)",
+   "not_read": [
+    "created",
+    "published-online",
+    "published-print"
+   ],
+   "windows": {
+    "W3": "per-identifier, no window"
+   }
+  },
+  "queries": [
+   "arx-W1-zkernel",
+   "arx-W1-zfeat",
+   "arx-W1-zkernel-adv",
+   "arx-W1-qmlbench",
+   "arx-W1-barren",
+   "arx-W1-kalign",
+   "arx-W1-pqk",
+   "arx-W1-entangle",
+   "arx-W2-zkernel",
+   "arx-W2-zkernelmethods",
+   "arx-W2-kalign",
+   "arx-W2-randfeat",
+   "arx-W2-dequant",
+   "arx-W2-krr",
+   "arx-W2-mkl",
+   "arx-W2-nys",
+   "arx-W2-qksvm",
+   "arx-W2-kerneltheory"
+  ],
+  "scan_date": "2026-09-21"
+ },
+ "note": "The raw pools (~2.6 MB) are not committed: they are regenerable from the three committed scripts plus the form above, and the selection is made against their record set. The per-atom entries this form produced are `papers/issue-87/references.json`.",
+ "recalled_doi_limb": {
+  "no_record": 8,
+  "no_record_ids": [
+   "10.1023/A:1007437227846",
+   "10.1111/j.2517-6161.1995.tb02031.1",
+   "10.1023/A:1009706826165",
+   "10.1007/978-1-4614-7556-8",
+   "10.1007/978-1-4471-5782-1",
+   "10.1162/neco.1995.7.5.954",
+   "10.1038/s41467-024-49403-9",
+   "10.1088/2058-9565/ac30f0"
+  ],
+  "note": "A DOI recalled from memory is a claim the registry refutes: 8 of 40 returned no record, and several that returned one named a different work (`10.1103/RevModPhys.75.715` is not a quantum-computation review; `10.1103/RevModPhys.74.1` returns a carbon-nanotube paper). This limb was RETIRED: the classical works are read by title search instead.",
+  "queried": 40,
+  "returned": 32,
+  "substitutions": [
+   {
+    "doi": "10.1214/aos/1013699998",
+    "entry_named": "random features",
+    "record_returned": "The control of the false discovery rate in multiple testing under dependency"
+   },
+   {
+    "doi": "10.1162/089976698300017746",
+    "entry_named": "kernel regression and the smoothing literature",
+    "record_returned": "Natural Gradient Works Efficiently in Learning"
+   },
+   {
+    "doi": "10.1103/RevModPhys.75.715",
+    "entry_named": "quantum information and computation",
+    "record_returned": "Decoherence, einselection, and the quantum origins of the classical"
+   },
+   {
+    "doi": "10.1103/RevModPhys.74.1",
+    "entry_named": "quantum computation and information",
+    "record_returned": "Optical simulations of electron diffraction by carbon nanotubes"
+   },
+   {
+    "doi": "10.1126/science.1058040",
+    "entry_named": "quantum algorithms",
+    "record_returned": "The Sequence of the Human Genome"
+   },
+   {
+    "doi": "10.1103/PhysRevLett.80.4811",
+    "entry_named": "quantum computation with a small number of qubits",
+    "record_returned": "Breakup of Spiral Waves into Chemical Turbulence"
+   },
+   {
+    "doi": "10.1038/s41534-019-0187-2",
+    "entry_named": "quantum-kernel implementation on hardware",
+    "record_returned": "Variational ansatz-based quantum simulation of imaginary time evolution"
+   },
+   {
+    "doi": "10.1103/PhysRevLett.122.140504",
+    "entry_named": "the kernel-advantage claim",
+    "record_returned": "Accelerated Variational Quantum Eigensolver"
+   }
+  ]
+ },
+ "round": "R403",
+ "scan_date": "2026-09-21"
+}

@@ -1,0 +1,121 @@
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+Issue #87 R392 -- PB3's instrument, and the scope of its premise
+  q=6 cycle  L=2  noise=0.30 sigma  splits=40  numpy=2.0.2
+
+  (A) IS THE CONVENTION CHANGE A COORDINATE CHANGE?   (PB3's premise, part 1)
+      cross = min over the UNSHIFTED grid for a SHIFTED query kernel
+      floor = min over the SHIFTED grid with the query's own gamma excluded -- the search's own
+              resolution at that gamma (grid step 0.01) -- the scale the cross residual must beat
+
+      gamma  alive_s  alive_u   |gap|    cross_resid  argmin   floor      cross/floor   self_resid
+       0.00   1.0000   1.0000   0.0000       0.00000    0.00   0.00736          0.0x   0.00e+00  [DEGENERATE: both kernels constant]
+       0.10   0.6932   0.9669   0.2736       0.14019    0.30   0.06103          2.3x   0.00e+00
+       0.25   0.2122   0.7831   0.5708       0.38779    0.57   0.07132          5.4x   0.00e+00
+       0.50   0.0528   0.3036   0.2508       0.41283    1.83   0.03539         11.7x   0.00e+00
+       1.00   0.0638   0.0330   0.0308       0.32228    1.22   0.03822          8.4x   0.00e+00
+       2.00   0.1597   0.1172   0.0425       0.15706    2.46   0.03276          4.8x   0.00e+00
+       3.00   0.5780   0.5768   0.0012       0.02481    3.00   0.03696          0.7x   0.00e+00
+      positive control -- the search returns the query's own gamma: True
+      THRESHOLD-FREE EVIDENCE the conventions are different maps: the largest gap between
+        their bandwidth responses is 0.5708 of the mean off-diagonal, at gamma = 0.25
+      VERDICT (a classification, not one boolean) over 6 non-degenerate rows:
+        distinct (cross residual ABOVE the search's own resolution): [0.1, 0.25, 0.5, 1.0, 2.0]
+        coincident (at or below it): [3.0]
+        degenerate rows excluded: [0.0]   -- at gamma = 0 both conventions reach the CONSTANT
+        kernel, so a match there is vacuous, not a discovered reparameterization
+
+  (B) WHAT IS THE UNSHIFTED METRIC?   (PB3's premise, part 2)
+      conv        gamma   |2g(x=0)-2I|   max|offd|/diag   mean |offdiag| by graph distance
+      shifted      0.00       4.06e+01            0.7085   d1=30.1784  d2=10.9229  d3=2.8983
+                   0.00                                    d1/d1=1.0000  d2/d1=0.3619  d3/d1=0.0960
+      shifted      0.50       4.06e+01            0.6523   d1=31.7749  d2=10.0833  d3=2.1756
+                   0.50                                    d1/d1=1.0000  d2/d1=0.3173  d3/d1=0.0685
+      shifted      1.00       4.06e+01            0.6377   d1=21.5511  d2=8.0781  d3=1.7339
+                   1.00                                    d1/d1=1.0000  d2/d1=0.3748  d3/d1=0.0805
+      unshifted    0.00       0.00e+00            0.0000   d1=0.0000  d2=0.0000  d3=0.0000
+                   0.00                                    
+      unshifted    0.50       0.00e+00            0.2701   d1=1.3708  d2=0.2133  d3=0.0197
+                   0.50                                    d1/d1=1.0000  d2/d1=0.1556  d3/d1=0.0144
+      unshifted    1.00       0.00e+00            0.2972   d1=2.5351  d2=0.0559  d3=0.0902
+                   1.00                                    d1/d1=1.0000  d2/d1=0.0221  d3/d1=0.0356
+      C2 the unshifted metric IS exactly 2I at x = 0 (R390's measurement, re-taken): True
+
+  THE PB3 READ -- quantum vs its OWN metric-matched rival, per convention
+  (delta = quantum - matched; a NEGATIVE CI is a lead.  'spread' = the convention's metric
+   variation over the data; 'alive' = mean off-diagonal of the quantum kernel)
+
+  --- shifted ---
+   alpha  gamma  alive   spread  quantum [95% CI]            matched [95% CI]            rbf      randfeat  oracle   delta [95% CI]           lead?
+     1.0   0.00  1.000   0.000    1.0215 [0.9483,1.0915]   1.0215 [0.9483,1.0915]   0.1615    0.5364   0.1234  +0.0000 [-0.0000,+0.0000]  tie
+     1.0   0.10  0.693   1.143    0.1116 [0.0910,0.1322]   0.1357 [0.1114,0.1617]   0.1615    0.5364   0.1234  -0.0241 [-0.0456,-0.0054]  YES
+     1.0   0.25  0.212   2.131    0.2014 [0.1593,0.2455]   0.1454 [0.1158,0.1783]   0.1615    0.5364   0.1234  +0.0560 [+0.0077,+0.0979]  no
+     1.0   0.50  0.053   2.162    0.5256 [0.4579,0.5959]   0.1403 [0.1144,0.1678]   0.1615    0.5364   0.1234  +0.3853 [+0.3210,+0.4511]  no
+     1.0   1.00  0.064   3.029    0.5643 [0.4983,0.6425]   0.1480 [0.1187,0.1804]   0.1615    0.5364   0.1234  +0.4163 [+0.3525,+0.4819]  no
+     1.0   2.00  0.160   5.760    0.1595 [0.1271,0.1969]   0.1389 [0.1150,0.1617]   0.1615    0.5364   0.1234  +0.0206 [-0.0044,+0.0494]  tie
+     1.0   3.00  0.578   6.176    0.0772 [0.0567,0.0994]   0.1512 [0.1267,0.1766]   0.1615    0.5364   0.1234  -0.0740 [-0.0963,-0.0519]  YES
+     0.0   0.00  1.000   0.000    1.0561 [1.0017,1.1120]   1.0561 [1.0017,1.1120]   0.2045    1.1198   0.1577  +0.0000 [-0.0000,+0.0000]  tie
+     0.0   0.10  0.693   1.143    0.8076 [0.7549,0.8590]   0.8418 [0.7759,0.9133]   0.2045    1.1198   0.1577  -0.0343 [-0.0920,+0.0101]  tie
+     0.0   0.25  0.212   2.131    0.9641 [0.8995,1.0266]   0.8421 [0.7738,0.9085]   0.2045    1.1198   0.1577  +0.1220 [+0.0568,+0.1807]  no
+     0.0   0.50  0.053   2.162    0.7342 [0.6861,0.7811]   0.8291 [0.7669,0.8947]   0.2045    1.1198   0.1577  -0.0949 [-0.1645,-0.0305]  YES
+     0.0   1.00  0.064   3.029    0.7081 [0.6614,0.7535]   0.8282 [0.7648,0.8960]   0.2045    1.1198   0.1577  -0.1201 [-0.1880,-0.0524]  YES
+     0.0   2.00  0.160   5.760    0.3432 [0.3118,0.3735]   0.6002 [0.5347,0.6635]   0.2045    1.1198   0.1577  -0.2570 [-0.3248,-0.1863]  YES
+     0.0   3.00  0.578   6.176    0.7477 [0.6924,0.8022]   0.3066 [0.2582,0.3593]   0.2045    1.1198   0.1577  +0.4411 [+0.3676,+0.5076]  no
+    -1.0   0.00  1.000   0.000    0.9942 [0.9289,1.0592]   0.9942 [0.9289,1.0592]   0.1461    0.6126   0.1144  +0.0000 [-0.0000,+0.0000]  tie
+    -1.0   0.10  0.693   1.143    0.1100 [0.0949,0.1262]   0.1213 [0.1039,0.1404]   0.1461    0.6126   0.1144  -0.0112 [-0.0238,+0.0023]  tie
+    -1.0   0.25  0.212   2.131    0.1977 [0.1620,0.2362]   0.1235 [0.1060,0.1420]   0.1461    0.6126   0.1144  +0.0743 [+0.0456,+0.1069]  no
+    -1.0   0.50  0.053   2.162    0.5037 [0.4386,0.5706]   0.1216 [0.1039,0.1411]   0.1461    0.6126   0.1144  +0.3821 [+0.3229,+0.4436]  no
+    -1.0   1.00  0.064   3.029    0.5409 [0.4819,0.6009]   0.1358 [0.1146,0.1588]   0.1461    0.6126   0.1144  +0.4051 [+0.3561,+0.4587]  no
+    -1.0   2.00  0.160   5.760    0.1527 [0.1216,0.1868]   0.1415 [0.1225,0.1609]   0.1461    0.6126   0.1144  +0.0111 [-0.0117,+0.0413]  tie
+    -1.0   3.00  0.578   6.176    0.0688 [0.0538,0.0855]   0.1400 [0.1198,0.1615]   0.1461    0.6126   0.1144  -0.0712 [-0.0880,-0.0546]  YES
+
+  --- unshifted ---
+   alpha  gamma  alive   spread  quantum [95% CI]            matched [95% CI]            rbf      randfeat  oracle   delta [95% CI]           lead?
+     1.0   0.00  1.000   0.000    1.0215 [0.9483,1.0915]   1.0215 [0.9483,1.0915]   0.1615    0.5364   0.1234  +0.0000 [+0.0000,+0.0000]  tie
+     1.0   0.10  0.967   1.297    0.1603 [0.1307,0.1899]   0.1691 [0.1383,0.2030]   0.1615    0.5364   0.1234  -0.0088 [-0.0247,+0.0086]  tie
+     1.0   0.25  0.783   3.403    0.1259 [0.1042,0.1480]   0.1623 [0.1338,0.1931]   0.1615    0.5364   0.1234  -0.0364 [-0.0497,-0.0238]  YES
+     1.0   0.50  0.304   6.344    0.1462 [0.1171,0.1783]   0.1647 [0.1385,0.1924]   0.1615    0.5364   0.1234  -0.0185 [-0.0343,-0.0025]  YES
+     1.0   1.00  0.033   8.820    0.5305 [0.4638,0.6048]   0.1572 [0.1308,0.1839]   0.1615    0.5364   0.1234  +0.3733 [+0.3135,+0.4346]  no
+     1.0   2.00  0.117   9.175    0.5894 [0.5387,0.6436]   0.1606 [0.1352,0.1892]   0.1615    0.5364   0.1234  +0.4288 [+0.3853,+0.4748]  no
+     1.0   3.00  0.577   8.300    0.0830 [0.0631,0.1033]   0.1518 [0.1262,0.1791]   0.1615    0.5364   0.1234  -0.0688 [-0.0857,-0.0526]  YES
+     0.0   0.00  1.000   0.000    1.0561 [1.0017,1.1120]   1.0561 [1.0017,1.1120]   0.2045    1.1198   0.1577  +0.0000 [+0.0000,+0.0000]  tie
+     0.0   0.10  0.967   1.297    0.1890 [0.1543,0.2310]   0.2039 [0.1703,0.2431]   0.2045    1.1198   0.1577  -0.0149 [-0.0274,-0.0024]  YES
+     0.0   0.25  0.783   3.403    0.2240 [0.1896,0.2661]   0.2078 [0.1772,0.2418]   0.2045    1.1198   0.1577  +0.0162 [-0.0009,+0.0339]  tie
+     0.0   0.50  0.304   6.344    0.3068 [0.2663,0.3532]   0.2902 [0.2446,0.3377]   0.2045    1.1198   0.1577  +0.0167 [-0.0314,+0.0727]  tie
+     0.0   1.00  0.033   8.820    0.7830 [0.7336,0.8373]   0.3125 [0.2623,0.3655]   0.2045    1.1198   0.1577  +0.4705 [+0.3895,+0.5514]  no
+     0.0   2.00  0.117   9.175    0.3930 [0.3538,0.4319]   0.2700 [0.2298,0.3130]   0.2045    1.1198   0.1577  +0.1230 [+0.0641,+0.1774]  no
+     0.0   3.00  0.577   8.300    0.7182 [0.6519,0.7862]   0.6237 [0.5615,0.6897]   0.2045    1.1198   0.1577  +0.0944 [+0.0120,+0.1767]  no
+    -1.0   0.00  1.000   0.000    0.9942 [0.9289,1.0592]   0.9942 [0.9289,1.0592]   0.1461    0.6126   0.1144  +0.0000 [+0.0000,+0.0000]  tie
+    -1.0   0.10  0.967   1.297    0.1490 [0.1211,0.1777]   0.1461 [0.1210,0.1723]   0.1461    0.6126   0.1144  +0.0029 [-0.0092,+0.0157]  tie
+    -1.0   0.25  0.783   3.403    0.1230 [0.1029,0.1435]   0.1529 [0.1285,0.1782]   0.1461    0.6126   0.1144  -0.0299 [-0.0417,-0.0187]  YES
+    -1.0   0.50  0.304   6.344    0.1430 [0.1181,0.1719]   0.1510 [0.1266,0.1768]   0.1461    0.6126   0.1144  -0.0080 [-0.0287,+0.0183]  tie
+    -1.0   1.00  0.033   8.820    0.5224 [0.4595,0.5922]   0.1526 [0.1287,0.1784]   0.1461    0.6126   0.1144  +0.3698 [+0.3123,+0.4345]  no
+    -1.0   2.00  0.117   9.175    0.5653 [0.5171,0.6149]   0.1490 [0.1264,0.1722]   0.1461    0.6126   0.1144  +0.4163 [+0.3713,+0.4616]  no
+    -1.0   3.00  0.577   8.300    0.0787 [0.0601,0.0992]   0.1568 [0.1357,0.1796]   0.1461    0.6126   0.1144  -0.0781 [-0.0917,-0.0641]  YES
+
+  PB3 SUMMARY -- bandwidths (gamma > 0) at which the quantum kernel leads its matched rival.
+  NO FDR CONTROL HERE YET (the registration requires it before a lead is DECLARED), so these
+  counts are an upper bound on the true discoveries; magnitudes are quoted alongside them.
+     shifted|alpha=-1   1 lead(s), mean magnitude 0.0712: gamma = [3.0]
+     shifted|alpha=0    3 lead(s), mean magnitude 0.1573: gamma = [0.5, 1.0, 2.0]
+     shifted|alpha=1    2 lead(s), mean magnitude 0.0491: gamma = [0.1, 3.0]
+     unshifted|alpha=-1 2 lead(s), mean magnitude 0.0540: gamma = [0.25, 3.0]
+     unshifted|alpha=0  1 lead(s), mean magnitude 0.0149: gamma = [0.1]
+     unshifted|alpha=1  3 lead(s), mean magnitude 0.0412: gamma = [0.25, 0.5, 3.0]
+
+     convention aggregate:  shifted: 6 leads, mean-of-cell-mean-magnitude 0.0925
+                            unshifted: 6 leads, mean-of-cell-mean-magnitude 0.0367
+
+  C6 report byte-identical on rebuild = True
+  report sha256 = 2dfc9794626e7c4bd60c49c189cc5e99fb0fecd75ce4b2ff9d0b5457617ae217
+  written to smoke_v6_results.json

@@ -1,0 +1,111 @@
+====================================================================================================
+ISSUE #87 -- R401: the q = 8 cell.  Which of the map's claims survive the qubit count?
+====================================================================================================
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: divide by zero encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: overflow encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v4.py:79: RuntimeWarning: invalid value encountered in matmul
+  th = 2.0 * (bits @ x)
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+-- A  diag(W) uniformity at q = 8 (relative deviation from the mean, worst over 12 bands) -------
+   cycle     1.670e-15
+   path      6.376e-01
+   complete  1.915e-15
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: divide by zero encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: overflow encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:258: RuntimeWarning: invalid value encountered in matmul
+  errs.append(float(np.mean((K[np.ix_(ite, itr)] @ coef + m - ytr[ite]) ** 2)))
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+   band shifted|0.1      done (1/12)  aliveness 0.6177
+   band shifted|0.25     done (2/12)  aliveness 0.1324
+   band shifted|0.5      done (3/12)  aliveness 0.0206
+   band shifted|1        done (4/12)  aliveness 0.0278
+   band shifted|2        done (5/12)  aliveness 0.0920
+   band shifted|3        done (6/12)  aliveness 0.4868
+   band unshifted|0.1    done (7/12)  aliveness 0.9566
+   band unshifted|0.25   done (8/12)  aliveness 0.7248
+   band unshifted|0.5    done (9/12)  aliveness 0.2108
+   band unshifted|1      done (10/12)  aliveness 0.0135
+   band unshifted|2      done (11/12)  aliveness 0.0628
+   band unshifted|3      done (12/12)  aliveness 0.4855
+
+-- B  the map at q = 8 vs the LIKE-FOR-LIKE q = 6 stream (R398: 6 draws x 50 splits, both conv) --
+   cell                       q6 (R398)          q8   q8 vs rbf   q8 draw sd
+   shifted|0.1|a=+1             -0.0229     +0.0105     +0.0106   0.0011
+   shifted|0.1|a=-1             -0.0181     +0.0093     +0.0095   0.0018
+   shifted|0.25|a=+1            +0.0961     +0.0656     +0.0645   0.0018
+   shifted|0.25|a=-1            +0.0933     +0.0673     +0.0667   0.0026
+   shifted|0.5|a=+1             +0.4213     +0.3316     +0.3304   0.0129
+   shifted|0.5|a=-1             +0.4303     +0.3345     +0.3321   0.0127
+   shifted|1|a=+1               +0.4482     +0.2779     +0.2849   0.0093
+   shifted|1|a=-1               +0.4691     +0.2794     +0.2864   0.0121
+   shifted|2|a=+1               +0.0105     +0.0310     +0.0468   0.0040
+   shifted|2|a=-1               +0.0155     +0.0315     +0.0467   0.0037
+   shifted|3|a=+1               -0.0531     -0.0154     -0.0036   0.0032
+   shifted|3|a=-1               -0.0518     -0.0148     -0.0020   0.0033
+   unshifted|0.1|a=+1           -0.0048     -0.0024     -0.0006   0.0018
+   unshifted|0.1|a=-1           -0.0090     -0.0022     -0.0002   0.0016
+   unshifted|0.25|a=+1          -0.0234     +0.0023     +0.0046   0.0016
+   unshifted|0.25|a=-1          -0.0350     +0.0025     +0.0047   0.0012
+   unshifted|0.5|a=+1           -0.0025     +0.0270     +0.0247   0.0032
+   unshifted|0.5|a=-1           +0.0010     +0.0289     +0.0264   0.0024
+   unshifted|1|a=+1             +0.3983     +0.3210     +0.3224   0.0119
+   unshifted|1|a=-1             +0.4098     +0.3164     +0.3181   0.0112
+   unshifted|2|a=+1             +0.4192     +0.2549     +0.2574   0.0044
+   unshifted|2|a=-1             +0.4233     +0.2479     +0.2505   0.0108
+   unshifted|3|a=+1             -0.0700     -0.0357     -0.0002   0.0016
+   unshifted|3|a=-1             -0.0603     -0.0346     -0.0019   0.0033
+   sign agreement: 19/24 overall -- structure cells (|q6 delta| >= 0.1): 8/8;  near-zero cells: 11/16
+   cells that flipped sign: ['shifted|0.1|a=+1 (-0.0229 -> +0.0105)', 'shifted|0.1|a=-1 (-0.0181 -> +0.0093)', 'unshifted|0.25|a=+1 (-0.0234 -> +0.0023)', 'unshifted|0.25|a=-1 (-0.0350 -> +0.0025)', 'unshifted|0.5|a=+1 (-0.0025 -> +0.0270)']
+   cells where the quantum kernel LEADS at q = 8: 6 of 24
+
+-- C  aliveness, measured by THIS round's code at both qubit counts (R391's report is one
+      convention only and cannot answer this) --------------------------------------------
+   band               alive q6   alive q8   delta q8 (both alphas)
+   shifted|0.1          0.6932     0.6177   +0.0105 +0.0093
+   shifted|0.25         0.2122     0.1324   +0.0656 +0.0673
+   shifted|0.5          0.0528     0.0206   +0.3316 +0.3345
+   shifted|1            0.0638     0.0278   +0.2779 +0.2794
+   shifted|2            0.1597     0.0920   +0.0310 +0.0315
+   shifted|3            0.5780     0.4868   -0.0154 -0.0148
+   unshifted|0.1        0.9669     0.9566   -0.0024 -0.0022
+   unshifted|0.25       0.7831     0.7248   +0.0023 +0.0025
+   unshifted|0.5        0.3036     0.2108   +0.0270 +0.0289
+   unshifted|1          0.0330     0.0135   +0.3210 +0.3164
+   unshifted|2          0.1172     0.0628   +0.2549 +0.2479
+   unshifted|3          0.5768     0.4855   -0.0357 -0.0346
+   aliveness lower at q = 8 in 12 of 12 bands; higher in 0
+   largest drop: unshifted|0.5 (0.0928); smallest drop: unshifted|0.1 (0.0103)
+
+-- D  the matched rival vs the isotropic baseline --------------------------------------------
+   q = 6, R391 (SHIFTED convention only, single target): R_matched - R_rbf over 12 alpha=+-1 cells: median -0.0187
+   q = 6, R398's independent instrument (both conventions, its own seeds): median -0.0047 (range [-0.0165, +0.0140])
+   q = 8, this round: median +0.0020  mean +0.0060  range [-0.0025, +0.0355]
+
+-- E  the headline under the valid handicap (rival's metric -> trace-matched random PSD) ------
+   shifted|0.5|a=+1         matched  +0.3316  random  +0.2836  >=0.25
+   shifted|0.5|a=-1         matched  +0.3345  random  +0.2856  >=0.25
+   shifted|1|a=+1           matched  +0.2779  random  +0.2428  below
+   shifted|1|a=-1           matched  +0.2794  random  +0.2469  below
+   unshifted|1|a=+1         matched  +0.3210  random  +0.2868  >=0.25
+   unshifted|1|a=-1         matched  +0.3164  random  +0.2839  >=0.25
+   unshifted|2|a=+1         matched  +0.2549  random  +0.2207  below
+   unshifted|2|a=-1         matched  +0.2479  random  +0.2139  below
+   of the 8 main-claim readings: 4 still ahead by >= 0.25 with a randomly-matched rival
+
+   determinism (scoped rebuild of [('shifted', 0.5), ('unshifted', 2.0)], 20 values, max |diff| 0.000e+00): True
+   report sha256 = 2317774cba975c36980f084fbd287e9db0203327315f910f8a94be8debc6b8c4
+   written to smoke_v15_results.json

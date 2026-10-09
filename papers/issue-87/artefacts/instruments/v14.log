@@ -1,0 +1,63 @@
+====================================================================================================
+ISSUE #87 -- R400: the fallback clause read through the study's own calibrated declaration
+             procedure, along the VALID handicap axis (C: random-PSD metric).
+====================================================================================================
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: divide by zero encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: overflow encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:175: RuntimeWarning: invalid value encountered in matmul
+  return np.abs(Phi @ Phi.conj().T) ** 2
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: divide by zero encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: overflow encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-87/research/smoke_v5.py:264: RuntimeWarning: invalid value encountered in matmul
+  return Ks_te[best_s] @ coef + m, best_s, best_lam
+   observed band shifted|0.1      done (1/12)
+   observed band shifted|0.25     done (2/12)
+   observed band shifted|0.5      done (3/12)
+   observed band shifted|1        done (4/12)
+   observed band shifted|2        done (5/12)
+   observed band shifted|3        done (6/12)
+   observed band unshifted|0.1    done (7/12)
+   observed band unshifted|0.25   done (8/12)
+   observed band unshifted|0.5    done (9/12)
+   observed band unshifted|1      done (10/12)
+   observed band unshifted|2      done (11/12)
+   observed band unshifted|3      done (12/12)
+   null band shifted|0.1      done (1/12)
+   null band shifted|0.25     done (2/12)
+   null band shifted|0.5      done (3/12)
+   null band shifted|1        done (4/12)
+   null band shifted|2        done (5/12)
+   null band shifted|3        done (6/12)
+   null band unshifted|0.1    done (7/12)
+   null band unshifted|0.25   done (8/12)
+   null band unshifted|0.5    done (9/12)
+   null band unshifted|1      done (10/12)
+   null band unshifted|2      done (11/12)
+   null band unshifted|3      done (12/12)
+
+-- CONTROLS ---------------------------------------------------------------------------------
+   C1 identity vs R398's committed t=0 cells: 24 cells, max |diff| 1.665e-16
+   C4 determinism (byte-identical rebuild): True
+   C5 instrument resolution floor: 1.00e-04  (BH's smallest threshold at m=24: 2.08e-03)
+
+-- SIZE on the holdout (null cells that are null BY CONSTRUCTION) ---------------------------
+   360 null cells: 1 declared, rate 0.28%   p_min 0.0001  p_median 0.430
+
+-- THE POWER CURVE (BH q=0.05 across the 24-cell family, per handicap level) ----------------
+   level         declared median dR median |delta|
+   t=0.00          23/24       n/a    +0.0058
+   t=0.33          22/24 (see R398)    +0.0001
+   t=0.67          24/24 (see R398)    -0.0171
+   t=1.00          24/24 (see R398)    -0.0835
+
+   t=0.00 not declared: ['unshifted|0.5|a=-1']
+   t=0.33 not declared: ['shifted|2|a=+1', 'shifted|2|a=-1']
+   t=0.67 not declared: []
+   t=1.00 not declared: []
+
+   report sha256 = 5a43b19cff7aa5a6ff8eecc684f648d8c041886e0821697e846e18a0f629995a
+   written to smoke_v14_results.json
