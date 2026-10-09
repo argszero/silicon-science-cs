@@ -73,6 +73,15 @@ for n in 0 1 2; do
   fi
 done
 
+# ---- 2b. the reference layer: OFFLINE gate (the live verification is a separate, documented pass) --
+if [ -f refscan132.py ] && [ -f refs/pool.json ]; then
+  if OUT=$("$PY" "$HERE/refscan132.py" --gate 2>&1); then
+    say "references" "$(printf '%s' "$OUT" | tail -1) -- live verification is in reference-check.md"
+  else
+    bad "references" "the offline reference pool gate failed"
+  fi
+fi
+
 # ---- 3. the figures: re-generate and compare byte-for-byte -------------------------------------
 if [ -f make_figures.py ]; then
   if OUT=$("$PY" "$HERE/make_figures.py" --selftest 2>&1); then

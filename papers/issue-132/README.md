@@ -27,7 +27,9 @@ cd papers/issue-132 && bash reproduce.sh
 * **Expected output**: `REPRODUCE: ALL GREEN`, preceded by one line per check. Each instrument is
   re-run and its fresh report is compared **byte-for-byte** (sha256 equality, `Tolerance: exact`)
   against the report this package ships, after its own plant battery prints `SELFTEST n/n`; the
-  figure set is then re-generated and its **7 of 7** files are compared the same way.
+  reference pool passes its offline `--gate` (**6/6**); the figure set is then re-generated and its
+  **7 of 7** files are compared the same way. The **live** reference verification
+  (`refscan132.py --verify`) is a separate network pass, deliberately not part of this command.
 * **Cost**: about 10 seconds. `REPRO_FULL=1 bash reproduce.sh` adds the determinism tier (two fresh
   runs per instrument).
 * **Writes nothing inside the package**: each instrument is run with `SPIKE_OUT` pointing into a
@@ -41,6 +43,9 @@ cd papers/issue-132 && bash reproduce.sh
 | `spike_v1.py` | The frame-level ladder on the language axis: the register construct, P1 and P2 |
 | `spike_v2.py` | The `(theta, tau, r)` grid and the eligible-subset rate |
 | `spike_v*_results.json` | The report each instrument emits; every manuscript number is read from one |
+| `refscan132.py` | The reference harvest + verifier: `--discover`/`--curate`/`--verify` (network) and `--gate`/`--selftest` (offline) |
+| `refs/pool.json` | The verified reference pool (257 entries, every one checked against a live record) |
+| `reference-pool.md` / `reference-check.md` | The pool table and the verification report |
 | `make_figures.py` | The figure generator: deterministic SVG read from the reports, with a certificate |
 | `figures/` | 5 SVGs + `CAPTIONS.md` + `FIGURES.md` + `manifest.json`, all generated |
 | `corpus/` | 8 English Project Gutenberg texts + `SHA256SUMS` + `fetch_corpus.sh` |
