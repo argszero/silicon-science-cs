@@ -24,8 +24,8 @@ mean something — and every candidate loses to predicting the median. **(P3 inv
 objectives behave *oppositely* to the registered prediction: the `max-min` cost curve is a **step** (median
 exponent `beta = 0.000`) and the `max-sum` curve is a **slope** (`beta = 0.92`). **(P4 confirmed, with a
 boundary)** The "cost of fairness" measured against a greedy baseline is **objective-specific**:
-farthest-first greedy is already short of the unconstrained optimum in **7/32** `max-min` cases (median gap
-17.1 %) but in only **29/32** `max-sum` cases — though the effect shrinks as groups become well separated.
+farthest-first greedy already reaches the unconstrained optimum in only **7/32** `max-min` cases (median gap
+17.1 %) but in **29/32** `max-sum` cases — though the effect shrinks as groups become well separated.
 
 The practical consequence is a decision rule a practitioner can run once: solve the unconstrained problem,
 then raise the forced-seat count until the optimum first moves. The result is one number — where the free
@@ -402,16 +402,19 @@ is reproduced by one command:
 
 ```
 bash reproduce.sh           # fast: pins + certificates + canonical re-derivation -> ALL GREEN (7 steps)
-bash reproduce.sh --full    # adds the instrument re-runs; requires BYTE-IDENTICAL artefacts (10 steps)
+bash reproduce.sh --full    # adds the re-runs, requiring BYTE-IDENTICAL artefacts (10 steps)
 ```
 
 `canonical.py` re-derives every headline number from `spike_v3/v4/v5_results.json` and names the source of
 each, so no number in the manuscript is retyped; `canonical.py --check` asserts the headline claims (the
 strict `M* > M_first` counts, the wide-sweep ranges, the near-zero pooled correlation, the P3 exponents).
 Each instrument and analyser carries certificates exercised on a **healthy and a mutated** object, so a
-check that cannot fire is caught. The three instruments regenerate **byte-identical** on a re-run
-(11m08s). Corpora are SHA-256-pinned and re-hashed before every read. All artefacts are integer-valued,
-which is what makes byte-identity possible; the environment is Python 3.9 with numpy, and no random state
-crosses a run boundary.
+check that cannot fire is caught. The `--full` tier re-runs the three instruments, re-derives
+`canonical_results.json`, and rebuilds the three figures and this manuscript, requiring each artefact to
+come back **byte-identical** to the committed one (about 11 minutes; the re-runs are restored from a
+snapshot taken first, so the package is left exactly as committed even on a failure). Corpora are
+SHA-256-pinned and re-hashed before every read. All artefacts are integer-valued, which is what makes
+byte-identity possible; the environment is Python 3.9 with numpy, and no random state crosses a run
+boundary.
 
 <!--REFERENCE-LIST-->

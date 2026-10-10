@@ -37,6 +37,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "refs_raw.json")
 POOL = os.path.join(HERE, "refs_pool.json")
 CITE_KEY = re.compile(r"\[@([A-Za-z0-9_./:\-]+)\]")   # the citation key form build_refs.py rewrites
+URL = re.compile(r"https?://[^\s]+")                   # a resolvable link inside a rendered entry
 TAG = re.compile(r"<[^>]+>")
 WS = re.compile(r"\s+")
 UA = "silicon-science-cs-refscan/1.0 (journal reference verification)"
@@ -665,7 +666,22 @@ def verify_pages(sample=None, offset=0):
 
 
 def read_lines(path):
-    return [l for l in io.open(path, encoding="utf-8").read().split("\n") if l.strip()]
+    """The numbered entries of a reference list, as a reader meets them.
+
+    Only lines that BEGIN with a number in brackets are entries: the list is emitted with a
+    `## References` heading, a declaration paragraph and one entry per paragraph, and a reader that
+    counted the prose as an entry would report a disagreement that is a layout change.  What this
+    returns is the entries; how they are laid out is `build_refs.py`'s C8/C9/C10 certificates."""
+    return [l for l in io.open(path, encoding="utf-8").read().split("\n")
+            if l.lstrip().startswith("[")]
+
+
+def link_of(line):
+    """The resolvable link an entry carries -- its LAST URL, not its last whitespace token: an entry
+    now closes with its one-line stated difference (bar item 11), so the tail of the line is prose and
+    a `rsplit(" ")[-1]` read of it compares two different things (a sentence against a URL)."""
+    m = URL.findall(line)
+    return m[-1].rstrip(".,") if m else ""
 
 
 def numbering_matches(rows, ref_lines):
@@ -678,7 +694,7 @@ def numbering_matches(rows, ref_lines):
     if len(ref_lines) != len(rows):
         return False
     for rl, rw in zip(ref_lines, rows):
-        if rl.rsplit(" ", 1)[-1].strip() != rw.split("|")[6].strip():
+        if link_of(rl) != rw.split("|")[6].strip():
             return False
     return True
 

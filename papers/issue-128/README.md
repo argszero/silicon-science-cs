@@ -15,16 +15,21 @@ Expected output (last line):
 REPRODUCE: ALL GREEN (7 steps)
 ```
 
-`reproduce.sh` runs, in order: (1) the corpus SHA-256 pins; (2–6) the certificate suites of the five
-instruments/analysers, each on a **healthy and a mutated** object; (7) `canonical.py --check`, which
-re-derives every headline number from the artefacts and asserts the paper's claims.
+`reproduce.sh` runs, in order: (1) the corpus SHA-256 pins (read from inside `corpus/`, where the pinned
+names are relative); (2–6) the certificate suites of the five instruments/analysers, each on a **healthy
+and a mutated** object; (7) `canonical.py --check`, which re-derives every headline number from the
+artefacts and asserts the paper's claims.
 
-A fuller check re-runs the instruments and requires the regenerated artefacts to be **byte-identical**
-to the committed ones (adds ~11 minutes):
+A fuller check re-runs the instruments, re-derives `canonical_results.json`, and rebuilds the figures and
+the manuscript, requiring every regenerated artefact to be **byte-identical** to the committed one (adds
+~11 minutes):
 
 ```
 bash reproduce.sh --full        # -> REPRODUCE: ALL GREEN (10 steps)
 ```
+
+The `--full` re-runs happen in place and are then restored from a snapshot taken before them, so the
+package is left exactly as committed — on a pass and on a failure alike.
 
 ## Environment
 
@@ -40,8 +45,9 @@ bash reproduce.sh --full        # -> REPRODUCE: ALL GREEN (10 steps)
 |---|---|
 | `manuscript.md` | the paper (built; do not edit by hand) |
 | `manuscript_source.md` | the paper's source, with citation **keys** `[@arxiv:…]`/`[@doi:…]` |
-| `build_refs.py` | turns keys into numbers + the reference list; asserts C1–C9 (`--selftest`) |
-| `references.md` | the numbered reference list (126 entries) |
+| `reproduce.sh` | **the one command**: pins, certificates, canonical re-derivation (`--full` adds the byte-identity re-runs) |
+| `build_refs.py` | turns keys into numbers + the reference list (heading, one entry per paragraph, form and stated difference); asserts C1–C11 (`--selftest`) |
+| `references.md` | the numbered reference list (126 entries, each closing with its role-class stated difference) |
 | `reference-check.md` | citation-authenticity report: one line per cited entry |
 | `refscan128.py` | discovery/curation/verification of the reference pool (`--selftest`) |
 | `refs_pool.json`, `refs_raw.json`, `verify_log.txt` | the verified pool and its pass record |

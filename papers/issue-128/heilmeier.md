@@ -643,3 +643,58 @@ reproduction spec, and the move of the package from `research/` (git-ignored) to
 
 **Next step (R562).** Generate the figures from the artefacts and cite them in the prose; write `README.md`;
 assemble the committed package.
+
+### R562 — the triage return, answered (revision round 1)
+
+The editor returned the manuscript at head `6526802` with **four** items; this round answers all four, and
+two further defects found while answering them.
+
+1. **`reproduce.sh` was missing.** The script existed only in the git-ignored `research/` workspace, so the
+   spec the README and §10 both name could not be run from the package. It is now committed, faithful to the
+   README's own 7 steps (`REPRODUCE: ALL GREEN (7 steps)`, 4 s) and with a `--full` tier of three
+   byte-identity steps (**10 steps**, 685 s = ~11 min): instruments re-run, `canonical_results.json`
+   re-derived, figures + references + manuscript rebuilt — each artefact required byte-identical to the
+   committed one, and **restored from a snapshot** afterwards so the package is left exactly as committed
+   even on a failure. Re-run of the pins moved to `cd corpus && shasum -c SHA256SUMS`: `SHA256SUMS` lists
+   bare names, so reading it from the package root asks a different question (measured: 0/3 read, 3 FAILED).
+2. **No `## References` heading.** `build_refs.py` substituted the list for `<!--REFERENCE-LIST-->` with no
+   heading, so the citation gate returned `no \`## References\` heading found` at the triaged head. The
+   builder now emits the heading itself (a draft can no longer produce a manuscript without one), and **C10**
+   asserts it *on the gate's own window* (heading to EOF carries all n numbered entries).
+3. **The bibliography rendered as one wall.** `"\n".join` over the entries is one paragraph to any CommonMark
+   renderer. Entries are now blank-line separated **and C8 was replaced**: the old form
+   `refs.count("\n") + 1 == n` tests a *proxy* (lines) for the property (separation) and is green on the
+   wall it names. C8 now splits on the blank line and requires exactly n single-line blocks. The same
+   treatment went to `references.md`, whose reader (`refscan128.read_lines`/`numbering_matches`) is now
+   robust to the heading, the declaration and the closing clause.
+4. **The registration had no `Outcome` line and no success-criteria line.** Both are now in the issue body:
+   the criteria are the study's own *Success metrics* answer (a)–(d) under the field name the template
+   reads, and the `Outcome` reports one status per prior (P1 retained-but-re-parameterised then confirmed;
+   P2 refuted; P3 refuted and inverted; P4 confirmed as objective-specific) with the manuscript's §8
+   numbers verbatim.
+
+**Two further defects, found while answering (and fixed, not deferred).**
+(a) **The abstract's P4 sentence was inverted against the paper's own table and artefact** — it read
+"farthest-first greedy is already short of the unconstrained optimum in 7/32 max-min cases but in only
+29/32 max-sum cases", while `canonical_results.json` records `greedy_exact` 7/32 and 29/32, i.e. those are
+the EXACT counts and the short counts are 25/32 and 3/32. This is the same inversion the paper's §6 prose
+contradicts; it was filed as a defect on issue **#133** and is fixed here.
+(b) **The bibliography carried no per-entry stated difference, and its author component was the record's own
+field order** (`Given Family`). Both are presentation defects the count and coverage checks cannot see.
+Each entry now closes with a **role-class stated difference** — generated from the discovery query that
+found it (`ROLE_OF_QUERY`, with the seven title-located works in `ROLE_OVERRIDE`), declared under the
+heading, and enforced by **C11** (an entry with no declared clause fails) and a build-time refusal
+(`role_of` raises on an unmapped query) — and the author component is the house form `Family, I.`
+(`et al.` past three), asserted by **C9b**. `refgate` now reads `author form: 126/126`, `block form: 126
+entries, 0 not separated`, coverage `126/126`, `GATE: PASS`.
+
+**Two-sided controls.** Every new limb was planted: wall-of-lines (FIRED) with the blank-line-separated
+control ACCEPTED; missing-heading (FIRED); undifferenced entries (FIRED); given-name-first (FIRED) with the
+house form ACCEPTED; an unmapped query at build time (FIRED); the count bar now fails on a real object
+rather than on a lambda that threw unconditionally (the old plant exercised no limb at all). The
+`reproduce.sh` full tier was two-sided too: a planted byte in `spike_v4_results.json` and a bad pin each
+FAIL their step (`5 of 10 steps FAILED`).
+
+**Gates at this head.** `refgate` PASS (126 entries, 126/126 coverage, both form lines clean), `linkgate`
+PASS (`broken=0`), `numgate` PASS, `pointgate` PASS. `reproduce.sh` ALL GREEN (7 steps); `--full` ALL GREEN
+(10 steps) with every artefact byte-identical. All eight certificate suites ALL PASS.
