@@ -226,7 +226,37 @@ into; it is the tie regime, and it is where any comparison of near-equal systems
 and buying repeats are therefore not substitutes: items buy precision about the gap, repeats buy
 reliability of the decision *given* that gap, and where the gap is small only the second helps.
 
-## 10. Threats to validity
+## 10. Registered prior beliefs and success criteria, against their outcomes
+
+The registration fixed three priors and five success criteria in writing **before the deciding runs**,
+and this section reports them in the form the registration itself asks for: one status per prior, and
+`met` or `unmet with its reason` per criterion. The registration's own `Outcome` line carries the same
+statuses, so the two records are read against each other rather than taken separately.
+
+| prior | registered direction | outcome |
+|---|---|---|
+| **P1** the exact law | the error of a strict-majority decision over `N` exchangeable repeats equals the exact binomial tail, and no simulation cell departs from it beyond its Monte-Carlo band | **CONFIRMED for exchangeable repeats** (§3.4) — with its **stated boundary measured**: at `p = 0.05`, `N = 7`, a dependence `rho = 0.1` raises the error `{{v0.corr.ratio010}}x` and `rho = 0.8` raises it `{{v0.corr.ratio080}}x` (§4), so `p` alone is not sufficient |
+| **P2** `p` is not small | at least one measured cell has `p >= 0.10`, where three runs carry an error above 5 %, and `p` varies by more than a factor of two | **CONFIRMED** (§7): the measured rate spans `{{v2.p.u000}}` to `{{v2.p.u099}}`, a `{{v2.p.spread}}x` spread, and four of the five cells lie above `0.10` |
+| **P3** the binding requirement switches | the runs needed are governed by *estimation* at small `p` and by the *decision* near `p = 1/2`, with a located crossover inside `(0.05, 0.40)` | **CONFIRMED** (§5): the switch is bracketed by the adjacent grid cells `p = 0.35` (estimation binds) and `p = {{v0.cross_p}}` (decision binds), i.e. at the registered interval's upper edge |
+
+The registered success criteria resolve as follows.
+
+| criterion | outcome |
+|---|---|
+| **(i)** the exact law agrees with Monte-Carlo in every cell (`\|z\| <= 3`), the disagreement reported per cell and not aggregated | **MET** (§3.4): two independent routes agree to `{{v0.ab_max_abs_diff}}` over `{{v0.ab_cells}}` cells, the Monte-Carlo agrees within `{{v0.mc_max_abs_z}}` standard deviations over `{{v0.mc_cells}}` cells, and the monotonicity invariants report `{{v0.mono_viol}}` violations |
+| **(ii)** the measured-`p` arm's predicted error falls inside the observed interval in >= 90 % of cells | **MET** (§7.2): inside three standard deviations in `{{v2.crit2_frac}}` % of the `{{v2.crit2_cells}}` countable cells, with `{{v2.crit2_excl}}` correctly excluded as vacuous |
+| **(iii)** the crossover `p*` is located as an interval with a two-sided control separating the two regimes, not merely as a fitted point | **MET** (§5): the switch is bracketed by two adjacent grid cells that each carry one regime (estimation at `p = 0.35`, decision at `p = 0.40`), so both sides of the located point are evidenced |
+| **(iv)** the item–repeat budget boundary is located and its control separates | **MET** (§6.2): the relaxed and integer optima agree to a worst relative error of `{{v1.domain.interior_worst_rel}}` over `{{v1.ab_cells}}` cells checked by two independent routes, the mechanism is bracketed by controls on both sides, and the interiority certificate reports `{{v1.interior_cells}}` interior cells with `{{v1.interior_viol}}` violations |
+| **(v)** every stochastic cell reports >= 3 seeds with an interval | **MET** (§7): `{{v2.r_runs}}` runs per cell in `{{v2.n_reps}}` independent replications, each cell reporting a standard error |
+
+No registered prior is left unresolved and no criterion is unmet. The two refutation-shaped results in
+this paper — the flat single-run wrong-verdict rate across a `256x` span in item size (§8, §9) and the
+non-sufficiency of `p` alone (§4) — are *additional* findings the registered priors did not fix, not
+failures of the ones they did.
+
+---
+
+## 11. Threats to validity
 
 **The synthetic arm is Gaussian.** The measured `p`, `sigma^2` and `tau^2` of §7 come from a linear
 model comparison with Gaussian noise. §9 answers this partially, by re-running the same machinery on
@@ -255,7 +285,7 @@ decision and not a convention; and (iii) the single-run verdict rate can be flat
 orders of magnitude of item size, so "buy a bigger test set" is not a remedy for unreliable single
 runs. Each of these is falsifiable and each is checked against a committed artefact.
 
-## 11. Reproduction
+## 12. Reproduction
 
 Every number in this document is resolved from a committed artefact by `build_manuscript.py`, which
 refuses to build when a placeholder has no owner, when an owned number is never used, when an

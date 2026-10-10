@@ -9,9 +9,12 @@ that was read.  A resolved identifier is NOT accepted as proof: a remembered ide
 to a different real paper, so the check is a TITLE comparison against the live record, and the
 pool's `title_match` is that comparison's score (two-sided).
 """
+import io
 import json
 import os
 import re
+import subprocess
+import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "reference-check.md")
@@ -21,6 +24,13 @@ MAN = os.path.join(HERE, "manuscript.md")
 # works on the authoring machine and fails on a fresh checkout, so the one-command reproduction
 # would not reproduce.  refs/pool.json is the pool the manuscript was built and verified against.
 POOL = os.path.join(HERE, "refs", "pool.json")
+# The reference gate is journal infrastructure at the repository root and needs a >= 3.12 interpreter
+# (its f-strings carry backslashes, a SyntaxError on the 3.9.6 the instruments run under).  The gate's
+# output is therefore a RECORDED RECEIPT -- captured once into this file by `--refresh-gate` and
+# embedded verbatim by the report -- so the one-command reproduction stays offline and build-independent
+# on any host, exactly as `citation-verification.json` and `verify_log.txt` are recorded, not regenerated.
+GATE_RECEIPT = os.path.join(HERE, "refgate.txt")
+RELMAN = "papers/%s/manuscript.md" % os.path.basename(HERE)
 MIN_REFS = 100
 THRESHOLD = 0.80
 
@@ -30,7 +40,7 @@ def main():
     text = open(MAN).read()
     refs = text.split("## References", 1)[1]
     rows = []
-    for m in re.finditer(r"^(\d+)\.\s+(.*)$", refs, re.M):
+    for m in re.finditer(r"^\[(\d+)\]\s+(.*)$", refs, re.M):
         n = int(m.group(1))
         line = m.group(2)
         ident = re.search(r"arXiv:([0-9]{4}\.[0-9]{4,5}(?:v[0-9]+)?)", line)
@@ -91,11 +101,83 @@ def main():
     L.append("")
     L.append("A key that cannot be verified is deleted from the manuscript, not reported: the build")
     L.append("refuses to render a citation whose key is absent from the verified pool.")
+    # ---- duty (ii): coverage and ambiguity -- the journal reference gate's WHOLE output ----
+    L.append("")
+    L.append("## (ii) Coverage and ambiguity -- the journal reference gate's whole output")
+    L.append("")
+    L.append("The table above is duty (i), authenticity.  Duty (ii) is the journal's own gate, run from")
+    L.append("the repository root over this manuscript; its output is reproduced verbatim below -- the")
+    L.append("verdict line and every advisory line with it, because `GATE: PASS` covers only")
+    L.append("`entries >= 100` and *no uncited entries* and says nothing about the advisories.")
+    L.append("")
+    L.append("```")
+    L.append("$ python3 .github/tools/refgate.py %s" % RELMAN)
+    if os.path.exists(GATE_RECEIPT):
+        L.extend(io.open(GATE_RECEIPT, encoding="utf-8").read().rstrip("\n").split("\n"))
+    else:
+        L.append("NOT RUN: no receipt at %s -- the gate's output is captured by"
+                 % os.path.relpath(GATE_RECEIPT, HERE))
+        L.append("`python3 make_reference_check.py --refresh-gate`, which needs a >= 3.12 interpreter.")
+    L.append("```")
+    L.append("")
+    L.append("The gate is journal infrastructure (`.github/tools/refgate.py`) and requires a >= 3.12")
+    L.append("interpreter; it is therefore captured once as a receipt and read here, rather than re-run")
+    L.append("by the one-command reproduction (which stays offline and build-independent, as")
+    L.append("`citation-verification.json` and `verify_log.txt` are).  No advisory line is outstanding:")
+    L.append("the numbering form is `[n]`, matching the body, so the gate prints no `WARN`.")
     open(OUT, "w").write("\n".join(L) + "\n")
     print("wrote %s" % os.path.relpath(OUT, HERE))
     print("  cited %d (bar %d) | worst title match %.2f | sources %s"
           % (len(rows), MIN_REFS, worst, by_source))
 
 
+def _gate_interpreter():
+    """The interpreter the journal's reference gate needs: CPython >= 3.12 (its f-strings carry
+    backslashes, a SyntaxError before 3.12), which is NOT the 3.9 interpreter this package's
+    instruments run under.  None means the gate cannot run here."""
+    for cand in (os.environ.get("GATE_PYTHON"), "python3.13", "python3.12", "python3"):
+        if not cand:
+            continue
+        try:
+            p = subprocess.run([cand, "-c", "import sys;print(sys.version_info>=(3,12))"],
+                               capture_output=True, text=True, timeout=30)
+        except (OSError, subprocess.SubprocessError):
+            continue
+        if p.returncode == 0 and p.stdout.strip() == "True":
+            return cand
+    return None
+
+
+def refresh_gate():
+    """Re-capture the reference gate's whole output into `refgate.txt` (the receipt the report
+    embeds).  Run from the repository root, over this package's manuscript, with a >= 3.12
+    interpreter -- the same command the submission checklist names:
+        python3 .github/tools/refgate.py papers/issue-124/manuscript.md
+    This is deliberately NOT part of `reproduce.sh`: the one-command reproduction must stay
+    offline and build-independent, so the gate's reading is a RECORDED RECEIPT, refreshed only
+    when the manuscript or the gate changes."""
+    root = os.path.abspath(os.path.join(HERE, "..", ".."))
+    tool = os.environ.get("REFGATE") or os.path.join(root, ".github", "tools", "refgate.py")
+    py = _gate_interpreter()
+    if py is None:
+        raise SystemExit("no interpreter >= 3.12 found; set GATE_PYTHON -- the gate's f-strings "
+                         "carry backslashes and cannot be parsed before 3.12")
+    if not os.path.exists(tool):
+        raise SystemExit("the gate tool is not present at %s -- run this from a checkout of the "
+                         "journal (the tool lives in .github/tools/)" % tool)
+    p = subprocess.run([py, tool, RELMAN], cwd=root, capture_output=True, text=True, timeout=300)
+    out = (p.stdout or "") + (p.stderr or "")
+    if p.returncode != 0:
+        raise SystemExit("the gate did not pass (rc=%d); the receipt was NOT written:\n%s"
+                         % (p.returncode, out))
+    open(GATE_RECEIPT, "w").write(out.rstrip("\n") + "\n")
+    print("wrote %s (via %s)" % (os.path.relpath(GATE_RECEIPT, HERE), py))
+    for ln in out.rstrip("\n").split("\n"):
+        print("  " + ln)
+
+
 if __name__ == "__main__":
-    main()
+    if "--refresh-gate" in sys.argv:
+        refresh_gate()
+    else:
+        main()

@@ -2,6 +2,11 @@
 
 The repeat-count law of stochastic evaluation, and the item–repeat budget boundary.
 
+**Contribution level: `theory+empirics`** — an exact model of the repeat axis with derived error laws,
+validated against Monte-Carlo with ground truth by construction, plus a real stochastic-optimisation
+measurement of the law's input and a located decision boundary. The level is one value across the
+registration, the manuscript and this `README.md`.
+
 ## One-command reproduction
 
 ```bash
@@ -23,8 +28,9 @@ SELF-AUDIT: ALL PLANTS CAUGHT
 that passed out of the number it ran, and every one of the 46 must pass. Each check is attached to a
 specific claim in `manuscript.md` (its label names the section). The two-way contract is that the
 run passes on a fresh checkout and passes again immediately afterwards, with **every file it
-regenerates byte-identical** — measured here at 35 of 35 files, twice. `reproduce.sh` writes
-`run.log` beside itself.
+regenerates byte-identical** — measured here across two consecutive runs of the head, with **all 37
+of the package's committed files byte-identical** (`sha256`; the one file excluded is `run.log`,
+which the run writes beside itself).
 
 **Environment.** The instruments need **numpy** and **scipy** (`spike_v0.py` uses
 `scipy.stats.binom.sf` as one of its two independent exact routes; `spike_v2/v3/v4` use numpy);
@@ -62,8 +68,9 @@ cross-build byte-identity check was **not** performed — stated rather than omi
 | `refs/pool.json` | the curated, verified reference pool (245 entries) |
 | `verify_citations.py` | checks every cited reference against a LIVE external record; `--selftest` |
 | `citation-verification.json` | the per-entry verification results (generated) |
-| `make_reference_check.py` | renders `reference-check.md` from the verification results |
-| `reference-check.md` | the citation-authenticity report (generated) |
+| `make_reference_check.py` | renders `reference-check.md` from the verification results; `--refresh-gate` re-captures the journal gate's output into `refgate.txt` |
+| `reference-check.md` | the citation report, both duties: (i) authenticity (each entry against the live record) and (ii) coverage and ambiguity (the journal gate's whole output) |
+| `refgate.txt` | the reference gate's recorded output — the receipt embedded as duty (ii) (refreshed with `--refresh-gate`, needs a ≥ 3.12 interpreter) |
 | `refscan124.py` | the reference discovery/curation tool (network-gated, not run by `reproduce.sh`) |
 | `reproduce.sh`, `run.log` | the one-command reproduction and its log |
 
@@ -102,3 +109,16 @@ The committed `reference-check.md` is the record of the run that was performed, 
 when a cited key carries no verification result or a verdict other than `VERIFIED` — so the report
 is a gate, not decoration. Rebuilding the pool itself (`refscan124.py [--curate]`) is likewise
 network-gated.
+
+`reference-check.md` has **two duties**: (i) authenticity, above, and (ii) coverage and ambiguity —
+the journal's own reference gate, `python3 .github/tools/refgate.py papers/issue-124/manuscript.md`
+run from the repository root, whose **whole output** (verdict line and every advisory) is embedded
+verbatim in the report. The gate is journal infrastructure and needs a **≥ 3.12** interpreter (its
+f-strings carry backslashes, a `SyntaxError` on 3.9.6), so its output is a **recorded receipt**
+(`refgate.txt`), captured once and read by `make_reference_check.py` — the one-command reproduction
+stays offline and build-independent, exactly as `citation-verification.json` and `verify_log.txt`
+are. Re-capture it after a manuscript or gate change with:
+
+```bash
+python3 make_reference_check.py --refresh-gate   # needs a ≥ 3.12 interpreter (GATE_PYTHON)
+```

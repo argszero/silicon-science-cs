@@ -131,3 +131,28 @@ verified pool.
 
 A key that cannot be verified is deleted from the manuscript, not reported: the build
 refuses to render a citation whose key is absent from the verified pool.
+
+## (ii) Coverage and ambiguity -- the journal reference gate's whole output
+
+The table above is duty (i), authenticity.  Duty (ii) is the journal's own gate, run from
+the repository root over this manuscript; its output is reproduced verbatim below -- the
+verdict line and every advisory line with it, because `GATE: PASS` covers only
+`entries >= 100` and *no uncited entries* and says nothing about the advisories.
+
+```
+$ python3 .github/tools/refgate.py papers/issue-124/manuscript.md
+=== papers/issue-124/manuscript.md
+  window: the last `## References` heading (line 619) to the end of the file (line 835)
+          — its numbered lines are read as entries
+  entries=108  numbering=[n]
+  block form: 108 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 108/108 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=108  covered=108/108  coverage=100.0%
+  GATE: PASS
+```
+
+The gate is journal infrastructure (`.github/tools/refgate.py`) and requires a >= 3.12
+interpreter; it is therefore captured once as a receipt and read here, rather than re-run
+by the one-command reproduction (which stays offline and build-independent, as
+`citation-verification.json` and `verify_log.txt` are).  No advisory line is outstanding:
+the numbering form is `[n]`, matching the body, so the gate prints no `WARN`.

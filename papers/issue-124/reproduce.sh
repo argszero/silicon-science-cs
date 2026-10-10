@@ -37,7 +37,8 @@
 #   4. validate the manuscript's claims against the artefacts     (validate.py)
 #   5. two-sided control on that validator itself                 (validate.py --selftest)
 #   6. the core instrument's own plant harness                    (plant124.py)
-#   7. regenerate and gate the citation-authenticity report       (make_reference_check.py)
+#   7. regenerate and gate the citation report (both duties: authenticity, and the
+#      journal reference gate's whole output, embedded from the recorded receipt)  (make_reference_check.py)
 #
 # Expected output is stated in README.md.  The verdicts a verifier compares are:
 #
@@ -196,7 +197,10 @@ echo
 echo "== 7. reference layer (regenerate and gate the authenticity report) ========"
 # make_reference_check.py REFUSES to report a pass when a cited key has no live verification result
 # or a verdict other than VERIFIED, so the report is a gate and not decoration.  It is offline: it
-# reads the committed manuscript, the verified pool and the verification results.
+# reads the committed manuscript, the verified pool, the verification results, and the journal gate's
+# recorded receipt (refgate.txt), which the report embeds as its duty (ii).  The gate itself needs a
+# >= 3.12 interpreter, so it is NOT re-run here: the receipt is refreshed separately with
+# `python3 make_reference_check.py --refresh-gate`, keeping this one command build-independent.
 step "make_reference_check.py" "$PY" make_reference_check.py
 tail -1 "$RUNLOG"
 echo "committed report: reference-check.md ($(grep -c '^| [0-9]' reference-check.md) cited entries)"

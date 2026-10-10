@@ -186,10 +186,10 @@ check("S9 the instrument is direction-agnostic about the truth",
 
 # ---------------------------------------------------------------- the product itself
 check("PROD the manuscript cites >= 100 references",
-      lambda: len(re.findall(r"^\d+\. ", MAN_TXT.split("## References", 1)[1], re.M)) >= 100)
+      lambda: len(re.findall(r"^\[\d+\] ", MAN_TXT.split("## References", 1)[1], re.M)) >= 100)
 check("PROD every reference is cited in the body",
       lambda: all(("[%d]" % i) in MAN_TXT.split("## References", 1)[0]
-                  for i in range(1, len(re.findall(r"^\d+\. ", MAN_TXT.split("## References", 1)[1], re.M)) + 1)))
+                  for i in range(1, len(re.findall(r"^\[\d+\] ", MAN_TXT.split("## References", 1)[1], re.M)) + 1)))
 check("PROD no unresolved placeholder survived",
       lambda: "{{" not in MAN_TXT and "{ref:" not in MAN_TXT)
 check("PROD every embedded figure exists and matches the manifest",
@@ -206,7 +206,7 @@ def _block_form(text):
     refs = text.split("## References", 1)[1].split("\n")
     n = 0
     for i, ln in enumerate(refs):
-        if re.match(r"^\d+\. ", ln):
+        if re.match(r"^\[\d+\] ", ln):
             n += 1
             if i == 0 or refs[i - 1].strip() != "":
                 return False
@@ -304,10 +304,10 @@ def selftest():
     holds("citation-bar/ok",
           lambda: (lambda n: n >= 100 or (_ for _ in ()).throw(AssertionError()))(108))
     fires("reference-block-form",
-          lambda: _block_form("## References\n\n" + "".join("%d. entry\n" % i for i in range(1, 101)))
+          lambda: _block_form("## References\n\n" + "".join("[%d] entry\n" % i for i in range(1, 101)))
           or (_ for _ in ()).throw(AssertionError()))
     holds("reference-block-form/ok",
-          lambda: _block_form("## References\n\n" + "".join("%d. entry\n\n" % i for i in range(1, 101)))
+          lambda: _block_form("## References\n\n" + "".join("[%d] entry\n\n" % i for i in range(1, 101)))
           or (_ for _ in ()).throw(AssertionError()))
     print()
     print("SELFTEST:", "ALL PLANTS CAUGHT" if ok else "A CHECK IS DECORATION")

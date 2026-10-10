@@ -79,7 +79,7 @@ def cited_keys():
     refs = open(MAN).read().split("## References", 1)[1]
     keys = []
     for line in refs.splitlines():
-        m = re.match(r"^(\d+)\.\s", line)
+        m = re.match(r"^\[(\d+)\]\s", line)
         if not m:
             continue
         a = re.search(r"arXiv:([0-9]{4}\.[0-9]{4,5}(?:v[0-9]+)?)", line)

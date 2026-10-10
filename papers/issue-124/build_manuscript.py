@@ -359,7 +359,7 @@ def build(arts, texts, synth_map):
         else:
             ident, link = "arXiv:%s" % v["id"], "https://arxiv.org/abs/%s" % v["id"]
         title = v["title"].rstrip().rstrip(".")   # some stored titles carry their own full stop
-        lines.append("%d. %s (%s). *%s*. %s. %s — Difference: %s"
+        lines.append("[%d] %s (%s). *%s*. %s. %s — Difference: %s"
                      % (index[k], names, yr, title, ident, link, diff_of(k)))
         # A blank line between entries, as the journal's published manuscripts do: without it the
         # whole bibliography is ONE paragraph to a CommonMark renderer (GitHub's preview included),
@@ -445,8 +445,11 @@ def selftest():
           lambda: build(arts, [src + "\nA stray {{v9.not.a.key}} here.\n", src2], synth_map))
     fires("citation-not-in-pool",
           lambda: build(arts, [src + "\nSee {ref:9999.99999}.\n", src2], synth_map))
+    # the owned value must be unused in EVERY source part to be caught: `v0.cross_p` appears in both
+    # (its prose in part 1, its registration outcome in part 2), so the plant strips both.
     fires("value-nothing-uses",
-          lambda: build(arts, [src.replace("{{v0.cross_p}}", "0.40"), src2], synth_map))
+          lambda: build(arts, [src.replace("{{v0.cross_p}}", "0.40"),
+                               src2.replace("{{v0.cross_p}}", "0.40")], synth_map))
 
     # (2) a citation-count bar that is a gate: strip the parts down under 100 cited keys
     short = re.sub(r"\{ref:[^}]+\}", "", src)
