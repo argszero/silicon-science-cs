@@ -1,0 +1,28 @@
+{
+ "instrument": "refscan132.py",
+ "issue": 132,
+ "notes": [
+  "every entry discovered by this tool; nothing typed from memory",
+  "the check is the returned TITLE vs the stored title, two-sided (min of the two coverage fractions)",
+  "an old-style arXiv id keeps its archive prefix (cs/0609060), a defect that made one batch fail HTTP 400"
+ ],
+ "pool": {
+  "arxiv": 241,
+  "canonical": 16,
+  "crossref": 16,
+  "total": 257
+ },
+ "sources": {
+  "arxiv_id_list": "verification",
+  "arxiv_search_query": "discovery",
+  "crossref_query_bibliographic": "canonical works, found BY TITLE",
+  "crossref_works_doi": "verification"
+ },
+ "subject": "the background frame of a similarity guard (corpus-wide DF threshold / stopword list)",
+ "title_match_threshold": 0.8,
+ "verification": {
+  "title_mismatch": 0,
+  "transport_unknown": 0,
+  "verified": 257
+ }
+}

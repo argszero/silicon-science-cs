@@ -1,0 +1,8 @@
+=== papers/issue-132/manuscript.md
+  window: the last `## References` heading (line 578) to the end of the file (line 850)
+          — its numbered lines are read as entries
+  entries=136  numbering=[n]
+  block form: 136 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 136/136 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=136  covered=136/136  coverage=100.0%
+  GATE: PASS
