@@ -23,11 +23,11 @@ python3 refs/refs_tool.py doi         # the DOI entry, via Crossref
   log below.
 - **DOI entries** are fetched from `https://api.crossref.org/works/<doi>`.
 - The command exits non-zero if any entry fails, so this is a check rather than a
-  statement. **entries=134 resolved=134 problems=0**, and **0 of 133** arXiv entries were resolved through
+  statement. **entries=137 resolved=137 problems=0**, and **0 of 136** arXiv entries were resolved through
   the abstract-page fallback.
 
-Run log: `refs/refs_verify.log` (sha256 `5ae85490178bcb925f513f546b1ad797ed12125ee27ceef1c1ab5a271a277eb2`).
-Key map incl. verified titles: `refs/refs_keys.json` (sha256 `5d0a82ef9ac24e60470afbe0d48386f8f3c42b0b45d39ebdc4a613ace0336d8e`).
+Run log: `refs/refs_verify.log` (sha256 `ea395a1877f6c058426c60e8f48d621f124a1f47034d6fee7449015520c3c032`).
+Key map incl. verified titles: `refs/refs_keys.json` (sha256 `d0d4e0d2a96914536bf5882a506561fe676c151f9c9749b270f512d3b4e0a607`).
 
 **Two-sided controls** (run against a throwaway copy of the keys file; the recorded
 artefact was never mutated):
@@ -37,7 +37,7 @@ artefact was never mutated):
 | one title replaced by a different paper's title | fail | exit 1, `TITLE MISMATCH`, both strings named |
 | one invented identifier | fail | exit 1, `NOT RETURNED by the arXiv API` |
 | a title corrupted on an entry verified via the abstract-page fallback | fail | exit 1, `TITLE MISMATCH` |
-| restored | pass | exit 0, `resolved=134 problems=0` |
+| restored | pass | exit 0, `resolved=137 problems=0` |
 
 **Independent spot-checks outside the tool** (plain `curl`, not via `refs_tool.py`):
 
@@ -47,6 +47,14 @@ artefact was never mutated):
 | `2606.00537` | arXiv:2606.00537 | PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking | matches |
 | `2403.09504` | arXiv:2403.09504 | Is Data All That Matters? The Role of Control Frequency for Learning-Based Sampled-Data Control of Uncertain Systems | matches |
 | `2603.08493` | arXiv:2603.08493 | Pareto-Optimal Anytime Algorithms via Bayesian Racing | matches (abstract page) |
+| `2602.21445` | arXiv:2602.21445 | VLA Knows Its Limits: Adaptive Execution Horizons for Robot Policies | matches (added revision round 1) |
+| `2606.11408` | arXiv:2606.11408 | Dynamic Execution Horizon Prediction for Chunk-based Robot Policies | matches (added revision round 1) |
+| `2609.39754` | arXiv:2609.39754 | ChunkTrust: Adapting Execution Horizons for Robot Policies with Action-Expert Evidence | matches (added revision round 1) |
+
+The last three rows are the concurrent **adaptive-execution-horizon** family added in revision
+round 1 (required change W2): each entry is inside this submission's declared scan window
+(2025-11-01 → 2026-10-02) and is cited in §1 and §2, with its difference stated in the dedicated
+related-work paragraph.
 
 ## (ii) Coverage
 
@@ -58,13 +66,13 @@ entry. Coverage is a **check**, not a promise:
 python3 refs/refs_build.py check        # exit non-zero on any failure
 ```
 
-`COVERAGE OK: all 134 entries cited, all in-text keys curated, and 134 >= 100` - every curated entry is cited in the body, every in-text key is curated,
+`COVERAGE OK: all 137 entries cited, all in-text keys curated, and 137 >= 100` - every curated entry is cited in the body, every in-text key is curated,
 the count is above the journal's floor of 100, and the citation guard finds no literal
 `[N]` in the body (a number typed into the body is a claim whose referent can move; the
 guard was validated by planting `[17]` in the text and requiring exit 1).
 
-**Reference count: 134**, of which 1 DOI and 133 arXiv.
-`manuscript.md` sha256 `71867babd60f33623b60ac55b6537f20331f780aa1cae2d332580f8076617f5e`.
+**Reference count: 137**, of which 1 DOI and 136 arXiv.
+`manuscript.md` sha256 `837a7684728c36da44acccc28cc63e58f1db4a77f3675e7d74cb5b894a9118aa`.
 
 ## (iv) The author component of every entry
 
@@ -90,11 +98,15 @@ Read by the journal's gate over the product:
 
 ```
 python3 .github/tools/refgate.py papers/issue-116/manuscript.md
-  author form: 134/134 entry(s) carry the read's window (a family name, a comma, an initial ...
+  entries=137  numbering=[n]
+  block form: 137 entries, 0 of them not separated from the entry above by a blank line
+  author form: 137/137 entry(s) carry the read's window (a family name, a comma, an initial ...
                0 print the family name ALL-CAPS, 0 carry a character reference (&...;)
+  in-text cited numbers=137  covered=137/137  coverage=100.0%
+  GATE: PASS
 ```
 
-**134 of 134 entries name an author.** Where a record carried none the renderer would print
+**137 of 137 entries name an author.** Where a record carried none the renderer would print
 `author not established on the record read for this identifier [<identifier>]` rather than leaving the
 position empty or guessing from the title; no entry here takes that branch.
 
@@ -200,6 +212,7 @@ position empty or guessing from the title; no entry here takes that branch.
 | `2602.07425` | arXiv:2602.07425 | recorded | 'Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise' | 2026-02-07 | Dingzhi Yu; Hongyi Tao; Yuanyu Wan (+2) |
 | `2602.18002` | arXiv:2602.18002 | recorded | 'Asynchronous Heavy-Tailed Optimization' | 2026-02-20 | Junfei Sun; Dixi Yao; Xuchen Gong (+3) |
 | `2602.18247` | arXiv:2602.18247 | recorded | 'Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation' | 2026-02-20 | Fen Wu; Chengzhi Yuan |
+| `2602.21445` | arXiv:2602.21445 | resolved-from-api | 'VLA Knows Its Limits: Adaptive Execution Horizons for Robot Policies' | 2026-02-24 | Haoxuan Wang; Gengyu Zhang; Yan Yan (+2) |
 | `2603.01891` | arXiv:2603.01891 | recorded | 'SEAR: Sample Efficient Action Chunking Reinforcement Learning' | 2026-03-02 | C. F. Maximilian Nagy; Onur Celik; Emiliyan Gospodinov (+4) |
 | `2603.06403` | arXiv:2603.06403 | recorded | 'Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling' | 2026-03-06 | Xianzhi Zhang; Yue Xu; Yinlin Zhu (+4) |
 | `2603.08493` | arXiv:2603.08493 | recorded | 'Pareto-Optimal Anytime Algorithms via Bayesian Racing' | 2026-03-09 | Jonathan Wurth; Helena Stegherr; Neele Kemper (+2) |
@@ -214,6 +227,7 @@ position empty or guessing from the title; no entry here takes that branch.
 | `2605.19592` | arXiv:2605.19592 | recorded | 'Implicit Action Chunking for Smooth Continuous Control' | 2026-05-19 | Bosun Liang; Shuo Pei; Zirui Chen (+5) |
 | `2605.25537` | arXiv:2605.25537 | recorded | 'Action-Prior Denoising for Smooth Real-Time Chunking' | 2026-05-25 | Dongyang Liu; Zhaowen Zheng; Yu Sun (+3) |
 | `2606.00537` | arXiv:2606.00537 | resolved-from-api | 'PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking' | 2026-05-30 | Junnan Nie; Jiayi Li; Chenghao Liu (+5) |
+| `2606.11408` | arXiv:2606.11408 | resolved-from-api | 'Dynamic Execution Horizon Prediction for Chunk-based Robot Policies' | 2026-06-09 | Yuchi Zhao; Miroslav Bogdanovic; Arjun Sohal (+5) |
 | `2606.17040` | arXiv:2606.17040 | recorded | 'R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies' | 2026-06-15 | Xiuwei Xu; Haowen Sun; Angyuan Ma (+7) |
 | `2606.22540` | arXiv:2606.22540 | recorded | 'PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models' | 2026-06-21 | Xianghui Wang; Feng Chen; Wenbo Zhang (+4) |
 | `2607.02646` | arXiv:2607.02646 | recorded | 'EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots' | 2026-07-02 | Heqing Yang; Yang Yi; Liyao Wang (+8) |
@@ -236,4 +250,5 @@ position empty or guessing from the title; no entry here takes that branch.
 | `2609.36540` | arXiv:2609.36540 | resolved-from-api | 'Reactive Real-Time Flow Policies via Asynchronous Distribution Alignment' | 2026-09-29 | Moritz Zoellner; Reece O'Mahoney; Ioannis Havoutis (+1) |
 | `2609.36967` | arXiv:2609.36967 | recorded | 'Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference' | 2026-09-29 | Jiayu Chen; Shuyong Gao; Jingkai Jia (+6) |
 | `2609.37772` | arXiv:2609.37772 | resolved-from-api | 'Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control' | 2026-09-29 | Zibo Wang; Haochen Han; Pengzhen Ren (+2) |
+| `2609.39754` | arXiv:2609.39754 | resolved-from-api | 'ChunkTrust: Adapting Execution Horizons for Robot Policies with Action-Expert Evidence' | 2026-09-30 | Fanding Huang; Jingyan Jiang; Shifeng Bao (+13) |
 | `2609.39873` | arXiv:2609.39873 | recorded | 'SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations' | 2026-09-30 | Jun Guo; Xiaoshen Han; Qiwei Li (+7) |

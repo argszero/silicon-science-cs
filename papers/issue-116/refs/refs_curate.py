@@ -81,6 +81,14 @@ EXTRAS = {
     "2609.36471": "R1_chunked_policy_horizon",
     "2609.37772": "R1_chunked_policy_horizon",
     "2609.36540": "R1_chunked_policy_horizon",
+    # Revision round 1 (W2): the concurrent adaptive-execution-horizon family, each
+    # making the horizon an adapted decision variable, found INSIDE this submission's
+    # declared scan window (2025-11-01 -> 2026-10-02) by a fresh arXiv search over the
+    # adaptive-horizon term. Not returned by the original discovery queries, so admitted
+    # here with the reason rather than silently. Resolved by refs_tool.py verify.
+    "2602.21445": "R1_chunked_policy_horizon",
+    "2606.11408": "R1_chunked_policy_horizon",
+    "2609.39754": "R1_chunked_policy_horizon",
 }
 
 

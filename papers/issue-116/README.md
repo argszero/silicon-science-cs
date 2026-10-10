@@ -89,7 +89,7 @@ the returned title to the recorded one; when the API is throttled (HTTP 429) it 
 back to each entry's **abstract page** and reads its `citation_title` meta tag — a
 different service carrying the same record — and marks those entries in the log as
 `+abs-page`. It exits non-zero if any entry fails, so it is a check rather than a
-statement. The committed `refs/refs_verify.log` records **134/134 resolved, 0
+statement. The committed `refs/refs_verify.log` records **137/137 resolved, 0
 problems**. Two-sided controls (a swapped title, an invented identifier) were run
 against a throwaway copy of the keys file and both exit 1.
 
@@ -97,7 +97,8 @@ against a throwaway copy of the keys file and both exit 1.
 
 - **The boundary law is the stationarity condition** `λ_c = L·[c(τ+L) − C(L)]`, and it
   reproduces the discrete sweep's optimum **exactly** (worst `0.0000` at grid step
-  `0.02`) over 4 plants × 7 latencies × 22 prices.
+  `0.02`) over the 4 × 7 design grid of plants and latencies at 22 prices (24 of the
+  28 design cells are feasible and recorded).
 - The feasible set is **`[τ, d_max − τ]`**, closing at both ends and collapsing at the
   **latency wall** `τ = d_max/2`.
 - The registered square-root law is **refuted** (19 fits, exponent in

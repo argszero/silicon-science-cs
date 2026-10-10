@@ -1,6 +1,6 @@
 # Issue #116 -- reference verification log
 # tool: refs_tool.py verify   source: arXiv API (export.arxiv.org)
-# entries=134 resolved=134 problems=0
+# entries=137 resolved=137 problems=0
 # format: key | identifier | status | fetched title | published | authors=<n>
 10.15607/rss.2023.xix.016 | DOI:10.15607/rss.2023.xix.016 | crossref | 'Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware' | 2023 | authors=4
 1007.0683 | arXiv:1007.0683 | recorded | 'Scheduling Periodic Real-Time Tasks with Heterogeneous Reward Requirements' | 2010-06-21 | authors=2
@@ -99,6 +99,7 @@
 2602.07425 | arXiv:2602.07425 | recorded | 'Sign-Based Optimizers Are Effective Under Heavy-Tailed Noise' | 2026-02-07 | authors=5
 2602.18002 | arXiv:2602.18002 | recorded | 'Asynchronous Heavy-Tailed Optimization' | 2026-02-20 | authors=6
 2602.18247 | arXiv:2602.18247 | recorded | 'Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation' | 2026-02-20 | authors=2
+2602.21445 | arXiv:2602.21445 | resolved-from-api | 'VLA Knows Its Limits: Adaptive Execution Horizons for Robot Policies' | 2026-02-24 | authors=5
 2603.01891 | arXiv:2603.01891 | recorded | 'SEAR: Sample Efficient Action Chunking Reinforcement Learning' | 2026-03-02 | authors=7
 2603.06403 | arXiv:2603.06403 | recorded | 'Adapter-Augmented Bandits for Online Multi-Constrained Multi-Modal Inference Scheduling' | 2026-03-06 | authors=7
 2603.08493 | arXiv:2603.08493 | recorded | 'Pareto-Optimal Anytime Algorithms via Bayesian Racing' | 2026-03-09 | authors=5
@@ -113,6 +114,7 @@
 2605.19592 | arXiv:2605.19592 | recorded | 'Implicit Action Chunking for Smooth Continuous Control' | 2026-05-19 | authors=8
 2605.25537 | arXiv:2605.25537 | recorded | 'Action-Prior Denoising for Smooth Real-Time Chunking' | 2026-05-25 | authors=6
 2606.00537 | arXiv:2606.00537 | resolved-from-api | 'PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking' | 2026-05-30 | authors=8
+2606.11408 | arXiv:2606.11408 | resolved-from-api | 'Dynamic Execution Horizon Prediction for Chunk-based Robot Policies' | 2026-06-09 | authors=8
 2606.17040 | arXiv:2606.17040 | recorded | 'R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies' | 2026-06-15 | authors=10
 2606.22540 | arXiv:2606.22540 | recorded | 'PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models' | 2026-06-21 | authors=7
 2607.02646 | arXiv:2607.02646 | recorded | 'EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots' | 2026-07-02 | authors=11
@@ -135,4 +137,5 @@
 2609.36540 | arXiv:2609.36540 | resolved-from-api | 'Reactive Real-Time Flow Policies via Asynchronous Distribution Alignment' | 2026-09-29 | authors=4
 2609.36967 | arXiv:2609.36967 | recorded | 'Beyond Token Importance: Preserving Spatial Scaffolds for Efficient Vision-Language-Action Inference' | 2026-09-29 | authors=9
 2609.37772 | arXiv:2609.37772 | resolved-from-api | 'Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control' | 2026-09-29 | authors=5
+2609.39754 | arXiv:2609.39754 | resolved-from-api | 'ChunkTrust: Adapting Execution Horizons for Robot Policies with Action-Expert Evidence' | 2026-09-30 | authors=16
 2609.39873 | arXiv:2609.39873 | recorded | 'SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations' | 2026-09-30 | authors=10

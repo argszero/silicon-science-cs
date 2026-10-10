@@ -2905,6 +2905,43 @@
    "verified_published": "2026-02-20",
    "verified_title": "Hybrid Control of ADT Switched Linear Systems subject to Actuator Saturation"
   },
+  "2602.21445": {
+   "arxiv": "2602.21445",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "concurrent same-family work inside the declared scan window (revision round 1, W2)",
+   "title": null,
+   "verified_authors": [
+    {
+     "family": null,
+     "given": null,
+     "name": "Haoxuan Wang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Gengyu Zhang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Yan Yan"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Ramana Rao Kompella"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Gaowen Liu"
+    }
+   ],
+   "verified_published": "2026-02-24",
+   "verified_title": "VLA Knows Its Limits: Adaptive Execution Horizons for Robot Policies"
+  },
   "2603.01891": {
    "arxiv": "2603.01891",
    "category": "cs.LG",
@@ -3499,6 +3536,58 @@
    ],
    "verified_published": "2026-05-30",
    "verified_title": "PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking"
+  },
+  "2606.11408": {
+   "arxiv": "2606.11408",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "concurrent same-family work inside the declared scan window (revision round 1, W2)",
+   "title": null,
+   "verified_authors": [
+    {
+     "family": null,
+     "given": null,
+     "name": "Yuchi Zhao"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Miroslav Bogdanovic"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Arjun Sohal"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Liyu Tao"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Kourosh Darvish"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Al\u00e1n Aspuru-Guzik"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Florian Shkurti"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Animesh Garg"
+    }
+   ],
+   "verified_published": "2026-06-09",
+   "verified_title": "Dynamic Execution Horizon Prediction for Chunk-based Robot Policies"
   },
   "2606.17040": {
    "arxiv": "2606.17040",
@@ -4530,6 +4619,98 @@
    "verified_published": "2026-09-29",
    "verified_title": "Urgent Actions Go First: Urgency-Aware Denoising for Real-Time VLA Control"
   },
+  "2609.39754": {
+   "arxiv": "2609.39754",
+   "category": null,
+   "published": null,
+   "role": "R1_chunked_policy_horizon",
+   "source": "concurrent same-family work inside the declared scan window (revision round 1, W2)",
+   "title": null,
+   "verified_authors": [
+    {
+     "family": null,
+     "given": null,
+     "name": "Fanding Huang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Jingyan Jiang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Shifeng Bao"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Mingkang Pu"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Shiwei Li"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Jing Xu"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Shijia Xu"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Guanbo Huang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Chenghao Gu"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Yuzhi Huang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Chenxin Li"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Faisal Nadeem Khan"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Huan Yang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Yan Wang"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Cheng Chi"
+    },
+    {
+     "family": null,
+     "given": null,
+     "name": "Zhi Wang"
+    }
+   ],
+   "verified_published": "2026-09-30",
+   "verified_title": "ChunkTrust: Adapting Execution Horizons for Robot Policies with Action-Expert Evidence"
+  },
   "2609.39873": {
    "arxiv": "2609.39873",
    "category": "cs.RO",
@@ -4592,5 +4773,5 @@
    "verified_title": "SplineWAM: Adaptive Action Horizons for World Action Models via B-Spline Representations"
   }
  },
- "n": 134
+ "n": 137
 }
