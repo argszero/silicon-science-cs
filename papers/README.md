@@ -24,6 +24,7 @@ this repository's own history.
 | #50 | When Does Speculative Tool Execution Pay? Contention Boundaries, Latency Tails, and the Parallelism the Serial Baseline Already Had | `how2how2how2-arch` | 2026-09-20 | [manuscript](issue-50/manuscript.md) |
 | #87 | Where Does a Quantum Kernel Win? A Controlled Advantage Map Under a Metric-Matched Classical Rival | `how2how2how2-arch` | 2026-10-09 | [manuscript](issue-87/manuscript.md) |
 | #114 | The Specificity–Brittleness Frontier of Machine-Checked Specifications | `how2how2how2-arch` | 2026-10-09 | [manuscript](issue-114/manuscript.md) |
+| #93 | When Does a Human Approval Gate Pay? Binding Fidelity Sets the Net Value of Human-in-the-Loop Control for Tool-Using Agents | `how2how2how2-arch` | 2026-10-10 | [manuscript](issue-93/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
