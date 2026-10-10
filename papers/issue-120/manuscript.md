@@ -283,9 +283,14 @@ families, scoring on held-out families.
 
 ### 4.4 Implementation and reproduction
 
-Python 3.9. All instruments are deterministic — seeded `random.Random` per cell, no clocks, no
-hash-ordered iteration — and two consecutive runs are byte-identical. Appendix A gives the
-one-command reproduction.
+**CPython 3.13.9** produced the committed artefacts (`python3` on the authoring machine, recorded
+in `run.log`). All instruments are deterministic — seeded `random.Random` per cell, no clocks, no
+hash-ordered iteration — and two consecutive full runs produce byte-identical artefacts and figures.
+The *bytes* are a function of the interpreter as well as the code: a re-run on CPython 3.9.6
+reproduces every integer, every verdict and every curve shape, but floating-point sums differ in the
+last one or two ULPs (CPython 3.12 switched `sum()` to compensated summation), so a verifier matching
+bytes must use the recorded build; every check is tolerance-based, and nothing here turns on those
+digits. Appendix A gives the one-command reproduction.
 
 ---
 
@@ -654,12 +659,15 @@ python3 refs_tool.py   # the two-sided verification of all 129 references
 
 Expected output: each script prints its tables and writes `<name>_results.json`; the tables in
 Sections 5.1–5.7 are read from those files. Target tolerances: the certificates report
-**0 disagreements**, the closed form **max abs error <= 2e-4**, and the reference layer
+**0 disagreements**, the closed form **max abs error < 1e-3** (measured **1.07e-4**; the instrument
+asserts the 1e-3 bound of §5.2), and the reference layer
 **129 OK / 0 PROBLEM**.
 
 ---
 
 ## References
+
+**The difference lines are scoped by role class, and this is the intended house style of this list.** Each of the 129 entries is assigned the role its work plays in this paper's argument -- 46 memory-tiering systems (the application), 28 deployed replacement policies, 26 treatments of the recurrence profile, 22 adjacent caches (KV / buffer pool / storage / edge), 4 treatments of the offline optimum / the ceiling (the construct), 3 competitive-analysis results for paging -- and its one-line *difference from this work* states the difference that **role class** makes from this work, rather than a claim read off that one paper. The specific differences from the closest works are stated in Sections 1-2, and an entry whose difference is not its class's states it in its own words.
 
 [1] Maruf, H., Wang, H., Dhanotia, A., et al. (2022). *TPP: Transparent Page Placement for CXL-Enabled Tiered-Memory*. arXiv:2206.02878. https://arxiv.org/abs/2206.02878 — a memory-tiering system that buys capacity; this paper's construct bounds what that can deliver
 

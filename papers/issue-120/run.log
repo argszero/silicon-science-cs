@@ -464,6 +464,7 @@ RESULT: PASS
    plant caught by: 5.6 matched pair: identical stack-distance multisets AND identical LRU curves
    plant caught by: 5.7 mid scale: 1791 of 2510 classes (71 %) carry a spread, max ratio 1.500
 SELFTEST 7/7 plants caught
+# 3c carriers: VALIDATE 41/41 == suite; manuscript CPython 3.13.9 == run.log
 #
 # wall-clock: printed to the terminal, NOT written here -- it is a host reading, and a log
 #             that carries one cannot reproduce byte-for-byte.

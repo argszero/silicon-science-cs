@@ -23,6 +23,44 @@ OUT = "manuscript.md"
 MARKER = "<!-- REFERENCES -->"
 CITE = re.compile(r"@([A-Za-z0-9][A-Za-z0-9./\-]*)")
 
+# One line of prose the reader MEETS at the head of the list, declaring what the difference lines
+# are scoped to.  The curated difference line is generated from the entry's ROLE (refs_curate.py's
+# diff_for), so a role class of 46 works carries ONE sentence 46 times: honest about the class,
+# but a reader can take it for a claim read off each individual paper.  The editorial return of
+# 2026-10-10 named exactly that (120 of 129 entries role-templated), and it offered this as the
+# alternative to writing 129 entry-specific lines -- which would mean stating a difference for each
+# of 129 works that the author has not read, i.e. inventing them.  So the form is DECLARED.
+ROLE_LABEL = {
+    "tiering": ("memory-tiering systems", "the application"),
+    "policy": ("deployed replacement policies", None),
+    "profile": ("treatments of the recurrence profile", None),
+    "adjacent": ("adjacent caches (KV / buffer pool / storage / edge)", None),
+    "construct": ("treatments of the offline optimum / the ceiling", "the construct"),
+    "theory": ("competitive-analysis results for paging", None),
+}
+
+
+def refs_note(cur, order):
+    """The declaration the reader meets above the entry list -- counts read from the curated set,
+    never typed, so the sentence cannot drift from the list it describes."""
+    counts = {}
+    for k in order:
+        r = cur[k]["role"]
+        counts[r] = counts.get(r, 0) + 1
+    parts = []
+    for r in sorted(counts, key=lambda r: (-counts[r], r)):
+        label, gloss = ROLE_LABEL.get(r, (r, None))
+        parts.append("%d %s" % (counts[r], label + (" (%s)" % gloss if gloss else "")))
+    return (
+        "**The difference lines are scoped by role class, and this is the intended house style of "
+        "this list.** Each of the %d entries is assigned the role its work plays in this paper's "
+        "argument -- %s -- and its one-line *difference from this work* states the difference that "
+        "**role class** makes from this work, rather than a claim read off that one paper. The "
+        "specific differences from the closest works are stated in Sections 1-2, and an entry whose "
+        "difference is not its class's states it in its own words."
+        % (len(order), ", ".join(parts)))
+
+
 
 def author_form(names):
     """'Given Family' -> 'Family, I.'; a single token prints alone (never padded to an initial)."""
@@ -82,7 +120,7 @@ def main():
                      % (num[k], astr, m["year"], e["title"],
                         "DOI: %s" % k if k.startswith("10.") else "arXiv:%s" % k,
                         link(e), e["diff"]))
-    refs = "## References\n\n" + "\n\n".join(lines) + "\n"
+    refs = "## References\n\n" + refs_note(cur, order) + "\n\n" + "\n\n".join(lines) + "\n"
     body = body.replace(MARKER, refs)
 
     open(OUT, "w", encoding="utf-8").write(body)

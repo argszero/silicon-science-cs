@@ -58,6 +58,13 @@ re-run against a mutated copy of the artefact it reads, and every mutation must 
 `SELFTEST 7/7 plants caught` is that result. A check that cannot fire is decoration, so this is the
 check on the checks.
 
+**Two carriers are cross-checked against their owners** (`reproduce.sh` step 3c): the check count
+this file declares (`VALIDATE 41/41`) against the count `validate.py` prints, and the build the
+manuscript names in §4.4 against the build `run.log` records. Both were drift defects returned by
+the editorial decision of 2026-10-10 — the header said `40/40` while the suite ran 41, and the
+manuscript said *"Python 3.9"* while the committed artefacts were produced by CPython 3.13.9 — and
+both are now a `FAILED` run rather than a reader's find.
+
 ### Determinism, and the one thing it does **not** cover
 
 Every instrument is deterministic: a seeded `random.Random` per cell, no clocks, no hash-ordered
@@ -146,7 +153,16 @@ reviewer can check and the parts that went wrong on the way:
 The manuscript embeds five figures, each with a caption and a sentence in the body that refers to it,
 and it carries **one** `## References` section (after Appendix A) with **129 numbered entries**,
 each beginning on its own line and separated by a blank line, each cited in the body by its numbered
-key, and each carrying a one-line stated difference from this work.
+key, and each carrying a one-line stated difference from this work. **The difference lines are scoped
+by role class and this is the intended house style**: `refs_curate.py` generates each entry's line
+from the role it is cited for (`diff_for`), so the 129 entries carry six class-level sentences rather
+than 129 individually authored ones, and a declaration saying exactly that — with the per-class
+counts read from the curated set — is the first thing a reader meets under `## References`
+(`build_manuscript.py` → `refs_note`). The specific differences from the closest works are stated in
+Sections 1–2; the four entries with a difference of their own (Belady; Mattson et al.; Sleator &
+Tarjan; Denning) state it in their own words. Stating the form is the alternative the editorial
+return of 2026-10-10 offered to authoring 129 entry-specific lines, which would mean asserting a
+difference for each of 129 works without having read them.
 
 ## Links
 

@@ -23,17 +23,19 @@
 #        spike_v5.py  the exhaustive and mid-scale profile-class spread
 #   2. regenerate the five figures from those artefacts       (make_figures.py)
 #   3. validate the manuscript's claims against the artefacts (validate.py)
+#  3c. cross-check two carriers against their owners: this file's declared check count against
+#      validate.py's, and the build the manuscript NAMES against the build run.log RECORDS
 #   4. validate the reference layer's committed report        (inside validate.py)
 #
 # Expected output is stated in README.md.  The verdict a verifier compares is:
 #
-#     VALIDATE 40/40
+#     VALIDATE 41/41
 #     RESULT: PASS
 #
 # plus, on the heavy tier, one `wrote <name>_results.json` line per instrument.
 #
 # TOLERANCE: exact, not statistical.  validate.py prints an integer count of checks that passed
-# out of the number it ran; every one of the 40 must pass, and each is attached to a specific
+# out of the number it ran; every one of the 41 must pass, and each is attached to a specific
 # claim in manuscript.md (the check labels name the section).  A single failed check fails the
 # run.  The two-way contract is: this script passes on a fresh checkout, and it passes again on
 # the same checkout immediately afterwards (it rewrites only the artefacts and figures it owns).
@@ -145,6 +147,34 @@ echo
 echo "== 3b. two-sided control on the validation suite itself ===================="
 "$PY" validate.py --selftest || { echo "FATAL: the suite's plant control did not fire" >&2; exit 1; }
 "$PY" validate.py --selftest >> "$RUNLOG" 2>&1
+
+# ----------------------------------------------------------------- step 3c: the carriers
+echo
+echo "== 3c. the carriers of the count and the build agree with their owners ======"
+# Two statements a reader follows, each owned by an instrument, checked here so the drift is a
+# FAILED RUN rather than a reader's find.  The editorial return of 2026-10-10 named both:
+#   * the declared check count in this file's OWN header, against what validate.py prints (it said
+#     40 while the suite ran 41);
+#   * the build the manuscript NAMES, against the build run.log RECORDS (the manuscript said
+#     "Python 3.9" while the committed artefacts were produced by CPython 3.13.9).
+SELF="$HERE/$(basename "$0")"
+declared="$(sed -nE 's/^#     VALIDATE ([0-9]+\/[0-9]+)$/\1/p' "$SELF" | head -1)"
+actual="$("$PY" validate.py | sed -nE 's/^VALIDATE ([0-9]+\/[0-9]+).*/\1/p' | head -1)"
+logbuild="$(sed -nE 's/^# interpreter:.*\(Python ([0-9.]+)\).*/\1/p' "$RUNLOG" | head -1)"
+manbuild="$(grep -m1 -oE 'CPython [0-9]+\.[0-9]+\.[0-9]+' manuscript.md | sed 's/CPython //')"
+carrier_fail=0
+[ "$declared" = "$actual" ] || {
+    echo "   FAIL this file declares VALIDATE $declared; the suite prints VALIDATE $actual" >&2
+    carrier_fail=1; }
+[ -n "$manbuild" ] || { echo "   FAIL the manuscript names no CPython build" >&2; carrier_fail=1; }
+[ "$logbuild" = "$manbuild" ] || {
+    echo "   FAIL the manuscript names CPython $manbuild; run.log records $logbuild" >&2
+    carrier_fail=1; }
+[ "$carrier_fail" = 0 ] || exit 1
+echo "   declared VALIDATE $declared == the suite's; manuscript's CPython $manbuild == run.log's"
+{
+    echo "# 3c carriers: VALIDATE $declared == suite; manuscript CPython $manbuild == run.log"
+} >> "$RUNLOG"
 
 # ----------------------------------------------------------------- step 4: reference layer
 echo
