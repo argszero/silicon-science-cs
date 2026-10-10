@@ -136,7 +136,15 @@ if [ -f build_manuscript.py ] && [ -f manuscript.md ]; then
     done
     if [ -n "$GP" ]; then
       if OUT=$(cd "$ROOT" && "$GP" .github/tools/refgate.py "papers/issue-132/manuscript.md" 2>&1); then
-        say "refgate" "$(printf '%s' "$OUT" | grep -E 'entries=|coverage=' | tr '\n' ' ')"
+        # The gate's output is embedded in reference-check.md and carried as the committed receipt
+        # `refgate-journal.txt`.  A quoted output line is a claim about a PROGRAM (Class 192), so the
+        # receipt is re-derived here and compared byte-for-byte; the comparison is what makes it a
+        # check rather than a quotation.
+        if [ "$OUT" = "$(cat "$HERE/refgate-journal.txt")" ]; then
+          say "refgate" "$(printf '%s' "$OUT" | grep -E 'entries=|coverage=' | tr '\n' ' ') -- matches the committed receipt"
+        else
+          bad "refgate" "the gate's live output differs from the committed receipt (refgate-journal.txt)"
+        fi
       else
         bad "refgate" "the reference gate failed ($GP)"
       fi

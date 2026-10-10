@@ -35,7 +35,8 @@ cd papers/issue-132 && bash reproduce.sh
   beside it). The **live** reference verification (`refscan132.py --verify`) is a separate network
   pass, deliberately not part of this command. The journal's own reference gate
   (`.github/tools/refgate.py`, editor-side tooling) is run when the repo carries it and reported as a
-  named `NOT RUN` otherwise.
+  named `NOT RUN` otherwise; when it runs, its whole output is compared **byte-for-byte against the
+  committed receipt** `refgate-journal.txt`, which is the copy embedded in `reference-check.md`.
 * **Cost**: about 25 seconds. `REPRO_FULL=1 bash reproduce.sh` adds the determinism tier (two fresh
   runs per instrument).
 * **Writes nothing inside the package**: each instrument is run with `SPIKE_OUT` pointing into a
@@ -53,6 +54,7 @@ cd papers/issue-132 && bash reproduce.sh
 | `refscan132.py` | The reference harvest + verifier: `--discover`/`--curate`/`--verify` (network) and `--gate`/`--selftest` (offline) |
 | `refs/pool.json` | The verified reference pool (257 entries, every one checked against a live record) |
 | `reference-pool.md` / `reference-check.md` | The pool table and the verification report |
+| `refgate-journal.txt` | The journal reference gate's verbatim output -- the committed receipt `reference-check.md` embeds and `reproduce.sh` re-derives |
 | `make_figures.py` | The figure generator: deterministic SVG read from the reports, with a certificate |
 | `figures/` | 5 SVGs + `CAPTIONS.md` + `FIGURES.md` + `manifest.json`, all generated |
 | `corpus/` | 8 English Project Gutenberg texts + `SHA256SUMS` + `fetch_corpus.sh` |
