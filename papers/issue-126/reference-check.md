@@ -120,3 +120,25 @@ DIFFERENT real paper, so the check is the title comparison, not the HTTP status.
 | [105] | `doi:10.1145/2049662.2049663` | crossref | Crossref works/<doi> | The university of Florida sparse matrix collection | https://doi.org/10.1145/2049662.2049663 |
 | [106] | `doi:10.1109/sc.2018.00050` | crossref | Crossref works/<doi> | Harnessing GPU Tensor Cores for Fast FP16 Arithmetic to Speed up Mixed-Precision Iterative Refinement Solvers | https://doi.org/10.1109/sc.2018.00050 |
 | [107] | `arxiv:2609.37137` | arxiv | arXiv id_list | Mixed-Precision Computing for Scientific Discovery: Formats, Co-Design, and Responsible Approximation | https://arxiv.org/abs/2609.37137 |
+
+## (ii) Coverage and ambiguity -- the journal reference gate's whole output
+
+The table above is duty (i), authenticity. Duty (ii) is the journal's own gate, run
+from the repository root over this manuscript:
+
+```
+$ python3 .github/tools/refgate.py papers/issue-126/manuscript.md
+=== papers/issue-126/manuscript.md
+  window: the last `## References` heading (line 827) to the end of the file (line 1383)
+          — its numbered lines are read as entries
+  entries=107  numbering=[n]
+  block form: 107 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 107/107 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=107  covered=107/107  coverage=100.0%
+  GATE: PASS
+```
+
+`GATE: PASS` covers only `entries >= 100` and *no uncited entries*; the gate's
+advisory lines are carried above with it. The tool is journal infrastructure
+(`.github/tools/refgate.py`) and needs a >= 3.12 interpreter, so it is run separately
+from the 3.9 interpreter this package's instruments use.

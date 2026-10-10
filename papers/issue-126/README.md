@@ -9,6 +9,10 @@ scalar), one confirmed only in direction (register lanes), one confirmed but *no
 reason* (a closed-form rule beats a learned selector because the missing quantity is not in the
 selector's features), and one confirmed (the floor exists).
 
+**Contribution level: `theory+empirics`** — an exactly computable error surface with derived scaling
+laws, validated by measurement against exact arithmetic, with a pinned real-matrix grounding arm and a
+real-library baseline the models must reproduce rather than merely beat.
+
 ## One command
 
 ```bash
@@ -34,7 +38,12 @@ selected before doing anything else.
   external-validation arm (§9–§10) needs `numpy`; measured here with **numpy 2.0.2 under
   `/usr/bin/python3` 3.9.6**. The script picks the first interpreter that can `import numpy` and prints
   the versions it used, so an absent dependency is reported as an absent dependency rather than as a
-  defect in the results.
+  defect in the results. The citation report's **second duty** quotes the journal's own reference gate
+  (`.github/tools/refgate.py`), which `refscan126.py --report` runs from the repository root with a
+  **separate** interpreter — the gate needs CPython **≥ 3.12** (its f-strings carry backslashes, a
+  `SyntaxError` on 3.9.6) while the instruments run on 3.9.6. Where the tool or a ≥ 3.12 interpreter is
+  out of reach the report prints a **`NOT RUN`** line naming the window it could not read, never a
+  verdict for a read that did not happen.
 * The corpus (14 SuiteSparse matrices) is committed and **re-hashed on every read**; a cache that has
   silently become a different dataset fails the same run.
 
@@ -48,7 +57,7 @@ selected before doing anything else.
 | `refs_differences.json` | the one-line `Difference from this work:` statement, per key (hand-authored input to `build_refs.py`) |
 | `refs_display.json` | the display layer: the author components, the year and the venue AS PRINTED |
 | `refs_authors.json` | the cached Crossref author reads, which is what makes the reference build run offline |
-| `reference-check.md` | citation-authenticity report: every cited entry against the live record |
+| `reference-check.md` | the citation report, both duties: (i) every cited entry against the live record, and (ii) the journal reference gate's **whole** output (`refgate.py`, run from the repository root) |
 | `figures/` | the five figures, drawn from the result artefacts by `make_figures.py` |
 | `spike_*.py` + `spike_*_results.json` | the instruments and the artefacts they produce |
 | `matrices/` | the pinned corpus + `SHA256SUMS` + the fetch script |
@@ -59,7 +68,7 @@ selected before doing anything else.
 | `check_figures.py` | every figure exists, is embedded, is cited in the prose and names its source artefact |
 | `check_references.py` | reads the rendered section: numbering, block form, per-entry difference, link, two-way body coverage |
 | `refscan126.py` | reference discovery + verification (arXiv/Crossref); `--report` writes the report |
-| `heilmeier.md` | the pre-registration: six Heilmeier answers, adversarial checks, priors **P1-P8** |
+| `heilmeier.md` | the pre-registration: six Heilmeier answers, adversarial checks, priors **P1-P5** (P1-P3 in the prior block, P4-P5 "written before measuring" in the headers of `spike_real3.py` / `spike_mm.py`) |
 | `law.md` | the traced research spine -- every number in the paper against the artefact that produced it |
 | `refs_notes.md` | how the 337-entry pool was built (the routes, and what each route cannot see) |
 | `refs_pool.json` | the VERIFIED reference pool (337 entries; the paper cites 107 of them) |

@@ -799,6 +799,55 @@ def cited_rows(pool, draft):
     return rows, order
 
 
+def _gate_interpreter():
+    """The interpreter the journal's reference gate needs: CPython >= 3.12 (its f-strings carry
+    backslashes, a SyntaxError before 3.12), which is NOT the 3.9 interpreter this package's
+    instruments run under.  Candidates are probed in order; None means the gate cannot run here, and
+    the report says so rather than printing a verdict for a read that did not happen."""
+    import subprocess
+    for cand in (os.environ.get("GATE_PYTHON"), "python3.13", "python3.12", "python3"):
+        if not cand:
+            continue
+        try:
+            p = subprocess.run([cand, "-c", "import sys;print(sys.version_info>=(3,12))"],
+                               capture_output=True, text=True, timeout=30)
+        except (OSError, subprocess.SubprocessError):
+            continue
+        if p.returncode == 0 and p.stdout.strip() == "True":
+            return cand
+    return None
+
+
+def refgate_output(relman):
+    """The journal reference gate's WHOLE output over this manuscript, or a NAMED not-run line.
+
+    The report owes TWO duties: (i) authenticity -- the table above -- and (ii) coverage and
+    ambiguity, which the submission checklist renders as *the whole output of*
+    `python3 .github/tools/refgate.py papers/issue-126/manuscript.md` *run from the repository root*,
+    because `GATE: PASS` covers only `entries >= 100` and *no uncited entries* and says nothing about
+    the advisory lines.  The gate is journal infrastructure at the repository root and is **not**
+    re-implemented here: it is run and its output embedded verbatim.  When the tool or a >= 3.12
+    interpreter is out of reach, the window it could not read is named instead -- a check that cannot
+    run is NOT RUN, never a pass."""
+    import subprocess
+    root = os.path.abspath(os.path.join(HERE, "..", ".."))
+    tool = os.environ.get("REFGATE") or os.path.join(root, ".github", "tools", "refgate.py")
+    py = _gate_interpreter()
+    if py is None:
+        return ("NOT RUN: no interpreter >= 3.12 was found on this host, and the gate's f-strings "
+                "carry backslashes (a SyntaxError before 3.12).  Re-take it from a checkout of the\n"
+                "journal with a 3.12+ interpreter:\n  python3 .github/tools/refgate.py %s" % relman)
+    if not os.path.exists(tool):
+        return ("NOT RUN: the gate tool is not present at %s -- it lives in the journal repository, "
+                "so an export of this package on its own cannot carry its reading.  Re-take it from\n"
+                "a checkout:\n  python3 .github/tools/refgate.py %s" % (tool, relman))
+    try:
+        p = subprocess.run([py, tool, relman], cwd=root, capture_output=True, text=True, timeout=300)
+    except (OSError, subprocess.SubprocessError) as e:
+        return "NOT RUN: the gate could not be executed here -- %s" % e
+    return ((p.stdout or "") + (p.stderr or "")).rstrip("\n")
+
+
 def report():
     """Write the Phase-B citation-authenticity report for the manuscript's CITED set.  One line per
     cited entry: number -> citation key -> source -> the endpoint that verified it -> the title as
@@ -854,6 +903,25 @@ def report():
         "|-----|--------------|--------|------------------|-------------------|------|",
     ]
     lines.extend(rows)
+    # duty (ii): coverage and ambiguity -- the journal gate's WHOLE output, run from the repository
+    # root exactly as the checklist names it.  Not re-implemented, and not summarised to its verdict:
+    # the advisories are what the author must resolve here.
+    relman = "papers/%s/manuscript.md" % os.path.basename(HERE)
+    lines.append("")
+    lines.append("## (ii) Coverage and ambiguity -- the journal reference gate's whole output")
+    lines.append("")
+    lines.append("The table above is duty (i), authenticity. Duty (ii) is the journal's own gate, run")
+    lines.append("from the repository root over this manuscript:")
+    lines.append("")
+    lines.append("```")
+    lines.append("$ python3 .github/tools/refgate.py %s" % relman)
+    lines.extend(refgate_output(relman).split("\n"))
+    lines.append("```")
+    lines.append("")
+    lines.append("`GATE: PASS` covers only `entries >= 100` and *no uncited entries*; the gate's")
+    lines.append("advisory lines are carried above with it. The tool is journal infrastructure")
+    lines.append("(`.github/tools/refgate.py`) and needs a >= 3.12 interpreter, so it is run separately")
+    lines.append("from the 3.9 interpreter this package's instruments use.")
     path = os.path.join(HERE, "reference-check.md")
     io.open(path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print("wrote %s (%d cited entries of %d verified)" % (os.path.basename(path), len(order), len(pool)))

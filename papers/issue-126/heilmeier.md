@@ -82,6 +82,59 @@ extra limbs stop paying at a `K*` that grows only logarithmically in `1/eps`, an
   sufficient statistic (P2), then a selector trained per family must be rediscovering a function of
   `Gamma`, so its errors should be near the boundary where the signal is weakest.
 
+**Registered success criteria** (registered with the priors; each is reported below as **met**, or
+**unmet with its reason** — the measurable criteria by which the study succeeds or fails):
+
+- **SC1 — the floor is located in every tested format and is set by the accumulator.** The measured
+  error must flatten in the limb count `K` at `c * kappa1 * u` with a finite `c`, and not fall to the
+  truncation limit. → **MET** (§4.1: the floor is present and sharp in all three formats, `c` measured
+  in `[0.27, 1.60]`).
+- **SC2 — the accumulator-width law predicts the required width to a stated tolerance over a wide
+  `eps` range.** `p*(eps) = ceil(log2(c/eps))` within a stated number of bits, and `c` independent of
+  the dot-product length `n`. → **MET** (§4.2: within **1 bit** over a 333× range, slope 1.009; `c`
+  flat in `n`, fitted slope −0.010 over a 64× range).
+- **SC3 — conditioning alone governs the boundary.** At a *fixed* conditioning band the floor must be
+  constant (the sharp form of the single-scalar account). → **UNMET — refuted** (§5.2: a 3.1–5.8×
+  spread at fixed `kappa1 ∈ [1, 1.5)`). This is the paper's finding (ii), not an instrument failure:
+  the criterion was executed and the answer was no.
+- **SC4 — a closed-form rule matches a learned selector on unseen matrices, cheaply.** Decision
+  accuracy within a stated tolerance of a learned selector, at a fraction of its tuning cost. → **MET**
+  (§7.2/§7.3: within 0.011–0.020 of a logistic selector and 0.012 of a depth-3 CART, at **0**
+  measurements at decision time against the selector's 4,000 labelled problems).
+- **SC5 — the reduction structure is worth a stated factor at fixed conditioning.** Permuting only the
+  summation order must move the floor by a stated factor. → **MET** (§6: median **78.0×**, up to
+  209.6× in fp32, at exactly fixed conditioning).
+- **SC6 — a real-library arm reproduces the library's per-case error.** The structure model must
+  reproduce `numpy.dot`'s error case-by-case, and beat the naive chain. → **MET** (§9/§10:
+  lane-reduced stride-halving tree reproduces fp16 71/142, fp32 160/185, fp64 125/194 cases, against
+  the chain's 49/69/69).
+
+**Outcome** (recorded after the deciding runs; one status per registered prior, agreeing with the
+manuscript's §11 table). P1–P3 were registered in this registration; **P4** and **P5** were registered later —
+"written before measuring" — in the header of the instrument that tested them (`spike_real3.py` and
+`spike_mm.py`, both committed). This line is the journal's copy and it owes **every** registered
+prior, so all five are carried:
+
+- **P1 (the floor exists)** — **CONFIRMED** (§4.1).
+- **P2 (a single governing scalar)** — **REFUTED in its sharp form** (§5.2: a 3.1–5.8× spread at
+  fixed `kappa1`).
+- **P3 (a closed form beats learned)** — **CONFIRMED, both clauses, but NOT for the registered
+  reason** (§7.2, §7.3): the rule wins because `Gamma` is *not* a sufficient statistic.
+- **P4 (a path scalar explains the order effect)** — **REFUTED** (§6).
+- **P5 (register lanes improve accuracy)** — **CONFIRMED in direction, IMPRECISE in form** (§8:
+  median −28–37%, but 14–18% of cases worse, 13.6% in bf16).
+- Two further registrations, refuted before the paper existed: the **`sqrt(n)` correction** to the
+  accumulator-width law (§4.2) — **REFUTED**; and the **"blocked/pairwise" mechanism** of §10.1 —
+  **REFUTED**. Both are kept in the record as evidence for the paper's methodological claim.
+
+**Pipeline-reuse disclosure** (quality-bar item 10): this work does **not** reuse the journal's own
+census pipeline — it is not a head_sha-pinned corpus carried through an unchanged classifier and
+Wilson-CI apparatus on a new domain. It introduces a **new construct** (the precision floor and the
+reachable-accuracy boundary) and a **new measurement instrument** (an exact-integer/rational error
+surface for a limb-split kernel, grounded on a SHA-256-pinned SuiteSparse corpus with a real-library
+arm). **Novelty-cap exemption (a)** is claimed.
+
+
 ### Adversarial checks
 
 - **Reverse gap**: why has nobody done this? Mixed-precision research is domain-driven (a kernel or a
@@ -135,7 +188,11 @@ committed package added at submission.
 - **Weakness**: the kappa1 collapse is only to ~4.5×, so "one governing scalar" (P2) is approximate.
 - Artefact `spike_v1_results.json` sha256 `562ffdf2…`; `--selftest` ALL PLANTS CAUGHT.
 
-### Priors against evidence (so far)
+### Priors against evidence (so far — the R538 snapshot, kept as written)
+
+*(This is the R537–R538 per-round log entry, before P3's bandit baseline existed. It is a snapshot,
+not a claim about the final state: the **final** outcomes are the registered `**Outcome**` line in the
+prior block above, which agrees with the manuscript's §11 table.)*
 
 - **P1 (a floor exists)** — CONFIRMED (spike_v0).
 - **P2 (a single governing scalar)** — CONFIRMED APPROXIMATELY: `E/kappa1` collapses to ~4.5×, not to
