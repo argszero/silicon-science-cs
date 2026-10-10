@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""#93 R428 -- every link and image in the product resolves at the PRODUCT's own base.
+"""#93 R428 -- every markdown-bracket link and image in the product resolves at the PRODUCT's own base.
+
+Reach, stated exactly: this reads **markdown-bracket** links and images only -- `[text](path)` and `![alt](path)`
+-- and reports the local ones whose path does not exist at the product's base.  A bare URL or an autolink is not
+read, and the manuscript's bibliography URLs are covered by the reference pipeline (`refs/reference_check.py`),
+not here; the manuscript carries exactly one markdown-bracket link (the figure embed), and that is what this
+checker answers for.
 
 Why this file exists.  A markdown link resolves relative to the directory of the file that carries it, not to the
 repository root and not to the directory the reader is standing in.  The parts of this manuscript are drafted in

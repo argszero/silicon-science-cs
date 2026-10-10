@@ -14,8 +14,9 @@ fully enumerated approval-gate harness with ground truth by construction to pric
 construct and a theory instrument for it** — binding fidelity, separated from reviewer accuracy, plus the value law
 that makes their trade-off decidable — not another cross-sectional measurement of a domain. The harness carries six designs — a
 measured no-gate baseline and **five** gated ones with their structural repairs — three channel-defect classes (a display defect, a substitution
-visible in the reviewed object, a substitution invisible in it), and an exact no-gate baseline; every
-parameter is anchored to a published measurement rather than chosen [2,5,6]. Its
+visible in the reviewed object, a substitution invisible in it), and an exact no-gate baseline; the decision
+parameters are anchored to a published measurement rather than chosen [2,5,6], while the three channel-defect
+masses are **illustration settings, not calibrated quantities** (§3.3). Its
 falsifiable claim is a boundary: the gate's net value changes sign at a **binding-fidelity threshold**, and on
 the studied grid a gate can be worth **less than no gate at all** — 20 of 35 (cell, design) readings, in all 7
 of 7 cells and in all five gated designs, with the weakest instance still 0.0868 of the no-gate loss on the
@@ -498,8 +499,9 @@ escalation, and `c_b` when a benign action is blocked. Formally,
 The state space sums to 1 by construction and the instrument raises if it does not, so a missing state is an
 error rather than a silent omission.
 
-**Parameters and their anchors.** Every parameter is set from a published measurement or is the object of the
-study; none is chosen for convenience.  *Table 3* gives the values and the anchor each one comes from.
+**Parameters and their anchors.** The **decision parameters** — those the value law reads: `π`, `a`, `f`, `L`,
+`c`, `c_b`, `η`, and the swept `b` and `s` — are set from a published measurement or are the object of the study;
+none is chosen for convenience.  *Table 3* gives their values and the anchor each one comes from.
 
 | parameter | value at the defaults | where it comes from |
 |---|---|---|
@@ -514,6 +516,12 @@ study; none is chosen for convenience.  *Table 3* gives the values and the ancho
 | `s` | **swept** | escalation coverage, the deployed policy lever |
 
 **Table 3.** The parameters, their values at the defaults, and the published measurement each anchor comes from.
+
+The three **channel-defect masses** (`δ = 0.30`, `σ_v = 0.20`, `σ_i = 0.10`; `gate_v2.py:73`) are a separate set: they
+are **illustration settings, not calibrated quantities** — in no anchor table, carrying no stated source.  *Table
+5*'s D1–D5 readings, and the 20/35 count of designs worth less than no gate, are that ladder's readings **at those
+illustration values**; the value law itself is parameter-general (§7.3), so the three masses bound the default
+readings and not the law.
 
 The anchors that the channel itself rests on are the measured ones: `b` far below 1 in ordinary pipelines
 [5], attack success falling from 68–100% unbound to 0% bound [2], and the reviewer's own errors

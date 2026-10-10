@@ -12,7 +12,7 @@ ground truth by construction, plus instruments that enumerate it).
 bash reproduce.sh
 ```
 
-Expected output (the transcript of a run on the declared build, 2026-10-01):
+Expected output (the transcript of a run on the declared build, 2026-10-01; the `product` line is re-derived from this revision's `manuscript.md`):
 
 ```
 == #93 reproduction ==
@@ -37,8 +37,8 @@ figures        CURRENT -- fig1_sign_law_and_cost_ratio.png is byte-identical to 
 links          LINK CHECK: PASS -- 1 link(s), 1 local, 0 broken | BATTERY: 4 of 4 case(s) fired
 bar            SUBMISSION CHECK: PASS -- 18 item(s), 0 failed, 2 declared | BATTERY: 9 of 9 case(s) fired
 counts         the manuscript states the bar's own item count (18 item(s), 0 failed)
-product        manuscript.md 131901 bytes, sha256 664d851dce9e2b7e
-counts         the README states the product digest this run produced (58688d5b7c4708a7)
+product        manuscript.md 132624 bytes, sha256 4f2094a49984c56a
+counts         the README states the product digest this run produced (4f2094a49984c56a)
 
 REPRODUCE: ALL GREEN
 ```
@@ -94,7 +94,7 @@ unreadable input, a missing artefact or a raised guard stops the step with `FAIL
 | `refs/reference_check.py` | the citation authenticity report: `--query` asks Crossref/arXiv about every entry, the default mode re-reads the committed answers offline and refuses a report that drifted from them |
 | `reference-check.md` + `.json` | the report (one block per entry, in citation order) and the raw answers it is rendered from |
 | `figures/make_figures.py` | draws Figure 1 from the instruments; `--check` refuses a PNG that is not what this run draws |
-| `check_links.py` | every link and image in `manuscript.md` resolves at the product's own base |
+| `check_links.py` | every **markdown-bracket** link and image in `manuscript.md` (`[text](path)` / `![alt](path)`) resolves at the product's own base — the bibliography's URLs are covered by the reference pipeline, not by this checker |
 | `submission_check.py` | the journal's submission bar (13 items + the presentation bar + the in-text key form), read rather than asserted — it reports `CHECKS` vs `DECLARED` and fails the rest |
 | `refs/` | the reference pipeline: selection, three check stages (24 / 15+22 / 8+19), the built records and the harvest log |
 | `refs/refs_reread.py` + `refs/refs_reread.json` | the by-id re-read limb: a work published after the registration (in no harvest pool, not an anchor) and an id whose pool title no longer matches the live record; it overrides the pools on the record's fields and keeps the finder's provenance label |
