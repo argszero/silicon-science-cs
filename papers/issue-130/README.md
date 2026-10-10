@@ -23,11 +23,18 @@ cd papers/issue-130 && bash reproduce.sh
 * **Directory**: run from the package directory, `papers/issue-130/`. The script resolves its own
   directory, so the relative paths it reads (`corpus/SHA256SUMS`, `artefact_hashes.json`) are its
   own.
-* **Environment**: CPython 3.9 (measured on **3.9.6**, macOS). Every script imports the standard
-  library only — `math`, `random`, `hashlib`, `re`, `json`, `io`, `os`, `sys`, `subprocess`,
-  `tempfile`, `collections`, `itertools` — and **no third-party package**, so there is no library
-  version whose arithmetic enters a comparison. Override the interpreter with
-  `PYTHON=/path/to/python3`.
+* **Environment**: CPython **3.9+** (measured on **3.9.6** and on **3.13.9**, macOS). Every script
+  imports the standard library only — `math`, `random`, `hashlib`, `re`, `json`, `io`, `os`, `sys`,
+  `subprocess`, `tempfile`, `collections`, `itertools` — and **no third-party package**, so there is
+  no library version whose arithmetic enters a comparison. The float reductions use **`math.fsum`**,
+  which is exactly rounded in every CPython, so a reported mean or sd does not move with the build
+  (the builtin `sum()` was changed to Neumaier-compensated summation in 3.12, which *did* move them —
+  see `spike_v8.py` → `mean_sd`). Override the interpreter with `PYTHON=/path/to/python3`.
+  **One exception, and it is not the package's build**: the reference gate
+  (`.github/tools/refgate.py`, journal infrastructure) needs **CPython ≥ 3.12** — its f-strings carry
+  backslashes — so `reproduce.sh` gives it its **own** interpreter, selected by `GATE_PYTHON`
+  (default: the first of `python3.13` / `python3.12` / `python3` reporting ≥ 3.12); where none is
+  reachable that one step prints **NOT RUN** and the rest of the run is unaffected.
 * **Inputs**: `corpus/pg*.txt` — eight Project Gutenberg books, 5.6 MB, **committed in this
   package** and verified against `corpus/SHA256SUMS` at the start of every run. Nothing is fetched:
   the run never touches the network. `corpus/fetch_corpus.sh` re-obtains the same eight files from
@@ -66,7 +73,7 @@ cd papers/issue-130 && bash reproduce.sh
   manuscript     the manuscript is exactly what the build renders from the reports
   manuscript     and the citation report is exactly what it renders
   manuscript     the build's own plants: an unowned number, a bad path, an off-pool citation
-  manuscript     refgate: >=100 entries, every one cited in the body, one entry per paragraph
+  manuscript     refgate (via python3.13): >=100 entries, every one cited in the body, one entry per paragraph
   refgate    entries=136  numbering=[n]
   refgate    in-text cited numbers=136  covered=136/136  coverage=100.0%
 
@@ -74,18 +81,23 @@ cd papers/issue-130 && bash reproduce.sh
   ```
 * **Tolerance: `exact`** — the comparison is sha256 equality against the shipped reports, not a
   numeric band. The value was read against **two builds**: the whole package was run under CPython
-  **3.9.6** (`/usr/bin/python3`, 4m58s) and under CPython **3.13.9** (3m58s), and all eleven reports
-  are **byte-identical in both** — the same eleven sha256, with no version pin needed, because the
-  instruments import no third-party library; the figure step was re-measured the same way this
-  revision, and its **7 of 7 files are byte-identical across the two builds** as well. A different
-  machine's floating-point reduction order is the residual freedom, which is what the tier below
-  measures rather than a widened band.
+  **3.9.6** (`/usr/bin/python3`) and under CPython **3.13.9**, and all eleven reports are
+  **byte-identical in both** — the same eleven sha256, with no version pin needed, because the
+  instruments import no third-party library and every float reduction is `math.fsum` (exactly
+  rounded, hence order- and build-independent); the figure step was re-measured the same way, and its
+  **7 of 7 files are byte-identical across the two builds** as well. *(This paragraph was false for
+  one instrument until the editor's triage return read it against the artefact: `spike_v8`'s means
+  came from the builtin `sum()`, which CPython 3.12 changed to Neumaier-compensated summation, so the
+  shipped report was the ≥ 3.12 value and the 3.9.6 build could not reproduce it — 24 of its 516 JSON
+  lines differing in the last ULP. `mean_sd` now uses `math.fsum`; both builds return the **same**
+  sha256 as the shipped report, which is therefore unchanged.)* A different **machine** remains the
+  residual freedom, and the tier below measures it rather than widening the band.
 * **Cost**: about **5.5 minutes** (the eleven instruments; `spike_v4` ≈ 95 s and `spike_v5` ≈ 89 s are
   most of it, and `spike_v8` is run twice — once for the byte comparison and once for its own
   certificate battery). The figures add under a second: they are drawn from the shipped reports, not
   from the corpus.
 * **What the run writes**: **nothing inside the package.** The instruments emit their reports into a
-  private temporary directory the script creates and removes, so the ten `*_results.json` files this
+  private temporary directory the script creates and removes, so the eleven `*_results.json` files this
   package ships are left exactly as committed. (`spike_v7.py` reads the package's
   `spike_v4_results.json` on purpose: its certificate X1 asserts its pools *are* that report's
   pools.)
@@ -99,13 +111,18 @@ the committed file is what stays on disk; that file is the **only** path in the 
 write. Run in full, the tier prints:
 
 ```
-  determinism    10 of 10 instruments reproduce byte-for-byte over two runs
+  determinism    11 of 11 instruments reproduce byte-for-byte over two runs
   determinism    the regenerated table equals the shipped artefact_hashes.json
 ```
 
+*(Measured on the **named build**, CPython 3.9.6, this revision: both lines printed, the regenerated
+`artefact_hashes.json` equal to the shipped one, and the eleven reports byte-identical to the shipped
+ones — which is what makes the `exact` tolerance above a measured value on that build rather than an
+assumption.)*
+
 ## The tree this package needs
 
-Everything the reproduction reads is a **tracked file of the package**: the ten instruments, the
+Everything the reproduction reads is a **tracked file of the package**: the eleven instruments, the
 analysis, the certificate, the corpus and the hash table. No step resolves a git object, reads a
 file outside the package, or needs a checkout — so the package runs over an **export of its head**
 (the form triage uses), which carries the tracked files only and neither `.git` nor any ignored
@@ -120,7 +137,7 @@ Each of these prints a verdict of its own; run them from the package directory.
 | `python3 repro_check.py --selftest` | `SELFTEST ALL PASS` — the comparator **accepts** identical objects **and fires** on a one-byte change and on a pair of `hash(str)`-seeded processes (the real cross-process defect this family once had). Exits non-zero if any plant is missed. |
 | `python3 spike_v8.py --selftest` | `SELFTEST ALL PASS` — plus the two-sided plant for the stratum certificate (`on the REAL data W3(b) flags 0 of the 11 MATERIAL cell(s)` / `on the PLANT W3(b) flags 11 of the 11`). |
 | `python3 make_figures.py --selftest` | `SELFTEST ALL PASS` — the figure battery: the source reports carry the keys the figures read (F1), the facts the figures assert re-derive from those reports (F2), a censored cell is never plotted as a coordinate (F3), no drawn element lies outside its canvas (F4), and that bounds check **catches a planted** out-of-canvas element (F4b). |
-| `PYTHON=/path/to/python3 bash reproduce.sh` | the same transcript with that interpreter on the `build` line. Every instrument is pure standard library, so any 3.9+ interpreter reaches the same verdicts. |
+| `PYTHON=/path/to/python3 bash reproduce.sh` | the same transcript with that interpreter on the `build` line. Every instrument is pure standard library — and every float reduction is `math.fsum` — so any 3.9+ interpreter reaches the same verdicts; measured byte-identical on 3.9.6 and 3.13.9. The reference gate needs ≥ 3.12 and takes `GATE_PYTHON` (see *Environment*). |
 
 ## What is in the package
 

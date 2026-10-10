@@ -488,7 +488,8 @@ The package is `papers/issue-130/`. One command re-runs everything:
 It re-runs the eleven instruments **from their own code** over the committed corpus, compares each
 report byte-for-byte against the shipped one, re-derives the tables, regenerates the five figures and
 their captions, and runs both certificate batteries. Tolerance is `exact` (sha256 equality) and needs
-no version pin, because every script imports the standard library only; the package was measured
+no version pin: every script imports the standard library only, every float reduction is `math.fsum`
+(exactly rounded, so a reported mean or sd does not move with the build), and the package was measured
 byte-identical under CPython 3.9.6 and 3.13.9. `REPRO_FULL=1` adds a two-run determinism certificate
 over all eleven instruments. The build that renders this manuscript reads every number from the shipped
 reports (`build_manuscript.py`) and refuses to render a citation whose key is absent from the verified

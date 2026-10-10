@@ -71,7 +71,7 @@ def sim(stat, A, B, idf):
 
 def weighted(NB, shares):
     """Validate and normalise a per-stratum share vector."""
-    if len(shares) != NB or abs(sum(shares) - 1.0) > 1e-9:
+    if len(shares) != NB or abs(math.fsum(shares) - 1.0) > 1e-9:
         raise ValueError("shares must be %d values summing to 1 (got %r)" % (NB, shares))
     return list(shares)
 
@@ -111,10 +111,21 @@ def counts(books, stat, L, w, n, rng, idf):
 
 
 def mean_sd(xs):
-    n = len(xs); m = sum(xs) / n
+    """Mean and sample sd of `xs`, computed with `math.fsum`.
+
+    `math.fsum` is not a stylistic choice here: CPython 3.12 changed the builtin `sum()` to
+    Neumaier-compensated summation for floats, so `sum(xs) / n` over ~10^3 addends of similar
+    magnitude differs in the last ULP between <= 3.11 and >= 3.12 -- a version difference, not
+    nondeterminism (two runs on one build agree). That moved 24 of this report's 516 JSON lines
+    between the two builds, and it meant the artefact this package SHIPS (built on a 3.12+
+    interpreter) could not be reproduced on the 3.9.6 the README names. `fsum` is exactly rounded
+    (Shewhart) in every version, so the reduction below is build-independent; the divergence was
+    found by the editor's triage return, reading the one-command spec instead of trusting it.
+    """
+    n = len(xs); m = math.fsum(xs) / n
     if n < 2:
         return m, 0.0
-    return m, math.sqrt(sum((x - m) ** 2 for x in xs) / (n - 1))
+    return m, math.sqrt(math.fsum((x - m) ** 2 for x in xs) / (n - 1))
 
 
 def main(selftest=False):

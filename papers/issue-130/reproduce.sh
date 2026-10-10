@@ -8,9 +8,16 @@
 # off one of these artefacts.
 #
 # RUN IT FROM THE PACKAGE DIRECTORY:   cd papers/issue-130 && bash reproduce.sh
-# ENVIRONMENT: CPython 3.9 (measured on 3.9.6, macOS) -- the instruments are pure standard library plus
-#   `math`/`random`/`hashlib`; NO third-party dependency is imported, so there is no library version
-#   whose arithmetic enters a comparison. Override the interpreter with PYTHON=/path/to/python3.
+# ENVIRONMENT: CPython 3.9+ (measured on 3.9.6 and 3.13.9, macOS; the eleven reports are byte-identical
+#   on both) -- the instruments are pure standard library plus `math`/`random`/`hashlib`; NO third-party
+#   dependency is imported, so there is no library version whose arithmetic enters a comparison. The
+#   reductions are `math.fsum`, which is exactly rounded in every CPython, so the reported means and sd
+#   do not move with the build (the builtin `sum()` was Neumaier-compensated in 3.12, which did move
+#   them -- see spike_v8.py's `mean_sd`). Override the interpreter with PYTHON=/path/to/python3.
+#   THE REFERENCE GATE IS THE ONE EXCEPTION: `.github/tools/refgate.py` is journal infrastructure and
+#   needs CPython >= 3.12 (its f-strings carry backslashes). It therefore takes its OWN interpreter,
+#   selected by `GATE_PYTHON` (default: the first of python3.13 / python3.12 / python3 that reports
+#   >= 3.12); with none reachable that step prints NOT RUN and the rest of the run is unaffected.
 # INPUTS: corpus/pg*.txt, committed in the package (8 Project Gutenberg texts, 5.6 MB), verified against
 #   corpus/SHA256SUMS at the start of every run. corpus/fetch_corpus.sh re-obtains them from the network;
 #   it is NOT needed to reproduce, and this run never touches the network.
@@ -153,9 +160,25 @@ if [ "$rc" != "0" ]; then bad "manuscript" "build_manuscript.py --selftest exite
   need manuscript "$BS" "SELFTEST: ALL PLANTS CAUGHT" "the build's own plants: an unowned number, a bad path, an off-pool citation"
 fi
 if [ -f "../..//.github/tools/refgate.py" ] || [ -f "$ROOT/.github/tools/refgate.py" ]; then
-  RG=$(cd "$ROOT" && "$PY" .github/tools/refgate.py papers/issue-130/manuscript.md 2>&1)
-  need manuscript "$RG" "GATE: PASS" "refgate: >=100 entries, every one cited in the body, one entry per paragraph"
-  echo "$RG" | grep -E "entries=|coverage=" | sed 's/^/  refgate  /'
+  # The gate is JOURNAL INFRASTRUCTURE and needs an interpreter the package's own build is not: its
+  # f-strings carry backslashes, a SyntaxError before CPython 3.12.  It therefore takes its OWN
+  # interpreter (the same convention `papers/issue-126/reproduce.sh` uses), so that the one command a
+  # verifier runs matches the environment the README names -- the package's `$PY` is not required to
+  # be the gate's.  `GATE_PYTHON` overrides; if no >= 3.12 interpreter is reachable, the step reports
+  # NOT RUN naming the window it could not read -- never a verdict for a check that did not run.
+  GP=""
+  for c in "${GATE_PYTHON:-}" python3.13 python3.12 python3; do
+    [ -n "$c" ] || continue
+    command -v "$c" >/dev/null 2>&1 || continue
+    if "$c" -c 'import sys;raise SystemExit(0 if sys.version_info>=(3,12) else 1)' 2>/dev/null; then GP="$c"; break; fi
+  done
+  if [ -n "$GP" ]; then
+    RG=$(cd "$ROOT" && "$GP" .github/tools/refgate.py papers/issue-130/manuscript.md 2>&1)
+    need manuscript "$RG" "GATE: PASS" "refgate (via $GP): >=100 entries, every one cited in the body, one entry per paragraph"
+    echo "$RG" | grep -E "entries=|coverage=" | sed 's/^/  refgate  /'
+  else
+    say manuscript "refgate NOT RUN -- no interpreter >= 3.12 on this host (the gate's f-strings carry backslashes); set GATE_PYTHON=<path>, or read the gate's recorded output in reference-check.md"
+  fi
 else
   say manuscript "refgate skipped -- run from a checkout of this journal (the tool lives in .github/tools/)"
 fi
