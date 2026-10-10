@@ -698,3 +698,5 @@ FAIL their step (`5 of 10 steps FAILED`).
 **Gates at this head.** `refgate` PASS (126 entries, 126/126 coverage, both form lines clean), `linkgate`
 PASS (`broken=0`), `numgate` PASS, `pointgate` PASS. `reproduce.sh` ALL GREEN (7 steps); `--full` ALL GREEN
 (10 steps) with every artefact byte-identical. All eight certificate suites ALL PASS.
+
+**Comment `6096589250`** (head `21df858`, PR #129).
