@@ -1,0 +1,312 @@
+{
+ "seed": 20261003,
+ "certificate": {
+  "route_A": "Belady offline optimum",
+  "route_B": "exhaustive cache-state search",
+  "cases": 200,
+  "disagreements": 0
+ },
+ "gap_table": [
+  {
+   "trace": "iid uniform (power 0)",
+   "universe": 40,
+   "cap": 2,
+   "h": 0.05,
+   "opt": 333,
+   "lru": 379,
+   "lfu": 383,
+   "gap": 0.13813813813813813
+  },
+  {
+   "trace": "iid uniform (power 0)",
+   "universe": 40,
+   "cap": 4,
+   "h": 0.1,
+   "opt": 273,
+   "lru": 355,
+   "lfu": 357,
+   "gap": 0.30036630036630035
+  },
+  {
+   "trace": "iid uniform (power 0)",
+   "universe": 40,
+   "cap": 8,
+   "h": 0.2,
+   "opt": 206,
+   "lru": 308,
+   "lfu": 316,
+   "gap": 0.49514563106796117
+  },
+  {
+   "trace": "iid uniform (power 0)",
+   "universe": 40,
+   "cap": 20,
+   "h": 0.5,
+   "opt": 103,
+   "lru": 200,
+   "lfu": 204,
+   "gap": 0.941747572815534
+  },
+  {
+   "trace": "iid power-law 1.0",
+   "universe": 40,
+   "cap": 2,
+   "h": 0.05,
+   "opt": 272,
+   "lru": 328,
+   "lfu": 301,
+   "gap": 0.20588235294117646
+  },
+  {
+   "trace": "iid power-law 1.0",
+   "universe": 40,
+   "cap": 4,
+   "h": 0.1,
+   "opt": 193,
+   "lru": 274,
+   "lfu": 229,
+   "gap": 0.41968911917098445
+  },
+  {
+   "trace": "iid power-law 1.0",
+   "universe": 40,
+   "cap": 8,
+   "h": 0.2,
+   "opt": 128,
+   "lru": 206,
+   "lfu": 176,
+   "gap": 0.609375
+  },
+  {
+   "trace": "iid power-law 1.0",
+   "universe": 40,
+   "cap": 20,
+   "h": 0.5,
+   "opt": 62,
+   "lru": 104,
+   "lfu": 93,
+   "gap": 0.6774193548387096
+  },
+  {
+   "trace": "iid power-law 2.0",
+   "universe": 24,
+   "cap": 1,
+   "h": 0.05,
+   "opt": 240,
+   "lru": 240,
+   "lfu": 240,
+   "gap": 0.0
+  },
+  {
+   "trace": "iid power-law 2.0",
+   "universe": 24,
+   "cap": 2,
+   "h": 0.1,
+   "opt": 114,
+   "lru": 149,
+   "lfu": 124,
+   "gap": 0.30701754385964913
+  },
+  {
+   "trace": "iid power-law 2.0",
+   "universe": 24,
+   "cap": 5,
+   "h": 0.2,
+   "opt": 49,
+   "lru": 70,
+   "lfu": 52,
+   "gap": 0.42857142857142855
+  },
+  {
+   "trace": "iid power-law 2.0",
+   "universe": 24,
+   "cap": 12,
+   "h": 0.5,
+   "opt": 26,
+   "lru": 37,
+   "lfu": 30,
+   "gap": 0.4230769230769231
+  },
+  {
+   "trace": "hotset 10/90",
+   "universe": 27,
+   "cap": 1,
+   "h": 0.05,
+   "opt": 312,
+   "lru": 312,
+   "lfu": 312,
+   "gap": 0.0
+  },
+  {
+   "trace": "hotset 10/90",
+   "universe": 27,
+   "cap": 3,
+   "h": 0.1,
+   "opt": 99,
+   "lru": 155,
+   "lfu": 144,
+   "gap": 0.5656565656565656
+  },
+  {
+   "trace": "hotset 10/90",
+   "universe": 27,
+   "cap": 5,
+   "h": 0.2,
+   "opt": 42,
+   "lru": 61,
+   "lfu": 42,
+   "gap": 0.4523809523809524
+  },
+  {
+   "trace": "hotset 10/90",
+   "universe": 27,
+   "cap": 14,
+   "h": 0.5,
+   "opt": 27,
+   "lru": 35,
+   "lfu": 35,
+   "gap": 0.2962962962962963
+  },
+  {
+   "trace": "scan chunks",
+   "universe": 40,
+   "cap": 2,
+   "h": 0.05,
+   "opt": 373,
+   "lru": 400,
+   "lfu": 398,
+   "gap": 0.07238605898123325
+  },
+  {
+   "trace": "scan chunks",
+   "universe": 40,
+   "cap": 4,
+   "h": 0.1,
+   "opt": 331,
+   "lru": 394,
+   "lfu": 385,
+   "gap": 0.1903323262839879
+  },
+  {
+   "trace": "scan chunks",
+   "universe": 40,
+   "cap": 8,
+   "h": 0.2,
+   "opt": 266,
+   "lru": 359,
+   "lfu": 348,
+   "gap": 0.34962406015037595
+  },
+  {
+   "trace": "scan chunks",
+   "universe": 40,
+   "cap": 20,
+   "h": 0.5,
+   "opt": 147,
+   "lru": 292,
+   "lfu": 241,
+   "gap": 0.9863945578231292
+  }
+ ],
+ "control": {
+  "policy": "evict-nearest (deliberately bad)",
+  "violations": 0,
+  "cases": 200
+ },
+ "p1_first_reading": {
+  "families": {
+   "iid uniform (power 0)": [
+    [
+     0.05,
+     0.13813813813813813
+    ],
+    [
+     0.1,
+     0.30036630036630035
+    ],
+    [
+     0.2,
+     0.49514563106796117
+    ],
+    [
+     0.5,
+     0.941747572815534
+    ]
+   ],
+   "iid power-law 1.0": [
+    [
+     0.05,
+     0.20588235294117646
+    ],
+    [
+     0.1,
+     0.41968911917098445
+    ],
+    [
+     0.2,
+     0.609375
+    ],
+    [
+     0.5,
+     0.6774193548387096
+    ]
+   ],
+   "iid power-law 2.0": [
+    [
+     0.05,
+     0.0
+    ],
+    [
+     0.1,
+     0.30701754385964913
+    ],
+    [
+     0.2,
+     0.42857142857142855
+    ],
+    [
+     0.5,
+     0.4230769230769231
+    ]
+   ],
+   "hotset 10/90": [
+    [
+     0.05,
+     0.0
+    ],
+    [
+     0.1,
+     0.5656565656565656
+    ],
+    [
+     0.2,
+     0.4523809523809524
+    ],
+    [
+     0.5,
+     0.2962962962962963
+    ]
+   ],
+   "scan chunks": [
+    [
+     0.05,
+     0.07238605898123325
+    ],
+    [
+     0.1,
+     0.1903323262839879
+    ],
+    [
+     0.2,
+     0.34962406015037595
+    ],
+    [
+     0.5,
+     0.9863945578231292
+    ]
+   ]
+  },
+  "small_h_atleast_20pct": 1,
+  "families_n": 5
+ }
+}
