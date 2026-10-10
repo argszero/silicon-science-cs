@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # reproduce.sh -- issue #132, "The Frame Is a Level"
 #
-# WHAT THIS RECOMPUTES (not a checksum check over committed outputs): it re-runs the three
+# WHAT THIS RECOMPUTES (not a checksum check over committed outputs): it re-runs the FOUR
 # experiments from their own code over the committed, SHA256-pinned corpus and compares each fresh
 # report BYTE-FOR-BYTE against the report this package ships, then runs each instrument's own plant
 # battery.  Every number in the manuscript is read off one of these reports.
@@ -17,7 +17,7 @@
 # TOLERANCE: exact -- the comparison is sha256 equality against the shipped reports.
 # WHAT IT WRITES: nothing inside the package. Each instrument is run with SPIKE_OUT pointing into a
 #   private temp directory this script creates and removes.
-# COST: about 10 seconds (three instruments, each re-run once).
+# COST: about 25 seconds (four instruments, each re-run once).
 #
 # SECOND TIER (opt-in):  REPRO_FULL=1 bash reproduce.sh
 #   re-runs every instrument a SECOND time in a fresh process and compares the two fresh artefacts,
@@ -55,7 +55,7 @@ for d in corpus corpus_i18n; do
 done
 
 # ---- 2. each instrument: plants, then a byte-for-byte reproduction -----------------------------
-for n in 0 1 2; do
+for n in 0 1 2 3; do
   S="spike_v${n}.py"; R="spike_v${n}_results.json"
   # plants first: they must fail loudly rather than pass silently
   if OUT=$("$PY" "$HERE/$S" --selftest 2>&1); then
@@ -99,10 +99,59 @@ if [ -f make_figures.py ]; then
   else bad "figures" "$DIFF of 7 differ from the shipped set"; fi
 fi
 
-# ---- 4. optional second tier: the determinism certificate --------------------------------------
+# ---- 4. the manuscript: re-render and compare, then gate it ------------------------------------
+# build_manuscript.py resolves every number out of the reports and every citation out of the
+# verified pool, and writes NOTHING (it renders into memory and compares against the committed
+# manuscript.md).  Its own plants must fire.  The JOURNAL reference gate is `.github/tools/refgate.py`
+# -- editor-side infrastructure that is not part of this package -- so it is read from the repository
+# root when present and reported as a named NOT RUN when this is not a checkout of the journal.
+if [ -f build_manuscript.py ] && [ -f manuscript.md ]; then
+  if OUT=$("$PY" "$HERE/build_manuscript.py" --check 2>&1); then
+    say "manuscript" "$(printf '%s' "$OUT" | tail -1)"
+  else
+    bad "manuscript" "$(printf '%s' "$OUT" | tail -1)"
+  fi
+  if OUT=$("$PY" "$HERE/build_manuscript.py" --selftest 2>&1); then
+    say "build plants" "$(printf '%s' "$OUT" | tail -1)"
+  else
+    bad "build plants" "$(printf '%s' "$OUT" | tail -1)"
+  fi
+  if OUT=$("$PY" "$HERE/make_reference_check.py" --check 2>&1); then
+    say "reference-check" "$(printf '%s' "$OUT" | tail -1)"
+  else
+    bad "reference-check" "$(printf '%s' "$OUT" | tail -1)"
+  fi
+  ROOT="$(cd "$HERE/../.." && pwd)"
+  RG="$ROOT/.github/tools/refgate.py"
+  if [ -f "$RG" ]; then
+    # The gate is editor-side tooling and its f-strings carry backslashes, so it needs >= 3.12
+    # independently of the package's own build.  GATE_PYTHON overrides; with no reachable >= 3.12
+    # the step reports a NAMED NOT RUN rather than a pass.
+    GP=""
+    for c in "${GATE_PYTHON:-}" python3.13 python3.12 python3; do
+      [ -n "$c" ] || continue
+      command -v "$c" >/dev/null 2>&1 || continue
+      v=$("$c" -c 'import sys;print(sys.version_info>=(3,12))' 2>/dev/null) || continue
+      [ "$v" = "True" ] && { GP="$c"; break; }
+    done
+    if [ -n "$GP" ]; then
+      if OUT=$(cd "$ROOT" && "$GP" .github/tools/refgate.py "papers/issue-132/manuscript.md" 2>&1); then
+        say "refgate" "$(printf '%s' "$OUT" | grep -E 'entries=|coverage=' | tr '\n' ' ')"
+      else
+        bad "refgate" "the reference gate failed ($GP)"
+      fi
+    else
+      say "refgate" "NOT RUN -- no interpreter >= 3.12 on this host; set GATE_PYTHON=<path>"
+    fi
+  else
+    say "refgate" "NOT RUN -- the tool lives in .github/tools/ of the journal repo"
+  fi
+fi
+
+# ---- 5. optional second tier: the determinism certificate --------------------------------------
 if [ "${REPRO_FULL:-0}" = "1" ]; then
   echo "-- second tier: determinism (two fresh runs per instrument) --"
-  for n in 0 1 2; do
+  for n in 0 1 2 3; do
     S="spike_v${n}.py"; R="spike_v${n}_results.json"
     ( cd "$WORK" && SPIKE_OUT="$WORK/a_$R" "$PY" "$HERE/$S" >/dev/null 2>&1 )
     ( cd "$WORK" && SPIKE_OUT="$WORK/b_$R" "$PY" "$HERE/$S" >/dev/null 2>&1 )
