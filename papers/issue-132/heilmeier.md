@@ -270,3 +270,63 @@ instance.**
 
 *Status.* P1 confirmed (level effect; declared falsifier was < 2x) and P2 confirmed quantitatively
 (`phi* = theta/s` measured). Next (R587): Phase B -- compose the manuscript (`theory+empirics`).
+
+**R587-R589 (Phase B, evidence / figure / reference layers).** The flat package `papers/issue-132/`
+was assembled: R587 committed the three instruments + reports and the SHA256-pinned five-language
+corpus + `reproduce.sh` (ALL GREEN under CPython 3.9.6 and 3.13.9, and from a `git archive`
+export); R588 the five generated figures + `make_figures.py` (7/7 byte-identical); R589 the verified
+reference layer (`refscan132.py`, 257/257 title-verified). Manuscript not yet composed.
+
+**R590 (2026-10-10) -- the null is also a level: `spike_v3.py`.**
+
+*Why.* The host's reader thread filed a new project-matched rant (`2026-10-09T13:21:21`, items
+22-24) that corrects item 21 and states three laws about the NULL -- the same "the population
+decides" mechanism this paper measures for the frame, one layer down the pipeline. Items 19-21 are
+already carried by P1/P2 and are not re-processed; items 22-24 are what the registration did not
+carry, so R590 measures them as the evidence for **P3** (an enrichment must be re-computed after the
+same filter the scan applies, and a null is a population like any other).
+
+*Instrument.* `spike_v3.py` plants ground truth by construction into the pinned corpus: 24 verbatim
+re-posts (hash-equal after normalisation -- decidable by a hash) and 12 edited re-posts at a declared
+2 % character substitution rate (NOT hash-equal -- the class the statistics must carry). 4,763
+documents. Three law families, each with its own certificate; `--selftest` **8/8**; the artefact is
+**byte-identical across two runs** (sha256 `25073106...`).
+
+*L1 -- the filter chain (item 22).* E is a product of two measured rates: `E = N_eligible x P_null`,
+and the identity `E_matched/E_naive = (N_eligible/N_raw) x P_null` is asserted exactly (1e-12). The
+eligibility rule is a **threshold**, so its effect is a **sensitivity curve**, not a point: the
+one-sided inflation (a chain applied to the scan but not the null) runs **1.00x (>=10 de-generic
+units) -> 1.40x (>=25) -> 3.88x (>=50) -> 16.68x (>=100)**. On long Gutenberg documents the reader's
+`>=10` rule is a near no-op (null survivor 0.9995); the mechanism is real and its magnitude is a
+function of where the rule is set and of the document-length profile -- a stated transport limit.
+
+*L2 -- interval ownership (item 23).* The bootstrap over the whole fire population gives the
+degenerate **[1.0, 1.0]** (25 of 37 fires are verbatim, Dice = 1.0); the non-identical subset gives
+**[0.739, 0.880], median 0.788**. `interval_transfers = False`: **an interval belongs to the
+population it RESAMPLED**. The small count (12) owns only a count-based bound -- Poisson 95 % upper
+**19.4 (one-sided) / 21.0 (two-sided)** -- and the convention is part of the number.
+
+*L3 -- the joint profile (item 24).* Cell = fraction of reference scores strictly below their own
+null's median; a calibrated null reads 0.5. On the **control** (cross-language matched-length
+unrelated pairs), `anchor = 0.487`, `exchangeable = 0.460` -- both calibrated -- while **`marginal`
+(both members replaced independently, each matched to its own length) = 0.587**, a **+0.087**
+departure: reproducing the two length *marginals* is not reproducing the pair's *joint*. The freed
+variable is the PAIRING. On the **near-duplicate** set every constrained null reads **0.000** (max
+discriminability), while the exchangeable null reads **0.324** -- a null drawn from a pool that
+CONTAINS the near-duplicates inflates.
+
+*Certificates.* L1: the chain cannot raise the null survivor rate; the E identity holds exactly. L3:
+the exchangeable null reads ~0.5 on the control and the anchored null too (pairing preserved) --
+and the selftest plants a **biased** null that must NOT read 0.5, so the check fires on its own
+fault.
+
+*Pitfall (Class 224).* The first draft's L1 filter used **char-bigram** de-generic units, which are
+corpus-generic on Gutenberg (median 2 per document) so **every** scan pair failed eligibility and the
+measurement was a degenerate 0/0 -- the same "the object does not exist" defect the R585 instrument
+had (Class 219(a)). The unit was wrong, not the corpus: the rule is on **word-3** de-generic units
+(median 51). Also repaired: `E_matched` was first written as `observed x P_null` (observed itself),
+conflating the numerator with the expectation -- E is `N_eligible x P_null`, both measured.
+
+*Status.* Items 22-24 measured; P3's evidence now rests on a deterministic instrument with
+certificates. Next (R591): carry `spike_v3.py` into the package (evidence layer) and wire it into
+`reproduce.sh`, then compose the manuscript.
