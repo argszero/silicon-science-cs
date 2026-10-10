@@ -114,6 +114,16 @@
   "how": "first_passage(uniform,n=50,lam=0.01).cens_recov",
   "value": 0.575
  },
+ "crit_ratio_hi": {
+  "artefact": "spike_v3_results.json",
+  "how": "max over the 3 criterion_dependence cells with stationary_is_ceiling=false of ratio_stationary_over_heal",
+  "value": 27.58505334345278
+ },
+ "crit_ratio_lo": {
+  "artefact": "spike_v3_results.json",
+  "how": "min over the 3 criterion_dependence cells with stationary_is_ceiling=false of ratio_stationary_over_heal",
+  "value": 13.374760989801498
+ },
  "crit_twohot_w1_heal": {
   "artefact": "spike_v3_results.json",
   "how": "controls criterion_dependence(twohot,w=1).lambda_stationary|heal|ratio",

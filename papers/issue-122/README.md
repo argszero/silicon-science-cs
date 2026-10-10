@@ -5,7 +5,7 @@ and What It Needs to Recover**
 
 This directory is the committed artefact set for issue #122: the three instruments, the artefacts they
 produce, the reference layer (discovery, curation, verification and metadata), the figure generator, a
-42-check validation suite tied to the manuscript's claims, and the citation report. Every number in
+45-check validation suite tied to the manuscript's claims, and the citation report. Every number in
 `manuscript.md` is read out of a committed `*_results.json` by `build_manuscript.py` — nothing is
 typed into the prose — and `validate.py` re-reads those artefacts and asserts the claim each number
 belongs to.
@@ -22,9 +22,9 @@ and a baseline comparison against the prevention-only analysis.
 
 Expected output:
 
-    VALIDATE 42/42
+    VALIDATE 45/45
     RESULT: PASS
-    SELFTEST 10/10 plants caught
+    SELFTEST 14/14 plants caught
     CHECKSUMS [HARD] 30/30 files match the committed record
     RESULT: PASS
 
@@ -44,7 +44,7 @@ produces, and that the committed bytes are the ones the run just wrote.
 
 ### Tolerance: exact, not statistical
 
-`validate.py` prints `VALIDATE <passed>/<run>` and **all 42 checks must pass**; each is attached to a
+`validate.py` prints `VALIDATE <passed>/<run>` and **all 45 checks must pass**; each is attached to a
 named claim and its label names the section of the manuscript it belongs to (`4.1 …`, `4.5 …`,
 `refs: …`). A single failed check fails the run, and so does an instrument that exits non-zero.
 
@@ -55,7 +55,7 @@ evidence for itself.
 
 The suite also runs **a two-sided control on itself** (`validate.py --selftest`): each check is re-run
 against a mutated copy of the artefact it reads, and every mutation must produce a failure.
-`SELFTEST 10/10 plants caught` is that result. A check that cannot fire is decoration, so this is the
+`SELFTEST 14/14 plants caught` is that result. A check that cannot fire is decoration, so this is the
 check on the checks.
 
 ### Determinism, and what the checksum step does and does not cover
@@ -115,7 +115,7 @@ A full re-verification re-fetches every identifier and needs the network:
 | `refs_discover.py`, `refs_curate.py`, `refs_meta.py`, `refs_tool.py`, `make_references.py` | the reference layer |
 | `refs/` | `curated.json`, `meta.json`, `verify.log`, `numbering.json` |
 | `reference-check.md` | the citation report, generated |
-| `validate.py` | the 42-check claim suite + its plant control |
+| `validate.py` | the 45-check claim suite + its plant control |
 | `checksums.sha256`, `build.json` | the submitted bytes and the build that produced them |
 | `reproduce.sh` | the one command |
 | `run.log`, `gates.log` | the run log of the last reproduction, and the journal gates' output |

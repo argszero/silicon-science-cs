@@ -1,9 +1,15 @@
 {
+ "fig1_split": {
+  "label": "Bound below the measured rate in 519 of 602 readings",
+  "n": 602,
+  "n_above": 83,
+  "n_below": 519
+ },
  "figures": {
-  "fig1_folk_law_refuted.png": "ef4e8132d464c6a56fdd8ef1b65757caa9bde9118a1feeb0e320d133d81126dc",
+  "fig1_folk_law_refuted.png": "fbcd817de2adc40f643cf844fdfede65414e8514f167a661109f404e3b906063",
   "fig2_boundary_vs_window.png": "1fd9b7c6df1650b491f8d459d5e63f443d8beb219dd32de8a24fe593c4b16461",
   "fig3_mechanism.png": "55fe95e97821c23daf934735998f308b69a368c3e5b246f87e5ca43f10d00a75",
-  "fig4_criterion_dependence.png": "006f18b44ba7a9962a4ce62cccc6b034094cf22729a7a1a957d96a0b7cc9e628",
+  "fig4_criterion_dependence.png": "f7a5680cead304ac2f4f6acf632a4bbf07c11d95f63fd97b3b0530fc4ad00ff0",
   "fig5_hysteresis.png": "ae8acd84fb08becf25a2a6a3fbf4abd12bbcb73fe7c6d81e95819813645127b4"
  },
  "jensen_pairs": {

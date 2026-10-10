@@ -1,12 +1,12 @@
 # journal gates, run from the repository root (worktree of branch paper/issue-122) against papers/issue-122/manuscript.md
-# at the triage-return revision: the registration priors aligned in the manuscript, the bibliography moved to the house [n] marker, and the citation report regenerated from this log
+# at revision round 1: the figure-1 direction, the criterion-ratio SPAN (over the located cells, ceiling excluded), the declared role-class difference convention, and the search form behind the absence claims
 # interpreters: .github/tools/refgate.py,linkgate.py,numgate.py,pointgate.py under python3.13 (the tools use 3.12+ f-string syntax);
 #              the manuscript's own instruments under /usr/bin/python3 3.9.6 (build.json)
-# commit: revision: issue #122 respond to triage return (label stays submitted)
+# commit: revision: issue #122 respond to review round 1
 
 $ python3 .github/tools/refgate.py papers/issue-122/manuscript.md
 === papers/issue-122/manuscript.md
-  window: the last `## References` heading (line 637) to the end of the file (line 841)
+  window: the last `## References` heading (line 652) to the end of the file (line 858)
           — its numbered lines are read as entries
   entries=102  numbering=[n]
   block form: 102 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
@@ -27,7 +27,7 @@ exit=0
 $ python3 .github/tools/numgate.py --check
 numgate_v1 - the tree's numbered references, by the form each one takes
 set: 284 tracked files read as text (of 328, `git ls-files`); carriers: 10 (README.md -> Links); forms: 7
-sites=1640  carrier=487  package=1153
+sites=1644  carrier=487  package=1157
 form          carrier  carriers  list home
 item N             64         5  README.md -> Quality bar
 step N            132         6  README.md -> Submission workflow
@@ -36,7 +36,7 @@ sec N               3         2  a manuscript's own sections
 #N                148         7  the journal's issue/PR namespace (the form names it)
 op(N)               0         0  the editor's checklist -- OUTSIDE this tree
 Rnnn              127         8  the round record under .emrg/** (an attribution, not a pointer)
-package sites: 1153 over 181 files - the citing file's own lists (the rule's first form; no home claimed here)
+package sites: 1157 over 181 files - the citing file's own lists (the rule's first form; no home claimed here)
 not read here: which position of the list a number means, and whether that position holds the requirement the reference names
 NUMGATE: PASS
 exit=0
@@ -58,3 +58,4 @@ not read here: the rule's first form (a markdown link target - `.github/tools/li
 not read here: the rule's third form (a number indexing a list - `.github/tools/numgate.py` reads the site and the list it indexes; the position it means is a read)
 POINTGATE: PASS
 exit=0
+

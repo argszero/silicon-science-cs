@@ -191,6 +191,22 @@ def build_values():
         for key in ("stat", "heal", "ratio"):
             put("crit_%s_w%d_%s" % (src, w, key), crit(v3, src, w, key), "spike_v3_results.json",
                 "controls criterion_dependence(%s,w=%d).lambda_stationary|heal|ratio" % (src, w))
+    # The headline criterion-ratio SPAN is the span over the LOCATED cells -- every
+    # criterion_dependence cell whose prevention criterion is not a domain ceiling, i.e. whose
+    # lambda_stationary is a located boundary rather than the unsatisfiable edge of the domain.
+    # Deriving it here, instead of naming two cells, is what keeps every carrier (abstract, §1.1,
+    # the Figure 4 caption, §6.1, the P1 row, the conclusion, the Figure 4 panel title) on ONE
+    # object: revision round 1's W2 was six carriers stating a *pair of cells* -- the uniform w=1
+    # and the two-hot w=1 CEILING -- as if it were a range, so the abstract quoted a lower bound
+    # (27.6x) the table's own minimum (13.4x) did not support.
+    _crit_rows = [c for c in v3["controls"] if c["kind"] == "criterion_dependence"]
+    _located = [c["ratio_stationary_over_heal"] for c in _crit_rows if not c["stationary_is_ceiling"]]
+    put("crit_ratio_lo", min(_located), "spike_v3_results.json",
+        "min over the %d criterion_dependence cells with stationary_is_ceiling=false of "
+        "ratio_stationary_over_heal" % len(_located))
+    put("crit_ratio_hi", max(_located), "spike_v3_results.json",
+        "max over the %d criterion_dependence cells with stationary_is_ceiling=false of "
+        "ratio_stationary_over_heal" % len(_located))
     b = [c for c in v3["controls"] if c["kind"] == "behavioural" and c["source"] == "uniform" and c["w"] == 1][0]
     put("beh_below_full", b["below"]["full_support_fraction"], "spike_v3_results.json",
         "controls behavioural(uniform,w=1).below.full_support_fraction")

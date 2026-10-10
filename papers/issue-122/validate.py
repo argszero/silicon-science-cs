@@ -316,6 +316,47 @@ def suite(D):
           ("%d of the %d" % (v1["n_gap_above1"], v1["n_gap_pairs"])) in man,
           "looking for '%d of the %d'" % (v1["n_gap_above1"], v1["n_gap_pairs"]))
 
+    # ---- the three self-referential statements revision round 1 returned (W1-W3) ----------------
+    # W1: the fig1 right panel carries a DIRECTION.  The PNG is only a hash to a checker, so the
+    # label the generator drew is recorded in the manifest as data, and the caption must state the
+    # same split -- the round-1 defect was a caption (and a panel title) saying "above" where the
+    # plotted bar was "ratio < 1".
+    split = D["manifest"].get("fig1_split", {})
+    # the caption wraps between "in" and the count, so the phrase is read off whitespace-flattened
+    # prose: a phrase check on raw markdown is a check on the line-breaking of the source.
+    flat = re.sub(r"\s+", " ", man)
+    check("figure 1: the drawn split label and the caption both say the bound is BELOW the measured "
+          "rate in %d of %d" % (v1["n_gap_below1"], v1["n_gap_pairs"]),
+          split.get("n_above") == v1["n_gap_above1"] and split.get("n_below") == v1["n_gap_below1"]
+          and "below the measured rate" in split.get("label", "")
+          and str(v1["n_gap_below1"]) in split.get("label", "")
+          and ("below the measured rate (ratio < 1) in %d" % v1["n_gap_below1"]) in flat
+          and "above the measured rate (ratio < 1)" not in flat,
+          "label=%r" % split.get("label"))
+
+    # W2: the headline criterion-ratio span is the span over the LOCATED cells.  Re-derived here
+    # from the artefact, and every carrier must state that span while none keeps the round-1
+    # ceiling-pair wording (the uniform w=1 cell and the two-hot w=1 CEILING, read as a range).
+    located = [c["ratio_stationary_over_heal"] for c in crit if not c["stationary_is_ceiling"]]
+    lo, hi = min(located), max(located)
+
+    def _ratio(src, w):
+        return [c["ratio_stationary_over_heal"] for c in crit
+                if c["source"] == src and c["w"] == w][0]
+    span_dash, span_to = "%.1f×–%.1f×" % (lo, hi), "%.1f× to %.1f×" % (lo, hi)
+    old_wrong = "%.1f×–%.1f×" % (_ratio("uniform", 1), _ratio("twohot", 1))
+    check("4.4 the headline criterion-ratio range is the span over the %d located cells (%s), and no "
+          "carrier keeps the ceiling pair (%s)" % (len(located), span_dash, old_wrong),
+          len(located) == 3 and span_dash in man and span_to in man and old_wrong not in man,
+          "span=%s in_man=%s old_present=%s" % (span_dash, span_dash in man, old_wrong in man))
+
+    # W3: the bibliography's closing difference field is a role-class line, and that is a DECLARED
+    # convention rather than an unexplained repetition -- the requirement the review returned.
+    check("refs: the bibliography declares its role-class difference convention under References",
+          "is its **role class**, not a sentence written" in man
+          and "declared convention" in man,
+          "declared=%s" % ("declared convention" in man))
+
     # ---------------------------------------------------------------- figures
     man_fig = D["manifest"]
     figs = man_fig["figures"]
@@ -362,6 +403,14 @@ def main():
             ("refs count", lambda d: d["curated"].pop()),
             ("figure hash", lambda d: d["manifest"]["figures"].__setitem__(
                 sorted(d["manifest"]["figures"])[0], "0" * 64)),
+            # the three statements revision round 1 returned, each planted on its own carrier
+            ("fig1 split label", lambda d: d["manifest"]["fig1_split"].update(n_below=999)),
+            ("fig1 caption", lambda d: d.update(
+                manuscript=d["manuscript"].replace("below the measured rate", "above the measured rate"))),
+            ("4.4 ratio range", lambda d: d.update(
+                manuscript=d["manuscript"].replace("13.4×", "12.4×"))),
+            ("refs declaration", lambda d: d.update(
+                manuscript=d["manuscript"].replace("is its **role class**", "is its role"))),
         ]
         caught = 0
         for name, plant in plants:

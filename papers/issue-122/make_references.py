@@ -55,6 +55,30 @@ def author_str(names):
     return ", ".join(out[:-1]) + ", and " + out[-1]
 
 
+def declaration(n, by_role):
+    """The declared convention for the entries' closing one-line difference field.
+
+    The field is generated FROM the entry's role, so it is a role-class difference rather than a
+    sentence written per entry.  The house style asks each entry to close with a one-line stated
+    difference; a class-level line is a difference at the level of the class, and that is a choice
+    the reader must be TOLD about where the entries are read rather than left to infer from the
+    repetition (revision round 1's W3; the same shape #120's W4 required corrected).  The
+    declaration is GENERATED here from the role assignment the entries were selected by, so it
+    cannot drift from the list it describes.
+    """
+    roles = [r for r in ORDER if by_role[r]]
+    classes = ", ".join("%s %d" % (r, len(by_role[r])) for r in roles)
+    return (
+        "*The stated difference closing every entry is its **role class**, not a sentence written "
+        "per entry; that is a declared convention.* Each entry's closing clause names the family the "
+        "entry belongs to and the relationship that family bears to this work, and it is generated "
+        "from the same role assignment that selected the entry (`refs_curate.py`) — so the field "
+        "states the rule the list was built by and cannot drift from it.  The %d entries fall into "
+        "%d classes (%s).  The per-entry difference is therefore read as: this work is *of* that "
+        "class, and the class's clause is the difference from this paper."
+        % (n, len(roles), classes))
+
+
 def main():
     cur = json.load(open(CUR))["entries"]
     meta = json.load(open(META))["meta"]
@@ -101,6 +125,7 @@ def main():
 
     with open(OUT, "w", encoding="utf-8") as f:
         f.write("## References\n\n")
+        f.write(declaration(n=len(lines), by_role=by_role) + "\n\n")
         f.write("\n\n".join(lines) + "\n")
     json.dump({"order": ORDER, "max_authors": MAX_AUTHORS, "n": len(numbering),
                "numbering": numbering}, open(NUM, "w"), indent=1, sort_keys=True)

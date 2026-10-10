@@ -32,9 +32,9 @@
 #
 # Expected output, and the verdict a verifier compares:
 #
-#     VALIDATE 42/42
+#     VALIDATE 45/45
 #     RESULT: PASS
-#     SELFTEST 10/10 plants caught
+#     SELFTEST 14/14 plants caught
 #     CHECKSUMS [HARD] 30/30 files match the committed record
 #     RESULT: PASS
 #
@@ -165,7 +165,10 @@ echo "== 6. two-sided control on the validation suite itself ===================
 echo
 echo "== 7. the committed artefacts, byte for byte ==============================="
 if [ -f checksums.sha256 ]; then
-    EMRG_BUILD_PY="$PY" "$PY" - <<'EOF' | tee -a "$RUNLOG"
+    # The verdict is captured, not piped: a pipeline's status is its LAST element's, so
+    # `"$PY" ... | tee` returns tee's 0 whatever the check decided -- the "FATAL on the same build"
+    # branch below then could not fire, and a real byte-difference would have read as a PASS.
+    check_out="$(EMRG_BUILD_PY="$PY" "$PY" - <<'EOF'
 import hashlib, json, os, platform, subprocess, sys
 
 # The byte-identity claim is scoped to the build that produced the committed artefacts: CPython
@@ -203,11 +206,13 @@ tag = "HARD" if same else "ADVISORY (build %s vs recorded %s/%s)" % (
 print("CHECKSUMS [%s] %d/%d files match the committed record" % (tag, ok, ok + bad + miss))
 sys.exit(1 if (bad or miss) and same else 0)
 EOF
+)"
     rc=$?
+    echo "$check_out" | tee -a "$RUNLOG"
     if [ $rc -ne 0 ]; then
         echo "FATAL: the recomputed artefacts differ from the committed record on the SAME build" >&2
         exit 1
-    elif ! grep -q "CHECKSUMS \[HARD\]" "$RUNLOG"; then
+    elif ! echo "$check_out" | grep -q "CHECKSUMS \[HARD\]"; then
         echo "NOTE: the artefacts were produced by a different build; the checksum comparison above"
         echo "      is advisory, and every claim check in step 5 still had to pass."
     fi

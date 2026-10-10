@@ -43,7 +43,8 @@ replacement law is wrong by up to {{rate_wrong_at_w64:.3g}}×.
 Third, the **criterion axis** — the finding we consider most consequential. "Stable" is not one
 criterion. Keeping an intact support (a stationary absence rate) and healing a fully collapsed loop (a
 first-passage criterion) are **different objects**, and the fresh-data rate they demand differs by
-{{crit_uniform_w1_ratio:.3g}}× to {{crit_twohot_w1_ratio:.3g}}×. The commonly quoted range of
+{{crit_ratio_lo:.3g}}× to {{crit_ratio_hi:.3g}}× over the located cells (the one domain-ceiling cell
+is excluded). The commonly quoted range of
 "fresh-data fraction" in this literature — from about 1 % to about 30 % — is, we argue, mostly a
 **criterion artefact**: each number answers a different question.
 
@@ -87,9 +88,9 @@ numbers incomparable.
    length `w` of the training pool's history (§4.2) — and the mechanism is a moving-average
    relaxation whose rate we predict analytically and confirm to {{rate_rel_max:.2%}} (§4.3).
 3. **There are two boundaries, not one.** The fresh-data rate needed to keep an intact support is
-   {{crit_uniform_w1_ratio:.3g}}×–{{crit_twohot_w1_ratio:.3g}}× the rate needed to heal a collapsed
-   one, depending only on which criterion you adopt (§4.4). This is, we believe, why the literature's
-   quoted numbers disagree by an order of magnitude.
+   {{crit_ratio_lo:.3g}}×–{{crit_ratio_hi:.3g}}× the rate needed to heal a collapsed
+   one, over the located cells, depending only on which criterion you adopt (§4.4). This is, we
+   believe, why the literature's quoted numbers disagree by an order of magnitude.
 4. **There is no point of no return, only a finite-horizon one.** The loop is ergodic for every
    λ > 0 (§4.5): a fully collapsed loop *can* always heal, but at low λ it does not within any
    horizon a practitioner would wait for ({{censrecov_uniform_lam0005:.1%}} of collapsed replicates
@@ -255,8 +256,8 @@ loss does not: at `λ = 0.01` on the worst symbol, the measured loss is {{lossA_
 *Figure 1. Left: the measured per-generation loss of the worst symbol (two independent routes) against
 the closed form `(1 − p*)ⁿ`, versus `n`. The closed form collapses with `n`; the measured loss does
 not. Right: the distribution of the bound-to-measured ratio over the {{gap_pairs}} well-counted
-readings, with the two sides marked — the bound is above the measured rate (ratio < 1) in
-{{gap_below1}} of them and below it in {{gap_above1}}.*
+readings, with the two sides marked — the bound is below the measured rate (ratio < 1) in
+{{gap_below1}} of them and above it (ratio > 1) in {{gap_above1}}.*
 
 The two independent routes to the same quantity agree to within {{route_rel:.1%}} over the same
 readings — a disagreement that is a large relative error on the *smallest* readings and is consistent
@@ -342,8 +343,9 @@ smallest value it takes.
 ![Figure 4](figures/fig4_criterion_dependence.png)
 
 *Figure 4. The two criteria on the same loop. Keeping an intact support costs
-{{crit_uniform_w4_ratio:.1f}}×–{{crit_twohot_w1_ratio:.1f}}× more fresh data than healing a collapsed
-loop. The hatched bar is a **domain ceiling** — the criterion is unsatisfiable there, not located.*
+{{crit_ratio_lo:.1f}}×–{{crit_ratio_hi:.1f}}× more fresh data than healing a collapsed
+loop, over the located cells. The hatched bar is a **domain ceiling** — the criterion is unsatisfiable
+there, not located, and it is excluded from the range.*
 
 The direction is the one a practitioner would not guess: **prevention is the expensive criterion and
 recovery is the cheap one.** A loop that has already collapsed is easier to rescue than a healthy loop
@@ -371,7 +373,8 @@ Each boundary is bracketed by a behavioural two-sided control on functionals tha
 below `λ*/2` the uniform `w = 1` loop holds full support {{beh_below_full:.1%}} of the time, above
 `2λ*` {{beh_above_full:.1%}}. The one two-hot `w = 1` cell reads a boundary of exactly 1.0, at the
 edge of the parameter domain; it is reported as an **unsatisfiable criterion in the domain** rather
-than as a number, and it is not used in the ratio range above.
+than as a number, and it is not used in the ratio range above — that range is the span over the other
+three located cells, {{crit_ratio_lo:.1f}}×–{{crit_ratio_hi:.1f}}×.
 
 ### 4.5 Hysteresis: no point of no return, but a horizon you will not wait out
 
@@ -466,6 +469,18 @@ has already shipped a self-consuming pipeline needs. Our §4.4 makes the gap con
 validated on a prevention criterion is validated on the **harder** of the two criteria, so it may
 leave the cheap one entirely untested.
 
+**The search form behind this section's absence claims.** Two claims here are absences, and an
+absence is only as strong as the search behind it. Both rest on the **arXiv API**
+(`export.arxiv.org/api/query`), run on the **scan date 2026-10-03** — the day this package and its
+registration were produced. The term harvest that assembled this paper's reference layer carries
+**no date filter**, so on the index's only date field, the submission date (`submittedDate`), its
+window is **unbounded below** (stated as unbounded, not estimated) and bounded above by the scan
+date, i.e. it reaches the whole arXiv index as of that day; the targeted absence queries recorded in
+the registration used the same field over the window **2020-01-01 → 2026-10-03**, whose upper
+endpoint reaches past the newest work this paper cites. The absences are therefore scoped to **what
+arXiv reaches**: a work absent from arXiv, or submitted after the scan date, stands outside them.
+Crossref is probed by title in the registration and is not this harvest's index.
+
 **Data mixture, curation, replay and distillation** `{ref:role:protocol}`. Data-mixing laws
 `{ref:in:protocol:2403.16952}`, `{ref:in:protocol:2512.09282}`, data selection
 `{ref:in:protocol:1906.11829}`, `{ref:in:protocol:1708.00712}`, `{ref:in:protocol:1612.05555}`,
@@ -530,7 +545,7 @@ The question "how much fresh data does a self-consuming loop need?" has, we argu
 because it is three questions wearing one coat:
 
 - **What** is being protected (the *criterion*: intact-support or recoverability) — worth
-  {{crit_uniform_w1_ratio:.1f}}×–{{crit_twohot_w1_ratio:.1f}}× (§4.4).
+  {{crit_ratio_lo:.1f}}×–{{crit_ratio_hi:.1f}}× (§4.4).
 - **How** the data is managed (the *protocol*: replacement or accumulation, i.e. the window `w`) —
   worth up to {{bndratio_zipf_n200:.3g}}× per unit of the fraction (§4.2).
 - **Which** statistic is quoted (the *loop*: the folk lower bound or the measured loss) — worth a
@@ -556,7 +571,7 @@ implicit.
 
 | prior | registered claim | outcome |
 |---|---|---|
-| P1 | the rate to *restore* a collapsed loop strictly exceeds the rate to *protect* an intact one, in every configuration, with the ratio growing with collapse depth | **refuted as stated, with the sign reversed.** It holds as a *time* comparison at fixed λ — the ratio {{hiratio_uniform_lam0005:.3g}} at λ = 0.005 — but as a *threshold* comparison it is **backwards**: the prevention rate is the larger, by {{crit_uniform_w1_ratio:.1f}}×–{{crit_twohot_w1_ratio:.1f}}× (§4.4). The two limbs are different objects. |
+| P1 | the rate to *restore* a collapsed loop strictly exceeds the rate to *protect* an intact one, in every configuration, with the ratio growing with collapse depth | **refuted as stated, with the sign reversed.** It holds as a *time* comparison at fixed λ — the ratio {{hiratio_uniform_lam0005:.3g}} at λ = 0.005 — but as a *threshold* comparison it is **backwards**: the prevention rate is the larger, by {{crit_ratio_lo:.1f}}×–{{crit_ratio_hi:.1f}}× over the located cells (§4.4). The two limbs are different objects. |
 | P2 | the prevention boundary is not a function of the fresh-data *fraction* alone | **confirmed.** Holding the per-generation fraction fixed and varying only the pool window `w`, the boundary `λ*(w)` falls monotonically in 4 of 4 configurations — to {{bndratio_zipf_n200:.3g}}× its `w=1` value at `w=64` (the ratio the §4.2 table reports), between two and three orders of magnitude. The control variable is the window, not the fraction. |
 | P3 | below some rate there is a point of no return | **refuted in the strict sense, refined in practice.** The loop is ergodic for every λ > 0; irreversibility is finite-horizon (§4.5). |
 
@@ -606,7 +621,7 @@ numbers.
 A self-consuming training loop is governed by three quantities that the literature conflates into one.
 The per-generation fresh-data rate needed to keep a loop intact, the rate needed to rescue a collapsed
 one, and the loss kernel's own bound are three different objects; they differ by up to
-{{crit_twohot_w1_ratio:.3g}}×, {{rate_wrong_at_w64:.3g}}× and a median {{gap_median:.4g}}
+{{crit_ratio_hi:.3g}}×, {{rate_wrong_at_w64:.3g}}× and a median {{gap_median:.4g}}
 respectively. The most-quoted constant in the field is not a rate but a lower bound. Pooling history
 — which every real pipeline does — is a far stronger destabiliser than the fresh-data fraction, and it
 acts through a moving-average relaxation we can write down and confirm to {{rate_rel_max:.2%}}. And

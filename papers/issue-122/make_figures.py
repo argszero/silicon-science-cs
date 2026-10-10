@@ -82,6 +82,22 @@ def jensen_pairs(v1):
     return gap
 
 
+def fig1_title(gap):
+    """The one place the fig1 right-panel split is worded, used by BOTH the panel title and the
+    manifest.
+
+    `gap` is closed_form / measured, so `g > 1` means the BOUND is ABOVE the measured rate and
+    `g < 1` means it is BELOW it; `len(gap) - n_above` is therefore the count on the ratio<1
+    (bound-below) side.  Naming that side "above" -- which the first version did, titling the 519
+    bar "Bound above the measured rate" while the inset bar under it was labelled "ratio < 1" --
+    is revision round 1's W1, and it is a defect of the WORD, not of the count (the 83/519 counts
+    were right in the panel, the inset, the caption's second clause and the body text).
+    """
+    n_above = sum(1 for g in gap if g > 1.0)        # ratio > 1  ->  bound ABOVE the measured rate
+    n_below = len(gap) - n_above                     # ratio < 1  ->  bound BELOW the measured rate
+    return "Bound below the measured rate in %d of %d readings" % (n_below, len(gap))
+
+
 def fig1(v1, gap):
     """P1 (refuted as a rate): the folk closed form is a lower bound on the UNCONDITIONAL loss;
     the conditional rate a loop experiences falls on both sides of it, and the gap grows with n."""
@@ -127,14 +143,14 @@ def fig1(v1, gap):
     a2.set_xscale("log")
     a2.set_xlabel("closed form / measured loss  (per symbol, log scale)")
     a2.set_ylabel("per-symbol readings")
-    n_above = sum(1 for g in gap if g > 1.0)
-    a2.set_title("Bound above the measured rate in %d of %d readings"
-                 % (len(gap) - n_above, len(gap)), fontsize=9.5)
+    a2.set_title(fig1_title(gap), fontsize=9.5)
+    n_above = sum(1 for g in gap if g > 1.0)        # ratio > 1  ->  bound ABOVE the measured rate
+    n_below = len(gap) - n_above                     # ratio < 1  ->  bound BELOW the measured rate
     # The readings span 47 decades, so the side above the bound occupies a sliver of a full-range
     # log axis: the split is drawn as its own inset, where it can be read, instead of being left to
     # a bar two decades wide at the edge of a 52-decade axis.
     axin = a2.inset_axes([0.05, 0.40, 0.26, 0.44])
-    axin.bar([0, 1], [len(gap) - n_above, n_above], color=["#4878a8", "#c0504d"], width=0.62)
+    axin.bar([0, 1], [n_below, n_above], color=["#4878a8", "#c0504d"], width=0.62)
     axin.set_xticks([0, 1])
     axin.set_xticklabels(["ratio < 1", "ratio > 1"], fontsize=6.8)
     axin.tick_params(axis="y", labelsize=6.5)
@@ -220,9 +236,14 @@ def fig3(v2):
 
 
 def fig4(v3):
-    """P1 limb (a) REFUTED: the boundary is criterion-dependent by 13x-45x."""
+    """P1 limb (a) REFUTED: the boundary is criterion-dependent.  The headline span is taken over
+    the LOCATED cells only -- the two-hot w=1 cell is a domain CEILING (its prevention criterion is
+    unsatisfiable), so it is drawn hatched and labelled CEILING and is excluded from the span, as
+    §4.4's own text requires.  The title is DERIVED from that set, so it cannot disagree with it."""
     rows = [c for c in v3["controls"] if c["kind"] == "criterion_dependence"]
     rows.sort(key=lambda c: (c["source"], c["w"]))
+    located = [r["ratio_stationary_over_heal"] for r in rows if not r["stationary_is_ceiling"]]
+    span_lo, span_hi = min(located), max(located)
     fig, ax = plt.subplots(figsize=(6.6, 4.1))
     xs = range(len(rows))
     w = 0.36
@@ -244,7 +265,8 @@ def fig4(v3):
     ax.set_ylim(top=max(r["lambda_stationary"] for r in rows) * 8)
     ax.set_ylabel("boundary  lambda  (log scale)")
     ax.set_title("The two criteria are different objects: keeping an intact support\n"
-                 "costs 13x-45x more fresh data than healing a collapsed loop", fontsize=9.5)
+                 "costs %.3gx-%.3gx more fresh data than healing a collapsed loop"
+                 % (span_lo, span_hi), fontsize=9.5)
     ax.legend(fontsize=7.5, loc="lower left")
     ax.grid(alpha=0.25, lw=0.5, axis="y", which="both")
     return save(fig, "fig4_criterion_dependence.png")
@@ -293,10 +315,16 @@ def main():
     manifest = {os.path.basename(p): hashlib.sha256(open(p, "rb").read()).hexdigest()
                 for p in paths}
     src_sha = {s: hashlib.sha256(open(os.path.join(HERE, s), "rb").read()).hexdigest() for s in SRC}
+    n_above = sum(1 for g in gap if g > 1.0)
     with open(os.path.join(FIG, "manifest.json"), "w") as f:
         json.dump({"figures": manifest, "sources": src_sha,
                    "jensen_pairs": {"n": len(gap), "median": statistics.median(gap),
                                     "min": min(gap)},
+                   # The direction the fig1 right panel is LABELLED with, recorded as data so the
+                   # validator can read the label back against the artefact's own counts instead of
+                   # trusting the drawn PNG (a PNG is a hash to a checker, not a sentence).
+                   "fig1_split": {"n": len(gap), "n_above": n_above, "n_below": len(gap) - n_above,
+                                  "label": fig1_title(gap)},
                    "matplotlib": matplotlib.__version__,
                    "note": "PNG bytes are build-dependent (matplotlib version); the Software tag is "
                            "fixed so the same build is byte-identical across runs"},

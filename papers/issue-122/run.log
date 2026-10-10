@@ -302,13 +302,13 @@ PART D -- THE SAME LOOP, TWO CRITERIA: keeping it intact vs healing it once brok
 
 wrote spike_v3_results.json
 figures from spike_v1_results.json, spike_v2_results.json, spike_v3_results.json
-   fig1_folk_law_refuted.png        104758 bytes
+   fig1_folk_law_refuted.png        104855 bytes
    fig2_boundary_vs_window.png       94266 bytes
    fig3_mechanism.png                95103 bytes
-   fig4_criterion_dependence.png     53009 bytes
+   fig4_criterion_dependence.png     53811 bytes
    fig5_hysteresis.png               79680 bytes
 -> figures/manifest.json
-rendered 102 references -> /Users/argszero/scm/github.com/argszero/silicon-science-cs/.emrg/sessions/emrg-evolution-silicon-science-cs-journal-task/tmp/r582/wt122/papers/issue-122/references.md (/Users/argszero/scm/github.com/argszero/silicon-science-cs/.emrg/sessions/emrg-evolution-silicon-science-cs-journal-task/tmp/r582/wt122/papers/issue-122/refs/numbering.json)
+rendered 102 references -> /Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-122/references.md (/Users/argszero/scm/github.com/argszero/silicon-science-cs/papers/issue-122/refs/numbering.json)
    construct    24
    theory       14
    mechanism    16
@@ -321,8 +321,8 @@ entries rendered      : 102
 cited by numbered key : 102
 uncited               : 0 []
 bracketed groups       : 86 citations, 0 shape-ambiguous, 11 other
--> reference-check.md (22240 chars)
-built manuscript.md: 135 placeholders resolved from 135 values, 102 citations (102 references), 10274 words
+-> reference-check.md (22245 chars)
+built manuscript.md: 137 placeholders resolved from 137 values, 102 citations (102 references), 10601 words
 -> values.json (provenance for every number)
 ok   4.1 the gap is read on an expected-EVENT gate (density x rate >= 30): 602 readings   [recomputed=602 artefact=602]
 ok   4.1 median and minimum of the bound/measured ratio are the artefact's   [median 0.0843737 min 2.83e-47]
@@ -363,10 +363,13 @@ ok   refs: every entry carries author metadata (102/102, route API batch)   [pro
 ok   refs: the manuscript cites all 102 entries by numbered key (0 uncited)   [numbered=102 uncited=[]]
 ok   build: the assembled manuscript carries no placeholder-shaped text   [leftovers=0]
 ok   build: the manuscript's own count of the readings above the bound is the artefact's   [looking for '83 of the 602']
+ok   figure 1: the drawn split label and the caption both say the bound is BELOW the measured rate in 519 of 602   [label='Bound below the measured rate in 519 of 602 readings']
+ok   4.4 the headline criterion-ratio range is the span over the 3 located cells (13.4×–27.6×), and no carrier keeps the ceiling pair (27.6×–45.1×)   [span=13.4×–27.6× in_man=True old_present=False]
+ok   refs: the bibliography declares its role-class difference convention under References   [declared=True]
 ok   figures: 5 figures are recorded in the manifest   [n=5]
 ok   figures: every committed PNG hashes to the value the manifest records   [bad=[]]
 ok   figures: the manifest also pins the source artefacts the figures were drawn from
-VALIDATE 42/42
+VALIDATE 45/45
 RESULT: PASS
    plant caught by: 4.1 median and minimum of the bound/measured ratio are the artefact's  4.1 median
    plant caught by: 4.1 the claimed MAXIMUM is the artefact's (1)                          4.1 max
@@ -378,8 +381,12 @@ RESULT: PASS
    plant caught by: 4.5 the hysteresis ratio crosses 1 inside the bracket in all 4 configurations 4.5 crossing
    plant caught by: refs: 101 curated entries, every one taken from the discovery artefact refs count
    plant caught by: figures: every committed PNG hashes to the value the manifest records  figure hash
-SELFTEST 10/10 plants caught
+   plant caught by: figure 1: the drawn split label and the caption both say the bound is BELOW the measured rate in 519 of 602 fig1 split label
+   plant caught by: figure 1: the drawn split label and the caption both say the bound is BELOW the measured rate in 519 of 602 fig1 caption
+   plant caught by: 4.4 the headline criterion-ratio range is the span over the 3 located cells (13.4×–27.6×), and no carrier keeps the ceiling pair (27.6×–45.1×) 4.4 ratio range
+   plant caught by: refs: the bibliography declares its role-class difference convention under References refs declaration
+SELFTEST 14/14 plants caught
 CHECKSUMS [HARD] 30/30 files match the committed record
 #
-# wall-clock: 75 s
+# wall-clock: 73 s
 RESULT: PASS

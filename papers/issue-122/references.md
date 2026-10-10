@@ -1,5 +1,7 @@
 ## References
 
+*The stated difference closing every entry is its **role class**, not a sentence written per entry; that is a declared convention.* Each entry's closing clause names the family the entry belongs to and the relationship that family bears to this work, and it is generated from the same role assignment that selected the entry (`refs_curate.py`) — so the field states the rule the list was built by and cannot drift from it.  The 102 entries fall into 7 classes (construct 24, theory 14, mechanism 16, protocol 14, prevention 10, measurement 16, adjacent 8).  The per-entry difference is therefore read as: this work is *of* that class, and the class's clause is the difference from this paper.
+
 [1] Chang, F., Wang, H., Chou, C., et al. (2019). *G2R Bound: A Generalization Bound for Supervised Learning from GAN-Synthetic Data*. arXiv:1905.12313. https://arxiv.org/abs/1905.12313 -- a treatment of the self-consuming loop and the failure this paper measures
 
 [2] Nikolenko, S. I. (2019). *Synthetic Data for Deep Learning*. arXiv:1909.11512. https://arxiv.org/abs/1909.11512 -- a treatment of the self-consuming loop and the failure this paper measures
