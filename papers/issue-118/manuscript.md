@@ -136,7 +136,7 @@ Every cell with `µ ≤ 16` needs `C > 1.25`, and the cells at `µ ≤ 8` need `
 
 The constant encodes an **implicit tolerance of roughly `1e-2`**, which it honours at the training load it originated from (`8.3e-05` at `µ = 128`) and violates by four orders of magnitude at decode load. It is not wrong; it is **unlabelled**, and it is applied outside the regime where its implied tolerance holds. This is the paper's most directly actionable statement: a deployment that must state a drop-rate target can read the capacity off the curve, and a deployment that adopts `1.25` has silently chosen `1e-2`.
 
-![Figure 3: the tolerance inversion. The drop rate a perfectly uniform router takes at C = 1.25 — the exact route — over four orders of magnitude of per-expert load. One constant, and the tolerance it silently encodes: about 1e-2 at µ = 128 and 29.9 % at µ = 1.](figures/fig3_inversion.png)
+![Figure 3: the tolerance inversion. The drop rate a perfectly uniform router takes at C = 1.25 — the exact route — over four orders of magnitude of per-expert load. One constant, and the tolerance it silently encodes: about 1e-2 at µ = 16 and 29.9 % at µ = 1.](figures/fig3_inversion.png)
 
 ### 5.4 A closed form exists, and it has its own domain
 
@@ -154,7 +154,7 @@ The correction's expansion parameter is the binomial's own skewness `γ = (1−2
 
 ### 5.5 Top-`k` is exact, not approximate
 
-With independent per-token decisions, the marginal load at expert `e` is exactly `Bin(T, k p_e)`, so equation (1) is exact for any `k` with `c = C k T / E`. Confirmed against an independent top-`k` Monte-Carlo that draws `k` distinct experts per token: **`z` = 0.24, 0.39, 1.09, 1.30, 2.61** over four `(E, T, k)` cells. The law therefore applies unchanged across the family of capacities in current use, from top-1 to top-8, and the per-expert load `µ = k·T/E` is the single parameter along which the folk constants' validity moves.
+With independent per-token decisions, the marginal load at expert `e` is exactly `Bin(T, k p_e)`, so equation (1) is exact for any `k` with `c = C k T / E`. Confirmed against an independent top-`k` Monte-Carlo that draws `k` distinct experts per token: **`z` = 0.24, 1.09, 1.30, 2.61** over the four `(E, T, k)` cells `(128, 512, 2)`, `(64, 512, 4)`, `(64, 512, 2)` and `(64, 256, 2)`. The law therefore applies unchanged across the family of capacities in current use, from top-1 to top-8, and the per-expert load `µ = k·T/E` is the single parameter along which the folk constants' validity moves.
 
 ### 5.6 The composition law: overflow is a displacement channel
 
@@ -376,7 +376,7 @@ All results are produced by the committed scripts with no network access and no 
 
 [48] Xiao, J.; Wang, J.; Hu, Y.; et al. (2026). OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading. arXiv:2609.33385. https://arxiv.org/abs/2609.33385 - Difference from this work: inter-iteration locality-aware expert caching; a decode-time system.
 
-[49] Wang, W.; Ma, L.; Huang, Z.; et al. ((aut). RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference. arXiv:2610.01265. https://arxiv.org/abs/2610.01265 - Difference from this work: adaptive residual offloading for large-scale MoE inference, the other half of the 2026-10-01 hotspot pair (author-anchored; not surfaced by the discovery queries).
+[49] Wang, W.; Ma, L.; Huang, Z.; et al. (2026). RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference. arXiv:2610.01265. https://arxiv.org/abs/2610.01265 - Difference from this work: adaptive residual offloading for large-scale MoE inference, the other half of the 2026-10-01 hotspot pair (author-anchored; not surfaced by the discovery queries).
 
 [50] Yang, K.; Gao, Y.; Li, X.; et al. (2026). MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference. arXiv:2610.01950. https://arxiv.org/abs/2610.01950 - Difference from this work: coordinated expert offloading and residency, published 2026-10-01 within the hotspot window.
 
@@ -393,7 +393,7 @@ All results are produced by the committed scripts with no network access and no 
 
 [55] Zeng, Z.; Miao, Y.; Gao, H.; et al. (2024). AdaMoE: Token-Adaptive Routing with Null Experts for Mixture-of-Experts Language Models. arXiv:2406.13233. https://arxiv.org/abs/2406.13233 - Difference from this work: token-adaptive routing with null experts, i.e. a structured way to avoid overflow rather than bound it.
 
-[56] Yang, A.; Yang, B.; Hui, B.; et al. ((aut). Qwen2 Technical Report. arXiv:2407.10671. https://arxiv.org/abs/2407.10671 - Difference from this work: the MoE member of the Qwen2 family, one of the configurations the production map places on the law (author-anchored; the discovery queries reached only Qwen-CUA).
+[56] Yang, A.; Yang, B.; Hui, B.; et al. (2024). Qwen2 Technical Report. arXiv:2407.10671. https://arxiv.org/abs/2407.10671 - Difference from this work: the MoE member of the Qwen2 family, one of the configurations the production map places on the law (author-anchored; the discovery queries reached only Qwen-CUA).
 
 [57] Muennighoff, N.; Soldaini, L.; Groeneveld, D.; et al. (2024). OLMoE: Open Mixture-of-Experts Language Models. arXiv:2409.02060. https://arxiv.org/abs/2409.02060 - Difference from this work: a fully open MoE with published expert counts and routing.
 
@@ -452,7 +452,7 @@ All results are produced by the committed scripts with no network access and no 
 
 [80] Avinash, M. S. R. (2026). Task-Conditioned Routing Signatures in Sparse Mixture-of-Experts Transformers. arXiv:2603.11114. https://arxiv.org/abs/2603.11114 - Difference from this work: task-conditioned routing signatures, evidence that router distributions are measurable objects.
 
-[81] Li, M.; Kudugunta, S.; Rothermel, D.; et al. ((aut). Slicing and Dicing: Configuring Optimal Mixtures of Experts. arXiv:2605.11689. https://arxiv.org/abs/2605.11689 - Difference from this work: states that MoE design choices including token dropping were studied one or two at a time over narrow configuration ranges -- the gap this paper fills.
+[81] Li, M.; Kudugunta, S.; Rothermel, D.; et al. (2026). Slicing and Dicing: Configuring Optimal Mixtures of Experts. arXiv:2605.11689. https://arxiv.org/abs/2605.11689 - Difference from this work: states that MoE design choices including token dropping were studied one or two at a time over narrow configuration ranges -- the gap this paper fills.
 
 [82] Li, J. (2026). The Evolution of Mixture-of-Experts Architectures in Large Language Models: Routing, Topology, Load Balancing, and Expert Parallelism. arXiv:2608.08650. https://arxiv.org/abs/2608.08650 - Difference from this work: a 2026 survey of MoE routing and topology, the closest thing to a map of the design space this paper formalises a cell of.
 

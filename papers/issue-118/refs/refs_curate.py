@@ -141,15 +141,21 @@ CHOSEN = [
     ("2608.17402", "architecture", "an MoE vision encoder; the same dispatch discipline in a non-text modality"),
 ]
 
-# Entries the author supplies that the search did NOT surface (declared, with their own titles).
+# Entries the author supplies that the search did NOT surface (declared, with their own titles
+# AND their own publication date). The date is a FIELD, never a placeholder: `published` is
+# rendered as the entry's year, so a non-date here reaches the printed bibliography -- the
+# editorial return of 2026-10-10 is exactly this, `(author-supplied)` sliced to `(aut` and
+# printed as `((aut).` on 3 of 105 entries. Each date below is the identifier's own record.
 EXTRAS = [
     ("2605.11689", "survey", "states that MoE design choices including token dropping were studied one or two at a time over narrow configuration ranges -- the gap this paper fills",
-     "Slicing and Dicing: Configuring Optimal Mixtures of Experts"),
+     "Slicing and Dicing: Configuring Optimal Mixtures of Experts", "2026-05-12"),
     ("2610.01265", "serving", "adaptive residual offloading for large-scale MoE inference, the other half of the 2026-10-01 hotspot pair (author-anchored; not surfaced by the discovery queries)",
-     "RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference"),
+     "RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference", "2026-10-01"),
     ("2407.10671", "architecture", "the MoE member of the Qwen2 family, one of the configurations the production map places on the law (author-anchored; the discovery queries reached only Qwen-CUA)",
-     "Qwen2 Technical Report"),
+     "Qwen2 Technical Report", "2024-07-15"),
 ]
+
+DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 def bare(aid):
     return re.sub(r"v\d+$", "", aid)
@@ -168,8 +174,12 @@ def main():
             missing.append(aid); continue
         out.append(dict(id=c["id"], bare=bare(c["id"]), title=c["title"], published=c["published"],
                         cats=c["cats"], role=role, diff=diff, source="discovery"))
-    for aid, role, diff, title in EXTRAS:
-        out.append(dict(id=aid, bare=bare(aid), title=title, published="(author-supplied)",
+    for aid, role, diff, title, published in EXTRAS:
+        if not DATE.match(published):
+            sys.exit("EXTRA %s carries a non-date `published` field %r -- the printed entry "
+                     "would render %r as its year (the defect of 2026-10-10)"
+                     % (aid, published, published[:4]))
+        out.append(dict(id=aid, bare=bare(aid), title=title, published=published,
                         cats=[], role=role, diff=diff, source="author"))
     if missing:
         print("!! %d chosen ids NOT in the pool: %s" % (len(missing), missing), file=sys.stderr)

@@ -90,12 +90,17 @@ cp -r refs "$TMP/rep/refs"; cp manuscript.src.md "$TMP/rep/"
 if cmp -s "reference-check.md" "$TMP/rep/reference-check.md"; then
   ok "reference-check.md byte-identical to its regeneration from the artefacts"
 else bad "reference-check.md differs from what the artefacts generate"; fi
-# 5c: the two properties the editorial return of 2026-10-08 named, read off the PRODUCT (offline,
-# from committed artefacts): every entry names an author, and every entry is its own paragraph.
+# 5c: the three properties the editorial returns named, read off the PRODUCT (offline, from
+# committed artefacts): every entry names an author, every entry is its own paragraph, and every
+# entry prints the YEAR its record carries -- not a curation placeholder. The year limb was added
+# after the return of 2026-10-10, where a placeholder reached the printed entry as `((aut).`.
 # These are rendering properties, so they are measured on manuscript.md as rendered, not on the
-# source, where the newlines already exist.
-"$PY" - <<'PYCHECK' || bad "the author component or the block form is defective"
-import json, re, sys
+# source, where the newlines already exist. The entry ORDER is refs_build's own (`import
+# refs_build`), so the check cannot drift from the renderer's ordering by re-deriving it.
+"$PY" - <<'PYCHECK' || bad "the author component, the block form or the year component is defective"
+import re, sys
+sys.path.insert(0, "refs")
+import refs_build as B
 # The author component's shape is the journal gate's OWN class, copied from `.github/tools/
 # refgate.py` with its source named: a family token of two or more letters (Unicode letters,
 # apostrophes and hyphens -- `DeepSeek-AI` is one), closed by a comma and an initial. Writing a
@@ -105,24 +110,51 @@ import json, re, sys
 FAMILY = r"[^\W\d_](?:[^\W\d_]|['\u2019-]){1,}"
 COMPONENT = re.compile(r"(?<![\w'\u2019-])(" + FAMILY + r")\s*,\s*[A-Z]\.")
 SOLO = re.compile(r"^(" + FAMILY + r")\.\s*\(")
-cur = json.load(open("refs/curated.json"))["entries"]
-auth = json.load(open("refs/authors.json"))["authors"]
-missing = sorted(e["bare"] for e in cur if not auth.get(e["bare"]))
-assert not missing, "curated entries with no author record: %s" % missing[:8]
+YEAR = re.compile(r"\((\d{4})\)")
+entries, order, num, authors = B.load()
 txt = open("manuscript.md").read()
 lines = txt.splitlines()
 start = max(i for i, l in enumerate(lines) if l.startswith("## References"))
 sec = lines[start + 1:]
 ents = [(i, l) for i, l in enumerate(sec) if re.match(r"^\s*\[\d{1,3}\]\s", l)]
-assert len(ents) == len(cur), "read %d entries for %d curated" % (len(ents), len(cur))
+assert len(ents) == len(order), "read %d entries for %d curated" % (len(ents), len(order))
 for pos, (i, l) in enumerate(ents):
+    bare = order[pos]                              # the renderer emits entries in this order
     assert pos == 0 or sec[i - 1].strip() == "", \
         "entry %r is not separated from the one above by a blank line" % l[:40]
+    assert l.lstrip().startswith("[%d]" % num[bare]), \
+        "entry at position %d prints %r where the numbering gives [%d]" % (pos, l[:12], num[bare])
     body = l.split("] ", 1)[1]
     assert COMPONENT.search(body) or SOLO.match(body), \
         "no author component at the entry position: %r" % l[:60]
-print("   %d entries: each names an author, each is its own paragraph" % len(ents))
+    pub = (entries[bare].get("published") or "").strip()
+    want = re.match(r"^(\d{4})", pub) if pub else None
+    got = YEAR.search(l)
+    if want:
+        assert got and got.group(1) == want.group(1), \
+            "entry %s prints year %r where the record gives %s" % (
+                bare, got.group(1) if got else None, want.group(1))
+    else:
+        assert not got, "entry %s prints a year its record does not carry" % bare
+print("   %d entries: each names an author, each is its own paragraph, each prints its record's year"
+      % len(ents))
 PYCHECK
+
+# 5d: every number the §5.5 top-`k` sentence states is the ARTEFACT's own -- the sentence counted
+# five `z` values over four cells once (the editorial return of 2026-10-10), so the list is read
+# back against `canonical_results.json` rather than trusted.
+"$PY" - <<'PYZ' || bad "the section-5.5 top-k z list is not the artefact's"
+import json, re
+W = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8}
+zs = sorted(round(c["z"], 2) for c in json.load(open("canonical_results.json"))["steps"]["model_v2"]["topk"])
+m = re.search(r"\*\*`z` = ([0-9., ]+?)\*\* over the (\w+) `\(E, T, k\)` cells", open("manuscript.md").read())
+assert m, "the section-5.5 z sentence was not found in manuscript.md"
+got = sorted(float(x) for x in m.group(1).replace(" ", "").rstrip(",").split(","))
+assert got == zs, "the manuscript lists z = %s of %d cells; the artefact holds %s of %d" % (
+    got, len(got), zs, len(zs))
+assert W[m.group(2)] == len(zs), "the sentence says %r cells but the artefact holds %d" % (m.group(2), len(zs))
+print("   section 5.5: z = %s over %d cells, read back from model_v2.topk" % (got, len(zs)))
+PYZ
 
 step "6. the manuscript's decisive numbers reappear from the code"
 # (a) the certificate numbers, from spike_v1's OWN stdout (48 s), not from a summary

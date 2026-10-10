@@ -136,7 +136,7 @@ Every cell with `µ ≤ 16` needs `C > 1.25`, and the cells at `µ ≤ 8` need `
 
 The constant encodes an **implicit tolerance of roughly `1e-2`**, which it honours at the training load it originated from (`8.3e-05` at `µ = 128`) and violates by four orders of magnitude at decode load. It is not wrong; it is **unlabelled**, and it is applied outside the regime where its implied tolerance holds. This is the paper's most directly actionable statement: a deployment that must state a drop-rate target can read the capacity off the curve, and a deployment that adopts `1.25` has silently chosen `1e-2`.
 
-![Figure 3: the tolerance inversion. The drop rate a perfectly uniform router takes at C = 1.25 — the exact route — over four orders of magnitude of per-expert load. One constant, and the tolerance it silently encodes: about 1e-2 at µ = 128 and 29.9 % at µ = 1.](figures/fig3_inversion.png)
+![Figure 3: the tolerance inversion. The drop rate a perfectly uniform router takes at C = 1.25 — the exact route — over four orders of magnitude of per-expert load. One constant, and the tolerance it silently encodes: about 1e-2 at µ = 16 and 29.9 % at µ = 1.](figures/fig3_inversion.png)
 
 ### 5.4 A closed form exists, and it has its own domain
 
@@ -154,7 +154,7 @@ The correction's expansion parameter is the binomial's own skewness `γ = (1−2
 
 ### 5.5 Top-`k` is exact, not approximate
 
-With independent per-token decisions, the marginal load at expert `e` is exactly `Bin(T, k p_e)`, so equation (1) is exact for any `k` with `c = C k T / E`. Confirmed against an independent top-`k` Monte-Carlo that draws `k` distinct experts per token: **`z` = 0.24, 0.39, 1.09, 1.30, 2.61** over four `(E, T, k)` cells. The law therefore applies unchanged across the family of capacities in current use, from top-1 to top-8, and the per-expert load `µ = k·T/E` is the single parameter along which the folk constants' validity moves.
+With independent per-token decisions, the marginal load at expert `e` is exactly `Bin(T, k p_e)`, so equation (1) is exact for any `k` with `c = C k T / E`. Confirmed against an independent top-`k` Monte-Carlo that draws `k` distinct experts per token: **`z` = 0.24, 1.09, 1.30, 2.61** over the four `(E, T, k)` cells `(128, 512, 2)`, `(64, 512, 4)`, `(64, 512, 2)` and `(64, 256, 2)`. The law therefore applies unchanged across the family of capacities in current use, from top-1 to top-8, and the per-expert load `µ = k·T/E` is the single parameter along which the folk constants' validity moves.
 
 ### 5.6 The composition law: overflow is a displacement channel
 

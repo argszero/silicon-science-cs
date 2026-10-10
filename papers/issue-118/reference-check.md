@@ -27,7 +27,7 @@ every returned title normalises to the curated one.
 | artefact | what it is | sha256 |
 |---|---|---|
 | `refs/verify.log` | the verifier's own output (105 lines) | `256931ab53095588a58050e9ac2d2e63df79a3002f15e86ac5db45bcce337e4a` |
-| `refs/curated.json` | the curated set, with the role and the stated difference of each entry | `f69cefd0cf703c6d2c88a4987485a2a834d39d374df8d2cad5141c3a8f3915f3` |
+| `refs/curated.json` | the curated set, with the role and the stated difference of each entry | `d1583a061ad88ec0d565d2c6ae6199b0b837a62d8a0af5544b6bda4be5ce2b16` |
 | `refs/authors.json` | the author names as the 105 records state them, captured in the same fetch that resolved each title | `55076fa78cf6d9627b4ecf9facf14772b5bab4c214290572fbcac284b964d931` |
 
 ## (i-b) The author component of every entry
@@ -156,7 +156,7 @@ independently, over the same inputs.
 | `2604.23150` | OK | Scaling Multi-Node Mixture-of-Experts Inference Using Expert Activation Patterns | 2026-04-25 | Abhimanyu Bambhaniya<br>Geonhwa Jeong<br>Jason Park<br>(+6 more) | Bambhaniya, A.; Jeong, G.; Park, J.; et al. |
 | `2605.10670` | OK | Surviving Partial Rank Failures in Wide Expert-Parallel MoE Inference | 2026-05-11 | Xun Sun<br>Shaoyuan Chen<br>Pingchuan Ma<br>(+18 more) | Sun, X.; Chen, S.; Ma, P.; et al. |
 | `2609.33385` | OK | OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading | 2026-09-27 | Jingyuan Xiao<br>Jiayue Wang<br>Yitao Hu<br>(+7 more) | Xiao, J.; Wang, J.; Hu, Y.; et al. |
-| `2610.01265` | OK | RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference | (author-supplied) | Wenxun Wang<br>Likai Ma<br>Zongle Huang<br>(+2 more) | Wang, W.; Ma, L.; Huang, Z.; et al. |
+| `2610.01265` | OK | RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference | 2026-10-01 | Wenxun Wang<br>Likai Ma<br>Zongle Huang<br>(+2 more) | Wang, W.; Ma, L.; Huang, Z.; et al. |
 | `2610.01950` | OK | MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference | 2026-10-01 | Ke Yang<br>Yongji Gao<br>Xushi Li<br>(+16 more) | Yang, K.; Gao, Y.; Li, X.; et al. |
 
 ### Named architectures (14)
@@ -168,7 +168,7 @@ independently, over the same inputs.
 | `2405.04434` | OK | DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model | 2024-05-07 | DeepSeek-AI<br>Aixin Liu<br>Bei Feng<br>(+154 more) | DeepSeek-AI; Liu, A.; Feng, B.; et al. |
 | `2406.00023` | OK | Expert-Token Resonance MoE: Bidirectional Routing with Efficiency Affinity-Driven Active Selection | 2024-05-24 | Jing Li<br>Zhijie Sun<br>Dachao Lin<br>(+5 more) | Li, J.; Sun, Z.; Lin, D.; et al. |
 | `2406.13233` | OK | AdaMoE: Token-Adaptive Routing with Null Experts for Mixture-of-Experts Language Models | 2024-06-19 | Zihao Zeng<br>Yibo Miao<br>Hongcheng Gao<br>(+2 more) | Zeng, Z.; Miao, Y.; Gao, H.; et al. |
-| `2407.10671` | OK | Qwen2 Technical Report | (author-supplied) | An Yang<br>Baosong Yang<br>Binyuan Hui<br>(+59 more) | Yang, A.; Yang, B.; Hui, B.; et al. |
+| `2407.10671` | OK | Qwen2 Technical Report | 2024-07-15 | An Yang<br>Baosong Yang<br>Binyuan Hui<br>(+59 more) | Yang, A.; Yang, B.; Hui, B.; et al. |
 | `2409.02060` | OK | OLMoE: Open Mixture-of-Experts Language Models | 2024-09-03 | Niklas Muennighoff<br>Luca Soldaini<br>Dirk Groeneveld<br>(+21 more) | Muennighoff, N.; Soldaini, L.; Groeneveld, D.; et al. |
 | `2410.10456` | OK | Ada-K Routing: Boosting the Efficiency of MoE-based LLMs | 2024-10-14 | Tongtian Yue<br>Longteng Guo<br>Jie Cheng<br>(+2 more) | Yue, T.; Guo, L.; Cheng, J.; et al. |
 | `2412.10302` | OK | DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding | 2024-12-13 | Zhiyu Wu<br>Xiaokang Chen<br>Zizheng Pan<br>(+24 more) | Wu, Z.; Chen, X.; Pan, Z.; et al. |
@@ -208,7 +208,7 @@ independently, over the same inputs.
 | `2602.03204` | OK | Sparsity is Combinatorial Depth: Quantifying MoE Expressivity via Tropical Geometry | 2026-02-03 | Ye Su<br>Huayi Tang<br>Zixuan Gong<br>(+1 more) | Su, Y.; Tang, H.; Gong, Z.; et al. |
 | `2602.17798` | OK | Grassmannian Mixture-of-Experts: Concentration-Controlled Routing on Subspace Manifolds | 2026-02-19 | Ibne Farabi Shihab<br>Sanjeda Akter<br>Anuj Sharma | Shihab, I. F.; Akter, S.; Sharma, A. |
 | `2603.11114` | OK | Task-Conditioned Routing Signatures in Sparse Mixture-of-Experts Transformers | 2026-03-11 | Mynampati Sri Ranganadha Avinash | Avinash, M. S. R. |
-| `2605.11689` | OK | Slicing and Dicing: Configuring Optimal Mixtures of Experts | (author-supplied) | Margaret Li<br>Sneha Kudugunta<br>Danielle Rothermel<br>(+1 more) | Li, M.; Kudugunta, S.; Rothermel, D.; et al. |
+| `2605.11689` | OK | Slicing and Dicing: Configuring Optimal Mixtures of Experts | 2026-05-12 | Margaret Li<br>Sneha Kudugunta<br>Danielle Rothermel<br>(+1 more) | Li, M.; Kudugunta, S.; Rothermel, D.; et al. |
 | `2608.08650` | OK | The Evolution of Mixture-of-Experts Architectures in Large Language Models: Routing, Topology, Load Balancing, and Expert Parallelism | 2026-08-09 | Jiguo Li | Li, J. |
 
 ### Theory: occupancy, tails, order statistics (23)

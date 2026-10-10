@@ -172,7 +172,19 @@ def reference_lines(entries, order, num, authors):
             lines.append("**%s**" % ROLE_NAME.get(cur_role, cur_role))
             lines.append("")
         title = r["title"]
-        year = (r.get("published") or "")[:4]
+        # The year is a FIELD of the record, not the first four characters of whatever the
+        # record's `published` happens to hold. A curation placeholder (or any non-date) must
+        # never be sliced into a year: `(author-supplied)[:4]` prints `(aut`, which the entry
+        # format wraps to `((aut).` -- the editorial return of 2026-10-10. Refuse it here, at
+        # the seat that builds the printed entry, so the class cannot reach a reader.
+        pub = (r.get("published") or "").strip()
+        year = None
+        if pub:
+            m = re.match(r"^(\d{4})", pub)
+            if not m:
+                raise SystemExit("entry %s carries a non-date `published` field %r: the year "
+                                 "component would print %r" % (i, pub, pub[:4]))
+            year = m.group(1)
         comp = author_component(i, title, authors)
         loc = "arXiv:%s. https://arxiv.org/abs/%s" % (i, i)
         lines.append("[%d] %s%s. %s. %s - Difference from this work: %s."

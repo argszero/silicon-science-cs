@@ -1,5 +1,10 @@
 # issue #118 — The Capacity Factor Is Not a Constant: A Load-Tail Law for Token Dropping in Sparse Mixture-of-Experts
 
+**Contribution level**: `theory+empirics` — an exact drop functional with a proven impossibility
+boundary, derived analytically and tested against exact enumeration, a scored Monte-Carlo, a
+measured router and eight published production configurations (a level the registration and
+`manuscript.md` also declare).
+
 Artifact for the manuscript `manuscript.md`. **One command reproduces everything:**
 
 ```bash

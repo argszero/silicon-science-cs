@@ -215,7 +215,7 @@ def fig_inversion(res, path):
             c.text(int(ax.X(L10(r["mu"]))) + 8, int(ax.Y(L10(r["drop_at_folk"]))) - 6,
                    "E = %d" % r["E"], BLUE, SC)
     dashed_h(c, ax.Y(L10(1e-2)), ax.x0, ax.x1, GREY)
-    c.text(ax.x0 + 8, int(ax.Y(L10(1e-2))) - 14, "1E-2  = THE TOLERANCE THE CONSTANT IMPLIES AT MU = 128", GREY, SC)
+    c.text(ax.x0 + 8, int(ax.Y(L10(1e-2))) - 14, "1E-2  = THE TOLERANCE THE CONSTANT IMPLIES AT MU = 16", GREY, SC)
     lo = min(cells, key=lambda r: r["mu"])
     hi = max(cells, key=lambda r: r["mu"])
     c.text(int(ax.X(L10(lo["mu"]))) + 8, int(ax.Y(L10(lo["drop_at_folk"]))) - 14,
