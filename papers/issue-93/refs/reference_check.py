@@ -1,0 +1,542 @@
+#!/usr/bin/env python3
+"""#93 R428 -- the citation authenticity report, and the check that owns it.
+
+Why this file exists.  The journal requires every reference to be verified against a real external record before
+submission, and a fabricated citation is academic misconduct rather than a formatting slip.  A report written by
+hand is a CLAIM that the verification happened; this script is the verification, and it keeps the raw answers so the
+claim can be re-read later without re-querying the network.
+
+The join it makes is the first thing that went wrong.  The manuscript cites by LABEL (`[@wang2026]`) and the built
+records are keyed by IDENTIFIER (an arXiv id or a DOI), so the report is driven by the manuscript's citation order
+read through `cite_check` and the identifier is looked up in `refs_keys.json` -- the first draft drove it off
+`refs_built.json` and produced **0 rows** while printing a clean-looking summary, a report that verified nothing
+because it had joined on the wrong field.
+
+Two modes, and the split is deliberate:
+  --query   (network) ask Crossref for every DOI and the arXiv API for every arXiv key, then write
+            `reference-check.json` (the raw answers) and `reference-check.md` (its rendering, one block per entry,
+            in the manuscript's citation order).
+  (default) (offline) re-read the committed answers and check the report against them: one row per cited record,
+            every entry naming its method and the record found, none unverified or mismatched, the .md being the
+            rendering of the .json, and the numbering matching the manuscript.  A battery corrupts a copy per
+            check, because a check that never fires is decoration.
+
+Run:  python3 refs/reference_check.py --query           (network; from the package root)
+      python3 refs/reference_check.py [--selftest]      (offline; the mode reproduce.sh uses)
+"""
+import io
+import json
+import os
+import re
+import sys
+import unicodedata
+import urllib.parse
+import urllib.request
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)                 # the package root: ../ from refs/
+BUILT = os.path.join(HERE, "refs_built.json")
+KEYS = os.path.join(HERE, "refs_keys.json")
+MD = os.path.join(ROOT, "reference-check.md")
+JSON = os.path.join(ROOT, "reference-check.json")
+GATE = os.path.join(HERE, "refgate_output.txt")
+UA = "emrg-journal-refcheck/1.0 (silicon-science-cs submission)"
+THRESH = 0.80          # normalized title token overlap below this is a MISMATCH
+
+
+def load_keys():
+    """label -> record.  `refs_keys.json` is what the manuscript cites by; `refs_built.json` is keyed by
+    identifier.  Reading the wrong one produced an empty report, so only this one drives the query."""
+    return json.loads(io.open(KEYS, encoding="utf-8").read())["keys"]
+
+
+def norm(s):
+    s = unicodedata.normalize("NFKD", s or "").lower()
+    s = re.sub(r"[^a-z0-9 ]+", " ", s)
+    return " ".join(s.split())
+
+
+def overlap(a, b):
+    ta, tb = set(norm(a).split()), set(norm(b).split())
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / float(len(ta | tb))
+
+
+def get(url, tries=3):
+    """One request with a small backoff.  Returns (body, error)."""
+    import time
+    last = None
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=30) as fh:
+                return fh.read().decode("utf-8", "replace"), None
+        except Exception as exc:                                  # a flake is retried, then recorded
+            last = "%s: %s" % (type(exc).__name__, exc)
+            time.sleep(1.5 * (i + 1))
+    return None, last
+
+
+def ask_crossref(doi):
+    body, err = get("https://api.crossref.org/works/" + urllib.parse.quote(doi, safe=""))
+    if err:
+        return None, err
+    try:
+        msg = json.loads(body)["message"]
+    except Exception as exc:
+        return None, "unparseable Crossref answer: %r" % exc
+    year = None
+    for k in ("published-print", "published-online", "issued", "created"):
+        parts = (msg.get(k) or {}).get("date-parts") or []
+        if parts and parts[0] and parts[0][0]:
+            year = str(parts[0][0])
+            break
+    return {"found_title": (msg.get("title") or [""])[0], "found_year": year, "found_doi": msg.get("DOI"),
+            "container": (msg.get("container-title") or [""])[0], "type": msg.get("type")}, None
+
+
+ARX_ENTRY = re.compile(r"<entry>(.*?)</entry>", re.S)
+
+
+def ask_arxiv(pairs):
+    """(label, identifier) pairs; batched, because the API takes an id_list.  Answers come back keyed by LABEL."""
+    out, errors = {}, {}
+    for i in range(0, len(pairs), 50):
+        chunk = pairs[i:i + 50]
+        url = ("http://export.arxiv.org/api/query?id_list=%s&max_results=%d"
+               % (",".join(ident for _lab, ident in chunk), len(chunk) + 5))
+        body, err = get(url)
+        if err:
+            for lab, _ident in chunk:
+                errors[lab] = err
+            continue
+        seen = {}
+        for blob in ARX_ENTRY.findall(body):
+            mid = re.search(r"<id>\s*(\S+?)\s*</id>", blob)
+            mti = re.search(r"<title>(.*?)</title>", blob, re.S)
+            mpu = re.search(r"<published>\s*(\d{4})", blob)
+            if not mid:
+                continue
+            base = re.sub(r"v\d+$", "", mid.group(1).rsplit("/", 1)[-1])
+            seen[base] = {"found_title": re.sub(r"\s+", " ", mti.group(1)).strip() if mti else "",
+                          "found_year": mpu.group(1) if mpu else None, "found_arxiv": base}
+        for lab, ident in chunk:
+            if ident in seen:
+                out[lab] = seen[ident]
+            else:
+                errors[lab] = "the arXiv API returned no record for %s" % ident
+    return out, errors
+
+
+def citation_order(keys):
+    """The manuscript's [n] order (labels), read through the manuscript's own checker: one owner per count."""
+    for cand in (ROOT, os.path.join(ROOT, "manuscript")):
+        if os.path.exists(os.path.join(cand, "cite_check.py")):
+            if cand not in sys.path:
+                sys.path.insert(0, cand)
+            import cite_check
+            texts = [(os.path.basename(p), io.open(p, encoding="utf-8").read()) for p in cite_check.PARTS]
+            # The carrier decides the form: the parts cite `[@key]`, the product cites the number the bibliography
+            # prints, and the index is what lets the second be read as the first.  Read without it, this returned
+            # an EMPTY order on the product and C6 failed against the report's own 120 rows (R481).
+            index, _un = cite_check.num_index(texts, keys)
+            order, _occ = cite_check.scan(texts, index)
+            return [k for k in order if k in keys]
+    return sorted(keys)
+
+
+def query():
+    recs = load_keys()
+    order = citation_order(recs)
+    if not order:
+        print("REFUSING -- the manuscript cites none of the %d record(s); the join is wrong" % len(recs))
+        return 2
+    arx = [(k, recs[k]["identifier"]) for k in order if recs[k]["source"] == "arxiv"]
+    doi = [k for k in order if recs[k]["source"] == "crossref"]
+    print("querying %d DOI(s) at Crossref and %d arXiv key(s) in %d batch(es)"
+          % (len(doi), len(arx), (len(arx) + 49) // 50))
+    answers, errs = {}, {}
+    for k in doi:
+        got, err = ask_crossref(recs[k]["identifier"])
+        if err:
+            errs[k] = err
+        else:
+            answers[k] = dict(got, method="Crossref /works/<doi>")
+    got, er = ask_arxiv(arx)
+    for k, v in got.items():
+        answers[k] = dict(v, method="arXiv API id_list")
+    for k, v in er.items():
+        if k not in answers:
+            errs[k] = v
+    rows = []
+    for k in order:
+        e = recs[k]
+        a = answers.get(k)
+        if not a:
+            rows.append(dict(key=k, identifier=e["identifier"], title=e["title"], source=e["source"],
+                             verdict="UNVERIFIED",
+                             method="no query returned a record (%s)" % errs.get(k, "not queried"),
+                             found="", similarity=None, detail=""))
+            continue
+        sim = overlap(e["title"], a.get("found_title", ""))
+        verdict = "VERIFIED" if sim >= 0.999 else ("VERIFIED (title differs in form)" if sim >= THRESH
+                                                   else "MISMATCH")
+        extra = ["query: %s" % e["identifier"]]
+        if a.get("found_doi"):
+            extra.append("DOI %s" % a["found_doi"])
+        if a.get("found_arxiv"):
+            extra.append("arXiv %s" % a["found_arxiv"])
+        if a.get("container"):
+            extra.append(a["container"])
+        if a.get("found_year"):
+            extra.append("year %s (manuscript: %s)" % (a["found_year"], e.get("year")))
+        rows.append(dict(key=k, identifier=e["identifier"], title=e["title"], source=e["source"],
+                         verdict=verdict, method=a["method"], found=a.get("found_title", ""),
+                         similarity=round(sim, 3), detail="; ".join(extra)))
+    obj = dict(study="issue #93", threshold=THRESH, rows=rows,
+               n_verified=sum(1 for r in rows if r["verdict"].startswith("VERIFIED")),
+               n_mismatch=sum(1 for r in rows if r["verdict"] == "MISMATCH"),
+               n_unverified=sum(1 for r in rows if r["verdict"] == "UNVERIFIED"))
+    io.open(JSON, "w", encoding="utf-8").write(json.dumps(obj, indent=1, ensure_ascii=False) + "\n")
+    io.open(MD, "w", encoding="utf-8").write(render(obj))
+    print("verified %d, mismatch %d, unverified %d of %d"
+          % (obj["n_verified"], obj["n_mismatch"], obj["n_unverified"], len(rows)))
+    return 0 if obj["n_mismatch"] == 0 and obj["n_unverified"] == 0 else 1
+
+
+def gate_file():
+    """The journal's own reference gate (`refgate.py`), run from the repository root over this package, kept as the
+    output it printed -- verbatim, at the head it was run on.  It is quoted because it cannot be re-run here (the
+    tool lives in the journal, not in the package), and a quote of an instrument is a claim about the package like
+    any other: the count, the coverage and the verdict line are re-read by `checks()` rather than trusted."""
+    return io.open(GATE, encoding="utf-8").read() if os.path.exists(GATE) else ""
+
+
+def gate_reading(text):
+    """The claims the quoted output makes, read out of it."""
+    ent = re.search(r"entries=(\d+)", text)
+    cov = re.search(r"coverage=([0-9.]+)%", text)
+    amb = re.search(r"AMBIGUOUS: bracket numbers matching no entry \((\d+)\)([^\n]*)", text)
+    af = re.search(r"(\d+)\s+print the family name ALL-CAPS,\s+(\d+)\s+carry a character reference", text)
+    lines = [l.strip() for l in text.strip().split("\n") if l.strip()]
+    return dict(entries=int(ent.group(1)) if ent else None,
+                coverage=float(cov.group(1)) if cov else None,
+                ambiguous=re.findall(r"\[(\d+)\]", amb.group(2)) if amb else [],
+                allcaps=int(af.group(1)) if af else None,
+                charref=int(af.group(2)) if af else None,
+                verdict=lines[-1] if lines else "")
+
+
+def author_form_phrase(g):
+    """The gate's own author-form numbers as one phrase, so the report's explanation is READ FROM the quote
+    rather than typed beside it -- a paragraph saying `0 carry a character reference` on its own would agree
+    with the gate only by luck, and would go on agreeing after the gate stopped saying it."""
+    if g.get("allcaps") is None or g.get("charref") is None:
+        return None
+    return "%d print the family name ALL-CAPS, %d carry a character reference" % (g["allcaps"], g["charref"])
+
+
+def live_citation_counts():
+    """The counts `cite_check.py` reads off the product, so this report states the numbers the run produces.
+
+    They were TYPED INTO the renderer until R575: the sentence below read `citations 210 | distinct keys 120 of 120`
+    while the package had moved on, and C8 (which compares the `.md` to its rendering) could not see it -- the
+    rendering carried the same stale literal, so the two agreed on a false number.  A count read from its source
+    cannot drift from it.
+    """
+    keys = load_keys()
+    for cand in (ROOT, os.path.join(ROOT, "manuscript")):
+        if os.path.exists(os.path.join(cand, "cite_check.py")):
+            if cand not in sys.path:
+                sys.path.insert(0, cand)
+            import cite_check
+            texts = [(os.path.basename(p), io.open(p, encoding="utf-8").read()) for p in cite_check.PARTS]
+            index, _un = cite_check.num_index(texts, keys)
+            order, occ = cite_check.scan(texts, index)
+            return dict(citations=len(occ), used=len([k for k in order if k in keys]), built=len(keys),
+                        uncited=len([k for k in keys if k not in set(order)]))
+    return None
+
+
+def render(obj, gate=None):
+    if gate is None:
+        gate = gate_file()
+    L = ["# Reference authenticity report -- issue #93", "",
+         "Every reference in `manuscript.md` was checked against a real external record: a DOI through Crossref, an",
+         "arXiv key through the arXiv API. The method, the record found and the title agreement are recorded per",
+         "entry, in the manuscript's citation order (the `[n]` the bibliography renders in). The network half is",
+         "regenerated with `python3 refs/reference_check.py --query`; `reproduce.sh` re-reads the committed answers",
+         "offline and refuses a report that has drifted from them.", "",
+         "| | |", "|---|---|",
+         "| entries checked | %d |" % len(obj["rows"]),
+         "| verified | %d |" % obj["n_verified"],
+         "| mismatch | %d |" % obj["n_mismatch"],
+         "| unverified | %d |" % obj["n_unverified"],
+         "| title-agreement threshold | %.2f (normalized token overlap; below it an entry is a MISMATCH) |"
+         % obj["threshold"], "",
+         "## Method", "",
+         "* **Has a DOI ->** `https://api.crossref.org/works/<doi>`; the returned title must agree with the",
+         "  manuscript's entry (normalized token overlap >= %.2f). The DOI and container returned are printed, so a"
+         % obj["threshold"],
+         "  reader can see what was matched; a year difference is printed rather than failed, because an arXiv",
+         "  preprint and its published version legitimately carry different years.",
+         "* **No DOI ->** `http://export.arxiv.org/api/query?id_list=<id>,...`; the returned title must agree and",
+         "  the arXiv id is printed.", "",
+         "## Entries", ""]
+    for i, r in enumerate(obj["rows"], 1):
+        L.append("**[%d] %s** (%s) -- %s" % (i, r["key"], r["source"], r["verdict"]))
+        L.append("")
+        L.append("> manuscript: *%s*" % r["title"])
+        L.append(">")
+        L.append("> %s -> found *%s*%s" % (r["method"], r["found"],
+                                           "" if r["similarity"] is None else
+                                           "  (title overlap %.2f)" % r["similarity"]))
+        if r.get("detail"):
+            L.append(">")
+            L.append("> %s" % r["detail"])
+        L.append("")
+    g = gate_reading(gate)
+    c = live_citation_counts()
+    L.append("## In-text keys, coverage and ambiguity")
+    L.append("")
+    L.append("Every entry carries an in-text key matching the bibliography: the body cites `[n]` and the list is")
+    L.append("numbered `[n]`, so the key in the text IS the key the list prints (quality-bar item 11,")
+    if c:
+        # READ, not stated.  These numbers were typed into this renderer until R575 and had drifted to
+        # `citations 210 | distinct keys 120 of 120` while the package carried 212 of 121 -- and C8, which holds
+        # the .md equal to its rendering, could not see it, because the rendering carried the same literal.
+        L.append("*Citation mechanics*) -- `python3 cite_check.py` reads `citations %d | distinct keys %d of %d`"
+                 % (c["citations"], c["used"], c["built"]))
+        L.append("and `uncited records %d of %d`, and it resolves each `[n]` through this package's own numbered"
+                 % (c["uncited"], c["built"]))
+        L.append("list rather than through the parts, which cite by key.")
+    else:
+        L.append("*Citation mechanics*) -- `python3 cite_check.py` reads the citation counts off the product and")
+        L.append("resolves each `[n]` through this package's own numbered list rather than through the parts.")
+    L.append("")
+    if g["ambiguous"]:
+        L.append("Bracketed groups in the prose that are NOT citations: the gate reports %d bracket number(s)"
+                 % len(g["ambiguous"]))
+        L.append("matching no entry -- %s. These are the model's interval `[0, 1]` (§1.3 and §5.3), where the ratio's"
+                 % ", ".join("`[%s]`" % b for b in g["ambiguous"]))
+        L.append("predicted crossing is said to lie outside it: a numeric range in prose, written in inline code,")
+        L.append("not a citation. Its second element is entry [1] and no entry is left uncited by the reading.")
+    else:
+        L.append("Bracketed groups in the prose that are NOT citations: none -- the gate reports no bracket number")
+        L.append("matching no entry.")
+    L.append("")
+    L.append("## Journal reference gate (`refgate.py`, run from the repository root)")
+    L.append("")
+    L.append("```text")
+    L.extend(gate.rstrip("\n").split("\n"))
+    L.append("```")
+    L.append("")
+    afp = author_form_phrase(g)
+    L.append("### The gate's `author form:` read, resolved")
+    L.append("")
+    L.append("The `author form:` line above is the one reading this report had left unexplained. It was a")
+    L.append("returned completeness item (editorial return 2026-10-08, PR #113, head `002f06d`), which read")
+    L.append("`1 carry a character reference` and found nothing here saying what that is. What the line reads is")
+    L.append("the form each entry **prints** -- a family name, a comma, an initial, or a lone family name before")
+    L.append("the year -- not the field the record stores, and it counts the two ways a printed entry can fail to")
+    L.append("be a name: a family name in ALL-CAPS, and a **character reference**, an HTML character entity")
+    L.append("(`&amp;`, `&#38;`, `&#x26;`) surviving into the page as the literal escape instead of the character")
+    L.append("it names.")
+    L.append("")
+    if afp:
+        L.append("Its read of this package is `%s` -- the count is the gate's own, read out of the quote" % afp)
+        L.append("above (`C13`), so this paragraph cannot go on agreeing with an earlier run.")
+    else:
+        L.append("This package's quoted gate carries no author-form reading; re-run `refgate.py` to refresh it.")
+    L.append("")
+    L.append("The instance was entry `[121]`: `The Ethics of Algorithms: Mapping the Debate` printed its container")
+    L.append("as `Big Data &amp; Society`, the escaped form of the Crossref field, verbatim. The fix belongs at the")
+    L.append("seat that **builds** the entry and not in the page it prints on: `refs/refs_build_v93.py`")
+    L.append("(`record_text`) now decodes the printed form while the stored record keeps the publisher's answer,")
+    L.append("so the entry prints `Big Data & Society` and the gate's count is 0. The bar owns it as well -- the")
+    L.append("submission checker's reference-entry-field item rejects an entry printing an undecoded character")
+    L.append("reference -- so a recurrence is caught by the package, not by a reader.")
+    L.append("")
+    L.append("## Verdict")
+    L.append("")
+    L.append("**%d of %d references verified against a real external record; %d mismatch; %d unverified.**"
+             % (obj["n_verified"], len(obj["rows"]), obj["n_mismatch"], obj["n_unverified"]))
+    L.append("")
+    L.append("No entry is retained on the strength of its own text: each is either matched to a record fetched from")
+    L.append("Crossref or arXiv, or it is reported as unverified and removed before submission.")
+    return "\n".join(L) + "\n"
+
+
+def checks(obj, recs, md_text, order, built_count, gate=None):
+    """Every property the report claims, read back.  Returns (rows, failures)."""
+    if gate is None:
+        gate = gate_file()
+    rows, bad = [], []
+    by = {r["key"]: r for r in obj["rows"]}
+    keys = list(recs)
+
+    def add(name, ok, detail=""):
+        rows.append((name, "PASS" if ok else "FAIL", detail))
+        if not ok:
+            bad.append("%s: %s" % (name, detail))
+
+    add("C1-one-row-per-cited-record", len(obj["rows"]) == len(keys) == len(by),
+        "%d rows, %d records, %d unique" % (len(obj["rows"]), len(keys), len(by)))
+    add("C2-no-record-missing", set(by) == set(keys),
+        "missing %s / extra %s" % (sorted(set(keys) - set(by))[:4], sorted(set(by) - set(keys))[:4]))
+    # The counts and the rows are two carriers of one property, and the verdict has to be taken from the object the
+    # claim is about: a report whose rows say MISMATCH while its summary says 0 is exactly the defect this family of
+    # checks exists for (Class 112 -- a counter other than the one the verdict is read from).
+    r_mis = sum(1 for r in obj["rows"] if r["verdict"] == "MISMATCH")
+    r_unv = sum(1 for r in obj["rows"] if r["verdict"] == "UNVERIFIED")
+    add("C3-no-mismatch-and-no-unverified",
+        obj["n_unverified"] == 0 and obj["n_mismatch"] == 0 and r_mis == 0 and r_unv == 0,
+        "stated %d/%d, rows %d/%d" % (obj["n_mismatch"], obj["n_unverified"], r_mis, r_unv))
+    add("C4-every-entry-names-method-and-record", all(r["method"] and r["found"] for r in obj["rows"]),
+        "%d entry(ies), each with method + found title" % len(obj["rows"]))
+    add("C5-threshold-is-the-one-the-report-states", obj["threshold"] == THRESH, "%.2f" % obj["threshold"])
+    rk = [r["key"] for r in obj["rows"]]
+    div = next((("row %d: report %s vs manuscript %s" % (i, a, b))
+                for i, (a, b) in enumerate(zip(rk, order), 1) if a != b), None)
+    add("C6-manuscript-order", rk == order, div or "identical")
+    add("C7-counts-in-the-rendered-verdict",
+        ("**%d of %d references verified" % (obj["n_verified"], len(obj["rows"]))) in md_text,
+        "the rendering's verdict line reads %d of %d" % (obj["n_verified"], len(obj["rows"])))
+    add("C8-md-is-the-rendering-of-json", md_text.rstrip("\n") == render(obj).rstrip("\n"),
+        "the .md on disk is byte-equal to the rendering of the .json (%d bytes)" % len(md_text))
+    add("C9-every-entry-rendered", all(("**[%d] %s**" % (i, r["key"])) in md_text
+                                       for i, r in enumerate(obj["rows"], 1)),
+        "%d entry(ies) numbered and present in the rendering" % len(obj["rows"]))
+    add("C10-the-queried-identifier-is-the-one-in-the-record",
+        all(r["identifier"] and ("query: %s" % r["identifier"]) in (r["detail"] or "")
+            for r in obj["rows"] if r["verdict"].startswith("VERIFIED")),
+        "every verified row names the identifier it was queried with")
+    def implied(r):
+        if r["similarity"] is None:
+            return "UNVERIFIED"
+        if r["similarity"] >= 0.999:
+            return "VERIFIED"
+        return "VERIFIED (title differs in form)" if r["similarity"] >= obj["threshold"] else "MISMATCH"
+    wrong = [r["key"] for r in obj["rows"] if implied(r) != r["verdict"]]
+    add("C12-verdict-follows-the-stated-similarity", not wrong, "row(s) whose verdict contradicts their overlap: "
+        "%s" % (wrong[:4] or "none"))
+    add("C11-volume-bar-and-its-two-carriers", len(obj["rows"]) >= 100 and built_count == len(obj["rows"]),
+        "%d reference(s) (bar 100); refs_built.json holds %d" % (len(obj["rows"]), built_count))
+    # The journal's own gate, quoted in this report.  A quote of an instrument's output is a claim about the
+    # package, so its count, its coverage and its verdict are read here and required to agree with this report's
+    # own numbers -- and the brackets it flags are required to be the brackets the ambiguity paragraph explains,
+    # because a generic "some brackets are ranges" would leave the one the gate named unread (Class 118).
+    g = gate_reading(gate)
+    afp = author_form_phrase(g)
+    # `author form:` is a line OF THE QUOTE, so a report that quotes the gate and leaves that line unexplained
+    # is a report with an unread claim on its face -- exactly what the 2026-10-08 return named.  The report must
+    # carry the gate's OWN numbers for it; a paragraph with the numbers typed in would pass here while the gate
+    # said something else, which is why the phrase is built from the parsed quote and compared to the text.
+    add("C13-the-quoted-journal-gate-re-read",
+        bool(gate) and g["entries"] == len(obj["rows"]) and g["coverage"] == 100.0 and g["verdict"] == "GATE: PASS"
+        and afp is not None and afp in md_text,
+        "quoted gate: entries=%s coverage=%s%% verdict=%r; its `author form:` read resolved in the report: %s; "
+        "against this report's %d entries"
+        % (g["entries"], g["coverage"], g["verdict"], bool(afp and afp in (md_text or "")), len(obj["rows"])))
+    body = md_text.split("## Journal reference gate")[0]
+    unexplained = [b for b in g["ambiguous"] if ("`[%s]`" % b) not in body]
+    add("C14-every-bracket-the-gate-flags-is-explained", bool(gate) and not unexplained,
+        "bracket number(s) the gate flagged and the report does not name: %s" % (unexplained or "none"))
+    return rows, bad
+
+
+def main():
+    recs = load_keys()
+    if "--query" in sys.argv:
+        return query()
+    if not os.path.exists(JSON):
+        print("NOT RUN -- no %s; run with --query first (network)" % os.path.basename(JSON))
+        return 2
+    obj = json.loads(io.open(JSON, encoding="utf-8").read())
+    md_text = io.open(MD, encoding="utf-8").read() if os.path.exists(MD) else ""
+    order = citation_order(recs)
+    built_count = len(json.loads(io.open(BUILT, encoding="utf-8").read())["entries"])
+    rows, bad = checks(obj, recs, md_text, order, built_count)
+    for name, verdict, detail in rows:
+        print("  %-52s %-4s %s" % (name, verdict, detail))
+    print("\nREFERENCE CHECK: %s -- %d check(s), %d failed"
+          % ("PASS" if not bad else "FAIL", len(rows), len(bad)))
+    rc = 0 if not bad else 1
+    if "--selftest" in sys.argv:
+        import copy
+        cases = [
+            ("a row that says MISMATCH while the summary says 0 is caught",
+             lambda o: o["rows"][0].update(verdict="MISMATCH", similarity=0.02), "C3-no-mismatch"),
+            ("a row whose verdict contradicts its own overlap is caught",
+             lambda o: o["rows"][0].update(verdict="MISMATCH"), "C12-verdict-follows"),
+            ("an entry with no record found fails",
+             lambda o: o["rows"][1].update(found="", verdict="UNVERIFIED"), "C4-every-entry-names"),
+            ("a dropped entry is caught",
+             lambda o: o["rows"].pop(2), "C1-one-row-per-cited-record"),
+            ("a reordered report is caught",
+             lambda o: (o["rows"].insert(0, o["rows"].pop(3)), None)[1], "C6-manuscript-order"),
+            ("an entry the rendering does not carry is caught",
+             lambda o: o["rows"][4].update(key="not_in_the_rendering_9999"), "C9-every-entry-rendered",
+             "keep_md"),
+            ("a verified row that hides its query identifier is caught",
+             lambda o: o["rows"][0].update(detail="DOI 10.x/fake"), "C10-the-queried-identifier"),
+            ("a stale .md fails the rendering test",
+             lambda o: None, "C8-md-is-the-rendering-of-json"),
+            ("a table entry renamed away from the built count is caught",
+             lambda o: None, "C11-volume-bar"),
+            ("a quoted gate whose count disagrees with the report is caught",
+             lambda o: None, "C13-the-quoted-journal-gate", "gate_entries"),
+            ("a gate whose author-form read the report does not carry is caught",
+             lambda o: None, "C13-the-quoted-journal-gate", "gate_authorform"),
+            ("a bracket the gate flags and the report does not name is caught",
+             lambda o: None, "C14-every-bracket-the-gate-flags", "gate_bracket"),
+        ]
+        fired = 0
+        for case in cases:
+            name, mutate, expect = case[0], case[1], case[2]
+            mode = case[3] if len(case) > 3 else ""
+            o = copy.deepcopy(obj)
+            mutate(o)
+            g = gate_file()
+            if expect.startswith("C8"):
+                md2 = md_text.replace("## Verdict", "## Verdict (stale)")
+            elif mode == "gate_entries":
+                # The plant is in the QUOTED OUTPUT's own alphabet: the gate is made to claim one entry fewer than
+                # the report it is quoted beside, and the report is re-rendered from the mutated quote so that
+                # item C13 -- not the .md's staleness -- is what fires.
+                g = g.replace("entries=%d" % len(obj["rows"]), "entries=%d" % (len(obj["rows"]) - 1))
+                md2 = render(o, g)
+            elif mode == "gate_authorform":
+                # The plant is in the QUOTED OUTPUT's own alphabet: the gate is made to print a character
+                # reference and the rendering stays the one made from the UNMUTATED quote -- re-rendering from
+                # the plant would write its own explanation and satisfy itself (the Class 118 family, as in
+                # `gate_bracket`).  The substitution is regex-based so it changes the numbers whatever they are.
+                g = re.sub(r"(\d+)( print the family name ALL-CAPS, )(\d+)( carry a character reference)",
+                           lambda m: "%d%s%d%s" % (int(m.group(1)) + 1, m.group(2),
+                                                   int(m.group(3)) + 1, m.group(4)), g)
+                md2 = md_text
+            elif mode == "gate_bracket":
+                # The rendering stays the one made from the UNMUTATED quote: a plant re-rendered from its own
+                # mutation would write its own explanation and satisfy itself (the Class 118 family).
+                g = g.replace("matching no entry (1) [", "matching no entry (2) [7] [")
+                md2 = md_text
+            elif mode == "keep_md":
+                # The rendering must be the one from BEFORE the mutation: re-rendering the mutated object would
+                # let the plant satisfy itself -- the plant's whole point is a .json the .md does not carry.
+                md2 = md_text
+            else:
+                md2 = render(o, g)
+            bc = built_count - 1 if expect.startswith("C11") else built_count
+            _r, b2 = checks(o, recs, md2, order, bc, g)
+            hit = any(x.startswith(expect) for x in b2)
+            print("  %-58s %s" % (name[:58], "caught" if hit else "MISSED"))
+            fired += 1 if hit else 0
+            if not hit:
+                rc = 1
+        print("BATTERY: %d of %d case(s) fired" % (fired, len(cases)))
+    return rc
+
+
+if __name__ == "__main__":
+    sys.exit(main())

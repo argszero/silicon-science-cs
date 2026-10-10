@@ -1,0 +1,104 @@
+{
+ "all_fired": true,
+ "cases": [
+  {
+   "check": "fatigue_state_space",
+   "error": "RuntimeError: the fatigue arm's state space does not sum to 1: 1.0009999999999999",
+   "fired": true,
+   "kind": "direct",
+   "object": "the fatigue arm's state space must sum to 1",
+   "returncode": 1
+  },
+  {
+   "check": "continuity_with_v0",
+   "error": "RuntimeError: v1 does not reduce to v0 at b = 1: 1.580e-01",
+   "fired": true,
+   "kind": "direct",
+   "object": "v1 must reduce to v0 at b = 1",
+   "returncode": 1
+  },
+  {
+   "check": "affineness_curvature",
+   "error": "RuntimeError: the value is NOT affine in coverage: 81 cells show curvature, e.g. [{'variant': 'none', 'b': 0.0, 'eta': 0.0, 'v': [0.16612500000000002, 0.1335, 0.10212500000000002], 'second_difference': 0.0012500000000000289, 'relative': 0.0012500000000000289}, {'variant': 'none', 'b': 0.0, 'eta': 0.5, 'v': [0.16612500000000002, 0.1335, 0.10212500000000002], 'second_difference': 0.0012500000000000289, 'relative': 0.0012500000000000289}, {'variant': 'none', 'b': 0.0, 'eta': 1.0, 'v': [0.16612500000000002, 0.1335, 0.10212500000000002], 'second_difference': 0.0012500000000000289, 'relative': 0.0012500000000000289}]",
+   "fired": true,
+   "kind": "direct (the read value is given curvature -- the detector's own object)",
+   "object": "the value must be affine in coverage",
+   "returncode": 1
+  },
+  {
+   "check": "slope_law",
+   "error": "RuntimeError: the closed-form slope does not match the enumeration: 1.600e-04",
+   "fired": true,
+   "kind": "CARVED (a wrong slope coefficient also makes the value non-affine)",
+   "object": "the closed-form slope must match the enumeration",
+   "returncode": 1
+  },
+  {
+   "check": "sign_law_bstar",
+   "error": "RuntimeError: the closed-form b* does not match the bisected zero: 4.175e-02",
+   "fired": true,
+   "kind": "direct",
+   "object": "the closed-form b* must match the bisected zero",
+   "returncode": 1
+  },
+  {
+   "check": "channel_asymmetry",
+   "error": "RuntimeError: the two channels are not asymmetric as registered: {'mismatch_v_at_s0': [0.0, 0.0, 0.0], 'substitution_v_at_s0': [0.0, -0.2, -0.4], 'bstar_gap': [(0.0, -0.4534177215189873), (0.5, 0.1726881720430108), (1.0, 0.27594989561586647)], 'mismatch_adds_nothing_at_zero_coverage': True, 'laundering_law': [{'eta': 0.0, 'measured': 0.0, 'predicted': -0.0, 'abs_diff': 0.0}, {'eta': 0.5, 'measured': -0.2, 'predicted': -0.2, 'abs_diff': 0.0}, {'eta': 1.0, 'measured': -0.4, 'predicted': -0.4, 'abs_diff': 0.0}], 'laundering_law_holds': True, 'substitution_adds_harm_at_zero_coverage': True, 'substitution_holds_higher_bar': False}",
+   "fired": true,
+   "kind": "CARVED (a moved b* is caught by the b* law first)",
+   "object": "the laundering term must hold the higher bar",
+   "returncode": 1
+  },
+  {
+   "check": "b_independent_variant_skipped",
+   "error": "RuntimeError: expected the b-independent variant to be skipped at every eta, got 0",
+   "fired": true,
+   "kind": "CARVED (with the guard off this variant is bisected and the b* law fires first)",
+   "object": "the b-independent variant must not get a b*",
+   "returncode": 1
+  },
+  {
+   "check": "mc_coverage",
+   "error": "RuntimeError: the Monte Carlo route missed its interval in 12 cells",
+   "fired": true,
+   "kind": "direct",
+   "object": "the drawn interval must cover the enumeration at b < 1",
+   "returncode": 1
+  },
+  {
+   "check": "mc_bias",
+   "error": "RuntimeError: the Monte Carlo estimate is biased at b < 1: 5.000e-01 +- 1.553e-04",
+   "fired": true,
+   "kind": "direct (the estimate moves while its interval does not)",
+   "object": "the drawn estimate must be unbiased at b < 1",
+   "returncode": 1
+  },
+  {
+   "check": "fatigue_floor_separation",
+   "error": "RuntimeError: the fatigue arm does not separate corner from interior across the floor: {'kappa0_all_corner': True, 'kappa1_interior_above_floor': False, 'worst_grid_vs_closed': 0.9870192307692307, 'grid_step': 0.005, 'b_floor_closed': 0.12658227848101264, 'below_floor_all_corner': True, 'above_floor_all_interior': False, 'n_below': 3, 'n_above': 7, 'sign_law_bstar_eta0': 0.12658227848101264, 'floor_matches_sign_law': True}",
+   "fired": true,
+   "kind": "direct (the coupling is removed while kappa stays 1)",
+   "object": "the floor must separate corner from interior",
+   "returncode": 1
+  },
+  {
+   "check": "floor_is_straddled",
+   "error": "RuntimeError: the floor is not straddled: 0 below, 3 above",
+   "fired": true,
+   "kind": "direct",
+   "object": "the floor must be read on both sides",
+   "returncode": 1
+  },
+  {
+   "check": "fatigue_sstar_closed_form",
+   "error": "RuntimeError: the closed-form s* does not match the grid argmax: 0.0521",
+   "fired": true,
+   "kind": "direct",
+   "object": "the closed-form vertex must match the grid argmax",
+   "returncode": 1
+  }
+ ],
+ "cases_run": 12,
+ "missed": [],
+ "raise_sites_in_model": 12
+}

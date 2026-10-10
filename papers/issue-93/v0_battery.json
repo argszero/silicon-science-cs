@@ -1,0 +1,168 @@
+{
+ "all_fired": true,
+ "cases": [
+  {
+   "check": "state_space_sums_to_1",
+   "error": "RuntimeError: the state space does not sum to 1: 0",
+   "fired": true,
+   "kind": "direct",
+   "object": "the state space must sum to 1",
+   "returncode": 1
+  },
+  {
+   "check": "closure_A_vs_B",
+   "error": "RuntimeError: routes A and B disagree beyond floating point: 1.000e-04",
+   "fired": true,
+   "kind": "direct",
+   "object": "routes A and B must agree to floating point",
+   "returncode": 1
+  },
+  {
+   "check": "closure_coverage_alarm",
+   "error": "RuntimeError: the Monte Carlo route missed its interval in 19 of 28 cells",
+   "fired": true,
+   "kind": "direct",
+   "object": "the drawn interval must cover the exact value",
+   "returncode": 1
+  },
+  {
+   "check": "closure_bias_alarm",
+   "error": "RuntimeError: the Monte Carlo estimator is biased: 1.075e-02 +- 2.166e-04",
+   "fired": true,
+   "kind": "CARVED (both expressions move together, so the coverage alarm goes first)",
+   "object": "the estimator must be unbiased",
+   "returncode": 1
+  },
+  {
+   "check": "interval_centre_matches_estimate",
+   "error": "RuntimeError: the reported estimate and the interval's centre are one quantity written twice and they disagree: 80057.977999999988 vs 0.19994500000000001",
+   "fired": true,
+   "kind": "direct (the battery is what found this pair untied)",
+   "object": "the reported estimate and the interval's centre are one quantity",
+   "returncode": 1
+  },
+  {
+   "check": "frequency_agreement",
+   "error": "RuntimeError: the drawn frequencies are outside Monte Carlo error of the enumeration",
+   "fired": true,
+   "kind": "direct",
+   "object": "the drawn event frequencies must match the enumeration's",
+   "returncode": 1
+  },
+  {
+   "check": "C1_no_gate_baseline",
+   "error": "RuntimeError: s=0 is not the no-gate baseline: 0.22000000000000003 vs 0.20000000000000001",
+   "fired": true,
+   "kind": "CARVED (the same defect breaks the closure and the frequency read first)",
+   "object": "s=0 must be the no-gate baseline",
+   "returncode": 1
+  },
+  {
+   "check": "C1_interval_arm",
+   "error": "RuntimeError: the no-gate baseline left the drawn interval",
+   "fired": true,
+   "kind": "CARVED (the closure's coverage alarm goes first)",
+   "object": "the drawn baseline must sit inside its own interval",
+   "returncode": 1
+  },
+  {
+   "check": "C2_useless_reviewer",
+   "error": "RuntimeError: a=0,f=0,s=1 is not pi*L + c: 0.24000000000000002 vs 0.22",
+   "fired": true,
+   "kind": "CARVED (the same defect breaks the closure first)",
+   "object": "a=0,f=0,s=1 must be pi*L + c",
+   "returncode": 1
+  },
+  {
+   "check": "C3_determinism",
+   "error": "RuntimeError: two draws at the same seed differ: 0.13104880000000002 vs 0.12979940000000001",
+   "fired": true,
+   "kind": "CARVED-by-construction (the second draw's own seed is the object)",
+   "object": "two draws at one seed must agree bitwise",
+   "returncode": 1
+  },
+  {
+   "check": "C4a_inert_at_b1",
+   "error": "RuntimeError: the adversary machinery is not inert at b=1",
+   "fired": true,
+   "kind": "direct",
+   "object": "the adversary machinery must be inert at b=1",
+   "returncode": 1
+  },
+  {
+   "check": "C4b_mismatch_gap",
+   "error": "RuntimeError: the mismatch arm does not fire with the predicted gap",
+   "fired": true,
+   "kind": "direct",
+   "object": "the mismatch arm must fire with the predicted gap",
+   "returncode": 1
+  },
+  {
+   "check": "C4c_eta_owner",
+   "error": "RuntimeError: the substitution arm does not follow L*(pi + (1-pi)*eta): 8.000e-01",
+   "fired": true,
+   "kind": "direct",
+   "object": "the substitution arm must follow L*(pi + (1-pi)*eta)",
+   "returncode": 1
+  },
+  {
+   "check": "C4c_interval_arm",
+   "error": "RuntimeError: the drawn substitution arm missed its interval in 2 of 3 eta cells",
+   "fired": true,
+   "kind": "CARVED (the closure's and C1's coverage alarms have precedence)",
+   "object": "the drawn substitution arm must sit inside its interval",
+   "returncode": 1
+  },
+  {
+   "check": "C5_guard_enumerate_carrier",
+   "error": "RuntimeError: the b<1 guard did not fire on enumerate",
+   "fired": true,
+   "kind": "direct (carrier 1 of 2)",
+   "object": "the enumeration's guard must refuse a b<1 read",
+   "returncode": 1
+  },
+  {
+   "check": "C5_guard_simulate_carrier",
+   "error": "RuntimeError: the b<1 guard did not fire on simulate",
+   "fired": true,
+   "kind": "direct (carrier 2 of 2)",
+   "object": "the drawing route's guard must refuse a b<1 read",
+   "returncode": 1
+  },
+  {
+   "check": "C6_coverage_alarm",
+   "error": "RuntimeError: the Monte Carlo missed its interval in 20 of 20 independent streams",
+   "fired": true,
+   "kind": "direct",
+   "object": "the coverage alarm must fire when coverage is bad",
+   "returncode": 1
+  },
+  {
+   "check": "affine_in_s",
+   "error": "RuntimeError: the screening case's value is not affine in s: spread 3.750e-03",
+   "fired": true,
+   "kind": "direct",
+   "object": "the screening value must be affine in s",
+   "returncode": 1
+  },
+  {
+   "check": "threshold_needs_a_sign_change",
+   "error": "RuntimeError: the value never changes sign on the a grid, so a* = 0.1100 is not bracketed",
+   "fired": true,
+   "kind": "direct",
+   "object": "the a grid must contain a sign change for a* to be read",
+   "returncode": 1
+  },
+  {
+   "check": "threshold_bracket",
+   "error": "RuntimeError: the closed-form a* = 0.4400 is not inside the grid's sign-change bracket [(0.0, 0.2)]",
+   "fired": true,
+   "kind": "direct",
+   "object": "the grid must bracket the closed-form a*",
+   "returncode": 1
+  }
+ ],
+ "cases_run": 20,
+ "missed": [],
+ "raise_sites_in_model": 21
+}

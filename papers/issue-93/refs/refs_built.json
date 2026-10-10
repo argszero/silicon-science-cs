@@ -1,0 +1,2233 @@
+{
+ "duplicate_keys": [],
+ "entries": [
+  {
+   "authors": "Wang, P., Li, Y., Tian, Y.",
+   "authors_raw": [
+    "Peiran Wang",
+    "Ying Li",
+    "Yuan Tian"
+   ],
+   "difference": "Reframes agent security as an agent-human interaction problem and reports, from a survey of production systems, that runtime approval is deployed while no criterion for when a gate pays exists; it names the deployment and leaves the criterion open, which is this study's question.",
+   "key": "2605.24309",
+   "pool": "refs_raw.json:arx-W1-approvalfatigue",
+   "pool_title": "Reframing LLM Agent Security as an Agent-Human Interaction Problem",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Reframing LLM Agent Security as an Agent-Human Interaction Problem",
+   "url": "https://arxiv.org/abs/2605.24309",
+   "venue": "arXiv:2605.24309",
+   "year": 2026
+  },
+  {
+   "authors": "Surapani, R. et al.",
+   "authors_raw": [
+    "Rakesh Kumar Surapani",
+    "Pradeep Kumar Dolabehera Kakitapelli",
+    "Arun Morampudi",
+    "Praveena Padi"
+   ],
+   "difference": "Surveys authorization architectures for tool-using agents and organises them by where the check sits; it compares architectures as designs, and measures no value for a gate, so the fidelity at which a gate's value turns negative is not a quantity in it.",
+   "key": "2609.15906",
+   "pool": "refs_raw.json:arx-W1-authz",
+   "pool_title": "Authorization Architectures for Tool-Using AI Agents",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Authorization Architectures for Tool-Using AI Agents",
+   "url": "https://arxiv.org/abs/2609.15906",
+   "venue": "arXiv:2609.15906",
+   "year": 2026
+  },
+  {
+   "authors": "Chidambaram, N., Tosi, M., Cabot, J.",
+   "authors_raw": [
+    "Natarajan Chidambaram",
+    "Mauro Dalle Lucca Tosi",
+    "Jordi Cabot"
+   ],
+   "difference": "Measures publication and adoption of the Model Context Protocol across two dimensions; its unit is a protocol's uptake, not the net value of a human approval step over a channel.",
+   "key": "2609.14721",
+   "pool": "refs_raw2.json:arx-W3-mcpsec",
+   "pool_title": "A Two-Dimensional Study of the Model Context Protocol: Publication and Adoption",
+   "primary": "cs.SE",
+   "source": "arxiv",
+   "title": "A Two-Dimensional Study of the Model Context Protocol: Publication and Adoption",
+   "url": "https://arxiv.org/abs/2609.14721",
+   "venue": "arXiv:2609.14721",
+   "year": 2026
+  },
+  {
+   "authors": "Sohail, M.",
+   "authors_raw": [
+    "Muhammad Abdullah Sohail"
+   ],
+   "difference": "Characterises centralization and observability of the remote MCP ecosystem by measurement; observability of a tool transport is a different object from the fidelity of the artifact a reviewer is shown.",
+   "key": "2609.19100",
+   "pool": "refs_raw2.json:arx-W3-mcpsec",
+   "pool_title": "Characterizing Network Centralization and Observability in the Remote MCP Ecosystem",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Characterizing Network Centralization and Observability in the Remote MCP Ecosystem",
+   "url": "https://arxiv.org/abs/2609.19100",
+   "venue": "arXiv:2609.19100",
+   "year": 2026
+  },
+  {
+   "authors": "Paul, R., Nandy, S.",
+   "authors_raw": [
+    "Rudrendu Kumar Paul",
+    "Sourav Nandy"
+   ],
+   "difference": "Translates EU AI Act obligations into executable compliance pipelines, i.e. a governance-as-code reading of oversight; compliance is asserted by a pipeline, while this study asks whether the human step it mandates has positive expected value.",
+   "key": "2609.20016",
+   "pool": "refs_raw.json:arx-W1-oversight",
+   "pool_title": "Governance-as-Code: Translating EU AI Act Technical Requirements into Executable Compliance Pipelines for Generative AI Systems",
+   "primary": "cs.CY",
+   "source": "arxiv",
+   "title": "Governance-As-Code: Translating EU AI Act Technical Requirements into Executable Compliance Pipelines for Generative AI Systems",
+   "url": "https://arxiv.org/abs/2609.20016",
+   "venue": "arXiv:2609.20016",
+   "year": 2026
+  },
+  {
+   "authors": "Ferreira, J.",
+   "authors_raw": [
+    "Jo\u00e3o Dias Ferreira"
+   ],
+   "difference": "Proposes a theory of governed proactive agency with human control in the loop; it is a design theory, and it fixes no parameter at which oversight stops paying.",
+   "key": "2609.07741",
+   "pool": "refs_raw.json:arx-W2-partial",
+   "pool_title": "When Intelligence Becomes Agency: A Theory of Governed, Proactive Agency for Symbiotic AI Systems",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "When Intelligence Becomes Agency: A Theory of Governed, Proactive Agency for Symbiotic AI Systems",
+   "url": "https://arxiv.org/abs/2609.07741",
+   "venue": "arXiv:2609.07741",
+   "year": 2026
+  },
+  {
+   "authors": "Nijkamp, E. et al.",
+   "authors_raw": [
+    "Erik Nijkamp",
+    "Anurag Koul",
+    "Egor Pakhomov",
+    "Bo Pang"
+   ],
+   "difference": "Gives an architecture for long-horizon agents built on levels and ticks, in which approval is one scheduling event; scheduling an approval is not the same as pricing it.",
+   "key": "2609.19519",
+   "pool": "refs_raw.json:arx-W1-escalation",
+   "pool_title": "An Architecture for Long-Horizon Agents: Levels, Ticks and Cascaded Intelligence",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "An Architecture for Long-Horizon Agents: Levels, Ticks and Cascaded Intelligence",
+   "url": "https://arxiv.org/abs/2609.19519",
+   "venue": "arXiv:2609.19519",
+   "year": 2026
+  },
+  {
+   "authors": "Ming, V.",
+   "authors_raw": [
+    "Vivienne Ming"
+   ],
+   "difference": "Finds that human capital rather than model benchmarks predicts hybrid human-AI forecasting gain; it measures the human's contribution as a population property, and our construct is whether the object the human is shown denotes the object that executes.",
+   "key": "2607.02467",
+   "pool": "refs_raw.json:arx-W1-fatigue",
+   "pool_title": "Human Capital, Not Model Benchmarks, Predicts Hybrid Intelligence in Forecasting",
+   "primary": "cs.CY",
+   "source": "arxiv",
+   "title": "Human Capital, Not Model Benchmarks, Predicts Hybrid Intelligence in Forecasting",
+   "url": "https://arxiv.org/abs/2607.02467",
+   "venue": "arXiv:2607.02467",
+   "year": 2026
+  },
+  {
+   "authors": "Raghav, P. et al.",
+   "authors_raw": [
+    "Prabhu Raghav",
+    "Balamurugan Pandi",
+    "Arul Vivek",
+    "Shek Mohammed",
+    "Sridhar S"
+   ],
+   "difference": "Poses an enterprise governance kernel in which tool invocations are policy-mediated; a policy kernel decides what is permitted, and the question here is what a gate is worth when the object it reviews is not the object it authorises.",
+   "key": "2609.06543",
+   "pool": "refs_raw.json:arx-W1-approval",
+   "pool_title": "A Unified Policy Architecture (UPA): The Governance Kernel for Enterprise AI Operating Systems",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "A Unified Policy Architecture (UPA): The Governance Kernel for Enterprise AI Operating Systems",
+   "url": "https://arxiv.org/abs/2609.06543",
+   "venue": "arXiv:2609.06543",
+   "year": 2026
+  },
+  {
+   "authors": "Vallabhaneni, U., Cagwin, C., Wild, D.",
+   "authors_raw": [
+    "Uday Vallabhaneni",
+    "Cassie L. Cagwin",
+    "David J. Wild"
+   ],
+   "difference": "Offloads topological reasoning from LLM agents in a security operations centre, where analyst escalation is a routine step; escalation volume is treated as load to reduce rather than as a cost term that can exceed the harm a gate prevents.",
+   "key": "2609.04159",
+   "pool": "refs_raw.json:arx-W1-approval",
+   "pool_title": "SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center",
+   "url": "https://arxiv.org/abs/2609.04159",
+   "venue": "arXiv:2609.04159",
+   "year": 2026
+  },
+  {
+   "authors": "Turan, E.",
+   "authors_raw": [
+    "Emre Turan"
+   ],
+   "difference": "Calibrates agent guards to a subjective, fatiguing human and shows oversight has a capacity; it prices the reviewer's capacity, and our model keeps the reviewer fixed and varies the channel's fidelity, so the two are complementary inputs to one value.",
+   "key": "2606.08919",
+   "pool": "refs_raw.json:arx-W1-defer",
+   "pool_title": "Oversight Has a Capacity: Calibrating Agent Guards to a Subjective, Fatiguing Human",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Oversight Has a Capacity: Calibrating Agent Guards to a Subjective, Fatiguing Human",
+   "url": "https://arxiv.org/abs/2606.08919",
+   "venue": "arXiv:2606.08919",
+   "year": 2026
+  },
+  {
+   "authors": "Sun, Y. et al.",
+   "authors_raw": [
+    "Yiheng Sun",
+    "Huifei Wang",
+    "Yancheng Zhu",
+    "Zhenyu Li",
+    "Zebin Zhao",
+    "Yifan Yuan"
+   ],
+   "difference": "Measures constraint weakening across 1,296 controlled episodes, where a normal handoff transform deactivates binding state in 100.0% of them and 54.2% of downstream executions perform a forbidden action; it measures that fidelity is below 1 in an ordinary pipeline, which this study takes as the low end of its axis rather than as its question.",
+   "key": "2608.24569",
+   "pool": "refs_anchors.json:anchors-by-id",
+   "pool_title": "When \"Must\" Becomes \"Maybe\": Constraint Weakening in LLM Agent Workflows",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "When \"Must\" Becomes \"Maybe\": Constraint Weakening in LLM Agent Workflows",
+   "url": "https://arxiv.org/abs/2608.24569",
+   "venue": "arXiv:2608.24569",
+   "year": 2026
+  },
+  {
+   "authors": "Kumar, A.",
+   "authors_raw": [
+    "Adithyan Arun Kumar"
+   ],
+   "difference": "Reproduces approval hijacking across agent frameworks and reports attack success without binding versus with it; it establishes the failure exists and that binding removes it, and does not give a value for the gate as a function of the fidelity that binds it.",
+   "key": "2609.21081",
+   "pool": "refs_raw.json:arx-W1-approval",
+   "pool_title": "Loopjacking: Hijacking Human-in-the-Loop Approval",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Loopjacking: Hijacking Human-In-The-Loop Approval",
+   "url": "https://arxiv.org/abs/2609.21081",
+   "venue": "arXiv:2609.21081",
+   "year": 2026
+  },
+  {
+   "authors": "Irshad, H. et al.",
+   "authors_raw": [
+    "Hasnain Irshad",
+    "Anam Mughees",
+    "Neelam Mughees",
+    "Abdullah Mughees",
+    "Imtiaz Ali Soomro"
+   ],
+   "difference": "Binds an action to a verifiable card and reports 68-100% attack success unbound against 0% bound with a 0% false-block rate; those are the endpoints of this study's fidelity axis, read here as inputs to a value law rather than as a defence evaluation.",
+   "key": "2609.18411",
+   "pool": "refs_raw.json:arx-W1-confused",
+   "pool_title": "The Verifiable Action Card: Trustworthy Human-in-the-Loop Control for Secure Autonomous Agents",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "The Verifiable Action Card: Trustworthy Human-In-The-Loop Control for Secure Autonomous Agents",
+   "url": "https://arxiv.org/abs/2609.18411",
+   "venue": "arXiv:2609.18411",
+   "year": 2026
+  },
+  {
+   "authors": "Shraga, I., Eshel, R., Gorelik, L.",
+   "authors_raw": [
+    "Ilai Shraga",
+    "Roei Eshel",
+    "Lior Gorelik"
+   ],
+   "difference": "Shows an LLM guardrail can approve correctly at check time and be stale by act time; staleness is the time axis of the same defect this study writes as a substitution channel, and it measures staleness rather than the value of the gate that suffers it.",
+   "key": "2608.26306",
+   "pool": "refs_raw.json:arx-W1-toctou",
+   "pool_title": "Approved Too Late: Verdict Staleness in LLM-Guarded Self-Adaptive Systems",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Approved Too Late: Verdict Staleness in LLM-Guarded Self-Adaptive Systems",
+   "url": "https://arxiv.org/abs/2608.26306",
+   "venue": "arXiv:2608.26306",
+   "year": 2026
+  },
+  {
+   "authors": "Lyu, Y. et al.",
+   "authors_raw": [
+    "Yongjian Lyu",
+    "Yang Ren",
+    "Ruofei Lai",
+    "Wenting Liu"
+   ],
+   "difference": "Identifies decision conflicts for long-running agents whose authorising state changes after the check, and proposes selective revalidation; revalidation is a repair, and this study gives the threshold on the fidelity axis at which a repair is worth its cost.",
+   "key": "2609.08015",
+   "pool": "refs_raw.json:arx-W1-approval",
+   "pool_title": "From Version Conflicts to Decision Conflicts: Selective Revalidation for Long-Running AI Agents",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "From Version Conflicts to Decision Conflicts: Selective Revalidation for Long-Running AI Agents",
+   "url": "https://arxiv.org/abs/2609.08015",
+   "venue": "arXiv:2609.08015",
+   "year": 2026
+  },
+  {
+   "authors": "Li, H. et al.",
+   "authors_raw": [
+    "Heng Li",
+    "Fulin Zhao",
+    "Zhe Geng",
+    "Zhiyuan Yao",
+    "Wei Yuan",
+    "Xiapu Luo"
+   ],
+   "difference": "Exposes UI desynchronization between what a mobile agent sees and what it acts on; that is a representation mismatch measured as a vulnerability class, where our model makes it a continuous fidelity parameter with a sign law.",
+   "key": "2609.16732",
+   "pool": "refs_raw2.json:arx-W3-oversight",
+   "pool_title": "When Agents See Differently: Exposing UI Desynchronization Threats in Mobile Agents",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "When Agents See Differently: Exposing UI Desynchronization Threats in Mobile Agents",
+   "url": "https://arxiv.org/abs/2609.16732",
+   "venue": "arXiv:2609.16732",
+   "year": 2026
+  },
+  {
+   "authors": "Qi, R. et al.",
+   "authors_raw": [
+    "Ruichen Qi",
+    "Xinting Jiang",
+    "Ema Dimitrova",
+    "Junyi Luo",
+    "Quan Cheng",
+    "Mehdi Saligane"
+   ],
+   "difference": "Closes the time-of-check-to-time-of-use gap in root-of-trust protected systems at the hardware boundary; the mechanism is a trusted subsystem, whereas this study's subject is a human reviewer whose view of the object can be unfaithful.",
+   "key": "2608.26402",
+   "pool": "refs_raw.json:arx-W1-toctou",
+   "pool_title": "SILK: Closing the Time-of-Check-to-Time-of-Use Gap in RoT-Protected AI Systems",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "SILK: Closing the Time-Of-Check-To-Time-Of-Use Gap in RoT-Protected AI Systems",
+   "url": "https://arxiv.org/abs/2608.26402",
+   "venue": "arXiv:2608.26402",
+   "year": 2026
+  },
+  {
+   "authors": "Li, Y. et al.",
+   "authors_raw": [
+    "Yang Li",
+    "Zongsi Xu",
+    "Sergey Volkov",
+    "hai liu",
+    "Tuo Zhou",
+    "Xiyu Chen",
+    "Di Wan",
+    "Dian Shao",
+    "Ye Luo",
+    "Hao Sun"
+   ],
+   "difference": "Argues authority should be held by a substrate other than the agent's own context, with a cross-substrate notion of authority; it settles where authority should live, not what an approval step is worth once authority has been placed.",
+   "key": "2609.08472",
+   "pool": "refs_raw.json:arx-W1-toctou",
+   "pool_title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
+   "primary": "cs.MA",
+   "source": "arxiv",
+   "title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
+   "url": "https://arxiv.org/abs/2609.08472",
+   "venue": "arXiv:2609.08472",
+   "year": 2026
+  },
+  {
+   "authors": "Safin, T. et al.",
+   "authors_raw": [
+    "Tanzim Hossain Safin",
+    "Sharif Noor Zisad",
+    "Swakkhar Shatabda",
+    "Ragib Hasan"
+   ],
+   "difference": "Studies trust propagation and structural containment in multi-agent pipelines, where a low-privilege agent can influence a high-privilege one; influence propagation across agents is a different channel from the fidelity with which one approval denotes its action.",
+   "key": "2609.17648",
+   "pool": "refs_raw.json:arx-W1-authz",
+   "pool_title": "Trust propagation and structural containment in Multi-agent LLM pipelines",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Trust Propagation and Structural Containment in Multi-Agent LLM Pipelines",
+   "url": "https://arxiv.org/abs/2609.17648",
+   "venue": "arXiv:2609.17648",
+   "year": 2026
+  },
+  {
+   "authors": "Huang, S., Zhang, J., Jia, H.",
+   "authors_raw": [
+    "Shuhuai Huang",
+    "Jingfeng Zhang",
+    "Hong Jia"
+   ],
+   "difference": "Shows malicious instructions can persist in agent memory and re-enter later execution; persistence is a temporal channel, and its harm is not modulated by the fidelity of any single approval.",
+   "key": "2609.13889",
+   "pool": "refs_raw2.json:arx-W3-toolpoison",
+   "pool_title": "When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents",
+   "url": "https://arxiv.org/abs/2609.13889",
+   "venue": "arXiv:2609.13889",
+   "year": 2026
+  },
+  {
+   "authors": "Wang, B. et al.",
+   "authors_raw": [
+    "Bingzheng Wang",
+    "Xiaoyan Gu",
+    "Wentao Wang",
+    "Xingyou Yang",
+    "Hongcheng Li",
+    "Rong Yin"
+   ],
+   "difference": "Audits candidate actions before execution to block indirect-injection consequences; a pre-execution audit is a programmatic check, which is one of the repairs this study prices against a reviewer-mediated one.",
+   "key": "2609.14987",
+   "pool": "refs_raw.json:arx-W1-injection",
+   "pool_title": "ActGuard: Pre-execution Action Auditing against Indirect Prompt Injection in LLM Agents",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "ActGuard: Pre-Execution Action Auditing Against Indirect Prompt Injection in LLM Agents",
+   "url": "https://arxiv.org/abs/2609.14987",
+   "venue": "arXiv:2609.14987",
+   "year": 2026
+  },
+  {
+   "authors": "Wang, Y.",
+   "authors_raw": [
+    "Yang Wang"
+   ],
+   "difference": "Systematizes six ways a harness can dispatch an action other than the one a human approved and measures a bound-gap rate for each in one harness, then prototypes a keyed token as a binding defence; it measures and defends the failure, where this study takes binding fidelity as a parameter of a value functional and derives the fidelity below which the gate's net value turns negative, the accuracy-insensitivity that survives there, and the equivalence of the repair.",
+   "key": "2609.38983",
+   "pool": "refs_reread.json:concurrent-by-id",
+   "pool_title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+   "url": "https://arxiv.org/abs/2609.38983",
+   "venue": "arXiv:2609.38983",
+   "year": 2026
+  },
+  {
+   "authors": "Li, X., Wang, Y.",
+   "authors_raw": [
+    "Xiaoyan Li",
+    "Yunli Wang"
+   ],
+   "difference": "Gives defences for tool-integrated agents against adversarial tool outputs; it measures blocking effectiveness, and this study measures when a human-mediated step is worth its own cost, including when it is worth less than no step.",
+   "key": "2609.16098",
+   "pool": "refs_raw.json:arx-W1-injection",
+   "pool_title": "Universal Defenses for Tool-Integrated LLM Agents Against Adversarial Attacks",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Universal Defenses for Tool-Integrated LLM Agents Against Adversarial Attacks",
+   "url": "https://arxiv.org/abs/2609.16098",
+   "venue": "arXiv:2609.16098",
+   "year": 2026
+  },
+  {
+   "authors": "Zhang, Y., Huang, J., Gu, G.",
+   "authors_raw": [
+    "Yuxuan Zhang",
+    "Jeff Huang",
+    "Guofei Gu"
+   ],
+   "difference": "Separates trust boundaries with provenance-aware transformers; provenance is a property the model is trained to use, while this study treats the reviewer's information as a channel whose fidelity is an experimental axis.",
+   "key": "2609.21088",
+   "pool": "refs_raw2.json:arx-W3-injection",
+   "pool_title": "Origin Is All You Need: Provenance-Aware Transformers for Structural Trust-Boundary Separation",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Origin Is All You Need: Provenance-Aware Transformers for Structural Trust-Boundary Separation",
+   "url": "https://arxiv.org/abs/2609.21088",
+   "venue": "arXiv:2609.21088",
+   "year": 2026
+  },
+  {
+   "authors": "Ediga, M., Chattopadhyay, S.",
+   "authors_raw": [
+    "Murali Ediga",
+    "Sudipta Chattopadhyay"
+   ],
+   "difference": "Measures and exploits implicit trust in LLM tool-calling pipelines, including a protocol's trust assumptions; the trust measured is the model's, not the reviewer's, and no approval value is derived.",
+   "key": "2609.18217",
+   "pool": "refs_raw2.json:arx-W3-mcpsec",
+   "pool_title": "Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines",
+   "url": "https://arxiv.org/abs/2609.18217",
+   "venue": "arXiv:2609.18217",
+   "year": 2026
+  },
+  {
+   "authors": "Leong, J.",
+   "authors_raw": [
+    "Jun Wen Leong"
+   ],
+   "difference": "Finds that instruction arbitration in agents is configuration-dependent and that recognition does not imply enforcement; the gap between recognising and enforcing is the same family as a mismatch channel, measured as a failure mode rather than as a fidelity parameter.",
+   "key": "2608.28502",
+   "pool": "refs_raw2.json:arx-W3-pep",
+   "pool_title": "Recognition Without Enforcement: Configuration-Dependent Failures in LLM Agent Instruction Arbitration and External Control",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Recognition Without Enforcement: Configuration-Dependent Failures in LLM Agent Instruction Arbitration and External Control",
+   "url": "https://arxiv.org/abs/2608.28502",
+   "venue": "arXiv:2608.28502",
+   "year": 2026
+  },
+  {
+   "authors": "Iyer, L.",
+   "authors_raw": [
+    "Laxmipriya Ganesh Iyer"
+   ],
+   "difference": "Resolves tool names in a closed world to stop hallucinated calls; a hallucinated tool is not an approved object that failed to denote its action, so the defect it repairs is upstream of the approval channel.",
+   "key": "2609.19425",
+   "pool": "refs_raw2.json:arx-W3-mcpsec",
+   "pool_title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
+   "url": "https://arxiv.org/abs/2609.19425",
+   "venue": "arXiv:2609.19425",
+   "year": 2026
+  },
+  {
+   "authors": "Ma, X. et al.",
+   "authors_raw": [
+    "Xinbei Ma",
+    "Yiting Wang",
+    "Yao Yao",
+    "Tongxin Yuan",
+    "Aston Zhang",
+    "Zhuosheng Zhang",
+    "Hai Zhao"
+   ],
+   "difference": "Shows multimodal GUI agents are distracted by environmental content; distraction is an input-side effect on the agent, whereas this study's channel carries the object to a human.",
+   "key": "2408.02544",
+   "pool": "refs_raw2.json:arx-W3-faithful",
+   "pool_title": "Caution for the Environment: Multimodal LLM Agents are Susceptible to Environmental Distractions",
+   "primary": "cs.CL",
+   "source": "arxiv",
+   "title": "Caution for the Environment: Multimodal LLM Agents Are Susceptible to Environmental Distractions",
+   "url": "https://arxiv.org/abs/2408.02544",
+   "venue": "arXiv:2408.02544",
+   "year": 2024
+  },
+  {
+   "authors": "Hu, H. et al.",
+   "authors_raw": [
+    "Haowen Hu",
+    "Pengzhou Cheng",
+    "Zheng Wu",
+    "Lingzhong Dong",
+    "Gongshen Liu",
+    "Zhuosheng Zhang"
+   ],
+   "difference": "Trains GUI agents towards faithful behaviour rather than memorised shortcuts; it makes the agent's action faithful to the task, and our fidelity is between the object a reviewer approves and the object the system executes.",
+   "key": "2605.01208",
+   "pool": "refs_raw2.json:arx-W3-faithful",
+   "pool_title": "Faithful Mobile GUI Agents with Guided Advantage Estimator",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Faithful Mobile GUI Agents with Guided Advantage Estimator",
+   "url": "https://arxiv.org/abs/2605.01208",
+   "venue": "arXiv:2605.01208",
+   "year": 2026
+  },
+  {
+   "authors": "Akkil, D. et al.",
+   "authors_raw": [
+    "Deepak Akkil",
+    "Tamer Abuelsaad",
+    "Karthik Vikram",
+    "Matthew Pace",
+    "Aditya Vempaty",
+    "Saahir Beotra",
+    "Ravi Kokku",
+    "Satya Nitta"
+   ],
+   "difference": "Stress-tests long-horizon multi-agent systems adversarially so failures propagate through memory and tools; it reports propagation, where this study gives a value law for one gate at one fidelity.",
+   "key": "2609.17320",
+   "pool": "refs_raw.json:arx-W1-injection",
+   "pool_title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
+   "primary": "cs.MA",
+   "source": "arxiv",
+   "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
+   "url": "https://arxiv.org/abs/2609.17320",
+   "venue": "arXiv:2609.17320",
+   "year": 2026
+  },
+  {
+   "authors": "Katkar, A. et al.",
+   "authors_raw": [
+    "Aditya Katkar",
+    "Om Karkele",
+    "Kartik Mandhane",
+    "Manisha More",
+    "Yash Kashid"
+   ],
+   "difference": "Binds an agent's intent with cryptographically verifiable guardrails; the binding is verified cryptographically, which is the b = 1 end of this study's axis rather than a quantity computed across it.",
+   "key": "2608.07167",
+   "pool": "refs_raw.json:arx-W1-hijack",
+   "pool_title": "NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "NiyamAI - an Intent-Bound AI Agent with Cryptographically Verifiable Guardrails Using Zero-Knowledge Proofs",
+   "url": "https://arxiv.org/abs/2608.07167",
+   "venue": "arXiv:2608.07167",
+   "year": 2026
+  },
+  {
+   "authors": "Xiong, W. et al.",
+   "authors_raw": [
+    "Wujie Xiong",
+    "Rabimba Karanjai",
+    "Yang Lu",
+    "Weidong Shi",
+    "Lei Xu"
+   ],
+   "difference": "Confines reachable capabilities for LLM agents under indirect injection, at the level of what a compromised agent can reach; capability reach is a bound on harm, and the value of an approval gate is a different quantity, which this study makes depend on fidelity.",
+   "key": "2608.30041",
+   "pool": "refs_raw.json:arx-W1-injection",
+   "pool_title": "Reachability-Based Capability Confinement for LLM Agents under Indirect Prompt Injection",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Reachability-Based Capability Confinement for LLM Agents under Indirect Prompt Injection",
+   "url": "https://arxiv.org/abs/2608.30041",
+   "venue": "arXiv:2608.30041",
+   "year": 2026
+  },
+  {
+   "authors": "Veski, R., Guerraoui, R., Froelicher, D.",
+   "authors_raw": [
+    "Rasmus Moorits Veski",
+    "Rachid Guerraoui",
+    "David Froelicher"
+   ],
+   "difference": "Delegates privileges among collaborating agents with a capability-based scheme; delegation governs who may act, while the question here is whether the object presented for review denotes the action taken.",
+   "key": "2609.06500",
+   "pool": "refs_raw.json:arx-W1-confused",
+   "pool_title": "CAPMAS: Capability-Based Delegation of Privileges in Multi-Agent Systems",
+   "primary": "cs.MA",
+   "source": "arxiv",
+   "title": "CAPMAS: Capability-Based Delegation of Privileges in Multi-Agent Systems",
+   "url": "https://arxiv.org/abs/2609.06500",
+   "venue": "arXiv:2609.06500",
+   "year": 2026
+  },
+  {
+   "authors": "Gong, H., Samawi, M., Medda, F.",
+   "authors_raw": [
+    "Hui Gong",
+    "Michail Samawi",
+    "Francesca Medda"
+   ],
+   "difference": "Separates inference from authority in agentic finance, so that a model's suggestion cannot confer authorisation; that separation is a policy design, and this study quantifies the step that implements it.",
+   "key": "2608.30519",
+   "pool": "refs_raw2.json:arx-W3-substitution",
+   "pool_title": "Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance",
+   "primary": "q-fin.GN",
+   "source": "arxiv",
+   "title": "Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance",
+   "url": "https://arxiv.org/abs/2608.30519",
+   "venue": "arXiv:2608.30519",
+   "year": 2026
+  },
+  {
+   "authors": "Zhu, G., Wang, C.",
+   "authors_raw": [
+    "Genliang Zhu",
+    "Chu Wang"
+   ],
+   "difference": "Governs authority an agent acquires at runtime, for resources such as credentials and accounts; acquired authority is a flow the policy must contain, and it is orthogonal to the fidelity of an approval artifact.",
+   "key": "2609.14744",
+   "pool": "refs_raw.json:arx-W1-authz",
+   "pool_title": "Runtime Authorization for Resources Acquired by AI Agents",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Runtime Authorization for Resources Acquired by AI Agents",
+   "url": "https://arxiv.org/abs/2609.14744",
+   "venue": "arXiv:2609.14744",
+   "year": 2026
+  },
+  {
+   "authors": "Zhu, G., Wang, C.",
+   "authors_raw": [
+    "Genliang Zhu",
+    "Chu Wang"
+   ],
+   "difference": "Binds a dependency closure and governs effects at operation time for agent skills; effect governance is a check on the operation, which is the repair axis this study prices.",
+   "key": "2609.05920",
+   "pool": "refs_raw.json:arx-W1-provenance",
+   "pool_title": "Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound",
+   "url": "https://arxiv.org/abs/2609.05920",
+   "venue": "arXiv:2609.05920",
+   "year": 2026
+  },
+  {
+   "authors": "Hu, J., Goel, A., Bindschaedler, L.",
+   "authors_raw": [
+    "Jinhao Hu",
+    "Ashvin Goel",
+    "Laurent Bindschaedler"
+   ],
+   "difference": "Checks effects at runtime rather than trusting regenerated systems code; checking effects is one of the two repairs in this study's design ladder, and its value is measured here as a function of what the check can see.",
+   "key": "2609.00430",
+   "pool": "refs_raw2.json:arx-W3-pep",
+   "pool_title": "Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code Under an Adversarial Generator",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code under an Adversarial Generator",
+   "url": "https://arxiv.org/abs/2609.00430",
+   "venue": "arXiv:2609.00430",
+   "year": 2026
+  },
+  {
+   "authors": "Zheng, Y., Zhang, W., Mao, Y.",
+   "authors_raw": [
+    "Yusheng Zheng",
+    "Wenhui Zhang",
+    "Yu Mao"
+   ],
+   "difference": "Argues agent capabilities should follow task intent and the source of context, so that authority tracks provenance; the argument is normative, and the value of the approval step it implies is what this study measures.",
+   "key": "2609.14631",
+   "pool": "refs_raw.json:arx-W1-authz",
+   "pool_title": "LLM Agent Capabilities Should Follow Task Intent and Context Source",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "LLM Agent Capabilities Should Follow Task Intent and Context Source",
+   "url": "https://arxiv.org/abs/2609.14631",
+   "venue": "arXiv:2609.14631",
+   "year": 2026
+  },
+  {
+   "authors": "Chernov, A.",
+   "authors_raw": [
+    "Alexander Chernov"
+   ],
+   "difference": "Proposes an intent-aware control plane for policy-governed agentic systems; a control plane enforces policy at a boundary, and this study's unit is a single reviewer-mediated decision with a computable value.",
+   "key": "2609.21299",
+   "pool": "refs_raw.json:arx-W1-authz",
+   "pool_title": "Brain API: An Intent-Aware Control Plane for Policy-Governed Agentic Systems",
+   "primary": "cs.DC",
+   "source": "arxiv",
+   "title": "Brain API: An Intent-Aware Control Plane for Policy-Governed Agentic Systems",
+   "url": "https://arxiv.org/abs/2609.21299",
+   "venue": "arXiv:2609.21299",
+   "year": 2026
+  },
+  {
+   "authors": "Collina, N. et al.",
+   "authors_raw": [
+    "Natalie Collina",
+    "Surbhi Goel",
+    "Aaron Roth",
+    "Sikata Bela Sengupta"
+   ],
+   "difference": "Studies delegating authorization to misaligned agents through coalitional alignment and safe control; misalignment is a property of the agent's objective, and the laundering channel here requires no misalignment, only an unfaithful artifact.",
+   "key": "2609.15803",
+   "pool": "refs_raw.json:arx-W1-approval",
+   "pool_title": "Delegating Authorization to Misaligned Agents: Coalitional Alignment and Safe Control",
+   "primary": "cs.GT",
+   "source": "arxiv",
+   "title": "Delegating Authorization to Misaligned Agents: Coalitional Alignment and Safe Control",
+   "url": "https://arxiv.org/abs/2609.15803",
+   "venue": "arXiv:2609.15803",
+   "year": 2026
+  },
+  {
+   "authors": "Wu, X. et al.",
+   "authors_raw": [
+    "Xiaodong Wu",
+    "Zhimin Zhao",
+    "Qi Li",
+    "Xiangman Li",
+    "Yu Shi",
+    "Bram Adams",
+    "Jianbing Ni"
+   ],
+   "difference": "Delivers prompt-space security skills to coding agents so that privilege use is mediated; it mediates the agent's own requests, while this study asks when a human-mediated mediation step has positive expected value.",
+   "key": "2608.25817",
+   "pool": "refs_raw2.json:arx-W3-pep",
+   "pool_title": "SkillShield: Prompt-Space Security Skills for LLM Coding Agents",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "SkillShield: Prompt-Space Security Skills for LLM Coding Agents",
+   "url": "https://arxiv.org/abs/2608.25817",
+   "venue": "arXiv:2608.25817",
+   "year": 2026
+  },
+  {
+   "authors": "Br\u00f6mme, A.",
+   "authors_raw": [
+    "Arslan Br\u00f6mme"
+   ],
+   "difference": "Anchors agent communication and human approvals in blockchain evidence for auditability; auditability after the fact is a separate good from the expected value of the approval the record attests.",
+   "key": "2609.04017",
+   "pool": "refs_raw.json:arx-W1-approval",
+   "pool_title": "A Black Box for Agentic Processes: Blockchain-Anchored Evidence for AI Agent Communication, Human Oversight, and GRC Audits",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "A Black Box for Agentic Processes: Blockchain-Anchored Evidence for AI Agent Communication, Human Oversight, and GRC Audits",
+   "url": "https://arxiv.org/abs/2609.04017",
+   "venue": "arXiv:2609.04017",
+   "year": 2026
+  },
+  {
+   "authors": "Strong, J. et al.",
+   "authors_raw": [
+    "Joshua Strong",
+    "Emma Sun",
+    "Alexander Capstick",
+    "Pramit Saha",
+    "Cheng Ouyang",
+    "J. Alison Noble"
+   ],
+   "difference": "Estimates whether a model should act or defer to a human expert, and adapts deferral across experts; the deferral rule is the same structure as this study's escalation coverage, with the channel's fidelity held fixed and no harm term from an unfaithful review.",
+   "key": "2609.21953",
+   "pool": "refs_raw.json:arx-W1-defer",
+   "pool_title": "RACER: Role-Aligned Competence Estimation for Human-AI Routing",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "RACER: Role-Aligned Competence Estimation for Human-AI Routing",
+   "url": "https://arxiv.org/abs/2609.21953",
+   "venue": "arXiv:2609.21953",
+   "year": 2026
+  },
+  {
+   "authors": "Pesenti, D. et al.",
+   "authors_raw": [
+    "Dario Pesenti",
+    "Alessandro Bogani",
+    "Stefano Teso",
+    "Andrea Pugnana"
+   ],
+   "difference": "Shows learning-to-defer reproduces algorithmic bias in the human it defers to; bias in the deferred-to label is a property of the reviewer's decisions, and our construct separates reviewer accuracy from the fidelity of the object reviewed.",
+   "key": "2608.28050",
+   "pool": "refs_raw.json:arx-W1-defer",
+   "pool_title": "Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer",
+   "primary": "cs.HC",
+   "source": "arxiv",
+   "title": "Too Much of the Same: From Algorithmic to Human Bias in Learning to Defer",
+   "url": "https://arxiv.org/abs/2608.28050",
+   "venue": "arXiv:2608.28050",
+   "year": 2026
+  },
+  {
+   "authors": "Franc, V., Paplham, J.",
+   "authors_raw": [
+    "Vojtech Franc",
+    "Jakub Paplham"
+   ],
+   "difference": "Predicts with an explicit reject option and communicates uncertainty; the reject option is escalation with no cost model, and this study's value is affine in coverage with a term for the mismatch escalation itself can introduce.",
+   "key": "2511.04855",
+   "pool": "refs_raw.json:arx-W2-reject",
+   "pool_title": "Epistemic Reject Option Prediction",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Epistemic Reject Option Prediction",
+   "url": "https://arxiv.org/abs/2511.04855",
+   "venue": "arXiv:2511.04855",
+   "year": 2025
+  },
+  {
+   "authors": "Szabadv\u00e1ry, J. et al.",
+   "authors_raw": [
+    "Johan Hallberg Szabadv\u00e1ry",
+    "Tuwe L\u00f6fstr\u00f6m",
+    "Ulf Johansson",
+    "Cecilia S\u00f6nstr\u00f6d",
+    "Ernst Ahlberg",
+    "Lars Carlsson"
+   ],
+   "difference": "Gives distribution-free error guarantees for classification with a reject option via conformal prediction; the guarantee is about the abstention rate, not about the net value of the escalated cases, which is what this study computes.",
+   "key": "2506.21802",
+   "pool": "refs_raw.json:arx-W2-reject",
+   "pool_title": "Classification with Reject Option: Distribution-free Error Guarantees via Conformal Prediction",
+   "primary": "stat.ML",
+   "source": "arxiv",
+   "title": "Classification with Reject Option: Distribution-Free Error Guarantees via Conformal Prediction",
+   "url": "https://arxiv.org/abs/2506.21802",
+   "venue": "arXiv:2506.21802",
+   "year": 2025
+  },
+  {
+   "authors": "Zaoui, A., Dombry, C.",
+   "authors_raw": [
+    "Ahmed Zaoui",
+    "Cl\u00e9ment Dombry"
+   ],
+   "difference": "Extends selective prediction to distributional regression with a reject option; abstention is placed on a distributional target, and no channel between the reviewer and the executed object appears.",
+   "key": "2503.23782",
+   "pool": "refs_raw.json:arx-W2-reject",
+   "pool_title": "Distributional regression with reject option",
+   "primary": "math.ST",
+   "source": "arxiv",
+   "title": "Distributional Regression with Reject Option",
+   "url": "https://arxiv.org/abs/2503.23782",
+   "venue": "arXiv:2503.23782",
+   "year": 2025
+  },
+  {
+   "authors": "Rabanser, S., Papernot, N.",
+   "authors_raw": [
+    "Stephan Rabanser",
+    "Nicolas Papernot"
+   ],
+   "difference": "Asks what it takes to build a performant selective classifier; it measures abstention performance, where this study measures the value of the human who receives the abstentions and the fidelity of what they are shown.",
+   "key": "2510.20242",
+   "pool": "refs_raw.json:arx-W2-selectclass",
+   "pool_title": "What Does It Take to Build a Performant Selective Classifier?",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "What Does It Take to Build a Performant Selective Classifier?",
+   "url": "https://arxiv.org/abs/2510.20242",
+   "venue": "arXiv:2510.20242",
+   "year": 2025
+  },
+  {
+   "authors": "Ravikiran, M., Vohra, S.",
+   "authors_raw": [
+    "Manikandan Ravikiran",
+    "Siddharth Vohra"
+   ],
+   "difference": "Audits whether models defer to a source-attributed cue and can be led to wrong answers; the cue's provenance affects the model, which is the mirror image of our reviewer trusting an unfaithful rendering.",
+   "key": "2609.08934",
+   "pool": "refs_raw.json:arx-W1-defer",
+   "pool_title": "When Models Defer to Wrong Answers: A Robustness Audit of Source-Attributed Cues in Multiple-Choice QA",
+   "primary": "cs.CL",
+   "source": "arxiv",
+   "title": "When Models Defer to Wrong Answers: A Robustness Audit of Source-Attributed Cues in Multiple-Choice QA",
+   "url": "https://arxiv.org/abs/2609.08934",
+   "venue": "arXiv:2609.08934",
+   "year": 2026
+  },
+  {
+   "authors": "Udayagiri, S. et al.",
+   "authors_raw": [
+    "Sai Babu Udayagiri",
+    "Arjun Chouhan",
+    "Ravisekhar Kanagala",
+    "Trishala Pavagada"
+   ],
+   "difference": "Gates a call to an LLM on confidence to control cost in emotion recognition; a confidence gate trades accuracy against cost, and this study's gate trades harm against the harm an unfaithful review can authorise.",
+   "key": "2609.17977",
+   "pool": "refs_raw.json:arx-W1-escalation",
+   "pool_title": "When to Call an LLM: A Confidence-Gated Hybrid for Cost-Effective Emotion Recognition in Conversational AI",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "When to Call an LLM: A Confidence-Gated Hybrid for Cost-Effective Emotion Recognition in Conversational AI",
+   "url": "https://arxiv.org/abs/2609.17977",
+   "venue": "arXiv:2609.17977",
+   "year": 2026
+  },
+  {
+   "authors": "Pathak, E., Krishna, L.",
+   "authors_raw": [
+    "Eshika Pathak",
+    "Leela Krishna"
+   ],
+   "difference": "Decides when a failing robot should ask a human, given audited sensor evidence; asking is escalation, and the reviewed evidence is assumed faithful there, which is the assumption this study varies.",
+   "key": "2609.21942",
+   "pool": "refs_raw2.json:arx-W3-mixedinit",
+   "pool_title": "When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence",
+   "primary": "cs.RO",
+   "source": "arxiv",
+   "title": "When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence",
+   "url": "https://arxiv.org/abs/2609.21942",
+   "venue": "arXiv:2609.21942",
+   "year": 2026
+  },
+  {
+   "authors": "Li, Z., Hara, T., Ota, J.",
+   "authors_raw": [
+    "Zhiyuan Li",
+    "Tatsunori Hara",
+    "Jun Ota"
+   ],
+   "difference": "Decides whether, when and how to assist a user from scenario knowledge and thresholds; the decision is an intervention policy, and the object of the study is a gate whose input can misrepresent the action.",
+   "key": "2609.17132",
+   "pool": "refs_raw2.json:arx-W3-escalation",
+   "pool_title": "A Scenario-Knowledge-Driven Pipeline for Just-in-Time Assistance",
+   "primary": "cs.HC",
+   "source": "arxiv",
+   "title": "A Scenario-Knowledge-Driven Pipeline for Just-In-Time Assistance",
+   "url": "https://arxiv.org/abs/2609.17132",
+   "venue": "arXiv:2609.17132",
+   "year": 2026
+  },
+  {
+   "authors": "Zhang, C. et al.",
+   "authors_raw": [
+    "Caiqi Zhang",
+    "Xiaochen Zhu",
+    "Chengzu Li",
+    "Yulong Chen",
+    "Dharshan Kumaran",
+    "Nigel Collier"
+   ],
+   "difference": "Estimates confidence from experience so that a system can defer reliably; calibration of a self-report is a different object from the fidelity with which an approval denotes an action, and this study varies the latter.",
+   "key": "2609.17708",
+   "pool": "refs_raw.json:arx-W1-escalation",
+   "pool_title": "Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents",
+   "primary": "cs.CL",
+   "source": "arxiv",
+   "title": "Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents",
+   "url": "https://arxiv.org/abs/2609.17708",
+   "venue": "arXiv:2609.17708",
+   "year": 2026
+  },
+  {
+   "authors": "Dietz, L.",
+   "authors_raw": [
+    "Laura Dietz"
+   ],
+   "difference": "Places a human in the loop for nugget annotation and asks how the human is incorporated; incorporation design is a protocol choice, and the net value of the step is not derived there.",
+   "key": "2606.29033",
+   "pool": "refs_raw.json:arx-W1-fatigue",
+   "pool_title": "Human-in-the-Loop Nugget Annotation for Accountable LLM-as-a-Judge Evaluations",
+   "primary": "cs.IR",
+   "source": "arxiv",
+   "title": "Human-In-The-Loop Nugget Annotation for Accountable LLM-as-a-Judge Evaluations",
+   "url": "https://arxiv.org/abs/2606.29033",
+   "venue": "arXiv:2606.29033",
+   "year": 2026
+  },
+  {
+   "authors": "Pawar, U. et al.",
+   "authors_raw": [
+    "Urja Pawar",
+    "Rajitha Ramanayake",
+    "Owen O'Neill",
+    "Nabeel Kemal",
+    "Abhishek Mandal",
+    "Houssem Chatbri",
+    "Christopher Martin",
+    "Vadim Pertsovskiy"
+   ],
+   "difference": "Detects hallucination from complementary signals and frames false alarms as consuming limited human review capacity; that framing is this study's false-block cost, which enters its value law as an explicit term rather than as a motivation.",
+   "key": "2609.02679",
+   "pool": "refs_raw2.json:arx-W3-crywolf",
+   "pool_title": "From Tokens to Semantics: Leveraging Complementary Signals for Hallucination Detection in Black-Box LLMs",
+   "primary": "cs.CL",
+   "source": "arxiv",
+   "title": "From Tokens to Semantics: Leveraging Complementary Signals for Hallucination Detection in Black-Box LLMs",
+   "url": "https://arxiv.org/abs/2609.02679",
+   "venue": "arXiv:2609.02679",
+   "year": 2026
+  },
+  {
+   "authors": "Mazaheri, P., Mazaheri, K.",
+   "authors_raw": [
+    "Parsa Mazaheri",
+    "Kasra Mazaheri"
+   ],
+   "difference": "Finds that a prior audit-repair context shifts an LLM verifier's threshold towards leniency; drift in a checker's operating point is the reviewer-accuracy axis, which this study holds fixed while varying fidelity, and the two are complementary.",
+   "key": "2608.16003",
+   "pool": "refs_raw2.json:arx-W3-screening",
+   "pool_title": "Prior Audit-Repair Context Shifts LLM Verifier Thresholds Toward Leniency",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Prior Audit-Repair Context Shifts LLM Verifier Thresholds Toward Leniency",
+   "url": "https://arxiv.org/abs/2608.16003",
+   "venue": "arXiv:2608.16003",
+   "year": 2026
+  },
+  {
+   "authors": "Lim, J., Shin, S., Hong, S.",
+   "authors_raw": [
+    "Jaewoo Lim",
+    "Sungbok Shin",
+    "Sanghyun Hong"
+   ],
+   "difference": "Asks whether reasoning representations help humans evaluate model outputs; human evaluation quality is measured against a representation, which is a fidelity-like input evaluated for helpfulness rather than priced in a decision.",
+   "key": "2609.09038",
+   "pool": "refs_raw2.json:arx-W3-crywolf",
+   "pool_title": "Do Reasoning Representations Help Humans Evaluate LLM Outputs?",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Do Reasoning Representations Help Humans Evaluate LLM Outputs?",
+   "url": "https://arxiv.org/abs/2609.09038",
+   "venue": "arXiv:2609.09038",
+   "year": 2026
+  },
+  {
+   "authors": "Kim, T., Kumar, A.",
+   "authors_raw": [
+    "Taeyoun Kim",
+    "Aviral Kumar"
+   ],
+   "difference": "Reduces over-refusal in LLMs with competing rewards, i.e. the false-block side of a filter; it optimises the rate, while this study asks when the harm from the other error makes a gate net-negative.",
+   "key": "2606.31748",
+   "pool": "refs_raw.json:arx-W1-fatigue",
+   "pool_title": "Addressing Over-Refusal in LLMs with Competing Rewards",
+   "primary": "cs.LG",
+   "source": "arxiv",
+   "title": "Addressing Over-Refusal in LLMs with Competing Rewards",
+   "url": "https://arxiv.org/abs/2606.31748",
+   "venue": "arXiv:2606.31748",
+   "year": 2026
+  },
+  {
+   "authors": "Singh, A. et al.",
+   "authors_raw": [
+    "Avantika Singh",
+    "Aurosweta Mahapatra",
+    "Ismail Rasim Ulgen",
+    "Nicholas Andrews",
+    "Kong Aik Lee",
+    "Berrak Sisman"
+   ],
+   "difference": "Shows deepfake detectors learn some attack families less well than others; uneven detection across attack families is the same shape as a reviewer's effective sensitivity falling below its nominal one.",
+   "key": "2609.11763",
+   "pool": "refs_raw2.json:arx-W3-entropy",
+   "pool_title": "Not All Attacks Are Learned Equally in Speech Deepfake Detection",
+   "primary": "eess.AS",
+   "source": "arxiv",
+   "title": "Not All Attacks Are Learned Equally in Speech Deepfake Detection",
+   "url": "https://arxiv.org/abs/2609.11763",
+   "venue": "arXiv:2609.11763",
+   "year": 2026
+  },
+  {
+   "authors": "Kasundra, J. et al.",
+   "authors_raw": [
+    "Jaykumar Kasundra",
+    "Anjaneya Praharaj",
+    "Sourabh Surana",
+    "Lakshmi Sirisha Chodisetty",
+    "Sourav Sharma",
+    "Abhigya Verma",
+    "Abhishek Bhardwaj",
+    "Debasish Kanhar",
+    "Aakash Bhagat",
+    "Khalil Slimi",
+    "Seganrasan Subramanian",
+    "Sathwik Tejaswi Madhusudhan",
+    "Ranga Prasad Chenna",
+    "Srinivas Sunkara"
+   ],
+   "difference": "Builds a guard model for unsafe or adversarial behaviour; a guard classifier is a programmatic reviewer, whose value under a defective channel is bounded by what it can see.",
+   "key": "2512.20293",
+   "pool": "refs_raw.json:arx-W2-adversarial",
+   "pool_title": "AprielGuard",
+   "primary": "cs.CL",
+   "source": "arxiv",
+   "title": "AprielGuard",
+   "url": "https://arxiv.org/abs/2512.20293",
+   "venue": "arXiv:2512.20293",
+   "year": 2025
+  },
+  {
+   "authors": "Qian, C., Wexler, J.",
+   "authors_raw": [
+    "Crystal Qian",
+    "James Wexler"
+   ],
+   "difference": "Measures productivity and trust when people take, leave or fix human-AI collaboration outputs; the human's disposition is measured directly, and this study instead fixes the human and varies whether their information is faithful.",
+   "key": "2402.18498",
+   "pool": "refs_raw.json:arx-W2-aviation",
+   "pool_title": "Take It, Leave It, or Fix It: Measuring Productivity and Trust in Human-AI Collaboration",
+   "primary": "cs.HC",
+   "source": "arxiv",
+   "title": "Take It, Leave It, or Fix It: Measuring Productivity and Trust in Human-AI Collaboration",
+   "url": "https://arxiv.org/abs/2402.18498",
+   "venue": "arXiv:2402.18498",
+   "year": 2024
+  },
+  {
+   "authors": "Casado-Mansilla, D. et al.",
+   "authors_raw": [
+    "D. Casado-Mansilla",
+    "P. Garaizar",
+    "A. Irizar-Arrieta",
+    "D. L\u00f3pez-de-Ipi\u00f1a"
+   ],
+   "difference": "Discusses complacency, comfort, relapse and distrust as side effects of automation in IoT; these are the dispositions that make a gate's value collapse, named qualitatively.",
+   "key": "1911.08657",
+   "pool": "refs_raw.json:arx-W2-aviation",
+   "pool_title": "On the Side Effects of Automation in IoT: Complacency and Comfort vs. Relapse and Distrust",
+   "primary": "cs.HC",
+   "source": "arxiv",
+   "title": "On the Side Effects of Automation in IoT: Complacency and Comfort vs. Relapse and Distrust",
+   "url": "https://arxiv.org/abs/1911.08657",
+   "venue": "arXiv:1911.08657",
+   "year": 2019
+  },
+  {
+   "authors": "Heinrich, D., McAndrew, I., Pretty, J.",
+   "authors_raw": [
+    "David G. I. Heinrich",
+    "Ian McAndrew",
+    "Jeremy Pretty"
+   ],
+   "difference": "Reviews human factors of satellite operations and interaction technologies; the domain is remote operation, and the treatment of the human is descriptive rather than priced.",
+   "key": "2110.04880",
+   "pool": "refs_raw.json:arx-W2-aviation",
+   "pool_title": "Human Factors Considerations in Satellite Operation's Human-Computer Interaction Technologies: A Review of Current Applications and Theory",
+   "primary": "cs.HC",
+   "source": "arxiv",
+   "title": "Human Factors Considerations in Satellite Operation's Human-Computer Interaction Technologies: A Review of Current Applications and Theory",
+   "url": "https://arxiv.org/abs/2110.04880",
+   "venue": "arXiv:2110.04880",
+   "year": 2021
+  },
+  {
+   "authors": "Kamath, A. et al.",
+   "authors_raw": [
+    "Adharsh Kamath",
+    "Sishen Zhang",
+    "Calvin Xu",
+    "Shubham Ugare",
+    "Gagandeep Singh",
+    "Sasa Misailovic"
+   ],
+   "difference": "Enforces temporal constraints on LLM agents through guardrails; temporal safety is a constraint on the action, and this study's subject is a human step that may or may not have positive value under such a constraint.",
+   "key": "2512.23738",
+   "pool": "refs_raw.json:arx-W2-guardrail",
+   "pool_title": "Enforcing Temporal Constraints for LLM Agents",
+   "primary": "cs.PL",
+   "source": "arxiv",
+   "title": "Enforcing Temporal Constraints for LLM Agents",
+   "url": "https://arxiv.org/abs/2512.23738",
+   "venue": "arXiv:2512.23738",
+   "year": 2025
+  },
+  {
+   "authors": "Alpay, F., Alpay, T.",
+   "authors_raw": [
+    "Faruk Alpay",
+    "Taylan Alpay"
+   ],
+   "difference": "Audits approval integrity and recovery in one publication mechanism and reports a production response-act checker accepting 291 of 302 unsupported-labelled answers; that is one system's false-accept rate, where this study asks for the boundary at which the rate stops mattering.",
+   "key": "2609.15576",
+   "pool": "refs_anchors.json:anchors-by-id",
+   "pool_title": "Approval Integrity and Recovery in LLM Answer Publication",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Approval Integrity and Recovery in LLM Answer Publication",
+   "url": "https://arxiv.org/abs/2609.15576",
+   "venue": "arXiv:2609.15576",
+   "year": 2026
+  },
+  {
+   "authors": "Shamis, A., Stephenson, M., Zhou, L.",
+   "authors_raw": [
+    "Alex Shamis",
+    "Matt Stephenson",
+    "Linfeng Zhou"
+   ],
+   "difference": "Prices execution assurance for data-centre workloads in a BFT setting; pricing assurance is the closest economics to this study, but the priced resource is hardware-backed execution, not a human decision with a mismatch channel.",
+   "key": "2510.26091",
+   "pool": "refs_raw2.json:arx-W3-principalagent",
+   "pool_title": "TEE-BFT: Pricing the Security of Data Center Execution Assurance",
+   "primary": "econ.TH",
+   "source": "arxiv",
+   "title": "TEE-BFT: Pricing the Security of Data Center Execution Assurance",
+   "url": "https://arxiv.org/abs/2510.26091",
+   "venue": "arXiv:2510.26091",
+   "year": 2025
+  },
+  {
+   "authors": "Chen, Y. et al.",
+   "authors_raw": [
+    "Yuxi Chen",
+    "Junming Chen",
+    "Chenyu He",
+    "Yiwei Li",
+    "Yicheng Ji",
+    "Yifan Wu",
+    "Dingyu Yang",
+    "Lansong Diao",
+    "Lidan Shou",
+    "Hongliang Zhang",
+    "Huan Li",
+    "Gang Chen"
+   ],
+   "difference": "Studies token economics for LLM agents from computing and economics views; it prices token consumption, and this study prices a human decision, whose harm term is absent there.",
+   "key": "2605.09104",
+   "pool": "refs_raw2.json:arx-W3-principalagent",
+   "pool_title": "Token Economics for LLM Agents: A Dual-View Study from Computing and Economics",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Token Economics for LLM Agents: A Dual-View Study from Computing and Economics",
+   "url": "https://arxiv.org/abs/2605.09104",
+   "venue": "arXiv:2605.09104",
+   "year": 2026
+  },
+  {
+   "authors": "Bars, N. et al.",
+   "authors_raw": [
+    "Nils Bars",
+    "Lukas Bernhard",
+    "Moritz Schloegel",
+    "Thorsten Holz"
+   ],
+   "difference": "Analyses software-based fault isolation empirically through controlled fault injection; isolation boundaries are enforcement mechanisms, and the object verified is code rather than an artifact a human approved.",
+   "key": "2509.07757",
+   "pool": "refs_raw.json:arx-W2-sandbox",
+   "pool_title": "Empirical Security Analysis of Software-based Fault Isolation through Controlled Fault Injection",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Empirical Security Analysis of Software-Based Fault Isolation Through Controlled Fault Injection",
+   "url": "https://arxiv.org/abs/2509.07757",
+   "venue": "arXiv:2509.07757",
+   "year": 2025
+  },
+  {
+   "authors": "Sotoudeh, M., Yedidia, Z.",
+   "authors_raw": [
+    "Matthew Sotoudeh",
+    "Zachary Yedidia"
+   ],
+   "difference": "Formally verifies a software fault isolation system, including its verifier; a verifier proved correct is a different claim from a reviewer shown a faithful object.",
+   "key": "2508.15898",
+   "pool": "refs_raw.json:arx-W2-sandbox",
+   "pool_title": "Automated Formal Verification of a Software Fault Isolation System",
+   "primary": "cs.PL",
+   "source": "arxiv",
+   "title": "Automated Formal Verification of a Software Fault Isolation System",
+   "url": "https://arxiv.org/abs/2508.15898",
+   "venue": "arXiv:2508.15898",
+   "year": 2025
+  },
+  {
+   "authors": "Schwarz, D.",
+   "authors_raw": [
+    "Dominik Schwarz"
+   ],
+   "difference": "Layers several defences for LLM applications against prompt injection and related attacks; layering reduces attack success, and this study asks whether the human layer pays.",
+   "key": "2510.11837",
+   "pool": "refs_raw.json:arx-W2-sandbox",
+   "pool_title": "Countermind: A Multi-Layered Security Architecture for Large Language Models",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Countermind: A Multi-Layered Security Architecture for Large Language Models",
+   "url": "https://arxiv.org/abs/2510.11837",
+   "venue": "arXiv:2510.11837",
+   "year": 2025
+  },
+  {
+   "authors": "Avina, A., Hariprasad, Y., Chaudhary, N.",
+   "authors_raw": [
+    "Alejandro Avina",
+    "Yashas Hariprasad",
+    "Naveen Kumar Chaudhary"
+   ],
+   "difference": "Detonates malware in an ephemeral containerized sandbox; containment bounds the blast radius, which is an alternative to a gate rather than a value for one.",
+   "key": "2512.20860",
+   "pool": "refs_raw.json:arx-W2-sandbox",
+   "pool_title": "pokiSEC: A Multi-Architecture, Containerized Ephemeral Malware Detonation Sandbox",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "PokiSEC: A Multi-Architecture, Containerized Ephemeral Malware Detonation Sandbox",
+   "url": "https://arxiv.org/abs/2512.20860",
+   "venue": "arXiv:2512.20860",
+   "year": 2025
+  },
+  {
+   "authors": "Zhang, R.",
+   "authors_raw": [
+    "Ruiyang Zhang"
+   ],
+   "difference": "Bounds the recall of a fixed-invariant FSA monitor by the entropy of the attack distribution; that is the adjacent monitor law for a programmatic detector, and no analogous bound is published for a human gate, which is what this study supplies.",
+   "key": "2608.01388",
+   "pool": "refs_anchors.json:anchors-by-id",
+   "pool_title": "Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety",
+   "primary": "cs.CR",
+   "source": "arxiv",
+   "title": "Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety",
+   "url": "https://arxiv.org/abs/2608.01388",
+   "venue": "arXiv:2608.01388",
+   "year": 2026
+  },
+  {
+   "authors": "Dixon, M.",
+   "authors_raw": [
+    "Matthew Francis Dixon"
+   ],
+   "difference": "Formulates delegation authority as a POMDP and solves for a policy under uncertainty; the channel between delegate and delegator is assumed faithful there, and this study makes that channel its variable.",
+   "key": "2606.29406",
+   "pool": "refs_anchors.json:anchors-by-id",
+   "pool_title": "Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority",
+   "primary": "q-fin.RM",
+   "source": "arxiv",
+   "title": "Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority",
+   "url": "https://arxiv.org/abs/2606.29406",
+   "venue": "arXiv:2606.29406",
+   "year": 2026
+  },
+  {
+   "authors": "Kurady, A. et al.",
+   "authors_raw": [
+    "Ashwini Kurady",
+    "Sri Sai Charith Grandhi",
+    "Rajesh Gupta",
+    "Sumit Kumar"
+   ],
+   "difference": "Shows step-scoped monitors cannot detect compositional violations however accurate they are; the statement is that accuracy is not the axis for a monitor, and this study's statement is that fidelity, not accuracy, is the axis for a human gate.",
+   "key": "2609.18820",
+   "pool": "refs_raw.json:arx-W1-authz",
+   "pool_title": "Compositional Policy Violations: When Step-Level Compliance Fails In Agentic AI Workflows",
+   "primary": "cs.AI",
+   "source": "arxiv",
+   "title": "Compositional Policy Violations: When Step-Level Compliance Fails in Agentic AI Workflows",
+   "url": "https://arxiv.org/abs/2609.18820",
+   "venue": "arXiv:2609.18820",
+   "year": 2026
+  },
+  {
+   "authors": "Maxey-Jones, C., Bittner, E.",
+   "authors_raw": [
+    "Maxey-Jones, Courtney",
+    "Bittner, Edward"
+   ],
+   "difference": "Reports that a checklist and a human-checked protocol reduced catheter-related bloodstream infections; a human verification step with a measured field benefit, which this study turns into a value that depends on the fidelity of what the checker sees.",
+   "key": "10.1093/med/9780190467654.003.0047",
+   "n_authors": 2,
+   "pool_title": "An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU",
+   "source": "crossref",
+   "title": "An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1093/med/9780190467654.003.0047",
+   "venue": "50 Studies Every Intensivist Should Know",
+   "year": 2018
+  },
+  {
+   "authors": "Hanley, J., McNeil, B.",
+   "authors_raw": [
+    "Hanley, J",
+    "McNeil, B"
+   ],
+   "difference": "The meaning and use of the area under an ROC curve; the classical statement of what a reviewer's accuracy is, which this study holds fixed while varying the fidelity of the object reviewed.",
+   "key": "10.1148/radiology.143.1.7063747",
+   "n_authors": 2,
+   "pool_title": "The meaning and use of the area under a receiver operating characteristic (ROC) curve.",
+   "source": "crossref",
+   "title": "The Meaning and Use of the Area under a Receiver Operating Characteristic (ROC) Curve.",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1148/radiology.143.1.7063747",
+   "venue": "Radiology",
+   "year": 1982
+  },
+  {
+   "authors": "Hanley, J., McNeil, B.",
+   "authors_raw": [
+    "Hanley, J",
+    "McNeil, B"
+   ],
+   "difference": "Compares ROC areas estimated from the same cases with a paired procedure; the paired-comparison tradition this study's per-stream pairing follows.",
+   "key": "10.1148/radiology.148.3.6878708",
+   "n_authors": 2,
+   "pool_title": "A method of comparing the areas under receiver operating characteristic curves derived from the same cases.",
+   "source": "crossref",
+   "title": "A Method of Comparing the Areas under Receiver Operating Characteristic Curves Derived from the Same Cases.",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1148/radiology.148.3.6878708",
+   "venue": "Radiology",
+   "year": 1983
+  },
+  {
+   "authors": "Metz, C.",
+   "authors_raw": [
+    "Metz, Charles"
+   ],
+   "difference": "Basic principles of ROC analysis; the reviewer's operating point as a curve, coupled here to a harm term so that an operating point becomes a value.",
+   "key": "10.1016/s0001-2998(78)80014-2",
+   "n_authors": 1,
+   "pool_title": "Basic principles of ROC analysis",
+   "source": "crossref",
+   "title": "Basic Principles of ROC Analysis",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/s0001-2998(78)80014-2",
+   "venue": "Seminars in Nuclear Medicine",
+   "year": 1978
+  },
+  {
+   "authors": "Swets, J.",
+   "authors_raw": [
+    "Swets, John"
+   ],
+   "difference": "The relative operating characteristic in psychology; the origin of the signal-detection reading of a human decision that this study imports into an approval gate.",
+   "key": "10.1126/science.182.4116.990",
+   "n_authors": 1,
+   "pool_title": "The Relative Operating Characteristic in Psychology",
+   "source": "crossref",
+   "title": "The Relative Operating Characteristic in Psychology",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1126/science.182.4116.990",
+   "venue": "Science",
+   "year": 1973
+  },
+  {
+   "authors": "Youden, W.",
+   "authors_raw": [
+    "Youden, W."
+   ],
+   "difference": "Youden's index for rating diagnostic tests; a one-number summary of a detector's operating point, used here as a reviewer-accuracy summary rather than as a value.",
+   "key": "10.1002/1097-0142(1950)3:1<32::aid-cncr2820030106>3.0.co;2-3",
+   "n_authors": 1,
+   "pool_title": "Index for rating diagnostic tests",
+   "source": "crossref",
+   "title": "Index for Rating Diagnostic Tests",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1002/1097-0142(1950)3:1<32::aid-cncr2820030106>3.0.co;2-3",
+   "venue": "Cancer",
+   "year": 1950
+  },
+  {
+   "authors": "van der Sijs, H. et al.",
+   "authors_raw": [
+    "van der Sijs, H.",
+    "Aarts, J.",
+    "Vulto, A."
+   ],
+   "difference": "Documents how often clinicians override drug-safety alerts and why; the reviewer disagreeing with the checker, measured in deployment rather than derived from a channel.",
+   "key": "10.1197/jamia.m1809",
+   "n_authors": 4,
+   "pool_title": "Overriding of Drug Safety Alerts in Computerized Physician Order Entry",
+   "source": "crossref",
+   "title": "Overriding of Drug Safety Alerts in Computerized Physician Order Entry",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1197/jamia.m1809",
+   "venue": "Journal of the American Medical Informatics Association",
+   "year": 2006
+  },
+  {
+   "authors": "Weingart, S. et al.",
+   "authors_raw": [
+    "Weingart, Saul",
+    "Toth, Maria",
+    "Sands, Daniel"
+   ],
+   "difference": "Reports physicians' decisions to override computerised drug alerts in primary care; override behaviour is the human step's cost side, measured with no artifact-fidelity axis.",
+   "key": "10.1001/archinte.163.21.2625",
+   "n_authors": 6,
+   "pool_title": "Physicians' Decisions to Override Computerized Drug Alerts in Primary Care",
+   "source": "crossref",
+   "title": "Physicians' Decisions to Override Computerized Drug Alerts in Primary Care",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1001/archinte.163.21.2625",
+   "venue": "Archives of Internal Medicine",
+   "year": 2003
+  },
+  {
+   "authors": "Kaushal, R., Shojania, K., Bates, D.",
+   "authors_raw": [
+    "Kaushal, Rainu",
+    "Shojania, Kaveh",
+    "Bates, David"
+   ],
+   "difference": "Measures the effect of computerised order entry with decision support on adverse drug events; the outcome of adding a check, where this study asks when adding one is worth more than adding nothing.",
+   "key": "10.1001/archinte.163.12.1409",
+   "n_authors": 3,
+   "pool_title": "Effects of Computerized Physician Order Entry and Clinical Decision Support Systems on Medication Safety",
+   "source": "crossref",
+   "title": "Effects of Computerized Physician Order Entry and Clinical Decision Support Systems on Medication Safety",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1001/archinte.163.12.1409",
+   "venue": "Archives of Internal Medicine",
+   "year": 2003
+  },
+  {
+   "authors": "Egelman, S., Cranor, L., Hong, J.",
+   "authors_raw": [
+    "Egelman, Serge",
+    "Cranor, Lorrie",
+    "Hong, Jason"
+   ],
+   "difference": "Finds phishing warnings are often ignored; a warning that arrives unfaithfully or too often loses its force, which is the fatigue mechanism this study writes as an explicit cost term.",
+   "key": "10.1145/1357054.1357219",
+   "n_authors": 3,
+   "pool_title": "You've been warned",
+   "source": "crossref",
+   "title": "You've Been Warned",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1357054.1357219",
+   "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+   "year": 2008
+  },
+  {
+   "authors": "Bravo-Lillo, C. et al.",
+   "authors_raw": [
+    "Bravo-Lillo, Cristian",
+    "Komanduri, Saranga",
+    "Cranor, Lorrie"
+   ],
+   "difference": "Designs security-decision interfaces so genuine risks are harder to ignore; the design improves the reviewer's attention, whereas this study varies whether the artifact is faithful at all.",
+   "key": "10.1145/2501604.2501610",
+   "n_authors": 7,
+   "pool_title": "Your attention please",
+   "source": "crossref",
+   "title": "Your Attention Please",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/2501604.2501610",
+   "venue": "Proceedings of the Ninth Symposium on Usable Privacy and Security",
+   "year": 2013
+  },
+  {
+   "authors": "Anderson, B. et al.",
+   "authors_raw": [
+    "Anderson, Bonnie",
+    "Kirwan, C.",
+    "Jenkins, Jeffrey"
+   ],
+   "difference": "Shows polymorphic warnings reduce habituation measured in the brain; habituation is the fatigue coupling this study names as the mechanism a registered interior optimum would require.",
+   "key": "10.1145/2702123.2702322",
+   "n_authors": 6,
+   "pool_title": "How Polymorphic Warnings Reduce Habituation in the Brain",
+   "source": "crossref",
+   "title": "How Polymorphic Warnings Reduce Habituation in the Brain",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/2702123.2702322",
+   "venue": "Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems",
+   "year": 2015
+  },
+  {
+   "authors": "Felt, A. et al.",
+   "authors_raw": [
+    "Felt, Adrienne",
+    "Ainslie, Alex",
+    "Reeder, Robert"
+   ],
+   "difference": "Improves SSL warnings for comprehension and adherence; comprehension is the reviewer-side property, while this study's channel property is whether the object reviewed is the object executed.",
+   "key": "10.1145/2702123.2702442",
+   "n_authors": 8,
+   "pool_title": "Improving SSL Warnings",
+   "source": "crossref",
+   "title": "Improving SSL Warnings",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/2702123.2702442",
+   "venue": "Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems",
+   "year": 2015
+  },
+  {
+   "authors": "Bravo-Lillo, C. et al.",
+   "authors_raw": [
+    "Bravo-Lillo, Cristian",
+    "Cranor, Lorrie",
+    "Downs, Julie"
+   ],
+   "difference": "Improves computer security dialogs; a dialog is the artifact a human reads, and this study prices the decision that dialog mediates.",
+   "key": "10.1007/978-3-642-23768-3_2",
+   "n_authors": 5,
+   "pool_title": "Improving Computer Security Dialogs",
+   "source": "crossref",
+   "title": "Improving Computer Security Dialogs",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-3-642-23768-3_2",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 2011
+  },
+  {
+   "authors": "Modic, D., Anderson, R.",
+   "authors_raw": [
+    "Modic, David",
+    "Anderson, Ross"
+   ],
+   "difference": "The psychology of malware warnings, including the cost of false positives to the user who receives them; that cost is this study's false-block term.",
+   "key": "10.2139/ssrn.2374379",
+   "n_authors": 2,
+   "pool_title": "Reading this May Harm Your Computer: The Psychology of Malware Warnings",
+   "source": "crossref",
+   "title": "Reading This May Harm Your Computer: The Psychology of Malware Warnings",
+   "type": "journal-article",
+   "url": "https://doi.org/10.2139/ssrn.2374379",
+   "venue": "SSRN Electronic Journal",
+   "year": 2014
+  },
+  {
+   "authors": "Dhamija, R., Tygar, J., Hearst, M.",
+   "authors_raw": [
+    "Dhamija, Rachna",
+    "Tygar, J.",
+    "Hearst, Marti"
+   ],
+   "difference": "Explains why phishing works by defeating the user's judgement rather than the system's; the human is the deceived party, which this study formalises as an unfaithful review.",
+   "key": "10.1145/1124772.1124861",
+   "n_authors": 3,
+   "pool_title": "Why phishing works",
+   "source": "crossref",
+   "title": "Why Phishing Works",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1124772.1124861",
+   "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+   "year": 2006
+  },
+  {
+   "authors": "Herley, C.",
+   "authors_raw": [
+    "Herley, Cormac"
+   ],
+   "difference": "Argues users rationally reject security advice given its externalities; the rational-rejection argument is the reviewer's side of why a gate's cost can exceed its benefit.",
+   "key": "10.1145/1719030.1719050",
+   "n_authors": 1,
+   "pool_title": "So long, and no thanks for the externalities",
+   "source": "crossref",
+   "title": "So Long, and No Thanks for the Externalities",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1719030.1719050",
+   "venue": "Proceedings of the 2009 workshop on New security paradigms workshop",
+   "year": 2009
+  },
+  {
+   "authors": "Parasuraman, R., Riley, V.",
+   "authors_raw": [
+    "Parasuraman, Raja",
+    "Riley, Victor"
+   ],
+   "difference": "Humans' use, misuse, disuse and abuse of automation; the canonical typology of how a human step fails, cited for the dispositions rather than for a value.",
+   "key": "10.1518/001872097778543886",
+   "n_authors": 2,
+   "pool_title": "Humans and Automation: Use, Misuse, Disuse, Abuse",
+   "source": "crossref",
+   "title": "Humans and Automation: Use, Misuse, Disuse, Abuse",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1518/001872097778543886",
+   "venue": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+   "year": 1997
+  },
+  {
+   "authors": "Lee, J., See, K.",
+   "authors_raw": [
+    "Lee, John",
+    "See, Katrina"
+   ],
+   "difference": "Trust in automation and designing for appropriate reliance; reliance is the reviewer's disposition toward a checker, whereas this study's failure lives in the artifact's fidelity.",
+   "key": "10.1518/hfes.46.1.50.30392",
+   "n_authors": 2,
+   "pool_title": "Trust in Automation: Designing for Appropriate Reliance",
+   "source": "crossref",
+   "title": "Trust in Automation: Designing for Appropriate Reliance",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1518/hfes.46.1.50.30392",
+   "venue": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+   "year": 2004
+  },
+  {
+   "authors": "Parasuraman, R., Manzey, D.",
+   "authors_raw": [
+    "Parasuraman, Raja",
+    "Manzey, Dietrich"
+   ],
+   "difference": "An attentional integration of complacency and bias in human use of automation; the mechanism by which a human stop becomes a rubber stamp.",
+   "key": "10.1177/0018720810376055",
+   "n_authors": 2,
+   "pool_title": "Complacency and Bias in Human Use of Automation: An Attentional Integration",
+   "source": "crossref",
+   "title": "Complacency and Bias in Human Use of Automation: An Attentional Integration",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1177/0018720810376055",
+   "venue": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+   "year": 2010
+  },
+  {
+   "authors": "Bainbridge, L.",
+   "authors_raw": [
+    "Bainbridge, Lisanne"
+   ],
+   "difference": "Ironies of automation: the operator left to supervise is least able to intervene; the founding statement of why a human gate can be worse than none, stated without a model.",
+   "key": "10.1016/0005-1098(83)90046-8",
+   "n_authors": 1,
+   "pool_title": "Ironies of automation",
+   "source": "crossref",
+   "title": "Ironies of Automation",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/0005-1098(83)90046-8",
+   "venue": "Automatica",
+   "year": 1983
+  },
+  {
+   "authors": "Endsley, M., Kiris, E.",
+   "authors_raw": [
+    "Endsley, Mica",
+    "Kiris, Esin"
+   ],
+   "difference": "The out-of-the-loop performance problem and level of control in automation; the human's degraded state, held fixed here so that the channel can be varied alone.",
+   "key": "10.1518/001872095779064555",
+   "n_authors": 2,
+   "pool_title": "The Out-of-the-Loop Performance Problem and Level of Control in Automation",
+   "source": "crossref",
+   "title": "The Out-Of-The-Loop Performance Problem and Level of Control in Automation",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1518/001872095779064555",
+   "venue": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+   "year": 1995
+  },
+  {
+   "authors": "Santoni de Sio, F., van den Hoven, J.",
+   "authors_raw": [
+    "Santoni de Sio, Filippo",
+    "van den Hoven, Jeroen"
+   ],
+   "difference": "A philosophical account of meaningful human control over autonomous systems; a criterion for when control is meaningful, which this study replaces with a quantity that can be computed.",
+   "key": "10.3389/frobt.2018.00015",
+   "n_authors": 2,
+   "pool_title": "Meaningful Human Control over Autonomous Systems: A Philosophical Account",
+   "source": "crossref",
+   "title": "Meaningful Human Control over Autonomous Systems: A Philosophical Account",
+   "type": "journal-article",
+   "url": "https://doi.org/10.3389/frobt.2018.00015",
+   "venue": "Frontiers in Robotics and AI",
+   "year": 2018
+  },
+  {
+   "authors": "Elish, M.",
+   "authors_raw": [
+    "Elish, Madeleine"
+   ],
+   "difference": "Moral crumple zones: humans absorb blame for systems they cannot meaningfully control; the accountability reading of the same failure this study prices.",
+   "key": "10.4337/9781800887305.00010",
+   "n_authors": 1,
+   "pool_title": "Moral crumple zones: cautionary tales in human\u2013robot interaction",
+   "source": "crossref",
+   "title": "Moral Crumple Zones: Cautionary Tales in Human\u2013robot Interaction",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.4337/9781800887305.00010",
+   "venue": "Robot Law: Volume II",
+   "year": 2025
+  },
+  {
+   "authors": "Horvitz, E.",
+   "authors_raw": [
+    "Horvitz, Eric"
+   ],
+   "difference": "Principles of mixed-initiative user interfaces: when a system should ask the user, which is this study's escalation decision with a cost model attached.",
+   "key": "10.1145/302979.303030",
+   "n_authors": 1,
+   "pool_title": "Principles of mixed-initiative user interfaces",
+   "source": "crossref",
+   "title": "Principles of Mixed-Initiative User Interfaces",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/302979.303030",
+   "venue": "Proceedings of the SIGCHI conference on Human factors in computing systems the CHI is the limit - CHI '99",
+   "year": 1999
+  },
+  {
+   "authors": "Holzinger, A.",
+   "authors_raw": [
+    "Holzinger, Andreas"
+   ],
+   "difference": "Argues interactive machine learning needs a human in the loop for health informatics; the case for the human is capability-based, and no channel between reviewer and object is modelled.",
+   "key": "10.1007/s40708-016-0042-6",
+   "n_authors": 1,
+   "pool_title": "Interactive machine learning for health informatics: when do we need the human-in-the-loop?",
+   "source": "crossref",
+   "title": "Interactive Machine Learning for Health Informatics: When Do We Need the Human-In-The-Loop?",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s40708-016-0042-6",
+   "venue": "Brain Informatics",
+   "year": 2016
+  },
+  {
+   "authors": "Ladapo, O. et al.",
+   "authors_raw": [
+    "Ladapo, Olasunkanmi",
+    "Dosunmu, Adetomiwa",
+    "Jooda, Demilade"
+   ],
+   "difference": "Surveys human-in-the-loop machine learning as a field; a taxonomy of where the human acts, with the value of the human step itself not a quantity in the survey.",
+   "key": "10.54660/.jfmr.2022.3.1.656-669",
+   "n_authors": 4,
+   "pool_title": "Human-in-the-Loop Machine Learning: A State of the Art",
+   "source": "crossref",
+   "title": "Human-In-The-Loop Machine Learning: A State of the Art",
+   "type": "journal-article",
+   "url": "https://doi.org/10.54660/.jfmr.2022.3.1.656-669",
+   "venue": "Journal of Frontiers in Multidisciplinary Research",
+   "year": 2022
+  },
+  {
+   "authors": "Brodersen, J., Siersma, V.",
+   "authors_raw": [
+    "Brodersen, J.",
+    "Siersma, V."
+   ],
+   "difference": "Long-term psychosocial consequences of false-positive screening mammography; the harm of a false positive measured in the field, which is why this study carries a false-block term rather than treating the gate as free.",
+   "key": "10.1370/afm.1466",
+   "n_authors": 2,
+   "pool_title": "Long-Term Psychosocial Consequences of False-Positive Screening Mammography",
+   "source": "crossref",
+   "title": "Long-Term Psychosocial Consequences of False-Positive Screening Mammography",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1370/afm.1466",
+   "venue": "The Annals of Family Medicine",
+   "year": 2013
+  },
+  {
+   "authors": "Marteau, T.",
+   "authors_raw": [
+    "Marteau, T."
+   ],
+   "difference": "The psychological costs of screening; screening harms borne by those screened, the empirical backing for pricing the gate's own errors.",
+   "key": "10.1136/bmj.299.6698.527",
+   "n_authors": 1,
+   "pool_title": "Psychological costs of screening.",
+   "source": "crossref",
+   "title": "Psychological Costs of Screening.",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1136/bmj.299.6698.527",
+   "venue": "BMJ",
+   "year": 1989
+  },
+  {
+   "authors": "Bacchelli, A., Bird, C.",
+   "authors_raw": [
+    "Bacchelli, Alberto",
+    "Bird, Christian"
+   ],
+   "difference": "Reports expectations, outcomes and challenges of modern code review in industry; a deployed human review step studied as a practice, without a value for the step.",
+   "key": "10.1109/icse.2013.6606617",
+   "n_authors": 2,
+   "pool_title": "Expectations, outcomes, and challenges of modern code review",
+   "source": "crossref",
+   "title": "Expectations, Outcomes, and Challenges of Modern Code Review",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/icse.2013.6606617",
+   "venue": "2013 35th International Conference on Software Engineering (ICSE)",
+   "year": 2013
+  },
+  {
+   "authors": "Bosu, A., Greiler, M., Bird, C.",
+   "authors_raw": [
+    "Bosu, Amiangshu",
+    "Greiler, Michaela",
+    "Bird, Christian"
+   ],
+   "difference": "Measures what makes a code review useful; usefulness is judged by the reviewed person rather than derived from whether the reviewer's object denoted the change.",
+   "key": "10.1109/msr.2015.21",
+   "n_authors": 3,
+   "pool_title": "Characteristics of Useful Code Reviews: An Empirical Study at Microsoft",
+   "source": "crossref",
+   "title": "Characteristics of Useful Code Reviews: An Empirical Study at Microsoft",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/msr.2015.21",
+   "venue": "2015 IEEE/ACM 12th Working Conference on Mining Software Repositories",
+   "year": 2015
+  },
+  {
+   "authors": "Sadowski, C. et al.",
+   "authors_raw": [
+    "Sadowski, Caitlin",
+    "S\u00f6derberg, Emma",
+    "Church, Luke"
+   ],
+   "difference": "Describes modern code review as practised at Google, including reviewer assignment and tooling; a large deployed review process whose benefit is reported as practice.",
+   "key": "10.1145/3183519.3183525",
+   "n_authors": 5,
+   "pool_title": "Modern code review",
+   "source": "crossref",
+   "title": "Modern Code Review",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3183519.3183525",
+   "venue": "Proceedings of the 40th International Conference on Software Engineering: Software Engineering in Practice",
+   "year": 2018
+  },
+  {
+   "authors": "Williamson, S.",
+   "authors_raw": [
+    "Williamson, Stephen"
+   ],
+   "difference": "Costly monitoring and equilibrium credit rationing; monitoring is costly and worth only the difference it makes, the economic structure this study instantiates with a fidelity parameter.",
+   "key": "10.1016/0304-3932(86)90074-7",
+   "n_authors": 1,
+   "pool_title": "Costly monitoring, financial intermediation, and equilibrium credit rationing",
+   "source": "crossref",
+   "title": "Costly Monitoring, Financial Intermediation, and Equilibrium Credit Rationing",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/0304-3932(86)90074-7",
+   "venue": "Journal of Monetary Economics",
+   "year": 1986
+  },
+  {
+   "authors": "Holmstrom, B.",
+   "authors_raw": [
+    "Holmstrom, Bengt"
+   ],
+   "difference": "Moral hazard and observability: effort is unobservable and the contract prices what can be seen; the reason an unfaithful observation is worth less than a faithful one.",
+   "key": "10.2307/3003320",
+   "n_authors": 1,
+   "pool_title": "Moral Hazard and Observability",
+   "source": "crossref",
+   "title": "Moral Hazard and Observability",
+   "type": "journal-article",
+   "url": "https://doi.org/10.2307/3003320",
+   "venue": "The Bell Journal of Economics",
+   "year": 1979
+  },
+  {
+   "authors": "Townsend, R.",
+   "authors_raw": [
+    "Townsend, Robert"
+   ],
+   "difference": "Optimal contracts with costly state verification; verification is itself costly and is used only when it pays, which is the decision rule this study derives for a human gate.",
+   "key": "10.21034/sr.45",
+   "n_authors": 1,
+   "pool_title": "Optimal Contracts and Competitive Markets With Costly State Verification",
+   "source": "crossref",
+   "title": "Optimal Contracts and Competitive Markets with Costly State Verification",
+   "type": "posted-content",
+   "url": "https://doi.org/10.21034/sr.45",
+   "venue": "Federal Reserve Bank of Minneapolis",
+   "year": 1979
+  },
+  {
+   "authors": "Becker, G.",
+   "authors_raw": [
+    "Becker, Gary"
+   ],
+   "difference": "Crime and punishment: an economic approach; enforcement is priced against the harm it deters, the framing this study applies to a single approval decision.",
+   "key": "10.1007/978-1-349-62853-7_2",
+   "n_authors": 1,
+   "pool_title": "Crime and Punishment: an Economic Approach",
+   "source": "crossref",
+   "title": "Crime and Punishment: An Economic Approach",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-1-349-62853-7_2",
+   "venue": "The Economic Dimensions of Crime",
+   "year": 1968
+  },
+  {
+   "authors": "Polinsky, A., Shavell, S.",
+   "authors_raw": [
+    "Polinsky, A.",
+    "Shavell, Steven"
+   ],
+   "difference": "The economic theory of public enforcement of law; enforcement intensity against the harm avoided, a policy-level analogue of this study's per-decision value.",
+   "key": "10.3386/w6993",
+   "n_authors": 2,
+   "pool_title": "The Economic Theory of Public Enforcement of Law",
+   "source": "crossref",
+   "title": "The Economic Theory of Public Enforcement of Law",
+   "type": "report",
+   "url": "https://doi.org/10.3386/w6993",
+   "venue": "National Bureau of Economic Research",
+   "year": 1999
+  },
+  {
+   "authors": "Jensen (Deceased), M., Meckling, W.",
+   "authors_raw": [
+    "Jensen (Deceased), Michael",
+    "Meckling, William"
+   ],
+   "difference": "Theory of the firm, agency costs and ownership structure; the principal-agent structure in which a check on an agent's action is priced.",
+   "key": "10.2139/ssrn.94043",
+   "n_authors": 2,
+   "pool_title": "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure",
+   "source": "crossref",
+   "title": "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.94043",
+   "venue": "Elsevier BV",
+   "year": 1998
+  },
+  {
+   "authors": "Diakopoulos, N.",
+   "authors_raw": [
+    "Diakopoulos, Nicholas"
+   ],
+   "difference": "Investigates algorithmic accountability journalistically; accountability as a practice, cited for the governance context in which approval gates are justified.",
+   "key": "10.1080/21670811.2014.976411",
+   "n_authors": 1,
+   "pool_title": "Algorithmic Accountability",
+   "source": "crossref",
+   "title": "Algorithmic Accountability",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1080/21670811.2014.976411",
+   "venue": "Digital Journalism",
+   "year": 2014
+  },
+  {
+   "authors": "Mittelstadt, B. et al.",
+   "authors_raw": [
+    "Mittelstadt, Brent",
+    "Allo, Patrick",
+    "Taddeo, Mariarosaria"
+   ],
+   "difference": "Maps the ethics debate around algorithms; the normative frame in which a human gate is usually argued for, and which this study asks to be traded against its cost.",
+   "key": "10.1177/2053951716679679",
+   "n_authors": 5,
+   "pool_title": "The ethics of algorithms: Mapping the debate",
+   "source": "crossref",
+   "title": "The Ethics of Algorithms: Mapping the Debate",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1177/2053951716679679",
+   "venue": "Big Data & Society",
+   "year": 2016
+  },
+  {
+   "authors": "Dennis, J., Van Horn, E.",
+   "authors_raw": [
+    "Dennis, Jack",
+    "Van Horn, Earl"
+   ],
+   "difference": "Programming semantics for multiprogrammed computations, including the capability model; the origin of capability-based authorization, which is the b = 1 end of this study's axis.",
+   "key": "10.1145/357980.357993",
+   "n_authors": 2,
+   "pool_title": "Programming semantics for multiprogrammed computations",
+   "source": "crossref",
+   "title": "Programming Semantics for Multiprogrammed Computations",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1145/357980.357993",
+   "venue": "Communications of the ACM",
+   "year": 1983
+  },
+  {
+   "authors": "Hardy, N.",
+   "authors_raw": [
+    "Hardy, Norm"
+   ],
+   "difference": "The confused deputy: an authorized party can be induced to misuse its authority; the canonical statement that authority flows through the artifact, not through intent.",
+   "key": "10.1145/54289.871709",
+   "n_authors": 1,
+   "pool_title": "The Confused Deputy",
+   "source": "crossref",
+   "title": "The Confused Deputy",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1145/54289.871709",
+   "venue": "ACM SIGOPS Operating Systems Review",
+   "year": 1988
+  },
+  {
+   "authors": "Lampson, B.",
+   "authors_raw": [
+    "Lampson, Butler"
+   ],
+   "difference": "A note on the confinement problem; confinement of what a program may affect, the boundary an approval gate is placed on.",
+   "key": "10.1145/362375.362389",
+   "n_authors": 1,
+   "pool_title": "A note on the confinement problem",
+   "source": "crossref",
+   "title": "A Note on the Confinement Problem",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1145/362375.362389",
+   "venue": "Communications of the ACM",
+   "year": 1973
+  },
+  {
+   "authors": "Thompson, K.",
+   "authors_raw": [
+    "Thompson, Ken"
+   ],
+   "difference": "Reflections on trusting trust: trust in a chain is trust in whatever wrote it; the reason an approval artifact's provenance matters independently of its content.",
+   "key": "10.1145/1283920.1283940",
+   "n_authors": 1,
+   "pool_title": "Reflections on trusting trust",
+   "source": "crossref",
+   "title": "Reflections on Trusting Trust",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1145/1283920.1283940",
+   "venue": "ACM Turing award lectures",
+   "year": 2007
+  },
+  {
+   "authors": "Rose, S. et al.",
+   "authors_raw": [
+    "Rose, Scott",
+    "Borchert, Oliver",
+    "Mitchell, Stu"
+   ],
+   "difference": "Zero trust architecture: no implicit trust from network position; the architectural claim that every step must be verified, whose value this study asks about.",
+   "key": "10.6028/nist.sp.800-207-draft",
+   "n_authors": 4,
+   "pool_title": "Zero Trust Architecture",
+   "source": "crossref",
+   "title": "Zero Trust Architecture",
+   "type": "posted-content",
+   "url": "https://doi.org/10.6028/nist.sp.800-207-draft",
+   "venue": "National Institute of Standards and Technology (NIST)",
+   "year": 2019
+  },
+  {
+   "authors": "Anderson, R.",
+   "authors_raw": [
+    "Anderson, Ross"
+   ],
+   "difference": "Security engineering as a discipline of building dependable systems; the reference for the engineering frame in which an approval step is one control among several.",
+   "key": "10.1002/9781119644682",
+   "n_authors": 1,
+   "pool_title": "Security Engineering",
+   "source": "crossref",
+   "title": "Security Engineering",
+   "type": "monograph",
+   "url": "https://doi.org/10.1002/9781119644682",
+   "venue": "Wiley",
+   "year": 2020
+  }
+ ],
+ "errors": [],
+ "n_entries": 121,
+ "n_not_selected": 1,
+ "n_selected_arxiv": 75,
+ "n_selected_doi": 46,
+ "n_unique_keys": 121,
+ "not_selected": [
+  {
+   "id": "2609.22062",
+   "reason": "Gripper-Aware Automatic Dense Packing of Irregular Objects (cs.RO). Returned by the W3 'monitorability' keyword window and unrelated to this study: it plans robot grasps, and no reviewer, artifact or gate appears in it. Retained here so the register of considered works stays complete, never in the bibliography."
+  }
+ ],
+ "resolved_by_pool": {
+  "refs_anchors.json:anchors-by-id": 4,
+  "refs_classic.json:crossref-doi": 46,
+  "refs_raw.json:arx-W1-approval": 6,
+  "refs_raw.json:arx-W1-approvalfatigue": 1,
+  "refs_raw.json:arx-W1-authz": 6,
+  "refs_raw.json:arx-W1-confused": 2,
+  "refs_raw.json:arx-W1-defer": 4,
+  "refs_raw.json:arx-W1-escalation": 3,
+  "refs_raw.json:arx-W1-fatigue": 3,
+  "refs_raw.json:arx-W1-hijack": 1,
+  "refs_raw.json:arx-W1-injection": 4,
+  "refs_raw.json:arx-W1-oversight": 1,
+  "refs_raw.json:arx-W1-provenance": 1,
+  "refs_raw.json:arx-W1-toctou": 3,
+  "refs_raw.json:arx-W2-adversarial": 1,
+  "refs_raw.json:arx-W2-aviation": 3,
+  "refs_raw.json:arx-W2-guardrail": 1,
+  "refs_raw.json:arx-W2-partial": 1,
+  "refs_raw.json:arx-W2-reject": 3,
+  "refs_raw.json:arx-W2-sandbox": 4,
+  "refs_raw.json:arx-W2-selectclass": 1,
+  "refs_raw2.json:arx-W3-crywolf": 2,
+  "refs_raw2.json:arx-W3-entropy": 1,
+  "refs_raw2.json:arx-W3-escalation": 1,
+  "refs_raw2.json:arx-W3-faithful": 2,
+  "refs_raw2.json:arx-W3-injection": 1,
+  "refs_raw2.json:arx-W3-mcpsec": 4,
+  "refs_raw2.json:arx-W3-mixedinit": 1,
+  "refs_raw2.json:arx-W3-oversight": 1,
+  "refs_raw2.json:arx-W3-pep": 3,
+  "refs_raw2.json:arx-W3-principalagent": 2,
+  "refs_raw2.json:arx-W3-screening": 1,
+  "refs_raw2.json:arx-W3-substitution": 1,
+  "refs_raw2.json:arx-W3-toolpoison": 1,
+  "refs_reread.json:concurrent-by-id": 1
+ },
+ "round": "R416; re-run at R482; R575 (record_text: the printed form is decoded, not the stored one)"
+}

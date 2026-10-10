@@ -1,0 +1,177 @@
+{
+ "arxiv": {
+  "concurrent-by-id": {
+   "n_returned": 2,
+   "query": "id_list=2609.38983",
+   "rows": [
+    {
+     "authors": [
+      "Yang Wang"
+     ],
+     "id": "2609.38983",
+     "primary": "cs.CR",
+     "published": "2026-09-30T04:59:15Z",
+     "source": "arxiv",
+     "summary": "Modern AI coding-agent harnesses (Claude Code, Codex CLI, Cursor) rest their security boundary on a largely unexamined assumption: that the action A a human approves is the same action A' the harness executes, where A is fixed by a stated policy for what a scope grant or session-scoped approval authorizes. We show this assumption fails systematically and reproducibly. We introduce Approval Laundering, a taxonomy of six failure modes by which a harness's enforcement mechanism silently substitutes",
+     "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+     "url": "https://arxiv.org/abs/2609.38983",
+     "version": "2609.38983v1",
+     "year": 2026
+    }
+   ],
+   "window": null
+  },
+  "refreshed-by-id": {
+   "n_returned": 2,
+   "query": "id_list=2609.08472",
+   "rows": [
+    {
+     "authors": [
+      "Yang Li",
+      "Zongsi Xu",
+      "Sergey Volkov",
+      "hai liu",
+      "Tuo Zhou",
+      "Xiyu Chen",
+      "Di Wan",
+      "Dian Shao",
+      "Ye Luo",
+      "Hao Sun"
+     ],
+     "id": "2609.08472",
+     "primary": "cs.MA",
+     "published": "2026-09-08T09:11:53Z",
+     "source": "arxiv",
+     "summary": "Stateful agents reuse artifacts after producing executions and permissions change. We formalize authority-sufficient observations and durable effects bound to execution and material identities. WTB implements this interface through runtime adapters, shared evidence, and transactional publication/recovery. Six study families separate the mechanism from its integration. Raw and typed evidence both solve 32/32 authority cases, with model-dependent planning effects. Fixed-intent enforcement blocks s",
+     "title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
+     "url": "https://arxiv.org/abs/2609.08472",
+     "version": "2609.08472v3",
+     "year": 2026
+    }
+   ],
+   "window": null
+  }
+ },
+ "checks": [
+  {
+   "duplicated_in_declaration": [],
+   "duplicated_in_response": [],
+   "id": "C1-completeness+concurrent",
+   "missing": [],
+   "n": 1,
+   "n_ok": 1,
+   "ok": true,
+   "per_entry": [
+    {
+     "desc": "six failure classes by which a harness substitutes the executed action for the approved one, a measured bound-gap rate per class in one harness, and a keyed-token defence; published 2026-09-30, after this study's registration (2026-09-21) and the day before its submission",
+     "expectation": {
+      "declared_tokens": [
+       "laundering",
+       "binding",
+       "harness"
+      ],
+      "form": "DISJUNCTION: >=1 token, declared before the fetch from the abstract (new work) or the live record's own fields (refresh) -- it catches an unrelated work, it does not prove identity",
+      "hit": [
+       "laundering",
+       "binding",
+       "harness"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2609.38983",
+     "n_authors": 1,
+     "ok": true,
+     "ok_authors": true,
+     "ok_title": true,
+     "ok_year": true,
+     "title": "Approval Laundering: Systematizing Approval--Execution Binding Failures in AI Coding-Agent Harnesses",
+     "version": "2609.38983v1",
+     "year": 2026
+    }
+   ],
+   "requested": 1,
+   "returned": 1
+  },
+  {
+   "duplicated_in_declaration": [],
+   "duplicated_in_response": [],
+   "id": "C1-completeness+refreshed",
+   "missing": [],
+   "n": 1,
+   "n_ok": 1,
+   "ok": true,
+   "per_entry": [
+    {
+     "changed": true,
+     "desc": "the pool's title no longer matches the live record: the entry cited the harvest's reading of v1 while the link now serves a retitled v3, so the bibliography is re-pointed at the title the record carries",
+     "expectation": {
+      "declared_tokens": [
+       "evidence",
+       "authority",
+       "agents"
+      ],
+      "form": "DISJUNCTION: >=1 token, declared before the fetch from the abstract (new work) or the live record's own fields (refresh) -- it catches an unrelated work, it does not prove identity",
+      "hit": [
+       "evidence",
+       "authority",
+       "agents"
+      ],
+      "year_floor": 2026
+     },
+     "id": "2609.08472",
+     "n_authors": 10,
+     "ok": true,
+     "ok_authors": true,
+     "ok_changed": true,
+     "ok_title": true,
+     "ok_year": true,
+     "replaces": {
+      "pool": "refs_raw.json",
+      "title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems"
+     },
+     "title": "From Evidence to Effect: Authority Semantics and Runtime Infrastructure for Stateful Agents",
+     "version": "2609.08472v3",
+     "year": 2026
+    }
+   ],
+   "requested": 1,
+   "returned": 1
+  }
+ ],
+ "declared": [
+  {
+   "desc": "six failure classes by which a harness substitutes the executed action for the approved one, a measured bound-gap rate per class in one harness, and a keyed-token defence; published 2026-09-30, after this study's registration (2026-09-21) and the day before its submission",
+   "id": "2609.38983",
+   "tokens": [
+    "laundering",
+    "binding",
+    "harness"
+   ],
+   "year_floor": 2026
+  }
+ ],
+ "declared_refreshed": [
+  {
+   "desc": "the pool's title no longer matches the live record: the entry cited the harvest's reading of v1 while the link now serves a retitled v3, so the bibliography is re-pointed at the title the record carries",
+   "id": "2609.08472",
+   "tokens": [
+    "evidence",
+    "authority",
+    "agents"
+   ],
+   "year_floor": 2026
+  }
+ ],
+ "errors": [],
+ "form": {
+  "date_field": "published",
+  "endpoint": "query?id_list=<ids>",
+  "index": "arXiv API (export.arxiv.org)",
+  "scan_date": "2026-10-01",
+  "sort": "(id_list: no sort)",
+  "why": "(A) a work discovered after the submission was opened (published 2026-09-30), in no harvest pool and not one of the registration's anchors; (B) an id whose pool title no longer matches the live record"
+ },
+ "n_returned": 2,
+ "round": "R482",
+ "scan_date": "2026-10-01"
+}
