@@ -16,14 +16,19 @@ cd papers/issue-135 && bash reproduce.sh
   instruments prints `SELFTEST n/n` (8/8, 13/13, 9/9, 6/6) and then its report is compared
   **byte-for-byte** (`Tolerance: exact`) against the report this package ships. The figure
   certificate then prints `SELFTEST 10/10 (F1-F5)` and the **nine** generated figure files
-  (six SVGs + `FIGURES.md` + `CAPTIONS.md` + `manifest.json`) are compared byte-for-byte too.
+  (six SVGs + `FIGURES.md` + `CAPTIONS.md` + `manifest.json`) are compared byte-for-byte too. The
+  reference layer then prints `refscan selftest SELFTEST: ALL PASS`, `refscan gate GATE 8/8` and
+  `reference-check ... is what this renders`, and a planted change inside the rendered block must
+  make `--check` fail.
 * **Environment**: CPython 3 (measured on **3.12.12** and **3.13.9**, macOS). The instruments are pure
   standard library (`json`/`math`/`os`/`sys`) — **no third-party dependency is imported**, so no library
   version enters a comparison. Override with `PYTHON=/path/to/python3`.
 * **Inputs**: none, and no network. Every key set is generated from the committed `SplitMix64` seeds
-  inside the instruments; a run touches nothing outside its own directory.
-* **Cost**: about **four minutes** (four instruments, each re-run once, plus the batteries and
-  the figure certificate).
+  inside the instruments; a run touches nothing outside its own directory. (The reference layer's
+  *live* verification is a separate, documented network pass — see **Reference layer** below; the
+  offline gate re-checks its committed receipt without touching the network.)
+* **Cost**: about **five minutes** (four instruments, each re-run once, plus the batteries, the
+  figure certificate, and the offline reference layer).
 * **Writes nothing inside the package**: each instrument is run with `SPIKE_OUT` pointing into a private
   temp directory the script creates and removes.
 * **Second tier**: `REPRO_FULL=1 bash reproduce.sh` re-runs every instrument a second time in a fresh
@@ -40,6 +45,12 @@ cd papers/issue-135 && bash reproduce.sh
 | `spike_v*_results.json` | The report each instrument emits; every manuscript number is read from one of these |
 | `make_figures.py` | The figure set: six SVG figures, `FIGURES.md`, `CAPTIONS.md` and `manifest.json`, generated from the four reports -- standard library only (**matplotlib is not used and is not required**), deterministic, `--selftest` runs the certificate F1-F5 |
 | `figures/` | The generated figure set, its captions (from the same run), and the sha256 manifest |
+| `refscan135.py` | The reference layer: discovers candidates from arXiv by topic query, verifies the pool against live Crossref/arXiv records, and gates the pool offline (`--gate`) with its own plant battery (`--selftest`) |
+| `refs/pool.json` | The verified pool (556 entries) — every manuscript reference comes from here, never from memory |
+| `refs/verify-run.txt` | The committed verification receipt: the verbatim stdout of the network pass, naming the pool it verified by sha256 |
+| `reference-pool.md` | The per-entry table: key, source, the live endpoint each entry was checked against, and its title |
+| `reference-check.md` | The verification report — method, result, the defects found while building the layer, and what the check does **not** establish |
+| `make_reference_check.py` | Renders the receipt block of `reference-check.md` from `refs/verify-run.txt`; `--check` proves the committed file is what it renders |
 | `heilmeier.md` | The registration as filed: six Heilmeier answers, adversarial checks, the stated priors, and the round log |
 
 ## What each instrument certifies, and where it can fail
@@ -75,6 +86,29 @@ back off the canvas** (F5: 653 coordinates checked, no element outside its figur
 | `fig4_tail_decay.svg` | The tail's decay in `k` -- sub-geometric for linear, super-geometric for Robin Hood, on opposite sides of the memoryless line |
 | `fig5_closed_forms.svg` | Three closed forms (A/B/C) against the measured boundary: the textbook rule is the worst |
 | `fig6_clustering_vs_tail.svg` | The clustering statistic is scheme-invariant (144/144) while the p99 ratio is 2.4-115.8x |
+
+## Reference layer
+
+The manuscript's bibliography is drawn from a **verified pool**, never typed from memory. The layer
+has two tiers:
+
+* **Discovery + live verification (network).** `python3 refscan135.py` runs 40 topic queries against
+  the arXiv API and looks up 13 canonical works by title against Crossref; `python3 refscan135.py
+  --curate` applies a CORE/SUPPORT term filter and resolves duplicate titles; `python3 refscan135.py
+  --verify` re-fetches **every** pool entry from its live endpoint and compares the returned title
+  with the stored one (two-sided token match, threshold 0.80), writing the verbatim run to the
+  receipt `refs/verify-run.txt`. Result: **556 / 556 verified, 0 title mismatch, 0 transport-unknown**.
+* **The offline gate (no network).** `python3 refscan135.py --gate` asserts the shipped pool is
+  complete and internally consistent — ≥100 entries, no duplicate title, every key its own id, an
+  old-style arXiv id keeps its archive prefix, `reference-pool.md` lists exactly the pool, and the
+  committed receipt's `POOL sha256` line still matches the shipped `refs/pool.json`. The last check
+  is what makes the receipt evidence rather than a quotation: a receipt that outlived its pool fails
+  the gate.
+
+`reference-check.md` is the report; `reference-pool.md` is the per-entry table. The verdict is a
+**title comparison**, not the HTTP status — a remembered identifier *resolves* to a real record, of
+a *different* paper, so the check is the returned title against the stored one. An API outage is
+reported as `TRANSPORT-UNKNOWN`, never as "these records do not exist".
 
 ## Findings (the short form)
 

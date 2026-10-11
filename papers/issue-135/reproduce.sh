@@ -4,8 +4,11 @@
 # WHAT THIS RECOMPUTES (not a checksum check over committed outputs): it re-runs the FOUR
 # instruments from their own code and compares each fresh report BYTE-FOR-BYTE against the report
 # this package ships, after running each instrument's own plant battery; it then regenerates the
-# FIGURE SET from those reports and compares all nine figure files byte-for-byte.  Every number that
-# will appear in the manuscript is read off one of these reports, and every figure from them.
+# FIGURE SET from those reports and compares all nine figure files byte-for-byte; and it checks the
+# REFERENCE LAYER offline -- the refscan plant battery, the pool gate (which binds the committed
+# verification receipt to the shipped pool by sha256), and the receipt rendering.  Every number that
+# will appear in the manuscript is read off one of these reports, every figure from them, and every
+# reference from the verified pool.
 #
 # RUN IT FROM THE PACKAGE DIRECTORY:   cd papers/issue-135 && bash reproduce.sh
 # ENVIRONMENT: CPython 3 (measured on 3.12.12 and 3.13.9, macOS) -- the instruments are pure
@@ -16,8 +19,9 @@
 # TOLERANCE: exact -- the comparison is byte equality against the shipped reports.
 # WHAT IT WRITES: nothing inside the package.  Each instrument is run with SPIKE_OUT pointing into a
 #   private temp directory this script creates and removes.
-# COST: about four minutes (four instruments, each re-run once; the plant batteries and the figure
-#   certificate add ~40 s).
+# COST: about five minutes (four instruments, each re-run once; the plant batteries, the figure
+#   certificate and the offline reference layer add ~50 s).  The LIVE reference verification
+#   (`refscan135.py --verify`) is a separate network pass and is NOT part of this offline run.
 #
 # SECOND TIER (opt-in):  REPRO_FULL=1 bash reproduce.sh
 #   re-runs every instrument a SECOND time in a fresh process and compares the two fresh artefacts --
@@ -90,6 +94,38 @@ if "$PY" "$HERE/make_figures.py" "$WORK/figures" >/dev/null 2>&1; then
   [ "$FIGOK" = "1" ] && say "figures" "9 files byte-identical to the shipped figure set"
 else
   bad "make_figures run" "the generator did not complete (a figure left its axes?)"
+fi
+
+# ---- 4. the reference layer: plant battery, OFFLINE gate, receipt rendering --------------------
+# The live network verification (`refscan135.py --verify`) is a separate, documented pass; its
+# verbatim output is the committed receipt refs/verify-run.txt, which the gate below binds to the
+# shipped pool by sha256 -- so this step is OFFLINE and still checks that the receipt is current.
+if OUT=$("$PY" "$HERE/refscan135.py" --selftest 2>&1); then
+  say "refscan selftest" "$(printf '%s' "$OUT" | tail -1)"
+else
+  bad "refscan selftest" "the plant battery failed"
+fi
+if OUT=$("$PY" "$HERE/refscan135.py" --gate 2>&1); then
+  say "refscan gate" "$(printf '%s' "$OUT" | tail -1) -- live verification is in reference-check.md"
+else
+  bad "refscan gate" "the offline reference-pool gate failed"
+  printf '%s\n' "$OUT" | sed 's/^/                   /'
+fi
+if OUT=$("$PY" "$HERE/make_reference_check.py" --check 2>&1); then
+  say "reference-check" "$(printf '%s' "$OUT" | tail -1)"
+else
+  bad "reference-check" "$(printf '%s' "$OUT" | tail -1)"
+fi
+# the renderer's plant: a change INSIDE the generated block must make --check FAIL.  (A change
+# OUTSIDE the markers is correctly preserved -- the renderer owns only the block -- so the plant
+# targets the block itself, one digit of the receipt's verdict line.)
+sed 's/VERIFIED 556 \/ 556/VERIFIED 999 \/ 999/' "$HERE/reference-check.md" > "$WORK/reference-check.md"
+if ! grep -q 'VERIFIED 999' "$WORK/reference-check.md"; then
+  bad "reference-check plant" "the plant did not land in the block (the receipt line moved?)"
+elif "$PY" "$HERE/make_reference_check.py" --check "$WORK/reference-check.md" >/dev/null 2>&1; then
+  bad "reference-check plant" "a planted change did NOT make --check fail"
+else
+  say "reference-check plant" "a planted change inside the block makes --check fail"
 fi
 
 echo
