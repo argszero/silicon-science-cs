@@ -14,13 +14,16 @@ cd papers/issue-135 && bash reproduce.sh
 
 * **Expected output**: `REPRODUCE: ALL GREEN`, preceded by one line per check. Each of the four
   instruments prints `SELFTEST n/n` (8/8, 13/13, 9/9, 6/6) and then its report is compared
-  **byte-for-byte** (`Tolerance: exact`) against the report this package ships.
+  **byte-for-byte** (`Tolerance: exact`) against the report this package ships. The figure
+  certificate then prints `SELFTEST 10/10 (F1-F5)` and the **nine** generated figure files
+  (six SVGs + `FIGURES.md` + `CAPTIONS.md` + `manifest.json`) are compared byte-for-byte too.
 * **Environment**: CPython 3 (measured on **3.12.12** and **3.13.9**, macOS). The instruments are pure
   standard library (`json`/`math`/`os`/`sys`) — **no third-party dependency is imported**, so no library
   version enters a comparison. Override with `PYTHON=/path/to/python3`.
 * **Inputs**: none, and no network. Every key set is generated from the committed `SplitMix64` seeds
   inside the instruments; a run touches nothing outside its own directory.
-* **Cost**: about **four minutes** (four instruments, each re-run once, plus the batteries).
+* **Cost**: about **four minutes** (four instruments, each re-run once, plus the batteries and
+  the figure certificate).
 * **Writes nothing inside the package**: each instrument is run with `SPIKE_OUT` pointing into a private
   temp directory the script creates and removes.
 * **Second tier**: `REPRO_FULL=1 bash reproduce.sh` re-runs every instrument a second time in a fresh
@@ -35,6 +38,8 @@ cd papers/issue-135 && bash reproduce.sh
 | `spike_v2.py` | v2 — the **P2 decision**: the across-instance spread ratio **C11**, the out-of-sample tail prediction **C12**, the p99 resolution guard **C13**, the scheme-invariance of the clustering statistic **C14**, and cross-scheme transport **C15** |
 | `spike_v3.py` | v3 — the **theory arm**: three closed forms (**A** mean-based, **B** memoryless, **C** scheme-calibrated) against the measured boundary **C16/C17**, the tail's decay in `k` **C18**, and the calibrated form **C19** |
 | `spike_v*_results.json` | The report each instrument emits; every manuscript number is read from one of these |
+| `make_figures.py` | The figure set: six SVG figures, `FIGURES.md`, `CAPTIONS.md` and `manifest.json`, generated from the four reports -- standard library only (**matplotlib is not used and is not required**), deterministic, `--selftest` runs the certificate F1-F5 |
+| `figures/` | The generated figure set, its captions (from the same run), and the sha256 manifest |
 | `heilmeier.md` | The registration as filed: six Heilmeier answers, adversarial checks, the stated priors, and the round log |
 
 ## What each instrument certifies, and where it can fail
@@ -51,6 +56,25 @@ Two guards encode the same rule the manuscript's reporting follows: an **unresol
 measurement**. A crossing whose bracketing cells carry fewer than `MIN_EVENTS` events is reported with
 `alpha* = undef` and a reason (`above` the grid ceiling, or `under-resolved`), **never** with a value —
 and where it is unbracketed, the load it is bounded by is reported as a bound.
+
+## Figures
+
+`python3 make_figures.py` regenerates `figures/` from the shipped reports (standard library only,
+deterministic; `reproduce.sh` does it and compares the nine files byte-for-byte). Nothing is drawn
+that is not in a report and every number a figure annotates is read from the report, so a figure
+cannot drift from its source; `figures/CAPTIONS.md` is generated in the same run, from the same
+values, so the caption cannot drift from the picture either. `make_figures.py --selftest` runs the
+certificate F1-F5, which re-derives every fact the figures assert and **reads the emitted geometry
+back off the canvas** (F5: 653 coordinates checked, no element outside its figure).
+
+| Figure | What it shows |
+|---|---|
+| `fig1_budget_boundary.svg` | The boundary `alpha*(k)` for both schemes against the textbook mean rule -- A overstates at every bracketed `k`, and the gap is a hump |
+| `fig2_scheme_deviation.svg` | The classical mean form's deviation for both schemes, with the across-seed band: a seed-stable miss vs a seed-noisy one |
+| `fig3_finite_size.svg` | The finite-size window: mean \|deviation\| falls monotonically with `m`, while \|mean deviation\| dips by seed cancellation |
+| `fig4_tail_decay.svg` | The tail's decay in `k` -- sub-geometric for linear, super-geometric for Robin Hood, on opposite sides of the memoryless line |
+| `fig5_closed_forms.svg` | Three closed forms (A/B/C) against the measured boundary: the textbook rule is the worst |
+| `fig6_clustering_vs_tail.svg` | The clustering statistic is scheme-invariant (144/144) while the p99 ratio is 2.4-115.8x |
 
 ## Findings (the short form)
 

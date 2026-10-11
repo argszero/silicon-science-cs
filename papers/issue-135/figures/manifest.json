@@ -1,0 +1,42 @@
+{
+  "figures": [
+    {
+      "bytes": 7187,
+      "file": "fig1_budget_boundary.svg",
+      "sha256": "8e4a1f0a846dcd555a93a0cc10aa78995c8e9e5930f7be39e0636a9c1baf9a48"
+    },
+    {
+      "bytes": 9717,
+      "file": "fig2_scheme_deviation.svg",
+      "sha256": "b4d49b5e3e79f8534b48ccc8e625ac6fc2178f84a14d2d95ea5abf3b13907410"
+    },
+    {
+      "bytes": 7200,
+      "file": "fig3_finite_size.svg",
+      "sha256": "9321323f77166010a41a77ac158bfc5db8f8b31370a53cf47662425573ec8716"
+    },
+    {
+      "bytes": 6608,
+      "file": "fig4_tail_decay.svg",
+      "sha256": "aa4f7973a265a4bd1e0e049e11718e1e154e6ec18666c2d6511effb511566a1e"
+    },
+    {
+      "bytes": 6786,
+      "file": "fig5_closed_forms.svg",
+      "sha256": "5e320397b519cd4eaeac581189f4ddcd9d3e461e1e3dd8d091cc2df7003985d3"
+    },
+    {
+      "bytes": 6866,
+      "file": "fig6_clustering_vs_tail.svg",
+      "sha256": "80df124ec1fc0dec62910c8df3514eb8833f0de3b6bbe5e469a4b4884c0750fc"
+    }
+  ],
+  "generator": "make_figures.py",
+  "issue": 135,
+  "sources": [
+    "spike_v0_results.json",
+    "spike_v1_results.json",
+    "spike_v2_results.json",
+    "spike_v3_results.json"
+  ]
+}
