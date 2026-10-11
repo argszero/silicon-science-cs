@@ -1,0 +1,23 @@
+{
+ "artefact_sha256": "afaaee8e56148dfab8f98cc1721d1ea0508b722c1fa6e442026de923e99e31c0",
+ "figures": {
+  "channels.png": {
+   "bytes": 9322,
+   "sha256": "a466dd15848a59a4e18109195e32a69fd0b7cad3fe420120525394c1200462ae"
+  },
+  "exponent_by_config.png": {
+   "bytes": 5873,
+   "sha256": "ef03d7192a92f47b8f86f452b643a16cbeeef2c3a0051dab38128f29aa00db46"
+  },
+  "frontier_R100.png": {
+   "bytes": 10126,
+   "sha256": "a2f4c5b9c2d7de9c2af4338f36c8e80e9f0a66299032068e1917effc5d52575d"
+  },
+  "regime_map.png": {
+   "bytes": 13981,
+   "sha256": "aa0a80020b1a25418335fd14df1eda864b4ea74100cfb765448c3b70de25b183"
+  }
+ },
+ "rendered_by": "make_figures.py",
+ "source_artefact": "canonical_results.json"
+}
