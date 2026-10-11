@@ -1,0 +1,61 @@
+{
+ "generated_by": "repro_check.py",
+ "instrument_hashes": {
+  "floor_v2": {
+   "bytes": 846,
+   "sha256": "8343bad68911d1991da55ed8485ba41ee6fea5be862361a114fedbcfd59e07f9",
+   "two_runs_identical": true
+  },
+  "floor_v3": {
+   "bytes": 866,
+   "sha256": "ed54a9a7cdd272a2b0c8d371ac9025d646042575d7d74da25270418727c059e5",
+   "two_runs_identical": true
+  },
+  "spike_v0": {
+   "bytes": 6026,
+   "sha256": "e828ae4db8878d34713c8daf201faeb53342037126c5ee75969b11fb618c9b95",
+   "two_runs_identical": true
+  },
+  "spike_v1": {
+   "bytes": 38444,
+   "sha256": "81ea052b3018dc855610bb4930cacace7f154d0b2f50698ec94a72c534ed6708",
+   "two_runs_identical": true
+  },
+  "spike_v2": {
+   "bytes": 51748,
+   "sha256": "6e7a8c453894a01a20e26283cbf5694a54bc44a54b45fa6ba861c49a490841a6",
+   "two_runs_identical": true
+  },
+  "spike_v3": {
+   "bytes": 40845,
+   "sha256": "7dbc9a21660c0e60ca64fafe06e97d187b931f01bc5ce53a5a5d93dabcceea30",
+   "two_runs_identical": true
+  },
+  "spike_v4": {
+   "bytes": 42294,
+   "sha256": "c093baa225c88f0e67bc436690d51c648fd729136ad98a906e33a0e44962225a",
+   "two_runs_identical": true
+  },
+  "spike_v5": {
+   "bytes": 24966,
+   "sha256": "8ec226a59425d411204b29fc5685a5975ec998340639cd9fbb2426ebc172cd02",
+   "two_runs_identical": true
+  },
+  "spike_v6": {
+   "bytes": 25920,
+   "sha256": "17373bba1d0674995c6501cd802a3190e4ea331ace2b57bdee6583e36b2ee71d",
+   "two_runs_identical": true
+  },
+  "spike_v7": {
+   "bytes": 41822,
+   "sha256": "c0394d8af0ed2e520ae8ac71458eeef7d08c39ed271ab01c2cd390048fd83f2d",
+   "two_runs_identical": true
+  },
+  "spike_v8": {
+   "bytes": 13299,
+   "sha256": "95f4c594535e197b7099b335ed6cca9aa4d54cb325621140167655158de57b57",
+   "two_runs_identical": true
+  }
+ },
+ "property": "each instrument re-run reproduces its artefact byte-for-byte"
+}
