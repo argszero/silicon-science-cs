@@ -9,7 +9,15 @@
 #                measurement: a different interpreter/NumPy pair may move it, which is why the digests are printed
 #                and the numbers are compared exactly.
 # BUILD:         declare with PYTHON=/path/to/python3 (default /usr/bin/python3).  Read on Python 3.9.6 /
-#                numpy 2.0.2; the instruments are pure-Python + numpy.
+#                numpy 2.0.2 / matplotlib 3.9.4; the instruments are pure-Python + numpy, and ONE step draws the
+#                figure and needs matplotlib.  Both dependencies are named in the `build` line below, so which one
+#                is absent is readable from the transcript itself.
+# THE THREE VERDICTS.  ALL GREEN (exit 0) = every step ran and agreed.  A step that RAN and disagreed prints
+#                `FAILED` and the run ends `REPRODUCE: FAILED` (exit 1).  A step that could not be TAKEN -- the
+#                declared dependency it needs is absent from this interpreter -- prints `NOT RUN` and the run ends
+#                `REPRODUCE: NOT RUN` (exit 2).  NOT RUN is neither a pass nor a defect of the package: an absent
+#                dependency is a coordinate of the RUN, and reporting it as a failed reproduction is a false
+#                finding about the author's work (the journal's own rule for an attributable failure).
 set -u
 HERE=$(cd "$(dirname "$0")" && pwd)
 PY=${PYTHON:-/usr/bin/python3}
@@ -17,8 +25,10 @@ export PYTHON="$PY"   # the batteries spawn their own interpreter; export so the
 cd "$HERE" || { echo "cannot enter $HERE"; exit 1; }
 
 FAILED=0
+NOTRUN=0
 say()  { printf '%-14s %s\n' "$1" "$2"; }
 bad()  { printf '%-14s FAILED -- %s\n' "$1" "$2"; FAILED=1; }
+skip() { printf '%-14s NOT RUN -- %s\n' "$1" "$2"; NOTRUN=1; }   # a step that could not be taken here
 need() { # need <step> <haystack-or-""> <pattern> <what it is>
   if printf '%s' "$2" | grep -qE "$3"; then return 0; fi
   bad "$1" "the run did not print $4 (pattern: $3)"; return 1
@@ -28,7 +38,19 @@ digests() { "$PY" -c 'import glob,hashlib;print(" ".join(hashlib.sha256(open(p,"
 run() { "$@" 2>&1; }            # capture stdout+stderr; the step's own exit code is read from $?
 
 echo "== #93 reproduction =="
-say "build" "$PY $("$PY" -c 'import sys;print(sys.version.split()[0])') | numpy $("$PY" -c 'import numpy;print(numpy.__version__)' 2>/dev/null || echo ABSENT)"
+say "build" "$PY $("$PY" -c 'import sys;print(sys.version.split()[0])') | numpy $("$PY" -c 'import numpy;print(numpy.__version__)' 2>/dev/null || echo ABSENT) | matplotlib $("$PY" -c 'import matplotlib;print(matplotlib.__version__)' 2>/dev/null || echo ABSENT)"
+
+# Read the declared dependencies BEFORE running anything.  numpy enters every instrument, so without it no step
+# below can be taken and the run reports NOT RUN (exit 2) instead of a cascade of FAILED lines that name the
+# interpreter's environment as a defect in the package.  matplotlib is a dependency of the figure step alone and
+# is tested at that step; a missing matplotlib therefore costs one step, not the run.
+if ! "$PY" -c 'import numpy' 2>/dev/null; then
+  skip "instruments" "numpy is ABSENT on $PY; the seven instruments (gate_v0..v3,v5) import it and every step below reads their reports"
+  echo
+  echo "REPRODUCE: NOT RUN -- no step could be taken: the declared dependency numpy is absent from $PY."
+  echo "  Name an interpreter that carries the declared build:  PYTHON=/path/to/python3 bash reproduce.sh"
+  exit 2
+fi
 
 # ---- 1. the instruments -----------------------------------------------------------------------------------------
 ONE=""
@@ -124,9 +146,15 @@ NTOT=$("$PY" -c 'import json;print(len(json.load(open("reference-check.json"))["
 if grep -qF "$NVER of $NTOT verified" manuscript.md; then say "counts" "the manuscript states the authenticity count ($NVER of $NTOT verified)"; else bad "counts" "manuscript.md does not state '$NVER of $NTOT verified'"; fi
 
 # ---- 8b. the figures are the ones this run draws, and the product's links resolve -----------------------------
-out=$(run "$PY" figures/make_figures.py --check) || bad "figures" "make_figures.py --check exited non-zero"
-need "figures" "$out" 'CURRENT -- .*byte-identical to a fresh draw' 'the byte-identity verdict'
-say "figures" "$(printf '%s' "$out" | grep -oE 'CURRENT -- .*' | tail -1)"
+# This step DRAWS the PNG, so it needs matplotlib -- the second declared dependency.  Where it is absent the step
+# is NOT RUN: it verified nothing on this build, and an absent dependency is no finding about the committed figure.
+if "$PY" -c 'import matplotlib' 2>/dev/null; then
+  out=$(run "$PY" figures/make_figures.py --check) || bad "figures" "make_figures.py --check exited non-zero"
+  need "figures" "$out" 'CURRENT -- .*byte-identical to a fresh draw' 'the byte-identity verdict'
+  say "figures" "$(printf '%s' "$out" | grep -oE 'CURRENT -- .*' | tail -1)"
+else
+  skip "figures" "matplotlib is ABSENT on $PY: the figure was not re-drawn and this step verified nothing here (a coordinate of the run, not a finding about fig1_sign_law_and_cost_ratio.png)"
+fi
 
 out=$(run "$PY" check_links.py --selftest) || bad "links" "check_links.py --selftest exited non-zero"
 need "links" "$out" 'LINK CHECK: PASS -- [0-9]+ link\(s\), [0-9]+ local, 0 broken' 'the link verdict'
@@ -160,5 +188,15 @@ else
 fi
 
 echo
-if [ "$FAILED" -eq 0 ]; then echo "REPRODUCE: ALL GREEN"; else echo "REPRODUCE: FAILED"; fi
-exit "$FAILED"
+if [ "$FAILED" -ne 0 ]; then
+  echo "REPRODUCE: FAILED"
+  exit 1
+elif [ "$NOTRUN" -ne 0 ]; then
+  echo "REPRODUCE: NOT RUN -- at least one step could not be taken on this environment (see the NOT RUN line(s))."
+  echo "  This is not a pass: those steps verified nothing here.  It is also not a failure of the package --"
+  echo "  an absent declared dependency is a coordinate of the run, not a reading of the artefact."
+  exit 2
+else
+  echo "REPRODUCE: ALL GREEN"
+  exit 0
+fi

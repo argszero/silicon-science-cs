@@ -16,7 +16,7 @@ Expected output (the transcript of a run on the declared build, 2026-10-01; the 
 
 ```
 == #93 reproduction ==
-build          /usr/bin/python3 3.9.6 | numpy 2.0.2
+build          /usr/bin/python3 3.9.6 | numpy 2.0.2 | matplotlib 3.9.4
 instruments    7 instrument(s) ran, all exit 0 (report id(s) where printed: 96068d33 26061af1 2a4d41ce a124060c )
 byte-identity  all 7 instrument reports byte-identical over two runs
 digests        v0..v6 sha256(16): f1f17eecd45e136d a9855aff6f29e3dd fe9fc6cc35818fa7 8501a5956416acf8 8042cfd48b0e8272 b4df803b76b6e72e 4e9e8e1e200a99ac 
@@ -47,6 +47,30 @@ REPRODUCE: ALL GREEN
 **non-zero when its own reading fails**, so a green line is never produced by a step that could not run: an
 unreadable input, a missing artefact or a raised guard stops the step with `FAILED`.
 
+### Running it on an interpreter that lacks a declared dependency
+
+The run has **three** verdicts, and the third is the one a verifier meets most often. The `build` line names both
+declared dependencies, so its own transcript says which one is present:
+
+| verdict | exit | means |
+|---|---|---|
+| `REPRODUCE: ALL GREEN` | 0 | every step ran and agreed |
+| `REPRODUCE: FAILED` | 1 | a step **ran** and its reading disagreed — a real finding about the package |
+| `REPRODUCE: NOT RUN` | 2 | a step **could not be taken** here, because a declared dependency is absent |
+
+`matplotlib` is needed by **one** step (`figures/make_figures.py --check`, which re-draws the PNG). On an
+interpreter that carries NumPy but not matplotlib, that step prints
+
+```
+figures        NOT RUN -- matplotlib is ABSENT on <interp>: the figure was not re-drawn and this step verified nothing here (a coordinate of the run, not a finding about fig1_sign_law_and_cost_ratio.png)
+```
+
+and the run ends `REPRODUCE: NOT RUN` (exit 2) — every other step still passes. This is **not** a pass (that step
+verified nothing here) and **not** a failure of the package: an absent dependency is a coordinate of the *run*, not
+a reading of the artefact, and reporting it as a failed reproduction would be a false finding about the committed
+figure. Without NumPy, no step can be taken at all and the run reports `NOT RUN` up front rather than a cascade of
+`FAILED` lines.
+
 ## Tolerance, and the build
 
 * **Tree form: the package alone.** `reproduce.sh` and every file it runs are self-contained in `papers/issue-93/` —
@@ -59,12 +83,16 @@ unreadable input, a missing artefact or a raised guard stops the step with `FAIL
 * **The crc32 `report id` is a digest of a report, not a measurement.** A different interpreter or NumPy may move
   it, which is why the digests are printed for comparison instead of being asserted. The numbers the paper's
   claims rest on are compared exactly.
-* **Build.** Read on Python 3.9.6 with NumPy 2.0.2 (macOS). `gate_v0`, `gate_v1`, `gate_v2`, `gate_v3` and
-  `gate_v5` import NumPy (the Monte-Carlo route and the interval); the rest are pure Python. Override the
-  interpreter with `PYTHON=/path/to/python3 bash reproduce.sh`; the script **exports** that choice, so the
-  mutation batteries spawn the SAME interpreter rather than a hardcoded one (a battery that ignores `PYTHON`
-  silently splits the run across two interpreters: a numpy-less default fails the gates while the batteries
-  still pass). Full digests (sha256) of the reports on this
+* **Build.** Read on Python 3.9.6 with NumPy 2.0.2 and matplotlib 3.9.4 (macOS). **Two dependencies are
+  declared, and each is needed by a named part of the run**: `gate_v0`, `gate_v1`, `gate_v2`, `gate_v3` and
+  `gate_v5` import NumPy (the Monte-Carlo route and the interval) — the instruments, and so every step that reads
+  their reports; and `figures/make_figures.py` imports matplotlib — **the figure step alone**. Which of the two is
+  present is printed in the run's own `build` line. Override the interpreter with
+  `PYTHON=/path/to/python3 bash reproduce.sh`; the script **exports** that choice, so the mutation batteries spawn
+  the SAME interpreter rather than a hardcoded one (a battery that ignores `PYTHON` silently splits the run across
+  two interpreters: a numpy-less default fails the gates while the batteries still pass). **A declared dependency
+  that is absent is reported as `NOT RUN` and not as `FAILED`** — `matplotlib` at the figure step, and `numpy` up
+  front, because without it no step can be taken at all. Full digests (sha256) of the reports on this
   build:
 
   | report | sha256 |
