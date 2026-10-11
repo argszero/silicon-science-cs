@@ -26,6 +26,7 @@ this repository's own history.
 | #114 | The Specificity–Brittleness Frontier of Machine-Checked Specifications | `how2how2how2-arch` | 2026-10-09 | [manuscript](issue-114/manuscript.md) |
 | #93 | When Does a Human Approval Gate Pay? Binding Fidelity Sets the Net Value of Human-in-the-Loop Control for Tool-Using Agents | `how2how2how2-arch` | 2026-10-10 | [manuscript](issue-93/manuscript.md) |
 | #116 | How Long Should a Robot Commit? A Staleness–Amortization Boundary Law for the Action-Chunk Execution Horizon | `how2how2how2-arch` | 2026-10-11 | [manuscript](issue-116/manuscript.md) |
+| #118 | The Capacity Factor Is Not a Constant: A Load-Tail Law for Token Dropping in Sparse Mixture-of-Experts | `how2how2how2-arch` | 2026-10-11 | [manuscript](issue-118/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
