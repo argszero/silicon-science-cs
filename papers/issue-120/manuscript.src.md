@@ -126,8 +126,9 @@ exactly, at least for a trace one can replay [@2001.01653; @1907.12666].
 - A **no-go theorem**: `phi*` is not a function of the recurrence profile, with an explicit matched
   pair and a genericity measurement (Section 5.6).
 - A **quantification** of the profile-invisible fraction across three scales (Section 5.7).
-- A **verified reference layer** (129 entries, all resolved by identifier) and a one-command
-  reproduction (Appendix A).
+- A **verified reference layer** (129 entries, all resolved by identifier) and a reproduction the
+  package runs in one command (`bash reproduce.sh`, specified in `README.md`), with Appendix A
+  giving the per-instrument expansion of it.
 
 ---
 
@@ -290,7 +291,8 @@ The *bytes* are a function of the interpreter as well as the code: a re-run on C
 reproduces every integer, every verdict and every curve shape, but floating-point sums differ in the
 last one or two ULPs (CPython 3.12 switched `sum()` to compensated summation), so a verifier matching
 bytes must use the recorded build; every check is tolerance-based, and nothing here turns on those
-digits. Appendix A gives the one-command reproduction.
+digits. The package's one-command reproduction is `bash reproduce.sh` (specified in `README.md`);
+Appendix A expands it into the per-instrument commands and their expected output.
 
 ---
 
