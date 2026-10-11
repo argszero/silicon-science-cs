@@ -1,0 +1,6060 @@
+{
+  "coupling_boundary": [
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.050000000000000044,
+      "diff": "hard_root",
+      "graph": "chain",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07,
+      "diff": "hard_root",
+      "graph": "chain",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "hard_root",
+      "graph": "chain",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.06750000000000006,
+      "diff": "hard_root",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.15750000000000014,
+      "diff": "hard_root",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.2475,
+      "diff": "hard_root",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "bimodal",
+      "graph": "chain",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12000000000000002,
+      "diff": "bimodal",
+      "graph": "chain",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12749999999999997,
+      "diff": "bimodal",
+      "graph": "chain",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": true,
+      "defect": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.0010486665000009054,
+      "diff": "bimodal",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "chain",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "chain",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.050000000000000044,
+      "diff": "hard_root",
+      "graph": "tree",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07,
+      "diff": "hard_root",
+      "graph": "tree",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "hard_root",
+      "graph": "tree",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.033412499999999956,
+      "diff": "hard_root",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07796250000000005,
+      "diff": "hard_root",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12251250000000014,
+      "diff": "hard_root",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "bimodal",
+      "graph": "tree",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12000000000000002,
+      "diff": "bimodal",
+      "graph": "tree",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12749999999999997,
+      "diff": "bimodal",
+      "graph": "tree",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "bimodal",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "bimodal",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "bimodal",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "tree",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "tree",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.0135942791113286,
+      "diff": "uniform",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.030292089884765616,
+      "diff": "uniform",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.04945309687500021,
+      "diff": "uniform",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.0135942791113286,
+      "diff": "uniform",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.030292089884765616,
+      "diff": "uniform",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.04945309687500021,
+      "diff": "uniform",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.03110400000000002,
+      "diff": "easy",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.0725760000000002,
+      "diff": "easy",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.08294400000000035,
+      "diff": "easy",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.03110400000000002,
+      "diff": "easy",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.0725760000000002,
+      "diff": "easy",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.08294400000000035,
+      "diff": "easy",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.034999999999999976,
+      "diff": "hard_root",
+      "graph": "layered",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.035704255781249916,
+      "diff": "hard_root",
+      "graph": "layered",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.04547786765624995,
+      "diff": "hard_root",
+      "graph": "layered",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.02480878125000041,
+      "diff": "hard_root",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.05788715625000007,
+      "diff": "hard_root",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.0909655312500004,
+      "diff": "hard_root",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.0675,
+      "diff": "bimodal",
+      "graph": "layered",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.0675,
+      "diff": "bimodal",
+      "graph": "layered",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.0675,
+      "diff": "bimodal",
+      "graph": "layered",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05399999999999994,
+      "diff": "bimodal",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.126,
+      "diff": "bimodal",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.14400000000000002,
+      "diff": "bimodal",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.0015414430205762386,
+      "diff": "zipf",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.011796171608008166,
+      "diff": "zipf",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.02205179913232147,
+      "diff": "zipf",
+      "graph": "layered",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.0015414430205762386,
+      "diff": "zipf",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.011796171608008166,
+      "diff": "zipf",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.02205179913232147,
+      "diff": "zipf",
+      "graph": "layered",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.050000000000000044,
+      "diff": "hard_root",
+      "graph": "hub",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07,
+      "diff": "hard_root",
+      "graph": "hub",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "hard_root",
+      "graph": "hub",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": true,
+      "defect": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": true,
+      "defect": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "bimodal",
+      "graph": "hub",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12000000000000002,
+      "diff": "bimodal",
+      "graph": "hub",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12749999999999997,
+      "diff": "bimodal",
+      "graph": "hub",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": true,
+      "defect": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.0010486665000009054,
+      "diff": "bimodal",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "hub",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "hub",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.050000000000000044,
+      "diff": "hard_root",
+      "graph": "er03",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07,
+      "diff": "hard_root",
+      "graph": "er03",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "hard_root",
+      "graph": "er03",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.033412499999999956,
+      "diff": "hard_root",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07796250000000005,
+      "diff": "hard_root",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12251250000000014,
+      "diff": "hard_root",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "bimodal",
+      "graph": "er03",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12000000000000002,
+      "diff": "bimodal",
+      "graph": "er03",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12749999999999997,
+      "diff": "bimodal",
+      "graph": "er03",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.03239999999999976,
+      "diff": "bimodal",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07559999999999989,
+      "diff": "bimodal",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.08640000000000003,
+      "diff": "bimodal",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "er03",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "er03",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.05249999999999999,
+      "diff": "uniform",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12250000000000005,
+      "diff": "uniform",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "uniform",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "easy",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "easy",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "easy",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.050000000000000044,
+      "diff": "hard_root",
+      "graph": "er06",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.07,
+      "diff": "hard_root",
+      "graph": "er06",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "hard_root",
+      "graph": "er06",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.06750000000000006,
+      "diff": "hard_root",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.15750000000000014,
+      "diff": "hard_root",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.2475,
+      "diff": "hard_root",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000002,
+      "diff": "bimodal",
+      "graph": "er06",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.12000000000000002,
+      "diff": "bimodal",
+      "graph": "er06",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.12749999999999997,
+      "diff": "bimodal",
+      "graph": "er06",
+      "noninc": false,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": false,
+      "defect": 0.09000000000000008,
+      "diff": "bimodal",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.20999999999999996,
+      "diff": "bimodal",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.24,
+      "diff": "bimodal",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "er06",
+      "noninc": true,
+      "order": "index"
+    },
+    {
+      "c": 0.15,
+      "concave": true,
+      "defect": 0.0,
+      "diff": "zipf",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.35,
+      "concave": false,
+      "defect": 0.08630000000000004,
+      "diff": "zipf",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    },
+    {
+      "c": 0.6,
+      "concave": false,
+      "defect": 0.21130000000000004,
+      "diff": "zipf",
+      "graph": "er06",
+      "noninc": true,
+      "order": "difficulty"
+    }
+  ],
+  "decomposition": [
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.00955040624999981,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.01875781250000008,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.028918115624999352,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.03239999999999976,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.07559999999999989,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.08640000000000003,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.06750000000000006,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.014352187499999669,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.15750000000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.031893750000000165,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.2475,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.0501187500000001,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "chain",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.01837499999999992,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.042874999999999885,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.07350000000000001,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05399999999999994,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.126,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.14400000000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.06750000000000006,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.030375000000000096,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.15750000000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.07087500000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.2475,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.11137500000000006,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "tree",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.0135942791113286,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.0135942791113286,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.030292089884765616,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.030292089884765616,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.04945309687500021,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.04945309687500021,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.03110400000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.03110400000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.0725760000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.0725760000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.08294400000000035,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.08294400000000035,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.06750000000000006,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.06750000000000006,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.15750000000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.15750000000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.2475,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.2475,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.0015414430205762386,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.0015414430205762386,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.011796171608008166,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.011796171608008166,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.02205179913232147,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.02205179913232147,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "layered",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.0010486665000009054,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "hub",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.01267983575195375,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.027046139531250013,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.04173350671875031,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.03110400000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.0725760000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.08294400000000035,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.033412499999999956,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.01860658593750042,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.07796250000000005,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.04341536718750039,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.12251250000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.06822414843750035,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05399999999999994,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.126,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er03",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05249999999999999,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.02388750000000006,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.12250000000000005,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.055737499999999995,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.09555000000000002,
+      "defect_uncoupled_same_order": 2.220446049250313e-16,
+      "diff": "uniform",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.05399999999999994,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.126,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.14400000000000002,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "easy",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.06750000000000006,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.033412499999999956,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.15750000000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.07796250000000005,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.2475,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.12251250000000014,
+      "defect_uncoupled_same_order": 4.440892098500626e-16,
+      "diff": "hard_root",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.1
+      ],
+      "sched": "placebo"
+    },
+    {
+      "c": 0.15,
+      "defect_coupled": 0.09000000000000008,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.20999999999999996,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.24,
+      "defect_uncoupled_same_order": 1.1102230246251565e-16,
+      "diff": "bimodal",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.15,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.35,
+      "defect_coupled": 0.08630000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "greedy"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "assumptions_first"
+    },
+    {
+      "c": 0.6,
+      "defect_coupled": 0.21130000000000004,
+      "defect_uncoupled_same_order": 0.0,
+      "diff": "zipf",
+      "explained_by_coupling": true,
+      "graph": "er06",
+      "order": [
+        0.5,
+        0.3226,
+        0.2381,
+        0.1887,
+        0.1562,
+        0.1333,
+        0.1163,
+        0.1031
+      ],
+      "sched": "fixed_order"
+    }
+  ],
+  "exhaustive": [
+    {
+      "cells": 1,
+      "converse_examples": [],
+      "converse_violations": 0,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 5,
+      "vector": "uniform_0.35"
+    },
+    {
+      "cells": 1,
+      "converse_examples": [],
+      "converse_violations": 0,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 6,
+      "vector": "uniform_0.35"
+    },
+    {
+      "cells": 1,
+      "converse_examples": [],
+      "converse_violations": 0,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 7,
+      "vector": "uniform_0.35"
+    },
+    {
+      "cells": 120,
+      "converse_examples": [
+        [
+          0.6,
+          0.5,
+          0.45,
+          0.35,
+          0.4
+        ],
+        [
+          0.6,
+          0.5,
+          0.4,
+          0.45,
+          0.35
+        ]
+      ],
+      "converse_violations": 17,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 5,
+      "vector": "spread_zigzag"
+    },
+    {
+      "cells": 720,
+      "converse_examples": [
+        [
+          0.6,
+          0.5,
+          0.45,
+          0.4,
+          0.25,
+          0.35
+        ],
+        [
+          0.6,
+          0.5,
+          0.45,
+          0.35,
+          0.4,
+          0.25
+        ]
+      ],
+      "converse_violations": 90,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 6,
+      "vector": "spread_zigzag"
+    },
+    {
+      "cells": 5040,
+      "converse_examples": [
+        [
+          0.6,
+          0.5,
+          0.45,
+          0.4,
+          0.35,
+          0.15,
+          0.25
+        ],
+        [
+          0.6,
+          0.5,
+          0.45,
+          0.4,
+          0.25,
+          0.35,
+          0.15
+        ]
+      ],
+      "converse_violations": 513,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 7,
+      "vector": "spread_zigzag"
+    },
+    {
+      "cells": 120,
+      "converse_examples": [
+        [
+          0.3,
+          0.2,
+          0.12,
+          0.4,
+          0.5
+        ],
+        [
+          0.3,
+          0.2,
+          0.12,
+          0.5,
+          0.4
+        ]
+      ],
+      "converse_violations": 28,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 5,
+      "vector": "hard_first"
+    },
+    {
+      "cells": 720,
+      "converse_examples": [
+        [
+          0.3,
+          0.2,
+          0.4,
+          0.12,
+          0.5,
+          0.6
+        ],
+        [
+          0.3,
+          0.2,
+          0.4,
+          0.12,
+          0.6,
+          0.5
+        ]
+      ],
+      "converse_violations": 108,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 6,
+      "vector": "hard_first"
+    },
+    {
+      "cells": 5040,
+      "converse_examples": [
+        [
+          0.4,
+          0.2,
+          0.5,
+          0.12,
+          0.6,
+          0.3,
+          0.7
+        ],
+        [
+          0.4,
+          0.2,
+          0.5,
+          0.12,
+          0.7,
+          0.3,
+          0.6
+        ]
+      ],
+      "converse_violations": 472,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 7,
+      "vector": "hard_first"
+    },
+    {
+      "cells": 10,
+      "converse_examples": [
+        [
+          0.6,
+          0.15,
+          0.6,
+          0.15,
+          0.15
+        ]
+      ],
+      "converse_violations": 1,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 5,
+      "vector": "bimodal"
+    },
+    {
+      "cells": 20,
+      "converse_examples": [
+        [
+          0.6,
+          0.15,
+          0.6,
+          0.15,
+          0.15,
+          0.6
+        ],
+        [
+          0.6,
+          0.15,
+          0.6,
+          0.15,
+          0.6,
+          0.15
+        ]
+      ],
+      "converse_violations": 3,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 6,
+      "vector": "bimodal"
+    },
+    {
+      "cells": 35,
+      "converse_examples": [
+        [
+          0.6,
+          0.15,
+          0.6,
+          0.15,
+          0.15,
+          0.6,
+          0.15
+        ],
+        [
+          0.6,
+          0.15,
+          0.6,
+          0.15,
+          0.15,
+          0.15,
+          0.6
+        ]
+      ],
+      "converse_violations": 4,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 7,
+      "vector": "bimodal"
+    },
+    {
+      "cells": 5,
+      "converse_examples": [
+        [
+          0.45,
+          0.45,
+          0.1,
+          0.45,
+          0.45
+        ],
+        [
+          0.45,
+          0.45,
+          0.45,
+          0.1,
+          0.45
+        ]
+      ],
+      "converse_violations": 2,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 5,
+      "vector": "ties"
+    },
+    {
+      "cells": 6,
+      "converse_examples": [
+        [
+          0.45,
+          0.45,
+          0.45,
+          0.1,
+          0.45,
+          0.45
+        ],
+        [
+          0.45,
+          0.45,
+          0.45,
+          0.45,
+          0.1,
+          0.45
+        ]
+      ],
+      "converse_violations": 2,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 6,
+      "vector": "ties"
+    },
+    {
+      "cells": 7,
+      "converse_examples": [
+        [
+          0.45,
+          0.45,
+          0.45,
+          0.1,
+          0.45,
+          0.45,
+          0.45
+        ],
+        [
+          0.45,
+          0.45,
+          0.45,
+          0.45,
+          0.1,
+          0.45,
+          0.45
+        ]
+      ],
+      "converse_violations": 3,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 7,
+      "vector": "ties"
+    },
+    {
+      "cells": 5,
+      "converse_examples": [],
+      "converse_violations": 0,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 5,
+      "vector": "near_equal"
+    },
+    {
+      "cells": 30,
+      "converse_examples": [
+        [
+          0.5000001,
+          0.5,
+          0.5,
+          0.5,
+          0.4999999,
+          0.5
+        ],
+        [
+          0.5000001,
+          0.5,
+          0.5,
+          0.4999999,
+          0.5,
+          0.5
+        ]
+      ],
+      "converse_violations": 4,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 6,
+      "vector": "near_equal"
+    },
+    {
+      "cells": 42,
+      "converse_examples": [
+        [
+          0.5000001,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.4999999,
+          0.5
+        ],
+        [
+          0.5000001,
+          0.5,
+          0.5,
+          0.5,
+          0.4999999,
+          0.5,
+          0.5
+        ]
+      ],
+      "converse_violations": 6,
+      "guarantee_examples": [],
+      "guarantee_violations": 0,
+      "n": 7,
+      "vector": "near_equal"
+    }
+  ],
+  "totals": {
+    "converse_exceptions": 1253,
+    "coupled_breakdown_cells": 212,
+    "coupling_boundary_cells": 180,
+    "coupling_boundary_violations": 127,
+    "explained_by_coupling": 212,
+    "guarantee_violations": 0,
+    "permutations": 11923
+  }
+}

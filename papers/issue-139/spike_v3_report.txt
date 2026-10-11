@@ -1,0 +1,59 @@
+== THE n-FORM, EXHAUSTIVE (every permutation; the two directions separately) ==
+   GUARANTEE = non-increasing order => concave ; CONVERSE = concave => non-increasing
+   vector            n    perms  GUAR.viol  CONV.viol
+   uniform_0.35      5        1          0          0
+   uniform_0.35      6        1          0          0
+   uniform_0.35      7        1          0          0
+   spread_zigzag     5      120          0         17
+        converse exception:   [0.6, 0.5, 0.45, 0.35, 0.4]
+   spread_zigzag     6      720          0         90
+        converse exception:   [0.6, 0.5, 0.45, 0.4, 0.25, 0.35]
+   spread_zigzag     7     5040          0        513
+        converse exception:   [0.6, 0.5, 0.45, 0.4, 0.35, 0.15, 0.25]
+   hard_first        5      120          0         28
+        converse exception:   [0.3, 0.2, 0.12, 0.4, 0.5]
+   hard_first        6      720          0        108
+        converse exception:   [0.3, 0.2, 0.4, 0.12, 0.5, 0.6]
+   hard_first        7     5040          0        472
+        converse exception:   [0.4, 0.2, 0.5, 0.12, 0.6, 0.3, 0.7]
+   bimodal           5       10          0          1
+        converse exception:   [0.6, 0.15, 0.6, 0.15, 0.15]
+   bimodal           6       20          0          3
+        converse exception:   [0.6, 0.15, 0.6, 0.15, 0.15, 0.6]
+   bimodal           7       35          0          4
+        converse exception:   [0.6, 0.15, 0.6, 0.15, 0.15, 0.6, 0.15]
+   ties              5        5          0          2
+        converse exception:   [0.45, 0.45, 0.1, 0.45, 0.45]
+   ties              6        6          0          2
+        converse exception:   [0.45, 0.45, 0.45, 0.1, 0.45, 0.45]
+   ties              7        7          0          3
+        converse exception:   [0.45, 0.45, 0.45, 0.1, 0.45, 0.45, 0.45]
+   near_equal        5        5          0          0
+   near_equal        6       30          0          4
+        converse exception:   [0.5000001, 0.5, 0.5, 0.5, 0.4999999, 0.5]
+   near_equal        7       42          0          6
+        converse exception:   [0.5000001, 0.5, 0.5, 0.5, 0.5, 0.4999999, 0.5]
+
+   TOTAL: 11923 permutations tested; GUARANTEE violations 0; converse exceptions 1253
+
+== WHY IT BREAKS AT c > 0: the order, or the coupling? ==
+   cells whose EMPTY-SET order is non-increasing yet whose frontier is convex: 212
+   explained by the COUPLING (same order, c=0 -> concave): 212
+   NOT explained by the coupling: 0
+     chain    uniform    c=0.15 greedy             coupled defect 0.0525  same-order uncoupled defect 0.0000
+     chain    uniform    c=0.15 assumptions_first  coupled defect 0.0525  same-order uncoupled defect 0.0000
+     chain    uniform    c=0.15 fixed_order        coupled defect 0.0525  same-order uncoupled defect 0.0000
+     chain    uniform    c=0.15 placebo            coupled defect 0.0096  same-order uncoupled defect 0.0000
+     chain    uniform    c=0.35 greedy             coupled defect 0.1225  same-order uncoupled defect 0.0000
+     chain    uniform    c=0.35 assumptions_first  coupled defect 0.1225  same-order uncoupled defect 0.0000
+
+== THE GUARANTEE WITH COUPLING (a genuinely FIXED order, c > 0) ==
+   cells=180  violating the guarantee (non-increasing order yet convex): 127
+     chain    uniform    order=index      c=0.15  defect=0.0525
+     chain    uniform    order=index      c=0.35  defect=0.1225
+     chain    uniform    order=index      c=0.60  defect=0.2100
+     chain    uniform    order=difficulty c=0.15  defect=0.0525
+     chain    uniform    order=difficulty c=0.35  defect=0.1225
+     chain    uniform    order=difficulty c=0.60  defect=0.2100
+   order=index       cells=90  guarantee violations=49
+   order=difficulty  cells=90  guarantee violations=78
