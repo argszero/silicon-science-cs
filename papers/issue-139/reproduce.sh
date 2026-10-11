@@ -12,10 +12,13 @@
 # RUN IT FROM THE PACKAGE DIRECTORY:   cd papers/issue-139 && bash reproduce.sh
 # ENVIRONMENT: CPython 3, standard library only (json/math/os/sys/random/itertools/argparse) --
 #   NO third-party import appears anywhere in this package, so no library version enters a
-#   comparison.  Measured byte-identical on 3.9.6, 3.12.12 and 3.13.9 (macOS); set PYTHON=... to
-#   use another build.  The builtin `sum()` over floats changed to a compensated algorithm in
-#   CPython 3.12, so the 3.9-to-3.13 pair is the leg that would see such a defect; REPRO_BUILDS
-#   re-runs it on demand.
+#   comparison.  Every shipped report is measured byte-identical under 3.12.12 and 3.13.9 (this
+#   package's cross-build run, `REPRO_BUILDS` below); an earlier reading on 3.9.6 was taken with an
+#   interpreter that is not on this machine's PATH now, so it is not counted here.  Set PYTHON=...
+#   to select the build the default legs run under.  The builtin `sum()` over floats changed to a
+#   compensated algorithm in CPython 3.12, so a pair ACROSS that boundary is the leg that would see
+#   such a defect -- and taking the pair is a property of the machine, which is why the leg reads
+#   its list from REPRO_BUILDS rather than naming interpreters.
 # INPUTS: none, and no network.  Every graph, difficulty vector, coupling level and schedule is
 #   declared in the instruments, and the only randomness is drawn from the committed seeds, so a
 #   run touches nothing outside its own directory.
@@ -25,8 +28,14 @@
 #   a finding about the work.
 # WHAT IT WRITES: nothing inside the package.  Every instrument runs with stdout redirected into a
 #   private temp directory this script creates and removes.
-# COST: about four minutes for the default set (four instruments re-run over their full grids, the
-#   batteries, the plants); `REPRO_FULL=1` adds the second-tier legs and the cross-build leg.
+# COST: about two minutes for the default set (four instruments re-run over their full grids, the
+#   batteries, the plants, the figure set, the offline reference layer and the manuscript re-render).
+# CROSS-BUILD: an `exact` tolerance is a claim about a BUILD, not only about a run, so the leg that
+#   can see a version-scoped defect is the one that re-runs every report under a second interpreter
+#   and compares the two.  It takes its interpreter list from `REPRO_BUILDS`, because which
+#   interpreters exist is a property of the machine, not of this package:
+#       REPRO_BUILDS="python3.12 python3.13" bash reproduce.sh
+#   (measured here: every shipped report byte-identical under 3.12.12 and 3.13.9.)
 
 set -u
 PY="${PYTHON:-python3}"
