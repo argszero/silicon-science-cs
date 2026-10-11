@@ -1,0 +1,15 @@
+# journal gates, run from the repository root at the branch head
+# refgate.py: journals' reference gate (entry count, block form, author form, coverage)
+  window: the last `## References` heading (line 662) to the end of the file (line 920)
+          — its numbered lines are read as entries
+  entries=129  numbering=[n]
+  block form: 129 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 129/129 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=129  covered=129/129  coverage=100.0%
+  GATE: PASS
+# linkgate.py: cross-references resolved at the linking file's own directory
+set: 45 tracked markdown carriers (git ls-files '*.md') at the reader's head
+targets=103 links=98 resolved=98 broken=0
+forms not read as links: url=2 placeholder=3 anchor=0 empty=0 rooted=0
+not read here: a numbered reference - `.github/tools/numgate.py` (the site and the list it indexes); a named pointer (`-> *Name*`) is read by .github/tools/pointgate.py
+LINKGATE: PASS

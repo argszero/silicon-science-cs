@@ -1,0 +1,132 @@
+# issue #120 reference verification -- resolved by identifier at the index that
+# owns the id: arXiv (export.arxiv.org) for arXiv ids, Crossref (api.crossref.org)
+# for DOIs.  129 entries: 129 OK, 0 PROBLEM
+OK          2609.27746      construct    The KV Cache Working Set: Online Capacity Planning for LLM Inference Systems
+OK          1109.6643       construct    Optimal Eviction Policies for Stochastic Address Traces
+OK          1808.05024      construct    Making Belady-Inspired Replacement Policies More Effective Using Expected Hit Count
+OK          1112.5472       profile      Cache-Oblivious Implicit Predecessor Dictionaries with the Working Set Property
+OK          1506.03181      profile      DEW: A Fast Level 1 Cache Simulation Approach for Embedded Processors with FIFO Replacement Policy
+OK          2001.01653      profile      A Fast Analytical Model of Fully Associative Caches
+OK          2511.19973      profile      Pickle: Precise, Flexible Cross-Core Last-level Cache Data Prefetching for Irregular Memory Accesses
+OK          2608.01247      profile      RestoreKV: Recovering Full-Cache Behavior Under Aggressive Query-Agnostic KV Cache Eviction
+OK          cs/0601127      profile      Truly Online Paging with Locality of Reference
+OK          1202.3974       profile      A versatile and accurate approximation for LRU cache performance
+OK          1305.7114       profile      Temporal Locality in Today's Content Caching: Why it Matters and How to Model it
+OK          1406.5000       profile      Application Specific Cache Simulation Analysis for Application Specific Instruction set Processor
+OK          1506.03186      profile      CIPARSim: Cache Intersection Property Assisted Rapid Single-pass FIFO Cache Simulation Technique
+OK          1606.09206      profile      Performance of spatial Multi-LRU caching under traffic with temporal locality
+OK          1609.00306      profile      On-Chip Mechanisms to Reduce Effective Memory Access Latency
+OK          1907.05068      profile      Fast Modeling L2 Cache Reuse Distance Histograms Using Combined Locality Information from Software Traces
+OK          1907.12666      profile      Modeling Shared Cache Performance of OpenMP Programs using Reuse Distance
+OK          2001.09991      profile      Intel Page Modification Logging, a hardware virtualization feature: study and improvement for virtual machine working set estimation
+OK          2105.14442      profile      Reuse Distance-based Copy-backs of Clean Cache Lines to Lower-level Caches
+OK          2112.13306      profile      Asynchronous Memory Access Unit for General Purpose Processors
+OK          2203.14845      profile      Warping Cache Simulation of Polyhedral Programs
+OK          2303.05919      profile      eBPF-based Working Set Size Estimation in Memory Management
+OK          2404.11044      profile      Asynchronous Memory Access Unit: Exploiting Massive Parallelism for Far Memory Access
+OK          2412.16001      profile      Multi-Strided Access Patterns to Boost Hardware Prefetching
+OK          2505.18554      profile      Garibaldi: A Pairwise Instruction-Data Management for Enhancing Shared Last-Level Cache Performance in Server Workloads
+OK          2605.15645      profile      ICP: Exploiting Instruction Correlation for Prefetching Irregular Memory Accesses
+OK          2606.13708      profile      Tiara: A Programmable Line-Rate ISA for Remote Memory Access
+OK          2401.13154      policy       Nomad: Non-Exclusive Memory Tiering via Transactional Page Migration
+OK          2604.12300      policy       TierBPF: Page Migration Admission Control for Tiered Memory via eBPF
+OK          1512.00727      policy       TinyLFU: A Highly Efficient Cache Admission Policy
+OK          1702.04078      policy       A Cache Management Scheme for Efficient Content Eviction and Replication in Cache Networks
+OK          1703.08280      policy       LRC: Dependency-Aware Cache Management for Data Analytics Clusters
+OK          2105.08770      policy       Lightweight Robust Size Aware Cache Management
+OK          2110.11602      policy       An O(1) algorithm for implementing the LFU cache eviction scheme
+OK          2304.04954      policy       An Associativity Threshold Phenomenon in Set-Associative Caches
+OK          2408.03675      policy       NACL: A General and Effective KV Cache Eviction Framework for LLMs at Inference Time
+OK          2410.00328      policy       Tuning Fast Memory Size based on Modeling of Page Migration for Tiered Memory
+OK          2501.06807      policy       MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference
+OK          2503.02504      policy       Energy efficiency of cache eviction algorithms for Zipf distributed objects
+OK          2503.12491      policy       CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences
+OK          2503.18140      policy       INDIGO: Page Migration for Hardware Memory Disaggregation Across a Network
+OK          2505.03756      policy       Improving the Serving Performance of Multi-LoRA Large Language Models via Efficient LoRA and KV Cache Management
+OK          2504.15364      policy       KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments
+OK          2505.20334      policy       Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query
+OK          2506.15724      policy       MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference
+OK          2507.00797      policy       VEDA: Efficient LLM Generation Through Voting-based KV Cache Eviction and Dataflow-flexible Accelerator
+OK          2509.00388      policy       GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction
+OK          2509.10798      policy       Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction
+OK          2510.22556      policy       SABlock: Semantic-Aware KV Cache Eviction with Adaptive Compression Block Size
+OK          2510.22869      policy       Jenga: Responsive Tiered Memory Management without Thrashing
+OK          2512.00504      policy       G-KV: Decoding-Time KV Cache Eviction with Global Attention
+OK          2602.02197      policy       Hierarchical Adaptive Eviction for KV Cache Management in Multimodal Language Models
+OK          2602.03203      policy       ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution
+OK          2602.08585      policy       Predicting Future Utility: Global Combinatorial Optimization for Task-Agnostic KV Cache Eviction
+OK          2604.25975      policy       Rethinking KV Cache Eviction via a Unified Information-Theoretic Objective
+OK          cs/0205044      theory       The K-Server Dual and Loose Competitiveness for Paging
+OK          cs/0205038      theory       Competitive Paging Algorithms
+OK          2206.02878      tiering      TPP: Transparent Page Placement for CXL-Enabled Tiered-Memory
+OK          2409.14317      tiering      Dissecting CXL Memory Performance at Scale: Analysis, Modeling, and Optimization
+OK          2503.17864      tiering      Architectural and System Implications of CXL-enabled Tiered Memory
+OK          2603.03271      tiering      Virtual-Memory Assisted Buffer Management In Tiered Memory
+OK          2604.12165      tiering      Hybrid Adaptive Tuning for Tiered Memory Systems
+OK          2108.03492      tiering      Clio: A Hardware-Software Co-Designed Disaggregated Memory System
+OK          2108.11507      tiering      Hardware-assisted Trusted Memory Disaggregation for Secure Far Memory
+OK          2308.14780      tiering      A Quantitative Approach for Adopting Disaggregated Memory in HPC Systems
+OK          2309.10239      tiering      Ditto: An Elastic and Adaptive Memory-Disaggregated Caching System
+OK          2312.04789      tiering      HybridTier: an Adaptive and Lightweight CXL-Memory Tiering System
+OK          2403.18702      tiering      NeoMem: Hardware/Software Co-Design for CXL-Native Memory Tiering
+OK          2405.14209      tiering      Exploring and Evaluating Real-world CXL: Use Cases and System Adoption
+OK          2412.08938      tiering      Mercury: QoS-Aware Tiered Memory System
+OK          2412.12491      tiering      Optimizing System Memory Bandwidth with Micron CXL Memory Expansion Modules on Intel Xeon 6 Processors
+OK          2502.19233      tiering      FPGA-based Emulation and Device-Side Management for CXL-based Memory Tiering Systems
+OK          2506.09758      tiering      Mainframe-Style Channel Controllers for Modern Disaggregated Memory Systems
+OK          2510.14580      tiering      ScalePool: Hybrid XLink-CXL Fabric for Composable Resource Disaggregation in Unified Scale-up Domains
+OK          2511.08568      tiering      Machine Learning-Guided Memory Optimization for DLRM Inference on Tiered Memory
+OK          2512.22995      tiering      Evolution of Buffer Management in Database Systems: From Classical Algorithms to Machine Learning and Disaggregated Memory
+OK          2602.05540      tiering      Taking the Leap: Efficient and Reliable Fine-Grained NUMA Migration in User-space
+OK          2602.08800      tiering      Equilibria: Fair Multi-Tenant CXL Memory Tiering At Scale
+OK          2605.20370      tiering      Clove: Object-Level CXL Memory Management in Managed Runtimes
+OK          2609.10790      tiering      Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving
+OK          2609.27266      tiering      xTier: Intelligent Tiering for CXL-Enabled Memory
+OK          1809.05921      tiering      Analysis of Dynamic Memory Bandwidth Regulation in Multi-core Real-Time Systems
+OK          2004.04760      tiering      Efficient Kernel Object Management for Tiered Memory Systems with KLOC
+OK          2103.10779      tiering      Page Table Management for Heterogeneous Memory Systems
+OK          2107.00164      tiering      MIND: In-Network Memory Management for Disaggregated Data Centers
+OK          2108.06893      tiering      Memtrade: A Disaggregated-Memory Marketplace for Public Clouds
+OK          2112.07320      tiering      Sherman: A Write-Optimized Distributed B+Tree Index on Disaggregated Memory
+OK          2202.02223      tiering      Systems for Memory Disaggregation: Challenges & Opportunities
+OK          2206.14637      tiering      Assessing Intel's Memory Bandwidth Allocation for resource limitation in real-time systems
+OK          2207.03027      tiering      The Case for Distributed Shared-Memory Databases with RDMA-Enabled Memory Disaggregation
+OK          2209.13111      tiering      HMM-V: Heterogeneous Memory Management for Virtualization
+OK          2212.04344      tiering      Performance Characterization of AutoNUMA Memory Tiering on Graph Analytics
+OK          2301.09839      tiering      FUSEE: A Fully Memory-Disaggregated Key-Value Store (Extended Version)
+OK          2302.08055      tiering      CXL over Ethernet: A Novel FPGA-based Memory Disaggregation Design in Data Centers
+OK          2303.06153      tiering      CXLMemSim: A pure software simulated CXL.mem for performance characterization
+OK          2303.06420      tiering      Design and Evaluation of a Rack-Scale Disaggregated Memory Architecture For Data Centers
+OK          2303.15375      tiering      Demystifying CXL Memory with Genuine CXL-Ready Systems and Devices
+OK          2305.03943      tiering      Memory Disaggregation: Advances and Open Challenges
+OK          2305.09977      tiering      DRackSim: Simulator for Rack-scale Memory Disaggregation
+OK          2306.04014      tiering      Evaluating the Potential of Disaggregated Memory Systems for HPC applications
+OK          2308.10714      tiering      CXL Memory as Persistent Memory for Disaggregated HPC: A Practical Approach
+OK          2309.01662      tiering      Towards Persistent Memory based Stateful Serverless Computing for Big Data Applications
+OK          2309.01736      tiering      Understanding and Optimizing Serverless Workloads in CXL-Enabled Tiered Memory
+OK          1712.08132      adjacent     A Deep Reinforcement Learning-Based Framework for Content Caching
+OK          2205.05598      adjacent     Studying Scientific Data Lifecycle in On-demand Distributed Storage Caches
+OK          2609.33762      adjacent     EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?
+OK          1501.02282      adjacent     Adaptive and application dependent runtime guided hardware prefetcher reconfiguration on the IBM POWER7
+OK          1610.08129      adjacent     Memshare: a Dynamic Multi-tenant Memory Key-value Cache
+OK          1808.09751      adjacent     Scalable and Efficient Virtual Memory Sharing in Heterogeneous SoCs with TLB Prefetching and MMU-Aware DMA Engine
+OK          1911.09829      adjacent     Effectively Prefetching Remote Memory with Leap
+OK          1911.10349      adjacent     Arsenal of Hardware Prefetchers
+OK          2005.11259      adjacent     CAPre: Code-Analysis based Prefetching for Persistent Object Stores
+OK          2009.00202      adjacent     Helper Without Threads: Customized Prefetching for Delinquent Irregular Loads
+OK          2109.12021      adjacent     Pythia: A Customizable Hardware Prefetching Framework Using Online Reinforcement Learning
+OK          2112.06280      adjacent     In-Memory Indexed Caching for Distributed Data Processing
+OK          2207.07688      adjacent     3PO: Programmed Far-Memory Prefetching for Oblivious Applications
+OK          2307.11069      adjacent     Effectiveness and predictability of in-network storage cache for scientific workflows
+OK          2503.19390      adjacent     Integrating Prefetcher Selection with Dynamic Request Allocation Improves Prefetching Efficiency
+OK          2504.06319      adjacent     Accelerating LLM Inference Throughput via Asynchronous KV Cache Prefetching
+OK          2507.21433      adjacent     ReasonCache: Accelerating Large Reasoning Model Serving through KV Cache Sharing
+OK          2508.08457      adjacent     Architecting Long-Context LLM Acceleration with Packing-Prefetch Scheduler and Ultra-Large Capacity On-Chip Memories
+OK          2509.10719      adjacent     Coordinated Reinforcement Learning Prefetching Architecture for Multicore Systems
+OK          2601.21686      adjacent     Don't be so Stief! Learning KV Cache low-rank approximation over the Stiefel manifold
+OK          2602.13434      adjacent     ORAP: Optimized Row Access Prefetching for Rowhammer-mitigated Memory
+OK          2604.26074      adjacent     DAK: Direct-Access-Enabled GPU Memory Offloading with Optimal Efficiency for LLM Inference
+OK          10.1147/sj.52.0078 construct    A study of replacement algorithms for a virtual-storage computer
+OK          10.1147/sj.92.0078 profile      Evaluation techniques for storage hierarchies
+OK          10.1145/2786.2793 theory       Amortized efficiency of list update and paging rules
+OK          10.1145/363095.363141 profile      The working set model for program behavior
