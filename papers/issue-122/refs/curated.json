@@ -1,0 +1,1731 @@
+{
+ "n": 102,
+ "roles": {
+  "construct": 24,
+  "theory": 14,
+  "mechanism": 16,
+  "protocol": 14,
+  "prevention": 10,
+  "measurement": 16,
+  "adjacent": 8
+ },
+ "cap_pressure": [
+  {
+   "role": "construct",
+   "pool": 115,
+   "cap": 24,
+   "kept": 24,
+   "support_ge2": 16,
+   "dropping": true,
+   "tail": [
+    [
+     "2305.17493v3",
+     1
+    ],
+    [
+     "2305.18072v2",
+     1
+    ],
+    [
+     "2309.05214v1",
+     1
+    ]
+   ]
+  },
+  {
+   "role": "theory",
+   "pool": 30,
+   "cap": 14,
+   "kept": 14,
+   "support_ge2": 0,
+   "dropping": true,
+   "tail": [
+    [
+     "2210.16401v2",
+     1
+    ],
+    [
+     "1009.4004v2",
+     1
+    ],
+    [
+     "2106.05010v2",
+     1
+    ]
+   ]
+  },
+  {
+   "role": "mechanism",
+   "pool": 48,
+   "cap": 16,
+   "kept": 16,
+   "support_ge2": 1,
+   "dropping": true,
+   "tail": [
+    [
+     "2205.09029v1",
+     1
+    ],
+    [
+     "2401.00909v2",
+     1
+    ],
+    [
+     "2401.06643v3",
+     1
+    ]
+   ]
+  },
+  {
+   "role": "protocol",
+   "pool": 254,
+   "cap": 14,
+   "kept": 14,
+   "support_ge2": 5,
+   "dropping": true,
+   "tail": [
+    [
+     "2006.05065v2",
+     1
+    ],
+    [
+     "2010.09141v1",
+     1
+    ],
+    [
+     "2011.14960v1",
+     1
+    ]
+   ]
+  },
+  {
+   "role": "prevention",
+   "pool": 14,
+   "cap": 10,
+   "kept": 10,
+   "support_ge2": 1,
+   "dropping": true,
+   "tail": [
+    [
+     "2509.15218v1",
+     1
+    ],
+    [
+     "2511.19942v2",
+     1
+    ],
+    [
+     "2601.06366v3",
+     1
+    ]
+   ]
+  },
+  {
+   "role": "measurement",
+   "pool": 51,
+   "cap": 16,
+   "kept": 16,
+   "support_ge2": 5,
+   "dropping": true,
+   "tail": [
+    [
+     "2402.02823v2",
+     1
+    ],
+    [
+     "2402.08100v1",
+     1
+    ],
+    [
+     "2402.11894v3",
+     1
+    ]
+   ]
+  },
+  {
+   "role": "adjacent",
+   "pool": 58,
+   "cap": 8,
+   "kept": 8,
+   "support_ge2": 3,
+   "dropping": true,
+   "tail": [
+    [
+     "2007.02443v4",
+     1
+    ],
+    [
+     "2009.04381v1",
+     1
+    ],
+    [
+     "2010.00373v2",
+     1
+    ]
+   ]
+  }
+ ],
+ "rule": "cs category AND a PER-FAMILY anchor (the generative/training object for applied roles, a named mathematical object for theory) AND a family pattern; capped per family by query support",
+ "entries": [
+  {
+   "id": "2404.05090v1",
+   "bare": "2404.05090",
+   "title": "How Bad is Training on Synthetic Data? A Statistical Analysis of Language Model Collapse",
+   "published": "2024-04-07",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 3,
+   "raw_support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2609.18878v1",
+   "bare": "2609.18878",
+   "title": "Preventing Model Collapse: A Fisher-Rao Perspective on the Dynamics of Training with Synthetic Data",
+   "published": "2026-09-16",
+   "cats": [
+    "cs.LG",
+    "eess.SY"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 3,
+   "raw_support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2307.01850v1",
+   "bare": "2307.01850",
+   "title": "Self-Consuming Generative Models Go MAD",
+   "published": "2023-07-04",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2403.10075v2",
+   "bare": "2403.10075",
+   "title": "A survey of synthetic data augmentation methods in computer vision",
+   "published": "2024-03-15",
+   "cats": [
+    "cs.CV",
+    "cs.GR",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2407.17493v3",
+   "bare": "2407.17493",
+   "title": "Model Collapse in the Self-Consuming Chain of Diffusion Finetuning: A Novel Perspective from Quantitative Trait Modeling",
+   "published": "2024-07-04",
+   "cats": [
+    "cs.CV",
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2408.16333v1",
+   "bare": "2408.16333",
+   "title": "Self-Improving Diffusion Models with Synthetic Data",
+   "published": "2024-08-29",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2412.17646v1",
+   "bare": "2412.17646",
+   "title": "Rate of Model Collapse in Recursive Training",
+   "published": "2024-12-23",
+   "cats": [
+    "cs.LG",
+    "cs.IT",
+    "stat.ML"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2505.13947v2",
+   "bare": "2505.13947",
+   "title": "A Probabilistic Perspective on Model Collapse",
+   "published": "2025-05-20",
+   "cats": [
+    "stat.ML",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2509.08972v4",
+   "bare": "2509.08972",
+   "title": "ForTIFAI: Fending Off Recursive Training Induced Failure for AI Model Collapse",
+   "published": "2025-09-10",
+   "cats": [
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2512.00757v1",
+   "bare": "2512.00757",
+   "title": "Preventing Model Collapse via Contraction-Conditioned Neural Filters",
+   "published": "2025-11-30",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2601.03385v3",
+   "bare": "2601.03385",
+   "title": "SIGMA: Scalable Spectral Insights for LLM Model Collapse",
+   "published": "2026-01-06",
+   "cats": [
+    "cs.LG",
+    "math.PR"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2606.02339v1",
+   "bare": "2606.02339",
+   "title": "Entropy Minimization without Model Collapse: Mitigating Prediction Bias in Medical Imaging",
+   "published": "2026-06-01",
+   "cats": [
+    "cs.LG",
+    "cs.CV"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2606.13732v2",
+   "bare": "2606.13732",
+   "title": "When Sample Selection Bias Precipitates Model Collapse",
+   "published": "2026-06-11",
+   "cats": [
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2608.21366v1",
+   "bare": "2608.21366",
+   "title": "Reviewing Model Collapse and Countermeasures",
+   "published": "2026-06-17",
+   "cats": [
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2608.04268v1",
+   "bare": "2608.04268",
+   "title": "The Fairness Collapse Phenomenon: Bias Amplification in Language Models Trained on Synthetic Data",
+   "published": "2026-08-04",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2609.11149v3",
+   "bare": "2609.11149",
+   "title": "Break Step: Recursive Training Resonates with Replayed Sampling Noise",
+   "published": "2026-09-10",
+   "cats": [
+    "cs.CL",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1905.12313v1",
+   "bare": "1905.12313",
+   "title": "G2R Bound: A Generalization Bound for Supervised Learning from GAN-Synthetic Data",
+   "published": "2019-05-29",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1909.11512v1",
+   "bare": "1909.11512",
+   "title": "Synthetic Data for Deep Learning",
+   "published": "2019-09-25",
+   "cats": [
+    "cs.LG",
+    "cs.CR",
+    "cs.CV"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2004.14046v1",
+   "bare": "2004.14046",
+   "title": "Reducing catastrophic forgetting with learning on synthetic data",
+   "published": "2020-04-29",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2105.04144v1",
+   "bare": "2105.04144",
+   "title": "Transitioning from Real to Synthetic data: Quantifying the bias in model",
+   "published": "2021-05-10",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2301.01212v1",
+   "bare": "2301.01212",
+   "title": "Assessment of creditworthiness models privacy-preserving training with synthetic data",
+   "published": "2022-12-31",
+   "cats": [
+    "q-fin.RM",
+    "cs.LG",
+    "cs.SI"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2304.05673v3",
+   "bare": "2304.05673",
+   "title": "Precise localization of corneal reflections in eye images using deep learning trained on synthetic data",
+   "published": "2023-04-12",
+   "cats": [
+    "cs.CV",
+    "cs.AI"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2305.09235v2",
+   "bare": "2305.09235",
+   "title": "Synthetic data, real errors: how (not) to publish and use synthetic data",
+   "published": "2023-05-16",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2305.17148v3",
+   "bare": "2305.17148",
+   "title": "Differentially Private Low-dimensional Synthetic Data from High-dimensional Datasets",
+   "published": "2023-05-26",
+   "cats": [
+    "cs.LG",
+    "cs.CR",
+    "cs.DS",
+    "math.PR",
+    "math.ST"
+   ],
+   "role": "construct",
+   "diff": "a treatment of the self-consuming loop and the failure this paper measures",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1206.1317v1",
+   "bare": "1206.1317",
+   "title": "Model Checking Stochastic Branching Processes",
+   "published": "2012-06-06",
+   "cats": [
+    "cs.LO",
+    "cs.FL"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1705.09967v2",
+   "bare": "1705.09967",
+   "title": "Local Large Deviations: McMillian Theorem for multitype Galton-Watson Processes",
+   "published": "2017-05-28",
+   "cats": [
+    "cs.IT"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1302.5366v3",
+   "bare": "1302.5366",
+   "title": "Testing Uniformity of Stationary Distribution",
+   "published": "2013-02-21",
+   "cats": [
+    "cs.DS",
+    "cs.CC"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2206.01827v3",
+   "bare": "2206.01827",
+   "title": "A particle system with mean-field interaction: Large-scale limit of stationary distributions",
+   "published": "2022-06-03",
+   "cats": [
+    "math.PR",
+    "cs.MA"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1010.5608v2",
+   "bare": "1010.5608",
+   "title": "A Generalized Coupon Collector Problem",
+   "published": "2010-10-27",
+   "cats": [
+    "cs.IT",
+    "cs.DM",
+    "cs.PF"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1107.3385v1",
+   "bare": "1107.3385",
+   "title": "Computing hitting times via fluid approximation: application to the coupon collector problem",
+   "published": "2011-07-18",
+   "cats": [
+    "math.PR",
+    "cs.DM",
+    "math.CO"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1402.5245v1",
+   "bare": "1402.5245",
+   "title": "New results on a generalized coupon collector problem using Markov chains",
+   "published": "2014-02-21",
+   "cats": [
+    "math.PR",
+    "cs.DM"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1304.4371v1",
+   "bare": "1304.4371",
+   "title": "Efficient Computation of Mean Truncated Hitting Times on Very Large Graphs",
+   "published": "2013-04-16",
+   "cats": [
+    "cs.DS",
+    "cs.AI"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2212.05744v1",
+   "bare": "2212.05744",
+   "title": "Hitting Times of Random Walks on Edge Corona Product Graphs",
+   "published": "2022-12-12",
+   "cats": [
+    "cs.SI"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2511.04343v1",
+   "bare": "2511.04343",
+   "title": "Estimating Hitting Times Locally At Scale",
+   "published": "2025-11-06",
+   "cats": [
+    "cs.DS"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1504.08363v3",
+   "bare": "1504.08363",
+   "title": "On the Structure, Covering, and Learning of Poisson Multinomial Distributions",
+   "published": "2015-04-30",
+   "cats": [
+    "cs.DS",
+    "cs.LG",
+    "math.PR",
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1505.02324v2",
+   "bare": "1505.02324",
+   "title": "Simultaneous Clustering and Model Selection for Multinomial Distribution: A Comparative Study",
+   "published": "2015-05-09",
+   "cats": [
+    "cs.LG",
+    "stat.ME",
+    "stat.ML"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1511.03592v2",
+   "bare": "1511.03592",
+   "title": "The Fourier Transform of Poisson Multinomial Distributions and its Algorithmic Applications",
+   "published": "2015-11-11",
+   "cats": [
+    "cs.DS",
+    "cs.GT",
+    "cs.LG",
+    "math.PR",
+    "math.ST"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1711.01530v2",
+   "bare": "1711.01530",
+   "title": "Fisher-Rao Metric, Geometry, and Complexity of Neural Networks",
+   "published": "2017-11-05",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "stat.ML"
+   ],
+   "role": "theory",
+   "diff": "theory for the exact chain this paper's recursion belongs to (its stationary law, its tail, or its support)",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1807.04015v8",
+   "bare": "1807.04015",
+   "title": "On Catastrophic Forgetting and Mode Collapse in Generative Adversarial Networks",
+   "published": "2018-07-11",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1708.02072v4",
+   "bare": "1708.02072",
+   "title": "Measuring Catastrophic Forgetting in Neural Networks",
+   "published": "2017-08-07",
+   "cats": [
+    "cs.AI",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1805.07810v1",
+   "bare": "1805.07810",
+   "title": "Online Structured Laplace Approximations For Overcoming Catastrophic Forgetting",
+   "published": "2018-05-20",
+   "cats": [
+    "stat.ML",
+    "cs.LG"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1808.07049v1",
+   "bare": "1808.07049",
+   "title": "Catastrophic Importance of Catastrophic Forgetting",
+   "published": "2018-08-20",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1904.00310v3",
+   "bare": "1904.00310",
+   "title": "Learn to Grow: A Continual Structure Learning Framework for Overcoming Catastrophic Forgetting",
+   "published": "2019-03-31",
+   "cats": [
+    "cs.LG",
+    "cs.CV"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1905.08077v1",
+   "bare": "1905.08077",
+   "title": "Catastrophic forgetting: still a problem for DNNs",
+   "published": "2019-05-20",
+   "cats": [
+    "cs.LG",
+    "cs.CV"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1906.02568v1",
+   "bare": "1906.02568",
+   "title": "Localizing Catastrophic Forgetting in Neural Networks",
+   "published": "2019-06-06",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.NE",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1912.01238v3",
+   "bare": "1912.01238",
+   "title": "Overcoming Catastrophic Forgetting by Generative Regularization",
+   "published": "2019-12-03",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2001.01578v2",
+   "bare": "2001.01578",
+   "title": "Dissecting Catastrophic Forgetting in Continual Learning by Deep Visualization",
+   "published": "2020-01-06",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2005.07107v2",
+   "bare": "2005.07107",
+   "title": "Natural Way to Overcome the Catastrophic Forgetting in Neural Networks",
+   "published": "2020-04-27",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2005.00146v3",
+   "bare": "2005.00146",
+   "title": "Addressing Catastrophic Forgetting in Few-Shot Problems",
+   "published": "2020-04-30",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2010.04003v2",
+   "bare": "2010.04003",
+   "title": "A Theoretical Analysis of Catastrophic Forgetting through the NTK Overlap Matrix",
+   "published": "2020-10-07",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "stat.ML"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2011.06220v3",
+   "bare": "2011.06220",
+   "title": "Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting",
+   "published": "2020-11-12",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2105.07385v1",
+   "bare": "2105.07385",
+   "title": "Statistical Mechanical Analysis of Catastrophic Forgetting in Continual Learning with Teacher and Student Networks",
+   "published": "2021-05-16",
+   "cats": [
+    "stat.ML",
+    "cs.LG"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2109.01844v1",
+   "bare": "2109.01844",
+   "title": "On robustness of generative representations against catastrophic forgetting",
+   "published": "2021-09-04",
+   "cats": [
+    "cs.CV",
+    "cs.LG"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2110.10570v3",
+   "bare": "2110.10570",
+   "title": "Behavioral Experiments for Understanding Catastrophic Forgetting",
+   "published": "2021-10-20",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "mechanism",
+   "diff": "a treatment of how a distribution loses support, diversity or its tail -- the mechanism this paper isolates",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1905.12019v5",
+   "bare": "1905.12019",
+   "title": "Unified Probabilistic Deep Continual Learning through Generative Replay and Open Set Recognition",
+   "published": "2019-05-28",
+   "cats": [
+    "cs.LG",
+    "cs.CV",
+    "cs.NE",
+    "stat.ML"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 3,
+   "raw_support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2107.06499v2",
+   "bare": "2107.06499",
+   "title": "Deduplicating Training Data Makes Language Models Better",
+   "published": "2021-07-14",
+   "cats": [
+    "cs.CL",
+    "cs.LG"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2401.05883v3",
+   "bare": "2401.05883",
+   "title": "Generative Deduplication For Socia Media Data Selection",
+   "published": "2024-01-11",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2403.16952v2",
+   "bare": "2403.16952",
+   "title": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+   "published": "2024-03-25",
+   "cats": [
+    "cs.CL",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 2,
+   "raw_support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2512.09282v1",
+   "bare": "2512.09282",
+   "title": "FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model",
+   "published": "2025-12-10",
+   "cats": [
+    "cs.CV"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1606.07947v4",
+   "bare": "1606.07947",
+   "title": "Sequence-Level Knowledge Distillation",
+   "published": "2016-06-25",
+   "cats": [
+    "cs.CL",
+    "cs.LG",
+    "cs.NE"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1612.05555v2",
+   "bare": "1612.05555",
+   "title": "Neural Networks Classifier for Data Selection in Statistical Machine Translation",
+   "published": "2016-12-16",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1705.08690v3",
+   "bare": "1705.08690",
+   "title": "Continual Learning with Deep Generative Replay",
+   "published": "2017-05-24",
+   "cats": [
+    "cs.AI",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1708.00712v1",
+   "bare": "1708.00712",
+   "title": "Dynamic Data Selection for Neural Machine Translation",
+   "published": "2017-08-02",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1809.10635v2",
+   "bare": "1809.10635",
+   "title": "Generative replay with feedback connections as a general strategy for continual learning",
+   "published": "2018-09-27",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV",
+    "stat.ML"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1906.00654v1",
+   "bare": "1906.00654",
+   "title": "Continual Learning of New Sound Classes using Generative Replay",
+   "published": "2019-06-03",
+   "cats": [
+    "cs.LG",
+    "cs.SD",
+    "eess.AS",
+    "stat.ML"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1906.11829v4",
+   "bare": "1906.11829",
+   "title": "Selection via Proxy: Efficient Data Selection for Deep Learning",
+   "published": "2019-06-26",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1910.02551v3",
+   "bare": "1910.02551",
+   "title": "Soft-Label Dataset Distillation and Text Dataset Distillation",
+   "published": "2019-10-06",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "stat.ML"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2002.05715v3",
+   "bare": "2002.05715",
+   "title": "Self-Distillation Amplifies Regularization in Hilbert Space",
+   "published": "2020-02-13",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "protocol",
+   "diff": "a training-data protocol whose fresh-data fraction and pool history this paper shows are not interchangeable",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2405.13977v3",
+   "bare": "2405.13977",
+   "title": "Improving Fairness and Mitigating MADness in Generative Models",
+   "published": "2024-05-22",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2006.10974v3",
+   "bare": "2006.10974",
+   "title": "Optimization and Generalization of Regularization-Based Continual Learning: a Loss Approximation Viewpoint",
+   "published": "2020-06-19",
+   "cats": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2203.13167v4",
+   "bare": "2203.13167",
+   "title": "Towards Exemplar-Free Continual Learning in Vision Transformers: an Account of Attention, Functional and Weight Regularization",
+   "published": "2022-03-24",
+   "cats": [
+    "cs.CV",
+    "cs.LG"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2401.10393v3",
+   "bare": "2401.10393",
+   "title": "Natural Mitigation of Catastrophic Interference: Continual Learning in Power-Law Learning Environments",
+   "published": "2024-01-18",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2405.11829v1",
+   "bare": "2405.11829",
+   "title": "Adversarially Diversified Rehearsal Memory (ADRM): Mitigating Memory Overfitting Challenge in Continual Learning",
+   "published": "2024-05-20",
+   "cats": [
+    "cs.LG",
+    "cs.CV"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2411.00750v2",
+   "bare": "2411.00750",
+   "title": "Mitigating Tail Narrowing in LLM Self-Improvement via Socratic-Guided Sampling",
+   "published": "2024-11-01",
+   "cats": [
+    "cs.CL",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2501.13983v5",
+   "bare": "2501.13983",
+   "title": "AdEval: Alignment-based Dynamic Evaluation to Mitigate Data Contamination in Large Language Models",
+   "published": "2025-01-23",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.08117v1",
+   "bare": "2503.08117",
+   "title": "Convergence Dynamics and Stabilization Strategies of Co-Evolving Generative Models",
+   "published": "2025-03-11",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2505.13249v1",
+   "bare": "2505.13249",
+   "title": "RN-F: A Novel Approach for Mitigating Contaminated Data in Large Language Models",
+   "published": "2025-05-19",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2507.15903v2",
+   "bare": "2507.15903",
+   "title": "Towards Mitigation of Hallucination for LLM-empowered Agents: Progressive Generalization Bound Exploration and Watchdog Monitor",
+   "published": "2025-07-21",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "prevention",
+   "diff": "the field's mitigation literature, which is prevention-only and is what this paper is measured against",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2406.18326v2",
+   "bare": "2406.18326",
+   "title": "PaCoST: Paired Confidence Significance Testing for Benchmark Contamination Detection in Large Language Models",
+   "published": "2024-06-26",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2409.09927v2",
+   "bare": "2409.09927",
+   "title": "Towards Data Contamination Detection for Modern Large Language Models: Limitations, Inconsistencies, and Oracle Challenges",
+   "published": "2024-09-16",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2503.13572v3",
+   "bare": "2503.13572",
+   "title": "VeriContaminated: Assessing LLM-Driven Verilog Coding for Data Contamination",
+   "published": "2025-03-17",
+   "cats": [
+    "cs.AR",
+    "cs.CR",
+    "cs.LG"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2511.17602v1",
+   "bare": "2511.17602",
+   "title": "Beyond Surface-Level Similarity: Hierarchical Contamination Detection for Synthetic Training Data in Foundation Models",
+   "published": "2025-11-18",
+   "cats": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2609.02899v1",
+   "bare": "2609.02899",
+   "title": "Contamination Inflates Scores but Rarely Reorders Large Language Model Leaderboards",
+   "published": "2026-07-05",
+   "cats": [
+    "cs.CL",
+    "stat.AP",
+    "stat.ME"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2201.06289v3",
+   "bare": "2201.06289",
+   "title": "The CLEAR Benchmark: Continual LEArning on Real-World Imagery",
+   "published": "2022-01-17",
+   "cats": [
+    "cs.CV",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2204.05462v1",
+   "bare": "2204.05462",
+   "title": "Out-Of-Distribution Detection In Unsupervised Continual Learning",
+   "published": "2022-04-12",
+   "cats": [
+    "cs.CV"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2211.07740v4",
+   "bare": "2211.07740",
+   "title": "Denoising diffusion models for out-of-distribution detection",
+   "published": "2022-11-14",
+   "cats": [
+    "cs.LG",
+    "cs.CV"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2308.10328v3",
+   "bare": "2308.10328",
+   "title": "A Comprehensive Empirical Evaluation on Online Continual Learning",
+   "published": "2023-08-20",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2310.04417v3",
+   "bare": "2310.04417",
+   "title": "Generalization Bound for Diffusion Models using Random Features",
+   "published": "2023-10-06",
+   "cats": [
+    "stat.ML",
+    "cs.LG"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2310.17589v3",
+   "bare": "2310.17589",
+   "title": "An Open Source Data Contamination Report for Large Language Models",
+   "published": "2023-10-26",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2310.18018v1",
+   "bare": "2310.18018",
+   "title": "NLP Evaluation in trouble: On the Need to Measure LLM Data Contamination for each Benchmark",
+   "published": "2023-10-27",
+   "cats": [
+    "cs.CL"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2311.01964v1",
+   "bare": "2311.01964",
+   "title": "Don't Make Your LLM an Evaluation Benchmark Cheater",
+   "published": "2023-11-03",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2311.06233v7",
+   "bare": "2311.06233",
+   "title": "Data Contamination Quiz: A Tool to Detect and Estimate Contamination in Large Language Models",
+   "published": "2023-11-10",
+   "cats": [
+    "cs.CL",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2312.12343v3",
+   "bare": "2312.12343",
+   "title": "LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction",
+   "published": "2023-12-19",
+   "cats": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2401.06059v1",
+   "bare": "2401.06059",
+   "title": "Investigating Data Contamination for Pre-training Language Models",
+   "published": "2024-01-11",
+   "cats": [
+    "cs.CL",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "role": "measurement",
+   "diff": "an instrument or metric for detecting the degradation this paper studies",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "2512.11867v1",
+   "bare": "2512.11867",
+   "title": "On the Dangers of Bootstrapping Generation for Continual Learning and Beyond",
+   "published": "2025-12-05",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV",
+    "eess.IV"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 3,
+   "raw_support": 3,
+   "source": "discovery"
+  },
+  {
+   "id": "2104.06788v1",
+   "bare": "2104.06788",
+   "title": "Neural Architecture Search of Deep Priors: Towards Continual Learning without Catastrophic Interference",
+   "published": "2021-04-14",
+   "cats": [
+    "cs.LG"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "2203.17269v2",
+   "bare": "2203.17269",
+   "title": "A Closer Look at Rehearsal-Free Continual Learning",
+   "published": "2022-03-31",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 2,
+   "raw_support": 2,
+   "source": "discovery"
+  },
+  {
+   "id": "1705.09847v7",
+   "bare": "1705.09847",
+   "title": "Lifelong Generative Modeling",
+   "published": "2017-05-27",
+   "cats": [
+    "stat.ML",
+    "cs.LG"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1809.02441v3",
+   "bare": "1809.02441",
+   "title": "StackNet: Stacking Parameters for Continual learning",
+   "published": "2018-09-07",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "stat.ML"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1810.12488v4",
+   "bare": "1810.12488",
+   "title": "Re-evaluating Continual Learning Scenarios: A Categorization and Case for Strong Baselines",
+   "published": "2018-10-30",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1904.07734v1",
+   "bare": "1904.07734",
+   "title": "Three scenarios for continual learning",
+   "published": "2019-04-15",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV",
+    "stat.ML"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  },
+  {
+   "id": "1904.10644v1",
+   "bare": "1904.10644",
+   "title": "Facilitating Bayesian Continual Learning by Natural Gradients and Stein Gradients",
+   "published": "2019-04-24",
+   "cats": [
+    "cs.LG",
+    "cs.AI",
+    "stat.ML"
+   ],
+   "role": "adjacent",
+   "diff": "an adjacent loop (online / continual / agentic) that runs the same machinery on a different object",
+   "support": 1,
+   "raw_support": 1,
+   "source": "discovery"
+  }
+ ]
+}

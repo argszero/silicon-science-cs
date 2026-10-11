@@ -1,0 +1,7 @@
+{
+ "matplotlib": "3.9.4",
+ "note": "the build that produced the committed artefacts; checksums.sha256 is HARD on this build and advisory on any other (see README)",
+ "numpy": "2.0.2",
+ "python": "3.9.6",
+ "python_implementation": "cpython"
+}
