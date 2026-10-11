@@ -128,6 +128,62 @@ else
   say "reference-check plant" "a planted change inside the block makes --check fail"
 fi
 
+# ---- 5. the manuscript: re-render and compare, plant battery, then the journal gates ------------
+# build_manuscript.py resolves every number out of the four reports and every citation out of the
+# verified pool, and writes NOTHING in --check (it renders into memory and compares against the
+# committed manuscript.md).  The JOURNAL gates (numgate/linkgate/pointgate/refgate) are editor-side
+# tooling that lives outside this package, so a run that is not a journal checkout reports them as a
+# NAMED NOT RUN rather than as a pass.
+if [ -f "$HERE/manuscript.md" ]; then
+  if OUT=$("$PY" "$HERE/build_manuscript.py" --check 2>&1); then
+    say "manuscript" "$(printf '%s' "$OUT" | tail -1)"
+  else
+    bad "manuscript" "$(printf '%s' "$OUT" | tail -1)"
+  fi
+  if OUT=$("$PY" "$HERE/build_manuscript.py" --selftest 2>&1); then
+    say "build plants" "$(printf '%s' "$OUT" | tail -1)"
+  else
+    bad "build plants" "$(printf '%s' "$OUT" | tail -1)"
+  fi
+  ROOT="$(cd "$HERE/../.." && pwd)"
+  # refgate numbers the manuscript's reference block; its f-strings carry backslashes, so it needs an
+  # interpreter >= 3.12 independently of the package's own build.  GATE_PYTHON overrides.
+  GP=""
+  for c in "${GATE_PYTHON:-}" python3.13 python3.12 "$PY"; do
+    [ -n "$c" ] || continue
+    command -v "$c" >/dev/null 2>&1 || continue
+    v=$("$c" -c 'import sys;print(sys.version_info>=(3,12))' 2>/dev/null) || continue
+    [ "$v" = "True" ] && { GP="$c"; break; }
+  done
+  for g in numgate linkgate pointgate; do
+    if [ -f "$ROOT/.github/tools/$g.py" ]; then
+      if OUT=$(cd "$ROOT" && "$PY" ".github/tools/$g.py" "papers/issue-135/manuscript.md" 2>&1); then
+        say "$g" "$(printf '%s' "$OUT" | grep -E 'GATE:|broken=|pointers=' | tail -1)"
+      else
+        bad "$g" "the journal gate failed"
+      fi
+    else
+      say "$g" "NOT RUN -- the tool lives in .github/tools/ of the journal repo"
+    fi
+  done
+  RG="$ROOT/.github/tools/refgate.py"
+  if [ -f "$RG" ] && [ -n "$GP" ]; then
+    if OUT=$(cd "$ROOT" && "$GP" ".github/tools/refgate.py" "papers/issue-135/manuscript.md" 2>&1); then
+      # the gate's output is carried as the committed receipt refgate-journal.txt and re-derived here
+      # byte-for-byte: a quoted output line is a claim about a PROGRAM (Class 192).
+      if [ "$OUT" = "$(cat "$HERE/refgate-journal.txt")" ]; then
+        say "refgate" "$(printf '%s' "$OUT" | grep -E 'entries=|coverage=' | tr '\n' ' ') -- matches the committed receipt"
+      else
+        bad "refgate" "the gate's live output differs from the committed receipt (refgate-journal.txt)"
+      fi
+    else
+      bad "refgate" "the reference gate failed ($GP)"
+    fi
+  else
+    say "refgate" "NOT RUN -- the tool, or an interpreter >= 3.12, is unavailable here"
+  fi
+fi
+
 echo
 if [ "$FAILED" = "0" ]; then echo "REPRODUCE: ALL GREEN"; else echo "REPRODUCE: $FAILED step(s) FAILED"; fi
 exit "$FAILED"

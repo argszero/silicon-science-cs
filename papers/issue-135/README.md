@@ -19,7 +19,10 @@ cd papers/issue-135 && bash reproduce.sh
   (six SVGs + `FIGURES.md` + `CAPTIONS.md` + `manifest.json`) are compared byte-for-byte too. The
   reference layer then prints `refscan selftest SELFTEST: ALL PASS`, `refscan gate GATE 8/8` and
   `reference-check ... is what this renders`, and a planted change inside the rendered block must
-  make `--check` fail.
+  make `--check` fail. Finally the manuscript is re-rendered (`MANUSCRIPT: MATCH -- 207 references,
+  70 numbers ... ytes re-rendered byte-identically`), its plant battery runs
+  (`SELFTEST: ALL PLANTS CAUGHT`), and the journal's gates are applied to the built manuscript
+  (`refgate ... coverage=100.0%`).
 * **Environment**: CPython 3 (measured on **3.12.12** and **3.13.9**, macOS). The instruments are pure
   standard library (`json`/`math`/`os`/`sys`) — **no third-party dependency is imported**, so no library
   version enters a comparison. Override with `PYTHON=/path/to/python3`.
@@ -28,7 +31,7 @@ cd papers/issue-135 && bash reproduce.sh
   *live* verification is a separate, documented network pass — see **Reference layer** below; the
   offline gate re-checks its committed receipt without touching the network.)
 * **Cost**: about **five minutes** (four instruments, each re-run once, plus the batteries, the
-  figure certificate, and the offline reference layer).
+  figure certificate, the offline reference layer, and the manuscript re-render).
 * **Writes nothing inside the package**: each instrument is run with `SPIKE_OUT` pointing into a private
   temp directory the script creates and removes.
 * **Second tier**: `REPRO_FULL=1 bash reproduce.sh` re-runs every instrument a second time in a fresh
@@ -51,6 +54,11 @@ cd papers/issue-135 && bash reproduce.sh
 | `reference-pool.md` | The per-entry table: key, source, the live endpoint each entry was checked against, and its title |
 | `reference-check.md` | The verification report — method, result, the defects found while building the layer, and what the check does **not** establish |
 | `make_reference_check.py` | Renders the receipt block of `reference-check.md` from `refs/verify-run.txt`; `--check` proves the committed file is what it renders |
+| `refs/differences.json` | One stated difference per cited reference — a citation with no stated difference is padding, and the build refuses to render one |
+| `manuscript.src.md` | The manuscript SOURCE: prose with `{{key}}` (a number owned by a report), `{ref:ID}` (a citation owned by the pool) and `{{figN}}` (a figure block) placeholders |
+| `manuscript.md` | The manuscript, built from the source by `build_manuscript.py` — every number resolved out of a report, every citation out of the verified pool |
+| `build_manuscript.py` | The manuscript builder: resolves all three placeholder kinds and FAILS on an unresolved/unknown/unused one, on a citation off the pool, or on fewer than 100 cited references; `--check` re-renders into memory and compares, `--selftest` plants a defect per check |
+| `refgate-journal.txt` | The journal reference gate's verbatim output on the built manuscript (a committed receipt, re-derived and compared byte-for-byte by `reproduce.sh`) |
 | `heilmeier.md` | The registration as filed: six Heilmeier answers, adversarial checks, the stated priors, and the round log |
 
 ## What each instrument certifies, and where it can fail
@@ -109,6 +117,35 @@ has two tiers:
 **title comparison**, not the HTTP status — a remembered identifier *resolves* to a real record, of
 a *different* paper, so the check is the returned title against the stored one. An API outage is
 reported as `TRANSPORT-UNKNOWN`, never as "these records do not exist".
+
+## The manuscript
+
+`manuscript.src.md` is the source; `manuscript.md` is the built product. Nothing is typed twice:
+`python3 build_manuscript.py` resolves every placeholder in the source —
+
+* `{{key}}` — a **number**, read out of the committed report that owns it (never typed in prose);
+* `{ref:ID}` — a **citation**, resolved against the verified pool `refs/pool.json`;
+* `{{figN}}` — a **figure block**, assembled from the generated `figures/CAPTIONS.md`, so the caption
+  cannot drift from the picture;
+
+— and the build **fails** on each way a number, a citation or a figure can be wrong: a placeholder with no
+owner, a declared value that nothing uses (a number that drifted out of the prose), a citation off the
+pool, a cited key with no stated difference, fewer than 100 cited references, or a figure whose image is
+absent. `--selftest` plants a defect for each of those and requires the build to refuse;
+`--check` re-renders into memory and proves the committed `manuscript.md` is exactly what the source
+renders. The result: **207 references, all cited in the body** (the journal bar is 100), **70 numbers**,
+each read from a report, and every reference entry carrying its title, authors, year, venue, link and a
+one-line **stated difference** from this paper.
+
+The journal's own gates run on the built manuscript (they live in `.github/tools/` of the journal repo,
+and a run outside a journal checkout reports them as a named `NOT RUN`):
+
+| Gate | What it checks |
+|---|---|
+| `refgate.py` | the reference block: entry count, numbering, the author form, and **in-text coverage** (every numbered entry cited in the body) — its verbatim output is the committed receipt `refgate-journal.txt` |
+| `numgate.py` | the tree's numbered references, by the form each takes |
+| `linkgate.py` | every markdown bracket link/image in the manuscript, resolved at the product's own base |
+| `pointgate.py` | the tree's named pointers (`-> *Name*`) |
 
 ## Findings (the short form)
 
