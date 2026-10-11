@@ -1,0 +1,1266 @@
+{
+ "1": {
+  "authors": [
+   "Dekker, T. J."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "DOI: 10.1007/bf01397083",
+  "via": "api.crossref.org/works/10.1007/bf01397083 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "1971"
+ },
+ "10": {
+  "authors": [
+   "Loe, J. A.",
+   "Glusa, C. A.",
+   "Yamazaki, I.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "100": {
+  "authors": [
+   "Arar, E. E.",
+   "Fasi, M.",
+   "Filip, S.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "101": {
+  "authors": [
+   "Arar, E. E.",
+   "Sohier, D.",
+   "de Oliveira Castro, P.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "102": {
+  "authors": [
+   "de Oliveira Castro, P.",
+   "Arar, E. E.",
+   "Petit, E.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "103": {
+  "authors": [
+   "Ben Ali, S.",
+   "Filip, S.",
+   "Sentieys, O."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "104": {
+  "authors": [
+   "Croci, M.",
+   "Fasi, M.",
+   "Higham, N. J.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "DOI: 10.1098/rsos.211631",
+  "via": "api.crossref.org/works/10.1098/rsos.211631 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2022"
+ },
+ "105": {
+  "authors": [
+   "Davis, T. A.",
+   "Hu, Y."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "ACM Transactions on Mathematical Software",
+  "via": "api.crossref.org/works/10.1145/2049662.2049663 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2011"
+ },
+ "106": {
+  "authors": [
+   "Haidar, A.",
+   "Tomov, S.",
+   "Dongarra, J.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "SC18: International Conference for High Performance Computing, Networking, Storage and Analysis",
+  "via": "api.crossref.org/works/10.1109/sc.2018.00050 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2018"
+ },
+ "107": {
+  "authors": [
+   "Agullo, E.",
+   "Anzt, H.",
+   "Bauer, D.",
+   "et al."
+  ],
+  "n_dropped": 37,
+  "n_stored": 40,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "11": {
+  "authors": [
+   "Oktay, E.",
+   "Carson, E."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "12": {
+  "authors": [
+   "Hayashi, S.",
+   "Mukunoki, D.",
+   "Hoshino, T.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "13": {
+  "authors": [
+   "Hallman, E.",
+   "Ipsen, I. C. F."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "14": {
+  "authors": [
+   "Zhang, J.",
+   "Zhou, Y."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "15": {
+  "authors": [
+   "Abdelfattah, A.",
+   "Anzt, H.",
+   "Boman, E. G.",
+   "et al."
+  ],
+  "n_dropped": 22,
+  "n_stored": 25,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2020"
+ },
+ "16": {
+  "authors": [
+   "Martínez, H.",
+   "Castelló, A.",
+   "Igual, F. D.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "17": {
+  "authors": [
+   "Kahan, W."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "Communications of the ACM",
+  "via": "api.crossref.org/works/10.1145/363707.363723 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "1965"
+ },
+ "18": {
+  "authors": [
+   "Ogita, T.",
+   "Rump, S. M.",
+   "Oishi, S."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/030601818 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2005"
+ },
+ "19": {
+  "authors": [
+   "Demmel, J.",
+   "Hida, Y."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/s1064827502407627 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2004"
+ },
+ "2": {
+  "authors": [
+   "Ozaki, K.",
+   "Uchino, Y.",
+   "Imamura, T."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "20": {
+  "authors": [
+   "Rump, S. M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/080738490 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2009"
+ },
+ "21": {
+  "authors": [
+   "Connolly, M. P.",
+   "Higham, N. J.",
+   "Mary, T."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/20m1334796 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2021"
+ },
+ "22": {
+  "authors": [
+   "Hallman, E.",
+   "Ipsen, I. C. F."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "23": {
+  "authors": [
+   "Sao, P.",
+   "Miniskar, N.",
+   "Valero-Lara, P.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "24": {
+  "authors": [
+   "Carson, E.",
+   "Higham, N. J."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/17m1122918 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2017"
+ },
+ "25": {
+  "authors": [
+   "Oktay, E.",
+   "Carson, E."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "26": {
+  "authors": [
+   "Carson, E.",
+   "Khan, N."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "27": {
+  "authors": [
+   "Khan, N.",
+   "Carson, E."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2023"
+ },
+ "28": {
+  "authors": [
+   "Carson, E.",
+   "Oktay, E."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "29": {
+  "authors": [
+   "Gao, B.",
+   "Ma, Y.",
+   "Shao, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "3": {
+  "authors": [
+   "Hayashi, S.",
+   "Mukunoki, D.",
+   "Hoshino, T.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "30": {
+  "authors": [
+   "Nagy, J. G.",
+   "Onisk, L."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "31": {
+  "authors": [
+   "Ge, J.",
+   "Zhang, J."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "32": {
+  "authors": [
+   "Quinlan, J.",
+   "Omtzigt, E. T. L."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "33": {
+  "authors": [
+   "Scott, J.",
+   "Tůma, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "34": {
+  "authors": [
+   "Scott, J.",
+   "Tůma, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "35": {
+  "authors": [
+   "Chen, Q.",
+   "Jiao, X."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "36": {
+  "authors": [
+   "Krasnopolsky, B.",
+   "Medvedev, A."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "37": {
+  "authors": [
+   "Zhang, Z.",
+   "Hong, R.",
+   "Chen, X.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "38": {
+  "authors": [
+   "Suzuki, A."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "39": {
+  "authors": [
+   "Prolubnikov, A. V."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "4": {
+  "authors": [
+   "Carson, E.",
+   "Higham, N. J."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/17m1140819 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2018"
+ },
+ "40": {
+  "authors": [
+   "Ge, J.",
+   "Vieublé, B.",
+   "Zhang, J."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "41": {
+  "authors": [
+   "Carson, E.",
+   "Daužickaitė, I."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "42": {
+  "authors": [
+   "Gao, W.",
+   "Ma, Y.",
+   "Shao, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "43": {
+  "authors": [
+   "Gao, B.",
+   "Kressner, D.",
+   "Shao, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "44": {
+  "authors": [
+   "Dmytryshyn, A.",
+   "Fasi, M.",
+   "Higham, N. J.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "45": {
+  "authors": [
+   "Benner, P.",
+   "Liu, X."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "46": {
+  "authors": [
+   "McCormick, S. F.",
+   "Benzaken, J.",
+   "Tamstorf, R."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2020"
+ },
+ "47": {
+  "authors": [
+   "McCormick, S. F.",
+   "Tamstorf, R."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2023"
+ },
+ "48": {
+  "authors": [
+   "Croci, M.",
+   "Wells, G. N."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "49": {
+  "authors": [
+   "Habera, M.",
+   "Kühner, P. T.",
+   "Croci, M.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "5": {
+  "authors": [
+   "Higham, N. J."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "DOI: 10.1137/1.9780898718027",
+  "via": "api.crossref.org/works/10.1137/1.9780898718027 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2002"
+ },
+ "50": {
+  "authors": [
+   "Kanamori, I.",
+   "Matsufuru, H.",
+   "Aoyama, T.",
+   "et al."
+  ],
+  "n_dropped": 4,
+  "n_stored": 7,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "51": {
+  "authors": [
+   "Clark, M. A.",
+   "Babich, R.",
+   "Barros, K.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2009"
+ },
+ "52": {
+  "authors": [
+   "Habib, A.",
+   "Finkelstein, J.",
+   "Niklasson, A. M. N."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "53": {
+  "authors": [
+   "Finkelstein, J.",
+   "Smith, J. S.",
+   "Mniszewski, S. M.",
+   "et al."
+  ],
+  "n_dropped": 4,
+  "n_stored": 7,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "54": {
+  "authors": [
+   "Finkelstein, J.",
+   "Rubensson, E. H.",
+   "Mniszewski, S. M.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "55": {
+  "authors": [
+   "Benoit, A."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "56": {
+  "authors": [
+   "Kimpson, T.",
+   "Paxton, E. A.",
+   "Chantry, M.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "57": {
+  "authors": [
+   "Ford, E. B."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2008"
+ },
+ "58": {
+  "authors": [
+   "Zeebe, R. E."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2023"
+ },
+ "59": {
+  "authors": [
+   "Wang, N.",
+   "Choi, J.",
+   "Brand, D.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2018"
+ },
+ "6": {
+  "authors": [
+   "Wilkinson, J. H."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "DOI: 10.1137/1.9781611977523",
+  "via": "api.crossref.org/works/10.1137/1.9781611977523 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2023"
+ },
+ "60": {
+  "authors": [
+   "Kalamkar, D.",
+   "Mudigere, D.",
+   "Mellempudi, N.",
+   "et al."
+  ],
+  "n_dropped": 16,
+  "n_stored": 19,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2019"
+ },
+ "61": {
+  "authors": [
+   "Mellempudi, N.",
+   "Srinivasan, S.",
+   "Das, D.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2019"
+ },
+ "62": {
+  "authors": [
+   "Zamirai, P.",
+   "Zhang, J.",
+   "Aberger, C. R.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2020"
+ },
+ "63": {
+  "authors": [
+   "Yun, J.",
+   "Choi, S.",
+   "Rameau, F.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2023"
+ },
+ "64": {
+  "authors": [
+   "Hu, R.",
+   "Luschi, C.",
+   "Balanca, P."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "65": {
+  "authors": [
+   "Zhao, Q.",
+   "Chen, K.",
+   "Tian, C.",
+   "et al."
+  ],
+  "n_dropped": 9,
+  "n_stored": 12,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "66": {
+  "authors": [
+   "Rahimifar, M.",
+   "Darabi, A.",
+   "Jazi, M. T.",
+   "et al."
+  ],
+  "n_dropped": 6,
+  "n_stored": 9,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "67": {
+  "authors": [
+   "Panferov, A.",
+   "Schultheis, E.",
+   "Tabesh, S.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "68": {
+  "authors": [
+   "Zhang, Y.",
+   "Zhen, H.",
+   "Yuan, M.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "69": {
+  "authors": [
+   "Anzt, H.",
+   "Cojean, T.",
+   "Flegar, G.",
+   "et al."
+  ],
+  "n_dropped": 5,
+  "n_stored": 8,
+  "venue": "ACM Transactions on Mathematical Software",
+  "via": "api.crossref.org/works/10.1145/3480935 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2022"
+ },
+ "7": {
+  "authors": [
+   "Higham, N. J.",
+   "Mary, T."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "SIAM Journal on Scientific Computing",
+  "via": "api.crossref.org/works/10.1137/18m1226312 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2019"
+ },
+ "70": {
+  "authors": [
+   "Mukunoki, D."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "71": {
+  "authors": [
+   "Kouya, T."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2021"
+ },
+ "72": {
+  "authors": [
+   "Lu, D.",
+   "Maeder, A.",
+   "Luisier, M.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "73": {
+  "authors": [
+   "Schwarz, A.",
+   "Anders, A.",
+   "Brower, C.",
+   "et al."
+  ],
+  "n_dropped": 8,
+  "n_stored": 11,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "74": {
+  "authors": [
+   "Abdelfattah, A.",
+   "Dongarra, J.",
+   "Fasi, M.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "75": {
+  "authors": [
+   "Ledoux, L.",
+   "Casas, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "76": {
+  "authors": [
+   "Kouya, T."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "77": {
+  "authors": [
+   "Fasi, M.",
+   "Higham, N. J.",
+   "Mikaitis, M.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "DOI: 10.7717/peerj-cs.330",
+  "via": "api.crossref.org/works/10.7717/peerj-cs.330 -> author[].given/family (cached in refs_authors.json, so the run needs no network)",
+  "year": "2021"
+ },
+ "78": {
+  "authors": [
+   "Khattak, F. A.",
+   "Mikaitis, M."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "79": {
+  "authors": [
+   "Xie, P.",
+   "Xu, S.",
+   "Wang, Y.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "8": {
+  "authors": [
+   "Bhola, S.",
+   "Duraisamy, K."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "80": {
+  "authors": [
+   "Sun, W.",
+   "Li, A.",
+   "Geng, T.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "81": {
+  "authors": [
+   "Markidis, S.",
+   "Chien, S. W. D.",
+   "Laure, E.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2018"
+ },
+ "82": {
+  "authors": [
+   "Yang, Z.",
+   "Riasanovsky, N. J.",
+   "Deng, W.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "83": {
+  "authors": [
+   "Li, X.",
+   "Li, A.",
+   "Fang, B.",
+   "et al."
+  ],
+  "n_dropped": 3,
+  "n_stored": 6,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "84": {
+  "authors": [
+   "Van Zee, F. G.",
+   "Parikh, D. N.",
+   "van de Geijn, R. A."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2019"
+ },
+ "85": {
+  "authors": [
+   "Ootomo, H.",
+   "Ozaki, K.",
+   "Yokota, R."
+  ],
+  "n_dropped": 0,
+  "n_stored": 3,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2023"
+ },
+ "86": {
+  "authors": [
+   "Hermes, D."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2018"
+ },
+ "87": {
+  "authors": [
+   "Kouya, T."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2013"
+ },
+ "88": {
+  "authors": [
+   "Carson, E.",
+   "Chen, X."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "89": {
+  "authors": [
+   "Chen, X."
+  ],
+  "n_dropped": 0,
+  "n_stored": 1,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ },
+ "9": {
+  "authors": [
+   "Bhola, S.",
+   "Duraisamy, K."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "90": {
+  "authors": [
+   "Thanasis, I.",
+   "Carson, E."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "91": {
+  "authors": [
+   "Badash, E.",
+   "Boneh, D.",
+   "Komargodski, I.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "92": {
+  "authors": [
+   "Iakymchuk, R.",
+   "Barreda, M.",
+   "Graillat, S.",
+   "et al."
+  ],
+  "n_dropped": 2,
+  "n_stored": 5,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2020"
+ },
+ "93": {
+  "authors": [
+   "Arar, E. E.",
+   "Sohier, D.",
+   "de Oliveira Castro, P.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "94": {
+  "authors": [
+   "Croci, M.",
+   "Giles, M. B."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2020"
+ },
+ "95": {
+  "authors": [
+   "Xia, L.",
+   "Massei, S.",
+   "Hochstenbach, M. E.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2022"
+ },
+ "96": {
+  "authors": [
+   "Drineas, P.",
+   "Ipsen, I. C. F."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2024"
+ },
+ "97": {
+  "authors": [
+   "Arar, E. E.",
+   "Fasi, M.",
+   "Filip, S.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2026"
+ },
+ "98": {
+  "authors": [
+   "Xia, L.",
+   "Anthonissen, M.",
+   "Hochstenbach, M.",
+   "et al."
+  ],
+  "n_dropped": 1,
+  "n_stored": 4,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2020"
+ },
+ "99": {
+  "authors": [
+   "Fitzgibbon, A.",
+   "Felix, S."
+  ],
+  "n_dropped": 0,
+  "n_stored": 2,
+  "venue": "arXiv preprint",
+  "via": "arXiv API id_list (the record's own order: Given Family; no per-entry fetch, so this entry needs no network)",
+  "year": "2025"
+ }
+}
