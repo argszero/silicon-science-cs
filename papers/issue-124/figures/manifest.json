@@ -1,0 +1,17 @@
+{
+ "_matplotlib": "3.9.4",
+ "_software_tag": "silicon-science-cs issue-124 figures",
+ "_sources": {
+  "spike_v0": "f81c6258ba57aa25b4d92aea3c7bcd9ed7f232e5af554b9d7e7aff827153f9e7",
+  "spike_v1": "3d7d349dec7ac42922b1d8217afaeec3d6e9e1c414c3a7f77a63c223b4a263cd",
+  "spike_v2": "6eef508d92d796b7e2f6266af7b9b39124d6a0dcfcce0e612cab098a28f6f849",
+  "spike_v3": "2542a1dc9b49e37d063bf020fd855603c5bc3126baa47f50cb741e25986dbf0d",
+  "spike_v4": "e7675c079033d8c21e1163555f6aa0f00611c46177d7572efd00def58445ecfb"
+ },
+ "fig1_repeat_law.png": "579b4f5d3dc6509169ed57ed93d15cf9eabed71f407708764ab3b78f6e0b842a",
+ "fig2_even_odd.png": "28a6fe0e5ff8d23d780d54b23c284653f9242d3271696cfab67b48e45c45a25c",
+ "fig3_crossover.png": "47a0cededb3a7a47ee181adec50219fe8d74023f8032e990c81266fb653f253b",
+ "fig4_budget.png": "bf347eb03b1bc4ee37a9a48181a3a715866ad1f503a2108ddd6a03890630bad0",
+ "fig5_itemsize.png": "93563be27f4de239004b4fc2e27a4aa6014d4a62378cabbc71c1800b55e472ce",
+ "fig6_flat_p.png": "0bb24f3124f79bf4ee914e90c2f28d97f3dd9cc90b0d65e93111a0ffb6a92114"
+}
