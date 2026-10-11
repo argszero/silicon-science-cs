@@ -1,0 +1,107 @@
+# issue #118 reference verification -- resolved by identifier against arXiv
+# 105 entries: 105 OK, 0 PROBLEM
+OK          2101.03961     construct                      Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+OK          2006.16668     construct                      GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding
+OK          2112.06905     construct                      GLaM: Efficient Scaling of Language Models with Mixture-of-Experts
+OK          2508.12801     construct                      Maximum Score Routing For Mixture-of-Experts
+OK          2202.09368     construct                      Mixture-of-Experts with Expert Choice Routing
+OK          2308.00951     construct                      From Sparse to Soft Mixtures of Experts
+OK          2005.07761     construct                      Efficient Load-Balancing through Distributed Token Dropping
+OK          2203.13240     construct                      Token Dropping for Efficient BERT Pretraining
+OK          2211.11586     construct                      Random-LTD: Random and Layerwise Token Dropping Brings Efficient Training for Large-scale Transformers
+OK          2106.04426     construct                      Hash Layers For Large Sparse Models
+OK          2105.15082     construct                      M6-T: Exploring Sparse Expert Models and Beyond
+OK          2010.11018     construct                      Token Drop mechanism for Neural Machine Translation
+OK          2408.15664     balancing                      Auxiliary-Loss-Free Load Balancing Strategy for Mixture-of-Experts
+OK          2512.03915     balancing                      A Theoretical Framework for Auxiliary-Loss-Free Load Balancing of Sparse Mixture-of-Experts in Large-Scale AI Models
+OK          2109.11817     balancing                      Unbiased Gradient Estimation with Balanced Assignments for Mixtures of Experts
+OK          2502.15451     balancing                      Binary-Integer-Programming Based Algorithm for Expert Load Balancing in Mixture-of-Experts Models
+OK          2602.03478     balancing                      When Routing Collapses: On the Degenerate Convergence of LLM Routers
+OK          2504.01337     balancing                      Advancing MoE Efficiency: A Collaboration-Constrained Routing (C2R) Strategy for Better Expert Parallelism Design
+OK          2411.19402     balancing                      On the Role of Discrete Representation in Sparse Mixture of Experts
+OK          2602.14159     balancing                      Synergistic Intra- and Cross-Layer Regularization Losses for MoE Expert Specialization
+OK          2503.05066     capacity                       Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts
+OK          2403.07652     capacity                       Harder Tasks Need More Experts: Dynamic Routing in MoE Models
+OK          2502.16927     capacity                       BigMac: A Communication-Efficient Mixture-of-Experts Model Structure for Fast Training and Inference
+OK          2201.05596     serving                        DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale
+OK          2308.12066     serving                        Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference
+OK          2401.14361     serving                        MoE-Infinity: Efficient MoE Inference on Personal Machines with Sparsity-Aware Expert Cache
+OK          2410.17954     serving                        ExpertFlow: Efficient Mixture-of-Experts Inference via Predictive Expert Caching and Token Scheduling
+OK          2411.01433     serving                        HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference
+OK          2502.05370     serving                        Taming Latency-Memory Trade-Off in MoE-Based LLM Serving via Fine-Grained Expert Offloading
+OK          2504.05897     serving                        HybriMoE: Hybrid CPU-GPU Scheduling and Cache Management for Efficient MoE Inference
+OK          2504.02263     serving                        MegaScale-Infer: Serving Mixture-of-Experts at Scale with Disaggregated Expert Parallelism
+OK          2505.16056     serving                        Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models
+OK          2506.12708     serving                        Serving Large Language Models on Huawei CloudMatrix384
+OK          2512.12990     serving                        SliceMoE: Bit-Sliced Expert Caching under Miss-Rate Constraints for Efficient MoE Inference
+OK          2602.16052     serving                        MoE-Spec: Expert Budgeting for Efficient Speculative Decoding
+OK          2603.06350     serving                        MoEless: Efficient MoE LLM Serving with Serverless Experts
+OK          2604.18788     serving                        Efficient Mixture-of-Experts LLM Inference with Apple Silicon NPUs
+OK          2604.23150     serving                        Scaling Multi-Node Mixture-of-Experts Inference Using Expert Activation Patterns
+OK          2609.33385     serving                        OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading
+OK          2610.01950     serving                        MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference
+OK          2308.15030     serving                        SwapMoE: Serving Off-the-shelf MoE-based Large Language Models with Tunable Memory Budget
+OK          2502.06888     serving                        Klotski: Efficient Mixture-of-Expert Inference via Expert-Aware Multi-Batch Pipeline
+OK          2508.09208     serving                        CoMoE: Collaborative Optimization of Expert Aggregation and Offloading for MoE-based LLMs at Edge
+OK          2508.19373     serving                        HAP: Hybrid Adaptive Parallelism for Efficient Mixture-of-Experts Inference
+OK          2508.18983     serving                        SMoE: An Algorithm-System Co-Design for Pushing MoE to the Edge via Expert Substitution
+OK          2501.10375     serving                        DAOP: Data-Aware Offloading and Predictive Pre-Calculation for Efficient MoE Inference
+OK          2502.12224     serving                        Fate: Fast Edge Inference of Mixture-of-Experts Models via Cross-Layer Gate
+OK          2601.05296     serving                        MoEBlaze: Breaking the Memory Wall for Efficient MoE Training on Modern GPUs
+OK          2605.10670     serving                        Surviving Partial Rank Failures in Wide Expert-Parallel MoE Inference
+OK          2401.04088     architecture                   Mixtral of Experts
+OK          2401.06066     architecture                   DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models
+OK          2405.04434     architecture                   DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model
+OK          2412.19437     architecture                   DeepSeek-V3 Technical Report
+OK          2409.02060     architecture                   OLMoE: Open Mixture-of-Experts Language Models
+OK          2406.00023     architecture                   Expert-Token Resonance MoE: Bidirectional Routing with Efficiency Affinity-Driven Active Selection
+OK          2406.13233     architecture                   AdaMoE: Token-Adaptive Routing with Null Experts for Mixture-of-Experts Language Models
+OK          2410.10456     architecture                   Ada-K Routing: Boosting the Efficiency of MoE-based LLMs
+OK          2505.22323     architecture                   Advancing Expert Specialization for Better MoE
+OK          2503.15798     architecture                   Mixture of Lookup Experts
+OK          2412.10302     architecture                   DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding
+OK          2608.08650     survey                         The Evolution of Mixture-of-Experts Architectures in Large Language Models: Routing, Topology, Load Balancing, and Expert Parallelism
+OK          2602.03204     survey                         Sparsity is Combinatorial Depth: Quantifying MoE Expressivity via Tropical Geometry
+OK          2602.17798     survey                         Grassmannian Mixture-of-Experts: Concentration-Controlled Routing on Subspace Manifolds
+OK          2603.11114     survey                         Task-Conditioned Routing Signatures in Sparse Mixture-of-Experts Transformers
+OK          math/0508451   theory                         On the power of two choices: Balls and bins in continuous time
+OK          1201.3310      theory                         A Generalization of Multiple Choice Balls-into-Bins: Tight Bounds
+OK          2203.12400     theory                         Tight Bounds for Repeated Balls-into-Bins
+OK          2205.14494     theory                         Balls and Bins -- Simple Concentration Bounds
+OK          1207.2125      theory                         Balls into Bins via Local Search
+OK          1310.0801      theory                         Balls into bins via local search: cover time and maximum load
+OK          2209.02220     theory                         Three Distributions in the Extended Occupancy Problem
+OK          math/0410174   theory                         Large deviation asymptotics for occupancy problems
+OK          math/0609498   theory                         On the variance of the number of occupied boxes
+OK          math/0701718   theory                         Notes on the occupancy problem with infinitely many boxes: general asymptotics and power laws
+OK          1005.2616      theory                         Chains-into-Bins Processes
+OK          0911.2077      theory                         Central Binomial Tail Bounds
+OK          2211.01688     theory                         Nearly tight universal bounds for the binomial tail probabilities
+OK          2502.18611     theory                         Tight Bounds on the Binomial CDF, and the Minimum of i.i.d Binomials, in terms of KL-Divergence
+OK          2012.09968     theory                         Binomial Tails for Community Analysis
+OK          math/0508606   theory                         Tusnady's inequality revisited
+OK          1107.1533      theory                         Martingale Couplings and Bounds on the Tails of Probability Distributions
+OK          1111.6358      theory                         Bounds for tail probabilities of martingales using skewness and kurtosis
+OK          0806.1007      theory                         Competition between Discrete Random Variables, with Applications to Occupancy Problems
+OK          cs/0407023     theory                         Efficient Hashing with Lookups in two Memory Accesses
+OK          1203.3106      theory                         Saddlepoint approximations for likelihood ratio like statistics with applications to permutation tests
+OK          math/0508604   theory                         Saddlepoint approximation for Student's t-statistic with no moment conditions
+OK          0803.2132      theory                         Uniform saddlepoint approximations for ratios of quadratic forms
+OK          2608.25371     security                       Capacity Overflow: A Blind Spot for Backdoor Attacks in Vision MoE
+OK          2504.18598     security                       BadMoE: Backdooring Mixture-of-Experts LLMs via Optimizing Routing Triggers and Infecting Dormant Experts
+OK          2510.13462     security                       Who Speaks for the Trigger? Dynamic Expert Routing in Backdoored Mixture-of-Experts Transformers
+OK          2410.22884     security                       Stealing User Prompts from Mixture of Experts
+OK          2206.00277     efficiency                     Task-Specific Expert Pruning for Sparse Mixture-of-Experts
+OK          2503.06881     efficiency                     ResMoE: Space-efficient Compression of Mixture of Experts LLMs via Residual Restoration
+OK          2404.05019     efficiency                     Shortcut-connected Expert Parallelism for Accelerating Mixture-of-Experts
+OK          2504.14960     efficiency                     MoE Parallel Folding: Heterogeneous Parallelism Mappings for Efficient Large-Scale MoE Model Training with Megatron Core
+OK          2411.15419     efficiency                     Communication-Efficient Sparsely-Activated Model Training via Sequence Migration and Token Condensation
+OK          2608.28511     efficiency                     Training Communication-Efficient Mixture-of-Experts Language Models with Layer Re-Configuration
+OK          2407.04656     efficiency                     Lazarus: Resilient and Elastic Training of Mixture-of-Experts Models
+OK          2411.16786     efficiency                     Staleness-Centric Optimizations for Parallel Diffusion MoE Inference
+OK          2506.23635     efficiency                     Towards Building Private LLMs: Exploring Multi-Node Expert Parallelism on Apple Silicon for Mixture-of-Experts Large Language Model
+OK          2604.12163     architecture                   Nucleus-Image: Sparse MoE for Image Generation
+OK          2608.17402     architecture                   MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding
+OK          2605.11689     survey                         Slicing and Dicing: Configuring Optimal Mixtures of Experts
+OK          2610.01265     serving                        RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference
+OK          2407.10671     architecture                   Qwen2 Technical Report

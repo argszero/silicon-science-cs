@@ -1,0 +1,7 @@
+research/
+figures_draft/
+
+# Fetch cache of `refs/refs_tool.py verify` (batched arXiv responses). A byproduct of verification,
+# not a product: nothing on the reproduction path reads it, and the artefacts of that step are the
+# committed `refs/verify.log` and `refs/authors.json` beside it.
+refs/verify_cache/
