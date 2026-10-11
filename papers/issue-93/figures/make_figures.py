@@ -24,7 +24,16 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
-import matplotlib                                                          # noqa: E402
+try:
+    import matplotlib                                                      # noqa: E402
+except ImportError as e:                                                   # the declared dependency, named
+    sys.stderr.write(
+        "figures/make_figures.py: matplotlib is not importable on this interpreter (%s).\n"
+        "  matplotlib is a DECLARED dependency of the figure step (README -> *Tolerance, and the build*).\n"
+        "  Its absence is a coordinate of THIS run, not a defect in the committed figure: nothing has been\n"
+        "  drawn, so nothing here disagrees with fig1_sign_law_and_cost_ratio.png.  reproduce.sh reports this\n"
+        "  step as NOT RUN (exit 2) and does not call this module at all in that case.\n" % e)
+    raise SystemExit(3)
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt                                            # noqa: E402
 
