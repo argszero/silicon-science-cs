@@ -17,6 +17,12 @@
 # INPUTS: none.  Every key set is generated from the committed SplitMix64 seeds inside the
 #   instruments, so this run never touches the network and needs no corpus.
 # TOLERANCE: exact -- the comparison is byte equality against the shipped reports.
+# EXIT STATUS: 0 = `REPRODUCE: ALL GREEN`; 1 = at least one step FAILED; 2 = no step failed but at
+#   least one gate could not read its window and said so (`NOT RUN`) -- a COORDINATE of the run, not
+#   a finding about the work, which is why it is not counted as a failure.  The four journal gates
+#   report it themselves when their carrier set needs a checkout: a `git archive` export carries no
+#   `.git`, so numgate/linkgate/pointgate find `git ls-files` empty and exit 2 (refgate reads its
+#   window from its arguments and runs in either form).
 # WHAT IT WRITES: nothing inside the package.  Each instrument is run with SPIKE_OUT pointing into a
 #   private temp directory this script creates and removes.
 # COST: about five minutes (four instruments, each re-run once; the plant batteries, the figure
@@ -34,9 +40,28 @@ cd "$HERE"
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/issue135-repro.XXXXXX")"
 trap 'rm -rf "$WORK"' EXIT
 FAILED=0
+NOTRUN=0
 
 say()  { printf '%-18s %s\n' "$1" "$2"; }
 bad()  { printf '%-18s FAILED -- %s\n' "$1" "$2"; FAILED=$((FAILED+1)); }
+# The journal gates take their own exit status from their contract -- 0 PASS, 1 FAIL, 2 NOT RUN --
+# so a gate that could not read its window is reported as ITS verdict and does not count as a
+# failure.  Swallowing that status and calling exit 2 a `FAILED` would report a coordinate of the
+# run as a finding about the work (Class 236).
+classify() {
+  local line
+  case "$2" in
+    0) line="$(printf '%s' "$3" | grep -E 'GATE:|broken=|pointers=' | tail -1)"
+       # a census-style gate (numgate) prints no verdict line when it passes, so fall back to its
+       # last non-blank line rather than reporting a pass as an empty string
+       [ -n "$line" ] || line="$(printf '%s' "$3" | grep -v '^[[:space:]]*$' | tail -1)"
+       say "$1" "$line" ;;
+    2) NOTRUN=$((NOTRUN+1))
+       say "$1" "NOT RUN -- $(printf '%s' "$3" | grep -E 'NOT RUN' | tail -1)" ;;
+    *) bad "$1" "the journal gate failed (exit $2)"
+       printf '%s\n' "$3" | sed 's/^/                   /' ;;
+  esac
+}
 
 echo "== #135 reproduction =="
 
@@ -127,6 +152,17 @@ elif "$PY" "$HERE/make_reference_check.py" --check "$WORK/reference-check.md" >/
 else
   say "reference-check plant" "a planted change inside the block makes --check fail"
 fi
+# the second generated block (the journal gate's output) gets its own plant, because a checker that
+# owns two blocks is only proved to read the one its plant lands in (Class 238: a plant must fall
+# inside the region the checker owns).
+sed 's/coverage=100.0%/coverage=99.0%/' "$HERE/reference-check.md" > "$WORK/reference-check-gate.md"
+if ! grep -q 'coverage=99.0%' "$WORK/reference-check-gate.md"; then
+  bad "refgate plant" "the plant did not land in the journal-gate block (the gate output moved?)"
+elif "$PY" "$HERE/make_reference_check.py" --check "$WORK/reference-check-gate.md" >/dev/null 2>&1; then
+  bad "refgate plant" "a planted change in the journal-gate block did NOT make --check fail"
+else
+  say "refgate plant" "a planted change inside the journal-gate block makes --check fail"
+fi
 
 # ---- 5. the manuscript: re-render and compare, plant battery, then the journal gates ------------
 # build_manuscript.py resolves every number out of the four reports and every citation out of the
@@ -157,18 +193,17 @@ if [ -f "$HERE/manuscript.md" ]; then
   done
   for g in numgate linkgate pointgate; do
     if [ -f "$ROOT/.github/tools/$g.py" ]; then
-      if OUT=$(cd "$ROOT" && "$PY" ".github/tools/$g.py" "papers/issue-135/manuscript.md" 2>&1); then
-        say "$g" "$(printf '%s' "$OUT" | grep -E 'GATE:|broken=|pointers=' | tail -1)"
-      else
-        bad "$g" "the journal gate failed"
-      fi
+      OUT=$(cd "$ROOT" && "$PY" ".github/tools/$g.py" "papers/issue-135/manuscript.md" 2>&1); RC=$?
+      classify "$g" "$RC" "$OUT"
     else
+      NOTRUN=$((NOTRUN+1))
       say "$g" "NOT RUN -- the tool lives in .github/tools/ of the journal repo"
     fi
   done
   RG="$ROOT/.github/tools/refgate.py"
   if [ -f "$RG" ] && [ -n "$GP" ]; then
-    if OUT=$(cd "$ROOT" && "$GP" ".github/tools/refgate.py" "papers/issue-135/manuscript.md" 2>&1); then
+    OUT=$(cd "$ROOT" && "$GP" ".github/tools/refgate.py" "papers/issue-135/manuscript.md" 2>&1); RC=$?
+    if [ "$RC" = "0" ]; then
       # the gate's output is carried as the committed receipt refgate-journal.txt and re-derived here
       # byte-for-byte: a quoted output line is a claim about a PROGRAM (Class 192).
       if [ "$OUT" = "$(cat "$HERE/refgate-journal.txt")" ]; then
@@ -176,14 +211,28 @@ if [ -f "$HERE/manuscript.md" ]; then
       else
         bad "refgate" "the gate's live output differs from the committed receipt (refgate-journal.txt)"
       fi
+    elif [ "$RC" = "2" ]; then
+      NOTRUN=$((NOTRUN+1))
+      say "refgate" "NOT RUN -- $(printf '%s' "$OUT" | grep -E 'NOT RUN' | tail -1)"
     else
-      bad "refgate" "the reference gate failed ($GP)"
+      bad "refgate" "the reference gate failed (exit $RC, $GP)"
+      printf '%s\n' "$OUT" | sed 's/^/                   /'
     fi
   else
+    NOTRUN=$((NOTRUN+1))
     say "refgate" "NOT RUN -- the tool, or an interpreter >= 3.12, is unavailable here"
   fi
 fi
 
 echo
-if [ "$FAILED" = "0" ]; then echo "REPRODUCE: ALL GREEN"; else echo "REPRODUCE: $FAILED step(s) FAILED"; fi
-exit "$FAILED"
+if [ "$FAILED" != "0" ]; then
+  echo "REPRODUCE: $FAILED step(s) FAILED"
+  exit "$FAILED"
+fi
+if [ "$NOTRUN" != "0" ]; then
+  echo "REPRODUCE: $NOTRUN step(s) NOT RUN -- a coordinate of this run, not a finding about the work"
+  echo "            (a journal gate needs a checkout: it takes its carrier set from \`git ls-files\`)"
+  exit 2
+fi
+echo "REPRODUCE: ALL GREEN"
+exit 0

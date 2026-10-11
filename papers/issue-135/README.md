@@ -23,6 +23,13 @@ cd papers/issue-135 && bash reproduce.sh
   70 numbers ... ytes re-rendered byte-identically`), its plant battery runs
   (`SELFTEST: ALL PLANTS CAUGHT`), and the journal's gates are applied to the built manuscript
   (`refgate ... coverage=100.0%`).
+* **Exit status**: `0` = `REPRODUCE: ALL GREEN`; `1` = at least one step **FAILED** (the count is
+  printed with it); `2` = no step failed, but a journal gate could not read its window and printed its
+  own named **`NOT RUN`** — a **coordinate of the run, not a finding about the work**. The three tree
+  gates (`numgate`/`linkgate`/`pointgate`) take their carrier set from `git ls-files`, so over a
+  `git archive` **export** (which carries no `.git`) they report `NOT RUN: the carrier set is empty`
+  and exit 2; `refgate.py` reads its window from its arguments, so it runs and passes in either form.
+  An export run therefore ends at **2**, and the exit status says which of the three happened.
 * **Environment**: CPython 3 (measured on **3.12.12** and **3.13.9**, macOS). The instruments are pure
   standard library (`json`/`math`/`os`/`sys`) — **no third-party dependency is imported**, so no library
   version enters a comparison. Override with `PYTHON=/path/to/python3`.
@@ -53,7 +60,7 @@ cd papers/issue-135 && bash reproduce.sh
 | `refs/verify-run.txt` | The committed verification receipt: the verbatim stdout of the network pass, naming the pool it verified by sha256 |
 | `reference-pool.md` | The per-entry table: key, source, the live endpoint each entry was checked against, and its title |
 | `reference-check.md` | The verification report — method, result, the defects found while building the layer, and what the check does **not** establish |
-| `make_reference_check.py` | Renders the receipt block of `reference-check.md` from `refs/verify-run.txt`; `--check` proves the committed file is what it renders |
+| `make_reference_check.py` | Renders **both** generated blocks of `reference-check.md` — the verification receipt (from `refs/verify-run.txt`) and the journal gate's whole output, verdict and advisories (from `refgate-journal.txt`) — each with its own plant in `reproduce.sh`; `--check` proves the committed file is what it renders |
 | `refs/differences.json` | One stated difference per cited reference — a citation with no stated difference is padding, and the build refuses to render one |
 | `manuscript.src.md` | The manuscript SOURCE: prose with `{{key}}` (a number owned by a report), `{ref:ID}` (a citation owned by the pool) and `{{figN}}` (a figure block) placeholders |
 | `manuscript.md` | The manuscript, built from the source by `build_manuscript.py` — every number resolved out of a report, every citation out of the verified pool |
@@ -137,8 +144,10 @@ renders. The result: **207 references, all cited in the body** (the journal bar 
 each read from a report, and every reference entry carrying its title, authors, year, venue, link and a
 one-line **stated difference** from this paper.
 
-The journal's own gates run on the built manuscript (they live in `.github/tools/` of the journal repo,
-and a run outside a journal checkout reports them as a named `NOT RUN`):
+The journal's own gates run on the built manuscript (they live in `.github/tools/` of the journal repo;
+each is reported with **its own** verdict, and a gate that cannot read its window prints a named
+`NOT RUN` and returns exit status 2 — a coordinate, not a failure, which is why the run's exit status
+distinguishes the two; see the exit-status note above):
 
 | Gate | What it checks |
 |---|---|
