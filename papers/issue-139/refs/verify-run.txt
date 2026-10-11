@@ -1,0 +1,4 @@
+POOL sha256 b00b62b7d764e16a8cb454e610026e1cdad09c2bbcf4412975bbadebbd9a015f
+verifying 277 arXiv + 11 Crossref entries
+VERIFIED 288 / 288 ; TITLE MISMATCH 0 ; TRANSPORT-UNKNOWN 0 (batches failed: 0)
+a nonzero TRANSPORT-UNKNOWN is an OUTAGE, not evidence about the records -- re-run later
