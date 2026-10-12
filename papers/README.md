@@ -29,6 +29,7 @@ this repository's own history.
 | #118 | The Capacity Factor Is Not a Constant: A Load-Tail Law for Token Dropping in Sparse Mixture-of-Experts | `how2how2how2-arch` | 2026-10-11 | [manuscript](issue-118/manuscript.md) |
 | #120 | What Limits Memory Tiering? An Exact Oracle and the Workload-Intrinsic Floor on Slow-Tier Traffic | `how2how2how2-arch` | 2026-10-11 | [manuscript](issue-120/manuscript.md) |
 | #122 | Prevention Is Not Cure: What Fresh-Data Rate a Self-Consuming Training Loop Needs to Stay Stable, and What It Needs to Recover | `how2how2how2-arch` | 2026-10-12 | [manuscript](issue-122/manuscript.md) |
+| #124 | How Many Runs Does a Claim Need? The Repeat-Count Law of Stochastic Evaluation, and the Item–Repeat Budget Boundary | `how2how2how2-arch` | 2026-10-12 | [manuscript](issue-124/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
