@@ -1,0 +1,974 @@
+[
+ {
+  "key": "1806.08295",
+  "source": "arxiv",
+  "stored_title": "How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2003.00381",
+  "source": "arxiv",
+  "stored_title": "Statistical power for cluster analysis",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Statistical power for cluster analysis",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.04683",
+  "source": "arxiv",
+  "stored_title": "Toward Sufficient Statistical Power in Algorithmic Bias Assessment: A Test for ABROCA",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Toward Sufficient Statistical Power in Algorithmic Bias Assessment: A Test for ABROCA",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2209.00215",
+  "source": "arxiv",
+  "stored_title": "A Genetic Algorithm-based Framework for Learning Statistical Power Manifold",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "A Genetic Algorithm-based Framework for Learning Statistical Power Manifold",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.09547",
+  "source": "arxiv",
+  "stored_title": "A Statistical Approach to Estimating Sample Size of Machine Learning Models",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "A Statistical Approach to Estimating Sample Size of Machine Learning Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2409.06180",
+  "source": "arxiv",
+  "stored_title": "Optimizing Sample Size for Supervised Machine Learning with Bulk Transcriptomic Sequencing: A Learning Curve Approach",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Optimizing Sample Size for Supervised Machine Learning with Bulk Transcriptomic Sequencing: A Learning Curve Approach",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2209.13858",
+  "source": "arxiv",
+  "stored_title": "Variance Tolerance Factors For Interpreting ALL Neural Networks",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Variance Tolerance Factors For Interpreting ALL Neural Networks",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.06796",
+  "source": "arxiv",
+  "stored_title": "Instance-Adaptive Parametrization for Amortized Variational Inference",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Instance-Adaptive Parametrization for Amortized Variational Inference",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2406.10229",
+  "source": "arxiv",
+  "stored_title": "Quantifying Variance in Evaluation Benchmarks",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Quantifying Variance in Evaluation Benchmarks",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.23114",
+  "source": "arxiv",
+  "stored_title": "A Tale of Two Variances: When Single-Seed Benchmarks Fail in Bayesian Deep Learning",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "A Tale of Two Variances: When Single-Seed Benchmarks Fail in Bayesian Deep Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.24086",
+  "source": "arxiv",
+  "stored_title": "Do Repetitions Matter? Strengthening Reliability in LLM Evaluations",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Do Repetitions Matter? Strengthening Reliability in LLM Evaluations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.08943",
+  "source": "arxiv",
+  "stored_title": "Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.07058",
+  "source": "arxiv",
+  "stored_title": "Hallucinations Live in Variance",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Hallucinations Live in Variance",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.04137",
+  "source": "arxiv",
+  "stored_title": "Detecting Token-Level Hallucinations Using Variance Signals: A Reference-Free Approach",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Detecting Token-Level Hallucinations Using Variance Signals: A Reference-Free Approach",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.12042",
+  "source": "arxiv",
+  "stored_title": "FAIRVAR: Fair Federated Learning via Variance Regularization",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "FAIRVAR: Fair Federated Learning via Variance Regularization",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.21559",
+  "source": "arxiv",
+  "stored_title": "Evidence-State Reliability Under Controlled Degradation: Parser-Validity Divergence in a Multi-Stage LLM Pipeline",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Evidence-State Reliability Under Controlled Degradation: Parser-Validity Divergence in a Multi-Stage LLM Pipeline",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.35473",
+  "source": "arxiv",
+  "stored_title": "Handwritten Text Recognition Lives in the High-Pixel Variance Subspace",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Handwritten Text Recognition Lives in the High-Pixel Variance Subspace",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.17264",
+  "source": "arxiv",
+  "stored_title": "Variance of ML-based software fault predictors: are we really improving fault prediction?",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Variance of ML-based software fault predictors: are we really improving fault prediction?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.28560",
+  "source": "arxiv",
+  "stored_title": "Speculative Evaluation of Stochastic LLMs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Speculative Evaluation of Stochastic LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1162/089976698300017197",
+  "source": "crossref",
+  "stored_title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+  "method": "Crossref works/<doi> (title compare)",
+  "live_title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1023/a:1009752403260",
+  "source": "crossref",
+  "stored_title": "On Comparing Classifiers: Pitfalls to Avoid and a Recommended Approach",
+  "method": "Crossref works/<doi> (title compare)",
+  "live_title": "On Comparing Classifiers: Pitfalls to Avoid and a Recommended Approach",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1214/09-ss054",
+  "source": "crossref",
+  "stored_title": "A survey of cross-validation procedures for model selection",
+  "method": "Crossref works/<doi> (title compare)",
+  "live_title": "A survey of cross-validation procedures for model selection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1206.2248",
+  "source": "arxiv",
+  "stored_title": "Fast Cross-Validation via Sequential Testing",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Fast Cross-Validation via Sequential Testing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1809.01448",
+  "source": "arxiv",
+  "stored_title": "Appendix - Recommended Statistical Significance Tests for NLP Tasks",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Appendix - Recommended Statistical Significance Tests for NLP Tasks",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1111/j.2517-6161.1995.tb02031.x",
+  "source": "crossref",
+  "stored_title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "method": "Crossref works/<doi> (title compare)",
+  "live_title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1605.08889",
+  "source": "arxiv",
+  "stored_title": "Building an Evaluation Scale using Item Response Theory",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Building an Evaluation Scale using Item Response Theory",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2106.00840",
+  "source": "arxiv",
+  "stored_title": "Comparing Test Sets with Item Response Theory",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Comparing Test Sets with Item Response Theory",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.05086",
+  "source": "arxiv",
+  "stored_title": "Item Response Theory for AI Safety",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Item Response Theory for AI Safety",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.22295",
+  "source": "arxiv",
+  "stored_title": "LLM Evaluation on Unseen Questions: Contextual Multidimensional IRT Model",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "LLM Evaluation on Unseen Questions: Contextual Multidimensional IRT Model",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.15643",
+  "source": "arxiv",
+  "stored_title": "Extending Item Response Theory for Efficient and Meaningful Multilingual Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Extending Item Response Theory for Efficient and Meaningful Multilingual Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2505.15055",
+  "source": "arxiv",
+  "stored_title": "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.04689",
+  "source": "arxiv",
+  "stored_title": "Adaptive Testing for LLM Evaluation: A Psychometric Alternative to Static Benchmarks",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Adaptive Testing for LLM Evaluation: A Psychometric Alternative to Static Benchmarks",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.23506",
+  "source": "arxiv",
+  "stored_title": "Leveraging Computerized Adaptive Testing for Cost-effective Evaluation of Large Language Models in Medical Benchmarking",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Leveraging Computerized Adaptive Testing for Cost-effective Evaluation of Large Language Models in Medical Benchmarking",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.21362",
+  "source": "arxiv",
+  "stored_title": "AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.10533",
+  "source": "arxiv",
+  "stored_title": "The Impact of Item-Writing Flaws on Difficulty and Discrimination in Item Response Theory",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "The Impact of Item-Writing Flaws on Difficulty and Discrimination in Item Response Theory",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.02580",
+  "source": "arxiv",
+  "stored_title": "Reconstructing Item Characteristic Curves using Fine-Tuned Large Language Models",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Reconstructing Item Characteristic Curves using Fine-Tuned Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.04120",
+  "source": "arxiv",
+  "stored_title": "RIDE: Difficulty Evolving Perturbation with Item Response Theory for Mathematical Reasoning",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "RIDE: Difficulty Evolving Perturbation with Item Response Theory for Mathematical Reasoning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.35312",
+  "source": "arxiv",
+  "stored_title": "MemoReason: Evaluating the Effect of Parametric Memory on Contextual Reasoning in LLMs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "MemoReason: Evaluating the Effect of Parametric Memory on Contextual Reasoning in LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.02663",
+  "source": "arxiv",
+  "stored_title": "Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.22888",
+  "source": "arxiv",
+  "stored_title": "JE-IRT: A Geometric Lens on LLM Abilities through Joint Embedding Item Response Theory",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "JE-IRT: A Geometric Lens on LLM Abilities through Joint Embedding Item Response Theory",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.05129",
+  "source": "arxiv",
+  "stored_title": "SMART: Simulated Students Aligned with Item Response Theory for Question Difficulty Prediction",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "SMART: Simulated Students Aligned with Item Response Theory for Question Difficulty Prediction",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.08487",
+  "source": "arxiv",
+  "stored_title": "Enhancing Essay Cohesion Assessment: A Novel Item Response Theory Approach",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Enhancing Essay Cohesion Assessment: A Novel Item Response Theory Approach",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.20182",
+  "source": "arxiv",
+  "stored_title": "Beyond BFI: The CSI for Enhanced Reliability and Validity in Evaluating LLM Personality Traits",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Beyond BFI: The CSI for Enhanced Reliability and Validity in Evaluating LLM Personality Traits",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.20119",
+  "source": "arxiv",
+  "stored_title": "Leveraging AI Graders for Missing Score Imputation to Achieve Accurate Ability Estimation in Constructed-Response Tests",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Leveraging AI Graders for Missing Score Imputation to Achieve Accurate Ability Estimation in Constructed-Response Tests",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.18251",
+  "source": "arxiv",
+  "stored_title": "How to Select Datapoints for Efficient Human Evaluation of NLG Models?",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "How to Select Datapoints for Efficient Human Evaluation of NLG Models?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.37515",
+  "source": "arxiv",
+  "stored_title": "Hierarchical Compression of Vision-Language Model Benchmarks",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Hierarchical Compression of Vision-Language Model Benchmarks",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2311.00681",
+  "source": "arxiv",
+  "stored_title": "Are Large Language Models Reliable Judges? A Study on the Factuality Evaluation Capabilities of LLMs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Are Large Language Models Reliable Judges? A Study on the Factuality Evaluation Capabilities of LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.15594",
+  "source": "arxiv",
+  "stored_title": "A Survey on LLM-as-a-Judge",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "A Survey on LLM-as-a-Judge",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2412.12509",
+  "source": "arxiv",
+  "stored_title": "Can You Trust LLM Judgments? Reliability of LLM-as-a-Judge",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Can You Trust LLM Judgments? Reliability of LLM-as-a-Judge",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2402.10770",
+  "source": "arxiv",
+  "stored_title": "How Reliable Are Automatic Evaluation Methods for Instruction-Tuned LLMs?",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "How Reliable Are Automatic Evaluation Methods for Instruction-Tuned LLMs?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2408.13006",
+  "source": "arxiv",
+  "stored_title": "Systematic Evaluation of LLM-as-a-Judge in LLM Alignment Tasks: Explainable Metrics and Diverse Prompt Templates",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Systematic Evaluation of LLM-as-a-Judge in LLM Alignment Tasks: Explainable Metrics and Diverse Prompt Templates",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.13639",
+  "source": "arxiv",
+  "stored_title": "An Empirical Study of LLM-as-a-Judge: How Design Choices Impact Evaluation Reliability",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "An Empirical Study of LLM-as-a-Judge: How Design Choices Impact Evaluation Reliability",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.22548",
+  "source": "arxiv",
+  "stored_title": "Are LLM Evaluators Really Narcissists? Sanity Checking Self-Preference Evaluations",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Are LLM Evaluators Really Narcissists? Sanity Checking Self-Preference Evaluations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.13685",
+  "source": "arxiv",
+  "stored_title": "The Coin Flip Judge? Reliability and Bias in LLM-as-a-Judge Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "The Coin Flip Judge? Reliability and Bias in LLM-as-a-Judge Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.25860",
+  "source": "arxiv",
+  "stored_title": "Through the Judge's Eyes: Inferred Thinking Traces Improve Reliability of LLM Raters",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Through the Judge's Eyes: Inferred Thinking Traces Improve Reliability of LLM Raters",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2512.09662",
+  "source": "arxiv",
+  "stored_title": "Can LLMs Evaluate What They Cannot Annotate? Revisiting LLM Reliability in Hate Speech Detection",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Can LLMs Evaluate What They Cannot Annotate? Revisiting LLM Reliability in Hate Speech Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.11783",
+  "source": "arxiv",
+  "stored_title": "The Stability Trap: Evaluating the Reliability of LLM-Based Instruction Adherence Auditing",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "The Stability Trap: Evaluating the Reliability of LLM-Based Instruction Adherence Auditing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.22554",
+  "source": "arxiv",
+  "stored_title": "Same Question, Different Answers: Evaluating LLM Reliability Beyond Accuracy",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Same Question, Different Answers: Evaluating LLM Reliability Beyond Accuracy",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.03330",
+  "source": "arxiv",
+  "stored_title": "Certainty robustness: Evaluating LLM stability under self-challenging prompts",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Certainty robustness: Evaluating LLM stability under self-challenging prompts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2602.17316",
+  "source": "arxiv",
+  "stored_title": "Same Meaning, Different Scores: Lexical and Syntactic Sensitivity in LLM Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Same Meaning, Different Scores: Lexical and Syntactic Sensitivity in LLM Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2602.17262",
+  "source": "arxiv",
+  "stored_title": "Quantifying and Mitigating Socially Desirable Responding in LLMs: A Desirability-Matched Graded Forced-Choice Psychometric Study",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Quantifying and Mitigating Socially Desirable Responding in LLMs: A Desirability-Matched Graded Forced-Choice Psychometric Study",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.11026",
+  "source": "arxiv",
+  "stored_title": "Rethinking Human Preference Evaluation of LLM Rationales",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Rethinking Human Preference Evaluation of LLM Rationales",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.17634",
+  "source": "arxiv",
+  "stored_title": "Prompt Perturbation for Reliable LLM Evaluation over Comparison Graphs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Prompt Perturbation for Reliable LLM Evaluation over Comparison Graphs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.03376",
+  "source": "arxiv",
+  "stored_title": "VERT: Reliable LLM Judges for Radiology Report Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "VERT: Reliable LLM Judges for Radiology Report Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.00717",
+  "source": "arxiv",
+  "stored_title": "AI-Based Thesis Assessment: An Empirical Study of Human Evaluation Priorities and Their Impact on Automated Assessment",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "AI-Based Thesis Assessment: An Empirical Study of Human Evaluation Priorities and Their Impact on Automated Assessment",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2505.21389",
+  "source": "arxiv",
+  "stored_title": "AutoJudger: An Agent-Driven Framework for Efficient Benchmarking of MLLMs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "AutoJudger: An Agent-Driven Framework for Efficient Benchmarking of MLLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.28282",
+  "source": "arxiv",
+  "stored_title": "(Towards) Scalable Reliable Automated Evaluation with Large Language Models",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "(Towards) Scalable Reliable Automated Evaluation with Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.07364",
+  "source": "arxiv",
+  "stored_title": "Self-Evaluating LLMs for Multi-Step Tasks: Stepwise Confidence Estimation for Failure Detection",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Self-Evaluating LLMs for Multi-Step Tasks: Stepwise Confidence Estimation for Failure Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.08118",
+  "source": "arxiv",
+  "stored_title": "MirrorBench: A Benchmark to Evaluate Conversational User-Proxy Agents for Human-Likeness",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "MirrorBench: A Benchmark to Evaluate Conversational User-Proxy Agents for Human-Likeness",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2205.11930",
+  "source": "arxiv",
+  "stored_title": "The Authenticity Gap in Human Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "The Authenticity Gap in Human Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.14023",
+  "source": "arxiv",
+  "stored_title": "Audio-Based Crowd-Sourced Evaluation of Machine Translation Quality",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Audio-Based Crowd-Sourced Evaluation of Machine Translation Quality",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1609/aaai.v32i1.11503",
+  "source": "crossref",
+  "stored_title": "State of the Art: Reproducibility in Artificial Intelligence",
+  "method": "Crossref works/<doi> (title compare)",
+  "live_title": "State of the Art: Reproducibility in Artificial Intelligence",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1904.06312",
+  "source": "arxiv",
+  "stored_title": "Let's Play Again: Variability of Deep Reinforcement Learning Agents in Atari Environments",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Let's Play Again: Variability of Deep Reinforcement Learning Agents in Atari Environments",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2106.15195",
+  "source": "arxiv",
+  "stored_title": "Scientific Credibility of Machine Translation Research: A Meta-Evaluation of 769 Papers",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Scientific Credibility of Machine Translation Research: A Meta-Evaluation of 769 Papers",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.17694",
+  "source": "arxiv",
+  "stored_title": "Improving reproducibility by controlling random seed stability in machine learning based estimation via bagging",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Improving reproducibility by controlling random seed stability in machine learning based estimation via bagging",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.08514",
+  "source": "arxiv",
+  "stored_title": "Reproducing and Stress-Testing Two Approaches to LLM Reasoning Reliability: Test-Time Probability Aggregation and Logic-Representation Editing",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Reproducing and Stress-Testing Two Approaches to LLM Reasoning Reliability: Test-Time Probability Aggregation and Logic-Representation Editing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2203.08124",
+  "source": "arxiv",
+  "stored_title": "Can Neural Nets Learn the Same Model Twice? Investigating Reproducibility and Double Descent from the Decision Boundary Perspective",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Can Neural Nets Learn the Same Model Twice? Investigating Reproducibility and Double Descent from the Decision Boundary Perspective",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.06527",
+  "source": "arxiv",
+  "stored_title": "With a Little Help from the Authors: Reproducing Human Evaluation of an MT Error Detector",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "With a Little Help from the Authors: Reproducing Human Evaluation of an MT Error Detector",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2107.14154",
+  "source": "arxiv",
+  "stored_title": "SeqScore: Addressing Barriers to Reproducible Named Entity Recognition Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "SeqScore: Addressing Barriers to Reproducible Named Entity Recognition Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1912.03606",
+  "source": "arxiv",
+  "stored_title": "Individual predictions matter: Assessing the effect of data ordering in training fine-tuned CNNs for medical imaging",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Individual predictions matter: Assessing the effect of data ordering in training fine-tuned CNNs for medical imaging",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2005.10039",
+  "source": "arxiv",
+  "stored_title": "The Effects of Randomness on the Stability of Node Embeddings",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "The Effects of Randomness on the Stability of Node Embeddings",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2006.04884",
+  "source": "arxiv",
+  "stored_title": "On the Stability of Fine-tuning BERT: Misconceptions, Explanations, and Strong Baselines",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "On the Stability of Fine-tuning BERT: Misconceptions, Explanations, and Strong Baselines",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.15034",
+  "source": "arxiv",
+  "stored_title": "Interpretable Predictability-Based AI Text Detection: A Replication Study",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Interpretable Predictability-Based AI Text Detection: A Replication Study",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2401.14429",
+  "source": "arxiv",
+  "stored_title": "[Re] The Discriminative Kalman Filter for Bayesian Filtering with Nonlinear and Non-Gaussian Observation Models",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "[Re] The Discriminative Kalman Filter for Bayesian Filtering with Nonlinear and Non-Gaussian Observation Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.06133",
+  "source": "arxiv",
+  "stored_title": "Compressed Recurrent Feedback in Tsetlin Machines: A Reproducible Boolean-FSM Study",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Compressed Recurrent Feedback in Tsetlin Machines: A Reproducible Boolean-FSM Study",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2504.02587",
+  "source": "arxiv",
+  "stored_title": "Rethinking RL Scaling for Vision Language Models: A Transparent, From-Scratch Framework and Comprehensive Evaluation Scheme",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Rethinking RL Scaling for Vision Language Models: A Transparent, From-Scratch Framework and Comprehensive Evaluation Scheme",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1906.00299",
+  "source": "arxiv",
+  "stored_title": "Quantitative Overfitting Management for Human-in-the-loop ML Application Development with ease.ml/meter",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Quantitative Overfitting Management for Human-in-the-loop ML Application Development with ease.ml/meter",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.22612",
+  "source": "arxiv",
+  "stored_title": "Beyond statistical significance: Quantifying uncertainty and statistical variability in multilingual and multitask NLP evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Beyond statistical significance: Quantifying uncertainty and statistical variability in multilingual and multitask NLP evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.04013",
+  "source": "arxiv",
+  "stored_title": "On Robustness and Reliability of Benchmark-Based Evaluation of LLMs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "On Robustness and Reliability of Benchmark-Based Evaluation of LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.32267",
+  "source": "arxiv",
+  "stored_title": "When Can Old Evaluations Certify a New Model? Label-Efficient Release Decisions under Evaluator Drift",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "When Can Old Evaluations Certify a New Model? Label-Efficient Release Decisions under Evaluator Drift",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.25152",
+  "source": "arxiv",
+  "stored_title": "Exposing Blind Spots in Deep Imbalanced Regression Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Exposing Blind Spots in Deep Imbalanced Regression Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2610.01428",
+  "source": "arxiv",
+  "stored_title": "Generalization Is Stability, Not Accuracy: Multi-Axis Evaluation of LLMs",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Generalization Is Stability, Not Accuracy: Multi-Axis Evaluation of LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.26191",
+  "source": "arxiv",
+  "stored_title": "Position: Evaluation Scores Are Perishable Knowledge Claims",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Position: Evaluation Scores Are Perishable Knowledge Claims",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.04429",
+  "source": "arxiv",
+  "stored_title": "evalci: A Python Library for Statistically Rigorous Comparison of Language Model Evaluations",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "evalci: A Python Library for Statistically Rigorous Comparison of Language Model Evaluations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.12552",
+  "source": "arxiv",
+  "stored_title": "Crossing the Validation Crisis: Cross-Validation Reduces Benchmarking Variance Surprisingly Well",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Crossing the Validation Crisis: Cross-Validation Reduces Benchmarking Variance Surprisingly Well",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.04613",
+  "source": "arxiv",
+  "stored_title": "Why Ranking Anomaly Detection Algorithms Isn't as Reliable as You May Think",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Why Ranking Anomaly Detection Algorithms Isn't as Reliable as You May Think",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.11106",
+  "source": "arxiv",
+  "stored_title": "Fluid Language Model Benchmarking",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Fluid Language Model Benchmarking",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.12843",
+  "source": "arxiv",
+  "stored_title": "Growing Pains: Extensible and Efficient LLM Benchmarking Via Fixed Parameter Calibration",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Growing Pains: Extensible and Efficient LLM Benchmarking Via Fixed Parameter Calibration",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.13335",
+  "source": "arxiv",
+  "stored_title": "Reliable and Efficient Amortized Model-based Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Reliable and Efficient Amortized Model-based Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.21692",
+  "source": "arxiv",
+  "stored_title": "Revisiting Generalization Across Difficulty Levels: It's Not So Easy",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Revisiting Generalization Across Difficulty Levels: It's Not So Easy",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2512.07795",
+  "source": "arxiv",
+  "stored_title": "ReasonBENCH: Benchmarking the (In)Stability of LLM Reasoning",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "ReasonBENCH: Benchmarking the (In)Stability of LLM Reasoning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.02246",
+  "source": "arxiv",
+  "stored_title": "Demo: Statistically Significant Results On Biases and Errors of LLMs Do Not Guarantee Generalizable Results",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Demo: Statistically Significant Results On Biases and Errors of LLMs Do Not Guarantee Generalizable Results",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.28700",
+  "source": "arxiv",
+  "stored_title": "The Importance of Being Statistically Earnest: A Critical Re-evaluation of GSM-Symbolic",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "The Importance of Being Statistically Earnest: A Critical Re-evaluation of GSM-Symbolic",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.20763",
+  "source": "arxiv",
+  "stored_title": "Coverage, Not Averages: Semantic Stratification for Trustworthy Retrieval Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Coverage, Not Averages: Semantic Stratification for Trustworthy Retrieval Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2404.00748",
+  "source": "arxiv",
+  "stored_title": "Benchmark Transparency: Measuring the Impact of Data on Evaluation",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Benchmark Transparency: Measuring the Impact of Data on Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.23514",
+  "source": "arxiv",
+  "stored_title": "Novel Claim or D\u00e9j\u00e0 Vu? Rethinking \"Contamination-Free'' Dynamic Evaluation for Multimodal Automated Fact-Checking",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "Novel Claim or D\\'ej\\`a Vu? Rethinking &#34;Contamination-Free'' Dynamic Evaluation for Multimodal Automated Fact-Checking",
+  "title_match": 0.867,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1037/0033-2909.86.2.420",
+  "source": "crossref",
+  "stored_title": "Intraclass correlations: Uses in assessing rater reliability.",
+  "method": "Crossref works/<doi> (title compare)",
+  "live_title": "Intraclass correlations: Uses in assessing rater reliability.",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.09905",
+  "source": "arxiv",
+  "stored_title": "When Classical Baselines Are Tuned as Carefully as the Quantum Model, Does Quantum Reservoir Computing Still Win?",
+  "method": "arXiv abstract page, citation_title (title compare)",
+  "live_title": "When Classical Baselines Are Tuned as Carefully as the Quantum Model, Does Quantum Reservoir Computing Still Win?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ }
+]
