@@ -1,0 +1,1011 @@
+{
+ "meta": {
+  "1010.5608": {
+   "authors": [
+    "Weiyu Xu",
+    "Ao Kevin Tang"
+   ],
+   "title": "A Generalized Coupon Collector Problem",
+   "year": "2010"
+  },
+  "1107.3385": {
+   "authors": [
+    "Nicolas Gast"
+   ],
+   "title": "Computing hitting times via fluid approximation: application to the coupon collector problem",
+   "year": "2011"
+  },
+  "1206.1317": {
+   "authors": [
+    "Taolue Chen",
+    "Klaus Dr\u00e4ger",
+    "Stefan Kiefer"
+   ],
+   "title": "Model Checking Stochastic Branching Processes",
+   "year": "2012"
+  },
+  "1302.5366": {
+   "authors": [
+    "Sourav Chakraborty",
+    "Akshay Kamath",
+    "Rameshwar Pratap"
+   ],
+   "title": "Testing Uniformity of Stationary Distribution",
+   "year": "2013"
+  },
+  "1304.4371": {
+   "authors": [
+    "Joel Lang",
+    "James Henderson"
+   ],
+   "title": "Efficient Computation of Mean Truncated Hitting Times on Very Large Graphs",
+   "year": "2013"
+  },
+  "1402.5245": {
+   "authors": [
+    "Emmanuelle Anceaume",
+    "Yann Busnel",
+    "Bruno Sericola"
+   ],
+   "title": "New results on a generalized coupon collector problem using Markov chains",
+   "year": "2014"
+  },
+  "1504.08363": {
+   "authors": [
+    "Constantinos Daskalakis",
+    "Gautam Kamath",
+    "Christos Tzamos"
+   ],
+   "title": "On the Structure, Covering, and Learning of Poisson Multinomial Distributions",
+   "year": "2015"
+  },
+  "1505.02324": {
+   "authors": [
+    "Md. Abul Hasnat",
+    "Julien Velcin",
+    "St\u00e9phane Bonnevay",
+    "Julien Jacques"
+   ],
+   "title": "Simultaneous Clustering and Model Selection for Multinomial Distribution: A Comparative Study",
+   "year": "2015"
+  },
+  "1511.03592": {
+   "authors": [
+    "Ilias Diakonikolas",
+    "Daniel M. Kane",
+    "Alistair Stewart"
+   ],
+   "title": "The Fourier Transform of Poisson Multinomial Distributions and its Algorithmic Applications",
+   "year": "2015"
+  },
+  "1606.07947": {
+   "authors": [
+    "Yoon Kim",
+    "Alexander M. Rush"
+   ],
+   "title": "Sequence-Level Knowledge Distillation",
+   "year": "2016"
+  },
+  "1612.05555": {
+   "authors": [
+    "\u00c1lvaro Peris",
+    "Mara Chinea-Rios",
+    "Francisco Casacuberta"
+   ],
+   "title": "Neural Networks Classifier for Data Selection in Statistical Machine Translation",
+   "year": "2016"
+  },
+  "1705.08690": {
+   "authors": [
+    "Hanul Shin",
+    "Jung Kwon Lee",
+    "Jaehong Kim",
+    "Jiwon Kim"
+   ],
+   "title": "Continual Learning with Deep Generative Replay",
+   "year": "2017"
+  },
+  "1705.09847": {
+   "authors": [
+    "Jason Ramapuram",
+    "Magda Gregorova",
+    "Alexandros Kalousis"
+   ],
+   "title": "Lifelong Generative Modeling",
+   "year": "2017"
+  },
+  "1705.09967": {
+   "authors": [
+    "Kwabena Doku-Amponsah"
+   ],
+   "title": "Local Large Deviations: McMillian Theorem for multitype Galton-Watson Processes",
+   "year": "2017"
+  },
+  "1708.00712": {
+   "authors": [
+    "Marlies van der Wees",
+    "Arianna Bisazza",
+    "Christof Monz"
+   ],
+   "title": "Dynamic Data Selection for Neural Machine Translation",
+   "year": "2017"
+  },
+  "1708.02072": {
+   "authors": [
+    "Ronald Kemker",
+    "Marc McClure",
+    "Angelina Abitino",
+    "Tyler Hayes",
+    "Christopher Kanan"
+   ],
+   "title": "Measuring Catastrophic Forgetting in Neural Networks",
+   "year": "2017"
+  },
+  "1711.01530": {
+   "authors": [
+    "Tengyuan Liang",
+    "Tomaso Poggio",
+    "Alexander Rakhlin",
+    "James Stokes"
+   ],
+   "title": "Fisher-Rao Metric, Geometry, and Complexity of Neural Networks",
+   "year": "2017"
+  },
+  "1805.07810": {
+   "authors": [
+    "Hippolyt Ritter",
+    "Aleksandar Botev",
+    "David Barber"
+   ],
+   "title": "Online Structured Laplace Approximations For Overcoming Catastrophic Forgetting",
+   "year": "2018"
+  },
+  "1807.04015": {
+   "authors": [
+    "Hoang Thanh-Tung",
+    "Truyen Tran"
+   ],
+   "title": "On Catastrophic Forgetting and Mode Collapse in Generative Adversarial Networks",
+   "year": "2018"
+  },
+  "1808.07049": {
+   "authors": [
+    "Albert Ierusalem"
+   ],
+   "title": "Catastrophic Importance of Catastrophic Forgetting",
+   "year": "2018"
+  },
+  "1809.02441": {
+   "authors": [
+    "Jangho Kim",
+    "Jeesoo Kim",
+    "Nojun Kwak"
+   ],
+   "title": "StackNet: Stacking Parameters for Continual learning",
+   "year": "2018"
+  },
+  "1809.10635": {
+   "authors": [
+    "Gido M. van de Ven",
+    "Andreas S. Tolias"
+   ],
+   "title": "Generative replay with feedback connections as a general strategy for continual learning",
+   "year": "2018"
+  },
+  "1810.12488": {
+   "authors": [
+    "Yen-Chang Hsu",
+    "Yen-Cheng Liu",
+    "Anita Ramasamy",
+    "Zsolt Kira"
+   ],
+   "title": "Re-evaluating Continual Learning Scenarios: A Categorization and Case for Strong Baselines",
+   "year": "2018"
+  },
+  "1904.00310": {
+   "authors": [
+    "Xilai Li",
+    "Yingbo Zhou",
+    "Tianfu Wu",
+    "Richard Socher",
+    "Caiming Xiong"
+   ],
+   "title": "Learn to Grow: A Continual Structure Learning Framework for Overcoming Catastrophic Forgetting",
+   "year": "2019"
+  },
+  "1904.07734": {
+   "authors": [
+    "Gido M. van de Ven",
+    "Andreas S. Tolias"
+   ],
+   "title": "Three scenarios for continual learning",
+   "year": "2019"
+  },
+  "1904.10644": {
+   "authors": [
+    "Yu Chen",
+    "Tom Diethe",
+    "Neil Lawrence"
+   ],
+   "title": "Facilitating Bayesian Continual Learning by Natural Gradients and Stein Gradients",
+   "year": "2019"
+  },
+  "1905.08077": {
+   "authors": [
+    "B. Pf\u00fclb",
+    "A. Gepperth",
+    "S. Abdullah",
+    "A. Kilian"
+   ],
+   "title": "Catastrophic forgetting: still a problem for DNNs",
+   "year": "2019"
+  },
+  "1905.12019": {
+   "authors": [
+    "Martin Mundt",
+    "Iuliia Pliushch",
+    "Sagnik Majumder",
+    "Yongwon Hong",
+    "Visvanathan Ramesh"
+   ],
+   "title": "Unified Probabilistic Deep Continual Learning through Generative Replay and Open Set Recognition",
+   "year": "2019"
+  },
+  "1905.12313": {
+   "authors": [
+    "Fu-Chieh Chang",
+    "Hao-Jen Wang",
+    "Chun-Nan Chou",
+    "Edward Y. Chang"
+   ],
+   "title": "G2R Bound: A Generalization Bound for Supervised Learning from GAN-Synthetic Data",
+   "year": "2019"
+  },
+  "1906.00654": {
+   "authors": [
+    "Zhepei Wang",
+    "Cem Subakan",
+    "Efthymios Tzinis",
+    "Paris Smaragdis",
+    "Laurent Charlin"
+   ],
+   "title": "Continual Learning of New Sound Classes using Generative Replay",
+   "year": "2019"
+  },
+  "1906.02568": {
+   "authors": [
+    "Felix Wiewel",
+    "Bin Yang"
+   ],
+   "title": "Localizing Catastrophic Forgetting in Neural Networks",
+   "year": "2019"
+  },
+  "1906.11829": {
+   "authors": [
+    "Cody Coleman",
+    "Christopher Yeh",
+    "Stephen Mussmann",
+    "Baharan Mirzasoleiman",
+    "Peter Bailis",
+    "Percy Liang",
+    "Jure Leskovec",
+    "Matei Zaharia"
+   ],
+   "title": "Selection via Proxy: Efficient Data Selection for Deep Learning",
+   "year": "2019"
+  },
+  "1909.11512": {
+   "authors": [
+    "Sergey I. Nikolenko"
+   ],
+   "title": "Synthetic Data for Deep Learning",
+   "year": "2019"
+  },
+  "1910.02551": {
+   "authors": [
+    "Ilia Sucholutsky",
+    "Matthias Schonlau"
+   ],
+   "title": "Soft-Label Dataset Distillation and Text Dataset Distillation",
+   "year": "2019"
+  },
+  "1912.01238": {
+   "authors": [
+    "Patrick H. Chen",
+    "Wei Wei",
+    "Cho-jui Hsieh",
+    "Bo Dai"
+   ],
+   "title": "Overcoming Catastrophic Forgetting by Generative Regularization",
+   "year": "2019"
+  },
+  "2001.01578": {
+   "authors": [
+    "Giang Nguyen",
+    "Shuan Chen",
+    "Thao Do",
+    "Tae Joon Jun",
+    "Ho-Jin Choi",
+    "Daeyoung Kim"
+   ],
+   "title": "Dissecting Catastrophic Forgetting in Continual Learning by Deep Visualization",
+   "year": "2020"
+  },
+  "2002.05715": {
+   "authors": [
+    "Hossein Mobahi",
+    "Mehrdad Farajtabar",
+    "Peter L. Bartlett"
+   ],
+   "title": "Self-Distillation Amplifies Regularization in Hilbert Space",
+   "year": "2020"
+  },
+  "2004.14046": {
+   "authors": [
+    "Wojciech Masarczyk",
+    "Ivona Tautkute"
+   ],
+   "title": "Reducing catastrophic forgetting with learning on synthetic data",
+   "year": "2020"
+  },
+  "2005.00146": {
+   "authors": [
+    "Pauching Yap",
+    "Hippolyt Ritter",
+    "David Barber"
+   ],
+   "title": "Addressing Catastrophic Forgetting in Few-Shot Problems",
+   "year": "2020"
+  },
+  "2005.07107": {
+   "authors": [
+    "Alexey Kutalev"
+   ],
+   "title": "Natural Way to Overcome the Catastrophic Forgetting in Neural Networks",
+   "year": "2020"
+  },
+  "2006.10974": {
+   "authors": [
+    "Dong Yin",
+    "Mehrdad Farajtabar",
+    "Ang Li",
+    "Nir Levine",
+    "Alex Mott"
+   ],
+   "title": "Optimization and Generalization of Regularization-Based Continual Learning: a Loss Approximation Viewpoint",
+   "year": "2020"
+  },
+  "2010.04003": {
+   "authors": [
+    "Thang Doan",
+    "Mehdi Bennani",
+    "Bogdan Mazoure",
+    "Guillaume Rabusseau",
+    "Pierre Alquier"
+   ],
+   "title": "A Theoretical Analysis of Catastrophic Forgetting through the NTK Overlap Matrix",
+   "year": "2020"
+  },
+  "2011.06220": {
+   "authors": [
+    "Zeke Xie",
+    "Fengxiang He",
+    "Shaopeng Fu",
+    "Issei Sato",
+    "Dacheng Tao",
+    "Masashi Sugiyama"
+   ],
+   "title": "Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting",
+   "year": "2020"
+  },
+  "2104.06788": {
+   "authors": [
+    "Martin Mundt",
+    "Iuliia Pliushch",
+    "Visvanathan Ramesh"
+   ],
+   "title": "Neural Architecture Search of Deep Priors: Towards Continual Learning without Catastrophic Interference",
+   "year": "2021"
+  },
+  "2105.04144": {
+   "authors": [
+    "Aman Gupta",
+    "Deepak Bhatt",
+    "Anubha Pandey"
+   ],
+   "title": "Transitioning from Real to Synthetic data: Quantifying the bias in model",
+   "year": "2021"
+  },
+  "2105.07385": {
+   "authors": [
+    "Haruka Asanuma",
+    "Shiro Takagi",
+    "Yoshihiro Nagano",
+    "Yuki Yoshida",
+    "Yasuhiko Igarashi",
+    "Masato Okada"
+   ],
+   "title": "Statistical Mechanical Analysis of Catastrophic Forgetting in Continual Learning with Teacher and Student Networks",
+   "year": "2021"
+  },
+  "2107.06499": {
+   "authors": [
+    "Katherine Lee",
+    "Daphne Ippolito",
+    "Andrew Nystrom",
+    "Chiyuan Zhang",
+    "Douglas Eck",
+    "Chris Callison-Burch",
+    "Nicholas Carlini"
+   ],
+   "title": "Deduplicating Training Data Makes Language Models Better",
+   "year": "2021"
+  },
+  "2109.01844": {
+   "authors": [
+    "Wojciech Masarczyk",
+    "Kamil Deja",
+    "Tomasz Trzci\u0144ski"
+   ],
+   "title": "On robustness of generative representations against catastrophic forgetting",
+   "year": "2021"
+  },
+  "2110.10570": {
+   "authors": [
+    "Samuel J. Bell",
+    "Neil D. Lawrence"
+   ],
+   "title": "Behavioral Experiments for Understanding Catastrophic Forgetting",
+   "year": "2021"
+  },
+  "2201.06289": {
+   "authors": [
+    "Zhiqiu Lin",
+    "Jia Shi",
+    "Deepak Pathak",
+    "Deva Ramanan"
+   ],
+   "title": "The CLEAR Benchmark: Continual LEArning on Real-World Imagery",
+   "year": "2022"
+  },
+  "2203.13167": {
+   "authors": [
+    "Francesco Pelosin",
+    "Saurav Jha",
+    "Andrea Torsello",
+    "Bogdan Raducanu",
+    "Joost van de Weijer"
+   ],
+   "title": "Towards Exemplar-Free Continual Learning in Vision Transformers: an Account of Attention, Functional and Weight Regularization",
+   "year": "2022"
+  },
+  "2203.17269": {
+   "authors": [
+    "James Seale Smith",
+    "Junjiao Tian",
+    "Shaunak Halbe",
+    "Yen-Chang Hsu",
+    "Zsolt Kira"
+   ],
+   "title": "A Closer Look at Rehearsal-Free Continual Learning",
+   "year": "2022"
+  },
+  "2204.05462": {
+   "authors": [
+    "Jiangpeng He",
+    "Fengqing Zhu"
+   ],
+   "title": "Out-Of-Distribution Detection In Unsupervised Continual Learning",
+   "year": "2022"
+  },
+  "2206.01827": {
+   "authors": [
+    "Alexander Stolyar"
+   ],
+   "title": "A particle system with mean-field interaction: Large-scale limit of stationary distributions",
+   "year": "2022"
+  },
+  "2211.07740": {
+   "authors": [
+    "Mark S. Graham",
+    "Walter H. L. Pinaya",
+    "Petru-Daniel Tudosiu",
+    "Parashkev Nachev",
+    "Sebastien Ourselin",
+    "M. Jorge Cardoso"
+   ],
+   "title": "Denoising diffusion models for out-of-distribution detection",
+   "year": "2022"
+  },
+  "2212.05744": {
+   "authors": [
+    "Mingzhe Zhu",
+    "Wanyue Xu",
+    "Wei Li",
+    "Zhongzhi Zhang",
+    "Haibin Kan"
+   ],
+   "title": "Hitting Times of Random Walks on Edge Corona Product Graphs",
+   "year": "2022"
+  },
+  "2301.01212": {
+   "authors": [
+    "Ricardo Mu\u00f1oz-Cancino",
+    "Cristi\u00e1n Bravo",
+    "Sebasti\u00e1n A. R\u00edos",
+    "Manuel Gra\u00f1a"
+   ],
+   "title": "Assessment of creditworthiness models privacy-preserving training with synthetic data",
+   "year": "2022"
+  },
+  "2304.05673": {
+   "authors": [
+    "Sean Anthony Byrne",
+    "Marcus Nystr\u00f6m",
+    "Virmarie Maquiling",
+    "Enkelejda Kasneci",
+    "Diederick C. Niehorster"
+   ],
+   "title": "Precise localization of corneal reflections in eye images using deep learning trained on synthetic data",
+   "year": "2023"
+  },
+  "2305.09235": {
+   "authors": [
+    "Boris van Breugel",
+    "Zhaozhi Qian",
+    "Mihaela van der Schaar"
+   ],
+   "title": "Synthetic data, real errors: how (not) to publish and use synthetic data",
+   "year": "2023"
+  },
+  "2305.17148": {
+   "authors": [
+    "Yiyun He",
+    "Thomas Strohmer",
+    "Roman Vershynin",
+    "Yizhe Zhu"
+   ],
+   "title": "Differentially Private Low-dimensional Synthetic Data from High-dimensional Datasets",
+   "year": "2023"
+  },
+  "2307.01850": {
+   "authors": [
+    "Sina Alemohammad",
+    "Josue Casco-Rodriguez",
+    "Lorenzo Luzi",
+    "Ahmed Imtiaz Humayun",
+    "Hossein Babaei",
+    "Daniel LeJeune",
+    "Ali Siahkoohi",
+    "Richard G. Baraniuk"
+   ],
+   "title": "Self-Consuming Generative Models Go MAD",
+   "year": "2023"
+  },
+  "2308.10328": {
+   "authors": [
+    "Albin Soutif--Cormerais",
+    "Antonio Carta",
+    "Andrea Cossu",
+    "Julio Hurtado",
+    "Hamed Hemati",
+    "Vincenzo Lomonaco",
+    "Joost Van de Weijer"
+   ],
+   "title": "A Comprehensive Empirical Evaluation on Online Continual Learning",
+   "year": "2023"
+  },
+  "2310.04417": {
+   "authors": [
+    "Esha Saha",
+    "Giang Tran"
+   ],
+   "title": "Generalization Bound for Diffusion Models using Random Features",
+   "year": "2023"
+  },
+  "2310.17589": {
+   "authors": [
+    "Yucheng Li",
+    "Frank Guerin",
+    "Chenghua Lin"
+   ],
+   "title": "An Open Source Data Contamination Report for Large Language Models",
+   "year": "2023"
+  },
+  "2310.18018": {
+   "authors": [
+    "Oscar Sainz",
+    "Jon Ander Campos",
+    "Iker Garc\u00eda-Ferrero",
+    "Julen Etxaniz",
+    "Oier Lopez de Lacalle",
+    "Eneko Agirre"
+   ],
+   "title": "NLP Evaluation in trouble: On the Need to Measure LLM Data Contamination for each Benchmark",
+   "year": "2023"
+  },
+  "2311.01964": {
+   "authors": [
+    "Kun Zhou",
+    "Yutao Zhu",
+    "Zhipeng Chen",
+    "Wentong Chen",
+    "Wayne Xin Zhao",
+    "Xu Chen",
+    "Yankai Lin",
+    "Ji-Rong Wen",
+    "Jiawei Han"
+   ],
+   "title": "Don't Make Your LLM an Evaluation Benchmark Cheater",
+   "year": "2023"
+  },
+  "2311.06233": {
+   "authors": [
+    "Shahriar Golchin",
+    "Mihai Surdeanu"
+   ],
+   "title": "Data Contamination Quiz: A Tool to Detect and Estimate Contamination in Large Language Models",
+   "year": "2023"
+  },
+  "2312.12343": {
+   "authors": [
+    "Yucheng Li",
+    "Frank Guerin",
+    "Chenghua Lin"
+   ],
+   "title": "LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction",
+   "year": "2023"
+  },
+  "2401.05883": {
+   "authors": [
+    "Xianming Li",
+    "Jing Li"
+   ],
+   "title": "Generative Deduplication For Socia Media Data Selection",
+   "year": "2024"
+  },
+  "2401.06059": {
+   "authors": [
+    "Minhao Jiang",
+    "Ken Ziyu Liu",
+    "Ming Zhong",
+    "Rylan Schaeffer",
+    "Siru Ouyang",
+    "Jiawei Han",
+    "Sanmi Koyejo"
+   ],
+   "title": "Investigating Data Contamination for Pre-training Language Models",
+   "year": "2024"
+  },
+  "2401.10393": {
+   "authors": [
+    "Atith Gandhi",
+    "Raj Sanjay Shah",
+    "Vijay Marupudi",
+    "Sashank Varma"
+   ],
+   "title": "Natural Mitigation of Catastrophic Interference: Continual Learning in Power-Law Learning Environments",
+   "year": "2024"
+  },
+  "2403.10075": {
+   "authors": [
+    "Alhassan Mumuni",
+    "Fuseini Mumuni",
+    "Nana Kobina Gerrar"
+   ],
+   "title": "A survey of synthetic data augmentation methods in computer vision",
+   "year": "2024"
+  },
+  "2403.16952": {
+   "authors": [
+    "Jiasheng Ye",
+    "Peiju Liu",
+    "Tianxiang Sun",
+    "Jun Zhan",
+    "Yunhua Zhou",
+    "Xipeng Qiu"
+   ],
+   "title": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+   "year": "2024"
+  },
+  "2404.05090": {
+   "authors": [
+    "Mohamed El Amine Seddik",
+    "Suei-Wen Chen",
+    "Soufiane Hayou",
+    "Pierre Youssef",
+    "Merouane Debbah"
+   ],
+   "title": "How Bad is Training on Synthetic Data? A Statistical Analysis of Language Model Collapse",
+   "year": "2024"
+  },
+  "2405.11829": {
+   "authors": [
+    "Hikmat Khan",
+    "Ghulam Rasool",
+    "Nidhal Carla Bouaynaya"
+   ],
+   "title": "Adversarially Diversified Rehearsal Memory (ADRM): Mitigating Memory Overfitting Challenge in Continual Learning",
+   "year": "2024"
+  },
+  "2405.13977": {
+   "authors": [
+    "Paul Mayer",
+    "Lorenzo Luzi",
+    "Ali Siahkoohi",
+    "Don H. Johnson",
+    "Richard G. Baraniuk"
+   ],
+   "title": "Improving Fairness and Mitigating MADness in Generative Models",
+   "year": "2024"
+  },
+  "2406.18326": {
+   "authors": [
+    "Huixuan Zhang",
+    "Yun Lin",
+    "Xiaojun Wan"
+   ],
+   "title": "PaCoST: Paired Confidence Significance Testing for Benchmark Contamination Detection in Large Language Models",
+   "year": "2024"
+  },
+  "2407.17493": {
+   "authors": [
+    "Youngseok Yoon",
+    "Dainong Hu",
+    "Iain Weissburg",
+    "Yao Qin",
+    "Haewon Jeong"
+   ],
+   "title": "Model Collapse in the Self-Consuming Chain of Diffusion Finetuning: A Novel Perspective from Quantitative Trait Modeling",
+   "year": "2024"
+  },
+  "2408.16333": {
+   "authors": [
+    "Sina Alemohammad",
+    "Ahmed Imtiaz Humayun",
+    "Shruti Agarwal",
+    "John Collomosse",
+    "Richard Baraniuk"
+   ],
+   "title": "Self-Improving Diffusion Models with Synthetic Data",
+   "year": "2024"
+  },
+  "2409.09927": {
+   "authors": [
+    "Vinay Samuel",
+    "Yue Zhou",
+    "Henry Peng Zou"
+   ],
+   "title": "Towards Data Contamination Detection for Modern Large Language Models: Limitations, Inconsistencies, and Oracle Challenges",
+   "year": "2024"
+  },
+  "2411.00750": {
+   "authors": [
+    "Yiwen Ding",
+    "Zhiheng Xi",
+    "Wei He",
+    "Zhuoyuan Li",
+    "Yitao Zhai",
+    "Xiaowei Shi",
+    "Xunliang Cai",
+    "Tao Gui",
+    "Qi Zhang",
+    "Xuanjing Huang"
+   ],
+   "title": "Mitigating Tail Narrowing in LLM Self-Improvement via Socratic-Guided Sampling",
+   "year": "2024"
+  },
+  "2412.17646": {
+   "authors": [
+    "Ananda Theertha Suresh",
+    "Andrew Thangaraj",
+    "Aditya Nanda Kishore Khandavally"
+   ],
+   "title": "Rate of Model Collapse in Recursive Training",
+   "year": "2024"
+  },
+  "2501.13983": {
+   "authors": [
+    "Yang Fan"
+   ],
+   "title": "AdEval: Alignment-based Dynamic Evaluation to Mitigate Data Contamination in Large Language Models",
+   "year": "2025"
+  },
+  "2503.08117": {
+   "authors": [
+    "Weiguo Gao",
+    "Ming Li"
+   ],
+   "title": "Convergence Dynamics and Stabilization Strategies of Co-Evolving Generative Models",
+   "year": "2025"
+  },
+  "2503.13572": {
+   "authors": [
+    "Zeng Wang",
+    "Minghao Shao",
+    "Jitendra Bhandari",
+    "Likhitha Mankali",
+    "Ramesh Karri",
+    "Ozgur Sinanoglu",
+    "Muhammad Shafique",
+    "Johann Knechtel"
+   ],
+   "title": "VeriContaminated: Assessing LLM-Driven Verilog Coding for Data Contamination",
+   "year": "2025"
+  },
+  "2505.13249": {
+   "authors": [
+    "Le Vu Anh",
+    "Dinh Duc Nha Nguyen",
+    "Phi Long Nguyen"
+   ],
+   "title": "RN-F: A Novel Approach for Mitigating Contaminated Data in Large Language Models",
+   "year": "2025"
+  },
+  "2505.13947": {
+   "authors": [
+    "Shirong Xu",
+    "Hengzhi He",
+    "Guang Cheng"
+   ],
+   "title": "A Probabilistic Perspective on Model Collapse",
+   "year": "2025"
+  },
+  "2507.15903": {
+   "authors": [
+    "Siyuan Liu",
+    "Wenjing Liu",
+    "Zhiwei Xu",
+    "Xin Wang",
+    "Bo Chen",
+    "Tao Li"
+   ],
+   "title": "Towards Mitigation of Hallucination for LLM-empowered Agents: Progressive Generalization Bound Exploration and Watchdog Monitor",
+   "year": "2025"
+  },
+  "2509.08972": {
+   "authors": [
+    "Soheil Zibakhsh Shabgahi",
+    "Pedram Aghazadeh",
+    "Azalia Mirhoseini",
+    "Farinaz Koushanfar"
+   ],
+   "title": "ForTIFAI: Fending Off Recursive Training Induced Failure for AI Model Collapse",
+   "year": "2025"
+  },
+  "2511.04343": {
+   "authors": [
+    "Themistoklis Haris",
+    "Fabian Spaeh",
+    "Spyros Dragazis",
+    "Charalampos Tsourakakis"
+   ],
+   "title": "Estimating Hitting Times Locally At Scale",
+   "year": "2025"
+  },
+  "2511.17602": {
+   "authors": [
+    "Sushant Mehta"
+   ],
+   "title": "Beyond Surface-Level Similarity: Hierarchical Contamination Detection for Synthetic Training Data in Foundation Models",
+   "year": "2025"
+  },
+  "2512.00757": {
+   "authors": [
+    "Zongjian Han",
+    "Yiran Liang",
+    "Ruiwen Wang",
+    "Yiwei Luo",
+    "Yilin Huang",
+    "Xiaotong Song",
+    "Dongqing Wei"
+   ],
+   "title": "Preventing Model Collapse via Contraction-Conditioned Neural Filters",
+   "year": "2025"
+  },
+  "2512.09282": {
+   "authors": [
+    "Xiang Chen",
+    "Jinshan Pan",
+    "Jiangxin Dong",
+    "Jian Yang",
+    "Jinhui Tang"
+   ],
+   "title": "FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model",
+   "year": "2025"
+  },
+  "2512.11867": {
+   "authors": [
+    "Daniil Zverev",
+    "A. Sophia Koepke",
+    "Joao F. Henriques"
+   ],
+   "title": "On the Dangers of Bootstrapping Generation for Continual Learning and Beyond",
+   "year": "2025"
+  },
+  "2601.03385": {
+   "authors": [
+    "Yi Gu",
+    "Lingyou Pang",
+    "Xiangkun Ye",
+    "Tianyu Wang",
+    "Jianyu Lin",
+    "Carey E. Priebe",
+    "Alexander Aue"
+   ],
+   "title": "SIGMA: Scalable Spectral Insights for LLM Model Collapse",
+   "year": "2026"
+  },
+  "2606.02339": {
+   "authors": [
+    "Tim Nielen",
+    "Sameer Ambekar",
+    "Johannes Kiechle",
+    "Daniel M. Lang",
+    "Julia A. Schnabel"
+   ],
+   "title": "Entropy Minimization without Model Collapse: Mitigating Prediction Bias in Medical Imaging",
+   "year": "2026"
+  },
+  "2606.13732": {
+   "authors": [
+    "Xinbao Qiao",
+    "Xianglong Du",
+    "Wei Liu",
+    "Jingqi Zhang",
+    "Peihua Mai",
+    "Meng Zhang",
+    "Yan Pang"
+   ],
+   "title": "When Sample Selection Bias Precipitates Model Collapse",
+   "year": "2026"
+  },
+  "2608.04268": {
+   "authors": [
+    "Irina Proskurina",
+    "Antoine Gourru",
+    "Julien Velcin"
+   ],
+   "title": "The Fairness Collapse Phenomenon: Bias Amplification in Language Models Trained on Synthetic Data",
+   "year": "2026"
+  },
+  "2608.21366": {
+   "authors": [
+    "Xihao Xie",
+    "Beichen Hu"
+   ],
+   "title": "Reviewing Model Collapse and Countermeasures",
+   "year": "2026"
+  },
+  "2609.02899": {
+   "authors": [
+    "Xingyao Xiao",
+    "Yihong Cheng"
+   ],
+   "title": "Contamination Inflates Scores but Rarely Reorders Large Language Model Leaderboards",
+   "year": "2026"
+  },
+  "2609.11149": {
+   "authors": [
+    "Yangze Liu",
+    "Zhongyi Han"
+   ],
+   "title": "Break Step: Recursive Training Resonates with Replayed Sampling Noise",
+   "year": "2026"
+  },
+  "2609.18878": {
+   "authors": [
+    "Matteo Marchi",
+    "Jo\u00e3o Pedro Silvestre",
+    "Bahman Gharesifard",
+    "Paulo Tabuada"
+   ],
+   "title": "Preventing Model Collapse: A Fisher-Rao Perspective on the Dynamics of Training with Synthetic Data",
+   "year": "2026"
+  }
+ },
+ "n": 102,
+ "problems": [],
+ "route": "API batch",
+ "with_authors": 102
+}

@@ -1,0 +1,105 @@
+# issue #122 reference verification -- resolved by identifier at the index that
+# owns the id: arXiv (export.arxiv.org) for arXiv ids, Crossref (api.crossref.org)
+# for DOIs.  102 entries: 102 OK, 0 PROBLEM
+OK          2404.05090      construct    How Bad is Training on Synthetic Data? A Statistical Analysis of Language Model Collapse
+OK          2609.18878      construct    Preventing Model Collapse: A Fisher-Rao Perspective on the Dynamics of Training with Synthetic Data
+OK          2307.01850      construct    Self-Consuming Generative Models Go MAD
+OK          2403.10075      construct    A survey of synthetic data augmentation methods in computer vision
+OK          2407.17493      construct    Model Collapse in the Self-Consuming Chain of Diffusion Finetuning: A Novel Perspective from Quantitative Trait Modeling
+OK          2408.16333      construct    Self-Improving Diffusion Models with Synthetic Data
+OK          2412.17646      construct    Rate of Model Collapse in Recursive Training
+OK          2505.13947      construct    A Probabilistic Perspective on Model Collapse
+OK          2509.08972      construct    ForTIFAI: Fending Off Recursive Training Induced Failure for AI Model Collapse
+OK          2512.00757      construct    Preventing Model Collapse via Contraction-Conditioned Neural Filters
+OK          2601.03385      construct    SIGMA: Scalable Spectral Insights for LLM Model Collapse
+OK          2606.02339      construct    Entropy Minimization without Model Collapse: Mitigating Prediction Bias in Medical Imaging
+OK          2606.13732      construct    When Sample Selection Bias Precipitates Model Collapse
+OK          2608.21366      construct    Reviewing Model Collapse and Countermeasures
+OK          2608.04268      construct    The Fairness Collapse Phenomenon: Bias Amplification in Language Models Trained on Synthetic Data
+OK          2609.11149      construct    Break Step: Recursive Training Resonates with Replayed Sampling Noise
+OK          1905.12313      construct    G2R Bound: A Generalization Bound for Supervised Learning from GAN-Synthetic Data
+OK          1909.11512      construct    Synthetic Data for Deep Learning
+OK          2004.14046      construct    Reducing catastrophic forgetting with learning on synthetic data
+OK          2105.04144      construct    Transitioning from Real to Synthetic data: Quantifying the bias in model
+OK          2301.01212      construct    Assessment of creditworthiness models privacy-preserving training with synthetic data
+OK          2304.05673      construct    Precise localization of corneal reflections in eye images using deep learning trained on synthetic data
+OK          2305.09235      construct    Synthetic data, real errors: how (not) to publish and use synthetic data
+OK          2305.17148      construct    Differentially Private Low-dimensional Synthetic Data from High-dimensional Datasets
+OK          1206.1317       theory       Model Checking Stochastic Branching Processes
+OK          1705.09967      theory       Local Large Deviations: McMillian Theorem for multitype Galton-Watson Processes
+OK          1302.5366       theory       Testing Uniformity of Stationary Distribution
+OK          2206.01827      theory       A particle system with mean-field interaction: Large-scale limit of stationary distributions
+OK          1010.5608       theory       A Generalized Coupon Collector Problem
+OK          1107.3385       theory       Computing hitting times via fluid approximation: application to the coupon collector problem
+OK          1402.5245       theory       New results on a generalized coupon collector problem using Markov chains
+OK          1304.4371       theory       Efficient Computation of Mean Truncated Hitting Times on Very Large Graphs
+OK          2212.05744      theory       Hitting Times of Random Walks on Edge Corona Product Graphs
+OK          2511.04343      theory       Estimating Hitting Times Locally At Scale
+OK          1504.08363      theory       On the Structure, Covering, and Learning of Poisson Multinomial Distributions
+OK          1505.02324      theory       Simultaneous Clustering and Model Selection for Multinomial Distribution: A Comparative Study
+OK          1511.03592      theory       The Fourier Transform of Poisson Multinomial Distributions and its Algorithmic Applications
+OK          1711.01530      theory       Fisher-Rao Metric, Geometry, and Complexity of Neural Networks
+OK          1807.04015      mechanism    On Catastrophic Forgetting and Mode Collapse in Generative Adversarial Networks
+OK          1708.02072      mechanism    Measuring Catastrophic Forgetting in Neural Networks
+OK          1805.07810      mechanism    Online Structured Laplace Approximations For Overcoming Catastrophic Forgetting
+OK          1808.07049      mechanism    Catastrophic Importance of Catastrophic Forgetting
+OK          1904.00310      mechanism    Learn to Grow: A Continual Structure Learning Framework for Overcoming Catastrophic Forgetting
+OK          1905.08077      mechanism    Catastrophic forgetting: still a problem for DNNs
+OK          1906.02568      mechanism    Localizing Catastrophic Forgetting in Neural Networks
+OK          1912.01238      mechanism    Overcoming Catastrophic Forgetting by Generative Regularization
+OK          2001.01578      mechanism    Dissecting Catastrophic Forgetting in Continual Learning by Deep Visualization
+OK          2005.07107      mechanism    Natural Way to Overcome the Catastrophic Forgetting in Neural Networks
+OK          2005.00146      mechanism    Addressing Catastrophic Forgetting in Few-Shot Problems
+OK          2010.04003      mechanism    A Theoretical Analysis of Catastrophic Forgetting through the NTK Overlap Matrix
+OK          2011.06220      mechanism    Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting
+OK          2105.07385      mechanism    Statistical Mechanical Analysis of Catastrophic Forgetting in Continual Learning with Teacher and Student Networks
+OK          2109.01844      mechanism    On robustness of generative representations against catastrophic forgetting
+OK          2110.10570      mechanism    Behavioral Experiments for Understanding Catastrophic Forgetting
+OK          1905.12019      protocol     Unified Probabilistic Deep Continual Learning through Generative Replay and Open Set Recognition
+OK          2107.06499      protocol     Deduplicating Training Data Makes Language Models Better
+OK          2401.05883      protocol     Generative Deduplication For Socia Media Data Selection
+OK          2403.16952      protocol     Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance
+OK          2512.09282      protocol     FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model
+OK          1606.07947      protocol     Sequence-Level Knowledge Distillation
+OK          1612.05555      protocol     Neural Networks Classifier for Data Selection in Statistical Machine Translation
+OK          1705.08690      protocol     Continual Learning with Deep Generative Replay
+OK          1708.00712      protocol     Dynamic Data Selection for Neural Machine Translation
+OK          1809.10635      protocol     Generative replay with feedback connections as a general strategy for continual learning
+OK          1906.00654      protocol     Continual Learning of New Sound Classes using Generative Replay
+OK          1906.11829      protocol     Selection via Proxy: Efficient Data Selection for Deep Learning
+OK          1910.02551      protocol     Soft-Label Dataset Distillation and Text Dataset Distillation
+OK          2002.05715      protocol     Self-Distillation Amplifies Regularization in Hilbert Space
+OK          2405.13977      prevention   Improving Fairness and Mitigating MADness in Generative Models
+OK          2006.10974      prevention   Optimization and Generalization of Regularization-Based Continual Learning: a Loss Approximation Viewpoint
+OK          2203.13167      prevention   Towards Exemplar-Free Continual Learning in Vision Transformers: an Account of Attention, Functional and Weight Regularization
+OK          2401.10393      prevention   Natural Mitigation of Catastrophic Interference: Continual Learning in Power-Law Learning Environments
+OK          2405.11829      prevention   Adversarially Diversified Rehearsal Memory (ADRM): Mitigating Memory Overfitting Challenge in Continual Learning
+OK          2411.00750      prevention   Mitigating Tail Narrowing in LLM Self-Improvement via Socratic-Guided Sampling
+OK          2501.13983      prevention   AdEval: Alignment-based Dynamic Evaluation to Mitigate Data Contamination in Large Language Models
+OK          2503.08117      prevention   Convergence Dynamics and Stabilization Strategies of Co-Evolving Generative Models
+OK          2505.13249      prevention   RN-F: A Novel Approach for Mitigating Contaminated Data in Large Language Models
+OK          2507.15903      prevention   Towards Mitigation of Hallucination for LLM-empowered Agents: Progressive Generalization Bound Exploration and Watchdog Monitor
+OK          2406.18326      measurement  PaCoST: Paired Confidence Significance Testing for Benchmark Contamination Detection in Large Language Models
+OK          2409.09927      measurement  Towards Data Contamination Detection for Modern Large Language Models: Limitations, Inconsistencies, and Oracle Challenges
+OK          2503.13572      measurement  VeriContaminated: Assessing LLM-Driven Verilog Coding for Data Contamination
+OK          2511.17602      measurement  Beyond Surface-Level Similarity: Hierarchical Contamination Detection for Synthetic Training Data in Foundation Models
+OK          2609.02899      measurement  Contamination Inflates Scores but Rarely Reorders Large Language Model Leaderboards
+OK          2201.06289      measurement  The CLEAR Benchmark: Continual LEArning on Real-World Imagery
+OK          2204.05462      measurement  Out-Of-Distribution Detection In Unsupervised Continual Learning
+OK          2211.07740      measurement  Denoising diffusion models for out-of-distribution detection
+OK          2308.10328      measurement  A Comprehensive Empirical Evaluation on Online Continual Learning
+OK          2310.04417      measurement  Generalization Bound for Diffusion Models using Random Features
+OK          2310.17589      measurement  An Open Source Data Contamination Report for Large Language Models
+OK          2310.18018      measurement  NLP Evaluation in trouble: On the Need to Measure LLM Data Contamination for each Benchmark
+OK          2311.01964      measurement  Don't Make Your LLM an Evaluation Benchmark Cheater
+OK          2311.06233      measurement  Data Contamination Quiz: A Tool to Detect and Estimate Contamination in Large Language Models
+OK          2312.12343      measurement  LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction
+OK          2401.06059      measurement  Investigating Data Contamination for Pre-training Language Models
+OK          2512.11867      adjacent     On the Dangers of Bootstrapping Generation for Continual Learning and Beyond
+OK          2104.06788      adjacent     Neural Architecture Search of Deep Priors: Towards Continual Learning without Catastrophic Interference
+OK          2203.17269      adjacent     A Closer Look at Rehearsal-Free Continual Learning
+OK          1705.09847      adjacent     Lifelong Generative Modeling
+OK          1809.02441      adjacent     StackNet: Stacking Parameters for Continual learning
+OK          1810.12488      adjacent     Re-evaluating Continual Learning Scenarios: A Categorization and Case for Strong Baselines
+OK          1904.07734      adjacent     Three scenarios for continual learning
+OK          1904.10644      adjacent     Facilitating Bayesian Continual Learning by Natural Gradients and Stein Gradients
