@@ -328,8 +328,11 @@ because the headroom falls exactly where the boundary does — char-bigram Dice'
 0.396 at `L = 40` and 0.078 at
 `L = 3000`, so a fixed edit rate leaves a shrinking gap between the perturbed score and the
 threshold. A mechanism that followed the edit *count* would predict the opposite ordering; the count
-parameterisation is run beside the rate parameterisation and reaches the same verdicts, which is how the
-two are separated.
+parameterisation is run beside the rate one and reaches the same verdicts. The quantity on which the two
+could disagree is the fitted slope, and it is where they are separated: char-bigram Dice's slope moves
+from -0.230 under the rate to -0.226 under the count — a shift of
+0.004 — so the verdict is read off the headroom, which both parameterisations share,
+rather than off the parameterisation chosen.
 
 The practical form of this is a prescription. A check's specification owes (i) the statistic, (ii) the
 threshold *and the length band it was calibrated on*, and (iii) the width, because the width is what

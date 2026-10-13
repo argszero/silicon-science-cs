@@ -110,6 +110,8 @@ NUM = {
     "law.dice2c.r2": ("v2", "@law_r2_dice2c", "%.3f"),
     "law.dice2c.n": ("v2", "@law_n_dice2c", "%d"),
     "law.jac3.slope": ("v2", "@law_slope_jac3", "%.3f"),
+    "law.dice2c.slope.count": ("v2", "@law_slope_dice2c_count", "%.3f"),
+    "law.dice2c.slope.gap": ("v2", "@law_slope_dice2c_gap", "%.3f"),
     "law.ratio": ("v2", "@law_ratio", "%.1f"),
     # --- Table 4: the mechanism certificate ----------------------------------------------------
     "mech.cells": ("v2", "@mech_cells", "%d"),
@@ -168,6 +170,8 @@ COMPUTED = {
     "law_r2_dice2c": lambda R: _fit(R, "dice2c")[2],
     "law_n_dice2c": lambda R: _fit(R, "dice2c")[3],
     "law_slope_jac3": lambda R: _fit(R, "jac3")[0],
+    "law_slope_dice2c_count": lambda R: _fit(R, "dice2c", "count")[0],
+    "law_slope_dice2c_gap": lambda R: abs(_fit(R, "dice2c")[0] - _fit(R, "dice2c", "count")[0]),
     "law_ratio": lambda R: _spread(R, "dice2c") / max(_spread(R, "jac3"), 1e-9),
     "mech_cells": lambda R: len(_mech(R)),
     "mech_worst": lambda R: max(abs(a - b) for a, b, _Lx, _s in _mech(R)),
@@ -182,12 +186,13 @@ COMPUTED = {
 }
 
 
-def _resolvable(R, stat, L):
+def _resolvable(R, stat, L, kind="rate"):
     """The lengths at which a statistic has a positive FPR-matched threshold (so eps* is a reading
-    and not a censored cell)."""
+    and not a censored cell).  `kind` selects the edit parameterisation -- "rate" or "count"; the
+    default keeps every earlier caller on the rate arm."""
     out = []
     for l in _L:
-        rec = R["v2"]["recall"].get(_r(stat, l, "rate"))
+        rec = R["v2"]["recall"].get(_r(stat, l, kind))
         if rec and rec.get("eps_star") is not None and rec.get("tau", 0) > 0:
             out.append((float(l), rec["eps_star"]))
     return out
@@ -199,10 +204,12 @@ def _spread(R, stat):
     return max(xs) / min(xs) if len(xs) >= 2 else float("nan")
 
 
-def _fit(R, stat):
-    """Least-squares slope of log eps* on log L, with R^2 and n -- the same read analyse_v2 prints."""
+def _fit(R, stat, kind="rate"):
+    """Least-squares slope of log eps* on log L, with R^2 and n -- the same read analyse_v2 prints.
+    `kind` selects the edit parameterisation; the default keeps every earlier caller on the rate arm,
+    and the count arm is what states the quantity on which the two could disagree (the slope)."""
     import math
-    pts = _resolvable(R, stat, None)
+    pts = _resolvable(R, stat, None, kind)
     if len(pts) < 3:
         return (float("nan"), float("nan"), float("nan"), len(pts))
     xs = [math.log(l) for l, _e in pts]
