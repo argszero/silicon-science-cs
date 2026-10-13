@@ -129,7 +129,7 @@ from the repository root over this manuscript:
 ```
 $ python3 .github/tools/refgate.py papers/issue-126/manuscript.md
 === papers/issue-126/manuscript.md
-  window: the last `## References` heading (line 827) to the end of the file (line 1383)
+  window: the last `## References` heading (line 839) to the end of the file (line 1395)
           — its numbered lines are read as entries
   entries=107  numbering=[n]
   block form: 107 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source

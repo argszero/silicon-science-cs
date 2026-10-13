@@ -15,21 +15,21 @@ before it was run.
 
 (i) **The precision floor is real and it is set by the accumulator, not by truncation.** Extra limbs stop
 paying at a `K*` that grows with the accumulator width, and the reachable error floors at `c * kappa1 *
-u` with `c` measured in `[0.27, 1.60]` across three formats -- so limbs cannot rescue a too-narrow
+u` with `c` measured in `[0.27, 1.60]` across three formats **on the 14-matrix corpus** -- so limbs cannot rescue a too-narrow
 register, and the floor is the admission limit on the accuracy budget.
 
 (ii) **The classic single-scalar account is refuted in its sharp form.** The backward-error scaling `E
 ~ kappa1 * u` is recovered only in the high-conditioning tail (exponent 0.94-1.00 for `kappa1 >= 10`);
 over the bulk the floor grows more slowly (0.64-0.74), and, decisively, at a **fixed** `kappa1` band
-`[1, 1.5)` the constant varies **3.1-5.8x across matrices**. Two problems with equal condition number do
+`[1, 1.5)` the constant varies **3.1-5.8x across the 14 matrices**. Two problems with equal condition number do
 not have equal accuracy, and the residual is not another power of `kappa1`.
 
 (iii) **A third design axis had been missing: the reduction structure.** Permuting only the summation
 order, at exactly fixed conditioning, moves the floor by a median **78.0x** (up to 209.6x) in fp32 --
 the same limb count and the same register deliver accuracies two orders of magnitude apart. Measuring a
-real library (`numpy`'s own dot product, 2.0.2) on the same matrices shows the mechanism: its error is
-reproduced per case by a **lane-reduced tree with a stride-halving combine** (fp16 71/142, fp32 160/185,
-fp64 125/194 cases) where the naive chain reproduces only 49/69/69.
+real library (`numpy`'s own dot product, 2.0.2) on the same matrices shows the mechanism: the
+best-reproducing candidate is a **lane-reduced tree with a stride-halving combine** (fp16 71/142,
+fp32 160/185, fp64 125/194 cases) where the naive chain reproduces only 49/69/69.
 
 (iv) **A closed-form reachability rule matches a learned selector for free.** Fitting one constant on half
 the corpus and deciding on unseen matrices gives decision accuracy within 0.011-0.020 of a logistic
@@ -333,7 +333,7 @@ entirely a tail effect. Reporting the all-case exponent alone would have hidden 
 ### 5.2 Conditioning is not sufficient
 
 The decisive measurement is at **fixed conditioning**. Restricting to the band `kappa1 in [1, 1.5)`, the
-constant `c = E_floor/(kappa1*u)` varies **3.1-5.8x across matrices** (bf16 0.32-0.99, fp16 0.27-1.60,
+constant `c = E_floor/(kappa1*u)` varies **3.1-5.8x across the 14 matrices** (bf16 0.32-0.99, fp16 0.27-1.60,
 fp32 0.49-1.53). An additive reading `c = a/kappa1 + b` describes the trend but no longer tightly
 (`R^2` = 0.64 / 0.47 / 0.61 for bf16/fp16/fp32, down from 0.49 / 0.93 / 0.95 in R542's run on the
 8-matrix corpus that preceded it), and it *cannot* absorb
@@ -616,6 +616,15 @@ algorithm. The model class is nonetheless honest about its limits: recursive hal
 4-lane model and numpy's own block-128/8-lane pairwise sum all fail to reproduce the library, and the
 candidates **bracket** it rather than containing it.
 
+That winner is a **best-of-seven** chosen and scored on the same cases, so its reproduced fraction is an
+in-sample upper bound rather than a transfer estimate. Stated as the selection penalty it carries, the
+margin over the runner-up is **1 case of 142** (fp16: lanes(4) 71 against lanes(8) 70), **5 of 185**
+(fp32: lanes(16) 160 against lanes(8) 155) and **4 of 194** (fp64: lanes(8) 125 against numpy's own
+pairwise 121) -- 0.7 / 2.7 / 2.1 points of the rounding cases, all read from `spike_struct_results.json`.
+A hold-out could take back at most that margin, so what the table supports is the **family** -- a
+lane-reduced tree reproduces the library's rounding far better than a chain or a recursive halving -- and
+not that this particular lane count is its optimum.
+
 ### 10.3 The second scalar survives the structure, and is still unidentified
 
 Two readings close the section, and both are negative:
@@ -781,11 +790,14 @@ REPRODUCE: ALL GREEN (21 steps, 0 failures)
 Tolerance: **exact**. Every instrument asserts that its output file is byte-identical to the committed
 one, so a deviation is a failure rather than a drift; `SHA256SUMS.reproduce` carries the 12 result
 artefacts, the 5 figures, the built manuscript, the two reference layers, the cached author reads and the
-citation report, and the script checks all 22 digests. The synthetic instruments need only the Python standard library; the
-external-validation arm (§9-§10) needs `numpy` (measured with 2.0.2 under `/usr/bin/python3` 3.9.6) and
-the script selects its interpreter by the modules the recompute path actually imports, printing the
-versions it used. The corpus is committed and re-hashed on every read, so a cache that has silently
-become a different dataset fails the same run.
+citation report, and the script checks all 22 digests. The synthetic instruments and the checkers need
+only the Python standard library; the external-validation arm (§9-§10) needs `numpy`, and the figures
+need `matplotlib` (measured with 2.0.2 and 3.9.4 under `/usr/bin/python3` 3.9.6). The script selects its
+interpreter by the modules the **recompute path** imports (`numpy`) and prints the `numpy` and
+`matplotlib` versions it found, so an absent dependency is reported as an absent dependency and never as a
+defect in the results: with no `numpy` the run stops before any step (exit 2), and with no `matplotlib` the
+figures step reports `NOT RUN` and the run exits 2 rather than failing. The corpus is committed and
+re-hashed on every read, so a cache that has silently become a different dataset fails the same run.
 
 **The manuscript is a product, and the reference section is a second product of the same source.**
 `manuscript_source.md` carries citations as KEYS; `build_refs.py` numbers them in first-appearance

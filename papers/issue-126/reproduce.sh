@@ -7,6 +7,13 @@
 # twice in effect: first its own `--selftest` (the plants that prove each certificate can fire), then
 # the work itself.
 #
+# THREE VERDICTS, ONE PER STATE (the journal's convention).  `REPRODUCE: ALL GREEN` (exit 0) is a run
+# that took every step on this build; `FAIL` (exit 1) is a difference the run DID measure; and
+# `NOT RUN` (exit 2) is a step that could not be taken here -- the run prints its reason and does not
+# count it as a pass.  The two dependencies that can produce the third state are read at the top and
+# named: no `numpy` stops the run before any step, and no `matplotlib` (needed by the figures step
+# alone) reports that step as NOT RUN and the run exits 2.
+#
 #   bash reproduce.sh                    reproduce + verify against the manifest
 #   bash reproduce.sh --verify-only      verify the manifest without regenerating anything
 #   bash reproduce.sh --update-manifest  rewrite the manifest from a green run (authoring only)
@@ -38,12 +45,18 @@ try:
     import numpy
 except ImportError:
     sys.exit("numpy missing")
-print("interpreter: python %s, numpy %s" % (sys.version.split()[0], numpy.__version__))
+try:
+    import matplotlib
+    mpl = matplotlib.__version__
+except ImportError:
+    mpl = "ABSENT -- the figures step will report NOT RUN"
+print("interpreter: python %s, numpy %s, matplotlib %s" % (sys.version.split()[0], numpy.__version__, mpl))
 PYEOF
 
 hash_of() { "$PY" -c 'import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$1"; }
 
 FAIL=0
+NOTRUN=0
 STEPS=0
 
 # --- the instruments, and the two files that must be regenerated BEFORE them (the reference pipeline
@@ -64,10 +77,19 @@ if [ "$VERIFY_ONLY" = "0" ]; then
       echo "FAIL [$name run]"; tail -5 "/tmp/${name}_run.log"; FAIL=$((FAIL + 1))
     fi
   done
-  # the figure: drawn from the result artefacts
-  STEPS=$((STEPS + 1))
-  if ! "$PY" make_figures.py >/tmp/make_figures.log 2>&1; then
-    echo "FAIL [make_figures]"; tail -5 /tmp/make_figures.log; FAIL=$((FAIL + 1))
+  # the figure: drawn from the result artefacts.  Its renderer is a DEPENDENCY, not a result, so an
+  # interpreter without matplotlib reports this step NOT RUN (exit 2 at the end) rather than FAIL:
+  # "the figures could not be re-drawn here" is a property of the environment, while a figure that
+  # re-drew DIFFERENTLY is a finding about the work.  The two are one state apart and never merged.
+  if "$PY" -c "import matplotlib" >/dev/null 2>&1; then
+    STEPS=$((STEPS + 1))
+    if ! "$PY" make_figures.py >/tmp/make_figures.log 2>&1; then
+      echo "FAIL [make_figures]"; tail -5 /tmp/make_figures.log; FAIL=$((FAIL + 1))
+    fi
+  else
+    echo "NOT RUN [make_figures] -- matplotlib is not installed on $PY, so the five figures cannot be re-drawn here."
+    echo "        NOT RUN is not a pass: this step verified nothing on this build, and the run will exit 2."
+    NOTRUN=$((NOTRUN + 1))
   fi
   # the reference pipeline, in order: body + record layer -> display layer -> the rendered section
   STEPS=$((STEPS + 1))
@@ -154,5 +176,9 @@ fi
 if [ "$FAIL" != "0" ]; then
   echo "REPRODUCE: $FAIL FAILURE(S) over $STEPS steps"
   exit 1
+fi
+if [ "$NOTRUN" != "0" ]; then
+  echo "REPRODUCE: $NOTRUN STEP(S) NOT RUN over $STEPS steps -- a step this build could not take, not a finding about the work"
+  exit 2
 fi
 echo "$LINE"

@@ -25,8 +25,9 @@ Expected output (last line):
 REPRODUCE: ALL GREEN (21 steps, 0 failures)
 ```
 
-The run takes about **4 minutes** on one CPU core. It prints the interpreter and `numpy` version it
-selected before doing anything else.
+The run takes about **4 minutes** on one CPU core. It prints the interpreter, the `numpy` version it
+selected for the recompute path and the `matplotlib` version it found for the figures before doing
+anything else.
 
 * **Tolerance: exact.** Every instrument is deterministic — no randomness except a stated seed — and
   the script compares the SHA-256 of every regenerated artefact with the value committed in
@@ -34,11 +35,13 @@ selected before doing anything else.
   display layer, the cached author reads and the citation report). A deviation is
   reported as `CHANGED` and the run exits non-zero. `--verify-only`
   re-checks the manifest without re-running anything; `--update-manifest` rewrites it.
-* **Dependencies.** The synthetic instruments need only the Python standard library. The
-  external-validation arm (§9–§10) needs `numpy`; measured here with **numpy 2.0.2 under
-  `/usr/bin/python3` 3.9.6**. The script picks the first interpreter that can `import numpy` and prints
-  the versions it used, so an absent dependency is reported as an absent dependency rather than as a
-  defect in the results. The citation report's **second duty** quotes the journal's own reference gate
+* **Dependencies.** The synthetic instruments and the checkers need only the Python standard library. The
+  external-validation arm (§9–§10) needs `numpy`, and the figures (`make_figures.py`, a hard step of the
+  run) need `matplotlib`; measured here with **numpy 2.0.2 and matplotlib 3.9.4 under `/usr/bin/python3`
+  3.9.6**. The script picks the first interpreter that can `import numpy` for the recompute path and prints
+  the versions of both it found, so an absent dependency is reported as an absent dependency rather than as
+  a defect in the results: no `numpy` stops the run before any step, and no `matplotlib` reports the
+  figures step as **`NOT RUN`** and the run exits 2. The citation report's **second duty** quotes the journal's own reference gate
   (`.github/tools/refgate.py`), which `refscan126.py --report` runs from the repository root with a
   **separate** interpreter — the gate needs CPython **≥ 3.12** (its f-strings carry backslashes, a
   `SyntaxError` on 3.9.6) while the instruments run on 3.9.6. Where the tool or a ≥ 3.12 interpreter is

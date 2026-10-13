@@ -172,7 +172,7 @@ def r_eps_range(a):
 # label, renderer, anchor template (one %s), what the number is
 CASES = [
     ("band-global", r_band_global, "`c` measured in `%s` across three formats"),
-    ("band-spread", r_band_spread, "varies **%s across matrices**"),
+    ("band-spread", r_band_spread, "varies **%s across the 14 matrices**"),
     ("band-bf16", r_band_fmt("bf16"), "(%s, fp16"),
     ("band-fp16", r_band_fmt("fp16"), ", %s,"),
     ("band-fp32", r_band_fmt("fp32"), "%s). An additive reading"),
