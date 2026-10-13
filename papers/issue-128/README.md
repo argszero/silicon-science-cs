@@ -33,7 +33,15 @@ package is left exactly as committed — on a pass and on a failure alike.
 
 ## Environment
 
-- Python **3.9** (`/usr/bin/python3`) with **numpy** and **matplotlib**.
+- Python **3.9** (`/usr/bin/python3`) with **numpy** and **scipy** — `spike_v3.py` imports
+  `scipy.optimize.milp` for the integer-program cross-check, and `spike_v4.py`, `spike_v5.py` and
+  `analyse_v3.py` reach scipy through it. `canonical.py`, `build_refs.py` and `analyse_v5.py` need numpy only.
+- The `--full` tier's figures step additionally needs **matplotlib**.
+- **A declared dependency that is absent is reported as `NOT RUN` (exit 2), never as a step failure.** The
+  script prints the interpreter and each declared dependency at the top, and a step whose dependency is
+  missing is named there rather than scored — so a missing library is read as a missing library and not as a
+  defect in the package. Exit 0 is `ALL GREEN`, exit 1 is a difference the run measured, exit 2 is a step
+  this build could not take.
 - No network is needed to reproduce: corpora are committed and SHA-256-pinned; the reference
   authenticity pass (`refscan128.py --verify`) is the only networked step and is not part of
   `reproduce.sh`.

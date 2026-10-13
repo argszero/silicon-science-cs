@@ -13,12 +13,15 @@ the largest `M` for which the constrained optimum still equals the unconstrained
 
 We measure the free region exactly (complete enumeration, cross-checked by an integer program) on two
 objectives — a bottleneck (`max-min`) and a sum (`max-sum`) — over 64 synthetic cases (1152 cells) and on
-a real corpus across 416 further cases, and report four findings, each registered as a prior before it was
+a real corpus — **24 real cases (432 cells)**, enumerated exactly (§4), and a **320-cell real-row sweep**
+(§6–§7) — and report four findings, each registered as a prior before it was
 measured. **(P1′ confirmed)** A non-empty free region is the rule, not the exception: the first binding
 quota is free in **32/32** and **30/32** synthetic settings and **24/24** on real rows; the free width has
 median **0.80–0.90**, and the *whole* quota is free in **19 of 64** synthetic cases (30 %) and **5 of 24**
-real cases (21 %). **(P2′ refuted)** No cheap statistic predicts the free width. A solve-free geometric
-proxy and three instance statistics were tested on a real-row sweep whose alignment input spans
+real cases (21 %). **(P2′ refuted)** No cheap statistic we tested predicts the free width: the solve-free
+geometric proxy (group-metric alignment) and three further cheap statistics — the optima count
+`log(1 + n_optima)`, the greedy gap at `M = 0`, and the unconstrained optimum's own value — were tested on a
+real-row sweep whose alignment input spans
 **0.183–1.037** (spread 0.854) while the output spans **0.000–1.000** — both wide enough for a negative to
 mean something — and every candidate loses to predicting the median. **(P3 inverted)** Above `M*`, the two
 objectives behave *oppositely* to the registered prediction: the `max-min` cost curve is a **step** (median
@@ -334,9 +337,12 @@ The pooled correlation is not merely weak, it is a **stride across strata**, not
 Splitting by objective shows why: inside `max-sum` the candidate is *identically degenerate* (`n_optima = 1`
 in all 160 cells; a max-sum optimum is unique), so it cannot predict there, while inside `max-min` it is
 **non-transportable** (Seeds `rho = +0.488` but Wine `rho = +0.161` with a negative MAE gain). A statistic
-that is constant in one stratum and inverts in another is not a predictor. We tested three further cheap
-candidates — a solve-free alignment proxy, the greedy gap at `M = 0`, and the unconstrained optimum's own
-degeneracy — and **none has a positive MAE gain in every stratum**.
+that is constant in one stratum and inverts in another is not a predictor. Beyond the geometric proxy above,
+we tested three further cheap candidates — the optima count `log(1 + n_optima)` (the measure the degeneracy
+reading is about), the greedy gap at `M = 0`, and the unconstrained optimum's own value — and **none has a
+positive MAE gain in every stratum**. That is **four distinct** cheap candidates in all, each named once:
+the geometric proxy, the optima count, the greedy gap, and the unconstrained value. §9's count is this same
+four.
 
 **Reading.** The free width must be computed, not predicted. This sharpens the practical rule from §4: the
 procedure is to solve the unconstrained problem and then walk `M` upward until the optimum first moves —
@@ -414,8 +420,10 @@ check that cannot fire is caught. The `--full` tier re-runs the three instrument
 come back **byte-identical** to the committed one (about 11 minutes; the re-runs are restored from a
 snapshot taken first, so the package is left exactly as committed even on a failure). Corpora are
 SHA-256-pinned and re-hashed before every read. All artefacts are integer-valued, which is what makes
-byte-identity possible; the environment is Python 3.9 with numpy, and no random state crosses a run
-boundary.
+byte-identity possible; the environment is Python 3.9 with `numpy`, `scipy` (the integer-program
+cross-check in `spike_v3.py` is the only use) and, for the `--full` tier's figures, `matplotlib`; no random
+state crosses a run boundary. A declared dependency that is absent is reported as **`NOT RUN`** and is never
+scored as a failure, so a missing library is read as a missing library and not as a defect in the package.
 
 ## References
 

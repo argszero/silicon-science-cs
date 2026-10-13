@@ -30,10 +30,18 @@
 # left exactly as committed whether the step passes or fails: a reproduction run must not be a way to
 # modify the artefact a reviewer is about to read.
 #
-# ENVIRONMENT (see README.md): Python 3.9 (/usr/bin/python3) with numpy; the --full tier's figures
-# step additionally needs matplotlib.  No network is needed: the corpora are committed and pinned, and
-# the reference authenticity pass (refscan128.py --verify) is a separate, networked step -- the
-# committed pool and its pass log are what this script reads.
+# ENVIRONMENT (see README.md): Python 3.9 (/usr/bin/python3) with numpy and scipy -- spike_v3.py imports
+# scipy.optimize.milp for the integer-program cross-check, and spike_v4/spike_v5/analyse_v3 reach scipy
+# through it; the --full tier's figures step additionally needs matplotlib.  No network is needed: the
+# corpora are committed and pinned, and the reference authenticity pass (refscan128.py --verify) is a
+# separate, networked step -- the committed pool and its pass log are what this script reads.
+#
+# THREE VERDICTS, ONE PER STATE: exit 0 = ALL GREEN (every step taken on this build), exit 1 = a
+# difference the run MEASURED, exit 2 = a step this build COULD NOT TAKE, with its reason named.  A
+# declared dependency that is absent is the third state, never the second: the two dependencies are
+# checked and printed at the top, a step whose dependency is missing is reported NOT RUN, and NOT RUN is
+# not a pass -- it verified nothing.  This is the difference between "your package is broken" and "your
+# interpreter lacks the library the package declares".
 # =============================================================================
 set -u
 
@@ -44,6 +52,7 @@ FULL=0
 [ "${1:-}" = "--full" ] && FULL=1
 STEPS=0
 FAILS=0
+NOTRUNS=0
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
@@ -63,6 +72,20 @@ if [ -z "$PY" ]; then
 fi
 echo "interpreter: $PY  ($("$PY" -V 2>&1), numpy $("$PY" -c 'import numpy; print(numpy.__version__)' 2>/dev/null))"
 
+# The DECLARED dependencies, read here and printed, because the environment decides which steps this build
+# can take at all (README.md -> Environment).  A missing one is NOT RUN -- a coordinate of this run -- and
+# never a failure of the package: the two states are one code apart and are not merged (see the header).
+declare -a MISSING=()
+for m in numpy scipy matplotlib; do
+    if ! "$PY" -c "import $m" >/dev/null 2>&1; then MISSING+=("$m"); fi
+done
+if [ "${#MISSING[@]}" -eq 0 ]; then
+    echo "declared deps: numpy scipy matplotlib -- all present"
+else
+    echo "declared deps: ABSENT -> ${MISSING[*]}"
+fi
+have() { "$PY" -c "import $1" >/dev/null 2>&1; }
+
 step() {  # step <label> <command...>
     local label="$1"; shift
     STEPS=$((STEPS + 1))
@@ -74,6 +97,22 @@ step() {  # step <label> <command...>
     printf '  [%02d] %-52s FAIL\n' "$STEPS" "$label"
     sed 's/^/        /' "$TMP/out" | tail -12
     return 1
+}
+
+# notrun <label> <why> -- a step this build cannot take at all.  Not a pass and not a failure: it is
+# counted separately and the run exits 2, so a verifier can tell a missing dependency from a broken package.
+notrun() {
+    STEPS=$((STEPS + 1)); NOTRUNS=$((NOTRUNS + 1))
+    printf '  [%02d] %-52s NOT RUN\n' "$STEPS" "$1"
+    printf '        %s\n' "$2"
+}
+
+# step_dep <label> <module> <command...> -- run the step if its declared dependency is importable,
+# otherwise report it NOT RUN with the reason.
+step_dep() {
+    local label="$1" mod="$2"; shift 2
+    if have "$mod"; then step "$label" "$@"
+    else notrun "$label" "needs $mod, which is not installed on this interpreter (declared in README.md -> Environment)"; fi
 }
 
 # byte <label> <files...> -- the files must be byte-identical to the snapshot taken before the
@@ -106,9 +145,13 @@ step "corpus pins (3 datasets, SHA-256)" bash -c 'cd corpus && shasum -a 256 -c 
 
 echo
 echo "== 2. the certificates (healthy object AND mutated object) ================"
-for s in spike_v3 spike_v4 spike_v5 analyse_v3 analyse_v5; do
-    step "certificates: $s" "$PY" "$s.py" --selftest
-done
+# spike_v4/v5 and analyse_v3 reach scipy through spike_v3, so their certificate step is declared against
+# scipy: on an interpreter without it the step is NOT RUN and says so (README.md -> Environment).
+step_dep "certificates: spike_v3"    scipy "$PY" spike_v3.py   --selftest
+step_dep "certificates: spike_v4"    scipy "$PY" spike_v4.py   --selftest
+step_dep "certificates: spike_v5"    scipy "$PY" spike_v5.py   --selftest
+step_dep "certificates: analyse_v3"  scipy "$PY" analyse_v3.py --selftest
+step "certificates: analyse_v5" "$PY" analyse_v5.py --selftest
 
 echo
 echo "== 3. the paper's numbers, re-derived and asserted ======================="
@@ -120,6 +163,10 @@ if [ "$FULL" = "1" ]; then
 
     # [08] the three instruments
     snapshot spike_v3_results.json spike_v4_results.json spike_v5_results.json
+    if ! have scipy; then
+        notrun "instruments re-run: spike_v3/v4/v5 (3 artefacts)" \
+               "needs scipy, which is not installed on this interpreter (declared in README.md -> Environment)"
+    else
     ok=1
     for s in spike_v3 spike_v4 spike_v5; do
         "$PY" "$s.py" >"$TMP/out" 2>&1 || ok=0
@@ -131,6 +178,7 @@ if [ "$FULL" = "1" ]; then
         STEPS=$((STEPS + 1)); FAILS=$((FAILS + 1))
         printf '  [%02d] %-52s FAIL\n' "$STEPS" "instruments re-run: spike_v3/v4/v5 (3 artefacts)"
         sed 's/^/        /' "$TMP/out" | tail -12
+    fi
     fi
 
     # [09] canonical, re-derived from the (now restored) committed instruments
@@ -148,6 +196,10 @@ if [ "$FULL" = "1" ]; then
     mkdir -p "$MPLCONFIGDIR"
     snapshot references.md manuscript.md \
            figures/fig1_cost_curves.png figures/fig2_free_width.png figures/fig3_alignment.png
+    if ! have matplotlib; then
+        notrun "rebuilt: 3 figures + references.md + manuscript.md" \
+               "needs matplotlib, which is not installed on this interpreter (declared in README.md -> Environment)"
+    else
     ok=1
     "$PY" make_figures.py >"$TMP/out" 2>&1 || ok=0
     "$PY" build_refs.py >"$TMP/out2" 2>&1 || ok=0
@@ -160,12 +212,18 @@ if [ "$FULL" = "1" ]; then
         printf '  [%02d] %-52s FAIL\n' "$STEPS" "rebuilt: 3 figures + references.md + manuscript.md"
         { tail -8 "$TMP/out"; tail -8 "$TMP/out2"; } | sed 's/^/        /'
     fi
+    fi
 fi
 
 echo
-if [ "$FAILS" -eq 0 ]; then
+if [ "$FAILS" -eq 0 ] && [ "$NOTRUNS" -eq 0 ]; then
     echo "REPRODUCE: ALL GREEN ($STEPS steps)"
     exit 0
 fi
-echo "REPRODUCE: $FAILS of $STEPS steps FAILED"
-exit 1
+if [ "$FAILS" -gt 0 ]; then
+    echo "REPRODUCE: $FAILS of $STEPS steps FAILED"
+    [ "$NOTRUNS" -gt 0 ] && echo "  (and $NOTRUNS step(s) NOT RUN -- a coordinate of this build, not a finding)"
+    exit 1
+fi
+echo "REPRODUCE: $NOTRUNS of $STEPS steps NOT RUN -- a step this build could not take, not a finding about the package"
+exit 2
