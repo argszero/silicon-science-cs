@@ -114,6 +114,8 @@ NUM = {
     # --- Table 4: the mechanism certificate ----------------------------------------------------
     "mech.cells": ("v2", "@mech_cells", "%d"),
     "mech.worst": ("v2", "@mech_worst", "%.3f"),
+    "mech.worst.stat": ("v2", "@mech_worst_stat", "%s"),
+    "mech.worst.l": ("v2", "@mech_worst_l", "%d"),
     "mech.headroom.dice2c.l40": ("v2", "@headroom_dice2c_40", "%.3f"),
     "mech.headroom.dice2c.l3000": ("v2", "@headroom_dice2c_3000", "%.3f"),
     # --- the certification floor ---------------------------------------------------------------
@@ -130,6 +132,12 @@ NUM = {
     "fuse.dice2c.l150": ("v4", "eps_star/L=150|dice2c", "%.3f"),
     "fuse.viol": ("v7", "@fuse_violations", "%d"),
     "fuse.cells": ("v7", "@fuse_cells", "%d"),
+    "fuse.checks": ("v7", "@fuse_checks", "%d"),
+    # the SAME law in the one-operator arm Figure 5 is drawn from (v4) -- the caption carries its
+    # count, and the manuscript states the scope of both so a reader meets one cell set at two
+    # operator scopes rather than two totals for one certificate (editor round 1, change 1).
+    "fuse.cells.v4": ("v4", "@fuse_cells_v4", "%d"),
+    "fuse.viol.v4": ("v4", "certificates/eps_star_bounds/violations/$len", "%d"),
     # --- the null key (v5) -------------------------------------------------------------------------
     "key.tau.r2": ("v5", "key_effect_by_ratio/2/max_abs_tau_shift_live", "%.3f"),
     "key.fpr.r2": ("v5", "key_effect_by_ratio/2/max_abs_fpr_shift_live", "%.3f"),
@@ -162,10 +170,14 @@ COMPUTED = {
     "law_slope_jac3": lambda R: _fit(R, "jac3")[0],
     "law_ratio": lambda R: _spread(R, "dice2c") / max(_spread(R, "jac3"), 1e-9),
     "mech_cells": lambda R: len(_mech(R)),
-    "mech_worst": lambda R: max(abs(a - b) for a, b, _Lx in _mech(R)),
+    "mech_worst": lambda R: max(abs(a - b) for a, b, _Lx, _s in _mech(R)),
+    "mech_worst_stat": lambda R: max(_mech(R), key=lambda t: abs(t[0] - t[1]))[3],
+    "mech_worst_l": lambda R: int(max(_mech(R), key=lambda t: abs(t[0] - t[1]))[2]),
     "headroom_dice2c_40": lambda R: 1.0 - R["v2"]["null"][_n("dice2c", 40)]["p95"],
     "headroom_dice2c_3000": lambda R: 1.0 - R["v2"]["null"][_n("dice2c", 3000)]["p95"],
-    "fuse_cells": lambda R: sum(1 for k in R["v7"]["eps_star"]),
+    "fuse_cells": lambda R: sum(1 for k in R["v7"]["eps_star"] if "+" in k),
+    "fuse_cells_v4": lambda R: sum(1 for k in R["v4"]["eps_star"] if "+" in k),
+    "fuse_checks": lambda R: _fuse_checks(R),
     "fuse_violations": lambda R: _fuse_viol(R),
 }
 
@@ -207,9 +219,29 @@ def _fit(R, stat):
     return (b, a, r2, n)
 
 
+def _interp_solve(xs, ys, target):
+    """The smallest x at which the decreasing curve y(x) crosses `target`, by linear interpolation on
+    the measured grid.  This is the CERTIFICATE's own route (analyse_v2's `interp_solve`, same grid,
+    same interpolation): the prediction uses the measured decay curve and the measured threshold, and
+    never the measured `eps*` it is compared against."""
+    for i in range(len(xs) - 1):
+        a, b = ys[i], ys[i + 1]
+        if (a - target) * (b - target) <= 0 and a != b:
+            return xs[i] + (target - a) * (xs[i + 1] - xs[i]) / (b - a)
+    return None
+
+
 def _mech(R):
     """The mechanism certificate: eps* predicted from the measured decay curve and the measured
-    threshold, against the measured eps*.  analyse_v2 prints the same 21 cells."""
+    threshold, against the measured eps*.  analyse_v2 prints the same 21 cells.
+
+    The prediction is solved from `median_decay` against `tau`; it is NOT the measured value read
+    back.  An earlier version of this resolver set `pred = rec["eps_star"]`, which made the worst
+    deviation identically 0.000 -- a certificate with an unsatisfiable predicate, and the one way
+    this number could not have failed.  Repaired in the round that read it (the editor's Question 3
+    asked what made a 0.000 agreement informative), and the repaired read agrees with analyse_v2's
+    independently printed certificate at 0.035 over the same 21 cells.
+    """
     out = []
     for stat in _STATS:
         for l in _L:
@@ -219,14 +251,25 @@ def _mech(R):
             w = rec.get("width_10_90")
             if not w:
                 continue
-            pred = rec["eps_star"]  # the certificate is that the two agree to the grid resolution
-            out.append((pred, rec["eps_star"], l))
+            pred = _interp_solve(R["v2"]["eps_grid"], rec["median_decay"], rec["tau"])
+            if pred is None:
+                continue
+            out.append((pred, rec["eps_star"], l, stat))
     return out
 
 
 def _fuse_viol(R):
-    """X2: R_or >= max(members) and R_and <= min(members) at every eps.  Counted, not asserted."""
-    return 0
+    """X2: eps*(OR) >= max(members) and eps*(AND) <= min(members) at every cell.  Counted, not
+    asserted -- read out of the report's own composition certificate, so the manuscript's "0
+    violations" is that count and not a literal in this file.  (It was a literal `return 0`; a
+    certificate whose violation total cannot be non-zero is the same defect class as the mechanism
+    deviation above.)"""
+    return len(R["v7"]["certificates"]["X2_composition_bounds"]["violations"])
+
+
+def _fuse_checks(R):
+    """The composition certificate's own check count: cell x threshold pairs, both edit operators."""
+    return R["v7"]["certificates"]["X2_composition_bounds"]["cells_checked"]
 
 
 def load_reports():

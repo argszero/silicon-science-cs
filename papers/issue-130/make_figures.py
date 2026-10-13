@@ -542,7 +542,16 @@ def captions():
     restored = [c for c in live if abs(c["fpr_reweighted_mean"] - v8["alpha"]) <= 0.05]
     worst = max(live, key=lambda c: c["fpr_mismatched_mean"] / c["fpr_matched_mean"])
     mech = v8["mechanism"]
-    v4r = v4["certificates"]["recall_bounds"]
+    # The composition law is certified twice: in the one-operator arm this figure is drawn from
+    # (v4, eps*-side) and in the two-operator re-measurement (v7, report certificate X2).  Both
+    # counts are the COMPOSED cells -- the cells the two inequalities are about -- so the caption
+    # and the body name one cell set at two operator scopes rather than two totals for one
+    # certificate (editor round 1, change 1: 96 = 2 x 48, the operator factor).
+    v7 = report("spike_v7_results.json")
+    n_v4 = sum(1 for k in v4["eps_star"] if "+" in k)
+    v_v4 = len(v4["certificates"]["eps_star_bounds"]["violations"])
+    n_v7 = sum(1 for k in v7["eps_star"] if "+" in k)
+    v_v7 = len(v7["certificates"]["X2_composition_bounds"]["violations"])
 
     return {
         "fig1_null_vs_length.svg":
@@ -596,9 +605,12 @@ def captions():
             "composition.** The boundary eps* of the two member statistics and of their OR and AND "
             "at FPR-matched operating points. OR recovers the robust member's boundary and AND "
             "inherits the brittle member's -- eps\\*(OR) >= max(members) and eps\\*(AND) <= "
-            "min(members), certified at all %d cells with %d violations, which is the whole price "
-            "and the whole recovery of composing two checks rather than choosing one."
-            % (v4r["cells"], len(v4r["violations"])),
+            "min(members), certified at all %d composed cells (6 statistic pairs x 2 compositions x "
+            "4 lengths) of the one-operator arm this figure is drawn from, with %d violations; the "
+            "same law re-measured under a second edit operator is certified at %d composed cells "
+            "with %d violations, which is the whole price and the whole recovery of composing two "
+            "checks rather than choosing one."
+            % (n_v4, v_v4, n_v7, v_v7),
     }
 
 

@@ -25,10 +25,11 @@ of slope {{law.dice2c.slope}} (`R^2 = {{law.dice2c.r2}}`, `n = {{law.dice2c.n}}`
 `1 - tau` the rising null eats rather than the edit count. Third, below a **certification floor** `L*`
 the null's own p95 is 0, so the matched threshold is 0 and every pair passes: the false-positive rate
 is 1.0, not alpha, and the cell is a hole in the operating characteristic rather than a reading of
-0.0000, at `L* = {{floor.jac3.a05}}` (word-3 Jaccard, alpha = 0.05) and {{floor.jac5.a05}} (word-5).
+0.0000, at `L* = {{floor.jac3.a05}}`-`{{floor.jac3.v2}}` (word-3 Jaccard, alpha = 0.05, the band the
+two definitions bracket) and {{floor.jac5.v2}}-{{floor.jac5.a05}} (word-5).
 On composition, a per-statistic operating point **does not compose**: OR recovers the robust member's
-boundary and AND inherits the brittle member's, certified at {{fuse.cells}} cells with {{fuse.viol}}
-violations. And the null is **stratified**: a check calibrated on a uniform population reads its rate
+boundary and AND inherits the brittle member's, certified at {{fuse.cells}} composed cells under both
+edit operators with {{fuse.viol}} violations. And the null is **stratified**: a check calibrated on a uniform population reads its rate
 inflated by up to 9.4x when the scan's per-stratum shares are skewed, and the repair is to reweight
 the null to the scan's own shares, not to move the threshold. Every number is resolved from a
 committed report by the build script that renders this manuscript.
@@ -80,13 +81,15 @@ the certification floor, the composition law and the stratification of the null.
    0.05).
 3. **A certification floor `L*`** (§6): where the fraction of unrelated null pairs exceeding 0 is
    below alpha, the null's p95 is 0, the matched threshold is 0, and the check's false-positive rate is
-   1.0. Below `L*` no threshold can certify a recall claim at that level; `L*` is {{floor.jac3.a05}}
-   for word-3 Jaccard and {{floor.jac5.a05}} for word-5 at alpha = 0.05, and it **decreases** as alpha
-   rises (alpha = 0.01 gives {{floor.jac3.a01}} for word-3).
+   1.0. Below `L*` no threshold can certify a recall claim at that level; `L*` is a **band**, measured at
+   {{floor.jac3.a05}}-{{floor.jac3.v2}} for word-3 Jaccard and {{floor.jac5.v2}}-{{floor.jac5.a05}} for
+   word-5 at alpha = 0.05 (the two definitions bracket it, §6), and it **decreases** as alpha rises
+   (alpha = 0.01 gives {{floor.jac3.a01}} for word-3).
 4. **A composition law** (§7): a fusion of two statistics at their own matched operating points
-   satisfies `eps*(OR) >= max(eps*)` and `eps*(AND) <= min(eps*)` at every cell ({{fuse.cells}} cells,
-   {{fuse.viol}} violations), so OR buys the robust member's boundary at the price of the
-   false-positive rate and AND buys the brittle member's — the two compositions are the two ends of
+   satisfies `eps*(OR) >= max(eps*)` and `eps*(AND) <= min(eps*)` at every one of its {{fuse.cells}}
+   composed cells — 6 statistic pairs x 2 compositions x 4 lengths, measured under both edit
+   operators — with {{fuse.viol}} violations, so OR buys the robust member's boundary at the price of
+   the false-positive rate and AND buys the brittle member's — the two compositions are the two ends of
    one trade rather than two designs.
 5. **The null key and the stratum weights are declared parameters** (§8, §10). The comparison p95 must
    be drawn under the same *key* as the judged pair (a length ratio of 2 moves the false-positive rate
@@ -312,7 +315,11 @@ artefact makes a check *safer* at a fixed threshold.
 **The mechanism certificate.** That the driver is the *headroom* `1 - tau` and not the edit count is
 tested, not asserted. The certificate predicts `eps*` for each statistic and length from its measured
 decay curve and its measured threshold and compares with the measured `eps*`: {{mech.cells}} cells,
-worst absolute deviation **{{mech.worst}}** (grid resolution 0.05). The prediction is informative
+worst absolute deviation **{{mech.worst}}** (grid resolution 0.05), at {{mech.worst.stat}} /
+`L = {{mech.worst.l}}`. A certificate whose worst cell sat at the resolution it is read to would carry
+no information: this one is read at that resolution and is not zero — the crossing is solved from the
+curve and the threshold alone, so it can land anywhere inside a grid step, and it lands furthest from
+the measured boundary exactly where the headroom has collapsed. The prediction is informative
 because the headroom falls exactly where the boundary does — char-bigram Dice's headroom is
 {{mech.headroom.dice2c.l40}} at `L = {{l_first}}` and {{mech.headroom.dice2c.l3000}} at
 `L = {{l_last}}`, so a fixed edit rate leaves a shrinking gap between the perturbed score and the
@@ -333,11 +340,16 @@ has a location.
 Let `share(L)` be the fraction of unrelated same-length null pairs whose similarity exceeds 0. Where
 `share(L) < alpha`, the null has no positive p95, so the matched threshold is 0 and the false-positive
 rate is 1.0 — a **hole** in the operating characteristic, not a reading of 0.0000. The floor is the
-first length at which `share(L) >= alpha`. Measured two ways — `share` reaching alpha, and the null's
-p95 becoming positive — the floor is {{floor.jac3.a05}} for word-3 Jaccard and {{floor.jac5.a05}} for
-word-5 Jaccard at alpha = 0.05; an independent floor probe reads {{floor.jac3.v2}} and
-{{floor.jac5.v2}} for the same two statistics, and at alpha = 0.01 the word-3 floor moves out to
-{{floor.jac3.a01}}.
+first length at which `share(L) >= alpha`. On that definition the floor is {{floor.jac3.a05}} for
+word-3 Jaccard and {{floor.jac5.a05}} for word-5 at alpha = 0.05, and it moves out to
+{{floor.jac3.a01}} for word-3 at alpha = 0.01. An independent definition — the smallest length at
+which the null's p95 becomes positive, bisected on a finer grid — locates the same floor at
+{{floor.jac3.v2}} and {{floor.jac5.v2}}. The two definitions therefore **bracket** `L*` rather than
+agreeing on a point: `L*` is a **band**, {{floor.jac3.a05}}–{{floor.jac3.v2}} for word-3 and
+{{floor.jac5.v2}}–{{floor.jac5.a05}} for word-5 at alpha = 0.05. The share screen is the coarser of the
+two readings — it is read on the instrument's own length grid and, below the floor, `share(L)` is an
+estimate over a finite null — which is why the floor is reported with the span of the instrument that
+located it rather than as a single length.
 
 Three consequences. (i) The floor is the *false-negative* analogue of the rule-of-three false-positive
 bound: both are statements about what a corpus of a given size can certify, and a specification that
@@ -361,7 +373,10 @@ the statistic, is the unit of composition), the fused boundary satisfies
 
     eps*(OR) >= max( eps*(member) )      and      eps*(AND) <= min( eps*(member) ),
 
-certified at {{fuse.cells}} cells with **{{fuse.viol}} violations**. Table 4 reports the readings at
+certified at all {{fuse.cells}} composed cells — 6 statistic pairs x 2 compositions x 4 lengths, under
+**both edit operators** ({{fuse.checks}} cell x threshold checks) — with **{{fuse.viol}} violations**,
+and at all {{fuse.cells.v4}} composed cells with {{fuse.viol.v4}} violations in the one-operator arm
+Figure 5 is drawn from. Table 4 reports the readings at
 `L = 150` for one pair.
 
 **Table 4. A fusion recovers one member's boundary and inherits the other's.**
@@ -527,7 +542,10 @@ refutation is the load-bearing novelty.
 - **P4 — a certification floor exists: CONFIRMED.** The registration predicted a minimum length below
   which no threshold can certify a recall claim at a stated level. It exists, it is located
   ({{floor.jac3.a05}} for word-3 at alpha = 0.05, {{floor.jac5.a05}} for word-5), it moves the right
-  way with the level ({{floor.jac3.a01}} at alpha = 0.01), and two independent definitions agree on it.
+  way with the level ({{floor.jac3.a01}} at alpha = 0.01). Two independent definitions **bracket** it
+  rather than agreeing on a point — the share screen reads {{floor.jac3.a05}} where the p95 probe reads
+  {{floor.jac3.v2}} for word-3 at alpha = 0.05 — so `L*` is registered and reported **with its band**
+  (criterion (v) below), and below the band's lower end the honest reading is still "no operating point".
 
 **Success criteria.** (i) `R(eps; tau, L)` measured on real text at a length grid of {{n_l}} points
 spanning {{l_span}}x — **MET**. (ii) `eps*(L)` with a flatness test — **MET**, and the test refuted the

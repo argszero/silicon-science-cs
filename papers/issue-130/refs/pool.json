@@ -68,11 +68,12 @@
   "cited_title": "On the Resemblance and Containment of Documents",
   "container": "Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171)",
   "id": "10.1109/sequen.1997.666900",
-  "published": "",
+  "published": "1997",
   "query": "bibliographic:On the Resemblance and Containment of Documents",
   "source": "crossref",
   "title": "On the resemblance and containment of documents",
-  "title_match": 1.0
+  "title_match": 1.0,
+  "year_source": "container-title fallback: Crossref carries no issued date for this record (10.1109/sequen.1997.666900); the year is read from the record's own text"
  },
  "10.1111/j.2517-6161.1995.tb02031.x": {
   "authors": [

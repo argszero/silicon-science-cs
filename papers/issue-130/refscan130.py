@@ -182,6 +182,38 @@ def arxiv_search(query, max_results=40):
     return out
 
 
+YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
+
+
+def fallback_year(container, doi):
+    """A publication year read out of the record's OWN strings, for a record Crossref dates nowhere.
+
+    Measured on `10.1109/sequen.1997.666900` (Broder 1997): its Crossref record carries no `issued`,
+    `published-print` or `published-online`, so the pool entry was built with an EMPTY year and the
+    manuscript rendered `Broder, A. ()` where the other 135 entries print a year (editor round 1,
+    defect 4).  Crossref has not lost the year -- the record's own container title says
+    `... Compression and Complexity of SEQUENCES 1997 ...` and the DOI's suffix says `sequen.1997` --
+    so the fallback reads the LAST year token in the container title and, failing that, the year in
+    the DOI's suffix.  Nothing is remembered: both are fields of the record being read, and the
+    caller records which route was used, so a fallback year is never mistaken for an issued one.
+    Returns (year, source) or (None, None).
+    """
+    for source, text in (("container-title", container), ("doi-suffix", doi)):
+        years = YEAR_RE.findall(text or "")
+        if years:
+            return years[-1], source + " fallback"
+    return None, None
+
+
+def issued_year(m):
+    """The year of a Crossref record and the field it came from: Crossref's own dates when it has
+    one, the record's own text otherwise (`fallback_year`)."""
+    for k in ("published-print", "published-online", "issued"):
+        if m.get(k, {}).get("date-parts"):
+            return str(m[k]["date-parts"][0][0]), k
+    return fallback_year((m.get("container-title") or [""])[0], m.get("DOI", ""))
+
+
 def cr_title(m):
     """The FULL title of a Crossref record: `title` joined with `subtitle`.  Crossref splits a
     two-part title across two fields, so reading only `title` truncates the record -- measured live:
@@ -205,20 +237,20 @@ def crossref_by_title(title):
         t = cr_title(m)
         sc = title_matches(title, t)
         if best is None or sc > best[2]:
-            year = None
-            for k in ("published-print", "published-online", "issued"):
-                if m.get(k, {}).get("date-parts"):
-                    year = m[k]["date-parts"][0][0]
-                    break
-            best = (m.get("DOI", ""), t, sc, year,
+            year, ysrc = issued_year(m)
+            best = (m.get("DOI", ""), t, sc, year, ysrc,
                     (m.get("container-title") or [""])[0],
                     ["%s %s" % (a.get("given", ""), a.get("family", "")) for a in m.get("author", [])][:8])
     if best is None:
         return None
-    doi, t, sc, year, cont, auth = best
-    return {"source": "crossref", "id": doi, "title": t, "authors": auth,
-            "published": str(year or ""), "container": cont,
-            "cited_title": title, "title_match": round(sc, 3), "query": "bibliographic:" + title}
+    doi, t, sc, year, ysrc, cont, auth = best
+    rec = {"source": "crossref", "id": doi, "title": t, "authors": auth,
+           "published": str(year or ""), "container": cont,
+           "cited_title": title, "title_match": round(sc, 3), "query": "bibliographic:" + title}
+    if ysrc and ysrc not in ("issued", "published-print", "published-online"):
+        rec["year_source"] = ("%s: Crossref carries no issued date for this record (%s); the year is "
+                              "read from the record's own text" % (ysrc, doi))
+    return rec
 
 
 def arxiv_by_title(title, max_results=6):
