@@ -50,6 +50,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REFDIR = os.path.join(HERE, "refs")
 RAW = os.path.join(REFDIR, "raw.json")
 POOL = os.path.join(REFDIR, "pool.json")
+RECEIPT_CV = os.path.join(HERE, "citation-verification.json")   # written by --verify, read by --gate
+ISSUE = 132
 UA = "silicon-science-cs-refscan/1.0 (journal reference verification)"
 ATOM = "{http://www.w3.org/2005/Atom}"
 
@@ -142,6 +144,7 @@ def _write(path, obj):
             fh.write(obj)
         else:
             json.dump(obj, fh, indent=1, sort_keys=True)
+            fh.write("\n")   # a JSON file this tool writes ends with a newline, as text files do
         fh.flush()
         os.fsync(fh.fileno())
     os.replace(tmp, path)
@@ -225,6 +228,38 @@ def cr_title(m):
     return ("%s: %s" % (t, sub)) if sub and sub.lower() not in t.lower() else t
 
 
+YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
+
+
+def fallback_year(container, doi):
+    """A publication year read out of the record's OWN strings, for a record Crossref dates nowhere.
+
+    Measured on `10.1109/sequen.1997.666900` (Broder 1997): its Crossref record carries no `issued`,
+    `published-print` or `published-online`, so the pool entry was built with an EMPTY year, and the
+    manuscript rendered `Broder, A. ()` where the other entries print one (the editor's round-1
+    change 1).  The year is not lost -- the record's own container title says
+    `... Compression and Complexity of SEQUENCES 1997 ...` and the DOI's suffix says `sequen.1997` --
+    so the fallback reads the LAST year token in the container title and, failing that, the year in
+    the DOI's suffix.  Nothing is remembered: both are fields of the record being read, and the
+    caller records which route was used, so a fallback year is never mistaken for an issued one.
+    Returns (year, source) or (None, None) -- an undated record stays undated rather than invented.
+    """
+    for source, text in (("container-title", container), ("doi-suffix", doi)):
+        years = YEAR_RE.findall(text or "")
+        if years:
+            return years[-1], source + " fallback"
+    return None, None
+
+
+def issued_year(m):
+    """The year of a Crossref record and the field it came from: Crossref's own dates when it has
+    one, the record's own text otherwise (`fallback_year`)."""
+    for k in ("published-print", "published-online", "issued"):
+        if m.get(k, {}).get("date-parts"):
+            return str(m[k]["date-parts"][0][0]), k
+    return fallback_year((m.get("container-title") or [""])[0], m.get("DOI", ""))
+
+
 def crossref_by_title(title):
     """Search Crossref for a work BY TITLE; return the best candidate with its two-sided match."""
     url = ("https://api.crossref.org/works?rows=5&query.bibliographic="
@@ -235,20 +270,20 @@ def crossref_by_title(title):
         t = cr_title(m)
         sc = title_matches(title, t)
         if best is None or sc > best[2]:
-            year = None
-            for k in ("published-print", "published-online", "issued"):
-                if m.get(k, {}).get("date-parts"):
-                    year = m[k]["date-parts"][0][0]
-                    break
-            best = (m.get("DOI", ""), t, sc, year,
+            year, ysrc = issued_year(m)
+            best = (m.get("DOI", ""), t, sc, year, ysrc,
                     (m.get("container-title") or [""])[0],
                     ["%s %s" % (a.get("given", ""), a.get("family", "")) for a in m.get("author", [])][:8])
     if best is None:
         return None
-    doi, t, sc, year, cont, auth = best
-    return {"source": "crossref", "id": doi, "title": t, "authors": auth,
-            "published": str(year or ""), "container": cont,
-            "cited_title": title, "title_match": round(sc, 3), "query": "bibliographic:" + title}
+    doi, t, sc, year, ysrc, cont, auth = best
+    rec = {"source": "crossref", "id": doi, "title": t, "authors": auth,
+           "published": str(year or ""), "container": cont,
+           "cited_title": title, "title_match": round(sc, 3), "query": "bibliographic:" + title}
+    if ysrc and ysrc not in ("issued", "published-print", "published-online"):
+        rec["year_source"] = ("%s: Crossref carries no issued date for this record (%s); the year is "
+                              "read from the record's own text" % (ysrc, doi))
+    return rec
 
 
 def arxiv_by_title(title, max_results=6):
@@ -362,18 +397,31 @@ def curate():
 def _arxiv_titles(ids, chunk=20):
     """Fetch titles for many arXiv ids in BATCHES.  `max_results` is set to the chunk's own size
     (the API caps at 10 otherwise, and the shortfall then looks like absent records) and the
-    returned count is checked.  A failed batch is a TRANSPORT failure, never a finding."""
+    returned count is checked.  A failed batch is a TRANSPORT failure, never a finding.
+
+    A failed batch is RETRIED once after a longer pause: measured live, a burst rate limit (HTTP
+    429) lands on the first batch of a fresh pass and every later batch -- spaced 12 s -- succeeds,
+    so giving up on the first refusal turns a throttle into a permanent hole in the receipt."""
     out = {}
     failed = 0
     for i in range(0, len(ids), chunk):
         part = ids[i:i + chunk]
         url = ("https://export.arxiv.org/api/query?id_list=" + ",".join(part)
                + "&max_results=%d" % len(part))
-        try:
-            root = ET.fromstring(_get(url).decode("utf-8", "replace"))
-        except Exception as e:
-            print("    [batch %d-%d] TRANSPORT FAILURE: %s" % (i, i + len(part), e), flush=True)
-            failed += 1
+        root = None
+        for attempt in (1, 2):
+            try:
+                root = ET.fromstring(_get(url).decode("utf-8", "replace"))
+                break
+            except Exception as e:
+                if attempt == 1:
+                    print("    [batch %d-%d] TRANSPORT: %s -- retrying after 45 s"
+                          % (i, i + len(part), e), flush=True)
+                    time.sleep(45.0)
+                    continue
+                print("    [batch %d-%d] TRANSPORT FAILURE: %s" % (i, i + len(part), e), flush=True)
+                failed += 1
+        if root is None:
             continue
         got = root.findall(ATOM + "entry")
         if len(got) < len(part):
@@ -417,10 +465,58 @@ def verify():
         mismatch += 0 if good else 1
         time.sleep(0.8)
     total = len(pool)
+    # THE RECEIPT IS WRITTEN HERE, by the pass that produces its numbers.  It was a committed file
+    # that named this instrument and that NOTHING wrote (only prose pointed at it), so it could only
+    # ever go stale -- and the offline gate now compares its composition against the pool, which
+    # makes a pool edit without a re-verification a FAILING gate rather than a silent drift.
+    #
+    # And it is written ONLY by a CLEAN pass.  A receipt is a claim that the pool WAS verified; a
+    # pass under a rate limit verified 236 of 256, and writing that over the shipped record would
+    # replace a claim about the pool with a claim about the outage (measured live this round: the
+    # first draft of this writer did exactly that).  A non-clean pass reports and leaves the
+    # previous receipt alone, and the gate then fails on the composition mismatch -- which is the
+    # correct state: the layer is unverified until a clean pass re-derives it.
+    clean = (mismatch == 0 and transport == 0)
+    if clean:
+        receipt = {
+            "instrument": "%s" % os.path.basename(__file__),
+            "issue": ISSUE,
+            "notes": [
+                "every entry discovered by this tool; nothing typed from memory",
+                "the check is the returned TITLE vs the stored title, two-sided (min of the two coverage fractions)",
+                "an old-style arXiv id keeps its archive prefix (cs/0609060), a defect that made one batch fail HTTP 400",
+                "written by `--verify` (clean passes only); `--gate` (offline) refuses a receipt whose composition is not the pool's",
+            ],
+            "pool": {
+                "arxiv": len(arxiv_keys),
+                "canonical": sum(1 for v in pool.values() if v.get("canonical")),
+                "crossref": sum(1 for v in pool.values() if v["source"] == "crossref"),
+                "total": total,
+            },
+            "sources": {
+                "arxiv_id_list": "verification",
+                "arxiv_search_query": "discovery",
+                "crossref_query_bibliographic": "canonical works, found BY TITLE",
+                "crossref_works_doi": "verification",
+            },
+            "subject": ("the background frame of a similarity guard "
+                        "(corpus-wide DF threshold / stopword list)"),
+            "title_match_threshold": 0.8,
+            "verification": {
+                "title_mismatch": mismatch,
+                "transport_unknown": transport,
+                "verified": ok,
+            },
+        }
+        _write(RECEIPT_CV, receipt)
+        print("wrote citation-verification.json (%d verified / %d)" % (ok, total))
+    else:
+        print("NOT WRITTEN: the pass was not clean (%d verified, %d transport-unknown) -- "
+              "citation-verification.json is left as it stands" % (ok, transport))
     print("VERIFIED %d / %d ; TITLE MISMATCH %d ; TRANSPORT-UNKNOWN %d (batches failed: %d)"
           % (ok, total, mismatch, transport, failed_batches))
     print("a nonzero TRANSPORT-UNKNOWN is an OUTAGE, not evidence about the records -- re-run later")
-    return 0 if (mismatch == 0 and transport == 0) else 1
+    return 0 if clean else 1
 
 
 def report():
@@ -453,33 +549,77 @@ def report():
     print("wrote reference-pool.md (%d entries)" % len(pool))
 
 
+def duplicate_title_groups(pool):
+    """The pool's duplicate titles, compared NORMALISED (`norm`: case-folded, accents stripped,
+    punctuation collapsed) rather than by `.lower()`.
+
+    The check's name has always been "one paper, one entry"; its predicate was `v["title"].lower()`,
+    and that is weaker than its name in exactly the way that matters: the one duplicate the pool
+    carried -- `SourcererCC: Scaling Code Clone Detection to Big Code` (arXiv 1512.06448) against
+    `SourcererCC: scaling code clone detection to big-code` (the ICSE-2016 proceedings,
+    10.1145/2884781.2884877) -- differs only in CASE and a hyphen, so the raw comparison passed and
+    one work entered the bibliography twice (the editor's round-1 change 2).  The normaliser the file
+    already uses for title matching is the right comparison for identity of title; using it here is
+    the repair, not a loosening.
+    """
+    groups = {}
+    for k, v in pool.items():
+        groups.setdefault(norm(v.get("title")), []).append(k)
+    return {t: ks for t, ks in groups.items() if len(ks) > 1}
+
+
+def pool_checks(pool, receipt, listed):
+    """Every OFFLINE predicate the reference layer states, as (label, ok) pairs.
+
+    Factored out of `gate()` so the selftest can plant a defect IN the object each predicate reads and
+    require the predicate to fire (a plant that is a re-typed paraphrase of the predicate is the
+    defect Class 197 names).  `receipt` is `citation-verification.json` and `listed` the row count of
+    the rendered `reference-pool.md`.
+    """
+    return [
+        ("the pool carries at least 100 entries (the journal's floor)", len(pool) >= 100),
+        ("every entry has an id, a source, a non-empty title and a YEAR VALUE",
+         all(v.get("id") and v.get("source") in ("arxiv", "crossref")
+             and (v.get("title") or "").strip() and (v.get("published") or "").strip()
+             for v in pool.values())),
+        ("the pool has no duplicate TITLE (one paper, one entry; normalised comparison)",
+         not duplicate_title_groups(pool)),
+        ("every key is its own id (a key that cannot round-trip is not an identifier)",
+         all(k == v["id"] for k, v in pool.items())),
+        ("an old-style arXiv id keeps its archive prefix",
+         not any(v["source"] == "arxiv" and re.match(r"^\d{7}$", k) for k, v in pool.items())),
+        ("reference-pool.md lists exactly the pool (%d)" % len(pool), listed == len(pool)),
+        # The receipt is a claim about the pool it was taken over, and nothing re-derived it before:
+        # it named its instrument and carried counts that only a live pass produces, so a pool edit
+        # left it stale and silent (Class 193).  A receipt whose COMPOSITION is not the pool's is a
+        # receipt about another object.
+        ("the verification receipt describes THIS pool (composition and coverage)",
+         receipt is not None
+         and receipt.get("pool", {}).get("total") == len(pool)
+         and receipt.get("pool", {}).get("arxiv") == sum(1 for v in pool.values() if v["source"] == "arxiv")
+         and receipt.get("pool", {}).get("crossref") == sum(1 for v in pool.values() if v["source"] == "crossref")
+         and receipt.get("verification", {}).get("verified") == len(pool)
+         and receipt.get("issue") == ISSUE),
+    ]
+
+
 def gate():
-    """The OFFLINE check: the network verification is a separate, documented pass (see
-    reference-check.md); this gate asserts the shipped pool is complete and internally consistent,
-    so `reproduce.sh` can check the reference layer without touching the network."""
+    """The OFFLINE check: the network verification is a separate, documented pass (`--verify`, whose
+    output IS `citation-verification.json`); this gate asserts the shipped pool, its rendered index
+    and its receipt are complete and agree with one another, so `reproduce.sh` can check the whole
+    reference layer without touching the network."""
     pool = json.load(open(POOL))
-    checks = []
-    checks.append(("the pool carries at least 100 entries (the journal's floor)", len(pool) >= 100))
-    checks.append(("every entry has an id, a source, a non-empty title and a year",
-                   all(v.get("id") and v.get("source") in ("arxiv", "crossref")
-                       and (v.get("title") or "").strip() and "published" in v
-                       for v in pool.values())))
-    checks.append(("the pool has no duplicate TITLE (one paper, one entry)",
-                   len({v["title"].lower() for v in pool.values()}) == len(pool)))
-    checks.append(("every key is its own id (a key that cannot round-trip is not an identifier)",
-                   all(k == v["id"] for k, v in pool.items())))
-    checks.append(("an old-style arXiv id keeps its archive prefix",
-                   not any(v["source"] == "arxiv" and re.match(r"^\d{7}$", k)
-                           for k, v in pool.items())))
+    receipt = json.load(open(RECEIPT_CV)) if os.path.exists(RECEIPT_CV) else None
     md = open(os.path.join(HERE, "reference-pool.md"), encoding="utf-8").read()
     listed = sum(1 for line in md.splitlines() if line.startswith("| ") and " | " in line[2:]
                  and not line.startswith("| key "))
-    checks.append(("reference-pool.md lists exactly the pool (%d)" % len(pool),
-                   listed == len(pool)))
+    checks = pool_checks(pool, receipt, listed)
     bad = 0
     for lab, ok in checks:
         print("   %-4s %s" % ("ok" if ok else "FAIL", lab))
         bad += 0 if ok else 1
+    for t, ks in duplicate_title_groups(pool).items():
+        print("   note duplicate title: %s" % ", ".join(ks))
     print("GATE %d/%d" % (len(checks) - bad, len(checks)))
     return 1 if bad else 0
 
@@ -514,6 +654,73 @@ def selftest():
     holds("accept-split-subtitle", title_matches(
         "Winnowing: Local Algorithms for Document Fingerprinting",
         "Winnowing: local algorithms for document fingerprinting") >= 0.8)
+
+    # ---- the three pool predicates, each planted IN the object it reads (Class 197: a plant that is
+    # a re-typed paraphrase of the predicate tests the paraphrase, not the check).
+    pool = json.load(open(POOL))
+    receipt = json.load(open(RECEIPT_CV)) if os.path.exists(RECEIPT_CV) else None
+    md = open(os.path.join(HERE, "reference-pool.md"), encoding="utf-8").read()
+    listed = sum(1 for line in md.splitlines() if line.startswith("| ") and " | " in line[2:]
+                 and not line.startswith("| key "))
+
+    def check(label_frag, p, r, l):
+        for lab, ok in pool_checks(p, r, l):
+            if label_frag in lab:
+                return ok
+        raise AssertionError("no predicate named %r" % label_frag)
+
+    holds("healthy-pool-passes-every-predicate",
+          all(ok for _l, ok in pool_checks(pool, receipt, listed)))
+    # (a) an EMPTY year value is the defect the check's name asks about; the key's presence is not
+    planted = json.loads(json.dumps(pool))
+    victim = sorted(planted)[0]
+    planted[victim]["published"] = ""
+    holds("plant-empty-year-FIRES",
+          not check("YEAR VALUE", planted, receipt, len(planted)))
+    holds("plant-missing-year-key-FIRES",
+          not check("YEAR VALUE", {k: {kk: vv for kk, vv in v.items() if kk != "published"}
+                                   for k, v in pool.items()}, receipt, len(pool)))
+    # (b) the REAL duplicate, with both records' own strings: arXiv 1512.06448's title against the
+    # ICSE-2016 proceedings title (10.1145/2884781.2884877).  They differ in case AND in one hyphen,
+    # which is why the raw `.lower()` comparison reported no duplicate at all.  The plant is a MINIMAL
+    # pool holding exactly these two records -- so the two predicates are compared on one object, and
+    # the control is the defect itself rather than a mutation of the shipped pool (a plant that reuses
+    # the shipped pair would collide with the entries it is standing in for).
+    DUP_A = "SourcererCC: Scaling Code Clone Detection to Big Code"      # arXiv 1512.06448
+    DUP_B = "SourcererCC: scaling code clone detection to big-code"      # 10.1145/2884781.2884877
+    two = {"1512.06448": {"id": "1512.06448", "source": "arxiv", "title": DUP_A, "published": "2015-12-20"},
+           "10.1145/2884781.2884877": {"id": "10.1145/2884781.2884877", "source": "crossref",
+                                       "title": DUP_B, "published": "2016"}}
+    holds("two-entries-one-work: the normalised predicate FIRES",
+          list(duplicate_title_groups(two).values()) == [["1512.06448", "10.1145/2884781.2884877"]])
+    holds("two-entries-one-work: the raw .lower() comparison MISSES it (the repaired half)",
+          len({v["title"].lower() for v in two.values()}) == len(two))
+    # (c) a receipt taken over a DIFFERENT pool (one entry more, or another issue)
+    stale = json.loads(json.dumps(receipt))
+    stale["pool"]["total"] += 1
+    holds("plant-stale-receipt-count-FIRES",
+          not check("receipt describes THIS pool", pool, stale, listed))
+    other = json.loads(json.dumps(receipt))
+    other["issue"] = 130
+    holds("plant-receipt-for-another-issue-FIRES",
+          not check("receipt describes THIS pool", pool, other, listed))
+    holds("plant-missing-receipt-FIRES",
+          not check("receipt describes THIS pool", pool, None, listed))
+    holds("plant-index-row-count-FIRES",
+          not check("reference-pool.md lists exactly", pool, receipt, listed - 1))
+    # the fallback year: the real record shape, and four controls
+    holds("year-fallback-container-title",
+          fallback_year("Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171)",
+                        "10.1109/sequen.1997.666900") == ("1997", "container-title fallback"))
+    holds("year-fallback-doi-suffix",
+          fallback_year("Proceedings of ICSE", "10.1109/icse.1997.610000") == ("1997", "doi-suffix fallback"))
+    holds("year-fallback-leaves-a-dated-record-alone",
+          issued_year({"DOI": "10.1145/509907.509965", "container-title": ["STOC 2002"],
+                       "issued": {"date-parts": [[2002, 5, 19]]}}) == ("2002", "issued"))
+    holds("year-fallback-invents-nothing",
+          fallback_year("Some Venue", "10.9999/zzzz") == (None, None))
+    holds("year-fallback-takes-the-range-end",
+          fallback_year("Proceedings of the 1994-1996 Workshop", "10.9999/zzzz") == ("1996", "container-title fallback"))
     print("SELFTEST:", "ALL PASS" if ok else "A CHECK IS DECORATION")
     return 0 if ok else 1
 

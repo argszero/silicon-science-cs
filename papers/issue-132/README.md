@@ -52,7 +52,7 @@ cd papers/issue-132 && bash reproduce.sh
 | `spike_v3.py` | The null as a population: the filter chain, interval ownership and the joint profile |
 | `spike_v*_results.json` | The report each instrument emits; every manuscript number is read from one |
 | `refscan132.py` | The reference harvest + verifier: `--discover`/`--curate`/`--verify` (network) and `--gate`/`--selftest` (offline) |
-| `refs/pool.json` | The verified reference pool (257 entries, every one checked against a live record) |
+| `refs/pool.json` | The verified reference pool (256 entries, every one checked against a live record) |
 | `reference-pool.md` / `reference-check.md` | The pool table and the verification report |
 | `refgate-journal.txt` | The journal reference gate's verbatim output -- the committed receipt `reference-check.md` embeds and `reproduce.sh` re-derives |
 | `make_figures.py` | The figure generator: deterministic SVG read from the reports, with a certificate |

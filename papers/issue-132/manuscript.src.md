@@ -177,7 +177,7 @@ reads a writer's population from an n-gram profile {ref:1707.07182} {ref:1707.08
 and the natural-frequency literature shows a text's statistics depend on the population it is drawn from
 {ref:0909.4385} {ref:1212.2616} {ref:1912.03570} {ref:2304.12191}. This paper's dilution law is that
 same dependence, measured for the units a frame is built from. Code clones are the same two-stage rule
-on a different artefact {ref:1512.06448} {ref:1911.00561} {ref:2002.05204} {ref:2006.14505}
+on a different artefact {ref:1911.00561} {ref:2002.05204} {ref:2006.14505}
 {ref:2105.11933} {ref:2110.01092} {ref:2110.10493} {ref:2111.14183} {ref:2204.01028} {ref:2204.07501}
 {ref:2205.04913} {ref:2206.04730} {ref:10.1145/2884781.2884877} {ref:10.1016/j.scico.2009.02.007},
 where the frame's level is undeclared in exactly the same way.

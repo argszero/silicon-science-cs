@@ -4,13 +4,14 @@
  "notes": [
   "every entry discovered by this tool; nothing typed from memory",
   "the check is the returned TITLE vs the stored title, two-sided (min of the two coverage fractions)",
-  "an old-style arXiv id keeps its archive prefix (cs/0609060), a defect that made one batch fail HTTP 400"
+  "an old-style arXiv id keeps its archive prefix (cs/0609060), a defect that made one batch fail HTTP 400",
+  "written by `--verify` (clean passes only); `--gate` (offline) refuses a receipt whose composition is not the pool's"
  ],
  "pool": {
-  "arxiv": 241,
+  "arxiv": 240,
   "canonical": 16,
   "crossref": 16,
-  "total": 257
+  "total": 256
  },
  "sources": {
   "arxiv_id_list": "verification",
@@ -23,6 +24,6 @@
  "verification": {
   "title_mismatch": 0,
   "transport_unknown": 0,
-  "verified": 257
+  "verified": 256
  }
 }

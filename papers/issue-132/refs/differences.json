@@ -32,7 +32,6 @@
  "1406.1143": "a near-duplicate detector at a fixed rule whose background is corpus-wide and undeclared -- the object this paper varies",
  "1411.5732": "stop-word removal or term filtering, the hand-built ancestor of a frame; a stop-list is a frame with a population fixed by hand, and this paper varies the population instead",
  "1412.7782": "a plagiarism / text-similarity detector evaluated with a fixed background (a stop-list or a corpus document-frequency cutoff); the level the background is computed at is not a variable there, which is this paper's",
- "1512.06448": "a code-clone detector at a fixed similarity threshold; clone detection is the same two-stage rule on a different artefact type, and the frame's level is undeclared there too",
  "1512.07046": "cross-lingual document similarity, where language is an axis of the comparison; the axis this paper varies is the population the background frame is drawn from, a different use of the same axis",
  "1606.09403": "cross-lingual document similarity, where language is an axis of the comparison; the axis this paper varies is the population the background frame is drawn from, a different use of the same axis",
  "1611.04122": "cross-lingual document similarity, where language is an axis of the comparison; the axis this paper varies is the population the background frame is drawn from, a different use of the same axis",

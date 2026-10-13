@@ -9,7 +9,7 @@ comparison, not the HTTP status.
 - sources: arXiv API `search_query` (discovery) + `id_list` (verification, batched with
   `max_results` set per chunk); Crossref `query.bibliographic` (canonical works, BY TITLE)
   and `works/<doi>` (verification)
-- pool: 257 entries (241 arXiv, 16 Crossref)
+- pool: 256 entries (240 arXiv, 16 Crossref)
 - an entry whose title does not match its live record is dropped, never kept
 
 | key | source | verified against | title |
@@ -47,7 +47,6 @@ comparison, not the HTTP status.
 | 1406.1143 | arxiv | arXiv id_list | Identifying Duplicate and Contradictory Information in Wikipedia |
 | 1411.5732 | arxiv | arXiv id_list | A Joint Probabilistic Classification Model of Relevant and Irrelevant Sentences in Mathematical  |
 | 1412.7782 | arxiv | arXiv id_list | Plagiarism Detection on Electronic Text based Assignments using Vector Space Model (ICIAfS14) |
-| 1512.06448 | arxiv | arXiv id_list | SourcererCC: Scaling Code Clone Detection to Big Code |
 | 1512.07046 | arxiv | arXiv id_list | News Across Languages - Cross-Lingual Document Similarity and Event Tracking |
 | 1606.09403 | arxiv | arXiv id_list | Learning Crosslingual Word Embeddings without Bilingual Corpora |
 | 1611.04122 | arxiv | arXiv id_list | Cross-lingual Dataless Classification for Languages with Small Wikipedia Presence |
