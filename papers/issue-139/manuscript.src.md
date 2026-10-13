@@ -31,8 +31,8 @@ verification budget must be sized from the frontier and the DAG, never from a pa
 
 **Contribution level: `theory+empirics`.** A declared stochastic model with a closed-form anchor, an
 exact instrument with ground truth by construction over a declared grid, an exhaustive theorem, and
-explicit baselines (four schedules, a permutation control, a zero-coupling control and a closed-form
-oracle).
+explicit baselines (four schedules — difficulty-greedy, assumptions-first, a fixed order and a permuted
+placebo — a zero-coupling control and a closed-form oracle).
 
 ## 1. Introduction
 
@@ -254,6 +254,22 @@ distributions (uniform, easy, hard-root, bimodal, Zipf), {{v1.cs}} coupling leve
 is an ordering effect with no coupling under test. **{{v1.ctrl.excl}} control cells are excluded from
 every treatment count**, and each count below states its denominator.
 
+**The delivered schedule set, and the registration's baseline list.** The four schedules above are the
+three rules of §3.1 — difficulty-greedy, assumptions-first and a fixed order — plus the seeded
+**permuted placebo**, and the registration's list named two rules the instrument does not carry: a
+**random** schedule and a **breadth-first** order. Each is absent for a reason the model itself gives.
+A *random* schedule is a distribution over maps, not the single deterministic map §3.1 defines a
+schedule to be, so it has no frontier to enumerate exactly and every cell would become a Monte Carlo
+read; the ordering it was meant to control is carried instead by the **seeded permuted placebo**, which
+is deterministic and therefore exactly enumerable, and §5.2 shows that placebo is itself the wrong
+control for the coupling — a finding about the registered design, not a gap in it. A *breadth-first*
+order is one specific topological order applied at every state, i.e. a member of the delivered
+**fixed-order** family, not a distinct rule. No result reported for P2 or P3 rests on either dropped
+baseline: P2's coupling effect is the **same schedule on the graph with its edges removed** (§5.2), and
+P3 compares the two state-dependent rules (difficulty-greedy against assumptions-first) with that same
+delivered placebo as its control — every quantity those two priors are decided on comes from one of the
+four schedules that were run.
+
 ## 4. Registered prior beliefs, and what the study found
 
 The priors below were registered before the deciding runs, and each is reported against its measured
@@ -468,7 +484,9 @@ reports and asserts 27 of the paper's headline numbers against them, so a number
 stops agreeing with a report fails the reproduction rather than the reader. The **plants** are four
 deliberately broken inputs (a report, a battery, a report, and the claims leg) that must each fire,
 so the checks are tests and not restatements. The **cross-build leg** re-runs the instrument on
-CPython 3.9.6, 3.12.12 and 3.13.9, because an `exact` tolerance is a claim about a build.
+CPython **3.12.12 and 3.13.9** — the pair straddling the 3.12 `sum()` change — because an `exact`
+tolerance is a claim about a build; an earlier reading on 3.9.6 was taken with an interpreter that is
+not on this machine's PATH now, so it is not counted here.
 
 The expected output and its tolerance are stated in `README.md`; the figures are regenerated and
 compared byte-for-byte against the shipped set; the reference layer is checked offline by `--gate`
