@@ -100,7 +100,7 @@
  "2006.15254": "Optimizing the cuckoo filter for burst tolerance and throughput -- a system tuning result.",
  "2009.07914": "WarpCore -- a GPU hash-table library, throughput not probes.",
  "2010.01890": "Generalized cuckoo hashing with a stash revisited -- thresholds and constructions, no probe distribution.",
- "2010.08287": "Multiset synchronization with counting cuckoo filters -- an application.",
+ "2010.08287": "Power of two choices deployed for edge network-slicing resource assignment -- an application of the heuristic; no probe-count tail is measured.",
  "2011.02653": "Spatially constrained power-of-two-choices -- the load law under a spatial constraint.",
  "2012.06613": "Calculable error bounds for the power-of-two-choices mean-field model -- finite-size corrections to the LOAD law; this paper's finite-size control is over the PROBE tail.",
  "2104.05093": "Load balancing with a dynamic set of balls and bins -- load with dynamics.",

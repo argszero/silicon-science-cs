@@ -245,10 +245,10 @@ load at which it was read.
 **Reproduction.** `bash reproduce.sh` re-runs all four instruments from their own code and compares each
 fresh report **byte-for-byte** (`Tolerance: exact`) against the report this package ships, then re-runs
 the figure certificate and the reference gate. The robustness control is C5: at `alpha = 0.95` the
-classical form's mean absolute deviation falls {{v0.fs.m4096}} → {{v0.fs.m65536}} as `m` grows
-`4096 → 262144` (n = {{v0.fs.n}} at the largest size). The fall is the expected finite-size effect and it
-is *why the formula is a finite-size statement at all*: at `m = 16384` the seed signs cancel and the
-absolute mean deviation **dips** to {{v0.fs.m16384}}, a reminder that a single-size comparison of a
+classical form's `|mean deviation|` falls {{v0.fs.m4096}} → {{v0.fs.m65536}} as `m` grows
+`4096 → 65536` (n = {{v0.fs.n}} at the largest size). The fall is the expected finite-size effect and it
+is *why the formula is a finite-size statement at all*: at `m = 16384` the seed signs cancel and its
+`|mean deviation|` **dips** to {{v0.fs.m16384}}, a reminder that a single-size comparison of a
 mean is not a measurement of a tail.
 
 ## 4. P1: the classical forms answer for the mean, and the mean is not one object

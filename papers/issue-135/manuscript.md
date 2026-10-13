@@ -225,10 +225,10 @@ load at which it was read.
 **Reproduction.** `bash reproduce.sh` re-runs all four instruments from their own code and compares each
 fresh report **byte-for-byte** (`Tolerance: exact`) against the report this package ships, then re-runs
 the figure certificate and the reference gate. The robustness control is C5: at `alpha = 0.95` the
-classical form's mean absolute deviation falls 0.489 → 0.090 as `m` grows
-`4096 → 262144` (n = 62259 at the largest size). The fall is the expected finite-size effect and it
-is *why the formula is a finite-size statement at all*: at `m = 16384` the seed signs cancel and the
-absolute mean deviation **dips** to 0.028, a reminder that a single-size comparison of a
+classical form's `|mean deviation|` falls 0.489 → 0.090 as `m` grows
+`4096 → 65536` (n = 62259 at the largest size). The fall is the expected finite-size effect and it
+is *why the formula is a finite-size statement at all*: at `m = 16384` the seed signs cancel and its
+`|mean deviation|` **dips** to 0.028, a reminder that a single-size comparison of a
 mean is not a measurement of a tail.
 
 ## 4. P1: the classical forms answer for the mean, and the mean is not one object
@@ -645,7 +645,7 @@ every citation is drawn from a pool verified against its live record.
 
 [71] Goodrich, M. T. (2017). Answering Spatial Multiple-Set Intersection Queries Using 2-3 Cuckoo Hash-Filters. arXiv:1708.09059. https://arxiv.org/abs/1708.09059 — Difference: 2-3 cuckoo hash-filters for set intersection -- a variant.
 
-[72] Esteves, J. J. A.; Boubendir, A.; Guillemin, F.; et al. (2020). Heuristic for Edge-enabled Network Slicing Optimization using the Power of Two Choices. arXiv:2010.08287. https://arxiv.org/abs/2010.08287 — Difference: Multiset synchronization with counting cuckoo filters -- an application.
+[72] Esteves, J. J. A.; Boubendir, A.; Guillemin, F.; et al. (2020). Heuristic for Edge-enabled Network Slicing Optimization using the Power of Two Choices. arXiv:2010.08287. https://arxiv.org/abs/2010.08287 — Difference: Power of two choices deployed for edge network-slicing resource assignment -- an application of the heuristic; no probe-count tail is measured.
 
 [73] Mitzenmacher, M. (2001). The power of two choices in randomized load balancing. IEEE Transactions on Parallel and Distributed Systems. https://doi.org/10.1109/71.963420 — Difference: The power of two choices in randomized load balancing -- the maximum-load law; this paper's tail is over PROBES, not over bin loads.
 
