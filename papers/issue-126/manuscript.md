@@ -15,14 +15,15 @@ before it was run.
 
 (i) **The precision floor is real and it is set by the accumulator, not by truncation.** Extra limbs stop
 paying at a `K*` that grows with the accumulator width, and the reachable error floors at `c * kappa1 *
-u` with `c` measured in `[0.27, 1.60]` across three formats **on the 14-matrix corpus** -- so limbs cannot rescue a too-narrow
-register, and the floor is the admission limit on the accuracy budget.
+u` with `c` measured in `[0.27, 1.60]` across three formats **on the 10 matrices that reach the band**
+(of a 14-matrix corpus; §5.2 states which contribute and why the others do not) -- so limbs cannot
+rescue a too-narrow register, and the floor is the admission limit on the accuracy budget.
 
 (ii) **The classic single-scalar account is refuted in its sharp form.** The backward-error scaling `E
 ~ kappa1 * u` is recovered only in the high-conditioning tail (exponent 0.94-1.00 for `kappa1 >= 10`);
 over the bulk the floor grows more slowly (0.64-0.74), and, decisively, at a **fixed** `kappa1` band
-`[1, 1.5)` the constant varies **3.1-5.8x across the 14 matrices**. Two problems with equal condition number do
-not have equal accuracy, and the residual is not another power of `kappa1`.
+`[1, 1.5)` the constant varies **3.1-5.8x across the 10 matrices that reach the band**. Two problems
+with equal condition number do not have equal accuracy, and the residual is not another power of `kappa1`.
 
 (iii) **A third design axis had been missing: the reduction structure.** Permuting only the summation
 order, at exactly fixed conditioning, moves the floor by a median **78.0x** (up to 209.6x) in fp32 --
@@ -225,7 +226,10 @@ gives the true value with no error model at all. The instruments therefore measu
 - **Real matrices**: 14 matrices from the SuiteSparse collection [105],
   committed with `SHA256SUMS` and **re-hashed on every read**; a hash mismatch aborts the run before a
   number is produced. Entries are scaled to the format's width by an exact power of two, so the operand
-  width is the format's own and no scaling error enters.
+  width is the format's own and no scaling error enters. **Not every matrix yields a measured floor**: three
+of the 14 -- `ash219`, `ash292` and `ash85` -- produce no rounding case at all at these widths (every case
+is exactly representable or has an exactly-zero floor), so there is no `E_floor` to divide; §5.2 states how
+many of the remaining matrices carry a measured `c` in the band it reads, and why the rest do not.
 
 ### 3.3 The instrument
 
@@ -269,8 +273,9 @@ free good even in the regime where it helps. The accumulation term does not depe
 
 The consequence is the paper's construct. Measured on real matrices at three formats, the error falls
 with `K` and then **floors**: the floor is `E_floor ~ c * kappa1 * u` with the constant `c` in
-`[0.27, 1.60]` across bf16, fp16 and fp32 on the 14-matrix corpus, and `K*` -- the smallest limb count
-past which extra limbs buy nothing -- is 3-4 in the synthetic sweep, close to `log2(1/u)/q`. **Limbs
+`[0.27, 1.60]` across bf16, fp16 and fp32 on the 10 matrices that reach the band, and `K*` -- the
+smallest limb count past which extra limbs buy nothing -- is 3-4 in the synthetic sweep, close to
+`log2(1/u)/q`. **Limbs
 cannot rescue a too-narrow accumulator**: once the accumulation term dominates, the budget has stopped
 responding to the lever that the emulation literature spends.
 
@@ -314,7 +319,7 @@ the dot-product length `n` on a log axis -- flat, where the `n*u` heuristic woul
 
 ### 5.1 The exponent is regime-dependent
 
-Fitting `E_floor ~ kappa1^beta` on the 14-matrix corpus:
+Fitting `E_floor ~ kappa1^beta` on the corpus's measurable cases:
 
 | format | beta (all) | beta (kappa1 >= 1.5) | beta (kappa1 >= 10) |
 |---|---|---|---|
@@ -322,8 +327,9 @@ Fitting `E_floor ~ kappa1^beta` on the 14-matrix corpus:
 | fp16 | 0.637 +- 0.023 | 0.605 +- 0.034 | **1.003 +- 0.081** |
 | fp32 | 0.711 +- 0.020 | 0.777 +- 0.027 | **0.942 +- 0.066** |
 
-(fitted on the wide-conditioning `cancel` family of the 14-matrix corpus; the blocked and low-precision
-cases excluded by the bound of §5.3 are not in these fits.)
+(fitted on the wide-conditioning `cancel` family of the 14-matrix corpus; cases the instrument excludes --
+those below the bound of §5.3, and those whose emulation never rounds and so carry no floor at all (§3.2) --
+are not in these fits.)
 
 The classical scaling `E ~ kappa1 * u` is recovered **only in the high-conditioning tail** (0.94-1.00 for
 `kappa1 >= 10`). Over the bulk the floor grows slower than `kappa1` (0.64-0.74), and the trend is
@@ -333,11 +339,22 @@ entirely a tail effect. Reporting the all-case exponent alone would have hidden 
 ### 5.2 Conditioning is not sufficient
 
 The decisive measurement is at **fixed conditioning**. Restricting to the band `kappa1 in [1, 1.5)`, the
-constant `c = E_floor/(kappa1*u)` varies **3.1-5.8x across the 14 matrices** (bf16 0.32-0.99, fp16 0.27-1.60,
-fp32 0.49-1.53). An additive reading `c = a/kappa1 + b` describes the trend but no longer tightly
+constant `c = E_floor/(kappa1*u)` varies **3.1-5.8x across the 10 matrices that reach the band**
+(bf16 0.32-0.99, fp16 0.27-1.60, fp32 0.49-1.53). An additive reading `c = a/kappa1 + b` describes the
+trend but no longer tightly
 (`R^2` = 0.64 / 0.47 / 0.61 for bf16/fp16/fp32, down from 0.49 / 0.93 / 0.95 in R542's run on the
 8-matrix corpus that preceded it), and it *cannot* absorb
 this spread: a function of `kappa1` alone is constant wherever `kappa1` is fixed.
+
+**The corpus holds 14 matrices, and the quoted range is taken over the 10 of them that carry a measured `c`
+in this band** -- in at least one format, since the count differs by format: **bf16 9, fp16 10, fp32 10**. The
+other four divide into two reasons, and the bf16-versus-the-rest difference is a third. `ash219`, `ash292` and
+`ash85` produce **no rounding case at all** at these widths -- every case is exactly representable or has an
+exactly-zero floor -- so they carry no `E_floor` to divide by `kappa1*u` in the first place. `impcol_d` does
+carry measured floors, but only **3-6** of its cases fall inside the band, below the instrument's per-matrix
+power floor (`min_cases = 8`) for a band median. `west0381` is the whole of the 9-versus-10 difference between
+bf16 and the other two formats: it reaches the band in fp16 (18 cases) and fp32 (79) and yields no measured
+floor at all in bf16.
 
 **Registered prior P2 -- "a single governing scalar" -- is therefore refuted in its sharp form.** Two
 problems with equal condition number do not admit the same accuracy. This is the paper's central
@@ -415,7 +432,11 @@ one fitted constant, no measurements at decision time.
 ### 7.2 The first comparison
 
 Fitting the single constant on a training half of the corpus and deciding on a test half of **unseen
-matrices** (14 matrices, 6 signals, labels measured by the emulation of §3):
+matrices** (the corpus is the same 14 matrices, split **by matrix** so that no matrix appears on both sides;
+6 signals; labels measured by the emulation of §3). The decision rows come from the **10 / 11 / 11** of them
+that yield a measured floor in bf16 / fp16 / fp32 -- a matrix with no floor carries no decision at all -- so
+this denominator is the corpus's, not §5.2's band set (which additionally requires `min_cases = 8` cases
+inside the band):
 
 | format | fitted `c` | rule accuracy | learned (same signal) | learned (+5 signals) | agreement |
 |---|---|---|---|---|---|
@@ -720,7 +741,8 @@ methodological claim: the instruments were allowed to contradict their author, a
   sample.
 - **The corpus is 14 matrices.** Chosen to span conditioning rather than to be representative, and
   pinned by hash so that the sample cannot drift. The between-matrix spread of §5.2 is a property of
-  those 14; the claim is that it is large, not that 3.1-5.8x is its population value.
+  the 10 of them that contribute a value in that band, not of all 14; the claim is that it is large, not
+  that 3.1-5.8x is its population value.
 
 ### 12.2 Where this record corrected itself
 
@@ -734,8 +756,9 @@ record's own example.
 **A law, demoted by its own residual.** §5.1's `R^2` fell from 0.49 / 0.93 / 0.95 to
 0.64 / 0.47 / 0.61 when the corpus grew from 8 to 14 matrices, which is why the additive reading is
 reported as a description rather than as a law. The 8-matrix values are quoted from that round's own
-run -- its artefact was replaced when the corpus changed, so this is the one number in the paragraph a
-reader has to take on the research record rather than re-derive from the committed files.
+run -- its artefact was replaced when the corpus changed, and no copy of it survives in the package (the
+committed `spike_real2_results.json` carries the 14-matrix run), so this is the one number in the paragraph
+a reader has to take on the research record rather than re-derive from the committed files.
 
 **Numbers, re-derived from the artefacts while writing this paper.** Assembling the manuscript, every
 figure in §4-§10 was re-read from the committed result files rather than transcribed from the research
@@ -752,8 +775,8 @@ The bound in §5.3 restricts the claims to a well-defined regime, and inside tha
 positive results are exact: the floor, `K*`'s dependence on the accumulator width, the quadrature
 composition, the 1-bit accuracy of `p*(eps)`, the 78.0x order axis and the lane-reduction percentages are
 all measurements against exact arithmetic, reproducible to the byte. The negative results -- `kappa1`'s
-insufficiency, the path family, the structure family -- are what a precision-selection rule has to live
-with; a rule that assumed any of them would be wrong on 3.1-5.8x of its inputs. And the decision-rule
+insufficiency (the constant spanning **3.1-5.8x across the 10 matrices that reach the band**), the path
+family, the structure family -- are what a precision-selection rule has to live with. And the decision-rule
 result is a statement about **cost**: a one-constant closed form matches a learned selector, which is a
 practical result independent of whether the constant is theoretically complete.
 
@@ -811,7 +834,7 @@ is compared with the section by `check_references.py`, because a single script t
 agree with itself whatever it wrote.
 
 Four steps are **readers** rather than reconstructions, and they read the object a reader gets:
-`check_numbers.py` re-derives 27 headline numbers from the artefacts and matches them against the
+`check_numbers.py` re-derives 28 headline numbers from the artefacts and matches them against the
 sentences that state them; `check_figures.py` asserts that every figure exists at the path the
 manuscript links, is embedded, is cited in the prose and names its source artefact;
 `check_references.py` reads the rendered section for its numbering, its block form, its per-entry

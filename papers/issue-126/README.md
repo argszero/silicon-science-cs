@@ -97,7 +97,7 @@ and that the cited count clears the bar. A bibliography cannot drift from the te
 | `spike_mm.py` | 8 | register lanes: −28…37 % at the median, but they redistribute rather than remove |
 | `spike_lib.py` | 9 | `numpy`'s own dot product: the constant transfers, the textbook `gamma_n` is refuted |
 | `spike_struct.py` | 10 | the library's per-case error is a lane-reduced tree, not a chain or a pairwise halving |
-| `check_numbers.py` | 13 | 27 headline numbers re-derived from the artefacts and matched to their sentences |
+| `check_numbers.py` | 13 | 28 headline numbers re-derived from the artefacts and matched to their sentences |
 | `check_figures.py` | 13 | the five figures: present, embedded, cited in the prose, caption names its artefact |
 | `check_references.py` | 13 | the rendered section: numbering, block form, difference clause, link, two-way coverage |
 | `refscan126.py` | — | the 337-entry verified reference pool and the cited-set authenticity report |

@@ -62,6 +62,13 @@ def r_band_spread(a):
     return "%.1f-%.1fx" % (min(sp), max(sp))
 
 
+def r_band_counts(a):
+    """The per-format size of the measured set the band spread is read over (R631/R636: the denominator
+    of the 3.1-5.8x range, so that a sentence stating it cannot drift from the artefact that produced it)."""
+    return "bf16 %d, fp16 %d, fp32 %d" % tuple(
+        a.r2["formats"][f]["band_spread_kappa1_1_1p5"]["n_matrices"] for f in ("bf16", "fp16", "fp32"))
+
+
 def r_band_fmt(fmt):
     def f(a):
         lo, hi = a.band(fmt)
@@ -172,7 +179,8 @@ def r_eps_range(a):
 # label, renderer, anchor template (one %s), what the number is
 CASES = [
     ("band-global", r_band_global, "`c` measured in `%s` across three formats"),
-    ("band-spread", r_band_spread, "varies **%s across the 14 matrices**"),
+    ("band-spread", r_band_spread, "varies **%s across the 10 matrices that reach the band**"),
+    ("band-counts", r_band_counts, "since the count differs by format: **%s**"),
     ("band-bf16", r_band_fmt("bf16"), "(%s, fp16"),
     ("band-fp16", r_band_fmt("fp16"), ", %s,"),
     ("band-fp32", r_band_fmt("fp32"), "%s). An additive reading"),
