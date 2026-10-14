@@ -1,0 +1,44 @@
+{
+  "figures": [
+    {
+      "bytes": 9651,
+      "file": "fig1_frontier_and_coupling.svg",
+      "sha256": "e14ec83345263953af75db92205d05d5e6c20b656a15d1a7a41c12c68ee3ebc3"
+    },
+    {
+      "bytes": 10224,
+      "file": "fig2_grid_concavity.svg",
+      "sha256": "d84755d551ada2b4323748a83bd78e11e85d6a4cbca4b5c94d3e4aa1dda9a00b"
+    },
+    {
+      "bytes": 8427,
+      "file": "fig3_two_obligation_law.svg",
+      "sha256": "64a27e5a22083ae63cf7082ef47e11427e5e4d585b5c12577291ae549c59b981"
+    },
+    {
+      "bytes": 13120,
+      "file": "fig4_guarantee_and_boundary.svg",
+      "sha256": "3df688f521de8fd0e21fc014a43746acad939dcff4772fafddf05508cf9c1104"
+    },
+    {
+      "bytes": 26362,
+      "file": "fig5_coupling_attribution.svg",
+      "sha256": "b745ad360aa2b3719c2fbdd966bf9349f99024e5922e2706d8c4c5c812ed93ad"
+    },
+    {
+      "bytes": 11899,
+      "file": "fig6_sizing_rule.svg",
+      "sha256": "ee96fea562cf636d490dad92e646f1a3d46b9cf17838c6afce08f799d47c0884"
+    },
+    {
+      "bytes": 1395,
+      "file": "FIGURES.md",
+      "sha256": "760635696d509e078cb22bde46c83f51b45e51db3448c6533196d8d5950167ad"
+    },
+    {
+      "bytes": 3281,
+      "file": "CAPTIONS.md",
+      "sha256": "d46259fc6b53dc55882e791b9c11728cb21eeab134875e1f338a52d2fe9977e9"
+    }
+  ]
+}

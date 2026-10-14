@@ -1,0 +1,562 @@
+{
+  "Bmax": 60,
+  "cases": [
+    {
+      "c": 0.35,
+      "cells": [
+        {
+          "B": 4,
+          "coupled": {
+            "assumptions_first": 1.1668000000000003,
+            "fixed_order": 1.1668000000000003,
+            "greedy": 1.1668000000000003,
+            "placebo": 0.8504000000000002
+          },
+          "coupling_gain": {
+            "assumptions_first": 0.3668000000000001,
+            "fixed_order": 0.3668000000000001,
+            "greedy": 0.3668000000000001,
+            "placebo": 0.0504
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.3164000000000001
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 0.8000000000000002,
+            "fixed_order": 0.8000000000000002,
+            "greedy": 0.8000000000000002,
+            "placebo": 0.8000000000000002
+          }
+        },
+        {
+          "B": 8,
+          "coupled": {
+            "assumptions_first": 2.5852765309375005,
+            "fixed_order": 2.5852765309375005,
+            "greedy": 2.5852765309375005,
+            "placebo": 1.9110415075000007
+          },
+          "coupling_gain": {
+            "assumptions_first": 0.9970013309375001,
+            "fixed_order": 0.9970013309375001,
+            "greedy": 0.9970013309375001,
+            "placebo": 0.32276630750000024
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.6742350234374999
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 1.5882752000000004,
+            "fixed_order": 1.5882752000000004,
+            "greedy": 1.5882752000000004,
+            "placebo": 1.5882752000000004
+          }
+        },
+        {
+          "B": 12,
+          "coupled": {
+            "assumptions_first": 3.393222024498918,
+            "fixed_order": 3.393222024498918,
+            "greedy": 3.393222024498918,
+            "placebo": 2.800869935926876
+          },
+          "coupling_gain": {
+            "assumptions_first": 1.0897341064189172,
+            "fixed_order": 1.0897341064189172,
+            "greedy": 1.0897341064189172,
+            "placebo": 0.4973820178468751
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.5923520885720421
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 2.303487918080001,
+            "fixed_order": 2.303487918080001,
+            "greedy": 2.303487918080001,
+            "placebo": 2.303487918080001
+          }
+        },
+        {
+          "B": 16,
+          "coupled": {
+            "assumptions_first": 3.7493046011129456,
+            "fixed_order": 3.7493046011129456,
+            "greedy": 3.7493046011129456,
+            "placebo": 3.3671098440539637
+          },
+          "coupling_gain": {
+            "assumptions_first": 0.8681676335378019,
+            "fixed_order": 0.8681676335378019,
+            "greedy": 0.8681676335378019,
+            "placebo": 0.48597287647882004
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.38219475705898187
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 2.8811369675751437,
+            "fixed_order": 2.8811369675751437,
+            "greedy": 2.8811369675751437,
+            "placebo": 2.8811369675751437
+          }
+        },
+        {
+          "B": 20,
+          "coupled": {
+            "assumptions_first": 3.8971697714923366,
+            "fixed_order": 3.8971697714923366,
+            "greedy": 3.8971697714923366,
+            "placebo": 3.682659756663707
+          },
+          "coupling_gain": {
+            "assumptions_first": 0.5954078577198563,
+            "fixed_order": 0.5954078577198563,
+            "greedy": 0.5954078577198563,
+            "placebo": 0.38089784289122663
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.21451001482862964
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 3.3017619137724803,
+            "fixed_order": 3.3017619137724803,
+            "greedy": 3.3017619137724803,
+            "placebo": 3.3017619137724803
+          }
+        },
+        {
+          "B": 30,
+          "coupled": {
+            "assumptions_first": 3.9889560046298653,
+            "fixed_order": 3.9889560046298653,
+            "greedy": 3.9889560046298653,
+            "placebo": 3.950325399663048
+          },
+          "coupling_gain": {
+            "assumptions_first": 0.16760622654923418,
+            "fixed_order": 0.16760622654923418,
+            "greedy": 0.16760622654923418,
+            "placebo": 0.1289756215824167
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.03863060496681747
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 3.821349778080631,
+            "fixed_order": 3.821349778080631,
+            "greedy": 3.821349778080631,
+            "placebo": 3.821349778080631
+          }
+        },
+        {
+          "B": 60,
+          "coupled": {
+            "assumptions_first": 3.9999863281738923,
+            "fixed_order": 3.9999863281738923,
+            "greedy": 3.9999863281738923,
+            "placebo": 3.9998805681099063
+          },
+          "coupling_gain": {
+            "assumptions_first": 0.001219891303315901,
+            "fixed_order": 0.001219891303315901,
+            "greedy": 0.001219891303315901,
+            "placebo": 0.0011141312393299074
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": -0.00010576006398599347
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": 0.0,
+            "greedy": 0.0,
+            "placebo": 0.0
+          },
+          "uncoupled": {
+            "assumptions_first": 3.9987664368705764,
+            "fixed_order": 3.9987664368705764,
+            "greedy": 3.9987664368705764,
+            "placebo": 3.9987664368705764
+          }
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "n": 4,
+      "name": "chain_uniform",
+      "p": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "c": 0.35,
+      "cells": [
+        {
+          "B": 4,
+          "coupled": {
+            "assumptions_first": 1.2507000000000001,
+            "fixed_order": 1.2507000000000001,
+            "greedy": 2.3028,
+            "placebo": 1.5648
+          },
+          "coupling_gain": {
+            "assumptions_first": -1.0520999999999998,
+            "fixed_order": 0.2846812500000002,
+            "greedy": 0.0,
+            "placebo": 0.1023750000000001
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -1.0520999999999998,
+            "fixed_order": -1.0520999999999998,
+            "greedy": 0.0,
+            "placebo": -0.738
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -1.33678125,
+            "greedy": 0.0,
+            "placebo": -0.8403750000000001
+          },
+          "uncoupled": {
+            "assumptions_first": 2.3028,
+            "fixed_order": 0.9660187499999999,
+            "greedy": 2.3028,
+            "placebo": 1.4624249999999999
+          }
+        },
+        {
+          "B": 8,
+          "coupled": {
+            "assumptions_first": 2.56337095453125,
+            "fixed_order": 2.56337095453125,
+            "greedy": 3.3158914724999997,
+            "placebo": 2.6946624703125
+          },
+          "coupling_gain": {
+            "assumptions_first": -0.7525205179687497,
+            "fixed_order": 0.30538628941406243,
+            "greedy": 0.0,
+            "placebo": 0.1648426401562504
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -0.7525205179687497,
+            "fixed_order": -0.7525205179687497,
+            "greedy": 0.0,
+            "placebo": -0.6212290021874995
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -1.0579068073828122,
+            "greedy": 0.0,
+            "placebo": -0.7860716423437499
+          },
+          "uncoupled": {
+            "assumptions_first": 3.3158914724999997,
+            "fixed_order": 2.2579846651171875,
+            "greedy": 3.3158914724999997,
+            "placebo": 2.52981983015625
+          }
+        },
+        {
+          "B": 12,
+          "coupled": {
+            "assumptions_first": 3.250070618810783,
+            "fixed_order": 3.250070618810783,
+            "greedy": 3.660776969670703,
+            "placebo": 3.3177292670029566
+          },
+          "coupling_gain": {
+            "assumptions_first": -0.41070635085992,
+            "fixed_order": 0.17080028471945496,
+            "greedy": 0.0,
+            "placebo": 0.09623395299145576
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -0.41070635085992,
+            "fixed_order": -0.41070635085992,
+            "greedy": 0.0,
+            "placebo": -0.34304770266774653
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -0.581506635579375,
+            "greedy": 0.0,
+            "placebo": -0.4392816556592023
+          },
+          "uncoupled": {
+            "assumptions_first": 3.660776969670703,
+            "fixed_order": 3.079270334091328,
+            "greedy": 3.660776969670703,
+            "placebo": 3.221495314011501
+          }
+        },
+        {
+          "B": 16,
+          "coupled": {
+            "assumptions_first": 3.608532175960009,
+            "fixed_order": 3.608532175960009,
+            "greedy": 3.8239068173155597,
+            "placebo": 3.643827977722979
+          },
+          "coupling_gain": {
+            "assumptions_first": -0.21537464135555062,
+            "fixed_order": 0.08973804263897556,
+            "greedy": 0.0,
+            "placebo": 0.05078318766260992
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -0.21537464135555062,
+            "fixed_order": -0.21537464135555062,
+            "greedy": 0.0,
+            "placebo": -0.18007883959258075
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -0.3051126839945262,
+            "greedy": 0.0,
+            "placebo": -0.23086202725519067
+          },
+          "uncoupled": {
+            "assumptions_first": 3.8239068173155597,
+            "fixed_order": 3.5187941333210335,
+            "greedy": 3.8239068173155597,
+            "placebo": 3.593044790060369
+          }
+        },
+        {
+          "B": 20,
+          "coupled": {
+            "assumptions_first": 3.7956513491772244,
+            "fixed_order": 3.7956513491772244,
+            "greedy": 3.908122001267448,
+            "placebo": 3.8140754039484666
+          },
+          "coupling_gain": {
+            "assumptions_first": -0.11247065209022367,
+            "fixed_order": 0.046868571540287896,
+            "greedy": 0.0,
+            "placebo": 0.02653310622213123
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -0.11247065209022367,
+            "fixed_order": -0.11247065209022367,
+            "greedy": 0.0,
+            "placebo": -0.09404659731898146
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -0.15933922363051156,
+            "greedy": 0.0,
+            "placebo": -0.12057970354111269
+          },
+          "uncoupled": {
+            "assumptions_first": 3.908122001267448,
+            "fixed_order": 3.7487827776369365,
+            "greedy": 3.908122001267448,
+            "placebo": 3.7875422977263353
+          }
+        },
+        {
+          "B": 30,
+          "coupled": {
+            "assumptions_first": 3.959768981091435,
+            "fixed_order": 3.959768981091435,
+            "greedy": 3.981912272735521,
+            "placebo": 3.9633962000718483
+          },
+          "coupling_gain": {
+            "assumptions_first": -0.022143291644086016,
+            "fixed_order": 0.009227607658053305,
+            "greedy": 0.0,
+            "placebo": 0.005224067044829361
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -0.022143291644086016,
+            "fixed_order": -0.022143291644086016,
+            "greedy": 0.0,
+            "placebo": -0.018516072663672833
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -0.03137089930213932,
+            "greedy": 0.0,
+            "placebo": -0.023740139708502195
+          },
+          "uncoupled": {
+            "assumptions_first": 3.981912272735521,
+            "fixed_order": 3.950541373433382,
+            "greedy": 3.981912272735521,
+            "placebo": 3.958172133027019
+          }
+        },
+        {
+          "B": 60,
+          "coupled": {
+            "assumptions_first": 3.9996930067664547,
+            "fixed_order": 3.9996930067664547,
+            "greedy": 3.999861976907867,
+            "placebo": 3.999720685202468
+          },
+          "coupling_gain": {
+            "assumptions_first": -0.00016897014141248334,
+            "fixed_order": 7.041365900484209e-05,
+            "greedy": 0.0,
+            "placebo": 3.986360302654646e-05
+          },
+          "ordering_effect_coupled": {
+            "assumptions_first": -0.00016897014141248334,
+            "fixed_order": -0.00016897014141248334,
+            "greedy": 0.0,
+            "placebo": -0.00014129170539911584
+          },
+          "ordering_effect_uncoupled": {
+            "assumptions_first": 0.0,
+            "fixed_order": -0.00023938380041732543,
+            "greedy": 0.0,
+            "placebo": -0.0001811553084256623
+          },
+          "uncoupled": {
+            "assumptions_first": 3.999861976907867,
+            "fixed_order": 3.99962259310745,
+            "greedy": 3.999861976907867,
+            "placebo": 3.9996808215994415
+          }
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "n": 4,
+      "name": "star_hard_root",
+      "p": [
+        0.15,
+        0.6,
+        0.6,
+        0.6
+      ]
+    }
+  ],
+  "exact_checks": {
+    "anchor_easiest_first": 8.881784197001252e-16,
+    "anchor_fixed_order": 8.881784197001252e-16,
+    "determinism_rerun": 0.0,
+    "zero_coupling_carries_no_value": 8.881784197001252e-16
+  },
+  "findings": {
+    "P2_max_coupling_gain_assumptions_first": [
+      12,
+      1.0897341064189172
+    ],
+    "P2_max_coupling_gain_greedy": [
+      12,
+      1.0897341064189172
+    ],
+    "P3_af_minus_greedy_coupled": [
+      [
+        "chain_uniform",
+        0.0,
+        0.0
+      ],
+      [
+        "star_hard_root",
+        -1.0520999999999998,
+        -0.00016897014141248334
+      ]
+    ],
+    "ordering_effect_uncoupled_maxabs": 0.8403750000000001,
+    "placebo_coupling_gain_maxabs": 0.4973820178468751,
+    "schedules_coincide_on": [
+      "chain_uniform"
+    ]
+  },
+  "seed": 1339,
+  "stat_checks": {
+    "mc_max_abs_error_at_4N": 0.010804099195702577,
+    "mc_max_abs_error_at_N": 0.027061693749999893,
+    "mc_max_abs_z_at_4N": 2.5373969512702392,
+    "mc_max_abs_z_at_N": 2.5173099867837854
+  },
+  "trials": 20000
+}
