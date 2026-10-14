@@ -1,0 +1,171 @@
+{
+ "corpus_ok": [
+  "arc130.mtx",
+  "ash219.mtx",
+  "ash292.mtx",
+  "ash85.mtx",
+  "bcsstk01.mtx",
+  "bcsstk02.mtx",
+  "bcsstk09.mtx",
+  "gre_1107.mtx",
+  "impcol_a.mtx",
+  "impcol_b.mtx",
+  "impcol_d.mtx",
+  "nos3.mtx",
+  "west0067.mtx",
+  "west0381.mtx"
+ ],
+ "formats": {
+  "bf16": {
+   "agreement_rule_g": 0.9795112781954888,
+   "agreement_rule_x": 0.9614661654135338,
+   "constant_baseline": 0.5,
+   "learn_g": {
+    "acc": 0.762593984962406,
+    "cost": 4000,
+    "train_acc": 0.763
+   },
+   "learn_x": {
+    "acc": 0.7569548872180452,
+    "cost": 4000,
+    "train_acc": 0.75475
+   },
+   "n_rows": 11944,
+   "n_test": 5320,
+   "n_train": 6624,
+   "near_boundary": {
+    "err": 0.3679154658981748,
+    "err_far": 0.212666510867025,
+    "n": 1041,
+    "n_far": 4279
+   },
+   "p": 8,
+   "q": 4,
+   "reachable_fraction": 0.5,
+   "rule": {
+    "acc": 0.7522556390977444,
+    "c_hat": 0.44676597363317416,
+    "cost": 6624,
+    "gamma_star": 2.2383083292307067,
+    "train_acc": 0.7641908212560387
+   },
+   "test_matrices": [
+    "arc130.mtx",
+    "bcsstk09.mtx",
+    "impcol_b.mtx",
+    "west0067.mtx"
+   ],
+   "u": 0.00390625
+  },
+  "fp16": {
+   "agreement_rule_g": 0.9039900249376559,
+   "agreement_rule_x": 0.8656483790523691,
+   "constant_baseline": 0.5,
+   "learn_g": {
+    "acc": 0.7222568578553616,
+    "cost": 4000,
+    "train_acc": 0.70525
+   },
+   "learn_x": {
+    "acc": 0.7347256857855362,
+    "cost": 4000,
+    "train_acc": 0.7255
+   },
+   "n_rows": 14752,
+   "n_test": 6416,
+   "n_train": 8336,
+   "near_boundary": {
+    "err": 0.384051329055912,
+    "err_far": 0.24093896713615023,
+    "n": 1091,
+    "n_far": 5325
+   },
+   "p": 11,
+   "q": 5,
+   "reachable_fraction": 0.5,
+   "rule": {
+    "acc": 0.7150872817955112,
+    "c_hat": 0.7879644532784053,
+    "cost": 8336,
+    "gamma_star": 1.269092781837302,
+    "train_acc": 0.7202495201535508
+   },
+   "test_matrices": [
+    "arc130.mtx",
+    "bcsstk09.mtx",
+    "impcol_b.mtx",
+    "west0067.mtx"
+   ],
+   "u": 0.00048828125
+  },
+  "fp32": {
+   "agreement_rule_g": 0.9204675028506272,
+   "agreement_rule_x": 0.9315849486887116,
+   "constant_baseline": 0.5,
+   "learn_g": {
+    "acc": 0.7364595210946409,
+    "cost": 4000,
+    "train_acc": 0.725
+   },
+   "learn_x": {
+    "acc": 0.738169897377423,
+    "cost": 4000,
+    "train_acc": 0.7415
+   },
+   "n_rows": 19336,
+   "n_test": 7016,
+   "n_train": 12320,
+   "near_boundary": {
+    "err": 0.4303030303030303,
+    "err_far": 0.2227879213483146,
+    "n": 1320,
+    "n_far": 5696
+   },
+   "p": 24,
+   "q": 12,
+   "reachable_fraction": 0.5,
+   "rule": {
+    "acc": 0.7250570125427594,
+    "c_hat": 0.7161414240776238,
+    "cost": 12320,
+    "gamma_star": 1.3963722337218245,
+    "train_acc": 0.7361201298701299
+   },
+   "test_matrices": [
+    "arc130.mtx",
+    "bcsstk09.mtx",
+    "impcol_b.mtx",
+    "west0067.mtx"
+   ],
+   "u": 5.960464477539063e-08
+  }
+ },
+ "kmax": 6,
+ "matrices": [
+  "arc130.mtx",
+  "ash219.mtx",
+  "ash292.mtx",
+  "ash85.mtx",
+  "bcsstk01.mtx",
+  "bcsstk02.mtx",
+  "bcsstk09.mtx",
+  "gre_1107.mtx",
+  "impcol_a.mtx",
+  "impcol_b.mtx",
+  "impcol_d.mtx",
+  "nos3.mtx",
+  "west0067.mtx",
+  "west0381.mtx"
+ ],
+ "mults": [
+  0.2,
+  0.4,
+  0.6,
+  0.8,
+  1.0,
+  1.5,
+  2.5,
+  4.0
+ ],
+ "seed0": 20261008
+}
