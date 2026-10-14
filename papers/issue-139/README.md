@@ -23,16 +23,20 @@ cd papers/issue-139 && bash reproduce.sh
   against the report this package ships (`spike_v0` `5b148eab…`, `v1` `7d0806f1…`, `v2` `52ec9778…`,
   `v3` `8abc814c…`, plus the three text reports). The **claims leg** then re-reads the fresh reports
   and asserts **27** of the manuscript's headline numbers against them (`CLAIMS: 27 checked, 0 wrong`),
-  and four **plants** must fire (a perturbed instrument must change its report; a broken uncoupled
+  and five **plants** must fire (a perturbed instrument must change its report; a broken uncoupled
   recursion must fail its battery; a broken coupled recursion must change the report; a planted number
-  must make the claims leg fail). The figure certificate prints `FIGURE SELFTEST 35/35` and the
+  must make the claims leg fail; and a README quoting a stale manuscript size must fail the `readme`
+  leg). The figure certificate prints `FIGURE SELFTEST 35/35` and the
   **nine** generated files (six SVGs, `FIGURES.md`, `CAPTIONS.md`, `manifest.json`) are compared
   byte-for-byte. The reference layer prints `refscan selftest SELFTEST: ALL PASS`,
   `refscan gate GATE 8/8` and `reference-check … is what this renders`. Finally the manuscript is
-  re-rendered (`MANUSCRIPT: MATCH -- 288 references, 60 numbers, 148733 bytes re-rendered
+  re-rendered (`MANUSCRIPT: MATCH -- 288 references, 60 numbers, 151130 bytes re-rendered
   byte-identically`), its own plant battery runs (`SELFTEST 4/4`), and the journal's gates are applied
   to the built manuscript: `numgate`, `linkgate`, `pointgate` and
-  `refgate … covered=288/288 coverage=100.0%`.
+  `refgate … covered=288/288 coverage=100.0%`. The line just quoted is **itself checked**: the
+  `readme` leg reads this file back against the line the run printed — three numbers, byte count
+  included — and a copy that quotes a stale size fails it, with a plant proving the comparison can
+  fail.
 * **Exit status**: `0` = `REPRODUCE: ALL GREEN`; `1` = at least one step **FAILED** (the count is
   printed with it); `2` = no step failed, but a journal gate could not read its window and printed its
   own named **`NOT RUN`** — a **coordinate of the run, not a finding about the work**. The three tree
@@ -42,13 +46,14 @@ cd papers/issue-139 && bash reproduce.sh
   An export run therefore ends at **2**, and the exit status says which of the three happened.
 * **Environment**: CPython 3, standard library only — **no third-party import appears anywhere in this
   package** (`json`/`math`/`os`/`sys`/`random`/`itertools`/`argparse`), so no library version enters a
-  comparison; matplotlib is neither used nor required. Measured byte-identical under **3.12.12** and
+  comparison; matplotlib is neither used nor required. Measured byte-identical under **3.9.6** and
   **3.13.9**.
 * **Cross-build leg**: an `exact` tolerance is a claim about a *build*, not only about a run, and the
-  builtin `sum()` over floats changed to a compensated algorithm in CPython 3.12 — so the leg that can
-  see a version-scoped defect is the one that re-runs every report under a second interpreter:
-  `REPRO_BUILDS="python3.12 python3.13" bash reproduce.sh`. Measured here: every shipped report
-  byte-identical under both.
+  builtin `sum()` over floats became Neumaier-compensated in CPython 3.12 — so the leg that can see a
+  version-scoped defect is the one that re-runs every report under a second interpreter, and the pair
+  has to **straddle** that boundary (two builds on the same side of it are one reading taken twice):
+  `REPRO_BUILDS="/usr/bin/python3 python3.13" bash reproduce.sh`. Measured here: every shipped report
+  byte-identical under **3.9.6 and 3.13.9**, one on each side of the 3.12 change.
 * **Inputs**: none, and no network. Every graph, difficulty vector, coupling level and schedule is
   declared in the instruments, and the only randomness is drawn from the committed seeds, so a run
   touches nothing outside its own directory. (The reference layer's *live* verification is a separate,

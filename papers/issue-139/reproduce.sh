@@ -5,20 +5,22 @@
 # WHAT THIS RECOMPUTES (not a checksum check over committed outputs): it re-runs the FOUR
 # instruments from their own code and compares each fresh report BYTE-FOR-BYTE against the
 # report this package ships; it asserts the headline numbers the manuscript quotes are the ones
-# the FRESH reports carry; and it runs three PLANTS that must fire (a perturbed instrument must
-# produce a different report, a broken recursion must fail its battery, and a perturbed report
-# must make the claims leg fail).
+# the FRESH reports carry; and it runs FIVE PLANTS that must fire (a perturbed instrument must
+# produce a different report; a broken uncoupled recursion must fail its battery; a broken coupled
+# recursion must change the report; a planted number must make the claims leg fail; and a README
+# quoting a stale manuscript size must fail the `readme` leg).
 #
 # RUN IT FROM THE PACKAGE DIRECTORY:   cd papers/issue-139 && bash reproduce.sh
 # ENVIRONMENT: CPython 3, standard library only (json/math/os/sys/random/itertools/argparse) --
 #   NO third-party import appears anywhere in this package, so no library version enters a
-#   comparison.  Every shipped report is measured byte-identical under 3.12.12 and 3.13.9 (this
-#   package's cross-build run, `REPRO_BUILDS` below); an earlier reading on 3.9.6 was taken with an
-#   interpreter that is not on this machine's PATH now, so it is not counted here.  Set PYTHON=...
-#   to select the build the default legs run under.  The builtin `sum()` over floats changed to a
-#   compensated algorithm in CPython 3.12, so a pair ACROSS that boundary is the leg that would see
-#   such a defect -- and taking the pair is a property of the machine, which is why the leg reads
-#   its list from REPRO_BUILDS rather than naming interpreters.
+#   comparison.  Every shipped report is measured byte-identical under 3.9.6 and 3.13.9 (this
+#   package's cross-build run, `REPRO_BUILDS` below) -- a pair ACROSS the CPython 3.12 `sum()`
+#   change, which is the boundary a version-scoped defect would sit on: `sum()` over floats became
+#   Neumaier-compensated in 3.12, so a `sum()`-reduced quantity can differ between the two sides and
+#   cannot differ within one.  Set PYTHON=... to select the build the default legs run under.  Which
+#   interpreters exist is a property of the machine, not of this package, so the leg reads its list
+#   from REPRO_BUILDS rather than naming interpreters -- here 3.9.6 is `/usr/bin/python3`, which is
+#   how a pre-3.12 build is reachable on this machine.
 # INPUTS: none, and no network.  Every graph, difficulty vector, coupling level and schedule is
 #   declared in the instruments, and the only randomness is drawn from the committed seeds, so a
 #   run touches nothing outside its own directory.
@@ -32,10 +34,12 @@
 #   batteries, the plants, the figure set, the offline reference layer and the manuscript re-render).
 # CROSS-BUILD: an `exact` tolerance is a claim about a BUILD, not only about a run, so the leg that
 #   can see a version-scoped defect is the one that re-runs every report under a second interpreter
-#   and compares the two.  It takes its interpreter list from `REPRO_BUILDS`, because which
-#   interpreters exist is a property of the machine, not of this package:
-#       REPRO_BUILDS="python3.12 python3.13" bash reproduce.sh
-#   (measured here: every shipped report byte-identical under 3.12.12 and 3.13.9.)
+#   and compares the two -- and the pair has to STRADDLE the 3.12 `sum()` boundary, since two builds
+#   on the same side of it are one reading taken twice.  It takes its interpreter list from
+#   `REPRO_BUILDS`, because which interpreters exist is a property of the machine, not of this
+#   package:
+#       REPRO_BUILDS="/usr/bin/python3 python3.13" bash reproduce.sh
+#   (measured here: every shipped report byte-identical under 3.9.6 and 3.13.9.)
 
 set -u
 PY="${PYTHON:-python3}"
@@ -48,6 +52,25 @@ NOTRUN=0
 
 say()  { printf '%-18s %s\n' "$1" "$2"; }
 bad()  { printf '%-18s FAILED -- %s\n' "$1" "$2"; FAILED=$((FAILED+1)); }
+# A CARRIER THAT QUOTES A RUN IS A CLAIM ABOUT IT: the README prints the manuscript leg's own line,
+# byte count included, so that copy is read back against the line THIS run printed rather than
+# trusted.  It is a function taking the file as its argument, so the plant below can point it at a
+# copy whose quoted size has been altered -- a comparison whose fixture cannot fail is decoration
+# (Class 189: the plant's INPUT is part of the plant).  The defect it exists for was found at round
+# 2: the round-1 revision grew the manuscript by 1684 bytes and the README went on quoting the
+# pre-revision size, which every other leg here passes because nothing else reads the README.
+readme_quotes() {                       # $1 = readme, $2 = the line the run printed
+  # Whitespace runs are collapsed on BOTH sides before the comparison: the README hard-wraps, so a
+  # line of the run straddles a line break there, and a raw `grep -F` would report a defect for the
+  # way a paragraph was wrapped rather than for what it says (Classes 178(b)/190 -- the same rule
+  # `papers/issue-126/check_numbers.py` applies).
+  [ -f "$1" ] || return 1
+  local hay needle
+  hay="$(tr -s '[:space:]' ' ' < "$1")"
+  needle="$(printf '%s' "$2" | tr -s '[:space:]' ' ')"
+  case "$hay" in *"$needle"*) return 0 ;; esac
+  return 1
+}
 # The journal gates take their own exit status from their contract -- 0 PASS, 1 FAIL, 2 NOT RUN --
 # so a gate that could not read its window is reported as ITS verdict and does not count as a
 # failure.  Swallowing that status and calling exit 2 a `FAILED` would report a coordinate of the
@@ -324,7 +347,33 @@ fi
 # ---- 8. the manuscript: re-render and compare, then the journal gates ---------------------------
 if [ -f "$HERE/manuscript.md" ]; then
   if OUT=$("$PY" "$HERE/build_manuscript.py" --check 2>&1); then
+    MSLINE="$(printf '%s' "$OUT" | grep -m1 '^MANUSCRIPT: MATCH')"
     say "manuscript" "$(printf '%s' "$OUT" | tail -1)"
+    # the README's copy of this line, read back against the line this run printed
+    if readme_quotes "$HERE/README.md" "$MSLINE"; then
+      say "readme" "quotes this run's manuscript line ($(printf '%s' "$MSLINE" | sed 's/^MANUSCRIPT: MATCH -- //'))"
+    else
+      bad "readme" "README.md does not quote the line this run printed: '$MSLINE'"
+    fi
+    # and the plant that proves the comparison is live: a copy quoting a WRONG byte count must fail
+    cp "$HERE/README.md" "$WORK/readme_plant.md"
+    if "$PY" - "$WORK/readme_plant.md" <<'PY'
+import io, re, sys
+p = sys.argv[1]
+t = io.open(p, encoding="utf-8").read()
+t2, n = re.subn(r"(MANUSCRIPT: MATCH -- \d+ references, \d+ numbers, )\d+( bytes)", r"\g<1>1\g<2>", t, count=1)
+io.open(p, "w", encoding="utf-8").write(t2)
+raise SystemExit(0 if n == 1 else 1)          # a plant that changed nothing is INERT, not passing
+PY
+    then
+      if readme_quotes "$WORK/readme_plant.md" "$MSLINE"; then
+        bad "plant readme" "a README quoting a WRONG size still passed the comparison (the leg is inert)"
+      else
+        say "plant readme" "a README quoting a wrong size FAILS the comparison (the leg is live)"
+      fi
+    else
+      bad "plant readme" "the plant could not be applied -- README.md carries no line to perturb (Class 189)"
+    fi
   else
     bad "manuscript" "$(printf '%s' "$OUT" | tail -1)"
   fi

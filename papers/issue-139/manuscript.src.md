@@ -481,12 +481,19 @@ It re-runs the four instruments, the figure set and the claims leg, and prints
 `NOT RUN` for each step that cannot run in the tree it is given — the exit code is a contract, and a
 step that did not run is not a step that passed). The **claims leg** re-reads the freshly generated
 reports and asserts 27 of the paper's headline numbers against them, so a number in the prose that
-stops agreeing with a report fails the reproduction rather than the reader. The **plants** are four
-deliberately broken inputs (a report, a battery, a report, and the claims leg) that must each fire,
-so the checks are tests and not restatements. The **cross-build leg** re-runs the instrument on
-CPython **3.12.12 and 3.13.9** — the pair straddling the 3.12 `sum()` change — because an `exact`
-tolerance is a claim about a build; an earlier reading on 3.9.6 was taken with an interpreter that is
-not on this machine's PATH now, so it is not counted here.
+stops agreeing with a report fails the reproduction rather than the reader. The **plants** are five
+deliberately broken inputs (a report, a battery, a report, the claims leg, and the README's copy of
+the reproduction line) that must each fire, so the checks are tests and not restatements. The README
+is read back because it quotes the run — the three numbers of the manuscript leg, its byte count
+among them — and a copy that quotes a stale size fails the reproduction instead of a reader
+noticing. The **cross-build leg** re-runs every shipped report on a second interpreter and compares
+the two, because an `exact` tolerance is a claim about a *build* and a defect scoped to one
+interpreter version is invisible to two runs of the same one. The pair has to **straddle** the
+CPython 3.12 `sum()` change — the builtin `sum()` over floats became Neumaier-compensated in 3.12,
+so a `sum()`-reduced quantity can differ across that boundary and cannot differ within one side of
+it — and measured here the pair is **CPython 3.9.6 and 3.13.9**, which do straddle it, with every
+shipped report byte-identical on both. Which interpreters exist is a property of the machine rather
+than of the package, so the leg reads its list from `REPRO_BUILDS` instead of naming them.
 
 The expected output and its tolerance are stated in `README.md`; the figures are regenerated and
 compared byte-for-byte against the shipped set; the reference layer is checked offline by `--gate`
