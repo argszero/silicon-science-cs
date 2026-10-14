@@ -9,6 +9,10 @@ audit, carried outside this repository -- no tracked file holds its list):
 
 A cross-reference resolves in **three forms**, and this tool is the instrument
 for the **second** - a **named pointer**, written `-> *Name*` or `see *Name*`.
+**The arrow is read in both spellings the tree writes it in** - the glyph `→` and
+the ASCII `->` - because the form is the pointer and not one rendering of it (the
+report line below names the form `-> *Name*`; until **R576** the read matched the
+glyph alone, so a pointer written ASCII stood outside it).
 Its **first** form (a markdown link target) is read by `.github/tools/linkgate.py`.
 Its **third** - a reference by **position**, a number indexing a list - stays a
 read, because which list a number indexes is what the citing sentence names and
@@ -97,13 +101,20 @@ import re
 import subprocess
 import sys
 
-# `-> *Name*` / `see *Name*` - the form the clause names.  A name may wrap across
-# a source line (`*Label\n> state machine*`), so the run admits newlines and is
-# collapsed before it is compared.
-POINTER = re.compile(r"(?:→|(?<![\w*])see\b)\s*(?P<open>[*])(?P<name>[^`*]{2,90}?)(?P<close>[*])",
+# `-> *Name*` / `see *Name*` - the form the clause names.  The arrow is read in
+# **both spellings the tree writes it in** - the glyph `→` (U+2192) and the ASCII
+# `->` - because the form is the pointer and not one rendering of it: this tool's
+# own report line and header name the form `-> *Name*`, while the carriers here
+# write both, and until R576 the read matched the glyph alone (so a pointer
+# written ASCII, as `papers/issue-114/reference-check.md` does, stood outside it).
+# The `(?<![\w-])`/`(?![-<>])` bounds keep a `-->` (a rule or an HTML comment) out.
+# A name may wrap across a source line (`*Label\n> state machine*`), so the run
+# admits newlines and is collapsed before it is compared.
+LEAD = r"(?:→|(?<![\w-])->(?![-<>])|(?<![\w*])see\b)"
+POINTER = re.compile(LEAD + r"\s*(?P<open>[*])(?P<name>[^`*]{2,90}?)(?P<close>[*])",
                      re.I)
-# `-> `x`` / `see `x``: the same glyph and the words `see`, a code span target
-CODE_TARGET = re.compile(r"(?:→|(?<![\w*])see\b)\s*`[^`\n]{1,70}`", re.I)
+# `-> `x`` / `see `x``: the same arrow and the words `see`, a code span target
+CODE_TARGET = re.compile(LEAD + r"\s*`[^`\n]{1,70}`", re.I)
 
 PATHLIKE = re.compile(
     r"`([\w./-]+\.(?:md|py|sh|json|gitignore|yml|txt))`"
@@ -497,6 +508,14 @@ def selftest(root):
          "an arrow outside the code span its sentence names is not masked")
     case([k for k, _ in refs_in(t_arrow)], ["code-target", "pointer"],
          "a `see` naming a code-span carrier stays a code-target, its arrow a pointer")
+    t_ascii = "see `README.md` -> *A read that reports an absence*\n"
+    case([k for k, _ in refs_in(t_ascii)], ["code-target", "pointer"],
+         "the ASCII arrow is read beside the glyph")
+    case(refs_in(t_ascii)[1][1].group("name").strip(), "A read that reports an absence",
+         "the name is taken after the ASCII arrow")
+    t_rule = "----\n--> *A read that reports an absence*\n"
+    case([k for k, _ in refs_in(t_rule)], [],
+         "a bare `-->` (a rule or an HTML comment) is not the pointer arrow")
     rt = io.open(os.path.join(root, ".github/REVIEW_TEMPLATE.md"),
                  encoding="utf-8").read()
     rmk = code_mask(rt)
