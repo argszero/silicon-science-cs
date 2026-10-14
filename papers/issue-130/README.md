@@ -152,7 +152,7 @@ Each of these prints a verdict of its own; run them from the package directory.
 | `spike_v5.py` | the **null-key** axis: the null matched per side vs drawn at the longer length, with the key's effect measured as a function of the length ratio |
 | `spike_v6.py` | the **(statistic × band)** operating-point table and the cross-over, separated into a floor cause and a robustness cause |
 | `spike_v7.py` | the **third operator** on the fusion, and the transfer law's operator-independence (certificates X1–X4) |
-| `floor_v2.py`, `floor_v3.py` | the **certification floor** `L*`: where a statistic's null p95 reaches the floor (so no threshold at that length can certify anything) and how the floor moves with the level |
+| `floor_v2.py`, `floor_v3.py` | the **certification floor** `L*`: where a statistic's null p95 reaches the floor (so no threshold at that length can certify anything) and how the floor moves with the level — it **rises** as `alpha` rises (`share(L) >= alpha` with `share` non-decreasing in `L`), a direction `floor_v3.py` asserts over its own output |
 | `analyse_v2.py` | the analysis that derives the paper's tables from `spike_v2_results.json`, including the **mechanism certificate** (predicts `eps*` from the measured decay curve and the measured threshold, then compares with the measured `eps*`) |
 | `repro_check.py` | the **determinism certificate**: two-run byte identity for every instrument, with its own three-plant battery |
 | `spike_v8.py` | the **stratum-weights** axis: the operating point calibrated on a pooled null against a scan whose per-stratum shares differ, the reweighting repair, and the per-stratum thresholds (host rant item 13) |

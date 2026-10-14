@@ -83,8 +83,8 @@ the certification floor, the composition law and the stratification of the null.
    below alpha, the null's p95 is 0, the matched threshold is 0, and the check's false-positive rate is
    1.0. Below `L*` no threshold can certify a recall claim at that level; `L*` is a **band**, measured at
    100-130 for word-3 Jaccard and 1196-2000 for
-   word-5 at alpha = 0.05 (the two definitions bracket it, §6), and it **decreases** as alpha rises
-   (alpha = 0.01 gives 40 for word-3).
+   word-5 at alpha = 0.05 (the two definitions bracket it, §6), and it **rises** as alpha rises
+   (alpha = 0.01 gives 40 for word-3, against 100 at alpha = 0.05).
 4. **A composition law** (§7): a fusion of two statistics at their own matched operating points
    satisfies `eps*(OR) >= max(eps*)` and `eps*(AND) <= min(eps*)` at every one of its 96
    composed cells — 6 statistic pairs x 2 compositions x 4 lengths, measured under both edit
@@ -348,8 +348,10 @@ Let `share(L)` be the fraction of unrelated same-length null pairs whose similar
 `share(L) < alpha`, the null has no positive p95, so the matched threshold is 0 and the false-positive
 rate is 1.0 — a **hole** in the operating characteristic, not a reading of 0.0000. The floor is the
 first length at which `share(L) >= alpha`. On that definition the floor is 100 for
-word-3 Jaccard and 2000 for word-5 at alpha = 0.05, and it moves out to
-40 for word-3 at alpha = 0.01. An independent definition — the smallest length at
+word-3 Jaccard and 2000 for word-5 at alpha = 0.05, and it falls to
+40 for word-3 at alpha = 0.01 — the screen's criterion is `share(L) >= alpha` and
+`share` is non-decreasing in `L`, so a stricter level is cleared on a shorter artefact. An independent
+definition — the smallest length at
 which the null's p95 becomes positive, bisected on a finer grid — locates the same floor at
 130 and 1196. The two definitions therefore **bracket** `L*` rather than
 agreeing on a point: `L*` is a **band**, 100–130 for word-3 and
@@ -360,9 +362,10 @@ located it rather than as a single length.
 
 Three consequences. (i) The floor is the *false-negative* analogue of the rule-of-three false-positive
 bound: both are statements about what a corpus of a given size can certify, and a specification that
-names one without the other is incomplete. (ii) The floor **decreases as alpha rises** — a deployer who
-can tolerate more false positives can certify shorter artefacts — and the trade is quantified rather
-than assumed. (iii) Below the floor the honest reading is "no operating point", which is why the
+names one without the other is incomplete. (ii) The floor **rises as alpha rises** — a deployer who
+sets a looser false-positive level must certify on longer artefacts, because the level is a lower bound
+on the fraction of the null pool that must exceed 0 — and the trade is quantified rather than assumed.
+(iii) Below the floor the honest reading is "no operating point", which is why the
 censored cells are named in Table 3 and Figure 3 rather than filled with a number: a table of zeros
 would be a table of holes printed as findings.
 
@@ -554,8 +557,9 @@ refutation is the load-bearing novelty.
   the useful form for a deployer comparing two statistics of the same kind.
 - **P4 — a certification floor exists: CONFIRMED.** The registration predicted a minimum length below
   which no threshold can certify a recall claim at a stated level. It exists, it is located
-  (100 for word-3 at alpha = 0.05, 2000 for word-5), it moves the right
-  way with the level (40 at alpha = 0.01). Two independent definitions **bracket** it
+  (100 for word-3 at alpha = 0.05, 2000 for word-5), and it **rises** with
+  the level (40 for word-3 at alpha = 0.01, against 100 at alpha =
+  0.05). Two independent definitions **bracket** it
   rather than agreeing on a point — the share screen reads 100 where the p95 probe reads
   130 for word-3 at alpha = 0.05 — so `L*` is registered and reported **with its band**
   (criterion (v) below), and below the band's lower end the honest reading is still "no operating point".
