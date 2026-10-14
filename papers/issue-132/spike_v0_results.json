@@ -1,0 +1,470 @@
+{
+ "containment": [
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 0,
+   "cor_not_pool": 117,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1975,
+   "pool_not_cor": 13,
+   "share": 0.13450013620266957,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 594,
+   "|F_corpus|": 711,
+   "|F_pool|": 607
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 1,
+   "cor_not_pool": 120,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1919,
+   "pool_not_cor": 28,
+   "share": 0.13068646145464452,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 591,
+   "|F_corpus|": 711,
+   "|F_pool|": 619
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 2,
+   "cor_not_pool": 25,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 2433,
+   "pool_not_cor": 59,
+   "share": 0.16569054753473167,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 686,
+   "|F_corpus|": 711,
+   "|F_pool|": 745
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 3,
+   "cor_not_pool": 79,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1679,
+   "pool_not_cor": 57,
+   "share": 0.11434214110596568,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 632,
+   "|F_corpus|": 711,
+   "|F_pool|": 689
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 4,
+   "cor_not_pool": 80,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1437,
+   "pool_not_cor": 33,
+   "share": 0.09786161808771451,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 631,
+   "|F_corpus|": 711,
+   "|F_pool|": 664
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 5,
+   "cor_not_pool": 81,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1812,
+   "pool_not_cor": 47,
+   "share": 0.1233996186325252,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 630,
+   "|F_corpus|": 711,
+   "|F_pool|": 677
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 6,
+   "cor_not_pool": 97,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 726,
+   "pool_not_cor": 29,
+   "share": 0.04944156905475347,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 614,
+   "|F_corpus|": 711,
+   "|F_pool|": 643
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 7,
+   "cor_not_pool": 125,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 2703,
+   "pool_not_cor": 17,
+   "share": 0.18407790792699538,
+   "theta": 0.005,
+   "|F_corpus \u2229 F_pool|": 586,
+   "|F_corpus|": 711,
+   "|F_pool|": 603
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 0,
+   "cor_not_pool": 83,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1975,
+   "pool_not_cor": 21,
+   "share": 0.13450013620266957,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 522,
+   "|F_corpus|": 605,
+   "|F_pool|": 543
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 1,
+   "cor_not_pool": 95,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1919,
+   "pool_not_cor": 17,
+   "share": 0.13068646145464452,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 510,
+   "|F_corpus|": 605,
+   "|F_pool|": 527
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 2,
+   "cor_not_pool": 29,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 2433,
+   "pool_not_cor": 82,
+   "share": 0.16569054753473167,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 576,
+   "|F_corpus|": 605,
+   "|F_pool|": 658
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 3,
+   "cor_not_pool": 42,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1679,
+   "pool_not_cor": 42,
+   "share": 0.11434214110596568,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 563,
+   "|F_corpus|": 605,
+   "|F_pool|": 605
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 4,
+   "cor_not_pool": 65,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1437,
+   "pool_not_cor": 37,
+   "share": 0.09786161808771451,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 540,
+   "|F_corpus|": 605,
+   "|F_pool|": 577
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 5,
+   "cor_not_pool": 69,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1812,
+   "pool_not_cor": 72,
+   "share": 0.1233996186325252,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 536,
+   "|F_corpus|": 605,
+   "|F_pool|": 608
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 6,
+   "cor_not_pool": 92,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 726,
+   "pool_not_cor": 31,
+   "share": 0.04944156905475347,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 513,
+   "|F_corpus|": 605,
+   "|F_pool|": 544
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 7,
+   "cor_not_pool": 91,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 2703,
+   "pool_not_cor": 11,
+   "share": 0.18407790792699538,
+   "theta": 0.01,
+   "|F_corpus \u2229 F_pool|": 514,
+   "|F_corpus|": 605,
+   "|F_pool|": 525
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 0,
+   "cor_not_pool": 58,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1975,
+   "pool_not_cor": 30,
+   "share": 0.13450013620266957,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 446,
+   "|F_corpus|": 504,
+   "|F_pool|": 476
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 1,
+   "cor_not_pool": 67,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1919,
+   "pool_not_cor": 9,
+   "share": 0.13068646145464452,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 437,
+   "|F_corpus|": 504,
+   "|F_pool|": 446
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 2,
+   "cor_not_pool": 21,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 2433,
+   "pool_not_cor": 64,
+   "share": 0.16569054753473167,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 483,
+   "|F_corpus|": 504,
+   "|F_pool|": 547
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 3,
+   "cor_not_pool": 25,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1679,
+   "pool_not_cor": 43,
+   "share": 0.11434214110596568,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 479,
+   "|F_corpus|": 504,
+   "|F_pool|": 522
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 4,
+   "cor_not_pool": 52,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1437,
+   "pool_not_cor": 27,
+   "share": 0.09786161808771451,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 452,
+   "|F_corpus|": 504,
+   "|F_pool|": 479
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 5,
+   "cor_not_pool": 51,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 1812,
+   "pool_not_cor": 57,
+   "share": 0.1233996186325252,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 453,
+   "|F_corpus|": 504,
+   "|F_pool|": 510
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 6,
+   "cor_not_pool": 55,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 726,
+   "pool_not_cor": 36,
+   "share": 0.04944156905475347,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 449,
+   "|F_corpus|": 504,
+   "|F_pool|": 485
+  },
+  {
+   "F_corpus_subset_F_pool": false,
+   "F_pool_subset_F_corpus": false,
+   "book": 7,
+   "cor_not_pool": 57,
+   "n_corpus_docs": 14684,
+   "n_pool_docs": 2703,
+   "pool_not_cor": 11,
+   "share": 0.18407790792699538,
+   "theta": 0.02,
+   "|F_corpus \u2229 F_pool|": 447,
+   "|F_corpus|": 504,
+   "|F_pool|": 458
+  }
+ ],
+ "containment_summary": {
+  "cells": 24,
+  "cells_where_F_corpus_NOT_subset_F_pool": 24,
+  "cells_where_F_pool_NOT_subset_F_corpus": 24,
+  "verdict": "SET INCLUSION DOES NOT HOLD in either direction"
+ },
+ "corpus": {
+  "books": [
+   "pg1342",
+   "pg1661",
+   "pg2701",
+   "pg345",
+   "pg74",
+   "pg76",
+   "pg84",
+   "pg98"
+  ],
+  "n_docs": 14684,
+  "n_docs_per_book": {
+   "pg1342": 1975,
+   "pg1661": 1919,
+   "pg2701": 2433,
+   "pg345": 1679,
+   "pg74": 1437,
+   "pg76": 1812,
+   "pg84": 726,
+   "pg98": 2703
+  },
+  "sha256_pin_ok": true
+ },
+ "dilution": {
+  "char_bigram_theta_0.01": {
+   "n_confined_pairs": 318,
+   "n_pool_generic_but_corpus_invisible": 7,
+   "worst_abs_violation": 4.336808689942018e-19,
+   "worst_where": {
+    "book": 0,
+    "unit": "zw"
+   }
+  },
+  "word3_theta_0.01": {
+   "n_confined_pairs": 685502,
+   "n_pool_generic_but_corpus_invisible": 35,
+   "worst_abs_violation": 8.673617379884035e-19,
+   "worst_where": {
+    "book": 2,
+    "unit": "the white whale"
+   }
+  }
+ },
+ "instrument": "spike_v0.py",
+ "issue": 132,
+ "plants": {
+  "A_share1_both_hold": true,
+  "A_share1_cor_not_pool": 0,
+  "A_share1_pool_not_cor": 0,
+  "B_small_share_hidden": 1,
+  "B_small_share_pool_not_cor": 1,
+  "C_confined_pairs": 1,
+  "C_worst_abs_violation": 0.0
+ },
+ "question": "is the frame LEVEL a set inclusion (an identity) or a dilution (a share effect)?",
+ "share_sweep_char_bigram_theta_0.01": [
+  {
+   "books_pooled": 1,
+   "hidden": 21,
+   "hidden_fraction_of_F_pool": 0.03867403314917127,
+   "n_pool_docs": 1975,
+   "share": 0.13450013620266957,
+   "|F_pool|": 543
+  },
+  {
+   "books_pooled": 2,
+   "hidden": 14,
+   "hidden_fraction_of_F_pool": 0.025594149908592323,
+   "n_pool_docs": 3894,
+   "share": 0.26518659765731406,
+   "|F_pool|": 547
+  },
+  {
+   "books_pooled": 4,
+   "hidden": 30,
+   "hidden_fraction_of_F_pool": 0.048859934853420196,
+   "n_pool_docs": 8006,
+   "share": 0.5452192862980114,
+   "|F_pool|": 614
+  },
+  {
+   "books_pooled": 8,
+   "hidden": 0,
+   "hidden_fraction_of_F_pool": 0.0,
+   "n_pool_docs": 14684,
+   "share": 1.0,
+   "|F_pool|": 605
+  }
+ ],
+ "share_sweep_word3_theta_0.01": [
+  {
+   "books_pooled": 1,
+   "hidden": 39,
+   "hidden_fraction_of_F_pool": 0.8863636363636364,
+   "n_pool_docs": 1975,
+   "share": 0.13450013620266957,
+   "|F_pool|": 44
+  },
+  {
+   "books_pooled": 2,
+   "hidden": 19,
+   "hidden_fraction_of_F_pool": 0.76,
+   "n_pool_docs": 3894,
+   "share": 0.26518659765731406,
+   "|F_pool|": 25
+  },
+  {
+   "books_pooled": 4,
+   "hidden": 15,
+   "hidden_fraction_of_F_pool": 0.6818181818181818,
+   "n_pool_docs": 8006,
+   "share": 0.5452192862980114,
+   "|F_pool|": 22
+  },
+  {
+   "books_pooled": 8,
+   "hidden": 0,
+   "hidden_fraction_of_F_pool": 0.0,
+   "n_pool_docs": 14684,
+   "share": 1.0,
+   "|F_pool|": 7
+  }
+ ]
+}

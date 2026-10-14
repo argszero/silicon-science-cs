@@ -1,0 +1,212 @@
+{
+ "L1_filter_chain": {
+  "E_matched_filter_on_both": 36.981500000000004,
+  "E_naive_filters_neither_side": 37.0,
+  "E_one_sided_filter_on_scan_only": 37.0,
+  "identity_E_matched_over_E_naive": 0.9995,
+  "identity_rhs": 0.9995,
+  "inflation_one_sided_over_matched": 1.0005002501250624,
+  "min_degen_sweep": {
+   "10": {
+    "E_matched": 36.981500000000004,
+    "E_one_sided": 37.0,
+    "inflation_one_sided_over_matched": 1.0005002501250624,
+    "n_scan_pairs_eligible": 37,
+    "p_null_stage1": 0.9995
+   },
+   "100": {
+    "E_matched": 0.3597,
+    "E_one_sided": 6.0,
+    "inflation_one_sided_over_matched": 16.680567139282736,
+    "n_scan_pairs_eligible": 6,
+    "p_null_stage1": 0.05995
+   },
+   "25": {
+    "E_matched": 23.51415,
+    "E_one_sided": 33.0,
+    "inflation_one_sided_over_matched": 1.4034102869974037,
+    "n_scan_pairs_eligible": 33,
+    "p_null_stage1": 0.71255
+   },
+   "50": {
+    "E_matched": 5.156,
+    "E_one_sided": 20.0,
+    "inflation_one_sided_over_matched": 3.878975950349108,
+    "n_scan_pairs_eligible": 20,
+    "p_null_stage1": 0.2578
+   }
+  },
+  "n_null_draws": 20000,
+  "n_null_dropped_by_stage2": 0,
+  "n_scan_pairs_eligible": 37,
+  "n_scan_pairs_raw": 37,
+  "null_survivors_stage1": 19990,
+  "null_survivors_stage2": 19990,
+  "observed_non_identical_fires": 12,
+  "observed_over_E_matched": 0.32448656760812833,
+  "p_null_stage1": 0.9995,
+  "p_null_stage2": 0.9995
+ },
+ "L2_interval_ownership": {
+  "interval_over_ALL_fires": {
+   "hi": 1.0,
+   "lo": 1.0,
+   "median": 1.0
+  },
+  "interval_over_NON_IDENTICAL": {
+   "hi": 0.88,
+   "lo": 0.7391304347826086,
+   "median": 0.788235294117647
+  },
+  "interval_transfers": false,
+  "n_fires": 37,
+  "n_non_identical": 12,
+  "n_verbatim": 25,
+  "note": "a bootstrap interval belongs to the population it RESAMPLED; a subset carved out afterwards owns only a count-based bound",
+  "poisson_upper_95_one_sided_for_the_small_count": {
+   "k": 12,
+   "upper": 19.44256932991502
+  },
+  "poisson_upper_95_two_sided_for_the_small_count": {
+   "k": 12,
+   "upper": 20.961585048176957
+  }
+ },
+ "L3_joint_profile": {
+  "class_rule": "same book (same author)",
+  "constructions": {
+   "class": {
+    "anchor": {
+     "below": 71,
+     "cell": 0.47333333333333333,
+     "construction": "anchor",
+     "departure_from_0.5": 0.026666666666666672,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.1067961165048543
+    },
+    "exchangeable": {
+     "below": 74,
+     "cell": 0.49333333333333335,
+     "construction": "exchangeable",
+     "departure_from_0.5": 0.006666666666666654,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.0833333333333333
+    },
+    "marginal": {
+     "below": 66,
+     "cell": 0.44,
+     "construction": "marginal",
+     "departure_from_0.5": 0.06,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.1122807017543859
+    },
+    "third": {
+     "below": 61,
+     "cell": 0.4066666666666667,
+     "construction": "third",
+     "departure_from_0.5": 0.09333333333333332,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.8843537414965987
+    }
+   },
+   "control": {
+    "anchor": {
+     "below": 73,
+     "cell": 0.4866666666666667,
+     "construction": "anchor",
+     "departure_from_0.5": 0.013333333333333308,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.1339285714285714
+    },
+    "exchangeable": {
+     "below": 69,
+     "cell": 0.46,
+     "construction": "exchangeable",
+     "departure_from_0.5": 0.03999999999999998,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.0890688259109311
+    },
+    "marginal": {
+     "below": 88,
+     "cell": 0.5866666666666667,
+     "construction": "marginal",
+     "departure_from_0.5": 0.08666666666666667,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.143835616438356
+    },
+    "third": {
+     "below": 67,
+     "cell": 0.44666666666666666,
+     "construction": "third",
+     "departure_from_0.5": 0.053333333333333344,
+     "n_pairs": 150,
+     "null_length_ratio_median": 1.896341463414634
+    }
+   },
+   "neardup": {
+    "anchor": {
+     "below": 0,
+     "cell": 0.0,
+     "construction": "anchor",
+     "departure_from_0.5": 0.5,
+     "n_pairs": 37,
+     "null_length_ratio_median": 1.1085450346420322
+    },
+    "exchangeable": {
+     "below": 12,
+     "cell": 0.32432432432432434,
+     "construction": "exchangeable",
+     "departure_from_0.5": 0.17567567567567566,
+     "n_pairs": 37,
+     "null_length_ratio_median": 1.0
+    },
+    "marginal": {
+     "below": 0,
+     "cell": 0.0,
+     "construction": "marginal",
+     "departure_from_0.5": 0.5,
+     "n_pairs": 37,
+     "null_length_ratio_median": 1.137299771167048
+    },
+    "third": {
+     "below": 0,
+     "cell": 0.0,
+     "construction": "third",
+     "departure_from_0.5": 0.5,
+     "n_pairs": 37,
+     "null_length_ratio_median": 1.7319277108433735
+    }
+   }
+  },
+  "control_rule": "different language",
+  "k_side": 8,
+  "match_tol": 0.2,
+  "n_class_pairs": 150,
+  "n_control_pairs": 150,
+  "n_neardup_pairs": 37,
+  "neardup_rule": "the planted near-duplicate fires (whole-corpus null pool)"
+ },
+ "corpus": {
+  "doc_chars_max": 1200,
+  "edit_rate": 0.02,
+  "min_doc_chars": 120,
+  "n_base_docs": 4727,
+  "n_docs": 4763,
+  "n_edited_reposts": 12,
+  "n_verbatim_reposts": 24,
+  "sha256_pin_ok": true
+ },
+ "instrument": "spike_v3.py",
+ "issue": 132,
+ "params": {
+  "k_side": 8,
+  "match_tol": 0.2,
+  "min_degen": 10,
+  "min_units_w3": 10,
+  "n_pairs": 150,
+  "seed": 20261010,
+  "tau_fire": 0.5,
+  "theta_frame": 0.01
+ },
+ "question": "is the NULL a population LEVEL too -- does the population a null is drawn from decide the threshold, the filter chain, the interval and the pairing?"
+}

@@ -1,0 +1,36 @@
+{
+ "captions": [
+  "fig1_dilution_law.svg",
+  "fig2_level_ladder.svg",
+  "fig3_critical_share.svg",
+  "fig4_r_boundary.svg",
+  "fig5_eligible_rate.svg"
+ ],
+ "figures": [
+  {
+   "bytes": 5842,
+   "file": "fig1_dilution_law.svg",
+   "sha256": "7898f4a2fe31de554a3c0fc4952b2a4f7a65cce42c25f4b752abd674d0e3050a"
+  },
+  {
+   "bytes": 7651,
+   "file": "fig2_level_ladder.svg",
+   "sha256": "155a93e4341d77d891fb0b58dead446072ffde389bf4668d9bb2dd33b9f4159a"
+  },
+  {
+   "bytes": 7826,
+   "file": "fig3_critical_share.svg",
+   "sha256": "8c8a3f3a576c8c203e7da5090dfa2635d03434f6bedaf6fd46b1db6b57d5dbdc"
+  },
+  {
+   "bytes": 6666,
+   "file": "fig4_r_boundary.svg",
+   "sha256": "6da3ca55060863fb7e044d78d7ae87a6381effd485597b7af1befd5d32534b55"
+  },
+  {
+   "bytes": 6509,
+   "file": "fig5_eligible_rate.svg",
+   "sha256": "ae836bb26a836f87ea2a0bb777a039223829462e2a80263ba27b9f03fe133ea8"
+  }
+ ]
+}
