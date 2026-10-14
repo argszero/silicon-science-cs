@@ -29,6 +29,15 @@ Two things the tool does not decide, and says so:
   base - never at the repository root.  Resolving from the root manufactures
   false BROKENs (`papers/README.md` -> `issue-42/manuscript.md`): the defect
   R265 caught in the first census instrument.
+* a target is read only where the renderer reads a **link**: every **inline code
+  span** and **fenced code block** is masked before the targets are taken,
+  because a `](path)` written inside one is an *illustration of the form*, not a
+  cross-reference the file makes.  Read unmasked, the example forms in
+  `papers/issue-93/README.md` (``[text](path)``, ``[alt](path)``) were the
+  tree's only BROKENs - an instrument artefact, corrected in the act that masked
+  them (R574; the same species as the root-base defect above).  The tool therefore
+  reads its stated class - *the cross-references a file **makes*** - and not a
+  superset of it.
 
 Class of one target, decided by form, every form counted and named:
   path         - everything else; resolved with os.path.exists at the base
@@ -66,6 +75,7 @@ from urllib.parse import unquote
 
 LINK = re.compile(r"\[[^\]]*\]\(([^)\s]*(?:\s[^)]*)?)\)")
 SCHEME = re.compile(r"^[A-Za-z][A-Za-z0-9+.\-]*:")
+FENCE = re.compile(r"^( {0,3})(`{3,}|~{3,})")
 
 
 def repo_root():
@@ -102,9 +112,70 @@ def classify(target):
     return "path"
 
 
+def mask_code(text):
+    """The text as the renderer's **link parser** meets it: every fenced code
+    block and inline code span is replaced by blank space, so a `](...)` written
+    inside one is not read.  A code span is not a place a renderer resolves a
+    link, so a target found only inside one is an artefact of the instrument and
+    not a cross-reference the file makes.  Blanking (rather than deleting) keeps
+    the text's shape, so a link that *follows* a code span on the same line is
+    still read."""
+    out = []
+    fence = None
+    for line in text.split("\n"):
+        m = FENCE.match(line)
+        if fence is not None:
+            if m and m.group(2)[0] == fence[0] and len(m.group(2)) >= len(fence):
+                fence = None
+            out.append("")
+            continue
+        if m:
+            fence = m.group(2)
+            out.append("")
+            continue
+        out.append(blank_spans(line))
+    return "\n".join(out)
+
+
+def blank_spans(line):
+    """One source line, its inline code spans blanked.  A run of N backticks
+    opens a span that the next run of exactly N backticks closes; a run left
+    unclosed is literal text (CommonMark) and is kept as it stands."""
+    res = []
+    i, n = 0, len(line)
+    while i < n:
+        if line[i] != "`":
+            res.append(line[i])
+            i += 1
+            continue
+        j = i
+        while j < n and line[j] == "`":
+            j += 1
+        run, close, k = j - i, -1, j
+        while k < n:
+            if line[k] == "`":
+                m = k
+                while m < n and line[m] == "`":
+                    m += 1
+                if m - k == run:
+                    close = m
+                    break
+                k = m
+            else:
+                k += 1
+        if close == -1:
+            res.append(line[i:j])
+            i = j
+            continue
+        res.append(" " * (close - i))
+        i = close
+    return "".join(res)
+
+
 def targets_in(text):
-    """Every `](...)` target, in file order."""
-    return [m.group(1) for m in LINK.finditer(text)]
+    """Every `](...)` target the renderer reads, in file order - code spans and
+    fenced blocks masked out first, since a renderer resolves no link inside one."""
+    return [m.group(1) for m in LINK.finditer(mask_code(text))]
 
 
 def resolves(root, rel_file, target):
@@ -197,7 +268,11 @@ def selftest():
         write("sub/a.md",
               "[sib](b.md)\n[up](../c.md)\n[gone](nope.md)\n"
               "[web](https://example.com/x)\n[form](figures/<file>)\n"
-              "[here](#sec)\n")
+              "[here](#sec)\n"
+              "[`code text`](b.md)\n"
+              "`[not a link](nope-tick.md)`\n"
+              "`code` [real](../c.md)\n"
+              "\n```\n[fenced](nope-fence.md)\n```\n")
 
         body = open(os.path.join(tmp, "sub/a.md"), encoding="utf-8").read()
         got = targets_in(body)
@@ -227,6 +302,14 @@ def selftest():
             ("a_nonempty_clean_set_passes", verdict(["a.md"], []) == "PASS"),
             ("a_nonempty_set_with_a_broken_link_fails",
              verdict(["a.md"], [("a.md", "nope.md")]) == "FAIL"),
+            ("a_target_inside_inline_code_is_not_read",
+             "nope-tick.md" not in targets_in(body)),
+            ("a_target_inside_a_fenced_block_is_not_read",
+             "nope-fence.md" not in targets_in(body)),
+            ("a_link_whose_text_is_code_is_still_read",
+             "b.md" in targets_in(body)),
+            ("a_real_link_after_a_code_span_is_still_read",
+             targets_in(body).count("../c.md") == 2),
         ]
         ok = sum(1 for _, passed in cases if passed)
         for name, passed in cases:

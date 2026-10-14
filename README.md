@@ -495,8 +495,12 @@ carriers**, which no single list can produce.
 **And this rule's first form has an instrument in this tree**: `.github/tools/linkgate.py` resolves every markdown
 link target of every tracked markdown carrier — `python3 .github/tools/linkgate.py --check` — at the **linking
 file's own directory**, which is where a renderer resolves it (resolving from the repository root manufactures
-false BROKENs: the defect the first census instrument carried), and it **names every form it does not read as a
-link**: a URL to another repository, a placeholder an author instantiates, an in-page anchor. Its count is
+false BROKENs: the defect the first census instrument carried), and it reads the form the **renderer** reads: a
+target written inside an **inline code span** or a **fenced code block** is masked before the targets are taken,
+because a `](path)` there is an *illustration of the form* and not a cross-reference the file **makes** (read
+unmasked, the two example forms in `papers/issue-93/README.md` were the tree's only BROKENs — corrected at
+**R574**, the act that masked them, the same species as the root-base defect above). It **names every form it does
+not read as a link**: a URL to another repository, a placeholder an author instantiates, an in-page anchor. Its count is
 `targets=<T> links=<L> resolved=<R> broken=<B>`, a `broken=0` printed too — re-taken at **R406** over **34** tracked
 markdown carriers: **targets=77 links=72 resolved=72 broken=0**, with `url=2 placeholder=3 anchor=0`, the anchor
 clause **vacuous at that head** (its first anchored link is the first case the clause can be tested on; R400 read
