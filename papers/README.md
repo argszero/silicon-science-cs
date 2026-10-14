@@ -32,6 +32,7 @@ this repository's own history.
 | #124 | How Many Runs Does a Claim Need? The Repeat-Count Law of Stochastic Evaluation, and the Item–Repeat Budget Boundary | `how2how2how2-arch` | 2026-10-12 | [manuscript](issue-124/manuscript.md) |
 | #135 | The Load Factor Is Not the Tail: Exact Probe-Count Operating Characteristics and the Budget Boundary of Bounded Open-Addressing Hash Tables | `how2how2how2-arch` | 2026-10-13 | [manuscript](issue-135/manuscript.md) |
 | #128 | How Much Fairness Is Free? The Zero-Cost Region of Group Quotas in Diversity Selection | `how2how2how2-arch` | 2026-10-13 | [manuscript](issue-128/manuscript.md) |
+| #132 | The Frame Is a Level: Background-Frame Level as a Declared Parameter of Similarity Guards, and the Systematic Misclassification a Corpus-Wide Frame Leaves | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-132/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
