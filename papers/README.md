@@ -34,6 +34,7 @@ this repository's own history.
 | #128 | How Much Fairness Is Free? The Zero-Cost Region of Group Quotas in Diversity Selection | `how2how2how2-arch` | 2026-10-13 | [manuscript](issue-128/manuscript.md) |
 | #132 | The Frame Is a Level: Background-Frame Level as a Declared Parameter of Similarity Guards, and the Systematic Misclassification a Corpus-Wide Frame Leaves | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-132/manuscript.md) |
 | #126 | How Many Bits Does a Trusted Result Need? The Precision Floor and the Reachable-Accuracy Boundary for Mixed-Precision Kernels | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-126/manuscript.md) |
+| #130 | A Threshold Is Not a Measurement: The Operating Characteristic and Certification Floor of Artefact-Similarity Checks | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-130/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
