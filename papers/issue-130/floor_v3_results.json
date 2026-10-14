@@ -1,0 +1,48 @@
+{
+ "L_grid": [
+  40,
+  70,
+  100,
+  150,
+  250,
+  400,
+  700,
+  1200,
+  2000,
+  3500
+ ],
+ "L_star": {
+  "jac3|alpha=0.01": 40,
+  "jac3|alpha=0.05": 100,
+  "jac5|alpha=0.01": 1200,
+  "jac5|alpha=0.05": 2000
+ },
+ "alphas": [
+  0.05,
+  0.01
+ ],
+ "definition": "share(L) = fraction of unrelated same-length null pairs with S > 0; floor L*(alpha) = smallest L with share(L) >= alpha",
+ "n_null": 400,
+ "share": {
+  "jac3|L=100": 0.0625,
+  "jac3|L=1200": 0.945,
+  "jac3|L=150": 0.09,
+  "jac3|L=2000": 0.995,
+  "jac3|L=250": 0.205,
+  "jac3|L=3500": 1.0,
+  "jac3|L=40": 0.0125,
+  "jac3|L=400": 0.325,
+  "jac3|L=70": 0.025,
+  "jac3|L=700": 0.7625,
+  "jac5|L=100": 0.0,
+  "jac5|L=1200": 0.03,
+  "jac5|L=150": 0.0,
+  "jac5|L=2000": 0.0725,
+  "jac5|L=250": 0.0,
+  "jac5|L=3500": 0.2025,
+  "jac5|L=40": 0.0,
+  "jac5|L=400": 0.0025,
+  "jac5|L=70": 0.0,
+  "jac5|L=700": 0.0075
+ }
+}

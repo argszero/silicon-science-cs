@@ -1,0 +1,5 @@
+# `refs/raw.json` is the NETWORK discovery output of `refscan130.py` (the raw arXiv/Crossref
+# responses).  It is reproducible only with network reachability and is not read by anything the
+# one-command reproduction runs, so it is not carried.  `refs/pool.json` IS carried: it is the
+# curated, live-verified pool the manuscript is built and checked against.
+refs/raw.json

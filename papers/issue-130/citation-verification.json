@@ -1,0 +1,3098 @@
+[
+ {
+  "key": "10.1007/3-540-45123-4_1",
+  "source": "crossref",
+  "stored_title": "Identifying and Filtering Near-Duplicate Documents",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Identifying and Filtering Near-Duplicate Documents",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1016/j.scico.2009.02.007",
+  "source": "crossref",
+  "stored_title": "Comparison and evaluation of code clone detection techniques and tools: A qualitative approach",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Comparison and evaluation of code clone detection techniques and tools: A qualitative approach",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1109/ams.2011.19",
+  "source": "crossref",
+  "stored_title": "Survey of Plagiarism Detection Methods",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Survey of Plagiarism Detection Methods",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1109/focs.2006.49",
+  "source": "crossref",
+  "stored_title": "Near-Optimal Hashing Algorithms for Approximate Nearest Neighbor in High Dimensions",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Near-Optimal Hashing Algorithms for Approximate Nearest Neighbor in High Dimensions",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1109/sequen.1997.666900",
+  "source": "crossref",
+  "stored_title": "On the resemblance and containment of documents",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "On the resemblance and containment of documents",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1111/j.2517-6161.1995.tb02031.x",
+  "source": "crossref",
+  "stored_title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1137/070710111",
+  "source": "crossref",
+  "stored_title": "Power-Law Distributions in Empirical Data",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Power-Law Distributions in Empirical Data",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1145/1242572.1242592",
+  "source": "crossref",
+  "stored_title": "Detecting near-duplicates for web crawling",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Detecting near-duplicates for web crawling",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1145/2884781.2884877",
+  "source": "crossref",
+  "stored_title": "SourcererCC: scaling code clone detection to big-code",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "SourcererCC: scaling code clone detection to big-code",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1145/509907.509965",
+  "source": "crossref",
+  "stored_title": "Similarity estimation techniques from rounding algorithms",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Similarity estimation techniques from rounding algorithms",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1145/872757.872770",
+  "source": "crossref",
+  "stored_title": "Winnowing: local algorithms for document fingerprinting",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Winnowing: local algorithms for document fingerprinting",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1145/997817.997857",
+  "source": "crossref",
+  "stored_title": "Locality-sensitive hashing scheme based on p-stable distributions",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Locality-sensitive hashing scheme based on p-stable distributions",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.1162/089976698300017197",
+  "source": "crossref",
+  "stored_title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.18653/v1/2022.acl-long.577",
+  "source": "crossref",
+  "stored_title": "Deduplicating Training Data Makes Language Models Better",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Deduplicating Training Data Makes Language Models Better",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.18653/v1/d19-1224",
+  "source": "crossref",
+  "stored_title": "Show Your Work: Improved Reporting of Experimental Results",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "Show Your Work: Improved Reporting of Experimental Results",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "10.18653/v1/p18-1128",
+  "source": "crossref",
+  "stored_title": "The Hitchhiker\u2019s Guide to Testing Statistical Significance in Natural Language Processing",
+  "method": "Crossref works/<doi> (title+subtitle compare)",
+  "live_title": "The Hitchhiker\u2019s Guide to Testing Statistical Significance in Natural Language Processing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1001.3487",
+  "source": "arxiv",
+  "stored_title": "Features Based Text Similarity Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Features Based Text Similarity Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1003.4065",
+  "source": "arxiv",
+  "stored_title": "Plagiarism Detection using ROUGE and WordNet",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Plagiarism Detection using ROUGE and WordNet",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1006.3514",
+  "source": "arxiv",
+  "stored_title": "Similarity Search and Locality Sensitive Hashing using TCAMs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Similarity Search and Locality Sensitive Hashing using TCAMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1104.3212",
+  "source": "arxiv",
+  "stored_title": "Similarity Join Size Estimation using Locality Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Similarity Join Size Estimation using Locality Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1104.4723",
+  "source": "arxiv",
+  "stored_title": "Bayesian approach for near-duplicate image detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Bayesian approach for near-duplicate image detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1110.1328",
+  "source": "arxiv",
+  "stored_title": "Bayesian Locality Sensitive Hashing for Fast Similarity Search",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Bayesian Locality Sensitive Hashing for Fast Similarity Search",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1111.5062",
+  "source": "arxiv",
+  "stored_title": "EsPRESSo: Efficient Privacy-Preserving Evaluation of Sample Set Similarity",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "EsPRESSo: Efficient Privacy-Preserving Evaluation of Sample Set Similarity",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1206.2082",
+  "source": "arxiv",
+  "stored_title": "Dimension Independent Similarity Computation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Dimension Independent Similarity Computation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1206.6606",
+  "source": "arxiv",
+  "stored_title": "A Sampling-based Tool for Plagiarism Detection in Student Texts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Sampling-based Tool for Plagiarism Detection in Student Texts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1208.2486",
+  "source": "arxiv",
+  "stored_title": "`CodeAliker' - Plagiarism Detection on the Cloud",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "`CodeAliker' - Plagiarism Detection on the Cloud",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1209.5833",
+  "source": "arxiv",
+  "stored_title": "Locality-Sensitive Hashing with Margin Based Feature Selection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality-Sensitive Hashing with Margin Based Feature Selection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1210.3729",
+  "source": "arxiv",
+  "stored_title": "Inference of Fine-grained Attributes of Bengali Corpus for Stylometry Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Inference of Fine-grained Attributes of Bengali Corpus for Stylometry Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1210.7057",
+  "source": "arxiv",
+  "stored_title": "Efficient Distributed Locality Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Efficient Distributed Locality Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1210.7678",
+  "source": "arxiv",
+  "stored_title": "Plagiarism Detection: Keeping Check on Misuse of Intellectual Property",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Plagiarism Detection: Keeping Check on Misuse of Intellectual Property",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1212.6110",
+  "source": "arxiv",
+  "stored_title": "Hyperplane Arrangements and Locality-Sensitive Hashing with Lift",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Hyperplane Arrangements and Locality-Sensitive Hashing with Lift",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1303.4169",
+  "source": "arxiv",
+  "stored_title": "Markov Chain Monte Carlo for Arrangement of Hyperplanes in Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Markov Chain Monte Carlo for Arrangement of Hyperplanes in Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1310.0883",
+  "source": "arxiv",
+  "stored_title": "Scalable Protein Sequence Similarity Search using Locality-Sensitive Hashing and MapReduce",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Scalable Protein Sequence Similarity Search using Locality-Sensitive Hashing and MapReduce",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1310.4136",
+  "source": "arxiv",
+  "stored_title": "Scalable Locality-Sensitive Hashing for Similarity Search in High-Dimensional, Large-Scale Multimedia Datasets",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Scalable Locality-Sensitive Hashing for Similarity Search in High-Dimensional, Large-Scale Multimedia Datasets",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1403.1310",
+  "source": "arxiv",
+  "stored_title": "AntiPlag: Plagiarism Detection on Electronic Submissions of Text Based Assignments",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "AntiPlag: Plagiarism Detection on Electronic Submissions of Text Based Assignments",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1403.2871",
+  "source": "arxiv",
+  "stored_title": "Shape-Based Plagiarism Detection for Flowchart Figures in Texts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Shape-Based Plagiarism Detection for Flowchart Figures in Texts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1406.1143",
+  "source": "arxiv",
+  "stored_title": "Identifying Duplicate and Contradictory Information in Wikipedia",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Identifying Duplicate and Contradictory Information in Wikipedia",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1407.4416",
+  "source": "arxiv",
+  "stored_title": "In Defense of MinHash Over SimHash",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "In Defense of MinHash Over SimHash",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1412.3103",
+  "source": "arxiv",
+  "stored_title": "Sequential Hypothesis Tests for Adaptive Locality Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Sequential Hypothesis Tests for Adaptive Locality Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1412.7782",
+  "source": "arxiv",
+  "stored_title": "Plagiarism Detection on Electronic Text based Assignments using Vector Space Model (ICIAfS14)",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Plagiarism Detection on Electronic Text based Assignments using Vector Space Model (ICIAfS14)",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1507.03225",
+  "source": "arxiv",
+  "stored_title": "CoveringLSH: Locality-sensitive Hashing without False Negatives",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CoveringLSH: Locality-sensitive Hashing without False Negatives",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1512.06448",
+  "source": "arxiv",
+  "stored_title": "SourcererCC: Scaling Code Clone Detection to Big Code",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SourcererCC: Scaling Code Clone Detection to Big Code",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1607.02952",
+  "source": "arxiv",
+  "stored_title": "Are human interactivity times lognormal?",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Are human interactivity times lognormal?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1612.07710",
+  "source": "arxiv",
+  "stored_title": "Set Similarity Search Beyond MinHash",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Set Similarity Search Beyond MinHash",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1701.05290",
+  "source": "arxiv",
+  "stored_title": "Range-efficient consistent sampling and locality-sensitive hashing for polygons",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Range-efficient consistent sampling and locality-sensitive hashing for polygons",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1702.01032",
+  "source": "arxiv",
+  "stored_title": "Semi-Supervised Spam Detection in Twitter Stream",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Semi-Supervised Spam Detection in Twitter Stream",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1703.01054",
+  "source": "arxiv",
+  "stored_title": "When Hashes Met Wedges: A Distributed Algorithm for Finding High Similarity Vectors",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "When Hashes Met Wedges: A Distributed Algorithm for Finding High Similarity Vectors",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1703.04040",
+  "source": "arxiv",
+  "stored_title": "Locality-sensitive hashing of curves",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality-sensitive hashing of curves",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1704.04370",
+  "source": "arxiv",
+  "stored_title": "Fast Similarity Sketching",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Fast Similarity Sketching",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1704.05617",
+  "source": "arxiv",
+  "stored_title": "Deduplication in a massive clinical note dataset",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Deduplication in a massive clinical note dataset",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1705.07258",
+  "source": "arxiv",
+  "stored_title": "PrivMin: Differentially Private MinHash for Jaccard Similarity Computation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "PrivMin: Differentially Private MinHash for Jaccard Similarity Computation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1705.08828",
+  "source": "arxiv",
+  "stored_title": "Deep Investigation of Cross-Language Plagiarism Detection Methods",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Deep Investigation of Cross-Language Plagiarism Detection Methods",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1706.05698",
+  "source": "arxiv",
+  "stored_title": "SuperMinHash - A New Minwise Hashing Algorithm for Jaccard Similarity Estimation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SuperMinHash - A New Minwise Hashing Algorithm for Jaccard Similarity Estimation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1712.02820",
+  "source": "arxiv",
+  "stored_title": "A Deep Network Model for Paraphrase Detection in Short Text Messages",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Deep Network Model for Paraphrase Detection in Short Text Messages",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1712.10309",
+  "source": "arxiv",
+  "stored_title": "Methods for Detecting Paraphrase Plagiarism",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Methods for Detecting Paraphrase Plagiarism",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1803.03465",
+  "source": "arxiv",
+  "stored_title": "Malytics: A Malware Detection Scheme",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Malytics: A Malware Detection Scheme",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1803.09835",
+  "source": "arxiv",
+  "stored_title": "Locality-Sensitive Hashing for Earthquake Detection: A Case Study of Scaling Data-Driven Science",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality-Sensitive Hashing for Earthquake Detection: A Case Study of Scaling Data-Driven Science",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1805.01923",
+  "source": "arxiv",
+  "stored_title": "A Rank-Based Similarity Metric for Word Embeddings",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Rank-Based Similarity Metric for Word Embeddings",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1806.06870",
+  "source": "arxiv",
+  "stored_title": "The Off-Topic Memento Toolkit",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Off-Topic Memento Toolkit",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1807.02895",
+  "source": "arxiv",
+  "stored_title": "A Filter of Minhash for Image Similarity Measures",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Filter of Minhash for Image Similarity Measures",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1808.10192",
+  "source": "arxiv",
+  "stored_title": "Towards a Better Metric for Evaluating Question Generation Systems",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards a Better Metric for Evaluating Question Generation Systems",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1809.04052",
+  "source": "arxiv",
+  "stored_title": "Maximally Consistent Sampling and the Jaccard Index of Probability Distributions",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Maximally Consistent Sampling and the Jaccard Index of Probability Distributions",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1810.03099",
+  "source": "arxiv",
+  "stored_title": "Multi-reference Cosine: A New Approach to Text Similarity Measurement in Large Collections",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Multi-reference Cosine: A New Approach to Text Similarity Measurement in Large Collections",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1810.03102",
+  "source": "arxiv",
+  "stored_title": "A Fast Text Similarity Measure for Large Document Collections using Multi-reference Cosine and Genetic Algorithm",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Fast Text Similarity Measure for Large Document Collections using Multi-reference Cosine and Genetic Algorithm",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1810.11903",
+  "source": "arxiv",
+  "stored_title": "Dynamic Thresholding Mechanisms for IR-Based Filtering in Efficient Source Code Plagiarism Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Dynamic Thresholding Mechanisms for IR-Based Filtering in Efficient Source Code Plagiarism Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1811.04633",
+  "source": "arxiv",
+  "stored_title": "A Review for Weighted MinHash Algorithms",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Review for Weighted MinHash Algorithms",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1812.01844",
+  "source": "arxiv",
+  "stored_title": "Improving Similarity Search with High-dimensional Locality-sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Improving Similarity Search with High-dimensional Locality-sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1901.00650",
+  "source": "arxiv",
+  "stored_title": "A Fast Sketch Method for Mining User Similarities over Fully Dynamic Graph Streams",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Fast Sketch Method for Mining User Similarities over Fully Dynamic Graph Streams",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1904.04045",
+  "source": "arxiv",
+  "stored_title": "Subsets and Supermajorities: Optimal Hashing-based Set Similarity Search",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Subsets and Supermajorities: Optimal Hashing-based Set Similarity Search",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1904.08572",
+  "source": "arxiv",
+  "stored_title": "node2bits: Compact Time- and Attribute-aware Node Representations for User Stitching",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "node2bits: Compact Time- and Attribute-aware Node Representations for User Stitching",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1904.09442",
+  "source": "arxiv",
+  "stored_title": "Personalized sentence generation using generative adversarial networks with author-specific word usage",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Personalized sentence generation using generative adversarial networks with author-specific word usage",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1905.02973",
+  "source": "arxiv",
+  "stored_title": "On the Feasibility of Automated Detection of Allusive Text Reuse",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "On the Feasibility of Automated Detection of Allusive Text Reuse",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1905.08977",
+  "source": "arxiv",
+  "stored_title": "A Memory-Efficient Sketch Method for Estimating High Similarities in Streaming Sets",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Memory-Efficient Sketch Method for Estimating High Similarities in Streaming Sets",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1906.11761",
+  "source": "arxiv",
+  "stored_title": "Improving Academic Plagiarism Detection for STEM Documents by Analyzing Mathematical Content and Citations",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Improving Academic Plagiarism Detection for STEM Documents by Analyzing Mathematical Content and Citations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1907.01600",
+  "source": "arxiv",
+  "stored_title": "Approximate Similarity Search Under Edit Distance Using Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Approximate Similarity Search Under Edit Distance Using Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1907.02251",
+  "source": "arxiv",
+  "stored_title": "Hardness of Bichromatic Closest Pair with Jaccard Similarity",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Hardness of Bichromatic Closest Pair with Jaccard Similarity",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1908.04042",
+  "source": "arxiv",
+  "stored_title": "Evaluating Tag Recommendations for E-Book Annotation Using a Semantic Similarity Metric",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating Tag Recommendations for E-Book Annotation Using a Semantic Similarity Metric",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1909.07950",
+  "source": "arxiv",
+  "stored_title": "Semantic Relatedness Based Re-ranker for Text Spotting",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Semantic Relatedness Based Re-ranker for Text Spotting",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1910.10683",
+  "source": "arxiv",
+  "stored_title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1911.00561",
+  "source": "arxiv",
+  "stored_title": "Twin-Finder: Integrated Reasoning Engine for Pointer-related Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Twin-Finder: Integrated Reasoning Engine for Pointer-related Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1911.00675",
+  "source": "arxiv",
+  "stored_title": "ProbMinHash -- A Class of Locality-Sensitive Hash Algorithms for the (Probability) Jaccard Similarity",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "ProbMinHash -- A Class of Locality-Sensitive Hash Algorithms for the (Probability) Jaccard Similarity",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1912.00831",
+  "source": "arxiv",
+  "stored_title": "Reducing the Complexity of Fingerprinting-Based Positioning using Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Reducing the Complexity of Fingerprinting-Based Positioning using Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1912.05171",
+  "source": "arxiv",
+  "stored_title": "Character 3-gram Mover's Distance: An Effective Method for Detecting Near-duplicate Japanese-language Recipes",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Character 3-gram Mover's Distance: An Effective Method for Detecting Near-duplicate Japanese-language Recipes",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "1912.12068",
+  "source": "arxiv",
+  "stored_title": "A Multi-cascaded Model with Data Augmentation for Enhanced Paraphrase Detection in Short Texts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Multi-cascaded Model with Data Augmentation for Enhanced Paraphrase Detection in Short Texts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2001.01128",
+  "source": "arxiv",
+  "stored_title": "Locality-Sensitive Hashing for Efficient Web Application Security Testing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality-Sensitive Hashing for Efficient Web Application Security Testing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2002.03909",
+  "source": "arxiv",
+  "stored_title": "Locality-sensitive hashing in function spaces",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality-sensitive hashing in function spaces",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2002.04279",
+  "source": "arxiv",
+  "stored_title": "Testing of Support Tools for Plagiarism Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Testing of Support Tools for Plagiarism Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2002.05204",
+  "source": "arxiv",
+  "stored_title": "Multi-threshold token-based code clone detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Multi-threshold token-based code clone detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2004.04478",
+  "source": "arxiv",
+  "stored_title": "Recommendation Chart of Domains for Cross-Domain Sentiment Analysis:Findings of A 20 Domain Study",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Recommendation Chart of Domains for Cross-Domain Sentiment Analysis:Findings of A 20 Domain Study",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2004.05265",
+  "source": "arxiv",
+  "stored_title": "Visual Spoofing in content based spam detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Visual Spoofing in content based spam detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2004.11131",
+  "source": "arxiv",
+  "stored_title": "Privacy at Scale: Introducing the PrivaSeer Corpus of Web Privacy Policies",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Privacy at Scale: Introducing the PrivaSeer Corpus of Web Privacy Policies",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2005.07356",
+  "source": "arxiv",
+  "stored_title": "Near-duplicate video detection featuring coupled temporal and perceptual visual structures and logical inference based matching",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Near-duplicate video detection featuring coupled temporal and perceptual visual structures and logical inference based matching",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2005.11547",
+  "source": "arxiv",
+  "stored_title": "DartMinHash: Fast Sketching for Weighted Sets",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "DartMinHash: Fast Sketching for Weighted Sets",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2005.12065",
+  "source": "arxiv",
+  "stored_title": "On the Problem of $p_1^{-1}$ in Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "On the Problem of $p_1^{-1}$ in Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2006.09719",
+  "source": "arxiv",
+  "stored_title": "Automatically Ranked Russian Paraphrase Corpus for Text Generation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Automatically Ranked Russian Paraphrase Corpus for Text Generation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2006.11284",
+  "source": "arxiv",
+  "stored_title": "Improving Locality Sensitive Hashing by Efficiently Finding Projected Nearest Neighbors",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Improving Locality Sensitive Hashing by Efficiently Finding Projected Nearest Neighbors",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2006.14505",
+  "source": "arxiv",
+  "stored_title": "Source Code Comments: Overlooked in the Realm of Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Source Code Comments: Overlooked in the Realm of Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2007.09660",
+  "source": "arxiv",
+  "stored_title": "Introduction to Random Fields",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Introduction to Random Fields",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2008.04308",
+  "source": "arxiv",
+  "stored_title": "CG-SENSE revisited: Results from the first ISMRM reproducibility challenge",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CG-SENSE revisited: Results from the first ISMRM reproducibility challenge",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2008.08134",
+  "source": "arxiv",
+  "stored_title": "Differentially Private Sketches for Jaccard Similarity Estimation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Differentially Private Sketches for Jaccard Similarity Estimation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2010.01263",
+  "source": "arxiv",
+  "stored_title": "Multilevel Text Alignment with Cross-Document Attention",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Multilevel Text Alignment with Cross-Document Attention",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2010.06150",
+  "source": "arxiv",
+  "stored_title": "Improving Text Generation Evaluation with Batch Centering and Tempered Word Mover Distance",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Improving Text Generation Evaluation with Batch Centering and Tempered Word Mover Distance",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2101.00314",
+  "source": "arxiv",
+  "stored_title": "SetSketch: Filling the Gap between MinHash and HyperLogLog",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SetSketch: Filling the Gap between MinHash and HyperLogLog",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2101.02733",
+  "source": "arxiv",
+  "stored_title": "Layer reconstruction and missing link prediction of multilayer network with a Maximum A Posteriori estimation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Layer reconstruction and missing link prediction of multilayer network with a Maximum A Posteriori estimation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2101.04339",
+  "source": "arxiv",
+  "stored_title": "Locality Sensitive Hashing for Efficient Similar Polygon Retrieval",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality Sensitive Hashing for Efficient Similar Polygon Retrieval",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2102.10315",
+  "source": "arxiv",
+  "stored_title": "EXTRA: Explanation Ranking Datasets for Explainable Recommendation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "EXTRA: Explanation Ranking Datasets for Explainable Recommendation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2104.14962",
+  "source": "arxiv",
+  "stored_title": "PSEUDo: Interactive Pattern Search in Multivariate Time Series with Locality-Sensitive Hashing and Relevance Feedback",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "PSEUDo: Interactive Pattern Search in Multivariate Time Series with Locality-Sensitive Hashing and Relevance Feedback",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2105.11933",
+  "source": "arxiv",
+  "stored_title": "Integrated Reasoning Engine for Pointer-related Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Integrated Reasoning Engine for Pointer-related Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2105.12068",
+  "source": "arxiv",
+  "stored_title": "Taxonomy of academic plagiarism methods",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Taxonomy of academic plagiarism methods",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2106.05764",
+  "source": "arxiv",
+  "stored_title": "Analyzing Non-Textual Content Elements to Detect Academic Plagiarism",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Analyzing Non-Textual Content Elements to Detect Academic Plagiarism",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2107.06499",
+  "source": "arxiv",
+  "stored_title": "Deduplicating Training Data Makes Language Models Better",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Deduplicating Training Data Makes Language Models Better",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2108.06130",
+  "source": "arxiv",
+  "stored_title": "Semantic Answer Similarity for Evaluating Question Answering Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Semantic Answer Similarity for Evaluating Question Answering Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2109.03337",
+  "source": "arxiv",
+  "stored_title": "C-MinHash: Rigorously Reducing $K$ Permutations to Two",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "C-MinHash: Rigorously Reducing $K$ Permutations to Two",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2109.04595",
+  "source": "arxiv",
+  "stored_title": "C-MinHash: Practically Reducing Two Permutations to Just One",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "C-MinHash: Practically Reducing Two Permutations to Just One",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2109.08789",
+  "source": "arxiv",
+  "stored_title": "When Similarity Digest Meets Vector Management System: A Survey on Similarity Hash Function",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "When Similarity Digest Meets Vector Management System: A Survey on Similarity Hash Function",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2110.01092",
+  "source": "arxiv",
+  "stored_title": "Towards Informative Tagging of Code Fragments to Support the Investigation of Code Clones",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards Informative Tagging of Code Fragments to Support the Investigation of Code Clones",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2110.10493",
+  "source": "arxiv",
+  "stored_title": "On the Effectiveness of Clone Detection for Detecting IoT-related Vulnerable Clones",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "On the Effectiveness of Clone Detection for Detecting IoT-related Vulnerable Clones",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2110.11934",
+  "source": "arxiv",
+  "stored_title": "Cleaning Dirty Books: Post-OCR Processing for Previously Scanned Texts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Cleaning Dirty Books: Post-OCR Processing for Previously Scanned Texts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2111.07839",
+  "source": "arxiv",
+  "stored_title": "Learnable Locality-Sensitive Hashing for Video Anomaly Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Learnable Locality-Sensitive Hashing for Video Anomaly Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2111.09544",
+  "source": "arxiv",
+  "stored_title": "C-OPH: Improving the Accuracy of One Permutation Hashing (OPH) with Circulant Permutations",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "C-OPH: Improving the Accuracy of One Permutation Hashing (OPH) with Circulant Permutations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2111.10864",
+  "source": "arxiv",
+  "stored_title": "The Impact of Main Content Extraction on Near-Duplicate Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Impact of Main Content Extraction on Near-Duplicate Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2111.14183",
+  "source": "arxiv",
+  "stored_title": "Code Clone Detection based on Event Embedding and Event Dependency",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Code Clone Detection based on Event Embedding and Event Dependency",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2112.05492",
+  "source": "arxiv",
+  "stored_title": "BCD: A Cross-Architecture Binary Comparison Database Experiment Using Locality Sensitive Hashing Algorithms",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "BCD: A Cross-Architecture Binary Comparison Database Experiment Using Locality Sensitive Hashing Algorithms",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2112.08687",
+  "source": "arxiv",
+  "stored_title": "BLEND: A Fast, Memory-Efficient, and Accurate Mechanism to Find Fuzzy Seed Matches in Genome Analysis",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "BLEND: A Fast, Memory-Efficient, and Accurate Mechanism to Find Fuzzy Seed Matches in Genome Analysis",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2112.13742",
+  "source": "arxiv",
+  "stored_title": "Hamtajoo: A Persian Plagiarism Checker for Academic Manuscripts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Hamtajoo: A Persian Plagiarism Checker for Academic Manuscripts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2201.06573",
+  "source": "arxiv",
+  "stored_title": "PerPaDa: A Persian Paraphrase Dataset based on Implicit Crowdsourcing Data Collection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "PerPaDa: A Persian Paraphrase Dataset based on Implicit Crowdsourcing Data Collection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2202.06539",
+  "source": "arxiv",
+  "stored_title": "Deduplicating Training Data Mitigates Privacy Risks in Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Deduplicating Training Data Mitigates Privacy Risks in Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2203.07167",
+  "source": "arxiv",
+  "stored_title": "Dataset and Case Studies for Visual Near-Duplicates Detection in the Context of Social Media",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Dataset and Case Studies for Visual Near-Duplicates Detection in the Context of Social Media",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2203.13430",
+  "source": "arxiv",
+  "stored_title": "Plagiarism Detection in the Bengali Language: A Text Similarity-Based Approach",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Plagiarism Detection in the Bengali Language: A Text Similarity-Based Approach",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2204.01028",
+  "source": "arxiv",
+  "stored_title": "MSCCD: Grammar Pluggable Clone Detection Based on ANTLR Parser Generation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "MSCCD: Grammar Pluggable Clone Detection Based on ANTLR Parser Generation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2204.07501",
+  "source": "arxiv",
+  "stored_title": "Evaluating few shot and Contrastive learning Methods for Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating few shot and Contrastive learning Methods for Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2204.11209",
+  "source": "arxiv",
+  "stored_title": "Hierarchical Locality Sensitive Hashing for Structured Data: A Survey",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Hierarchical Locality Sensitive Hashing for Structured Data: A Survey",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2205.04913",
+  "source": "arxiv",
+  "stored_title": "Cross-Language Source Code Clone Detection Using Deep Learning with InferCode",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Cross-Language Source Code Clone Detection Using Deep Learning with InferCode",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2206.04730",
+  "source": "arxiv",
+  "stored_title": "A Neural Network Architecture for Program Understanding Inspired by Human Behaviors",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Neural Network Architecture for Program Understanding Inspired by Human Behaviors",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2206.08726",
+  "source": "arxiv",
+  "stored_title": "Evaluation of Contrastive Learning with Various Code Representations for Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluation of Contrastive Learning with Various Code Representations for Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2206.12664",
+  "source": "arxiv",
+  "stored_title": "Evaluation of Semantic Answer Similarity Metrics",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluation of Semantic Answer Similarity Metrics",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2208.12588",
+  "source": "arxiv",
+  "stored_title": "Generalizability of Code Clone Detection on CodeBERT",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Generalizability of Code Clone Detection on CodeBERT",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2209.10031",
+  "source": "arxiv",
+  "stored_title": "The exact probability law for the approximated similarity from the Minhashing method",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The exact probability law for the approximated similarity from the Minhashing method",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2210.17203",
+  "source": "arxiv",
+  "stored_title": "Using Locality-sensitive Hashing for Rendezvous Search",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Using Locality-sensitive Hashing for Rendezvous Search",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2211.09374",
+  "source": "arxiv",
+  "stored_title": "Execution-based Evaluation for Data Science Code Generation Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Execution-based Evaluation for Data Science Code Generation Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2211.11902",
+  "source": "arxiv",
+  "stored_title": "Evaluating the Knowledge Dependency of Questions",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating the Knowledge Dependency of Questions",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2211.16259",
+  "source": "arxiv",
+  "stored_title": "Measuring the Measuring Tools: An Automatic Evaluation of Semantic Metrics for Text Corpora",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Measuring the Measuring Tools: An Automatic Evaluation of Semantic Metrics for Text Corpora",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2302.04335",
+  "source": "arxiv",
+  "stored_title": "Will ChatGPT get you caught? Rethinking of Plagiarism Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Will ChatGPT get you caught? Rethinking of Plagiarism Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2302.14785",
+  "source": "arxiv",
+  "stored_title": "Joint Representations of Text and Knowledge Graphs for Retrieval and Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Joint Representations of Text and Knowledge Graphs for Retrieval and Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2303.08179",
+  "source": "arxiv",
+  "stored_title": "MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2305.10160",
+  "source": "arxiv",
+  "stored_title": "Stop Uploading Test Data in Plain Text: Practical Strategies for Mitigating Data Contamination by Evaluation Benchmarks",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Stop Uploading Test Data in Plain Text: Practical Strategies for Mitigating Data Contamination by Evaluation Benchmarks",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2305.13193",
+  "source": "arxiv",
+  "stored_title": "TEIMMA: The First Content Reuse Annotator for Text, Images, and Math",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "TEIMMA: The First Content Reuse Annotator for Text, Images, and Math",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2305.13693",
+  "source": "arxiv",
+  "stored_title": "Automated Metrics for Medical Multi-Document Summarization Disagree with Human Evaluations",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Automated Metrics for Medical Multi-Document Summarization Disagree with Human Evaluations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2305.16626",
+  "source": "arxiv",
+  "stored_title": "Evaluation of Question Generation Needs More References",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluation of Question Generation Needs More References",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2305.17310",
+  "source": "arxiv",
+  "stored_title": "DotHash: Estimating Set Similarity Metrics for Link Prediction and Document Deduplication",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "DotHash: Estimating Set Similarity Metrics for Link Prediction and Document Deduplication",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2306.02563",
+  "source": "arxiv",
+  "stored_title": "Large-Scale Distributed Learning via Private On-Device Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Large-Scale Distributed Learning via Private On-Device Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2306.07674",
+  "source": "arxiv",
+  "stored_title": "Differentially Private One Permutation Hashing and Bin-wise Consistent Weighted Sampling",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Differentially Private One Permutation Hashing and Bin-wise Consistent Weighted Sampling",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2306.08122",
+  "source": "arxiv",
+  "stored_title": "Beyond Black Box AI-Generated Plagiarism Detection: From Sentence to Document Level",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Beyond Black Box AI-Generated Plagiarism Detection: From Sentence to Document Level",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2307.05663",
+  "source": "arxiv",
+  "stored_title": "Objaverse-XL: A Universe of 10M+ 3D Objects",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Objaverse-XL: A Universe of 10M+ 3D Objects",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.00721",
+  "source": "arxiv",
+  "stored_title": "A Pre-trained Data Deduplication Model based on Active Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Pre-trained Data Deduplication Model based on Active Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.01191",
+  "source": "arxiv",
+  "stored_title": "Towards Understanding the Capability of Large Language Models on Code Clone Detection: A Survey",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards Understanding the Capability of Large Language Models on Code Clone Detection: A Survey",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.11240",
+  "source": "arxiv",
+  "stored_title": "Minwise-Independent Permutations with Insertion and Deletion of Features",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Minwise-Independent Permutations with Insertion and Deletion of Features",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.12134",
+  "source": "arxiv",
+  "stored_title": "DarkDiff: Explainable web page similarity of TOR onion sites",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "DarkDiff: Explainable web page similarity of TOR onion sites",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.12842",
+  "source": "arxiv",
+  "stored_title": "Text Similarity from Image Contents using Statistical and Semantic Analysis Techniques",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Text Similarity from Image Contents using Statistical and Semantic Analysis Techniques",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2308.13754",
+  "source": "arxiv",
+  "stored_title": "ZC3: Zero-Shot Cross-Language Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "ZC3: Zero-Shot Cross-Language Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2309.04823",
+  "source": "arxiv",
+  "stored_title": "FaNS: a Facet-based Narrative Similarity Metric",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "FaNS: a Facet-based Narrative Similarity Metric",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2309.05610",
+  "source": "arxiv",
+  "stored_title": "Privacy Side Channels in Machine Learning Systems",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Privacy Side Channels in Machine Learning Systems",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2309.09400",
+  "source": "arxiv",
+  "stored_title": "CulturaX: A Cleaned, Enormous, and Multilingual Dataset for Large Language Models in 167 Languages",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CulturaX: A Cleaned, Enormous, and Multilingual Dataset for Large Language Models in 167 Languages",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2309.12250",
+  "source": "arxiv",
+  "stored_title": "SQUARE: Automatic Question Answering Evaluation using Multiple Positive and Negative References",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SQUARE: Automatic Question Answering Evaluation using Multiple Positive and Negative References",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2309.13080",
+  "source": "arxiv",
+  "stored_title": "SPICED: News Similarity Detection Dataset with Multiple Topics and Complexity Levels",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SPICED: News Similarity Detection Dataset with Multiple Topics and Complexity Levels",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.06703",
+  "source": "arxiv",
+  "stored_title": "DeepLSH: Deep Locality-Sensitive Hash Learning for Fast and Efficient Near-Duplicate Crash Report Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "DeepLSH: Deep Locality-Sensitive Hash Learning for Fast and Efficient Near-Duplicate Crash Report Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.10628",
+  "source": "arxiv",
+  "stored_title": "Data Contamination Through the Lens of Time",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Data Contamination Through the Lens of Time",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.11593",
+  "source": "arxiv",
+  "stored_title": "Automated Evaluation of Personalized Text Generation using Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Automated Evaluation of Personalized Text Generation using Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.15298",
+  "source": "arxiv",
+  "stored_title": "TaskDiff: A Similarity Metric for Task-Oriented Conversations",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "TaskDiff: A Similarity Metric for Task-Oriented Conversations",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.17589",
+  "source": "arxiv",
+  "stored_title": "An Open Source Data Contamination Report for Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "An Open Source Data Contamination Report for Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2310.18018",
+  "source": "arxiv",
+  "stored_title": "NLP Evaluation in trouble: On the Need to Measure LLM Data Contamination for each Benchmark",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "NLP Evaluation in trouble: On the Need to Measure LLM Data Contamination for each Benchmark",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2311.07277",
+  "source": "arxiv",
+  "stored_title": "AdaCCD: Adaptive Semantic Contrasts Discovery Based Cross Lingual Adaptation for Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "AdaCCD: Adaptive Semantic Contrasts Discovery Based Cross Lingual Adaptation for Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2311.08778",
+  "source": "arxiv",
+  "stored_title": "Gitor: Scalable Code Clone Detection by Building Global Sample Graph",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Gitor: Scalable Code Clone Detection by Building Global Sample Graph",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2311.09783",
+  "source": "arxiv",
+  "stored_title": "Investigating Data Contamination in Modern Benchmarks for Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Investigating Data Contamination in Modern Benchmarks for Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2311.14898",
+  "source": "arxiv",
+  "stored_title": "HongTu: Scalable Full-Graph GNN Training on Multiple GPUs (via communication-optimized CPU data offloading)",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "HongTu: Scalable Full-Graph GNN Training on Multiple GPUs (via communication-optimized CPU data offloading)",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2311.17264",
+  "source": "arxiv",
+  "stored_title": "RETSim: Resilient and Efficient Text Similarity",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "RETSim: Resilient and Efficient Text Similarity",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2312.12343",
+  "source": "arxiv",
+  "stored_title": "LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2401.09885",
+  "source": "arxiv",
+  "stored_title": "Source Code Clone Detection Using Unsupervised Similarity Measures",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Source Code Clone Detection Using Unsupervised Similarity Measures",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2401.13802",
+  "source": "arxiv",
+  "stored_title": "Investigating the Efficacy of Large Language Models for Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Investigating the Efficacy of Large Language Models for Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2401.16969",
+  "source": "arxiv",
+  "stored_title": "Taxonomy of Mathematical Plagiarism",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Taxonomy of Mathematical Plagiarism",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2401.18064",
+  "source": "arxiv",
+  "stored_title": "Neural Locality Sensitive Hashing for Entity Blocking",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Neural Locality Sensitive Hashing for Entity Blocking",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2402.03927",
+  "source": "arxiv",
+  "stored_title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2402.13433",
+  "source": "arxiv",
+  "stored_title": "Structured Tree Alignment for Evaluation of (Speech) Constituency Parsing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Structured Tree Alignment for Evaluation of (Speech) Constituency Parsing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2402.15938",
+  "source": "arxiv",
+  "stored_title": "Generalization or Memorization: Data Contamination and Trustworthy Evaluation for Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Generalization or Memorization: Data Contamination and Trustworthy Evaluation for Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2403.06350",
+  "source": "arxiv",
+  "stored_title": "IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2403.12958",
+  "source": "arxiv",
+  "stored_title": "Dated Data: Tracing Knowledge Cutoffs in Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Dated Data: Tracing Knowledge Cutoffs in Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2403.15747",
+  "source": "arxiv",
+  "stored_title": "CodeShell Technical Report",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CodeShell Technical Report",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2403.18202",
+  "source": "arxiv",
+  "stored_title": "TGMM: Combining Parse Tree with GPU for Scalable Multilingual and Multi-Granularity Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "TGMM: Combining Parse Tree with GPU for Scalable Multilingual and Multi-Granularity Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2404.01582",
+  "source": "arxiv",
+  "stored_title": "BERT-Enhanced Retrieval Tool for Homework Plagiarism Detection System",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "BERT-Enhanced Retrieval Tool for Homework Plagiarism Detection System",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2404.03555",
+  "source": "arxiv",
+  "stored_title": "From News to Summaries: Building a Hungarian Corpus for Extractive and Abstractive Summarization",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "From News to Summaries: Building a Hungarian Corpus for Extractive and Abstractive Summarization",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2404.05898",
+  "source": "arxiv",
+  "stored_title": "Inexact Simplification of Symbolic Regression Expressions with Locality-sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Inexact Simplification of Symbolic Regression Expressions with Locality-sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2404.08817",
+  "source": "arxiv",
+  "stored_title": "Revisiting Code Similarity Evaluation with Abstract Syntax Tree Edit Distance",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Revisiting Code Similarity Evaluation with Abstract Syntax Tree Edit Distance",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2405.00428",
+  "source": "arxiv",
+  "stored_title": "CC2Vec: Combining Typed Tokens with Contrastive Learning for Effective Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CC2Vec: Combining Typed Tokens with Contrastive Learning for Effective Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2405.06807",
+  "source": "arxiv",
+  "stored_title": "Execution-Based Evaluation of Natural Language to Bash and PowerShell for Incident Remediation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Execution-Based Evaluation of Natural Language to Bash and PowerShell for Incident Remediation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2405.11930",
+  "source": "arxiv",
+  "stored_title": "Data Contamination Calibration for Black-box LLMs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Data Contamination Calibration for Black-box LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2405.15523",
+  "source": "arxiv",
+  "stored_title": "The Mosaic Memory of Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Mosaic Memory of Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2405.16930",
+  "source": "arxiv",
+  "stored_title": "From Obstacles to Resources: Semi-supervised Learning Faces Synthetic Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "From Obstacles to Resources: Semi-supervised Learning Faces Synthetic Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2405.19711",
+  "source": "arxiv",
+  "stored_title": "SimiSketch: Efficiently Estimating Similarity of streaming Multisets",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SimiSketch: Efficiently Estimating Similarity of streaming Multisets",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2406.04244",
+  "source": "arxiv",
+  "stored_title": "Benchmark Data Contamination of Large Language Models: A Survey",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Benchmark Data Contamination of Large Language Models: A Survey",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2406.11813",
+  "source": "arxiv",
+  "stored_title": "How Do Large Language Models Acquire Factual Knowledge During Pretraining?",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "How Do Large Language Models Acquire Factual Knowledge During Pretraining?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2406.14644",
+  "source": "arxiv",
+  "stored_title": "Unveiling the Spectrum of Data Contamination in Language Models: A Survey from Detection to Remediation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Unveiling the Spectrum of Data Contamination in Language Models: A Survey from Detection to Remediation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2406.16288",
+  "source": "arxiv",
+  "stored_title": "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2407.02402",
+  "source": "arxiv",
+  "stored_title": "Assessing the Code Clone Detection Capability of Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Assessing the Code Clone Detection Capability of Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2407.02596",
+  "source": "arxiv",
+  "stored_title": "Towards More Realistic Extraction Attacks: An Adversarial Perspective",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards More Realistic Extraction Attacks: An Adversarial Perspective",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2407.11470",
+  "source": "arxiv",
+  "stored_title": "Beyond Correctness: Benchmarking Multi-dimensional Code Generation for Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Beyond Correctness: Benchmarking Multi-dimensional Code Generation for Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2407.13105",
+  "source": "arxiv",
+  "stored_title": "Survey on Plagiarism Detection in Large Language Models: The Impact of ChatGPT and Gemini on Academic Integrity",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Survey on Plagiarism Detection in Large Language Models: The Impact of ChatGPT and Gemini on Academic Integrity",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2407.21614",
+  "source": "arxiv",
+  "stored_title": "Maintaining $k$-MinHash Signatures over Fully-Dynamic Data Streams with Recovery",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Maintaining $k$-MinHash Signatures over Fully-Dynamic Data Streams with Recovery",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2408.04430",
+  "source": "arxiv",
+  "stored_title": "The Struggles of LLMs in Cross-lingual Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Struggles of LLMs in Cross-lingual Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2408.04645",
+  "source": "arxiv",
+  "stored_title": "Evaluating the Impact of Advanced LLM Techniques on AI-Lecture Tutors for a Robotics Course",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating the Impact of Advanced LLM Techniques on AI-Lecture Tutors for a Robotics Course",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2408.07321",
+  "source": "arxiv",
+  "stored_title": "VERCATION: Precise Vulnerable Open-source Software Version Identification based on Static Analysis and LLM",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "VERCATION: Precise Vulnerable Open-source Software Version Identification based on Static Analysis and LLM",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2409.08519",
+  "source": "arxiv",
+  "stored_title": "Fast Comparative Analysis of Merge Trees Using Locality Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Fast Comparative Analysis of Merge Trees Using Locality Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2409.09927",
+  "source": "arxiv",
+  "stored_title": "Towards Data Contamination Detection for Modern Large Language Models: Limitations, Inconsistencies, and Oracle Challenges",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards Data Contamination Detection for Modern Large Language Models: Limitations, Inconsistencies, and Oracle Challenges",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2410.03600",
+  "source": "arxiv",
+  "stored_title": "Efficiently Identifying Watermarked Segments in Mixed-Source Texts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Efficiently Identifying Watermarked Segments in Mixed-Source Texts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2410.03817",
+  "source": "arxiv",
+  "stored_title": "A novel TLS-based Fingerprinting approach that combines feature expansion and similarity mapping",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A novel TLS-based Fingerprinting approach that combines feature expansion and similarity mapping",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2410.15005",
+  "source": "arxiv",
+  "stored_title": "CAP: Data Contamination Detection via Consistency Amplification",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CAP: Data Contamination Detection via Consistency Amplification",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2410.18966",
+  "source": "arxiv",
+  "stored_title": "Does Data Contamination Detection Work (Well) for LLMs? A Survey and Evaluation on Detection Assumptions",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Does Data Contamination Detection Work (Well) for LLMs? A Survey and Evaluation on Detection Assumptions",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.03823",
+  "source": "arxiv",
+  "stored_title": "Both Text and Images Leaked! A Systematic Analysis of Data Contamination in Multimodal LLM",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Both Text and Images Leaked! A Systematic Analysis of Data Contamination in Multimodal LLM",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.03923",
+  "source": "arxiv",
+  "stored_title": "Evaluation data contamination in LLMs: how do we measure it and (when) does it matter?",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluation data contamination in LLMs: how do we measure it and (when) does it matter?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.04905",
+  "source": "arxiv",
+  "stored_title": "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.05706",
+  "source": "arxiv",
+  "stored_title": "Image2Text2Image: A Novel Framework for Label-Free Evaluation of Image-to-Text Generation with Text-to-Image Diffusion Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Image2Text2Image: A Novel Framework for Label-Free Evaluation of Image-to-Text Generation with Text-to-Image Diffusion Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.08446",
+  "source": "arxiv",
+  "stored_title": "LSH-MoE: Communication-efficient MoE Training via Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "LSH-MoE: Communication-efficient MoE Training via Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2411.09558",
+  "source": "arxiv",
+  "stored_title": "Adaptive Deviation Learning for Visual Anomaly Detection with Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Adaptive Deviation Learning for Visual Anomaly Detection with Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2412.06241",
+  "source": "arxiv",
+  "stored_title": "Plagiarism Detection Using Machine Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Plagiarism Detection Using Machine Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2412.13670",
+  "source": "arxiv",
+  "stored_title": "AntiLeakBench: Preventing Data Contamination by Automatically Constructing Benchmarks with Updated Real-World Knowledge",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "AntiLeakBench: Preventing Data Contamination by Automatically Constructing Benchmarks with Updated Real-World Knowledge",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2412.18291",
+  "source": "arxiv",
+  "stored_title": "DeepCRCEval: Revisiting the Evaluation of Code Review Comment Generation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "DeepCRCEval: Revisiting the Evaluation of Code Review Comment Generation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.01046",
+  "source": "arxiv",
+  "stored_title": "SEDD: Scalable and Efficient Dataset Deduplication with GPUs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SEDD: Scalable and Efficient Dataset Deduplication with GPUs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.02628",
+  "source": "arxiv",
+  "stored_title": "Cracks in The Stack: Hidden Vulnerabilities and Licensing Risks in LLM Pre-Training Datasets",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Cracks in The Stack: Hidden Vulnerabilities and Licensing Risks in LLM Pre-Training Datasets",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.03212",
+  "source": "arxiv",
+  "stored_title": "Leveraging Explainable AI for LLM Text Attribution: Differentiating Human-Written and Multiple LLMs-Generated Text",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Leveraging Explainable AI for LLM Text Attribution: Differentiating Human-Written and Multiple LLMs-Generated Text",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.04591",
+  "source": "arxiv",
+  "stored_title": "Quantum-inspired Embeddings Projection and Similarity Metrics for Representation Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Quantum-inspired Embeddings Projection and Similarity Metrics for Representation Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.05260",
+  "source": "arxiv",
+  "stored_title": "Enhancing Plagiarism Detection in Marathi with a Weighted Ensemble of TF-IDF and BERT Embeddings for Low-Resource Language Processing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Enhancing Plagiarism Detection in Marathi with a Weighted Ensemble of TF-IDF and BERT Embeddings for Low-Resource Language Processing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.11171",
+  "source": "arxiv",
+  "stored_title": "Counteracting temporal attacks in Video Copy Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Counteracting temporal attacks in Video Copy Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.13983",
+  "source": "arxiv",
+  "stored_title": "AdEval: Alignment-based Dynamic Evaluation to Mitigate Data Contamination in Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "AdEval: Alignment-based Dynamic Evaluation to Mitigate Data Contamination in Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.17581",
+  "source": "arxiv",
+  "stored_title": "CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.18771",
+  "source": "arxiv",
+  "stored_title": "Overestimation in LLM Evaluation: A Controlled Large-Scale Study on Data Contamination's Impact on Machine Translation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Overestimation in LLM Evaluation: A Controlled Large-Scale Study on Data Contamination's Impact on Machine Translation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2501.18998",
+  "source": "arxiv",
+  "stored_title": "Adversarial Attacks on AI-Generated Text Detection Models: A Token Probability-Based Approach Using Embeddings",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Adversarial Attacks on AI-Generated Text Detection Models: A Token Probability-Based Approach Using Embeddings",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.02494",
+  "source": "arxiv",
+  "stored_title": "Analyzing Similarity Metrics for Data Selection for Language Model Pretraining",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Analyzing Similarity Metrics for Data Selection for Language Model Pretraining",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.05239",
+  "source": "arxiv",
+  "stored_title": "Enhancing Knowledge Graph Construction: Evaluating with Emphasis on Hallucination, Omission, and Graph Similarity Metrics",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Enhancing Knowledge Graph Construction: Evaluating with Emphasis on Hallucination, Omission, and Graph Similarity Metrics",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.08666",
+  "source": "arxiv",
+  "stored_title": "Hallucination, Monofacts, and Miscalibration: An Empirical Investigation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Hallucination, Monofacts, and Miscalibration: An Empirical Investigation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.09188",
+  "source": "arxiv",
+  "stored_title": "Matina: A Large-Scale 73B Token Persian Text Corpus",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Matina: A Large-Scale 73B Token Persian Text Corpus",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.14425",
+  "source": "arxiv",
+  "stored_title": "A Survey on Data Contamination for Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Survey on Data Contamination for Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.17521",
+  "source": "arxiv",
+  "stored_title": "Recent Advances in Large Langauge Model Benchmarks against Data Contamination: From Static to Dynamic Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Recent Advances in Large Langauge Model Benchmarks against Data Contamination: From Static to Dynamic Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2502.20936",
+  "source": "arxiv",
+  "stored_title": "WebFAQ: A Multilingual Collection of Natural Q&A Datasets for Dense Retrieval",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "WebFAQ: A Multilingual Collection of Natural Q&A Datasets for Dense Retrieval",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.04149",
+  "source": "arxiv",
+  "stored_title": "Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.06643",
+  "source": "arxiv",
+  "stored_title": "Is Your Benchmark Still Useful? Dynamic Benchmarking for Code Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Is Your Benchmark Still Useful? Dynamic Benchmarking for Code Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.13572",
+  "source": "arxiv",
+  "stored_title": "VeriContaminated: Assessing LLM-Driven Verilog Coding for Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "VeriContaminated: Assessing LLM-Driven Verilog Coding for Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.14043",
+  "source": "arxiv",
+  "stored_title": "Beyond Next Token Probabilities: Learnable, Fast Detection of Hallucinations and Data Contamination on LLM Output Distributions",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Beyond Next Token Probabilities: Learnable, Fast Detection of Hallucinations and Data Contamination on LLM Output Distributions",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2503.16402",
+  "source": "arxiv",
+  "stored_title": "The Emperor's New Clothes in Benchmarking? A Rigorous Examination of Mitigation Strategies for LLM Benchmark Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Emperor's New Clothes in Benchmarking? A Rigorous Examination of Mitigation Strategies for LLM Benchmark Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2504.00638",
+  "source": "arxiv",
+  "stored_title": "Impact of Data Duplication on Deep Neural Network-Based Image Classifiers: Robust vs. Standard Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Impact of Data Duplication on Deep Neural Network-Based Image Classifiers: Robust vs. Standard Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2504.02172",
+  "source": "arxiv",
+  "stored_title": "LogLSHD: Fast Log Parsing with Locality-Sensitive Hashing and Dynamic Time Warping",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "LogLSHD: Fast Log Parsing with Locality-Sensitive Hashing and Dynamic Time Warping",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2504.16286",
+  "source": "arxiv",
+  "stored_title": "The Paradox of Poetic Intent in Back-Translation: Evaluating the Quality of Large Language Models in Chinese Translation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Paradox of Poetic Intent in Back-Translation: Evaluating the Quality of Large Language Models in Chinese Translation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2504.17066",
+  "source": "arxiv",
+  "stored_title": "Whence Is A Model Fair? Fixing Fairness Bugs via Propensity Score Matching",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Whence Is A Model Fair? Fixing Fairness Bugs via Propensity Score Matching",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2505.11683",
+  "source": "arxiv",
+  "stored_title": "Evaluating Design Decisions for Dual Encoder-based Entity Disambiguation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating Design Decisions for Dual Encoder-based Entity Disambiguation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2505.17844",
+  "source": "arxiv",
+  "stored_title": "Locality-Sensitive Hashing for Efficient Hard Negative Sampling in Contrastive Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Locality-Sensitive Hashing for Efficient Hard Negative Sampling in Contrastive Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.07202",
+  "source": "arxiv",
+  "stored_title": "Reasoning Multimodal Large Language Model: Data Contamination and Dynamic Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Reasoning Multimodal Large Language Model: Data Contamination and Dynamic Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.10995",
+  "source": "arxiv",
+  "stored_title": "Evaluating Small-Scale Code Models for Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating Small-Scale Code Models for Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.13160",
+  "source": "arxiv",
+  "stored_title": "CertDW: Towards Certified Dataset Ownership Verification via Conformal Calibration",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "CertDW: Towards Certified Dataset Ownership Verification via Conformal Calibration",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.14470",
+  "source": "arxiv",
+  "stored_title": "AST-Enhanced or AST-Overloaded? The Surprising Impact of Hybrid Graph Representations on Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "AST-Enhanced or AST-Overloaded? The Surprising Impact of Hybrid Graph Representations on Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.19881",
+  "source": "arxiv",
+  "stored_title": "Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2506.20920",
+  "source": "arxiv",
+  "stored_title": "FineWeb2: One Pipeline to Scale Them All -- Adapting Pre-Training Data Processing to Every Language",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "FineWeb2: One Pipeline to Scale Them All -- Adapting Pre-Training Data Processing to Every Language",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.09863",
+  "source": "arxiv",
+  "stored_title": "Towards Realistic and Interpretable Market Simulations: Factorizing Financial Power Law using Optimal Transport",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards Realistic and Interpretable Market Simulations: Factorizing Financial Power Law using Optimal Transport",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.10532",
+  "source": "arxiv",
+  "stored_title": "Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.11405",
+  "source": "arxiv",
+  "stored_title": "DCR: Quantifying Data Contamination in LLMs Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "DCR: Quantifying Data Contamination in LLMs Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.15226",
+  "source": "arxiv",
+  "stored_title": "Code Clone Detection via an AlphaFold-Inspired Framework",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Code Clone Detection via an AlphaFold-Inspired Framework",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2507.22936",
+  "source": "arxiv",
+  "stored_title": "Evaluating Large Language Models (LLMs) in Financial NLP: A Comparative Study on Financial Report Analysis",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Evaluating Large Language Models (LLMs) in Financial NLP: A Comparative Study on Financial Report Analysis",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.01357",
+  "source": "arxiv",
+  "stored_title": "HyClone: Bridging LLM Understanding and Dynamic Execution for Semantic Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "HyClone: Bridging LLM Understanding and Dynamic Execution for Semantic Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.03435",
+  "source": "arxiv",
+  "stored_title": "StoneDetector: Conventional and versatile code clone detection for Java",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "StoneDetector: Conventional and versatile code clone detection for Java",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.05640",
+  "source": "arxiv",
+  "stored_title": "Request-Only Optimization for Recommendation Systems",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Request-Only Optimization for Recommendation Systems",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.06495",
+  "source": "arxiv",
+  "stored_title": "Semi-automated Fact-checking in Portuguese: Corpora Enrichment using Retrieval with Claim extraction",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Semi-automated Fact-checking in Portuguese: Corpora Enrichment using Retrieval with Claim extraction",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.09346",
+  "source": "arxiv",
+  "stored_title": "How Safe Will I Be Given What I Saw? Calibrated Prediction of Safety Chances for Image-Controlled Autonomy",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "How Safe Will I Be Given What I Saw? Calibrated Prediction of Safety Chances for Image-Controlled Autonomy",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.10906",
+  "source": "arxiv",
+  "stored_title": "PersonaTwin: A Multi-Tier Prompt Conditioning Framework for Generating and Evaluating Personalized Digital Twins",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "PersonaTwin: A Multi-Tier Prompt Conditioning Framework for Generating and Evaluating Personalized Digital Twins",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.13180",
+  "source": "arxiv",
+  "stored_title": "Search-Time Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Search-Time Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2508.14062",
+  "source": "arxiv",
+  "stored_title": "Assessing and Mitigating Data Memorization Risks in Fine-Tuned Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Assessing and Mitigating Data Memorization Risks in Fine-Tuned Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.02033",
+  "source": "arxiv",
+  "stored_title": "StructCoh: Structured Contrastive Learning for Context-Aware Text Semantic Matching",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "StructCoh: Structured Contrastive Learning for Context-Aware Text Semantic Matching",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.05608",
+  "source": "arxiv",
+  "stored_title": "BinaryShield: Cross-Service Threat Intelligence in LLM Services using Privacy-Preserving Fingerprints",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "BinaryShield: Cross-Service Threat Intelligence in LLM Services using Privacy-Preserving Fingerprints",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.18782",
+  "source": "arxiv",
+  "stored_title": "Emergence of power laws in hierarchical dynamics on multi-level graphs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Emergence of power laws in hierarchical dynamics on multi-level graphs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.19323",
+  "source": "arxiv",
+  "stored_title": "Magnitude Matters: a Superior Class of Similarity Metrics for Holistic Semantic Understanding",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Magnitude Matters: a Superior Class of Similarity Metrics for Holistic Semantic Understanding",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.22978",
+  "source": "arxiv",
+  "stored_title": "Towards Human-interpretable Explanation in Code Clone Detection using LLM-based Post Hoc Explainer",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Towards Human-interpretable Explanation in Code Clone Detection using LLM-based Post Hoc Explainer",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2509.24420",
+  "source": "arxiv",
+  "stored_title": "A Data-Centric Perspective on the Influence of Image Data Quality in Machine Learning Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Data-Centric Perspective on the Influence of Image Data Quality in Machine Learning Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.09259",
+  "source": "arxiv",
+  "stored_title": "Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.15480",
+  "source": "arxiv",
+  "stored_title": "Selecting and Combining Large Language Models for Scalable Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Selecting and Combining Large Language Models for Scalable Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.21182",
+  "source": "arxiv",
+  "stored_title": "KBE-DME: Dynamic Multimodal Evaluation via Knowledge Enhanced Benchmark Evolution",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "KBE-DME: Dynamic Multimodal Evaluation via Knowledge Enhanced Benchmark Evolution",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.23169",
+  "source": "arxiv",
+  "stored_title": "MATCH: Task-Driven Code Evaluation through Contrastive Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "MATCH: Task-Driven Code Evaluation through Contrastive Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.24241",
+  "source": "arxiv",
+  "stored_title": "MAGNET: A Multi-Graph Attentional Network for Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "MAGNET: A Multi-Graph Attentional Network for Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2510.27055",
+  "source": "arxiv",
+  "stored_title": "Detecting Data Contamination in LLMs via In-Context Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Detecting Data Contamination in LLMs via In-Context Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.01176",
+  "source": "arxiv",
+  "stored_title": "An Empirical Study of LLM-Based Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "An Empirical Study of LLM-Based Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2511.16576",
+  "source": "arxiv",
+  "stored_title": "PolyMinHash: Efficient Area-Based MinHashing of Polygons for Approximate Nearest Neighbor Search",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "PolyMinHash: Efficient Area-Based MinHashing of Polygons for Approximate Nearest Neighbor Search",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2512.03310",
+  "source": "arxiv",
+  "stored_title": "Randomized Masked Finetuning: An Efficient Way to Mitigate Memorization of PIIs in LLMs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Randomized Masked Finetuning: An Efficient Way to Mitigate Memorization of PIIs in LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2512.16816",
+  "source": "arxiv",
+  "stored_title": "Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2512.23239",
+  "source": "arxiv",
+  "stored_title": "RS-Prune: Training-Free Data Pruning at High Ratios for Efficient Remote Sensing Diffusion Foundation Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "RS-Prune: Training-Free Data Pruning at High Ratios for Efficient Remote Sensing Diffusion Foundation Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2512.23504",
+  "source": "arxiv",
+  "stored_title": "Automatic Detection of Complex Quotation Patterns in Aggadic Literature",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Automatic Detection of Complex Quotation Patterns in Aggadic Literature",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.10455",
+  "source": "arxiv",
+  "stored_title": "SurgGoal: Rethinking Surgical Planning Evaluation via Goal-Satisfiability",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SurgGoal: Rethinking Surgical Planning Evaluation via Goal-Satisfiability",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.14994",
+  "source": "arxiv",
+  "stored_title": "Obscuring Data Contamination Through Translation: Evidence from Arabic Corpora",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Obscuring Data Contamination Through Translation: Evidence from Arabic Corpora",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.21083",
+  "source": "arxiv",
+  "stored_title": "OpenSec: Measuring Incident Response Agent Calibration Under Adversarial Evidence",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "OpenSec: Measuring Incident Response Agent Calibration Under Adversarial Evidence",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2601.22913",
+  "source": "arxiv",
+  "stored_title": "Multi-Cue Anomaly Detection and Localization under Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Multi-Cue Anomaly Detection and Localization under Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2602.09147",
+  "source": "arxiv",
+  "stored_title": "Overview of PAN 2026: Voight-Kampff Generative AI Detection, Text Watermarking, Multi-Author Writing Style Analysis, Generative Plagiarism Detection, and Reasoning Trajectory Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Overview of PAN 2026: Voight-Kampff Generative AI Detection, Text Watermarking, Multi-Author Writing Style Analysis, Generative Plagiarism Detection, and Reasoning Trajectory Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2602.22827",
+  "source": "arxiv",
+  "stored_title": "TARAZ: Persian Short-Answer Question Benchmark for Cultural Evaluation of Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "TARAZ: Persian Short-Answer Question Benchmark for Cultural Evaluation of Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.00633",
+  "source": "arxiv",
+  "stored_title": "FDR Control for Complex-Valued Data with Application in Single Snapshot Multi-Source Detection and DOA Estimation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "FDR Control for Complex-Valued Data with Application in Single Snapshot Multi-Source Detection and DOA Estimation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.00958",
+  "source": "arxiv",
+  "stored_title": "S-VoCAL: A Dataset and Evaluation Framework for Inferring Speaking Voice Character Attributes in Literature",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "S-VoCAL: A Dataset and Evaluation Framework for Inferring Speaking Voice Character Attributes in Literature",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.04413",
+  "source": "arxiv",
+  "stored_title": "Simulating Meaning, Nevermore! Introducing ICR: A Semiotic-Hermeneutic Metric for Evaluating Meaning in LLM Text Summaries",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Simulating Meaning, Nevermore! Introducing ICR: A Semiotic-Hermeneutic Metric for Evaluating Meaning in LLM Text Summaries",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.09998",
+  "source": "arxiv",
+  "stored_title": "Automated evaluation of LLMs for effective machine translation of Mandarin Chinese to English",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Automated evaluation of LLMs for effective machine translation of Mandarin Chinese to English",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.14217",
+  "source": "arxiv",
+  "stored_title": "Rethinking Evaluation in Retrieval-Augmented Personalized Dialogue: A Cognitive and Linguistic Perspective",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Rethinking Evaluation in Retrieval-Augmented Personalized Dialogue: A Cognitive and Linguistic Perspective",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.15004",
+  "source": "arxiv",
+  "stored_title": "TriFusion-LLM: Prior-Guided Multimodal Fusion with LLM Arbitration for Fine-grained Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "TriFusion-LLM: Prior-Guided Multimodal Fusion with LLM Arbitration for Fine-grained Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.28838",
+  "source": "arxiv",
+  "stored_title": "GMA-SAWGAN-GP: A Novel Data Generative Framework to Enhance IDS Detection Performance",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "GMA-SAWGAN-GP: A Novel Data Generative Framework to Enhance IDS Detection Performance",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2603.29937",
+  "source": "arxiv",
+  "stored_title": "Rewrite the News: Tracing Editorial Reuse Across News Agencies",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Rewrite the News: Tracing Editorial Reuse Across News Agencies",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.13783",
+  "source": "arxiv",
+  "stored_title": "Zero-shot Evaluation of Deep Learning for Java Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Zero-shot Evaluation of Deep Learning for Java Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.16426",
+  "source": "arxiv",
+  "stored_title": "Functional Similarity Metric for Neural Networks: Overcoming Parametric Ambiguity via Activation Region Analysis",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Functional Similarity Metric for Neural Networks: Overcoming Parametric Ambiguity via Activation Region Analysis",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2604.22640",
+  "source": "arxiv",
+  "stored_title": "Quality-Driven Selective Mutation for Deep Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Quality-Driven Selective Mutation for Deep Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.02860",
+  "source": "arxiv",
+  "stored_title": "Standing on the Shoulders of Giants: Stabilized Knowledge Distillation for Cross--Language Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Standing on the Shoulders of Giants: Stabilized Knowledge Distillation for Cross--Language Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.07153",
+  "source": "arxiv",
+  "stored_title": "Beyond Reasoning: Reinforcement Learning Unlocks Parametric Knowledge in LLMs",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Beyond Reasoning: Reinforcement Learning Unlocks Parametric Knowledge in LLMs",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.09236",
+  "source": "arxiv",
+  "stored_title": "Matching Meaning at Scale: Evaluating Semantic Search for 18th-Century Intellectual History through the Case of Locke",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Matching Meaning at Scale: Evaluating Semantic Search for 18th-Century Intellectual History through the Case of Locke",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.11551",
+  "source": "arxiv",
+  "stored_title": "VNDUQE: Information-Theoretic Novelty Detection using Deep Variational Information Bottleneck",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "VNDUQE: Information-Theoretic Novelty Detection using Deep Variational Information Bottleneck",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.21856",
+  "source": "arxiv",
+  "stored_title": "The Illusion of Reasoning: Exposing Evasive Data Contamination in LLMs via Zero-CoT Truncation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Illusion of Reasoning: Exposing Evasive Data Contamination in LLMs via Zero-CoT Truncation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2605.30642",
+  "source": "arxiv",
+  "stored_title": "Diffusion Models Preferentially Memorize Prototypical Examples or: Why Does My Diffusion Model Love Slop?",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Diffusion Models Preferentially Memorize Prototypical Examples or: Why Does My Diffusion Model Love Slop?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.24998",
+  "source": "arxiv",
+  "stored_title": "Internal Data Repetition Destroys Language Models",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Internal Data Repetition Destroys Language Models",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.25272",
+  "source": "arxiv",
+  "stored_title": "Semantic Code Clone Detection: Are We There Yet?",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Semantic Code Clone Detection: Are We There Yet?",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2606.31272",
+  "source": "arxiv",
+  "stored_title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.01842",
+  "source": "arxiv",
+  "stored_title": "Understanding Software Defect Prediction: A Large-scale Empirical Study Across Uncertainty Quantification and Performance Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Understanding Software Defect Prediction: A Large-scale Empirical Study Across Uncertainty Quantification and Performance Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.02577",
+  "source": "arxiv",
+  "stored_title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.08382",
+  "source": "arxiv",
+  "stored_title": "H3D: Benchmarking Unsupervised Text Hashing for Fine-Grained Document Deduplication",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "H3D: Benchmarking Unsupervised Text Hashing for Fine-Grained Document Deduplication",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.08700",
+  "source": "arxiv",
+  "stored_title": "Do You Need a Frontier Model as a Citation Verifier? Benchmarking Rubric LLMs for Deep-Research Source Attribution",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Do You Need a Frontier Model as a Citation Verifier? Benchmarking Rubric LLMs for Deep-Research Source Attribution",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.10020",
+  "source": "arxiv",
+  "stored_title": "FindMyText: Robust, Scalable Detection of Text Containment in Large Web-Crawled Corpora",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "FindMyText: Robust, Scalable Detection of Text Containment in Large Web-Crawled Corpora",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.11591",
+  "source": "arxiv",
+  "stored_title": "Similarity-Guided Curriculum Fine-Tuning of LLMs for Neural Architecture Synthesis",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Similarity-Guided Curriculum Fine-Tuning of LLMs for Neural Architecture Synthesis",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.17596",
+  "source": "arxiv",
+  "stored_title": "E-Values For Multiplicity Control In Multiverse Analysis",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "E-Values For Multiplicity Control In Multiverse Analysis",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.18027",
+  "source": "arxiv",
+  "stored_title": "L1 Augmented Attention as an Improved Vector Similarity Metric",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "L1 Augmented Attention as an Improved Vector Similarity Metric",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2607.19368",
+  "source": "arxiv",
+  "stored_title": "Spectral-LSH: Sub-Quadratic Prompt Compression via Krylov-Projected Locality-Sensitive Hashing",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Spectral-LSH: Sub-Quadratic Prompt Compression via Krylov-Projected Locality-Sensitive Hashing",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.00144",
+  "source": "arxiv",
+  "stored_title": "Leak It: Per-Document Extraction Beyond Aggregate Membership Inference",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Leak It: Per-Document Extraction Beyond Aggregate Membership Inference",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.03199",
+  "source": "arxiv",
+  "stored_title": "SieveIVF: Threshold-Aware IVF Execution for Large-Scale Training Data Deduplication",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "SieveIVF: Threshold-Aware IVF Execution for Large-Scale Training Data Deduplication",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.03859",
+  "source": "arxiv",
+  "stored_title": "Beyond Representational Similarity: Source-Conditioned Description-Length Gain for Generative Plagiarism Detection and Candidate Source Reranking",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Beyond Representational Similarity: Source-Conditioned Description-Length Gain for Generative Plagiarism Detection and Candidate Source Reranking",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.15090",
+  "source": "arxiv",
+  "stored_title": "Distribution-free false-alarm calibration and chance-corrected spatial evaluation for industrial anomaly detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Distribution-free false-alarm calibration and chance-corrected spatial evaluation for industrial anomaly detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.22383",
+  "source": "arxiv",
+  "stored_title": "Learning Spectral Representations of Code through Latent Graph Learning for Generalizable Cross-Language Code Clone Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Learning Spectral Representations of Code through Latent Graph Learning for Generalizable Cross-Language Code Clone Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.23547",
+  "source": "arxiv",
+  "stored_title": "Robustness of Anomaly Detection Models for Industrial Control Systems under Training-Time Data Contamination",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Robustness of Anomaly Detection Models for Industrial Control Systems under Training-Time Data Contamination",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.30023",
+  "source": "arxiv",
+  "stored_title": "Demand-Side Measurement for Generative Engine Optimization: Constructing and Validating a Million-Persona, Intent-Annotated Buyer Corpus",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Demand-Side Measurement for Generative Engine Optimization: Constructing and Validating a Million-Persona, Intent-Annotated Buyer Corpus",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2608.30175",
+  "source": "arxiv",
+  "stored_title": "Benchmarking Peptide-Protein Affinity Prediction Across Peptide and Target Shifts",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Benchmarking Peptide-Protein Affinity Prediction Across Peptide and Target Shifts",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.11023",
+  "source": "arxiv",
+  "stored_title": "RCL: A Retrieval-Confidence Layer for Detecting Insufficient Context in Enterprise Retrieval-Augmented Code Generation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "RCL: A Retrieval-Confidence Layer for Detecting Insufficient Context in Enterprise Retrieval-Augmented Code Generation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.15058",
+  "source": "arxiv",
+  "stored_title": "Fast Label-Filtering Approximate Nearest Neighbor Search via Progressive Label Set Stratification",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Fast Label-Filtering Approximate Nearest Neighbor Search via Progressive Label Set Stratification",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.17338",
+  "source": "arxiv",
+  "stored_title": "Type-IV Code Clone Detection via Layer-Wise Non-Contrastive Representation Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Type-IV Code Clone Detection via Layer-Wise Non-Contrastive Representation Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.24980",
+  "source": "arxiv",
+  "stored_title": "Residual Community Prototypes Under-Reject Held-Out Malware Families in FCG-MFD",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Residual Community Prototypes Under-Reject Held-Out Malware Families in FCG-MFD",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.29507",
+  "source": "arxiv",
+  "stored_title": "What a Cross-Model Fixed-Point Census Can and Cannot Arbitrate About Repetition",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "What a Cross-Model Fixed-Point Census Can and Cannot Arbitrate About Repetition",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.31262",
+  "source": "arxiv",
+  "stored_title": "Deduplication-while-Training: A Resilient Paradigm for Privacy-Preserving Cross-Client Deduplication in Federated Learning",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Deduplication-while-Training: A Resilient Paradigm for Privacy-Preserving Cross-Client Deduplication in Federated Learning",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.36161",
+  "source": "arxiv",
+  "stored_title": "From Dead Code and Static Requirements to Working Engines: Software Revival with Coding Agents",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "From Dead Code and Static Requirements to Working Engines: Software Revival with Coding Agents",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.38012",
+  "source": "arxiv",
+  "stored_title": "A Function-level Dataset of Vulnerable and Fixed Source Code in JavaScript and TypeScript",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "A Function-level Dataset of Vulnerable and Fixed Source Code in JavaScript and TypeScript",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2609.39623",
+  "source": "arxiv",
+  "stored_title": "Semantic Watermarking for Malicious Image Manipulation Detection",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Semantic Watermarking for Malicious Image Manipulation Detection",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2610.00421",
+  "source": "arxiv",
+  "stored_title": "Scores That Hold, Benchmarks That Leak: Measuring Dataset Contamination in Public Brain-Tumor MRI Classification",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "Scores That Hold, Benchmarks That Leak: Measuring Dataset Contamination in Public Brain-Tumor MRI Classification",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ },
+ {
+  "key": "2610.05387",
+  "source": "arxiv",
+  "stored_title": "GNN-CB: A Graph Neural Network Competition Benchmark for Human and LLM Evaluation",
+  "method": "arXiv id_list (batched, title compare)",
+  "live_title": "GNN-CB: A Graph Neural Network Competition Benchmark for Human and LLM Evaluation",
+  "title_match": 1.0,
+  "verdict": "VERIFIED"
+ }
+]
