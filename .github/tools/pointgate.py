@@ -27,6 +27,18 @@ is left to infer. **Measured at R399**: the clause's own three forms reach the
 tree only after four further ones are stated, and the exemption is what kept
 any instrument from stating them.
 
+**A pointer is read only where the renderer reads one.**  A `-> *Name*` or `see
+*Name*` written inside an **inline code span** or a **fenced code block** is a
+**quotation or an illustration of the form**, not a cross-reference the file
+**makes**, so it is not read - the tool reads the class the rule states, not a
+superset of it.  This is the class `linkgate.py` masks before it takes its own
+form's targets (R574), and it is the reading that cost a published carrier a line
+of an otherwise verbatim quote: `papers/issue-122/reference-check.md` reproduces
+the gates' whole output *except* one line stating this tool's own pointer syntax,
+which - quoted inside a fence - was read back as a pointer **the report does not
+make**.  Corrected at **R575**: a match's **start** decides, so an arrow lying
+outside the code span its sentence names is still read.
+
 Resolution, as this tool performs it:
 
   carrier   the file the name lives in: the **nearest carrier the pointer's own
@@ -104,6 +116,9 @@ PATHLIKE = re.compile(
 BOLD3 = re.compile(r"(?<![*\w])\*\*\*(?![*\s])((?:[^*]|\*(?!\*)){2,600}?)\*\*\*(?![*])")
 BOLD = re.compile(r"(?<![*\w])\*\*(?![*\s])((?:[^*]|\*(?!\*)){2,600}?)\*\*(?![*])")
 ITAL = re.compile(r"(?<![*\w])\*(?![*\s])([^*\n]{2,140}?)\*(?![*])")
+
+# a fenced code block: the renderer reads no pointer inside one (see code_mask)
+FENCE = re.compile(r"^( {0,3})(`{3,}|~{3,})")
 
 
 def repo_root():
@@ -229,6 +244,91 @@ def prev_name(text, i):
     return (m.group(1).strip() if m else None), base
 
 
+def code_mask(text):
+    """A bool per character: True where the **renderer** reads no pointer - inside
+    a fenced code block or an inline code span.  A pointer written there is a
+    quotation or an *illustration of the form*, not a cross-reference the file
+    **makes**, so it is not read (the class `linkgate.py` masks before taking its
+    own form's targets - R574 for the first form, this round for the second).
+
+    The mask is taken over the text and a match whose **start** falls inside it is
+    dropped, rather than the text being blanked before matching: a code span is
+    sometimes the **carrier** a `see` names (`` see `README.md` -> *A name* ``),
+    and blanking its content would erase the carrier with it.  Reading the mask
+    only at the match's start keeps that arrow - it lies **outside** the span.
+    """
+    n = len(text)
+    mask = [False] * n
+    starts = []
+    p = 0
+    for line in text.split("\n"):
+        starts.append(p)
+        p += len(line) + 1
+    fence = None
+    for i, line in enumerate(text.split("\n")):
+        a, b = starts[i], starts[i] + len(line)
+        m = FENCE.match(line)
+        if fence is not None:
+            for k in range(a, b):
+                mask[k] = True
+            if m and m.group(2)[0] == fence[0] and len(m.group(2)) >= len(fence):
+                fence = None
+            continue
+        if m:
+            fence = m.group(2)
+            for k in range(a, b):
+                mask[k] = True
+    i = 0
+    while i < n:                       # inline code spans (may cross source lines)
+        if mask[i] or text[i] != "`":
+            i += 1
+            continue
+        j = i
+        while j < n and text[j] == "`":
+            j += 1
+        run, close, k = j - i, -1, j
+        while k < n:
+            if text[k] == "`" and not mask[k]:
+                m2 = k
+                while m2 < n and text[m2] == "`":
+                    m2 += 1
+                if m2 - k == run:
+                    close = m2
+                    break
+                k = m2
+            else:
+                k += 1
+        if close == -1:
+            i = j
+            continue
+        for q in range(i, close):
+            mask[q] = True
+        i = close
+    return mask
+
+
+def refs_in(text):
+    """Every reference the file **makes**, in file order: `(kind, match)` for each
+    `-> *Name*` / `see *Name*` (kind `pointer`) and `-> `x`` / `see `x`` (kind
+    `code-target`).  A match whose **start** lies inside an inline code span or a
+    fenced code block is dropped - the renderer reads no pointer there (code_mask).
+    """
+    mask = code_mask(text)
+    out, covered = [], []
+    for m in CODE_TARGET.finditer(text):
+        if mask[m.start()]:
+            continue
+        out.append(("code-target", m))
+        covered.append((m.start(), m.end()))
+    for m in POINTER.finditer(text):
+        if mask[m.start()]:
+            continue
+        if any(a <= m.start() < b for a, b in covered):
+            continue                   # already carried by a code-target of its own
+        out.append(("pointer", m))
+    return out
+
+
 def scan(root, files):
     allfiles = tracked(root, [])
     texts = {f: io.open(os.path.join(root, f), encoding="utf-8").read()
@@ -237,15 +337,11 @@ def scan(root, files):
     rows = []
     for f in files:
         t = texts[f]
-        covered = []
-        for m in CODE_TARGET.finditer(t):
-            rows.append((f, t.count("\n", 0, m.start()) + 1, m.group(0).strip(),
-                         "code-target"))
-            covered.append((m.start(), m.end()))
-        for m in POINTER.finditer(t):
-            if any(a <= m.start() < b for a, b in covered):
-                continue
+        for kind, m in refs_in(t):
             ln = t.count("\n", 0, m.start()) + 1
+            if kind == "code-target":
+                rows.append((f, ln, m.group(0).strip(), "code-target"))
+                continue
             name = m.group("name").strip()
             car = carrier_left(root, t, m.start(), files)
             selfname = [c for c in allfiles if os.path.basename(c) == norm(name)]
@@ -390,6 +486,28 @@ def selftest(root):
     ch = "`README.md` → *A* → *B*"
     case(carrier_left(root, ch, len(ch) - 1, files), "README.md",
          "a path in the sentence is the carrier for the name that follows it")
+    t_inline = "see `-> *A read*` here\n"
+    case(code_mask(t_inline)[t_inline.index("->")], True,
+         "a pointer inside an inline code span is masked")
+    t_fence = "before\n```\n-> *A read*\n```\nafter\n"
+    case(code_mask(t_fence)[t_fence.index("->")], True,
+         "a pointer inside a fenced block is masked")
+    t_arrow = "see `README.md` → *A read*\n"
+    case(code_mask(t_arrow)[t_arrow.index("→")], False,
+         "an arrow outside the code span its sentence names is not masked")
+    case([k for k, _ in refs_in(t_arrow)], ["code-target", "pointer"],
+         "a `see` naming a code-span carrier stays a code-target, its arrow a pointer")
+    rt = io.open(os.path.join(root, ".github/REVIEW_TEMPLATE.md"),
+                 encoding="utf-8").read()
+    rmk = code_mask(rt)
+    fenced, off = set(), 0
+    for i, line in enumerate(rt.split("\n"), start=1):
+        if off < len(rmk) and rmk[off]:
+            fenced.add(i)
+        off += len(line) + 1
+    case(all(not (r[0] == ".github/REVIEW_TEMPLATE.md" and r[1] in fenced)
+             for r in rows), True,
+         "no pointer is read from inside the review template's fenced block")
     case(verdict([], 0), "NOT RUN", "an empty set is not run and never a pass")
     case(verdict([("a.md", 1, "x", "resolved")], 0), "PASS",
          "a nonempty clean set passes")

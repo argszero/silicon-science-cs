@@ -469,7 +469,7 @@ name the **carrier** (its path) and the **name** of the thing in it — a sectio
 header classed it with the **number** (*"resolve only inside the namespace of a list … a read, not a computation"*), which is
 true of the number and false of the name: a name indexes no list, and the tool for it is
 [`.github/tools/pointgate.py`](.github/tools/pointgate.py) (**measured at R399** over the **149** named pointers the **34**
-tracked carriers make). A name resolves on a **heading**, a **lead** — a bold or italic run at the start of a line **or of a
+tracked carriers make). **A pointer is read only where a renderer reads one** — one written inside an **inline code span** or a **fenced code block** is a quotation or an illustration of the form, not a cross-reference the file **makes**, so it is not read: the class `linkgate.py` masks for its own form (*A path is not an artefact*, below), applied to this one at **R575** (re-taken over **148** tracked markdown carriers: **pointers=183** — the **6** dropped are the review template's own fenced block, and the reading before it, over the unmasked class, was **189**). A name resolves on a **heading**, a **lead** — a bold or italic run at the start of a line **or of a
 sentence in it** — or a **blockquote item** of the named carrier, read as **rendered text** (the target's own emphasis is part
 of how it prints and not of its name: `**What makes a concern *major*.**` is the name *What makes a concern major*) and matched
 up to the **break** the tree writes between a name and its gloss (`.`, `,`, `:`, `;`, `—`, `-`, `)`) — after the line's own
