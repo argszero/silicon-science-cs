@@ -47,6 +47,26 @@ half stays a read.  The home printed for a carrier form is a property of the
 whether a sentence named a different list - that is the sentence's own read
 (README.md -> Links, the four identification forms).
 
+**Two further forms sit outside the class, and they are the two directions of one
+question** - *what does the reader meet where the number is written?* - both
+written in at **R577**.  An **HTML character reference** is a *character* a
+renderer prints and **not** a number: `&#39;` reaches the reader as `'` and
+`&#8212;` as an em dash, and the digits inside the reference index no list at all
+- so a `#` that opens one is **not** a site.  This tool read them as `#N` until
+R577: measured over the **1023** tracked files read, **52** such tokens stood in
+the count (**6** of them in the journal's own **12** carriers) and each was
+printed with the issue/PR namespace as the home of a list it does not index.  A
+number written inside a **code span** or a **fenced block** is, in the opposite
+direction and unlike the link and the pointer, **still a site**, and this class is
+therefore **not masked** as `linkgate.py`'s and `pointgate.py`'s are: a link or a
+pointer inside a code span is an *illustration of the form* the renderer does not
+act on, while this tree writes a number as a **monospaced token** (`#<n>`,
+`item <n>`, `R<n>`) and that token **is** the cross-reference the file makes -
+measured against the sibling instruments' mask at R577 over the markdown
+carriers: **141** in-span sites, every one of them a reference the file makes or
+quotes, so masking would drop references and keep none.  Read as the reader meets
+it, the two are not one rule.
+
 The one form the rule forbids - a bare number into a list that lives only
 outside this repository, `op(N)` - is what `--check` fails on; `#N` (the object
 namespace) and `Rnnn` (an attribution, which dates the reading beside it) are
@@ -93,7 +113,7 @@ FORMS = [
      "tree", ".github/REVIEW_TEMPLATE.md -> The two markers"),
     ("sec N", re.compile(r"\u00a7\d+(?:\.\d+)*"),
      "package", "a manuscript's own sections"),
-    ("#N", re.compile(r"#\d+"),
+    ("#N", re.compile(r"(?<!&)#\d+"),
      "object", "the journal's issue/PR namespace (the form names it)"),
     ("op(N)", re.compile(r"\bop\(\d+\)"),
      "outside", "the editor's checklist -- OUTSIDE this tree"),
@@ -270,6 +290,11 @@ def selftest():
                   classify(_t("sec", 4)) == "sec N"))
     cases.append(("the_object_namespace_is_read",
                   classify(_t("hash", 42)) == "#N"))
+    cases.append(("an_html_character_reference_is_not_a_number",
+                  sites("the name O&#39;Brien and a dash &#8212; here") == []))
+    cases.append(("a_number_in_a_code_span_is_still_a_site",
+                  {label for _, label, _ in
+                   sites("see `" + _t("hash", 38) + "`")} == {"#N"}))
     cases.append(("the_forbidden_form_is_read_and_named",
                   classify(_t("op", 4)) == "op(N)" and "op(N)" in FORBIDDEN))
     cases.append(("an_attribution_is_read",
