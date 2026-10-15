@@ -15,9 +15,10 @@ reference**.  A link is read by `.github/tools/linkgate.py` and a name by
 Two classes of site, counted separately and never merged (the class a reading
 admits is part of its count):
 
-  carrier sites  read in a file `README.md` -> *Links* names - the journal's own
-                 surfaces - where the form of the number fixes the **home** of
-                 the list it indexes:
+  carrier sites  read in a file `README.md` -> *Links* **lists** - the entries
+                 the section carries, whose own link targets are the journal's
+                 own surfaces - where the form of the number fixes the **home**
+                 of the list it indexes:
 
                    item N / step N / condition N   the list is **in this tree**
                    a section mark                  the package's own sections
@@ -37,7 +38,12 @@ admits is part of its count):
 The set is read off the tree (`git ls-files`), so a carrier added later joins by
 being added - the set a census is taken over is part of its count (R396's census
 read a set of seven it recalled, and could not see the tool R399 wrote inside
-it).
+it).  The **carriers** are that section's **entries** - the link target of each
+bullet line under its heading - and never the paths its prose merely names: read
+from the section's text at large the set stood at **12** against the entries'
+**6**, the three gate tools the section explains and three submission packages it
+cites as examples standing inside it, and it grew by two of them at R574 and R576
+with no step reading it (R579).
 
 What it does NOT read, and says so: **which position of that list** a number
 means, and whether that position holds the requirement the reference *names*.
@@ -54,7 +60,7 @@ renderer prints and **not** a number: `&#39;` reaches the reader as `'` and
 `&#8212;` as an em dash, and the digits inside the reference index no list at all
 - so a `#` that opens one is **not** a site.  This tool read them as `#N` until
 R577: measured over the **1023** tracked files read, **52** such tokens stood in
-the count (**6** of them in the journal's own **12** carriers) and each was
+the count (**6** of them in the journal's own **6** carriers) and each was
 printed with the issue/PR namespace as the home of a list it does not index.  A
 number written inside a **code span** or a **fenced block** is, in the opposite
 direction and unlike the link and the pointer, **still a site**, and this class is
@@ -125,7 +131,6 @@ FORMS = [
 FORBIDDEN = {"op(N)"}
 
 LINK = re.compile(r"\[([^\]]*)\]\(([^)]+)\)")
-CODE = re.compile(r"`([^`]+)`")
 
 
 def repo_root():
@@ -150,18 +155,26 @@ def links_section(text):
 
 
 def carriers(root):
-    """The journal's own surfaces: the files `README.md` -> *Links* names.
+    """The journal's own surfaces: the files `README.md` -> *Links* **lists**.
 
-    Read off that section - the path a bullet or the prose links to, where the
-    file is tracked and is text - so a carrier named there joins by being named.
+    Read off that section's own **entries** - the link target of each top-level
+    bullet line under the heading - together with `README.md`, which is the set
+    the section states in words (*the carriers of this repository are the
+    entries above together with this file*); a carrier joins by being **added to
+    that list**.  A path the section's prose merely **names** - an example it
+    cites, an instrument it explains - is not an entry and is not a carrier: read
+    as every link and code span the section holds, the set was **12** where the
+    entries' is **6**, counting three gate tools and three submission packages
+    as journal surfaces, and it grew by two files at R574 and R576 with nothing
+    reading it (R579).
     """
     names = {"README.md"}
     sec = links_section(open(os.path.join(root, "README.md"),
                              encoding="utf-8").read())
     tracked_set = set(tracked(root))
-    cand = [m.group(2) for m in LINK.finditer(sec)]
-    cand += [m.group(1) for m in CODE.finditer(sec)]
-    for c in cand:
+    entries = [m.group(2) for line in sec.splitlines() if line.startswith("- ")
+               for m in LINK.finditer(line)]
+    for c in entries:
         c = c.split("#")[0].strip()
         if c in tracked_set and c.endswith((".md", ".py")):
             names.add(c)
@@ -313,9 +326,12 @@ def selftest():
                   and "Archive" in links_section(fixture)))
     root = repo_root()
     car = carriers(root)
-    cases.append(("the_carrier_set_is_read_off_links",
+    cases.append(("the_carrier_set_is_the_section_s_entries",
                   "README.md" in car and "INSTANCES.md" in car
                   and ".github/tools/refgate.py" in car))
+    cases.append(("a_path_the_section_only_names_is_not_a_carrier",
+                  "papers/issue-93/README.md" not in car
+                  and ".github/tools/numgate.py" not in car))
     cases.append(("the_set_is_the_tracked_files",
                   all(os.path.exists(os.path.join(root, f))
                       for f in tracked(root))))

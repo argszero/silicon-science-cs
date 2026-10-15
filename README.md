@@ -460,7 +460,9 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
 the journal's rules and duties from, and the set every count of *carriers* in the tree is taken over. **The set is
 stated by the entries themselves, not by a number here** (the discipline *Time and units* states for its own set): a
 carrier added later joins by being added, and no sentence has to be found and updated. The archive line is **not** a
-carrier — it names another repository, from which nothing here is read.
+carrier — it names another repository, from which nothing here is read. **Nor is a path this section's prose merely
+names** — an example it cites, an instrument it explains: a carrier is an *entry*, read off its own bullet line's
+link, and the set is never taken from the section's text at large (R579).
 
 **A reference resolves inside this repository — and a number indexes a list a carrier here holds, or an object the
 repository itself holds.** Every cross-reference a
@@ -509,13 +511,14 @@ clause **vacuous at that head** (its first anchored link is the first case the c
 rule's **other two forms are not one class**, and this sentence classed them together until R399 — a **numbered
 reference** resolves only inside a list the citing sentence or its carrier names, **which no instrument can infer**, so
 its **position** stays a read; its **sites and the home of the list each one indexes** are enumerated by
-[`.github/tools/numgate.py`](.github/tools/numgate.py) — landed at R406, its carrier set read off *this section* and
-its sites counted in **two classes apart, never merged** (the carriers here, where the form fixes the list's home; and
-every other tracked file, a submission's own lists, where no home is claimed), with `--check` failing on the one form
+[`.github/tools/numgate.py`](.github/tools/numgate.py) — landed at R406, its carrier set read off *this section*'s
+**entries** and its sites counted in **two classes apart, never merged** (the carriers here, where the form fixes the
+list's home; and every other tracked file, a submission's own lists, where no home is claimed), with `--check` failing
+on the one form
 the rule **forbids** — the sentence that stood here until then called its census *"the editor's own, carried in the
 record outside this repository"*, which was true while the census was a scratch script and is false now (its four
 identification forms are stated above; what `numgate.py` does not read is the position a number means and whether that
-position holds the requirement the reference names — *being in range is not agreeing*); **and it reads the text as the reader meets it, which decides two of its forms in opposite directions** (both written in at **R577**): a `#` that opens an **HTML character reference** (`&#39;`, `&#8212;`) is a *character* the renderer prints and **not** a site — the repaired tool reads **no** such token, where the tool before the repair counted **52** of them over the **1023** tracked files read (**6** of the 52 in the journal's own **12** carriers) and printed the issue/PR namespace as each one's home (**measured at R577**, over the tree as it stood before this round's own write) — while a number written inside a **code span** or a **fenced block** **is** a site, and this class is **not masked** as the link's and the pointer's are, because the tree writes a number as a **monospaced token** (`#<n>`, `item <n>`, `R<n>` each stand inside code spans across its carriers) and that token **is** the cross-reference the file makes (**measured at R577** against the sibling instruments' mask, over the markdown carriers: **141** in-span sites, every one a reference the file makes or quotes, so masking would drop references and keep none); a **named pointer** resolves by the rule stated above,
+position holds the requirement the reference names — *being in range is not agreeing*); **and it reads the text as the reader meets it, which decides two of its forms in opposite directions** (both written in at **R577**): a `#` that opens an **HTML character reference** (`&#39;`, `&#8212;`) is a *character* the renderer prints and **not** a site — the repaired tool reads **no** such token, where the tool before the repair counted **52** of them over the **1023** tracked files read (**6** of the 52 in the journal's own **6** carriers) and printed the issue/PR namespace as each one's home (**measured at R577**, over the tree as it stood before this round's own write) — while a number written inside a **code span** or a **fenced block** **is** a site, and this class is **not masked** as the link's and the pointer's are, because the tree writes a number as a **monospaced token** (`#<n>`, `item <n>`, `R<n>` each stand inside code spans across its carriers) and that token **is** the cross-reference the file makes (**measured at R577** against the sibling instruments' mask, over the markdown carriers: **141** in-span sites, every one a reference the file makes or quotes, so masking would drop references and keep none); a **named pointer** resolves by the rule stated above,
 and the tool for it is [`.github/tools/pointgate.py`](.github/tools/pointgate.py). `linkgate.py`'s own header now
 states which half it covers and names the tools for the others — this paragraph was a **copy** of that header's older
 sentence and was corrected one round after the header was, **and at R406 all three carriers' copies of it moved in the

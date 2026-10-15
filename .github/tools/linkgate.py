@@ -13,11 +13,12 @@ Two things the tool does not decide, and says so:
   namespace of a list the citing sentence or its carrier names.  Which list is
   meant is a read, not a computation, so the **position** a number means stays a
   read - but the **site and the home of the list it indexes** are enumerated by
-  `.github/tools/numgate.py`, which reads its own carrier set off `README.md` ->
-  *Links*.  This clause said the census "is the editor's own, carried in the
-  record outside this repository": true until R406, false since, corrected in
-  the act that landed the tool.  The rule's **second form** - a **named pointer**
-  (`-> *Name*`, `see *Name*`) - is *not* of that kind and **is** a computation:
+  `.github/tools/numgate.py`, which reads its own carrier set off the entries
+  `README.md` -> *Links* lists.  This clause said the census "is the editor's
+  own, carried in the record outside this repository": true until R406, false
+  since, corrected in the act that landed the tool.  The rule's **second form**
+  - a **named pointer** (`-> *Name*`, `see *Name*`) - is *not* of that kind and
+  **is** a computation:
   it indexes no list, and it carries its target's name and the carrier the name
   lives in.  This header classed the two together (*"the second and third forms
   ... a read, not a computation"*) and that sentence is true only of the third;
