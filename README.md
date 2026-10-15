@@ -529,6 +529,16 @@ it is not published and travels with none of the trees this journal's readers ge
 renamed** — three published files quote `numgate.py`'s printed `Rnnn` line verbatim (`papers/issue-122/gates.log`,
 `papers/issue-122/reference-check.md`, `papers/issue-124/gates.log`), and a published package's quotation is not this
 section's to falsify; the clause binds the kind where a reader reads it, as the instruments' *carrier* was bound at R580.
+**What those files quote is the line's name, not this section's census**: each is a **receipt** taken at its own package's
+head — named in the log's own first lines, a full sha in `issue-124` and the commit message in `issue-122` — so the row's
+numeric columns are that head's reading and move with the tree: all three quote `Rnnn 127 8` while `numgate.py` prints
+**129 / 5** at the head this clause leaves. **And nothing re-derives that reading**, where the packages' own `refgate`
+receipt is re-derived: no package compares a live `numgate.py` run against a committed file (instrument: every comparison
+of a live command's output with a committed file across `papers/` — the packages run `numgate` for its **verdict class**,
+never its **bytes**, and the control is the binding that does exist, three packages re-deriving `refgate.py`'s output
+against their own committed `refgate-journal.txt`). A rename would therefore leave those three files naming a form
+nothing prints, with nothing in the tree to catch it — which is what the clause preserves: the name, where a reader reads
+it.
 **And this rule's first form has an instrument in this tree**: `.github/tools/linkgate.py` resolves every markdown
 link target of every tracked markdown carrier — `python3 .github/tools/linkgate.py --check` — at the **linking
 file's own directory**, which is where a renderer resolves it (resolving from the repository root manufactures
