@@ -464,6 +464,15 @@ carrier — it names another repository, from which nothing here is read. **Nor 
 names** — an example it cites, an instrument it explains: a carrier is an *entry*, read off its own bullet line's
 link, and the set is never taken from the section's text at large (R579).
 
+**The instruments' phrase is a different set, and it is named apart here because one word carries two.** Every gate
+under `.github/tools/` names the files it **reads** with the word — *tracked markdown carrier* in its summary line, and
+*the carrier set* where that read returns none — and that set is `git ls-files`'s (the tree's tracked files, or their
+markdown members), **wider** than the entries above and **not** this repository's *carriers*: the qualifier an
+instrument writes states its own set, and a bare *carrier* is an entry of this section. `numgate.py` prints both in one
+run — `carriers: 6 (README.md -> Links)` for this section's set, and, where it read no file, `the carrier set is empty`
+for the set it read — so a sentence that writes *the carrier set* is read against the instrument's own qualifier, never
+against this definition.
+
 **A reference resolves inside this repository — and a number indexes a list a carrier here holds, or an object the
 repository itself holds.** Every cross-reference a
 tracked file makes is read by someone who has this repository and not necessarily anything else, so it must resolve **here**:
