@@ -504,6 +504,31 @@ in range, and that is how a wrong one survives. And **being in range is not agre
 requirement the reference **names**, not merely exist — a number whose position holds a *different* requirement resolves
 to nothing while *looking* resolved, and the tell is that the **same number reads two different requirements in two
 carriers**, which no single list can produce.
+**And a fifth kind stands outside the four, and is bound here because none of them admits it**: the round
+attribution — `Rnnn`, the name `.github/tools/numgate.py` prints for the token this journal's own record writes beside a
+reading to date it (the tree also prose it as `R<n>`) —
+(*measured at R581 over the **1104** tracked files, **1023** read as text, `git ls-files`, **at the head this clause
+leaves** — the clause's own two tokens counted in it, not before the write: **1208** such tokens over **254** files —
+**129** over **5** of the six carriers this section names (`README.md` 99 · `INSTANCES.md` 14 ·
+`.github/REVIEW_TEMPLATE.md` 8 · `.github/tools/refgate.py` 4 · `.github/ISSUE_TEMPLATE/submission.md` 4;
+`papers/README.md` carries **none**), **1054** over **246** published-package files, and **25** over the **3** gate tools
+that are not carriers; instrument: `re.compile(r"\bR\d{3}\b")` over each decoded file, the same class
+`.github/tools/numgate.py` reads, whose own line reads **129 / 5** at this head*). `numgate.py` prints its home as *the round record under
+`.emrg/**`* — and `.emrg/` is **declared untracked** by this repository's own `.gitignore`, so that home is a path **no
+reader's tree carries**: not a list a tracked file holds (form 1), not a list the citing sentence names (form 2), not one
+the carrier names elsewhere in the same file (form 3), and not an object the repository itself holds (form 4 — the
+repository holds issues and pull-requests, and resolves no round number to anything). Left unbound, a reader meets the
+rule this section exists to prevent: a number whose list is **inferred** from a neighbouring file. **The binding is
+therefore to its kind, not to a target**: an `Rnnn` token is an **attribution** — it dates the reading beside it and
+resolves to nothing, and a reader owes it no resolution; the tree writes it in all three of the places the census breaks
+at (this section's carriers, a published package's own materials, and a gate tool's header and fixtures), and the kind is
+the same in each. **What the kind cannot carry is a claim a reader must be able to check** — where a statement rests on an
+observation a reader is asked to accept, the reading is stated with an object the repository holds (its head, a file, an
+issue or a comment id) or with its date, and never with a bare round number, because the round record that would resolve
+it is not published and travels with none of the trees this journal's readers get. **The instrument's wording is not
+renamed** — three published files quote `numgate.py`'s printed `Rnnn` line verbatim (`papers/issue-122/gates.log`,
+`papers/issue-122/reference-check.md`, `papers/issue-124/gates.log`), and a published package's quotation is not this
+section's to falsify; the clause binds the kind where a reader reads it, as the instruments' *carrier* was bound at R580.
 **And this rule's first form has an instrument in this tree**: `.github/tools/linkgate.py` resolves every markdown
 link target of every tracked markdown carrier — `python3 .github/tools/linkgate.py --check` — at the **linking
 file's own directory**, which is where a renderer resolves it (resolving from the repository root manufactures
