@@ -1,0 +1,504 @@
+{
+  "build": "python 3.9.6 / numpy 2.0.2",
+  "cells": {
+    "M2_defined": 303,
+    "SW_defined": 115,
+    "interior": 84,
+    "pinned": 246,
+    "total": 330
+  },
+  "direction_test_M2": {
+    "all": {
+      "fraction_right_sign": 0.0,
+      "n_defined": 303,
+      "n_right_sign": 0
+    },
+    "interior": {
+      "fraction_right_sign": 0.0,
+      "n_defined": 80,
+      "n_right_sign": 0
+    },
+    "note": "M1 is a cost LEVEL and agrees in sign by construction; the direction test is informative only for a slope (M2)"
+  },
+  "goal": "P4 (moments half) -- do the model-free telemetry readings recover c(tau+L*)?",
+  "head_to_head": {
+    "M1_vs_sweep": {
+      "all": {
+        "median_err_route": 0.13813782968441687,
+        "median_err_sweep": 0.01421246610663163,
+        "n": 115,
+        "ratio_sweep_better_by": 9.719483490621016
+      },
+      "interior": {
+        "median_err_route": 0.1459537628736864,
+        "median_err_sweep": 0.0142075841228989,
+        "n": 84,
+        "ratio_sweep_better_by": 10.272947294286803
+      }
+    },
+    "M2_vs_sweep": {
+      "all": {
+        "median_err_route": 1.0007940451042485,
+        "median_err_sweep": 0.014724039104476986,
+        "n": 106,
+        "ratio_sweep_better_by": 67.97007519492035
+      },
+      "interior": {
+        "median_err_route": 1.001002620816182,
+        "median_err_sweep": 0.01431504872577809,
+        "n": 80,
+        "ratio_sweep_better_by": 69.92659543055609
+      }
+    }
+  },
+  "identity_check": {
+    "interior_median_rel_err_identity": 0.0003739620466706358,
+    "reading": "at an interior point the exact ground truth is the logged cost, c = J"
+  },
+  "point_invariance": {
+    "distinct_visited_points_per_block": [
+      3,
+      3,
+      4,
+      5,
+      6,
+      6,
+      7,
+      7,
+      8,
+      9,
+      10,
+      10,
+      11,
+      13,
+      13
+    ],
+    "max_price_span_within_a_group": 99995.35841116638,
+    "max_rel_G_spread_within_a_group": 1.6400531697969917e-13,
+    "max_rel_M1_spread_within_a_group": 9.225299080108362e-14,
+    "max_rel_M2_spread_within_a_group": 0.0,
+    "max_rel_profile_rho_spread_within_a_group": 0.0,
+    "n_groups": 26
+  },
+  "profile_flatness_max_over_min": {
+    "median": 1.0183222828275753,
+    "n": 303,
+    "worst": 1.2019510798838156
+  },
+  "routes": {
+    "M1": {
+      "error_vs_point": {
+        "all": {
+          "best": 0.01132760855383852,
+          "median": 0.09532862081133989,
+          "n_cells": 330,
+          "n_defined": 330,
+          "worst": 0.7695805315654985
+        },
+        "interior": {
+          "best": 0.012373461353338068,
+          "median": 0.1459537628736864,
+          "n_cells": 84,
+          "n_defined": 84,
+          "worst": 0.7100344696423098
+        },
+        "pinned": {
+          "best": 0.01132760855383852,
+          "median": 0.08711184066000313,
+          "n_cells": 246,
+          "n_defined": 246,
+          "worst": 0.7695805315654985
+        }
+      },
+      "object_test_interior": {
+        "blocks_with_a_defined_r": 12,
+        "median_r": 0.9899851847118237,
+        "min_r": 0.9600911694057175,
+        "per_block": [
+          {
+            "n": 8,
+            "n_interior": 8,
+            "plant": "double-int R=1",
+            "r": 0.9843125995728083,
+            "tau": 0.0
+          },
+          {
+            "n": 4,
+            "n_interior": 4,
+            "plant": "double-int R=1",
+            "r": 0.9945518359374627,
+            "tau": 2.0
+          },
+          {
+            "n": 10,
+            "n_interior": 10,
+            "plant": "double-int R=10",
+            "r": 0.9600911694057175,
+            "tau": 0.0
+          },
+          {
+            "n": 8,
+            "n_interior": 8,
+            "plant": "double-int R=10",
+            "r": 0.9654245035474003,
+            "tau": 2.0
+          },
+          {
+            "n": 5,
+            "n_interior": 5,
+            "plant": "double-int R=10",
+            "r": 0.9929134928636036,
+            "tau": 4.0
+          },
+          {
+            "n": 11,
+            "n_interior": 11,
+            "plant": "double-int R=100",
+            "r": 0.9855827389506484,
+            "tau": 0.0
+          },
+          {
+            "n": 9,
+            "n_interior": 9,
+            "plant": "double-int R=100",
+            "r": 0.9871694716266296,
+            "tau": 2.0
+          },
+          {
+            "n": 6,
+            "n_interior": 6,
+            "plant": "double-int R=100",
+            "r": 0.9895478023446654,
+            "tau": 4.0
+          },
+          {
+            "n": 5,
+            "n_interior": 5,
+            "plant": "double-int R=100",
+            "r": 0.9904225670789821,
+            "tau": 6.0
+          },
+          {
+            "n": 2,
+            "n_interior": 2,
+            "plant": "double-int R=100",
+            "r": null,
+            "tau": 8.0
+          },
+          {
+            "n": 7,
+            "n_interior": 7,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9972705566515842,
+            "tau": 0.0
+          },
+          {
+            "n": 4,
+            "n_interior": 4,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9993088053205292,
+            "tau": 2.0
+          },
+          {
+            "n": 3,
+            "n_interior": 3,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9993677563217652,
+            "tau": 4.0
+          },
+          {
+            "n": 1,
+            "n_interior": 1,
+            "plant": "scalar-stable a=0.9",
+            "r": null,
+            "tau": 6.0
+          },
+          {
+            "n": 1,
+            "n_interior": 1,
+            "plant": "scalar-stable a=0.9",
+            "r": null,
+            "tau": 8.0
+          }
+        ]
+      },
+      "reading": "moments: logged mean cost  J - lam/L*"
+    },
+    "M2": {
+      "error_vs_point": {
+        "all": {
+          "best": 1.0000773503993963,
+          "median": 1.0006601785698417,
+          "n_cells": 330,
+          "n_defined": 303,
+          "worst": 1.010467967232034
+        },
+        "interior": {
+          "best": 1.000101818322761,
+          "median": 1.001002620816182,
+          "n_cells": 84,
+          "n_defined": 80,
+          "worst": 1.010467967232034
+        },
+        "pinned": {
+          "best": 1.0000773503993963,
+          "median": 1.0006601785698417,
+          "n_cells": 246,
+          "n_defined": 223,
+          "worst": 1.0100307967064652
+        }
+      },
+      "object_test_interior": {
+        "blocks_with_a_defined_r": 12,
+        "median_r": -0.9256271367550037,
+        "min_r": -0.9782376986531023,
+        "per_block": [
+          {
+            "n": 7,
+            "n_interior": 8,
+            "plant": "double-int R=1",
+            "r": -0.9665011073711283,
+            "tau": 0.0
+          },
+          {
+            "n": 4,
+            "n_interior": 4,
+            "plant": "double-int R=1",
+            "r": -0.9365540763395933,
+            "tau": 2.0
+          },
+          {
+            "n": 9,
+            "n_interior": 10,
+            "plant": "double-int R=10",
+            "r": -0.8553786275580606,
+            "tau": 0.0
+          },
+          {
+            "n": 8,
+            "n_interior": 8,
+            "plant": "double-int R=10",
+            "r": -0.9005988492457618,
+            "tau": 2.0
+          },
+          {
+            "n": 5,
+            "n_interior": 5,
+            "plant": "double-int R=10",
+            "r": -0.9147001971704142,
+            "tau": 4.0
+          },
+          {
+            "n": 10,
+            "n_interior": 11,
+            "plant": "double-int R=100",
+            "r": -0.9759734240772566,
+            "tau": 0.0
+          },
+          {
+            "n": 9,
+            "n_interior": 9,
+            "plant": "double-int R=100",
+            "r": -0.9782376986531023,
+            "tau": 2.0
+          },
+          {
+            "n": 6,
+            "n_interior": 6,
+            "plant": "double-int R=100",
+            "r": -0.9721718368969916,
+            "tau": 4.0
+          },
+          {
+            "n": 5,
+            "n_interior": 5,
+            "plant": "double-int R=100",
+            "r": -0.9768405246808903,
+            "tau": 6.0
+          },
+          {
+            "n": 2,
+            "n_interior": 2,
+            "plant": "double-int R=100",
+            "r": null,
+            "tau": 8.0
+          },
+          {
+            "n": 6,
+            "n_interior": 7,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9992409635147912,
+            "tau": 0.0
+          },
+          {
+            "n": 4,
+            "n_interior": 4,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9962785267056085,
+            "tau": 2.0
+          },
+          {
+            "n": 3,
+            "n_interior": 3,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9987168535979196,
+            "tau": 4.0
+          },
+          {
+            "n": 1,
+            "n_interior": 1,
+            "plant": "scalar-stable a=0.9",
+            "r": null,
+            "tau": 6.0
+          },
+          {
+            "n": 1,
+            "n_interior": 1,
+            "plant": "scalar-stable a=0.9",
+            "r": null,
+            "tau": 8.0
+          }
+        ]
+      },
+      "reading": "moments: within-chunk phase slope"
+    },
+    "SW": {
+      "error_vs_point": {
+        "all": {
+          "best": 0.0004583981722385781,
+          "median": 0.01421246610663163,
+          "n_cells": 330,
+          "n_defined": 115,
+          "worst": 0.16925275653459954
+        },
+        "interior": {
+          "best": 0.002353670106354691,
+          "median": 0.0142075841228989,
+          "n_cells": 84,
+          "n_defined": 84,
+          "worst": 0.16925275653459954
+        },
+        "pinned": {
+          "best": 0.0004583981722385781,
+          "median": 0.014971545489234564,
+          "n_cells": 246,
+          "n_defined": 31,
+          "worst": 0.16543384005202677
+        }
+      },
+      "object_test_interior": {
+        "blocks_with_a_defined_r": 12,
+        "median_r": 0.9964051073732092,
+        "min_r": 0.9831902184100401,
+        "per_block": [
+          {
+            "n": 8,
+            "n_interior": 8,
+            "plant": "double-int R=1",
+            "r": 0.9952077075197935,
+            "tau": 0.0
+          },
+          {
+            "n": 4,
+            "n_interior": 4,
+            "plant": "double-int R=1",
+            "r": 0.9990069172435087,
+            "tau": 2.0
+          },
+          {
+            "n": 10,
+            "n_interior": 10,
+            "plant": "double-int R=10",
+            "r": 0.999879804978501,
+            "tau": 0.0
+          },
+          {
+            "n": 8,
+            "n_interior": 8,
+            "plant": "double-int R=10",
+            "r": 0.9988985152860803,
+            "tau": 2.0
+          },
+          {
+            "n": 5,
+            "n_interior": 5,
+            "plant": "double-int R=10",
+            "r": 0.9831902184100401,
+            "tau": 4.0
+          },
+          {
+            "n": 11,
+            "n_interior": 11,
+            "plant": "double-int R=100",
+            "r": 0.9993049297959368,
+            "tau": 0.0
+          },
+          {
+            "n": 9,
+            "n_interior": 9,
+            "plant": "double-int R=100",
+            "r": 0.9976025072266249,
+            "tau": 2.0
+          },
+          {
+            "n": 6,
+            "n_interior": 6,
+            "plant": "double-int R=100",
+            "r": 0.9939969664404754,
+            "tau": 4.0
+          },
+          {
+            "n": 5,
+            "n_interior": 5,
+            "plant": "double-int R=100",
+            "r": 0.9889802920353307,
+            "tau": 6.0
+          },
+          {
+            "n": 2,
+            "n_interior": 2,
+            "plant": "double-int R=100",
+            "r": null,
+            "tau": 8.0
+          },
+          {
+            "n": 7,
+            "n_interior": 7,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9888735887502319,
+            "tau": 0.0
+          },
+          {
+            "n": 4,
+            "n_interior": 4,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9991680942899889,
+            "tau": 2.0
+          },
+          {
+            "n": 3,
+            "n_interior": 3,
+            "plant": "scalar-stable a=0.9",
+            "r": 0.9916047765354836,
+            "tau": 4.0
+          },
+          {
+            "n": 1,
+            "n_interior": 1,
+            "plant": "scalar-stable a=0.9",
+            "r": null,
+            "tau": 6.0
+          },
+          {
+            "n": 1,
+            "n_interior": 1,
+            "plant": "scalar-stable a=0.9",
+            "r": null,
+            "tau": 8.0
+          }
+        ]
+      },
+      "reading": "control: centred difference of G (the sweep)"
+    }
+  }
+}
