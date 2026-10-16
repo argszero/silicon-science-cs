@@ -34,8 +34,14 @@ cd papers/issue-142 && bash reproduce.sh
     decoration and this gate reads the package in place.
   * **The manuscript.** `build_manuscript.py --check` proves the shipped `manuscript.md` is exactly
     what `manuscript.src.md` builds, and `--selftest` runs its 13-check plant battery.
+  * **The build the seals are scoped to.** Step 6 re-checks every seal it can under a **second
+    interpreter** (`PYTHON2=…` overrides the search) and names each leg it cannot run — see
+    *What seals each receipt*.
 * **Exit status**: `0` = `REPRODUCE: ALL GREEN`; `1` = at least one step FAILED (the count is printed).
   A missing dependency aborts with a named message rather than a traceback.
+  **A `NOT RUN` leg is never a pass**: step 6 re-checks every seal it *can* under a second interpreter,
+  names each leg it cannot run together with the build that seal is scoped to, and the verdict prints
+  the count — so `ALL GREEN (1 leg(s) NOT RUN …)` cannot be read as "everything was measured".
 * **Environment**: CPython **3.9.6** with **numpy 2.0.2** and **matplotlib 3.9.4** (macOS, measured
   2026-10-16). The research instruments need numpy, the figure step needs matplotlib; the reference
   layer and the manuscript build are standard library only. Override with `PYTHON=/path/to/python3`.
@@ -55,6 +61,43 @@ cd papers/issue-142 && bash reproduce.sh
   script removes.
 * **Second tier**: `REPRO_FULL=1 bash reproduce.sh` re-runs every instrument a **second** time in a
   fresh temp copy and compares the two fresh artefacts — the determinism certificate.
+
+## What seals each receipt, and where that authority is pinned
+
+"Verified", "sealed" and "reproduced" are claims about **who** did the sealing, so each receipt this
+package ships names the key that seals it and where that key's authority comes from — a value moved
+into a sealed artifact has only moved the question one layer down unless the sealing authority is
+itself resolved. The reference layer's field-level seals are tabulated under *Reference layer*; this is
+the rest of the package.
+
+| Receipt | The claim | The sealing key | Where the authority is pinned |
+|---|---|---|---|
+| `spike_ident_v*.py` / `_results.json` | this output is what this code computes | re-run **from its own code** in an isolated copy, compare bytes | **The BUILD, and the code's own prerequisites** — see below. Not provenance: byte-equality is a claim about the output, so any producer of these bytes passes |
+| `figures/*.png` | the figures follow from the committed reports | re-render and compare bytes | **The BUILD** (CPython + matplotlib versions) |
+| `manuscript.md` | exactly what `manuscript.src.md` builds | `build_manuscript.py --check` (byte equality) | **Build-independent** — measured under 3.9.6 *and* 3.13.9 |
+| the pool gate's verdicts (`GATE n/n`) | the shipped pool is complete and internally consistent | `refscan142.py --gate`, read from what it prints | **Build-independent** — measured under 3.9.6 *and* 3.13.9 |
+| each instrument's plant battery (`SELFTEST: ALL PASS`, `passed/total`) | the checks can still fail | the instrument, read from what it **prints** (never from the exit code alone) | the instrument's own build |
+
+**The build each byte-equality seal is scoped to, and what `reproduce.sh` does about it.** A
+byte-equality seal answers *"who?"* with *"anyone who writes these bytes"* — it is a claim about the
+**output**, never about the producer — so its sealing authority is the build that produced the bytes.
+Two interpreters that disagree produce two different "correct" answers, and a same-machine second run
+cannot tell one from a defect. `reproduce.sh` therefore carries a **build-independence leg** (step 6):
+it re-checks every seal it can under a second interpreter, and names every leg it cannot run.
+
+* **Measured on this machine** (2026-10-17): `python 3.13.9` agrees with the pinned `python 3.9.6 /
+  numpy 2.0.2` build on the **stdlib seals** — the manuscript build and the reference gate.
+* **Not run here**: the instrument reports and the figures. Three interpreter builds are reachable on
+  this machine (3.9.6, 3.12.12, 3.13.9) but **only one of them carries numpy/matplotlib**, so those
+  legs are reported `NOT RUN` and the seal stays scoped to the pinned build. On a machine with a second
+  build that has the libraries, the leg runs `v6` and the figure re-render across the two builds; where
+  it cannot, the line says so rather than passing quietly.
+* **The code's own prerequisites are named because they are part of the seal**: the instruments import
+  each other by **name** (`v6` imports `v1`), and that import resolves through `sys.path[0]` — the
+  *script's own directory*, not the working directory. An instrument is therefore runnable only when
+  its siblings sit beside it; `reproduce.sh` copies the whole set into the isolated directory for
+  exactly this reason, and an isolated one-file copy fails with `ModuleNotFoundError` rather than
+  silently measuring something else.
 
 ## Layout
 
@@ -91,7 +134,7 @@ canonical works are **reported unresolved rather than entered on a remembered id
 technical report, a book whose only Crossref record is a *review*, and a paper whose Crossref record
 carries a different title); `reference-check.md` lists them with their best title score.
 
-### What seals each receipt, and where that authority is pinned
+### The reference layer's own seals
 
 "Sealed", "attested" and "verified" are claims about **who** did it, so each carrier below states the
 key that seals it and whether that key's authority comes from **outside** the auditee. Naming these is

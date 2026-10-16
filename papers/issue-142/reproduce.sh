@@ -22,6 +22,11 @@
 #   instruments.  (The reference layer's LIVE verification is a separate network pass -- see README;
 #   the offline gate re-checks its committed receipt without touching the network.)
 # TOLERANCE: exact -- byte equality against the shipped reports and figures.
+# THE BUILD: `Tolerance: exact` is a claim about BYTES, and a byte-equality seal is only as strong as
+#   the BUILD that produced the bytes, so step 6 re-checks every seal it can under a SECOND
+#   interpreter (PYTHON2=... overrides the search).  A leg that cannot be run -- this machine has
+#   numpy under one interpreter only -- is reported NOT RUN, BY NAME, with the build the seal is
+#   scoped to, and the verdict counts those lines: a skip is never a pass.
 # EXIT STATUS: 0 = `REPRODUCE: ALL GREEN`; 1 = at least one step FAILED (the count is printed).
 # WRITES NOTHING INSIDE THE PACKAGE: the instruments run in a private temp copy that is removed.
 # COST: about five minutes (the v0 grid dominates at ~4 min; every other step is seconds).
@@ -33,6 +38,7 @@ PY="${PYTHON:-/usr/bin/python3}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 cd "$HERE"
 FAILS=0
+SKIPS=0   # legs that could not be RUN and are named as such -- never counted as passes
 step() { printf '%-48s' "$1"; }
 ok()   { echo "OK${1:+ ($1)}"; }
 bad()  { echo "FAILED${1:+ ($1)}"; FAILS=$((FAILS+1)); }
@@ -167,10 +173,64 @@ else
   bad "manuscript plant battery"
 fi
 
+# ---------------------------------------------------------------- 6. the BUILD the seals are scoped to
+# A byte-equality seal ("re-run it from its own code and compare") answers WHO with "anyone who
+# writes these bytes" -- it is a claim about the OUTPUT, never about the producer -- so its sealing
+# authority is the BUILD: an interpreter or library that rounds differently produces a second
+# "correct" answer that a same-machine second run cannot tell from a defect (the R599 lesson, from
+# #130's gate).  This step re-checks every seal it CAN under a second interpreter; each leg it
+# cannot run is named NOT RUN with the build the seal is scoped to, and the verdict counts them.
+step "build independence of the seals"
+PY2=""
+for c in ${PYTHON2:-python3.13 python3.12 python3.11 python3.10}; do
+  p="$(command -v "$c" 2>/dev/null || true)"
+  [ -n "$p" ] || continue
+  [ "$p" != "$PY" ] || continue
+  PY2="$p"; break
+done
+if [ -z "$PY2" ]; then
+  SKIPS=$((SKIPS + 1))
+  ok "NOT RUN (no 2nd interpreter found; set PYTHON2=) -- seals scoped to $DEPS"
+else
+  B2="$("$PY2" -c 'import sys;print("python %s" % sys.version.split()[0])' 2>/dev/null || echo "$PY2")"
+  RAN=""; NORUN=""
+  # -- the stdlib seals: the manuscript build and the reference gate -----------------------------
+  A1="$("$PY"  "$HERE/build_manuscript.py" --check 2>&1 | tail -1)"
+  B1="$("$PY2" "$HERE/build_manuscript.py" --check 2>&1 | tail -1)"
+  A2="$("$PY"  "$HERE/refscan142.py" --gate 2>&1 | grep '^GATE')"
+  B2G="$("$PY2" "$HERE/refscan142.py" --gate 2>&1 | grep '^GATE')"
+  if [ -n "$A1" ] && [ "$A1" = "$B1" ] && [ -n "$A2" ] && [ "$A2" = "$B2G" ]; then
+    RAN="manuscript, refgate"
+  else
+    bad "$B2 DISAGREES on the stdlib seals (manuscript: '$A1' vs '$B1'; gate: '$A2' vs '$B2G')"
+  fi
+  # -- the numeric seal: one instrument, byte-compared across the two builds ----------------------
+  if [ -n "$RAN" ] && "$PY2" -c 'import numpy' 2>/dev/null; then
+    DET2=1
+    "$PY2" "$WORK/spike_ident_v6.py" >/dev/null 2>&1 || DET2=0
+    cmp -s "$WORK/spike_ident_v6_results.json" "$HERE/spike_ident_v6_results.json" || DET2=0
+    if [ "$DET2" = 1 ]; then RAN="$RAN, v6"; else bad "v6's report DIFFERS under $B2"; fi
+  else
+    NORUN="$NORUN instrument reports (numpy)"
+  fi
+  # -- the figure seal ---------------------------------------------------------------------------
+  if [ -n "$RAN" ] && "$PY2" -c 'import matplotlib' 2>/dev/null; then
+    if MPLCONFIGDIR="$WORK/.mpl2" "$PY2" "$HERE/make_figures.py" --check >/dev/null 2>&1; then
+      RAN="$RAN, figures"
+    else
+      bad "the figures DIFFER under $B2"
+    fi
+  else
+    NORUN="$NORUN figures (matplotlib)"
+  fi
+  if [ -n "$NORUN" ]; then SKIPS=$((SKIPS + 1)); fi
+  [ -n "$RAN" ] && ok "$B2 agrees ($RAN)${NORUN:+; NOT RUN:$NORUN -- scoped to $DEPS}"
+fi
+
 # ---------------------------------------------------------------- verdict
 echo
 if [ "$FAILS" = 0 ]; then
-  echo "REPRODUCE: ALL GREEN"
+  echo "REPRODUCE: ALL GREEN${SKIPS:+ ($SKIPS leg(s) NOT RUN -- named above)}"
   exit 0
 fi
 echo "REPRODUCE: $FAILS STEP(S) FAILED"
