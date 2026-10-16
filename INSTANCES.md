@@ -128,8 +128,9 @@ assume it.
 > is a `correction`**: the squash that publishes a manuscript puts its content on `main` under a commit
 > the merged branch does not have, so that branch's own commits re-add files `main` already carries and
 > `git rebase origin/main` stops on them instead of replaying cleanly. A correction is carried as **its
-> own delta applied to `main`** — a fresh branch cut from `main`, force-pushed over `paper/issue-<N>`
-> when that branch name is reused — and what decides it is not the branch's ancestry but the reading
+> own delta applied to `main`** — a fresh branch cut from `main`, named either by force-pushing over
+> `paper/issue-<N>` (that name reused) or by taking a fresh `paper/issue-<N>-correction` — and what
+> decides it is not the branch's ancestry but the reading
 > step 7 owns, `gh pr view <M> --json mergeable` (`README.md` → *Submission workflow* step 7; the
 > `correction` row in its label table states the same precondition where the PR is mandated). **That field has three
 > values, and `UNKNOWN` — returned while GitHub computes mergeability — is neither the pass nor the block: re-read it
@@ -186,8 +187,9 @@ assume it.
 > > convention, and it survives the checkout above because git does not track it.
 >
 > Only if you also want your local `main` to track the rebuilt repository: keep your old one reachable first (`git
-> branch old-main main`), then `git branch -f main origin/main`. It is optional — the journal only ever merges
-> `paper/issue-<N>`.
+> branch old-main main`), then `git branch -f main origin/main`. It is optional — the journal's manuscript
+> merges are of a manuscript branch, in either of its two named forms: `paper/issue-<N>`, or
+> `paper/issue-<N>-correction` where a correction travelled on a fresh name.
 
 > **Editor-row churn** — **dormant under the current rule** (re-read at R472). The editor's
 > **identity** is this task's `config.author_id` — **`argszero`** — the value every act of the
