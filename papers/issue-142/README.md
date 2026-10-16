@@ -23,13 +23,13 @@ cd papers/issue-142 && bash reproduce.sh
     non-zero). **`v0` has no plant battery** and the script says so rather than implying one.
   * **The figure set.** `make_figures.py --check` re-renders all four PNGs from the committed reports
     and compares them byte-for-byte.
-  * **The reference layer, offline.** `refscan142.py --gate` (11 checks) binds the committed
+  * **The reference layer, offline.** `refscan142.py --gate` (12 checks) binds the committed
     verification receipt to the shipped pool **by sha256**, requires the network-written
     `refs/canonical-status.json` carrier to be present (a report built without it states `0
     unresolved`, which is a read of nothing), and requires the pool's digest to be quoted **only** by
     the two generated carriers -- a digest written into prose is a value no generator maintains.
-    `refscan142.py --selftest` re-runs its 14-check matching battery, and `refscan142.py
-    --gateselftest` **fires every gate check on a throwaway copy of the package** (9 plants: one
+    `refscan142.py --selftest` re-runs its 21-check matching battery, and `refscan142.py
+    --gateselftest` **fires every gate check on a throwaway copy of the package** (10 plants: one
     healthy control plus a planted defect per check), because a check that has never failed is
     decoration and this gate reads the package in place.
   * **The manuscript.** `build_manuscript.py --check` proves the shipped `manuscript.md` is exactly
@@ -90,6 +90,29 @@ Live state at the last run: `VERIFIED 826 / 826 ; TITLE MISMATCH 0 ; TRANSPORT-U
 canonical works are **reported unresolved rather than entered on a remembered identifier** (a
 technical report, a book whose only Crossref record is a *review*, and a paper whose Crossref record
 carries a different title); `reference-check.md` lists them with their best title score.
+
+### What seals each receipt, and where that authority is pinned
+
+"Sealed", "attested" and "verified" are claims about **who** did it, so each carrier below states the
+key that seals it and whether that key's authority comes from **outside** the auditee. Naming these is
+the point: a value moved into a sealed artifact has only moved the question one layer down unless the
+sealing authority is itself resolved.
+
+| Carrier (the seal) | The claim it seals | Who seals it | Where the authority is pinned |
+|---|---|---|---|
+| `refs/verify-run.txt` first line (it names the pool it verified, by sha256) | the receipt is about **these bytes** | `refscan142.py` computes the digest of `refs/pool.json` | **Self-declared, and stated as such.** The digest is over the pool's bytes, so a *different* producer writing the same bytes gets the same receipt: the claim is **byte-identity**, never provenance. `--gate` binds the receipt to the shipped pool and fires on a receipt from another pool |
+| the 0.80 title comparison (one row per entry in the receipt) | the record at this identifier is the record we cite | the endpoint — Crossref by DOI / arXiv by id | **External.** The identifier is the entry's own, and the endpoint is outside the auditee. Measured strength of the bar: over all 340,725 wrong pairs the pool can form, **3** reach 0.80 (max 0.8889, an arXiv pair differing by one word), so the bar is wide enough to admit a wrong record in principle; the by-title route below is where a wrong entry could actually be *entered*, and its margin is checked |
+| `matched_title` / `match_score` on a canonical entry | this record IS that canonical work | `refscan142.py`, by title match at the same 0.80 bar | **External, with the margin re-derived at gate time:** `--gate` re-computes the score from the shipped title and requires (i) it still clears 0.80, (ii) it equals the recorded value, and (iii) **no competing pool entry reaches the bar** against that canonical title. Live values: 23 matches, minimum intended margin **0.8889**, strongest competitor **0.5455**, minimum gap **0.4444** |
+| `refs/canonical-status.json` | the matched / unresolved split of the canonical list | the Crossref and arXiv endpoints | **External.** Network-written; the gate asserts the carrier is shipped, because a report built without it states `0 unresolved` — a read of nothing |
+
+**The harvest cache has a stated amendment path** (`merge_record`). A re-sighting (same id, same
+compared fields) is a no-op that only accumulates provenance. A collision whose compared fields
+**differ** is an amendment: the live fetch wins — the later fetch *is* the fresher record — and the
+overruled values are kept on the entry under `superseded`, with the count printed per query as
+`amended=N`. Order-dependence is inherent to a persisted cache and is stated rather than claimed away;
+what is not acceptable, and what this replaced, is a first-write lookup that **stored the correction
+and ignored it**, making a divergence both silent and unrepresentable. The store's bookkeeping never
+reaches the pool (`curate` strips it), so the seal above is unaffected by it.
 
 The **live** pass is a network operation and is not part of the offline `reproduce.sh`:
 

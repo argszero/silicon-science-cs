@@ -312,6 +312,55 @@ def crossref_find(title, min_frac=0.80, routes=None):
     return best, bs, route
 
 
+# The record's own fields, split by ROLE.  A key written for the STORE's bookkeeping is not part of
+# the POOL, so it is stripped on the way in -- otherwise the merge's own state would move the pool's
+# digest, which is a value the committed receipt names.
+COMPARED = ("title", "published", "source")
+OPERATIONAL = ("superseded",)
+
+
+def _public(r):
+    """The record as the POOL carries it: operational keys stripped."""
+    return {k: v for k, v in r.items() if k not in OPERATIONAL}
+
+
+def merge_record(store, e, name):
+    """Insert one fetched record.  Returns "new" | "seen" | "amended".
+
+    A lookup that keeps the first write has a state it cannot represent: the store persists across
+    runs (it is read back at the top of `discover`), so with first-write-wins a correction that the
+    upstream endpoint has already made is **silently dropped** -- the entry stays as the earliest run
+    wrote it, the disagreement is reported nowhere, and the store's content (hence the pool's digest)
+    depends on the ORDER the writes happened to arrive in.  Measured 2026-10-16 on the two orders of
+    the same two writes: first-write-wins stores "ROUND ONE" one way and "ROUND TWO" the other.
+
+    So a collision whose COMPARED fields agree is a re-sighting (only the provenance accumulates,
+    and the store is untouched -- the one genuinely order-independent case), and a collision whose
+    fields DIFFER is an AMENDMENT with a STATED policy: **the live (fresher) fetch wins, and the
+    overruled values are kept on the entry**.  Order-dependence is inherent to a persisted harvest
+    cache -- the later fetch IS the fresher record -- so it is stated rather than claimed away; what
+    the defect lacked is that the divergence was SILENT and the state UNREPRESENTABLE, which is
+    exactly "the second write is stored and ignored"."""
+    eid = e["id"]
+    if eid not in store:
+        e["found_by"] = [name]
+        store[eid] = e
+        return "new"
+    cur = store[eid]
+    if name not in cur.get("found_by", []):
+        cur.setdefault("found_by", []).append(name)
+    diff = {f: {"was": cur.get(f), "now": e.get(f)} for f in COMPARED if cur.get(f) != e.get(f)}
+    if not diff:
+        return "seen"
+    sup = dict(cur)
+    sup.pop("superseded", None)
+    sup["superseded_by"] = "live re-fetch at %s" % name
+    cur.setdefault("superseded", []).append(sup)
+    for f, v in diff.items():
+        cur[f] = v["now"]
+    return "amended"
+
+
 def discover(canonical_only=False):
     """arXiv `search_query` discovery, then Crossref BY TITLE for the canonical works.  The raw store
     is keyed by the entry's own id, so a work found by two queries is one entry with two provenances."""
@@ -330,16 +379,13 @@ def discover(canonical_only=False):
                 print("[discover] %-14s TRANSPORT FAILURE: %s" % (name, e), flush=True)
                 n_failed += 1
                 continue
-            added = 0
+            added = amended = 0
             for e in ents:
-                if e["id"] in store:
-                    if name not in store[e["id"]].get("found_by", []):
-                        store[e["id"]].setdefault("found_by", []).append(name)
-                else:
-                    e["found_by"] = [name]
-                    store[e["id"]] = e
-                    added += 1
-            print("[discover] %-14s n=%-3d new=%d" % (name, len(ents), added), flush=True)
+                outcome = merge_record(store, e, name)
+                added += 1 if outcome == "new" else 0
+                amended += 1 if outcome == "amended" else 0
+            print("[discover] %-14s n=%-3d new=%d amended=%d"
+                  % (name, len(ents), added, amended), flush=True)
             time.sleep(3.0)     # arXiv rate-limits bursts (HTTP 429)
         print("[discover] queries failed: %d" % n_failed, flush=True)
         # Persist the arXiv pass BEFORE the canonical loop: this file was once written only at the very
@@ -363,17 +409,13 @@ def discover(canonical_only=False):
             time.sleep(3.0)
         if best is not None and bs >= 0.80:
             if route == "arxiv-title":
-                aid = best["id"]
-                if aid not in store:
-                    best["found_by"] = ["canonical-arxiv"]
-                store[aid] = store.get(aid, best)
-                if "canonical-arxiv" not in store[aid].setdefault("found_by", []):
-                    store[aid]["found_by"].append("canonical-arxiv")
-                store[aid]["canonical"] = True
-                doi = aid
+                best["canonical"] = True
+                merge_record(store, best, "canonical-arxiv")
+                store[best["id"]]["canonical"] = True
+                doi = best["id"]
             else:
                 doi = best.get("DOI") or ("key:" + key)
-                store[doi] = {
+                merge_record(store, {
                     "id": doi, "source": "crossref", "canonical": True,
                     "title": cr_title(best),
                     "summary": re.sub(r"<[^>]+>", " ", best.get("abstract", "") or "")[:1200],
@@ -385,7 +427,7 @@ def discover(canonical_only=False):
                     "container": (((best.get("container-title") or [""]) or [""])[0])[:80],
                     "matched_title": title, "match_score": bs, "matched_by": route,
                     "found_by": ["canonical"],
-                }
+                }, "canonical")
             matched.append(key)
             print("[canonical] %-16s matched  %.2f (%s)  %s" % (key, bs, route, doi), flush=True)
         else:
@@ -467,8 +509,8 @@ def curate():
     pool, dropped_off = {}, []
     for k, r in raw.items():
         if r.get("source") == "crossref" or r.get("canonical"):
-            pool[k] = r                              # canonical works are kept by construction
-            continue
+            pool[k] = _public(r)                     # canonical works are kept by construction, and
+            continue                                 # the merge's bookkeeping is NOT part of the pool
         title = _fold(r.get("title", "") or "")
         text = _hay(r)
         core = sum(1 for t in core_terms if t in text)
@@ -478,7 +520,7 @@ def curate():
         if any(t in title for t in off_domain):
             dropped_off.append(r["id"])
             continue                                 # shares a method word, different subject
-        r2 = dict(r)
+        r2 = _public(r)
         r2["core_hits"] = core
         r2["support_hits"] = sup
         pool[k] = r2
@@ -832,6 +874,27 @@ def gate():
     checks.append(("the digest is quoted only by the DERIVED carriers %s (quoted by: %s)"
                    % (sorted(derived), sorted(quoted) or "none"),
                    bool(quoted) and set(quoted) <= derived))
+    # The BY-TITLE route is where a citation error would enter: a canonical work is entered by the
+    # title match that found it, at the same two-sided 0.80 bar.  That row is DECISIVE only if the
+    # INTENDED record beats every competing record against that canonical title, so both margins are
+    # RE-DERIVED here from the shipped pool -- the recorded `match_score` is a claim, and a claim
+    # whose value can be re-derived is the only kind this gate can check (Class 224).
+    mism = []
+    canon = [v for v in pool.values() if v.get("matched_title")]
+    for v in canon:
+        derived = title_score(v["title"], v["matched_title"])
+        rec = float(v.get("match_score", -1))
+        runner = max((title_score(w["title"], v["matched_title"])
+                      for kk, w in pool.items() if kk != v["id"]), default=0.0)
+        if derived < 0.80:
+            mism.append("%s: re-derives %.4f, below the bar" % (v["id"], derived))
+        elif abs(derived - rec) > 1e-12:
+            mism.append("%s: recorded %.4f re-derives %.4f" % (v["id"], rec, derived))
+        elif runner >= 0.80:
+            mism.append("%s: a competing work reaches %.4f" % (v["id"], runner))
+    checks.append(("every canonical match re-derives its recorded score and beats every competing "
+                   "work at the 0.80 bar (%d matches%s)"
+                   % (len(canon), "; " + "; ".join(mism[:3]) if mism else ""), bool(canon) and not mism))
     bad = 0
     for lab, ok in checks:
         print("   %-4s %s" % ("ok" if ok else "FAIL", lab))
@@ -883,6 +946,58 @@ def selftest():
     holds("one-route-misses-the-work", _r1 == "bibliographic" and _s1 < 0.80)
     holds("two-routes-rescue-it", _r2 == "title" and _s2 >= 0.80)
     holds("rescue-changes-the-verdict", (_s1 < 0.80) != (_s2 < 0.80))
+    # The store merge: the SAME two writes in BOTH orders must leave the SAME store, and the second
+    # write must be REPRESENTED (the amendment path).  The plant is the semantics this replaced --
+    # first-write-wins -- under which the two orders disagree, so the pair is deciding rather than
+    # decorative.  A lookup that keeps the first write makes the pool's content depend on the order
+    # the writes happened to arrive in, and a correction permanently invisible.
+    _one = {"id": "X", "source": "arxiv", "title": "TITLE ROUND ONE", "published": "2026"}
+    _two = {"id": "X", "source": "arxiv", "title": "TITLE ROUND TWO", "published": "2026"}
+
+    def _both_orders(merge):
+        a = {}
+        merge(a, dict(_one), "q1")
+        merge(a, dict(_two), "q2")
+        b = {}
+        merge(b, dict(_two), "q1")
+        merge(b, dict(_one), "q2")
+        return a["X"], b["X"]
+
+    def _first_write(store, e, name):
+        if e["id"] in store:
+            if name not in store[e["id"]].get("found_by", []):
+                store[e["id"]].setdefault("found_by", []).append(name)
+        else:
+            e["found_by"] = [name]
+            store[e["id"]] = e
+        return "seen"
+
+    _A, _B = _both_orders(merge_record)
+    # (i) The outcome is the LIVE (fresher) record, in both orders -- never the earliest one.
+    holds("the-amendment-keeps-the-LIVE-record", _A["title"] == "TITLE ROUND TWO")
+    holds("and-the-other-order-keeps-its-own-live-record", _B["title"] == "TITLE ROUND ONE")
+    # (ii) The write that was overruled is REPRESENTED -- the state the first-write lookup could not hold.
+    holds("the-overruled-write-is-REPRESENTED",
+          [d["title"] for d in _A.get("superseded", [])] == ["TITLE ROUND ONE"]
+          and [d["title"] for d in _B.get("superseded", [])] == ["TITLE ROUND TWO"])
+    # (iii) A RE-SIGHTING (same id, same compared fields) is a NO-OP: the store is unchanged and no
+    #       amendment is recorded.  This is the part that IS order-independent, and it is the part a
+    #       persistent cache is actually asked for.
+    _S = {}
+    _o1 = merge_record(_S, dict(_one), "q1")
+    _o2 = merge_record(_S, dict(_one), "q2")
+    holds("a-re-sighting-is-a-NO-OP", _o1 == "new" and _o2 == "seen"
+          and "superseded" not in _S["X"] and _S["X"]["found_by"] == ["q1", "q2"])
+    # ORDER-DEPENDENCE is INHERENT and STATED here rather than claimed away: the later fetch is the
+    # fresher record.  What the defect lacked was not order-independence but (ii) and (iv).
+    _pA, _pB = _both_orders(_first_write)
+    holds("plant-first-write-semantics-INVERTS-the-outcome",
+          _pA["title"] == "TITLE ROUND ONE" and _pB["title"] == "TITLE ROUND TWO")
+    holds("plant-first-write-semantics-DROPS-the-correction", "superseded" not in _pA)
+    # (iv) The bookkeeping can never move the POOL: it is stripped on the way in, and it is a key of
+    #      the store's own state rather than of the record the manuscript cites.
+    holds("the-operational-key-never-reaches-the-pool",
+          "superseded" not in _public(_A) and set(_public(_A)) <= set(_A))
     print("SELFTEST:", "ALL PASS" if ok else "A CHECK IS DECORATION")
     return 0 if ok else 1
 
@@ -929,7 +1044,14 @@ def gateselftest():
         os.makedirs(healthy)
         build(healthy)
         rc, out = run(healthy)
-        holds("control-the-healthy-copy-passes", rc == 0 and "GATE 11/11" in out,
+        # The count is READ off the gate's own output, never typed here: a literal that must be edited
+        # by hand whenever a check is added is a value no one owns -- this control failed the moment
+        # the gate gained its 12th check, having compared the run against a number spelled in itself.
+        # The shape is asserted (n of n), and "a FAIL line exists" is the same statement as rc != 0.
+        _m = re.search(r"GATE (\d+)/(\d+)", out)
+        holds("control-the-healthy-copy-passes",
+              rc == 0 and bool(_m) and _m.group(1) == _m.group(2)
+              and not any(l.strip().startswith("FAIL") for l in out.splitlines()),
               "rc=%d %s" % (rc, out.strip().splitlines()[-1] if out.strip() else ""))
 
         def plant(name, label, mutate):
@@ -995,6 +1117,18 @@ def gateselftest():
         plant("a-paper-entered-twice-under-two-keys",
               "no duplicate TITLE",
               lambda root: _dupe_title(root))
+
+        def _wrong_match_score(root):
+            """A recorded canonical margin that the shipped title does not re-derive: the seal the
+            gate reads is the RE-DERIVATION, so a number typed beside the record must fail."""
+            q = os.path.join(root, "refs", "pool.json")
+            pool = json.load(open(q, encoding="utf-8"))
+            k = next(k for k, v in sorted(pool.items()) if v.get("matched_title"))
+            pool[k]["match_score"] = 0.5
+            _write(q, pool)
+
+        plant("a-canonical-margin-that-does-not-re-derive",
+              "beats every competing work at the 0.80 bar", _wrong_match_score)
     finally:
         shutil.rmtree(base, ignore_errors=True)
     print("GATESELFTEST:", "ALL PASS" if ok else "A CHECK IS DECORATION")
