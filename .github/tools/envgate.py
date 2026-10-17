@@ -474,11 +474,34 @@ def selftest():
     return 0 if ok == len(cases) else 1
 
 
+KNOWN_OPTIONS = ("--selftest", "--json")
+
+
 def main(argv):
     if "--selftest" in argv:
         return selftest()
+    unknown = [a for a in argv if a.startswith("-") and a not in KNOWN_OPTIONS]
+    if unknown:
+        # An option this gate does not know is NOT a directory and must not be
+        # dropped.  Dropping it is what the gate did until R595, and the failure is
+        # a verdict about a question nobody asked: `--check` -- the option every
+        # tree-wide gate answers, which README step 0's loop hands to all six --
+        # vanished, no directory was left to read, and the reader got a usage line
+        # on stderr and an empty stdout (rc 2); a misspelling that kept its
+        # directory (`--cek papers/issue-128`) vanished too and the gate ran the
+        # package and printed `ENVGATE: PASS`, rc 0.  So the option is refused by
+        # name, on stdout, stating the gate's class: this gate is SITED -- its set
+        # is the one package directory it is named, and it reads no tree.
+        print("envgate_v1 - the declared-environment gate (sited: it reads one package directory)")
+        print("NOT RUN: %s is not an option of this gate, so no window was read and no "
+              "verdict is taken.\n         This gate takes a package directory; it reads no "
+              "tree, and its only options are %s."
+              % (unknown[0], " and ".join(KNOWN_OPTIONS)))
+        print()
+        print("usage: envgate.py <package-dir> [--json] | --selftest")
+        return 2
     as_json = "--json" in argv
-    args = [a for a in argv if not a.startswith("--")]
+    args = [a for a in argv if not a.startswith("-")]
     if len(args) != 1:
         print("usage: envgate.py <package-dir> [--json] | --selftest", file=sys.stderr)
         return 2

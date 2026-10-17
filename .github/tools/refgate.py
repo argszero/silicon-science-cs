@@ -801,6 +801,23 @@ if __name__ == '__main__':
         sys.exit(2)
     if args == ['--selftest']:
         sys.exit(0 if selftest() else 1)
+    options = [a for a in args if a.startswith('-')]
+    if options:
+        # This gate's set is the paths it is named, and it reads no tree -- so an
+        # option is not a path, and reading one as a path is the worst of the three
+        # answers this dispatch can give: until R595 `refgate.py --check` (the option
+        # every tree-wide gate answers, which README step 0's loop hands to all six)
+        # opened a file called `--check`, failed, and printed a well-formed
+        # `GATE: NOT RUN (a named window could not be read)` -- a non-reading in the
+        # shape of a verdict.  A sited gate refuses an option by name instead, and
+        # takes no verdict line with it.
+        print("refgate_v1 - the journal reference gate (sited: it reads the files it is named)")
+        print("NOT RUN: %s is not an option of this gate, so no window was read and no "
+              "verdict is taken.\n         Its set is the manuscript paths it is named; it reads "
+              "no tree, and its only option is `--selftest`." % options[0])
+        print()
+        print(__doc__.strip().split("Usage:")[1].strip())
+        sys.exit(2)
     verdicts = [report(f) for f in args]
     if any(v is None for v in verdicts):
         # A window that was not read outranks the windows that were: the run states
