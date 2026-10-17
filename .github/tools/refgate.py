@@ -627,11 +627,17 @@ def selftest():
           "1 print the family name ALL-CAPS, 0 carry a character reference"],
          ("NOTE", "AMBIGUOUS", "uncited entries"))
     # ...and a decomposed letter is the same letter: the read normalises to NFC
-    # first, so `Bilo` + U+0300 is in the window rather than outside it.
+    # first, so `Bilo` + U+0300 is in the window rather than outside it. The
+    # literal is named here rather than written inside the replacement field:
+    # CPython before 3.12 refuses a backslash in one, so this single escape kept
+    # the whole gate from parsing on the 3.9.6 base this journal's packages
+    # declare — measured 2026-10-18, fixed at R594. Keep it out of the braces:
+    # the gate is read on whatever interpreter a reader brings.
+    decomposed = "Bilo\u0300, V."
     case("author_form_decomposed_letter_in_window",
          "## Introduction\n\n" + " ".join(f"see [{i}]" for i in range(1, 101))
          + "\n\n## References\n\n"
-         + "".join(f"[{i}] {'Bilo\u0300, V.' if i == 54 else 'Family, A.'} "
+         + "".join(f"[{i}] {decomposed if i == 54 else 'Family, A.'} "
                    f"Title {i}. arXiv:2500.{i:05d}.\n\n" for i in range(1, 101)),
          ["GATE: PASS", "author form: 100/100 entry(s) carry the read's window",
           "0 print the family name ALL-CAPS, 0 carry a character reference"],
