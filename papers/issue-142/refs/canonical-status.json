@@ -1,0 +1,53 @@
+{
+ "matched": [
+  "kw1952",
+  "spall1992",
+  "milgrom-segal",
+  "holmstrom",
+  "kaelbling",
+  "bertsekas",
+  "schulman-gae",
+  "levine",
+  "kalman",
+  "srinivas-gp",
+  "shahriari-bo",
+  "van-aken",
+  "akiba-optuna",
+  "snoek",
+  "kober",
+  "mayne",
+  "yates-aoi",
+  "costa-aoi",
+  "nocedal",
+  "kushner",
+  "borkar",
+  "polyak-juditsky",
+  "kingma-adam",
+  "rasmussen-gp",
+  "auer-bandit",
+  "bubeck-bandit",
+  "flaxman-bandit",
+  "tsitsiklis-td",
+  "hazan-oco"
+ ],
+ "unresolved": [
+  {
+   "key": "spall1998",
+   "score": 0.5384615384615384,
+   "status": "unresolved",
+   "title": "An Overview of the Simultaneous Perturbation Method for Efficient Optimization"
+  },
+  {
+   "key": "ljung",
+   "score": 0.75,
+   "status": "unresolved",
+   "title": "System Identification: Theory for the User"
+  },
+  {
+   "key": "zhang-cdbtune",
+   "score": 0.6666666666666666,
+   "status": "unresolved",
+   "title": "CDBTune: An End-to-End Learning System for Automatic Database Tuning"
+  }
+ ]
+}

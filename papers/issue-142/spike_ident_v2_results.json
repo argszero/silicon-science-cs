@@ -1,0 +1,271 @@
+{
+  "boundary_agreement": {
+    "cells": 330,
+    "label_matches_boundary": 330
+  },
+  "boundary_asymmetry": {
+    "at_ceiling": {
+      "at_or_below_interior_worst": 1,
+      "best": 0.0025504364871822504,
+      "median": 5.924618300617844,
+      "n": 119
+    },
+    "at_floor": {
+      "at_or_below_interior_worst": 4,
+      "best": 0.00015016173298761903,
+      "median": 0.05041455753159303,
+      "n": 127
+    }
+  },
+  "build": "python 3.9.6 / numpy 2.0.2",
+  "contradictions": {
+    "0.001": {
+      "false_positive_of_identifiability": 16,
+      "fp_worst_err": 0.007435357316658991,
+      "p3_refutation": 1,
+      "ref_worst_err": 0.00015016173298761903
+    },
+    "0.01": {
+      "false_positive_of_identifiability": 0,
+      "fp_worst_err": null,
+      "p3_refutation": 9,
+      "ref_worst_err": 0.009977582861593295
+    },
+    "0.1": {
+      "false_positive_of_identifiability": 0,
+      "fp_worst_err": null,
+      "p3_refutation": 90,
+      "ref_worst_err": 0.09902820815905083
+    }
+  },
+  "error_by_label": {
+    "interior": {
+      "best": 5.737238053286105e-06,
+      "median": 0.0003739620466706358,
+      "n": 84,
+      "worst": 0.007435357316658991
+    },
+    "pinned": {
+      "best": 0.00015016173298761903,
+      "median": 0.1868034174941548,
+      "n": 246,
+      "worst": 1543.2396157433159
+    }
+  },
+  "goal": "P3 (predictive half) -- the pricing-only identifiability predictor, and 0 disagreements",
+  "per_plant": {
+    "double-int R=1": [
+      {
+        "measured_pinned": 14,
+        "n_prices": 22,
+        "predicted_pinned": 14,
+        "price_only_control_pinned": 7,
+        "tau": 0.0
+      },
+      {
+        "measured_pinned": 18,
+        "n_prices": 22,
+        "predicted_pinned": 18,
+        "price_only_control_pinned": 7,
+        "tau": 2.0
+      }
+    ],
+    "double-int R=10": [
+      {
+        "measured_pinned": 12,
+        "n_prices": 22,
+        "predicted_pinned": 12,
+        "price_only_control_pinned": 7,
+        "tau": 0.0
+      },
+      {
+        "measured_pinned": 14,
+        "n_prices": 22,
+        "predicted_pinned": 14,
+        "price_only_control_pinned": 7,
+        "tau": 2.0
+      },
+      {
+        "measured_pinned": 17,
+        "n_prices": 22,
+        "predicted_pinned": 17,
+        "price_only_control_pinned": 7,
+        "tau": 4.0
+      }
+    ],
+    "double-int R=100": [
+      {
+        "measured_pinned": 11,
+        "n_prices": 22,
+        "predicted_pinned": 11,
+        "price_only_control_pinned": 7,
+        "tau": 0.0
+      },
+      {
+        "measured_pinned": 13,
+        "n_prices": 22,
+        "predicted_pinned": 13,
+        "price_only_control_pinned": 7,
+        "tau": 2.0
+      },
+      {
+        "measured_pinned": 16,
+        "n_prices": 22,
+        "predicted_pinned": 16,
+        "price_only_control_pinned": 7,
+        "tau": 4.0
+      },
+      {
+        "measured_pinned": 17,
+        "n_prices": 22,
+        "predicted_pinned": 17,
+        "price_only_control_pinned": 7,
+        "tau": 6.0
+      },
+      {
+        "measured_pinned": 20,
+        "n_prices": 22,
+        "predicted_pinned": 20,
+        "price_only_control_pinned": 7,
+        "tau": 8.0
+      }
+    ],
+    "scalar-stable a=0.9": [
+      {
+        "measured_pinned": 15,
+        "n_prices": 22,
+        "predicted_pinned": 15,
+        "price_only_control_pinned": 7,
+        "tau": 0.0
+      },
+      {
+        "measured_pinned": 18,
+        "n_prices": 22,
+        "predicted_pinned": 18,
+        "price_only_control_pinned": 7,
+        "tau": 2.0
+      },
+      {
+        "measured_pinned": 19,
+        "n_prices": 22,
+        "predicted_pinned": 19,
+        "price_only_control_pinned": 7,
+        "tau": 4.0
+      },
+      {
+        "measured_pinned": 21,
+        "n_prices": 22,
+        "predicted_pinned": 21,
+        "price_only_control_pinned": 7,
+        "tau": 6.0
+      },
+      {
+        "measured_pinned": 21,
+        "n_prices": 22,
+        "predicted_pinned": 21,
+        "price_only_control_pinned": 7,
+        "tau": 8.0
+      }
+    ]
+  },
+  "price_only_control": {
+    "0.001": {
+      "disagreements": 174,
+      "pinned_labelled": 105
+    },
+    "0.01": {
+      "disagreements": 164,
+      "pinned_labelled": 105
+    },
+    "0.1": {
+      "disagreements": 205,
+      "pinned_labelled": 105
+    }
+  },
+  "resolution": 0.020000001,
+  "rule": "pinned iff L* <= lo + one lattice step, or L* >= Lmax - one lattice step",
+  "set_equality": {
+    "examples": [
+      {
+        "Lstar": 1.02,
+        "at_ceiling": 0,
+        "at_floor": 1,
+        "err": 0.00015016173298761903,
+        "lam": 1.0,
+        "plant": "double-int R=10",
+        "tau": 0.0
+      },
+      {
+        "Lstar": 2.0,
+        "at_ceiling": 0,
+        "at_floor": 1,
+        "err": 0.0024453176267535794,
+        "lam": 0.21544346900318834,
+        "plant": "scalar-stable a=0.9",
+        "tau": 2.0
+      },
+      {
+        "Lstar": 14.0,
+        "at_ceiling": 1,
+        "at_floor": 0,
+        "err": 0.0025504364871822504,
+        "lam": 4.6415888336127775,
+        "plant": "scalar-stable a=0.9",
+        "tau": 6.0
+      },
+      {
+        "Lstar": 1.0,
+        "at_ceiling": 0,
+        "at_floor": 1,
+        "err": 0.005061344375622784,
+        "lam": 1.0,
+        "plant": "double-int R=100",
+        "tau": 0.0
+      },
+      {
+        "Lstar": 1.0,
+        "at_ceiling": 0,
+        "at_floor": 1,
+        "err": 0.006336573309550635,
+        "lam": 0.046415888336127774,
+        "plant": "scalar-stable a=0.9",
+        "tau": 0.0
+      }
+    ],
+    "pinned_cells_at_or_below": 5,
+    "pinned_cells_total": 246,
+    "reading": "registered criterion (iii): pinned => not identifiable, 0 disagreements",
+    "threshold_free_line": 0.007435357316658991
+  },
+  "soundness": {
+    "interior_cells_above_1e-2": 0,
+    "interior_worst_err": 0.007435357316658991,
+    "predicted_interior_cells": 84,
+    "reading": "predicted interior => the identification formula is accurate there"
+  },
+  "sweep": {
+    "err_vs_point_by_label": {
+      "interior": {
+        "best": 0.002353670106354691,
+        "median": 0.0142075841228989,
+        "n": 84,
+        "worst": 0.16925275653459954
+      },
+      "pinned": {
+        "best": 0.0004583981722385781,
+        "median": 0.014971545489234564,
+        "n": 31,
+        "worst": 0.16543384005202677
+      }
+    },
+    "n": 115
+  },
+  "totals": {
+    "at_ceiling": 119,
+    "at_floor": 127,
+    "blocks": 15,
+    "cells": 330,
+    "interior": 84,
+    "pinned": 246
+  }
+}
