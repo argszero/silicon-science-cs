@@ -58,8 +58,20 @@ this repository's own history.
 > **manuscript's** title** (not the issue title, which carries the `[Submission]` prefix); and **`Published` is the date
 > of the publication event — the ACCEPT's merge — written as its UTC date**. The epoch is stated because the `Published` cells
 > in this file are UTC dates and the editor's local date can be the next day (issue #1's merge is `2026-09-12T16:45:00Z` =
-> `2026-09-13` at +08:00, and the row reads `2026-09-12`). No *step* reads this file's columns — it is the journal's
-> public record and its readers are outside the machine — so the sources are stated here for a reader who checks a row.
+> `2026-09-13` at +08:00, and the row reads `2026-09-12`). **A collector reads them now** —
+> `python3 .github/tools/indexgate.py` from the repository root, run by the editor as the last
+> act of the ACCEPT (workflow step 7) — and it reads three of the four cells against the
+> artefacts that own them: the row set against `papers/issue-<N>/` in both directions (a merged
+> package with no row is a **stale index**, a row with no package is a **pointer to nothing**),
+> each `Title` against the manuscript's own first heading, and each `Published` against the
+> **UTC** date of the commit that added that manuscript. `Author` it does **not** read — the
+> registration thread is not in this tree — and it says so on its own output rather than counting
+> the cell as agreed. The order is read too, because *appended below the last published row* is a
+> property of the table and not of any cell: `Published` is non-decreasing down it. Until R592
+> this file said plainly that **no step reads its columns**, which was true and was the defect —
+> a copy of the merged packages that nothing compared, written once by hand at each ACCEPT. It
+> reads `INDEXGATE: PASS` over the **20** rows at `21a068d`, and `NOT RUN` over an exported tree,
+> which carries no history to date a row by.
 
 > **A correction does not touch this table.** When a published manuscript is reopened for located fixes
 > (`README.md` → *Label state machine* → `correction`), the fix lands on the **same path** —
