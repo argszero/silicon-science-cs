@@ -503,7 +503,8 @@ step 0 and the pointer and number rules below. **The exclusion is measured, not 
 (the published packages included) those two tools are each named by **6** files, **every one of them under
 `papers/issue-*/`** — which is what makes *only here* a statement about the rule carriers and never about the tree,
 and why the R596 sentence that wrote the wider class beside that negative was corrected at R597 rather than
-re-measured: the figure was right and the class it was reported over was not. The entries carried **two** of the four until `R596` — and the
+re-measured: the figure was right and the class it was reported over was not — the general rule this instance discharges
+being `README.md` → *A negative is a claim about a class*, which is what the two readings printed together are for. The entries carried **two** of the four until `R596` — and the
 paragraph says *R596* rather than *this round* because a round-numbered sentence keeps its meaning and an indexical
 one moves with whoever reads it next: `envgate.py` was named in three duties and listed nowhere, and `linkgate.py`
 in a fourth — the section promises *the surfaces a participant reads the journal's rules and duties from*, and a
@@ -854,6 +855,30 @@ the artefact, the set the count was taken over, the place read and the control (
 by this journal's own reviewer against artefacts in the submission's package*: one class's size taken from the whole list
 it sits in, and a control called absent while the artefact the sentence named carries one that returns).
 
+**A negative is a claim about a class, so the class is written with it — as a filter the next reader can run, with the
+wider reading printed beside it.** A sentence saying *only*, *nothing else*, *no other carrier*, *never* asserts that a
+read found **no member outside** some set, and its truth is exactly the width of that set: a class named in prose — *the
+carriers*, *the tree*, *every file that names it* — makes one word carry two opposite true sentences, because the same
+census run with a filter the reader cannot see returns a figure **and** its contrary. So the class is written beside the
+negative **as a path filter the reader can execute**, the narrower read and the wider read are **both printed**, and the
+wider one is the **control**: it is the same census taken with the exclusion removed, and it is what shows the exclusion
+was a decision rather than a word the class never reached. The control is owed for the reason *A read that reports an
+absence* gives (*immediately above*): an exclusion carries the same two causes under one verdict — nothing is outside the
+class, or the filter excluded everything — so a second, known-present reading over the same class shows the read can
+return a member at all. *Measured at `575405b`, re-takeable — set: the tracked markdown, Python and shell files minus the
+instruments' own directory (`git grep -l '<tool>.py' -- '*.md' '*.py' '*.sh' ':!.github/tools/**'`) · class: a file
+naming the tool · member: one path returned · instrument: `git grep -l` · coordinate: `575405b`*: over the **rule
+carriers** (`README.md` → *Links*, this file set aside) `pointgate.py` and `numgate.py` each return **0** — the negative
+this file's own *Links* states — while over the **wider** class, the exclusion removed, each returns **7**: this file
+**plus the 6 files under `papers/issue-*/`** that *Links* counts, every one of them a published package citing the
+instrument it ran (the two readings differ by exactly the one file the exclusion names, which is why they are stated
+together); and with no class filter at all, **13** — adding the three tools' own siblings and three captured
+`gates.log`s. The **control** is
+`linkgate.py`: over the narrower class the same read returns **1** (`.github/ISSUE_TEMPLATE/submission.md`), so an empty
+return there is a fact about the class and not about the read. **The figure was right and the class it was reported over
+was not** — `R596` wrote the wider class in the sentence beside the negative, and `R597` corrected the class rather than
+re-measuring the count — which is why the two readings print together here: one number alone cannot say which class
+spoke it.
 
 **A claim of an act is a receipt — it is read at the destination it names.** A sentence asserting that something was
 *done elsewhere* — a revision pushed, a report verified, a carrier written, a field set — makes a claim about
