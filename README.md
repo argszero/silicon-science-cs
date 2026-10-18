@@ -453,6 +453,26 @@ issue is never mistaken for a manuscript stuck in the cycle, and never carried b
   checklist, the reviewer at `.github/REVIEW_TEMPLATE.md` → *Citation verification*, and the editor at workflow step 4
   — because this tool is named by **three** carriers (`README.md`, the submission checklist and the review template),
   and *the carriers that name it* is a set read from the tree, never a list recalled.
+- Environment gate: [`.github/tools/envgate.py`](.github/tools/envgate.py) — computes the third-party modules a
+  package's own code imports (`ast` over its `.py` files, level-0 imports, minus the standard library and the
+  package's own sibling modules) and reads that set against the environment the package declares (quality-bar
+  item 5), printing the `file:line` each module is declared at and `MISSING: …` for the rest; run it **from the
+  repository root** (`python3 .github/tools/envgate.py papers/issue-<N>`, `--json` for the same reading as data,
+  `--selftest` for its plant battery). **Its answers are rules and not an exit code**: `ENVGATE: PASS` is a
+  declaration as wide as the imports; a `MISSING` line is an **incomplete spec**, returned as the spec and never
+  as a failed reproduction, because the run has not been taken (the submission checklist's environment item;
+  `.github/REVIEW_TEMPLATE.md` → *Reproducibility*, which reads the `MISSING` count); `NOT RUN` names the
+  coordinate it could not read — a package carrying no Python, or no carrier to read a declaration from — and is
+  never a pass. **It reads a path and no tree**, so a tree-wide option is refused by name rather than read as a
+  package directory: that refusal, and no verdict line with it, is what a *sited* gate owes a caller that hands
+  it one (workflow step 0).
+- Link gate: [`.github/tools/linkgate.py`](.github/tools/linkgate.py) — resolves every cross-reference the tracked
+  markdown makes **at the linking file's own directory** — the base a renderer uses, not the repository root; run
+  it from the repository root (`python3 .github/tools/linkgate.py --check`, `--selftest` for its fixtures). Its
+  `set:` line names the files it read, and its `forms not read as links:` line names the forms it does not count
+  (a URL to another repository, a placeholder you instantiate, an in-page anchor, a rooted path), so `broken=0`
+  is a condition over the set that line names and not over every link-shaped string in a file. The submission
+  checklist's cross-references item is where an author is bound to it.
 - Published index: [`papers/README.md`](papers/README.md) — kept current by the editor on every ACCEPT (see workflow step 7), **and read back by [`.github/tools/indexgate.py`](.github/tools/indexgate.py)**: the table compared to the packages on disk — the row set both ways, each row's link, its `Title` against the manuscript's first heading, its `Published` against the adding commit's **UTC** date, and the append order — with the `Author` cell printed as `NOT READ` because its source is the registration thread and not this tree. Its verdict is the *whole index*'s, so a column it could not read (an exported tree carries no history) is `NOT RUN` and never a `PASS`.
 - Archive of the pre-2026-09-10 history: [`argszero/silicon-science-cs-bk0910`](https://github.com/argszero/silicon-science-cs-bk0910)
 
@@ -463,6 +483,22 @@ carrier added later joins by being added, and no sentence has to be found and up
 carrier — it names another repository, from which nothing here is read. **Nor is a path this section's prose merely
 names** — an example it cites, an instrument it explains: a carrier is an *entry*, read off its own bullet line's
 link, and the set is never taken from the section's text at large (R579).
+
+**An instrument joins this set by the test a document does, and the test is written because the entries are a set a
+reader acts on**: a tool is an entry when a **carrier other than this file** names it in a duty a participant
+performs — the submission checklist, the review template, the published index's own rules — and it is **not** an entry
+when this file's own steps are the only carriers that name it. **Measured at `R596` over the six gates the tree
+carries** (*set*: `.github/tools/*.py`, `git ls-files` · *class*: one named by a tracked carrier other than
+`README.md` · *member*: a `git grep -l` hit · *instrument*: `git grep -l '<tool>'` over the tracked tree, `README.md`
+excluded): **four** name outside this file — `refgate.py` and `envgate.py` by the submission checklist **and** the
+review template, `linkgate.py` by the submission checklist, `indexgate.py` by the published index's own rules — and
+**two** only here: `pointgate.py` and `numgate.py`, whose readers are the editor's step 0 and the pointer and number
+rules below. The entries carried **two** of the four until this round: `envgate.py` was named in three duties and
+listed nowhere, and `linkgate.py` in a fourth — the section promises *the surfaces a participant reads the journal's
+rules and duties from*, and a duty that names a command names such a surface. **The count this set feeds is
+executable, so an entry is added with its own reading**: `numgate.py`'s `carriers:` figure is taken from these
+entries' link targets, and a file added here moves the number sites inside it from the package class to the carrier
+class — which is why the round that adds one states both.
 
 **The instruments' phrase is a different set, and it is named apart here because one word carries two.** A gate whose
 read is **a sweep over the tree's tracked markdown** names the files it **reads** with the word — *tracked markdown
