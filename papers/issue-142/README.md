@@ -36,15 +36,26 @@ cd papers/issue-142 && bash reproduce.sh
     what `manuscript.src.md` builds, and `--selftest` runs its 13-check plant battery.
   * **The build the seals are scoped to.** Step 6 re-checks every seal it can under a **second
     interpreter** (`PYTHON2=…` overrides the search) and names each leg it cannot run — see
-    *What seals each receipt*.
+    *What seals each receipt*. The resolved program must **prove it is a CPython** (it has to answer
+    the version probe as `python <major>.<minor>…`) before any seal is scoped to it: a file that
+    merely carries the name `python3.13` is not one, and the step skips it by name. And a leg whose
+    run **aborts** is reported `NOT RUN` with the line that ended it — only a run that **completed**
+    and then disagreed byte-for-byte is `DIFFERS`.
 * **Exit status**: `0` = `REPRODUCE: ALL GREEN`; `1` = at least one step FAILED (the count is printed).
   A missing dependency aborts with a named message rather than a traceback.
   **A `NOT RUN` leg is never a pass**: step 6 re-checks every seal it *can* under a second interpreter,
   names each leg it cannot run together with the build that seal is scoped to, and the verdict prints
   the count — so `ALL GREEN (1 leg(s) NOT RUN …)` cannot be read as "everything was measured".
-* **Environment**: CPython **3.9.6** with **numpy 2.0.2** and **matplotlib 3.9.4** (macOS, measured
-  2026-10-16). The research instruments need numpy, the figure step needs matplotlib; the reference
-  layer and the manuscript build are standard library only. Override with `PYTHON=/path/to/python3`.
+* **Environment**: CPython **3.9.6** with **numpy 2.0.2**, **matplotlib 3.9.4** and **scipy 1.13.1**
+  (macOS, measured 2026-10-16). The research instruments need numpy, **`v5` needs scipy**
+  (`scipy.signal.lfilter`) **and `v6` reaches scipy through `v5`**, the figure step needs matplotlib;
+  the reference layer and the manuscript build are standard library only. That is the whole set — an
+  import census over the package's nine scripts returns exactly numpy, scipy, matplotlib and the local
+  `spike_ident_*` sibling imports, and `reproduce.sh`'s opening probe imports **all three** so a
+  missing one is named before any instrument runs. Override with `PYTHON=/path/to/python3`.
+  *(scipy was undeclared until 2026-10-17: the probe checked numpy alone, so an environment built
+  exactly as this paragraph declared it aborted `v5` and `v6` with `ModuleNotFoundError` — found in
+  the editor's triage of #142.)*
   **The interpreter's PATH is deliberately not recorded in any report**: `sys.executable` is an
   *invocation* coordinate — it changes with how the interpreter was reached — so an artefact carrying
   it reproduces only under the exact invocation that wrote it. That was measured: `v3`, `v4` and `v5`
