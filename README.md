@@ -487,15 +487,27 @@ link, and the set is never taken from the section's text at large (R579).
 **An instrument joins this set by the test a document does, and the test is written because the entries are a set a
 reader acts on**: a tool is an entry when a **carrier other than this file** names it in a duty a participant
 performs — the submission checklist, the review template, the published index's own rules — and it is **not** an entry
-when this file's own steps are the only carriers that name it. **Measured at `R596` over the six gates the tree
-carries** (*set*: `.github/tools/*.py`, `git ls-files` · *class*: one named by a tracked carrier other than
-`README.md` · *member*: a `git grep -l` hit · *instrument*: `git grep -l '<tool>'` over the tracked tree, `README.md`
-excluded): **four** name outside this file — `refgate.py` and `envgate.py` by the submission checklist **and** the
-review template, `linkgate.py` by the submission checklist, `indexgate.py` by the published index's own rules — and
-**two** only here: `pointgate.py` and `numgate.py`, whose readers are the editor's step 0 and the pointer and number
-rules below. The entries carried **two** of the four until this round: `envgate.py` was named in three duties and
-listed nowhere, and `linkgate.py` in a fourth — the section promises *the surfaces a participant reads the journal's
-rules and duties from*, and a duty that names a command names such a surface. **The count this set feeds is
+when this file's own steps are the only carriers that name it. **The class the count is taken over is the rule
+carriers, and it is stated here executably** — a tracked file **outside the published packages**
+(`:!papers/issue-*/**`), **outside the instruments' own directory** (`:!.github/tools/**`, where a tool naming its
+siblings is not a duty) and **other than this file** — because the wider reading is a different class and reads a
+different number: a published package cites instruments as a manuscript cites its tools, and a published file is its
+own carrier, so it states no duty. **Measured at `R596` and re-taken at `R597`** (*set*: `.github/tools/*.py`,
+`git ls-files`, six · *class*: a rule carrier naming the tool · *member*: a `git grep -l '<tool>.py'` hit ·
+*instrument*: `git grep -l '<tool>.py' -- '*.md' '*.py' '*.sh' ':!papers/issue-*/**' ':!.github/tools/**'`, lines
+reading `README.md` set aside · *coordinate*: `c11f188`): **four** name outside this file — `refgate.py` and
+`envgate.py` by the submission checklist **and** the review template, `linkgate.py` by the submission checklist,
+`indexgate.py` by the published index's own rules (`papers/README.md`, which is a rule carrier and not a package) —
+and **two** only here **among the rule carriers**: `pointgate.py` and `numgate.py`, whose readers are the editor's
+step 0 and the pointer and number rules below. **The exclusion is measured, not convenient** — over the wider class
+(the published packages included) those two tools are each named by **6** files, **every one of them under
+`papers/issue-*/`** — which is what makes *only here* a statement about the rule carriers and never about the tree,
+and why the R596 sentence that wrote the wider class beside that negative was corrected at R597 rather than
+re-measured: the figure was right and the class it was reported over was not. The entries carried **two** of the four until `R596` — and the
+paragraph says *R596* rather than *this round* because a round-numbered sentence keeps its meaning and an indexical
+one moves with whoever reads it next: `envgate.py` was named in three duties and listed nowhere, and `linkgate.py`
+in a fourth — the section promises *the surfaces a participant reads the journal's rules and duties from*, and a
+duty that names a command names such a surface. **The count this set feeds is
 executable, so an entry is added with its own reading**: `numgate.py`'s `carriers:` figure is taken from these
 entries' link targets, and a file added here moves the number sites inside it from the package class to the carrier
 class — which is why the round that adds one states both.
