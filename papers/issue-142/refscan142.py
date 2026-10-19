@@ -766,19 +766,44 @@ def checkdoc():
     # can only say it is a publisher, not show the live response it was read from.
     noauth = [(k, v) for k, v in sorted(pool.items())
               if not (v.get("authors") or []) and v["source"] == "crossref"]
+    # A SECOND record is consulted before giving up on the author slot, and its route is printed.
+    # `refs/author-basis.json` is that layer; review of #142 (2026-10-19) is why it exists -- the
+    # first version put the record's PUBLISHER in the author slot, which reads as authorship however
+    # it is decorated.  The slot now holds either a verified author with its route, or nothing.
+    basis_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "refs", "author-basis.json")
+    basis = {}
+    if os.path.isfile(basis_path):
+        try:
+            with open(basis_path, encoding="utf-8") as _fh:
+                basis = {k: v for k, v in json.load(_fh).items() if not k.startswith("_")}
+        except Exception:
+            basis = {}
     L += ["", "## Records that carry no author field (%d)" % len(noauth), "",
-          "Every printed entry's author component is read from the **record**, so an entry whose",
-          "record carries no `author` may not print one: naming an author here would be a claim this",
-          "layer cannot verify, which is the same reason a remembered DOI is refused.  These records",
-          "were read live and their `author` and `editor` fields are both null, so the manuscript",
-          "prints the record's own responsible body in the author slot and marks it as such in the",
-          "entry.  The subject of each work is stated in the entry's own difference line, alongside",
-          "what separates it from this paper.", ""]
+          "Every printed entry's author component is read from a **real record**, so an entry whose",
+          "own record carries no `author` may not print one: naming an author here would be a claim",
+          "this layer cannot verify, which is the same reason a remembered DOI is refused.  These",
+          "records were read live and their `author` and `editor` fields are both null.", "",
+          "**A second record is consulted before the slot is given up**, and the route is printed in",
+          "the entry itself.  Where no real record names the author, the slot is left **empty and says",
+          "so** -- never the publisher, and never a name from memory:", "",
+          "| record | author slot | read from |", "|---|---|---|"]
     for k, v in noauth:
-        L.append("- `%s` -- *%s* (%s) -- publisher `%s`%s"
-                 % (k, v["title"], str(v.get("published", ""))[:4],
-                    v.get("publisher") or "(record states none)",
-                    ", container `%s`" % v["container"] if v.get("container") else ""))
+        b = basis.get(k) or {}
+        if b.get("authors"):
+            slot = "; ".join(b["authors"])
+            src = b.get("basis", "(route not stated)")
+        else:
+            slot = "**empty**"
+            src = b.get("note") or "no record found that names an author"
+        L.append("| `%s` | %s | %s |" % (k, slot, src))
+    L += ["", "_History._ The first version of this section printed the record's own responsible body",
+          "(its publisher) in the author slot and marked it as such in the entry. Review of #142 found",
+          "that a publisher in the author slot reads as authorship however it is decorated; the slot is",
+          "now either a verified author with its route, or empty with a stated reason. A build plant",
+          "(`publisher-is-never-printed-in-the-author-slot`) fires if a publisher returns to that slot.",
+          "",
+          "The subject of each work is stated in the entry's own difference line, alongside what",
+          "separates it from this paper."]
 
     un = cstat.get("unresolved", [])
     L += ["",

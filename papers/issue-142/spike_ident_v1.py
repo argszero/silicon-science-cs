@@ -45,6 +45,12 @@ KMAX = 40                 # half-width a = k*DELTA, k = 1..KMAX
 SIGMAS = [10 ** e for e in np.arange(-6.0, -0.5, 0.25)]   # sigma_J/J
 BUILD = v0.BUILD
 
+# The Monte-Carlo certificate runs at FIVE INDEPENDENT SEEDS, not one.  A single seed cannot tell
+# agreement from luck, and the journal's rule for a stochastic leg is >= 3 independent runs with a
+# spread (issue #2318).  Seeds are fixed so the run stays byte-reproducible; they are independent
+# streams of the same model, which is exactly what the spread is supposed to measure.
+MC_SEEDS = (99, 101, 103, 105, 107)
+
 
 # ------------------------------------------------------------------ blocks (exact ground truth)
 def plants_with_curves():
@@ -263,7 +269,12 @@ def mc_check(blocks, k, sigma, nrep=4000, seed=99):
     small (measured: analytic 85.0 vs a shared-draw MC's 0.63 at k=10, sigma=1e-3).  The first
     version of this certificate shared the draw and disagreed with the formula it was checking --
     the cause was in the certificate, not the model, and the tell was that the disagreement had the
-    EXACT size of the cancelled common term."""
+    EXACT size of the cancelled common term.
+
+    RETURNS THE PER-POINT CONTRIBUTIONS as well as the two means.  A mean over 6,194 points owes an
+    error bar, and the only honest way to get one is from the spread of what is being averaged --
+    `per_point_bias2` is that spread, and the caller turns it into a standard error.  (A single
+    scalar return is what let a bias figure be quoted with no resolution at all.)"""
     rng = np.random.default_rng(seed)
     ests = []
     for b in blocks:
@@ -282,9 +293,109 @@ def mc_check(blocks, k, sigma, nrep=4000, seed=99):
     if not ests:
         return None
     E = np.array(ests)                                        # points x reps
-    return {"n_points": int(E.shape[0]), "n_rep": nrep,
+    per_point_bias2 = E.mean(axis=1) ** 2 - E.var(axis=1) / nrep
+    return {"n_points": int(E.shape[0]), "n_rep": nrep, "seed": int(seed),
             "mc_bias2": float(np.mean(E.mean(axis=1) ** 2) - np.mean(E.var(axis=1)) / nrep),
-            "mc_var": float(np.mean(E.var(axis=1)))}
+            "mc_var": float(np.mean(E.var(axis=1))),
+            "per_point_bias2": per_point_bias2}
+
+
+def mc_certificate_cell(blocks, k, sigma, analytic_bias2, analytic_var, nrep=3000, seeds=MC_SEEDS):
+    """ONE CERTIFICATE CELL, over several independent seeds.
+
+    THREE ERROR BARS ARE REPORTED AND THEY ANSWER THREE DIFFERENT QUESTIONS -- naming which is which
+    is the point, because two of them are routinely confused for each other:
+
+      se_seed            the seed-to-seed standard error of `mc_bias2` (= sd over the runs / sqrt(S)).
+                         THIS is the error bar of the reported bias figure, and the one the journal's
+                         ">= 3 independent runs with a spread" rule asks for.
+      se_points          sd of the per-point contributions / sqrt(n_points), within one run.  MEASURED
+                         to be a different object, not a check on `se_seed`: it is 17x larger at
+                         k=10, sigma=1e-3 (0.035 vs 0.002) because it treats the REAL heterogeneity of
+                         the bias across L as if it were noise.  Reported as a description of that
+                         heterogeneity, and never used as the mean's error bar.
+      se_point_sampling  sqrt(analytic_var) / sqrt(nrep).  NOT an error bar of the bias at all: it is
+                         the sampling error of ONE point estimate, i.e. of a single `Chat` before any
+                         averaging over points.  It is reported because it is the natural yardstick
+                         for "could a deployment resolve this bias from this much data", which is a
+                         real question -- just not the same one as "is the certificate's bias figure
+                         resolved".  (A reading that used it as the certificate's error bar concluded
+                         that two of these four cells carried no information; against the error bar
+                         of the MEAN -- the object the certificate actually reports -- all four do.)
+
+    The verdict is taken against `se_seed`: the claim under test is about a mean over the point set,
+    not about one point.  Resolution ("is the figure distinguishable from zero") and agreement ("does
+    it match the analytic value") are reported as two separate fields, because they are two separate
+    questions.
+    """
+    runs = []
+    for s in seeds:
+        r = mc_check(blocks, k, sigma, nrep=nrep, seed=s)
+        if r is not None:
+            runs.append(r)
+    if not runs:
+        return None
+    bias2 = np.array([r["mc_bias2"] for r in runs])
+    var = np.array([r["mc_var"] for r in runs])
+    S = len(runs)
+    se_seed_bias2 = float(np.std(bias2, ddof=1) / math.sqrt(S)) if S > 1 else float("nan")
+    se_seed_var = float(np.std(var, ddof=1) / math.sqrt(S)) if S > 1 else float("nan")
+    pp = runs[0]["per_point_bias2"]
+    se_points_bias2 = float(np.std(pp, ddof=1) / math.sqrt(len(pp)))
+
+    # the reported quantities are the BIASES (sqrt of the mean square), so their error bars come from
+    # the delta method: se(sqrt(x)) = se(x) / (2 sqrt(x))
+    bias = math.sqrt(max(float(np.mean(bias2)), 1e-300))
+    an_bias = math.sqrt(max(analytic_bias2, 1e-300))
+    se_bias = se_seed_bias2 / (2.0 * bias)
+    se_points_bias = se_points_bias2 / (2.0 * bias)
+    se_sampling_bias = math.sqrt(max(analytic_var, 0.0)) / math.sqrt(nrep)
+    diff = bias - an_bias
+    se_diff = se_bias                                     # the analytic value carries no sampling error
+
+    # TWO SEPARATE QUESTIONS, and conflating them is what produced a wrong verdict on this
+    # certificate's first multi-seed run:
+    #   (1) IS THE BIAS RESOLVED?  The reported figure is a magnitude, so the test is whether it is
+    #       distinguishable from zero: bias > 2*se.  A figure inside its own error bar is reported
+    #       as NO INFORMATION (journal rule, Phase B item 14).
+    #   (2) DOES IT AGREE WITH THE ANALYTIC VALUE?  A separate test on the DIFFERENCE, whose error
+    #       bar is the same se (the analytic value carries no sampling error).
+    # The first draft of this function required |difference| > 2 se for "resolved", which would have
+    # meant only a DISAGREEMENT counts as a resolution -- a perfect agreement would have been filed
+    # as no information.  The bug was caught by reading the four cells it produced.
+    resolved = bool(bias > 2.0 * se_bias)
+    agreement = ("agrees" if abs(diff) <= 2.0 * se_diff else "DIFFERS")
+    return {
+        "seeds": list(int(s) for s in seeds),
+        "n_rep": nrep,
+        "n_points": runs[0]["n_points"],
+        "analytic_bias2": analytic_bias2,
+        "analytic_bias": an_bias,
+        "analytic_var": analytic_var,
+        "mc_bias2_per_seed": [float(v) for v in bias2],
+        "mc_bias2_mean": float(np.mean(bias2)),
+        "mc_bias2_sd_seeds": float(np.std(bias2, ddof=1)) if S > 1 else float("nan"),
+        "mc_bias2_se_seeds": se_seed_bias2,
+        "mc_bias": bias,
+        "mc_bias_se": se_bias,
+        "mc_bias_se_points": se_points_bias,
+        "mc_bias_se_point_sampling": se_sampling_bias,
+        "bias_minus_analytic": diff,
+        "bias_minus_analytic_se": se_diff,
+        "mc_var_per_seed": [float(v) for v in var],
+        "mc_var_mean": float(np.mean(var)),
+        "mc_var_se_seeds": se_seed_var,
+        "var_ratio_mean": float(np.mean(var)) / analytic_var if analytic_var else None,
+        "var_ratio_sd_seeds": (float(np.std(var, ddof=1)) / analytic_var) if analytic_var else None,
+        "bias_verdict": "resolved" if resolved else "no information",
+        "agreement": agreement,
+        "why": ("bias > 2 se (the figure is distinguishable from zero)"
+                if resolved else "the bias sits inside 2 standard errors"),
+        # an sd estimated from S seeds is itself uncertain by ~1/sqrt(2(S-1)): 35% at S=5.  Recorded
+        # so a reader can inflate the bar rather than treat it as exact; every verdict here clears
+        # that inflation with room to spare (the smallest margin is 5.8 se).
+        "sd_relative_uncertainty": 1.0 / math.sqrt(2.0 * (S - 1)) if S > 1 else None,
+    }
 
 
 def selftest():
@@ -452,17 +563,15 @@ def main():
     S = measure(smooth_blocks, "smooth curve (Catmull-Rom through the same integer-delay nodes)")
     X = measure(analytic_blocks(), "exactly smooth control (c = exp(r x), G exact)")
 
-    # MC certificate at a few (k, sigma), on the model arm
+    # MC certificate at a few (k, sigma), on the model arm, at MULTIPLE INDEPENDENT SEEDS
     mc = {}
     kmax = max(int(k) for k in M["cells"])
     for k in [max(2, kmax // 4), max(3, kmax // 2)]:
         for s in (1e-3, 1e-2):
-            r = mc_check(model_blocks, k, s, nrep=3000)
+            r = mc_certificate_cell(model_blocks, k, s, M["cells"][str(k)]["A_bias2"],
+                                    s * s * M["cells"][str(k)]["B_varcoef"], nrep=3000)
             if r:
-                mc["k=%d,sigma=%g" % (k, s)] = {
-                    "analytic_bias2": M["cells"][str(k)]["A_bias2"], "mc_bias2": r["mc_bias2"],
-                    "analytic_var": s * s * M["cells"][str(k)]["B_varcoef"], "mc_var": r["mc_var"],
-                    "n_points": r["n_points"], "n_rep": r["n_rep"]}
+                mc["k=%d,sigma=%g" % (k, s)] = r
 
     R = {
         "build": BUILD,

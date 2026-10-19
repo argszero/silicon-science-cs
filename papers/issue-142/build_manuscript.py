@@ -34,6 +34,12 @@ SRC = os.path.join(HERE, "manuscript.src.md")
 OUT = os.path.join(HERE, "manuscript.md")
 POOL = os.path.join(HERE, "refs", "pool.json")
 DIFFS = os.path.join(HERE, "refs", "differences.json")
+# the author basis for records whose own registry record carries no author field (see fmt_authors)
+AUTHOR_BASIS = {}
+_ab = os.path.join(HERE, "refs", "author-basis.json")
+if os.path.isfile(_ab):
+    with open(_ab, encoding="utf-8") as _fh:
+        AUTHOR_BASIS = {k: v for k, v in json.load(_fh).items() if not k.startswith("_")}
 CAPTIONS = os.path.join(HERE, "figures", "captions.json")
 RECEIPT = os.path.join(HERE, "refs", "verify-run.txt")
 MIN_REFS = 100
@@ -59,8 +65,14 @@ def fmt_authors(a, record=None):
     Two repairs over the first version, both found by reading the journal gate's advisories rather
     than by trusting the build: (a) initials take a PERIOD each -- a record storing `given: "B T"`
     produced `Polyak, B T.`, which is not the form the gate reads; (b) a record with NO author field
-    at all (measured on four canonical books) printed `(n/a)`, so the responsible body is taken from
-    the RECORD's own `publisher` / `container-title` -- never from memory -- and the basis is stated.
+    at all (measured on four canonical books) printed `(n/a)`.
+
+    A THIRD REPAIR, from review of #142 (2026-10-19): repair (b) put the RECORD'S PUBLISHER in the
+    author slot, so the rendered entry read as if `Springer-Verlag` had written the book. A publisher
+    in the author slot is a false statement about who wrote the work, whatever basis note follows it.
+    The layer `refs/author-basis.json` now supplies the human author for those keys TOGETHER WITH THE
+    RECORD THE NAME WAS READ FROM, and where no real record names one the slot is left EMPTY and
+    says so -- an unverified name is never printed.
     """
     a = a or []
     out = []
@@ -74,12 +86,18 @@ def fmt_authors(a, record=None):
         out.append("et al.")
     if out:
         return "; ".join(out)
-    if record:
-        for field in ("publisher", "container"):
-            if (record.get(field) or "").strip():
-                return "%s [%s of the source record; it carries no author field]" % (
-                    record[field].strip(), field)
-    return "[the source record carries no author field]"
+    key = (record or {}).get("id")
+    basis = AUTHOR_BASIS.get(key) if key else None
+    if basis and basis.get("authors"):
+        return "%s [%s; the cited record carries no author field]" % (
+            fmt_authors(basis["authors"]), basis["basis"])
+    if basis:
+        return "[author not carried by the source record, and no real record names one]"
+    # NO FALLBACK TO THE PUBLISHER, even inside a bracketed note: the slot is the AUTHOR slot, and a
+    # publisher's name there reads as authorship however it is decorated.  (The plant below fired on
+    # exactly this line on its first run -- the first repair still echoed `published by Springer-
+    # Verlag` in the slot, which is the defect wearing a note.)
+    return "[author not carried by the source record]"
 
 
 def fmt_venue(rec):
@@ -284,6 +302,15 @@ def selftest():
     holds("real-figure-blocks-resolve",
           "](figures/fig1_p1_quadrature.png)" in body_f and "](figures/fig2_p2_span_law.png)" in body_f)
     holds("figure-caption-is-italicised", "*P1:" in body_f)
+    # THE AUTHOR SLOT (review of #142, 2026-10-19).  A record with no author field used to print its
+    # PUBLISHER in the author slot, so the rendered entry read as if the publisher had written the
+    # work.  Two plants: the fallback must NOT emit the publisher as an author, and the empty slot
+    # must say plainly that nobody is named.
+    _noauth = fmt_authors([], {"id": "TEST-NO-SUCH-KEY", "publisher": "Springer-Verlag",
+                               "container": "Some Series"})
+    holds("publisher-is-never-printed-in-the-author-slot",
+          "Springer-Verlag" not in _noauth.split(" -- ")[0])
+    holds("empty-author-slot-says-so", "author" in _noauth.lower() and _noauth.startswith("["))
     holds("alt-text-is-not-a-mid-word-cut",
           all(not a.split("]")[0].endswith(("-", "…")) for a in re.findall(r"!\[[^\]]*\]", body_f)))
     # a declared figure that no sentence embeds -- the picture exists and the paper never shows it

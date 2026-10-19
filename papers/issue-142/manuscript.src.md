@@ -254,8 +254,33 @@ identification route is measured.
 ## 3. The instrument: two priced systems
 
 **Ground truth is exact by construction on both systems.** Every number below is either a closed form
-or an exact-integer/exact-float evaluation of one; the only sampling anywhere is the Monte-Carlo
-certificate that the closed forms describe the simulated system, and the noise ladder's draws.
+or an exact-integer/exact-float evaluation of one. Sampling enters exactly twice, and both entries are
+declared and bounded: the **noise ladder's draws**, and a **Monte-Carlo certificate** of the
+instrument against itself. That certificate's job is narrower than "the closed forms describe the
+simulated system", so here is what it does and does not establish.
+
+*It certifies the **variance law**, which is its strong claim.* The simulated variance matches the
+analytic `sigma^2 * varcoef` to a ratio of **0.99929 ± 0.00074** at `k=10` and
+**0.99927 ± 0.00072** at `k=20` — within **0.07%** in every cell tested.
+
+*It checks the **bias term**, and reports it with its resolution.* The bias is measured in four
+`(k, sigma)` cells at **five independent seeds**, because one seed cannot tell agreement from luck.
+Each figure carries its standard error: `0.4342 ± 0.0020` (`k=10, sigma=1e-3`),
+`0.4467 ± 0.0767` (`k=10, sigma=1e-2`), `1.2119 ± 0.0010` (`k=20, sigma=1e-3`) and
+`1.2186 ± 0.0146` (`k=20, sigma=1e-2`), against closed-form values `0.4332`, `0.4332`, `1.2112` and
+`1.2112`. Every cell resolves the bias (the smallest margin is `5.8` standard errors) and every cell
+agrees with the closed form; the seed-to-seed spread of the variance ratio is `0.00074`. An `sd`
+estimated from five seeds is itself uncertain by about `35%`, so the bars are quoted for a reader to
+inflate rather than treated as exact — the verdicts clear that inflation with room to spare.
+
+*What it does not certify.* Nothing about a deployed system: it is the instrument checked against
+itself, not evidence about a real log. Two error bars are deliberately kept apart, because
+confusing them changes the answer: the **error bar of the mean** over the 6,194 evaluated points
+(the one the certificate's figures carry, `0.0020` in the first cell) and the **sampling error of a
+single point estimate** (`0.168` in the same cell, `sqrt(analytic_var)/sqrt(n_rep)`). The second is
+the natural yardstick for "could a deployment resolve this bias from this much data" — a real
+question, and a different one: it is not an error bar on the certificate, whose claim is about a mean
+over the grid.
 
 ### 3.1 System 1 -- a chunked-policy execution horizon
 

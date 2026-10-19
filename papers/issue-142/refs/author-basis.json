@@ -1,0 +1,24 @@
+{
+  "_what": "The author basis for pool records whose own registry record carries NO author field. The pool is the harvest's record of what the registry returned and is NOT edited here; this layer names, per key, the human author AND the real record the name was read from, so a reader can re-check the slot rather than trust it. An entry whose basis is 'not found' keeps an EMPTY author slot: an unverified name is never printed.",
+  "_retrieved": "2026-10-19",
+  "10.1007/978-81-951961-1-1": {
+    "authors": ["Vivek S. Borkar"],
+    "basis": "crossref:10.1007/978-981-99-8277-6",
+    "note": "the same title, author field present (Vivek S. Borkar); the cited record 10.1007/978-81-951961-1-1 carries no author field"
+  },
+  "10.1007/b97441": {
+    "authors": ["Harold J. Kushner", "G. George Yin"],
+    "basis": "crossref:10.1007/978-1-4899-2696-8",
+    "note": "an earlier edition of the same work, author field present (Harold J. Kushner, G. George Yin); the cited record 10.1007/b97441 carries no author field"
+  },
+  "10.1109/9780470544334.ch8": {
+    "authors": [],
+    "basis": "not found",
+    "note": "no Crossref record ties this title to an author: this chapter and every sibling chapter retrieved carry no author field, and an author-scoped bibliographic search returned no record with this title. The author slot is left EMPTY rather than filled from memory."
+  },
+  "10.1142/9789819808250_0007": {
+    "authors": [],
+    "basis": "not found",
+    "note": "the whole book 10.1142/9789819808250 is registered without author fields -- every chapter retrieved carries none -- so no real record names this chapter's author. The author slot is left EMPTY rather than filled from memory."
+  }
+}

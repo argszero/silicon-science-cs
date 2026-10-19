@@ -572,36 +572,184 @@
   },
   "mc_certificate": {
     "k=10,sigma=0.001": {
+      "agreement": "agrees",
+      "analytic_bias": 0.4332189574449319,
       "analytic_bias2": 0.18767866508967368,
       "analytic_var": 85.01905733425933,
-      "mc_bias2": 0.1857106254321857,
-      "mc_var": 84.97768940505952,
+      "bias_minus_analytic": 0.000973681409246363,
+      "bias_minus_analytic_se": 0.0020350488605288147,
+      "bias_verdict": "resolved",
+      "mc_bias": 0.43419263885417825,
+      "mc_bias2_mean": 0.18852324763515485,
+      "mc_bias2_per_seed": [
+        0.1857106254321857,
+        0.18983303951613992,
+        0.1943775447301996,
+        0.18421519746851756,
+        0.18847983102873145
+      ],
+      "mc_bias2_sd_seeds": 0.0039515937969747065,
+      "mc_bias2_se_seeds": 0.0017672064699003891,
+      "mc_bias_se": 0.0020350488605288147,
+      "mc_bias_se_point_sampling": 0.1683439508211876,
+      "mc_bias_se_points": 0.03488842833345569,
+      "mc_var_mean": 84.95899995987818,
+      "mc_var_per_seed": [
+        84.97768940505952,
+        84.94971546282936,
+        85.03433385832501,
+        84.86197682967568,
+        84.97128424350136
+      ],
+      "mc_var_se_seeds": 0.027995611191987776,
       "n_points": 6194,
-      "n_rep": 3000
+      "n_rep": 3000,
+      "sd_relative_uncertainty": 0.35355339059327373,
+      "seeds": [
+        99,
+        101,
+        103,
+        105,
+        107
+      ],
+      "var_ratio_mean": 0.999293601031766,
+      "var_ratio_sd_seeds": 0.0007363065606669955,
+      "why": "bias > 2 se (the figure is distinguishable from zero)"
     },
     "k=10,sigma=0.01": {
+      "agreement": "agrees",
+      "analytic_bias": 0.4332189574449319,
       "analytic_bias2": 0.18767866508967368,
       "analytic_var": 8501.905733425934,
-      "mc_bias2": 0.13882416494888306,
-      "mc_var": 8497.768940505952,
+      "bias_minus_analytic": 0.013485518496798354,
+      "bias_minus_analytic_se": 0.07674452697664251,
+      "bias_verdict": "resolved",
+      "mc_bias": 0.44670447594173024,
+      "mc_bias2_mean": 0.19954488882637583,
+      "mc_bias2_per_seed": [
+        0.13882416494888306,
+        0.13828866516644212,
+        0.4145562214623779,
+        0.018818498301114595,
+        0.2872368942530614
+      ],
+      "mc_bias2_sd_seeds": 0.1533143180326247,
+      "mc_bias2_se_seeds": 0.06856424740899414,
+      "mc_bias_se": 0.07674452697664251,
+      "mc_bias_se_point_sampling": 1.6834395082118765,
+      "mc_bias_se_points": 0.13778997238805477,
+      "mc_var_mean": 8495.89999598782,
+      "mc_var_per_seed": [
+        8497.768940505952,
+        8494.971546282939,
+        8503.4333858325,
+        8486.19768296757,
+        8497.128424350136
+      ],
+      "mc_var_se_seeds": 2.799561119198432,
       "n_points": 6194,
-      "n_rep": 3000
+      "n_rep": 3000,
+      "sd_relative_uncertainty": 0.35355339059327373,
+      "seeds": [
+        99,
+        101,
+        103,
+        105,
+        107
+      ],
+      "var_ratio_mean": 0.9992936010317661,
+      "var_ratio_sd_seeds": 0.0007363065606669046,
+      "why": "bias > 2 se (the figure is distinguishable from zero)"
     },
     "k=20,sigma=0.001": {
+      "agreement": "agrees",
+      "analytic_bias": 1.2111618145521745,
       "analytic_bias2": 1.4669129410293158,
       "analytic_var": 21.66966800031939,
-      "mc_bias2": 1.4636360926303438,
-      "mc_var": 21.65928236195102,
+      "bias_minus_analytic": 0.0007412138698379422,
+      "bias_minus_analytic_se": 0.0010269950613195902,
+      "bias_verdict": "resolved",
+      "mc_bias": 1.2119030284220125,
+      "mc_bias2_mean": 1.4687089502984452,
+      "mc_bias2_per_seed": [
+        1.4636360926303438,
+        1.4710785854388115,
+        1.477109549941532,
+        1.4641607296102213,
+        1.4675597938713183
+      ],
+      "mc_bias2_sd_seeds": 0.005566102808642269,
+      "mc_bias2_se_seeds": 0.0024892368499753233,
+      "mc_bias_se": 0.0010269950613195902,
+      "mc_bias_se_point_sampling": 0.084989544455616,
+      "mc_bias_se_points": 0.06845008963984829,
+      "mc_var_mean": 21.653798952921683,
+      "mc_var_per_seed": [
+        21.65928236195102,
+        21.65085031120965,
+        21.67276519279183,
+        21.629908011677216,
+        21.656188886978693
+      ],
+      "mc_var_se_seeds": 0.0069820103683835896,
       "n_points": 6194,
-      "n_rep": 3000
+      "n_rep": 3000,
+      "sd_relative_uncertainty": 0.35355339059327373,
+      "seeds": [
+        99,
+        101,
+        103,
+        105,
+        107
+      ],
+      "var_ratio_mean": 0.9992676838704925,
+      "var_ratio_sd_seeds": 0.0007204655744187657,
+      "why": "bias > 2 se (the figure is distinguishable from zero)"
     },
     "k=20,sigma=0.01": {
+      "agreement": "agrees",
+      "analytic_bias": 1.2111618145521745,
       "analytic_bias2": 1.4669129410293158,
       "analytic_var": 2166.9668000319393,
-      "mc_bias2": 1.424985590333585,
-      "mc_var": 2165.9282361951023,
+      "bias_minus_analytic": 0.0074308436178069925,
+      "bias_minus_analytic_se": 0.014609865209119749,
+      "bias_verdict": "resolved",
+      "mc_bias": 1.2185926581699815,
+      "mc_bias2_mean": 1.4849680665457812,
+      "mc_bias2_per_seed": [
+        1.424985590333585,
+        1.4900054264061604,
+        1.6084946007121816,
+        1.4052718857107895,
+        1.4960828295661899
+      ],
+      "mc_bias2_sd_seeds": 0.07961955834899498,
+      "mc_bias2_se_seeds": 0.03560694896137274,
+      "mc_bias_se": 0.014609865209119749,
+      "mc_bias_se_point_sampling": 0.8498954445561602,
+      "mc_bias_se_points": 0.07099426117202315,
+      "mc_var_mean": 2165.3798952921684,
+      "mc_var_per_seed": [
+        2165.9282361951023,
+        2165.085031120965,
+        2167.276519279182,
+        2162.9908011677217,
+        2165.618888697869
+      ],
+      "mc_var_se_seeds": 0.6982010368382406,
       "n_points": 6194,
-      "n_rep": 3000
+      "n_rep": 3000,
+      "sd_relative_uncertainty": 0.35355339059327373,
+      "seeds": [
+        99,
+        101,
+        103,
+        105,
+        107
+      ],
+      "var_ratio_mean": 0.9992676838704924,
+      "var_ratio_sd_seeds": 0.0007204655744186436,
+      "why": "bias > 2 se (the figure is distinguishable from zero)"
     }
   },
   "model": {
