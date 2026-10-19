@@ -827,7 +827,7 @@ changes is quotidian and it is directional: run the sweep, and check first wheth
 
 [145] Mayne, D.; Rawlings, J.; Rao, C.; et al. (2000). Constrained model predictive control: Stability and optimality. doi:10.1016/s0005-1098(99)00214-9. https://doi.org/10.1016/s0005-1098(99)00214-9 -- Difference: Mayne et al. on constrained MPC stability and optimality -- the stability margin that our system 1's ceiling comes from, stated as a control result rather than as a boundary on what a price sweep can identify.
 
-[146] [author not carried by the source record] (2009). Contributions to the Theory of Optimal Control. doi:10.1109/9780470544334.ch8. https://doi.org/10.1109/9780470544334.ch8 -- Difference: The classical contributions to optimal control -- the Riccati/LQR machinery our system 1's cost is computed with, not an identification result. (The chapter record carries no author field; an earlier version of this line named one that the record does not carry.)
+[146] [author not carried by the source record] (2009). Contributions to the Theory of Optimal Control. doi:10.1109/9780470544334.ch8. https://doi.org/10.1109/9780470544334.ch8 -- Difference: The classical contributions to optimal control -- the Riccati/LQR machinery our system 1's cost is computed with, not an identification result.
 
 [147] [author not carried by the source record] (2025). Optimal Control and Dynamic Programming. doi:10.1142/9789819808250_0007. https://doi.org/10.1142/9789819808250_0007 -- Difference: Optimal control and dynamic programming -- the dynamic-programming foundation; our envelope is a static one differentiated across a price.
 

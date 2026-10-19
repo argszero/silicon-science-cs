@@ -322,6 +322,57 @@ def selftest():
     holds("publisher-is-never-printed-in-the-author-slot",
           "Springer-Verlag" not in _noauth.split(" -- ")[0])
     holds("empty-author-slot-says-so", "author" in _noauth.lower() and _noauth.startswith("["))
+
+    # THE PLANT THAT WAS MISSING (editorial decision on #142, round 2, 2026-10-19).  The two plants
+    # above were claimed to guard the RETRACTED false clause and did not: the retracted string
+    # "[author not carried by the source record, and no real record names one]" satisfies both --
+    # it starts with "[", contains "author", and names no publisher.  The editor restored that exact
+    # string in a scratch copy and the battery printed SELFTEST: ALL PASS, which is what a guard that
+    # is not there looks like.  A guard whose COUNT does not move when the defect returns is not a
+    # guard, so this one tests the clause itself: the slot may say what ITS OWN RECORD carries and
+    # nothing about the registry.  Every phrase below asserts something about records OTHER than the
+    # one the entry cites -- an absence no citation layer can establish.
+    _REGISTRY_CLAIMS = (
+        "no real record", "no record", "no other record", "no known record",
+        "none exists", "no such record", "unattributed", "unknown author",
+        "nobody", "no author exists",
+    )
+    #
+    # AND THE FIXTURE MATTERS AS MUCH AS THE PHRASE LIST.  The first version of this plant passed a
+    # key with NO entry in `refs/author-basis.json`, which leaves `basis` at None and returns from the
+    # LAST line of fmt_authors -- so it never executed the branch the retracted string lived in, and
+    # it printed `ok` with that string restored.  The fixture is now a key INJECTED into AUTHOR_BASIS
+    # with no `authors`, the same shape the two un-attributable chapters have, removed again below.
+    _SYNTH = "TEST-NO-SUCH-KEY"
+    _SYNTH_PUBLISHER = "Springer-Verlag"
+    AUTHOR_BASIS[_SYNTH] = {"authors": [],
+                            "basis": "synthetic fixture: the cited record carries no author field"}
+    try:
+        # both non-empty-author paths: a basis entry with no authors (where the retracted claim lived)
+        # and a key with no basis entry at all (the last return)
+        for _name, _key in (("empty-author-slot-makes-no-registry-claim", _SYNTH),
+                            ("basisless-slot-makes-no-registry-claim", "TEST-KEY-NOT-IN-BASIS")):
+            _slot = fmt_authors([], {"id": _key, "publisher": _SYNTH_PUBLISHER,
+                                     "container": "Some Series"})
+            _claims = [p for p in _REGISTRY_CLAIMS if p in _slot.lower()]
+            if _claims:
+                print("    %s asserts %r about records it did not read" % (_key, _claims))
+            holds(_name, not _claims)
+        holds("publisher-is-never-printed-in-the-basis-branch",
+              _SYNTH_PUBLISHER not in fmt_authors(
+                  [], {"id": _SYNTH, "publisher": _SYNTH_PUBLISHER, "container": "Some Series"}))
+    finally:
+        AUTHOR_BASIS.pop(_SYNTH, None)
+    # and the SAME test on the slot a real un-attributable entry produces, so the plant is bound to
+    # the shipped path and not only to a synthetic record
+    for _k, _v in list(AUTHOR_BASIS.items()):
+        if _v.get("authors"):
+            continue
+        _real_slot = fmt_authors([], {"id": _k, "publisher": "Sp", "container": "S"})
+        _c = [p for p in _REGISTRY_CLAIMS if p in _real_slot.lower()]
+        if _c:
+            print("    %s asserts %r" % (_k, _c))
+        holds("shipped-empty-slot-makes-no-registry-claim", not _c)
     holds("alt-text-is-not-a-mid-word-cut",
           all(not a.split("]")[0].endswith(("-", "…")) for a in re.findall(r"!\[[^\]]*\]", body_f)))
     # a declared figure that no sentence embeds -- the picture exists and the paper never shows it

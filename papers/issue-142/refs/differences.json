@@ -8,7 +8,7 @@
  "10.1016/s0005-1098(99)00214-9": "Mayne et al. on constrained MPC stability and optimality -- the stability margin that our system 1's ceiling comes from, stated as a control result rather than as a boundary on what a price sweep can identify.",
  "10.1023/a:1013689704352": "Auer et al.'s finite-time bandit analysis (UCB) -- the exploration-exploitation result underlying configuration search, again optimum-directed.",
  "10.1109/9.119632": "Spall's simultaneous-perturbation gradient estimator: one-sided random perturbations give a gradient estimate, not the marginal cost of a knob, and the price is designed rather than already being paid.",
- "10.1109/9780470544334.ch8": "The classical contributions to optimal control -- the Riccati/LQR machinery our system 1's cost is computed with, not an identification result. (The chapter record carries no author field; an earlier version of this line named one that the record does not carry.)",
+ "10.1109/9780470544334.ch8": "The classical contributions to optimal control -- the Riccati/LQR machinery our system 1's cost is computed with, not an identification result.",
  "10.1109/isit.2014.6875100": "Age of information with packet management -- the AoI metric and its queueing analysis, where we use AoI's sampling interval as the KNOB and ask for the marginal cost of reducing staleness.",
  "10.1109/jproc.2015.2494218": "Shahriari et al.'s review of Bayesian optimisation -- the surrogate-and-acquisition loop that knob-tuners instantiate, with no identifiability analysis of the tuned objective.",
  "10.1109/tit.2018.2871079": "The AoI of real-time status updating by multiple sources -- a metric-and-policy paper; it optimises a freshness objective but never reports the objective's derivative.",
