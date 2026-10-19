@@ -248,7 +248,7 @@ operator needs before trusting a tuner's recommendation.
 ### 2.8 Control-side context
 
 Finally, the control machinery our system 1 is built from and bounded by: constrained model
-predictive control {ref:10.1016/s0005-1098(99)00214-9}, Kalman's optimal-control contributions
+predictive control {ref:10.1016/s0005-1098(99)00214-9}, the classical contributions to optimal control
 {ref:10.1109/9780470544334.ch8}, the dynamic-programming formulation {ref:10.1142/9789819808250_0007},
 planning under partial observability {ref:10.1016/s0004-3702(98)00023-x}, the online-LQR instance
 warning {ref:2510.19531}, regret-optimal and quantised LQR {ref:2604.06158} {ref:2604.11930} and a

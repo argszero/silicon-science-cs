@@ -71,8 +71,14 @@ def fmt_authors(a, record=None):
     author slot, so the rendered entry read as if `Springer-Verlag` had written the book. A publisher
     in the author slot is a false statement about who wrote the work, whatever basis note follows it.
     The layer `refs/author-basis.json` now supplies the human author for those keys TOGETHER WITH THE
-    RECORD THE NAME WAS READ FROM, and where no real record names one the slot is left EMPTY and
-    says so -- an unverified name is never printed.
+    RECORD THE NAME WAS READ FROM, and where the record for THAT WORK carries none the slot is left
+    EMPTY and says only what the record carries -- an unverified name is never printed, and neither
+    is a claim that nobody could name one.
+
+    A FOURTH REPAIR, from the editorial decision on #142 (2026-10-19): the empty slot's text read
+    `[author not carried by the source record, and no real record names one]`, and its second clause
+    was FALSE -- the containing volumes for both such entries are registered with an author. A
+    citation layer knows what its own record carries; it does not know the registry.
     """
     a = a or []
     out = []
@@ -92,7 +98,12 @@ def fmt_authors(a, record=None):
         return "%s [%s; the cited record carries no author field]" % (
             fmt_authors(basis["authors"]), basis["basis"])
     if basis:
-        return "[author not carried by the source record, and no real record names one]"
+        # ONLY what the record carries.  The first form of this string read "[author not carried by
+        # the source record, and no real record names one]" -- and the second clause was FALSE: the
+        # containing VOLUME records for both such entries name an author (editorial decision on #142,
+        # 2026-10-19).  A clause asserting an absence is a claim about the whole registry; the only
+        # thing a citation layer knows is what its own record carries.
+        return "[author not carried by the source record]"
     # NO FALLBACK TO THE PUBLISHER, even inside a bracketed note: the slot is the AUTHOR slot, and a
     # publisher's name there reads as authorship however it is decorated.  (The plant below fired on
     # exactly this line on its first run -- the first repair still echoed `published by Springer-

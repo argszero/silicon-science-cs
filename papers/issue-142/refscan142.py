@@ -784,8 +784,9 @@ def checkdoc():
           "this layer cannot verify, which is the same reason a remembered DOI is refused.  These",
           "records were read live and their `author` and `editor` fields are both null.", "",
           "**A second record is consulted before the slot is given up**, and the route is printed in",
-          "the entry itself.  Where no real record names the author, the slot is left **empty and says",
-          "so** -- never the publisher, and never a name from memory:", "",
+          "the entry itself.  Where the record for THAT WORK carries no author, the slot is left",
+          "**empty and says only what the record carries** -- never the publisher, never a name from",
+          "memory, and never a claim that nobody could name one:", "",
           "| record | author slot | read from |", "|---|---|---|"]
     for k, v in noauth:
         b = basis.get(k) or {}

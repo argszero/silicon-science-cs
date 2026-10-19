@@ -3,9 +3,15 @@
 **Contribution level: `theory+empirics`.** This package is the evidence layer for the manuscript: one
 theory model (an envelope identity, an error budget with a derived span law, and an identifiability
 set) validated on **two mechanically different priced systems**, with **ground truth exact by
-construction** — every reported quantity is a closed form or an exact evaluation of one, and the only
-sampling anywhere is the Monte-Carlo certificate that the closed forms describe the simulated system
-plus the draws of the noise ladder. There are no timings anywhere in the package.
+construction** — every reported quantity is a closed form or an exact evaluation of one. Sampling
+enters exactly twice: the **noise ladder's draws**, and a **Monte-Carlo certificate** of the
+instrument against itself. That certificate certifies the **variance law** (simulated against
+analytic, ratio `0.99929 ± 0.00074` at `k=10` and `0.99927 ± 0.00072` at `k=20` — within `0.07%`) and
+**checks** the bias term in four cells at **five independent seeds**, each figure carrying its
+standard error and its resolution; it certifies **nothing about a deployed system**, since it is the
+instrument checked against itself. The manuscript's §3 states the same reach and separates the two
+error bars a reader will meet (the error bar of the mean, which the figures carry, and the sampling
+error of a single point estimate). There are no timings anywhere in the package.
 
 ## Reproduction
 

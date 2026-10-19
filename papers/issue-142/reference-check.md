@@ -863,15 +863,16 @@ this layer cannot verify, which is the same reason a remembered DOI is refused. 
 records were read live and their `author` and `editor` fields are both null.
 
 **A second record is consulted before the slot is given up**, and the route is printed in
-the entry itself.  Where no real record names the author, the slot is left **empty and says
-so** -- never the publisher, and never a name from memory:
+the entry itself.  Where the record for THAT WORK carries no author, the slot is left
+**empty and says only what the record carries** -- never the publisher, never a name from
+memory, and never a claim that nobody could name one:
 
 | record | author slot | read from |
 |---|---|---|
 | `10.1007/978-81-951961-1-1` | Vivek S. Borkar | crossref:10.1007/978-981-99-8277-6 |
 | `10.1007/b97441` | Harold J. Kushner; G. George Yin | crossref:10.1007/978-1-4899-2696-8 |
-| `10.1109/9780470544334.ch8` | **empty** | no Crossref record ties this title to an author: this chapter and every sibling chapter retrieved carry no author field, and an author-scoped bibliographic search returned no record with this title. The author slot is left EMPTY rather than filled from memory. |
-| `10.1142/9789819808250_0007` | **empty** | the whole book 10.1142/9789819808250 is registered without author fields -- every chapter retrieved carries none -- so no real record names this chapter's author. The author slot is left EMPTY rather than filled from memory. |
+| `10.1109/9780470544334.ch8` | **empty** | the CHAPTER record (the work cited) carries no author field. The containing volume 10.1109/9780470544334 (*Control Theory*, IEEE) is registered with Tamer Basar as its author -- a fact about the VOLUME, which the record does not extend to this chapter. The slot is left EMPTY rather than attributing the chapter to the volume's author, an attribution no record makes. |
+| `10.1142/9789819808250_0007` | **empty** | the CHAPTER record (the work cited) carries no author field. The containing volume is 10.1142/14184 (*Principles and Methods of Applied Mathematics*, World Scientific), registered with Michael (Misha) Chertkov as its author -- a fact about the VOLUME, which the record does not extend to this chapter. NOTE: the DOI 10.1142/9789819808250 does NOT RESOLVE (HTTP 404 at api.crossref.org/works/); the first version of this file described that non-resolving DOI as a record 'registered without author fields', which was a claim about a record never read. |
 
 _History._ The first version of this section printed the record's own responsible body
 (its publisher) in the author slot and marked it as such in the entry. Review of #142 found

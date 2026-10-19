@@ -248,7 +248,7 @@ operator needs before trusting a tuner's recommendation.
 ### 2.8 Control-side context
 
 Finally, the control machinery our system 1 is built from and bounded by: constrained model
-predictive control [145], Kalman's optimal-control contributions
+predictive control [145], the classical contributions to optimal control
 [146], the dynamic-programming formulation [147],
 planning under partial observability [148], the online-LQR instance
 warning [149], regret-optimal and quantised LQR [150] [151] and a
@@ -827,9 +827,9 @@ changes is quotidian and it is directional: run the sweep, and check first wheth
 
 [145] Mayne, D.; Rawlings, J.; Rao, C.; et al. (2000). Constrained model predictive control: Stability and optimality. doi:10.1016/s0005-1098(99)00214-9. https://doi.org/10.1016/s0005-1098(99)00214-9 -- Difference: Mayne et al. on constrained MPC stability and optimality -- the stability margin that our system 1's ceiling comes from, stated as a control result rather than as a boundary on what a price sweep can identify.
 
-[146] [author not carried by the source record, and no real record names one] (2009). Contributions to the Theory of Optimal Control. doi:10.1109/9780470544334.ch8. https://doi.org/10.1109/9780470544334.ch8 -- Difference: Kalman's contributions to optimal control -- the Riccati/LQR machinery our system 1's cost is computed with, not an identification result.
+[146] [author not carried by the source record] (2009). Contributions to the Theory of Optimal Control. doi:10.1109/9780470544334.ch8. https://doi.org/10.1109/9780470544334.ch8 -- Difference: The classical contributions to optimal control -- the Riccati/LQR machinery our system 1's cost is computed with, not an identification result. (The chapter record carries no author field; an earlier version of this line named one that the record does not carry.)
 
-[147] [author not carried by the source record, and no real record names one] (2025). Optimal Control and Dynamic Programming. doi:10.1142/9789819808250_0007. https://doi.org/10.1142/9789819808250_0007 -- Difference: Optimal control and dynamic programming -- the dynamic-programming foundation; our envelope is a static one differentiated across a price.
+[147] [author not carried by the source record] (2025). Optimal Control and Dynamic Programming. doi:10.1142/9789819808250_0007. https://doi.org/10.1142/9789819808250_0007 -- Difference: Optimal control and dynamic programming -- the dynamic-programming foundation; our envelope is a static one differentiated across a price.
 
 [148] Kaelbling, L. P.; Littman, M. L.; Cassandra, A. R. (1998). Planning and acting in partially observable stochastic domains. doi:10.1016/s0004-3702(98)00023-x. https://doi.org/10.1016/s0004-3702(98)00023-x -- Difference: Kaelbling, Littman and Cassandra on planning under partial observability -- the POMDP framing of acting under uncertainty, with no priced scalar knob.
 
