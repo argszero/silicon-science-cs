@@ -1,0 +1,25 @@
+{
+  "_what": "The author basis for pool records whose own registry record carries NO author field. The pool is the harvest's record of what the registry returned and is NOT edited here; this layer names, per key, what the records actually carry, so a reader can re-check the slot rather than trust it. An entry whose chapter record carries no author keeps an EMPTY author slot: a name is printed only where a record for THAT work carries one.",
+  "_retrieved": "2026-10-19",
+  "_correction": "Corrected 2026-10-19 at the editorial decision on #142. The first version of this file asserted, for the two entries below, that 'no real record names one'. That is FALSE and the claim is retracted: the containing VOLUME records for both chapters name an author (Tamer Basar / Michael (Misha) Chertkov). The first version also asserted that 10.1142/9789819808250 is 'registered without author fields'; that DOI DOES NOT RESOLVE (HTTP 404), so it was a claim about a record that was never read. Both notes now state the reads that hold, and the chapter slots stay empty because the CHAPTER records -- the records for the works actually cited -- carry no author field, not because no record exists.",
+  "10.1007/978-81-951961-1-1": {
+    "authors": ["Vivek S. Borkar"],
+    "basis": "crossref:10.1007/978-981-99-8277-6",
+    "note": "the same title, author field present (Vivek S. Borkar); the cited record 10.1007/978-81-951961-1-1 carries no author field"
+  },
+  "10.1007/b97441": {
+    "authors": ["Harold J. Kushner", "G. George Yin"],
+    "basis": "crossref:10.1007/978-1-4899-2696-8",
+    "note": "an earlier edition of the same work, author field present (Harold J. Kushner, G. George Yin); the cited record 10.1007/b97441 carries no author field"
+  },
+  "10.1109/9780470544334.ch8": {
+    "authors": [],
+    "basis": "chapter record carries none; containing volume names its author",
+    "note": "the CHAPTER record (the work cited) carries no author field. The containing volume 10.1109/9780470544334 (*Control Theory*, IEEE) is registered with Tamer Basar as its author -- a fact about the VOLUME, which the record does not extend to this chapter. The slot is left EMPTY rather than attributing the chapter to the volume's author, an attribution no record makes."
+  },
+  "10.1142/9789819808250_0007": {
+    "authors": [],
+    "basis": "chapter record carries none; containing volume names its author",
+    "note": "the CHAPTER record (the work cited) carries no author field. The containing volume is 10.1142/14184 (*Principles and Methods of Applied Mathematics*, World Scientific), registered with Michael (Misha) Chertkov as its author -- a fact about the VOLUME, which the record does not extend to this chapter. NOTE: the DOI 10.1142/9789819808250 does NOT RESOLVE (HTTP 404 at api.crossref.org/works/); the first version of this file described that non-resolving DOI as a record 'registered without author fields', which was a claim about a record never read."
+  }
+}

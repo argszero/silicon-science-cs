@@ -1,0 +1,11 @@
+# Reference-layer intermediates, written by refscan142.py and documented in README.md as *not* part of
+# the committed set: `refs/raw.json` is the pre-curation arXiv/Crossref dump (~3 MB) and is
+# reproducible only with network access; every entry the pool keeps is already in `refs/pool.json`.
+# `*.tmp`/`*.stage` are the atomic-write siblings an interrupted run may leave behind.
+refs/raw.json
+refs/*.tmp
+refs/*.stage
+figures/*.tmp
+*.tmp
+__pycache__/
+.mplcache/

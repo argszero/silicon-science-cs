@@ -1,0 +1,186 @@
+{
+  "build": "python 3.9.6 / numpy 2.0.2",
+  "grid": {
+    "L_max": 20.0,
+    "L_min": 0.5,
+    "delta_L": 0.05,
+    "n_prices": 40,
+    "seed": 11
+  },
+  "per_source": {
+    "ou theta=0.5 s2=2.0": {
+      "cells": {
+        "ceiling": 20,
+        "floor": 6,
+        "interior": 14,
+        "total": 40
+      },
+      "controls": {
+        "lam_1pct_identity": {
+          "median": 0.007960762878915485,
+          "n": 40,
+          "worst": 0.11111055062097863
+        }
+      },
+      "identity": {
+        "median": 1.2046363265026242e-16,
+        "n": 40,
+        "worst": 5.921159595753084e-16
+      },
+      "lam_critical": 8.0,
+      "marginal_interior": {
+        "median": 0.004540595845680348,
+        "n": 14,
+        "worst": 0.02339790512361482
+      },
+      "marginal_pinned": {
+        "median": 0.4260495278357622,
+        "n": 26,
+        "worst": 9.900499421901106
+      },
+      "s2": 2.0,
+      "sweep_vs_point": {
+        "median": 0.008932020717515338,
+        "n": 12,
+        "worst": 0.02656362324798887
+      },
+      "sweep_vs_spanmean": {
+        "median": 1.9109821765725372e-16,
+        "n": 12,
+        "worst": 7.107148654928329e-16
+      },
+      "system_id": {
+        "max_c_rel_err": 0.011268513335331564,
+        "s2_hat": 2.0371050900682004,
+        "theta_hat": 0.48883066244477835,
+        "theta_rel_err": 0.022338675110443296
+      },
+      "theta": 0.5
+    },
+    "ou theta=1.0 s2=1.0": {
+      "cells": {
+        "ceiling": 20,
+        "floor": 11,
+        "interior": 9,
+        "total": 40
+      },
+      "controls": {
+        "lam_1pct_identity": {
+          "median": 0.005231310049933205,
+          "n": 40,
+          "worst": 0.052631578941659415
+        }
+      },
+      "identity": {
+        "median": 1.3027036390509366e-16,
+        "n": 40,
+        "worst": 5.609547913286994e-16
+      },
+      "lam_critical": 2.0,
+      "marginal_interior": {
+        "median": 0.008170077755712477,
+        "n": 9,
+        "worst": 0.013791263089842201
+      },
+      "marginal_pinned": {
+        "median": 0.32777584293282164,
+        "n": 31,
+        "worst": 4.950000012366922
+      },
+      "s2": 1.0,
+      "sweep_vs_point": {
+        "median": 0.01566118866198367,
+        "n": 7,
+        "worst": 0.017418006394725263
+      },
+      "sweep_vs_spanmean": {
+        "median": 3.125181640229347e-16,
+        "n": 7,
+        "worst": 4.27816429255468e-16
+      },
+      "system_id": {
+        "max_c_rel_err": 0.002474527788274136,
+        "s2_hat": 1.0029640529928854,
+        "theta_hat": 0.9935440543137793,
+        "theta_rel_err": 0.006455945686220654
+      },
+      "theta": 1.0
+    },
+    "ou theta=3.0 s2=1.0": {
+      "cells": {
+        "ceiling": 20,
+        "floor": 17,
+        "interior": 3,
+        "total": 40
+      },
+      "controls": {
+        "lam_1pct_identity": {
+          "median": 0.0015323621756246466,
+          "n": 40,
+          "worst": 0.01694915254237282
+        }
+      },
+      "identity": {
+        "median": 0.0,
+        "n": 40,
+        "worst": 1.8064645824409325e-16
+      },
+      "lam_critical": 0.6666666666666666,
+      "marginal_interior": {
+        "median": 0.004648754609513493,
+        "n": 3,
+        "worst": 0.01127410876804185
+      },
+      "marginal_pinned": {
+        "median": 0.2884161943860891,
+        "n": 37,
+        "worst": 1.65
+      },
+      "s2": 1.0,
+      "sweep_vs_point": {
+        "median": 0.01980647832910635,
+        "n": 1,
+        "worst": 0.01980647832910635
+      },
+      "sweep_vs_spanmean": {
+        "median": 2.394549629740397e-16,
+        "n": 1,
+        "worst": 2.394549629740397e-16
+      },
+      "system_id": {
+        "max_c_rel_err": 0.011052345502244721,
+        "s2_hat": 0.9889470993113336,
+        "theta_hat": 3.023953937201688,
+        "theta_rel_err": 0.007984645733895976
+      },
+      "theta": 3.0
+    }
+  },
+  "pooled": {
+    "identity": {
+      "median": 5.569894240702705e-17,
+      "n": 120,
+      "worst": 5.921159595753084e-16
+    },
+    "marginal_interior": {
+      "median": 0.005205581311678347,
+      "n": 26,
+      "worst": 0.02339790512361482
+    },
+    "marginal_pinned": {
+      "median": 0.31487752404728275,
+      "n": 94,
+      "worst": 9.900499421901106
+    },
+    "sweep_vs_point": {
+      "median": 0.01231835492565208,
+      "n": 20,
+      "worst": 0.02656362324798887
+    },
+    "sweep_vs_spanmean": {
+      "median": 2.511119772356536e-16,
+      "n": 20,
+      "worst": 7.107148654928329e-16
+    }
+  }
+}
