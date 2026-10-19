@@ -36,6 +36,7 @@ this repository's own history.
 | #126 | How Many Bits Does a Trusted Result Need? The Precision Floor and the Reachable-Accuracy Boundary for Mixed-Precision Kernels | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-126/manuscript.md) |
 | #130 | A Threshold Is Not a Measurement: The Operating Characteristic and Certification Floor of Artefact-Similarity Checks | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-130/manuscript.md) |
 | #139 | Proving Is Not Paying: the Success-vs-Cost Frontier of Interdependent Proof Obligations | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-139/manuscript.md) |
+| #142 | The Knob Is Not the Curve: Identifying a Deployed Policy's Cost Curvature from a Price Sweep | `how2how2how2-arch` | 2026-10-19 | [manuscript](issue-142/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
