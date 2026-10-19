@@ -30,25 +30,30 @@ against the point value it is `1.39e-2` / `1.23e-2` -- the entire error is the s
 `h* ~ sigma^{2/(2b+2)}`, with `b` the *measured* bias exponent: `sigma^{1/3}` in the smooth limit
 (system 1 `b=2.006 -> 0.334`, system 2 `b=1.957 -> 0.334`; the two agree to `0.0002`) and
 `sigma^{0.41}` on each system's **delivered C0 representation** (system 1 `b=1.422 -> 0.408`, system 2
-`b=1.423 -> 0.406`; the bias exponents agree to `0.001`). The exponent is set by the representation's
-smoothness and the route's differencing, **not by the plant**. **(P3, decided)** The identifiable set is
+`b=1.423 -> 0.406`; the bias exponents agree to `0.001`). The `sigma^{1/3}` end is the **classical
+optimum for a two-sided difference** — this paper does not claim it; what it measures is the exponent's
+**dependence on the representation** (`b = 2` on a smooth curve, `b ~ 1.42` on a C0 table), and the
+finding is that the exponent is set by the representation's smoothness and the route's differencing,
+**not by the plant**. **(P3, decided)** The identifiable set is
 the argmax set, predicted from the pricing **before any data**: the predictor is sound (0 false
 positives at a `1e-2` resolution) but not exact (9 disagreements, 5 of 246 threshold-free), and the
 pinned fraction matches exactly in **15/15 blocks** -- the failures are conservative and have a
 mechanism. Both systems reproduce the *ordering*: the interior single-point marginal identity holds to
 each grid's own first-order-condition resolution and **shrinks with the grid** (`8.2e-3 -> 9.0e-4`)
-while pinned cells miss it by `~60x`. **(P4, refuted as stated, twice)** The two routes a practitioner
+while pinned cells miss it by `~60x`. **(P4, refuted as stated)** The two routes a practitioner
 would reach for instead -- higher moments of the tracking error, and residual-dynamics system
-identification -- were registered as addressing a *different object*. The measurement says otherwise:
-the moments route's **level** reading is the **same object** (`r = +0.990`, refuting the registered
-price-invariance), its **profile** reading is a genuinely different object (`r = -0.926`, the **wrong
-sign on 303 of 303 cells**, a threshold-free direction failure), and the **system-identification** route
-reaches the **same object** (`r = 0.9993...0.99999`, median `c`-error `1.3-7.5%` at a `1e5`-step log).
-What separates the routes is **access**, not the object: the sweep reads one scalar per price, system
-identification needs a raw `(state, action, delay)` log carrying the deployed control law. The design
-rule the measurement supports is the opposite of "measure the same object a better way": **run a price
-sweep, and first check whether you are pinned -- because if you are, no amount of data will tell you
-the curvature.**
+identification -- were registered as addressing a *different object*. The measurement says otherwise,
+on **two limbs that could have come out the other way**: the moments route's **profile** reading is a
+genuinely different object (`r = -0.926`, the **wrong sign on 303 of 303 cells**, a threshold-free
+direction failure), and the **system-identification** route reaches the **same object**
+(`r = 0.9993...0.99999`, median `c`-error `1.3-7.5%` at a `1e5`-step log). A third reading, the moments
+**level**, is also the same object (`r = +0.990`) but is reported as a **corollary of P1**: at an
+interior optimum the first-order condition makes it `c - lam/L*` by algebra, so it is not counted as
+evidence. What separates the routes is **access**, not the object: the sweep reads one scalar per
+price, system identification needs a raw `(state, action, delay)` log carrying the deployed control law.
+The design rule the measurement supports is the opposite of "measure the same object a better way":
+**run a price sweep, and first check whether you are pinned -- because if you are, no amount of data
+will tell you the curvature.**
 
 ## 1. Introduction
 
@@ -353,6 +358,17 @@ sub-lattice argmin of `MSE = A + sigma^2 B`, and the exponent is the log-log slo
 `sigma` ladder. **The law is derived, not fitted:** with `bias ~ a^b` and `var ~ sigma^2 a^{-2}`, the
 minimum is `h* ~ sigma^{2/(2b+2)}`, and the prediction uses the run's **own** measured `b`.
 
+**What is classical here, and what this paper adds.** With `b = 2` — a second-order-accurate centred
+difference on a smooth curve — the law is `h* ~ sigma^{1/3}`, which is the **textbook optimum for a
+two-sided difference** and is *not* this paper's claim. What the instrument adds is that the exponent is
+a function of the **representation the deployment actually has**: on a C0 table the bias exponent
+measures `b ~ 1.42` (`1.4224` on system 1, `1.4233` on system 2) and the law becomes `sigma^{0.41}`
+(`0.4075` / `0.4062`), a shift that a mechanism sweep shows follows the table's spacing
+(`S=0.5 -> b=1.5176`, `S=1.0 -> 1.4233`, `S=2.0 -> 1.4208`) rather than the plant. So the reading a
+practitioner gets from "the optimal span scales as the cube root of the noise" — which is true only for
+a curve they may not have — is quantitatively wrong on a delivered table, in a direction and by an
+amount this instrument measures. That claim, not the cube root, is the contribution.
+
 Two arms per system: a **smooth** curve (C^inf, or C^1 for system 1's Catmull-Rom arm) and the
 **delivered C0 representation** (system 1's shipped linear interpolation between integer delays; system
 2's `c` sampled at a step `S` and linearly interpolated).
@@ -421,17 +437,19 @@ the tracking error, and residual-dynamics system identification -- address a **d
 fail on the same logs.
 
 **The moments route has two readings, and they disagree.** The **level** reading (the logged mean cost
-`J - lam/L*`) is the **same object**: it tracks `c` at `r = +0.990` (median relative error `0.0953` all
-cells, `0.1460` interior), **refuting the registered price-invariance**, because the envelope identity
-makes it `c - lam/L*` at an interior optimum -- the same curve, ~10x less accurate than the sweep. The
-**profile** reading (the within-chunk phase slope) is a **genuinely different object**: it
-**anti-tracks** `c` (`r = -0.926`) and carries the **wrong sign on 303 of 303 cells** (80/80 interior),
-a **threshold-free direction failure** (median error `1.0007`), because the periodic orbit is
-re-planned at each chunk boundary (a U-shaped profile `31.79 -> 28.91 -> 30.19` against a monotonically
-rising `c` `22.74 -> 78.64`). A **structural certificate** shows why: every logged quantity is a
-function of the **visited point alone** (within a group sharing `(plant, tau, L*)` the price spans
-`9.995e4` while `G` varies by `1.6e-13` relative), so the sweep is the only route that differences
-*across* operating points.
+`J - lam/L*`) is the **same object**, tracking `c` at `r = +0.990` (median relative error `0.0953` all
+cells, `0.1460` interior). **This limb is a corollary of P1 and is marked as one**: at an interior
+optimum the first-order condition gives `J = c(L*)` exactly, so the level reading *is* `c - lam/L*` by
+algebra, and no measurement could have made it a different object. What the measurement adds is the
+**error ratio** (~10x worse than the sweep), not the sameness. The reading that was genuinely
+uncertain is the **profile** one — the within-chunk phase slope — and it is a **genuinely different
+object**: it **anti-tracks** `c` (`r = -0.926`) and carries the **wrong sign on 303 of 303 cells**
+(80/80 interior), a **threshold-free direction failure** (median error `1.0007`), because the periodic
+orbit is re-planned at each chunk boundary (a U-shaped profile `31.79 -> 28.91 -> 30.19` against a
+monotonically rising `c` `22.74 -> 78.64`). A **structural certificate** shows why: every logged
+quantity is a function of the **visited point alone** (within a group sharing `(plant, tau, L*)` the
+price spans `9.995e4` while `G` varies by `1.6e-13` relative), so the sweep is the only route that
+differences *across* operating points.
 
 **The system-identification route reaches the same object.** Reconstructing `c(d)` from the identified
 `(A, B, K, W)` through the truth's own closed form tracks the true curve at `r = 0.9993...0.99999` over
@@ -445,13 +463,17 @@ the deployment's own disturbance suffices (`cond` 10-430), and only a *silent* (
 
 *P4: what separates the routes is access, not the object. (a) median `r` of each route against the true curve -- the moments LEVEL reading is the same object, the PROFILE reading has the wrong sign on every defined cell. (b) the system-identification route's reconstruction quality rising with the log length.*
 
-**Verdict: REFUTED, twice, and the claim is ROUTE-SPECIFIC.** The moments route has one reading that is
-the same object and one that is genuinely different; the system-identification route reaches the same
-object. What separates the routes is **access and resolution, not a second object**: the sweep reads a
-scalar-cost log and differences it across prices; system identification needs a raw
-`(state, action, delay)` log carrying the control law that actually ran (a *free* action vector leaves
-`K` unidentified, error `1.04`). Criterion (iv) -- the sweep `>= 10x` better at the median -- is met
-against the profile reading (`68x`) and **met on interior cells against the level reading (`10.3x`) but
+**Verdict: REFUTED, on two limbs that were genuinely uncertain -- the profile reading and the
+system-identification route -- and the claim is ROUTE-SPECIFIC.** (The level limb is the third and is
+*not* evidence of the same kind: it follows from P1's identity by algebra, and it is reported above as
+a corollary. Counting it as a second refutation would inflate the result with something no measurement
+could have falsified.) The profile reading is a different object with the wrong sign on every defined
+cell; the system-identification route reaches the same object. What separates the routes is **access
+and resolution, not a second object**: the sweep reads a scalar-cost log and differences it across
+prices; system identification needs a raw `(state, action, delay)` log carrying the control law that
+actually ran (a *free* action vector leaves `K` unidentified, error `1.04`). Criterion (iv) -- the
+sweep `>= 10x` better at the median -- is met against the profile reading (`68x`) and **met on interior
+cells against the level reading (`10.3x`) but
 missed on all cells (`9.7x`)**, reported as measured.
 
 ## 8. Registered prior beliefs: what the measurement decided
@@ -463,13 +485,16 @@ The registration states four falsifiable priors. Each is reported against its re
 | **P1** | the noise-free error is a quadrature (span) error | `G = int c` to `8.6e-16` / `5.6e-17`; sweep error `4.5e-9` / `2.5e-16` vs span mean, `1.39e-2` / `1.23e-2` vs point | **CONFIRMED** (both systems) |
 | **P2** | interior MSE-optimal span, `sigma^{1/3}` | smooth limit `0.334` on both systems (agree to `0.0002`); delivered C0 `0.408` / `0.406`; derived from the measured `b` | **CONFIRMED** in the smooth limit; **REFUTED** as stated on the C0 representation |
 | **P3** | identifiable set is exactly the argmax set, from pricing alone | predictable and **sound** (0 FP at `1e-2`) but **not exact** (9 disagreements, 5/246 threshold-free); pinned fraction exact in 15/15 blocks | **PARTIALLY CONFIRMED** -- criterion (iii) **UNMET** with its mechanism |
-| **P4** | the two routes address a **different object** | moments level: **same object** (`r=+0.990`, invariance clause refuted); moments profile: different (`r=-0.926`, wrong sign 303/303); system ID: **same object** (`r=0.9993...`) | **REFUTED**; the real separator is **access** |
+| **P4** | the two routes address a **different object** | moments profile: different (`r=-0.926`, wrong sign 303/303) **and** system ID: **same object** (`r=0.9993...`) — the two limbs that were uncertain; moments level: **same object** (`r=+0.990`) but a **corollary of P1**, not counted as evidence | **REFUTED**; the real separator is **access** |
 
-The two **refutations are the paper's strongest novelty signal**, and both are theory-anchored: the
-moment's price-invariance followed from the registration's own envelope identity (so P4's clause was
-falsifiable in advance and was falsified), and the `sigma^{1/3}` law was derived from the measured bias
-exponent (so its failure on the C0 representation is a statement about the representation, not a
-failure of the derivation).
+The **refutation is the paper's strongest novelty signal**, and it is theory-anchored: the moment's
+price-invariance followed from the registration's own envelope identity, so P4's clause was falsifiable
+in advance and was falsified. Its evidence is the two limbs that could have come out the other way --
+the **profile** reading (wrong sign on 303 of 303 cells) and the **system-identification** route
+(same object at a costlier access path). The level reading is the third limb and is a corollary of P1,
+reported as such and not counted as evidence; the `sigma^{1/3}` law, separately, was derived from the
+measured bias exponent, so its failure on the C0 representation is a statement about the
+representation, not a failure of the derivation.
 
 ## 9. Threats to validity
 
@@ -490,10 +515,11 @@ failure of the derivation).
   which is the deployment-logging model (a price and a cost are positive and scale-free). An additive
   noise model would change the variance coefficient `B[k]` but not the bias exponent, hence not the
   span law's exponent -- only its constant.
-- **Why it is still worth publishing.** The two refutations are not negative results about a method;
-  they are the paper's content. A practitioner's default instrument (moments) turns out to sample the
-  same object badly, and their second default (system identification) turns out to need a log they do
-  not keep -- and both facts are *measured*, cross-system, against exact ground truth. That sharpens
+- **Why it is still worth publishing.** The refutation is not a negative result about a method; it is
+  the paper's content. A practitioner's default instrument (moments) turns out to have one reading that
+  samples the same object badly and one that samples a different object with the wrong sign, and their
+  second default (system identification) turns out to need a log they do not keep -- and both facts are
+  *measured*, cross-system, against exact ground truth. That sharpens
   the recommendation rather than weakening it.
 
 ## 10. Conclusion
@@ -504,10 +530,10 @@ with an error budget and an identifiability boundary, on two mechanically differ
 Three of the four registered claims survive in a form the measurement had to sharpen: the noise-free
 error is a quadrature error (P1), the span law's exponent is the *representation's* rather than the
 plant's (P2), and the identifiability boundary is predicted from the pricing alone and is sound but not
-exact (P3). The fourth is refuted, twice, and the refutation is the paper's strongest result: the two
-routes a practitioner would reach for instead are not a second object -- they are the same object
-behind a worse access path (P4). The decision the paper changes is quotidian and it is directional: run
-the sweep, and check first whether you are pinned.
+exact (P3). The fourth is refuted, and the refutation is the paper's strongest result: the two routes a
+practitioner would reach for instead are not a second object -- one of them is the same object sampled
+badly, the other reaches the same object behind a worse access path (P4). The decision the paper
+changes is quotidian and it is directional: run the sweep, and check first whether you are pinned.
 
 ## References
 
