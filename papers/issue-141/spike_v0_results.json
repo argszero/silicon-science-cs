@@ -1,0 +1,3396 @@
+{
+ "cells": {
+  "cv_n2|capped_strong|champion": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "639/3200",
+   "U_money": "639/3200",
+   "discordant": 9,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "1",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "5/14",
+   "ties": 16
+  },
+  "cv_n2|capped_strong|game_wins": {
+   "C": "315/128",
+   "G": 5,
+   "U_bought": "-1809/800",
+   "U_money": "639/3200",
+   "discordant": 23,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "1009/1600",
+    "bid_mid": "129/400",
+    "bid_min": "53/1600",
+    "eq_fpsb": "39/320",
+    "eq_spsb": "529/1600",
+    "overbid_5_4": "667/1600",
+    "shade_1_4": "17/800",
+    "shade_3_4": "73/320"
+   },
+   "tau": "-9/14",
+   "ties": 0
+  },
+  "cv_n2|capped_strong|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "639/3200",
+   "U_money": "639/3200",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-1809/800",
+    "bid_mid": "-63/800",
+    "bid_min": "71/1600",
+    "eq_fpsb": "639/3200",
+    "eq_spsb": "-261/1600",
+    "overbid_5_4": "-3431/6400",
+    "shade_1_4": "53/1280",
+    "shade_3_4": "191/1280"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n2|capped_strong|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "639/3200",
+   "U_money": "639/3200",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-506317/14040",
+    "bid_mid": "-604651/147420",
+    "bid_min": "1817/9828",
+    "eq_fpsb": "3/4",
+    "eq_spsb": "-519599/147420",
+    "overbid_5_4": "-717151/78624",
+    "shade_1_4": "14279/90720",
+    "shade_3_4": "319429/1179360"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "cv_n2|capped_strong|relative_pair": {
+   "C": "323/6400",
+   "G": 1,
+   "U_bought": "191/1280",
+   "U_money": "639/3200",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "-3795/5252",
+    "bid_mid": "361313634505/893063819232",
+    "bid_min": "881541534365/1635159014008",
+    "eq_fpsb": "1935751145/2587628888",
+    "eq_spsb": "62228095/527437352",
+    "overbid_5_4": "-20519055/143010647",
+    "shade_1_4": "14000477182745/26124841870296",
+    "shade_3_4": "44519960856725/51111820493448"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "cv_n2|capped_strong|strict_wins": {
+   "C": "323/6400",
+   "G": 3,
+   "U_bought": "191/1280",
+   "U_money": "639/3200",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "3/4",
+    "bid_min": "3/4",
+    "eq_fpsb": "3/4",
+    "eq_spsb": "1/2",
+    "overbid_5_4": "1/4",
+    "shade_1_4": "3/4",
+    "shade_3_4": "1"
+   },
+   "tau": "9/14",
+   "ties": 6
+  },
+  "cv_n2|capped_strong|win_count": {
+   "C": "323/6400",
+   "G": 1,
+   "U_bought": "191/1280",
+   "U_money": "639/3200",
+   "discordant": 3,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "1/8",
+    "bid_mid": "3/4",
+    "bid_min": "3/4",
+    "eq_fpsb": "7/8",
+    "eq_spsb": "5/8",
+    "overbid_5_4": "3/8",
+    "shade_1_4": "3/4",
+    "shade_3_4": "1"
+   },
+   "tau": "11/14",
+   "ties": 3
+  },
+  "cv_n2|strong_skew|champion": {
+   "C": "159/1100",
+   "G": 4,
+   "U_bought": "2781/8800",
+   "U_money": "4053/8800",
+   "discordant": 14,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "0",
+   "ties": 21
+  },
+  "cv_n2|strong_skew|game_wins": {
+   "C": "25961/8800",
+   "G": 5,
+   "U_bought": "-5477/2200",
+   "U_money": "4053/8800",
+   "discordant": 24,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "3097/4400",
+    "bid_mid": "519/1100",
+    "bid_min": "43/440",
+    "eq_fpsb": "47/200",
+    "eq_spsb": "43/88",
+    "overbid_5_4": "1231/2200",
+    "shade_1_4": "411/4400",
+    "shade_3_4": "1653/4400"
+   },
+   "tau": "-5/7",
+   "ties": 0
+  },
+  "cv_n2|strong_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "4053/8800",
+   "U_money": "4053/8800",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-5477/2200",
+    "bid_mid": "97/4400",
+    "bid_min": "981/4400",
+    "eq_fpsb": "4053/8800",
+    "eq_spsb": "-677/4400",
+    "overbid_5_4": "-177/275",
+    "shade_1_4": "27/88",
+    "shade_3_4": "2781/8800"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n2|strong_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "4053/8800",
+   "U_money": "4053/8800",
+   "discordant": 2,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-23333198287241/1144023296130",
+    "bid_mid": "-23116552196873/12012244609365",
+    "bid_min": "119033000/399011613",
+    "eq_fpsb": "75479350/93849327",
+    "eq_spsb": "-23015727033037/12012244609365",
+    "overbid_5_4": "-11396409316021/2135510152776",
+    "shade_1_4": "1160694943/3953509560",
+    "shade_3_4": "250519721849/430932542040"
+   },
+   "tau": "6/7",
+   "ties": 0
+  },
+  "cv_n2|strong_skew|relative_pair": {
+   "C": "159/1100",
+   "G": 1,
+   "U_bought": "2781/8800",
+   "U_money": "4053/8800",
+   "discordant": 3,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "-25895/28886",
+    "bid_mid": "14836649996735/87799336728246",
+    "bid_min": "-1994188956661457586055/27129347503913795893896",
+    "eq_fpsb": "16563165683843257341165/44664523108249669778296",
+    "eq_spsb": "-240724056917941225/635303028321873678",
+    "overbid_5_4": "-1616211333978380781220/2777412634199436733929",
+    "shade_1_4": "-4935706953729600085/1037039766413974043864",
+    "shade_3_4": "14298527522302386161765/20371108047269815207086"
+   },
+   "tau": "11/14",
+   "ties": 0
+  },
+  "cv_n2|strong_skew|strict_wins": {
+   "C": "159/1100",
+   "G": 2,
+   "U_bought": "2781/8800",
+   "U_money": "4053/8800",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "6/11",
+    "bid_min": "4/11",
+    "eq_fpsb": "6/11",
+    "eq_spsb": "3/11",
+    "overbid_5_4": "1/11",
+    "shade_1_4": "5/11",
+    "shade_3_4": "9/11"
+   },
+   "tau": "5/7",
+   "ties": 1
+  },
+  "cv_n2|strong_skew|win_count": {
+   "C": "159/1100",
+   "G": 1,
+   "U_bought": "2781/8800",
+   "U_money": "4053/8800",
+   "discordant": 3,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "1/22",
+    "bid_mid": "13/22",
+    "bid_min": "9/22",
+    "eq_fpsb": "7/11",
+    "eq_spsb": "4/11",
+    "overbid_5_4": "3/22",
+    "shade_1_4": "1/2",
+    "shade_3_4": "10/11"
+   },
+   "tau": "11/14",
+   "ties": 0
+  },
+  "cv_n2|uniform|champion": {
+   "C": "2327/12800",
+   "G": 4,
+   "U_bought": "849/2560",
+   "U_money": "1643/3200",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "cv_n2|uniform|game_wins": {
+   "C": "9461/3200",
+   "G": 5,
+   "U_bought": "-3909/1600",
+   "U_money": "1643/3200",
+   "discordant": 24,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "2209/3200",
+    "bid_mid": "183/400",
+    "bid_min": "353/3200",
+    "eq_fpsb": "199/800",
+    "eq_spsb": "377/800",
+    "overbid_5_4": "1719/3200",
+    "shade_1_4": "23/200",
+    "shade_3_4": "1183/3200"
+   },
+   "tau": "-5/7",
+   "ties": 0
+  },
+  "cv_n2|uniform|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1643/3200",
+   "U_money": "1643/3200",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-3909/1600",
+    "bid_mid": "7/128",
+    "bid_min": "441/1600",
+    "eq_fpsb": "1643/3200",
+    "eq_spsb": "-437/3200",
+    "overbid_5_4": "-7837/12800",
+    "shade_1_4": "5079/12800",
+    "shade_3_4": "849/2560"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n2|uniform|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1643/3200",
+   "U_money": "1643/3200",
+   "discordant": 2,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-17559451084861/832016942640",
+    "bid_mid": "-17602365835573/8736177897720",
+    "bid_min": "80633281/290190264",
+    "eq_fpsb": "12805241/17063514",
+    "eq_spsb": "-17189238015917/8736177897720",
+    "overbid_5_4": "-8377799698913/1553098292928",
+    "shade_1_4": "932802893/2875279680",
+    "shade_3_4": "158127871999/313405485120"
+   },
+   "tau": "6/7",
+   "ties": 0
+  },
+  "cv_n2|uniform|relative_pair": {
+   "C": "2327/12800",
+   "G": 1,
+   "U_bought": "849/2560",
+   "U_money": "1643/3200",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "-9045/10504",
+    "bid_mid": "83493753852785/255416252300352",
+    "bid_min": "-337550581702326319495/19730434548300942468288",
+    "eq_fpsb": "14588042705245941153005/32483289533272487111488",
+    "eq_spsb": "-1383528547558933675/5082424226574989424",
+    "overbid_5_4": "-991972224358994567575/2019936461235953988312",
+    "shade_1_4": "66670064788302333035/754210739210162940992",
+    "shade_3_4": "11513512029283741781725/14815351307105320150608"
+   },
+   "tau": "5/7",
+   "ties": 0
+  },
+  "cv_n2|uniform|strict_wins": {
+   "C": "2327/12800",
+   "G": 2,
+   "U_bought": "849/2560",
+   "U_money": "1643/3200",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "5/8",
+    "bid_min": "3/8",
+    "eq_fpsb": "5/8",
+    "eq_spsb": "3/8",
+    "overbid_5_4": "1/8",
+    "shade_1_4": "1/2",
+    "shade_3_4": "7/8"
+   },
+   "tau": "9/14",
+   "ties": 2
+  },
+  "cv_n2|uniform|win_count": {
+   "C": "2327/12800",
+   "G": 2,
+   "U_bought": "849/2560",
+   "U_money": "1643/3200",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/16",
+    "bid_mid": "11/16",
+    "bid_min": "7/16",
+    "eq_fpsb": "11/16",
+    "eq_spsb": "7/16",
+    "overbid_5_4": "3/16",
+    "shade_1_4": "9/16",
+    "shade_3_4": "15/16"
+   },
+   "tau": "9/14",
+   "ties": 2
+  },
+  "cv_n2|weak_skew|champion": {
+   "C": "2193/8800",
+   "G": 4,
+   "U_bought": "449/1100",
+   "U_money": "1157/1760",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "cv_n2|weak_skew|game_wins": {
+   "C": "27721/8800",
+   "G": 5,
+   "U_bought": "-1371/550",
+   "U_money": "1157/1760",
+   "discordant": 24,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "3109/4400",
+    "bid_mid": "1107/2200",
+    "bid_min": "629/4400",
+    "eq_fpsb": "669/2200",
+    "eq_spsb": "103/200",
+    "overbid_5_4": "629/1100",
+    "shade_1_4": "173/1100",
+    "shade_3_4": "1851/4400"
+   },
+   "tau": "-5/7",
+   "ties": 0
+  },
+  "cv_n2|weak_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1157/1760",
+   "U_money": "1157/1760",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-1371/550",
+    "bid_mid": "1/8",
+    "bid_min": "333/880",
+    "eq_fpsb": "1157/1760",
+    "eq_spsb": "-261/2200",
+    "overbid_5_4": "-2759/4400",
+    "shade_1_4": "983/1760",
+    "shade_3_4": "449/1100"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n2|weak_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1157/1760",
+   "U_money": "1157/1760",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-18872141701861/1144023296130",
+    "bid_mid": "-1487988546893/1092022237215",
+    "bid_min": "11169713/36273783",
+    "eq_fpsb": "69651785/93849327",
+    "eq_spsb": "-17850169090007/12012244609365",
+    "overbid_5_4": "-9004893419453/2135510152776",
+    "shade_1_4": "1574816993/3953509560",
+    "shade_3_4": "234637207699/430932542040"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "cv_n2|weak_skew|relative_pair": {
+   "C": "2193/8800",
+   "G": 1,
+   "U_bought": "449/1100",
+   "U_money": "1157/1760",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "-25965/28886",
+    "bid_mid": "147177992292035/351197346912984",
+    "bid_min": "-1973200533684434470045/13564673751956897946948",
+    "eq_fpsb": "9543620440459665546235/22332261554124834889148",
+    "eq_spsb": "-2433970898147270485/6988333311540610458",
+    "overbid_5_4": "-1591428819276566036120/2777412634199436733929",
+    "shade_1_4": "24854821678618718335/1555559649620961065796",
+    "shade_3_4": "16574711717672587065025/20371108047269815207086"
+   },
+   "tau": "5/7",
+   "ties": 0
+  },
+  "cv_n2|weak_skew|strict_wins": {
+   "C": "2193/8800",
+   "G": 2,
+   "U_bought": "449/1100",
+   "U_money": "1157/1760",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "7/11",
+    "bid_min": "3/11",
+    "eq_fpsb": "7/11",
+    "eq_spsb": "4/11",
+    "overbid_5_4": "1/11",
+    "shade_1_4": "5/11",
+    "shade_3_4": "10/11"
+   },
+   "tau": "4/7",
+   "ties": 1
+  },
+  "cv_n2|weak_skew|win_count": {
+   "C": "2193/8800",
+   "G": 2,
+   "U_bought": "449/1100",
+   "U_money": "1157/1760",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/22",
+    "bid_mid": "8/11",
+    "bid_min": "4/11",
+    "eq_fpsb": "15/22",
+    "eq_spsb": "9/22",
+    "overbid_5_4": "3/22",
+    "shade_1_4": "6/11",
+    "shade_3_4": "21/22"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "cv_n4|capped_strong|champion": {
+   "C": "29429/320000",
+   "G": 2,
+   "U_bought": "-123/5000",
+   "U_money": "21557/320000",
+   "discordant": 11,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "1",
+    "bid_min": "0",
+    "eq_fpsb": "1",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "3/14",
+   "ties": 13
+  },
+  "cv_n4|capped_strong|game_wins": {
+   "C": "573533/320000",
+   "G": 4,
+   "U_bought": "-68997/40000",
+   "U_money": "21557/320000",
+   "discordant": 21,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "37611/80000",
+    "bid_mid": "1921/10000",
+    "bid_min": "197/80000",
+    "eq_fpsb": "3317/80000",
+    "eq_spsb": "15179/80000",
+    "overbid_5_4": "4213/16000",
+    "shade_1_4": "11/8000",
+    "shade_3_4": "9323/80000"
+   },
+   "tau": "-1/2",
+   "ties": 0
+  },
+  "cv_n4|capped_strong|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "21557/320000",
+   "U_money": "21557/320000",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-68997/40000",
+    "bid_mid": "-123/5000",
+    "bid_min": "239/80000",
+    "eq_fpsb": "10191/160000",
+    "eq_spsb": "-10033/80000",
+    "overbid_5_4": "-133479/320000",
+    "shade_1_4": "817/320000",
+    "shade_3_4": "21557/320000"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n4|capped_strong|norm_by_best": {
+   "C": "47/12800",
+   "G": 3,
+   "U_bought": "10191/160000",
+   "U_money": "21557/320000",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "-21853379399/37710340",
+    "bid_mid": "-68405433/1885517",
+    "bid_min": "19007/327916",
+    "eq_fpsb": "32459/44920",
+    "eq_spsb": "-1373099521/37710340",
+    "overbid_5_4": "-18195000173/150841360",
+    "shade_1_4": "1865579/30168272",
+    "shade_3_4": "-31603/26864"
+   },
+   "tau": "5/7",
+   "ties": 0
+  },
+  "cv_n4|capped_strong|relative_pair": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "21557/320000",
+   "U_money": "21557/320000",
+   "discordant": 2,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-1788133688253/2437218400960",
+    "bid_mid": "109400037/172283671",
+    "bid_min": "3060118244377/6132240368064",
+    "eq_fpsb": "12052131673/16110448739",
+    "eq_spsb": "67522767/381969280",
+    "overbid_5_4": "-8961153331/46870060160",
+    "shade_1_4": "1528528931247289/3073842573242408",
+    "shade_3_4": "11872487347163153/12504854092955760"
+   },
+   "tau": "6/7",
+   "ties": 0
+  },
+  "cv_n4|capped_strong|strict_wins": {
+   "C": "29429/320000",
+   "G": 1,
+   "U_bought": "-123/5000",
+   "U_money": "21557/320000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "1",
+    "bid_min": "3/4",
+    "eq_fpsb": "3/4",
+    "eq_spsb": "1/2",
+    "overbid_5_4": "1/4",
+    "shade_1_4": "3/4",
+    "shade_3_4": "1"
+   },
+   "tau": "9/14",
+   "ties": 4
+  },
+  "cv_n4|capped_strong|win_count": {
+   "C": "29429/320000",
+   "G": 1,
+   "U_bought": "-123/5000",
+   "U_money": "21557/320000",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "shade_3_4",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "1/8",
+    "bid_mid": "1",
+    "bid_min": "3/4",
+    "eq_fpsb": "7/8",
+    "eq_spsb": "5/8",
+    "overbid_5_4": "3/8",
+    "shade_1_4": "3/4",
+    "shade_3_4": "1"
+   },
+   "tau": "5/7",
+   "ties": 2
+  },
+  "cv_n4|strong_skew|champion": {
+   "C": "3443/40000",
+   "G": 4,
+   "U_bought": "8071/44000",
+   "U_money": "118583/440000",
+   "discordant": 14,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "0",
+   "ties": 21
+  },
+  "cv_n4|strong_skew|game_wins": {
+   "C": "1013407/440000",
+   "G": 5,
+   "U_bought": "-111853/55000",
+   "U_money": "118583/440000",
+   "discordant": 23,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "1003/1760",
+    "bid_mid": "34757/110000",
+    "bid_min": "373/13750",
+    "eq_fpsb": "14457/110000",
+    "eq_spsb": "37061/110000",
+    "overbid_5_4": "4131/10000",
+    "shade_1_4": "10337/220000",
+    "shade_3_4": "10513/44000"
+   },
+   "tau": "-9/14",
+   "ties": 0
+  },
+  "cv_n4|strong_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "118583/440000",
+   "U_money": "118583/440000",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-111853/55000",
+    "bid_mid": "3479/220000",
+    "bid_min": "15449/220000",
+    "eq_fpsb": "118583/440000",
+    "eq_spsb": "-7211/44000",
+    "overbid_5_4": "-246627/440000",
+    "shade_1_4": "73883/440000",
+    "shade_3_4": "8071/44000"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n4|strong_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "118583/440000",
+   "U_money": "118583/440000",
+   "discordant": 2,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-9924251590670442366635709/34758790248988216624235",
+    "bid_mid": "-659488552869539891462103/34758790248988216624235",
+    "bid_min": "55515081577908817/467156646045134287",
+    "eq_fpsb": "865480840974/1072698758065",
+    "eq_spsb": "-746143606311341621246504/34758790248988216624235",
+    "overbid_5_4": "-9139798435485465828173809/139035160995952866496940",
+    "shade_1_4": "285173516052157/1601103134379628",
+    "shade_3_4": "-6485136123450465/38271069845193548"
+   },
+   "tau": "6/7",
+   "ties": 0
+  },
+  "cv_n4|strong_skew|relative_pair": {
+   "C": "3443/40000",
+   "G": 1,
+   "U_bought": "8071/44000",
+   "U_money": "118583/440000",
+   "discordant": 3,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "-3021234032969/3351175301320",
+    "bid_mid": "1566866361821999/5086068849305268",
+    "bid_min": "-104492116445670062888935/661961397774079777723272",
+    "eq_fpsb": "38687838724571387328401/121348158299217491563152",
+    "eq_spsb": "-3147735872584687541/8108084185968671520",
+    "overbid_5_4": "-1025826974715351240529/1580486288523373821744",
+    "shade_1_4": "-3640713024398290863201991/159450263602977617230686440",
+    "shade_3_4": "1159272760369591651042039217/1484318013020325088327616895"
+   },
+   "tau": "11/14",
+   "ties": 0
+  },
+  "cv_n4|strong_skew|strict_wins": {
+   "C": "3443/40000",
+   "G": 2,
+   "U_bought": "8071/44000",
+   "U_money": "118583/440000",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "8/11",
+    "bid_min": "4/11",
+    "eq_fpsb": "6/11",
+    "eq_spsb": "2/11",
+    "overbid_5_4": "1/11",
+    "shade_1_4": "5/11",
+    "shade_3_4": "9/11"
+   },
+   "tau": "5/7",
+   "ties": 0
+  },
+  "cv_n4|strong_skew|win_count": {
+   "C": "3443/40000",
+   "G": 2,
+   "U_bought": "8071/44000",
+   "U_money": "118583/440000",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/22",
+    "bid_mid": "17/22",
+    "bid_min": "9/22",
+    "eq_fpsb": "7/11",
+    "eq_spsb": "3/11",
+    "overbid_5_4": "3/22",
+    "shade_1_4": "1/2",
+    "shade_3_4": "10/11"
+   },
+   "tau": "5/7",
+   "ties": 0
+  },
+  "cv_n4|uniform|champion": {
+   "C": "77111/640000",
+   "G": 4,
+   "U_bought": "138081/640000",
+   "U_money": "26899/80000",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "cv_n4|uniform|game_wins": {
+   "C": "2887/1250",
+   "G": 5,
+   "U_bought": "-157869/80000",
+   "U_money": "26899/80000",
+   "discordant": 24,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "17679/32000",
+    "bid_mid": "24889/80000",
+    "bid_min": "5723/160000",
+    "eq_fpsb": "12607/80000",
+    "eq_spsb": "6683/20000",
+    "overbid_5_4": "64239/160000",
+    "shade_1_4": "2553/40000",
+    "shade_3_4": "40317/160000"
+   },
+   "tau": "-5/7",
+   "ties": 0
+  },
+  "cv_n4|uniform|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "26899/80000",
+   "U_money": "26899/80000",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-157869/80000",
+    "bid_mid": "7703/160000",
+    "bid_min": "7577/80000",
+    "eq_fpsb": "26899/80000",
+    "eq_spsb": "-4407/32000",
+    "overbid_5_4": "-335523/640000",
+    "shade_1_4": "29371/128000",
+    "shade_3_4": "138081/640000"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n4|uniform|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "26899/80000",
+   "U_money": "26899/80000",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-1542597632141944387806319/5055824036216467872616",
+    "bid_mid": "-489999311058306039855643/25279120181082339363080",
+    "bid_min": "5002443925078918/42468786004103117",
+    "eq_fpsb": "1167232563709/1560289102640",
+    "eq_spsb": "-255788265336093283586089/12639560090541169681540",
+    "overbid_5_4": "-3295184856592195499115473/50558240362164678726160",
+    "shade_1_4": "125757292359187/582219321592592",
+    "shade_3_4": "-396482023930807/1739594083872434"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "cv_n4|uniform|relative_pair": {
+   "C": "77111/640000",
+   "G": 2,
+   "U_bought": "138081/640000",
+   "U_money": "26899/80000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "-4224255626013/4874436801920",
+    "bid_mid": "3815138957085643/8630904713972576",
+    "bid_min": "-89651736707653723751185/962852942216843313052032",
+    "eq_fpsb": "37179904184812688986157/88253206035794539318656",
+    "eq_spsb": "-1711553576223193397/5896788498886306560",
+    "overbid_5_4": "-6376902301383322514411/11494445734715445976320",
+    "shade_1_4": "10901934944532932458142657/115963828074892812531408320",
+    "shade_3_4": "3659203579341848603753750627/4318016037877309347862158240"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "cv_n4|uniform|strict_wins": {
+   "C": "77111/640000",
+   "G": 2,
+   "U_bought": "138081/640000",
+   "U_money": "26899/80000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "3/4",
+    "bid_min": "3/8",
+    "eq_fpsb": "5/8",
+    "eq_spsb": "1/4",
+    "overbid_5_4": "1/8",
+    "shade_1_4": "1/2",
+    "shade_3_4": "7/8"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "cv_n4|uniform|win_count": {
+   "C": "77111/640000",
+   "G": 2,
+   "U_bought": "138081/640000",
+   "U_money": "26899/80000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/16",
+    "bid_mid": "13/16",
+    "bid_min": "7/16",
+    "eq_fpsb": "11/16",
+    "eq_spsb": "5/16",
+    "overbid_5_4": "3/16",
+    "shade_1_4": "9/16",
+    "shade_3_4": "15/16"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "cv_n4|weak_skew|champion": {
+   "C": "1763/10000",
+   "G": 4,
+   "U_bought": "126587/440000",
+   "U_money": "204159/440000",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "cv_n4|weak_skew|game_wins": {
+   "C": "1102251/440000",
+   "G": 5,
+   "U_bought": "-224523/110000",
+   "U_money": "204159/440000",
+   "discordant": 24,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "126483/220000",
+    "bid_mid": "9793/27500",
+    "bid_min": "11201/220000",
+    "eq_fpsb": "1459/6875",
+    "eq_spsb": "42357/110000",
+    "overbid_5_4": "12263/27500",
+    "shade_1_4": "10149/110000",
+    "shade_3_4": "68137/220000"
+   },
+   "tau": "-5/7",
+   "ties": 0
+  },
+  "cv_n4|weak_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "204159/440000",
+   "U_money": "204159/440000",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-224523/110000",
+    "bid_mid": "10993/110000",
+    "bid_min": "30013/220000",
+    "eq_fpsb": "204159/440000",
+    "eq_spsb": "-111/880",
+    "overbid_5_4": "-60043/110000",
+    "shade_1_4": "36599/110000",
+    "shade_3_4": "126587/440000"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "cv_n4|weak_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "204159/440000",
+   "U_money": "204159/440000",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-7767749425049095685632811/34758790248988216624235",
+    "bid_mid": "-44256975706304151399146/3159890022635292420385",
+    "bid_min": "64543572623985215/467156646045134287",
+    "eq_fpsb": "1575699871349/2145397516130",
+    "eq_spsb": "-103147270315359348689792/6951758049797643324847",
+    "overbid_5_4": "-1663183598131106865521831/34758790248988216624235",
+    "shade_1_4": "114573853512733/400275783594907",
+    "shade_3_4": "363929089986129/19135534922596774"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "cv_n4|weak_skew|relative_pair": {
+   "C": "1763/10000",
+   "G": 2,
+   "U_bought": "126587/440000",
+   "U_money": "204159/440000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "-6051347079333/6702350602640",
+    "bid_mid": "2983044178690001/5933746990856146",
+    "bid_min": "-300421692740160173760223/1323922795548159555446544",
+    "eq_fpsb": "25405191316257018191843/60674079149608745781576",
+    "eq_spsb": "-3241064903431044637/8108084185968671520",
+    "overbid_5_4": "-10237667550936532880471/15804862885233738217440",
+    "shade_1_4": "3693343081617321679094891/79725131801488808615343220",
+    "shade_3_4": "478961775637210289742756913/539752004734663668482769780"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "cv_n4|weak_skew|strict_wins": {
+   "C": "1763/10000",
+   "G": 2,
+   "U_bought": "126587/440000",
+   "U_money": "204159/440000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "8/11",
+    "bid_min": "3/11",
+    "eq_fpsb": "7/11",
+    "eq_spsb": "2/11",
+    "overbid_5_4": "1/11",
+    "shade_1_4": "5/11",
+    "shade_3_4": "10/11"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "cv_n4|weak_skew|win_count": {
+   "C": "1763/10000",
+   "G": 2,
+   "U_bought": "126587/440000",
+   "U_money": "204159/440000",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/22",
+    "bid_mid": "9/11",
+    "bid_min": "4/11",
+    "eq_fpsb": "15/22",
+    "eq_spsb": "5/22",
+    "overbid_5_4": "3/22",
+    "shade_1_4": "6/11",
+    "shade_3_4": "21/22"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "fpsb_n2|capped_strong|champion": {
+   "C": "445/1024",
+   "G": 1,
+   "U_bought": "7/32",
+   "U_money": "669/1024",
+   "discordant": 10,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 2,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "1",
+    "bid_min": "0",
+    "eq_fpsb": "1",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "2/7",
+   "ties": 13
+  },
+  "fpsb_n2|capped_strong|game_wins": {
+   "C": "3637/1024",
+   "G": 5,
+   "U_bought": "-371/128",
+   "U_money": "669/1024",
+   "discordant": 21,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "53/64",
+    "bid_mid": "7/16",
+    "bid_min": "1/16",
+    "eq_fpsb": "113/512",
+    "eq_spsb": "223/512",
+    "overbid_5_4": "33/64",
+    "shade_1_4": "45/512",
+    "shade_3_4": "169/512"
+   },
+   "tau": "-1/2",
+   "ties": 0
+  },
+  "fpsb_n2|capped_strong|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "669/1024",
+   "U_money": "669/1024",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-371/128",
+    "bid_mid": "7/32",
+    "bid_min": "7/32",
+    "eq_fpsb": "669/1024",
+    "eq_spsb": "0",
+    "overbid_5_4": "-885/2048",
+    "shade_1_4": "837/2048",
+    "shade_3_4": "965/2048"
+   },
+   "tau": "1",
+   "ties": 1
+  },
+  "fpsb_n2|capped_strong|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "669/1024",
+   "U_money": "669/1024",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-17977/5332",
+    "bid_mid": "4111/15996",
+    "bid_min": "73/372",
+    "eq_fpsb": "3/4",
+    "eq_spsb": "0",
+    "overbid_5_4": "-238873/447888",
+    "shade_1_4": "33505/74648",
+    "shade_3_4": "253625/447888"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "fpsb_n2|capped_strong|relative_pair": {
+   "C": "445/1024",
+   "G": 2,
+   "U_bought": "7/32",
+   "U_money": "669/1024",
+   "discordant": 4,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "-70863321625/95790286836",
+    "bid_mid": "10158074212375/12320992572084",
+    "bid_min": "29362340106625/47627761839084",
+    "eq_fpsb": "540136203625/720812158506",
+    "eq_spsb": "289425102875/1158499756524",
+    "overbid_5_4": "-88808337125/342366175254",
+    "shade_1_4": "5655694248423125/8556180129798048",
+    "shade_3_4": "5644120830065125/7502051590242048"
+   },
+   "tau": "5/7",
+   "ties": 0
+  },
+  "fpsb_n2|capped_strong|strict_wins": {
+   "C": "445/1024",
+   "G": 3,
+   "U_bought": "7/32",
+   "U_money": "669/1024",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "1",
+    "bid_min": "3/4",
+    "eq_fpsb": "3/4",
+    "eq_spsb": "1/2",
+    "overbid_5_4": "1/4",
+    "shade_1_4": "3/4",
+    "shade_3_4": "1"
+   },
+   "tau": "4/7",
+   "ties": 4
+  },
+  "fpsb_n2|capped_strong|win_count": {
+   "C": "445/1024",
+   "G": 2,
+   "U_bought": "7/32",
+   "U_money": "669/1024",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/8",
+    "bid_mid": "1",
+    "bid_min": "3/4",
+    "eq_fpsb": "7/8",
+    "eq_spsb": "5/8",
+    "overbid_5_4": "3/8",
+    "shade_1_4": "3/4",
+    "shade_3_4": "1"
+   },
+   "tau": "9/14",
+   "ties": 2
+  },
+  "fpsb_n2|strong_skew|champion": {
+   "C": "39/128",
+   "G": 4,
+   "U_bought": "1959/2816",
+   "U_money": "2817/2816",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "fpsb_n2|strong_skew|game_wins": {
+   "C": "1091/256",
+   "G": 5,
+   "U_bought": "-287/88",
+   "U_money": "2817/2816",
+   "discordant": 23,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "41/44",
+    "bid_mid": "5/8",
+    "bid_min": "27/176",
+    "eq_fpsb": "497/1408",
+    "eq_spsb": "861/1408",
+    "overbid_5_4": "963/1408",
+    "shade_1_4": "251/1408",
+    "shade_3_4": "703/1408"
+   },
+   "tau": "-9/14",
+   "ties": 0
+  },
+  "fpsb_n2|strong_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "2817/2816",
+   "U_money": "2817/2816",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-287/88",
+    "bid_mid": "5/16",
+    "bid_min": "189/352",
+    "eq_fpsb": "2817/2816",
+    "eq_spsb": "0",
+    "overbid_5_4": "-819/1408",
+    "shade_1_4": "417/512",
+    "shade_3_4": "1959/2816"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "fpsb_n2|strong_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "2817/2816",
+   "U_money": "2817/2816",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-34809730/10425393",
+    "bid_mid": "20963494/72977751",
+    "bid_min": "85612/242451",
+    "eq_fpsb": "17837/21483",
+    "eq_spsb": "0",
+    "overbid_5_4": "-4694377/8108639",
+    "shade_1_4": "9284203/16217278",
+    "shade_3_4": "15947681/24325917"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "fpsb_n2|strong_skew|relative_pair": {
+   "C": "1937/2816",
+   "G": 2,
+   "U_bought": "5/16",
+   "U_money": "2817/2816",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "-238447986250/263423288799",
+    "bid_mid": "434859629478303125/812925742164149229",
+    "bid_min": "2041263470141032991500/27522005293697973790347",
+    "eq_fpsb": "38329377384722012202868344875/92727364486513661363134567584",
+    "eq_spsb": "-112847869635988654875/249079802496498427784",
+    "overbid_5_4": "-133827659602483107707375/183338442488072432039017",
+    "shade_1_4": "51409128791260771794861625/290131236866333783005248636",
+    "shade_3_4": "12478791225866434592926625/26886631471200619546915872"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "fpsb_n2|strong_skew|strict_wins": {
+   "C": "39/128",
+   "G": 2,
+   "U_bought": "1959/2816",
+   "U_money": "2817/2816",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "8/11",
+    "bid_min": "4/11",
+    "eq_fpsb": "6/11",
+    "eq_spsb": "2/11",
+    "overbid_5_4": "1/11",
+    "shade_1_4": "5/11",
+    "shade_3_4": "9/11"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "fpsb_n2|strong_skew|win_count": {
+   "C": "39/128",
+   "G": 2,
+   "U_bought": "1959/2816",
+   "U_money": "2817/2816",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/22",
+    "bid_mid": "17/22",
+    "bid_min": "9/22",
+    "eq_fpsb": "7/11",
+    "eq_spsb": "3/11",
+    "overbid_5_4": "3/22",
+    "shade_1_4": "1/2",
+    "shade_3_4": "10/11"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "fpsb_n2|uniform|champion": {
+   "C": "323/1024",
+   "G": 4,
+   "U_bought": "697/1024",
+   "U_money": "255/256",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "fpsb_n2|uniform|game_wins": {
+   "C": "537/128",
+   "G": 5,
+   "U_bought": "-819/256",
+   "U_money": "255/256",
+   "discordant": 23,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "117/128",
+    "bid_mid": "39/64",
+    "bid_min": "21/128",
+    "eq_fpsb": "365/1024",
+    "eq_spsb": "615/1024",
+    "overbid_5_4": "343/512",
+    "shade_1_4": "197/1024",
+    "shade_3_4": "505/1024"
+   },
+   "tau": "-9/14",
+   "ties": 0
+  },
+  "fpsb_n2|uniform|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "255/256",
+   "U_money": "255/256",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-819/256",
+    "bid_mid": "39/128",
+    "bid_min": "147/256",
+    "eq_fpsb": "255/256",
+    "eq_spsb": "0",
+    "overbid_5_4": "-2311/4096",
+    "shade_1_4": "1797/2048",
+    "shade_3_4": "697/1024"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "fpsb_n2|uniform|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "255/256",
+   "U_money": "255/256",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-24205027/7582104",
+    "bid_mid": "14372497/53074728",
+    "bid_min": "57895/176328",
+    "eq_fpsb": "5989/7812",
+    "eq_spsb": "0",
+    "overbid_5_4": "-1845801/3369824",
+    "shade_1_4": "1629815/2948596",
+    "shade_3_4": "14636429/23588768"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "fpsb_n2|uniform|relative_pair": {
+   "C": "177/256",
+   "G": 2,
+   "U_bought": "39/128",
+   "U_money": "255/256",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "-166626247625/191580573672",
+    "bid_mid": "547543790963444125/886828082360890068",
+    "bid_min": "215893446910829396875/2224000427773573639624",
+    "eq_fpsb": "60035517237236383643326616875/134876166525838052891832098304",
+    "eq_spsb": "-67637628081838808875/181148947270180674752",
+    "overbid_5_4": "-125831360362250681292625/200005573623351744042564",
+    "shade_1_4": "84743812270746445993351625/422009071805576411643998016",
+    "shade_3_4": "20017215147507812781384625/39107827594473628431877632"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "fpsb_n2|uniform|strict_wins": {
+   "C": "323/1024",
+   "G": 2,
+   "U_bought": "697/1024",
+   "U_money": "255/256",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "3/4",
+    "bid_min": "3/8",
+    "eq_fpsb": "5/8",
+    "eq_spsb": "1/4",
+    "overbid_5_4": "1/8",
+    "shade_1_4": "1/2",
+    "shade_3_4": "7/8"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "fpsb_n2|uniform|win_count": {
+   "C": "323/1024",
+   "G": 2,
+   "U_bought": "697/1024",
+   "U_money": "255/256",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/16",
+    "bid_mid": "13/16",
+    "bid_min": "7/16",
+    "eq_fpsb": "11/16",
+    "eq_spsb": "5/16",
+    "overbid_5_4": "3/16",
+    "shade_1_4": "9/16",
+    "shade_3_4": "15/16"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "fpsb_n2|weak_skew|champion": {
+   "C": "2109/5632",
+   "G": 4,
+   "U_bought": "4239/5632",
+   "U_money": "1587/1408",
+   "discordant": 15,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 5,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "0",
+    "shade_1_4": "0",
+    "shade_3_4": "1"
+   },
+   "tau": "-1/14",
+   "ties": 21
+  },
+  "fpsb_n2|weak_skew|game_wins": {
+   "C": "6207/1408",
+   "G": 5,
+   "U_bought": "-105/32",
+   "U_money": "1587/1408",
+   "discordant": 23,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "15/16",
+    "bid_mid": "59/88",
+    "bid_min": "9/44",
+    "eq_fpsb": "577/1408",
+    "eq_spsb": "925/1408",
+    "overbid_5_4": "1015/1408",
+    "shade_1_4": "333/1408",
+    "shade_3_4": "777/1408"
+   },
+   "tau": "-9/14",
+   "ties": 0
+  },
+  "fpsb_n2|weak_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1587/1408",
+   "U_money": "1587/1408",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-105/32",
+    "bid_mid": "59/176",
+    "bid_min": "63/88",
+    "eq_fpsb": "1587/1408",
+    "eq_spsb": "0",
+    "overbid_5_4": "-213/352",
+    "shade_1_4": "3027/2816",
+    "shade_3_4": "4239/5632"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "fpsb_n2|weak_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1587/1408",
+   "U_money": "1587/1408",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "eq_fpsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "-32045303/10425393",
+    "bid_mid": "19685405/72977751",
+    "bid_min": "88073/242451",
+    "eq_fpsb": "16144/21483",
+    "eq_spsb": "0",
+    "overbid_5_4": "-52512877/97303668",
+    "shade_1_4": "4733928/8108639",
+    "shade_3_4": "60839935/97303668"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "fpsb_n2|weak_skew|relative_pair": {
+   "C": "1115/1408",
+   "G": 2,
+   "U_bought": "59/176",
+   "U_money": "1587/1408",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "bid_mid",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "-238448442125/263423288799",
+    "bid_mid": "1537616565140905250/2438777226492447687",
+    "bid_min": "-134692027374072141500/3058000588188663754483",
+    "eq_fpsb": "69747348928602958607340128875/185454728973027322726269135168",
+    "eq_spsb": "-202953263481791796625/373619703744747641676",
+    "overbid_5_4": "-133830388507123160831375/183338442488072432039017",
+    "shade_1_4": "45976508144504713370110625/580262473732667566010497272",
+    "shade_3_4": "25323167536461159734724625/53773262942401239093831744"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "fpsb_n2|weak_skew|strict_wins": {
+   "C": "2109/5632",
+   "G": 2,
+   "U_bought": "4239/5632",
+   "U_money": "1587/1408",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "8/11",
+    "bid_min": "3/11",
+    "eq_fpsb": "7/11",
+    "eq_spsb": "2/11",
+    "overbid_5_4": "1/11",
+    "shade_1_4": "5/11",
+    "shade_3_4": "10/11"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "fpsb_n2|weak_skew|win_count": {
+   "C": "2109/5632",
+   "G": 2,
+   "U_bought": "4239/5632",
+   "U_money": "1587/1408",
+   "discordant": 5,
+   "pairs": 28,
+   "pi_money": "eq_fpsb",
+   "pi_rank": "shade_3_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "1/22",
+    "bid_mid": "9/11",
+    "bid_min": "4/11",
+    "eq_fpsb": "15/22",
+    "eq_spsb": "5/22",
+    "overbid_5_4": "3/22",
+    "shade_1_4": "6/11",
+    "shade_3_4": "21/22"
+   },
+   "tau": "9/14",
+   "ties": 0
+  },
+  "spsb_n2|capped_strong|champion": {
+   "C": "97/2048",
+   "G": 5,
+   "U_bought": "2379/2048",
+   "U_money": "619/512",
+   "discordant": 16,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "1",
+    "shade_1_4": "0",
+    "shade_3_4": "0"
+   },
+   "tau": "-1/7",
+   "ties": 21
+  },
+  "spsb_n2|capped_strong|game_wins": {
+   "C": "571/512",
+   "G": 3,
+   "U_bought": "3/32",
+   "U_money": "619/512",
+   "discordant": 10,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "53/64",
+    "bid_mid": "7/16",
+    "bid_min": "1/16",
+    "eq_fpsb": "113/512",
+    "eq_spsb": "223/512",
+    "overbid_5_4": "33/64",
+    "shade_1_4": "45/512",
+    "shade_3_4": "169/512"
+   },
+   "tau": "2/7",
+   "ties": 0
+  },
+  "spsb_n2|capped_strong|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "619/512",
+   "U_money": "619/512",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "3/32",
+    "bid_mid": "63/64",
+    "bid_min": "15/64",
+    "eq_fpsb": "477/512",
+    "eq_spsb": "619/512",
+    "overbid_5_4": "2379/2048",
+    "shade_1_4": "937/2048",
+    "shade_3_4": "2367/2048"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|capped_strong|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "619/512",
+   "U_money": "619/512",
+   "discordant": 1,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "9969/55384",
+    "bid_mid": "98207/166152",
+    "bid_min": "19/168",
+    "eq_fpsb": "185327/332304",
+    "eq_spsb": "3/4",
+    "overbid_5_4": "240239/332304",
+    "shade_1_4": "175471/664608",
+    "shade_3_4": "10951/15456"
+   },
+   "tau": "13/14",
+   "ties": 0
+  },
+  "spsb_n2|capped_strong|relative_pair": {
+   "C": "97/2048",
+   "G": 3,
+   "U_bought": "2379/2048",
+   "U_money": "619/512",
+   "discordant": 9,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "233573125/716263698",
+    "bid_mid": "-940313656625/6513705023566",
+    "bid_min": "-510427821125/577485027594",
+    "eq_fpsb": "-6430516176625/12682186925512",
+    "eq_spsb": "-283905354625/1759834698024",
+    "overbid_5_4": "923505640125/2698125831188",
+    "shade_1_4": "-452450647791741625/580553765017568064",
+    "shade_3_4": "-43692876942198375/144573877314419596"
+   },
+   "tau": "5/14",
+   "ties": 0
+  },
+  "spsb_n2|capped_strong|strict_wins": {
+   "C": "97/2048",
+   "G": 3,
+   "U_bought": "2379/2048",
+   "U_money": "619/512",
+   "discordant": 11,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "1/2",
+    "bid_mid": "1/4",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "1/4",
+    "overbid_5_4": "3/4",
+    "shade_1_4": "0",
+    "shade_3_4": "1/4"
+   },
+   "tau": "3/14",
+   "ties": 6
+  },
+  "spsb_n2|capped_strong|win_count": {
+   "C": "97/2048",
+   "G": 2,
+   "U_bought": "2379/2048",
+   "U_money": "619/512",
+   "discordant": 9,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "5/8",
+    "bid_mid": "1/4",
+    "bid_min": "0",
+    "eq_fpsb": "1/8",
+    "eq_spsb": "3/8",
+    "overbid_5_4": "7/8",
+    "shade_1_4": "0",
+    "shade_3_4": "1/4"
+   },
+   "tau": "5/14",
+   "ties": 2
+  },
+  "spsb_n2|strong_skew|champion": {
+   "C": "83/2816",
+   "G": 5,
+   "U_bought": "5157/2816",
+   "U_money": "655/352",
+   "discordant": 14,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "1",
+    "shade_1_4": "0",
+    "shade_3_4": "0"
+   },
+   "tau": "0",
+   "ties": 21
+  },
+  "spsb_n2|strong_skew|game_wins": {
+   "C": "8/11",
+   "G": 3,
+   "U_bought": "399/352",
+   "U_money": "655/352",
+   "discordant": 8,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "41/44",
+    "bid_mid": "5/8",
+    "bid_min": "27/176",
+    "eq_fpsb": "497/1408",
+    "eq_spsb": "861/1408",
+    "overbid_5_4": "963/1408",
+    "shade_1_4": "251/1408",
+    "shade_3_4": "703/1408"
+   },
+   "tau": "3/7",
+   "ties": 0
+  },
+  "spsb_n2|strong_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "655/352",
+   "U_money": "655/352",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "399/352",
+    "bid_mid": "273/176",
+    "bid_min": "201/352",
+    "eq_fpsb": "525/352",
+    "eq_spsb": "655/352",
+    "overbid_5_4": "5157/2816",
+    "shade_1_4": "5175/5632",
+    "shade_3_4": "2531/1408"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|strong_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "655/352",
+   "U_money": "655/352",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "2485108006/5056939965",
+    "bid_mid": "322556473/459721815",
+    "bid_min": "10362839/47041302",
+    "eq_fpsb": "9046140113/13485173240",
+    "eq_spsb": "10/11",
+    "overbid_5_4": "1803963221/2022775986",
+    "shade_1_4": "274435169/735554904",
+    "shade_3_4": "135828491/156804340"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|strong_skew|relative_pair": {
+   "C": "8/11",
+   "G": 3,
+   "U_bought": "399/352",
+   "U_money": "655/352",
+   "discordant": 8,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "1100423947799045846125/1459263736332541651248",
+    "bid_mid": "902458417210849126217125/4288959020966331451691952",
+    "bid_min": "-5738135562458708375/8030271853563437841",
+    "eq_fpsb": "-323309432910295681012794250/1295983707286333478709636197",
+    "eq_spsb": "1113229198648047855376464625/6122438576487892217547119703",
+    "overbid_5_4": "8594194884318741987721907125/19816393260951579585608166654",
+    "shade_1_4": "-43811407117057517462566375/74229374568424526333282664",
+    "shade_3_4": "86857319728065061485656455625/4149508982474110670348795801709"
+   },
+   "tau": "3/7",
+   "ties": 0
+  },
+  "spsb_n2|strong_skew|strict_wins": {
+   "C": "83/2816",
+   "G": 2,
+   "U_bought": "5157/2816",
+   "U_money": "655/352",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "9/11",
+    "bid_mid": "6/11",
+    "bid_min": "0",
+    "eq_fpsb": "2/11",
+    "eq_spsb": "7/11",
+    "overbid_5_4": "10/11",
+    "shade_1_4": "1/11",
+    "shade_3_4": "4/11"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "spsb_n2|strong_skew|win_count": {
+   "C": "83/2816",
+   "G": 2,
+   "U_bought": "5157/2816",
+   "U_money": "655/352",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "19/22",
+    "bid_mid": "13/22",
+    "bid_min": "1/22",
+    "eq_fpsb": "3/11",
+    "eq_spsb": "8/11",
+    "overbid_5_4": "21/22",
+    "shade_1_4": "3/22",
+    "shade_3_4": "5/11"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "spsb_n2|uniform|champion": {
+   "C": "117/4096",
+   "G": 5,
+   "U_bought": "7471/4096",
+   "U_money": "1897/1024",
+   "discordant": 14,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "1",
+    "shade_1_4": "0",
+    "shade_3_4": "0"
+   },
+   "tau": "0",
+   "ties": 21
+  },
+  "spsb_n2|uniform|game_wins": {
+   "C": "761/1024",
+   "G": 3,
+   "U_bought": "71/64",
+   "U_money": "1897/1024",
+   "discordant": 8,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "117/128",
+    "bid_mid": "39/64",
+    "bid_min": "21/128",
+    "eq_fpsb": "365/1024",
+    "eq_spsb": "615/1024",
+    "overbid_5_4": "343/512",
+    "shade_1_4": "197/1024",
+    "shade_3_4": "505/1024"
+   },
+   "tau": "3/7",
+   "ties": 0
+  },
+  "spsb_n2|uniform|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1897/1024",
+   "U_money": "1897/1024",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "71/64",
+    "bid_mid": "399/256",
+    "bid_min": "39/64",
+    "eq_fpsb": "3085/2048",
+    "eq_spsb": "1897/1024",
+    "overbid_5_4": "7471/4096",
+    "shade_1_4": "2029/2048",
+    "shade_3_4": "3677/2048"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|uniform|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1897/1024",
+   "U_money": "1897/1024",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "1142125349/2451849680",
+    "bid_mid": "4896367781/7355549040",
+    "bid_min": "915875/4276482",
+    "eq_fpsb": "18795910789/29422196160",
+    "eq_spsb": "7/8",
+    "overbid_5_4": "2526939853/2942219616",
+    "shade_1_4": "1098633199/2942219616",
+    "shade_3_4": "570582211/684237120"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|uniform|relative_pair": {
+   "C": "761/1024",
+   "G": 3,
+   "U_bought": "71/64",
+   "U_money": "1897/1024",
+   "discordant": 8,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "703223365886844461125/1061282717332757564544",
+    "bid_mid": "597743773197747607379125/3119242924339150146685056",
+    "bid_min": "-169137987776916125/243341571320104177",
+    "eq_fpsb": "-29134334969324305648491125/117816700662393952609966927",
+    "eq_spsb": "1493647711380983717515547375/8905365202164206861886719568",
+    "overbid_5_4": "6800194816079774128312076125/14411922371601148789533212112",
+    "shade_1_4": "-30598773679863487765238875/53984999686126928242387392",
+    "shade_3_4": "92549009324377935191137423375/6035649429053251884143702984304"
+   },
+   "tau": "3/7",
+   "ties": 0
+  },
+  "spsb_n2|uniform|strict_wins": {
+   "C": "117/4096",
+   "G": 2,
+   "U_bought": "7471/4096",
+   "U_money": "1897/1024",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "3/4",
+    "bid_mid": "1/2",
+    "bid_min": "0",
+    "eq_fpsb": "1/4",
+    "eq_spsb": "5/8",
+    "overbid_5_4": "7/8",
+    "shade_1_4": "1/8",
+    "shade_3_4": "3/8"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "spsb_n2|uniform|win_count": {
+   "C": "117/4096",
+   "G": 2,
+   "U_bought": "7471/4096",
+   "U_money": "1897/1024",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "13/16",
+    "bid_mid": "9/16",
+    "bid_min": "1/16",
+    "eq_fpsb": "5/16",
+    "eq_spsb": "11/16",
+    "overbid_5_4": "15/16",
+    "shade_1_4": "3/16",
+    "shade_3_4": "7/16"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "spsb_n2|weak_skew|champion": {
+   "C": "59/2816",
+   "G": 5,
+   "U_bought": "5825/2816",
+   "U_money": "1471/704",
+   "discordant": 14,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 6,
+   "scores": {
+    "bid_max": "0",
+    "bid_mid": "0",
+    "bid_min": "0",
+    "eq_fpsb": "0",
+    "eq_spsb": "0",
+    "overbid_5_4": "1",
+    "shade_1_4": "0",
+    "shade_3_4": "0"
+   },
+   "tau": "0",
+   "ties": 21
+  },
+  "spsb_n2|weak_skew|game_wins": {
+   "C": "431/704",
+   "G": 3,
+   "U_bought": "65/44",
+   "U_money": "1471/704",
+   "discordant": 8,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "15/16",
+    "bid_mid": "59/88",
+    "bid_min": "9/44",
+    "eq_fpsb": "577/1408",
+    "eq_spsb": "925/1408",
+    "overbid_5_4": "1015/1408",
+    "shade_1_4": "333/1408",
+    "shade_3_4": "777/1408"
+   },
+   "tau": "3/7",
+   "ties": 0
+  },
+  "spsb_n2|weak_skew|mean_payoff": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1471/704",
+   "U_money": "1471/704",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "65/44",
+    "bid_mid": "57/32",
+    "bid_min": "267/352",
+    "eq_fpsb": "4877/2816",
+    "eq_spsb": "1471/704",
+    "overbid_5_4": "5825/2816",
+    "shade_1_4": "3423/2816",
+    "shade_3_4": "11465/5632"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|weak_skew|norm_by_best": {
+   "C": "0",
+   "G": 0,
+   "U_bought": "1471/704",
+   "U_money": "1471/704",
+   "discordant": 0,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "eq_spsb",
+   "rank_bought": 1,
+   "rank_money_in_scores": 1,
+   "scores": {
+    "bid_max": "1874173603/3371293310",
+    "bid_mid": "6908623817/10113879930",
+    "bid_min": "11618161/47041302",
+    "eq_fpsb": "6677983177/10113879930",
+    "eq_spsb": "10/11",
+    "overbid_5_4": "1815030905/2022775986",
+    "shade_1_4": "3354911753/8091103944",
+    "shade_3_4": "818373517/940826040"
+   },
+   "tau": "1",
+   "ties": 0
+  },
+  "spsb_n2|weak_skew|relative_pair": {
+   "C": "431/704",
+   "G": 3,
+   "U_bought": "65/44",
+   "U_money": "1471/704",
+   "discordant": 8,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "bid_max",
+   "rank_bought": 1,
+   "rank_money_in_scores": 4,
+   "scores": {
+    "bid_max": "50039200297150572875/66330169833297347784",
+    "bid_mid": "62605801876089113252375/194952682771196884167816",
+    "bid_min": "-14940501502153106875/24090815560690313523",
+    "eq_fpsb": "-191566500635364340071576625/1295983707286333478709636197",
+    "eq_spsb": "3488770109065992970677864875/12244877152975784435094239406",
+    "overbid_5_4": "5281133215506511331655623500/9908196630475789792804083327",
+    "shade_1_4": "-71157982605108532189165625/148458749136849052666565328",
+    "shade_3_4": "548569994353965750305566254250/4149508982474110670348795801709"
+   },
+   "tau": "3/7",
+   "ties": 0
+  },
+  "spsb_n2|weak_skew|strict_wins": {
+   "C": "59/2816",
+   "G": 2,
+   "U_bought": "5825/2816",
+   "U_money": "1471/704",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "9/11",
+    "bid_mid": "6/11",
+    "bid_min": "0",
+    "eq_fpsb": "4/11",
+    "eq_spsb": "8/11",
+    "overbid_5_4": "10/11",
+    "shade_1_4": "2/11",
+    "shade_3_4": "5/11"
+   },
+   "tau": "4/7",
+   "ties": 0
+  },
+  "spsb_n2|weak_skew|win_count": {
+   "C": "59/2816",
+   "G": 2,
+   "U_bought": "5825/2816",
+   "U_money": "1471/704",
+   "discordant": 6,
+   "pairs": 28,
+   "pi_money": "eq_spsb",
+   "pi_rank": "overbid_5_4",
+   "rank_bought": 1,
+   "rank_money_in_scores": 3,
+   "scores": {
+    "bid_max": "19/22",
+    "bid_mid": "7/11",
+    "bid_min": "1/11",
+    "eq_fpsb": "9/22",
+    "eq_spsb": "17/22",
+    "overbid_5_4": "21/22",
+    "shade_1_4": "3/11",
+    "shade_3_4": "1/2"
+   },
+   "tau": "4/7",
+   "ties": 0
+  }
+ },
+ "equilibria": {
+  "cv_n2": {
+   "closed_form_v_over_2": false,
+   "count": 2,
+   "equilibrium_reason": null,
+   "margins": {
+    "bid_max": "21/16",
+    "bid_mid": "73/800",
+    "bid_min": "367/800",
+    "eq_fpsb": "0",
+    "eq_spsb": "67/200",
+    "overbid_5_4": "203/320",
+    "shade_1_4": "521/1600",
+    "shade_3_4": "0"
+   },
+   "no_restricted_equilibrium": false,
+   "policies": [
+    "eq_fpsb",
+    "shade_3_4"
+   ],
+   "values": [
+    "567/800",
+    "351/1600"
+   ]
+  },
+  "cv_n4": {
+   "closed_form_v_over_2": false,
+   "count": 0,
+   "equilibrium_reason": "no zoo member is a best response to a population concentrated on itself: every candidate has a profitable linear deviation, so the best responses cycle out of the declared (linear-shading) zoo -- the winner's-curse regime needs a richer zoo, and that is a finding about the zoo, not about the game",
+   "margins": {
+    "bid_max": "11109/20000",
+    "bid_mid": "103/1250",
+    "bid_min": "7867/10000",
+    "eq_fpsb": "1231/40000",
+    "eq_spsb": "4357/20000",
+    "overbid_5_4": "29051/80000",
+    "shade_1_4": "53117/80000",
+    "shade_3_4": "253/80000"
+   },
+   "no_restricted_equilibrium": true,
+   "policies": [],
+   "values": []
+  },
+  "fpsb_n2": {
+   "closed_form_v_over_2": true,
+   "count": 2,
+   "equilibrium_reason": null,
+   "margins": {
+    "bid_max": "7/4",
+    "bid_mid": "13/32",
+    "bid_min": "7/8",
+    "eq_fpsb": "0",
+    "eq_spsb": "21/32",
+    "overbid_5_4": "475/512",
+    "shade_1_4": "0",
+    "shade_3_4": "51/256"
+   },
+   "no_restricted_equilibrium": false,
+   "policies": [
+    "eq_fpsb",
+    "shade_1_4"
+   ],
+   "values": [
+    "93/64",
+    "279/128"
+   ]
+  },
+  "spsb_n2": {
+   "closed_form_v_over_2": false,
+   "count": 1,
+   "equilibrium_reason": null,
+   "margins": {
+    "bid_max": "7/4",
+    "bid_mid": "1",
+    "bid_min": "7/4",
+    "eq_fpsb": "13/32",
+    "eq_spsb": "0",
+    "overbid_5_4": "35/512",
+    "shade_1_4": "29/32",
+    "shade_3_4": "7/64"
+   },
+   "no_restricted_equilibrium": false,
+   "policies": [
+    "eq_spsb"
+   ],
+   "values": [
+    "21/16"
+   ]
+  }
+ },
+ "findings": {
+  "G_pos_per_game": {
+   "cv_n2": 19,
+   "cv_n4": 20,
+   "fpsb_n2": 20,
+   "spsb_n2": 20
+  },
+  "cells": 112,
+  "per_protocol": {
+   "champion": {
+    "C_max": "445/1024",
+    "G_max": "5",
+    "G_mean": "59/16",
+    "G_pos": 15,
+    "cells": 16,
+    "tau_mean": "3/224"
+   },
+   "game_wins": {
+    "C_max": "6207/1408",
+    "G_max": "5",
+    "G_mean": "71/16",
+    "G_pos": 16,
+    "cells": 16,
+    "tau_mean": "-87/224"
+   },
+   "mean_payoff": {
+    "C_max": "0",
+    "G_max": "0",
+    "G_mean": "0",
+    "G_pos": 0,
+    "cells": 16,
+    "tau_mean": "1"
+   },
+   "norm_by_best": {
+    "C_max": "47/12800",
+    "G_max": "3",
+    "G_mean": "3/16",
+    "G_pos": 1,
+    "cells": 16,
+    "tau_mean": "103/112"
+   },
+   "relative_pair": {
+    "C_max": "1115/1408",
+    "G_max": "3",
+    "G_mean": "29/16",
+    "G_pos": 15,
+    "cells": 16,
+    "tau_mean": "71/112"
+   },
+   "strict_wins": {
+    "C_max": "445/1024",
+    "G_max": "3",
+    "G_mean": "17/8",
+    "G_pos": 16,
+    "cells": 16,
+    "tau_mean": "135/224"
+   },
+   "win_count": {
+    "C_max": "445/1024",
+    "G_max": "2",
+    "G_mean": "29/16",
+    "G_pos": 16,
+    "cells": 16,
+    "tau_mean": "71/112"
+   }
+  },
+  "transport_mean": {
+   "champion": "1/24",
+   "game_wins": "1/84",
+   "mean_payoff": "11/336",
+   "norm_by_best": "5/336",
+   "relative_pair": "1/48",
+   "strict_wins": "1/28",
+   "win_count": "3/112"
+  },
+  "zero_arm_violations": 0
+ },
+ "games": {
+  "cv_n2": "common value, 2 bidders",
+  "cv_n4": "common value, 4 bidders",
+  "fpsb_n2": "first-price, 2 bidders",
+  "spsb_n2": "second-price, 2 bidders"
+ },
+ "populations": [
+  "uniform",
+  "strong_skew",
+  "weak_skew",
+  "capped_strong"
+ ],
+ "protocols": [
+  "mean_payoff",
+  "game_wins",
+  "win_count",
+  "strict_wins",
+  "norm_by_best",
+  "relative_pair",
+  "champion"
+ ],
+ "transport": {
+  "cv_n2|champion|uniform>capped_strong": {
+   "discordant": 4,
+   "loss": "1/7",
+   "pairs": 28,
+   "tau": "5/7"
+  },
+  "cv_n2|champion|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|champion|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|game_wins|uniform>capped_strong": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|game_wins|uniform>strong_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|game_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|mean_payoff|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "cv_n2|mean_payoff|uniform>strong_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|mean_payoff|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|norm_by_best|uniform>capped_strong": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|norm_by_best|uniform>strong_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|norm_by_best|uniform>weak_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|relative_pair|uniform>capped_strong": {
+   "discordant": 3,
+   "loss": "3/28",
+   "pairs": 28,
+   "tau": "11/14"
+  },
+  "cv_n2|relative_pair|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|relative_pair|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|strict_wins|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "cv_n2|strict_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n2|strict_wins|uniform>weak_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|win_count|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "cv_n2|win_count|uniform>strong_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n2|win_count|uniform>weak_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n4|champion|uniform>capped_strong": {
+   "discordant": 5,
+   "loss": "5/28",
+   "pairs": 28,
+   "tau": "9/14"
+  },
+  "cv_n4|champion|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|champion|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|game_wins|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "cv_n4|game_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|game_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|mean_payoff|uniform>capped_strong": {
+   "discordant": 3,
+   "loss": "3/28",
+   "pairs": 28,
+   "tau": "11/14"
+  },
+  "cv_n4|mean_payoff|uniform>strong_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n4|mean_payoff|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|norm_by_best|uniform>capped_strong": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|norm_by_best|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|norm_by_best|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|relative_pair|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "cv_n4|relative_pair|uniform>strong_skew": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "cv_n4|relative_pair|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|strict_wins|uniform>capped_strong": {
+   "discordant": 3,
+   "loss": "3/28",
+   "pairs": 28,
+   "tau": "11/14"
+  },
+  "cv_n4|strict_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|strict_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|win_count|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "cv_n4|win_count|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "cv_n4|win_count|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|champion|uniform>capped_strong": {
+   "discordant": 5,
+   "loss": "5/28",
+   "pairs": 28,
+   "tau": "9/14"
+  },
+  "fpsb_n2|champion|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|champion|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|game_wins|uniform>capped_strong": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|game_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|game_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|mean_payoff|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "fpsb_n2|mean_payoff|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|mean_payoff|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|norm_by_best|uniform>capped_strong": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "fpsb_n2|norm_by_best|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|norm_by_best|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|relative_pair|uniform>capped_strong": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|relative_pair|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|relative_pair|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|strict_wins|uniform>capped_strong": {
+   "discordant": 3,
+   "loss": "3/28",
+   "pairs": 28,
+   "tau": "11/14"
+  },
+  "fpsb_n2|strict_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|strict_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|win_count|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "fpsb_n2|win_count|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "fpsb_n2|win_count|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|champion|uniform>capped_strong": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|champion|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|champion|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|game_wins|uniform>capped_strong": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|game_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|game_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|mean_payoff|uniform>capped_strong": {
+   "discordant": 2,
+   "loss": "1/14",
+   "pairs": 28,
+   "tau": "6/7"
+  },
+  "spsb_n2|mean_payoff|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|mean_payoff|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|norm_by_best|uniform>capped_strong": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "spsb_n2|norm_by_best|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|norm_by_best|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|relative_pair|uniform>capped_strong": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "spsb_n2|relative_pair|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|relative_pair|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|strict_wins|uniform>capped_strong": {
+   "discordant": 3,
+   "loss": "3/28",
+   "pairs": 28,
+   "tau": "11/14"
+  },
+  "spsb_n2|strict_wins|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|strict_wins|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|win_count|uniform>capped_strong": {
+   "discordant": 1,
+   "loss": "1/28",
+   "pairs": 28,
+   "tau": "13/14"
+  },
+  "spsb_n2|win_count|uniform>strong_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  },
+  "spsb_n2|win_count|uniform>weak_skew": {
+   "discordant": 0,
+   "loss": "0",
+   "pairs": 28,
+   "tau": "1"
+  }
+ },
+ "zoo": [
+  "eq_fpsb",
+  "eq_spsb",
+  "shade_3_4",
+  "shade_1_4",
+  "overbid_5_4",
+  "bid_min",
+  "bid_mid",
+  "bid_max"
+ ]
+}

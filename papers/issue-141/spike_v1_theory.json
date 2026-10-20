@@ -1,0 +1,294 @@
+{
+ "T1_increasing_transforms": {
+  "affine": {
+   "cells": 16,
+   "g0_and_tau_lt_1": 0,
+   "g_pos": 0,
+   "g_pos_and_tau_ge_1": 0,
+   "g_pos_and_tau_lt_1": 0,
+   "order_mismatch": 0,
+   "tau_lt_1": 0,
+   "witness_g0_tau_lt_1": []
+  },
+  "cube": {
+   "cells": 16,
+   "g0_and_tau_lt_1": 0,
+   "g_pos": 0,
+   "g_pos_and_tau_ge_1": 0,
+   "g_pos_and_tau_lt_1": 0,
+   "order_mismatch": 0,
+   "tau_lt_1": 0,
+   "witness_g0_tau_lt_1": []
+  },
+  "identity": {
+   "cells": 16,
+   "g0_and_tau_lt_1": 0,
+   "g_pos": 0,
+   "g_pos_and_tau_ge_1": 0,
+   "g_pos_and_tau_lt_1": 0,
+   "order_mismatch": 0,
+   "tau_lt_1": 0,
+   "witness_g0_tau_lt_1": []
+  },
+  "offset_scale": {
+   "cells": 16,
+   "g0_and_tau_lt_1": 0,
+   "g_pos": 0,
+   "g_pos_and_tau_ge_1": 0,
+   "g_pos_and_tau_lt_1": 0,
+   "order_mismatch": 0,
+   "tau_lt_1": 0,
+   "witness_g0_tau_lt_1": []
+  }
+ },
+ "T1_plant_decreasing": {
+  "cells": 16,
+  "g0_and_tau_lt_1": 0,
+  "g_pos": 16,
+  "g_pos_and_tau_ge_1": 0,
+  "g_pos_and_tau_lt_1": 16,
+  "order_mismatch": 16,
+  "tau_lt_1": 16,
+  "witness_g0_tau_lt_1": []
+ },
+ "T2_T3_plant_monotone_only": {
+  "cells": 16,
+  "g0_and_tau_lt_1": 0,
+  "g_pos": 0,
+  "g_pos_and_tau_ge_1": 0,
+  "g_pos_and_tau_lt_1": 0,
+  "order_mismatch": 0,
+  "tau_lt_1": 0,
+  "witness_g0_tau_lt_1": []
+ },
+ "T2_T3_zoo": {
+  "cells": 112,
+  "g0_and_tau_lt_1": 13,
+  "g_pos": 79,
+  "g_pos_and_tau_ge_1": 0,
+  "g_pos_and_tau_lt_1": 79,
+  "order_mismatch": 92,
+  "tau_lt_1": 92,
+  "witness_g0_tau_lt_1": [
+   "cv_n2|capped_strong|champion",
+   "cv_n2|capped_strong|norm_by_best",
+   "cv_n2|strong_skew|norm_by_best",
+   "cv_n2|uniform|norm_by_best",
+   "cv_n2|weak_skew|norm_by_best"
+  ]
+ },
+ "T4_mixing": {
+  "0": {
+   "cells": 16,
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "1": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "1/16": {
+   "cells": 16,
+   "g_pos": 0,
+   "tau_lt_1": 5
+  },
+  "1/2": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "1/4": {
+   "cells": 16,
+   "g_pos": 9,
+   "tau_lt_1": 16
+  },
+  "1/8": {
+   "cells": 16,
+   "g_pos": 1,
+   "tau_lt_1": 13
+  },
+  "11/16": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "13/16": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "15/16": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "3/16": {
+   "cells": 16,
+   "g_pos": 4,
+   "tau_lt_1": 14
+  },
+  "3/4": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "3/8": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "5/16": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "5/8": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "7/16": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "7/8": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  },
+  "9/16": {
+   "cells": 16,
+   "g_pos": 16,
+   "tau_lt_1": 16
+  }
+ },
+ "T4_plant_monotone_base": {
+  "0": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "1": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "1/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "1/2": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "1/4": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "1/8": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "11/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "13/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "15/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "3/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "3/4": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "3/8": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "5/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "5/8": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "7/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "7/8": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  },
+  "9/16": {
+   "g_pos": 0,
+   "tau_lt_1": 0
+  }
+ },
+ "T4_thresholds": {
+  "base": "game_wins",
+  "grid": [
+   "0",
+   "1/16",
+   "1/8",
+   "3/16",
+   "1/4",
+   "5/16",
+   "3/8",
+   "7/16",
+   "1/2",
+   "9/16",
+   "5/8",
+   "11/16",
+   "3/4",
+   "13/16",
+   "7/8",
+   "15/16",
+   "1"
+  ],
+  "lambda_G": "1/8",
+  "lambda_tau": "1/16"
+ },
+ "model": {
+  "games": [
+   "fpsb_n2",
+   "spsb_n2",
+   "cv_n2",
+   "cv_n4"
+  ],
+  "policies": [
+   "eq_fpsb",
+   "eq_spsb",
+   "shade_3_4",
+   "shade_1_4",
+   "overbid_5_4",
+   "bid_min",
+   "bid_mid",
+   "bid_max"
+  ],
+  "populations": [
+   "uniform",
+   "strong_skew",
+   "weak_skew",
+   "capped_strong"
+  ],
+  "protocols": [
+   "mean_payoff",
+   "game_wins",
+   "win_count",
+   "strict_wins",
+   "norm_by_best",
+   "relative_pair",
+   "champion"
+  ]
+ }
+}

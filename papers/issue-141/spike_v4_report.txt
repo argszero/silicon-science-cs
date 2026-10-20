@@ -1,0 +1,79 @@
+== issue #141 -- v4: the sign the transport statistic cannot see (and the ladder) ==
+   9 games (3 families x n=2,3,4) x 8 policies x 4 populations x 19 protocols
+   exact: no seed, no sampling, no timing; 684 cells, 1026 transport entries
+   widened vs v3: fpsb_n3, fpsb_n4, spsb_n3, spsb_n4, cv_n3
+
+== the anchors (exhaustive deviation enumeration, one block per game) ==
+   fpsb_n2  fpsb n=2  certified: eq_fpsb, shade_1_4
+   fpsb_n3  fpsb n=3  certified: eq_fpsb, shade_3_4
+   fpsb_n4  fpsb n=4  certified: eq_fpsb, shade_3_4
+   spsb_n2  spsb n=2  certified: eq_spsb
+   spsb_n3  spsb n=3  certified: eq_spsb
+   spsb_n4  spsb n=4  certified: eq_spsb
+   cv_n2    cv   n=2  certified: eq_fpsb, shade_3_4
+   cv_n3    cv   n=3  certified: eq_fpsb, shade_3_4
+   cv_n4    cv   n=4  certified: (NONE)
+
+== the ladder: the laws re-read at every (family, n) ==
+   P1  G > 0 in 474 of 684 cells = 79/114  -> CONFIRMED
+        fpsb_n2  55 of 76 cells
+        fpsb_n3  55 of 76 cells
+        fpsb_n4  54 of 76 cells
+        spsb_n2  52 of 76 cells
+        spsb_n3  53 of 76 cells
+        spsb_n4  54 of 76 cells
+        cv_n2    50 of 76 cells
+        cv_n3    50 of 76 cells
+        cv_n4    51 of 76 cells
+   T3  G>0 => tau<1 in every cell: HOLDS (gameable 474, fragile 564, reversed 71)
+       strictly more fragile cells than gameable: True
+   the two-way decomposition of G, per game (which factor is the lever):
+       game        MS_protocol  MS_population  protocol>population
+       fpsb_n2          7.1838         0.7843  True
+       fpsb_n3          7.2960         0.4461  True
+       fpsb_n4          8.8511         1.8431  True
+       spsb_n2         13.0331         0.2500  True
+       spsb_n3         12.0460         0.3333  True
+       spsb_n4         11.5901         0.4461  True
+       cv_n2            7.2776         0.6422  True
+       cv_n3            7.2665         0.7206  True
+       cv_n4            8.5331         2.1716  True
+       games where the protocol exceeds the population: 9 of 9
+
+== the design law over 19 protocols x 9 games ==
+   mismatches vs the stated prediction: 0 
+   band faithful              2 protocols
+   band immune_unfaithful     1 protocols
+   band gameable             16 protocols
+       mean_payoff    predicted=faithful           measured=faithful
+       mean_sq        predicted=gameable           measured=gameable
+       spread         predicted=faithful           measured=faithful
+       top_half       predicted=gameable           measured=gameable
+       worst_opp      predicted=gameable           measured=gameable
+       best_opp       predicted=gameable           measured=gameable
+       win_count      predicted=gameable           measured=gameable
+       strict_wins    predicted=gameable           measured=gameable
+       tie_count      predicted=gameable           measured=gameable
+       norm_by_best   predicted=gameable           measured=gameable
+       relative_pair  predicted=gameable           measured=gameable
+       game_wins      predicted=gameable           measured=gameable
+       champion       predicted=gameable           measured=gameable
+       capped_0       predicted=gameable           measured=gameable
+       capped_weak    predicted=gameable           measured=gameable
+       random_fixed   predicted=gameable           measured=gameable
+       tail_swap      predicted=immune_unfaithful  measured=immune_unfaithful
+       neg_mean       predicted=gameable           measured=gameable
+       rank_score     predicted=gameable           measured=gameable
+
+== the TRANSPORT statistic, and the sign it cannot see ==
+   T_excess == 0 in every entry: mean_payoff, rank_score, spread
+   T_raw    == 0 in every entry: best_opp, random_fixed, worst_opp
+   consistently FAITHFUL (tau=+1 everywhere): mean_payoff, spread
+   consistently REVERSED (tau=-1 everywhere): rank_score
+   NAIVE LAW `T_excess==0 <=> faithful` -- REFUTED BY: rank_score
+   the NATURAL witness `neg_mean`: G_max=7/7 (the MAXIMUM), gameable 36/36
+       transport excess exactly 0 everywhere: False   faithful: False
+       (the exceptions are the payoff-TIE cells -- see C6 in --selftest)
+   the CONSTRUCTED witness `rank_score`: G_max=7, excess-zero everywhere: True, reversed everywhere: True
+   ENTRY LEVEL: same orientation in both populations => excess == 0 (THEOREM); the converse is a reading of this space (--selftest C6c, with plants)
+   the fragile reference `random_fixed`: G_mean=59/18, T_raw=0

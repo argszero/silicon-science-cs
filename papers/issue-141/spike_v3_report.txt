@@ -1,0 +1,78 @@
+== issue #141 -- v3: the TRANSPORT ARM (P2 and P3) ==
+   4 games x 8 policies x 4 populations x 17 protocols = 272 cells; exact, no seed,
+   408 transport entries over the 6 population pairs; design space: spike_v2.PROTOCOLS (the 17-protocol design space of record)
+
+== P1 (registered: the gain is positive in a majority of cells) ==
+   G > 0 in 176 of 272 cells = 11/17  -> CONFIRMED
+      fpsb_n2    47 of 68 cells
+      spsb_n2    44 of 68 cells
+      cv_n2      42 of 68 cells
+      cv_n4      43 of 68 cells
+
+== P2 (registered: protocol spread EXCEEDS population spread) ==
+   per game, the exact two-way decomposition of G on the 17x4 layout:
+   game        SS_protocol SS_population  SS_interact   MS_prot    MS_pop
+   fpsb_n2        114.9412       2.3529      17.6471    7.1838    0.7843
+   spsb_n2        208.5294       0.7500      13.0000   13.0331    0.2500
+   cv_n2          116.4412       1.9265      23.3235    7.2776    0.6422
+   cv_n4          136.5294       6.5147      59.2353    8.5331    2.1716
+   median over games: SS_protocol=8601/68  SS_population=291/136   MS_protocol=8601/1088  MS_population=97/136
+   games with SS_protocol > SS_population: 4 of 4   (on MS: 4 of 4)
+   the registration's range reading, both level counts named:
+      median over games of the mean POPULATION range (over 4 populations) = 277/286
+      median over games of the mean PROTOCOL range   (over 17 protocols)  = 5
+      median spread of the gain across populations, fixed protocol = 1/2  (live only)
+      median spread of the gain across protocols,  fixed population = 9/2
+   EXCLUDED BY CONDITION (immune in every cell of THAT game, so its population range
+   is 0 by construction -- excluded by the condition, never by the value):
+      fpsb_n2    mean_payoff, spread, norm_by_best, tail_swap
+      spsb_n2    mean_payoff, mean_sq, spread, top_half, norm_by_best, tail_swap
+      cv_n2      mean_payoff, spread, top_half, norm_by_best, capped_weak, tail_swap
+      cv_n4      mean_payoff, spread, top_half, capped_weak, tail_swap
+
+== P3 (registered: the gameable protocols are the same non-transporting ones) ==
+   the payoff ordering's own transport loss (the BASELINE every protocol carries):
+      mean 29/672   min 0   max 3/28
+   protocol         G_mean    G_max  cells>0     T_raw  T_excess  tau<1
+   mean_payoff      0.0000        0        0    0.0432    0.0000      0
+   mean_sq          1.1250        3       12    0.1280    0.0848     16
+   spread           0.0000        0        0    0.0432    0.0000      0
+   top_half         0.0625        1        1    0.0610    0.0179      7
+   worst_opp        1.8750        3       16    0.0000   -0.0432     16
+   best_opp         1.3125        2       16    0.0000   -0.0432     16
+   win_count        1.8125        2       16    0.0372   -0.0060     16
+   strict_wins      2.1250        3       16    0.0536    0.0104     16
+   tie_count        2.6250        7       13    0.3631    0.3199     16
+   norm_by_best     0.1875        3        1    0.0193   -0.0238     12
+   relative_pair    1.8125        3       15    0.0283   -0.0149     16
+   game_wins        4.4375        5       16    0.0149   -0.0283     16
+   champion         3.6875        5       15    0.0625    0.0193     16
+   capped_0         2.5000        4       16    0.0357   -0.0074     16
+   capped_weak      1.0625        4        7    0.1057    0.0625      7
+   random_fixed     3.0625        7       16    0.0000   -0.0432     16
+   tail_swap        0.0000        0        0    0.0908    0.0476     16
+   protocol-level associations (n = 17; sign and r^2 exact):
+      G vs T_raw           r=0.035542 (exact sign and r^2) rho=-0.241677  sign=+1  r2=144889369/114695721024  concordant 55/ discordant 74/ tied 7  LOO-sign-stable=False  ties(x,y)=(4,4)
+      G vs T_excess        r=0.035542 (exact sign and r^2) rho=-0.241677  sign=+1  r2=144889369/114695721024  concordant 55/ discordant 74/ tied 7  LOO-sign-stable=False  ties(x,y)=(4,4)
+      G vs tau<1 frac      r=0.623498 (exact sign and r^2) rho=0.702960  sign=+1  r2=9156027/23552477  concordant 62/ discordant 4/ tied 70  LOO-sign-stable=True  ties(x,y)=(4,68)
+      tau<1 vs T_raw       r=0.063349 (exact sign and r^2) rho=-0.171155  sign=+1  r2=2812/700713  concordant 28/ discordant 40/ tied 68  LOO-sign-stable=False  ties(x,y)=(68,4)
+      tau<1 vs T_excess    r=0.063349 (exact sign and r^2) rho=-0.171155  sign=+1  r2=2812/700713  concordant 28/ discordant 40/ tied 68  LOO-sign-stable=False  ties(x,y)=(68,4)
+      [3-pair] G vs T_raw  r=0.035431 (exact sign and r^2) rho=-0.271270  sign=+1  r2=20349121/16209491264  concordant 54/ discordant 75/ tied 7  LOO-sign-stable=False  ties(x,y)=(4,4)
+      [3-pair] G vs T_excess r=0.035431 (exact sign and r^2) rho=-0.271270  sign=+1  r2=20349121/16209491264  concordant 54/ discordant 75/ tied 7  LOO-sign-stable=False  ties(x,y)=(4,4)
+      [68 units] G vs T_raw r=0.070406 (exact sign and r^2) rho=-0.112363  sign=+1  r2=222039801/44793500987  concordant 810/ discordant 952/ tied 516  LOO-sign-stable=True  ties(x,y)=(300,279)
+      [68 units] G vs T_excess r=0.076163 (exact sign and r^2) rho=-0.100090  sign=+1  r2=1017163449/175348903121  concordant 881/ discordant 990/ tied 407  LOO-sign-stable=True  ties(x,y)=(300,232)
+   restricted to the 14 protocols that RESPOND to the population (excluding worst_opp, best_opp, random_fixed, whose
+   score reads neither the population nor the payoff, so their loss is 0 by
+   construction -- excluded by that condition, not by the value):
+      G vs T_raw over n=14: r=0.103422 rho=-0.117258 sign=+1 r2=23854012/2230154991 concordant 41/ discordant 46/ LOO-stable=False
+   THE AFFINE TELL, stated because a check must carry it: over a PROTOCOL mean the
+   baseline is one constant (every protocol has the same 24 entries), so T_excess ==
+   T_raw - 29/672 identically and the two readings MUST report the same r, rho and
+   concordance counts -- they do.  At the (game, protocol) unit the baseline's mean
+   differs by game, so the two are different objects there and they differ.
+   the zero-gain (immune) protocols: mean_payoff, spread, tail_swap
+      above the median T_raw:    tail_swap
+      above the median T_excess: tail_swap
+   top-3 by G_mean:    game_wins, champion, random_fixed
+   top-3 by T_raw:     tie_count, mean_sq, capped_weak
+   top-3 by T_excess:  tie_count, mean_sq, capped_weak

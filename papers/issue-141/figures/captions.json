@@ -1,0 +1,17 @@
+{
+ "p1": {
+  "caption": "P1: the ranking can be bought. (a) the distribution of the rank gain $G$ over all 684 cells \u2014 $G=0$ (the protocol ranks the policy where its payoff puts it) in 210, $G>0$ in 474. (b) the same reading per game: the share of each game's 76 cells with $G>0$ stays between 50 and 55, so the effect is not an artefact of bidder count or auction family.",
+  "file": "fig1_p1_gain.png",
+  "sha256": "652d9926da3c5ea43de696dcfc401744d1a585296e93316f4cb2648056165e8b"
+ },
+ "p2": {
+  "caption": "P2: the protocol is the lever. (a) the exact two-way decomposition of $G$ in each game, on a log scale: the protocol's mean square exceeds the population's in 9 of 9 games. (b) the two ratios a reader could compute \u2014 the mean-square ratio (the claim, 3.929x to 52.132x) and the sum-of-squares ratio, which is larger for the protocol by construction because the protocol factor has 19 levels against the population's 4.",
+  "file": "fig2_p2_lever.png",
+  "sha256": "56ba22b6545c021840d149f9fcf017e66751e2ddd30c1c63c3cfb9ee5c484e51"
+ },
+ "p3": {
+  "caption": "P3 refuted: buyable rank and fragile rank are two properties. (a) per protocol, the share of its 36 cells that are fragile (grey) and gameable (dark) \u2014 the dark never escapes the grey, which is the dominance $G>0 \\Rightarrow \\tau<1$ with 0 counterexamples. (b) the containment in cells: 474 gameable strictly inside 564 fragile, leaving a band of 90 cells that are already misordered while nothing can be bought in them.",
+  "file": "fig3_p3_opposition.png",
+  "sha256": "118d69bfc1d7f38e7ced002f393f1e6600359f2aa53f68275162e59795362e58"
+ }
+}

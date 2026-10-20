@@ -1,0 +1,41 @@
+== issue #141 -- v1: the theory arm ==
+   4 games x 8 policies x 4 populations; every value exact
+
+== T1 -- strictly increasing transforms preserve the ordering (the forward direction) ==
+   transform       cells    G>0    tau<1   mismatch
+   identity           16      0        0          0
+   cube               16      0        0          0
+   affine             16      0        0          0
+   offset_scale       16      0        0          0
+   decreasing         16     16       16         16   <- PLANT (must break T1)
+
+== T2/T3 -- over the live zoo (112 cells) ==
+   G > 0                        : 79
+   tau < 1 (order-fragile)      : 92
+   G > 0 AND tau >= 1           : 0   <- T3 forbids this (must be 0)
+   G == 0 AND tau < 1 (witness) : 13   <- T2: the naive converse is FALSE
+   witnesses: cv_n2|capped_strong|champion, cv_n2|capped_strong|norm_by_best, cv_n2|strong_skew|norm_by_best, cv_n2|uniform|norm_by_best, cv_n2|weak_skew|norm_by_best
+
+== T4 -- the separation law (mixing the monotone reference with game_wins) ==
+   lambda      G>0    tau<1
+   0             0        0
+   1/16          0        5
+   1/8           1       13
+   3/16          4       14
+   1/4           9       16
+   5/16         16       16
+   3/8          16       16
+   7/16         16       16
+   1/2          16       16
+   9/16         16       16
+   5/8          16       16
+   11/16        16       16
+   3/4          16       16
+   13/16        16       16
+   7/8          16       16
+   15/16        16       16
+   1            16       16
+
+   lambda_tau (first order-fragile) = 1/16
+   lambda_G   (first rank bought)   = 1/8
+   => fragility appears no later than buyability

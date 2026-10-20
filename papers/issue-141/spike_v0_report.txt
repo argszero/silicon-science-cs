@@ -1,0 +1,47 @@
+== issue #141 -- v0: the exact rank-payoff instrument ==
+   4 games x 8 policies x 4 populations x 7 protocols = 112 cells; all values exact
+
+== THE ANCHORS (restricted symmetric equilibrium, certified by deviation enumeration) ==
+   fpsb_n2   first-price, 2 bidders   certified: eq_fpsb,shade_1_4          value(s)=93/64,279/128      closed-form v/2 among them: True
+   spsb_n2   second-price, 2 bidders  certified: eq_spsb                    value(s)=21/16              closed-form v/2 among them: False
+   cv_n2     common value, 2 bidders  certified: eq_fpsb,shade_3_4          value(s)=567/800,351/1600   closed-form v/2 among them: False
+   cv_n4     common value, 4 bidders  certified: (NONE -- stated as a finding) value(s)=-                  closed-form v/2 among them: False
+
+== PER PROTOCOL (over all games and populations) ==
+   protocol       cells    G>0    max G     mean G   max cost C   mean tau
+   mean_payoff       16      0        0          0          0.0        1.0
+   game_wins         16     16        5      71/16        4.408 -0.38839285714285715
+   win_count         16     16        2      29/16        0.434 0.6339285714285714
+   strict_wins       16     16        3       17/8        0.434 0.6026785714285714
+   norm_by_best      16      1        3       3/16        0.003 0.9196428571428571
+   relative_pair     16     15        3      29/16        0.791 0.6339285714285714
+   champion          16     15        5      59/16        0.434 0.013392857142857142
+
+== TRANSPORT LOSS (share of pairwise orderings that change with the population) ==
+   mean_payoff    mean loss = 11/336
+   game_wins      mean loss = 1/84
+   win_count      mean loss = 3/112
+   strict_wins    mean loss = 1/28
+   norm_by_best   mean loss = 5/336
+   relative_pair  mean loss = 1/48
+   champion       mean loss = 1/24
+
+== WHERE THE GAIN IS (cells with G > 0 per game) ==
+   fpsb_n2   20 of 28 cells
+   spsb_n2   20 of 28 cells
+   cv_n2     19 of 28 cells
+   cv_n4     20 of 28 cells
+
+== THE CELLS THAT BUY THE MOST RANK (top 8 by G) ==
+   game      population     protocol         G payoff-opt rank-opt       cost C
+   cv_n2     capped_strong  game_wins        5 eq_fpsb    bid_max      2.460938
+   cv_n2     strong_skew    game_wins        5 eq_fpsb    bid_max      2.950114
+   cv_n2     uniform        game_wins        5 eq_fpsb    bid_max      2.956562
+   cv_n2     weak_skew      game_wins        5 eq_fpsb    bid_max      3.150114
+   cv_n4     strong_skew    game_wins        5 eq_fpsb    bid_max      2.303198
+   cv_n4     uniform        game_wins        5 eq_fpsb    bid_max      2.309600
+   cv_n4     weak_skew      game_wins        5 eq_fpsb    bid_max      2.505116
+   fpsb_n2   capped_strong  game_wins        5 eq_fpsb    bid_max      3.551758
+
+== THE ZERO ARM (the monotone reference) ==
+   cells with G != 0 or C != 0: 0  (of 112)

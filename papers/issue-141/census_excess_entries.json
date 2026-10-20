@@ -1,0 +1,89 @@
+{
+ "_certificate": {
+  "items": [
+   "  OK   forward leg: faithful in both populations => excess == 0, over all 1026 entries",
+   "  OK   C1-PLANT corrupting one faithful entry's excess makes the forward leg fire",
+   "  OK   base == 0 and base > 0 partition the domain",
+   "  OK   C2-PLANT relabelling one informative violator as base == 0 removes it from the informative count",
+   "  OK   the naive law is refuted by the RECORD space itself, not only by the constructed witness",
+   "  OK   |evaluated over ALL protocols| == |record violators over the full domain| -- a count coincidence over two DISJOINT sets",
+   "  OK   the population-blind reference has T_raw == 0 in every entry while its T_excess is 0 only where base == 0",
+   "  OK   the record-level evaluated set and the record-level violator set are disjoint"
+  ],
+  "ok": 8,
+  "total": 8
+ },
+ "_scan": {
+  "cells": 684,
+  "transport": 1026
+ },
+ "base_positive": 741,
+ "base_positive_and_excess_zero": 274,
+ "base_values": {
+  "0": 285,
+  "1/14": 361,
+  "1/28": 285,
+  "3/28": 95
+ },
+ "base_zero": 285,
+ "count_coincidence": true,
+ "entries": 1026,
+ "evaluated_all": 262,
+ "evaluated_record": 157,
+ "evaluated_record_by_protocol": {
+  "capped_weak": 30,
+  "mean_payoff": 54,
+  "norm_by_best": 3,
+  "spread": 54,
+  "top_half": 16
+ },
+ "evaluated_record_intersect_record_violators": 0,
+ "forward_counterexamples_all": 0,
+ "forward_counterexamples_base_positive": 0,
+ "neg_mean_entries": 54,
+ "neg_mean_excess_zero": 51,
+ "neg_mean_excess_zero_base_positive": 36,
+ "neg_mean_raw_zero": 15,
+ "protocols": 19,
+ "random_fixed_entries": 54,
+ "random_fixed_excess_zero": 15,
+ "random_fixed_excess_zero_base_positive": 0,
+ "random_fixed_raw_zero": 54,
+ "rank_score_entries": 54,
+ "rank_score_excess_zero": 54,
+ "rank_score_excess_zero_base_positive": 39,
+ "rank_score_raw_zero": 15,
+ "record_protocols": 17,
+ "violators_all": 367,
+ "violators_base_positive": 161,
+ "violators_record_all": 262,
+ "violators_record_all_by_protocol": {
+  "best_opp": 15,
+  "capped_0": 15,
+  "capped_weak": 9,
+  "champion": 15,
+  "game_wins": 20,
+  "mean_sq": 12,
+  "norm_by_best": 18,
+  "random_fixed": 15,
+  "relative_pair": 20,
+  "strict_wins": 23,
+  "tail_swap": 48,
+  "top_half": 7,
+  "win_count": 30,
+  "worst_opp": 15
+ },
+ "violators_record_all_designs": 14,
+ "violators_record_base_positive": 86,
+ "violators_record_base_positive_by_protocol": {
+  "game_wins": 5,
+  "mean_sq": 5,
+  "norm_by_best": 7,
+  "relative_pair": 6,
+  "strict_wins": 10,
+  "tail_swap": 33,
+  "top_half": 3,
+  "win_count": 17
+ },
+ "violators_record_base_positive_designs": 8
+}
