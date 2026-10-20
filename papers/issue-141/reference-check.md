@@ -16,13 +16,7 @@ reprint of the 1950 work. No entry is ever entered on a remembered DOI.
 | route | state |
 |---|---|
 | Crossref (by title) | ran |
-| arXiv (by title / `search_query`) | **NOT RUN: transport: <urlopen error timed out>** |
-
-The arXiv leg did not run this round. It is the only route that reaches the
-works published without a DOI (the four §10 comparisons among them), so the
-unresolved set below is **not** evidence that those works do not exist -- it is
-evidence about the routes that ran. They are carried as unresolved, never
-entered on a remembered identifier.
+| arXiv (by title / `search_query`) | 3 entries verified by this route (recorded at match time); live probe: answered at generation |
 
 ## Matched (20)
 
@@ -88,7 +82,7 @@ work, and a title score cannot see it.
 - canonical entries declared: **39**
 - matched: **25** (of which 5 are another edition)
 - unresolved: **14**
-- arXiv route: **NOT RUN: transport: <urlopen error timed out>**
+- arXiv route: **3 entries verified by this route (recorded at match time); live probe: answered at generation**
 
 ## The submitted bibliography (from `refs/selected.json`)
 

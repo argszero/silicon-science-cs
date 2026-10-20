@@ -803,10 +803,20 @@ def checkdoc():
     unresolved = st["unresolved"]
     # probe at GENERATION time: the doc's statement about a route must be current when it is
     # written, not a replay of what the discovery run saw hours ago
+    # TWO facts, kept apart because they answer different questions.  (i) Which route VERIFIED each
+    # entry -- a property of the record, read off the carried status file.  (ii) Whether the arXiv API
+    # answers a probe at GENERATION time -- a property of this moment, and a transient timeout there
+    # says nothing about entries verified earlier.  Publishing only (ii) made the report contradict its
+    # own table: it read "arXiv: NOT RUN (timed out)" above rows whose route is `arxiv-title`.
+    n_arx = len([m for m in matched if m["route"] == "arxiv-title"])
     if arxiv_probe():
-        arx = "ran (reachable at generation)"
+        probe = "answered at generation"
     else:
-        arx = "NOT RUN: %s" % ARXIV_STATE["detail"]
+        probe = "NOT RUN at generation: %s" % ARXIV_STATE["detail"]
+    # no bold around the whole cell: the phrase already carries bold inside it, and nested emphasis
+    # renders as a literal run of asterisks (caught on the first generated copy, 2026-10-20)
+    arx = ("%d entr%s verified by this route (recorded at match time); live probe: %s"
+           % (n_arx, "y" if n_arx == 1 else "ies", probe))
 
     lines = []
     lines.append("# issue #141 -- reference verification")
@@ -827,10 +837,10 @@ def checkdoc():
     lines.append("| route | state |")
     lines.append("|---|---|")
     lines.append("| Crossref (by title) | ran |")
-    lines.append("| arXiv (by title / `search_query`) | **%s** |" % arx)
+    lines.append("| arXiv (by title / `search_query`) | %s |" % arx)
     lines.append("")
-    if "NOT RUN" in str(arx):
-        lines.append("The arXiv leg did not run this round. It is the only route that reaches the")
+    if "NOT RUN" in str(probe):
+        lines.append("The arXiv leg could not be probed at generation time. It is the only route that reaches the")
         lines.append("works published without a DOI (the four §10 comparisons among them), so the")
         lines.append("unresolved set below is **not** evidence that those works do not exist -- it is")
         lines.append("evidence about the routes that ran. They are carried as unresolved, never")
