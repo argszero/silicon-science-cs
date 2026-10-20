@@ -235,6 +235,46 @@ else
 fi
 battery "reference plant battery (offline)" refscan141.py --selftest
 
+step "canon verdicts re-derived from the stored records"
+# `--reaudit` re-runs `verdict()` -- the two/three tests that DECIDE a canon entry -- over the records
+# already in the store.  It is offline and deterministic, so the status file is sealed to the rules
+# that produced it rather than to a network pass that cannot be re-run on a throttled route.
+RAOUT=$( cd "$RUN" && "$PY" refscan141.py --reaudit 2>&1 ); RARC=$?
+if [ "$RARC" -eq 0 ] && cmp -s "$RUN/refs/canonical-status.json" "$HERE/refs/canonical-status.json"; then
+  ok "$(printf '%s' "$RAOUT" | grep -o 'matched [0-9]*, unresolved [0-9]*' | head -1), byte-identical"
+else
+  bad "$(printf '%s' "$RAOUT" | tail -1)"
+fi
+
+# The journal's OWN reference gate -- the editor's instrument, run from the repository root exactly as
+# the citation item names it.  It is not vendored in this package (it belongs to the journal), so when
+# the package is read outside the repository this leg is NOT RUN with that reason, never a silent pass.
+step "the journal's reference gate (refgate.py)"
+RGATE=""; D="$HERE"
+for _ in 1 2 3 4 5 6 7 8; do
+  if [ -f "$D/.github/tools/refgate.py" ]; then RGATE="$D"; break; fi
+  PD="$(dirname "$D")"; [ "$PD" = "$D" ] && break; D="$PD"
+done
+if [ -z "$RGATE" ]; then
+  skip "refgate.py lives in the journal repository, not in this package"
+elif [ ! -f "$HERE/manuscript.md" ]; then
+  skip "no manuscript.md beside this script"
+else
+  REL=$( "$PY" -c 'import os,sys; print(os.path.relpath(sys.argv[1], sys.argv[2]))' \
+         "$HERE/manuscript.md" "$RGATE" )
+  GOUT=$( cd "$RGATE" && "$PY" .github/tools/refgate.py "$REL" 2>&1 ); GRC=$?
+  case "$GOUT" in
+    *"GATE: PASS"*)
+      if printf '%s' "$GOUT" | grep -q "0 of them not separated" \
+         && printf '%s' "$GOUT" | grep -q "coverage=100.0%"; then
+        ok "$(printf '%s' "$GOUT" | grep -o 'entries=[0-9]*' | head -1), $(printf '%s' "$GOUT" | grep -o 'coverage=[0-9.]*%' | head -1), 0 entries not separated"
+      else
+        bad "verdict PASS but an advisory line reads badly: $(printf '%s' "$GOUT" | grep -E 'block form|author form' | cut -c1-80 | tr '\n' ' ')"
+      fi ;;
+    *) bad "rc=$GRC: $(printf '%s' "$GOUT" | grep -E 'FAIL|GATE' | tail -1)" ;;
+  esac
+fi
+
 # ---------------------------------------------------------------- the plant tier (opt-in)
 if [ "${PLANT:-0}" = "1" ]; then
   echo

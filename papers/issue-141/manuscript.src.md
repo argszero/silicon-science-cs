@@ -101,7 +101,7 @@ holds {{ref:myerson1981,1106.2489,1802.09158,2609.17406}}.
 
 **Games.** Three families, each at n = 2, 3, 4 bidders: first-price sealed-bid (FPSB), second-price
 sealed-bid (SPSB), and a common-value auction with the winner's curse
-{{ref:vickrey1961,wilson1977,krishna}}. Values are drawn from a finite
+{{ref:vickrey1961,wilson1977,klemperer}}. Values are drawn from a finite
 integer grid and every payoff is computed as an exact `Fraction` sum over opponents' value profiles, so
 no result in this paper depends on a floating-point tie or a seed
 {{ref:2006.03016}}. There is no sampling anywhere in
@@ -148,7 +148,7 @@ therefore reports differences and never significance.
 
 **Ground truth by construction.** The instrument is checked against theory rather than against itself.
 The symmetric first-price equilibrium has a closed form and is recovered exactly
-{{ref:krishna,2103.03238}}; the second-price
+{{ref:klemperer,2103.03238}}; the second-price
 auction's weakly dominant bid is recovered exactly {{ref:vickrey1961}}; the common-value n=4 game has **no** certified
 anchor, and we state that as an absence rather than filling it {{ref:2606.08419}}. Eight of nine games carry at least one
 certified anchor; the ninth is reported uncertified throughout.
@@ -595,7 +595,7 @@ reordering are two properties.
 
 **The auction canon, named because a referee will look for it.** The game families are textbook objects
 {{ref:vickrey1961,milgrom1989,klemperer}} and the equilibrium concepts the anchors are checked against
-are the ones the canon defines {{ref:krishna,nash1950,milgrom-weber}}. We use them the way a
+are the ones the canon defines {{ref:nash1950,milgrom-weber}}. We use them the way a
 measurement paper uses a ruler: nothing here extends auction theory, and none of our claims is about
 auction theory rather than about what a protocol built on an auction measures. A design whose
 tie-breaking is declared rather than inherited {{ref:2609.18848}} is part of the same discipline.

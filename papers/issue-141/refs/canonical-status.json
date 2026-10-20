@@ -62,16 +62,6 @@
    "year": 1999
   },
   {
-   "id": "10.1017/9781108649919.020",
-   "key": "krishna",
-   "route": "title",
-   "score": 1.0,
-   "status": "matched-edition",
-   "title": "Auction Theory",
-   "why": "exact title, but the record is the 2021 edition of a 2002 work",
-   "year": 2002
-  },
-  {
    "id": "10.1257/jep.3.3.3",
    "key": "milgrom1989",
    "route": "bibliographic",
@@ -406,6 +396,17 @@
    "title": "Statistical Comparisons of Classifiers over Multiple Data Sets",
    "why": "title score 0.67 below 0.90",
    "year": 2006
+  },
+  {
+   "arxiv_route": "reachable",
+   "best_candidate": "Auction Theory",
+   "best_year": 2021,
+   "key": "krishna",
+   "score": 1.0,
+   "status": "unresolved",
+   "title": "Auction Theory",
+   "why": "exact title, but the record carries no author: an edition cannot be corroborated by the title it is an edition of (record 10.1017/9781108649919.020, 2021)",
+   "year": 2002
   }
  ]
 }

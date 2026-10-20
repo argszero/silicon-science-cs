@@ -1290,17 +1290,6 @@
   },
   {
    "cited": true,
-   "key": "krishna",
-   "record": "10.1017/9781108649919.020",
-   "role": "textbook statement of the equilibrium concepts the anchors are checked against",
-   "section": "S2",
-   "source": "crossref",
-   "title": "Auction Theory",
-   "verified_by": "Crossref DOI",
-   "year": 2021
-  },
-  {
-   "cited": true,
    "key": "liang2022",
    "record": "10.1111/nyas.15007",
    "role": "holistic evaluation; a benchmark that names its scenarios rather than one score",

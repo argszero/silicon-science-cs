@@ -16,6 +16,7 @@ found is REPORTED unresolved -- never entered on a remembered identifier.  That 
 citation-integrity bar, and it is why every route below searches by title and stores its score.
 """
 import hashlib
+import html
 import json
 import os
 import re
@@ -351,12 +352,76 @@ def verdict(best, score, year, exact_only=False):
             return "matched", "exact title; year unchecked"
         if abs(ry - year) <= 1:
             return "matched", "exact title, year %d" % ry
+        # THE THIRD TEST, and it is the one that was missing.  When the years DISAGREE the title is
+        # exactly what cannot be the second test -- it is the field the edition claim rests on -- so
+        # the record has to corroborate the work through something else.  Its author is that
+        # something else.  A record that carries no author corroborates nothing, and a bare title
+        # match is how a DIFFERENT work enters a bibliography: measured 2026-10-20, `Auction Theory`
+        # (Krishna, 2002) scored 1.00 against a chapter of the 2021 Cambridge Element *Economics of
+        # Visual Art* -- a chapter with no author on its record, on a subject the paper never touches.
+        # The edition state is a STATE the bibliography says, so a state it cannot support is
+        # `unresolved`, not the benefit of the doubt.
+        if not (best.get("author") or best.get("authors")):
+            return "unresolved", ("exact title, but the record carries no author: an edition cannot "
+                                  "be corroborated by the title it is an edition of (record %s, %s)"
+                                  % (best.get("DOI") or best.get("id"), ry))
         return "matched-edition", "exact title, but the record is the %d edition of a %d work" % (ry, year)
     if score >= 0.90:
         if year is not None and ry is not None and abs(ry - year) <= 1:
             return "matched", "near title (%.2f) with year %d" % (score, ry)
         return "unresolved", ("near title (%.2f) but year %s != %s" % (score, ry, year))
     return "unresolved", "title score %.2f below 0.90" % score
+
+
+def reaudit():
+    """Re-derive every canon VERDICT from the records already in the store -- offline.
+
+    `verdict()` is a pure function of (record, title score, declared year), so a rule added to it
+    does not require the network pass that found the records: it requires the verdicts to be
+    RE-DERIVED from what is already stored.  This stage does exactly that and rewrites the status
+    file only through that function, so the two carriers cannot disagree.
+
+    It exists because the third test below (a record with no author cannot corroborate an edition)
+    is not reachable by re-running `--canonical` on a throttled route, and a status file edited by
+    hand to reflect a rule would be a verdict nobody can reproduce.  Measured 2026-10-20: the
+    network pass hung on the first work and wrote nothing to this file, which is the failure mode a
+    network-only stage has and this one does not.
+    """
+    with open(STATUS, encoding="utf-8") as fh:
+        st = json.load(fh)
+    with open(RAW, encoding="utf-8") as fh:
+        raw = json.load(fh)
+    matched, unresolved, changed = [], list(st.get("unresolved") or []), []
+    for m in st["matched"]:
+        rec = raw.get(m["id"])
+        if rec is None:
+            matched.append(m)
+            continue
+        # `verdict` reads the record's year from its own fields; the score and route are the
+        # recorded FINDING and are carried unchanged -- this stage judges, it does not search.
+        probe = dict(rec)
+        state, why = verdict(probe, m["score"], m["year"])
+        if state == m["status"] and why == m["why"]:
+            matched.append(m)
+            continue
+        changed.append((m["key"], m["status"], state, why))
+        if state in ("matched", "matched-edition"):
+            matched.append(dict(m, status=state, why=why))
+        else:
+            unresolved.append({"key": m["key"], "title": m["title"], "year": m["year"],
+                               "status": "unresolved", "score": m["score"], "why": why,
+                               "best_candidate": rec.get("title"),
+                               "best_year": record_year(rec),
+                               "arxiv_route": st.get("arxiv_route", "not recorded")})
+    out = {"matched": matched, "unresolved": unresolved,
+           "arxiv_route": st.get("arxiv_route", "not recorded")}
+    _write(STATUS, out)
+    for key, was, now, why in changed:
+        print("[reaudit] %-16s %-15s -> %-15s %s" % (key, was, now, why))
+    print("[reaudit] %d verdict(s) re-derived from the stored records, %d changed; "
+          "matched %d, unresolved %d" % (len(matched) + len(unresolved), len(changed),
+                                         len(matched), len(unresolved)))
+    return 0
 
 
 def merge_record(store, e, name):
@@ -691,28 +756,168 @@ def select():
     return 0 if ok else 1
 
 
-def author_str(rec):
-    """Authors, as the record spells them; the form is the house's `A`, `A and B`, `A et al.`
+# ---------------------------------------------------------------------------------------------
+# The bibliography's ENTRY FORM.  The journal's *Presentation requirements* names one order --
+# `[n] `, authors `Family, I.`, the year in parentheses, the title in title case, the venue or the
+# identifier, a resolvable URL, and the entry closing with its one-line `Difference: ...` -- and
+# states that it is a test over EVERY entry rather than over the list.  So this is a renderer with
+# rules, not a formatter with defaults: every component below states the rule it applies and the
+# measurement that produced it, because each of them was a defect on the first rendered run
+# (2026-10-20: `[n]` markers 0/130, author form 0/130, year-in-parentheses 0/130, Difference 0/130).
+DIFFS = os.path.join(REFDIR, "differences.json")
 
-    Trailing punctuation is stripped because the template supplies the separator: a record whose
-    name ends in a period produced `Eriksson et al..` in the first rendered run, and a bibliography
-    with a doubled full stop is a proofreading defect a reviewer reads as carelessness.
+# a family name may carry a particle, and the particle belongs to the family (`van Beek`, not `Beek`)
+PARTICLES = {"van", "von", "de", "der", "den", "da", "di", "du", "la", "le", "del", "della",
+             "bin", "al", "ter", "ten", "st.", "mac", "mc"}
+
+# Words that stay lower-case inside a title (the first and last word are always capitalised).
+SMALL = {"a", "an", "the", "of", "for", "and", "or", "nor", "but", "in", "on", "at", "to", "by",
+         "with", "from", "as", "is", "are", "was", "were", "be", "not", "into", "onto", "over",
+         "under", "between", "among", "through", "without", "within", "per", "via", "vs", "vs.",
+         "upon", "off", "than", "that", "this", "these", "those", "its", "it", "we", "you", "how",
+         "when", "where", "why", "what", "which", "who", "so", "if", "then", "else", "both",
+         "each", "all", "any", "some", "no", "can", "do", "does", "did"}
+
+# An acronym is a word that is entirely upper-case AND short.  The threshold is a judgment written
+# down so a reader can disagree with it: `LLM`, `AI`, `ELO`, `NP`, `RL`, `GPU`, `API`, `MCP` are all
+# <= 5 characters, while an all-caps TITLE WORD (`COUNTERSPECULATION`) is not an acronym and is the
+# form a registry stores a title in -- which is what the title-case rule exists to normalise.
+ACRONYM_MAX = 5
+
+
+def _mixed_case_zero_width(tok):
+    """A registry's ALL-CAPS token -> mixed case, and nothing else.
+
+    The house rule is that the family name is printed in mixed case, *never* in the capitals a
+    registry holds it in -- so this function only ever LOWERS letters and never invents one.
     """
-    au = [a.strip().rstrip(".") for a in (rec.get("authors") or []) if a and a.strip()]
+    letters = [c for c in tok if c.isalpha()]
+    if len(letters) < 2 or not all(c.isupper() for c in letters):
+        return tok
+    out, seen = [], False
+    for c in tok:
+        if not c.isalpha():
+            out.append(c)
+            continue
+        out.append(c.upper() if not seen else c.lower())
+        seen = True
+    return "".join(out)
+
+
+def _initials(given):
+    """`Andrew M.` -> `A. M.`; `Wei-Jung` -> `W.`  (one initial per whitespace-separated token)."""
+    out = []
+    for tok in given.replace(".", " ").split():
+        if tok and tok[0].isalpha():
+            out.append(tok[0].upper() + ".")
+    return " ".join(out)
+
+
+def split_author(name):
+    """`Given Family` -> (family, given).  The split is taken from the RIGHT, and particles move
+    left: `Andries van Beek` -> (`van Beek`, `Andries`).  The first rendered run printed 120 of 130
+    entries with a forename first because the record's field order was used unchanged."""
+    toks = [t for t in name.replace("\u00a0", " ").split() if t]
+    if not toks:
+        return "", ""
+    i = len(toks) - 1
+    while i - 1 >= 0 and toks[i - 1].lower().strip(",") in PARTICLES:
+        i -= 1
+    return " ".join(toks[i:]), " ".join(toks[:i])
+
+
+def author_str(rec, key=None):
+    """The authors in the house form: `Family, I.`, `A, X.; B, Y.` up to three, `et al.` for four or
+    more -- ONE period, the family name first, family names in mixed case.
+
+    Two members of the rule are exempt and are named here rather than left to a default:
+      * a record whose author field is EMPTY -- the entry names the body responsible where the work
+        states one, and otherwise records the absence by naming the record that was read, because an
+        unnamed `n.a.` is a position no reviewer can check;
+      * a record that gives ONE author token and no more -- a mononym or a corporate name -- prints
+        that token alone, never padded to `Family, I.` (an initial no record carries is a fabricated
+        author).
+    """
+    au = [html.unescape(a).strip().rstrip(".") for a in (rec.get("authors") or []) if a and a.strip()]
     if not au:
-        return "n.a."
-    if len(au) == 1:
-        return au[0]
-    if len(au) <= 3:
-        return ", ".join(au[:-1]) + " and " + au[-1]
-    return au[0] + " et al."
+        # The absence is RECORDED BY NAMING THE RECORD THAT WAS READ, in the author position itself,
+        # so a reader can check it.  Two forms a first version printed are ruled out on measurement:
+        #   `n.a.` names no record (the editorial return of 2026-10-20, item 1);
+        #   the CONTAINER title is not a responsible body -- `Economics of Visual Art` is the
+        #   containing Cambridge Element, and printing a container in the author position states an
+        #   authorship the record does not.  Where the work states a body, this rule names it; a
+        #   container is not that, and the DOI is what a reader can open.
+        src = "Crossref" if rec.get("source") == "crossref" else "arXiv"
+        ident = rec.get("doi") or rec.get("id")
+        field = "DOI" if str(ident).startswith("10.") else "identifier"
+        return "author not established on %s for the %s %s" % (src, field, ident)
+    parts = []
+    for name in au:
+        fam, giv = split_author(name)
+        fam = _mixed_case_zero_width(fam)
+        ini = _initials(giv)
+        parts.append("%s, %s" % (fam, ini) if ini else fam)
+    if len(parts) == 1:
+        return parts[0]
+    if len(parts) <= 3:
+        return "; ".join(parts[:-1]) + "; " + parts[-1]
+    return parts[0] + "; et al."
+
+
+def title_case(title):
+    """The title in title case, WITHOUT touching what a word already states.
+
+    The rule this implements is deliberately conservative, because a title-caser that re-cases freely
+    is a fabricator: a word that already carries an upper-case letter after its first position is
+    left exactly as the record spells it (`ERPBench`, `Goodhart's`, `Chatterjee's`, `INCONVENIENT`),
+    an all-caps word is normalised only when it is too long to be an acronym, and a word inside a
+    hyphenation is treated as a word.
+    """
+    t = html.unescape(title or "").strip().rstrip("*").strip()
+    if not t:
+        return ""
+    words = t.split(" ")
+    n = len(words)
+    out = []
+    for i, w in enumerate(words):
+        core = w.strip("\u002c\u003b\u003a\u0021\u003f\u0028\u0029\u0027")
+        if not core:
+            out.append(w)
+            continue
+        # a word the record already mixed-cases is left alone
+        has_inner_upper = any(c.isupper() for c in core[1:])
+        if has_inner_upper:
+            out.append(w)
+            continue
+        letters = [c for c in core if c.isalpha()]
+        if letters and all(c.isupper() for c in letters):
+            if len(letters) <= ACRONYM_MAX:
+                out.append(w)                      # `LLM`, `AI`, `ELO` are acronyms, not words
+                continue
+            core_norm = _mixed_case_zero_width(core)      # COUNTERSPECULATION -> Counterspeculation
+        else:
+            core_norm = core
+        # a hyphenated word is title-cased per part
+        bits = []
+        for k, part in enumerate(core_norm.split("-")):
+            if not part:
+                bits.append(part)
+                continue
+            low = part.lower()
+            if 0 < i < n - 1 and low in SMALL and k == 0:
+                bits.append(low)
+            else:
+                bits.append(part[0].upper() + part[1:] if part[0].isalpha() else part)
+        newcore = "-".join(bits)
+        out.append(w.replace(core, newcore, 1))
+    return " ".join(out)
 
 
 def venue_str(rec):
     if rec.get("source") == "arxiv":
         return "arXiv:%s" % rec["id"]
-    c = rec.get("container") or ""
-    return c if c else "Crossref record"
+    c = html.unescape(rec.get("container") or "")
+    return c if c else ("DOI:%s" % rec.get("doi", rec["id"]))
 
 
 def link_str(rec):
@@ -720,6 +925,18 @@ def link_str(rec):
         return "https://arxiv.org/abs/%s" % rec["id"]
     doi = rec.get("doi") or (rec["id"] if rec["id"].startswith("10.") else "")
     return "https://doi.org/%s" % doi if doi else ""
+
+
+def entry_line(i, key, rec, diffs):
+    """One bibliography entry, in the house order, with its own closing difference."""
+    y = record_year(rec)
+    year = "(%s)" % y if y else "(year not stated on the record)"
+    diff = diffs.get(key)
+    if not diff:
+        raise RuntimeError("no stated difference for `%s`" % key)
+    return ("[%d] %s %s. %s. %s. %s -- Difference: %s"
+            % (i, author_str(rec, key), year, title_case(rec.get("title", "")).rstrip("."),
+               venue_str(rec), link_str(rec), diff.strip()))
 
 
 def render():
@@ -763,17 +980,25 @@ def render():
         print("render: REFUSED -- %d cited works against the journal's 100" % len(order))
         return 1
 
+    diffs = {}
+    if os.path.exists(DIFFS):
+        with open(DIFFS, encoding="utf-8") as fh:
+            diffs = json.load(fh)
+    missing_diff = [k for k in order if not diffs.get(k)]
+    if missing_diff:
+        print("render: REFUSED -- %d cited work(s) carry no stated difference: %s"
+              % (len(missing_diff), ", ".join(missing_diff[:12])))
+        return 1
     lines = [body.rstrip(), "", "## References", ""]
     for i, key in enumerate(order, 1):
-        rec = resolve(key, raw)
-        # a title is rendered inside emphasis markers, so an asterisk the RECORD carries would
-        # break the emphasis and print as literal text: `Assessing the Impact of Planned Social
-        # Change**` was the first run's output.  The title is quoted as the record spells it,
-        # minus characters that are markup rather than content.
-        title = re.sub(r"\*+", "", (rec.get("title") or "")).strip().rstrip(".")
-        lines.append("%d. %s. *%s*. %s, %s. %s"
-                     % (i, author_str(rec).rstrip("."), title, venue_str(rec),
-                        record_year(rec) or "n.d.", link_str(rec)))
+        # A BLANK LINE BETWEEN ENTRIES IS LOAD-BEARING.  Consecutive `[n]` lines are ONE paragraph to
+        # every CommonMark renderer -- GitHub's preview included -- so without the blank line the
+        # entry boundaries vanish and a trailing URL is read as part of the next entry's sentence.
+        # Ordered-list markers (`1. `) would protect the layout instead, but the house marker is
+        # `[n] ` and the protection has to come from the separation (`refgate.py` prints it as
+        # `block form:`; its clean form is `0 of them not separated`).
+        lines.append(entry_line(i, key, resolve(key, raw), diffs))
+        lines.append("")
     text = "\n".join(lines) + "\n"
     tmp = OUT + ".tmp"
     with open(tmp, "w", encoding="utf-8") as fh:
@@ -785,6 +1010,36 @@ def render():
 
 
 # ---------------------------------------------------------------------------------------------
+def repo_root_of(start):
+    """The journal repository root above `start`, or None -- found by the gate it is recognised by.
+
+    The gate is not vendored in this package: it belongs to the journal (`.github/tools/`), so a
+    report that quoted its readings without running it would be quoting a remembered output. When
+    the package is read outside the repository there is no root, and the report says NOT RUN.
+    """
+    d = os.path.abspath(start)
+    for _ in range(8):
+        if os.path.exists(os.path.join(d, ".github", "tools", "refgate.py")):
+            return d
+        parent = os.path.dirname(d)
+        if parent == d:
+            break
+        d = parent
+    return None
+
+
+def run_refgate(root, rel_manuscript):
+    """Run the journal's gate from the repository root and return its output lines."""
+    import subprocess
+    try:
+        pr = subprocess.run([sys.executable, ".github/tools/refgate.py", rel_manuscript],
+                            cwd=root, capture_output=True, text=True, timeout=300)
+    except (OSError, subprocess.SubprocessError) as exc:
+        return ["(the gate could not be run: %s)" % exc]
+    out = (pr.stdout or "") + (pr.stderr or "")
+    return [l.rstrip() for l in out.strip().splitlines()]
+
+
 def checkdoc():
     """Write reference-check.md FROM the verified status -- never by hand.
 
@@ -801,6 +1056,19 @@ def checkdoc():
         raw = json.load(fh)
     matched = st["matched"]
     unresolved = st["unresolved"]
+    # the bibliography's own records, for the two duties the report owes beyond the canon pass: the
+    # no-author exemption is read off the DECLARED bibliography (the 130), not the canon list of 39.
+    try:
+        with open(SELSTATUS, encoding="utf-8") as fh:
+            _sst = json.load(fh)
+    except (OSError, ValueError):
+        _sst = None
+    noauthor = []
+    if _sst:
+        for r in _sst["selected"]:
+            rec = raw.get(r.get("record") or "")
+            if rec is not None and not (rec.get("authors") or []):
+                noauthor.append((r["key"], rec))
     # probe at GENERATION time: the doc's statement about a route must be current when it is
     # written, not a replay of what the discovery run saw hours ago
     # TWO facts, kept apart because they answer different questions.  (i) Which route VERIFIED each
@@ -846,6 +1114,60 @@ def checkdoc():
         lines.append("evidence about the routes that ran. They are carried as unresolved, never")
         lines.append("entered on a remembered identifier.")
         lines.append("")
+    # ---- duty (ii) of the journal's citation item: COVERAGE AND AMBIGUITY, read by the journal's
+    # own gate.  The item names the command and the directory it is run from, so this section runs
+    # exactly that and quotes what it printed -- the three readings are then resolved here rather
+    # than treated as lines the verdict cleared.
+    lines.append("## Coverage and ambiguity -- the journal's own gate, run from the repository root")
+    lines.append("")
+    gate_dir = repo_root_of(HERE)
+    ms = os.path.join(HERE, "manuscript.md")
+    if gate_dir is None:
+        lines.append("**NOT RUN** -- `.github/tools/refgate.py` is not in this tree (the package was")
+        lines.append("read outside the journal repository). The gate is the editor's instrument and it")
+        lines.append("is not vendored here, so no reading is quoted rather than a remembered one.")
+    else:
+        rel = os.path.relpath(ms, gate_dir)
+        shown = "python3 .github/tools/refgate.py %s" % rel
+        out = run_refgate(gate_dir, rel)
+        lines.append("```")
+        lines.append("$ " + shown)
+        lines.extend(out if out else ["(the tool produced no output)"])
+        lines.append("```")
+        lines.append("")
+        if out:
+            lines.append("Each of its three readings, resolved:")
+            lines.append("")
+            lines.append("- **`entries=` / `in-text cited numbers=`** -- the count and the coverage. Every")
+            lines.append("  entry is cited at least once and no citation lacks an entry.")
+            lines.append("- **`block form:`** -- the layout. `[n] ` markers do **not** protect themselves the")
+            lines.append("  way an ordered-list marker does: consecutive `[n]` lines are one paragraph to a")
+            lines.append("  CommonMark renderer, so the blank line between entries is what makes the")
+            lines.append("  boundaries visible on the rendered page. The reading must be `0 of them not")
+            lines.append("  separated`, and it is -- the renderer emits the blank line as a load-bearing")
+            lines.append("  part of the entry set, not as decoration.")
+            lines.append("- **`author form:`** -- the author component. The short count is the rule's own")
+            lines.append("  exemption, named entry by entry in the section below: a record whose author")
+            lines.append("  field is empty prints an absence that names the record read. No entry prints")
+            lines.append("  the ALL-CAPS form a registry stores, and none carries a character reference.")
+    lines.append("")
+    lines.append("## Entries whose record carries no author (%d)" % len(noauthor))
+    lines.append("")
+    if noauthor:
+        lines.append("The journal's author rule exempts a work whose record carries no author, on the")
+        lines.append("condition that the **absence is recorded by naming the record that was read** --")
+        lines.append("the same line the bibliography prints, so a reviewer can check it. `n.a.` failed")
+        lines.append("that condition (it names no record), and so did printing the CONTAINER title in")
+        lines.append("the author position (a container is not a responsible body: it states an")
+        lines.append("authorship the record does not).")
+        lines.append("")
+        lines.append("| key | record read | printed in the author position |")
+        lines.append("|---|---|---|")
+        for key, rec in noauthor:
+            lines.append("| `%s` | `%s` | %s |" % (key, rec.get("id"), author_str(rec, key)))
+    else:
+        lines.append("None: every record in the bibliography carries at least one author.")
+    lines.append("")
     lines.append("## Matched (%d)" % len([m for m in matched if m["status"] == "matched"]))
     lines.append("")
     lines.append("| key | declared | record | year | title score | route |")
@@ -986,11 +1308,19 @@ def main(argv):
               verdict(rec("Optimal multi-unit combinatorial auctions", 2011), 0.80, 1989)[0]
               == "unresolved")
         # the measured right-work/wrong-edition match: exact title, 70 years out
+        # this is the MEASURED nash1950 case, whose reprint record names John F. Nash; the author is
+        # carried here because the edition state now requires it to be corroborated (see `verdict`)
+        nash_reprint = rec("EQUILIBRIUM POINTS IN n-PERSON GAMES", 2020)
+        nash_reprint["author"] = [{"family": "Nash"}]
         holds("PLANT: an exact title in the wrong edition is matched-edition, not matched",
-              verdict(rec("EQUILIBRIUM POINTS IN n-PERSON GAMES", 2020), 1.00, 1950)[0]
-              == "matched-edition")
+              verdict(nash_reprint, 1.00, 1950)[0] == "matched-edition")
         holds("an exact title with the declared year is matched",
               verdict(rec("Optimal Auction Design", 1981), 1.00, 1981)[0] == "matched")
+        holds("PLANT: an exact title whose record carries NO author and a year gap is unresolved",
+              verdict(rec("Auction Theory", 2021), 1.00, 2002)[0] == "unresolved")
+        holds("PLANT: an exact title in a later edition WITH an author is matched-edition",
+              verdict({"title": ["Auction Theory"], "author": [{"family": "Krishna"}],
+                       "issued": {"date-parts": [[2010]]}}, 1.00, 2002)[0] == "matched-edition")
         holds("a near title WITH the year is accepted",
               verdict(rec("A Theory of Auctions and Competitive Bidding", 1982), 0.95, 1982)[0]
               == "matched")
@@ -1017,7 +1347,8 @@ def main(argv):
             # forgot SELSTATUS, and the 100-work plant's status file overwrote the real
             # `refs/selected-status.json` -- a test that edits the artefact it is testing
             # (measured 2026-10-20: `--checkdoc` then reported the plant's 100, not the 130).
-            old = {k: g[k] for k in ("RAW", "STATUS", "SELECTED", "SELSTATUS", "SRC", "OUT")}
+            old = {k: g[k] for k in ("RAW", "STATUS", "SELECTED", "SELSTATUS", "SRC", "OUT",
+                                      "DIFFS")}
             try:
                 for name, obj in files.items():
                     path = os.path.join(tmpd, name)
@@ -1026,12 +1357,21 @@ def main(argv):
                             fh.write(obj)
                         else:
                             json.dump(obj, fh)
+                # DIFFS is redirected too, and its content is DERIVED from the plant's own store:
+                # an unredirected one made the real `differences.json` decide the plant (every
+                # plant key is absent from it, so the clean render refused and wrote nothing --
+                # measured 2026-10-20, the selftest died on a missing `out.md`).
+                if "differences.json" not in files:
+                    pool = files.get("raw.json") or {}
+                    with open(os.path.join(tmpd, "differences.json"), "w", encoding="utf-8") as fh:
+                        json.dump({k: "plant difference for %s" % k for k in pool}, fh)
                 g.update(RAW=os.path.join(tmpd, "raw.json"),
                          STATUS=os.path.join(tmpd, "status.json"),
                          SELECTED=os.path.join(tmpd, "selected.json"),
                          SELSTATUS=os.path.join(tmpd, "selected-status.json"),
                          SRC=os.path.join(tmpd, "src.md"),
-                         OUT=os.path.join(tmpd, "out.md"))
+                         OUT=os.path.join(tmpd, "out.md"),
+                         DIFFS=os.path.join(tmpd, "differences.json"))
                 return fn()
             finally:
                 g.update(old)
@@ -1072,6 +1412,14 @@ def main(argv):
         rc, out = plant(dict(files, **{"src.md": src.replace("{{ref:k042}}", "k042")}),
                         lambda: quiet(render))
         holds("PLANT: a selected-but-uncited work is REFUSED", rc == 1 and "never cited" in out)
+        # the defect: a cited work whose entry would carry NO stated difference.  The entry line
+        # ends in that claim, so an absent one prints a hole in the bibliography rather than a
+        # shorter entry -- the render refuses instead.
+        dd = {k: "plant difference for %s" % k for k in raw}
+        dd.pop("k009")
+        rc, out = plant(dict(files, **{"differences.json": dd}), lambda: quiet(render))
+        holds("PLANT: a cited work with no stated difference is REFUSED",
+              rc == 1 and "no stated difference" in out)
         # the defect: below the journal's threshold
         raw3, sel3 = mkpool(99)
         rc, out = plant({"raw.json": raw3, "status.json": {"matched": [], "unresolved": []},
@@ -1104,6 +1452,8 @@ def main(argv):
     if "--pool" in argv:
         build_pool()
         return 0
+    if "--reaudit" in argv:
+        return reaudit()
     if "--byid" in argv:
         return byid()
     if "--select" in argv:

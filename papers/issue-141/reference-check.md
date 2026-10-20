@@ -18,6 +18,39 @@ reprint of the 1950 work. No entry is ever entered on a remembered DOI.
 | Crossref (by title) | ran |
 | arXiv (by title / `search_query`) | 3 entries verified by this route (recorded at match time); live probe: answered at generation |
 
+## Coverage and ambiguity -- the journal's own gate, run from the repository root
+
+```
+$ python3 .github/tools/refgate.py papers/issue-141/manuscript.md
+=== papers/issue-141/manuscript.md
+  window: the last `## References` heading (line 628) to the end of the file (line 887)
+          — its numbered lines are read as entries
+  entries=129  numbering=[n]
+  block form: 129 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 129/129 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=129  covered=129/129  coverage=100.0%
+  GATE: PASS
+```
+
+Each of its three readings, resolved:
+
+- **`entries=` / `in-text cited numbers=`** -- the count and the coverage. Every
+  entry is cited at least once and no citation lacks an entry.
+- **`block form:`** -- the layout. `[n] ` markers do **not** protect themselves the
+  way an ordered-list marker does: consecutive `[n]` lines are one paragraph to a
+  CommonMark renderer, so the blank line between entries is what makes the
+  boundaries visible on the rendered page. The reading must be `0 of them not
+  separated`, and it is -- the renderer emits the blank line as a load-bearing
+  part of the entry set, not as decoration.
+- **`author form:`** -- the author component. The short count is the rule's own
+  exemption, named entry by entry in the section below: a record whose author
+  field is empty prints an absence that names the record read. No entry prints
+  the ALL-CAPS form a registry stores, and none carries a character reference.
+
+## Entries whose record carries no author (0)
+
+None: every record in the bibliography carries at least one author.
+
 ## Matched (20)
 
 | key | declared | record | year | title score | route |
@@ -43,7 +76,7 @@ reprint of the 1950 work. No entry is ever entered on a remembered DOI.
 | `wilson-ci` | 1927 | `10.1080/01621459.1927.10502953` | 1927 | 1.00 | bibliographic |
 | `wilson1977` | 1977 | `10.2307/2296904` | 1977 | 1.00 | bibliographic |
 
-## Matched, but as a DIFFERENT EDITION (5)
+## Matched, but as a DIFFERENT EDITION (4)
 
 The work is the right one; the registered record is another edition. The
 citation prints the **original** year and names the record actually verified --
@@ -54,11 +87,10 @@ work, and a title score cannot see it.
 |---|---|---|---|---|
 | `arrow1951` | 1951 | `10.12987/9780300186987` | 2017 | exact title, but the record is the 2017 edition of a 1951 work |
 | `campbell` | 1969 | `10.56645/jmde.v7i15.297` | 2011 | exact title, but the record is the 2011 edition of a 1969 work |
-| `krishna` | 2002 | `10.1017/9781108649919.020` | 2021 | exact title, but the record is the 2021 edition of a 2002 work |
 | `nash1950` | 1950 | `10.2307/j.ctv173f1fh.6` | 2020 | exact title, but the record is the 2020 edition of a 1950 work |
 | `spearman1904` | 1904 | `10.1037/11491-005` | 1961 | exact title, but the record is the 1961 edition of a 1904 work |
 
-## Unresolved (14)
+## Unresolved (15)
 
 | key | declared | best score | nearest record found | why not entered |
 |---|---|---|---|---|
@@ -67,6 +99,7 @@ work, and a title score cannot see it.
 | `erpbench` | 2026 | 0.08 | ERPBench: Evaluating LLM Agents for Enterprise Decision-Ma | title score 0.08 below 0.90 |
 | `goodhart` | 1975 | 0.75 | Problems of Monetary Management: The UK Experience | title score 0.75 below 0.90 |
 | `kremer` | None | 0.60 | IPO auctions and private information | title score 0.60 below 0.90 |
+| `krishna` | 2002 | 1.00 | Auction Theory | exact title, but the record carries no author: an edition cannot be corroborated by the title it is an edition of (record 10.1017/9781108649919.020, 2021) |
 | `leaderboard-inference` | 2026 | 0.33 | The Leaderboard Illusion | title score 0.33 below 0.90 |
 | `maskin-riley` | 1989 | 0.80 | Optimal multi-unit combinatorial auctions | title score 0.80 below 0.90 |
 | `mmmu` | 2024 | 0.77 | MMMU: A Massive Multi-Discipline Multimodal Understanding  | title score 0.77 below 0.90 |
@@ -80,8 +113,8 @@ work, and a title score cannot see it.
 ## Counts
 
 - canonical entries declared: **39**
-- matched: **25** (of which 5 are another edition)
-- unresolved: **14**
+- matched: **24** (of which 4 are another edition)
+- unresolved: **15**
 - arXiv route: **3 entries verified by this route (recorded at match time); live probe: answered at generation**
 
 ## The submitted bibliography (from `refs/selected.json`)
@@ -94,9 +127,9 @@ that verified it. `verify-by` says how the record was obtained: `arxiv-id` and
 `Crossref`/`arXiv id` mean the record came from the by-title pass or the
 discovery pass, which search by the work's own title.
 
-- chosen: **130**
-- with a verified record: **130**
-- cited in the body: **130**
+- chosen: **129**
+- with a verified record: **129**
+- cited in the body: **129**
 - missing a record: **0**  ·  chosen but never cited: **0**  ·  cited but undeclared: **0**
 
 | # | key | record | title | year | verify-by | cited |
@@ -218,17 +251,16 @@ discovery pass, which search by the work's own title.
 | 115 | `kendall1938` | `10.2307/2332226` | A New Measure of Rank Correlation | 1938 | Crossref DOI | yes |
 | 116 | `kiela2021` | `10.18653/v1/2021.naacl-main.324` | Dynabench: Rethinking Benchmarking in NLP | 2021 | Crossref DOI | yes |
 | 117 | `klemperer` | `10.2139/ssrn.172650` | Auction Theory: A Guide to the Literature | 1999 | Crossref DOI | yes |
-| 118 | `krishna` | `10.1017/9781108649919.020` | Auction Theory | 2021 | Crossref DOI | yes |
-| 119 | `liang2022` | `10.1111/nyas.15007` | Holistic Evaluation of Language Models | 2023 | Crossref DOI | yes |
-| 120 | `milgrom-weber` | `10.2307/1911865` | A Theory of Auctions and Competitive Bidding | 1982 | Crossref DOI | yes |
-| 121 | `milgrom1989` | `10.1257/jep.3.3.3` | Auctions and Bidding: A Primer | 1989 | Crossref DOI | yes |
-| 122 | `myerson1981` | `10.1287/moor.6.1.58` | Optimal Auction Design | 1981 | Crossref DOI | yes |
-| 123 | `nash1950` | `10.2307/j.ctv173f1fh.6` | EQUILIBRIUM POINTS IN 𝑛-PERSON GAMES | 2020 | Crossref DOI | yes |
-| 124 | `perez2022` | `10.18653/v1/2022.emnlp-main.225` | Red Teaming Language Models with Language Models | 2022 | Crossref DOI | yes |
-| 125 | `recht2019` | `1902.10811` | Do ImageNet Classifiers Generalize to ImageNet? | 2019 | arXiv id | yes |
-| 126 | `spearman1904` | `10.1037/11491-005` | The Proof and Measurement of Association Between Two Things. | 1961 | Crossref DOI | yes |
-| 127 | `strathern` | `10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4` | ‘Improving ratings’: audit in the British University system | 1997 | Crossref DOI | yes |
-| 128 | `vickrey1961` | `10.1111/j.1540-6261.1961.tb02789.x` | COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS | 1961 | Crossref DOI | yes |
-| 129 | `wilson-ci` | `10.1080/01621459.1927.10502953` | Probable Inference, the Law of Succession, and Statistical Inference | 1927 | Crossref DOI | yes |
-| 130 | `wilson1977` | `10.2307/2296904` | A Bidding Model of Perfect Competition | 1977 | Crossref DOI | yes |
+| 118 | `liang2022` | `10.1111/nyas.15007` | Holistic Evaluation of Language Models | 2023 | Crossref DOI | yes |
+| 119 | `milgrom-weber` | `10.2307/1911865` | A Theory of Auctions and Competitive Bidding | 1982 | Crossref DOI | yes |
+| 120 | `milgrom1989` | `10.1257/jep.3.3.3` | Auctions and Bidding: A Primer | 1989 | Crossref DOI | yes |
+| 121 | `myerson1981` | `10.1287/moor.6.1.58` | Optimal Auction Design | 1981 | Crossref DOI | yes |
+| 122 | `nash1950` | `10.2307/j.ctv173f1fh.6` | EQUILIBRIUM POINTS IN 𝑛-PERSON GAMES | 2020 | Crossref DOI | yes |
+| 123 | `perez2022` | `10.18653/v1/2022.emnlp-main.225` | Red Teaming Language Models with Language Models | 2022 | Crossref DOI | yes |
+| 124 | `recht2019` | `1902.10811` | Do ImageNet Classifiers Generalize to ImageNet? | 2019 | arXiv id | yes |
+| 125 | `spearman1904` | `10.1037/11491-005` | The Proof and Measurement of Association Between Two Things. | 1961 | Crossref DOI | yes |
+| 126 | `strathern` | `10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4` | ‘Improving ratings’: audit in the British University system | 1997 | Crossref DOI | yes |
+| 127 | `vickrey1961` | `10.1111/j.1540-6261.1961.tb02789.x` | COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS | 1961 | Crossref DOI | yes |
+| 128 | `wilson-ci` | `10.1080/01621459.1927.10502953` | Probable Inference, the Law of Succession, and Statistical Inference | 1927 | Crossref DOI | yes |
+| 129 | `wilson1977` | `10.2307/2296904` | A Bidding Model of Perfect Competition | 1977 | Crossref DOI | yes |
 

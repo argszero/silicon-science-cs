@@ -594,11 +594,11 @@ its intervals can be reported, and that a contamination that inflates every scor
 reordering are two properties.
 
 **The auction canon, named because a referee will look for it.** The game families are textbook objects
-[19,126,127] and the equilibrium concepts the anchors are checked against
-are the ones the canon defines [21,128,129]. We use them the way a
+[19,126,21] and the equilibrium concepts the anchors are checked against
+are the ones the canon defines [127,128]. We use them the way a
 measurement paper uses a ruler: nothing here extends auction theory, and none of our claims is about
 auction theory rather than about what a protocol built on an auction measures. A design whose
-tie-breaking is declared rather than inherited [130] is part of the same discipline.
+tie-breaking is declared rather than inherited [129] is part of the same discipline.
 
 ## 11 Conclusion
 
@@ -627,133 +627,261 @@ leaderboard's own recovered protocol is the arm we most want a reader to run aga
 
 ## References
 
-1. Maria Eriksson et al. *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation*. arXiv:2502.06559, 2025. https://arxiv.org/abs/2502.06559
-2. Andrew M. Bean et al. *Measuring what Matters: Construct Validity in Large Language Model Benchmarks*. arXiv:2511.04703, 2025. https://arxiv.org/abs/2511.04703
-3. Rachel Longjohn et al. *Benchmark Data Repositories for Better Benchmarking*. arXiv:2410.24100, 2024. https://arxiv.org/abs/2410.24100
-4. Xinran Zhang et al. *ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across Competitive Market Ecologies*. arXiv:2609.04667, 2026. https://arxiv.org/abs/2609.04667
-5. Kawin Ethayarajh and Dan Jurafsky. *Utility is in the Eye of the User: A Critique of NLP Leaderboards*. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Proc, 2020. https://doi.org/10.18653/v1/2020.emnlp-main.393
-6. Hosna Oyarhoseini, Jimmy Lin and Amir-Hossein Karimi. *A Unified Perturbation Framework for Analyzing Leaderboard Stability and Manipulation*. arXiv:2605.15761, 2026. https://arxiv.org/abs/2605.15761
-7. Bitya Neuhof and Yuval Benjamini. *Rank Intervals for Leaderboards: A Hierarchical Framework for Model Evaluation*. arXiv:2606.08679, 2026. https://arxiv.org/abs/2606.08679
-8. Krishna Chytanya Ayyagari. *Pinned and Still Unstable: Within-Judge Verdict Variance and the Noise Floor of LLM-as-Judge Leaderboards*. arXiv:2609.33044, 2026. https://arxiv.org/abs/2609.33044
-9. Bengt Holmstrom and Paul Milgrom. *Aggregation and Linearity in the Provision of Intertemporal Incentives*. Econometrica, 1987. https://doi.org/10.2307/1913238
-10. Bengt Holmstrom. *Moral Hazard and Observability*. The Bell Journal of Economics, 1979. https://doi.org/10.2307/3003320
-11. Marilyn Strathern. *‘Improving ratings’: audit in the British University system*. European Review, 1997. https://doi.org/10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4
-12. Donald T. Campbell. *Assessing the Impact of Planned Social Change*. Journal of MultiDisciplinary Evaluation, 2011. https://doi.org/10.56645/jmde.v7i15.297
-13. El-Mahdi El-Mhamdi and Lê-Nguyên Hoang. *On Goodhart's law, with an application to value alignment*. arXiv:2410.09638, 2024. https://arxiv.org/abs/2410.09638
-14. Adrien Majka and El-Mahdi El-Mhamdi. *The Strong, Weak and Benign Goodhart's law. An independence-free and paradigm-agnostic formalisation*. arXiv:2505.23445, 2025. https://arxiv.org/abs/2505.23445
-15. Roger B. Myerson. *Optimal Auction Design*. Mathematics of Operations Research, 1981. https://doi.org/10.1287/moor.6.1.58
-16. Craig Boutilier. *Eliciting Forecasts from Self-interested Experts: Scoring Rules for Decision Makers*. arXiv:1106.2489, 2011. https://arxiv.org/abs/1106.2489
-17. Yang Liu, Juntao Wang and Yiling Chen. *Surrogate Scoring Rules*. arXiv:1802.09158, 2018. https://arxiv.org/abs/1802.09158
-18. Jason Milionis and William Pires. *On testing the incentive compatibility of single-parameter allocation mechanisms*. arXiv:2609.17406, 2026. https://arxiv.org/abs/2609.17406
-19. William Vickrey. *COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS*. The Journal of Finance, 1961. https://doi.org/10.1111/j.1540-6261.1961.tb02789.x
-20. Robert Wilson. *A Bidding Model of Perfect Competition*. The Review of Economic Studies, 1977. https://doi.org/10.2307/2296904
-21. n.a. *Auction Theory*. Economics of Visual Art, 2021. https://doi.org/10.1017/9781108649919.020
-22. Itzhak Rasooly and Carlos Gavidia-Calderon. *The importance of being discrete: on the inaccuracy of continuous approximations in auction theory*. arXiv:2006.03016, 2020. https://arxiv.org/abs/2006.03016
-23. Thomas Nedelec et al. *Learning in repeated auctions*. arXiv:2011.09365, 2020. https://arxiv.org/abs/2011.09365
-24. Xi Chen, Christian Kroer and Rachitesh Kumar. *Throttling Equilibria in Auction Markets*. arXiv:2107.10923, 2021. https://arxiv.org/abs/2107.10923
-25. Ana Gjorgjevikj, Barbara Koroušić Seljak and Tome Eftimov. *On the Robustness of Multilingual Text Embedding Rankings Across Learning Tasks, Languages, and Benchmark Datasets*. arXiv:2605.31142, 2026. https://arxiv.org/abs/2605.31142
-26. Sara Rezaeimanesh et al. *INCONVENIENT: A Benchmark to Assess LLM Generalization Capabilities from Convenience Samples*. arXiv:2610.21038, 2026. https://arxiv.org/abs/2610.21038
-27. Jason D. Hartline et al. *Optimization of Scoring Rules*. arXiv:2007.02905, 2020. https://arxiv.org/abs/2007.02905
-28. Eric Neyman and Tim Roughgarden. *From Proper Scoring Rules to Max-Min Optimal Forecast Aggregation*. arXiv:2102.07081, 2021. https://arxiv.org/abs/2102.07081
-29. M. G. Kendall. *A New Measure of Rank Correlation*. Biometrika, 1938. https://doi.org/10.2307/2332226
-30. C. Spearman. *The Proof and Measurement of Association Between Two Things*. Studies in individual differences: The search for intelligence., 1961. https://doi.org/10.1037/11491-005
-31. Marcus Rockel. *Kendall and Spearman bounds for Chatterjee's rank correlation under positive dependence*. arXiv:2606.22074, 2026. https://arxiv.org/abs/2606.22074
-32. Marc-Oliver Pohle, Jan-Lukas Wermuth and Christian H. Weiß. *Asymptotic Inference for Rank Correlations*. arXiv:2512.14609, 2025. https://arxiv.org/abs/2512.14609
-33. Edwin B. Wilson. *Probable Inference, the Law of Succession, and Statistical Inference*. Journal of the American Statistical Association, 1927. https://doi.org/10.1080/01621459.1927.10502953
-34. Thomas G. Dietterich. *Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms*. Neural Computation, 1998. https://doi.org/10.1162/089976698300017197
-35. Kleyton da Costa and Bernardo Modenesi. *GraphNetz: Statistical Benchmarking of Graph Neural Networks with Paired Tests and Rank Aggregation*. arXiv:2605.09099, 2026. https://arxiv.org/abs/2605.09099
-36. Amichai Painsky. *Who is the Winning Algorithm? Rank Aggregation for Comparative Studies*. arXiv:2601.01664, 2026. https://arxiv.org/abs/2601.01664
-37. Aris Filos-Ratsikas et al. *On the Complexity of Equilibrium Computation in First-Price Auctions*. arXiv:2103.03238, 2021. https://arxiv.org/abs/2103.03238
-38. Jiawei Chen, Anh Nguyen and Matthew Shum. *The Winner's Bliss in Common-Value Auctions under Horizontal Differentiation*. arXiv:2606.08419, 2026. https://arxiv.org/abs/2606.08419
-39. Kenneth J. Arrow. *Social Choice and Individual Values*. Crossref record, 2017. https://doi.org/10.12987/9780300186987
-40. Polina Gordienko et al. *Beyond Arrow: From Impossibility to Possibilities in Multi-Criteria Benchmarking*. arXiv:2602.07593, 2026. https://arxiv.org/abs/2602.07593
-41. Yixuan Even Xu et al. *Aggregating Quantitative Relative Judgments: From Social Choice to Ranking Prediction*. arXiv:2410.05550, 2024. https://arxiv.org/abs/2410.05550
-42. Xingyao Xiao and Yihong Cheng. *Contamination Inflates Scores but Rarely Reorders Large Language Model Leaderboards*. arXiv:2609.02899, 2026. https://arxiv.org/abs/2609.02899
-43. Dishu Yang et al. *Measurement-First Auditing of Agentic Leaderboards: Contamination Susceptibility, Matched-Control Re-evaluation, and Scorer Validation*. arXiv:2610.05830, 2026. https://arxiv.org/abs/2610.05830
-44. Rostislav Gusev and Alexey Zaytsev. *Benchmarking on Tasks That Matter: Dataset Selection for Preserving Model Rankings*. arXiv:2606.27997, 2026. https://arxiv.org/abs/2606.27997
-45. Ashwinkumar Badanidiyuru. *Model Monotonicity in Autobidding Auctions: When Do Better Predictions Lead to Better Outcomes?*. arXiv:2605.31036, 2026. https://arxiv.org/abs/2605.31036
-46. Jiacheng Wang and Jinbin Huang. *Reward Hacking as Equilibrium under Finite Evaluation*. arXiv:2603.28063, 2026. https://arxiv.org/abs/2603.28063
-47. Arunabh Bora. *Beyond Reward Hacking: Proxy Divergence Across Four Layers of a Staged Humanoid Learning Pipeline*. arXiv:2610.03196, 2026. https://arxiv.org/abs/2610.03196
-48. Thomas Kwa, Drake Thomas and Adrià Garriga-Alonso. *Catastrophic Goodhart: regularizing RLHF with KL divergence does not mitigate heavy-tailed reward misspecification*. arXiv:2407.14503, 2024. https://arxiv.org/abs/2407.14503
-49. Lokman I. Meho. *Gaming the Metrics? Bibliometric Anomalies and the Integrity Crisis in Global University Rankings*. arXiv:2505.06448, 2025. https://arxiv.org/abs/2505.06448
-50. Yiyang Zhao et al. *Beyond Goodhart's Law: A Dynamic Benchmark for Evaluating Compliance in Multi-Agent Systems*. arXiv:2606.07805, 2026. https://arxiv.org/abs/2606.07805
-51. Maoqi Liu et al. *Scoring Higher, Answering Worse: Mitigating Reward Hacking in Rubric-Based RL via Protocol-Level Rubrics*. arXiv:2609.38847, 2026. https://arxiv.org/abs/2609.38847
-52. Guanhua Zhang and Moritz Hardt. *Inherent Trade-Offs between Diversity and Stability in Multi-Task Benchmarks*. arXiv:2405.01719, 2024. https://arxiv.org/abs/2405.01719
-53. Stefan Baack, Christo Buschek and Maty Bohacek. *Unsteady Metrics and Benchmarking Cultures of AI Model Builders*. arXiv:2605.14164, 2026. https://arxiv.org/abs/2605.14164
-54. Nitya Nadgir et al. *Life After Benchmark Saturation: A Case Study of CORE-Bench*. arXiv:2606.26158, 2026. https://arxiv.org/abs/2606.26158
-55. Morio Hamada et al. *Evaluating Model Capabilities After Benchmark Saturation*. arXiv:2610.20667, 2026. https://arxiv.org/abs/2610.20667
-56. Xinran Zhang. *How Sensitive Are Safety Benchmarks to Judge Configuration Choices?*. arXiv:2604.24074, 2026. https://arxiv.org/abs/2604.24074
-57. Patrick Lederer. *The Impossibility of Strategyproof Rank Aggregation*. arXiv:2602.06582, 2026. https://arxiv.org/abs/2602.06582
-58. Jiachun Li, David Simchi-Levi and Will Wei Sun. *Low Rank for Rank: Uncertainty-Aware Task-Specific LLM Ranking under Sparse Pairwise Comparisons*. arXiv:2605.29395, 2026. https://arxiv.org/abs/2605.29395
-59. Mina Remeli and Moritz Hardt. *Correct Looks Better: Pairwise Comparisons Reveal Accuracy Rankings*. arXiv:2606.09409, 2026. https://arxiv.org/abs/2606.09409
-60. Yanhang Li, Zhichao Fan and Zexin Zhuang. *Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits*. arXiv:2607.02586, 2026. https://arxiv.org/abs/2607.02586
-61. Denis Degtiarev et al. *Auditing VLM Benchmarks from Existing Evaluation Runs*. arXiv:2610.13548, 2026. https://arxiv.org/abs/2610.13548
-62. Junjie Chen. *When Agent Evaluation Becomes Unreliable: An Empirical Study of Oracle Failures and Configuration-Dependent Measurement in an LLM Agent Benchmark*. arXiv:2610.16067, 2026. https://arxiv.org/abs/2610.16067
-63. Michael Hardy et al. *Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent Leaderboard*. arXiv:2610.00651, 2026. https://arxiv.org/abs/2610.00651
-64. Zhaowei Han et al. *What Can a Leaderboard Certify? Compositional Controllability for Fair Evaluation and Training of Biomedical Literature-Review Agents*. arXiv:2609.32318, 2026. https://arxiv.org/abs/2609.32318
-65. Negin Kafee Hernashki and Soumick Chatterjee. *MIRTO: a registration-gated, multiverse-tested evaluation protocol for unsupervised anomaly segmentation in brain MRI*. arXiv:2610.02136, 2026. https://arxiv.org/abs/2610.02136
-66. Yuedong Tan et al. *Does Local Video Understanding Transfer Across Encounters? The EgoGears Benchmark*. arXiv:2609.37938, 2026. https://arxiv.org/abs/2609.37938
-67. Song Wang et al. *AutoAdapt: Reliable Few-Shot Adaptation under Clinical Distribution Shifts*. arXiv:2610.11162, 2026. https://arxiv.org/abs/2610.11162
-68. Jiaqi Tang et al. *Benchmarking Self-Supervised 3D Medical Vision Foundation Models and Transferability Estimation*. arXiv:2610.17573, 2026. https://arxiv.org/abs/2610.17573
-69. Ashwin Pananjady et al. *Worst-case vs Average-case Design for Estimation from Fixed Pairwise Comparisons*. arXiv:1707.06217, 2017. https://arxiv.org/abs/1707.06217
-70. Shashaank Aiyer and Han Shao. *How Many Repeated Pairwise Comparisons Are Needed for Ranking under Heterogeneity?*. arXiv:2610.10795, 2026. https://arxiv.org/abs/2610.10795
-71. Motti Goldberger and Nils Rudi. *Selecting the Best Few with Human Evaluators: Adaptively Combining Ratings and Pairwise Comparisons*. arXiv:2610.26380, 2026. https://arxiv.org/abs/2610.26380
-72. Charlotte Li et al. *Towards Real-World Validity in Generative AI Benchmarks: Understanding and Designing Domain-Centered Evaluations for Journalism Practitioners*. arXiv:2511.05501, 2025. https://arxiv.org/abs/2511.05501
-73. Louis Yiven Zhu. *One Capability or Many? Structural and Predictive Tests of Benchmark Validity Disagree About Economic Benchmarks for Frontier AI*. arXiv:2608.29420, 2026. https://arxiv.org/abs/2608.29420
-74. Aris Filos-Ratsikas et al. *Equilibrium Computation in First-Price Auctions with Correlated Priors*. arXiv:2506.05322, 2025. https://arxiv.org/abs/2506.05322
-75. Yatong Chen, Guanhua Zhang and Moritz Hardt. *Leaderboard Incentives: Model Rankings under Strategic Post-Training*. arXiv:2603.08371, 2026. https://arxiv.org/abs/2603.08371
-76. Wei-Jung Huang. *When Pair Count Is Not the Sample Size: What All-Pairs Agent Comparisons Estimate*. arXiv:2609.33012, 2026. https://arxiv.org/abs/2609.33012
-77. Ryan Othniel Kearns. *Quantifying construct validity in large language model evaluations*. arXiv:2602.15532, 2026. https://arxiv.org/abs/2602.15532
-78. Timo Freiesleben. *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks*. arXiv:2603.15121, 2026. https://arxiv.org/abs/2603.15121
-79. Rana Muhammad Ahmed and Sabahat Abbas. *Labels Are Not Endpoints: Treatment Leakage and Construct Validity in MCP Agent Security Evaluation*. arXiv:2608.12880, 2026. https://arxiv.org/abs/2608.12880
-80. Ahmed Alaa et al. *Medical Large Language Model Benchmarks Should Prioritize Construct Validity*. arXiv:2503.10694, 2025. https://arxiv.org/abs/2503.10694
-81. Haji Gul and Ajaz Ahmad Bhat. *When Metrics Disagree: A Meta-Analysis of Knowledge-Graph-Completion Model Benchmarking*. arXiv:2606.10287, 2026. https://arxiv.org/abs/2606.10287
-82. Yanbin Zhao et al. *A Measurement Perspective on Benchmarking LLM-Generated Text Detectors using Item Response Theory*. arXiv:2610.24972, 2026. https://arxiv.org/abs/2610.24972
-83. Juan Francisco and Mandujano Reyes. *Laplace-PSN-IRT: Uncertainty Quantification for Neural Item Response Theory Models of LLM Benchmarks*. arXiv:2607.25257, 2026. https://arxiv.org/abs/2607.25257
-84. Christopher M. Stewart et al. *Searching for "Harmful Refusal": A Psychometric Audit of an AI Safety Benchmark*. arXiv:2610.12409, 2026. https://arxiv.org/abs/2610.12409
-85. Tobias Hallmen et al. *The Failure Is in the Readout: Fine-Grained Emotion Recognition Benchmarks Measure Elicitation, Not Perception*. arXiv:2610.08162, 2026. https://arxiv.org/abs/2610.08162
-86. Silu Panda. *FinVerBench: Benchmark Validity and Calibration in Large Language Model Financial Statement Verification*. arXiv:2605.29586, 2026. https://arxiv.org/abs/2605.29586
-87. Juncheng Li and Pingzhong Tang. *Vulnerabilities of Single-Round Incentive Compatibility in Auto-bidding: Theory and Evidence from ROI-Constrained Online Advertising Markets*. arXiv:2210.06107, 2022. https://arxiv.org/abs/2210.06107
-88. Yeganeh Alimohammadi, Aranyak Mehta and Andres Perlroth. *Incentive Compatibility in the Auto-bidding World*. arXiv:2301.13414, 2023. https://arxiv.org/abs/2301.13414
-89. Andries van Beek, Ruben Brokkelkamp and Guido Schäfer. *Corruption in Auctions: Social Welfare Loss in Hybrid Multi-Unit Auctions*. arXiv:2106.01822, 2021. https://arxiv.org/abs/2106.01822
-90. Jingyi Liu et al. *Single-Item Auctions with a Monopolist Intermediary*. arXiv:2605.21934, 2026. https://arxiv.org/abs/2605.21934
-91. Zhengyang Liu. *Tight Inapproximability of Pacing and Throttling Equilibria in Second-Price Auctions*. arXiv:2608.16682, 2026. https://arxiv.org/abs/2608.16682
-92. Ravi Kashyap. *Auction Theory Adaptations for Real Life Applications*. arXiv:1810.01736, 2018. https://arxiv.org/abs/1810.01736
-93. Renato Paes Leme, Balasubramanian Sivan and Yifeng Teng. *Why Do Competitive Markets Converge to First-Price Auctions?*. arXiv:2001.06074, 2020. https://arxiv.org/abs/2001.06074
-94. Ismail Lotfi and Ali Ghrayeb. *Strategic Bidding in 6G Spectrum Auctions with Large Language Models*. arXiv:2604.24156, 2026. https://arxiv.org/abs/2604.24156
-95. Shange Tang, Yuanhao Wang and Chi Jin. *Is Elo Rating Reliable? A Study Under Model Misspecification*. arXiv:2502.10985, 2025. https://arxiv.org/abs/2502.10985
-96. Sam Olesker-Taylor and Luca Zanetti. *An Analysis of Elo Rating Systems via Markov Chains*. arXiv:2406.05869, 2024. https://arxiv.org/abs/2406.05869
-97. Andy Gray et al. *Using Elo Rating as a Metric for Comparative Judgement in Educational Assessment*. arXiv:2204.01805, 2022. https://arxiv.org/abs/2204.01805
-98. Yuhan Song. *Analysis of ELO Rating Scheme in MOBA Games*. arXiv:2310.13719, 2023. https://arxiv.org/abs/2310.13719
-99. Chen Chen et al. *JudgeStealer: Extracting LLM Judging Capabilities across Evaluation Protocols*. arXiv:2608.26982, 2026. https://arxiv.org/abs/2608.26982
-100. George Baker, Robert Gibbons and Kevin Murphy. *Subjective Performance Measures in Optimal Incentive Contracts*. Crossref record, 1993. https://doi.org/10.3386/w4480
-101. Danilo de Oliveira et al. *The PESQetarian: On the Relevance of Goodhart's Law for Speech Enhancement*. arXiv:2406.03460, 2024. https://arxiv.org/abs/2406.03460
-102. Bastien Mallein et al. *Selection of the fittest or selection of the luckiest: the emergence of Goodhart's law in evolution*. arXiv:2503.21849, 2025. https://arxiv.org/abs/2503.21849
-103. Ayush Mittal and Dhruv Gupta. *Signed Compression Progress on a Sealed Audit is Goodhart-Resistant*. arXiv:2606.11417, 2026. https://arxiv.org/abs/2606.11417
-104. Christian Moya, Elliott Thornley and Guang Lin. *Verifier Errors in RLVR: Reward Hacking, Limits of Feedback, and Selective Control*. arXiv:2609.35677, 2026. https://arxiv.org/abs/2609.35677
-105. Junwei Quan et al. *RH-Detect: A Unified Benchmark for Reward Hacking Detection*. arXiv:2610.10947, 2026. https://arxiv.org/abs/2610.10947
-106. Yuepeng Hu et al. *Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems*. arXiv:2610.12822, 2026. https://arxiv.org/abs/2610.12822
-107. Yushu Li et al. *Multi-Reward Hacking: From Aggregation-Induced Drift to Trust-Anchored Defense*. arXiv:2610.21404, 2026. https://arxiv.org/abs/2610.21404
-108. Viktor Bengs, Eyke Hüllermeier and Willem Waegeman. *On Second-Order Scoring Rules for Epistemic Uncertainty Quantification*. arXiv:2301.12736, 2023. https://arxiv.org/abs/2301.12736
-109. Rubi Hudson. *Joint Scoring Rules: Zero-Sum Competition Avoids Performative Prediction*. arXiv:2412.20732, 2024. https://arxiv.org/abs/2412.20732
-110. Caspar Oesterheld et al. *Incentivizing honest performative predictions with proper scoring rules*. arXiv:2305.17601, 2023. https://arxiv.org/abs/2305.17601
-111. Jens Witkowski et al. *Incentive-Compatible Forecasting Competitions*. arXiv:2101.01816, 2021. https://arxiv.org/abs/2101.01816
-112. Benjamin Turtel et al. *How Proper Scoring Rules Shape LLM Forecasting*. arXiv:2608.28482, 2026. https://arxiv.org/abs/2608.28482
-113. Alex Hall. *Arrow's Impossibility Theorem: Computability in Social Choice Theory*. arXiv:2311.09789, 2023. https://arxiv.org/abs/2311.09789
-114. Federico Echenique and Quitzé Valenzuela-Stookey. *Utilitarian Social Choice and Distributional Welfare Analysis*. arXiv:2411.01315, 2024. https://arxiv.org/abs/2411.01315
-115. Tianyi Qiu. *Representative Social Choice: From Learning Theory to AI Alignment*. arXiv:2410.23953, 2024. https://arxiv.org/abs/2410.23953
-116. Jiayi Wang, Juan C. Alfaro and Viktor Bengs. *A comparative analysis of rank aggregation methods for the partial label ranking problem*. arXiv:2502.17077, 2025. https://arxiv.org/abs/2502.17077
-117. Dominik Peters. *Kemeny Rank Aggregation is NP-Hard for Three Voters*. arXiv:2607.25540, 2026. https://arxiv.org/abs/2607.25540
-118. Samuel R. Bowman and George Dahl. *What Will it Take to Fix Benchmarking in Natural Language Understanding?*. Proceedings of the 2021 Conference of the North American Chapter of the Associat, 2021. https://doi.org/10.18653/v1/2021.naacl-main.385
-119. Douwe Kiela et al. *Dynabench: Rethinking Benchmarking in NLP*. Proceedings of the 2021 Conference of the North American Chapter of the Associat, 2021. https://doi.org/10.18653/v1/2021.naacl-main.324
-120. Rishi Bommasani, Percy Liang and Tony Lee. *Holistic Evaluation of Language Models*. Annals of the New York Academy of Sciences, 2023. https://doi.org/10.1111/nyas.15007
-121. Q. Vera Liao and Ziang Xiao. *Rethinking Model Evaluation as Narrowing the Socio-Technical Gap*. arXiv:2306.03100, 2023. https://arxiv.org/abs/2306.03100
-122. Stephen Casper et al. *Explore, Establish, Exploit: Red Teaming Language Models from Scratch*. arXiv:2306.09442, 2023. https://arxiv.org/abs/2306.09442
-123. Ethan Perez et al. *Red Teaming Language Models with Language Models*. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Proc, 2022. https://doi.org/10.18653/v1/2022.emnlp-main.225
-124. Benjamin Recht et al. *Do ImageNet Classifiers Generalize to ImageNet?*. arXiv:1902.10811, 2019. https://arxiv.org/abs/1902.10811
-125. Nika Haghtalab et al. *Pluralistic Leaderboards*. arXiv:2606.02547, 2026. https://arxiv.org/abs/2606.02547
-126. Paul Milgrom. *Auctions and Bidding: A Primer*. Journal of Economic Perspectives, 1989. https://doi.org/10.1257/jep.3.3.3
-127. Paul Klemperer. *Auction Theory: A Guide to the Literature*. Crossref record, 1999. https://doi.org/10.2139/ssrn.172650
-128. John F. Nash. *EQUILIBRIUM POINTS IN 𝑛-PERSON GAMES*. Classics in Game Theory, 2020. https://doi.org/10.2307/j.ctv173f1fh.6
-129. Paul R. Milgrom and Robert J. Weber. *A Theory of Auctions and Competitive Bidding*. Econometrica, 1982. https://doi.org/10.2307/1911865
-130. Benjamin Heymann. *On the Role of Tie-Breaking Rules in the Convergence of Fictitious Play for Symmetric First-Price Auctions*. arXiv:2609.18848, 2026. https://arxiv.org/abs/2609.18848
+[1] Eriksson, M.; et al. (2025). Can we Trust AI Benchmarks? an Interdisciplinary Review of Current Issues in AI Evaluation. arXiv:2502.06559. https://arxiv.org/abs/2502.06559 -- Difference: surveys what is wrong with AI benchmarks across disciplines; the survey names the problems, and this paper supplies an exact quantity for one of them — the share of an ordering that a protocol decision owns
+
+[2] Bean, A. M.; et al. (2025). Measuring what Matters: Construct Validity in Large Language Model Benchmarks. arXiv:2511.04703. https://arxiv.org/abs/2511.04703 -- Difference: measures construct validity in language-model benchmarks; validity is scored per benchmark there, while this paper's quantity is a property of a score's aggregation and is exactly computable
+
+[3] Longjohn, R.; et al. (2024). Benchmark Data Repositories for Better Benchmarking. arXiv:2410.24100. https://arxiv.org/abs/2410.24100 -- Difference: argues benchmark data repositories are infrastructure; repositories are the subject there, and the aggregation rule is the subject here
+
+[4] Zhang, X.; et al. (2026). ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across Competitive Market Ecologies. arXiv:2609.04667. https://arxiv.org/abs/2609.04667 -- Difference: reports that two matched ecologies pick the same task-level winner on only 21 of 100 problems; it holds the protocol fixed and varies the ecology, so the protocol stays an input — this paper varies the protocol and prices its contribution
+
+[5] Ethayarajh, K.; Jurafsky, D. (2020). Utility is in the Eye of the User: A Critique of NLP Leaderboards. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Proc. https://doi.org/10.18653/v1/2020.emnlp-main.393 -- Difference: critiques leaderboards by showing utility is user-relative; this paper keeps a single declared utility and asks what the score's aggregation does to the ordering of it
+
+[6] Oyarhoseini, H.; Lin, J.; Karimi, A. (2026). A Unified Perturbation Framework for Analyzing Leaderboard Stability and Manipulation. arXiv:2605.15761. https://arxiv.org/abs/2605.15761 -- Difference: perturbs leaderboards to analyse stability and manipulation; the perturbation is empirical, and this paper's population change is an exact re-enumeration
+
+[7] Neuhof, B.; Benjamini, Y. (2026). Rank Intervals for Leaderboards: A Hierarchical Framework for Model Evaluation. arXiv:2606.08679. https://arxiv.org/abs/2606.08679 -- Difference: reports rank intervals for leaderboards; the interval is a sampling statement there, and this paper's ordering is exact so no interval applies
+
+[8] Ayyagari, K. C. (2026). Pinned and Still Unstable: Within-Judge Verdict Variance and the Noise Floor of LLM-as-Judge Leaderboards. arXiv:2609.33044. https://arxiv.org/abs/2609.33044 -- Difference: measures within-judge verdict variance and sets a noise floor for judge leaderboards; the floor is sampling noise there, while this paper's divergence is systematic and has no noise to floor
+
+[9] Holmstrom, B.; Milgrom, P. (1987). Aggregation and Linearity in the Provision of Intertemporal Incentives. Econometrica. https://doi.org/10.2307/1913238 -- Difference: shows how the aggregation of performance information into an incentive scheme determines what the scheme can elicit; this paper takes that lesson to an evaluation protocol and measures the rank divergence the aggregation causes
+
+[10] Holmstrom, B. (1979). Moral Hazard and Observability. The Bell Journal of Economics. https://doi.org/10.2307/3003320 -- Difference: the principal measures what it can observe, and the measure shapes the agent's action; that intuition is this paper's starting point, with the population axis it does not carry added
+
+[11] Strathern, M. (1997). ‘Improving Ratings’: Audit in the British University System. European Review. https://doi.org/10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4 -- Difference: argues that an audit alters the practice it audits; this paper turns that argument into a countable statistic of a protocol
+
+[12] Campbell, D. T. (2011). Assessing the Impact of Planned Social Change. Journal of MultiDisciplinary Evaluation. https://doi.org/10.56645/jmde.v7i15.297 -- Difference: the classic statement that indicators used for decisions get gamed; this paper prices the gaming in rank positions and separates it from transport
+
+[13] El-Mhamdi, E.; Hoang, L. (2024). On Goodhart's Law, with an Application to Value Alignment. arXiv:2410.09638. https://arxiv.org/abs/2410.09638 -- Difference: formalises Goodhart's law for value alignment; the formalisation is about an optimiser diverging from a true objective, while this paper measures an ordering's divergence in a finite exact space
+
+[14] Majka, A.; El-Mhamdi, E. (2025). The Strong, Weak and Benign Goodhart's Law. an Independence-Free and Paradigm-Agnostic Formalisation. arXiv:2505.23445. https://arxiv.org/abs/2505.23445 -- Difference: distinguishes strong, weak and benign forms of Goodhart's law; the taxonomy is conceptual, and this paper's contribution is the countable quantity the law needs to be tested with
+
+[15] Myerson, R. B. (1981). Optimal Auction Design. Mathematics of Operations Research. https://doi.org/10.1287/moor.6.1.58 -- Difference: designs an auction to maximise the seller's revenue: the score is the objective and the bidders are constrained; here the score is the instrument under test and the policies are free, so the question is what the score measures rather than what it should maximise
+
+[16] Boutilier, C. (2011). Eliciting Forecasts from Self-Interested Experts: Scoring Rules for Decision Makers. arXiv:1106.2489. https://arxiv.org/abs/1106.2489 -- Difference: designs scoring rules that elicit forecasts for a decision maker; a score is chosen to extract information, whereas this paper measures what a chosen score does to a ranking
+
+[17] Liu, Y.; Wang, J.; Chen, Y. (2018). Surrogate Scoring Rules. arXiv:1802.09158. https://arxiv.org/abs/1802.09158 -- Difference: builds surrogate scoring rules when the true score is unavailable; the proxy is the subject there, the ranking consequence of a proxy is the subject here
+
+[18] Milionis, J.; Pires, W. (2026). On Testing the Incentive Compatibility of Single-Parameter Allocation Mechanisms. arXiv:2609.17406. https://arxiv.org/abs/2609.17406 -- Difference: tests incentive compatibility of single-parameter allocation mechanisms; that is a test of a mechanism's truthfulness, this paper's law is about a score's monotonicity in a policy's own payoff
+
+[19] Vickrey, W. (1961). COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS. The Journal of Finance. https://doi.org/10.1111/j.1540-6261.1961.tb02789.x -- Difference: introduces the sealed-bid formats and the second-price rule whose dominant-strategy bid is a closed form; it asks how a bidder should bid in one auction, never what a score built on the outcomes does to a population's ordering
+
+[20] Wilson, R. (1977). A Bidding Model of Perfect Competition. The Review of Economic Studies. https://doi.org/10.2307/2296904 -- Difference: models common-value bidding where the winner's curse arises; this paper uses that family as the regime in which the payoff-optimal policy itself moves, and reports no new equilibrium result
+
+[21] Klemperer, P. (1999). Auction Theory: A Guide to the Literature. DOI:10.2139/ssrn.172650. https://doi.org/10.2139/ssrn.172650 -- Difference: surveys auction theory as a body of results about mechanisms; this paper uses none of its theorems and instead treats a mechanism-derived score as a measured object
+
+[22] Rasooly, I.; Gavidia-Calderon, C. (2020). The Importance of Being Discrete: on the Inaccuracy of Continuous Approximations in Auction Theory. arXiv:2006.03016. https://arxiv.org/abs/2006.03016 -- Difference: shows continuous approximations are inaccurate in discrete auction theory; this paper's exactness over an integer grid is a design choice that reference supports rather than a result it repeats
+
+[23] Nedelec, T.; et al. (2020). Learning in Repeated Auctions. arXiv:2011.09365. https://arxiv.org/abs/2011.09365 -- Difference: studies learning in repeated auctions; this paper's zoo is a fixed set of shading policies, deliberately not learners, so the divergence cannot be blamed on adaptation
+
+[24] Chen, X.; Kroer, C.; Kumar, R. (2021). Throttling Equilibria in Auction Markets. arXiv:2107.10923. https://arxiv.org/abs/2107.10923 -- Difference: derives throttling equilibria for a market; pacing/throttling is a population-level design lever, whereas this paper's lever is the score's aggregation
+
+[25] Gjorgjevikj, A.; Seljak, B. K.; Eftimov, T. (2026). On the Robustness of Multilingual Text Embedding Rankings Across Learning Tasks, Languages, and Benchmark Datasets. arXiv:2605.31142. https://arxiv.org/abs/2605.31142 -- Difference: measures how robust multilingual embedding rankings are across tasks and datasets; robustness is assessed empirically there, and the transport condition is derived here
+
+[26] Rezaeimanesh, S.; et al. (2026). INCONVENIENT: A Benchmark to Assess LLM Generalization Capabilities from Convenience Samples. arXiv:2610.21038. https://arxiv.org/abs/2610.21038 -- Difference: assesses LLM generalisation from convenience samples; the sample is the population choice there, and this paper measures what a population change does to an ordering
+
+[27] Hartline, J. D.; et al. (2020). Optimization of Scoring Rules. arXiv:2007.02905. https://arxiv.org/abs/2007.02905 -- Difference: optimises a scoring rule as an object of design; this paper's question is what such an optimisation costs in rank faithfulness
+
+[28] Neyman, E.; Roughgarden, T. (2021). From Proper Scoring Rules to Max-Min Optimal Forecast Aggregation. arXiv:2102.07081. https://arxiv.org/abs/2102.07081 -- Difference: derives optimal aggregation of forecasts under proper scoring rules; the aggregation is optimised there, measured and characterised here
+
+[29] Kendall, M. G. (1938). A New Measure of Rank Correlation. Biometrika. https://doi.org/10.2307/2332226 -- Difference: defines the rank correlation this paper's discrimination statistic is; the statistic is used as a measurement, and no property of the measure is claimed
+
+[30] Spearman, C. (1961). The Proof and Measurement of Association between Two Things. Studies in individual differences: The search for intelligence.. https://doi.org/10.1037/11491-005 -- Difference: the other classical rank measure, named so that the choice of tau is visibly a choice; the paper reports tau and states why, and extends neither measure
+
+[31] Rockel, M. (2026). Kendall and Spearman Bounds for Chatterjee's Rank Correlation under Positive Dependence. arXiv:2606.22074. https://arxiv.org/abs/2606.22074 -- Difference: bounds Kendall and Spearman against Chatterjee's correlation under dependence; the bounds relate measures to each other, whereas this paper's use of one measure is a declared choice with no claim attached to it
+
+[32] Pohle, M.; Wermuth, J.; Weiß, C. H. (2025). Asymptotic Inference for Rank Correlations. arXiv:2512.14609. https://arxiv.org/abs/2512.14609 -- Difference: gives asymptotic inference for rank correlations; the inference is needed when the ordering is estimated, and this paper's ordering is enumerated so no inference is applied
+
+[33] Wilson, E. B. (1927). Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association. https://doi.org/10.1080/01621459.1927.10502953 -- Difference: supplies the interval the house convention puts on a rate; this paper estimates no rate, so the interval is named to say what is deliberately absent rather than applied
+
+[34] Dietterich, T. G. (1998). Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms. Neural Computation. https://doi.org/10.1162/089976698300017197 -- Difference: gives paired tests for comparing classifiers across data sets; this paper's comparison is exact over an enumerated space, so no test is applied and the reference marks that boundary
+
+[35] da Costa, K.; Modenesi, B. (2026). GraphNetz: Statistical Benchmarking of Graph Neural Networks with Paired Tests and Rank Aggregation. arXiv:2605.09099. https://arxiv.org/abs/2605.09099 -- Difference: benchmarks graph networks with paired tests and rank aggregation; the pipeline combines testing with aggregation, while this paper separates the aggregation's contribution from the population's
+
+[36] Painsky, A. (2026). Who is the Winning Algorithm? Rank Aggregation for Comparative Studies. arXiv:2601.01664. https://arxiv.org/abs/2601.01664 -- Difference: asks which algorithm wins under rank aggregation across comparative studies; the winner is the question there, and what the winner's selection measures here
+
+[37] Filos-Ratsikas, A.; et al. (2021). On the Complexity of Equilibrium Computation in First-Price Auctions. arXiv:2103.03238. https://arxiv.org/abs/2103.03238 -- Difference: proves equilibrium computation in first-price auctions is hard; this paper therefore certifies its anchors against closed forms and claims nothing about solvable general instances
+
+[38] Chen, J.; Nguyen, A.; Shum, M. (2026). The Winner's Bliss in Common-Value Auctions under Horizontal Differentiation. arXiv:2606.08419. https://arxiv.org/abs/2606.08419 -- Difference: studies the winner's curse under horizontal differentiation; it is the common-value family this paper instantiates without adding to its equilibrium theory
+
+[39] Arrow, K. J. (2017). Social Choice and Individual Values. DOI:10.12987/9780300186987. https://doi.org/10.12987/9780300186987 -- Difference: aggregates individual orderings into a social one and proves the impossibility; this paper's aggregation is over a policy zoo's payoff rows, and the divergence measured is a rank gain rather than a preference paradox
+
+[40] Gordienko, P.; et al. (2026). Beyond Arrow: from Impossibility to Possibilities in Multi-Criteria Benchmarking. arXiv:2602.07593. https://arxiv.org/abs/2602.07593 -- Difference: moves beyond Arrow to possibilities in multi-criteria benchmarking; the design space is enlarged there, and this paper's is declared and exhausted
+
+[41] Xu, Y. E.; et al. (2024). Aggregating Quantitative Relative Judgments: from Social Choice to Ranking Prediction. arXiv:2410.05550. https://arxiv.org/abs/2410.05550 -- Difference: aggregates quantitative relative judgments into ranking predictions; the prediction is the goal there, while this paper's ranking is measured against an exact payoff ordering
+
+[42] Xiao, X.; Cheng, Y. (2026). Contamination Inflates Scores but Rarely Reorders Large Language Model Leaderboards. arXiv:2609.02899. https://arxiv.org/abs/2609.02899 -- Difference: finds contamination inflates scores but rarely reorders leaderboards; that is the empirical counterpart of this paper's separation between a score's level and its ordering, measured on real models rather than derived
+
+[43] Yang, D.; et al. (2026). Measurement-First Auditing of Agentic Leaderboards: Contamination Susceptibility, Matched-Control Re-Evaluation, and Scorer Validation. arXiv:2610.05830. https://arxiv.org/abs/2610.05830 -- Difference: audits agentic leaderboards measurement-first with matched controls; the audit is empirical and per-leaderboard, while this paper's law applies to any protocol in its space
+
+[44] Gusev, R.; Zaytsev, A. (2026). Benchmarking on Tasks that Matter: Dataset Selection for Preserving Model Rankings. arXiv:2606.27997. https://arxiv.org/abs/2606.27997 -- Difference: selects a task subset that preserves model rankings; it treats the ranking as a constraint to preserve, whereas this paper asks what the ranking is a measurement of
+
+[45] Badanidiyuru, A. (2026). Model Monotonicity in Autobidding Auctions: when do Better Predictions Lead to Better Outcomes?. arXiv:2605.31036. https://arxiv.org/abs/2605.31036 -- Difference: establishes a monotonicity condition for autobidding models; the property is about predictions improving outcomes, while this paper's monotonicity is what makes a ranking faithful at all
+
+[46] Wang, J.; Huang, J. (2026). Reward Hacking as Equilibrium under Finite Evaluation. arXiv:2603.28063. https://arxiv.org/abs/2603.28063 -- Difference: models reward hacking as an equilibrium under finite evaluation — the closest formal neighbour to this paper's P1 — but the equilibrium is in the agent's action and there is no population of policies whose ordering is measured
+
+[47] Bora, A. (2026). Beyond Reward Hacking: Proxy Divergence Across Four Layers of a Staged Humanoid Learning Pipeline. arXiv:2610.03196. https://arxiv.org/abs/2610.03196 -- Difference: traces proxy divergence through four layers of a staged learning pipeline; the layering is a system description, and this paper's account is a two-way decomposition in an exact design space
+
+[48] Kwa, T.; Thomas, D.; Garriga-Alonso, A. (2024). Catastrophic Goodhart: Regularizing RLHF with KL Divergence does not Mitigate Heavy-Tailed Reward Misspecification. arXiv:2407.14503. https://arxiv.org/abs/2407.14503 -- Difference: shows KL regularisation does not prevent catastrophic Goodhart under heavy-tailed misspecification; the setting is a training loop, this paper's is a declared evaluation protocol
+
+[49] Meho, L. I. (2025). Gaming the Metrics? Bibliometric Anomalies and the Integrity Crisis in Global University Rankings. arXiv:2505.06448. https://arxiv.org/abs/2505.06448 -- Difference: documents gaming of university rankings by the ranked institutions; the gaming is bibliometric and administered, while this paper's is available to a policy with no institution behind it
+
+[50] Zhao, Y.; et al. (2026). Beyond Goodhart's Law: A Dynamic Benchmark for Evaluating Compliance in Multi-Agent Systems. arXiv:2606.07805. https://arxiv.org/abs/2606.07805 -- Difference: offers a dynamic benchmark for compliance under Goodhart pressure in multi-agent systems; it is a benchmark of behaviour, this paper is a measurement of a protocol
+
+[51] Liu, M.; et al. (2026). Scoring Higher, Answering Worse: Mitigating Reward Hacking in Rubric-Based RL via Protocol-Level Rubrics. arXiv:2609.38847. https://arxiv.org/abs/2609.38847 -- Difference: reports scoring higher while answering worse under rubric RL and mitigates it; the divergence is a deployed artefact there and an exactly enumerated statistic here
+
+[52] Zhang, G.; Hardt, M. (2024). Inherent Trade-Offs between Diversity and Stability in Multi-Task Benchmarks. arXiv:2405.01719. https://arxiv.org/abs/2405.01719 -- Difference: proves a trade-off between diversity and stability in multi-task benchmarks; stability there is about task subsets, and this paper's transport is about populations of competitors
+
+[53] Baack, S.; Buschek, C.; Bohacek, M. (2026). Unsteady Metrics and Benchmarking Cultures of AI Model Builders. arXiv:2605.14164. https://arxiv.org/abs/2605.14164 -- Difference: critiques unsteady metrics and the benchmarking culture producing them; the critique is institutional, and this paper supplies the exact quantity the culture lacks
+
+[54] Nadgir, N.; et al. (2026). Life After Benchmark Saturation: A Case Study of CORE-Bench. arXiv:2606.26158. https://arxiv.org/abs/2606.26158 -- Difference: follows one benchmark through saturation as a case study; saturation compresses the top of an ordering, which bounds the resolution of any ranking and is outside this paper's declared space
+
+[55] Hamada, M.; et al. (2026). Evaluating Model Capabilities After Benchmark Saturation. arXiv:2610.20667. https://arxiv.org/abs/2610.20667 -- Difference: evaluates capabilities after benchmark saturation; the question is what remains measurable, while this paper asks who owns the ordering's variance
+
+[56] Zhang, X. (2026). How Sensitive are Safety Benchmarks to Judge Configuration Choices?. arXiv:2604.24074. https://arxiv.org/abs/2604.24074 -- Difference: measures how sensitive safety benchmarks are to judge configuration choices; the protocol is a judge configuration there, and this paper's protocol is a score's aggregation
+
+[57] Lederer, P. (2026). The Impossibility of Strategyproof Rank Aggregation. arXiv:2602.06582. https://arxiv.org/abs/2602.06582 -- Difference: proves strategyproof rank aggregation is impossible; this paper shows the impossibility in a different currency — an aggregation can be gamed in rank positions even when no voter misreports
+
+[58] Li, J.; Simchi-Levi, D.; Sun, W. W. (2026). Low Rank for Rank: Uncertainty-Aware Task-Specific LLM Ranking under Sparse Pairwise Comparisons. arXiv:2605.29395. https://arxiv.org/abs/2605.29395 -- Difference: produces uncertainty-aware task-specific rankings from sparse pairwise comparisons; the ranking is the product there, and the object of measurement here
+
+[59] Remeli, M.; Hardt, M. (2026). Correct Looks Better: Pairwise Comparisons Reveal Accuracy Rankings. arXiv:2606.09409. https://arxiv.org/abs/2606.09409 -- Difference: shows pairwise comparisons reveal accuracy rankings under a specific presentation; it validates the comparison instrument, while this paper characterises when the aggregate of comparisons is faithful to payoff
+
+[60] Li, Y.; Fan, Z.; Zhuang, Z. (2026). Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits. arXiv:2607.02586. https://arxiv.org/abs/2607.02586 -- Difference: names five failure modes in benchmark-validity audits; this paper's contribution can be read as removing one of them by making the protocol's share computable
+
+[61] Degtiarev, D.; et al. (2026). Auditing VLM Benchmarks from Existing Evaluation Runs. arXiv:2610.13548. https://arxiv.org/abs/2610.13548 -- Difference: audits VLM benchmarks from existing evaluation runs rather than new ones; the method is reuse of logged runs, this paper's is an enumeration that needs no runs at all
+
+[62] Chen, J. (2026). When Agent Evaluation Becomes Unreliable: an Empirical Study of Oracle Failures and Configuration-Dependent Measurement in an LLM Agent Benchmark. arXiv:2610.16067. https://arxiv.org/abs/2610.16067 -- Difference: audits an agent benchmark for oracle failures and configuration-dependent measurement; the defect is in the harness, while this paper's is in the score rule and is exact
+
+[63] Hardy, M.; et al. (2026). Agent Evaluation Reliability: More Tasks Won't (Always) Fix an Agent Leaderboard. arXiv:2610.00651. https://arxiv.org/abs/2610.00651 -- Difference: shows more tasks do not always fix an agent leaderboard; that is the noise side of the same question, and this paper's side is the systematic one
+
+[64] Han, Z.; et al. (2026). What can a Leaderboard Certify? Compositional Controllability for Fair Evaluation and Training of Biomedical Literature-Review Agents. arXiv:2609.32318. https://arxiv.org/abs/2609.32318 -- Difference: asks what a leaderboard can certify under compositional controllability; the answer is a certification scheme, whereas this paper names the design decision that decides whether certification is possible
+
+[65] Hernashki, N. K.; Chatterjee, S. (2026). MIRTO: a Registration-Gated, Multiverse-Tested Evaluation Protocol for Unsupervised Anomaly Segmentation in Brain MRI. arXiv:2610.02136. https://arxiv.org/abs/2610.02136 -- Difference: registers and multiverse-tests an evaluation protocol for a segmentation task; the protocol is reported in full there and measured as an object here
+
+[66] Tan, Y.; et al. (2026). Does Local Video Understanding Transfer Across Encounters? the EgoGears Benchmark. arXiv:2609.37938. https://arxiv.org/abs/2609.37938 -- Difference: asks whether local video understanding transfers across encounters; the transfer is of a capability across data, and this paper's is of an ordering across populations of competitors
+
+[67] Wang, S.; et al. (2026). AutoAdapt: Reliable Few-Shot Adaptation under Clinical Distribution Shifts. arXiv:2610.11162. https://arxiv.org/abs/2610.11162 -- Difference: adapts models under clinical distribution shifts; the shift is handled by adaptation, while this paper asks what happens to a ranking when the population shifts and no adaptation is allowed
+
+[68] Tang, J.; et al. (2026). Benchmarking Self-Supervised 3D Medical Vision Foundation Models and Transferability Estimation. arXiv:2610.17573. https://arxiv.org/abs/2610.17573 -- Difference: benchmarks foundation models and estimates transferability; the estimate predicts performance on a new corpus, and this paper's statistic prices the ordering's loss on a new population
+
+[69] Pananjady, A.; et al. (2017). Worst-Case vs Average-Case Design for Estimation from Fixed Pairwise Comparisons. arXiv:1707.06217. https://arxiv.org/abs/1707.06217 -- Difference: compares worst-case and average-case design for estimation from fixed pairwise comparisons; the design question is the estimator's, while this paper's is whether the ordering the estimator produces survives the population change
+
+[70] Aiyer, S.; Shao, H. (2026). How Many Repeated Pairwise Comparisons are Needed for Ranking under Heterogeneity?. arXiv:2610.10795. https://arxiv.org/abs/2610.10795 -- Difference: asks how many repeated pairwise comparisons a ranking needs under heterogeneity; the sample size is the quantity there, and the protocol's share of the ordering here
+
+[71] Goldberger, M.; Rudi, N. (2026). Selecting the Best Few with Human Evaluators: Adaptively Combining Ratings and Pairwise Comparisons. arXiv:2610.26380. https://arxiv.org/abs/2610.26380 -- Difference: adaptively combines ratings and pairwise comparisons to select the best few; selection is the goal, whereas this paper measures whether the selection would change under another protocol
+
+[72] Li, C.; et al. (2025). Towards Real-World Validity in Generative AI Benchmarks: Understanding and Designing Domain-Centered Evaluations for Journalism Practitioners. arXiv:2511.05501. https://arxiv.org/abs/2511.05501 -- Difference: argues for domain-centred evaluation design to reach real-world validity; the argument is about what to evaluate, and this paper about how the aggregate ranks
+
+[73] Zhu, L. Y. (2026). One Capability or Many? Structural and Predictive Tests of Benchmark Validity Disagree About Economic Benchmarks for Frontier AI. arXiv:2608.29420. https://arxiv.org/abs/2608.29420 -- Difference: finds structural and predictive tests of benchmark validity disagree; that disagreement is the reason this paper claims a protocol-level quantity instead of a validity verdict
+
+[74] Filos-Ratsikas, A.; et al. (2025). Equilibrium Computation in First-Price Auctions with Correlated Priors. arXiv:2506.05322. https://arxiv.org/abs/2506.05322 -- Difference: computes equilibria with correlated priors, a harder instance than this paper attempts; named to bound what the anchors claim
+
+[75] Chen, Y.; Zhang, G.; Hardt, M. (2026). Leaderboard Incentives: Model Rankings under Strategic Post-Training. arXiv:2603.08371. https://arxiv.org/abs/2603.08371 -- Difference: models ranking under strategic post-training as a Stackelberg game over training resources; it prices the incentive to improve, not the incentive to be ranked, and models no aggregation or population axis
+
+[76] Huang, W. (2026). When Pair Count is not the Sample Size: what All-Pairs Agent Comparisons Estimate. arXiv:2609.33012. https://arxiv.org/abs/2609.33012 -- Difference: asks what all-pairs agent comparisons estimate and fixes the inference problem of a leaderboard; it treats the published ordering as the datum, while this paper asks what that datum measures
+
+[77] Kearns, R. O. (2026). Quantifying Construct Validity in Large Language Model Evaluations. arXiv:2602.15532. https://arxiv.org/abs/2602.15532 -- Difference: quantifies construct validity for language-model evaluations; validity is a property of a benchmark there, and this paper's property is of a protocol's aggregation
+
+[78] Freiesleben, T. (2026). Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks. arXiv:2603.15121. https://arxiv.org/abs/2603.15121 -- Difference: requires nomological networks for construct validity; the requirement is met by an external theory, while this paper's law is internal to the design space
+
+[79] Ahmed, R. M.; Abbas, S. (2026). Labels are not Endpoints: Treatment Leakage and Construct Validity in MCP Agent Security Evaluation. arXiv:2608.12880. https://arxiv.org/abs/2608.12880 -- Difference: shows treatment leakage makes a label a poor endpoint in agent security evaluation; the label is the defect there, the score's aggregation here
+
+[80] Alaa, A.; et al. (2025). Medical Large Language Model Benchmarks Should Prioritize Construct Validity. arXiv:2503.10694. https://arxiv.org/abs/2503.10694 -- Difference: argues medical benchmarks should prioritise construct validity; the recommendation is domain-specific, and this paper's measurement is domain-free by construction
+
+[81] Gul, H.; Bhat, A. A. (2026). When Metrics Disagree: A Meta-Analysis of Knowledge-Graph-Completion Model Benchmarking. arXiv:2606.10287. https://arxiv.org/abs/2606.10287 -- Difference: meta-analyses disagreeing metrics in knowledge-graph completion; disagreement between metrics is measured there and derived here
+
+[82] Zhao, Y.; et al. (2026). A Measurement Perspective on Benchmarking LLM-Generated Text Detectors Using Item Response Theory. arXiv:2610.24972. https://arxiv.org/abs/2610.24972 -- Difference: applies item-response theory to benchmarking generated-text detectors; the measurement model is fitted there, and this paper's model is exact and needs no fit
+
+[83] Francisco, J.; Reyes, M. (2026). Laplace-PSN-IRT: Uncertainty Quantification for Neural Item Response Theory Models of LLM Benchmarks. arXiv:2607.25257. https://arxiv.org/abs/2607.25257 -- Difference: quantifies uncertainty for neural item-response models of benchmarks; the ranking is an estimate there and an enumeration here
+
+[84] Stewart, C. M.; et al. (2026). Searching for "Harmful Refusal": A Psychometric Audit of an AI Safety Benchmark. arXiv:2610.12409. https://arxiv.org/abs/2610.12409 -- Difference: psychometrically audits a safety benchmark; the audit asks whether the instrument measures its construct, and this paper asks what a score's aggregation does to an ordering
+
+[85] Hallmen, T.; et al. (2026). The Failure is in the Readout: Fine-Grained Emotion Recognition Benchmarks Measure Elicitation, not Perception. arXiv:2610.08162. https://arxiv.org/abs/2610.08162 -- Difference: shows fine-grained emotion benchmarks measure elicitation rather than perception; the readout is the defect there, and the aggregation is the defect here
+
+[86] Panda, S. (2026). FinVerBench: Benchmark Validity and Calibration in Large Language Model Financial Statement Verification. arXiv:2605.29586. https://arxiv.org/abs/2605.29586 -- Difference: checks benchmark validity and calibration for financial statement verification; validity is assessed per task, while this paper's quantity is per protocol
+
+[87] Li, J.; Tang, P. (2022). Vulnerabilities of Single-Round Incentive Compatibility in Auto-Bidding: Theory and Evidence from ROI-Constrained Online Advertising Markets. arXiv:2210.06107. https://arxiv.org/abs/2210.06107 -- Difference: shows single-round incentive compatibility is vulnerable in auto-bidding; the vulnerability is a property of a mechanism there and a rank gain over a policy zoo here
+
+[88] Alimohammadi, Y.; Mehta, A.; Perlroth, A. (2023). Incentive Compatibility in the Auto-Bidding World. arXiv:2301.13414. https://arxiv.org/abs/2301.13414 -- Difference: achieves incentive compatibility in the auto-bidding world; this paper does not design a compatible mechanism — it characterises when a published score is faithful to payoff
+
+[89] van Beek, A.; Brokkelkamp, R.; Schäfer, G. (2021). Corruption in Auctions: Social Welfare Loss in Hybrid Multi-Unit Auctions. arXiv:2106.01822. https://arxiv.org/abs/2106.01822 -- Difference: quantifies welfare loss from a distorted multi-unit auction channel; this paper's loss is not welfare but the ordering a protocol publishes
+
+[90] Liu, J.; et al. (2026). Single-Item Auctions with a Monopolist Intermediary. arXiv:2605.21934. https://arxiv.org/abs/2605.21934 -- Difference: analyses a single-item auction with an intermediary; the opponent row is explicit there and the object of analysis, while here it is the aggregation that decides whether the row is read
+
+[91] Liu, Z. (2026). Tight Inapproximability of Pacing and Throttling Equilibria in Second-Price Auctions. arXiv:2608.16682. https://arxiv.org/abs/2608.16682 -- Difference: gives inapproximability for pacing and throttling equilibria; named as the limit of the population lever this paper measures rather than a result it extends
+
+[92] Kashyap, R. (2018). Auction Theory Adaptations for Real Life Applications. arXiv:1810.01736. https://arxiv.org/abs/1810.01736 -- Difference: adapts auction theory to deployed settings; it takes the format as given and asks how to bid, not what the resulting scores do to a ranking
+
+[93] Leme, R. P.; Sivan, B.; Teng, Y. (2020). Why do Competitive Markets Converge to First-Price Auctions?. arXiv:2001.06074. https://arxiv.org/abs/2001.06074 -- Difference: explains why competitive markets converge to first-price formats; this paper's formats are declared, and the convergence question is outside its design space
+
+[94] Lotfi, I.; Ghrayeb, A. (2026). Strategic Bidding in 6G Spectrum Auctions with Large Language Models. arXiv:2604.24156. https://arxiv.org/abs/2604.24156 -- Difference: puts language models inside a spectrum auction as bidders; this paper's policies are not language models, and its question is what the protocol measures rather than how well an LLM bids
+
+[95] Tang, S.; Wang, Y.; Jin, C. (2025). Is Elo Rating Reliable? A Study under Model Misspecification. arXiv:2502.10985. https://arxiv.org/abs/2502.10985 -- Difference: asks whether Elo is reliable under model misspecification; the rating is an estimator there, and this paper's score is a declared aggregation over an exact payoff matrix
+
+[96] Olesker-Taylor, S.; Zanetti, L. (2024). An Analysis of Elo Rating Systems via Markov Chains. arXiv:2406.05869. https://arxiv.org/abs/2406.05869 -- Difference: analyses Elo ratings through Markov chains; the dynamics are the object, while this paper's static ordering is
+
+[97] Gray, A.; et al. (2022). Using Elo Rating as a Metric for Comparative Judgement in Educational Assessment. arXiv:2204.01805. https://arxiv.org/abs/2204.01805 -- Difference: uses Elo as a comparative-judgement metric in assessment; a deployed use of a rating, not a property of it
+
+[98] Song, Y. (2023). Analysis of ELO Rating Scheme in MOBA Games. arXiv:2310.13719. https://arxiv.org/abs/2310.13719 -- Difference: analyses an Elo scheme in a competitive game; the scheme's behaviour is the subject there, and this paper's characterization is of monotone aggregations in general
+
+[99] Chen, C.; et al. (2026). JudgeStealer: Extracting LLM Judging Capabilities Across Evaluation Protocols. arXiv:2608.26982. https://arxiv.org/abs/2608.26982 -- Difference: extracts LLM judging capability across evaluation protocols; the extraction is an attack there, and the protocol's effect on an ordering is the measurement here
+
+[100] Baker, G.; Gibbons, R.; Murphy, K. (1993). Subjective Performance Measures in Optimal Incentive Contracts. DOI:10.3386/w4480. https://doi.org/10.3386/w4480 -- Difference: analyses a principal choosing a subjective performance measure for a workforce; the measure is gamed, but there is no population of competitors whose ordering can fail to transport, which is this paper's second axis
+
+[101] de Oliveira, D.; et al. (2024). The PESQetarian: on the Relevance of Goodhart's Law for Speech Enhancement. arXiv:2406.03460. https://arxiv.org/abs/2406.03460 -- Difference: measures Goodhart's law in speech-enhancement metrics; the proxy divergence is demonstrated on a real metric, and this paper gives the finite-population statistic and its transport face
+
+[102] Mallein, B.; et al. (2025). Selection of the Fittest or Selection of the Luckiest: the Emergence of Goodhart's Law in Evolution. arXiv:2503.21849. https://arxiv.org/abs/2503.21849 -- Difference: models selection of the luckiest as the emergence of Goodhart's law in evolution; the mechanism is selection pressure, the object here is a published ranking
+
+[103] Mittal, A.; Gupta, D. (2026). Signed Compression Progress on a Sealed Audit is Goodhart-Resistant. arXiv:2606.11417. https://arxiv.org/abs/2606.11417 -- Difference: designs a Goodhart-resistant audit through signed compression progress; resistance is engineered there, whereas this paper characterises which protocols are immune by construction and what immunity fails to protect
+
+[104] Moya, C.; Thornley, E.; Lin, G. (2026). Verifier Errors in RLVR: Reward Hacking, Limits of Feedback, and Selective Control. arXiv:2609.35677. https://arxiv.org/abs/2609.35677 -- Difference: analyses verifier errors and reward hacking when the score is the verifier; this paper's score is an aggregation of outcomes, not a verifier, and the divergence is measured without any learning
+
+[105] Quan, J.; et al. (2026). RH-Detect: A Unified Benchmark for Reward Hacking Detection. arXiv:2610.10947. https://arxiv.org/abs/2610.10947 -- Difference: benchmarks the detection of reward hacking; detection is a classifier problem, whereas this paper derives when the score that would be hacked is faithful at all
+
+[106] Hu, Y.; et al. (2026). Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems. arXiv:2610.12822. https://arxiv.org/abs/2610.12822 -- Difference: shows reward hacking can transmit between agents in multi-agent coding; transmission is the phenomenon, while this paper's containment result is about two properties of one protocol
+
+[107] Li, Y.; et al. (2026). Multi-Reward Hacking: from Aggregation-Induced Drift to Trust-Anchored Defense. arXiv:2610.21404. https://arxiv.org/abs/2610.21404 -- Difference: identifies aggregation-induced drift when several rewards are combined and proposes a defence; the aggregation is of rewards inside training, and this paper's aggregation is of outcomes into a published score
+
+[108] Bengs, V.; Hüllermeier, E.; Waegeman, W. (2023). On Second-Order Scoring Rules for Epistemic Uncertainty Quantification. arXiv:2301.12736. https://arxiv.org/abs/2301.12736 -- Difference: extends scoring rules to second-order uncertainty; the score's higher moments carry the incentive there, the score's monotonicity carries the ranking here
+
+[109] Hudson, R. (2024). Joint Scoring Rules: Zero-Sum Competition Avoids Performative Prediction. arXiv:2412.20732. https://arxiv.org/abs/2412.20732 -- Difference: shows joint scoring rules make competition avoid performative prediction; the mechanism is a competition among forecasters, while this paper's ordering is produced by an aggregation over opponents
+
+[110] Oesterheld, C.; et al. (2023). Incentivizing Honest Performative Predictions with Proper Scoring Rules. arXiv:2305.17601. https://arxiv.org/abs/2305.17601 -- Difference: incentivises honest performative predictions; this paper's divergence is not dishonesty but the score's freedom to reorder policies that report truthfully
+
+[111] Witkowski, J.; et al. (2021). Incentive-Compatible Forecasting Competitions. arXiv:2101.01816. https://arxiv.org/abs/2101.01816 -- Difference: designs an incentive-compatible forecasting competition; the tournament's incentives are the object, whereas this paper measures the tournament's published ordering
+
+[112] Turtel, B.; et al. (2026). How Proper Scoring Rules Shape LLM Forecasting. arXiv:2608.28482. https://arxiv.org/abs/2608.28482 -- Difference: measures how proper scoring rules shape LLM forecasting skill; the score changes what is reported there, and what is ranked here
+
+[113] Hall, A. (2023). Arrow's Impossibility Theorem: Computability in Social Choice Theory. arXiv:2311.09789. https://arxiv.org/abs/2311.09789 -- Difference: studies the computability of Arrow's impossibility; the theorem is the object there, and here it is the boundary condition the aggregation must respect
+
+[114] Echenique, F.; Valenzuela-Stookey, Q. (2024). Utilitarian Social Choice and Distributional Welfare Analysis. arXiv:2411.01315. https://arxiv.org/abs/2411.01315 -- Difference: analyses utilitarian social choice and distributional welfare; which aggregate a ranking maximises is a normative choice there, and this paper measures what the chosen aggregate costs in faithfulness
+
+[115] Qiu, T. (2024). Representative Social Choice: from Learning Theory to AI Alignment. arXiv:2410.23953. https://arxiv.org/abs/2410.23953 -- Difference: defines representative social choice; representation is the goal there, and this paper's aim is the opposite direction — what an aggregate measures rather than what it should represent
+
+[116] Wang, J.; Alfaro, J. C.; Bengs, V. (2025). A Comparative Analysis of Rank Aggregation Methods for the Partial Label Ranking Problem. arXiv:2502.17077. https://arxiv.org/abs/2502.17077 -- Difference: compares rank-aggregation methods for partial label ranking; the methods are the subject, and this paper's question is what any of them would do to a payoff ordering
+
+[117] Peters, D. (2026). Kemeny Rank Aggregation is NP-Hard for Three Voters. arXiv:2607.25540. https://arxiv.org/abs/2607.25540 -- Difference: proves Kemeny aggregation is NP-hard for three voters; the hardness bounds exact aggregation, which is why this paper's aggregation is a declared score rather than an optimum
+
+[118] Bowman, S. R.; Dahl, G. (2021). What Will it Take to Fix Benchmarking in Natural Language Understanding?. Proceedings of the 2021 Conference of the North American Chapter of the Associat. https://doi.org/10.18653/v1/2021.naacl-main.385 -- Difference: sets out what it would take to fix benchmarking in NLU; this paper measures one such fix — the score — as a protocol-level quantity
+
+[119] Kiela, D.; et al. (2021). Dynabench: Rethinking Benchmarking in NLP. Proceedings of the 2021 Conference of the North American Chapter of the Associat. https://doi.org/10.18653/v1/2021.naacl-main.324 -- Difference: recasts benchmarking as a moving target that must be redesigned; this paper supplies the quantity that says how much of a ranking the design decision owns
+
+[120] Bommasani, R.; Liang, P.; Lee, T. (2023). Holistic Evaluation of Language Models. Annals of the New York Academy of Sciences. https://doi.org/10.1111/nyas.15007 -- Difference: evaluates models across named scenarios instead of one score; it makes the protocol explicit and holds it fixed, while this paper varies the protocol and measures what the choice carries
+
+[121] Liao, Q. V.; Xiao, Z. (2023). Rethinking Model Evaluation as Narrowing the Socio-Technical Gap. arXiv:2306.03100. https://arxiv.org/abs/2306.03100 -- Difference: frames model evaluation as narrowing a socio-technical gap; this paper's object is narrower and computable — which protocol decision carries which share of the ordering
+
+[122] Casper, S.; et al. (2023). Explore, Establish, Exploit: Red Teaming Language Models from Scratch. arXiv:2306.09442. https://arxiv.org/abs/2306.09442 -- Difference: raises auditability and open problems for benchmarks; this paper answers one of them with an exact characterization rather than a protocol proposal
+
+[123] Perez, E.; et al. (2022). Red Teaming Language Models with Language Models. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Proc. https://doi.org/10.18653/v1/2022.emnlp-main.225 -- Difference: uses red-teaming as an evaluation and shows the choice of protocol changes the finding; the observation is theirs, the exact law is not
+
+[124] Recht, B.; et al. (2019). Do ImageNet Classifiers Generalize to ImageNet?. arXiv:1902.10811. https://arxiv.org/abs/1902.10811 -- Difference: shows a benchmark's accuracy ordering does not transport to a fresh sample; that is the phenomenon, measured across samples, while this paper derives the protocol condition under which the ordering transports at all
+
+[125] Haghtalab, N.; et al. (2026). Pluralistic Leaderboards. arXiv:2606.02547. https://arxiv.org/abs/2606.02547 -- Difference: proposes pluralistic leaderboards because one ordering cannot serve several populations; this paper supplies the measurement that says how far apart two populations' orderings are under a given protocol
+
+[126] Milgrom, P. (1989). Auctions and Bidding: A Primer. Journal of Economic Perspectives. https://doi.org/10.1257/jep.3.3.3 -- Difference: the primer a referee expects a format discussion to know; it states the classical formats and their revenue properties and says nothing about a published ranking
+
+[127] Nash, J. F. (2020). EQUILIBRIUM POINTS IN 𝑛-PERSON GAMES. Classics in Game Theory. https://doi.org/10.2307/j.ctv173f1fh.6 -- Difference: defines the equilibrium point the payoff-optimal policies are computed against; cited as a solution concept, not extended
+
+[128] Milgrom, P. R.; Weber, R. J. (1982). A Theory of Auctions and Competitive Bidding. Econometrica. https://doi.org/10.2307/1911865 -- Difference: establishes the equilibrium theory of competitive bidding this paper's game families instantiate; it takes the ordering of bidders by value as given, which is exactly the ordering a protocol can break
+
+[129] Heymann, B. (2026). On the Role of Tie-Breaking Rules in the Convergence of Fictitious Play for Symmetric First-Price Auctions. arXiv:2609.18848. https://arxiv.org/abs/2609.18848 -- Difference: shows tie-breaking rules change what fictitious play converges to; this paper consequently declares its ties instead of inheriting a rule
+
