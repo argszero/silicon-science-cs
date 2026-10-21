@@ -80,16 +80,16 @@
  },
  "10.1038/s41598-019-45619-9": {
   "authors": [
-   "Omidshafiei, Shayegan",
-   "Papadimitriou, Christos",
-   "Piliouras, Georgios",
-   "Tuyls, Karl",
-   "Rowland, Mark",
-   "Lespiau, Jean-Baptiste",
-   "Czarnecki, Wojciech M.",
-   "Lanctot, Marc",
-   "Perolat, Julien",
-   "Munos, Remi"
+   "Shayegan Omidshafiei",
+   "Christos Papadimitriou",
+   "Georgios Piliouras",
+   "Karl Tuyls",
+   "Mark Rowland",
+   "Jean-Baptiste Lespiau",
+   "Wojciech M. Czarnecki",
+   "Marc Lanctot",
+   "Julien Perolat",
+   "Remi Munos"
   ],
   "container": "Scientific Reports",
   "doi": "10.1038/s41598-019-45619-9",

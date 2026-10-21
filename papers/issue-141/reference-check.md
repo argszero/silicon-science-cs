@@ -16,7 +16,13 @@ reprint of the 1950 work. No entry is ever entered on a remembered DOI.
 | route | state |
 |---|---|
 | Crossref (by title) | ran |
-| arXiv (by title / `search_query`) | 3 entries verified by this route (recorded at match time); live probe: answered at generation |
+| arXiv (by title / `search_query`) | 3 entries verified by this route (recorded at match time); live probe: NOT RUN at generation: transport: <urlopen error _ssl.c:1015: The handshake operation timed out> |
+
+The arXiv leg could not be probed at generation time. It is the only route that reaches the
+works published without a DOI (the four §10 comparisons among them), so the
+unresolved set below is **not** evidence that those works do not exist -- it is
+evidence about the routes that ran. They are carried as unresolved, never
+entered on a remembered identifier.
 
 ## Coverage and ambiguity -- the journal's own gate, run from the repository root
 
@@ -115,7 +121,7 @@ work, and a title score cannot see it.
 - canonical entries declared: **39**
 - matched: **24** (of which 4 are another edition)
 - unresolved: **15**
-- arXiv route: **3 entries verified by this route (recorded at match time); live probe: answered at generation**
+- arXiv route: **3 entries verified by this route (recorded at match time); live probe: NOT RUN at generation: transport: <urlopen error _ssl.c:1015: The handshake operation timed out>**
 
 ## The submitted bibliography (from `refs/selected.json`)
 

@@ -687,7 +687,7 @@ leaderboard's own recovered protocol is the arm we most want a reader to run aga
 
 [6] Czarnecki, W. M.; et al. (2020). Real World Games Look Like Spinning Tops. arXiv:2004.09468. https://arxiv.org/abs/2004.09468 -- Difference: makes non-transitivity against population the axis, a property of the PAYOFF structure; measured on this ladder that axis is degenerate (seven of nine games at zero cyclic triples, 22 of 36 game pairs tied), and the transport excess is a property of the PROTOCOL -- it takes up to eight distinct values at a fixed game and population pair in all nine games -- so the statistic does not reduce to it
 
-[7] Shayegan, O.; et al. (2019). α-Rank: Multi-Agent Evaluation by Evolution. Scientific Reports. https://doi.org/10.1038/s41598-019-45619-9 -- Difference: proposes a ranking method computed from the game's evolutionary dynamics, i.e. an algorithm offered as faithful rather than a study of what an already-deployed score rule does; it would be one more protocol in this paper's design space, and the law here predicts which of its cells can be faithful
+[7] Omidshafiei, S.; et al. (2019). α-Rank: Multi-Agent Evaluation by Evolution. Scientific Reports. https://doi.org/10.1038/s41598-019-45619-9 -- Difference: proposes a ranking method computed from the game's evolutionary dynamics, i.e. an algorithm offered as faithful rather than a study of what an already-deployed score rule does; it would be one more protocol in this paper's design space, and the law here predicts which of its cells can be faithful
 
 [8] Ethayarajh, K.; Jurafsky, D. (2020). Utility is in the Eye of the User: A Critique of NLP Leaderboards. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Proc. https://doi.org/10.18653/v1/2020.emnlp-main.393 -- Difference: critiques leaderboards by showing utility is user-relative; this paper keeps a single declared utility and asks what the score's aggregation does to the ordering of it
 
@@ -933,7 +933,7 @@ leaderboard's own recovered protocol is the arm we most want a reader to run aga
 
 [129] Milgrom, P. (1989). Auctions and Bidding: A Primer. Journal of Economic Perspectives. https://doi.org/10.1257/jep.3.3.3 -- Difference: the primer a referee expects a format discussion to know; it states the classical formats and their revenue properties and says nothing about a published ranking
 
-[130] Nash, J. F. (2020). Equilibrium Points in 𝑛-PERSON Games. Classics in Game Theory. https://doi.org/10.2307/j.ctv173f1fh.6 -- Difference: defines the equilibrium point the payoff-optimal policies are computed against; cited as a solution concept, not extended
+[130] Nash, J. F. (2020). Equilibrium Points in 𝑛-Person Games. Classics in Game Theory. https://doi.org/10.2307/j.ctv173f1fh.6 -- Difference: defines the equilibrium point the payoff-optimal policies are computed against; cited as a solution concept, not extended
 
 [131] Milgrom, P. R.; Weber, R. J. (1982). A Theory of Auctions and Competitive Bidding. Econometrica. https://doi.org/10.2307/1911865 -- Difference: establishes the equilibrium theory of competitive bidding this paper's game families instantiate; it takes the ordering of bidders by value as given, which is exactly the ordering a protocol can break
 

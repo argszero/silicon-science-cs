@@ -926,6 +926,18 @@ def title_case(title):
             if not part:
                 bits.append(part)
                 continue
+            # In a caps EXPORT every part is a word, including the ones after a hyphen: without
+            # this, `𝑛-PERSON` printed `PERSON` because the part-level test never ran on it (the
+            # whole-token all-caps test was defeated by the mathematical italic, and the single
+            # capitalise step that replaced it leaves an all-caps part all-caps). Measured at
+            # R673: leaving it would have restored [130] only halfway.
+            if caps_export:
+                _pl = [c for c in part if c.isalpha()]
+                if len(_pl) > 1 and all(c.isupper() for c in _pl):
+                    _lowed = part.lower()
+                    _idx = next((j for j, c in enumerate(_lowed) if c.isalpha()), None)
+                    part = (_lowed if _idx is None
+                            else _lowed[:_idx] + _lowed[_idx].upper() + _lowed[_idx + 1:])
             low = part.lower()
             if 0 < i < n - 1 and low in SMALL and k == 0:
                 bits.append(low)
