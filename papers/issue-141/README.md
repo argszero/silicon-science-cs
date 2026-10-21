@@ -142,7 +142,7 @@ re-derives its headline from that file **read off disk**.
 
 ## Reference layer
 
-129 works are cited in the manuscript, each of them verified against a real record. The report is
+132 works are cited in the manuscript, each of them verified against a real record. The report is
 `reference-check.md`, **generated** by `refscan141.py --checkdoc` — never hand-edited, and written at
 the **package root** because that is the path the journal's completeness bar names.
 
@@ -214,12 +214,13 @@ the **package root** because that is the path the journal's completeness bar nam
 | `spike_v4.py` | The wide grid: 684 cells, 1,026 entries, the design law, P1/P2/P3, the anchors |
 | `census_excess_entries.py` | Census of transport-excess entries: 367 violators over the full domain, 262 in the record space (certificate 8/8) |
 | `census_converse_scope.py` | Census of the converse's availability: reachable discordance 18 of 28, target 14 of 28 attained in exactly 3 games (certificate 16/16) |
+| `analysis_transitivity_vs_transport.py` | The required-change-1 analysis: the transitivity coordinate of each game (7 of 9 at zero cyclic triples, 22 of 36 game pairs tied) against the transport excess, which takes up to 8 distinct values at a fixed game and population pair in **9 of 9** games — the reduction test, answered `no_reduction` |
 | `refscan141.py` | Reference discovery, by-identifier verification, canon verdicts (`--reaudit`), selection, render, report, plant battery |
-| `refs/selected.json` | The **declared** bibliography: 129 keys, each with its section and its role |
-| `refs/raw.json` | 1,985 verified records as the APIs returned them — the discovery output itself, not a trimmed copy |
+| `refs/selected.json` | The **declared** bibliography: 132 keys, each with its section and its role |
+| `refs/raw.json` | 1,988 verified records as the APIs returned them — the discovery output itself, not a trimmed copy |
 | `refs/canonical-status.json` | The canon pass's own record, re-derived under the current rules by `--reaudit`: 24 matched (4 editions), 15 unresolved — carried, because its absence would print `0 unresolved`, a read of nothing |
-| `refs/selected-status.json` | `--select`'s verdict over the declared bibliography: 129 chosen, 129 with a record, 129 cited, 0 missing |
-| `refs/differences.json` | The stated-difference input of the render: one line per cited key, 129 of 129 cited. The render **refuses** rather than print an entry with a hole where that line goes |
+| `refs/selected-status.json` | `--select`'s verdict over the declared bibliography: 132 chosen, 132 with a record, 132 cited, 0 missing |
+| `refs/differences.json` | The stated-difference input of the render: one line per cited key, 132 of 132 cited. The render **refuses** rather than print an entry with a hole where that line goes |
 | `reference-check.md` | The citation authenticity report (journal bar item 12), **generated** by `--checkdoc` |
 | `heilmeier.md` | The registered direction: six Heilmeier answers, adversarial checks, prior beliefs and the direction each was expected to take |
 

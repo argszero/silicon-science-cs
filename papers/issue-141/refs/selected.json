@@ -1,4 +1,8 @@
 {
+ "10.1038/s41598-019-45619-9": {
+  "role": "evolutionary-dynamics ranking of agents in a game (alpha-Rank)",
+  "section": "S10"
+ },
  "10.3386/w4480": {
   "role": "subjective performance measures in optimal incentive contracts: the principal's measure and the agent's response",
   "section": "S10"
@@ -15,6 +19,10 @@
   "role": "surrogate scoring rules; a score used as a proxy for the thing wanted",
   "section": "S1"
  },
+ "1806.02643": {
+  "role": "transitive ratings misrank non-transitive games; a solution-concept aggregate is required",
+  "section": "S10"
+ },
  "1810.01736": {
   "role": "auction theory adapted to practice; the formats benchmarks actually publish",
   "section": "S2"
@@ -22,6 +30,10 @@
  "2001.06074": {
   "role": "why markets converge to first-price formats",
   "section": "S2"
+ },
+ "2004.09468": {
+  "role": "the transitivity dimension and the population axis in multi-agent evaluation",
+  "section": "S10"
  },
  "2006.03016": {
   "role": "discreteness matters in auction theory; a justification for an exact integer grid",

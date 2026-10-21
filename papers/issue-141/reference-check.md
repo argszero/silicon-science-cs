@@ -23,12 +23,12 @@ reprint of the 1950 work. No entry is ever entered on a remembered DOI.
 ```
 $ python3 .github/tools/refgate.py papers/issue-141/manuscript.md
 === papers/issue-141/manuscript.md
-  window: the last `## References` heading (line 628) to the end of the file (line 887)
+  window: the last `## References` heading (line 676) to the end of the file (line 941)
           — its numbered lines are read as entries
-  entries=129  numbering=[n]
-  block form: 129 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
-  author form: 129/129 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
-  in-text cited numbers=129  covered=129/129  coverage=100.0%
+  entries=132  numbering=[n]
+  block form: 132 entries, 0 of them not separated from the entry above by a blank line — consecutive entry lines are ONE paragraph to a CommonMark renderer (GitHub's preview included); read the page, not the source
+  author form: 132/132 entry(s) carry the read's window (a family name, a comma, an initial — or a lone family name before the year); 0 print the family name ALL-CAPS, 0 carry a character reference (&…;) — a record's stored field is not the form an entry prints
+  in-text cited numbers=132  covered=132/132  coverage=100.0%
   GATE: PASS
 ```
 
@@ -127,140 +127,143 @@ that verified it. `verify-by` says how the record was obtained: `arxiv-id` and
 `Crossref`/`arXiv id` mean the record came from the by-title pass or the
 discovery pass, which search by the work's own title.
 
-- chosen: **129**
-- with a verified record: **129**
-- cited in the body: **129**
+- chosen: **132**
+- with a verified record: **132**
+- cited in the body: **132**
 - missing a record: **0**  ·  chosen but never cited: **0**  ·  cited but undeclared: **0**
 
 | # | key | record | title | year | verify-by | cited |
 |---|---|---|---|---|---|---|
-| 1 | `10.3386/w4480` | `10.3386/w4480` | Subjective Performance Measures in Optimal Incentive Contracts | 1993 | doi | yes |
-| 2 | `1106.2489` | `1106.2489` | Eliciting Forecasts from Self-interested Experts: Scoring Rules for De | 2011 | arXiv id | yes |
-| 3 | `1707.06217` | `1707.06217` | Worst-case vs Average-case Design for Estimation from Fixed Pairwise C | 2017 | arXiv id | yes |
-| 4 | `1802.09158` | `1802.09158` | Surrogate Scoring Rules | 2018 | arXiv id | yes |
-| 5 | `1810.01736` | `1810.01736` | Auction Theory Adaptations for Real Life Applications | 2018 | arXiv id | yes |
-| 6 | `2001.06074` | `2001.06074` | Why Do Competitive Markets Converge to First-Price Auctions? | 2020 | arXiv id | yes |
-| 7 | `2006.03016` | `2006.03016` | The importance of being discrete: on the inaccuracy of continuous appr | 2020 | arXiv id | yes |
-| 8 | `2007.02905` | `2007.02905` | Optimization of Scoring Rules | 2020 | arXiv id | yes |
-| 9 | `2011.09365` | `2011.09365` | Learning in repeated auctions | 2020 | arXiv id | yes |
-| 10 | `2101.01816` | `2101.01816` | Incentive-Compatible Forecasting Competitions | 2021 | arXiv id | yes |
-| 11 | `2102.07081` | `2102.07081` | From Proper Scoring Rules to Max-Min Optimal Forecast Aggregation | 2021 | arXiv id | yes |
-| 12 | `2103.03238` | `2103.03238` | On the Complexity of Equilibrium Computation in First-Price Auctions | 2021 | arXiv id | yes |
-| 13 | `2106.01822` | `2106.01822` | Corruption in Auctions: Social Welfare Loss in Hybrid Multi-Unit Aucti | 2021 | arXiv id | yes |
-| 14 | `2107.10923` | `2107.10923` | Throttling Equilibria in Auction Markets | 2021 | arXiv id | yes |
-| 15 | `2204.01805` | `2204.01805` | Using Elo Rating as a Metric for Comparative Judgement in Educational  | 2022 | arXiv id | yes |
-| 16 | `2210.06107` | `2210.06107` | Vulnerabilities of Single-Round Incentive Compatibility in Auto-biddin | 2022 | arXiv id | yes |
-| 17 | `2301.12736` | `2301.12736` | On Second-Order Scoring Rules for Epistemic Uncertainty Quantification | 2023 | arXiv id | yes |
-| 18 | `2301.13414` | `2301.13414` | Incentive Compatibility in the Auto-bidding World | 2023 | arXiv id | yes |
-| 19 | `2305.17601` | `2305.17601` | Incentivizing honest performative predictions with proper scoring rule | 2023 | arXiv id | yes |
-| 20 | `2310.13719` | `2310.13719` | Analysis of ELO Rating Scheme in MOBA Games | 2023 | arXiv id | yes |
-| 21 | `2311.09789` | `2311.09789` | Arrow's Impossibility Theorem: Computability in Social Choice Theory | 2023 | arXiv id | yes |
-| 22 | `2405.01719` | `2405.01719` | Inherent Trade-Offs between Diversity and Stability in Multi-Task Benc | 2024 | arXiv id | yes |
-| 23 | `2406.03460` | `2406.03460` | The PESQetarian: On the Relevance of Goodhart's Law for Speech Enhance | 2024 | arXiv id | yes |
-| 24 | `2406.05869` | `2406.05869` | An Analysis of Elo Rating Systems via Markov Chains | 2024 | arXiv id | yes |
-| 25 | `2407.14503` | `2407.14503` | Catastrophic Goodhart: regularizing RLHF with KL divergence does not m | 2024 | arXiv id | yes |
-| 26 | `2410.05550` | `2410.05550` | Aggregating Quantitative Relative Judgments: From Social Choice to Ran | 2024 | arXiv id | yes |
-| 27 | `2410.09638` | `2410.09638` | On Goodhart's law, with an application to value alignment | 2024 | arXiv id | yes |
-| 28 | `2410.23953` | `2410.23953` | Representative Social Choice: From Learning Theory to AI Alignment | 2024 | arXiv id | yes |
-| 29 | `2410.24100` | `2410.24100` | Benchmark Data Repositories for Better Benchmarking | 2024 | arXiv id | yes |
-| 30 | `2411.01315` | `2411.01315` | Utilitarian Social Choice and Distributional Welfare Analysis | 2024 | arXiv id | yes |
-| 31 | `2412.20732` | `2412.20732` | Joint Scoring Rules: Zero-Sum Competition Avoids Performative Predicti | 2024 | arXiv id | yes |
-| 32 | `2502.06559` | `2502.06559` | Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Iss | 2025 | arXiv id | yes |
-| 33 | `2502.10985` | `2502.10985` | Is Elo Rating Reliable? A Study Under Model Misspecification | 2025 | arXiv id | yes |
-| 34 | `2502.17077` | `2502.17077` | A comparative analysis of rank aggregation methods for the partial lab | 2025 | arXiv id | yes |
-| 35 | `2503.10694` | `2503.10694` | Medical Large Language Model Benchmarks Should Prioritize Construct Va | 2025 | arXiv id | yes |
-| 36 | `2503.21849` | `2503.21849` | Selection of the fittest or selection of the luckiest: the emergence o | 2025 | arXiv id | yes |
-| 37 | `2505.06448` | `2505.06448` | Gaming the Metrics? Bibliometric Anomalies and the Integrity Crisis in | 2025 | arXiv id | yes |
-| 38 | `2505.23445` | `2505.23445` | The Strong, Weak and Benign Goodhart's law. An independence-free and p | 2025 | arXiv id | yes |
-| 39 | `2506.05322` | `2506.05322` | Equilibrium Computation in First-Price Auctions with Correlated Priors | 2025 | arXiv id | yes |
-| 40 | `2511.04703` | `2511.04703` | Measuring what Matters: Construct Validity in Large Language Model Ben | 2025 | arXiv id | yes |
-| 41 | `2511.05501` | `2511.05501` | Towards Real-World Validity in Generative AI Benchmarks: Understanding | 2025 | arXiv id | yes |
-| 42 | `2512.14609` | `2512.14609` | Asymptotic Inference for Rank Correlations | 2025 | arXiv id | yes |
-| 43 | `2601.01664` | `2601.01664` | Who is the Winning Algorithm? Rank Aggregation for Comparative Studies | 2026 | arXiv id | yes |
-| 44 | `2602.06582` | `2602.06582` | The Impossibility of Strategyproof Rank Aggregation | 2026 | arXiv id | yes |
-| 45 | `2602.07593` | `2602.07593` | Beyond Arrow: From Impossibility to Possibilities in Multi-Criteria Be | 2026 | arXiv id | yes |
-| 46 | `2602.15532` | `2602.15532` | Quantifying construct validity in large language model evaluations | 2026 | arXiv id | yes |
-| 47 | `2603.08371` | `2603.08371` | Leaderboard Incentives: Model Rankings under Strategic Post-Training | 2026 | arxiv-id | yes |
-| 48 | `2603.15121` | `2603.15121` | Establishing Construct Validity in LLM Capability Benchmarks Requires  | 2026 | arXiv id | yes |
-| 49 | `2603.28063` | `2603.28063` | Reward Hacking as Equilibrium under Finite Evaluation | 2026 | arXiv id | yes |
-| 50 | `2604.24074` | `2604.24074` | How Sensitive Are Safety Benchmarks to Judge Configuration Choices? | 2026 | arXiv id | yes |
-| 51 | `2604.24156` | `2604.24156` | Strategic Bidding in 6G Spectrum Auctions with Large Language Models | 2026 | arXiv id | yes |
-| 52 | `2605.09099` | `2605.09099` | GraphNetz: Statistical Benchmarking of Graph Neural Networks with Pair | 2026 | arXiv id | yes |
-| 53 | `2605.14164` | `2605.14164` | Unsteady Metrics and Benchmarking Cultures of AI Model Builders | 2026 | arXiv id | yes |
-| 54 | `2605.15761` | `2605.15761` | A Unified Perturbation Framework for Analyzing Leaderboard Stability a | 2026 | arXiv id | yes |
-| 55 | `2605.21934` | `2605.21934` | Single-Item Auctions with a Monopolist Intermediary | 2026 | arXiv id | yes |
-| 56 | `2605.29395` | `2605.29395` | Low Rank for Rank: Uncertainty-Aware Task-Specific LLM Ranking under S | 2026 | arXiv id | yes |
-| 57 | `2605.29586` | `2605.29586` | FinVerBench: Benchmark Validity and Calibration in Large Language Mode | 2026 | arXiv id | yes |
-| 58 | `2605.31036` | `2605.31036` | Model Monotonicity in Autobidding Auctions: When Do Better Predictions | 2026 | arXiv id | yes |
-| 59 | `2605.31142` | `2605.31142` | On the Robustness of Multilingual Text Embedding Rankings Across Learn | 2026 | arXiv id | yes |
-| 60 | `2606.02547` | `2606.02547` | Pluralistic Leaderboards | 2026 | arXiv id | yes |
-| 61 | `2606.07805` | `2606.07805` | Beyond Goodhart's Law: A Dynamic Benchmark for Evaluating Compliance i | 2026 | arXiv id | yes |
-| 62 | `2606.08419` | `2606.08419` | The Winner's Bliss in Common-Value Auctions under Horizontal Different | 2026 | arXiv id | yes |
-| 63 | `2606.08679` | `2606.08679` | Rank Intervals for Leaderboards: A Hierarchical Framework for Model Ev | 2026 | arXiv id | yes |
-| 64 | `2606.09409` | `2606.09409` | Correct Looks Better: Pairwise Comparisons Reveal Accuracy Rankings | 2026 | arXiv id | yes |
-| 65 | `2606.10287` | `2606.10287` | When Metrics Disagree: A Meta-Analysis of Knowledge-Graph-Completion M | 2026 | arXiv id | yes |
-| 66 | `2606.11417` | `2606.11417` | Signed Compression Progress on a Sealed Audit is Goodhart-Resistant | 2026 | arXiv id | yes |
-| 67 | `2606.22074` | `2606.22074` | Kendall and Spearman bounds for Chatterjee's rank correlation under po | 2026 | arXiv id | yes |
-| 68 | `2606.26158` | `2606.26158` | Life After Benchmark Saturation: A Case Study of CORE-Bench | 2026 | arXiv id | yes |
-| 69 | `2606.27997` | `2606.27997` | Benchmarking on Tasks That Matter: Dataset Selection for Preserving Mo | 2026 | arXiv id | yes |
-| 70 | `2607.02586` | `2607.02586` | Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits | 2026 | arXiv id | yes |
-| 71 | `2607.25257` | `2607.25257` | Laplace-PSN-IRT: Uncertainty Quantification for Neural Item Response T | 2026 | arXiv id | yes |
-| 72 | `2607.25540` | `2607.25540` | Kemeny Rank Aggregation is NP-Hard for Three Voters | 2026 | arXiv id | yes |
-| 73 | `2608.12880` | `2608.12880` | Labels Are Not Endpoints: Treatment Leakage and Construct Validity in  | 2026 | arXiv id | yes |
-| 74 | `2608.16682` | `2608.16682` | Tight Inapproximability of Pacing and Throttling Equilibria in Second- | 2026 | arXiv id | yes |
-| 75 | `2608.26982` | `2608.26982` | JudgeStealer: Extracting LLM Judging Capabilities across Evaluation Pr | 2026 | arXiv id | yes |
-| 76 | `2608.28482` | `2608.28482` | How Proper Scoring Rules Shape LLM Forecasting | 2026 | arXiv id | yes |
-| 77 | `2608.29420` | `2608.29420` | One Capability or Many? Structural and Predictive Tests of Benchmark V | 2026 | arXiv id | yes |
-| 78 | `2609.02899` | `2609.02899` | Contamination Inflates Scores but Rarely Reorders Large Language Model | 2026 | arXiv id | yes |
-| 79 | `2609.04667` | `2609.04667` | ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across  | 2026 | arxiv-id | yes |
-| 80 | `2609.17406` | `2609.17406` | On testing the incentive compatibility of single-parameter allocation  | 2026 | arXiv id | yes |
-| 81 | `2609.18848` | `2609.18848` | On the Role of Tie-Breaking Rules in the Convergence of Fictitious Pla | 2026 | arXiv id | yes |
-| 82 | `2609.32318` | `2609.32318` | What Can a Leaderboard Certify? Compositional Controllability for Fair | 2026 | arXiv id | yes |
-| 83 | `2609.33012` | `2609.33012` | When Pair Count Is Not the Sample Size: What All-Pairs Agent Compariso | 2026 | arxiv-id | yes |
-| 84 | `2609.33044` | `2609.33044` | Pinned and Still Unstable: Within-Judge Verdict Variance and the Noise | 2026 | arXiv id | yes |
-| 85 | `2609.35677` | `2609.35677` | Verifier Errors in RLVR: Reward Hacking, Limits of Feedback, and Selec | 2026 | arXiv id | yes |
-| 86 | `2609.37938` | `2609.37938` | Does Local Video Understanding Transfer Across Encounters? The EgoGear | 2026 | arXiv id | yes |
-| 87 | `2609.38847` | `2609.38847` | Scoring Higher, Answering Worse: Mitigating Reward Hacking in Rubric-B | 2026 | arXiv id | yes |
-| 88 | `2610.00651` | `2610.00651` | Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent L | 2026 | arXiv id | yes |
-| 89 | `2610.02136` | `2610.02136` | MIRTO: a registration-gated, multiverse-tested evaluation protocol for | 2026 | arXiv id | yes |
-| 90 | `2610.03196` | `2610.03196` | Beyond Reward Hacking: Proxy Divergence Across Four Layers of a Staged | 2026 | arXiv id | yes |
-| 91 | `2610.05830` | `2610.05830` | Measurement-First Auditing of Agentic Leaderboards: Contamination Susc | 2026 | arXiv id | yes |
-| 92 | `2610.08162` | `2610.08162` | The Failure Is in the Readout: Fine-Grained Emotion Recognition Benchm | 2026 | arXiv id | yes |
-| 93 | `2610.10795` | `2610.10795` | How Many Repeated Pairwise Comparisons Are Needed for Ranking under He | 2026 | arXiv id | yes |
-| 94 | `2610.10947` | `2610.10947` | RH-Detect: A Unified Benchmark for Reward Hacking Detection | 2026 | arXiv id | yes |
-| 95 | `2610.11162` | `2610.11162` | AutoAdapt: Reliable Few-Shot Adaptation under Clinical Distribution Sh | 2026 | arXiv id | yes |
-| 96 | `2610.12409` | `2610.12409` | Searching for "Harmful Refusal": A Psychometric Audit of an AI Safety  | 2026 | arXiv id | yes |
-| 97 | `2610.12822` | `2610.12822` | Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Syste | 2026 | arXiv id | yes |
-| 98 | `2610.13548` | `2610.13548` | Auditing VLM Benchmarks from Existing Evaluation Runs | 2026 | arXiv id | yes |
-| 99 | `2610.16067` | `2610.16067` | When Agent Evaluation Becomes Unreliable: An Empirical Study of Oracle | 2026 | arXiv id | yes |
-| 100 | `2610.17573` | `2610.17573` | Benchmarking Self-Supervised 3D Medical Vision Foundation Models and T | 2026 | arXiv id | yes |
-| 101 | `2610.20667` | `2610.20667` | Evaluating Model Capabilities After Benchmark Saturation | 2026 | arXiv id | yes |
-| 102 | `2610.21038` | `2610.21038` | INCONVENIENT: A Benchmark to Assess LLM Generalization Capabilities fr | 2026 | arXiv id | yes |
-| 103 | `2610.21404` | `2610.21404` | Multi-Reward Hacking: From Aggregation-Induced Drift to Trust-Anchored | 2026 | arXiv id | yes |
-| 104 | `2610.24972` | `2610.24972` | A Measurement Perspective on Benchmarking LLM-Generated Text Detectors | 2026 | arXiv id | yes |
-| 105 | `2610.26380` | `2610.26380` | Selecting the Best Few with Human Evaluators: Adaptively Combining Rat | 2026 | arXiv id | yes |
-| 106 | `arrow1951` | `10.12987/9780300186987` | Social Choice and Individual Values | 2017 | Crossref DOI | yes |
-| 107 | `bowman-dahl` | `10.18653/v1/2021.naacl-main.385` | What Will it Take to Fix Benchmarking in Natural Language Understandin | 2021 | Crossref DOI | yes |
-| 108 | `burnell2023` | `2306.03100` | Rethinking Model Evaluation as Narrowing the Socio-Technical Gap | 2023 | arXiv id | yes |
-| 109 | `campbell` | `10.56645/jmde.v7i15.297` | Assessing the Impact of Planned Social Change* | 2011 | Crossref DOI | yes |
-| 110 | `casper2023` | `2306.09442` | Explore, Establish, Exploit: Red Teaming Language Models from Scratch | 2023 | arXiv id | yes |
-| 111 | `dietterich` | `10.1162/089976698300017197` | Approximate Statistical Tests for Comparing Supervised Classification  | 1998 | Crossref DOI | yes |
-| 112 | `ethayarajh` | `10.18653/v1/2020.emnlp-main.393` | Utility is in the Eye of the User: A Critique of NLP Leaderboards | 2020 | Crossref DOI | yes |
-| 113 | `holmstrom-milgrom` | `10.2307/1913238` | Aggregation and Linearity in the Provision of Intertemporal Incentives | 1987 | Crossref DOI | yes |
-| 114 | `holmstrom-obs` | `10.2307/3003320` | Moral Hazard and Observability | 1979 | Crossref DOI | yes |
-| 115 | `kendall1938` | `10.2307/2332226` | A New Measure of Rank Correlation | 1938 | Crossref DOI | yes |
-| 116 | `kiela2021` | `10.18653/v1/2021.naacl-main.324` | Dynabench: Rethinking Benchmarking in NLP | 2021 | Crossref DOI | yes |
-| 117 | `klemperer` | `10.2139/ssrn.172650` | Auction Theory: A Guide to the Literature | 1999 | Crossref DOI | yes |
-| 118 | `liang2022` | `10.1111/nyas.15007` | Holistic Evaluation of Language Models | 2023 | Crossref DOI | yes |
-| 119 | `milgrom-weber` | `10.2307/1911865` | A Theory of Auctions and Competitive Bidding | 1982 | Crossref DOI | yes |
-| 120 | `milgrom1989` | `10.1257/jep.3.3.3` | Auctions and Bidding: A Primer | 1989 | Crossref DOI | yes |
-| 121 | `myerson1981` | `10.1287/moor.6.1.58` | Optimal Auction Design | 1981 | Crossref DOI | yes |
-| 122 | `nash1950` | `10.2307/j.ctv173f1fh.6` | EQUILIBRIUM POINTS IN 𝑛-PERSON GAMES | 2020 | Crossref DOI | yes |
-| 123 | `perez2022` | `10.18653/v1/2022.emnlp-main.225` | Red Teaming Language Models with Language Models | 2022 | Crossref DOI | yes |
-| 124 | `recht2019` | `1902.10811` | Do ImageNet Classifiers Generalize to ImageNet? | 2019 | arXiv id | yes |
-| 125 | `spearman1904` | `10.1037/11491-005` | The Proof and Measurement of Association Between Two Things. | 1961 | Crossref DOI | yes |
-| 126 | `strathern` | `10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4` | ‘Improving ratings’: audit in the British University system | 1997 | Crossref DOI | yes |
-| 127 | `vickrey1961` | `10.1111/j.1540-6261.1961.tb02789.x` | COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS | 1961 | Crossref DOI | yes |
-| 128 | `wilson-ci` | `10.1080/01621459.1927.10502953` | Probable Inference, the Law of Succession, and Statistical Inference | 1927 | Crossref DOI | yes |
-| 129 | `wilson1977` | `10.2307/2296904` | A Bidding Model of Perfect Competition | 1977 | Crossref DOI | yes |
+| 1 | `10.1038/s41598-019-45619-9` | `10.1038/s41598-019-45619-9` | α-Rank: Multi-Agent Evaluation by Evolution | 2019 | doi | yes |
+| 2 | `10.3386/w4480` | `10.3386/w4480` | Subjective Performance Measures in Optimal Incentive Contracts | 1993 | doi | yes |
+| 3 | `1106.2489` | `1106.2489` | Eliciting Forecasts from Self-interested Experts: Scoring Rules for De | 2011 | arXiv id | yes |
+| 4 | `1707.06217` | `1707.06217` | Worst-case vs Average-case Design for Estimation from Fixed Pairwise C | 2017 | arXiv id | yes |
+| 5 | `1802.09158` | `1802.09158` | Surrogate Scoring Rules | 2018 | arXiv id | yes |
+| 6 | `1806.02643` | `1806.02643` | Re-evaluating Evaluation | 2018 | arXiv id | yes |
+| 7 | `1810.01736` | `1810.01736` | Auction Theory Adaptations for Real Life Applications | 2018 | arXiv id | yes |
+| 8 | `2001.06074` | `2001.06074` | Why Do Competitive Markets Converge to First-Price Auctions? | 2020 | arXiv id | yes |
+| 9 | `2004.09468` | `2004.09468` | Real World Games Look Like Spinning Tops | 2020 | arXiv id | yes |
+| 10 | `2006.03016` | `2006.03016` | The importance of being discrete: on the inaccuracy of continuous appr | 2020 | arXiv id | yes |
+| 11 | `2007.02905` | `2007.02905` | Optimization of Scoring Rules | 2020 | arXiv id | yes |
+| 12 | `2011.09365` | `2011.09365` | Learning in repeated auctions | 2020 | arXiv id | yes |
+| 13 | `2101.01816` | `2101.01816` | Incentive-Compatible Forecasting Competitions | 2021 | arXiv id | yes |
+| 14 | `2102.07081` | `2102.07081` | From Proper Scoring Rules to Max-Min Optimal Forecast Aggregation | 2021 | arXiv id | yes |
+| 15 | `2103.03238` | `2103.03238` | On the Complexity of Equilibrium Computation in First-Price Auctions | 2021 | arXiv id | yes |
+| 16 | `2106.01822` | `2106.01822` | Corruption in Auctions: Social Welfare Loss in Hybrid Multi-Unit Aucti | 2021 | arXiv id | yes |
+| 17 | `2107.10923` | `2107.10923` | Throttling Equilibria in Auction Markets | 2021 | arXiv id | yes |
+| 18 | `2204.01805` | `2204.01805` | Using Elo Rating as a Metric for Comparative Judgement in Educational  | 2022 | arXiv id | yes |
+| 19 | `2210.06107` | `2210.06107` | Vulnerabilities of Single-Round Incentive Compatibility in Auto-biddin | 2022 | arXiv id | yes |
+| 20 | `2301.12736` | `2301.12736` | On Second-Order Scoring Rules for Epistemic Uncertainty Quantification | 2023 | arXiv id | yes |
+| 21 | `2301.13414` | `2301.13414` | Incentive Compatibility in the Auto-bidding World | 2023 | arXiv id | yes |
+| 22 | `2305.17601` | `2305.17601` | Incentivizing honest performative predictions with proper scoring rule | 2023 | arXiv id | yes |
+| 23 | `2310.13719` | `2310.13719` | Analysis of ELO Rating Scheme in MOBA Games | 2023 | arXiv id | yes |
+| 24 | `2311.09789` | `2311.09789` | Arrow's Impossibility Theorem: Computability in Social Choice Theory | 2023 | arXiv id | yes |
+| 25 | `2405.01719` | `2405.01719` | Inherent Trade-Offs between Diversity and Stability in Multi-Task Benc | 2024 | arXiv id | yes |
+| 26 | `2406.03460` | `2406.03460` | The PESQetarian: On the Relevance of Goodhart's Law for Speech Enhance | 2024 | arXiv id | yes |
+| 27 | `2406.05869` | `2406.05869` | An Analysis of Elo Rating Systems via Markov Chains | 2024 | arXiv id | yes |
+| 28 | `2407.14503` | `2407.14503` | Catastrophic Goodhart: regularizing RLHF with KL divergence does not m | 2024 | arXiv id | yes |
+| 29 | `2410.05550` | `2410.05550` | Aggregating Quantitative Relative Judgments: From Social Choice to Ran | 2024 | arXiv id | yes |
+| 30 | `2410.09638` | `2410.09638` | On Goodhart's law, with an application to value alignment | 2024 | arXiv id | yes |
+| 31 | `2410.23953` | `2410.23953` | Representative Social Choice: From Learning Theory to AI Alignment | 2024 | arXiv id | yes |
+| 32 | `2410.24100` | `2410.24100` | Benchmark Data Repositories for Better Benchmarking | 2024 | arXiv id | yes |
+| 33 | `2411.01315` | `2411.01315` | Utilitarian Social Choice and Distributional Welfare Analysis | 2024 | arXiv id | yes |
+| 34 | `2412.20732` | `2412.20732` | Joint Scoring Rules: Zero-Sum Competition Avoids Performative Predicti | 2024 | arXiv id | yes |
+| 35 | `2502.06559` | `2502.06559` | Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Iss | 2025 | arXiv id | yes |
+| 36 | `2502.10985` | `2502.10985` | Is Elo Rating Reliable? A Study Under Model Misspecification | 2025 | arXiv id | yes |
+| 37 | `2502.17077` | `2502.17077` | A comparative analysis of rank aggregation methods for the partial lab | 2025 | arXiv id | yes |
+| 38 | `2503.10694` | `2503.10694` | Medical Large Language Model Benchmarks Should Prioritize Construct Va | 2025 | arXiv id | yes |
+| 39 | `2503.21849` | `2503.21849` | Selection of the fittest or selection of the luckiest: the emergence o | 2025 | arXiv id | yes |
+| 40 | `2505.06448` | `2505.06448` | Gaming the Metrics? Bibliometric Anomalies and the Integrity Crisis in | 2025 | arXiv id | yes |
+| 41 | `2505.23445` | `2505.23445` | The Strong, Weak and Benign Goodhart's law. An independence-free and p | 2025 | arXiv id | yes |
+| 42 | `2506.05322` | `2506.05322` | Equilibrium Computation in First-Price Auctions with Correlated Priors | 2025 | arXiv id | yes |
+| 43 | `2511.04703` | `2511.04703` | Measuring what Matters: Construct Validity in Large Language Model Ben | 2025 | arXiv id | yes |
+| 44 | `2511.05501` | `2511.05501` | Towards Real-World Validity in Generative AI Benchmarks: Understanding | 2025 | arXiv id | yes |
+| 45 | `2512.14609` | `2512.14609` | Asymptotic Inference for Rank Correlations | 2025 | arXiv id | yes |
+| 46 | `2601.01664` | `2601.01664` | Who is the Winning Algorithm? Rank Aggregation for Comparative Studies | 2026 | arXiv id | yes |
+| 47 | `2602.06582` | `2602.06582` | The Impossibility of Strategyproof Rank Aggregation | 2026 | arXiv id | yes |
+| 48 | `2602.07593` | `2602.07593` | Beyond Arrow: From Impossibility to Possibilities in Multi-Criteria Be | 2026 | arXiv id | yes |
+| 49 | `2602.15532` | `2602.15532` | Quantifying construct validity in large language model evaluations | 2026 | arXiv id | yes |
+| 50 | `2603.08371` | `2603.08371` | Leaderboard Incentives: Model Rankings under Strategic Post-Training | 2026 | arxiv-id | yes |
+| 51 | `2603.15121` | `2603.15121` | Establishing Construct Validity in LLM Capability Benchmarks Requires  | 2026 | arXiv id | yes |
+| 52 | `2603.28063` | `2603.28063` | Reward Hacking as Equilibrium under Finite Evaluation | 2026 | arXiv id | yes |
+| 53 | `2604.24074` | `2604.24074` | How Sensitive Are Safety Benchmarks to Judge Configuration Choices? | 2026 | arXiv id | yes |
+| 54 | `2604.24156` | `2604.24156` | Strategic Bidding in 6G Spectrum Auctions with Large Language Models | 2026 | arXiv id | yes |
+| 55 | `2605.09099` | `2605.09099` | GraphNetz: Statistical Benchmarking of Graph Neural Networks with Pair | 2026 | arXiv id | yes |
+| 56 | `2605.14164` | `2605.14164` | Unsteady Metrics and Benchmarking Cultures of AI Model Builders | 2026 | arXiv id | yes |
+| 57 | `2605.15761` | `2605.15761` | A Unified Perturbation Framework for Analyzing Leaderboard Stability a | 2026 | arXiv id | yes |
+| 58 | `2605.21934` | `2605.21934` | Single-Item Auctions with a Monopolist Intermediary | 2026 | arXiv id | yes |
+| 59 | `2605.29395` | `2605.29395` | Low Rank for Rank: Uncertainty-Aware Task-Specific LLM Ranking under S | 2026 | arXiv id | yes |
+| 60 | `2605.29586` | `2605.29586` | FinVerBench: Benchmark Validity and Calibration in Large Language Mode | 2026 | arXiv id | yes |
+| 61 | `2605.31036` | `2605.31036` | Model Monotonicity in Autobidding Auctions: When Do Better Predictions | 2026 | arXiv id | yes |
+| 62 | `2605.31142` | `2605.31142` | On the Robustness of Multilingual Text Embedding Rankings Across Learn | 2026 | arXiv id | yes |
+| 63 | `2606.02547` | `2606.02547` | Pluralistic Leaderboards | 2026 | arXiv id | yes |
+| 64 | `2606.07805` | `2606.07805` | Beyond Goodhart's Law: A Dynamic Benchmark for Evaluating Compliance i | 2026 | arXiv id | yes |
+| 65 | `2606.08419` | `2606.08419` | The Winner's Bliss in Common-Value Auctions under Horizontal Different | 2026 | arXiv id | yes |
+| 66 | `2606.08679` | `2606.08679` | Rank Intervals for Leaderboards: A Hierarchical Framework for Model Ev | 2026 | arXiv id | yes |
+| 67 | `2606.09409` | `2606.09409` | Correct Looks Better: Pairwise Comparisons Reveal Accuracy Rankings | 2026 | arXiv id | yes |
+| 68 | `2606.10287` | `2606.10287` | When Metrics Disagree: A Meta-Analysis of Knowledge-Graph-Completion M | 2026 | arXiv id | yes |
+| 69 | `2606.11417` | `2606.11417` | Signed Compression Progress on a Sealed Audit is Goodhart-Resistant | 2026 | arXiv id | yes |
+| 70 | `2606.22074` | `2606.22074` | Kendall and Spearman bounds for Chatterjee's rank correlation under po | 2026 | arXiv id | yes |
+| 71 | `2606.26158` | `2606.26158` | Life After Benchmark Saturation: A Case Study of CORE-Bench | 2026 | arXiv id | yes |
+| 72 | `2606.27997` | `2606.27997` | Benchmarking on Tasks That Matter: Dataset Selection for Preserving Mo | 2026 | arXiv id | yes |
+| 73 | `2607.02586` | `2607.02586` | Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits | 2026 | arXiv id | yes |
+| 74 | `2607.25257` | `2607.25257` | Laplace-PSN-IRT: Uncertainty Quantification for Neural Item Response T | 2026 | arXiv id | yes |
+| 75 | `2607.25540` | `2607.25540` | Kemeny Rank Aggregation is NP-Hard for Three Voters | 2026 | arXiv id | yes |
+| 76 | `2608.12880` | `2608.12880` | Labels Are Not Endpoints: Treatment Leakage and Construct Validity in  | 2026 | arXiv id | yes |
+| 77 | `2608.16682` | `2608.16682` | Tight Inapproximability of Pacing and Throttling Equilibria in Second- | 2026 | arXiv id | yes |
+| 78 | `2608.26982` | `2608.26982` | JudgeStealer: Extracting LLM Judging Capabilities across Evaluation Pr | 2026 | arXiv id | yes |
+| 79 | `2608.28482` | `2608.28482` | How Proper Scoring Rules Shape LLM Forecasting | 2026 | arXiv id | yes |
+| 80 | `2608.29420` | `2608.29420` | One Capability or Many? Structural and Predictive Tests of Benchmark V | 2026 | arXiv id | yes |
+| 81 | `2609.02899` | `2609.02899` | Contamination Inflates Scores but Rarely Reorders Large Language Model | 2026 | arXiv id | yes |
+| 82 | `2609.04667` | `2609.04667` | ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across  | 2026 | arxiv-id | yes |
+| 83 | `2609.17406` | `2609.17406` | On testing the incentive compatibility of single-parameter allocation  | 2026 | arXiv id | yes |
+| 84 | `2609.18848` | `2609.18848` | On the Role of Tie-Breaking Rules in the Convergence of Fictitious Pla | 2026 | arXiv id | yes |
+| 85 | `2609.32318` | `2609.32318` | What Can a Leaderboard Certify? Compositional Controllability for Fair | 2026 | arXiv id | yes |
+| 86 | `2609.33012` | `2609.33012` | When Pair Count Is Not the Sample Size: What All-Pairs Agent Compariso | 2026 | arxiv-id | yes |
+| 87 | `2609.33044` | `2609.33044` | Pinned and Still Unstable: Within-Judge Verdict Variance and the Noise | 2026 | arXiv id | yes |
+| 88 | `2609.35677` | `2609.35677` | Verifier Errors in RLVR: Reward Hacking, Limits of Feedback, and Selec | 2026 | arXiv id | yes |
+| 89 | `2609.37938` | `2609.37938` | Does Local Video Understanding Transfer Across Encounters? The EgoGear | 2026 | arXiv id | yes |
+| 90 | `2609.38847` | `2609.38847` | Scoring Higher, Answering Worse: Mitigating Reward Hacking in Rubric-B | 2026 | arXiv id | yes |
+| 91 | `2610.00651` | `2610.00651` | Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent L | 2026 | arXiv id | yes |
+| 92 | `2610.02136` | `2610.02136` | MIRTO: a registration-gated, multiverse-tested evaluation protocol for | 2026 | arXiv id | yes |
+| 93 | `2610.03196` | `2610.03196` | Beyond Reward Hacking: Proxy Divergence Across Four Layers of a Staged | 2026 | arXiv id | yes |
+| 94 | `2610.05830` | `2610.05830` | Measurement-First Auditing of Agentic Leaderboards: Contamination Susc | 2026 | arXiv id | yes |
+| 95 | `2610.08162` | `2610.08162` | The Failure Is in the Readout: Fine-Grained Emotion Recognition Benchm | 2026 | arXiv id | yes |
+| 96 | `2610.10795` | `2610.10795` | How Many Repeated Pairwise Comparisons Are Needed for Ranking under He | 2026 | arXiv id | yes |
+| 97 | `2610.10947` | `2610.10947` | RH-Detect: A Unified Benchmark for Reward Hacking Detection | 2026 | arXiv id | yes |
+| 98 | `2610.11162` | `2610.11162` | AutoAdapt: Reliable Few-Shot Adaptation under Clinical Distribution Sh | 2026 | arXiv id | yes |
+| 99 | `2610.12409` | `2610.12409` | Searching for "Harmful Refusal": A Psychometric Audit of an AI Safety  | 2026 | arXiv id | yes |
+| 100 | `2610.12822` | `2610.12822` | Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Syste | 2026 | arXiv id | yes |
+| 101 | `2610.13548` | `2610.13548` | Auditing VLM Benchmarks from Existing Evaluation Runs | 2026 | arXiv id | yes |
+| 102 | `2610.16067` | `2610.16067` | When Agent Evaluation Becomes Unreliable: An Empirical Study of Oracle | 2026 | arXiv id | yes |
+| 103 | `2610.17573` | `2610.17573` | Benchmarking Self-Supervised 3D Medical Vision Foundation Models and T | 2026 | arXiv id | yes |
+| 104 | `2610.20667` | `2610.20667` | Evaluating Model Capabilities After Benchmark Saturation | 2026 | arXiv id | yes |
+| 105 | `2610.21038` | `2610.21038` | INCONVENIENT: A Benchmark to Assess LLM Generalization Capabilities fr | 2026 | arXiv id | yes |
+| 106 | `2610.21404` | `2610.21404` | Multi-Reward Hacking: From Aggregation-Induced Drift to Trust-Anchored | 2026 | arXiv id | yes |
+| 107 | `2610.24972` | `2610.24972` | A Measurement Perspective on Benchmarking LLM-Generated Text Detectors | 2026 | arXiv id | yes |
+| 108 | `2610.26380` | `2610.26380` | Selecting the Best Few with Human Evaluators: Adaptively Combining Rat | 2026 | arXiv id | yes |
+| 109 | `arrow1951` | `10.12987/9780300186987` | Social Choice and Individual Values | 2017 | Crossref DOI | yes |
+| 110 | `bowman-dahl` | `10.18653/v1/2021.naacl-main.385` | What Will it Take to Fix Benchmarking in Natural Language Understandin | 2021 | Crossref DOI | yes |
+| 111 | `burnell2023` | `2306.03100` | Rethinking Model Evaluation as Narrowing the Socio-Technical Gap | 2023 | arXiv id | yes |
+| 112 | `campbell` | `10.56645/jmde.v7i15.297` | Assessing the Impact of Planned Social Change* | 2011 | Crossref DOI | yes |
+| 113 | `casper2023` | `2306.09442` | Explore, Establish, Exploit: Red Teaming Language Models from Scratch | 2023 | arXiv id | yes |
+| 114 | `dietterich` | `10.1162/089976698300017197` | Approximate Statistical Tests for Comparing Supervised Classification  | 1998 | Crossref DOI | yes |
+| 115 | `ethayarajh` | `10.18653/v1/2020.emnlp-main.393` | Utility is in the Eye of the User: A Critique of NLP Leaderboards | 2020 | Crossref DOI | yes |
+| 116 | `holmstrom-milgrom` | `10.2307/1913238` | Aggregation and Linearity in the Provision of Intertemporal Incentives | 1987 | Crossref DOI | yes |
+| 117 | `holmstrom-obs` | `10.2307/3003320` | Moral Hazard and Observability | 1979 | Crossref DOI | yes |
+| 118 | `kendall1938` | `10.2307/2332226` | A New Measure of Rank Correlation | 1938 | Crossref DOI | yes |
+| 119 | `kiela2021` | `10.18653/v1/2021.naacl-main.324` | Dynabench: Rethinking Benchmarking in NLP | 2021 | Crossref DOI | yes |
+| 120 | `klemperer` | `10.2139/ssrn.172650` | Auction Theory: A Guide to the Literature | 1999 | Crossref DOI | yes |
+| 121 | `liang2022` | `10.1111/nyas.15007` | Holistic Evaluation of Language Models | 2023 | Crossref DOI | yes |
+| 122 | `milgrom-weber` | `10.2307/1911865` | A Theory of Auctions and Competitive Bidding | 1982 | Crossref DOI | yes |
+| 123 | `milgrom1989` | `10.1257/jep.3.3.3` | Auctions and Bidding: A Primer | 1989 | Crossref DOI | yes |
+| 124 | `myerson1981` | `10.1287/moor.6.1.58` | Optimal Auction Design | 1981 | Crossref DOI | yes |
+| 125 | `nash1950` | `10.2307/j.ctv173f1fh.6` | EQUILIBRIUM POINTS IN 𝑛-PERSON GAMES | 2020 | Crossref DOI | yes |
+| 126 | `perez2022` | `10.18653/v1/2022.emnlp-main.225` | Red Teaming Language Models with Language Models | 2022 | Crossref DOI | yes |
+| 127 | `recht2019` | `1902.10811` | Do ImageNet Classifiers Generalize to ImageNet? | 2019 | arXiv id | yes |
+| 128 | `spearman1904` | `10.1037/11491-005` | The Proof and Measurement of Association Between Two Things. | 1961 | Crossref DOI | yes |
+| 129 | `strathern` | `10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4` | ‘Improving ratings’: audit in the British University system | 1997 | Crossref DOI | yes |
+| 130 | `vickrey1961` | `10.1111/j.1540-6261.1961.tb02789.x` | COUNTERSPECULATION, AUCTIONS, AND COMPETITIVE SEALED TENDERS | 1961 | Crossref DOI | yes |
+| 131 | `wilson-ci` | `10.1080/01621459.1927.10502953` | Probable Inference, the Law of Succession, and Statistical Inference | 1927 | Crossref DOI | yes |
+| 132 | `wilson1977` | `10.2307/2296904` | A Bidding Model of Perfect Competition | 1977 | Crossref DOI | yes |
 

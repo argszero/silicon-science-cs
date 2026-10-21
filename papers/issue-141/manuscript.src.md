@@ -52,8 +52,12 @@ Benchmarks for strategic agents are now published at a rate that outstrips their
 most recent measurement we are aware of, ERPBench evaluates the same 100 fixed problems in two matched
 competitive ecologies and finds that the two ecologies identify the **same task-level winner on only
 21 of 100 problems** <!-- n: external(arXiv:2609.04667) --> — the ranking is not a property of the
-agents alone, and the paper says so {{ref:2609.04667}}. But the paper holds its protocol fixed and varies the ecology, so
-the protocol remains what it has always been in this literature: an input, never a treatment.
+agents alone, and the paper says so {{ref:2609.04667}}. But the paper holds its protocol fixed and varies the ecology,
+so in **the LLM-benchmark literature this paper surveys** the protocol remains an input, never a
+treatment. That is a scope claim about one literature and not about
+evaluation at large: the multi-agent evaluation line {{ref:1806.02643,2004.09468,10.1038/s41598-019-45619-9}}
+has made the aggregate and the population its object for a decade, and §10 takes up what the results
+here add to it and what they do not.
 
 That is the gap we measure into. A strategic evaluation has three moving parts — a game with a payoff
 structure, a population of policies, and a **protocol** that selects opponents, pairs policies, and
@@ -164,7 +168,10 @@ separately: a strictly increasing score cannot reorder two policies whose profil
 and a score that reads anything else — the opponent row, a saturating transform, a decreasing one —
 either reorders them or stops distinguishing them, and we exhibit both; the aggregation step it turns
 on is the one Arrow's theorem and the multi-criteria work after it make explicit
-{{ref:arrow1951,2602.07593,2410.05550}}.
+{{ref:arrow1951,2602.07593,2410.05550}}. **The two directions do not carry equal weight, and we say
+which is which**: the first is monotonicity restated — a definitional consequence of what
+*strictly increasing* means, and it could not have failed — while the second is the empirical claim,
+and the classification it yields is where the content of this section sits.
 
 **Evidence.** Over 19 protocols x 9 games the law's stated band and the measured band disagree in
 **0** cases. Exactly **two** designs are faithful (`mean_payoff`, `spread`), one is immune but
@@ -592,6 +599,47 @@ result than to a validity verdict: the observation that a published ordering can
 its intervals can be reported, and that a contamination that inflates every score need not reorder them
 {{ref:2606.02547,2609.02899}} — the last is the empirical face of §6's claim that a corruption and a
 reordering are two properties.
+
+**The multi-agent evaluation line, and where this paper stands against it.** Three works treat the
+aggregate and the population as the object in this paper's own setting — games, payoffs, policies,
+populations — and each is answered here with the analysis the comparison requires rather than with an
+acknowledgement.
+
+*Against Balduzzi et al.* {{ref:1806.02643}} *— independent, not a special case.* Their result is an
+impossibility conditional on the game being intransitive: a transitive rating system misranks a game
+whose payoff structure is cyclic, so the aggregate must be a solution concept. It does not reach this
+paper's measured space, and the reason is exact. We computed the transitivity coordinate of every game
+in the ladder — the share of strategy triples that are cyclic under "a beats b" — and it is **0/56 in
+seven of nine games** and **3/56 in the other two** <!-- n: trans.coord.zero_games, trans.coord.nonzero_games -->. Of the **474** rank-gaming cells, **374** — **78.9 %** — lie in games with a
+zero coordinate <!-- n: trans.gpos.coord0, trans.gpos.total -->. The misordering priced in §4 therefore
+survives in games where a total order exists and no cyclic structure can obstruct a transitive rating:
+their impossibility says no total order can represent a cyclic game, and this law says a total order
+that does represent an acyclic one can still be bought. The two are disjoint failure modes, measured on
+disjoint structures.
+
+*Against Czarnecki et al.* {{ref:2004.09468}} *— the question is answerable here, and the answer is
+negative.* They make non-transitivity against population the axis, which is a property of the **payoff
+structure**. Our transport excess is a property of the **protocol**. The reduction test is therefore
+sharp: at a *fixed* game and a *fixed* population pair, the coordinate is pinned, so if the statistic
+reduced to it the excess could not move. It moves. In **9 of 9** games the excess takes more than one
+distinct value across the nineteen protocols at a fixed pair, and up to **8** distinct values at the
+widest pair (`uniform` against `capped_strong`, e.g. `-1/14` for `best_opp` against `3/7` for
+`tail_swap` in `fpsb_n4`) <!-- n: trans.distinct_max, trans.distinct_gt1_games -->. The coordinate is
+also degenerate on this ladder before any transport is computed: seven games share a value of zero, so
+it ties **22 of 36** game pairs and cannot order the games at all <!-- n: trans.coord.ties, trans.game_pairs -->. What the
+transport statistic carries that the dimension does not is thus not a refinement of it but a different
+object: the dimension says how much the *game* can move, the excess measures what the *protocol* adds
+once that motion is subtracted — which is also why the paper's own baseline term is not the coordinate
+but the payoff ordering's realised loss under the change, a quantity that varies across population pairs
+within a game of constant coordinate <!-- n: trans.base.distinct_max_coord0 -->.
+
+*Against Omidshafiei et al.* {{ref:10.1038/s41598-019-45619-9}} *— a different side of the same object.*
+α-Rank proposes a ranking *method*, computed from the game's evolutionary dynamics, offered as a
+faithful way to rank agents. This paper takes the deployed side: given a score rule and an
+opponent-selection rule a benchmark already uses, what does the resulting ordering do. α-Rank would be
+one more protocol in the design space, and the law of §3 predicts which of its cells can be faithful —
+so the two are complementary instruments rather than competing claims, and neither is evidence about the
+other.
 
 **The auction canon, named because a referee will look for it.** The game families are textbook objects
 {{ref:vickrey1961,milgrom1989,klemperer}} and the equilibrium concepts the anchors are checked against

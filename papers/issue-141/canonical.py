@@ -30,6 +30,7 @@ V1 = os.path.join(HERE, "spike_v1_theory.json")
 V2 = os.path.join(HERE, "spike_v2_design.json")
 V3 = os.path.join(HERE, "spike_v3_results.json")
 V4 = os.path.join(HERE, "spike_v4_results.json")
+TRA = os.path.join(HERE, "analysis_transitivity_vs_transport.json")   # R673, required change 1
 EXC = os.path.join(HERE, "census_excess_entries.json")
 CONV = os.path.join(HERE, "census_converse_scope.json")
 
@@ -58,6 +59,7 @@ def numbers():
         n[name] = {"value": value, "source": source}
 
     v4 = art(V4)
+    tra = art(TRA)
     v3 = art(V3)
     v2 = art(V2)
     v1 = art(V1)
@@ -76,6 +78,25 @@ def numbers():
     put("v2.games", len(v2["model"]["games"]), "spike_v2_design.json:model.games")
     put("v3.cells", len(v3["transport"]) and v3["model"].get("cells"), "spike_v3_results.json:model.cells")
     put("v3.protocols", len(v3["model"]["protocols"]), "spike_v3_results.json:model.protocols")
+
+    # --- the transitivity coordinate vs the transport statistic (R673, required change 1) --------
+    # Every number §10 quotes about the comparison is owned by the analysis artefact, so a later edit
+    # cannot restate one of them from prose.
+    put("trans.coord.zero_games", tra["coord_zero_games"],
+        "analysis_transitivity_vs_transport.json:coord_zero_games")
+    put("trans.coord.nonzero_games", tra["coord_nonzero_games"],
+        "analysis_transitivity_vs_transport.json:coord_nonzero_games")
+    put("trans.games", tra["games"], "analysis_transitivity_vs_transport.json:games")
+    put("trans.coord.ties", tra["coord_ties"], "analysis_transitivity_vs_transport.json:coord_ties")
+    put("trans.game_pairs", tra["game_pairs"], "analysis_transitivity_vs_transport.json:game_pairs")
+    put("trans.gpos.coord0", tra["gpos_coord0"], "analysis_transitivity_vs_transport.json:gpos_coord0")
+    put("trans.gpos.total", tra["gpos_total"], "analysis_transitivity_vs_transport.json:gpos_total")
+    put("trans.distinct_max", tra["distinct_max"], "analysis_transitivity_vs_transport.json:distinct_max")
+    put("trans.distinct_gt1_games", tra["distinct_gt1_games"],
+        "analysis_transitivity_vs_transport.json:distinct_gt1_games")
+    put("trans.base.distinct_max_coord0", tra["base_distinct_max_within_coord0"],
+        "analysis_transitivity_vs_transport.json:base_distinct_max_within_coord0")
+    put("trans.verdict", tra["verdict"], "analysis_transitivity_vs_transport.json:verdict")
 
     # --- ground truth by construction: the anchors -----------------------------------------------
     anchors = v4["anchors"]

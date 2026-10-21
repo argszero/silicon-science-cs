@@ -78,6 +78,32 @@
   "summary": "",
   "title": "The Proof and Measurement of Association Between Two Things."
  },
+ "10.1038/s41598-019-45619-9": {
+  "authors": [
+   "Omidshafiei, Shayegan",
+   "Papadimitriou, Christos",
+   "Piliouras, Georgios",
+   "Tuyls, Karl",
+   "Rowland, Mark",
+   "Lespiau, Jean-Baptiste",
+   "Czarnecki, Wojciech M.",
+   "Lanctot, Marc",
+   "Perolat, Julien",
+   "Munos, Remi"
+  ],
+  "container": "Scientific Reports",
+  "doi": "10.1038/s41598-019-45619-9",
+  "found_by": [
+   "R673_revision"
+  ],
+  "id": "10.1038/s41598-019-45619-9",
+  "issued": "2019",
+  "published": "2019-07-09",
+  "source": "crossref",
+  "title": "α-Rank: Multi-Agent Evaluation by Evolution",
+  "type": "journal-article",
+  "verified_by": "doi"
+ },
  "10.1080/01621459.1927.10502953": {
   "authors": [
    "Edwin B. Wilson"
@@ -1507,6 +1533,27 @@
   "summary": "We consider a continuous time Principal-Agent model on a finite time horizon, where we look for the existence of an optimal contract both parties agreed on. Contrary to the main stream, where the principal is modelled as risk-neutral, we assume that both the principal and the agent have exponential utility, and are risk averse with same risk awareness level. Moreover, the agent's quality is unknown and modelled as a filtering term in the problem, which is revealed as time passes by. The principal can not observe the agent's real action, but can only recommend action levels to the agent. Hence, we have a \\textit{moral hazard} problem. In this setting, we give an explicit solution to the optimal contract problem.",
   "title": "Dynamic optimal contract under parameter uncertainty with risk averse agent and principal"
  },
+ "1806.02643": {
+  "authors": [
+   "David Balduzzi",
+   "Karl Tuyls",
+   "Julien Perolat",
+   "Thore Graepel"
+  ],
+  "categories": [
+   "cs.LG",
+   "cs.GT",
+   "stat.ML"
+  ],
+  "found_by": [
+   "R673_revision"
+  ],
+  "id": "1806.02643",
+  "published": "2018-06-07",
+  "source": "arxiv",
+  "summary": "Progress in machine learning is measured by careful evaluation on problems of outstanding common interest. However, the proliferation of benchmark suites and environments, adversarial attacks, and other complications has diluted the basic evaluation model by overwhelming researchers with choices. Deliberate or accidental cherry picking is increasingly likely, and designing well-balanced evaluation suites requires increasing effort. In this paper we take a step back and propose Nash averaging. The approach builds on a detailed analysis of the algebraic structure of evaluation in two basic scenarios: agent-vs-agent and agent-vs-task. The key strength of Nash averaging is that it automatically adapts to redundancies in evaluation data, so that results are not biased by the incorporation of easy tasks or weak agents. Nash averaging thus encourages maximally inclusive evaluation -- since there is no harm (computational cost aside) from including all available tasks and agents.",
+  "title": "Re-evaluating Evaluation"
+ },
  "1806.05419": {
   "authors": [
    "Tal Levy",
@@ -2121,6 +2168,29 @@
   "source": "arxiv",
   "summary": "We study online learning settings in which experts act strategically to maximize their influence on the learning algorithm's predictions by potentially misreporting their beliefs about a sequence of binary events. Our goal is twofold. First, we want the learning algorithm to be no-regret with respect to the best fixed expert in hindsight. Second, we want incentive compatibility, a guarantee that each expert's best strategy is to report his true beliefs about the realization of each event. To achieve this goal, we build on the literature on wagering mechanisms, a type of multi-agent scoring rule. We provide algorithms that achieve no regret and incentive compatibility for myopic experts for both the full and partial information settings. In experiments on datasets from FiveThirtyEight, our algorithms have regret comparable to classic no-regret algorithms, which are not incentive-compatible. Finally, we identify an incentive-compatible algorithm for forward-looking strategic agents that exhibits diminishing regret in practice.",
   "title": "No-Regret and Incentive-Compatible Online Learning"
+ },
+ "2004.09468": {
+  "authors": [
+   "Wojciech Marian Czarnecki",
+   "Gauthier Gidel",
+   "Brendan Tracey",
+   "Karl Tuyls",
+   "Shayegan Omidshafiei",
+   "David Balduzzi",
+   "Max Jaderberg"
+  ],
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "found_by": [
+   "R673_revision"
+  ],
+  "id": "2004.09468",
+  "published": "2020-04-20",
+  "source": "arxiv",
+  "summary": "This paper investigates the geometrical properties of real world games (e.g. Tic-Tac-Toe, Go, StarCraft II). We hypothesise that their geometrical structure resemble a spinning top, with the upright axis representing transitive strength, and the radial axis, which corresponds to the number of cycles that exist at a particular transitive strength, representing the non-transitive dimension. We prove the existence of this geometry for a wide class of real world games, exposing their temporal nature. Additionally, we show that this unique structure also has consequences for learning - it clarifies why populations of strategies are necessary for training of agents, and how population size relates to the structure of the game. Finally, we empirically validate these claims by using a selection of nine real world two-player zero-sum symmetric games, showing 1) the spinning top structure is revealed and can be easily re-constructed by using a new method of Nash clustering to measure the interaction between transitive and cyclical strategy behaviour, and 2) the effect that population size has on the convergence in these games.",
+  "title": "Real World Games Look Like Spinning Tops"
  },
  "2004.12482": {
   "authors": [

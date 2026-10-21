@@ -864,6 +864,26 @@ def author_str(rec, key=None):
     return parts[0] + "; et al."
 
 
+def _caps_title(t):
+    """True when the record stores its WHOLE title in capitals -- a registry export, not an acronym.
+
+    This is the only signal that separates a word from an acronym without a dictionary: `CORE` (4)
+    and `GAMES` (5) differ by nothing in shape, but `CORE` arrives inside a normally-cased title and
+    `GAMES` arrives inside a title whose every word is capitalised. Measured over the 132 selected
+    works at R673, exactly **2** records are caps-titles ([19] and [127]); the other 19 all-caps
+    tokens all sit in normally-cased titles, which is why the acronym guard must keep them (and why
+    `INCONVENIENT`, the name of a benchmark, must stay as its record spells it).
+
+    ASCII letters only: the mathematical italic in `𝑛-PERSON` is a letter but is neither upper nor
+    lower, and testing it directly would make [127] fail the very test meant to catch it.
+    """
+    for w in (t or "").split(" "):
+        asc = [c for c in w if c.isascii() and c.isalpha()]
+        if len(asc) > 1 and not all(c.isupper() for c in asc):
+            return False
+    return bool((t or "").strip())
+
+
 def title_case(title):
     """The title in title case, WITHOUT touching what a word already states.
 
@@ -884,14 +904,17 @@ def title_case(title):
         if not core:
             out.append(w)
             continue
-        # a word the record already mixed-cases is left alone
+        # A word the record already mixed-cases is left alone -- unless the whole title is a caps
+        # export, in which case every word is a word and the two "leave it exactly as stored"
+        # shortcuts below are precisely what printed the registry's capitals (R673: [19], [127]).
+        caps_export = _caps_title(t)
         has_inner_upper = any(c.isupper() for c in core[1:])
-        if has_inner_upper:
+        if has_inner_upper and not caps_export:
             out.append(w)
             continue
         letters = [c for c in core if c.isalpha()]
         if letters and all(c.isupper() for c in letters):
-            if len(letters) <= ACRONYM_MAX:
+            if len(letters) <= ACRONYM_MAX and not caps_export:
                 out.append(w)                      # `LLM`, `AI`, `ELO` are acronyms, not words
                 continue
             core_norm = _mixed_case_zero_width(core)      # COUNTERSPECULATION -> Counterspeculation

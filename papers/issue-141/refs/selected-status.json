@@ -3,6 +3,17 @@
  "selected": [
   {
    "cited": true,
+   "key": "10.1038/s41598-019-45619-9",
+   "record": "10.1038/s41598-019-45619-9",
+   "role": "evolutionary-dynamics ranking of agents in a game (alpha-Rank)",
+   "section": "S10",
+   "source": "crossref",
+   "title": "α-Rank: Multi-Agent Evaluation by Evolution",
+   "verified_by": "doi",
+   "year": 2019
+  },
+  {
+   "cited": true,
    "key": "10.3386/w4480",
    "record": "10.3386/w4480",
    "role": "subjective performance measures in optimal incentive contracts: the principal's measure and the agent's response",
@@ -47,6 +58,17 @@
   },
   {
    "cited": true,
+   "key": "1806.02643",
+   "record": "1806.02643",
+   "role": "transitive ratings misrank non-transitive games; a solution-concept aggregate is required",
+   "section": "S10",
+   "source": "arxiv",
+   "title": "Re-evaluating Evaluation",
+   "verified_by": "arXiv id",
+   "year": 2018
+  },
+  {
+   "cited": true,
    "key": "1810.01736",
    "record": "1810.01736",
    "role": "auction theory adapted to practice; the formats benchmarks actually publish",
@@ -64,6 +86,17 @@
    "section": "S2",
    "source": "arxiv",
    "title": "Why Do Competitive Markets Converge to First-Price Auctions?",
+   "verified_by": "arXiv id",
+   "year": 2020
+  },
+  {
+   "cited": true,
+   "key": "2004.09468",
+   "record": "2004.09468",
+   "role": "the transitivity dimension and the population axis in multi-agent evaluation",
+   "section": "S10",
+   "source": "arxiv",
+   "title": "Real World Games Look Like Spinning Tops",
    "verified_by": "arXiv id",
    "year": 2020
   },
