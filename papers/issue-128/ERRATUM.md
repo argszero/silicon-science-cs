@@ -56,8 +56,8 @@ statistics it prints**, all in the same direction:
 manuscript's only rank statistics are the pooled and per-corpus ones owned by
 `canonical_results.json`. Searched, not assumed — the manuscript's two hits for `0.157` are inside the
 arXiv identifier `2410.15738`. The non-manuscript effect is real all the same: a reader running this
-package saw seven wrong statistics, and the largest error is +0.122 on the one predictor the paper is
-about.
+package saw seven wrong statistics, the largest error being **+0.122** on `greedy_gap` (+0.146 →
++0.268), and the predictor the paper is about (`group_metric_alignment`) moved +0.157 → +0.167.
 
 ## What changed
 
