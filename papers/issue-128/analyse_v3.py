@@ -15,14 +15,12 @@ import spike_v3 as sv
 HERE = os.path.dirname(os.path.abspath(__file__))
 ART = os.path.join(HERE, "spike_v3_results.json")
 
-def spearman(x, y):
-    x = np.asarray(x, float); y = np.asarray(y, float)
-    def rank(a):
-        o = np.argsort(a, kind="mergesort"); r = np.empty(len(a), float); r[o] = np.arange(len(a))
-        return r
-    rx, ry = rank(x) - rank(x).mean(), rank(y) - rank(y).mean()
-    den = np.sqrt((rx ** 2).sum() * (ry ** 2).sum())
-    return float((rx * ry).sum() / den) if den else float("nan")
+# THE ONE RANK STATISTIC -- imported, not re-implemented (issue #128, correction round).  This
+# file held a fifth copy, and the argsort-of-argsort variant: it gave every tied value a DISTINCT
+# rank in whatever order the ties sat in the array, so the printed in_sample_spearman was not a
+# function of the data.  Nothing downstream consumed the value (this reader writes no artefact),
+# which is why the defect survived the numeric gates: a printed number that no key holds.
+from canonical import spearman
 
 def within_between(pts, groups, m):
     """Mean within-group pairwise distance / mean between-group pairwise distance. No solve."""
@@ -160,7 +158,9 @@ def main():
     p2 = p2_prime(res)
     print("\nP2' predictors of M*/k, leave-one-FAMILY-out MAE (lower is better):")
     for nm, v in sorted(p2.items(), key=lambda kv: kv[1]["loo_family_mae"]):
-        print("  %-24s loo_mae=%.3f  in_sample_spearman=%+.3f" % (nm, v["loo_family_mae"], v["in_sample_spearman"]))
+        rho = v["in_sample_spearman"]
+        print("  %-24s loo_mae=%.3f  in_sample_spearman=%s" % (nm, v["loo_family_mae"],
+              ("%+.3f" % rho) if rho is not None else "-"))
     t = p3(res)
     print("\nP3 cost law: %d case(s) yield a fit with >=3 points above M*" % t["n_fits"])
     for obj in ("maxmin", "maxsum"):
@@ -176,8 +176,13 @@ def selftest():
     def nonincreasing(v):
         return all(v[i] >= v[i + 1] for i in range(len(v) - 1))
     checks = []
-    checks.append(("C1 spearman sign", spearman([1, 2, 3, 4], [1, 4, 9, 16]) > 0.99,
-                   spearman([1, 2, 3, 4], [16, 9, 4, 1]) > 0.99))
+    # canonical.spearman returns None on a degenerate input, so the sign test is stated as a
+    # three-way predicate rather than compared to a number that may not exist
+    pos, neg = spearman([1, 2, 3, 4], [1, 4, 9, 16]), spearman([1, 2, 3, 4], [16, 9, 4, 1])
+    # healthy = the monotone-increasing pair scores high; mutated = the SAME predicate on the
+    # reversed pair, which must not hold (the tuple's third slot is the mutation column).
+    checks.append(("C1 spearman sign", pos is not None and pos > 0.99,
+                   neg is not None and neg > 0.99))
     ok = True
     for c in res["cases"]:
         rows = {r["M"]: r for r in c["floors_curve"]}

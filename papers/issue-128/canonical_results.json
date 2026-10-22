@@ -60,10 +60,14 @@
   "per_corpus": {
    "seeds": {
     "n": 160,
+    "n_maxmin": 80,
+    "rho_logn_optima_maxmin": 0.3623364105062479,
     "spearman": -0.0056456181261102575
    },
    "wine": {
     "n": 160,
+    "n_maxmin": 80,
+    "rho_logn_optima_maxmin": 0.15353742057257136,
     "spearman": 0.11898770686591768
    }
   },

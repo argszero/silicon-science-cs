@@ -10,20 +10,26 @@
 #
 # Expected last line, for each tier:
 #
-#     REPRODUCE: ALL GREEN (7 steps)      # default
-#     REPRODUCE: ALL GREEN (10 steps)     # --full
+#     REPRODUCE: ALL GREEN (10 steps)      # default
+#     REPRODUCE: ALL GREEN (13 steps)      # --full
 #
 # WHAT THE STEPS ARE
 #
 #   [01]      corpus SHA-256 pins (3 public datasets, re-hashed before every read)
 #   [02]-[06] the certificate suites of the five instruments/analysers, each exercised on a HEALTHY
 #             and a MUTATED object, so a check that cannot fire is caught rather than trusted
-#   [07]      canonical.py --check: every headline number re-derived from the artefacts and asserted
+#   [07]      check_one_statistic.py: the package holds ONE rank statistic -- static (no module but
+#             canonical.py defines it), dynamic (importers hold it by identity) and plant (a copy
+#             must be refused, an import accepted)
+#   [08]      make_figures --selftest-title: the title-fitting certificate, plant included
+#   [09]      canonical.py --check: every headline number re-derived from the artefacts and asserted
+#   [10]      make_figures --check: the statistic the FIGURE prints equals the one the ARTEFACT
+#             states -- two independent paths to one number, which byte-identity cannot compare
 #
 #   --full adds three byte-identity steps:
-#   [08]      spike_v3/v4/v5 re-run      -> the three *_results.json must be byte-identical
-#   [09]      canonical.py re-run        -> canonical_results.json must be byte-identical
-#   [10]      make_figures + build_refs  -> the three PNGs, references.md and manuscript.md must be
+#   [11]      spike_v3/v4/v5 re-run      -> the three *_results.json must be byte-identical
+#   [12]      canonical.py re-run        -> canonical_results.json must be byte-identical
+#   [13]      make_figures + build_refs  -> the three PNGs, references.md and manuscript.md must be
 #                                           byte-identical
 #
 # The re-runs are made in place and then RESTORED from a snapshot taken before them, so the package is
@@ -153,9 +159,24 @@ step_dep "certificates: spike_v5"    scipy "$PY" spike_v5.py   --selftest
 step_dep "certificates: analyse_v3"  scipy "$PY" analyse_v3.py --selftest
 step "certificates: analyse_v5" "$PY" analyse_v5.py --selftest
 
+# [07] ONE rank statistic (issue #128, correction round): the package held five implementations of one
+# statistic and four of them were wrong.  The certificate checks the static form (no copy anywhere, on
+# any interpreter), the dynamic form (importers hold canonical.py's object by identity) and a plant.
+step "certificates: one rank statistic" "$PY" check_one_statistic.py
+
+# [08] the title-fitting certificate.  Declared against matplotlib because it draws; on an interpreter
+# without it the step is NOT RUN and says so, rather than being scored as a defect.
+step_dep "certificates: figure titles" matplotlib "$PY" make_figures.py --selftest-title
+
 echo
 echo "== 3. the paper's numbers, re-derived and asserted ======================="
 step "canonical.py --check" "$PY" canonical.py --check
+
+# [10] the figure's printed number against the artefact that owns it.  Needs matplotlib for the same
+# reason, and a writable cache dir, which matplotlib insists on even for a headless Agg run.
+export MPLCONFIGDIR="${MPLCONFIGDIR:-$TMP/mpl}"
+mkdir -p "$MPLCONFIGDIR"
+step_dep "figure vs artefact: the printed statistic" matplotlib "$PY" make_figures.py --check
 
 if [ "$FULL" = "1" ]; then
     echo

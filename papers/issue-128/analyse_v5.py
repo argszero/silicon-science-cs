@@ -30,15 +30,12 @@ def load(path=RES):
     return [c for blk in d["corpora"].values() for c in blk["cells"]]
 
 
-def spearman(x, y):
-    x = np.asarray(x, float); y = np.asarray(y, float)
-    if len(x) < 3 or len(set(x.tolist())) < 2 or len(set(y.tolist())) < 2:
-        return None
-    rx = np.argsort(np.argsort(x)).astype(float)
-    ry = np.argsort(np.argsort(y)).astype(float)
-    rx -= rx.mean(); ry -= ry.mean()
-    den = np.sqrt((rx * rx).sum() * (ry * ry).sum())
-    return None if den == 0 else float((rx * ry).sum() / den)
+# The rank statistic is IMPORTED from canonical.py, not implemented here.  Four copies of it existed
+# (this file, spike_v5.py, make_figures.py, and canonical.py's own) and two of them disagreed about
+# ties: an argsort-of-argsort invents an ordering inside a tied group, and M*/k takes only 9 distinct
+# values over 320 cells, so the same data read +0.079 one way and +0.108 the other (issue #128,
+# correction round).  One convention, one implementation, imported.
+from canonical import spearman
 
 
 def mae_gain(feat, target):
