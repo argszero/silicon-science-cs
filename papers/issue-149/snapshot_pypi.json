@@ -1,5 +1,5 @@
 {
- "content_sha256": "00805f1f0a2df7c7b4f445e1768abfcb8040ce36fe22065dd4cf9d24d76b16ed",
+ "content_sha256": "f2d7dfd6209c71ed089490ad6f984b532a19eeb993892c423296494b8b02560c",
  "declaring": [
   {
    "package": "requests",
@@ -1264,19 +1264,25 @@
      "yanked": false
     },
     "3.8.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=4"
+     },
      "prerelease": false,
      "published_at": "2024-03-22T14:39:34.521795Z",
      "yanked": false
     },
     "3.9.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=4"
+     },
      "prerelease": false,
      "published_at": "2025-07-03T13:24:59.115095Z",
      "yanked": false
     },
     "3.9.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=4"
+     },
      "prerelease": false,
      "published_at": "2025-07-08T09:07:41.548205Z",
      "yanked": false
@@ -2498,49 +2504,71 @@
      "yanked": false
     },
     "8.1.3": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "importlib-metadata": ""
+     },
      "prerelease": false,
      "published_at": "2022-04-28T17:36:06.952869Z",
      "yanked": false
     },
     "8.1.4": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "importlib-metadata": ""
+     },
      "prerelease": false,
      "published_at": "2023-07-06T18:27:14.435157Z",
      "yanked": false
     },
     "8.1.5": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "importlib-metadata": ""
+     },
      "prerelease": false,
      "published_at": "2023-07-13T15:07:09.915971Z",
      "yanked": false
     },
     "8.1.6": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "importlib-metadata": ""
+     },
      "prerelease": false,
      "published_at": "2023-07-18T20:05:12.481540Z",
      "yanked": false
     },
     "8.1.7": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "importlib-metadata": ""
+     },
      "prerelease": false,
      "published_at": "2023-08-17T17:29:10.080169Z",
      "yanked": false
     },
     "8.1.8": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "importlib-metadata": ""
+     },
      "prerelease": false,
      "published_at": "2024-12-21T18:38:41.666429Z",
      "yanked": false
     },
     "8.2.0": {
-     "deps": {},
+     "deps": {
+      "colorama": ""
+     },
      "prerelease": false,
      "published_at": "2025-05-10T22:21:01.352121Z",
      "yanked": false
     },
     "8.2.1": {
-     "deps": {},
+     "deps": {
+      "colorama": ""
+     },
      "prerelease": false,
      "published_at": "2025-05-20T23:19:47.796919Z",
      "yanked": false
@@ -2552,13 +2580,17 @@
      "yanked": true
     },
     "8.3.0": {
-     "deps": {},
+     "deps": {
+      "colorama": ""
+     },
      "prerelease": false,
      "published_at": "2025-09-18T17:32:22.420001Z",
      "yanked": false
     },
     "8.3.1": {
-     "deps": {},
+     "deps": {
+      "colorama": ""
+     },
      "prerelease": false,
      "published_at": "2025-11-15T20:45:41.139301Z",
      "yanked": false
@@ -6110,13 +6142,19 @@
      "yanked": false
     },
     "3.10.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-30T02:06:14.525378Z",
      "yanked": false
     },
     "3.10.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-04-12T21:47:58.841839Z",
      "yanked": false
@@ -6146,199 +6184,298 @@
      "yanked": false
     },
     "3.6.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-02-24T02:58:19.395791Z",
      "yanked": false
     },
     "3.7.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-02-24T17:42:58.579844Z",
      "yanked": false
     },
     "3.7.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-07T22:16:05.003515Z",
      "yanked": false
     },
     "3.7.2": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-07T23:55:21.799389Z",
      "yanked": false
     },
     "3.7.3": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-14T14:38:42.846501Z",
      "yanked": false
     },
     "3.8.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-27T02:07:12.202366Z",
      "yanked": false
     },
     "3.8.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-27T16:53:19.830496Z",
      "yanked": false
     },
     "3.8.2": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-28T07:34:39.414822Z",
      "yanked": false
     },
     "3.9.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-28T07:36:29.729127Z",
      "yanked": false
     },
     "3.9.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-03-29T13:13:27.379235Z",
      "yanked": false
     },
     "4": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-04-18T14:58:25.019884Z",
      "yanked": false
     },
     "4.0.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-04-18T14:58:23.928073Z",
      "yanked": false
     },
     "4.0.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-04-21T01:45:41.052792Z",
      "yanked": false
     },
     "4.1.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-05-26T16:39:39.722785Z",
      "yanked": false
     },
     "4.10.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-12-20T02:56:18.787994Z",
      "yanked": false
     },
     "4.10.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-01-17T00:47:29.908919Z",
      "yanked": false
     },
     "4.11.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-02-11T00:47:26.394997Z",
      "yanked": false
     },
     "4.11.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-02-15T02:47:53.247272Z",
      "yanked": false
     },
     "4.11.2": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-02-27T19:41:49.012917Z",
      "yanked": false
     },
     "4.11.3": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-03-13T18:08:51.841454Z",
      "yanked": false
     },
     "4.11.4": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-05-21T16:40:19.643148Z",
      "yanked": false
     },
     "4.12.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-06-25T17:01:22.940893Z",
      "yanked": false
     },
     "4.13.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-10-01T17:09:13.903961Z",
      "yanked": false
     },
     "4.2.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-05-26T17:37:48.776372Z",
      "yanked": false
     },
     "4.3.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-05-27T13:25:17.728636Z",
      "yanked": false
     },
     "4.3.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-05-28T21:17:11.211982Z",
      "yanked": false
     },
     "4.4.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-05-31T15:00:12.562159Z",
      "yanked": false
     },
     "4.5.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-06-03T23:11:06.793328Z",
      "yanked": false
     },
     "4.6.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-06-27T07:21:04.272717Z",
      "yanked": false
     },
     "4.6.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-07-05T00:19:43.638666Z",
      "yanked": false
     },
     "4.6.2": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-07-31T03:59:21.060242Z",
      "yanked": false
     },
     "4.6.3": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-07-31T12:41:45.081893Z",
      "yanked": false
     },
     "4.6.4": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-08-13T19:05:08.970856Z",
      "yanked": false
@@ -6350,7 +6487,10 @@
      "yanked": true
     },
     "4.7.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-08-26T14:48:41.259511Z",
      "yanked": false
@@ -6362,253 +6502,379 @@
      "yanked": true
     },
     "4.8.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-08-29T15:26:50.531854Z",
      "yanked": false
     },
     "4.8.2": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-11-09T01:15:25.915287Z",
      "yanked": false
     },
     "4.8.3": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-12-16T14:42:25.457275Z",
      "yanked": false
     },
     "4.9.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2021-12-16T21:45:30.425356Z",
      "yanked": false
     },
     "5": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-10-02T00:42:12.852188Z",
      "yanked": false
     },
     "5.0.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-10-02T00:42:11.318006Z",
      "yanked": false
     },
     "5.1.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-11-24T14:38:59.128296Z",
      "yanked": false
     },
     "5.2.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2022-12-18T22:40:51.965407Z",
      "yanked": false
     },
     "6": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-01-01T18:03:09.345016Z",
      "yanked": false
     },
     "6.0.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-01-01T18:03:07.879016Z",
      "yanked": false
     },
     "6.0.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-03-18T17:10:46.884187Z",
      "yanked": false
     },
     "6.1.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-03-18T17:10:47.341097Z",
      "yanked": false
     },
     "6.10.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2023-12-03T16:00:41.840692Z",
      "yanked": false
     },
     "6.11.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2023-12-03T17:33:08.965354Z",
      "yanked": false
     },
     "6.2.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-07T17:13:25.836055Z",
      "yanked": false
     },
     "6.2.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-09T15:29:43.940979Z",
      "yanked": false
     },
     "6.3.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-10T02:27:40.805032Z",
      "yanked": false
     },
     "6.4.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-15T13:55:59.426922Z",
      "yanked": false
     },
     "6.4.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-15T15:24:52.338691Z",
      "yanked": false
     },
     "6.5.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-18T13:02:26.336937Z",
      "yanked": false
     },
     "6.5.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-22T02:51:18.885457Z",
      "yanked": false
     },
     "6.6.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-04-22T12:57:00.231948Z",
      "yanked": false
     },
     "6.7.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-06-18T21:44:33.441465Z",
      "yanked": false
     },
     "6.8.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": "(>=3.6.4)",
+      "zipp": "(>=0.5)"
+     },
      "prerelease": false,
      "published_at": "2023-07-07T16:16:01.381542Z",
      "yanked": false
     },
     "6.9.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2023-12-01T17:41:04.098876Z",
      "yanked": false
     },
     "7": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2023-12-03T17:42:16.831468Z",
      "yanked": false
     },
     "7.0.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2023-12-03T17:42:14.834082Z",
      "yanked": false
     },
     "7.0.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2023-12-22T17:17:19.891959Z",
      "yanked": false
     },
     "7.0.2": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-03-07T13:15:01.080069Z",
      "yanked": false
     },
     "7.1.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-03-20T19:51:30.241676Z",
      "yanked": false
     },
     "7.2.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-06-20T16:46:40.489235Z",
      "yanked": false
     },
     "7.2.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-06-23T15:17:52.117950Z",
      "yanked": false
     },
     "8": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-06-25T18:38:04.538419Z",
      "yanked": false
     },
     "8.0.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-06-25T18:38:02.324079Z",
      "yanked": false
     },
     "8.1.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-07-23T13:10:06.964032Z",
      "yanked": false
     },
     "8.2.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-07-24T15:22:15.491733Z",
      "yanked": false
     },
     "8.3.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-08-19T19:40:54.637940Z",
      "yanked": false
     },
     "8.4.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=0.5"
+     },
      "prerelease": false,
      "published_at": "2024-08-20T17:11:41.102189Z",
      "yanked": false
     },
     "8.5.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=3.20"
+     },
      "prerelease": false,
      "published_at": "2024-09-11T14:56:07.019602Z",
      "yanked": false
     },
     "8.6.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=3.20"
+     },
      "prerelease": false,
      "published_at": "2025-01-20T22:06:39.366669Z",
      "yanked": false
     },
     "8.6.1": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=3.20"
+     },
      "prerelease": false,
      "published_at": "2025-01-20T22:21:29.177468Z",
      "yanked": false
     },
     "8.7.0": {
-     "deps": {},
+     "deps": {
+      "typing-extensions": ">=3.6.4",
+      "zipp": ">=3.20"
+     },
      "prerelease": false,
      "published_at": "2025-04-27T15:29:00.214339Z",
      "yanked": false
@@ -11252,6 +11518,137 @@
     }
    }
   },
+  "six": {
+   "cached": false,
+   "versions": {
+    "0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2010-06-29T19:56:36.719942Z",
+     "yanked": false
+    },
+    "1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2010-11-20T22:57:30.511044Z",
+     "yanked": false
+    },
+    "1.10.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2015-10-07T03:17:20.304588Z",
+     "yanked": false
+    },
+    "1.11.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2017-09-17T18:46:53.702194Z",
+     "yanked": false
+    },
+    "1.12.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-12-10T00:59:57.273383Z",
+     "yanked": false
+    },
+    "1.13.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-11-05T17:28:34.350776Z",
+     "yanked": false
+    },
+    "1.14.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-15T18:10:19.607402Z",
+     "yanked": false
+    },
+    "1.15.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-05-21T15:25:54.177349Z",
+     "yanked": false
+    },
+    "1.16.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-05-05T14:18:17.237677Z",
+     "yanked": false
+    },
+    "1.17.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-12-04T17:35:26.475808Z",
+     "yanked": false
+    },
+    "1.5.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-01-05T00:56:10.191621Z",
+     "yanked": false
+    },
+    "1.5.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-01-05T05:15:22.028490Z",
+     "yanked": false
+    },
+    "1.5.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-01-06T15:57:56.748401Z",
+     "yanked": false
+    },
+    "1.6.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-03-14T03:11:13.800006Z",
+     "yanked": false
+    },
+    "1.6.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-03-14T03:39:37.478620Z",
+     "yanked": false
+    },
+    "1.7.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-06-08T02:35:46.721736Z",
+     "yanked": false
+    },
+    "1.7.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-06-09T03:57:48.625452Z",
+     "yanked": false
+    },
+    "1.7.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-06-09T04:15:38.547204Z",
+     "yanked": false
+    },
+    "1.7.3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-06-29T19:30:30.577750Z",
+     "yanked": false
+    },
+    "1.8.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2014-09-11T21:48:44.576059Z",
+     "yanked": false
+    },
+    "1.9.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2015-01-02T16:38:13.948809Z",
+     "yanked": false
+    }
+   }
+  },
   "sqlparse": {
    "cached": true,
    "versions": {
@@ -11588,6 +11985,335 @@
      "deps": {},
      "prerelease": false,
      "published_at": "2026-10-07T12:22:15.601508Z",
+     "yanked": false
+    }
+   }
+  },
+  "typing-extensions": {
+   "cached": false,
+   "versions": {
+    "3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2017-09-17T12:25:20.236441Z",
+     "yanked": false
+    },
+    "3.10.0.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-05-01T18:03:16.560286Z",
+     "yanked": false
+    },
+    "3.10.0.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-08-29T15:53:51.580982Z",
+     "yanked": false
+    },
+    "3.10.0.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-08-30T18:46:23.064211Z",
+     "yanked": false
+    },
+    "3.6.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2017-09-17T12:25:17.911412Z",
+     "yanked": false
+    },
+    "3.6.2.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2017-09-30T08:53:23.924418Z",
+     "yanked": false
+    },
+    "3.6.5": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-05-07T22:16:09.460292Z",
+     "yanked": false
+    },
+    "3.6.6": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-10-06T22:03:23.629524Z",
+     "yanked": false
+    },
+    "3.7.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-01-12T18:17:33.193920Z",
+     "yanked": false
+    },
+    "3.7.4": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-06-19T23:58:56.983660Z",
+     "yanked": false
+    },
+    "3.7.4.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-10-28T13:29:12.505359Z",
+     "yanked": false
+    },
+    "3.7.4.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-04-02T17:40:28.249155Z",
+     "yanked": false
+    },
+    "3.7.4.3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-08-23T16:44:06.187895Z",
+     "yanked": false
+    },
+    "4": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-11-15T15:23:58.981523Z",
+     "yanked": false
+    },
+    "4.0.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-11-14T22:11:20.075965Z",
+     "yanked": false
+    },
+    "4.0.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-12-01T01:45:37.772785Z",
+     "yanked": false
+    },
+    "4.1.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-02-12T21:35:42.540804Z",
+     "yanked": false
+    },
+    "4.1.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-02-14T03:19:55.773679Z",
+     "yanked": false
+    },
+    "4.10.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-02-25T22:12:47.720766Z",
+     "yanked": false
+    },
+    "4.10.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-02-18T02:58:31.345000Z",
+     "yanked": false
+    },
+    "4.11.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-04-05T12:35:44.388382Z",
+     "yanked": false
+    },
+    "4.11.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-03-24T14:04:40.306368Z",
+     "yanked": false
+    },
+    "4.12.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-05-24T00:26:43.549001Z",
+     "yanked": false
+    },
+    "4.12.0a2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-05-16T19:26:37.747926Z",
+     "yanked": false
+    },
+    "4.12.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-05-16T19:58:42.703064Z",
+     "yanked": false
+    },
+    "4.12.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-06-01T17:28:56.718230Z",
+     "yanked": false
+    },
+    "4.12.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-06-07T18:52:13.582461Z",
+     "yanked": false
+    },
+    "4.13.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-03-26T03:49:40.350841Z",
+     "yanked": false
+    },
+    "4.13.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-03-18T18:04:00.259716Z",
+     "yanked": false
+    },
+    "4.13.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-04-03T16:11:19.281466Z",
+     "yanked": false
+    },
+    "4.13.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-04-10T14:19:03.967482Z",
+     "yanked": false
+    },
+    "4.14.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-06-02T14:52:10.026868Z",
+     "yanked": false
+    },
+    "4.14.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-05-24T21:38:36.233117Z",
+     "yanked": false
+    },
+    "4.14.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-07-04T13:28:32.743692Z",
+     "yanked": false
+    },
+    "4.15.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-08-25T13:49:24.860024Z",
+     "yanked": false
+    },
+    "4.15.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-08-18T14:31:07.386061Z",
+     "yanked": false
+    },
+    "4.16.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-07-02T08:40:04.659120Z",
+     "yanked": false
+    },
+    "4.16.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-06-24T17:49:03.063123Z",
+     "yanked": false
+    },
+    "4.16.0rc2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-06-25T15:41:04.912100Z",
+     "yanked": false
+    },
+    "4.2.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-04-17T21:27:21.545483Z",
+     "yanked": false
+    },
+    "4.3.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-07-01T14:56:11.904033Z",
+     "yanked": false
+    },
+    "4.4.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-10-06T22:40:00.875294Z",
+     "yanked": false
+    },
+    "4.5.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-02-15T00:17:53.726117Z",
+     "yanked": false
+    },
+    "4.6.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-05-23T00:14:22.372532Z",
+     "yanked": false
+    },
+    "4.6.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-05-24T03:13:13.291750Z",
+     "yanked": false
+    },
+    "4.6.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-05-25T13:20:20.746721Z",
+     "yanked": false
+    },
+    "4.6.3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-06-01T23:55:34.451414Z",
+     "yanked": false
+    },
+    "4.7.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-06-28T21:00:52.235967Z",
+     "yanked": false
+    },
+    "4.7.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-06-21T14:57:37.696595Z",
+     "yanked": false
+    },
+    "4.7.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-07-02T14:20:53.275715Z",
+     "yanked": false
+    },
+    "4.8.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-09-18T04:01:55.398373Z",
+     "yanked": false
+    },
+    "4.8.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-09-08T00:46:22.002821Z",
+     "yanked": false
+    },
+    "4.9.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-12-10T01:14:20.617723Z",
+     "yanked": false
+    },
+    "4.9.0rc1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-11-29T18:15:58.752378Z",
      "yanked": false
     }
    }
@@ -12854,25 +13580,33 @@
      "yanked": false
     },
     "3.1.0": {
-     "deps": {},
+     "deps": {
+      "markupsafe": ">=2.1.1"
+     },
      "prerelease": false,
      "published_at": "2024-10-31T17:23:11.498253Z",
      "yanked": false
     },
     "3.1.1": {
-     "deps": {},
+     "deps": {
+      "markupsafe": ">=2.1.1"
+     },
      "prerelease": false,
      "published_at": "2024-11-01T16:40:43.994959Z",
      "yanked": false
     },
     "3.1.2": {
-     "deps": {},
+     "deps": {
+      "markupsafe": ">=2.1.1"
+     },
      "prerelease": false,
      "published_at": "2024-11-04T17:35:33.615746Z",
      "yanked": false
     },
     "3.1.3": {
-     "deps": {},
+     "deps": {
+      "markupsafe": ">=2.1.1"
+     },
      "prerelease": false,
      "published_at": "2024-11-08T15:52:16.132714Z",
      "yanked": false
@@ -12926,9 +13660,440 @@
      "yanked": false
     }
    }
+  },
+  "zipp": {
+   "cached": false,
+   "versions": {
+    "0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-11-15T22:03:12.690555Z",
+     "yanked": false
+    },
+    "0.1.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-11-15T22:02:57.320159Z",
+     "yanked": false
+    },
+    "0.2.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-11-16T00:07:03.299869Z",
+     "yanked": false
+    },
+    "0.2.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-11-16T00:22:52.405876Z",
+     "yanked": false
+    },
+    "0.3.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-12-01T04:16:04.113620Z",
+     "yanked": false
+    },
+    "0.3.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-12-01T17:20:41.858856Z",
+     "yanked": false
+    },
+    "0.3.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-12-01T18:05:18.020302Z",
+     "yanked": false
+    },
+    "0.3.3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2018-12-27T16:38:14.389193Z",
+     "yanked": false
+    },
+    "0.4.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-04-28T17:12:57.038863Z",
+     "yanked": false
+    },
+    "0.5.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-05-08T18:41:42.690670Z",
+     "yanked": false
+    },
+    "0.5.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-05-16T15:35:20.580352Z",
+     "yanked": false
+    },
+    "0.5.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-07-07T21:14:03.747003Z",
+     "yanked": false
+    },
+    "0.6.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2019-08-24T16:27:53.417153Z",
+     "yanked": false
+    },
+    "1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-13T23:10:45.052212Z",
+     "yanked": false
+    },
+    "1.0.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-13T23:10:43.608355Z",
+     "yanked": false
+    },
+    "1.1.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-25T21:11:06.124883Z",
+     "yanked": false
+    },
+    "1.1.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-02-17T17:58:03.108795Z",
+     "yanked": false
+    },
+    "1.2.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-02-17T18:32:52.318042Z",
+     "yanked": false
+    },
+    "2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-20T00:16:34.954420Z",
+     "yanked": false
+    },
+    "2.0.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-20T00:16:33.709929Z",
+     "yanked": false
+    },
+    "2.0.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-23T02:11:47.472363Z",
+     "yanked": false
+    },
+    "2.1.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-01-25T21:17:04.669318Z",
+     "yanked": false
+    },
+    "2.2.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-02-07T22:20:56.604373Z",
+     "yanked": false
+    },
+    "2.2.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-02-17T17:57:55.481474Z",
+     "yanked": false
+    },
+    "3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-02-17T18:33:29.076247Z",
+     "yanked": false
+    },
+    "3.0.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-02-17T18:33:28.034792Z",
+     "yanked": false
+    },
+    "3.1.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-03-03T10:59:16.165395Z",
+     "yanked": false
+    },
+    "3.10.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-10-24T01:21:48.050220Z",
+     "yanked": false
+    },
+    "3.11.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-11-25T18:12:50.517592Z",
+     "yanked": false
+    },
+    "3.12.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-01-27T22:46:38.184149Z",
+     "yanked": false
+    },
+    "3.12.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-02-05T17:47:17.566933Z",
+     "yanked": false
+    },
+    "3.13.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-02-09T17:04:05.249660Z",
+     "yanked": false
+    },
+    "3.14.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-02-18T00:47:56.202058Z",
+     "yanked": false
+    },
+    "3.15.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-02-25T02:17:20.807094Z",
+     "yanked": false
+    },
+    "3.16.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-07-08T21:10:48.695459Z",
+     "yanked": false
+    },
+    "3.16.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-07-13T03:24:02.827923Z",
+     "yanked": false
+    },
+    "3.16.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-07-14T19:23:31.581798Z",
+     "yanked": false
+    },
+    "3.17.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2023-09-18T15:18:23.146370Z",
+     "yanked": false
+    },
+    "3.18.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-03-13T02:57:11.194212Z",
+     "yanked": false
+    },
+    "3.18.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-03-14T21:09:02.638818Z",
+     "yanked": false
+    },
+    "3.18.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-05-16T09:02:12.597502Z",
+     "yanked": false
+    },
+    "3.19.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-05-26T16:27:01.326062Z",
+     "yanked": false
+    },
+    "3.19.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-05-31T16:39:19.680225Z",
+     "yanked": false
+    },
+    "3.19.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-06-04T17:21:07.146405Z",
+     "yanked": false
+    },
+    "3.19.3": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-08-11T17:19:46.296246Z",
+     "yanked": false
+    },
+    "3.2.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-09-22T15:29:23.094415Z",
+     "yanked": false
+    },
+    "3.20.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-08-11T17:20:05.826734Z",
+     "yanked": false
+    },
+    "3.20.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-08-26T17:28:45.480370Z",
+     "yanked": false
+    },
+    "3.20.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-09-13T13:44:14.380969Z",
+     "yanked": false
+    },
+    "3.21.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2024-11-10T15:05:19.275516Z",
+     "yanked": false
+    },
+    "3.22.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-05-26T14:46:30.775284Z",
+     "yanked": false
+    },
+    "3.23.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2025-06-08T17:06:38.034154Z",
+     "yanked": false
+    },
+    "3.23.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-04-13T23:21:45.386171Z",
+     "yanked": false
+    },
+    "3.3.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-10-03T18:55:40.482332Z",
+     "yanked": false
+    },
+    "3.3.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-10-16T01:59:56.057666Z",
+     "yanked": false
+    },
+    "3.3.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-10-24T03:04:30.965904Z",
+     "yanked": false
+    },
+    "3.4.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2020-10-25T18:40:27.422786Z",
+     "yanked": false
+    },
+    "3.4.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-03-05T02:42:13.334304Z",
+     "yanked": false
+    },
+    "3.4.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-07-02T22:56:56.315303Z",
+     "yanked": false
+    },
+    "3.5.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-07-02T23:51:45.759726Z",
+     "yanked": false
+    },
+    "3.5.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-09-28T16:58:13.144803Z",
+     "yanked": false
+    },
+    "3.6.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-09-29T15:34:00.831229Z",
+     "yanked": false
+    },
+    "3.7.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2021-12-31T00:02:16.739641Z",
+     "yanked": false
+    },
+    "3.8.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-04-03T15:07:27.225245Z",
+     "yanked": false
+    },
+    "3.8.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-07-12T14:21:20.506913Z",
+     "yanked": false
+    },
+    "3.9.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-10-08T18:06:29.078961Z",
+     "yanked": false
+    },
+    "3.9.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2022-10-24T01:14:24.176906Z",
+     "yanked": false
+    },
+    "4": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-05-18T20:08:57.967214Z",
+     "yanked": false
+    },
+    "4.1.0": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-05-18T20:08:57.045692Z",
+     "yanked": false
+    },
+    "4.1.1": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-10-03T17:03:02.506030Z",
+     "yanked": false
+    },
+    "4.1.2": {
+     "deps": {},
+     "prerelease": false,
+     "published_at": "2026-10-21T18:57:03.790996Z",
+     "yanked": false
+    }
+   }
   }
  },
- "packages_count": 28,
+ "packages_count": 31,
  "requirement_scan": {
   "asgiref==3.10.0": {
    "deps": {
@@ -12963,6 +14128,30 @@
    "requirements": 4
   },
   "asgiref==3.12.1": {
+   "deps": {
+    "typing-extensions": ">=4"
+   },
+   "extra_only": 3,
+   "marked": 4,
+   "requirements": 4
+  },
+  "asgiref==3.8.1": {
+   "deps": {
+    "typing-extensions": ">=4"
+   },
+   "extra_only": 3,
+   "marked": 4,
+   "requirements": 4
+  },
+  "asgiref==3.9.0": {
+   "deps": {
+    "typing-extensions": ">=4"
+   },
+   "extra_only": 3,
+   "marked": 4,
+   "requirements": 4
+  },
+  "asgiref==3.9.1": {
    "deps": {
     "typing-extensions": ">=4"
    },
@@ -13085,6 +14274,92 @@
    "extra_only": 0,
    "marked": 0,
    "requirements": 0
+  },
+  "click==8.1.3": {
+   "deps": {
+    "colorama": "",
+    "importlib-metadata": ""
+   },
+   "extra_only": 0,
+   "marked": 2,
+   "requirements": 2
+  },
+  "click==8.1.4": {
+   "deps": {
+    "colorama": "",
+    "importlib-metadata": ""
+   },
+   "extra_only": 0,
+   "marked": 2,
+   "requirements": 2
+  },
+  "click==8.1.5": {
+   "deps": {
+    "colorama": "",
+    "importlib-metadata": ""
+   },
+   "extra_only": 0,
+   "marked": 2,
+   "requirements": 2
+  },
+  "click==8.1.6": {
+   "deps": {
+    "colorama": "",
+    "importlib-metadata": ""
+   },
+   "extra_only": 0,
+   "marked": 2,
+   "requirements": 2
+  },
+  "click==8.1.7": {
+   "deps": {
+    "colorama": "",
+    "importlib-metadata": ""
+   },
+   "extra_only": 0,
+   "marked": 2,
+   "requirements": 2
+  },
+  "click==8.1.8": {
+   "deps": {
+    "colorama": "",
+    "importlib-metadata": ""
+   },
+   "extra_only": 0,
+   "marked": 2,
+   "requirements": 2
+  },
+  "click==8.2.0": {
+   "deps": {
+    "colorama": ""
+   },
+   "extra_only": 0,
+   "marked": 1,
+   "requirements": 1
+  },
+  "click==8.2.1": {
+   "deps": {
+    "colorama": ""
+   },
+   "extra_only": 0,
+   "marked": 1,
+   "requirements": 1
+  },
+  "click==8.3.0": {
+   "deps": {
+    "colorama": ""
+   },
+   "extra_only": 0,
+   "marked": 1,
+   "requirements": 1
+  },
+  "click==8.3.1": {
+   "deps": {
+    "colorama": ""
+   },
+   "extra_only": 0,
+   "marked": 1,
+   "requirements": 1
   },
   "click==8.3.2": {
    "deps": {
@@ -13362,6 +14637,708 @@
    "marked": 6,
    "requirements": 6
   },
+  "importlib-metadata==3.10.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.10.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.6.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.7.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.7.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.7.2": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.7.3": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.8.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.8.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.8.2": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.9.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==3.9.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.0.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.0.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.1.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.10.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.10.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.11.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.11.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.11.2": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.11.3": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.11.4": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.12.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 16,
+   "marked": 17,
+   "requirements": 18
+  },
+  "importlib-metadata==4.13.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==4.2.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.3.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.3.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.4.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.5.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 15,
+   "marked": 16,
+   "requirements": 17
+  },
+  "importlib-metadata==4.6.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.6.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.6.2": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.6.3": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.6.4": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.7.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.8.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.8.2": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.8.3": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==4.9.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 17,
+   "marked": 18,
+   "requirements": 19
+  },
+  "importlib-metadata==5": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==5.0.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==5.1.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==5.2.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.0.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.0.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.1.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.10.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.11.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.2.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.2.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.3.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.4.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.4.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.5.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.5.1": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.6.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==6.7.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==6.8.0": {
+   "deps": {
+    "typing-extensions": "(>=3.6.4)",
+    "zipp": "(>=0.5)"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==6.9.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==7": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==7.0.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==7.0.1": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 20,
+   "marked": 21,
+   "requirements": 22
+  },
+  "importlib-metadata==7.0.2": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 18,
+   "marked": 19,
+   "requirements": 20
+  },
+  "importlib-metadata==7.1.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==7.2.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==7.2.1": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.0.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.1.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.2.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.3.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.4.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=0.5"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.5.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=3.20"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.6.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=3.20"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.6.1": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=3.20"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
+  "importlib-metadata==8.7.0": {
+   "deps": {
+    "typing-extensions": ">=3.6.4",
+    "zipp": ">=3.20"
+   },
+   "extra_only": 19,
+   "marked": 20,
+   "requirements": 21
+  },
   "importlib-metadata==8.7.1": {
    "deps": {
     "zipp": ">=3.20"
@@ -13530,6 +15507,78 @@
    "marked": 1,
    "requirements": 2
   },
+  "markupsafe==2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.0.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.0.0a1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.0.0rc1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.0.0rc2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.0.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.1.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.1.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.1.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.1.3": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.1.4": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "markupsafe==2.1.5": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
   "markupsafe==3": {
    "deps": {},
    "extra_only": 0,
@@ -13561,6 +15610,66 @@
    "requirements": 0
   },
   "markupsafe==3.0.4": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.3.3": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.3.4": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.3.5": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.0rc1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.3": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.4": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.5": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.4.6": {
    "deps": {},
    "extra_only": 0,
    "marked": 0,
@@ -13937,6 +16046,48 @@
    "marked": 2,
    "requirements": 6
   },
+  "sqlparse==0.3.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "sqlparse==0.4.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "sqlparse==0.4.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "sqlparse==0.4.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "sqlparse==0.4.3": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "sqlparse==0.4.4": {
+   "deps": {},
+   "extra_only": 5,
+   "marked": 5,
+   "requirements": 5
+  },
+  "sqlparse==0.5.0": {
+   "deps": {},
+   "extra_only": 3,
+   "marked": 3,
+   "requirements": 3
+  },
   "sqlparse==0.5.1": {
    "deps": {},
    "extra_only": 3,
@@ -14074,6 +16225,38 @@
    "extra_only": 5,
    "marked": 5,
    "requirements": 5
+  },
+  "werkzeug==3.1.0": {
+   "deps": {
+    "markupsafe": ">=2.1.1"
+   },
+   "extra_only": 1,
+   "marked": 1,
+   "requirements": 2
+  },
+  "werkzeug==3.1.1": {
+   "deps": {
+    "markupsafe": ">=2.1.1"
+   },
+   "extra_only": 1,
+   "marked": 1,
+   "requirements": 2
+  },
+  "werkzeug==3.1.2": {
+   "deps": {
+    "markupsafe": ">=2.1.1"
+   },
+   "extra_only": 1,
+   "marked": 1,
+   "requirements": 2
+  },
+  "werkzeug==3.1.3": {
+   "deps": {
+    "markupsafe": ">=2.1.1"
+   },
+   "extra_only": 1,
+   "marked": 1,
+   "requirements": 2
   },
   "werkzeug==3.1.4": {
    "deps": {

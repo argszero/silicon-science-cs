@@ -56,7 +56,16 @@ def wilson(k, n, z=1.96):
 
 
 def admissible(pkg, spec, as_of, pep440):
-    """The versions a declaration leaves available at an instant, and why each was excluded."""
+    """The versions a declaration leaves available at an instant, and why each was excluded.
+
+    A package that is NOT IN THE SNAPSHOT returns None, never an empty set.  The first version of this
+    function read a missing package as "no admissible versions", which is absence read as a
+    measurement: when the depth-2 fetch added those packages, the published rate moved (npm 12.8 ->
+    14.3%, PyPI 80.1 -> 93.4%) with no change in what any declaration says.  That movement is the
+    defect's own signature, and it is why the count is printed beside the rate.
+    """
+    if not pkg:
+        return None, {"unparsed": True, "reason": "package not in snapshot"}
     alts = parse_spec(spec, pep440=pep440)
     if alts is None:
         return None, {"unparsed": True}
@@ -114,12 +123,15 @@ def analyse(eco):
         t = rec["published_at"]
         deps = rec.get("deps") or {}
         edges, unparsed, amb, amb_differ, amb_shape, amb_unknown = 0, 0, 0, 0, 0, 0
+        unknown_pkg = 0
         prod_asof, prod_now = 1, 1
         grew_edges = 0
         for dep, spec in sorted(deps.items()):
             a_asof, why = admissible(packages.get(dep), spec, t, pep440)
             if a_asof is None:
                 unparsed += 1
+                if (why or {}).get("reason") == "package not in snapshot":
+                    unknown_pkg += 1
                 continue
             a_now, _ = admissible(packages.get(dep), spec, None, pep440)
             edges += 1
@@ -147,6 +159,7 @@ def analyse(eco):
                 grew_edges += 1
         rows.append({"declaring": "%s@%s" % (name, ver), "package": name,
                          "published_at": t, "edges": edges, "unparsed": unparsed,
+                         "unknown_pkg": unknown_pkg,
                          "ambiguous": amb, "differ": amb_differ, "shape": amb_shape,
                          "unknown": amb_unknown,
                      "installs_asof": prod_asof, "installs_now": prod_now,
@@ -257,6 +270,7 @@ def summarise(eco):
         "declaring_packages": n_pkg,
         "edges": tot_edges,
         "unparsed_specs": tot_unparsed,
+        "edges_unknown_package": sum(r.get("unknown_pkg", 0) for r in rows),
         # demoted: how ranges are WRITTEN, not the finding
         "ambiguous_edges": tot_amb,
         "ambiguous_share": (float(tot_amb) / tot_edges) if tot_edges else None,
@@ -360,8 +374,10 @@ def main():
         s = summarise(eco)
         out["ecosystems"][eco] = s
         print("== %s (snapshot %s)" % (eco, (s["snapshot_content_sha256"] or "")[:16]))
-        print("   declaring versions %d over %d packages; edges %d (unparsed specs %d)"
-              % (s["declaring_versions"], s["declaring_packages"], s["edges"], s["unparsed_specs"]))
+        print("   declaring versions %d over %d packages; edges %d (unparsed specs %d, "
+              "edges naming a package absent from the snapshot %d)"
+              % (s["declaring_versions"], s["declaring_packages"], s["edges"], s["unparsed_specs"],
+                 s["edges_unknown_package"]))
         print("   [demoted] edges admitting >=2 versions: %d/%d = %.3f  wilson %s"
               % (s["ambiguous_edges"], s["edges"], s["ambiguous_share"] or 0.0,
                  ["%.4f" % x for x in (s["ambiguous_wilson"] or [])]))

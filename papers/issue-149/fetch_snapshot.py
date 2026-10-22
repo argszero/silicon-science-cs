@@ -369,10 +369,147 @@ def build_pypi():
         "declaring": declaring, "packages": packages, "errors": errors, "requirement_scan": meta}
 
 
+
+# ---------------------------------------------------------------- depth 2 (the coupling test)
+
+BUDGET = 200000     # an instance is enumerable only if its product of domains is within this
+MAXPKG = 12         # ... and it carries at most this many packages
+
+
+def depth2_instances(snap, pep440):
+    """Which declaring versions have an ENUMERABLE closure, and what depth-2 material each needs.
+
+    The selection rule is stated before the fetch and is a function of SIZE ONLY -- never of the
+    outcome -- because a size cap that read the answer would be a cherry-pick.  An instance enters
+    the depth-2 test when its product of per-edge domains is <= BUDGET and it names <= MAXPKG
+    packages; everything else is COUNTED as intractable, which is the falsifier's F2 limb measured
+    rather than argued.
+    """
+    PK = snap["packages"]
+    inst, names, metas = [], set(), set()
+    for dv in snap["declaring"]:
+        name, ver = dv["package"], dv["version"]
+        rec = (PK.get(name) or {}).get("versions", {}).get(ver)
+        if not rec:
+            continue
+        doms = {}
+        for dep, spec in (rec.get("deps") or {}).items():
+            p = PK.get(dep)
+            if not p:
+                continue
+            alts = parse_spec(spec, pep440=pep440)
+            if alts is None:
+                continue
+            avail = sorted(v for v, m in p["versions"].items()
+                           if not m["prerelease"] and not m["yanked"] and satisfies(v, alts))
+            if avail:
+                doms[dep] = avail
+        if not doms:
+            continue
+        prod = 1
+        for a in doms.values():
+            prod *= len(a)
+        if prod > BUDGET or len(doms) > MAXPKG:
+            continue                      # counted as intractable, not silently dropped
+        inst.append({"package": name, "version": ver, "edges": doms})
+        for dep, avail in doms.items():
+            for v in avail:
+                if dep not in PK:
+                    continue
+                vd = (PK[dep]["versions"].get(v) or {}).get("deps") or {}
+                for d2 in vd:
+                    if d2 not in PK:
+                        if pep440:
+                            metas.add((d2, v))   # just a name here; the pypi pass re-resolves
+                        names.add(d2)
+    return inst, sorted(names), sorted(metas)
+
+
+def extend_npm():
+    path = os.path.join(PKG, "snapshot_npm.json")
+    snap = json.load(io.open(path, encoding="utf-8"))
+    inst, names, _ = depth2_instances(snap, False)
+    todo = [n for n in names if n not in snap["packages"]][:300]
+    print("  enumerable declaring versions: %d | depth-2 names to fetch: %d" % (len(inst), len(todo)))
+    t0 = time.time()
+    for i, n in enumerate(todo):
+        try:
+            snap["packages"][n] = npm_package(n)
+        except Exception as e:
+            snap["errors"].append("%s: %s" % (n, e))
+        if i % 20 == 0:
+            print("    %3d/%d %-26s %.0fs" % (i + 1, len(todo), n[:26], time.time() - t0))
+    return snap, path
+
+
+def extend_pypi():
+    path = os.path.join(PKG, "snapshot_pypi.json")
+    snap = json.load(io.open(path, encoding="utf-8"))
+    inst, names, _ = depth2_instances(snap, True)
+    PK = snap["packages"]
+    todo = [n for n in names if n not in PK][:300]
+    print("  enumerable declaring versions: %d | depth-2 packages to add: %d"
+          % (len(inst), len(todo)))
+    t0 = time.time()
+    for i, n in enumerate(todo):
+        try:
+            PK[n] = pypi_package(n)
+        except Exception as e:
+            snap["errors"].append("%s: %s" % (n, e))
+        if i % 10 == 0:
+            print("    %3d/%d %-22s %.0fs" % (i + 1, len(todo), n[:22], time.time() - t0))
+    # the alternatives' own declarations, which is what makes coupling exist at all
+    wanted = {}
+    for it in inst:
+        for dep, avail in it["edges"].items():
+            if dep not in PK:
+                continue
+            for v in avail:
+                if (PK[dep]["versions"].get(v) or {}).get("deps") in (None, {}):
+                    wanted["%s==%s" % (dep, v)] = (dep, v)
+    print("  alternative-version declarations to fetch: %d" % len(wanted))
+    for i, key in enumerate(sorted(wanted)):
+        dep, v = wanted[key]
+        try:
+            info = pypi_declared(dep, v)
+        except Exception as e:
+            snap["errors"].append("%s: %s" % (key, e))
+            continue
+        snap.setdefault("requirement_scan", {})[key] = info
+        if v in PK.get(dep, {}).get("versions", {}):
+            PK[dep]["versions"][v]["deps"] = info["deps"]
+        if i % 25 == 0:
+            print("    %3d/%d %-26s %.0fs" % (i + 1, len(wanted), key[:26], time.time() - t0))
+    return snap, path
+
+
+def reseal(snap, path):
+    """Recompute the content hash over what the numbers are computed from -- no wall clock."""
+    body = json.dumps({k: snap[k] for k in ("ecosystem", "frame", "declaring")},
+                      sort_keys=True, ensure_ascii=False)
+    pkgs = json.dumps({n: {"versions": {v: {"t": m["published_at"], "d": m["deps"],
+                                             "p": m["prerelease"], "y": m["yanked"]}
+                                       for v, m in p["versions"].items()}}
+                       for n, p in snap["packages"].items()},
+                      sort_keys=True, ensure_ascii=False)
+    snap["content_sha256"] = hashlib.sha256((body + pkgs).encode("utf-8")).hexdigest()
+    snap["packages_count"] = len(snap["packages"])
+    snap["declaring_count"] = len(snap["declaring"])
+    io.open(path, "w", encoding="utf-8").write(json.dumps(snap, indent=1, sort_keys=True) + "\n")
+    print("resealed %s | packages %d | errors %d | content_sha256 %s"
+          % (path, snap["packages_count"], len(snap["errors"]), snap["content_sha256"][:32]))
+
+
 def main():
     eco = sys.argv[1] if len(sys.argv) > 1 else ""
+    if eco == "--depth2":
+        for which in ("npm", "pypi"):
+            print("extending %s to depth 2 ..." % which)
+            snap, path = (extend_npm() if which == "npm" else extend_pypi())
+            reseal(snap, path)
+        return 0
     if eco not in ("npm", "pypi"):
-        print("usage: fetch_snapshot.py npm|pypi")
+        print("usage: fetch_snapshot.py npm|pypi|--depth2")
         return 2
     out = os.path.join(PKG, "snapshot_%s.json" % eco)
     if "--out" in sys.argv:
