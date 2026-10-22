@@ -1,5 +1,5 @@
 {
- "content_sha256": "f2d7dfd6209c71ed089490ad6f984b532a19eeb993892c423296494b8b02560c",
+ "content_sha256": "bcb64650be36dd4fd35404b46f16ec8a6cf1282d9a15571ced3298a3570c60b9",
  "declaring": [
   {
    "package": "requests",
@@ -835,12 +835,596 @@
    "package": "werkzeug",
    "role": "declared",
    "version": "3.1.9"
+  },
+  {
+   "package": "asgiref",
+   "published_at": "2025-07-08T09:07:41.548205Z",
+   "role": "panel",
+   "version": "3.9.1"
+  },
+  {
+   "package": "asgiref",
+   "published_at": "2025-07-03T13:24:59.115095Z",
+   "role": "panel",
+   "version": "3.9.0"
+  },
+  {
+   "package": "asgiref",
+   "published_at": "2024-03-22T14:39:34.521795Z",
+   "role": "panel",
+   "version": "3.8.1"
+  },
+  {
+   "package": "certifi",
+   "published_at": "2025-10-05T04:12:14.030503Z",
+   "role": "panel",
+   "version": "2025.10.5"
+  },
+  {
+   "package": "certifi",
+   "published_at": "2025-08-03T03:07:45.777225Z",
+   "role": "panel",
+   "version": "2025.8.3"
+  },
+  {
+   "package": "certifi",
+   "published_at": "2025-07-14T03:29:26.863803Z",
+   "role": "panel",
+   "version": "2025.7.14"
+  },
+  {
+   "package": "certifi",
+   "published_at": "2025-07-09T02:13:57.007968Z",
+   "role": "panel",
+   "version": "2025.7.9"
+  },
+  {
+   "package": "certifi",
+   "published_at": "2025-06-15T02:45:49.977893Z",
+   "role": "panel",
+   "version": "2025.6.15"
+  },
+  {
+   "package": "charset-normalizer",
+   "published_at": "2025-10-14T04:40:11.385036Z",
+   "role": "panel",
+   "version": "3.4.4"
+  },
+  {
+   "package": "charset-normalizer",
+   "published_at": "2025-08-09T07:55:36.452621Z",
+   "role": "panel",
+   "version": "3.4.3"
+  },
+  {
+   "package": "charset-normalizer",
+   "published_at": "2025-05-02T08:31:46.725388Z",
+   "role": "panel",
+   "version": "3.4.2"
+  },
+  {
+   "package": "charset-normalizer",
+   "published_at": "2024-12-24T18:09:43.671371Z",
+   "role": "panel",
+   "version": "3.4.1"
+  },
+  {
+   "package": "charset-normalizer",
+   "published_at": "2024-10-09T07:38:02.622854Z",
+   "role": "panel",
+   "version": "3.4.0"
+  },
+  {
+   "package": "click",
+   "published_at": "2025-09-18T17:32:22.420001Z",
+   "role": "panel",
+   "version": "8.3.0"
+  },
+  {
+   "package": "click",
+   "published_at": "2025-05-20T23:19:47.796919Z",
+   "role": "panel",
+   "version": "8.2.1"
+  },
+  {
+   "package": "click",
+   "published_at": "2025-05-10T22:21:01.352121Z",
+   "role": "panel",
+   "version": "8.2.0"
+  },
+  {
+   "package": "click",
+   "published_at": "2024-12-21T18:38:41.666429Z",
+   "role": "panel",
+   "version": "8.1.8"
+  },
+  {
+   "package": "click",
+   "published_at": "2023-08-17T17:29:10.080169Z",
+   "role": "panel",
+   "version": "8.1.7"
+  },
+  {
+   "package": "django",
+   "published_at": "2025-10-22T18:50:49.035234Z",
+   "role": "panel",
+   "version": "6.0b1"
+  },
+  {
+   "package": "django",
+   "published_at": "2025-10-01T15:05:46.545878Z",
+   "role": "panel",
+   "version": "4.2.25"
+  },
+  {
+   "package": "django",
+   "published_at": "2025-10-01T14:25:28.650511Z",
+   "role": "panel",
+   "version": "5.1.13"
+  },
+  {
+   "package": "django",
+   "published_at": "2025-10-01T14:22:49.476466Z",
+   "role": "panel",
+   "version": "5.2.7"
+  },
+  {
+   "package": "django",
+   "published_at": "2025-09-17T19:05:35.202715Z",
+   "role": "panel",
+   "version": "6"
+  },
+  {
+   "package": "flask",
+   "published_at": "2024-02-03T21:11:42.661757Z",
+   "role": "panel",
+   "version": "3.0.2"
+  },
+  {
+   "package": "idna",
+   "published_at": "2025-10-12T14:55:18.883979Z",
+   "role": "panel",
+   "version": "3.11"
+  },
+  {
+   "package": "idna",
+   "published_at": "2024-09-15T18:07:37.964349Z",
+   "role": "panel",
+   "version": "3.10"
+  },
+  {
+   "package": "idna",
+   "published_at": "2024-09-14T02:58:28.463127Z",
+   "role": "panel",
+   "version": "3.9"
+  },
+  {
+   "package": "idna",
+   "published_at": "2024-08-23T16:01:49.963235Z",
+   "role": "panel",
+   "version": "3.8"
+  },
+  {
+   "package": "idna",
+   "published_at": "2024-04-11T03:34:41.447563Z",
+   "role": "panel",
+   "version": "3.7"
+  },
+  {
+   "package": "importlib-metadata",
+   "published_at": "2025-04-27T15:29:00.214339Z",
+   "role": "panel",
+   "version": "8.7.0"
+  },
+  {
+   "package": "importlib-metadata",
+   "published_at": "2025-01-20T22:21:29.177468Z",
+   "role": "panel",
+   "version": "8.6.1"
+  },
+  {
+   "package": "importlib-metadata",
+   "published_at": "2025-01-20T22:06:39.366669Z",
+   "role": "panel",
+   "version": "8.6.0"
+  },
+  {
+   "package": "importlib-metadata",
+   "published_at": "2024-09-11T14:56:07.019602Z",
+   "role": "panel",
+   "version": "8.5.0"
+  },
+  {
+   "package": "importlib-metadata",
+   "published_at": "2024-08-20T17:11:41.102189Z",
+   "role": "panel",
+   "version": "8.4.0"
+  },
+  {
+   "package": "numpy",
+   "published_at": "2025-10-15T16:15:19.012032Z",
+   "role": "panel",
+   "version": "2.3.4"
+  },
+  {
+   "package": "numpy",
+   "published_at": "2025-09-09T15:56:02.094369Z",
+   "role": "panel",
+   "version": "2.3.3"
+  },
+  {
+   "package": "numpy",
+   "published_at": "2025-07-24T20:24:35.214147Z",
+   "role": "panel",
+   "version": "2.3.2"
+  },
+  {
+   "package": "numpy",
+   "published_at": "2025-06-21T11:47:47.570483Z",
+   "role": "panel",
+   "version": "2.3.1"
+  },
+  {
+   "package": "numpy",
+   "published_at": "2025-06-07T14:36:52.067369Z",
+   "role": "panel",
+   "version": "2.3.0"
+  },
+  {
+   "package": "packaging",
+   "published_at": "2025-04-19T11:48:59.673349Z",
+   "role": "panel",
+   "version": "25"
+  },
+  {
+   "package": "packaging",
+   "published_at": "2025-04-19T11:48:57.875608Z",
+   "role": "panel",
+   "version": "25.0"
+  },
+  {
+   "package": "packaging",
+   "published_at": "2024-11-08T09:47:44.722583Z",
+   "role": "panel",
+   "version": "24.2"
+  },
+  {
+   "package": "packaging",
+   "published_at": "2024-06-09T23:19:21.909058Z",
+   "role": "panel",
+   "version": "24.1"
+  },
+  {
+   "package": "packaging",
+   "published_at": "2024-03-10T09:39:28.330391Z",
+   "role": "panel",
+   "version": "24"
+  },
+  {
+   "package": "pandas",
+   "published_at": "2025-09-29T23:16:53.287821Z",
+   "role": "panel",
+   "version": "2.3.3"
+  },
+  {
+   "package": "pandas",
+   "published_at": "2025-08-21T10:26:36.236532Z",
+   "role": "panel",
+   "version": "2.3.2"
+  },
+  {
+   "package": "pandas",
+   "published_at": "2025-07-07T19:18:12.619681Z",
+   "role": "panel",
+   "version": "2.3.1"
+  },
+  {
+   "package": "pandas",
+   "published_at": "2025-06-05T03:25:48.648538Z",
+   "role": "panel",
+   "version": "2.3.0"
+  },
+  {
+   "package": "pandas",
+   "published_at": "2024-09-20T13:08:42.347501Z",
+   "role": "panel",
+   "version": "2.2.3"
+  },
+  {
+   "package": "pygments",
+   "published_at": "2023-11-21T20:43:49.423320Z",
+   "role": "panel",
+   "version": "2.17.2"
+  },
+  {
+   "package": "pytest",
+   "published_at": "2025-09-04T14:34:20.226862Z",
+   "role": "panel",
+   "version": "8.4.2"
+  },
+  {
+   "package": "pytest",
+   "published_at": "2025-06-18T05:48:03.955230Z",
+   "role": "panel",
+   "version": "8.4.1"
+  },
+  {
+   "package": "pytest",
+   "published_at": "2025-06-02T17:36:27.859751Z",
+   "role": "panel",
+   "version": "8.4.0"
+  },
+  {
+   "package": "pytest",
+   "published_at": "2025-03-02T12:54:52.069556Z",
+   "role": "panel",
+   "version": "8.3.5"
+  },
+  {
+   "package": "pytest",
+   "published_at": "2024-12-01T12:54:19.735286Z",
+   "role": "panel",
+   "version": "8.3.4"
+  },
+  {
+   "package": "python-dateutil",
+   "published_at": "2019-02-05T14:12:35.322871Z",
+   "role": "panel",
+   "version": "2.8.0"
+  },
+  {
+   "package": "requests",
+   "published_at": "2025-08-18T20:46:00.542304Z",
+   "role": "panel",
+   "version": "2.32.5"
+  },
+  {
+   "package": "requests",
+   "published_at": "2025-06-09T16:43:05.728107Z",
+   "role": "panel",
+   "version": "2.32.4"
+  },
+  {
+   "package": "requests",
+   "published_at": "2024-05-29T15:37:47.027275Z",
+   "role": "panel",
+   "version": "2.32.3"
+  },
+  {
+   "package": "requests",
+   "published_at": "2024-05-21T18:51:29.562156Z",
+   "role": "panel",
+   "version": "2.32.2"
+  },
+  {
+   "package": "requests",
+   "published_at": "2023-05-22T15:12:42.313790Z",
+   "role": "panel",
+   "version": "2.31.0"
+  },
+  {
+   "package": "six",
+   "published_at": "2024-12-04T17:35:26.475808Z",
+   "role": "panel",
+   "version": "1.17.0"
+  },
+  {
+   "package": "six",
+   "published_at": "2021-05-05T14:18:17.237677Z",
+   "role": "panel",
+   "version": "1.16.0"
+  },
+  {
+   "package": "six",
+   "published_at": "2020-05-21T15:25:54.177349Z",
+   "role": "panel",
+   "version": "1.15.0"
+  },
+  {
+   "package": "six",
+   "published_at": "2020-01-15T18:10:19.607402Z",
+   "role": "panel",
+   "version": "1.14.0"
+  },
+  {
+   "package": "six",
+   "published_at": "2019-11-05T17:28:34.350776Z",
+   "role": "panel",
+   "version": "1.13.0"
+  },
+  {
+   "package": "sqlparse",
+   "published_at": "2024-04-13T12:37:11.177304Z",
+   "role": "panel",
+   "version": "0.5.0"
+  },
+  {
+   "package": "sqlparse",
+   "published_at": "2023-04-18T08:30:36.960446Z",
+   "role": "panel",
+   "version": "0.4.4"
+  },
+  {
+   "package": "tomli",
+   "published_at": "2024-11-27T22:37:54.956192Z",
+   "role": "panel",
+   "version": "2.2.1"
+  },
+  {
+   "package": "tomli",
+   "published_at": "2024-11-11T18:38:00.190553Z",
+   "role": "panel",
+   "version": "2.1.0"
+  },
+  {
+   "package": "tomli",
+   "published_at": "2024-10-02T10:46:11.806259Z",
+   "role": "panel",
+   "version": "2.0.2"
+  },
+  {
+   "package": "tomli",
+   "published_at": "2022-02-08T10:54:02.017593Z",
+   "role": "panel",
+   "version": "2.0.1"
+  },
+  {
+   "package": "typing-extensions",
+   "published_at": "2025-08-25T13:49:24.860024Z",
+   "role": "panel",
+   "version": "4.15.0"
+  },
+  {
+   "package": "typing-extensions",
+   "published_at": "2025-08-18T14:31:07.386061Z",
+   "role": "panel",
+   "version": "4.15.0rc1"
+  },
+  {
+   "package": "typing-extensions",
+   "published_at": "2025-07-04T13:28:32.743692Z",
+   "role": "panel",
+   "version": "4.14.1"
+  },
+  {
+   "package": "typing-extensions",
+   "published_at": "2025-06-02T14:52:10.026868Z",
+   "role": "panel",
+   "version": "4.14.0"
+  },
+  {
+   "package": "typing-extensions",
+   "published_at": "2025-05-24T21:38:36.233117Z",
+   "role": "panel",
+   "version": "4.14.0rc1"
+  },
+  {
+   "package": "tzdata",
+   "published_at": "2025-03-23T13:54:41.845043Z",
+   "role": "panel",
+   "version": "2025.2"
+  },
+  {
+   "package": "tzdata",
+   "published_at": "2025-01-21T19:49:38.686680Z",
+   "role": "panel",
+   "version": "2025"
+  },
+  {
+   "package": "tzdata",
+   "published_at": "2025-01-21T19:49:37.187380Z",
+   "role": "panel",
+   "version": "2025.1"
+  },
+  {
+   "package": "tzdata",
+   "published_at": "2024-09-23T18:56:45.478735Z",
+   "role": "panel",
+   "version": "2024.2"
+  },
+  {
+   "package": "tzdata",
+   "published_at": "2024-02-11T23:22:40.200759Z",
+   "role": "panel",
+   "version": "2024"
+  },
+  {
+   "package": "urllib3",
+   "published_at": "2025-06-18T14:07:40.390656Z",
+   "role": "panel",
+   "version": "2.5.0"
+  },
+  {
+   "package": "urllib3",
+   "published_at": "2025-04-10T15:23:37.377011Z",
+   "role": "panel",
+   "version": "2.4.0"
+  },
+  {
+   "package": "urllib3",
+   "published_at": "2024-12-22T07:47:28.074156Z",
+   "role": "panel",
+   "version": "2.3.0"
+  },
+  {
+   "package": "urllib3",
+   "published_at": "2024-09-12T10:52:16.589559Z",
+   "role": "panel",
+   "version": "2.2.3"
+  },
+  {
+   "package": "urllib3",
+   "published_at": "2024-08-29T15:43:08.921610Z",
+   "role": "panel",
+   "version": "1.26.20"
+  },
+  {
+   "package": "werkzeug",
+   "published_at": "2024-11-08T15:52:16.132714Z",
+   "role": "panel",
+   "version": "3.1.3"
+  },
+  {
+   "package": "werkzeug",
+   "published_at": "2024-11-04T17:35:33.615746Z",
+   "role": "panel",
+   "version": "3.1.2"
+  },
+  {
+   "package": "werkzeug",
+   "published_at": "2024-11-01T16:40:43.994959Z",
+   "role": "panel",
+   "version": "3.1.1"
+  },
+  {
+   "package": "werkzeug",
+   "published_at": "2024-10-31T17:23:11.498253Z",
+   "role": "panel",
+   "version": "3.1.0"
+  },
+  {
+   "package": "werkzeug",
+   "published_at": "2024-10-25T18:52:30.129603Z",
+   "role": "panel",
+   "version": "3.0.6"
+  },
+  {
+   "package": "zipp",
+   "published_at": "2025-06-08T17:06:38.034154Z",
+   "role": "panel",
+   "version": "3.23.0"
+  },
+  {
+   "package": "zipp",
+   "published_at": "2025-05-26T14:46:30.775284Z",
+   "role": "panel",
+   "version": "3.22.0"
+  },
+  {
+   "package": "zipp",
+   "published_at": "2024-11-10T15:05:19.275516Z",
+   "role": "panel",
+   "version": "3.21.0"
+  },
+  {
+   "package": "zipp",
+   "published_at": "2024-09-13T13:44:14.380969Z",
+   "role": "panel",
+   "version": "3.20.2"
+  },
+  {
+   "package": "zipp",
+   "published_at": "2024-08-26T17:28:45.480370Z",
+   "role": "panel",
+   "version": "3.20.1"
   }
  ],
- "declaring_count": 167,
+ "declaring_count": 264,
  "ecosystem": "pypi",
  "errors": [
-  "tzdata==2026: fetch failed https://pypi.org/pypi/tzdata/2026/json: HTTP Error 404: Not Found"
+  "tzdata==2026: fetch failed https://pypi.org/pypi/tzdata/2026/json: HTTP Error 404: Not Found",
+  "tzdata==2025: fetch failed https://pypi.org/pypi/tzdata/2025/json: HTTP Error 404: Not Found",
+  "tzdata==2024: fetch failed https://pypi.org/pypi/tzdata/2024/json: HTTP Error 404: Not Found"
  ],
  "frame": {
   "dep_versions": 6,
@@ -4518,7 +5102,12 @@
      "yanked": false
     },
     "4.2.25": {
-     "deps": {},
+     "deps": {
+      "asgiref": "<4,>=3.6.0",
+      "backports-zoneinfo": "",
+      "sqlparse": ">=0.3.1",
+      "tzdata": ""
+     },
      "prerelease": false,
      "published_at": "2025-10-01T15:05:46.545878Z",
      "yanked": false
@@ -4758,7 +5347,11 @@
      "yanked": false
     },
     "5.1.13": {
-     "deps": {},
+     "deps": {
+      "asgiref": "<4,>=3.8.1",
+      "sqlparse": ">=0.3.1",
+      "tzdata": ""
+     },
      "prerelease": false,
      "published_at": "2025-10-01T14:25:28.650511Z",
      "yanked": false
@@ -4942,7 +5535,11 @@
      "yanked": false
     },
     "5.2.7": {
-     "deps": {},
+     "deps": {
+      "asgiref": ">=3.8.1",
+      "sqlparse": ">=0.3.1",
+      "tzdata": ""
+     },
      "prerelease": false,
      "published_at": "2025-10-01T14:22:49.476466Z",
      "yanked": false
@@ -4978,7 +5575,11 @@
      "yanked": false
     },
     "6": {
-     "deps": {},
+     "deps": {
+      "asgiref": ">=3.9.1",
+      "sqlparse": ">=0.5.0",
+      "tzdata": ""
+     },
      "prerelease": false,
      "published_at": "2025-09-17T19:05:35.202715Z",
      "yanked": false
@@ -5054,7 +5655,11 @@
      "yanked": false
     },
     "6.0b1": {
-     "deps": {},
+     "deps": {
+      "asgiref": ">=3.9.1",
+      "sqlparse": ">=0.5.0",
+      "tzdata": ""
+     },
      "prerelease": false,
      "published_at": "2025-10-22T18:50:49.035234Z",
      "yanked": false
@@ -5548,7 +6153,14 @@
      "yanked": false
     },
     "3.0.2": {
-     "deps": {},
+     "deps": {
+      "blinker": ">=1.6.2",
+      "click": ">=8.1.3",
+      "importlib-metadata": ">=3.6.0",
+      "itsdangerous": ">=2.1.2",
+      "jinja2": ">=3.1.2",
+      "werkzeug": ">=3.0.0"
+     },
      "prerelease": false,
      "published_at": "2024-02-03T21:11:42.661757Z",
      "yanked": false
@@ -9153,31 +9765,56 @@
      "yanked": false
     },
     "2.2.3": {
-     "deps": {},
+     "deps": {
+      "numpy": ">=1.26.0",
+      "python-dateutil": ">=2.8.2",
+      "pytz": ">=2020.1",
+      "tzdata": ">=2022.7"
+     },
      "prerelease": false,
      "published_at": "2024-09-20T13:08:42.347501Z",
      "yanked": false
     },
     "2.3.0": {
-     "deps": {},
+     "deps": {
+      "numpy": ">=1.26.0",
+      "python-dateutil": ">=2.8.2",
+      "pytz": ">=2020.1",
+      "tzdata": ">=2022.7"
+     },
      "prerelease": false,
      "published_at": "2025-06-05T03:25:48.648538Z",
      "yanked": false
     },
     "2.3.1": {
-     "deps": {},
+     "deps": {
+      "numpy": ">=1.26.0",
+      "python-dateutil": ">=2.8.2",
+      "pytz": ">=2020.1",
+      "tzdata": ">=2022.7"
+     },
      "prerelease": false,
      "published_at": "2025-07-07T19:18:12.619681Z",
      "yanked": false
     },
     "2.3.2": {
-     "deps": {},
+     "deps": {
+      "numpy": ">=1.26.0",
+      "python-dateutil": ">=2.8.2",
+      "pytz": ">=2020.1",
+      "tzdata": ">=2022.7"
+     },
      "prerelease": false,
      "published_at": "2025-08-21T10:26:36.236532Z",
      "yanked": false
     },
     "2.3.3": {
-     "deps": {},
+     "deps": {
+      "numpy": ">=1.26.0",
+      "python-dateutil": ">=2.8.2",
+      "pytz": ">=2020.1",
+      "tzdata": ">=2022.7"
+     },
      "prerelease": false,
      "published_at": "2025-09-29T23:16:53.287821Z",
      "yanked": false
@@ -10690,31 +11327,69 @@
      "yanked": false
     },
     "8.3.4": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "exceptiongroup": ">=1.0.0rc8",
+      "iniconfig": "",
+      "packaging": "",
+      "pluggy": "<2,>=1.5",
+      "tomli": ">=1"
+     },
      "prerelease": false,
      "published_at": "2024-12-01T12:54:19.735286Z",
      "yanked": false
     },
     "8.3.5": {
-     "deps": {},
+     "deps": {
+      "colorama": "",
+      "exceptiongroup": ">=1.0.0rc8",
+      "iniconfig": "",
+      "packaging": "",
+      "pluggy": "<2,>=1.5",
+      "tomli": ">=1"
+     },
      "prerelease": false,
      "published_at": "2025-03-02T12:54:52.069556Z",
      "yanked": false
     },
     "8.4.0": {
-     "deps": {},
+     "deps": {
+      "colorama": ">=0.4",
+      "exceptiongroup": ">=1",
+      "iniconfig": ">=1",
+      "packaging": ">=20",
+      "pluggy": "<2,>=1.5",
+      "pygments": ">=2.7.2",
+      "tomli": ">=1"
+     },
      "prerelease": false,
      "published_at": "2025-06-02T17:36:27.859751Z",
      "yanked": false
     },
     "8.4.1": {
-     "deps": {},
+     "deps": {
+      "colorama": ">=0.4",
+      "exceptiongroup": ">=1",
+      "iniconfig": ">=1",
+      "packaging": ">=20",
+      "pluggy": "<2,>=1.5",
+      "pygments": ">=2.7.2",
+      "tomli": ">=1"
+     },
      "prerelease": false,
      "published_at": "2025-06-18T05:48:03.955230Z",
      "yanked": false
     },
     "8.4.2": {
-     "deps": {},
+     "deps": {
+      "colorama": ">=0.4",
+      "exceptiongroup": ">=1",
+      "iniconfig": ">=1",
+      "packaging": ">=20",
+      "pluggy": "<2,>=1.5",
+      "pygments": ">=2.7.2",
+      "tomli": ">=1"
+     },
      "prerelease": false,
      "published_at": "2025-09-04T14:34:20.226862Z",
      "yanked": false
@@ -10915,7 +11590,9 @@
      "yanked": false
     },
     "2.8.0": {
-     "deps": {},
+     "deps": {
+      "six": "(>=1.5)"
+     },
      "prerelease": false,
      "published_at": "2019-02-05T14:12:35.322871Z",
      "yanked": false
@@ -11312,7 +11989,12 @@
      "yanked": false
     },
     "2.31.0": {
-     "deps": {},
+     "deps": {
+      "certifi": "(>=2017.4.17)",
+      "charset-normalizer": "(<4,>=2)",
+      "idna": "(<4,>=2.5)",
+      "urllib3": "(<3,>=1.21.1)"
+     },
      "prerelease": false,
      "published_at": "2023-05-22T15:12:42.313790Z",
      "yanked": false
@@ -11330,25 +12012,45 @@
      "yanked": true
     },
     "2.32.2": {
-     "deps": {},
+     "deps": {
+      "certifi": ">=2017.4.17",
+      "charset-normalizer": "<4,>=2",
+      "idna": "<4,>=2.5",
+      "urllib3": "<3,>=1.21.1"
+     },
      "prerelease": false,
      "published_at": "2024-05-21T18:51:29.562156Z",
      "yanked": false
     },
     "2.32.3": {
-     "deps": {},
+     "deps": {
+      "certifi": ">=2017.4.17",
+      "charset-normalizer": "<4,>=2",
+      "idna": "<4,>=2.5",
+      "urllib3": "<3,>=1.21.1"
+     },
      "prerelease": false,
      "published_at": "2024-05-29T15:37:47.027275Z",
      "yanked": false
     },
     "2.32.4": {
-     "deps": {},
+     "deps": {
+      "certifi": ">=2017.4.17",
+      "charset-normalizer": "<4,>=2",
+      "idna": "<4,>=2.5",
+      "urllib3": "<3,>=1.21.1"
+     },
      "prerelease": false,
      "published_at": "2025-06-09T16:43:05.728107Z",
      "yanked": false
     },
     "2.32.5": {
-     "deps": {},
+     "deps": {
+      "certifi": ">=2017.4.17",
+      "charset-normalizer": "<4,>=2",
+      "idna": "<4,>=2.5",
+      "urllib3": "<3,>=1.21.1"
+     },
      "prerelease": false,
      "published_at": "2025-08-18T20:46:00.542304Z",
      "yanked": false
@@ -13574,7 +14276,9 @@
      "yanked": false
     },
     "3.0.6": {
-     "deps": {},
+     "deps": {
+      "markupsafe": ">=2.1.1"
+     },
      "prerelease": false,
      "published_at": "2024-10-25T18:52:30.129603Z",
      "yanked": false
@@ -14094,6 +14798,12 @@
   }
  },
  "packages_count": 31,
+ "panel": {
+  "added": 97,
+  "as_of": "2026-10-22T11:54:48.330970Z",
+  "packages_too_young": 0,
+  "rule": "5 most recent stable versions per package at least 365 days old"
+ },
  "requirement_scan": {
   "asgiref==3.10.0": {
    "deps": {
@@ -14203,6 +14913,36 @@
    "marked": 0,
    "requirements": 0
   },
+  "certifi==2025.10.5": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "certifi==2025.6.15": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "certifi==2025.7.14": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "certifi==2025.7.9": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "certifi==2025.8.3": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
   "certifi==2026.10.18": {
    "deps": {},
    "extra_only": 0,
@@ -14234,6 +14974,36 @@
    "requirements": 0
   },
   "certifi==2026.7.22": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "charset-normalizer==3.4.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "charset-normalizer==3.4.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "charset-normalizer==3.4.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "charset-normalizer==3.4.3": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "charset-normalizer==3.4.4": {
    "deps": {},
    "extra_only": 0,
    "marked": 0,
@@ -14443,6 +15213,27 @@
    "marked": 0,
    "requirements": 0
   },
+  "django==4.2.25": {
+   "deps": {
+    "asgiref": "<4,>=3.6.0",
+    "backports-zoneinfo": "",
+    "sqlparse": ">=0.3.1",
+    "tzdata": ""
+   },
+   "extra_only": 2,
+   "marked": 4,
+   "requirements": 6
+  },
+  "django==5.1.13": {
+   "deps": {
+    "asgiref": "<4,>=3.8.1",
+    "sqlparse": ">=0.3.1",
+    "tzdata": ""
+   },
+   "extra_only": 2,
+   "marked": 3,
+   "requirements": 5
+  },
   "django==5.2.18": {
    "deps": {
     "asgiref": ">=3.8.1",
@@ -14453,7 +15244,37 @@
    "marked": 3,
    "requirements": 5
   },
+  "django==5.2.7": {
+   "deps": {
+    "asgiref": ">=3.8.1",
+    "sqlparse": ">=0.3.1",
+    "tzdata": ""
+   },
+   "extra_only": 2,
+   "marked": 3,
+   "requirements": 5
+  },
+  "django==6": {
+   "deps": {
+    "asgiref": ">=3.9.1",
+    "sqlparse": ">=0.5.0",
+    "tzdata": ""
+   },
+   "extra_only": 2,
+   "marked": 3,
+   "requirements": 5
+  },
   "django==6.0.9": {
+   "deps": {
+    "asgiref": ">=3.9.1",
+    "sqlparse": ">=0.5.0",
+    "tzdata": ""
+   },
+   "extra_only": 2,
+   "marked": 3,
+   "requirements": 5
+  },
+  "django==6.0b1": {
    "deps": {
     "asgiref": ">=3.9.1",
     "sqlparse": ">=0.5.0",
@@ -14533,6 +15354,19 @@
    "marked": 2,
    "requirements": 2
   },
+  "flask==3.0.2": {
+   "deps": {
+    "blinker": ">=1.6.2",
+    "click": ">=8.1.3",
+    "importlib-metadata": ">=3.6.0",
+    "itsdangerous": ">=2.1.2",
+    "jinja2": ">=3.1.2",
+    "werkzeug": ">=3.0.0"
+   },
+   "extra_only": 2,
+   "marked": 3,
+   "requirements": 8
+  },
   "flask==3.0.3": {
    "deps": {
     "blinker": ">=1.6.2",
@@ -14601,6 +15435,18 @@
    "marked": 3,
    "requirements": 9
   },
+  "idna==3.10": {
+   "deps": {},
+   "extra_only": 4,
+   "marked": 4,
+   "requirements": 4
+  },
+  "idna==3.11": {
+   "deps": {},
+   "extra_only": 4,
+   "marked": 4,
+   "requirements": 4
+  },
   "idna==3.15": {
    "deps": {},
    "extra_only": 3,
@@ -14636,6 +15482,24 @@
    "extra_only": 6,
    "marked": 6,
    "requirements": 6
+  },
+  "idna==3.7": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "idna==3.8": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "idna==3.9": {
+   "deps": {},
+   "extra_only": 4,
+   "marked": 4,
+   "requirements": 4
   },
   "importlib-metadata==3.10.0": {
    "deps": {
@@ -15615,6 +16479,24 @@
    "marked": 0,
    "requirements": 0
   },
+  "numpy==2.3.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.3.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "numpy==2.3.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
   "numpy==2.3.3": {
    "deps": {},
    "extra_only": 0,
@@ -15711,6 +16593,36 @@
    "marked": 0,
    "requirements": 0
   },
+  "packaging==24": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "packaging==24.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "packaging==24.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "packaging==25": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "packaging==25.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
   "packaging==26.0": {
    "deps": {},
    "extra_only": 0,
@@ -15746,6 +16658,61 @@
    "extra_only": 0,
    "marked": 0,
    "requirements": 0
+  },
+  "pandas==2.2.3": {
+   "deps": {
+    "numpy": ">=1.26.0",
+    "python-dateutil": ">=2.8.2",
+    "pytz": ">=2020.1",
+    "tzdata": ">=2022.7"
+   },
+   "extra_only": 79,
+   "marked": 82,
+   "requirements": 85
+  },
+  "pandas==2.3.0": {
+   "deps": {
+    "numpy": ">=1.26.0",
+    "python-dateutil": ">=2.8.2",
+    "pytz": ">=2020.1",
+    "tzdata": ">=2022.7"
+   },
+   "extra_only": 79,
+   "marked": 82,
+   "requirements": 85
+  },
+  "pandas==2.3.1": {
+   "deps": {
+    "numpy": ">=1.26.0",
+    "python-dateutil": ">=2.8.2",
+    "pytz": ">=2020.1",
+    "tzdata": ">=2022.7"
+   },
+   "extra_only": 79,
+   "marked": 82,
+   "requirements": 85
+  },
+  "pandas==2.3.2": {
+   "deps": {
+    "numpy": ">=1.26.0",
+    "python-dateutil": ">=2.8.2",
+    "pytz": ">=2020.1",
+    "tzdata": ">=2022.7"
+   },
+   "extra_only": 79,
+   "marked": 82,
+   "requirements": 85
+  },
+  "pandas==2.3.3": {
+   "deps": {
+    "numpy": ">=1.26.0",
+    "python-dateutil": ">=2.8.2",
+    "pytz": ">=2020.1",
+    "tzdata": ">=2022.7"
+   },
+   "extra_only": 79,
+   "marked": 82,
+   "requirements": 85
   },
   "pandas==3.0.4": {
    "deps": {
@@ -15835,6 +16802,12 @@
    "marked": 0,
    "requirements": 0
   },
+  "pygments==2.17.2": {
+   "deps": {},
+   "extra_only": 2,
+   "marked": 2,
+   "requirements": 2
+  },
   "pygments==2.18.0": {
    "deps": {},
    "extra_only": 1,
@@ -15870,6 +16843,74 @@
    "extra_only": 1,
    "marked": 1,
    "requirements": 1
+  },
+  "pytest==8.3.4": {
+   "deps": {
+    "colorama": "",
+    "exceptiongroup": ">=1.0.0rc8",
+    "iniconfig": "",
+    "packaging": "",
+    "pluggy": "<2,>=1.5",
+    "tomli": ">=1"
+   },
+   "extra_only": 8,
+   "marked": 11,
+   "requirements": 14
+  },
+  "pytest==8.3.5": {
+   "deps": {
+    "colorama": "",
+    "exceptiongroup": ">=1.0.0rc8",
+    "iniconfig": "",
+    "packaging": "",
+    "pluggy": "<2,>=1.5",
+    "tomli": ">=1"
+   },
+   "extra_only": 8,
+   "marked": 11,
+   "requirements": 14
+  },
+  "pytest==8.4.0": {
+   "deps": {
+    "colorama": ">=0.4",
+    "exceptiongroup": ">=1",
+    "iniconfig": ">=1",
+    "packaging": ">=20",
+    "pluggy": "<2,>=1.5",
+    "pygments": ">=2.7.2",
+    "tomli": ">=1"
+   },
+   "extra_only": 7,
+   "marked": 10,
+   "requirements": 14
+  },
+  "pytest==8.4.1": {
+   "deps": {
+    "colorama": ">=0.4",
+    "exceptiongroup": ">=1",
+    "iniconfig": ">=1",
+    "packaging": ">=20",
+    "pluggy": "<2,>=1.5",
+    "pygments": ">=2.7.2",
+    "tomli": ">=1"
+   },
+   "extra_only": 7,
+   "marked": 10,
+   "requirements": 14
+  },
+  "pytest==8.4.2": {
+   "deps": {
+    "colorama": ">=0.4",
+    "exceptiongroup": ">=1",
+    "iniconfig": ">=1",
+    "packaging": ">=20",
+    "pluggy": "<2,>=1.5",
+    "pygments": ">=2.7.2",
+    "tomli": ">=1"
+   },
+   "extra_only": 7,
+   "marked": 10,
+   "requirements": 14
   },
   "pytest==9.0.1": {
    "deps": {
@@ -15941,6 +16982,14 @@
    "marked": 10,
    "requirements": 14
   },
+  "python-dateutil==2.8.0": {
+   "deps": {
+    "six": "(>=1.5)"
+   },
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 1
+  },
   "python-dateutil==2.8.1": {
    "deps": {
     "six": "(>=1.5)"
@@ -15990,6 +17039,61 @@
    "extra_only": 0,
    "marked": 0,
    "requirements": 2
+  },
+  "requests==2.31.0": {
+   "deps": {
+    "certifi": "(>=2017.4.17)",
+    "charset-normalizer": "(<4,>=2)",
+    "idna": "(<4,>=2.5)",
+    "urllib3": "(<3,>=1.21.1)"
+   },
+   "extra_only": 2,
+   "marked": 2,
+   "requirements": 6
+  },
+  "requests==2.32.2": {
+   "deps": {
+    "certifi": ">=2017.4.17",
+    "charset-normalizer": "<4,>=2",
+    "idna": "<4,>=2.5",
+    "urllib3": "<3,>=1.21.1"
+   },
+   "extra_only": 2,
+   "marked": 2,
+   "requirements": 6
+  },
+  "requests==2.32.3": {
+   "deps": {
+    "certifi": ">=2017.4.17",
+    "charset-normalizer": "<4,>=2",
+    "idna": "<4,>=2.5",
+    "urllib3": "<3,>=1.21.1"
+   },
+   "extra_only": 2,
+   "marked": 2,
+   "requirements": 6
+  },
+  "requests==2.32.4": {
+   "deps": {
+    "certifi": ">=2017.4.17",
+    "charset-normalizer": "<4,>=2",
+    "idna": "<4,>=2.5",
+    "urllib3": "<3,>=1.21.1"
+   },
+   "extra_only": 2,
+   "marked": 2,
+   "requirements": 6
+  },
+  "requests==2.32.5": {
+   "deps": {
+    "certifi": ">=2017.4.17",
+    "charset-normalizer": "<4,>=2",
+    "idna": "<4,>=2.5",
+    "urllib3": "<3,>=1.21.1"
+   },
+   "extra_only": 2,
+   "marked": 2,
+   "requirements": 6
   },
   "requests==2.33.1": {
    "deps": {
@@ -16045,6 +17149,36 @@
    "extra_only": 2,
    "marked": 2,
    "requirements": 6
+  },
+  "six==1.13.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "six==1.14.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "six==1.15.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "six==1.16.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "six==1.17.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
   },
   "sqlparse==0.3.1": {
    "deps": {},
@@ -16124,6 +17258,30 @@
    "marked": 3,
    "requirements": 3
   },
+  "tomli==2.0.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "tomli==2.0.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "tomli==2.1.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "tomli==2.2.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
   "tomli==2.3.0": {
    "deps": {},
    "extra_only": 0,
@@ -16160,6 +17318,54 @@
    "marked": 0,
    "requirements": 0
   },
+  "typing-extensions==4.14.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "typing-extensions==4.14.0rc1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "typing-extensions==4.14.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "typing-extensions==4.15.0": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "typing-extensions==4.15.0rc1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "tzdata==2024.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "tzdata==2025.1": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
+  "tzdata==2025.2": {
+   "deps": {},
+   "extra_only": 0,
+   "marked": 0,
+   "requirements": 0
+  },
   "tzdata==2026.1": {
    "deps": {},
    "extra_only": 0,
@@ -16189,6 +17395,36 @@
    "extra_only": 0,
    "marked": 0,
    "requirements": 0
+  },
+  "urllib3==1.26.20": {
+   "deps": {},
+   "extra_only": 11,
+   "marked": 11,
+   "requirements": 11
+  },
+  "urllib3==2.2.3": {
+   "deps": {},
+   "extra_only": 5,
+   "marked": 5,
+   "requirements": 5
+  },
+  "urllib3==2.3.0": {
+   "deps": {},
+   "extra_only": 5,
+   "marked": 5,
+   "requirements": 5
+  },
+  "urllib3==2.4.0": {
+   "deps": {},
+   "extra_only": 5,
+   "marked": 5,
+   "requirements": 5
+  },
+  "urllib3==2.5.0": {
+   "deps": {},
+   "extra_only": 5,
+   "marked": 5,
+   "requirements": 5
   },
   "urllib3==2.6.0": {
    "deps": {},
@@ -16225,6 +17461,14 @@
    "extra_only": 5,
    "marked": 5,
    "requirements": 5
+  },
+  "werkzeug==3.0.6": {
+   "deps": {
+    "markupsafe": ">=2.1.1"
+   },
+   "extra_only": 1,
+   "marked": 1,
+   "requirements": 2
   },
   "werkzeug==3.1.0": {
    "deps": {
@@ -16305,6 +17549,36 @@
    "extra_only": 1,
    "marked": 1,
    "requirements": 2
+  },
+  "zipp==3.20.1": {
+   "deps": {},
+   "extra_only": 19,
+   "marked": 19,
+   "requirements": 19
+  },
+  "zipp==3.20.2": {
+   "deps": {},
+   "extra_only": 19,
+   "marked": 19,
+   "requirements": 19
+  },
+  "zipp==3.21.0": {
+   "deps": {},
+   "extra_only": 19,
+   "marked": 19,
+   "requirements": 19
+  },
+  "zipp==3.22.0": {
+   "deps": {},
+   "extra_only": 19,
+   "marked": 19,
+   "requirements": 19
+  },
+  "zipp==3.23.0": {
+   "deps": {},
+   "extra_only": 18,
+   "marked": 18,
+   "requirements": 18
   }
  },
  "seeds": [

@@ -500,8 +500,91 @@ def reseal(snap, path):
           % (path, snap["packages_count"], len(snap["errors"]), snap["content_sha256"][:32]))
 
 
+
+# ---------------------------------------------------------------- the decay panel (P2)
+
+PANEL_PER_PKG = 5          # declaring versions taken per package for the longitudinal panel
+PANEL_MIN_AGE_DAYS = 365   # a panel declaration must have at least 12 months of observable history
+
+
+def _day(ts):
+    """A date as an integer day number, from an ISO-8601 stamp.  No clock, no timezone library."""
+    y, mo, d = int(ts[0:4]), int(ts[5:7]), int(ts[8:10])
+    # days since an arbitrary epoch: 400-year cycles make this exact
+    yy = y - (1 if mo <= 2 else 0)
+    era = (yy if yy >= 0 else yy - 399) // 400
+    yoe = yy - era * 400
+    doy = (153 * (mo + (-3 if mo > 2 else 9)) + 2) // 5 + d - 1
+    doe = yoe * 365 + yoe // 4 - yoe // 100 + doy
+    return era * 146097 + doe
+
+
+def panel_rule(snap):
+    """The panel's selection rule, STATED and time-only -- never selected by outcome.
+
+    For each package in the snapshot: up to PANEL_PER_PKG stable versions published at least
+    PANEL_MIN_AGE_DAYS before the snapshot's last instant, most recent first.  The age floor is what
+    makes a full 12-month window observable for every member; the per-package cap is what bounds the
+    fetch.  A package whose releases are all younger than the floor contributes nothing and is COUNTED.
+    """
+    PK = snap["packages"]
+    now = max(m["published_at"] for p in PK.values() for m in p["versions"].values())
+    now_day = _day(now)
+    picked, too_young = [], 0
+    for name, p in sorted(PK.items()):
+        cands = [(m["published_at"], v) for v, m in p["versions"].items()
+                 if not m["prerelease"] and not m["yanked"]]
+        cands.sort(reverse=True)
+        old = [(t, v) for (t, v) in cands if now_day - _day(t) >= PANEL_MIN_AGE_DAYS]
+        if not old:
+            too_young += 1
+            continue
+        for t, v in old[:PANEL_PER_PKG]:
+            picked.append({"package": name, "version": v, "role": "panel", "published_at": t})
+    return picked, too_young, now
+
+
+def extend_panel(eco):
+    path = os.path.join(PKG, "snapshot_%s.json" % eco)
+    snap = json.load(io.open(path, encoding="utf-8"))
+    picked, too_young, now = panel_rule(snap)
+    print("  panel cohort: %d declaring versions from %d package(s); %d package(s) too young, "
+          "counted and excluded" % (len(picked), len(set(x["package"] for x in picked)), too_young))
+    if eco == "pypi":
+        want = [x for x in picked
+                if not ((snap["packages"].get(x["package"], {}).get("versions", {})
+                         .get(x["version"]) or {}).get("deps"))]
+        print("  pypi: declarations needing a metadata fetch: %d" % len(want))
+        t0 = time.time()
+        for i, x in enumerate(want):
+            try:
+                info = pypi_declared(x["package"], x["version"])
+            except Exception as e:
+                snap["errors"].append("%s==%s: %s" % (x["package"], x["version"], e))
+                continue
+            snap.setdefault("requirement_scan", {})["%s==%s" % (x["package"], x["version"])] = info
+            snap["packages"][x["package"]]["versions"][x["version"]]["deps"] = info["deps"]
+            if i % 25 == 0:
+                print("    %3d/%d %s==%s %.0fs" % (i + 1, len(want), x["package"],
+                                                   x["version"], time.time() - t0))
+    # the panel is ADDITIVE: the depth-1/depth-2 declaring set is untouched, so their numbers stay put
+    have = set((d["package"], d["version"]) for d in snap["declaring"])
+    added = [x for x in picked if (x["package"], x["version"]) not in have]
+    snap["declaring"].extend(added)
+    snap["panel"] = {"rule": "%d most recent stable versions per package at least %d days old"
+                             % (PANEL_PER_PKG, PANEL_MIN_AGE_DAYS),
+                     "added": len(added), "packages_too_young": too_young, "as_of": now}
+    reseal(snap, path)
+    print("  panel additions: %d (declaring set now %d)" % (len(added), len(snap["declaring"])))
+
+
 def main():
     eco = sys.argv[1] if len(sys.argv) > 1 else ""
+    if eco == "--panel":
+        for which in ("npm", "pypi"):
+            print("building the decay panel for %s ..." % which)
+            extend_panel(which)
+        return 0
     if eco == "--depth2":
         for which in ("npm", "pypi"):
             print("extending %s to depth 2 ..." % which)

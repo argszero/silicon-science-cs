@@ -1,0 +1,1276 @@
+{
+ "ecosystems": {
+  "npm": {
+   "declaration_non_monotone": 0,
+   "declaration_survival": [
+    {
+     "at_risk": 150,
+     "determined": 150,
+     "k": 0,
+     "rate": 1.0,
+     "verdict": "measured",
+     "wilson": [
+      0.9750288608542812,
+      1.0
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 138,
+     "k": 1,
+     "rate": 0.92,
+     "verdict": "measured",
+     "wilson": [
+      0.8653774250568131,
+      0.9536468180607831
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 136,
+     "k": 2,
+     "rate": 0.9066666666666666,
+     "verdict": "measured",
+     "wilson": [
+      0.8494348221544131,
+      0.9435886513404023
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 135,
+     "k": 3,
+     "rate": 0.9,
+     "verdict": "measured",
+     "wilson": [
+      0.8415639255193982,
+      0.9384591631640268
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 132,
+     "k": 4,
+     "rate": 0.88,
+     "verdict": "measured",
+     "wilson": [
+      0.8182903386460476,
+      0.9227315956032063
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 127,
+     "k": 5,
+     "rate": 0.8466666666666667,
+     "verdict": "measured",
+     "wilson": [
+      0.7804188029480452,
+      0.8956012072442565
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 125,
+     "k": 6,
+     "rate": 0.8333333333333334,
+     "verdict": "measured",
+     "wilson": [
+      0.7655327510904788,
+      0.8844864894790421
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 125,
+     "k": 7,
+     "rate": 0.8333333333333334,
+     "verdict": "measured",
+     "wilson": [
+      0.7655327510904788,
+      0.8844864894790421
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 124,
+     "k": 8,
+     "rate": 0.8266666666666667,
+     "verdict": "measured",
+     "wilson": [
+      0.7581386789428641,
+      0.8788801768152663
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 122,
+     "k": 9,
+     "rate": 0.8133333333333334,
+     "verdict": "measured",
+     "wilson": [
+      0.7434413916324496,
+      0.8675766945029
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 118,
+     "k": 10,
+     "rate": 0.7866666666666666,
+     "verdict": "measured",
+     "wilson": [
+      0.7143779835916132,
+      0.8446385632981747
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 118,
+     "k": 11,
+     "rate": 0.7866666666666666,
+     "verdict": "measured",
+     "wilson": [
+      0.7143779835916132,
+      0.8446385632981747
+     ]
+    },
+    {
+     "at_risk": 150,
+     "determined": 115,
+     "k": 12,
+     "rate": 0.7666666666666667,
+     "verdict": "measured",
+     "wilson": [
+      0.6928407309593593,
+      0.8271746614962575
+     ]
+    }
+   ],
+   "declarations_in_panel": 211,
+   "ecosystem": "npm",
+   "edges_unknown_target": 648,
+   "edges_unparsed": 58,
+   "non_monotone": {
+    "caret": 0,
+    "exact": 0,
+    "tilde": 0
+   },
+   "paired": {
+    "pairs": {
+     "caret>exact": {
+      "a_outlives": 0,
+      "b_outlives": 10,
+      "targets": 16
+     },
+     "caret>tilde": {
+      "a_outlives": 1,
+      "b_outlives": 1,
+      "targets": 11
+     }
+    },
+    "rows": [
+     {
+      "n_a": 1,
+      "n_b": 8,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "@jest/schemas"
+     },
+     {
+      "n_a": 2,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "accepts"
+     },
+     {
+      "n_a": 2,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "body-parser"
+     },
+     {
+      "n_a": 2,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.5,
+      "surv_b": 1.0,
+      "target": "content-disposition"
+     },
+     {
+      "n_a": 3,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "content-type"
+     },
+     {
+      "n_a": 1,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "cookie-signature"
+     },
+     {
+      "n_a": 6,
+      "n_b": 8,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.16666666666666666,
+      "surv_b": 1.0,
+      "target": "debug"
+     },
+     {
+      "n_a": 1,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "destroy"
+     },
+     {
+      "n_a": 2,
+      "n_b": 6,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "encodeurl"
+     },
+     {
+      "n_a": 2,
+      "n_b": 6,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "escape-html"
+     },
+     {
+      "n_a": 2,
+      "n_b": 4,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "etag"
+     },
+     {
+      "n_a": 2,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "finalhandler"
+     },
+     {
+      "n_a": 2,
+      "n_b": 4,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "fresh"
+     },
+     {
+      "n_a": 4,
+      "n_b": 7,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.25,
+      "surv_b": 1.0,
+      "target": "http-errors"
+     },
+     {
+      "n_a": 2,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "merge-descriptors"
+     },
+     {
+      "n_a": 3,
+      "n_b": 1,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 0.6666666666666666,
+      "surv_b": 0.0,
+      "target": "mime-types"
+     },
+     {
+      "n_a": 4,
+      "n_b": 8,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "on-finished"
+     },
+     {
+      "n_a": 1,
+      "n_b": 1,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "once"
+     },
+     {
+      "n_a": 1,
+      "n_b": 6,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "parseurl"
+     },
+     {
+      "n_a": 1,
+      "n_b": 4,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "proxy-addr"
+     },
+     {
+      "n_a": 3,
+      "n_b": 7,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "qs"
+     },
+     {
+      "n_a": 2,
+      "n_b": 4,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "range-parser"
+     },
+     {
+      "n_a": 1,
+      "n_b": 4,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "send"
+     },
+     {
+      "n_a": 2,
+      "n_b": 3,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "serve-static"
+     },
+     {
+      "n_a": 2,
+      "n_b": 5,
+      "stratum_a": "caret",
+      "stratum_b": "exact",
+      "surv_a": 0.0,
+      "surv_b": 1.0,
+      "target": "statuses"
+     },
+     {
+      "n_a": 3,
+      "n_b": 6,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 0.3333333333333333,
+      "surv_b": 1.0,
+      "target": "type-is"
+     },
+     {
+      "n_a": 1,
+      "n_b": 4,
+      "stratum_a": "caret",
+      "stratum_b": "tilde",
+      "surv_a": 1.0,
+      "surv_b": 1.0,
+      "target": "vary"
+     }
+    ],
+    "targets_compared": 27
+   },
+   "strata": {
+    "caret": [
+     {
+      "at_risk": 439,
+      "determined": 439,
+      "k": 0,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9913251148943548,
+       0.9999999999999999
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 422,
+      "k": 1,
+      "rate": 0.9612756264236902,
+      "verdict": "measured",
+      "wilson": [
+       0.938863981933909,
+       0.9756842447909516
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 413,
+      "k": 2,
+      "rate": 0.9407744874715261,
+      "verdict": "measured",
+      "wilson": [
+       0.9146356587883512,
+       0.959265980082071
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 406,
+      "k": 3,
+      "rate": 0.9248291571753986,
+      "verdict": "measured",
+      "wilson": [
+       0.8963111450887509,
+       0.9459764810059972
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 400,
+      "k": 4,
+      "rate": 0.9111617312072893,
+      "verdict": "measured",
+      "wilson": [
+       0.880856972906883,
+       0.9343329279515727
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 389,
+      "k": 5,
+      "rate": 0.8861047835990888,
+      "verdict": "measured",
+      "wilson": [
+       0.8529776114677549,
+       0.9125331264574988
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 381,
+      "k": 6,
+      "rate": 0.8678815489749431,
+      "verdict": "measured",
+      "wilson": [
+       0.832990465202091,
+       0.8963899724081064
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 375,
+      "k": 7,
+      "rate": 0.8542141230068337,
+      "verdict": "measured",
+      "wilson": [
+       0.8181300586051863,
+       0.884152653768719
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 367,
+      "k": 8,
+      "rate": 0.835990888382688,
+      "verdict": "measured",
+      "wilson": [
+       0.7984653704947924,
+       0.8676870415640567
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 357,
+      "k": 9,
+      "rate": 0.8132118451025057,
+      "verdict": "measured",
+      "wilson": [
+       0.7740930766936476,
+       0.8468964599713811
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 351,
+      "k": 10,
+      "rate": 0.7995444191343963,
+      "verdict": "measured",
+      "wilson": [
+       0.7595680599312031,
+       0.8343237514975335
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 347,
+      "k": 11,
+      "rate": 0.7904328018223234,
+      "verdict": "measured",
+      "wilson": [
+       0.7499221219735666,
+       0.8259045392976418
+      ]
+     },
+     {
+      "at_risk": 439,
+      "determined": 343,
+      "k": 12,
+      "rate": 0.7813211845102506,
+      "verdict": "measured",
+      "wilson": [
+       0.7403044337259376,
+       0.8174570773877429
+      ]
+     }
+    ],
+    "exact": [
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 0,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 1,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 2,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 3,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 4,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 5,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 6,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 7,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 8,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 9,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 10,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 11,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 582,
+      "determined": 582,
+      "k": 12,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9934425960874066,
+       1.0
+      ]
+     }
+    ],
+    "tilde": [
+     {
+      "at_risk": 51,
+      "determined": 51,
+      "k": 0,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9299509861127319,
+       0.9999999999999999
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 51,
+      "k": 1,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9299509861127319,
+       0.9999999999999999
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 51,
+      "k": 2,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9299509861127319,
+       0.9999999999999999
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 51,
+      "k": 3,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9299509861127319,
+       0.9999999999999999
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 51,
+      "k": 4,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.9299509861127319,
+       0.9999999999999999
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 5,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 6,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 7,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 8,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 9,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 10,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 11,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     },
+     {
+      "at_risk": 51,
+      "determined": 50,
+      "k": 12,
+      "rate": 0.9803921568627451,
+      "verdict": "measured",
+      "wilson": [
+       0.8969519232441061,
+       0.9965303967465577
+      ]
+     }
+    ]
+   },
+   "yank_events_in_windows": 0
+  },
+  "pypi": {
+   "declaration_non_monotone": 0,
+   "declaration_survival": [
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 0,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 1,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 2,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 3,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 4,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 5,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 6,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 7,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 8,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 9,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 10,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 11,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    },
+    {
+     "at_risk": 0,
+     "determined": null,
+     "k": 12,
+     "rate": null,
+     "verdict": "NOT RUN",
+     "wilson": null
+    }
+   ],
+   "declarations_in_panel": 33,
+   "ecosystem": "pypi",
+   "edges_unknown_target": 5,
+   "edges_unparsed": 26,
+   "non_monotone": {
+    "other": 0,
+    "unbounded": 0
+   },
+   "paired": {
+    "pairs": {},
+    "rows": [],
+    "targets_compared": 0
+   },
+   "strata": {
+    "other": [
+     {
+      "at_risk": 2,
+      "determined": 2,
+      "k": 0,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.34237195288961925,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 2,
+      "k": 1,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.34237195288961925,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 2,
+      "k": 2,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.34237195288961925,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 1,
+      "k": 3,
+      "rate": 0.5,
+      "verdict": "measured",
+      "wilson": [
+       0.09452865480086614,
+       0.9054713451991339
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 1,
+      "k": 4,
+      "rate": 0.5,
+      "verdict": "measured",
+      "wilson": [
+       0.09452865480086614,
+       0.9054713451991339
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 1,
+      "k": 5,
+      "rate": 0.5,
+      "verdict": "measured",
+      "wilson": [
+       0.09452865480086614,
+       0.9054713451991339
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 6,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 7,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 8,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 9,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 10,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 11,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 12,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     }
+    ],
+    "unbounded": [
+     {
+      "at_risk": 2,
+      "determined": 2,
+      "k": 0,
+      "rate": 1.0,
+      "verdict": "measured",
+      "wilson": [
+       0.34237195288961925,
+       1.0
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 1,
+      "k": 1,
+      "rate": 0.5,
+      "verdict": "measured",
+      "wilson": [
+       0.09452865480086614,
+       0.9054713451991339
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 1,
+      "k": 2,
+      "rate": 0.5,
+      "verdict": "measured",
+      "wilson": [
+       0.09452865480086614,
+       0.9054713451991339
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 3,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 4,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 5,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 6,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 7,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 8,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 9,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 10,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 11,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     },
+     {
+      "at_risk": 2,
+      "determined": 0,
+      "k": 12,
+      "rate": 0.0,
+      "verdict": "measured",
+      "wilson": [
+       0.0,
+       0.6576280471103807
+      ]
+     }
+    ]
+   },
+   "yank_events_in_windows": 34
+  }
+ },
+ "observability": "a deletion before the snapshot instant is invisible; a k where survival rises is reported NON-MONOTONE, counted, never as a refutation",
+ "panel": "declarations at least 12 months old; at-risk = edges singleton at k=0"
+}
