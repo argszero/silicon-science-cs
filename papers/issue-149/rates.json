@@ -1,0 +1,123 @@
+{
+ "ecosystems": {
+  "npm": {
+   "ambiguous_edges": 192,
+   "ambiguous_share": 0.12808539026017346,
+   "ambiguous_wilson": [
+    0.11211327083275582,
+    0.14595890390608565
+   ],
+   "ambiguous_with_closure_difference": 80,
+   "as_of_now_instant": "2026-10-22T11:39:38.614Z",
+   "baselines": {
+    "install_count_pin_direct_only": 192480868,
+    "install_count_pin_everything": 543,
+    "pin_direct_only_pins": 192,
+    "pin_everything_pins": 1499
+   },
+   "certificate": {
+    "brute_equals_closed_form": true,
+    "instances_checked": 174,
+    "mismatches": [],
+    "skipped_too_large": 369
+   },
+   "closure_difference_share": 0.4166666666666667,
+   "closure_difference_unknown": 0,
+   "closure_difference_wilson": [
+    0.349233136656546,
+    0.4873695054787306
+   ],
+   "closure_shape_share": 0.09895833333333333,
+   "closure_shape_wilson": [
+    0.06426990745709285,
+    0.1493803078189261
+   ],
+   "declarations_share_under_determined_all": 0.11049723756906077,
+   "declarations_share_under_determined_at_risk": 0.2,
+   "declarations_under_determined": 60,
+   "declarations_under_determined_wilson_all": [
+    0.08681450525979158,
+    0.13965253748165307
+   ],
+   "declarations_under_determined_wilson_at_risk": [
+    0.15865617190196185,
+    0.24892988609667954
+   ],
+   "declarations_with_edges": 300,
+   "declaring_packages": 95,
+   "declaring_versions": 543,
+   "declaring_versions_all_specs_unparsed": 0,
+   "declaring_versions_declaring_nothing": 243,
+   "declaring_versions_with_edges": 300,
+   "ecosystem": "npm",
+   "edges": 1499,
+   "edges_that_grew": 139,
+   "installs_asof_max": 552960,
+   "installs_asof_median": 1,
+   "snapshot_content_sha256": "35c15f1f41af50e9b97a658641548c4bb23bcf2c711cc60b775b46378a3a6d63",
+   "unparsed_specs": 16,
+   "yanked_versions_in_snapshot": 858
+  },
+  "pypi": {
+   "ambiguous_edges": 109,
+   "ambiguous_share": 0.8014705882352942,
+   "ambiguous_wilson": [
+    0.7265580810212121,
+    0.8598196492107074
+   ],
+   "ambiguous_with_closure_difference": 21,
+   "as_of_now_instant": "2026-10-22T11:54:48.330970Z",
+   "baselines": {
+    "install_count_pin_direct_only": 286318911,
+    "install_count_pin_everything": 167,
+    "pin_direct_only_pins": 109,
+    "pin_everything_pins": 136
+   },
+   "certificate": {
+    "brute_equals_closed_form": true,
+    "instances_checked": 21,
+    "mismatches": [],
+    "skipped_too_large": 146
+   },
+   "closure_difference_share": 0.1926605504587156,
+   "closure_difference_unknown": 0,
+   "closure_difference_wilson": [
+    0.1296063745018461,
+    0.2766409669041602
+   ],
+   "closure_shape_share": 0.11926605504587157,
+   "closure_shape_wilson": [
+    0.07103906424729986,
+    0.19341659749446913
+   ],
+   "declarations_share_under_determined_all": 0.20958083832335328,
+   "declarations_share_under_determined_at_risk": 0.660377358490566,
+   "declarations_under_determined": 35,
+   "declarations_under_determined_wilson_all": [
+    0.15473004890823655,
+    0.2774925479300042
+   ],
+   "declarations_under_determined_wilson_at_risk": [
+    0.5259453611082096,
+    0.773131371425709
+   ],
+   "declarations_with_edges": 53,
+   "declaring_packages": 28,
+   "declaring_versions": 167,
+   "declaring_versions_all_specs_unparsed": 10,
+   "declaring_versions_declaring_nothing": 104,
+   "declaring_versions_with_edges": 53,
+   "ecosystem": "pypi",
+   "edges": 136,
+   "edges_that_grew": 87,
+   "installs_asof_max": 26812800,
+   "installs_asof_median": 1,
+   "snapshot_content_sha256": "00805f1f0a2df7c7b4f445e1768abfcb8040ce36fe22065dd4cf9d24d76b16ed",
+   "unparsed_specs": 22,
+   "yanked_versions_in_snapshot": 25
+  }
+ },
+ "estimand": "dispersion of the solution set; the per-edge rate is reported but demoted",
+ "generated_by": "ambiguous.py",
+ "snapshot_note": "every number below is a function of snapshot_<eco>.json and nothing else"
+}
