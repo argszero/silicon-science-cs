@@ -1,0 +1,412 @@
+{
+ "arxiv_route": "reachable",
+ "matched": [
+  {
+   "id": "10.1111/j.1540-6261.1961.tb02789.x",
+   "key": "vickrey1961",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Counterspeculation, Auctions, and Competitive Sealed Tenders",
+   "why": "exact title, year 1961",
+   "year": 1961
+  },
+  {
+   "id": "10.1287/moor.6.1.58",
+   "key": "myerson1981",
+   "route": "title",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Optimal Auction Design",
+   "why": "exact title, year 1981",
+   "year": 1981
+  },
+  {
+   "id": "10.2307/1911865",
+   "key": "milgrom-weber",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "A Theory of Auctions and Competitive Bidding",
+   "why": "exact title, year 1982",
+   "year": 1982
+  },
+  {
+   "id": "10.2307/1913238",
+   "key": "holmstrom-milgrom",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Aggregation and Linearity in the Provision of Intertemporal Incentives",
+   "why": "exact title, year 1987",
+   "year": 1987
+  },
+  {
+   "id": "10.2307/3003320",
+   "key": "holmstrom-obs",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Moral Hazard and Observability",
+   "why": "exact title, year 1979",
+   "year": 1979
+  },
+  {
+   "id": "10.2139/ssrn.172650",
+   "key": "klemperer",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Auction Theory: A Guide to the Literature",
+   "why": "exact title, year 1999",
+   "year": 1999
+  },
+  {
+   "id": "10.1257/jep.3.3.3",
+   "key": "milgrom1989",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Auctions and Bidding: A Primer",
+   "why": "exact title, year 1989",
+   "year": 1989
+  },
+  {
+   "id": "10.2307/2296904",
+   "key": "wilson1977",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "A Bidding Model of Perfect Competition",
+   "why": "exact title, year 1977",
+   "year": 1977
+  },
+  {
+   "id": "10.2307/j.ctv173f1fh.6",
+   "key": "nash1950",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched-edition",
+   "title": "Equilibrium Points in N-Person Games",
+   "why": "exact title, but the record is the 2020 edition of a 1950 work",
+   "year": 1950
+  },
+  {
+   "id": "10.12987/9780300186987",
+   "key": "arrow1951",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched-edition",
+   "title": "Social Choice and Individual Values",
+   "why": "exact title, but the record is the 2017 edition of a 1951 work",
+   "year": 1951
+  },
+  {
+   "id": "10.2307/2332226",
+   "key": "kendall1938",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "A New Measure of Rank Correlation",
+   "why": "exact title, year 1938",
+   "year": 1938
+  },
+  {
+   "id": "10.1037/11491-005",
+   "key": "spearman1904",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched-edition",
+   "title": "The Proof and Measurement of Association between Two Things",
+   "why": "exact title, but the record is the 1961 edition of a 1904 work",
+   "year": 1904
+  },
+  {
+   "id": "10.56645/jmde.v7i15.297",
+   "key": "campbell",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched-edition",
+   "title": "Assessing the Impact of Planned Social Change",
+   "why": "exact title, but the record is the 2011 edition of a 1969 work",
+   "year": 1969
+  },
+  {
+   "id": "10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4",
+   "key": "strathern",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Improving Ratings: Audit in the British University System",
+   "why": "exact title, year 1997",
+   "year": 1997
+  },
+  {
+   "id": "1902.10811",
+   "key": "recht2019",
+   "route": "arxiv-title",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Do ImageNet Classifiers Generalize to ImageNet?",
+   "why": "exact title, year 2019",
+   "year": 2019
+  },
+  {
+   "id": "10.18653/v1/2020.emnlp-main.393",
+   "key": "ethayarajh",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Utility is in the Eye of the User: A Critique of NLP Leaderboards",
+   "why": "exact title, year 2020",
+   "year": 2020
+  },
+  {
+   "id": "10.18653/v1/2021.naacl-main.385",
+   "key": "bowman-dahl",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "What Will it Take to Fix Benchmarking in Natural Language Understanding?",
+   "why": "exact title, year 2021",
+   "year": 2021
+  },
+  {
+   "id": "2306.03100",
+   "key": "burnell2023",
+   "route": "arxiv-title",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Rethinking Model Evaluation as Narrowing the Socio-Technical Gap",
+   "why": "exact title, year 2023",
+   "year": 2023
+  },
+  {
+   "id": "10.1111/nyas.15007",
+   "key": "liang2022",
+   "route": "title",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Holistic Evaluation of Language Models",
+   "why": "exact title, year 2023",
+   "year": 2022
+  },
+  {
+   "id": "10.18653/v1/2021.naacl-main.324",
+   "key": "kiela2021",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Dynabench: Rethinking Benchmarking in NLP",
+   "why": "exact title, year 2021",
+   "year": 2021
+  },
+  {
+   "id": "2306.09442",
+   "key": "casper2023",
+   "route": "arxiv-title",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Explore, Establish, Exploit: Red Teaming Language Models from Scratch",
+   "why": "exact title, year 2023",
+   "year": 2023
+  },
+  {
+   "id": "10.18653/v1/2022.emnlp-main.225",
+   "key": "perez2022",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Red Teaming Language Models with Language Models",
+   "why": "exact title, year 2022",
+   "year": 2022
+  },
+  {
+   "id": "10.1080/01621459.1927.10502953",
+   "key": "wilson-ci",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+   "why": "exact title, year 1927",
+   "year": 1927
+  },
+  {
+   "id": "10.1162/089976698300017197",
+   "key": "dietterich",
+   "route": "bibliographic",
+   "score": 1.0,
+   "status": "matched",
+   "title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+   "why": "exact title, year 1998",
+   "year": 1998
+  }
+ ],
+ "unresolved": [
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Sequentially Optimal Auctions",
+   "best_year": 1997,
+   "key": "riley-samuelson",
+   "score": 0.6666666666666666,
+   "status": "unresolved",
+   "title": "Optimal Auctions",
+   "why": "title score 0.67 below 0.90",
+   "year": 1981
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Auctions vs. Negotiations",
+   "best_year": 1994,
+   "key": "bulow-klemperer",
+   "score": 0.6666666666666666,
+   "status": "unresolved",
+   "title": "Auctions Versus Negotiations",
+   "why": "title score 0.67 below 0.90",
+   "year": 1996
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Optimal multi-unit combinatorial auctions",
+   "best_year": 2011,
+   "key": "maskin-riley",
+   "score": 0.8,
+   "status": "unresolved",
+   "title": "Optimal Multi-unit Auctions",
+   "why": "title score 0.80 below 0.90",
+   "year": 1989
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "IPO auctions and private information",
+   "best_year": 2007,
+   "key": "kremer",
+   "score": 0.6,
+   "status": "unresolved",
+   "title": "Auctions with Private Information",
+   "why": "title score 0.60 below 0.90",
+   "year": null
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Problems of Monetary Management: The UK Experience",
+   "best_year": 1984,
+   "key": "goodhart",
+   "score": 0.75,
+   "status": "unresolved",
+   "title": "Problems of Monetary Management: The U.K. Experience",
+   "why": "title score 0.75 below 0.90",
+   "year": 1975
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Technical Debt in Machine Learning Systems",
+   "best_year": 2021,
+   "key": "sculley",
+   "score": 0.8571428571428571,
+   "status": "unresolved",
+   "title": "Hidden Technical Debt in Machine Learning Systems",
+   "why": "title score 0.86 below 0.90",
+   "year": 2015
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "A Theory of Language and Mind",
+   "best_year": 1997,
+   "key": "sclar2023",
+   "score": 0.5714285714285714,
+   "status": "unresolved",
+   "title": "Minding Language Models' (Lack of) Theory of Mind",
+   "why": "title score 0.57 below 0.90",
+   "year": 2023
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Quantifying Association Capabilities of Large Language Models and Its Implications on Privacy Leakage",
+   "best_year": 2024,
+   "key": "srivastava2022",
+   "score": 0.46153846153846156,
+   "status": "unresolved",
+   "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+   "why": "title score 0.46 below 0.90",
+   "year": 2022
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Annual Report 2022",
+   "best_year": 2022,
+   "key": "sutton2022",
+   "score": 0.5,
+   "status": "unresolved",
+   "title": "The AI Index 2022 Annual Report",
+   "why": "title score 0.50 below 0.90",
+   "year": 2022
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "MMMU: A Massive Multi-Discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI",
+   "best_year": 2024,
+   "key": "mmmu",
+   "score": 0.7692307692307693,
+   "status": "unresolved",
+   "title": "MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark",
+   "why": "title score 0.77 below 0.90",
+   "year": 2024
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across Competitive Market Ecologies",
+   "best_year": 2026,
+   "key": "erpbench",
+   "score": 0.08333333333333333,
+   "status": "unresolved",
+   "title": "ERPBench",
+   "why": "title score 0.08 below 0.90",
+   "year": 2026
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "The Leaderboard Illusion",
+   "best_year": 2025,
+   "key": "leaderboard-inference",
+   "score": 0.3333333333333333,
+   "status": "unresolved",
+   "title": "Leaderboard",
+   "why": "title score 0.33 below 0.90",
+   "year": 2026
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Principal Mechanisms of Cryptic Female Choice",
+   "best_year": 2019,
+   "key": "principal-measure",
+   "score": 0.5,
+   "status": "unresolved",
+   "title": "The Principal's Choice of Measure",
+   "why": "title score 0.50 below 0.90",
+   "year": 1993
+  },
+  {
+   "arxiv_route": "not attempted",
+   "best_candidate": "Evaluation Protocol of Early Classifiers over Multiple Data Sets",
+   "best_year": 2014,
+   "key": "demvsar",
+   "score": 0.6666666666666666,
+   "status": "unresolved",
+   "title": "Statistical Comparisons of Classifiers over Multiple Data Sets",
+   "why": "title score 0.67 below 0.90",
+   "year": 2006
+  },
+  {
+   "arxiv_route": "reachable",
+   "best_candidate": "Auction Theory",
+   "best_year": 2021,
+   "key": "krishna",
+   "score": 1.0,
+   "status": "unresolved",
+   "title": "Auction Theory",
+   "why": "exact title, but the record carries no author: an edition cannot be corroborated by the title it is an edition of (record 10.1017/9781108649919.020, 2021)",
+   "year": 2002
+  }
+ ]
+}

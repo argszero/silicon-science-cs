@@ -1,0 +1,41 @@
+== issue #141 -- v2: the protocol-design law ==
+   4 games x 8 policies x 4 populations x 17 protocols = 272 cells; all values exact
+
+== THE NESTING (over every cell of every protocol) ==
+   faithful (tau == 1)          : 54
+   immune   (G == 0)            : 96
+   ... of which unfaithful      : 42   <- the STRICT band (H2)
+   gameable (G > 0)             : 176
+   faithful => immune           : True
+
+== THE DESIGN MAP (per protocol: shape, band, counts) ==
+   protocol        reads      mono     shape     predicted           MEASURED            faithful  G_max
+   mean_payoff     profile    strict   magnitude faithful            faithful                 16      0
+   mean_sq         row        none     magnitude gameable            gameable                  0      3
+   spread          profile    strict   magnitude faithful            faithful                 16      0
+   top_half        row        none     magnitude gameable            gameable                  9      1
+   worst_opp       row        none     magnitude gameable            gameable                  0      3
+   best_opp        row        none     magnitude gameable            gameable                  0      2
+   win_count       row        none     sign      gameable            gameable                  0      2
+   strict_wins     row        none     sign      gameable            gameable                  0      3
+   tie_count       row        none     sign      gameable            gameable                  0      7
+   norm_by_best    row        none     relative  gameable            gameable                  4      3
+   relative_pair   row        none     relative  gameable            gameable                  0      3
+   game_wins       row        none     outcome   gameable            gameable                  0      5
+   champion        row        none     outcome   gameable            gameable                  0      5
+   capped_0        profile    saturating capped    gameable            gameable                  0      4
+   capped_weak     profile    saturating capped    gameable            gameable                  9      4
+   random_fixed    none       none     baseline  gameable            gameable                  0      7
+   tail_swap       profile    none     constructed immune_unfaithful   immune_unfaithful         0      0
+
+== BY SHAPE ==
+   magnitude    mean_payoff:faithful, mean_sq:gameable, spread:faithful, top_half:gameable, worst_opp:gameable, best_opp:gameable
+   sign         win_count:gameable, strict_wins:gameable, tie_count:gameable
+   relative     norm_by_best:gameable, relative_pair:gameable
+   outcome      game_wins:gameable, champion:gameable
+   capped       capped_0:gameable, capped_weak:gameable
+   baseline     random_fixed:gameable
+   constructed  tail_swap:immune_unfaithful
+
+== THE BAND COUNTS ==
+   faithful=2, immune_unfaithful=1, gameable=14

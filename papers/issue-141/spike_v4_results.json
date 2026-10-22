@@ -1,0 +1,8511 @@
+{
+ "P1_gain_positive": {
+  "G_pos": 474,
+  "cells": 684,
+  "majority": true,
+  "per_game": {
+   "cv_n2": {
+    "G_pos": 50,
+    "cells": 76
+   },
+   "cv_n3": {
+    "G_pos": 50,
+    "cells": 76
+   },
+   "cv_n4": {
+    "G_pos": 51,
+    "cells": 76
+   },
+   "fpsb_n2": {
+    "G_pos": 55,
+    "cells": 76
+   },
+   "fpsb_n3": {
+    "G_pos": 55,
+    "cells": 76
+   },
+   "fpsb_n4": {
+    "G_pos": 54,
+    "cells": 76
+   },
+   "spsb_n2": {
+    "G_pos": 52,
+    "cells": 76
+   },
+   "spsb_n3": {
+    "G_pos": 53,
+    "cells": 76
+   },
+   "spsb_n4": {
+    "G_pos": 54,
+    "cells": 76
+   }
+  },
+  "share_of_cells": "79/114"
+ },
+ "T3_inclusion": {
+  "fragile_cells": 564,
+  "g_positive_without_fragility": [],
+  "gameable_cells": 474,
+  "n_g_positive_without_fragility": 0,
+  "reversed_cells": 71,
+  "strictly_contains": true
+ },
+ "anchors": {
+  "cv_n2": {
+   "certified": [
+    "eq_fpsb",
+    "shade_3_4"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "1/2",
+   "continuous_uniform_shading_realized_by": [
+    "eq_fpsb"
+   ],
+   "family": "cv",
+   "n": 2,
+   "weakly_dominant_v_realized": false
+  },
+  "cv_n3": {
+   "certified": [
+    "eq_fpsb",
+    "shade_3_4"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "2/3",
+   "continuous_uniform_shading_realized_by": [],
+   "family": "cv",
+   "n": 3,
+   "weakly_dominant_v_realized": false
+  },
+  "cv_n4": {
+   "certified": [],
+   "certified_absent": true,
+   "continuous_uniform_shading": "3/4",
+   "continuous_uniform_shading_realized_by": [],
+   "family": "cv",
+   "n": 4,
+   "weakly_dominant_v_realized": false
+  },
+  "fpsb_n2": {
+   "certified": [
+    "eq_fpsb",
+    "shade_1_4"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "1/2",
+   "continuous_uniform_shading_realized_by": [
+    "eq_fpsb"
+   ],
+   "family": "fpsb",
+   "n": 2,
+   "weakly_dominant_v_realized": false
+  },
+  "fpsb_n3": {
+   "certified": [
+    "eq_fpsb",
+    "shade_3_4"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "2/3",
+   "continuous_uniform_shading_realized_by": [],
+   "family": "fpsb",
+   "n": 3,
+   "weakly_dominant_v_realized": false
+  },
+  "fpsb_n4": {
+   "certified": [
+    "eq_fpsb",
+    "shade_3_4"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "3/4",
+   "continuous_uniform_shading_realized_by": [
+    "shade_3_4"
+   ],
+   "family": "fpsb",
+   "n": 4,
+   "weakly_dominant_v_realized": false
+  },
+  "spsb_n2": {
+   "certified": [
+    "eq_spsb"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "1/2",
+   "continuous_uniform_shading_realized_by": [],
+   "family": "spsb",
+   "n": 2,
+   "weakly_dominant_v_realized": true
+  },
+  "spsb_n3": {
+   "certified": [
+    "eq_spsb"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "2/3",
+   "continuous_uniform_shading_realized_by": [],
+   "family": "spsb",
+   "n": 3,
+   "weakly_dominant_v_realized": true
+  },
+  "spsb_n4": {
+   "certified": [
+    "eq_spsb"
+   ],
+   "certified_absent": false,
+   "continuous_uniform_shading": "3/4",
+   "continuous_uniform_shading_realized_by": [],
+   "family": "spsb",
+   "n": 4,
+   "weakly_dominant_v_realized": true
+  }
+ },
+ "cells_G_tau": {
+  "cv_n2|capped_strong|best_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n2|capped_strong|capped_0": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n2|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|capped_strong|champion": {
+   "G": 0,
+   "tau": "5/14"
+  },
+  "cv_n2|capped_strong|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "cv_n2|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|capped_strong|mean_sq": {
+   "G": 2,
+   "tau": "-3/14"
+  },
+  "cv_n2|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n2|capped_strong|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n2|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|capped_strong|relative_pair": {
+   "G": 1,
+   "tau": "13/14"
+  },
+  "cv_n2|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|capped_strong|strict_wins": {
+   "G": 3,
+   "tau": "9/14"
+  },
+  "cv_n2|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n2|capped_strong|tie_count": {
+   "G": 1,
+   "tau": "-3/7"
+  },
+  "cv_n2|capped_strong|top_half": {
+   "G": 0,
+   "tau": "11/14"
+  },
+  "cv_n2|capped_strong|win_count": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n2|capped_strong|worst_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n2|strong_skew|best_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n2|strong_skew|capped_0": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "cv_n2|strong_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|strong_skew|champion": {
+   "G": 4,
+   "tau": "0"
+  },
+  "cv_n2|strong_skew|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n2|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|strong_skew|mean_sq": {
+   "G": 1,
+   "tau": "0"
+  },
+  "cv_n2|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n2|strong_skew|random_fixed": {
+   "G": 2,
+   "tau": "-3/14"
+  },
+  "cv_n2|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|strong_skew|relative_pair": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n2|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "cv_n2|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n2|strong_skew|tie_count": {
+   "G": 0,
+   "tau": "1/7"
+  },
+  "cv_n2|strong_skew|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n2|strong_skew|win_count": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n2|strong_skew|worst_opp": {
+   "G": 1,
+   "tau": "9/14"
+  },
+  "cv_n2|uniform|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "cv_n2|uniform|capped_0": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "cv_n2|uniform|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|uniform|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "cv_n2|uniform|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n2|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|uniform|mean_sq": {
+   "G": 1,
+   "tau": "1/7"
+  },
+  "cv_n2|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n2|uniform|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n2|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|uniform|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n2|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|uniform|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n2|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n2|uniform|tie_count": {
+   "G": 3,
+   "tau": "-2/7"
+  },
+  "cv_n2|uniform|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|uniform|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n2|uniform|worst_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n2|weak_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "cv_n2|weak_skew|capped_0": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "cv_n2|weak_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|weak_skew|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "cv_n2|weak_skew|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n2|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|weak_skew|mean_sq": {
+   "G": 1,
+   "tau": "1/7"
+  },
+  "cv_n2|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n2|weak_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n2|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n2|weak_skew|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n2|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n2|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "cv_n2|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n2|weak_skew|tie_count": {
+   "G": 4,
+   "tau": "0"
+  },
+  "cv_n2|weak_skew|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n2|weak_skew|win_count": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "cv_n2|weak_skew|worst_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n3|capped_strong|best_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n3|capped_strong|capped_0": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|capped_strong|champion": {
+   "G": 0,
+   "tau": "5/14"
+  },
+  "cv_n3|capped_strong|game_wins": {
+   "G": 5,
+   "tau": "-4/7"
+  },
+  "cv_n3|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|capped_strong|mean_sq": {
+   "G": 2,
+   "tau": "-3/14"
+  },
+  "cv_n3|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "11/14"
+  },
+  "cv_n3|capped_strong|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n3|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|capped_strong|relative_pair": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|capped_strong|strict_wins": {
+   "G": 3,
+   "tau": "9/14"
+  },
+  "cv_n3|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n3|capped_strong|tie_count": {
+   "G": 1,
+   "tau": "-3/7"
+  },
+  "cv_n3|capped_strong|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n3|capped_strong|win_count": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|capped_strong|worst_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|strong_skew|best_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|strong_skew|capped_0": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "cv_n3|strong_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|strong_skew|champion": {
+   "G": 4,
+   "tau": "0"
+  },
+  "cv_n3|strong_skew|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "cv_n3|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|strong_skew|mean_sq": {
+   "G": 2,
+   "tau": "0"
+  },
+  "cv_n3|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|strong_skew|random_fixed": {
+   "G": 2,
+   "tau": "-3/14"
+  },
+  "cv_n3|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|strong_skew|relative_pair": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "cv_n3|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n3|strong_skew|tie_count": {
+   "G": 0,
+   "tau": "1/7"
+  },
+  "cv_n3|strong_skew|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n3|strong_skew|win_count": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|strong_skew|worst_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n3|uniform|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "cv_n3|uniform|capped_0": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "cv_n3|uniform|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|uniform|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "cv_n3|uniform|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n3|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|uniform|mean_sq": {
+   "G": 1,
+   "tau": "1/7"
+  },
+  "cv_n3|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n3|uniform|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n3|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|uniform|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n3|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|uniform|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n3|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n3|uniform|tie_count": {
+   "G": 3,
+   "tau": "-2/7"
+  },
+  "cv_n3|uniform|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|uniform|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n3|uniform|worst_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n3|weak_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "cv_n3|weak_skew|capped_0": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "cv_n3|weak_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|weak_skew|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "cv_n3|weak_skew|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n3|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|weak_skew|mean_sq": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "cv_n3|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n3|weak_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n3|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n3|weak_skew|relative_pair": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n3|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "cv_n3|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n3|weak_skew|tie_count": {
+   "G": 4,
+   "tau": "0"
+  },
+  "cv_n3|weak_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n3|weak_skew|win_count": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "cv_n3|weak_skew|worst_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n4|capped_strong|best_opp": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "cv_n4|capped_strong|capped_0": {
+   "G": 3,
+   "tau": "5/7"
+  },
+  "cv_n4|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|capped_strong|champion": {
+   "G": 2,
+   "tau": "3/14"
+  },
+  "cv_n4|capped_strong|game_wins": {
+   "G": 4,
+   "tau": "-1/2"
+  },
+  "cv_n4|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|capped_strong|mean_sq": {
+   "G": 3,
+   "tau": "-1/2"
+  },
+  "cv_n4|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|capped_strong|norm_by_best": {
+   "G": 3,
+   "tau": "5/7"
+  },
+  "cv_n4|capped_strong|random_fixed": {
+   "G": 7,
+   "tau": "-3/14"
+  },
+  "cv_n4|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|capped_strong|relative_pair": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n4|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|capped_strong|strict_wins": {
+   "G": 1,
+   "tau": "9/14"
+  },
+  "cv_n4|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n4|capped_strong|tie_count": {
+   "G": 7,
+   "tau": "-1/2"
+  },
+  "cv_n4|capped_strong|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n4|capped_strong|win_count": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n4|capped_strong|worst_opp": {
+   "G": 3,
+   "tau": "5/7"
+  },
+  "cv_n4|strong_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "cv_n4|strong_skew|capped_0": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "cv_n4|strong_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|strong_skew|champion": {
+   "G": 4,
+   "tau": "0"
+  },
+  "cv_n4|strong_skew|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "cv_n4|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|strong_skew|mean_sq": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n4|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "cv_n4|strong_skew|random_fixed": {
+   "G": 2,
+   "tau": "-3/14"
+  },
+  "cv_n4|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|strong_skew|relative_pair": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n4|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "cv_n4|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n4|strong_skew|tie_count": {
+   "G": 0,
+   "tau": "1/7"
+  },
+  "cv_n4|strong_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|strong_skew|win_count": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "cv_n4|strong_skew|worst_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "cv_n4|uniform|best_opp": {
+   "G": 1,
+   "tau": "13/14"
+  },
+  "cv_n4|uniform|capped_0": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "cv_n4|uniform|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|uniform|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "cv_n4|uniform|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n4|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|uniform|mean_sq": {
+   "G": 1,
+   "tau": "1/7"
+  },
+  "cv_n4|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n4|uniform|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n4|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|uniform|relative_pair": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n4|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|uniform|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n4|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n4|uniform|tie_count": {
+   "G": 3,
+   "tau": "-2/7"
+  },
+  "cv_n4|uniform|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|uniform|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n4|uniform|worst_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "cv_n4|weak_skew|best_opp": {
+   "G": 1,
+   "tau": "13/14"
+  },
+  "cv_n4|weak_skew|capped_0": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "cv_n4|weak_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|weak_skew|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "cv_n4|weak_skew|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "cv_n4|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|weak_skew|mean_sq": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "cv_n4|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "cv_n4|weak_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "cv_n4|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "cv_n4|weak_skew|relative_pair": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n4|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n4|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "cv_n4|weak_skew|tie_count": {
+   "G": 4,
+   "tau": "0"
+  },
+  "cv_n4|weak_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "cv_n4|weak_skew|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "cv_n4|weak_skew|worst_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n2|capped_strong|best_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "fpsb_n2|capped_strong|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|capped_strong|champion": {
+   "G": 1,
+   "tau": "2/7"
+  },
+  "fpsb_n2|capped_strong|game_wins": {
+   "G": 5,
+   "tau": "-1/2"
+  },
+  "fpsb_n2|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|capped_strong|mean_sq": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "fpsb_n2|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-13/14"
+  },
+  "fpsb_n2|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|capped_strong|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n2|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|capped_strong|relative_pair": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "fpsb_n2|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|capped_strong|strict_wins": {
+   "G": 3,
+   "tau": "4/7"
+  },
+  "fpsb_n2|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n2|capped_strong|tie_count": {
+   "G": 1,
+   "tau": "-3/7"
+  },
+  "fpsb_n2|capped_strong|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "fpsb_n2|capped_strong|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|capped_strong|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|strong_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n2|strong_skew|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|strong_skew|capped_weak": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n2|strong_skew|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "fpsb_n2|strong_skew|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "fpsb_n2|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|strong_skew|mean_sq": {
+   "G": 1,
+   "tau": "2/7"
+  },
+  "fpsb_n2|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n2|strong_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n2|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|strong_skew|relative_pair": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "fpsb_n2|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n2|strong_skew|tie_count": {
+   "G": 0,
+   "tau": "1/14"
+  },
+  "fpsb_n2|strong_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|strong_skew|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|strong_skew|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|uniform|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n2|uniform|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|uniform|capped_weak": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n2|uniform|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "fpsb_n2|uniform|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "fpsb_n2|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|uniform|mean_sq": {
+   "G": 2,
+   "tau": "3/14"
+  },
+  "fpsb_n2|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n2|uniform|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n2|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|uniform|relative_pair": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "fpsb_n2|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|uniform|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n2|uniform|tie_count": {
+   "G": 3,
+   "tau": "-2/7"
+  },
+  "fpsb_n2|uniform|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n2|uniform|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|uniform|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|weak_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n2|weak_skew|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n2|weak_skew|capped_weak": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n2|weak_skew|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "fpsb_n2|weak_skew|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "fpsb_n2|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|weak_skew|mean_sq": {
+   "G": 2,
+   "tau": "3/14"
+  },
+  "fpsb_n2|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n2|weak_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n2|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n2|weak_skew|relative_pair": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "fpsb_n2|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n2|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n2|weak_skew|tie_count": {
+   "G": 4,
+   "tau": "0"
+  },
+  "fpsb_n2|weak_skew|top_half": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n2|weak_skew|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n2|weak_skew|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n3|capped_strong|best_opp": {
+   "G": 1,
+   "tau": "9/14"
+  },
+  "fpsb_n3|capped_strong|capped_0": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "fpsb_n3|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|capped_strong|champion": {
+   "G": 1,
+   "tau": "5/14"
+  },
+  "fpsb_n3|capped_strong|game_wins": {
+   "G": 5,
+   "tau": "-1/2"
+  },
+  "fpsb_n3|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|capped_strong|mean_sq": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "fpsb_n3|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|capped_strong|norm_by_best": {
+   "G": 1,
+   "tau": "13/14"
+  },
+  "fpsb_n3|capped_strong|random_fixed": {
+   "G": 2,
+   "tau": "-1/14"
+  },
+  "fpsb_n3|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|capped_strong|relative_pair": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n3|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|capped_strong|strict_wins": {
+   "G": 3,
+   "tau": "9/14"
+  },
+  "fpsb_n3|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n3|capped_strong|tie_count": {
+   "G": 1,
+   "tau": "-5/14"
+  },
+  "fpsb_n3|capped_strong|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|capped_strong|win_count": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "fpsb_n3|capped_strong|worst_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "fpsb_n3|strong_skew|best_opp": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "fpsb_n3|strong_skew|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n3|strong_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|strong_skew|champion": {
+   "G": 4,
+   "tau": "1/14"
+  },
+  "fpsb_n3|strong_skew|game_wins": {
+   "G": 5,
+   "tau": "-4/7"
+  },
+  "fpsb_n3|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|strong_skew|mean_sq": {
+   "G": 1,
+   "tau": "1/7"
+  },
+  "fpsb_n3|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|strong_skew|norm_by_best": {
+   "G": 1,
+   "tau": "13/14"
+  },
+  "fpsb_n3|strong_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n3|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|strong_skew|relative_pair": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n3|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n3|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n3|strong_skew|tie_count": {
+   "G": 0,
+   "tau": "3/14"
+  },
+  "fpsb_n3|strong_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|strong_skew|win_count": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n3|strong_skew|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n3|uniform|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n3|uniform|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n3|uniform|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|uniform|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "fpsb_n3|uniform|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "fpsb_n3|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|uniform|mean_sq": {
+   "G": 1,
+   "tau": "2/7"
+  },
+  "fpsb_n3|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|uniform|norm_by_best": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n3|uniform|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n3|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|uniform|relative_pair": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n3|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|uniform|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n3|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n3|uniform|tie_count": {
+   "G": 3,
+   "tau": "-2/7"
+  },
+  "fpsb_n3|uniform|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|uniform|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n3|uniform|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n3|weak_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n3|weak_skew|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n3|weak_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|weak_skew|champion": {
+   "G": 4,
+   "tau": "-1/14"
+  },
+  "fpsb_n3|weak_skew|game_wins": {
+   "G": 5,
+   "tau": "-5/7"
+  },
+  "fpsb_n3|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|weak_skew|mean_sq": {
+   "G": 2,
+   "tau": "3/14"
+  },
+  "fpsb_n3|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|weak_skew|norm_by_best": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n3|weak_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n3|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n3|weak_skew|relative_pair": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n3|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n3|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n3|weak_skew|tie_count": {
+   "G": 4,
+   "tau": "0"
+  },
+  "fpsb_n3|weak_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n3|weak_skew|win_count": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n3|weak_skew|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n4|capped_strong|best_opp": {
+   "G": 2,
+   "tau": "9/14"
+  },
+  "fpsb_n4|capped_strong|capped_0": {
+   "G": 5,
+   "tau": "5/14"
+  },
+  "fpsb_n4|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|capped_strong|champion": {
+   "G": 2,
+   "tau": "2/7"
+  },
+  "fpsb_n4|capped_strong|game_wins": {
+   "G": 4,
+   "tau": "-3/7"
+  },
+  "fpsb_n4|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|capped_strong|mean_sq": {
+   "G": 2,
+   "tau": "1/7"
+  },
+  "fpsb_n4|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|capped_strong|random_fixed": {
+   "G": 7,
+   "tau": "-1/7"
+  },
+  "fpsb_n4|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|capped_strong|relative_pair": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n4|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|capped_strong|strict_wins": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "fpsb_n4|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n4|capped_strong|tie_count": {
+   "G": 7,
+   "tau": "-3/7"
+  },
+  "fpsb_n4|capped_strong|top_half": {
+   "G": 1,
+   "tau": "13/14"
+  },
+  "fpsb_n4|capped_strong|win_count": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n4|capped_strong|worst_opp": {
+   "G": 5,
+   "tau": "5/14"
+  },
+  "fpsb_n4|strong_skew|best_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n4|strong_skew|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n4|strong_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|strong_skew|champion": {
+   "G": 4,
+   "tau": "1/14"
+  },
+  "fpsb_n4|strong_skew|game_wins": {
+   "G": 5,
+   "tau": "-4/7"
+  },
+  "fpsb_n4|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|strong_skew|mean_sq": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "fpsb_n4|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|strong_skew|norm_by_best": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n4|strong_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n4|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|strong_skew|relative_pair": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n4|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n4|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n4|strong_skew|tie_count": {
+   "G": 0,
+   "tau": "3/14"
+  },
+  "fpsb_n4|strong_skew|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n4|strong_skew|win_count": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n4|strong_skew|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n4|uniform|best_opp": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "fpsb_n4|uniform|capped_0": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n4|uniform|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|uniform|champion": {
+   "G": 4,
+   "tau": "1/14"
+  },
+  "fpsb_n4|uniform|game_wins": {
+   "G": 5,
+   "tau": "-4/7"
+  },
+  "fpsb_n4|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|uniform|mean_sq": {
+   "G": 1,
+   "tau": "1/7"
+  },
+  "fpsb_n4|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|uniform|norm_by_best": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n4|uniform|random_fixed": {
+   "G": 2,
+   "tau": "-1/7"
+  },
+  "fpsb_n4|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|uniform|relative_pair": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n4|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|uniform|strict_wins": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n4|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n4|uniform|tie_count": {
+   "G": 3,
+   "tau": "-2/7"
+  },
+  "fpsb_n4|uniform|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|uniform|win_count": {
+   "G": 2,
+   "tau": "11/14"
+  },
+  "fpsb_n4|uniform|worst_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "fpsb_n4|weak_skew|best_opp": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n4|weak_skew|capped_0": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "fpsb_n4|weak_skew|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|weak_skew|champion": {
+   "G": 4,
+   "tau": "0"
+  },
+  "fpsb_n4|weak_skew|game_wins": {
+   "G": 5,
+   "tau": "-9/14"
+  },
+  "fpsb_n4|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|weak_skew|mean_sq": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "fpsb_n4|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|weak_skew|norm_by_best": {
+   "G": 1,
+   "tau": "6/7"
+  },
+  "fpsb_n4|weak_skew|random_fixed": {
+   "G": 2,
+   "tau": "-1/14"
+  },
+  "fpsb_n4|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "fpsb_n4|weak_skew|relative_pair": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "fpsb_n4|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "fpsb_n4|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "fpsb_n4|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "fpsb_n4|weak_skew|tie_count": {
+   "G": 4,
+   "tau": "1/14"
+  },
+  "fpsb_n4|weak_skew|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "fpsb_n4|weak_skew|win_count": {
+   "G": 2,
+   "tau": "5/7"
+  },
+  "fpsb_n4|weak_skew|worst_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n2|capped_strong|best_opp": {
+   "G": 2,
+   "tau": "2/7"
+  },
+  "spsb_n2|capped_strong|capped_0": {
+   "G": 4,
+   "tau": "-5/14"
+  },
+  "spsb_n2|capped_strong|capped_weak": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|capped_strong|champion": {
+   "G": 5,
+   "tau": "-1/7"
+  },
+  "spsb_n2|capped_strong|game_wins": {
+   "G": 3,
+   "tau": "2/7"
+  },
+  "spsb_n2|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|capped_strong|mean_sq": {
+   "G": 0,
+   "tau": "5/7"
+  },
+  "spsb_n2|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "spsb_n2|capped_strong|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n2|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|capped_strong|relative_pair": {
+   "G": 3,
+   "tau": "5/14"
+  },
+  "spsb_n2|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|capped_strong|strict_wins": {
+   "G": 3,
+   "tau": "3/14"
+  },
+  "spsb_n2|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n2|capped_strong|tie_count": {
+   "G": 2,
+   "tau": "-1/14"
+  },
+  "spsb_n2|capped_strong|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|capped_strong|win_count": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "spsb_n2|capped_strong|worst_opp": {
+   "G": 3,
+   "tau": "0"
+  },
+  "spsb_n2|strong_skew|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n2|strong_skew|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|strong_skew|capped_weak": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|strong_skew|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n2|strong_skew|game_wins": {
+   "G": 3,
+   "tau": "3/7"
+  },
+  "spsb_n2|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|strong_skew|mean_sq": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "spsb_n2|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|strong_skew|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n2|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|strong_skew|relative_pair": {
+   "G": 3,
+   "tau": "3/7"
+  },
+  "spsb_n2|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|strong_skew|strict_wins": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n2|strong_skew|tie_count": {
+   "G": 1,
+   "tau": "2/7"
+  },
+  "spsb_n2|strong_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|strong_skew|win_count": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|strong_skew|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  },
+  "spsb_n2|uniform|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n2|uniform|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|uniform|capped_weak": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|uniform|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n2|uniform|game_wins": {
+   "G": 3,
+   "tau": "3/7"
+  },
+  "spsb_n2|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|uniform|mean_sq": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n2|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|uniform|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n2|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|uniform|relative_pair": {
+   "G": 3,
+   "tau": "3/7"
+  },
+  "spsb_n2|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|uniform|strict_wins": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n2|uniform|tie_count": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|uniform|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|uniform|win_count": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|uniform|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  },
+  "spsb_n2|weak_skew|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n2|weak_skew|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|weak_skew|capped_weak": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n2|weak_skew|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n2|weak_skew|game_wins": {
+   "G": 3,
+   "tau": "3/7"
+  },
+  "spsb_n2|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|weak_skew|mean_sq": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n2|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|weak_skew|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n2|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n2|weak_skew|relative_pair": {
+   "G": 3,
+   "tau": "3/7"
+  },
+  "spsb_n2|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|weak_skew|strict_wins": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n2|weak_skew|tie_count": {
+   "G": 5,
+   "tau": "-1/2"
+  },
+  "spsb_n2|weak_skew|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n2|weak_skew|win_count": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n2|weak_skew|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  },
+  "spsb_n3|capped_strong|best_opp": {
+   "G": 2,
+   "tau": "2/7"
+  },
+  "spsb_n3|capped_strong|capped_0": {
+   "G": 3,
+   "tau": "1/7"
+  },
+  "spsb_n3|capped_strong|capped_weak": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "spsb_n3|capped_strong|champion": {
+   "G": 5,
+   "tau": "-1/7"
+  },
+  "spsb_n3|capped_strong|game_wins": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "spsb_n3|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|capped_strong|mean_sq": {
+   "G": 1,
+   "tau": "1/2"
+  },
+  "spsb_n3|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|capped_strong|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n3|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|capped_strong|relative_pair": {
+   "G": 1,
+   "tau": "4/7"
+  },
+  "spsb_n3|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|capped_strong|strict_wins": {
+   "G": 1,
+   "tau": "5/14"
+  },
+  "spsb_n3|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n3|capped_strong|tie_count": {
+   "G": 2,
+   "tau": "-1/14"
+  },
+  "spsb_n3|capped_strong|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|capped_strong|win_count": {
+   "G": 1,
+   "tau": "3/7"
+  },
+  "spsb_n3|capped_strong|worst_opp": {
+   "G": 3,
+   "tau": "0"
+  },
+  "spsb_n3|strong_skew|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n3|strong_skew|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n3|strong_skew|capped_weak": {
+   "G": 3,
+   "tau": "1/7"
+  },
+  "spsb_n3|strong_skew|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n3|strong_skew|game_wins": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "spsb_n3|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|strong_skew|mean_sq": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|strong_skew|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n3|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|strong_skew|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|strong_skew|strict_wins": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n3|strong_skew|tie_count": {
+   "G": 1,
+   "tau": "2/7"
+  },
+  "spsb_n3|strong_skew|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|strong_skew|win_count": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|strong_skew|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  },
+  "spsb_n3|uniform|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n3|uniform|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n3|uniform|capped_weak": {
+   "G": 3,
+   "tau": "1/7"
+  },
+  "spsb_n3|uniform|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n3|uniform|game_wins": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "spsb_n3|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|uniform|mean_sq": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|uniform|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n3|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|uniform|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|uniform|strict_wins": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n3|uniform|tie_count": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n3|uniform|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|uniform|win_count": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|uniform|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  },
+  "spsb_n3|weak_skew|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n3|weak_skew|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n3|weak_skew|capped_weak": {
+   "G": 3,
+   "tau": "1/7"
+  },
+  "spsb_n3|weak_skew|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n3|weak_skew|game_wins": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "spsb_n3|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|weak_skew|mean_sq": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|weak_skew|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n3|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n3|weak_skew|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n3|weak_skew|strict_wins": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n3|weak_skew|tie_count": {
+   "G": 5,
+   "tau": "-1/2"
+  },
+  "spsb_n3|weak_skew|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n3|weak_skew|win_count": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n3|weak_skew|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  },
+  "spsb_n4|capped_strong|best_opp": {
+   "G": 2,
+   "tau": "2/7"
+  },
+  "spsb_n4|capped_strong|capped_0": {
+   "G": 3,
+   "tau": "1/7"
+  },
+  "spsb_n4|capped_strong|capped_weak": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|capped_strong|champion": {
+   "G": 5,
+   "tau": "-1/7"
+  },
+  "spsb_n4|capped_strong|game_wins": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "spsb_n4|capped_strong|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|capped_strong|mean_sq": {
+   "G": 1,
+   "tau": "1/2"
+  },
+  "spsb_n4|capped_strong|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|capped_strong|norm_by_best": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|capped_strong|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n4|capped_strong|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|capped_strong|relative_pair": {
+   "G": 1,
+   "tau": "9/14"
+  },
+  "spsb_n4|capped_strong|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|capped_strong|strict_wins": {
+   "G": 1,
+   "tau": "1/2"
+  },
+  "spsb_n4|capped_strong|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n4|capped_strong|tie_count": {
+   "G": 2,
+   "tau": "-1/14"
+  },
+  "spsb_n4|capped_strong|top_half": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|capped_strong|win_count": {
+   "G": 1,
+   "tau": "4/7"
+  },
+  "spsb_n4|capped_strong|worst_opp": {
+   "G": 3,
+   "tau": "0"
+  },
+  "spsb_n4|strong_skew|best_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "spsb_n4|strong_skew|capped_0": {
+   "G": 4,
+   "tau": "-2/7"
+  },
+  "spsb_n4|strong_skew|capped_weak": {
+   "G": 2,
+   "tau": "4/7"
+  },
+  "spsb_n4|strong_skew|champion": {
+   "G": 5,
+   "tau": "-1/14"
+  },
+  "spsb_n4|strong_skew|game_wins": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n4|strong_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|strong_skew|mean_sq": {
+   "G": 1,
+   "tau": "4/7"
+  },
+  "spsb_n4|strong_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|strong_skew|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "spsb_n4|strong_skew|random_fixed": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n4|strong_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|strong_skew|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n4|strong_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|strong_skew|strict_wins": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n4|strong_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n4|strong_skew|tie_count": {
+   "G": 1,
+   "tau": "3/14"
+  },
+  "spsb_n4|strong_skew|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "spsb_n4|strong_skew|win_count": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n4|strong_skew|worst_opp": {
+   "G": 3,
+   "tau": "-1/14"
+  },
+  "spsb_n4|uniform|best_opp": {
+   "G": 2,
+   "tau": "5/14"
+  },
+  "spsb_n4|uniform|capped_0": {
+   "G": 4,
+   "tau": "-2/7"
+  },
+  "spsb_n4|uniform|capped_weak": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "spsb_n4|uniform|champion": {
+   "G": 5,
+   "tau": "-1/14"
+  },
+  "spsb_n4|uniform|game_wins": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n4|uniform|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|uniform|mean_sq": {
+   "G": 1,
+   "tau": "4/7"
+  },
+  "spsb_n4|uniform|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|uniform|norm_by_best": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "spsb_n4|uniform|random_fixed": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n4|uniform|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|uniform|relative_pair": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n4|uniform|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|uniform|strict_wins": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n4|uniform|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n4|uniform|tie_count": {
+   "G": 4,
+   "tau": "-2/7"
+  },
+  "spsb_n4|uniform|top_half": {
+   "G": 0,
+   "tau": "13/14"
+  },
+  "spsb_n4|uniform|win_count": {
+   "G": 1,
+   "tau": "5/7"
+  },
+  "spsb_n4|uniform|worst_opp": {
+   "G": 3,
+   "tau": "-1/14"
+  },
+  "spsb_n4|weak_skew|best_opp": {
+   "G": 2,
+   "tau": "3/7"
+  },
+  "spsb_n4|weak_skew|capped_0": {
+   "G": 4,
+   "tau": "-3/14"
+  },
+  "spsb_n4|weak_skew|capped_weak": {
+   "G": 3,
+   "tau": "1/7"
+  },
+  "spsb_n4|weak_skew|champion": {
+   "G": 5,
+   "tau": "0"
+  },
+  "spsb_n4|weak_skew|game_wins": {
+   "G": 2,
+   "tau": "1/2"
+  },
+  "spsb_n4|weak_skew|mean_payoff": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|weak_skew|mean_sq": {
+   "G": 0,
+   "tau": "11/14"
+  },
+  "spsb_n4|weak_skew|neg_mean": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|weak_skew|norm_by_best": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n4|weak_skew|random_fixed": {
+   "G": 5,
+   "tau": "1/14"
+  },
+  "spsb_n4|weak_skew|rank_score": {
+   "G": 7,
+   "tau": "-1"
+  },
+  "spsb_n4|weak_skew|relative_pair": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "spsb_n4|weak_skew|spread": {
+   "G": 0,
+   "tau": "1"
+  },
+  "spsb_n4|weak_skew|strict_wins": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "spsb_n4|weak_skew|tail_swap": {
+   "G": 0,
+   "tau": "-1/2"
+  },
+  "spsb_n4|weak_skew|tie_count": {
+   "G": 5,
+   "tau": "-1/2"
+  },
+  "spsb_n4|weak_skew|top_half": {
+   "G": 0,
+   "tau": "6/7"
+  },
+  "spsb_n4|weak_skew|win_count": {
+   "G": 1,
+   "tau": "11/14"
+  },
+  "spsb_n4|weak_skew|worst_opp": {
+   "G": 3,
+   "tau": "-1/7"
+  }
+ },
+ "design_law": {
+  "band_counts": {
+   "faithful": 2,
+   "gameable": 16,
+   "immune_unfaithful": 1
+  },
+  "bands": {
+   "best_opp": "gameable",
+   "capped_0": "gameable",
+   "capped_weak": "gameable",
+   "champion": "gameable",
+   "game_wins": "gameable",
+   "mean_payoff": "faithful",
+   "mean_sq": "gameable",
+   "neg_mean": "gameable",
+   "norm_by_best": "gameable",
+   "random_fixed": "gameable",
+   "rank_score": "gameable",
+   "relative_pair": "gameable",
+   "spread": "faithful",
+   "strict_wins": "gameable",
+   "tail_swap": "immune_unfaithful",
+   "tie_count": "gameable",
+   "top_half": "gameable",
+   "win_count": "gameable",
+   "worst_opp": "gameable"
+  },
+  "law_mismatches": {},
+  "predicted_bands": {
+   "best_opp": "gameable",
+   "capped_0": "gameable",
+   "capped_weak": "gameable",
+   "champion": "gameable",
+   "game_wins": "gameable",
+   "mean_payoff": "faithful",
+   "mean_sq": "gameable",
+   "neg_mean": "gameable",
+   "norm_by_best": "gameable",
+   "random_fixed": "gameable",
+   "rank_score": "gameable",
+   "relative_pair": "gameable",
+   "spread": "faithful",
+   "strict_wins": "gameable",
+   "tail_swap": "immune_unfaithful",
+   "tie_count": "gameable",
+   "top_half": "gameable",
+   "win_count": "gameable",
+   "worst_opp": "gameable"
+  }
+ },
+ "factor_split": {
+  "cv_n2": {
+   "MS_population": "131/204",
+   "MS_protocol": "3959/544",
+   "SS_interaction": "793/34",
+   "SS_population": "131/68",
+   "SS_protocol": "3959/34",
+   "SS_total": "9635/68",
+   "protocol_exceeds_population": true
+  },
+  "cv_n3": {
+   "MS_population": "49/68",
+   "MS_protocol": "3953/544",
+   "SS_interaction": "819/34",
+   "SS_population": "147/68",
+   "SS_protocol": "3953/34",
+   "SS_total": "9691/68",
+   "protocol_exceeds_population": true
+  },
+  "cv_n4": {
+   "MS_population": "443/204",
+   "MS_protocol": "2321/272",
+   "SS_interaction": "1007/17",
+   "SS_population": "443/68",
+   "SS_protocol": "2321/17",
+   "SS_total": "13755/68",
+   "protocol_exceeds_population": true
+  },
+  "fpsb_n2": {
+   "MS_population": "40/51",
+   "MS_protocol": "977/136",
+   "SS_interaction": "300/17",
+   "SS_population": "40/17",
+   "SS_protocol": "1954/17",
+   "SS_total": "2294/17",
+   "protocol_exceeds_population": true
+  },
+  "fpsb_n3": {
+   "MS_population": "91/204",
+   "MS_protocol": "3969/544",
+   "SS_interaction": "575/34",
+   "SS_population": "91/68",
+   "SS_protocol": "3969/34",
+   "SS_total": "9179/68",
+   "protocol_exceeds_population": true
+  },
+  "fpsb_n4": {
+   "MS_population": "94/51",
+   "MS_protocol": "4815/544",
+   "SS_interaction": "2141/34",
+   "SS_population": "94/17",
+   "SS_protocol": "4815/34",
+   "SS_total": "3572/17",
+   "protocol_exceeds_population": true
+  },
+  "spsb_n2": {
+   "MS_population": "1/4",
+   "MS_protocol": "3545/272",
+   "SS_interaction": "13",
+   "SS_population": "3/4",
+   "SS_protocol": "3545/17",
+   "SS_total": "15115/68",
+   "protocol_exceeds_population": true
+  },
+  "spsb_n3": {
+   "MS_population": "1/3",
+   "MS_protocol": "6553/544",
+   "SS_interaction": "27/2",
+   "SS_population": "1",
+   "SS_protocol": "6553/34",
+   "SS_total": "3523/17",
+   "protocol_exceeds_population": true
+  },
+  "spsb_n4": {
+   "MS_population": "91/204",
+   "MS_protocol": "6305/544",
+   "SS_interaction": "507/34",
+   "SS_population": "91/68",
+   "SS_protocol": "6305/34",
+   "SS_total": "13715/68",
+   "protocol_exceeds_population": true
+  }
+ },
+ "headline": {
+  "cells": 684,
+  "constructed_witness": "rank_score",
+  "constructed_witness_G_max": 7,
+  "constructed_witness_excess_zero": true,
+  "constructed_witness_reversed_everywhere": true,
+  "excess_zero_set": [
+   "mean_payoff",
+   "rank_score",
+   "spread"
+  ],
+  "faithful_set": [
+   "mean_payoff",
+   "spread"
+  ],
+  "fragile_reference": "random_fixed",
+  "fragile_reference_G_mean": "59/18",
+  "fragile_reference_T_raw": "0",
+  "naive_law_violators": [
+   "rank_score"
+  ],
+  "raw_zero_set": [
+   "best_opp",
+   "random_fixed",
+   "worst_opp"
+  ],
+  "reversed_set": [
+   "rank_score"
+  ],
+  "reversed_set_present": true,
+  "sign_consistent_set": [
+   "mean_payoff",
+   "rank_score",
+   "spread"
+  ],
+  "transport_entries": 1026,
+  "witness": "neg_mean",
+  "witness_G_max": 7,
+  "witness_G_max_possible": 7,
+  "witness_excess_zero": false,
+  "witness_faithful": false,
+  "witness_gameable_share": "36/36",
+  "witness_tau_lt_1": 36
+ },
+ "model": {
+  "cells": 684,
+  "design_space_source": "spike_v2.PROTOCOLS + the constructed witness `neg_mean`",
+  "families": {
+   "cv_n2": "cv",
+   "cv_n3": "cv",
+   "cv_n4": "cv",
+   "fpsb_n2": "fpsb",
+   "fpsb_n3": "fpsb",
+   "fpsb_n4": "fpsb",
+   "spsb_n2": "spsb",
+   "spsb_n3": "spsb",
+   "spsb_n4": "spsb"
+  },
+  "games": [
+   "fpsb_n2",
+   "fpsb_n3",
+   "fpsb_n4",
+   "spsb_n2",
+   "spsb_n3",
+   "spsb_n4",
+   "cv_n2",
+   "cv_n3",
+   "cv_n4"
+  ],
+  "ladder_widened_vs_v3": [
+   "fpsb_n3",
+   "fpsb_n4",
+   "spsb_n3",
+   "spsb_n4",
+   "cv_n3"
+  ],
+  "n_bidders": {
+   "cv_n2": 2,
+   "cv_n3": 3,
+   "cv_n4": 4,
+   "fpsb_n2": 2,
+   "fpsb_n3": 3,
+   "fpsb_n4": 4,
+   "spsb_n2": 2,
+   "spsb_n3": 3,
+   "spsb_n4": 4
+  },
+  "policies": [
+   "eq_fpsb",
+   "eq_spsb",
+   "shade_3_4",
+   "shade_1_4",
+   "overbid_5_4",
+   "bid_min",
+   "bid_mid",
+   "bid_max"
+  ],
+  "population_pairs": [
+   [
+    "uniform",
+    "strong_skew"
+   ],
+   [
+    "uniform",
+    "weak_skew"
+   ],
+   [
+    "uniform",
+    "capped_strong"
+   ],
+   [
+    "strong_skew",
+    "weak_skew"
+   ],
+   [
+    "strong_skew",
+    "capped_strong"
+   ],
+   [
+    "weak_skew",
+    "capped_strong"
+   ]
+  ],
+  "populations": [
+   "uniform",
+   "strong_skew",
+   "weak_skew",
+   "capped_strong"
+  ],
+  "protocols": [
+   "mean_payoff",
+   "mean_sq",
+   "spread",
+   "top_half",
+   "worst_opp",
+   "best_opp",
+   "win_count",
+   "strict_wins",
+   "tie_count",
+   "norm_by_best",
+   "relative_pair",
+   "game_wins",
+   "champion",
+   "capped_0",
+   "capped_weak",
+   "random_fixed",
+   "tail_swap",
+   "neg_mean",
+   "rank_score"
+  ],
+  "transport_entries": 1026
+ },
+ "per_protocol": {
+  "best_opp": {
+   "G_max": 2,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "capped_0": {
+   "G_max": 5,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "capped_weak": {
+   "G_max": 4,
+   "cells": 36,
+   "faithful": 22,
+   "gameable": 14,
+   "immune": 22,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 14
+  },
+  "champion": {
+   "G_max": 5,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 34,
+   "immune": 2,
+   "immune_and_unfaithful": 2,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "game_wins": {
+   "G_max": 5,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "mean_payoff": {
+   "G_max": 0,
+   "cells": 36,
+   "faithful": 36,
+   "gameable": 0,
+   "immune": 36,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 0
+  },
+  "mean_sq": {
+   "G_max": 3,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 28,
+   "immune": 8,
+   "immune_and_unfaithful": 8,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "neg_mean": {
+   "G_max": 7,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 35,
+   "tau_lt_1": 36
+  },
+  "norm_by_best": {
+   "G_max": 3,
+   "cells": 36,
+   "faithful": 8,
+   "gameable": 8,
+   "immune": 28,
+   "immune_and_unfaithful": 20,
+   "reversed": 0,
+   "tau_lt_1": 28
+  },
+  "random_fixed": {
+   "G_max": 7,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "rank_score": {
+   "G_max": 7,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 36,
+   "tau_lt_1": 36
+  },
+  "relative_pair": {
+   "G_max": 3,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 34,
+   "immune": 2,
+   "immune_and_unfaithful": 2,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "spread": {
+   "G_max": 0,
+   "cells": 36,
+   "faithful": 36,
+   "gameable": 0,
+   "immune": 36,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 0
+  },
+  "strict_wins": {
+   "G_max": 3,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "tail_swap": {
+   "G_max": 0,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 0,
+   "immune": 36,
+   "immune_and_unfaithful": 36,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "tie_count": {
+   "G_max": 7,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 30,
+   "immune": 6,
+   "immune_and_unfaithful": 6,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "top_half": {
+   "G_max": 1,
+   "cells": 36,
+   "faithful": 18,
+   "gameable": 2,
+   "immune": 34,
+   "immune_and_unfaithful": 16,
+   "reversed": 0,
+   "tau_lt_1": 18
+  },
+  "win_count": {
+   "G_max": 2,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  },
+  "worst_opp": {
+   "G_max": 5,
+   "cells": 36,
+   "faithful": 0,
+   "gameable": 36,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "reversed": 0,
+   "tau_lt_1": 36
+  }
+ },
+ "transport": {
+  "cv_n2|best_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|best_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|best_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n2|best_opp|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|best_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n2|capped_0|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n2|capped_0|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|capped_0|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n2|capped_0|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|capped_0|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n2|capped_weak|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|capped_weak|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|capped_weak|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|capped_weak|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|capped_weak|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|champion|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n2|champion|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|champion|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n2|champion|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|champion|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n2|game_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|game_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|game_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|game_wins|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|game_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|mean_payoff|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|mean_payoff|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|mean_payoff|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|mean_payoff|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|mean_sq|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/4",
+   "raw": "2/7"
+  },
+  "cv_n2|mean_sq|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|mean_sq|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "cv_n2|mean_sq|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|mean_sq|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "cv_n2|neg_mean|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|neg_mean|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|neg_mean|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|neg_mean|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|neg_mean|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|norm_by_best|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n2|norm_by_best|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|norm_by_best|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|norm_by_best|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|random_fixed|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|random_fixed|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|random_fixed|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n2|random_fixed|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|random_fixed|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n2|rank_score|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|rank_score|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|rank_score|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|rank_score|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|rank_score|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|relative_pair|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/14",
+   "raw": "3/28"
+  },
+  "cv_n2|relative_pair|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|relative_pair|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n2|relative_pair|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|relative_pair|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n2|spread|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|spread|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|spread|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|spread|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|spread|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|strict_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n2|strict_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|strict_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|strict_wins|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|strict_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n2|tail_swap|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|tail_swap|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|tail_swap|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|tail_swap|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|tail_swap|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|tie_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "2/7",
+   "raw": "9/28"
+  },
+  "cv_n2|tie_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "4/7",
+   "raw": "17/28"
+  },
+  "cv_n2|tie_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/7",
+   "raw": "3/14"
+  },
+  "cv_n2|tie_count|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "5/14",
+   "raw": "11/28"
+  },
+  "cv_n2|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "cv_n2|tie_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/14",
+   "raw": "3/7"
+  },
+  "cv_n2|top_half|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/14",
+   "raw": "3/28"
+  },
+  "cv_n2|top_half|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|top_half|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n2|top_half|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|top_half|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n2|win_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|win_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n2|win_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n2|win_count|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n2|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n2|win_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n2|worst_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|worst_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|worst_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n2|worst_opp|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n2|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n2|worst_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n3|best_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|best_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|best_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n3|best_opp|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|best_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n3|capped_0|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n3|capped_0|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|capped_0|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n3|capped_0|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|capped_0|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n3|capped_weak|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|capped_weak|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|capped_weak|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|capped_weak|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|capped_weak|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|champion|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n3|champion|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|champion|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n3|champion|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|champion|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n3|game_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n3|game_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|game_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|game_wins|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|game_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|mean_payoff|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|mean_payoff|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|mean_payoff|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|mean_payoff|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|mean_sq|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "5/28",
+   "raw": "3/14"
+  },
+  "cv_n3|mean_sq|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n3|mean_sq|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "5/28",
+   "raw": "1/4"
+  },
+  "cv_n3|mean_sq|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n3|mean_sq|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/14",
+   "raw": "2/7"
+  },
+  "cv_n3|neg_mean|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|neg_mean|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|neg_mean|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|neg_mean|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|neg_mean|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n3|norm_by_best|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|norm_by_best|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n3|norm_by_best|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|norm_by_best|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n3|random_fixed|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|random_fixed|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|random_fixed|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n3|random_fixed|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|random_fixed|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n3|rank_score|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|rank_score|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|rank_score|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|rank_score|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|rank_score|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|relative_pair|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|relative_pair|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|relative_pair|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "cv_n3|relative_pair|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n3|relative_pair|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|spread|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|spread|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|spread|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|spread|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|spread|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|strict_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n3|strict_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|strict_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|strict_wins|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n3|strict_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n3|tail_swap|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|tail_swap|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|tail_swap|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|tail_swap|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|tail_swap|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|tie_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "2/7",
+   "raw": "9/28"
+  },
+  "cv_n3|tie_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "4/7",
+   "raw": "17/28"
+  },
+  "cv_n3|tie_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/7",
+   "raw": "3/14"
+  },
+  "cv_n3|tie_count|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "5/14",
+   "raw": "11/28"
+  },
+  "cv_n3|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "cv_n3|tie_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/14",
+   "raw": "3/7"
+  },
+  "cv_n3|top_half|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n3|top_half|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|top_half|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n3|top_half|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|top_half|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n3|win_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|win_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "cv_n3|win_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n3|win_count|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n3|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n3|win_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n3|worst_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|worst_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|worst_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n3|worst_opp|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n3|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n3|worst_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n4|best_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n4|best_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|best_opp|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|best_opp|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|best_opp|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|capped_0|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n4|capped_0|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|capped_0|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "1/28",
+   "raw": "1/7"
+  },
+  "cv_n4|capped_0|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|capped_0|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/28",
+   "raw": "1/7"
+  },
+  "cv_n4|capped_weak|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|capped_weak|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|capped_weak|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|capped_weak|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|capped_weak|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|champion|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "cv_n4|champion|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|champion|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "cv_n4|champion|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|champion|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "cv_n4|game_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|game_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|game_wins|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "cv_n4|game_wins|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|game_wins|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "cv_n4|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|mean_payoff|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|mean_payoff|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|mean_payoff|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|mean_payoff|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|mean_sq|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "cv_n4|mean_sq|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "cv_n4|mean_sq|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "9/28",
+   "raw": "3/7"
+  },
+  "cv_n4|mean_sq|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "1/14",
+   "raw": "3/28"
+  },
+  "cv_n4|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "cv_n4|mean_sq|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "5/14",
+   "raw": "13/28"
+  },
+  "cv_n4|neg_mean|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|neg_mean|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|neg_mean|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|neg_mean|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|neg_mean|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n4|norm_by_best|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|norm_by_best|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|norm_by_best|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|norm_by_best|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|random_fixed|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n4|random_fixed|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|random_fixed|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|random_fixed|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|random_fixed|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|rank_score|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|rank_score|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|rank_score|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|rank_score|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|rank_score|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|relative_pair|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "cv_n4|relative_pair|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|relative_pair|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "cv_n4|relative_pair|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|relative_pair|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "cv_n4|spread|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|spread|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|spread|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|spread|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|spread|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|strict_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "cv_n4|strict_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|strict_wins|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|strict_wins|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|strict_wins|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "cv_n4|tail_swap|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/7",
+   "raw": "1/2"
+  },
+  "cv_n4|tail_swap|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|tail_swap|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "5/14",
+   "raw": "13/28"
+  },
+  "cv_n4|tail_swap|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|tail_swap|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "5/14",
+   "raw": "13/28"
+  },
+  "cv_n4|tie_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "cv_n4|tie_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "4/7",
+   "raw": "17/28"
+  },
+  "cv_n4|tie_count|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "3/28",
+   "raw": "3/14"
+  },
+  "cv_n4|tie_count|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "5/14",
+   "raw": "11/28"
+  },
+  "cv_n4|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "cv_n4|tie_count|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "9/28",
+   "raw": "3/7"
+  },
+  "cv_n4|top_half|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "cv_n4|top_half|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|top_half|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "cv_n4|top_half|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "cv_n4|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|top_half|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "cv_n4|win_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "cv_n4|win_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|win_count|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "cv_n4|win_count|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|win_count|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "cv_n4|worst_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "cv_n4|worst_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|worst_opp|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "cv_n4|worst_opp|uniform>strong_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "cv_n4|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "cv_n4|worst_opp|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n2|best_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|best_opp|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|best_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|best_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|best_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_0|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_0|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_0|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_0|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_0|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_weak|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n2|capped_weak|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_weak|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n2|capped_weak|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|capped_weak|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n2|champion|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n2|champion|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|champion|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n2|champion|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|champion|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n2|game_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|game_wins|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|game_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|game_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|game_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|mean_payoff|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|mean_payoff|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|mean_payoff|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|mean_payoff|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|mean_sq|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n2|mean_sq|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|mean_sq|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "fpsb_n2|mean_sq|uniform>strong_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|mean_sq|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "fpsb_n2|neg_mean|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|neg_mean|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|neg_mean|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|neg_mean|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|neg_mean|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|norm_by_best|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|norm_by_best|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|norm_by_best|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|norm_by_best|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|random_fixed|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|random_fixed|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|random_fixed|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|random_fixed|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|random_fixed|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|rank_score|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|rank_score|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|rank_score|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|rank_score|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|rank_score|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|relative_pair|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|relative_pair|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|relative_pair|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|relative_pair|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|relative_pair|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|spread|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|spread|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|spread|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|spread|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|spread|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|strict_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n2|strict_wins|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|strict_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n2|strict_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|strict_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n2|tail_swap|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|tail_swap|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|tail_swap|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|tail_swap|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|tail_swap|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|tie_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "fpsb_n2|tie_count|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "17/28",
+   "raw": "17/28"
+  },
+  "fpsb_n2|tie_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/7",
+   "raw": "3/14"
+  },
+  "fpsb_n2|tie_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "11/28",
+   "raw": "11/28"
+  },
+  "fpsb_n2|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "fpsb_n2|tie_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/14",
+   "raw": "3/7"
+  },
+  "fpsb_n2|top_half|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|top_half|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "1/14",
+   "raw": "1/14"
+  },
+  "fpsb_n2|top_half|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|top_half|uniform>strong_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n2|top_half|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|win_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|win_count|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|win_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|win_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|win_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n2|worst_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|worst_opp|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|worst_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n2|worst_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n2|worst_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|best_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n3|best_opp|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|best_opp|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|best_opp|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|best_opp|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_0|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_0|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_0|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_0|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_0|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_weak|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|capped_weak|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|capped_weak|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|capped_weak|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|capped_weak|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|champion|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/7",
+   "raw": "5/28"
+  },
+  "fpsb_n3|champion|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|champion|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "fpsb_n3|champion|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|champion|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "fpsb_n3|game_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n3|game_wins|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|game_wins|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|game_wins|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|game_wins|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|mean_payoff|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|mean_payoff|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|mean_payoff|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|mean_payoff|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|mean_sq|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/28",
+   "raw": "1/7"
+  },
+  "fpsb_n3|mean_sq|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n3|mean_sq|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "1/28",
+   "raw": "1/7"
+  },
+  "fpsb_n3|mean_sq|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n3|mean_sq|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "fpsb_n3|neg_mean|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|neg_mean|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|neg_mean|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|neg_mean|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|neg_mean|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|norm_by_best|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|norm_by_best|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/14",
+   "raw": "1/28"
+  },
+  "fpsb_n3|norm_by_best|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|norm_by_best|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/14",
+   "raw": "1/28"
+  },
+  "fpsb_n3|random_fixed|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n3|random_fixed|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|random_fixed|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|random_fixed|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|random_fixed|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|rank_score|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|rank_score|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|rank_score|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|rank_score|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|rank_score|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|relative_pair|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|relative_pair|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|relative_pair|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/14",
+   "raw": "1/28"
+  },
+  "fpsb_n3|relative_pair|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|relative_pair|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/14",
+   "raw": "1/28"
+  },
+  "fpsb_n3|spread|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|spread|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|spread|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|spread|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|spread|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|strict_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/14",
+   "raw": "3/28"
+  },
+  "fpsb_n3|strict_wins|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|strict_wins|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|strict_wins|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|strict_wins|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|tail_swap|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|tail_swap|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|tail_swap|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|tail_swap|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|tail_swap|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|tie_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "2/7",
+   "raw": "9/28"
+  },
+  "fpsb_n3|tie_count|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "15/28",
+   "raw": "17/28"
+  },
+  "fpsb_n3|tie_count|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "3/28",
+   "raw": "3/14"
+  },
+  "fpsb_n3|tie_count|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "9/28",
+   "raw": "11/28"
+  },
+  "fpsb_n3|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "fpsb_n3|tie_count|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "9/28",
+   "raw": "3/7"
+  },
+  "fpsb_n3|top_half|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n3|top_half|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|top_half|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|top_half|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n3|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|top_half|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n3|win_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "fpsb_n3|win_count|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|win_count|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "fpsb_n3|win_count|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|win_count|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "fpsb_n3|worst_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n3|worst_opp|strong_skew>weak_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|worst_opp|uniform>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n3|worst_opp|uniform>strong_skew": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n3|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n3|worst_opp|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n4|best_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|best_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|best_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|best_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|best_opp|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|best_opp|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_0|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_0|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_0|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_0|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_0|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_0|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_weak|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|capped_weak|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|capped_weak|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|capped_weak|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|capped_weak|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|capped_weak|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n4|champion|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n4|champion|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|champion|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "3/28",
+   "raw": "5/28"
+  },
+  "fpsb_n4|champion|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|champion|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|champion|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/14",
+   "raw": "5/28"
+  },
+  "fpsb_n4|game_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|game_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|game_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|game_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|game_wins|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|game_wins|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n4|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|mean_payoff|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|mean_payoff|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|mean_payoff|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|mean_payoff|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|mean_payoff|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n4|mean_sq|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n4|mean_sq|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|mean_sq|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/14",
+   "raw": "1/7"
+  },
+  "fpsb_n4|mean_sq|uniform>strong_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n4|mean_sq|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|mean_sq|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "1/28",
+   "raw": "1/7"
+  },
+  "fpsb_n4|neg_mean|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|neg_mean|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|neg_mean|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|neg_mean|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|neg_mean|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|neg_mean|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n4|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|norm_by_best|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|norm_by_best|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|norm_by_best|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|norm_by_best|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|norm_by_best|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/14",
+   "raw": "1/28"
+  },
+  "fpsb_n4|random_fixed|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|random_fixed|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|random_fixed|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|random_fixed|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|random_fixed|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|random_fixed|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n4|rank_score|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|rank_score|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|rank_score|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|rank_score|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|rank_score|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|rank_score|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n4|relative_pair|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|relative_pair|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|relative_pair|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|relative_pair|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|relative_pair|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|relative_pair|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "fpsb_n4|spread|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|spread|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|spread|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|spread|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|spread|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|spread|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n4|strict_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n4|strict_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|strict_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "fpsb_n4|strict_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|strict_wins|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|strict_wins|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "0",
+   "raw": "3/28"
+  },
+  "fpsb_n4|tail_swap|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/7",
+   "raw": "1/2"
+  },
+  "fpsb_n4|tail_swap|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|tail_swap|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "3/7",
+   "raw": "1/2"
+  },
+  "fpsb_n4|tail_swap|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|tail_swap|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|tail_swap|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "5/14",
+   "raw": "13/28"
+  },
+  "fpsb_n4|tie_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "fpsb_n4|tie_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "4/7",
+   "raw": "17/28"
+  },
+  "fpsb_n4|tie_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/7",
+   "raw": "3/14"
+  },
+  "fpsb_n4|tie_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "11/28",
+   "raw": "11/28"
+  },
+  "fpsb_n4|tie_count|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "5/28",
+   "raw": "3/14"
+  },
+  "fpsb_n4|tie_count|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "9/28",
+   "raw": "3/7"
+  },
+  "fpsb_n4|top_half|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|top_half|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "fpsb_n4|top_half|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n4|top_half|uniform>strong_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "fpsb_n4|top_half|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|top_half|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/14",
+   "raw": "1/28"
+  },
+  "fpsb_n4|win_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|win_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|win_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "fpsb_n4|win_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|win_count|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|win_count|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-1/28",
+   "raw": "1/14"
+  },
+  "fpsb_n4|worst_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|worst_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|worst_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "fpsb_n4|worst_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "fpsb_n4|worst_opp|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "fpsb_n4|worst_opp|weak_skew>capped_strong": {
+   "base": "3/28",
+   "excess": "-3/28",
+   "raw": "0"
+  },
+  "spsb_n2|best_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|best_opp|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|best_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|best_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|best_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|capped_0|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|capped_0|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|capped_0|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|capped_0|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|capped_0|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|capped_weak|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "11/28",
+   "raw": "13/28"
+  },
+  "spsb_n2|capped_weak|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|capped_weak|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "11/28",
+   "raw": "13/28"
+  },
+  "spsb_n2|capped_weak|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|capped_weak|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "11/28",
+   "raw": "13/28"
+  },
+  "spsb_n2|champion|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|champion|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|champion|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|champion|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|champion|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|game_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|game_wins|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|game_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|game_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|game_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|mean_payoff|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|mean_payoff|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|mean_payoff|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|mean_payoff|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|mean_sq|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|mean_sq|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|mean_sq|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|mean_sq|uniform>strong_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|mean_sq|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|neg_mean|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|neg_mean|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|neg_mean|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|neg_mean|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|neg_mean|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|norm_by_best|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|norm_by_best|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|norm_by_best|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|norm_by_best|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|random_fixed|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|random_fixed|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|random_fixed|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|random_fixed|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|random_fixed|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|rank_score|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|rank_score|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|rank_score|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|rank_score|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|rank_score|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|relative_pair|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|relative_pair|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|relative_pair|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|relative_pair|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|relative_pair|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|spread|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|spread|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|spread|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|spread|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|spread|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|strict_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n2|strict_wins|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|strict_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n2|strict_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|strict_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n2|tail_swap|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|tail_swap|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|tail_swap|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|tail_swap|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|tail_swap|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|tie_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "spsb_n2|tie_count|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "17/28",
+   "raw": "17/28"
+  },
+  "spsb_n2|tie_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/7",
+   "raw": "3/14"
+  },
+  "spsb_n2|tie_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "11/28",
+   "raw": "11/28"
+  },
+  "spsb_n2|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "spsb_n2|tie_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/14",
+   "raw": "3/7"
+  },
+  "spsb_n2|top_half|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|top_half|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|top_half|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|top_half|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|top_half|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n2|win_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|win_count|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|win_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|win_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|win_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n2|worst_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|worst_opp|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|worst_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n2|worst_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n2|worst_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|best_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|best_opp|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|best_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|best_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|best_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|best_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|capped_0|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/28",
+   "raw": "1/4"
+  },
+  "spsb_n3|capped_0|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|capped_0|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "5/28",
+   "raw": "1/4"
+  },
+  "spsb_n3|capped_0|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|capped_0|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|capped_0|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/28",
+   "raw": "1/4"
+  },
+  "spsb_n3|capped_weak|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "9/28",
+   "raw": "11/28"
+  },
+  "spsb_n3|capped_weak|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|capped_weak|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "9/28",
+   "raw": "11/28"
+  },
+  "spsb_n3|capped_weak|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|capped_weak|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|capped_weak|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "9/28",
+   "raw": "11/28"
+  },
+  "spsb_n3|champion|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|champion|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|champion|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|champion|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|champion|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|champion|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|game_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|game_wins|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|game_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|game_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|game_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|game_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|mean_payoff|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|mean_payoff|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|mean_payoff|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|mean_payoff|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|mean_payoff|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|mean_sq|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n3|mean_sq|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|mean_sq|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n3|mean_sq|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|mean_sq|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|mean_sq|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n3|neg_mean|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|neg_mean|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|neg_mean|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|neg_mean|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|neg_mean|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|neg_mean|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|norm_by_best|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|norm_by_best|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|norm_by_best|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|norm_by_best|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|norm_by_best|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|random_fixed|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|random_fixed|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|random_fixed|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|random_fixed|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|random_fixed|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|random_fixed|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|rank_score|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|rank_score|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|rank_score|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|rank_score|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|rank_score|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|rank_score|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|relative_pair|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|relative_pair|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|relative_pair|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|relative_pair|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|relative_pair|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|relative_pair|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|spread|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|spread|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|spread|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|spread|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|spread|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|spread|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|strict_wins|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n3|strict_wins|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|strict_wins|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n3|strict_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|strict_wins|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|strict_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/28",
+   "raw": "3/28"
+  },
+  "spsb_n3|tail_swap|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|tail_swap|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|tail_swap|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|tail_swap|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|tail_swap|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|tail_swap|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|tie_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "1/4",
+   "raw": "9/28"
+  },
+  "spsb_n3|tie_count|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "17/28",
+   "raw": "17/28"
+  },
+  "spsb_n3|tie_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "1/7",
+   "raw": "3/14"
+  },
+  "spsb_n3|tie_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "11/28",
+   "raw": "11/28"
+  },
+  "spsb_n3|tie_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "3/14",
+   "raw": "3/14"
+  },
+  "spsb_n3|tie_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/14",
+   "raw": "3/7"
+  },
+  "spsb_n3|top_half|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|top_half|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|top_half|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|top_half|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|top_half|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|top_half|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|win_count|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|win_count|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|win_count|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|win_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|win_count|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|win_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n3|worst_opp|strong_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|worst_opp|strong_skew>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|worst_opp|uniform>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n3|worst_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|worst_opp|uniform>weak_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n3|worst_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|best_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|best_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|best_opp|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|best_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|best_opp|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|best_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|capped_0|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/14",
+   "raw": "1/4"
+  },
+  "spsb_n4|capped_0|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|capped_0|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "3/14",
+   "raw": "1/4"
+  },
+  "spsb_n4|capped_0|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|capped_0|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|capped_0|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/28",
+   "raw": "1/4"
+  },
+  "spsb_n4|capped_weak|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "3/14",
+   "raw": "1/4"
+  },
+  "spsb_n4|capped_weak|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "3/14",
+   "raw": "1/4"
+  },
+  "spsb_n4|capped_weak|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "1/4",
+   "raw": "2/7"
+  },
+  "spsb_n4|capped_weak|uniform>strong_skew": {
+   "base": "0",
+   "excess": "1/28",
+   "raw": "1/28"
+  },
+  "spsb_n4|capped_weak|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "5/28",
+   "raw": "3/14"
+  },
+  "spsb_n4|capped_weak|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "3/7",
+   "raw": "1/2"
+  },
+  "spsb_n4|champion|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|champion|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|champion|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|champion|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|champion|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|champion|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|game_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|game_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|game_wins|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|game_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|game_wins|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|game_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|mean_payoff|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|mean_payoff|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|mean_payoff|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|mean_payoff|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|mean_payoff|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|mean_payoff|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|mean_sq|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|mean_sq|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "spsb_n4|mean_sq|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|mean_sq|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|mean_sq|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "spsb_n4|mean_sq|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|neg_mean|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|neg_mean|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|neg_mean|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|neg_mean|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|neg_mean|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|neg_mean|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|norm_by_best|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|norm_by_best|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|norm_by_best|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|norm_by_best|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|norm_by_best|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|norm_by_best|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|random_fixed|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|random_fixed|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|random_fixed|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|random_fixed|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|random_fixed|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|random_fixed|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|rank_score|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|rank_score|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|rank_score|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|rank_score|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|rank_score|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|rank_score|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|relative_pair|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|relative_pair|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|relative_pair|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|relative_pair|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|relative_pair|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|relative_pair|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|spread|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|spread|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|spread|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|spread|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|spread|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|spread|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|strict_wins|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "spsb_n4|strict_wins|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|strict_wins|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "1/28",
+   "raw": "1/14"
+  },
+  "spsb_n4|strict_wins|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|strict_wins|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|strict_wins|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|tail_swap|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|tail_swap|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|tail_swap|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|tail_swap|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|tail_swap|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|tail_swap|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "0",
+   "raw": "1/14"
+  },
+  "spsb_n4|tie_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "2/7",
+   "raw": "9/28"
+  },
+  "spsb_n4|tie_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "4/7",
+   "raw": "17/28"
+  },
+  "spsb_n4|tie_count|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "5/28",
+   "raw": "3/14"
+  },
+  "spsb_n4|tie_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "11/28",
+   "raw": "11/28"
+  },
+  "spsb_n4|tie_count|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "5/28",
+   "raw": "3/14"
+  },
+  "spsb_n4|tie_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "5/14",
+   "raw": "3/7"
+  },
+  "spsb_n4|top_half|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|top_half|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|top_half|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|top_half|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|top_half|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|top_half|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  },
+  "spsb_n4|win_count|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|win_count|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|win_count|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "0",
+   "raw": "1/28"
+  },
+  "spsb_n4|win_count|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|win_count|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|win_count|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/28",
+   "raw": "1/28"
+  },
+  "spsb_n4|worst_opp|strong_skew>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|worst_opp|strong_skew>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|worst_opp|uniform>capped_strong": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|worst_opp|uniform>strong_skew": {
+   "base": "0",
+   "excess": "0",
+   "raw": "0"
+  },
+  "spsb_n4|worst_opp|uniform>weak_skew": {
+   "base": "1/28",
+   "excess": "-1/28",
+   "raw": "0"
+  },
+  "spsb_n4|worst_opp|weak_skew>capped_strong": {
+   "base": "1/14",
+   "excess": "-1/14",
+   "raw": "0"
+  }
+ }
+}

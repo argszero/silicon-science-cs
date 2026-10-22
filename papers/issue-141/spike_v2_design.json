@@ -1,0 +1,344 @@
+{
+ "bands": {
+  "best_opp": "gameable",
+  "capped_0": "gameable",
+  "capped_weak": "gameable",
+  "champion": "gameable",
+  "game_wins": "gameable",
+  "mean_payoff": "faithful",
+  "mean_sq": "gameable",
+  "norm_by_best": "gameable",
+  "random_fixed": "gameable",
+  "relative_pair": "gameable",
+  "spread": "faithful",
+  "strict_wins": "gameable",
+  "tail_swap": "immune_unfaithful",
+  "tie_count": "gameable",
+  "top_half": "gameable",
+  "win_count": "gameable",
+  "worst_opp": "gameable"
+ },
+ "design_map": {
+  "baseline": {
+   "random_fixed": "gameable"
+  },
+  "capped": {
+   "capped_0": "gameable",
+   "capped_weak": "gameable"
+  },
+  "constructed": {
+   "tail_swap": "immune_unfaithful"
+  },
+  "magnitude": {
+   "best_opp": "gameable",
+   "mean_payoff": "faithful",
+   "mean_sq": "gameable",
+   "spread": "faithful",
+   "top_half": "gameable",
+   "worst_opp": "gameable"
+  },
+  "outcome": {
+   "champion": "gameable",
+   "game_wins": "gameable"
+  },
+  "relative": {
+   "norm_by_best": "gameable",
+   "relative_pair": "gameable"
+  },
+  "sign": {
+   "strict_wins": "gameable",
+   "tie_count": "gameable",
+   "win_count": "gameable"
+  }
+ },
+ "law_mismatches": {},
+ "model": {
+  "games": [
+   "fpsb_n2",
+   "spsb_n2",
+   "cv_n2",
+   "cv_n4"
+  ],
+  "mono": {
+   "best_opp": "none",
+   "capped_0": "saturating",
+   "capped_weak": "saturating",
+   "champion": "none",
+   "game_wins": "none",
+   "mean_payoff": "strict",
+   "mean_sq": "none",
+   "norm_by_best": "none",
+   "random_fixed": "none",
+   "relative_pair": "none",
+   "spread": "strict",
+   "strict_wins": "none",
+   "tail_swap": "none",
+   "tie_count": "none",
+   "top_half": "none",
+   "win_count": "none",
+   "worst_opp": "none"
+  },
+  "policies": [
+   "eq_fpsb",
+   "eq_spsb",
+   "shade_3_4",
+   "shade_1_4",
+   "overbid_5_4",
+   "bid_min",
+   "bid_mid",
+   "bid_max"
+  ],
+  "populations": [
+   "uniform",
+   "strong_skew",
+   "weak_skew",
+   "capped_strong"
+  ],
+  "protocols": [
+   "mean_payoff",
+   "mean_sq",
+   "spread",
+   "top_half",
+   "worst_opp",
+   "best_opp",
+   "win_count",
+   "strict_wins",
+   "tie_count",
+   "norm_by_best",
+   "relative_pair",
+   "game_wins",
+   "champion",
+   "capped_0",
+   "capped_weak",
+   "random_fixed",
+   "tail_swap"
+  ],
+  "reads": {
+   "best_opp": "row",
+   "capped_0": "profile",
+   "capped_weak": "profile",
+   "champion": "row",
+   "game_wins": "row",
+   "mean_payoff": "profile",
+   "mean_sq": "row",
+   "norm_by_best": "row",
+   "random_fixed": "none",
+   "relative_pair": "row",
+   "spread": "profile",
+   "strict_wins": "row",
+   "tail_swap": "profile",
+   "tie_count": "row",
+   "top_half": "row",
+   "win_count": "row",
+   "worst_opp": "row"
+  },
+  "shapes": {
+   "best_opp": "magnitude",
+   "capped_0": "capped",
+   "capped_weak": "capped",
+   "champion": "outcome",
+   "game_wins": "outcome",
+   "mean_payoff": "magnitude",
+   "mean_sq": "magnitude",
+   "norm_by_best": "relative",
+   "random_fixed": "baseline",
+   "relative_pair": "relative",
+   "spread": "magnitude",
+   "strict_wins": "sign",
+   "tail_swap": "constructed",
+   "tie_count": "sign",
+   "top_half": "magnitude",
+   "win_count": "sign",
+   "worst_opp": "magnitude"
+  }
+ },
+ "nesting": {
+  "band_counts": {
+   "faithful": 2,
+   "gameable": 14,
+   "immune_unfaithful": 1
+  },
+  "cells": 272,
+  "faithful": 54,
+  "faithful_and_immune": 54,
+  "faithful_implies_immune": true,
+  "gameable": 176,
+  "immune": 96,
+  "immune_and_unfaithful": 42,
+  "strictly_contains": true
+ },
+ "per_protocol": {
+  "best_opp": {
+   "G_max": "2",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  },
+  "capped_0": {
+   "G_max": "4",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  },
+  "capped_weak": {
+   "G_max": "4",
+   "cells": 16,
+   "faithful": 9,
+   "gameable": 7,
+   "immune": 9,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 7
+  },
+  "champion": {
+   "G_max": "5",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 15,
+   "immune": 1,
+   "immune_and_unfaithful": 1,
+   "tau_lt_1": 16
+  },
+  "game_wins": {
+   "G_max": "5",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  },
+  "mean_payoff": {
+   "G_max": "0",
+   "cells": 16,
+   "faithful": 16,
+   "gameable": 0,
+   "immune": 16,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 0
+  },
+  "mean_sq": {
+   "G_max": "3",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 12,
+   "immune": 4,
+   "immune_and_unfaithful": 4,
+   "tau_lt_1": 16
+  },
+  "norm_by_best": {
+   "G_max": "3",
+   "cells": 16,
+   "faithful": 4,
+   "gameable": 1,
+   "immune": 15,
+   "immune_and_unfaithful": 11,
+   "tau_lt_1": 12
+  },
+  "random_fixed": {
+   "G_max": "7",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  },
+  "relative_pair": {
+   "G_max": "3",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 15,
+   "immune": 1,
+   "immune_and_unfaithful": 1,
+   "tau_lt_1": 16
+  },
+  "spread": {
+   "G_max": "0",
+   "cells": 16,
+   "faithful": 16,
+   "gameable": 0,
+   "immune": 16,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 0
+  },
+  "strict_wins": {
+   "G_max": "3",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  },
+  "tail_swap": {
+   "G_max": "0",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 0,
+   "immune": 16,
+   "immune_and_unfaithful": 16,
+   "tau_lt_1": 16
+  },
+  "tie_count": {
+   "G_max": "7",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 13,
+   "immune": 3,
+   "immune_and_unfaithful": 3,
+   "tau_lt_1": 16
+  },
+  "top_half": {
+   "G_max": "1",
+   "cells": 16,
+   "faithful": 9,
+   "gameable": 1,
+   "immune": 15,
+   "immune_and_unfaithful": 6,
+   "tau_lt_1": 7
+  },
+  "win_count": {
+   "G_max": "2",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  },
+  "worst_opp": {
+   "G_max": "3",
+   "cells": 16,
+   "faithful": 0,
+   "gameable": 16,
+   "immune": 0,
+   "immune_and_unfaithful": 0,
+   "tau_lt_1": 16
+  }
+ },
+ "predicted_bands": {
+  "best_opp": "gameable",
+  "capped_0": "gameable",
+  "capped_weak": "gameable",
+  "champion": "gameable",
+  "game_wins": "gameable",
+  "mean_payoff": "faithful",
+  "mean_sq": "gameable",
+  "norm_by_best": "gameable",
+  "random_fixed": "gameable",
+  "relative_pair": "gameable",
+  "spread": "faithful",
+  "strict_wins": "gameable",
+  "tail_swap": "immune_unfaithful",
+  "tie_count": "gameable",
+  "top_half": "gameable",
+  "win_count": "gameable",
+  "worst_opp": "gameable"
+ }
+}

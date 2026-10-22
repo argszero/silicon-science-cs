@@ -1,0 +1,599 @@
+{
+  "base_distinct_by_game": {
+    "cv_n2": [
+      "0",
+      "1/14",
+      "1/28"
+    ],
+    "cv_n3": [
+      "0",
+      "1/14",
+      "1/28"
+    ],
+    "cv_n4": [
+      "0",
+      "1/14",
+      "1/28",
+      "3/28"
+    ],
+    "fpsb_n2": [
+      "0",
+      "1/14"
+    ],
+    "fpsb_n3": [
+      "0",
+      "1/14",
+      "1/28",
+      "3/28"
+    ],
+    "fpsb_n4": [
+      "0",
+      "1/14",
+      "1/28",
+      "3/28"
+    ],
+    "spsb_n2": [
+      "0",
+      "1/14"
+    ],
+    "spsb_n3": [
+      "0",
+      "1/14"
+    ],
+    "spsb_n4": [
+      "0",
+      "1/14",
+      "1/28"
+    ]
+  },
+  "base_distinct_max_within_coord0": 4,
+  "coord_nonzero_games": 2,
+  "coord_ties": 22,
+  "coord_zero_games": 7,
+  "coords": {
+    "cv_n2": {
+      "cycles": 3,
+      "full": "3/56",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "3/56",
+          "cycles": 3,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "3/56",
+          "cycles": 3,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "3/56",
+          "cycles": 3,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "cv_n3": {
+      "cycles": 3,
+      "full": "3/56",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "3/56",
+          "cycles": 3,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "3/56",
+          "cycles": 3,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "3/56",
+          "cycles": 3,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "cv_n4": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "fpsb_n2": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "fpsb_n3": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "fpsb_n4": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "spsb_n2": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "spsb_n3": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    },
+    "spsb_n4": {
+      "cycles": 0,
+      "full": "0",
+      "pop": {
+        "capped_strong": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 4,
+          "triples": 4
+        },
+        "strong_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "uniform": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        },
+        "weak_skew": {
+          "coord": "0",
+          "cycles": 0,
+          "n_policies": 8,
+          "triples": 56
+        }
+      },
+      "triples": 56
+    }
+  },
+  "distinct_gt1_games": 9,
+  "distinct_max": 8,
+  "game_pairs": 36,
+  "games": 9,
+  "gpos_by_game": {
+    "cv_n2": {
+      "Gpos": 50,
+      "cells": 76
+    },
+    "cv_n3": {
+      "Gpos": 50,
+      "cells": 76
+    },
+    "cv_n4": {
+      "Gpos": 51,
+      "cells": 76
+    },
+    "fpsb_n2": {
+      "Gpos": 55,
+      "cells": 76
+    },
+    "fpsb_n3": {
+      "Gpos": 55,
+      "cells": 76
+    },
+    "fpsb_n4": {
+      "Gpos": 54,
+      "cells": 76
+    },
+    "spsb_n2": {
+      "Gpos": 52,
+      "cells": 76
+    },
+    "spsb_n3": {
+      "Gpos": 53,
+      "cells": 76
+    },
+    "spsb_n4": {
+      "Gpos": 54,
+      "cells": 76
+    }
+  },
+  "gpos_coord0": 374,
+  "gpos_total": 474,
+  "mean_excess": {
+    "cv_n2": "73/3192",
+    "cv_n3": "37/1596",
+    "cv_n4": "1/42",
+    "fpsb_n2": "1/76",
+    "fpsb_n3": "-5/798",
+    "fpsb_n4": "1/114",
+    "spsb_n2": "43/3192",
+    "spsb_n3": "55/3192",
+    "spsb_n4": "1/57"
+  },
+  "per_game_pair_distinct_counts": {
+    "cv_n2|strong_skew>capped_strong": 7,
+    "cv_n2|strong_skew>weak_skew": 4,
+    "cv_n2|uniform>capped_strong": 7,
+    "cv_n2|uniform>strong_skew": 3,
+    "cv_n2|uniform>weak_skew": 3,
+    "cv_n2|weak_skew>capped_strong": 7,
+    "cv_n3|strong_skew>capped_strong": 6,
+    "cv_n3|strong_skew>weak_skew": 4,
+    "cv_n3|uniform>capped_strong": 7,
+    "cv_n3|uniform>strong_skew": 3,
+    "cv_n3|uniform>weak_skew": 3,
+    "cv_n3|weak_skew>capped_strong": 6,
+    "cv_n4|strong_skew>capped_strong": 8,
+    "cv_n4|strong_skew>weak_skew": 4,
+    "cv_n4|uniform>capped_strong": 8,
+    "cv_n4|uniform>strong_skew": 4,
+    "cv_n4|uniform>weak_skew": 3,
+    "cv_n4|weak_skew>capped_strong": 7,
+    "fpsb_n2|strong_skew>capped_strong": 6,
+    "fpsb_n2|strong_skew>weak_skew": 4,
+    "fpsb_n2|uniform>capped_strong": 7,
+    "fpsb_n2|uniform>strong_skew": 3,
+    "fpsb_n2|uniform>weak_skew": 3,
+    "fpsb_n2|weak_skew>capped_strong": 7,
+    "fpsb_n3|strong_skew>capped_strong": 7,
+    "fpsb_n3|strong_skew>weak_skew": 4,
+    "fpsb_n3|uniform>capped_strong": 7,
+    "fpsb_n3|uniform>strong_skew": 3,
+    "fpsb_n3|uniform>weak_skew": 3,
+    "fpsb_n3|weak_skew>capped_strong": 6,
+    "fpsb_n4|strong_skew>capped_strong": 6,
+    "fpsb_n4|strong_skew>weak_skew": 3,
+    "fpsb_n4|uniform>capped_strong": 8,
+    "fpsb_n4|uniform>strong_skew": 3,
+    "fpsb_n4|uniform>weak_skew": 3,
+    "fpsb_n4|weak_skew>capped_strong": 8,
+    "spsb_n2|strong_skew>capped_strong": 6,
+    "spsb_n2|strong_skew>weak_skew": 3,
+    "spsb_n2|uniform>capped_strong": 6,
+    "spsb_n2|uniform>strong_skew": 3,
+    "spsb_n2|uniform>weak_skew": 2,
+    "spsb_n2|weak_skew>capped_strong": 6,
+    "spsb_n3|strong_skew>capped_strong": 6,
+    "spsb_n3|strong_skew>weak_skew": 2,
+    "spsb_n3|uniform>capped_strong": 6,
+    "spsb_n3|uniform>strong_skew": 2,
+    "spsb_n3|uniform>weak_skew": 2,
+    "spsb_n3|weak_skew>capped_strong": 6,
+    "spsb_n4|strong_skew>capped_strong": 5,
+    "spsb_n4|strong_skew>weak_skew": 5,
+    "spsb_n4|uniform>capped_strong": 6,
+    "spsb_n4|uniform>strong_skew": 3,
+    "spsb_n4|uniform>weak_skew": 4,
+    "spsb_n4|weak_skew>capped_strong": 6
+  },
+  "verdict": "no_reduction",
+  "widest_pair_by_game": {
+    "cv_n2": {
+      "high": "1/4",
+      "high_protocols": [
+        "mean_sq"
+      ],
+      "low": "-1/14",
+      "low_protocols": [
+        "best_opp",
+        "random_fixed",
+        "worst_opp"
+      ],
+      "n_distinct": 7,
+      "pair": "uniform>capped_strong"
+    },
+    "cv_n3": {
+      "high": "5/28",
+      "high_protocols": [
+        "mean_sq"
+      ],
+      "low": "-1/14",
+      "low_protocols": [
+        "best_opp",
+        "random_fixed",
+        "worst_opp"
+      ],
+      "n_distinct": 7,
+      "pair": "uniform>capped_strong"
+    },
+    "cv_n4": {
+      "high": "5/14",
+      "high_protocols": [
+        "tail_swap"
+      ],
+      "low": "-3/28",
+      "low_protocols": [
+        "best_opp",
+        "norm_by_best",
+        "random_fixed",
+        "worst_opp"
+      ],
+      "n_distinct": 8,
+      "pair": "uniform>capped_strong"
+    },
+    "fpsb_n2": {
+      "high": "1/7",
+      "high_protocols": [
+        "tie_count"
+      ],
+      "low": "-1/14",
+      "low_protocols": [
+        "best_opp",
+        "capped_0",
+        "game_wins",
+        "random_fixed",
+        "relative_pair",
+        "worst_opp"
+      ],
+      "n_distinct": 7,
+      "pair": "uniform>capped_strong"
+    },
+    "fpsb_n3": {
+      "high": "3/28",
+      "high_protocols": [
+        "tie_count"
+      ],
+      "low": "-3/28",
+      "low_protocols": [
+        "best_opp",
+        "capped_0",
+        "game_wins",
+        "random_fixed",
+        "worst_opp"
+      ],
+      "n_distinct": 7,
+      "pair": "uniform>capped_strong"
+    },
+    "fpsb_n4": {
+      "high": "3/7",
+      "high_protocols": [
+        "tail_swap"
+      ],
+      "low": "-1/14",
+      "low_protocols": [
+        "best_opp",
+        "capped_0",
+        "game_wins",
+        "norm_by_best",
+        "random_fixed",
+        "relative_pair",
+        "worst_opp"
+      ],
+      "n_distinct": 8,
+      "pair": "uniform>capped_strong"
+    },
+    "spsb_n2": {
+      "high": "11/28",
+      "high_protocols": [
+        "capped_weak"
+      ],
+      "low": "-1/14",
+      "low_protocols": [
+        "best_opp",
+        "capped_0",
+        "champion",
+        "game_wins",
+        "mean_sq",
+        "random_fixed",
+        "worst_opp"
+      ],
+      "n_distinct": 6,
+      "pair": "uniform>capped_strong"
+    },
+    "spsb_n3": {
+      "high": "9/28",
+      "high_protocols": [
+        "capped_weak"
+      ],
+      "low": "-1/14",
+      "low_protocols": [
+        "best_opp",
+        "champion",
+        "game_wins",
+        "norm_by_best",
+        "random_fixed",
+        "relative_pair",
+        "top_half",
+        "worst_opp"
+      ],
+      "n_distinct": 6,
+      "pair": "uniform>capped_strong"
+    },
+    "spsb_n4": {
+      "high": "1/4",
+      "high_protocols": [
+        "capped_weak"
+      ],
+      "low": "-1/28",
+      "low_protocols": [
+        "best_opp",
+        "champion",
+        "game_wins",
+        "mean_sq",
+        "norm_by_best",
+        "random_fixed",
+        "relative_pair",
+        "top_half",
+        "worst_opp"
+      ],
+      "n_distinct": 6,
+      "pair": "uniform>capped_strong"
+    }
+  }
+}
