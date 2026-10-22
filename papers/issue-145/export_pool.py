@@ -68,6 +68,54 @@ def semantic_sha(d):
     return hashlib.sha256(blob).hexdigest()
 
 
+def search_form(d, kept, excluded):
+    """The form of the reference search, read off the corpus's own harvest record.
+
+    The bar states three things a related-work search must carry: the **indices**, the **terms**, and
+    the **window** -- the last being a coordinate counted on a named date field and written with both
+    endpoints, with the **scan date** as a third time.  Two of those are stated here as what was
+    actually run rather than as what a form invites, and the awkward one is stated as awkward:
+
+    * `date_filter` records that **no date filter was applied on either endpoint**.  This is the
+      honest coordinate: there is no lower bound to name, so the window's only endpoint is the instant
+      of the scan, and it is the index's state at that instant rather than a date chosen by the author.
+      It is stated as *not applied* -- not as *unavailable*, which would blame the index, and not as a
+      window, which would be an invented coordinate.  What bounds the search is therefore **depth**:
+      relevance-ranked top-N per query with no pagination, which is recorded beside it.
+    * `window.field` names the date field the printed years come FROM (`issued`), because a reader
+      checking whether the search could have seen a cited work needs to know which date it would have
+      been ranked and dated by.
+    """
+    h = d.get("harvest") or {}
+    per_query = h.get("per_query") or {}
+    years = sorted(e["year"] for e in kept if e.get("year"))
+    scan = d.get("built_at_utc")
+    return {
+        "index": "Crossref REST API, https://api.crossref.org/works",
+        "query_field": "query.bibliographic (free-text bibliographic relevance query)",
+        "date_filter": "none applied: neither endpoint was restricted",
+        "depth": "relevance-ranked, top rows_per_query per query, no pagination",
+        # Two populations, named so neither can be read as the other: the queries the harvest BLOCK
+        # records (one run's table, whose per-query `kept` sums to that run's additions), and the
+        # queries that actually produced an entry this pool cites (the corpus accumulates across runs,
+        # so a query kept at 0 in the recorded run can still be the source of entries a later run of
+        # the same query id returned).
+        "queries_recorded": len(per_query),
+        "queries_yielding_a_cited_entry": len(set(e["query"] for e in kept if e.get("query"))),
+        "rows_per_query": h.get("rows_per_query"),
+        "rows_returned_in_recorded_run": sum(v.get("returned", 0) for v in per_query.values()),
+        "kept_in_recorded_run": sum(v.get("kept", 0) for v in per_query.values()),
+        "queries_failed_in_recorded_run": len(h.get("failed_queries") or []),
+        "set_aside_in_recorded_run": dict((k, v) for k, v in sorted(h.items())
+                                          if k.startswith("skipped_")),
+        "scan_at_utc": scan,
+        "window": {"field": "Crossref issued (the year each entry prints)",
+                   "from": None, "to": scan},
+        "kept_year_span": [years[0], years[-1]] if years else None,
+        "corpus_considered": len(kept) + len(excluded),
+    }
+
+
 def main():
     out_path = DEFAULT_OUT
     if "--out" in sys.argv:
@@ -104,6 +152,12 @@ def main():
                       "this paper's constructs (does the record name a mechanism, population or "
                       "method the paper uses?). Every kept entry carries the query that produced it; "
                       "refusals stay in the corpus with a reason and are counted, not deleted."),
+        # THE SEARCH'S FORM, which the submission bar asks a related-work search to carry: the
+        # indices, the terms and the window -- the window being a COORDINATE on a named date field,
+        # never a word.  It is frozen here, at export, because the report that prints it must remain a
+        # function of the committed package: a report that read the corpus's harvest block at report
+        # time could not be regenerated in a checkout that does not carry the research workspace.
+        "search_form": search_form(d, kept, excluded),
         "entries": sorted((fields(e) for e in kept), key=lambda x: x["key"]),
     }
     io.open(out_path, "w", encoding="utf-8").write(json.dumps(pool, indent=1, sort_keys=True) + "\n")

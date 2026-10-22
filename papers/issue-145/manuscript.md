@@ -409,6 +409,22 @@ software engineering [16] [19].
 here the measure is a field in a signed document, and the error mode is that a document's presence is
 read as its content.
 
+**How this list was searched.** A related-work claim is only as strong as the search behind it, so
+the search states its form rather than its conclusion. *Indices:* the Crossref REST API
+(`api.crossref.org/works`), field `query.bibliographic` — no other index contributed a citation
+here. *Terms:* 46 recorded topic queries over provenance, attestation, SBOM, dependency closure and
+the package ecosystems, of which **28** produced at least one cited entry. *Window:* counted on
+Crossref's `issued` field, **no date filter was applied on either endpoint** — the lower endpoint is
+unbounded by choice, and the upper endpoint is the instant of the scan, `2026-10-22T06:10:08Z`, which
+is the index's state then rather than a date this paper chose. *Scan date:* `2026-10-22`, the third
+time and neither endpoint. The window reaches at least as late as the newest cited work (2026), and
+the cited entries span 1952–2026; the comparison is at the granularity the records carry, a year. What
+bounds this search is therefore **depth, not time**: each query was read relevance-ranked to 16 rows
+with no pagination, so a work ranked below that cut is invisible to it whatever its date, and every
+absence claim in this section is scoped to what these queries returned. Records were kept or refused
+in two review passes, and the refusals stay in the corpus with a reason; `reference-check.md` prints
+the form with each count read from the pool rather than retyped here.
+
 ## 11. Threats to validity, and why the result still stands
 
 **Each zero is an "at most", and the bound is the study's own sensitivity.** A count of `0/n` is not

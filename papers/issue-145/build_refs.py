@@ -136,6 +136,7 @@ def report(pool, order, num):
          "| uncited entries | 0 -- C2 refuses to build otherwise |",
          "",
          "## How the pool was built", "", pool["how_built"], "",
+         ] + search_form_section(pool, by_key, order) + [
          "## Per-entry check", "",
          "Method: `verified` = an *asserted* citation (title + author + year written first) matched a "
          "Crossref record under two independent criteria; `harvested` = a record Crossref returned for "
@@ -159,7 +160,74 @@ def report(pool, order, num):
     return len(L)
 
 
-def selftest():
+def search_form_section(pool, by_key, order):
+    """The search's FORM, from the pool's `search_form` block, plus the window's reach test.
+
+    The bar asks a related-work search to carry the indices, the terms and the window -- the window
+    being a coordinate on a *named date field* with both endpoints, the scan instant being a third
+    time.  The awkward part is printed as awkward rather than dressed: no date filter was applied, so
+    the only endpoint the search has is the scan, and **depth** is what bounds it.  A stated absence
+    is printed too -- a pool that carries no form gets a line saying so, never a silent omission,
+    because an absent section is the one defect a reader cannot see.
+    """
+    sf = pool.get("search_form")
+    L = ["## Search form -- the indices, the terms, and the window", ""]
+    if not sf:
+        L += ["**NOT STATED.** This pool carries no `search_form` block, so the indices, the terms and "
+              "the window behind this reference list are not recorded here. That is a stated absence "
+              "and not a search with no form.", ""]
+        return L
+    L += ["| | |", "|---|---|",
+          "| index | %s |" % sf["index"],
+          "| query field | %s |" % sf["query_field"],
+          "| queries recorded | %d topic queries, each a query on that field |" % sf["queries_recorded"],
+          "| queries that produced a cited entry | **%d** of them |" % sf["queries_yielding_a_cited_entry"],
+          "| depth | %s, `rows_per_query` = %s |" % (sf["depth"], sf["rows_per_query"]),
+          "| one recorded run | %d rows returned, %d kept, %d queries failed |"
+          % (sf["rows_returned_in_recorded_run"], sf["kept_in_recorded_run"],
+             sf["queries_failed_in_recorded_run"]),
+          "| set aside by the term and type gates | %s |"
+          % ", ".join("%s %d" % (k.replace("skipped_", ""), v)
+                      for k, v in sorted(sf["set_aside_in_recorded_run"].items())),
+          "| **date field** | %s |" % sf["window"]["field"],
+          "| **date filter applied** | **%s** |" % sf["date_filter"],
+          "| **window** | lower endpoint: **unbounded** (no filter); upper endpoint: **%s**, the "
+          "instant of the scan -- the index's state then, not a date the author chose |"
+          % sf["window"]["to"],
+          "| **scan date** | `%s` (the third time, which is neither endpoint) |" % sf["scan_at_utc"],
+          "| years of the cited entries | %d -- %d |" % tuple(sf["kept_year_span"]),
+          ""]
+    # THE REACH TEST, computed here rather than asserted in prose: the window must reach at least as
+    # late as the newest related work the submission cites, or the search cannot have been the search
+    # behind the claim.  Both numbers are read, never typed.
+    newest = max((e.get("year") or 0) for e in (by_key[k] for k in order))
+    scan_year = int(sf["scan_at_utc"][:4])
+    L += ["**Reach, read against the work it bounds:** the newest cited entry carries the year **%d**; "
+          "the scan is dated **%s**. %s The comparison is at the granularity the records carry -- a "
+          "year, with no month in the pool -- so a same-year work posted after the scan date is not "
+          "distinguished from one posted before it, and that distinction is stated here rather than "
+          "resolved." % (newest, sf["scan_at_utc"],
+          "The window reaches at least as late as the newest cited work, so it could have seen it."
+          if scan_year >= newest else
+          "**FAIL: the scan predates the newest cited work, so this search cannot have been the "
+          "search behind the claim.**"),
+          "",
+          "**What bounds this search is depth, not time.** With no date filter the search could have "
+          "seen any year, so the limitation a reader must price is that each query was read "
+          "relevance-ranked to `rows_per_query` = %s with no pagination: a work ranked below that cut "
+          "is invisible to it whatever its date. The window, in other words, is maximal and the "
+          "reading is shallow, which is the opposite of the failure a narrow window would hide."
+          % sf["rows_per_query"], "",
+          "**Two query counts, never one.** `queries_recorded` is the harvest block's own table, one "
+          "run's yields (`kept_in_recorded_run` sums to that run's additions); "
+          "`queries_yielding_a_cited_entry` counts the query ids the cited entries actually name. They "
+          "differ because the corpus accumulates across runs, so a query recorded at 0 kept in the "
+          "run on file can still be the source of entries that an earlier run of the same id "
+          "returned. Neither number is the other's correction.", ""]
+    return L
+
+
+
     """Prove C1, C2 and C3 fire.  A gate nobody has seen fail is not a gate."""
     pool, by_key = load_pool()
     any_key = sorted(by_key)[0]

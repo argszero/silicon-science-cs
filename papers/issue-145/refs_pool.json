@@ -2083,6 +2083,35 @@
   }
  ],
  "how_built": "grown from Crossref returns for topic queries, then reviewed twice: a salience pass (a title obviously in another field) and a criterion pass organised by this paper's constructs (does the record name a mechanism, population or method the paper uses?). Every kept entry carries the query that produced it; refusals stay in the corpus with a reason and are counted, not deleted.",
+ "search_form": {
+  "corpus_considered": 210,
+  "date_filter": "none applied: neither endpoint was restricted",
+  "depth": "relevance-ranked, top rows_per_query per query, no pagination",
+  "index": "Crossref REST API, https://api.crossref.org/works",
+  "kept_in_recorded_run": 79,
+  "kept_year_span": [
+   1952,
+   2026
+  ],
+  "queries_failed_in_recorded_run": 0,
+  "queries_recorded": 46,
+  "queries_yielding_a_cited_entry": 28,
+  "query_field": "query.bibliographic (free-text bibliographic relevance query)",
+  "rows_per_query": 16,
+  "rows_returned_in_recorded_run": 732,
+  "scan_at_utc": "2026-10-22T06:10:08Z",
+  "set_aside_in_recorded_run": {
+   "skipped_duplicate": 149,
+   "skipped_irrelevant": 462,
+   "skipped_no_locator": 0,
+   "skipped_non_scholarly_type": 42
+  },
+  "window": {
+   "field": "Crossref issued (the year each entry prints)",
+   "from": null,
+   "to": "2026-10-22T06:10:08Z"
+  }
+ },
  "source": "papers/issue-145/research/references.json",
  "source_content_sha256": "30e42378b486724f8ef280597059839b1ed0791453478261e1e33b92bd039468"
 }

@@ -16,6 +16,29 @@
 
 grown from Crossref returns for topic queries, then reviewed twice: a salience pass (a title obviously in another field) and a criterion pass organised by this paper's constructs (does the record name a mechanism, population or method the paper uses?). Every kept entry carries the query that produced it; refusals stay in the corpus with a reason and are counted, not deleted.
 
+## Search form -- the indices, the terms, and the window
+
+| | |
+|---|---|
+| index | Crossref REST API, https://api.crossref.org/works |
+| query field | query.bibliographic (free-text bibliographic relevance query) |
+| queries recorded | 46 topic queries, each a query on that field |
+| queries that produced a cited entry | **28** of them |
+| depth | relevance-ranked, top rows_per_query per query, no pagination, `rows_per_query` = 16 |
+| one recorded run | 732 rows returned, 79 kept, 0 queries failed |
+| set aside by the term and type gates | duplicate 149, irrelevant 462, no_locator 0, non_scholarly_type 42 |
+| **date field** | Crossref issued (the year each entry prints) |
+| **date filter applied** | **none applied: neither endpoint was restricted** |
+| **window** | lower endpoint: **unbounded** (no filter); upper endpoint: **2026-10-22T06:10:08Z**, the instant of the scan -- the index's state then, not a date the author chose |
+| **scan date** | `2026-10-22T06:10:08Z` (the third time, which is neither endpoint) |
+| years of the cited entries | 1952 -- 2026 |
+
+**Reach, read against the work it bounds:** the newest cited entry carries the year **2026**; the scan is dated **2026-10-22T06:10:08Z**. The window reaches at least as late as the newest cited work, so it could have seen it. The comparison is at the granularity the records carry -- a year, with no month in the pool -- so a same-year work posted after the scan date is not distinguished from one posted before it, and that distinction is stated here rather than resolved.
+
+**What bounds this search is depth, not time.** With no date filter the search could have seen any year, so the limitation a reader must price is that each query was read relevance-ranked to `rows_per_query` = 16 with no pagination: a work ranked below that cut is invisible to it whatever its date. The window, in other words, is maximal and the reading is shallow, which is the opposite of the failure a narrow window would hide.
+
+**Two query counts, never one.** `queries_recorded` is the harvest block's own table, one run's yields (`kept_in_recorded_run` sums to that run's additions); `queries_yielding_a_cited_entry` counts the query ids the cited entries actually name. They differ because the corpus accumulates across runs, so a query recorded at 0 kept in the run on file can still be the source of entries that an earlier run of the same id returned. Neither number is the other's correction.
+
 ## Per-entry check
 
 Method: `verified` = an *asserted* citation (title + author + year written first) matched a Crossref record under two independent criteria; `harvested` = a record Crossref returned for a topic query, then read by a person and kept. Every entry was re-checked against Crossref by DOI (`build_references.py --check`): 0 stale, 0 NOT RUN.
