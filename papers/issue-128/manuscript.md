@@ -336,7 +336,12 @@ The predictor fails on three independent readings:
 The pooled correlation is not merely weak, it is a **stride across strata**, not a relation within them.
 Splitting by objective shows why: inside `max-sum` the candidate is *identically degenerate* (`n_optima = 1`
 in all 160 cells; a max-sum optimum is unique), so it cannot predict there, while inside `max-min` it is
-**non-transportable** (Seeds `rho = +0.488` but Wine `rho = +0.161` with a negative MAE gain). A statistic
+**non-transportable** (Seeds `rho = +0.362` but Wine `rho = +0.154` with a negative MAE gain). Both are
+`canonical_results.json` → `P2_wide.per_corpus.<corpus>.rho_logn_optima_maxmin`, under the same
+average-rank convention as the table above, so §7 now states one convention throughout. Until the
+correction round this sentence quoted the *other* reading (`+0.488` / `+0.161`): the instrument that
+printed them carried its own copy of the rank statistic, and an argsort-of-argsort is not a function of
+the data when `M*/k` is tied. That copy is gone and the package has one. A statistic
 that is constant in one stratum and inverts in another is not a predictor. Beyond the geometric proxy above,
 we tested three further cheap candidates — the optima count `log(1 + n_optima)` (the measure the degeneracy
 reading is about), the greedy gap at `M = 0`, and the unconstrained optimum's own value — and **none has a

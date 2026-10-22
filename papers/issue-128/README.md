@@ -12,20 +12,25 @@ bash reproduce.sh
 Expected output (last line):
 
 ```
-REPRODUCE: ALL GREEN (7 steps)
+REPRODUCE: ALL GREEN (10 steps)
 ```
 
 `reproduce.sh` runs, in order: (1) the corpus SHA-256 pins (read from inside `corpus/`, where the pinned
 names are relative); (2–6) the certificate suites of the five instruments/analysers, each on a **healthy
-and a mutated** object; (7) `canonical.py --check`, which re-derives every headline number from the
-artefacts and asserts the paper's claims.
+and a mutated** object; (7) `check_one_statistic.py`, which proves the package holds **one** rank
+statistic — statically (no module but `canonical.py` defines it), dynamically (importers hold it by
+identity) and with a planted copy that must be refused; (8) `make_figures.py --selftest-title`, the
+title-fitting certificate, also with a plant; (9) `canonical.py --check`, which re-derives every
+headline number from the artefacts and asserts the paper's claims; (10) `make_figures.py --check`, which
+compares the statistic the **figure prints** to the one the **artefact states** — two independent paths
+to one number, which a byte-identity step structurally cannot compare.
 
 A fuller check re-runs the instruments, re-derives `canonical_results.json`, and rebuilds the figures and
 the manuscript, requiring every regenerated artefact to be **byte-identical** to the committed one (adds
 ~11 minutes):
 
 ```
-bash reproduce.sh --full        # -> REPRODUCE: ALL GREEN (10 steps)
+bash reproduce.sh --full        # -> REPRODUCE: ALL GREEN (13 steps)
 ```
 
 The `--full` re-runs happen in place and are then restored from a snapshot taken before them, so the

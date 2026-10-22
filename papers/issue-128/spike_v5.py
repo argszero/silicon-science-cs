@@ -234,15 +234,9 @@ def run():
 
 
 # ------------------------------------------------------------------ report
-def spearman(x, y):
-    x = np.asarray(x, float); y = np.asarray(y, float)
-    if len(x) < 3:
-        return None
-    rx = np.argsort(np.argsort(x)).astype(float)
-    ry = np.argsort(np.argsort(y)).astype(float)
-    rx -= rx.mean(); ry -= ry.mean()
-    den = np.sqrt((rx * rx).sum() * (ry * ry).sum())
-    return None if den == 0 else float((rx * ry).sum() / den)
+# Rank statistic: IMPORTED from canonical.py -- see the note in analyse_v5.py.  This file's copy was
+# the argsort-of-argsort variant, which made its printed correlation disagree with the paper's.
+from canonical import spearman
 
 
 def beta_above(curve, M_star, basev):

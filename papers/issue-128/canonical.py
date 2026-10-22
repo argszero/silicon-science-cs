@@ -187,6 +187,17 @@ def wide(v5):
                 for c in sub if c["curve"][0].get("greedy_value") is not None]
         pg[obj] = {"n": len(gaps), "greedy_exact": sum(1 for x in gaps if abs(x) < 1e-12),
                    "median_gap": float(np.median(gaps)) if gaps else None}
+    # The optima-count predictor inside the max-min stratum, per corpus.  §7 quotes these two, and
+    # until the correction round it quoted them under the OTHER rank convention (+0.488 / +0.161),
+    # which no artefact held while the average-rank values are +0.362 / +0.154.  They live here so
+    # the sentence has an owner, and they are computed by the same spearman() as everything else.
+    for cname, blk in v5["corpora"].items():
+        sub = [c for c in blk["cells"]
+               if c["free_width"] is not None and c["obj"] == "maxmin"]
+        per[cname]["rho_logn_optima_maxmin"] = spearman(
+            [float(np.log1p(c["base_n_optima"])) for c in sub],
+            [c["free_width"] for c in sub])
+        per[cname]["n_maxmin"] = len(sub)
     conv = {"tie_corrected": spearman(A, W), "pearson_raw": pearson(A, W)}
     return {"n_cells": len(cells), "n_solved": len(ok), "rho_conventions": conv,
             "alignment_min": min(A), "alignment_max": max(A),
