@@ -142,6 +142,7 @@ def main():
             continue
         by_gp.setdefault((g, pp), OrderedDict()).setdefault(v["excess"], set()).add(pr)
 
+    widest = OrderedDict()   # the illustrated pair per game, with its two extreme excesses
     verdict_rows = []
     for g in LADDER:
         vals = [len(d) for (gg, pp), d in by_gp.items() if gg == g]
@@ -159,6 +160,13 @@ def main():
             hi = max(d)
             print(f"      widest: {pp_max}  ->  {len(d)} distinct values; "
                   f"lowest {lo} by {sorted(d[lo])[:3]}, highest {hi} by {sorted(d[hi])[:3]}")
+            # keep it: a number the instrument prints and the package does not store can
+            # drift with every gate green (issue #141 R2).
+            # `lo`/`hi` are Fractions here, and a Fraction is not JSON-serialisable:
+            # store their exact string form (the artifact's own convention elsewhere).
+            widest[g] = {"pair": pp_max, "n_distinct": len(d),
+                         "low": str(lo), "low_protocols": sorted(d[lo]),
+                         "high": str(hi), "high_protocols": sorted(d[hi])}
 
     print("\n== verdict")
     multi = [r for r in verdict_rows if r[2] > 1]
@@ -230,6 +238,7 @@ def main():
                    "gpos_coord0": gpos_coord0,
                    "gpos_total": gpos_total,
                    "distinct_max": max(len(d) for d in by_gp.values()),
+                   "widest_pair_by_game": widest,
                    "distinct_gt1_games": len(multi),
                    "games": len(LADDER),
                    "base_distinct_by_game": {g: sorted(str(x) for x in s2)

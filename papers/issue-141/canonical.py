@@ -33,6 +33,7 @@ V4 = os.path.join(HERE, "spike_v4_results.json")
 TRA = os.path.join(HERE, "analysis_transitivity_vs_transport.json")   # R673, required change 1
 EXC = os.path.join(HERE, "census_excess_entries.json")
 CONV = os.path.join(HERE, "census_converse_scope.json")
+CND = os.path.join(HERE, "analysis_conditioning.json")   # R676/r2, required changes R5 and R6
 
 
 def load(p):
@@ -97,6 +98,58 @@ def numbers():
     put("trans.base.distinct_max_coord0", tra["base_distinct_max_within_coord0"],
         "analysis_transitivity_vs_transport.json:base_distinct_max_within_coord0")
     put("trans.verdict", tra["verdict"], "analysis_transitivity_vs_transport.json:verdict")
+    # the worked example in §10 was printed by the instrument and stored by nothing (R2): its two
+    # extremes are now keys, so `check_numbers.py` can fail on a number that drifts.
+    _w = tra["widest_pair_by_game"]["fpsb_n4"]
+    put("trans.widest.low", _w["low"],
+        "analysis_transitivity_vs_transport.json:widest_pair_by_game.fpsb_n4.low")
+    put("trans.widest.high", _w["high"],
+        "analysis_transitivity_vs_transport.json:widest_pair_by_game.fpsb_n4.high")
+    put("trans.widest.n_distinct", _w["n_distinct"],
+        "analysis_transitivity_vs_transport.json:widest_pair_by_game.fpsb_n4.n_distinct")
+
+    # --- R5: does the across-protocol spread survive conditioning? --------------------------------
+    cnd = load(CND)
+    r5 = cnd["R5"]
+    put("cond.pairs", r5["pairs"], "analysis_conditioning.json:R5.pairs")
+    put("cond.coord.min_distinct", r5["conditioning_on_transitive_strength"]["min_distinct_over_all_cells"],
+        "analysis_conditioning.json:R5.conditioning_on_transitive_strength")
+    put("cond.size.min_distinct", r5["conditioning_on_population_size"]["min_distinct_over_all_cells"],
+        "analysis_conditioning.json:R5.conditioning_on_population_size")
+    put("cond.both.min_distinct", r5["conditioning_on_both"]["min_distinct_over_all_cells"],
+        "analysis_conditioning.json:R5.conditioning_on_both")
+    put("cond.coord0.pairs", r5["coord_zero_game_pairs"], "analysis_conditioning.json:R5.coord_zero_game_pairs")
+    put("cond.coord0.min_distinct", r5["coord_zero_min_distinct"],
+        "analysis_conditioning.json:R5.coord_zero_min_distinct")
+    put("cond.coord0.max_distinct", r5["coord_zero_max_distinct"],
+        "analysis_conditioning.json:R5.coord_zero_max_distinct")
+    put("cond.verdict", r5["verdict"], "analysis_conditioning.json:R5.verdict")
+    # the two shares §10 quotes are computed from counts above; give them keys so the printed
+    # decimals are checked rather than derived in prose
+    put("trans.gpos.share_pct", round(100.0 * tra["gpos_coord0"] / tra["gpos_total"], 1),
+        "computed: gpos_coord0 / gpos_total")
+    put("trans.coord.base_rate_pct", round(100.0 * tra["coord_zero_games"] / tra["games"], 1),
+        "computed: coord_zero_games / games (the base rate a random cell lands in a zero game)")
+
+    # --- R6: the anchor-free game's share of the headline numbers --------------------------------
+    _all = cnd["R6"]["all_games"]
+    _exc = cnd["R6"]["anchor_free_excluded"]
+    put("r6.excl.game", _exc["excluded_game"], "analysis_conditioning.json:R6.anchor_free_excluded")
+    put("r6.excl.g_positive", _exc["g_positive"], "analysis_conditioning.json:R6.anchor_free_excluded.g_positive")
+    put("r6.excl.cells", _exc["cells"], "analysis_conditioning.json:R6.anchor_free_excluded.cells")
+    put("r6.excl.gameable", _exc["gameable_cells"], "analysis_conditioning.json:R6.anchor_free_excluded.gameable_cells")
+    put("r6.excl.fragile", _exc["fragile_cells"], "analysis_conditioning.json:R6.anchor_free_excluded.fragile_cells")
+    put("r6.excl.counterexamples", _exc["g_positive_without_fragility"],
+        "analysis_conditioning.json:R6.anchor_free_excluded.g_positive_without_fragility")
+    put("r6.excl.games", _exc["games"], "analysis_conditioning.json:R6.anchor_free_excluded.games")
+    put("r6.excl.ratio_min", _exc["ratio_min"], "analysis_conditioning.json:R6.anchor_free_excluded.ratio_min")
+    put("r6.excl.ratio_max", _exc["ratio_max"], "analysis_conditioning.json:R6.anchor_free_excluded.ratio_max")
+    put("r6.excl.ratio_min_3dp", _exc["ratio_min_3dp"],
+        "analysis_conditioning.json:R6.anchor_free_excluded.ratio_min_3dp")
+    put("r6.excl.ratio_max_3dp", _exc["ratio_max_3dp"],
+        "analysis_conditioning.json:R6.anchor_free_excluded.ratio_max_3dp")
+    put("r6.all.g_positive", _all["g_positive"], "analysis_conditioning.json:R6.all_games.g_positive")
+    put("r6.all.cells", _all["cells"], "analysis_conditioning.json:R6.all_games.cells")
 
     # --- ground truth by construction: the anchors -----------------------------------------------
     anchors = v4["anchors"]

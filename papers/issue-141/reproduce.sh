@@ -158,6 +158,7 @@ artefact "artefact v4"  spike_v4_results.json  spike_v4.py --out spike_v4_result
 artefact "census: excess entries" census_excess_entries.json census_excess_entries.py --out census_excess_entries.json
 artefact "census: converse scope" census_converse_scope.json census_converse_scope.py --out census_converse_scope.json
 artefact "analysis: transitivity coordinate vs transport" analysis_transitivity_vs_transport.json analysis_transitivity_vs_transport.py
+artefact "analysis: conditioning of the reduction test (R5) + anchor-free share (R6)" analysis_conditioning.json analysis_conditioning.py
 
 # the report texts: v0-v2 PRINT theirs to stdout, v3-v4 write theirs through --report
 report() {              # $1 version  $2 mode

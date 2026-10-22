@@ -45,6 +45,14 @@ confirmed nowhere. What we do claim is that the protocol-level phenomena are exa
 invisible to protocol-free reporting, and that one of the incentives literature's natural predictions
 about them is false.
 
+**Contribution level: `theory+empirics`.** Declared here because this is the carrier a reader looks in,
+and the same value is stated in the research registration and in `README.md`; all three name one level.
+The grounds are the two this journal asks for at that level: a **theory model** — the design law, proved
+over the enumerated space and falsified where it could be (0 mismatches over 19 protocols x 9 games,
+with row-reading protocols faithful in no cell) — and **empirics with a baseline** — a two-sided control
+in which the uninformative-constant and uninformative-random protocols bracket every measured effect,
+plus exact enumeration rather than sampling, so that no reported difference rests on a draw.
+
 ## 1 Introduction: the protocol is a confound nobody manipulates
 
 Benchmarks for strategic agents are now published at a rate that outstrips their methodology
@@ -497,6 +505,17 @@ itself moves with the population, which is precisely the regime §5 and §8 say 
 is a real limitation and we name it in the abstract's claim boundary as well.
 <!-- n: v4.anchors_certified, v4.anchors_total, v4.anchors_uncertified -->
 
+**How far the anchor-free game carries the result, stated rather than left to the reader.** Excluding
+`cv_n4`'s cells entirely, the three headline numbers are: `G > 0` in **423 of 608** cells (was 474 of
+684); the protocol's mean square exceeding the population's in **8 of 8** remaining games, from
+**4.802x** to **52.132x** (was 9 of 9 at 3.929x–52.132x); and the containment **423 gameable cells inside
+503 fragile ones, with 0 counterexamples** to `G > 0 => tau < 1` (was 474 inside 564)
+<!-- n: r6.excl.game, r6.excl.g_positive, r6.excl.cells, r6.excl.games, r6.excl.gameable,
+     r6.excl.fragile, r6.excl.counterexamples, r6.excl.ratio_min_3dp, r6.excl.ratio_max_3dp -->. Every qualitative
+result is unchanged and the smallest ratio moves *up*: the anchor-free game is where the protocol's
+advantage over the population is weakest, so removing it strengthens rather than weakens the claim this
+paper actually makes.
+
 **(4) The transport arm reports one statistic per entry.** Transport is computed at the entry level
 (protocol, ordered population pair), not per policy, so a protocol could pass while a particular policy
 changes order. We did not measure policy-level transport; a suite that publishes per-policy comparisons
@@ -611,7 +630,12 @@ whose payoff structure is cyclic, so the aggregate must be a solution concept. I
 paper's measured space, and the reason is exact. We computed the transitivity coordinate of every game
 in the ladder — the share of strategy triples that are cyclic under "a beats b" — and it is **0/56 in
 seven of nine games** and **3/56 in the other two** <!-- n: trans.coord.zero_games, trans.coord.nonzero_games -->. Of the **474** rank-gaming cells, **374** — **78.9 %** — lie in games with a
-zero coordinate <!-- n: trans.gpos.coord0, trans.gpos.total -->. The misordering priced in §4 therefore
+zero coordinate <!-- n: trans.gpos.coord0, trans.gpos.total, trans.gpos.share_pct -->. That share is an
+**existence** reading and not a distributional one, and the base rate says so: seven of nine games have a
+zero coordinate, so a cell picked at random lands in one with probability **77.8 %**, against the
+**78.9 %** observed <!-- n: trans.coord.base_rate_pct -->. What the
+figure establishes is therefore that the misordering survives where no cyclic structure can obstruct a
+transitive rating; it does not establish that the misordering concentrates there. The misordering priced in §4 therefore
 survives in games where a total order exists and no cyclic structure can obstruct a transitive rating:
 their impossibility says no total order can represent a cyclic game, and this law says a total order
 that does represent an acyclic one can still be bought. The two are disjoint failure modes, measured on
@@ -624,12 +648,25 @@ sharp: at a *fixed* game and a *fixed* population pair, the coordinate is pinned
 reduced to it the excess could not move. It moves. In **9 of 9** games the excess takes more than one
 distinct value across the nineteen protocols at a fixed pair, and up to **8** distinct values at the
 widest pair (`uniform` against `capped_strong`, e.g. `-1/14` for `best_opp` against `3/7` for
-`tail_swap` in `fpsb_n4`) <!-- n: trans.distinct_max, trans.distinct_gt1_games -->. The coordinate is
+`tail_swap` in `fpsb_n4`) <!-- n: trans.distinct_max, trans.distinct_gt1_games, trans.widest.low, trans.widest.high -->. The coordinate is
 also degenerate on this ladder before any transport is computed: seven games share a value of zero, so
-it ties **22 of 36** game pairs and cannot order the games at all <!-- n: trans.coord.ties, trans.game_pairs -->. What the
+it ties **22 of 36** game pairs and orders the remaining **14** <!-- n: trans.coord.ties, trans.game_pairs --> — a
+**partial order on this ladder**, not the absence of one. What the
 transport statistic carries that the dimension does not is thus not a refinement of it but a different
 object: the dimension says how much the *game* can move, the excess measures what the *protocol* adds
 once that motion is subtracted — which is also why the paper's own baseline term is not the coordinate
+
+*And it survives conditioning on the second axis.* A reduction test that pins one axis leaves the other
+open, so the spread was re-read with **both** of Czarnecki et al.'s axes held fixed over the **54**
+(game, population-pair) cells: grouped by the transitive-strength pair, by the population-size pair (the
+number of policies carrying weight), and by both at once, **every conditioning cell still shows more
+than one distinct excess value, with a minimum of 2 distinct values in all three readings**
+<!-- n: cond.pairs, cond.coord.min_distinct, cond.size.min_distinct, cond.both.min_distinct -->. The sharpest
+form is the degenerate one: in the **seven** games whose coordinate is zero at *every* population — so the
+coordinate pair is (0, 0) for every pair — the excess across the **42** pairs still spans **2 to 8**
+distinct values <!-- n: cond.coord0.pairs, cond.coord0.min_distinct, cond.coord0.max_distinct -->. Non-reduction
+therefore holds *inside* the case where the coordinate is pinned completely, and not merely across cases
+where it differs.
 but the payoff ordering's realised loss under the change, a quantity that varies across population pairs
 within a game of constant coordinate <!-- n: trans.base.distinct_max_coord0 -->.
 
