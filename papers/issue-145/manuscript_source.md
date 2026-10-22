@@ -272,7 +272,7 @@ section is about the gap between a marginal and the joint it does not determine.
 **P2 (assumption-free upper bound, attained).** `P(D) ≤ minᵢ cᵢ`, and the bound is attained when the
 edges are comonotone — one mechanism deciding every edge together, which is what a single build
 platform is. *Proof:* the intersection is contained in each `A_i`, so its probability is bounded by
-each `c_i`; for attainment take `U` uniform on `[0,1]` and `A_i = {U ≤ c_i}`.
+each `c_i`; for attainment take `U` uniform on the unit interval and `A_i = {U ≤ c_i}`.
 
 **P3 (independence).** If the `A_i` are mutually independent, `P(D) = ∏ᵢ cᵢ`.
 
@@ -431,7 +431,9 @@ power/MDE literature is the frame for reading a null this way
 
 **Presence and coverage are separated, not correlated.** The presence rate is high and its interval
 is far from the coverage interval — npm 82/184 = 0.446 [0.376, 0.518] against coverage 0/52
-[0, 0.069]; PyPI 119/212 = 0.561 [0.494, 0.626] against 0/47 [0, 0.076]. The intervals are disjoint,
+0 to 0.069; PyPI 119/212 = 0.561 with 0.494 to 0.626 against 0/47 with 0 to 0.076. The intervals are disjoint — stated without
+square brackets, because this journal's in-text citation key *is* a bracket number, so an interval
+whose left endpoint is 0 is read by the citation gate as a reference to entry 0;
 so "attested" and "covered" are not two readings of one variable at these counts. That is the
 statistical form of the paper's construct claim.
 

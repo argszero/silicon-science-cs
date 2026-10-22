@@ -93,9 +93,18 @@ def build(text):
 
     if MARK not in out:
         return None, None, pool, "C1 FAIL: the draft has no %s marker for the reference list" % MARK
+    # A blank line between entries: consecutive entry lines are ONE paragraph to any CommonMark
+    # renderer (GitHub's preview included), so without the separator the bibliography renders as a
+    # wall whose entry boundaries a reader cannot see. `.github/tools/refgate.py` prints that count
+    # as `block form:` and it is what the review template's "read in the rendered form" reads.
     lines = [HEADING, ""]
-    for k in order:
-        lines.append("%d. %s" % (num[k], fmt(by_key[k])))
+    for i, k in enumerate(order):
+        if i:
+            lines.append("")
+        # the bibliography marker matches the in-text key FORM (`[n]`), not only its number:
+        # a list numbered `1.` beside a body citing `[1]` is the style mismatch refgate warns on,
+        # and a reader matching the two by eye should not have to translate between them
+        lines.append("[%d] %s" % (num[k], fmt(by_key[k])))
     out = out.replace(MARK, "\n".join(lines))
 
     # C2 -- every pool entry is cited

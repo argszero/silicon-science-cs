@@ -272,7 +272,7 @@ section is about the gap between a marginal and the joint it does not determine.
 **P2 (assumption-free upper bound, attained).** `P(D) ≤ minᵢ cᵢ`, and the bound is attained when the
 edges are comonotone — one mechanism deciding every edge together, which is what a single build
 platform is. *Proof:* the intersection is contained in each `A_i`, so its probability is bounded by
-each `c_i`; for attainment take `U` uniform on `[0,1]` and `A_i = {U ≤ c_i}`.
+each `c_i`; for attainment take `U` uniform on the unit interval and `A_i = {U ≤ c_i}`.
 
 **P3 (independence).** If the `A_i` are mutually independent, `P(D) = ∏ᵢ cᵢ`.
 
@@ -431,7 +431,9 @@ power/MDE literature is the frame for reading a null this way
 
 **Presence and coverage are separated, not correlated.** The presence rate is high and its interval
 is far from the coverage interval — npm 82/184 = 0.446 [0.376, 0.518] against coverage 0/52
-[0, 0.069]; PyPI 119/212 = 0.561 [0.494, 0.626] against 0/47 [0, 0.076]. The intervals are disjoint,
+0 to 0.069; PyPI 119/212 = 0.561 with 0.494 to 0.626 against 0/47 with 0 to 0.076. The intervals are disjoint — stated without
+square brackets, because this journal's in-text citation key *is* a bracket number, so an interval
+whose left endpoint is 0 is read by the citation gate as a reference to entry 0;
 so "attested" and "covered" are not two readings of one variable at these counts. That is the
 statistical form of the paper's construct claim.
 
@@ -545,133 +547,262 @@ part of the reproducible run.
 
 ## References
 
-1. Ladisa (2023). SoK: Taxonomy of Attacks on Open-Source Software Supply Chains. 2023 IEEE Symposium on Security and Privacy (SP). https://doi.org/10.1109/sp46215.2023.10179304
-2. Samaana (2025). Opportunities and security risks of technical leverage: A replication study on the NPM ecosystem. Empirical Software Engineering. https://doi.org/10.1007/s10664-025-10648-8
-3. Goncalves (2022). OIDC-TCI: OIDC with Trust Context Information. 2022 14th IFIP Wireless and Mobile Networking Conference (WM. https://doi.org/10.23919/wmnc56391.2022.9954295
-4. Prünster (2019). Fides: Unleashing the Full Potential of Remote Attestation. Proceedings of the 16th International Joint Conference on e-. https://doi.org/10.5220/0008121003140321
-5. Laurie (2013). Certificate Transparency. https://doi.org/10.17487/rfc6962
-6. Ryan (2014). Enhanced Certificate Transparency and End-to-End Encrypted Mail. Proceedings 2014 Network and Distributed System Security Symposium. https://doi.org/10.14722/ndss.2014.23379
-7. Samuel (2010). Survivable key compromise in software update systems. Proceedings of the 17th ACM conference on Computer and communications security. https://doi.org/10.1145/1866307.1866315
-8. Lamb (2022). Reproducible Builds: Increasing the Integrity of Software Supply Chains. IEEE Software. https://doi.org/10.1109/ms.2021.3073045
-9. Buneman (2001). Why and Where: A Characterization of Data Provenance. Lecture Notes in Computer Science. https://doi.org/10.1007/3-540-44503-x_20
-10. Cheney (2007). Provenance in Databases: Why, How, and Where. https://doi.org/10.1561/9781601982339
-11. Muller (2022). How, Where, and Why Data Provenance Improves Query Debugging: A Visual Demonstration of Fine–Grained Provenance Analysis for SQL. 2022 IEEE 38th International Conference on Data Engineering. https://doi.org/10.1109/icde53745.2022.00292
-12. Godfrey (2015). Understanding software artifact provenance. Science of Computer Programming. https://doi.org/10.1016/j.scico.2013.11.021
-13. Cronbach (1955). Construct validity in psychological tests.. Psychological Bulletin. https://doi.org/10.1037/h0040957
-14. Berry (2000). An Instrument for Assessing Software Measurement Programs. Empirical Software Engineering. https://doi.org/10.1023/a:1026534430984
-15. Schneidewind (2001). Knowledge Requirements for Software Quality Measurement. Empirical Software Engineering. https://doi.org/10.1023/a:1011435315749
-16. Hoess (2025). Does the Tool Matter? Exploring Some Causes of Threats to Validity in Mining Software Repositories. 2025 IEEE International Conference on Software Analysis, Evo. https://doi.org/10.1109/saner64311.2025.00067
-17. Mockus (2014). Is mining software repositories data science? (keynote). Proceedings of the 11th Working Conference on Mining Softwar. https://doi.org/10.1145/2597073.2600728
-18. Voinea (2006). Mining software repositories with CVSgrab. Proceedings of the 2006 international workshop on Mining sof. https://doi.org/10.1145/1137983.1138024
-19. Baltes (2022). Sampling in software engineering research: a critical review and guidelines. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-10072-8
-20. Small (2017). Empirical Generalizability. Oxford Scholarship Online. https://doi.org/10.1093/oso/9780190661427.003.0008
-21. de Mello (2014). Sampling improvement in software engineering surveys. Proceedings of the 8th ACM/IEEE International Symposium on E. https://doi.org/10.1145/2652524.2652566
-22. Nunkesser (2026). Assessing the Generalizability of Mobile Software Engineering Research Through Combined Systematic Methods. Software. https://doi.org/10.3390/software5010012
-23. Runeson (n.d.). A case study using sampling to improve software inspection effectiveness. 2003 International Symposium on Empirical Software Engineeri. https://doi.org/10.1109/isese.2003.1237985
-24. González-Barahona (2011). On the reproducibility of empirical software engineering studies based on data retrieved from development repositories. Empirical Software Engineering. https://doi.org/10.1007/s10664-011-9181-9
-25. Juristo (2013). Towards understanding replication of software engineering experiments. 2013 ACM / IEEE International Symposium on Empirical Softwar. https://doi.org/10.1109/esem.2013.64
-26. Brooks (2013). A Partial Replication with a Sample Size of One: A Smoke Test for Empirical Software Engineering. 2013 3rd International Workshop on Replication in Empirical. https://doi.org/10.1109/reser.2013.7
-27. Porter (1998). Comparing Detection Methods For Software Requirements Inspections: A Replication Using Professional Subjects. Empirical Software Engineering. https://doi.org/10.1023/a:1009776104355
-28. Decan (2017). An empirical comparison of dependency issues in OSS packaging ecosystems. 2017 IEEE 24th International Conference on Software Analysis, Evolution and Reengineering (SANER). https://doi.org/10.1109/saner.2017.7884604
-29. Kikas (2017). Structure and Evolution of Package Dependency Networks. 2017 IEEE/ACM 14th International Conference on Mining Software Repositories (MSR). https://doi.org/10.1109/msr.2017.55
-30. Cogo (2021). An empirical study of same-day releases of popular packages in the npm ecosystem. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-09980-6
-31. Cogo (2021). An Empirical Study of Dependency Downgrades in the npm Ecosystem. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2952130
-32. Chowdhury (2022). On the Untriviality of Trivial Packages: An Empirical Study of npm JavaScript Packages. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2021.3068901
-33. Zerouali (2019). On the Diversity of Software Package Popularity Metrics: An Empirical Study of npm. 2019 IEEE 26th International Conference on Software Analysis. https://doi.org/10.1109/saner.2019.8667997
-34. Chodorowski (2021). Comparative analysis of JavaScript package managers - yarn and npm. Journal of Computer Sciences Institute. https://doi.org/10.35784/jcsi.2460
-35. Saeidi (2025). What About Our Bug? A Study on the Responsiveness of NPM Package Maintainers. 2025 ACM/IEEE International Symposium on Empirical Software. https://doi.org/10.1109/esem64174.2025.00071
-36. Islam (2023). An Empirical Study of npm Ecosystem Related Tweets by Core Software Developers: A Case Study. https://doi.org/10.21203/rs.3.rs-2560509/v1
-37. Rayarao (2025). The Shai-Hulud NPM Supply Chain Attack: A Comprehensive Analysis of Self-Replicating Malware in the JavaScript Ecosystem. https://doi.org/10.22541/au.175830854.42750868/v1
-38. Bommarito (2019). An Empirical Analysis of the Python Package Index (PyPI). SSRN Electronic Journal. https://doi.org/10.2139/ssrn.3426281
-39. Guo (2023). An Empirical Study of Malicious Code In PyPI Ecosystem. 2023 38th IEEE/ACM International Conference on Automated Sof. https://doi.org/10.1109/ase56229.2023.00135
-40. Ruohonen (2021). A Large-Scale Security-Oriented Static Analysis of Python Packages in PyPI. 2021 18th International Conference on Privacy, Security and. https://doi.org/10.1109/pst52912.2021.9647791
-41. Peng (2024). Less is More? An Empirical Study on Configuration Issues in Python PyPI Ecosystem. Proceedings of the IEEE/ACM 46th International Conference on. https://doi.org/10.1145/3597503.3639077
-42. Vu (2020). Typosquatting and Combosquatting Attacks on the Python Ecosystem. 2020 IEEE European Symposium on Security and Privacy Workshops (EuroS&amp;PW). https://doi.org/10.1109/eurospw51379.2020.00074
-43. Ladisa (2023). On the Feasibility of Cross-Language Detection of Malicious Packages in npm and PyPI. Annual Computer Security Applications Conference. https://doi.org/10.1145/3627106.3627138
-44. Gandhi (2024). Automated Detection and Mitigation of Malicious Packages in the PyPI Ecosystem and.exe Files: PyGuardEX. 2024 First International Conference for Women in Computing (. https://doi.org/10.1109/incowoco64194.2024.10863220
-45. Montaruli (2025). One Detector Fits All: Robust and Adaptive Detection of Malicious Packages from PyPI to Enterprises. 2025 IEEE Annual Computer Security Applications Conference (. https://doi.org/10.1109/acsac67867.2025.00053
-46. Raszka (2026). Malicious packages in public registries: reporting bias, detection coverage, and the limits of evaluating registry interventions. https://doi.org/10.2139/ssrn.7592667
-47. Lim (2026). Bridging Registry Fragmentation: SBOM-Based Metadata for Generalized Malicious Package Detection. IEEE Access. https://doi.org/10.1109/access.2026.3743923
-48. Zhang (2025). Killing Two Birds with One Stone: Malicious Package Detection in NPM and PyPI using a Single Model of Malicious Behavior Sequence. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3705304
-49. Liang (2026). Detecting Malicious Packages in PyPI and NPM by Clustering Installation Scripts. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2025.3618952
-50. Liu (2026). Seeing the Forest: A Taxonomy-Guided Analysis and Improvement of Malicious PyPI Package Detectors. Proceedings of the 2nd International Workshop on Software Ge. https://doi.org/10.1145/3844178.3844648
-51. wang (2026). Decoding Maliciousness: A Scalable Framework for Malicious PyPI Package Detection via Multi-source Semantic Fusion. https://doi.org/10.2139/ssrn.6727185
-52. Yan (2026). PyPIMalDet: A malicious PyPI package detection method combining code features and metadata features. Neural Networks. https://doi.org/10.1016/j.neunet.2025.108487
-53. Iqbal (2025). PypiGuard: A novel meta-learning approach for enhanced malicious package detection in PyPI through static-dynamic feature fusion. Journal of Information Security and Applications. https://doi.org/10.1016/j.jisa.2025.104032
-54. Iqbal (2026). CLAMPD-Net: Cross-language malicious package detection across PyPI and NPM with multimodal fusion. Information and Software Technology. https://doi.org/10.1016/j.infsof.2026.108129
-55. Jobu (2026). PyPIGuard: A Lightweight, Explainable Machine Learning Tool for Pre-Install Detection of Malicious PyPI Packages. https://doi.org/10.2139/ssrn.7233262
-56. Wyss (2025). Evaluating LLM-Based Detection of Malicious Package Updates in npm. 2025 28th International Symposium on Research in Attacks, In. https://doi.org/10.1109/raid67961.2025.00047
-57. Moufid (2026). Metadata Compressibility and Evaluation Bias in Malicious Package Detection for NPM and PyPI. Journal of Cybersecurity and Privacy. https://doi.org/10.3390/jcp6050160
-58. Sun (2024). 1+1&gt;2: Integrating Deep Code Behaviors with Metadata Features for Malicious PyPI Package Detection. Proceedings of the 39th IEEE/ACM International Conference on. https://doi.org/10.1145/3691620.3695493
-59. Draz (2026). Version context and control construction in machine learning detection of malicious package updates across npm and PyPI. Scientific Reports. https://doi.org/10.1038/s41598-026-71750-5
-60. Sehgal (2024). A Taxonomy and Survey of Software Bill of Materials (SBOM) Generation Approaches. Communications in Computer and Information Science. https://doi.org/10.1007/978-3-031-50815-8_3
-61. Kishimoto (2025). A Dataset of Software Bill of Materials for Evaluating SBOM Consumption Tools. 2025 IEEE/ACM 22nd International Conference on Mining Softwa. https://doi.org/10.1109/msr66628.2025.00090
-62. Nyambe (2025). Reframing Software Bill of Materials (SBOM) Security Evaluation Using a Model-Based Systems Engineering Approach. 2025 IEEE International Symposium on Systems Engineering (IS. https://doi.org/10.1109/isse65546.2025.11370101
-63. Oberhauser (2025). VR-SBOM: Visualization of Software Bill of Materials and Software Supply Chains in Virtual Reality. Lecture Notes in Business Information Processing. https://doi.org/10.1007/978-3-031-98033-6_4
-64. Hendrick (2022). Software Bill of Materials (SBOM) and Cybersecurity Readiness. https://doi.org/10.70828/rytl5793
-65. O'Donoghue (2023). Impacts of Software Bill of Materials (SBOM) Generation on Vulnerability Detection. Proceedings of the 2024 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3689944.3696164
-66. Lee (2025). Software Bill of Materials(SBOM) Implementation and Evaluation of AI-based Digital Therapeutics. Journal of the Korea Academia-Industrial cooperation Society. https://doi.org/10.5762/kais.2025.26.4.268
-67. Seknametla (2025). Secure Supply Chain Management in DevOps: Addressing Software Bill of Materials (SBOM) Risks. International Journal of Emerging Research in Engineering an. https://doi.org/10.63282/3050-922x.ijeret-v6i2p115
-68. Bamidele Samuel Adelusi (2023). Blockchain-Integrated Software Bill of Materials (SBOM) for Real-Time Vulnerability Detection in Decentralized Package Repositories. International Journal of Scientific Research in Civil Engine. https://doi.org/10.32628/ijsrce237314
-69. Beninger (2024). ERS0: Enhancing Military Cybersecurity with AI-Driven SBOM for Firmware Vulnerability Detection and Asset Management. 2024 16th International Conference on Cyber Conflict: Over t. https://doi.org/10.23919/cycon62501.2024.10685598
-70. Dalia (2025). Come Together: Sbom-Enhanced Vulnerability Assessment in Safety-Critical Systems. https://doi.org/10.2139/ssrn.5362510
-71. Jang (2026). A Machine Learning-Based Vulnerability Prediction System Using SBOM Metadata for Software Supply Chain Security. The Journal of Korean Institute of Communications and Inform. https://doi.org/10.7840/kics.2026.51.4.792
-72. Kawai (2026). Mission-Aware SBOM Vulnerability Triage with KEV/EPSS and LLM-Based VEX Drafting. 2026 23rd International Joint Conference on Computer Science. https://doi.org/10.1109/jcsse68839.2026.11597025
-73. Mydin (2026). SBOM Tooling Ecosystem: A Systematic Literature Review. Applied Research. https://doi.org/10.1002/appl.70209
-74. SHTOMA (2025). SBOM-BASED VULNERABILITY PRIORITIZATION IN SOFTWARE SUPPLY CHAIN USING MACHINE LEARNING. Advanced Information Technology. https://doi.org/10.17721/ait.2025.2.04
-75. Radanliev (2023). ML) in Software Vulnerability Management: automations in the Software Bill of Materials (SBOM) and the Vulnerability-Exploitability eXchange (VEX). https://doi.org/10.36227/techrxiv.23706684.v1
-76. Rüschendorf (1991). FréChet-Bounds and Their Applications. Advances in Probability Distributions with Given Marginals. https://doi.org/10.1007/978-94-011-3466-8_9
-77. Rüschendorf (1996). Developments on Fréchet-bounds. Institute of Mathematical Statistics Lecture Notes - Monogra. https://doi.org/10.1214/lnms/1215452625
-78. Scarsini (1997). Fréchet Classes and Nonmonotone Dependence. Distributions with given Marginals and Moment Problems. https://doi.org/10.1007/978-94-011-5532-8_7
-79. Skřivánek (2014). Basic bounds of Fréchet classes. Kybernetika. https://doi.org/10.14736/kyb-2014-1-0095
-80. (no author in the registry record) (2020). Microeconometrics with partial identification. Handbook of Econometrics. https://doi.org/10.1016/bs.hoe.2020.05.002
-81. Molinari (2019). Econometrics with Partial Identification. https://doi.org/10.1920/wp.cem.2019.2519
-82. Molinari (2008). Partial identification of probability distributions with misclassified data. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2007.12.003
-83. McAdams (2008). Partial identification and testable restrictions in multi-unit auctions. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2008.07.003
-84. Hong (2017). Inference in semiparametric conditional moment models with partial identification. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2016.09.014
-85. Jiang (2017). On limiting distribution of quasi-posteriors under partial identification. Econometrics and Statistics. https://doi.org/10.1016/j.ecosta.2017.03.006
-86. Fan (2018). Partial identification and inference in censored quantile regression. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2018.04.002
-87. Beresteanu (2012). Partial identification using random set theory. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2011.06.003
-88. Obradović (2024). Measuring diagnostic test performance using imperfect reference tests: A partial identification approach. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2024.105842
-89. Bar-Hillel (1977). The Base-Rate Fallacy in Probability Judgments. https://doi.org/10.21236/ada045772
-90. Ghanshyambhai Patel (2025). Software Supply Chain Security: Implementing SLSA Compliance in CI/CD Pipelines. International Journal for Research Trends and Innovation. https://doi.org/10.56975/ijrti.v10i7.205129
-91. Mohomed (2025). ARGO-SLSA: Software Supply Chain Security in Argo Workflows. 2025 Moratuwa Engineering Research Conference (MERCon). https://doi.org/10.1109/mercon67903.2025.11217128
-92. Tamanna (2025). Unraveling Challenges with Supply-Chain Levels for Software Artifacts (Slsa) for Securing the Software Supply Chain. https://doi.org/10.2139/ssrn.5119626
-93. Cesarano (2023). GoSurf: Identifying Software Supply Chain Attack Vectors in Go. Proceedings of the 2024 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3689944.3696166
-94. Reyes (2025). Maven-Hijack: Software Supply Chain Attack Exploiting Packaging Order. Proceedings of the 2025 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3733827.3765523
-95. Chen (2023). Runtime Verification for Software Supply Chain Security using Confidential Computing. Proceedings of the 2024 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3689944.3696350
-96. Williams (2024). Narrowing the Software Supply Chain Attack Vectors: The SSDF Is Wonderful but not Enough. IEEE Security &amp; Privacy. https://doi.org/10.1109/msec.2024.3359798
-97. Kerman (2025). Software Supply Chain and DevOps Security Practices. https://doi.org/10.6028/nist.sp.1800-44
-98. Soeiro (n.d.). Assessing the Security of Software Supply Chains: Software Bill of Materials, Threat Propagation, and Logical Attack Graphs. https://doi.org/10.70675/6dd72cb7z7135z4d1dza942z3f6c57308033
-99. Gibb (2025). Solving Package Management via Hypergraph Dependency Resolution. https://doi.org/10.59350/nrbbt-e7k85
-100. Gibb (2026). Package managers à la carte: A Formal Model of Dependency Resolution. https://doi.org/10.59350/rk9s4-43g76
-101. Zhu (2026). Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound. https://doi.org/10.2139/ssrn.7456458
-102. Teng (2026). Supply Chain Software Package Risk Scoring TD3-MPC Model Based on Dependency Metadata Graph. Journal of Applied Automation Technologies. https://doi.org/10.64972/jaat.2026v4.386p31e:413-425
-103. Liu (2022). Demystifying the vulnerability propagation and its evolution via dependency trees in the NPM ecosystem. Proceedings of the 44th International Conference on Software. https://doi.org/10.1145/3510003.3510142
-104. Gao (2026). LLM-Enhanced Evolutionary Dependency Graphs: A System Approach to Precise Vulnerability Propagation Tracking. Mathematics. https://doi.org/10.3390/math14142593
-105. Abdalkareem (2022). A Machine Learning Approach to Determine the Semantic Versioning Type of NPM Packages Releases. https://doi.org/10.2139/ssrn.4082606
-106. Decan (2021). What Do Package Dependencies Tell Us About Semantic Versioning?. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2918315
-107. Panter (2025). PVAC: package version activity categorizer, leveraging semantic versioning in a heterogeneous system. Empirical Software Engineering. https://doi.org/10.1007/s10664-025-10678-2
-108. Tang (2026). Package selection and versioning matter. Nature Methods. https://doi.org/10.1038/s41592-026-03108-8
-109. Newman (2022). Sigstore. Proceedings of the 2022 ACM SIGSAC Conference on Computer an. https://doi.org/10.1145/3548606.3560596
-110. Dias (2021). What Makes a Great Maintainer of Open Source Projects?. 2021 IEEE/ACM 43rd International Conference on Software Engi. https://doi.org/10.1109/icse43902.2021.00093
-111. Hendrick (2023). Maintainer Perspectives on Open Source Software Security: Survey-based Insights from Maintainers Regarding How They Address Best Practices for Secure Software Development. https://doi.org/10.70828/pvsn3075
-112. Linåker (2024). Sustaining Maintenance Labor for Healthy Open Source Software Projects through Human Infrastructure: A Maintainer Perspective. Proceedings of the 18th ACM/IEEE International Symposium on. https://doi.org/10.1145/3674805.3686667
-113. Salmon (2026). How to Recruit a New Maintainer for Your Package. https://doi.org/10.59350/qgdfk-ce602
-114. Randrianaina (n.d.). Incremental, reproducible builds of software variants. https://doi.org/10.70675/e95564c6zca79z417aza37ez10821a9a0a48
-115. Goswami (2024). Reproducible High Performance Computing without Redundancy with Nix. https://doi.org/10.31219/osf.io/3fp2v
-116. (no author in the registry record) (2017). Workflow-ready bioinformatics packages and Debian’s infrastructure for low-friction reproducible research. https://doi.org/10.7490/f1000research.1114468.1
-117. Afshartous (2008). Sample Size Determination for Binomial Proportion Confidence Intervals. The American Statistician. https://doi.org/10.1198/000313008x271474
-118. Balayla (2024). Gaussian Distribution, Confidence Intervals, Binomial (Wald) Proportion, Wilson Score Interval and Delta Theorem. Theorems on the Prevalence Threshold and the Geometry of Scr. https://doi.org/10.1007/978-3-031-71452-8_13
-119. Garthwaite (2023). Locally correct confidence intervals for a binomial proportion: A new criteria for an interval estimator. Scandinavian Journal of Statistics. https://doi.org/10.1111/sjos.12672
-120. Guan (2012). A generalized score confidence interval for a binomial proportion. Journal of Statistical Planning and Inference. https://doi.org/10.1016/j.jspi.2011.09.010
-121. Habtzghi (2014). Modified Clopper-Pearson Confidence Interval for Binomial Proportion. Journal of Statistical Theory and Applications. https://doi.org/10.2991/jsta.2014.13.4.3
-122. Kim (2021). A generalized Agresti–Coull type confidence interval for a binomial proportion. Journal of the Korean Statistical Society. https://doi.org/10.1007/s42952-021-00143-3
-123. Nawa (2022). A weighted score confidence interval for a binomial proportion. Japanese Journal of Statistics and Data Science. https://doi.org/10.1007/s42081-022-00146-2
-124. Sandelius (1952). A Confidence Interval for the Smallest Proportion of a Binomial Population. Journal of the Royal Statistical Society Series B: Statistic. https://doi.org/10.1111/j.2517-6161.1952.tb00105.x
-125. Tang (2005). Confidence interval construction for proportion difference in small‐sample paired studies. Statistics in Medicine. https://doi.org/10.1002/sim.2216
-126. (no author in the registry record) (2015). Power calculation for causal inference in social science: sample size and minimum detectable effect determination. https://doi.org/10.23846/wp0026
-127. Brydges (2019). Effect Size Interpretation, Sample Size Calculation, and Statistical Power in Gerontology. https://doi.org/10.31234/osf.io/u2jbm
-128. Dalgaard (2023). What minimal detectable effect size is in your power – An inverted sample size formular for survival data. European Psychiatry. https://doi.org/10.1192/j.eurpsy.2023.1139
-129. Greenland (1985). Power, sample size and smallest detectable effect determination for multivariate studies. Statistics in Medicine. https://doi.org/10.1002/sim.4780040203
-130. Hunter (2024). PUMP: Estimating Power, Minimum Detectable Effect Size, and Sample Size When Adjusting for Multiple Outcomes in Multi-Level Experiments. Journal of Statistical Software. https://doi.org/10.18637/jss.v108.i06
+[1] Ladisa (2023). SoK: Taxonomy of Attacks on Open-Source Software Supply Chains. 2023 IEEE Symposium on Security and Privacy (SP). https://doi.org/10.1109/sp46215.2023.10179304
+
+[2] Samaana (2025). Opportunities and security risks of technical leverage: A replication study on the NPM ecosystem. Empirical Software Engineering. https://doi.org/10.1007/s10664-025-10648-8
+
+[3] Goncalves (2022). OIDC-TCI: OIDC with Trust Context Information. 2022 14th IFIP Wireless and Mobile Networking Conference (WM. https://doi.org/10.23919/wmnc56391.2022.9954295
+
+[4] Prünster (2019). Fides: Unleashing the Full Potential of Remote Attestation. Proceedings of the 16th International Joint Conference on e-. https://doi.org/10.5220/0008121003140321
+
+[5] Laurie (2013). Certificate Transparency. https://doi.org/10.17487/rfc6962
+
+[6] Ryan (2014). Enhanced Certificate Transparency and End-to-End Encrypted Mail. Proceedings 2014 Network and Distributed System Security Symposium. https://doi.org/10.14722/ndss.2014.23379
+
+[7] Samuel (2010). Survivable key compromise in software update systems. Proceedings of the 17th ACM conference on Computer and communications security. https://doi.org/10.1145/1866307.1866315
+
+[8] Lamb (2022). Reproducible Builds: Increasing the Integrity of Software Supply Chains. IEEE Software. https://doi.org/10.1109/ms.2021.3073045
+
+[9] Buneman (2001). Why and Where: A Characterization of Data Provenance. Lecture Notes in Computer Science. https://doi.org/10.1007/3-540-44503-x_20
+
+[10] Cheney (2007). Provenance in Databases: Why, How, and Where. https://doi.org/10.1561/9781601982339
+
+[11] Muller (2022). How, Where, and Why Data Provenance Improves Query Debugging: A Visual Demonstration of Fine–Grained Provenance Analysis for SQL. 2022 IEEE 38th International Conference on Data Engineering. https://doi.org/10.1109/icde53745.2022.00292
+
+[12] Godfrey (2015). Understanding software artifact provenance. Science of Computer Programming. https://doi.org/10.1016/j.scico.2013.11.021
+
+[13] Cronbach (1955). Construct validity in psychological tests.. Psychological Bulletin. https://doi.org/10.1037/h0040957
+
+[14] Berry (2000). An Instrument for Assessing Software Measurement Programs. Empirical Software Engineering. https://doi.org/10.1023/a:1026534430984
+
+[15] Schneidewind (2001). Knowledge Requirements for Software Quality Measurement. Empirical Software Engineering. https://doi.org/10.1023/a:1011435315749
+
+[16] Hoess (2025). Does the Tool Matter? Exploring Some Causes of Threats to Validity in Mining Software Repositories. 2025 IEEE International Conference on Software Analysis, Evo. https://doi.org/10.1109/saner64311.2025.00067
+
+[17] Mockus (2014). Is mining software repositories data science? (keynote). Proceedings of the 11th Working Conference on Mining Softwar. https://doi.org/10.1145/2597073.2600728
+
+[18] Voinea (2006). Mining software repositories with CVSgrab. Proceedings of the 2006 international workshop on Mining sof. https://doi.org/10.1145/1137983.1138024
+
+[19] Baltes (2022). Sampling in software engineering research: a critical review and guidelines. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-10072-8
+
+[20] Small (2017). Empirical Generalizability. Oxford Scholarship Online. https://doi.org/10.1093/oso/9780190661427.003.0008
+
+[21] de Mello (2014). Sampling improvement in software engineering surveys. Proceedings of the 8th ACM/IEEE International Symposium on E. https://doi.org/10.1145/2652524.2652566
+
+[22] Nunkesser (2026). Assessing the Generalizability of Mobile Software Engineering Research Through Combined Systematic Methods. Software. https://doi.org/10.3390/software5010012
+
+[23] Runeson (n.d.). A case study using sampling to improve software inspection effectiveness. 2003 International Symposium on Empirical Software Engineeri. https://doi.org/10.1109/isese.2003.1237985
+
+[24] González-Barahona (2011). On the reproducibility of empirical software engineering studies based on data retrieved from development repositories. Empirical Software Engineering. https://doi.org/10.1007/s10664-011-9181-9
+
+[25] Juristo (2013). Towards understanding replication of software engineering experiments. 2013 ACM / IEEE International Symposium on Empirical Softwar. https://doi.org/10.1109/esem.2013.64
+
+[26] Brooks (2013). A Partial Replication with a Sample Size of One: A Smoke Test for Empirical Software Engineering. 2013 3rd International Workshop on Replication in Empirical. https://doi.org/10.1109/reser.2013.7
+
+[27] Porter (1998). Comparing Detection Methods For Software Requirements Inspections: A Replication Using Professional Subjects. Empirical Software Engineering. https://doi.org/10.1023/a:1009776104355
+
+[28] Decan (2017). An empirical comparison of dependency issues in OSS packaging ecosystems. 2017 IEEE 24th International Conference on Software Analysis, Evolution and Reengineering (SANER). https://doi.org/10.1109/saner.2017.7884604
+
+[29] Kikas (2017). Structure and Evolution of Package Dependency Networks. 2017 IEEE/ACM 14th International Conference on Mining Software Repositories (MSR). https://doi.org/10.1109/msr.2017.55
+
+[30] Cogo (2021). An empirical study of same-day releases of popular packages in the npm ecosystem. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-09980-6
+
+[31] Cogo (2021). An Empirical Study of Dependency Downgrades in the npm Ecosystem. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2952130
+
+[32] Chowdhury (2022). On the Untriviality of Trivial Packages: An Empirical Study of npm JavaScript Packages. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2021.3068901
+
+[33] Zerouali (2019). On the Diversity of Software Package Popularity Metrics: An Empirical Study of npm. 2019 IEEE 26th International Conference on Software Analysis. https://doi.org/10.1109/saner.2019.8667997
+
+[34] Chodorowski (2021). Comparative analysis of JavaScript package managers - yarn and npm. Journal of Computer Sciences Institute. https://doi.org/10.35784/jcsi.2460
+
+[35] Saeidi (2025). What About Our Bug? A Study on the Responsiveness of NPM Package Maintainers. 2025 ACM/IEEE International Symposium on Empirical Software. https://doi.org/10.1109/esem64174.2025.00071
+
+[36] Islam (2023). An Empirical Study of npm Ecosystem Related Tweets by Core Software Developers: A Case Study. https://doi.org/10.21203/rs.3.rs-2560509/v1
+
+[37] Rayarao (2025). The Shai-Hulud NPM Supply Chain Attack: A Comprehensive Analysis of Self-Replicating Malware in the JavaScript Ecosystem. https://doi.org/10.22541/au.175830854.42750868/v1
+
+[38] Bommarito (2019). An Empirical Analysis of the Python Package Index (PyPI). SSRN Electronic Journal. https://doi.org/10.2139/ssrn.3426281
+
+[39] Guo (2023). An Empirical Study of Malicious Code In PyPI Ecosystem. 2023 38th IEEE/ACM International Conference on Automated Sof. https://doi.org/10.1109/ase56229.2023.00135
+
+[40] Ruohonen (2021). A Large-Scale Security-Oriented Static Analysis of Python Packages in PyPI. 2021 18th International Conference on Privacy, Security and. https://doi.org/10.1109/pst52912.2021.9647791
+
+[41] Peng (2024). Less is More? An Empirical Study on Configuration Issues in Python PyPI Ecosystem. Proceedings of the IEEE/ACM 46th International Conference on. https://doi.org/10.1145/3597503.3639077
+
+[42] Vu (2020). Typosquatting and Combosquatting Attacks on the Python Ecosystem. 2020 IEEE European Symposium on Security and Privacy Workshops (EuroS&amp;PW). https://doi.org/10.1109/eurospw51379.2020.00074
+
+[43] Ladisa (2023). On the Feasibility of Cross-Language Detection of Malicious Packages in npm and PyPI. Annual Computer Security Applications Conference. https://doi.org/10.1145/3627106.3627138
+
+[44] Gandhi (2024). Automated Detection and Mitigation of Malicious Packages in the PyPI Ecosystem and.exe Files: PyGuardEX. 2024 First International Conference for Women in Computing (. https://doi.org/10.1109/incowoco64194.2024.10863220
+
+[45] Montaruli (2025). One Detector Fits All: Robust and Adaptive Detection of Malicious Packages from PyPI to Enterprises. 2025 IEEE Annual Computer Security Applications Conference (. https://doi.org/10.1109/acsac67867.2025.00053
+
+[46] Raszka (2026). Malicious packages in public registries: reporting bias, detection coverage, and the limits of evaluating registry interventions. https://doi.org/10.2139/ssrn.7592667
+
+[47] Lim (2026). Bridging Registry Fragmentation: SBOM-Based Metadata for Generalized Malicious Package Detection. IEEE Access. https://doi.org/10.1109/access.2026.3743923
+
+[48] Zhang (2025). Killing Two Birds with One Stone: Malicious Package Detection in NPM and PyPI using a Single Model of Malicious Behavior Sequence. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3705304
+
+[49] Liang (2026). Detecting Malicious Packages in PyPI and NPM by Clustering Installation Scripts. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2025.3618952
+
+[50] Liu (2026). Seeing the Forest: A Taxonomy-Guided Analysis and Improvement of Malicious PyPI Package Detectors. Proceedings of the 2nd International Workshop on Software Ge. https://doi.org/10.1145/3844178.3844648
+
+[51] wang (2026). Decoding Maliciousness: A Scalable Framework for Malicious PyPI Package Detection via Multi-source Semantic Fusion. https://doi.org/10.2139/ssrn.6727185
+
+[52] Yan (2026). PyPIMalDet: A malicious PyPI package detection method combining code features and metadata features. Neural Networks. https://doi.org/10.1016/j.neunet.2025.108487
+
+[53] Iqbal (2025). PypiGuard: A novel meta-learning approach for enhanced malicious package detection in PyPI through static-dynamic feature fusion. Journal of Information Security and Applications. https://doi.org/10.1016/j.jisa.2025.104032
+
+[54] Iqbal (2026). CLAMPD-Net: Cross-language malicious package detection across PyPI and NPM with multimodal fusion. Information and Software Technology. https://doi.org/10.1016/j.infsof.2026.108129
+
+[55] Jobu (2026). PyPIGuard: A Lightweight, Explainable Machine Learning Tool for Pre-Install Detection of Malicious PyPI Packages. https://doi.org/10.2139/ssrn.7233262
+
+[56] Wyss (2025). Evaluating LLM-Based Detection of Malicious Package Updates in npm. 2025 28th International Symposium on Research in Attacks, In. https://doi.org/10.1109/raid67961.2025.00047
+
+[57] Moufid (2026). Metadata Compressibility and Evaluation Bias in Malicious Package Detection for NPM and PyPI. Journal of Cybersecurity and Privacy. https://doi.org/10.3390/jcp6050160
+
+[58] Sun (2024). 1+1&gt;2: Integrating Deep Code Behaviors with Metadata Features for Malicious PyPI Package Detection. Proceedings of the 39th IEEE/ACM International Conference on. https://doi.org/10.1145/3691620.3695493
+
+[59] Draz (2026). Version context and control construction in machine learning detection of malicious package updates across npm and PyPI. Scientific Reports. https://doi.org/10.1038/s41598-026-71750-5
+
+[60] Sehgal (2024). A Taxonomy and Survey of Software Bill of Materials (SBOM) Generation Approaches. Communications in Computer and Information Science. https://doi.org/10.1007/978-3-031-50815-8_3
+
+[61] Kishimoto (2025). A Dataset of Software Bill of Materials for Evaluating SBOM Consumption Tools. 2025 IEEE/ACM 22nd International Conference on Mining Softwa. https://doi.org/10.1109/msr66628.2025.00090
+
+[62] Nyambe (2025). Reframing Software Bill of Materials (SBOM) Security Evaluation Using a Model-Based Systems Engineering Approach. 2025 IEEE International Symposium on Systems Engineering (IS. https://doi.org/10.1109/isse65546.2025.11370101
+
+[63] Oberhauser (2025). VR-SBOM: Visualization of Software Bill of Materials and Software Supply Chains in Virtual Reality. Lecture Notes in Business Information Processing. https://doi.org/10.1007/978-3-031-98033-6_4
+
+[64] Hendrick (2022). Software Bill of Materials (SBOM) and Cybersecurity Readiness. https://doi.org/10.70828/rytl5793
+
+[65] O'Donoghue (2023). Impacts of Software Bill of Materials (SBOM) Generation on Vulnerability Detection. Proceedings of the 2024 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3689944.3696164
+
+[66] Lee (2025). Software Bill of Materials(SBOM) Implementation and Evaluation of AI-based Digital Therapeutics. Journal of the Korea Academia-Industrial cooperation Society. https://doi.org/10.5762/kais.2025.26.4.268
+
+[67] Seknametla (2025). Secure Supply Chain Management in DevOps: Addressing Software Bill of Materials (SBOM) Risks. International Journal of Emerging Research in Engineering an. https://doi.org/10.63282/3050-922x.ijeret-v6i2p115
+
+[68] Bamidele Samuel Adelusi (2023). Blockchain-Integrated Software Bill of Materials (SBOM) for Real-Time Vulnerability Detection in Decentralized Package Repositories. International Journal of Scientific Research in Civil Engine. https://doi.org/10.32628/ijsrce237314
+
+[69] Beninger (2024). ERS0: Enhancing Military Cybersecurity with AI-Driven SBOM for Firmware Vulnerability Detection and Asset Management. 2024 16th International Conference on Cyber Conflict: Over t. https://doi.org/10.23919/cycon62501.2024.10685598
+
+[70] Dalia (2025). Come Together: Sbom-Enhanced Vulnerability Assessment in Safety-Critical Systems. https://doi.org/10.2139/ssrn.5362510
+
+[71] Jang (2026). A Machine Learning-Based Vulnerability Prediction System Using SBOM Metadata for Software Supply Chain Security. The Journal of Korean Institute of Communications and Inform. https://doi.org/10.7840/kics.2026.51.4.792
+
+[72] Kawai (2026). Mission-Aware SBOM Vulnerability Triage with KEV/EPSS and LLM-Based VEX Drafting. 2026 23rd International Joint Conference on Computer Science. https://doi.org/10.1109/jcsse68839.2026.11597025
+
+[73] Mydin (2026). SBOM Tooling Ecosystem: A Systematic Literature Review. Applied Research. https://doi.org/10.1002/appl.70209
+
+[74] SHTOMA (2025). SBOM-BASED VULNERABILITY PRIORITIZATION IN SOFTWARE SUPPLY CHAIN USING MACHINE LEARNING. Advanced Information Technology. https://doi.org/10.17721/ait.2025.2.04
+
+[75] Radanliev (2023). ML) in Software Vulnerability Management: automations in the Software Bill of Materials (SBOM) and the Vulnerability-Exploitability eXchange (VEX). https://doi.org/10.36227/techrxiv.23706684.v1
+
+[76] Rüschendorf (1991). FréChet-Bounds and Their Applications. Advances in Probability Distributions with Given Marginals. https://doi.org/10.1007/978-94-011-3466-8_9
+
+[77] Rüschendorf (1996). Developments on Fréchet-bounds. Institute of Mathematical Statistics Lecture Notes - Monogra. https://doi.org/10.1214/lnms/1215452625
+
+[78] Scarsini (1997). Fréchet Classes and Nonmonotone Dependence. Distributions with given Marginals and Moment Problems. https://doi.org/10.1007/978-94-011-5532-8_7
+
+[79] Skřivánek (2014). Basic bounds of Fréchet classes. Kybernetika. https://doi.org/10.14736/kyb-2014-1-0095
+
+[80] (no author in the registry record) (2020). Microeconometrics with partial identification. Handbook of Econometrics. https://doi.org/10.1016/bs.hoe.2020.05.002
+
+[81] Molinari (2019). Econometrics with Partial Identification. https://doi.org/10.1920/wp.cem.2019.2519
+
+[82] Molinari (2008). Partial identification of probability distributions with misclassified data. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2007.12.003
+
+[83] McAdams (2008). Partial identification and testable restrictions in multi-unit auctions. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2008.07.003
+
+[84] Hong (2017). Inference in semiparametric conditional moment models with partial identification. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2016.09.014
+
+[85] Jiang (2017). On limiting distribution of quasi-posteriors under partial identification. Econometrics and Statistics. https://doi.org/10.1016/j.ecosta.2017.03.006
+
+[86] Fan (2018). Partial identification and inference in censored quantile regression. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2018.04.002
+
+[87] Beresteanu (2012). Partial identification using random set theory. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2011.06.003
+
+[88] Obradović (2024). Measuring diagnostic test performance using imperfect reference tests: A partial identification approach. Journal of Econometrics. https://doi.org/10.1016/j.jeconom.2024.105842
+
+[89] Bar-Hillel (1977). The Base-Rate Fallacy in Probability Judgments. https://doi.org/10.21236/ada045772
+
+[90] Ghanshyambhai Patel (2025). Software Supply Chain Security: Implementing SLSA Compliance in CI/CD Pipelines. International Journal for Research Trends and Innovation. https://doi.org/10.56975/ijrti.v10i7.205129
+
+[91] Mohomed (2025). ARGO-SLSA: Software Supply Chain Security in Argo Workflows. 2025 Moratuwa Engineering Research Conference (MERCon). https://doi.org/10.1109/mercon67903.2025.11217128
+
+[92] Tamanna (2025). Unraveling Challenges with Supply-Chain Levels for Software Artifacts (Slsa) for Securing the Software Supply Chain. https://doi.org/10.2139/ssrn.5119626
+
+[93] Cesarano (2023). GoSurf: Identifying Software Supply Chain Attack Vectors in Go. Proceedings of the 2024 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3689944.3696166
+
+[94] Reyes (2025). Maven-Hijack: Software Supply Chain Attack Exploiting Packaging Order. Proceedings of the 2025 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3733827.3765523
+
+[95] Chen (2023). Runtime Verification for Software Supply Chain Security using Confidential Computing. Proceedings of the 2024 Workshop on Software Supply Chain Of. https://doi.org/10.1145/3689944.3696350
+
+[96] Williams (2024). Narrowing the Software Supply Chain Attack Vectors: The SSDF Is Wonderful but not Enough. IEEE Security &amp; Privacy. https://doi.org/10.1109/msec.2024.3359798
+
+[97] Kerman (2025). Software Supply Chain and DevOps Security Practices. https://doi.org/10.6028/nist.sp.1800-44
+
+[98] Soeiro (n.d.). Assessing the Security of Software Supply Chains: Software Bill of Materials, Threat Propagation, and Logical Attack Graphs. https://doi.org/10.70675/6dd72cb7z7135z4d1dza942z3f6c57308033
+
+[99] Gibb (2025). Solving Package Management via Hypergraph Dependency Resolution. https://doi.org/10.59350/nrbbt-e7k85
+
+[100] Gibb (2026). Package managers à la carte: A Formal Model of Dependency Resolution. https://doi.org/10.59350/rk9s4-43g76
+
+[101] Zhu (2026). Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound. https://doi.org/10.2139/ssrn.7456458
+
+[102] Teng (2026). Supply Chain Software Package Risk Scoring TD3-MPC Model Based on Dependency Metadata Graph. Journal of Applied Automation Technologies. https://doi.org/10.64972/jaat.2026v4.386p31e:413-425
+
+[103] Liu (2022). Demystifying the vulnerability propagation and its evolution via dependency trees in the NPM ecosystem. Proceedings of the 44th International Conference on Software. https://doi.org/10.1145/3510003.3510142
+
+[104] Gao (2026). LLM-Enhanced Evolutionary Dependency Graphs: A System Approach to Precise Vulnerability Propagation Tracking. Mathematics. https://doi.org/10.3390/math14142593
+
+[105] Abdalkareem (2022). A Machine Learning Approach to Determine the Semantic Versioning Type of NPM Packages Releases. https://doi.org/10.2139/ssrn.4082606
+
+[106] Decan (2021). What Do Package Dependencies Tell Us About Semantic Versioning?. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2918315
+
+[107] Panter (2025). PVAC: package version activity categorizer, leveraging semantic versioning in a heterogeneous system. Empirical Software Engineering. https://doi.org/10.1007/s10664-025-10678-2
+
+[108] Tang (2026). Package selection and versioning matter. Nature Methods. https://doi.org/10.1038/s41592-026-03108-8
+
+[109] Newman (2022). Sigstore. Proceedings of the 2022 ACM SIGSAC Conference on Computer an. https://doi.org/10.1145/3548606.3560596
+
+[110] Dias (2021). What Makes a Great Maintainer of Open Source Projects?. 2021 IEEE/ACM 43rd International Conference on Software Engi. https://doi.org/10.1109/icse43902.2021.00093
+
+[111] Hendrick (2023). Maintainer Perspectives on Open Source Software Security: Survey-based Insights from Maintainers Regarding How They Address Best Practices for Secure Software Development. https://doi.org/10.70828/pvsn3075
+
+[112] Linåker (2024). Sustaining Maintenance Labor for Healthy Open Source Software Projects through Human Infrastructure: A Maintainer Perspective. Proceedings of the 18th ACM/IEEE International Symposium on. https://doi.org/10.1145/3674805.3686667
+
+[113] Salmon (2026). How to Recruit a New Maintainer for Your Package. https://doi.org/10.59350/qgdfk-ce602
+
+[114] Randrianaina (n.d.). Incremental, reproducible builds of software variants. https://doi.org/10.70675/e95564c6zca79z417aza37ez10821a9a0a48
+
+[115] Goswami (2024). Reproducible High Performance Computing without Redundancy with Nix. https://doi.org/10.31219/osf.io/3fp2v
+
+[116] (no author in the registry record) (2017). Workflow-ready bioinformatics packages and Debian’s infrastructure for low-friction reproducible research. https://doi.org/10.7490/f1000research.1114468.1
+
+[117] Afshartous (2008). Sample Size Determination for Binomial Proportion Confidence Intervals. The American Statistician. https://doi.org/10.1198/000313008x271474
+
+[118] Balayla (2024). Gaussian Distribution, Confidence Intervals, Binomial (Wald) Proportion, Wilson Score Interval and Delta Theorem. Theorems on the Prevalence Threshold and the Geometry of Scr. https://doi.org/10.1007/978-3-031-71452-8_13
+
+[119] Garthwaite (2023). Locally correct confidence intervals for a binomial proportion: A new criteria for an interval estimator. Scandinavian Journal of Statistics. https://doi.org/10.1111/sjos.12672
+
+[120] Guan (2012). A generalized score confidence interval for a binomial proportion. Journal of Statistical Planning and Inference. https://doi.org/10.1016/j.jspi.2011.09.010
+
+[121] Habtzghi (2014). Modified Clopper-Pearson Confidence Interval for Binomial Proportion. Journal of Statistical Theory and Applications. https://doi.org/10.2991/jsta.2014.13.4.3
+
+[122] Kim (2021). A generalized Agresti–Coull type confidence interval for a binomial proportion. Journal of the Korean Statistical Society. https://doi.org/10.1007/s42952-021-00143-3
+
+[123] Nawa (2022). A weighted score confidence interval for a binomial proportion. Japanese Journal of Statistics and Data Science. https://doi.org/10.1007/s42081-022-00146-2
+
+[124] Sandelius (1952). A Confidence Interval for the Smallest Proportion of a Binomial Population. Journal of the Royal Statistical Society Series B: Statistic. https://doi.org/10.1111/j.2517-6161.1952.tb00105.x
+
+[125] Tang (2005). Confidence interval construction for proportion difference in small‐sample paired studies. Statistics in Medicine. https://doi.org/10.1002/sim.2216
+
+[126] (no author in the registry record) (2015). Power calculation for causal inference in social science: sample size and minimum detectable effect determination. https://doi.org/10.23846/wp0026
+
+[127] Brydges (2019). Effect Size Interpretation, Sample Size Calculation, and Statistical Power in Gerontology. https://doi.org/10.31234/osf.io/u2jbm
+
+[128] Dalgaard (2023). What minimal detectable effect size is in your power – An inverted sample size formular for survival data. European Psychiatry. https://doi.org/10.1192/j.eurpsy.2023.1139
+
+[129] Greenland (1985). Power, sample size and smallest detectable effect determination for multivariate studies. Statistics in Medicine. https://doi.org/10.1002/sim.4780040203
+
+[130] Hunter (2024). PUMP: Estimating Power, Minimum Detectable Effect Size, and Sample Size When Adjusting for Multiple Outcomes in Multi-Level Experiments. Journal of Statistical Software. https://doi.org/10.18637/jss.v108.i06

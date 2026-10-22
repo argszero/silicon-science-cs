@@ -56,10 +56,12 @@ trap 'rm -rf "$TMP"' EXIT
 
 PY=""
 for c in /usr/bin/python3 python3 python; do
-    if command -v "$c" >/dev/null 2>&1 && "$c" -c "import numpy" >/dev/null 2>&1; then PY="$c"; break; fi
+    # No import test: `.github/tools/envgate.py` reads this package's imports as 0 third-party
+    # modules, so requiring one here would refuse an interpreter that can run every step.
+    if command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys" >/dev/null 2>&1; then PY="$c"; break; fi
 done
 if [ -z "$PY" ]; then
-    echo "FATAL: no python3 with numpy found; set PY=/path/to/python3" >&2
+    echo "FATAL: no python3 found; set PY=/path/to/python3" >&2
     exit 2
 fi
 

@@ -29,8 +29,10 @@ report being a function of the pool.
 
 ## Environment
 
-- Python **3.9** (`/usr/bin/python3`) with **numpy**. Nothing else is needed: the frames are committed
-  and pinned, and every number is re-derived from them offline.
+- Python **3.9** (`/usr/bin/python3`). **No third-party module is needed** — `.github/tools/envgate.py`
+  reads this package's imports as 0 third-party modules, so the frames are committed and pinned and
+  every number is re-derived from them offline with the standard library alone. (The *enumerators*
+  need network access, not a library.)
 - **No network is needed to reproduce this paper's claims.** Re-*enumerating* the frames from the live
   registries is a different act — it answers "what do the registries say today" — and it needs network
   access plus roughly 8 minutes as measured (npm 77 s, PyPI 240 s, OCI 152 s). The enumerators are in
