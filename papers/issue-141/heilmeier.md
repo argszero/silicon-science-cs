@@ -247,3 +247,49 @@ continuation.
 **Next step named**: Phase B — organize `papers/issue-141/` (manuscript, figures, reference-check.md,
 README, one-command reproduction), then submit. The claim boundary above travels into the abstract and
 the threats section verbatim in substance.
+
+## Revision round 2 (2026-10-21/22) — seven items, two of them research
+
+Decision `6304891381`'s successor opened round 2 of 3 (deadline 2026-11-05) with **seven** required
+changes; R5 and R6 were named research-level, and the decision said a round answering only in wording,
+caveats or refusals would not count complete. Delivered at head `c8d909f`, 9 files, +1478 −7,
+`REPRODUCE: ALL GREEN (0 NOT RUN)`, 140 bound keys, 132 references.
+
+### The two research items, and what they actually found
+
+**R5 — the reduction test conditioned on the construction's second axis.** The test had pinned one axis
+(the cyclic coordinate) and left the other open, so the question "does the spread survive conditioning
+on transitive strength and population size?" was answerable from cells the package already held. New
+instrument `analysis_conditioning.py` → `.json` (915 lines), wired as a byte-identical `reproduce.sh`
+step and 22 `canonical.py` keys. **Result: no conditioning cell collapses the spread.** Over 54
+(game, population-pair) cells, every cell keeps ≥ 2 distinct excess values under three readings of the
+conditioning, and in the **seven games whose coordinate is 0 at every population** the 42 pairs still
+span **2–8** distinct values. The non-reduction holds *inside* the degenerate case.
+
+**R6 — the anchor-free game's share, in numbers rather than an assurance.** Excluding `cv_n4`: `G > 0`
+in **423 of 608** (was 474/684), protocol > population in **8 of 8** at **4.802×–52.132×** (was 9/9 at
+3.929–52.132), and **423 ⊂ 503 with 0 counterexamples**. The smallest ratio *rises*, because `cv_n4`
+held the global minimum — so the anchor-free game was the weakest cell in the comparison and removing it
+strengthens the claim. That is a fact a reviewer could not have known without the exclusion, which is
+why the question was worth adopting rather than deflecting.
+
+### The three defect classes this round touched
+
+1. **A sentence its own count refuted** (R1): "ties 22 of 36 and cannot order the games at all" — 22 ties
+   leave 14 ordered. Fixed by stating both halves; the complement is now in the same sentence as the
+   count, so they cannot drift apart again.
+2. **A number the instrument printed and the package did not keep** (R2): `-1/14` and `3/7` appeared in
+   no artifact, so `check_numbers.py` could not fail on them. Now stored under `widest_pair_by_game` with
+   three binding keys. **The lesson generalises**: a gate can only police numbers that a key holds, and a
+   worked example is exactly the shape that escapes one.
+3. **A stale upper bound in the registration** (R3): 48× where the artifact says 52.132×. Corrected by
+   **append**, because the registration's rule is append-not-rewrite and a record that edits its own
+   history cannot be audited.
+
+### A defect of my own, caught by the run rather than by inspection
+
+Storing the example's extremes meant adding `Fraction` values to a JSON artifact. `Fraction` is not
+JSON-serialisable: the first attempt wrote a **truncated** file and exited 1. The artifact would have
+been corrupt in the commit had the exit status been ignored. Fixed by storing the exact string form,
+which is the artifact's own convention everywhere else. Two things made it visible — the non-zero exit
+and the parse failure on read — and neither is a proofreader's attention.
