@@ -65,10 +65,11 @@ about.
 |---|---|---|
 | 1 | One rank statistic across the package. `make_figures.py`, `analyse_v5.py`, `spike_v5.py` **and** `analyse_v3.py` now **import** `spearman` from `canonical.py`; no copy of the statistic remains in any of them. | average ranks (tie-corrected) — the convention `canonical.py` documents and the manuscript already stated |
 | 2 | `fig3_alignment.png` prints **+0.108**, the value `canonical_results.json` → `P2_wide.pooled_spearman` states | same |
-| 3 | §7's prose now states **Seeds +0.362** and **Wine +0.154** (was +0.488 / +0.161), bound to `canonical_results.json` → `P2_wide.per_corpus.<corpus>.rho_logn_optima_maxmin` | average ranks, over the same 80-cell `max-min` stratum per corpus |
+| 3 | §7's prose now states **Seeds +0.362** and **Wine +0.154** (was +0.488 / +0.161), bound to `canonical_results.json` → `P2_wide.per_corpus.<corpus>.rho_logn_optima_maxmin`; the superseded pair no longer appears in the paper at all — it appears here | average ranks, over the same 80-cell `max-min` stratum per corpus |
 | 4 | All three titles shortened so they fit, and every figure now goes through a certificate (`assert_text_fits` in `make_figures.py`) that measures the drawn text at `savefig` and asserts it lies inside the canvas | the drawing path, at the package's own rcParams |
 | 5 | A cross-artefact check (`make_figures.py --check`) asserts the figure's printed statistic equals `canonical_results.json`'s `P2_wide.pooled_spearman`, at the precision the title prints | two independent paths to one number |
-| 6 | `manuscript.md` regenerated from `manuscript_source.md` (`build_refs.py`) | the built file is derived; the §7 correction existed only in the source, and step [13] of `reproduce.sh --full` failed on the stale build — the byte-identity step catching a derived artefact that had not been rebuilt, which is the same class as a figure whose number drifted |
+| 6 | §7 is **gated**, not just corrected: `canonical.py --check` requires every 3-decimal statistic in the section to be a number `canonical_results.json` holds, and requires the five bound numbers to be present. Two plants: a doctored value (`+0.109`) and the defect as it shipped (`+0.488`) must both be refused | the artefact |
+| 7 | `manuscript.md` regenerated from `manuscript_source.md` (`build_refs.py`) | the built file is derived; the §7 correction existed only in the source, and step [13] of `reproduce.sh --full` failed on the stale build — the byte-identity step catching a derived artefact that had not been rebuilt, which is the same class as a figure whose number drifted |
 
 ## What did NOT change
 
@@ -83,7 +84,7 @@ about.
 
 ## How this cannot recur silently
 
-Three checks now fire on the class, each demonstrated to fail on its own defect rather than asserted:
+Four checks now fire on the class, each demonstrated to fail on its own defect rather than asserted:
 
 - **title certificate** — `make_figures.py --selftest-title` builds a figure with a deliberately
   over-long title and requires the assertion to **fire**, and a short title and requires it to
@@ -96,6 +97,12 @@ Three checks now fire on the class, each demonstrated to fail on its own defect 
   make that step compare a rebuilt file against a rebuilt file. The committed PNG's size and mtime are
   read before and after, so the confinement is itself checked. *(This was a defect in the first
   version of the check, found before it was committed: it wrote into `figures/`.)*
+- **§7 stray scan** — `canonical.py --check` now asserts that every 3-decimal statistic §7 states is a
+  number the artefact holds, which is what the round's defect needed: `+0.488` and `+0.161` were
+  plausible three-decimal statistics and nothing in the package asked where they came from. Two plants
+  run the same predicate and must refuse both a doctored digit and the shipped defect. *(The first
+  version of this check tested mere presence of the right digits, and a doctored source still passed it
+  because the value occurred twice — presence is not a binding; the stray scan is.)*
 - **one implementation** — `check_one_statistic.py`, a certificate in three parts, run as a step of
   `reproduce.sh`: **(i) static**, no module except `canonical.py` may define `def spearman`, which
   catches a returning copy even on an interpreter that cannot import the module (so the check is not

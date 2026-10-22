@@ -9,7 +9,7 @@ Usage:
   python3 canonical.py            write canonical_results.json + print a summary
   python3 canonical.py --check    assert every canonical number equals the value in the artefact
 """
-import io, json, os, sys
+import io, json, os, re, sys
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -255,6 +255,103 @@ def report(c):
           "cross_disagreements", c["route_health"]["cross_disagreements"])
 
 
+SECTION7 = re.compile(r"^##+ *7[\.\s].*$", re.M)
+THREEDP = re.compile(r"[-+]?\d+\.\d{3}(?!\d)")
+
+
+def _artefact_numbers(c):
+    """Every number the artefact holds, formatted the way the prose states them."""
+    out = set()
+
+    def walk(o):
+        if isinstance(o, dict):
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+        elif isinstance(o, bool) or o is None:
+            return
+        elif isinstance(o, (int, float)):
+            out.add("%.3f" % o); out.add("%+.3f" % o)
+    walk(c)
+    return out
+
+
+def section7_text():
+    """§7 of the manuscript source.  A missing or tiny section is an error, not an empty pass: a gate
+    that reads nothing satisfies every assertion written over it."""
+    src = io.open(os.path.join(HERE, "manuscript_source.md"), encoding="utf-8").read()
+    src = src.replace("\u2212", "-")          # the prose uses a typographic minus
+    m = SECTION7.search(src)
+    assert m, "§7 not found in manuscript_source.md -- the gate would police nothing"
+    nxt = re.search(r"^##+ *8[\.\s]", src[m.start() + 10:], re.M)
+    end = m.start() + 10 + nxt.start() if nxt else len(src)
+    sec = src[m.start():end]
+    assert len(sec) > 1000, "§7 is %d chars -- too small to be the section this gate polices" % len(sec)
+    return src, sec
+
+
+def section7_bindings(c):
+    """The numbers §7 must state, as strings, derived from the artefact that owns them.
+
+    Issue #128's correction round: §7 carried `+0.488` / `+0.161`, the argsort reading, next to a table
+    that declared average ranks.  Correcting the digits is not a binding -- a number typed into prose is
+    held by no key.  These are the artefact's numbers, formatted at the precision the prose states.
+    """
+    p = c["P2_wide"]; pc = p["per_corpus"]
+    return {
+        "pooled (all cells)":               "%+.3f" % p["pooled_spearman"],
+        "per-corpus max-min, seeds":        "%+.3f" % pc["seeds"]["rho_logn_optima_maxmin"],
+        "per-corpus max-min, wine":         "%+.3f" % pc["wine"]["rho_logn_optima_maxmin"],
+        "per-corpus all cells, seeds":      "%+.3f" % pc["seeds"]["spearman"],
+        "per-corpus all cells, wine":       "%+.3f" % pc["wine"]["spearman"],
+    }
+
+
+def strays(sec, c):
+    """3-decimal statistics in §7 that the artefact does not hold.
+
+    This is the form of the check the round's defect needed: the original +0.488 / +0.161 were
+    plausible-looking three-decimal statistics, and nothing in the package asked where they came from.
+    Every one §7 states must be a number `canonical_results.json` contains; a value produced by a
+    different convention is by definition not one of them.
+    """
+    allowed = _artefact_numbers(c)
+    toks = THREEDP.findall(sec)
+    assert len(toks) >= 5, "§7 yielded %d 3-decimal statistic(s) -- the scan read nothing" % len(toks)
+    return sorted({t for t in toks if t not in allowed})
+
+
+def check_section7(c):
+    """Assert §7 states the artefact's numbers -- and that both halves of this check can fail."""
+    src, sec = section7_text()
+    want = section7_bindings(c)
+    missing = sorted(k for k, v in want.items() if v not in src)
+    assert not missing, (
+        "§7 does not state the artefact's number for: %s -- the source holds a value the artefact "
+        "does not (issue #128: prose carried the argsort reading next to an average-rank table)"
+        % ", ".join(missing))
+    bad = strays(sec, c)
+    assert not bad, (
+        "§7 states %d statistic(s) the artefact does not hold: %s -- every number in the section must "
+        "be one canonical_results.json contains" % (len(bad), ", ".join(bad)))
+
+    # PLANT 1: a doctored copy of the section, stating a three-decimal value the artefact does not
+    # hold, must be refused by the SAME predicate the real assertion uses.
+    planted = sec.replace(want["pooled (all cells)"], "+0.079", 1)
+    assert "+0.079" in planted, "plant 1 could not doctor the section; it proves nothing"
+    assert strays(planted, c) == ["+0.079"], (
+        "plant 1 fired nothing: a section stating +0.079 passed the stray scan (got %r)"
+        % (strays(planted, c),))
+    # PLANT 2: the defect as it actually shipped -- the argsort pair, next to the average-rank table.
+    shipped = sec.replace(want["per-corpus max-min, seeds"], "+0.488", 1)
+    assert strays(shipped, c) == ["+0.488"], (
+        "plant 2 fired nothing: the shipped defect (+0.488 in §7) passed the stray scan")
+    print("§7 bound to the artefact: %d number(s) required, %d scanned, plant refused both the "
+          "doctored value and the shipped defect" % (len(want), len(THREEDP.findall(sec))))
+
+
 def check():
     """Re-derive and assert the canonical numbers equal the artefact values (a self-audit)."""
     c = build()
@@ -268,6 +365,7 @@ def check():
     assert c["P2_wide"]["alignment_spread"] > 0.8 and c["P2_wide"]["width_distinct"] >= 5, "wide sweep range"
     assert abs(c["P2_wide"]["pooled_spearman"]) < 0.2, "P2' wide pooled should be near zero"
     assert c["P3_cost_law"]["maxsum"]["median_beta"] > 0.5 and abs(c["P3_cost_law"]["maxmin"]["median_beta"]) < 0.2, "P3"
+    check_section7(c)
     print("canonical --check: ALL ASSERTIONS HOLD")
     return 0
 
