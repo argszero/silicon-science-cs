@@ -130,7 +130,8 @@ step_grep "presence vs coverage (Wilson)" "DISJOINT IN EVERY ECOSYSTEM" "$PY" wi
 
 echo
 echo "== 4. the numbers the paper prints ======================================="
-step_grep "claims re-derived + statable in the manuscript" "VERDICT: PASS" "$PY" check_claims.py
+step_grep "claims re-derived + bound to their statement sites" "VERDICT: PASS" "$PY" check_claims.py
+step_grep "claim-gate plants fire (drift at the statement site)" "CLAIMS-SELFTEST: ALL PASS" "$PY" check_claims.py --selftest
 
 echo
 echo "== 5. the references ====================================================="

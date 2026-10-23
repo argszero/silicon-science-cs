@@ -9,9 +9,9 @@
  "entries": [
   {
    "authors": [
-    "Abdalkareem"
+    "Abdalkareem, R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.4082606",
    "key": "abdalkareem2022machinelearningapproach",
    "method": "discover-crossref",
@@ -25,9 +25,9 @@
   },
   {
    "authors": [
-    "Afshartous"
+    "Afshartous, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1198/000313008x271474",
    "key": "afshartous2008samplesizedetermination",
    "method": "discover-crossref",
@@ -40,8 +40,12 @@
    "year": 2008
   },
   {
-   "authors": [],
-   "authors_note": "no author in the registry record",
+   "authors": [
+    "International Initiative for Impact Evaluation (3ie)",
+    "W Djimeu, E.",
+    "Houndolo, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.23846/wp0026",
    "key": "anon2015powercalculationcausal",
    "method": "discover-crossref",
@@ -54,8 +58,15 @@
    "year": 2015
   },
   {
-   "authors": [],
-   "authors_note": "no author in the registry record",
+   "authors": [
+    "Contributors to the Debian Med Blend",
+    "Kala\u0161, M.",
+    "Steinbiss, S.",
+    "Crusoe, M. R.",
+    "Tille, A.",
+    "M\u00f6ller, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.7490/f1000research.1114468.1",
    "key": "anon2017workflowreadybioinformatics",
    "method": "discover-crossref",
@@ -83,9 +94,9 @@
   },
   {
    "authors": [
-    "Balayla"
+    "Balayla, J."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/978-3-031-71452-8_13",
    "key": "balayla2024gaussiandistributionconfidence",
    "method": "discover-crossref",
@@ -99,9 +110,10 @@
   },
   {
    "authors": [
-    "Baltes"
+    "Baltes, S.",
+    "Ralph, P."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s10664-021-10072-8",
    "key": "baltes2022samplingsoftwareengineering",
    "method": "discover-crossref",
@@ -115,9 +127,12 @@
   },
   {
    "authors": [
-    "Bamidele Samuel Adelusi"
+    "Bamidele Samuel Adelusi",
+    "Abel Chukwuemeke Uzoka",
+    "Yewande Goodness Hassan",
+    "Favour Uche Ojika"
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.32628/ijsrce237314",
    "key": "bamidelesamueladelusi2023blockchainintegratedsoftware",
    "method": "discover-crossref",
@@ -131,9 +146,9 @@
   },
   {
    "authors": [
-    "Bar-Hillel"
+    "Bar-Hillel, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.21236/ada045772",
    "key": "base_rate_fallacy",
    "method": "crossref",
@@ -147,9 +162,12 @@
   },
   {
    "authors": [
-    "Beninger"
+    "Beninger, M.",
+    "Charland, P.",
+    "Ding, S. H. H.",
+    "Fung, B. C. M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.23919/cycon62501.2024.10685598",
    "key": "beninger2024ers0enhancingmilitary",
    "method": "discover-crossref",
@@ -163,9 +181,11 @@
   },
   {
    "authors": [
-    "Beresteanu"
+    "Beresteanu, A.",
+    "Molchanov, I.",
+    "Molinari, F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jeconom.2011.06.003",
    "key": "beresteanu2012partialidentificationrandom",
    "method": "discover-crossref",
@@ -179,9 +199,10 @@
   },
   {
    "authors": [
-    "Berry"
+    "Berry, M.",
+    "Jeffery, R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1023/a:1026534430984",
    "key": "berry2000instrumentassessingsoftware",
    "method": "discover-crossref",
@@ -195,9 +216,10 @@
   },
   {
    "authors": [
-    "Bommarito"
+    "Bommarito, E.",
+    "Bommarito, M. J."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.3426281",
    "key": "bommarito2019empiricalanalysispython",
    "method": "discover-crossref",
@@ -211,9 +233,12 @@
   },
   {
    "authors": [
-    "Brooks"
+    "Brooks, A.",
+    "Chambers, J.",
+    "Lee, C. N.",
+    "Mead, F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/reser.2013.7",
    "key": "brooks2013partialreplicationsample",
    "method": "discover-crossref",
@@ -227,9 +252,9 @@
   },
   {
    "authors": [
-    "Brydges"
+    "Brydges, C."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.31234/osf.io/u2jbm",
    "key": "brydges2019effectsizeinterpretation",
    "method": "discover-crossref",
@@ -243,9 +268,11 @@
   },
   {
    "authors": [
-    "Buneman"
+    "Buneman, P.",
+    "Khanna, S.",
+    "Wang-Chiew, T."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/3-540-44503-x_20",
    "key": "buneman2001why",
    "method": "crossref",
@@ -259,9 +286,12 @@
   },
   {
    "authors": [
-    "Cesarano"
+    "Cesarano, C.",
+    "Andersson, V.",
+    "Natella, R.",
+    "Monperrus, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3689944.3696166",
    "key": "cesarano2023gosurfidentifyingsoftware",
    "method": "discover-crossref",
@@ -275,9 +305,9 @@
   },
   {
    "authors": [
-    "Chen"
+    "Chen, B."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3689944.3696350",
    "key": "chen2023runtimeverificationsoftware",
    "method": "discover-crossref",
@@ -291,9 +321,11 @@
   },
   {
    "authors": [
-    "Cheney"
+    "Cheney, J.",
+    "Chiticariu, L.",
+    "Tan, W."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1561/9781601982339",
    "key": "cheney2009provenance",
    "method": "crossref",
@@ -307,9 +339,9 @@
   },
   {
    "authors": [
-    "Chodorowski"
+    "Chodorowski, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.35784/jcsi.2460",
    "key": "chodorowski2021comparativeanalysisjavascript",
    "method": "discover-crossref",
@@ -323,9 +355,12 @@
   },
   {
    "authors": [
-    "Chowdhury"
+    "Chowdhury, M. A. R.",
+    "Abdalkareem, R.",
+    "Shihab, E.",
+    "Adams, B."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/tse.2021.3068901",
    "key": "chowdhury2022untrivialitytrivialpackages",
    "method": "discover-crossref",
@@ -339,9 +374,11 @@
   },
   {
    "authors": [
-    "Cogo"
+    "Cogo, F. R.",
+    "Oliva, G. A.",
+    "Hassan, A. E."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/tse.2019.2952130",
    "key": "cogo2021empiricalstudydependency",
    "method": "discover-crossref",
@@ -355,9 +392,12 @@
   },
   {
    "authors": [
-    "Cogo"
+    "Cogo, F. R.",
+    "Oliva, G. A.",
+    "Bezemer, C.",
+    "Hassan, A. E."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s10664-021-09980-6",
    "key": "cogo2021empiricalstudysame",
    "method": "discover-crossref",
@@ -371,9 +411,10 @@
   },
   {
    "authors": [
-    "Cronbach"
+    "Cronbach, L. J.",
+    "Meehl, P. E."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1037/h0040957",
    "key": "cronbach1955construct",
    "method": "crossref",
@@ -387,9 +428,11 @@
   },
   {
    "authors": [
-    "Dalgaard"
+    "Dalgaard, M. K.",
+    "Christensen, A.",
+    "Kjeldsen, M. K."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1192/j.eurpsy.2023.1139",
    "key": "dalgaard2023whatminimaldetectable",
    "method": "discover-crossref",
@@ -403,9 +446,13 @@
   },
   {
    "authors": [
-    "Dalia"
+    "Dalia, G.",
+    "Sgueglia, A.",
+    "Coppolaro, M.",
+    "Di Sorbo, A.",
+    "Visaggio, C. A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.5362510",
    "key": "dalia2025cometogethersbom",
    "method": "discover-crossref",
@@ -419,9 +466,11 @@
   },
   {
    "authors": [
-    "Decan"
+    "Decan, A.",
+    "Mens, T.",
+    "Claes, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/saner.2017.7884604",
    "key": "decan2019evolution",
    "method": "crossref",
@@ -435,9 +484,10 @@
   },
   {
    "authors": [
-    "Decan"
+    "Decan, A.",
+    "Mens, T."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/tse.2019.2918315",
    "key": "decan2021whatpackagedependencies",
    "method": "discover-crossref",
@@ -451,9 +501,11 @@
   },
   {
    "authors": [
-    "de Mello"
+    "de Mello, R. M.",
+    "da Silva, P. C.",
+    "Travassos, G. H."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/2652524.2652566",
    "key": "demello2014samplingimprovementsoftware",
    "method": "discover-crossref",
@@ -467,9 +519,14 @@
   },
   {
    "authors": [
-    "Dias"
+    "Dias, E.",
+    "Meirelles, P.",
+    "Castor, F.",
+    "Steinmacher, I.",
+    "Wiese, I.",
+    "Pinto, G."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/icse43902.2021.00093",
    "key": "dias2021whatmakesgreat",
    "method": "discover-crossref",
@@ -483,9 +540,9 @@
   },
   {
    "authors": [
-    "Draz"
+    "Draz, M. M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1038/s41598-026-71750-5",
    "key": "draz2026versioncontextcontrol",
    "method": "discover-crossref",
@@ -499,9 +556,10 @@
   },
   {
    "authors": [
-    "Fan"
+    "Fan, Y.",
+    "Liu, R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jeconom.2018.04.002",
    "key": "fan2018partialidentificationinference",
    "method": "discover-crossref",
@@ -515,9 +573,12 @@
   },
   {
    "authors": [
-    "Gandhi"
+    "Gandhi, M.",
+    "Patel, M.",
+    "Bhadra, H.",
+    "Verma, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/incowoco64194.2024.10863220",
    "key": "gandhi2024automateddetectionmitigation",
    "method": "discover-crossref",
@@ -531,9 +592,14 @@
   },
   {
    "authors": [
-    "Gao"
+    "Gao, Y.",
+    "Wu, H.",
+    "Luo, Y.",
+    "Shi, P.",
+    "Shao, W.",
+    "Cao, J."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.3390/math14142593",
    "key": "gao2026llmenhancedevolutionary",
    "method": "discover-crossref",
@@ -547,9 +613,11 @@
   },
   {
    "authors": [
-    "Garthwaite"
+    "Garthwaite, P. H.",
+    "Moustafa, M. W.",
+    "Elfadaly, F. G."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1111/sjos.12672",
    "key": "garthwaite2023locallycorrectconfidence",
    "method": "discover-crossref",
@@ -563,9 +631,9 @@
   },
   {
    "authors": [
-    "Ghanshyambhai Patel"
+    "Ghanshyambhai Patel, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.56975/ijrti.v10i7.205129",
    "key": "ghanshyambhaipatel2025softwaresupplychain",
    "method": "discover-crossref",
@@ -579,9 +647,18 @@
   },
   {
    "authors": [
-    "Gibb"
+    "Gibb, R.",
+    "Ferris, P.",
+    "Allsopp, D.",
+    "Dales, M.",
+    "Elvers, M.",
+    "Gazagnaire, T.",
+    "Jaffer, S.",
+    "Leonard, T.",
+    "Ludlam, J.",
+    "Madhavapeddy, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.59350/nrbbt-e7k85",
    "key": "gibb2025solvingpackagemanagement",
    "method": "discover-crossref",
@@ -595,9 +672,9 @@
   },
   {
    "authors": [
-    "Gibb"
+    "Gibb, R. T."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.59350/rk9s4-43g76",
    "key": "gibb2026packagemanagerscarte",
    "method": "discover-crossref",
@@ -611,9 +688,9 @@
   },
   {
    "authors": [
-    "Godfrey"
+    "Godfrey, M. W."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.scico.2013.11.021",
    "key": "godfrey2015understandingsoftwareartifact",
    "method": "discover-crossref",
@@ -627,9 +704,11 @@
   },
   {
    "authors": [
-    "Goncalves"
+    "Goncalves, C.",
+    "Sousa, B.",
+    "Antunes, N."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.23919/wmnc56391.2022.9954295",
    "key": "goncalves2022oidctcioidc",
    "method": "discover-crossref",
@@ -643,9 +722,10 @@
   },
   {
    "authors": [
-    "Gonz\u00e1lez-Barahona"
+    "Gonz\u00e1lez-Barahona, J. M.",
+    "Robles, G."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s10664-011-9181-9",
    "key": "gonzlezbarahona2011reproducibilityempiricalsoftware",
    "method": "discover-crossref",
@@ -659,9 +739,13 @@
   },
   {
    "authors": [
-    "Goswami"
+    "Goswami, R.",
+    "S., R.",
+    "Goswami, A.",
+    "Goswami, S.",
+    "Goswami, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.31219/osf.io/3fp2v",
    "key": "goswami2024reproduciblehighperformance",
    "method": "discover-crossref",
@@ -675,9 +759,9 @@
   },
   {
    "authors": [
-    "Greenland"
+    "Greenland, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1002/sim.4780040203",
    "key": "greenland1985powersamplesize",
    "method": "discover-crossref",
@@ -691,9 +775,9 @@
   },
   {
    "authors": [
-    "Guan"
+    "Guan, Y."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jspi.2011.09.010",
    "key": "guan2012generalizedscoreconfidence",
    "method": "discover-crossref",
@@ -707,9 +791,14 @@
   },
   {
    "authors": [
-    "Guo"
+    "Guo, W.",
+    "Xu, Z.",
+    "Liu, C.",
+    "Huang, C.",
+    "Fang, Y.",
+    "Liu, Y."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/ase56229.2023.00135",
    "key": "guo2023empiricalstudymalicious",
    "method": "discover-crossref",
@@ -723,9 +812,11 @@
   },
   {
    "authors": [
-    "Habtzghi"
+    "Habtzghi, D.",
+    "Midha, C. K.",
+    "Das, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2991/jsta.2014.13.4.3",
    "key": "habtzghi2014modifiedclopperpearson",
    "method": "discover-crossref",
@@ -739,9 +830,9 @@
   },
   {
    "authors": [
-    "Hendrick"
+    "Hendrick, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.70828/rytl5793",
    "key": "hendrick2022softwarebillmaterials",
    "method": "discover-crossref",
@@ -755,9 +846,10 @@
   },
   {
    "authors": [
-    "Hendrick"
+    "Hendrick, S.",
+    "Ramaswami, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.70828/pvsn3075",
    "key": "hendrick2023maintainerperspectivesopen",
    "method": "discover-crossref",
@@ -771,9 +863,12 @@
   },
   {
    "authors": [
-    "Hoess"
+    "Hoess, N.",
+    "Paradis, C.",
+    "Kazman, R.",
+    "Mauerer, W."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/saner64311.2025.00067",
    "key": "hoess2025doestoolmatter",
    "method": "discover-crossref",
@@ -787,9 +882,9 @@
   },
   {
    "authors": [
-    "Hong"
+    "Hong, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jeconom.2016.09.014",
    "key": "hong2017inferencesemiparametricconditional",
    "method": "discover-crossref",
@@ -803,9 +898,11 @@
   },
   {
    "authors": [
-    "Hunter"
+    "Hunter, K. B.",
+    "Miratrix, L.",
+    "Porter, K."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.18637/jss.v108.i06",
    "key": "hunter2024pumpestimatingpower",
    "method": "discover-crossref",
@@ -819,9 +916,14 @@
   },
   {
    "authors": [
-    "Iqbal"
+    "Iqbal, T.",
+    "Wu, G.",
+    "Iqbal, Z.",
+    "Mahmood, M. B.",
+    "Shafique, A.",
+    "Guo, W."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jisa.2025.104032",
    "key": "iqbal2025pypiguardnovelmeta",
    "method": "discover-crossref",
@@ -835,9 +937,12 @@
   },
   {
    "authors": [
-    "Iqbal"
+    "Iqbal, T.",
+    "Wu, G.",
+    "Iqbal, Z.",
+    "Mahmood, M. B."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.infsof.2026.108129",
    "key": "iqbal2026clampdnetcross",
    "method": "discover-crossref",
@@ -851,9 +956,16 @@
   },
   {
    "authors": [
-    "Islam"
+    "Islam, S.",
+    "Nugroho, Y. S.",
+    "Shahrear, A.",
+    "Wahed, N.",
+    "Gunawan, D.",
+    "Pamungkas, E. W.",
+    "Kabir, M. H.",
+    "Kurniawan, Y. I."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.21203/rs.3.rs-2560509/v1",
    "key": "islam2023empiricalstudynpm",
    "method": "discover-crossref",
@@ -867,9 +979,10 @@
   },
   {
    "authors": [
-    "Jang"
+    "Jang, D.",
+    "Jeon, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.7840/kics.2026.51.4.792",
    "key": "jang2026machinelearningbased",
    "method": "discover-crossref",
@@ -883,9 +996,9 @@
   },
   {
    "authors": [
-    "Jiang"
+    "Jiang, W."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.ecosta.2017.03.006",
    "key": "jiang2017limitingdistributionquasi",
    "method": "discover-crossref",
@@ -899,9 +1012,9 @@
   },
   {
    "authors": [
-    "Jobu"
+    "Jobu, R. A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.7233262",
    "key": "jobu2026pypiguardlightweightexplainable",
    "method": "discover-crossref",
@@ -915,9 +1028,9 @@
   },
   {
    "authors": [
-    "Juristo"
+    "Juristo, N."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/esem.2013.64",
    "key": "juristo2013understandingreplicationsoftware",
    "method": "discover-crossref",
@@ -931,9 +1044,12 @@
   },
   {
    "authors": [
-    "Kawai"
+    "Kawai, K.",
+    "Watarai, K.",
+    "Okada, S.",
+    "Mitsunaga, T."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/jcsse68839.2026.11597025",
    "key": "kawai2026missionawaresbom",
    "method": "discover-crossref",
@@ -947,9 +1063,9 @@
   },
   {
    "authors": [
-    "Kerman"
+    "Kerman, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.6028/nist.sp.1800-44",
    "key": "kerman2025softwaresupplychain",
    "method": "discover-crossref",
@@ -963,9 +1079,12 @@
   },
   {
    "authors": [
-    "Kikas"
+    "Kikas, R.",
+    "Gousios, G.",
+    "Dumas, M.",
+    "Pfahl, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/msr.2017.55",
    "key": "kikas2020structure",
    "method": "crossref",
@@ -979,9 +1098,10 @@
   },
   {
    "authors": [
-    "Kim"
+    "Kim, J.",
+    "Jang, W."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s42952-021-00143-3",
    "key": "kim2021generalizedagresticoull",
    "method": "discover-crossref",
@@ -995,9 +1115,14 @@
   },
   {
    "authors": [
-    "Kishimoto"
+    "Kishimoto, R.",
+    "Kanda, T.",
+    "Manabe, Y.",
+    "Inoue, K.",
+    "Qiu, S.",
+    "Higo, Y."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/msr66628.2025.00090",
    "key": "kishimoto2025datasetsoftwarebill",
    "method": "discover-crossref",
@@ -1011,9 +1136,13 @@
   },
   {
    "authors": [
-    "Ladisa"
+    "Ladisa, P.",
+    "Ponta, S. E.",
+    "Ronzoni, N.",
+    "Martinez, M.",
+    "Barais, O."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3627106.3627138",
    "key": "ladisa2023feasibilitycrosslanguage",
    "method": "discover-crossref",
@@ -1027,9 +1156,12 @@
   },
   {
    "authors": [
-    "Ladisa"
+    "Ladisa, P.",
+    "Plate, H.",
+    "Martinez, M.",
+    "Barais, O."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/sp46215.2023.10179304",
    "key": "ladisa2023sok",
    "method": "crossref",
@@ -1043,9 +1175,10 @@
   },
   {
    "authors": [
-    "Lamb"
+    "Lamb, C.",
+    "Zacchiroli, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/ms.2021.3073045",
    "key": "lamb2022reproducible",
    "method": "crossref",
@@ -1059,9 +1192,11 @@
   },
   {
    "authors": [
-    "Laurie"
+    "Laurie, B.",
+    "Langley, A.",
+    "Kasper, E."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.17487/rfc6962",
    "key": "laurie2014certificate",
    "method": "crossref",
@@ -1075,9 +1210,11 @@
   },
   {
    "authors": [
-    "Lee"
+    "Lee, J.",
+    "Lee, Y.",
+    "Yoo, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.5762/kais.2025.26.4.268",
    "key": "lee2025softwarebillmaterials",
    "method": "discover-crossref",
@@ -1091,9 +1228,14 @@
   },
   {
    "authors": [
-    "Liang"
+    "Liang, W.",
+    "Ling, X.",
+    "Zhao, C.",
+    "Wu, J.",
+    "Luo, T.",
+    "Wu, Y."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/tse.2025.3618952",
    "key": "liang2026detectingmaliciouspackages",
    "method": "discover-crossref",
@@ -1107,9 +1249,10 @@
   },
   {
    "authors": [
-    "Lim"
+    "Lim, G.",
+    "Kim, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/access.2026.3743923",
    "key": "lim2026bridgingregistryfragmentation",
    "method": "discover-crossref",
@@ -1123,9 +1266,11 @@
   },
   {
    "authors": [
-    "Lin\u00e5ker"
+    "Lin\u00e5ker, J.",
+    "Link, G.",
+    "Lumbard, K."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3674805.3686667",
    "key": "linker2024sustainingmaintenancelabor",
    "method": "discover-crossref",
@@ -1139,9 +1284,14 @@
   },
   {
    "authors": [
-    "Liu"
+    "Liu, C.",
+    "Chen, S.",
+    "Fan, L.",
+    "Chen, B.",
+    "Liu, Y.",
+    "Peng, X."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3510003.3510142",
    "key": "liu2022demystifyingvulnerabilitypropagation",
    "method": "discover-crossref",
@@ -1155,9 +1305,11 @@
   },
   {
    "authors": [
-    "Liu"
+    "Liu, Z.",
+    "Wang, J.",
+    "Chen, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3844178.3844648",
    "key": "liu2026seeingforesttaxonomy",
    "method": "discover-crossref",
@@ -1171,9 +1323,9 @@
   },
   {
    "authors": [
-    "McAdams"
+    "McAdams, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jeconom.2008.07.003",
    "key": "mcadams2008partialidentificationtestable",
    "method": "discover-crossref",
@@ -1187,9 +1339,9 @@
   },
   {
    "authors": [
-    "Mockus"
+    "Mockus, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/2597073.2600728",
    "key": "mockus2014miningsoftwarerepositories",
    "method": "discover-crossref",
@@ -1203,9 +1355,10 @@
   },
   {
    "authors": [
-    "Mohomed"
+    "Mohomed, T.",
+    "Ekanayake, I."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/mercon67903.2025.11217128",
    "key": "mohomed2025argoslsasoftware",
    "method": "discover-crossref",
@@ -1219,9 +1372,9 @@
   },
   {
    "authors": [
-    "Molinari"
+    "Molinari, F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jeconom.2007.12.003",
    "key": "molinari2008partialidentificationprobability",
    "method": "discover-crossref",
@@ -1235,9 +1388,9 @@
   },
   {
    "authors": [
-    "Molinari"
+    "Molinari, F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1920/wp.cem.2019.2519",
    "key": "molinari2019econometricspartialidentification",
    "method": "discover-crossref",
@@ -1251,9 +1404,12 @@
   },
   {
    "authors": [
-    "Montaruli"
+    "Montaruli, B.",
+    "Compagna, L.",
+    "Ponta, S. E.",
+    "Balzarotti, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/acsac67867.2025.00053",
    "key": "montaruli2025onedetectorfits",
    "method": "discover-crossref",
@@ -1267,9 +1423,11 @@
   },
   {
    "authors": [
-    "Moufid"
+    "Moufid, H.",
+    "El Ghazouani, M.",
+    "El Kiram, M. A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.3390/jcp6050160",
    "key": "moufid2026metadatacompressibilityevaluation",
    "method": "discover-crossref",
@@ -1283,9 +1441,10 @@
   },
   {
    "authors": [
-    "Muller"
+    "Muller, T.",
+    "Engel, P."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/icde53745.2022.00292",
    "key": "muller2022howwherewhy",
    "method": "discover-crossref",
@@ -1299,9 +1458,11 @@
   },
   {
    "authors": [
-    "Mydin"
+    "Mydin, M. N. M.",
+    "Beh, D. M. Y.",
+    "Shariff, S. M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1002/appl.70209",
    "key": "mydin2026sbomtoolingecosystem",
    "method": "discover-crossref",
@@ -1315,9 +1476,9 @@
   },
   {
    "authors": [
-    "Nawa"
+    "Nawa, V. M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s42081-022-00146-2",
    "key": "nawa2022weightedscoreconfidence",
    "method": "discover-crossref",
@@ -1331,9 +1492,11 @@
   },
   {
    "authors": [
-    "Newman"
+    "Newman, Z.",
+    "Meyers, J. S.",
+    "Torres-Arias, S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3548606.3560596",
    "key": "newman2022sigstore",
    "method": "discover-crossref",
@@ -1347,9 +1510,9 @@
   },
   {
    "authors": [
-    "Nunkesser"
+    "Nunkesser, R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.3390/software5010012",
    "key": "nunkesser2026assessinggeneralizabilitymobile",
    "method": "discover-crossref",
@@ -1363,9 +1526,12 @@
   },
   {
    "authors": [
-    "Nyambe"
+    "Nyambe, T.",
+    "Manavi, B.",
+    "Rudder, S.",
+    "Daily, J."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/isse65546.2025.11370101",
    "key": "nyambe2025reframingsoftwarebill",
    "method": "discover-crossref",
@@ -1379,9 +1545,9 @@
   },
   {
    "authors": [
-    "Oberhauser"
+    "Oberhauser, R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/978-3-031-98033-6_4",
    "key": "oberhauser2025sbomvisualizationsoftware",
    "method": "discover-crossref",
@@ -1395,9 +1561,9 @@
   },
   {
    "authors": [
-    "Obradovi\u0107"
+    "Obradovi\u0107, F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.jeconom.2024.105842",
    "key": "obradovi2024measuringdiagnostictest",
    "method": "discover-crossref",
@@ -1411,9 +1577,12 @@
   },
   {
    "authors": [
-    "O'Donoghue"
+    "O'Donoghue, E.",
+    "Boles, B.",
+    "Izurieta, C.",
+    "Reinhold, A. M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3689944.3696164",
    "key": "odonoghue2023impactssoftwarebill",
    "method": "discover-crossref",
@@ -1427,9 +1596,11 @@
   },
   {
    "authors": [
-    "Panter"
+    "Panter, S. K.",
+    "Hindman, L. S.",
+    "Eisty, N. U."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s10664-025-10678-2",
    "key": "panter2025pvacpackageversion",
    "method": "discover-crossref",
@@ -1443,9 +1614,14 @@
   },
   {
    "authors": [
-    "Peng"
+    "Peng, Y.",
+    "Hu, R.",
+    "Wang, R.",
+    "Gao, C.",
+    "Li, S.",
+    "Lyu, M. R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3597503.3639077",
    "key": "peng2024lessmoreempirical",
    "method": "discover-crossref",
@@ -1459,9 +1635,10 @@
   },
   {
    "authors": [
-    "Porter"
+    "Porter, A.",
+    "Votta, L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1023/a:1009776104355",
    "key": "porter1998comparingdetectionmethods",
    "method": "discover-crossref",
@@ -1475,9 +1652,11 @@
   },
   {
    "authors": [
-    "Pr\u00fcnster"
+    "Pr\u00fcnster, B.",
+    "Palfinger, G.",
+    "Kollmann, C."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.5220/0008121003140321",
    "key": "prnster2019fidesunleashingfull",
    "method": "discover-crossref",
@@ -1491,9 +1670,9 @@
   },
   {
    "authors": [
-    "Radanliev"
+    "Radanliev, P."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.36227/techrxiv.23706684.v1",
    "key": "radanliev2023softwarevulnerabilitymanagement",
    "method": "discover-crossref",
@@ -1507,9 +1686,9 @@
   },
   {
    "authors": [
-    "Randrianaina"
+    "Randrianaina, G. A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.70675/e95564c6zca79z417aza37ez10821a9a0a48",
    "key": "randrianainandincrementalreproduciblebuilds",
    "method": "discover-crossref",
@@ -1523,9 +1702,10 @@
   },
   {
    "authors": [
-    "Raszka"
+    "Raszka, L.",
+    "Grycz, O."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.7592667",
    "key": "raszka2026maliciouspackagespublic",
    "method": "discover-crossref",
@@ -1539,9 +1719,10 @@
   },
   {
    "authors": [
-    "Rayarao"
+    "Rayarao, S. R.",
+    "Donikena, N."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.22541/au.175830854.42750868/v1",
    "key": "rayarao2025shaihuludnpm",
    "method": "discover-crossref",
@@ -1555,9 +1736,13 @@
   },
   {
    "authors": [
-    "Reyes"
+    "Reyes, F.",
+    "Bono, F.",
+    "Sharma, A.",
+    "Baudry, B.",
+    "Monperrus, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3733827.3765523",
    "key": "reyes2025mavenhijacksoftware",
    "method": "discover-crossref",
@@ -1571,9 +1756,9 @@
   },
   {
    "authors": [
-    "R\u00fcschendorf"
+    "R\u00fcschendorf, L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/978-94-011-3466-8_9",
    "key": "rschendorf1991frechetboundstheir",
    "method": "discover-crossref",
@@ -1587,9 +1772,9 @@
   },
   {
    "authors": [
-    "R\u00fcschendorf"
+    "R\u00fcschendorf, L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1214/lnms/1215452625",
    "key": "rschendorf1996developmentsfrechetbounds",
    "method": "discover-crossref",
@@ -1603,9 +1788,10 @@
   },
   {
    "authors": [
-    "Runeson"
+    "Runeson, P.",
+    "Thelin, T."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/isese.2003.1237985",
    "key": "runesonndcasestudysampling",
    "method": "discover-crossref",
@@ -1619,9 +1805,11 @@
   },
   {
    "authors": [
-    "Ruohonen"
+    "Ruohonen, J.",
+    "Hjerppe, K.",
+    "Rindell, K."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/pst52912.2021.9647791",
    "key": "ruohonen2021largescalesecurity",
    "method": "discover-crossref",
@@ -1635,9 +1823,9 @@
   },
   {
    "authors": [
-    "Ryan"
+    "Ryan, M. D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.14722/ndss.2014.23379",
    "key": "ryan2014enhanced",
    "method": "crossref",
@@ -1651,9 +1839,12 @@
   },
   {
    "authors": [
-    "Saeidi"
+    "Saeidi, M.",
+    "Thoma, E.",
+    "Kula, R. G.",
+    "Rodr\u00edguez-P\u00e9rez, G."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/esem64174.2025.00071",
    "key": "saeidi2025whataboutour",
    "method": "discover-crossref",
@@ -1667,9 +1858,11 @@
   },
   {
    "authors": [
-    "Salmon"
+    "Salmon, M.",
+    "Ross, N.",
+    "Bellini Saibene, Y. N."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.59350/qgdfk-ce602",
    "key": "salmon2026howrecruitnew",
    "method": "discover-crossref",
@@ -1683,9 +1876,12 @@
   },
   {
    "authors": [
-    "Samaana"
+    "Samaana, H.",
+    "Costa, D. E.",
+    "Abdellatif, A.",
+    "Shihab, E."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/s10664-025-10648-8",
    "key": "samaana2025opportunitiessecurityrisks",
    "method": "discover-crossref",
@@ -1699,9 +1895,12 @@
   },
   {
    "authors": [
-    "Samuel"
+    "Samuel, J.",
+    "Mathewson, N.",
+    "Cappos, J.",
+    "Dingledine, R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/1866307.1866315",
    "key": "samuel2010survivable",
    "method": "crossref",
@@ -1715,9 +1914,9 @@
   },
   {
    "authors": [
-    "Sandelius"
+    "Sandelius, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1111/j.2517-6161.1952.tb00105.x",
    "key": "sandelius1952confidenceintervalsmallest",
    "method": "discover-crossref",
@@ -1731,9 +1930,10 @@
   },
   {
    "authors": [
-    "Scarsini"
+    "Scarsini, M.",
+    "Shaked, M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/978-94-011-5532-8_7",
    "key": "scarsini1997frechetclassesnonmonotone",
    "method": "discover-crossref",
@@ -1747,9 +1947,9 @@
   },
   {
    "authors": [
-    "Schneidewind"
+    "Schneidewind, N. F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1023/a:1011435315749",
    "key": "schneidewind2001knowledgerequirementssoftware",
    "method": "discover-crossref",
@@ -1763,9 +1963,10 @@
   },
   {
    "authors": [
-    "Sehgal"
+    "Sehgal, V. V.",
+    "Ambili, P. S."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1007/978-3-031-50815-8_3",
    "key": "sehgal2024taxonomysurveysoftware",
    "method": "discover-crossref",
@@ -1779,9 +1980,9 @@
   },
   {
    "authors": [
-    "Seknametla"
+    "Seknametla, P. R."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.63282/3050-922x.ijeret-v6i2p115",
    "key": "seknametla2025securesupplychain",
    "method": "discover-crossref",
@@ -1795,9 +1996,10 @@
   },
   {
    "authors": [
-    "SHTOMA"
+    "SHTOMA, D.",
+    "PETRIVSKYI, V."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.17721/ait.2025.2.04",
    "key": "shtoma2025sbombasedvulnerability",
    "method": "discover-crossref",
@@ -1811,9 +2013,9 @@
   },
   {
    "authors": [
-    "Sk\u0159iv\u00e1nek"
+    "Sk\u0159iv\u00e1nek, J."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.14736/kyb-2014-1-0095",
    "key": "skivnek2014basicboundsfrechet",
    "method": "discover-crossref",
@@ -1827,9 +2029,9 @@
   },
   {
    "authors": [
-    "Small"
+    "Small, M. L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1093/oso/9780190661427.003.0008",
    "key": "small2017empiricalgeneralizability",
    "method": "discover-crossref",
@@ -1843,9 +2045,9 @@
   },
   {
    "authors": [
-    "Soeiro"
+    "Soeiro, L. F. D. O."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.70675/6dd72cb7z7135z4d1dza942z3f6c57308033",
    "key": "soeirondassessingsecuritysoftware",
    "method": "discover-crossref",
@@ -1859,9 +2061,14 @@
   },
   {
    "authors": [
-    "Sun"
+    "Sun, X.",
+    "Gao, X.",
+    "Cao, S.",
+    "Bo, L.",
+    "Wu, X.",
+    "Huang, K."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3691620.3695493",
    "key": "sun2024integratingdeepcode",
    "method": "discover-crossref",
@@ -1875,9 +2082,14 @@
   },
   {
    "authors": [
-    "Tamanna"
+    "Tamanna, M.",
+    "Hamer, S.",
+    "Tran, M.",
+    "Fahl, S.",
+    "Acar, Y.",
+    "Williams, L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.5119626",
    "key": "tamanna2025unravelingchallengessupply",
    "method": "discover-crossref",
@@ -1891,9 +2103,11 @@
   },
   {
    "authors": [
-    "Tang"
+    "Tang, M.",
+    "Tang, N.",
+    "Chan, I. S. F."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1002/sim.2216",
    "key": "tang2005confidenceintervalconstruction",
    "method": "discover-crossref",
@@ -1907,9 +2121,9 @@
   },
   {
    "authors": [
-    "Tang"
+    "Tang, L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1038/s41592-026-03108-8",
    "key": "tang2026packageselectionversioning",
    "method": "discover-crossref",
@@ -1923,9 +2137,10 @@
   },
   {
    "authors": [
-    "Teng"
+    "Teng, H.",
+    "Tien, Y."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.64972/jaat.2026v4.386p31e:413-425",
    "key": "teng2026supplychainsoftware",
    "method": "discover-crossref",
@@ -1939,9 +2154,10 @@
   },
   {
    "authors": [
-    "Voinea"
+    "Voinea, L.",
+    "Telea, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/1137983.1138024",
    "key": "voinea2006miningsoftwarerepositories",
    "method": "discover-crossref",
@@ -1955,9 +2171,13 @@
   },
   {
    "authors": [
-    "Vu"
+    "Vu, D.",
+    "Pashchenko, I.",
+    "Massacci, F.",
+    "Plate, H.",
+    "Sabetta, A."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/eurospw51379.2020.00074",
    "key": "vu2021typosquatting",
    "method": "crossref",
@@ -1971,9 +2191,13 @@
   },
   {
    "authors": [
-    "wang"
+    "wang, J.",
+    "Mao, D.",
+    "Han, Y.",
+    "Quan, Z.",
+    "Wang, B."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.6727185",
    "key": "wang2026decodingmaliciousnessscalable",
    "method": "discover-crossref",
@@ -1987,9 +2211,9 @@
   },
   {
    "authors": [
-    "Williams"
+    "Williams, L."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/msec.2024.3359798",
    "key": "williams2024narrowingsoftwaresupply",
    "method": "discover-crossref",
@@ -2003,9 +2227,12 @@
   },
   {
    "authors": [
-    "Wyss"
+    "Wyss, E.",
+    "Tassio, D.",
+    "Carli, L. D.",
+    "Davidson, D."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/raid67961.2025.00047",
    "key": "wyss2025evaluatingllmbased",
    "method": "discover-crossref",
@@ -2019,9 +2246,10 @@
   },
   {
    "authors": [
-    "Yan"
+    "Yan, J.",
+    "Zhao, B."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1016/j.neunet.2025.108487",
    "key": "yan2026pypimaldetmaliciouspypi",
    "method": "discover-crossref",
@@ -2035,9 +2263,12 @@
   },
   {
    "authors": [
-    "Zerouali"
+    "Zerouali, A.",
+    "Mens, T.",
+    "Robles, G.",
+    "Gonzalez-Barahona, J. M."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1109/saner.2019.8667997",
    "key": "zerouali2019diversitysoftwarepackage",
    "method": "discover-crossref",
@@ -2051,9 +2282,15 @@
   },
   {
    "authors": [
-    "Zhang"
+    "Zhang, J.",
+    "Huang, K.",
+    "Huang, Y.",
+    "Chen, B.",
+    "Wang, R.",
+    "Wang, C.",
+    "Peng, X."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.1145/3705304",
    "key": "zhang2025killingtwobirds",
    "method": "discover-crossref",
@@ -2067,9 +2304,10 @@
   },
   {
    "authors": [
-    "Zhu"
+    "Zhu, G.",
+    "Wang, C."
    ],
-   "authors_note": "first author only (registry field)",
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
    "doi": "10.2139/ssrn.7456458",
    "key": "zhu2026versionedtransitivedependency",
    "method": "discover-crossref",

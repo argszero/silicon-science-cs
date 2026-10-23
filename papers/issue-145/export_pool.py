@@ -31,15 +31,36 @@ DEFAULT_OUT = os.path.join(
     HERE if os.path.exists(os.path.join(HERE, "manuscript_source.md")) else
     os.path.abspath(os.path.join(HERE, os.pardir)), "refs_pool.json")
 
+# The FULL author list, recovered from Crossref by DOI and committed as a cache so that a
+# reproduction is offline (revision round 1, issue #145, required change R1: the list printed one
+# author per entry -- 127 of 130 -- because the corpus stores the registry's first-author field, and
+# the disclosure of that truncation lived in `reference-check.md` and nowhere in the manuscript).
+# `harvest_authors.py` refreshes it; this script only reads it.
+AUTHORS = os.path.join(HERE, "authors_by_doi.json")
 
-def fields(e):
+
+def author_cache():
+    if not os.path.exists(AUTHORS):
+        return {}
+    with io.open(AUTHORS, encoding="utf-8") as fh:
+        return json.load(fh).get("by_doi", {})
+
+
+def fields(e, cache=None):
     """What a reference list needs, and what an auditor needs, kept apart."""
+    cache = cache or {}
+    full = (cache.get(e.get("doi") or "") or {}).get("authors") or []
+    if full:
+        authors, note = full, "full author list, Crossref by DOI (harvest_authors.py)"
+    else:
+        authors = [e["first_author"]] if e.get("first_author") else []
+        note = ("first author only (no DOI in the record)"
+                if e.get("first_author") else "no author in the registry record")
     return {
         "key": e["key"],
         "title": (e.get("title") or "").strip(),
-        "authors": [e["first_author"]] if e.get("first_author") else [],
-        # the corpus stores first-author family only; saying so is better than implying a full list
-        "authors_note": "first author only (registry field)" if e.get("first_author") else "no author in the registry record",
+        "authors": authors,
+        "authors_note": note,
         "year": e.get("year"),
         "venue": (e.get("venue") or "").strip(),
         "type": e.get("type") or "",
@@ -134,6 +155,10 @@ def main():
             print("FAIL: kept entry without a title: %s" % e["key"])
             return 1
 
+    cache = author_cache()
+    if not cache:
+        print("NOTE: no %s -- the list will print one author per entry and say so"
+              % os.path.basename(AUTHORS))
     pool = {
         # No wall clock, and the pin is over the SEMANTIC content rather than the file's bytes:
         # a timestamp inside the corpus (or in this header) would make the pool a different file on
@@ -158,7 +183,7 @@ def main():
         # function of the committed package: a report that read the corpus's harvest block at report
         # time could not be regenerated in a checkout that does not carry the research workspace.
         "search_form": search_form(d, kept, excluded),
-        "entries": sorted((fields(e) for e in kept), key=lambda x: x["key"]),
+        "entries": sorted((fields(e, cache) for e in kept), key=lambda x: x["key"]),
     }
     io.open(out_path, "w", encoding="utf-8").write(json.dumps(pool, indent=1, sort_keys=True) + "\n")
     print("wrote %s" % out_path)

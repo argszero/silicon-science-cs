@@ -97,7 +97,12 @@ def build(text):
     # renderer (GitHub's preview included), so without the separator the bibliography renders as a
     # wall whose entry boundaries a reader cannot see. `.github/tools/refgate.py` prints that count
     # as `block form:` and it is what the review template's "read in the rendered form" reads.
-    lines = [HEADING, ""]
+    lines = [HEADING, "",
+             "Author lists are the **full** list Crossref records for each DOI, one `Family, I.` per",
+             "author in the registry's order; they are re-queried by DOI (`harvest_authors.py`) and",
+             "cached in `authors_by_doi.json`, so the list is regenerable offline. Three entries carry",
+             "no year and one no author in the registry record, printed as an absence rather than an",
+             "invented value.", ""]
     for i, k in enumerate(order):
         if i:
             lines.append("")
@@ -149,8 +154,12 @@ def report(pool, order, num):
         L.append("| %d | `%s` | %s | %s | %s (DOI `%s`) |"
                  % (num[k], k, e.get("method") or "-", res, clean_title(e["title"])[:70], e.get("doi") or "-"))
     L += ["", "## Notes a reader should have", "",
-          "* The pool stores the **first author only** (the registry field the corpus kept); the list "
-          "says so rather than presenting a truncated author list as a complete one.",
+          "* The list carries the **full** author list for each DOI, re-queried from Crossref by DOI "
+          "and cached in `authors_by_doi.json` (`harvest_authors.py`), so the pool and the list are "
+          "regenerable offline. Before the correction round of 2026-10-23 it carried the registry's "
+          "first-author field only -- 127 of 130 entries printed one author, and the sentence that "
+          "said so lived in this file rather than in the manuscript. That is the defect R1 names, "
+          "and it is fixed at the list rather than at the disclosure.",
           "* Three entries carry no year and three no author in the registry record; they are listed "
           "with `n.d.` / a stated absence rather than an invented value.",
           "* Excluded records stay in the research corpus with their reason. They are not listed here "

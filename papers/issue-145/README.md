@@ -56,17 +56,39 @@ report being a function of the pool.
 | `manuscript_source.md` | the paper's source, with citation **keys** `[@key]` |
 | `manuscript.md` | the paper (built; do not edit by hand) |
 | `build_refs.py` | numbers the citations, emits the reference list, and enforces C1–C5 |
-| `refs_pool.json` | the reviewed citation pool the keys resolve against |
+| `refs_pool.json` | the reviewed citation pool the keys resolve against; each entry carries the **full** author list |
+| `harvest_authors.py`, `authors_by_doi.json` | re-query Crossref by DOI for the full author list, and the **committed cache** that makes the pool regenerate offline |
 | `reference-check.md` | per-entry citation verification (built) |
 | `references.json` | the corpus the pool was cut from, **including the records refused and why** |
 | `review_references.py`, `export_pool.py` | the two review passes and the pool freeze |
 | `ceiling_law.md`, `ceiling_check.py` | the theory leg: propositions, proofs, exact verification |
 | `plant_coverage.py` | the plant battery for the coverage instrument |
 | `wilson_separation.py` | presence vs coverage, with intervals |
-| `check_claims.py` | every printed number re-derived, and statable in the manuscript |
+| `check_claims.py` | every printed number re-derived from its artefact **and bound to the statement site** that prints it (`--selftest` plants the drift) |
 | `snapshot_*.json(.sha256)` | the three frame artefacts, pinned |
 | `enumerate.py`, `pypi_enumerate.py`, `oci_enumerate.py`, `coverage.py`, `probe_coverage.py` | the networked enumerators and the coverage helpers |
 | `manuscript_skeleton.md` | the argument's plan and the claim → artefact table |
+
+## How a printed number is held to its artifact
+
+The claim table names, per row, the artefact and key that own a quantity. Two gates run over it, and
+both must pass:
+
+1. **re-derivation** — the table's value is compared with the artefact's value, in both directions;
+2. **statement-site binding** — every checked row's key must be *declared* where the manuscript states
+   it, as a source annotation `<!-- c: npm.summary.units -->` sitting beside the number, and the clause
+   the annotation closes must contain that artefact value.
+
+The second gate is not a document-wide presence test, and the difference is the point. The published
+version asked only whether each value's digits appeared *somewhere* in the manuscript, so changing
+`giving **184** package releases` to `**999**` at its statement site left the gate green — `184` stood
+at two other lines of the same file. Read the clause, and the same drift is red, naming the row and
+the site. Five rows (the identifier rows 23b/23c and the three printed-only rows 26–28) are listed as
+**NOT CHECKED** with their reason rather than passed by a stray digit.
+
+`python3 check_claims.py --selftest` runs the plants that make this claim good: the drift above, a
+sibling occurrence drifting while its twin stands, and a quantity whose annotation was removed — each
+must fire, and the shipped manuscript must stay green.
 
 ## What this paper claims, and what it does not
 

@@ -152,18 +152,19 @@ the seed sets are published so that a reader can re-draw a different one.
 
 ## 5. npm: a schema that names the source and not the closure
 
-The frame is 20 stated seeds expanded to depth 1, giving **184** package releases. **82** are
-attested. **52** of those declare a non-empty dependency closure.
+The frame is 20 stated seeds expanded to depth 1, giving **184** package releases <!-- c: npm.summary.units -->. **82** are
+attested <!-- c: npm.summary.attested -->. **52** of those declare a non-empty dependency closure <!-- c: npm.summary.attested_with_deps -->. Every one of the 184 was read: **0** NOT RUN and **0** undecodable payloads <!-- c: npm.summary.not_run --> <!-- c: npm.summary.undecodable_payloads -->.
 
-Of those 52, **52** name none of their declared dependencies: **0 of 249**. Not one attestation in
-the frame names a single dependency it declared.
+Of those 52, **52** name none of their declared dependencies: **0 of 249** <!-- c: npm.summary.attested_zero_coverage --> <!-- c: npm.summary.deps_total --> <!-- c: npm.summary.deps_covered_total -->. Not one attestation in
+the frame names a single dependency it declared, so **0** of the 184 packages has positive
+coverage <!-- c: npm.summary.attested_positive_coverage -->.
 
 The shape is not a parser gap, and three counts say so. First, every one of the 82 statements carries
-exactly **one** input, and that input's URI family is `git` for all 82 — the `other` bucket is empty,
+exactly **one** input, and that input's URI family is `git` for all 82 <!-- c: npm.summary.input_families --> — the `other` bucket is empty,
 so the input space is not being under-read, it is being read and found to have one inhabitant.
-Second, there is exactly **one** build type in the frame — the GitHub Actions workflow build type —
-and it accounts for all 82 statements, so the result is not an average over heterogeneous builders
-that a different builder would change. Third, the OIDC issuer is populated for **81** of 82 with a
+Second, there is exactly **one** build type in the frame <!-- c: npm.summary.build_types (len) --> — the GitHub Actions workflow build type —
+and it accounts for all 82 statements <!-- c: npm.summary.build_types -->, so the result is not an average over heterogeneous builders
+that a different builder would change. Third, the OIDC issuer is populated for **81** of 82 <!-- c: npm.summary.oidc_issuers --> with a
 single value, `github.com`; the eighty-second records none. A missing value is not a second platform,
 and this paper does not count it as one.
 
@@ -186,14 +187,14 @@ Provenance that pins a package to its source repository answers the question tho
 
 ## 6. PyPI: a different mechanism, the same outcome
 
-The frame is 20 stated seeds giving **212** distribution files. **119** are attested, across **15**
-distinct trusted-publisher identities, all of them OIDC-asserted GitHub identities
+The frame is 20 stated seeds giving **212** distribution files <!-- c: pypi.summary.files -->. **119** are attested <!-- c: pypi.summary.attested_files -->, across **15**
+distinct trusted-publisher identities <!-- c: pypi.summary.publishers (len) -->, all of them OIDC-asserted GitHub identities
 [@goncalves2022oidctcioidc].
 
 Here the finding is stronger than in §5, and the taxonomy is what makes it so. **None** of the 119
-attested files carries a predicate with any input at all: `attested_with_predicate` is 0 and
-`attested_inputs_total` is 0. **47** of the files declare a non-empty closure, and all 47 are at
-zero coverage: **0 of 564** declared dependencies.
+attested files carries a predicate with any input at all: `attested_with_predicate` is 0 <!-- c: pypi.summary.attested_with_predicate --> and
+`attested_inputs_total` is 0 <!-- c: pypi.summary.attested_inputs_total -->. Every one of the 212 was read: **0** NOT RUN <!-- c: pypi.summary.files_not_run -->. **47** of the files declare a non-empty closure <!-- c: pypi.summary.attested_with_deps -->, and all 47 are at
+zero coverage <!-- c: pypi.summary.attested_zero_coverage -->: **0 of 564** <!-- c: pypi.summary.deps_total --> <!-- c: pypi.summary.deps_covered --> declared dependencies.
 
 So the two ecosystems fail differently, and the difference is the paper's point. npm attests *a
 source commit*: the statement has an input, the input is one URI, and the closure is not among the
@@ -225,17 +226,18 @@ This frame is the paper's lead example in the abstract and in §1, although it i
 order, because it is the only one that separates **"the data does not exist"** from **"the statement
 does not carry it"**.
 
-Twelve named Chainguard images are enumerated; **10** are read and **2** require authentication and
-are recorded NOT RUN, never imputed. The 10 carry **30** attestation statements, of which **10** are
-provenance statements. The builder is not GitHub Actions: there is exactly one build type, the
-`apko` build type, and one builder identity, the `apko` Terraform provider.
+Twelve named Chainguard images are enumerated <!-- c: oci.summary.images -->; **10** are read <!-- c: oci.summary.images_ok --> and **2** require authentication and
+are recorded NOT RUN <!-- c: oci.summary.images_not_run -->, never imputed. The 10 carry **30** attestation statements <!-- c: oci.summary.statements -->, of which **10** are
+provenance statements <!-- c: oci.summary.provenance_statements -->. The builder is not GitHub Actions: there is exactly one build type <!-- c: oci.summary.build_types (len) -->, the
+`apko` build type, and one builder identity <!-- c: oci.summary.builder_ids (len) -->, the `apko` Terraform provider.
 
 `resolvedDependencies` is **absent** in **10 of 10** provenance statements — absent, not empty, which
-the artifact records as a distinct state. The declared closure of the ten images is **313** packages,
-and the installed closure is **313**.
+the artifact records as a distinct state, and **0** of the 10 carries a positive
+`resolvedDependencies` <!-- c: oci.summary.provenance_with_positive_resolvedDependencies -->. The declared closure of the ten images is **313** packages <!-- c: oci.rows[].closure.declared_n (sum over OK) -->,
+and the installed closure is **313** <!-- c: oci.rows[].closure.installed_n (sum over OK) -->.
 
-Coverage of that 313 is **0 by the provenance statement** and **313 by a sibling SPDX statement in
-the same signed attestation set**. Both statements are attested, both are signed by the same builder,
+Coverage of that 313 is **0 by the provenance statement** <!-- c: oci.rows[].closure.declared_covered_by_provenance (sum over OK) --> and **313 by a sibling SPDX statement in
+the same signed attestation set** <!-- c: oci.rows[].closure.declared_covered_by_spdx (sum over OK) -->. Both statements are attested, both are signed by the same builder,
 and they are read by different consumers: a verifier that traverses provenance reads the first.
 
 This is the measurement that makes the paper's construct claim concrete rather than rhetorical. If
