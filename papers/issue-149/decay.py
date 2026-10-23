@@ -33,7 +33,10 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PKG = os.path.abspath(os.path.join(HERE, os.pardir))
+PKG = HERE  # the package directory holds the snapshot AND the artifact. HERE/.. read
+# papers/ and found nothing, so the committed scripts could not reproduce the committed
+# numbers on a clean checkout. A reproduction path that depends on a directory the package
+# does not own is not a reproduction path.
 OUT = os.path.join(PKG, "decay.json")
 
 sys.path.insert(0, HERE)

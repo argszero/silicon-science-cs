@@ -1,121 +1,121 @@
 {
  "ecosystems": {
   "npm": {
-   "ambiguous_edges": 215,
-   "ambiguous_share": 0.1725521669341894,
+   "ambiguous_edges": 322,
+   "ambiguous_share": 0.1326740832303255,
    "ambiguous_wilson": [
-    0.15258567214805185,
-    0.19453159455198438
+    0.11975675931120343,
+    0.14675242006107653
    ],
-   "ambiguous_with_closure_difference": 82,
+   "ambiguous_with_closure_difference": 111,
    "as_of_now_instant": "2026-10-22T11:39:38.614Z",
    "baselines": {
-    "install_count_pin_direct_only": 192481108,
-    "install_count_pin_everything": 543,
-    "pin_direct_only_pins": 215,
-    "pin_everything_pins": 1246
+    "install_count_pin_direct_only": 151949821097,
+    "install_count_pin_everything": 993,
+    "pin_direct_only_pins": 322,
+    "pin_everything_pins": 2427
    },
    "certificate": {
     "brute_equals_closed_form": true,
-    "instances_checked": 219,
+    "instances_checked": 389,
     "mismatches": [],
-    "skipped_too_large": 324
+    "skipped_too_large": 604
    },
-   "closure_difference_share": 0.3813953488372093,
+   "closure_difference_share": 0.3447204968944099,
    "closure_difference_unknown": 0,
    "closure_difference_wilson": [
-    0.31908823202503367,
-    0.4478664968747734
+    0.29491281075155684,
+    0.3981896046551928
    ],
-   "closure_shape_share": 0.08837209302325581,
+   "closure_shape_share": 0.09316770186335403,
    "closure_shape_wilson": [
-    0.05730396887921895,
-    0.1338918549495229
+    0.0660409020554743,
+    0.12988742631021008
    ],
-   "declarations_share_under_determined_all": 0.14917127071823205,
-   "declarations_share_under_determined_at_risk": 0.32270916334661354,
-   "declarations_under_determined": 81,
+   "declarations_share_under_determined_all": 0.14300100704934543,
+   "declarations_share_under_determined_at_risk": 0.30735930735930733,
+   "declarations_under_determined": 142,
    "declarations_under_determined_wilson_all": [
-    0.12167438488345647,
-    0.18159734864961782
+    0.12260114450625101,
+    0.16615245486199373
    ],
    "declarations_under_determined_wilson_at_risk": [
-    0.2679192440676409,
-    0.38284421056456996
+    0.2670178192526252,
+    0.35087804921425264
    ],
-   "declarations_with_edges": 251,
-   "declaring_packages": 95,
-   "declaring_versions": 543,
-   "declaring_versions_all_specs_unparsed": 49,
-   "declaring_versions_declaring_nothing": 243,
-   "declaring_versions_with_edges": 251,
+   "declarations_with_edges": 462,
+   "declaring_packages": 158,
+   "declaring_versions": 993,
+   "declaring_versions_all_specs_unparsed": 133,
+   "declaring_versions_declaring_nothing": 398,
+   "declaring_versions_with_edges": 462,
    "ecosystem": "npm",
-   "edges": 1246,
-   "edges_that_grew": 189,
-   "edges_unknown_package": 253,
+   "edges": 2427,
+   "edges_that_grew": 363,
+   "edges_unknown_package": 913,
    "installs_asof_max": 552960,
    "installs_asof_median": 1,
-   "snapshot_content_sha256": "197bcb83490f803aab36f99337197d02b16d1b39982bc0b190f1e292ced39375",
-   "unparsed_specs": 269,
+   "snapshot_content_sha256": "e5760d09e37f1a7364ce6f427a878110757a0a4de844f1a767a715587f527756",
+   "unparsed_specs": 975,
    "yanked_versions_in_snapshot": 880
   },
   "pypi": {
-   "ambiguous_edges": 127,
-   "ambiguous_share": 0.9338235294117647,
+   "ambiguous_edges": 213,
+   "ambiguous_share": 0.9424778761061947,
    "ambiguous_wilson": [
-    0.8790146274860106,
-    0.9647972282135809
+    0.9040850967031709,
+    0.9660793991931332
    ],
-   "ambiguous_with_closure_difference": 22,
+   "ambiguous_with_closure_difference": 33,
    "as_of_now_instant": "2026-10-22T11:54:48.330970Z",
    "baselines": {
-    "install_count_pin_direct_only": 286319339,
-    "install_count_pin_everything": 167,
-    "pin_direct_only_pins": 127,
-    "pin_everything_pins": 136
+    "install_count_pin_direct_only": 630327175,
+    "install_count_pin_everything": 264,
+    "pin_direct_only_pins": 213,
+    "pin_everything_pins": 226
    },
    "certificate": {
     "brute_equals_closed_form": true,
-    "instances_checked": 39,
+    "instances_checked": 65,
     "mismatches": [],
-    "skipped_too_large": 128
+    "skipped_too_large": 199
    },
-   "closure_difference_share": 0.1732283464566929,
+   "closure_difference_share": 0.15492957746478872,
    "closure_difference_unknown": 0,
    "closure_difference_wilson": [
-    0.11727034762153574,
-    0.248374829447531
+    0.11249513407942463,
+    0.20959066495544693
    ],
-   "closure_shape_share": 0.07874015748031496,
+   "closure_shape_share": 0.06572769953051644,
    "closure_shape_wilson": [
-    0.0433298959009003,
-    0.1388873805616315
+    0.039552497551316505,
+    0.10729017470345381
    ],
-   "declarations_share_under_determined_all": 0.31736526946107785,
+   "declarations_share_under_determined_all": 0.32575757575757575,
    "declarations_share_under_determined_at_risk": 1.0,
-   "declarations_under_determined": 53,
+   "declarations_under_determined": 86,
    "declarations_under_determined_wilson_all": [
-    0.2515549178173127,
-    0.391389189472715
+    0.2720740222388018,
+    0.38443937971220205
    ],
    "declarations_under_determined_wilson_at_risk": [
-    0.9324156955469234,
+    0.9572402984808819,
     1.0
    ],
-   "declarations_with_edges": 53,
-   "declaring_packages": 28,
-   "declaring_versions": 167,
-   "declaring_versions_all_specs_unparsed": 10,
-   "declaring_versions_declaring_nothing": 104,
-   "declaring_versions_with_edges": 53,
+   "declarations_with_edges": 86,
+   "declaring_packages": 31,
+   "declaring_versions": 264,
+   "declaring_versions_all_specs_unparsed": 17,
+   "declaring_versions_declaring_nothing": 161,
+   "declaring_versions_with_edges": 86,
    "ecosystem": "pypi",
-   "edges": 136,
-   "edges_that_grew": 101,
-   "edges_unknown_package": 0,
+   "edges": 226,
+   "edges_that_grew": 188,
+   "edges_unknown_package": 6,
    "installs_asof_max": 26812800,
    "installs_asof_median": 1,
-   "snapshot_content_sha256": "f2d7dfd6209c71ed089490ad6f984b532a19eeb993892c423296494b8b02560c",
-   "unparsed_specs": 22,
+   "snapshot_content_sha256": "bcb64650be36dd4fd35404b46f16ec8a6cf1282d9a15571ced3298a3570c60b9",
+   "unparsed_specs": 53,
    "yanked_versions_in_snapshot": 25
   }
  },
