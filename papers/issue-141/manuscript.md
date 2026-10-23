@@ -21,8 +21,8 @@ answer as quantities of the protocol rather than as an observation about a leade
 Three results, in order of strength. **First, a design law, exact and falsifiable**: a protocol's
 ranking is faithful to payoff -- agreement of the two total orders in every cell -- **iff** its score
 is a strictly increasing function of the policy's *own* payoff-profile value. Every aggregation that
-reads the opponent row instead breaks faithfulness, and none of the eleven row-readers in our space is
-faithful in a single cell (0 mismatches over 19 protocols x 9 games). **Second, the ranking is
+reads the opponent row instead breaks faithfulness, and **0** of the eleven row-readers in our space
+is faithful in a single cell (0 mismatches over 19 protocols x 9 games). **Second, the ranking is
 buyable**: a policy is rank-optimal without being payoff-optimal in 474 of 684 cells, and the maximum
 rank gain the zoo permits is attained by an ordinary lower-is-better score. The protocol, not the
 population, is the larger lever: the mean-square for protocol exceeds that for population in 9 of 9
@@ -31,10 +31,11 @@ direction**: we predicted that *buyable* rank and *fragile* rank are one propert
 nested instead (474 gameable cells strictly inside 564 fragile ones, with 0 counterexamples to
 `G > 0 => tau < 1`), and one design is maximally opposed -- first by rank-gaming and exactly zero by
 transport. A benchmark author who audits the ordering catches corruption at half the contamination an
-audit that reads only the champion needs (`lambda_tau = 1/16 < lambda_G = 1/8`). <!-- n: v4.cells,
-v4.law_mismatches, v4.row_reading_faithful_count, v4.P1.G_pos,
+audit that reads only the champion needs (`lambda_tau = 1/16 < lambda_G = 1/8`). <!-- n: v4.cells, v4.law_mismatches@"0 mismatches",
+v4.row_reading_faithful_count@"0 of the eleven row-readers", v4.P1.G_pos@"474 of 684 cells",
 v4.P2.games_protocol_gt_population, v4.P2.ms_ratio_min, v4.P2.ms_ratio_max,
-v4.T3.gameable, v4.T3.fragile, v4.T3.counterexamples, v1.lambda_tau, v1.lambda_G -->
+v4.T3.gameable@"474 gameable cells", v4.T3.fragile, v4.T3.counterexamples@"0 counterexamples",
+v1.lambda_tau, v1.lambda_G -->
 
 **Claim boundary.** Every number above is a fact about a declared, exactly enumerable design space. We
 make no claim about a deployed benchmark or a real population of agents; nothing here is measured on
@@ -117,7 +118,8 @@ sealed-bid (SPSB), and a common-value auction with the winner's curse
 integer grid and every payoff is computed as an exact `Fraction` sum over opponents' value profiles, so
 no result in this paper depends on a floating-point tie or a seed
 [25]. There is no sampling anywhere in
-the instrument: the design space is enumerated. <!-- n: v4.games -->
+the instrument: the design space is enumerated, the **9** games it
+contains <!-- n: v4.games@"9 games" -->.
 
 **Policies.** A zoo of eight linear-shading policies (shade factor, plus the payoff-optimal and
 payoff-worst extremes) [26,27]. The zoo is deliberately the simplest family for which "which policy is better"
@@ -188,10 +190,10 @@ unfaithful (`tail_swap`, constructed), and sixteen are gameable.
 
 **The row-reading class.** Eleven of the nineteen protocols aggregate the opponent row: `win_count`,
 `strict_wins`, `tie_count`, `mean_sq`, `top_half`, `worst_opp`, `best_opp`, `norm_by_best`,
-`relative_pair`, `game_wins`, `champion`. **None of the eleven is faithful in a single cell**, which is
+`relative_pair`, `game_wins`, `champion`. **0 of the eleven is faithful in a single cell**, which is
 the law's sharpest prediction — these are not pathological scores but the scores benchmarks publish
 [45,46,47].
-<!-- n: v4.row_reading_count, v4.row_reading_faithful_count -->
+<!-- n: v4.row_reading_count, v4.row_reading_faithful_count@"0 of the eleven" -->
 
 **The nesting is strict, and it is count-dependent on its grid.** On the 17-protocol / 4-game grid the
 faithful cells (54) are strictly contained in the immune cells (96), which are strictly contained in
@@ -237,12 +239,14 @@ stays flat along the ladder.
 zoo of eight is seven positions, and the ordinary lower-is-better score `neg_mean` attains
 `G_max = 7` while being gameable in **36 of 36** cells. A benchmark that rewards "lower cost is better"
 without asking what the score is monotone in has, in this space, maximised exactly the quantity this
-paper measures [49,50]. <!-- n: v4.neg_mean.G_max, v4.neg_mean.gameable, v4.neg_mean.cells -->
+paper measures [49,50]. <!-- n: v4.neg_mean.G_max@"G_max = 7", v4.neg_mean.gameable@"36 of 36 cells",
+     v4.neg_mean.cells@"36 of 36 cells" -->
 
 **The control reads exactly zero.** Over the sixteen v0 cells (four games x four populations), the
 monotone score `mean_payoff` gives `G = 0`, `C = 0`, `tau = 1` in every cell. This is the two-sided
 control the design requires: the instrument can report a divergence, and it reports none when the
-protocol is faithful. <!-- n: v0.control.cells, v0.control.G_pos, v0.control.C_max, v0.control.tau_mean -->
+protocol is faithful. <!-- n: v0.control.cells, v0.control.G_pos@"G = 0", v0.control.C_max@"C = 0",
+     v0.control.tau_mean -->
 
 **The outcome channel is the sharpest case.** A score that counts wins -- the most common way a
 strategic benchmark reports an agent -- is gameable in **16 of 16** v0 cells and anti-correlated with
@@ -251,7 +255,8 @@ often is not the policy that earns most. "Wins the most games" and "is the bette
 same statement, and a published win count does not distinguish them — the divergence between the
 published score and the capability it stands for is the phenomenon the reward-hacking literature
 records at the level of a single training run [51,52,53,54].
-<!-- n: v0.game_wins.G_pos, v0.game_wins.cells, v0.game_wins.tau_mean_exact, v0.game_wins.tau_mean_3dp -->
+<!-- n: v0.game_wins.G_pos@"16 of 16 v0 cells", v0.game_wins.cells@"16 of 16 v0 cells",
+     v0.game_wins.tau_mean_exact, v0.game_wins.tau_mean_3dp -->
 
 ![Distribution of the rank gain over all 684 cells, and its share with a positive gain in each of the nine games](figures/fig1_p1_gain.png)
 
@@ -266,7 +271,7 @@ records at the level of a single training run [51,52,53,54].
 **The decomposition.** For each game, the gain `G` is an exact rational in every cell, so a two-way
 decomposition of its total variation into protocol, population, and interaction terms is exact — no
 estimation, no residual to be attributed by hand [38,47]. In all **9 of 9** games the protocol's mean square
-exceeds the population's. <!-- n: v4.P2.games_protocol_gt_population, v4.P2.games_total -->
+exceeds the population's. <!-- n: v4.P2.games_protocol_gt_population@"9 of 9 games", v4.P2.games_total@"9 of 9 games" -->
 
 Figure 2 draws the decomposition for every game, and both ratios side by side.
 
@@ -510,8 +515,9 @@ is a real limitation and we name it in the abstract's claim boundary as well.
 684); the protocol's mean square exceeding the population's in **8 of 8** remaining games, from
 **4.802x** to **52.132x** (was 9 of 9 at 3.929x–52.132x); and the containment **423 gameable cells inside
 503 fragile ones, with 0 counterexamples** to `G > 0 => tau < 1` (was 474 inside 564)
-<!-- n: r6.excl.game, r6.excl.g_positive, r6.excl.cells, r6.excl.games, r6.excl.gameable,
-     r6.excl.fragile, r6.excl.counterexamples, r6.excl.ratio_min_3dp, r6.excl.ratio_max_3dp -->. Every qualitative
+<!-- n: r6.excl.game, r6.excl.g_positive@"423 of 608 cells", r6.excl.cells, r6.excl.games,
+     r6.excl.gameable@"423 gameable cells", r6.excl.fragile, r6.excl.counterexamples,
+     r6.excl.ratio_min_3dp, r6.excl.ratio_max_3dp -->. Every qualitative
 result is unchanged and the smallest ratio moves *up*: the anchor-free game is where the protocol's
 advantage over the population is weakest, so removing it strengthens rather than weakens the claim this
 paper actually makes.
@@ -660,22 +666,30 @@ within a game of constant coordinate <!-- n: trans.base.distinct_max_coord0 -->.
 
 *And it survives conditioning on the second axis.* A reduction test that pins one axis leaves the other
 open, so the spread was re-read with **both** of Czarnecki et al.'s axes held fixed over the **54**
-(game, population-pair) cells. The three groupings do not have the same shape, so the split is printed
-rather than one number standing for all three: by the transitive-strength pair, **3** cells over
-**42+6+6** pairs, holding **2, 6, 3** distinct excess values; by the population-size pair (the number of
-policies carrying weight), **2** cells over **27+27** pairs, holding **5, 2**; and by both at once,
-**4** cells over **21+21+6+6** pairs, holding **5, 2, 6, 3**. Every conditioning cell in all three
-groupings still shows more than one distinct excess value, with a minimum of 2 in each
-<!-- n: cond.pairs, cond.coord.cells, cond.coord.cell_pairs, cond.coord.cell_distinct,
-     cond.size.cells, cond.size.cell_pairs, cond.size.cell_distinct, cond.both.cells,
-     cond.both.cell_pairs, cond.both.cell_distinct, cond.coord.min_distinct, cond.size.min_distinct,
-     cond.both.min_distinct -->. The claim that non-reduction survives *both* axes held fixed therefore
-rests on the **4**-cell grouping over **21+21+6+6** pairs — the weakest of the three, since it is the one
-that pins the most — and the paper states it at that strength rather than at the strength of the pooled
-minimum. The sharpest
-form is the degenerate one: in the **seven** games whose coordinate is zero at *every* population — so the
-coordinate pair is (0, 0) for every pair — the excess across the **42** pairs still spans **2 to 8**
-distinct values <!-- n: cond.coord0.pairs, cond.coord0.min_distinct, cond.coord0.max_distinct -->. Non-reduction
+(game, population-pair) cells <!-- n: cond.pairs -->. The three groupings do not have the same shape, so
+each is printed with its own numbers at its own place rather than one minimum standing for all three.
+
+Holding the transitive-strength pair fixed gives **3** cells over **42+6+6** pairs, with **2, 6, 3**
+distinct excess values across them; even the shallowest of the three cells keeps **2**
+<!-- n: cond.coord.cells@"3 cells over 42+6+6 pairs", cond.coord.cell_pairs@"42+6+6",
+     cond.coord.cell_distinct@"2, 6, 3", cond.coord.min_distinct@"keeps 2" -->.
+
+Holding the population-size pair fixed (the number of policies carrying weight) gives **2** cells over
+**27+27** pairs, with **5, 2** distinct values; the shallower cell keeps **2**
+<!-- n: cond.size.cells@"2 cells over 27+27", cond.size.cell_pairs@"27+27",
+     cond.size.cell_distinct@"5, 2", cond.size.min_distinct@"keeps 2" -->.
+
+Holding both at once gives **4** cells over **21+21+6+6** pairs, with **5, 2, 6, 3** distinct values, the
+shallowest cell again keeping **2**
+<!-- n: cond.both.cells@"4 cells over 21+21+6+6", cond.both.cell_pairs@"21+21+6+6",
+     cond.both.cell_distinct@"5, 2, 6, 3", cond.both.min_distinct@"keeping 2" -->. This is the weakest
+of the three groupings — it pins the most — so the claim that non-reduction survives *both* axes held
+fixed is stated at its strength and not at the pooled minimum's.
+
+The sharpest form is the degenerate one: in the **seven** games whose coordinate is zero at *every*
+population — so the coordinate pair is (0, 0) for every pair — the excess across the **42** pairs still
+spans **2 to 8** distinct values
+<!-- n: cond.coord0.pairs, cond.coord0.min_distinct, cond.coord0.max_distinct -->. Non-reduction
 therefore holds *inside* the case where the coordinate is pinned completely, and not merely across cases
 where it differs.
 

@@ -44,10 +44,14 @@ cd papers/issue-141 && bash reproduce.sh
     text, plus each one's printed `certificate n/n` line.
   * **The figure set.** `figures.py --check` re-renders all three PNGs **from the JSON alone** and
     compares them byte-for-byte; `figures.py --selftest` runs its own invariant battery.
-  * **The numeric gate.** `canonical.py --selftest` re-derives all **103** canonical numbers from the
-    shipped artefacts (26 checks including plants); `check_numbers.py` then proves that **every number
-    the manuscript quotes is annotated with a key that file emits AND that the value appears in the
-    paragraph that quotes it** — 36 annotation blocks, 111 keys.
+  * **The numeric gate.** `canonical.py --selftest` re-derives all **152** canonical numbers from the
+    shipped artefacts (checks include plants); `check_numbers.py` then proves that **every number the
+    manuscript quotes is annotated with a key that file emits AND that the value appears in the
+    paragraph that quotes it** — 48 annotation blocks, 148 keys. Corrected in the 2026-10-23
+    correction round (it read "36 annotation blocks, 111 keys", stale against the manuscript), and the
+    gate itself now reads the unit it names: the paragraph, resolved by containment, with the
+    annotation's own text cut out, numeral words read, and a key able to name the occurrence it owns
+    (`key@"3 cells over 42+6+6 pairs"`) when two statistics of one paragraph share a digit.
   * **The manuscript.** `refscan141.py --render` numbers the citations in order of first appearance and
     rebuilds `manuscript.md` from `manuscript.src.md`; the shipped file must be exactly what its own
     source renders to. The same step is the citation-integrity gate (see *Reference layer*).

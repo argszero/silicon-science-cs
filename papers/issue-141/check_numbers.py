@@ -160,8 +160,85 @@ def _norm(s):
 
 
 def _reads(para, value_string):
-    """Does a reader of `para` read `value_string` as one of its numbers?"""
-    return _norm(value_string) in _spell(_norm(para))
+    """Does a reader of `para` read `value_string` as one of its numbers?
+
+    Boundary-anchored, NOT a substring test.  The first version was `t in para`, which reads the
+    value 2 out of "42" and the value 1 out of "16" -- so `cond.coord0.min_distinct` (2) was
+    satisfied by the phrase "the excess across the 42 pairs" and stayed green when its own
+    "2 to 8" drifted to "5 to 8".  Found by the correction round's own probe, not by inspection.
+    """
+    return _reads_count(para, value_string) > 0
+
+
+def _reads_count(para, value_string):
+    """How many times a reader of `para` reads `value_string` as one of its numbers."""
+    p, t = _spell(_norm(para)), _norm(value_string)
+    if not t:
+        return 0
+    n, i = 0, 0
+    while True:
+        j = p.find(t, i)
+        if j < 0:
+            break
+        before = p[j - 1] if j else ""
+        after = p[j + len(t)] if j + len(t) < len(p) else ""
+        if not before.isdigit() and not after.isdigit():
+            n += 1
+        i = j + 1
+    return n
+
+
+# --- per-occurrence binding (required change 4, correction round 2026-10-23) ----------------------
+#
+# Presence in the paragraph is not agreement when a paragraph states one statistic more than once:
+# "a minimum of 2 distinct values ... still spans 2 to 8" satisfies every key that owns a 2, and the
+# same was true of the number the editor drifted.  The repair is that a key may name the OCCURRENCE it
+# owns -- `key@"3 cells over 42+6+6 pairs"` -- and then the claim, not the digit, is what must appear.
+#
+# The anchor is checked in both directions, so it cannot be used to rubber-stamp anything: it must
+# NAME the key's value (an anchor without the value in it is refused), and it must APPEAR in the unit.
+# Emphasis markers and line wrapping are stripped before the match, because a reader of the rendered
+# page does not see `**` or the writer's newline.
+_EMPH = re.compile(r"[*_`]+")
+_SPEC = re.compile(r'^\s*([A-Za-z0-9_.]+)\s*(?:@\s*"(.*)")?\s*$', re.S)
+
+
+def _plain(s):
+    return re.sub(r"\s+", " ", _EMPH.sub("", s)).strip()
+
+
+def _spec(group):
+    """'a, b@"x, y", c' -> [('a', None), ('b', 'x, y'), ('c', None)] -- commas inside quotes stay."""
+    out, cur, q = [], "", False
+    for ch in group:
+        if ch == '"':
+            q = not q
+            cur += ch
+        elif ch == "," and not q:
+            out.append(cur)
+            cur = ""
+        else:
+            cur += ch
+    out.append(cur)
+    parsed = []
+    for raw in out:
+        if not raw.strip():
+            continue
+        m = _SPEC.match(raw)
+        if m:
+            parsed.append((m.group(1), m.group(2)))
+        else:
+            parsed.append((raw.strip(), None))
+    return parsed
+
+
+def _anchor_present(para, anchor):
+    return _plain(_spell(_norm(anchor))) in _plain(_spell(_norm(para)))
+
+
+def _anchor_names_value(anchor, cands):
+    a = _plain(_spell(_norm(anchor)))
+    return any(_norm(c) and _norm(c) in a for c in cands)
 
 
 def gate(text, known, spans=None):
@@ -171,8 +248,15 @@ def gate(text, known, spans=None):
     bad = []
     for m in TAG.finditer(text):
         line_no = text.count("\n", 0, m.start()) + 1
-        keys = [k.strip() for k in m.group(1).split(",") if k.strip()]
+        specs = _spec(m.group(1))
         para = block_of(text, m.start(), spans)
+        if para is not None:
+            # THE ANNOTATION IS NOT EVIDENCE.  Its own text sits inside the paragraph, so a key whose
+            # value -- or whose ANCHOR -- is written in the tag would satisfy itself: the first
+            # version of the anchor check passed `v4.law_mismatches@"0 mismatches"` against prose that
+            # said "1 mismatches", because "0 mismatches" was in the annotation.  Every match below
+            # runs on the unit with the annotation blocks cut out.
+            para = TAG.sub(" ", para)
         if para is None:
             # the unit could not be resolved at all: that is a defect of the ANNOTATION, and it is
             # reported as one.  Widening to the whole document here is what made every key below
@@ -180,7 +264,8 @@ def gate(text, known, spans=None):
             bad.append(("unresolvable-paragraph", line_no, m.group(1).strip(),
                         "no paragraph contains offset %d" % m.start()))
             continue
-        for k in keys:
+        scalar = {}                       # value string -> [key]  (for the ambiguity rule below)
+        for k, anchor in specs:
             if k.startswith("external"):
                 continue
             if k not in known:
@@ -192,14 +277,36 @@ def gate(text, known, spans=None):
                 # vacuity.  Say so and send the author to the count key instead.
                 bad.append(("unsearchable-value", line_no, k, known[k]["value"]))
                 continue
+            if len(cands) == 1:
+                scalar.setdefault(_norm(cands[0]), []).append((k, anchor))
+            if anchor is not None:
+                if not _anchor_names_value(anchor, cands):
+                    bad.append(("anchor-does-not-name-value", line_no, k, anchor))
+                elif not _anchor_present(para, anchor):
+                    # the claim this key owns is not in its unit, though the digit may be
+                    bad.append(("value-absent-anchored", line_no, k, anchor))
+                continue
             if not any(c and _reads(para, c) for c in cands):
                 bad.append(("value-absent", line_no, k, known[k]["value"]))
+        # --- agreement, not presence: a digit doing double duty must be resolved by an anchor ------
+        # When two DIFFERENT statistics of one annotation share a value string, and the unit reads
+        # that string more than once, neither key is bound by presence: each occurrence can serve
+        # either.  The annotation must say which occurrence it owns.  Measured over this manuscript
+        # that condition holds in 8 places; the cheap alternative -- anchoring all 146 pairs -- was
+        # NOT taken, and anchoring none of them is what the editor's probe caught.
+        for v, entries in scalar.items():
+            if len(entries) > 1 and _reads_count(para, v) > 1:
+                for k, anchor in entries:
+                    if anchor is None:
+                        bad.append(("ambiguous-occurrence", line_no, k,
+                                    "value %s is read %d times in this paragraph and shared with %s"
+                                    % (v, _reads_count(para, v),
+                                       ", ".join(x for x, _a in entries if x != k))))
     return bad
 
 
 def keys_in(text):
-    return [k for m in TAG.finditer(text) for k in
-            (x.strip() for x in m.group(1).split(",")) if k]
+    return [k for m in TAG.finditer(text) for k, _a in _spec(m.group(1)) if k]
 
 
 def figure_gate(text, base):
@@ -321,6 +428,36 @@ def main(argv):
               any(tp == "value-absent" for tp, _l, _k, _d in
                   gate("One (`random_fixed`) reads neither.\n<!-- n: v4.law_mismatches -->\n", known))
               or known.get("v4.law_mismatches", {}).get("value") != 1)
+
+        # --- agreement, not presence (required change 4): the editor's own probe, as a plant -------
+        # §10's shape: one digit stands in for several statistics, and a drift of ONE occurrence left
+        # the gate green because the other occurrence still carried the digit.  These fixtures are that
+        # paragraph in miniature, and they must separate "the digit is here" from "this claim is here".
+        shared_bad = ("We report 0 mismatches over the grid and 0 counterexamples, with 0 elsewhere.\n"
+                      "<!-- n: v4.law_mismatches, v4.T3.counterexamples -->\n")
+        holds("a digit shared by two statistics, stated twice, with no anchor, fires",
+              any(tp == "ambiguous-occurrence" for tp, _l, _k, _d in gate(shared_bad, known)))
+        shared_anchored = ('We report 0 mismatches over the grid.\n'
+                           '<!-- n: v4.law_mismatches@"0 mismatches", '
+                           'v4.T3.counterexamples@"0 counterexamples" -->\n'
+                           'And 0 counterexamples elsewhere.\n'
+                           '<!-- n: v4.T3.counterexamples@"0 counterexamples" -->\n')
+        holds("...and is bound once each statistic names its own occurrence",
+              not [b for b in gate(shared_anchored, known)])
+        drifted = ('We report **0** mismatches over the grid and 0 counterexamples everywhere.\n'
+                   '<!-- n: v4.law_mismatches@"0 mismatches", v4.T3.counterexamples@"0 counterexamples" -->\n')
+        holds("a drifted occurrence fires NAMING the key (and its line)",
+              any(tp == "value-absent-anchored" and k == "v4.law_mismatches" and ln == 2
+                  for tp, ln, k, _d in
+                  gate('We report **1** mismatches over the grid and 0 counterexamples.\n'
+                       '<!-- n: v4.law_mismatches@"0 mismatches", '
+                       'v4.T3.counterexamples@"0 counterexamples" -->\n', known)))
+        holds("an anchor that does not name the key's value is refused",
+              any(tp == "anchor-does-not-name-value" for tp, _l, _k, _d in
+                  gate("gives 3 cells.\n<!-- n: cond.coord.cells@\"99 cells\" -->\n", known)))
+        holds("emphasis and line wrapping do not break an anchor",
+              not gate("gives **3** cells over\n42+6+6 pairs.\n"
+                       "<!-- n: cond.coord.cells@\"3 cells over 42+6+6 pairs\" -->\n", known))
         print("CHECK_NUMBERS:", "ALL PASS" if ok else "A CHECK IS DECORATION")
         return 0 if ok else 1
 
