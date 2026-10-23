@@ -416,6 +416,7 @@
     ],
     "targets_compared": 27
    },
+   "snapshot_content_sha256": "e5760d09e37f1a7364ce6f427a878110757a0a4de844f1a767a715587f527756",
    "strata": {
     "caret": [
      {
@@ -976,6 +977,7 @@
     "rows": [],
     "targets_compared": 0
    },
+   "snapshot_content_sha256": "bcb64650be36dd4fd35404b46f16ec8a6cf1282d9a15571ced3298a3570c60b9",
    "strata": {
     "other": [
      {

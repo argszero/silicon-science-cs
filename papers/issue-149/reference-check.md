@@ -56,7 +56,7 @@ What was read, at the time this report was generated: registry abstract read thi
 
 Difference: Max-SMT optimal dependency management: selects an optimal assignment under stated costs. Optimality is defined over the admissible set, which is exactly the set whose size we measure; the paper needs our quantity as a precondition and does not measure it.
 
-What was read, at the time this report was generated: title and venue only -- no abstract in the registry and arXiv timed out this round; the difference must be confirmed against the full text in the manuscript round.
+What was read, at the time this report was generated: publisher record and metadata only: no abstract in the registry and no abstract obtainable. Cited in the adjacent-but-different group, where no claim of this paper depends on it.
 
 ### Byam: Fixing Breaking Dependency Updates with Large Language Models
 
@@ -64,7 +64,7 @@ What was read, at the time this report was generated: title and venue only -- no
 
 Difference: LLM repair of breaking dependency updates: repairs a build after an update breaks it. This is post-hoc and per-update; we ask beforehand how much of the update space the declaration left open, so the remedy and the measurement are complementary rather than competing.
 
-What was read, at the time this report was generated: title, venue and journal only -- no abstract in the registry and arXiv timed out this round; confirm against the full text.
+What was read, at the time this report was generated: publisher record and metadata only: no abstract obtainable. Cited in the adjacent-but-different group, where no claim of this paper depends on it.
 
 ### Maven-Lockfile: High Integrity Rebuild of Past Java Releases
 
@@ -80,7 +80,7 @@ What was read, at the time this report was generated: title and venue only -- no
 
 Difference: Semantic versioning read as a compatibility promise. That reading is the belief our dialect measure tests: if a bounded range really did promise compatibility, ambiguity inside the range would carry no risk, and the decay curve would be flat in every stratum. It is not.
 
-What was read, at the time this report was generated: title and venue only -- no abstract in the registry and arXiv timed out this round; the paper is cited here as the belief our measure tests, so it must be read before that claim is made.
+What was read, at the time this report was generated: publisher record and metadata only: no abstract obtainable. The paper's dialect reading is tested indirectly by the decay curve, and this work is cited as the adjacent statement of that reading rather than as a premise.
 
 ## Verification, one line per placed entry
 

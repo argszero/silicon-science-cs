@@ -159,7 +159,13 @@ def curve(eco):
 
 def summarise(eco):
     c = curve(eco)
-    out = {"ecosystem": eco, "declarations_in_panel": c["declarations"],
+    # the pin travels WITH the numbers: an artifact that names no snapshot cannot be told apart from
+    # one computed on a snapshot the repo no longer contains. rates.json carried a pin; this and
+    # depth2.json did not, so the contract could only police one of the three artifacts.
+    out = {"ecosystem": eco,
+           "snapshot_content_sha256": json.load(io.open(
+               os.path.join(PKG, "snapshot_%s.json" % eco), encoding="utf-8")).get("content_sha256"),
+           "declarations_in_panel": c["declarations"],
            "edges_unknown_target": c["edges_unknown_target"],
            "edges_unparsed": c["edges_unparsed"],
            "yank_events_in_windows": c["yank_events_in_windows"], "strata": {}, "non_monotone": {}}

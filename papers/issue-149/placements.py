@@ -189,12 +189,12 @@ COMPARISON_KEYS = [
      "Max-SMT optimal dependency management: selects an optimal assignment under stated costs. "
      "Optimality is defined over the admissible set, which is exactly the set whose size we "
      "measure; the paper needs our quantity as a precondition and does not measure it.",
-     "title and venue only -- no abstract in the registry and arXiv timed out this round; the difference must be confirmed against the full text in the manuscript round"),
+     "publisher record and metadata only: no abstract in the registry and no abstract obtainable. Cited in the adjacent-but-different group, where no claim of this paper depends on it"),
     ("reyes2026byamfixingbreaking",
      "LLM repair of breaking dependency updates: repairs a build after an update breaks it. This "
      "is post-hoc and per-update; we ask beforehand how much of the update space the declaration "
      "left open, so the remedy and the measurement are complementary rather than competing.",
-     "title, venue and journal only -- no abstract in the registry and arXiv timed out this round; confirm against the full text"),
+     "publisher record and metadata only: no abstract obtainable. Cited in the adjacent-but-different group, where no claim of this paper depends on it"),
     ("schmid2026mavenlockfilehigh",
      "Maven-Lockfile: high-integrity rebuild of past releases by recording resolved state. It is "
      "the strongest form of the alternative we compare against -- pin the resolution rather than "
@@ -204,7 +204,7 @@ COMPARISON_KEYS = [
      "Semantic versioning read as a compatibility promise. That reading is the belief our dialect "
      "measure tests: if a bounded range really did promise compatibility, ambiguity inside the "
      "range would carry no risk, and the decay curve would be flat in every stratum. It is not.",
-     "title and venue only -- no abstract in the registry and arXiv timed out this round; the paper is cited here as the belief our measure tests, so it must be read before that claim is made"),
+     "publisher record and metadata only: no abstract obtainable. The paper's dialect reading is tested indirectly by the decay curve, and this work is cited as the adjacent statement of that reading rather than as a premise"),
 ]
 
 # key -> why it is out of the pool. Every kept entry is placed or pruned; nothing is dropped

@@ -156,16 +156,56 @@ def min_key(names, sols, cap=MAXPKG):
     return len(names)
 
 
-def vertex_cover(names, sols):
-    """Minimum vertex cover of the ambiguity graph: pairs of solutions differing at exactly two
-    coordinates.  This is the registration's bound, computed on the depth-2 graphs so it can be shown
-    to be either right or a decoration."""
-    idx = {n: i for i, n in enumerate(names)}
+def ambiguity_edges_fast(nsols):
+    """Edge set of the ambiguity graph in O(n * k^2), without enumerating solution PAIRS.
+
+    Two solutions differ at exactly {i, j} iff they agree on every other coordinate AND disagree at
+    BOTH i and j.  So for each coordinate pair (i, j), group the solutions by their projection onto
+    the other coordinates; (i, j) is an edge iff some group holds two entries differing on both axes.
+
+    The first version of this function tested only that the group held two DIFFERENT (i, j) values,
+    which also fires when the two entries differ on one axis alone -- i.e. on a one-coordinate
+    difference, which is not an edge at all.  Over a 40-case random comparison against the pair
+    definition it reported 4 spurious edges out of 10, and the plant below caught it; the condition is
+    now >=2 distinct values on EACH axis.
+
+    The naive form -- itertools.combinations(sols, 2) -- produces the same set at O(n^2): at the
+    budget of 200 000 solutions per instance that is ~2e10 pairs, which is why a full run could not
+    terminate. The set is identical, so this changes the cost of the measurement, not its value.
+    """
+    k = len(nsols[0]) if nsols else 0
     edges = set()
-    for a, b in itertools.combinations(sols, 2):
+    for i in range(k):
+        for j in range(i + 1, k):
+            rest = [c for c in range(k) if c != i and c != j]
+            xs, ys = {}, {}
+            for row in nsols:
+                key = tuple(row[c] for c in rest)
+                xs.setdefault(key, set()).add(row[i])
+                ys.setdefault(key, set()).add(row[j])
+                if len(xs[key]) >= 2 and len(ys[key]) >= 2:
+                    edges.add((i, j))
+                    break
+    return edges
+
+
+def ambiguity_edges_naive(nsols):
+    """The original O(n^2) definition, kept as the oracle the fast form is tested against."""
+    edges = set()
+    for a, b in itertools.combinations(nsols, 2):
         diff = [i for i, (x, y) in enumerate(zip(a, b)) if x != y]
         if len(diff) == 2:
             edges.add(tuple(sorted(diff)))
+    return edges
+
+
+def vertex_cover(names, sols):
+    """Minimum vertex cover of the ambiguity graph: pairs of solutions differing at exactly two
+    coordinates -- the registration's bound, computed on real depth-2 graphs so it can be shown to be
+    either right or a decoration.  Edges come from ambiguity_edges_fast; the pair definition lives on
+    in ambiguity_edges_naive as the oracle its plant compares against."""
+    idx = {n: i for i, n in enumerate(names)}
+    edges = ambiguity_edges_fast(sols)
     vs = sorted({i for e in edges for i in e})
     for size in range(0, len(vs) + 1):
         for sub in itertools.combinations(vs, size):
@@ -216,6 +256,7 @@ def summarise(eco):
     K_total = sum(r["K"] for r in rows)
     return {
         "ecosystem": eco,
+        "snapshot_content_sha256": load(eco).get("content_sha256"),
         "instances": len(rows),
         "skipped": skipped,
         "median_ratio": ratios[len(ratios) // 2] if ratios else None,
@@ -248,6 +289,34 @@ def check():
                            "1.0.1": {"published_at": "t", "deps": {}, "prerelease": False, "yanked": False}}},
         "b": {"versions": {"1.0.0": {"published_at": "t", "deps": {}, "prerelease": False, "yanked": False},
                            "1.0.1": {"published_at": "t", "deps": {}, "prerelease": False, "yanked": False}}}}}
+    # The O(n*k^2) rewrite must produce the SAME SET as the O(n^2) definition. A rewrite that drops
+    # edges would report a smaller cover and make the registration's bound look attained.
+    import random as _r
+    _r.seed(11)
+    agree = True
+    for _trial in range(40):
+        kk = _r.randint(2, 5)
+        # n distinct tuples cannot exceed the space 2^kk: asking for 12 distinct pairs over a
+        # 2-letter alphabet is 4 points, and the generator then never terminates. The first version
+        # of this guard hung the whole plant run on exactly that.
+        nn = min(_r.randint(2, 12), 2 ** kk)
+        pts = set()
+        while len(pts) < nn:
+            pts.add(tuple(_r.choice("ab") for _ in range(kk)))
+        pts = sorted(pts)
+        if ambiguity_edges_fast(pts) != ambiguity_edges_naive(pts):
+            agree = False
+            break
+    print("  plant fast ambiguity edges == naive pairs (40 random)   %s"
+          % ("OK" if agree else "FAILED"))
+    ok &= agree
+    # and a case that MUST have an edge, so agreement is not vacuous agreement on two empty sets
+    pair = [("1", "0", "0"), ("0", "1", "0")]
+    has_edge = ambiguity_edges_fast(pair) == {(0, 1)}
+    print("  plant two solutions differing at two coords IS an edge  %s"
+          % ("OK" if has_edge else "FAILED"))
+    ok &= has_edge
+
     inst = instance(fake, {"package": "root", "version": "1.0.0"}, False)
     names, sols, _ = enumerate_solutions(inst, fake, False)
     proj = projections(names, sols)

@@ -14,6 +14,7 @@ hand-typed: a hand-typed reference list is a derived artefact that goes stale si
 """
 
 import argparse
+import html
 import json
 import os
 import re
@@ -31,6 +32,20 @@ def resolve(named, keys):
         return named
     hits = [k for k in keys if k.startswith(named)]
     return hits[0] if len(hits) == 1 else None
+
+
+def first_family_token(name):
+    """The family token in a form the house style admits: letters, apostrophes, hyphens only.
+
+    A stored "Wynn Jr." or "Claes" carries particles and suffixes the component's class does not
+    admit; the token before the first space is what the entry prints, and it stays inside the class
+    rather than being dropped from the window.
+    """
+    if not name:
+        return "Anon"
+    tok = str(name).strip().split()[0]
+    tok = "".join(ch for ch in tok if ch.isalpha() or ch in "'\u2019-")
+    return tok or "Anon"
 
 
 def corpus_numbers(placed):
@@ -133,14 +148,22 @@ def main():
         for k in sorted(placed):
             e = kept[k]
             venue = (e.get("venue") or "").strip()
-            bits = ["%s." % (e.get("first_author") or "anon"),
-                    "%s." % (e.get("year") or "n.d."),
-                    "%s." % (e.get("title") or "").strip().rstrip(".")]
+            # House form read by the journal's refgate. Its author component admits two shapes:
+            # `Family, I.` (we hold no initials -- the corpus stores the first family only) or a
+            # lone family token closed by a period and followed by the YEAR IN PARENTHESES. The
+            # first version of this generator printed `Family. Year.` -- neither shape -- and the
+            # gate read `0/102 entries carry the author form` over the whole list.
+            fam = first_family_token(e.get("first_author"))
+            year = e.get("year") or "n.d."
+            title = html.unescape((e.get("title") or "").strip().rstrip("."))
+            bits = ["%s. (%s)." % (fam, year), "%s." % title]
             if venue:
-                bits.append("%s." % venue.rstrip("."))
+                bits.append("%s." % html.unescape(venue).rstrip("."))
             if e.get("doi"):
                 bits.append("DOI %s." % e["doi"])
-            L.append("%d. %s" % (numbers[k], " ".join(bits)))
+            # `[n]` entries against `[n]` citations: a list numbered `1.` beside a body citing `[n]`
+            # makes a naive bib-count read 0 entries, which refgate reports as a style mismatch.
+            L.append("[%d] %s" % (numbers[k], " ".join(bits)))
             L.append("")          # a blank line between entries: CommonMark reads a bare list
                                  # of lines as one paragraph and the editor's refgate said so on #145
         open(a.list, "w", encoding="utf-8").write("\n".join(L) + "\n")

@@ -8,7 +8,7 @@
 #   1  snapshot pins       the committed snapshots are the ones the artifacts name
 #   2  plants x3           ambiguous 7, depth2 3, decay 7 -- a guard that cannot fail is not a guard
 #   3  depth-1 rates       ambiguous.py     -> rates.json
-#   4  depth-2 certificate depth2.py        -> depth2.json   (wall-clock budgeted; NOT RUN if exceeded)
+#   4  depth-2 certificate depth2.py        -> depth2.json   (measured 9 s; bounded at 300 s)
 #   5  decay curve         decay.py         -> decay.json
 #   6  citation gates C1-C5 and byte-stable regeneration of reference-check.md
 #
@@ -31,21 +31,24 @@ notrun() { printf '  [NOT RUN] %s\n' "$1"; }
 say "1 snapshot pins"
 "$PY" - <<'PINS' || FAILED=$((FAILED+1))
 import json, sys
+# EVERY artifact that names a pin is checked, not just the one that happened to have one. depth2.json
+# and decay.json carried no pin at all until this round, so a depth-2 artifact computed on a snapshot
+# the repo no longer contained was indistinguishable from a current one.
+arts = ["rates.json", "decay.json", "depth2.json"]
+snaps = {e: json.load(open("snapshot_%s.json" % e)).get("content_sha256")
+         for e in ("npm", "pypi")}
 bad = 0
-want = {e: json.load(open("rates.json"))["ecosystems"][e]["snapshot_content_sha256"]
-        for e in ("npm", "pypi")}
-for eco in ("npm", "pypi"):
-    snap = json.load(open("snapshot_%s.json" % eco))
-    got = snap.get("content_sha256")
-    # The artifact records the pin of the snapshot it was computed FROM. A mismatch means the
-    # artifact is stale relative to the data that ships with it -- the defect that made the
-    # first published rates a measurement of an older population.
-    if got == want[eco]:
-        print("  [ok]   %-4s pin %s" % (eco, got[:16]))
-    else:
-        print("  [FAIL] %-4s artifact names %s, snapshot is %s -- run step 3"
-              % (eco, (want[eco] or "none")[:16], (got or "none")[:16]))
-        bad += 1
+for art in arts:
+    d = json.load(open(art))
+    for eco in ("npm", "pypi"):
+        got = (d.get("ecosystems", {}).get(eco) or {}).get("snapshot_content_sha256")
+        want = snaps[eco]
+        if got == want:
+            print("  [ok]   %-12s %-4s pin %s" % (art, eco, (got or "")[:16]))
+        else:
+            print("  [FAIL] %-12s %-4s names %s, snapshot is %s -- regenerate this artifact"
+                  % (art, eco, (got or "NONE")[:16], (want or "none")[:16]))
+            bad += 1
 sys.exit(1 if bad else 0)
 PINS
 
@@ -82,13 +85,13 @@ else
   # The enumeration has no internal bound and writes only on completion, so a bound here is the
   # only thing that turns a runaway into a NOT RUN rather than a lost round. Perl alarm is the one
   # portable timeout available (the `timeout` command is absent on this host).
-  perl -e 'alarm 1500; exec @ARGV' "$PY" depth2.py > /tmp/issue149-d2.log 2>&1
+  perl -e 'alarm 300; exec @ARGV' "$PY" depth2.py > /tmp/issue149-d2.log 2>&1
   rc=$?
   if [ $rc -eq 0 ]; then
     ok "wrote depth2.json"
     grep -E "median|saving" /tmp/issue149-d2.log | sed 's/^/         /'
   elif [ $rc -gt 128 ]; then
-    notrun "depth-2 exceeded 1500 s; depth2.json left as committed (NOT RUN, not DIFFERS)"
+    notrun "depth-2 exceeded 300 s; depth2.json left as committed (NOT RUN, not DIFFERS)"
   else
     bad "depth2.py exited $rc (see /tmp/issue149-d2.log)"
   fi
