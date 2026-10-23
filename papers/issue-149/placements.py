@@ -178,27 +178,33 @@ COMPARISON_KEYS = [
     ("gibb2026packagemanagerscarte",
      "A formal model of dependency RESOLUTION: given declarations, it defines which solution a "
      "solver returns. We do not model the solver; we count what the solver may choose among, so "
-     "the two results are about different objects and neither subsumes the other."),
+     "the two results are about different objects and neither subsumes the other.",
+     "registry abstract read this round: it states that managers differ in their resolution SEMANTICS, which is the object our measure does not touch"),
     ("gibb2025solvingpackagemanagement",
      "Hypergraph dependency resolution: a new encoding that makes solving faster. It is a "
      "contribution to the cost of choosing, and is silent on how many admissible choices a "
-     "declaration leaves; our construction is the input it would have to run on."),
+     "declaration leaves; our construction is the input it would have to run on.",
+     "registry abstract read this round: it is about interoperability and implicit system dependencies between managers, i.e. the encoding of a resolution problem"),
     ("pinckney2023flexibleoptimaldependency",
      "Max-SMT optimal dependency management: selects an optimal assignment under stated costs. "
      "Optimality is defined over the admissible set, which is exactly the set whose size we "
-     "measure; the paper needs our quantity as a precondition and does not measure it."),
+     "measure; the paper needs our quantity as a precondition and does not measure it.",
+     "title and venue only -- no abstract in the registry and arXiv timed out this round; the difference must be confirmed against the full text in the manuscript round"),
     ("reyes2026byamfixingbreaking",
      "LLM repair of breaking dependency updates: repairs a build after an update breaks it. This "
      "is post-hoc and per-update; we ask beforehand how much of the update space the declaration "
-     "left open, so the remedy and the measurement are complementary rather than competing."),
+     "left open, so the remedy and the measurement are complementary rather than competing.",
+     "title, venue and journal only -- no abstract in the registry and arXiv timed out this round; confirm against the full text"),
     ("schmid2026mavenlockfilehigh",
      "Maven-Lockfile: high-integrity rebuild of past releases by recording resolved state. It is "
      "the strongest form of the alternative we compare against -- pin the resolution rather than "
-     "bound the range -- and it prices the cost side of that alternative, not its necessity."),
+     "bound the range -- and it prices the cost side of that alternative, not its necessity.",
+     "title and venue only -- no abstract in the registry and arXiv timed out this round; confirm against the full text"),
     ("decan2021whatpackagedependencies",
      "Semantic versioning read as a compatibility promise. That reading is the belief our dialect "
      "measure tests: if a bounded range really did promise compatibility, ambiguity inside the "
-     "range would carry no risk, and the decay curve would be flat in every stratum. It is not."),
+     "range would carry no risk, and the decay curve would be flat in every stratum. It is not.",
+     "title and venue only -- no abstract in the registry and arXiv timed out this round; the paper is cited here as the belief our measure tests, so it must be read before that claim is made"),
 ]
 
 # key -> why it is out of the pool. Every kept entry is placed or pruned; nothing is dropped

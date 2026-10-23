@@ -99,7 +99,7 @@ def check(doc):
             problems.append("UNVERIFIED  %s placed but verification says %r"
                             % (k, v.get("result")))
 
-    for named, _ in COMPARISON_KEYS:
+    for named in [c[0] for c in COMPARISON_KEYS]:
         ent, how = resolve(named, kept)
         if ent is None or ent["key"] not in placed:
             problems.append("COMPARISON  %-46s %s and must be placed" % (named, how))
@@ -211,7 +211,7 @@ def report(doc, placed, pruned, out):
     A("Each states a competing object or a competing answer. The difference, not the citation, "
       "is the content.")
     A("")
-    for named, difference in COMPARISON_KEYS:
+    for named, difference, basis in COMPARISON_KEYS:
         ent = None
         for k, (section, claim, e) in placed.items():
             if k.startswith(named):
@@ -223,6 +223,8 @@ def report(doc, placed, pruned, out):
                                     ent.get("year") or "--", ent.get("doi") or "--"))
         A("")
         A("Difference: %s" % difference)
+        A("")
+        A("What was read, at the time this report was generated: %s." % basis)
         A("")
 
     A("## Verification, one line per placed entry")
