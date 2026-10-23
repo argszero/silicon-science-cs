@@ -21,6 +21,20 @@ Two lessons are built in rather than described, because this file's first versio
   * Therefore the paragraph is what a value must appear in, and `--selftest` plants a wrapped comment
     as well as an unknown key and a mismatched value.
 
+A third lesson was added by the correction round of 2026-10-23, because the paragraph was named but
+not read: `block_of` fell back to `return text` whenever it could not resolve a paragraph, and on this
+manuscript it could not resolve ANY -- 45 of 45 annotation blocks were judged against the whole
+document, 0 against a real paragraph.  So:
+
+  * the unit is the paragraph, resolved by CONTAINMENT in `paragraph_spans` and never by re-finding
+    the paragraph's text (which returns the first occurrence of a repeated paragraph);
+  * an unresolvable paragraph is a FAILURE with a diagnostic, never a widening -- there is no path
+    from "I could not find its paragraph" to "test it against everything";
+  * `--selftest` plants the geometry that exposed the class: a MULTI-paragraph fixture whose annotated
+    paragraph is wrong and whose later paragraph holds the value must fire.  Every earlier fixture was
+    a single paragraph, where falling back to the whole text and reading the paragraph are the same
+    object -- a fixture that cannot separate the two units cannot test the difference between them.
+
   python3 check_numbers.py            # the gate
   python3 check_numbers.py --selftest
 """
@@ -55,17 +69,44 @@ def blocks(text):
     return out
 
 
-def block_of(text, offset):
-    """The paragraph containing a character offset in `text`."""
-    for start, blk in blocks(text):
-        if blk in text and text.rfind(blk, 0, offset + 1) != -1 and txt_index(text, blk) <= offset \
-                <= txt_index(text, blk) + len(blk):
-            return blk
-    return text
+def paragraph_spans(text):
+    """(start, end) character spans of the paragraphs -- exact, not searched for.
+
+    A paragraph is resolved by CONTAINMENT in these offsets.  The first version of this file instead
+    re-found the paragraph's text in the document with `text.find`, which returns the FIRST
+    occurrence: two identical paragraphs resolve to the first one, so the second is judged against
+    text that is not its own.  Spans have no such ambiguity.
+    """
+    out, i, n = [], 0, len(text)
+    while i < n:
+        while i < n and text[i] == "\n":
+            i += 1
+        if i >= n:
+            break
+        s = i
+        while i < n and not (text[i] == "\n" and (i + 1 >= n or text[i + 1] == "\n")):
+            i += 1
+        out.append((s, i))
+    return out
 
 
-def txt_index(text, blk):
-    return text.find(blk)
+def block_of(text, offset, spans=None):
+    """The paragraph containing `offset`, or None when no paragraph contains it.
+
+    None is a FAILURE the caller reports; it is never a widening to the whole document.  The
+    published version ended in `return text`, and on this corpus that fallback fired for all 45
+    annotation blocks: its middle condition demanded the paragraph appear entirely BEFORE the
+    annotation's offset, and an annotation sits INSIDE its paragraph, so the condition never held
+    and every annotated key was judged against the whole 57 172-character manuscript -- 0 keys
+    against a real paragraph.  A guard that answers "present somewhere in the paper" cannot report
+    a paragraph drifting away from its artefact.
+    """
+    if spans is None:
+        spans = paragraph_spans(text)
+    for s, e in spans:
+        if s <= offset <= e:
+            return text[s:e]
+    return None
 
 
 def _candidates(v):
@@ -91,18 +132,54 @@ def _candidates(v):
     return [str(v)]
 
 
+# English number words, so that a paragraph stating "Eleven of the nineteen protocols" is read as
+# stating 11 and 19.  Without this the binding is NOMINAL for any statistic the prose spells out: the
+# key is attached, the digit never appears, and nothing can drift.  On this manuscript that was 8 of
+# 140 keys -- found by the correction round of 2026-10-23 when the paragraph unit was finally read.
+#
+# "one" is deliberately ABSENT: it is the one English number word that doubles as a pronoun and a
+# determiner, and this paper uses it that way ("one (`random_fixed`) reads neither ..."), so mapping it
+# would let an arbitrary sentence satisfy a key whose value is 1.
+_NUMWORDS = {
+    "zero": 0, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+    "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
+    "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20,
+    "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+}
+_NUMWORD_RE = re.compile(r"\b(%s)\b" % "|".join(sorted(_NUMWORDS, key=len, reverse=True)), re.I)
+
+
+def _spell(s):
+    """A digit string a reader would read off the paragraph, number words included."""
+    return _NUMWORD_RE.sub(lambda m: str(_NUMWORDS[m.group(1).lower()]), s)
+
+
 def _norm(s):
     """A digit string with or without thousand separators is the same number to a reader."""
     return re.sub(r"(?<=\d),(?=\d{3}\b)", "", s)
 
 
-def gate(text, known):
+def _reads(para, value_string):
+    """Does a reader of `para` read `value_string` as one of its numbers?"""
+    return _norm(value_string) in _spell(_norm(para))
+
+
+def gate(text, known, spans=None):
     """Return [(kind, line, key, detail)] for every defect found."""
+    if spans is None:
+        spans = paragraph_spans(text)
     bad = []
     for m in TAG.finditer(text):
         line_no = text.count("\n", 0, m.start()) + 1
         keys = [k.strip() for k in m.group(1).split(",") if k.strip()]
-        para = block_of(text, m.start())
+        para = block_of(text, m.start(), spans)
+        if para is None:
+            # the unit could not be resolved at all: that is a defect of the ANNOTATION, and it is
+            # reported as one.  Widening to the whole document here is what made every key below
+            # pass vacuously.
+            bad.append(("unresolvable-paragraph", line_no, m.group(1).strip(),
+                        "no paragraph contains offset %d" % m.start()))
+            continue
         for k in keys:
             if k.startswith("external"):
                 continue
@@ -115,7 +192,7 @@ def gate(text, known):
                 # vacuity.  Say so and send the author to the count key instead.
                 bad.append(("unsearchable-value", line_no, k, known[k]["value"]))
                 continue
-            if not any(c and _norm(c) in _norm(para) for c in cands):
+            if not any(c and _reads(para, c) for c in cands):
                 bad.append(("value-absent", line_no, k, known[k]["value"]))
     return bad
 
@@ -210,6 +287,40 @@ def main(argv):
               any(t == "declared-but-never-embedded" for t, _l, _k, _d in
                   figure_gate("no figures here\n", ".")))
         holds("the real draft has annotations", len(TAG.findall(text)) > 0)
+
+        # --- the unit, planted in the geometry that exposed the class (correction round 2026-10-23) --
+        # Every fixture above is ONE paragraph, where "the paragraph" and "the whole text" are the
+        # same object -- so none of them could fail if the paragraph were never resolved.  These do.
+        two = ("Paragraph one says the count is nine.\n<!-- n: v4.P1.G_pos -->\n"
+               "\n"
+               "Paragraph two says %s of 684.\n" % known["v4.P1.G_pos"]["value"])
+        holds("a value in a LATER paragraph does not satisfy an annotation in an earlier one",
+              any(tp == "value-absent" for tp, _l, _k, _d in gate(two, known)))
+        holds("...but the same annotation passes when its own paragraph carries the value",
+              not gate("Paragraph one says %s of 684.\n<!-- n: v4.P1.G_pos -->\n"
+                       % known["v4.P1.G_pos"]["value"], known))
+        holds("an unresolvable paragraph is reported, never widened to the whole document",
+              block_of("a\n\nb\n", 1000) is None
+              and any(tp == "unresolvable-paragraph"
+                      for tp, _l, _k, _d in gate("x <!-- n: v4.P1.G_pos -->", known, spans=[])))
+        holds("every annotation in the real draft resolves to a real paragraph",
+              all(block_of(text, m.start()) is not None
+                  and len(block_of(text, m.start())) < len(text) for m in TAG.finditer(text)))
+
+        # a statistic the prose spells out is still BOUND -- and one that spells a DIFFERENT number
+        # is still a drift.  Without the first, 8 of the real draft's keys were nominal.
+        holds("a statistic stated as a word satisfies its key",
+              not gate("Eleven of the nineteen protocols read the row.\n"
+                       "<!-- n: v4.row_reading_count, v4.protocols -->\n", known))
+        holds("a statistic spelled as the WRONG word still fires",
+              any(tp == "value-absent" for tp, _l, k, _d in
+                  gate("Twelve of the nineteen protocols read the row.\n"
+                       "<!-- n: v4.row_reading_count, v4.protocols -->\n", known)
+                  if k == "v4.row_reading_count"))
+        holds("'one' as a pronoun does not satisfy a key whose value is 1",
+              any(tp == "value-absent" for tp, _l, _k, _d in
+                  gate("One (`random_fixed`) reads neither.\n<!-- n: v4.law_mismatches -->\n", known))
+              or known.get("v4.law_mismatches", {}).get("value") != 1)
         print("CHECK_NUMBERS:", "ALL PASS" if ok else "A CHECK IS DECORATION")
         return 0 if ok else 1
 

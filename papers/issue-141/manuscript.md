@@ -32,7 +32,7 @@ nested instead (474 gameable cells strictly inside 564 fragile ones, with 0 coun
 `G > 0 => tau < 1`), and one design is maximally opposed -- first by rank-gaming and exactly zero by
 transport. A benchmark author who audits the ordering catches corruption at half the contamination an
 audit that reads only the champion needs (`lambda_tau = 1/16 < lambda_G = 1/8`). <!-- n: v4.cells,
-v4.transport_entries, v4.law_mismatches, v4.row_reading_faithful_count, v4.P1.G_pos,
+v4.law_mismatches, v4.row_reading_faithful_count, v4.P1.G_pos,
 v4.P2.games_protocol_gt_population, v4.P2.ms_ratio_min, v4.P2.ms_ratio_max,
 v4.T3.gameable, v4.T3.fragile, v4.T3.counterexamples, v1.lambda_tau, v1.lambda_G -->
 
@@ -161,7 +161,7 @@ therefore reports differences and never significance.
 **Ground truth by construction.** The instrument is checked against theory rather than against itself.
 The symmetric first-price equilibrium has a closed form and is recovered exactly
 [24,40]; the second-price
-auction's weakly dominant bid is recovered exactly [22]; the common-value n=4 game has **no** certified
+auction's weakly dominant bid is recovered exactly [22]; the common-value n=4 game (`cv_n4`) has **no** certified
 anchor, and we state that as an absence rather than filling it [41]. Eight of nine games carry at least one
 certified anchor; the ninth is reported uncertified throughout.
 <!-- n: v4.anchors_certified, v4.anchors_total, v4.anchors_uncertified -->
@@ -210,7 +210,7 @@ by construction in our space. We state the quantifier rather than the flattering
 a real object, and it is not populated by any natural aggregation we found.
 
 **The nineteen split three ways, and the third class is a reference.** Eleven read the opponent row,
-seven read the policy's own profile, and one (`random_fixed`) reads neither the population nor the
+seven (`capped_0`, `capped_weak`, `mean_payoff`, `neg_mean`, `rank_score`, `spread`, `tail_swap`) read the policy's own profile, and one (`random_fixed`) reads neither the population nor the
 payoff — it is a fixed population-blind vector, included as a reference, and it is why §8 can report a
 protocol whose raw transport is zero everywhere while its excess is not.
 <!-- n: v4.row_reading_count, v4.protocols_reading_profile, v4.protocols_reading_neither -->
@@ -655,20 +655,29 @@ it ties **22 of 36** game pairs and orders the remaining **14** <!-- n: trans.co
 transport statistic carries that the dimension does not is thus not a refinement of it but a different
 object: the dimension says how much the *game* can move, the excess measures what the *protocol* adds
 once that motion is subtracted — which is also why the paper's own baseline term is not the coordinate
+but the payoff ordering's realised loss under the change, a quantity that varies across population pairs
+within a game of constant coordinate <!-- n: trans.base.distinct_max_coord0 -->.
 
 *And it survives conditioning on the second axis.* A reduction test that pins one axis leaves the other
 open, so the spread was re-read with **both** of Czarnecki et al.'s axes held fixed over the **54**
-(game, population-pair) cells: grouped by the transitive-strength pair, by the population-size pair (the
-number of policies carrying weight), and by both at once, **every conditioning cell still shows more
-than one distinct excess value, with a minimum of 2 distinct values in all three readings**
-<!-- n: cond.pairs, cond.coord.min_distinct, cond.size.min_distinct, cond.both.min_distinct -->. The sharpest
+(game, population-pair) cells. The three groupings do not have the same shape, so the split is printed
+rather than one number standing for all three: by the transitive-strength pair, **3** cells over
+**42+6+6** pairs, holding **2, 6, 3** distinct excess values; by the population-size pair (the number of
+policies carrying weight), **2** cells over **27+27** pairs, holding **5, 2**; and by both at once,
+**4** cells over **21+21+6+6** pairs, holding **5, 2, 6, 3**. Every conditioning cell in all three
+groupings still shows more than one distinct excess value, with a minimum of 2 in each
+<!-- n: cond.pairs, cond.coord.cells, cond.coord.cell_pairs, cond.coord.cell_distinct,
+     cond.size.cells, cond.size.cell_pairs, cond.size.cell_distinct, cond.both.cells,
+     cond.both.cell_pairs, cond.both.cell_distinct, cond.coord.min_distinct, cond.size.min_distinct,
+     cond.both.min_distinct -->. The claim that non-reduction survives *both* axes held fixed therefore
+rests on the **4**-cell grouping over **21+21+6+6** pairs — the weakest of the three, since it is the one
+that pins the most — and the paper states it at that strength rather than at the strength of the pooled
+minimum. The sharpest
 form is the degenerate one: in the **seven** games whose coordinate is zero at *every* population — so the
 coordinate pair is (0, 0) for every pair — the excess across the **42** pairs still spans **2 to 8**
 distinct values <!-- n: cond.coord0.pairs, cond.coord0.min_distinct, cond.coord0.max_distinct -->. Non-reduction
 therefore holds *inside* the case where the coordinate is pinned completely, and not merely across cases
 where it differs.
-but the payoff ordering's realised loss under the change, a quantity that varies across population pairs
-within a game of constant coordinate <!-- n: trans.base.distinct_max_coord0 -->.
 
 *Against Omidshafiei et al.* [7] *— a different side of the same object.*
 α-Rank proposes a ranking *method*, computed from the game's evolutionary dynamics, offered as a

@@ -118,6 +118,25 @@ def numbers():
         "analysis_conditioning.json:R5.conditioning_on_population_size")
     put("cond.both.min_distinct", r5["conditioning_on_both"]["min_distinct_over_all_cells"],
         "analysis_conditioning.json:R5.conditioning_on_both")
+    # The three groupings are NOT the same shape, and until the correction round of 2026-10-23 the
+    # paper reported them as "all three readings" with the single number each shares.  These keys hold
+    # the structure the single number hid: how many cells each grouping has, how many pairs each cell
+    # holds, and the distinct-value count per cell.  `min_distinct_over_all_cells` is a minimum over
+    # unequal groupings -- 3 cells, 2 cells and 4 cells -- so the minimum alone cannot say whether the
+    # result survives "with both axes held fixed", which rests on the 4-cell grouping.
+    for _g, _tag in (("conditioning_on_transitive_strength", "coord"),
+                     ("conditioning_on_population_size", "size"),
+                     ("conditioning_on_both", "both")):
+        _cells = r5[_g]["cells"]
+        put("cond.%s.cells" % _tag, len(_cells), "analysis_conditioning.json:R5.%s.cells" % _g)
+        put("cond.%s.cell_pairs" % _tag, [c["n_pairs"] for c in _cells],
+            "analysis_conditioning.json:R5.%s.cells[].n_pairs" % _g)
+        put("cond.%s.cell_distinct" % _tag, [c["min_distinct"] for c in _cells],
+            "analysis_conditioning.json:R5.%s.cells[].min_distinct" % _g)
+        # each grouping PARTITIONS the same 54 (game, population-pair) cells, so its pairs must add up
+        # to them: a grouping that left a cell out would otherwise be printed as complete
+        put("cond.%s.pairs_total" % _tag, sum(c["n_pairs"] for c in _cells),
+            "analysis_conditioning.json:R5.%s.cells[].n_pairs" % _g)
     put("cond.coord0.pairs", r5["coord_zero_game_pairs"], "analysis_conditioning.json:R5.coord_zero_game_pairs")
     put("cond.coord0.min_distinct", r5["coord_zero_min_distinct"],
         "analysis_conditioning.json:R5.coord_zero_min_distinct")
