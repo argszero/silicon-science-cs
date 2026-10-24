@@ -131,6 +131,35 @@ ITAL = re.compile(r"(?<![*\w])\*(?![*\s])([^*\n]{2,140}?)\*(?![*])")
 # a fenced code block: the renderer reads no pointer inside one (see code_mask)
 FENCE = re.compile(r"^( {0,3})(`{3,}|~{3,})")
 
+# **A quotation is not a name.**  A marked span whose whole content is a quoted
+# string is text the sentence is *talking about* - `*"2 to 8"*` - where a name is
+# the thing a pointer *points at*.  The two are lexically identical (`*...*`), so
+# the class is decided by the arrow's own shape and not by the span alone: the
+# rule states a **chain** as `*A* -> *B*` where *B* is a name **inside the section
+# A names**, so both sides of a chain are names; an arrow with a quotation on each
+# side names no section at all, and there the arrow **replaces** rather than
+# points.  Only that form is classified as a quotation - a quoted span with
+# nothing quoted to its left stays a pointer and is reported if it resolves
+# nowhere, which is what keeps this a repair of the class and not a hole in it
+# (until R630 the gate read `papers/issue-141/ERRATUM.md:62-63` as two unresolved
+# pointers and stayed red on a clean tree, `pointers=225` since `85d6098`).
+QUOTE_OPEN = "\"'\u201c\u2018\u00ab"      # " ' “ ‘ «
+QUOTE_CLOSE = "\"'\u201d\u2019\u00bb"     # " ' ” ’ »
+
+
+def is_quotation(s):
+    """the run's whole content is a quoted string - `"5 to 8"`, `“43 pairs”`"""
+    s = s.strip()
+    return len(s) >= 2 and s[0] in QUOTE_OPEN and s[-1] in QUOTE_CLOSE
+
+
+def is_replacement(text, i, name):
+    """the arrow at `i` joins a quotation to a quotation - a replacement, not a pointer"""
+    if not is_quotation(name):
+        return False
+    left, _ = prev_name(text, i)
+    return left is not None and is_quotation(left)
+
 
 def repo_root():
     return os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -323,6 +352,12 @@ def refs_in(text):
     `-> *Name*` / `see *Name*` (kind `pointer`) and `-> `x`` / `see `x`` (kind
     `code-target`).  A match whose **start** lies inside an inline code span or a
     fenced code block is dropped - the renderer reads no pointer there (code_mask).
+
+    A third kind, `quotation`, is the arrow between two quotations - `*"2 to 8"*
+    -> *"5 to 8"*` - which replaces and does not point (see is_replacement).  It is
+    **counted and named** rather than dropped, so the class this tool refuses to
+    read is a line a reader can see; a span that is a quotation with no quotation
+    to its left is still a `pointer`.
     """
     mask = code_mask(text)
     out, covered = [], []
@@ -336,6 +371,9 @@ def refs_in(text):
             continue
         if any(a <= m.start() < b for a, b in covered):
             continue                   # already carried by a code-target of its own
+        if is_replacement(text, m.start(), m.group("name")):
+            out.append(("quotation", m))
+            continue
         out.append(("pointer", m))
     return out
 
@@ -352,6 +390,9 @@ def scan(root, files):
             ln = t.count("\n", 0, m.start()) + 1
             if kind == "code-target":
                 rows.append((f, ln, m.group(0).strip(), "code-target"))
+                continue
+            if kind == "quotation":
+                rows.append((f, ln, m.group("name").strip(), "quotation (replacement)"))
                 continue
             name = m.group("name").strip()
             car = carrier_left(root, t, m.start(), files)
@@ -416,6 +457,10 @@ def header(files):
           "      of the named carrier, read as rendered text and compared to the "
           "break before the lead's gloss")
     print("set: %d tracked markdown carriers (`git ls-files '*.md'`)" % len(files))
+    print("class: a marked span whose whole content is a quoted string is a quotation, "
+          "not a name;\n       where the arrow joins two of them it **replaces**, so the "
+          "pair is counted as a quotation\n       and not reported as an unresolved "
+          "pointer")
 
 
 def report(rows, files):
@@ -430,10 +475,20 @@ def report(rows, files):
     print()
     bad = 0
     for f, ln, name, v in rows:
-        if not v.startswith("resolved") and not v.startswith("code-target"):
+        if not v.startswith("resolved") and not v.startswith("code-target") \
+                and not v.startswith("quotation"):
             bad += 1
             print("  %s:%d  *%s*  -> %s" % (f, ln, name.strip()[:60], v))
     print()
+    quoted = [r for r in rows if r[3].startswith("quotation")]
+    if quoted:
+        print("  read as a quotation, not a pointer (%d) - a quotation on each side of"
+              " the arrow, so the arrow replaces\n  rather than points, and no section"
+              " is named on either side (README.md -> Links, the chain clause):"
+              % len(quoted))
+        for f, ln, name, v in quoted:
+            print("  %s:%d  *%s*" % (f, ln, name.strip()[:60]))
+        print()
     print("not read here: the rule's first form (a markdown link target - "
           "`.github/tools/linkgate.py`)")
     print("not read here: the rule's third form (a number indexing a list - "
@@ -516,6 +571,20 @@ def selftest(root):
     t_rule = "----\n--> *A read that reports an absence*\n"
     case([k for k, _ in refs_in(t_rule)], [],
          "a bare `-->` (a rule or an HTML comment) is not the pointer arrow")
+    # the quotation class (R630).  The three cases below are the guard and its two
+    # controls: the replacement form is classified, while a chain of names and a
+    # quotation with nothing quoted to its left are both still pointers - so the
+    # repair narrows the class by exactly the arrow shape that names no section.
+    case([k for k, _ in refs_in('*"2 to 8"* \u2192 *"5 to 8"*\n')], ["quotation"],
+         "an arrow between two quotations replaces, and is not read as a pointer")
+    case([k for k, _ in refs_in("*Alpha* \u2192 *Beta*\n")], ["pointer"],
+         "a chain of two names is still a pointer (the replacement rule did not eat it)")
+    case([k for k, _ in refs_in('see *"5 to 8"*\n')], ["pointer"],
+         "a quotation with no quotation to its left is still a pointer, and is reported")
+    case(is_quotation('"5 to 8"'), True, "a doubly-quoted run is a quotation")
+    case(is_quotation("\u201c43 pairs\u201d"), True, "a curly-quoted run is a quotation")
+    case(is_quotation("Anchor accuracy"), False, "an unquoted name is not a quotation")
+    case(is_quotation('"5 to 8'), False, "an unbalanced quote is not a quotation")
     rt = io.open(os.path.join(root, ".github/REVIEW_TEMPLATE.md"),
                  encoding="utf-8").read()
     rmk = code_mask(rt)
