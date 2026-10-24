@@ -182,7 +182,7 @@ if [ "$FULL" = "1" ]; then
     echo
     echo "== 4. the artefacts, byte for byte (--full) =============================="
 
-    # [08] the three instruments
+    # [11] the three instruments
     snapshot spike_v3_results.json spike_v4_results.json spike_v5_results.json
     if ! have scipy; then
         notrun "instruments re-run: spike_v3/v4/v5 (3 artefacts)" \
@@ -202,7 +202,7 @@ if [ "$FULL" = "1" ]; then
     fi
     fi
 
-    # [09] canonical, re-derived from the (now restored) committed instruments
+    # [12] canonical, re-derived from the (now restored) committed instruments
     snapshot canonical_results.json
     if "$PY" canonical.py >"$TMP/out" 2>&1; then
         byte "canonical re-derived: canonical_results.json" canonical_results.json
@@ -212,7 +212,7 @@ if [ "$FULL" = "1" ]; then
         sed 's/^/        /' "$TMP/out" | tail -12
     fi
 
-    # [10] the figures and the built manuscript
+    # [13] the figures and the built manuscript
     export MPLCONFIGDIR="${MPLCONFIGDIR:-$TMP/mpl}"
     mkdir -p "$MPLCONFIGDIR"
     snapshot references.md manuscript.md \

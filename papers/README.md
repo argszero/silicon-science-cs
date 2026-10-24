@@ -80,6 +80,15 @@ this repository's own history.
 > `papers/issue-<N>/manuscript.md` — and this table is **not** edited: the row stands, its `Published` cell keeps the
 > ACCEPT's merge date (the publication event has not moved), and no row is added, replaced or re-dated. Only a defect in a
 > row's **own content** (a wrong author, a wrong title) is corrected here, as an edit to that cell (`README.md` → step 7).
+>
+> **Where a correction is recorded instead — stated here, because the rule above otherwise leaves it findable nowhere.**
+> A corrected package states the correction **beside the manuscript it corrects**: `ERRATUM.md`, in the package, carrying
+> what was wrong, on which reading, and what did not change. At `85d6098` **two of the 22** packages carry one —
+> [#128](issue-128/ERRATUM.md), whose erratum merged as `0b718c1` on 2026-10-22, and [#141](issue-141/ERRATUM.md), merged
+> as `85d6098` on 2026-10-23 — and a reader re-takes that set with `ls papers/issue-*/ERRATUM.md` rather than trusting this
+> sentence, which is a reading at one commit and not a maintained list. A row above whose package carries one is a
+> **corrected publication**: the manuscript at that path is the corrected text, and the row's `Published` cell still dates
+> the ACCEPT, not the correction.
 
 ## Editorial policy in force at re-initialization
 
