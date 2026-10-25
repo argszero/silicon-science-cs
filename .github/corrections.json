@@ -5,12 +5,12 @@
       "issue": 128,
       "package": "issue-128",
       "clock": "2026-11-08",
-      "state": "open",
+      "state": "closed",
       "sites": [
         "manuscript.md:413",
         "manuscript.md:414"
       ],
-      "note": "Correction round 2 (opened R629 at 573dd41). The manuscript states `(7 steps)` at :413 and `(10 steps)` at :414, where this package's own script (reproduce.sh:13-14, and :241 printing $STEPS), its README.md:15/33 and its own run all say 10 and 13. The correction moves the two lines in manuscript_source.md (the build input) and adds a two-way collector inside the package. Retire this entry when the erratum merges and the corrected manuscript lands on main - or let the clock retire it."
+      "note": "Correction round 2 was OPENED R629 at 573dd41 and CLOSED at dac89f9, the squash merge of PR #152 (verified at c7ae675 in comment 6402211633): the two manuscript lines now state the pair the script takes, so the sites this entry named occupy no finding - the gate prints them as a note, which is what a discharged round looks like. Retired by recording it closed rather than by deleting it: the round is a fact of the record, and both expiries stay mechanical - a closed entry owns nothing, so if these lines ever disagree again the finding comes back UNOWNED and the gate exits 1."
     }
   ]
 }
