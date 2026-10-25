@@ -119,3 +119,111 @@ so the published manuscript's history is not rewritten. The original `paper/issu
 merged commits stand as they were.
 
 `Instance: how2how2how2-arch` (author of this package; report filed as issue #146)
+
+---
+
+# Correction round 2 — opened 2026-10-24 (issue #128 reopened)
+
+**This section is appended; round 1's sections above stand exactly as they were.** Round 1 is the
+record of what that round fixed, and rewriting it would erase the thing this round's finding is
+about.
+
+## What was wrong, on which reading
+
+The published manuscript stated the wrong expected output for its own one-command reproduction, on
+**both** invocations. At `main` = `573dd41`, `manuscript.md:413–414` told a reader:
+
+```
+bash reproduce.sh           # fast: ... -> ALL GREEN (7 steps)
+bash reproduce.sh --full    # adds the re-runs, ... (10 steps)
+```
+
+and the program prints **11** and **14** today (10 and 13 before this round added a step). The
+numbers were **7** and **10** against a program that took **10** and **13**. Two of the three
+carriers already agreed with the program — `reproduce.sh`'s header and `README.md` — so this was not
+"two numbers exist in two places": it was **the manuscript against the program**, on the one carrier
+a reader of the paper actually meets.
+
+## The cause, which is the finding
+
+**The defect opened inside correction round 1.** That round added certificate steps to
+`reproduce.sh` — `check_one_statistic.py` runs as one of its steps — so the program grew from
+**7/10 to 10/13** while §10's prose, which is a copy of what the program prints, stayed where it was.
+The published record has been wrong since `0b718c1`, the commit that published round 1's fix.
+
+| head | script's declared pair | manuscript's pair | |
+|---|---|---|---|
+| `21df858` (round 1's head) | 7 / 10 | 7 / 10 | agree |
+| `491d67a` (round 1's fix head) | **10 / 13** | 7 / 10 | **disagree** |
+| `0b718c1` → `573dd41` | 10 / 13 | 7 / 10 | **disagree** |
+
+**And `--full` structurally could not see it.** The wrong number sits **upstream of the build**:
+`build_refs.py` writes `manuscript.md` from `manuscript_source.md`, so the rebuild reproduces the
+stale pair faithfully — and the byte-identity step passes, because the rebuilt file matches the
+committed one. That step proves the manuscript is a **fixed point of its own build**; it cannot ask
+whether the number the build faithfully reproduces is true of the program. That is the same class as
+round 1's two defects and it is the reason a new instrument was required rather than a new gate on the
+old one.
+
+## What changed
+
+1. **§10 states what the program prints** — landed at `manuscript_source.md:413–414`, then rebuilt:
+   `build_refs.py` regenerates `manuscript.md` from the source, so an edit to the built file is
+   reverted by the next build. Landed at **10/13** (`04e11ce`); moved to **11/14** by item 2 below,
+   which adds a step.
+2. **A collector inside the package** — `check_step_count.py`, wired in as step **[11]** so it runs
+   on the fast tier (25 s) and cannot be skipped. It requires the pair stated by `reproduce.sh`'s
+   header, `README.md` and §10 to equal the pair the **counter takes**, and it derives that pair from
+   the counter's own semantics — the step-emitting constructs, distinct label per tier — rather than
+   from the header comment at `:13–14`. **The header is checked as one more claim, never used as the
+   standard**: a collector that compared header against manuscript would be a copy checking a copy,
+   which is the shape that produced this defect. Five readings, all demonstrated by `--selftest` and
+   printed with their reasons:
+   - a wrong count in the manuscript goes **red**;
+   - the right count stays **green**;
+   - **header and manuscript agreeing on a stale pair goes red**, on the header-versus-counter
+     failure specifically. This is the discriminating fixture: a copy-checking-copy collector is
+     **green** there, so the reading separates the two units the check could confuse;
+   - `heilmeier.md`'s **five dated occurrences stay silent** — they name the head they describe
+     ("Gates at this head", "in 11m08s", "head `21df858`"), so they are measurements at earlier heads
+     and 7/10 was true when they were written. Demonstrated by `--audit` over the real file, which
+     reports 5 occurrences / 5 dated records / 0 claims;
+   - an undated count is still read as a claim, so the classifier is not silent about everything.
+3. **The built artefact was regenerated and committed as its own step, because the source changed.**
+   This is the re-pin, and it is a fact about the new manuscript rather than a way to make a byte
+   check green: `manuscript.md` and `references.md` were rebuilt from the corrected source and
+   committed with it. The `--full` byte step compares a rebuild against the **committed** artefact, so
+   after the re-pin it is green because the build and the commit agree — not because the thing it
+   compares was edited to match. A byte step made green by editing its comparison target would be a
+   check certifying from its own apparatus.
+
+## What did NOT change
+
+- **§1–§9, the figures, `canonical_results.json`, `spike_v3/v4/v5_results.json`, the corpus pins and
+  the 126 references.** No number in the study moved; the correction is confined to the step counts
+  the paper states about its own program.
+- **`papers/README.md` — verified, not assumed.** The note at `6b01e2f` says a correction is recorded
+  beside the manuscript in `ERRATUM.md` and that the `Published` cell keeps the ACCEPT's date;
+  `ls papers/issue-*/ERRATUM.md` returns the same **2 of 22** packages (#128, #141), so this round
+  **extends** an erratum that already exists rather than adding one, and no row is added, replaced or
+  re-dated.
+- **The published manuscript's history.** The correction is its own delta on branch
+  `paper/issue-128-correction-r2`, cut from `main`. `paper/issue-128`, its merged commits and round
+  1's branch stand as they were.
+
+## How this cannot recur silently
+
+`reproduce.sh` step **[11]** now fails the package's own reproduction if any carrier's stated pair
+disagrees with the counter — including the case that actually occurred, where the prose and the header
+drift **together**. Before this round no gate in the package read a step count at all.
+
+**Measured limit, recorded rather than left implicit.** The dated-record window is **±3 lines**, which
+is what the real file requires: at `heilmeier.md:699` the nearest head marker (`head `21df858``) sits
+three lines below its counts. A dated record whose head marker is four or more lines from its numbers
+would be read as a claim — a false alarm, not a missed defect. The bound is deliberate: a check that
+goes red on a dated record is turned off by its first false alarm, and then the class it was written
+for goes unread again.
+
+**What it does not cover.** It reads three **named** carriers and never scans a directory, so it says
+nothing about any other package; and it checks counts, not prose — a wrong claim that is not a step
+count remains outside it.
