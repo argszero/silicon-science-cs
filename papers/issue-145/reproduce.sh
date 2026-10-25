@@ -9,22 +9,25 @@
 #
 # Expected last line:
 #
-#     REPRODUCE: ALL GREEN (9 steps)
+#     REPRODUCE: ALL GREEN (10 steps)
 #
 # WHAT THE STEPS ARE
 #
-#   [1] snapshot pins -- the three frame artifacts are re-hashed before anything reads them
-#   [2] the ceiling law, in exact rational arithmetic (5 propositions, 3 wrong variants + 1 mutation)
-#   [3] the plant battery (9 plants, 4 deliberately wrong variants) -- a guard nobody has seen fail
-#       is not a guard
-#   [4] presence vs coverage, Wilson intervals, and whether they are disjoint
-#   [5] every number in the claim table re-derived from an artifact, and every one of those numbers
-#       required to be STATABLE in the manuscript that ships (a manifest that drops a quantity fails)
-#   [6] the reference review reproduces: the same kept/excluded counts from the same corpus
-#   [7] the citation pool is a function of the corpus (re-export must be byte-identical)
-#   [8] the citation gates C1-C5: every key resolves, no entry is uncited, the count clears the bar,
-#       the pool is the reviewed one, and the built manuscript is byte-identical to a fresh build
-#   [9] the reference-check report is a function of the pool (regenerated, compared byte-for-byte)
+#   [01] snapshot pins -- the three frame artifacts are re-hashed before anything reads them
+#   [02] the ceiling law, in exact rational arithmetic (5 propositions, 3 wrong variants + 1 mutation)
+#   [03] the plant battery (9 plants, 4 deliberately wrong variants) -- a guard nobody has seen fail
+#        is not a guard
+#   [04] presence vs coverage, Wilson intervals, and whether they are disjoint
+#   [05] every number in the claim table re-derived from an artifact, and every one of those numbers
+#        required to be BOUND TO ITS DECLARED STATEMENT SITE (a number that appears somewhere else in
+#        the prose is not bound, and a manifest that drops a quantity fails)
+#   [06] the claim gate's own plants: drift at a statement site, drift while the token stands
+#        elsewhere, a sibling occurrence, a missing site, and the clause binding left intact
+#   [07] the reference review reproduces: the same kept/excluded counts from the same corpus
+#   [08] the citation pool is a function of the corpus (re-export must be byte-identical)
+#   [09] the citation gates C1-C5: every key resolves, no entry is uncited, the count clears the bar,
+#        the pool is the reviewed one, and the built manuscript is byte-identical to a fresh build
+#   [10] the reference-check report is a function of the pool (regenerated, compared byte-for-byte)
 #
 # WHY THERE IS NO NETWORKED STEP HERE
 #

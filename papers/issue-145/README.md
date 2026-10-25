@@ -15,16 +15,19 @@ bash reproduce.sh
 Expected last line:
 
 ```
-REPRODUCE: ALL GREEN (9 steps)
+REPRODUCE: ALL GREEN (10 steps)
 ```
 
 `reproduce.sh` runs, in order: (1) the SHA-256 pins of the three frame artefacts; (2) the ceiling law
 in exact rational arithmetic (**66** checks, 5 propositions, 3 wrong variants plus 1 mutation);
 (3) the plant battery (**17** checks, 9 plants and 4 deliberately wrong variants — a guard nobody has
 seen fail is not a guard); (4) the Wilson intervals and whether presence and coverage are separated;
-(5) every number in the claim table re-derived from an artefact **and** required to be statable in the
-manuscript that ships; (6) the reference review reproducing the same kept/excluded counts; (7) the
-citation pool being a function of the corpus; (8) the citation gates C1–C5; (9) the reference-check
+(5) every number in the claim table re-derived from an artefact **and** required to be **bound to its
+declared statement site** — a number that appears somewhere else in the prose is not bound; (6) the
+claim gate's own plants, so a gate nobody has seen fail is not a gate: drift at a statement site,
+drift while the token still stands elsewhere, a sibling occurrence, a removed site, and the clause
+binding left intact; (7) the reference review reproducing the same kept/excluded counts; (8) the
+citation pool being a function of the corpus; (9) the citation gates C1–C5; (10) the reference-check
 report being a function of the pool.
 
 ## Environment
