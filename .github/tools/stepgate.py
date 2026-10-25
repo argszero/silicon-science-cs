@@ -88,12 +88,39 @@ Usage:
     python3 .github/tools/stepgate.py --json       # the same reading as data
     python3 .github/tools/stepgate.py --selftest   # the plant battery
 
-Verdict: `STEPGATE: PASS` (every claim a package states agrees with its script),
-`STEPGATE: FAIL` (at least one does not; one `FINDING` line per member), `STEPGATE: NOT
-RUN` (no package under `papers/` states a count this tool reads, or the tree has no
-packages - an empty set is that gate's `NOT RUN`, never a `PASS`). Exit 0 / 1 / 2.
+**A disagreement an open correction round owns is counted apart from one nobody owns,
+and that ownership expires.** A published file moves only through its package's own
+correction round, so a finding inside a round's own sites is a defect the journal has
+already taken responsibility for - and a gate that stays red for as long as the round
+lasts teaches its readers to stop reading its exit code, which is the blindness an
+allowlist buys, only earned by noise instead. The rounds are read **off the tree**, never
+recalled: `.github/corrections.json` names, for each open round, the **issue**, the
+**clock** the round is measured against, the **package** it governs and the **claim
+sites** it requires changed. A finding is *owned* when a round names it, and only then:
+
+  * the round's `state` must be `open` - a round recorded `closed` owns **nothing**, so
+    closing the issue puts its claims back in the red on the next run;
+  * the round's `clock` must not have passed, read against the date the gate prints -
+    so an entry lapses **on its own**, with no one remembering to remove it. *An entry
+    that cannot expire is an allowlist wearing a number*;
+  * where the round lists `sites`, only those sites are owned: a **new** defect in the
+    same package is unowned and red, and a listed site that occupies no finding is
+    printed as a note, so a discharged round is visible rather than silently stale.
+
+The gate exits non-zero **only on the unowned count**. The verdict line carries both
+figures, so a `PASS` can never be read as "every claim agrees", and every owned finding
+is still printed, with the issue and the clock that own it. A record that exists and
+cannot be read is itself a finding: a broken record must not quietly excuse anything.
+
+Verdict: `STEPGATE: PASS` (no disagreement is unowned - every claim agrees, or the ones
+that do not are owned by an open round, printed with its issue and clock), `STEPGATE:
+FAIL` (at least one disagreement no open round owns, or the record cannot be read; one
+`FINDING` line per member), `STEPGATE: NOT RUN` (no claim was compared and no round owns
+anything, or the tree has no packages - an empty set is that gate's `NOT RUN`, never a
+`PASS`). Exit 0 / 1 / 2.
 """
 
+import datetime
 import json
 import os
 import re
@@ -124,6 +151,10 @@ PACKAGE = re.compile(r"^issue-(\d+)$")
 LOOKBACK = 10
 
 KNOWN_OPTIONS = ("--check", "--root", "--json", "--selftest")
+
+# the open correction rounds this tree records - read by read_corrections(), and
+# re-read against the issues they name by the cycle opener (README.md, step 0)
+CORRECTIONS = os.path.join(".github", "corrections.json")
 
 
 def _read(path):
@@ -285,15 +316,19 @@ def read_package(root, name):
                         site = sno
                         break
             rec["findings"].append(
-                "%s:%d states %d steps (%s); %s:%s states %d"
-                % (carrier, no, n, tier, SCRIPT,
-                   site if site is not None else "?", want))
+                {"site": "%s:%d" % (carrier, no),
+                 "text": "%s:%d states %d steps (%s); %s:%s states %d"
+                         % (carrier, no, n, tier, SCRIPT,
+                            site if site is not None else "?", want)})
     if script["table_max"] is not None and stated:
         largest = max(n for _t, n, _no in stated)
         if script["table_max"] != largest:
+            # a defect in the script's own enumeration is not a claim a round names,
+            # so it carries no site and can never be owned
             rec["findings"].append(
-                "%s's step table reaches [%02d] but its largest stated count is %d"
-                % (SCRIPT, script["table_max"], largest))
+                {"site": None,
+                 "text": "%s's step table reaches [%02d] but its largest stated "
+                         "count is %d" % (SCRIPT, script["table_max"], largest)})
     if rec["findings"]:
         rec["verdict"] = "FAIL"
     elif not rec["claims"] and rec["unchecked"]:
@@ -303,11 +338,83 @@ def read_package(root, name):
     return rec
 
 
-def read_tree(root):
+def read_corrections(root):
+    """The correction rounds this tree records, and the record's own problems.
+
+    A missing file is not a problem - a tree with no open round legitimately records
+    none, and its findings are then simply unowned. A file that exists and cannot be
+    read **is** one: a record that excuses nothing must not look like a record that
+    excuses everything, so each problem is returned and read as a finding.
+    """
+    path = os.path.join(root, CORRECTIONS)
+    if not os.path.isfile(path):
+        return [], []
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+    except (OSError, ValueError) as exc:
+        return [], ["%s could not be read (%s), so no round owns anything and every "
+                    "disagreement is unowned" % (CORRECTIONS, exc)]
+    raw = data.get("rounds") if isinstance(data, dict) else None
+    if not isinstance(raw, list):
+        return [], ["%s carries no `rounds` list, so no round owns anything"
+                    % CORRECTIONS]
+    rounds, problems = [], []
+    for i, item in enumerate(raw):
+        if not isinstance(item, dict):
+            problems.append("%s round %d is not an object, so it owns nothing"
+                            % (CORRECTIONS, i + 1))
+            continue
+        missing = [k for k in ("issue", "package", "clock", "state")
+                   if k not in item]
+        if missing:
+            problems.append("%s round %d names no %s, so it owns nothing"
+                            % (CORRECTIONS, i + 1, ", ".join(missing)))
+            continue
+        sites = item.get("sites")
+        rounds.append({"issue": item["issue"],
+                       "issue_txt": "issue #%s" % item["issue"],
+                       "package": str(item["package"]),
+                       "clock": str(item["clock"]),
+                       "state": str(item["state"]),
+                       "sites": [str(s) for s in sites]
+                                if isinstance(sites, list) else None,
+                       "used": 0})
+    return rounds, problems
+
+
+def _owner(name, site, rounds, today):
+    """The round that owns one finding - or (None, why it does not).
+
+    Ownership is the round's, never a package's: the round must be `open`, its clock
+    must not have passed, and where it lists sites the finding must be one of them.
+    """
+    if site is None:
+        return None, None
+    for r in rounds:
+        if r["package"] != name:
+            continue
+        if r["sites"] is not None and site not in r["sites"]:
+            continue
+        if r["state"] != "open":
+            return None, ("the round recorded for %s is %s, and a round that is not "
+                          "open owns nothing" % (r["issue_txt"], r["state"]))
+        if r["clock"] < today:
+            return None, ("%s's clock %s has passed, read as of %s, so its claims are "
+                          "unowned again" % (r["issue_txt"], r["clock"], today))
+        return r, None
+    return None, None
+
+
+def read_tree(root, today=None):
+    if today is None:
+        today = datetime.date.today().isoformat()
     papers = os.path.join(root, "papers")
-    report = {"root": root, "packages": [], "findings": [], "unchecked": [],
-              "notes": [], "stated": 0, "not_stated": 0, "not_checked": 0,
-              "agree": 0, "disagree": 0, "verdict": "NOT RUN", "reason": None}
+    report = {"root": root, "as_of": today, "packages": [], "findings": [],
+              "owned": [], "unchecked": [], "notes": [], "stated": 0,
+              "not_stated": 0, "not_checked": 0, "agree": 0, "disagree": 0,
+              "rounds": [], "problems": [], "denied": [], "verdict": "NOT RUN",
+              "reason": None}
     if not os.path.isdir(papers):
         report["reason"] = "no papers/ directory under %s" % root
         return report
@@ -317,6 +424,9 @@ def read_tree(root):
     if not names:
         report["reason"] = "no papers/issue-<N>/ package directory under %s" % root
         return report
+    rounds, problems = read_corrections(root)
+    report["rounds"] = rounds
+    report["problems"] = list(problems)
     for name in names:
         rec = read_package(root, name)
         report["packages"].append(rec)
@@ -331,14 +441,41 @@ def read_tree(root):
         else:
             report["agree"] += len(rec["claims"])
         for f in rec["findings"]:
-            report["findings"].append("%s/%s" % (name, f))
+            where = "%s/%s" % (name, f["site"]) if f["site"] else name
+            owner, why_not = _owner(name, f["site"], rounds, today)
+            if owner is None:
+                report["findings"].append(
+                    "%s: %s%s" % (where, f["text"],
+                                  "" if not why_not else " [%s]" % why_not))
+                if why_not:
+                    report["denied"].append("%s [%s]" % (where, why_not))
+            else:
+                owner["used"] += 1
+                report["owned"].append(
+                    "%s: %s [owned by an open correction, %s, clock %s]"
+                    % (where, f["text"], owner["issue_txt"], owner["clock"]))
         for u in rec["unchecked"]:
             report["unchecked"].append("%s/%s" % (name, u))
         for nt in rec["notes"]:
             report["notes"].append("%s/%s" % (name, nt))
-    if report["findings"]:
+    for r in rounds:
+        if r["state"] != "open":
+            report["notes"].append(
+                "%s: %s's round is recorded %s, so it owns nothing"
+                % (CORRECTIONS, r["issue_txt"], r["state"]))
+        elif r["clock"] < today:
+            report["notes"].append(
+                "%s: %s's clock %s has passed as of %s, so it owns nothing"
+                % (CORRECTIONS, r["issue_txt"], r["clock"], today))
+        elif not r["used"]:
+            report["notes"].append(
+                "%s: the round recorded for %s (%s, clock %s) occupies no finding, so "
+                "the claims it named now agree - the round may be discharged and the "
+                "entry retired" % (CORRECTIONS, r["package"], r["issue_txt"],
+                                   r["clock"]))
+    if report["findings"] or report["problems"]:
         report["verdict"] = "FAIL"
-    elif report["agree"] == 0:
+    elif report["agree"] == 0 and not report["owned"]:
         report["verdict"] = "NOT RUN"
         report["reason"] = ("no claim was compared, so this gate took no reading of "
                             "the tree: %d package(s) read, %d state a count it could "
@@ -356,8 +493,17 @@ def render(report, as_json=False):
     print("stepgate_v1 - the step count a package states, read against the count "
           "its script states")
     print("root: %s" % report["root"])
+    print("as of: %s (the date every correction clock is read against)" % report["as_of"])
     print("set: %d package(s) under papers/ - an issue-<N> directory is a publication"
           % len(report["packages"]))
+    if report["rounds"]:
+        print("corrections: %d round(s) recorded in %s - an entry owns a finding only "
+              "while it is open and its clock has not passed"
+              % (len(report["rounds"]), CORRECTIONS))
+        for r in report["rounds"]:
+            print("    %s  package %s  clock %s  %s  sites: %s"
+                  % (r["issue_txt"], r["package"], r["clock"], r["state"],
+                     ", ".join(r["sites"]) if r["sites"] else "the whole package"))
     print("instrument: a stated count is a literal `(N steps)` in reproduce.sh / "
           "README.md / manuscript.md, or the computed form "
           "`VAR=$(( $(echo $LIST | wc -w) + K ))`; the script is the authority, the "
@@ -377,23 +523,43 @@ def render(report, as_json=False):
             print("        claim: %s:%d states %d steps (%s)"
                   % (c[0], c[1], c[3], c[2]))
         for f in rec["findings"]:
-            print("        FINDING: %s" % f)
+            print("        FINDING: %s" % f["text"])
         for u in rec["unchecked"]:
             print("        NOT CHECKED: %s" % u)
         for nt in rec["notes"]:
             print("        note: %s" % nt)
     print("  not stated (%d, named so a reader can see which, and it is not a pass): %s"
           % (len(silent), ", ".join(silent) if silent else "none"))
+    for p in report["problems"]:
+        print("  FINDING: %s" % p)
+    for nt in report["notes"]:
+        print("  note: %s" % nt)
+    if report["denied"]:
+        print("  unowned (%d) - a correction round's sites denied it, because the round "
+              "is not open or its clock has passed:" % len(report["denied"]))
+        for d in report["denied"]:
+            print("    %s" % d)
+    if report["owned"]:
+        owners = []
+        for r in report["rounds"]:
+            if r["used"]:
+                owners.append("%s, clock %s" % (r["issue_txt"], r["clock"]))
+        print("  owned (%d) - an open correction round owns these, and they are named "
+              "here rather than dropped: %s" % (len(report["owned"]), "; ".join(owners)))
+        for o in report["owned"]:
+            print("    %s" % o)
     if report["unchecked"]:
         print("  not checked: %d claim(s) - named above, each with its reason"
               % len(report["unchecked"]))
     if report["verdict"] == "NOT RUN":
         print("STEPGATE: NOT RUN - %s" % report["reason"])
         return
-    print("STEPGATE: %s - %d claim(s) agree; %d disagree; %d not checked; "
+    print("STEPGATE: %s - %d unowned%s; %d claim(s) agree; %d not checked; "
           "%d package(s) state no count"
-          % (report["verdict"], report["agree"], len(report["findings"]),
-             len(report["unchecked"]), report["not_stated"]))
+          % (report["verdict"],
+             len(report["findings"]) + len(report["problems"]),
+             "" if not report["owned"] else ", %d owned" % len(report["owned"]),
+             report["agree"], len(report["unchecked"]), report["not_stated"]))
 
 
 def _plant(root, files):
@@ -406,8 +572,8 @@ def _plant(root, files):
             fh.write(body)
 
 
-def _run(root):
-    report = read_tree(root)
+def _run(root, today="2026-10-25"):
+    report = read_tree(root, today)
     import io
     buf = io.StringIO()
     old = sys.stdout
@@ -506,6 +672,24 @@ def selftest():
     cases = []
     ok = 0
     try:
+        # the two trees the ownership cases are built on: one stale copy, one correct
+        STALE = {"papers/issue-10/reproduce.sh": SCRIPT_ONE_TIER,
+                 "papers/issue-10/README.md": README_ONE % "9"}
+        GOOD = {"papers/issue-10/reproduce.sh": SCRIPT_ONE_TIER,
+                "papers/issue-10/README.md": README_ONE % "10"}
+
+        def record(*rounds):
+            """A correction record, the form read_corrections() reads."""
+            return {".github/corrections.json":
+                    json.dumps({"rounds": list(rounds)}, indent=2)}
+
+        def round_for(state="open", clock="2026-12-01", sites=("README.md:10",),
+                      package="issue-10", issue=10):
+            r = {"issue": issue, "package": package, "clock": clock, "state": state}
+            if sites is not None:
+                r["sites"] = list(sites)
+            return r
+
         plant = {
             # a copy that states a stale count: the shape of issue-145 and issue-128's
             # manuscript - the script says 10, the README says 9
@@ -572,6 +756,40 @@ def selftest():
                                       "REPRODUCE: ALL GREEN (21 steps, 0 failures)\n"},
                                  "PASS", 0, ["note: two counts", "$ALL_STEPS",
                                              "$STEPS"]),
+            # --- the owned/unowned split (R631) ---------------------------------------
+            # a disagreement no round owns is red, and a record naming another package
+            # does not acquire this one: ownership is the round's, never a side effect
+            # of somebody having written a record
+            "unowned-is-red": ({**STALE, **record(round_for(issue=11,
+                                                            package="issue-11"))},
+                               "FAIL", 1, ["1 unowned", "FINDING",
+                                           "README.md:10 states 9 steps"]),
+            # the owner is named, the clock is printed, and the finding is STILL named
+            # - the owned line is a reading, not a deletion
+            "owned-open-green": ({**STALE, **record(round_for())},
+                                 "PASS", 0, ["0 unowned, 1 owned", "owned (1)",
+                                             "issue #10", "clock 2026-12-01",
+                                             "README.md:10 states 9 steps"]),
+            # the first expiry: the issue closed, so the round owns nothing again
+            "owned-closed-red": ({**STALE, **record(round_for(state="closed"))},
+                                 "FAIL", 1, ["1 unowned", "is closed",
+                                             "owns nothing"]),
+            # the second expiry: nobody had to remember anything - the clock ran out
+            "owned-expired-red": ({**STALE, **record(round_for(clock="2026-01-01"))},
+                                  "FAIL", 1, ["1 unowned",
+                                              "clock 2026-01-01 has passed",
+                                              "as of 2026-10-25"]),
+            # the sites narrow the ownership: a defect at a site the round did not
+            # name is unowned even inside the package the round governs
+            "owned-site-narrow": ({**STALE, **record(round_for(sites=["README.md:99"]))},
+                                  "FAIL", 1, ["1 unowned"]),
+            # a round whose claims now agree is visible rather than silently stale
+            "owned-discharged": ({**GOOD, **record(round_for())},
+                                 "PASS", 0, ["STEPGATE: PASS",
+                                             "occupies no finding"]),
+            # a record that cannot be read excuses nothing, and says so out loud
+            "record-unreadable": ({**STALE, ".github/corrections.json": "{not json"},
+                                  "FAIL", 1, ["could not be read"]),
         }
         for label, (files, want, want_code, members) in plant.items():
             root = os.path.join(tmp, label)
