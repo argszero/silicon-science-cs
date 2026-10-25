@@ -12,7 +12,7 @@ bash reproduce.sh
 Expected output (last line):
 
 ```
-REPRODUCE: ALL GREEN (10 steps)
+REPRODUCE: ALL GREEN (11 steps)
 ```
 
 `reproduce.sh` runs, in order: (1) the corpus SHA-256 pins (read from inside `corpus/`, where the pinned
@@ -23,14 +23,17 @@ identity) and with a planted copy that must be refused; (8) `make_figures.py --s
 title-fitting certificate, also with a plant; (9) `canonical.py --check`, which re-derives every
 headline number from the artefacts and asserts the paper's claims; (10) `make_figures.py --check`, which
 compares the statistic the **figure prints** to the one the **artefact states** — two independent paths
-to one number, which a byte-identity step structurally cannot compare.
+to one number, which a byte-identity step structurally cannot compare; (11) `check_step_count.py`, which
+reads the counts this README, `reproduce.sh`'s header and section 10 of the manuscript state and requires
+them to equal the count the **run takes** — off the counter, not off a comment — with a planted wrong
+count that must be refused and a dated record (`heilmeier.md`) that must stay silent.
 
 A fuller check re-runs the instruments, re-derives `canonical_results.json`, and rebuilds the figures and
 the manuscript, requiring every regenerated artefact to be **byte-identical** to the committed one (adds
 ~11 minutes):
 
 ```
-bash reproduce.sh --full        # -> REPRODUCE: ALL GREEN (13 steps)
+bash reproduce.sh --full        # -> REPRODUCE: ALL GREEN (14 steps)
 ```
 
 The `--full` re-runs happen in place and are then restored from a snapshot taken before them, so the

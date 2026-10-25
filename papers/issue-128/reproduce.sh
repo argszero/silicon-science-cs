@@ -10,8 +10,8 @@
 #
 # Expected last line, for each tier:
 #
-#     REPRODUCE: ALL GREEN (10 steps)      # default
-#     REPRODUCE: ALL GREEN (13 steps)      # --full
+#     REPRODUCE: ALL GREEN (11 steps)      # default
+#     REPRODUCE: ALL GREEN (14 steps)      # --full
 #
 # WHAT THE STEPS ARE
 #
@@ -25,11 +25,14 @@
 #   [09]      canonical.py --check: every headline number re-derived from the artefacts and asserted
 #   [10]      make_figures --check: the statistic the FIGURE prints equals the one the ARTEFACT
 #             states -- two independent paths to one number, which byte-identity cannot compare
+#   [11]      check_step_count.py: the counts THIS HEADER, README.md and section 10 state are the counts
+#             the run TAKES, read off the counter and not off any comment; a wrong count must go red, a
+#             right one stay green, and header-versus-counter disagreeing is its own failure
 #
 #   --full adds three byte-identity steps:
-#   [11]      spike_v3/v4/v5 re-run      -> the three *_results.json must be byte-identical
-#   [12]      canonical.py re-run        -> canonical_results.json must be byte-identical
-#   [13]      make_figures + build_refs  -> the three PNGs, references.md and manuscript.md must be
+#   [12]      spike_v3/v4/v5 re-run      -> the three *_results.json must be byte-identical
+#   [13]      canonical.py re-run        -> canonical_results.json must be byte-identical
+#   [14]      make_figures + build_refs  -> the three PNGs, references.md and manuscript.md must be
 #                                           byte-identical
 #
 # The re-runs are made in place and then RESTORED from a snapshot taken before them, so the package is
@@ -177,6 +180,14 @@ step "canonical.py --check" "$PY" canonical.py --check
 export MPLCONFIGDIR="${MPLCONFIGDIR:-$TMP/mpl}"
 mkdir -p "$MPLCONFIGDIR"
 step_dep "figure vs artefact: the printed statistic" matplotlib "$PY" make_figures.py --check
+
+# [11] the step counts this header, README.md and section 10 state, against the count the run takes.
+# Correction round 2 was opened because section 10's copy went stale when round 1 grew the program, and
+# no gate read a step count at all.  The collector binds to reproduce.sh's COUNTER, not to this header:
+# a header is a copy, the counter is what the run took, and a copy checking a copy is the shape that
+# produced the defect.  It reads a claim, never a dated record (heilmeier.md's five occurrences are
+# measurements at earlier heads -- see --selftest reading [4]).
+step "step counts: the carriers state what the counter takes" "$PY" check_step_count.py
 
 if [ "$FULL" = "1" ]; then
     echo
