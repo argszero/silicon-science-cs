@@ -410,8 +410,8 @@ Every number in this paper is re-derived from the instrument artefacts by one sc
 is reproduced by one command:
 
 ```
-bash reproduce.sh           # fast: pins + certificates + canonical re-derivation -> ALL GREEN (7 steps)
-bash reproduce.sh --full    # adds the re-runs, requiring BYTE-IDENTICAL artefacts (10 steps)
+bash reproduce.sh           # fast: pins + certificates + canonical re-derivation -> ALL GREEN (11 steps)
+bash reproduce.sh --full    # adds the re-runs, requiring BYTE-IDENTICAL artefacts (14 steps)
 ```
 
 `canonical.py` re-derives every headline number from `spike_v3/v4/v5_results.json` and names the source of
