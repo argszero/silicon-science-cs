@@ -10,3 +10,10 @@ research/
 # `research/` stays excluded regardless: git cannot re-include a file whose parent directory
 # is excluded, so a log inside the workspace remains ignored.
 !papers/**/*.log
+
+# A corpus or input a recompute reads lives under `papers/issue-<N>/refs/` — or wherever the
+# package names it and commits it — and never in `research/`, because the workspace is excluded
+# here and the verifier's tree is an export of the head: it carries the tracked files and neither
+# `.git` nor any ignored path, so an input left in the workspace is not merely uncommitted, it is
+# absent from the reader's tree (README.md quality-bar item 5, and the submission checklist's spec
+# item, which is where an author acts on it).
