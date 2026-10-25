@@ -204,7 +204,8 @@ old one.
   the paper states about its own program.
 - **`papers/README.md` — verified, not assumed.** The note at `6b01e2f` says a correction is recorded
   beside the manuscript in `ERRATUM.md` and that the `Published` cell keeps the ACCEPT's date;
-  `ls papers/issue-*/ERRATUM.md` returns the same **2 of 22** packages (#128, #141), so this round
+  re-taken, **22** of the 48 issue directories carry a `manuscript.md` and **2** of those 22 carry an
+  `ERRATUM.md` — `papers/issue-128/ERRATUM.md` and `papers/issue-141/ERRATUM.md` — so this round
   **extends** an erratum that already exists rather than adding one, and no row is added, replaced or
   re-dated.
 - **The published manuscript's history.** The correction is its own delta on branch
