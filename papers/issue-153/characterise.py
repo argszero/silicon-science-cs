@@ -21,10 +21,13 @@ R2  The deployed rule is always the maximum-fan-in choice: "largest overlap" and
     of any legal merge while doing so.
 
 R3  No bounded lookahead repairs the rule. For a policy that minimises
-    paid + OptW(next state, w), the minimal exact horizon is w* = T - K - 1 in every
-    cell measured, i.e. it grows with the trace: exactness needs the whole remaining
-    trace after the first forced merge (which is at index K). Shorter horizons lose,
-    and w = 1 is worse than w = 0 -- a little lookahead hurts.
+    paid + OptW(next state, w), the minimal exact horizon is w* = T - 1 - i_first,
+    where i_first is the earliest flush at which more than one legal merge exists,
+    i.e. it grows with the trace: exactness needs the whole remaining trace after the
+    first genuine choice. Shorter horizons lose, and w = 1 is worse than w = 0 -- a
+    little lookahead hurts. When no choice ever exists (K = 2) i_first is undefined
+    and w* = 0: the rule is forced, and the claim fails there. That condition is part
+    of the result, not a detail -- lemma.py's adversarial cells found it.
 
 Also counted, because it changes the paper's claim: the cheapest-overlap rule (w = 0)
 loses fewer traces than the deployed largest-overlap rule in every enumerated cell.
@@ -112,7 +115,8 @@ class Analyser:
                 y=1 if info[rule]["ch"] > info[best]["ch"] else 0,
                 fanin_gap=info[rule]["n"] - max(info[rr]["n"] for rr in cand),
                 paid_gap=info[rule]["paid"] - min(info[rr]["paid"] for rr in cand),
-                gap=info[rule]["ch"] - info[best]["ch"]))
+                gap=info[rule]["ch"] - info[best]["ch"],
+                n_cand=len(cand)))
             self.states.append((runs2, live2, self.trace[i], self.decisions[-1]["y"]))
             runs, _, _ = self.merge(runs2, rule, live2)
             total += info[rule]["paid"]
@@ -194,6 +198,18 @@ def run_policy(trace, R, K, w):
     return total, dp_optimum(trace, R, K)
 
 
+def first_choice_index(R, K, T):
+    """Earliest flush index at which more than one legal merge exists, else None."""
+    best = None
+    for tr in itertools.product(range(R), repeat=T):
+        a = Analyser(tr, R, K)
+        a.run()
+        for d in a.decisions:
+            if d["n_cand"] > 1 and (best is None or d["i"] < best):
+                best = d["i"]
+    return best
+
+
 def losses(R, K, T, w):
     traces = list(itertools.product(range(R), repeat=T))
     n = 0
@@ -249,13 +265,18 @@ def main():
     check("no function of the visible state decides the rule", len(both) > 0,
           "%d states refute locality" % len(both))
 
-    print("=== R3  no bounded lookahead is exact; w* = T - K - 1 ===")
-    cells = [(3, 3, 5), (3, 3, 6), (3, 3, 7), (3, 3, 8), (3, 3, 9),
-             (4, 3, 5), (4, 3, 6), (4, 3, 7), (3, 4, 5), (3, 4, 6), (3, 4, 7)]
-    anti_better = []
+    print("=== R3  w* = T - 1 - i_first, where i_first is the first flush with a choice ===")
+    print("    (K=2 cells included on purpose: there no choice ever exists, i_first is")
+    print("     undefined and w* = 0 -- so 'no bounded window is exact' is FALSE for K=2,")
+    print("     and the bare formula T-K-1 would have stated a false universal)")
+    cells = [(3, 2, 5), (3, 2, 6), (4, 2, 5),
+             (3, 3, 5), (3, 3, 6), (3, 3, 7), (3, 3, 8), (3, 3, 9),
+             (4, 3, 5), (4, 3, 6), (4, 3, 7), (3, 4, 5), (3, 4, 6), (3, 4, 7), (3, 5, 6)]
+    anti_better, anti_worse, ties = [], [], []
     for (R, K, T) in cells:
         dep_l, n, dep_worst = losses(R, K, T, None)
-        star = T - K - 1
+        i_first = first_choice_index(R, K, T)
+        star = 0 if i_first is None else T - 1 - i_first
         l_less, less_txt = None, "no shorter horizon exists (w*=0)"
         if star >= 1:
             l_less = losses(R, K, T, star - 1)[0]
@@ -267,15 +288,23 @@ def main():
               " | %s | w*=%d %d" %
               (R, K, T, n, 100.0 * dep_l / n, dep_worst, 100.0 * l_zero / n, zero_worst,
                less_txt, star, l_star))
-        check("w* = T-K-1 is exact (R=%d K=%d T=%d)" % (R, K, T), l_star == 0, "0 losses")
+        check("w* is exact (R=%d K=%d T=%d)" % (R, K, T), l_star == 0,
+              "w*=%d (i_first=%s)" % (star, i_first))
         if star >= 1:
             check("w* - 1 is not exact (R=%d K=%d T=%d)" % (R, K, T), l_less > 0,
                   "%d losses" % l_less)
+        if i_first is None:
+            check("K=2: the rule is forced, so no lookahead is needed (R=%d T=%d)" % (R, T),
+                  star == 0 and T - K - 1 > 0, "w*=0 while T-K-1=%d" % (T - K - 1))
         if l_zero < dep_l:
             anti_better.append((R, K, T))
             print("           cheapest-overlap better here: %d vs %d traces" % (l_zero, dep_l))
-        else:
+        elif l_zero > dep_l:
+            anti_worse.append((R, K, T))
             print("           cheapest-overlap WORSE here: %d vs %d traces" % (l_zero, dep_l))
+        else:
+            ties.append((R, K, T))
+            print("           exact tie: both rules lose %d traces" % l_zero)
         if T == 7 and R == 3 and K == 3:
             check("a lookahead of 1 is worse than none", l_one > dep_l,
                   "%d vs %d traces" % (l_one, dep_l))
@@ -283,12 +312,19 @@ def main():
     print()
     print("CELLS: %d enumerated, %d traces, no sampling" % (len(cells), sum(
         3 ** T if R == 3 else 4 ** T for (R, K, T) in cells)))
-    print("cheapest-overlap rule better in %d of %d cells" % (len(anti_better), len(cells)))
-    # asserted as the measured value, exception named: the ordering of the two simple rules
-    # depends on the cell, so a universal claim would be false (R=3 K=4 T=6 is the exception)
-    check("cheapest-overlap better in exactly 10 of 11 cells", len(anti_better) == 10,
-          "exception: %s" % ", ".join("R=%d K=%d T=%d" % c for c in
-                                      [c for c in cells if c not in anti_better]))
+    choice_cells = [c for c in cells if c[1] > 2]
+    print("cheapest-overlap: better in %d cells, worse in %d, exact tie in %d"
+          % (len(anti_better), len(anti_worse), len(ties)))
+    # A tie is expected exactly where no choice exists: with K = 2 the legal merge set is a
+    # singleton, so every rule makes the same move and no rule can differ from any other.
+    check("every K=2 cell is an exact tie between the two rules", len(ties) == 3,
+          "%d ties, all K=2: %s" % (len(ties), all(c[1] == 2 for c in ties)))
+    # Among cells where a genuine choice exists the ordering is measured, exception named:
+    # a universal "the anti-rule always wins" would be false.
+    check("among the %d choice cells the anti-rule wins %d and loses %d"
+          % (len(choice_cells), len(anti_better), len(anti_worse)),
+          len(anti_better) == 11 and len(anti_worse) == 1,
+          "exception: %s" % ", ".join("R=%d K=%d T=%d" % c for c in anti_worse))
     if fails:
         print("CHARACTERISATION: %d CHECK(S) FAILED: %s" % (len(fails), ", ".join(fails)))
         return 1
