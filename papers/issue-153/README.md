@@ -1,0 +1,69 @@
+# Issue #153 — reproduction
+
+**One command, offline, deterministic:**
+
+```sh
+./reproduce.sh
+```
+
+**Expected final line:** `REPRODUCE: ALL GREEN (7 steps)`. **Exit status:** the number of failed
+steps (0 on success) — failures accumulate, so no later step can mask an earlier one. Requires
+CPython 3.8+ and nothing outside the standard library; the default interpreter is
+`/usr/bin/python3` and can be overridden with `PY=...`.
+
+**Tolerance:** none. Every step is exhaustive enumeration with no sampling and no random seeds,
+so the outputs are exact counts and are expected to be reproduced byte-for-byte. The one
+byte-comparison the script relies on is that `place_refs.py --render-only` regenerates
+`reference-check.md` from `placement.json` identically.
+
+## What each step establishes
+
+| step | program | establishes |
+|---|---|---|
+| 1 | `certificate.py` | the dynamic program used as the optimum agrees with an independently written brute-force traversal on every instance of six cells (9008 of 9008) |
+| 2 | `characterise.py` | per-cell losses and worst excess, the horizon `w*`, and the cheapest-overlap control in every cell |
+| 3 | `lemma.py` | the non-locality proposition, with a two-trace witness checkable by hand |
+| 4 | `lemma_scale.py` | the falsifier over larger cells, the `K=2` no-choice control, and the exact rule in `w*=0` cells (both directions asserted) |
+| 5 | `emit_results.py` | `results.json` — every number the manuscript states, emitted by the programs above |
+| 6 | `make_manuscript.py` | `manuscript.md` from `manuscript_prose.md` + `results.json` + `placement.json` |
+| 7 | `check_reference_report.sh` | `reference-check.md` regenerates byte-identically from the stored verification state |
+
+Step 6 is a gate, not a convenience. Every figure in the manuscript is a `{{n:key}}` marker
+resolved from `results.json`; after substitution the generator scans the body for multi-digit
+numbers and refuses to write the paper if it finds one it cannot bind to an artifact. A figure
+typed into the prose therefore fails the build instead of reaching the paper. The scan ignores
+section numbers, `code`-spanned identifiers and traces, and four-digit years.
+
+## Files
+
+| file | role |
+|---|---|
+| `manuscript_prose.md` | the prose, with markers — this is what a human edits |
+| `manuscript.md` | generated; do not hand-edit, it is overwritten by step 6 |
+| `results.json` | every stated number, emitted by step 5 |
+| `pool.json` | the harvested reference pool **with its search form** (registry, field, queries, window, scan date, screening word sets) |
+| `screen_tally.txt` | the harvest screen: rows fetched, kept, and every rejection counted by reason |
+| `placement.json` | stored Crossref verification state + the section and claim each placed entry supports |
+| `placement_pruned.json` | entries pruned at placement, each with its reason |
+| `reference-check.md` | generated authenticity report: one line per placed reference with the record Crossref returned |
+| `comparison_set.md` | the works read in full, with what each bounds, its adversary, what it does not model, and the specific difference |
+
+## What needs network (and is therefore not in `reproduce.sh`)
+
+Refreshing the pool is a separate, explicitly-network step:
+
+```sh
+/usr/bin/python3 build_refs.py      # Crossref harvest + screen  -> pool.json, screen_tally.txt
+/usr/bin/python3 place_refs.py      # Crossref verification + placement -> placement.json, reference-check.md
+```
+
+Reproduction of the committed figures needs neither: `place_refs.py --render-only` rebuilds
+`reference-check.md` from the stored verification state, and step 6 exercises it. If the network
+step is re-run on a later date, `pool.json`'s recorded `scan_date` and window move with it, and
+`reference-check.md` will record the new date rather than the old one.
+
+## Scope
+
+The model is `K` capacity slots over `R` key ranges with run sizes frozen at creation; it is not
+a deployment and replays no production trace. See the manuscript's §2.2 for how the modelled
+rule corresponds to leveled compaction and §5 for what the results do not cover.

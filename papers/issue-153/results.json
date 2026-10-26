@@ -1,0 +1,461 @@
+{
+ "anti_choice_cells": 14,
+ "anti_exception": [
+  {
+   "K": 4,
+   "R": 3,
+   "T": 6,
+   "anti": 270,
+   "deployed": 180
+  },
+  {
+   "K": 4,
+   "R": 4,
+   "T": 6,
+   "anti": 840,
+   "deployed": 720
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 7,
+   "anti": 900,
+   "deployed": 360
+  }
+ ],
+ "anti_loses": 3,
+ "anti_ties": 0,
+ "anti_wins": 11,
+ "cells": [
+  {
+   "K": 2,
+   "R": 3,
+   "T": 5,
+   "anti_loss": 0,
+   "greedy_loss": 0,
+   "greedy_worst": 1.0,
+   "i_first": null,
+   "refuting": 0,
+   "sharp": 0,
+   "states": 66,
+   "traces": 243,
+   "wstar": 0
+  },
+  {
+   "K": 2,
+   "R": 3,
+   "T": 6,
+   "anti_loss": 0,
+   "greedy_loss": 0,
+   "greedy_worst": 1.0,
+   "i_first": null,
+   "refuting": 0,
+   "sharp": 0,
+   "states": 108,
+   "traces": 729,
+   "wstar": 0
+  },
+  {
+   "K": 2,
+   "R": 4,
+   "T": 5,
+   "anti_loss": 0,
+   "greedy_loss": 0,
+   "greedy_worst": 1.0,
+   "i_first": null,
+   "refuting": 0,
+   "sharp": 0,
+   "states": 156,
+   "traces": 1024,
+   "wstar": 0
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 5,
+   "anti_loss": 18,
+   "greedy_loss": 36,
+   "greedy_worst": 1.5,
+   "i_first": 3,
+   "refuting": 6,
+   "sharp": 6,
+   "states": 48,
+   "traces": 243,
+   "wstar": 1
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 6,
+   "anti_loss": 54,
+   "greedy_loss": 102,
+   "greedy_worst": 1.6666666666666667,
+   "i_first": 3,
+   "refuting": 9,
+   "sharp": 9,
+   "states": 102,
+   "traces": 729,
+   "wstar": 2
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 7,
+   "anti_loss": 228,
+   "greedy_loss": 312,
+   "greedy_worst": 1.6,
+   "i_first": 3,
+   "refuting": 21,
+   "sharp": 21,
+   "states": 195,
+   "traces": 2187,
+   "wstar": 3
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 8,
+   "anti_loss": 702,
+   "greedy_loss": 822,
+   "greedy_worst": 1.6666666666666667,
+   "i_first": 3,
+   "refuting": 39,
+   "sharp": 39,
+   "states": 303,
+   "traces": 6561,
+   "wstar": 4
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 5,
+   "anti_loss": 36,
+   "greedy_loss": 72,
+   "greedy_worst": 1.5,
+   "i_first": 3,
+   "refuting": 12,
+   "sharp": 12,
+   "states": 140,
+   "traces": 1024,
+   "wstar": 1
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 6,
+   "anti_loss": 144,
+   "greedy_loss": 240,
+   "greedy_worst": 1.6666666666666667,
+   "i_first": 3,
+   "refuting": 18,
+   "sharp": 18,
+   "states": 324,
+   "traces": 4096,
+   "wstar": 2
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 7,
+   "anti_loss": 708,
+   "greedy_loss": 876,
+   "greedy_worst": 1.6,
+   "i_first": 3,
+   "refuting": 42,
+   "sharp": 42,
+   "states": 644,
+   "traces": 16384,
+   "wstar": 3
+  },
+  {
+   "K": 4,
+   "R": 3,
+   "T": 6,
+   "anti_loss": 270,
+   "greedy_loss": 180,
+   "greedy_worst": 1.5,
+   "i_first": 4,
+   "refuting": 9,
+   "sharp": 9,
+   "states": 54,
+   "traces": 729,
+   "wstar": 1
+  },
+  {
+   "K": 4,
+   "R": 3,
+   "T": 7,
+   "anti_loss": 630,
+   "greedy_loss": 1260,
+   "greedy_worst": 2.0,
+   "i_first": 4,
+   "refuting": 27,
+   "sharp": 27,
+   "states": 120,
+   "traces": 2187,
+   "wstar": 2
+  },
+  {
+   "K": 4,
+   "R": 4,
+   "T": 6,
+   "anti_loss": 840,
+   "greedy_loss": 720,
+   "greedy_worst": 1.5,
+   "i_first": 4,
+   "refuting": 36,
+   "sharp": 36,
+   "states": 204,
+   "traces": 4096,
+   "wstar": 1
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 6,
+   "anti_loss": 0,
+   "greedy_loss": 450,
+   "greedy_worst": 3.3333333333333335,
+   "i_first": 5,
+   "refuting": 0,
+   "sharp": 0,
+   "states": 63,
+   "traces": 729,
+   "wstar": 0
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 7,
+   "anti_loss": 900,
+   "greedy_loss": 360,
+   "greedy_worst": 1.5,
+   "i_first": 5,
+   "refuting": 12,
+   "sharp": 12,
+   "states": 66,
+   "traces": 2187,
+   "wstar": 1
+  },
+  {
+   "K": 3,
+   "R": 5,
+   "T": 5,
+   "anti_loss": 60,
+   "greedy_loss": 120,
+   "greedy_worst": 1.5,
+   "i_first": 3,
+   "refuting": 20,
+   "sharp": 20,
+   "states": 315,
+   "traces": 3125,
+   "wstar": 1
+  },
+  {
+   "K": 3,
+   "R": 5,
+   "T": 6,
+   "anti_loss": 300,
+   "greedy_loss": 460,
+   "greedy_worst": 1.6666666666666667,
+   "i_first": 3,
+   "refuting": 30,
+   "sharp": 30,
+   "states": 780,
+   "traces": 15625,
+   "wstar": 2
+  }
+ ],
+ "cells_at_max_worst": [
+  {
+   "K": 5,
+   "R": 3,
+   "T": 6
+  }
+ ],
+ "certificate": {
+  "cells": 6,
+  "cells_list": [
+   {
+    "K": 2,
+    "R": 3,
+    "T": 5
+   },
+   {
+    "K": 2,
+    "R": 3,
+    "T": 6
+   },
+   {
+    "K": 3,
+    "R": 3,
+    "T": 6
+   },
+   {
+    "K": 2,
+    "R": 4,
+    "T": 5
+   },
+   {
+    "K": 3,
+    "R": 3,
+    "T": 7
+   },
+   {
+    "K": 2,
+    "R": 4,
+    "T": 6
+   }
+  ],
+  "instances": 9008
+ },
+ "control": {
+  "exact_loss": 0,
+  "exact_traces": 729,
+  "refuting_loss": 54,
+  "refuting_traces": 729
+ },
+ "decisions": {
+  "decisions": 1863,
+  "fanin_gap_max": 0,
+  "paid_gap_min": 0,
+  "suboptimal": 138
+ },
+ "k2_ties": [
+  {
+   "K": 2,
+   "R": 3,
+   "T": 5
+  },
+  {
+   "K": 2,
+   "R": 3,
+   "T": 6
+  },
+  {
+   "K": 2,
+   "R": 4,
+   "T": 5
+  }
+ ],
+ "lookahead_worse": {
+  "K": 3,
+  "R": 3,
+  "T": 7,
+  "deployed_loss": 312,
+  "w0_loss": 228,
+  "w1_loss": 324
+ },
+ "max_worst": 3.3333333333333335,
+ "n_cells": 17,
+ "n_refuting_total": 281,
+ "n_states_total": 3688,
+ "n_traces_total": 61898,
+ "priors": {
+  "p2_threshold": 1.3,
+  "source": "issue #153 registration ('worst-case ratio >1.3x')"
+ },
+ "proposition": {
+  "K": 3,
+  "R": 3,
+  "T": 6,
+  "refuting": 9,
+  "states": 102
+ },
+ "refuted_cells": [
+  {
+   "K": 3,
+   "R": 3,
+   "T": 5
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 6
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 7
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 8
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 5
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 6
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 7
+  },
+  {
+   "K": 4,
+   "R": 3,
+   "T": 6
+  },
+  {
+   "K": 4,
+   "R": 3,
+   "T": 7
+  },
+  {
+   "K": 4,
+   "R": 4,
+   "T": 6
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 7
+  },
+  {
+   "K": 3,
+   "R": 5,
+   "T": 5
+  },
+  {
+   "K": 3,
+   "R": 5,
+   "T": 6
+  }
+ ],
+ "scan_date": "2026-10-27",
+ "unrefuted_cells": [
+  {
+   "K": 2,
+   "R": 3,
+   "T": 5,
+   "wstar": 0
+  },
+  {
+   "K": 2,
+   "R": 3,
+   "T": 6,
+   "wstar": 0
+  },
+  {
+   "K": 2,
+   "R": 4,
+   "T": 5,
+   "wstar": 0
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 6,
+   "wstar": 0
+  }
+ ],
+ "wstar_eq0_cells": 4,
+ "wstar_ge1_cells": 13
+}
