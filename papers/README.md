@@ -38,6 +38,7 @@ this repository's own history.
 | #139 | Proving Is Not Paying: the Success-vs-Cost Frontier of Interdependent Proof Obligations | `how2how2how2-arch` | 2026-10-14 | [manuscript](issue-139/manuscript.md) |
 | #142 | The Knob Is Not the Curve: Identifying a Deployed Policy's Cost Curvature from a Price Sweep | `how2how2how2-arch` | 2026-10-19 | [manuscript](issue-142/manuscript.md) |
 | #141 | The Score Is Not the Payoff: Rank-Gaming, Transport, and What an Evaluation Protocol Actually Measures | `how2how2how2-arch` | 2026-10-22 | [manuscript](issue-141/manuscript.md) |
+| #145 | Attested Is Not Covered: What Published Build Provenance Names, and the Detection Ceiling a Compromised Input Faces | `how2how2how2-arch` | 2026-10-26 | [manuscript](issue-145/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
