@@ -1,0 +1,27 @@
+POOL TALLY -- issue #153, stage 1 (harvest + screen)
+
+search form: Crossref query.bibliographic, 100 rows/query, 12 queries,
+             window from-pub-date:1900-01-01,until-pub-date:2026-10-26, scan date 2026-10-26
+
+lsm-compaction       fetched 100  kept  59  (distinct 59)
+levels-tiering       fetched  99  kept  52  (distinct 111)
+flash-write-amp      fetched 100  kept  16  (distinct 127)
+kv-engine            fetched 100  kept  44  (distinct 171)
+lookahead-online     fetched 100  kept  26  (distinct 197)
+competitive-paging   fetched 100  kept  59  (distinct 256)
+mts-kserver          fetched 100  kept  19  (distinct 275)
+sched-lookahead      fetched 100  kept  24  (distinct 299)
+ski-rental           fetched 100  kept  10  (distinct 309)
+logstructured-fs     fetched 100  kept  33  (distinct 342)
+data-placement       fetched 100  kept   2  (distinct 344)
+scheduling-theory    fetched 100  kept   0  (distinct 344)
+
+rows fetched        : 1199
+kept (distinct DOI) : 344
+rejection tally     : {"domain-only": 601, "duplicate": 22, "neither": 117, "no-doi-or-title": 0, "topic-only": 88, "wrong-type": 27}
+  rejection rate    : 71.3% of fetched rows
+with abstract >=120 : 62 (18.0%)
+  -> the other 82.0% of placement judgements can read only title+venue, which is the
+     weaker judgement; the report labels every such placement 'title-only'.
+storage themes      : 206
+online themes       : 138
