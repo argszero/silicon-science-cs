@@ -1,0 +1,2355 @@
+{
+ "counts": {
+  "corpus_entries": 210,
+  "excluded": 80,
+  "harvested": 118,
+  "kept": 130,
+  "verified": 12
+ },
+ "entries": [
+  {
+   "authors": [
+    "Abdalkareem, R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.4082606",
+   "key": "abdalkareem2022machinelearningapproach",
+   "method": "discover-crossref",
+   "query": "semver",
+   "title": "A Machine Learning Approach to Determine the Semantic Versioning Type of NPM Packages Releases",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.4082606",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Afshartous, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1198/000313008x271474",
+   "key": "afshartous2008samplesizedetermination",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "Sample Size Determination for Binomial Proportion Confidence Intervals",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1198/000313008x271474",
+   "venue": "The American Statistician",
+   "verified_against": "crossref-doi",
+   "year": 2008
+  },
+  {
+   "authors": [
+    "International Initiative for Impact Evaluation (3ie)",
+    "W Djimeu, E.",
+    "Houndolo, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.23846/wp0026",
+   "key": "anon2015powercalculationcausal",
+   "method": "discover-crossref",
+   "query": "sensitivity",
+   "title": "Power calculation for causal inference in social science: sample size and minimum detectable effect determination",
+   "type": "report",
+   "url": "https://doi.org/10.23846/wp0026",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Contributors to the Debian Med Blend",
+    "Kala\u0161, M.",
+    "Steinbiss, S.",
+    "Crusoe, M. R.",
+    "Tille, A.",
+    "M\u00f6ller, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.7490/f1000research.1114468.1",
+   "key": "anon2017workflowreadybioinformatics",
+   "method": "discover-crossref",
+   "query": "reprodnix",
+   "title": "Workflow-ready bioinformatics packages and Debian\u2019s infrastructure for low-friction reproducible research",
+   "type": "posted-content",
+   "url": "https://doi.org/10.7490/f1000research.1114468.1",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2017
+  },
+  {
+   "authors": [],
+   "authors_note": "no author in the registry record",
+   "doi": "10.1016/bs.hoe.2020.05.002",
+   "key": "anon2020microeconometricspartialidentification",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Microeconometrics with partial identification",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1016/bs.hoe.2020.05.002",
+   "venue": "Handbook of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2020
+  },
+  {
+   "authors": [
+    "Balayla, J."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/978-3-031-71452-8_13",
+   "key": "balayla2024gaussiandistributionconfidence",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "Gaussian Distribution, Confidence Intervals, Binomial (Wald) Proportion, Wilson Score Interval and Delta Theorem",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-3-031-71452-8_13",
+   "venue": "Theorems on the Prevalence Threshold and the Geometry of Scr",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Baltes, S.",
+    "Ralph, P."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s10664-021-10072-8",
+   "key": "baltes2022samplingsoftwareengineering",
+   "method": "discover-crossref",
+   "query": "sampling",
+   "title": "Sampling in software engineering research: a critical review and guidelines",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s10664-021-10072-8",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Bamidele Samuel Adelusi",
+    "Abel Chukwuemeke Uzoka",
+    "Yewande Goodness Hassan",
+    "Favour Uche Ojika"
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.32628/ijsrce237314",
+   "key": "bamidelesamueladelusi2023blockchainintegratedsoftware",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "Blockchain-Integrated Software Bill of Materials (SBOM) for Real-Time Vulnerability Detection in Decentralized Package Repositories",
+   "type": "journal-article",
+   "url": "https://doi.org/10.32628/ijsrce237314",
+   "venue": "International Journal of Scientific Research in Civil Engine",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Bar-Hillel, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.21236/ada045772",
+   "key": "base_rate_fallacy",
+   "method": "crossref",
+   "query": "",
+   "title": "The Base-Rate Fallacy in Probability Judgments",
+   "type": "report",
+   "url": "https://doi.org/10.21236/ada045772",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 1977
+  },
+  {
+   "authors": [
+    "Beninger, M.",
+    "Charland, P.",
+    "Ding, S. H. H.",
+    "Fung, B. C. M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.23919/cycon62501.2024.10685598",
+   "key": "beninger2024ers0enhancingmilitary",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "ERS0: Enhancing Military Cybersecurity with AI-Driven SBOM for Firmware Vulnerability Detection and Asset Management",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.23919/cycon62501.2024.10685598",
+   "venue": "2024 16th International Conference on Cyber Conflict: Over t",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Beresteanu, A.",
+    "Molchanov, I.",
+    "Molinari, F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jeconom.2011.06.003",
+   "key": "beresteanu2012partialidentificationrandom",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Partial identification using random set theory",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jeconom.2011.06.003",
+   "venue": "Journal of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2012
+  },
+  {
+   "authors": [
+    "Berry, M.",
+    "Jeffery, R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1023/a:1026534430984",
+   "key": "berry2000instrumentassessingsoftware",
+   "method": "discover-crossref",
+   "query": "measurement",
+   "title": "An Instrument for Assessing Software Measurement Programs",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1023/a:1026534430984",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2000
+  },
+  {
+   "authors": [
+    "Bommarito, E.",
+    "Bommarito, M. J."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.3426281",
+   "key": "bommarito2019empiricalanalysispython",
+   "method": "discover-crossref",
+   "query": "pypi",
+   "title": "An Empirical Analysis of the Python Package Index (PyPI)",
+   "type": "journal-article",
+   "url": "https://doi.org/10.2139/ssrn.3426281",
+   "venue": "SSRN Electronic Journal",
+   "verified_against": "crossref-doi",
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Brooks, A.",
+    "Chambers, J.",
+    "Lee, C. N.",
+    "Mead, F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/reser.2013.7",
+   "key": "brooks2013partialreplicationsample",
+   "method": "discover-crossref",
+   "query": "replication",
+   "title": "A Partial Replication with a Sample Size of One: A Smoke Test for Empirical Software Engineering",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/reser.2013.7",
+   "venue": "2013 3rd International Workshop on Replication in Empirical",
+   "verified_against": "crossref-doi",
+   "year": 2013
+  },
+  {
+   "authors": [
+    "Brydges, C."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.31234/osf.io/u2jbm",
+   "key": "brydges2019effectsizeinterpretation",
+   "method": "discover-crossref",
+   "query": "sensitivity",
+   "title": "Effect Size Interpretation, Sample Size Calculation, and Statistical Power in Gerontology",
+   "type": "posted-content",
+   "url": "https://doi.org/10.31234/osf.io/u2jbm",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Buneman, P.",
+    "Khanna, S.",
+    "Wang-Chiew, T."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/3-540-44503-x_20",
+   "key": "buneman2001why",
+   "method": "crossref",
+   "query": "",
+   "title": "Why and Where: A Characterization of Data Provenance",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/3-540-44503-x_20",
+   "venue": "Lecture Notes in Computer Science",
+   "verified_against": "crossref-doi",
+   "year": 2001
+  },
+  {
+   "authors": [
+    "Cesarano, C.",
+    "Andersson, V.",
+    "Natella, R.",
+    "Monperrus, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3689944.3696166",
+   "key": "cesarano2023gosurfidentifyingsoftware",
+   "method": "discover-crossref",
+   "query": "supplychain",
+   "title": "GoSurf: Identifying Software Supply Chain Attack Vectors in Go",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3689944.3696166",
+   "venue": "Proceedings of the 2024 Workshop on Software Supply Chain Of",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Chen, B."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3689944.3696350",
+   "key": "chen2023runtimeverificationsoftware",
+   "method": "discover-crossref",
+   "query": "supplychain",
+   "title": "Runtime Verification for Software Supply Chain Security using Confidential Computing",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3689944.3696350",
+   "venue": "Proceedings of the 2024 Workshop on Software Supply Chain Of",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Cheney, J.",
+    "Chiticariu, L.",
+    "Tan, W."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1561/9781601982339",
+   "key": "cheney2009provenance",
+   "method": "crossref",
+   "query": "",
+   "title": "Provenance in Databases: Why, How, and Where",
+   "type": "monograph",
+   "url": "https://doi.org/10.1561/9781601982339",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2007
+  },
+  {
+   "authors": [
+    "Chodorowski, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.35784/jcsi.2460",
+   "key": "chodorowski2021comparativeanalysisjavascript",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "Comparative analysis of JavaScript package managers - yarn and npm",
+   "type": "journal-article",
+   "url": "https://doi.org/10.35784/jcsi.2460",
+   "venue": "Journal of Computer Sciences Institute",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Chowdhury, M. A. R.",
+    "Abdalkareem, R.",
+    "Shihab, E.",
+    "Adams, B."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/tse.2021.3068901",
+   "key": "chowdhury2022untrivialitytrivialpackages",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "On the Untriviality of Trivial Packages: An Empirical Study of npm JavaScript Packages",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/tse.2021.3068901",
+   "venue": "IEEE Transactions on Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Cogo, F. R.",
+    "Oliva, G. A.",
+    "Hassan, A. E."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/tse.2019.2952130",
+   "key": "cogo2021empiricalstudydependency",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "An Empirical Study of Dependency Downgrades in the npm Ecosystem",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/tse.2019.2952130",
+   "venue": "IEEE Transactions on Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Cogo, F. R.",
+    "Oliva, G. A.",
+    "Bezemer, C.",
+    "Hassan, A. E."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s10664-021-09980-6",
+   "key": "cogo2021empiricalstudysame",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "An empirical study of same-day releases of popular packages in the npm ecosystem",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s10664-021-09980-6",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Cronbach, L. J.",
+    "Meehl, P. E."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1037/h0040957",
+   "key": "cronbach1955construct",
+   "method": "crossref",
+   "query": "",
+   "title": "Construct validity in psychological tests.",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1037/h0040957",
+   "venue": "Psychological Bulletin",
+   "verified_against": "crossref-doi",
+   "year": 1955
+  },
+  {
+   "authors": [
+    "Dalgaard, M. K.",
+    "Christensen, A.",
+    "Kjeldsen, M. K."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1192/j.eurpsy.2023.1139",
+   "key": "dalgaard2023whatminimaldetectable",
+   "method": "discover-crossref",
+   "query": "sensitivity",
+   "title": "What minimal detectable effect size is in your power \u2013 An inverted sample size formular for survival data",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1192/j.eurpsy.2023.1139",
+   "venue": "European Psychiatry",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Dalia, G.",
+    "Sgueglia, A.",
+    "Coppolaro, M.",
+    "Di Sorbo, A.",
+    "Visaggio, C. A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.5362510",
+   "key": "dalia2025cometogethersbom",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "Come Together: Sbom-Enhanced Vulnerability Assessment in Safety-Critical Systems",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.5362510",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Decan, A.",
+    "Mens, T.",
+    "Claes, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/saner.2017.7884604",
+   "key": "decan2019evolution",
+   "method": "crossref",
+   "query": "",
+   "title": "An empirical comparison of dependency issues in OSS packaging ecosystems",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/saner.2017.7884604",
+   "venue": "2017 IEEE 24th International Conference on Software Analysis, Evolution and Reengineering (SANER)",
+   "verified_against": "crossref-doi",
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Decan, A.",
+    "Mens, T."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/tse.2019.2918315",
+   "key": "decan2021whatpackagedependencies",
+   "method": "discover-crossref",
+   "query": "semver",
+   "title": "What Do Package Dependencies Tell Us About Semantic Versioning?",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/tse.2019.2918315",
+   "venue": "IEEE Transactions on Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "de Mello, R. M.",
+    "da Silva, P. C.",
+    "Travassos, G. H."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/2652524.2652566",
+   "key": "demello2014samplingimprovementsoftware",
+   "method": "discover-crossref",
+   "query": "sampling",
+   "title": "Sampling improvement in software engineering surveys",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/2652524.2652566",
+   "venue": "Proceedings of the 8th ACM/IEEE International Symposium on E",
+   "verified_against": "crossref-doi",
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Dias, E.",
+    "Meirelles, P.",
+    "Castor, F.",
+    "Steinmacher, I.",
+    "Wiese, I.",
+    "Pinto, G."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/icse43902.2021.00093",
+   "key": "dias2021whatmakesgreat",
+   "method": "discover-crossref",
+   "query": "maintainer",
+   "title": "What Makes a Great Maintainer of Open Source Projects?",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/icse43902.2021.00093",
+   "venue": "2021 IEEE/ACM 43rd International Conference on Software Engi",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Draz, M. M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1038/s41598-026-71750-5",
+   "key": "draz2026versioncontextcontrol",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Version context and control construction in machine learning detection of malicious package updates across npm and PyPI",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/s41598-026-71750-5",
+   "venue": "Scientific Reports",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Fan, Y.",
+    "Liu, R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jeconom.2018.04.002",
+   "key": "fan2018partialidentificationinference",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Partial identification and inference in censored quantile regression",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jeconom.2018.04.002",
+   "venue": "Journal of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2018
+  },
+  {
+   "authors": [
+    "Gandhi, M.",
+    "Patel, M.",
+    "Bhadra, H.",
+    "Verma, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/incowoco64194.2024.10863220",
+   "key": "gandhi2024automateddetectionmitigation",
+   "method": "discover-crossref",
+   "query": "typosquat",
+   "title": "Automated Detection and Mitigation of Malicious Packages in the PyPI Ecosystem and .exe Files: PyGuardEX",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/incowoco64194.2024.10863220",
+   "venue": "2024 First International Conference for Women in Computing (",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Gao, Y.",
+    "Wu, H.",
+    "Luo, Y.",
+    "Shi, P.",
+    "Shao, W.",
+    "Cao, J."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.3390/math14142593",
+   "key": "gao2026llmenhancedevolutionary",
+   "method": "discover-crossref",
+   "query": "vulnprop",
+   "title": "LLM-Enhanced Evolutionary Dependency Graphs: A System Approach to Precise Vulnerability Propagation Tracking",
+   "type": "journal-article",
+   "url": "https://doi.org/10.3390/math14142593",
+   "venue": "Mathematics",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Garthwaite, P. H.",
+    "Moustafa, M. W.",
+    "Elfadaly, F. G."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1111/sjos.12672",
+   "key": "garthwaite2023locallycorrectconfidence",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "Locally correct confidence intervals for a binomial proportion: A new criteria for an interval estimator",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1111/sjos.12672",
+   "venue": "Scandinavian Journal of Statistics",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Ghanshyambhai Patel, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.56975/ijrti.v10i7.205129",
+   "key": "ghanshyambhaipatel2025softwaresupplychain",
+   "method": "discover-crossref",
+   "query": "slsa",
+   "title": "Software Supply Chain Security: Implementing SLSA Compliance in CI/CD Pipelines",
+   "type": "journal-article",
+   "url": "https://doi.org/10.56975/ijrti.v10i7.205129",
+   "venue": "International Journal for Research Trends and Innovation",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Gibb, R.",
+    "Ferris, P.",
+    "Allsopp, D.",
+    "Dales, M.",
+    "Elvers, M.",
+    "Gazagnaire, T.",
+    "Jaffer, S.",
+    "Leonard, T.",
+    "Ludlam, J.",
+    "Madhavapeddy, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.59350/nrbbt-e7k85",
+   "key": "gibb2025solvingpackagemanagement",
+   "method": "discover-crossref",
+   "query": "deps",
+   "title": "Solving Package Management via Hypergraph Dependency Resolution",
+   "type": "posted-content",
+   "url": "https://doi.org/10.59350/nrbbt-e7k85",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Gibb, R. T."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.59350/rk9s4-43g76",
+   "key": "gibb2026packagemanagerscarte",
+   "method": "discover-crossref",
+   "query": "deps",
+   "title": "Package managers \u00e0 la carte: A Formal Model of Dependency Resolution",
+   "type": "posted-content",
+   "url": "https://doi.org/10.59350/rk9s4-43g76",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Godfrey, M. W."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.scico.2013.11.021",
+   "key": "godfrey2015understandingsoftwareartifact",
+   "method": "discover-crossref",
+   "query": "attestbuild",
+   "title": "Understanding software artifact provenance",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.scico.2013.11.021",
+   "venue": "Science of Computer Programming",
+   "verified_against": "crossref-doi",
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Goncalves, C.",
+    "Sousa, B.",
+    "Antunes, N."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.23919/wmnc56391.2022.9954295",
+   "key": "goncalves2022oidctcioidc",
+   "method": "discover-crossref",
+   "query": "trustedpub",
+   "title": "OIDC-TCI: OIDC with Trust Context Information",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.23919/wmnc56391.2022.9954295",
+   "venue": "2022 14th IFIP Wireless and Mobile Networking Conference (WM",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Gonz\u00e1lez-Barahona, J. M.",
+    "Robles, G."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s10664-011-9181-9",
+   "key": "gonzlezbarahona2011reproducibilityempiricalsoftware",
+   "method": "discover-crossref",
+   "query": "replication",
+   "title": "On the reproducibility of empirical software engineering studies based on data retrieved from development repositories",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s10664-011-9181-9",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2011
+  },
+  {
+   "authors": [
+    "Goswami, R.",
+    "S., R.",
+    "Goswami, A.",
+    "Goswami, S.",
+    "Goswami, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.31219/osf.io/3fp2v",
+   "key": "goswami2024reproduciblehighperformance",
+   "method": "discover-crossref",
+   "query": "reprodnix",
+   "title": "Reproducible High Performance Computing without Redundancy with Nix",
+   "type": "posted-content",
+   "url": "https://doi.org/10.31219/osf.io/3fp2v",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Greenland, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1002/sim.4780040203",
+   "key": "greenland1985powersamplesize",
+   "method": "discover-crossref",
+   "query": "sensitivity",
+   "title": "Power, sample size and smallest detectable effect determination for multivariate studies",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1002/sim.4780040203",
+   "venue": "Statistics in Medicine",
+   "verified_against": "crossref-doi",
+   "year": 1985
+  },
+  {
+   "authors": [
+    "Guan, Y."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jspi.2011.09.010",
+   "key": "guan2012generalizedscoreconfidence",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "A generalized score confidence interval for a binomial proportion",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jspi.2011.09.010",
+   "venue": "Journal of Statistical Planning and Inference",
+   "verified_against": "crossref-doi",
+   "year": 2012
+  },
+  {
+   "authors": [
+    "Guo, W.",
+    "Xu, Z.",
+    "Liu, C.",
+    "Huang, C.",
+    "Fang, Y.",
+    "Liu, Y."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/ase56229.2023.00135",
+   "key": "guo2023empiricalstudymalicious",
+   "method": "discover-crossref",
+   "query": "pypi",
+   "title": "An Empirical Study of Malicious Code In PyPI Ecosystem",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/ase56229.2023.00135",
+   "venue": "2023 38th IEEE/ACM International Conference on Automated Sof",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Habtzghi, D.",
+    "Midha, C. K.",
+    "Das, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2991/jsta.2014.13.4.3",
+   "key": "habtzghi2014modifiedclopperpearson",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "Modified Clopper-Pearson Confidence Interval for Binomial Proportion",
+   "type": "journal-article",
+   "url": "https://doi.org/10.2991/jsta.2014.13.4.3",
+   "venue": "Journal of Statistical Theory and Applications",
+   "verified_against": "crossref-doi",
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Hendrick, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.70828/rytl5793",
+   "key": "hendrick2022softwarebillmaterials",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "Software Bill of Materials (SBOM) and Cybersecurity Readiness",
+   "type": "report",
+   "url": "https://doi.org/10.70828/rytl5793",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Hendrick, S.",
+    "Ramaswami, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.70828/pvsn3075",
+   "key": "hendrick2023maintainerperspectivesopen",
+   "method": "discover-crossref",
+   "query": "maintainer",
+   "title": "Maintainer Perspectives on Open Source Software Security: Survey-based Insights from Maintainers Regarding How They Address Best Practices for Secure Software Development",
+   "type": "report",
+   "url": "https://doi.org/10.70828/pvsn3075",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Hoess, N.",
+    "Paradis, C.",
+    "Kazman, R.",
+    "Mauerer, W."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/saner64311.2025.00067",
+   "key": "hoess2025doestoolmatter",
+   "method": "discover-crossref",
+   "query": "mining",
+   "title": "Does the Tool Matter? Exploring Some Causes of Threats to Validity in Mining Software Repositories",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/saner64311.2025.00067",
+   "venue": "2025 IEEE International Conference on Software Analysis, Evo",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Hong, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jeconom.2016.09.014",
+   "key": "hong2017inferencesemiparametricconditional",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Inference in semiparametric conditional moment models with partial identification",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jeconom.2016.09.014",
+   "venue": "Journal of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Hunter, K. B.",
+    "Miratrix, L.",
+    "Porter, K."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.18637/jss.v108.i06",
+   "key": "hunter2024pumpestimatingpower",
+   "method": "discover-crossref",
+   "query": "sensitivity",
+   "title": "<b>PUMP</b>: Estimating Power, Minimum Detectable Effect Size, and Sample Size When Adjusting for Multiple Outcomes in Multi-Level Experiments",
+   "type": "journal-article",
+   "url": "https://doi.org/10.18637/jss.v108.i06",
+   "venue": "Journal of Statistical Software",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Iqbal, T.",
+    "Wu, G.",
+    "Iqbal, Z.",
+    "Mahmood, M. B.",
+    "Shafique, A.",
+    "Guo, W."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jisa.2025.104032",
+   "key": "iqbal2025pypiguardnovelmeta",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "PypiGuard: A novel meta-learning approach for enhanced malicious package detection in PyPI through static-dynamic feature fusion",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jisa.2025.104032",
+   "venue": "Journal of Information Security and Applications",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Iqbal, T.",
+    "Wu, G.",
+    "Iqbal, Z.",
+    "Mahmood, M. B."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.infsof.2026.108129",
+   "key": "iqbal2026clampdnetcross",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "CLAMPD-Net: Cross-language malicious package detection across PyPI and NPM with multimodal fusion",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.infsof.2026.108129",
+   "venue": "Information and Software Technology",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Islam, S.",
+    "Nugroho, Y. S.",
+    "Shahrear, A.",
+    "Wahed, N.",
+    "Gunawan, D.",
+    "Pamungkas, E. W.",
+    "Kabir, M. H.",
+    "Kurniawan, Y. I."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.21203/rs.3.rs-2560509/v1",
+   "key": "islam2023empiricalstudynpm",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "An Empirical Study of npm Ecosystem Related Tweets by Core Software Developers: A Case Study",
+   "type": "posted-content",
+   "url": "https://doi.org/10.21203/rs.3.rs-2560509/v1",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Jang, D.",
+    "Jeon, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.7840/kics.2026.51.4.792",
+   "key": "jang2026machinelearningbased",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "A Machine Learning-Based Vulnerability Prediction System Using SBOM Metadata for Software Supply Chain Security",
+   "type": "journal-article",
+   "url": "https://doi.org/10.7840/kics.2026.51.4.792",
+   "venue": "The Journal of Korean Institute of Communications and Inform",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Jiang, W."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.ecosta.2017.03.006",
+   "key": "jiang2017limitingdistributionquasi",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "On limiting distribution of quasi-posteriors under partial identification",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.ecosta.2017.03.006",
+   "venue": "Econometrics and Statistics",
+   "verified_against": "crossref-doi",
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Jobu, R. A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.7233262",
+   "key": "jobu2026pypiguardlightweightexplainable",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "PyPIGuard: A Lightweight, Explainable Machine Learning Tool for Pre-Install Detection of Malicious PyPI Packages",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.7233262",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Juristo, N."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/esem.2013.64",
+   "key": "juristo2013understandingreplicationsoftware",
+   "method": "discover-crossref",
+   "query": "replication",
+   "title": "Towards understanding replication of software engineering experiments",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/esem.2013.64",
+   "venue": "2013 ACM / IEEE International Symposium on Empirical Softwar",
+   "verified_against": "crossref-doi",
+   "year": 2013
+  },
+  {
+   "authors": [
+    "Kawai, K.",
+    "Watarai, K.",
+    "Okada, S.",
+    "Mitsunaga, T."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/jcsse68839.2026.11597025",
+   "key": "kawai2026missionawaresbom",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "Mission-Aware SBOM Vulnerability Triage with KEV/EPSS and LLM-Based VEX Drafting",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/jcsse68839.2026.11597025",
+   "venue": "2026 23rd International Joint Conference on Computer Science",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Kerman, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.6028/nist.sp.1800-44",
+   "key": "kerman2025softwaresupplychain",
+   "method": "discover-crossref",
+   "query": "supplychain",
+   "title": "Software Supply Chain and DevOps Security Practices",
+   "type": "report",
+   "url": "https://doi.org/10.6028/nist.sp.1800-44",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Kikas, R.",
+    "Gousios, G.",
+    "Dumas, M.",
+    "Pfahl, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/msr.2017.55",
+   "key": "kikas2020structure",
+   "method": "crossref",
+   "query": "",
+   "title": "Structure and Evolution of Package Dependency Networks",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/msr.2017.55",
+   "venue": "2017 IEEE/ACM 14th International Conference on Mining Software Repositories (MSR)",
+   "verified_against": "crossref-doi",
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Kim, J.",
+    "Jang, W."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s42952-021-00143-3",
+   "key": "kim2021generalizedagresticoull",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "A generalized Agresti\u2013Coull type confidence interval for a binomial proportion",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s42952-021-00143-3",
+   "venue": "Journal of the Korean Statistical Society",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Kishimoto, R.",
+    "Kanda, T.",
+    "Manabe, Y.",
+    "Inoue, K.",
+    "Qiu, S.",
+    "Higo, Y."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/msr66628.2025.00090",
+   "key": "kishimoto2025datasetsoftwarebill",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "A Dataset of Software Bill of Materials for Evaluating SBOM Consumption Tools",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/msr66628.2025.00090",
+   "venue": "2025 IEEE/ACM 22nd International Conference on Mining Softwa",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Ladisa, P.",
+    "Ponta, S. E.",
+    "Ronzoni, N.",
+    "Martinez, M.",
+    "Barais, O."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3627106.3627138",
+   "key": "ladisa2023feasibilitycrosslanguage",
+   "method": "discover-crossref",
+   "query": "typosquat",
+   "title": "On the Feasibility of Cross-Language Detection of Malicious Packages in npm and PyPI",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3627106.3627138",
+   "venue": "Annual Computer Security Applications Conference",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Ladisa, P.",
+    "Plate, H.",
+    "Martinez, M.",
+    "Barais, O."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/sp46215.2023.10179304",
+   "key": "ladisa2023sok",
+   "method": "crossref",
+   "query": "",
+   "title": "SoK: Taxonomy of Attacks on Open-Source Software Supply Chains",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/sp46215.2023.10179304",
+   "venue": "2023 IEEE Symposium on Security and Privacy (SP)",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Lamb, C.",
+    "Zacchiroli, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/ms.2021.3073045",
+   "key": "lamb2022reproducible",
+   "method": "crossref",
+   "query": "",
+   "title": "Reproducible Builds: Increasing the Integrity of Software Supply Chains",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/ms.2021.3073045",
+   "venue": "IEEE Software",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Laurie, B.",
+    "Langley, A.",
+    "Kasper, E."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.17487/rfc6962",
+   "key": "laurie2014certificate",
+   "method": "crossref",
+   "query": "",
+   "title": "Certificate Transparency",
+   "type": "report",
+   "url": "https://doi.org/10.17487/rfc6962",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2013
+  },
+  {
+   "authors": [
+    "Lee, J.",
+    "Lee, Y.",
+    "Yoo, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.5762/kais.2025.26.4.268",
+   "key": "lee2025softwarebillmaterials",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "Software Bill of Materials(SBOM) Implementation and Evaluation of AI-based Digital Therapeutics",
+   "type": "journal-article",
+   "url": "https://doi.org/10.5762/kais.2025.26.4.268",
+   "venue": "Journal of the Korea Academia-Industrial cooperation Society",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Liang, W.",
+    "Ling, X.",
+    "Zhao, C.",
+    "Wu, J.",
+    "Luo, T.",
+    "Wu, Y."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/tse.2025.3618952",
+   "key": "liang2026detectingmaliciouspackages",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Detecting Malicious Packages in PyPI and NPM by Clustering Installation Scripts",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/tse.2025.3618952",
+   "venue": "IEEE Transactions on Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Lim, G.",
+    "Kim, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/access.2026.3743923",
+   "key": "lim2026bridgingregistryfragmentation",
+   "method": "discover-crossref",
+   "query": "typosquat",
+   "title": "Bridging Registry Fragmentation: SBOM-Based Metadata for Generalized Malicious Package Detection",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/access.2026.3743923",
+   "venue": "IEEE Access",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Lin\u00e5ker, J.",
+    "Link, G.",
+    "Lumbard, K."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3674805.3686667",
+   "key": "linker2024sustainingmaintenancelabor",
+   "method": "discover-crossref",
+   "query": "maintainer",
+   "title": "Sustaining Maintenance Labor for Healthy Open Source Software Projects through Human Infrastructure: A Maintainer Perspective",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3674805.3686667",
+   "venue": "Proceedings of the 18th ACM/IEEE International Symposium on",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Liu, C.",
+    "Chen, S.",
+    "Fan, L.",
+    "Chen, B.",
+    "Liu, Y.",
+    "Peng, X."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3510003.3510142",
+   "key": "liu2022demystifyingvulnerabilitypropagation",
+   "method": "discover-crossref",
+   "query": "vulnprop",
+   "title": "Demystifying the vulnerability propagation and its evolution via dependency trees in the NPM ecosystem",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3510003.3510142",
+   "venue": "Proceedings of the 44th International Conference on Software",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Liu, Z.",
+    "Wang, J.",
+    "Chen, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3844178.3844648",
+   "key": "liu2026seeingforesttaxonomy",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Seeing the Forest: A Taxonomy-Guided Analysis and Improvement of Malicious PyPI Package Detectors",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3844178.3844648",
+   "venue": "Proceedings of the 2nd International Workshop on Software Ge",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "McAdams, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jeconom.2008.07.003",
+   "key": "mcadams2008partialidentificationtestable",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Partial identification and testable restrictions in multi-unit auctions",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jeconom.2008.07.003",
+   "venue": "Journal of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2008
+  },
+  {
+   "authors": [
+    "Mockus, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/2597073.2600728",
+   "key": "mockus2014miningsoftwarerepositories",
+   "method": "discover-crossref",
+   "query": "mining",
+   "title": "Is mining software repositories data science? (keynote)",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/2597073.2600728",
+   "venue": "Proceedings of the 11th Working Conference on Mining Softwar",
+   "verified_against": "crossref-doi",
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Mohomed, T.",
+    "Ekanayake, I."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/mercon67903.2025.11217128",
+   "key": "mohomed2025argoslsasoftware",
+   "method": "discover-crossref",
+   "query": "slsa",
+   "title": "ARGO-SLSA: Software Supply Chain Security in Argo Workflows",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/mercon67903.2025.11217128",
+   "venue": "2025 Moratuwa Engineering Research Conference (MERCon)",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Molinari, F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jeconom.2007.12.003",
+   "key": "molinari2008partialidentificationprobability",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Partial identification of probability distributions with misclassified data",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jeconom.2007.12.003",
+   "venue": "Journal of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2008
+  },
+  {
+   "authors": [
+    "Molinari, F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1920/wp.cem.2019.2519",
+   "key": "molinari2019econometricspartialidentification",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Econometrics with Partial Identification",
+   "type": "report",
+   "url": "https://doi.org/10.1920/wp.cem.2019.2519",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Montaruli, B.",
+    "Compagna, L.",
+    "Ponta, S. E.",
+    "Balzarotti, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/acsac67867.2025.00053",
+   "key": "montaruli2025onedetectorfits",
+   "method": "discover-crossref",
+   "query": "typosquat",
+   "title": "One Detector Fits All: Robust and Adaptive Detection of Malicious Packages from PyPI to Enterprises",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/acsac67867.2025.00053",
+   "venue": "2025 IEEE Annual Computer Security Applications Conference (",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Moufid, H.",
+    "El Ghazouani, M.",
+    "El Kiram, M. A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.3390/jcp6050160",
+   "key": "moufid2026metadatacompressibilityevaluation",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Metadata Compressibility and Evaluation Bias in Malicious Package Detection for NPM and PyPI",
+   "type": "journal-article",
+   "url": "https://doi.org/10.3390/jcp6050160",
+   "venue": "Journal of Cybersecurity and Privacy",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Muller, T.",
+    "Engel, P."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/icde53745.2022.00292",
+   "key": "muller2022howwherewhy",
+   "method": "discover-crossref",
+   "query": "provenancedb",
+   "title": "How, Where, and Why Data Provenance Improves Query Debugging: A Visual Demonstration of Fine\u2013Grained Provenance Analysis for SQL",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/icde53745.2022.00292",
+   "venue": "2022 IEEE 38th International Conference on Data Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Mydin, M. N. M.",
+    "Beh, D. M. Y.",
+    "Shariff, S. M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1002/appl.70209",
+   "key": "mydin2026sbomtoolingecosystem",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "SBOM Tooling Ecosystem: A Systematic Literature Review",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1002/appl.70209",
+   "venue": "Applied Research",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Nawa, V. M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s42081-022-00146-2",
+   "key": "nawa2022weightedscoreconfidence",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "A weighted score confidence interval for a binomial proportion",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s42081-022-00146-2",
+   "venue": "Japanese Journal of Statistics and Data Science",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Newman, Z.",
+    "Meyers, J. S.",
+    "Torres-Arias, S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3548606.3560596",
+   "key": "newman2022sigstore",
+   "method": "discover-crossref",
+   "query": "sigstore",
+   "title": "Sigstore",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3548606.3560596",
+   "venue": "Proceedings of the 2022 ACM SIGSAC Conference on Computer an",
+   "verified_against": "crossref-doi",
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Nunkesser, R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.3390/software5010012",
+   "key": "nunkesser2026assessinggeneralizabilitymobile",
+   "method": "discover-crossref",
+   "query": "sampling",
+   "title": "Assessing the Generalizability of Mobile Software Engineering Research Through Combined Systematic Methods",
+   "type": "journal-article",
+   "url": "https://doi.org/10.3390/software5010012",
+   "venue": "Software",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Nyambe, T.",
+    "Manavi, B.",
+    "Rudder, S.",
+    "Daily, J."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/isse65546.2025.11370101",
+   "key": "nyambe2025reframingsoftwarebill",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "Reframing Software Bill of Materials (SBOM) Security Evaluation Using a Model-Based Systems Engineering Approach",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/isse65546.2025.11370101",
+   "venue": "2025 IEEE International Symposium on Systems Engineering (IS",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Oberhauser, R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/978-3-031-98033-6_4",
+   "key": "oberhauser2025sbomvisualizationsoftware",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "VR-SBOM: Visualization of Software Bill of Materials and Software Supply Chains in Virtual Reality",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-3-031-98033-6_4",
+   "venue": "Lecture Notes in Business Information Processing",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Obradovi\u0107, F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.jeconom.2024.105842",
+   "key": "obradovi2024measuringdiagnostictest",
+   "method": "discover-crossref",
+   "query": "partialid",
+   "title": "Measuring diagnostic test performance using imperfect reference tests: A partial identification approach",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.jeconom.2024.105842",
+   "venue": "Journal of Econometrics",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "O'Donoghue, E.",
+    "Boles, B.",
+    "Izurieta, C.",
+    "Reinhold, A. M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3689944.3696164",
+   "key": "odonoghue2023impactssoftwarebill",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "Impacts of Software Bill of Materials (SBOM) Generation on Vulnerability Detection",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3689944.3696164",
+   "venue": "Proceedings of the 2024 Workshop on Software Supply Chain Of",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Panter, S. K.",
+    "Hindman, L. S.",
+    "Eisty, N. U."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s10664-025-10678-2",
+   "key": "panter2025pvacpackageversion",
+   "method": "discover-crossref",
+   "query": "semver",
+   "title": "PVAC: package version activity categorizer, leveraging semantic versioning in a heterogeneous system",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s10664-025-10678-2",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Peng, Y.",
+    "Hu, R.",
+    "Wang, R.",
+    "Gao, C.",
+    "Li, S.",
+    "Lyu, M. R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3597503.3639077",
+   "key": "peng2024lessmoreempirical",
+   "method": "discover-crossref",
+   "query": "pypi",
+   "title": "Less is More? An Empirical Study on Configuration Issues in Python PyPI Ecosystem",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3597503.3639077",
+   "venue": "Proceedings of the IEEE/ACM 46th International Conference on",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Porter, A.",
+    "Votta, L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1023/a:1009776104355",
+   "key": "porter1998comparingdetectionmethods",
+   "method": "discover-crossref",
+   "query": "replication",
+   "title": "Comparing Detection Methods For Software Requirements Inspections: A Replication Using Professional Subjects",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1023/a:1009776104355",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 1998
+  },
+  {
+   "authors": [
+    "Pr\u00fcnster, B.",
+    "Palfinger, G.",
+    "Kollmann, C."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.5220/0008121003140321",
+   "key": "prnster2019fidesunleashingfull",
+   "method": "discover-crossref",
+   "query": "attest",
+   "title": "Fides: Unleashing the Full Potential of Remote Attestation",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.5220/0008121003140321",
+   "venue": "Proceedings of the 16th International Joint Conference on e-",
+   "verified_against": "crossref-doi",
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Radanliev, P."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.36227/techrxiv.23706684.v1",
+   "key": "radanliev2023softwarevulnerabilitymanagement",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "ML) in Software Vulnerability Management: automations in the Software Bill of Materials (SBOM) and the Vulnerability-Exploitability eXchange (VEX)",
+   "type": "posted-content",
+   "url": "https://doi.org/10.36227/techrxiv.23706684.v1",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2023
+  },
+  {
+   "authors": [
+    "Randrianaina, G. A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.70675/e95564c6zca79z417aza37ez10821a9a0a48",
+   "key": "randrianainandincrementalreproduciblebuilds",
+   "method": "discover-crossref",
+   "query": "rebuild",
+   "title": "Incremental, reproducible builds of software variants",
+   "type": "dissertation",
+   "url": "https://doi.org/10.70675/e95564c6zca79z417aza37ez10821a9a0a48",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": null
+  },
+  {
+   "authors": [
+    "Raszka, L.",
+    "Grycz, O."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.7592667",
+   "key": "raszka2026maliciouspackagespublic",
+   "method": "discover-crossref",
+   "query": "typosquat",
+   "title": "Malicious packages in public registries: reporting bias, detection coverage, and the limits of evaluating registry interventions",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.7592667",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Rayarao, S. R.",
+    "Donikena, N."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.22541/au.175830854.42750868/v1",
+   "key": "rayarao2025shaihuludnpm",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "The Shai-Hulud NPM Supply Chain Attack: A Comprehensive Analysis of Self-Replicating Malware in the JavaScript Ecosystem",
+   "type": "posted-content",
+   "url": "https://doi.org/10.22541/au.175830854.42750868/v1",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Reyes, F.",
+    "Bono, F.",
+    "Sharma, A.",
+    "Baudry, B.",
+    "Monperrus, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3733827.3765523",
+   "key": "reyes2025mavenhijacksoftware",
+   "method": "discover-crossref",
+   "query": "supplychain",
+   "title": "Maven-Hijack: Software Supply Chain Attack Exploiting Packaging Order",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3733827.3765523",
+   "venue": "Proceedings of the 2025 Workshop on Software Supply Chain Of",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "R\u00fcschendorf, L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/978-94-011-3466-8_9",
+   "key": "rschendorf1991frechetboundstheir",
+   "method": "discover-crossref",
+   "query": "frechet",
+   "title": "Fr\u00e9Chet-Bounds and Their Applications",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-94-011-3466-8_9",
+   "venue": "Advances in Probability Distributions with Given Marginals",
+   "verified_against": "crossref-doi",
+   "year": 1991
+  },
+  {
+   "authors": [
+    "R\u00fcschendorf, L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1214/lnms/1215452625",
+   "key": "rschendorf1996developmentsfrechetbounds",
+   "method": "discover-crossref",
+   "query": "frechet",
+   "title": "Developments on Fr\u00e9chet-bounds",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1214/lnms/1215452625",
+   "venue": "Institute of Mathematical Statistics Lecture Notes - Monogra",
+   "verified_against": "crossref-doi",
+   "year": 1996
+  },
+  {
+   "authors": [
+    "Runeson, P.",
+    "Thelin, T."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/isese.2003.1237985",
+   "key": "runesonndcasestudysampling",
+   "method": "discover-crossref",
+   "query": "sampling",
+   "title": "A case study using sampling to improve software inspection effectiveness",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/isese.2003.1237985",
+   "venue": "2003 International Symposium on Empirical Software Engineeri",
+   "verified_against": "crossref-doi",
+   "year": null
+  },
+  {
+   "authors": [
+    "Ruohonen, J.",
+    "Hjerppe, K.",
+    "Rindell, K."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/pst52912.2021.9647791",
+   "key": "ruohonen2021largescalesecurity",
+   "method": "discover-crossref",
+   "query": "pypi",
+   "title": "A Large-Scale Security-Oriented Static Analysis of Python Packages in PyPI",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/pst52912.2021.9647791",
+   "venue": "2021 18th International Conference on Privacy, Security and",
+   "verified_against": "crossref-doi",
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Ryan, M. D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.14722/ndss.2014.23379",
+   "key": "ryan2014enhanced",
+   "method": "crossref",
+   "query": "",
+   "title": "Enhanced Certificate Transparency and End-to-End Encrypted Mail",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.14722/ndss.2014.23379",
+   "venue": "Proceedings 2014 Network and Distributed System Security Symposium",
+   "verified_against": "crossref-doi",
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Saeidi, M.",
+    "Thoma, E.",
+    "Kula, R. G.",
+    "Rodr\u00edguez-P\u00e9rez, G."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/esem64174.2025.00071",
+   "key": "saeidi2025whataboutour",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "What About Our Bug? A Study on the Responsiveness of NPM Package Maintainers",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/esem64174.2025.00071",
+   "venue": "2025 ACM/IEEE International Symposium on Empirical Software",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Salmon, M.",
+    "Ross, N.",
+    "Bellini Saibene, Y. N."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.59350/qgdfk-ce602",
+   "key": "salmon2026howrecruitnew",
+   "method": "discover-crossref",
+   "query": "maintainer",
+   "title": "How to Recruit a New Maintainer for Your Package",
+   "type": "posted-content",
+   "url": "https://doi.org/10.59350/qgdfk-ce602",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Samaana, H.",
+    "Costa, D. E.",
+    "Abdellatif, A.",
+    "Shihab, E."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/s10664-025-10648-8",
+   "key": "samaana2025opportunitiessecurityrisks",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "Opportunities and security risks of technical leverage: A replication study on the NPM ecosystem",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1007/s10664-025-10648-8",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Samuel, J.",
+    "Mathewson, N.",
+    "Cappos, J.",
+    "Dingledine, R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/1866307.1866315",
+   "key": "samuel2010survivable",
+   "method": "crossref",
+   "query": "",
+   "title": "Survivable key compromise in software update systems",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1866307.1866315",
+   "venue": "Proceedings of the 17th ACM conference on Computer and communications security",
+   "verified_against": "crossref-doi",
+   "year": 2010
+  },
+  {
+   "authors": [
+    "Sandelius, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1111/j.2517-6161.1952.tb00105.x",
+   "key": "sandelius1952confidenceintervalsmallest",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "A Confidence Interval for the Smallest Proportion of a Binomial Population",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1111/j.2517-6161.1952.tb00105.x",
+   "venue": "Journal of the Royal Statistical Society Series B: Statistic",
+   "verified_against": "crossref-doi",
+   "year": 1952
+  },
+  {
+   "authors": [
+    "Scarsini, M.",
+    "Shaked, M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/978-94-011-5532-8_7",
+   "key": "scarsini1997frechetclassesnonmonotone",
+   "method": "discover-crossref",
+   "query": "frechet",
+   "title": "Fr\u00e9chet Classes and Nonmonotone Dependence",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-94-011-5532-8_7",
+   "venue": "Distributions with given Marginals and Moment Problems",
+   "verified_against": "crossref-doi",
+   "year": 1997
+  },
+  {
+   "authors": [
+    "Schneidewind, N. F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1023/a:1011435315749",
+   "key": "schneidewind2001knowledgerequirementssoftware",
+   "method": "discover-crossref",
+   "query": "measurement",
+   "title": "Knowledge Requirements for Software Quality Measurement",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1023/a:1011435315749",
+   "venue": "Empirical Software Engineering",
+   "verified_against": "crossref-doi",
+   "year": 2001
+  },
+  {
+   "authors": [
+    "Sehgal, V. V.",
+    "Ambili, P. S."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1007/978-3-031-50815-8_3",
+   "key": "sehgal2024taxonomysurveysoftware",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "A Taxonomy and Survey of Software Bill of Materials (SBOM) Generation Approaches",
+   "type": "book-chapter",
+   "url": "https://doi.org/10.1007/978-3-031-50815-8_3",
+   "venue": "Communications in Computer and Information Science",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Seknametla, P. R."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.63282/3050-922x.ijeret-v6i2p115",
+   "key": "seknametla2025securesupplychain",
+   "method": "discover-crossref",
+   "query": "sbom",
+   "title": "Secure Supply Chain Management in DevOps: Addressing Software Bill of Materials (SBOM) Risks",
+   "type": "journal-article",
+   "url": "https://doi.org/10.63282/3050-922x.ijeret-v6i2p115",
+   "venue": "International Journal of Emerging Research in Engineering an",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "SHTOMA, D.",
+    "PETRIVSKYI, V."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.17721/ait.2025.2.04",
+   "key": "shtoma2025sbombasedvulnerability",
+   "method": "discover-crossref",
+   "query": "sbomconsume",
+   "title": "SBOM-BASED VULNERABILITY PRIORITIZATION IN SOFTWARE SUPPLY CHAIN USING MACHINE LEARNING",
+   "type": "journal-article",
+   "url": "https://doi.org/10.17721/ait.2025.2.04",
+   "venue": "Advanced Information Technology",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Sk\u0159iv\u00e1nek, J."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.14736/kyb-2014-1-0095",
+   "key": "skivnek2014basicboundsfrechet",
+   "method": "discover-crossref",
+   "query": "frechet",
+   "title": "Basic bounds of Fr\u00e9chet classes",
+   "type": "journal-article",
+   "url": "https://doi.org/10.14736/kyb-2014-1-0095",
+   "venue": "Kybernetika",
+   "verified_against": "crossref-doi",
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Small, M. L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1093/oso/9780190661427.003.0008",
+   "key": "small2017empiricalgeneralizability",
+   "method": "discover-crossref",
+   "query": "sampling",
+   "title": "Empirical Generalizability",
+   "type": "book",
+   "url": "https://doi.org/10.1093/oso/9780190661427.003.0008",
+   "venue": "Oxford Scholarship Online",
+   "verified_against": "crossref-doi",
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Soeiro, L. F. D. O."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.70675/6dd72cb7z7135z4d1dza942z3f6c57308033",
+   "key": "soeirondassessingsecuritysoftware",
+   "method": "discover-crossref",
+   "query": "supplychain",
+   "title": "Assessing the Security of Software Supply Chains : Software Bill of Materials, Threat Propagation, and Logical Attack Graphs",
+   "type": "dissertation",
+   "url": "https://doi.org/10.70675/6dd72cb7z7135z4d1dza942z3f6c57308033",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": null
+  },
+  {
+   "authors": [
+    "Sun, X.",
+    "Gao, X.",
+    "Cao, S.",
+    "Bo, L.",
+    "Wu, X.",
+    "Huang, K."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3691620.3695493",
+   "key": "sun2024integratingdeepcode",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "1+1&gt;2: Integrating Deep Code Behaviors with Metadata Features for Malicious PyPI Package Detection",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/3691620.3695493",
+   "venue": "Proceedings of the 39th IEEE/ACM International Conference on",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Tamanna, M.",
+    "Hamer, S.",
+    "Tran, M.",
+    "Fahl, S.",
+    "Acar, Y.",
+    "Williams, L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.5119626",
+   "key": "tamanna2025unravelingchallengessupply",
+   "method": "discover-crossref",
+   "query": "slsa",
+   "title": "Unraveling Challenges with Supply-Chain Levels for Software Artifacts (Slsa) for Securing the Software Supply Chain",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.5119626",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Tang, M.",
+    "Tang, N.",
+    "Chan, I. S. F."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1002/sim.2216",
+   "key": "tang2005confidenceintervalconstruction",
+   "method": "discover-crossref",
+   "query": "wilson",
+   "title": "Confidence interval construction for proportion difference in small\u2010sample paired studies",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1002/sim.2216",
+   "venue": "Statistics in Medicine",
+   "verified_against": "crossref-doi",
+   "year": 2005
+  },
+  {
+   "authors": [
+    "Tang, L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1038/s41592-026-03108-8",
+   "key": "tang2026packageselectionversioning",
+   "method": "discover-crossref",
+   "query": "semver",
+   "title": "Package selection and versioning matter",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1038/s41592-026-03108-8",
+   "venue": "Nature Methods",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Teng, H.",
+    "Tien, Y."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.64972/jaat.2026v4.386p31e:413-425",
+   "key": "teng2026supplychainsoftware",
+   "method": "discover-crossref",
+   "query": "deps",
+   "title": "Supply Chain Software Package Risk Scoring TD3-MPC Model Based on Dependency Metadata Graph",
+   "type": "journal-article",
+   "url": "https://doi.org/10.64972/jaat.2026v4.386p31e:413-425",
+   "venue": "Journal of Applied Automation Technologies",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Voinea, L.",
+    "Telea, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/1137983.1138024",
+   "key": "voinea2006miningsoftwarerepositories",
+   "method": "discover-crossref",
+   "query": "mining",
+   "title": "Mining software repositories with CVSgrab",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1145/1137983.1138024",
+   "venue": "Proceedings of the 2006 international workshop on Mining sof",
+   "verified_against": "crossref-doi",
+   "year": 2006
+  },
+  {
+   "authors": [
+    "Vu, D.",
+    "Pashchenko, I.",
+    "Massacci, F.",
+    "Plate, H.",
+    "Sabetta, A."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/eurospw51379.2020.00074",
+   "key": "vu2021typosquatting",
+   "method": "crossref",
+   "query": "",
+   "title": "Typosquatting and Combosquatting Attacks on the Python Ecosystem",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/eurospw51379.2020.00074",
+   "venue": "2020 IEEE European Symposium on Security and Privacy Workshops (EuroS&amp;PW)",
+   "verified_against": "crossref-doi",
+   "year": 2020
+  },
+  {
+   "authors": [
+    "wang, J.",
+    "Mao, D.",
+    "Han, Y.",
+    "Quan, Z.",
+    "Wang, B."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.6727185",
+   "key": "wang2026decodingmaliciousnessscalable",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Decoding Maliciousness: A Scalable Framework for Malicious PyPI Package Detection via Multi-source Semantic Fusion",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.6727185",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Williams, L."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/msec.2024.3359798",
+   "key": "williams2024narrowingsoftwaresupply",
+   "method": "discover-crossref",
+   "query": "supplychain",
+   "title": "Narrowing the Software Supply Chain Attack Vectors: The SSDF Is Wonderful but not Enough",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1109/msec.2024.3359798",
+   "venue": "IEEE Security &amp; Privacy",
+   "verified_against": "crossref-doi",
+   "year": 2024
+  },
+  {
+   "authors": [
+    "Wyss, E.",
+    "Tassio, D.",
+    "Carli, L. D.",
+    "Davidson, D."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/raid67961.2025.00047",
+   "key": "wyss2025evaluatingllmbased",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Evaluating LLM-Based Detection of Malicious Package Updates in npm",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/raid67961.2025.00047",
+   "venue": "2025 28th International Symposium on Research in Attacks, In",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Yan, J.",
+    "Zhao, B."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1016/j.neunet.2025.108487",
+   "key": "yan2026pypimaldetmaliciouspypi",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "PyPIMalDet: A malicious PyPI package detection method combining code features and metadata features",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1016/j.neunet.2025.108487",
+   "venue": "Neural Networks",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  },
+  {
+   "authors": [
+    "Zerouali, A.",
+    "Mens, T.",
+    "Robles, G.",
+    "Gonzalez-Barahona, J. M."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1109/saner.2019.8667997",
+   "key": "zerouali2019diversitysoftwarepackage",
+   "method": "discover-crossref",
+   "query": "npm",
+   "title": "On the Diversity of Software Package Popularity Metrics: An Empirical Study of npm",
+   "type": "proceedings-article",
+   "url": "https://doi.org/10.1109/saner.2019.8667997",
+   "venue": "2019 IEEE 26th International Conference on Software Analysis",
+   "verified_against": "crossref-doi",
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Zhang, J.",
+    "Huang, K.",
+    "Huang, Y.",
+    "Chen, B.",
+    "Wang, R.",
+    "Wang, C.",
+    "Peng, X."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.1145/3705304",
+   "key": "zhang2025killingtwobirds",
+   "method": "discover-crossref",
+   "query": "typosquat2",
+   "title": "Killing Two Birds with One Stone: Malicious Package Detection in NPM and PyPI using a Single Model of Malicious Behavior Sequence",
+   "type": "journal-article",
+   "url": "https://doi.org/10.1145/3705304",
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "verified_against": "crossref-doi",
+   "year": 2025
+  },
+  {
+   "authors": [
+    "Zhu, G.",
+    "Wang, C."
+   ],
+   "authors_note": "full author list, Crossref by DOI (harvest_authors.py)",
+   "doi": "10.2139/ssrn.7456458",
+   "key": "zhu2026versionedtransitivedependency",
+   "method": "discover-crossref",
+   "query": "closure",
+   "title": "Versioned Transitive Dependency-Closure Binding and Operation-Time Effect Governance for Agent Skills: ClosureBound",
+   "type": "posted-content",
+   "url": "https://doi.org/10.2139/ssrn.7456458",
+   "venue": "",
+   "verified_against": "crossref-doi",
+   "year": 2026
+  }
+ ],
+ "how_built": "grown from Crossref returns for topic queries, then reviewed twice: a salience pass (a title obviously in another field) and a criterion pass organised by this paper's constructs (does the record name a mechanism, population or method the paper uses?). Every kept entry carries the query that produced it; refusals stay in the corpus with a reason and are counted, not deleted.",
+ "search_form": {
+  "corpus_considered": 210,
+  "date_filter": "none applied: neither endpoint was restricted",
+  "depth": "relevance-ranked, top rows_per_query per query, no pagination",
+  "index": "Crossref REST API, https://api.crossref.org/works",
+  "kept_in_recorded_run": 79,
+  "kept_year_span": [
+   1952,
+   2026
+  ],
+  "queries_failed_in_recorded_run": 0,
+  "queries_recorded": 46,
+  "queries_yielding_a_cited_entry": 28,
+  "query_field": "query.bibliographic (free-text bibliographic relevance query)",
+  "rows_per_query": 16,
+  "rows_returned_in_recorded_run": 732,
+  "scan_at_utc": "2026-10-22T06:10:08Z",
+  "set_aside_in_recorded_run": {
+   "skipped_duplicate": 149,
+   "skipped_irrelevant": 462,
+   "skipped_no_locator": 0,
+   "skipped_non_scholarly_type": 42
+  },
+  "window": {
+   "field": "Crossref issued (the year each entry prints)",
+   "from": null,
+   "to": "2026-10-22T06:10:08Z"
+  }
+ },
+ "source": "papers/issue-145/research/references.json",
+ "source_content_sha256": "30e42378b486724f8ef280597059839b1ed0791453478261e1e33b92bd039468"
+}

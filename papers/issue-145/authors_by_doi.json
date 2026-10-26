@@ -1,0 +1,1150 @@
+{
+ "built_at_utc": "2026-10-23T16:03:09Z",
+ "by_doi": {
+  "10.1002/appl.70209": {
+   "authors": [
+    "Mydin, M. N. M.",
+    "Beh, D. M. Y.",
+    "Shariff, S. M."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:58Z",
+   "status": "ok"
+  },
+  "10.1002/sim.2216": {
+   "authors": [
+    "Tang, M.",
+    "Tang, N.",
+    "Chan, I. S. F."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:39Z",
+   "status": "ok"
+  },
+  "10.1002/sim.4780040203": {
+   "authors": [
+    "Greenland, S."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:10Z",
+   "status": "ok"
+  },
+  "10.1007/3-540-44503-x_20": {
+   "authors": [
+    "Buneman, P.",
+    "Khanna, S.",
+    "Wang-Chiew, T."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:59Z",
+   "status": "ok"
+  },
+  "10.1007/978-3-031-50815-8_3": {
+   "authors": [
+    "Sehgal, V. V.",
+    "Ambili, P. S."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:19Z",
+   "status": "ok"
+  },
+  "10.1007/978-3-031-71452-8_13": {
+   "authors": [
+    "Balayla, J."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:34Z",
+   "status": "ok"
+  },
+  "10.1007/978-3-031-98033-6_4": {
+   "authors": [
+    "Oberhauser, R."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:14Z",
+   "status": "ok"
+  },
+  "10.1007/978-94-011-3466-8_9": {
+   "authors": [
+    "Rüschendorf, L."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:50Z",
+   "status": "ok"
+  },
+  "10.1007/978-94-011-5532-8_7": {
+   "authors": [
+    "Scarsini, M.",
+    "Shaked, M."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:14Z",
+   "status": "ok"
+  },
+  "10.1007/s10664-011-9181-9": {
+   "authors": [
+    "González-Barahona, J. M.",
+    "Robles, G."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:04Z",
+   "status": "ok"
+  },
+  "10.1007/s10664-021-09980-6": {
+   "authors": [
+    "Cogo, F. R.",
+    "Oliva, G. A.",
+    "Bezemer, C.",
+    "Hassan, A. E."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:15Z",
+   "status": "ok"
+  },
+  "10.1007/s10664-021-10072-8": {
+   "authors": [
+    "Baltes, S.",
+    "Ralph, P."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:36Z",
+   "status": "ok"
+  },
+  "10.1007/s10664-025-10648-8": {
+   "authors": [
+    "Samaana, H.",
+    "Costa, D. E.",
+    "Abdellatif, A.",
+    "Shihab, E."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:08Z",
+   "status": "ok"
+  },
+  "10.1007/s10664-025-10678-2": {
+   "authors": [
+    "Panter, S. K.",
+    "Hindman, L. S.",
+    "Eisty, N. U."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:23Z",
+   "status": "ok"
+  },
+  "10.1007/s42081-022-00146-2": {
+   "authors": [
+    "Nawa, V. M."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:01Z",
+   "status": "ok"
+  },
+  "10.1007/s42952-021-00143-3": {
+   "authors": [
+    "Kim, J.",
+    "Jang, W."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:08Z",
+   "status": "ok"
+  },
+  "10.1016/bs.hoe.2020.05.002": {
+   "authors": [],
+   "queried_at_utc": "2026-10-23T15:57:32Z",
+   "status": "no-author"
+  },
+  "10.1016/j.ecosta.2017.03.006": {
+   "authors": [
+    "Jiang, W."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:53Z",
+   "status": "ok"
+  },
+  "10.1016/j.infsof.2026.108129": {
+   "authors": [
+    "Iqbal, T.",
+    "Wu, G.",
+    "Iqbal, Z.",
+    "Mahmood, M. B."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:43Z",
+   "status": "ok"
+  },
+  "10.1016/j.jeconom.2007.12.003": {
+   "authors": [
+    "Molinari, F."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:46Z",
+   "status": "ok"
+  },
+  "10.1016/j.jeconom.2008.07.003": {
+   "authors": [
+    "McAdams, D."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:39Z",
+   "status": "ok"
+  },
+  "10.1016/j.jeconom.2011.06.003": {
+   "authors": [
+    "Beresteanu, A.",
+    "Molchanov, I.",
+    "Molinari, F."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:45Z",
+   "status": "ok"
+  },
+  "10.1016/j.jeconom.2016.09.014": {
+   "authors": [
+    "Hong, S."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:25Z",
+   "status": "ok"
+  },
+  "10.1016/j.jeconom.2018.04.002": {
+   "authors": [
+    "Fan, Y.",
+    "Liu, R."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:38Z",
+   "status": "ok"
+  },
+  "10.1016/j.jeconom.2024.105842": {
+   "authors": [
+    "Obradović, F."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:16Z",
+   "status": "ok"
+  },
+  "10.1016/j.jisa.2025.104032": {
+   "authors": [
+    "Iqbal, T.",
+    "Wu, G.",
+    "Iqbal, Z.",
+    "Mahmood, M. B.",
+    "Shafique, A.",
+    "Guo, W."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:39Z",
+   "status": "ok"
+  },
+  "10.1016/j.jspi.2011.09.010": {
+   "authors": [
+    "Guan, Y."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:12Z",
+   "status": "ok"
+  },
+  "10.1016/j.neunet.2025.108487": {
+   "authors": [
+    "Yan, J.",
+    "Zhao, B."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:58Z",
+   "status": "ok"
+  },
+  "10.1016/j.scico.2013.11.021": {
+   "authors": [
+    "Godfrey, M. W."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:59Z",
+   "status": "ok"
+  },
+  "10.1023/a:1009776104355": {
+   "authors": [
+    "Porter, A.",
+    "Votta, L."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:28Z",
+   "status": "ok"
+  },
+  "10.1023/a:1011435315749": {
+   "authors": [
+    "Schneidewind, N. F."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:17Z",
+   "status": "ok"
+  },
+  "10.1023/a:1026534430984": {
+   "authors": [
+    "Berry, M.",
+    "Jeffery, R."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:49Z",
+   "status": "ok"
+  },
+  "10.1037/h0040957": {
+   "authors": [
+    "Cronbach, L. J.",
+    "Meehl, P. E."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:17Z",
+   "status": "ok"
+  },
+  "10.1038/s41592-026-03108-8": {
+   "authors": [
+    "Tang, L."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:41Z",
+   "status": "ok"
+  },
+  "10.1038/s41598-026-71750-5": {
+   "authors": [
+    "Draz, M. M."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:36Z",
+   "status": "ok"
+  },
+  "10.1093/oso/9780190661427.003.0008": {
+   "authors": [
+    "Small, M. L."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:29Z",
+   "status": "ok"
+  },
+  "10.1109/access.2026.3743923": {
+   "authors": [
+    "Lim, G.",
+    "Kim, M."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:29Z",
+   "status": "ok"
+  },
+  "10.1109/acsac67867.2025.00053": {
+   "authors": [
+    "Montaruli, B.",
+    "Compagna, L.",
+    "Ponta, S. E.",
+    "Balzarotti, D."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:52Z",
+   "status": "ok"
+  },
+  "10.1109/ase56229.2023.00135": {
+   "authors": [
+    "Guo, W.",
+    "Xu, Z.",
+    "Liu, C.",
+    "Huang, C.",
+    "Fang, Y.",
+    "Liu, Y."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:14Z",
+   "status": "ok"
+  },
+  "10.1109/esem.2013.64": {
+   "authors": [
+    "Juristo, N."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:56Z",
+   "status": "ok"
+  },
+  "10.1109/esem64174.2025.00071": {
+   "authors": [
+    "Saeidi, M.",
+    "Thoma, E.",
+    "Kula, R. G.",
+    "Rodríguez-Pérez, G."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:02Z",
+   "status": "ok"
+  },
+  "10.1109/eurospw51379.2020.00074": {
+   "authors": [
+    "Vu, D.",
+    "Pashchenko, I.",
+    "Massacci, F.",
+    "Plate, H.",
+    "Sabetta, A."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:50Z",
+   "status": "ok"
+  },
+  "10.1109/icde53745.2022.00292": {
+   "authors": [
+    "Muller, T.",
+    "Engel, P."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:55Z",
+   "status": "ok"
+  },
+  "10.1109/icse43902.2021.00093": {
+   "authors": [
+    "Dias, E.",
+    "Meirelles, P.",
+    "Castor, F.",
+    "Steinmacher, I.",
+    "Wiese, I.",
+    "Pinto, G."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:33Z",
+   "status": "ok"
+  },
+  "10.1109/incowoco64194.2024.10863220": {
+   "authors": [
+    "Gandhi, M.",
+    "Patel, M.",
+    "Bhadra, H.",
+    "Verma, S."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:42Z",
+   "status": "ok"
+  },
+  "10.1109/isese.2003.1237985": {
+   "authors": [
+    "Runeson, P.",
+    "Thelin, T."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:53Z",
+   "status": "ok"
+  },
+  "10.1109/isse65546.2025.11370101": {
+   "authors": [
+    "Nyambe, T.",
+    "Manavi, B.",
+    "Rudder, S.",
+    "Daily, J."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:09Z",
+   "status": "ok"
+  },
+  "10.1109/jcsse68839.2026.11597025": {
+   "authors": [
+    "Kawai, K.",
+    "Watarai, K.",
+    "Okada, S.",
+    "Mitsunaga, T."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:58Z",
+   "status": "ok"
+  },
+  "10.1109/mercon67903.2025.11217128": {
+   "authors": [
+    "Mohomed, T.",
+    "Ekanayake, I."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:44Z",
+   "status": "ok"
+  },
+  "10.1109/ms.2021.3073045": {
+   "authors": [
+    "Lamb, C.",
+    "Zacchiroli, S."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:18Z",
+   "status": "ok"
+  },
+  "10.1109/msec.2024.3359798": {
+   "authors": [
+    "Williams, L."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:54Z",
+   "status": "ok"
+  },
+  "10.1109/msr.2017.55": {
+   "authors": [
+    "Kikas, R.",
+    "Gousios, G.",
+    "Dumas, M.",
+    "Pfahl, D."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:06Z",
+   "status": "ok"
+  },
+  "10.1109/msr66628.2025.00090": {
+   "authors": [
+    "Kishimoto, R.",
+    "Kanda, T.",
+    "Manabe, Y.",
+    "Inoue, K.",
+    "Qiu, S.",
+    "Higo, Y."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:11Z",
+   "status": "ok"
+  },
+  "10.1109/pst52912.2021.9647791": {
+   "authors": [
+    "Ruohonen, J.",
+    "Hjerppe, K.",
+    "Rindell, K."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:56Z",
+   "status": "ok"
+  },
+  "10.1109/raid67961.2025.00047": {
+   "authors": [
+    "Wyss, E.",
+    "Tassio, D.",
+    "Carli, L. D.",
+    "Davidson, D."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:56Z",
+   "status": "ok"
+  },
+  "10.1109/reser.2013.7": {
+   "authors": [
+    "Brooks, A.",
+    "Chambers, J.",
+    "Lee, C. N.",
+    "Mead, F."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:54Z",
+   "status": "ok"
+  },
+  "10.1109/saner.2017.7884604": {
+   "authors": [
+    "Decan, A.",
+    "Mens, T.",
+    "Claes, M."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:25Z",
+   "status": "ok"
+  },
+  "10.1109/saner.2019.8667997": {
+   "authors": [
+    "Zerouali, A.",
+    "Mens, T.",
+    "Robles, G.",
+    "Gonzalez-Barahona, J. M."
+   ],
+   "queried_at_utc": "2026-10-23T16:03:01Z",
+   "status": "ok"
+  },
+  "10.1109/saner64311.2025.00067": {
+   "authors": [
+    "Hoess, N.",
+    "Paradis, C.",
+    "Kazman, R.",
+    "Mauerer, W."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:22Z",
+   "status": "ok"
+  },
+  "10.1109/sp46215.2023.10179304": {
+   "authors": [
+    "Ladisa, P.",
+    "Plate, H.",
+    "Martinez, M.",
+    "Barais, O."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:15Z",
+   "status": "ok"
+  },
+  "10.1109/tse.2019.2918315": {
+   "authors": [
+    "Decan, A.",
+    "Mens, T."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:28Z",
+   "status": "ok"
+  },
+  "10.1109/tse.2019.2952130": {
+   "authors": [
+    "Cogo, F. R.",
+    "Oliva, G. A.",
+    "Hassan, A. E."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:12Z",
+   "status": "ok"
+  },
+  "10.1109/tse.2021.3068901": {
+   "authors": [
+    "Chowdhury, M. A. R.",
+    "Abdalkareem, R.",
+    "Shihab, E.",
+    "Adams, B."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:11Z",
+   "status": "ok"
+  },
+  "10.1109/tse.2025.3618952": {
+   "authors": [
+    "Liang, W.",
+    "Ling, X.",
+    "Zhao, C.",
+    "Wu, J.",
+    "Luo, T.",
+    "Wu, Y."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:26Z",
+   "status": "ok"
+  },
+  "10.1111/j.2517-6161.1952.tb00105.x": {
+   "authors": [
+    "Sandelius, M."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:12Z",
+   "status": "ok"
+  },
+  "10.1111/sjos.12672": {
+   "authors": [
+    "Garthwaite, P. H.",
+    "Moustafa, M. W.",
+    "Elfadaly, F. G."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:46Z",
+   "status": "ok"
+  },
+  "10.1145/1137983.1138024": {
+   "authors": [
+    "Voinea, L.",
+    "Telea, A."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:48Z",
+   "status": "ok"
+  },
+  "10.1145/1866307.1866315": {
+   "authors": [
+    "Samuel, J.",
+    "Mathewson, N.",
+    "Cappos, J.",
+    "Dingledine, R."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:11Z",
+   "status": "ok"
+  },
+  "10.1145/2597073.2600728": {
+   "authors": [
+    "Mockus, A."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:42Z",
+   "status": "ok"
+  },
+  "10.1145/2652524.2652566": {
+   "authors": [
+    "de Mello, R. M.",
+    "da Silva, P. C.",
+    "Travassos, G. H."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:31Z",
+   "status": "ok"
+  },
+  "10.1145/3510003.3510142": {
+   "authors": [
+    "Liu, C.",
+    "Chen, S.",
+    "Fan, L.",
+    "Chen, B.",
+    "Liu, Y.",
+    "Peng, X."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:35Z",
+   "status": "ok"
+  },
+  "10.1145/3548606.3560596": {
+   "authors": [
+    "Newman, Z.",
+    "Meyers, J. S.",
+    "Torres-Arias, S."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:04Z",
+   "status": "ok"
+  },
+  "10.1145/3597503.3639077": {
+   "authors": [
+    "Peng, Y.",
+    "Hu, R.",
+    "Wang, R.",
+    "Gao, C.",
+    "Li, S.",
+    "Lyu, M. R."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:25Z",
+   "status": "ok"
+  },
+  "10.1145/3627106.3627138": {
+   "authors": [
+    "Ladisa, P.",
+    "Ponta, S. E.",
+    "Ronzoni, N.",
+    "Martinez, M.",
+    "Barais, O."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:13Z",
+   "status": "ok"
+  },
+  "10.1145/3674805.3686667": {
+   "authors": [
+    "Linåker, J.",
+    "Link, G.",
+    "Lumbard, K."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:31Z",
+   "status": "ok"
+  },
+  "10.1145/3689944.3696164": {
+   "authors": [
+    "O'Donoghue, E.",
+    "Boles, B.",
+    "Izurieta, C.",
+    "Reinhold, A. M."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:20Z",
+   "status": "ok"
+  },
+  "10.1145/3689944.3696166": {
+   "authors": [
+    "Cesarano, C.",
+    "Andersson, V.",
+    "Natella, R.",
+    "Monperrus, M."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:02Z",
+   "status": "ok"
+  },
+  "10.1145/3689944.3696350": {
+   "authors": [
+    "Chen, B."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:04Z",
+   "status": "ok"
+  },
+  "10.1145/3691620.3695493": {
+   "authors": [
+    "Sun, X.",
+    "Gao, X.",
+    "Cao, S.",
+    "Bo, L.",
+    "Wu, X.",
+    "Huang, K."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:34Z",
+   "status": "ok"
+  },
+  "10.1145/3705304": {
+   "authors": [
+    "Zhang, J.",
+    "Huang, K.",
+    "Huang, Y.",
+    "Chen, B.",
+    "Wang, R.",
+    "Wang, C.",
+    "Peng, X."
+   ],
+   "queried_at_utc": "2026-10-23T16:03:05Z",
+   "status": "ok"
+  },
+  "10.1145/3733827.3765523": {
+   "authors": [
+    "Reyes, F.",
+    "Bono, F.",
+    "Sharma, A.",
+    "Baudry, B.",
+    "Monperrus, M."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:44Z",
+   "status": "ok"
+  },
+  "10.1145/3844178.3844648": {
+   "authors": [
+    "Liu, Z.",
+    "Wang, J.",
+    "Chen, S."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:37Z",
+   "status": "ok"
+  },
+  "10.1192/j.eurpsy.2023.1139": {
+   "authors": [
+    "Dalgaard, M. K.",
+    "Christensen, A.",
+    "Kjeldsen, M. K."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:20Z",
+   "status": "ok"
+  },
+  "10.1198/000313008x271474": {
+   "authors": [
+    "Afshartous, D."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:21Z",
+   "status": "ok"
+  },
+  "10.1214/lnms/1215452625": {
+   "authors": [
+    "Rüschendorf, L."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:51Z",
+   "status": "ok"
+  },
+  "10.14722/ndss.2014.23379": {
+   "authors": [
+    "Ryan, M. D."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:58Z",
+   "status": "ok"
+  },
+  "10.14736/kyb-2014-1-0095": {
+   "authors": [
+    "Skřivánek, J."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:26Z",
+   "status": "ok"
+  },
+  "10.1561/9781601982339": {
+   "authors": [
+    "Cheney, J.",
+    "Chiticariu, L.",
+    "Tan, W."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:07Z",
+   "status": "ok"
+  },
+  "10.17487/rfc6962": {
+   "authors": [
+    "Laurie, B.",
+    "Langley, A.",
+    "Kasper, E."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:20Z",
+   "status": "ok"
+  },
+  "10.17721/ait.2025.2.04": {
+   "authors": [
+    "SHTOMA, D.",
+    "PETRIVSKYI, V."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:24Z",
+   "status": "ok"
+  },
+  "10.18637/jss.v108.i06": {
+   "authors": [
+    "Hunter, K. B.",
+    "Miratrix, L.",
+    "Porter, K."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:26Z",
+   "status": "ok"
+  },
+  "10.1920/wp.cem.2019.2519": {
+   "authors": [
+    "Molinari, F."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:50Z",
+   "status": "ok"
+  },
+  "10.21203/rs.3.rs-2560509/v1": {
+   "authors": [
+    "Islam, S.",
+    "Nugroho, Y. S.",
+    "Shahrear, A.",
+    "Wahed, N.",
+    "Gunawan, D.",
+    "Pamungkas, E. W.",
+    "Kabir, M. H.",
+    "Kurniawan, Y. I."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:47Z",
+   "status": "ok"
+  },
+  "10.21236/ada045772": {
+   "authors": [
+    "Bar-Hillel, M."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:41Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.3426281": {
+   "authors": [
+    "Bommarito, E.",
+    "Bommarito, M. J."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:51Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.4082606": {
+   "authors": [
+    "Abdalkareem, R."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:18Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.5119626": {
+   "authors": [
+    "Tamanna, M.",
+    "Hamer, S.",
+    "Tran, M.",
+    "Fahl, S.",
+    "Acar, Y.",
+    "Williams, L."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:37Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.5362510": {
+   "authors": [
+    "Dalia, G.",
+    "Sgueglia, A.",
+    "Coppolaro, M.",
+    "Di Sorbo, A.",
+    "Visaggio, C. A."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:23Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.6727185": {
+   "authors": [
+    "wang, J.",
+    "Mao, D.",
+    "Han, Y.",
+    "Quan, Z.",
+    "Wang, B."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:52Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.7233262": {
+   "authors": [
+    "Jobu, R. A."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:54Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.7456458": {
+   "authors": [
+    "Zhu, G.",
+    "Wang, C."
+   ],
+   "queried_at_utc": "2026-10-23T16:03:08Z",
+   "status": "ok"
+  },
+  "10.2139/ssrn.7592667": {
+   "authors": [
+    "Raszka, L.",
+    "Grycz, O."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:38Z",
+   "status": "ok"
+  },
+  "10.22541/au.175830854.42750868/v1": {
+   "authors": [
+    "Rayarao, S. R.",
+    "Donikena, N."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:42Z",
+   "status": "ok"
+  },
+  "10.23846/wp0026": {
+   "authors": [
+    "International Initiative for Impact Evaluation (3ie)",
+    "W Djimeu, E.",
+    "Houndolo, D."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:22Z",
+   "status": "ok"
+  },
+  "10.23919/cycon62501.2024.10685598": {
+   "authors": [
+    "Beninger, M.",
+    "Charland, P.",
+    "Ding, S. H. H.",
+    "Fung, B. C. M."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:43Z",
+   "status": "ok"
+  },
+  "10.23919/wmnc56391.2022.9954295": {
+   "authors": [
+    "Goncalves, C.",
+    "Sousa, B.",
+    "Antunes, N."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:02Z",
+   "status": "ok"
+  },
+  "10.2991/jsta.2014.13.4.3": {
+   "authors": [
+    "Habtzghi, D.",
+    "Midha, C. K.",
+    "Das, A."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:16Z",
+   "status": "ok"
+  },
+  "10.31219/osf.io/3fp2v": {
+   "authors": [
+    "Goswami, R.",
+    "S., R.",
+    "Goswami, A.",
+    "Goswami, S.",
+    "Goswami, D."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:07Z",
+   "status": "ok"
+  },
+  "10.31234/osf.io/u2jbm": {
+   "authors": [
+    "Brydges, C."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:56Z",
+   "status": "ok"
+  },
+  "10.32628/ijsrce237314": {
+   "authors": [
+    "Bamidele Samuel Adelusi",
+    "Abel Chukwuemeke Uzoka",
+    "Yewande Goodness Hassan",
+    "Favour Uche Ojika"
+   ],
+   "queried_at_utc": "2026-10-23T15:57:38Z",
+   "status": "ok"
+  },
+  "10.3390/jcp6050160": {
+   "authors": [
+    "Moufid, H.",
+    "El Ghazouani, M.",
+    "El Kiram, M. A."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:54Z",
+   "status": "ok"
+  },
+  "10.3390/math14142593": {
+   "authors": [
+    "Gao, Y.",
+    "Wu, H.",
+    "Luo, Y.",
+    "Shi, P.",
+    "Shao, W.",
+    "Cao, J."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:44Z",
+   "status": "ok"
+  },
+  "10.3390/software5010012": {
+   "authors": [
+    "Nunkesser, R."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:07Z",
+   "status": "ok"
+  },
+  "10.35784/jcsi.2460": {
+   "authors": [
+    "Chodorowski, M."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:09Z",
+   "status": "ok"
+  },
+  "10.36227/techrxiv.23706684.v1": {
+   "authors": [
+    "Radanliev, P."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:33Z",
+   "status": "ok"
+  },
+  "10.5220/0008121003140321": {
+   "authors": [
+    "Prünster, B.",
+    "Palfinger, G.",
+    "Kollmann, C."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:31Z",
+   "status": "ok"
+  },
+  "10.56975/ijrti.v10i7.205129": {
+   "authors": [
+    "Ghanshyambhai Patel, D."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:48Z",
+   "status": "ok"
+  },
+  "10.5762/kais.2025.26.4.268": {
+   "authors": [
+    "Lee, J.",
+    "Lee, Y.",
+    "Yoo, D."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:22Z",
+   "status": "ok"
+  },
+  "10.59350/nrbbt-e7k85": {
+   "authors": [
+    "Gibb, R.",
+    "Ferris, P.",
+    "Allsopp, D.",
+    "Dales, M.",
+    "Elvers, M.",
+    "Gazagnaire, T.",
+    "Jaffer, S.",
+    "Leonard, T.",
+    "Ludlam, J.",
+    "Madhavapeddy, A."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:51Z",
+   "status": "ok"
+  },
+  "10.59350/qgdfk-ce602": {
+   "authors": [
+    "Salmon, M.",
+    "Ross, N.",
+    "Bellini Saibene, Y. N."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:04Z",
+   "status": "ok"
+  },
+  "10.59350/rk9s4-43g76": {
+   "authors": [
+    "Gibb, R. T."
+   ],
+   "queried_at_utc": "2026-10-23T15:58:53Z",
+   "status": "ok"
+  },
+  "10.6028/nist.sp.1800-44": {
+   "authors": [
+    "Kerman, A."
+   ],
+   "queried_at_utc": "2026-10-23T16:00:03Z",
+   "status": "ok"
+  },
+  "10.63282/3050-922x.ijeret-v6i2p115": {
+   "authors": [
+    "Seknametla, P. R."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:21Z",
+   "status": "ok"
+  },
+  "10.64972/jaat.2026v4.386p31e:413-425": {
+   "authors": [
+    "Teng, H.",
+    "Tien, Y."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:44Z",
+   "status": "ok"
+  },
+  "10.70675/6dd72cb7z7135z4d1dza942z3f6c57308033": {
+   "authors": [
+    "Soeiro, L. F. D. O."
+   ],
+   "queried_at_utc": "2026-10-23T16:02:30Z",
+   "status": "ok"
+  },
+  "10.70675/e95564c6zca79z417aza37ez10821a9a0a48": {
+   "authors": [
+    "Randrianaina, G. A."
+   ],
+   "queried_at_utc": "2026-10-23T16:01:35Z",
+   "status": "ok"
+  },
+  "10.70828/pvsn3075": {
+   "authors": [
+    "Hendrick, S.",
+    "Ramaswami, A."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:20Z",
+   "status": "ok"
+  },
+  "10.70828/rytl5793": {
+   "authors": [
+    "Hendrick, S."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:17Z",
+   "status": "ok"
+  },
+  "10.7490/f1000research.1114468.1": {
+   "authors": [
+    "Contributors to the Debian Med Blend",
+    "Kalaš, M.",
+    "Steinbiss, S.",
+    "Crusoe, M. R.",
+    "Tille, A.",
+    "Möller, S."
+   ],
+   "queried_at_utc": "2026-10-23T15:57:24Z",
+   "status": "ok"
+  },
+  "10.7840/kics.2026.51.4.792": {
+   "authors": [
+    "Jang, D.",
+    "Jeon, S."
+   ],
+   "queried_at_utc": "2026-10-23T15:59:49Z",
+   "status": "ok"
+  }
+ },
+ "how_form": "Family, I. -- one string per author, in Crossref's order",
+ "normalisation": "exact duplicate author strings are collapsed, first occurrence kept: the registry repeats a corporate author (10.23846/wp0026 lists 'International Initiative for Impact Evaluation (3ie)' twice). No other edit is made to Crossref's list or order.",
+ "source": "Crossref REST API, /works/<doi>, re-queried by DOI"
+}
