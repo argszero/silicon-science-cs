@@ -47,6 +47,11 @@ NAMED = {
 
 MODEL = dict(K=3, R=3, Tmax=8, Rmax=5, Kmax=5)
 
+# named works are numbered after the corpus, so every citation key in the paper is numeric
+# three digits on purpose: the reference gate reads a 4-digit run at line start as a
+# YEAR, so a [1000]-style marker is never parsed as an entry
+NAMED_NUM = dict((k, str(240 + i)) for i, k in enumerate(NAMED))
+
 
 def load():
     res = json.load(open("results.json"))
@@ -189,7 +194,7 @@ def themes(place):
                                                     e["doi"]))
     mapping = {}
     for i, e in enumerate(order, 1):
-        e["_ref"] = "r%d" % i
+        e["_ref"] = "%d" % i
         mapping.setdefault(e["section"], {}).setdefault(e["theme"], []).append(e["_ref"])
     return order, mapping
 
@@ -287,23 +292,27 @@ def main():
         k = m.group(1)
         if k not in NAMED:
             raise KeyError(k)
-        return "[%s]" % NAMED[k][0]
+        return "[%s]" % NAMED_NUM[k]
 
     body = re.sub(r"\{\{cite:(\w+)\}\}", sub_cite, body)
 
     # reference list: placed corpus + the works read in full
-    refs = ["### Corpus (DOI-verified against Crossref; see `reference-check.md`)", ""]
+    # The journal's reference gate reads `[12]` at the START of a line, and counts entries
+    # not separated from the one above by a blank line as a single paragraph to any
+    # CommonMark renderer.  Both forms are emitted deliberately.
+    refs = ["### Corpus: DOI-verified against Crossref (see `reference-check.md`)", ""]
     for e in order:
         v = e["verified"]
         au = ", ".join(v["authors"][:3]) if v["authors"] else "(no author field in record)"
-        refs.append("- **[%s]** %s. *%s*. %s. DOI %s."
+        refs.append("[%s] %s. *%s*. %s. DOI %s."
                     % (e["_ref"], v["title"], v["venue"] or "(no venue field)",
                        au, v["doi"]))
-    refs.append("")
-    refs.append("### Works read in full for the comparison in §6 and §2.2")
+        refs.append("")
+    refs.append("### Works read in full for the comparison in the model and related-work sections")
     refs.append("")
     for k, (tag, text) in NAMED.items():
-        refs.append("- **[%s]** %s" % (tag, text))
+        refs.append("[%s] %s" % (NAMED_NUM[k], text))
+        refs.append("")
     refs = "\n".join(refs)
     body = body.replace("{{refs}}", refs)
 

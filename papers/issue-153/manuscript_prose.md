@@ -210,9 +210,9 @@ the measurement: at R=3 K=3 T=6, `Opt(S)` is empty at {{n:proposition.refuting}}
 {{n:proposition.states}} reachable states, and across the cells of §4.2 the count of refuting
 states is {{n:n_refuting_total}}.
 
-The witness can be checked without running anything. At flush 3, with runs `[(1,1), (1,2),
-(2,1), (2,2)]`, live bytes `[2,2,0]` and next flush in range 0, the legal merges are ranges 0
-and 1. Suffix `010` makes range 0 the unique optimal merge; suffix `000` makes range 1 the
+The witness can be checked without running anything. At flush 3 the runs are (range-mask,
+size) `(1,1), (1,2), (2,1), (2,2)`, the live bytes are `2, 2, 0` and the next flush is in range
+0, so the legal merges are ranges 0 and 1. Suffix `010` makes range 0 the unique optimal merge; suffix `000` makes range 1 the
 unique optimal merge. Both suffixes reach that state, so `Opt(S) = ∅`: any rule reading only the
 state is wrong on one of them. Note the state includes live bytes and the incoming flush — more
 than the deployed rule reads — so the refutation is only strengthened for narrower information
