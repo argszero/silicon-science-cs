@@ -1,0 +1,1754 @@
+{
+  "counts": {
+    "absent_or_ambiguous": 0,
+    "attempted": 107,
+    "by_section": {
+      "1 Prior art": 3,
+      "2 Background": 27,
+      "3 The device model": 24,
+      "4 Combinatorics": 24,
+      "5 Online algorithms": 10,
+      "6 Data structures": 12,
+      "7 Measurement": 7
+    },
+    "candidate_pool": 782,
+    "placed": 107,
+    "pruned": 3,
+    "seeds": 4
+  },
+  "placed": [
+    {
+      "authors": [
+        "S. Even",
+        "A. Itai"
+      ],
+      "claim": "established one of the queue-network sorting problems whose machinery the device statistic belongs to",
+      "doi": "10.1016/b978-0-12-417750-5.50011-7",
+      "key": "evenitai1971",
+      "resolved_by": "seed-doi",
+      "section": "1 Prior art",
+      "title": "QUEUES, STACKS AND GRAPHS",
+      "type": "book-chapter",
+      "venue": "Theory of Machines and Computations",
+      "year": 1971
+    },
+    {
+      "authors": [
+        "Vaughan R. Pratt"
+      ],
+      "claim": "computes which permutations parallel queues produce -- the closest prior statement to this paper's question",
+      "doi": "10.1145/800125.804058",
+      "key": "pratt1973",
+      "resolved_by": "seed-doi",
+      "section": "1 Prior art",
+      "title": "Computing permutations with double-ended queues, parallel stacks and parallel queues",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the fifth annual ACM symposium on Theory of computing  - STOC '73",
+      "year": 1973
+    },
+    {
+      "authors": [
+        "Robert Tarjan"
+      ],
+      "claim": "gives sorting with networks of queues and stacks, the same objects this model's queue bank realises",
+      "doi": "10.1145/321694.321704",
+      "key": "tarjan1972",
+      "resolved_by": "seed-doi",
+      "section": "1 Prior art",
+      "title": "Sorting Using Networks of Queues and Stacks",
+      "type": "journal-article",
+      "venue": "Journal of the ACM",
+      "year": 1972
+    },
+    {
+      "authors": [
+        "Chen",
+        "Tian",
+        "Zhang"
+      ],
+      "claim": "uses packet scheduling to accelerate TCP in hybrid data centers",
+      "doi": "10.1109/ton.2025.3550902",
+      "key": "acceltor2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "AccelToR: Accelerating TCP for Circuit/Packet Hybrid Data Centers With Packet Scheduling",
+      "type": "journal-article",
+      "venue": "IEEE Transactions on Networking",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Rajagopalan",
+        "Sivalingam",
+        "Shami",
+        "Lyonnais"
+      ],
+      "claim": "analyses packets at line rate on a programmable data plane",
+      "doi": "10.1109/ojcoms.2026.3686225",
+      "key": "anomaly2026",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "ALADA: Packet-Level Analysis for Line Rate Anomaly Detection Using a Programmable Dataplane Switch",
+      "type": "journal-article",
+      "venue": "IEEE Open Journal of the Communications Society",
+      "year": 2026
+    },
+    {
+      "authors": [
+        "Guo",
+        "Sun",
+        "Hu",
+        "Zhang",
+        "Lv"
+      ],
+      "claim": "proposes a lightweight programmable packet scheduling primitive",
+      "doi": "10.1016/j.comnet.2024.110355",
+      "key": "cipo2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "CIPO: Efficient, lightweight and programmable packet scheduling",
+      "type": "journal-article",
+      "venue": "Computer Networks",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Magadum",
+        "Singh",
+        "Kushwaha"
+      ],
+      "claim": "builds a congruity-tree PIFO scheduler and reports flow completion time",
+      "doi": "10.1109/icccn65249.2025.11134021",
+      "key": "ctpifo2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time",
+      "type": "proceedings-article",
+      "venue": "2025 34th International Conference on Computer Communications and Networks (ICCCN)",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Wang",
+        "Liu",
+        "Zhang",
+        "Guo",
+        "Zhang"
+      ],
+      "claim": "schedules multi-tier service traffic with strict-priority queues",
+      "doi": "10.1109/icccs65393.2025.11069454",
+      "key": "ddspq2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "DDSPQ: Strict-Priority Queue Schedule for Multi-Tiered Service Accommodation in SD-WAN",
+      "type": "proceedings-article",
+      "venue": "2025 10th International Conference on Computer and Communication System (ICCCS)",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Li",
+        "Song",
+        "Zeng"
+      ],
+      "claim": "schedules packets in a DPDK-based processing system",
+      "doi": "10.3390/fi13030078",
+      "key": "dpdk2021",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "An Adaptive Throughput-First Packet Scheduling Algorithm for DPDK-Based Packet Processing Systems",
+      "type": "journal-article",
+      "venue": "Future Internet",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Cui",
+        "Zhang"
+      ],
+      "claim": "gives a dynamic priority scheduling algorithm for performance-critical packets",
+      "doi": "10.1109/cscwd61410.2024.10580504",
+      "key": "dpifo2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "D-PIFO: A Dynamic Priority Scheduling Algorithm for Performance-Critical Packets Based on the Programmable Data Plane",
+      "type": "proceedings-article",
+      "venue": "2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD)",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Elbediwy",
+        "Pontikakis",
+        "Ghaffari",
+        "David",
+        "Savaria"
+      ],
+      "claim": "uses a dynamic ranking rule over a PIFO queue",
+      "doi": "10.1109/tnsm.2023.3304894",
+      "key": "drpifo2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "DR-PIFO: A Dynamic Ranking Packet Scheduler Using a Push-In-First-Out Queue",
+      "type": "journal-article",
+      "venue": "IEEE Transactions on Network and Service Management",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Mostafaei",
+        "Ezzati",
+        "Cuijpers",
+        "Schmid",
+        "R\u00e9tv\u00e1ri",
+        "Borst"
+      ],
+      "claim": "proposes a scalable programmable packet scheduling design",
+      "doi": "10.1145/3749217",
+      "key": "exppifo2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Exp-PIFO: Scalable and Efficient Programmable Packet Scheduling",
+      "type": "journal-article",
+      "venue": "Proceedings of the ACM on Networking",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Yu",
+        "Ruepp",
+        "Berger"
+      ],
+      "claim": "analyses FIFO-based round-robin multicast scheduling, the discipline this paper compares against",
+      "doi": "10.1049/iet-com.2010.0378",
+      "key": "fifo2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Enhanced first-in-first-out-based round-robin multicast scheduling algorithm for input-queued switches",
+      "type": "journal-article",
+      "venue": "IET Communications",
+      "year": 2011
+    },
+    {
+      "authors": [
+        "Liu",
+        "Gao",
+        "Chen",
+        "Chen",
+        "Cui",
+        "Qiao",
+        "Zhang"
+      ],
+      "claim": "proposes a software-defined programmable scheduling primitive",
+      "doi": "10.1109/jsyst.2025.3567017",
+      "key": "fipo2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "FIPO: A Lightweight and Customized Software-Defined Programmable Packet Scheduling Primitive",
+      "type": "journal-article",
+      "venue": "IEEE Systems Journal",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Elbediwy",
+        "Pontikakis",
+        "David",
+        "Savaria"
+      ],
+      "claim": "gives hardware for a dynamic ranking packet scheduler",
+      "doi": "10.1109/access.2023.3286726",
+      "key": "hwrank2023",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "A Hardware Architecture of a Dynamic Ranking Packet Scheduler for Programmable Network Devices",
+      "type": "journal-article",
+      "venue": "IEEE Access",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Zhang",
+        "Li",
+        "Li",
+        "Liu",
+        "Suo",
+        "Chen",
+        "Hu",
+        "Zhao",
+        "Li"
+      ],
+      "claim": "makes buffer state part of a programmable packet scheduling building block",
+      "doi": "10.1109/infocom55648.2025.11044448",
+      "key": "lark2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters",
+      "type": "proceedings-article",
+      "venue": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Tsanikidis",
+        "Ghaderi"
+      ],
+      "claim": "schedules packets to deadlines in multihop networks",
+      "doi": "10.1145/3673660.3655069",
+      "key": "nearsched2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Near-Optimal Packet Scheduling in Multihop Networks with End-to-End Deadline Constraints",
+      "type": "journal-article",
+      "venue": "ACM SIGMETRICS Performance Evaluation Review",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Jiang",
+        "Zhang",
+        "Liu",
+        "Zheng"
+      ],
+      "claim": "implements packet scheduling on a P4 data plane",
+      "doi": "10.1109/icccn52240.2021.9522193",
+      "key": "p4sched2021",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "A P4-Based Packet Scheduling Approach for Clustered Deep Packet Inspection Appliances",
+      "type": "proceedings-article",
+      "venue": "2021 International Conference on Computer Communications and Networks (ICCCN)",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Quan",
+        "Xu",
+        "Liu",
+        "Cheng",
+        "Liu",
+        "Gao",
+        "Zhang",
+        "Shen",
+        "Zhuang"
+      ],
+      "claim": "surveys programmable-data-plane forwarding",
+      "doi": "10.1109/comst.2022.3217613",
+      "key": "p4survey2023",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "AI-Driven Packet Forwarding With Programmable Data Plane: A Survey",
+      "type": "journal-article",
+      "venue": "IEEE Communications Surveys &amp; Tutorials",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Anirudh Sivaraman",
+        "Suvinay Subramanian",
+        "Mohammad Alizadeh",
+        "Sharad Chole",
+        "Shang-Tse Chuang",
+        "Anurag Agrawal",
+        "Hari Balakrishnan",
+        "Tom Edsall",
+        "Sachin Katti",
+        "Nick McKeown"
+      ],
+      "claim": "introduces PIFO, the queue abstraction whose exact behaviour a programmable switch approximates",
+      "doi": "10.1145/2934872.2934899",
+      "key": "pifo2016",
+      "resolved_by": "seed-doi",
+      "section": "2 Background",
+      "title": "Programmable Packet Scheduling at Line Rate",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the 2016 ACM SIGCOMM Conference",
+      "year": 2016
+    },
+    {
+      "authors": [
+        "Saqib",
+        "Elbiaze",
+        "Glitho",
+        "Ghamri-Doudane"
+      ],
+      "claim": "makes quality of service a programmable-data-plane function",
+      "doi": "10.1109/tmlcn.2024.3475968",
+      "key": "qosdp2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "An Intelligent and Programmable Data Plane for QoS-Aware Packet Processing",
+      "type": "journal-article",
+      "venue": "IEEE Transactions on Machine Learning in Communications and Networking",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Kang",
+        "Tian",
+        "Hu"
+      ],
+      "claim": "makes the arrival rate an input to packet scheduling",
+      "doi": "10.1109/iccect60629.2024.10545661",
+      "key": "ratesched2024",
+      "resolved_by": "exact",
+      "section": "2 Background",
+      "title": "A Programmable Packet Scheduling Method Based on Traffic Rate",
+      "type": "proceedings-article",
+      "venue": "2024 IEEE 2nd International Conference on Control, Electronics and Computer Technology (ICCECT)",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Mei",
+        "Chen",
+        "Chen",
+        "Chen",
+        "Yao",
+        "Zhang",
+        "Wang",
+        "Huang",
+        "Chen",
+        "Fan",
+        "Xu"
+      ],
+      "claim": "interleaves multiple priority queues for programmable scheduling, the line this paper measures",
+      "doi": "10.1145/3789240.3829190",
+      "key": "scaleuppifo2026",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Scale-up PIFO: Interleaving Multiple Priority Queues for High Speed Programmable Scheduling",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the ACM SIGCOMM 2026 Conference",
+      "year": 2026
+    },
+    {
+      "authors": [
+        "Hussain",
+        "Patetta",
+        "Rivalan"
+      ],
+      "claim": "demonstrates programmable packet scheduling on FPGA switches",
+      "doi": "10.1109/6gnet68413.2025.11314135",
+      "key": "schedfpga2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Demo: Programmable Packet Scheduling on FPGA-Based Switches",
+      "type": "proceedings-article",
+      "venue": "2025 4th International Conference on 6G Networking (6GNet)",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Xing",
+        "Qiu",
+        "Hsu",
+        "Sui",
+        "Manaa",
+        "Shabtai",
+        "Piasetzky",
+        "Kadosh",
+        "Krishnamurthy",
+        "Ng",
+        "Chen"
+      ],
+      "claim": "reports what a SmartNIC data plane can do at packet rate",
+      "doi": "10.1145/3603269.3604882",
+      "key": "smartnic2023",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Unleashing SmartNIC Packet Processing Performance in P4",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the ACM SIGCOMM 2023 Conference",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Vass",
+        "Sarkadi",
+        "Retvari"
+      ],
+      "claim": "gives SP-PIFO its theory and evaluation, and names the optimal queue mapping it approximates",
+      "doi": "10.1109/infocomwkshps54753.2022.9798055",
+      "key": "sppifo2022",
+      "resolved_by": "doi",
+      "section": "2 Background",
+      "title": "Programmable Packet Scheduling With SP-PIFO: Theory, Algorithms and Evaluation",
+      "type": "proceedings-article",
+      "venue": "IEEE INFOCOM 2022 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)",
+      "year": 2022
+    },
+    {
+      "authors": [
+        "Vass"
+      ],
+      "claim": "treats programmable packet scheduling with SP-PIFO as a problem with a heuristic",
+      "doi": "10.36244/icj.2025.3.1",
+      "key": "spring2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Spring: Theory and an Efficient Heuristic for Programmable Packet Scheduling with SP-PIFO",
+      "type": "journal-article",
+      "venue": "Infocommunications journal",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Song",
+        "Hasan"
+      ],
+      "claim": "uses time as an input to forwarding decisions in programmable data planes",
+      "doi": "10.1109/isorc65339.2025.00038",
+      "key": "timeaware2025",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Time-Aware Packet Forwarding in Programmable Data Planes",
+      "type": "proceedings-article",
+      "venue": "2025 28th International Symposium on Real-Time Distributed Computing (ISORC)",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Lv",
+        "Jiang",
+        "Yang"
+      ],
+      "claim": "reconciles programmable scheduling with a FIFO queue for time-sensitive traffic",
+      "doi": "10.1186/s13677-023-00518-3",
+      "key": "tsfifo2023",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "Making programmable packet scheduling time-sensitive with a FIFO queue",
+      "type": "journal-article",
+      "venue": "Journal of Cloud Computing",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Zhang",
+        "Chen",
+        "Yao",
+        "Sun",
+        "Mei",
+        "Wang",
+        "Chen",
+        "Fang",
+        "Fan",
+        "Shi",
+        "Liu",
+        "Xu"
+      ],
+      "claim": "virtualises the packet scheduler for hierarchical scheduling",
+      "doi": "10.1145/3651890.3672270",
+      "key": "vpifo2024",
+      "resolved_by": "unique-substring",
+      "section": "2 Background",
+      "title": "vPIFO: Virtualized Packet Scheduler for Programmable Hierarchical Scheduling in High-Speed Networks",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the ACM SIGCOMM 2024 Conference",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Lesens",
+        "Cohen",
+        "U\u00e7ar"
+      ],
+      "claim": "decomposes a switch schedule, the matrix form of the assignment this paper enumerates",
+      "doi": "10.23919/eusipco63174.2024.10715087",
+      "key": "bvn2024",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Orthogonal Matching Pursuit-Based Algorithms for the Birkhoff-Von Neumann Decomposition",
+      "type": "proceedings-article",
+      "venue": "2024 32nd European Signal Processing Conference (EUSIPCO)",
+      "year": 2024
+    },
+    {
+      "authors": [],
+      "claim": "implements a class-based low-latency fair queueing scheduler",
+      "doi": "10.3837/tiis.2020.02.001",
+      "key": "cbllfq2020",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Implementation of Class-Based Low Latency Fair Queueing (CBLLFQ) Packet Scheduling Algorithm for HSDPA Core Network",
+      "type": "journal-article",
+      "venue": "KSII Transactions on Internet and Information Systems",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Kubo",
+        "Okada",
+        "Oki"
+      ],
+      "claim": "reports delay under combined input-output queueing",
+      "doi": "10.1109/ojcoms.2026.3726416",
+      "key": "ciocq2026",
+      "resolved_by": "doi",
+      "section": "3 The device model",
+      "title": "Delay Impact of Bursty Cross Traffic in Combined Input and Output Queued Switches Using Virtual Input Queueing Under Diverse Network and Traffic Conditions",
+      "type": "journal-article",
+      "venue": "IEEE Open Journal of the Communications Society",
+      "year": 2026
+    },
+    {
+      "authors": [
+        "Lin",
+        "Rojas-Cessa"
+      ],
+      "claim": "builds scalable switch fabrics whose scheduling problem is a matching one",
+      "doi": "10.1109/lcomm.2007.061617",
+      "key": "clos2007",
+      "resolved_by": "doi",
+      "section": "3 The device model",
+      "title": "Module Matching Schemes for Input-Queued Clos-Network Packet Switches",
+      "type": "journal-article",
+      "venue": "IEEE Communications Letters",
+      "year": 2007
+    },
+    {
+      "authors": [
+        "Divanovic",
+        "Radonjic",
+        "Gardasevic",
+        "Radusinovic"
+      ],
+      "claim": "reports weighted round-robin scheduling in a crosspoint-queued switch Fabric",
+      "doi": "10.1109/telfor.2013.6716184",
+      "key": "cqswitch2013",
+      "resolved_by": "doi",
+      "section": "3 The device model",
+      "title": "Dynamic weighted round robin in crosspoint queued switch",
+      "type": "proceedings-article",
+      "venue": "2013 21st Telecommunications Forum Telfor (TELFOR)",
+      "year": 2013
+    },
+    {
+      "authors": [
+        "Chang",
+        "Lee"
+      ],
+      "claim": "analyses the cycle time of the deficit round robin packet scheduler",
+      "doi": "10.1109/iccnc.2012.6167459",
+      "key": "drr2012",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Cycle time distribution and control for the Deficit Round Robin packet scheduler",
+      "type": "proceedings-article",
+      "venue": "2012 International Conference on Computing, Networking and Communications (ICNC)",
+      "year": 2012
+    },
+    {
+      "authors": [
+        "Mukherjee",
+        "Kuri",
+        "Singh"
+      ],
+      "claim": "optimises deficit round robin for delay-constrained systems",
+      "doi": "10.23919/wiopt66569.2025.11123403",
+      "key": "drr2025",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Convexity and Optimization in Deficit Round Robin Scheduling for Delay-Constrained Systems",
+      "type": "proceedings-article",
+      "venue": "2025 23rd International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt)",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Sun",
+        "Li"
+      ],
+      "claim": "matches a switch with a round-robin scheme",
+      "doi": "10.1109/icis46139.2019.8940224",
+      "key": "hdmrr2019",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Half-Draining Round Robin Matching for High Performance Input Queued Switches",
+      "type": "proceedings-article",
+      "venue": "2019 IEEE/ACIS 18th International Conference on Computer and Information Science (ICIS)",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Liao",
+        "Wu"
+      ],
+      "claim": "schedules by queue occupancy, a discipline distinct from the rank-band rule measured here",
+      "doi": "10.1109/isita.2010.5648873",
+      "key": "lqf2010",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Longest queue first in round-robin matching for input-queued switches",
+      "type": "proceedings-article",
+      "venue": "2010 International Symposium On Information Theory &amp; Its Applications",
+      "year": 2010
+    },
+    {
+      "authors": [
+        "Huang",
+        "Huang"
+      ],
+      "claim": "analyses matching algorithms for input-queued switches under heavy traffic",
+      "doi": "10.1016/j.peva.2020.102143",
+      "key": "maxweight2020",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Heavy traffic analysis of approximate max-weight matching algorithms for input-queued switches",
+      "type": "journal-article",
+      "venue": "Performance Evaluation",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Xiao",
+        "Yeung"
+      ],
+      "claim": "extends switch scheduling to multicast with variable packet size",
+      "doi": "10.1109/ccece.2017.7946605",
+      "key": "multicast2017",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Iterative multicast scheduling algorithm for input-queued switch with variable packet size",
+      "type": "proceedings-article",
+      "venue": "2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE)",
+      "year": 2017
+    },
+    {
+      "authors": [
+        "Kang",
+        "Williams"
+      ],
+      "claim": "approximates an input-queued switch under maximum-weight matching",
+      "doi": "10.1287/12-ssy061",
+      "key": "mwm2012",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Diffusion Approximation for an Input-queued Switch Operating under a Maximum Weight Matching Policy",
+      "type": "journal-article",
+      "venue": "Stochastic Systems",
+      "year": 2012
+    },
+    {
+      "authors": [
+        "Heisswolf",
+        "Konig",
+        "Becker"
+      ],
+      "claim": "applies a round-robin discipline at a network-on-chip router",
+      "doi": "10.1109/ispa.2012.93",
+      "key": "nocqos2012",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "A Scalable NoC Router Design Providing QoS Support Using Weighted Round Robin Scheduling",
+      "type": "proceedings-article",
+      "venue": "2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications",
+      "year": 2012
+    },
+    {
+      "authors": [
+        "Gourgy",
+        "Szymanski",
+        "Down"
+      ],
+      "claim": "compares what an output-queued switch does with what an input-queued one can imitate",
+      "doi": "10.1109/tnet.2009.2014948",
+      "key": "oqsq2009",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "On Tracking the Behavior of an Output-Queued Switch Using an Input-Queued Switch",
+      "type": "journal-article",
+      "venue": "IEEE/ACM Transactions on Networking",
+      "year": 2009
+    },
+    {
+      "authors": [
+        "Yu",
+        "Chen",
+        "Tian"
+      ],
+      "claim": "approximates weighted fair queueing with calendar queues",
+      "doi": "10.1109/iccc59590.2023.10507624",
+      "key": "owfq2023",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "OWFQ: Reducing Packet Drops for Approximate Weighted Fair Queueing with Calendar Queues",
+      "type": "proceedings-article",
+      "venue": "2023 9th International Conference on Computer and Communications (ICCC)",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Kitsuwan",
+        "Oki",
+        "Rojas-Cessa",
+        "Kishi"
+      ],
+      "claim": "analyses parallel iterative matching, the matching approach an output-queued abstraction would need",
+      "doi": "10.1109/apcc.2009.5375476",
+      "key": "pim2009",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Performance analysis on dynamics of parallel iterative matching in an input-buffered switch",
+      "type": "proceedings-article",
+      "venue": "2009 15th Asia-Pacific Conference on Communications",
+      "year": 2009
+    },
+    {
+      "authors": [
+        "Assegie",
+        "Derebe Bizuneh"
+      ],
+      "claim": "combines priority and weighted fair queueing in one device",
+      "doi": "10.11591/ijeecs.v19.i1.pp241-247",
+      "key": "priowfq2020",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Improving network performance with an integrated priority queue and weighted fair queue scheduling",
+      "type": "journal-article",
+      "venue": "Indonesian Journal of Electrical Engineering and Computer Science",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Gong",
+        "Xu",
+        "Liu",
+        "Maguluri"
+      ],
+      "claim": "gives an iterative switching algorithm for input-queued switches",
+      "doi": "10.1016/j.peva.2021.102197",
+      "key": "qpsr2021",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "QPS-r: A cost-effective iterative switching algorithm for input-queued switches",
+      "type": "journal-article",
+      "venue": "Performance Evaluation",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Liu",
+        "Li"
+      ],
+      "claim": "schedules packets in high-speed networks with a weighted round-robin discipline",
+      "doi": "10.19026/rjaset.7.498",
+      "key": "rr2014",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Packet Scheduling in High-speed Networks Using Improved Weighted Round Robin",
+      "type": "journal-article",
+      "venue": "Research Journal of Applied Sciences, Engineering and Technology",
+      "year": 2014
+    },
+    {
+      "authors": [
+        "Lin",
+        "Hamdi",
+        "Muppala"
+      ],
+      "claim": "makes the buffer's own access order part of the scheduling design",
+      "doi": "10.1109/glocom.2010.5683309",
+      "key": "rrbuffer2010",
+      "resolved_by": "exact",
+      "section": "3 The device model",
+      "title": "Designing Packet Buffers Using Random Round Robin",
+      "type": "proceedings-article",
+      "venue": "2010 IEEE Global Telecommunications Conference GLOBECOM 2010",
+      "year": 2010
+    },
+    {
+      "authors": [
+        "Rahimi",
+        "Pournaghshband"
+      ],
+      "claim": "reports how low-priority traffic behaves under strict priority, the dequeue discipline modelled here",
+      "doi": "10.1109/iccci.2016.7480023",
+      "key": "strprio2016",
+      "resolved_by": "doi",
+      "section": "3 The device model",
+      "title": "An improvement mechanism for low priority traffic TCP performance in Strict Priority Queueing",
+      "type": "proceedings-article",
+      "venue": "2016 International Conference on Computer Communication and Informatics (ICCCI)",
+      "year": 2016
+    },
+    {
+      "authors": [
+        "Jamali",
+        "Ghiasian"
+      ],
+      "claim": "schedules a switch through per-output queues rather than one global order",
+      "doi": "10.1049/iet-net.2018.5115",
+      "key": "voq2019",
+      "resolved_by": "doi",
+      "section": "3 The device model",
+      "title": "Randomised scheduling algorithm for virtual output queuing switch at the presence of non\u2010uniform traffic",
+      "type": "journal-article",
+      "venue": "IET Networks",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Shortle",
+        "Fischer"
+      ],
+      "claim": "approximates a two-class weighted fair queueing discipline",
+      "doi": "10.1016/j.peva.2010.05.004",
+      "key": "wfq2010",
+      "resolved_by": "unique-substring",
+      "section": "3 The device model",
+      "title": "Approximation for a two-class weighted fair queueing discipline",
+      "type": "journal-article",
+      "venue": "Performance Evaluation",
+      "year": 2010
+    },
+    {
+      "authors": [
+        "Ghodsi",
+        "Sekar",
+        "Zaharia",
+        "Stoica"
+      ],
+      "claim": "extends fair queueing from links to packet-processing resources",
+      "doi": "10.1145/2377677.2377679",
+      "key": "wfq2012",
+      "resolved_by": "exact",
+      "section": "3 The device model",
+      "title": "Multi-resource fair queueing for packet processing",
+      "type": "journal-article",
+      "venue": "ACM SIGCOMM Computer Communication Review",
+      "year": 2012
+    },
+    {
+      "authors": [
+        "Vaisman",
+        "Gertsbakh"
+      ],
+      "claim": "computes an optimal chain decomposition of a poset",
+      "doi": "10.1007/s12469-022-00304-5",
+      "key": "chaindecomp2022",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "Optimal balanced chain decomposition of partially ordered sets with applications to operating cost minimization in aircraft routing problems",
+      "type": "journal-article",
+      "venue": "Public Transport",
+      "year": 2022
+    },
+    {
+      "authors": [
+        "Elizalde"
+      ],
+      "claim": "treats permutation statistics generationally",
+      "doi": "10.23638/dmtcs-19-2-11",
+      "key": "continfrac2018",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Continued fractions for permutation statistics",
+      "type": "journal-article",
+      "venue": "Discrete Mathematics &amp; Theoretical Computer Science",
+      "year": 2018
+    },
+    {
+      "authors": [
+        "Jiang",
+        "Wang"
+      ],
+      "claim": "analyses the number of descents, the statistic that sets the device threshold",
+      "doi": "10.1016/j.spl.2024.110320",
+      "key": "descents2025",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "Moderate deviations for the number of descents in a random permutation",
+      "type": "journal-article",
+      "venue": "Statistics &amp; Probability Letters",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Bercu",
+        "Bonnefont",
+        "Richou"
+      ],
+      "claim": "bounds the descents statistic's concentration",
+      "doi": "10.1017/jpr.2023.86",
+      "key": "desclargedev2024",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "Sharp large deviations and concentration inequalities for the number of descents in a random permutation",
+      "type": "journal-article",
+      "venue": "Journal of Applied Probability",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Bercu",
+        "Bonnefont",
+        "Fredes",
+        "Richou"
+      ],
+      "claim": "gives the joint distribution of descents and inverse descents, the two sides of this model",
+      "doi": "10.1214/24-aap2138",
+      "key": "descsharp2025",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "Sharp analysis on the joint distribution of the number of descents and inverse descents in a random permutation",
+      "type": "journal-article",
+      "venue": "The Annals of Applied Probability",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Dilworth"
+      ],
+      "claim": "is the decomposition theorem the free-merge threshold is a corollary of",
+      "doi": "10.1007/978-0-8176-4842-8_10",
+      "key": "dilworth2009",
+      "resolved_by": "doi",
+      "section": "4 Combinatorics",
+      "title": "A Decomposition Theorem for Partially Ordered Sets",
+      "type": "book-chapter",
+      "venue": "Classic Papers in Combinatorics",
+      "year": 2009
+    },
+    {
+      "authors": [
+        "F",
+        "S",
+        "A. M"
+      ],
+      "claim": "generalises Dilworth's decomposition to partially ordered multisets, the tied-rank case here",
+      "doi": "10.4314/aujst.v5i1.6",
+      "key": "dilworthgen2024",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "A Generalization of Dilworth\u2019s Decomposition Theorem for Partially Ordered Multisets",
+      "type": "journal-article",
+      "venue": "Anchor University Journal of Science and Technology",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Kociumaka",
+        "Seddighin"
+      ],
+      "claim": "maintains the increasing subsequence statistic under updates",
+      "doi": "10.1145/3406325.3451026",
+      "key": "dynamiclis2021",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Improved dynamic algorithms for longest increasing subsequence",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of Computing",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Itskovich",
+        "Levit"
+      ],
+      "claim": "connects subsequence structure to the permutation's own statistics",
+      "doi": "10.3390/a12110237",
+      "key": "ehrt2019",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?",
+      "type": "journal-article",
+      "venue": "Algorithms",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "B\u00f3na",
+        "DeJonge"
+      ],
+      "claim": "characterises permutations by their increasing subsequence structure",
+      "doi": "10.37236/9506",
+      "key": "incr2020",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Pattern Avoiding Permutations with a Unique Longest Increasing Subsequence",
+      "type": "journal-article",
+      "venue": "The Electronic Journal of Combinatorics",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Itskovich",
+        "Levit"
+      ],
+      "claim": "relates the longest increasing and decreasing subsequences, the two statistics compared here",
+      "doi": "10.3390/a12110237",
+      "key": "lislds2019",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?",
+      "type": "journal-article",
+      "venue": "Algorithms",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Franz",
+        "Mulet"
+      ],
+      "claim": "revisits the longest-increasing-subsequence problem",
+      "doi": "10.1088/1572-9494/ae9b87",
+      "key": "lisrevisited2026",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "The longest increasing subsequence problem revisited",
+      "type": "journal-article",
+      "venue": "Communications in Theoretical Physics",
+      "year": 2026
+    },
+    {
+      "authors": [
+        "He"
+      ],
+      "claim": "gives a limit theorem for descents including the inverse statistic",
+      "doi": "10.1214/21-aihp1167",
+      "key": "mallows2022",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "A central limit theorem for descents of a Mallows permutation and its inverse",
+      "type": "journal-article",
+      "venue": "Annales de l'Institut Henri Poincar\u00e9, Probabilit\u00e9s et Statistiques",
+      "year": 2022
+    },
+    {
+      "authors": [
+        "Cao",
+        "Huang",
+        "Su"
+      ],
+      "claim": "computes the increasing subsequence statistic in parallel",
+      "doi": "10.1145/3558481.3591078",
+      "key": "parallellis2023",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the 35th ACM Symposium on Parallelism in Algorithms and Architectures",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Corwin"
+      ],
+      "claim": "is a commentary on the patience-sorting line of longest-increasing-subsequence results, where the decreasing-subsequence statistic lives",
+      "doi": "10.1090/bull/1623",
+      "key": "patience2018",
+      "resolved_by": "doi",
+      "section": "4 Combinatorics",
+      "title": "Commentary on \u201cLongest increasing subsequences: from patience sorting to the Baik\u2013Deift\u2013Johansson theorem\u201d by David Aldous and Persi Diaconis",
+      "type": "journal-article",
+      "venue": "Bulletin of the American Mathematical Society",
+      "year": 2018
+    },
+    {
+      "authors": [
+        "Axenovich",
+        "Winter"
+      ],
+      "claim": "studies posets combinatorially, adjacent machinery to the decomposition used here",
+      "doi": "10.1007/s11083-024-09663-z",
+      "key": "posetramsey2024",
+      "resolved_by": "doi",
+      "section": "4 Combinatorics",
+      "title": "Poset Ramsey Number $$R(P,Q_n)$$. II. N-Shaped Poset",
+      "type": "journal-article",
+      "venue": "Order",
+      "year": 2024
+    },
+    {
+      "authors": [],
+      "claim": "states the correspondence between permutations and pairs of tableaux",
+      "doi": "10.1090/stml/091/08",
+      "key": "rsk2019",
+      "resolved_by": "doi",
+      "section": "4 Combinatorics",
+      "title": "The Robinson\u2013Schensted\u2013Knuth correspondence",
+      "type": "book-chapter",
+      "venue": "The Student Mathematical Library",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Dukes",
+        "Mullins"
+      ],
+      "claim": "relates permutation statistics through the Robinson-Schensted correspondence",
+      "doi": "10.1007/s00026-024-00708-z",
+      "key": "rsk2024",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "A Bump Statistic on Permutations Resulting from the Robinson\u2013Schensted Correspondence",
+      "type": "journal-article",
+      "venue": "Annals of Combinatorics",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Marciniak",
+        "Ma\u015blanka",
+        "\u015aniady"
+      ],
+      "claim": "gives limit theorems for the correspondence that maps permutations to tableaux",
+      "doi": "10.1016/j.aam.2022.102478",
+      "key": "rskpoisson2023",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "Poisson limit theorems for the Robinson\u2013Schensted correspondence and for the multi-line Hammersley process",
+      "type": "journal-article",
+      "venue": "Advances in Applied Mathematics",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Felsner",
+        "Pergel"
+      ],
+      "claim": "studies exactly the objects this model uses: networks of queues and stacks as sorting devices",
+      "doi": "10.1007/978-3-540-87744-8_35",
+      "key": "sortnetstack2008",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "The Complexity of Sorting with Networks of Stacks and Queues",
+      "type": "book-chapter",
+      "venue": "Lecture Notes in Computer Science",
+      "year": 2008
+    },
+    {
+      "authors": [
+        "Kiyomi",
+        "Ono",
+        "Otachi",
+        "Schweitzer",
+        "Tarui"
+      ],
+      "claim": "computes the statistic in bounded space",
+      "doi": "10.1007/s00224-018-09908-6",
+      "key": "spacelis2019",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Space-Efficient Algorithms for Longest Increasing Subsequence",
+      "type": "journal-article",
+      "venue": "Theory of Computing Systems",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Zhao"
+      ],
+      "claim": "characterises which permutations a stack-sorting device can produce",
+      "doi": "10.1016/j.disc.2025.114834",
+      "key": "stacksort2026",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Stack-sorting with stacks avoiding vincular patterns",
+      "type": "journal-article",
+      "venue": "Discrete Mathematics",
+      "year": 2026
+    },
+    {
+      "authors": [
+        "Mitzenmacher",
+        "Seddighin"
+      ],
+      "claim": "computes the statistic in sublinear time",
+      "doi": "10.1137/1.9781611976465.115",
+      "key": "sublinear2021",
+      "resolved_by": "exact",
+      "section": "4 Combinatorics",
+      "title": "Improved Sublinear Time Algorithm for Longest Increasing Subsequence",
+      "type": "book-chapter",
+      "venue": "Proceedings of the 2021 ACM-SIAM Symposium on Discrete Algorithms (SODA)",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Fiorini",
+        "Rexhep"
+      ],
+      "claim": "relates a poset's width to its linear extensions",
+      "doi": "10.1007/s11083-015-9346-z",
+      "key": "widthentropy2015",
+      "resolved_by": "unique-substring",
+      "section": "4 Combinatorics",
+      "title": "Poset Entropy Versus Number of Linear Extensions: The Width-2 Case",
+      "type": "journal-article",
+      "venue": "Order",
+      "year": 2015
+    },
+    {
+      "authors": [
+        "Barba",
+        "Bertazzi",
+        "Golden"
+      ],
+      "claim": "applies competitive analysis to an online allocation problem",
+      "doi": "10.3390/a17060237",
+      "key": "competcloud2024",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Competitive Analysis of Algorithms for an Online Distribution Problem",
+      "type": "journal-article",
+      "venue": "Algorithms",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Dunke",
+        "Nickel"
+      ],
+      "claim": "corrects the distributional analysis of lookahead",
+      "doi": "10.1007/s10288-021-00479-w",
+      "key": "lookaheadcorr2021",
+      "resolved_by": "unique-substring",
+      "section": "5 Online algorithms",
+      "title": "Correction to: Exact distributional analysis of online algorithms with lookahead",
+      "type": "journal-article",
+      "venue": "4OR",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Dunke",
+        "Nickel"
+      ],
+      "claim": "analyses online algorithms exactly under lookahead",
+      "doi": "10.1007/s10288-020-00442-1",
+      "key": "lookaheadexact2020",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Exact distributional analysis of online algorithms with lookahead",
+      "type": "journal-article",
+      "venue": "4OR",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Chen",
+        "Zhang",
+        "Xu"
+      ],
+      "claim": "treats lookahead as information in an online minimisation problem",
+      "doi": "10.1007/s10878-020-00633-w",
+      "key": "machinemin2020",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Online machine minimization with lookahead",
+      "type": "journal-article",
+      "venue": "Journal of Combinatorial Optimization",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Itoh",
+        "Miyazaki",
+        "Satake"
+      ],
+      "claim": "competitively analyses an online matching problem",
+      "doi": "10.1142/s1793830921501561",
+      "key": "metmatch2021",
+      "resolved_by": "unique-substring",
+      "section": "5 Online algorithms",
+      "title": "Competitive analysis for two variants of online metric matching problem",
+      "type": "journal-article",
+      "venue": "Discrete Mathematics, Algorithms and Applications",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Pinson",
+        "Spieksma"
+      ],
+      "claim": "measures what lookahead buys in an online interval scheduling problem",
+      "doi": "10.1007/s10878-019-00381-6",
+      "key": "onlineinterval2019",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Online interval scheduling on two related machines: the power of lookahead",
+      "type": "journal-article",
+      "venue": "Journal of Combinatorial Optimization",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "B\u00f6hm",
+        "Chrobak",
+        "Je\u017c",
+        "Li",
+        "Sgall",
+        "Vesel\u00fd"
+      ],
+      "claim": "is the closest online-scheduling analogue of the foresight comparison here: what lookahead buys a packet scheduler",
+      "doi": "10.1016/j.tcs.2019.01.013",
+      "key": "onpktlookahead2019",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Online packet scheduling with bounded delay and lookahead",
+      "type": "journal-article",
+      "venue": "Theoretical Computer Science",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Lindermayr",
+        "Megow"
+      ],
+      "claim": "feeds a permutation prediction to a non-clairvoyant scheduler, the information shape this model computes exactly",
+      "doi": "10.1145/3711872",
+      "key": "permpred2025",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Permutation Predictions for Non-Clairvoyant Scheduling",
+      "type": "journal-article",
+      "venue": "ACM Transactions on Parallel Computing",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Zheng",
+        "Chen",
+        "Liu"
+      ],
+      "claim": "measures the value of initial lookahead in semi-online scheduling",
+      "doi": "10.1051/ro/2024042",
+      "key": "semiuniform2024",
+      "resolved_by": "exact",
+      "section": "5 Online algorithms",
+      "title": "Semi-online scheduling on two uniform parallel machines with initial lookahead",
+      "type": "journal-article",
+      "venue": "RAIRO - Operations Research",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Jiao",
+        "Yuan",
+        "Feng"
+      ],
+      "claim": "schedules unit-length jobs online under batching constraints",
+      "doi": "10.1142/s0217595919500246",
+      "key": "unitbatch2019",
+      "resolved_by": "doi",
+      "section": "5 Online algorithms",
+      "title": "Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead",
+      "type": "journal-article",
+      "venue": "Asia-Pacific Journal of Operational Research",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "Nurmi",
+        "Lindgren",
+        "Szymkowiak",
+        "H\u00e4m\u00e4l\u00e4inen"
+      ],
+      "claim": "gives a hardware priority queue with constant-time removal, the device-side cost of the abstraction",
+      "doi": "10.1109/dsd60849.2023.00070",
+      "key": "antq2023",
+      "resolved_by": "doi",
+      "section": "6 Data structures",
+      "title": "AnTiQ: A Hardware-Accelerated Priority Queue Design with Constant Time Arbitrary Element Removal",
+      "type": "proceedings-article",
+      "venue": "2023 26th Euromicro Conference on Digital System Design (DSD)",
+      "year": 2023
+    },
+    {
+      "authors": [],
+      "claim": "states the elementary heap-to-priority-queue correspondence",
+      "doi": "10.1145/3731333.3731359",
+      "key": "binaryheaps2025",
+      "resolved_by": "exact",
+      "section": "6 Data structures",
+      "title": "Binary Heaps and Priority Queues",
+      "type": "book-chapter",
+      "venue": "Thinking about Programs",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Das",
+        "Cristina Pinotti"
+      ],
+      "claim": "builds parallel priority queues on binomial heaps",
+      "doi": "10.1016/s0167-8191(00)00064-8",
+      "key": "binomialheaps2000",
+      "resolved_by": "exact",
+      "section": "6 Data structures",
+      "title": "Parallel priority queues based on binomial heaps",
+      "type": "journal-article",
+      "venue": "Parallel Computing",
+      "year": 2000
+    },
+    {
+      "authors": [
+        "Carlsson"
+      ],
+      "claim": "implements a double-ended priority queue",
+      "doi": "10.1016/0020-0190(87)90033-0",
+      "key": "deap1987",
+      "resolved_by": "unique-substring",
+      "section": "6 Data structures",
+      "title": "The deap\u2014a double-ended heap to implement double-ended priority queues",
+      "type": "journal-article",
+      "venue": "Information Processing Letters",
+      "year": 1987
+    },
+    {
+      "authors": [
+        "St\u00f8lting Brodal"
+      ],
+      "claim": "treats priority queues whose keys only decrease, a monotone-input restriction",
+      "doi": "10.1016/j.tcs.2024.114563",
+      "key": "decreasingkeys2024",
+      "resolved_by": "exact",
+      "section": "6 Data structures",
+      "title": "Priority queues with decreasing keys",
+      "type": "journal-article",
+      "venue": "Theoretical Computer Science",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Ding",
+        "Weiss"
+      ],
+      "claim": "gives a double-ended heap structure",
+      "doi": "10.1007/bf01179371",
+      "key": "delaunay1993",
+      "resolved_by": "exact",
+      "section": "6 Data structures",
+      "title": "The relaxed min-max heap",
+      "type": "journal-article",
+      "venue": "Acta Informatica",
+      "year": 1993
+    },
+    {
+      "authors": [
+        "Collinson",
+        "Bai",
+        "Sinnen"
+      ],
+      "claim": "scales a hardware priority queue with multi-push",
+      "doi": "10.1109/ipdpsw63119.2024.00038",
+      "key": "fastpq2024",
+      "resolved_by": "unique-substring",
+      "section": "6 Data structures",
+      "title": "A Fast Scalable Hardware Priority Queue and Optimizations for Multi-Pushes",
+      "type": "proceedings-article",
+      "venue": "2024 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Michail"
+      ],
+      "claim": "packages priority-queue implementations as a library",
+      "doi": "10.1016/j.softx.2021.100869",
+      "key": "jheaps2021",
+      "resolved_by": "unique-substring",
+      "section": "6 Data structures",
+      "title": "JHeaps: An open-source library of priority queues",
+      "type": "journal-article",
+      "venue": "SoftwareX",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Arvind",
+        "Rangan"
+      ],
+      "claim": "simplifies double-ended priority-queue construction",
+      "doi": "10.1016/s0020-0190(99)00014-9",
+      "key": "minmax1999",
+      "resolved_by": "unique-substring",
+      "section": "6 Data structures",
+      "title": "Symmetric Min-Max heap: A simpler data structure for double-ended priority queue",
+      "type": "journal-article",
+      "venue": "Information Processing Letters",
+      "year": 1999
+    },
+    {
+      "authors": [
+        "Ioannou",
+        "Katevenis"
+      ],
+      "claim": "pipelines heap management for scheduling in high-speed networks",
+      "doi": "10.1109/tnet.2007.892882",
+      "key": "pipelinedheap2007",
+      "resolved_by": "unique-substring",
+      "section": "6 Data structures",
+      "title": "Pipelined Heap (Priority Queue) Management for Advanced Scheduling in High-Speed Networks",
+      "type": "journal-article",
+      "venue": "IEEE/ACM Transactions on Networking",
+      "year": 2007
+    },
+    {
+      "authors": [
+        "Grimes",
+        "Rodriguez",
+        "Hassan",
+        "Spear",
+        "Palmieri"
+      ],
+      "claim": "gives a strictly concurrent priority queue",
+      "doi": "10.1145/3816782.3819208",
+      "key": "qpidsr2026",
+      "resolved_by": "unique-substring",
+      "section": "6 Data structures",
+      "title": "Brief Announcement: QPID: A Scalable, Strict Concurrent Priority Queue",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the 38th ACM Symposium on Parallelism in Algorithms and Architectures",
+      "year": 2026
+    },
+    {
+      "authors": [
+        "Sanders"
+      ],
+      "claim": "makes a priority queue accessible in parallel at random",
+      "doi": "10.1006/jpdc.1998.1429",
+      "key": "randpq1998",
+      "resolved_by": "exact",
+      "section": "6 Data structures",
+      "title": "Randomized Priority Queues for Fast Parallel Access",
+      "type": "journal-article",
+      "venue": "Journal of Parallel and Distributed Computing",
+      "year": 1998
+    },
+    {
+      "authors": [
+        "Magadum",
+        "Singh",
+        "Kushwaha"
+      ],
+      "claim": "reports flow completion time as the end-to-end cost of the scheduler",
+      "doi": "10.1109/icccn65249.2025.11134021",
+      "key": "fct2025",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time",
+      "type": "proceedings-article",
+      "venue": "2025 34th International Conference on Computer Communications and Networks (ICCCN)",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Wang",
+        "Kong"
+      ],
+      "claim": "offloads packet handling to a SmartNIC in P4",
+      "doi": "10.1109/icc59461.2026.11587563",
+      "key": "frag2026",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "Offloading IP Packet Fragmentation from CPU to SmartNIC Using P4",
+      "type": "proceedings-article",
+      "venue": "ICC 2026 - IEEE International Conference on Communications",
+      "year": 2026
+    },
+    {
+      "authors": [],
+      "claim": "reports a network-on-chip router implementation, an adjacent interconnect setting",
+      "doi": "10.1002/ett.5043",
+      "key": "noc2024",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "<scp>RETRACTION</scp>\n                    : Design and Implementation of Network\u2010on\u2010chip Router Using Multi\u2010priority Based Iterative Round\u2010robin Matching With Slip",
+      "type": "journal-article",
+      "venue": "Transactions on Emerging Telecommunications Technologies",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Hui",
+        "Yang",
+        "Wang"
+      ],
+      "claim": "offloads a collective to a SmartNIC",
+      "doi": "10.1109/ispa63168.2024.00030",
+      "key": "smartnicallreduce2024",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "Leveraging SmartNIC for Ring AllReduce Offloading",
+      "type": "proceedings-article",
+      "venue": "2024 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA)",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "Zhang",
+        "Li",
+        "Li",
+        "Liu",
+        "Suo",
+        "Chen",
+        "Hu",
+        "Zhao",
+        "Li"
+      ],
+      "claim": "ties the scheduler's buffer behaviour to datacenter performance",
+      "doi": "10.1109/infocom55648.2025.11044448",
+      "key": "tail2025",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters",
+      "type": "proceedings-article",
+      "venue": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications",
+      "year": 2025
+    },
+    {
+      "authors": [
+        "Mashreghi-Moghadam",
+        "Ould-Bachir",
+        "Savaria"
+      ],
+      "claim": "reports a packet-parsing architecture at terabit scale",
+      "doi": "10.1109/iscas48785.2022.9937607",
+      "key": "trimmer2022",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "A Templated VHDL Architecture for Terabit/s P4-programmable FPGA-based Packet Parsing",
+      "type": "proceedings-article",
+      "venue": "2022 IEEE International Symposium on Circuits and Systems (ISCAS)",
+      "year": 2022
+    },
+    {
+      "authors": [
+        "Wang",
+        "Zhao",
+        "Zhang",
+        "Xu",
+        "Yue",
+        "Xie"
+      ],
+      "claim": "offloads packet processing to a SmartNIC",
+      "doi": "10.1109/icpads56603.2022.00103",
+      "key": "xdp2023",
+      "resolved_by": "unique-substring",
+      "section": "7 Measurement",
+      "title": "OXDP: Offloading XDP to SmartNIC for Accelerating Packet Processing",
+      "type": "proceedings-article",
+      "venue": "2022 IEEE 28th International Conference on Parallel and Distributed Systems (ICPADS)",
+      "year": 2023
+    }
+  ],
+  "problems": [],
+  "pruned": [
+    {
+      "key": "fifo2022",
+      "reason": "duplicate of sppifo2022 -- same record under a second key"
+    },
+    {
+      "key": "stacksort2013",
+      "reason": "no such record in the pool: the title was recalled, not harvested"
+    },
+    {
+      "key": "twostack2019",
+      "reason": "no such record in the pool: the title was recalled, not harvested"
+    }
+  ]
+}

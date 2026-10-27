@@ -25,12 +25,14 @@ step() {
     return 0
 }
 
-step "1/3 results: certificate, threshold statistics, gap distributions, rule control" \
+step "1/4 results: certificate, threshold statistics, gap distributions, rule control" \
      "$PY" emit_results.py
-step "2/3 figure: the discipline-gap figure, redrawn from results.json" \
+step "2/4 figure: the discipline-gap figure, redrawn from results.json" \
      "$PY" make_figure.py
-step "3/3 check: every stored summary recomputed from its rows" \
+step "3/4 check: every stored summary recomputed from its rows" \
      "$PY" check_results.py
+step "4/4 references: the placement still resolves and still matches the committed artifact" \
+     "$PY" place_refs.py --check
 
-printf '\nREPRODUCE: %s\n' "$([ "$FAILED" -eq 0 ] && echo 'ALL GREEN (3 steps)' || echo "$FAILED STEP(S) FAILED")"
+printf '\nREPRODUCE: %s\n' "$([ "$FAILED" -eq 0 ] && echo 'ALL GREEN (4 steps)' || echo "$FAILED STEP(S) FAILED")"
 exit "$FAILED"

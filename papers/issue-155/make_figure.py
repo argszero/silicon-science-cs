@@ -35,6 +35,13 @@ def prepare():
     os.makedirs(FIGDIR, exist_ok=True)
     matplotlib.rcParams["svg.fonttype"] = "none"  # keep text as text
     matplotlib.rcParams["font.size"] = 9
+    # Byte-reproducibility of the SVG. Two things in matplotlib's SVG output are
+    # otherwise nondeterministic run to run: the <dc:date> stamp, and the id of
+    # every clip path, which matplotlib derives from a per-object hash seeded by
+    # `svg.hashsalt` (random per process when unset). Both made a committed
+    # figure differ from a regenerated one while every number in it was equal --
+    # a diff that looks like a change and carries no information.
+    matplotlib.rcParams["svg.hashsalt"] = "issue-155"
 
 
 def bars(rows, key_label, gap_max=3):
@@ -101,7 +108,7 @@ def draw(rows_a, rows_b, gap_max=3):
 
     svg = os.path.join(FIGDIR, "discipline-gap.svg")
     png = os.path.join(FIGDIR, "discipline-gap.png")
-    fig.savefig(svg, format="svg")
+    fig.savefig(svg, format="svg", metadata={"Date": None})
     fig.savefig(png, format="png", dpi=160)
     plt.close(fig)
     return svg, png, labels_a, labels_b, fa, fb
