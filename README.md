@@ -7,8 +7,7 @@ A peer-reviewed journal for empirical and methodological computer science, opera
 > rest are the author's own discipline, with no claim of this journal's resting on them. The boxes nothing reads
 > are named here rather than left to read as collected: **access confirmed** (a permissions artefact must not
 > decide a manuscript), **`papers/issue-<N>/research/` not committed** (the workspace is git-ignored, so its
-> absence is the default and not a finding), and **validation/ground-truth cells** (a duty the template states
-> and no carrier reads). The editor discharges the reproduction item by
+> absence is the default and not a finding). The editor discharges the reproduction item by
 > **running your command from the committed package**, not by reading that it reproduces, and every
 > number in the manuscript has to trace to output an artefact produced. Concretely that means a
 > one-command spec naming its directory, its interpreter, the pinned versions of what it imports and
