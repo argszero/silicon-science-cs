@@ -34,8 +34,6 @@ PLACEMENT = [
      "interleaves multiple priority queues for programmable scheduling, the line this paper measures"),
     ("sppifo2022", "Programmable Packet Scheduling With SP-PIFO", "2 Background",
      "gives SP-PIFO its theory and evaluation, and names the optimal queue mapping it approximates"),
-    ("ctpifo2025", "CT-PIFO", "2 Background",
-     "builds a congruity-tree PIFO scheduler and reports flow completion time"),
     ("exppifo2025", "Exp-PIFO", "2 Background",
      "proposes a scalable programmable packet scheduling design"),
     ("vpifo2024", "vPIFO", "2 Background",
@@ -144,8 +142,6 @@ PLACEMENT = [
      "computes an optimal chain decomposition of a poset"),
     ("lisrevisited2026", "The longest increasing subsequence problem revisited", "4 Combinatorics",
      "revisits the longest-increasing-subsequence problem"),
-    ("lislds2019", "What Do a Longest Increasing Subsequence and a Longest Decreasing", "4 Combinatorics",
-     "relates the longest increasing and decreasing subsequences, the two statistics compared here"),
     ("patience2018", "patience sorting", "4 Combinatorics",
      "is a commentary on the patience-sorting line of longest-increasing-subsequence results, where the decreasing-subsequence statistic lives"),
     ("ehrt2019", "What Do a Longest Increasing Subsequence", "4 Combinatorics",
@@ -232,8 +228,8 @@ PLACEMENT = [
      "states the elementary heap-to-priority-queue correspondence"),
 
     # ---------------- 7. Measurement context --------------------------------
-    ("fct2025", "CT-PIFO", "7 Measurement", "reports flow completion time as the end-to-end cost of the scheduler"),
-    ("tail2025", "Lark: A Buffer-aware", "7 Measurement", "ties the scheduler's buffer behaviour to datacenter performance"),
+    ("ctpifo2025", "CT-PIFO", "7 Measurement",
+     "reports flow completion time as the end-to-end cost of the scheduler"),
     ("noc2024", "Design and Implementation of Network", "7 Measurement",
      "reports a network-on-chip router implementation, an adjacent interconnect setting"),
     ("trimmer2022", "A Templated VHDL Architecture for Terabit/s", "7 Measurement",
@@ -286,6 +282,9 @@ PRUNED = [
     ("fifo2022", "duplicate of sppifo2022 -- same record under a second key"),
     ("stacksort2013", "no such record in the pool: the title was recalled, not harvested"),
     ("twostack2019", "no such record in the pool: the title was recalled, not harvested"),
+    ("fct2025", "duplicate DOI 10.1109/icccn65249.2025.11134021 -- the CT-PIFO record, kept once as ctpifo2025"),
+    ("tail2025", "duplicate DOI 10.1109/infocom55648.2025.11044448 -- the Lark record, kept once as lark2025"),
+    ("lislds2019", "duplicate DOI 10.3390/a12110237 -- the LIS/LDS record, kept once as ehrt2019"),
 ]
 
 
@@ -383,6 +382,15 @@ def main():
         seen.add(p["key"])
         if not p["section"] or not p["claim"]:
             problems.append("%s has no section or no claim" % p["key"])
+    # one bibliography entry per work. Two keys pointing at one DOI is the same paper
+    # printed twice, which is a defect a reader sees at once and no other check sees:
+    # each key resolves, each DOI verifies, and the list still contains the work twice.
+    seen_doi = {}
+    for p_ in placed:
+        if p_["doi"] in seen_doi:
+            problems.append("duplicate work: %s and %s share DOI %s"
+                            % (seen_doi[p_["doi"]], p_["key"], p_["doi"]))
+        seen_doi[p_["doi"]] = p_["key"]
     # a pruned key that is nevertheless placed means the withdrawal did not take
     for key, reason in PRUNED:
         if key in seen:

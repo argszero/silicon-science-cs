@@ -1,19 +1,19 @@
 {
   "counts": {
     "absent_or_ambiguous": 0,
-    "attempted": 107,
+    "attempted": 104,
     "by_section": {
       "1 Prior art": 3,
-      "2 Background": 27,
+      "2 Background": 26,
       "3 The device model": 24,
-      "4 Combinatorics": 24,
+      "4 Combinatorics": 23,
       "5 Online algorithms": 10,
       "6 Data structures": 12,
-      "7 Measurement": 7
+      "7 Measurement": 6
     },
     "candidate_pool": 782,
-    "placed": 107,
-    "pruned": 3,
+    "placed": 104,
+    "pruned": 6,
     "seeds": 4
   },
   "placed": [
@@ -110,22 +110,6 @@
       "type": "journal-article",
       "venue": "Computer Networks",
       "year": 2024
-    },
-    {
-      "authors": [
-        "Magadum",
-        "Singh",
-        "Kushwaha"
-      ],
-      "claim": "builds a congruity-tree PIFO scheduler and reports flow completion time",
-      "doi": "10.1109/icccn65249.2025.11134021",
-      "key": "ctpifo2025",
-      "resolved_by": "unique-substring",
-      "section": "2 Background",
-      "title": "CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time",
-      "type": "proceedings-article",
-      "venue": "2025 34th International Conference on Computer Communications and Networks (ICCCN)",
-      "year": 2025
     },
     {
       "authors": [
@@ -1074,21 +1058,6 @@
     },
     {
       "authors": [
-        "Itskovich",
-        "Levit"
-      ],
-      "claim": "relates the longest increasing and decreasing subsequences, the two statistics compared here",
-      "doi": "10.3390/a12110237",
-      "key": "lislds2019",
-      "resolved_by": "unique-substring",
-      "section": "4 Combinatorics",
-      "title": "What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?",
-      "type": "journal-article",
-      "venue": "Algorithms",
-      "year": 2019
-    },
-    {
-      "authors": [
         "Franz",
         "Mulet"
       ],
@@ -1627,7 +1596,7 @@
       ],
       "claim": "reports flow completion time as the end-to-end cost of the scheduler",
       "doi": "10.1109/icccn65249.2025.11134021",
-      "key": "fct2025",
+      "key": "ctpifo2025",
       "resolved_by": "unique-substring",
       "section": "7 Measurement",
       "title": "CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time",
@@ -1680,28 +1649,6 @@
     },
     {
       "authors": [
-        "Zhang",
-        "Li",
-        "Li",
-        "Liu",
-        "Suo",
-        "Chen",
-        "Hu",
-        "Zhao",
-        "Li"
-      ],
-      "claim": "ties the scheduler's buffer behaviour to datacenter performance",
-      "doi": "10.1109/infocom55648.2025.11044448",
-      "key": "tail2025",
-      "resolved_by": "unique-substring",
-      "section": "7 Measurement",
-      "title": "Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters",
-      "type": "proceedings-article",
-      "venue": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications",
-      "year": 2025
-    },
-    {
-      "authors": [
         "Mashreghi-Moghadam",
         "Ould-Bachir",
         "Savaria"
@@ -1749,6 +1696,18 @@
     {
       "key": "twostack2019",
       "reason": "no such record in the pool: the title was recalled, not harvested"
+    },
+    {
+      "key": "fct2025",
+      "reason": "duplicate DOI 10.1109/icccn65249.2025.11134021 -- the CT-PIFO record, kept once as ctpifo2025"
+    },
+    {
+      "key": "tail2025",
+      "reason": "duplicate DOI 10.1109/infocom55648.2025.11044448 -- the Lark record, kept once as lark2025"
+    },
+    {
+      "key": "lislds2019",
+      "reason": "duplicate DOI 10.3390/a12110237 -- the LIS/LDS record, kept once as ehrt2019"
     }
   ]
 }

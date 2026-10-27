@@ -6,7 +6,7 @@
 ./reproduce.sh
 ```
 
-**Expected final line:** `REPRODUCE: ALL GREEN (4 steps)`. **Exit status:** the number of failed
+**Expected final line:** `REPRODUCE: ALL GREEN (5 steps)`. **Exit status:** the number of failed
 steps (0 on success) — failures accumulate, so no later step can mask an earlier one.
 
 **Expected runtime:** about 9 minutes on one core. The cost is exhaustive enumeration, not
@@ -52,6 +52,7 @@ under `refs/`.
 | 2 | `make_figure.py` | `figures/discipline-gap.svg` and `.png`, drawn from `results.json`, with the caption's claims asserted as invariants (the stacked fractions sum to 1 in every bar; the maximum gap is 2 under distinct ranks and 1 under ties). |
 | 3 | `check_results.py` | every stored **summary** value recomputed from the per-cell rows it summarises, plus the claim relations the manuscript leans on. A summary is the number that goes stale when a row moves and the summary does not, so it is recomputed here rather than trusted. |
 | 4 | `place_refs.py --check` | that the reference placement still resolves every named record to exactly one harvested candidate, keeps no pruned key alive, and matches the committed `placement.json` **byte for byte**. It compares rather than writes: a gate that rewrote the artifact would leave `reference-check.md` describing a placement that no longer exists. |
+| 5 | `make_manuscript.py --check` | that every number in the manuscript still binds to `results.json`, every one of the 104 references is still cited in the body, the stray-number scan is still clean, and `manuscript.md` matches the committed bytes. It compares rather than writes, for the same reason step 4 does. |
 
 ## References
 
@@ -62,8 +63,8 @@ writes an artifact, so the drop is auditable rather than silent:
 |---|---|---|---|
 | harvest | `build_refs.py` | `pool.json` | 56 construct-named Crossref queries → 1,879 unique records; 98 rejected by academic type, 139 missing year or venue → **1,642 kept** |
 | screen | `screen_refs.py` | `candidates.json` | rejects bare-term titles (136), other-field records (120: ATM 17, wireless 66, active queue management 14, queueing theory 15, cache 4) and records with no construct (604) → **782 candidates**, 383 of which touch the central constructs |
-| place | `place_refs.py` | `placement.json` | each record must name **a section and the sentence it supports**; 103 named + 4 DOI seeds → **107 placed**, 3 pruned with a reason |
-| verify | `verify_refs.py` | `reference-check.md` | each placed DOI re-fetched **by identifier** from Crossref, independent of the query that harvested it → **107 / 107 resolve to the work they claim**, 7 with an edition-year note |
+| place | `place_refs.py` | `placement.json` | each record must name **a section and the sentence it supports**; 100 named + 4 DOI seeds → **104 placed**, 6 pruned with a reason (3 recalled titles that were never in the pool, 3 duplicate DOIs) |
+| verify | `verify_refs.py` | `reference-check.md` | each placed DOI re-fetched **by identifier** from Crossref, independent of the query that harvested it → **104 / 104 resolve to the work they claim**, 7 with an edition-year note |
 
 Two things this pipeline does that a query list does not:
 
