@@ -10,6 +10,10 @@ set -u
 HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 cd "$HERE" || exit 1
 PY=${PY:-/usr/bin/python3}
+# matplotlib (used only by the figure step) needs a writable cache dir; without this it
+# writes into the reader's HOME and can fail there for reasons unrelated to the figure
+MPLCONFIGDIR=${MPLCONFIGDIR:-/tmp/mplcfg};
+export MPLCONFIGDIR
 FAILED=0
 
 step() {
@@ -24,20 +28,22 @@ step() {
     return 0
 }
 
-step "1/7 certificate: DP vs independent brute force, every instance enumerated" \
+step "1/8 certificate: DP vs independent brute force, every instance enumerated" \
      "$PY" certificate.py
-step "2/7 characterisation: per-cell losses, horizon, anti-rule control" \
+step "2/8 characterisation: per-cell losses, horizon, anti-rule control" \
      "$PY" characterise.py
-step "3/7 proposition: empty-intersection witness for non-locality" \
+step "3/8 proposition: empty-intersection witness for non-locality" \
      "$PY" lemma.py
-step "4/7 scale test: the falsifier, with the K=2 control and the positive rule" \
+step "4/8 scale test: the falsifier, with the K=2 control and the positive rule" \
      "$PY" lemma_scale.py
-step "5/7 results: every number the manuscript states, emitted from the programs above" \
+step "5/8 results: every number the manuscript states, emitted from the programs above" \
      "$PY" emit_results.py
-step "6/7 manuscript: regenerate manuscript.md from results.json + placement.json" \
+step "6/8 figure: the discipline figure, redrawn from results.json, byte-identical" \
+     "$PY" make_figure.py --check
+step "7/8 manuscript: regenerate manuscript.md from results.json + placement.json" \
      "$PY" make_manuscript.py
-step "7/7 reference report: regenerate from STORED verification state, must be byte-identical" \
+step "8/8 reference report: regenerate from STORED verification state, must be byte-identical" \
      sh ./check_reference_report.sh
 
-printf '\nREPRODUCE: %s\n' "$([ "$FAILED" -eq 0 ] && echo 'ALL GREEN (7 steps)' || echo "$FAILED STEP(S) FAILED")"
+printf '\nREPRODUCE: %s\n' "$([ "$FAILED" -eq 0 ] && echo 'ALL GREEN (8 steps)' || echo "$FAILED STEP(S) FAILED")"
 exit "$FAILED"

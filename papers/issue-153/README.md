@@ -6,10 +6,12 @@
 ./reproduce.sh
 ```
 
-**Expected final line:** `REPRODUCE: ALL GREEN (7 steps)`. **Exit status:** the number of failed
+**Expected final line:** `REPRODUCE: ALL GREEN (8 steps)`. **Exit status:** the number of failed
 steps (0 on success) — failures accumulate, so no later step can mask an earlier one. Requires
-CPython 3.8+ and nothing outside the standard library; the default interpreter is
-`/usr/bin/python3` and can be overridden with `PY=...`.
+CPython 3.8+ and, for one step, `matplotlib` (**3.9.4** was used; any 3.x with `Patch` and
+`Line2D` legends will do); everything else is the standard library. The default interpreter is
+`/usr/bin/python3` and can be overridden with `PY=...`; `MPLCONFIGDIR` defaults to `/tmp/mplcfg`
+so the plot cache needs no writable `HOME`.
 
 **Tolerance:** none. Every step is exhaustive enumeration with no sampling and no random seeds,
 so the outputs are exact counts and are expected to be reproduced byte-for-byte. The one
@@ -25,14 +27,21 @@ byte-comparison the script relies on is that `place_refs.py --render-only` regen
 | 3 | `lemma.py` | the non-locality proposition, with a two-trace witness checkable by hand |
 | 4 | `lemma_scale.py` | the falsifier over larger cells, the `K=2` no-choice control, and the exact rule in `w*=0` cells (both directions asserted) |
 | 5 | `emit_results.py` | `results.json` — every number the manuscript states, emitted by the programs above |
-| 6 | `make_manuscript.py` | `manuscript.md` from `manuscript_prose.md` + `results.json` + `placement.json` |
-| 7 | `check_reference_report.sh` | `reference-check.md` regenerates byte-identically from the stored verification state |
+| 6 | `make_figure.py --check` | `figures/deployed-rule-vs-optimum.{svg,png}` redrawn from `results.json` and compared byte for byte, after four invariants hold: the plotted maximum is the stored `max_worst`, every bar's fraction recomputes from `greedy_loss / traces`, the `K = 2` cells are exactly the ones with no legal choice, and `w* = 0` coincides with the zero-lookahead rule being exact. It refuses to draw when one fails, and `--check` compares rather than writes, so the committed bytes are not replaced by the run that checks them. |
+| 7 | `make_manuscript.py` | `manuscript.md` from `manuscript_prose.md` + `results.json` + `placement.json` |
+| 8 | `check_reference_report.sh` | `reference-check.md` regenerates byte-identically from the stored verification state |
 
-Step 6 is a gate, not a convenience. Every figure in the manuscript is a `{{n:key}}` marker
+Step 7 is a gate, not a convenience. Every figure in the manuscript is a `{{n:key}}` marker
 resolved from `results.json`; after substitution the generator scans the body for multi-digit
-numbers and refuses to write the paper if it finds one it cannot bind to an artifact. A figure
+numbers and refuses to write the paper if it finds one it cannot bind to an artifact. A number
 typed into the prose therefore fails the build instead of reaching the paper. The scan ignores
 section numbers, `code`-spanned identifiers and traces, and four-digit years.
+
+Step 6 is the same discipline for the one figure: it is drawn from `results.json` and its caption
+claims are asserted as invariants before the file is written, so a figure whose bars disagree with
+the table cannot be produced. Both guards were seen to fail on a planted defect — a stored
+`max_worst` set to a value no cell attains, and a `w* = 0` cell given losses it cannot have, each
+exit 1 with the disagreement named — and restoring the artifact returns them to 0.
 
 ## Files
 

@@ -114,7 +114,7 @@ that way.
 It licenses the *question*: overlap-driven merge selection with a byte cost is the real shape of
 the decision, so asking how much future such a decision needs is a question about a real family
 of heuristics. It does not license any number in this paper as a statement about a production
-system. Every figure below is a statement about the model of §2.1.
+system. Every figure and every table below is a statement about the model of §2.1.
 
 ## 3. Method: exhaustive enumeration, an independent certificate, and controls
 
@@ -169,6 +169,17 @@ boundary effects. Second, the *magnitude* is worse than the fraction suggests: t
 is {{n:max_worst}}× at R=3 K=5 T=6, and that cell is not the base cell but a cell with more
 capacity, where the rule loses {{n:detail.k5t6_loss}} of {{n:detail.k5t6_traces}} traces.
 
+![Each bar is one enumerated cell, ordered by queue capacity `K` and then by trace length `T`.
+(a) The share of traces on which the deployed largest-overlap rule is not optimal: level within a
+fixed `(R, K)` family as `T` grows, which is reading one — the failure does not wash out.
+(b) The worst excess over the exact optimum in that cell, with the registered criterion of 1.3×
+marked: the maximum is {{n:max_worst}}× at R=3 K=5 T=6, which is reading two — the magnitude is
+worse than the fraction suggests, and it is attained in a cell with more capacity, not in the base
+cell. Hatched bars are the `K = 2` controls, where the legal merge set is a singleton: they are
+drawn as controls rather than as wins, because a zero there measures the design and not the
+rule. Drawn by `make_figure.py` from `results.json`; every number printed on it is read back from
+that file and asserted against the per-cell values before the figure is written.](figures/deployed-rule-vs-optimum.png)
+
 ### 4.3 The horizon exactness needs, and why more can be worse
 
 Define a `w`-lookahead policy as one that, at each merge step, minimises the bytes it pays now
@@ -180,7 +191,13 @@ Measured, per cell, `w* = T − 1 − i_first`, where `i_first` is the earliest 
 than one legal merge exists; when no choice ever exists (`K = 2`) the quantity is undefined and
 `w* = 0`. Because the first genuine choice occurs at a fixed index `i_first` determined by `K`
 alone, `w*` **grows with the trace**: exactness needs the entire remainder after the first
-choice, and no constant window suffices.
+choice, and no constant window suffices *in any cell where `w* >= 1`*. The qualifier is not a
+hedge but a correction: {{n:wstar_eq0_cells}} of the {{n:n_cells}} cells have `w* = 0`, and only
+{{n:wstar0_minus_k2_cells}} of those is a `K = 2` control. In the fourth — R=3 K=5 T=6 — a real
+choice exists and the deployed rule loses {{n:detail.k5t6_loss}} traces, yet `w* = 0`, because
+the first genuine choice arrives at the last flush, where there is nothing left to look ahead to.
+So `w* = 0` means "the zero-lookahead rule is already exact", which is not the same as "no choice
+exists"; `make_figure.py` asserts that equivalence over every cell."
 
 The more surprising half is that partial lookahead is not monotone. At R=3 K=3 T=7 a lookahead
 of one loses {{n:lookahead.w1_loss}} traces, against {{n:lookahead.w0_loss}} for the
@@ -334,7 +351,10 @@ measured.
 fraction at `K = 3` with worst excess strictly above {{n:priors.p2_threshold}}×. **Confirmed in direction, revised in
 magnitude.** The fraction is measured (§4.2) and the worst excess is {{n:max_worst}}×, not the
 1.667× recorded at registration, which was the maximum within a single cell and not across
-cells. The correction is posted visibly on the issue rather than edited into the registration.
+cells. The registration's `Outcome` line carries the corrected value, because the checklist reads
+that line as a second copy of this section and a copy that disagrees is a defect wherever the
+first one is right; the history of the number stays in the thread's comments of 2026-10-26, which
+are the visible amendment and are not rewritten.
 
 **A third claim was registered and is withdrawn.** The registration proposed that the traces
 defeating the rule "admit a predicate computable from the trace alone". They do not: a derived
@@ -358,11 +378,18 @@ It runs seven steps — the certificate, the characterisation, the proposition, 
 the results emitter, this manuscript's own regeneration, and a byte-identity check that the
 reference report regenerates from its stored verification state — accumulating failures so that
 no later step masks an earlier one, and exiting with the number of failed steps. Expected final
-line: `REPRODUCE: ALL GREEN (7 steps)`.
+line: `REPRODUCE: ALL GREEN (8 steps)`.
 
 The manuscript is generated: every numeric claim is a marker resolved from `results.json`, which
 is itself emitted by the analysis programs, and `make_manuscript.py` refuses any multi-digit
-number in the prose that it cannot bind to that file. No figure in this paper was typed by hand.
+number in the prose that it cannot bind to that file. No table and no figure in this paper is
+typed by hand: `make_figure.py` draws the one figure from `results.json` and asserts its claims as
+numerical invariants before writing it — that the plotted maximum is the stored maximum, that
+every bar's fraction recomputes, that the `K = 2` cells are exactly the ones with no legal choice,
+and that `w* = 0` coincides with the zero-lookahead rule being exact — and refuses to draw when
+one of them fails. It was seen to refuse: a stored `max_worst` changed to disagree with the
+per-cell values, and a `w*` cell given losses it cannot have, each exits 1 with the disagreement
+named.
 Refreshing the reference pool does need network and is a separate step (`build_refs.py`,
 `place_refs.py`); reproduction of the committed figures does not, because `place_refs.py
 --render-only` regenerates the report byte-identically from stored verification state.

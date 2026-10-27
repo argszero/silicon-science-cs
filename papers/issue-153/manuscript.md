@@ -111,7 +111,7 @@ that way.
 It licenses the *question*: overlap-driven merge selection with a byte cost is the real shape of
 the decision, so asking how much future such a decision needs is a question about a real family
 of heuristics. It does not license any number in this paper as a statement about a production
-system. Every figure below is a statement about the model of §2.1.
+system. Every figure and every table below is a statement about the model of §2.1.
 
 ## 3. Method: exhaustive enumeration, an independent certificate, and controls
 
@@ -176,14 +176,29 @@ expensive merge, and choosing it is not buying anything with the expense.
 | R=5 K=3 T=6 | 15625 | 780 | 30 | 460 (2.9%) | 1.667 | 300 | 2 |
 
 Cells with `K = 2` are controls: the legal merge set is a singleton, no rule has freedom, and
-both rules tie at zero losses. `w\*` is the minimal exact horizon; it is 0 exactly where no
-genuine choice exists.
+both rules tie at zero losses. `w\*` is the minimal exact horizon, and `w\* = 0` holds in 4 of
+the 17 cells -- not only where no choice exists: it holds exactly where the zero-lookahead rule
+is already exact, which includes the `K = 2` controls (no choice ever exists) and one cell with
+`K = 5` where the first genuine choice arrives at the last flush. `make_figure.py` asserts that
+equivalence over every cell.
 
 Two readings matter. First, the failure fraction is stable across trace length in a fixed `(R,
 K)` family — it does not wash out as traces grow, so this is not a small-trace artefact of
 boundary effects. Second, the *magnitude* is worse than the fraction suggests: the worst excess
 is 3.333× at R=3 K=5 T=6, and that cell is not the base cell but a cell with more capacity,
 where the rule loses 450 of 729 traces.
+
+![Each bar is one enumerated cell, ordered by queue capacity `K` and then by trace length `T`.
+(a) The share of traces on which the deployed largest-overlap rule is not optimal: level within
+a fixed `(R, K)` family as `T` grows, which is reading one — the failure does not wash out. (b)
+The worst excess over the exact optimum in that cell, with the registered criterion of 1.3×
+marked: the maximum is 3.333× at R=3 K=5 T=6, which is reading two — the magnitude is worse than
+the fraction suggests, and it is attained in a cell with more capacity, not in the base cell.
+Hatched bars are the `K = 2` controls, where the legal merge set is a singleton: they are drawn
+as controls rather than as wins, because a zero there measures the design and not the rule.
+Drawn by `make_figure.py` from `results.json`; every number printed on it is read back from that
+file and asserted against the per-cell values before the figure is
+written.](figures/deployed-rule-vs-optimum.png)
 
 ### 4.3 The horizon exactness needs, and why more can be worse
 
@@ -196,7 +211,13 @@ Measured, per cell, `w* = T − 1 − i_first`, where `i_first` is the earliest 
 than one legal merge exists; when no choice ever exists (`K = 2`) the quantity is undefined and
 `w* = 0`. Because the first genuine choice occurs at a fixed index `i_first` determined by `K`
 alone, `w*` **grows with the trace**: exactness needs the entire remainder after the first
-choice, and no constant window suffices.
+choice, and no constant window suffices *in any cell where `w* >= 1`*. The qualifier is not a
+hedge but a correction: 4 of the 17 cells have `w* = 0`, and only 1 of those is a `K = 2`
+control. In the fourth — R=3 K=5 T=6 — a real choice exists and the deployed rule loses 450
+traces, yet `w* = 0`, because the first genuine choice arrives at the last flush, where there is
+nothing left to look ahead to. So `w* = 0` means "the zero-lookahead rule is already exact",
+which is not the same as "no choice exists"; `make_figure.py` asserts that equivalence over
+every cell."
 
 The more surprising half is that partial lookahead is not monotone. At R=3 K=3 T=7 a lookahead
 of one loses 324 traces, against 228 for the zero-lookahead cheapest-overlap rule and 312 for
@@ -361,7 +382,10 @@ measured.
 fraction at `K = 3` with worst excess strictly above 1.3×. **Confirmed in direction, revised in
 magnitude.** The fraction is measured (§4.2) and the worst excess is 3.333×, not the 1.667×
 recorded at registration, which was the maximum within a single cell and not across cells. The
-correction is posted visibly on the issue rather than edited into the registration.
+registration's `Outcome` line carries the corrected value, because the checklist reads that line
+as a second copy of this section and a copy that disagrees is a defect wherever the first one is
+right; the history of the number stays in the thread's comments of 2026-10-26, which are the
+visible amendment and are not rewritten.
 
 **A third claim was registered and is withdrawn.** The registration proposed that the traces
 defeating the rule "admit a predicate computable from the trace alone". They do not: a derived
@@ -386,14 +410,21 @@ It runs seven steps — the certificate, the characterisation, the proposition, 
 the results emitter, this manuscript's own regeneration, and a byte-identity check that the
 reference report regenerates from its stored verification state — accumulating failures so that
 no later step masks an earlier one, and exiting with the number of failed steps. Expected final
-line: `REPRODUCE: ALL GREEN (7 steps)`.
+line: `REPRODUCE: ALL GREEN (8 steps)`.
 
 The manuscript is generated: every numeric claim is a marker resolved from `results.json`, which
 is itself emitted by the analysis programs, and `make_manuscript.py` refuses any multi-digit
-number in the prose that it cannot bind to that file. No figure in this paper was typed by hand.
-Refreshing the reference pool does need network and is a separate step (`build_refs.py`,
-`place_refs.py`); reproduction of the committed figures does not, because `place_refs.py
---render-only` regenerates the report byte-identically from stored verification state.
+number in the prose that it cannot bind to that file. No table and no figure in this paper is
+typed by hand: `make_figure.py` draws the one figure from `results.json` and asserts its claims
+as numerical invariants before writing it — that the plotted maximum is the stored maximum, that
+every bar's fraction recomputes, that the `K = 2` cells are exactly the ones with no legal
+choice, and that `w* = 0` coincides with the zero-lookahead rule being exact — and refuses to
+draw when one of them fails. It was seen to refuse: a stored `max_worst` changed to disagree
+with the per-cell values, and a `w*` cell given losses it cannot have, each exits 1 with the
+disagreement named. Refreshing the reference pool does need network and is a separate step
+(`build_refs.py`, `place_refs.py`); reproduction of the committed figures does not, because
+`place_refs.py --render-only` regenerates the report byte-identically from stored verification
+state.
 
 ## References
 
@@ -1131,8 +1162,8 @@ Science*. Guido Schäfer, Naveen Sivadasan. DOI 10.1016/j.tcs.2005.04.006.
 Computation*. Steve Seiden. DOI 10.1006/inco.1998.2744.
 
 [206] A fast and effective lookahead and fractional search based scheduling algorithm for
-high-level synthesis. *2018 Design, Automation &amp; Test in Europe Conference &amp; Exhibition
-(DATE)*. Shantanu Dutt, Ouwen Shi. DOI 10.23919/date.2018.8341975.
+high-level synthesis. *2018 Design, Automation & Test in Europe Conference & Exhibition (DATE)*.
+Shantanu Dutt, Ouwen Shi. DOI 10.23919/date.2018.8341975.
 
 [207] A Lookahead Algorithm for Robust Subspace Recovery. *2021 IEEE International Conference on
 Data Mining (ICDM)*. Guihong Wan, Haim Schweitzer. DOI 10.1109/icdm51629.2021.00175.
@@ -1168,7 +1199,7 @@ Computers*. J. Kiniwa, T. Hamada, D. Mizoguchi. DOI 10.1109/12.954511.
 *Asia-Pacific Journal of Operational Research*. Wenhua Li, Libo Wang, Hang Yuan. DOI
 10.1142/s0217595922400127.
 
-[217] Online interval scheduling on a single machine with finite lookahead. *Computers &amp;
+[217] Online interval scheduling on a single machine with finite lookahead. *Computers &
 Operations Research*. Feifeng Zheng, Yongxi Cheng, Ming Liu. DOI 10.1016/j.cor.2012.06.003.
 
 [218] Online interval scheduling on two related machines: the power of lookahead. *Journal of

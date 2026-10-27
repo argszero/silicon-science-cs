@@ -15,6 +15,7 @@ Markers
   {{cite:name}}       a named work read in full (see NAMED)
   {{refs}}            the reference list, generated from placement.json
 """
+import html
 import json
 import re
 import sys
@@ -97,6 +98,10 @@ def computed(res, key):
     if key == "range.loss_max_pct":
         v = max(100.0 * c["greedy_loss"] / c["traces"] for c in cells if c["K"] >= 3)
         return round(v, 1)
+    if key == "wstar0_minus_k2_cells":
+        # the cells with w*=0 that are NOT K=2 controls: a real choice exists there, and the
+        # zero horizon means the first genuine choice arrives at the last flush
+        return res["wstar_eq0_cells"] - sum(1 for c in cells if c["K"] == 2)
     if key == "detail.k5t6_loss":
         return res["cells"][[i for i, c in enumerate(cells)
                             if (c["R"], c["K"], c["T"]) == (3, 5, 6)][0]]["greedy_loss"]
@@ -143,8 +148,13 @@ def cell_table(res):
                       " (control)" if c["K"] == 2 else "", c["wstar"]))
     out.append("")
     out.append("Cells with `K = 2` are controls: the legal merge set is a singleton, no rule has "
-               "freedom, and both rules tie at zero losses. `w\\*` is the minimal exact horizon; "
-               "it is 0 exactly where no genuine choice exists.")
+               "freedom, and both rules tie at zero losses. `w\\*` is the minimal exact horizon, "
+               "and `w\\* = 0` holds in %d of the %d cells -- not only where no choice exists: "
+               "it holds exactly where the zero-lookahead rule is already exact, which includes "
+               "the `K = 2` controls (no choice ever exists) and one cell with `K = 5` where the "
+               "first genuine choice arrives at the last flush. `make_figure.py` asserts that "
+               "equivalence over every cell."
+               % (res["wstar_eq0_cells"], len(res["cells"])))
     return "\n".join(out)
 
 
@@ -304,9 +314,12 @@ def main():
     for e in order:
         v = e["verified"]
         au = ", ".join(v["authors"][:3]) if v["authors"] else "(no author field in record)"
+        # Crossref stores markup and entities in these fields (`&amp;` in a venue name is
+        # common); printed raw they reach the reader as a character reference, which the
+        # journal's own reference gate reports as a presentation defect
         refs.append("[%s] %s. *%s*. %s. DOI %s."
-                    % (e["_ref"], v["title"], v["venue"] or "(no venue field)",
-                       au, v["doi"]))
+                    % (e["_ref"], html.unescape(v["title"]),
+                       html.unescape(v["venue"] or "(no venue field)"), au, v["doi"]))
         refs.append("")
     refs.append("### Works read in full for the comparison in the model and related-work sections")
     refs.append("")
