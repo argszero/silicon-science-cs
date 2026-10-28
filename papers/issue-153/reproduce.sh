@@ -28,22 +28,24 @@ step() {
     return 0
 }
 
-step "1/8 certificate: DP vs independent brute force, every instance enumerated" \
+step "1/9 certificate: DP vs independent brute force, every instance enumerated" \
      "$PY" certificate.py
-step "2/8 characterisation: per-cell losses, horizon, anti-rule control" \
+step "2/9 characterisation: per-cell losses, horizon, anti-rule control" \
      "$PY" characterise.py
-step "3/8 proposition: empty-intersection witness for non-locality" \
+step "3/9 proposition: empty-intersection witness for non-locality" \
      "$PY" lemma.py
-step "4/8 scale test: the falsifier, with the K=2 control and the positive rule" \
+step "4/9 scale test: the falsifier, with the K=2 control and the positive rule" \
      "$PY" lemma_scale.py
-step "5/8 results: every number the manuscript states, emitted from the programs above" \
+step "5/9 results: every number the manuscript states, emitted from the programs above" \
      "$PY" emit_results.py
-step "6/8 figure: the discipline figure, redrawn from results.json, byte-identical" \
+step "6/9 figure: the discipline figure, redrawn from results.json, byte-identical" \
      "$PY" make_figure.py --check
-step "7/8 manuscript: regenerate manuscript.md from results.json + placement.json" \
+step "7/9 manuscript: regenerate manuscript.md from results.json + placement.json" \
      "$PY" make_manuscript.py
-step "8/8 reference report: regenerate from STORED verification state, must be byte-identical" \
+step "8/9 reference report: regenerate from STORED verification state, must be byte-identical" \
      sh ./check_reference_report.sh
+step "9/9 step statement: the count this package states, against the count this script runs" \
+     "$PY" check_steps.py
 
-printf '\nREPRODUCE: %s\n' "$([ "$FAILED" -eq 0 ] && echo 'ALL GREEN (8 steps)' || echo "$FAILED STEP(S) FAILED")"
+printf '\nREPRODUCE: %s\n' "$([ "$FAILED" -eq 0 ] && echo 'ALL GREEN (9 steps)' || echo "$FAILED STEP(S) FAILED")"
 exit "$FAILED"

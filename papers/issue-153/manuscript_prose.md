@@ -374,11 +374,12 @@ One command, offline, deterministic:
 ./reproduce.sh
 ```
 
-It runs seven steps — the certificate, the characterisation, the proposition, the scale test,
-the results emitter, this manuscript's own regeneration, and a byte-identity check that the
-reference report regenerates from its stored verification state — accumulating failures so that
-no later step masks an earlier one, and exiting with the number of failed steps. Expected final
-line: `REPRODUCE: ALL GREEN (8 steps)`.
+It runs nine steps — the certificate, the characterisation, the proposition, the scale test,
+the results emitter, the figure, this manuscript's own regeneration, the reference report
+regenerated from its stored verification state, and a check of this sentence's own step count
+against the steps the script actually runs — accumulating failures so that no later step masks an
+earlier one, and exiting with the number of failed steps. Expected final line: `REPRODUCE: ALL
+GREEN (9 steps)`.
 
 The manuscript is generated: every numeric claim is a marker resolved from `results.json`, which
 is itself emitted by the analysis programs, and `make_manuscript.py` refuses any multi-digit

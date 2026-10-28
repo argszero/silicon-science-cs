@@ -20,38 +20,121 @@ import json
 import re
 import sys
 
+# Works the paper leans on directly.  Six of the eight this list used to carry were the
+# SAME WORKS as corpus entries, matched by DOI -- printed twice, once in the corpus section
+# and once under "read in full", so 247 entry lines described 241 distinct works.  One work
+# is one entry (R676); the six now resolve to their corpus entry, and only the two documents
+# Crossref does not index stay here, each with the body responsible and the date it was read.
 NAMED = {
-    "oneil1996": ("r_oo", "P. O'Neil, E. Cheng, D. Gawlick, E. O'Neil. The log-structured "
-                          "merge-tree (LSM-tree). Acta Informatica, 1996. "
-                          "DOI 10.1007/s002360050048"),
-    "rocksdb_compaction": ("r_rc", "RocksDB project documentation, *Compaction* (wiki, read "
-                                  "2026-10-27): taxonomy of Classic Leveled / Tiered / "
-                                  "Tiered+Leveled / FIFO, and the statement that LevelDB and "
-                                  "RocksDB compaction is some-to-some over overlapping data."),
-    "rocksdb_overview": ("r_ro", "RocksDB project documentation, *RocksDB Overview* (wiki, read "
-                                 "2026-10-27): level style vs universal style compaction, and "
-                                 "the role of overlapping keys in L0."),
-    "paging_lookahead": ("r_pl", "On Competitive On-Line Paging with Lookahead. BRICS report "
-                                 "1995 (DOI 10.7146/brics.v2i50.19951); journal version 1997 "
-                                 "(DOI 10.1016/s0304-3975(98)00118-2): competitive efficiency "
-                                 "depends on k + l."),
-    "semi_online_two": ("r_s2", "Semi-Online Scheduling on Two Identical Parallel Machines with "
-                                "Initial-Lookahead Information. 2023. "
-                                "DOI 10.1142/s0217595923500033."),
-    "semi_online_uniform": ("r_su", "Semi-online scheduling on two uniform parallel machines "
-                                    "with initial lookahead. 2024. DOI 10.1051/ro/2024042."),
-    "disk_sched": ("r_ds", "Disk scheduling policies with lookahead. 2002. "
-                           "DOI 10.1145/588160.588165."),
-    "mts_optimal": ("r_mt", "An optimal on-line algorithm for metrical task systems. 1992. "
-                            "DOI 10.1145/146585.146588."),
+    "rocksdb_compaction": dict(
+        authors="RocksDB", year="2026",
+        title="Compaction",
+        venue="RocksDB wiki, revision read 2026-10-27",
+        url="https://github.com/facebook/rocksdb/wiki/Compaction",
+        difference="the taxonomy and the some-to-some overlap rule are read as the deployed "
+                   "family this paper models; no policy of theirs is evaluated"),
+    "rocksdb_overview": dict(
+        authors="RocksDB", year="2026",
+        title="RocksDB Overview",
+        venue="RocksDB wiki, revision read 2026-10-27",
+        url="https://github.com/facebook/rocksdb/wiki/RocksDB-Overview",
+        difference="level style versus universal style is read as background; the merge "
+                   "decision itself is not specified there"),
 }
+
+# corpus DOIs that a NAMED key used to duplicate: the key resolves to the corpus entry
+NAMED_ALIAS = {
+    "oneil1996": "10.1007/s002360050048",
+    "paging_lookahead": "10.7146/brics.v2i50.19951",
+    "semi_online_two": "10.1142/s0217595923500033",
+    "semi_online_uniform": "10.1051/ro/2024042",
+    "disk_sched": "10.1145/588160.588165",
+    "mts_optimal": "10.1145/146585.146588",
+}
+
+# What this paper does that each harvested theme does not.  One line per theme, hand-written
+# and true, emitted per entry by the theme the corpus recorded -- which is why the lines differ
+# across the list instead of repeating one formula 239 times.
+THEME_DIFFERENCE = {
+    "flash-write-amp": "write amplification is counted as forced relocations in a merge model, "
+                       "not measured against a device",
+    "lsm-compaction": "no engine is instrumented; one policy's merge decision is scored against "
+                      "an exact optimum at a fixed horizon",
+    "kv-engine": "the store is the setting the policy lives in, not the object measured here",
+    "logstructured-fs": "cleaning is the historical ancestor of the cost, not a competing model "
+                        "scored on the same instances",
+    "levels-tiering": "the two deployed families are not compared with each other; one family's "
+                      "decision is compared with the optimum",
+    "lookahead-online": "the quantity is the minimum cost attainable at a horizon, not a "
+                        "competitive ratio against an adversary",
+    "competitive-paging": "no competitive ratio is claimed: the optimum is computed exactly per "
+                          "instance and the gap is reported per cell",
+    "sched-lookahead": "the lookahead bounds a merge decision inside a compaction window rather "
+                       "than a scheduling queue",
+    "mts-kserver": "no task system is solved; the framework is cited as the scoring convention "
+                   "this paper adopts",
+    "ski-rental": "the minimal online decision is cited as the base case, and no algorithm is "
+                  "derived from it",
+}
+
+
+PLACEHOLDER = re.compile(r"^[^\w]*$")
+
+
+def render_author(name):
+    """`Given Middle Family` -> `Family, G. M.`, the house form; one token stays alone.
+
+    A registry sometimes stores a dash in the family field (two entries here carry `-` with
+    given-name initials beside it).  That is not a name and must never be printed as one: the
+    family token has no letter, so the component is reported as not established instead of
+    standing in the author position as a hyphen.
+    """
+    toks = [t for t in re.sub(r"\s+", " ", html.unescape(name or "")).split() if t]
+    if not toks:
+        return ""
+    if PLACEHOLDER.match(toks[-1]):
+        return ""
+    if len(toks) == 1:
+        return toks[0]                      # mononym: no initial to invent
+    family = toks[-1]
+    # a registry may store the family in the capitals of its own field; the entry prints
+    # the form, so the fold is applied here rather than trusted to the source
+    if family.isupper() and len(family) > 1:
+        family = family[:1].upper() + family[1:].lower()
+    inits = " ".join(t[0].upper() + "." for t in toks[:-1] if t[0].isalpha())
+    return ("%s, %s" % (family, inits)).strip().rstrip(",")
+
+
+def render_authors(names):
+    out = [render_author(n) for n in (names or [])]
+    out = [a for a in out if a]
+    if not out:
+        return "author not established on Crossref for this DOI"
+    if len(out) >= 4:
+        return "; ".join(out[:3] + ["et al."])
+    return "; ".join(out)
+
+
 
 MODEL = dict(K=3, R=3, Tmax=8, Rmax=5, Kmax=5)
 
 # named works are numbered after the corpus, so every citation key in the paper is numeric
 # three digits on purpose: the reference gate reads a 4-digit run at line start as a
 # YEAR, so a [1000]-style marker is never parsed as an entry
+# A key resolves to a NUMBER, and the six aliases resolve to the corpus entry that carries the
+# same DOI -- one work, one entry.  The two documents Crossref does not index are numbered after
+# the corpus, three digits on purpose: the journal's reference gate reads a 4-digit run at line
+# start as a year, so a [1000]-style marker is never parsed as an entry.
 NAMED_NUM = dict((k, str(240 + i)) for i, k in enumerate(NAMED))
+
+
+def bind_aliases(order):
+    """Point every alias at the entry whose DOI it names, and refuse an alias with no target."""
+    by_doi = dict((e["doi"].lower(), e["_ref"]) for e in order)
+    for k, doi in NAMED_ALIAS.items():
+        if doi not in by_doi:
+            raise SystemExit("alias %r names DOI %s, which no corpus entry carries" % (k, doi))
+        NAMED_NUM[k] = by_doi[doi]
 
 
 def load():
@@ -252,6 +335,7 @@ def main():
     json.dump(res, open("results.json", "w"), indent=1, sort_keys=True)
 
     order, mapping = themes(place)
+    bind_aliases(order)
     prose = open("manuscript_prose.md").read()
 
     bound = []          # every number produced by substitution, for the stray scan
@@ -300,7 +384,9 @@ def main():
 
     def sub_cite(m):
         k = m.group(1)
-        if k not in NAMED:
+        # NAMED_NUM is the alias-aware map: a key whose work lives in the corpus resolves to
+        # that entry's number, so `{{cite:oneil1996}}` and the corpus entry print as one [n]
+        if k not in NAMED_NUM:
             raise KeyError(k)
         return "[%s]" % NAMED_NUM[k]
 
@@ -313,18 +399,29 @@ def main():
     refs = ["### Corpus: DOI-verified against Crossref (see `reference-check.md`)", ""]
     for e in order:
         v = e["verified"]
-        au = ", ".join(v["authors"][:3]) if v["authors"] else "(no author field in record)"
-        # Crossref stores markup and entities in these fields (`&amp;` in a venue name is
-        # common); printed raw they reach the reader as a character reference, which the
-        # journal's own reference gate reports as a presentation defect
-        refs.append("[%s] %s. *%s*. %s. DOI %s."
-                    % (e["_ref"], html.unescape(v["title"]),
-                       html.unescape(v["venue"] or "(no venue field)"), au, v["doi"]))
+        # house form: authors (Family, I.) -- year in parentheses -- title -- venue -- a
+        # resolvable URL -- the one-line stated difference.  Emitted from stored fields only;
+        # the difference line is the theme's, written once and applied per entry, so the list
+        # does not repeat one invented formula 239 times.
+        diff = THEME_DIFFERENCE.get(e["theme"])
+        if not diff:
+            raise SystemExit("theme %r has no stated difference; add one before emitting"
+                             % e["theme"])
+        # the author component ends with exactly one period: `Family, I.` already carries it,
+        # `et al` takes it from the format, and neither prints `..`
+        refs.append("[%s] %s. (%s). %s. %s. https://doi.org/%s. Difference: %s."
+                    % (e["_ref"], render_authors(v.get("authors")).rstrip("."),
+                       v.get("year") or e.get("year") or "--",
+                       html.unescape(v["title"] or "(no title field)").rstrip("."),
+                       html.unescape(v["venue"] or "(no venue field)").rstrip("."),
+                       v["doi"], diff))
         refs.append("")
-    refs.append("### Works read in full for the comparison in the model and related-work sections")
+    refs.append("### Works read in full, which Crossref does not index")
     refs.append("")
-    for k, (tag, text) in NAMED.items():
-        refs.append("[%s] %s" % (NAMED_NUM[k], text))
+    for k, d in NAMED.items():
+        refs.append("[%s] %s. (%s). %s. %s. %s. Difference: %s."
+                    % (NAMED_NUM[k], d["authors"], d["year"], d["title"], d["venue"],
+                       d["url"], d["difference"]))
         refs.append("")
     refs = "\n".join(refs)
     body = body.replace("{{refs}}", refs)

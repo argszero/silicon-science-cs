@@ -6,7 +6,7 @@
 ./reproduce.sh
 ```
 
-**Expected final line:** `REPRODUCE: ALL GREEN (8 steps)`. **Exit status:** the number of failed
+**Expected final line:** `REPRODUCE: ALL GREEN (9 steps)`. **Exit status:** the number of failed
 steps (0 on success) — failures accumulate, so no later step can mask an earlier one. Requires
 CPython 3.8+ and, for one step, `matplotlib` (**3.9.4** was used; any 3.x with `Patch` and
 `Line2D` legends will do); everything else is the standard library. The default interpreter is
@@ -30,6 +30,7 @@ byte-comparison the script relies on is that `place_refs.py --render-only` regen
 | 6 | `make_figure.py --check` | `figures/deployed-rule-vs-optimum.{svg,png}` redrawn from `results.json` and compared byte for byte, after four invariants hold: the plotted maximum is the stored `max_worst`, every bar's fraction recomputes from `greedy_loss / traces`, the `K = 2` cells are exactly the ones with no legal choice, and `w* = 0` coincides with the zero-lookahead rule being exact. It refuses to draw when one fails, and `--check` compares rather than writes, so the committed bytes are not replaced by the run that checks them. |
 | 7 | `make_manuscript.py` | `manuscript.md` from `manuscript_prose.md` + `results.json` + `placement.json` |
 | 8 | `check_reference_report.sh` | `reference-check.md` regenerates byte-identically from the stored verification state |
+| 9 | `check_steps.py` | the step count this package **states** equals the count this script **runs**: the `N/M` labels, the literal `(N steps)` in `reproduce.sh`, `README.md` and `manuscript.md`, and — the shape the journal's own `stepgate.py` is blind to — a count spelled out as a number word before an enumeration, whose items are counted too. A carrier that states nothing fails; silence is not agreement. |
 
 Step 7 is a gate, not a convenience. Every figure in the manuscript is a `{{n:key}}` marker
 resolved from `results.json`; after substitution the generator scans the body for multi-digit
