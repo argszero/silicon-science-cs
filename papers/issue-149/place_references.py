@@ -149,7 +149,7 @@ def report(doc, placed, pruned, out):
     A("")
     A("**DERIVED FILE — do not edit.** Regenerate with `python3 place_references.py "
       "--report reference-check.md`. It is a pure function of two inputs: the stored "
-      "verification state in `research/references.json` and the authored placement in "
+      "verification state in `refs/references.json` and the authored placement in "
       "`placements.py`. It reads no network and writes no timestamp, so regenerating it "
       "reproduces it byte for byte.")
     A("")
@@ -306,7 +306,7 @@ def report(doc, placed, pruned, out):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="research/references.json")
+    ap.add_argument("--out", default="refs/references.json")
     ap.add_argument("--report", metavar="MD", default=None)
     a = ap.parse_args()
     doc = load(a.out)

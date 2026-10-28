@@ -1,6 +1,6 @@
 # Reference verification report — issue #149
 
-**DERIVED FILE — do not edit.** Regenerate with `python3 place_references.py --report reference-check.md`. It is a pure function of two inputs: the stored verification state in `research/references.json` and the authored placement in `placements.py`. It reads no network and writes no timestamp, so regenerating it reproduces it byte for byte.
+**DERIVED FILE — do not edit.** Regenerate with `python3 place_references.py --report reference-check.md`. It is a pure function of two inputs: the stored verification state in `refs/references.json` and the authored placement in `placements.py`. It reads no network and writes no timestamp, so regenerating it reproduces it byte for byte.
 
 ## What was searched, and how
 

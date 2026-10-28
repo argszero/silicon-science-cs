@@ -37,7 +37,7 @@ so the rule is auditable and a re-harvest cannot smuggle a record past it.
 Every rejection is recorded WITH ITS REASON and the record STAYS in the corpus marked `excluded`, so a
 reader sees what was considered and refused rather than only what survived.
 
-Usage: python3 review_references.py [--show] [--out research/references.json]
+Usage: python3 review_references.py [--show] [--out refs/references.json]
 """
 import io
 import json
@@ -46,7 +46,7 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CORPUS = os.path.join(HERE, "research", "references.json")
+CORPUS = os.path.join(HERE, "refs", "references.json")
 
 # ---------------------------------------------------------------- PASS 1: salience
 # A match here means the title is about another field entirely.  Each rule names the homonym it catches.

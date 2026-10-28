@@ -78,7 +78,7 @@ def cited_keys(text):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manuscript", default="manuscript.md")
-    ap.add_argument("--corpus", default="research/references.json")
+    ap.add_argument("--corpus", default="refs/references.json")
     ap.add_argument("--list", metavar="MD", default=None,
                     help="write the generated reference list to this file")
     ap.add_argument("--cite", action="store_true",
