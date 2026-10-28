@@ -389,9 +389,18 @@ every one of them reports exactly zero losses, so a cell that starts losing ther
 and not a result.
 
 In the {{n:rules_informative_cells}} informative cells the aligned rule loses on
-{{n:rules_informative_min_pct}} % and {{n:rules_informative_max_pct}} % of windows, with a worst cell
-ratio of {{n:rules_summary.aligned_max_worst_ratio}} times the floor. The `k = 1` cells are reported
-as FORCED and never as comparisons: one queue cannot choose, so it cannot be compared.
+{{n:rules_informative_min_pct}} % to {{n:rules_informative_max_pct}} % of windows, with a worst cell
+ratio of {{n:rules_summary.aligned_max_worst_ratio}} times the floor. Both numbers rise with `n`
+across those cells rather than sitting still, so the table is read as the range it is: a single cell
+quoted alone would misstate the phenomenon in either direction. The `k = 1` cells are reported as
+FORCED and never as comparisons: one queue cannot choose, so it cannot be compared.
+
+The table also settles a thing the floor alone cannot: **a zero floor does not buy a correct mapping.**
+Of the {{n:zero_floor_windows}} windows whose restricted floor is already zero, the aligned rule still
+loses on {{n:zero_floor_loses}} of them — up to {{n:zero_floor_max_pct}} % within a single cell. Those
+losses are entirely avoidable: nothing about the queue budget forces them, only the band map does.
+That is the separation this paper exists to make, and it is why the floor and the deployed rule are
+both reported per cell rather than pooled.
 
 ![The discipline gap as a distribution over windows. Each bar is the share of windows at a given
 `required k - LDS`; the printed percentage is the share of windows on which the two disciplines
@@ -400,24 +409,66 @@ invariants.](figures/discipline-gap.png)
 
 ## 10 Registered prior beliefs, and what happened to them
 
-The study registered its expectations before running, and reports them in that order — not as a
-retrospective narrative.
+The priors below are quoted from the registration, which fixed them before the deciding runs and
+which named `P1`, `P2` and `P3`. They are answered in that order, on the conditions the registration
+itself stated — not on a convenient substitute, and not renumbered to fit the results.
 
-**P1 — the free-merge threshold transfers to the device.** Registered expectation: `R(k) = 0` iff
-`k >= LDS`, i.e. the statistic a designer already knows is the one a strict-priority device obeys. The
-justification given at registration was Dilworth's theorem: the partition bound holds for any
-emulation, so the device was expected to attain it. **Status: refuted.** Under strict priority the
-bound is not attained; the exact requirement is `runs(p)`, which exceeds `LDS` on
+**Registered `P1` — zero inversions iff `k` is at least the window's longest strictly decreasing
+subsequence. Status: confirmed, as the certificate it was registered to be.** The registration
+declared this a proposition to verify rather than a finding, because it follows from Dilworth's
+theorem, and said a violation would mean the model or the implementation was wrong. There is none:
+`runs(p)` violates the threshold on {{n:p1_violations}} of {{n:p1_pairs}} (window, `k`) pairs, which is
+the S2 criterion met, and it certifies the model the way the brute-force cross-check certifies the
+floor. Confirming a corollary is not a result, and the registration said so first, which is what makes
+it safe to report plainly.
+
+**What `P1` does *not* transfer to, and why this is not a prior that failed.** I inferred at
+registration time — in prose, not as a registered prior — that because the partition bound holds for
+any emulation, a strict-priority device would attain it too. That inference is **refuted**: under the
+device's own dequeue discipline the exact requirement is `runs(p)`, which exceeds `LDS` on
 {{n:threshold_distinct[7].lds_understates_windows}} of {{n:threshold_distinct[7].windows}} n = 7
-windows. This is the paper's substantive result, and it is the one the registered prior got wrong.
+windows. This is the paper's substantive result. It is reported here rather than in the `P1` slot
+because the registration never claimed it: registering a corollary as verified, and then discovering
+that the corollary does not carry the operational conclusion, is a different event from a prior
+failing, and merging the two would let the paper claim a refutation it did not register.
 
-**P3 — the overshoot of a deployed rule is non-monotone in `k`.** Registered expectation: the worst
-ratio of a band rule to the floor peaks at an intermediate `k`. **Status: unresolved, and not by
-choice.** The reading that suggested P3 was taken against the free floor and against a band rule whose
-queue priorities were misaligned by construction, so it does not count as evidence either way;
-re-reading it needs an aligned rule over a `k` range wider than the cells this artifact carries. It is
-recorded as unresolved rather than dropped, because a prior that quietly disappears from the record is
-worse than one reported as untested.
+**Registered `P2` — the deployed rule exceeds the floor in the *majority* of windows whenever
+`2 <= k < LDS`, with a worst per-cell overshoot above `1.3x`. Status: confirmed, both limbs — and
+only because the range the registration named was measured to its end.** On the registration's own
+population, the windows with `k < LDS`, {{n:p2_loses}} of {{n:p2_windows}} windows lose:
+{{n:p2_pooled_pct}} %. The worst per-cell ratio is {{n:p2_worst_max}} times the floor, far above the
+registered `1.3x`. So the deployed rule does lose in the majority of windows in the class the
+registration nominated, and it loses by more than the registration predicted.
+
+That verdict is the second reading of this datum, not the first. The artifact originally stopped at
+`n = 6`, where the same population gave a minority in every cell, and an earlier draft of this section
+reported the frequency limb as **refuted**. Registered criterion S3 asks for every cell to `n = 8`
+with the maximum taken over all cells rather than over a convenient subset, so the cells were
+extended — and the verdict inverted. The share rises with `n` across the four informative cells:
+
+{{table:rules_registered}}
+
+It crosses one half between `n = 6` and `n = 7` and reaches {{n:p2_max_pct}} % at `n = 8`. A study
+that stopped where the enumeration was cheapest would have published the opposite conclusion from the
+same model, which is why the registered range is reported rather than described as saturated. The
+dependence on `n` is itself a result: the frequency of avoidable loss is not a property of the rule
+alone, and a single-cell figure for it is a figure about a window length.
+
+**Registered `P3` — the informative cells are exactly `2 <= k < LDS`, and the overshoot is not
+monotone in `k`. Status: the first limb is refuted, the second is unresolved.** The first limb fails
+on the half of it that says `k >= LDS` is *vacuous because both floor and rule are zero*: the
+aligned rule loses on {{n:zero_floor_loses}} of the {{n:zero_floor_windows}} windows whose restricted
+floor is already zero, up to {{n:zero_floor_max_pct}} % in one cell (§9.5). A zero floor says the
+budget is enough; it does not say the band map spends it, and the registration equated the two. The
+class that can register a loss is therefore set by the band map's collisions, `k < m`, not by the
+`LDS` threshold the registration nominated — which is why the {{n:rules_informative_cells}}
+informative cells of §9.5 are chosen that way. Unlike `P2`, this limb needed no wide `n` range to
+become visible: it was there at every `n` measured. The second limb — non-monotonicity of the worst ratio in `k` — stays
+**unresolved, and not by choice**: the reading that suggested it was taken against the free floor and
+against a band rule whose queue priorities were misaligned by construction, so it is not evidence
+either way, and re-reading it needs an aligned rule over a `k` range wider than the cells this
+artifact carries. It is recorded as unresolved rather than dropped, because a prior that quietly
+disappears from the record is worse than one reported as untested.
 
 **The ties falsifier.** Before the tied-rank measurement we registered a numeric falsifier: if the
 best candidate were exact on fewer than `99` % of tie-bearing windows *and* the two disciplines

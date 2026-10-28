@@ -400,19 +400,34 @@ so that a cell which cannot register a loss is visible as such rather than count
 | 6 | 2 | 2 | 64 | 0 | 0.0000 | 0.00 | 62 | 0.9688 | no -- k >= m forces it |
 | 6 | 3 | 2 | 729 | 352 | 0.4829 | 6.00 | 721 | 0.9890 | yes -- k < m |
 | 6 | 3 | 3 | 729 | 0 | 0.0000 | 0.00 | 726 | 0.9959 | no -- k >= m forces it |
+| 7 | 2 | 2 | 128 | 0 | 0.0000 | 0.00 | 126 | 0.9844 | no -- k >= m forces it |
+| 7 | 3 | 2 | 2187 | 1200 | 0.5487 | 9.00 | 2178 | 0.9959 | yes -- k < m |
+| 7 | 3 | 3 | 2187 | 0 | 0.0000 | 0.00 | 2184 | 0.9986 | no -- k >= m forces it |
+| 8 | 2 | 2 | 256 | 0 | 0.0000 | 0.00 | 254 | 0.9922 | no -- k >= m forces it |
+| 8 | 3 | 2 | 6561 | 3977 | 0.6062 | 12.00 | 6551 | 0.9985 | yes -- k < m |
+| 8 | 3 | 3 | 6561 | 0 | 0.0000 | 0.00 | 6558 | 0.9995 | no -- k >= m forces it |
 
 Two facts about this table matter more than its headline. First, the anti-rule control loses in
-every cell (on at least 93.8 % of windows), so no cell is measuring nothing. Second, **only 2 of
-the 6 cells can measure a gap at all.** When `k >= m` every rank owns a queue, the aligned map
+every cell (on at least 93.8 % of windows), so no cell is measuring nothing. Second, **only 4 of
+the 12 cells can measure a gap at all.** When `k >= m` every rank owns a queue, the aligned map
 is injective by construction, and the rule attains the floor without being right about anything;
-the 4 such cells confirm the implementation and measure nothing, and they are counted as forced
+the 8 such cells confirm the implementation and measure nothing, and they are counted as forced
 here rather than folded into a win rate. A check in `emit_results.py` asserts that every one of
 them reports exactly zero losses, so a cell that starts losing there is a code defect and not a
 result.
 
-In the 2 informative cells the aligned rule loses on 40.7 % and 48.3 % of windows, with a worst
-cell ratio of 6 times the floor. The `k = 1` cells are reported as FORCED and never as
-comparisons: one queue cannot choose, so it cannot be compared.
+In the 4 informative cells the aligned rule loses on 40.7 % to 60.6 % of windows, with a worst
+cell ratio of 12 times the floor. Both numbers rise with `n` across those cells rather than
+sitting still, so the table is read as the range it is: a single cell quoted alone would
+misstate the phenomenon in either direction. The `k = 1` cells are reported as FORCED and never
+as comparisons: one queue cannot choose, so it cannot be compared.
+
+The table also settles a thing the floor alone cannot: **a zero floor does not buy a correct
+mapping.** Of the 15208 windows whose restricted floor is already zero, the aligned rule still
+loses on 2784 of them — up to 58.3 % within a single cell. Those losses are entirely avoidable:
+nothing about the queue budget forces them, only the band map does. That is the separation this
+paper exists to make, and it is why the floor and the deployed rule are both reported per cell
+rather than pooled.
 
 ![The discipline gap as a distribution over windows. Each bar is the share of windows at a given
 `required k - LDS`; the printed percentage is the share of windows on which the two disciplines
@@ -421,24 +436,73 @@ invariants.](figures/discipline-gap.png)
 
 ## 10 Registered prior beliefs, and what happened to them
 
-The study registered its expectations before running, and reports them in that order — not as a
-retrospective narrative.
+The priors below are quoted from the registration, which fixed them before the deciding runs and
+which named `P1`, `P2` and `P3`. They are answered in that order, on the conditions the
+registration itself stated — not on a convenient substitute, and not renumbered to fit the
+results.
 
-**P1 — the free-merge threshold transfers to the device.** Registered expectation: `R(k) = 0`
-iff `k >= LDS`, i.e. the statistic a designer already knows is the one a strict-priority device
-obeys. The justification given at registration was Dilworth's theorem: the partition bound holds
-for any emulation, so the device was expected to attain it. **Status: refuted.** Under strict
-priority the bound is not attained; the exact requirement is `runs(p)`, which exceeds `LDS` on
-2422 of 5040 n = 7 windows. This is the paper's substantive result, and it is the one the
-registered prior got wrong.
+**Registered `P1` — zero inversions iff `k` is at least the window's longest strictly decreasing
+subsequence. Status: confirmed, as the certificate it was registered to be.** The registration
+declared this a proposition to verify rather than a finding, because it follows from Dilworth's
+theorem, and said a violation would mean the model or the implementation was wrong. There is
+none: `runs(p)` violates the threshold on 0 of 40296 (window, `k`) pairs, which is the S2
+criterion met, and it certifies the model the way the brute-force cross-check certifies the
+floor. Confirming a corollary is not a result, and the registration said so first, which is what
+makes it safe to report plainly.
 
-**P3 — the overshoot of a deployed rule is non-monotone in `k`.** Registered expectation: the
-worst ratio of a band rule to the floor peaks at an intermediate `k`. **Status: unresolved, and
-not by choice.** The reading that suggested P3 was taken against the free floor and against a
-band rule whose queue priorities were misaligned by construction, so it does not count as
-evidence either way; re-reading it needs an aligned rule over a `k` range wider than the cells
-this artifact carries. It is recorded as unresolved rather than dropped, because a prior that
-quietly disappears from the record is worse than one reported as untested.
+**What `P1` does *not* transfer to, and why this is not a prior that failed.** I inferred at
+registration time — in prose, not as a registered prior — that because the partition bound holds
+for any emulation, a strict-priority device would attain it too. That inference is **refuted**:
+under the device's own dequeue discipline the exact requirement is `runs(p)`, which exceeds
+`LDS` on 2422 of 5040 n = 7 windows. This is the paper's substantive result. It is reported here
+rather than in the `P1` slot because the registration never claimed it: registering a corollary
+as verified, and then discovering that the corollary does not carry the operational conclusion,
+is a different event from a prior failing, and merging the two would let the paper claim a
+refutation it did not register.
+
+**Registered `P2` — the deployed rule exceeds the floor in the *majority* of windows whenever `2
+<= k < LDS`, with a worst per-cell overshoot above `1.3x`. Status: confirmed, both limbs — and
+only because the range the registration named was measured to its end.** On the registration's
+own population, the windows with `k < LDS`, 2844 of 4712 windows lose: 60.4 %. The worst
+per-cell ratio is 12.00 times the floor, far above the registered `1.3x`. So the deployed rule
+does lose in the majority of windows in the class the registration nominated, and it loses by
+more than the registration predicted.
+
+That verdict is the second reading of this datum, not the first. The artifact originally stopped
+at `n = 6`, where the same population gave a minority in every cell, and an earlier draft of
+this section reported the frequency limb as **refuted**. Registered criterion S3 asks for every
+cell to `n = 8` with the maximum taken over all cells rather than over a convenient subset, so
+the cells were extended — and the verdict inverted. The share rises with `n` across the four
+informative cells:
+
+| n | m | k | windows with `k < LDS` | of those, the rule loses | share | worst ratio |
+|---|---|---|---|---|---|---|
+| 5 | 3 | 2 | 51 | 19 | 0.3725 | 4.00 |
+| 6 | 3 | 2 | 233 | 112 | 0.4807 | 6.00 |
+| 7 | 3 | 2 | 939 | 528 | 0.5623 | 9.00 |
+| 8 | 3 | 2 | 3489 | 2185 | 0.6263 | 12.00 |
+
+It crosses one half between `n = 6` and `n = 7` and reaches 62.6 % at `n = 8`. A study that
+stopped where the enumeration was cheapest would have published the opposite conclusion from the
+same model, which is why the registered range is reported rather than described as saturated.
+The dependence on `n` is itself a result: the frequency of avoidable loss is not a property of
+the rule alone, and a single-cell figure for it is a figure about a window length.
+
+**Registered `P3` — the informative cells are exactly `2 <= k < LDS`, and the overshoot is not
+monotone in `k`. Status: the first limb is refuted, the second is unresolved.** The first limb
+fails on the half of it that says `k >= LDS` is *vacuous because both floor and rule are zero*:
+the aligned rule loses on 2784 of the 15208 windows whose restricted floor is already zero, up
+to 58.3 % in one cell (§9.5). A zero floor says the budget is enough; it does not say the band
+map spends it, and the registration equated the two. The class that can register a loss is
+therefore set by the band map's collisions, `k < m`, not by the `LDS` threshold the registration
+nominated — which is why the 4 informative cells of §9.5 are chosen that way. Unlike `P2`, this
+limb needed no wide `n` range to become visible: it was there at every `n` measured. The second
+limb — non-monotonicity of the worst ratio in `k` — stays **unresolved, and not by choice**: the
+reading that suggested it was taken against the free floor and against a band rule whose queue
+priorities were misaligned by construction, so it is not evidence either way, and re-reading it
+needs an aligned rule over a `k` range wider than the cells this artifact carries. It is
+recorded as unresolved rather than dropped, because a prior that quietly disappears from the
+record is worse than one reported as untested.
 
 **The ties falsifier.** Before the tied-rank measurement we registered a numeric falsifier: if
 the best candidate were exact on fewer than `99` % of tie-bearing windows *and* the two
@@ -471,8 +535,8 @@ bound of 2 queues on the gap is a **measured maximum over those windows**, not a
 nothing here forbids a larger gap at larger n, and the proof of `runs(p) >= LDS` bounds the
 direction of the error, not its size.
 
-**Two of six rule cells are informative.** §9.5 reports the 2 informative cells separately from
-the 4 forced ones. A reader who takes the six-cell summary as a win rate is reading a number
+**Two of six rule cells are informative.** §9.5 reports the 4 informative cells separately from
+the 8 forced ones. A reader who takes the six-cell summary as a win rate is reading a number
 that four of its cells cannot earn.
 
 **A caution about the instruments themselves.** Both defects found in this study were found by
@@ -564,214 +628,211 @@ failure rather than a style issue.
 
 ## References
 
-[1] Pratt, V. R. Computing permutations with double-ended queues, parallel stacks and parallel queues. Proceedings of the fifth annual ACM symposium on Theory of computing  - STOC '73, 1973. DOI 10.1145/800125.804058.
+[1] Pratt, V. R. Computing permutations with double-ended queues, parallel stacks and parallel queues. Proceedings of the fifth annual ACM symposium on Theory of computing - STOC '73, 1973. https://doi.org/10.1145/800125.804058.
 
-[2] Even, S.; Itai, A. QUEUES, STACKS AND GRAPHS. Theory of Machines and Computations, 1971. DOI 10.1016/b978-0-12-417750-5.50011-7.
+[2] Even, S.; Itai, A. QUEUES, STACKS AND GRAPHS. Theory of Machines and Computations, 1971. https://doi.org/10.1016/b978-0-12-417750-5.50011-7.
 
-[3] Tarjan, R. Sorting Using Networks of Queues and Stacks. Journal of the ACM, 1972. DOI 10.1145/321694.321704.
+[3] Tarjan, R. Sorting Using Networks of Queues and Stacks. Journal of the ACM, 1972. https://doi.org/10.1145/321694.321704.
 
-[4] Elbediwy; Pontikakis; David; Savaria. A Hardware Architecture of a Dynamic Ranking Packet Scheduler for Programmable Network Devices. IEEE Access, 2023. DOI 10.1109/access.2023.3286726.
+[4] Elbediwy; Pontikakis; David; Savaria. A Hardware Architecture of a Dynamic Ranking Packet Scheduler for Programmable Network Devices. IEEE Access, 2023. https://doi.org/10.1109/access.2023.3286726.
 
-[5] Jiang; Zhang; Liu; Zheng. A P4-Based Packet Scheduling Approach for Clustered Deep Packet Inspection Appliances. 2021 International Conference on Computer Communications and Networks (ICCCN), 2021. DOI 10.1109/icccn52240.2021.9522193.
+[5] Jiang; Zhang; Liu; Zheng. A P4-Based Packet Scheduling Approach for Clustered Deep Packet Inspection Appliances. 2021 International Conference on Computer Communications and Networks (ICCCN), 2021. https://doi.org/10.1109/icccn52240.2021.9522193.
 
-[6] Kang; Tian; Hu. A Programmable Packet Scheduling Method Based on Traffic Rate. 2024 IEEE 2nd International Conference on Control, Electronics and Computer Technology (ICCECT), 2024. DOI 10.1109/iccect60629.2024.10545661.
+[6] Kang; Tian; Hu. A Programmable Packet Scheduling Method Based on Traffic Rate. 2024 IEEE 2nd International Conference on Control, Electronics and Computer Technology (ICCECT), 2024. https://doi.org/10.1109/iccect60629.2024.10545661.
 
-[7] Chen; Tian; Zhang. AccelToR: Accelerating TCP for Circuit/Packet Hybrid Data Centers With Packet Scheduling. IEEE Transactions on Networking, 2025. DOI 10.1109/ton.2025.3550902.
+[7] Chen; Tian; Zhang. AccelToR: Accelerating TCP for Circuit/Packet Hybrid Data Centers With Packet Scheduling. IEEE Transactions on Networking, 2025. https://doi.org/10.1109/ton.2025.3550902.
 
-[8] Quan; Xu; Liu; Cheng; et al. AI-Driven Packet Forwarding With Programmable Data Plane: A Survey. IEEE Communications Surveys & Tutorials, 2023. DOI 10.1109/comst.2022.3217613.
+[8] Quan; Xu; Liu; Cheng; et al. AI-Driven Packet Forwarding With Programmable Data Plane: A Survey. IEEE Communications Surveys & Tutorials, 2023. https://doi.org/10.1109/comst.2022.3217613.
 
-[9] Rajagopalan; Sivalingam; Shami; Lyonnais. ALADA: Packet-Level Analysis for Line Rate Anomaly Detection Using a Programmable Dataplane Switch. IEEE Open Journal of the Communications Society, 2026. DOI 10.1109/ojcoms.2026.3686225.
+[9] Rajagopalan; Sivalingam; Shami; Lyonnais. ALADA: Packet-Level Analysis for Line Rate Anomaly Detection Using a Programmable Dataplane Switch. IEEE Open Journal of the Communications Society, 2026. https://doi.org/10.1109/ojcoms.2026.3686225.
 
-[10] Li; Song; Zeng. An Adaptive Throughput-First Packet Scheduling Algorithm for DPDK-Based Packet Processing Systems. Future Internet, 2021. DOI 10.3390/fi13030078.
+[10] Li; Song; Zeng. An Adaptive Throughput-First Packet Scheduling Algorithm for DPDK-Based Packet Processing Systems. Future Internet, 2021. https://doi.org/10.3390/fi13030078.
 
-[11] Saqib; Elbiaze; Glitho; Ghamri-Doudane. An Intelligent and Programmable Data Plane for QoS-Aware Packet Processing. IEEE Transactions on Machine Learning in Communications and Networking, 2024. DOI 10.1109/tmlcn.2024.3475968.
+[11] Saqib; Elbiaze; Glitho; Ghamri-Doudane. An Intelligent and Programmable Data Plane for QoS-Aware Packet Processing. IEEE Transactions on Machine Learning in Communications and Networking, 2024. https://doi.org/10.1109/tmlcn.2024.3475968.
 
-[12] Guo; Sun; Hu; Zhang; et al. CIPO: Efficient, lightweight and programmable packet scheduling. Computer Networks, 2024. DOI 10.1016/j.comnet.2024.110355.
+[12] Guo; Sun; Hu; Zhang; et al. CIPO: Efficient, lightweight and programmable packet scheduling. Computer Networks, 2024. https://doi.org/10.1016/j.comnet.2024.110355.
 
-[13] Cui; Zhang. D-PIFO: A Dynamic Priority Scheduling Algorithm for Performance-Critical Packets Based on the Programmable Data Plane. 2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD), 2024. DOI 10.1109/cscwd61410.2024.10580504.
+[13] Cui; Zhang. D-PIFO: A Dynamic Priority Scheduling Algorithm for Performance-Critical Packets Based on the Programmable Data Plane. 2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD), 2024. https://doi.org/10.1109/cscwd61410.2024.10580504.
 
-[14] Wang; Liu; Zhang; Guo; et al. DDSPQ: Strict-Priority Queue Schedule for Multi-Tiered Service Accommodation in SD-WAN. 2025 10th International Conference on Computer and Communication System (ICCCS), 2025. DOI 10.1109/icccs65393.2025.11069454.
+[14] Wang; Liu; Zhang; Guo; et al. DDSPQ: Strict-Priority Queue Schedule for Multi-Tiered Service Accommodation in SD-WAN. 2025 10th International Conference on Computer and Communication System (ICCCS), 2025. https://doi.org/10.1109/icccs65393.2025.11069454.
 
-[15] Hussain; Patetta; Rivalan. Demo: Programmable Packet Scheduling on FPGA-Based Switches. 2025 4th International Conference on 6G Networking (6GNet), 2025. DOI 10.1109/6gnet68413.2025.11314135.
+[15] Hussain; Patetta; Rivalan. Demo: Programmable Packet Scheduling on FPGA-Based Switches. 2025 4th International Conference on 6G Networking (6GNet), 2025. https://doi.org/10.1109/6gnet68413.2025.11314135.
 
-[16] Elbediwy; Pontikakis; Ghaffari; David; et al. DR-PIFO: A Dynamic Ranking Packet Scheduler Using a Push-In-First-Out Queue. IEEE Transactions on Network and Service Management, 2024. DOI 10.1109/tnsm.2023.3304894.
+[16] Elbediwy; Pontikakis; Ghaffari; David; et al. DR-PIFO: A Dynamic Ranking Packet Scheduler Using a Push-In-First-Out Queue. IEEE Transactions on Network and Service Management, 2024. https://doi.org/10.1109/tnsm.2023.3304894.
 
-[17] Yu; Ruepp; Berger. Enhanced first-in-first-out-based round-robin multicast scheduling algorithm for input-queued switches. IET Communications, 2011. DOI 10.1049/iet-com.2010.0378.
+[17] Yu; Ruepp; Berger. Enhanced first-in-first-out-based round-robin multicast scheduling algorithm for input-queued switches. IET Communications, 2011. https://doi.org/10.1049/iet-com.2010.0378.
 
-[18] Mostafaei; Ezzati; Cuijpers; Schmid; et al. Exp-PIFO: Scalable and Efficient Programmable Packet Scheduling. Proceedings of the ACM on Networking, 2025. DOI 10.1145/3749217.
+[18] Mostafaei; Ezzati; Cuijpers; Schmid; et al. Exp-PIFO: Scalable and Efficient Programmable Packet Scheduling. Proceedings of the ACM on Networking, 2025. https://doi.org/10.1145/3749217.
 
-[19] Liu; Gao; Chen; Chen; et al. FIPO: A Lightweight and Customized Software-Defined Programmable Packet Scheduling Primitive. IEEE Systems Journal, 2025. DOI 10.1109/jsyst.2025.3567017.
+[19] Liu; Gao; Chen; Chen; et al. FIPO: A Lightweight and Customized Software-Defined Programmable Packet Scheduling Primitive. IEEE Systems Journal, 2025. https://doi.org/10.1109/jsyst.2025.3567017.
 
-[20] Zhang; Li; Li; Liu; et al. Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters. IEEE INFOCOM 2025 - IEEE Conference on Computer Communications, 2025. DOI 10.1109/infocom55648.2025.11044448.
+[20] Zhang; Li; Li; Liu; et al. Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters. IEEE INFOCOM 2025 - IEEE Conference on Computer Communications, 2025. https://doi.org/10.1109/infocom55648.2025.11044448.
 
-[21] Lv; Jiang; Yang. Making programmable packet scheduling time-sensitive with a FIFO queue. Journal of Cloud Computing, 2023. DOI 10.1186/s13677-023-00518-3.
+[21] Lv; Jiang; Yang. Making programmable packet scheduling time-sensitive with a FIFO queue. Journal of Cloud Computing, 2023. https://doi.org/10.1186/s13677-023-00518-3.
 
-[22] Tsanikidis; Ghaderi. Near-Optimal Packet Scheduling in Multihop Networks with End-to-End Deadline Constraints. ACM SIGMETRICS Performance Evaluation Review, 2024. DOI 10.1145/3673660.3655069.
+[22] Tsanikidis; Ghaderi. Near-Optimal Packet Scheduling in Multihop Networks with End-to-End Deadline Constraints. ACM SIGMETRICS Performance Evaluation Review, 2024. https://doi.org/10.1145/3673660.3655069.
 
-[23] Sivaraman, A.; Subramanian, S.; Alizadeh, M.; Chole, S.; et al. Programmable Packet Scheduling at Line Rate. Proceedings of the 2016 ACM SIGCOMM Conference, 2016. DOI 10.1145/2934872.2934899.
+[23] Sivaraman, A.; Subramanian, S.; Alizadeh, M.; Chole, S.; et al. Programmable Packet Scheduling at Line Rate. Proceedings of the 2016 ACM SIGCOMM Conference, 2016. https://doi.org/10.1145/2934872.2934899.
 
-[24] Vass; Sarkadi; Retvari. Programmable Packet Scheduling With SP-PIFO: Theory, Algorithms and Evaluation. IEEE INFOCOM 2022 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS), 2022. DOI 10.1109/infocomwkshps54753.2022.9798055.
+[24] Vass; Sarkadi; Retvari. Programmable Packet Scheduling With SP-PIFO: Theory, Algorithms and Evaluation. IEEE INFOCOM 2022 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS), 2022. https://doi.org/10.1109/infocomwkshps54753.2022.9798055.
 
-[25] Mei; Chen; Chen; Chen; et al. Scale-up PIFO: Interleaving Multiple Priority Queues for High Speed Programmable Scheduling. Proceedings of the ACM SIGCOMM 2026 Conference, 2026. DOI 10.1145/3789240.3829190.
+[25] Mei; Chen; Chen; Chen; et al. Scale-up PIFO: Interleaving Multiple Priority Queues for High Speed Programmable Scheduling. Proceedings of the ACM SIGCOMM 2026 Conference, 2026. https://doi.org/10.1145/3789240.3829190.
 
-[26] Vass. Spring: Theory and an Efficient Heuristic for Programmable Packet Scheduling with SP-PIFO. Infocommunications journal, 2025. DOI 10.36244/icj.2025.3.1.
+[26] Vass. Spring: Theory and an Efficient Heuristic for Programmable Packet Scheduling with SP-PIFO. Infocommunications journal, 2025. https://doi.org/10.36244/icj.2025.3.1.
 
-[27] Song; Hasan. Time-Aware Packet Forwarding in Programmable Data Planes. 2025 28th International Symposium on Real-Time Distributed Computing (ISORC), 2025. DOI 10.1109/isorc65339.2025.00038.
+[27] Song; Hasan. Time-Aware Packet Forwarding in Programmable Data Planes. 2025 28th International Symposium on Real-Time Distributed Computing (ISORC), 2025. https://doi.org/10.1109/isorc65339.2025.00038.
 
-[28] Xing; Qiu; Hsu; Sui; et al. Unleashing SmartNIC Packet Processing Performance in P4. Proceedings of the ACM SIGCOMM 2023 Conference, 2023. DOI 10.1145/3603269.3604882.
+[28] Xing; Qiu; Hsu; Sui; et al. Unleashing SmartNIC Packet Processing Performance in P4. Proceedings of the ACM SIGCOMM 2023 Conference, 2023. https://doi.org/10.1145/3603269.3604882.
 
-[29] Zhang; Chen; Yao; Sun; et al. vPIFO: Virtualized Packet Scheduler for Programmable Hierarchical Scheduling in High-Speed Networks. Proceedings of the ACM SIGCOMM 2024 Conference, 2024. DOI 10.1145/3651890.3672270.
+[29] Zhang; Chen; Yao; Sun; et al. vPIFO: Virtualized Packet Scheduler for Programmable Hierarchical Scheduling in High-Speed Networks. Proceedings of the ACM SIGCOMM 2024 Conference, 2024. https://doi.org/10.1145/3651890.3672270.
 
-[30] Heisswolf; Konig; Becker. A Scalable NoC Router Design Providing QoS Support Using Weighted Round Robin Scheduling. 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications, 2012. DOI 10.1109/ispa.2012.93.
+[30] Heisswolf; Konig; Becker. A Scalable NoC Router Design Providing QoS Support Using Weighted Round Robin Scheduling. 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications, 2012. https://doi.org/10.1109/ispa.2012.93.
 
-[31] Rahimi; Pournaghshband. An improvement mechanism for low priority traffic TCP performance in Strict Priority Queueing. 2016 International Conference on Computer Communication and Informatics (ICCCI), 2016. DOI 10.1109/iccci.2016.7480023.
+[31] Rahimi; Pournaghshband. An improvement mechanism for low priority traffic TCP performance in Strict Priority Queueing. 2016 International Conference on Computer Communication and Informatics (ICCCI), 2016. https://doi.org/10.1109/iccci.2016.7480023.
 
-[32] Shortle; Fischer. Approximation for a two-class weighted fair queueing discipline. Performance Evaluation, 2010. DOI 10.1016/j.peva.2010.05.004.
+[32] Shortle; Fischer. Approximation for a two-class weighted fair queueing discipline. Performance Evaluation, 2010. https://doi.org/10.1016/j.peva.2010.05.004.
 
-[33] Mukherjee; Kuri; Singh. Convexity and Optimization in Deficit Round Robin Scheduling for Delay-Constrained Systems. 2025 23rd International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt), 2025. DOI 10.23919/wiopt66569.2025.11123403.
+[33] Mukherjee; Kuri; Singh. Convexity and Optimization in Deficit Round Robin Scheduling for Delay-Constrained Systems. 2025 23rd International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt), 2025. https://doi.org/10.23919/wiopt66569.2025.11123403.
 
-[34] Chang; Lee. Cycle time distribution and control for the Deficit Round Robin packet scheduler. 2012 International Conference on Computing, Networking and Communications (ICNC), 2012. DOI 10.1109/iccnc.2012.6167459.
+[34] Chang; Lee. Cycle time distribution and control for the Deficit Round Robin packet scheduler. 2012 International Conference on Computing, Networking and Communications (ICNC), 2012. https://doi.org/10.1109/iccnc.2012.6167459.
 
-[35] Kubo; Okada; Oki. Delay Impact of Bursty Cross Traffic in Combined Input and Output Queued Switches Using Virtual Input Queueing Under Diverse Network and Traffic Conditions. IEEE Open Journal of the Communications Society, 2026. DOI 10.1109/ojcoms.2026.3726416.
+[35] Kubo; Okada; Oki. Delay Impact of Bursty Cross Traffic in Combined Input and Output Queued Switches Using Virtual Input Queueing Under Diverse Network and Traffic Conditions. IEEE Open Journal of the Communications Society, 2026. https://doi.org/10.1109/ojcoms.2026.3726416.
 
-[36] Lin; Hamdi; Muppala. Designing Packet Buffers Using Random Round Robin. 2010 IEEE Global Telecommunications Conference GLOBECOM 2010, 2010. DOI 10.1109/glocom.2010.5683309.
+[36] Lin; Hamdi; Muppala. Designing Packet Buffers Using Random Round Robin. 2010 IEEE Global Telecommunications Conference GLOBECOM 2010, 2010. https://doi.org/10.1109/glocom.2010.5683309.
 
-[37] Kang; Williams. Diffusion Approximation for an Input-queued Switch Operating under a Maximum Weight Matching Policy. Stochastic Systems, 2012. DOI 10.1287/12-ssy061.
+[37] Kang; Williams. Diffusion Approximation for an Input-queued Switch Operating under a Maximum Weight Matching Policy. Stochastic Systems, 2012. https://doi.org/10.1287/12-ssy061.
 
-[38] Divanovic; Radonjic; Gardasevic; Radusinovic. Dynamic weighted round robin in crosspoint queued switch. 2013 21st Telecommunications Forum Telfor (TELFOR), 2013. DOI 10.1109/telfor.2013.6716184.
+[38] Divanovic; Radonjic; Gardasevic; Radusinovic. Dynamic weighted round robin in crosspoint queued switch. 2013 21st Telecommunications Forum Telfor (TELFOR), 2013. https://doi.org/10.1109/telfor.2013.6716184.
 
-[39] Sun; Li. Half-Draining Round Robin Matching for High Performance Input Queued Switches. 2019 IEEE/ACIS 18th International Conference on Computer and Information Science (ICIS), 2019. DOI 10.1109/icis46139.2019.8940224.
+[39] Sun; Li. Half-Draining Round Robin Matching for High Performance Input Queued Switches. 2019 IEEE/ACIS 18th International Conference on Computer and Information Science (ICIS), 2019. https://doi.org/10.1109/icis46139.2019.8940224.
 
-[40] Huang; Huang. Heavy traffic analysis of approximate max-weight matching algorithms for input-queued switches. Performance Evaluation, 2020. DOI 10.1016/j.peva.2020.102143.
+[40] Huang; Huang. Heavy traffic analysis of approximate max-weight matching algorithms for input-queued switches. Performance Evaluation, 2020. https://doi.org/10.1016/j.peva.2020.102143.
 
-[41] (no author field in the record). Implementation of Class-Based Low Latency Fair Queueing (CBLLFQ) Packet Scheduling Algorithm for HSDPA Core Network. KSII Transactions on Internet and Information Systems, 2020. DOI 10.3837/tiis.2020.02.001.
+[41] (no author field in the record). Implementation of Class-Based Low Latency Fair Queueing (CBLLFQ) Packet Scheduling Algorithm for HSDPA Core Network. KSII Transactions on Internet and Information Systems, 2020. https://doi.org/10.3837/tiis.2020.02.001.
 
-[42] Assegie; Bizuneh, D. Improving network performance with an integrated priority queue and weighted fair queue scheduling. Indonesian Journal of Electrical Engineering and Computer Science, 2020. DOI 10.11591/ijeecs.v19.i1.pp241-247.
+[42] Assegie; Bizuneh, D. Improving network performance with an integrated priority queue and weighted fair queue scheduling. Indonesian Journal of Electrical Engineering and Computer Science, 2020. https://doi.org/10.11591/ijeecs.v19.i1.pp241-247.
 
-[43] Xiao; Yeung. Iterative multicast scheduling algorithm for input-queued switch with variable packet size. 2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE), 2017. DOI 10.1109/ccece.2017.7946605.
+[43] Xiao; Yeung. Iterative multicast scheduling algorithm for input-queued switch with variable packet size. 2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE), 2017. https://doi.org/10.1109/ccece.2017.7946605.
 
-[44] Liao; Wu. Longest queue first in round-robin matching for input-queued switches. 2010 International Symposium On Information Theory & Its Applications, 2010. DOI 10.1109/isita.2010.5648873.
+[44] Liao; Wu. Longest queue first in round-robin matching for input-queued switches. 2010 International Symposium On Information Theory & Its Applications, 2010. https://doi.org/10.1109/isita.2010.5648873.
 
-[45] Lin; Rojas-Cessa. Module Matching Schemes for Input-Queued Clos-Network Packet Switches. IEEE Communications Letters, 2007. DOI 10.1109/lcomm.2007.061617.
+[45] Lin; Rojas-Cessa. Module Matching Schemes for Input-Queued Clos-Network Packet Switches. IEEE Communications Letters, 2007. https://doi.org/10.1109/lcomm.2007.061617.
 
-[46] Ghodsi; Sekar; Zaharia; Stoica. Multi-resource fair queueing for packet processing. ACM SIGCOMM Computer Communication Review, 2012. DOI 10.1145/2377677.2377679.
+[46] Ghodsi; Sekar; Zaharia; Stoica. Multi-resource fair queueing for packet processing. ACM SIGCOMM Computer Communication Review, 2012. https://doi.org/10.1145/2377677.2377679.
 
-[47] Gourgy; Szymanski; Down. On Tracking the Behavior of an Output-Queued Switch Using an Input-Queued Switch. IEEE/ACM Transactions on Networking, 2009. DOI 10.1109/tnet.2009.2014948.
+[47] Gourgy; Szymanski; Down. On Tracking the Behavior of an Output-Queued Switch Using an Input-Queued Switch. IEEE/ACM Transactions on Networking, 2009. https://doi.org/10.1109/tnet.2009.2014948.
 
-[48] Lesens; Cohen; Uçar. Orthogonal Matching Pursuit-Based Algorithms for the Birkhoff-Von Neumann Decomposition. 2024 32nd European Signal Processing Conference (EUSIPCO), 2024. DOI 10.23919/eusipco63174.2024.10715087.
+[48] Lesens; Cohen; Uçar. Orthogonal Matching Pursuit-Based Algorithms for the Birkhoff-Von Neumann Decomposition. 2024 32nd European Signal Processing Conference (EUSIPCO), 2024. https://doi.org/10.23919/eusipco63174.2024.10715087.
 
-[49] Yu; Chen; Tian. OWFQ: Reducing Packet Drops for Approximate Weighted Fair Queueing with Calendar Queues. 2023 9th International Conference on Computer and Communications (ICCC), 2023. DOI 10.1109/iccc59590.2023.10507624.
+[49] Yu; Chen; Tian. OWFQ: Reducing Packet Drops for Approximate Weighted Fair Queueing with Calendar Queues. 2023 9th International Conference on Computer and Communications (ICCC), 2023. https://doi.org/10.1109/iccc59590.2023.10507624.
 
-[50] Liu; Li. Packet Scheduling in High-speed Networks Using Improved Weighted Round Robin. Research Journal of Applied Sciences, Engineering and Technology, 2014. DOI 10.19026/rjaset.7.498.
+[50] Liu; Li. Packet Scheduling in High-speed Networks Using Improved Weighted Round Robin. Research Journal of Applied Sciences, Engineering and Technology, 2014. https://doi.org/10.19026/rjaset.7.498.
 
-[51] Kitsuwan; Oki; Rojas-Cessa; Kishi. Performance analysis on dynamics of parallel iterative matching in an input-buffered switch. 2009 15th Asia-Pacific Conference on Communications, 2009. DOI 10.1109/apcc.2009.5375476.
+[51] Kitsuwan; Oki; Rojas-Cessa; Kishi. Performance analysis on dynamics of parallel iterative matching in an input-buffered switch. 2009 15th Asia-Pacific Conference on Communications, 2009. https://doi.org/10.1109/apcc.2009.5375476.
 
-[52] Gong; Xu; Liu; Maguluri. QPS-r: A cost-effective iterative switching algorithm for input-queued switches. Performance Evaluation, 2021. DOI 10.1016/j.peva.2021.102197.
+[52] Gong; Xu; Liu; Maguluri. QPS-r: A cost-effective iterative switching algorithm for input-queued switches. Performance Evaluation, 2021. https://doi.org/10.1016/j.peva.2021.102197.
 
-[53] Jamali; Ghiasian. Randomised scheduling algorithm for virtual output queuing switch at the presence of non‐uniform traffic. IET Networks, 2019. DOI 10.1049/iet-net.2018.5115.
+[53] Jamali; Ghiasian. Randomised scheduling algorithm for virtual output queuing switch at the presence of non‐uniform traffic. IET Networks, 2019. https://doi.org/10.1049/iet-net.2018.5115.
 
-[54] Dukes; Mullins. A Bump Statistic on Permutations Resulting from the Robinson–Schensted Correspondence. Annals of Combinatorics, 2024. DOI 10.1007/s00026-024-00708-z.
+[54] Dukes; Mullins. A Bump Statistic on Permutations Resulting from the Robinson–Schensted Correspondence. Annals of Combinatorics, 2024. https://doi.org/10.1007/s00026-024-00708-z.
 
-[55] He. A central limit theorem for descents of a Mallows permutation and its inverse. Annales de l'Institut Henri Poincaré, Probabilités et Statistiques, 2022. DOI 10.1214/21-aihp1167.
+[55] He. A central limit theorem for descents of a Mallows permutation and its inverse. Annales de l'Institut Henri Poincaré, Probabilités et Statistiques, 2022. https://doi.org/10.1214/21-aihp1167.
 
-[56] Dilworth. A Decomposition Theorem for Partially Ordered Sets. Classic Papers in Combinatorics, 2009. DOI 10.1007/978-0-8176-4842-8_10.
+[56] Dilworth. A Decomposition Theorem for Partially Ordered Sets. Classic Papers in Combinatorics, 2009. https://doi.org/10.1007/978-0-8176-4842-8_10.
 
-[57] F; S; M, A. A Generalization of Dilworth’s Decomposition Theorem for Partially Ordered Multisets. Anchor University Journal of Science and Technology, 2024. DOI 10.4314/aujst.v5i1.6.
+[57] F; S; M, A. A Generalization of Dilworth’s Decomposition Theorem for Partially Ordered Multisets. Anchor University Journal of Science and Technology, 2024. https://doi.org/10.4314/aujst.v5i1.6.
 
-[58] Corwin. Commentary on “Longest increasing subsequences: from patience sorting to the Baik–Deift–Johansson theorem” by David Aldous and Persi Diaconis. Bulletin of the American Mathematical Society, 2018. DOI 10.1090/bull/1623.
+[58] Corwin. Commentary on “Longest increasing subsequences: from patience sorting to the Baik–Deift–Johansson theorem” by David Aldous and Persi Diaconis. Bulletin of the American Mathematical Society, 2018. https://doi.org/10.1090/bull/1623.
 
-[59] Elizalde. Continued fractions for permutation statistics. Discrete Mathematics & Theoretical Computer Science, 2018. DOI 10.23638/dmtcs-19-2-11.
+[59] Elizalde. Continued fractions for permutation statistics. Discrete Mathematics & Theoretical Computer Science, 2018. https://doi.org/10.23638/dmtcs-19-2-11.
 
-[60] Kociumaka; Seddighin. Improved dynamic algorithms for longest increasing subsequence. Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of Computing, 2021. DOI 10.1145/3406325.3451026.
+[60] Kociumaka; Seddighin. Improved dynamic algorithms for longest increasing subsequence. Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of Computing, 2021. https://doi.org/10.1145/3406325.3451026.
 
-[61] Mitzenmacher; Seddighin. Improved Sublinear Time Algorithm for Longest Increasing Subsequence. Proceedings of the 2021 ACM-SIAM Symposium on Discrete Algorithms (SODA), 2021. DOI 10.1137/1.9781611976465.115.
+[61] Mitzenmacher; Seddighin. Improved Sublinear Time Algorithm for Longest Increasing Subsequence. Proceedings of the 2021 ACM-SIAM Symposium on Discrete Algorithms (SODA), 2021. https://doi.org/10.1137/1.9781611976465.115.
 
-[62] Jiang; Wang. Moderate deviations for the number of descents in a random permutation. Statistics & Probability Letters, 2025. DOI 10.1016/j.spl.2024.110320.
+[62] Jiang; Wang. Moderate deviations for the number of descents in a random permutation. Statistics & Probability Letters, 2025. https://doi.org/10.1016/j.spl.2024.110320.
 
-[63] Cao; Huang; Su. Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence. Proceedings of the 35th ACM Symposium on Parallelism in Algorithms and Architectures, 2023. DOI 10.1145/3558481.3591078.
+[63] Cao; Huang; Su. Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence. Proceedings of the 35th ACM Symposium on Parallelism in Algorithms and Architectures, 2023. https://doi.org/10.1145/3558481.3591078.
 
-[64] Vaisman; Gertsbakh. Optimal balanced chain decomposition of partially ordered sets with applications to operating cost minimization in aircraft routing problems. Public Transport, 2022. DOI 10.1007/s12469-022-00304-5.
+[64] Vaisman; Gertsbakh. Optimal balanced chain decomposition of partially ordered sets with applications to operating cost minimization in aircraft routing problems. Public Transport, 2022. https://doi.org/10.1007/s12469-022-00304-5.
 
-[65] Bóna; DeJonge. Pattern Avoiding Permutations with a Unique Longest Increasing Subsequence. The Electronic Journal of Combinatorics, 2020. DOI 10.37236/9506.
+[65] Bóna; DeJonge. Pattern Avoiding Permutations with a Unique Longest Increasing Subsequence. The Electronic Journal of Combinatorics, 2020. https://doi.org/10.37236/9506.
 
-[66] Marciniak; Maślanka; Śniady. Poisson limit theorems for the Robinson–Schensted correspondence and for the multi-line Hammersley process. Advances in Applied Mathematics, 2023. DOI 10.1016/j.aam.2022.102478.
+[66] Marciniak; Maślanka; Śniady. Poisson limit theorems for the Robinson–Schensted correspondence and for the multi-line Hammersley process. Advances in Applied Mathematics, 2023. https://doi.org/10.1016/j.aam.2022.102478.
 
-[67] Fiorini; Rexhep. Poset Entropy Versus Number of Linear Extensions: The Width-2 Case. Order, 2015. DOI 10.1007/s11083-015-9346-z.
+[67] Fiorini; Rexhep. Poset Entropy Versus Number of Linear Extensions: The Width-2 Case. Order, 2015. https://doi.org/10.1007/s11083-015-9346-z.
 
-[68] Axenovich; Winter. Poset Ramsey Number $$R(P,Q_n)$$. II. N-Shaped Poset. Order, 2024. DOI 10.1007/s11083-024-09663-z.
+[68] Axenovich; Winter. Poset Ramsey Number $$R(P,Q_n)$$. II. N-Shaped Poset. Order, 2024. https://doi.org/10.1007/s11083-024-09663-z.
 
-[69] Bercu; Bonnefont; Fredes; Richou. Sharp analysis on the joint distribution of the number of descents and inverse descents in a random permutation. The Annals of Applied Probability, 2025. DOI 10.1214/24-aap2138.
+[69] Bercu; Bonnefont; Fredes; Richou. Sharp analysis on the joint distribution of the number of descents and inverse descents in a random permutation. The Annals of Applied Probability, 2025. https://doi.org/10.1214/24-aap2138.
 
-[70] Bercu; Bonnefont; Richou. Sharp large deviations and concentration inequalities for the number of descents in a random permutation. Journal of Applied Probability, 2024. DOI 10.1017/jpr.2023.86.
+[70] Bercu; Bonnefont; Richou. Sharp large deviations and concentration inequalities for the number of descents in a random permutation. Journal of Applied Probability, 2024. https://doi.org/10.1017/jpr.2023.86.
 
-[71] Kiyomi; Ono; Otachi; Schweitzer; et al. Space-Efficient Algorithms for Longest Increasing Subsequence. Theory of Computing Systems, 2019. DOI 10.1007/s00224-018-09908-6.
+[71] Kiyomi; Ono; Otachi; Schweitzer; et al. Space-Efficient Algorithms for Longest Increasing Subsequence. Theory of Computing Systems, 2019. https://doi.org/10.1007/s00224-018-09908-6.
 
-[72] Zhao. Stack-sorting with stacks avoiding vincular patterns. Discrete Mathematics, 2026. DOI 10.1016/j.disc.2025.114834.
+[72] Zhao. Stack-sorting with stacks avoiding vincular patterns. Discrete Mathematics, 2026. https://doi.org/10.1016/j.disc.2025.114834.
 
-[73] Felsner; Pergel. The Complexity of Sorting with Networks of Stacks and Queues. Lecture Notes in Computer Science, 2008. DOI 10.1007/978-3-540-87744-8_35.
+[73] Felsner; Pergel. The Complexity of Sorting with Networks of Stacks and Queues. Lecture Notes in Computer Science, 2008. https://doi.org/10.1007/978-3-540-87744-8_35.
 
-[74] Franz; Mulet. The longest increasing subsequence problem revisited. Communications in Theoretical Physics, 2026. DOI 10.1088/1572-9494/ae9b87.
+[74] Franz; Mulet. The longest increasing subsequence problem revisited. Communications in Theoretical Physics, 2026. https://doi.org/10.1088/1572-9494/ae9b87.
 
-[75] (no author field in the record). The Robinson–Schensted–Knuth correspondence. The Student Mathematical Library, 2019. DOI 10.1090/stml/091/08.
+[75] (no author field in the record). The Robinson–Schensted–Knuth correspondence. The Student Mathematical Library, 2019. https://doi.org/10.1090/stml/091/08.
 
-[76] Itskovich; Levit. What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?. Algorithms, 2019. DOI 10.3390/a12110237.
+[76] Itskovich; Levit. What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?. Algorithms, 2019. https://doi.org/10.3390/a12110237.
 
-[77] Itoh; Miyazaki; Satake. Competitive analysis for two variants of online metric matching problem. Discrete Mathematics, Algorithms and Applications, 2021. DOI 10.1142/s1793830921501561.
+[77] Itoh; Miyazaki; Satake. Competitive analysis for two variants of online metric matching problem. Discrete Mathematics, Algorithms and Applications, 2021. https://doi.org/10.1142/s1793830921501561.
 
-[78] Barba; Bertazzi; Golden. Competitive Analysis of Algorithms for an Online Distribution Problem. Algorithms, 2024. DOI 10.3390/a17060237.
+[78] Barba; Bertazzi; Golden. Competitive Analysis of Algorithms for an Online Distribution Problem. Algorithms, 2024. https://doi.org/10.3390/a17060237.
 
-[79] Dunke; Nickel. Correction to: Exact distributional analysis of online algorithms with lookahead. 4OR, 2021. DOI 10.1007/s10288-021-00479-w.
+[79] Dunke; Nickel. Correction to: Exact distributional analysis of online algorithms with lookahead. 4OR, 2021. https://doi.org/10.1007/s10288-021-00479-w.
 
-[80] Dunke; Nickel. Exact distributional analysis of online algorithms with lookahead. 4OR, 2020. DOI 10.1007/s10288-020-00442-1.
+[80] Dunke; Nickel. Exact distributional analysis of online algorithms with lookahead. 4OR, 2020. https://doi.org/10.1007/s10288-020-00442-1.
 
-[81] Jiao; Yuan; Feng. Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead. Asia-Pacific Journal of Operational Research, 2019. DOI 10.1142/s0217595919500246.
+[81] Jiao; Yuan; Feng. Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead. Asia-Pacific Journal of Operational Research, 2019. https://doi.org/10.1142/s0217595919500246.
 
-[82] Pinson; Spieksma. Online interval scheduling on two related machines: the power of lookahead. Journal of Combinatorial Optimization, 2019. DOI 10.1007/s10878-019-00381-6.
+[82] Pinson; Spieksma. Online interval scheduling on two related machines: the power of lookahead. Journal of Combinatorial Optimization, 2019. https://doi.org/10.1007/s10878-019-00381-6.
 
-[83] Chen; Zhang; Xu. Online machine minimization with lookahead. Journal of Combinatorial Optimization, 2020. DOI 10.1007/s10878-020-00633-w.
+[83] Chen; Zhang; Xu. Online machine minimization with lookahead. Journal of Combinatorial Optimization, 2020. https://doi.org/10.1007/s10878-020-00633-w.
 
-[84] Böhm; Chrobak; Jeż; Li; et al. Online packet scheduling with bounded delay and lookahead. Theoretical Computer Science, 2019. DOI 10.1016/j.tcs.2019.01.013.
+[84] Böhm; Chrobak; Jeż; Li; et al. Online packet scheduling with bounded delay and lookahead. Theoretical Computer Science, 2019. https://doi.org/10.1016/j.tcs.2019.01.013.
 
-[85] Lindermayr; Megow. Permutation Predictions for Non-Clairvoyant Scheduling. ACM Transactions on Parallel Computing, 2025. DOI 10.1145/3711872.
+[85] Lindermayr; Megow. Permutation Predictions for Non-Clairvoyant Scheduling. ACM Transactions on Parallel Computing, 2025. https://doi.org/10.1145/3711872.
 
-[86] Zheng; Chen; Liu. Semi-online scheduling on two uniform parallel machines with initial lookahead. RAIRO - Operations Research, 2024. DOI 10.1051/ro/2024042.
+[86] Zheng; Chen; Liu. Semi-online scheduling on two uniform parallel machines with initial lookahead. RAIRO - Operations Research, 2024. https://doi.org/10.1051/ro/2024042.
 
-[87] Collinson; Bai; Sinnen. A Fast Scalable Hardware Priority Queue and Optimizations for Multi-Pushes. 2024 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 2024. DOI 10.1109/ipdpsw63119.2024.00038.
+[87] Collinson; Bai; Sinnen. A Fast Scalable Hardware Priority Queue and Optimizations for Multi-Pushes. 2024 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 2024. https://doi.org/10.1109/ipdpsw63119.2024.00038.
 
-[88] Nurmi; Lindgren; Szymkowiak; Hämäläinen. AnTiQ: A Hardware-Accelerated Priority Queue Design with Constant Time Arbitrary Element Removal. 2023 26th Euromicro Conference on Digital System Design (DSD), 2023. DOI 10.1109/dsd60849.2023.00070.
+[88] Nurmi; Lindgren; Szymkowiak; Hämäläinen. AnTiQ: A Hardware-Accelerated Priority Queue Design with Constant Time Arbitrary Element Removal. 2023 26th Euromicro Conference on Digital System Design (DSD), 2023. https://doi.org/10.1109/dsd60849.2023.00070.
 
-[89] (no author field in the record). Binary Heaps and Priority Queues. Thinking about Programs, 2025. DOI 10.1145/3731333.3731359.
+[89] (no author field in the record). Binary Heaps and Priority Queues. Thinking about Programs, 2025. https://doi.org/10.1145/3731333.3731359.
 
-[90] Grimes; Rodriguez; Hassan; Spear; et al. Brief Announcement: QPID: A Scalable, Strict Concurrent Priority Queue. Proceedings of the 38th ACM Symposium on Parallelism in Algorithms and Architectures, 2026. DOI 10.1145/3816782.3819208.
+[90] Grimes; Rodriguez; Hassan; Spear; et al. Brief Announcement: QPID: A Scalable, Strict Concurrent Priority Queue. Proceedings of the 38th ACM Symposium on Parallelism in Algorithms and Architectures, 2026. https://doi.org/10.1145/3816782.3819208.
 
-[91] Michail. JHeaps: An open-source library of priority queues. SoftwareX, 2021. DOI 10.1016/j.softx.2021.100869.
+[91] Michail. JHeaps: An open-source library of priority queues. SoftwareX, 2021. https://doi.org/10.1016/j.softx.2021.100869.
 
-[92] Das; Pinotti, C. Parallel priority queues based on binomial heaps. Parallel Computing, 2000. DOI 10.1016/s0167-8191(00)00064-8.
+[92] Das; Pinotti, C. Parallel priority queues based on binomial heaps. Parallel Computing, 2000. https://doi.org/10.1016/s0167-8191(00)00064-8.
 
-[93] Ioannou; Katevenis. Pipelined Heap (Priority Queue) Management for Advanced Scheduling in High-Speed Networks. IEEE/ACM Transactions on Networking, 2007. DOI 10.1109/tnet.2007.892882.
+[93] Ioannou; Katevenis. Pipelined Heap (Priority Queue) Management for Advanced Scheduling in High-Speed Networks. IEEE/ACM Transactions on Networking, 2007. https://doi.org/10.1109/tnet.2007.892882.
 
-[94] Brodal, S. Priority queues with decreasing keys. Theoretical Computer Science, 2024. DOI 10.1016/j.tcs.2024.114563.
+[94] Brodal, S. Priority queues with decreasing keys. Theoretical Computer Science, 2024. https://doi.org/10.1016/j.tcs.2024.114563.
 
-[95] Sanders. Randomized Priority Queues for Fast Parallel Access. Journal of Parallel and Distributed Computing, 1998. DOI 10.1006/jpdc.1998.1429.
+[95] Sanders. Randomized Priority Queues for Fast Parallel Access. Journal of Parallel and Distributed Computing, 1998. https://doi.org/10.1006/jpdc.1998.1429.
 
-[96] Arvind; Rangan. Symmetric Min-Max heap: A simpler data structure for double-ended priority queue. Information Processing Letters, 1999. DOI 10.1016/s0020-0190(99)00014-9.
+[96] Arvind; Rangan. Symmetric Min-Max heap: A simpler data structure for double-ended priority queue. Information Processing Letters, 1999. https://doi.org/10.1016/s0020-0190(99)00014-9.
 
-[97] Carlsson. The deap—a double-ended heap to implement double-ended priority queues. Information Processing Letters, 1987. DOI 10.1016/0020-0190(87)90033-0.
+[97] Carlsson. The deap—a double-ended heap to implement double-ended priority queues. Information Processing Letters, 1987. https://doi.org/10.1016/0020-0190(87)90033-0.
 
-[98] Ding; Weiss. The relaxed min-max heap. Acta Informatica, 1993. DOI 10.1007/bf01179371.
+[98] Ding; Weiss. The relaxed min-max heap. Acta Informatica, 1993. https://doi.org/10.1007/bf01179371.
 
-[99] (no author field in the record). RETRACTION
-: Design and Implementation of Network‐on‐chip Router Using Multi‐priority Based Iterative
-Round‐robin Matching With Slip. Transactions on Emerging Telecommunications Technologies, 2024.
-DOI 10.1002/ett.5043.
+[99] (no author field in the record). RETRACTION : Design and Implementation of Network‐on‐chip Router Using Multi‐priority Based Iterative Round‐robin Matching With Slip. Transactions on Emerging Telecommunications Technologies, 2024. https://doi.org/10.1002/ett.5043.
 
-[100] Mashreghi-Moghadam; Ould-Bachir; Savaria. A Templated VHDL Architecture for Terabit/s P4-programmable FPGA-based Packet Parsing. 2022 IEEE International Symposium on Circuits and Systems (ISCAS), 2022. DOI 10.1109/iscas48785.2022.9937607.
+[100] Mashreghi-Moghadam; Ould-Bachir; Savaria. A Templated VHDL Architecture for Terabit/s P4-programmable FPGA-based Packet Parsing. 2022 IEEE International Symposium on Circuits and Systems (ISCAS), 2022. https://doi.org/10.1109/iscas48785.2022.9937607.
 
-[101] Magadum; Singh; Kushwaha. CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time. 2025 34th International Conference on Computer Communications and Networks (ICCCN), 2025. DOI 10.1109/icccn65249.2025.11134021.
+[101] Magadum; Singh; Kushwaha. CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time. 2025 34th International Conference on Computer Communications and Networks (ICCCN), 2025. https://doi.org/10.1109/icccn65249.2025.11134021.
 
-[102] Hui; Yang; Wang. Leveraging SmartNIC for Ring AllReduce Offloading. 2024 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA), 2024. DOI 10.1109/ispa63168.2024.00030.
+[102] Hui; Yang; Wang. Leveraging SmartNIC for Ring AllReduce Offloading. 2024 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA), 2024. https://doi.org/10.1109/ispa63168.2024.00030.
 
-[103] Wang; Kong. Offloading IP Packet Fragmentation from CPU to SmartNIC Using P4. ICC 2026 - IEEE International Conference on Communications, 2026. DOI 10.1109/icc59461.2026.11587563.
+[103] Wang; Kong. Offloading IP Packet Fragmentation from CPU to SmartNIC Using P4. ICC 2026 - IEEE International Conference on Communications, 2026. https://doi.org/10.1109/icc59461.2026.11587563.
 
-[104] Wang; Zhao; Zhang; Xu; et al. OXDP: Offloading XDP to SmartNIC for Accelerating Packet Processing. 2022 IEEE 28th International Conference on Parallel and Distributed Systems (ICPADS), 2023. DOI 10.1109/icpads56603.2022.00103.
+[104] Wang; Zhao; Zhang; Xu; et al. OXDP: Offloading XDP to SmartNIC for Accelerating Packet Processing. 2022 IEEE 28th International Conference on Parallel and Distributed Systems (ICPADS), 2023. https://doi.org/10.1109/icpads56603.2022.00103.
 

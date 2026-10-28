@@ -262,13 +262,26 @@ def step_gap():
 def step_rules():
     print("== 5/6 rank-band rule vs the floor, with the misaligned control")
     rows = []
-    for n in [5, 6]:
+    # n runs to 8 because that is the range registered criterion S3 names ("reported for every cell
+    # to n = 8"). The earlier artifact stopped at 6, which made S3 a subset of what it promised --
+    # a criterion reported as met while measuring less than it said. Measured cost of the extension
+    # at n = 8: about 11 s for the k = 3 cell, well inside the enumeration's budget.
+    for n in [5, 6, 7, 8]:
         for m in [2, 3]:
             for k in range(2, min(n, m) + 1):
                 windows = 0
                 a_lose = 0
                 c_lose = 0
                 worst = 0.0
+                # Registered P2 conditions on the window's own LDS ("whenever 2 <= k < LDS"), which
+                # is a different population from the cell's k < m. Both are carried, because the
+                # registered prior is answered on its own condition or not at all.
+                lds_windows = 0
+                lds_lose = 0
+                # A zero floor does not mean a free mapping: windows where the floor is already 0
+                # can still lose, and that is the avoidable half of the gap the paper separates.
+                zero_windows = 0
+                zero_lose = 0
                 for seq in itertools.product(range(m), repeat=n):
                     windows += 1
                     f = F.restricted_floor_dp(seq, k)
@@ -280,24 +293,50 @@ def step_rules():
                         c_lose += 1
                     if f > 0 and a / f > worst:
                         worst = a / f
+                    if k < F.lds(seq):
+                        lds_windows += 1
+                        if a > f:
+                            lds_lose += 1
+                    if f == 0:
+                        zero_windows += 1
+                        if a > 0:
+                            zero_lose += 1
                 row = {"n": n, "m": m, "k": k, "windows": windows,
                        "aligned_loses": a_lose, "aligned_fraction": a_lose / windows,
                        "aligned_worst_ratio": round(worst, 4),
-                       "control_loses": c_lose, "control_fraction": c_lose / windows}
+                       "control_loses": c_lose, "control_fraction": c_lose / windows,
+                       "p2_lds_windows": lds_windows, "p2_lds_loses": lds_lose,
+                       "p2_lds_fraction": (lds_lose / lds_windows) if lds_windows else None,
+                       "zero_floor_windows": zero_windows, "zero_floor_loses": zero_lose,
+                       "zero_floor_fraction": (zero_lose / zero_windows) if zero_windows else None}
                 rows.append(row)
                 note("n=%d m=%d k=%d: aligned %d/%d (%.3f) worst %.3f, control %d/%d (%.3f)"
                      % (n, m, k, a_lose, windows, a_lose / windows, worst,
                         c_lose, windows, c_lose / windows))
+                note("  registered P2 population (k < LDS): %d windows, %d lose%s; "
+                     "zero-floor windows: %d, of which %d lose"
+                     % (lds_windows, lds_lose,
+                        (" (%.4f)" % (lds_lose / lds_windows)) if lds_windows else " -- EMPTY",
+                        zero_windows, zero_lose))
                 if c_lose == 0:
                     fail("control cannot lose in cell n=%d m=%d k=%d -- cell measures nothing"
                          % (n, m, k))
     R["rules"] = rows
+    p2 = [r for r in rows if r["p2_lds_windows"]]
+    zf = [r for r in rows if r["zero_floor_windows"]]
     R["rules_summary"] = {
         "cells": len(rows),
         "aligned_min_fraction": min(r["aligned_fraction"] for r in rows),
         "aligned_max_fraction": max(r["aligned_fraction"] for r in rows),
         "aligned_max_worst_ratio": max(r["aligned_worst_ratio"] for r in rows),
         "control_min_fraction": min(r["control_fraction"] for r in rows),
+        "p2_registered_cells": len(p2),
+        "p2_registered_windows": sum(r["p2_lds_windows"] for r in p2),
+        "p2_registered_loses": sum(r["p2_lds_loses"] for r in p2),
+        "p2_registered_max_fraction": max(r["p2_lds_fraction"] for r in p2) if p2 else None,
+        "zero_floor_windows": sum(r["zero_floor_windows"] for r in zf),
+        "zero_floor_loses": sum(r["zero_floor_loses"] for r in zf),
+        "zero_floor_max_fraction": max(r["zero_floor_fraction"] for r in zf) if zf else None,
     }
     s = R["rules_summary"]
     note("aligned loses on %.3f..%.3f of windows across %d cells, worst ratio %.2f"

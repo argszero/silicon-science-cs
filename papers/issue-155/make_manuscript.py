@@ -132,6 +132,38 @@ def computed(res, key):
     if key == "inline_cells":
         bad = [r for r in res["rules"] if r["k"] >= r["m"] and r["aligned_fraction"] != 0.0]
         return len(bad)
+    # ---- registered P1: zero violations over every (window, k) pair ----------
+    if key == "p1_pairs":
+        return sum(r["windows"] * r["n"] for r in res["threshold_distinct"])
+    if key == "p1_violations":
+        return sum(r["runs_p_violations"] for r in res["threshold_distinct"])
+    # ---- registered P2, answered on its own population (k < LDS) -------------
+    if key == "p2_cells":
+        return res["rules_summary"]["p2_registered_cells"]
+    if key == "p2_windows":
+        return res["rules_summary"]["p2_registered_windows"]
+    if key == "p2_loses":
+        return res["rules_summary"]["p2_registered_loses"]
+    if key == "p2_min_pct":
+        v = [100.0 * r["p2_lds_fraction"] for r in res["rules"] if r["p2_lds_windows"]]
+        return "%.1f" % min(v)
+    if key == "p2_max_pct":
+        v = [100.0 * r["p2_lds_fraction"] for r in res["rules"] if r["p2_lds_windows"]]
+        return "%.1f" % max(v)
+    if key == "p2_pooled_pct":
+        s = res["rules_summary"]
+        return "%.1f" % (100.0 * s["p2_registered_loses"] / s["p2_registered_windows"])
+    if key in ("p2_worst_min", "p2_worst_max"):
+        v = [r["aligned_worst_ratio"] for r in res["rules"] if r["p2_lds_windows"]]
+        return "%.2f" % (min(v) if key.endswith("min") else max(v))
+    # ---- the zero-floor half of the gap --------------------------------------
+    if key == "zero_floor_windows":
+        return res["rules_summary"]["zero_floor_windows"]
+    if key == "zero_floor_loses":
+        return res["rules_summary"]["zero_floor_loses"]
+    if key == "zero_floor_max_pct":
+        v = [100.0 * r["zero_floor_fraction"] for r in res["rules"] if r["zero_floor_windows"]]
+        return "%.1f" % max(v)
     raise KeyError("no computed value %r" % key)
 
 
@@ -140,9 +172,13 @@ def computed(res, key):
 # ---------------------------------------------------------------------------
 
 def clean(text):
-    """Crossref titles carry markup (<i>, <scp>) and entities (&#39;, &amp;)."""
+    """Crossref titles carry markup (<i>, <scp>), entities (&#39;, &amp;) and hard newlines."""
     t = re.sub(r"<[^>]+>", "", text or "")
-    return html.unescape(t).strip()
+    t = html.unescape(t)
+    # A raw newline inside a field splits the entry across lines once rendered, so one record
+    # (`noc2024`, a Crossref RETRACTION notice) printed as two. The list is one line per entry
+    # by construction, so whitespace is collapsed here rather than papered over at the call site.
+    return re.sub(r"\s+", " ", t).strip()
 
 
 def render_author(name):
@@ -190,8 +226,19 @@ def reference_list(entries):
         venue = clean(e.get("venue") or "") or "(no venue field in the record)"
         year = e.get("year") or ""
         title = clean(e.get("title") or "") or "(no title field in the record)"
-        entry = "[%d] %s. %s. %s, %s. DOI %s." % (
+        entry = "[%d] %s. %s. %s, %s. https://doi.org/%s" % (
             e["_num"], astr.rstrip(".,"), title.rstrip("."), venue, year, e["doi"])
+        # A bare DOI string is an identifier a reader cannot follow from the rendered page; the
+        # house style asks for the resolvable form, so the entry carries https://doi.org/<doi>.
+        # This line is the only place a bibliography entry is produced -- regenerate, never edit
+        # manuscript.md, or the next build reverts the change.
+        entry += "."
+        # The house style asks for a form a reader can follow from the rendered page. Asserting it
+        # here makes the requirement mechanical: a record that reaches this line without a link
+        # stops the build instead of printing an identifier nobody can click.
+        if "http" not in entry:
+            raise SystemExit("reference [%d] (%s) carries no resolvable URL: %s"
+                             % (e["_num"], e.get("key"), entry[:120]))
         out.append(entry)
         # a blank line between entries: consecutive entry lines are ONE paragraph to every
         # CommonMark renderer, which is how a 100-entry list renders as a wall
@@ -254,6 +301,18 @@ def table(name, res):
                           r["aligned_fraction"], r["aligned_worst_ratio"],
                           r["control_loses"], r["control_fraction"],
                           "no -- k >= m forces it" if forced else "yes -- k < m"))
+        return "\n".join(out)
+
+    if name == "rules_registered":
+        out = ["| n | m | k | windows with `k < LDS` | of those, the rule loses | share | "
+               "worst ratio |",
+               "|---|---|---|---|---|---|---|"]
+        for r in res["rules"]:
+            if not r["p2_lds_windows"]:
+                continue
+            out.append("| %d | %d | %d | %d | %d | %.4f | %.2f |"
+                       % (r["n"], r["m"], r["k"], r["p2_lds_windows"], r["p2_lds_loses"],
+                          r["p2_lds_fraction"], r["aligned_worst_ratio"]))
         return "\n".join(out)
 
     raise KeyError("no table %r" % name)

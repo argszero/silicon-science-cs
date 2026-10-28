@@ -9,7 +9,13 @@
 **Expected final line:** `REPRODUCE: ALL GREEN (5 steps)`. **Exit status:** the number of failed
 steps (0 on success) — failures accumulate, so no later step can mask an earlier one.
 
-**Expected runtime:** about 9 minutes on one core. The cost is exhaustive enumeration, not
+**The step count is checked, not remembered.** A final check compares the number of steps this
+script executes with the count it declares, with the denominator in every step label, and with the
+verdict line quoted in `README.md` and in the manuscript's reproducibility section. A second copy of
+the program that nothing reads is how the same drift appeared on #128, #145 and #149.
+
+**Expected runtime:** about 10 minutes on one core (measured 584 s on the reference machine,
+including the `n = 8` rule cells the registered criteria require). The cost is exhaustive enumeration, not
 sampling: the largest single sweep evaluates 5,040 arrival orders at every queue count.
 
 **Tolerance:** none, and none is possible. Every step is exhaustive enumeration over a finite set
@@ -48,7 +54,7 @@ under `refs/`.
 
 | step | program | establishes |
 |---|---|---|
-| 1 | `emit_results.py` | `results.json`. Certifies the fast floor against an independently written exhaustive one (5,016 distinct-rank and 1,068 tie-bearing (window, k) pairs, 0 mismatches); verifies the exact strict-priority threshold statistic over all arrival orders at n = 4..7; verifies the candidate statistics under ties over 6,285 windows; emits both discipline-gap distributions; measures the deployed-shaped rule against the floor in every cell, with the misaligned control; and reports the `k=1` cells as forced rather than as comparisons. |
+| 1 | `emit_results.py` | `results.json`. Certifies the fast floor against an independently written exhaustive one (5,016 distinct-rank and 1,068 tie-bearing (window, k) pairs, 0 mismatches); verifies the exact strict-priority threshold statistic over all arrival orders at n = 4..7; verifies the candidate statistics under ties over 6,285 windows; emits both discipline-gap distributions; measures the deployed-shaped rule against the floor in every cell to **n = 8**, with the misaligned control, and reports on both the cell population (`k < m`) and the registered prior's own population (`k < LDS`); and reports the `k=1` cells as forced rather than as comparisons. |
 | 2 | `make_figure.py` | `figures/discipline-gap.svg` and `.png`, drawn from `results.json`, with the caption's claims asserted as invariants (the stacked fractions sum to 1 in every bar; the maximum gap is 2 under distinct ranks and 1 under ties). |
 | 3 | `check_results.py` | every stored **summary** value recomputed from the per-cell rows it summarises, plus the claim relations the manuscript leans on. A summary is the number that goes stale when a row moves and the summary does not, so it is recomputed here rather than trusted. |
 | 4 | `place_refs.py --check` | that the reference placement still resolves every named record to exactly one harvested candidate, keeps no pruned key alive, and matches the committed `placement.json` **byte for byte**. It compares rather than writes: a gate that rewrote the artifact would leave `reference-check.md` describing a placement that no longer exists. |

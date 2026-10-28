@@ -68,12 +68,23 @@ def main():
     # --- rules_summary must follow from its cells ---
     rr = R["rules"]
     rs = R["rules_summary"]
+    p2 = [r for r in rr if r["p2_lds_windows"]]
+    zf = [r for r in rr if r["zero_floor_windows"]]
     want_rs = {
         "cells": len(rr),
         "aligned_min_fraction": min(r["aligned_fraction"] for r in rr),
         "aligned_max_fraction": max(r["aligned_fraction"] for r in rr),
         "aligned_max_worst_ratio": max(r["aligned_worst_ratio"] for r in rr),
         "control_min_fraction": min(r["control_fraction"] for r in rr),
+        # the registered-P2 population and the zero-floor half, so neither summary is a number
+        # the check leaves unexamined
+        "p2_registered_cells": len(p2),
+        "p2_registered_windows": sum(r["p2_lds_windows"] for r in p2),
+        "p2_registered_loses": sum(r["p2_lds_loses"] for r in p2),
+        "p2_registered_max_fraction": max(r["p2_lds_fraction"] for r in p2) if p2 else None,
+        "zero_floor_windows": sum(r["zero_floor_windows"] for r in zf),
+        "zero_floor_loses": sum(r["zero_floor_loses"] for r in zf),
+        "zero_floor_max_fraction": max(r["zero_floor_fraction"] for r in zf) if zf else None,
     }
     for k, v in want_rs.items():
         if rs.get(k) != v:
