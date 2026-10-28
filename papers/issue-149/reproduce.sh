@@ -14,8 +14,13 @@
 #                          regeneration of reference-check.md
 #   7  manuscript citations  gate_citations.py: every placed entry cited, references.md matches
 #                          the corpus
+#   8  figure               make_figures.py -> figures/decay-curve.svg, and asserts the ordering
+#                          §7.3 claims before writing it
+#   9  rates table          the manuscript's table block is compared against the render of
+#                          rates.json, so a hand-edited cell fails here rather than ageing
 #
 # usage: sh reproduce.sh [--fast]      --fast skips the depth-2 enumeration (step 4 reports NOT RUN)
+# The run states its own count, in the form the journal's stepgate reads: (9 steps).
 #
 # The list above is read back by this script at the end: the steps declared here and the steps
 # that actually ran are compared, and any disagreement fails the run. A header that stopped at
@@ -229,10 +234,36 @@ if diff -q references.md /tmp/issue149-ref.md >/dev/null 2>&1; then
 else
   bad "references.md is stale relative to the corpus (regenerate with --list references.md)"
 fi
+# and the manuscript's own section is the same render -- two copies of one derivation is how the
+# bare-DOI form survived in both at once
+"$PY" gate_citations.py --manuscript manuscript.md --corpus refs/references.json \
+  --list references.md --check-references > /tmp/issue149-refform.log 2>&1
+if [ $? -eq 0 ]; then
+  grep -E "\[ok\]" /tmp/issue149-refform.log | grep -i "References section" | sed 's/^/         /'
+else
+  bad "the manuscript's References section is not the corpus render (see /tmp/issue149-refform.log)"
+fi
+
+# ---------------------------------------------------------------- 8 figure
+step "8 figure"
+if "$PY" make_figures.py; then
+  ok "figures/decay-curve.svg regenerated and asserted"
+else
+  bad "make_figures.py refused to write the figure (assertion failed)"
+fi
+
+# ---------------------------------------------------------------- 9 rates table
+step "9 rates table"
+if "$PY" make_figures.py --check-table; then
+  :
+else
+  bad "the manuscript's table block is not the render of rates.json"
+fi
 
 # ---------------------------------------------------------------- step list
 # The header's list is a second copy of the program, so it is checked against the program rather
 # than trusted: DECLARED_STEPS comes from the header, RUN_STEPS from the step() calls above.
+NSTEPS=$(printf '%s\n' $RUN_STEPS | wc -l | tr -d ' ')
 say "step list"
 if [ "$DECLARED_STEPS" = "$RUN_STEPS" ]; then
   ok "header declares steps [$DECLARED_STEPS] and the run executed exactly those"
@@ -241,10 +272,29 @@ else
          part of the artifact and has to match the program"
 fi
 
+# The documents state the count in the literal form `(N steps)`, which is what the journal's
+# stepgate reads. A literal is a copy, so it is compared here as well: the number each carrier
+# states has to be the number this run executed. Without this line the literals would satisfy the
+# gate and drift from the program on the next change -- the defect this package has already had
+# once, in its header.
+for carrier in README.md manuscript.md; do
+  stated=$(sed -n 's/.*(\([0-9][0-9]*\) steps).*/\1/p' "$carrier" | sort -u | tr '\n' ' ' | sed 's/ *$//')
+  if [ "$stated" = "$NSTEPS" ]; then
+    ok "$carrier states ($NSTEPS steps), the count this run executed"
+  else
+    bad "$carrier states [${stated:-nothing}] as the step count; this run executed $NSTEPS"
+  fi
+done
+
 say "verdict"
+# The count is printed on the verdict line, in the literal form the journal's stepgate reads: a
+# stated count in the documents is a copy of this line, and a copy nothing compares is the defect
+# that has appeared on #128, #145, #149 and #153. The number printed is the one the run executed,
+# not the one the header declares -- those are compared above, and a disagreement has already
+# failed the run by the time this line is printed.
 if [ "$FAILED" = "0" ]; then
-  echo "ALL STEPS PASSED"
+  echo "ALL STEPS PASSED ($NSTEPS steps)"
 else
-  echo "$FAILED STEP(S) FAILED"
+  echo "$FAILED STEP(S) FAILED ($NSTEPS steps executed)"
 fi
 exit $FAILED

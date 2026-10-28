@@ -9,17 +9,19 @@ nothing else. This document says how to regenerate them and what output to expec
 sh reproduce.sh
 ```
 
-Runs all seven steps and exits with the number of failed steps (0 = all passed). A full run takes
-**about two minutes**, of which the depth-2 enumeration (step 4) is ~9 s on the reference machine —
-it was measured, not estimated, and the step is bounded at 300 s so a slower machine reports
-`NOT RUN` instead of hanging.
+Runs all nine steps and exits with the number of failed steps (0 = all passed); the run states its
+own count in the form the journal's `stepgate` reads, `(9 steps)`, and the last line is
+`ALL STEPS PASSED`. A full run takes **about 15 s** — measured at 14–16 s on the reference machine,
+not estimated — of which the depth-2 enumeration (step 4) is ~9 s. Step 4 is bounded at 300 s so a
+slower machine reports `NOT RUN` instead of hanging. (Earlier heads said *"about two minutes"* here
+and *"~30 min"* in the manuscript; both were estimates of a step the run measures in 9 s.)
 
 ```sh
 sh reproduce.sh --fast
 ```
 
-Skips the depth-2 enumeration, reporting it `NOT RUN`. Steps 1–3, 5, 6, 7 are unchanged, so the
-depth-1 rates, the decay curve, the certificate gate and the citation gates all still run.
+Skips the depth-2 enumeration, reporting it `NOT RUN`. Steps 1–3 and 5–9 are unchanged, so the
+depth-1 rates, the decay curve, the citation gates, the figure and the rates table all still run.
 
 ## Expected output
 
@@ -31,7 +33,9 @@ depth-1 rates, the decay curve, the certificate gate and the citation gates all 
 | 4 | depth-2 certificate | ~9 s; npm median 1.0, price 281/906 = 31.0%; PyPI median 1.0, price 115/120 = 95.8%; `NOT RUN` under `--fast` — the `pins:` line carrying those counts is printed by the run |
 | 5 | decay | npm `exact` 1.000 (n=582), `tilde` 0.980 (n=51), `caret` 0.781 (n=439), decl 0.767 (n=150) |
 | 6 | corpus gates | C0/C0b the committed corpus matches its recorded sha256; C1–C5 pass; `reference-check.md` regenerates byte-identically |
-| 7 | manuscript citations | 102 cited of 102 placed; `references.md` matches the corpus |
+| 7 | manuscript citations | 102 cited of 102 placed; `references.md` matches the corpus, and the manuscript's own `## References` section is the same render |
+| 8 | figure | `figures/decay-curve.svg` regenerated from `decay.json`; the script asserts `exact` > `caret` at k=12 before writing, and labels PyPI `NOT RUN` |
+| 9 | rates table | the manuscript's table block is compared against the render of `rates.json`, and every `X% [a, b]` statement in §7 is matched to a rate the artifacts hold |
 
 Exact lines are printed by each step; the numbers above are what they print. Two of them used to be
 captured rather than echoed (the plants' verdict line, and the `pins:` line that carries 906 and 281),
