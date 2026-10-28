@@ -210,6 +210,39 @@ def cite_list(rows):
     return "[" + ",".join(str(e["_num"]) for e in rows) + "]"
 
 
+# Every entry closes with a one-line `Difference:`, and the line is generated from two things the
+# package already holds: the entry's own hand-written `claim` -- the corpus's statement of what
+# that work does -- and the section it was placed in. The first half is per entry and therefore
+# differs for all 104; the second half is this table, written out once per section, and a section
+# that is not in it stops the build rather than printing a sentence nobody wrote and nobody read.
+# The published bibliographies in this journal carry 132/132, 125/125 and 117/117 distinct lines,
+# so a list that repeated one sentence would be read as padding -- which is why the first half is
+# the entry's own recorded claim and not a theme label.
+SECTION_DIFFERENCE = {
+    "1 Prior art":
+        "this paper claims no priority over it and only pairs a queue count with a dequeue "
+        "discipline in a scheduler's setting",
+    "2 Background":
+        "this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, "
+        "and which traffic statistic answers that",
+    "3 The device model":
+        "this paper fixes one dequeue discipline, strict priority, and derives the queue count "
+        "that discipline requires, rather than comparing schedulers",
+    "4 Combinatorics":
+        "this paper uses that machinery on a device question: how many queues the required "
+        "dequeue order costs under one discipline",
+    "5 Online algorithms":
+        "foresight here is a budget to be priced, not an algorithm to be improved: the paper "
+        "quantifies what seeing k arrivals ahead is worth",
+    "6 Data structures":
+        "this paper's quantity is the number of priority queues a bank needs, not the cost of "
+        "implementing one",
+    "7 Measurement":
+        "this paper measures a model rather than a deployment: its counts are exhaustive over "
+        "arrival orders, not sampled from traffic",
+}
+
+
 def reference_list(entries):
     out = ["## References", ""]
     for e in entries:
@@ -224,10 +257,36 @@ def reference_list(entries):
         else:
             astr = "(no author field in the record)"
         venue = clean(e.get("venue") or "") or "(no venue field in the record)"
-        year = e.get("year") or ""
+        year = e.get("year")
         title = clean(e.get("title") or "") or "(no title field in the record)"
-        entry = "[%d] %s. %s. %s, %s. https://doi.org/%s" % (
-            e["_num"], astr.rstrip(".,"), title.rstrip("."), venue, year, e["doi"])
+        # The house form is `[n]` -- authors -- the year in parentheses -- title -- venue -- the
+        # resolvable URL -- the closing `Difference:`. The year is a position, not a suffix: it
+        # was printed after the venue (`... Journal of Scheduling, 1998.`) and the parens were
+        # missing, which read as 0 of 104 entries carrying a year at the stated position. A record
+        # with no year stops the build; `n.d.` is not a year.
+        if not isinstance(year, int) or not (1000 <= year <= 2100):
+            raise SystemExit("reference [%d] (%s) carries no usable year: %r"
+                             % (e["_num"], e.get("key"), year))
+        # The stated difference is generated, never typed into manuscript.md. Its second half is
+        # the section's written-out clause; its first half is this entry's own recorded claim.
+        claim = (e.get("claim") or "").strip().rstrip(".")
+        if not claim:
+            raise SystemExit("reference [%d] (%s) is placed with no claim, so it has no stated "
+                             "difference to print" % (e["_num"], e.get("key")))
+        if e["section"] not in SECTION_DIFFERENCE:
+            raise SystemExit("reference [%d] is placed in section %r, which has no written-out "
+                             "difference clause" % (e["_num"], e["section"]))
+        difference = "%s; %s" % (claim, SECTION_DIFFERENCE[e["section"]])
+        # The author component is `Family, I.` and it ends in that period; the year follows in
+        # parentheses. Stripping a trailing period here (`... Pratt, V. R (1973)`) drops the
+        # initial's own dot, which is the component the house style names -- so the period is put
+        # back when the record's last token does not already carry one.
+        astr = astr.rstrip(" ,;")
+        if astr and not astr.endswith("."):
+            astr += "."
+        entry = "[%d] %s (%d). %s. %s. https://doi.org/%s -- Difference: %s" % (
+            e["_num"], astr, year, title.rstrip("."), venue.rstrip("."),
+            e["doi"], difference)
         # A bare DOI string is an identifier a reader cannot follow from the rendered page; the
         # house style asks for the resolvable form, so the entry carries https://doi.org/<doi>.
         # This line is the only place a bibliography entry is produced -- regenerate, never edit

@@ -580,13 +580,14 @@ The package is one command, offline, with no sampling and no random seeds:
 ./reproduce.sh
 ```
 
-Its last line is `REPRODUCE: ALL GREEN (5 steps)` and its exit status is the number of failed steps, so
-a failure accumulates rather than being masked by a later step. The five steps emit `results.json` from
+Its last line is `REPRODUCE: ALL GREEN (6 steps)` and its exit status is the number of failed steps, so
+a failure accumulates rather than being masked by a later step. The six steps emit `results.json` from
 the model, redraw the figure from `results.json`, recompute every stored summary from the rows it
 summarises, check that the reference placement still resolves and still matches its committed artifact,
-and check that this manuscript still matches what its generator produces. Every artifact is expected to
-be reproduced byte for byte; `README.md` states the environment, the tolerance and what is deliberately
-not covered.
+check that this manuscript still matches what its generator produces, and read the bibliography back by
+entry block to assert that every entry prints the house components in the house order. Every artifact is
+expected to be reproduced byte for byte; `README.md` states the environment, the tolerance and what is
+deliberately not covered.
 
 Citation integrity is part of the package rather than of the prose: `reference-check.md` records, for
 each of the {{nplaced}} references, the DOI, the Crossref record it resolves to, and an agreement score;

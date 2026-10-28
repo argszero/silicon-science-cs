@@ -611,13 +611,14 @@ The package is one command, offline, with no sampling and no random seeds:
 ./reproduce.sh
 ```
 
-Its last line is `REPRODUCE: ALL GREEN (5 steps)` and its exit status is the number of failed
-steps, so a failure accumulates rather than being masked by a later step. The five steps emit
+Its last line is `REPRODUCE: ALL GREEN (6 steps)` and its exit status is the number of failed
+steps, so a failure accumulates rather than being masked by a later step. The six steps emit
 `results.json` from the model, redraw the figure from `results.json`, recompute every stored
 summary from the rows it summarises, check that the reference placement still resolves and still
-matches its committed artifact, and check that this manuscript still matches what its generator
-produces. Every artifact is expected to be reproduced byte for byte; `README.md` states the
-environment, the tolerance and what is deliberately not covered.
+matches its committed artifact, check that this manuscript still matches what its generator
+produces, and read the bibliography back by entry block to assert that every entry prints the
+house components in the house order. Every artifact is expected to be reproduced byte for byte;
+`README.md` states the environment, the tolerance and what is deliberately not covered.
 
 Citation integrity is part of the package rather than of the prose: `reference-check.md`
 records, for each of the 104 references, the DOI, the Crossref record it resolves to, and an
@@ -628,211 +629,211 @@ failure rather than a style issue.
 
 ## References
 
-[1] Pratt, V. R. Computing permutations with double-ended queues, parallel stacks and parallel queues. Proceedings of the fifth annual ACM symposium on Theory of computing - STOC '73, 1973. https://doi.org/10.1145/800125.804058.
+[1] Pratt, V. R. (1973). Computing permutations with double-ended queues, parallel stacks and parallel queues. Proceedings of the fifth annual ACM symposium on Theory of computing - STOC '73. https://doi.org/10.1145/800125.804058 -- Difference: computes which permutations parallel queues produce -- the closest prior statement to this paper's question; this paper claims no priority over it and only pairs a queue count with a dequeue discipline in a scheduler's setting.
 
-[2] Even, S.; Itai, A. QUEUES, STACKS AND GRAPHS. Theory of Machines and Computations, 1971. https://doi.org/10.1016/b978-0-12-417750-5.50011-7.
+[2] Even, S.; Itai, A. (1971). QUEUES, STACKS AND GRAPHS. Theory of Machines and Computations. https://doi.org/10.1016/b978-0-12-417750-5.50011-7 -- Difference: established one of the queue-network sorting problems whose machinery the device statistic belongs to; this paper claims no priority over it and only pairs a queue count with a dequeue discipline in a scheduler's setting.
 
-[3] Tarjan, R. Sorting Using Networks of Queues and Stacks. Journal of the ACM, 1972. https://doi.org/10.1145/321694.321704.
+[3] Tarjan, R. (1972). Sorting Using Networks of Queues and Stacks. Journal of the ACM. https://doi.org/10.1145/321694.321704 -- Difference: gives sorting with networks of queues and stacks, the same objects this model's queue bank realises; this paper claims no priority over it and only pairs a queue count with a dequeue discipline in a scheduler's setting.
 
-[4] Elbediwy; Pontikakis; David; Savaria. A Hardware Architecture of a Dynamic Ranking Packet Scheduler for Programmable Network Devices. IEEE Access, 2023. https://doi.org/10.1109/access.2023.3286726.
+[4] Elbediwy; Pontikakis; David; Savaria. (2023). A Hardware Architecture of a Dynamic Ranking Packet Scheduler for Programmable Network Devices. IEEE Access. https://doi.org/10.1109/access.2023.3286726 -- Difference: gives hardware for a dynamic ranking packet scheduler; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[5] Jiang; Zhang; Liu; Zheng. A P4-Based Packet Scheduling Approach for Clustered Deep Packet Inspection Appliances. 2021 International Conference on Computer Communications and Networks (ICCCN), 2021. https://doi.org/10.1109/icccn52240.2021.9522193.
+[5] Jiang; Zhang; Liu; Zheng. (2021). A P4-Based Packet Scheduling Approach for Clustered Deep Packet Inspection Appliances. 2021 International Conference on Computer Communications and Networks (ICCCN). https://doi.org/10.1109/icccn52240.2021.9522193 -- Difference: implements packet scheduling on a P4 data plane; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[6] Kang; Tian; Hu. A Programmable Packet Scheduling Method Based on Traffic Rate. 2024 IEEE 2nd International Conference on Control, Electronics and Computer Technology (ICCECT), 2024. https://doi.org/10.1109/iccect60629.2024.10545661.
+[6] Kang; Tian; Hu. (2024). A Programmable Packet Scheduling Method Based on Traffic Rate. 2024 IEEE 2nd International Conference on Control, Electronics and Computer Technology (ICCECT). https://doi.org/10.1109/iccect60629.2024.10545661 -- Difference: makes the arrival rate an input to packet scheduling; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[7] Chen; Tian; Zhang. AccelToR: Accelerating TCP for Circuit/Packet Hybrid Data Centers With Packet Scheduling. IEEE Transactions on Networking, 2025. https://doi.org/10.1109/ton.2025.3550902.
+[7] Chen; Tian; Zhang. (2025). AccelToR: Accelerating TCP for Circuit/Packet Hybrid Data Centers With Packet Scheduling. IEEE Transactions on Networking. https://doi.org/10.1109/ton.2025.3550902 -- Difference: uses packet scheduling to accelerate TCP in hybrid data centers; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[8] Quan; Xu; Liu; Cheng; et al. AI-Driven Packet Forwarding With Programmable Data Plane: A Survey. IEEE Communications Surveys & Tutorials, 2023. https://doi.org/10.1109/comst.2022.3217613.
+[8] Quan; Xu; Liu; Cheng; et al. (2023). AI-Driven Packet Forwarding With Programmable Data Plane: A Survey. IEEE Communications Surveys & Tutorials. https://doi.org/10.1109/comst.2022.3217613 -- Difference: surveys programmable-data-plane forwarding; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[9] Rajagopalan; Sivalingam; Shami; Lyonnais. ALADA: Packet-Level Analysis for Line Rate Anomaly Detection Using a Programmable Dataplane Switch. IEEE Open Journal of the Communications Society, 2026. https://doi.org/10.1109/ojcoms.2026.3686225.
+[9] Rajagopalan; Sivalingam; Shami; Lyonnais. (2026). ALADA: Packet-Level Analysis for Line Rate Anomaly Detection Using a Programmable Dataplane Switch. IEEE Open Journal of the Communications Society. https://doi.org/10.1109/ojcoms.2026.3686225 -- Difference: analyses packets at line rate on a programmable data plane; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[10] Li; Song; Zeng. An Adaptive Throughput-First Packet Scheduling Algorithm for DPDK-Based Packet Processing Systems. Future Internet, 2021. https://doi.org/10.3390/fi13030078.
+[10] Li; Song; Zeng. (2021). An Adaptive Throughput-First Packet Scheduling Algorithm for DPDK-Based Packet Processing Systems. Future Internet. https://doi.org/10.3390/fi13030078 -- Difference: schedules packets in a DPDK-based processing system; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[11] Saqib; Elbiaze; Glitho; Ghamri-Doudane. An Intelligent and Programmable Data Plane for QoS-Aware Packet Processing. IEEE Transactions on Machine Learning in Communications and Networking, 2024. https://doi.org/10.1109/tmlcn.2024.3475968.
+[11] Saqib; Elbiaze; Glitho; Ghamri-Doudane. (2024). An Intelligent and Programmable Data Plane for QoS-Aware Packet Processing. IEEE Transactions on Machine Learning in Communications and Networking. https://doi.org/10.1109/tmlcn.2024.3475968 -- Difference: makes quality of service a programmable-data-plane function; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[12] Guo; Sun; Hu; Zhang; et al. CIPO: Efficient, lightweight and programmable packet scheduling. Computer Networks, 2024. https://doi.org/10.1016/j.comnet.2024.110355.
+[12] Guo; Sun; Hu; Zhang; et al. (2024). CIPO: Efficient, lightweight and programmable packet scheduling. Computer Networks. https://doi.org/10.1016/j.comnet.2024.110355 -- Difference: proposes a lightweight programmable packet scheduling primitive; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[13] Cui; Zhang. D-PIFO: A Dynamic Priority Scheduling Algorithm for Performance-Critical Packets Based on the Programmable Data Plane. 2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD), 2024. https://doi.org/10.1109/cscwd61410.2024.10580504.
+[13] Cui; Zhang. (2024). D-PIFO: A Dynamic Priority Scheduling Algorithm for Performance-Critical Packets Based on the Programmable Data Plane. 2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD). https://doi.org/10.1109/cscwd61410.2024.10580504 -- Difference: gives a dynamic priority scheduling algorithm for performance-critical packets; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[14] Wang; Liu; Zhang; Guo; et al. DDSPQ: Strict-Priority Queue Schedule for Multi-Tiered Service Accommodation in SD-WAN. 2025 10th International Conference on Computer and Communication System (ICCCS), 2025. https://doi.org/10.1109/icccs65393.2025.11069454.
+[14] Wang; Liu; Zhang; Guo; et al. (2025). DDSPQ: Strict-Priority Queue Schedule for Multi-Tiered Service Accommodation in SD-WAN. 2025 10th International Conference on Computer and Communication System (ICCCS). https://doi.org/10.1109/icccs65393.2025.11069454 -- Difference: schedules multi-tier service traffic with strict-priority queues; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[15] Hussain; Patetta; Rivalan. Demo: Programmable Packet Scheduling on FPGA-Based Switches. 2025 4th International Conference on 6G Networking (6GNet), 2025. https://doi.org/10.1109/6gnet68413.2025.11314135.
+[15] Hussain; Patetta; Rivalan. (2025). Demo: Programmable Packet Scheduling on FPGA-Based Switches. 2025 4th International Conference on 6G Networking (6GNet). https://doi.org/10.1109/6gnet68413.2025.11314135 -- Difference: demonstrates programmable packet scheduling on FPGA switches; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[16] Elbediwy; Pontikakis; Ghaffari; David; et al. DR-PIFO: A Dynamic Ranking Packet Scheduler Using a Push-In-First-Out Queue. IEEE Transactions on Network and Service Management, 2024. https://doi.org/10.1109/tnsm.2023.3304894.
+[16] Elbediwy; Pontikakis; Ghaffari; David; et al. (2024). DR-PIFO: A Dynamic Ranking Packet Scheduler Using a Push-In-First-Out Queue. IEEE Transactions on Network and Service Management. https://doi.org/10.1109/tnsm.2023.3304894 -- Difference: uses a dynamic ranking rule over a PIFO queue; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[17] Yu; Ruepp; Berger. Enhanced first-in-first-out-based round-robin multicast scheduling algorithm for input-queued switches. IET Communications, 2011. https://doi.org/10.1049/iet-com.2010.0378.
+[17] Yu; Ruepp; Berger. (2011). Enhanced first-in-first-out-based round-robin multicast scheduling algorithm for input-queued switches. IET Communications. https://doi.org/10.1049/iet-com.2010.0378 -- Difference: analyses FIFO-based round-robin multicast scheduling, the discipline this paper compares against; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[18] Mostafaei; Ezzati; Cuijpers; Schmid; et al. Exp-PIFO: Scalable and Efficient Programmable Packet Scheduling. Proceedings of the ACM on Networking, 2025. https://doi.org/10.1145/3749217.
+[18] Mostafaei; Ezzati; Cuijpers; Schmid; et al. (2025). Exp-PIFO: Scalable and Efficient Programmable Packet Scheduling. Proceedings of the ACM on Networking. https://doi.org/10.1145/3749217 -- Difference: proposes a scalable programmable packet scheduling design; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[19] Liu; Gao; Chen; Chen; et al. FIPO: A Lightweight and Customized Software-Defined Programmable Packet Scheduling Primitive. IEEE Systems Journal, 2025. https://doi.org/10.1109/jsyst.2025.3567017.
+[19] Liu; Gao; Chen; Chen; et al. (2025). FIPO: A Lightweight and Customized Software-Defined Programmable Packet Scheduling Primitive. IEEE Systems Journal. https://doi.org/10.1109/jsyst.2025.3567017 -- Difference: proposes a software-defined programmable scheduling primitive; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[20] Zhang; Li; Li; Liu; et al. Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters. IEEE INFOCOM 2025 - IEEE Conference on Computer Communications, 2025. https://doi.org/10.1109/infocom55648.2025.11044448.
+[20] Zhang; Li; Li; Liu; et al. (2025). Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters. IEEE INFOCOM 2025 - IEEE Conference on Computer Communications. https://doi.org/10.1109/infocom55648.2025.11044448 -- Difference: makes buffer state part of a programmable packet scheduling building block; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[21] Lv; Jiang; Yang. Making programmable packet scheduling time-sensitive with a FIFO queue. Journal of Cloud Computing, 2023. https://doi.org/10.1186/s13677-023-00518-3.
+[21] Lv; Jiang; Yang. (2023). Making programmable packet scheduling time-sensitive with a FIFO queue. Journal of Cloud Computing. https://doi.org/10.1186/s13677-023-00518-3 -- Difference: reconciles programmable scheduling with a FIFO queue for time-sensitive traffic; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[22] Tsanikidis; Ghaderi. Near-Optimal Packet Scheduling in Multihop Networks with End-to-End Deadline Constraints. ACM SIGMETRICS Performance Evaluation Review, 2024. https://doi.org/10.1145/3673660.3655069.
+[22] Tsanikidis; Ghaderi. (2024). Near-Optimal Packet Scheduling in Multihop Networks with End-to-End Deadline Constraints. ACM SIGMETRICS Performance Evaluation Review. https://doi.org/10.1145/3673660.3655069 -- Difference: schedules packets to deadlines in multihop networks; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[23] Sivaraman, A.; Subramanian, S.; Alizadeh, M.; Chole, S.; et al. Programmable Packet Scheduling at Line Rate. Proceedings of the 2016 ACM SIGCOMM Conference, 2016. https://doi.org/10.1145/2934872.2934899.
+[23] Sivaraman, A.; Subramanian, S.; Alizadeh, M.; Chole, S.; et al. (2016). Programmable Packet Scheduling at Line Rate. Proceedings of the 2016 ACM SIGCOMM Conference. https://doi.org/10.1145/2934872.2934899 -- Difference: introduces PIFO, the queue abstraction whose exact behaviour a programmable switch approximates; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[24] Vass; Sarkadi; Retvari. Programmable Packet Scheduling With SP-PIFO: Theory, Algorithms and Evaluation. IEEE INFOCOM 2022 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS), 2022. https://doi.org/10.1109/infocomwkshps54753.2022.9798055.
+[24] Vass; Sarkadi; Retvari. (2022). Programmable Packet Scheduling With SP-PIFO: Theory, Algorithms and Evaluation. IEEE INFOCOM 2022 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS). https://doi.org/10.1109/infocomwkshps54753.2022.9798055 -- Difference: gives SP-PIFO its theory and evaluation, and names the optimal queue mapping it approximates; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[25] Mei; Chen; Chen; Chen; et al. Scale-up PIFO: Interleaving Multiple Priority Queues for High Speed Programmable Scheduling. Proceedings of the ACM SIGCOMM 2026 Conference, 2026. https://doi.org/10.1145/3789240.3829190.
+[25] Mei; Chen; Chen; Chen; et al. (2026). Scale-up PIFO: Interleaving Multiple Priority Queues for High Speed Programmable Scheduling. Proceedings of the ACM SIGCOMM 2026 Conference. https://doi.org/10.1145/3789240.3829190 -- Difference: interleaves multiple priority queues for programmable scheduling, the line this paper measures; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[26] Vass. Spring: Theory and an Efficient Heuristic for Programmable Packet Scheduling with SP-PIFO. Infocommunications journal, 2025. https://doi.org/10.36244/icj.2025.3.1.
+[26] Vass. (2025). Spring: Theory and an Efficient Heuristic for Programmable Packet Scheduling with SP-PIFO. Infocommunications journal. https://doi.org/10.36244/icj.2025.3.1 -- Difference: treats programmable packet scheduling with SP-PIFO as a problem with a heuristic; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[27] Song; Hasan. Time-Aware Packet Forwarding in Programmable Data Planes. 2025 28th International Symposium on Real-Time Distributed Computing (ISORC), 2025. https://doi.org/10.1109/isorc65339.2025.00038.
+[27] Song; Hasan. (2025). Time-Aware Packet Forwarding in Programmable Data Planes. 2025 28th International Symposium on Real-Time Distributed Computing (ISORC). https://doi.org/10.1109/isorc65339.2025.00038 -- Difference: uses time as an input to forwarding decisions in programmable data planes; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[28] Xing; Qiu; Hsu; Sui; et al. Unleashing SmartNIC Packet Processing Performance in P4. Proceedings of the ACM SIGCOMM 2023 Conference, 2023. https://doi.org/10.1145/3603269.3604882.
+[28] Xing; Qiu; Hsu; Sui; et al. (2023). Unleashing SmartNIC Packet Processing Performance in P4. Proceedings of the ACM SIGCOMM 2023 Conference. https://doi.org/10.1145/3603269.3604882 -- Difference: reports what a SmartNIC data plane can do at packet rate; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[29] Zhang; Chen; Yao; Sun; et al. vPIFO: Virtualized Packet Scheduler for Programmable Hierarchical Scheduling in High-Speed Networks. Proceedings of the ACM SIGCOMM 2024 Conference, 2024. https://doi.org/10.1145/3651890.3672270.
+[29] Zhang; Chen; Yao; Sun; et al. (2024). vPIFO: Virtualized Packet Scheduler for Programmable Hierarchical Scheduling in High-Speed Networks. Proceedings of the ACM SIGCOMM 2024 Conference. https://doi.org/10.1145/3651890.3672270 -- Difference: virtualises the packet scheduler for hierarchical scheduling; this paper proposes no scheduler; it asks how many queues an exact dequeue order costs, and which traffic statistic answers that.
 
-[30] Heisswolf; Konig; Becker. A Scalable NoC Router Design Providing QoS Support Using Weighted Round Robin Scheduling. 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications, 2012. https://doi.org/10.1109/ispa.2012.93.
+[30] Heisswolf; Konig; Becker. (2012). A Scalable NoC Router Design Providing QoS Support Using Weighted Round Robin Scheduling. 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications. https://doi.org/10.1109/ispa.2012.93 -- Difference: applies a round-robin discipline at a network-on-chip router; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[31] Rahimi; Pournaghshband. An improvement mechanism for low priority traffic TCP performance in Strict Priority Queueing. 2016 International Conference on Computer Communication and Informatics (ICCCI), 2016. https://doi.org/10.1109/iccci.2016.7480023.
+[31] Rahimi; Pournaghshband. (2016). An improvement mechanism for low priority traffic TCP performance in Strict Priority Queueing. 2016 International Conference on Computer Communication and Informatics (ICCCI). https://doi.org/10.1109/iccci.2016.7480023 -- Difference: reports how low-priority traffic behaves under strict priority, the dequeue discipline modelled here; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[32] Shortle; Fischer. Approximation for a two-class weighted fair queueing discipline. Performance Evaluation, 2010. https://doi.org/10.1016/j.peva.2010.05.004.
+[32] Shortle; Fischer. (2010). Approximation for a two-class weighted fair queueing discipline. Performance Evaluation. https://doi.org/10.1016/j.peva.2010.05.004 -- Difference: approximates a two-class weighted fair queueing discipline; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[33] Mukherjee; Kuri; Singh. Convexity and Optimization in Deficit Round Robin Scheduling for Delay-Constrained Systems. 2025 23rd International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt), 2025. https://doi.org/10.23919/wiopt66569.2025.11123403.
+[33] Mukherjee; Kuri; Singh. (2025). Convexity and Optimization in Deficit Round Robin Scheduling for Delay-Constrained Systems. 2025 23rd International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt). https://doi.org/10.23919/wiopt66569.2025.11123403 -- Difference: optimises deficit round robin for delay-constrained systems; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[34] Chang; Lee. Cycle time distribution and control for the Deficit Round Robin packet scheduler. 2012 International Conference on Computing, Networking and Communications (ICNC), 2012. https://doi.org/10.1109/iccnc.2012.6167459.
+[34] Chang; Lee. (2012). Cycle time distribution and control for the Deficit Round Robin packet scheduler. 2012 International Conference on Computing, Networking and Communications (ICNC). https://doi.org/10.1109/iccnc.2012.6167459 -- Difference: analyses the cycle time of the deficit round robin packet scheduler; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[35] Kubo; Okada; Oki. Delay Impact of Bursty Cross Traffic in Combined Input and Output Queued Switches Using Virtual Input Queueing Under Diverse Network and Traffic Conditions. IEEE Open Journal of the Communications Society, 2026. https://doi.org/10.1109/ojcoms.2026.3726416.
+[35] Kubo; Okada; Oki. (2026). Delay Impact of Bursty Cross Traffic in Combined Input and Output Queued Switches Using Virtual Input Queueing Under Diverse Network and Traffic Conditions. IEEE Open Journal of the Communications Society. https://doi.org/10.1109/ojcoms.2026.3726416 -- Difference: reports delay under combined input-output queueing; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[36] Lin; Hamdi; Muppala. Designing Packet Buffers Using Random Round Robin. 2010 IEEE Global Telecommunications Conference GLOBECOM 2010, 2010. https://doi.org/10.1109/glocom.2010.5683309.
+[36] Lin; Hamdi; Muppala. (2010). Designing Packet Buffers Using Random Round Robin. 2010 IEEE Global Telecommunications Conference GLOBECOM 2010. https://doi.org/10.1109/glocom.2010.5683309 -- Difference: makes the buffer's own access order part of the scheduling design; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[37] Kang; Williams. Diffusion Approximation for an Input-queued Switch Operating under a Maximum Weight Matching Policy. Stochastic Systems, 2012. https://doi.org/10.1287/12-ssy061.
+[37] Kang; Williams. (2012). Diffusion Approximation for an Input-queued Switch Operating under a Maximum Weight Matching Policy. Stochastic Systems. https://doi.org/10.1287/12-ssy061 -- Difference: approximates an input-queued switch under maximum-weight matching; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[38] Divanovic; Radonjic; Gardasevic; Radusinovic. Dynamic weighted round robin in crosspoint queued switch. 2013 21st Telecommunications Forum Telfor (TELFOR), 2013. https://doi.org/10.1109/telfor.2013.6716184.
+[38] Divanovic; Radonjic; Gardasevic; Radusinovic. (2013). Dynamic weighted round robin in crosspoint queued switch. 2013 21st Telecommunications Forum Telfor (TELFOR). https://doi.org/10.1109/telfor.2013.6716184 -- Difference: reports weighted round-robin scheduling in a crosspoint-queued switch Fabric; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[39] Sun; Li. Half-Draining Round Robin Matching for High Performance Input Queued Switches. 2019 IEEE/ACIS 18th International Conference on Computer and Information Science (ICIS), 2019. https://doi.org/10.1109/icis46139.2019.8940224.
+[39] Sun; Li. (2019). Half-Draining Round Robin Matching for High Performance Input Queued Switches. 2019 IEEE/ACIS 18th International Conference on Computer and Information Science (ICIS). https://doi.org/10.1109/icis46139.2019.8940224 -- Difference: matches a switch with a round-robin scheme; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[40] Huang; Huang. Heavy traffic analysis of approximate max-weight matching algorithms for input-queued switches. Performance Evaluation, 2020. https://doi.org/10.1016/j.peva.2020.102143.
+[40] Huang; Huang. (2020). Heavy traffic analysis of approximate max-weight matching algorithms for input-queued switches. Performance Evaluation. https://doi.org/10.1016/j.peva.2020.102143 -- Difference: analyses matching algorithms for input-queued switches under heavy traffic; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[41] (no author field in the record). Implementation of Class-Based Low Latency Fair Queueing (CBLLFQ) Packet Scheduling Algorithm for HSDPA Core Network. KSII Transactions on Internet and Information Systems, 2020. https://doi.org/10.3837/tiis.2020.02.001.
+[41] (no author field in the record). (2020). Implementation of Class-Based Low Latency Fair Queueing (CBLLFQ) Packet Scheduling Algorithm for HSDPA Core Network. KSII Transactions on Internet and Information Systems. https://doi.org/10.3837/tiis.2020.02.001 -- Difference: implements a class-based low-latency fair queueing scheduler; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[42] Assegie; Bizuneh, D. Improving network performance with an integrated priority queue and weighted fair queue scheduling. Indonesian Journal of Electrical Engineering and Computer Science, 2020. https://doi.org/10.11591/ijeecs.v19.i1.pp241-247.
+[42] Assegie; Bizuneh, D. (2020). Improving network performance with an integrated priority queue and weighted fair queue scheduling. Indonesian Journal of Electrical Engineering and Computer Science. https://doi.org/10.11591/ijeecs.v19.i1.pp241-247 -- Difference: combines priority and weighted fair queueing in one device; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[43] Xiao; Yeung. Iterative multicast scheduling algorithm for input-queued switch with variable packet size. 2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE), 2017. https://doi.org/10.1109/ccece.2017.7946605.
+[43] Xiao; Yeung. (2017). Iterative multicast scheduling algorithm for input-queued switch with variable packet size. 2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE). https://doi.org/10.1109/ccece.2017.7946605 -- Difference: extends switch scheduling to multicast with variable packet size; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[44] Liao; Wu. Longest queue first in round-robin matching for input-queued switches. 2010 International Symposium On Information Theory & Its Applications, 2010. https://doi.org/10.1109/isita.2010.5648873.
+[44] Liao; Wu. (2010). Longest queue first in round-robin matching for input-queued switches. 2010 International Symposium On Information Theory & Its Applications. https://doi.org/10.1109/isita.2010.5648873 -- Difference: schedules by queue occupancy, a discipline distinct from the rank-band rule measured here; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[45] Lin; Rojas-Cessa. Module Matching Schemes for Input-Queued Clos-Network Packet Switches. IEEE Communications Letters, 2007. https://doi.org/10.1109/lcomm.2007.061617.
+[45] Lin; Rojas-Cessa. (2007). Module Matching Schemes for Input-Queued Clos-Network Packet Switches. IEEE Communications Letters. https://doi.org/10.1109/lcomm.2007.061617 -- Difference: builds scalable switch fabrics whose scheduling problem is a matching one; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[46] Ghodsi; Sekar; Zaharia; Stoica. Multi-resource fair queueing for packet processing. ACM SIGCOMM Computer Communication Review, 2012. https://doi.org/10.1145/2377677.2377679.
+[46] Ghodsi; Sekar; Zaharia; Stoica. (2012). Multi-resource fair queueing for packet processing. ACM SIGCOMM Computer Communication Review. https://doi.org/10.1145/2377677.2377679 -- Difference: extends fair queueing from links to packet-processing resources; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[47] Gourgy; Szymanski; Down. On Tracking the Behavior of an Output-Queued Switch Using an Input-Queued Switch. IEEE/ACM Transactions on Networking, 2009. https://doi.org/10.1109/tnet.2009.2014948.
+[47] Gourgy; Szymanski; Down. (2009). On Tracking the Behavior of an Output-Queued Switch Using an Input-Queued Switch. IEEE/ACM Transactions on Networking. https://doi.org/10.1109/tnet.2009.2014948 -- Difference: compares what an output-queued switch does with what an input-queued one can imitate; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[48] Lesens; Cohen; Uçar. Orthogonal Matching Pursuit-Based Algorithms for the Birkhoff-Von Neumann Decomposition. 2024 32nd European Signal Processing Conference (EUSIPCO), 2024. https://doi.org/10.23919/eusipco63174.2024.10715087.
+[48] Lesens; Cohen; Uçar. (2024). Orthogonal Matching Pursuit-Based Algorithms for the Birkhoff-Von Neumann Decomposition. 2024 32nd European Signal Processing Conference (EUSIPCO). https://doi.org/10.23919/eusipco63174.2024.10715087 -- Difference: decomposes a switch schedule, the matrix form of the assignment this paper enumerates; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[49] Yu; Chen; Tian. OWFQ: Reducing Packet Drops for Approximate Weighted Fair Queueing with Calendar Queues. 2023 9th International Conference on Computer and Communications (ICCC), 2023. https://doi.org/10.1109/iccc59590.2023.10507624.
+[49] Yu; Chen; Tian. (2023). OWFQ: Reducing Packet Drops for Approximate Weighted Fair Queueing with Calendar Queues. 2023 9th International Conference on Computer and Communications (ICCC). https://doi.org/10.1109/iccc59590.2023.10507624 -- Difference: approximates weighted fair queueing with calendar queues; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[50] Liu; Li. Packet Scheduling in High-speed Networks Using Improved Weighted Round Robin. Research Journal of Applied Sciences, Engineering and Technology, 2014. https://doi.org/10.19026/rjaset.7.498.
+[50] Liu; Li. (2014). Packet Scheduling in High-speed Networks Using Improved Weighted Round Robin. Research Journal of Applied Sciences, Engineering and Technology. https://doi.org/10.19026/rjaset.7.498 -- Difference: schedules packets in high-speed networks with a weighted round-robin discipline; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[51] Kitsuwan; Oki; Rojas-Cessa; Kishi. Performance analysis on dynamics of parallel iterative matching in an input-buffered switch. 2009 15th Asia-Pacific Conference on Communications, 2009. https://doi.org/10.1109/apcc.2009.5375476.
+[51] Kitsuwan; Oki; Rojas-Cessa; Kishi. (2009). Performance analysis on dynamics of parallel iterative matching in an input-buffered switch. 2009 15th Asia-Pacific Conference on Communications. https://doi.org/10.1109/apcc.2009.5375476 -- Difference: analyses parallel iterative matching, the matching approach an output-queued abstraction would need; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[52] Gong; Xu; Liu; Maguluri. QPS-r: A cost-effective iterative switching algorithm for input-queued switches. Performance Evaluation, 2021. https://doi.org/10.1016/j.peva.2021.102197.
+[52] Gong; Xu; Liu; Maguluri. (2021). QPS-r: A cost-effective iterative switching algorithm for input-queued switches. Performance Evaluation. https://doi.org/10.1016/j.peva.2021.102197 -- Difference: gives an iterative switching algorithm for input-queued switches; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[53] Jamali; Ghiasian. Randomised scheduling algorithm for virtual output queuing switch at the presence of non‐uniform traffic. IET Networks, 2019. https://doi.org/10.1049/iet-net.2018.5115.
+[53] Jamali; Ghiasian. (2019). Randomised scheduling algorithm for virtual output queuing switch at the presence of non‐uniform traffic. IET Networks. https://doi.org/10.1049/iet-net.2018.5115 -- Difference: schedules a switch through per-output queues rather than one global order; this paper fixes one dequeue discipline, strict priority, and derives the queue count that discipline requires, rather than comparing schedulers.
 
-[54] Dukes; Mullins. A Bump Statistic on Permutations Resulting from the Robinson–Schensted Correspondence. Annals of Combinatorics, 2024. https://doi.org/10.1007/s00026-024-00708-z.
+[54] Dukes; Mullins. (2024). A Bump Statistic on Permutations Resulting from the Robinson–Schensted Correspondence. Annals of Combinatorics. https://doi.org/10.1007/s00026-024-00708-z -- Difference: relates permutation statistics through the Robinson-Schensted correspondence; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[55] He. A central limit theorem for descents of a Mallows permutation and its inverse. Annales de l'Institut Henri Poincaré, Probabilités et Statistiques, 2022. https://doi.org/10.1214/21-aihp1167.
+[55] He. (2022). A central limit theorem for descents of a Mallows permutation and its inverse. Annales de l'Institut Henri Poincaré, Probabilités et Statistiques. https://doi.org/10.1214/21-aihp1167 -- Difference: gives a limit theorem for descents including the inverse statistic; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[56] Dilworth. A Decomposition Theorem for Partially Ordered Sets. Classic Papers in Combinatorics, 2009. https://doi.org/10.1007/978-0-8176-4842-8_10.
+[56] Dilworth. (2009). A Decomposition Theorem for Partially Ordered Sets. Classic Papers in Combinatorics. https://doi.org/10.1007/978-0-8176-4842-8_10 -- Difference: is the decomposition theorem the free-merge threshold is a corollary of; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[57] F; S; M, A. A Generalization of Dilworth’s Decomposition Theorem for Partially Ordered Multisets. Anchor University Journal of Science and Technology, 2024. https://doi.org/10.4314/aujst.v5i1.6.
+[57] F; S; M, A. (2024). A Generalization of Dilworth’s Decomposition Theorem for Partially Ordered Multisets. Anchor University Journal of Science and Technology. https://doi.org/10.4314/aujst.v5i1.6 -- Difference: generalises Dilworth's decomposition to partially ordered multisets, the tied-rank case here; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[58] Corwin. Commentary on “Longest increasing subsequences: from patience sorting to the Baik–Deift–Johansson theorem” by David Aldous and Persi Diaconis. Bulletin of the American Mathematical Society, 2018. https://doi.org/10.1090/bull/1623.
+[58] Corwin. (2018). Commentary on “Longest increasing subsequences: from patience sorting to the Baik–Deift–Johansson theorem” by David Aldous and Persi Diaconis. Bulletin of the American Mathematical Society. https://doi.org/10.1090/bull/1623 -- Difference: is a commentary on the patience-sorting line of longest-increasing-subsequence results, where the decreasing-subsequence statistic lives; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[59] Elizalde. Continued fractions for permutation statistics. Discrete Mathematics & Theoretical Computer Science, 2018. https://doi.org/10.23638/dmtcs-19-2-11.
+[59] Elizalde. (2018). Continued fractions for permutation statistics. Discrete Mathematics & Theoretical Computer Science. https://doi.org/10.23638/dmtcs-19-2-11 -- Difference: treats permutation statistics generationally; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[60] Kociumaka; Seddighin. Improved dynamic algorithms for longest increasing subsequence. Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of Computing, 2021. https://doi.org/10.1145/3406325.3451026.
+[60] Kociumaka; Seddighin. (2021). Improved dynamic algorithms for longest increasing subsequence. Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of Computing. https://doi.org/10.1145/3406325.3451026 -- Difference: maintains the increasing subsequence statistic under updates; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[61] Mitzenmacher; Seddighin. Improved Sublinear Time Algorithm for Longest Increasing Subsequence. Proceedings of the 2021 ACM-SIAM Symposium on Discrete Algorithms (SODA), 2021. https://doi.org/10.1137/1.9781611976465.115.
+[61] Mitzenmacher; Seddighin. (2021). Improved Sublinear Time Algorithm for Longest Increasing Subsequence. Proceedings of the 2021 ACM-SIAM Symposium on Discrete Algorithms (SODA). https://doi.org/10.1137/1.9781611976465.115 -- Difference: computes the statistic in sublinear time; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[62] Jiang; Wang. Moderate deviations for the number of descents in a random permutation. Statistics & Probability Letters, 2025. https://doi.org/10.1016/j.spl.2024.110320.
+[62] Jiang; Wang. (2025). Moderate deviations for the number of descents in a random permutation. Statistics & Probability Letters. https://doi.org/10.1016/j.spl.2024.110320 -- Difference: analyses the number of descents, the statistic that sets the device threshold; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[63] Cao; Huang; Su. Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence. Proceedings of the 35th ACM Symposium on Parallelism in Algorithms and Architectures, 2023. https://doi.org/10.1145/3558481.3591078.
+[63] Cao; Huang; Su. (2023). Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence. Proceedings of the 35th ACM Symposium on Parallelism in Algorithms and Architectures. https://doi.org/10.1145/3558481.3591078 -- Difference: computes the increasing subsequence statistic in parallel; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[64] Vaisman; Gertsbakh. Optimal balanced chain decomposition of partially ordered sets with applications to operating cost minimization in aircraft routing problems. Public Transport, 2022. https://doi.org/10.1007/s12469-022-00304-5.
+[64] Vaisman; Gertsbakh. (2022). Optimal balanced chain decomposition of partially ordered sets with applications to operating cost minimization in aircraft routing problems. Public Transport. https://doi.org/10.1007/s12469-022-00304-5 -- Difference: computes an optimal chain decomposition of a poset; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[65] Bóna; DeJonge. Pattern Avoiding Permutations with a Unique Longest Increasing Subsequence. The Electronic Journal of Combinatorics, 2020. https://doi.org/10.37236/9506.
+[65] Bóna; DeJonge. (2020). Pattern Avoiding Permutations with a Unique Longest Increasing Subsequence. The Electronic Journal of Combinatorics. https://doi.org/10.37236/9506 -- Difference: characterises permutations by their increasing subsequence structure; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[66] Marciniak; Maślanka; Śniady. Poisson limit theorems for the Robinson–Schensted correspondence and for the multi-line Hammersley process. Advances in Applied Mathematics, 2023. https://doi.org/10.1016/j.aam.2022.102478.
+[66] Marciniak; Maślanka; Śniady. (2023). Poisson limit theorems for the Robinson–Schensted correspondence and for the multi-line Hammersley process. Advances in Applied Mathematics. https://doi.org/10.1016/j.aam.2022.102478 -- Difference: gives limit theorems for the correspondence that maps permutations to tableaux; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[67] Fiorini; Rexhep. Poset Entropy Versus Number of Linear Extensions: The Width-2 Case. Order, 2015. https://doi.org/10.1007/s11083-015-9346-z.
+[67] Fiorini; Rexhep. (2015). Poset Entropy Versus Number of Linear Extensions: The Width-2 Case. Order. https://doi.org/10.1007/s11083-015-9346-z -- Difference: relates a poset's width to its linear extensions; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[68] Axenovich; Winter. Poset Ramsey Number $$R(P,Q_n)$$. II. N-Shaped Poset. Order, 2024. https://doi.org/10.1007/s11083-024-09663-z.
+[68] Axenovich; Winter. (2024). Poset Ramsey Number $$R(P,Q_n)$$. II. N-Shaped Poset. Order. https://doi.org/10.1007/s11083-024-09663-z -- Difference: studies posets combinatorially, adjacent machinery to the decomposition used here; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[69] Bercu; Bonnefont; Fredes; Richou. Sharp analysis on the joint distribution of the number of descents and inverse descents in a random permutation. The Annals of Applied Probability, 2025. https://doi.org/10.1214/24-aap2138.
+[69] Bercu; Bonnefont; Fredes; Richou. (2025). Sharp analysis on the joint distribution of the number of descents and inverse descents in a random permutation. The Annals of Applied Probability. https://doi.org/10.1214/24-aap2138 -- Difference: gives the joint distribution of descents and inverse descents, the two sides of this model; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[70] Bercu; Bonnefont; Richou. Sharp large deviations and concentration inequalities for the number of descents in a random permutation. Journal of Applied Probability, 2024. https://doi.org/10.1017/jpr.2023.86.
+[70] Bercu; Bonnefont; Richou. (2024). Sharp large deviations and concentration inequalities for the number of descents in a random permutation. Journal of Applied Probability. https://doi.org/10.1017/jpr.2023.86 -- Difference: bounds the descents statistic's concentration; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[71] Kiyomi; Ono; Otachi; Schweitzer; et al. Space-Efficient Algorithms for Longest Increasing Subsequence. Theory of Computing Systems, 2019. https://doi.org/10.1007/s00224-018-09908-6.
+[71] Kiyomi; Ono; Otachi; Schweitzer; et al. (2019). Space-Efficient Algorithms for Longest Increasing Subsequence. Theory of Computing Systems. https://doi.org/10.1007/s00224-018-09908-6 -- Difference: computes the statistic in bounded space; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[72] Zhao. Stack-sorting with stacks avoiding vincular patterns. Discrete Mathematics, 2026. https://doi.org/10.1016/j.disc.2025.114834.
+[72] Zhao. (2026). Stack-sorting with stacks avoiding vincular patterns. Discrete Mathematics. https://doi.org/10.1016/j.disc.2025.114834 -- Difference: characterises which permutations a stack-sorting device can produce; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[73] Felsner; Pergel. The Complexity of Sorting with Networks of Stacks and Queues. Lecture Notes in Computer Science, 2008. https://doi.org/10.1007/978-3-540-87744-8_35.
+[73] Felsner; Pergel. (2008). The Complexity of Sorting with Networks of Stacks and Queues. Lecture Notes in Computer Science. https://doi.org/10.1007/978-3-540-87744-8_35 -- Difference: studies exactly the objects this model uses: networks of queues and stacks as sorting devices; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[74] Franz; Mulet. The longest increasing subsequence problem revisited. Communications in Theoretical Physics, 2026. https://doi.org/10.1088/1572-9494/ae9b87.
+[74] Franz; Mulet. (2026). The longest increasing subsequence problem revisited. Communications in Theoretical Physics. https://doi.org/10.1088/1572-9494/ae9b87 -- Difference: revisits the longest-increasing-subsequence problem; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[75] (no author field in the record). The Robinson–Schensted–Knuth correspondence. The Student Mathematical Library, 2019. https://doi.org/10.1090/stml/091/08.
+[75] (no author field in the record). (2019). The Robinson–Schensted–Knuth correspondence. The Student Mathematical Library. https://doi.org/10.1090/stml/091/08 -- Difference: states the correspondence between permutations and pairs of tableaux; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[76] Itskovich; Levit. What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?. Algorithms, 2019. https://doi.org/10.3390/a12110237.
+[76] Itskovich; Levit. (2019). What Do a Longest Increasing Subsequence and a Longest Decreasing Subsequence Know about Each Other?. Algorithms. https://doi.org/10.3390/a12110237 -- Difference: connects subsequence structure to the permutation's own statistics; this paper uses that machinery on a device question: how many queues the required dequeue order costs under one discipline.
 
-[77] Itoh; Miyazaki; Satake. Competitive analysis for two variants of online metric matching problem. Discrete Mathematics, Algorithms and Applications, 2021. https://doi.org/10.1142/s1793830921501561.
+[77] Itoh; Miyazaki; Satake. (2021). Competitive analysis for two variants of online metric matching problem. Discrete Mathematics, Algorithms and Applications. https://doi.org/10.1142/s1793830921501561 -- Difference: competitively analyses an online matching problem; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[78] Barba; Bertazzi; Golden. Competitive Analysis of Algorithms for an Online Distribution Problem. Algorithms, 2024. https://doi.org/10.3390/a17060237.
+[78] Barba; Bertazzi; Golden. (2024). Competitive Analysis of Algorithms for an Online Distribution Problem. Algorithms. https://doi.org/10.3390/a17060237 -- Difference: applies competitive analysis to an online allocation problem; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[79] Dunke; Nickel. Correction to: Exact distributional analysis of online algorithms with lookahead. 4OR, 2021. https://doi.org/10.1007/s10288-021-00479-w.
+[79] Dunke; Nickel. (2021). Correction to: Exact distributional analysis of online algorithms with lookahead. 4OR. https://doi.org/10.1007/s10288-021-00479-w -- Difference: corrects the distributional analysis of lookahead; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[80] Dunke; Nickel. Exact distributional analysis of online algorithms with lookahead. 4OR, 2020. https://doi.org/10.1007/s10288-020-00442-1.
+[80] Dunke; Nickel. (2020). Exact distributional analysis of online algorithms with lookahead. 4OR. https://doi.org/10.1007/s10288-020-00442-1 -- Difference: analyses online algorithms exactly under lookahead; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[81] Jiao; Yuan; Feng. Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead. Asia-Pacific Journal of Operational Research, 2019. https://doi.org/10.1142/s0217595919500246.
+[81] Jiao; Yuan; Feng. (2019). Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead. Asia-Pacific Journal of Operational Research. https://doi.org/10.1142/s0217595919500246 -- Difference: schedules unit-length jobs online under batching constraints; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[82] Pinson; Spieksma. Online interval scheduling on two related machines: the power of lookahead. Journal of Combinatorial Optimization, 2019. https://doi.org/10.1007/s10878-019-00381-6.
+[82] Pinson; Spieksma. (2019). Online interval scheduling on two related machines: the power of lookahead. Journal of Combinatorial Optimization. https://doi.org/10.1007/s10878-019-00381-6 -- Difference: measures what lookahead buys in an online interval scheduling problem; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[83] Chen; Zhang; Xu. Online machine minimization with lookahead. Journal of Combinatorial Optimization, 2020. https://doi.org/10.1007/s10878-020-00633-w.
+[83] Chen; Zhang; Xu. (2020). Online machine minimization with lookahead. Journal of Combinatorial Optimization. https://doi.org/10.1007/s10878-020-00633-w -- Difference: treats lookahead as information in an online minimisation problem; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[84] Böhm; Chrobak; Jeż; Li; et al. Online packet scheduling with bounded delay and lookahead. Theoretical Computer Science, 2019. https://doi.org/10.1016/j.tcs.2019.01.013.
+[84] Böhm; Chrobak; Jeż; Li; et al. (2019). Online packet scheduling with bounded delay and lookahead. Theoretical Computer Science. https://doi.org/10.1016/j.tcs.2019.01.013 -- Difference: is the closest online-scheduling analogue of the foresight comparison here: what lookahead buys a packet scheduler; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[85] Lindermayr; Megow. Permutation Predictions for Non-Clairvoyant Scheduling. ACM Transactions on Parallel Computing, 2025. https://doi.org/10.1145/3711872.
+[85] Lindermayr; Megow. (2025). Permutation Predictions for Non-Clairvoyant Scheduling. ACM Transactions on Parallel Computing. https://doi.org/10.1145/3711872 -- Difference: feeds a permutation prediction to a non-clairvoyant scheduler, the information shape this model computes exactly; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[86] Zheng; Chen; Liu. Semi-online scheduling on two uniform parallel machines with initial lookahead. RAIRO - Operations Research, 2024. https://doi.org/10.1051/ro/2024042.
+[86] Zheng; Chen; Liu. (2024). Semi-online scheduling on two uniform parallel machines with initial lookahead. RAIRO - Operations Research. https://doi.org/10.1051/ro/2024042 -- Difference: measures the value of initial lookahead in semi-online scheduling; foresight here is a budget to be priced, not an algorithm to be improved: the paper quantifies what seeing k arrivals ahead is worth.
 
-[87] Collinson; Bai; Sinnen. A Fast Scalable Hardware Priority Queue and Optimizations for Multi-Pushes. 2024 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 2024. https://doi.org/10.1109/ipdpsw63119.2024.00038.
+[87] Collinson; Bai; Sinnen. (2024). A Fast Scalable Hardware Priority Queue and Optimizations for Multi-Pushes. 2024 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW). https://doi.org/10.1109/ipdpsw63119.2024.00038 -- Difference: scales a hardware priority queue with multi-push; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[88] Nurmi; Lindgren; Szymkowiak; Hämäläinen. AnTiQ: A Hardware-Accelerated Priority Queue Design with Constant Time Arbitrary Element Removal. 2023 26th Euromicro Conference on Digital System Design (DSD), 2023. https://doi.org/10.1109/dsd60849.2023.00070.
+[88] Nurmi; Lindgren; Szymkowiak; Hämäläinen. (2023). AnTiQ: A Hardware-Accelerated Priority Queue Design with Constant Time Arbitrary Element Removal. 2023 26th Euromicro Conference on Digital System Design (DSD). https://doi.org/10.1109/dsd60849.2023.00070 -- Difference: gives a hardware priority queue with constant-time removal, the device-side cost of the abstraction; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[89] (no author field in the record). Binary Heaps and Priority Queues. Thinking about Programs, 2025. https://doi.org/10.1145/3731333.3731359.
+[89] (no author field in the record). (2025). Binary Heaps and Priority Queues. Thinking about Programs. https://doi.org/10.1145/3731333.3731359 -- Difference: states the elementary heap-to-priority-queue correspondence; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[90] Grimes; Rodriguez; Hassan; Spear; et al. Brief Announcement: QPID: A Scalable, Strict Concurrent Priority Queue. Proceedings of the 38th ACM Symposium on Parallelism in Algorithms and Architectures, 2026. https://doi.org/10.1145/3816782.3819208.
+[90] Grimes; Rodriguez; Hassan; Spear; et al. (2026). Brief Announcement: QPID: A Scalable, Strict Concurrent Priority Queue. Proceedings of the 38th ACM Symposium on Parallelism in Algorithms and Architectures. https://doi.org/10.1145/3816782.3819208 -- Difference: gives a strictly concurrent priority queue; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[91] Michail. JHeaps: An open-source library of priority queues. SoftwareX, 2021. https://doi.org/10.1016/j.softx.2021.100869.
+[91] Michail. (2021). JHeaps: An open-source library of priority queues. SoftwareX. https://doi.org/10.1016/j.softx.2021.100869 -- Difference: packages priority-queue implementations as a library; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[92] Das; Pinotti, C. Parallel priority queues based on binomial heaps. Parallel Computing, 2000. https://doi.org/10.1016/s0167-8191(00)00064-8.
+[92] Das; Pinotti, C. (2000). Parallel priority queues based on binomial heaps. Parallel Computing. https://doi.org/10.1016/s0167-8191(00)00064-8 -- Difference: builds parallel priority queues on binomial heaps; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[93] Ioannou; Katevenis. Pipelined Heap (Priority Queue) Management for Advanced Scheduling in High-Speed Networks. IEEE/ACM Transactions on Networking, 2007. https://doi.org/10.1109/tnet.2007.892882.
+[93] Ioannou; Katevenis. (2007). Pipelined Heap (Priority Queue) Management for Advanced Scheduling in High-Speed Networks. IEEE/ACM Transactions on Networking. https://doi.org/10.1109/tnet.2007.892882 -- Difference: pipelines heap management for scheduling in high-speed networks; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[94] Brodal, S. Priority queues with decreasing keys. Theoretical Computer Science, 2024. https://doi.org/10.1016/j.tcs.2024.114563.
+[94] Brodal, S. (2024). Priority queues with decreasing keys. Theoretical Computer Science. https://doi.org/10.1016/j.tcs.2024.114563 -- Difference: treats priority queues whose keys only decrease, a monotone-input restriction; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[95] Sanders. Randomized Priority Queues for Fast Parallel Access. Journal of Parallel and Distributed Computing, 1998. https://doi.org/10.1006/jpdc.1998.1429.
+[95] Sanders. (1998). Randomized Priority Queues for Fast Parallel Access. Journal of Parallel and Distributed Computing. https://doi.org/10.1006/jpdc.1998.1429 -- Difference: makes a priority queue accessible in parallel at random; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[96] Arvind; Rangan. Symmetric Min-Max heap: A simpler data structure for double-ended priority queue. Information Processing Letters, 1999. https://doi.org/10.1016/s0020-0190(99)00014-9.
+[96] Arvind; Rangan. (1999). Symmetric Min-Max heap: A simpler data structure for double-ended priority queue. Information Processing Letters. https://doi.org/10.1016/s0020-0190(99)00014-9 -- Difference: simplifies double-ended priority-queue construction; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[97] Carlsson. The deap—a double-ended heap to implement double-ended priority queues. Information Processing Letters, 1987. https://doi.org/10.1016/0020-0190(87)90033-0.
+[97] Carlsson. (1987). The deap—a double-ended heap to implement double-ended priority queues. Information Processing Letters. https://doi.org/10.1016/0020-0190(87)90033-0 -- Difference: implements a double-ended priority queue; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[98] Ding; Weiss. The relaxed min-max heap. Acta Informatica, 1993. https://doi.org/10.1007/bf01179371.
+[98] Ding; Weiss. (1993). The relaxed min-max heap. Acta Informatica. https://doi.org/10.1007/bf01179371 -- Difference: gives a double-ended heap structure; this paper's quantity is the number of priority queues a bank needs, not the cost of implementing one.
 
-[99] (no author field in the record). RETRACTION : Design and Implementation of Network‐on‐chip Router Using Multi‐priority Based Iterative Round‐robin Matching With Slip. Transactions on Emerging Telecommunications Technologies, 2024. https://doi.org/10.1002/ett.5043.
+[99] (no author field in the record). (2024). RETRACTION : Design and Implementation of Network‐on‐chip Router Using Multi‐priority Based Iterative Round‐robin Matching With Slip. Transactions on Emerging Telecommunications Technologies. https://doi.org/10.1002/ett.5043 -- Difference: reports a network-on-chip router implementation, an adjacent interconnect setting; this paper measures a model rather than a deployment: its counts are exhaustive over arrival orders, not sampled from traffic.
 
-[100] Mashreghi-Moghadam; Ould-Bachir; Savaria. A Templated VHDL Architecture for Terabit/s P4-programmable FPGA-based Packet Parsing. 2022 IEEE International Symposium on Circuits and Systems (ISCAS), 2022. https://doi.org/10.1109/iscas48785.2022.9937607.
+[100] Mashreghi-Moghadam; Ould-Bachir; Savaria. (2022). A Templated VHDL Architecture for Terabit/s P4-programmable FPGA-based Packet Parsing. 2022 IEEE International Symposium on Circuits and Systems (ISCAS). https://doi.org/10.1109/iscas48785.2022.9937607 -- Difference: reports a packet-parsing architecture at terabit scale; this paper measures a model rather than a deployment: its counts are exhaustive over arrival orders, not sampled from traffic.
 
-[101] Magadum; Singh; Kushwaha. CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time. 2025 34th International Conference on Computer Communications and Networks (ICCCN), 2025. https://doi.org/10.1109/icccn65249.2025.11134021.
+[101] Magadum; Singh; Kushwaha. (2025). CT-PIFO: A Congruity Tree Based Packet Scheduler to Improve Flow Completion Time. 2025 34th International Conference on Computer Communications and Networks (ICCCN). https://doi.org/10.1109/icccn65249.2025.11134021 -- Difference: reports flow completion time as the end-to-end cost of the scheduler; this paper measures a model rather than a deployment: its counts are exhaustive over arrival orders, not sampled from traffic.
 
-[102] Hui; Yang; Wang. Leveraging SmartNIC for Ring AllReduce Offloading. 2024 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA), 2024. https://doi.org/10.1109/ispa63168.2024.00030.
+[102] Hui; Yang; Wang. (2024). Leveraging SmartNIC for Ring AllReduce Offloading. 2024 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA). https://doi.org/10.1109/ispa63168.2024.00030 -- Difference: offloads a collective to a SmartNIC; this paper measures a model rather than a deployment: its counts are exhaustive over arrival orders, not sampled from traffic.
 
-[103] Wang; Kong. Offloading IP Packet Fragmentation from CPU to SmartNIC Using P4. ICC 2026 - IEEE International Conference on Communications, 2026. https://doi.org/10.1109/icc59461.2026.11587563.
+[103] Wang; Kong. (2026). Offloading IP Packet Fragmentation from CPU to SmartNIC Using P4. ICC 2026 - IEEE International Conference on Communications. https://doi.org/10.1109/icc59461.2026.11587563 -- Difference: offloads packet handling to a SmartNIC in P4; this paper measures a model rather than a deployment: its counts are exhaustive over arrival orders, not sampled from traffic.
 
-[104] Wang; Zhao; Zhang; Xu; et al. OXDP: Offloading XDP to SmartNIC for Accelerating Packet Processing. 2022 IEEE 28th International Conference on Parallel and Distributed Systems (ICPADS), 2023. https://doi.org/10.1109/icpads56603.2022.00103.
+[104] Wang; Zhao; Zhang; Xu; et al. (2023). OXDP: Offloading XDP to SmartNIC for Accelerating Packet Processing. 2022 IEEE 28th International Conference on Parallel and Distributed Systems (ICPADS). https://doi.org/10.1109/icpads56603.2022.00103 -- Difference: offloads packet processing to a SmartNIC; this paper measures a model rather than a deployment: its counts are exhaustive over arrival orders, not sampled from traffic.
 

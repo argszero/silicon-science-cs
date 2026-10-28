@@ -6,7 +6,7 @@
 ./reproduce.sh
 ```
 
-**Expected final line:** `REPRODUCE: ALL GREEN (5 steps)`. **Exit status:** the number of failed
+**Expected final line:** `REPRODUCE: ALL GREEN (6 steps)`. **Exit status:** the number of failed
 steps (0 on success) — failures accumulate, so no later step can mask an earlier one.
 
 **The step count is checked, not remembered.** A final check compares the number of steps this
@@ -14,9 +14,22 @@ script executes with the count it declares, with the denominator in every step l
 verdict line quoted in `README.md` and in the manuscript's reproducibility section. A second copy of
 the program that nothing reads is how the same drift appeared on #128, #145 and #149.
 
-**Expected runtime:** about 10 minutes on one core (measured 584 s on the reference machine,
-including the `n = 8` rule cells the registered criteria require). The cost is exhaustive enumeration, not
-sampling: the largest single sweep evaluates 5,040 arrival orders at every queue count.
+**The bibliography's entry form is checked by entry block, not by line.** `check_references.py`
+reads the `## References` section as blocks — one paragraph is one entry, which is also the unit a
+renderer prints as one paragraph — asserts the components in the order the house style resolves them
+(`[n]`, the authors, the year in parentheses, the title, the venue, a resolvable URL, and the entry
+closing with its one-line `Difference:`), and prints one line per entry with each component's length
+so a reader can see which component moved. It reads and writes nothing else. The check was
+demonstrated **red before it was trusted**: run against the manuscript at `5809544` it reports 208
+problems, two per entry (no parenthesised year, no closing `Difference:`), which is exactly the
+editorial finding it exists to keep fixed.
+
+**Expected runtime:** about 10 minutes on one core (measured **564 s** on the reference machine for
+the six steps below, including the `n = 8` rule cells the registered criteria require; the editorial
+triage of 2026-10-28 read **668 s** on its own host, which is a machine difference and not a change
+in the work — this sentence names the machine its number came from). The cost is exhaustive
+enumeration, not sampling: the largest single sweep evaluates 5,040 arrival orders at every queue
+count.
 
 **Tolerance:** none, and none is possible. Every step is exhaustive enumeration over a finite set
 of windows with no sampling and no random seeds, so every output is an exact integer count or an

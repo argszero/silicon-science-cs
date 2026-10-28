@@ -18,7 +18,7 @@ FAILED=0
 # defect that appeared on #128, #145 and #149, so here the program decides: TOTAL_STEPS is declared
 # once, every label's "N/M" is checked against it, and both prose carriers are grepped for the
 # verdict line this script actually prints.
-TOTAL_STEPS=5
+TOTAL_STEPS=6
 EXECUTED=0
 
 step() {
@@ -46,16 +46,18 @@ step() {
     return 0
 }
 
-step "1/5 results: certificate, threshold statistics, gap distributions, rule control" \
+step "1/6 results: certificate, threshold statistics, gap distributions, rule control" \
      "$PY" emit_results.py
-step "2/5 figure: the discipline-gap figure, redrawn from results.json" \
+step "2/6 figure: the discipline-gap figure, redrawn from results.json" \
      "$PY" make_figure.py
-step "3/5 check: every stored summary recomputed from its rows" \
+step "3/6 check: every stored summary recomputed from its rows" \
      "$PY" check_results.py
-step "4/5 references: the placement still resolves and still matches the committed artifact" \
+step "4/6 references: the placement still resolves and still matches the committed artifact" \
      "$PY" place_refs.py --check
-step "5/5 manuscript: every number still binds, every reference is still cited, bytes unchanged" \
+step "5/6 manuscript: every number still binds, every reference is still cited, bytes unchanged" \
      "$PY" make_manuscript.py --check
+step "6/6 reference form: every entry prints the house components in the house order, read by entry block" \
+     "$PY" check_references.py
 
 # ---- the step count is checked, not remembered -------------------------------
 printf '== step count\n'
