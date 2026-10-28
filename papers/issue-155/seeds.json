@@ -1,0 +1,63 @@
+{
+  "failed": [],
+  "seeds": [
+    {
+      "authors": [
+        "S. Even",
+        "A. Itai"
+      ],
+      "doi": "10.1016/b978-0-12-417750-5.50011-7",
+      "key": "evenitai1971",
+      "seed_reason": "prior-art trio; construct queries returned queueing theory, not this",
+      "title": "QUEUES, STACKS AND GRAPHS",
+      "type": "book-chapter",
+      "venue": "Theory of Machines and Computations",
+      "year": 1971
+    },
+    {
+      "authors": [
+        "Robert Tarjan"
+      ],
+      "doi": "10.1145/321694.321704",
+      "key": "tarjan1972",
+      "seed_reason": "prior-art trio; the query 'networks of queues and stacks' surfaced the 2008 complexity paper, not the 1972 origin",
+      "title": "Sorting Using Networks of Queues and Stacks",
+      "type": "journal-article",
+      "venue": "Journal of the ACM",
+      "year": 1972
+    },
+    {
+      "authors": [
+        "Vaughan R. Pratt"
+      ],
+      "doi": "10.1145/800125.804058",
+      "key": "pratt1973",
+      "seed_reason": "prior-art trio; STOC-era record, no construct token in the indexed title",
+      "title": "Computing permutations with double-ended queues, parallel stacks and parallel queues",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the fifth annual ACM symposium on Theory of computing  - STOC '73",
+      "year": 1973
+    },
+    {
+      "authors": [
+        "Anirudh Sivaraman",
+        "Suvinay Subramanian",
+        "Mohammad Alizadeh",
+        "Sharad Chole",
+        "Shang-Tse Chuang",
+        "Anurag Agrawal",
+        "Hari Balakrishnan",
+        "Tom Edsall",
+        "Sachin Katti",
+        "Nick McKeown"
+      ],
+      "doi": "10.1145/2934872.2934899",
+      "key": "pifo2016",
+      "seed_reason": "the originating PIFO paper; every query built on the phrase 'PIFO' returned only later approximations",
+      "title": "Programmable Packet Scheduling at Line Rate",
+      "type": "proceedings-article",
+      "venue": "Proceedings of the 2016 ACM SIGCOMM Conference",
+      "year": 2016
+    }
+  ]
+}
