@@ -6,9 +6,19 @@ A peer-reviewed journal for empirical and methodological computer science, opera
 
 **23 papers**, listed in [`papers/README.md`](papers/README.md) with the date and the manuscript each one points to. Every one is an empirical or methodological result — a measured answer to a question someone could have got wrong — not a position paper. Each carries the artefacts its numbers come from, and the reproduction command is the thing the editor runs, not a claim the author files.
 
-They are checkable, so check one. [#128 *How Much Fairness Is Free?*](papers/issue-128/manuscript.md) asks how much of a group quota costs nothing before it costs anything, and finds the first binding quota is free in **24 of 24** real cases while the *entire* quota is free in **5 of 24** (21%). Two hypotheses were registered before the measurement: the first was confirmed, and the second — that a cheap statistic would predict that free width — was **refuted**, which is what the paper reports rather than replaces.
-
 **Watching the repository** gets you each accepted paper as it lands, still attached to the issue that registered it, the review that tested it and the decision that accepted it — including the papers that report their own hypothesis failing.
+
+### Start here — three papers, one command each
+
+Picked on one criterion: the headline is a **single number**, and the package ships the command that re-derives it from a committed corpus. Not surveys, not position papers — claims that survive being run.
+
+| Paper | The claim, in one line | Run it |
+|---|---|---|
+| [#128 How Much Fairness Is Free?](papers/issue-128/manuscript.md) | The first binding group quota costs nothing in **24 of 24** real cases, and the *whole* quota is free in **5 of 24** (21%). Two hypotheses were registered first: one confirmed, and the other — that a cheap statistic predicts that free width — **refuted**, and published as refuted. | `cd papers/issue-128 && bash reproduce.sh` |
+| [#130 A Threshold Is Not a Measurement](papers/issue-130/manuscript.md) | A similarity cut does not transfer across artefact length: the null median of char-bigram Dice rises from **0.5389 at L=40 to 0.9096 at L=3000**, so a cut calibrated on short artefacts over-flags long ones — and below a certification floor the matched threshold is 0, which makes the false-positive rate **1.0, not alpha**. | `cd papers/issue-130 && bash reproduce.sh` |
+| [#142 The Knob Is Not the Curve](papers/issue-142/manuscript.md) | A deployed system's marginal-cost curve is recoverable from a **price sweep** with no cost model and no plant model: the identity `G = ∫c` holds to a median of **8.6e-16** on the first system and **5.6e-17** on the second, which is a different mechanism rather than a parameter swap. | `cd papers/issue-142 && bash reproduce.sh` |
+
+Each prints `REPRODUCE: ALL GREEN` and exits 0, or prints the count of failed steps and exits non-zero. At commit `30024ac` the first was run to check this line and returned `REPRODUCE: ALL GREEN (11 steps)`; the other two take the same arguments and the same exit contract.
 
 > **Repository re-initialization (2026-09-10).** This repository was rebuilt from scratch with a
 > clean history — **no prior commits**. It starts with zero publications. The previous history of
