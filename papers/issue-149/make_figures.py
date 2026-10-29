@@ -26,6 +26,7 @@ Usage:
     python3 make_figures.py --check-table  # compare manuscript.md's table block to the render
 """
 
+import io
 import json
 import os
 import re
@@ -90,7 +91,14 @@ def render_table(rates):
           "closure_difference_share", "closure_difference_wilson")),
         ("…of those, whose alternative versions add or remove a dependency",
          (None, "ambiguous_edges", "closure_shape_share", "closure_shape_wilson")),
-        ("declarations at risk that lose determination within 12 months",
+        # The label used to read "declarations at risk that lose determination within 12 months",
+        # which is a TIME quantity, while the cell is declarations_under_determined /
+        # declarations_with_edges -- the share under-determined AT BIRTH. The same word "at risk"
+        # means two different sets in this package (rates.json: declarations with >=1 evaluable
+        # edge; decay.json: edges singleton at k=0, which on PyPI is empty at every k and is why
+        # its curve is NOT RUN). The row now names the quantity it reports and the decay's own
+        # declaration-level loss is quoted in §7.2 where the panel lives.
+        ("declarations whose install is under-determined at birth (>=1 evaluable edge)",
          ("declarations_under_determined", "declarations_with_edges",
           "declarations_share_under_determined_at_risk",
           "declarations_under_determined_wilson_at_risk")),
@@ -107,7 +115,7 @@ def render_table(rates):
     return "\n".join(out)
 
 
-def check_table(rates):
+def check_table(rates, depth2=None):
     text = open(MANUSCRIPT, encoding="utf-8").read()
     if text.count(OPEN_MARK) != 1 or text.count(CLOSE_MARK) != 1:
         print("  [FAIL] manuscript.md carries %d open and %d close table markers, expected 1 and 1"
@@ -126,18 +134,26 @@ def check_table(rates):
         return 1
     print("  [ok]   TABLE: IN SYNC (%d rows, every cell a count, a share and an interval from rates.json)"
           % (len(want.split("\n")) - 4))
-    return check_prose_rates(text, rates)
+    return check_prose_rates(text, rates, depth2)
 
 
-def check_prose_rates(text, rates):
-    """Every `X% [a, b]` the results section prints must be a rate the artifacts hold.
+def check_prose_rates(text, rates, depth2=None):
+    """Every rate the body prints must be a rate some artifact holds -- in the whole body, not §7.
 
     A table that is generated does not protect the sentence beside it: this package shipped
     `15.5% [11.3, 21.0]` while the artifact's lower bound was `0.1124951` -- 11.2495 %, which
     rounds to **11.2**. The editorial spot-check compared `0.1125` against `11.3` and passed it,
-    which is what a bound read to four decimals and then to one can do. So the prose is read too:
-    the triple (share, lower, upper) is taken from the sentence and matched against the pairs the
-    artifact holds, at the precision the sentence prints.
+    which is what a bound read to four decimals and then to one can do.
+
+    The first version of this check read §7 only, and that window is what let `costs 153 pins where
+    a full lockfile costs 906 (31.0%)` ship in §3.1: the sentence sits outside §7, the artifact holds
+    281, and 281/906 = 31.0 % while 153/906 = 16.9 %, so the count and its own percentage refute each
+    other in a sentence no gate read. Two rules now cover the whole body:
+
+      * every `X% [a, b]` triple must be a (share, lower, upper) some artifact holds;
+      * every sentence that mentions pins must have all its whole numbers held by depth2.json's own
+        summary fields, because that sentence is pricing a certificate and the artifact owns both
+        the certificate and the baseline.
     """
     held = set()
     for eco, v in rates["ecosystems"].items():
@@ -146,24 +162,76 @@ def check_prose_rates(text, rates):
                 w = v.get(key.replace("_share", "_wilson"))
                 if isinstance(w, list) and len(w) == 2:
                     held.add((round(100 * val, 1), round(100 * w[0], 1), round(100 * w[1], 1)))
-    body = text[text.index("## 7. Results"):text.index("## 8. Related work")]
-    body = body.replace(render_table(rates), "")        # the table is checked above
+    pins_ints, pins_pct = set(), set()
+    # the confirming brute check's population lives in rates.json, and the prose that quotes it sits
+    # in a sentence that is also pricing a certificate, so this gate reads both artifacts
+    for eco, v in rates["ecosystems"].items():
+        cert = v.get("certificate") or {}
+        for _, vv in cert.items():
+            if isinstance(vv, int) and not isinstance(vv, bool):
+                pins_ints.add(vv)
+    if depth2:
+        for eco, v in depth2.get("ecosystems", {}).items():
+            for key, val in v.items():
+                if key in ("rows",):
+                    continue
+                if isinstance(val, int) and not isinstance(val, bool):
+                    pins_ints.add(val)
+                elif isinstance(val, dict):
+                    for _, vv in val.items():
+                        if isinstance(vv, int) and not isinstance(vv, bool):
+                            pins_ints.add(vv)
+            e = v.get("exceptions") or {}
+            if isinstance(e.get("rate"), float) and isinstance(e.get("wilson95"), list):
+                lo, hi = e["wilson95"]
+                held.add((round(100 * e["rate"], 1), round(100 * lo, 1), round(100 * hi, 1)))
+            for base in ("baselines", "baselines_excluding_exceptions"):
+                b = v.get(base) or {}
+                if isinstance(b.get("pins_certificate"), int) and isinstance(b.get("pins_pin_everything"), int):
+                    pins_pct.add(round(100.0 * b["pins_certificate"] / b["pins_pin_everything"], 1))
+            if isinstance(v.get("price_delta_points"), float):
+                pins_pct.add(v["price_delta_points"])
+    body = text.replace(render_table(rates), "")        # the table is checked above
     pat = re.compile(r"(\d+\.\d)%\s*\[(\d+\.\d+),\s*(\d+\.\d+)\]")
-    total = 0
-    bad = 0
+    total, bad = 0, 0
     for m in pat.finditer(body):
         total += 1
         triple = (float(m.group(1)), float(m.group(2)), float(m.group(3)))
         if triple not in held:
             bad += 1
             near = sorted(held, key=lambda h: abs(h[0] - triple[0]))[:1]
-            print("  [FAIL] the results section prints %s%% [%s, %s], which no artifact holds "
+            print("  [FAIL] the body prints %s%% [%s, %s], which no artifact holds "
                   "(nearest rate the artifacts hold: %.1f%% [%.1f, %.1f])"
                   % (m.group(1), m.group(2), m.group(3), near[0][0], near[0][1], near[0][2]))
+    if not depth2:
+        print("  [FAIL] depth2.json could not be read, so the certificate's price sentence is not checked")
+        return 1
+    ints = 0
+    # The unit is the SENTENCE, not the paragraph: the first version of this rule read paragraphs,
+    # and a paragraph that prices a certificate also carries every other count in it, so the rule
+    # fired on 19 unrelated numbers and on none of the ones it was written for. A window wide
+    # enough to hold the defect is only useful if it is narrow enough to name it.
+    for sentence in re.split(r"(?<=[.!?])\s+", body):
+        if "pins" not in sentence:
+            continue
+        for m in re.finditer(r"(?<![\d.])(\d{2,})(?![\d.]*\d)", sentence):
+            ints += 1
+            if int(m.group(1)) not in pins_ints:
+                bad += 1
+                print("  [FAIL] a sentence pricing pins prints %s, which depth2.json does not hold "
+                      "(it holds: %s)" % (m.group(1), ", ".join(str(x) for x in sorted(pins_ints))))
+        # a percentage that opens an interval triple is the first rule's business, not this one
+        for m in re.finditer(r"(\d+\.\d)%(?!\s*\[)", sentence):
+            ints += 1
+            if float(m.group(1)) not in pins_pct:
+                bad += 1
+                print("  [FAIL] a sentence pricing pins prints %s%%, which is not a certificate/pins "
+                      "share depth2.json implies (%s)"
+                      % (m.group(1), ", ".join("%.1f" % x for x in sorted(pins_pct))))
     if bad:
         return 1
-    print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements in §7, all of them the "
-          "artifact's own numbers)" % total)
+    print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements and %d pin-price integers "
+          "across the whole body, all of them the artifacts' own numbers)" % (total, ints))
     return 0
 
 
@@ -300,8 +368,24 @@ def main(argv):
     if "--table" in argv:
         print(render_table(rates))
         return 0
+    if "--write-table" in argv:
+        # `--table` only printed, so the one artifact the table block is compared against could not
+        # be written by the package that renders it: a hand edit was the only way to move the block,
+        # which is the defect the comparison exists to prevent.
+        text = io.open(MANUSCRIPT, encoding="utf-8").read()
+        if text.count(OPEN_MARK) != 1 or text.count(CLOSE_MARK) != 1:
+            print("  [FAIL] manuscript.md carries %d open and %d close table markers"
+                  % (text.count(OPEN_MARK), text.count(CLOSE_MARK)))
+            return 1
+        a = text.index(OPEN_MARK)
+        b = text.index(CLOSE_MARK) + len(CLOSE_MARK)
+        io.open(MANUSCRIPT, "w", encoding="utf-8").write(text[:a] + render_table(rates) + text[b:])
+        print("  [ok]   wrote the table block from rates.json")
+        return 0
     if "--check-table" in argv:
-        return check_table(rates)
+        d2path = os.path.join(HERE, "depth2.json")
+        depth2 = json.load(open(d2path, encoding="utf-8")) if os.path.exists(d2path) else None
+        return check_table(rates, depth2)
     return render_figure(decay)
 
 

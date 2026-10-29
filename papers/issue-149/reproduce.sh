@@ -73,7 +73,7 @@ PINS
 
 # ---------------------------------------------------------------- 2 plants
 step "2 known-answer plants"
-for pair in "ambiguous.py 7" "depth2.py 3" "decay.py 7"; do
+for pair in "ambiguous.py 7" "depth2.py 7" "decay.py 7"; do
   set -- $pair
   out=$("$PY" "$1" --check 2>&1)
   if printf '%s' "$out" | grep -q "FAILED"; then

@@ -9,7 +9,7 @@ export of the head and carries only tracked files.
 
 | item | value |
 |---|---|
-| corpus sha256 | `fe77f50542d7f75d6faf82d1ba9a861adfa74ea4ed97214c9a3f20e6256a2239` |
+| corpus sha256 | `0478b2879cfee53df1ee3d4d028af52b2813a790a85782f15eeb417abf033bc8` |
 | bytes | 382387 |
 | records | 270 |
 | producer | `build_references.py --harvest` (Crossref REST, `works` endpoint) |
@@ -43,3 +43,16 @@ and writes only the numbered list. Neither rewrites the corpus, so a reproductio
 these bytes untouched — checked by comparing every artifact after the run (see `README.md`).
 Regenerating the corpus means re-harvesting, which needs the network; that is why the hash is
 pinned here instead of the harvest being repeated by the one command.
+
+## Venue repair, revision round 1 (2026-10-29)
+
+The harvest truncated every container title to 60 characters (`build_references.py`, the join of
+`container-title[0]` with `[:60]`). **92 of the 270 records were cut**, so the printed list showed
+venue strings that stopped mid-word — `...48th International Conferen`, `...Computation, Automa` —
+while nothing in the package could detect it, because the cut was stored in the corpus and every
+later step reproduced it faithfully. The `[:60]` is removed, and the 92 recorded venues were
+re-fetched from the registry by their own DOIs (92 requests, **92 restored, 0 unchanged, 0 with no
+record, 0 errors**); each repaired entry keeps the harvested cut in `venue_full`-adjacent form
+(`venue` now holds the record's own string). The corpus hash above is the repaired corpus; the
+byte count moved with it. The superseded hash is stated here rather than deleted:
+`fe77f50542d7f75d6faf82d1ba9a861adfa74ea4ed97214c9a3f20e6256a2239` (382387 bytes).

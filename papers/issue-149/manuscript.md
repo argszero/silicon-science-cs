@@ -21,8 +21,13 @@ loses 10 times and wins 0. The second ecosystem supports only the birth-state ha
 PyPI's decay curve is **not run by construction**, because a declaration that is already
 multi-valued when written has no determination left to lose. We also price the alternative: a
 minimum certificate that recovers determination costs 31.0% of a lockfile's pins on npm and 95.8%
-on PyPI, because the certificate can never be smaller than the number of ambiguous edges — a
-closed form we prove and then confirm by exhaustive search on 454 declarations. The decision this
+on PyPI, because the certificate can never be smaller than the number of ambiguous edges unless two
+of those edges are functionally dependent — a closed form we prove under that condition and then
+test by exhaustive search on 389 npm and 65 PyPI declarations, where the condition fails in 34 of
+the 172 npm
+instances that have an ambiguous edge (19.8% [14.5, 26.4], from 7 declaring packages, one record
+each) and in none of PyPI's 63. This is a **case study** of two registries, measured once, in one
+snapshot, with one instrument; we claim no general law of package managers. The decision this
 speaks to is small and current: a maintainer choosing between `^1.3.0` and `1.3.0` today is choosing
 which stratum their consumers' installs will live in, and a tool author deciding whether a lockfile
 is worth its cost is choosing against the price measured here. We claim no construction: what we
@@ -119,18 +124,31 @@ differently?
 
 This is where the paper's earlier construction ambition failed, and the failure is informative.
 The registered plan was a *minimal distinguishing key*: a small set of packages whose recorded
-versions would pin the whole install, argued via a vertex-cover bound. Enumerating solution sets
-exactly for 292 npm and 63 PyPI instances gives a median `|K*|/|M|` of **1.0** in both
-ecosystems: the certificate is never smaller than the number of ambiguous edges. The vertex-cover
-bound is valid but not attained, because the ambiguity graph of an independent product is a clique
-— whose cover is `|M| - 1` — and no cover of that size determines an install. The bounds we
+versions would pin the whole install, argued via a vertex-cover bound. Two instance populations are
+in play here and they are not the same set: the median below is taken over the **292 npm and 63 PyPI
+instances whose closure is small enough to enumerate exactly** (skipping 653 and 178 whose product of
+domains is too large at depth 1, and 48 and 0 with no feasible solution), while the confirming brute
+search quoted two paragraphs down covers **389 npm and 65 PyPI** entries of the depth-1 artifact
+(skipping 604 and 199 as too large to enumerate): the second set is wider because its certificate
+check does not need the full solution set.
+Enumerating solution sets exactly for the 292 and 63 gives a median `|K*|/|M|` of **1.0** in both
+ecosystems, and the identity `|K*| = |M|` holds in **138 of the 172** npm instances that have an
+ambiguous edge and in all 63 PyPI instances. The vertex-cover
+bound is valid and **attained**: in **14** npm instances `|K*| = τ = |M| - 1`, because the ambiguity
+graph of an independent product is a clique whose cover is `|M| - 1`, and there a cover of that size
+does determine an install. The bounds we
 registered came from the approximation literature on set cover, whose guarantees are stated for
 the general weighted form [31, 47];
 our unit-cost instance is the degenerate case of that form, which is why the guarantee there is
 true and yet silent about the structure we actually have. Functional
-dependence between packages is the only mechanism that could compress the certificate, and in the
-data it does not appear; we can exhibit it only in a synthetic plant, which we label as such (§6).
-Savings, where they exist at all, are 11.6% of instances on npm (34/292) and 0% on PyPI.
+dependence between packages is the only mechanism that can compress the certificate below `|M|`,
+**and it is in the data**: in the remaining **34 of those 172** npm instances (19.8 % [14.5, 26.4])
+the certificate is smaller than `|M|`, drawn from 7 distinct declaring packages, and in every one of
+them the saving is exactly one record. An earlier draft of this section reported the mechanism as
+absent and exhibited it only in a synthetic plant; that reading was wrong and §3.1 states the lemma
+under the condition it actually needs, with the condition measured rather than assumed. The plant is
+kept in §6 and in `depth2.py --check`, where it is now a check on the detector instead of the only
+witness of the phenomenon.
 
 So the coupling leg is reported at cost, not as a system: the certificate **is** the list of
 ambiguous edges, and the honest content of this section is the lemma and its price. The lemma is
@@ -152,21 +170,42 @@ Maven Central [56], peer-dependency resolution loops
 [102], and yanked-release behaviour — the impossibility
 argument's own exception, which we count rather than assume away [58].
 
-### 3.1 The certificate cannot be compressed
+### 3.1 The certificate cannot be compressed, unless two edges are dependent
 
-**Lemma.** For one declaration, let `M` be the set of ambiguous edges and `K*` a minimum set of
-(package, version) records that determines the install. Then `|K*| = |M|`.
+**Lemma (conditional on independence).** For one declaration, let `M` be the set of ambiguous edges
+and `K*` a minimum set of (package, version) records that determines the install. If no coordinate
+of the solution set is a function of the others — formally, if two solutions agreeing on every
+coordinate outside `{p}` always agree on `p` as well, for every `p ∈ M` — then `|K*| = |M|`.
 
-*Lower bound.* For each `p ∈ M` there exist two solutions that differ only at `p`. Any record that
-determines the install must distinguish them, so `p ∈ K`. Hence `|K| ≥ |M|`.
+*Lower bound.* Under that condition, for each `p ∈ M` there exist two solutions that differ only at
+`p`. Any record that determines the install must distinguish them, so `p ∈ K`. Hence `|K| ≥ |M|`.
 
 *Upper bound.* Recording the version of every `p ∈ M` leaves every remaining domain a singleton, so
 the install is determined. Hence `|K| ≤ |M|`. ∎
 
-The consequence is a price rather than a design. Recording the ambiguous edges costs 153 pins
-where a full lockfile costs 906 (31.0%) on the npm instances, and 115 where a lockfile costs 120
-(95.8%) on the PyPI instances. On PyPI the certificate is barely cheaper than pinning everything,
-which is what an ecosystem whose declarations are already multi-valued should look like.
+Independence is the lemma's hypothesis, not a convenience, and the package measures it instead of
+asserting it. `depth2.py` reports for every ambiguous coordinate the smallest other coordinate that
+determines it, and the two directions agree exactly: **34 of the 172 npm instances** with an
+ambiguous edge have `|K*| < |M|` (19.8 % [14.5, 26.4], over 7 distinct declaring packages), **all 34
+carry a measured functional determiner, and no instance with a determiner needs `|M|` records**;
+PyPI's 63 instances carry none (0 % [0, 5.7]). The saving never exceeds one record — the histogram
+over the 34 is `{1: 34}` — so the condition buys one package per declaration, not a construction.
+
+The smallest exception is `accepts@1.3.4`. `mime-types` is ambiguous over 20 versions and `mime-db`
+is ambiguous over 20 versions, yet recording `mime-types` determines `mime-db`, because `mime-types`
+is the only package that declares it and each of its versions admits exactly one `mime-db`
+(`~1.29.0` → 1.29.0, `~1.30.0` → 1.30.0, …, exact `1.40.0` → 1.40.0). The 20 solutions are a
+bijection between the two domains, so one record covers both: `|K*| = 1 < |M| = 2`. The other 33
+exceptions are the same shape at larger closures, 6 of them in `@eslint/config-array` versions.
+
+The consequence is a price rather than a design. Recording the ambiguous edges costs **281 pins
+where a full lockfile costs 906 (31.0 %)** on the 292 npm instances, and **115 where a lockfile
+costs 120 (95.8 %)** on the 63 PyPI instances. The pooled figure contains its own tail and the tail
+moves it: excluding the 34 dependent instances the same certificate costs **211 pins against 778,
+i.e. 27.1 %**, so dependence is worth 3.9 points of the price and a reader who wants the price of
+the lemma's own population should read 27.1 %. On PyPI the certificate is barely cheaper than
+pinning everything, which is what an ecosystem whose declarations are already multi-valued should
+look like.
 
 ---
 
@@ -356,7 +395,8 @@ range is ambiguous in a way that rarely changes the next layer — the same rang
 versions whose own declarations agree.
 
 **Table 1.** The four rates this paper's claims rest on, each as a count, a share and a 95 % Wilson
-interval. Every cell is read from `rates.json` by `make_figures.py`, which refuses to print a count
+interval. All four are birth-state rates: none of them is a change over time, and the decay the paper
+also reports is a separate measurement over a panel (§7.2, §7.3). Every cell is read from `rates.json` by `make_figures.py`, which refuses to print a count
 the artifact does not imply; the table block below is compared against that render on every run
 (`reproduce.sh`, step 9), so a hand-edited cell fails the package rather than ageing in place.
 
@@ -366,7 +406,7 @@ the artifact does not imply; the table block below is compared against that rend
 | edges whose range admits more than one version (depth 1) | 322/2427 = 13.3% [12.0, 14.7] | 213/226 = 94.2% [90.4, 96.6] |
 | …of those, whose alternative versions constrain further dependencies differently | 111/322 = 34.5% [29.5, 39.8] | 33/213 = 15.5% [11.2, 21.0] |
 | …of those, whose alternative versions add or remove a dependency | 30/322 = 9.3% [6.6, 13.0] | 14/213 = 6.6% [4.0, 10.7] |
-| declarations at risk that lose determination within 12 months | 142/462 = 30.7% [26.7, 35.1] | 86/86 = 100.0% [95.7, 100.0] |
+| declarations whose install is under-determined at birth (>=1 evaluable edge) | 142/462 = 30.7% [26.7, 35.1] | 86/86 = 100.0% [95.7, 100.0] |
 <!-- /table:rates -->
 
 The two rows in the middle are the ones that separate a rate from a consequence: an edge whose
@@ -381,9 +421,11 @@ boundedness — an unbounded range cannot stay determined, a bounded one decays 
 accumulate inside its bound, and an exact pin has nothing to accumulate.
 
 The control that makes this a statement about syntax: on the **16 target packages** for which both
-an exact and a caret declaration exist, exact outlives caret on **10** targets and caret outlives
-exact on **0**. On the 11 targets where caret and tilde coexist the two are tied (1 and 1). The
-effect is carried by the range text, not by which package is popular or hard-working.
+an exact and a caret declaration exist, exact outlives caret on **10** targets, caret outlives exact
+on **0**, and the remaining **6** are undecided (both strata reach the horizon or neither does, so
+the pair separates nothing). On the **11** targets where caret and tilde coexist the counts are 1 and
+1 and the other **9** are tied. The effect is carried by the range text, not by which package is
+popular or hard-working.
 
 ![Figure 1](figures/decay-curve.svg)
 
@@ -477,10 +519,14 @@ once the question is posed correctly; its value is that it rules out the compres
 and turns the certificate into a price. We do not present it as deep theory, and the reader should
 not read §3 as a construction.
 
-**The functional-dependence mechanism is witnessed only by a plant.** In principle a functional
-dependency between packages can compress the certificate below `|M|`. We can construct such a case
-and our instrument finds it; the registries in this study contain none. Any claim that certificates
-*can* be compressed rests on synthetic data and is labelled as such.
+**Functional dependence is measured, and it is narrow.** A dependency between packages can compress
+the certificate below `|M|`, and it does so in 34 of the 172 npm instances that have an ambiguous
+edge. We detect it per coordinate instead of assuming it: the detector names the determining package
+where one exists, fires on a constructed bijection and stays silent on an independent closure
+(`depth2.py --check`), and finds nothing in PyPI's 63 instances. What this does not license is a
+claim about how much compression is possible anywhere else. The saving is one record in 34 of 34
+observed cases, over 7 distinct declaring packages, so the exception rate is the rate of a narrow
+phenomenon in two populations, not a bound on the phenomenon itself.
 
 **All three legs are measured on one snapshot, and the price moved when it changed.** An earlier
 depth-2 artifact had been computed before the panel extension, so the prices were quantities
@@ -513,23 +559,26 @@ the ecosystem or the package. Two registries, one instrument: 13.3% of evaluable
 ambiguous against 94.2% on PyPI, and within npm the survival of determination over twelve months is
 ordered exact 1.000, tilde 0.980, caret 0.781, with the same-package control showing the syntax
 rather than the package carrying the effect. The minimum certificate that recovers determination
-cannot be smaller than the number of ambiguous edges, which makes it a price rather than a design:
-31.0% of a lockfile on npm, 95.8% on PyPI. What we did not find — a compression mechanism, or a
-decay curve on PyPI — we report as not found, with the counts that show the search was made.
+cannot be smaller than the number of ambiguous edges unless two of them are functionally dependent —
+a condition that fails in 34 of the 172 npm instances and in none of PyPI's 63 — which makes it a
+price rather than a design:
+31.0% of a lockfile on npm, 95.8% on PyPI. What we did not find — a compression larger than one record, or a decay curve on PyPI — we report as
+not found, with the counts that show the search was made.
 
 ---
 
 ## Contribution level
 
-We declare **`theory+empirics`**, against that level's own test: two independent systems validated
-with one instrument (npm and PyPI), ground truth that is mechanical rather than annotated (set
-cardinality over published metadata), a stated theory result used as a bound (`|K*| = |M|`, with the
-registered vertex-cover bound shown valid but unattained), and baselines against which the
-certificate is priced (pin-everything and pin-direct-only). We do not claim a construction: the
-certificate leg reduces to a closed form and a price, and §3 says so. If a reader holds that the
-analytic statements are too close to definitional to carry the label, `case study` is the level the
-evidence supports, and the abstract already claims no general conclusion beyond the two measured
-populations.
+We declare **`case study`**. The registration targeted `theory+empirics` on a proved monotonicity
+and impossibility result plus an exactly computed construction measured over two ecosystems. §3
+withdraws the construction and §3.1 makes the lemma conditional on a condition that is measured
+rather than proved, so the higher level does not hold on its own terms; this section states the
+lower one and offers no alternative reading of it. What the evidence supports is a case study: two
+registries, one snapshot, one instrument, ground truth that is mechanical rather than annotated (set
+cardinality over published metadata), a closed form under a stated condition with that condition
+measured at 34 exceptions in 172, and baselines against which the certificate is priced
+(pin-everything and pin-direct-only). The abstract states the same level once, and no claim beyond
+the two measured populations is made anywhere in this paper.
 
 ---
 
@@ -540,7 +589,8 @@ sh reproduce.sh          # all nine steps; a full run takes about 16 s on the re
 sh reproduce.sh --fast   # skips the depth-2 enumeration and reports it NOT RUN
 ```
 
-Its last line is `ALL STEPS PASSED` and the run states its own count as `(9 steps)`; the exit code
+Its last line is `ALL STEPS PASSED (9 steps)`, which is where the `(9 steps)` literal in this
+document and in `README.md` comes from; the exit code
 is the number of failed steps. Expected output: every one of the nine steps prints its own verdict
 and none prints `FAIL`. Step 1 pins the snapshots, step 2 runs the known-answer plants, steps 3–5
 emit `rates.json`, `depth2.json` and `decay.json`, step 6 runs the corpus gates and the corpus pin,
@@ -560,7 +610,7 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [4] Alnoamany. (2018). Towards computational reproducibility: researcher perspectives on the use and sharing of software. https://doi.org/10.7287/peerj.preprints.26727v1. Difference: researchers' own sharing practice is treated as the reproducibility lever, which leaves the declaration unexamined; this paper asks what one declaration admits before anyone installs it, and prices the difference.
 
-[5] Amir. (2018). There is no random sampling in software engineering research. Proceedings of the 40th International Conference on Software. https://doi.org/10.1145/3183440.3195001. Difference: there is no random sampling in SE research: our population is a frame, and is described as one; this paper names the threats this instrument cannot answer and what each would require.
+[5] Amir. (2018). There is no random sampling in software engineering research. Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings. https://doi.org/10.1145/3183440.3195001. Difference: there is no random sampling in SE research: our population is a frame, and is described as one; this paper names the threats this instrument cannot answer and what each would require.
 
 [6] Anon. (1976). A numbering scheme for a computer programming library. Software: Practice and Experience. https://doi.org/10.1002/spe.4380060317. Difference: a 1976 numbering scheme for a program library: version numbering is a design decision with consequences; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
 
@@ -568,7 +618,7 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [8] Ayres. (2021). Continuous Automotive Software Updates through Container Image Layers. Electronics. https://doi.org/10.3390/electronics10060739. Difference: continuous updates delivered as container layers: the image, not the manifest, is the unit of change; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[9] B. (2024). Exploring Large Scale Docker Image Vulnerability and Storage Performance Analysis Using High Performance Container-Based Docker Environment. 2024 International Conference on System, Computation, Automa. https://doi.org/10.1109/icscan62807.2024.10894527. Difference: large-scale Docker image analysis: images are studied as artifacts with vulnerabilities and drift of their own; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[9] B. (2024). Exploring Large Scale Docker Image Vulnerability and Storage Performance Analysis Using High Performance Container-Based Docker Environment. 2024 International Conference on System, Computation, Automation and Networking (ICSCAN). https://doi.org/10.1109/icscan62807.2024.10894527. Difference: large-scale Docker image analysis: images are studied as artifacts with vulnerabilities and drift of their own; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [10] Baltes. (2022). Sampling in software engineering research: a critical review and guidelines. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-10072-8. Difference: sampling guidelines: how a frame must be described for a rate to be interpretable; this paper names the threats this instrument cannot answer and what each would require.
 
@@ -584,43 +634,43 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [16] Bruccoleri. (2025). Docker Image Builder: A Robust Method for Constructing Docker Images for Reproducible Research. https://doi.org/10.31219/osf.io/8pgd7_v1. Difference: a construction method for reproducible images: pinning at build time rather than at declaration time; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[17] Bzeznik. (2017). Nix as HPC package management system. Proceedings of the Fourth International Workshop on HPC User. https://doi.org/10.1145/3152493.3152556. Difference: Nix as an HPC package manager: derivation-level pinning; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[17] Bzeznik. (2017). Nix as HPC package management system. Proceedings of the Fourth International Workshop on HPC User Support Tools. https://doi.org/10.1145/3152493.3152556. Difference: Nix as an HPC package manager: derivation-level pinning; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [18] Carbonnel. (2015). Tractability in constraint satisfaction problems: a survey. Constraints. https://doi.org/10.1007/s10601-015-9198-6. Difference: tractability of constraint classes: the vocabulary in which our admissible-set problem is stated; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
 
 [19] Carbonnel. (n.d.). Harnessing tractability in constraint satisfaction problems. https://doi.org/10.70675/25f2c2c6zc9f2z4828z8530z8d66a557d24e. Difference: harnessing tractability: restricted constraint languages are where structure becomes exploitable; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
 
-[20] Cavezza. (2014). Reproducibility of Environment-Dependent Software Failures: An Experience Report. 2014 IEEE 25th International Symposium on Software Reliabili. https://doi.org/10.1109/issre.2014.19. Difference: environment-dependent failures reproduce differently in different environments: the failure mode an over-wide range admits; this paper asks what one declaration admits before anyone installs it, and prices the difference.
+[20] Cavezza. (2014). Reproducibility of Environment-Dependent Software Failures: An Experience Report. 2014 IEEE 25th International Symposium on Software Reliability Engineering. https://doi.org/10.1109/issre.2014.19. Difference: environment-dependent failures reproduce differently in different environments: the failure mode an over-wide range admits; this paper asks what one declaration admits before anyone installs it, and prices the difference.
 
 [21] Cervera. (2026). Reproducibility of Legacy ROS-Based Research Code Through Transparent Docker Integration. IEEE Robotics and Automation Practice. https://doi.org/10.1109/rap.2026.3686662. Difference: legacy research code made reproducible by pinning the image: the practitioner's alternative to pinning versions; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [22] Chodorowski. (2021). Comparative analysis of JavaScript package managers - yarn and npm. Journal of Computer Sciences Institute. https://doi.org/10.35784/jcsi.2460. Difference: npm versus yarn: two managers resolve the same declarations differently; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
-[23] Claes. (2015). A Historical Analysis of Debian Package Incompatibilities. 2015 IEEE/ACM 12th Working Conference on Mining Software Rep. https://doi.org/10.1109/msr.2015.27. Difference: incompatibilities are studied as historical events; the declaration that admitted them is not the unit of analysis; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
+[23] Claes. (2015). A Historical Analysis of Debian Package Incompatibilities. 2015 IEEE/ACM 12th Working Conference on Mining Software Repositories. https://doi.org/10.1109/msr.2015.27. Difference: incompatibilities are studied as historical events; the declaration that admitted them is not the unit of analysis; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
 [24] Cogo. (2021). An Empirical Study of Dependency Downgrades in the npm Ecosystem. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2952130. Difference: dependency downgrades in npm: the resolved version moves independently of the declaration; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [25] Cooper. (2010). Generalizing constraint satisfaction on trees: Hybrid tractability and variable elimination. Artificial Intelligence. https://doi.org/10.1016/j.artint.2010.03.002. Difference: hybrid tractability via variable elimination: the structural condition behind the closure result; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
 
-[26] Decan. (2016). On the topology of package dependency networks. Proccedings of the 10th European Conference on Software Arch. https://doi.org/10.1145/2993412.3003382. Difference: dependency-network topology is measured on one declared version per package, which presumes the declaration names one; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
+[26] Decan. (2016). On the topology of package dependency networks. Proccedings of the 10th European Conference on Software Architecture Workshops. https://doi.org/10.1145/2993412.3003382. Difference: dependency-network topology is measured on one declared version per package, which presumes the declaration names one; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
-[27] Decan. (2018). On the Evolution of Technical Lag in the npm Package Dependency Network. 2018 IEEE International Conference on Software Maintenance a. https://doi.org/10.1109/icsme.2018.00050. Difference: technical lag: how far behind a declaration leaves an install; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[27] Decan. (2018). On the Evolution of Technical Lag in the npm Package Dependency Network. 2018 IEEE International Conference on Software Maintenance and Evolution (ICSME). https://doi.org/10.1109/icsme.2018.00050. Difference: technical lag: how far behind a declaration leaves an install; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [28] Decan. (2021). What Do Package Dependencies Tell Us About Semantic Versioning?. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2019.2918315. Difference: declared constraints are read as compatibility promises: exactly the reading the dialect measure tests; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
 
-[29] Ding. (2024). Towards Scalable and Robust Model Versioning. 2024 IEEE Conference on Secure and Trustworthy Machine Learn. https://doi.org/10.1109/satml59370.2024.00036. Difference: model versioning as an artifact-identity problem distinct from code versioning; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[29] Ding. (2024). Towards Scalable and Robust Model Versioning. 2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML). https://doi.org/10.1109/satml59370.2024.00036. Difference: model versioning as an artifact-identity problem distinct from code versioning; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [30] Doan. (2022). DAVS: Dockerfile Analysis for Container Image Vulnerability Scanning. Computers, Materials & Continua. https://doi.org/10.32604/cmc.2022.025096. Difference: the Dockerfile is read as a declaration and its image scanned: the nearest container analogue of what we do to a manifest; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [31] Dutta. (n.d.). Survey of Approximation Algorithms for Set Cover Problem. https://doi.org/10.12794/metadc12118. Difference: approximation bounds for cover: the source of the log-factor statement we test and find unattained; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
 
-[32] Exman. (2019). Software Modularity Coupling Resolution by the Laplacian of a Bipartite Dependency Graph. Proceedings of the 14th International Conference on Software. https://doi.org/10.5220/0007955802980305. Difference: dependency structure represented as a bipartite graph: the representation our admissible-set object shares; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[32] Exman. (2019). Software Modularity Coupling Resolution by the Laplacian of a Bipartite Dependency Graph. Proceedings of the 14th International Conference on Software Technologies. https://doi.org/10.5220/0007955802980305. Difference: dependency structure represented as a bipartite graph: the representation our admissible-set object shares; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [33] Ferreira. (2026). PERSISTÊNCIA DE VULNERABILIDADES DE DEPENDÊNCIA POR TIPO EM PROJETOS NPM: UMA ANÁLISE DE SOBREVIVÊNCIA SOBRE HISTÓRICOS DE LOCKFILE. Revista Sistemática. https://doi.org/10.56238/rcsv16n8-001. Difference: vulnerability persistence by dependency class in npm projects: an over-wide range keeps a vulnerable version admissible over time; this paper asks what one declaration admits before anyone installs it, and prices the difference.
 
 [34] Foote. (2013). Roles and Responsibilities of a Package Maintainer. ROSCon Stutgart 2013. https://doi.org/10.36288/roscon2013-900674. Difference: the maintainer's role: who authors the declaration, and on what evidence; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
-[35] Ganian. (2015). Discovering Archipelagos of Tractability for Constraint Satisfaction and Counting. Proceedings of the Twenty-Seventh Annual ACM-SIAM Symposium. https://doi.org/10.1137/1.9781611974331.ch114. Difference: islands of tractability: structure, not arity, decides the cost; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
+[35] Ganian. (2015). Discovering Archipelagos of Tractability for Constraint Satisfaction and Counting. Proceedings of the Twenty-Seventh Annual ACM-SIAM Symposium on Discrete Algorithms. https://doi.org/10.1137/1.9781611974331.ch114. Difference: islands of tractability: structure, not arity, decides the cost; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
 
 [36] Garthwaite. (2023). Locally correct confidence intervals for a binomial proportion: A new criteria for an interval estimator. Scandinavian Journal of Statistics. https://doi.org/10.1111/sjos.12672. Difference: criteria for judging an interval's correctness: why we report the interval we do; this paper reports Wilson intervals throughout, so every rate is read with its uncertainty.
 
@@ -640,7 +690,7 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [44] Hatton. (2019). Computational Reproducibility: The Elephant in the Room. IEEE Software. https://doi.org/10.1109/ms.2018.2883805. Difference: the reproducibility gap stated as a field-level problem rather than a tooling defect; this paper asks what one declaration admits before anyone installs it, and prices the difference.
 
-[45] Heroux. (2011). Improving CSE software through reproducibility requirements. Proceedings of the 4th International Workshop on Software En. https://doi.org/10.1145/1985782.1985787. Difference: reproducibility treated as an engineering requirement with acceptance criteria; this paper asks what one declaration admits before anyone installs it, and prices the difference.
+[45] Heroux. (2011). Improving CSE software through reproducibility requirements. Proceedings of the 4th International Workshop on Software Engineering for Computational Science and Engineering. https://doi.org/10.1145/1985782.1985787. Difference: reproducibility treated as an engineering requirement with acceptance criteria; this paper asks what one declaration admits before anyone installs it, and prices the difference.
 
 [46] Hinsen. (2012). The Nix package manager in computational science. https://doi.org/10.59350/c4wzx-s6q80. Difference: Nix in computational science: the store path as the identity; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
@@ -650,7 +700,7 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [49] Kechagia. (2010). Open Source Licensing Across Package Dependencies. 2010 14th Panhellenic Conference on Informatics. https://doi.org/10.1109/pci.2010.28. Difference: other properties of the same dependency edges are studied across the graph (licensing); the number of resolutions is not; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
-[50] Keller. (n.d.). A version numbering scheme with a useful lexicographical order. Proceedings of the Eleventh International Conference on Data. https://doi.org/10.1109/icde.1995.380387. Difference: lexicographic ordering of version numbers: ordering is a convention, not a property of the artifact; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
+[50] Keller. (n.d.). A version numbering scheme with a useful lexicographical order. Proceedings of the Eleventh International Conference on Data Engineering. https://doi.org/10.1109/icde.1995.380387. Difference: lexicographic ordering of version numbers: ordering is a convention, not a property of the artifact; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
 
 [51] Kim. (2021). A generalized Agresti–Coull type confidence interval for a binomial proportion. Journal of the Korean Statistical Society. https://doi.org/10.1007/s42952-021-00143-3. Difference: Agresti-Coull generalization and behaviour at small proportions, where several of our rates sit; this paper reports Wilson intervals throughout, so every rate is read with its uncertainty.
 
@@ -660,53 +710,53 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [54] Kula. (2023). Promises and Perils of Mining Software Package Ecosystem Data. Software Ecosystems. https://doi.org/10.1007/978-3-031-36060-2_3. Difference: promises and perils of mining package-ecosystem data: the methodological warrant for a pinned snapshot; this paper uses the registry as the instrument and states what the instrument cannot see.
 
-[55] Kunstmann. (2024). Scientific Workflow Deployment: Container Provenance in High-Performance Computing. Anais do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD 2. https://doi.org/10.5753/sbbd.2024.240194. Difference: container provenance in HPC: the image's identity recorded as evidence, which is exactly what a tag does not do; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[55] Kunstmann. (2024). Scientific Workflow Deployment: Container Provenance in High-Performance Computing. Anais do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD 2024). https://doi.org/10.5753/sbbd.2024.240194. Difference: container provenance in HPC: the image's identity recorded as evidence, which is exactly what a tag does not do; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[56] Lake. (2025). Analyzing Dependency Clusters and Security Risks in the Maven Central Repository. 2025 IEEE/ACM 22nd International Conference on Mining Softwa. https://doi.org/10.1109/msr66628.2025.00046. Difference: dependency clusters in Maven Central: structure of the resolved graph, not of the declaration; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
+[56] Lake. (2025). Analyzing Dependency Clusters and Security Risks in the Maven Central Repository. 2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR). https://doi.org/10.1109/msr66628.2025.00046. Difference: dependency clusters in Maven Central: structure of the resolved graph, not of the declaration; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
 
 [57] Laval. (n.d.). Package Dependencies Analysis and Remediation in Object-Oriented Systems. https://doi.org/10.70675/950f31fczd7a0z427dza2a9zf55aa8caf63f. Difference: remediation presumes a single resolved state to repair; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
 [58] Li. (2023). An Empirical Study of Yanked Releases in the Rust Package Registry. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2022.3152148. Difference: yanked releases are the impossibility argument's own exception; they are counted here rather than assumed away; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
 
-[59] Li. (2023). A Large-Scale Empirical Study on Semantic Versioning in Golang Ecosystem. 2023 38th IEEE/ACM International Conference on Automated Sof. https://doi.org/10.1109/ase56229.2023.00140. Difference: semantic-versioning compliance in Go: a convention stated but not enforced; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
+[59] Li. (2023). A Large-Scale Empirical Study on Semantic Versioning in Golang Ecosystem. 2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE). https://doi.org/10.1109/ase56229.2023.00140. Difference: semantic-versioning compliance in Go: a convention stated but not enforced; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
 
 [60] Lyu. (2025). Detecting Build Dependency Errors by Dynamic Analysis of Build Execution Against Declaration. IEEE Transactions on Software Engineering. https://doi.org/10.1109/tse.2025.3566225. Difference: build-dependency errors are found by executing the build, which presumes the declaration resolves to a single state; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
-[61] Malka. (2024). Increasing trust in the open source supply chain with reproducible builds and functional package management. Proceedings of the 2024 IEEE/ACM 46th International Conferen. https://doi.org/10.1145/3639478.3639806. Difference: reproducible builds as supply-chain trust; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[61] Malka. (2024). Increasing trust in the open source supply chain with reproducible builds and functional package management. Proceedings of the 2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings. https://doi.org/10.1145/3639478.3639806. Difference: reproducible builds as supply-chain trust; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[62] Malka. (2025). Does Functional Package Management Enable Reproducible Builds at Scale? Yes. 2025 IEEE/ACM 22nd International Conference on Mining Softwa. https://doi.org/10.1109/msr66628.2025.00115. Difference: functional package management does enable reproducible builds at scale: the strongest evidence for the alternative we compare against; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[62] Malka. (2025). Does Functional Package Management Enable Reproducible Builds at Scale? Yes. 2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR). https://doi.org/10.1109/msr66628.2025.00115. Difference: functional package management does enable reproducible builds at scale: the strongest evidence for the alternative we compare against; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[63] Mecheo. (2026). DependaFix: A GitHub App for Fixing Breaking Dependency Updates in CI Build for Java Projects. Proceedings of the 34th ACM International Conference on the. https://doi.org/10.1145/3803437.3806404. Difference: automation repairs breaking updates after the fact, treating the update rather than the declaration as the unit; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[63] Mecheo. (2026). DependaFix: A GitHub App for Fixing Breaking Dependency Updates in CI Build for Java Projects. Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering. https://doi.org/10.1145/3803437.3806404. Difference: automation repairs breaking updates after the fact, treating the update rather than the declaration as the unit; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[64] Miguel. (2004). The Constraint Satisfaction Problem. Dynamic Flexible Constraint Satisfaction and its Application. https://doi.org/10.1007/978-0-85729-378-7_2. Difference: the standard CSP formulation, cited for stating a declaration as a constraint; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
+[64] Miguel. (2004). The Constraint Satisfaction Problem. Dynamic Flexible Constraint Satisfaction and its Application to AI Planning. https://doi.org/10.1007/978-0-85729-378-7_2. Difference: the standard CSP formulation, cited for stating a declaration as a constraint; this paper uses the constraint formulation to compute the solution support exactly rather than to bound it.
 
-[65] Milewicz. (2023). Towards Evidence-Based Software Quality Practices for Reproducibility: Preliminary Results and Research Directions. Proceedings of the 2023 ACM Conference on Reproducibility an. https://doi.org/10.1145/3589806.3600040. Difference: evidence-based quality practices for reproducibility: what evidence a reproducibility claim needs; this paper asks what one declaration admits before anyone installs it, and prices the difference.
+[65] Milewicz. (2023). Towards Evidence-Based Software Quality Practices for Reproducibility: Preliminary Results and Research Directions. Proceedings of the 2023 ACM Conference on Reproducibility and Replicability. https://doi.org/10.1145/3589806.3600040. Difference: evidence-based quality practices for reproducibility: what evidence a reproducibility claim needs; this paper asks what one declaration admits before anyone installs it, and prices the difference.
 
-[66] Miller. (2025). Understanding the Response to Open-Source Dependency Abandonment in the npm Ecosystem. 2025 IEEE/ACM 47th International Conference on Software Engi. https://doi.org/10.1109/icse55347.2025.00004. Difference: ecosystem response to abandonment: what happens when an admissible version disappears; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[66] Miller. (2025). Understanding the Response to Open-Source Dependency Abandonment in the npm Ecosystem. 2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE). https://doi.org/10.1109/icse55347.2025.00004. Difference: ecosystem response to abandonment: what happens when an admissible version disappears; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [67] Mitra-Behura. (2022). Singularity Containers Improve Reproducibility and Ease of Use in Computational Image Analysis Workflows. Frontiers in Bioinformatics. https://doi.org/10.3389/fbinf.2021.757291. Difference: Singularity containers improve reproducibility: a second container dialect with a different pinning convention; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [68] Mittal. (2025). Evaluating Container Security and Reproducibility in Research Software Engineering. https://doi.org/10.36227/techrxiv.175459769.96908041/v1. Difference: container images as an alternative pinning mechanism, evaluated for security and reproducibility; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[69] Montaruli. (2026). SourceBroken: A large-scale analysis on the (un)reliability of SourceRank in the PyPI ecosystem. Proceedings of the 41st ACM/SIGAPP Symposium on Applied Comp. https://doi.org/10.1145/3748522.3779992. Difference: SourceRank reliability: a registry-derived metric that does not measure what its name says, which is why our rates carry an explicit denominator; this paper uses the registry as the instrument and states what the instrument cannot see.
+[69] Montaruli. (2026). SourceBroken: A large-scale analysis on the (un)reliability of SourceRank in the PyPI ecosystem. Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing. https://doi.org/10.1145/3748522.3779992. Difference: SourceRank reliability: a registry-derived metric that does not measure what its name says, which is why our rates carry an explicit denominator; this paper uses the registry as the instrument and states what the instrument cannot see.
 
 [70] MoraCantallops. (2020). Evolution and prospects of the Comprehensive R Archive Network (CRAN) package ecosystem. Journal of Software: Evolution and Process. https://doi.org/10.1002/smr.2270. Difference: CRAN evolution: a third ecosystem with its own versioning conventions; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
-[71] Nakanishi. (n.d.). A metric for evaluating class library interfaces and its application to library upgrades. Proceedings of International Conference on Software Maintena. https://doi.org/10.1109/icsm.1995.526523. Difference: upgrade risk is measured at the interface level in prior work; the declaration's admissible set is a different object; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
+[71] Nakanishi. (n.d.). A metric for evaluating class library interfaces and its application to library upgrades. Proceedings of International Conference on Software Maintenance. https://doi.org/10.1109/icsm.1995.526523. Difference: upgrade risk is measured at the interface level in prior work; the declaration's admissible set is a different object; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
-[72] Nakata. (2021). Evaluation of Vulnerability Reproducibility in Container-based Cyber Range. Proceedings of the 7th International Conference on Informati. https://doi.org/10.5220/0010324606350642. Difference: container-based environments: reproducibility of a vulnerability depends on the pinned base image; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[72] Nakata. (2021). Evaluation of Vulnerability Reproducibility in Container-based Cyber Range. Proceedings of the 7th International Conference on Information Systems Security and Privacy. https://doi.org/10.5220/0010324606350642. Difference: container-based environments: reproducibility of a vulnerability depends on the pinned base image; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[73] Nascimento. (2022). Exploring API Deprecation Evolution in JavaScript. 2022 IEEE International Conference on Software Analysis, Evo. https://doi.org/10.1109/saner53432.2022.00031. Difference: API deprecation practice in JavaScript: deprecation is announced, removal still breaks unpinned ranges; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[73] Nascimento. (2022). Exploring API Deprecation Evolution in JavaScript. 2022 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER). https://doi.org/10.1109/saner53432.2022.00031. Difference: API deprecation practice in JavaScript: deprecation is announced, removal still breaks unpinned ranges; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [74] Opdebeeck. (2021). On the practice of semantic versioning for Ansible galaxy roles: An empirical study and a change classification model. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111059. Difference: semver practice for Ansible roles: a third dialect with its own boundedness; this paper attributes the difference to the range's syntax, separating a bounded range from a wild one.
 
-[75] Pan. (2020). Research on Dynamic Detection of Java Dependency Conflict. 2020 IEEE International Conference on Advances in Electrical. https://doi.org/10.1109/aeeca49918.2020.9213605. Difference: conflicts are detected dynamically at build time, i.e. after a choice has already been made; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
+[75] Pan. (2020). Research on Dynamic Detection of Java Dependency Conflict. 2020 IEEE International Conference on Advances in Electrical Engineering and Computer Applications( AEECA). https://doi.org/10.1109/aeeca49918.2020.9213605. Difference: conflicts are detected dynamically at build time, i.e. after a choice has already been made; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
 
 [76] Peer. (2020). Active Maintenance: A Proposal for the Long-term Computational Reproducibility of Scientific Results. https://doi.org/10.31235/osf.io/8jwhk. Difference: long-term reproducibility needs maintenance over time, not a one-off pin; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[77] Petersen. (2013). Worldviews, Research Methods, and their Relationship to Validity in Empirical Software Engineering Research. 2013 Joint Conference of the 23rd International Workshop on. https://doi.org/10.1109/iwsm-mensura.2013.22. Difference: worldview, method and validity are coupled: a rate here is a design-dependent statement; this paper names the threats this instrument cannot answer and what each would require.
+[77] Petersen. (2013). Worldviews, Research Methods, and their Relationship to Validity in Empirical Software Engineering Research. 2013 Joint Conference of the 23rd International Workshop on Software Measurement and the 8th International Conference on Software Process and Product Measurement. https://doi.org/10.1109/iwsm-mensura.2013.22. Difference: worldview, method and validity are coupled: a rate here is a design-dependent statement; this paper names the threats this instrument cannot answer and what each would require.
 
-[78] Pinckney. (2023). Flexible and Optimal Dependency Management via Max-SMT. 2023 IEEE/ACM 45th International Conference on Software Engi. https://doi.org/10.1109/icse48619.2023.00124. Difference: optimal selection given constraints: optimality is defined over the set of admissible solutions; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
+[78] Pinckney. (2023). Flexible and Optimal Dependency Management via Max-SMT. 2023 IEEE/ACM 45th International Conference on Software Engineering (ICSE). https://doi.org/10.1109/icse48619.2023.00124. Difference: optimal selection given constraints: optimality is defined over the set of admissible solutions; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
 
 [79] Pulicharla. (2024). Data Versioning and Its Impact on Machine Learning Models. Journal of Science & Technology. https://doi.org/10.55662/jst.2024.5101. Difference: data versioning changes model behaviour: one declaration can admit different behaviour; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
@@ -718,25 +768,25 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [83] Randrianaina. (n.d.). Incremental, reproducible builds of software variants. https://doi.org/10.70675/e95564c6zca79z417aza37ez10821a9a0a48. Difference: incremental reproducible builds of variants: the cost side of pinning; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[84] Reyes. (2024). Breaking-Good: Explaining Breaking Dependency Updates with Build Analysis. 2024 IEEE International Conference on Source Code Analysis a. https://doi.org/10.1109/scam63643.2024.00014. Difference: breaking updates are diagnosed from build output afterwards; the admissible set is never consulted beforehand; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
+[84] Reyes. (2024). Breaking-Good: Explaining Breaking Dependency Updates with Build Analysis. 2024 IEEE International Conference on Source Code Analysis and Manipulation (SCAM). https://doi.org/10.1109/scam63643.2024.00014. Difference: breaking updates are diagnosed from build output afterwards; the admissible set is never consulted beforehand; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
 [85] Reyes. (2026). Byam: Fixing Breaking Dependency Updates with Large Language Models. Empirical Software Engineering. https://doi.org/10.1007/s10664-026-10835-1. Difference: LLM-based repair of breaking updates: a post-hoc remedy, complementary to measuring admissibility; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[86] Sandelius. (1952). A Confidence Interval for the Smallest Proportion of a Binomial Population. Journal of the Royal Statistical Society Series B: Statistic. https://doi.org/10.1111/j.2517-6161.1952.tb00105.x. Difference: the smallest-proportion case treated historically: our lowest rates are of this kind; this paper reports Wilson intervals throughout, so every rate is read with its uncertainty.
+[86] Sandelius. (1952). A Confidence Interval for the Smallest Proportion of a Binomial Population. Journal of the Royal Statistical Society Series B: Statistical Methodology. https://doi.org/10.1111/j.2517-6161.1952.tb00105.x. Difference: the smallest-proportion case treated historically: our lowest rates are of this kind; this paper reports Wilson intervals throughout, so every rate is read with its uncertainty.
 
-[87] Schmid. (2026). Maven-Lockfile: High Integrity Rebuild of Past Java Releases. Proceedings of the 2026 IEEE/ACM 48th International Conferen. https://doi.org/10.1145/3774748.3787615. Difference: Maven-Lockfile: high-integrity rebuild of past Java releases, i.e. the lockfile as the alternative to a range; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[87] Schmid. (2026). Maven-Lockfile: High Integrity Rebuild of Past Java Releases. Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering. https://doi.org/10.1145/3774748.3787615. Difference: Maven-Lockfile: high-integrity rebuild of past Java releases, i.e. the lockfile as the alternative to a range; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[88] Serbout. (2023). Interactively Exploring API Changes and Versioning Consistency. 2023 IEEE Working Conference on Software Visualization (VISS. https://doi.org/10.1109/vissoft60811.2023.00013. Difference: API-change and versioning consistency in practice: a declared version is not a proxy for change; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[88] Serbout. (2023). Interactively Exploring API Changes and Versioning Consistency. 2023 IEEE Working Conference on Software Visualization (VISSOFT). https://doi.org/10.1109/vissoft60811.2023.00013. Difference: API-change and versioning consistency in practice: a declared version is not a proxy for change; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
-[89] Shaffer. (2021). An Empirical Study of Package Dependencies and Lifetimes in Binder Python Containers. 2021 IEEE 17th International Conference on eScience (eScienc. https://doi.org/10.1109/escience51609.2021.00032. Difference: which declared dependencies survive is measured per declaration, not per admissible version; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
+[89] Shaffer. (2021). An Empirical Study of Package Dependencies and Lifetimes in Binder Python Containers. 2021 IEEE 17th International Conference on eScience (eScience). https://doi.org/10.1109/escience51609.2021.00032. Difference: which declared dependencies survive is measured per declaration, not per admissible version; this paper makes the admissible set the object and reports it as a share of edges, not as a property of a package.
 
-[90] Solarin. (2026). It’s Not Just Timestamps: A Study on Docker Reproducibility. Proceedings of the 34th ACM International Conference on the. https://doi.org/10.1145/3803437.3804434. Difference: Docker rebuilds are not reproducible even from the same inputs, so the tag is not the only source of drift, but it is the one the author controls; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[90] Solarin. (2026). It’s Not Just Timestamps: A Study on Docker Reproducibility. Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering. https://doi.org/10.1145/3803437.3804434. Difference: Docker rebuilds are not reproducible even from the same inputs, so the tag is not the only source of drift, but it is the one the author controls; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [91] Sousa. (2009). Analysis of the package dependency on Debian GNU/Linux. Journal of Computational Interdisciplinary Sciences. https://doi.org/10.6062/jcis.2009.01.02.0015. Difference: Debian dependency structure analysed as a distribution-level graph; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [92] Tekin. (2026). Death Is Not the End: a Longitudinal Study on the Impact of Automatic Updates on Container Vulnerability Lifespans. 2026 IEEE Symposium on Security and Privacy (SP). https://doi.org/10.1109/sp63933.2026.00227. Difference: a longitudinal study of automatic updates on containers: a mutable tag makes a published environment change under the reader; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[93] Termphaiboon. (2025). Exploring the SECURITY.md in the Dependency Chain: Preliminary Analysis of the PyPI Ecosystem. 2025 40th IEEE/ACM International Conference on Automated Sof. https://doi.org/10.1109/asew67777.2025.00055. Difference: PyPI dependency chains and security-disclosure practice; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[93] Termphaiboon. (2025). Exploring the SECURITY.md in the Dependency Chain: Preliminary Analysis of the PyPI Ecosystem. 2025 40th IEEE/ACM International Conference on Automated Software Engineering Workshops (ASEW). https://doi.org/10.1109/asew67777.2025.00055. Difference: PyPI dependency chains and security-disclosure practice; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
 [94] Thirumalaisamy. (2025). AI-Assisted Verification of SBOM Accuracy and Drift in Software Supply Chains. International Journal of Computer Trends and Technology. https://doi.org/10.14445/22312803/ijctt-v73i12p103. Difference: SBOM accuracy and drift: a dependency record that goes stale in place; this paper uses the registry as the instrument and states what the instrument cannot see.
 
@@ -744,11 +794,11 @@ not regenerated — a `NOT RUN`, never a `DIFFERS`.
 
 [96] Varanasi. (2019). Maven Dependency Management. Introducing Maven. https://doi.org/10.1007/978-1-4842-5410-3_3. Difference: Maven's mediation rule (nearest wins) as a range dialect with its own resolution semantics; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
-[97] Wang. (2025). Understanding and Detecting Peer Dependency Resolving Loop in npm Ecosystem. 2025 IEEE/ACM 47th International Conference on Software Engi. https://doi.org/10.1109/icse55347.2025.00054. Difference: peer-dependency resolving loops: a second, harder resolution mode in the same ecosystem; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
+[97] Wang. (2025). Understanding and Detecting Peer Dependency Resolving Loop in npm Ecosystem. 2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE). https://doi.org/10.1109/icse55347.2025.00054. Difference: peer-dependency resolving loops: a second, harder resolution mode in the same ecosystem; this paper asks whether the alternatives differ in consequence, and reports that separation as the finding rather than the raw ambiguity.
 
-[98] Wittern. (2016). A look at the dynamics of the JavaScript package ecosystem. Proceedings of the 13th International Conference on Mining S. https://doi.org/10.1145/2901739.2901743. Difference: the JavaScript ecosystem's dynamics measured from registry metadata; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
+[98] Wittern. (2016). A look at the dynamics of the JavaScript package ecosystem. Proceedings of the 13th International Conference on Mining Software Repositories. https://doi.org/10.1145/2901739.2901743. Difference: the JavaScript ecosystem's dynamics measured from registry metadata; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 
-[99] Wonsil. (2023). Integrated Reproducibility with Self-describing Machine Learning Models. Proceedings of the 2023 ACM Conference on Reproducibility an. https://doi.org/10.1145/3589806.3600039. Difference: self-describing models carry their dependency identity instead of leaving it to be inferred from a range; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
+[99] Wonsil. (2023). Integrated Reproducibility with Self-describing Machine Learning Models. Proceedings of the 2023 ACM Conference on Reproducibility and Replicability. https://doi.org/10.1145/3589806.3600039. Difference: self-describing models carry their dependency identity instead of leaving it to be inferred from a range; this paper proposes no alternative mechanism; it measures what a declared range leaves open beside these.
 
 [100] Wynn. (2007). Assessing the Health of an Open Source Ecosystem. Emerging Free and Open Source Software Practices. https://doi.org/10.4018/978-1-59904-210-7.ch011. Difference: ecosystem health is assessed at ecosystem level, which is orthogonal to whether one declaration admits one install; this paper reads both registries with one instrument, so the conventions are the comparison and not the background.
 

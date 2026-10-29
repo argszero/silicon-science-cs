@@ -26,7 +26,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2007.71",
-   "venue": "First International Symposium on Empirical Software Engineer",
+   "venue": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2007.71; title 1.000; author Abbas",
@@ -42,7 +42,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2007
+   "year": 2007,
+   "venue_full": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)"
   },
   {
    "asserted": {
@@ -361,7 +362,7 @@
    "topic": "sampling",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3183440.3195001",
-   "venue": "Proceedings of the 40th International Conference on Software",
+   "venue": "Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3183440.3195001; title 1.000; author Amir",
@@ -377,7 +378,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2018
+   "year": 2018,
+   "venue_full": "Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings"
   },
   {
    "asserted": {
@@ -498,7 +500,7 @@
    "topic": "depspec",
    "type": "book-chapter",
    "url": "https://doi.org/10.1142/9789812797964_0005",
-   "venue": "Hybrid Parallel Execution Model for Logic-Based Specificatio",
+   "venue": "Hybrid Parallel Execution Model for Logic-Based Specification Languages",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1142/9789812797964_0005; title 1.000; year 2001 (no author asserted)",
@@ -514,7 +516,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2001
+   "year": 2001,
+   "venue_full": "Hybrid Parallel Execution Model for Logic-Based Specification Languages"
   },
   {
    "asserted": {
@@ -536,8 +539,9 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2007.3",
-   "venue": "First International Symposium on Empirical Software Engineer",
-   "year": 2007
+   "venue": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)",
+   "year": 2007,
+   "venue_full": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)"
   },
   {
    "asserted": {
@@ -559,7 +563,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2007.90",
-   "venue": "First International Symposium on Empirical Software Engineer",
+   "venue": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2007.90; title 1.000; year 2007 (no author asserted)",
@@ -575,7 +579,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2007
+   "year": 2007,
+   "venue_full": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)"
   },
   {
    "asserted": {
@@ -597,7 +602,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2007.84",
-   "venue": "First International Symposium on Empirical Software Engineer",
+   "venue": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2007.84; title 1.000; year 2007 (no author asserted)",
@@ -613,7 +618,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2007
+   "year": 2007,
+   "venue_full": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)"
   },
   {
    "asserted": {
@@ -635,8 +641,9 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2007.8",
-   "venue": "First International Symposium on Empirical Software Engineer",
-   "year": 2007
+   "venue": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)",
+   "year": 2007,
+   "venue_full": "First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)"
   },
   {
    "asserted": {
@@ -658,7 +665,7 @@
    "topic": "wilson",
    "type": "book-chapter",
    "url": "https://doi.org/10.1201/b12670-8",
-   "venue": "Confidence Intervals for Proportions and Related Measures of",
+   "venue": "Confidence Intervals for Proportions and Related Measures of Effect Size",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1201/b12670-8; title 1.000; year 2012 (no author asserted)",
@@ -674,7 +681,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2012
+   "year": 2012,
+   "venue_full": "Confidence Intervals for Proportions and Related Measures of Effect Size"
   },
   {
    "asserted": {
@@ -742,8 +750,9 @@
    "topic": "apiev",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icsm.2012.6405294",
-   "venue": "2012 28th IEEE International Conference on Software Maintena",
-   "year": 2012
+   "venue": "2012 28th IEEE International Conference on Software Maintenance (ICSM)",
+   "year": 2012,
+   "venue_full": "2012 28th IEEE International Conference on Software Maintenance (ICSM)"
   },
   {
    "asserted": {
@@ -826,8 +835,9 @@
    "topic": "containertag",
    "type": "journal-article",
    "url": "https://doi.org/10.21884/ijmter.2017.4096.ambg3",
-   "venue": "International Journal of Modern Trends in Engineering &amp; ",
-   "year": 2017
+   "venue": "International Journal of Modern Trends in Engineering &amp; Research",
+   "year": 2017,
+   "venue_full": "International Journal of Modern Trends in Engineering &amp; Research"
   },
   {
    "asserted": {
@@ -986,7 +996,7 @@
    "topic": "pkgmgrstudy",
    "type": "journal-article",
    "url": "https://doi.org/10.58257/ijprems10",
-   "venue": "International Journal of Progressive Research in Engineering",
+   "venue": "International Journal of Progressive Research in Engineering Management and Science",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.58257/ijprems10; title 1.000; year 2024 (no author asserted)",
@@ -1002,7 +1012,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "International Journal of Progressive Research in Engineering Management and Science"
   },
   {
    "asserted": {
@@ -1210,7 +1221,7 @@
    "topic": "baseimage",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icscan62807.2024.10894527",
-   "venue": "2024 International Conference on System, Computation, Automa",
+   "venue": "2024 International Conference on System, Computation, Automation and Networking (ICSCAN)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icscan62807.2024.10894527; title 1.000; author B",
@@ -1226,7 +1237,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "2024 International Conference on System, Computation, Automation and Networking (ICSCAN)"
   },
   {
    "asserted": {
@@ -1286,7 +1298,7 @@
    "topic": "wilson",
    "type": "book-chapter",
    "url": "https://doi.org/10.1007/978-3-031-71452-8_13",
-   "venue": "Theorems on the Prevalence Threshold and the Geometry of Scr",
+   "venue": "Theorems on the Prevalence Threshold and the Geometry of Screening Curves",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1007/978-3-031-71452-8_13; title 1.000; author Balayla",
@@ -1302,7 +1314,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "Theorems on the Prevalence Threshold and the Geometry of Screening Curves"
   },
   {
    "asserted": {
@@ -1545,7 +1558,7 @@
    "topic": "transitive",
    "type": "proceedings-article",
    "url": "https://doi.org/10.3115/1557690.1557729",
-   "venue": "Proceedings of the 46th Annual Meeting of the Association fo",
+   "venue": "Proceedings of the 46th Annual Meeting of the Association for Computational Linguistics on Human Language Technologies Short Papers - HLT '08",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.3115/1557690.1557729; title 1.000; author Bikel",
@@ -1561,7 +1574,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2008
+   "year": 2008,
+   "venue_full": "Proceedings of the 46th Annual Meeting of the Association for Computational Linguistics on Human Language Technologies Short Papers - HLT '08"
   },
   {
    "asserted": {
@@ -1682,7 +1696,7 @@
    "topic": "compat",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1117/12.2536387",
-   "venue": "Photonics Applications in Astronomy, Communications, Industr",
+   "venue": "Photonics Applications in Astronomy, Communications, Industry, and High-Energy Physics Experiments 2019",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1117/12.2536387; title 1.000; author Breiter",
@@ -1698,7 +1712,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2019
+   "year": 2019,
+   "venue_full": "Photonics Applications in Astronomy, Communications, Industry, and High-Energy Physics Experiments 2019"
   },
   {
    "asserted": {
@@ -1781,7 +1796,7 @@
    "topic": "nixlike",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3152493.3152556",
-   "venue": "Proceedings of the Fourth International Workshop on HPC User",
+   "venue": "Proceedings of the Fourth International Workshop on HPC User Support Tools",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3152493.3152556; title 1.000; author Bzeznik",
@@ -1797,7 +1812,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2017
+   "year": 2017,
+   "venue_full": "Proceedings of the Fourth International Workshop on HPC User Support Tools"
   },
   {
    "asserted": {
@@ -1895,7 +1911,7 @@
    "topic": "envrepro",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/issre.2014.19",
-   "venue": "2014 IEEE 25th International Symposium on Software Reliabili",
+   "venue": "2014 IEEE 25th International Symposium on Software Reliability Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/issre.2014.19; title 1.000; author Cavezza",
@@ -1911,7 +1927,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2014
+   "year": 2014,
+   "venue_full": "2014 IEEE 25th International Symposium on Software Reliability Engineering"
   },
   {
    "asserted": {
@@ -2108,7 +2125,7 @@
    "topic": "debian",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/msr.2015.27",
-   "venue": "2015 IEEE/ACM 12th Working Conference on Mining Software Rep",
+   "venue": "2015 IEEE/ACM 12th Working Conference on Mining Software Repositories",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/msr.2015.27; title 1.000; author Claes",
@@ -2124,7 +2141,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2015
+   "year": 2015,
+   "venue_full": "2015 IEEE/ACM 12th Working Conference on Mining Software Repositories"
   },
   {
    "asserted": {
@@ -2291,7 +2309,7 @@
    "topic": "depconflict",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/2993412.3003382",
-   "venue": "Proccedings of the 10th European Conference on Software Arch",
+   "venue": "Proccedings of the 10th European Conference on Software Architecture Workshops",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/2993412.3003382; title 1.000; author Decan",
@@ -2307,7 +2325,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2016
+   "year": 2016,
+   "venue_full": "Proccedings of the 10th European Conference on Software Architecture Workshops"
   },
   {
    "asserted": {
@@ -2329,7 +2348,7 @@
    "topic": "npmeco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icsme.2018.00050",
-   "venue": "2018 IEEE International Conference on Software Maintenance a",
+   "venue": "2018 IEEE International Conference on Software Maintenance and Evolution (ICSME)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icsme.2018.00050; title 1.000; author Decan",
@@ -2345,7 +2364,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2018
+   "year": 2018,
+   "venue_full": "2018 IEEE International Conference on Software Maintenance and Evolution (ICSME)"
   },
   {
    "asserted": {
@@ -2367,8 +2387,9 @@
    "topic": "npmeco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3196398.3196401",
-   "venue": "Proceedings of the 15th International Conference on Mining S",
-   "year": 2018
+   "venue": "Proceedings of the 15th International Conference on Mining Software Repositories",
+   "year": 2018,
+   "venue_full": "Proceedings of the 15th International Conference on Mining Software Repositories"
   },
   {
    "asserted": {
@@ -2428,7 +2449,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2013.16",
-   "venue": "2013 ACM / IEEE International Symposium on Empirical Softwar",
+   "venue": "2013 ACM / IEEE International Symposium on Empirical Software Engineering and Measurement",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2013.16; title 1.000; author Delater",
@@ -2444,7 +2465,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2013
+   "year": 2013,
+   "venue_full": "2013 ACM / IEEE International Symposium on Empirical Software Engineering and Measurement"
   },
   {
    "asserted": {
@@ -2527,7 +2549,7 @@
    "topic": "modelregistry",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/satml59370.2024.00036",
-   "venue": "2024 IEEE Conference on Secure and Trustworthy Machine Learn",
+   "venue": "2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/satml59370.2024.00036; title 1.000; author Ding",
@@ -2543,7 +2565,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)"
   },
   {
    "asserted": {
@@ -2565,7 +2588,7 @@
    "topic": "modelzoo",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/cvsm.2009.5071715",
-   "venue": "2009 ICSE Workshop on Comparison and Versioning of Software ",
+   "venue": "2009 ICSE Workshop on Comparison and Versioning of Software Models",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/cvsm.2009.5071715; title 1.000; author Diskin",
@@ -2581,7 +2604,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2009
+   "year": 2009,
+   "venue_full": "2009 ICSE Workshop on Comparison and Versioning of Software Models"
   },
   {
    "asserted": {
@@ -2794,7 +2818,7 @@
    "topic": "depgraph",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0007955802980305",
-   "venue": "Proceedings of the 14th International Conference on Software",
+   "venue": "Proceedings of the 14th International Conference on Software Technologies",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.5220/0007955802980305; title 1.000; author Exman",
@@ -2810,7 +2834,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2019
+   "year": 2019,
+   "venue_full": "Proceedings of the 14th International Conference on Software Technologies"
   },
   {
    "asserted": {
@@ -2893,8 +2918,9 @@
    "topic": "featuremodel",
    "type": "journal-article",
    "url": "https://doi.org/10.14257/ijseia.2017.11.10.01",
-   "venue": "International Journal of Software Engineering and Its Applic",
-   "year": 2017
+   "venue": "International Journal of Software Engineering and Its Applications",
+   "year": 2017,
+   "venue_full": "International Journal of Software Engineering and Its Applications"
   },
   {
    "asserted": {
@@ -2992,7 +3018,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2009.5316011",
-   "venue": "2009 3rd International Symposium on Empirical Software Engin",
+   "venue": "2009 3rd International Symposium on Empirical Software Engineering and Measurement",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2009.5316011; title 1.000; author Franca",
@@ -3008,7 +3034,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2009
+   "year": 2009,
+   "venue_full": "2009 3rd International Symposium on Empirical Software Engineering and Measurement"
   },
   {
    "asserted": {
@@ -3053,7 +3080,7 @@
    "topic": "csttheory",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1137/1.9781611974331.ch114",
-   "venue": "Proceedings of the Twenty-Seventh Annual ACM-SIAM Symposium ",
+   "venue": "Proceedings of the Twenty-Seventh Annual ACM-SIAM Symposium on Discrete Algorithms",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1137/1.9781611974331.ch114; title 1.000; author Ganian",
@@ -3069,7 +3096,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2015
+   "year": 2015,
+   "venue_full": "Proceedings of the Twenty-Seventh Annual ACM-SIAM Symposium on Discrete Algorithms"
   },
   {
    "asserted": {
@@ -3616,7 +3644,7 @@
    "topic": "envrepro",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/1985782.1985787",
-   "venue": "Proceedings of the 4th International Workshop on Software En",
+   "venue": "Proceedings of the 4th International Workshop on Software Engineering for Computational Science and Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/1985782.1985787; title 1.000; author Heroux",
@@ -3632,7 +3660,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2011
+   "year": 2011,
+   "venue_full": "Proceedings of the 4th International Workshop on Software Engineering for Computational Science and Engineering"
   },
   {
    "asserted": {
@@ -3654,7 +3683,7 @@
    "topic": "imagepin",
    "type": "proceedings-article",
    "url": "https://doi.org/10.14293/s2199-ssp-am26-01021",
-   "venue": "ASM Incorpororates ImageTwin Workflow Integration to Detect ",
+   "venue": "ASM Incorpororates ImageTwin Workflow Integration to Detect Image Duplication and Safeguard Scientific Integrity",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.14293/s2199-ssp-am26-01021; title 1.000; author Hibbard",
@@ -3670,7 +3699,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2026
+   "year": 2026,
+   "venue_full": "ASM Incorpororates ImageTwin Workflow Integration to Detect Image Duplication and Safeguard Scientific Integrity"
   },
   {
    "asserted": {
@@ -3829,8 +3859,9 @@
    "topic": "typosquat",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icctit68197.2025.11406234",
-   "venue": "2025 5th International Conference on Communication Technolog",
-   "year": 2025
+   "venue": "2025 5th International Conference on Communication Technology and Information Technology (ICCTIT)",
+   "year": 2025,
+   "venue_full": "2025 5th International Conference on Communication Technology and Information Technology (ICCTIT)"
   },
   {
    "asserted": {
@@ -3936,7 +3967,7 @@
    "topic": "modelzoo",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icodse.2014.7062697",
-   "venue": "2014 International Conference on Data and Software Engineeri",
+   "venue": "2014 International Conference on Data and Software Engineering (ICODSE)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icodse.2014.7062697; title 1.000; author Iswari",
@@ -3952,7 +3983,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2014
+   "year": 2014,
+   "venue_full": "2014 International Conference on Data and Software Engineering (ICODSE)"
   },
   {
    "asserted": {
@@ -3997,7 +4029,7 @@
    "topic": "modelspec",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icmlc.2008.4620657",
-   "venue": "2008 International Conference on Machine Learning and Cybern",
+   "venue": "2008 International Conference on Machine Learning and Cybernetics",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icmlc.2008.4620657; title 1.000; author Jing Qiu",
@@ -4013,7 +4045,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2008
+   "year": 2008,
+   "venue_full": "2008 International Conference on Machine Learning and Cybernetics"
   },
   {
    "asserted": {
@@ -4058,7 +4091,7 @@
    "topic": "iacpin",
    "type": "journal-article",
    "url": "https://doi.org/10.63278/jicrcr.vi.3257",
-   "venue": "Journal of International Crisis and Risk Communication Resea",
+   "venue": "Journal of International Crisis and Risk Communication Research",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.63278/jicrcr.vi.3257; title 1.000; author Kalakoti",
@@ -4074,7 +4107,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2025
+   "year": 2025,
+   "venue_full": "Journal of International Crisis and Risk Communication Research"
   },
   {
    "asserted": {
@@ -4172,7 +4206,7 @@
    "topic": "versionscheme",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icde.1995.380387",
-   "venue": "Proceedings of the Eleventh International Conference on Data",
+   "venue": "Proceedings of the Eleventh International Conference on Data Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icde.1995.380387; title 1.000; author Keller",
@@ -4188,7 +4222,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": null
+   "year": null,
+   "venue_full": "Proceedings of the Eleventh International Conference on Data Engineering"
   },
   {
    "asserted": {
@@ -4286,8 +4321,9 @@
    "topic": "reprobuild",
    "type": "proceedings-article",
    "url": "https://doi.org/10.70534/wlsj1085",
-   "venue": "A Julia Package for Traceable and Reproducible Models in Qua",
-   "year": 2026
+   "venue": "A Julia Package for Traceable and Reproducible Models in Quantitative Systems Pharmacology",
+   "year": 2026,
+   "venue_full": "A Julia Package for Traceable and Reproducible Models in Quantitative Systems Pharmacology"
   },
   {
    "asserted": {
@@ -4446,7 +4482,7 @@
    "topic": "imagepin",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5753/sbbd.2024.240194",
-   "venue": "Anais do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD 2",
+   "venue": "Anais do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD 2024)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.5753/sbbd.2024.240194; title 1.000; author Kunstmann",
@@ -4462,7 +4498,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "Anais do XXXIX Simpósio Brasileiro de Banco de Dados (SBBD 2024)"
   },
   {
    "asserted": {
@@ -4484,7 +4521,7 @@
    "topic": "maxsmt",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/msr66628.2025.00046",
-   "venue": "2025 IEEE/ACM 22nd International Conference on Mining Softwa",
+   "venue": "2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/msr66628.2025.00046; title 1.000; author Lake",
@@ -4500,7 +4537,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2025
+   "year": 2025,
+   "venue_full": "2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)"
   },
   {
    "asserted": {
@@ -4522,7 +4560,7 @@
    "topic": "depgraph",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3180155.3180258",
-   "venue": "Proceedings of the 40th International Conference on Software",
+   "venue": "Proceedings of the 40th International Conference on Software Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3180155.3180258; title 1.000; author Lambers",
@@ -4538,7 +4576,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2018
+   "year": 2018,
+   "venue_full": "Proceedings of the 40th International Conference on Software Engineering"
   },
   {
    "asserted": {
@@ -4621,8 +4660,9 @@
    "topic": "csttheory",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0007260204350442",
-   "venue": "Proceedings of the 11th International Conference on Agents a",
-   "year": 2019
+   "venue": "Proceedings of the 11th International Conference on Agents and Artificial Intelligence",
+   "year": 2019,
+   "venue_full": "Proceedings of the 11th International Conference on Agents and Artificial Intelligence"
   },
   {
    "asserted": {
@@ -4682,7 +4722,7 @@
    "topic": "semverprac",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/ase56229.2023.00140",
-   "venue": "2023 38th IEEE/ACM International Conference on Automated Sof",
+   "venue": "2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/ase56229.2023.00140; title 1.000; author Li",
@@ -4698,7 +4738,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2023
+   "year": 2023,
+   "venue_full": "2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)"
   },
   {
    "asserted": {
@@ -4720,7 +4761,7 @@
    "topic": "installexp",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem56168.2023.10304793",
-   "venue": "2023 ACM/IEEE International Symposium on Empirical Software ",
+   "venue": "2023 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem56168.2023.10304793; title 1.000; author Li",
@@ -4736,7 +4777,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2023
+   "year": 2023,
+   "venue_full": "2023 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM)"
   },
   {
    "asserted": {
@@ -4827,8 +4869,9 @@
    "topic": "npmeco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3510003.3510142",
-   "venue": "Proceedings of the 44th International Conference on Software",
-   "year": 2022
+   "venue": "Proceedings of the 44th International Conference on Software Engineering",
+   "year": 2022,
+   "venue_full": "Proceedings of the 44th International Conference on Software Engineering"
   },
   {
    "asserted": {
@@ -4850,8 +4893,9 @@
    "topic": "pypieco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3844178.3844648",
-   "venue": "Proceedings of the 2nd International Workshop on Software Ge",
-   "year": 2026
+   "venue": "Proceedings of the 2nd International Workshop on Software Genomics",
+   "year": 2026,
+   "venue_full": "Proceedings of the 2nd International Workshop on Software Genomics"
   },
   {
    "asserted": {
@@ -4980,7 +5024,7 @@
    "topic": "reprobuild",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3639478.3639806",
-   "venue": "Proceedings of the 2024 IEEE/ACM 46th International Conferen",
+   "venue": "Proceedings of the 2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3639478.3639806; title 1.000; author Malka",
@@ -4996,7 +5040,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "Proceedings of the 2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings"
   },
   {
    "asserted": {
@@ -5018,7 +5063,7 @@
    "topic": "reprobuild",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/msr66628.2025.00115",
-   "venue": "2025 IEEE/ACM 22nd International Conference on Mining Softwa",
+   "venue": "2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/msr66628.2025.00115; title 1.000; author Malka",
@@ -5034,7 +5079,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2025
+   "year": 2025,
+   "venue_full": "2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)"
   },
   {
    "asserted": {
@@ -5125,7 +5171,7 @@
    "topic": "breakingdep",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3803437.3806404",
-   "venue": "Proceedings of the 34th ACM International Conference on the ",
+   "venue": "Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3803437.3806404; title 1.000; author Mecheo",
@@ -5141,7 +5187,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2026
+   "year": 2026,
+   "venue_full": "Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering"
   },
   {
    "asserted": {
@@ -5186,7 +5233,7 @@
    "topic": "csttheory",
    "type": "book-chapter",
    "url": "https://doi.org/10.1007/978-0-85729-378-7_2",
-   "venue": "Dynamic Flexible Constraint Satisfaction and its Application",
+   "venue": "Dynamic Flexible Constraint Satisfaction and its Application to AI Planning",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1007/978-0-85729-378-7_2; title 1.000; author Miguel",
@@ -5202,7 +5249,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2004
+   "year": 2004,
+   "venue_full": "Dynamic Flexible Constraint Satisfaction and its Application to AI Planning"
   },
   {
    "asserted": {
@@ -5224,7 +5272,7 @@
    "topic": "envrepro",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3589806.3600040",
-   "venue": "Proceedings of the 2023 ACM Conference on Reproducibility an",
+   "venue": "Proceedings of the 2023 ACM Conference on Reproducibility and Replicability",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3589806.3600040; title 1.000; author Milewicz",
@@ -5240,7 +5288,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2023
+   "year": 2023,
+   "venue_full": "Proceedings of the 2023 ACM Conference on Reproducibility and Replicability"
   },
   {
    "asserted": {
@@ -5262,7 +5311,7 @@
    "topic": "npmeco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icse55347.2025.00004",
-   "venue": "2025 IEEE/ACM 47th International Conference on Software Engi",
+   "venue": "2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icse55347.2025.00004; title 1.000; author Miller",
@@ -5278,7 +5327,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2025
+   "year": 2025,
+   "venue_full": "2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)"
   },
   {
    "asserted": {
@@ -5414,8 +5464,9 @@
    "topic": "dockerpull",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icsme64153.2025.00044",
-   "venue": "2025 IEEE International Conference on Software Maintenance a",
-   "year": 2025
+   "venue": "2025 IEEE International Conference on Software Maintenance and Evolution (ICSME)",
+   "year": 2025,
+   "venue_full": "2025 IEEE International Conference on Software Maintenance and Evolution (ICSME)"
   },
   {
    "asserted": {
@@ -5437,7 +5488,7 @@
    "topic": "pypieco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3748522.3779992",
-   "venue": "Proceedings of the 41st ACM/SIGAPP Symposium on Applied Comp",
+   "venue": "Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3748522.3779992; title 1.000; author Montaruli",
@@ -5453,7 +5504,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2026
+   "year": 2026,
+   "venue_full": "Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing"
   },
   {
    "asserted": {
@@ -5513,7 +5565,7 @@
    "topic": "buildsys",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/osmses69376.2026.11457221",
-   "venue": "2026 Open Source Modelling and Simulation of Energy Systems ",
+   "venue": "2026 Open Source Modelling and Simulation of Energy Systems (OSMSES)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/osmses69376.2026.11457221; title 1.000; author Mu",
@@ -5529,7 +5581,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2026
+   "year": 2026,
+   "venue_full": "2026 Open Source Modelling and Simulation of Energy Systems (OSMSES)"
   },
   {
    "asserted": {
@@ -5551,8 +5604,9 @@
    "topic": "csttheory",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0011897000003393",
-   "venue": "Proceedings of the 15th International Conference on Agents a",
-   "year": 2023
+   "venue": "Proceedings of the 15th International Conference on Agents and Artificial Intelligence",
+   "year": 2023,
+   "venue_full": "Proceedings of the 15th International Conference on Agents and Artificial Intelligence"
   },
   {
    "asserted": {
@@ -5574,8 +5628,9 @@
    "topic": "declarative",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icde.2002.994724",
-   "venue": "Proceedings 18th International Conference on Data Engineerin",
-   "year": null
+   "venue": "Proceedings 18th International Conference on Data Engineering",
+   "year": null,
+   "venue_full": "Proceedings 18th International Conference on Data Engineering"
   },
   {
    "asserted": {
@@ -5597,7 +5652,7 @@
    "topic": "compat",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icsm.1995.526523",
-   "venue": "Proceedings of International Conference on Software Maintena",
+   "venue": "Proceedings of International Conference on Software Maintenance",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icsm.1995.526523; title 1.000; author Nakanishi",
@@ -5613,7 +5668,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": null
+   "year": null,
+   "venue_full": "Proceedings of International Conference on Software Maintenance"
   },
   {
    "asserted": {
@@ -5635,7 +5691,7 @@
    "topic": "containertag",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0010324606350642",
-   "venue": "Proceedings of the 7th International Conference on Informati",
+   "venue": "Proceedings of the 7th International Conference on Information Systems Security and Privacy",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.5220/0010324606350642; title 1.000; author Nakata",
@@ -5651,7 +5707,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2021
+   "year": 2021,
+   "venue_full": "Proceedings of the 7th International Conference on Information Systems Security and Privacy"
   },
   {
    "asserted": {
@@ -5673,7 +5730,7 @@
    "topic": "deprecat",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/saner53432.2022.00031",
-   "venue": "2022 IEEE International Conference on Software Analysis, Evo",
+   "venue": "2022 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/saner53432.2022.00031; title 1.000; author Nascimento",
@@ -5689,7 +5746,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2022
+   "year": 2022,
+   "venue_full": "2022 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)"
   },
   {
    "asserted": {
@@ -5772,7 +5830,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2009.5316014",
-   "venue": "2009 3rd International Symposium on Empirical Software Engin",
+   "venue": "2009 3rd International Symposium on Empirical Software Engineering and Measurement",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2009.5316014; title 1.000; author Odzaly",
@@ -5788,7 +5846,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2009
+   "year": 2009,
+   "venue_full": "2009 3rd International Symposium on Empirical Software Engineering and Measurement"
   },
   {
    "asserted": {
@@ -5886,7 +5945,7 @@
    "topic": "modelspec",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icmla.2016.0097",
-   "venue": "2016 15th IEEE International Conference on Machine Learning ",
+   "venue": "2016 15th IEEE International Conference on Machine Learning and Applications (ICMLA)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icmla.2016.0097; title 1.000; author Oladunni",
@@ -5902,7 +5961,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2016
+   "year": 2016,
+   "venue_full": "2016 15th IEEE International Conference on Machine Learning and Applications (ICMLA)"
   },
   {
    "asserted": {
@@ -6038,7 +6098,7 @@
    "topic": "maven",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/aeeca49918.2020.9213605",
-   "venue": "2020 IEEE International Conference on Advances in Electrical",
+   "venue": "2020 IEEE International Conference on Advances in Electrical Engineering and Computer Applications( AEECA)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/aeeca49918.2020.9213605; title 1.000; author Pan",
@@ -6054,7 +6114,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2020
+   "year": 2020,
+   "venue_full": "2020 IEEE International Conference on Advances in Electrical Engineering and Computer Applications( AEECA)"
   },
   {
    "asserted": {
@@ -6137,8 +6198,9 @@
    "topic": "transdecl",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/582257.582259",
-   "venue": "Proceedings of the 1980 ACM SIGMOD international conference ",
-   "year": 1980
+   "venue": "Proceedings of the 1980 ACM SIGMOD international conference on Management of data  - SIGMOD '80",
+   "year": 1980,
+   "venue_full": "Proceedings of the 1980 ACM SIGMOD international conference on Management of data  - SIGMOD '80"
   },
   {
    "asserted": {
@@ -6236,7 +6298,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/iwsm-mensura.2013.22",
-   "venue": "2013 Joint Conference of the 23rd International Workshop on ",
+   "venue": "2013 Joint Conference of the 23rd International Workshop on Software Measurement and the 8th International Conference on Software Process and Product Measurement",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/iwsm-mensura.2013.22; title 1.000; author Petersen",
@@ -6252,7 +6314,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2013
+   "year": 2013,
+   "venue_full": "2013 Joint Conference of the 23rd International Workshop on Software Measurement and the 8th International Conference on Software Process and Product Measurement"
   },
   {
    "asserted": {
@@ -6320,7 +6383,7 @@
    "topic": "maxsmt",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icse48619.2023.00124",
-   "venue": "2023 IEEE/ACM 45th International Conference on Software Engi",
+   "venue": "2023 IEEE/ACM 45th International Conference on Software Engineering (ICSE)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icse48619.2023.00124; title 1.000; author Pinckney",
@@ -6336,7 +6399,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2023
+   "year": 2023,
+   "venue_full": "2023 IEEE/ACM 45th International Conference on Software Engineering (ICSE)"
   },
   {
    "asserted": {
@@ -6358,8 +6422,9 @@
    "topic": "smtconfig",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/iri.2015.93",
-   "venue": "2015 IEEE International Conference on Information Reuse and ",
-   "year": 2015
+   "venue": "2015 IEEE International Conference on Information Reuse and Integration",
+   "year": 2015,
+   "venue_full": "2015 IEEE International Conference on Information Reuse and Integration"
   },
   {
    "asserted": {
@@ -6404,8 +6469,9 @@
    "topic": "depgraph",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icoris.2019.8874920",
-   "venue": "2019 1st International Conference on Cybernetics and Intelli",
-   "year": 2019
+   "venue": "2019 1st International Conference on Cybernetics and Intelligent System (ICORIS)",
+   "year": 2019,
+   "venue_full": "2019 1st International Conference on Cybernetics and Intelligent System (ICORIS)"
   },
   {
    "asserted": {
@@ -6678,7 +6744,7 @@
    "topic": "breakingdep",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/scam63643.2024.00014",
-   "venue": "2024 IEEE International Conference on Source Code Analysis a",
+   "venue": "2024 IEEE International Conference on Source Code Analysis and Manipulation (SCAM)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/scam63643.2024.00014; title 1.000; author Reyes",
@@ -6694,7 +6760,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2024
+   "year": 2024,
+   "venue_full": "2024 IEEE International Conference on Source Code Analysis and Manipulation (SCAM)"
   },
   {
    "asserted": {
@@ -6716,8 +6783,9 @@
    "topic": "breakingdep",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/saner60148.2024.00024",
-   "venue": "2024 IEEE International Conference on Software Analysis, Evo",
-   "year": 2024
+   "venue": "2024 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
+   "year": 2024,
+   "venue_full": "2024 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)"
   },
   {
    "asserted": {
@@ -6777,8 +6845,9 @@
    "topic": "depgraph",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/issrew.2019.00037",
-   "venue": "2019 IEEE International Symposium on Software Reliability En",
-   "year": 2019
+   "venue": "2019 IEEE International Symposium on Software Reliability Engineering Workshops (ISSREW)",
+   "year": 2019,
+   "venue_full": "2019 IEEE International Symposium on Software Reliability Engineering Workshops (ISSREW)"
   },
   {
    "asserted": {
@@ -6800,7 +6869,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/esem.2017.65",
-   "venue": "2017 ACM/IEEE International Symposium on Empirical Software ",
+   "venue": "2017 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/esem.2017.65; title 1.000; author Rodriguez",
@@ -6816,7 +6885,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2017
+   "year": 2017,
+   "venue_full": "2017 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM)"
   },
   {
    "asserted": {
@@ -6838,8 +6908,9 @@
    "topic": "identcode",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0010019901230130",
-   "venue": "Proceedings of the 12th International Joint Conference on Co",
-   "year": 2020
+   "venue": "Proceedings of the 12th International Joint Conference on Computational Intelligence",
+   "year": 2020,
+   "venue_full": "Proceedings of the 12th International Joint Conference on Computational Intelligence"
   },
   {
    "asserted": {
@@ -6922,7 +6993,7 @@
    "topic": "wilson",
    "type": "journal-article",
    "url": "https://doi.org/10.1111/j.2517-6161.1952.tb00105.x",
-   "venue": "Journal of the Royal Statistical Society Series B: Statistic",
+   "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1111/j.2517-6161.1952.tb00105.x; title 1.000; author Sandelius",
@@ -6938,7 +7009,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 1952
+   "year": 1952,
+   "venue_full": "Journal of the Royal Statistical Society Series B: Statistical Methodology"
   },
   {
    "asserted": {
@@ -6983,7 +7055,7 @@
    "topic": "depgraph",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0010896800003124",
-   "venue": "Proceedings of the 17th International Joint Conference on Co",
+   "venue": "Proceedings of the 17th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.5220/0010896800003124; title 1.000; author Savidis",
@@ -6999,7 +7071,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2022
+   "year": 2022,
+   "venue_full": "Proceedings of the 17th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications"
   },
   {
    "asserted": {
@@ -7021,7 +7094,7 @@
    "topic": "locksec",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3774748.3787615",
-   "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conferen",
+   "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3774748.3787615; title 1.000; author Schmid",
@@ -7037,7 +7110,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2026
+   "year": 2026,
+   "venue_full": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering"
   },
   {
    "asserted": {
@@ -7059,8 +7133,9 @@
    "topic": "apibreakage",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/mobilsoft59058.2023.00008",
-   "venue": "2023 IEEE/ACM 10th International Conference on Mobile Softwa",
-   "year": 2023
+   "venue": "2023 IEEE/ACM 10th International Conference on Mobile Software Engineering and Systems (MOBILESoft)",
+   "year": 2023,
+   "venue_full": "2023 IEEE/ACM 10th International Conference on Mobile Software Engineering and Systems (MOBILESoft)"
   },
   {
    "asserted": {
@@ -7181,8 +7256,9 @@
    "topic": "featuremodel",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0006749307310742",
-   "venue": "Proceedings of the 6th International Conference on Model-Dri",
-   "year": 2018
+   "venue": "Proceedings of the 6th International Conference on Model-Driven Engineering and Software Development",
+   "year": 2018,
+   "venue_full": "Proceedings of the 6th International Conference on Model-Driven Engineering and Software Development"
   },
   {
    "asserted": {
@@ -7204,8 +7280,9 @@
    "topic": "transdecl",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/ideas.1998.694350",
-   "venue": "Proceedings. IDEAS'98. International Database Engineering an",
-   "year": null
+   "venue": "Proceedings. IDEAS'98. International Database Engineering and Applications Symposium (Cat. No.98EX156)",
+   "year": null,
+   "venue_full": "Proceedings. IDEAS'98. International Database Engineering and Applications Symposium (Cat. No.98EX156)"
   },
   {
    "asserted": {
@@ -7250,7 +7327,7 @@
    "topic": "apiev",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/vissoft60811.2023.00013",
-   "venue": "2023 IEEE Working Conference on Software Visualization (VISS",
+   "venue": "2023 IEEE Working Conference on Software Visualization (VISSOFT)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/vissoft60811.2023.00013; title 1.000; author Serbout",
@@ -7266,7 +7343,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2023
+   "year": 2023,
+   "venue_full": "2023 IEEE Working Conference on Software Visualization (VISSOFT)"
   },
   {
    "asserted": {
@@ -7288,7 +7366,7 @@
    "topic": "transdecl",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/escience51609.2021.00032",
-   "venue": "2021 IEEE 17th International Conference on eScience (eScienc",
+   "venue": "2021 IEEE 17th International Conference on eScience (eScience)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/escience51609.2021.00032; title 1.000; author Shaffer",
@@ -7304,7 +7382,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2021
+   "year": 2021,
+   "venue_full": "2021 IEEE 17th International Conference on eScience (eScience)"
   },
   {
    "asserted": {
@@ -7349,7 +7428,7 @@
    "topic": "dockerpull",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3803437.3804434",
-   "venue": "Proceedings of the 34th ACM International Conference on the ",
+   "venue": "Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3803437.3804434; title 1.000; author Solarin",
@@ -7365,7 +7444,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2026
+   "year": 2026,
+   "venue_full": "Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering"
   },
   {
    "asserted": {
@@ -7585,7 +7665,7 @@
    "topic": "measurement",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/2652524.2652590",
-   "venue": "Proceedings of the 8th ACM/IEEE International Symposium on E",
+   "venue": "Proceedings of the 8th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/2652524.2652590; title 1.000; author Taber",
@@ -7601,7 +7681,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2014
+   "year": 2014,
+   "venue_full": "Proceedings of the 8th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement"
   },
   {
    "asserted": {
@@ -7699,7 +7780,7 @@
    "topic": "pypieco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/asew67777.2025.00055",
-   "venue": "2025 40th IEEE/ACM International Conference on Automated Sof",
+   "venue": "2025 40th IEEE/ACM International Conference on Automated Software Engineering Workshops (ASEW)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/asew67777.2025.00055; title 1.000; author Termphaiboon",
@@ -7715,7 +7796,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2025
+   "year": 2025,
+   "venue_full": "2025 40th IEEE/ACM International Conference on Automated Software Engineering Workshops (ASEW)"
   },
   {
    "asserted": {
@@ -7775,8 +7857,9 @@
    "topic": "baseimage",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/ic2e.2019.00026",
-   "venue": "2019 IEEE International Conference on Cloud Engineering (IC2",
-   "year": 2019
+   "venue": "2019 IEEE International Conference on Cloud Engineering (IC2E)",
+   "year": 2019,
+   "venue_full": "2019 IEEE International Conference on Cloud Engineering (IC2E)"
   },
   {
    "asserted": {
@@ -7836,8 +7919,9 @@
    "topic": "transdecl",
    "type": "proceedings-article",
    "url": "https://doi.org/10.5220/0005548502930300",
-   "venue": "Proceedings of the 12th International Conference on Security",
-   "year": 2015
+   "venue": "Proceedings of the 12th International Conference on Security and Cryptography",
+   "year": 2015,
+   "venue_full": "Proceedings of the 12th International Conference on Security and Cryptography"
   },
   {
    "asserted": {
@@ -7943,8 +8027,9 @@
    "topic": "versionscheme",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/csse.2008.632",
-   "venue": "2008 International Conference on Computer Science and Softwa",
-   "year": 2008
+   "venue": "2008 International Conference on Computer Science and Software Engineering",
+   "year": 2008,
+   "venue_full": "2008 International Conference on Computer Science and Software Engineering"
   },
   {
    "asserted": {
@@ -7989,7 +8074,7 @@
    "topic": "moduleres",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icctec.2017.00216",
-   "venue": "2017 International Conference on Computer Technology, Electr",
+   "venue": "2017 International Conference on Computer Technology, Electronics and Communication (ICCTEC)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icctec.2017.00216; title 1.000; author Wang",
@@ -8005,7 +8090,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2017
+   "year": 2017,
+   "venue_full": "2017 International Conference on Computer Technology, Electronics and Communication (ICCTEC)"
   },
   {
    "asserted": {
@@ -8027,7 +8113,7 @@
    "topic": "depgraph",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1117/12.2640792",
-   "venue": "International Conference on Computer Network Security and So",
+   "venue": "International Conference on Computer Network Security and Software Engineering (CNSSE 2022)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1117/12.2640792; title 1.000; author Wang",
@@ -8043,7 +8129,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2022
+   "year": 2022,
+   "venue_full": "International Conference on Computer Network Security and Software Engineering (CNSSE 2022)"
   },
   {
    "asserted": {
@@ -8103,7 +8190,7 @@
    "topic": "npmeco",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icse55347.2025.00054",
-   "venue": "2025 IEEE/ACM 47th International Conference on Software Engi",
+   "venue": "2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1109/icse55347.2025.00054; title 1.000; author Wang",
@@ -8119,7 +8206,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2025
+   "year": 2025,
+   "venue_full": "2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)"
   },
   {
    "asserted": {
@@ -8187,7 +8275,7 @@
    "topic": "registrymine",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/2901739.2901743",
-   "venue": "Proceedings of the 13th International Conference on Mining S",
+   "venue": "Proceedings of the 13th International Conference on Mining Software Repositories",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/2901739.2901743; title 1.000; author Wittern",
@@ -8203,7 +8291,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2016
+   "year": 2016,
+   "venue_full": "Proceedings of the 13th International Conference on Mining Software Repositories"
   },
   {
    "asserted": {
@@ -8225,7 +8314,7 @@
    "topic": "modelregistry",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1145/3589806.3600039",
-   "venue": "Proceedings of the 2023 ACM Conference on Reproducibility an",
+   "venue": "Proceedings of the 2023 ACM Conference on Reproducibility and Replicability",
    "verification": {
     "checked_on": "2026-10-23",
     "corroboration": "doi 10.1145/3589806.3600039; title 1.000; author Wonsil",
@@ -8241,7 +8330,8 @@
     "result": "verified",
     "title_score": 1.0
    },
-   "year": 2023
+   "year": 2023,
+   "venue_full": "Proceedings of the 2023 ACM Conference on Reproducibility and Replicability"
   },
   {
    "asserted": {
@@ -8324,8 +8414,9 @@
    "topic": "typosquat",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/raid67961.2025.00047",
-   "venue": "2025 28th International Symposium on Research in Attacks, In",
-   "year": 2025
+   "venue": "2025 28th International Symposium on Research in Attacks, Intrusions and Defenses (RAID)",
+   "year": 2025,
+   "venue_full": "2025 28th International Symposium on Research in Attacks, Intrusions and Defenses (RAID)"
   },
   {
    "asserted": {
@@ -8599,8 +8690,9 @@
    "topic": "modelspec",
    "type": "proceedings-article",
    "url": "https://doi.org/10.1109/icmlc.2016.7860886",
-   "venue": "2016 International Conference on Machine Learning and Cybern",
-   "year": 2016
+   "venue": "2016 International Conference on Machine Learning and Cybernetics (ICMLC)",
+   "year": 2016,
+   "venue_full": "2016 International Conference on Machine Learning and Cybernetics (ICMLC)"
   },
   {
    "asserted": {

@@ -687,7 +687,12 @@ def discover(query, rows=8):
         out.append({"title": " ".join(t.split()),
                     "doi": it.get("DOI"),
                     "year": year_of(it),
-                    "venue": ((it.get("container-title") or [""])[0] or "")[:60],
+                    # NOT [:60]. The cut used to live here and it silently truncated 92 of the
+                    # 270 harvested venue strings mid-word ("...48th International Conferen");
+                    # every later step reproduced them faithfully and no gate could see a cut
+                    # inside the corpus. A display that needs to elide does it with an explicit
+                    # ellipsis at the point of display, never by storing less than the record says.
+                    "venue": ((it.get("container-title") or [""])[0] or ""),
                     "first_author": first_family(it),
                     "type": it.get("type")})
     return out
