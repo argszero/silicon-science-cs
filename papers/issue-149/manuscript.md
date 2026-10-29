@@ -188,7 +188,7 @@ asserting it. `depth2.py` reports for every ambiguous coordinate the smallest ot
 determines it, and the two directions agree exactly: **34 of the 172 npm instances** with an
 ambiguous edge have `|K*| < |M|` (19.8 % [14.5, 26.4], over 7 distinct declaring packages), **all 34
 carry a measured functional determiner, and no instance with a determiner needs `|M|` records**;
-PyPI's 63 instances carry none (0 % [0, 5.7]). The saving never exceeds one record — the histogram
+PyPI's 63 instances carry none (0.0 % [0.0, 5.7]). The saving never exceeds one record — the histogram
 over the 34 is `{1: 34}` — so the condition buys one package per declaration, not a construction.
 
 The smallest exception is `accepts@1.3.4`. `mime-types` is ambiguous over 20 versions and `mime-db`

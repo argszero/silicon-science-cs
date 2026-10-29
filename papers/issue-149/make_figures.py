@@ -192,7 +192,7 @@ def check_prose_rates(text, rates, depth2=None):
             if isinstance(v.get("price_delta_points"), float):
                 pins_pct.add(v["price_delta_points"])
     body = text.replace(render_table(rates), "")        # the table is checked above
-    pat = re.compile(r"(\d+\.\d)%\s*\[(\d+\.\d+),\s*(\d+\.\d+)\]")
+    pat = re.compile(r"(\d+\.\d)\s*%\s*\[(\d+\.\d+),\s*(\d+\.\d+)\]")
     total, bad = 0, 0
     for m in pat.finditer(body):
         total += 1
@@ -221,7 +221,7 @@ def check_prose_rates(text, rates, depth2=None):
                 print("  [FAIL] a sentence pricing pins prints %s, which depth2.json does not hold "
                       "(it holds: %s)" % (m.group(1), ", ".join(str(x) for x in sorted(pins_ints))))
         # a percentage that opens an interval triple is the first rule's business, not this one
-        for m in re.finditer(r"(\d+\.\d)%(?!\s*\[)", sentence):
+        for m in re.finditer(r"(\d+\.\d)\s*%(?!\s*\[)", sentence):
             ints += 1
             if float(m.group(1)) not in pins_pct:
                 bad += 1
