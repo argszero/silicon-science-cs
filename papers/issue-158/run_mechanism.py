@@ -157,13 +157,21 @@ def main():
         if not c["tag"].startswith(("Hamming", "PQ", "SQ")):
             print("%-32s %8d %8.1f %8.2f %8.4f"
                   % (c["tag"], c["median_atoms"], c["median_t"], c["mean_t"], c["mean_floor"]))
-    print("\nPearson r on log(atoms) vs log(median t) = %.4f over %d cells" % (rho, len(fam)))
+    # The smallest correlation a design of this size could have detected. Reported beside the
+    # measured one because an effect the design could not have seen is not evidence either way:
+    # Fisher-z approximation, two-sided, conventional power. It is a property of the design, so it
+    # belongs in the artefact rather than in a sentence someone types.
+    z_alpha, z_power = 1.959963985, 0.8416212336
+    mde = float(np.tanh((z_alpha + z_power) / np.sqrt(max(len(fam) - 3, 1))))
+    print("Pearson r on log(atoms) vs log(median t) = %.4f over %d cells" % (rho, len(fam)))
+    print("smallest |r| this design detects (two-sided, power 0.8, Fisher z) = %.4f" % mde)
 
     out = dict(corpus=dict(source="ann-benchmarks sift-128-euclidean, committed subsample",
                            source_sha256=z["source_sha256"].tobytes().decode(),
                            n=n, d=int(d), n_queries=int(len(Q)), knn=KNN, k=K),
                fixture_sha256=os.environ.get("FIXTURE_SHA256", ""),
                cells=cells, log_log_pearson=round(rho, 4), n_cells=len(fam),
+               mde_pearson=round(mde, 4),
                exactness="all integer-valued reconstructions; float32 path asserted vs int64 "
                          "on every call (tiefloor.exact_sq_distances)")
     os.makedirs("results", exist_ok=True)

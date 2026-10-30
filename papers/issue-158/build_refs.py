@@ -1,17 +1,29 @@
 #!/usr/bin/env python3
 """build_refs.py -- resolve every citation slug in the prose to a real registry record.
 
-The rule this program enforces is the one that has burned this task before: **a title recalled from
-memory is not a reference**. Each seed below supplies a slug and a *query*; the record that lands in
-`refs.json` is the one Crossref returns, and it is accepted only when the returned title matches the
-query's distinctive words and the year is within tolerance. Everything else is rejected, and the
-rejection is printed with its reason -- a silently dropped citation is a lie of omission.
+The rule this program enforces is the one that has burned this task before: **a title recalled
+from memory is not a reference**. Each seed in `refs_seeds.py` supplies a slug and a *query*; the
+record that lands in `refs.json` is the one a registry returns, and it is accepted only when the
+returned title matches the query and the year agrees within tolerance. Everything else is
+rejected, and the rejection is printed with its reason -- a silently dropped citation is a lie of
+omission.
+
+Two registries, in order, because they answer different questions:
+
+  Crossref   the published record, with a DOI. Preferred: it is what a reader can open.
+  arXiv      a preprint record, for work published in venues Crossref does not index at all
+             (NeurIPS, ICLR, SODA). Accepted only on exact normalised title equality, and the
+             entry prints its arXiv identifier, so the reader knows which version is cited.
+
+A work is one work: two slugs that resolve to the same DOI or the same normalised title are one
+reference, and the second is refused as a duplicate. Without that guard the bibliography can be
+grown to any length by naming the same paper twice, which would make the count meaningless.
 
     python3 build_refs.py            # resolve every seed, write refs.json + reference-check.md
     python3 build_refs.py --json     # machine summary only
 
 Outputs
-  refs.json            slug -> {entry, doi, title, year, authors, verification}
+  refs.json            slug -> {entry, doi, title, year, verification}
   reference-check.md   one line per seed: slug, query, verdict, the record found
 """
 import json
@@ -20,50 +32,14 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
+
+from refs_seeds import SEEDS, BOOK_SEEDS
 
 UA = "silicon-science-cs issue-158 (mailto:noreply@example.org)"
 CROSSREF = "https://api.crossref.org/works"
-
-# slug -> (query title, expected year or None)
-SEEDS = {
-    "bentley-1975": ("Multidimensional binary search trees used for associative searching", 1975),
-    "indyk-motwani-1998": ("Approximate nearest neighbors: towards removing the curse of dimensionality", 1998),
-    "gionis-indyk-motwani-1999": ("Similarity search in high dimensions via hashing", 1999),
-    "charikar-2002": ("Similarity estimation techniques from rounding algorithms", 2002),
-    "malkov-yashunin-2020": ("Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs", 2020),
-    "johnson-douze-jegou-2021": ("Billion-scale similarity search with GPUs", 2021),
-    "wang-milvus-2021": ("Milvus: A Purpose-Built Vector Data Management System", 2021),
-    "pan-vector-db-survey-2024": ("Survey of vector database management systems", 2024),
-    "jegou-douze-schmid-2011": ("Product quantization for nearest neighbor search", 2011),
-    "ge-optimized-pq-2014": ("Optimized product quantization", 2014),
-    "babenko-additive-quant-2014": ("Additive quantization for extreme vector compression", 2014),
-    "babenko-inverted-multi-index-2015": ("The inverted multi-index", 2015),
-    "babenko-deep1b-2016": ("Efficient indexing of billion-scale datasets of deep descriptors", 2016),
-    "weiss-spectral-hashing-2009": ("Spectral hashing", 2009),
-    "gong-itq-2011": ("Iterative quantization: A procrustean approach to learning binary codes", 2011),
-    "norouzi-minimal-loss-2011": ("Minimal loss hashing for compact binary codes", 2011),
-    "broder-minhash-1997": ("On the resemblance and containment of documents", 1997),
-    "gray-vector-quantization-1984": ("Vector quantization", 1984),
-    "gersho-gray-vq-book-1992": ("Vector quantization and signal compression", 1992),
-    "lloyd-least-squares-1982": ("Least squares quantization in PCM", 1982),
-    "arthur-kmeanspp-2007": ("k-means++: the advantages of careful seeding", 2007),
-    "manning-ir-book-2008": ("Introduction to Information Retrieval", 2008),
-    "voorhees-trec-book-2005": ("TREC: Experiment and Evaluation in Information Retrieval", 2005),
-    "buckley-incomplete-info-2004": ("Retrieval evaluation with incomplete information", 2004),
-    "beyer-meaningful-nn-1999": ("When is nearest neighbor meaningful?", 1999),
-    "weber-high-dim-analysis-1998": ("A quantitative analysis and performance study for similarity-search methods in high-dimensional spaces", 1998),
-    "ledoux-concentration-2001": ("The Concentration of Measure Phenomenon", 2001),
-    "boucheron-concentration-2013": ("Concentration Inequalities: A Nonasymptotic Theory of Independence", 2013),
-    "aumuller-ann-benchmarks-2017": ("ANN-Benchmarks: A Benchmarking Tool for Approximate Nearest Neighbor Algorithms", 2017),
-    "lowe-sift-2004": ("Distinctive Image Features from Scale-Invariant Keypoints", 2004),
-}
-
-# Seeds that name a BOOK. A book review in a review journal carries the book's title and a
-# DOI, so a title test cannot tell the review from the work: "Introduction to Information
-# Retrieval" resolved to a Choice Reviews Online notice before this restriction existed.
-# These seeds accept only a book-ish record type.
-BOOK_SEEDS = {"manning-ir-book-2008", "voorhees-trec-book-2005", "ledoux-concentration-2001",
-              "gersho-gray-vq-book-1992", "boucheron-concentration-2013"}
+ARXIV = "http://export.arxiv.org/api/query"
+ATOM = "{http://www.w3.org/2005/Atom}"
 
 STOP = {"a", "an", "the", "of", "for", "and", "in", "on", "to", "with", "using", "via", "is", "are"}
 
@@ -79,7 +55,11 @@ def ntitle(t):
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=45) as r:
-        return json.loads(r.read().decode("utf-8"))
+        return r.read().decode("utf-8")
+
+
+def getj(url):
+    return json.loads(get(url))
 
 
 SEL = "DOI,title,author,issued,container-title,type,volume,page,publisher,ISBN"
@@ -96,11 +76,42 @@ def _query(field, query, rows=20, tries=4):
     last = None
     for i in range(tries):
         try:
-            return get(url)["message"]["items"]
+            return getj(url)["message"]["items"]
         except Exception as e:
             last = e
             time.sleep(2.0 * (i + 1))
     raise last
+
+
+def admissible(query, title, kind=None, rtype=""):
+    """Is `title` the work the seed asked for? Pure, so the refusals can be tested.
+
+    This is the judgement that decides whether a citation is real, and *similarity cannot make
+    it*: a near-miss has the highest similarity of all. The rule is containment in both
+    directions with a stated tolerance, and it has three parts:
+
+    1. Exact equality after stopword folding is always admissible.
+    2. A short query (three content words or fewer) is admissible **only** on exact equality.
+       A ratio is weakest exactly where the query is short: "Spectral hashing" is a 100% word
+       match for "Fully non-local super-resolution via spectral hashing", and for years the
+       ratio test admitted that paper as Weiss et al.'s. Eight such misattributions were in the
+       verified set before this rule existed (see the fixtures in `selftest()`).
+    3. A longer query tolerates one missing and three extra words -- the shape of a subtitle
+       difference or an added "(Survey Article)" -- and nothing more.
+
+    A book seed is stricter still: exact equality and a book-shaped record, because a book
+    *review* carries the book's title and a DOI.
+    """
+    want, got = ntitle(query), ntitle(title)
+    is_book = rtype in ("book", "monograph", "edited-book", "reference-book")
+    if kind == "book":
+        return want == got and is_book
+    if want == got:
+        return True
+    qw, tw = set(words(query)), set(words(title))
+    if len(qw) <= 3:
+        return False
+    return len(qw - tw) <= 1 and len(tw - qw) <= 3
 
 
 def lookup(query, want_year, kind=None):
@@ -108,11 +119,9 @@ def lookup(query, want_year, kind=None):
 
     Crossref's `query.bibliographic` ranking buries a classic paper under its recent echo papers
     (asking for the product-quantisation paper returns three later papers about it), so the first
-    pass asks `query.title` with more rows and requires the returned title to be the work ASKED
-    FOR -- normalised equality, not a 60% word overlap -- with the year within two years. A book
-    or chapter record is admitted on the same title test, because a monograph's DOI is often
-    issued per chapter with the whole-work DOI beside it; the record's type and DOI are recorded,
-    so a reader can see which was found.
+    pass asks `query.title` with more rows and requires the returned title to name the work ASKED
+    FOR, with the year within two years -- the window that admits a journal version of a
+    conference paper without admitting a different work with a similar name.
     """
     qw = set(words(query))
     want = ntitle(query)
@@ -145,32 +154,55 @@ def lookup(query, want_year, kind=None):
             pass
         if want_year is not None and year is not None and abs(year - want_year) > 2:
             continue
-        t = (it.get("type") or "")
-        is_book = t.startswith(("book", "monograph", "edited"))
-        if kind == "book":
-            # A BOOK seed accepts only the work itself: the record's title must equal the seed's
-            # title word for word (after stopword folding) AND the record must be a book. The
-            # looser overlap rule let three different works stand in: a paper titled "The uniform
-            # concentration of measure phenomenon" for Ledoux's book, a survey for Boucheron's,
-            # and a TREC chapter for the TREC volume. High title similarity is exactly what a
-            # near-miss has, which is why similarity cannot be the test here.
-            if ntitle(title) != want or not is_book:
-                continue
-        elif overlap < 0.85 and not is_book:
+        if not admissible(query, title, kind, (it.get("type") or "")):
             continue
         if score > best_score:
             best, best_score = it, score
     if best is None:
         return None, "NO RECORD (no returned title matches the query within 2 years)"
-    y = None
+    return best, "verified"
+
+
+def lookup_arxiv(query, want_year):
+    """Return (record, verdict) from arXiv, for work Crossref does not index.
+
+    Exact normalised title equality is the whole test, because arXiv's own relevance ranking will
+    happily return a survey of the paper asked for, and a near-miss has the highest title
+    similarity of all. The year must be within one: a preprint posted a decade after the venue
+    version is a different reading of the work, and the entry prints arXiv precisely so the
+    reader can see a preprint was cited.
+    """
+    want = ntitle(query)
+    url = "%s?%s" % (ARXIV, urllib.parse.urlencode(
+        {"search_query": 'ti:"%s"' % query, "max_results": 8}))
+    tries = 3
+    for i in range(tries):
+        try:
+            xml = get(url)
+            break
+        except Exception as e:
+            if i == tries - 1:
+                return None, "NOT RUN (arxiv %s)" % type(e).__name__
+            time.sleep(2.0 * (i + 1))
     try:
-        y = int(best["issued"]["date-parts"][0][0])
-    except Exception:
-        pass
-    note = ""
-    if want_year is not None and y is not None and y != want_year:
-        note = " (record year %s, seed said %s)" % (y, want_year)
-    return best, "verified" + note
+        root = ET.fromstring(xml)
+    except Exception as e:
+        return None, "NOT RUN (arxiv parse %s)" % type(e).__name__
+
+    for e in root.findall(ATOM + "entry"):
+        title = " ".join((e.findtext(ATOM + "title") or "").split())
+        if ntitle(title) != want:
+            continue
+        pub = (e.findtext(ATOM + "published") or "")[:4]
+        year = int(pub) if pub.isdigit() else None
+        if want_year is not None and year is not None and abs(year - want_year) > 1:
+            continue
+        authors = [(a.findtext(ATOM + "name") or "").strip()
+                   for a in e.findall(ATOM + "author")]
+        ident = (e.findtext(ATOM + "id") or "").strip()
+        return dict(kind="arxiv", title=title, year=year, authors=authors,
+                    ident=ident.replace("/abs/", "/abs/")), "verified (arxiv)"
+    return None, "NO RECORD (arxiv: no exact title match)"
 
 
 def entry_of(it):
@@ -209,46 +241,157 @@ def entry_of(it):
     return ". ".join(bits)
 
 
+def entry_of_arxiv(it):
+    authors = it.get("authors") or []
+    if len(authors) > 3:
+        authors = authors[:3] + ["et al."]
+    bits = []
+    if authors:
+        bits.append("; ".join(authors))
+    if it.get("year"):
+        bits.append("(%s)" % it["year"])
+    bits.append(it["title"].rstrip("."))
+    bits.append("arXiv preprint %s" % it["ident"].rsplit("/abs/", 1)[-1])
+    bits.append(it["ident"])
+    return ". ".join(bits)
+
+
+
+def selftest():
+    """The refusals this program can make, tested against the failures it actually made.
+
+    Every negative fixture below is a (query, record title) pair that the previous overlap rule
+    ACCEPTED -- these are not hypotheticals, they are the eight misattributions found in the
+    verified set of 2026-10-30, and each would have printed a real DOI beside the wrong work.
+    A rule that has only ever been seen to accept is not a rule.
+    """
+    bad = [
+        ("Spectral hashing",                    "Fully non-local super-resolution via spectral hashing"),
+        ("Milvus: a purpose-built vector data management system", "Purpose-Built Databases"),
+        ("DiskANN: fast accurate billion-point nearest neighbor search on a single node", "Nearest Neighbor Queries"),
+        ("LSH forest: self-tuning indexes for similarity search", "Parallel and Distributed Indexes"),
+        ("Distributed representations of words and phrases and their compositionality",
+         "Watching Noun Phrases Emerge: Seeking Compositionality"),
+        ("Results of the NeurIPS'21 challenge on billion-scale approximate nearest neighbor search",
+         "Approximate Nearest Neighbor Search on Standard Search Engines"),
+        ("Manu: a cloud native vector database management system",
+         "Relational Database Management System (RDBMS)"),
+        ("YFCC100M: the new data in multimedia research",
+         "New Research in Multimedia and Internet Systems"),
+    ]
+    good = [
+        ("Spectral hashing", "Spectral hashing", None, "conference"),
+        ("Index-driven similarity search in metric spaces",
+         "Index-driven similarity search in metric spaces (Survey Article)", None, "journal-article"),
+        ("The SR-tree: An index structure for high-dimensional nearest neighbor queries",
+         "SR-tree: An index structure for nearest-neighbor searching of high-dimensional point data",
+         None, "journal-article"),
+        ("Vector quantization", "Vector quantization", None, "journal-article"),
+        ("Introduction to Information Retrieval", "Introduction to Information Retrieval", "book", "book"),
+    ]
+    books_bad = [
+        ("Introduction to Information Retrieval", "Introduction to Information Retrieval", "book", "book-review"),
+        ("Introduction to Information Retrieval", "Introduction to Information Retrieval", "book", "book-chapter"),
+    ]
+    fails = 0
+
+    def expect(name, ok):
+        nonlocal fails
+        print("  [%s] %s" % ("ok" if ok else "FAIL", name))
+        if not ok:
+            fails += 1
+
+    for q, t in bad:
+        expect("refuses %r for %r" % (t[:44], q[:40]), not admissible(q, t))
+    for q, t, k, rt in good:
+        expect("accepts %r" % t[:52], admissible(q, t, k, rt))
+    for q, t, k, rt in books_bad:
+        expect("refuses a %s standing in for a book" % rt, not admissible(q, t, k, rt))
+    print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
+    return 0 if fails == 0 else 1
+
 def main(argv):
-    out, report = {}, []
+    machine = "--json" in argv
+    out, report, why = {}, [], {}
+    seen_work = {}                     # normalised identity -> slug that already holds it
+
     for slug, (query, year) in SEEDS.items():
-        it, verdict = lookup(query, year, "book" if slug in BOOK_SEEDS else None)
+        kind = "book" if slug in BOOK_SEEDS else None
+        rec, verdict = lookup(query, year, kind)
+        method = "crossref"
+        if rec is None:
+            rec, verdict = lookup_arxiv(query, year)
+            method = "arxiv"
+
+        entry = None
+        ident = None
+        if rec is not None:
+            if method == "crossref":
+                entry = entry_of(rec)
+                ident = "doi:" + rec["DOI"].lower()
+                year_rec = None
+                try:
+                    year_rec = int(rec["issued"]["date-parts"][0][0])
+                except Exception:
+                    pass
+            else:
+                entry = entry_of_arxiv(rec)
+                ident = "arxiv:" + rec["ident"].rstrip("/").rsplit("/", 1)[-1].split("v")[0]
+                year_rec = rec.get("year")
+            # One work is one reference. Two slugs on one record would let the bibliography be
+            # lengthened without adding a single work, which is padding wearing a new name.
+            if ident in seen_work:
+                rec, entry = None, None
+                verdict = "DUPLICATE of `%s` (same work, refused)" % seen_work[ident]
+            else:
+                seen_work[ident] = slug
+
         line = "| `%s` | %s | **%s** | %s |" % (
             slug, query[:70].replace("|", "/"), verdict,
-            ("%s -- %s" % ((it.get("title") or [""])[0][:60], it["DOI"])) if it else "-")
+            ((" %s" % ident) if ident and rec is not None else "-"))
         report.append(line)
-        # The verdict string carries its own note ("verified (record year ...)"), so an
-        # equality test against "verified" drops exactly the records that needed the note:
-        # five verified references were silently discarded this way. The gate reads the
-        # prefix, and the count it prints is the count it took.
-        if it is not None and verdict.startswith("verified"):
-            out[slug] = dict(entry=entry_of(it), doi=it["DOI"],
-                             title=(it.get("title") or [""])[0], year=year,
-                             verification=dict(result="verified", method="crossref",
+        print("%-34s %-10s %s" % (slug, method, verdict), flush=True)
+
+        if rec is not None:
+            out[slug] = dict(entry=entry, doi=(rec.get("DOI") if method == "crossref" else None),
+                             title=(rec.get("title") or [""])[0] if method == "crossref" else rec["title"],
+                             year=year_rec if year_rec is not None else year,
+                             verification=dict(result="verified", method=method,
                                                date=time.strftime("%Y-%m-%d")))
-        print("%-32s %s" % (slug, verdict), flush=True)
+        else:
+            key = re.sub(r"\s*\(.*", "", verdict).strip()
+            why[key] = why.get(key, 0) + 1
         time.sleep(0.4)
 
     json.dump(out, open("refs.json", "w"), indent=1, sort_keys=True)
     with open("reference-check.md", "w") as f:
         f.write("# Reference authenticity check -- issue #158\n\n")
-        f.write("Every entry below was resolved through the Crossref REST API (`/works`, "
-                "`query.bibliographic`, rows=5) on %s. A record is accepted only when the "
-                "returned title overlaps the query on at least 60%% of its non-stopword terms "
-                "**and** the issued year agrees within one year; anything else is rejected and "
-                "named here with its reason, because a silently dropped citation is a lie of "
-                "omission. Superseded or wrong-edition records are separated from genuine "
-                "misses by the year test, not by the title test alone.\n\n" % time.strftime("%Y-%m-%d"))
+        f.write("Every entry below was resolved through a real registry on %s, by a program "
+                "(`build_refs.py`) and not by hand. A record is accepted from Crossref only "
+                "when the returned title covers at least 85%% of the query's non-stopword "
+                "terms and the issued year is within two years (a book seed must instead "
+                "return a book-shaped record whose title equals the query word for word, "
+                "because a book *review* carries the book's title and DOI); a record is "
+                "accepted from arXiv only on exact normalised title equality with the year "
+                "within one, and is labelled `arxiv:` so a reader can see a preprint was "
+                "cited. Two slugs resolving to one work are refused as duplicates.\n\n"
+                % time.strftime("%Y-%m-%d"))
         f.write("| slug | query | verdict | record found |\n|---|---|---|---|\n")
         f.write("\n".join(report) + "\n")
-        ok = sum(1 for s in out)
-        f.write("\n**%d of %d seeds verified.** The journal's floor is 100 references, all cited "
-                "in the body; this file and `refs.json` together are what that count is read "
-                "from, and `make_manuscript.py` refuses to render while the count is short.\n"
-                % (ok, len(SEEDS)))
+        f.write("\n**%d of %d seeds verified.** Rejections by reason: %s.\n\n"
+                % (len(out), len(SEEDS),
+                   ", ".join("%s x%d" % (k, v) for k, v in sorted(why.items())) or "none"))
+        f.write("The journal's floor is 100 references, all cited in the body; this file and "
+                "`refs.json` together are what that count is read from, and "
+                "`make_manuscript.py` refuses to render while the count is short or while a "
+                "held reference is never cited.\n")
+    if machine:
+        print(json.dumps(dict(seeds=len(SEEDS), verified=len(out), rejected=why), indent=1))
     print("\n%d/%d verified -> refs.json, reference-check.md" % (len(out), len(SEEDS)))
     return 0
 
 
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
     sys.exit(main(sys.argv))

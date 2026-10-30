@@ -75,6 +75,14 @@ def main():
     print("  [info] seeds are not independent confirmations: the cell count is the seed count, "
           "the configuration count is the evidence count")
 
+    # ---- is the measured effect above what this design could have detected? ---------------
+    # A correlation a design of this size could not have seen is not evidence either way, so the
+    # sensitivity is printed and asserted here rather than quoted from a note.
+    mde = d["mde_pearson"]
+    check("the measured correlation is above the design's own minimum detectable effect",
+          abs(d["log_log_pearson"]) > mde,
+          "|r|=%.4f vs MDE=%.4f" % (abs(d["log_log_pearson"]), mde))
+
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1
 

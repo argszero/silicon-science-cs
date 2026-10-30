@@ -1,4 +1,92 @@
 {
+ "achlioptas-random-projections-2003": {
+  "doi": "10.1016/s0022-0000(03)00025-4",
+  "entry": "Achlioptas, D.. (2003). Database-friendly random projections: Johnson-Lindenstrauss with binary coins. Journal of Computer and System Sciences. vol. 66. pp. 671-687. https://doi.org/10.1016/s0022-0000(03)00025-4",
+  "title": "Database-friendly random projections: Johnson-Lindenstrauss with binary coins",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "aggarwal-cvn-2001": {
+  "doi": "10.1007/3-540-44503-x_27",
+  "entry": "Aggarwal, C. C.; Hinneburg, A.; Keim, D. A.. (2001). On the Surprising Behavior of Distance Metrics in High Dimensional Space. Lecture Notes in Computer Science. pp. 420-434. https://doi.org/10.1007/3-540-44503-x_27",
+  "title": "On the Surprising Behavior of Distance Metrics in High Dimensional Space",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2001
+ },
+ "agresti-coull-1998": {
+  "doi": "10.2307/2685469",
+  "entry": "Agresti, A.; Coull, B. A.. (1998). Approximate Is Better than \"Exact\" for Interval Estimation of Binomial Proportions. The American Statistician. vol. 52. pp. 119. https://doi.org/10.2307/2685469",
+  "title": "Approximate Is Better than \"Exact\" for Interval Estimation of Binomial Proportions",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "andoni-indyk-2006": {
+  "doi": "10.1109/focs.2006.49",
+  "entry": "Andoni, A.; Indyk, P.. (2006). Near-Optimal Hashing Algorithms for Approximate Nearest Neighbor in High Dimensions. 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). pp. 459-468. https://doi.org/10.1109/focs.2006.49",
+  "title": "Near-Optimal Hashing Algorithms for Approximate Nearest Neighbor in High Dimensions",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "andoni-razenshteyn-2015": {
+  "doi": "10.1145/2746539.2746553",
+  "entry": "Andoni, A.; Razenshteyn, I.. (2015). Optimal Data-Dependent Hashing for Approximate Near Neighbors. Proceedings of the forty-seventh annual ACM symposium on Theory of Computing. pp. 793-801. https://doi.org/10.1145/2746539.2746553",
+  "title": "Optimal Data-Dependent Hashing for Approximate Near Neighbors",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "arandjelovic-netvlad-2016": {
+  "doi": "10.1109/cvpr.2016.572",
+  "entry": "Arandjelovic, R.; Gronat, P.; Torii, A.; et al.. (2016). NetVLAD: CNN Architecture for Weakly Supervised Place Recognition. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 5297-5307. https://doi.org/10.1109/cvpr.2016.572",
+  "title": "NetVLAD: CNN Architecture for Weakly Supervised Place Recognition",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "aslam-pavlu-2003": {
+  "doi": "10.1145/956950.956953",
+  "entry": "Aslam, J. A.; Pavlu, V.; Savell, R.. (2003). A unified model for metasearch, pooling, and system evaluation. Proceedings of the twelfth international conference on Information and knowledge management  - CIKM '03. https://doi.org/10.1145/956950.956953",
+  "title": "A unified model for metasearch, pooling, and system evaluation",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "aslam-savell-2003": {
+  "doi": "10.1145/860500.860501",
+  "entry": "Aslam, J. A.; Savell, R.. (2003). On the effectiveness of evaluating retrieval systems in the absence of relevance judgments. Proceedings of the 26th annual international ACM SIGIR conference on Research and development in informaion retrieval  - SIGIR '03. https://doi.org/10.1145/860500.860501",
+  "title": "On the effectiveness of evaluating retrieval systems in the absence of relevance judgments",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
  "aumuller-ann-benchmarks-2017": {
   "doi": "10.1007/978-3-319-68474-1_3",
   "entry": "Aum\u00fcller, M.; Bernhardsson, E.; Faithfull, A.. (2017). ANN-Benchmarks: A Benchmarking Tool for Approximate Nearest Neighbor Algorithms. Lecture Notes in Computer Science. pp. 34-49. https://doi.org/10.1007/978-3-319-68474-1_3",
@@ -43,6 +131,39 @@
   },
   "year": 2015
  },
+ "baranchuk-invindices-2018": {
+  "doi": "10.1007/978-3-030-01258-8_13",
+  "entry": "Baranchuk, D.; Babenko, A.; Malkov, Y.. (2018). Revisiting the Inverted Indices for Billion-Scale Approximate Nearest Neighbors. Lecture Notes in Computer Science. pp. 209-224. https://doi.org/10.1007/978-3-030-01258-8_13",
+  "title": "Revisiting the Inverted Indices for Billion-Scale Approximate Nearest Neighbors",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2018
+ },
+ "bay-surf-2006": {
+  "doi": "10.1016/j.cviu.2007.09.014",
+  "entry": "Bay, H.; Ess, A.; Tuytelaars, T.; et al.. (2008). Speeded-Up Robust Features (SURF). Computer Vision and Image Understanding. vol. 110. pp. 346-359. https://doi.org/10.1016/j.cviu.2007.09.014",
+  "title": "Speeded-Up Robust Features (SURF)",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2008
+ },
+ "beckmann-rstar-1990": {
+  "doi": "10.1145/93597.98741",
+  "entry": "Beckmann, N.; Kriegel, H. P.; Schneider, R.; et al.. (1990). The R*-tree: an efficient and robust access method for points and rectangles. Proceedings of the 1990 ACM SIGMOD international conference on Management of data. pp. 322-331. https://doi.org/10.1145/93597.98741",
+  "title": "The R*-tree: an efficient and robust access method for points and rectangles",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1990
+ },
  "bentley-1975": {
   "doi": "10.1145/361002.361007",
   "entry": "Bentley, J. L.. (1975). Multidimensional binary search trees used for associative searching. Communications of the ACM. vol. 18. pp. 509-517. https://doi.org/10.1145/361002.361007",
@@ -64,6 +185,39 @@
    "result": "verified"
   },
   "year": 1999
+ },
+ "bland-altman-1986": {
+  "doi": "10.1016/s0140-6736(86)90837-8",
+  "entry": "Martin Bland, J.; Altman, D.. (1986). STATISTICAL METHODS FOR ASSESSING AGREEMENT BETWEEN TWO METHODS OF CLINICAL MEASUREMENT. The Lancet. vol. 327. pp. 307-310. https://doi.org/10.1016/s0140-6736(86)90837-8",
+  "title": "STATISTICAL METHODS FOR ASSESSING AGREEMENT BETWEEN TWO METHODS OF CLINICAL MEASUREMENT",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1986
+ },
+ "bloom-1970": {
+  "doi": "10.1145/362686.362692",
+  "entry": "Bloom, B. H.. (1970). Space/time trade-offs in hash coding with allowable errors. Communications of the ACM. vol. 13. pp. 422-426. https://doi.org/10.1145/362686.362692",
+  "title": "Space/time trade-offs in hash coding with allowable errors",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1970
+ },
+ "borgeaud-retro-2022": {
+  "doi": null,
+  "entry": "Sebastian Borgeaud; Arthur Mensch; Jordan Hoffmann; et al.. (2021). Improving language models by retrieving from trillions of tokens. arXiv preprint 2112.04426v3. http://arxiv.org/abs/2112.04426v3",
+  "title": "Improving language models by retrieving from trillions of tokens",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2021
  },
  "broder-minhash-1997": {
   "doi": "10.1109/sequen.1997.666900",
@@ -87,6 +241,17 @@
   },
   "year": 2004
  },
+ "buckley-pooling-bias-2007": {
+  "doi": "10.1007/s10791-007-9032-x",
+  "entry": "Buckley, C.; Dimmick, D.; Soboroff, I.; et al.. (2007). Bias and the limits of pooling for large collections. Information Retrieval. vol. 10. pp. 491-508. https://doi.org/10.1007/s10791-007-9032-x",
+  "title": "Bias and the limits of pooling for large collections",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
  "charikar-2002": {
   "doi": "10.1145/509907.509965",
   "entry": "Charikar, M. S.. (2002). Similarity estimation techniques from rounding algorithms. Proceedings of the thiry-fourth annual ACM symposium on Theory of computing. pp. 380-388. https://doi.org/10.1145/509907.509965",
@@ -97,6 +262,149 @@
    "result": "verified"
   },
   "year": 2002
+ },
+ "chavez-metric-spaces-2001": {
+  "doi": "10.1145/502807.502808",
+  "entry": "Ch\u00e1vez, E.; Navarro, G.; Baeza-Yates, R.; et al.. (2001). Searching in metric spaces. ACM Computing Surveys. vol. 33. pp. 273-321. https://doi.org/10.1145/502807.502808",
+  "title": "Searching in metric spaces",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2001
+ },
+ "ciaccia-pac-2000": {
+  "doi": "10.1109/icde.2000.839417",
+  "entry": "Ciaccia, P.; Patella, M.. (None). PAC nearest neighbor queries: Approximate and controlled search in high-dimensional and metric spaces. Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073). pp. 244-255. https://doi.org/10.1109/icde.2000.839417",
+  "title": "PAC nearest neighbor queries: Approximate and controlled search in high-dimensional and metric spaces",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2000
+ },
+ "cohen-kappa-1960": {
+  "doi": "10.1177/001316446002000104",
+  "entry": "Cohen, J.. (1960). A Coefficient of Agreement for Nominal Scales. Educational and Psychological Measurement. vol. 20. pp. 37-46. https://doi.org/10.1177/001316446002000104",
+  "title": "A Coefficient of Agreement for Nominal Scales",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1960
+ },
+ "dalal-hog-2005": {
+  "doi": "10.1109/cvpr.2005.177",
+  "entry": "Dalal, N.; Triggs, B.. (None). Histograms of Oriented Gradients for Human Detection. 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05). vol. 1. pp. 886-893. https://doi.org/10.1109/cvpr.2005.177",
+  "title": "Histograms of Oriented Gradients for Human Detection",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2005
+ },
+ "datar-pstable-lsh-2004": {
+  "doi": "10.1145/997817.997857",
+  "entry": "Datar, M.; Immorlica, N.; Indyk, P.; et al.. (2004). Locality-sensitive hashing scheme based on p-stable distributions. Proceedings of the twentieth annual symposium on Computational geometry. pp. 253-262. https://doi.org/10.1145/997817.997857",
+  "title": "Locality-sensitive hashing scheme based on p-stable distributions",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2004
+ },
+ "deng-imagenet-2009": {
+  "doi": "10.1109/cvpr.2009.5206848",
+  "entry": "Deng, J.; Dong, W.; Socher, R.; et al.. (2009). ImageNet: A large-scale hierarchical image database. 2009 IEEE Conference on Computer Vision and Pattern Recognition. pp. 248-255. https://doi.org/10.1109/cvpr.2009.5206848",
+  "title": "ImageNet: A large-scale hierarchical image database",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ },
+ "devlin-bert-2019": {
+  "doi": "10.18653/v1/n19-1423",
+  "entry": "Devlin, J.; Chang, M. W.; Lee, K.; et al.. (2019). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). pp. 4171-4186. https://doi.org/10.18653/v1/n19-1423",
+  "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2019
+ },
+ "douze-faiss-2024": {
+  "doi": "10.1109/tbdata.2025.3618474",
+  "entry": "Douze, M.; Guzhva, A.; Deng, C.; et al.. (2026). The Faiss Library. IEEE Transactions on Big Data. vol. 12. pp. 346-361. https://doi.org/10.1109/tbdata.2025.3618474",
+  "title": "The Faiss Library",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2026
+ },
+ "douze-polysemous-2016": {
+  "doi": "10.1007/978-3-319-46475-6_48",
+  "entry": "Douze, M.; J\u00e9gou, H.; Perronnin, F.. (2016). Polysemous Codes. Lecture Notes in Computer Science. pp. 785-801. https://doi.org/10.1007/978-3-319-46475-6_48",
+  "title": "Polysemous Codes",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "efron-bootstrap-1979": {
+  "doi": "10.1214/aos/1176344552",
+  "entry": "Efron, B.. (1979). Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics. vol. 7. pp. 1-26. https://doi.org/10.1214/aos/1176344552",
+  "title": "Bootstrap Methods: Another Look at the Jackknife",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1979
+ },
+ "francois-fractional-2007": {
+  "doi": "10.1109/tkde.2007.1037",
+  "entry": "Francois, D.; Wertz, V.; Verleysen, M.. (2007). The Concentration of Fractional Distances. IEEE Transactions on Knowledge and Data Engineering. vol. 19. pp. 873-886. https://doi.org/10.1109/tkde.2007.1037",
+  "title": "The Concentration of Fractional Distances",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
+ "fu-nsg-2019": {
+  "doi": "10.14778/3303753.3303754",
+  "entry": "Fu, C.; Xiang, C.; Wang, C.; et al.. (2019). Fast approximate nearest neighbor search with the navigating spreading-out graph. Proceedings of the VLDB Endowment. vol. 12. pp. 461-474. https://doi.org/10.14778/3303753.3303754",
+  "title": "Fast approximate nearest neighbor search with the navigating spreading-out graph",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2019
+ },
+ "ge-optimized-pq-2013": {
+  "doi": "10.1109/cvpr.2013.379",
+  "entry": "Ge, T.; He, K.; Ke, Q.; et al.. (2013). Optimized Product Quantization for Approximate Nearest Neighbor Search. 2013 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2946-2953. https://doi.org/10.1109/cvpr.2013.379",
+  "title": "Optimized Product Quantization for Approximate Nearest Neighbor Search",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2013
  },
  "ge-optimized-pq-2014": {
   "doi": "10.1109/tpami.2013.240",
@@ -120,6 +428,17 @@
   },
   "year": 1992
  },
+ "gollapudi-filtered-diskann-2023": {
+  "doi": "10.1145/3543507.3583552",
+  "entry": "Gollapudi, S.; Karia, N.; Sivashankar, V.; et al.. (2023). Filtered-DiskANN: Graph Algorithms for Approximate Nearest Neighbor Search with Filters. Proceedings of the ACM Web Conference 2023. pp. 3406-3416. https://doi.org/10.1145/3543507.3583552",
+  "title": "Filtered-DiskANN: Graph Algorithms for Approximate Nearest Neighbor Search with Filters",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2023
+ },
  "gong-itq-2011": {
   "doi": "10.1109/cvpr.2011.5995432",
   "entry": "Gong, Y.; Lazebnik, S.. (2011). Iterative quantization: A procrustean approach to learning binary codes. CVPR 2011. pp. 817-824. https://doi.org/10.1109/cvpr.2011.5995432",
@@ -130,6 +449,17 @@
    "result": "verified"
   },
   "year": 2011
+ },
+ "goodman-kruskal-1954": {
+  "doi": "10.1080/01621459.1954.10501231",
+  "entry": "Goodman, L. A.; Kruskal, W. H.. (1954). Measures of Association for Cross Classifications*. Journal of the American Statistical Association. vol. 49. pp. 732-764. https://doi.org/10.1080/01621459.1954.10501231",
+  "title": "Measures of Association for Cross Classifications*",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1954
  },
  "gray-vector-quantization-1984": {
   "doi": "10.1109/massp.1984.1162229",
@@ -142,6 +472,138 @@
   },
   "year": 1984
  },
+ "guo-manu-2022": {
+  "doi": null,
+  "entry": "Rentong Guo; Xiaofan Luan; Long Xiang; et al.. (2022). Manu: A Cloud Native Vector Database Management System. arXiv preprint 2206.13843v1. http://arxiv.org/abs/2206.13843v1",
+  "title": "Manu: A Cloud Native Vector Database Management System",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2022
+ },
+ "guttman-r-tree-1984": {
+  "doi": "10.1007/springerreference_62807",
+  "entry": "(None). R-Trees - A Dynamic Index Structure for Spatial Searching. SpringerReference. https://doi.org/10.1007/springerreference_62807",
+  "title": "R-Trees - A Dynamic Index Structure for Spatial Searching",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1984
+ },
+ "guu-realm-2020": {
+  "doi": null,
+  "entry": "Kelvin Guu; Kenton Lee; Zora Tung; et al.. (2020). REALM: Retrieval-Augmented Language Model Pre-Training. arXiv preprint 2002.08909v1. http://arxiv.org/abs/2002.08909v1",
+  "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "hanson-wright-1971": {
+  "doi": "10.1214/aoms/1177693335",
+  "entry": "Hanson, D. L.; Wright, F. T.. (1971). A Bound on Tail Probabilities for Quadratic Forms in Independent Random Variables. The Annals of Mathematical Statistics. vol. 42. pp. 1079-1083. https://doi.org/10.1214/aoms/1177693335",
+  "title": "A Bound on Tail Probabilities for Quadratic Forms in Independent Random Variables",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1971
+ },
+ "harman-trec1-1993": {
+  "doi": "10.1145/160688.160692",
+  "entry": "Harman, D.. (1993). Overview of the first TREC conference. Proceedings of the 16th annual international ACM SIGIR conference on Research and development in information retrieval  - SIGIR '93. pp. 36-47. https://doi.org/10.1145/160688.160692",
+  "title": "Overview of the first TREC conference",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1993
+ },
+ "harris-numpy-2020": {
+  "doi": "10.1038/s41586-020-2649-2",
+  "entry": "Harris, C. R.; Millman, K. J.; van der Walt, S. J.; et al.. (2020). Array programming with NumPy. Nature. vol. 585. pp. 357-362. https://doi.org/10.1038/s41586-020-2649-2",
+  "title": "Array programming with NumPy",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "harwood-fanng-2016": {
+  "doi": "10.1109/cvpr.2016.616",
+  "entry": "Harwood, B.; Drummond, T.. (2016). FANNG: Fast Approximate Nearest Neighbour Graphs. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 5713-5722. https://doi.org/10.1109/cvpr.2016.616",
+  "title": "FANNG: Fast Approximate Nearest Neighbour Graphs",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "he-resnet-2016": {
+  "doi": "10.1109/cvpr.2016.90",
+  "entry": "He, K.; Zhang, X.; Ren, S.; et al.. (2016). Deep Residual Learning for Image Recognition. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 770-778. https://doi.org/10.1109/cvpr.2016.90",
+  "title": "Deep Residual Learning for Image Recognition",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "heo-spherical-hashing-2012": {
+  "doi": "10.1109/cvpr.2012.6248024",
+  "entry": "Jae-Pil Heo; Youngwoon Lee; Junfeng He; et al.. (2012). Spherical hashing. 2012 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2957-2964. https://doi.org/10.1109/cvpr.2012.6248024",
+  "title": "Spherical hashing",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2012
+ },
+ "hjaltason-sampling-2003": {
+  "doi": "10.1145/958942.958948",
+  "entry": "Hjaltason, G. R.; Samet, H.. (2003). Index-driven similarity search in metric spaces (Survey Article). ACM Transactions on Database Systems. vol. 28. pp. 517-580. https://doi.org/10.1145/958942.958948",
+  "title": "Index-driven similarity search in metric spaces (Survey Article)",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "hunter-matplotlib-2007": {
+  "doi": "10.1109/mcse.2007.55",
+  "entry": "Hunter, J. D.. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science &amp; Engineering. vol. 9. pp. 90-95. https://doi.org/10.1109/mcse.2007.55",
+  "title": "Matplotlib: A 2D Graphics Environment",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
+ "ioannidis-why-false-2005": {
+  "doi": "10.1371/journal.pmed.0020124",
+  "entry": "Ioannidis, J. P. A.. (2005). Why Most Published Research Findings Are False. PLoS Medicine. vol. 2. pp. e124. https://doi.org/10.1371/journal.pmed.0020124",
+  "title": "Why Most Published Research Findings Are False",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2005
+ },
  "jegou-douze-schmid-2011": {
   "doi": "10.1109/tpami.2010.57",
   "entry": "J\u00e9gou, H.; Douze, M.; Schmid, C.. (2011). Product Quantization for Nearest Neighbor Search. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 33. pp. 117-128. https://doi.org/10.1109/tpami.2010.57",
@@ -152,6 +614,28 @@
    "result": "verified"
   },
   "year": 2011
+ },
+ "jegou-fisher-2012": {
+  "doi": "10.1109/tpami.2011.235",
+  "entry": "Jegou, H.; Perronnin, F.; Douze, M.; et al.. (2012). Aggregating Local Image Descriptors into Compact Codes. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 34. pp. 1704-1716. https://doi.org/10.1109/tpami.2011.235",
+  "title": "Aggregating Local Image Descriptors into Compact Codes",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2012
+ },
+ "jegou-hamming-embedding-2008": {
+  "doi": "10.1007/978-3-540-88682-2_24",
+  "entry": "Jegou, H.; Douze, M.; Schmid, C.. (2008). Hamming Embedding and Weak Geometric Consistency for Large Scale Image Search. Lecture Notes in Computer Science. pp. 304-317. https://doi.org/10.1007/978-3-540-88682-2_24",
+  "title": "Hamming Embedding and Weak Geometric Consistency for Large Scale Image Search",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2008
  },
  "johnson-douze-jegou-2021": {
   "doi": "10.1109/tbdata.2019.2921572",
@@ -164,6 +648,149 @@
   },
   "year": 2021
  },
+ "johnson-lindenstrauss-1984": {
+  "doi": "10.1090/conm/026/737400",
+  "entry": "Johnson, W. B.; Lindenstrauss, J.. (1984). Extensions of Lipschitz mappings into a Hilbert space. Contemporary Mathematics. pp. 189-206. https://doi.org/10.1090/conm/026/737400",
+  "title": "Extensions of Lipschitz mappings into a Hilbert space",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1984
+ },
+ "jouppi-tpu-2017": {
+  "doi": "10.1145/3140659.3080246",
+  "entry": "Jouppi, N. P.; Young, C.; Patil, N.; et al.. (2017). In-Datacenter Performance Analysis of a Tensor Processing Unit. ACM SIGARCH Computer Architecture News. vol. 45. pp. 1-12. https://doi.org/10.1145/3140659.3080246",
+  "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2017
+ },
+ "karpukhin-dpr-2020": {
+  "doi": "10.18653/v1/2020.emnlp-main.550",
+  "entry": "Karpukhin, V.; Oguz, B.; Min, S.; et al.. (2020). Dense Passage Retrieval for Open-Domain Question Answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). pp. 6769-6781. https://doi.org/10.18653/v1/2020.emnlp-main.550",
+  "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "katayama-sr-tree-1997": {
+  "doi": "10.1002/(sici)1520-684x(19980615)29:6<59::aid-scj6>3.3.co;2-d",
+  "entry": "Katayama, N.; Satoh, S.. (1998). SR\u2010tree: An index structure for nearest\u2010neighbor searching of high\u2010dimensional point data. Systems and Computers in Japan. vol. 29. pp. 59-73. https://doi.org/10.1002/(sici)1520-684x(19980615)29:6<59::aid-scj6>3.3.co;2-d",
+  "title": "SR\u2010tree: An index structure for nearest\u2010neighbor searching of high\u2010dimensional point data",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "kendall-1938": {
+  "doi": "10.2307/2332226",
+  "entry": "Kendall, M. G.. (1938). A New Measure of Rank Correlation. Biometrika. vol. 30. pp. 81. https://doi.org/10.2307/2332226",
+  "title": "A New Measure of Rank Correlation",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1938
+ },
+ "khattab-colbert-2020": {
+  "doi": null,
+  "entry": "Omar Khattab; Matei Zaharia. (2020). ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT. arXiv preprint 2004.12832v2. http://arxiv.org/abs/2004.12832v2",
+  "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "kulis-kernel-lsh-2009": {
+  "doi": "10.1109/iccv.2009.5459466",
+  "entry": "Kulis, B.; Grauman, K.. (2009). Kernelized locality-sensitive hashing for scalable image search. 2009 IEEE 12th International Conference on Computer Vision. pp. 2130-2137. https://doi.org/10.1109/iccv.2009.5459466",
+  "title": "Kernelized locality-sensitive hashing for scalable image search",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ },
+ "kuznetsova-openimages-2020": {
+  "doi": "10.1007/s11263-020-01316-z",
+  "entry": "Kuznetsova, A.; Rom, H.; Alldrin, N.; et al.. (2020). The Open Images Dataset V4. International Journal of Computer Vision. vol. 128. pp. 1956-1981. https://doi.org/10.1007/s11263-020-01316-z",
+  "title": "The Open Images Dataset V4",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "laurent-massart-2000": {
+  "doi": "10.1214/aos/1015957395",
+  "entry": "Laurent, B.; Massart, P.. (2000). Adaptive estimation of a quadratic functional by model selection. The Annals of Statistics. vol. 28. pp. 1302-1338. https://doi.org/10.1214/aos/1015957395",
+  "title": "Adaptive estimation of a quadratic functional by model selection",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2000
+ },
+ "lewis-rag-2020": {
+  "doi": null,
+  "entry": "Patrick Lewis; Ethan Perez; Aleksandra Piktus; et al.. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. arXiv preprint 2005.11401v4. http://arxiv.org/abs/2005.11401v4",
+  "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "lin-coco-2014": {
+  "doi": "10.1007/978-3-319-10602-1_48",
+  "entry": "Lin, T. Y.; Maire, M.; Belongie, S.; et al.. (2014). Microsoft COCO: Common Objects in Context. Lecture Notes in Computer Science. pp. 740-755. https://doi.org/10.1007/978-3-319-10602-1_48",
+  "title": "Microsoft COCO: Common Objects in Context",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
+ "liong-deep-hashing-2015": {
+  "doi": "10.1109/cvpr.2015.7298862",
+  "entry": "Liong, V. E.; Jiwen Lu; Gang Wang; et al.. (2015). Deep hashing for compact binary codes learning. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 2475-2483. https://doi.org/10.1109/cvpr.2015.7298862",
+  "title": "Deep hashing for compact binary codes learning",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "liu-ksh-2012": {
+  "doi": "10.1109/cvpr.2012.6247912",
+  "entry": "Wei Liu; Jun Wang; Rongrong Ji; et al.. (2012). Supervised hashing with kernels. 2012 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2074-2081. https://doi.org/10.1109/cvpr.2012.6247912",
+  "title": "Supervised hashing with kernels",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2012
+ },
  "lloyd-least-squares-1982": {
   "doi": "10.1109/tit.1982.1056489",
   "entry": "Lloyd, S.. (1982). Least squares quantization in PCM. IEEE Transactions on Information Theory. vol. 28. pp. 129-137. https://doi.org/10.1109/tit.1982.1056489",
@@ -174,6 +801,17 @@
    "result": "verified"
   },
   "year": 1982
+ },
+ "lowe-iccv-1999": {
+  "doi": "10.1109/iccv.1999.790410",
+  "entry": "Lowe, D.. (1999). Object recognition from local scale-invariant features. Proceedings of the Seventh IEEE International Conference on Computer Vision. pp. 1150-1157 vol.2. https://doi.org/10.1109/iccv.1999.790410",
+  "title": "Object recognition from local scale-invariant features",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1999
  },
  "lowe-sift-2004": {
   "doi": "10.1023/b:visi.0000029664.99615.94",
@@ -186,6 +824,17 @@
   },
   "year": 2004
  },
+ "malkov-nsw-2014": {
+  "doi": "10.1016/j.is.2013.10.006",
+  "entry": "Malkov, Y.; Ponomarenko, A.; Logvinov, A.; et al.. (2014). Approximate nearest neighbor algorithm based on navigable small world graphs. Information Systems. vol. 45. pp. 61-68. https://doi.org/10.1016/j.is.2013.10.006",
+  "title": "Approximate nearest neighbor algorithm based on navigable small world graphs",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
  "malkov-yashunin-2020": {
   "doi": "10.1109/tpami.2018.2889473",
   "entry": "Malkov, Y. A.; Yashunin, D. A.. (2020). Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 42. pp. 824-836. https://doi.org/10.1109/tpami.2018.2889473",
@@ -196,6 +845,28 @@
    "result": "verified"
   },
   "year": 2020
+ },
+ "mallen-mteb-2023": {
+  "doi": "10.18653/v1/2023.eacl-main.148",
+  "entry": "Muennighoff, N.; Tazi, N.; Magne, L.; et al.. (2023). MTEB: Massive Text Embedding Benchmark. Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics. pp. 2014-2037. https://doi.org/10.18653/v1/2023.eacl-main.148",
+  "title": "MTEB: Massive Text Embedding Benchmark",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2023
+ },
+ "mann-whitney-1947": {
+  "doi": "10.1214/aoms/1177730491",
+  "entry": "Mann, H. B.; Whitney, D. R.. (1947). On a Test of Whether one of Two Random Variables is Stochastically Larger than the Other. The Annals of Mathematical Statistics. vol. 18. pp. 50-60. https://doi.org/10.1214/aoms/1177730491",
+  "title": "On a Test of Whether one of Two Random Variables is Stochastically Larger than the Other",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1947
  },
  "manning-ir-book-2008": {
   "doi": "10.1017/cbo9780511809071",
@@ -208,6 +879,138 @@
   },
   "year": 2008
  },
+ "martinez-additive-quant-2016": {
+  "doi": "10.1007/978-3-319-46475-6_9",
+  "entry": "Martinez, J.; Clement, J.; Hoos, H. H.; et al.. (2016). Revisiting Additive Quantization. Lecture Notes in Computer Science. pp. 137-153. https://doi.org/10.1007/978-3-319-46475-6_9",
+  "title": "Revisiting Additive Quantization",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "matsui-pqtable-2018": {
+  "doi": "10.1109/tmm.2017.2774009",
+  "entry": "Matsui, Y.; Yamasaki, T.; Aizawa, K.. (2018). PQTable: Nonexhaustive Fast Search for Product-Quantized Codes Using Hash Tables. IEEE Transactions on Multimedia. vol. 20. pp. 1809-1822. https://doi.org/10.1109/tmm.2017.2774009",
+  "title": "PQTable: Nonexhaustive Fast Search for Product-Quantized Codes Using Hash Tables",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2018
+ },
+ "mckinney-pandas-2010": {
+  "doi": "10.25080/majora-92bf1922-00a",
+  "entry": "McKinney, W.. (2010). Data Structures for Statistical Computing in Python. Proceedings of the Python in Science Conference. pp. 56-61. https://doi.org/10.25080/majora-92bf1922-00a",
+  "title": "Data Structures for Statistical Computing in Python",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "mcnemar-1947": {
+  "doi": "10.1007/bf02295996",
+  "entry": "McNemar, Q.. (1947). Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages. Psychometrika. vol. 12. pp. 153-157. https://doi.org/10.1007/bf02295996",
+  "title": "Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1947
+ },
+ "mikolov-word2vec-2013": {
+  "doi": null,
+  "entry": "Tomas Mikolov; Ilya Sutskever; Kai Chen; et al.. (2013). Distributed Representations of Words and Phrases and their Compositionality. arXiv preprint 1310.4546v1. http://arxiv.org/abs/1310.4546v1",
+  "title": "Distributed Representations of Words and Phrases and their Compositionality",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2013
+ },
+ "muja-flann-2009": {
+  "doi": "10.5220/0001787803310340",
+  "entry": "(2009). FAST APPROXIMATE NEAREST NEIGHBORS WITH AUTOMATIC ALGORITHM CONFIGURATION. Proceedings of the Fourth International Conference on Computer Vision Theory and Applications. pp. 331-340. https://doi.org/10.5220/0001787803310340",
+  "title": "FAST APPROXIMATE NEAREST NEIGHBORS WITH AUTOMATIC ALGORITHM CONFIGURATION",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ },
+ "muja-flann-2014": {
+  "doi": "10.1109/tpami.2014.2321376",
+  "entry": "Muja, M.; Lowe, D. G.. (2014). Scalable Nearest Neighbor Algorithms for High Dimensional Data. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 36. pp. 2227-2240. https://doi.org/10.1109/tpami.2014.2321376",
+  "title": "Scalable Nearest Neighbor Algorithms for High Dimensional Data",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
+ "munafo-manifesto-2017": {
+  "doi": "10.1038/s41562-016-0021",
+  "entry": "Munaf\u00f2, M. R.; Nosek, B. A.; Bishop, D. V. M.; et al.. (2017). A manifesto for reproducible science. Nature Human Behaviour. vol. 1. https://doi.org/10.1038/s41562-016-0021",
+  "title": "A manifesto for reproducible science",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2017
+ },
+ "newcombe-1998": {
+  "doi": "10.1002/(sici)1097-0258(19980430)17:8<873::aid-sim779>3.0.co;2-i",
+  "entry": "Newcombe, R. G.. (1998). Interval estimation for the difference between independent proportions: comparison of eleven methods. Statistics in Medicine. vol. 17. pp. 873-890. https://doi.org/10.1002/(sici)1097-0258(19980430)17:8<873::aid-sim779>3.0.co;2-i",
+  "title": "Interval estimation for the difference between independent proportions: comparison of eleven methods",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "nister-vocab-tree-2006": {
+  "doi": "10.1109/cvpr.2006.264",
+  "entry": "Nister, D.; Stewenius, H.. (None). Scalable Recognition with a Vocabulary Tree. 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition - Volume 2 (CVPR'06). vol. 2. pp. 2161-2168. https://doi.org/10.1109/cvpr.2006.264",
+  "title": "Scalable Recognition with a Vocabulary Tree",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "norouzi-mih-2014": {
+  "doi": "10.1109/tpami.2013.231",
+  "entry": "Norouzi, M.; Punjani, A.; Fleet, D. J.. (2014). Fast Exact Search in Hamming Space With Multi-Index Hashing. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 36. pp. 1107-1119. https://doi.org/10.1109/tpami.2013.231",
+  "title": "Fast Exact Search in Hamming Space With Multi-Index Hashing",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
+ "nosek-preregistration-2018": {
+  "doi": "10.31219/osf.io/2dxu5",
+  "entry": "Nosek, B. A.; Ebersole, C. R.; DeHaven, A. C.; et al.. (2017). The Preregistration Revolution. https://doi.org/10.31219/osf.io/2dxu5",
+  "title": "The Preregistration Revolution",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2017
+ },
  "pan-vector-db-survey-2024": {
   "doi": "10.1007/s00778-024-00864-x",
   "entry": "Pan, J. J.; Wang, J.; Li, G.. (2024). Survey of vector database management systems. The VLDB Journal. vol. 33. pp. 1591-1615. https://doi.org/10.1007/s00778-024-00864-x",
@@ -219,10 +1022,263 @@
   },
   "year": 2024
  },
- "wang-milvus-2021": {
-  "doi": "10.1007/978-1-4842-8907-5_11",
-  "entry": "Penberthy, W.; Roberts, S.. (2022). Purpose-Built Databases. Pro .NET on Amazon Web Services. pp. 391-427. https://doi.org/10.1007/978-1-4842-8907-5_11",
-  "title": "Purpose-Built Databases",
+ "pauleve-lsh-2010": {
+  "doi": "10.1016/j.patrec.2010.04.004",
+  "entry": "Paulev\u00e9, L.; J\u00e9gou, H.; Amsaleg, L.. (2010). Locality sensitive hashing: A comparison of hash function types and querying mechanisms. Pattern Recognition Letters. vol. 31. pp. 1348-1358. https://doi.org/10.1016/j.patrec.2010.04.004",
+  "title": "Locality sensitive hashing: A comparison of hash function types and querying mechanisms",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "peng-reproducible-2011": {
+  "doi": "10.1126/science.1213847",
+  "entry": "Peng, R. D.. (2011). Reproducible Research in Computational Science. Science. vol. 334. pp. 1226-1227. https://doi.org/10.1126/science.1213847",
+  "title": "Reproducible Research in Computational Science",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2011
+ },
+ "perronnin-fisher-2010": {
+  "doi": "10.1007/978-3-642-15561-1_11",
+  "entry": "Perronnin, F.; S\u00e1nchez, J.; Mensink, T.. (2010). Improving the Fisher Kernel for Large-Scale Image Classification. Lecture Notes in Computer Science. pp. 143-156. https://doi.org/10.1007/978-3-642-15561-1_11",
+  "title": "Improving the Fisher Kernel for Large-Scale Image Classification",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "philbin-large-vocabularies-2007": {
+  "doi": "10.1109/cvpr.2007.383172",
+  "entry": "Philbin, J.; Chum, O.; Isard, M.; et al.. (2007). Object retrieval with large vocabularies and fast spatial matching. 2007 IEEE Conference on Computer Vision and Pattern Recognition. pp. 1-8. https://doi.org/10.1109/cvpr.2007.383172",
+  "title": "Object retrieval with large vocabularies and fast spatial matching",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
+ "radenovic-finetuning-2018": {
+  "doi": "10.1109/tpami.2018.2846566",
+  "entry": "Radenovic, F.; Tolias, G.; Chum, O.. (2019). Fine-Tuning CNN Image Retrieval with No Human Annotation. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 41. pp. 1655-1668. https://doi.org/10.1109/tpami.2018.2846566",
+  "title": "Fine-Tuning CNN Image Retrieval with No Human Annotation",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2019
+ },
+ "reimers-sbert-2019": {
+  "doi": "10.18653/v1/d19-1410",
+  "entry": "Reimers, N.; Gurevych, I.. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). pp. 3980-3990. https://doi.org/10.18653/v1/d19-1410",
+  "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2019
+ },
+ "robertson-bm25-2009": {
+  "doi": "10.1561/1500000019",
+  "entry": "Robertson, S.; Zaragoza, H.. (2009). The Probabilistic Relevance Framework: BM25 and Beyond. Foundations and Trends\u00ae in Information Retrieval. vol. 4. pp. 1-174. https://doi.org/10.1561/1500000019",
+  "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ },
+ "robertson-relevance-weighting-1976": {
+  "doi": "10.1002/asi.4630270302",
+  "entry": "Robertson, S. E.; Jones, K. S.. (1976). Relevance weighting of search terms. Journal of the American Society for Information Science. vol. 27. pp. 129-146. https://doi.org/10.1002/asi.4630270302",
+  "title": "Relevance weighting of search terms",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1976
+ },
+ "salton-vsm-1975": {
+  "doi": "10.1145/361219.361220",
+  "entry": "Salton, G.; Wong, A.; Yang, C. S.. (1975). A vector space model for automatic indexing. Communications of the ACM. vol. 18. pp. 613-620. https://doi.org/10.1145/361219.361220",
+  "title": "A vector space model for automatic indexing",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1975
+ },
+ "sandve-ten-rules-2013": {
+  "doi": "10.1371/journal.pcbi.1003285",
+  "entry": "Sandve, G. K.; Nekrutenko, A.; Taylor, J.; et al.. (2013). Ten Simple Rules for Reproducible Computational Research. PLoS Computational Biology. vol. 9. pp. e1003285. https://doi.org/10.1371/journal.pcbi.1003285",
+  "title": "Ten Simple Rules for Reproducible Computational Research",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2013
+ },
+ "schroff-facenet-2015": {
+  "doi": "10.1109/cvpr.2015.7298682",
+  "entry": "Schroff, F.; Kalenichenko, D.; Philbin, J.. (2015). FaceNet: A unified embedding for face recognition and clustering. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 815-823. https://doi.org/10.1109/cvpr.2015.7298682",
+  "title": "FaceNet: A unified embedding for face recognition and clustering",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "shapiro-wilk-1965": {
+  "doi": "10.2307/2333709",
+  "entry": "Shapiro, S. S.; Wilk, M. B.. (1965). An Analysis of Variance Test for Normality (Complete Samples). Biometrika. vol. 52. pp. 591. https://doi.org/10.2307/2333709",
+  "title": "An Analysis of Variance Test for Normality (Complete Samples)",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1965
+ },
+ "simhadri-bigann-2022": {
+  "doi": null,
+  "entry": "Harsha Vardhan Simhadri; George Williams; Martin Aum\u00fcller; et al.. (2022). Results of the NeurIPS'21 Challenge on Billion-Scale Approximate Nearest Neighbor Search. arXiv preprint 2205.03763v1. http://arxiv.org/abs/2205.03763v1",
+  "title": "Results of the NeurIPS'21 Challenge on Billion-Scale Approximate Nearest Neighbor Search",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2022
+ },
+ "sparck-jones-idf-1972": {
+  "doi": "10.1108/eb026526",
+  "entry": "SPARCK JONES, K.. (1972). A STATISTICAL INTERPRETATION OF TERM SPECIFICITY AND ITS APPLICATION IN RETRIEVAL. Journal of Documentation. vol. 28. pp. 11-21. https://doi.org/10.1108/eb026526",
+  "title": "A STATISTICAL INTERPRETATION OF TERM SPECIFICITY AND ITS APPLICATION IN RETRIEVAL",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1972
+ },
+ "spearman-1904": {
+  "doi": "10.2307/1412159",
+  "entry": "Spearman, C.. (1904). The Proof and Measurement of Association between Two Things. The American Journal of Psychology. vol. 15. pp. 72. https://doi.org/10.2307/1412159",
+  "title": "The Proof and Measurement of Association between Two Things",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1904
+ },
+ "stodden-enhancing-2016": {
+  "doi": "10.1126/science.aah6168",
+  "entry": "Stodden, V.; McNutt, M.; Bailey, D. H.; et al.. (2016). Enhancing reproducibility for computational methods. Science. vol. 354. pp. 1240-1241. https://doi.org/10.1126/science.aah6168",
+  "title": "Enhancing reproducibility for computational methods",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "sundaram-lsh-tweets-2013": {
+  "doi": "10.14778/2556549.2556574",
+  "entry": "Sundaram, N.; Turmukhametova, A.; Satish, N.; et al.. (2013). Streaming similarity search over one billion tweets using parallel locality-sensitive hashing. Proceedings of the VLDB Endowment. vol. 6. pp. 1930-1941. https://doi.org/10.14778/2556549.2556574",
+  "title": "Streaming similarity search over one billion tweets using parallel locality-sensitive hashing",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2013
+ },
+ "talagrand-isoperimetric-1994": {
+  "doi": "10.1007/bf02699376",
+  "entry": "Talagrand, M.. (1995). Concentration of measure and isoperimetric inequalities in product spaces. Publications Math\u00e9matiques de l'IH\u00c9S. vol. 81. pp. 73-205. https://doi.org/10.1007/bf02699376",
+  "title": "Concentration of measure and isoperimetric inequalities in product spaces",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1995
+ },
+ "thomee-yfcc100m-2016": {
+  "doi": null,
+  "entry": "Bart Thomee; David A. Shamma; Gerald Friedland; et al.. (2015). YFCC100M: The New Data in Multimedia Research. arXiv preprint 1503.01817v2. http://arxiv.org/abs/1503.01817v2",
+  "title": "YFCC100M: The New Data in Multimedia Research",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "thorne-fever-2018": {
+  "doi": "10.18653/v1/n18-1074",
+  "entry": "Thorne, J.; Vlachos, A.; Christodoulopoulos, C.; et al.. (2018). FEVER: a Large-scale Dataset for Fact Extraction and VERification. Proceedings of the 2018 Conference of the North American Chapter of\n          the Association for Computational Linguistics: Human Language\n          Technologies, Volume 1 (Long Papers). pp. 809-819. https://doi.org/10.18653/v1/n18-1074",
+  "title": "FEVER: a Large-scale Dataset for Fact Extraction and VERification",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2018
+ },
+ "uhlenbeck-metric-tree-1991": {
+  "doi": "10.1016/0020-0190(91)90074-r",
+  "entry": "Uhlmann, J. K.. (1991). Satisfying general proximity / similarity queries with metric trees. Information Processing Letters. vol. 40. pp. 175-179. https://doi.org/10.1016/0020-0190(91)90074-r",
+  "title": "Satisfying general proximity / similarity queries with metric trees",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1991
+ },
+ "virtanen-scipy-2020": {
+  "doi": "10.1038/s41592-019-0686-2",
+  "entry": "Virtanen, P.; Gommers, R.; Oliphant, T. E.; et al.. (2020). SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods. vol. 17. pp. 261-272. https://doi.org/10.1038/s41592-019-0686-2",
+  "title": "SciPy 1.0: fundamental algorithms for scientific computing in Python",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "voorhees-qa-trec-2001": {
+  "doi": "10.1017/s1351324901002789",
+  "entry": "VOORHEES, E. M.. (2001). The TREC question answering track. Natural Language Engineering. vol. 7. pp. 361-378. https://doi.org/10.1017/s1351324901002789",
+  "title": "The TREC question answering track",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2001
+ },
+ "wang-ann-graph-survey-2021": {
+  "doi": "10.14778/3476249.3476255",
+  "entry": "Wang, M.; Xu, X.; Yue, Q.; et al.. (2021). A comprehensive survey and experimental comparison of graph-based approximate nearest neighbor search. Proceedings of the VLDB Endowment. vol. 14. pp. 1964-1978. https://doi.org/10.14778/3476249.3476255",
+  "title": "A comprehensive survey and experimental comparison of graph-based approximate nearest neighbor search",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
@@ -230,15 +1286,70 @@
   },
   "year": 2021
  },
- "weiss-spectral-hashing-2009": {
-  "doi": "10.1109/icassp.2011.5946609",
-  "entry": "d'Angelo, E.; Vandergheynst, P.. (2011). Fully non-local super-resolution via spectral hashing. 2011 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). pp. 1137-1140. https://doi.org/10.1109/icassp.2011.5946609",
-  "title": "Fully non-local super-resolution via spectral hashing",
+ "wang-hashing-survey-2018": {
+  "doi": "10.1109/tpami.2017.2699960",
+  "entry": "Wang, J.; Zhang, T.; Song, J.; et al.. (2018). A Survey on Learning to Hash. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 40. pp. 769-790. https://doi.org/10.1109/tpami.2017.2699960",
+  "title": "A Survey on Learning to Hash",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2018
+ },
+ "wilkinson-fair-2016": {
+  "doi": "10.1038/sdata.2016.18",
+  "entry": "Wilkinson, M. D.; Dumontier, M.; Aalbersberg, I. J.; et al.. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. vol. 3. https://doi.org/10.1038/sdata.2016.18",
+  "title": "The FAIR Guiding Principles for scientific data management and stewardship",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "williams-roofline-2009": {
+  "doi": "10.2172/1407078",
+  "entry": "Williams, S.; Waterman, A.; Patterson, D.. (2009). Roofline: An Insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures. https://doi.org/10.2172/1407078",
+  "title": "Roofline: An Insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
    "result": "verified"
   },
   "year": 2009
+ },
+ "wilson-1927": {
+  "doi": "10.1080/01621459.1927.10502953",
+  "entry": "Wilson, E. B.. (1927). Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association. vol. 22. pp. 209-212. https://doi.org/10.1080/01621459.1927.10502953",
+  "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1927
+ },
+ "zobel-inverted-files-2006": {
+  "doi": "10.1145/1132956.1132959",
+  "entry": "Zobel, J.; Moffat, A.. (2006). Inverted files for text search engines. ACM Computing Surveys. vol. 38. pp. 6. https://doi.org/10.1145/1132956.1132959",
+  "title": "Inverted files for text search engines",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "zobel-similarity-space-1998": {
+  "doi": "10.1145/281250.281256",
+  "entry": "Zobel, J.; Moffat, A.. (1998). Exploring the similarity space. ACM SIGIR Forum. vol. 32. pp. 18-34. https://doi.org/10.1145/281250.281256",
+  "title": "Exploring the similarity space",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
  }
 }

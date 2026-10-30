@@ -77,6 +77,7 @@ def build_values(A, B):
         "A.corpus.k": A["corpus"]["k"],
         "A.r": A["log_log_pearson"],
         "A.n_cells": A["n_cells"],
+        "A.mde": A["mde_pearson"],
         "A.configs": configs_of(cellsA),
         "B.corpus.n": B["corpus"]["n"],
         "B.corpus.d": B["corpus"]["d"],
@@ -142,6 +143,34 @@ CITE = re.compile(r"\{\{c:([^}]+)\}\}")
 
 
 
+def stray_numbers(body, bound):
+    """Numbers in the prose that no artefact binds.
+
+    The unit is the prose, and the bibliography is not the prose: a DOI is full of digit runs
+    (`10.1000/0001787803310340`), so a scan applied after the reference list is spliced in
+    rejects the paper for containing citations. That ordering was a real failure: the first
+    render of this manuscript was refused with a stray list of DOI fragments. The caller scans
+    the body while `{{refs}}` is still a marker.
+    """
+    allowed = {fmt(x) for x in bound} | {a.replace(",", "") for a in (fmt(x) for x in bound)}
+    allowed |= {str(int(x)) for x in bound if isinstance(x, (int, float)) and float(x).is_integer()}
+    # Code spans and fenced blocks are identifiers, not quantities: `Hamming/32bit` is a tag the
+    # artefact uses, and a bit budget written as a tag must not read as a number the prose typed.
+    scan = re.sub(r"```.*?```", " ", body, flags=re.S)
+    scan = re.sub(r"`[^`\n]*`", " ", scan)
+    scan = re.sub(r"\([^)]*://[^)]*\)", " ", scan)          # link targets
+    stray = []
+    for tok in re.findall(r"(?<![\w.])\d[\d,]*\.?\d*(?![\w])", scan):
+        t = tok.replace(",", "")
+        if t in allowed:
+            continue
+        if re.fullmatch(r"(19|20)\d\d", t):        # a year
+            continue
+        if len(t.replace(".", "")) >= 2:             # section numbers are single digits
+            stray.append(tok)
+    return sorted(set(stray))
+
+
 def selftest():
     """Demonstrate each guard firing, and each guard passing where it should.
 
@@ -159,19 +188,7 @@ def selftest():
         if not ok:
             fails += 1
 
-    def stray_of(body, bound):
-        allowed = {fmt(b) for b in bound} | {str(int(b)) for b in bound
-                                             if isinstance(b, (int, float)) and float(b).is_integer()}
-        scan = re.sub(r"```.*?```", " ", body, flags=re.S)
-        scan = re.sub(r"`[^`\n]*`", " ", scan)
-        out = []
-        for tok in re.findall(r"(?<![\w.])\d[\d,]*\.?\d*(?![\w])", scan):
-            t = tok.replace(",", "")
-            if t in allowed or re.fullmatch(r"(19|20)\d\d", t):
-                continue
-            if len(t.replace(".", "")) >= 2:
-                out.append(tok)
-        return out
+    stray_of = stray_numbers      # the fixtures test the scanner the render uses
 
     # 1. a typed number is refused
     expect("a typed number in the prose is refused", stray_of("we measured 37 things", [42]),
@@ -197,7 +214,30 @@ def selftest():
         expect("an unverified reference is refused", False)
     except KeyError:
         expect("an unverified reference is refused", True)
-    # 7. the floor is enforced
+    # 7. a citation group is checked member by member
+    try:
+        def group(mm):
+            for slug in mm.group(1).split(","):
+                if fake[slug.strip()]["verification"]["result"] != "verified":
+                    raise KeyError("unverified")
+            return "[1]"
+        CITE.sub(group, "{{c:b,a}}")
+        expect("a group containing an unverified reference is refused", False)
+    except KeyError:
+        expect("a group containing an unverified reference is refused", True)
+    expect("a group of verified references is accepted",
+           CITE.sub(lambda m: "[1]" if all(fake[x.strip()]["verification"]["result"] == "verified"
+                                           for x in m.group(1).split(",")) else "",
+                    "{{c:b}}") == "[1]")
+    # 8. the bibliography and the citation indices are not prose
+    doi = "[1] Somebody, A. (2020). vol. 3. pp. 1-9. https://doi.org/10.1000/0001787803310340"
+    expect("a DOI line WOULD trip the scanner if it were scanned", bool(stray_of(doi, [])),
+           "found %s" % stray_of(doi, []))
+    expect("the body is scanned while {{refs}} is still a marker",
+           stray_of("we cite the thing {{refs}}", []) == [])
+    expect("and while a citation is still a marker",
+           stray_of("a family {{c:x,y}} ties", []) == [])
+    # 9. the floor is enforced
     expect("the reference floor is enforced", len(fake) < REF_FLOOR)
 
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
@@ -230,15 +270,36 @@ def main():
     order = []
 
     def cite(m):
-        slug = m.group(1).strip()
-        rec = refs.get(slug)
-        if rec is None:
-            raise KeyError("{{c:%s}} names a reference refs.json does not hold" % slug)
-        if rec.get("verification", {}).get("result") != "verified":
-            raise KeyError("{{c:%s}} is not verified (%s)" % (slug, rec.get("verification")))
-        if slug not in order:
-            order.append(slug)
-        return "[%d]" % (order.index(slug) + 1)
+        """One marker may name several works: a sentence that cites a family cites all of it.
+
+        Every member is resolved and checked, so a group cannot smuggle an unverified or
+        unheld slug past the gate -- the group fails as a whole.
+        """
+        nums = []
+        for slug in (x.strip() for x in m.group(1).split(",")):
+            if not slug:
+                continue
+            rec = refs.get(slug)
+            if rec is None:
+                raise KeyError("{{c:%s}} names a reference refs.json does not hold" % slug)
+            if rec.get("verification", {}).get("result") != "verified":
+                raise KeyError("{{c:%s}} is not verified (%s)" % (slug, rec.get("verification")))
+            if slug not in order:
+                order.append(slug)
+            nums.append(order.index(slug) + 1)
+        return "[%s]" % ",".join(str(n) for n in nums)
+
+    # ---- stray scan: a number the prose typed rather than bound ---------------------------
+    # The unit is the prose, and neither the bibliography nor the citation indices are prose:
+    # a DOI is digit runs, and a rendered group `[109,41]` is two indices. So the scan runs here
+    # -- after the {{n:}} markers are bound, while {{c:}} is still a marker and {{refs}} is still
+    # a marker. Scanning after either substitution rejects the paper for containing citations,
+    # which is how the first render of this manuscript failed.
+    stray = stray_numbers(body, bound)
+    if stray:
+        print("STRAY NUMBERS (in the prose but bound to nothing): %s" % stray[:12])
+        print("  -> every number must be a {{n:...}} marker; refusing to write the paper.")
+        return 1
 
     body = CITE.sub(cite, body)
 
@@ -254,30 +315,6 @@ def main():
     for i, slug in enumerate(order, 1):
         r = refs[slug]
         entries.append("[%d] %s" % (i, r["entry"]))
-    body = body.replace("{{refs}}", "\n\n".join(entries))
-
-    # ---- stray scan: a number the prose typed rather than bound ---------------------------
-    allowed = {fmt(x) for x in bound} | {a.replace(",", "") for a in (fmt(x) for x in bound)}
-    allowed |= {str(int(x)) for x in bound if isinstance(x, (int, float)) and float(x).is_integer()}
-    # Code spans and fenced blocks are identifiers, not quantities: `Hamming/32bit` is a tag the
-    # artefact uses, and a bit budget written as a tag must not read as a number the prose typed.
-    scan = re.sub(r"```.*?```", " ", body, flags=re.S)
-    scan = re.sub(r"`[^`\n]*`", " ", scan)
-    scan = re.sub(r"\([^)]*://[^)]*\)", " ", scan)          # link targets
-    stray = []
-    for tok in re.findall(r"(?<![\w.])\d[\d,]*\.?\d*(?![\w])", scan):
-        t = tok.replace(",", "")
-        if t in allowed:
-            continue
-        if re.fullmatch(r"(19|20)\d\d", t):        # a year
-            continue
-        if len(t.replace(".", "")) >= 2:           # section numbers are single digits
-            stray.append(tok)
-    if stray:
-        uniq = sorted(set(stray))
-        print("STRAY NUMBERS (in the prose but bound to nothing): %s" % uniq[:12])
-        print("  -> every number must be a {{n:...}} marker; refusing to write the paper.")
-        return 1
 
     body = body.replace("{{refs}}", "\n\n".join(entries))
     open("manuscript.md", "w").write(body)

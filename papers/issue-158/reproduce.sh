@@ -7,8 +7,9 @@
 # hide behind a skip.
 #
 # Two tiers, declared separately because they need different things:
-#   TIER A  needs nothing but numpy and the committed fixture. Reproduces the mechanism table and
-#           both endpoint controls -- the numbers the paper's claim rests on.
+#   TIER A  needs nothing but numpy and the committed fixture. Reproduces the mechanism table, both
+#           endpoint controls, the gate selftests and the manuscript -- the numbers the paper's
+#           claim rests on.
 #   TIER B  needs the 1M corpus (501 MB, fetched by ./fetch_corpus.sh with a pinned sha256). Adds
 #           the same axis at the harness's scale. NOT RUN when the corpus is absent.
 #
@@ -18,13 +19,14 @@ set -u
 
 HERE=$(cd "$(dirname "$0")" && pwd)
 cd "$HERE" || exit 1
+SELF=$HERE/$(basename "$0")
 MODE=${1:-core}
 PY=${PY:-python3}
 
 FAILED=0
 NOTRUN=0
 RUN_STEPS=0
-TOTAL_STEPS=5
+TOTAL_STEPS=7
 
 step() {
     _label=$1
@@ -32,6 +34,19 @@ step() {
     _cmd=$3
     RUN_STEPS=$((RUN_STEPS + 1))
     printf '== %s/%s %s\n' "$RUN_STEPS" "$TOTAL_STEPS" "$_label"
+    # One call site per numbered slot: a tier that is not requested is a property of the step,
+    # not a second copy of it in the other branch of an if. The `+tierB` prefix says "this step
+    # exists only in full mode", and it is stripped before the dependency test.
+    case $_needs in
+      +tierB)
+        if [ "$MODE" != "full" ]; then
+            printf '   NOT RUN: tier B was not requested (run ./reproduce.sh full); tier A is unaffected\n'
+            NOTRUN=$((NOTRUN + 1))
+            return 0
+        fi
+        _needs=numpy ;;
+    esac
+
     if [ -n "$_needs" ]; then
         if ! "$PY" -c "import $_needs" >/dev/null 2>&1; then
             printf '   NOT RUN: declared dependency %s is not importable by %s\n' "'$_needs'" "$PY"
@@ -47,7 +62,18 @@ step() {
     FAILED=$((FAILED + 1))
 }
 
-printf 'reproduce: %s (%s) with %s\n' "$MODE" "$TOTAL_STEPS steps" "$PY"
+# The step total is not a number this script is allowed to state and not check: it is counted back
+# off the call sites in this file. A step added without bumping TOTAL_STEPS used to leave the header
+# claiming one fewer step than the run took, and a README quoting that header repeated the lie.
+SITES=$(grep -c -E '^step "' "$SELF")
+if [ "$SITES" -ne "$TOTAL_STEPS" ]; then
+    printf 'reproduce: DECLARED_STEPS MISMATCH -- %s call site(s) in this script, TOTAL_STEPS=%s\n' \
+           "$SITES" "$TOTAL_STEPS"
+    printf '          the header would misnumber every step after the one added; fix the constant\n'
+    exit 1
+fi
+
+printf 'reproduce: %s (%s steps) with %s\n' "$MODE" "$TOTAL_STEPS" "$PY"
 printf 'working directory: %s\n\n' "$HERE"
 
 # ---- 1: the committed fixture is the bytes this package measured -------------------------
@@ -70,16 +96,23 @@ step "the artefact regenerates byte-identically" "numpy" \
 step "every claim the paper makes about the table holds" "" \
      "$PY check_claims.py"
 
-# ---- 5: tier B, the same axis at 1M (needs the corpus) -----------------------------------
-if [ "$MODE" = "full" ]; then
-    step "the same axis at 1M descriptors (tier B)" "numpy" \
-         "$PY run_scale.py"
-else
-    RUN_STEPS=$((RUN_STEPS + 1))
-    printf '== %s/%s %s\n' "$RUN_STEPS" "$TOTAL_STEPS" "the same axis at 1M descriptors (tier B)"
-    printf '   NOT RUN: tier B was not requested (run ./reproduce.sh full); tier A is unaffected\n'
-    NOTRUN=$((NOTRUN + 1))
-fi
+# ---- 5: the gates that guard the paper can each refuse what they should ------------------
+# A guard nobody has seen fail is not a guard. Both of these are offline: they run the refusal
+# paths on fixtures, so this step proves the gates can reject, on every reproduction.
+step "the reference gate and the manuscript gate can each refuse" "" \
+     "$PY build_refs.py --selftest >/dev/null && $PY make_manuscript.py --selftest >/dev/null && \
+      echo '   both gates refuse as documented'"
+
+# ---- 6: the manuscript is generated, and regenerates byte-identically ---------------------
+# Every number in the paper is a marker bound to an artefact, and every citation is resolved by
+# program; the generator refuses to write the file at all if either is untrue.
+step "the manuscript regenerates byte-identically from artefact and registry" "" \
+     "cp manuscript.md /tmp/manuscript.1.md && $PY make_manuscript.py && \
+      cmp -s /tmp/manuscript.1.md manuscript.md && echo '   byte-identical'"
+
+# ---- 7: tier B, the same axis at 1M (needs the corpus) -----------------------------------
+step "the same axis at 1M descriptors (tier B)" "+tierB" \
+     "$PY run_scale.py"
 
 printf '\n'
 if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -eq 0 ]; then
