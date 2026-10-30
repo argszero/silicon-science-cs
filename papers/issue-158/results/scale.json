@@ -1,0 +1,260 @@
+{
+ "cells": [
+  {
+   "frac_floor_lt1": 0.0059,
+   "frac_whole_topk": 0.0,
+   "max_t": 4,
+   "mean_floor": 0.9994,
+   "mean_t": 1.031,
+   "median_atoms": 953,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "float/raw descriptors"
+  },
+  {
+   "frac_floor_lt1": 0.7852,
+   "frac_whole_topk": 0.1426,
+   "max_t": 21,
+   "mean_floor": 0.8479,
+   "mean_t": 6.426,
+   "median_atoms": 15,
+   "median_t": 6.0,
+   "n_queries": 512,
+   "tag": "Hamming/256bit"
+  },
+  {
+   "frac_floor_lt1": 0.7969,
+   "frac_whole_topk": 0.1426,
+   "max_t": 18,
+   "mean_floor": 0.8414,
+   "mean_t": 6.41,
+   "median_atoms": 15,
+   "median_t": 6.0,
+   "n_queries": 512,
+   "tag": "Hamming/256bit"
+  },
+  {
+   "frac_floor_lt1": 0.8242,
+   "frac_whole_topk": 0.125,
+   "max_t": 27,
+   "mean_floor": 0.8445,
+   "mean_t": 6.494,
+   "median_atoms": 15,
+   "median_t": 6.0,
+   "n_queries": 512,
+   "tag": "Hamming/256bit"
+  },
+  {
+   "frac_floor_lt1": 0.9375,
+   "frac_whole_topk": 0.9023,
+   "max_t": 79,
+   "mean_floor": 0.5865,
+   "mean_t": 23.078,
+   "median_atoms": 6,
+   "median_t": 18.5,
+   "n_queries": 512,
+   "tag": "Hamming/64bit"
+  },
+  {
+   "frac_floor_lt1": 0.9297,
+   "frac_whole_topk": 0.8887,
+   "max_t": 210,
+   "mean_floor": 0.5824,
+   "mean_t": 23.043,
+   "median_atoms": 6,
+   "median_t": 19.0,
+   "n_queries": 512,
+   "tag": "Hamming/64bit"
+  },
+  {
+   "frac_floor_lt1": 0.9336,
+   "frac_whole_topk": 0.8906,
+   "max_t": 87,
+   "mean_floor": 0.5652,
+   "mean_t": 22.938,
+   "median_atoms": 6,
+   "median_t": 18.0,
+   "n_queries": 512,
+   "tag": "Hamming/64bit"
+  },
+  {
+   "frac_floor_lt1": 0.9746,
+   "frac_whole_topk": 0.9922,
+   "max_t": 9512,
+   "mean_floor": 0.2719,
+   "mean_t": 268.855,
+   "median_atoms": 3,
+   "median_t": 50.0,
+   "n_queries": 512,
+   "tag": "Hamming/32bit"
+  },
+  {
+   "frac_floor_lt1": 0.9707,
+   "frac_whole_topk": 0.9922,
+   "max_t": 9512,
+   "mean_floor": 0.3064,
+   "mean_t": 367.607,
+   "median_atoms": 3,
+   "median_t": 53.0,
+   "n_queries": 512,
+   "tag": "Hamming/32bit"
+  },
+  {
+   "frac_floor_lt1": 0.9551,
+   "frac_whole_topk": 0.9941,
+   "max_t": 9512,
+   "mean_floor": 0.2875,
+   "mean_t": 363.982,
+   "median_atoms": 3,
+   "median_t": 54.0,
+   "n_queries": 512,
+   "tag": "Hamming/32bit"
+  },
+  {
+   "frac_floor_lt1": 0.334,
+   "frac_whole_topk": 0.123,
+   "max_t": 995,
+   "mean_floor": 0.9033,
+   "mean_t": 8.188,
+   "median_atoms": 691,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "PQ/32bit"
+  },
+  {
+   "frac_floor_lt1": 0.377,
+   "frac_whole_topk": 0.1211,
+   "max_t": 1115,
+   "mean_floor": 0.8916,
+   "mean_t": 15.209,
+   "median_atoms": 705,
+   "median_t": 2.0,
+   "n_queries": 512,
+   "tag": "PQ/32bit"
+  },
+  {
+   "frac_floor_lt1": 0.334,
+   "frac_whole_topk": 0.1055,
+   "max_t": 1115,
+   "mean_floor": 0.9021,
+   "mean_t": 13.506,
+   "median_atoms": 709,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "PQ/32bit"
+  },
+  {
+   "frac_floor_lt1": 0.0586,
+   "frac_whole_topk": 0.002,
+   "max_t": 11,
+   "mean_floor": 0.9928,
+   "mean_t": 1.131,
+   "median_atoms": 939,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "PQ/64bit"
+  },
+  {
+   "frac_floor_lt1": 0.0547,
+   "frac_whole_topk": 0.0137,
+   "max_t": 69,
+   "mean_floor": 0.9895,
+   "mean_t": 1.445,
+   "median_atoms": 942,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "PQ/64bit"
+  },
+  {
+   "frac_floor_lt1": 0.043,
+   "frac_whole_topk": 0.0059,
+   "max_t": 41,
+   "mean_floor": 0.9908,
+   "mean_t": 1.264,
+   "median_atoms": 940,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "PQ/64bit"
+  },
+  {
+   "frac_floor_lt1": 0.1367,
+   "frac_whole_topk": 0.0039,
+   "max_t": 31,
+   "mean_floor": 0.9846,
+   "mean_t": 1.41,
+   "median_atoms": 260,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "SQ/2bit-per-component"
+  },
+  {
+   "frac_floor_lt1": 0.1289,
+   "frac_whole_topk": 0.0078,
+   "max_t": 34,
+   "mean_floor": 0.983,
+   "mean_t": 1.488,
+   "median_atoms": 265,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "SQ/2bit-per-component"
+  },
+  {
+   "frac_floor_lt1": 0.1055,
+   "frac_whole_topk": 0.0098,
+   "max_t": 68,
+   "mean_floor": 0.984,
+   "mean_t": 1.568,
+   "median_atoms": 258,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "SQ/2bit-per-component"
+  },
+  {
+   "frac_floor_lt1": 0.0254,
+   "frac_whole_topk": 0.0,
+   "max_t": 3,
+   "mean_floor": 0.9975,
+   "mean_t": 1.059,
+   "median_atoms": 619,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "SQ/4bit-per-component"
+  },
+  {
+   "frac_floor_lt1": 0.0254,
+   "frac_whole_topk": 0.0,
+   "max_t": 2,
+   "mean_floor": 0.9975,
+   "mean_t": 1.047,
+   "median_atoms": 629,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "SQ/4bit-per-component"
+  },
+  {
+   "frac_floor_lt1": 0.0449,
+   "frac_whole_topk": 0.0,
+   "max_t": 2,
+   "mean_floor": 0.9955,
+   "mean_t": 1.074,
+   "median_atoms": 620,
+   "median_t": 1.0,
+   "n_queries": 512,
+   "tag": "SQ/4bit-per-component"
+  }
+ ],
+ "corpus": {
+  "d": 128,
+  "expected_sha256": "dd6f0a6ed6b7ebb8934680f861a33ed01ff33991eaee4fd60914d854a0ca5984",
+  "k": 10,
+  "knn": 1000,
+  "n": 1000000,
+  "n_queries": 512,
+  "name": "sift1m.hdf5",
+  "seeds": [
+   7,
+   11,
+   13
+  ]
+ }
+}
