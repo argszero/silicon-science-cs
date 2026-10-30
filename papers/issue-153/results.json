@@ -273,6 +273,8 @@
    "T": 6
   }
  ],
+ "cells_with_fanin_gap_min_zero": 16,
+ "cells_with_paid_gap_max_positive": 14,
  "certificate": {
   "cells": 6,
   "cells_list": [
@@ -316,10 +318,257 @@
   "refuting_traces": 729
  },
  "decisions": {
+  "K": 3,
+  "R": 3,
+  "T": 6,
   "decisions": 1863,
+  "decisions_below_max_fanin": 0,
+  "decisions_below_max_fanin_unique_max_paid": 0,
   "fanin_gap_max": 0,
+  "fanin_gap_min": 0,
+  "paid_gap_max": 4,
   "paid_gap_min": 0,
   "suboptimal": 138
+ },
+ "decisions_all_cells": 159864,
+ "decisions_by_cell": [
+  {
+   "K": 2,
+   "R": 3,
+   "T": 5,
+   "decisions": 552,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 0,
+   "paid_gap_min": 0,
+   "suboptimal": 0
+  },
+  {
+   "K": 2,
+   "R": 3,
+   "T": 6,
+   "decisions": 2286,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 0,
+   "paid_gap_min": 0,
+   "suboptimal": 0
+  },
+  {
+   "K": 2,
+   "R": 4,
+   "T": 5,
+   "decisions": 1928,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 0,
+   "paid_gap_min": 0,
+   "suboptimal": 0
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 5,
+   "decisions": 405,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 2,
+   "paid_gap_min": 0,
+   "suboptimal": 36
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 6,
+   "decisions": 1863,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 4,
+   "paid_gap_min": 0,
+   "suboptimal": 138
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 7,
+   "decisions": 7578,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 6,
+   "paid_gap_min": 0,
+   "suboptimal": 366
+  },
+  {
+   "K": 3,
+   "R": 3,
+   "T": 8,
+   "decisions": 28908,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 8,
+   "paid_gap_min": 0,
+   "suboptimal": 1050
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 5,
+   "decisions": 1600,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 2,
+   "paid_gap_min": 0,
+   "suboptimal": 72
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 6,
+   "decisions": 9688,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 4,
+   "paid_gap_min": 0,
+   "suboptimal": 312
+  },
+  {
+   "K": 3,
+   "R": 4,
+   "T": 7,
+   "decisions": 52448,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 6,
+   "paid_gap_min": 0,
+   "suboptimal": 984
+  },
+  {
+   "K": 4,
+   "R": 3,
+   "T": 6,
+   "decisions": 999,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 3,
+   "paid_gap_min": 0,
+   "suboptimal": 180
+  },
+  {
+   "K": 4,
+   "R": 3,
+   "T": 7,
+   "decisions": 4617,
+   "decisions_below_max_fanin": 120,
+   "decisions_below_max_fanin_unique_max_paid": 120,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": -1,
+   "paid_gap_max": 9,
+   "paid_gap_min": 0,
+   "suboptimal": 1500
+  },
+  {
+   "K": 4,
+   "R": 4,
+   "T": 6,
+   "decisions": 6496,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 3,
+   "paid_gap_min": 0,
+   "suboptimal": 720
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 6,
+   "decisions": 729,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 7,
+   "paid_gap_min": 0,
+   "suboptimal": 450
+  },
+  {
+   "K": 5,
+   "R": 3,
+   "T": 7,
+   "decisions": 2457,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 7,
+   "paid_gap_min": 0,
+   "suboptimal": 360
+  },
+  {
+   "K": 3,
+   "R": 5,
+   "T": 5,
+   "decisions": 4385,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 2,
+   "paid_gap_min": 0,
+   "suboptimal": 120
+  },
+  {
+   "K": 3,
+   "R": 5,
+   "T": 6,
+   "decisions": 32925,
+   "decisions_below_max_fanin": 0,
+   "decisions_below_max_fanin_unique_max_paid": 0,
+   "fanin_gap_max": 0,
+   "fanin_gap_min": 0,
+   "paid_gap_max": 4,
+   "paid_gap_min": 0,
+   "suboptimal": 580
+  }
+ ],
+ "fanin_exception": {
+  "below": 120,
+  "below_unique": 120,
+  "cells": 1,
+  "decisions_in_cells": 4617,
+  "list": [
+   {
+    "K": 4,
+    "R": 3,
+    "T": 7,
+    "below": 120,
+    "below_unique": 120,
+    "decisions": 4617
+   }
+  ]
  },
  "k2_ties": [
   {
@@ -351,6 +600,7 @@
  "n_refuting_total": 281,
  "n_states_total": 3688,
  "n_traces_total": 61898,
+ "paid_gap_max_over_cells": 9,
  "priors": {
   "p2_threshold": 1.3,
   "source": "issue #153 registration ('worst-case ratio >1.3x')"
@@ -430,6 +680,7 @@
   }
  ],
  "scan_date": "2026-10-27",
+ "suboptimal_all_cells": 6868,
  "unrefuted_cells": [
   {
    "K": 2,

@@ -5,10 +5,12 @@ Why this file exists, as the class rather than as an anecdote. A one-command rep
 in a verdict line carrying the number of steps the run takes. That number is a claim about a
 program, and the package states it in three carriers: `reproduce.sh` (the labels and the verdict
 line), `README.md`, and `manuscript.md`. The program is the authority; the documents are copies.
-The same drift has now been corrected by hand on `#128`, `#145` and `#149`, and R676 opened it a
-fourth time on this package: the manuscript's reproducibility section enumerated **seven** steps
-while the script ran **eight**, because the figure step had been added to the program and to the
-literal verdict line, and the prose sentence between them was never touched.
+The same drift has been corrected by hand on `#128`, `#145` and `#149`, and it opened a fourth time
+on this package: the manuscript's reproducibility section enumerated **seven** steps while the
+script ran **eight**, because the figure step had been added to the program and to the literal
+verdict line, and the prose sentence between them was never touched. That history is the reason this
+file exists, and it is stated here rather than in a round label no reader of this package can look
+up.
 
 The journal's own `stepgate.py` cannot see that shape, and its reach is stated rather than
 implied: it reads a literal `(N steps)`, so a sentence that spells the number out -- "It runs

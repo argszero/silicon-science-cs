@@ -40,7 +40,18 @@ BUCKETS = {
         "§2 Background",
         "Leveled and tiered compaction are the two deployed families, and the field compares "
         "them empirically in terms of read/write/space trade-offs.",
-        r"((level(ed)?|tier(ed)?)[- ]compaction|leveled|tiered)"),
+        # The word must MODIFY a storage construct.  The pattern used to end in a bare
+        # `leveled|tiered`, which admits any English sentence that happens to use the adjective --
+        # the review found three such entries in this bucket (middle-school "leveled writing",
+        # "kilogram-leveled" phase-change preparation, "Leveled Product Codes" for block repair).
+        # `tiering`/`tiered` is this bucket's own term and is used as one throughout the corpus;
+        # `leveled` is the homonym-prone word (middle-school leveled writing, kilogram-leveled
+        # materials, leveled product codes for block repair), so it is admitted only where it
+        # MODIFIES a compaction/storage construct.  The first tightening required the modifier for
+        # both words and pruned 37 legitimate storage-tiering works; this one is the narrow form
+        # the data supports.
+        r"((level(ed)?|tier(ed)?)[- ]compaction|tiered"
+        r"|level(ed)?[- ]?(compaction|layout|storage|sst|tree|lsm))"),
     "flash-write-amp": (
         "§2 Background",
         "Write amplification is the cost the whole log-structured design is organised around.",
@@ -81,7 +92,12 @@ BUCKETS = {
     "ski-rental": (
         "§7 Relation to online algorithms with lookahead",
         "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
-        r"(ski[- ]rental|ski rental)"),
+        # Two vocabularies, both required: the problem's name AND the field's.  A bare
+        # `ski rental` admits a sport-and-leisure study of a ski-hire shop's customer data, which
+        # the review found in this bucket; `ski` alone additionally hits the author name Kurkoski,
+        # which is why a substring count is never a census.
+        r"(?=[\s\S]*(ski[- ]rental|ski rental))"
+        r"(?=[\s\S]*(competitive|online|algorithm|ratio|metrical))"),
     "scheduling-theory": (
         "§7 Relation to online algorithms with lookahead",
         "Online scheduling is where competitive ratio against an offline optimum is the "
@@ -94,6 +110,17 @@ BUCKETS = {
 # can be read: `caching` returns wireless caching-placement papers, and `placement` returns
 # circuit and file layout work.  (#149 measured exactly this: a homonym list catches some,
 # a reviewed pass catches the rest.)
+# The word a bucket's construct test used to accept on its own, per bucket.  When a record still
+# matches the WORD but no longer the CONSTRUCT, it is pruned with that reason rather than with the
+# generic one, so the tally says which failure this was.
+# Word boundaries matter: without them `tier(ed)?` matches inside `Tiering`, and the class then
+# reports every pruned storage-tiering work as a homonym -- a label that over-counts is as useless
+# as one that under-counts.
+HOMONYM_WORD = {
+    "levels-tiering": r"\b(leveled|level|tiered|tier)\b",
+    "ski-rental": r"(ski[- ]rental|ski rental)",
+}
+
 ADJACENT = re.compile(
     r"(wireless|cellular|d2d|small cell|5g|edge cach|network cach|content delivery|"
     r"information[- ]centric|social network|blockchain|smart contract|"
@@ -134,8 +161,15 @@ def place(pool):
                               theme=r["theme"], title=r["title"]))
             continue
         if not re.search(pat, hay, re.I):
-            prune.append(dict(doi=r["doi"], reason="names no construct this section uses",
-                              theme=r["theme"], title=r["title"]))
+            word = HOMONYM_WORD.get(r["theme"])
+            if word and re.search(word, hay, re.I):
+                prune.append(dict(doi=r["doi"],
+                                  reason="the section's word occurs, but not as this section's "
+                                         "construct",
+                                  theme=r["theme"], title=r["title"]))
+            else:
+                prune.append(dict(doi=r["doi"], reason="names no construct this section uses",
+                                  theme=r["theme"], title=r["title"]))
             continue
         rows.append(dict(doi=r["doi"], title=r["title"], year=r["year"], theme=r["theme"],
                          section=sec, claim=claim,
@@ -143,7 +177,66 @@ def place(pool):
     return rows, prune
 
 
+def reapply():
+    """Re-derive the placement DECISION from the rule, keeping every stored verification record.
+
+    A rule change has to be able to move the artifact it governs, and the artifact's two halves are
+    different kinds of thing: `verified` is a RECORD of what Crossref returned on a date, and
+    `section`/`theme`/`placed` are DERIVED from the rule.  Re-running the whole harvest would
+    re-ask the registry and let a record silently change; trusting the stored decision would leave
+    the tightened rule inert.  So the decision is recomputed, the records are kept, and any record
+    the new rule admits for the first time is fetched and reported by DOI.
+    """
+    pool = json.load(open("pool.json"))
+    prev = json.load(open("placement.json"))
+    have = dict((e["doi"], e["verified"]) for e in prev["entries"])
+    before = dict((e["doi"], e) for e in prev["entries"])
+
+    cand, prune = place(pool)
+    cand_doi = {r["doi"] for r in cand}
+    lost = sorted(set(before) - cand_doi)
+    gained = sorted(cand_doi - set(before))
+    print("re-applying the placement rule")
+    print("  previously placed : %d" % len(before))
+    print("  placed now        : %d" % len(cand))
+    print("  dropped by the rule: %d" % len(lost))
+    for d in lost:
+        print("     DROP %s  [%s] %s" % (d, before[d]["theme"], before[d]["title"][:80]))
+    print("  newly admitted     : %d" % len(gained))
+
+    stored, unverifiable = [], []
+    for r in sorted(cand, key=lambda x: (x["section"], x["doi"])):
+        rec = have.get(r["doi"])
+        if rec is None:
+            rec = verify(r["doi"])          # only for DOIs the rule newly admits
+            if rec is None:
+                unverifiable.append(r)
+                print("     UNVERIFIABLE %s" % r["doi"])
+                continue
+            print("     FETCHED %s  %s" % (r["doi"], rec["title"][:70]))
+            time.sleep(0.15)
+        r2 = dict(r)
+        r2["verified"] = rec
+        stored.append(r2)
+
+    placed = sorted(stored, key=lambda x: (x["section"], (x["verified"]["title"] or "").lower(),
+                                           x["doi"]))
+    state = dict(search_form=pool["search_form"], scan_date=SCAN_DATE,
+                 candidates=len(cand), pruned=len(prune), unverifiable=len(unverifiable),
+                 placed=len(placed), entries=placed,
+                 pruned_reasons=dict((k, sum(1 for p in prune if p["reason"] == k))
+                                     for k in set(p["reason"] for p in prune)))
+    json.dump(state, open("placement.json", "w"), indent=1, sort_keys=True)
+    json.dump(prune, open("placement_pruned.json", "w"), indent=1, sort_keys=True)
+    write_reference_check(pool, state, placed)
+    print("  pruned reasons: %s" % json.dumps(state["pruned_reasons"], sort_keys=True))
+    print("  placed %d (floor 100 -> %s)" % (len(placed), "PASS" if len(placed) >= 100 else "SHORT"))
+    return 0
+
+
 def main():
+    if "--reapply" in sys.argv:
+        return reapply()
     if "--render-only" in sys.argv:
         # regenerate the report from the stored state; no network, no re-verification
         state = json.load(open("placement.json"))

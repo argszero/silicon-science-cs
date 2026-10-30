@@ -21,10 +21,11 @@ import re
 import sys
 
 # Works the paper leans on directly.  Six of the eight this list used to carry were the
-# SAME WORKS as corpus entries, matched by DOI -- printed twice, once in the corpus section
-# and once under "read in full", so 247 entry lines described 241 distinct works.  One work
-# is one entry (R676); the six now resolve to their corpus entry, and only the two documents
-# Crossref does not index stay here, each with the body responsible and the date it was read.
+# SIX of these used to be the SAME WORKS as corpus entries, matched by DOI -- printed twice, once
+# in the corpus section and once under "read in full", so 247 entry lines described 241 distinct
+# works.  One work is one entry: the six now resolve to their corpus entry through NAMED_ALIAS, and
+# only the two documents Crossref does not index stay here, each with the body responsible and the
+# date it was read.
 NAMED = {
     "rocksdb_compaction": dict(
         authors="RocksDB", year="2026",
@@ -93,7 +94,15 @@ def render_author(name):
     if not toks:
         return ""
     if PLACEHOLDER.match(toks[-1]):
-        return ""
+        # A registry may put a dash where the family name belongs and carry the whole name in the
+        # given-name field.  The record then DOES have an author, and the entry used to say it did
+        # not -- a false statement about a record the same entry had just verified.  The name is
+        # printed in the order the record gives it, because inverting it would require knowing
+        # which token is the family, and that is exactly what the record did not supply.
+        toks = toks[:-1]
+        if not toks:
+            return ""
+        return " ".join(toks)
     if len(toks) == 1:
         return toks[0]                      # mononym: no initial to invent
     family = toks[-1]
@@ -181,10 +190,17 @@ def computed(res, key):
     if key == "range.loss_max_pct":
         v = max(100.0 * c["greedy_loss"] / c["traces"] for c in cells if c["K"] >= 3)
         return round(v, 1)
+    if key == "wstar0_k2_cells":
+        # The cells with w*=0 that ARE K=2 controls: the predicate the sentence asserts.  It had no
+        # key, so the sentence borrowed the complement's and printed 1 where the table shows three.
+        return sum(1 for c in cells if c["K"] == 2 and c["wstar"] == 0)
     if key == "wstar0_minus_k2_cells":
-        # the cells with w*=0 that are NOT K=2 controls: a real choice exists there, and the
-        # zero horizon means the first genuine choice arrives at the last flush
-        return res["wstar_eq0_cells"] - sum(1 for c in cells if c["K"] == 2)
+        # The complement, kept beside it: the cells with w*=0 that are NOT K=2 controls, where a
+        # real choice exists and the zero horizon means the first genuine choice is the last flush.
+        # Written as its own predicate rather than as `eq0 - |K=2|`: that arithmetic is only equal
+        # to this set when every K=2 cell has w*=0, and an identity that holds by accident of the
+        # grid is exactly what the guard below has to be able to lose.
+        return sum(1 for c in cells if c["K"] != 2 and c["wstar"] == 0)
     if key == "detail.k5t6_loss":
         return res["cells"][[i for i, c in enumerate(cells)
                             if (c["R"], c["K"], c["T"]) == (3, 5, 6)][0]]["greedy_loss"]
@@ -209,6 +225,142 @@ def computed(res, key):
     if key in alias:
         return res[alias[key]]
     raise KeyError(key)
+
+
+# A marker that states a COUNT OF ROWS of the per-cell table, with the predicate it asserts.
+# The predicate is applied to the table as printed, not to results.json: the failure this exists
+# for was a marker that agreed with the artifact's own arithmetic and disagreed with the table a
+# reader sees, so the binding has to be to the same text the reader compares against.
+ROW_COUNT_KEYS = {
+    "wstar_eq0_cells": lambda w, k: w == 0,
+    "wstar0_k2_cells": lambda w, k: w == 0 and k == 2,
+    "wstar0_minus_k2_cells": lambda w, k: w == 0 and k != 2,
+}
+
+
+LEVEL_CLAIM = re.compile(r"Contribution level:\s*\**\s*`([^`]+)`")
+
+
+def check_exception_is_stated(prose, res):
+    """A census with an exception must not reach a paper that omits it.
+
+    This guard exists because of the defect that produced the exception: the package used to
+    state that the fan-in correspondence held in `17 of the 17` cells, and that number was
+    `cells where fanin_gap_max == 0` -- a statistic pinned to 0 for every input by construction,
+    so it could not have reported anything else.  The count that CAN move said 16, with 120
+    decisions failing in one cell.  A green statistic that cannot vary hid a false sentence, and
+    the sentence sat in the abstract.  So the rule is mechanical in both directions: if the
+    census holds failures, the prose must carry the failure count; and if the prose carries one,
+    the census must hold it.  Neither direction reads the other's intent, and both read the
+    template rather than the rendered body, where a marker has already become a number.
+    """
+    ex = res.get("fanin_exception") or {}
+    below = ex.get("below", 0)
+    marker = "{{n:fanin_exception.below}}"
+    problems = []
+    if below and marker not in prose:
+        problems.append("the census has %d decision(s) below the widest alternative and the prose "
+                        "never states %s" % (below, marker))
+    if not below and marker in prose:
+        problems.append("the prose cites %s but the census holds no failures" % marker)
+    if ex.get("cells", 0) + res.get("cells_with_fanin_gap_min_zero", 0) != res.get("n_cells"):
+        problems.append("the cells that agree (%s) and the cells that fail (%s) do not add up to "
+                        "the grid (%s)" % (res.get("cells_with_fanin_gap_min_zero"),
+                                           ex.get("cells"), res.get("n_cells")))
+    return problems
+
+
+def check_level_agreement(prose, readme):
+    """The declared contribution level, read the same way off both carriers that state it.
+
+    The review found the copies disagreeing, and the disagreement was invisible because no
+    program compared them: the abstract declared `theory+empirics`, the registration's
+    conditional -- whose condition had already fired -- called for a case study, and
+    `README.md` declared nothing at all.  A guard cannot read the registration (it lives on
+    the issue tracker, outside the tree), and a guard that guessed at it would be checking
+    its own copy of a decision.  What it can bind is the two carriers that ARE in the
+    package: exactly one claim each, and the same claim in both.  Silence fails, because a
+    carrier that states no level is not agreeing with the one that does -- it is the seat
+    the reviewer had to reconstruct by hand.
+    """
+    problems = []
+    got = {}
+    for name, text in (("manuscript_prose.md", prose), ("README.md", readme)):
+        found = [f.strip() for f in LEVEL_CLAIM.findall(text or "")]
+        if not found:
+            problems.append("%s declares no contribution level" % name)
+        elif len(found) > 1:
+            problems.append("%s declares %d contribution levels: %s" % (name, len(found), found))
+        else:
+            got[name] = found[0]
+    if len(got) == 2 and got["manuscript_prose.md"] != got["README.md"]:
+        problems.append("the two carriers disagree: the abstract says %r, README says %r"
+                        % (got["manuscript_prose.md"], got["README.md"]))
+    return problems
+
+
+def check_row_count_keys(prose, bound_values):
+    """Compare every row-count marker with the table as this generator printed it.
+
+    `prose` is the TEMPLATE, with its `{{n:...}}` markers still in place.  The first version of the
+    clause rule scanned the substituted body, where every marker has already become a number, so it
+    found no markers at all and could not fire: a guard reading the output instead of the claim.
+    """
+    problems = []
+    table = cell_table(json.load(open("results.json")))
+    rows = []
+    for line in table.split("\n"):
+        m = re.match(r"\|\s*R=(\d+) K=(\d+) T=(\d+)\s*\|", line)
+        if not m:
+            continue
+        cols = [c.strip() for c in line.strip().strip("|").split("|")]
+        rows.append((int(m.group(2)), int(cols[-1])))       # (K, w*)
+    if len(rows) != 17:
+        problems.append("the emitted table has %d rows, expected 17 -- cannot bind against it"
+                        % len(rows))
+        return problems
+    # the arithmetic these keys used to rely on: every K=2 cell has w*=0.  Asserted, because a key
+    # defined as a difference is only that set while this holds.
+    bad = [(k, w) for (k, w) in rows if k == 2 and w != 0]
+    if bad:
+        problems.append("a K=2 control row does not have w*=0 (%s); the complement keys are then "
+                        "not counting what their names say" % bad)
+    for key, pred in ROW_COUNT_KEYS.items():
+        if key not in bound_values:
+            continue
+        want = sum(1 for (k, w) in rows if pred(w, k))
+        got = int(bound_values[key])
+        if got != want:
+            problems.append("{{n:%s}} printed %d, but the table it describes has %d row(s) with "
+                            "that property (%d rows read)" % (key, got, want, len(rows)))
+    # ---- and the sentence, not only the value ------------------------------------------------
+    # The defect the review found was not a wrong number: the marker's number was right and the
+    # sentence asserted the OTHER predicate.  A value check cannot see that; the key's own name
+    # can.  `minus` in a key means "the complement of", so a sentence carrying that key may not
+    # assert the property it is the complement of, and a key that counts `K = 2` cells must be
+    # used where `K = 2` is what is being claimed.
+    # The unit is the CLAUSE, not the sentence.  The first version of this check read sentences and
+    # asked whether the word "not" appeared anywhere in one; the sentence carrying the defect also
+    # carried "The qualifier is not a hedge", so an unrelated word cleared it.  A window wide
+    # enough to hold an innocuous token is not a check.
+    # the marker's own colon is a clause separator, so a marker is replaced by a punctuation-free
+    # sentinel before the split -- otherwise the key is severed from the clause that carries it and
+    # the rule reads an empty clause (the first version did exactly that and never fired).
+    marked = re.sub(r"\{\{n:([^}]+)\}\}", lambda m: "\x00%s\x00" % m.group(1), prose)
+    for clause in re.split(r"[.;:,]|\s[\u2014\u2013-]\s|\s(?:and|but|while|whereas)\s", marked):
+        keys = re.findall(r"\x00([^\x00]+)\x00", clause)
+        if not keys:
+            continue
+        names_k2 = re.search(r"K\s*=\s*2", clause)
+        for key in keys:
+            if "minus" in key and names_k2:
+                problems.append("{{n:%s}} is the complement of the `K = 2` count, but the clause "
+                                "using it is where `K = 2` is asserted: %r"
+                                % (key, clause.strip()[:140]))
+            if key.endswith("_k2_cells") and "minus" not in key and not names_k2:
+                problems.append("{{n:%s}} counts `K = 2` cells, but the clause using it does not "
+                                "name `K = 2`: %r" % (key, clause.strip()[:140]))
+    return problems
 
 
 def fmt(v):
@@ -339,6 +491,7 @@ def main():
     prose = open("manuscript_prose.md").read()
 
     bound = []          # every number produced by substitution, for the stray scan
+    bound_values = {}   # key -> the string it printed, for the row-count binding below
 
     def sub_n(m):
         key = m.group(1)
@@ -348,6 +501,7 @@ def main():
             v = computed(res, key)
         s = fmt(v)
         bound.append(s)
+        bound_values[key] = s
         return s
 
     body = re.sub(r"\{\{n:([^}]+)\}\}", sub_n, prose)
@@ -450,6 +604,34 @@ def main():
     if stray:
         print("STRAY NUMBERS (not bound to any artifact): %s" % sorted(set(stray)))
         print("  -> a number in the prose that no program emitted; refusing to write the paper.")
+        return 1
+
+    # ---- row-count binding: a marker that states a count of table rows, read against the table --
+    # The stray scan above cannot see this class.  It polices multi-digit tokens, and the defect the
+    # review found was a BOUND MARKER whose predicate was the complement of the sentence's: the
+    # marker printed `1`, one digit, and the sentence contradicted a table three lines above it.
+    # Widening the token class would flood on section numbers and enumerations, so the repair is to
+    # bind these markers to the rows AS PRINTED: parse the table we just emitted, apply the key's
+    # own predicate to each row, and refuse to write the paper when a marker disagrees with it.
+    if problems := check_row_count_keys(prose, bound_values):
+        for p in problems:
+            print("ROW-COUNT MARKER: %s" % p)
+        print("  -> a marker that counts table rows disagrees with the table; refusing to write.")
+        return 1
+
+    # ---- contribution level: the same claim, off both carriers that state one ---------------
+    # Same class as the row-count defect above and the same reason for a guard: the level is a
+    # claim a reader meets in the abstract and again in README, and nothing compared the two.
+    if problems := check_level_agreement(prose, open("README.md").read()):
+        for p in problems:
+            print("CONTRIBUTION LEVEL: %s" % p)
+        print("  -> the declared level is not one claim off every carrier; refusing to write.")
+        return 1
+
+    if problems := check_exception_is_stated(prose, res):
+        for p in problems:
+            print("UNSTATED EXCEPTION: %s" % p)
+        print("  -> a census with an exception and prose without it; refusing to write.")
         return 1
 
     body = reflow(body)

@@ -1,5 +1,5 @@
 {
- "candidates": 239,
+ "candidates": 237,
  "entries": [
   {
    "claim": "Write amplification is the cost the whole log-structured design is organised around.",
@@ -319,26 +319,6 @@
     "year": 1998
    },
    "year": 1998
-  },
-  {
-   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
-   "doi": "10.17250/khisli.27.1.201004.003",
-   "judgement": "title-only",
-   "section": "\u00a72 Background",
-   "theme": "levels-tiering",
-   "title": "An Analysis of Leveled Writing Activities in Middle School English 1 Textbooks and Workbooks and the Perceptions of Middle School Students on the Leveled Writing Activities",
-   "verified": {
-    "authors": [
-     "\uc870\uc544\uc601",
-     "Young-in Moon"
-    ],
-    "doi": "10.17250/khisli.27.1.201004.003",
-    "title": "An Analysis of Leveled Writing Activities in Middle School English 1 Textbooks and Workbooks and the Perceptions of Middle School Students on the Leveled Writing Activities",
-    "type": "journal-article",
-    "venue": "Linguistic Research",
-    "year": 2010
-   },
-   "year": 2010
   },
   {
    "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
@@ -1130,6 +1110,29 @@
    "year": 2016
   },
   {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1109/access.2016.2587777",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "File-System-Level Storage Tiering for Faster Application Launches on Logical Hybrid Disks",
+   "verified": {
+    "authors": [
+     "Junhee Ryu",
+     "Dongeun Lee",
+     "Changhee Han",
+     "Heonshik Shin",
+     "Kyungtae Kang"
+    ],
+    "doi": "10.1109/access.2016.2587777",
+    "title": "File-System-Level Storage Tiering for Faster Application Launches on Logical Hybrid Disks",
+    "type": "journal-article",
+    "venue": "IEEE Access",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
    "claim": "The systems that carry these policies are LSM-based key-value stores.",
    "doi": "10.1109/icde48307.2020.00113",
    "judgement": "title-only",
@@ -1506,28 +1509,6 @@
     "year": 2020
    },
    "year": 2020
-  },
-  {
-   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
-   "doi": "10.1109/infocom55648.2025.11044776",
-   "judgement": "title-only",
-   "section": "\u00a72 Background",
-   "theme": "levels-tiering",
-   "title": "Leveled Product Codes for Optimal Block Repairs in Geo-distributed Storage Systems",
-   "verified": {
-    "authors": [
-     "Si Wu",
-     "Guantian Lin",
-     "Patrick P. C. Lee",
-     "Yinlong Xu"
-    ],
-    "doi": "10.1109/infocom55648.2025.11044776",
-    "title": "Leveled Product Codes for Optimal Block Repairs in Geo-distributed Storage Systems",
-    "type": "proceedings-article",
-    "venue": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications",
-    "year": 2025
-   },
-   "year": 2025
   },
   {
    "claim": "The systems that carry these policies are LSM-based key-value stores.",
@@ -2376,29 +2357,6 @@
    "year": 2022
   },
   {
-   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
-   "doi": "10.1016/j.est.2021.102405",
-   "judgement": "title-only",
-   "section": "\u00a72 Background",
-   "theme": "levels-tiering",
-   "title": "Series of solid-solid phase change materials with ultra-high thermal stability and controllable phase change temperature: kilogram-leveled preparation and application investigation",
-   "verified": {
-    "authors": [
-     "Changren Xiao",
-     "Shaojun Li",
-     "Shengtian Zhu",
-     "Guoqing Zhang",
-     "Xiaoqing Yang"
-    ],
-    "doi": "10.1016/j.est.2021.102405",
-    "title": "Series of solid-solid phase change materials with ultra-high thermal stability and controllable phase change temperature: kilogram-leveled preparation and application investigation",
-    "type": "journal-article",
-    "venue": "Journal of Energy Storage",
-    "year": 2021
-   },
-   "year": 2021
-  },
-  {
    "claim": "The systems that carry these policies are LSM-based key-value stores.",
    "doi": "10.1109/icws67624.2025.00100",
    "judgement": "title-only",
@@ -2759,6 +2717,27 @@
     "year": 2016
    },
    "year": 2016
+  },
+  {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1109/cloudcom.2012.6427520",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "Value-based tiering management on heterogeneous block-level storage system",
+   "verified": {
+    "authors": [
+     "Chai-Hao Tsai",
+     "Jerry Chou",
+     "Yeh-Ching Chung"
+    ],
+    "doi": "10.1109/cloudcom.2012.6427520",
+    "title": "Value-based tiering management on heterogeneous block-level storage system",
+    "type": "proceedings-article",
+    "venue": "4th IEEE International Conference on Cloud Computing Technology and Science Proc",
+    "year": 2012
+   },
+   "year": 2012
   },
   {
    "claim": "Write amplification is the cost the whole log-structured design is organised around.",
@@ -3188,25 +3167,6 @@
     "year": 1987
    },
    "year": 1987
-  },
-  {
-   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
-   "doi": "10.51979/kssls.2012.05.48.129",
-   "judgement": "title-only",
-   "section": "\u00a77 Relation to online algorithms with lookahead",
-   "theme": "ski-rental",
-   "title": "Analysis of PLS Path Model between CRM Information Possessed by a Ski Rental Shop and Customer Behavior",
-   "verified": {
-    "authors": [
-     "Tae Soo Cho"
-    ],
-    "doi": "10.51979/kssls.2012.05.48.129",
-    "title": "Analysis of PLS Path Model between CRM Information Possessed by a Ski Rental Shop and Customer Behavior",
-    "type": "journal-article",
-    "venue": "Journal of Sport and Leisure Studies",
-    "year": 2012
-   },
-   "year": 2012
   },
   {
    "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
@@ -5041,11 +5001,12 @@
    "year": 1986
   }
  ],
- "placed": 239,
- "pruned": 105,
+ "placed": 237,
+ "pruned": 107,
  "pruned_reasons": {
   "adjacent construct (same word, other object)": 18,
-  "names no construct this section uses": 87
+  "names no construct this section uses": 79,
+  "the section's word occurs, but not as this section's construct": 10
  },
  "scan_date": "2026-10-26",
  "search_form": {

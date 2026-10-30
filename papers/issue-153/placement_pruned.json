@@ -199,7 +199,7 @@
  },
  {
   "doi": "10.15662/ijsrat.2025.0801007",
-  "reason": "names no construct this section uses",
+  "reason": "the section's word occurs, but not as this section's construct",
   "theme": "levels-tiering",
   "title": "Intelligent Data Tiering and Automated Lifecycle Management for Enterprise Storage and Scalable Real-Time Analytics"
  },
@@ -222,14 +222,8 @@
   "title": "Green Cloud Storage Lifecycle using AI and AWS: AI-Powered Data Tiering"
  },
  {
-  "doi": "10.1109/access.2016.2587777",
-  "reason": "names no construct this section uses",
-  "theme": "levels-tiering",
-  "title": "File-System-Level Storage Tiering for Faster Application Launches on Logical Hybrid Disks"
- },
- {
   "doi": "10.1109/access.2026.3732195",
-  "reason": "names no construct this section uses",
+  "reason": "the section's word occurs, but not as this section's construct",
   "theme": "levels-tiering",
   "title": "Compression for Tiering: Enabling High-Tier Flash Storage for Hot Data via Cold Data Compression"
  },
@@ -247,7 +241,7 @@
  },
  {
   "doi": "10.1145/3803857",
-  "reason": "names no construct this section uses",
+  "reason": "the section's word occurs, but not as this section's construct",
   "theme": "levels-tiering",
   "title": "Machine Learning-Based Caching and Tiering in Modern Data Storage Systems: A Survey"
  },
@@ -265,7 +259,7 @@
  },
  {
   "doi": "10.1145/3736587",
-  "reason": "names no construct this section uses",
+  "reason": "the section's word occurs, but not as this section's construct",
   "theme": "levels-tiering",
   "title": "MTree: A Tiering-based Key-Value Store Powered by High-performance Hierarchical Data Management"
  },
@@ -288,16 +282,16 @@
   "title": "A Novel Automated Cloud Storage Tiering System through Hot-Cold Data Classification"
  },
  {
-  "doi": "10.1109/cloudcom.2012.6427520",
-  "reason": "names no construct this section uses",
-  "theme": "levels-tiering",
-  "title": "Value-based tiering management on heterogeneous block-level storage system"
- },
- {
   "doi": "10.2991/ijndc.k.191115.001",
   "reason": "names no construct this section uses",
   "theme": "levels-tiering",
   "title": "Performance Evaluation of Data Migration Policies for a Distributed Storage System with Dynamic Tiering"
+ },
+ {
+  "doi": "10.1016/j.est.2021.102405",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Series of solid-solid phase change materials with ultra-high thermal stability and controllable phase change temperature: kilogram-leveled preparation and application investigation"
  },
  {
   "doi": "10.1109/iccsc71566.2026.11650325",
@@ -318,14 +312,20 @@
   "title": "Storage compaction"
  },
  {
+  "doi": "10.1109/infocom55648.2025.11044776",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Leveled Product Codes for Optimal Block Repairs in Geo-distributed Storage Systems"
+ },
+ {
   "doi": "10.55544/ijrah.3.1.28",
-  "reason": "names no construct this section uses",
+  "reason": "the section's word occurs, but not as this section's construct",
   "theme": "levels-tiering",
   "title": "A Memory-Efficient Approach to Cost-Optimized Storage Tiering for Cloud Workloads"
  },
  {
   "doi": "10.48175/ijarsct-38810",
-  "reason": "names no construct this section uses",
+  "reason": "the section's word occurs, but not as this section's construct",
   "theme": "levels-tiering",
   "title": "ASTRA : Advanced Storage Tiering, Resilience, and Analytics Framework"
  },
@@ -406,6 +406,12 @@
   "reason": "adjacent construct (same word, other object)",
   "theme": "levels-tiering",
   "title": "RLTiering: A Cost-Driven Auto-Tiering System for Two-Tier Cloud Storage Using Deep Reinforcement Learning"
+ },
+ {
+  "doi": "10.17250/khisli.27.1.201004.003",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "An Analysis of Leveled Writing Activities in Middle School English 1 Textbooks and Workbooks and the Perceptions of Middle School Students on the Leveled Writing Activities"
  },
  {
   "doi": "10.1109/gcce.2017.8229472",
@@ -598,6 +604,12 @@
   "reason": "names no construct this section uses",
   "theme": "competitive-paging",
   "title": "Optimal view caching"
+ },
+ {
+  "doi": "10.51979/kssls.2012.05.48.129",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "ski-rental",
+  "title": "Analysis of PLS Path Model between CRM Information Possessed by a Ski Rental Shop and Customer Behavior"
  },
  {
   "doi": "10.1109/icess.2019.8782508",

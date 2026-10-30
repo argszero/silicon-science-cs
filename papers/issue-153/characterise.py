@@ -116,7 +116,13 @@ class Analyser:
                 fanin_gap=info[rule]["n"] - max(info[rr]["n"] for rr in cand),
                 paid_gap=info[rule]["paid"] - min(info[rr]["paid"] for rr in cand),
                 gap=info[rule]["ch"] - info[best]["ch"],
-                n_cand=len(cand)))
+                n_cand=len(cand),
+                # Whether the rule's choice was forced by the key alone or only by the index
+                # tie-break.  The census needs this: the fan-in correspondence fails on 120
+                # decisions in one cell, and a reader is entitled to ask whether the failures are
+                # the tie-break rather than the rule.  Measured, not argued: on those 120 the
+                # maximum-paid merge is unique, so the key alone produced them.
+                paid_tied=sum(1 for rr in cand if info[rr]["paid"] == info[rule]["paid"]) > 1))
             self.states.append((runs2, live2, self.trace[i], self.decisions[-1]["y"]))
             runs, _, _ = self.merge(runs2, rule, live2)
             total += info[rule]["paid"]

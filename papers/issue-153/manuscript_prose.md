@@ -15,11 +15,21 @@ states, no sampling) and score the rule against an exact dynamic program that is
 certified against an independent brute-force traversal on {{n:certificate.instances}}
 instances.
 
-Four measured results. **(i)** The rule is not making a trade-off: on all
-{{n:decisions.decisions}} merge decisions of the base cell its fan-in equals the widest legal
-alternative (gap {{n:decisions.fanin_gap_max}} on every decision), while the bytes it pays are
-never below the cheapest legal merge. "Largest overlap" and "most runs collapsed" are the same
-choice, and it is the most expensive one. **(ii)** It is wrong often and sometimes badly: the
+Four measured results. **(i)** The rule is not making a trade-off: on
+{{n:decisions.decisions_below_max_fanin}} of the {{n:decisions.decisions}} merge decisions of the
+cell `R=3 K=3 T=6` does it collapse fewer runs than the widest legal alternative, so "largest
+overlap" and "most runs collapsed" name the same choice. The price half of that is *definitional
+and we say so rather than scoring it*: the rule is defined as the merge whose covering runs hold
+the most bytes, so it pays the most of any legal merge at that step by construction (§4.1). The
+measured half is near-universal on this grid and not universal: it holds in
+{{n:cells_with_fanin_gap_min_zero}} of the {{n:n_cells}} cells and fails on
+{{n:fanin_exception.below}} of the {{n:decisions_all_cells}} decisions, every one of them in the
+cell `R=3 K=4 T=7` ({{n:fanin_exception.below}} of that cell's
+{{n:fanin_exception.decisions_in_cells}}) — and in all {{n:fanin_exception.below_unique}} of those
+the maximum-bytes merge is unique, so the index tie-break is not the cause. Paying the most
+therefore does not always collapse the most; it does so on all but {{n:fanin_exception.below}}
+decisions here. {{n:suboptimal_all_cells}} of those {{n:decisions_all_cells}} decisions are
+non-optimal. **(ii)** It is wrong often and sometimes badly: the
 non-optimal fraction ranges from {{n:range.loss_min_pct}}% to {{n:range.loss_max_pct}}% depending
 on capacity and trace length, and the worst excess is **{{n:max_worst}}×**, at R=3 K=5 T=6. **(iii)** Exactness requires a horizon
 that grows with the trace — `w* = T − 1 − i_first`, where `i_first` is the first flush at which
@@ -31,8 +41,15 @@ of {{n:proposition.states}} states, and we print a two-trace witness that can be
 
 The horizon claim is a **proposition of this model**, with its scope stated: the model is not a
 deployment, no production trace is replayed, and the modelled rule is a named member of the
-compaction family, not a reimplementation of any engine. Contribution level: **`theory+empirics`**
-— a formal model with exhaustively verified results, and no claim about production systems.
+compaction family, not a reimplementation of any engine.
+
+Contribution level: **`case study`**. The registration named `theory+empirics` and made that level
+conditional on the characterisation generalising; §8 reports that the registered predicate was
+withdrawn, so the condition fired and this is what the evidence supports: a case study of one
+model of one decision, measured exhaustively. §4.4 still carries a proposition and it is a
+proposition *of this model* — proved inside it, not generalised beyond it. Both halves are stated
+here on purpose: deleting the proposition would overstate the withdrawal, and keeping it without
+this sentence would overstate the claim.
 
 ## 1. Introduction
 
@@ -147,17 +164,41 @@ Three controls run throughout, and we report them wherever a rate is reported:
 
 ### 4.1 The rule is not a trade-off
 
-Across the base cell's decisions, the fan-in of the rule's chosen merge equals the maximum
-fan-in among legal alternatives on **every** decision: the gap is
-{{n:decisions.fanin_gap_max}} over {{n:decisions.decisions}} decisions. And the price it pays is
-never below the cheapest legal merge (minimum gap {{n:decisions.paid_gap_min}}). So on this
-model the two natural readings of "largest overlap" — merge the most-overlapping range, and
-collapse the most runs — denote the same choice, and that choice is also the most expensive one
-available. Of those {{n:decisions.decisions}} decisions,
-{{n:decisions.suboptimal}} are non-optimal.
+The base cell is `R=3 K=3 T=6`: three key ranges, capacity for three sorted runs, six flushes.
+On {{n:decisions.decisions_below_max_fanin}} of its {{n:decisions.decisions}} decisions does the
+rule's chosen merge collapse fewer runs than the widest legal alternative — so the two natural
+readings of "largest overlap", merge the most-overlapping range and collapse the most runs, name
+the same choice here. {{n:decisions.suboptimal}} of those {{n:decisions.decisions}} decisions are
+non-optimal.
 
-This is the paper's title as a measurement rather than a slogan: the largest overlap is the most
-expensive merge, and choosing it is not buying anything with the expense.
+**The price half of that equivalence is definitional, and we state it rather than score it.** The
+rule is defined as the merge whose covering runs hold the most bytes (§2.2), so at every decision
+it pays the most of any legal merge *by construction*: a "gap to the cheapest alternative" can
+only be non-negative here, and its minimum is 0 for that reason, not because anything was
+measured. The widest the rule ever goes above the cheapest legal alternative is
+{{n:decisions.paid_gap_max}} bytes, and even that is a property of the alternatives rather than a
+finding about the rule. What is *not* definitional is the fan-in half: the selection key is bytes,
+fan-in is a different quantity, and the rule's collapse count equalling the maximum is therefore a
+correspondence between two things rather than a restatement of one. That is the half this section
+measures, and it is the half the title's claim rests on.
+
+The decision-level census is not taken in that cell alone. It is run in **every** cell of §4.2, and
+the correspondence holds in {{n:cells_with_fanin_gap_min_zero}} of the {{n:n_cells}} cells: over
+{{n:decisions_all_cells}} merge decisions, {{n:fanin_exception.below}} collapse fewer runs than the
+widest legal alternative. **All of them are in one cell**, `R=3 K=4 T=7` —
+{{n:fanin_exception.below}} of its {{n:fanin_exception.decisions_in_cells}} decisions — and none of
+them is a tie the rule broke by index: in all {{n:fanin_exception.below_unique}} the maximum-bytes
+merge is unique, so the rule's own key chose a merge that collapses fewer runs than one that was
+available to it. The equivalence is therefore near-universal on this grid rather than a theorem,
+and the exception is stated here rather than left for a reader to find. It is also what makes the
+agreement elsewhere a measurement: a statistic that could not have varied for any input would be a
+property of the design, and this one varies. The cell above is quoted first because it is the one
+the rest of the paper refers to, not because the statement is true only there.
+
+So the title, read as a measurement rather than a slogan, is this: on all but
+{{n:fanin_exception.below}} decisions of this grid the choice that pays the most bytes is also the
+one that collapses the most runs, so the two are not traded against each other — and paying the
+most is still the wrong choice on the share of decisions §4.2 reports.
 
 ### 4.2 How often the rule is wrong, and by how much
 
@@ -192,10 +233,11 @@ than one legal merge exists; when no choice ever exists (`K = 2`) the quantity i
 `w* = 0`. Because the first genuine choice occurs at a fixed index `i_first` determined by `K`
 alone, `w*` **grows with the trace**: exactness needs the entire remainder after the first
 choice, and no constant window suffices *in any cell where `w* >= 1`*. The qualifier is not a
-hedge but a correction: {{n:wstar_eq0_cells}} of the {{n:n_cells}} cells have `w* = 0`, and only
-{{n:wstar0_minus_k2_cells}} of those is a `K = 2` control. In the fourth — R=3 K=5 T=6 — a real
-choice exists and the deployed rule loses {{n:detail.k5t6_loss}} traces, yet `w* = 0`, because
-the first genuine choice arrives at the last flush, where there is nothing left to look ahead to.
+hedge but a correction: {{n:wstar_eq0_cells}} of the {{n:n_cells}} cells have `w* = 0`, and
+{{n:wstar0_k2_cells}} of those are `K = 2` controls — leaving
+{{n:wstar0_minus_k2_cells}} that is not. In that one — R=3 K=5 T=6 — a real choice exists and the
+deployed rule loses {{n:detail.k5t6_loss}} traces, yet `w* = 0`, because the first genuine choice
+arrives at the last flush, where there is nothing left to look ahead to.
 So `w* = 0` means "the zero-lookahead rule is already exact", which is not the same as "no choice
 exists"; `make_figure.py` asserts that equivalence over every cell."
 
@@ -316,9 +358,13 @@ difference is not evidence.
 
 The corpus below was assembled from Crossref with a stated search form and is reproduced in
 `reference-check.md`, which records for each entry the DOI-verified record returned by the
-register. Placement required a record to name a construct its section uses; entries that named
-adjacent constructs (wireless caching placement, instruction scheduling) were excluded with
-their reason.
+register. Placement required a record to name a construct its section uses, and the test is applied
+to the construct rather than to the word: `leveled` is admitted only where it modifies a compaction
+or tiering construct, and `ski rental` only where the record also carries the field's vocabulary,
+because both the adjective and the problem's name are used for other objects. Entries that named
+adjacent constructs (wireless caching placement, instruction scheduling) were excluded with their
+reason, and entries whose word matched while their construct did not are counted under a separate
+reason in the placement tally.
 
 *Compaction and write amplification.* {{cites:2:lsm-compaction}} {{cites:2:flash-write-amp}}
 
