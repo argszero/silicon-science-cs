@@ -489,7 +489,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [56] Schroff, F.; Kalenichenko, D.; Philbin, J.. (2015). FaceNet: A unified embedding for face recognition and clustering. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 815-823. https://doi.org/10.1109/cvpr.2015.7298682
 
-[57] Arandjelovic, R.; Gronat, P.; Torii, A.; et al.. (2016). NetVLAD: CNN Architecture for Weakly Supervised Place Recognition. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 5297-5307. https://doi.org/10.1109/cvpr.2016.572
+[57] Arandjelovic, R.; Gronat, P.; Torii, A.; et al.. (2018). NetVLAD: CNN Architecture for Weakly Supervised Place Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 40. pp. 1437-1451. https://doi.org/10.1109/tpami.2017.2711011
 
 [58] Radenovic, F.; Tolias, G.; Chum, O.. (2019). Fine-Tuning CNN Image Retrieval with No Human Annotation. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 41. pp. 1655-1668. https://doi.org/10.1109/tpami.2018.2846566
 

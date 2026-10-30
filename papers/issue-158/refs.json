@@ -55,15 +55,15 @@
   "year": 2015
  },
  "arandjelovic-netvlad-2016": {
-  "doi": "10.1109/cvpr.2016.572",
-  "entry": "Arandjelovic, R.; Gronat, P.; Torii, A.; et al.. (2016). NetVLAD: CNN Architecture for Weakly Supervised Place Recognition. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 5297-5307. https://doi.org/10.1109/cvpr.2016.572",
+  "doi": "10.1109/tpami.2017.2711011",
+  "entry": "Arandjelovic, R.; Gronat, P.; Torii, A.; et al.. (2018). NetVLAD: CNN Architecture for Weakly Supervised Place Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 40. pp. 1437-1451. https://doi.org/10.1109/tpami.2017.2711011",
   "title": "NetVLAD: CNN Architecture for Weakly Supervised Place Recognition",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2016
+  "year": 2018
  },
  "aslam-pavlu-2003": {
   "doi": "10.1145/956950.956953",

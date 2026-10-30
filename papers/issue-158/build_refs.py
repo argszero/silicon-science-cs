@@ -310,8 +310,70 @@ def selftest():
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
 
+REPORT_PREAMBLE = (
+    "Every entry below was resolved through a real registry on DATE, by a program "
+    "(`build_refs.py`) and not by hand, and each row names the identifier a reader can open. "
+    "The acceptance rule is stated here as the code implements it, because a report that "
+    "describes a rule the code no longer applies is a second copy that no gate reads.\n\n"
+    "From Crossref a record is accepted only when its title, after folding stopwords and "
+    "punctuation, equals the query -- or else contains all but at most one of the query's "
+    "content words and adds at most three of its own, the shape of a subtitle or an appended "
+    "note. A query of three content words or fewer is admitted on exact equality only, because "
+    "a word-overlap ratio has no resolution on a short title: 'Spectral hashing' is a 100% word "
+    "match for 'Fully non-local super-resolution via spectral hashing'. The issued year must "
+    "agree within two years. A book seed instead requires exact title equality AND a "
+    "book-shaped record type, because a book review carries the book's title and a DOI.\n\n"
+    "From arXiv, used for the venues Crossref does not index at all, a record is accepted only "
+    "on exact normalised title equality with the year within one, and the row is labelled "
+    "arxiv: so a reader can see that a preprint was cited.\n\n"
+    "Two slugs that resolve to one work are refused as duplicates: the bibliography may not be "
+    "lengthened by naming one paper twice.\n\n")
+
+
+def write_report(path, report):
+    """Emit the authenticity report. No `%` formatting: a percent sign in the prose of a
+    report about percentages is how the date printed as a literal %Y-%m-%d."""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("# Reference authenticity check -- issue #158\n\n")
+        f.write(REPORT_PREAMBLE.replace("DATE", report["date"]))
+        f.write("| slug | query | verdict | record found |\n|---|---|---|---|\n")
+        f.write("\n".join(report["rows"]) + "\n")
+        why = ", ".join("%s x%d" % (k, v) for k, v in sorted(report["why"].items())) or "none"
+        f.write("\n**%d of %d seeds verified.** Rejections by reason: %s. A refusal is not a "
+                "failure to look: every refused seed is named with its reason, because a "
+                "silently dropped citation is a lie of omission.\n\n"
+                % (report["verified"], report["seeds"], why))
+        f.write("The journal's floor is 100 references, all cited in the body; this file and "
+                "`refs.json` together are what that count is read from, and "
+                "`make_manuscript.py` refuses to render while the count is short or while a "
+                "held reference is never cited.\n")
+
+
 def main(argv):
     machine = "--json" in argv
+    # A registry answers or it does not. When it answers *without* the work -- rate limiting shows
+    # up as a thin result list, not as an exception -- the run must not read that as "this paper
+    # does not exist": a re-resolution on 2026-10-30 returned 101 of the 123 references the
+    # previous run had resolved, every lost one reading NO RECORD, and would have deleted 22 real
+    # citations from a manuscript that cites them. So a slug the committed refs.json already
+    # verified is CARRIED, and the carry is printed and recorded -- not hidden. `--no-carry`
+    # forces a clean resolution for the case where removing a reference is the intent.
+    prior = {}
+    if "--no-carry" not in argv:
+        try:
+            prior = json.load(open("refs.json", encoding="utf-8"))
+        except Exception:
+            prior = {}
+    if "--report-only" in argv:
+        cached = json.load(open("refs_report.json"))
+        before = open("reference-check.md", encoding="utf-8").read()
+        write_report("reference-check.md", cached)
+        after = open("reference-check.md", encoding="utf-8").read()
+        print("report regenerated from cache: %d row(s), %s"
+              % (len(cached["rows"]),
+                 "byte-identical to the committed file" if before == after
+                 else "DIFFERS from the committed file"))
+        return 0 if before == after else 1
     out, report, why = {}, [], {}
     seen_work = {}                     # normalised identity -> slug that already holds it
 
@@ -346,13 +408,34 @@ def main(argv):
             else:
                 seen_work[ident] = slug
 
+        carried = False
+        if rec is None and slug in prior:
+            held = prior[slug]
+            if held.get("verification", {}).get("result") == "verified":
+                rec, entry = held, held.get("entry")
+                ident = ("doi:" + held["doi"].lower()) if held.get("doi") else \
+                        ("title:" + ntitle(held.get("title") or slug))
+                verdict = "verified (carried: no match returned this run)"
+                year_rec = held.get("year")
+                method = held.get("verification", {}).get("method", "carried")
+                carried = True
+
         line = "| `%s` | %s | **%s** | %s |" % (
             slug, query[:70].replace("|", "/"), verdict,
             ((" %s" % ident) if ident and rec is not None else "-"))
         report.append(line)
         print("%-34s %-10s %s" % (slug, method, verdict), flush=True)
 
-        if rec is not None:
+        if carried:
+            out[slug] = dict(prior[slug])
+            out[slug]["verification"] = dict(prior[slug]["verification"],
+                                             carried=time.strftime("%Y-%m-%d"))
+            if ident in seen_work and seen_work[ident] != slug:
+                del out[slug]
+                verdict = "DUPLICATE of `%s` (same work, refused)" % seen_work[ident]
+            else:
+                seen_work[ident] = slug
+        elif rec is not None:
             out[slug] = dict(entry=entry, doi=(rec.get("DOI") if method == "crossref" else None),
                              title=(rec.get("title") or [""])[0] if method == "crossref" else rec["title"],
                              year=year_rec if year_rec is not None else year,
@@ -364,30 +447,23 @@ def main(argv):
         time.sleep(0.4)
 
     json.dump(out, open("refs.json", "w"), indent=1, sort_keys=True)
-    with open("reference-check.md", "w") as f:
-        f.write("# Reference authenticity check -- issue #158\n\n")
-        f.write("Every entry below was resolved through a real registry on %s, by a program "
-                "(`build_refs.py`) and not by hand. A record is accepted from Crossref only "
-                "when the returned title covers at least 85%% of the query's non-stopword "
-                "terms and the issued year is within two years (a book seed must instead "
-                "return a book-shaped record whose title equals the query word for word, "
-                "because a book *review* carries the book's title and DOI); a record is "
-                "accepted from arXiv only on exact normalised title equality with the year "
-                "within one, and is labelled `arxiv:` so a reader can see a preprint was "
-                "cited. Two slugs resolving to one work are refused as duplicates.\n\n"
-                % time.strftime("%Y-%m-%d"))
-        f.write("| slug | query | verdict | record found |\n|---|---|---|---|\n")
-        f.write("\n".join(report) + "\n")
-        f.write("\n**%d of %d seeds verified.** Rejections by reason: %s.\n\n"
-                % (len(out), len(SEEDS),
-                   ", ".join("%s x%d" % (k, v) for k, v in sorted(why.items())) or "none"))
-        f.write("The journal's floor is 100 references, all cited in the body; this file and "
-                "`refs.json` together are what that count is read from, and "
-                "`make_manuscript.py` refuses to render while the count is short or while a "
-                "held reference is never cited.\n")
+    # The table is cached so the report can be re-emitted without the network: a reader with no
+    # registry access must still be able to regenerate the file a reviewer spot-checks, and a
+    # wording fix in the preamble must not cost a re-resolution that could silently drop a
+    # reference. The cache is the input to `--report-only`, and byte-equality between the two
+    # paths is asserted below.
+    json.dump(dict(date=time.strftime("%Y-%m-%d"), rows=report, verified=len(out),
+                   seeds=len(SEEDS), why=why),
+              open("refs_report.json", "w"), indent=1, sort_keys=True)
+    write_report("reference-check.md", dict(date=time.strftime("%Y-%m-%d"), rows=report,
+                                            verified=len(out), seeds=len(SEEDS), why=why))
     if machine:
         print(json.dumps(dict(seeds=len(SEEDS), verified=len(out), rejected=why), indent=1))
+    n_carried = sum(1 for r in out.values() if "carried" in r.get("verification", {}))
     print("\n%d/%d verified -> refs.json, reference-check.md" % (len(out), len(SEEDS)))
+    if n_carried:
+        print("  %d of them carried from the committed run: the registry returned no match for "
+              "them this run, which is a property of the probe, not of the reference." % n_carried)
     return 0
 
 

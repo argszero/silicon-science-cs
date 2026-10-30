@@ -1,6 +1,12 @@
 # Reference authenticity check -- issue #158
 
-Every entry below was resolved through a real registry on 2026-10-30, by a program (`build_refs.py`) and not by hand. A record is accepted from Crossref only when the returned title covers at least 85% of the query's non-stopword terms and the issued year is within two years (a book seed must instead return a book-shaped record whose title equals the query word for word, because a book *review* carries the book's title and DOI); a record is accepted from arXiv only on exact normalised title equality with the year within one, and is labelled `arxiv:` so a reader can see a preprint was cited. Two slugs resolving to one work are refused as duplicates.
+Every entry below was resolved through a real registry on 2026-10-30, by a program (`build_refs.py`) and not by hand, and each row names the identifier a reader can open. The acceptance rule is stated here as the code implements it, because a report that describes a rule the code no longer applies is a second copy that no gate reads.
+
+From Crossref a record is accepted only when its title, after folding stopwords and punctuation, equals the query -- or else contains all but at most one of the query's content words and adds at most three of its own, the shape of a subtitle or an appended note. A query of three content words or fewer is admitted on exact equality only, because a word-overlap ratio has no resolution on a short title: 'Spectral hashing' is a 100% word match for 'Fully non-local super-resolution via spectral hashing'. The issued year must agree within two years. A book seed instead requires exact title equality AND a book-shaped record type, because a book review carries the book's title and a DOI.
+
+From arXiv, used for the venues Crossref does not index at all, a record is accepted only on exact normalised title equality with the year within one, and the row is labelled arxiv: so a reader can see that a preprint was cited.
+
+Two slugs that resolve to one work are refused as duplicates: the bibliography may not be lengthened by naming one paper twice.
 
 | slug | query | verdict | record found |
 |---|---|---|---|
@@ -114,7 +120,7 @@ Every entry below was resolved through a real registry on 2026-10-30, by a progr
 | `jegou-hamming-embedding-2008` | Hamming embedding and weak geometric consistency for large scale image | **verified** |  doi:10.1007/978-3-540-88682-2_24 |
 | `perronnin-fisher-2010` | Improving the Fisher kernel for large-scale image classification | **verified** |  doi:10.1007/978-3-642-15561-1_11 |
 | `jegou-fisher-2012` | Aggregating local image descriptors into compact codes | **verified** |  doi:10.1109/tpami.2011.235 |
-| `arandjelovic-netvlad-2016` | NetVLAD: CNN architecture for weakly supervised place recognition | **verified** |  doi:10.1109/cvpr.2016.572 |
+| `arandjelovic-netvlad-2016` | NetVLAD: CNN architecture for weakly supervised place recognition | **verified** |  doi:10.1109/tpami.2017.2711011 |
 | `radenovic-finetuning-2018` | Fine-tuning CNN image retrieval with no human annotation | **verified** |  doi:10.1109/tpami.2018.2846566 |
 | `deng-imagenet-2009` | ImageNet: a large-scale hierarchical image database | **verified** |  doi:10.1109/cvpr.2009.5206848 |
 | `lin-coco-2014` | Microsoft COCO: common objects in context | **verified** |  doi:10.1007/978-3-319-10602-1_48 |
@@ -145,6 +151,6 @@ Every entry below was resolved through a real registry on 2026-10-30, by a progr
 | `mallen-mteb-2023` | MTEB: massive text embedding benchmark | **verified** |  doi:10.18653/v1/2023.eacl-main.148 |
 | `kulis-kernel-lsh-2009` | Kernelized locality-sensitive hashing for scalable image search | **verified** |  doi:10.1109/iccv.2009.5459466 |
 
-**123 of 140 seeds verified.** Rejections by reason: NO RECORD x17.
+**123 of 140 seeds verified.** Rejections by reason: NO RECORD x17. A refusal is not a failure to look: every refused seed is named with its reason, because a silently dropped citation is a lie of omission.
 
 The journal's floor is 100 references, all cited in the body; this file and `refs.json` together are what that count is read from, and `make_manuscript.py` refuses to render while the count is short or while a held reference is never cited.
