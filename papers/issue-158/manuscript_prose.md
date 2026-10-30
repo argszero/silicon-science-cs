@@ -372,9 +372,13 @@ registered claim explained only its presence.
 
 ## 9. Reproduction
 
-`./reproduce.sh` reproduces every number in this paper from the committed fixture, with numpy
-alone and no network; `./reproduce.sh full` adds the {{n:B.corpus.n}}-descriptor tier, which prints
-`NOT RUN` rather than failing when the corpus is absent. The mechanism table is regenerated twice
+`./reproduce.sh` reproduces tier A — the mechanism table, both endpoint controls and this
+manuscript — from the committed fixture, with numpy alone and no network. The
+{{n:B.corpus.n}}-descriptor numbers in section 5 are **tier B, the opt-in tier**: they are
+reproduced by `./reproduce.sh full`, which needs the corpus fetched by `fetch_corpus.sh` and `h5py`, and which
+reports `NOT RUN` rather than failing when either is absent. A reader who runs only the default
+command therefore reproduces every tier-A number and is told, on the spot, that the tier-B ones were
+not recomputed — rather than being shown a green verdict over a number that was never computed. The mechanism table is regenerated twice
 and byte-compared, so a number that moves between two runs fails the build, and a program reads the
 artefact back to test the claims this paper makes about it. The stack is the standard scientific
 Python one — array and linear-algebra routines {{c:harris-numpy-2020,virtanen-scipy-2020}}, the

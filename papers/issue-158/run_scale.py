@@ -3,7 +3,7 @@
 
 Tier A runs on a committed 20k subsample, so a clean machine reproduces it with numpy alone.
 This tier needs the 1M corpus, which cannot be committed: `fetch_corpus.sh` retrieves it and
-checks its sha256, and when the corpus is absent this program prints `NOT RUN` and exits 0. Not
+checks its sha256, and when the corpus is absent this program prints `NOT RUN` and exits 3. Not
 run is not a failure, and it is never reported as one.
 
 What it adds to tier A: whether the ordering the axis predicts survives an increase in n by
@@ -29,6 +29,7 @@ K = 10
 NQ = 512
 SEEDS = [7, 11, 13]
 KNN = 1000
+DATASET = "sift-128-euclidean"
 CORPUS = os.environ.get("SIFT_HDF5", "corpus/sift-128-euclidean.hdf5")
 EXPECT_SHA = "dd6f0a6ed6b7ebb8934680f861a33ed01ff33991eaee4fd60914d854a0ca5984"
 
@@ -38,13 +39,18 @@ def main():
         print("NOT RUN: the 1M corpus is not present at %s" % CORPUS)
         print("         run ./fetch_corpus.sh (it verifies sha256 %s...)" % EXPECT_SHA[:16])
         print("         Tier A (run_mechanism.py) needs no corpus and is unaffected.")
-        return 0
+        # Exit 3 is NOT RUN, and it is deliberately not 0. When this returned 0 a caller could not
+        # tell "the step ran and agreed" from "the step never ran", so `./reproduce.sh full` printed
+        # REPRODUCE: ALL GREEN while this tier had measured nothing -- a verdict that claims the 1M
+        # number was reproduced by a run that did not compute it. 3 is not a failure either: a
+        # declared dependency that is absent is never a failed step.
+        return 3
     try:
         import h5py
     except ImportError:
         print("NOT RUN: h5py is not importable by %s, and the corpus is stored as HDF5." % sys.executable)
         print("         Tier A (run_mechanism.py) needs no h5py and is unaffected.")
-        return 0
+        return 3
 
     t0 = time.time()
     with h5py.File(CORPUS, "r") as f:
@@ -135,10 +141,14 @@ def main():
     for c in sorted(cells, key=lambda c: c["median_atoms"]):
         print("%-30s %8d %8.1f %8.4f" % (c["tag"], c["median_atoms"], c["median_t"], c["mean_floor"]))
 
-    # The artefact records the corpus by NAME, never by absolute path: a committed result that
-    # embeds one machine's directory layout is not reproducible by anyone else, and a reader
-    # would have no way to tell the difference from the numbers being local too.
-    out = dict(corpus=dict(name=os.path.basename(CORPUS), expected_sha256=EXPECT_SHA,
+    # The artefact records the corpus by DATASET, never by path and never by the operator's
+    # filename. Using basename(CORPUS) was the same leak one step smaller: a reader who follows the
+    # README runs ./fetch_corpus.sh, which names the file `sift-128-euclidean.hdf5`, while the
+    # committed artefact had been produced from `research/sift1m.hdf5` -- so the documented path
+    # regenerated every number identically and still failed a byte comparison, on a field whose
+    # value is the operator's choice rather than the corpus's identity. The content is already
+    # identified by expected_sha256; the name is now the dataset id both paths agree on.
+    out = dict(corpus=dict(name=DATASET, expected_sha256=EXPECT_SHA,
                            n=int(n), d=int(d),
                            k=K, n_queries=NQ, seeds=SEEDS, knn=KNN),
                cells=cells)

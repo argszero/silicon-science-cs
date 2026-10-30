@@ -250,7 +250,7 @@
   "knn": 1000,
   "n": 1000000,
   "n_queries": 512,
-  "name": "sift1m.hdf5",
+  "name": "sift-128-euclidean",
   "seeds": [
    7,
    11,
