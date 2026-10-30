@@ -1,0 +1,5043 @@
+{
+ "candidates": 237,
+ "entries": [
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1145/3793230.3839382",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "4Z-SSD: A Semantic-Aware Four-Zone SSD Architecture for Balancing Write Amplification and Flash-Level Parallelism",
+   "verified": {
+    "authors": [
+     "Dongjun Lee",
+     "Han Jang",
+     "Youngbin Jin",
+     "Ben Lee"
+    ],
+    "doi": "10.1145/3793230.3839382",
+    "title": "4Z-SSD: A Semantic-Aware Four-Zone SSD Architecture for Balancing Write Amplification and Flash-Level Parallelism",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 19th ACM International Systems and Storage Conference",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/glocomw.2010.5700261",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "A closed-form expression for write amplification in NAND Flash",
+   "verified": {
+    "authors": [
+     "Rajiv Agarwal",
+     "Marcus Marrow"
+    ],
+    "doi": "10.1109/glocomw.2010.5700261",
+    "title": "A closed-form expression for write amplification in NAND Flash",
+    "type": "proceedings-article",
+    "venue": "2010 IEEE Globecom Workshops",
+    "year": 2010
+   },
+   "year": 2010
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/icde.2017.61",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "A Comparative Study of Log-Structured Merge-Tree-Based Spatial Indexes for Big Data",
+   "verified": {
+    "authors": [
+     "Young-Seok Kim",
+     "Taewoo Kim",
+     "Michael J. Carey",
+     "Chen Li"
+    ],
+    "doi": "10.1109/icde.2017.61",
+    "title": "A Comparative Study of Log-Structured Merge-Tree-Based Spatial Indexes for Big Data",
+    "type": "proceedings-article",
+    "venue": "2017 IEEE 33rd International Conference on Data Engineering (ICDE)",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3643851",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "A Contract-aware and Cost-effective LSM Store for Cloud Storage with Low Latency Spikes",
+   "verified": {
+    "authors": [
+     "Yuanhui Zhou",
+     "Jian Zhou",
+     "Kai Lu",
+     "Ling Zhan",
+     "Peng Xu",
+     "Peng Wu"
+    ],
+    "doi": "10.1145/3643851",
+    "title": "A Contract-aware and Cost-effective LSM Store for Cloud Storage with Low Latency Spikes",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.3390/electronics14030564",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "A Framework for Integrating Log-Structured Merge-Trees and Key\u2013Value Separation in Tiered Storage",
+   "verified": {
+    "authors": [
+     "Charles Jaranilla",
+     "Guangxun Zhao",
+     "Gunhee Choi",
+     "Sohyun Park",
+     "Jongmoo Choi"
+    ],
+    "doi": "10.3390/electronics14030564",
+    "title": "A Framework for Integrating Log-Structured Merge-Trees and Key\u2013Value Separation in Tiered Storage",
+    "type": "journal-article",
+    "venue": "Electronics",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/3728645",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "A High-Performance and Scalable Userspace Log-Structured File System for Modern SSDs",
+   "verified": {
+    "authors": [
+     "Wenqing Jia",
+     "Dejun Jiang",
+     "Jin Xiong"
+    ],
+    "doi": "10.1145/3728645",
+    "title": "A High-Performance and Scalable Userspace Log-Structured File System for Modern SSDs",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/ares.2016.8",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "A Log-Structured Block Preservation and Restoration System for Proactive Forensic Data Collection in the Cloud",
+   "verified": {
+    "authors": [
+     "Manabu Hirano",
+     "Hiromu Ogawa"
+    ],
+    "doi": "10.1109/ares.2016.8",
+    "title": "A Log-Structured Block Preservation and Restoration System for Proactive Forensic Data Collection in the Cloud",
+    "type": "proceedings-article",
+    "venue": "2016 11th International Conference on Availability, Reliability and Security (AR",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.4028/www.scientific.net/amm.602-605.3481",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "A Log-Structured File System Based on LevelDB",
+   "verified": {
+    "authors": [
+     "Zhi Hao Wu"
+    ],
+    "doi": "10.4028/www.scientific.net/amm.602-605.3481",
+    "title": "A Log-Structured File System Based on LevelDB",
+    "type": "journal-article",
+    "venue": "Applied Mechanics and Materials",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/tcad.2025.3591410",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "A ReRAM-Based Processing-in-Memory Framework for LSM-Based Key-Value Store",
+   "verified": {
+    "authors": [
+     "Zehao Chen",
+     "Kai Zhang",
+     "Qian Wei",
+     "Nan Su",
+     "Yuhao Zhang",
+     "Zhaoyan Shen"
+    ],
+    "doi": "10.1109/tcad.2025.3591410",
+    "title": "A ReRAM-Based Processing-in-Memory Framework for LSM-Based Key-Value Store",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/srds.2014.43",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "ACaZoo: A Distributed Key-Value Store Based on Replicated LSM-Trees",
+   "verified": {
+    "authors": [
+     "Panagiotis Garefalakis",
+     "Panagiotis Papadopoulos",
+     "Kostas Magoutis"
+    ],
+    "doi": "10.1109/srds.2014.43",
+    "title": "ACaZoo: A Distributed Key-Value Store Based on Replicated LSM-Trees",
+    "type": "proceedings-article",
+    "venue": "2014 IEEE 33rd International Symposium on Reliable Distributed Systems",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.2139/ssrn.5147817",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Adelson-Velsky Landis and Log Structured Merge Tree for Kubernetes ETCD",
+   "verified": {
+    "authors": [
+     "Renukadevi Chuppala"
+    ],
+    "doi": "10.2139/ssrn.5147817",
+    "title": "Adelson-Velsky Landis and Log Structured Merge Tree for Kubernetes ETCD",
+    "type": "posted-content",
+    "venue": "",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.62127/aijmr.2024.v02i05.1109",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Adelson-Velsky Landis and Log Structured Merge Tree for Kubernetes ETCD",
+   "verified": {
+    "authors": [
+     "Renukadevi Chuppala -",
+     "Dr. B. Purnachandra Rao -"
+    ],
+    "doi": "10.62127/aijmr.2024.v02i05.1109",
+    "title": "Adelson-Velsky Landis and Log Structured Merge Tree for Kubernetes ETCD",
+    "type": "journal-article",
+    "venue": "Advanced International Journal of Multidisciplinary Research",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1145/2757667.2757671",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Algebraic modeling of write amplification in hotness-aware SSD",
+   "verified": {
+    "authors": [
+     "Yue Yang",
+     "Jianwen Zhu"
+    ],
+    "doi": "10.1145/2757667.2757671",
+    "title": "Algebraic modeling of write amplification in hotness-aware SSD",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 8th ACM International Systems and Storage Conference",
+    "year": 2015
+   },
+   "year": 2015
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icmc60390.2024.00013",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "ALSM: An Attribute-Aware LSM-Tree Based Key-Value Store to Reduce I/O Amplification",
+   "verified": {
+    "authors": [
+     "Zhaoyan Shen",
+     "Dehao Yu",
+     "Qian Wei",
+     "Kai Zhang",
+     "Zaigui Zhang",
+     "Liqiang Zhang"
+    ],
+    "doi": "10.1109/icmc60390.2024.00013",
+    "title": "ALSM: An Attribute-Aware LSM-Tree Based Key-Value Store to Reduce I/O Amplification",
+    "type": "proceedings-article",
+    "venue": "2024 International Conference on Meta Computing (ICMC)",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1007/978-1-4615-5611-4_13",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "An Age-Threshold Algorithm for Garbage Collection in Log-Structured Arrays and File Systems",
+   "verified": {
+    "authors": [
+     "Jai Menon",
+     "Larry Stockmeyer"
+    ],
+    "doi": "10.1007/978-1-4615-5611-4_13",
+    "title": "An Age-Threshold Algorithm for Garbage Collection in Log-Structured Arrays and File Systems",
+    "type": "book-chapter",
+    "venue": "High Performance Computing Systems and Applications",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.5626/jok.2016.43.6.627",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "An Efficient Cleaning Scheme for File Defragmentation on Log-Structured File System",
+   "verified": {
+    "authors": [
+     "Jonggyu Park",
+     "Dong Hyun Kang",
+     "Euiseong Seo",
+     "Young Ik Eom"
+    ],
+    "doi": "10.5626/jok.2016.43.6.627",
+    "title": "An Efficient Cleaning Scheme for File Defragmentation on Log-Structured File System",
+    "type": "journal-article",
+    "venue": "Journal of KIISE",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/2592798.2592804",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "An efficient design and implementation of LSM-tree based key-value store on open-channel SSD",
+   "verified": {
+    "authors": [
+     "Peng Wang",
+     "Guangyu Sun",
+     "Song Jiang",
+     "Jian Ouyang",
+     "Shiding Lin",
+     "Chen Zhang"
+    ],
+    "doi": "10.1145/2592798.2592804",
+    "title": "An efficient design and implementation of LSM-tree based key-value store on open-channel SSD",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the Ninth European Conference on Computer Systems",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/iccnc.2012.6167472",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "An improved analytic expression for write amplification in NAND flash",
+   "verified": {
+    "authors": [
+     "Xiang Luojie",
+     "Brian M. Kurkoski"
+    ],
+    "doi": "10.1109/iccnc.2012.6167472",
+    "title": "An improved analytic expression for write amplification in NAND flash",
+    "type": "proceedings-article",
+    "venue": "2012 International Conference on Computing, Networking and Communications (ICNC)",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icct46805.2019.8947217",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "An Optimization of Key-Value Store Based on Segmented LSM-Tree",
+   "verified": {
+    "authors": [
+     "Kai Zhang",
+     "Yongsheng Xia",
+     "Yang Xia",
+     "Feng Ye"
+    ],
+    "doi": "10.1109/icct46805.2019.8947217",
+    "title": "An Optimization of Key-Value Store Based on Segmented LSM-Tree",
+    "type": "proceedings-article",
+    "venue": "2019 IEEE 19th International Conference on Communication Technology (ICCT)",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/240799.240803",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Analysis of steady-state segment storage utilizations in a log-structured file system with least-utilized segment cleaning",
+   "verified": {
+    "authors": [
+     "John T. Robinson"
+    ],
+    "doi": "10.1145/240799.240803",
+    "title": "Analysis of steady-state segment storage utilizations in a log-structured file system with least-utilized segment cleaning",
+    "type": "journal-article",
+    "venue": "ACM SIGOPS Operating Systems Review",
+    "year": 1996
+   },
+   "year": 1996
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1145/3538712.3538730",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Bi-directional Log-Structured Merge Tree",
+   "verified": {
+    "authors": [
+     "Xin Zhang",
+     "Qizhong Mao",
+     "Ahmed Eldawy",
+     "Vagelis Hristidis",
+     "Yihan Sun"
+    ],
+    "doi": "10.1145/3538712.3538730",
+    "title": "Bi-directional Log-Structured Merge Tree",
+    "type": "proceedings-article",
+    "venue": "34th International Conference on Scientific and Statistical Database Management",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/iccd53106.2021.00017",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Block-LSM: An Ether-aware Block-ordered LSM-tree based Key-Value Storage Engine",
+   "verified": {
+    "authors": [
+     "Zehao Chen",
+     "Bingzhe Li",
+     "Xiaojun Cai",
+     "Zhiping Jia",
+     "Zhaoyan Shen",
+     "Yi Wang"
+    ],
+    "doi": "10.1109/iccd53106.2021.00017",
+    "title": "Block-LSM: An Ether-aware Block-ordered LSM-tree based Key-Value Storage Engine",
+    "type": "proceedings-article",
+    "venue": "2021 IEEE 39th International Conference on Computer Design (ICCD)",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/iccd58817.2023.00040",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "BlzFS: Crash Consistent Log-structured File System Based on Byte-loggable Zone for ZNS SSD",
+   "verified": {
+    "authors": [
+     "Wenjie Qi",
+     "Zhipeng Tan",
+     "Ziyue Zhang",
+     "Jing Zhang",
+     "Chao Yu",
+     "Ying Yuan"
+    ],
+    "doi": "10.1109/iccd58817.2023.00040",
+    "title": "BlzFS: Crash Consistent Log-structured File System Based on Byte-loggable Zone for ZNS SSD",
+    "type": "proceedings-article",
+    "venue": "2023 IEEE 41st International Conference on Computer Design (ICCD)",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/cluster48925.2021.00032",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Building A Fast and Efficient LSM-tree Store by Integrating Local Storage with Cloud Storage",
+   "verified": {
+    "authors": [
+     "Peng Xu",
+     "Nannan Zhao",
+     "Jiguang Wan",
+     "Wei Liu",
+     "Shuning Chen",
+     "Yuanhui Zhou"
+    ],
+    "doi": "10.1109/cluster48925.2021.00032",
+    "title": "Building A Fast and Efficient LSM-tree Store by Integrating Local Storage with Cloud Storage",
+    "type": "proceedings-article",
+    "venue": "2021 IEEE International Conference on Cluster Computing (CLUSTER)",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/hpcc67675.2025.00037",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "BVLSM: Write-Efficient LSM-Tree Storage via WAL-Time Key-Value Separation",
+   "verified": {
+    "authors": [
+     "Ming Li",
+     "Wendi Cheng",
+     "Jiahe Wei",
+     "Xueqiang Shan",
+     "Weikai Liu",
+     "Xiaonan Zhao"
+    ],
+    "doi": "10.1109/hpcc67675.2025.00037",
+    "title": "BVLSM: Write-Efficient LSM-Tree Storage via WAL-Time Key-Value Separation",
+    "type": "proceedings-article",
+    "venue": "2025 IEEE International Conference on High Performance Computing and Communicati",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3654927",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "CaaS-LSM: Compaction-as-a-Service for LSM-based Key-Value Stores in Storage Disaggregated Infrastructure",
+   "verified": {
+    "authors": [
+     "Qiaolin Yu",
+     "Chang Guo",
+     "Jay Zhuang",
+     "Viraj Thakkar",
+     "Jianguo Wang",
+     "Zhichao Cao"
+    ],
+    "doi": "10.1145/3654927",
+    "title": "CaaS-LSM: Compaction-as-a-Service for LSM-based Key-Value Stores in Storage Disaggregated Infrastructure",
+    "type": "journal-article",
+    "venue": "Proceedings of the ACM on Management of Data",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1016/j.micpro.2020.103217",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Cascaded Write Amplification of LSM-tree-based Key-Value Stores underlying Solid-State Disks",
+   "verified": {
+    "authors": [
+     "Hui Sun",
+     "Shangshang Dai",
+     "Jianzhong Huang"
+    ],
+    "doi": "10.1016/j.micpro.2020.103217",
+    "title": "Cascaded Write Amplification of LSM-tree-based Key-Value Stores underlying Solid-State Disks",
+    "type": "journal-article",
+    "venue": "Microprocessors and Microsystems",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1007/s11227-024-06526-7",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "CDNRocks: computable data nodes with RocksDB to improve the read performance of LSM-tree-based distributed key-value storage systems",
+   "verified": {
+    "authors": [
+     "Feixiong Huang",
+     "Yubiao Pan",
+     "Huizhen Zhang",
+     "Mingwei Lin"
+    ],
+    "doi": "10.1007/s11227-024-06526-7",
+    "title": "CDNRocks: computable data nodes with RocksDB to improve the read performance of LSM-tree-based distributed key-value storage systems",
+    "type": "journal-article",
+    "venue": "The Journal of Supercomputing",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3538643.3539743",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Compaction-aware zone allocation for LSM based key-value store on ZNS SSDs",
+   "verified": {
+    "authors": [
+     "Hee-Rock Lee",
+     "Chang-Gyu Lee",
+     "Seungjin Lee",
+     "Youngjae Kim"
+    ],
+    "doi": "10.1145/3538643.3539743",
+    "title": "Compaction-aware zone allocation for LSM based key-value store on ZNS SSDs",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 14th ACM Workshop on Hot Topics in Storage and File Systems",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/s10586-025-05748-5",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Correction: Towards an asynchronous commit in micro-batch streaming systems with log-structured merge-tree based key-value store",
+   "verified": {
+    "authors": [
+     "Kyuli Park",
+     "Dongjae Lee",
+     "Yeonwoo Jeong",
+     "Salim Hariri",
+     "Sungyong Park"
+    ],
+    "doi": "10.1007/s10586-025-05748-5",
+    "title": "Correction: Towards an asynchronous commit in micro-batch streaming systems with log-structured merge-tree based key-value store",
+    "type": "journal-article",
+    "venue": "Cluster Computing",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icde51399.2021.00094",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "CruiseDB: An LSM-Tree Key-Value Store with Both Better Tail Throughput and Tail Latency",
+   "verified": {
+    "authors": [
+     "Junkai Liang",
+     "Yunpeng Chai"
+    ],
+    "doi": "10.1109/icde51399.2021.00094",
+    "title": "CruiseDB: An LSM-Tree Key-Value Store with Both Better Tail Throughput and Tail Latency",
+    "type": "proceedings-article",
+    "venue": "2021 IEEE 37th International Conference on Data Engineering (ICDE)",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.54097/7r19rt93",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Data Correlation Aware Buffer Cache Management for Improved I/O Performance on Log-Structured File System-based NAND Flash Storage Devices",
+   "verified": {
+    "authors": [
+     "Tian Tian"
+    ],
+    "doi": "10.54097/7r19rt93",
+    "title": "Data Correlation Aware Buffer Cache Management for Improved I/O Performance on Log-Structured File System-based NAND Flash Storage Devices",
+    "type": "journal-article",
+    "venue": "Academic Journal of Science and Technology",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icsess.2018.8663897",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Deduplication Triggered Compaction for LSM-Tree Based Key-Value Store",
+   "verified": {
+    "authors": [
+     "Weitao Zhang",
+     "Yinlong Xu"
+    ],
+    "doi": "10.1109/icsess.2018.8663897",
+    "title": "Deduplication Triggered Compaction for LSM-Tree Based Key-Value Store",
+    "type": "proceedings-article",
+    "venue": "2018 IEEE 9th International Conference on Software Engineering and Service Scien",
+    "year": 2018
+   },
+   "year": 2018
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.14722/ndss.2015.23078",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "DEFY: A Deniable, Encrypted File System for Log-Structured Storage",
+   "verified": {
+    "authors": [
+     "Timothy M. Peters",
+     "Mark A. Gondree",
+     "Zachary N. J. Peterson"
+    ],
+    "doi": "10.14722/ndss.2015.23078",
+    "title": "DEFY: A Deniable, Encrypted File System for Log-Structured Storage",
+    "type": "proceedings-article",
+    "venue": "Proceedings 2015 Network and Distributed System Security Symposium",
+    "year": 2015
+   },
+   "year": 2015
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/tc.2013.97",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Design and Implementation of a Log-Structured File System for Flash-Based Solid State Drives",
+   "verified": {
+    "authors": [
+     "Changwoo Min",
+     "Sang-Won Lee",
+     "Young Ik Eom"
+    ],
+    "doi": "10.1109/tc.2013.97",
+    "title": "Design and Implementation of a Log-Structured File System for Flash-Based Solid State Drives",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Computers",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/ubmk55850.2022.9919586",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Design and Implementation of Basic Log Structured File System for Internal Flash on Embedded Systems",
+   "verified": {
+    "authors": [
+     "Huseyin Karacali",
+     "Tuncay Yildirim"
+    ],
+    "doi": "10.1109/ubmk55850.2022.9919586",
+    "title": "Design and Implementation of Basic Log Structured File System for Internal Flash on Embedded Systems",
+    "type": "proceedings-article",
+    "venue": "2022 7th International Conference on Computer Science and Engineering (UBMK)",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1016/j.future.2026.108563",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Design and implementation of zoned namespace-tailored log-structured file system for commodity ZNS SSDs",
+   "verified": {
+    "authors": [
+     "Inhwi Hwang",
+     "Sangjin Lee",
+     "Sunggon Kim",
+     "Hyeonsang Eom",
+     "Yongseok Son"
+    ],
+    "doi": "10.1016/j.future.2026.108563",
+    "title": "Design and implementation of zoned namespace-tailored log-structured file system for commodity ZNS SSDs",
+    "type": "journal-article",
+    "venue": "Future Generation Computer Systems",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3452846",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Design of LSM-tree-based Key-value SSDs with Bounded Tails",
+   "verified": {
+    "authors": [
+     "Junsu Im",
+     "Jinwook Bae",
+     "Chanwoo Chung",
+     "Arvind",
+     "Sungjin Lee"
+    ],
+    "doi": "10.1145/3452846",
+    "title": "Design of LSM-tree-based Key-value SSDs with Bounded Tails",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/iccd56317.2022.00054",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "DPLFS: A Dual-Mode PCM-based Log-Structured File System",
+   "verified": {
+    "authors": [
+     "Wen Cheng",
+     "Telong Zheng",
+     "Lingfang Zeng",
+     "Yang Wang",
+     "Andre Brinkmann"
+    ],
+    "doi": "10.1109/iccd56317.2022.00054",
+    "title": "DPLFS: A Dual-Mode PCM-based Log-Structured File System",
+    "type": "proceedings-article",
+    "venue": "2022 IEEE 40th International Conference on Computer Design (ICCD)",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/icce.2017.7889383",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Dynamic hot-cold separation scheme on the log-structured file system for CE devices",
+   "verified": {
+    "authors": [
+     "Dong Hyun Kang",
+     "Young Ik Eom"
+    ],
+    "doi": "10.1109/icce.2017.7889383",
+    "title": "Dynamic hot-cold separation scheme on the log-structured file system for CE devices",
+    "type": "proceedings-article",
+    "venue": "2017 IEEE International Conference on Consumer Electronics (ICCE)",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/iccvit63928.2024.10872622",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "DynamicKV: Data Storage Strategy Based on Partition Merging of Log-Structured Merge Tree",
+   "verified": {
+    "authors": [
+     "Jiawei Huang",
+     "Meiting Xue",
+     "Chenpu Li",
+     "Huan Zhang",
+     "Bei Zhao"
+    ],
+    "doi": "10.1109/iccvit63928.2024.10872622",
+    "title": "DynamicKV: Data Storage Strategy Based on Partition Merging of Log-Structured Merge Tree",
+    "type": "proceedings-article",
+    "venue": "2024 2nd International Conference on Computer, Vision and Intelligent Technology",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/cloud.2018.00090",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Efficient Key-Value Stores with Ranged Log-Structured Merge Trees",
+   "verified": {
+    "authors": [
+     "Nae Young Song",
+     "Heon Young Yeom",
+     "Hyuck Han"
+    ],
+    "doi": "10.1109/cloud.2018.00090",
+    "title": "Efficient Key-Value Stores with Ranged Log-Structured Merge Trees",
+    "type": "proceedings-article",
+    "venue": "2018 IEEE 11th International Conference on Cloud Computing (CLOUD)",
+    "year": 2018
+   },
+   "year": 2018
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3555776.3577780",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Efficient Sanitization Design for LSM-based Key-Value Store over 3D MLC NAND Flash",
+   "verified": {
+    "authors": [
+     "Liang-Chi Chen",
+     "Shu-Qi Yu",
+     "Chien-Chung Ho",
+     "Wei-Chen Wang",
+     "Yung-Chun Li"
+    ],
+    "doi": "10.1145/3555776.3577780",
+    "title": "Efficient Sanitization Design for LSM-based Key-Value Store over 3D MLC NAND Flash",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 38th ACM/SIGAPP Symposium on Applied Computing",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1016/j.jksuci.2024.102156",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Efficient Wear-Leveling-Aware Data Placement for LSM-Tree based key-value store on ZNS SSDs",
+   "verified": {
+    "authors": [
+     "Runyu Zhang",
+     "Lening Zhou",
+     "Mingjie Li",
+     "Yunlin Tan",
+     "Chaoshu Yang"
+    ],
+    "doi": "10.1016/j.jksuci.2024.102156",
+    "title": "Efficient Wear-Leveling-Aware Data Placement for LSM-Tree based key-value store on ZNS SSDs",
+    "type": "journal-article",
+    "venue": "Journal of King Saud University - Computer and Information Sciences",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icde60146.2024.00375",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Enhancing LSM-Tree Key-Value Stores for Read-Modify-Writes via Key-Delta Separation",
+   "verified": {
+    "authors": [
+     "Jinhong Li",
+     "Yanjing Ren",
+     "Shujie Han",
+     "Patrick P. C. Lee"
+    ],
+    "doi": "10.1109/icde60146.2024.00375",
+    "title": "Enhancing LSM-Tree Key-Value Stores for Read-Modify-Writes via Key-Delta Separation",
+    "type": "proceedings-article",
+    "venue": "2024 IEEE 40th International Conference on Data Engineering (ICDE)",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/iseae69422.2026.11544774",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Enhancing SSD Endurance via ReRead-GC for Balanced Wear Leveling and Reduced Write Amplification",
+   "verified": {
+    "authors": [
+     "Chenyuan Wang",
+     "Meizhou Gao",
+     "Tai Guo",
+     "Dapeng Sun",
+     "Junpeng Fan"
+    ],
+    "doi": "10.1109/iseae69422.2026.11544774",
+    "title": "Enhancing SSD Endurance via ReRead-GC for Balanced Wear Leveling and Reduced Write Amplification",
+    "type": "proceedings-article",
+    "venue": "2026 8th International Conference on Information Science, Electrical and Automat",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1002/ecj.11749",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "Evaluation of Volume Tiering Method and SSD Cache Method in Tiered Storage System",
+   "verified": {
+    "authors": [
+     "SHINICHI HAYASHI",
+     "NORIHISA KOMODA"
+    ],
+    "doi": "10.1002/ecj.11749",
+    "title": "Evaluation of Volume Tiering Method and SSD Cache Method in Tiered Storage System",
+    "type": "journal-article",
+    "venue": "Electronics and Communications in Japan",
+    "year": 2015
+   },
+   "year": 2015
+  },
+  {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1541/ieejeiss.134.459",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "Evaluation of Volume Tiering Method and SSD Cache Method in Tiered Storage System",
+   "verified": {
+    "authors": [
+     "Shinichi Hayashi",
+     "Norihisa Komoda"
+    ],
+    "doi": "10.1541/ieejeiss.134.459",
+    "title": "Evaluation of Volume Tiering Method and SSD Cache Method in Tiered Storage System",
+    "type": "journal-article",
+    "venue": "IEEJ Transactions on Electronics, Information and Systems",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/igcc.2016.7892596",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Exploring SSD endurance model based on write amplification and temperature",
+   "verified": {
+    "authors": [
+     "Hui Sun",
+     "Guodong Chen",
+     "Xu Liang",
+     "Wei Liu"
+    ],
+    "doi": "10.1109/igcc.2016.7892596",
+    "title": "Exploring SSD endurance model based on write amplification and temperature",
+    "type": "proceedings-article",
+    "venue": "2016 Seventh International Green and Sustainable Computing Conference (IGSC)",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/s11704-018-7198-6",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Fault-tolerant precise data access on distributed log-structured merge-tree",
+   "verified": {
+    "authors": [
+     "Tao Zhu",
+     "Huiqi Hu",
+     "Weining Qian",
+     "Huan Zhou",
+     "Aoying Zhou"
+    ],
+    "doi": "10.1007/s11704-018-7198-6",
+    "title": "Fault-tolerant precise data access on distributed log-structured merge-tree",
+    "type": "journal-article",
+    "venue": "Frontiers of Computer Science",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/2967360.2967622",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "File Defragmentation Scheme for a Log-Structured File System",
+   "verified": {
+    "authors": [
+     "Jonggyu Park",
+     "Dong Hyun Kang",
+     "Young Ik Eom"
+    ],
+    "doi": "10.1145/2967360.2967622",
+    "title": "File Defragmentation Scheme for a Log-Structured File System",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 7th ACM SIGOPS Asia-Pacific Workshop on Systems",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1109/access.2016.2587777",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "File-System-Level Storage Tiering for Faster Application Launches on Logical Hybrid Disks",
+   "verified": {
+    "authors": [
+     "Junhee Ryu",
+     "Dongeun Lee",
+     "Changhee Han",
+     "Heonshik Shin",
+     "Kyungtae Kang"
+    ],
+    "doi": "10.1109/access.2016.2587777",
+    "title": "File-System-Level Storage Tiering for Faster Application Launches on Logical Hybrid Disks",
+    "type": "journal-article",
+    "venue": "IEEE Access",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icde48307.2020.00113",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "FPGA-based Compaction Engine for Accelerating LSM-tree Key-Value Stores",
+   "verified": {
+    "authors": [
+     "Xuan Sun",
+     "Jinghuan Yu",
+     "Zimeng Zhou",
+     "Chun Jason Xue"
+    ],
+    "doi": "10.1109/icde48307.2020.00113",
+    "title": "FPGA-based Compaction Engine for Accelerating LSM-tree Key-Value Stores",
+    "type": "proceedings-article",
+    "venue": "2020 IEEE 36th International Conference on Data Engineering (ICDE)",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/3830418.3843870",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "GAZE: Rearchitecting Log-Structured Filesystem for Garbage Collection on Zoned Namespace Flash Storage",
+   "verified": {
+    "authors": [
+     "Juwon Kim",
+     "Hwanseok Yoo",
+     "Seung Won Yoo",
+     "Youjip Won"
+    ],
+    "doi": "10.1145/3830418.3843870",
+    "title": "GAZE: Rearchitecting Log-Structured Filesystem for Garbage Collection on Zoned Namespace Flash Storage",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the ACM SIGOPS 32nd Symposium on Operating Systems Principles",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3633782",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "gLSM: Using GPGPU to Accelerate Compactions in LSM-tree-based Key-value Stores",
+   "verified": {
+    "authors": [
+     "Hui Sun",
+     "Jinfeng Xu",
+     "Xiangxiang Jiang",
+     "Guanzhong Chen",
+     "Yinliang Yue",
+     "Xiao Qin"
+    ],
+    "doi": "10.1145/3633782",
+    "title": "gLSM: Using GPGPU to Accelerate Compactions in LSM-tree-based Key-value Stores",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/tpds.2025.3586616",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "GPComp: Using GPU and SSD-GPU Peer to Peer DMA to Accelerate LSM-Tree Compaction for Key-Value Store",
+   "verified": {
+    "authors": [
+     "Hao Zhou",
+     "Yuanhui Chen",
+     "Wu Zeng",
+     "Lixiao Cui",
+     "Gang Wang",
+     "Xiaoguang Liu"
+    ],
+    "doi": "10.1109/tpds.2025.3586616",
+    "title": "GPComp: Using GPU and SSD-GPU Peer to Peer DMA to Accelerate LSM-Tree Compaction for Key-Value Store",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Parallel and Distributed Systems",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/compsac65507.2025.00016",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "GraLoc: Preserving Graph Locality to Minimize Read and Write Amplification on Flash Memory",
+   "verified": {
+    "authors": [
+     "Po-Lun Wang",
+     "Tseng-Yi Chen"
+    ],
+    "doi": "10.1109/compsac65507.2025.00016",
+    "title": "GraLoc: Preserving Graph Locality to Minimize Read and Write Amplification on Flash Memory",
+    "type": "proceedings-article",
+    "venue": "2025 IEEE 49th Annual Computers, Software, and Applications Conference (COMPSAC)",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.2139/ssrn.7487218",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "GravTree: A Local-Compaction Tree for Predictable Write Latency",
+   "verified": {
+    "authors": [
+     "Subodh Wandile"
+    ],
+    "doi": "10.2139/ssrn.7487218",
+    "title": "GravTree: A Local-Compaction Tree for Predictable Write Latency",
+    "type": "posted-content",
+    "venue": "",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/iccd56317.2022.00035",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "HaLSM: A Hotspot-aware LSM-tree based Key-Value Storage Engine",
+   "verified": {
+    "authors": [
+     "Jianshun Zhang",
+     "Fang Wang",
+     "Chao Dong"
+    ],
+    "doi": "10.1109/iccd56317.2022.00035",
+    "title": "HaLSM: A Hotspot-aware LSM-tree based Key-Value Storage Engine",
+    "type": "proceedings-article",
+    "venue": "2022 IEEE 40th International Conference on Computer Design (ICCD)",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/jcice61382.2024.00024",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "HIndex-FLSM: Fragmented Log-Structured Merge Trees Integrated with Heat and Index",
+   "verified": {
+    "authors": [
+     "Xiaopeng Wang",
+     "Hui Li",
+     "Hong Tan",
+     "Xiyu Wang",
+     "Ping Lu",
+     "Han Wang"
+    ],
+    "doi": "10.1109/jcice61382.2024.00024",
+    "title": "HIndex-FLSM: Fragmented Log-Structured Merge Trees Integrated with Heat and Index",
+    "type": "proceedings-article",
+    "venue": "2024 3rd International Joint Conference on Information and Communication Enginee",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/1228291.1228299",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Implementation of a Linux log-structured file system with a garbage collector",
+   "verified": {
+    "authors": [
+     "Martin Jambor",
+     "Tomas Hruby",
+     "Jan Taus",
+     "Kuba Krchak",
+     "Viliam Holub"
+    ],
+    "doi": "10.1145/1228291.1228299",
+    "title": "Implementation of a Linux log-structured file system with a garbage collector",
+    "type": "journal-article",
+    "venue": "ACM SIGOPS Operating Systems Review",
+    "year": 2007
+   },
+   "year": 2007
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.5626/jok.2025.52.11.1002",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Improving Compaction in LSM Tree by Applying Simple Copy to Key-Value Separated LSM-Tree",
+   "verified": {
+    "authors": [
+     "Chihyun Lee",
+     "Sungho Moon",
+     "Sangeun Chae",
+     "Beomsuk Nam"
+    ],
+    "doi": "10.5626/jok.2025.52.11.1002",
+    "title": "Improving Compaction in LSM Tree by Applying Simple Copy to Key-Value Separated LSM-Tree",
+    "type": "journal-article",
+    "venue": "Journal of KIISE",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.2172/1089476",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Improving Small File Creation Performance in a Parallel Log-Structured File System",
+   "verified": {
+    "authors": [
+     "",
+     "David Bonnie",
+     ""
+    ],
+    "doi": "10.2172/1089476",
+    "title": "Improving Small File Creation Performance in a Parallel Log-Structured File System",
+    "type": "report",
+    "venue": "",
+    "year": 2013
+   },
+   "year": 2013
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1007/s11042-013-1497-6",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Improving write amplification in a virtualized and multimedia SSD system",
+   "verified": {
+    "authors": [
+     "Dingding Li",
+     "Hai Jin",
+     "Xiaofei Liao",
+     "Jia Yu"
+    ],
+    "doi": "10.1007/s11042-013-1497-6",
+    "title": "Improving write amplification in a virtualized and multimedia SSD system",
+    "type": "journal-article",
+    "venue": "Multimedia Tools and Applications",
+    "year": 2013
+   },
+   "year": 2013
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/978-3-319-91458-9_42",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Incremental Materialized View Maintenance on Distributed Log-Structured Merge-Tree",
+   "verified": {
+    "authors": [
+     "Huichao Duan",
+     "Huiqi Hu",
+     "Weining Qian",
+     "Haixin Ma",
+     "Xiaoling Wang",
+     "Aoying Zhou"
+    ],
+    "doi": "10.1007/978-3-319-91458-9_42",
+    "title": "Incremental Materialized View Maintenance on Distributed Log-Structured Merge-Tree",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2018
+   },
+   "year": 2018
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.14778/3746405.3746414",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "KEIGO: Co-Designing Log-Structured Merge Key-Value Stores with a Non-Volatile, Concurrency-Aware Storage Hierarchy",
+   "verified": {
+    "authors": [
+     "R\u00faben Ad\u00e3o",
+     "Zhongjie Wu",
+     "Changjun Zhou",
+     "Oana Balmau",
+     "Jo\u00e3o Paulo",
+     "Ricardo Macedo"
+    ],
+    "doi": "10.14778/3746405.3746414",
+    "title": "KEIGO: Co-Designing Log-Structured Merge Key-Value Stores with a Non-Volatile, Concurrency-Aware Storage Hierarchy",
+    "type": "journal-article",
+    "venue": "Proceedings of the VLDB Endowment",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/tc.2021.3098961",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "KVSTL: An Application Support to LSM-Tree Based Key-Value Store via Shingled Translation Layer Data Management",
+   "verified": {
+    "authors": [
+     "Shuo-Han Chen",
+     "Yuhong Liang",
+     "Ming-Chang Yang"
+    ],
+    "doi": "10.1109/tc.2021.3098961",
+    "title": "KVSTL: An Application Support to LSM-Tree Based Key-Value Store via Shingled Translation Layer Data Management",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Computers",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/iccd63220.2024.00079",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "LCKV: Learner-Cleaner Optimized Adaptive Key-Value Separated LSM-Tree Store",
+   "verified": {
+    "authors": [
+     "Mingxuan Liu",
+     "Jianhua Gu",
+     "Tianhai Zhao"
+    ],
+    "doi": "10.1109/iccd63220.2024.00079",
+    "title": "LCKV: Learner-Cleaner Optimized Adaptive Key-Value Separated LSM-Tree Store",
+    "type": "proceedings-article",
+    "venue": "2024 IEEE 42nd International Conference on Computer Design (ICCD)",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/access.2020.3031322",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Level Aware Data Placement Technique for Hybrid NAND Flash Storage of Log-Structured Merge-Tree Based Key-Value Store System",
+   "verified": {
+    "authors": [
+     "Joonyong Jeong",
+     "Jaewook Kwak",
+     "Daeyong Lee",
+     "Seungdo Choi",
+     "Jungkeol Lee",
+     "Jungwook Choi"
+    ],
+    "doi": "10.1109/access.2020.3031322",
+    "title": "Level Aware Data Placement Technique for Hybrid NAND Flash Storage of Log-Structured Merge-Tree Based Key-Value Store System",
+    "type": "journal-article",
+    "venue": "IEEE Access",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3480963",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Leveraging NVMe SSDs for Building a Fast, Cost-effective, LSM-tree-based KV Store",
+   "verified": {
+    "authors": [
+     "Cheng Li",
+     "Hao Chen",
+     "Chaoyi Ruan",
+     "Xiaosong Ma",
+     "Yinlong Xu"
+    ],
+    "doi": "10.1145/3480963",
+    "title": "Leveraging NVMe SSDs for Building a Fast, Cost-effective, LSM-tree-based KV Store",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.62127/aijmr.2024.v02i05.1110",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Log Structured Merge Tree and Log Structured Hash Table Tree for Kubernetes ETCD",
+   "verified": {
+    "authors": [
+     "Kishore Kumar Jinka -",
+     "Dr.B.Purnachandra Rao -"
+    ],
+    "doi": "10.62127/aijmr.2024.v02i05.1110",
+    "title": "Log Structured Merge Tree and Log Structured Hash Table Tree for Kubernetes ETCD",
+    "type": "journal-article",
+    "venue": "Advanced International Journal of Multidisciplinary Research",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/978-981-95-5716-5_1",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "LSM-Cache: An Efficient Log-Structured Merge Hybrid Key-Value Cache for Massive Small Objects",
+   "verified": {
+    "authors": [
+     "Gequan Mo",
+     "Ranhao Jia",
+     "Yunfei Gu",
+     "Chentao Wu"
+    ],
+    "doi": "10.1007/978-981-95-5716-5_1",
+    "title": "LSM-Cache: An Efficient Log-Structured Merge Hybrid Key-Value Cache for Massive Small Objects",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/tpds.2018.2864209",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "LSM-Tree Managed Storage for Large-Scale Key-Value Store",
+   "verified": {
+    "authors": [
+     "Fei Mei",
+     "Qiang Cao",
+     "Hong Jiang",
+     "Lei Tian"
+    ],
+    "doi": "10.1109/tpds.2018.2864209",
+    "title": "LSM-Tree Managed Storage for Large-Scale Key-Value Store",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Parallel and Distributed Systems",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3127479.3127486",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "LSM-tree managed storage for large-scale key-value store",
+   "verified": {
+    "authors": [
+     "Fei Mei",
+     "Qiang Cao",
+     "Hong Jiang",
+     "Lei Tian Tintri"
+    ],
+    "doi": "10.1145/3127479.3127486",
+    "title": "LSM-tree managed storage for large-scale key-value store",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 2017 Symposium on Cloud Computing",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3786667",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Making LSM-Tree-based Key-Value Store Practical and Efficient for Multi-Tenant Serverless Cloud Databases",
+   "verified": {
+    "authors": [
+     "Yingjia Wang",
+     "Caixin Gong",
+     "Guoyun Zhu",
+     "Sheng Wang",
+     "Zhengheng Wang",
+     "Huan Liu"
+    ],
+    "doi": "10.1145/3786667",
+    "title": "Making LSM-Tree-based Key-Value Store Practical and Efficient for Multi-Tenant Serverless Cloud Databases",
+    "type": "journal-article",
+    "venue": "Proceedings of the ACM on Management of Data",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3626736",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "MirrorKV: An Efficient Key-Value Store on Hybrid Cloud Storage with Balanced Performance of Compaction and Querying",
+   "verified": {
+    "authors": [
+     "Zhiqi Wang",
+     "Zili Shao"
+    ],
+    "doi": "10.1145/3626736",
+    "title": "MirrorKV: An Efficient Key-Value Store on Hybrid Cloud Storage with Balanced Performance of Compaction and Querying",
+    "type": "journal-article",
+    "venue": "Proceedings of the ACM on Management of Data",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/cluster.2017.38",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Mitigating the Write Amplification Problem of Write-Optimized File Systems on Flash Storage",
+   "verified": {
+    "authors": [
+     "Shuo-Han Chen",
+     "Jun-Long Lin",
+     "Tseng-Yi Chen",
+     "Tsan-Sheng Hsu",
+     "Hsin-Wen Wei",
+     "Wei-Kuan Shih"
+    ],
+    "doi": "10.1109/cluster.2017.38",
+    "title": "Mitigating the Write Amplification Problem of Write-Optimized File Systems on Flash Storage",
+    "type": "proceedings-article",
+    "venue": "2017 IEEE International Conference on Cluster Computing (CLUSTER)",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/isocc59558.2023.10395978",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Mitigating Write Amplification of Dual-mode Flash Memory",
+   "verified": {
+    "authors": [
+     "Yi-Shen Chen",
+     "Ying-Jui Shih",
+     "Jen-Wei Hsieh"
+    ],
+    "doi": "10.1109/isocc59558.2023.10395978",
+    "title": "Mitigating Write Amplification of Dual-mode Flash Memory",
+    "type": "proceedings-article",
+    "venue": "2023 20th International SoC Design Conference (ISOCC)",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1007/s11227-024-06382-5",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "MTDB: an LSM-tree-based key-value store using a multi-tree structure to improve read performance",
+   "verified": {
+    "authors": [
+     "Xinwei Lin",
+     "Yubiao Pan",
+     "Wenjuan Feng",
+     "Huizhen Zhang",
+     "Mingwei Lin"
+    ],
+    "doi": "10.1007/s11227-024-06382-5",
+    "title": "MTDB: an LSM-tree-based key-value store using a multi-tree structure to improve read performance",
+    "type": "journal-article",
+    "venue": "The Journal of Supercomputing",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3448016.3457297",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Nova-LSM: A Distributed, Component-based LSM-tree Key-value Store",
+   "verified": {
+    "authors": [
+     "Haoyu Huang",
+     "Shahram Ghandeharizadeh"
+    ],
+    "doi": "10.1145/3448016.3457297",
+    "title": "Nova-LSM: A Distributed, Component-based LSM-tree Key-value Store",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 2021 International Conference on Management of Data",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1145/3453300",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "NVLSM: A Persistent Memory Key-Value Store Using Log-Structured Merge Tree with Accumulative Compaction",
+   "verified": {
+    "authors": [
+     "Baoquan Zhang",
+     "David H. C. Du"
+    ],
+    "doi": "10.1145/3453300",
+    "title": "NVLSM: A Persistent Memory Key-Value Store Using Log-Structured Merge Tree with Accumulative Compaction",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1016/j.future.2024.107521",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "Olsync: Object-level tiering and coordination in tiered storage systems based on software-defined network",
+   "verified": {
+    "authors": [
+     "Zhike Li",
+     "Yong Wang",
+     "Shiqiang Nie",
+     "Jinyu Wang",
+     "Chi Zhang",
+     "Fangxing Yu"
+    ],
+    "doi": "10.1016/j.future.2024.107521",
+    "title": "Olsync: Object-level tiering and coordination in tiered storage systems based on software-defined network",
+    "type": "journal-article",
+    "venue": "Future Generation Computer Systems",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1145/3337821.3337836",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "On Integration of Appends and Merges in Log-Structured Merge Trees",
+   "verified": {
+    "authors": [
+     "Caixin Gong",
+     "Shuibing He",
+     "Yili Gong",
+     "Yingchun Lei"
+    ],
+    "doi": "10.1145/3337821.3337836",
+    "title": "On Integration of Appends and Merges in Log-Structured Merge Trees",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 48th International Conference on Parallel Processing",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1016/j.peva.2014.08.003",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "On the necessity of hot and cold data identification to reduce the write amplification in flash-based SSDs",
+   "verified": {
+    "authors": [
+     "B. Van Houdt"
+    ],
+    "doi": "10.1016/j.peva.2014.08.003",
+    "title": "On the necessity of hot and cold data identification to reduce the write amplification in flash-based SSDs",
+    "type": "journal-article",
+    "venue": "Performance Evaluation",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/143365.143376",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "On-line data compression in a log-structured file system",
+   "verified": {
+    "authors": [
+     "Michael Burrows",
+     "Charles Jerian",
+     "Butler Lampson",
+     "Timothy Mann"
+    ],
+    "doi": "10.1145/143365.143376",
+    "title": "On-line data compression in a log-structured file system",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the fifth international conference on Architectural support for p",
+    "year": 1992
+   },
+   "year": 1992
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/143371.143376",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "On-line data compression in a log-structured file system",
+   "verified": {
+    "authors": [
+     "Michael Burrows",
+     "Charles Jerian",
+     "Butler Lampson",
+     "Timothy Mann"
+    ],
+    "doi": "10.1145/143371.143376",
+    "title": "On-line data compression in a log-structured file system",
+    "type": "journal-article",
+    "venue": "ACM SIGPLAN Notices",
+    "year": 1992
+   },
+   "year": 1992
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.5626/ktcp.2019.25.3.164",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Optimization of Key-Value Stores with Ranged Log-Structured Merge Trees",
+   "verified": {
+    "authors": [
+     "Nae Young Song",
+     "Heon Young Yeom",
+     "Hyuck Han"
+    ],
+    "doi": "10.5626/ktcp.2019.25.3.164",
+    "title": "Optimization of Key-Value Stores with Ranged Log-Structured Merge Trees",
+    "type": "journal-article",
+    "venue": "KIISE Transactions on Computing Practices",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.5626/jok.2022.49.7.561",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Optimization of Load Balancing on LSM-Tree based Distributed Key-Value Store using NVMe-oF",
+   "verified": {
+    "authors": [
+     "Hera Koo",
+     "Sungho Moon",
+     "Hyeongjun Jeon",
+     "Beomsuk Nam"
+    ],
+    "doi": "10.5626/jok.2022.49.7.561",
+    "title": "Optimization of Load Balancing on LSM-Tree based Distributed Key-Value Store using NVMe-oF",
+    "type": "journal-article",
+    "venue": "Journal of KIISE",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/ispa63168.2024.00185",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Optimize Metadata Operations of Key-Value Store via A Flat Indexing LSM-Tree",
+   "verified": {
+    "authors": [
+     "Yuchen Liu",
+     "Chen Chen",
+     "Shu Yin"
+    ],
+    "doi": "10.1109/ispa63168.2024.00185",
+    "title": "Optimize Metadata Operations of Key-Value Store via A Flat Indexing LSM-Tree",
+    "type": "proceedings-article",
+    "venue": "2024 IEEE International Symposium on Parallel and Distributed Processing with Ap",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/asp-dac47756.2020.9045144",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Parallel-Log-Single-Compaction-Tree: Flash-Friendly Two-Level Key-Value Management in KVSSDs",
+   "verified": {
+    "authors": [
+     "Yen-Ting Chen",
+     "Ming-Chang Yang",
+     "Yuan-Hao Chang",
+     "Wei-Kuan Shih"
+    ],
+    "doi": "10.1109/asp-dac47756.2020.9045144",
+    "title": "Parallel-Log-Single-Compaction-Tree: Flash-Friendly Two-Level Key-Value Management in KVSSDs",
+    "type": "proceedings-article",
+    "venue": "2020 25th Asia and South Pacific Design Automation Conference (ASP-DAC)",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/s11704-019-8234-x",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Partition pruning for range query on distributed log-structured merge-tree",
+   "verified": {
+    "authors": [
+     "Chenchen Huang",
+     "Huiqi Hu",
+     "Xing Wei",
+     "Weining Qian",
+     "Aoying Zhou"
+    ],
+    "doi": "10.1007/s11704-019-8234-x",
+    "title": "Partition pruning for range query on distributed log-structured merge-tree",
+    "type": "journal-article",
+    "venue": "Frontiers of Computer Science",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/icce.2019.8662104",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Performance Analyses on Logging Policies of Log-structured File System",
+   "verified": {
+    "authors": [
+     "Sungwoo Lee",
+     "Jonggyu Park",
+     "Young Ik Eom"
+    ],
+    "doi": "10.1109/icce.2019.8662104",
+    "title": "Performance Analyses on Logging Policies of Log-structured File System",
+    "type": "proceedings-article",
+    "venue": "2019 IEEE International Conference on Consumer Electronics (ICCE)",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.9728/dcs.2020.21.8.1501",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "PlexDB: Efficient Compaction Algorithm for Deduplication of LSM-tree based Key-Value Store",
+   "verified": {
+    "authors": [
+     "Yong-Cheol Seo",
+     "Sung-Hoon Park"
+    ],
+    "doi": "10.9728/dcs.2020.21.8.1501",
+    "title": "PlexDB: Efficient Compaction Algorithm for Deduplication of LSM-tree based Key-Value Store",
+    "type": "journal-article",
+    "venue": "Journal of Digital Contents Society",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3605573.3605629",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "PMLDS: An LSM-Tree Direct Managed Storage for Key-Value Stores on Byte-Addressable Devices",
+   "verified": {
+    "authors": [
+     "Ziyi Lu",
+     "Qiang Cao",
+     "Shucheng Wang",
+     "Jie Yao",
+     "Xiangrui Yang"
+    ],
+    "doi": "10.1145/3605573.3605629",
+    "title": "PMLDS: An LSM-Tree Direct Managed Storage for Key-Value Stores on Byte-Addressable Devices",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 52nd International Conference on Parallel Processing",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1145/3030207.3030219",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Practical Implication of Analytical Models for SSD Write Amplification",
+   "verified": {
+    "authors": [
+     "Changhyun Park",
+     "Seongjin Lee",
+     "Youjip Won",
+     "Soohan Ahn"
+    ],
+    "doi": "10.1145/3030207.3030219",
+    "title": "Practical Implication of Analytical Models for SSD Write Amplification",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 8th ACM/SPEC on International Conference on Performance Engin",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/978-3-319-63564-4_17",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Precise Data Access on Distributed Log-Structured Merge-Tree",
+   "verified": {
+    "authors": [
+     "Tao Zhu",
+     "Huiqi Hu",
+     "Weining Qian",
+     "Aoying Zhou",
+     "Mengzhan Liu",
+     "Qiong Zhao"
+    ],
+    "doi": "10.1007/978-3-319-63564-4_17",
+    "title": "Precise Data Access on Distributed Log-Structured Merge-Tree",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.5626/jok.2019.46.9.946",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Recursive Compaction Method of LSM-tree based Key-value Store",
+   "verified": {
+    "authors": [
+     "Jongbin Kim",
+     "Seohui Son",
+     "Hyunsoo Cho",
+     "Hyungsoo Jung"
+    ],
+    "doi": "10.5626/jok.2019.46.9.946",
+    "title": "Recursive Compaction Method of LSM-tree based Key-value Store",
+    "type": "journal-article",
+    "venue": "Journal of KIISE",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/isce.2015.7177770",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Reducing garbage collection overhead of log-structured file systems with GC journaling",
+   "verified": {
+    "authors": [
+     "Hyunho Gwak",
+     "Yunji Kang",
+     "Dongkun Shin"
+    ],
+    "doi": "10.1109/isce.2015.7177770",
+    "title": "Reducing garbage collection overhead of log-structured file systems with GC journaling",
+    "type": "proceedings-article",
+    "venue": "2015 International Symposium on Consumer Electronics (ISCE)",
+    "year": 2015
+   },
+   "year": 2015
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/tkde.2026.3699948",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Reducing I/O Amplification for Key-Value Stores With a Log-Assisted Log-Structured Merge Tree",
+   "verified": {
+    "authors": [
+     "Kecheng Huang",
+     "Minyang Bao",
+     "Kai Zhang",
+     "Nan Su",
+     "Zhaoyan Shen",
+     "Zili Shao"
+    ],
+    "doi": "10.1109/tkde.2026.3699948",
+    "title": "Reducing I/O Amplification for Key-Value Stores With a Log-Assisted Log-Structured Merge Tree",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Knowledge and Data Engineering",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3412841.3442073",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "Reducing tail latency of LSM-tree based key-value store via limited compaction",
+   "verified": {
+    "authors": [
+     "Yongchao Hu",
+     "Yajuan Du"
+    ],
+    "doi": "10.1145/3412841.3442073",
+    "title": "Reducing tail latency of LSM-tree based key-value store via limited compaction",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 36th Annual ACM Symposium on Applied Computing",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1145/3456727.3463784",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Reducing write amplification in flash by death-time prediction of logical block addresses",
+   "verified": {
+    "authors": [
+     "Chandranil Chakraborttii",
+     "Heiner Litz"
+    ],
+    "doi": "10.1145/3456727.3463784",
+    "title": "Reducing write amplification in flash by death-time prediction of logical block addresses",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 14th ACM International Conference on Systems and Storage",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/iaecst64597.2024.11118070",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Reducing Write Amplification in LSM-Tree by Data Compaction Based on Sliding-Window",
+   "verified": {
+    "authors": [
+     "Jianqiang Li",
+     "Kunfeng Wang",
+     "Ruyang Chen"
+    ],
+    "doi": "10.1109/iaecst64597.2024.11118070",
+    "title": "Reducing Write Amplification in LSM-Tree by Data Compaction Based on Sliding-Window",
+    "type": "proceedings-article",
+    "venue": "2024 6th International Academic Exchange Conference on Science and Technology In",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/tc.2026.3662419",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Reducing Write Amplification in LSM-Trees Through Orchestrated Fine-Grained Compaction and Persistent Memory",
+   "verified": {
+    "authors": [
+     "Licheng Shan",
+     "Jiang Zhou",
+     "Jinchao Zhang",
+     "Youyou Lu",
+     "Bo Li",
+     "Xiaoyan Gu"
+    ],
+    "doi": "10.1109/tc.2026.3662419",
+    "title": "Reducing Write Amplification in LSM-Trees Through Orchestrated Fine-Grained Compaction and Persistent Memory",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Computers",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/icde53745.2022.00279",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Reducing Write Amplification of LSM-Tree with Block-Grained Compaction",
+   "verified": {
+    "authors": [
+     "Xiaoliang Wang",
+     "Peiquan Jin",
+     "Bei Hua",
+     "Hai Long",
+     "Wei Huang"
+    ],
+    "doi": "10.1109/icde53745.2022.00279",
+    "title": "Reducing Write Amplification of LSM-Tree with Block-Grained Compaction",
+    "type": "proceedings-article",
+    "venue": "2022 IEEE 38th International Conference on Data Engineering (ICDE)",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/978-981-95-5716-5_26",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Reducing Write Stall and Write Amplification for LSM-Tree Based Key-Value Stores Using a Hybrid Compression Strategy",
+   "verified": {
+    "authors": [
+     "Zhicheng Bu",
+     "Jinbao Wang",
+     "Lina Chen",
+     "Yaozong Yang",
+     "Hong Gao"
+    ],
+    "doi": "10.1007/978-981-95-5716-5_26",
+    "title": "Reducing Write Stall and Write Amplification for LSM-Tree Based Key-Value Stores Using a Hybrid Compression Strategy",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2026
+   },
+   "year": 2026
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1109/access.2021.3121423",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "SCJ: Segment Cleaning Journaling for Log-Structured File Systems",
+   "verified": {
+    "authors": [
+     "Hyunho Gwak",
+     "Dongkun Shin"
+    ],
+    "doi": "10.1109/access.2021.3121423",
+    "title": "SCJ: Segment Cleaning Journaling for Log-Structured File Systems",
+    "type": "journal-article",
+    "venue": "IEEE Access",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/250007.250009",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "Security and log structured file systems",
+   "verified": {
+    "authors": [
+     "Tage Stabell-Kul\u00f8"
+    ],
+    "doi": "10.1145/250007.250009",
+    "title": "Security and log structured file systems",
+    "type": "journal-article",
+    "venue": "ACM SIGOPS Operating Systems Review",
+    "year": 1997
+   },
+   "year": 1997
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.33851/jmis.2022.9.4.261",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "Separating the File System Journal to Reduce Write Amplification of Garbage Collection on ZNS SSDs",
+   "verified": {
+    "authors": [
+     "Young-in Choi",
+     "Sungyong Ahn"
+    ],
+    "doi": "10.33851/jmis.2022.9.4.261",
+    "title": "Separating the File System Journal to Reduce Write Amplification of Garbage Collection on ZNS SSDs",
+    "type": "journal-article",
+    "venue": "Journal of Multimedia Information System",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/icws67624.2025.00100",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "ServerlessLSM: Fast RDMA-Codesigned Disaggregated Compaction for Elastic Serverless LSM-Tree Key-Value Store",
+   "verified": {
+    "authors": [
+     "Mingxuan Liu",
+     "Jianhua Gu",
+     "Tianhai Zhao"
+    ],
+    "doi": "10.1109/icws67624.2025.00100",
+    "title": "ServerlessLSM: Fast RDMA-Codesigned Disaggregated Compaction for Elastic Serverless LSM-Tree Key-Value Store",
+    "type": "proceedings-article",
+    "venue": "2025 IEEE International Conference on Web Services (ICWS)",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/access.2021.3098736",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "SFM: Mitigating Read/Write Amplification Problem of LSM-Tree-Based Key-Value Stores",
+   "verified": {
+    "authors": [
+     "Hoyoung Lee",
+     "Minho Lee",
+     "Young Ik Eom"
+    ],
+    "doi": "10.1109/access.2021.3098736",
+    "title": "SFM: Mitigating Read/Write Amplification Problem of LSM-Tree-Based Key-Value Stores",
+    "type": "journal-article",
+    "venue": "IEEE Access",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1016/j.protcy.2016.05.075",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "SLSM - A Scalable Log Structured Merge Tree with Bloom Filters for Low Latency Analytics",
+   "verified": {
+    "authors": [
+     "P.A. Riyaz",
+     "Surekha Mariam Varghese"
+    ],
+    "doi": "10.1016/j.protcy.2016.05.075",
+    "title": "SLSM - A Scalable Log Structured Merge Tree with Bloom Filters for Low Latency Analytics",
+    "type": "journal-article",
+    "venue": "Procedia Technology",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1145/3183713.3183723",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Splaying Log-Structured Merge-Trees",
+   "verified": {
+    "authors": [
+     "Thomas Lively",
+     "Luca Schroeder",
+     "Carlos Mendiz\u00e1bal"
+    ],
+    "doi": "10.1145/3183713.3183723",
+    "title": "Splaying Log-Structured Merge-Trees",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 2018 International Conference on Management of Data",
+    "year": 2018
+   },
+   "year": 2018
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.21203/rs.3.rs-2142066/v1",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "SplitDB: Building a large-scale key-value store based on LSM-tree by split operations",
+   "verified": {
+    "authors": [
+     "Jiancheng Ren",
+     "Guanzhong Chen",
+     "Keyu Qian"
+    ],
+    "doi": "10.21203/rs.3.rs-2142066/v1",
+    "title": "SplitDB: Building a large-scale key-value store based on LSM-tree by split operations",
+    "type": "posted-content",
+    "venue": "",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1109/iccwamtip56608.2022.10016522",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "SSD-Based LSM-Tree Key-Value Storage System",
+   "verified": {
+    "authors": [
+     "Yang Zining",
+     "Jian Gang",
+     "Hu Yu",
+     "Zhang Siying",
+     "Yang Yuanzhi"
+    ],
+    "doi": "10.1109/iccwamtip56608.2022.10016522",
+    "title": "SSD-Based LSM-Tree Key-Value Storage System",
+    "type": "proceedings-article",
+    "venue": "2022 19th International Computer Conference on Wavelet Active Media Technology a",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1007/978-1-4615-2221-8",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "The Design and Implementation of a Log-structured file system",
+   "verified": {
+    "authors": [
+     "Mendel Rosenblum"
+    ],
+    "doi": "10.1007/978-1-4615-2221-8",
+    "title": "The Design and Implementation of a Log-structured file system",
+    "type": "book",
+    "venue": "",
+    "year": 1995
+   },
+   "year": 1995
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/121132.121137",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "The design and implementation of a log-structured file system",
+   "verified": {
+    "authors": [
+     "Mendel Rosenblum",
+     "John K. Ousterhout"
+    ],
+    "doi": "10.1145/121132.121137",
+    "title": "The design and implementation of a log-structured file system",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the thirteenth ACM symposium on Operating systems principles",
+    "year": 1991
+   },
+   "year": 1991
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/121133.121137",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "The design and implementation of a log-structured file system",
+   "verified": {
+    "authors": [
+     "Mendel Rosenblum",
+     "John K. Ousterhout"
+    ],
+    "doi": "10.1145/121133.121137",
+    "title": "The design and implementation of a log-structured file system",
+    "type": "journal-article",
+    "venue": "ACM SIGOPS Operating Systems Review",
+    "year": 1991
+   },
+   "year": 1991
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/146941.146943",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "The design and implementation of a log-structured file system",
+   "verified": {
+    "authors": [
+     "Mendel Rosenblum",
+     "John K. Ousterhout"
+    ],
+    "doi": "10.1145/146941.146943",
+    "title": "The design and implementation of a log-structured file system",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Computer Systems",
+    "year": 1992
+   },
+   "year": 1992
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1145/1151374.1151375",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "The Linux implementation of a log-structured file system",
+   "verified": {
+    "authors": [
+     "Ryusuke Konishi",
+     "Yoshiji Amagai",
+     "Koji Sato",
+     "Hisashi Hifumi",
+     "Seiji Kihara",
+     "Satoshi Moriai"
+    ],
+    "doi": "10.1145/1151374.1151375",
+    "title": "The Linux implementation of a log-structured file system",
+    "type": "journal-article",
+    "venue": "ACM SIGOPS Operating Systems Review",
+    "year": 2006
+   },
+   "year": 2006
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/s002360050048",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "The log-structured merge-tree (LSM-tree)",
+   "verified": {
+    "authors": [
+     "Patrick O\u2019Neil",
+     "Edward Cheng",
+     "Dieter Gawlick",
+     "Elizabeth O\u2019Neil"
+    ],
+    "doi": "10.1007/s002360050048",
+    "title": "The log-structured merge-tree (LSM-tree)",
+    "type": "journal-article",
+    "venue": "Acta Informatica",
+    "year": 1996
+   },
+   "year": 1996
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/icde51399.2021.00238",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "The LSM RUM-Tree: A Log Structured Merge R-Tree for Update-intensive Spatial Workloads",
+   "verified": {
+    "authors": [
+     "Jaewoo Shin",
+     "Jianguo Wang",
+     "Walid G. Aref"
+    ],
+    "doi": "10.1109/icde51399.2021.00238",
+    "title": "The LSM RUM-Tree: A Log Structured Merge R-Tree for Update-intensive Spatial Workloads",
+    "type": "proceedings-article",
+    "venue": "2021 IEEE 37th International Conference on Data Engineering (ICDE)",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/access.2020.2985407",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "TLSM: Tiered Log-Structured Merge-Tree Utilizing Non-Volatile Memory",
+   "verified": {
+    "authors": [
+     "Jihwan Lee",
+     "Won Gi Choi",
+     "Doyoung Kim",
+     "Hanseung Sung",
+     "Sanghyun Park"
+    ],
+    "doi": "10.1109/access.2020.2985407",
+    "title": "TLSM: Tiered Log-Structured Merge-Tree Utilizing Non-Volatile Memory",
+    "type": "journal-article",
+    "venue": "IEEE Access",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1007/s10586-024-05000-6",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Towards an asynchronous commit in micro-batch streaming systems with log-structured merge-tree based key-value store",
+   "verified": {
+    "authors": [
+     "Kyuli Park",
+     "Dongjae Lee",
+     "Yeonwoo Jeong",
+     "Salim Hariri",
+     "Sungyong Park"
+    ],
+    "doi": "10.1007/s10586-024-05000-6",
+    "title": "Towards an asynchronous commit in micro-batch streaming systems with log-structured merge-tree based key-value store",
+    "type": "journal-article",
+    "venue": "Cluster Computing",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/tpds.2022.3188268",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "TriangleKV: Reducing Write Stalls and Write Amplification in LSM-Tree Based KV Stores With Triangle Container in NVM",
+   "verified": {
+    "authors": [
+     "Chen Ding",
+     "Ting Yao",
+     "Hong Jiang",
+     "Qiu Cui",
+     "Liu Tang",
+     "Yiwen Zhang"
+    ],
+    "doi": "10.1109/tpds.2022.3188268",
+    "title": "TriangleKV: Reducing Write Stalls and Write Amplification in LSM-Tree Based KV Stores With Triangle Container in NVM",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Parallel and Distributed Systems",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "Cleaning in a log-structured file system is the ancestor of compaction: the same forced relocation under a capacity bound.",
+   "doi": "10.1007/978-3-319-28778-2_5",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "logstructured-fs",
+   "title": "User-Level Secure Deletion on Log-Structured File Systems",
+   "verified": {
+    "authors": [
+     "Joel Reardon"
+    ],
+    "doi": "10.1007/978-3-319-28778-2_5",
+    "title": "User-Level Secure Deletion on Log-Structured File Systems",
+    "type": "book-chapter",
+    "venue": "Information Security and Cryptography",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "Leveled and tiered compaction are the two deployed families, and the field compares them empirically in terms of read/write/space trade-offs.",
+   "doi": "10.1109/cloudcom.2012.6427520",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "levels-tiering",
+   "title": "Value-based tiering management on heterogeneous block-level storage system",
+   "verified": {
+    "authors": [
+     "Chai-Hao Tsai",
+     "Jerry Chou",
+     "Yeh-Ching Chung"
+    ],
+    "doi": "10.1109/cloudcom.2012.6427520",
+    "title": "Value-based tiering management on heterogeneous block-level storage system",
+    "type": "proceedings-article",
+    "venue": "4th IEEE International Conference on Cloud Computing Technology and Science Proc",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Write amplification is the cost the whole log-structured design is organised around.",
+   "doi": "10.1109/glocom.2012.6503611",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "flash-write-amp",
+   "title": "WOM codes reduce write amplification in NAND flash memory",
+   "verified": {
+    "authors": [
+     "Xiang Luojie",
+     "Brian M. Kurkoski",
+     "Eitan Yaakobi"
+    ],
+    "doi": "10.1109/glocom.2012.6503611",
+    "title": "WOM codes reduce write amplification in NAND flash memory",
+    "type": "proceedings-article",
+    "venue": "2012 IEEE Global Communications Conference (GLOBECOM)",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "The compaction policy, not the storage medium, is what sets an LSM engine's write amplification.",
+   "doi": "10.1109/icde55515.2023.00171",
+   "judgement": "title-only",
+   "section": "\u00a72 Background",
+   "theme": "lsm-compaction",
+   "title": "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage",
+   "verified": {
+    "authors": [
+     "Lixiang Chen",
+     "Ruihao Chen",
+     "Chengcheng Yang",
+     "Yuxing Han",
+     "Rong Zhang",
+     "Xuan Zhou"
+    ],
+    "doi": "10.1109/icde55515.2023.00171",
+    "title": "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage",
+    "type": "proceedings-article",
+    "venue": "2023 IEEE 39th International Conference on Data Engineering (ICDE)",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "The systems that carry these policies are LSM-based key-value stores.",
+   "doi": "10.1145/3715331",
+   "judgement": "abstract",
+   "section": "\u00a72 Background",
+   "theme": "kv-engine",
+   "title": "ZonesDB: Building Write-Optimized and Space-Adaptive Key-Value Store on Zoned Storage with Fragmented LSM Tree",
+   "verified": {
+    "authors": [
+     "Yuhong Liang",
+     "Yingjia Wang",
+     "Tsun-Yu Yang",
+     "Matias Bj\u00f8rling",
+     "Ming-Chang Yang"
+    ],
+    "doi": "10.1145/3715331",
+    "title": "ZonesDB: Building Write-Optimized and Space-Adaptive Key-Value Store on Zoned Storage with Fragmented LSM Tree",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Storage",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/3-540-58338-6_67",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "A Competitive analysis of the list update problem with lookahead",
+   "verified": {
+    "authors": [
+     "Susanne Albers"
+    ],
+    "doi": "10.1007/3-540-58338-6_67",
+    "title": "A Competitive analysis of the list update problem with lookahead",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1994
+   },
+   "year": 1994
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1016/s0304-3975(97)00026-1",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "A competitive analysis of the list update problem with lookahead",
+   "verified": {
+    "authors": [
+     "Susanne Albers"
+    ],
+    "doi": "10.1016/s0304-3975(97)00026-1",
+    "title": "A competitive analysis of the list update problem with lookahead",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/3-540-48686-0_40",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "A Competitive Online Algorithm for the Paging Problem with \u201cShelf\u201d Memory",
+   "verified": {
+    "authors": [
+     "Sung-Pil Hong"
+    ],
+    "doi": "10.1007/3-540-48686-0_40",
+    "title": "A Competitive Online Algorithm for the Paging Problem with \u201cShelf\u201d Memory",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1999
+   },
+   "year": 1999
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.23919/date.2018.8341975",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "A fast and effective lookahead and fractional search based scheduling algorithm for high-level synthesis",
+   "verified": {
+    "authors": [
+     "Shantanu Dutt",
+     "Ouwen Shi"
+    ],
+    "doi": "10.23919/date.2018.8341975",
+    "title": "A fast and effective lookahead and fractional search based scheduling algorithm for high-level synthesis",
+    "type": "proceedings-article",
+    "venue": "2018 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)",
+    "year": 2018
+   },
+   "year": 2018
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1016/j.omega.2015.10.009",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "A general modeling approach to online optimization with lookahead",
+   "verified": {
+    "authors": [
+     "Fabian Dunke",
+     "Stefan Nickel"
+    ],
+    "doi": "10.1016/j.omega.2015.10.009",
+    "title": "A general modeling approach to online optimization with lookahead",
+    "type": "journal-article",
+    "venue": "Omega",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1109/icdm51629.2021.00175",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "A Lookahead Algorithm for Robust Subspace Recovery",
+   "verified": {
+    "authors": [
+     "Guihong Wan",
+     "Haim Schweitzer"
+    ],
+    "doi": "10.1109/icdm51629.2021.00175",
+    "title": "A Lookahead Algorithm for Robust Subspace Recovery",
+    "type": "proceedings-article",
+    "venue": "2021 IEEE International Conference on Data Mining (ICDM)",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1109/tc.1976.1674715",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "A Modified Working Set Paging Algorithm",
+   "verified": {
+    "authors": [
+     "Smith"
+    ],
+    "doi": "10.1109/tc.1976.1674715",
+    "title": "A Modified Working Set Paging Algorithm",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Computers",
+    "year": 1976
+   },
+   "year": 1976
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1109/wimax.2007.348683",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "A novel algorithm for efficient paging in mobile WiMAX",
+   "verified": {
+    "authors": [
+     "Shantidev Mohanty",
+     "Muthaiah Venkatachalam",
+     "XiangYing Yang"
+    ],
+    "doi": "10.1109/wimax.2007.348683",
+    "title": "A novel algorithm for efficient paging in mobile WiMAX",
+    "type": "proceedings-article",
+    "venue": "2007 IEEE Mobile WiMAX Symposium",
+    "year": 2007
+   },
+   "year": 2007
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1145/258533.258667",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "A polylog( n )-competitive algorithm for metrical task systems",
+   "verified": {
+    "authors": [
+     "Yair Bartal",
+     "Avrim Blum",
+     "Carl Burch",
+     "Andrew Tomkins"
+    ],
+    "doi": "10.1145/258533.258667",
+    "title": "A polylog( n )-competitive algorithm for metrical task systems",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the twenty-ninth annual ACM symposium on Theory of computing - ST",
+    "year": 1997
+   },
+   "year": 1997
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1109/focs.2011.63",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "A Polylogarithmic-Competitive Algorithm for the k-Server Problem",
+   "verified": {
+    "authors": [
+     "N. Bansal",
+     "N. Buchbinder",
+     "A. Madry",
+     "J. Naor"
+    ],
+    "doi": "10.1109/focs.2011.63",
+    "title": "A Polylogarithmic-Competitive Algorithm for the k-Server Problem",
+    "type": "proceedings-article",
+    "venue": "2011 IEEE 52nd Annual Symposium on Foundations of Computer Science",
+    "year": 2011
+   },
+   "year": 2011
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.5220/0001334500380043",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "A SPACE-EFFICIENT ALGORITHM FOR PAGING UNBALANCED BINARY TREES",
+   "verified": {
+    "authors": [],
+    "doi": "10.5220/0001334500380043",
+    "title": "A SPACE-EFFICIENT ALGORITHM FOR PAGING UNBALANCED BINARY TREES",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the Second International Conference on Software and Data Technolo",
+    "year": 2007
+   },
+   "year": 2007
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/bf01759073",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "A strongly competitive randomized paging algorithm",
+   "verified": {
+    "authors": [
+     "Lyle A. McGeoch",
+     "Daniel D. Sleator"
+    ],
+    "doi": "10.1007/bf01759073",
+    "title": "A strongly competitive randomized paging algorithm",
+    "type": "journal-article",
+    "venue": "Algorithmica",
+    "year": 1991
+   },
+   "year": 1991
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/pl00009192",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "A Unified Analysis of Paging and Caching",
+   "verified": {
+    "authors": [
+     "E. Torng"
+    ],
+    "doi": "10.1007/pl00009192",
+    "title": "A Unified Analysis of Paging and Caching",
+    "type": "journal-article",
+    "venue": "Algorithmica",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1007/s00170-014-5755-1",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "An efficient one-step lookahead A* algorithm for PM-CT scheduling problems",
+   "verified": {
+    "authors": [
+     "Hwang Ho Kim",
+     "Jin Young Choi"
+    ],
+    "doi": "10.1007/s00170-014-5755-1",
+    "title": "An efficient one-step lookahead A* algorithm for PM-CT scheduling problems",
+    "type": "journal-article",
+    "venue": "The International Journal of Advanced Manufacturing Technology",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1142/s0217595915500475",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "An Improved Online Algorithm for the Online Preemptive Scheduling of Equal-Length Intervals on a Single Machine with Lookahead",
+   "verified": {
+    "authors": [
+     "Wenjie Li",
+     "Jinjiang Yuan"
+    ],
+    "doi": "10.1142/s0217595915500475",
+    "title": "An Improved Online Algorithm for the Online Preemptive Scheduling of Equal-Length Intervals on a Single Machine with Lookahead",
+    "type": "journal-article",
+    "venue": "Asia-Pacific Journal of Operational Research",
+    "year": 2015
+   },
+   "year": 2015
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1145/3280826",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "An O (log k )-Competitive Algorithm for Generalized Caching",
+   "verified": {
+    "authors": [
+     "Anna Adamaszek",
+     "Artur Czumaj",
+     "Matthias Englert",
+     "Harald R\u00e4cke"
+    ],
+    "doi": "10.1145/3280826",
+    "title": "An O (log k )-Competitive Algorithm for Generalized Caching",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Algorithms",
+    "year": 2018
+   },
+   "year": 2018
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1145/146585.146588",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "An optimal on-line algorithm for metrical task system",
+   "verified": {
+    "authors": [
+     "Allan Borodin",
+     "Nathan Linial",
+     "Michael E. Saks"
+    ],
+    "doi": "10.1145/146585.146588",
+    "title": "An optimal on-line algorithm for metrical task system",
+    "type": "journal-article",
+    "venue": "Journal of the ACM",
+    "year": 1992
+   },
+   "year": 1992
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1145/28395.28435",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "An optimal online algorithm for metrical task systems",
+   "verified": {
+    "authors": [
+     "A. Borodin",
+     "N. Linial",
+     "M. Saks"
+    ],
+    "doi": "10.1145/28395.28435",
+    "title": "An optimal online algorithm for metrical task systems",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the nineteenth annual ACM conference on Theory of computing - STO",
+    "year": 1987
+   },
+   "year": 1987
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1007/10968987_12",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Backfilling with Lookahead to Optimize the Performance of Parallel Job Scheduling",
+   "verified": {
+    "authors": [
+     "Edi Shmueli",
+     "Dror G. Feitelson"
+    ],
+    "doi": "10.1007/10968987_12",
+    "title": "Backfilling with Lookahead to Optimize the Performance of Parallel Job Scheduling",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2003
+   },
+   "year": 2003
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.52202/079017-1178",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Barely Random Algorithms and Collective Metrical Task Systems",
+   "verified": {
+    "authors": [
+     "Romain Cosson",
+     "Laurent Massouli\u00e9"
+    ],
+    "doi": "10.52202/079017-1178",
+    "title": "Barely Random Algorithms and Collective Metrical Task Systems",
+    "type": "proceedings-article",
+    "venue": "Advances in Neural Information Processing Systems 37",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1137/s0097539700376159",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Better Algorithms for Unfair Metrical Task Systems and Applications",
+   "verified": {
+    "authors": [
+     "Amos Fiat",
+     "Manor Mendel"
+    ],
+    "doi": "10.1137/s0097539700376159",
+    "title": "Better Algorithms for Unfair Metrical Task Systems and Applications",
+    "type": "journal-article",
+    "venue": "SIAM Journal on Computing",
+    "year": 2003
+   },
+   "year": 2003
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1145/335305.335408",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Better algorithms for unfair metrical task systems and applications",
+   "verified": {
+    "authors": [
+     "Amos Fiat",
+     "Manor Mendel"
+    ],
+    "doi": "10.1145/335305.335408",
+    "title": "Better algorithms for unfair metrical task systems and applications",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the thirty-second annual ACM symposium on Theory of computing",
+    "year": 2000
+   },
+   "year": 2000
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1145/3391403.3399470",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Combinatorial Ski Rental and Online Bipartite Matching",
+   "verified": {
+    "authors": [
+     "Hanrui Zhang",
+     "Vincent Conitzer"
+    ],
+    "doi": "10.1145/3391403.3399470",
+    "title": "Combinatorial Ski Rental and Online Bipartite Matching",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 21st ACM Conference on Economics and Computation",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.52202/085713-4014",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Combinatorial Ski Rental Problem: Robust and Learning-Augmented Algorithms",
+   "verified": {
+    "authors": [
+     "Ziwei Li",
+     "Bo Sun",
+     "Zhiqiu Zhang",
+     "Mohammad Hajiesmaili",
+     "Binghan Wu",
+     "Lin Yang"
+    ],
+    "doi": "10.52202/085713-4014",
+    "title": "Combinatorial Ski Rental Problem: Robust and Learning-Augmented Algorithms",
+    "type": "proceedings-article",
+    "venue": "Advances in Neural Information Processing Systems 38",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/3-540-61680-2_72",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive analysis of randomized paging algorithms",
+   "verified": {
+    "authors": [
+     "Dimitris Achlioptas",
+     "Marek Chrobak",
+     "John Noga"
+    ],
+    "doi": "10.1007/3-540-61680-2_72",
+    "title": "Competitive analysis of randomized paging algorithms",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1996
+   },
+   "year": 1996
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1016/s0304-3975(98)00116-9",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive analysis of randomized paging algorithms",
+   "verified": {
+    "authors": [
+     "Dimitris Achlioptas",
+     "Marek Chrobak",
+     "John Noga"
+    ],
+    "doi": "10.1016/s0304-3975(98)00116-9",
+    "title": "Competitive analysis of randomized paging algorithms",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2000
+   },
+   "year": 2000
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/3-540-44634-6_14",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive Analysis of the LRFU Paging Algorithm",
+   "verified": {
+    "authors": [
+     "Edith Cohen",
+     "Haim Kaplan",
+     "Uri Zwick"
+    ],
+    "doi": "10.1007/3-540-44634-6_14",
+    "title": "Competitive Analysis of the LRFU Paging Algorithm",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2001
+   },
+   "year": 2001
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/s00453-002-0936-y",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive Analysis of the LRFU Paging Algorithm",
+   "verified": {
+    "authors": [
+     "E. Cohen",
+     "H. Kaplan",
+     "U. Zwick"
+    ],
+    "doi": "10.1007/s00453-002-0936-y",
+    "title": "Competitive Analysis of the LRFU Paging Algorithm",
+    "type": "journal-article",
+    "venue": "Algorithmica",
+    "year": 2002
+   },
+   "year": 2002
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1007/978-3-319-03578-9_8",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Competitive FIB Aggregation for Independent Prefixes: Online Ski Rental on the Trie",
+   "verified": {
+    "authors": [
+     "Marcin Bienkowski",
+     "Stefan Schmid"
+    ],
+    "doi": "10.1007/978-3-319-03578-9_8",
+    "title": "Competitive FIB Aggregation for Independent Prefixes: Online Ski Rental on the Trie",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2013
+   },
+   "year": 2013
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1145/1011767.1011805",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive on-line paging strategies for mobile users under delay constraints",
+   "verified": {
+    "authors": [
+     "Amotz Bar-Noy",
+     "Yishay Mansour"
+    ],
+    "doi": "10.1145/1011767.1011805",
+    "title": "Competitive on-line paging strategies for mobile users under delay constraints",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the twenty-third annual ACM symposium on Principles of distribute",
+    "year": 2004
+   },
+   "year": 2004
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1006/jcss.1995.1021",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive Paging with Locality of Reference",
+   "verified": {
+    "authors": [
+     "A. Borodin",
+     "S. Irani",
+     "P. Raghavan",
+     "B. Schieber"
+    ],
+    "doi": "10.1006/jcss.1995.1021",
+    "title": "Competitive Paging with Locality of Reference",
+    "type": "journal-article",
+    "venue": "Journal of Computer and System Sciences",
+    "year": 1995
+   },
+   "year": 1995
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1145/103418.103422",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Competitive paging with locality of reference",
+   "verified": {
+    "authors": [
+     "Allan Borodin",
+     "Prabhakar Raghavan",
+     "Sandy Irani",
+     "Baruch Schieber"
+    ],
+    "doi": "10.1145/103418.103422",
+    "title": "Competitive paging with locality of reference",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the twenty-third annual ACM symposium on Theory of computing - ST",
+    "year": 1991
+   },
+   "year": 1991
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/s10288-021-00479-w",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Correction to: Exact distributional analysis of online algorithms with lookahead",
+   "verified": {
+    "authors": [
+     "Fabian Dunke",
+     "Stefan Nickel"
+    ],
+    "doi": "10.1007/s10288-021-00479-w",
+    "title": "Correction to: Exact distributional analysis of online algorithms with lookahead",
+    "type": "journal-article",
+    "venue": "4OR",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1109/pdp.2010.56",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "DAG Scheduling Using a Lookahead Variant of the Heterogeneous Earliest Finish Time Algorithm",
+   "verified": {
+    "authors": [
+     "Luiz F. Bittencourt",
+     "Rizos Sakellariou",
+     "Edmundo R. M. Madeira"
+    ],
+    "doi": "10.1109/pdp.2010.56",
+    "title": "DAG Scheduling Using a Lookahead Variant of the Heterogeneous Earliest Finish Time Algorithm",
+    "type": "proceedings-article",
+    "venue": "2010 18th Euromicro Conference on Parallel, Distributed and Network-based Proces",
+    "year": 2010
+   },
+   "year": 2010
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1109/hipc.2017.00017",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Designing Registration Caching Free High-Performance MPI Library with Implicit On-Demand Paging (ODP) of InfiniBand",
+   "verified": {
+    "authors": [
+     "Mingzhe Li",
+     "Xiaoyi Lu",
+     "Hari Subramoni",
+     "Dhabaleswar K. Panda"
+    ],
+    "doi": "10.1109/hipc.2017.00017",
+    "title": "Designing Registration Caching Free High-Performance MPI Library with Implicit On-Demand Paging (ODP) of InfiniBand",
+    "type": "proceedings-article",
+    "venue": "2017 IEEE 24th International Conference on High Performance Computing (HiPC)",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1145/588160.588165",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Disk scheduling policies with lookahead",
+   "verified": {
+    "authors": [
+     "Alexander Thomasian",
+     "Chang Liu"
+    ],
+    "doi": "10.1145/588160.588165",
+    "title": "Disk scheduling policies with lookahead",
+    "type": "journal-article",
+    "venue": "ACM SIGMETRICS Performance Evaluation Review",
+    "year": 2002
+   },
+   "year": 2002
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/s10288-020-00442-1",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Exact distributional analysis of online algorithms with lookahead",
+   "verified": {
+    "authors": [
+     "Fabian Dunke",
+     "Stefan Nickel"
+    ],
+    "doi": "10.1007/s10288-020-00442-1",
+    "title": "Exact distributional analysis of online algorithms with lookahead",
+    "type": "journal-article",
+    "venue": "4OR",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1016/0020-0190(78)90006-6",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Exploiting the optimal paging algorithms",
+   "verified": {
+    "authors": [
+     "Radha Krishan Arora",
+     "R.K. Subramanian"
+    ],
+    "doi": "10.1016/0020-0190(78)90006-6",
+    "title": "Exploiting the optimal paging algorithms",
+    "type": "journal-article",
+    "venue": "Information Processing Letters",
+    "year": 1978
+   },
+   "year": 1978
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1145/321796.321801",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Finding Optimal Demand Paging Algorithms",
+   "verified": {
+    "authors": [
+     "Giorgio Ingargiola",
+     "James F. Korsh"
+    ],
+    "doi": "10.1145/321796.321801",
+    "title": "Finding Optimal Demand Paging Algorithms",
+    "type": "journal-article",
+    "venue": "Journal of the ACM",
+    "year": 1974
+   },
+   "year": 1974
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1016/j.ipl.2007.10.008",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "How much can lookahead help in online single machine scheduling",
+   "verified": {
+    "authors": [
+     "Feifeng Zheng",
+     "Yinfeng Xu",
+     "E. Zhang"
+    ],
+    "doi": "10.1016/j.ipl.2007.10.008",
+    "title": "How much can lookahead help in online single machine scheduling",
+    "type": "journal-article",
+    "venue": "Information Processing Letters",
+    "year": 2008
+   },
+   "year": 2008
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1145/3763239",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds for Multi-Option Ski Rental Problem",
+   "verified": {
+    "authors": [
+     "Yongho Shin",
+     "Changyeol Lee",
+     "Gukryeol Lee",
+     "Hyung-Chan An"
+    ],
+    "doi": "10.1145/3763239",
+    "title": "Improved Learning-Augmented Algorithms and (Tight) Lower Bounds for Multi-Option Ski Rental Problem",
+    "type": "journal-article",
+    "venue": "ACM Transactions on Algorithms",
+    "year": 2025
+   },
+   "year": 2025
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/978-3-642-39206-1_64",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Improved Space Bounds for Strongly Competitive Randomized Paging Algorithms",
+   "verified": {
+    "authors": [
+     "Gabriel Moruz",
+     "Andrei Negoescu"
+    ],
+    "doi": "10.1007/978-3-642-39206-1_64",
+    "title": "Improved Space Bounds for Strongly Competitive Randomized Paging Algorithms",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2013
+   },
+   "year": 2013
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1006/jagm.1994.1001",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Improving Greedy Algorithms by Lookahead-Search",
+   "verified": {
+    "authors": [
+     "U.K. Sarkar",
+     "P.P. Chakrabarti",
+     "S. Ghose",
+     "S.C. Desarkar"
+    ],
+    "doi": "10.1006/jagm.1994.1001",
+    "title": "Improving Greedy Algorithms by Lookahead-Search",
+    "type": "journal-article",
+    "venue": "Journal of Algorithms",
+    "year": 1994
+   },
+   "year": 1994
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.25046/aj050581",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Issues in File Caching and Virtual Memory Paging with Fast SCM Storage",
+   "verified": {
+    "authors": [
+     "Yunjoo Park",
+     "Hyokyung Bahn"
+    ],
+    "doi": "10.25046/aj050581",
+    "title": "Issues in File Caching and Virtual Memory Paging with Fast SCM Storage",
+    "type": "journal-article",
+    "venue": "Advances in Science, Technology and Engineering Systems Journal",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1145/144965.145822",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Lookahead scheduling",
+   "verified": {
+    "authors": [
+     "Steven J. Beaty"
+    ],
+    "doi": "10.1145/144965.145822",
+    "title": "Lookahead scheduling",
+    "type": "journal-article",
+    "venue": "ACM SIGMICRO Newsletter",
+    "year": 1992
+   },
+   "year": 1992
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1109/12.954511",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Lookahead scheduling requests for multisize page caching",
+   "verified": {
+    "authors": [
+     "J. Kiniwa",
+     "T. Hamada",
+     "D. Mizoguchi"
+    ],
+    "doi": "10.1109/12.954511",
+    "title": "Lookahead scheduling requests for multisize page caching",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Computers",
+    "year": 2001
+   },
+   "year": 2001
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1145/1015330.1015373",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Lookahead-based algorithms for anytime induction of decision trees",
+   "verified": {
+    "authors": [
+     "Saher Esmeir",
+     "Shaul Markovitch"
+    ],
+    "doi": "10.1145/1015330.1015373",
+    "title": "Lookahead-based algorithms for anytime induction of decision trees",
+    "type": "proceedings-article",
+    "venue": "Twenty-first international conference on Machine learning - ICML '04",
+    "year": 2004
+   },
+   "year": 2004
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1016/j.tcs.2022.10.006",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Machine learning advised algorithms for the ski rental problem with a discount",
+   "verified": {
+    "authors": [
+     "Arghya Bhattacharya",
+     "Rathish Das"
+    ],
+    "doi": "10.1016/j.tcs.2022.10.006",
+    "title": "Machine learning advised algorithms for the ski rental problem with a discount",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1137/1.9781611975482.6",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Metrical task systems on trees via mirror descent and unfair gluing",
+   "verified": {
+    "authors": [
+     "S\u00e9bastien Bubeck",
+     "Michael B. Cohen",
+     "James R. Lee",
+     "Yin Tat Lee"
+    ],
+    "doi": "10.1137/1.9781611975482.6",
+    "title": "Metrical task systems on trees via mirror descent and unfair gluing",
+    "type": "book-chapter",
+    "venue": "Proceedings of the Thirtieth Annual ACM-SIAM Symposium on Discrete Algorithms",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1137/19m1237879",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Metrical Task Systems on Trees via Mirror Descent and Unfair Gluing",
+   "verified": {
+    "authors": [
+     "S\u00e9bastien Bubeck",
+     "Michael B. Cohen",
+     "James R. Lee",
+     "Yin Tat Lee"
+    ],
+    "doi": "10.1137/19m1237879",
+    "title": "Metrical Task Systems on Trees via Mirror Descent and Unfair Gluing",
+    "type": "journal-article",
+    "venue": "SIAM Journal on Computing",
+    "year": 2021
+   },
+   "year": 2021
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1007/bfb0029565",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Metrical task systems, the server problem and the work function algorithm",
+   "verified": {
+    "authors": [
+     "Marek Chrobak",
+     "Lawrence L. Larmore"
+    ],
+    "doi": "10.1007/bfb0029565",
+    "title": "Metrical task systems, the server problem and the work function algorithm",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1145/3350755.3400270",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Multicore Paging Algorithms Cannot Be Competitive",
+   "verified": {
+    "authors": [
+     "Shahin Kamali",
+     "Helen Xu"
+    ],
+    "doi": "10.1145/3350755.3400270",
+    "title": "Multicore Paging Algorithms Cannot Be Competitive",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 32nd ACM Symposium on Parallelism in Algorithms and Architect",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/s10878-009-9246-5",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "New algorithms for online rectangle filling with k-lookahead",
+   "verified": {
+    "authors": [
+     "Haitao Wang",
+     "Amitabh Chaudhary",
+     "Danny Z. Chen"
+    ],
+    "doi": "10.1007/s10878-009-9246-5",
+    "title": "New algorithms for online rectangle filling with k-lookahead",
+    "type": "journal-article",
+    "venue": "Journal of Combinatorial Optimization",
+    "year": 2009
+   },
+   "year": 2009
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1007/pl00009166",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "On Algorithm Design for Metrical Task Systems",
+   "verified": {
+    "authors": [
+     "W. R. Burley",
+     "S. Irani"
+    ],
+    "doi": "10.1007/pl00009166",
+    "title": "On Algorithm Design for Metrical Task Systems",
+    "type": "journal-article",
+    "venue": "Algorithmica",
+    "year": 1997
+   },
+   "year": 1997
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/3-540-60922-9_48",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "On competitive on-line paging with lookahead",
+   "verified": {
+    "authors": [
+     "Dany Breslauer"
+    ],
+    "doi": "10.1007/3-540-60922-9_48",
+    "title": "On competitive on-line paging with lookahead",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1996
+   },
+   "year": 1996
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1016/s0304-3975(98)00118-2",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "On competitive on-line paging with lookahead",
+   "verified": {
+    "authors": [
+     "Dany Breslauer"
+    ],
+    "doi": "10.1016/s0304-3975(98)00118-2",
+    "title": "On competitive on-line paging with lookahead",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.7146/brics.v2i50.19951",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "On Competitive On-Line Paging with Lookahead",
+   "verified": {
+    "authors": [
+     "Dany Breslauer"
+    ],
+    "doi": "10.7146/brics.v2i50.19951",
+    "title": "On Competitive On-Line Paging with Lookahead",
+    "type": "journal-article",
+    "venue": "BRICS Report Series",
+    "year": 1995
+   },
+   "year": 1995
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1016/j.tcs.2004.06.001",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "On the competitive ratio of the work function algorithm for the k-server problem",
+   "verified": {
+    "authors": [
+     "Yair Bartal",
+     "Elias Koutsoupias"
+    ],
+    "doi": "10.1016/j.tcs.2004.06.001",
+    "title": "On the competitive ratio of the work function algorithm for the k-server problem",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2004
+   },
+   "year": 2004
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/pl00009158",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "On the Influence of Lookahead in Competitive Paging Algorithms",
+   "verified": {
+    "authors": [
+     "S. Albers"
+    ],
+    "doi": "10.1007/pl00009158",
+    "title": "On the Influence of Lookahead in Competitive Paging Algorithms",
+    "type": "journal-article",
+    "venue": "Algorithmica",
+    "year": 1997
+   },
+   "year": 1997
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.3724/sp.j.1087.2008.02604",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "On-line algorithm of loose competitive caching",
+   "verified": {
+    "authors": [
+     "Zhao-quan CAI"
+    ],
+    "doi": "10.3724/sp.j.1087.2008.02604",
+    "title": "On-line algorithm of loose competitive caching",
+    "type": "journal-article",
+    "venue": "Journal of Computer Applications",
+    "year": 2009
+   },
+   "year": 2009
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.65109/ocnn5096",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Online Algorithms for Multi-shop Ski Rental with Machine Learned Predictions",
+   "verified": {
+    "authors": [
+     "Shufan Wang",
+     "Jian Li"
+    ],
+    "doi": "10.65109/ocnn5096",
+    "title": "Online Algorithms for Multi-shop Ski Rental with Machine Learned Predictions",
+    "type": "proceedings-article",
+    "venue": "International Joint Conference on Autonomous Agents and Multiagent Systems",
+    "year": 2020
+   },
+   "year": 2020
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1016/j.ipl.2012.01.002",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Online algorithms for scheduling unit length jobs on parallel-batch machines with lookahead",
+   "verified": {
+    "authors": [
+     "Wenhua Li",
+     "Zhenkun Zhang",
+     "Sufang Yang"
+    ],
+    "doi": "10.1016/j.ipl.2012.01.002",
+    "title": "Online algorithms for scheduling unit length jobs on parallel-batch machines with lookahead",
+    "type": "journal-article",
+    "venue": "Information Processing Letters",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1142/s0217595919500246",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead",
+   "verified": {
+    "authors": [
+     "Chengwen Jiao",
+     "Jinjiang Yuan",
+     "Qi Feng"
+    ],
+    "doi": "10.1142/s0217595919500246",
+    "title": "Online Algorithms for Scheduling Unit Length Jobs on Unbounded Parallel-Batch Machines with Linearly Lookahead",
+    "type": "journal-article",
+    "venue": "Asia-Pacific Journal of Operational Research",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1142/s0217595922400127",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online Batch Scheduling of Incompatible Job Families with Variable Lookahead Interval",
+   "verified": {
+    "authors": [
+     "Wenhua Li",
+     "Libo Wang",
+     "Hang Yuan"
+    ],
+    "doi": "10.1142/s0217595922400127",
+    "title": "Online Batch Scheduling of Incompatible Job Families with Variable Lookahead Interval",
+    "type": "journal-article",
+    "venue": "Asia-Pacific Journal of Operational Research",
+    "year": 2022
+   },
+   "year": 2022
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1016/j.cor.2012.06.003",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online interval scheduling on a single machine with finite lookahead",
+   "verified": {
+    "authors": [
+     "Feifeng Zheng",
+     "Yongxi Cheng",
+     "Ming Liu",
+     "Yinfeng Xu"
+    ],
+    "doi": "10.1016/j.cor.2012.06.003",
+    "title": "Online interval scheduling on a single machine with finite lookahead",
+    "type": "journal-article",
+    "venue": "Computers &amp; Operations Research",
+    "year": 2013
+   },
+   "year": 2013
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1007/s10878-019-00381-6",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online interval scheduling on two related machines: the power of lookahead",
+   "verified": {
+    "authors": [
+     "Nicolas Pinson",
+     "Frits C. R. Spieksma"
+    ],
+    "doi": "10.1007/s10878-019-00381-6",
+    "title": "Online interval scheduling on two related machines: the power of lookahead",
+    "type": "journal-article",
+    "venue": "Journal of Combinatorial Optimization",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1016/j.tcs.2019.01.013",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online packet scheduling with bounded delay and lookahead",
+   "verified": {
+    "authors": [
+     "Martin B\u00f6hm",
+     "Marek Chrobak",
+     "\u0141ukasz Je\u017c",
+     "Fei Li",
+     "Ji\u0159\u00ed Sgall",
+     "Pavel Vesel\u00fd"
+    ],
+    "doi": "10.1016/j.tcs.2019.01.013",
+    "title": "Online packet scheduling with bounded delay and lookahead",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2019
+   },
+   "year": 2019
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/978-0-387-30162-4_267",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Online Paging and Caching",
+   "verified": {
+    "authors": [
+     "Neal E. Young"
+    ],
+    "doi": "10.1007/978-0-387-30162-4_267",
+    "title": "Online Paging and Caching",
+    "type": "book-chapter",
+    "venue": "Encyclopedia of Algorithms",
+    "year": 2008
+   },
+   "year": 2008
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/978-1-4939-2864-4_267",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Online Paging and Caching",
+   "verified": {
+    "authors": [
+     "Neal E. Young"
+    ],
+    "doi": "10.1007/978-1-4939-2864-4_267",
+    "title": "Online Paging and Caching",
+    "type": "book-chapter",
+    "venue": "Encyclopedia of Algorithms",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/978-3-642-27848-8_267-2",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Online Paging and Caching",
+   "verified": {
+    "authors": [
+     "NealE. Young"
+    ],
+    "doi": "10.1007/978-3-642-27848-8_267-2",
+    "title": "Online Paging and Caching",
+    "type": "book-chapter",
+    "venue": "Encyclopedia of Algorithms",
+    "year": 2015
+   },
+   "year": 2015
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1016/s0304-3975(00)00263-2",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Online paging and file caching with expiration times",
+   "verified": {
+    "authors": [
+     "Tracy Kimbrel"
+    ],
+    "doi": "10.1016/s0304-3975(00)00263-2",
+    "title": "Online paging and file caching with expiration times",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2001
+   },
+   "year": 2001
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1016/j.tcs.2014.05.024",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online scheduling of incompatible unit-length job families with lookahead",
+   "verified": {
+    "authors": [
+     "Wenhua Li",
+     "Jinjiang Yuan",
+     "Sufang Yang"
+    ],
+    "doi": "10.1016/j.tcs.2014.05.024",
+    "title": "Online scheduling of incompatible unit-length job families with lookahead",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2014
+   },
+   "year": 2014
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1007/s10878-022-00974-8",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online scheduling of two-machine flowshop with lookahead and incompatible job families",
+   "verified": {
+    "authors": [
+     "Xia Qian",
+     "Zhang Xingong"
+    ],
+    "doi": "10.1007/s10878-022-00974-8",
+    "title": "Online scheduling of two-machine flowshop with lookahead and incompatible job families",
+    "type": "journal-article",
+    "venue": "Journal of Combinatorial Optimization",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1016/j.tcs.2009.07.056",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online scheduling of unit length jobs on a batching machine to maximize the number of early jobs with lookahead",
+   "verified": {
+    "authors": [
+     "Wenjie Li",
+     "Jinjiang Yuan",
+     "Jianfa Cao",
+     "Hailin Bu"
+    ],
+    "doi": "10.1016/j.tcs.2009.07.056",
+    "title": "Online scheduling of unit length jobs on a batching machine to maximize the number of early jobs with lookahead",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2009
+   },
+   "year": 2009
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1287/ijoc.10.3.331",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Online Scheduling with Lookahead: Multipass Assembly Lines",
+   "verified": {
+    "authors": [
+     "Rajeev Motwani",
+     "Vijay Saraswat",
+     "Eric Torng"
+    ],
+    "doi": "10.1287/ijoc.10.3.331",
+    "title": "Online Scheduling with Lookahead: Multipass Assembly Lines",
+    "type": "journal-article",
+    "venue": "INFORMS Journal on Computing",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1109/twc.2017.2672964",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Online Ski Rental for ON/OFF Scheduling of Energy Harvesting Base Stations",
+   "verified": {
+    "authors": [
+     "Gilsoo Lee",
+     "Walid Saad",
+     "Mehdi Bennis",
+     "Abolfazl Mehbodniya",
+     "Fumiyuki Adachi"
+    ],
+    "doi": "10.1109/twc.2017.2672964",
+    "title": "Online Ski Rental for ON/OFF Scheduling of Energy Harvesting Base Stations",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Wireless Communications",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1109/icc.2016.7511011",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Online ski rental for scheduling self-powered, energy harvesting small base stations",
+   "verified": {
+    "authors": [
+     "Gilsoo Lee",
+     "Walid Saad",
+     "Mehdi Bennis",
+     "Abolfazl Mehbodniya",
+     "Fumiyuki Adachi"
+    ],
+    "doi": "10.1109/icc.2016.7511011",
+    "title": "Online ski rental for scheduling self-powered, energy harvesting small base stations",
+    "type": "proceedings-article",
+    "venue": "2016 IEEE International Conference on Communications (ICC)",
+    "year": 2016
+   },
+   "year": 2016
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/978-3-642-29116-6_14",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "OnlineMin: A Fast Strongly Competitive Randomized Paging Algorithm",
+   "verified": {
+    "authors": [
+     "Gerth St\u00f8lting Brodal",
+     "Gabriel Moruz",
+     "Andrei Negoescu"
+    ],
+    "doi": "10.1007/978-3-642-29116-6_14",
+    "title": "OnlineMin: A Fast Strongly Competitive Randomized Paging Algorithm",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1007/s00224-012-9427-y",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "OnlineMin: A Fast Strongly Competitive Randomized Paging Algorithm",
+   "verified": {
+    "authors": [
+     "Gerth St\u00f8lting Brodal",
+     "Gabriel Moruz",
+     "Andrei Negoescu"
+    ],
+    "doi": "10.1007/s00224-012-9427-y",
+    "title": "OnlineMin: A Fast Strongly Competitive Randomized Paging Algorithm",
+    "type": "journal-article",
+    "venue": "Theory of Computing Systems",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1016/0020-0255(76)90052-9",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Optimal control of demand-paging systems",
+   "verified": {
+    "authors": [
+     "Art Lew"
+    ],
+    "doi": "10.1016/0020-0255(76)90052-9",
+    "title": "Optimal control of demand-paging systems",
+    "type": "journal-article",
+    "venue": "Information Sciences",
+    "year": 1976
+   },
+   "year": 1976
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1016/s0020-0255(76)90962-2",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Optimal control of demand-paging systems",
+   "verified": {
+    "authors": [
+     "Art Lew"
+    ],
+    "doi": "10.1016/s0020-0255(76)90962-2",
+    "title": "Optimal control of demand-paging systems",
+    "type": "journal-article",
+    "venue": "Information Sciences",
+    "year": 1976
+   },
+   "year": 1976
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1137/1.9781611973099.132",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Outperforming LRU via Competitive Analysis on Parametrized Inputs for Paging",
+   "verified": {
+    "authors": [
+     "Gabriel Moruz",
+     "Andrei Negoescu"
+    ],
+    "doi": "10.1137/1.9781611973099.132",
+    "title": "Outperforming LRU via Competitive Analysis on Parametrized Inputs for Paging",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the Twenty-Third Annual ACM-SIAM Symposium on Discrete Algorithms",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1109/tcomm.2009.11.070661",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Parallel lookahead algorithms for pruned interleavers",
+   "verified": {
+    "authors": [
+     "Mohammad M. Mansour"
+    ],
+    "doi": "10.1109/tcomm.2009.11.070661",
+    "title": "Parallel lookahead algorithms for pruned interleavers",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Communications",
+    "year": 2009
+   },
+   "year": 2009
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1109/lindi.2011.6031146",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Parameter learning in lookahead online algorithms for data acknowledgment",
+   "verified": {
+    "authors": [
+     "Tamas Nemeth",
+     "Balazs Gyekiczki",
+     "Csanad Imreh"
+    ],
+    "doi": "10.1109/lindi.2011.6031146",
+    "title": "Parameter learning in lookahead online algorithms for data acknowledgment",
+    "type": "proceedings-article",
+    "venue": "3rd IEEE International Symposium on Logistics and Industrial Informatics",
+    "year": 2011
+   },
+   "year": 2011
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.2991/jcis.2006.324",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Quality vs. Performance in Lookahead Scheduling",
+   "verified": {
+    "authors": [
+     "Ben Coleman"
+    ],
+    "doi": "10.2991/jcis.2006.324",
+    "title": "Quality vs. Performance in Lookahead Scheduling",
+    "type": "proceedings-article",
+    "venue": "Advances in Intelligent Systems Research",
+    "year": 2006
+   },
+   "year": 2006
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1007/3-540-60220-8_59",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Randomized algorithms for metrical task systems",
+   "verified": {
+    "authors": [
+     "Sandy Irani",
+     "Steve Seiden"
+    ],
+    "doi": "10.1007/3-540-60220-8_59",
+    "title": "Randomized algorithms for metrical task systems",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1995
+   },
+   "year": 1995
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1016/s0304-3975(97)00006-6",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Randomized algorithms for metrical task systems",
+   "verified": {
+    "authors": [
+     "Sandy Irani",
+     "Steve Seiden"
+    ],
+    "doi": "10.1016/s0304-3975(97)00006-6",
+    "title": "Randomized algorithms for metrical task systems",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 1998
+   },
+   "year": 1998
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1145/24714.24717",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Remarks on recent algorithms for LALR lookahead sets",
+   "verified": {
+    "authors": [
+     "J C H Park"
+    ],
+    "doi": "10.1145/24714.24717",
+    "title": "Remarks on recent algorithms for LALR lookahead sets",
+    "type": "journal-article",
+    "venue": "ACM SIGPLAN Notices",
+    "year": 1987
+   },
+   "year": 1987
+  },
+  {
+   "claim": "Ski rental is the minimal online decision: pay-as-you-go against a one-off cost.",
+   "doi": "10.1137/100794018",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "ski-rental",
+   "title": "Rent, Lease, or Buy: Randomized Algorithms for Multislope Ski Rental",
+   "verified": {
+    "authors": [
+     "Zvi Lotker",
+     "Boaz Patt-Shamir",
+     "Dror Rawitz"
+    ],
+    "doi": "10.1137/100794018",
+    "title": "Rent, Lease, or Buy: Randomized Algorithms for Multislope Ski Rental",
+    "type": "journal-article",
+    "venue": "SIAM Journal on Discrete Mathematics",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1145/35596.35606",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Response to remarks on recent algorithms for LALR lookahead sets",
+   "verified": {
+    "authors": [
+     "Fred Ives"
+    ],
+    "doi": "10.1145/35596.35606",
+    "title": "Response to remarks on recent algorithms for LALR lookahead sets",
+    "type": "journal-article",
+    "venue": "ACM SIGPLAN Notices",
+    "year": 1987
+   },
+   "year": 1987
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1007/s10951-010-0192-y",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Scheduling unit length jobs on parallel machines with lookahead information",
+   "verified": {
+    "authors": [
+     "Marvin Mandelbaum",
+     "Dvir Shabtay"
+    ],
+    "doi": "10.1007/s10951-010-0192-y",
+    "title": "Scheduling unit length jobs on parallel machines with lookahead information",
+    "type": "journal-article",
+    "venue": "Journal of Scheduling",
+    "year": 2010
+   },
+   "year": 2010
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1016/0167-7136(83)90150-6",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Segmentation, paging and optimal page sizes in virtual memory",
+   "verified": {
+    "authors": [
+     "Timo O. Alanko",
+     "A.Inkeri Verkamo"
+    ],
+    "doi": "10.1016/0167-7136(83)90150-6",
+    "title": "Segmentation, paging and optimal page sizes in virtual memory",
+    "type": "journal-article",
+    "venue": "Computer Compacts",
+    "year": 1983
+   },
+   "year": 1983
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1142/s0217595923500033",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Semi-Online Scheduling on Two Identical Parallel Machines with Initial-Lookahead Information",
+   "verified": {
+    "authors": [
+     "Feifeng Zheng",
+     "Yuhong Chen",
+     "Ming Liu",
+     "Yinfeng Xu"
+    ],
+    "doi": "10.1142/s0217595923500033",
+    "title": "Semi-Online Scheduling on Two Identical Parallel Machines with Initial-Lookahead Information",
+    "type": "journal-article",
+    "venue": "Asia-Pacific Journal of Operational Research",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1051/ro/2024042",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Semi-online scheduling on two uniform parallel machines with initial lookahead",
+   "verified": {
+    "authors": [
+     "Feifeng Zheng",
+     "Yuhong Chen",
+     "Ming Liu"
+    ],
+    "doi": "10.1051/ro/2024042",
+    "title": "Semi-online scheduling on two uniform parallel machines with initial lookahead",
+    "type": "journal-article",
+    "venue": "RAIRO - Operations Research",
+    "year": 2024
+   },
+   "year": 2024
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.2139/ssrn.4485992",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Semi-Online Scheduling with Lookahead",
+   "verified": {
+    "authors": [
+     "Debasis Dwibedy",
+     "Rakesh Mohanty"
+    ],
+    "doi": "10.2139/ssrn.4485992",
+    "title": "Semi-Online Scheduling with Lookahead",
+    "type": "posted-content",
+    "venue": "",
+    "year": 2023
+   },
+   "year": 2023
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1109/vetecs.2012.6240134",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "Simple Channel Predictors for Lookahead Scheduling",
+   "verified": {
+    "authors": [
+     "Thomas Werthmann",
+     "Matthias Kaschub",
+     "Magnus Proebster",
+     "Stefan Valentin"
+    ],
+    "doi": "10.1109/vetecs.2012.6240134",
+    "title": "Simple Channel Predictors for Lookahead Scheduling",
+    "type": "proceedings-article",
+    "venue": "2012 IEEE 75th Vehicular Technology Conference (VTC Spring)",
+    "year": 2012
+   },
+   "year": 2012
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1109/ieem.2009.5373354",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Stage-lookahead dynamic programming algorithms for stochastic problems with time-lagged control dynamics",
+   "verified": {
+    "authors": [
+     "Eiji Mizutani",
+     "Stuart Dreyfus"
+    ],
+    "doi": "10.1109/ieem.2009.5373354",
+    "title": "Stage-lookahead dynamic programming algorithms for stochastic problems with time-lagged control dynamics",
+    "type": "proceedings-article",
+    "venue": "2009 IEEE International Conference on Industrial Engineering and Engineering Man",
+    "year": 2009
+   },
+   "year": 2009
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1109/sfcs.1992.267756",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "The distributed k-server problem-a competitive distributed translator for k-server algorithms",
+   "verified": {
+    "authors": [
+     "Y. Bartal",
+     "A. Rosen"
+    ],
+    "doi": "10.1109/sfcs.1992.267756",
+    "title": "The distributed k-server problem-a competitive distributed translator for k-server algorithms",
+    "type": "proceedings-article",
+    "venue": "Proceedings., 33rd Annual Symposium on Foundations of Computer Science",
+    "year": 1992
+   },
+   "year": 1992
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1006/jagm.1996.0826",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "The Distributedk-Server Problem\u2014A Competitive Distributed Translator fork-Server Algorithms",
+   "verified": {
+    "authors": [
+     "Yair Bartal",
+     "Adi Ros\u00e9n"
+    ],
+    "doi": "10.1006/jagm.1996.0826",
+    "title": "The Distributedk-Server Problem\u2014A Competitive Distributed Translator fork-Server Algorithms",
+    "type": "journal-article",
+    "venue": "Journal of Algorithms",
+    "year": 1997
+   },
+   "year": 1997
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1007/3-540-57273-2_39",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "The influence of lookahead in competitive paging algorithms",
+   "verified": {
+    "authors": [
+     "Susanne Albers"
+    ],
+    "doi": "10.1007/3-540-57273-2_39",
+    "title": "The influence of lookahead in competitive paging algorithms",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 1993
+   },
+   "year": 1993
+  },
+  {
+   "claim": "In scheduling, lookahead is known to improve competitive ratios and its value has been bounded.",
+   "doi": "10.1080/03155986.1988.11732058",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "sched-lookahead",
+   "title": "The Lookahead Heuristic For Multi-Item Single Machine Production Scheduling With Dynamic, Stochastic Demands",
+   "verified": {
+    "authors": [
+     "Andr\u00e9 Gascon"
+    ],
+    "doi": "10.1080/03155986.1988.11732058",
+    "title": "The Lookahead Heuristic For Multi-Item Single Machine Production Scheduling With Dynamic, Stochastic Demands",
+    "type": "journal-article",
+    "venue": "INFOR: Information Systems and Operational Research",
+    "year": 1988
+   },
+   "year": 1988
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1007/978-3-540-24749-4_43",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Topology Matters: Smoothed Competitiveness of Metrical Task Systems",
+   "verified": {
+    "authors": [
+     "Guido Sch\u00e4fer",
+     "Naveen Sivadasan"
+    ],
+    "doi": "10.1007/978-3-540-24749-4_43",
+    "title": "Topology Matters: Smoothed Competitiveness of Metrical Task Systems",
+    "type": "book-chapter",
+    "venue": "Lecture Notes in Computer Science",
+    "year": 2004
+   },
+   "year": 2004
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1016/j.tcs.2005.04.006",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Topology matters: Smoothed competitiveness of metrical task systems",
+   "verified": {
+    "authors": [
+     "Guido Sch\u00e4fer",
+     "Naveen Sivadasan"
+    ],
+    "doi": "10.1016/j.tcs.2005.04.006",
+    "title": "Topology matters: Smoothed competitiveness of metrical task systems",
+    "type": "journal-article",
+    "venue": "Theoretical Computer Science",
+    "year": 2005
+   },
+   "year": 2005
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.4236/jcc.2013.14002",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "Track Paging an Optimal Method for Minimizing Paging and Signaling Cost in Mobile IP",
+   "verified": {
+    "authors": [
+     "Tania Baghaie"
+    ],
+    "doi": "10.4236/jcc.2013.14002",
+    "title": "Track Paging an Optimal Method for Minimizing Paging and Signaling Cost in Mobile IP",
+    "type": "journal-article",
+    "venue": "Journal of Computer and Communications",
+    "year": 2013
+   },
+   "year": 2013
+  },
+  {
+   "claim": "Paging is the classical case where the offline optimum is computable and the online rule is scored against it.",
+   "doi": "10.1109/tmc.2016.2575835",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "competitive-paging",
+   "title": "UM Paging: Unified M2M Paging with Optimal DRX Cycle",
+   "verified": {
+    "authors": [
+     "Chia-Wei Chang",
+     "Jyh-Cheng Chen"
+    ],
+    "doi": "10.1109/tmc.2016.2575835",
+    "title": "UM Paging: Unified M2M Paging with Optimal DRX Cycle",
+    "type": "journal-article",
+    "venue": "IEEE Transactions on Mobile Computing",
+    "year": 2017
+   },
+   "year": 2017
+  },
+  {
+   "claim": "Metrical task systems supply the general framework in which a decision rule is scored against an offline optimum.",
+   "doi": "10.1006/inco.1998.2744",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "mts-kserver",
+   "title": "Unfair Problems and Randomized Algorithms for Metrical Task Systems",
+   "verified": {
+    "authors": [
+     "Steve Seiden"
+    ],
+    "doi": "10.1006/inco.1998.2744",
+    "title": "Unfair Problems and Randomized Algorithms for Metrical Task Systems",
+    "type": "journal-article",
+    "venue": "Information and Computation",
+    "year": 1999
+   },
+   "year": 1999
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1145/12276.13324",
+   "judgement": "title-only",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Unifying view of recent LALR(1) lookahead set algorithms",
+   "verified": {
+    "authors": [
+     "Fred Ives"
+    ],
+    "doi": "10.1145/12276.13324",
+    "title": "Unifying view of recent LALR(1) lookahead set algorithms",
+    "type": "proceedings-article",
+    "venue": "Proceedings of the 1986 SIGPLAN symposium on Compiler construction",
+    "year": 1986
+   },
+   "year": 1986
+  },
+  {
+   "claim": "Bounded lookahead has been characterised for other online problems; this paper asks how much future a compaction decision needs.",
+   "doi": "10.1145/13310.13324",
+   "judgement": "abstract",
+   "section": "\u00a77 Relation to online algorithms with lookahead",
+   "theme": "lookahead-online",
+   "title": "Unifying view of recent LALR(1) lookahead set algorithms",
+   "verified": {
+    "authors": [
+     "Fred Ives"
+    ],
+    "doi": "10.1145/13310.13324",
+    "title": "Unifying view of recent LALR(1) lookahead set algorithms",
+    "type": "journal-article",
+    "venue": "ACM SIGPLAN Notices",
+    "year": 1986
+   },
+   "year": 1986
+  }
+ ],
+ "placed": 237,
+ "pruned": 107,
+ "pruned_reasons": {
+  "adjacent construct (same word, other object)": 18,
+  "names no construct this section uses": 79,
+  "the section's word occurs, but not as this section's construct": 10
+ },
+ "scan_date": "2026-10-26",
+ "search_form": {
+  "field": "query.bibliographic",
+  "queries": {
+   "competitive-paging": "competitive paging caching offline optimal algorithm",
+   "data-placement": "online data placement reorganization cost algorithm",
+   "flash-write-amp": "write amplification flash SSD garbage collection",
+   "kv-engine": "key-value store storage engine LSM",
+   "levels-tiering": "leveled tiering compaction storage engine",
+   "logstructured-fs": "log-structured file system cleaning garbage collection",
+   "lookahead-online": "online algorithms lookahead competitive ratio",
+   "lsm-compaction": "log-structured merge tree compaction write amplification",
+   "mts-kserver": "metrical task systems k-server competitive algorithm",
+   "sched-lookahead": "semi-online scheduling lookahead information algorithm",
+   "scheduling-theory": "online scheduling competitive ratio algorithm",
+   "ski-rental": "ski rental online algorithm competitive"
+  },
+  "registry": "Crossref REST API https://api.crossref.org/works",
+  "rows_per_query": 100,
+  "scan_date": "2026-10-26",
+  "screen": "two word sets, both must hit: TOPIC (compaction|log[- ]structured|lsm|write amplification|lookahead|look-ahead|ski rental|metrical task|k-server|paging|caching|eviction|tiering|levelled|leveled) ; DOMAIN (algorithm|competitive|optimal|bound|online|scheduling|cache|paging|storage|tree|database|file system|flash|ssd|analysis|ratio|memory)",
+  "type_whitelist": [
+   "book",
+   "book-chapter",
+   "journal-article",
+   "posted-content",
+   "proceedings-article",
+   "report"
+  ],
+  "window": "from-pub-date 1900-01-01 .. until-pub-date 2026-10-26"
+ },
+ "unverifiable": 0
+}
